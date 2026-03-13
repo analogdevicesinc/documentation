@@ -1,8 +1,8 @@
 AD-FMCOMMS11-EBZ Functional Overview
 ====================================
 
-A functional block diagram of the system is given below. The system consists of two transmit paths, receive paths, clock management and power supply.
-
+A functional block diagram of the system is given below. The system consists of
+two transmit paths, receive paths, clock management and power supply.
 
 |image1|
 

@@ -10,13 +10,11 @@ ADRV9002 uses profiles to designate different device configuration settings for 
 
    Profiles are specific to the versions of ADRV9001/2 API that the driver uses. Therefore, they must be generated from the :adi:`TES software <en/design-center/landing-pages/001/transceiver-evaluation-software.html>` that coincides with that API version. Unfortunately, profiles themselves are not versioned so it is recommended to note the API version in the generated profile filenames when created. The driver will print the API version during boot for reference.
 
-
 For more information about profiles and how to load please see here: :doc:`Profile section on the ADRV9002 Linux driver documentation </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
 .. note::
 
    We are about to release a library which allows device profile generation outside of TES. This library can be used in applications such as the :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`, or other SDR software.
-
 
 Installation and Configuration
 ------------------------------
@@ -34,60 +32,63 @@ In the following picture we can see the base controls for the profile:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter-sdr/tes_main_configuration_4.png
    :align: center
-   :width: 800px
+   :width: 800
 
-In here, one can change the main profile type (LTE, DMR, etc), interface rate, disabling ports and so on...
+In here, one can change the main profile type (LTE, DMR, etc), interface rate,
+disabling ports and so on...
 
 .. important::
 
-   Special care for the fields highlighted in channel 2 (also applies for channel 1) that must be set like in the image. The LVDS enforcement is specific to jupiter.
+   Special care for the fields highlighted in channel 2 (also applies for
+   channel 1) that must be set like in the image. The LVDS enforcement is
+   specific to jupiter.
 
-
-Once we are done with the settings, time to generate the stream and the profiles files:
+Once we are done with the settings, time to generate the stream and the profiles
+files:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter-sdr/tes_save_profile_and_stream_2.png
    :align: center
-   :width: 800px
+   :width: 800
 
-In the next subsections, we can see some extra and useful settings that one might want to set before generating the stream and the profile files.
+In the next subsections, we can see some extra and useful settings that one
+might want to set before generating the stream and the profile files.
 
 Enable NCO Frequency offset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter-sdr/tes_enable_nco_correction_2.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. note::
 
    Enabling this setting, enables the IIO attribute ':doc:`in_voltage0_nco_frequency </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`'. These settings are on by default on jupiter default profile.
-
 
 Enable Antenna Diversity
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter-sdr/tes_diversity_settings_2.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. note::
 
-   This setting affects the LO mapping (which ports each LO drives). Basically having this on, means that all ports are mapped into the same LO.
-
+   This setting affects the LO mapping (which ports each LO drives). Basically
+   having this on, means that all ports are mapped into the same LO.
 
 .. warning::
 
-   This settings is obviously only available if TDD is set in the Device Configuration tab
-
+   This settings is obviously only available if TDD is set in the Device
+   Configuration tab
 
 Enable Frequency hopping
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter-sdr/test_fh_enablement_2.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. note::
 
-   The only thing needed to do in TES is just to enable Frequency hopping as highlighted. All the other settings does not map in any profile setting...
-
+   The only thing needed to do in TES is just to enable Frequency hopping as
+   highlighted. All the other settings does not map in any profile setting...

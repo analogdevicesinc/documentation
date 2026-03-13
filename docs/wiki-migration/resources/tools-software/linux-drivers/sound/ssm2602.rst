@@ -45,22 +45,35 @@ Files
 Example device initialization
 =============================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
-
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
 SPI
 ---
 
 SPI can be used for the SSM2602 if in SPI mode (MODE pin set to 1).
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
-
 
 .. code:: c
 
@@ -93,16 +106,26 @@ For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi
 I2C
 ---
 
-I2C can be used for the SSM2602, SSM2603, SSM2604. For the SSM2602 make sure that it is in I2C mode (MODE pin set to 0).
+I2C can be used for the SSM2602, SSM2603, SSM2604. For the SSM2602 make sure
+that it is in I2C mode (MODE pin set to 0).
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 .. code:: c
 
@@ -229,9 +252,11 @@ Supported DAI formats
 Supported SYSCLK rates
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The codecs system clock can be configured for various input rates. When configuring the codec system clock use SSM2602_SYSCLK for the clock id.
+The codecs system clock can be configured for various input rates. When
+configuring the codec system clock use SSM2602_SYSCLK for the clock id.
 
-The following list contains the supported system clock rates and their resulting sample-rates.
+The following list contains the supported system clock rates and their resulting
+sample-rates.
 
 ======== ==========================================
 SYSCLK   Supported sample-rates
@@ -313,7 +338,9 @@ Status
 As a Module
 -----------
 
-To add support for the built-in codec SSM2602 of BF52xC to the kernel build system, a few things must be enabled properly for things to work. The configuration is as following:
+To add support for the built-in codec SSM2602 of BF52xC to the kernel build
+system, a few things must be enabled properly for things to work. The
+configuration is as following:
 
 ::
 
@@ -332,8 +359,10 @@ To add support for the built-in codec SSM2602 of BF52xC to the kernel build syst
 
 .. important::
 
-   I2C bus is used to configure the codec. So, if the audio driver is built into kernel, the I2c driver is also built into kernel automatically. But if the audio driver is built as module, then make sure that the I2C driver is loaded before the audio module.
-
+   I2C bus is used to configure the codec. So, if the audio driver is built into
+   kernel, the I2c driver is also built into kernel automatically. But if the
+   audio driver is built as module, then make sure that the I2C driver is loaded
+   before the audio module.
 
 ::
 
@@ -344,17 +373,22 @@ To add support for the built-in codec SSM2602 of BF52xC to the kernel build syst
              I2C Hardware Bus Support --->
                <*> Blackfin TWI I2C support
 
-Doing this will create modules (outside the kernel). The modules will be inserted automatically when it is needed. You can also build sound driver into kernel.
+Doing this will create modules (outside the kernel). The modules will be
+inserted automatically when it is needed. You can also build sound driver into
+kernel.
 
 Testing the built in kernel driver
 ----------------------------------
 
-If audio is configured as modules, skip this section. If audio is built into kernel and you have booted the kernel, there are a few things to check to ensure audio is working:
+If audio is configured as modules, skip this section. If audio is built into
+kernel and you have booted the kernel, there are a few things to check to ensure
+audio is working:
 
 -  Check the boot messages to see if you have booted the correct kernel. During kernel boot, it should print out: ``Advanced Linux Sound Architecture Driver Version 1.0.12rc1 (Thu Jun 22 13:55:50 2006 UTC).
    ASoC version 0.13.1
    dma rx:3 tx:4, err irq:15, regs:ffc00800
-   ssm2602 Audio Codec 0.1<6>dma_alloc_init: dma_page @ 0x03011000 - 512 pages at 0x03e00000
+   ssm2602 Audio Codec 0.1<6>dma_alloc_init: dma_page @ 0x03011000 - 512 pages
+   at 0x03e00000
    asoc: SSM2602 <-> bf5xx-i2s-0 mapping ok
    ALSA device list:
      #0: bf5xx_ssm2602 (SSM2602)``

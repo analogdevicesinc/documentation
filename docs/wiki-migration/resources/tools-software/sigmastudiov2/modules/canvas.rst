@@ -13,7 +13,8 @@ Canvas Utilities
 Description
 -----------
 
-These are canvas utility items which are used to insert comments, images, Alias pins, T-Connector, Hierarchy Boards, Probe and Stimulus.
+These are canvas utility items which are used to insert comments, images, Alias
+pins, T-Connector, Hierarchy Boards, Probe and Stimulus.
 
 .. |aliaspins.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/canvas/aliaspins.png
 .. |comment.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/canvas/comment.png

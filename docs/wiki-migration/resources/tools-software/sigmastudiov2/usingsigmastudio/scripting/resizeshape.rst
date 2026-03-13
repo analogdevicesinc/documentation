@@ -3,7 +3,10 @@
 Resize Shape
 ============
 
-This action allows the user to resize a specified shape on the parent canvas or schematic page according to the angle given. The function call takes in 3 arguments. Return type is a SSPResult which contains a IsSuccess flag for success/failure and Message in the form of list of strings.
+This action allows the user to resize a specified shape on the parent canvas or
+schematic page according to the angle given. The function call takes in 3
+arguments. Return type is a SSPResult which contains a IsSuccess flag for
+success/failure and Message in the form of list of strings.
 
 API
 ---
@@ -17,12 +20,14 @@ Arguments
 
 -  shapeUid- Uid of the plugin to be moved.
 -  newPosition -Position in the form of (double X, double Y) coordinates of the canvas.
--  newSize -Desired size of the shape in the form of (double Width, double Height).
+-  newSize -Desired size of the shape in the form of (double Width, double
+   Height).
 
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the ResizeShape action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the ResizeShape
+action.
 
 ::
 

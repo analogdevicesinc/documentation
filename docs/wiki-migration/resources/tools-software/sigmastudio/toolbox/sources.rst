@@ -3,7 +3,8 @@ Sources
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-The Sources library of the ToolBox provides blocks that generate signals. The following blocks are available:
+The Sources library of the ToolBox provides blocks that generate signals. The
+following blocks are available:
 
 Oscillators
 -----------

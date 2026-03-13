@@ -9,7 +9,10 @@ DC Input No Mips
 Description
 -----------
 
-The DC Input No MIPs Block is a parameter value write utility which can write directly to any parameter. The block's controls allow the value and the format to be set. There are 32/28 available bits which can be used to represent decimal values depends on the SigmaDSP.
+The DC Input No MIPs Block is a parameter value write utility which can write
+directly to any parameter. The block's controls allow the value and the format
+to be set. There are 32/28 available bits which can be used to represent decimal
+values depends on the SigmaDSP.
 
 Targets Supported
 -----------------

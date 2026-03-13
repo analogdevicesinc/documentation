@@ -4,7 +4,8 @@ CCES Project
 Overview
 --------
 
-This section provides an overview of the required configurations to build the SAM Audio Starter project using CrossCore Embedded Studio.
+This section provides an overview of the required configurations to build the
+SAM Audio Starter project using CrossCore Embedded Studio.
 
 Details
 -------
@@ -293,58 +294,58 @@ Post-Build Loader Settings
 --------------
 
 .. |1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/1.jpg
-   :width: 400px
+   :width: 400
 .. |1-2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/1-2.jpg
-   :width: 400px
+   :width: 400
 .. |1-3.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/1-3.jpg
-   :width: 400px
+   :width: 400
 .. |1-4.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/1-4.jpg
-   :width: 400px
+   :width: 400
 .. |1-5.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/1-5.jpg
-   :width: 400px
+   :width: 400
 .. |2-3.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/2-3.jpg
-   :width: 400px
+   :width: 400
 .. |2-1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/2-1.jpg
-   :width: 400px
+   :width: 400
 .. |2-2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/2-2.jpg
-   :width: 400px
+   :width: 400
 .. |3-1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/3-1.jpg
-   :width: 400px
+   :width: 400
 .. |3-2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/3-2.jpg
-   :width: 400px
+   :width: 400
 .. |3-3.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/3-3.jpg
-   :width: 400px
+   :width: 400
 .. |4-1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/4-1.jpg
-   :width: 400px
+   :width: 400
 .. |4-2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/4-2.jpg
-   :width: 400px
+   :width: 400
 .. |5-1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/5-1.jpg
-   :width: 400px
+   :width: 400
 .. |5-2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/5-2.jpg
-   :width: 400px
+   :width: 400
 .. |6-1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/6-1.jpg
-   :width: 400px
+   :width: 400
 .. |6-2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/6-2.jpg
-   :width: 400px
+   :width: 400
 .. |6-3.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/6-3.jpg
-   :width: 400px
+   :width: 400
 .. |6-4.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/6-4.jpg
-   :width: 400px
+   :width: 400
 .. |7-1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/7-1.jpg
-   :width: 400px
+   :width: 400
 .. |7-2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/7-2.jpg
-   :width: 400px
+   :width: 400
 .. |7-3.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/7-3.jpg
-   :width: 400px
+   :width: 400
 .. |8-1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/8-1.jpg
-   :width: 400px
+   :width: 400
 .. |8-2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/8-2.jpg
-   :width: 400px
+   :width: 400
 .. |9-1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/9-1.jpg
-   :width: 400px
+   :width: 400
 .. |9-2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/9-2.jpg
-   :width: 400px
+   :width: 400
 .. |9-3.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/9-3.jpg
-   :width: 400px
+   :width: 400
 .. |9-4.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/9-4.jpg
-   :width: 400px
+   :width: 400

@@ -3,20 +3,20 @@ EVAL-AD7690-PMDZ PulSAR ADC PMOD User Guide
 
 The EVAL-AD7690-PMDZ offers a very high performance of 18 bits with a throughput of 400 kSPS in a PMOD form factor. It is designed to demonstrate the performance of :adi:`AD7690` and to provide an easy digital interface for a variety of system applications.
 
-
 |image1|
 
 The :adi:`AD7690` is an 18-bit, successive approximation, analog to digital converter (ADC) that operates from a single power supply, VDD. It contains a low-power, high-speed, 18-bit sampling ADC with no missing codes, an internal conversion clock, and a versatile serial interface port.
 
 .. note::
 
-   \* The throughput of your PulSAR ADC will be limited to the SPI bus speed of your platform.
-
+   \* The throughput of your PulSAR ADC will be limited to the SPI bus speed of
+   your platform.
 
 Hardware Setup
 --------------
 
-The PMOD board is small in size with dimensions approximately 1 inch in width by 3 inches in length.
+The PMOD board is small in size with dimensions approximately 1 inch in width by
+3 inches in length.
 
 Power Supply Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -27,9 +27,12 @@ In the case of the high precision, successive approximation ADC's architecture, 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/pmod_power_supplies.png
    :align: center
-   :width: 500px
+   :width: 500
 
-With all these factors combined, the board was designed using external power supplies of -2.5V, GND, and 7.5V. These supplies provide the power for the entire PMOD board, so even though power is coming in through the PMOD connector, it's not actually powering the components on the board.
+With all these factors combined, the board was designed using external power
+supplies of -2.5V, GND, and 7.5V. These supplies provide the power for the
+entire PMOD board, so even though power is coming in through the PMOD connector,
+it's not actually powering the components on the board.
 
 Input Connectors
 ~~~~~~~~~~~~~~~~
@@ -38,20 +41,27 @@ For the input signals coming into the :adi:`EVAL-AD7690-PMDZ <en/design-center/e
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/vin.png
    :align: center
-   :width: 500px
+   :width: 500
 
-Each of the converters also has a combination of single-ended inputs, differential inputs, or pseudo-differential inputs. So in order to determine the input style of your converter it is imperative to look at the datasheet of the device you are using. The datasheet of any device should always be followed before using it in an application or on a board.
+Each of the converters also has a combination of single-ended inputs,
+differential inputs, or pseudo-differential inputs. So in order to determine the
+input style of your converter it is imperative to look at the datasheet of the
+device you are using. The datasheet of any device should always be followed
+before using it in an application or on a board.
 
 Digital Interface (PMOD)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
-The specific interface used for the PulSAR PMOD boards is the extended SPI. In general, ADI has adopted the extended SPI connector for all PMOD devices which have an SPI interface. It provides flexibility to add interrupts, general purpose I/O, resets, and other important digitally controlled functions.
+The specific interface used for the PulSAR PMOD boards is the extended SPI. In
+general, ADI has adopted the extended SPI connector for all PMOD devices which
+have an SPI interface. It provides flexibility to add interrupts, general
+purpose I/O, resets, and other important digitally controlled functions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/pmod_pinout.png
    :align: center
-   :width: 700px
+   :width: 700
 
 Above is the connection of the :adi:`EVAL-AD7690-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7690-pmdz.html>` to the SPI PMOD connector. It is hardware configured in a 3-wire mode with no busy indicator. This basically means that the only signals that go between the converter and the processor are the CNV (similar to a chip select in this mode), SCLK (serial Clock), and MISO (serial data out). There are no registers internal to the :adi:`AD7690` ADC, so there is no need for a data input line, the data just streams out using the CNVST pin.
 
@@ -73,7 +83,6 @@ Schematics, PCB Layout, Bill of Materials
    -  :adi:`EVAL-AD7690-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7690-pmdz-designsupport.zip>`
    
 
-
 Additional Information
 ----------------------
 
@@ -89,6 +98,5 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD7690-PMDZ?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/pulsar_pmod.jpg
-   :width: 500px
+   :width: 500

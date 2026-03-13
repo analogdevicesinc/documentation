@@ -17,9 +17,15 @@ Overview
 
 The :adi:`MAX9611` / :adi:`MAX9612` are high-side current-sense amplifiers with an integrated 12-bit ADC and a gain block that can be configured either as an op amp or comparator, making these devices ideal for a number of industrial and automotive applications.
 
-The high-side, current-sense amplifiers operate over a wide 0 V to 60 V input common-mode voltage range. The programmable full-scale voltage (440 mV, 110 mV, and 55 mV) of these amplifiers offers wide dynamic range, accurate current measurement, and application flexibility in choosing sense resistor values. A choice of either an internal op amp or a comparator is provided to the user.
+The high-side, current-sense amplifiers operate over a wide 0 V to 60 V input
+common-mode voltage range. The programmable full-scale voltage (440 mV, 110 mV,
+and 55 mV) of these amplifiers offers wide dynamic range, accurate current
+measurement, and application flexibility in choosing sense resistor values. A
+choice of either an internal op amp or a comparator is provided to the user.
 
-The internal amplifier can be used to limit the inrush current or to create a current source in a closed-loop system. The comparator can be used to monitor fault events for fast response.
+The internal amplifier can be used to limit the inrush current or to create a
+current source in a closed-loop system. The comparator can be used to monitor
+fault events for fast response.
 
 An I2C-controlled 12-bit, 500 sps analog-to-digital converter (ADC) can be used to read the voltage across the sense resistor (V\ :sub:`SENSE`), the input common-mode voltage (V\ :sub:`RSCM`), op amp/comparator output (V\ :sub:`OUT`), op amp/ comparator reference voltage (V\ :sub:`SET`), and internal die temperature.
 
@@ -36,7 +42,7 @@ Applications
 -  Battery-operated equipment
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max9611pmb1.jpg
-   :width: 400px
+   :width: 400
 
 ADI No-OS
 ~~~~~~~~~
@@ -61,8 +67,9 @@ The source code for MAX9611 driver can be found here:
    -  :git-no-OS:`Implementation of MAX9611 Driver <drivers/adc/max9611pmb/max9611.c>`
    
 
-
-This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the utility library can be found here:
+This driver also uses the ADI utility library, so make sure you also add the
+necessary files to your project. The source code for the utility library can be
+found here:
 
 .. admonition:: Download
    :class: download
@@ -72,10 +79,11 @@ This driver also uses the ADI utility library, so make sure you also add the nec
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
+To use the MAX9611 No-OS driver, you need to provide the specific implementation
+for the communication APIs and the specific types they use.
 
-To use the MAX9611 No-OS driver, you need to provide the specific implementation for the communication APIs and the specific types they use.
-
-If the SPI communication is chosen, there are three functions which are called by the MAX9611 driver and have to be implemented:
+If the SPI communication is chosen, there are three functions which are called
+by the MAX9611 driver and have to be implemented:
 
 .. container:: center box
 
@@ -87,7 +95,6 @@ If the SPI communication is chosen, there are three functions which are called b
    **no_os_i2c_remove()** deinitializes the communication peripheral.
    ====================== ===========================================
    
-
 
 And there are two data types that have to be defined:
 
@@ -101,8 +108,9 @@ And there are two data types that have to be defined:
    +--------------------------+---------------------------------------------------------+
    
 
-
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using, can
+be found below:
 
 .. admonition:: Download
    :class: download
@@ -111,11 +119,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
 
-
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and can be accessed in these links:
 
 .. admonition:: Download
    :class: download
@@ -125,14 +133,14 @@ Source code documentation for the driver is automatically generated using the Do
    -  `MAX9611 Source file <http://analogdevicesinc.github.io/no-OS/max9611_8c.html>`_
    
 
-
 Device Configuration
 --------------------
 
 Driver Initialization
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use the device, you need to provide the support for the communication protocol (I2C) as mentioned above.
+To use the device, you need to provide the support for the communication
+protocol (I2C) as mentioned above.
 
 The first API function to be called is **max9611_addr_gen** to generate the corresponding device's slave address. Once a proper address is generated, use the function **max9611_init** to initialize the device and make sure that it returns 0. This indicates a successful driver initialization.
 
@@ -144,7 +152,6 @@ The :adi:`MAX9611` / :adi:`MAX9612` have the provision for multiple I2C slave ad
 .. note::
 
    The header file of the :adi:`MAX9611` driver provides an enumeration for the valid A0 and A1 input voltage level values. There are a total of 16 valid slave address combinations that can be generated depending on the voltage level supplied to the address pin. For reference, refer to Table 2 of the :adi:`MAX9611` data sheet.
-
 
 Output Amplifier / Comparator Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,7 +187,6 @@ Similarly, the mux configuration can be set or read through the **max9611_set_mu
    +--------------------------+------------------------------------------------------------+
    
 
-
 Once the mux configuration has been set, the selected channel measurement can be read using the **max9611_get_raw** function.
 
 <note / important> The **max9611_get_raw** function only allows reading of single channel measurements i.e., Current Sense Amplifier (CSA) input only. Setting the device to fast mode via **max9611_set_mux** for a burst read of multiple channels will require a multi-byte register read starting from the CSA MSB register (0x00) up to the Temp LSB register (0x09) using the **max9611_read** function. ** Die Temperature Measurement \*\*
@@ -190,7 +196,6 @@ By configuring the internal mux using **max9611_set_mux** function, the die temp
 .. note::
 
    Refer to Table 1 of :adi:`MAX9611` data sheet for the converting the LSB read into its corresponding temperature measurement.
-
 
 Watchdog/Retry/Latch Functionality
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -208,8 +213,8 @@ The :adi:`MAX9611`'s internal digital block sports a watchdog function for handl
    ===================== =================================================
    
 
-
-The valid delay times for the watchdog delay and retry delay times are as follows:
+The valid delay times for the watchdog delay and retry delay times are as
+follows:
 
 \*\* Watchdog Delay Times \*\*
 
@@ -222,7 +227,6 @@ The valid delay times for the watchdog delay and retry delay times are as follow
    ================= ==================================
    
 
-
 \*\* Watchdog Retry Delay Times \*\*
 
 .. container:: center box
@@ -233,7 +237,6 @@ The valid delay times for the watchdog delay and retry delay times are as follow
    **MAX9611_10MS** 10 mS watchdog retry delay time
    ================ =========================================
    
-
 
 During Normal Operation (MAX9611_NORMAL_MODE), the internal amplifier output depends on its inputs: the CSA output and the **SET** pin voltage level. This internal amplifier can act as a comparator for open-loop configurations.
 
@@ -383,7 +386,6 @@ Example Initialization Using Maxim SDK as Platform
                if (retries[i] != rtime_new)
                    rcnt++;
            }
-
 
            ret = max9611_shutdown(max9611_device, true);
            if (ret)

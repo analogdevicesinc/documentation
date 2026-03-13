@@ -25,7 +25,8 @@ It is possible to configure the AD9361 chip directly from sysfs. The interesting
    root@linaro-ubuntu-desktop:~# cat /sys/bus/iio/devices/iio:device1/name
    ad9361-phy
 
-This directory contains several files, some of which can be used to read raw values from the hardware, while others are used to configure the ad9361 chip.
+This directory contains several files, some of which can be used to read raw
+values from the hardware, while others are used to configure the ad9361 chip.
 
 ::
 
@@ -65,7 +66,7 @@ Equipment used
 This test has been realized with a `Zed board <http://zedboard.org/content/overview>`_, coupled with a :adi:`ad-fmcomms3-ebz` module.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/board2.jpg
-   :width: 300px
+   :width: 300
 
 Monitoring the FM band
 ----------------------
@@ -73,7 +74,7 @@ Monitoring the FM band
 We will monitor the most used FM band, from 87.5 MHz to 107.9 MHz. The :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>` can be configured like this:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/capture4.png
-   :width: 300px
+   :width: 300
 
 -  **RX LO Frequency**: the base frequency at which the hardware will be tuned. Set to 87.4 MHz (and not 87.5, since 87.5 is the middle of a 200 KHz channel);
 -  **RF Baudwidth**: the size of the band you want to capture. Here, we want at least a band of 107.9 - 87.5 = 20.4 MHz
@@ -82,9 +83,10 @@ We will monitor the most used FM band, from 87.5 MHz to 107.9 MHz. The :doc:`IIO
 Lanch a capture, and you will be able to see peaks in the frequency domain:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/capture3.png
-   :width: 300px
+   :width: 300
 
-In this screenshot, it is clearly possible to identify several channels: at 95.5 MHz, 96.3 MHz, 97.5 MHz, 98.4 MHz among other frequencies.
+In this screenshot, it is clearly possible to identify several channels: at 95.5
+MHz, 96.3 MHz, 97.5 MHz, 98.4 MHz among other frequencies.
 
 Playback
 --------

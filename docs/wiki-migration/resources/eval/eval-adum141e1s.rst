@@ -50,24 +50,22 @@ Evaluation Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adum141e1s_eval_board.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 1. ADUM141E1S Evaluation board—*\ :adi:`EVAL-ADUM141E1S`\
-
 
 Evaluation Board Schematic
 --------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adum141e1s_eval_board_schematic.png
    :align: center
-   :width: 1600px
+   :width: 1600
 
 .. container:: centeralign
 
    \ *Figure 2. ADUM141E1S Evaluation Board Schematic—*\ :adi:`EVAL-ADUM141E1S`\
-
 
 Figure 2 shows the :adi:`ADUM141E1S <ADuM141ES>` schematic of the :adi:`EVAL-ADUM141E1S` evaluation board. U1 is the :adi:`ADUM141E1S <ADuM141ES>` in the center of the board and Pin 1 is the top-left pad with respect to the notch in the silkscreen’s package outline.
 
@@ -92,40 +90,43 @@ Example Test Procedure
 
 -  Install the 50Ω input resistors (R6 and R16).
 -  Install the 15 pF load capacitors (C8, C9, C10, and C11).
--  Connect the evaluation board to the test equipment. See Figure 2 below. Note: Make sure the pulse generator and power supply outputs are disabled.
+-  Connect the evaluation board to the test equipment. See Figure 2 below. Note:
+   Make sure the pulse generator and power supply outputs are disabled.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adum141e1s_eval_board_connections.jpg
    :align: center
-   :width: 1600px
+   :width: 1600
 
 .. container:: centeralign
 
    \ *Figure 2. ADUM141E1S Example Test Configuration—*\ :adi:`EVAL-ADUM141E1S`\
 
-
 -  Once the connections have been made in Step 3 (Figure 2) set both output of the power supply to 5V. Enable the outputs.
 -  Configure the pulse generator to produce a 0V – 5V step, 75MHz Square Wave with an offset value of 2.5V. (If using the Agilent B1110A the max amplitude at 75MHz will be 4 V) Enable the pulse generator output. Note: This provides an input to the A Channel (VIA, J1) of the evaluation board.
 -  Set the oscilloscope to the following settings: CH1 = 750 mV/div, Time Base = 2 ns/div.
 -  Select the following measurements for CH1: Amplitude, Rise Time, Fall Time, and Frequency.
--  Use the N2796A active probe to capture the A Channel Output (VOA) at connector J5 (a 75 MHz square with an amplitude of approximately 5 V should be visible). An example plot is shown below in Figure 3.
+-  Use the N2796A active probe to capture the A Channel Output (VOA) at
+   connector J5 (a 75 MHz square with an amplitude of approximately 5 V should
+   be visible). An example plot is shown below in Figure 3.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adum141e1s_example_output_waveform.png
    :align: center
-   :width: 1600px
+   :width: 1600
 
 .. container:: centeralign
 
    \ *Figure 3. ADUM141E1S Example Output Waveforem—*\ :adi:`EVAL-ADUM141E1S`\
 
-
 -  Check the supply current on both outputs of the power supply to ensure that IDD1 and IDD2 does not exceed 25 mA.
--  Repeat steps 6 and 7 for any of the remaining channels desired for test (B, C and/or D) by connecting the pulse generator to the appropriate input channel and the oscilloscope to its corresponding output. Refer to the table below for connections:
+-  Repeat steps 6 and 7 for any of the remaining channels desired for test (B, C
+   and/or D) by connecting the pulse generator to the appropriate input channel
+   and the oscilloscope to its corresponding output. Refer to the table below
+   for connections:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adum141e1s_connection_table.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Table 2. ADUM141E1S Evaluation Board Connection Table—*\ :adi:`EVAL-ADUM141E1S`\
-

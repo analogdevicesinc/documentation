@@ -28,19 +28,24 @@ Reference Circuits
 Overview
 ========
 
-
 The :adi:`AD7476`/:adi:`AD7477`/:adi:`AD7478` are, respectively, 12-bit, 10-bit, and 8-bit, high speed, low power, successive approximation ADCs. The parts operate from a single 2.35 V to 5.25 V power supply and feature throughput rates up to 1 MSPS. Each part contains a low noise, wide bandwidth track-and-hold amplifier that can handle input frequencies in excess of 6 MHz.
 
-The conversion process and data acquisition are controlled using CS the serial clock, allowing the devices to interface with microprocessors or DSPs. The input signal is sampled on the falling edge of CS and the conversion is initiated at this point. There are no pipeline delays associated with these parts.
+The conversion process and data acquisition are controlled using CS the serial
+clock, allowing the devices to interface with microprocessors or DSPs. The input
+signal is sampled on the falling edge of CS and the conversion is initiated at
+this point. There are no pipeline delays associated with these parts.
 
 The :adi:`AD7476`/:adi:`AD7477`/:adi:`AD7478` use advanced design techniques to achieve very low power dissipation at high throughput rates. The reference for the parts is taken internally from VDD. This allows the widest dynamic input range to the ADC. Thus, the analog input range for the parts are 0 V to VDD. The conversion rate is determined by the SCLK.
 
 .. image:: https://wiki.analog.com/_media/resources/pmods/ad7476_pmod_ad1.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -48,9 +53,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD74xx part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD74xx driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD74xx driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD74xx driver:
 
@@ -64,7 +73,6 @@ There are three functions which are called by the AD74xx driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of AD74xx driver:
 

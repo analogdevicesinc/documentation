@@ -45,7 +45,8 @@ Initialization example
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available at:
 
 -  `JESD204B/C Receive Peripheral Header file <http://analogdevicesinc.github.io/no-OS/doxygen/axi__jesd204__rx_8h.html>`_
 -  `JESD204B/C Receive Peripheral Source file <http://analogdevicesinc.github.io/no-OS/doxygen/axi__jesd204__rx_8c.html>`_
@@ -60,4 +61,3 @@ Source Code
    -  :git-no-OS:`Implementation of JESD204B/C Receive Peripheral Driver. <drivers/axi_core/jesd204/axi_jesd204_rx.c>`
    -  :git-no-OS:`Header of JESD204B/C Receive Peripheral Driver. <drivers/axi_core/jesd204/axi_jesd204_rx.h>`
    
-

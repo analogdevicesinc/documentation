@@ -22,7 +22,8 @@ Features
    -  DC Link Voltage measurement
 
 -  BEMF zero cross detection for sensorless control of PMSM or BLDC motors
--  Separate voltage supplies for the 2 motors so that the motors don’t influence each other
+-  Separate voltage supplies for the 2 motors so that the motors don’t influence
+   each other
 
 +---+
 +---+
@@ -31,7 +32,7 @@ Block Diagram
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/lv_block_diagram_simplified.png
-   :width: 400px
+   :width: 400
 
 +---+
 +---+
@@ -79,7 +80,7 @@ Switches
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/lv_reset.png
    :alt: Switches
-   :width: 600px
+   :width: 600
 
 **Emergency Stop** switch
 
@@ -108,8 +109,7 @@ Downloads
    -  `Allegro Board File <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/ad-drvlv2-ebz_layout.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).
    
 
-
 .. |AD-DRVLV2-EBZ Top| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/ad-drvlv2-ebz_top_parts.jpg
-   :width: 600px
+   :width: 600
 .. |AD-DRVLV2-EBZ Bottom| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/ad-drvlv2-ebz_bottom_parts.jpg
-   :width: 450px
+   :width: 450

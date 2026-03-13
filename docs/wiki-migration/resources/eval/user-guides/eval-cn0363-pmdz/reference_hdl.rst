@@ -5,7 +5,6 @@ EVAL-CN0363-PMDZ HDL Reference Design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/cn0363/index.html\
 
-
 Functional Overview
 -------------------
 
@@ -50,7 +49,8 @@ FPGA Reference Designs on GitHub :
    **Vivado Downloads**
 
    
-   -  Main repository with latest changes (always synced with the latest release)
+   -  Main repository with latest changes (always synced with the latest
+      release)
    
       -  `hdl <https://github.com/analogdevicesinc/hdl>`_
    
@@ -59,11 +59,15 @@ FPGA Reference Designs on GitHub :
       -  :git-hdl:`tree/hdl_2015_r1`
    
 
-
 Base reference design
 ---------------------
 
-The EVAL-CN0363-PMDZ HDL reference design is built on-top the standard Analog Devices base HDL reference design for the ZED board. The base reference design implements basic input and output connectivity to the ZED board, like USB, HDMI-out and audio support. It also instantiated the Xilinx PS7 processing system which contains a dual core ARM A9 applications processor which is used for running software corresponding to the reference design.
+The EVAL-CN0363-PMDZ HDL reference design is built on-top the standard Analog
+Devices base HDL reference design for the ZED board. The base reference design
+implements basic input and output connectivity to the ZED board, like USB,
+HDMI-out and audio support. It also instantiated the Xilinx PS7 processing
+system which contains a dual core ARM A9 applications processor which is used
+for running software corresponding to the reference design.
 
 SPI communication
 -----------------
@@ -91,17 +95,30 @@ Synchronous detector processing pipeline
 
 The first block in the EVAL-CN0363-PMDZ processing pipeline is the :doc:`cn0363_phase_data_sync </wiki-migration/resources/fpga/peripherals/cn0363/phase_data_sync>` core. It takes a snapshot of the phase counter when a rising edge is detected on conversion done signal. It will then wait for the corresponding data sample to be read from the ADC by the SPI block. Once both data and phase are ready they will be given to the next step in the processing pipeline. The core also converts the ADC data from offset binary to two's complement signed format.
 
-As the next step the ADC data is sent through a high-pass filter which is configured to remove noise below 50 Hz and any DC components.
+As the next step the ADC data is sent through a high-pass filter which is
+configured to remove noise below 50 Hz and any DC components.
 
 After that the output data from the high-pass filter and the phase corresponding phase data is send through a `CORDIC de-modulator <https://en.wikipedia.org/wiki/CORDIC>`_. The CORDIC de-modulator will calculate the result of the data multiplied by both the cosine and sine of the phase. The output is the demodulated in-phase (I) and quadrature (Q) components data corresponding to the original input signal.
 
-The I and Q components are send into a low-pass filter with a small pass band which is used to remove frequency components which are different from the excitation frequency.
+The I and Q components are send into a low-pass filter with a small pass band
+which is used to remove frequency components which are different from the
+excitation frequency.
 
 The final block in the processing pipeline is a :doc:`sequencer block </wiki-migration/resources/fpga/peripherals/cn0363/sequencer>` which cycles through the initial input data, the intermediate results and the final processing result and sends them to the DMA controller which will copy them to system memory. Each of sequencer channels can be independently enabled or disabled. If a channel is discarded and not send to the DMA. During normal operation typically all but the final processing results are discarded.
 
-The various broadcasting blocks in the processing pipeline are used to forward the data to the next processing element of the pipeline as well as to the sequencer which sends them to the DMA. The later allows to inspect the intermediate results of the processing pipeline.
+The various broadcasting blocks in the processing pipeline are used to forward
+the data to the next processing element of the pipeline as well as to the
+sequencer which sends them to the DMA. The later allows to inspect the
+intermediate results of the processing pipeline.
 
-Both filters are configured in a time-division-multiplexing configuration. This means for each channel (2 for the high-pass filter and 4 for the low-pass filter) there is a storage for saving the filter inputs, but the logic for calculating the filter output as well as the coefficients are shared between each channel. This is possible since the ADC is running at a output data rate of 50 kHz while the FPGA pipeline is running at 100 MHz. Which gives about 2000 clock cycles to process each high-pass filter result and 1000 clock cycles for each low-pass filter result.
+Both filters are configured in a time-division-multiplexing configuration. This
+means for each channel (2 for the high-pass filter and 4 for the low-pass
+filter) there is a storage for saving the filter inputs, but the logic for
+calculating the filter output as well as the coefficients are shared between
+each channel. This is possible since the ADC is running at a output data rate of
+50 kHz while the FPGA pipeline is running at 100 MHz. Which gives about 2000
+clock cycles to process each high-pass filter result and 1000 clock cycles for
+each low-pass filter result.
 
 Building the Design
 -------------------

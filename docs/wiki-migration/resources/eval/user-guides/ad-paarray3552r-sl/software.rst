@@ -6,7 +6,8 @@ Downloads
 
 .. container:: indent
 
-   The AD-PAARRAY3552R-SL Embedded and Application Software files are available here:
+   The AD-PAARRAY3552R-SL Embedded and Application Software files are available
+   here:
 
    
    .. admonition:: Download
@@ -25,7 +26,6 @@ Downloads
 
    
 
-
 Embedded Software
 ~~~~~~~~~~~~~~~~~
 
@@ -38,17 +38,21 @@ Updating the Firmware
 
 .. container:: indent
 
-   The most common way of programming the system is by dragging and dropping the provided .hex file to the DAPLINK drive. Using the drag-and-drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the easiest way to get started with the reference design.
+   The most common way of programming the system is by dragging and dropping the
+   provided .hex file to the DAPLINK drive. Using the drag-and-drop method, the
+   software is going to be a version that Analog Devices creates for testing and
+   evaluation purposes. This is the easiest way to get started with the
+   reference design.
 
    
-
 
 Setting up the MAX32625PICO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
-   To update the board's firmware, a new bootloader has to be flashed on the MAX32625PICO. Follow below procedure:
+   To update the board's firmware, a new bootloader has to be flashed on the
+   MAX32625PICO. Follow below procedure:
 
    
    -   Download the firmware image: `MAX32625PICO Firmware <https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/max32625_max32666fthr_if_crc_swd_v1.0.5.bin.zip>`_
@@ -58,13 +62,15 @@ Setting up the MAX32625PICO
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
       :align: center
-      :width: 400px
+      :width: 400
    
    -   Release the button once the MAINTENANCE drive is mounted.
    -   Drag and drop (to the MAINTENANCE drive) the firmware image.
-   -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the AD-PAARRAY3552R-SL board.
+   -   After a few seconds, the MAINTENANCE drive will disappear and be replaced
+       by a drive named DAPLINK. This indicates that the process is complete,
+       and the MAX32625PICO can now be used to flash the firmware of the
+       AD-PAARRAY3552R-SL board.
    
-
 
 Programming the AD-PAARRAY3552R-SL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,22 +85,25 @@ Programming the AD-PAARRAY3552R-SL
    -   Check the DAPLINK directory and make sure there is no **FAIL.TXT** file. In case there is, repeat the drag and drop step. Otherwise, the MAX32625PICO can now be disconnected from the AD-PAARRAY3552R-SL, since the firmware update is complete.
    
 
-
 --------------
 
 Application Software
 ~~~~~~~~~~~~~~~~~~~~
 
- The system also integrates a graphical user interface (GUI) that continuously monitors crucial parameters. This interface facilitates complete system control, enabling faster prototyping and development.
+ The system also integrates a graphical user interface (GUI) that continuously
+ monitors crucial parameters. This interface facilitates complete system
+ control, enabling faster prototyping and development.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_dashboard.png
    :alt: gui_dashboard.png
    :align: center
-   :width: 800px
+   :width: 800
 
 **Figure 1. Graphical User Interface (GUI)**
 
-The application software requires additional dependencies that need to be installed on PC for the GUI to function properly. To acquire these dependencies, click the link below.
+The application software requires additional dependencies that need to be
+installed on PC for the GUI to function properly. To acquire these dependencies,
+click the link below.
 
 .. admonition:: Download
    :class: download
@@ -103,7 +112,6 @@ The application software requires additional dependencies that need to be instal
 
    
    `.NET Framework 4.6.2 Runtime <https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net462-web-installer>`_
-
 
 --------------
 
@@ -201,30 +209,29 @@ Graphical User Interface Walkthrough
 
    
 
-
 --------------
 
 Further Help
 ~~~~~~~~~~~~
 
-For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
+For questions and more information about this product, connect with us through
+the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_home.png
-   :width: 410px
+   :width: 410
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_dashboard.png
-   :width: 410px
+   :width: 410
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_historical_graph.png
-   :width: 410px
+   :width: 410
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_device_group.png
-   :width: 410px
+   :width: 410
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_control_group.png
-   :width: 410px
+   :width: 410
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_control_group_main.png
-   :width: 410px
+   :width: 410
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_logs_groups.png
-   :width: 410px
+   :width: 410

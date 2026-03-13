@@ -18,7 +18,10 @@ Supported Devices
 Description
 -----------
 
-The ADF4360 is a fully integrated integer-N synthesizer and voltage controlled oscillator (VCO). Control of all the on-chip registers is through a simple 3-wire interface. The device operates with a power supply ranging from 3.0 V to 3.6 V and can be powered down when not in use.
+The ADF4360 is a fully integrated integer-N synthesizer and voltage controlled
+oscillator (VCO). Control of all the on-chip registers is through a simple
+3-wire interface. The device operates with a power supply ranging from 3.0 V to
+3.6 V and can be powered down when not in use.
 
 Source Code
 ===========
@@ -46,12 +49,12 @@ Files
 Enabling the driver
 ===================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADF4360 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -68,10 +71,10 @@ Adding a device tree entry
 Device tree example
 ~~~~~~~~~~~~~~~~~~~
 
-The following example instantiates the adf4360 driver for a adf4360-7 device connected on the SPI bus to the chip-select line 0.
+The following example instantiates the adf4360 driver for a adf4360-7 device
+connected on the SPI bus to the chip-select line 0.
 
 ::
-
 
    / {
        clocks {

@@ -5,7 +5,9 @@ General Description/Overview
 
 The International Organization for Standardization (ISO) developed a design standard known as ISO 7027 Water Quality—Determination of Turbidity, which is best known for its requirement of a monochromatic light source. Most instruments that comply with this standard use an 860 nm LED light source and a primary detector at an angle of 90°. Additional detection angles are allowed, such as a detector at an angle of 180°, to increase the range of measurable turbidity levels.
 
-The demo uses a network of 860 nm infrared emitters and silicon PIN photodiodes to achieve a water turbidity measurement system. The system can measure low to high water turbidity levels ranging from 0 FTU to 1000 FTU.
+The demo uses a network of 860 nm infrared emitters and silicon PIN photodiodes
+to achieve a water turbidity measurement system. The system can measure low to
+high water turbidity levels ranging from 0 FTU to 1000 FTU.
 
 Demo Requirements
 =================
@@ -77,26 +79,26 @@ Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. D
    -  :git-EVAL-ADICUP3029:`EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_adpd410x <projects/ADuCM3029_demo_adpd410x>`
    
 
-
 DIY Test Board Setup
 ====================
 
 To set up the optical path, use the prototype board that comes in the box with the :adi:`EVAL-ADPD410x-ARDZ` as a base. The connection diagram for the QED123 LED and the two QSD123 is shown below:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x/turbidity-connectiondiagram.png
-   :width: 600px
+   :width: 600
 
 -  To connect to the :adi:`EVAL-ADPD410x-ARDZ`, solder the two 18-pin single row female headers at the bottom sides of the prototype board.
 -  Solder the four 6-pin female headers enclosing a 5 x 5 pad space as a DIY cuvette holder.
 -  Solder the LEDs and photodiodes at 3 adjacent sides of the cuvette holder and directed inward. A photo of a completed test board setup mounted on the :adi:`EVAL-ADPD410X-ARDZ` and the :adi:`EVAL-ADICUP3029` is shown below using Female-to-Female headers for connection.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x/img_20220720_150406.jpg
-   :width: 600px
+   :width: 600
 
-You can place a sample placed in a cuvette to the square space at the center, as shown below.
+You can place a sample placed in a cuvette to the square space at the center, as
+shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x/img_20220722_130556.jpg
-   :width: 600px
+   :width: 600
 
 Software Setup
 ==============
@@ -111,11 +113,16 @@ This demo uses a PyADI-IIO example script. See :doc:`Software Setup </wiki-migra
 
 |image6|
 
--  When the board is detected, you will be asked to specify the demo application to use. Since this setup is only applicable for turbidity measurements, enter 3.
+-  When the board is detected, you will be asked to specify the demo application
+   to use. Since this setup is only applicable for turbidity measurements, enter
+   3.
 
 |image7|
 
--  A plot will appear showing the measured and computed turbidity in FTU. You have the option to save a copy of the displayed waveform at any point in time using the matplotlib controls at the top. Remove the cuvette and replace the sample with a different turbidity to observe the measurement change.
+-  A plot will appear showing the measured and computed turbidity in FTU. You
+   have the option to save a copy of the displayed waveform at any point in time
+   using the matplotlib controls at the top. Remove the cuvette and replace the
+   sample with a different turbidity to observe the measurement change.
    **Low Turbidity Sample**
 
    |image8|
@@ -126,13 +133,14 @@ This demo uses a PyADI-IIO example script. See :doc:`Software Setup </wiki-migra
 
 .. important::
 
-   The measurements obtained have not been tested and verified with the actual turbidity measurement, and is not expected to be accurate. The demo showcases a proof-of-concept DIY setup for turbidity measurement, which users can tweak and improve upon.
-
+   The measurements obtained have not been tested and verified with the actual
+   turbidity measurement, and is not expected to be accurate. The demo showcases
+   a proof-of-concept DIY setup for turbidity measurement, which users can tweak
+   and improve upon.
 
 .. important::
 
    The demo script uses the same approximation used in :doc:`Linear Approximation using 3-Point Calibration </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503/turbidity>`.
-
 
 Reference Links
 ===============
@@ -140,20 +148,20 @@ Reference Links
 -  :doc:`Hardware User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fl_adpd410x_jumperconn.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/p10_empty.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/jp1_5v.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iosel_shunt.png
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/arduinoconnection.jpg
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pyadiiio_example2_comport.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_selectapplication.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x/screenshot_2022-07-22_133951.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x/screenshot_2022-07-22_133731.png
-   :width: 400px
+   :width: 400

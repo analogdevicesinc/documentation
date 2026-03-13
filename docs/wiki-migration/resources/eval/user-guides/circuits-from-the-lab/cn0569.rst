@@ -8,7 +8,7 @@ The :adi:`EVAL-CN0569-PMDZ` is a 4-layer printed circuit board (PCB) that allows
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/eval-cno569-pmdz_angle-web.gif
    :align: center
-   :width: 400px
+   :width: 400
 
 Designed to use the I²C Pmod hardware interface, the :adi:`EVAL-CN0569-PMDZ` features a small form-factor with PCB dimensions of 2.7 in (68.58 mm) × 0.8 in (20.32 mm) x 0.062 in (1.5748 mm). The evaluation board uses the standard 1 x 6, 0.1 in (2.54 mm) right-angle male header for I²C Pmod devices. Two 3D-printed optical baffles are included with the :adi:`EVAL-CN0569-PMDZ` for use with the onboard :adi:`ADPD2140` sensors.
 
@@ -20,13 +20,12 @@ Designed to use the I²C Pmod hardware interface, the :adi:`EVAL-CN0569-PMDZ` fe
    -  EVAL-CN0569-PMDZ Circuit Evaluation Board (:adi:`Buy <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0569-PMDZ>`)
    
 
-
 Evaluation Board Hardware
 -------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/eval-cn0569-pmdz-top-labels.png
    :align: center
-   :width: 800px
+   :width: 800
 
 I²C Pmod Connector (P1)
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,7 +34,7 @@ The controller board must be connected to the :adi:`EVAL-CN0569-PMDZ` through th
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/eval-cn0569-pmdz-i2c-pmod-connector.png
    :align: right
-   :width: 200px
+   :width: 200
 
 +--------------------------------+--------------+-------------------------------------------------------------------------------------------------------------+
 | I²C Pmod Connector (P1) Pinout |              |                                                                                                             |
@@ -57,16 +56,17 @@ The controller board must be connected to the :adi:`EVAL-CN0569-PMDZ` through th
 
 | 
 
-
 .. note::
 
-   Connecting Hardware Designed for Digilent I²C Pmod Interface Specification Ver. 1.0.0:
+   Connecting Hardware Designed for Digilent I²C Pmod Interface Specification
+   Ver. 1.0.0:
 
    
-   Version 1.0.0 of the Digilent Pmod Interface Specification required 2×4 headers to be used for I²C devices, instead of the 1x6 headers specified by later versions.
+   Version 1.0.0 of the Digilent Pmod Interface Specification required 2×4
+   headers to be used for I²C devices, instead of the 1x6 headers specified by
+   later versions.
    
    The :adi:`EVAL-CN0569-PMDZ` can still be used with controller boards that follow this old standard (such as the :adi:`EVAL-ADICUP3029`). In this case however, the INT pin of the evaluation board will have to be manually wired if access to the :adi:`ADPD1080` GPIO0 pin is needed by an application.
-
 
 Test Points (Power, GPIO, and LED Driver Pins)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +75,7 @@ The :adi:`EVAL-CN0569-PMDZ` contains several test points that can be used to con
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/eval-cn0569-pmdz-io-led-test-points.png
    :align: right
-   :width: 200px
+   :width: 200
 
 +------------------------------------------------+-------------------------+-------------------------------------------------------------------------------------------------------------+
 | Test Points (Power, GPIO, and LED Driver Pins) |                         |                                                                                                             |
@@ -108,11 +108,11 @@ The :adi:`EVAL-CN0569-PMDZ` contains several test points that can be used to con
 
    IO0 and IO1 are connected directly to the pins of the :adi:`ADPD1080`. Level shifting is needed to interface with these test points if the external circuit does not support 1.8 V logic.
 
-
 .. tip::
 
-   GPIO0 is also available via the INT pin of the I²C Pmod connector (P1). When accessed from this pin, the GPIO signal will use the Pmod VCC as its logic level (same as the I²C signals).
-
+   GPIO0 is also available via the INT pin of the I²C Pmod connector (P1). When
+   accessed from this pin, the GPIO signal will use the Pmod VCC as its logic
+   level (same as the I²C signals).
 
 If needed by the application, the three LED drivers of the :adi:`ADPD1080` can be used with external LEDs. To do this, connect the cathode pin of the external LED to any of the LED1, LED2 and LED3 test points. The anode pin of the external LED should be connected to a supply voltage.
 
@@ -120,11 +120,10 @@ If needed by the application, the three LED drivers of the :adi:`ADPD1080` can b
 
    LED1 is normally used by the infrared LED (IR_LED) of the :adi:`EVAL-CN0569-PMDZ`. To use this with an external LED instead, the zero Ohm resistor (R1) must be removed first.
 
-
 .. warning::
 
-   For proper operation with an external LED, the voltage level on the corresponding LED driver test point must not exceed 3.6 V.
-
+   For proper operation with an external LED, the voltage level on the
+   corresponding LED driver test point must not exceed 3.6 V.
 
 Test Points (Photodiode Inputs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,7 +132,7 @@ The :adi:`EVAL-CN0569-PMDZ` uses two :adi:`ADPD2140` sensors spaced 1 in (25.4 m
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/eval-cn0569-pmdz-breakaway.png
    :align: center
-   :width: 300px
+   :width: 300
 
 +---------------------------------+-------------------+------------------------------------------+-------------------+----------------+
 | Test Points (Photodiode Inputs) |                   |                                          |                   |                |
@@ -160,13 +159,11 @@ Gesture Sensing Reference Demo and Software
 
 A basic gesture sensing example application for the :adi:`EVAL-CN0569-PMDZ` was developed using the :adi:`EVAL-ADICUP3029` platform.
 
-
 |image1|
 
 .. note::
 
    For more information on this demo, please refer to the :doc:`Optical Gesture Sensor Demo page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0569/sw>`.
-
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -183,7 +180,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Assembly Drawing
    
 
-
 Registration
 ------------
 
@@ -191,8 +187,7 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0569-PMDZ?&v=Rev D>`_ to receive all these great benefits and more!
 
-
 *End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/cn0569-gesture-directions.png
-   :width: 600px
+   :width: 600

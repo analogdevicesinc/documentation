@@ -1,19 +1,26 @@
 Tutorial: Using MicroPython in Conjunction with Bare Metal Framework
 ====================================================================
 
-MicroPython is only running on the ARM core, the code for the SHARC core needs to be built separately. This page discusses how to use the MicroPython in conjunction with SHARC Audio Module Bare Metal Framework to build a simple reverb effect processor and control the parameters from MicroPython.
+MicroPython is only running on the ARM core, the code for the SHARC core needs
+to be built separately. This page discusses how to use the MicroPython in
+conjunction with SHARC Audio Module Bare Metal Framework to build a simple
+reverb effect processor and control the parameters from MicroPython.
 
 This tutorial is based on the example from :doc:`Tutorial: Implementing a Basic Delay Effect </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/delay-effect-tutorial>`. This tutorial assumes you have read and understand that tutorial. However, the Audio Project Fin is not required to complete this tutorial.
 
 Bare Metal Framework
 --------------------
 
-Normally, the bare metal framework runs on all three cores. If it needs to be used with MicroPython, some modification needs to be done to make it run on SHARC cores only.
+Normally, the bare metal framework runs on all three cores. If it needs to be
+used with MicroPython, some modification needs to be done to make it run on
+SHARC cores only.
 
 SHARC only version
 ~~~~~~~~~~~~~~~~~~
 
-In the current release of the SAM Bare Metal Framework (2.0.0), the SHARC only option does not exist. This page documents the process of modifying the framework to work on the SHARC core only.
+In the current release of the SAM Bare Metal Framework (2.0.0), the SHARC only
+option does not exist. This page documents the process of modifying the
+framework to work on the SHARC core only.
 
 This tutorial assumes:
 
@@ -26,7 +33,8 @@ This tutorial assumes:
 Framework initialization
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Normally, codec initialization is done in the ARM core, now they need to be done by the SHARC core.
+Normally, codec initialization is done in the ARM core, now they need to be done
+by the SHARC core.
 
 -  Copy the file ``audio_framework_8ch_sam_and_audioproj_fin_arm.c`` from ``core0/src/audio_frameworks`` to ``core1/src/audio_frameworks``. This file should show up in the core1 project in the CCES window. If not, try refreshing the project (F12).
 -  Open the the file that has just been copied. Make sure you open the copy in the core1 project.
@@ -66,21 +74,25 @@ Now the MIDI should work fine.
 Push button callback
 ^^^^^^^^^^^^^^^^^^^^
 
-Push button callback is normally handled by the ARM core, and need to be moved to the SHARC core. (Note this might not be necessary if user want to use the push button on the ARM side, outside of the BM framework.)
+Push button callback is normally handled by the ARM core, and need to be moved
+to the SHARC core. (Note this might not be necessary if user want to use the
+push button on the ARM side, outside of the BM framework.)
 
 To move it to the sharc core, simply copy ``callback_pushbuttons.cpp`` and ``callback_pushbuttons.h`` from core0/src to core1/src. Make sure the CCES detected the new file.
 
 Disable logging support
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Since ARM will have the control of the UART0, logging via UART will no longer be possible. Logging support need to be disabled.
+Since ARM will have the control of the UART0, logging via UART will no longer be
+possible. Logging support need to be disabled.
 
 In the ``drivers/bm_event_logging_driver.c``, comment out (or delete) content inside log_event function(line 549), ``event_logging_initialize_sharc_core`` function (line 586), and ``event_logging_process_queue_sharc_core`` function (line 611). Codes that are specific to ARM core doesn't need to be touched, as they will not be compiled.
 
 Add missing driver to Core1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Normally, only a selection of BM drivers are included in core1 the source tree. Interface drivers like TWI has been omitted. They need to be added back.
+Normally, only a selection of BM drivers are included in core1 the source tree.
+Interface drivers like TWI has been omitted. They need to be added back.
 
 -  Remove the drivers folder inside the src folder in the core1 project: right click on the drivers folder, select "Delete" in the popup menu. Click OK to confirm. (It will warning the files will be deleted from the file system, it is fine as it is an empty folder in the file system.)
 -  Add the link to the real drivers folder into the src folder: right click on the src folder, select "New → Folder."
@@ -88,12 +100,14 @@ Normally, only a selection of BM drivers are included in core1 the source tree. 
 -  Select "Link to alternate location (Linked Folder)", and type in ``PROJECT_LOC/../drivers``, the "Folder name" should be automatically filled with "drivers"
 -  Click finish
 
-This should add all available drivers to the core1 project. This need to be done for core 1 only.
+This should add all available drivers to the core1 project. This need to be done
+for core 1 only.
 
 Core1 start-up process
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Now everything should be moved to core1, some modification to the core 1 startup process is required.
+Now everything should be moved to core1, some modification to the core 1 startup
+process is required.
 
 -  Open ``startup_code_core1.cpp``
 -  Change both falsies in line 87 and 88 to true. (Now, core 1 will initialize the system clocks and control the HADC.)
@@ -123,7 +137,6 @@ Configure the IDE to generate LDR file only for SHARC cores
 
    You would need to build the project at least once before continue on.
 
-
 -  Right click on the core1 project, select Properties.
 -  Navigate to "C/C++ Build → Settings"
 -  In the "Build Artifact" tab, set "Artifact Type" to be "Loader File"
@@ -139,8 +152,8 @@ After making the changes, follow the tutorial at :doc:`Tutorial: Implementing a 
 
 .. note::
 
-   It's a good idea to test if the effect is working or not using the debugger first.
-
+   It's a good idea to test if the effect is working or not using the debugger
+   first.
 
 Export variables
 ~~~~~~~~~~~~~~~~
@@ -157,7 +170,12 @@ Add these three lines after ``float *sharc_core2_audio_out;`` (line 105) and bef
    float delay_feedback;
    float delay_length;
 
-Unfortunately, as this file would not be seen by the Python, the Python would have no idea where each variable will be located exactly. So it is necessary to count the offset address of these three variables and write them in the Python environment later. (Though it should not be hard to write a Python script to actually parse this file.) All float and uint32_t variable occupy 4 bytes, and the first variable starts at offset 0. So for example, in the code below:
+Unfortunately, as this file would not be seen by the Python, the Python would
+have no idea where each variable will be located exactly. So it is necessary to
+count the offset address of these three variables and write them in the Python
+environment later. (Though it should not be hard to write a Python script to
+actually parse this file.) All float and uint32_t variable occupy 4 bytes, and
+the first variable starts at offset 0. So for example, in the code below:
 
 .. code:: c
 
@@ -171,9 +189,13 @@ Unfortunately, as this file would not be seen by the Python, the Python would ha
 
 These three variable will have offset of 0, 4, and 8 bytes respectively.
 
-Currently, if you are using the Rel 2.0.0 version of SDK and put the variable at the exact place described before, variables that control the reverb effect should be at offset 172, 176, and 180 respectively. Note this should not change whether the audio project fin support is enabled or not.
+Currently, if you are using the Rel 2.0.0 version of SDK and put the variable at
+the exact place described before, variables that control the reverb effect
+should be at offset 172, 176, and 180 respectively. Note this should not change
+whether the audio project fin support is enabled or not.
 
-Next step would be modify the audio callback function to make it read the parameters from the shared variable, rather than potentiometer.
+Next step would be modify the audio callback function to make it read the
+parameters from the shared variable, rather than potentiometer.
 
 Open ``callback_audio_processing.cpp``, add the following code to the end of ``void processaudio_callback(void)`` function:
 
@@ -188,14 +210,18 @@ Open ``callback_audio_processing.cpp``, add the following code to the end of ``v
        delay_dry_mix = 1.0 - multicore_data->delay_mix;
        delay_feedback = multicore_data->delay_feedback;
 
-Now build the project into a binary LDR file. (refer to the SHARC only version section) Put the LDR file on a SD card formatted to FAT or FAT32 filesystem.
+Now build the project into a binary LDR file. (refer to the SHARC only version
+section) Put the LDR file on a SD card formatted to FAT or FAT32 filesystem.
 
 Python side
 -----------
 
-At the Python side, we need to first load the LDR file, use that to bootstrap the SHARC core, and second setting up the environment to allow read and write shared variables.
+At the Python side, we need to first load the LDR file, use that to bootstrap
+the SHARC core, and second setting up the environment to allow read and write
+shared variables.
 
-Assume the LDR file is called reverb.ldr and is in the SD card's root directory, write a Python script with the content below:
+Assume the LDR file is called reverb.ldr and is in the SD card's root directory,
+write a Python script with the content below:
 
 .. code:: python
 
@@ -211,7 +237,8 @@ Assume the LDR file is called reverb.ldr and is in the SD card's root directory,
 
 These code would open the loader file and bootstrap the SHARC core.
 
-Then we need to tell the Python where is the shared variables. Add the code blow to the script:
+Then we need to tell the Python where is the shared variables. Add the code blow
+to the script:
 
 .. code:: python
 
@@ -238,7 +265,8 @@ Then we need to tell the Python where is the shared variables. Add the code blow
 
 Note how the offset we counted before is defined here. For more information, please read MicroPython's documentation about uctypes: https://docs.micropython.org/en/latest/library/uctypes.html
 
-Save the script as delay_setup.py, and put it at the root directory of the SD card.
+Save the script as delay_setup.py, and put it at the root directory of the SD
+card.
 
 Inside the MicroPython REPL (console), type in:
 
@@ -248,7 +276,8 @@ Inside the MicroPython REPL (console), type in:
 
 It should boot up the SHARC core and setup the variable mapping. Try use ``print(sharc_data.core1_load)`` to view the load, and use ``sharc_data.delay_mix = 0.8`` to change the parameters.
 
-It is also easy to write a simple user interface to control the parameter with arrow keys within python like this example:
+It is also easy to write a simple user interface to control the parameter with
+arrow keys within python like this example:
 
 .. code:: python
 
@@ -296,4 +325,3 @@ It is also easy to write a simple user interface to control the parameter with a
            break
 
 Save the code inside the SD card, and run the code using ``execfile`` as before. You should be able to control the effect from the console.
-

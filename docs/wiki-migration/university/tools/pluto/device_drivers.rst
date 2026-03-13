@@ -1,11 +1,12 @@
 Device Drivers Overview
 =======================
 
-Below block diagram shows a simplified view of the system. Not shown are DDR Memory, QUAD SPI Flash, USB, LEDs and Buttons.
+Below block diagram shows a simplified view of the system. Not shown are DDR
+Memory, QUAD SPI Flash, USB, LEDs and Buttons.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/pluto_dd.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Low level Linux device drivers
 ------------------------------

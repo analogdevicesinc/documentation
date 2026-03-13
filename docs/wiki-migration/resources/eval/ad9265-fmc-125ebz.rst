@@ -5,7 +5,6 @@ EVALUATING THE AD9265 ANALOG-TO-DIGITAL CONVERTER
 
    \ NOTE: Support for the AD9265-fmc is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
 
-
 Preface
 -------
 
@@ -18,14 +17,13 @@ Typical Measurement Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_fmc_125ebz_typical_setup.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 1. Evaluation Board Connection—*\ :adi:`AD9265-FMC-125EBZ <AD9265>`\ *(on Left) and
 
    *:adi:`EVAL-SDP-CH1Z <sdp>`\ *SDP-H1 (on Right)*
-
 
 Features
 --------
@@ -83,14 +81,16 @@ This section provides quick start procedures for using the :adi:`AD9265-FMC-125E
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
 
-Before using the software for testing, configure the evaluation board as follows:
+Before using the software for testing, configure the evaluation board as
+follows:
 
 -  Connect the evaluation board to the data capture board, as shown in Figure 1.
 -  Connect one 12V switching power supply to the :adi:`EVAL-SDP-CH1Z <sdp>` SDP-H1 board.
 -  Connect the :adi:`EVAL-SDP-CH1Z <sdp>` SDP-H1 board to the PC with a USB cable. (Connect to J1)
 -  On using the on-board clock in the board, connect the Pin 1 and Pin 3 in P2.
 -  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal to the input channel (J100). Use a 1 m, shielded, RG-58, 50 Ω coaxial cable to connect the signal generator: For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (Analog Devices uses TTE, Allen Avionics, and K & L band-pass filters)
--   If using external clock signal, remove the connector in P2 and use a clean signal generator to J201.
+-   If using external clock signal, remove the connector in P2 and use a clean
+    signal generator to J201.
 
 Using The Software for Testing
 ------------------------------
@@ -98,40 +98,38 @@ Using The Software for Testing
 Setting up the ADC Data Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After configuring the board, set up the ADC data capture using the following steps:
+After configuring the board, set up the ADC data capture using the following
+steps:
 
 -  Start Visual Analog.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_start_button.png
    :align: center
-   :width: 100px
+   :width: 100
 
 .. container:: centeralign
 
    \ *Figure 2. VisualAnalog, Start Button*\
 
-
 -  Select AD9265 and double click FFT
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_new_canvas.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 3. VisualAnalog, New Canvas Window*\
 
-
 -  Click settings under ADC Data Capture section.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_adc_data_capture_2.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    \ *Figure 4. VisualAnalog, ADC Data Capture Section*\
-
 
 -  Set device to AD9265.
 -  Navigate to Capture Board and browse your file directory for the FPGA Image called. (ad9265_sdph1.bin)
@@ -139,12 +137,11 @@ After configuring the board, set up the ADC data capture using the following ste
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_adc_data_capture_setting_fpga.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 5. VisualAnalog, ADC Data Capture Settings*\
-
 
 Evaluation And Test
 -------------------
@@ -156,107 +153,100 @@ Setting up the SPI Controller Software
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_start_button.png
    :align: center
-   :width: 100px
+   :width: 100
 
 .. container:: centeralign
 
    \ *Figure 6. SPIController Start Button*\
 
-
 -  If a message opens saying "Read Test Failure", select Ignore.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_msg_ignore.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 7. 1st Ignore Test Failure*\
 
-
--  Click File > Cfg Open then find the file named "ad9265_16bit_125MSspiR03.cfg" and double click it.
+-  Click File > Cfg Open then find the file named "ad9265_16bit_125MSspiR03.cfg"
+   and double click it.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_cfg_open.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 8. Configuration Settings*\
 
-
 -  Again, if a message opens saying "Read Test Failure", select Ignore.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_msg_ignore.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 9. 2nd Ignore Test Failure*\
 
-
 -  Click Config > Controller Dialog.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_controller_dialog.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 10. Controller Dialog Guide*\
 
-
 -  Un-select SDO Active and click OK.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_unselect_sdo_2.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 11. Controller Dialog Setting*\
 
-
 -  Click Read chip ID and Read Chip Grade.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_read_chip_id_grade.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    \ *Figure 12. Read Chip ID and Read Chip Grade Section*\
-
 
 -  Go Back to Visual Analog and click Play button.
 
 Adjusting the Amplitude of the Input Signal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next step is to adjust the amplitude of the input signal for each channel as follows:
+The next step is to adjust the amplitude of the input signal for each channel as
+follows:
 
 -  Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9265 Average FFT** window (see Figure 13) to verify this.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_typical_window_2.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    *Figure 13. Graph Window of VisualAnalog*
 
-
 -  Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_disk_icon.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    *Figure 14. VisualAnalog Disk Icon*
-
 
 Testing Additional AD9265 Boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -277,7 +267,8 @@ If the FFT appears normal but the performance is poor, check the following:
 -  Make sure that the signal generators for the clock and the analog input are clean (low phase noise).
 -  Change the analog input frequency slightly if noncoherent sampling is being used, or use coherent frequencies.
 -  Make sure that the SPI configuration file matches the product being evaluated.
--  Make sure the there isn't any extra stress/torque on the clock and analog input connectors.
+-  Make sure the there isn't any extra stress/torque on the clock and analog
+   input connectors.
 
 If the FFT window remains blank after **Run** is clicked, do the following:
 

@@ -9,12 +9,23 @@ Crossfade (Data-Controlled)
 Description
 -----------
 
-This block creates a smooth transition between two input signals: the volume of one signal is decreased while the other input signal level increases, creating a gradual switch (cross-fade) between the inputs.
+This block creates a smooth transition between two input signals: the volume of
+one signal is decreased while the other input signal level increases, creating a
+gradual switch (cross-fade) between the inputs.
 
 Usage
 -----
 
-The output signal is selected by setting a value on the input control pin to the desired input's index, between 0.0 and 1.0. The control signal should be typically from a DC input block or RMS Table. 0.0 selects the lower input pin2, 1.0 selects the upper input pin1, and 0.5 mixes 0.5 times pin1 with 0.5 times pin2, etc. When the control input value changes, a cross fade is initiated between the current output and the newly selected input signal. The cross-fade transition rate (slew rate) can be adjusted using the numerical control on the block, (the maximum SW Slew Rate value is 23, which is a very slow fade). NumChannel controls the total number of output and input pairs (sharing the signal select control pin and SW slew).
+The output signal is selected by setting a value on the input control pin to the
+desired input's index, between 0.0 and 1.0. The control signal should be
+typically from a DC input block or RMS Table. 0.0 selects the lower input pin2,
+1.0 selects the upper input pin1, and 0.5 mixes 0.5 times pin1 with 0.5 times
+pin2, etc. When the control input value changes, a cross fade is initiated
+between the current output and the newly selected input signal. The cross-fade
+transition rate (slew rate) can be adjusted using the numerical control on the
+block, (the maximum SW Slew Rate value is 23, which is a very slow fade).
+NumChannel controls the total number of output and input pairs (sharing the
+signal select control pin and SW slew).
 
 Targets Supported
 -----------------
@@ -24,7 +35,6 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ========= ========== ================ ============= ================
 Crossfade B          B                S             B
 ========= ========== ================ ============= ================
-
 
 | ===== Pins =====
 

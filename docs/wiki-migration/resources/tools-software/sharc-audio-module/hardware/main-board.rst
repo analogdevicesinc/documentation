@@ -5,16 +5,15 @@ SHARC Audio Module(Revision 1.5)
 
    SHARC Audio Module revision 1.4 hardware reference information can be found at :doc:`Main Board(Revision 1.4) </wiki-migration/resources/tools-software/sharc-audio-module/hardware/main-board/rev1_4>`\
 
-
 The :adi:`SHARC Audio Module <sharcaudiomodule>` uses the :adi:`ADSP-SC589 <sc58x>` :adi:`sharc` processor along with an :adi:`ADAU1761 <en/products/audio-video/audio-codecs/adau1761.html>` SigmaDSP audio codec and an :adi:`AD2428W <en/products/ad2428w.html>` :adi:`a2b` transceiver in a compact form for audio development.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/sam-main-board-top.png
-   :width: 600px
+   :width: 600
 
 **The SHARC Audio Module Main Board**
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/main-board-diagram_1.5.png
-   :width: 600px
+   :width: 600
 
 **Block Diagram of the SHARC Audio Module Main Board**
 
@@ -23,8 +22,8 @@ Main Differences Between Rev 2.1 and Rev 1.5
 
 .. note::
 
-   The SHARC Audio Module revision 2.1 main hardware board needs the SHARC Audio Module Bare Metal SDK 2.2.0 software installation.
-
+   The SHARC Audio Module revision 2.1 main hardware board needs the SHARC Audio
+   Module Bare Metal SDK 2.2.0 software installation.
 
 -  Dedicated oscillators have replaced the programmable clock
 -  Ethernet PHY is now the ADIN1300
@@ -43,7 +42,6 @@ Schematics, PCB Layout, Bill of Materials
    -  `Design Package <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/sc589-mini_rev_2.1_design_database.zip>`_
    
 
-
 .. admonition:: Download
    :class: download
 
@@ -55,7 +53,6 @@ Schematics, PCB Layout, Bill of Materials
    -  `Design Package <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/adzs-sc589-mini_rev_1.5_design_database.zip>`_
    
 
-
 ADSP-SC589 SHARC DSP
 --------------------
 
@@ -64,24 +61,30 @@ The SHARC Audio Module is powered by the Analog Devices, Inc. :adi:`ADSP-SC589 <
 DDR3 2x 2Gb
 -----------
 
-There are two DDR3 channels on the SHARC Audio Module, each with a 2Gbit DDR3 module. In the default SHARC Audio Module configuration, one DDR3 module is used for Linux and the other used by the SHARC+ cores for audio processing.
+There are two DDR3 channels on the SHARC Audio Module, each with a 2Gbit DDR3
+module. In the default SHARC Audio Module configuration, one DDR3 module is used
+for Linux and the other used by the SHARC+ cores for audio processing.
 
 512Mb SPI Flash
 ---------------
 
-A 512Mbit SPI Flash on the SHARC Audio Module that is ready to be programmed with a users desired audio application.
+A 512Mbit SPI Flash on the SHARC Audio Module that is ready to be programmed
+with a users desired audio application.
 
 10/100/1000 Ethernet
 --------------------
 
-The SHARC Audio Module has a 10/100/1000 Ethernet module to provide network and internet access to the board.
+The SHARC Audio Module has a 10/100/1000 Ethernet module to provide network and
+internet access to the board.
 
 USB Type A Host Port and USB MicroAB Host/Device/OTG Port
 ---------------------------------------------------------
 
-The USB Type A port is Host mode only, and is for USB WiFi, Bluetooth and USB memory devices. The connector is combined with the Ethernet jack.
+The USB Type A port is Host mode only, and is for USB WiFi, Bluetooth and USB
+memory devices. The connector is combined with the Ethernet jack.
 
-The USB MicroAB can be a Host/Device or OTG connection. This interface can be used for USB Audio, along with the USBi Emulator.
+The USB MicroAB can be a Host/Device or OTG connection. This interface can be
+used for USB Audio, along with the USBi Emulator.
 
 Expansion Port P4
 -----------------
@@ -162,7 +165,8 @@ PD_09           ``63`` ``64`` PD_11
 USB/UART connector (P6)
 -----------------------
 
-This connector is for USB to UART communication using UART0 on the ADSP-SC589 processor.
+This connector is for USB to UART communication using UART0 on the ADSP-SC589
+processor.
 
 Automotive Audio Bus (A2B) Interface Duraclick (P6, P7)
 -------------------------------------------------------
@@ -181,7 +185,11 @@ SigmaDSP ADAU1761 Audio Codec
 
 The :adi:`ADAU1761 <en/products/audio-video/audio-codecs/adau1761.html>` is a low power, stereo audio codec with integrated digital audio processing that supports stereo 48 kHz record and playback. The stereo audio ADCs and DACs support sample rates from 8 kHz to 96 kHz as well as a digital volume control.
 
-The SigmaDSP® core features 28-bit processing (56-bit double precision). The processor allows system designers to compensate for the real-world limitations of microphones, speakers, amplifiers, and listening environments, resulting in a dramatic improvement in the perceived audio quality through equalization, multiband compression, limiting, and third-party branded algorithms.
+The SigmaDSP® core features 28-bit processing (56-bit double precision). The
+processor allows system designers to compensate for the real-world limitations
+of microphones, speakers, amplifiers, and listening environments, resulting in a
+dramatic improvement in the perceived audio quality through equalization,
+multiband compression, limiting, and third-party branded algorithms.
 
 The ADAU1761 is connected to the DAI ports on the ADSP-SC589 as follows:
 
@@ -195,7 +203,8 @@ The ADAU1761 is connected to the DAI ports on the ADSP-SC589 as follows:
 
 The 3.5mm Audio In/Out jacks are connected to the ADAU1761 SigmaDSP.
 
-The impedance of the 3.5mm signals is 16 ohms. The HP output pins to the expansion connectors are also 16 ohms.
+The impedance of the 3.5mm signals is 16 ohms. The HP output pins to the
+expansion connectors are also 16 ohms.
 
 SPDIF In/Out Jacks (J4, J5)
 ---------------------------
@@ -208,17 +217,21 @@ The SPDIF jacks are connected to the DAI ports on the ADSP-SC589.
 USBi Connector (P2)
 -------------------
 
-The USBi Connector on the SHARC Audio module allows for the use of the USBi adapter for bare metal programming.
+The USBi Connector on the SHARC Audio module allows for the use of the USBi
+adapter for bare metal programming.
 
 +12v Input Power Jack (P3)
 --------------------------
 
-The SHARC Audio Module was design for a 12V DC input, but can operated from 10v to 20v input to the barrel jack. A 12v 1.5A DC power supply is recommended. The barrel connector on the SHARC Audio Module can handle up to 3A current.
+The SHARC Audio Module was design for a 12V DC input, but can operated from 10v
+to 20v input to the barrel jack. A 12v 1.5A DC power supply is recommended. The
+barrel connector on the SHARC Audio Module can handle up to 3A current.
 
 MicroSD Card Slot (J6)
 ----------------------
 
-The MicroSD card slot on the SHARC Audio Module can be used to store the Linux OS as well as other data.
+The MicroSD card slot on the SHARC Audio Module can be used to store the Linux
+OS as well as other data.
 
 JTAG Interface (P1)
 -------------------
@@ -228,7 +241,8 @@ The JTAG interface allows for programming and debugging of the ADSP-SC589 using 
 Boot Mode Jumper (JP1)
 ----------------------
 
-The ADSP-SC589 has multiple boots modes. This jumper allows for three of the supported boot modes on the DSP, depending on jumper setting.
+The ADSP-SC589 has multiple boots modes. This jumper allows for three of the
+supported boot modes on the DSP, depending on jumper setting.
 
 ============== =============
 Jumper on Pins Boot Mode
@@ -241,7 +255,8 @@ None           ``No Boot``
 Pushbuttons (PB1, PB2)
 ----------------------
 
-Two GPIO pushbuttons are provided on the SHARC Audio Model. They are connected as follows:
+Two GPIO pushbuttons are provided on the SHARC Audio Model. They are connected
+as follows:
 
 -  ``PB1`` is connected to ``PF_00``
 -  ``PB2`` is connected to ``PF_01``
@@ -249,12 +264,14 @@ Two GPIO pushbuttons are provided on the SHARC Audio Model. They are connected a
 Reset Button (RESET)
 --------------------
 
-The Reset button resets all the hardware on the SHARC Audio Module. It will not reset anything on connected to the expansion connectors.
+The Reset button resets all the hardware on the SHARC Audio Module. It will not
+reset anything on connected to the expansion connectors.
 
 GPIO LEDs (LED10, LED11, LED12)
 -------------------------------
 
-There are three GPIO controlled LEDs on the SHARC Audio Module. They are connected as follows:
+There are three GPIO controlled LEDs on the SHARC Audio Module. They are
+connected as follows:
 
 -  ``LED10`` is connected to ``PD_01``
 -  ``LED11`` is connected to ``PD_02``
@@ -271,4 +288,3 @@ PB_08 Connection
 Low   ``TWI0``
 High  ``TWI1``
 ===== ==========
-

@@ -4,10 +4,16 @@ ADXUD1AEBZ (XUD1A) UP/DOWN CONVERTER BOARD
 General Description
 ===================
 
-The ADXUD1AEBZ evaluation board is a quad channel Up and Down converter designed for X Band general purpose use. The complete Analog Devices solution chain consist of amplifiers, LNAs, switches, mixers, integrated PLL/VCO, and power management circuitry all powered by a single +12V power supply. Frequency conversion can be accomplished using either the integrated PLL/VCO or an external LO. This evaluation board is intended to be used with an external Low Noise Amplifier and Power Amplifier to set the desired noise figure and output power of the user's signal chain.
+The ADXUD1AEBZ evaluation board is a quad channel Up and Down converter designed
+for X Band general purpose use. The complete Analog Devices solution chain
+consist of amplifiers, LNAs, switches, mixers, integrated PLL/VCO, and power
+management circuitry all powered by a single +12V power supply. Frequency
+conversion can be accomplished using either the integrated PLL/VCO or an
+external LO. This evaluation board is intended to be used with an external Low
+Noise Amplifier and Power Amplifier to set the desired noise figure and output
+power of the user's signal chain.
 
 The ADXUD1AEBZ consist of 4 channels capable of up and down conversion over a RF frequency band from 8 GHz to 12 GHz and IF frequency band from 4.2 GHz to 6.3 GHz. The RF input/outputs on the evaluation board are brought out to SMA coaxial connectors whereas the IF input/outputs are brought out to SMPM coaxial connectors specifically designated for transmit or receive. Digital control via GPIO and SPI lines are established through a PMOD connector with a compatible interposer board to allow :adi:`System Demonstration Platform (SDP-S) <SDP-S>` and FMC Mezzanine connector options. Control signals for the board are expected to be 1.8V logic with on-board level translators converting to the on-board logic level of 3.3V.
-
 
 |image1|
 
@@ -15,13 +21,11 @@ The ADXUD1AEBZ consist of 4 channels capable of up and down conversion over a RF
 
    \ **Figure 1: ADXUD1AEBZ Board: Front**\
 
-
    |image2|
 
 .. container:: centeralign
 
    \ **Figure 2: ADXUD1AEBZ Board: Back**\
-
 
 --------------
 
@@ -65,14 +69,11 @@ Hardware
 -  SMPM-SMA cabling to interface with the IF ports
 -  Digital controller and any associated hardware (:adi:`SDP-S` or PMOD)
 
-
-
 .. warning::
 
    The SDP-S is the only SDP controller which will work with XUD1A.
 
    | All other SDP controllers (SDP-B, SDP-H1, SDP-K1) are NOT compatible.
-
 
 Suggested Test Equipment
 ------------------------
@@ -107,8 +108,8 @@ SDP Control
 
 .. note::
 
-   Windows 10 might try to block the example Test Program, you'll have to explicitly allow it in your security settings
-
+   Windows 10 might try to block the example Test Program, you'll have to
+   explicitly allow it in your security settings
 
 -  :adi:`SDP-S controller board <sdp-s>`
 
@@ -127,16 +128,25 @@ Software
 Board Design
 ============
 
-The ADXUD1AEBZ evaluation board has 4 SMA RFIO connectors for the RF Input/Output and 8 SMPM RFIO connectors for the IF Input/Output. The 8 SMPM connectors have 4 RX IF channels and 4 TX IF channels. There is 1 SMA connector available to supply an external LO signal. The board is configured for an external LO by default. A capacitor can be rotated to disable the external LO port and access the internal PLL/VCO (ADF4371). The PLL/VCO can be programmed via SPI to allow an on-board LO signal.
+The ADXUD1AEBZ evaluation board has 4 SMA RFIO connectors for the RF
+Input/Output and 8 SMPM RFIO connectors for the IF Input/Output. The 8 SMPM
+connectors have 4 RX IF channels and 4 TX IF channels. There is 1 SMA connector
+available to supply an external LO signal. The board is configured for an
+external LO by default. A capacitor can be rotated to disable the external LO
+port and access the internal PLL/VCO (ADF4371). The PLL/VCO can be programmed
+via SPI to allow an on-board LO signal.
 
-One 12V DC barrel jack is provided to apply the required 12V power supply with on-board power management circuitry to converter to the necessary power rails.
+One 12V DC barrel jack is provided to apply the required 12V power supply with
+on-board power management circuitry to converter to the necessary power rails.
 
 One 14 PIN PMOD connector is provided to apply GPIO/SPI digital control lines.
 
 Power Supply
 ------------
 
-The ADXUD1AEBZ board must be powered from the included power supply with a voltage level of 12V. There is an on-board power management tree which generates the required voltage rails for all of the associated parts.
+The ADXUD1AEBZ board must be powered from the included power supply with a
+voltage level of 12V. There is an on-board power management tree which generates
+the required voltage rails for all of the associated parts.
 
 RF/IF Signal Chain
 ------------------
@@ -150,18 +160,26 @@ The ADXUD1AEBZ has 4 RF input/output SMA connectors and 4 TX IF inputs and 4 RX 
 
    \ **Figure 3: ADXUD1AEBZ Block Diagram**\
 
-
 LO Signal Chain
 ---------------
 
 The LO signal is amplified by :adi:`HMC963 <hmc963lc4>` and :adi:`HMC383 <hmc383lc4>` amplifiers and divided across all channels to provide a common LO signal. The user can decide between an internal PLL or external LO. The internal PLL is the :adi:`adf4371` with an option for an external reference via J3 connector or an on-board VCXO reference. An external LO source can be injected via the J4 SMA connector. When using an external LO, the recommended input power to J4 is +5 dBm.
 
-By default, the board populates C165 for an external LO source with C61 not installed. The user can remove C165 and re-install on the C61 pad to enabled use of the ADF4371. When using the onboard ADF4371, the default reference is the onboard VCXO with C372 installed and C373 not installed. The user can remove C372 and re-install on the C373 pad to enabled use of the external reference port J3.
+By default, the board populates C165 for an external LO source with C61 not
+installed. The user can remove C165 and re-install on the C61 pad to enabled use
+of the ADF4371. When using the onboard ADF4371, the default reference is the
+onboard VCXO with C372 installed and C373 not installed. The user can remove
+C372 and re-install on the C373 pad to enabled use of the external reference
+port J3.
 
 .. note::
 
-   An external LO source is recommended for performance based measurements. The on-board ADF4371 is provided for convenience to allow stand-alone operation of the hardware for a wide range of operational frequencies. A bandpass filter should be inserted in the ADF4371 PLL output path depending on the final frequency plan to reject the harmonic content generated by the ADF4371 internal multipliers.
-
+   An external LO source is recommended for performance based measurements. The
+   on-board ADF4371 is provided for convenience to allow stand-alone operation
+   of the hardware for a wide range of operational frequencies. A bandpass
+   filter should be inserted in the ADF4371 PLL output path depending on the
+   final frequency plan to reject the harmonic content generated by the ADF4371
+   internal multipliers.
 
 Digital Control
 ---------------
@@ -171,19 +189,16 @@ PMOD Pinout
 
 The digital input signals are intended to be 1.8V logic while the :adi:`ADRF5020`, :adi:`ADL8111`, and :adi:`ADF4371` digital control inputs require logic levels of 3.3V. Level translators and digital logic circuitry have been included between the PMOD connector and aforementioned components.
 
-
 |image3|
 
 .. container:: centeralign
 
    \ **Figure 4: ADXUD1AEBZ PMOD Pinout**\
 
-
 Interposer Board
 ~~~~~~~~~~~~~~~~
 
 The Interposer board allows the option to control the ADXUD1AEBZ via :adi:`System Demonstration Platform (SDP-S) <SDP-S>` and FPGA via FMC Mezzanine connector. Note the Interposer board PMOD connector is pin compatible with the ADXUD1AEBZ PMOD connector and can be connected directly to XUD1A.
-
 
 |image4|
 
@@ -191,19 +206,17 @@ The Interposer board allows the option to control the ADXUD1AEBZ via :adi:`Syste
 
    \ **Figure 5: ADXUD1AEBZ Interposer Pinout with SDP-S Connector**\
 
-
 Control Logic
 ~~~~~~~~~~~~~
 
-The PMOD inputs are fed to a buffer and logic network for simplified board control and quick switching time.
-
+The PMOD inputs are fed to a buffer and logic network for simplified board
+control and quick switching time.
 
 |image5|
 
 .. container:: centeralign
 
    \ **Figure 6: ADXUD1AEBZ Control Block Diagram**\
-
 
 ======= ============ ===== ===== ===== ===== ============
 Channel Mode         TXRX0 TXRX1 TXRX2 TXRX3 Rx Gain Mode
@@ -226,7 +239,6 @@ D       TX           -     -     -     1     0
 
    \ **Table 1: ADXUD1AEBZ RF Control Logic**\
 
-
 ============== ==============
 ADF4371 Output PLL_OUTPUT_SEL
 ============== ==============
@@ -238,14 +250,17 @@ ADF4371 Output PLL_OUTPUT_SEL
 
    \ **Table 2: ADXUD1AEBZ ADF4371 Control Logic**\
 
-
 Evaluation
 ==========
 
 Software Control
 ----------------
 
-There are two methods to control the XUD1A board using the interposer board. Either over the FMC connector using the ZCU102 FPGA or over the SDP connector using a SDP-S controller. Limited functionality is available using the SDP-s controller, but a user has the basic ability to program the state of XUD1A (TX, RX Low Gain, RX High Gain) using the SPD-S controller.
+There are two methods to control the XUD1A board using the interposer board.
+Either over the FMC connector using the ZCU102 FPGA or over the SDP connector
+using a SDP-S controller. Limited functionality is available using the SDP-s
+controller, but a user has the basic ability to program the state of XUD1A (TX,
+RX Low Gain, RX High Gain) using the SPD-S controller.
 
 Standalone Python Application
 -----------------------------
@@ -262,11 +277,11 @@ For additional questions or support, please visit the Engineering Zone forum at 
 :doc:`X Band Development Platform </wiki-migration/resources/eval/user-guides/x-band-platform>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/eval-adxud1aebz_top-web.gif
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/eval-adxud1aebz_bottom.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_pmod.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_sdps.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_controlblockdiagram.png
-   :width: 600px
+   :width: 600

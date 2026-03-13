@@ -37,7 +37,8 @@ Files
 Example platform device / device tree initialization
 ====================================================
 
-The AXI JESD204B driver is a platform driver and can currently only be instantiated via device tree.
+The AXI JESD204B driver is a platform driver and can currently only be
+instantiated via device tree.
 
 Deprecated Non-jesd204-fsm mode
 -------------------------------
@@ -114,7 +115,8 @@ Example:
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -166,7 +168,6 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
       lrwxrwxrwx  1 root root    0 Feb  6 13:41 subsystem -> ../../../../bus/platform
       -rw-r--r--  1 root root 4096 Feb  6 13:41 uevent
    
-
 
 **Reading the device/link status:**
 
@@ -222,7 +223,6 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
       SYSREF alignment error: No
    
 
-
 **Reading the Encoder used:**
 
 .. container:: box bggreen
@@ -235,7 +235,6 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
       root@analog:/sys/bus/platform/devices/84a90000.axi-jesd204-rx# cat encoder
       8b10b
    
-
 
 **Reading the Lane Status:**
 
@@ -258,7 +257,6 @@ This driver provides advanced diagnostics, status and via `sysfs <https://en.wik
       ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
       FC: 15000000
    
-
 
 More Information
 ----------------

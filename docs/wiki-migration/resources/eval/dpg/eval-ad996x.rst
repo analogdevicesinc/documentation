@@ -19,7 +19,6 @@ Files included in the AD996X Update:
 
 Download the `AD9963 Update <https://wiki.analog.com/_media/resources/eval/dpg/hsdacupdate_ad9963_1.0.4785.31623.zip>`_
 
-
 |dpg#Data Pattern Generator&nofooter&noindent|
 
 .. |dpg#Data Pattern Generator&nofooter&noindent| image:: https://wiki.analog.com/_media/section>resources/eval/dpg#data_pattern_generator&nofooter&noindent

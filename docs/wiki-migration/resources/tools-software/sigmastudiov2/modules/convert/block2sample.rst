@@ -9,7 +9,8 @@ Block to Sample
 Description
 -----------
 
-This module is used to transition from block processing schematic to sample processing schematic.
+This module is used to transition from block processing schematic to sample
+processing schematic.
 
 Targets Supported
 -----------------
@@ -40,7 +41,6 @@ Name   Type  Description
 ====== ===== =====================
 Output Audio Sample Output channel
 ====== ===== =====================
-
 
 | ===== Configurable Parameters ===== No Configurable parameters
 

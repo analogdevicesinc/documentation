@@ -6,7 +6,6 @@ Overview
 
 :adi:`CN-0348 <CN0348>` showcases a solution for precision 16-bit digital-to-analog conversion with wide dynamic signal range in a single supply system. It utilizes a 5V voltage reference (:adi:`ADR4550`), a voltage output digital-to-analog converter (:adi:`AD5541A`), and a rail-rail amplifier as the output buffer (:adi:`ADA4500-2`). The ADA4500-2 exhibits zero crossover distortion and this feature makes it an excellent choice as an output buffer to maintain the linearity of the AD5541A over its input digital code and provide a wide dynamic output range. The combination of parts provides industry-leading 16-bit integral nonlinearity (INL) of ±1LSB and differential nonlinearity (DNL) of ±1LSB with guaranteed monotonicity. This user guide gives information on how to use the evaluation software to collect data from the :adi:`EVAL-CN0348-SDPZ` Daughter Board.
 
-
 |image1|
 
 Required Equipment
@@ -34,8 +33,8 @@ Required Equipment
 
 .. note::
 
-   NOTE - Any multimeter can be used with this board. However, for INL/DNL measurement, software interface was written with the Agilent 3458A in mind.
-
+   NOTE - Any multimeter can be used with this board. However, for INL/DNL
+   measurement, software interface was written with the Agilent 3458A in mind.
 
 Installing the Software
 -----------------------
@@ -46,29 +45,26 @@ Installing the Software
 
    \ NOTE: It is recommended that you install the `CN0348 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0348>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0348\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 | |image2|
 | \* Click **Next** to view the installation review page
 | |image3|
 | \* Click **Next** to start the installation
 | \* Upon completion of the installation of the **CN0348 SDP Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
-
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
 | |image4|
 | \* Click **“Next”** to set the installation location for the **SDP Drivers**.
-
 
 .. tip::
 
    It is recommended that you install the drivers to the default directory path
 
    | C:\\Program Files\\Analog Devices\\SDP\\DriversR2\
-
 
 | |image5|
 
@@ -82,9 +78,7 @@ Software Control and Indicator Descriptions
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software1.png
    :align: center
-   :width: 600px
-
-
+   :width: 600
 
 - **LDAC COntrol**
 - Always check the box before starting any test
@@ -95,7 +89,8 @@ Software Control and Indicator Descriptions
 - The LED string indicates the digital input code being written to the DAC (from bit 15 to bit 0)
 - **System Status String / LED Indicator**
 - The string indicator displays a message to the user detailing the current state of the software
-- The LED indicator displays the current state of the software in the form of an LED. There are three status LED colors
+- The LED indicator displays the current state of the software in the form of an
+  LED. There are three status LED colors
 
 |resources-eval-user-guides-circuits-from-the-lab-black_led_button.png| Inactive
 
@@ -105,7 +100,7 @@ Software Control and Indicator Descriptions
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 ::
 
@@ -123,7 +118,7 @@ Software Control and Indicator Descriptions
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 ::
 
@@ -132,7 +127,7 @@ Software Control and Indicator Descriptions
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software4.png
    :align: center
-   :width: 600px
+   :width: 600
 
 ::
 
@@ -177,7 +172,6 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0348-SDPZ?&v=RevB>`_ to receive all these great benefits and more!
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0348_simplified_schematic.pdf.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0348-install1.png

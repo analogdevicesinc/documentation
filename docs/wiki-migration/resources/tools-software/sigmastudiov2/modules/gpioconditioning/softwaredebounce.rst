@@ -9,12 +9,21 @@ Software debounce
 Description
 -----------
 
-The contacts of mechanical switches and encoders can "bounce" when changing positions; meaning the voltage may fluctuate between states several times during the transition period. When the transition is not clean erroneous states can be set in your system. This block debounces (removes the transition ripple) from a signal, by waiting a specified amount of time between sampling periods. This provides a clean transition signal to the output.
+The contacts of mechanical switches and encoders can "bounce" when changing
+positions; meaning the voltage may fluctuate between states several times during
+the transition period. When the transition is not clean erroneous states can be
+set in your system. This block debounces (removes the transition ripple) from a
+signal, by waiting a specified amount of time between sampling periods. This
+provides a clean transition signal to the output.
 
 Usage
 -----
 
-Typically, this block is used to debounce a GPIO input signal. To use this block, drag it into the schematic and connect the input to a GPIO signal. The debounce time control sets the time constant for the debouncer, in samples; the default is 20. For best results adjust the value by trial and error for whatever hardware is connected to the GPIO input.
+Typically, this block is used to debounce a GPIO input signal. To use this
+block, drag it into the schematic and connect the input to a GPIO signal. The
+debounce time control sets the time constant for the debouncer, in samples; the
+default is 20. For best results adjust the value by trial and error for whatever
+hardware is connected to the GPIO input.
 
 Targets Supported
 -----------------
@@ -46,7 +55,6 @@ Name    Type  Description
 Output0 Audio Audio output from the software debounce
 ======= ===== =======================================
 
-
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+-----------+------------------------------------------------------------+
@@ -63,7 +71,6 @@ Parameter Name Description                     ADAU145x/ADAU146x
 ============== =============================== =================
 countmax       Time constant for the debouncer Integer32
 ============== =============================== =================
-
 
 | ===== DSP Parameter Computation =====
 

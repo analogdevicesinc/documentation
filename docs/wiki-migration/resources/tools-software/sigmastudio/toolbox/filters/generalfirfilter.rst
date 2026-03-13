@@ -3,8 +3,9 @@ General FIR Filter
 
 :doc:`Click here to return to the filters section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
-
-The General FIR filter block lets you design LowPass, HighPass, BandPass or BandStop FIR filters using windowing technique. Following windows are supported in filter design:
+The General FIR filter block lets you design LowPass, HighPass, BandPass or
+BandStop FIR filters using windowing technique. Following windows are supported
+in filter design:
 
 -  Hanning
 -  Rectangular
@@ -33,8 +34,6 @@ Name          Format [int/dec] - [control/audio] Function Description
 ============= ================================== ====================
 Pin 0: Output decimal - audio                    FIR filtered output
 ============= ================================== ====================
-
-
 
 GUI Controls
 ------------
@@ -71,7 +70,9 @@ GUI Controls
 Grow Algorithm
 --------------
 
-When the General FIR filter algorithm is grown, an extra pair of input/output pins is added to the control. The filtering on each of the grown Input pins is affected by the parameters chosen in the GUI in the same manner.
+When the General FIR filter algorithm is grown, an extra pair of input/output
+pins is added to the control. The filtering on each of the grown Input pins is
+affected by the parameters chosen in the GUI in the same manner.
 
 +----------+
 | |nolink| |
@@ -80,11 +81,16 @@ When the General FIR filter algorithm is grown, an extra pair of input/output pi
 Configurations
 --------------
 
-General FIR filter block designs a LowPass , HighPass, BandPass or BandStop filter using Windowing technique. Order, Cutoff frequency , Window Type and Gain are configured in the GUI for LowPass and HighPass filter design. Bandwidth has to be additionally configured for BandPass and BandStop filter design.
+General FIR filter block designs a LowPass , HighPass, BandPass or BandStop
+filter using Windowing technique. Order, Cutoff frequency , Window Type and Gain
+are configured in the GUI for LowPass and HighPass filter design. Bandwidth has
+to be additionally configured for BandPass and BandStop filter design.
 
 |image2| |image3|
 
-The coefficients of the filter are calculated and downloaded to the DSP based on the design chosen by the user in the GUI. FIR coefficient calculation steps are shown below.
+The coefficients of the filter are calculated and downloaded to the DSP based on
+the design chosen by the user in the GUI. FIR coefficient calculation steps are
+shown below.
 
 | Ideal filter response h(n) is calculated based on the filter configuration as per the table below
 | |image4| **Note**: **N** -Filter Order , **w\ c** - Cutoff frequency, **w\ l** - Lower cutoff frequency, **w\ h** - Higher cutoff frequency, **w\ h**=**w\ l** \**2\ BW**

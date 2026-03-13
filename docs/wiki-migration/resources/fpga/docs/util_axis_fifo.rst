@@ -5,8 +5,10 @@ AXI Stream FIFO Core
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/util_axis_fifo/index.html\
 
-
-The util_axis_fifo IP core is a simple FIFO (First Input First Output) with AXI streaming interfaces, supporting synchronous and asynchronous operation modes. It can be used to mitigate data rate differences or transfer an AXI stream to a different clock domain.
+The util_axis_fifo IP core is a simple FIFO (First Input First Output) with AXI
+streaming interfaces, supporting synchronous and asynchronous operation modes.
+It can be used to mitigate data rate differences or transfer an AXI stream to a
+different clock domain.
 
 Features
 --------
@@ -21,21 +23,33 @@ Features
 Functional Description
 ----------------------
 
-The util_axis_fifo is a generic First Input First Output module, that can be used to control clock and data rate differences or to do data buffering on a AXI4 stream based data path. FIFO's write interface is an AXI4 slave streaming interface, and the FIFO's read interface is an AXI4 master streaming interface. The depth of the FIFO is defined by the equation, which is a function of the ADDRESS_WIDTH and DATA_WIDTH parameters:
+The util_axis_fifo is a generic First Input First Output module, that can be
+used to control clock and data rate differences or to do data buffering on a
+AXI4 stream based data path. FIFO's write interface is an AXI4 slave streaming
+interface, and the FIFO's read interface is an AXI4 master streaming interface.
+The depth of the FIFO is defined by the equation, which is a function of the
+ADDRESS_WIDTH and DATA_WIDTH parameters:
 
 **FIFO depth in bytes = DATA_WIDTH/8 \* 2 ^ ADDRESS_WIDTH**
 
-The FIFO has three different status indicator ports on both side, which provides information about the state of the FIFO for both the source and destination logic:
+The FIFO has three different status indicator ports on both side, which provides
+information about the state of the FIFO for both the source and destination
+logic:
 
 -  FULL or EMPTY - If these outputs are asserted the FIFO is full or empty. In case of a full FIFO all the write operations are suspended. In case of an empty FIFO all the read operations are suspended.
 -  ALMOST_EMPTY/ALMOST_FULL - It can be used to foresee a potential FULL or EMPTY state, asserting before the EMPTY/FULL before a predefined number of word. The offset between ALMOST_EMPTY and EMPTY, and between ALMOST_FULL and FULL can be set by using the parameters ALMOST_EMPTY_THRESHOLD and ALMOST_FULL_THRESHOLD.
 -  S_AXIS_ROOM - Indicate how many word can be written in the FIFO at the current moment, until the FIFO become FULL.
--  M_AXIS_LEVEL - Indicate how many word can be read from the FIFO at the current moment, until the FIFO become EMPTY.
+-  M_AXIS_LEVEL - Indicate how many word can be read from the FIFO at the
+   current moment, until the FIFO become EMPTY.
 
 .. important::
 
-   In case of asynchronous mode, because of the delays introduced by the clock domain crossing logic, the ROOM and LEVEL indicators can not reflect the actual state of the FIFO in real time. Source and destination logic should take this into account when controlling the data stream into and from the FIFO. Carefully adjusting the ALMOST_EMPTY/ALMOST_FULL indicators can provide a save operating margin.
-
+   In case of asynchronous mode, because of the delays introduced by the clock
+   domain crossing logic, the ROOM and LEVEL indicators can not reflect the
+   actual state of the FIFO in real time. Source and destination logic should
+   take this into account when controlling the data stream into and from the
+   FIFO. Carefully adjusting the ALMOST_EMPTY/ALMOST_FULL indicators can provide
+   a save operating margin.
 
 Parameters
 ----------

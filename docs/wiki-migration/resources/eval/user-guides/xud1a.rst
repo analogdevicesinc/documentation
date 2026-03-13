@@ -9,4 +9,4 @@ ADXUD1AEBZ: X to C Band Up/Down Converter Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adxud1aebz_angle.jpg
    :align: center
-   :width: 600px
+   :width: 600

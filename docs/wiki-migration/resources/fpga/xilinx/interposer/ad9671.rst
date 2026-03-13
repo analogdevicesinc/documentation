@@ -25,7 +25,9 @@ Supported Carriers
 Quick Start Guide
 -----------------
 
-The reference design zip file contains a bit file combined with a SDK elf file for a quick demonstration of the programming and data capture. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The reference design zip file contains a bit file combined with a SDK elf file
+for a quick demonstration of the programming and data capture. All you need is
+the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -50,13 +52,18 @@ Bit file
 Board Modifications
 ~~~~~~~~~~~~~~~~~~~
 
-Please do the following modifications on the AD9671 evaluation board (9671EE01B).
+Please do the following modifications on the AD9671 evaluation board
+(9671EE01B).
 
 -  Remove R401.
 -  Remove R402.
 -  Remove R403.
 
-The board uses a 40MHz external clock for the ADC and the JESD reference clock. The GTX is setup to use a 80MHz reference clock (can not run less than 60MHz). The solution is to use a 80MHz external clock input to the board. This clock is then passed to the GTX as the reference clock and AD9517 to generate a 40MHz clock for the ADC.
+The board uses a 40MHz external clock for the ADC and the JESD reference clock.
+The GTX is setup to use a 80MHz reference clock (can not run less than 60MHz).
+The solution is to use a 80MHz external clock input to the board. This clock is
+then passed to the GTX as the reference clock and AD9517 to generate a 40MHz
+clock for the ADC.
 
 -  Remove C308.
 -  Remove C309.
@@ -75,38 +82,58 @@ To begin make the following connections (see image below):
 -  Connect power to KC705 and the AD9671-EBZ boards.
 -  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on KC705.
 -  Connect an external clock source 80MHz (5dBm) to AD9671-EBZ board's J302 SMA connector.
--  Connect signal generators to the CH_A through CH_H (J101 through J108) SMA connectors.
+-  Connect signal generators to the CH_A through CH_H (J101 through J108) SMA
+   connectors.
 
-The quick start bit file configures the AD9671 for all test modes and verifies the captured data accordingly. After the hardware setup, turn the power on to the KC705 and the AD9671-EBZ boards.
+The quick start bit file configures the AD9671 for all test modes and verifies
+the captured data accordingly. After the hardware setup, turn the power on to
+the KC705 and the AD9671-EBZ boards.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9671_ebz_setup.jpg
    :alt: Hardware setup
-   :width: 200px
+   :width: 200
 
-Start IMPACT, and initialze the JTAG chain. The program should recognize the Kintex 7 device. Start a UART terminal (set to 57600 baud rate) and then program the device. If programming was successful, you should be seeing messages appear on the terminal as shown in figure below. The program asks for either "real 4 lane" mode or "complex 4 lane" mode. The complex mode is not supported yet. To test the real mode, enter 'r' on the uart terminal. After programming the AD9671, the program checks data capture on various test modes.
+Start IMPACT, and initialze the JTAG chain. The program should recognize the
+Kintex 7 device. Start a UART terminal (set to 57600 baud rate) and then program
+the device. If programming was successful, you should be seeing messages appear
+on the terminal as shown in figure below. The program asks for either "real 4
+lane" mode or "complex 4 lane" mode. The complex mode is not supported yet. To
+test the real mode, enter 'r' on the uart terminal. After programming the
+AD9671, the program checks data capture on various test modes.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9671_ebz_uart.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
-After patterns and prbs sequences are verified, if no errors are present, you may use the chipscope busplot to see the captured signal (see below). The ADC data is available on pins [127:0] of UNIT:1 with sets of 16bits for each channel.
+After patterns and prbs sequences are verified, if no errors are present, you
+may use the chipscope busplot to see the captured signal (see below). The ADC
+data is available on pins [127:0] of UNIT:1 with sets of 16bits for each
+channel.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9671_ebz_busplot.jpg
    :alt: Chipscope Busplot
-   :width: 200px
+   :width: 200
 
 Using the reference design
 --------------------------
 
-The reference design is built on a microblaze based system parameterized for linux. A functional block diagram of the design is given below.
+The reference design is built on a microblaze based system parameterized for
+linux. A functional block diagram of the design is given below.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9671_bd.jpg
    :alt: block diagram
-   :width: 400px
+   :width: 400
 
-The reference design consists of two pcores. The JESD core consists of the GTX units and the Xilinx JESD 204 IP core. The AD9671 core consists of three functional modules, the ADC interface, a PN9/PN23 monitor and a DMA interface. The ADC interface captures and buffers data from the JESD core. The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software.
+The reference design consists of two pcores. The JESD core consists of the GTX
+units and the Xilinx JESD 204 IP core. The AD9671 core consists of three
+functional modules, the ADC interface, a PN9/PN23 monitor and a DMA interface.
+The ADC interface captures and buffers data from the JESD core. The DMA
+interface then transfers the samples to the external DDR-DRAM. The capture is
+initiated by the software. The status of capture (overflow, over the range) are
+reported back to the software.
 
-The JESD core and AD9671 core has an AXI lite interface that allows control and monitoring of the capture process.
+The JESD core and AD9671 core has an AXI lite interface that allows control and
+monitoring of the capture process.
 
 Registers
 ~~~~~~~~~
@@ -126,7 +153,6 @@ FPGA Referece Designs:
    -  **KC705 (Bit files)** `cf_ad9671_ebz_sw_14_4_2013_03_21.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9671_ebz_sw_14_4_2013_03_21.tar.gz>`_
    
 
-
 Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
 
 .. hint::
@@ -134,7 +160,6 @@ Only Xilinx coregen xco files are provided with the reference design. You must r
    
    -  Questions? :ez:`Ask Help & Support <fpga>`.
    
-
 
 Tar file contents
 -----------------

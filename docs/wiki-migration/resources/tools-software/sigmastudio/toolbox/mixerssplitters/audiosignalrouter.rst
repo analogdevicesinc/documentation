@@ -15,12 +15,17 @@ Audio Signal Router
 
 |image1| Audio Signal router mixes M different inputs to N different outputs with various gains. The number of input and output pins are configurable. |image2|
 
-This module supports multiple mixer configurations. Each mixer configuration has gains for all the inputs and outputs. A separate gain is available for each of input output combination also. All the gains has a corresponding mute control to quickly mute the particular gain. The current Tab selected (Mix #) in the mixer window is downloaded to the target and used for mixing.
+This module supports multiple mixer configurations. Each mixer configuration has
+gains for all the inputs and outputs. A separate gain is available for each of
+input output combination also. All the gains has a corresponding mute control to
+quickly mute the particular gain. The current Tab selected (Mix #) in the mixer
+window is downloaded to the target and used for mixing.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/audiosignalrouterform.png
    :align: center
 
-The following equations show the calculation of the output for given sample mixer table.
+The following equations show the calculation of the output for given sample
+mixer table.
 
 === ===== ===== =====
 \         Out0  Out1
@@ -32,12 +37,13 @@ In1 *Ig1* G10   G11
 -  Out0 = *Og0* \* ( G00 \* *Ig0* \* In0 + G10 \* *Ig1* \* In1)
 -  Out1 = *Og1* \* ( G01 \* *Ig0* \* In0 + G11 \* *Ig1* \* In1)
 
-If the input/output channels are more than 16, then the mixer window is split for 16 input/output channels to improve GUI performance.
-
+If the input/output channels are more than 16, then the mixer window is split
+for 16 input/output channels to improve GUI performance.
 
 |image3|
 
-Labels for each of the input/output channels can be edited. This updated channel name will pear on the each of the Pin's tooltip as show below.
+Labels for each of the input/output channels can be edited. This updated channel
+name will pear on the each of the Pin's tooltip as show below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/channel_customization_.jpg
    :align: center
@@ -45,7 +51,10 @@ Labels for each of the input/output channels can be edited. This updated channel
 Audio Signal Router External Index Selectable
 ---------------------------------------------
 
-This functionality of this module is same as audio signal router except that the current mixer (Mix #) is selected through an external input as shown below. The control pin expects the input in (32.0) format for ADAU145x processors and (28.0) format for other Sigma DSPs.
+This functionality of this module is same as audio signal router except that the
+current mixer (Mix #) is selected through an external input as shown below. The
+control pin expects the input in (32.0) format for ADAU145x processors and
+(28.0) format for other Sigma DSPs.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/audiosignalrouterext.png
    :align: center
@@ -55,7 +64,8 @@ Audio Signal Router Script support
 
 User can able to access this module from script.
 
-The following sample code shows how to read parameters from a file using Sigma studio script.
+The following sample code shows how to read parameters from a file using Sigma
+studio script.
 
 .. code:: csharp
 
@@ -92,7 +102,6 @@ The following sample code shows how to read parameters from a file using Sigma s
    ss.ObjectSetProperties("setControlValue", "Router1", 0, 0, "CrossGain_0_1" , 0.5);
    ss.ObjectSetProperties("setControlValue", "Router1", 0, 0, "CrossGain_0_0" ,0.6);
    }
-
 
    //CLOSE the SETTINGWINDOW
    System.Reflection.MethodInfo methodInfo2 = ss.ObjectGetMethod(obj, "settingswindowclose");

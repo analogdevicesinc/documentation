@@ -43,14 +43,24 @@ Files
 | include  | `drivers/staging/iio/accel/adis16240.h <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/accel/adis16240.h>`_                  |
 +----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
-
-Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+Depending on the converter IC used, you may need to set the modalias
+accordingly, matching your part name. It may also required to adjust
+max_speed_hz. Please consult the datasheet, for maximum spi clock supported by
+the device in question.
 
 .. code:: c
 
@@ -86,12 +96,12 @@ Depending on the converter IC used, you may need to set the modalias accordingly
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADIS16240 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -117,8 +127,15 @@ Hardware configuration
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -161,7 +178,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r--    1 root     root          4096 Jan  4 04:15 uevent
    
 
-
 Show device name
 ----------------
 
@@ -176,14 +192,12 @@ Show device name
       adis16240
    
 
-
 ADIS16240 device attributes
 ---------------------------
 
 For a detailed description please see: `drivers/staging/iio/Documentation/sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/Documentation/sysfs-bus-iio>`_
 
 +------------------------------+
-
 
 | Device files                 |
 
@@ -268,7 +282,6 @@ Trigger management
 
    This driver only supports it's own default trigger source adis16240-dev0
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -279,7 +292,6 @@ Trigger management
       root:/sys/devices/platform/bfin-spi.0/spi0.5/iio:device0> cat trigger/current_trigger
       adis16240-dev0
    
-
 
 Buffer management
 -----------------
@@ -295,8 +307,13 @@ Buffer management
       bytes_per_datum  enable           length
    
 
-
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -318,7 +335,6 @@ Every buffer implementation features a set of files:
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -336,7 +352,6 @@ Every buffer implementation features a set of files:
       in_accel_z_en             in_timestamp_index        in_voltage1_type
    
 
-
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
 
@@ -345,7 +360,6 @@ Every buffer implementation features a set of files:
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 More Information
 ================
@@ -368,6 +382,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-accelerometer/youtube>p_vntewue24
-

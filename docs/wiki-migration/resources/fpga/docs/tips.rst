@@ -5,8 +5,8 @@ Using and modifying the HDL designs
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest guide at https://analogdevicesinc.github.io/hdl/user_guide/customize_hdl.html\
 
-
-Here can be found a collection of wiki pages, each providing examples how to modify and customize the HDL reference designs.
+Here can be found a collection of wiki pages, each providing examples how to
+modify and customize the HDL reference designs.
 
 -  :doc:`A simple BBP for RF Transceivers </wiki-migration/resources/fpga/docs/hdl/xcomm2ip>`
 -  :adi:`Model based design for SDR <en/analog-dialogue/articles/using-model-based-design-sdr-1.html>`

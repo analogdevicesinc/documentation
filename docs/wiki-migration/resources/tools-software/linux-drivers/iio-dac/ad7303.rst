@@ -52,7 +52,9 @@ Required devicetree properties:
 
 Optional devicetree properties:
 
--  REF-supply: external reference voltage supply regulator. This should only be set if there is an external reference voltage connected to the REF pin. If not set, Vdd/2 is used as the reference voltage.
+-  REF-supply: external reference voltage supply regulator. This should only be
+   set if there is an external reference voltage connected to the REF pin. If
+   not set, Vdd/2 is used as the reference voltage.
 
 ::
 
@@ -80,8 +82,15 @@ Optional devicetree properties:
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -112,7 +121,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r-- 1 root root 4096 Jan  1  1970 uevent
    
 
-
 Show device name
 ----------------
 
@@ -126,7 +134,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:device0> cat name
       ad7303
    
-
 
 Show scale
 ----------
@@ -144,7 +151,6 @@ Show scale
       12.890625
    
 
-
 Set channel Y output voltage
 ----------------------------
 
@@ -161,7 +167,6 @@ Raw (unscaled, no bias etc.) output voltage for channel Y.
    
       root:/sys/bus/iio/devices/iio:device0> echo 100 > out_voltage0_raw
    
-
 
 **U** = *out_voltage0_raw \* out_voltage_scale* = 100 \* 12.890625 *mV* = **1289.0625 mV**
 
@@ -186,4 +191,3 @@ Enable power down mode on output Y
       root:/sys/bus/iio/devices/iio:device0> cat out_voltage0_powerdown
       0
    
-

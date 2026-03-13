@@ -8,7 +8,8 @@ Quick start guide
 
 Open xsdb console
 
-You can open an xsdb(or xsct) terminal from SDK GUI(tools) or by running xsdb.bat(in Windows OS), xsdb(in a Linux OS)
+You can open an xsdb(or xsct) terminal from SDK GUI(tools) or by running
+xsdb.bat(in Windows OS), xsdb(in a Linux OS)
 
 Connect to the hw_server
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,7 +50,9 @@ Write data from a memory location (core register map)
 Example
 ~~~~~~~
 
-# For example, change the axi_ad9361 tx data select. Writing to REG_CHAN_CNTRL_7. For channel offset and register see the axi_ad9361 register map.
+# For example, change the axi_ad9361 tx data select. Writing to
+REG_CHAN_CNTRL_7. For channel offset and register see the axi_ad9361 register
+map.
 
 ::
 

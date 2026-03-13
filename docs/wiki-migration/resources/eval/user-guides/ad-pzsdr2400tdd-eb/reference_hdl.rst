@@ -1,15 +1,32 @@
 HDL support for AD9361 TDD mode
 ===============================
 
-Using the AD9361 RF Agile Transceiver(tm) in TDD (Time Division Duplex) mode, the user has multiple solutions to control the time period of the receive and transmit bursts. The internal enable state machine of device (ENSM) can either be controlled by SPI writes or ENABLE/TXNRX pins. SPI control is considered asynchronous to the DATA_CLK because the SPI_CLK can be derived from a different clock reference and still function properly. The SPI control ENSM method is recommended when real time control of the synthesizers is not necessary. SPI control can be used for real time control as long as the Base Band Processor (BBP) has the ability to perform timed SPI writes accurately.
+Using the AD9361 RF Agile Transceiver(tm) in TDD (Time Division Duplex) mode,
+the user has multiple solutions to control the time period of the receive and
+transmit bursts. The internal enable state machine of device (ENSM) can either
+be controlled by SPI writes or ENABLE/TXNRX pins. SPI control is considered
+asynchronous to the DATA_CLK because the SPI_CLK can be derived from a different
+clock reference and still function properly. The SPI control ENSM method is
+recommended when real time control of the synthesizers is not necessary. SPI
+control can be used for real time control as long as the Base Band Processor
+(BBP) has the ability to perform timed SPI writes accurately.
 
-The ENABLE/TXNRX pin control method is recommended if the BBP has extra control outputs that can be controlled in real time, allowing a simple two-wire interface to control the state of the AD9361 device. This user guide intend to provide an in-depth description about the HDL support of the ENABLE/TXNRX pin control method.
+The ENABLE/TXNRX pin control method is recommended if the BBP has extra control
+outputs that can be controlled in real time, allowing a simple two-wire
+interface to control the state of the AD9361 device. This user guide intend to
+provide an in-depth description about the HDL support of the ENABLE/TXNRX pin
+control method.
 
 ENABLE/TXNRX pin control
 ------------------------
 
-In TDD, the state of the TXNRX pin controls whether the AD9361 will transition from ALERT to Rx or ALERT to Tx. If TXNRX is high, the device will move into the Tx state. If TXNRX is low, the device will move into the Rx state. The TXNRX pin level should be set during the ALERT state. The logic level of TXNRX must not change during the Rx, Tx, or FDD states. The role of the ENABLE pin is to transition the ENSM state to the next state, and can be operated in pulse mode or level mode.
-
+In TDD, the state of the TXNRX pin controls whether the AD9361 will transition
+from ALERT to Rx or ALERT to Tx. If TXNRX is high, the device will move into the
+Tx state. If TXNRX is low, the device will move into the Rx state. The TXNRX pin
+level should be set during the ALERT state. The logic level of TXNRX must not
+change during the Rx, Tx, or FDD states. The role of the ENABLE pin is to
+transition the ENSM state to the next state, and can be operated in pulse mode
+or level mode.
 
 |Enable Level Mode|
 
@@ -17,15 +34,15 @@ In TDD, the state of the TXNRX pin controls whether the AD9361 will transition f
 
    \ *Enable Pulse Mode (TDD)*\
 
-
    |image1|
 
 .. container:: centeralign
 
    \ *Enable Level Mode (TDD)*\
 
-
-By default the ENABLE and TXNRX pins are controlled by GPIO's. This solution similarly to the SPI write ENSM control, can not provide a real time control of these pins.
+By default the ENABLE and TXNRX pins are controlled by GPIO's. This solution
+similarly to the SPI write ENSM control, can not provide a real time control of
+these pins.
 
 The **axi_ad9361** IP core has an integrated TDD controller, which gives the possibility to control the ENABLE/TXNRX pins in real time. The TDD controller consist of a counter, which counts on every positive edge of the FB_CLK, and a several software accessible registers, which defines the time when the ENABLE and TXNRX pins should be set or reset.
 
@@ -34,21 +51,26 @@ TDD Controller
 
 In the block diagram bellow can be seen the **axi_ad9361** IP core with the integrated TDD controller modules inside. If the controller is enabled, all the data flow from or to the device will be controlled by this module.
 
-
 |axi_ad9361 IP cores block diagram with the integrated TDD controller module|
 
 .. container:: centeralign
 
    \ *axi_ad9361 IP block diagram*\
 
-
 The AXI register map of the TDD controller, and the description of each reagisters can be found under the following link: :doc:`TDD REGISTER MAP </wiki-migration/resources/fpga/docs/hdl/regmap>`
 
-The foundation of the TDD controller is a counter, which can be configured to count until a specified frame length. The maximum value of the counter can be defined by simple divide the desired frame length with the current FB_CLK clock period, e.g. in the case of a 10 ms frame length, when the FB_CLK is 122.88 Mhz the value of the REG_TDD_FRAME_LENGTH register must be 1228800.
+The foundation of the TDD controller is a counter, which can be configured to
+count until a specified frame length. The maximum value of the counter can be
+defined by simple divide the desired frame length with the current FB_CLK clock
+period, e.g. in the case of a 10 ms frame length, when the FB_CLK is 122.88 Mhz
+the value of the REG_TDD_FRAME_LENGTH register must be 1228800.
 
-After defining the frame length, the user can define one or two sets of pointers, which will tell the exact location, when the device will start/stop a receive/transmit burst inside a frame.
+After defining the frame length, the user can define one or two sets of
+pointers, which will tell the exact location, when the device will start/stop a
+receive/transmit burst inside a frame.
 
-Start and stop a receive burst consist of the following action points, each point will define a pointer:
+Start and stop a receive burst consist of the following action points, each
+point will define a pointer:
 
 -  Enabling the RX synthesizer
 -  Enabling the RX RF path inside the device (ALERT to RX state transition)
@@ -57,7 +79,8 @@ Start and stop a receive burst consist of the following action points, each poin
 -  Disabling the RX RF path inside the device (RX to ALERT state transition)
 -  Disabling the RX synthesizer
 
-Start or stop a transmit burst consist of the following action points, each point will define a pointer:
+Start or stop a transmit burst consist of the following action points, each
+point will define a pointer:
 
 -  Enabling the TX synthesizer
 -  Enabling the TX RF path inside the device (ALERT to TX state transition)
@@ -136,7 +159,6 @@ Base (common to all cores)
 | Tue Mar 14 10:17:59 2023 |        |                  |                       |      |            |                                                                                                                                                                                                                                                                                     |
 +--------------------------+--------+------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Common (axi_ad\*)
 ---------------------
 
@@ -188,7 +210,6 @@ ADC Common (axi_ad\*)
 |         |        | [7:0]       | CUSTOM_CONTROL      | RW   | 0x00    |                                                                                                                                                                                                                                                                                                |
 +---------+--------+-------------+---------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADAQ8092
 ~~~~~~~~
 
@@ -219,8 +240,6 @@ AD7606X_PI
 -  1 = CRC_ENABLED
 -  2 = STATUS_HEADER
 -  3 = CRC_STATUS
-
-
 
 \|
 
@@ -338,7 +357,6 @@ AD7606X_PI
 | Fri Aug 11 18:29:53 2023 |        |                     |                        |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+---------------------+------------------------+------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Channel (axi_ad\*)
 ----------------------
 
@@ -443,7 +461,6 @@ ADC Channel (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                      |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +--------------------------+--------+----------------------+------------------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 IO Delay Control (axi_ad\*)
 ---------------------------
 
@@ -472,7 +489,6 @@ IO Delay Control (axi_ad\*)
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                     |                    |      |         |                                                                                                                                                                                                                                                    |
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 DAC Common (axi_ad)
 -------------------
@@ -609,7 +625,6 @@ DAC Common (axi_ad)
 | Tue Mar 14 10:17:59 2023 |        |                     |                       |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+---------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DAC Channel (axi_ad\*)
 ----------------------
 
@@ -722,7 +737,6 @@ DAC Channel (axi_ad\*)
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Fri Sep 8 16:01:53 2023 |        |                   |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Generic TDD Control (axi_tdd)
 -----------------------------
@@ -1077,7 +1091,6 @@ Generic TDD Control (axi_tdd)
 | Tue Mar 14 10:17:59 2023 |        |                       |                     |      |                       |                                                                                                                                                                                                    |
 +--------------------------+--------+-----------------------+---------------------+------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Transceiver TDD Control (axi_ad\*)
 ----------------------------------
 
@@ -1223,7 +1236,6 @@ Transceiver TDD Control (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                            |                        |      |          |                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+----------------------------+------------------------+------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD TPL (up_tpl_common)
 ------------------------
 
@@ -1264,7 +1276,6 @@ JESD TPL (up_tpl_common)
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                      |             |      |         |                                                                                                            |
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
-
 
 JESD204 RX (axi_jesd204_rx)
 ---------------------------
@@ -1551,7 +1562,6 @@ JESD204 RX (axi_jesd204_rx)
 | Tue Mar 14 10:17:59 2023  |                 |                                |                              |        |             |                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD204 TX (axi_jesd204_tx)
 ---------------------------
 
@@ -1788,7 +1798,6 @@ JESD204 TX (axi_jesd204_tx)
 | Tue Mar 14 10:17:59 2023  |                 |                       |                          |        |             |                                                                                                                                                                                                                     |
 +---------------------------+-----------------+-----------------------+--------------------------+--------+-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DMA Controller (axi_dmac)
 -------------------------
 
@@ -1971,7 +1980,6 @@ DMA Controller (axi_dmac)
 | Thu Feb 1 12:18:03 2024 |        |                           |                           |      |                                 |                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+---------------------------+---------------------------+------+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Fan Controller (axi_fan_control)
 --------------------------------
 
@@ -2139,7 +2147,6 @@ Fan Controller (axi_fan_control)
 | Tue Mar 14 10:17:59 2023 |        |                   |                       |      |                        |                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +--------------------------+--------+-------------------+-----------------------+------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 System ID (axi_system_id)
 -------------------------
 
@@ -2180,7 +2187,6 @@ System ID (axi_system_id)
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                |                |      |            |                                                                                          |
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
-
 
 Clock Generator (axi_clkgen)
 ----------------------------
@@ -2228,7 +2234,6 @@ Clock Generator (axi_clkgen)
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                  |                   |      |         |                                                                                                                                                         |
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Clock Monitor (axi_clock_monitor)
 ---------------------------------
@@ -2322,7 +2327,6 @@ Clock Monitor (axi_clock_monitor)
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |               |               |      |            |                                |
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
-
 
 HDMI Transmit (axi_hdmi_tx)
 ---------------------------
@@ -2429,7 +2433,6 @@ HDMI Transmit (axi_hdmi_tx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                      |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 HDMI Receive (axi_hdmi_rx)
 --------------------------
 
@@ -2497,7 +2500,6 @@ HDMI Receive (axi_hdmi_rx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                 |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+-----------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 General Purpose Registers (axi_gpreg)
 -------------------------------------
 
@@ -2542,7 +2544,6 @@ General Purpose Registers (axi_gpreg)
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |              |              |      |            |                                                                                                                                                                                                                                        |
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 SPI Engine (axi_spi_engine)
 ---------------------------
@@ -2650,7 +2651,6 @@ SPI Engine (axi_spi_engine)
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                    |                    |      |             |                                                                                                                                                                                                                                                                                      |
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Xilinx XCVR (axi_xcvr) Regmap
 -----------------------------
@@ -2833,7 +2833,6 @@ Xilinx XCVR (axi_xcvr) Regmap
 | Tue Mar 14 10:17:59 2023 |        |               |                  |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 PWM Generator (axi_pwm_gen)
 ---------------------------
 
@@ -2842,7 +2841,6 @@ PWM Generator (axi_pwm_gen)
 .. important::
 
    This register map was moved at https://analogdevicesinc.github.io/hdl/library/axi_pwm_gen/index.html#register-map. The following table is NOT MAINTAINED ANYMORE.
-
 
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 | Address |        | Bits               | Name                                                                         | Type | Default    | Description                                                   |
@@ -2888,8 +2886,6 @@ PWM Generator (axi_pwm_gen)
 |         |        | [31:0]             | PULSE_X_OFFSET[31:0] - base + 'h4 for each channel -> e.g. CH3 offset - 'hCC | RW   | 0x0000     | Pulse x offset, defined in number of clock cycles.            |
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 
-
-
 Synchronization
 ---------------
 
@@ -2901,8 +2897,8 @@ In our case, the goal was to showcase the TDD support of the AD9361, so the sync
 
 .. important::
 
-   This reference design will not provide a complete solution for the network synchronization.
-
+   This reference design will not provide a complete solution for the network
+   synchronization.
 
 Parameters of util_tdd_sync
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2949,13 +2945,19 @@ Linux Driver
 Example platform device initialization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The TDD HDL core driver is a platform driver and can currently only be instantiated via devicetree.
+The TDD HDL core driver is a platform driver and can currently only be
+instantiated via devicetree.
 
 Required devicetree properties:
 
 -  compatible: Should always be "adi,axi-tdd-1.00"
 -  reg: Base address and register area size. This parameter expects a register range.
--  adi,profile-config0: At least one (maximum 7) configuration profile should be defined. A profile contains the values of the registers: COUNTER_2 (0x8048), FRAME_LENGTH (0x804c), SYNC_TERM_TYPE (0x8050), VCO_RX_ON_1 (0x8080), VCO_RX_OFF_1 (0x8084), VCO_TX_ON_1 (0x8088), VCO_TX_OFF_1 (0x808C), RX_ON_1 (0x8090), RX_OFF_1 (0x8094), TX_ON_1 (0x8098), TX_OFF_1 (0x809C), TX_DP_ON_1 (0x80A0), TX_DP_OFF_1 (0x80A4), RX_DP_ON_1 (0x80A8), RX_DP_OFF_1 (0x80AC).
+-  adi,profile-config0: At least one (maximum 7) configuration profile should be
+   defined. A profile contains the values of the registers: COUNTER_2 (0x8048),
+   FRAME_LENGTH (0x804c), SYNC_TERM_TYPE (0x8050), VCO_RX_ON_1 (0x8080),
+   VCO_RX_OFF_1 (0x8084), VCO_TX_ON_1 (0x8088), VCO_TX_OFF_1 (0x808C), RX_ON_1
+   (0x8090), RX_OFF_1 (0x8094), TX_ON_1 (0x8098), TX_OFF_1 (0x809C), TX_DP_ON_1
+   (0x80A0), TX_DP_OFF_1 (0x80A4), RX_DP_ON_1 (0x80A8), RX_DP_OFF_1 (0x80AC).
 
 Example:
 
@@ -2971,8 +2973,15 @@ Example:
 Device Attributes
 ~~~~~~~~~~~~~~~~~
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -2998,7 +3007,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root:/sys/bus/iio/devices/iio:device5>
    
 
-
 The following attributes are implemented:
 
 Show device name
@@ -3015,7 +3023,6 @@ Show device name
       cf-ad9361-tdd-core-lpc
    
 
-
 Enable the TDD controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3029,7 +3036,6 @@ Enable the TDD controller
       root:/sys/bus/iio/devices/iio:device5> echo 1 > enable
    
 
-
 Choose the desired configuration profile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3042,7 +3048,6 @@ Choose the desired configuration profile
    
       root:/sys/bus/iio/devices/iio:device5> echo 1 > profile_config
    
-
 
 Configure the DMA gate
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -3059,7 +3064,6 @@ Configure the DMA gate
       root:/sys/bus/iio/devices/iio:device5> echo none > dma_gateing_mode
    
 
-
 Configure the RX/TX mode
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3075,12 +3079,11 @@ Configure the RX/TX mode
       root:/sys/bus/iio/devices/iio:device5> echo rx_tx > enable_mode
    
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-eb/tdd_scope_1.png
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-eb/tdd_scope_2.png
-   :width: 400px
+   :width: 400
 
 Support
 -------
@@ -3089,13 +3092,12 @@ Support
 
    If you have any question related to the HDL or the ad-pzsdr2400tdd-ebz board please visit the :doc:`Help and support </wiki-migration/resources/eval/user-guides/ad-pzsdr2400tdd-eb/help_and_support>` section for more information.
 
-
 .. |Enable Level Mode| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/ad9361_tdd_pincntr_pulse.png
-   :width: 850px
+   :width: 850
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/ad9361_tdd_pincntr_level.png
-   :width: 850px
+   :width: 850
 .. |axi_ad9361 IP cores block diagram with the integrated TDD controller module| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/ad9361_tdd_ip_bd_v3.png
-   :width: 810px
+   :width: 810
    :height: 668px
 .. |util_tdd_sync core| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/util_tdd_sync.png
-   :width: 250px
+   :width: 250

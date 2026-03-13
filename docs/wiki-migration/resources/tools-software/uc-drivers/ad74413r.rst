@@ -44,8 +44,10 @@ The source code for the AD74413R can be found here:
    -   :git-no-OS:`Implementation of AD74413R driver <drivers/adc-dac/ad74413r/ad74413r.c>`
    
 
-
-In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. You may either use one of the platforms already supported by No-OS, or you can implement the following functions for your custom platform.
+In order to be able to use this driver you will have to provide the specific
+implementation for the communication APIs and the specific types they use. You
+may either use one of the platforms already supported by No-OS, or you can
+implement the following functions for your custom platform.
 
 -  no_os_spi_init() – initializes the communication peripheral.
 -  no_os_spi_write_and_read() – writes and reads data to/from the device.
@@ -54,9 +56,12 @@ In order to be able to use this driver you will have to provide the specific imp
 And there are two data types that have to be defined:
 
 -  no_os_spi_desc - structure holding the SPI descriptor
--  no_os_spi_init_param - structure holding the parameters for SPI initialization
+-  no_os_spi_init_param - structure holding the parameters for SPI
+   initialization
 
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using can be
+found below:
 
 .. admonition:: Download
    :class: download
@@ -66,11 +71,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
 
-
 AD74413R Driver Code Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available below:
 
 -  `AD74413R Header file <http://analogdevicesinc.github.io/no-OS/ad74413r_8h.html>`_
 -  `AD74413R Source file <http://analogdevicesinc.github.io/no-OS/ad74413r_8c.html>`_
@@ -104,7 +109,8 @@ Before this may be done, the a channel must be enabled, using the **ad74413r_set
 -  Current output mode: output voltage measurement for a given current value.
 -  Current input mode (externally powered and loop): input current measurement.
 -  Resistance measurement mode: resistance between the channel's inputs.
--  Digital input logic mode: a GPO pin corresponding to the configured channel is set to low or high depending on the threshold level set.
+-  Digital input logic mode: a GPO pin corresponding to the configured channel
+   is set to low or high depending on the threshold level set.
 
 Threshold level configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -119,7 +125,9 @@ The debounce mode takes effect when a channel is configured as a digital input. 
 ADC conversion sequence configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ADC can be configured to either perform single or continuous conversions. This setting is specific for the whole device, meaning that individual channels won't be able to have different conversion modes.
+The ADC can be configured to either perform single or continuous conversions.
+This setting is specific for the whole device, meaning that individual channels
+won't be able to have different conversion modes.
 
 Device data measurement
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -291,11 +299,11 @@ The source and header files for the AD74413R IIO driver can be found here:
    -  :git-no-OS:`AD74413R IIO driver header file <drivers/adc-dac/ad74413r/iio_ad74413r.h>`
    
 
-
 AD74413R IIO driver code documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the IIO driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the IIO driver is automatically generated using
+the Doxygen tool and it is available below:
 
 -  `AD74413R IIO Header file <http://analogdevicesinc.github.io/no-OS/iio__ad74413r_8h.html>`_
 -  `AD74413R IIO Source file <http://analogdevicesinc.github.io/no-OS/iio__ad74413r_8c.html>`_
@@ -320,7 +328,8 @@ The device's IIO channels are dependent on the operation mode of physical channe
        struct ad74413r_channel_config channel_configs[AD74413R_N_CHANNELS];
    };
 
-Depending on a physical channel's configuration, the IIO channels will be the following:
+Depending on a physical channel's configuration, the IIO channels will be the
+following:
 
 -  High impedance: 1 input voltage channel
 -  Voltage output: 1 input current, 1 output voltage channels
@@ -333,7 +342,8 @@ Depending on a physical channel's configuration, the IIO channels will be the fo
 ADC(input) channel attributes
 """""""""""""""""""""""""""""
 
-Each channel has attributes that are different depending on the direction and type.
+Each channel has attributes that are different depending on the direction and
+type.
 
 An ADC channel that has the IIO_RESISTANCE type has the following attributes:
 
@@ -348,7 +358,8 @@ For IIO_VOLTAGE and IIO_CURRENT input channel types, the attributes are:
 -  scale - the value that has to be applied to the raw attribute to get the real converted value in milli-units.
 -  offset - this value is the 0 referenced offset of the ADC's measurement range, which depends on the operation mode.
 -  sampling_frequency - the sampling frequency for the ADC. This value will be divided by the number of enabled channels.
--  sampling_frequency_available - the list of available sampling frequency values.
+-  sampling_frequency_available - the list of available sampling frequency
+   values.
 
 DAC(output) channel attributes
 """"""""""""""""""""""""""""""
@@ -362,7 +373,8 @@ The output channels have the following attributes:
 Device buffers
 ^^^^^^^^^^^^^^
 
-The AD74413R IIO device supports the usage of a data buffer for reading purposes.
+The AD74413R IIO device supports the usage of a data buffer for reading
+purposes.
 
 AD74413R IIO driver initialization example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

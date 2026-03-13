@@ -57,8 +57,10 @@ Available actions for SigmaStudio+ scripting:
 Scripting.Thrift
 ----------------
 
-We support Apache Thrift up to version 20.0, ensuring compatibility with the latest features and improvements.
+We support Apache Thrift up to version 20.0, ensuring compatibility with the
+latest features and improvements.
 
-This file is given out for the user to generate files in a specific language with the help of commands as given in the Apache Thrift startup guide.
+This file is given out for the user to generate files in a specific language
+with the help of commands as given in the Apache Thrift startup guide.
 
 https://thrift.apache.org/tutorial/.

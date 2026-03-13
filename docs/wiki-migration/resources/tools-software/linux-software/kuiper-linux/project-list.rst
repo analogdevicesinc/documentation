@@ -1,9 +1,13 @@
 Kuiper Linux Supported Projects and Platforms
 =============================================
 
-Kuiper Linux supports many different ADI hardware boards (such as ADCs, DACs, PLLs, DDSs, and more) which require digital control, and connect those to popular development boards from Xilinx, Intel, Raspberry Pi, and more.
+Kuiper Linux supports many different ADI hardware boards (such as ADCs, DACs,
+PLLs, DDSs, and more) which require digital control, and connect those to
+popular development boards from Xilinx, Intel, Raspberry Pi, and more.
 
-All the code for these projects can be found on Github and are open source for anyone who wants to download, clones, fork, or otherwise customize and contribute.
+All the code for these projects can be found on Github and are open source for
+anyone who wants to download, clones, fork, or otherwise customize and
+contribute.
 
 2023_r2 Patch1 Projects List
 ----------------------------
@@ -271,7 +275,8 @@ The following table provides a list of all support projects on FPGA platforms.
 |                                                                                    | `Zed Board <http://zedboard.org/product/zedboard>`_                                                                                               | zynq-zed-adv7511                                                                                                          | zynq-common             | none                                                                                               |
 +------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------------------------------------------------------------------------------+
 
-The following table is a summary of the projects supported on Raspberry Pi. Raspberry Pi platforms include several hardware versions including:
+The following table is a summary of the projects supported on Raspberry Pi.
+Raspberry Pi platforms include several hardware versions including:
 
 -  `Raspberry Pi 4B <https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>`_
 -  `Raspberry Pi 3B+ <https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/>`_
@@ -327,11 +332,10 @@ The following table is a summary of the projects supported on Raspberry Pi. Rasp
 2023_r2 Projects List
 ~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: 2023_r2 Projects List (Click to expand)
 
-   The following table provides a list of all support projects on FPGA platforms.
+   The following table provides a list of all support projects on FPGA
+   platforms.
 
    +------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------------------------------------------------------------------------------+
    | ADI Hardware                                                                       | Development Platform                                                                                                                              | Directory on the SD image                                                                                                 | Image Files on SD Card  | Documentation                                                                                      |
@@ -594,7 +598,8 @@ The following table is a summary of the projects supported on Raspberry Pi. Rasp
    |                                                                                    | `Zed Board <http://zedboard.org/product/zedboard>`_                                                                                               | zynq-zed-adv7511                                                                                                          | zynq-common             | none                                                                                               |
    +------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------------------------------------------------------------------------------+
 
-   The following table is a summary of the projects supported on Raspberry Pi. Raspberry Pi platforms include several hardware versions including:
+   The following table is a summary of the projects supported on Raspberry Pi.
+   Raspberry Pi platforms include several hardware versions including:
 
    -  `Raspberry Pi 4B <https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>`_
    -  `Raspberry Pi 3B+ <https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/>`_
@@ -647,12 +652,8 @@ The following table is a summary of the projects supported on Raspberry Pi. Rasp
    | :adi:`AD4130-8` **[New]**                                          | rpi-ad4130.dtbo     | :adi:`PMD-RPI-INTZ`                                                | :doc:`doc </wiki-migration/resources/eval/user-guides/ad4130-8>`                                 |
    +--------------------------------------------------------------------+---------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
-
-
 2022_r2 Projects List
 ~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: 2022_r2 Projects List (Click to expand)
 
@@ -909,7 +910,8 @@ The following table is a summary of the projects supported on Raspberry Pi. Rasp
    |                                                                                    |                                                                                                                                                   | zynq-zed-imageon **[Last Release support]**                                                                                         | zynq-common             | none                                                                                               |
    +------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------------------------------------------------------------------------------+
 
-   The following table is a summary of the projects supported on Raspberry Pi. Raspberry Pi platforms include several hardware versions including:
+   The following table is a summary of the projects supported on Raspberry Pi.
+   Raspberry Pi platforms include several hardware versions including:
 
    -  `Raspberry Pi 4B <https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>`_
    -  `Raspberry Pi 3B+ <https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/>`_
@@ -959,7 +961,5 @@ The following table is a summary of the projects supported on Raspberry Pi. Rasp
    +--------------------------------------------------------------------+---------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | `PMOD ACL <https://digilent.com/reference/pmod/pmodacl/start>`_    | rpi-adxl345.dtbo    |                                                                    | :doc:`lab </wiki-migration/university/labs/software/iio_intro_toolbox>`                          |
    +--------------------------------------------------------------------+---------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-
-
 
 *End of Document*

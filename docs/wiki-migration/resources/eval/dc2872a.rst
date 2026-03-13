@@ -4,22 +4,29 @@ Evaluation Board for the LTM2985 Isolated High Accuracy Digital Temperature Meas
 Description
 -----------
 
-The DC2872A is an evaluation board for demonstrating the performance and ease of use of the LTM2985, an isolated 10-channel temperature measurement system on a chip, software compatible with the LTC2986-1. It provides 5kV isolated power and SPI interface to the precision temperature-to-bits converter.
+The DC2872A is an evaluation board for demonstrating the performance and ease of
+use of the LTM2985, an isolated 10-channel temperature measurement system on a
+chip, software compatible with the LTC2986-1. It provides 5kV isolated power and
+SPI interface to the precision temperature-to-bits converter.
 
 .. tip::
 
-   The LTM2985 datasheet provides additional information and should be consulted when using the evaluation board.
+   The LTM2985 datasheet provides additional information and should be consulted
+   when using the evaluation board.
 
-
-The DC2872A is designed to allow easy evaluation of the LTM2985 and may be connected to any one of the sensor daughter boards.
+The DC2872A is designed to allow easy evaluation of the LTM2985 and may be
+connected to any one of the sensor daughter boards.
 
 -  Universal Temperature Measurement Board – DC2211
 -  Thermocouple Board – DC2212
 -  Dedicated RTD Board – DC2213
 -  Dedicated Thermistor Board – DC2214
--  Experimenter Board - DC2210 (only comes with LTC2983/LTC2984/LTC2986/LTC2986-1 starter kits)
+-  Experimenter Board - DC2210 (only comes with
+   LTC2983/LTC2984/LTC2986/LTC2986-1 starter kits)
 
-These daughter boards allow evaluation of the various sensors the LTM2985 supports. For the serial digital interface, the DC2872A may be connected to the DC2026 Linduino® One.
+These daughter boards allow evaluation of the various sensors the LTM2985
+supports. For the serial digital interface, the DC2872A may be connected to the
+DC2026 Linduino® One.
 
 --------------
 
@@ -35,7 +42,8 @@ Equipment Needed
 
 -  PC running Windows®
 -  USB 2.0 port and USB 2.0 Cable A-B Male
--  DC2026C Linduino One controller board (commonly referred to as DC2026C or Linduino)
+-  DC2026C Linduino One controller board (commonly referred to as DC2026C or
+   Linduino)
 
 --------------
 
@@ -51,8 +59,6 @@ Software Required
 ~~~~~~~~~~~~~~~~~
 
 -  LTM2985 Demo Software
-
-
 
 --------------
 
@@ -98,7 +104,6 @@ Quick Start Procedure
 
    \ **Figure 1:** DC2872A connected to a daughter board and DC2026C (Linduino)*\
 
-
 -  Connect one of the five sensor daughter boards (DC2210, DC2211, DC2212, DC2213 or DC2214) to the DC2872A demo board.
 -  Connect the DC2872A to a DC2026C using the supplied 14-conductor ribbon cable.
 -  Connect the DC2026C to the PC using a standard USB A/B cable.
@@ -110,7 +115,6 @@ Quick Start Procedure
 .. container:: leftalign
 
    \ **Figure 2:** LTM2985 Demo Software*\
-
 
 Hardware Setup
 --------------
@@ -125,20 +129,20 @@ DC2211 Universal Temperature Measurement Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_3_-_dc2211.jpg
-   :width: 200px
+   :width: 200
 
 .. container:: leftalign
 
    \ **Figure 3:** DC2211 Universal Temperature Measurement Board*\
 
-
-The universal temperature measurement board allows the user to connect any of the LTM2985 supported sensors to the DC2872A demo board.
-
+The universal temperature measurement board allows the user to connect any of
+the LTM2985 supported sensors to the DC2872A demo board.
 
 | It has a built-in sense resistor for RTD applications as well as a cold junction sensor diode for thermocouple applications. The sense resistor
 | is a 2kΩ ±0.1% 10ppm/°C sense resistor on channels 1 and 2 which may be used with any of the supported RTD sensor types.
 
-The external interface on the universal temperature measurement board is an 8-position screw-terminal block with the flowing pinout.
+The external interface on the universal temperature measurement board is an
+8-position screw-terminal block with the flowing pinout.
 
  **DC2211 Terminal Connector Pinout**
 
@@ -170,26 +174,22 @@ DC2212 Thermocouple Daughter Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_4_-_dc2212.jpg
-   :width: 200px
+   :width: 200
 
 .. container:: leftalign
 
    \ **Figure 4:** DC2212 Thermocouple Daughter Board*\
 
-
-The thermocouple board demonstrates the flexibility, accuracy, and low noise features of the LTM2985 thermocouple modes.
-
+The thermocouple board demonstrates the flexibility, accuracy, and low noise
+features of the LTM2985 thermocouple modes.
 
 | If the user wishes to connect external sensors to the thermocouple board, two universal-type thermocouple jacks (J2 and J3) are available. The user
 | may connect any of the LTM2985 supported thermocouples (B, E, J, K, N, R, S, or T) as well as custom thermocouples through these jacks.
 
-
 | To demonstrate the flexibility of the LTM2985, the thermocouple board includes cold junction diodes (Q1 and Q2) embedded in each thermocouple
 | socket. Alternatively, a 4-wire PT100 RTD (R5) can be used as the cold junction sensor for either or both thermocouples.
 
-
 | To demonstrate the low system noise and offset of the LTM2985, the thermocouple board provides a short to ground on channel 5.
-
 
 | To demonstrate the accuracy of the LTM2985, the thermocouple board allows the user to connect a thermocouple calibrator or an external voltage
 | source to CH10 of the LTM2985 through a pair of banana jacks (J4 and J5).
@@ -202,31 +202,26 @@ DC2213 Dedicated RTD Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_5_-_dc2213.jpg
-   :width: 200px
+   :width: 200
 
 .. container:: leftalign
 
    \ **Figure 5:** DC2213 Dedicated RTD Board*\
 
-
 | The DC2213 dedicated RTD board demonstrates the flexibility, accuracy, and low noise features of the LTM2985 RTD sensor modes. The DC2213
 | provides several circuits demonstrating the features of the LTM2985.
 
-
 | The DC2213 provides a 2kΩ ±0.1% 10ppm/°C sense resistor on channels 2 and 3 which may be used with any of the RTD sensor circuits on this
 | board. An additional Kelvin connection is also provided to this sense resistor on channel 1.
-
 
 | To demonstrate the low system noise of the LTM2985, the dedicated RTD board provides a 0°C PT100 simulator (100Ω ±0.01% 10ppm/°C)
 | on channels 3 to 6 configured as a 4-wire sensor. In addition to this the user may use this circuit to demonstrate how the rotated mode eliminates
 | measurement error introduced by parasitic thermocouples. To facilitate this measurement, the DC2213 provides an external thermocouple interface
 | which acts as a parasitic thermocouple.
 
-
 | To see the effects of parasitic thermocouples on non-rotated measurement modes, first measure the on-board 0°C PT100 simulator in a non-rotated
 | configuration and see the measurement error as the thermocouple’s temperature changes. To see the benefit of the rotated measurement mode, switch
 | from the no rotation/sharing to the rotation/ sharing configuration and see the errors introduced by the parasitic thermocouple minimized.
-
 
 | If the user wishes to connect an external RTD to the sensor board, a 4-position terminal block is provided. The user may connect any of the LTM2985
 | supported RTDs as well as custom RTDs to the DC2872A demo board through this interface. The interface may be configured for 3 or 4 wire sensors.
@@ -240,25 +235,21 @@ DC2214 Dedicated Thermistor Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_6_-_dc2214.jpg
-   :width: 200px
+   :width: 200
 
 .. container:: leftalign
 
    \ **Figure 6:** DC2214 Thermistor Daughter Board*\
 
-
 | The DC2214 dedicated thermistor board includes several circuits to demonstrate the flexibility, accuracy, and low noise features of the LTM2985
 | thermistor sensor modes.
-
 
 | The DC2214 provides a 10kΩ ±0.1% 15ppm/°C sense resistor on channels 1 and 2 which is shared with all of the thermistor sensor circuits
 | on this board.
 
-
 | To demonstrate the low system noise of the LTM2985 the dedicated thermistor board provides a 25°C 10k thermistor simulator (10kΩ ±0.1% 15ppm/°C)
 | on channels 2-4 configured as a differential sensor. In addition to this the user may use this circuit to demonstrate how the rotated mode eliminates
 | measurement error introduced by parasitic thermocouples. To facilitate this demonstration the DC2214 provides an external thermocouple interface which acts as a parasitic thermocouple.
-
 
 | To see the effects of parasitic thermocouples on nonrotated measurement modes, first measure the on-board 25°C 10k thermistor simulator in a
 | no-rotation/sharing configuration and see the measurement error as the thermocouple’s temperature changes. To see the benefit of the
@@ -270,7 +261,6 @@ DC2214 Dedicated Thermistor Board
 | the temperature is below the thermistor’s specified minimum temperature. In addition to the fixed value thermistor simulators, there is a variable resistor
 | thermistor simulator as well. This circuit can be used to demonstrate the range of the various LTM2985 thermistor sensor modes as well as demonstrate
 | the fault detection capabilities of the LTM2985.
-
 
 | If the user wishes to connect an external thermistor to the daughter board, a 2-position terminal block is provided. The user may connect any of the
 | LTCM2985 supported thermistors as well as custom thermistors to the DC2872A demo board through this interface. To demonstrate the accuracy of
@@ -284,20 +274,18 @@ DC2210 Experimenter Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_7_-_dc2210.jpg
-   :width: 200px
-
-
+   :width: 200
 
 .. container:: leftalign
 
    \ **Figure 7:** DC2210 Experimenter Board*\
 
-
-The DC2210 experimenter board brings all LTM2985 channels plus the COM connection out to a proto area and a 24-position terminal block. The
+The DC2210 experimenter board brings all LTM2985 channels plus the COM
+connection out to a proto area and a 24-position terminal block. The
 | user may connect any of the supported sensors and sense resistors to any of the LTM2985 inputs in this area. Please note that only CH1 to CH10
 | are valid on the DC2210 when used in conjunction with the DC2872A.
 
 :adi:`DC2210 Schematics and Design Files (part of LTC2986-1 Kit, cannot be bought standalone) <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/dc2608a.html>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_2.jpg
-   :width: 800px
+   :width: 800

@@ -35,10 +35,10 @@ The SDK comes bundled as part of the A\ :sup:`2`\ B Bus Analyzer GUI software an
 
 1. Select Sdk → Export User-Accessible SDK... from the application's menu bar: |image7| 2. Browse for a suitable location to save the SDK (e.g. your Desktop). Press the Export button when you have selected a destination: |image8| 3. The SDK is saved inside a folder named 'uasdk' in your chosen location:
 
-
 |image9|
 
-\*\* Note \*\* Exporting the SDK to a folder with spaces will cause problems building the examples so it is not recommended.
+\*\* Note \*\* Exporting the SDK to a folder with spaces will cause problems
+building the examples so it is not recommended.
 
 The SDK C/C++ Interface
 =======================
@@ -50,12 +50,13 @@ To access the library's functionality in your your own projects, you must includ
 Example applications
 --------------------
 
-Several example applications are included in the SDK demonstrating different capabilities of the Analyzer as a bus monitor and/or node emulator.
+Several example applications are included in the SDK demonstrating different
+capabilities of the Analyzer as a bus monitor and/or node emulator.
 
 The example projects are located in the ``uasdk/examples/C++`` directory. Also there is a README.md file which repeats these instructions and gives brief descriptions of the example applications.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_sdk_example_location.png
-   :width: 400px
+   :width: 400
 
 Each example resides in its own sub-directory, e.g. ``uasdk/examples/C++/emulator/emulator_basic``.
 
@@ -110,9 +111,15 @@ The built executables are terminal/command prompt programs which CMake places in
 Using the SDK in your applications
 ----------------------------------
 
-This SDK supports the A2B Bus Analyzer for A2B 1.0 networks and the A2B Analyzer HP for A2B 2.0 networks. Whenever possible the API has been maintained the same for all architectures sometimes having structures that are not applicable or function arguments which are not used.
+This SDK supports the A2B Bus Analyzer for A2B 1.0 networks and the A2B Analyzer
+HP for A2B 2.0 networks. Whenever possible the API has been maintained the same
+for all architectures sometimes having structures that are not applicable or
+function arguments which are not used.
 
-While the SDK API that was provided by the A2B Bus Analyzer Software is available (a2ba_sdk_xxx), we recommend that you port your existing code to the new API (a2ba2_sdk_XXX). Many APIs are a simple 1-to-1 matching to help with porting. Support for the legacy API will be removed in a future release.
+While the SDK API that was provided by the A2B Bus Analyzer Software is
+available (a2ba_sdk_xxx), we recommend that you port your existing code to the
+new API (a2ba2_sdk_XXX). Many APIs are a simple 1-to-1 matching to help with
+porting. Support for the legacy API will be removed in a future release.
 
 The default CMake configuration used to build the examples ensures the required runtime libraries are copied to the correct location. However, if you want to run the examples from a different location, or when using the SDK in your own applications, you must update your system's environment variables to point to the libraries in ``uasdk/lib``.
 
@@ -128,7 +135,7 @@ Documentation
 A Doxygen-generated SDK API Reference Manual is available in HTML format in the directory ``uasdk\C\docs`` . Double-clicking the ``A2B_Analyzer_UASDK_help.html`` will display the manual in your default web browser:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_sdk_doxygen.png
-   :width: 400px
+   :width: 400
 
 The manual gives an overview of the A\ :sup:`2`\ B technology and the A\ :sup:`2`\ B Analyzer before documenting the API functions and data structures available to your applications.
 
@@ -150,7 +157,10 @@ There is a wheel for each supported operating system:
 Installation
 ------------
 
-To use the SDK with your Python application or to run the example, you must first install the correct wheel for your platform. We recommend installing and using in a virtual environment to avoid unexpected changes to your system Python installation.
+To use the SDK with your Python application or to run the example, you must
+first install the correct wheel for your platform. We recommend installing and
+using in a virtual environment to avoid unexpected changes to your system Python
+installation.
 
 **Installing SDK wheel**
 
@@ -182,12 +192,16 @@ Configuring the examples
 There are some simple command line example scripts in the directory ``uasdk/examples/python`` . To run them make sure that the python environment that you are using is the one where you installed the wheel in the previous step. For example, if you used a virtual environment, ensure that this environment has been activated. If it is active, you should see the name of your environment (e.g. 'env') in parentheses before your prompt:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_sdk_python_examples.png
-   :width: 400px
+   :width: 400
 
-Set up the file config.py to match the network that you have. This is specially important if you are running the emulator example since the example can support many options like A2B Bus Analyzer or A2B Analyzer HP, emulating main or sub, device to emulate etc. A failure to set up the file to match your network is likely to result on failures.
+Set up the file config.py to match the network that you have. This is specially
+important if you are running the emulator example since the example can support
+many options like A2B Bus Analyzer or A2B Analyzer HP, emulating main or sub,
+device to emulate etc. A failure to set up the file to match your network is
+likely to result on failures.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_python_config.png
-   :width: 600px
+   :width: 600
 
 Running the examples
 ~~~~~~~~~~~~~~~~~~~~
@@ -203,7 +217,7 @@ Then, execute the example script with your Python interpreter:
 If successful, you should see output similar to:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_python_success.png
-   :width: 500px
+   :width: 500
 
 Documentation
 -------------
@@ -211,7 +225,7 @@ Documentation
 A Sphinx-generated API Reference is available in HTML format in the directory ``uasdk\python\docs``. Double-clicking the ``a2ba2_sdk.html`` will display the manual in your default web browser. In the interactive Python interpreter, you can also type ``help()`` with the function name inside the parentheses.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_python_docs.png
-   :width: 500px
+   :width: 500
 
 Known limitations
 =================
@@ -219,32 +233,32 @@ Known limitations
 -  The SDK is **not supported in multi-threaded environments.**
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_sdk_export_menu.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_sdk_export.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_sdk_extract.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20

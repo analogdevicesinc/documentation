@@ -1,7 +1,10 @@
 ADXUD1AEBZ Data Set
 ===================
 
-Data was collected on a total of four boards. With 4 channels per board, there are a total of 16 datasets per measurement characterizing the XUD1A boards across all states (RX High Gain, RX Low Gain, and TX). Units were tested in a fixed IF configuration (swept LO & swept RF) with an IF Frequency of 4.5 GHz.
+Data was collected on a total of four boards. With 4 channels per board, there
+are a total of 16 datasets per measurement characterizing the XUD1A boards
+across all states (RX High Gain, RX Low Gain, and TX). Units were tested in a
+fixed IF configuration (swept LO & swept RF) with an IF Frequency of 4.5 GHz.
 
 Receive High Gain Mode
 ----------------------
@@ -11,12 +14,11 @@ S Parameters
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_hg_s11.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ **Figure 1: RX High Gain Mode S11**\
-
 
    |rx_hg_s21.png|
 
@@ -24,37 +26,33 @@ S Parameters
 
    \ **Figure 2: RX High Gain Mode S21**\
 
-
    |rx_hg_s22.png|
 
 .. container:: centeralign
 
    \ **Figure 3: RX High Gain Mode S22**\
 
-
 Noise Figure
 ~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_hg_nf.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ **Figure 4: RX High Gain Mode Noise Figure**\
-
 
 IIP3
 ~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_hg_iip3.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ **Figure 5: RX High Gain Mode IIP3**\
-
 
 Data Tables
 ~~~~~~~~~~~
@@ -74,7 +72,6 @@ Frequency                   Minimum Average Maximum
 
    \ **Table 1: RX High Gain Mode Gain**\
 
-
 =================================== ======= ======= =======
 RX High Gain Mode Noise Figure (dB)                 
 =================================== ======= ======= =======
@@ -89,7 +86,6 @@ Frequency                           Minimum Average Maximum
 .. container:: leftalign
 
    \ **Table 2: RX High Gain Mode Noise Figure**\
-
 
 ================================= ======= ======= =======
 RX High Gain Mode Input IP3 (dBm)                 
@@ -106,7 +102,6 @@ Frequency                         Minimum Average Maximum
 
    \ **Table 3: RX High Gain Mode Input IP3**\
 
-
 Receive Low Gain Mode
 ---------------------
 
@@ -115,12 +110,11 @@ S Parameters
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_lg_s11.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ **Figure 6: RX Low Gain Mode S11**\
-
 
    |rx_lg_s21.png|
 
@@ -128,37 +122,33 @@ S Parameters
 
    \ **Figure 7: RX Low Gain Mode S21**\
 
-
    |rx_lg_s22.png|
 
 .. container:: centeralign
 
    \ **Figure 8: RX Low Gain Mode S22**\
 
-
 Noise Figure
 ~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_lg_nf.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ **Figure 9: RX Low Gain Mode Noise Figure**\
-
 
 IIP3
 ~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_lg_iip3.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ **Figure 10: RX Low Gain Mode IIP3**\
-
 
 Data Tables
 ~~~~~~~~~~~
@@ -178,7 +168,6 @@ Frequency                  Minimum Average Maximum
 
    \ **Table 4: RX Low Gain Mode Gain**\
 
-
 ================================== ======= ======= =======
 RX Low Gain Mode Noise Figure (dB)                 
 ================================== ======= ======= =======
@@ -193,7 +182,6 @@ Frequency                          Minimum Average Maximum
 .. container:: leftalign
 
    \ **Table 5: RX Low Gain Mode Noise Figure**\
-
 
 ================================ ======= ======= =======
 RX Low Gain Mode Input IP3 (dBm)                 
@@ -210,7 +198,6 @@ Frequency                        Minimum Average Maximum
 
    \ **Table 6: RX Low Gain Mode Input IP3**\
 
-
 TX Mode
 -------
 
@@ -219,12 +206,11 @@ S Parameters
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_s11.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ **Figure 11: TX Mode S11**\
-
 
    |tx_s21.png|
 
@@ -232,32 +218,28 @@ S Parameters
 
    \ **Figure 12: TX Mode S21**\
 
-
    |tx_s22.png|
 
 .. container:: centeralign
 
    \ **Figure 13: TX Mode S22**\
 
-
 IP3
 ~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_oip3.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ **Figure 14: TX Mode OIP3**\
-
 
    |image1|
 
 .. container:: centeralign
 
    \ **Figure 15: TX Mode IIP3**\
-
 
 Data Tables
 ~~~~~~~~~~~
@@ -277,7 +259,6 @@ Frequency         Minimum Average Maximum
 
    \ **Table 7: TX Mode Gain**\
 
-
 ======================== ======= ======= =======
 TX Mode Output IP3 (dBm)                 
 ======================== ======= ======= =======
@@ -292,7 +273,6 @@ Frequency                Minimum Average Maximum
 .. container:: leftalign
 
    \ **Table 8: TX Mode Input IP3**\
-
 
 Switching Speed
 ---------------
@@ -309,23 +289,22 @@ All Modes            Rising    146.4   159.2   178.4
 
    \ **Table 9: Switching Speed**\
 
-
 .. note::
 
-   Table 9 Switching Speed measurements captured for an RF Frequency of 10 GHz, LO Frequency of 14.5 GHz and IF Frequency of 4.5 GHz.
-
+   Table 9 Switching Speed measurements captured for an RF Frequency of 10 GHz,
+   LO Frequency of 14.5 GHz and IF Frequency of 4.5 GHz.
 
 .. |rx_hg_s21.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_hg_s21.png
-   :width: 400px
+   :width: 400
 .. |rx_hg_s22.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_hg_s22.png
-   :width: 400px
+   :width: 400
 .. |rx_lg_s21.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_lg_s21.png
-   :width: 400px
+   :width: 400
 .. |rx_lg_s22.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_lg_s22.png
-   :width: 400px
+   :width: 400
 .. |tx_s21.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_s21.png
-   :width: 400px
+   :width: 400
 .. |tx_s22.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_s22.png
-   :width: 400px
+   :width: 400
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_iip3.png
-   :width: 400px
+   :width: 400

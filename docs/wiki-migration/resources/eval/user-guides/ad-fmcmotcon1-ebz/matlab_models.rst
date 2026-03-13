@@ -1,8 +1,6 @@
 Simulink Controller Models
 ==========================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,19 +17,31 @@ Simulink Controller Models
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-The Vivado HDL design is provided with an integrated FOC and speed & torque controller generated from a Simulink model provided by MathWorks. The controller is designed in Simulink and the corresponding HDL code is generated using the Mathworks HDL Coder.
+The Vivado HDL design is provided with an integrated FOC and speed & torque
+controller generated from a Simulink model provided by MathWorks. The controller
+is designed in Simulink and the corresponding HDL code is generated using the
+Mathworks HDL Coder.
 
 Field Oriented Controller (FOC)
 -------------------------------
 
-The FOC controller model is provided by MathWorks and it is integrated in the HDL design as a standalone IP core. Below is presented a top level diagram of the controller's Simulink model. For more information about the model check out the MathWorks website.
+The FOC controller model is provided by MathWorks and it is integrated in the
+HDL design as a standalone IP core. Below is presented a top level diagram of
+the controller's Simulink model. For more information about the model check out
+the MathWorks website.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/foc_simulink.png
-   :width: 700px
+   :width: 700
 
-The controller model is packaged into an IP core using the Simulink Workflow Advisor. It exposes a set of AXI-Lite registers that can be used to control the IP's operation as well as a set of interface signals for encoder input, current measurement data, inverter control and internal operations monitoring. All the monitoring signals connect to an ADI IP which allows these signals to be monitored from the Linux IIO Scope application. The AXI-Lite registers exposed by the controller IP core can be directly accessed through an uio driver present in the ADI Linux distribution for Zynq. The table below lists the exposed AXI-Lite registers.
+The controller model is packaged into an IP core using the Simulink Workflow
+Advisor. It exposes a set of AXI-Lite registers that can be used to control the
+IP's operation as well as a set of interface signals for encoder input, current
+measurement data, inverter control and internal operations monitoring. All the
+monitoring signals connect to an ADI IP which allows these signals to be
+monitored from the Linux IIO Scope application. The AXI-Lite registers exposed
+by the controller IP core can be directly accessed through an uio driver present
+in the ADI Linux distribution for Zynq. The table below lists the exposed
+AXI-Lite registers.
 
 +-------------------------+---------+--------------------------+------+------------------------------------------------------------------------------------+
 | Register name           | Address | Data format              | Type | Description                                                                        |
@@ -64,7 +74,8 @@ The operation of the IP core is controlled through the :git-mathworks_tools:`mot
 -  Set the motor's reference speed
 -  Start the FOC controller in closed loop mode
 
-The IP core exposes a set of signals for interfacing with the rest of the system. The table below lists the exposed interface signals.
+The IP core exposes a set of signals for interfacing with the rest of the
+system. The table below lists the exposed interface signals.
 
 +-------------------------+-----------+-------+--------------------------+--------------------------------------+
 | Signal name             | Direction | Width | Data format              | Description                          |
@@ -104,11 +115,12 @@ The IP core exposes a set of signals for interfacing with the rest of the system
 | mon_q_current           | O         | 32    | Signed fixed point 32.15 | q current in Amps                    |
 +-------------------------+-----------+-------+--------------------------+--------------------------------------+
 
-Below is presented a picture containing the output of the script, the IIO Scope settings and a controller monitored signals plot.
+Below is presented a picture containing the output of the script, the IIO Scope
+settings and a controller monitored signals plot.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/mc_full_sc.png
    :alt: Motor Control IIO Scope
-   :width: 700px
+   :width: 700
 
 Support
 -------
@@ -118,4 +130,3 @@ Support
    
    -  Questions? :ez:`Ask Help & Support <sw-interface-tools>`.
    
-

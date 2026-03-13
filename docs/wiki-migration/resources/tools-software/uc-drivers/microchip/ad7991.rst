@@ -1,7 +1,6 @@
 AD799x - No-OS Driver for Microchip Microcontroller Platforms
 =============================================================
 
-
 Supported Devices
 =================
 
@@ -19,14 +18,16 @@ Evaluation Boards
 Overview
 ========
 
-
 The :adi:`AD7991`/:adi:`AD7995`/:adi:`AD7999` are 12-/10-/8-bit, low power, successive approximation ADCs with an I2C®-compatible interface. Each part operates from a single 2.7 V to 5.5 V power supply and features a 1 μs conversion time.
 
 Each :adi:`AD7991`/:adi:`AD7995`/:adi:`AD7999` provides a 2-wire serial interface compatible with I2C interfaces. The :adi:`AD7991` and :adi:`AD7995` come in two versions and each version has an individual I2C address (see Table 8 of data sheet for address and part number selection). This allows two of the same devices to be connected to the same I2C bus. Both versions support standard, fast, and high speed I2C interface modes. The :adi:`AD7999` comes in one version.
 
 The :adi:`AD7991`/:adi:`AD7995`/:adi:`AD7999` normally remain in a shutdown state, powering up only for conversions. The conversion process is controlled by a command mode, during which each I2C read operation initiates a conversion and returns the result over the I2C bus.
 
-When four channels are used as analog inputs, the reference for the part is taken from VDD; this allows the widest dynamic input range to the ADC. Therefore, the analog input range to the ADC is 0 V to VDD. An external reference, applied through the VIN3/VREF input, can also be used with this part.
+When four channels are used as analog inputs, the reference for the part is
+taken from VDD; this allows the widest dynamic input range to the ADC.
+Therefore, the analog input range to the ADC is 0 V to VDD. An external
+reference, applied through the VIN3/VREF input, can also be used with this part.
 
 Applications
 ------------
@@ -39,9 +40,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/ad7991_pmod_ad2.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -49,9 +53,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD799x part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD799x driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD799x driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD799x driver:
 
@@ -66,7 +74,6 @@ There are three functions which are called by the AD799x driver:
 
    I2C driver architecture
 
-
 The following functions are implemented in this version of AD799x driver:
 
 +--------------------------------------------------------------------+---------------------------------------------------------+
@@ -80,8 +87,6 @@ The following functions are implemented in this version of AD799x driver:
 +--------------------------------------------------------------------+---------------------------------------------------------+
 | float AD799x_ConvertToVolts(short rawSample, float vRef)           | Converts a raw sample to volts.                         |
 +--------------------------------------------------------------------+---------------------------------------------------------+
-
-
 
 **HW Platform(s):**
 
@@ -102,11 +107,11 @@ Downloads
    -  **PIC32MX320F128H Common Drivers:** :git-no-OS:`Microchip/PIC32MX320F128H/Common`
    
 
-
 Digilent Cerebot MX3cK Quick Start Guide
 ========================================
 
-This section contains a description of the steps required to run the AD7991 demonstration project on a Digilent Cerebot MX3cK platform.
+This section contains a description of the steps required to run the AD7991
+demonstration project on a Digilent Cerebot MX3cK platform.
 
 Required Hardware
 -----------------
@@ -123,17 +128,18 @@ Required Software
 
 .. note::
 
-   The AD7991 demonstration project for PIC32MX320F128H consists of three parts: the AD799x Driver, the PmodAD2 Demo for PIC32MX320F128H and the PIC32MX320F128H Common Drivers.
+   The AD7991 demonstration project for PIC32MX320F128H consists of three parts:
+   the AD799x Driver, the PmodAD2 Demo for PIC32MX320F128H and the
+   PIC32MX320F128H Common Drivers.
 
    
    All three parts have to be downloaded.
 
-
 Hardware Setup
 --------------
 
-A PmodAD2 has to be connected to the J2 connector of Cerebot MX3cK development board.
-
+A PmodAD2 has to be connected to the J2 connector of Cerebot MX3cK development
+board.
 
 |image1|
 
@@ -143,11 +149,11 @@ A PmodAD2 has to be connected to the J2 connector of Cerebot MX3cK development b
    -  Using JP1 jumper you can either have 4 input channels or 3 input channels.
    
 
-
 Reference Project Overview
 --------------------------
 
-The following commands were implemented in this version of AD7991 reference project for Cerebot MX3cK board.
+The following commands were implemented in this version of AD7991 reference
+project for Cerebot MX3cK board.
 
 +-----------+----------------------------------------------------------------------------------------------------------------+
 | Command   | Description                                                                                                    |
@@ -161,10 +167,11 @@ The following commands were implemented in this version of AD7991 reference proj
 |           | 0..3 - selected channel.                                                                                       |
 +-----------+----------------------------------------------------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART1 peripheral of PIC32MX320F128H.
+Commands can be executed using a serial terminal connected to the UART1
+peripheral of PIC32MX320F128H.
 
-The following image shows a generic list of commands in a serial terminal connected to processor’s UART peripheral.
-
+The following image shows a generic list of commands in a serial terminal
+connected to processor’s UART peripheral.
 
 |image2|
 
@@ -174,10 +181,8 @@ The following image shows a generic list of commands in a serial terminal connec
    -  The reference voltage for the AD7991 is the supply voltage which is 3.3V.
    
 
-
 Software Project Setup
 ----------------------
-
 
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -208,7 +213,8 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
    :align: center
 
--  After the project is created, all the downloaded source files have to be copied in the project folder and included in the project.
+-  After the project is created, all the downloaded source files have to be
+   copied in the project folder and included in the project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
    :align: center
@@ -218,12 +224,11 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
 
-
-
 Digilent Cerebot MC7 Quick Start Guide
 ======================================
 
-This section contains a description of the steps required to run the AD7991 demonstration project on a Digilent Cerebot MC7 platform.
+This section contains a description of the steps required to run the AD7991
+demonstration project on a Digilent Cerebot MC7 platform.
 
 Required Hardware
 -----------------
@@ -240,7 +245,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodAD2 has to be connected to the J6 connector of Cerebot MC7 development board.
+A PmodAD2 has to be connected to the J6 connector of Cerebot MC7 development
+board.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad2_dspic33.jpg
    :align: center
@@ -248,7 +254,8 @@ A PmodAD2 has to be connected to the J6 connector of Cerebot MC7 development boa
 Reference Project Overview
 --------------------------
 
-Following commands were implemented in this version of AD7991 reference project for Cerebot MC7 board.
+Following commands were implemented in this version of AD7991 reference project
+for Cerebot MC7 board.
 
 +-----------+--------------------------------------------------------------------------------------------------------+
 | Command   | Description                                                                                            |
@@ -264,16 +271,16 @@ Following commands were implemented in this version of AD7991 reference project 
 | register? | Initiates a conversion and displays the raw data in decimal format.                                    |
 +-----------+--------------------------------------------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART1 peripheral of dsPIC33FJ128MC706A.
+Commands can be executed using a serial terminal connected to the UART1
+peripheral of dsPIC33FJ128MC706A.
 
-The following image shows a list of commands in a serial terminal connected to processor’s UART peripheral.
-
+The following image shows a list of commands in a serial terminal connected to
+processor’s UART peripheral.
 
 |image3|
 
 Software Project Setup
 ----------------------
-
 
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -304,7 +311,8 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
    :align: center
 
--  After the project is created, the source files have to be copied in the project folder and included in the project.
+-  After the project is created, the source files have to be copied in the
+   project folder and included in the project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
    :align: center
@@ -314,12 +322,11 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
    :align: center
 
-
-
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
 ==========================================================
 
-This section contains a description of the steps required to run the AD7991 chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
+This section contains a description of the steps required to run the AD7991
+chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
 
 Required Hardware
 -----------------
@@ -335,7 +342,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodAD2 has to be connected to the J2 connector of Cerebot MX3cK development board.
+A PmodAD2 has to be connected to the J2 connector of Cerebot MX3cK development
+board.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad2_pic32_arduino.jpg
    :align: center
@@ -343,7 +351,8 @@ A PmodAD2 has to be connected to the J2 connector of Cerebot MX3cK development b
 Reference Project Overview
 --------------------------
 
-Following commands were implemented in this version of AD7991 chipKIT reference project for Cerebot MX3cK board.
+Following commands were implemented in this version of AD7991 chipKIT reference
+project for Cerebot MX3cK board.
 
 +-----------+--------------------------------------------------------------------------------------------------------+
 | Command   | Description                                                                                            |
@@ -371,7 +380,6 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
@@ -395,19 +403,14 @@ This section presents the steps for developing a chipKIT application that will r
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_3.png
    :align: center
 
-
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad2_pic32.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

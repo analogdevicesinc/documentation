@@ -1,12 +1,14 @@
 Software Packs & Board Support Package
 ======================================
 
-A modular software framework is provided for quick application prototyping. Based on the application use case, developers need to download the respective software packs.
+A modular software framework is provided for quick application prototyping.
+Based on the application use case, developers need to download the respective
+software packs.
 
 .. important::
 
-   Please make sure you install CrossCore Embedded Studio 2.6.0 ® before installing any of the below packs
-
+   Please make sure you install CrossCore Embedded Studio 2.6.0 ® before
+   installing any of the below packs
 
 The Cog software development kit consists of these packs
 

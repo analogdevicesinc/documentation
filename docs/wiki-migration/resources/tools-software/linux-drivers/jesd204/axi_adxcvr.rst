@@ -62,7 +62,8 @@ Files Intel / Altera
 Example platform device initialization
 ======================================
 
-The AXI JESD204B driver is a platform driver and can currently only be instantiated via device tree.
+The AXI JESD204B driver is a platform driver and can currently only be
+instantiated via device tree.
 
 Deprecated Non-jesd204-fsm mode
 -------------------------------
@@ -196,7 +197,8 @@ Example:
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -221,7 +223,9 @@ This driver provides advanced diagnostics, status and control via `sysfs <https:
 Low level register access via reg_access
 ----------------------------------------
 
-This device driver features an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver.
+This device driver features an optional debug facility, allowing users to read
+or write registers directly. Special care needs to be taken when using this
+feature, since you can modify registers on the back of the driver.
 
 The DEBUG register access sysfs attribute ``reg_access`` allows access to the the AXI HDL Core register space as well as to the Dynamic Reconfiguration Port (DRP) interfaces. Accessing this sysfs attribute requires root privileges.
 
@@ -250,7 +254,6 @@ Example reading AXI register at offset 0 (REG_VERSION)
       0x110261
    
 
-
 Example writing AXI register at offset 8 (REG_SCRATCH)
 
 .. container:: box bggreen
@@ -264,7 +267,6 @@ Example writing AXI register at offset 8 (REG_SCRATCH)
       root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat reg_access
       0x1234
    
-
 
 DRP register access
 ~~~~~~~~~~~~~~~~~~~
@@ -301,7 +303,6 @@ DRP Port     Comment
       0x2AA
    
 
-
 axi-adxcvr-rx
 -------------
 
@@ -336,7 +337,6 @@ axi-adxcvr-rx
       -rw-r--r--  1 root root    4096 Feb  6 13:41 uevent
    
 
-
 prbs_select
 ~~~~~~~~~~~
 
@@ -368,7 +368,6 @@ Value Comment
       root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx#
    
 
-
 prbs_status
 ~~~~~~~~~~~
 
@@ -386,7 +385,6 @@ error    The PRBS has locked but errors were detected
 
    These conditions are sticky and can be cleared by writing 1 to ``prbs_counter_reset``
 
-
 **Example:**
 
 .. container:: box bggreen
@@ -399,7 +397,6 @@ error    The PRBS has locked but errors were detected
       root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat prbs_status
       valid
    
-
 
 prbs_error_counters
 ~~~~~~~~~~~~~~~~~~~
@@ -419,7 +416,6 @@ Reading returns a string with error counts for each physical JESD204 lane.
       0 0 0 0 0 0 0 0
    
 
-
 prbs_counter_reset
 ~~~~~~~~~~~~~~~~~~
 
@@ -436,7 +432,6 @@ Writing 1 will clear the ``prbs_status`` and reset the ``prbs_error_counters``
    
       root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# echo 1 > prbs_counter_reset
    
-
 
 JESD204 Eye Scan
 ~~~~~~~~~~~~~~~~
@@ -458,7 +453,6 @@ Following commands visualize how to control the eyescan from the command line. `
       x65,y255 CDRDW: 40 LPM: 1 NL: 8 LR: 15000000
    
 
-
 **Configure the prescale:**
 
 .. container:: box bggreen
@@ -473,7 +467,6 @@ Following commands visualize how to control the eyescan from the command line. `
       1
    
 
-
 **Enable the eye capture:**
 
 .. container:: box bggreen
@@ -487,7 +480,6 @@ Following commands visualize how to control the eyescan from the command line. `
       root@analog:/sys/bus/platform/devices/84a60000.axi-adxcvr-rx# cat enable
       cat: enable: Device or resource busy
    
-
 
 **Retrieve the binary bitmap: (needs post processing)**
 
@@ -511,7 +503,6 @@ Following commands visualize how to control the eyescan from the command line. `
    
       *[-- snip --]*
    
-
 
 axi-adxcvr-tx
 -------------
@@ -538,7 +529,6 @@ axi-adxcvr-tx
       lrwxrwxrwx 1 root root    0 Feb  6 13:41 subsystem -> ../../../../bus/platform
       -rw-r--r-- 1 root root 4096 Feb  6 13:41 uevent
    
-
 
 prbs_select
 ~~~~~~~~~~~
@@ -571,7 +561,6 @@ Value Comment
       root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx#
    
 
-
 prbs_error_inject
 ~~~~~~~~~~~~~~~~~
 
@@ -589,7 +578,6 @@ Writing 1 injects a series of errors´(used for testing)
       root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx# echo 1 > prbs_error_inject
       root@analog:/sys/bus/platform/devices/84b60000.axi-adxcvr-tx#
    
-
 
 More Information
 ----------------

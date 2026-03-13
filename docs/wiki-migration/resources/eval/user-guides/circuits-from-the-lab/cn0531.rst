@@ -4,7 +4,7 @@ EVAL-CN0531-PMDZ Overview
 :adi:`EVAL-CN0531-PMDZ <CN0531>` is a minimalist 1 ppm, 20-Bit, ±1 LSB INL, DAC SPI Pmod board suitable for medical instrumentation, test and measurement equipment, industrial control or high end scientific and aerospace instrumentation. This module is designed as a low-cost alternative to the fully-featured :adi:`AD5791` evaluation board. Multiple voltage references and power options are available to adapt this module depending on the application. With this module, the user is capable to use the onboard positive voltage reference or to connect external references. It is also possible to connect an external buffer if the onboard buffer doesn't suit the application. :adi:`EVAL-CN0531-PMDZ <CN0531>` can also be powered internal or external, depending on the needs. Also, additional control signals can be connected to the digital interface to control this module easily.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0531_top.jpg
-   :width: 600px
+   :width: 600
 
 Functional block diagram
 ------------------------
@@ -79,7 +79,6 @@ Connectors and Configuration
    -  Allegro Board File
    
 
-
 Additional Information and Useful Links
 =======================================
 
@@ -104,10 +103,9 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0531-PMDZ?&v=RevB>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0531_bottom.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0531_bottom.jpg
-   :width: 600px
+   :width: 600

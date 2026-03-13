@@ -4,12 +4,18 @@ Creating Projects in CCES
 Workspace and Projects
 ----------------------
 
-A CCES workspace is a folder (e.g. c:\\Users\\anon\\cces\\x.y.z) that contains project resources and metadata. When projects are created or imported, details about that project are stored in the workspace. The workspace metadata also includes preferences set through the CCES Preferences dialog box and IDE window layouts. By default, CCES creates new projects within your workspace folder.
+A CCES workspace is a folder (e.g. c:\\Users\\anon\\cces\\x.y.z) that contains
+project resources and metadata. When projects are created or imported, details
+about that project are stored in the workspace. The workspace metadata also
+includes preferences set through the CCES Preferences dialog box and IDE window
+layouts. By default, CCES creates new projects within your workspace folder.
 
-Each time you start CCES, you will be prompted for a workspace location. You can opt to default to a workspace directory by choosing to use a workspace directory as your default. You will not be prompted the next time you open CCES.
+Each time you start CCES, you will be prompted for a workspace location. You can
+opt to default to a workspace directory by choosing to use a workspace directory
+as your default. You will not be prompted the next time you open CCES.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_workspace.jpg
-   :width: 600px
+   :width: 600
 
 Creating a New Project
 ----------------------
@@ -18,11 +24,12 @@ Launch the New Project Wizard using the **File → New → CrossCore Project** p
 
 .. tip::
 
-   If the Example Browser or Import Wizard were exercised during the reading of this Getting Started Guide, this process occurred when the first project was opened.
-
+   If the Example Browser or Import Wizard were exercised during the reading of
+   this Getting Started Guide, this process occurred when the first project was
+   opened.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/create_a_project.gif
-   :width: 800px
+   :width: 800
 
 *Figure 1. New CrossCore Project*
 
@@ -31,7 +38,7 @@ The **General Project Information** window will appear (Figure 2). This is where
 The next window is for **Processor Type**, which is where the processor being programmed is configured. Once the **Processor type** and its **Silicon revision** (branded on the processor package itself) have been set appropriately, click **Next**. Figure 2 depicts this window populated for a project targeting silicon revision 0.0 of the ADSP-SC573 SHARC processor.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/project_information.gif
-   :width: 500px
+   :width: 500
 
 *Figure 2. Project Information*
 
@@ -40,7 +47,7 @@ Now the **Project and Settings** window appears (Figure 3). In this window, you 
 If you click on **Configure Project** for a processor core, the **Core Settings** window will appear. There are two tabs at the top of the window, **Add-In Selection** and*\* Template Code*\*.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/project_configuration.gif
-   :width: 600px
+   :width: 600
 
 *Figure 3. Project Settings and Configuration*
 
@@ -56,7 +63,7 @@ Importing a Project
 To import a project, use the **File → Import** pull-down, as shown in Figure 4:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/import.gif
-   :width: 600px
+   :width: 600
 
 *Figure 4. Importing A Project*
 
@@ -66,6 +73,6 @@ In the **Import Projects** window, click **Browse…** next to the **Select root
 
 .. important::
 
-   Make sure the Copy projects into workspace option is selected if you want to preserve the original project and make a local copy to make edits to. NOTE: Files outside of the project folder will not be copied.
-
-
+   Make sure the Copy projects into workspace option is selected if you want to
+   preserve the original project and make a local copy to make edits to. NOTE:
+   Files outside of the project folder will not be copied.

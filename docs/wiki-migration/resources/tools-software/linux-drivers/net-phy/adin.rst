@@ -13,20 +13,30 @@ Supported Boards
 Description
 -----------
 
-The ADIN1200 is a low power single port 10/100 Mb Ethernet transceiver with low latency specifications primarily designed for industrial Ethernet applications.
+The ADIN1200 is a low power single port 10/100 Mb Ethernet transceiver with low
+latency specifications primarily designed for industrial Ethernet applications.
 
-The ADIN1300 is a low power single port Gigabit Ethernet transceiver with industry leading latency specifications primarily designed for industrial Ethernet applications.
+The ADIN1300 is a low power single port Gigabit Ethernet transceiver with
+industry leading latency specifications primarily designed for industrial
+Ethernet applications.
 
-This design integrates an Energy Efficient Ethernet PHY core plus all the associated common analog circuitry, input and output clock buffering, the management interface and subsystem registers as well as the MAC interface and control logic to manage the reset and clock control and pin configuration.
+This design integrates an Energy Efficient Ethernet PHY core plus all the
+associated common analog circuitry, input and output clock buffering, the
+management interface and subsystem registers as well as the MAC interface and
+control logic to manage the reset and clock control and pin configuration.
 
-The 2 PHYs are similar from an interfacing perspective, meaning that the HW & SW interfaces are identical. The main difference is that the ADIN1300 supports gigabit speeds.
+The 2 PHYs are similar from an interfacing perspective, meaning that the HW & SW
+interfaces are identical. The main difference is that the ADIN1300 supports
+gigabit speeds.
 
-The PHY can be interfaced with the following: MII, RGMII, RGMII with internal delays (on RX, TX or both), RMII.
+The PHY can be interfaced with the following: MII, RGMII, RGMII with internal
+delays (on RX, TX or both), RMII.
 
 .. important::
 
-   The RMII interface requires an external 50 MHz clock reference, and as such requires a bit more consideration when designing the layout. This makes it more difficult to configure it entirely from software
-
+   The RMII interface requires an external 50 MHz clock reference, and as such
+   requires a bit more consideration when designing the layout. This makes it
+   more difficult to configure it entirely from software
 
 Source Code
 ===========
@@ -62,7 +72,8 @@ Files
 Example platform device initialization
 ======================================
 
-The ADIN PHY driver instantiates via Linux's phylib framework, which is typically enabled on most systems.
+The ADIN PHY driver instantiates via Linux's phylib framework, which is
+typically enabled on most systems.
 
 Depending on the MAC driver that is used and the operating mode (MII, RGMII, RMII), a device-tree entry for the PHY may or may-not be needed. The PHY can be configured via HW pins (:adi:`see datasheet <media/en/technical-documentation/data-sheets/ADIN1300.pdf>`), or via SW.
 
@@ -79,7 +90,6 @@ Depending on the MAC driver that is used and the operating mode (MII, RGMII, RMI
 ::
 
    Example:
-
 
        ethernet-mac0 {
            #address-cells = <1>;
@@ -111,7 +121,8 @@ Depending on the MAC driver that is used and the operating mode (MII, RGMII, RMI
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 -  Hit the search button (typically the slash "/" key)
 -  Type ADIN_PHY, then hit Enter; if nothing shows up, the driver is not available in your kernel tree, please use `the ADI linux tree <https://github.com/analogdevicesinc/linux/>`_
@@ -134,25 +145,35 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-Short version is: a cable is plugged into the ethernet port (to which the PHY is associated) and traffic starts to happen, as in a normal Linux OS environment.
+Short version is: a cable is plugged into the ethernet port (to which the PHY is
+associated) and traffic starts to happen, as in a normal Linux OS environment.
 
 But on the slightly more advanced side, see the sections below.
 
 .. important::
 
-   Depending on the userspace image that is being used, the network cards may [or may not get a DHCP address]. This is because there is a NetworkManager instance that handles this automatically.
+   Depending on the userspace image that is being used, the network cards may
+   [or may not get a DHCP address]. This is because there is a NetworkManager
+   instance that handles this automatically.
 
    
-   If NetworkManager isn't running, it sometimes works to obtain a DHCP lease via dhclient eth0 [or eth1 or eth2, depending which MAC is attached to the ADIN PHY].
+   If NetworkManager isn't running, it sometimes works to obtain a DHCP lease
+   via dhclient eth0 [or eth1 or eth2, depending which MAC is attached to the
+   ADIN PHY].
    
-
 
 ifconfig
 --------
 
-This tool will display the general status of the available network interfaces. If they’ve obtained an IP address, RX packets/errors/dropped/etc, TX packets/errors/dropped/etc, MAC address, etc.
+This tool will display the general status of the available network interfaces.
+If they’ve obtained an IP address, RX packets/errors/dropped/etc, TX
+packets/errors/dropped/etc, MAC address, etc.
 
-Typically, if both TX & RX values are incremented, it means that it is working. Also note that there are error counters; if only the TX/RX counters increment, something may be wrong in the configuration between MAC & PHY, or sometimes at the physical configuration (i.e. clocks not working, pins not connected properly, etc).
+Typically, if both TX & RX values are incremented, it means that it is working.
+Also note that there are error counters; if only the TX/RX counters increment,
+something may be wrong in the configuration between MAC & PHY, or sometimes at
+the physical configuration (i.e. clocks not working, pins not connected
+properly, etc).
 
 ::
 
@@ -185,14 +206,17 @@ Typically, if both TX & RX values are incremented, it means that it is working. 
 ethtool
 -------
 
-This tool queries the MAC & PHY via the MAC driver. The MAC driver should also allows access to the PHY registers.
+This tool queries the MAC & PHY via the MAC driver. The MAC driver should also
+allows access to the PHY registers.
 
 .. important::
 
-   If ethtool does not work, it should be resolved in the MAC driver. The MAC driver is not in the direct scope of Analog Devices support, since MACs are typically manufactured & supported by other companies
+   If ethtool does not work, it should be resolved in the MAC driver. The MAC
+   driver is not in the direct scope of Analog Devices support, since MACs are
+   typically manufactured & supported by other companies
 
-
-ethtool can be used to show & override link settings and other parameters for the MAC & PHY.
+ethtool can be used to show & override link settings and other parameters for
+the MAC & PHY.
 
 Links for the tool:
 
@@ -201,8 +225,9 @@ Links for the tool:
 
 .. tip::
 
-   Some features of ethtool described here are available in newer versions of ethtool. If some of them don't work, consider upgrading or getting a newer version
-
+   Some features of ethtool described here are available in newer versions of
+   ethtool. If some of them don't work, consider upgrading or getting a newer
+   version
 
 Example: Seeing MAC & PHY info
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -250,7 +275,8 @@ Example: changing link speeds
 Example: MDI/MDIX/Auto-MDIX configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The PHY supports configuration of the MDI/MDI-X auto-switch for twisted pairs. This can also be configured via ethtool.
+The PHY supports configuration of the MDI/MDI-X auto-switch for twisted pairs.
+This can also be configured via ethtool.
 
 ::
 
@@ -263,8 +289,8 @@ Example: PHY statistics
 
 .. important::
 
-   make sure to not confuse PHY stats with default stats. Ethtool provides stats from the MAC, via ethtool --statistics eth0 or ethtool -S eth0\
-
+   make sure to not confuse PHY stats with default stats. Ethtool provides stats
+   from the MAC, via ethtool --statistics eth0 or ethtool -S eth0\
 
 ::
 
@@ -288,8 +314,8 @@ This tool is not very official, but it is very powerful for PHYs. It’s current
 
 .. important::
 
-   Can only access registers via Clause 22. Clause 45 does not work with the PHY driver.
-
+   Can only access registers via Clause 22. Clause 45 does not work with the PHY
+   driver.
 
 Format of the command is:
 
@@ -310,7 +336,8 @@ Example for reading the PHY ID:
 Accessing PHY-core registers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All registers from 0x00 to 0x1f (which are defined by the IEEE standard) can be accessed with just
+All registers from 0x00 to 0x1f (which are defined by the IEEE standard) can be
+accessed with just
 
 ::
 
@@ -320,7 +347,8 @@ All registers from 0x00 to 0x1f (which are defined by the IEEE standard) can be 
 Reading an MMD reg
 ~~~~~~~~~~~~~~~~~~
 
-Since only Clause 22 is available accessing MMD regs needs to be done via registers 0x10 & 0x11.
+Since only Clause 22 is available accessing MMD regs needs to be done via
+registers 0x10 & 0x11.
 
 All registers above register address 0x1f are MMD registers.
 
@@ -347,8 +375,11 @@ adintool.sh - convenience phytool wrapper
 
 .. warning::
 
-   This tool requires sudo/root access and will do changes to the system. Use it with caution on a development system. Also, this tool can leave the PHY into a undetermined state of functioning, which may require a reset of the chip, or a reboot of the system to put the PHY back into a working state together with the attached MAC.
-
+   This tool requires sudo/root access and will do changes to the system. Use it
+   with caution on a development system. Also, this tool can leave the PHY into
+   a undetermined state of functioning, which may require a reset of the chip,
+   or a reboot of the system to put the PHY back into a working state together
+   with the attached MAC.
 
 Link: :git-wiki-scripts:`linux/adintool.sh`
 
@@ -373,7 +404,8 @@ Usage
 First setup
 ~~~~~~~~~~~
 
-Needs be run the first time. Make sure that there is internet connectivity and then install basic things:
+Needs be run the first time. Make sure that there is internet connectivity and
+then install basic things:
 
 ::
 
@@ -382,9 +414,12 @@ Needs be run the first time. Make sure that there is internet connectivity and t
 dump_regs
 ~~~~~~~~~
 
-The most useful command is to dump registers. This will read all registers that are specified in the datasheet and show their current value.
+The most useful command is to dump registers. This will read all registers that
+are specified in the datasheet and show their current value.
 
-Should be used with caution as some registers get cleared on read, and can interfere with some internal operation of the Linux driver (for EEE for example).
+Should be used with caution as some registers get cleared on read, and can
+interfere with some internal operation of the Linux driver (for EEE for
+example).
 
 Example:
 
@@ -395,9 +430,11 @@ Example:
 cable_diagnostics
 ~~~~~~~~~~~~~~~~~
 
-This runs a sequence of register changes to put the PHY into diagnostics mode, which interrupts normal operation.
+This runs a sequence of register changes to put the PHY into diagnostics mode,
+which interrupts normal operation.
 
-Then a diagnostics will be run on the cable and the results of the registers will be read back.
+Then a diagnostics will be run on the cable and the results of the registers
+will be read back.
 
 ::
 
@@ -410,8 +447,9 @@ This is a more system-general test but it also validates the PHY.
 
 .. tip::
 
-   More tools are available for this sort of testing (iperf3, netperf, etc), but iperf is one of the more basic/simple ones to do this validation. If this one achieves expected results, others should too
-
+   More tools are available for this sort of testing (iperf3, netperf, etc), but
+   iperf is one of the more basic/simple ones to do this validation. If this one
+   achieves expected results, others should too
 
 On one of the endpoints with the ADIN1300, run:
 
@@ -463,4 +501,3 @@ Ethernet pointers
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

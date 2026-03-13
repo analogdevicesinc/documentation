@@ -1,20 +1,27 @@
 Chapter 12: Differential amplifiers
 ===================================
 
-The differential amplifier is probably the most widely used circuit building block in analog integrated circuits, principally op amps. We had a brief glimpse at one back in Chapter 3 section 3.4.3 when we were discussing input bias current. The differential amplifier can be implemented with BJTs or MOSFETs. A differential amplifier multiplies the voltage difference between two inputs (Vin+ - Vin-) by some constant factor Ad, the differential gain. It may have either one output or a pair of outputs where the signal of interest is the voltage difference between the two outputs. A differential amplifier also tends to reject the part of the input signals that are common to both inputs (Vin+ + Vin-)/2 . This is referred to as the common mode signal.
+The differential amplifier is probably the most widely used circuit building
+block in analog integrated circuits, principally op amps. We had a brief glimpse
+at one back in Chapter 3 section 3.4.3 when we were discussing input bias
+current. The differential amplifier can be implemented with BJTs or MOSFETs. A
+differential amplifier multiplies the voltage difference between two inputs
+(Vin+ - Vin-) by some constant factor Ad, the differential gain. It may have
+either one output or a pair of outputs where the signal of interest is the
+voltage difference between the two outputs. A differential amplifier also tends
+to reject the part of the input signals that are common to both inputs (Vin+ +
+Vin-)/2 . This is referred to as the common mode signal.
 
 12.1 Starting with the basics
 -----------------------------
 
 It is often easiest to start again with the very basic single transistor and build a workable differential amplifier as a logical progression from there. Consider the single transistor amplifier stage, figure 12.1.1, which is similar to what we explored in the section on the degenerated common emitter back in Chapter 9. This amplifier can actually be viewed as either an inverting common emitter amplifier when driven from V\ :sub:`neg` and with V\ :sub:`pos` considered an AC ground. Or as a non-inverting common base amplifier when driven from V\ :sub:`pos` and with V\ :sub:`neg` considered an AC ground.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 12.1.1 AC coupled difference amplifier
-
 
 Let's assume that we make the coupling capacitors, C\ :sub:`1` and C\ :sub:`2`, sufficiently large so that we can view them as AC shorts for the signal frequencies of interest. The small signal voltage gain from V\ :sub:`neg` to V\ :sub:`out` is:
 
@@ -26,17 +33,20 @@ Likewise, the small signal voltage gain from V\ :sub:`pos` to V\ :sub:`out` is:
 
 The transistor amplifies the small signal voltage across its V\ :sub:`be` which in this case is V\ :sub:`pos`-V\ :sub:`neg`. If we apply equal amplitude, in phase signals to V\ :sub:`pos` and V\ :sub:`neg`, such that V\ :sub:`pos`-V\ :sub:`neg` = 0 then there will be no varying signal across V\ :sub:`be` and the output signal at V\ :sub:`out` will be zero. On the other hand, if we apply equal amplitude signals that are 180º out of phase with each other, then V\ :sub:`pos`-V\ :sub:`neg` = twice the amplitude of the inputs. This difference voltage will appear across V\ :sub:`be` and be amplified by g\ :sub:`m`\ \*R\ :sub:`L` at V\ :sub:`out`.
 
-The inverting or negative input terminal of our simple difference amplifier has the relatively high input impedance of the common emitter stage while the non-inverting or positive input terminal of the amplifier has the relatively low input impedance of the common base stage. The importance of this observation and how it can be put to good use will become apparent in the next chapter (13) on transimpedance amplifiers.
+The inverting or negative input terminal of our simple difference amplifier has
+the relatively high input impedance of the common emitter stage while the
+non-inverting or positive input terminal of the amplifier has the relatively low
+input impedance of the common base stage. The importance of this observation and
+how it can be put to good use will become apparent in the next chapter (13) on
+transimpedance amplifiers.
 
 It would be advantageous if our differential amplifier had more symmetric inputs where the input impedance for both the positive and negative inputs was as high as possible, ideally infinite. An additional step to get us in that direction is shown in figure 12.1.2. If we now include an emitter follower stage, Q\ :sub:`2`, to buffer the relatively low impedance of the common base amplifier path of the positive input we get a more symmetrical pair of inputs.
-
 
 |image2|
 
 .. container:: centeralign
 
    Figure 12.1.2 difference amplifier with emitter follower added.
-
 
 Because we are still AC coupling our input signals a second set of biasing resistors, R\ :sub:`B3` and R\ :sub:`B4` are necessary to provide DC bias for the new emitter follower. If we instead DC couple the now symmetric inputs the biasing resistors become unnecessary and our difference amplifier now takes on the look of the classic differential pair we will discuss in the next section.
 
@@ -45,26 +55,50 @@ Because we are still AC coupling our input signals a second set of biasing resis
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_f3.png
    :align: center
-   :width: 650px
+   :width: 650
 
 .. container:: centeralign
 
    Figure 12.2.1: A long-tailed pair with resistor loads
 
-
 The classic differential pair amplifier is formed from at least two identical transistors, configured with the emitters for BJT transistors or the sources for FETs connected together. A long-tailed pair (LTP), or emitter coupled (source coupled) pair, is a pair of transistors where the shared emitter or source node is supplied from a more or less constant current source/sink, which could be as simple as a relatively large value resistor connected to the negative supply, such as R\ :sub:`tail` in figure 12.2.1, (or the positive supply for p-type devices) that develops a large voltage drop relative to the amplitude of the input signal thus the "long tail". Given the more or less constant current supplied to the emitters or sources the summation of the two collector or drain currents is also more or less constant with signal.
 
-The two inputs at the bases or gates can be fed with a differential or balanced input signal and the two outputs from the collectors or drains remain balanced, or one input could be grounded to convert a single ended input signal to a differential output.
+The two inputs at the bases or gates can be fed with a differential or balanced
+input signal and the two outputs from the collectors or drains remain balanced,
+or one input could be grounded to convert a single ended input signal to a
+differential output.
 
 The higher the resistance of the current source R\ :sub:`tail`, the lower the common mode gain or A\ :sub:`c` is, and the better the common mode rejection ratio (CMRR). In more sophisticated designs, an active constant current source may be substituted for the high resistance R\ :sub:`tail`. With two inputs and two outputs, this forms a differential amplifier stage. The two bases or gates are inputs which are differentially amplified by the pair.
 
-Even though this circuit is designed to have two inputs and two outputs, it is not necessary to use both inputs and both outputs. (Remember, a differential amplifier was defined as having two possible inputs and two possible outputs.) A differential amplifier can be connected as a single-input, single-output device; a single-input, differential-output device; or a differential-input, differential-output device. The output may be single-ended (taken from just one of the collectors or drains, or differential depending on the needs of the subsequent circuitry.
+Even though this circuit is designed to have two inputs and two outputs, it is
+not necessary to use both inputs and both outputs. (Remember, a differential
+amplifier was defined as having two possible inputs and two possible outputs.) A
+differential amplifier can be connected as a single-input, single-output device;
+a single-input, differential-output device; or a differential-input,
+differential-output device. The output may be single-ended (taken from just one
+of the collectors or drains, or differential depending on the needs of the
+subsequent circuitry.
 
-In a long-tailed pair built using BJTs, the emitters are connected together, and then through the current source to ground or to a negative supply (for an LTP using NPN transistors). In this form, one of the transistors can be thought of as an amplifier operating in common emitter configuration, and the other as an emitter follower, feeding the other input signal into the emitter of the first stage as we discussed in the previous section. Since a transistor will amplify the current flowing between base and emitter, it follows that the current flowing in the collector circuit of the first transistor is proportional to the difference between the two inputs. However since the circuit is totally symmetrical, either element can be viewed as an amplifier or as a follower, understanding how the circuit functions does not depend on which role you assign to which device.
+In a long-tailed pair built using BJTs, the emitters are connected together, and
+then through the current source to ground or to a negative supply (for an LTP
+using NPN transistors). In this form, one of the transistors can be thought of
+as an amplifier operating in common emitter configuration, and the other as an
+emitter follower, feeding the other input signal into the emitter of the first
+stage as we discussed in the previous section. Since a transistor will amplify
+the current flowing between base and emitter, it follows that the current
+flowing in the collector circuit of the first transistor is proportional to the
+difference between the two inputs. However since the circuit is totally
+symmetrical, either element can be viewed as an amplifier or as a follower,
+understanding how the circuit functions does not depend on which role you assign
+to which device.
 
 The bias condition assumes equal voltages at V\ :sub:`pos` and V\ :sub:`neg`, forcing the bias current I\ :sub:`tail` (set by R\ :sub:`tail`) to split equally between the transistors resulting in I\ :sub:`C1` = I\ :sub:`C2`. With R\ :sub:`C1` = R\ :sub:`C2`, equal voltages develop at V\ :sub:`out`\ + and V\ :sub:`out`-.
 
-Using MOSFETs, we can construct an source-coupled differential pair, which is a counterpart of the emitter-coupled differential pair using BJTs. The main advantage of using MOSFETs for a differential pair compared to BJTs is the nearly infinite input impedance, while the disadvantage is generally lower differential gain.
+Using MOSFETs, we can construct an source-coupled differential pair, which is a
+counterpart of the emitter-coupled differential pair using BJTs. The main
+advantage of using MOSFETs for a differential pair compared to BJTs is the
+nearly infinite input impedance, while the disadvantage is generally lower
+differential gain.
 
 Assuming the two MOSFETs are the same. The analysis of the source-coupled differential pair proceeds in the same way as the emitter-coupled differential pair for both common-mode signal and differential input signal. The transfer characteristics for drain current I\ :sub:`d1` and I\ :sub:`d2` are shown in the figure.
 
@@ -103,15 +137,27 @@ Finally, we easily calculate g\ :sub:`m` = 1 mA / 25 mV = 0.04 A/V. The single-e
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_f4.png
    :align: center
-   :width: 650px
+   :width: 650
 
-The output from a differential amplifier is itself often differential. If this is not desired, then only one output can be used, disregarding the other output. Or to avoid sacrificing gain, a differential to single-ended stage can be used following the differential stage. This is often implemented with an active current mirror load instead of the collector/drain resistors.
+The output from a differential amplifier is itself often differential. If this
+is not desired, then only one output can be used, disregarding the other output.
+Or to avoid sacrificing gain, a differential to single-ended stage can be used
+following the differential stage. This is often implemented with an active
+current mirror load instead of the collector/drain resistors.
 
-Long-tailed pairs are frequently used in circuits that implement linear amplifiers with feedback, as in operational amplifiers, and in other circuits that require a differential amplifier.
+Long-tailed pairs are frequently used in circuits that implement linear
+amplifiers with feedback, as in operational amplifiers, and in other circuits
+that require a differential amplifier.
 
-When used as a switch, the "left" base or gate is used as signal input and the "right" base or gate is grounded; output is taken from the right collector or drain. When the input is zero or negative, the output is close to zero; when the input is positive, the output is most-positive, dynamic operation being the same as the amplifier use described above.
+When used as a switch, the "left" base or gate is used as signal input and the
+"right" base or gate is grounded; output is taken from the right collector or
+drain. When the input is zero or negative, the output is close to zero; when the
+input is positive, the output is most-positive, dynamic operation being the same
+as the amplifier use described above.
 
-Bias stability and independence from variations in device parameters can be improved by negative feedback introduced via emitter or source degeneration resistors.
+Bias stability and independence from variations in device parameters can be
+improved by negative feedback introduced via emitter or source degeneration
+resistors.
 
 The differential pair with a small differential input signal v\ :sub:`i`
 
@@ -163,11 +209,17 @@ is approximately proportional to v\ :sub:`id`. Notice furthermore that the commo
 Summary
 -------
 
-This chapter has presented information on differential amplifiers. The information that follows summarizes the important points of this chapter.
+This chapter has presented information on differential amplifiers. The
+information that follows summarizes the important points of this chapter.
 
-A difference amplifier is any amplifier with an output signal dependent upon the difference between the input signals. A two-input, single-output difference amplifier can be made by combining the common-emitter and common-base configurations in a single transistor.
+A difference amplifier is any amplifier with an output signal dependent upon the
+difference between the input signals. A two-input, single-output difference
+amplifier can be made by combining the common-emitter and common-base
+configurations in a single transistor.
 
-A difference amplifier can have input signals that are in phase with each other, 180º out of phase with each other, or out of phase by something other than 180º with each other.
+A difference amplifier can have input signals that are in phase with each other,
+180º out of phase with each other, or out of phase by something other than 180º
+with each other.
 
 **Return to** :doc:`Previous Chapter </wiki-migration/university/courses/electronics/text/chapter-11>`
 
@@ -176,10 +228,10 @@ A difference amplifier can have input signals that are in phase with each other,
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_f1.png
-   :width: 650px
+   :width: 650
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_f2.png
-   :width: 650px
+   :width: 650
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_e1.png
-   :width: 150px
+   :width: 150
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_e2.png
-   :width: 150px
+   :width: 150

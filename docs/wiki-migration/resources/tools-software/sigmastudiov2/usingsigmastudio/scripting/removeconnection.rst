@@ -3,7 +3,10 @@
 Remove Connection
 =================
 
-This action allows the user to remove a specified connection between two elements on the parent canvas or schematic page. The function call takes in 3 arguments. Return type is a SSPResult which contains a IsSuccess flag for success/failure and Message in the form of list of strings.
+This action allows the user to remove a specified connection between two
+elements on the parent canvas or schematic page. The function call takes in 3
+arguments. Return type is a SSPResult which contains a IsSuccess flag for
+success/failure and Message in the form of list of strings.
 
 API
 ---
@@ -22,7 +25,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the RemoveConnection action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+RemoveConnection action.
 
 ::
 

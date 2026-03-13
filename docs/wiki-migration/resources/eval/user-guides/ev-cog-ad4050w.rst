@@ -8,9 +8,11 @@ The :adi:`EV-COG-AD4050WZ <en/design-center/evaluation-hardware-and-software/eva
 -  Keil uVision 4 and above
 -  ARM mbed Compiler
 
-Make sure a valid license for the selected toolchain is installed before using EV-COG-AD4050WZ board.
+Make sure a valid license for the selected toolchain is installed before using
+EV-COG-AD4050WZ board.
 
-\*\* The software and power measurement is same for both EV-COG-AD4050WZ and EV-COG-AD4050LZ \*\*
+\*\* The software and power measurement is same for both EV-COG-AD4050WZ and
+EV-COG-AD4050LZ \*\*
 
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w/introduction>`
 -  :doc:`Software Packs & Board Support Package </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w/packs_bsp>`:EV-COG-AD4050WZ software architecture is categorized into 2 groups as below.
@@ -44,6 +46,6 @@ Make sure a valid license for the selected toolchain is installed before using E
 -  :doc:`Help & Support </wiki-migration/resources/eval/user-guides/ev-cog-ad4050lz/help_support>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/front_image_new.png
-   :width: 550px
+   :width: 550
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/aducm4050.png
-   :width: 400px
+   :width: 400

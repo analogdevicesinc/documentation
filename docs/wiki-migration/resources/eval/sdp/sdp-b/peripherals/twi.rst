@@ -30,7 +30,9 @@ S 7-BIT ADDRESS R/W ACK 8-BIT DATA ACK P
 Repeated Start
 --------------
 
-A repeated start is where the control of the bus is help by the current master between two consecutive transfers. It is the absense of a stop command betwen two transfers. Transfers can be of any direction.
+A repeated start is where the control of the bus is help by the current master
+between two consecutive transfers. It is the absense of a stop command betwen
+two transfers. Transfers can be of any direction.
 
 +---+---------------+-----+-----+------------+-----+---+---------------+-----+-----+------------+-----+---+
 | S | 7-BIT ADDRESS | R/W | ACK | 8-BIT DATA | ACK | S | 7-BIT ADDRESS | R/W | ACK | 8-BIT DATA | ACK | P |
@@ -38,4 +40,4 @@ A repeated start is where the control of the bus is help by the current master b
 +---+---------------+-----+-----+------------+-----+---+---------------+-----+-----+------------+-----+---+
 
 .. |sdp-b_periphexpl6.png| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl6.png
-   :width: 500px
+   :width: 500

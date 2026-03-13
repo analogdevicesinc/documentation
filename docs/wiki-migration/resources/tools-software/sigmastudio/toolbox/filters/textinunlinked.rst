@@ -30,7 +30,8 @@ To use this block:
    -  6-channel - Single-Precision
 
 -  Click the blue icon to choose your filter: Peak, Lowpass, Highpass, Low-Shelf, High-Shelf.
--  Enter values in the param tab for Boost (Peak and Shelf EQ), Freq, Q/Slope. Click the right arrow and the gain tab and enter the filter gain.
+-  Enter values in the param tab for Boost (Peak and Shelf EQ), Freq, Q/Slope.
+   Click the right arrow and the gain tab and enter the filter gain.
 
    -  Boost is the amount of boost / cut applied to the designated frequency range
    -  Freq is the center frequency

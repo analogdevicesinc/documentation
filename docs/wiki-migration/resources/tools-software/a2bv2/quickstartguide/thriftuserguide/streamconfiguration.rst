@@ -31,7 +31,8 @@ List of API in Stream and Tunnel Configuration
 Add Stream
 ----------
 
-AddStream API is used for adding the stream configuration. It takes element Uid and stream information as arguments and returns SSPResult.
+AddStream API is used for adding the stream configuration. It takes element Uid
+and stream information as arguments and returns SSPResult.
 
 **API:** SSPResult AddStream(string elementUid, AnalogDevices.SigmaStudio.Scripting.ADI_A2B_STREAM stream);
 
@@ -56,7 +57,8 @@ AddStream API is used for adding the stream configuration. It takes element Uid 
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of AddStream action.
 
 -  IsSuccess is set to 'True' if the AddStream was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -94,7 +96,8 @@ AddStream API is used for adding the stream configuration. It takes element Uid 
 Update Stream
 -------------
 
-Update Steam API is used for updating the stream configuration. It takes element Uid, property name and property value as arguments and returns SSPResult.
+Update Steam API is used for updating the stream configuration. It takes element
+Uid, property name and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateStream(string elementUid, string propertyName, AnalogDevices.SigmaStudio.Scripting.NetworkStreamConfig stream)
 
@@ -126,7 +129,8 @@ Update Steam API is used for updating the stream configuration. It takes element
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStream action.
 
 -  IsSuccess is set to 'True' if the UpdateStream was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **CSharp Example**
 
@@ -185,11 +189,11 @@ Update Steam API is used for updating the stream configuration. It takes element
    -  Stream Destination or Source for Main node value is -1.
    
 
-
 Delete Stream
 -------------
 
-This API is used for deleting the stream. It takes element Uid, property name and stream index as arguments and returns SSPResult.
+This API is used for deleting the stream. It takes element Uid, property name
+and stream index as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateNumericProperty(string elementUid, string propertyName, double propertyVal);
 
@@ -207,7 +211,8 @@ This API is used for deleting the stream. It takes element Uid, property name an
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of DeleteStream action.
 
 -  IsSuccess is set to 'True' if the DeleteStream was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -224,7 +229,9 @@ This API is used for deleting the stream. It takes element Uid, property name an
 Import Stream
 -------------
 
-This API is used for importing the stream configuration from the given xml file path. It takes element Uid, property name and XML file path as arguments and returns SSPResult.
+This API is used for importing the stream configuration from the given xml file
+path. It takes element Uid, property name and XML file path as arguments and
+returns SSPResult.
 
 **API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal);
 
@@ -235,12 +242,14 @@ This API is used for importing the stream configuration from the given xml file 
 
    -  ImportStream – For importing the stream configuration.
 
--  “propertyVal” = Stream configuration xml file full path from which we are going to import stream configuration.
+-  “propertyVal” = Stream configuration xml file full path from which we are
+   going to import stream configuration.
 
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of ImportStream action.
 
 -  IsSuccess is set to 'True' if the ImportStream was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -256,13 +265,15 @@ This API is used for importing the stream configuration from the given xml file 
 
 .. note::
 
-   Ensure XML file validations specified in the API arguments are addressed prior to calling this API.
-
+   Ensure XML file validations specified in the API arguments are addressed
+   prior to calling this API.
 
 Export Stream
 -------------
 
-This API is used for exporting the stream configuration into the given xml file path location. It takes element Uid, property name and XML file path as arguments and returns SSPResult.
+This API is used for exporting the stream configuration into the given xml file
+path location. It takes element Uid, property name and XML file path as
+arguments and returns SSPResult.
 
 **API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal);
 
@@ -273,12 +284,14 @@ This API is used for exporting the stream configuration into the given xml file 
 
    -  ExportStream– For exporting the stream configuration.
 
--  “propertyVal” = Stream configuration xml file full path to where we are going to export stream configuration.
+-  “propertyVal” = Stream configuration xml file full path to where we are going
+   to export stream configuration.
 
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of ExportStream action.
 
 -  IsSuccess is set to 'True' if the ExportStream was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -294,13 +307,14 @@ This API is used for exporting the stream configuration into the given xml file 
 
 .. note::
 
-   Ensure XML file validations specified in the API arguments are addressed prior to calling this API.
-
+   Ensure XML file validations specified in the API arguments are addressed
+   prior to calling this API.
 
 GetStreamInfo
 -------------
 
-This API used for Getting All Stream details. It takes elementUid as argument and returns List of Stream data.
+This API used for Getting All Stream details. It takes elementUid as argument
+and returns List of Stream data.
 
 **API:** List<AnalogDevices.SigmaStudio.Scripting.ADI_A2B_STREAM> GetStreamInfo(string elementUid);
 
@@ -328,11 +342,11 @@ This API used for Getting All Stream details. It takes elementUid as argument an
 
    For additional details on stream configuration, you may refer the :doc:`A2B Plugin for SigmaStudio+ User Guide </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/drawinga2bschematics>`.
 
-
 Add Tunnel
 ----------
 
-Add Tunnel API is used for adding new tunnel into the tunnel configuration. It takes element Uid and tunnel object as arguments and returns SSPResult.
+Add Tunnel API is used for adding new tunnel into the tunnel configuration. It
+takes element Uid and tunnel object as arguments and returns SSPResult.
 
 **API:** SSPResult AddTunnel(string elementUid, AnalogDevices.SigmaStudio.Scripting.ADI_A2B_TUNNEL_STREAM tunnel);
 
@@ -351,7 +365,8 @@ Add Tunnel API is used for adding new tunnel into the tunnel configuration. It t
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of AddTunnel action.
 
 -  IsSuccess is set to 'True' if the AddTunnel was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -392,11 +407,12 @@ Add Tunnel API is used for adding new tunnel into the tunnel configuration. It t
 
    Member Node Id for Main node value is -1.
 
-
 Update Tunnel
 -------------
 
-This API is used for updating the tunnel in the tunnel configuration. It takes element Uid, property name and property value as arguments and returns SSPResult.
+This API is used for updating the tunnel in the tunnel configuration. It takes
+element Uid, property name and property value as arguments and returns
+SSPResult.
 
 **API:** SSPResult UpdateStream(string elementUid, string propertyName, AnalogDevices.SigmaStudio.Scripting.NetworkStreamConfig stream)
 
@@ -438,7 +454,8 @@ This API is used for updating the tunnel in the tunnel configuration. It takes e
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateTunnel action.
 
 -  IsSuccess is set to 'True' if the UpdateTunnel was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -513,7 +530,8 @@ This API is used for updating the tunnel in the tunnel configuration. It takes e
 Delete Tunnel
 -------------
 
-This API is used for deleting theTunnel. It takes element Uid, property name and stream index as arguments and returns SSPResult.
+This API is used for deleting theTunnel. It takes element Uid, property name and
+stream index as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateNumericProperty(string elementUid, string propertyName, double propertyVal);
 
@@ -528,7 +546,8 @@ This API is used for deleting theTunnel. It takes element Uid, property name and
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of DeleteTunnel action.
 
 -  IsSuccess is set to 'True' if the DeleteTunnel was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -545,7 +564,8 @@ This API is used for deleting theTunnel. It takes element Uid, property name and
 GetTunnelInfo
 -------------
 
-This API used for Getting All Stream details. It takes elementUid as argument and returns List of Stream data.
+This API used for Getting All Stream details. It takes elementUid as argument
+and returns List of Stream data.
 
 **API:** List<AnalogDevices.SigmaStudio.Scripting. ADI_A2B_TUNNEL_STREAM> GetTunnelInfo(string elementUid);
 
@@ -572,14 +592,16 @@ This API used for Getting All Stream details. It takes elementUid as argument an
 StrictBound
 -----------
 
-This API is used for enabling/disabling StrictBound option. It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for enabling/disabling StrictBound option. It takes element Uid
+and property name and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  StrictBound– For enabling/disabling StrictBound
 
@@ -588,7 +610,8 @@ This API is used for enabling/disabling StrictBound option. It takes element Uid
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateBoolProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -605,14 +628,17 @@ This API is used for enabling/disabling StrictBound option. It takes element Uid
 Auto Calculate check box
 ------------------------
 
-This API is used for enabling/disabling Auto Calculate check box option. It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for enabling/disabling Auto Calculate check box option. It
+takes element Uid and property name and property value as arguments and returns
+SSPResult.
 
 **API:** SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  AutoCalculateChk– For enabling/disabling Auto Calculate check box
 
@@ -621,7 +647,8 @@ This API is used for enabling/disabling Auto Calculate check box option. It take
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateBoolProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -638,14 +665,17 @@ This API is used for enabling/disabling Auto Calculate check box option. It take
 Optimize and Default
 --------------------
 
-This API is used for enabling/disabling Optimize and Default option. It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for enabling/disabling Optimize and Default option. It takes
+element Uid and property name and property value as arguments and returns
+SSPResult.
 
 **API:** SSPResult UpdateNumericProperty(string elementUid, string propertyName, double propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  ButtonOptimize – For enabling/disabling Optimize option
 
@@ -656,7 +686,8 @@ This API is used for enabling/disabling Optimize and Default option. It takes el
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateNumericProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateNumericProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -674,10 +705,9 @@ This API is used for enabling/disabling Optimize and Default option. It takes el
 
 .. note::
 
-   After executing the necessary APIs, proceed with the Link Operation to view the settings in the graphical user interface (GUI).
-
+   After executing the necessary APIs, proceed with the Link Operation to view
+   the settings in the graphical user interface (GUI).
 
 .. tip::
 
    For additional details on Tunnel configuration, you may refer the :doc:`A2B Plugin for SigmaStudio+ User Guide </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/drawinga2bschematics>`.
-

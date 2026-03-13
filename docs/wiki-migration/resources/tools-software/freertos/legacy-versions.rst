@@ -1,9 +1,13 @@
-Whilst we always recommend using the latest version of FreeRTOS possible, we understand that older versions are often required for compatibility or compliance reasons.
+Whilst we always recommend using the latest version of FreeRTOS possible, we
+understand that older versions are often required for compatibility or
+compliance reasons.
 
 Zip file
 ========
 
-For releases up to ADI FreeRTOS version 1.5.x, source code for both upstream official FreeRTOS release, and the Analog Devices FreeRTOS add on product release are required.
+For releases up to ADI FreeRTOS version 1.5.x, source code for both upstream
+official FreeRTOS release, and the Analog Devices FreeRTOS add on product
+release are required.
 
 The version 1.5.1 overlay zip file containing FreeRTOS sources and Demos can be downloaded from :adi:`license/licensing-agreement/freertos-licensing-agreement-current.html`
 

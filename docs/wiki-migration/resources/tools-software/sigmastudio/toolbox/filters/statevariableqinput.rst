@@ -13,7 +13,8 @@ The three output pins allows to choose among LP, HP, BP filters. This algorithm 
 
 Set the center frequency in the Freq (Hz) field or by dragging the <--> arrows.
 
-The format for Q is 5.23 or 8.24 (depending on your processor), and it is inverted. In other words...
+The format for Q is 5.23 or 8.24 (depending on your processor), and it is
+inverted. In other words...
 
 Input to Q pin = :math:`1/Q`
 

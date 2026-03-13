@@ -95,18 +95,29 @@ Optional properties
 -  clocks: phandle to the external clock. Should be set according to "clock-names". If this field is left empty, the internal clock is used.
 -  clock-names: The name of the external clock to be used. Valid values are:
 
-   -  sync: This mode is the same as internal clock mode with one exception, the SYNC pin pulses when the internal processor collects data from the inertial sensors. The clock-frequency must be:
+   -  sync: This mode is the same as internal clock mode with one exception, the
+      SYNC pin pulses when the internal processor collects data from the
+      inertial sensors. The clock-frequency must be:
 
       -  1900 to 2100 Hz.
-      -  direct-sync: In this mode, the signal of SYNC pin directly controls the sample clock. In this mode, the processor collects gyroscope data samples on the rising edge of the clock and it collects accelerometer data samples on both rising and falling edge of the clock. The clock-frequency must be:
+      -  direct-sync: In this mode, the signal of SYNC pin directly controls the
+         sample clock. In this mode, the processor collects gyroscope data
+         samples on the rising edge of the clock and it collects accelerometer
+         data samples on both rising and falling edge of the clock. The
+         clock-frequency must be:
 
          -  1900 to 2100 Hz.
 
-      -  scaled-sync: This mode is useful when synchronizing the data processing with a PPS signal from a global positioning system (GPS) receiver or with a synchronization signal from a video processing system. The clock-frequency must be:
+      -  scaled-sync: This mode is useful when synchronizing the data processing
+         with a PPS signal from a global positioning system (GPS) receiver or
+         with a synchronization signal from a video processing system. The
+         clock-frequency must be:
 
          -  1 to 128 Hz.
 
-      -  pulse-sync: In this mode, the processor only collects accelerometer samples on the leading edge of the clock, which enables the use of narrow pulse width in the clock signal. The clock-frequency must be:
+      -  pulse-sync: In this mode, the processor only collects accelerometer
+         samples on the leading edge of the clock, which enables the use of
+         narrow pulse width in the clock signal. The clock-frequency must be:
 
          -  1000 to 2100 Hz.
 
@@ -116,7 +127,9 @@ Optional properties
 
    -  1900 to 2100 Hz.
 
--  adi,burst32-enable: In this mode, a burst reading contains calibrated gyroscope and accelerometer data in 32-bit format. This mode is only supported by adis1650x devices!
+-  adi,burst32-enable: In this mode, a burst reading contains calibrated
+   gyroscope and accelerometer data in 32-bit format. This mode is only
+   supported by adis1650x devices!
 
 Example
 ~~~~~~~
@@ -138,12 +151,12 @@ For more supported devicetree properties take a look to :git-linux:`dt-bindings 
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The adis16475 driver depends on CONFIG_SPI_MASTER
-
 
 ::
 
@@ -163,7 +176,11 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Hardware configuration
 ======================
 
-The evaluation kits simplify the process of connecting an IMU to an embedded processor system using a 16-pin, 1mm ribbon cable. For a detailed description check the links (on the beginning of the page) for the appropriated evaluation kit. Here is an example of basic connection from one ADIS device interface connector to the host:(microprocessor):
+The evaluation kits simplify the process of connecting an IMU to an embedded
+processor system using a 16-pin, 1mm ribbon cable. For a detailed description
+check the links (on the beginning of the page) for the appropriated evaluation
+kit. Here is an example of basic connection from one ADIS device interface
+connector to the host:(microprocessor):
 
 ::
 
@@ -174,8 +191,15 @@ The evaluation kits simplify the process of connecting an IMU to an embedded pro
    * DIN  <——————— SPI_MOSI
    * DOUT ———————> SPI_MISO
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
@@ -184,7 +208,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 .. container:: box bggreen
 
@@ -231,7 +254,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
       root:/sys/bus/iio/devices/iio:device0>
    
-
 
 ADIS16475 device attributes
 ---------------------------
@@ -302,7 +324,6 @@ Show device name
       adis16477-1
    
 
-
 Set sampling frequency
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -324,7 +345,6 @@ The sampling frequency of the device can be set by writing the desired value to 
       root:/sys/bus/iio/devices/iio:device0> cat sampling_frequency
       1000.000000
    
-
 
 Show channel value
 ~~~~~~~~~~~~~~~~~~
@@ -354,7 +374,6 @@ The units by the IIO framework are:
       0.000000187
    
 
-
 ``Z-axis acceleration = in_accel_z_raw * in_accel_scale = 52612913 * 0.000000187 m/s^2 = 9.838 m/s^2``
 
 Set gyro and accel bandwidth
@@ -378,14 +397,12 @@ The gyro and accel bandwidth can be set by writing the desired value to the ``fi
       360.000000
    
 
-
 Trigger management
 ------------------
 
 .. hint::
 
    This driver only supports it's own default trigger source adis16477-1-dev0
-
 
 .. container:: box bggreen
 
@@ -398,7 +415,6 @@ Trigger management
       adis16477-1-dev0
    
 
-
 .. tip::
 
    In case there is no trigger specified, run the following command:
@@ -408,7 +424,6 @@ Trigger management
    
       root@analog:/sys/bus/iio/devices# cat trigger0/name > iio\:device0/trigger/current_trigger
    
-
 
 Buffer management
 -----------------
@@ -424,8 +439,13 @@ Buffer management
       data_available  enable  length  watermark
    
 
-
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -446,7 +466,6 @@ Every buffer implementation features a set of files:
 
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
-
 
 .. container:: box bggreen
 
@@ -490,7 +509,6 @@ Every buffer implementation features a set of files:
       root:/sys/bus/iio/devices/iio:device0/scan_elements>
    
 
-
 From the above list, note the following 2 elements:
 
 -  in_flags0\_\*: This element refers to diagnostics data (register DIAG_STAT) related to the device.
@@ -500,7 +518,6 @@ From the above list, note the following 2 elements:
 
    Both this elements are relevant only when burst_mode_enable is set
 
-
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
 
@@ -509,7 +526,6 @@ From the above list, note the following 2 elements:
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 Setup on Raspbian image
 =======================
@@ -539,7 +555,8 @@ Overlay contents:
 
 // SPDX-License-Identifier: GPL-2.0 /dts-v1/; /plugin/;
 
-#include <dt-bindings/interrupt-controller/irq.h> #include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/interrupt-controller/irq.h> #include
+<dt-bindings/gpio/gpio.h>
 
 / {
 
@@ -693,6 +710,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-inertial-measurement-units/youtube>p_vntewue24
-

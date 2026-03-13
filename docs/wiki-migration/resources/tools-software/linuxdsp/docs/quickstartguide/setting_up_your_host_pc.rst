@@ -2,18 +2,20 @@
 
    The following instructions are correct for developers using Ubuntu 18.04 LTS.
 
-
 Installing Required Packages
 ============================
 
-In order to build and deploy Linux to your ADSP-SC5xx development board you will need to install several additional packages on to your host PC. This can be performed using the following command and respond yes(y) to any prompts:
+In order to build and deploy Linux to your ADSP-SC5xx development board you will
+need to install several additional packages on to your host PC. This can be
+performed using the following command and respond yes(y) to any prompts:
 
 ::
 
    $ sudo apt-get update
    $ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm u-boot-tools openssl curl tftpd-hpa python
 
-If you are running on a 64-bit host, then you also need to install the following packages:
+If you are running on a 64-bit host, then you also need to install the following
+packages:
 
 ::
 
@@ -33,7 +35,8 @@ Add the **/opt/analog/cces/2.8.3/ARM/arm-none-eabi/bin** directory to your path.
 Setting Up TFTP
 ===============
 
-We use the TFTP server on the host to transfer images to the EZ-KIT. This needs to be configured for use:
+We use the TFTP server on the host to transfer images to the EZ-KIT. This needs
+to be configured for use:
 
 ::
 
@@ -52,7 +55,9 @@ We use the TFTP server on the host to transfer images to the EZ-KIT. This needs 
 Setting Up NFS Server
 =====================
 
-We can use the NFS server on the host to transfer images to the EZ-KIT. If you wish to use the NFS boot method you can install the NFS server on your host PC. This needs to be configured for use:
+We can use the NFS server on the host to transfer images to the EZ-KIT. If you
+wish to use the NFS boot method you can install the NFS server on your host PC.
+This needs to be configured for use:
 
 ::
 
@@ -80,7 +85,6 @@ On the host PC open a terminal and execute the following commands:
 
                +-----[configuration]------+
 
-
                | Filenames and paths      |
 
                | File transfer protocols  |
@@ -92,7 +96,6 @@ On the host PC open a terminal and execute the following commands:
                | Exit                     |
                | Exit from Minicom        |
                +--------------------------+
-
 
    # Select Serial port setup
         Set Serial Device to /dev/ttyUSB0

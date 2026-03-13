@@ -1,8 +1,6 @@
 AD-CELLPACKBM-SL Hardware Guide
 ===============================
 
-
-
 .. admonition:: Download
    :class: download
 
@@ -12,30 +10,39 @@ AD-CELLPACKBM-SL Hardware Guide
    
    `AD-CELLPACKBM-SL QuickStart Guide <https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/ad-cellpackbm-sl_quick_start_guide.pdf>`_
 
-
 Overview
 --------
 
 The **AD-CELLPACKBM-SL** is a complete BMS kit consisting of the EVAL-ADBMS6830BMSW 16-channel cell monitoring module, the EVAL-ADBMS2950-BASIC pack monitoring module, EVAL-ADBMS6822 isoSPI adapter, and the SDP-K1 microcontroller board.
 
-This solution is based on high-performance BMS devices that are specifically designed for broad market applications and is suitable for determining the battery's state of charge (SoC) and state of health (SoH), as well as performing important BMS diagnostics.
+This solution is based on high-performance BMS devices that are specifically
+designed for broad market applications and is suitable for determining the
+battery's state of charge (SoC) and state of health (SoH), as well as performing
+important BMS diagnostics.
 
-The AD-CELLPACKBM-SL can operate either in embedded mode or through a PC-based graphical user interface. Complete with working software and hardware, as well as software examples, this kit makes it easier for customers to prototype and create connected systems and solutions for BMS applications.
+The AD-CELLPACKBM-SL can operate either in embedded mode or through a PC-based
+graphical user interface. Complete with working software and hardware, as well
+as software examples, this kit makes it easier for customers to prototype and
+create connected systems and solutions for BMS applications.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/ad-cellpackbm-sl_angle.jpg
-   :width: 600px
+   :width: 600
 
 --------------
 
 System Setup
 ============
 
-This section describes the procedure for establishing hardware connection between the boards, how to download the system requirements such as the firmware and software, and eventually obtain and view BMS readings through the Broad Market BMS graphical user interface.
+This section describes the procedure for establishing hardware connection
+between the boards, how to download the system requirements such as the firmware
+and software, and eventually obtain and view BMS readings through the Broad
+Market BMS graphical user interface.
 
 Equipment Needed
 ----------------
 
-For easy identification of the components included in the kit, refer to the figure below.
+For easy identification of the components included in the kit, refer to the
+figure below.
 
 **Boards**
 
@@ -44,7 +51,8 @@ For easy identification of the components included in the kit, refer to the figu
 -  ► 1x EVAL-ADBMS6822 Dual isoSPI Adapter
 -  ► 1x EVAL-SDP-CK1Z (SDP-K1) Controller Board
 -  ► 2x DC2472A Battery Cell Emulator
--  ► 1x MAX32625PICO Programming Adapter with 10-pin SWD cable (loaded with firmware image)
+-  ► 1x MAX32625PICO Programming Adapter with 10-pin SWD cable (loaded with
+   firmware image)
 
 **Cables and Other Accessories**
 
@@ -55,7 +63,8 @@ For easy identification of the components included in the kit, refer to the figu
 -  ► 1x 12.0” Alligator Clip / Test Lead, Red
 -  ► 1x 24.0“ Alligator Clip / Test Lead, Red
 
-The following list of equipment are not provided as part of the kit, but are required for running the setup described in this guide.
+The following list of equipment are not provided as part of the kit, but are
+required for running the setup described in this guide.
 
 -  ► Laptop or PC running Windows 10
 -  ► Digital power supply (such as the Keysight e3631A 0V to 6V power supply)
@@ -64,7 +73,7 @@ The following list of equipment are not provided as part of the kit, but are req
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/ad-cellpackbm-sl_kit_contents.png
    :alt: AD-CELLPACKBM-SL Kit Contents / Complete Daisy Chain Setup
    :align: center
-   :width: 2000px
+   :width: 2000
 
 Software
 ~~~~~~~~
@@ -73,50 +82,58 @@ Software
 
    The BMS Browser is a PC browser based Graphical User Interface (GUI) tool designed to work in conjunction with the hardware in the AD-CELLPACKBM-SL. **MyAnalog.com account will be required to download the BMS Browser GUI** from below link:
 
-
 .. admonition:: Download
    :class: download
 
    :adi:`BMS Broad Market GUI <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
    
-   When software updates or new versions of the software are available an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.
-
+   When software updates or new versions of the software are available an email
+   notification will be sent to the email address associated with the MyAnalog
+   account used to download the original software package.
 
 MCU Configuration & Setup
 -------------------------
 
 .. important::
 
-   By default (upon purchase), the AD-CELLPACKBM-SL Kit comes with a MAX32625PICO programmer adapter that is already loaded with the appropriate firmware image.
+   By default (upon purchase), the AD-CELLPACKBM-SL Kit comes with a
+   MAX32625PICO programmer adapter that is already loaded with the appropriate
+   firmware image.
 
    
-   Otherwise, if you are using a new MAX32625PICO programmer (that is not part of the original kit), make sure to flash it first with the correct firmware image before using it with the AD-CELLPACKBM-SL BMS Kit. If you do not know how to load the image, follow the instructions below.
-
+   Otherwise, if you are using a new MAX32625PICO programmer (that is not part
+   of the original kit), make sure to flash it first with the correct firmware
+   image before using it with the AD-CELLPACKBM-SL BMS Kit. If you do not know
+   how to load the image, follow the instructions below.
 
 The MCU should be programmed using the following steps:
 
 **MAX326825PICO Debugger (One time setup)**
 
 -  Download and install the :adi:`BMS Browser GUI Broadmarket <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`.
--  Open the program files folder of the BMS Browser GUI in the host PC and look for the SDP-K1 .bin file.
+-  Open the program files folder of the BMS Browser GUI in the host PC and look
+   for the SDP-K1 .bin file.
    **C:\\Analog Devices\\BMS_Browser_GUI_Broadmarket-Rel2.0.0\\USB_TO_SPI_Firmware**
 
 -  Plug the micro-USB cable to the MAX32625PICO.
--  Press the button on the MAX32625PICO and then plug the other end of the micro-USB cable into the PC. A red LED should blink, then hold steady, and a MAINTENANCE drive should appear on your PC.
+-  Press the button on the MAX32625PICO and then plug the other end of the
+   micro-USB cable into the PC. A red LED should blink, then hold steady, and a
+   MAINTENANCE drive should appear on your PC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/max32625pico_maxdap.png
    :align: center
-   :width: 200px
+   :width: 200
 
 -  Drag and drop the **SDP_K1_PyBMS_USB_TO_SPI_Bytes_Debug_USB_Port.bin** file onto the MAINTENANCE drive. The file transfer should be complete in about 30 seconds.
 -  Unplug and replug the device.
--  After completing this step, a “DAPLINK” drive should appear. You can drag and drop the firmware (.bin files separate from the above) onto it to program the SDP-K1.
+-  After completing this step, a “DAPLINK” drive should appear. You can drag and
+   drop the firmware (.bin files separate from the above) onto it to program the
+   SDP-K1.
 
 .. note::
 
    Consult the `MSDK User Guide <https://analogdevicesinc.github.io/msdk/USERGUIDE/#updating-the-max32625pico-pico-debug-adapter-firmware>`_ for detailed instructions on updating the MAX32625PICO Debug Adapter Firmware.
-
 
 BMS Browser GUI Installation
 ----------------------------
@@ -126,16 +143,15 @@ BMS Browser GUI Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_install.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Accept the license terms and click **Next** to proceed with the installation. Default installation directory will be in **C:\\Analog Devices\\**
-
 
 |image1|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_destination.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Launching the BMS Browser GUI
 -----------------------------
@@ -144,11 +160,12 @@ Launching the BMS Browser GUI
 -  Run the application to launch the BMS Browser GUI.
 -  Upon launching, a console window will appear to display background information.
 -  Two new tabs will open in the default browser on the PC, with the User Guide tab as the default.
--  Switch to the alternative tab to access the BMS Browser configuration page, which should be displayed.
+-  Switch to the alternative tab to access the BMS Browser configuration page,
+   which should be displayed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_main_page.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  Ensure that the SDP-K1 is connected to the PC via the USB-C cable on P10. The Blue LED, D31 will illuminate when powered.
 -  In the **Serial Port** dropdown box, select the COM port associated with SDP-K1.
@@ -159,15 +176,20 @@ Battery Cell Monitoring
 Setup
 -----
 
-This setup uses the SDP-K1 as the controller board, but users may also use the AD-APARD32690-SL as MCU and follow the same hardware setup instructions.
+This setup uses the SDP-K1 as the controller board, but users may also use the
+AD-APARD32690-SL as MCU and follow the same hardware setup instructions.
 
-The DC2472A Battery Emulator Board was also used for cell voltage input. Alternatively, resistors can be used to simulate battery cell voltages. 100 Ω ½ W or equivalent resistors are recommended because 100 Ω (or lower values) typically will not induce measurement errors, and the ½ W (or greater rating) will keep the resistor temperatures low, preventing power dissipation damage.
+The DC2472A Battery Emulator Board was also used for cell voltage input.
+Alternatively, resistors can be used to simulate battery cell voltages. 100 Ω ½
+W or equivalent resistors are recommended because 100 Ω (or lower values)
+typically will not induce measurement errors, and the ½ W (or greater rating)
+will keep the resistor temperatures low, preventing power dissipation damage.
 
 Check the :doc:`EVAL-ADBMS6830BMSW User Guide </wiki-migration/resources/eval/user-guides/eval-adbms6830bmsw>` for procedure on connecting resistors.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbms6830_cell_monitor_setup.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Connect the EVAL-ADBMS6822 dual isoSPI adapter to the EVAL-SDP-CK1Z (SDP-K1) controller board through the Arduino headers.
 -  Set the P14 jumper of the SDP-K1 to the 3.3 V position.
@@ -175,11 +197,17 @@ Check the :doc:`EVAL-ADBMS6830BMSW User Guide </wiki-migration/resources/eval/us
 -  Connect the EVAL-ADBMS6822 (J1) to the EVAL-ADBMS6830BMSW (J3) using the 2-wire twisted-pair patch cable from the main DuraClik connector to isoSPI A DuraClik connector.
 -  Plug the screw-terminal block(s) into the cell voltage connectors of the DC2472A battery emulator board. Note that the last three terminals of the DC2472A must be left hanging.
 -  Connect the DC2472A battery emulator board to the EVAL-ADBMS6830BMSW through the connected cell voltage connectors (J1).
--  Power the DC2472A using a 5 V external source connected to J1 using a USB cable. Alternatively, power it through PC using a USB cable to be connected via J10.
+-  Power the DC2472A using a 5 V external source connected to J1 using a USB
+   cable. Alternatively, power it through PC using a USB cable to be connected
+   via J10.
 
-   -  While some laptop USB ports may suffice for powering the emulator during evaluation, it is still recommended to use an external power supply to ensure adequate power. Note that he EVAL-ADBMS6830BMSW is powered through the DC2472A.
+   -  While some laptop USB ports may suffice for powering the emulator during
+      evaluation, it is still recommended to use an external power supply to
+      ensure adequate power. Note that he EVAL-ADBMS6830BMSW is powered through
+      the DC2472A.
 
--  Attach the MAX32625PICO programmer to the SDP-K1 using the 10-pin ribbon SWD cable. Observe correct polarity when connecting the SWD cable.
+-  Attach the MAX32625PICO programmer to the SDP-K1 using the 10-pin ribbon SWD
+   cable. Observe correct polarity when connecting the SWD cable.
 
 Test
 ----
@@ -192,25 +220,29 @@ Test
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_launch.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  Upon launching, the **Quick Measure** tab will open. **Note:** this utility only supports a single BMS product in a Daisy Chain. Click **Start Quick Measure** to begin measurements.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_start_measure.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
--  Check the Total PEC Status on the 3rd row under the Memory Map. This indicates the status of the isoSPI link between the EVAL-ADBMS6822 and the EVAL-ADBMS6830BMSW.
+-  Check the Total PEC Status on the 3rd row under the Memory Map. This
+   indicates the status of the isoSPI link between the EVAL-ADBMS6822 and the
+   EVAL-ADBMS6830BMSW.
 
-   -  Ensure the EVAL-ADBMS6830BMSW board is powered correctly, indicated by the Blue LED on the DC2472A being illuminated.
+   -  Ensure the EVAL-ADBMS6830BMSW board is powered correctly, indicated by the
+      Blue LED on the DC2472A being illuminated.
 
-      -  Verify the connection of the twisted cable between the EVAL-ADBMS6822 and the EVAL-ADBMS6830BMSW.
+      -  Verify the connection of the twisted cable between the EVAL-ADBMS6822
+         and the EVAL-ADBMS6830BMSW.
 
 -  Check the voltage readings by adjusting the potentiometer (POT1) on the DC2472A to modify the emulated cell voltages. Monitor the voltage channels on the Quick Measure Utility graph. Select which signals to display on the graph under the **Plot All Devices** column.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_plot_all_devices.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 Battery Pack Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -220,19 +252,22 @@ Setup
 
 -  Connect the EVAL-ADBMS6822 dual isoSPI adapter to the EVAL-SDP-CK1Z (SDP-K1) controller board through the Arduino headers.
 -  Set the P14 jumper of the SDP-K1 to the *3.3 V* position.
--  Connect the EVAL-ADBMS6822 (J1) to the EVAL-ADBMS2950-BASIC (isoA) using the provided isoSPI cable.
+-  Connect the EVAL-ADBMS6822 (J1) to the EVAL-ADBMS2950-BASIC (isoA) using the
+   provided isoSPI cable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/pack_monitoring.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Choose between two options for powering the EVAL-ADBMS2950-BASIC:
 
-   -   Supply 5 V to J1 and set the current limit to 200 mA. The EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode and ~100 mA in active mode. The image below depicts the current measurement in idle mode.
+   -   Supply 5 V to J1 and set the current limit to 200 mA. The
+       EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode and ~100 mA in active
+       mode. The image below depicts the current measurement in idle mode.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/idle_current.png
    :align: center
-   :width: 400px
+   :width: 400
 
 ::
 
@@ -251,7 +286,7 @@ Test
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/2950_launch.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  Upon launching, the **Quick Measure** tab will open. **Note:** it can only handle one BMS product in a Daisy Chain. Click **Start Quick Measure** to begin measurements.
 -  Check the Total PEC Status on the Memory Map. It should reflect **true**, indicating a successful isoSPI link between the EVAL-ADBMS6822 and the EVAL-ADBMS2950-BASIC. If false, there is an error in the signal chain.
@@ -262,20 +297,23 @@ Complete Daisy Chain
 Setup
 -----
 
-Once familiar with the setup for each of the individual boards the entire signal chain can be verified.
+Once familiar with the setup for each of the individual boards the entire signal
+chain can be verified.
 
--  Connect the hardware using the DuraClik isoSPI cables, as shown in the diagram below.
+-  Connect the hardware using the DuraClik isoSPI cables, as shown in the
+   diagram below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/complete_daisy_chain.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Power each DC2472A cell emulator board using a 5 V external source connected to J1 through the USB cable.
 -  Power the EVAL-ADBMS2950-BASIC either through J1 or J10, as explained earlier.
 -  Using the black alligator clip cable, connect the V- pin of the second EVAL-ABMS6830BMSW to the BATT- port of the EVAL-ADBMS2950-BASIC.
 -  Using the red alligator clip cable, connect the V- pin of the first EVAL-ABMS6830BMSW board to the V+ pin of the second EVAL-ADBMS6830BMSW.
 -  Attach the MAX32625PICO programmer to the SDP-K1 using the 10-pin ribbon SWD cable. Observe correct polarity when connecting the SWD cable.
--  Connect one end of the USB cable to SDP-K1 (P2) and the other end to the host PC.
+-  Connect one end of the USB cable to SDP-K1 (P2) and the other end to the host
+   PC.
 
 Test
 ----
@@ -285,13 +323,13 @@ Test
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_launch.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  Click on **Launch** to initiate the GUI. After the GUI launches in the Browser, go to the **Sequences** tab located in the top toolbar, which will open the *Sequence Configuration* page.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_sequences.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  In the Files column, select the **ADBMS6830-ADBMS2950.json**. This action will load a preconfigured sequence into the tool.
 
@@ -305,17 +343,24 @@ Test
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_memory_map.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  The **Plots** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to four plots simultaneously.
-   In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EVAL-ADBMS6830BMSW as Device 2, and the third EVAL-ADBMS6830BMSW as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages for the first EVAL-ADBMS6830MSW on Plot 2, and the averaged cell voltages for the third EVAL-ADBMS6830BMSW on Plot 3.
-   Simply choose the desired Plot number from the dropdown menu under each device to display the relevant data.
+   In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as
+   Device 1, the first EVAL-ADBMS6830BMSW as Device 2, and the third
+   EVAL-ADBMS6830BMSW as Device 3. An example illustrates how to plot each
+   parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages
+   for the first EVAL-ADBMS6830MSW on Plot 2, and the averaged cell voltages for
+   the third EVAL-ADBMS6830BMSW on Plot 3.
+   Simply choose the desired Plot number from the dropdown menu under each
+   device to display the relevant data.
 
    |image2|
 
    |image3|
    |image4|
--  Plot settings can be saved to the PC to be reloaded for future session to save time.
+-  Plot settings can be saved to the PC to be reloaded for future session to
+   save time.
 
 --------------
 
@@ -342,22 +387,21 @@ Design & Integration Files
    -  Allegro Project
    
 
-
 Help and Support
 ----------------
 
-For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer
+Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_license.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot1.png
-   :width: 2000px
+   :width: 2000
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot2.png
-   :width: 2000px
+   :width: 2000
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot3.png
-   :width: 2000px
+   :width: 2000

@@ -15,7 +15,6 @@ ezLINX™ Quick Start guide for Windows Vista 32-bit/64-bit
 
    :adi:`Download Sample PC Application Installation files <static/imported-files/eval_boards/ezLINXPCApp.zip>`
 
-
 Run the setup by double clicking on the setup.exe file. This will start the installation process and when completed the window below will open: |image2| This window indicates that the software installation was successful and is now running.
 
 Connecting the ezLINX board to the PC
@@ -23,7 +22,8 @@ Connecting the ezLINX board to the PC
 
 -  Connect the ezLINX board to the power supply using the supplied AC adapter
 -  Connect the ezLINX board to the PC using the supplied USB A to USB mini B cable.
--  Ignore the found new hardware prompt that pops up in the bottom right corner of the screen
+-  Ignore the found new hardware prompt that pops up in the bottom right corner
+   of the screen
 
 Installing the USB drivers
 --------------------------
@@ -33,16 +33,17 @@ Installing the USB drivers
 
    :adi:`Download the Windows 32-bit driver <static/imported-files/eval_boards/ezLINXGadgetEthernetUSBDriver.zip>`
 
-
 | There are two different drivers for the 32-bit and 64-bit versions of Windows Vista so if you are unsure which version of the OS the PC is running then check in the system settings before attempting to install the driver.
 | Navigate to the device manager by searching for it in the start menu: |image3|
 
-The ezLINX board is labelled “linux USB Ethernet/RNDIS Gadget” and can be found under Other Device \\\\\
-
+The ezLINX board is labelled “linux USB Ethernet/RNDIS Gadget” and can be found
+under Other Device \\\\\
 
 |image4|
 
-Right click on the ezLINX board labelled “linux USB Ethernet/RNDIS Gadget” and select update driver. This will open the hardware update wizard window as shown below.
+Right click on the ezLINX board labelled “linux USB Ethernet/RNDIS Gadget” and
+select update driver. This will open the hardware update wizard window as shown
+below.
 
 | Choose to browse the computer for driver software
 | |image5|
@@ -56,19 +57,19 @@ Right click on the ezLINX board labelled “linux USB Ethernet/RNDIS Gadget” a
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/dotnetframeworkv4installation.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/ezlinxopenwindow.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/devicemanagerlocation.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/usbethernetrndisgadget.jpg
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/browsefordriversoftware.jpg
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/browsethedriversoftware.jpg
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/installthedriveranyway.jpg
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/updatedriversoftware.jpg
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/networkconnectionswindow.jpg
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/localconnectionproperties.jpg
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/vista/ipaddresssettings.jpg
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/boardconfigurationwindow.jpg
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/gpiointerface.jpg
-   :width: 600px
+   :width: 600

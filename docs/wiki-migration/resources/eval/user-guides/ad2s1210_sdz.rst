@@ -36,7 +36,9 @@ Software Required
 General Description
 -------------------
 
-The EVAL-AD2S1210SDZ is a full featured evaluation board designed to allow the user to easily evaluate all the features of the AD2S1210 resolver-to-digital converter (RDC).
+The EVAL-AD2S1210SDZ is a full featured evaluation board designed to allow the
+user to easily evaluate all the features of the AD2S1210 resolver-to-digital
+converter (RDC).
 
 Quick Start Guide
 -----------------
@@ -62,7 +64,6 @@ You will need to:
 
 -  Get the `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`_.
 
-
 |zedboard.png|
 
 -  Insert the SD-CARD into the SD Card Interface Connector (J12).
@@ -75,20 +76,17 @@ You will need to:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/jumpers_boot_sd_zedboard.jpg
    :alt: jumpers_boot_sd_zedboard.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 .. tip::
 
    Before executing the below steps, make sure that VADJ jumper is set to 3.3V.
 
-
 -  Connect the oscilloscope probes to the SMB connectors.
 -  Turn it on.
 -  Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
 
-
 .. esd-warning::
-
 
 Application Software (both locally and remotely on the FPGA)
 ------------------------------------------------------------
@@ -152,14 +150,13 @@ IIO Oscilloscope
 
    Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
 -  Press refresh to display available IIO Devices and press connect.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/iio_connect.png
    :alt: iio_connect.png
    :align: center
-   :width: 700px
+   :width: 700
 
 .. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad777x-ardz/zedboard.png
-   :width: 600px
+   :width: 600

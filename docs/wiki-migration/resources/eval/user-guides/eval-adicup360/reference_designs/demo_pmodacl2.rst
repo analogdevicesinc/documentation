@@ -12,15 +12,17 @@ The ADuCM360_demo_pmodacl2 project uses the `PmodACL2 PMOD <http://store.digilen
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/pmodacl2_hw_attached.jpg
    :align: left
-   :width: 600px
+   :width: 600
 
 The application reads the \*\* X \*\* , \*\* Y \*\*, and \*\* Z \*\* acceleration registers. The acceleration in the 3 axis is displayed in **[mG]**. There is also an internal temperature sensor in the ADXL362, which is read and out either in **[C]** or **[codes]**. This is set by changing the **TEMP_ADC** variable within the *main.c* file. (Value of [0] is degrees Celsius, and value [1] is ADC codes) The acceleration range can also be selected by setting the **ADXL_SENSE** variable with the *main.c* file. (Values of [2, 4, and 8 are acceptable] )
 
-All the outputs are printed from the UART to the USER USB port and can be read on the PC using a serial terminal program, such as Putty or Tera Term.
+All the outputs are printed from the UART to the USER USB port and can be read
+on the PC using a serial terminal program, such as Putty or Tera Term.
 
 For precision applications, each **ADXL362** chip requires individual calibration which can be done by measuring and setting the definitions // ACC_TEMP_BIAS// and // ACC_TEMP_SENSITIVITY// parameters in the *ADXL362.h* file.
 
-The temperature in degrees celsius, \*\* Treal \*\*, can be derived from the ADC readings \*\* Tadc \*\* using the predefined formula:
+The temperature in degrees celsius, \*\* Treal \*\*, can be derived from the ADC
+readings \*\* Tadc \*\* using the predefined formula:
 
 ::
 
@@ -48,10 +50,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers as shown in the next figure. The important jumpers are highlighted in red.
+-  To program the base board, set the jumpers as shown in the next figure. The
+   important jumpers are highlighted in red.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
-   :width: 500px
+   :width: 500
 
 -  Plug the PmodACL2 PMOD in the EVAL-ADICUP360 base board, via the PMOD_SPI port (P4).
 -  Power EVAL-ADICUP360 base board via the DEBUG USB port (P14).
@@ -59,14 +62,19 @@ Setting up the hardware
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the PMODACL2.
+There are two basic ways to program the ADICUP360 with the software for the
+PMODACL2.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_pmodacl2** demo can be found here:
 
@@ -83,11 +91,9 @@ The software for the **ADuCM360_demo_pmodacl2** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_pmodacl2 Source Code <projects/ADuCM360_demo_pmodacl2>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -200,7 +206,7 @@ The **ADuCM360_demo_pmodacl2** project use basic ARM Cortex-M C/C++ Project stru
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/pmodacl2_project_structure.png
    :align: left
-   :width: 400px
+   :width: 400
 
 In the **src** and **include** folders you will find the source and header files related to pmodacl2 application. You can modify as you wanted those files. The *Communication.c/h* files contain SPI and UART specific data, meanwhile the *ADXL362.c/h* files contain the accelerometer data. Here are parameters you can configure:
 

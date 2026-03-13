@@ -1,7 +1,10 @@
 AD74115H EFT Test Results
 =========================
 
-The electrical fast transient (EFT) immunity test indicates the capability of the device to maintain data integrity during repetitive electrical fast transients and bursts, which often occur from arcing contacts in switches and relays.
+The electrical fast transient (EFT) immunity test indicates the capability of
+the device to maintain data integrity during repetitive electrical fast
+transients and bursts, which often occur from arcing contacts in switches and
+relays.
 
 Table 1 IEC 61000-4-4 Test Levels Signal and Control Ports
 ----------------------------------------------------------
@@ -15,13 +18,15 @@ Level Voltage Peak (kV) Repetition Frequency(kHz)
 4     2                 5 or 100
 ===== ================= =========================
 
-
 | Per the IEC 61000-4-4 standard, the DUT (Device under test) is tested with 2000 V discharges on the analog input cable. Positive and negative polarity discharges are applied. The duration time of each test is 1 min. The transient and burst waveform is in accordance with IEC 61000-4-4, 5 ns rising time with 50 ns pulse width. 5 kHz repetition frequency was used for the test. The configuration consists of a 0.8 m high wooden table, covered with a sheet of copper that is at least 0.25 mm thick, and connected to the protective grounding system. The DUT is placed on a 0.1 m thick isolating support. A minimum distance of 0.5 m is provided between the DUT and the walls of the laboratory.
 
 Hardware Configuration
 ----------------------
 
-Due to the configurability of the AD74115H some use cases were covered other use cases by default reducing the amount of testing required. Some use cases used a different measurement path to cover another use case. The list below shows the coverage:
+Due to the configurability of the AD74115H some use cases were covered other use
+cases by default reducing the amount of testing required. Some use cases used a
+different measurement path to cover another use case. The list below shows the
+coverage:
 
 -  Current Output Use Case covers:
 
@@ -30,11 +35,13 @@ Due to the configurability of the AD74115H some use cases were covered other use
 
       -  Current Input Loop Powered use case by using a different ADC configuration (measure across RSENSE --> SENSEHF to SENSELF).
       -  Current Input Externally Powered use case by the current input loop powered use case since the measurement path is the same (SENSEHF to SENSELF).
-      -  Voltage Output use case as the output paths are the same and the measurement path is covered by current input loop powered.
+      -  Voltage Output use case as the output paths are the same and the
+         measurement path is covered by current input loop powered.
 
    -  Shielded cable was connected to IO_P and IO_N and a 500 Ω load while the output was set to 12.5 mA.
    -  DMM used to measure the output at the load for current output use case.
-   -  Internal ADC was used to measure current across RSENSE for current output RSENSE use case.
+   -  Internal ADC was used to measure current across RSENSE for current output
+      RSENSE use case.
 
 -  4 Wire RTD Use Case covers:
 
@@ -49,13 +56,19 @@ Due to the configurability of the AD74115H some use cases were covered other use
    -  A voltage source was used to source 8 V to IO_P via a 1 k resistor. The voltage was swept from 8 V to 10 V for a random number of times to ensure the digital counter was counting each voltage transition correctly.
    -  The counter was checked before and after the testing.
 
--  Digital Output use case in the off condition. The digital output circuitry is physically connected at the output path. If the digital output switched on unexpectedly it would be detected.
+-  Digital Output use case in the off condition. The digital output circuitry is
+   physically connected at the output path. If the digital output switched on
+   unexpectedly it would be detected.
 
    -  Digital output internal use case used a 390 Ω load and the voltage was measured at the load with the DMM. The current was then calculated using ohms law.
-   -  Digital output external use case used a 250 Ω load and measured the same as digital output internal.
+   -  Digital output external use case used a 250 Ω load and measured the same
+      as digital output internal.
 
-There was a digital multi meter (DMM) connected to the output load to ensure there was no loss of output during testing and also to ensure the integrity of the internal ADC measurement. To protect the DMM a low pass filter was placed between the load and DMM. The measurements were streamed back to the laptop throughout the testing.
-
+There was a digital multi meter (DMM) connected to the output load to ensure
+there was no loss of output during testing and also to ensure the integrity of
+the internal ADC measurement. To protect the DMM a low pass filter was placed
+between the load and DMM. The measurements were streamed back to the laptop
+throughout the testing.
 
 |image1|
 
@@ -63,13 +76,11 @@ There was a digital multi meter (DMM) connected to the output load to ensure the
 
    *Figure 1 ADP1034 and AD74115H EFT Current Use Case Setup*
 
-
    |image2|
 
 .. container:: centeralign
 
    *Figure 2 ADP1034 and AD74115H 4 wire RTD EFT Setup*
-
 
    |image3|
 
@@ -77,18 +88,21 @@ There was a digital multi meter (DMM) connected to the output load to ensure the
 
    *Figure 3 ADP1034 and AD74115H Current Output Test Setup*
 
-
    |image4|
 
 .. container:: centeralign
 
    *Figure 4 ADP1034 and AD74115H Digital Input Logic Test Setup*
 
-
 Software Configuration
 ----------------------
 
-The software was written in python to facilitate interaction with DMM and DUT simultaneously. At the beginning of each test the pre test configuration was performed. Before the discharges were applied the pre measurement flow of 1000 samples were taken. After discharges the post measurement of 1000 samples were taken. Each sample (ADC and DMM) was taken approximately every 25 ms. Pre test configuration
+The software was written in python to facilitate interaction with DMM and DUT
+simultaneously. At the beginning of each test the pre test configuration was
+performed. Before the discharges were applied the pre measurement flow of 1000
+samples were taken. After discharges the post measurement of 1000 samples were
+taken. Each sample (ADC and DMM) was taken approximately every 25 ms. Pre test
+configuration
 
 ::
 
@@ -112,7 +126,11 @@ Pre and Post Measurement Flow
 Performance Summary
 -------------------
 
-Table 2 gives a summary of the EFT test results. The AD74115H was tested to level 4 according to IEC 61000-4-4 and achieved class B. There were no alert status bits activated throughout the testing. For the digital output use cases a deviation is not recorded as the accuracy is dependent on the load. The test verified that the digital output did not turn off unexpectedly.
+Table 2 gives a summary of the EFT test results. The AD74115H was tested to
+level 4 according to IEC 61000-4-4 and achieved class B. There were no alert
+status bits activated throughout the testing. For the digital output use cases a
+deviation is not recorded as the accuracy is dependent on the load. The test
+verified that the digital output did not turn off unexpectedly.
 
 Table 2 EFT Results
 -------------------
@@ -149,10 +167,10 @@ Table 2 EFT Results
 | :doc:`Return to AD74115H Immunity Performance </wiki-migration/resources/technical-guides/ad74115_immunity_performance>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/technical-guides/eft_setup_current.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/technical-guides/rtd.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/technical-guides/eft_block_diagram_2.png
-   :width: 800px
+   :width: 800
 .. |image4| image:: https://wiki.analog.com/_media/resources/technical-guides/eft_block_diagram_din.png
-   :width: 800px
+   :width: 800

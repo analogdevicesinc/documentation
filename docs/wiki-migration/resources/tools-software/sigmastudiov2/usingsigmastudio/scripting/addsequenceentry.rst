@@ -3,7 +3,9 @@
 Add Sequence Entry
 ==================
 
-This action allows the user to add a sequence entry into the selected sequence mode in the SS+ sequence window. The function call doesn't have any arguments. This API returns the SSPResult type.
+This action allows the user to add a sequence entry into the selected sequence
+mode in the SS+ sequence window. The function call doesn't have any arguments.
+This API returns the SSPResult type.
 
 API
 ---
@@ -15,7 +17,8 @@ API
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the AddSequenceEntry action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+AddSequenceEntry action.
 
 ::
 

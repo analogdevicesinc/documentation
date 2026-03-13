@@ -1,8 +1,6 @@
 Vibration Analysis (CN0303)
 ===========================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,19 +17,19 @@ Vibration Analysis (CN0303)
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 An :adi:`archive <media/en/reference-design-documentation/reference-designs/CN0303.pdf>` of the circuit note.
 
 Overview
 --------
 
-This circuit offers a high linearity, low noise, wide-bandwidth vibration sensing solution. It is ideal for applications requiring a large dynamic range (±70g) and a flat frequency response from DC to 22kHz. The circuit provides a low power solution suitable for bearing analysis, engine monitoring and shock detection.
+This circuit offers a high linearity, low noise, wide-bandwidth vibration
+sensing solution. It is ideal for applications requiring a large dynamic range
+(±70g) and a flat frequency response from DC to 22kHz. The circuit provides a
+low power solution suitable for bearing analysis, engine monitoring and shock
+detection.
 
 General Setup
 -------------
-
-
 
 - One EVAL-CN0303-SDPZ Evaluation Board
 - One :adi:`ADXL001 <en/mems-sensors/mems-inertial-sensors/adxl001/products/EVAL-ADXL001/eb.html>` Evaluation Board
@@ -86,11 +84,14 @@ How to Install the Evaluation Software
 Step by Step Instruction for Preparing the ADXL001 Evaluation Board
 -------------------------------------------------------------------
 
--  In order to mitigate high frequency noise outside of the vibration band of interest, a basic RC low pass filter is created by components R1 and C2.
+-  In order to mitigate high frequency noise outside of the vibration band of
+   interest, a basic RC low pass filter is created by components R1 and C2.
 
    -  The recommended cutoff frequency is 80kHz (R1 = 1k, C2 = 1nF). This will remove any high frequency noise above 80kHz.
    -  The cutoff frequency can be adjusted by manipulating R1 and C2.
-   -  A filter is not required. By shorting R1(populating it with a 0 ohm resistor), the accelerometer output will be unfiltered and available at the XOUT pin.
+   -  A filter is not required. By shorting R1(populating it with a 0 ohm
+      resistor), the accelerometer output will be unfiltered and available at
+      the XOUT pin.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/eval-adxl001.jpg
    :align: center
@@ -99,7 +100,8 @@ Instructions for connecting the ADXL001-70BEZ and EVAL-CN0303_SDPZ
 ------------------------------------------------------------------
 
 -  First, connect the discrete female colored cable to connector P1 of the :adi:`ADXL001-70BEZ <en/mems-sensors/mems-inertial-sensors/adxl001/products/EVAL-ADXL001/eb.html>`.
--  Secondly, connect the discrete female colored cable to connector J6 of the EVAL-CN0303-SDPZ.
+-  Secondly, connect the discrete female colored cable to connector J6 of the
+   EVAL-CN0303-SDPZ.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/pcb.jpg
    :align: center
@@ -144,7 +146,6 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0303-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-setup_wizard.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-destination_directory.jpg

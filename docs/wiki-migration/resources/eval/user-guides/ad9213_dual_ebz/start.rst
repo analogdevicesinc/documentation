@@ -8,6 +8,4 @@
 -  :doc:`Software </wiki-migration/resources/eval/user-guides/ad9213_dual_ebz/software>`
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad9213_dual_ebz/help_and_support>`
 
-
 .. esd-warning::
-

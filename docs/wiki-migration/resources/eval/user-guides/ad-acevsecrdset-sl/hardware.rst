@@ -21,22 +21,22 @@ Revision A
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/02_ad_bct2ade9113_sl_top_components.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/03_ad_acevsecrdset_sl_bottom_components_v3.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Revision D
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/ad-acevsecrdset-sl_board_with_components-top_rev_d.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/ad-acevsecrdset-sl_board_with_components-bottom_rev_d.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Setting up the board
 --------------------
@@ -48,14 +48,14 @@ Revision A
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/debug_message_self_test.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Revision D
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/rev_d_debug_1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 After the self-test finishes a charging session can be initiated by the EV or the device connected to the "*EV connector*". The following image presents the debug messages received during a charging session.
 
@@ -64,20 +64,20 @@ Revision A
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/debug_message_charging_session.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Revision D
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/rev_d_debug2.png
    :align: center
-   :width: 400px
+   :width: 400
 
 User interface
 ~~~~~~~~~~~~~~
 
-Three programable push buttons, one MCU reset button and four LEDs are available for user interface.
-
+Three programable push buttons, one MCU reset button and four LEDs are available
+for user interface.
 
 |image1|
 
@@ -86,7 +86,9 @@ The buttons and LEDs are connected to the MCU as indicated in the above image. T
 Test points
 ~~~~~~~~~~~
 
-For evaluation and debugging purpose, test points are provided at every important point on the PCB. The names of the test points are printed on the silkscreen.
+For evaluation and debugging purpose, test points are provided at every
+important point on the PCB. The names of the test points are printed on the
+silkscreen.
 
 Scope images
 ~~~~~~~~~~~~
@@ -94,13 +96,18 @@ Scope images
 CP signal values corelated to the EVSE states
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The CP signal is presented for each state (A, B, C, D and diode error) in the following images, measured at two different points on the board. The first image for each case represents the value measured at the CP test point highlighted in the following image and the second one at the CP_READ test point corresponding to the MCU ADC input.
+The CP signal is presented for each state (A, B, C, D and diode error) in the
+following images, measured at two different points on the board. The first image
+for each case represents the value measured at the CP test point highlighted in
+the following image and the second one at the CP_READ test point corresponding
+to the MCU ADC input.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/19_ad_bct2ade9113_sl_cp_test_points.png
    :align: center
-   :width: 400px
+   :width: 400
 
-The values of the CP signal must be in the limits indicated in the next table for each state.
+The values of the CP signal must be in the limits indicated in the next table
+for each state.
 
 +---------+----------------+-------------------+------------------+---------------------------+-------------------------------------------------+
 | State   | CP signal type | CP high value [V] | CP low Value [V] | Equivalent resistance [Ω] | EV status                                       |
@@ -120,40 +127,36 @@ The values of the CP signal must be in the limits indicated in the next table fo
 
 State A (EVSE IDLE) CP tespoint: |image3| CP_READ tespoint
 
-
 |image4|
 
 State B (EV connected) CP testpoint |image5| CP_READ testpoint
-
 
 |image6|
 
 State C (charging requested) CP testpoint |image7| CP_READ testpoint
 
-
 |image8|
 
 State D (charging with ventilation requested) CP testpoint |image9| CP_READ testpoint
 
-
 |image10|
 
 State diode error (EV diode missing) CP testpoint |image11| CP_READ testpoint
-
 
 |image12|
 
 Testing the EVSE
 ^^^^^^^^^^^^^^^^
 
-Two measurements are presented following a complete run of the state machine from power-up to charging and EV disconnected. The tests are done using the following test bench setup.
+Two measurements are presented following a complete run of the state machine
+from power-up to charging and EV disconnected. The tests are done using the
+following test bench setup.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/20_ad_bct2ade9113_sl_test_bench.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 Normal working conditions with highlight on the EVSE-EV states. |image13| RCD AC error detected during a charging session in state C (charging without ventilation).
-
 
 |image14|
 
@@ -161,7 +164,7 @@ Setup of the EVSE with the type 2 cable connected on the EV side.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/21_ad_bct2ade9113_sl_test_bench_type2_cable.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 --------------
 
@@ -169,32 +172,31 @@ Setup of the EVSE with the type 2 cable connected on the EV side.
 
    If you want to go back to the SOFTWARE SETUP, click here: :doc:`AD-ACEVSECRDSET-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-acevsecrdset-sl/software>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/user_interface.png
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/leds_revd.png
-   :width: 800px
+   :width: 800
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/09_ad_bct2ade9113_sl_cp_statea.jpg
-   :width: 800px
+   :width: 800
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/10_ad_bct2ade9113_sl_cp_statea_adcin.jpg
-   :width: 800px
+   :width: 800
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/12_ad_bct2ade9113_sl_cp_stateb.jpg
-   :width: 800px
+   :width: 800
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/11_ad_bct2ade9113_sl_cp_stateb_adcin.jpg
-   :width: 800px
+   :width: 800
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/14_ad_bct2ade9113_sl_cp_statec.jpg
-   :width: 800px
+   :width: 800
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/13_ad_bct2ade9113_sl_cp_statec_adcin.jpg
-   :width: 800px
+   :width: 800
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/16_ad_bct2ade9113_sl_cp_stated.jpg
-   :width: 800px
+   :width: 800
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/15_ad_bct2ade9113_sl_cp_stated_adcin.jpg
-   :width: 800px
+   :width: 800
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/18_ad_bct2ade9113_sl_cp_state_b_diode_error.jpg
-   :width: 800px
+   :width: 800
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/17_ad_bct2ade9113_sl_cp_state_b_diode_error_adcin.jpg
-   :width: 800px
+   :width: 800
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/06_ad_bct2ade9113_charging_scenario.jpg
-   :width: 800px
+   :width: 800
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/07_ad_bct2ade9113_rcd_error_scenario.jpg
-   :width: 800px
+   :width: 800

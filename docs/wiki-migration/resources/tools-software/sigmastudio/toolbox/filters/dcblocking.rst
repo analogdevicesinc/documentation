@@ -9,7 +9,8 @@ DC-Blocking
 
 While the block is ready to use after dragging into the workspace, there is the option to :doc:`Add </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/signaladd>` to the algorithm.
 
-The dc-blocking behavior is computed according to the following transfer function:
+The dc-blocking behavior is computed according to the following transfer
+function:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/dcblockingpic2.png
    :alt: dcblockingpic2.png

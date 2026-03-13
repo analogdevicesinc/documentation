@@ -1,12 +1,13 @@
 How to Find Your COM Port
 =========================
 
-This page describes how to determine which COM port is being used for communication with your Analog Devices Inertial Sensor Evaluation System.
+This page describes how to determine which COM port is being used for
+communication with your Analog Devices Inertial Sensor Evaluation System.
 
 .. tip::
 
-   Use the Table of Contents on the right to jump to instructions for your operating system.
-
+   Use the Table of Contents on the right to jump to instructions for your
+   operating system.
 
 Windows XP
 ----------
@@ -16,13 +17,18 @@ Windows XP
 
    |Click for full-size image|
 
-   \* Select Device Manager to look up the assigned COM port of the ISEB hardware. In this tab click the Device Manager button.
-   Windows may request that you allow access to this panel, and administrative privileges may also be required.
-   \* In the Device Manager window, expand the Ports (COM & LTP) menu item. ADI Inertial Sensor Evaluation System should be listed with an assigned COM port number in parenthesis.
+   \* Select Device Manager to look up the assigned COM port of the ISEB
+   hardware. In this tab click the Device Manager button.
+   Windows may request that you allow access to this panel, and administrative
+   privileges may also be required.
+   \* In the Device Manager window, expand the Ports (COM & LTP) menu item. ADI
+   Inertial Sensor Evaluation System should be listed with an assigned COM port
+   number in parenthesis.
 
    |image1|
 
-   \* Note the COM port number for future use. (In this example, the port is COM4.)
+   \* Note the COM port number for future use. (In this example, the port is
+   COM4.)
 
 Windows Vista
 -------------
@@ -32,12 +38,16 @@ Windows Vista
 
    |image2|
 
-   Windows Vista may request that you allow access to this panel, and administrative privileges may also be required.
-   \* In the Device Manager window, expand the Ports (COM & LTP) menu item. ADI Inertial Sensor Evaluation System should be listed with an assigned COM port number in parenthesis.
+   Windows Vista may request that you allow access to this panel, and
+   administrative privileges may also be required.
+   \* In the Device Manager window, expand the Ports (COM & LTP) menu item. ADI
+   Inertial Sensor Evaluation System should be listed with an assigned COM port
+   number in parenthesis.
 
    |image3|
 
-   \* Note the COM port number for future use. (In this example, the port is COM4.)
+   \* Note the COM port number for future use. (In this example, the port is
+   COM4.)
 
 Windows 7
 ---------
@@ -48,11 +58,14 @@ Windows 7
    |image4|
 
    Windows 7 may request that you allow access to this panel.
-   \* In the Device Manager window, expand the Ports (COM & LTP) menu item. ADI Inertial Sensor Evaluation System should be listed with an assigned COM port number in parenthesis.
+   \* In the Device Manager window, expand the Ports (COM & LTP) menu item. ADI
+   Inertial Sensor Evaluation System should be listed with an assigned COM port
+   number in parenthesis.
 
    |image5|
 
-   \* Note the COM port number for future use. (In this example, the port is COM4.)
+   \* Note the COM port number for future use. (In this example, the port is
+   COM4.)
 
 .. |Click for full-size image| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/comport_xp_sysproperties.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/comport_vista_devicemanager.png

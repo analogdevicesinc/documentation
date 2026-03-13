@@ -1,14 +1,11 @@
 AD-APARD32690-SL System User Guide
 ==================================
 
-
-
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
    | The latest version of this page can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-apard32690-sl/index.html
-
 
 Required Hardware
 -----------------
@@ -34,7 +31,7 @@ AD-APARD32690-SL Board Description
 ----------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-apard32690-sl/apard32690_hw_components.png
-   :width: 800px
+   :width: 800
 
 ==== ==========
 LEDs 
@@ -110,7 +107,7 @@ System Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-apard32690-sl/apard32690_system_setup.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -120,7 +117,8 @@ Updating the AD-APARD32690-SL firmware
 Setting up the MAX32625PICO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To update the board's firmware, a new bootloader has to be flashed on the MAX32625PICO.
+To update the board's firmware, a new bootloader has to be flashed on the
+MAX32625PICO.
 
 -  Download the firmware image: `MAX32625PICO firmware <https://github.com/MaximIntegrated/max32625pico-firmware-images/raw/master/bin/max32625_max32650fthr_if_crc_swd_v1.0.6.bin>`_
 -  Set the MAX32625PICO in MAINTENANCE mode:
@@ -129,12 +127,16 @@ To update the board's firmware, a new bootloader has to be flashed on the MAX326
    -  Plug the micro USB cable only in the MAX32625PICO.
    -  Keep the button on the MAX32625PICO pressed.
    -  Plug the micro USB cable into the PC.
-   -  Once you see the MAINTENANCE drive being mounted, you may release the button.
+   -  Once you see the MAINTENANCE drive being mounted, you may release the
+      button.
 
    |resources-eval-user-guides-ad-swiot1l-sl-picture2.jpg|
 
    * Drag and drop (to the MAINTENANCE drive) the firmware image you previously downloaded.
-   * After a few seconds, the MAINTENANCE drive will disappear and will be replaced by a drive named DAPLINK. Once this is done, the process is complete, and the MAX32625PICO may be used to flash the firmware of the AD-SWIOT1L-SL board.
+   * After a few seconds, the MAINTENANCE drive will disappear and will be
+     replaced by a drive named DAPLINK. Once this is done, the process is
+     complete, and the MAX32625PICO may be used to flash the firmware of the
+     AD-SWIOT1L-SL board.
 
 Programming the AD-APARD32690-SL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,12 +146,17 @@ Programming the AD-APARD32690-SL
 -  Connect the power supply to the AD-APARD32690-SL. Make sure the board is powered up for the next steps.
 -  A DAPLINK drive should appear as mounted on your PC.
 -  Drag and drop the new firmware image into the DAPLINK drive. After a few seconds, the drive will be remounted.
--  Check the DAPLINK directory and make sure there is no FAIL.TXT file. In case there is, repeat the drag and drop step. Otherwise, you may disconnect the MAX32625PICO from the AD-APARD32690-SL, since the firmware update is complete.
+-  Check the DAPLINK directory and make sure there is no FAIL.TXT file. In case
+   there is, repeat the drag and drop step. Otherwise, you may disconnect the
+   MAX32625PICO from the AD-APARD32690-SL, since the firmware update is
+   complete.
 
 AD-APARD32690-SL Software Stack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The system is accompanied by an open-source software stack and associated collateral, enabling a complete experience from evaluation and prototyping all the way to production firmware and applications development.
+The system is accompanied by an open-source software stack and associated
+collateral, enabling a complete experience from evaluation and prototyping all
+the way to production firmware and applications development.
 
 The :git-no-OS:`AD-APARD32690-SL firmware <projects/apard32690>` is based on Analog Devices’ open-source no-OS framework, which includes all the tools required for embedded code development and debugging as well as libraries enabling host-side connectivity for system configuration and data transfer over the UART or the 10BASE-T1L interfaces. The firmware source code and related documentation can be found on the Analog Devices GitHub at the link above.
 

@@ -53,7 +53,9 @@ Table of Contents
 1. Introduction
 ~~~~~~~~~~~~~~~
 
-This is a Quick Start guide containing simple instructions to quickly evaluate Voyager4 Motor Monitoring Platform (EV-CBM-VOYAGER4-1Z) by visualizing and exporting 3-axis accelerometer data to a .csv file.
+This is a Quick Start guide containing simple instructions to quickly evaluate
+Voyager4 Motor Monitoring Platform (EV-CBM-VOYAGER4-1Z) by visualizing and
+exporting 3-axis accelerometer data to a .csv file.
 
 Prerequisites
 ^^^^^^^^^^^^^
@@ -74,36 +76,32 @@ With the Voyager4 (EV-CBM-VOYAGER4-1Z) fully assembled in hand:
 
 -  Remove the top acrylic part (lid).
 
-
 |Remove the Lid|
 
 -  Remove the cylinder part (body).
-
 
 |Remove the Body|
 
 -  Connect the battery to the power board.
 
-
 |Unconnected Battery|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_6_connected_battery.svg
    :alt: Connected Battery
-   :width: 200px
+   :width: 200
    :height: 200px
 
 -  Connect Voyager4 to the PC using the USB Cable
-
 
 |Unconnected Voyager|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_8_voyager_connected_to_pc.svg
    :alt: Connected Voyager
-   :width: 200px
+   :width: 200
    :height: 200px
 
--  The leftmost LED should perform one long blink and 3 short blinks upon successful startup. The LED will then remain OFF when the Voyager is running.
-
+-  The leftmost LED should perform one long blink and 3 short blinks upon
+   successful startup. The LED will then remain OFF when the Voyager is running.
 
 |Powered on Voyager|
 
@@ -111,55 +109,62 @@ With the Voyager4 (EV-CBM-VOYAGER4-1Z) fully assembled in hand:
 
 .. note::
 
-   The USB cable must be connected to the Voyager when powering or restarting it, even if you plan on using the Voyager in wireless mode using the battery. This connection to the PC enables the correct power paths in the device for use with the battery.
-
+   The USB cable must be connected to the Voyager when powering or restarting
+   it, even if you plan on using the Voyager in wireless mode using the battery.
+   This connection to the PC enables the correct power paths in the device for
+   use with the battery.
 
 --------------
 
 3. Using the BLE Adapter
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-A BLE 5.3 Adapter with Antenna is included in every Voyager4 kit. Voyager4 uses BLE (Bluetooth Low Energy) which makes it compatible with any PC with a Bluetooth Radio, but to ensure optimal performance and range, using the adapter when communicating with Voyager4 is recommended. On Windows, the default BLE drivers must be disabled to enable the use of the adapter.
+A BLE 5.3 Adapter with Antenna is included in every Voyager4 kit. Voyager4 uses
+BLE (Bluetooth Low Energy) which makes it compatible with any PC with a
+Bluetooth Radio, but to ensure optimal performance and range, using the adapter
+when communicating with Voyager4 is recommended. On Windows, the default BLE
+drivers must be disabled to enable the use of the adapter.
 
 .. warning::
 
-   Enabling the BLE Adapter will disable the default Bluetooth drivers on your PC. You will need to re-enable them to ensure your PC’s Bluetooth operates correctly when the adapter is removed.
-
+   Enabling the BLE Adapter will disable the default Bluetooth drivers on your
+   PC. You will need to re-enable them to ensure your PC’s Bluetooth operates
+   correctly when the adapter is removed.
 
 -  Plug the provided BLE Adapter into your PC
 
-
-
 |Attached BLE Adapter|
 
--  Open Device Manager (on Windows, Control Panel -> Hardware and Sound -> Device Manager. You may need administrator privileges to access this.
-
+-  Open Device Manager (on Windows, Control Panel -> Hardware and Sound ->
+   Device Manager. You may need administrator privileges to access this.
 
 |Devices and Printers|
 
--  Confirm that the driver for the BLE Adapter was successfully installed automatically (Generic Bluetooth Adapter).
-
+-  Confirm that the driver for the BLE Adapter was successfully installed
+   automatically (Generic Bluetooth Adapter).
 
 |Generic Bluetooth Adapter Driver|
 
--  Right Click and disable the default Bluetooth Driver -> Intel® Wireless Bluetooth. You may need to turn off your PC’s Bluetooth first.
-
+-  Right Click and disable the default Bluetooth Driver -> Intel® Wireless
+   Bluetooth. You may need to turn off your PC’s Bluetooth first.
 
 |Disable Intel Wireless Bluetooth|
 
--  Restart your PC. The driver has been successfully installed, and the adapter has replaced the default Bluetooth functionality of your PC.
+-  Restart your PC. The driver has been successfully installed, and the adapter
+   has replaced the default Bluetooth functionality of your PC.
 
 .. warning::
 
-   Remember to reenable the default Bluetooth driver for your PC when the BLE Adapter is removed.
-
+   Remember to reenable the default Bluetooth driver for your PC when the BLE
+   Adapter is removed.
 
 --------------
 
 4. Running the GUI
 ~~~~~~~~~~~~~~~~~~
 
-For details on the software download of the project, please reach out to contacts in Section 0. Available Resources.
+For details on the software download of the project, please reach out to
+contacts in Section 0. Available Resources.
 
 -  If you are an experienced Python user, you can simply run main.py after installing python ≥3.7 and installing the required packages using requirements.txt. Use of a virtual environment is recommended.
 -  If you do not have python experience, the most reliable way to run the source code is via command prompt, so the recommendation is to use Miniconda.
@@ -185,8 +190,9 @@ For details on the software download of the project, please reach out to contact
 
 .. note::
 
-   Miniconda was chosen here as it allows us to specify not just the packages being installed but also the version of Python to be used, to eliminate confusion in Python versioning.
-
+   Miniconda was chosen here as it allows us to specify not just the packages
+   being installed but also the version of Python to be used, to eliminate
+   confusion in Python versioning.
 
 --------------
 
@@ -195,7 +201,6 @@ For details on the software download of the project, please reach out to contact
 
 -  Click scan to search for nearby devices.
 
-
 |GUI Scan to Connect|
 
 -  A Voyager device should appear under Available Devices.
@@ -203,7 +208,6 @@ For details on the software download of the project, please reach out to contact
 |GUI Available Devices|
 
 -  **Double-click** the listed device to highlight its text.
-
 
 |GUI Selected Device Entry|
 
@@ -221,16 +225,14 @@ For details on the software download of the project, please reach out to contact
 
 -  Device Status displays “Return Value: OK”.
 
-
 |GUI Device Status OK|
 
 -  Under BLE Operations, click **"Start"**
 
-
 |GUI Start Command|
 
--  You should see data for 3-axis vibration data being plotted on the Canvas Frame.
-
+-  You should see data for 3-axis vibration data being plotted on the Canvas
+   Frame.
 
 |GUI with accel data|
 
@@ -241,23 +243,22 @@ For details on the software download of the project, please reach out to contact
 
 -  To save data, simply click “Enable Save”.
 
-
 |GUI Saving Data disabled|
 
 -  The label changes to “Saving Enabled”.
-
 
 |GUI Saving Data Enabled|
 
 -  Any data that is plotted will now also be saved as a CSV.
 
-
 |GUI Data Saving|
 
 .. note::
 
-   Plotting and saving occur simultaneously. Each plot is saved to its own CSV file. The name includes the timestamp and data on which the data was saved, along with information about the accelerometer mode. Saved data appears in the same folder as the GUI.
-
+   Plotting and saving occur simultaneously. Each plot is saved to its own CSV
+   file. The name includes the timestamp and data on which the data was saved,
+   along with information about the accelerometer mode. Saved data appears in
+   the same folder as the GUI.
 
 -  Press Start to begin the flow of data and save your first CSV.
 
@@ -266,43 +267,48 @@ For details on the software download of the project, please reach out to contact
 7. Make your first AI Inference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Voyager4 comes packaged with a second microcontroller, the MAX78000, which can make low power AI inferences with an edge AI model. For more information on developing / deploying your own model, please consult the other documents mentioned in Available Resources. Voyager4 comes preloaded with a motor fault model that was trained on an example ADI motor. This is not adaptable to new motor types but can be used to showcase the basic operation of the MAX78000.
+Voyager4 comes packaged with a second microcontroller, the MAX78000, which can
+make low power AI inferences with an edge AI model. For more information on
+developing / deploying your own model, please consult the other documents
+mentioned in Available Resources. Voyager4 comes preloaded with a motor fault
+model that was trained on an example ADI motor. This is not adaptable to new
+motor types but can be used to showcase the basic operation of the MAX78000.
 
--  By default, the MAX78000 is unpowered. Enter the command “wake78000” with default value 1 to wake the MAX78000 and automatically begin an inference.
-
+-  By default, the MAX78000 is unpowered. Enter the command “wake78000” with
+   default value 1 to wake the MAX78000 and automatically begin an inference.
 
 |GUI Wake78000|
 
 -  A reconstruction error is displayed in the device status.
 
-
 |GUI Reconstruction Error|
 
 .. note::
 
-   The reconstruction error is a percentage indicating how similar current data is to training data. If the Voyager is below a vibration threshold, the MAX78000 instead returns all zeros to indicate that the Voyager is not moving.
-
+   The reconstruction error is a percentage indicating how similar current data
+   is to training data. If the Voyager is below a vibration threshold, the
+   MAX78000 instead returns all zeros to indicate that the Voyager is not
+   moving.
 
 -  Click “Auto Detect” to move to the Fault Detection tab.
 
-
-
 |GUI Auto Detect Tab|
 
--  If the returned fault detection value is above the threshold, a “Motor Fault” status is displayed.
-
+-  If the returned fault detection value is above the threshold, a “Motor Fault”
+   status is displayed.
 
 |GUI Default Motor Detect|
 
--  If the returned fault detection value is above the threshold, a “No motor fault detected” is displayed.
-
+-  If the returned fault detection value is above the threshold, a “No motor
+   fault detected” is displayed.
 
 |GUI Motor Fault Detected|
 
 -  The Reconstruction Threshold can be adjusted by entering a new value in the textbox or by adjusting the slider.
 -  7. You can also press “Start Inference” which will automatically send a “wake78000 1” command and issue an inference.
--  8. If the Repeat Inference is enabled, it periodically runs an inference, goes to sleep, disconnects, wakes up after the defined period, reconnects, and repeats this sequence until the Repeat Inference checkbox is unchecked.
-
+-  8. If the Repeat Inference is enabled, it periodically runs an inference,
+   goes to sleep, disconnects, wakes up after the defined period, reconnects,
+   and repeats this sequence until the Repeat Inference checkbox is unchecked.
 
 | |GUI Motor Off|
 
@@ -311,16 +317,16 @@ Voyager4 comes packaged with a second microcontroller, the MAX78000, which can m
 .. |Remove the Lid| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_3_remove_the_lid.svg
 .. |Remove the Body| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_4_remove_the_body.svg
 .. |Unconnected Battery| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_5_unconnected_battery.svg
-   :width: 200px
+   :width: 200
    :height: 200px
 .. |Unconnected Voyager| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_7_voyager_not_connected_to_pc.svg
-   :width: 200px
+   :width: 200
    :height: 200px
 .. |Powered on Voyager| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_9_powered_on_voyager.svg
-   :width: 200px
+   :width: 200
    :height: 200px
 .. |Attached BLE Adapter| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_10_attached_ble_adapter.svg
-   :width: 300px
+   :width: 300
    :height: 300px
 .. |Devices and Printers| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_11_devices_and_printers.svg
 .. |Generic Bluetooth Adapter Driver| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_12_generic_bluetooth_adapter_driver.svg

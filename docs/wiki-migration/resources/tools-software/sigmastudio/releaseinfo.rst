@@ -3,7 +3,8 @@
 Release Information
 ===================
 
-This section contains the details of enhancements and bug fixes done in various releases.
+This section contains the details of enhancements and bug fixes done in various
+releases.
 
 4.7 Release (18-Apr-2022)
 -------------------------
@@ -100,7 +101,8 @@ Scripting
 
 -  Indirect Parameter table values can be written from the scripting now.
 -  Load and design filters options in AutoEQ modules can be done through script now.
--  Writing the self-boot image of ADAU145x/ADAU146x schematic can be done using script now.
+-  Writing the self-boot image of ADAU145x/ADAU146x schematic can be done using
+   script now.
 
 4.5 Release (11-Nov-2019)
 -------------------------
@@ -126,9 +128,11 @@ ADAU145x/ADAU146x:
 -  ADAU146x Compiler Issue is resolved.
 -  ADAU1462 Compiler error related to Page Size is resolved.
 -  Issue with runtime I2C Read for addresses beyond 0x7FFF is resolved.
--  Issue in High pass first order filter coefficient generation is resolved for the following modules
+-  Issue in High pass first order filter coefficient generation is resolved for
+   the following modules
 
-   -  General Eq (2nd order) Single Precision- Clickless HW Slew/ No Slew/ Clickless SW Slew
+   -  General Eq (2nd order) Single Precision- Clickless HW Slew/ No Slew/
+      Clickless SW Slew
 
       -  General Eq (2nd order) Double Precision- Clickless HW Slew/ No Slew/ Clickless SW Slew
       -  Parametric EQ-Double Precision
@@ -151,7 +155,8 @@ Scripting:
 
 -  New Scripting APIs ICRegisterRead and ICRegisterWrite are added for reading and writing IC registers without the IC Name as the parameter.
 -  Pause and Resume and Halt options are added in SigmaStudio scripting.
--  Issues in RMS Compressor modules which caused the ObjectGetProperties() API not to work properly are resolved.
+-  Issues in RMS Compressor modules which caused the ObjectGetProperties() API
+   not to work properly are resolved.
 
 ADAU145x/ADAU146x:
 ~~~~~~~~~~~~~~~~~~
@@ -190,7 +195,8 @@ ADAU144x/ADAU176x:
 General:
 ~~~~~~~~
 
--  Third-party algorithms developed for SigmaStudio can easily be downloaded now using ‘Manage Downloadable Add-Ins’ option in the Tools menu.
+-  Third-party algorithms developed for SigmaStudio can easily be downloaded now
+   using ‘Manage Downloadable Add-Ins’ option in the Tools menu.
 
 ADAU145x/ADAU146x:
 ~~~~~~~~~~~~~~~~~~
@@ -239,7 +245,8 @@ User Interface:
 Scripting:
 ~~~~~~~~~~
 
--  ObjectGetProperty() IScripted API and GET_OBJECT_PROPERTY() SigmaServer API support an option to get the current growth.
+-  ObjectGetProperty() IScripted API and GET_OBJECT_PROPERTY() SigmaServer API
+   support an option to get the current growth.
 
 4.1 Release (5-Jun-2018)
 ------------------------
@@ -247,7 +254,8 @@ Scripting:
 Communication Channels:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  An issue which causes the USBi not to respond when the USBi is connected to USB3.0 port with Windows 10 OS is resolved.
+-  An issue which causes the USBi not to respond when the USBi is connected to
+   USB3.0 port with Windows 10 OS is resolved.
 
 ADAU145x/ADAU146x:
 ~~~~~~~~~~~~~~~~~~
@@ -262,13 +270,15 @@ ADAU145x/ADAU146x:
 -  Multiple issues in Master Control port modules are resolved for SPI.
 -  Flash programmer now supports an option to specify the starting address to program.
 -  WavPlayer supports up to 16 files in a single instance.
--  Compiler issues where the size of DM reported wrongly for ADAU146x is resolved.
+-  Compiler issues where the size of DM reported wrongly for ADAU146x is
+   resolved.
 
 Others:
 ~~~~~~~
 
 -  Now the short parameter name feature supports cells with multiple algorithms.
--  Sequence file generated from sequence window can save the address in the hexadecimal format now
+-  Sequence file generated from sequence window can save the address in the
+   hexadecimal format now
 
 4.0 Release (22-Mar-2018)
 -------------------------
@@ -303,12 +313,14 @@ SigmaStudio Scripting:
 Communication Channels:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Now Multiple AARDVARK devices can be connected to a single SigmaStudio instance.
+-  Now Multiple AARDVARK devices can be connected to a single SigmaStudio
+   instance.
 
 3.17 Release (13-Feb-2018)
 --------------------------
 
-No new features have been added to this release. The following changes are applicable to this release:
+No new features have been added to this release. The following changes are
+applicable to this release:
 
 -  A few corrections relating to documentation
 -  Code refactoring
@@ -319,7 +331,8 @@ No new features have been added to this release. The following changes are appli
 User Interface Changes:
 
 -  SigmaStudio is upgraded to use .NET 4.7
--  A bug in Auto EQ filter which causes an exception during the download is resolved.
+-  A bug in Auto EQ filter which causes an exception during the download is
+   resolved.
 
 ADAU145x/ADAU146x:
 
@@ -362,11 +375,13 @@ Other SigmaDSPs:
 SigmaStudio Scripting:
 
 -  New SigmaStudio Server API and IScripted interface APIs are added to get parameter values.
--  A new option is added to find the parameter name to use in the SigmaStudio scripting.
+-  A new option is added to find the parameter name to use in the SigmaStudio
+   scripting.
 
 Export:
 
--  A new option is added to shorten the parameter names in the PARAM.h export files.
+-  A new option is added to shorten the parameter names in the PARAM.h export
+   files.
 
 3.16.1 Beta (3-Nov-2017)
 ------------------------
@@ -423,7 +438,9 @@ ADAU145x/ADAU146x:
 -  Panic Error caused by NxM Mixer is resolved.
 -  Compiler error occurred when using 44.1 kHz signal chain in block processing is resolved.
 -  Issues in self boot with 512kB/16-bit addressable SPI EEPROM is resolved.
--  Butterworth filter is added as an option for Loudness module. Butterworth reduces the deviation in frequency response for this module between different sample rates.
+-  Butterworth filter is added as an option for Loudness module. Butterworth
+   reduces the deviation in frequency response for this module between different
+   sample rates.
 
 ADAU144x/ ADAU176x:
 ~~~~~~~~~~~~~~~~~~~
@@ -450,7 +467,8 @@ SigmaStudio Scripting:
 Others:
 ~~~~~~~
 
--  A security issue in hierarchy board with respect to linker window and compiler output is resolved.
+-  A security issue in hierarchy board with respect to linker window and
+   compiler output is resolved.
 
 3.15.2 Beta (29-Jun-2017)
 -------------------------
@@ -504,7 +522,8 @@ Communication Channels
 ~~~~~~~~~~~~~~~~~~~~~~
 
 -  Aardvark I2C/SPI is now supported for ADAU145x, ADAU144x family of SigmaDSPs.
--  Issue with "Single Level Detector w Numerical Display" during TCP/IP communication is resolved.
+-  Issue with "Single Level Detector w Numerical Display" during TCP/IP
+   communication is resolved.
 
 User Interface
 ~~~~~~~~~~~~~~
@@ -520,7 +539,8 @@ User Interface
 -  Icons are improved for communication channels.
 -  UI improvement is done for Copy pasting data to Audio Signal router.
 -  GUI exception in Index Selectable Independent filter is resolved.
--  An issue in FIR filter GUI which caused the parameter update not to happen for the first time download is resolved.
+-  An issue in FIR filter GUI which caused the parameter update not to happen
+   for the first time download is resolved.
 
 Others
 ~~~~~~
@@ -572,7 +592,8 @@ Enhancements
 -  :doc:`‘Up Sampling’ </wiki-migration/resources/tools-software/sigmastudio/toolbox/multirateprocessing/upsampling>` and :doc:`‘Down Sampling’ </wiki-migration/resources/tools-software/sigmastudio/toolbox/multirateprocessing/downsampling>` modules are added for ADAU145X.
 -  :doc:`‘Interface Read’ </wiki-migration/resources/tools-software/sigmastudio/toolbox/io/inferfaceread>` and :doc:`‘Interface Write’ </wiki-migration/resources/tools-software/sigmastudio/toolbox/io/inferfacewrite>` modules which uses the master control port (I2C) to write back interface values are added for ADAU145X.
 -  :doc:`‘Master Control Port Status’ </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport/mastercontrolportstatus>` module in ADAU145X reports I2C error as well.
--  External memory post program modification capability via GPIO pins and Master Port at self-boot time.
+-  External memory post program modification capability via GPIO pins and Master
+   Port at self-boot time.
 
 Bug Fixes
 ~~~~~~~~~
@@ -586,7 +607,8 @@ Bug Fixes
 -  A bug in EEPROM programming for ADAU144X which caused the ‘Compare Latest Compilation with EEPROM’ feature to fail is resolved.
 -  Bugs in real time display module are resolved.
 -  A Bug in loudness module which caused the step value not to be stored while saving is resolved.
--  Zoom Shortcut bug is resolved. Delete ToolbarLayout.dat from (%APPDATA%/Analog Devices/SigmaStudio 3.13) for the shortcut to work.
+-  Zoom Shortcut bug is resolved. Delete ToolbarLayout.dat from
+   (%APPDATA%/Analog Devices/SigmaStudio 3.13) for the shortcut to work.
 
 3.13.1 Beta
 -----------
@@ -599,7 +621,8 @@ Enhancements
 -  A feature to maintain firmware version is added for ADAU145X.
 -  Master Control port libraries now supports runtime I2C Read/write for multiple slaves. (ADAU145X)
 -  DM0, DM1 memory section option is added to the voltage controlled delay algorithm (ADAU145X)
--  Voltage Controlled External SPI delay algorithm is added to the toolbox. (ADAU145X)
+-  Voltage Controlled External SPI delay algorithm is added to the toolbox.
+   (ADAU145X)
 
 Bug Fixes
 ~~~~~~~~~
@@ -609,7 +632,8 @@ Bug Fixes
 -  A bug in ‘Change-IC’ option for Mono-Slew Mux is fixed.
 -  Bug in Sequence Window edit which caused the multiple row data to be cleared is fixed.
 -  A bug in FIR filter which caused the coefficient load to take significant time is fixed.
--  Bug in ADAU145X RMS table algorithm which caused the value at index 1 to correct is fixed.
+-  Bug in ADAU145X RMS table algorithm which caused the value at index 1 to
+   correct is fixed.
 
 3.12.4 Beta/ 3.12 Release
 -------------------------
@@ -628,7 +652,8 @@ Enhancements
 -  Audio signal routers GUI performance is improved when multiple tabs are created.
 -  New module is added to read multiple I2C slaves for ADAU145X.
 -  Phat-Stereo module is added for ADAU145X
--  A new filter module which does the coefficient calculation in the DSP is added for General Highpass, Lowpass, Bandpass and BandStop (ADAU145X).
+-  A new filter module which does the coefficient calculation in the DSP is
+   added for General Highpass, Lowpass, Bandpass and BandStop (ADAU145X).
 
 Bug Fixes
 ~~~~~~~~~
@@ -643,7 +668,8 @@ Bug Fixes
 -  Corrected mistake in the Peaking Compressors algorithms’ names
 -  A bug which creates an exception when First Order is mode is used in the Index Selectable Filter is resolved.
 -  Stimulus bug on General 2nd order filter for ADAU145x is resolved.
--  A bug in SuperBass algorithm which causes the output to saturate is resolved for ADAU145x.
+-  A bug in SuperBass algorithm which causes the output to saturate is resolved
+   for ADAU145x.
 
 3.12.3 Beta
 -----------
@@ -684,7 +710,8 @@ Enhancements
 -  Hilbert Transform, Voice Activity Detector (VAD), Super Bass algorithms are implemented for ADAU145X processor.
 -  New version of Dynamics Processors which outputs compressor gain is added
 -  Linear Interpolator algorithm is implemented as a growable algorithm for ADAU145X and ADAU144X processors.
--  Support to directly switch the communication protocol from I2C to SPI for ADAU144x
+-  Support to directly switch the communication protocol from I2C to SPI for
+   ADAU144x
 
 Bug Fixes
 ~~~~~~~~~
@@ -692,7 +719,8 @@ Bug Fixes
 -  ADAU145X, fix incorrect hold logic for “Max and Hold”, “Max Abs and Hold”, and “Min and Hold” blocks.
 -  Reverb algorithm for AD1940.
 -  ParametricEQ fixed for first order filter on ADAU145x.
--  Fixed transfer function calculation of Subtraction and Signal Invert modules for ADAU145x
+-  Fixed transfer function calculation of Subtraction and Signal Invert modules
+   for ADAU145x
 
 3.12.1 Beta
 -----------
@@ -721,7 +749,8 @@ Enhancements
 ~~~~~~~~~~~~
 
 -  Support for multi-rate signal flow (multiple sampling rates or block-sizes in a single schematic design window).
--  Multi Tap Gain algorithm implemented for AD194x, ADAU170x, ADAU176x processors.
+-  Multi Tap Gain algorithm implemented for AD194x, ADAU170x, ADAU176x
+   processors.
 
 Bug Fixes
 ~~~~~~~~~
@@ -762,7 +791,8 @@ Enhancements
 -  RealTimeDisplay cell now supports ADAU145x data format.
 -  Added ADAU1452 NLMS filter algorithm.
 -  Mono Dynamics Bass Boost and Adaptive Mixer Dual graph algorithms added for ADAU145x.
--  Configurable SPI memory erase cycle time to support large flash memories for ADAU145x.
+-  Configurable SPI memory erase cycle time to support large flash memories for
+   ADAU145x.
 
 Bug Fixes
 ~~~~~~~~~
@@ -802,7 +832,8 @@ Enhancements
 -  New multi-tap delay mixer: AD194x, ADAU170x, ADAU176x, ADAU144x
 -  New linear value NxM mixer (all processors).
 -  ADAU145x algorithms: Standard Compressor, DC Blocking Filter, Pink Noise Filter, Lookup Table (8.24), Pulse Count, Timer, Stop Watch, Envelope, State Machine, MUX w/ slew, Voltage Controlled Delay, Multi-tap Delay, Fractional Delay, Max, Min, One Shot, Value Cross, Value Hold, Abs Max, Master Port Delay, Master Port Writer.
--  ADAU145X framework changes required for silicon Revision D support (backward compatible)
+-  ADAU145X framework changes required for silicon Revision D support (backward
+   compatible)
 
 Bug Fixes
 ~~~~~~~~~
@@ -867,7 +898,8 @@ Enhancements
 -  New ADAU145X processor
 -  Add Standard Dynamics processors for ADAU1701 and AD1940.
 -  New Real Time Display and Single Level detector with no MIPS and no Data usage for ADAU144x, and low power DSP.
--  New Stereo and Mono Peak Dynamics Processors with higher range (-90 dB, +24 dB) with and without external detect for ADAU1701 and AD1940.
+-  New Stereo and Mono Peak Dynamics Processors with higher range (-90 dB, +24
+   dB) with and without external detect for ADAU1701 and AD1940.
 
 Bug Fixes
 ~~~~~~~~~
@@ -899,7 +931,8 @@ Enhancements
 
 -  Export to Linux files now supports XML format. Implementation of Export to Linux files for ADAU1701.
 -  Single band level detector supports linear display.
--  New peak dynamics processors with external detect (Mono/Stereo) that supports fast release for low frequencies.
+-  New peak dynamics processors with external detect (Mono/Stereo) that supports
+   fast release for low frequencies.
 
 Bug Fixes
 ~~~~~~~~~
@@ -914,12 +947,14 @@ Enhancements
 
 -  Single band level detector has now a new graphic adjustable display.
 -  Added All-pass selection to “First Order Filters” type in General (2nd Order) Filter
--  Added user selectable phase wrapped/un-wrapped and radians/degrees options in probe window
+-  Added user selectable phase wrapped/un-wrapped and radians/degrees options in
+   probe window
 
 Bug Fixes
 ~~~~~~~~~
 
--  FIR Filter table is fixed, with all coefficients set to zero except the first.
+-  FIR Filter table is fixed, with all coefficients set to zero except the
+   first.
 
 3.9.0 Beta
 ----------
@@ -935,7 +970,8 @@ Enhancements
 -  Added two externally triggered sweeps for ADAU170x and ADAU144x.
 -  Added square root approximation for ADAU170x and ADAU144x.
 -  Added peak compressor with zero cross for ADAU176x, ADAU1781 and ADAU144x.
--  Added elliptical interpolated IIR low pass filter for ADAU176x, ADAU1781 and ADAU144X.
+-  Added elliptical interpolated IIR low pass filter for ADAU176x, ADAU1781 and
+   ADAU144X.
 
 Bug Fixes
 ~~~~~~~~~
@@ -952,14 +988,16 @@ Enhancements
 
 -  Added optimized sine tone generator which used subroutine.
 -  SigmaStudio application was not appearing in the toolbar at launch when opened with a project.
--  Sequence Window download operation was inserting read-back after each write, this is now a user option “Verify on Download” that is disabled by default.
+-  Sequence Window download operation was inserting read-back after each write,
+   this is now a user option “Verify on Download” that is disabled by default.
 
 Bug Fixes
 ~~~~~~~~~
 
 -  Additional .dspproj file can now be opened from Windows Explorer when SigmaStudio is already running.
 -  SigmaStudio application was not appearing in the toolbar at launch when opened with a project.
--  Sequence Window download operation was inserting read-back after each write, this is now a user option “Verify on Download“that is disabled by default.
+-  Sequence Window download operation was inserting read-back after each write,
+   this is now a user option “Verify on Download“that is disabled by default.
 
 3.8.1 Beta
 ----------
@@ -967,7 +1005,8 @@ Bug Fixes
 Enhancements
 ~~~~~~~~~~~~
 
--  Added Virtual Control Interface, user customizable system tuning graphical interface.
+-  Added Virtual Control Interface, user customizable system tuning graphical
+   interface.
 
 Bug Fixes
 ~~~~~~~~~
@@ -1009,7 +1048,8 @@ Enhancements
 Bug Fixes
 ~~~~~~~~~
 
--  The continuous read check box’s check status of RealTimeDisplay was disturbed.
+-  The continuous read check box’s check status of RealTimeDisplay was
+   disturbed.
 
 3.7.5 Beta
 ----------
@@ -1032,7 +1072,8 @@ Bug Fixes
 -  Modified “Pitch Transpose” using UIData serialization.
 -  Copy/Paste of block hierarchy board is fixed. This will prevent boards containing block processing modules getting pasted in the sample processing design tab.
 -  Copy/Paste of sample hierarchy board is fixed. This will prevent all sub-boards getting pasted in the main design tab.
--  Scripting interface is fixed. This will remove the restrictions in connecting 2 block processing modules using script.
+-  Scripting interface is fixed. This will remove the restrictions in connecting
+   2 block processing modules using script.
 
 3.7.4 Beta
 ----------
@@ -1047,7 +1088,9 @@ Enhancements
 -  Added a “tiny circle” for “FIR Filter” to bypass or enable the filter.
 -  Filter stability criteria imposed on "State Variable Filter" controls.
 -  More automation APIs added to SigmaStudioServer.
--  Peaking filter boost value of zero (0) automatically zeros filter coefficients; this can now be disabled by defining the following ‘appSettings’ tag in the Application Configuration File:
+-  Peaking filter boost value of zero (0) automatically zeros filter
+   coefficients; this can now be disabled by defining the following
+   ‘appSettings’ tag in the Application Configuration File:
 
 <appSettings><add key="Disable-Boost-Bypass" value="1" /></appSettings>
 
@@ -1098,7 +1141,8 @@ Enhancements
 Bug Fixes
 ~~~~~~~~~
 
--  Filter table generator format fix. This will prevent the user to input an unsupported format.
+-  Filter table generator format fix. This will prevent the user to input an
+   unsupported format.
 
 3.6.2 Beta
 ----------
@@ -1114,7 +1158,8 @@ Bug Fixes
 -  Fixed bug in 8 channel cross mixer caused when growing the cell by more than one.
 -  Export files naming issues on variable declarations were fixed.
 -  Standard Dynamics processors attack and hold value issues fixed.
--  ADAU1x61 Signal Path registers had been corrected from a series of GUI components out of their place.
+-  ADAU1x61 Signal Path registers had been corrected from a series of GUI
+   components out of their place.
 
 3.6.1 Beta
 ----------
@@ -1147,7 +1192,8 @@ Enhancements
 -  Two Dimensional Lookup table algorithm has been added.
 -  Support for SSM2529.
 -  SSM2518 included.
--  ALT+Drag wiring mode, connects all pins in source black to all pins in destination block
+-  ALT+Drag wiring mode, connects all pins in source black to all pins in
+   destination block
 
 Bug Fixes
 ~~~~~~~~~
@@ -1172,7 +1218,8 @@ Bug Fixes
 ~~~~~~~~~
 
 -  Fixed transfer function for subtraction library. The TF has its polarity inverted, the code was corrected.
--  ADAU1x61 register window added “User” pre-set on the ALC Pre-sets, fixing a bug where the Left/Right input volumes were disabled.
+-  ADAU1x61 register window added “User” pre-set on the ALC Pre-sets, fixing a
+   bug where the Left/Right input volumes were disabled.
 
 3.5.5 Beta
 ----------
@@ -1218,7 +1265,8 @@ Enhancements
 ~~~~~~~~~~~~
 
 -  No need to re-compile “Frozen” schematics. All the download information is stored in the schematic.
--  RMS Dynamics Processors: Capability to switch between Units from dB/s to milliseconds and vice versa.
+-  RMS Dynamics Processors: Capability to switch between Units from dB/s to
+   milliseconds and vice versa.
 
 Bug Fixes
 ~~~~~~~~~
@@ -1237,7 +1285,12 @@ Enhancements
 Bug Fixes
 ~~~~~~~~~
 
--  Made the following modules Obsolete: Optimized Single Precision Filter 2-Channel, Optimized Double Precision Filter 2-Channel.In previous versions these modules auto-assigned non-optimized code for less than 3 biquads in series. The modules were re-added to the library without this automatic feature and will always use the optimized code regardless of how many biquads are in series.
+-  Made the following modules Obsolete: Optimized Single Precision Filter
+   2-Channel, Optimized Double Precision Filter 2-Channel.In previous versions
+   these modules auto-assigned non-optimized code for less than 3 biquads in
+   series. The modules were re-added to the library without this automatic
+   feature and will always use the optimized code regardless of how many biquads
+   are in series.
 
 3.5.0 Beta
 ----------
@@ -1371,7 +1424,8 @@ Enhancements
 -  Capture window and exported uC files display the algorithm hierarchical structure on parameters
 -  Capture window and exported uC files display the algorithm hierarchical structure on parameters
 -  Read back cell now has a variable timer for continuous reads.
--  Added base address, offset, and algorithm index to be used for report on selected ICs.
+-  Added base address, offset, and algorithm index to be used for report on
+   selected ICs.
 
 Bug Fixes
 ~~~~~~~~~
@@ -1407,7 +1461,9 @@ Enhancements
 -  Added Self-boot EEPROM \*.hex file export to Sequence Window for custom self-boot configurations.
 -  Re-introduce GPIO Conditioning “Up/Down control, index output” algorithm, useful when indexing multiple lookup tables from the same GPIO input.
 -  Added a new Context Menu to the read back module that would allow continuous read back with a .5 seconds timer.
--  Fixed a bug found on the control that controls filter’s Q were it allowed values higher than 15 to be written were the application was throwing an exception.
+-  Fixed a bug found on the control that controls filter’s Q were it allowed
+   values higher than 15 to be written were the application was throwing an
+   exception.
 
 Bug Fixes
 ~~~~~~~~~
@@ -1437,7 +1493,8 @@ Bug Fixes
 
 -  The Envelope Folder in Dynamics Processing was organized in the TreeToolBox to reflect proper naming match to algorithms. [Previously named “RMS” envelope is actually the square output of the RMS envelope – See the help file for more information]
 -  Naming fixed for parameters in the Multiple Control mixer. This problem only exhibited itself when multiple instances and growths of the algorithm were present causing a naming conflict violation.
--  Chime GUI. An error occurred while the user put together two drag points. Each drag point will be separated to avoid this common error.
+-  Chime GUI. An error occurred while the user put together two drag points.
+   Each drag point will be separated to avoid this common error.
 
 3.1.8
 -----
@@ -1450,7 +1507,8 @@ Enhancements
 -  1 Channel Double Precision
 -  2 Channel Single Precision
 -  2 Channel Double Precision
--  Added Beta version of Phase Response for Transfer Function Window using Probe/Stimuli
+-  Added Beta version of Phase Response for Transfer Function Window using
+   Probe/Stimuli
 
 SigmaStudio 3.1.8
 
@@ -1472,9 +1530,11 @@ Enhancements
 -  Parametric EQ
 -  Index Selectable Independent Multiple Band
 -  General 2nd Order Index Selectable
--  Added the Index Selectable Independent Multiple Biquad Filter algorithm for GEN
+-  Added the Index Selectable Independent Multiple Biquad Filter algorithm for
+   GEN
 
-Note: This was incorrectly implemented in 3.1.7. This feature is available in version 3.1.8
+Note: This was incorrectly implemented in 3.1.7. This feature is available in
+version 3.1.8
 
 Bug Fixes
 ~~~~~~~~~
@@ -1520,12 +1580,14 @@ Enhancements
 -  SuperPhat Spatialization
 -  Offline Microphone Match
 -  Combo Peak/RMS Compressor
--  New Settings Toolbar feature added to support multiple coefficient parameter settings for a schematic project.
+-  New Settings Toolbar feature added to support multiple coefficient parameter
+   settings for a schematic project.
 
 SigmaStudio 3.1.4
 
 -  USB Communication channel for ADAU170x fixed to allow proper communication for certain parameters.
--  The Link/Compile/Download sequence was modified to ensure the proper register sequence and sample rate is set for GEN3 ICs.
+-  The Link/Compile/Download sequence was modified to ensure the proper register
+   sequence and sample rate is set for GEN3 ICs.
 
 3.1.3
 -----
@@ -1533,12 +1595,17 @@ SigmaStudio 3.1.4
 Enhancements
 ~~~~~~~~~~~~
 
--  The entire library of filters, now support a lower limit center or cutoff frequency of 1Hz on all filter controls. Previous versions of SigmaStudio limited the lowest frequency value that could be entered, but now all filter controls allow values down to 1Hz.
+-  The entire library of filters, now support a lower limit center or cutoff
+   frequency of 1Hz on all filter controls. Previous versions of SigmaStudio
+   limited the lowest frequency value that could be entered, but now all filter
+   controls allow values down to 1Hz.
 
 Bug Fixes
 ~~~~~~~~~
 
--  The SW Clickless Mute algorithm was not working properly for the ADAU170x IC. A new method for downloading the proper mute coefficient was implemented to fix this issue.
+-  The SW Clickless Mute algorithm was not working properly for the ADAU170x IC.
+   A new method for downloading the proper mute coefficient was implemented to
+   fix this issue.
 
 3.1.2
 -----
@@ -1560,7 +1627,10 @@ Bug Fixes
 -  General 2nd Order Index Selectable – Double and Single Precision
 -  General 2nd Order w var Param/Lookup/Slew
 -  The Parameter Index Lookup Filter Cell had legacy code that downloaded incorrect filter values to the DSP. This mechanism was updated to ensure proper filter coefficient download.
--  Multiple Link/Compile/Download compilations for GEN3 projects using algorithm code with DAG updates cause intermittent behaviour with coefficient download. A new register sequence is implemented for the Link/Compile/Download operation to ensure proper coefficient operation.
+-  Multiple Link/Compile/Download compilations for GEN3 projects using algorithm
+   code with DAG updates cause intermittent behaviour with coefficient download.
+   A new register sequence is implemented for the Link/Compile/Download
+   operation to ensure proper coefficient operation.
 
 3.1.1
 -----
@@ -1656,7 +1726,8 @@ Bug Fixes
 -  Microsoft .NET Framework 3.0/3.5 causing SigmaStudio crash at start-up
 -  SigmaStudio Sampling Rate, 11.025kHz instead of 11kHz, 22.05kHz instead of 22kHz
 -  Feedback algorithm fixed for ADAU144x
--  ADAU1701/1401 register controls updated for compatibility with revised silicon
+-  ADAU1701/1401 register controls updated for compatibility with revised
+   silicon
 
 3.0.12
 ------
@@ -1666,7 +1737,8 @@ Enhancements
 
 -  Improved Index Selectable Filter: Maximum filter count increased to 100, optimized user interface response. Added First Order index selectable filter algorithm.
 -  Algorithm optimizations for “General 1st/2nd Order w var Param/Lookup/Slew” and “Parameter Tone with Index Lookup Tables” blocks.
--  Improved Alias block, alias blocks share a common name for easier identification.
+-  Improved Alias block, alias blocks share a common name for easier
+   identification.
 
 Bug Fixes
 ~~~~~~~~~
@@ -1686,7 +1758,8 @@ Enhancements
 Bug Fixes
 ~~~~~~~~~
 
--  Prevent use of comma ‘,’ or space ‘ ‘for numerical decimal place in non-English versions of Windows, only the period character ‘.’ is supported.
+-  Prevent use of comma ‘,’ or space ‘ ‘for numerical decimal place in
+   non-English versions of Windows, only the period character ‘.’ is supported.
 
 3.0.10
 ------
@@ -1703,7 +1776,8 @@ Bug Fixes
 -  Parametric EQ block did not support multi-channel input, the first input was processed and copied to all outputs. Any additional inputs were ignored.
 -  Signal Merger and Signal Add blocks had the same algorithm name which introduced errors when using both blocks in the same schematic design. The Signal Merger’s algorithm has been renamed. This change should not affect legacy designs.
 -  Alias Block caused errors when using Copy and Paste. Alias blocks could not be renamed.
--  General (2nd Order) “Tone Control” filter equations were not included in the Help file.
+-  General (2nd Order) “Tone Control” filter equations were not included in the
+   Help file.
 
 3.0.9
 -----
@@ -1712,7 +1786,8 @@ Enhancements
 ~~~~~~~~~~~~
 
 -  It is no longer required to connect unused block output pin to the “Schematic Terminal” block. Linking will succeed with unconnected output pins.
--  USBSerialConverter (EVAL-ADUSB1) supports SPI communication with all SigmaDSP ICs; previously SPI was only available for AD1940.
+-  USBSerialConverter (EVAL-ADUSB1) supports SPI communication with all SigmaDSP
+   ICs; previously SPI was only available for AD1940.
 
 Bug Fixes
 ~~~~~~~~~
@@ -1725,13 +1800,15 @@ Bug Fixes
 Enhancements
 ~~~~~~~~~~~~
 
--  E2PROM download and read/write support added for EVAL-ADUSB2 (USBi) interface.
+-  E2PROM download and read/write support added for EVAL-ADUSB2 (USBi)
+   interface.
 
 Bug Fixes
 ~~~~~~~~~
 
 -  “DSP Readback” block’s value can be incorrect when reading from a GPIO input.
--  ADAU1702 compiler has incorrect size of 512 for Parameter RAM, should be 1024.
+-  ADAU1702 compiler has incorrect size of 512 for Parameter RAM, should be
+   1024.
 
 3.0.6
 -----
@@ -1739,7 +1816,8 @@ Bug Fixes
 Bug Fixes
 ~~~~~~~~~
 
--  Fixed, unexpected error dialogs when compiling projects. Caused by Enhanced schematic status indicator introduced in 3.0.4.
+-  Fixed, unexpected error dialogs when compiling projects. Caused by Enhanced
+   schematic status indicator introduced in 3.0.4.
 
 3.0.5
 -----
@@ -1756,12 +1834,18 @@ Enhancements
 ~~~~~~~~~~~~
 
 -  Improved low signal level performance for RMS Compressor blocks.
--  Enhanced schematic status indicator, now displays USB communication status. Refer to the “Link/Compile/Download” topic in the SigmaStudio Help for more information.
+-  Enhanced schematic status indicator, now displays USB communication status.
+   Refer to the “Link/Compile/Download” topic in the SigmaStudio Help for more
+   information.
 
 Bug Fixes
 ~~~~~~~~~
 
--  Fixed compressor Hold and Decay time-constant controls. In previous versions the TC calculation was incorrect, limiting the time-constants to a smaller range than is supported by the compressor algorithms. Depending on Hold and Decay settings, this fix may affect the system response in legacy designs utilizing RMS compressor blocks.
+-  Fixed compressor Hold and Decay time-constant controls. In previous versions
+   the TC calculation was incorrect, limiting the time-constants to a smaller
+   range than is supported by the compressor algorithms. Depending on Hold and
+   Decay settings, this fix may affect the system response in legacy designs
+   utilizing RMS compressor blocks.
 
 3.0.3
 -----
@@ -1770,7 +1854,9 @@ Enhancements
 ~~~~~~~~~~~~
 
 -  Parametric EQ: graphical adjustment of filter response, create complex responses using up to 15 cascaded 2nd order filters, available in the Toolbox’s “Filters” category.
--  Crossover: graphical design of 2-way and 3-way crossover filters, selectable crossover types (2nd-8th order Linkwitz-Riley, 2nd-4th order Butterworth, and 2nd-4th order Bessel) , available in the Toolbox’s “Filters” category.
+-  Crossover: graphical design of 2-way and 3-way crossover filters, selectable
+   crossover types (2nd-8th order Linkwitz-Riley, 2nd-4th order Butterworth, and
+   2nd-4th order Bessel) , available in the Toolbox’s “Filters” category.
 
 Bug Fixes
 ~~~~~~~~~
@@ -1787,7 +1873,9 @@ Bug Fixes
 ~~~~~~~~~
 
 -  Maximum delay value set to 1 sample on during cut/paste or undo/redo operation.
--  Default block name and block “Settings” set during copy/paste are not equivalent, this causes settings malfunction and name conflicts until the project is reloaded.
+-  Default block name and block “Settings” set during copy/paste are not
+   equivalent, this causes settings malfunction and name conflicts until the
+   project is reloaded.
 
 3.0.1
 -----
@@ -1817,4 +1905,5 @@ Enhancements
 -  Undo/Redo support, All design modification can be undone and re-done.
 -  Cut/Copy/Paste support, schematic design blocks (blocks) can be copied and pasted, within a design and between project files.
 -  Schematic Printing, schematic designs can be printed.
--  Enhanced capture window, communication capture window can be docked and customized.
+-  Enhanced capture window, communication capture window can be docked and
+   customized.

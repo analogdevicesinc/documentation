@@ -7,7 +7,7 @@ GENERAL DESCRIPTION
 The :adi:`ADIS16IMU4/PCBZ <eval-adis16imu4>` is a kit of components that simplifies the process of connecting ADIS1646x IMU products to an embedded processor development platform or to the :adi:`EVAL-ADIS2` evaluation system. This kit has four KEY components: interface board, stand-off, mounting hardware and a ribbon cable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_intro_01.jpg
-   :width: 350px
+   :width: 350
 
 **NOTE**: The :adi:`ADIS16IMU4/PCBZ <eval-adis16imu4>` kit *DOES NOT* include any of the IMU products that it supports. Those parts must be ordered separately.
 
@@ -19,7 +19,9 @@ ORDERING
 FEATURES
 --------
 
-- ADIS1646x-Compatible Breakout Board \* 44mm x 47mm Interface Board Size \* M2x0.4mm Mounting Hardware Kit \* 7mm Spacer for flat surface interface \* 16-pinm 12-inch Ribbon Cable \* RoHS Compliant
+- ADIS1646x-Compatible Breakout Board \* 44mm x 47mm Interface Board Size \*
+  M2x0.4mm Mounting Hardware Kit \* 7mm Spacer for flat surface interface \*
+  16-pinm 12-inch Ribbon Cable \* RoHS Compliant
 
 PRODUCT SUPPORT
 ---------------
@@ -27,7 +29,6 @@ PRODUCT SUPPORT
 The :adi:`ADIS16IMU4/PCBZ <eval-adis16imu4>` provides support for the following IMU models:
 
 +--------------------------------------------------------+
-
 
 | MODEL NUMBER                                           |
 
@@ -82,10 +83,15 @@ INTERFACE PCB DESIGN
 TOP-LEVEL BOARD VIEW
 ~~~~~~~~~~~~~~~~~~~~
 
-In the interface PCB size is approximately 44mm x 47mm and has a thickness of ~1.6mm (0.063"). It has four mounting holes, located in each corner of the PCB, which have a basic diameter of 2.46mm and are located 2.2mm from each edge of the board. J1 is a 2x8 header with 2mm spacing, which supports standard 1mm ribbon cable connections. J2 is a 2x7 socket with 1mm spacing, which provides a direct connection to the Inertial Measurement Unit.
+In the interface PCB size is approximately 44mm x 47mm and has a thickness of
+~1.6mm (0.063"). It has four mounting holes, located in each corner of the PCB,
+which have a basic diameter of 2.46mm and are located 2.2mm from each edge of
+the board. J1 is a 2x8 header with 2mm spacing, which supports standard 1mm
+ribbon cable connections. J2 is a 2x7 socket with 1mm spacing, which provides a
+direct connection to the Inertial Measurement Unit.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_design_00.png
-   :width: 500px
+   :width: 500
 
 SCHEMATIC
 ~~~~~~~~~
@@ -93,7 +99,7 @@ SCHEMATIC
 Insert schematic picture and/or a complete pin assignment list
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_design_01.png
-   :width: 500px
+   :width: 500
 
 J1 CONNECTOR PIN ASSIGNMENTS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,78 +175,78 @@ CONNECTING TO THE EVAL-ADIS
 +-------+-----------------------------------------------------------------------+-----------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_component_01.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_component_02.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_component_03.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_component_04.png
-   :width: 300px
+   :width: 300
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_component_01.png
-   :width: 300px
+   :width: 300
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_component_02.png
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_component_03.png
-   :width: 300px
+   :width: 300
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_component_04.png
-   :width: 300px
+   :width: 300
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_01a.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_01b.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_01c.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_01d.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_02.png
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_03.png
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_04.png
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_05.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_06.png
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_07.png
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_01a.png
-   :width: 400px
+   :width: 400
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_01b.png
-   :width: 400px
+   :width: 400
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_01c.png
-   :width: 400px
+   :width: 400
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_01d.png
-   :width: 400px
+   :width: 400
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_02.png
-   :width: 400px
+   :width: 400
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_03.png
-   :width: 400px
+   :width: 400
 .. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_04.png
-   :width: 400px
+   :width: 400
 .. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_05.png
-   :width: 400px
+   :width: 400
 .. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_06.png
-   :width: 400px
+   :width: 400
 .. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_pcb_wikiguide_install_07.png
-   :width: 400px
+   :width: 400
 .. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_to_eval_adis_01a.jpg
-   :width: 400px
+   :width: 400
 .. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_to_eval_adis_02a.jpg
-   :width: 400px
+   :width: 400
 .. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_to_eval_adis_02b.jpg
-   :width: 400px
+   :width: 400
 .. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_to_eval_adis_02c.jpg
-   :width: 400px
+   :width: 400
 .. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_to_eval_adis_03.jpg
-   :width: 400px
+   :width: 400
 .. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_to_eval_adis_01a.jpg
-   :width: 400px
+   :width: 400
 .. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_to_eval_adis_02a.jpg
-   :width: 400px
+   :width: 400
 .. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_to_eval_adis_02b.jpg
-   :width: 400px
+   :width: 400
 .. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_to_eval_adis_02c.jpg
-   :width: 400px
+   :width: 400
 .. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu4_to_eval_adis_03.jpg
-   :width: 400px
+   :width: 400

@@ -3,7 +3,8 @@ Porting the Bare Metal Framework to a New Hardware Platform
 
 This tutorial covers how to port the Bare Metal Framework to a custom hardware platform. The Bare Metal Framework is designed to be portable. As discussed in the :doc:`Selecting Between Different Hardware Platforms </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/audio-frameworks>` section, all of the hardware platform specific code resides in a .c/.h file pair on each core.
 
--  Create new audio framework files (.c/.h file pair for each core) and add the framework to audio_system_config.h
+-  Create new audio framework files (.c/.h file pair for each core) and add the
+   framework to audio_system_config.h
 
    -  On the pair of files for the ARM core
 
@@ -11,14 +12,16 @@ This tutorial covers how to port the Bare Metal Framework to a custom hardware p
 
          -  Configure any GPIO
 
-            -  Configure the Signal Routing Unit (SRU) to connect the external components to the
+            -  Configure the Signal Routing Unit (SRU) to connect the external
+               components to the
 
       -  On the first SHARC core, configure the DMA(s)
 
 Step 1: Creating new framework files for your hardware platform
 ---------------------------------------------------------------
 
-It's likely going to be easiest to clone one of the existing frameworks and use this as a starting point.
+It's likely going to be easiest to clone one of the existing frameworks and use
+this as a starting point.
 
 Presently, there are two audio frameworks that ship with the Bare Metal Framework. The first is called ``audio_frameworks/audio_framework_8ch_sam_and_audioproj_fin`` and this provides support for the hardware components on the SHARC Audio Module. The second is called ``audio_frameworks/audio_framework_16ch_sam_and_automotive_fin`` and this provides support for audio components on the 16-channel automotive Fin (but provide support for the audio components on the SHARC Audio Module).
 
@@ -35,7 +38,10 @@ In the SHARC core 2 project (sam_baremetal_framework_core2 in CCES): ``audio_fra
 Step 2: Create a new preprocessor variable for the new audio framework
 ----------------------------------------------------------------------
 
-One nice feature of the Bare Metal framework is we can switch between hardware platforms by changing a single field in the audio_system_config.h file. This is managed with preprocessor variables that are used to selectively include the audio framework files associated with each platform.
+One nice feature of the Bare Metal framework is we can switch between hardware
+platforms by changing a single field in the audio_system_config.h file. This is
+managed with preprocessor variables that are used to selectively include the
+audio framework files associated with each platform.
 
 The first thing we'll do is create a new definition in ``audio_system_config.h`` for our framework as shown below. Ensure that only one audio framework is set to TRUE.
 
@@ -84,9 +90,12 @@ Next, we'll then add this same new preprocessor definition / variable to a file 
 
    #endif // _AUDIO_FRAMEWORK_ARM_H_
 
-Make the same modification to the audio_framework\_ file on each core and be sure to point to the new local .h file you cloned in the step prior.
+Make the same modification to the audio_framework\_ file on each core and be
+sure to point to the new local .h file you cloned in the step prior.
 
-At the top of your cloned audio framework .c files on each core, add the same pre-processor variable to the top of the file. This will ensure only the audio framework files we have selected in audio_system_config.h is compiled.
+At the top of your cloned audio framework .c files on each core, add the same
+pre-processor variable to the top of the file. This will ensure only the audio
+framework files we have selected in audio_system_config.h is compiled.
 
 .. code:: c
 
@@ -97,7 +106,11 @@ At the top of your cloned audio framework .c files on each core, add the same pr
 
    #include "audio_framework_hardware_platform_one_arm.h"
 
-Finally, at the very bottom of your cloned audio framework .c files on each core, you'll find an integer declaration. This is here only to prevent compiler warnings when the current framework is not selected but this file is compiled. Change this to a unique name at the end of each of these files so we don't end up with a linker error like so:
+Finally, at the very bottom of your cloned audio framework .c files on each
+core, you'll find an integer declaration. This is here only to prevent compiler
+warnings when the current framework is not selected but this file is compiled.
+Change this to a unique name at the end of each of these files so we don't end
+up with a linker error like so:
 
 .. code:: c
 
@@ -105,7 +118,9 @@ Finally, at the very bottom of your cloned audio framework .c files on each core
 
 In summary, add a new preprocessor variable to audio_system_config.h for your new audio framework. Add this variable to ``audio_framework_hardware_platform_one_arm.h``, ``audio_framework_hardware_platform_one_core1.h`` and ``audio_framework_hardware_platform_one_core2.h``. And finally, add this variable to the top of our three new, cloned .c files for our new audio framework (one on each core).
 
-To confirm that everything is configured properly, do a clean build and ensure everything compiles and links properly. At this point, we've just selected a cloned version of the 8 channel SHARC Audio Module framework.
+To confirm that everything is configured properly, do a clean build and ensure
+everything compiles and links properly. At this point, we've just selected a
+cloned version of the 8 channel SHARC Audio Module framework.
 
 Step 3: On the ARM Core, Configure System Initialization Code
 -------------------------------------------------------------
@@ -136,10 +151,13 @@ The next thing we'll do is configure our GPIO pins. There is a function called `
 
 Finally, we'll add any initialization code for our external components such as ADCs, DACs and CODECs. The existing ``audio_framework_hardware_platform_one_arm.c`` file will have the initialization code for the ADAU1761 which we can replace. You can either perform I2C or SPI reads and writes to your external components here directly (using twi_simple and spi_simple drivers). If you're using an Analog Devices audio ADC, DAC or CODEC, you may be able to use SigmaStudio to generate the initialization code for you. See :doc:`Tutorial: Creating Drivers for Audio Components </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/driver-creation-tutorial>` for more information on how to use SigmaStudio to generate initialization code.
 
-Below is an example of what a new version of the audioframework_initialize() could look like. In this example, we have a fictional audio codec that we can configure over I2C/TWI with an I2C address of 0x40. The I2S/TDM signals from this component connect to the DAI0 pins 1-4 on the ADSP-SC589. Note the additional include files at the top of this snippet which need to be added too.
+Below is an example of what a new version of the audioframework_initialize()
+could look like. In this example, we have a fictional audio codec that we can
+configure over I2C/TWI with an I2C address of 0x40. The I2S/TDM signals from
+this component connect to the DAI0 pins 1-4 on the ADSP-SC589. Note the
+additional include files at the top of this snippet which need to be added too.
 
 .. code:: c
-
 
    // Add some additional headers so we can access SRU and TWI
    #include "drivers/bm_twi_driver/bm_twi.h"
@@ -208,18 +226,28 @@ Below is an example of what a new version of the audioframework_initialize() cou
 Step 4: On the SHARC Core 1, Configure the Audio DMA
 ----------------------------------------------------
 
-SHARC Core 1 is primarily responsible for routing audio between the two SHARC cores and the SPORTs which connect to various audio devices and peripherals.
+SHARC Core 1 is primarily responsible for routing audio between the two SHARC
+cores and the SPORTs which connect to various audio devices and peripherals.
 
-The current framework which we cloned is design to route audio to and from three different sources/sinks: the ADAU1761 (8 channels), the A2B bus (8 channels) and S/PDIF (2 channels).
+The current framework which we cloned is design to route audio to and from three
+different sources/sinks: the ADAU1761 (8 channels), the A2B bus (8 channels) and
+S/PDIF (2 channels).
 
-For the sake of example, let's say that our new audio hardware platform has a single 8 channel codec and this is the only audio component that we'll communicate with in our new hardware platform.
+For the sake of example, let's say that our new audio hardware platform has a
+single 8 channel codec and this is the only audio component that we'll
+communicate with in our new hardware platform.
 
-The first thing we'll do is update the various memory buffers. There are two types of memory buffers that the framework uses. The first are fixed point buffers which contain the raw, fixed point audio data that is coming from, going to the various audio components in our system. The second are floating point buffers which contain the audio data that we'll be processing within the callbacks. SHARC core 1 handles the movement of data and floating-point<->fixed-point conversion between these two types of buffers.
+The first thing we'll do is update the various memory buffers. There are two
+types of memory buffers that the framework uses. The first are fixed point
+buffers which contain the raw, fixed point audio data that is coming from, going
+to the various audio components in our system. The second are floating point
+buffers which contain the audio data that we'll be processing within the
+callbacks. SHARC core 1 handles the movement of data and
+floating-point<->fixed-point conversion between these two types of buffers.
 
 At the top of ``audio_frameworks/audio_framework_hardware_platform_one_core1.c`` are the fixed point buffers declarations used for DMA. There are two buffers for each direction as the DMA is capable of automatically ping-ponging between buffers. When we're processing one set of buffers, the DMA engine is transmitting/receiving the other set. As you can see below, we have one pair of buffers for transmit and one pair for receive. Data from each audio channel be stacked in each buffer is the (total number of channels from that device) x (system wide audio block size). The DMA engine takes care of de-interleaving the data so each channel of audio is grouped together / stacked. The ``section()`` directive places these buffers in L1 memory to ensure highest computational performance.
 
 .. code:: c
-
 
    // Fixed-point (raw ADC/DAC data) DMA buffers for ping-pong / double-buffered DMA
    int section("seg_dmda_nw") sport0_dma_rx_0_buffer[AUDIO_CHANNELS\*AUDIO_BLOCK_SIZE] = {0};
@@ -227,12 +255,16 @@ At the top of ``audio_frameworks/audio_framework_hardware_platform_one_core1.c``
    int section("seg_dmda_nw") sport0_dma_tx_0_buffer[AUDIO_CHANNELS\*AUDIO_BLOCK_SIZE] = {0};
    int section("seg_dmda_nw") sport0_dma_tx_1_buffer[AUDIO_CHANNELS\*AUDIO_BLOCK_SIZE] = {0};
 
-Below the fixed-point DMA buffer declarations, we see the floating-point buffer declarations. We'll reduce this to a single input and output buffer for our CODEC. Having all of our 8 audio channels packed into one long contiguous buffer allows us more efficiently perform the fixed/floating point conversion.
+Below the fixed-point DMA buffer declarations, we see the floating-point buffer
+declarations. We'll reduce this to a single input and output buffer for our
+CODEC. Having all of our 8 audio channels packed into one long contiguous buffer
+allows us more efficiently perform the fixed/floating point conversion.
 
-Below our input and output buffers for our codec, we'll also preserve the second set of buffers which is used to move 8 channels of audio data to the second SHARC core if we're using both cores to process audio.
+Below our input and output buffers for our codec, we'll also preserve the second
+set of buffers which is used to move 8 channels of audio data to the second
+SHARC core if we're using both cores to process audio.
 
 .. code:: c
-
 
    // Floating-point buffers that we will process / operate on
    // These are aligned to 32-byte boundaries so we can use fast DMAs to move them around
@@ -248,10 +280,11 @@ Below our input and output buffers for our codec, we'll also preserve the second
    float audiochannels_to_sharc_core2[AUDIO_CHANNELS * AUDIO_BLOCK_SIZE] = {0};        // Audio from SHARC Core 2
    #endif
 
-Now we'll create points into our input and output buffers that will allow us to access each audio channel from our audio callbacks. We'll also preserve the code we're using to set up the audio buffers going to and from SHARC core 2.
+Now we'll create points into our input and output buffers that will allow us to
+access each audio channel from our audio callbacks. We'll also preserve the code
+we're using to set up the audio buffers going to and from SHARC core 2.
 
 .. code:: c
-
 
    // 8 input channels from the codec
    float * audiochannel_codec_0_left_In  = codec_audiochannels_In + AUDIO_BLOCK_SIZE\*0;
@@ -299,7 +332,6 @@ Now we'll create points into our input and output buffers that will allow us to 
 Next, we'll update our buffer aliases. This allows us to always read and write from a standard set of buffer names in our audio callback regardless of whether we're using one core or both cores. In our callback, when write to the ``AudioChannel_0_Left_Out[]`` buffer, we're either writing to the buffer heading to core 2 when we're using both cores or we're writing to the buffer that will be transmitted to our codec when using just one core. This way, we can flip between single core processing and dual core processing (via ``audio_system_config.h``) without having to re-write any of our audio processing code in the audio processing callback.
 
 ::
-
 
    // Define alias pointers for inputs
    float * audiochannel_0_left_in  = codec_audiochannels_in + AUDIO_BLOCK_SIZE\*0;
@@ -351,7 +383,12 @@ At this point, our various memory buffers and pointers are all ready.
 
 Next, we need to configure the DMA and our serial ports (SPORTs). The ``drivers/bm_audio_flow_driver/`` driver has a utility function for configuring both the DMA and the SPORT for each of our audio devices. Since the existing framework has three different audio sources/sinks, you'll find three such struct definitions in ``audio_frameworks/audio_framework_hardware_platform_one_core1.c``. We can remove all but the definition for SPORT0.
 
-The C struct definition is shown below. Here we provide information about the number of channels and audio block size, the audio buffers that the DMA engine will read from/write to, the SPORT configuration, and whether or not we want this DMA to generate an interrupt each time it transfers an audio frame (channels x block size). The code below shows an example of the DMA configuration for our 8 channel audio codec.
+The C struct definition is shown below. Here we provide information about the
+number of channels and audio block size, the audio buffers that the DMA engine
+will read from/write to, the SPORT configuration, and whether or not we want
+this DMA to generate an interrupt each time it transfers an audio frame
+(channels x block size). The code below shows an example of the DMA
+configuration for our 8 channel audio codec.
 
 .. code:: c
 
@@ -406,12 +443,13 @@ The C struct definition is shown below. Here we provide information about the nu
 
    };
 
-The interrupt handler can be mostly left as is. There are only two small changes:
+The interrupt handler can be mostly left as is. There are only two small
+changes:
 
-1) Remove the fixed-float processing for the second and third set of audio buffers in the original framework.
+1) Remove the fixed-float processing for the second and third set of audio
+   buffers in the original framework.
 
 .. code:: c
-
 
        if( (uint32_t) sport_dma_cfg->DMA_Descriptor_RX_0_LIST.Next_Desc !=
             (*sport_dma_cfg->pREG_DMA_RX_DSCPTR_NXT)
@@ -458,7 +496,8 @@ And similarly, in ``audioframework_initialize()``, we to call audioflow_init_spo
      // Initialize peripherals and DMA to configure audio data I/O flow
      audioflow_init_sport_dma( &SPR0_CODEC_8CH_Config );
 
-The last step is reducing the DMA and SPORT enable code to enable just SPORT0 (and its corresponding DMAs).
+The last step is reducing the DMA and SPORT enable code to enable just SPORT0
+(and its corresponding DMAs).
 
 .. code:: c
 
@@ -514,5 +553,9 @@ There are no modifications necessary for SHARC core 2.
 Further Changes
 ---------------
 
-Depending on your hardware configuration, the ports assignments of the peripherals you're using may have changed. In this case, open up the system.svc (at the bottom of the project file tree in the ARM core in CCES). The window that opens will have a number of tabs at the bottom. Click Pin Multiplexing and here you'll be able to map the peripherals you're using to the corresponding I/O pins on the processor.
-
+Depending on your hardware configuration, the ports assignments of the
+peripherals you're using may have changed. In this case, open up the system.svc
+(at the bottom of the project file tree in the ARM core in CCES). The window
+that opens will have a number of tabs at the bottom. Click Pin Multiplexing and
+here you'll be able to map the peripherals you're using to the corresponding I/O
+pins on the processor.

@@ -3,13 +3,14 @@ ADRV9002 Zynq SoC ZC706 Quick Start Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_zc706_quickstart.png
    :align: center
-   :width: 600px
+   :width: 600
 
 This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` and :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` on:
 
 -  `ZC706 <https://www.xilinx.com/ZC706>`_ The revision that is supported is 1.2 or higher.
 
-Instructions on how to build the Zynq Linux kernel and devicetrees from source can be found here:
+Instructions on how to build the Zynq Linux kernel and devicetrees from source
+can be found here:
 
 -  :doc:`Building the Zynq Linux kernel and devicetrees from source </wiki-migration/resources/tools-software/linux-build/generic/zynq>`
 -  :doc:`How to build the Zynq boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynq-boot-image>`
@@ -102,7 +103,10 @@ In most carriers, the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` and :adi:`ADRV90
 Identify your hardware
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Evaluation boards were equipped with different silicon revisions. All boards built since the middle of December 2020 have C0 silicon, older ones use B0 silicon these are no longer shipped. You can identify the board you have based on its label.
+Evaluation boards were equipped with different silicon revisions. All boards
+built since the middle of December 2020 have C0 silicon, older ones use B0
+silicon these are no longer shipped. You can identify the board you have based
+on its label.
 
 ======== ================
 Label    Silicon Revision
@@ -115,8 +119,8 @@ Label    Silicon Revision
 
 .. tip::
 
-   Each revision of silicon requires its corresponding software support files in the later steps.
-
+   Each revision of silicon requires its corresponding software support files in
+   the later steps.
 
 ZCU102 + ADRV9002NP
 ~~~~~~~~~~~~~~~~~~~
@@ -164,7 +168,6 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 More Information
 ----------------
 
@@ -194,20 +197,15 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w1.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w2.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002xbcz_c0_np_w1.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002xbcz_c0_np_w2.png
 
-
 Testing
 =======
 
-
 .. esd-warning::
-
-
 
 |http---www.xilinx.com-images-product-images-zc706-base-board.jpg|
 
@@ -218,12 +216,16 @@ Testing
    
    Instruction for reprogramming the VADJ can be found `here <https://e2e.ti.com/support/power-management-group/power-management/f/power-management-forum/960099/configure-zc706-evaluation-board-vadj-for-3-3v>`_ and `here <https://support.xilinx.com/s/article/56811?language=en_US>`_.
    
-   On an ADRV9002 Card, there is a red LED close to the FMC connector. The role of this LED is to indicate if VADJ voltage exceeded 2.0V level. If that was the case this LED will be ON. If this LED does not turn off after few seconds after boot, then there is an issue and while the board might still operate this is exceeding the recommended level for VADJ, decreasing board lifetime and can lead to permanent damage of the IC in the worst case.
-
+   On an ADRV9002 Card, there is a red LED close to the FMC connector. The role
+   of this LED is to indicate if VADJ voltage exceeded 2.0V level. If that was
+   the case this LED will be ON. If this LED does not turn off after few seconds
+   after boot, then there is an issue and while the board might still operate
+   this is exceeding the recommended level for VADJ, decreasing board lifetime
+   and can lead to permanent damage of the IC in the worst case.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_vadj_led.png
    :align: center
-   :width: 200px
+   :width: 200
 
 -  Connect the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` or :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` FMC board to the FPGA carrier **LPC FMC** socket.
 -  On the FMC card set switch to select clock source between:
@@ -233,12 +235,15 @@ Testing
 
 -  Connect USB UART (Mini USB) to your host PC.
 -  Insert SD card into socket.
--  Configure ZC706 for SD BOOT (Set the jumpers: The main one is: SW11 - Big Blue Switch in the middle, which controls the Boot Mode, it needs to be set: 1: Down, 2: Down, 3: Up, 4: Up, 5: Down. Other Jumpers can be checked via looking at the picture. (click the picture to make it bigger)).
+-  Configure ZC706 for SD BOOT (Set the jumpers: The main one is: SW11 - Big
+   Blue Switch in the middle, which controls the Boot Mode, it needs to be set:
+   1: Down, 2: Down, 3: Up, 4: Up, 5: Down. Other Jumpers can be checked via
+   looking at the picture. (click the picture to make it bigger)).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
    :alt: zc706plusfmcjesdadc1.png
    :align: right
-   :width: 200px
+   :width: 200
 
 -  Turn on the power switch on the FPGA board.
 -  Observe kernel and serial console messages on your terminal.
@@ -251,14 +256,11 @@ Testing
 Messages
 --------
 
-
-
 .. collapsible:: Complete kernel boot log (Click to expand)
 
    .. container:: box bggreen
 
       This specifies any shell prompt running on the target
-
 
       ::
 
@@ -669,8 +671,6 @@ Messages
 
          analog login:
 
-
-
 These devices should be present:
 
 .. container:: box bggreen
@@ -689,7 +689,6 @@ These devices should be present:
               iio:device4: axi-adrv9002-tx-lpc (buffer capable)
    
 
-
 For more on device modes, check :doc:`device modes. </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
 Pyadi-iio Example
@@ -702,11 +701,13 @@ IIO Oscilloscope Remote
 
 Please see also here::doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The IIO Oscilloscope application can be used to connect to another platform that has a connected device in order to configure the device and read data from it.
+The IIO Oscilloscope application can be used to connect to another platform that
+has a connected device in order to configure the device and read data from it.
 
 Build and start osc on a network enabled Linux host.
 
-Once the application is launched goto Settings -> Connect and enter the IP address of the target in the popup window.
+Once the application is launched goto Settings -> Connect and enter the IP
+address of the target in the popup window.
 
 Shut down
 ---------
@@ -714,7 +715,6 @@ Shut down
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
-
 
    |image1|
 
@@ -747,7 +747,6 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 More Information
 ----------------
 
@@ -777,9 +776,8 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 .. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300
 
 .. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: https://wiki.analog.com/_media/http///www.xilinx.com/images/product-images/zc706-base-board.jpg

@@ -30,7 +30,8 @@ Files
 Example device initialization
 =============================
 
-The AXI SPDIF driver is a platform driver and can currently only be instantiated via device tree.
+The AXI SPDIF driver is a platform driver and can currently only be instantiated
+via device tree.
 
 Required devicetree properties:
 
@@ -110,7 +111,6 @@ Example DAI configuration
        .codec_dai_name = "adv7511",
        .dai_fmt = SND_SOC_DAIFMT_SPDIF
 
-
                SND_SOC_DAIFMT_NB_NF |
 
                SND_SOC_DAIFMT_CBS_CFS,
@@ -126,7 +126,10 @@ Example DAI configuration
 ADV7511 HDMI + SPDIF board driver
 =================================
 
-The HDL AXI SPDIF driver is currently used in conjunction with the ADV7511 HDMI transmitter on various FPGA platforms. For these platforms there exist a ASoC board driver which provides the necessary information on how both device are interconnected, so that a ALSA sound card can be instantiated.
+The HDL AXI SPDIF driver is currently used in conjunction with the ADV7511 HDMI
+transmitter on various FPGA platforms. For these platforms there exist a ASoC
+board driver which provides the necessary information on how both device are
+interconnected, so that a ALSA sound card can be instantiated.
 
 Source
 ------
@@ -166,7 +169,8 @@ Enable ALSA SoC evaluation board driver:
 Example device initialization
 -----------------------------
 
-The ADV7511 HDMI sound board driver is a platform driver and can currently only be instantiated via device tree.
+The ADV7511 HDMI sound board driver is a platform driver and can currently only
+be instantiated via device tree.
 
 Required devicetree properties:
 
@@ -234,7 +238,6 @@ Make sure the sound card is properly instantiated.
         Subdevice #0: subdevice #0
    
 
-
 To test audio playback you can use the *speaker-test* utility, which allows to playback several different test patterns. For a extensive description on the *speaker-test* utility and the different options it supports please refer to the `speaker-test man page <http://linux.die.net/man/1/speaker-test>`_.
 
 .. container:: box bggreen
@@ -262,7 +265,6 @@ To test audio playback you can use the *speaker-test* utility, which allows to p
       ....
    
 
-
 To test audio record you can use the *arecord* utility. *arecord* will record the incoming audio signal and write it to a wav file.
 
 .. container:: box bggreen
@@ -275,7 +277,6 @@ To test audio record you can use the *arecord* utility. *arecord* will record th
       root:/> arecord -f S16 -r 48000 -c 2 > test.wav
       ...
    
-
 
 To playback a wav file you can use the *aplay* utility. You can also create a audio loop-back by sending the output of *arecord* to *aplay*. This will send the incoming audio stream back via the outgoing audio stream.
 
@@ -290,7 +291,6 @@ To playback a wav file you can use the *aplay* utility. You can also create a au
       ...
    
 
-
 For more information on the the *aplay* and *arecord* utilities please refer to the `aplay and arecord man page <http://linux.die.net/man/1/arecord>`_.
 
 More information
@@ -303,4 +303,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

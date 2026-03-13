@@ -1,5 +1,3 @@
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -15,8 +13,6 @@
    which means it is no longer maintained or actively updated, even though the
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
-
-
 
 :doc:`ezLINX™ iCoupler® Isolated Interface Development Platform Homepage </wiki-migration/resources/eval/ezlinx>`
 

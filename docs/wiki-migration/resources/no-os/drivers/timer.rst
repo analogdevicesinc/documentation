@@ -4,7 +4,8 @@ No-OS Timer API
 Description
 -----------
 
-The timer driver initializes and offers APIs for hardware timers. No-OS platform uses hardware in two contexts:
+The timer driver initializes and offers APIs for hardware timers. No-OS platform
+uses hardware in two contexts:
 
 -  to measure time intervals in order to perform time delays
 -  to measure time intervals in order to perform time triggered interrupts.
@@ -12,7 +13,8 @@ The timer driver initializes and offers APIs for hardware timers. No-OS platform
 Documentation
 -------------
 
-The timer generic driver documentation is generated using the Doxygen tool and it is available at:
+The timer generic driver documentation is generated using the Doxygen tool and
+it is available at:
 
 -  `No-OS Timer Generic Driver <http://analogdevicesinc.github.io/no-OS/doxygen/no__os__timer_8h.html>`_
 
@@ -83,7 +85,9 @@ Parameters Description
 Timer APIs
 ----------
 
-The structure no_os_timer_platform_ops consists of pointers to timer APIs that point to platform specific functions. Each platform shall contain a specific implementation for each of these functions.
+The structure no_os_timer_platform_ops consists of pointers to timer APIs that
+point to platform specific functions. Each platform shall contain a specific
+implementation for each of these functions.
 
 Structure Definition
 ~~~~~~~~~~~~~~~~~~~~
@@ -119,42 +123,63 @@ APIs description
 Init API
 ^^^^^^^^
 
-Initializes the hardware timer peripheral, taking the initialization parameters and stores data in the timer descriptor.
+Initializes the hardware timer peripheral, taking the initialization parameters
+and stores data in the timer descriptor.
 
 Start API
 ^^^^^^^^^
 
-Starts the hardware timer - at this point the timer shall begin counting with the given frequency either up to the ticks count value, starting from 0, either down to 0, starting from the given ticks count value. The descriptor of the timer is given as parameter. The timer has to be initialized before calling this API.
+Starts the hardware timer - at this point the timer shall begin counting with
+the given frequency either up to the ticks count value, starting from 0, either
+down to 0, starting from the given ticks count value. The descriptor of the
+timer is given as parameter. The timer has to be initialized before calling this
+API.
 
 Stop API
 ^^^^^^^^
 
-Stops the hardware timer which was previously started using the start API - at this point the timer shall stop counting. The descriptor of the timer is given as parameter. The timer has to be initialized before calling this API.
+Stops the hardware timer which was previously started using the start API - at
+this point the timer shall stop counting. The descriptor of the timer is given
+as parameter. The timer has to be initialized before calling this API.
 
 Get counter API
 ^^^^^^^^^^^^^^^
 
-Reads the value of the count register of the hardware timer. The descriptor of the timer is given as parameter. The value of the count register will be stored at the address given by the counter pointer parameter. The timer has to be initialized before calling this API.
+Reads the value of the count register of the hardware timer. The descriptor of
+the timer is given as parameter. The value of the count register will be stored
+at the address given by the counter pointer parameter. The timer has to be
+initialized before calling this API.
 
 Set counter API
 ^^^^^^^^^^^^^^^
 
-Sets the value of the count register of the hardware timer equal to the value given in the counter parameter. The descriptor of the timer is given as parameter. The timer has to be initialized before calling this API. This value has to be smaller than the ticks count value given in the initialization.
+Sets the value of the count register of the hardware timer equal to the value
+given in the counter parameter. The descriptor of the timer is given as
+parameter. The timer has to be initialized before calling this API. This value
+has to be smaller than the ticks count value given in the initialization.
 
 Get counter clock API
 ^^^^^^^^^^^^^^^^^^^^^
 
-Reads the source clock frequency of the hardware timer. The descriptor of the timer is given as parameter. The value of the frequency (in Hertz) will be stored at the address given by the freq_hz pointer parameter. The timer has to be initialized before calling this API.
+Reads the source clock frequency of the hardware timer. The descriptor of the
+timer is given as parameter. The value of the frequency (in Hertz) will be
+stored at the address given by the freq_hz pointer parameter. The timer has to
+be initialized before calling this API.
 
 Set counter clock API
 ^^^^^^^^^^^^^^^^^^^^^
 
-Sets the source clock frequency of the hardware timer equal to the value given in the freq_hz parameter (given in Hertz). The descriptor of the timer is given as parameter. The timer has to be initialized before calling this API.
+Sets the source clock frequency of the hardware timer equal to the value given
+in the freq_hz parameter (given in Hertz). The descriptor of the timer is given
+as parameter. The timer has to be initialized before calling this API.
 
 Get elapsed time in nanoseconds API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Reads the elapsed time in nanoseconds measured with the hardware timer. The descriptor of the timer is given as parameter. The value of elapsed time (in nanoseconds) will be stored at the address given by the elapsed_time pointer parameter. The timer has to be initialized before calling this API.
+Reads the elapsed time in nanoseconds measured with the hardware timer. The
+descriptor of the timer is given as parameter. The value of elapsed time (in
+nanoseconds) will be stored at the address given by the elapsed_time pointer
+parameter. The timer has to be initialized before calling this API.
 
 Timer Supported Platforms
 -------------------------
@@ -273,7 +298,8 @@ The definition of the extra timer description parameters:
        TIM_HandleTypeDef *htimer;
    } stm32_timer_desc;
 
-Where htimer parameter is a pointer to the address holding the hardware timer handle data, specific to STM32 HAL.
+Where htimer parameter is a pointer to the address holding the hardware timer
+handle data, specific to STM32 HAL.
 
 Xilinx Platform
 ~~~~~~~~~~~~~~~
@@ -404,8 +430,11 @@ Aducm3029 parameters.c:
 
 .. important::
 
-   For Aducm3029 platform TIMER_FREQ_HZ value is not used (initialization parameter freq_hz) because it cannot be set freely. The value of the source clock frequency is given in the extra parameter in the source_freq field. In this example the clock source frequency for the timer will be equal to the PCLK frequency divided by 256.
-
+   For Aducm3029 platform TIMER_FREQ_HZ value is not used (initialization
+   parameter freq_hz) because it cannot be set freely. The value of the source
+   clock frequency is given in the extra parameter in the source_freq field. In
+   this example the clock source frequency for the timer will be equal to the
+   PCLK frequency divided by 256.
 
 Maxim platform
 ^^^^^^^^^^^^^^
@@ -473,15 +502,15 @@ STM32 parameters.c:
 
 .. important::
 
-   For HAL configuration the .ioc file is used. Make sure your .ioc file contains the timer instantiation.
+   For HAL configuration the .ioc file is used. Make sure your .ioc file
+   contains the timer instantiation.
 
    
-   Some settings used in STMCubeMx will be overwritten by No-OS code such that the period of the timer meets the settings given in the initialization parameters \*/
-
+   Some settings used in STMCubeMx will be overwritten by No-OS code such that
+   the period of the timer meets the settings given in the initialization
+   parameters \*/
 
 The image below show that TIM13 is activated in STMCubeMx:
-
-
 
 |STMCubeMx TIM13 activated|
 
@@ -509,19 +538,33 @@ Xilinx parameters.c:
        .type = TIMER_PS;
    };
 
-Although you may use the hardware timers to perform delays, with No-OS platform we advise you to use the already implemented APIs from no_os_delay.h: no_os_udelay(uint32_t usecs) to perform a delay in microseconds and no_os_mdelay(uint32_t msecs) to perform a delay in milliseconds. Using the no_os_delay APIs you will have one extra hardware timer resource available, to be used in the application as deemed fit.
+Although you may use the hardware timers to perform delays, with No-OS platform
+we advise you to use the already implemented APIs from no_os_delay.h:
+no_os_udelay(uint32_t usecs) to perform a delay in microseconds and
+no_os_mdelay(uint32_t msecs) to perform a delay in milliseconds. Using the
+no_os_delay APIs you will have one extra hardware timer resource available, to
+be used in the application as deemed fit.
 
 Time triggered interrupts with hardware timers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On No-OS platform, the time triggered interrupts are primarily used for IIO hardware triggers, but they can be used by the application as seen fit.
+On No-OS platform, the time triggered interrupts are primarily used for IIO
+hardware triggers, but they can be used by the application as seen fit.
 
 Time triggered interrupts generic example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to be able to used time triggered interrupts you will have two perform initialization for the timer peripheral (with no_os_timer_init API) and for the interrupt controller (with no_os_irq_ctrl_init API). Additionally you may specify the the interrupt priority (with no_os_irq_set_priority API). If the initialization is successful, now you may register your callback function (with no_os_irq_register_callback API) which is going to be called from the interrupt context. Finally, you should enable the timer interrupt (with no_os_irq_enable API) and you should start the timer (with no_os_timer_start API).
+In order to be able to used time triggered interrupts you will have two perform
+initialization for the timer peripheral (with no_os_timer_init API) and for the
+interrupt controller (with no_os_irq_ctrl_init API). Additionally you may
+specify the the interrupt priority (with no_os_irq_set_priority API). If the
+initialization is successful, now you may register your callback function (with
+no_os_irq_register_callback API) which is going to be called from the interrupt
+context. Finally, you should enable the timer interrupt (with no_os_irq_enable
+API) and you should start the timer (with no_os_timer_start API).
 
-Below you may find a code snippet, containing the needed steps to be able to use time triggered interrupts:
+Below you may find a code snippet, containing the needed steps to be able to use
+time triggered interrupts:
 
 .. code:: C
 
@@ -537,7 +580,6 @@ Below you may find a code snippet, containing the needed steps to be able to use
    {
        /* Application specific implementation */
    }
-
 
    int main ()
    {
@@ -640,8 +682,11 @@ Aducm3029 parameters.c:
 
 .. important::
 
-   For Aducm3029 platform TIMER_FREQ_HZ value is not used (initialization parameter freq_hz) because it cannot be set freely. The value of the source clock frequency is given in the extra parameter in the source_freq field. In this example the clock source frequency for the timer will be equal to the PCLK frequency divided by 256.
-
+   For Aducm3029 platform TIMER_FREQ_HZ value is not used (initialization
+   parameter freq_hz) because it cannot be set freely. The value of the source
+   clock frequency is given in the extra parameter in the source_freq field. In
+   this example the clock source frequency for the timer will be equal to the
+   PCLK frequency divided by 256.
 
 Maxim platform
 """"""""""""""
@@ -733,15 +778,17 @@ STM32 parameters.c:
 
 .. important::
 
-   For HAL configuration the .ioc file is used. Make sure your .ioc file contains the timer instantiation and make sure you are enabling interrupts for the selected timer.
+   For HAL configuration the .ioc file is used. Make sure your .ioc file
+   contains the timer instantiation and make sure you are enabling interrupts
+   for the selected timer.
 
    
-   Some settings used in STMCubeMx will be overwritten by No-OS code such that the period of the timer meets the settings given in the initialization parameters \*/
+   Some settings used in STMCubeMx will be overwritten by No-OS code such that
+   the period of the timer meets the settings given in the initialization
+   parameters \*/
 
-
-The images below show that TIM13 is activated and that the according interrupts are enabled in STMCubeMx:
-
-
+The images below show that TIM13 is activated and that the according interrupts
+are enabled in STMCubeMx:
 
 |STMCubeMx TIM13 activated|
 
@@ -757,9 +804,14 @@ Xilinx platform does not offer timer interrupts support currently.
 Time triggered interrupt with IIO triggers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As mentioned previously, on No-OS platform, the time triggered interrupts are primarily used for IIO hardware triggers.
+As mentioned previously, on No-OS platform, the time triggered interrupts are
+primarily used for IIO hardware triggers.
 
-When an interrupt takes place, a trigger callback will be activated, which will lead to performing a reading or a writing from/to the IIO device. The interrupt callback is registered in iio_trigger.c file in iio_hw_trig_init API. The context is the trigger descriptor, which is needed for handling the correct IIO device.
+When an interrupt takes place, a trigger callback will be activated, which will
+lead to performing a reading or a writing from/to the IIO device. The interrupt
+callback is registered in iio_trigger.c file in iio_hw_trig_init API. The
+context is the trigger descriptor, which is needed for handling the correct IIO
+device.
 
 In :git-no-OS:`projects/iio_demo` project you may find a timer interrupt example with IIO triggers for STM32 platform.
 

@@ -1,8 +1,6 @@
 AD-FMCMOTCON1-EBZ IIO User Guide
 ================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,12 +17,11 @@ AD-FMCMOTCON1-EBZ IIO User Guide
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 IIO OSC
 -------
 
-ADI IIO oscilloscope is used for monitoring and controlling the AD-FMCMOTCON1-EBZ board, when using Linux operating system.
+ADI IIO oscilloscope is used for monitoring and controlling the
+AD-FMCMOTCON1-EBZ board, when using Linux operating system.
 
 There are two main tabs that are to be used: **Capture** and **Motor Control**.
 
@@ -36,9 +33,12 @@ The Capture tab is used for monitoring the system.
 Current monitoring
 ^^^^^^^^^^^^^^^^^^
 
-On the AD-FMCMOTCON1-EBZ system, there are two sets of ADCs for monitoring the current to the motor:
+On the AD-FMCMOTCON1-EBZ system, there are two sets of ADCs for monitoring the
+current to the motor:
 
-The first AD7401A based measuring system is part of the controller board. The signal is pre amplified on the Low Voltage Drive board. The amplification factor is controlled by the GPO0 and GPO1 pins
+The first AD7401A based measuring system is part of the controller board. The
+signal is pre amplified on the Low Voltage Drive board. The amplification factor
+is controlled by the GPO0 and GPO1 pins
 
 -  in_voltage0 corresponds to IA
 -  in_voltage1 corresponds to IB
@@ -47,9 +47,10 @@ The first AD7401A based measuring system is part of the controller board. The si
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_adc1_sc.png
    :alt: Current measurement using the control board ADCs
-   :width: 600px
+   :width: 600
 
-The second AD7401A measuring system is part of the Low Voltage Drive board. The signal is not preamplified in this case
+The second AD7401A measuring system is part of the Low Voltage Drive board. The
+signal is not preamplified in this case
 
 -  in_voltage0 corresponds to IA
 -  in_voltage1 corresponds to IB
@@ -58,16 +59,18 @@ The second AD7401A measuring system is part of the Low Voltage Drive board. The 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_adc2_sc.png
    :alt: Current measurement using the drivel board ADCs
-   :width: 600px
+   :width: 600
 
 Speed monitoring
 ^^^^^^^^^^^^^^^^
 
-This IP monitors the speed, and display the number of counts ( in 10ns units) between two motor commutations. In order to display the speed in RPM, the data should be processed by checking the 1/x option and multiply by 25.000.000
+This IP monitors the speed, and display the number of counts ( in 10ns units)
+between two motor commutations. In order to display the speed in RPM, the data
+should be processed by checking the 1/x option and multiply by 25.000.000
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_speed_sc.png
    :alt: Speed measurement
-   :width: 600px
+   :width: 600
 
 FOC Controller monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -85,7 +88,7 @@ This IP allows monitoring of the following signals from the :doc:`MathWorks FOC 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_full_sc.png
    :alt: FOC monitoring
-   :width: 600px
+   :width: 600
 
 Control
 ~~~~~~~
@@ -93,12 +96,14 @@ Control
 Manual Control
 ^^^^^^^^^^^^^^
 
-This controller allows the control of the motor in manual mode by directly specifying the fill factor of the PWM signal applied used to control the 3 phase inverter. The motor is driven using a 6 step comutation algorithm.
+This controller allows the control of the motor in manual mode by directly
+specifying the fill factor of the PWM signal applied used to control the 3 phase
+inverter. The motor is driven using a 6 step comutation algorithm.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_manual_ctrl.png
    :alt: Manual Control
    :align: left
-   :width: 400px
+   :width: 400
 
 +-----------------+--------------------------------------------------------------------------------+
 | Control         | Description                                                                    |
@@ -126,4 +131,4 @@ This selects the :doc:`MathWorks FOC IP </wiki-migration/resources/eval/user-gui
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_foc_ctrl.png
    :alt: Matlab Controller
-   :width: 500px
+   :width: 500

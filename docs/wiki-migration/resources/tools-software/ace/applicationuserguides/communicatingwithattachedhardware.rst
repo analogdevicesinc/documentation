@@ -19,14 +19,14 @@ Where available initialization wizards provide a setup process which collects an
 View Toolbars
 -------------
 
-The view toolbars in each of the Board, Chip and Memory Map views provide controls for communicating with hardware. The View Toolbar is Located at the top of the View as seen below.
+The view toolbars in each of the Board, Chip and Memory Map views provide
+controls for communicating with hardware. The View Toolbar is Located at the top
+of the View as seen below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/toolbarlocation.png
-   :width: 400px
+   :width: 400
 
 Each view toolbar contains a selection of the following communication options:
-
-
 
 - |resources-tools-software-ace-applicationuserguides-ResetChip.PNG| **Reset Device –** Reverts all components to their default state.***
 
@@ -41,8 +41,6 @@ device.
 -  |image4| **Apply Selected –** Applies current software value of the selected register to the hardware.
 
 -   |image5| **Read All –** Reads the register values from the hardware and updates the software to these values.
-
-
 
 - `|resources-tools-software-ace-applicationuserguides-Readselected.PNG| **Read Selected –** Reads the selected registers value from the hardware and updates the software to this value.
 
@@ -60,17 +58,17 @@ Register Debugger
 The Register Debugger is a Tool View which allows the performance of raw register reads and writes, see :doc:`Here </wiki-migration/resources/tools/software/ace/understandingtheui/toolviews>` for more information.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/poll.png
-   :width: 80px
+   :width: 80
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/autoapply.png
-   :width: 80px
+   :width: 80
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/applychanges.png
-   :width: 80px
+   :width: 80
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/applyselected.png
-   :width: 80px
+   :width: 80
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/readall.png
-   :width: 80px
+   :width: 80
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/resetchip.png
-   :width: 80px
+   :width: 80
 
 .. |resources-tools-software-ace-applicationuserguides-Readselected.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/Readselected.PNG
 .. |resources-tools-software-ace-applicationuserguides-ResetChip.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/ResetChip.PNG

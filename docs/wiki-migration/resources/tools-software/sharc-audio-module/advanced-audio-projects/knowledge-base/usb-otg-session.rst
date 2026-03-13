@@ -27,32 +27,31 @@ Details
 |                                                                                                                                                                                       | |image14|                      |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example1.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example2.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/som_serial.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example4.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example3.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example5.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example6.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example1.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example2.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/som_serial.jpg
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example4.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example3.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example5.png
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example6.png
-   :width: 400px
+   :width: 400

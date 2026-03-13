@@ -5,12 +5,15 @@ Using the ADXL345/6 under Android as Acceleration Sensor
 
 .. image:: https://wiki.analog.com/_media/software/driver/android/adxl_sensor_list.png
 
-The ADXL345/6 can be easily used as Android Acceleration Sensor. A few steps are necessary to add appropriate sensor support.
+The ADXL345/6 can be easily used as Android Acceleration Sensor. A few steps are
+necessary to add appropriate sensor support.
 
 Add Linux Driver Support:
 -------------------------
 
-Starting with linux-2.6.36 the ADXL34x driver is mainlined. If you are using an pre linux-2.6.36 kernel get the source from our repositories and add them to your kernel tree.
+Starting with linux-2.6.36 the ADXL34x driver is mainlined. If you are using an
+pre linux-2.6.36 kernel get the source from our repositories and add them to
+your kernel tree.
 
 Example platform data:
 
@@ -56,9 +59,13 @@ Example platform data:
 Create an Android sensor library
 --------------------------------
 
-The readme file in libhardware states: The source code for the "board" variant, usually lives under partners/... The source code for "default" and "arch" would usually live under hardware/modules/.
+The readme file in libhardware states: The source code for the "board" variant,
+usually lives under partners/... The source code for "default" and "arch" would
+usually live under hardware/modules/.
 
-The sensor file is typically source code for the "board" variant. However for simplicity this example puts it into a common folder structure under libhardware/modules/.
+The sensor file is typically source code for the "board" variant. However for
+simplicity this example puts it into a common folder structure under
+libhardware/modules/.
 
 -  Create an sensors folder under libhardware/modules
 
@@ -72,7 +79,8 @@ The sensor file is typically source code for the "board" variant. However for si
 
 --------------
 
--  Make sure the makefile in the higher folder hierarchy picks up the one in libhardware/modules/sensors.
+-  Make sure the makefile in the higher folder hierarchy picks up the one in
+   libhardware/modules/sensors.
 
 -  Add following lines to: libhardware/Android.mk
 
@@ -82,7 +90,8 @@ The sensor file is typically source code for the "board" variant. However for si
                modules/sensors \
            ))
 
-In your platforms init.rc file make sure all ADXL34x drivers sysfs files {disable, rate} are owned by system:system
+In your platforms init.rc file make sure all ADXL34x drivers sysfs files
+{disable, rate} are owned by system:system
 
 -  Add following lines to your init.rc script:
 
@@ -93,8 +102,8 @@ In your platforms init.rc file make sure all ADXL34x drivers sysfs files {disabl
 
 .. tip::
 
-   In case the ADXL345/6 is not always event0 you can alternatively approach via /sys/bus/i2c/devices/...
-
+   In case the ADXL345/6 is not always event0 you can alternatively approach via
+   /sys/bus/i2c/devices/...
 
 -  Rebuilt your Android tree
 
@@ -110,19 +119,19 @@ In your platforms init.rc file make sure all ADXL34x drivers sysfs files {disabl
       D/SensorManager( 2064): found sensor: Analog Devices ADXL345/6 3-axis Accelerometer, handle=0
    
 
-
 Hints
 -----
 
 Sample Rate
 ~~~~~~~~~~~
 
-The ADXL345/6 sample rate is configurable. The maximum sample rate is by default limited to 200Hz, to change this limit modify define ADXL_MAX_SAMPLE_RATE_VAL in the sensor file.
+The ADXL345/6 sample rate is configurable. The maximum sample rate is by default
+limited to 200Hz, to change this limit modify define ADXL_MAX_SAMPLE_RATE_VAL in
+the sensor file.
 
 .. warning::
 
    Very high sample rates > 400Hz can freeze your system!
-
 
 .. code:: c
 
@@ -157,7 +166,9 @@ Platform data configuration
 Don't use BTN_TOUCH
 ^^^^^^^^^^^^^^^^^^^
 
-In case you experience strange input device gui interaction it might be the case that Android EventHub included the ADXL34x as input device. This is typically the case if you put an BTN_TOUCH key into your ADXL34x drivers platform data.
+In case you experience strange input device gui interaction it might be the case
+that Android EventHub included the ADXL34x as input device. This is typically
+the case if you put an BTN_TOUCH key into your ADXL34x drivers platform data.
 
 Upon start EventHub must emit classes=0x0:
 
@@ -171,7 +182,9 @@ classes=0x4 means that the ADXL34x driver is considered as Touchscreen.
 Auto Sleep
 ^^^^^^^^^^
 
-The default platform configuration sets the driver automatically switch to sleep mode during periods of inactivity. To disable this feature remove ADXL_AUTO_SLEEP from power_mode.
+The default platform configuration sets the driver automatically switch to sleep
+mode during periods of inactivity. To disable this feature remove
+ADXL_AUTO_SLEEP from power_mode.
 
 Alternatively during runtime:
 
@@ -202,7 +215,6 @@ Android.mk
    # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    # See the License for the specific language governing permissions and
    # limitations under the License.
-
 
    LOCAL_PATH := $(call my-dir)
 

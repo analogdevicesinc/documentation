@@ -24,12 +24,11 @@ Functional Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/11253-001.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    *Figure 1.*
-
 
 Pin Configurations
 ------------------
@@ -38,13 +37,9 @@ Pin Configurations
 
    |image1|\
 
-
-
 .. container:: column
 
    |image2|\
-
-
 
 .. container:: column
 
@@ -55,8 +50,6 @@ Pin Configurations
 
    
 
-
-
 .. container:: column
 
    
@@ -65,8 +58,6 @@ Pin Configurations
       \ *Figure 3. 16-Lead TSSOP*
 
    
-
-
 
 \*\* Table 1. Function Descriptions for Quick Start \*\*
 
@@ -111,7 +102,7 @@ Input Shift Register Contents
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/11253-044.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: CENTERALIGN
 
@@ -163,13 +154,11 @@ Simple Write: Example 1
 
    To update Channel A, write the following over the serial interface: 0001 0001 1000000000000000 (four command bits, four address bits, 16 data bits for the :adi:`ad5697r`). This updates Channel A to midscale. GAIN = 1, V\ :sub:`OUT`\ A = 1.25 V.
 
-
    |image3|
 
 .. container:: CENTERALIGN
 
    \ *Figure 5. Simple Write—Update Channel A*\
-
 
 Simple Write: Example 2
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -178,21 +167,19 @@ Simple Write: Example 2
 
    To update both Channel A and Channel B, write the following over the serial interface: 0001 1001 1000000000000000. This updates both channels to full scale. GAIN = 1, V\ :sub:`OUT`\ B = 2.5 V, V\ :sub:`OUT`\ A = 2.5 V.
 
-
    |image4|
 
 .. container:: CENTERALIGN
 
    \ *Figure 7. Simple Write—Update Channel A and Channel B*\
 
-
 --------------
 
 I\ :sup:`2`\ C refers to a communications protocol originally developed by Philips Semiconductors (now NXP Semiconductors).
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/11253-003.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/quick-start/11253-004.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/quick-start/example_1.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/quick-start/example_2.png

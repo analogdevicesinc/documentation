@@ -20,12 +20,16 @@ Varaints
 Description
 -----------
 
-The Single Volume Shared block controls level of the signal through slider. This block has single volume control for 'N' number of inputs. Connect an input signal and control its level with the slider. Optionally the slew rate can be adjusted in the range 1 to 23.
+The Single Volume Shared block controls level of the signal through slider. This
+block has single volume control for 'N' number of inputs. Connect an input
+signal and control its level with the slider. Optionally the slew rate can be
+adjusted in the range 1 to 23.
 
 Usage
 -----
 
-To modify the slider settings, right click on the slider control to customize the max/min and step size for slider.
+To modify the slider settings, right click on the slider control to customize
+the max/min and step size for slider.
 
 Targets Supported
 -----------------
@@ -116,5 +120,3 @@ tc       = 0.04 \* Math.Pow(2, (\_slewRate - 1)) / 1000
 alpha    = Math.Exp(-1 / (tc \* FS))
 om_alpha = 1 - alpha
 ======== ==============================================
-
-

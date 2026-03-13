@@ -50,8 +50,9 @@ The source code for the LTC6953 driver can be found here:
    -  :git-no-OS:`Implementation of LTC6953 Driver <drivers/frequency/ltc6953/ltc6953.c>`
    
 
-
-The LTC6953 driver also uses the ADI utility library, so make sure you add the necessary files to your project. The source code for the utility library can be found here:
+The LTC6953 driver also uses the ADI utility library, so make sure you add the
+necessary files to your project. The source code for the utility library can be
+found here:
 
 .. admonition:: Download
    :class: download
@@ -61,10 +62,11 @@ The LTC6953 driver also uses the ADI utility library, so make sure you add the n
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
+To use the LTC6953 No-OS Driver, you need to provide the specific implementation
+for the communication APIs as well as the specific data types to be used.
 
-To use the LTC6953 No-OS Driver, you need to provide the specific implementation for the communication APIs as well as the specific data types to be used.
-
-If SPI communication is chosen, these are the three functions to be called by the LTC6953 driver and have to be implemented:
+If SPI communication is chosen, these are the three functions to be called by
+the LTC6953 driver and have to be implemented:
 
 .. container:: center box
 
@@ -80,7 +82,6 @@ If SPI communication is chosen, these are the three functions to be called by th
    +--------------------------------+---------------------------------------------+
    
 
-
 And these are the two data types that have to be defined:
 
 .. container:: center box
@@ -95,8 +96,9 @@ And these are the two data types that have to be defined:
    +--------------------------+---------------------------------------------------------+
    
 
-
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using, can
+be found below:
 
 .. admonition:: Download
    :class: download
@@ -105,11 +107,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
 
-
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and can be accessed in these links:
 
 .. admonition:: Download
    :class: download
@@ -119,14 +121,14 @@ Source code documentation for the driver is automatically generated using the Do
    -  `LTC6953 Source file <http://analogdevicesinc.github.io/no-OS/doxygen/ltc6953_8c.html>`_
    
 
-
 Device Configuration
 --------------------
 
 Driver Initialization
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use the device, you need to provide the support for the communication protocol (SPI) as mentioned above.
+To use the device, you need to provide the support for the communication
+protocol (SPI) as mentioned above.
 
 The first API function to be called is **ltc6953_init**. Make sure that it returns 0, this indicates a successful driver initialization.
 
@@ -145,7 +147,6 @@ To reset the device, you may use below function:
    ================= ===========================================
    
 
-
 Power Mode Options
 ~~~~~~~~~~~~~~~~~~
 
@@ -162,7 +163,6 @@ To set the power mode of the device, you may use the following functions:
    **ltc6953_power_down**     sets power mode of a specified channel
    ========================== ======================================
    
-
 
 Synchronization Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -181,7 +181,6 @@ To configure the synchronization, you may use the following functions:
    ======================= ===============================
    
 
-
 Output Channels Configuration
 -----------------------------
 
@@ -195,7 +194,10 @@ The 11 independent, identical output dividers are driven directly from the input
 Channel Delays
 ~~~~~~~~~~~~~~
 
-Synchronization allows the start times of each output divider to be delayed by the value programmed into the digital delay bits (DDELx). The analog delay blocks (ADELx) are useful in trimming signal timing differences caused by non-ideal PCB routing.
+Synchronization allows the start times of each output divider to be delayed by
+the value programmed into the digital delay bits (DDELx). The analog delay
+blocks (ADELx) are useful in trimming signal timing differences caused by
+non-ideal PCB routing.
 
 .. container:: center box
 
@@ -207,7 +209,6 @@ Synchronization allows the start times of each output divider to be delayed by t
    **ltc6953_set_analog_delay**  sets analog delay of output channel
    ============================= ====================================
    
-
 
 Channel SYNC Enable
 ~~~~~~~~~~~~~~~~~~~
@@ -231,7 +232,6 @@ Can be configured when output channel's SRQEN bit is set to 1. Use function **lt
    3    2\*SYSCT Pulses
    ==== ====================
    
-
 
 Channel Output Inversion
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -323,4 +323,4 @@ Example Initialization Using Maxim SDK as Platform
    }
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ltc6953top-web.png
-   :width: 400px
+   :width: 400

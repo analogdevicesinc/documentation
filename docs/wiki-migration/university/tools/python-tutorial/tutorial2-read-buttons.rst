@@ -4,21 +4,34 @@ Activity: Reading Push Button Switches, For ADALM1000
 Objective:
 ----------
 
-Push buttons as well as other types of switches provide a simple way for users to interact with and control a physical device and are found in most electronic devices (for example the on/off button on your computer or tablet). In this activity you will learn how to detect when a button is pressed and then modify the code to count the number of times the button is pressed.
+Push buttons as well as other types of switches provide a simple way for users
+to interact with and control a physical device and are found in most electronic
+devices (for example the on/off button on your computer or tablet). In this
+activity you will learn how to detect when a button is pressed and then modify
+the code to count the number of times the button is pressed.
 
 Common Notes:
 -------------
 
-As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The blue shaded rectangles indicate connections to the M1000 digital I/O connector.
+As in all the ALM labs we use the following terminology when referring to the
+connections to the M1000 connector and configuring the hardware. The green
+shaded rectangles indicate connections to the M1000 analog I/O connector. The
+blue shaded rectangles indicate connections to the M1000 digital I/O connector.
 
-The digital I/O channel pins are referred to as D0 through D3. These correspond to the pins labeled PIO 0 - PIO 3 on the ALM1000 board silkscreen.
+The digital I/O channel pins are referred to as D0 through D3. These correspond
+to the pins labeled PIO 0 - PIO 3 on the ALM1000 board silkscreen.
 
-The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.
+The analog I/O channel pins are referred to as CA and CB. When configured to
+force voltage / measure current -V is added as in CA-V or when configured to
+force current / measure voltage -I is added as in CA-I. When a channel is
+configured in the high impedance mode to only measure voltage -H is added as
+CA-H.
 
 Background:
 ~~~~~~~~~~~
 
-Through Python we can get the input state of any or all of the general purpose digital pins on the ALM1000.
+Through Python we can get the input state of any or all of the general purpose
+digital pins on the ALM1000.
 
 To get an input state:
 
@@ -32,7 +45,8 @@ To get an input state:
    # get state of PIO0
    Pio0 = devx.ctrl_transfer(0xc0, 0x91, PIO_0, 0, 0, 1, 100)
 
-The value after 0x91 is the number of the I\\O pin. The rest of the values are the always the same and should not be changed.
+The value after 0x91 is the number of the I\\O pin. The rest of the values are
+the always the same and should not be changed.
 
 Materials:
 ~~~~~~~~~~
@@ -42,15 +56,14 @@ ADALM1000 hardware module 4 - Tactile push button switches 4 - 1 KΩ resistors
 Directions:
 ~~~~~~~~~~~
 
-On your solder-less breadboard connect the four digital I/O pins from the ADALM1000 digital connector to read back the four switches as shown in figure 1.
-
+On your solder-less breadboard connect the four digital I/O pins from the
+ADALM1000 digital connector to read back the four switches as shown in figure 1.
 
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Switches connected to digital inputs
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -64,17 +77,20 @@ Open the read_buttons.py Python program (from `read_buttons.zip <https://wiki.an
 
 .. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial2_f2.png
    :align: center
-   :width: 200px
+   :width: 200
 
 Questions:
 ~~~~~~~~~~
 
-Can you think of any other program techniques to detect which of the switches is being pressed? Can you think of ways to read back the state of more than 4 switches?
+Can you think of any other program techniques to detect which of the switches is
+being pressed? Can you think of ways to read back the state of more than 4
+switches?
 
 Challenges:
 ~~~~~~~~~~~
 
-Combine the LED and push button programs to turn on and off two LEDs based on which of two buttons are pressed.
+Combine the LED and push button programs to turn on and off two LEDs based on
+which of two buttons are pressed.
 
 **For Further Reading:**
 
@@ -83,4 +99,4 @@ Combine the LED and push button programs to turn on and off two LEDs based on wh
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial2_f1.png
-   :width: 500px
+   :width: 500

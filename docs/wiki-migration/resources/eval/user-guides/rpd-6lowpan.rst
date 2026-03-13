@@ -5,7 +5,7 @@ Analog Devices offers Rapid RapidNet IP Protocol—a long range sub-GHz wireless
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rpd-6lowpan/rapid-6lowpan-network-topology.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Features and Specification
 --------------------------
@@ -14,7 +14,8 @@ Features and Specification
 
    -   Low power IEEE802.15.4g/e wireless network with time synchronized channel hopping (TSCH)—no collisions and no lengthy receive waits
 
-      -  Lowest power consumption per node with star and extended star network topology configuration.
+      -  Lowest power consumption per node with star and extended star network
+         topology configuration.
 
          -  Reliable end-to-end communications with acknowledgements
 
@@ -47,7 +48,8 @@ Features and Specification
 -  FCC and ARIB STD T108 regulation test feature support integrated
 -  Supports OTA (over-the-air) update
 -  Reliable scheduling of alert messages from any or all motes
--  Gateway software available for Linux® or ADuCM4050 with various backhaul connectivity options
+-  Gateway software available for Linux® or ADuCM4050 with various backhaul
+   connectivity options
 
 Evaluation Kit
 --------------
@@ -56,7 +58,8 @@ Below are the different kits available for evaluating Rapid-6LoWPAN.
 
 -  EV-RAPDID-ESL-900Z - RapidNet IP Evaluation Kit for all the regions except Japan.
 -  EV-RAPDID-ESL-900JZ -RapidNet IP Evaluation kit with TELEC Certification specific for Japan.
--  EV-RAPDID-NODE-900Z- Electronic Shelf Labelling node which should be ordered only if more nodes are required during the evaluation of EV-RAPID-ESL-900Z.
+-  EV-RAPDID-NODE-900Z- Electronic Shelf Labelling node which should be ordered
+   only if more nodes are required during the evaluation of EV-RAPID-ESL-900Z.
 
 Below are the kit contents.
 

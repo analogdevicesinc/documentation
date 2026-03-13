@@ -3,12 +3,15 @@ Driver Installation for On-board Debugger (CMSIS DAP)
 
 MCU Cog has an on-board debugger which supports the `ARM CMSIS DAP <https://developer.mbed.org/handbook/CMSIS-DAP>`_ interface. When connecting up the EV-COG-AD3029LZ to your computer or laptop, all the necessary drivers are automatically located and loaded up when using Windows operating systems.
 
-There are two sets of drivers that get installed on your computer depending on which mode of operation the EV-COG-AD3029LZ emulator comes up.
+There are two sets of drivers that get installed on your computer depending on
+which mode of operation the EV-COG-AD3029LZ emulator comes up.
 
 .. important::
 
-   It is important to ensure that all drivers are installed, before trying to use the EV-COG-AD3029LZ with the CrossCore Embedded Tools. So when you see that the drivers are being installed in the task bar, open it up and wait till everything finished before progressing.
-
+   It is important to ensure that all drivers are installed, before trying to
+   use the EV-COG-AD3029LZ with the CrossCore Embedded Tools. So when you see
+   that the drivers are being installed in the task bar, open it up and wait
+   till everything finished before progressing.
 
 | |image1|
 | |image2|
@@ -16,58 +19,75 @@ There are two sets of drivers that get installed on your computer depending on w
 DAPLINK Drive
 -------------
 
-When the EV-COG-AD3029LZ emulator is connected to the ADuCM3029 and ready for program/debug mode, the "DAPLINK" drive is displayed on your computer.
+When the EV-COG-AD3029LZ emulator is connected to the ADuCM3029 and ready for
+program/debug mode, the "DAPLINK" drive is displayed on your computer.
 
-This mode allows users to drag and drop (or copy and paste) a .BIN or .HEX [Intel formatted] file directly into the DAPLINK drive, and that file will be flashed directly to the ADuCM3029. This means you don't have to use the tools or the debugger to program your board, making this very useful in production releases or updating applications already in the field.
+This mode allows users to drag and drop (or copy and paste) a .BIN or .HEX
+[Intel formatted] file directly into the DAPLINK drive, and that file will be
+flashed directly to the ADuCM3029. This means you don't have to use the tools or
+the debugger to program your board, making this very useful in production
+releases or updating applications already in the field.
 
--  The PC will start searching for and install the following drivers:(if not already complete)
+-  The PC will start searching for and install the following drivers:(if not
+   already complete)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/device_drivers_install_complete.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Then go to the **My Computer** view and search for the DAPLINK drive, if you see this then the drivers are complete and correct.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/daplink_windows_explorer.png
    :align: center
-   :width: 550px
+   :width: 550
 
--  After that simply drag and drop (or copy and paste) your .BIN or .HEX [Intel formatted] file to the DAPLINK drive, and your EV-COG-AD3029LZ board will be programmed.
+-  After that simply drag and drop (or copy and paste) your .BIN or .HEX [Intel
+   formatted] file to the DAPLINK drive, and your EV-COG-AD3029LZ board will be
+   programmed.
 
    -  Your Windows Explorer browser will close automatically
 
 -  You will need to press the RST button in order for the program to update
 
-   -  Alternatively you could unplug the micro USB cable from the USB port (P5) of the EV-COG-AD3029LZ, and then reconnect it.
+   -  Alternatively you could unplug the micro USB cable from the USB port (P5)
+      of the EV-COG-AD3029LZ, and then reconnect it.
 
 Maintenance Drive
 -----------------
 
-When the EV-COG-AD3029LZ emulator is connected to the MK20DX128VFM5 (by holding down the "RST" button while connecting the USB port (P5) to the PC/laptop) the "Maintenance" drive is displayed on your computer. This mode allows a user to overwrite the ADuCM0329 interface file within the emulator. This allows for patches and updates to the firmware on the emulator.
+When the EV-COG-AD3029LZ emulator is connected to the MK20DX128VFM5 (by holding
+down the "RST" button while connecting the USB port (P5) to the PC/laptop) the
+"Maintenance" drive is displayed on your computer. This mode allows a user to
+overwrite the ADuCM0329 interface file within the emulator. This allows for
+patches and updates to the firmware on the emulator.
 
--  The PC will start searching for and install the following drivers:(if not already complete)
+-  The PC will start searching for and install the following drivers:(if not
+   already complete)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/device_drivers_install_maintenance.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Then go to the **My Computer** view and search for the Maintenance drive, if you see this then the drivers are complete and correct.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/maintenance_windows_explorer.png
    :align: center
-   :width: 550px
+   :width: 550
 
--  After that simply drag and drop (or copy and paste) the latest interface file to the Maintenance drive, and your EV-COG-AD3029LZ board will be updated with the latest interface file.
+-  After that simply drag and drop (or copy and paste) the latest interface file
+   to the Maintenance drive, and your EV-COG-AD3029LZ board will be updated with
+   the latest interface file.
 
    -  Your Windows Explorer browser will close automatically
 
--  Unplug the micro USB cable from the USB port of the EV-COG-AD3029LZ, and then reconnect the USB cable to the USB port to “reboot” the board.
+-  Unplug the micro USB cable from the USB port of the EV-COG-AD3029LZ, and then
+   reconnect the USB cable to the USB port to “reboot” the board.
 
 *End of Document*
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/device_drivers_install_notification.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/device_drivers_install.png
-   :width: 400px
+   :width: 400

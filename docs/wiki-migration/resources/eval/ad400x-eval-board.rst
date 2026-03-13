@@ -18,13 +18,13 @@ The EVAL-ADAQ40xx is an evaluation board for the ADAQ4003 8-Bit, 2 MSPS, μModul
 
    For more informations about hardware specifications, see the :adi:`EVAL-ADAQ40xx Evaluation Board <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADAQ40xx.html>` page.
 
-
 Features
 --------
 
 -  Fully featured Pmod evaluation board with a Pmod to FMC interposer board
 -  Versatile analog signal conditioning circuitry
--  On-board reference and ADC drivers with additional test points for external reference input
+-  On-board reference and ADC drivers with additional test points for external
+   reference input
 
 Linux Supported Platforms
 -------------------------
@@ -60,7 +60,6 @@ Alternatively, you can use long PCB header pins to adapt :adi:`ADALM2000` female
 .. container:: centeralign
 
    |image1| |image2|
-
 
 The :adi:`EVAL-ADAQ40xx` configuration mesaures (IN+ - IN-) as (J2 - J1). Connect :adi:`ADALM2000` W1 to :adi:`EVAL-ADAQ40xx` J1, :adi:`ADALM2000` W2 to J2, and :adi:`EVAL-ADAQ40xx` J1, J2 outer connectors to :adi:`ADALM2000` GND. With that, :adi:`ADAQ4003` readings will convert :adi:`ADALM2000` W2 - W1 which we will configure in Scopy as CH2 - CH1.
 
@@ -105,7 +104,9 @@ Install Kuiper Linux to the SD card. Step by step guides for imaging :doc:`Kuipe
 Configuring the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Linux support for ADAQ4003 and similar ADC devices was introduced in January 2024 so any Linux Kuiper release after that date will have support for ADAQ4003 built in.
+Linux support for ADAQ4003 and similar ADC devices was introduced in January
+2024 so any Linux Kuiper release after that date will have support for ADAQ4003
+built in.
 
 If using older Kuiper releases, no **zynq-coraz7s-adaq4003** or no **zynq-zed-adv7511-ad4020** directory is available, use one of the set of boot files below or follow the next subsections to get BOOT.BIN, uImage, and devicetree.dtb files.
 
@@ -204,7 +205,9 @@ Analog Devices :adi:`ADAQ4003` can be easily managed with :doc:`IIO Oscilloscope
 
 .. image:: https://wiki.analog.com/_media/resources/eval/iio_osc_conn_adaq4003.gif
 
-Users can inspect ADAQ4003 attributes such as the sampling frequency in the Debug tab. Edit the value field then click the write button to change ADAQ4003 parameters.
+Users can inspect ADAQ4003 attributes such as the sampling frequency in the
+Debug tab. Edit the value field then click the write button to change ADAQ4003
+parameters.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/iio_osc_adaq4003_attr.gif
 
@@ -212,11 +215,15 @@ Users can inspect ADAQ4003 attributes such as the sampling frequency in the Debu
 
 .. image:: https://wiki.analog.com/_media/resources/eval/iio_osc_adaq4003_buff.gif
 
-The next example shows the effect of increasing the sample rate on characterizing a waveform. We set W1 as a 20 KHz square wave and W2 as a 200 KHz sine wave. At 1MSPS, we can barely see what happens when the square wave transitions from low to high. At 2MSPS, the resulting waveform is much clearer and the transition effect that happens from square wave low to high is clear.
+The next example shows the effect of increasing the sample rate on
+characterizing a waveform. We set W1 as a 20 KHz square wave and W2 as a 200 KHz
+sine wave. At 1MSPS, we can barely see what happens when the square wave
+transitions from low to high. At 2MSPS, the resulting waveform is much clearer
+and the transition effect that happens from square wave low to high is clear.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/iio_osc_adaq4003_buff_2msps.gif
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/m2k_probe_adapt.jpg
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/adaq4003_input_adapt.jpg
-   :width: 200px
+   :width: 200

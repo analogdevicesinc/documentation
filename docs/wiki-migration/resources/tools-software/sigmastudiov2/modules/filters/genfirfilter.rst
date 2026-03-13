@@ -9,7 +9,8 @@ General FIR Filter
 Description
 -----------
 
-The General FIR Filter block gives access to a below Filter type algorithms and Window types:
+The General FIR Filter block gives access to a below Filter type algorithms and
+Window types:
 
 ::
 
@@ -27,7 +28,9 @@ The General FIR Filter block gives access to a below Filter type algorithms and 
 Usage
 -----
 
-To open the filter control window, click on the icon button. Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+To open the filter control window, click on the icon button. Select the desired
+filter type from the drop-down combo-box list. The filter controls and the icon
+button image will change to reflect the selected filter type.
 
 Targets Supported
 -----------------
@@ -58,5 +61,3 @@ Name    Type  Description
 ======= ===== ================
 Output0 Audio Output channel 0
 ======= ===== ================
-
-

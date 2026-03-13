@@ -17,15 +17,15 @@ The :adi:`EVAL-ADuCM360 Development System <EVAL-ADuCM360>` allows evaluation of
 
 This guide works as a tutorial by providing a step-by-step account of how to download evaluation versions of third-party software tools. Instructions are provided on how to load code examples that are supplied on the FTP site. These examples demonstrate simple operation of the :adi:`ADuCM360`.
 
-Working through this guide brings the user to the stage where they can start to generate and download their own user code for use in their own unique end-system requirements.
-
+Working through this guide brings the user to the stage where they can start to
+generate and download their own user code for use in their own unique end-system
+requirements.
 
 |EVAL-ADuCM360 Development System Connected to Analog Devices, inc. J-Link OB Emulator|
 
 .. container:: centeralign
 
    \ *Figure 1.* :adi:`EVAL-ADuCM360 Development System <EVAL-ADuCM360>` *Connected to Analog Devices, inc. J-Link OB Emulator*\
-
 
 Development System Contents
 ---------------------------
@@ -46,8 +46,10 @@ The :adi:`EVAL-ADuCM360QSPZ <EVAL-ADuCM360>` mini-board facilitates performance 
 J-LINK OB Emulator
 ~~~~~~~~~~~~~~~~~~
 
-The J-Link OB emulator provides nonintrusive emulation via a serial wire, and also provides supply and UART communication with the ADuCM360 mini-board. Figure 2 shows a top view of the emulator board. J2 connector plugs into the ADuCM360mini board. The J2 connector pinout is shown in Figure 3.
-
+The J-Link OB emulator provides nonintrusive emulation via a serial wire, and
+also provides supply and UART communication with the ADuCM360 mini-board. Figure
+2 shows a top view of the emulator board. J2 connector plugs into the
+ADuCM360mini board. The J2 connector pinout is shown in Figure 3.
 
 |Emulator Top View|
 
@@ -55,13 +57,11 @@ The J-Link OB emulator provides nonintrusive emulation via a serial wire, and al
 
    \ *Figure 2. Emulator Top View*\
 
-
    |J2 Connector|
 
 .. container:: centeralign
 
    \ *Figure 3. J2 Connector*\
-
 
 For downloading and debugging, LK1, LK2, LK4, and LK6 must be inserted. LK3 and LK5 are required to communicate via UART. Required software for the J-Link OB is included in the software installation. Note that the J-Link OB emulator replaces the J-Link Lite and related interface boards previously shipped with the :adi:`ADuCM360 development system <EVAL-ADuCM360>`.
 
@@ -97,22 +97,24 @@ The table below shows the tools provided.
 Software Installation Instructions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Perform the steps described in this section before plugging in any of the USB devices into the PC.
+Perform the steps described in this section before plugging in any of the USB
+devices into the PC.
 
 -  Close all open applications.
 -  Download and install the latest version of Keil μVision 5 MDK-ARM or IAR Embedded Workbench for ARM, as preferred.
 -  Download and install the ADuCM36x Software Pack. See :doc:`Installing ADuCM36x Software Pack </wiki-migration/resources/eval/user-guides/eval-aducm360-user-guide/installing_aducm36x_software_pack>`
 -  Download and install the `J-Link Software and Documentation Pack <https://www.segger.com/downloads/jlink/>`_. This installs the J-Link serial port driver. Keep the default settings that appear in the next Segger messages windows.
 
-The Segger J-Link software is selected by default in the installation menu and it is advised to leave it selected. This automatically installs the K-Link serial port driver (keep the default settings that appear in the next Segger messages windows).
-
+The Segger J-Link software is selected by default in the installation menu and
+it is advised to leave it selected. This automatically installs the K-Link
+serial port driver (keep the default settings that appear in the next Segger
+messages windows).
 
 |Installing Segger J-Link Software|
 
 .. container:: centeralign
 
    \ *Figure 5. Installing Segger J-Link Software*\
-
 
 Although the Keil™ software can be installed onto any hard drive and into any directory, for the purposes of simplicity, this user guide assumes it is installed at the default location of **C:\\keil_v5**, and the ARM packs are installed in **C:\\Users\\<user>\\AppData\\Local\\Arm\\Packs**
 
@@ -127,13 +129,11 @@ The software described in this section has now been copied or installed.
 
 **Driver** The J-Link OB emulator requires a driver, which is installed automatically when the Segger J-Link Software is selected (see Step 4 of the :doc:`Software Installation Instructions </wiki-migration/resources/eval/user-guides/eval-aducm360-user-guide>` section). At this point, check that the driver is installed correctly. Plug in the emulator and check the device manager (see Figure 6). Check that it appears in the Windows Device Manager in both the communications port and the USB controllers lists.
 
-
 |Device Manager|
 
 .. container:: centeralign
 
    \ *Figure 6. Device Manager*\
-
 
 Keil μVision5 Integrated Development Environment
 ------------------------------------------------
@@ -156,7 +156,8 @@ From the **Start Menu**, choose **Keil μVision5**. This loads the μVision5 IDE
 -  Select the **Examples** tab on the right
 -  Click on **Copy** on the **RTD_Demo** Example (Figure 8)
 -  Select the path where you want the example code to be copied. For example: **C:\\Analog Devices\\ADuCM36x**. Leave **Use Pack Folder Structure** and **Launch μVision** selected and click **OK**
--  Once the example has been copied, a new instance of Keil μVision5 with the example project opens. (Figure 9)
+-  Once the example has been copied, a new instance of Keil μVision5 with the
+   example project opens. (Figure 9)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_package_installer.png
    :align: center
@@ -165,20 +166,17 @@ From the **Start Menu**, choose **Keil μVision5**. This loads the μVision5 IDE
 
    \ *Figure 7. Opening Keil Package Installer*\
 
-
    |image1|
 
 .. container:: centeralign
 
    \ *Figure 8. Copying an example into a new project*\
 
-
    |image2|
 
 .. container:: centeralign
 
    \ *Figure 9. RTD Example Project*\
-
 
 -  To compile and build all files, select the **Build All** icon.
 
@@ -194,7 +192,6 @@ From the **Start Menu**, choose **Keil μVision5**. This loads the μVision5 IDE
 
    \ *Figure 10. Build Output*\
 
-
 -  To download the code to the :adi:`EVAL-ADuCM360MKZ <eval-aducm360>` board and begin a debug session, connect the K-Link OB emulator to the :adi:`EVAL-ADuCM360MKZ <eval-aducm360>` mini-board and to your PC using the provided USB cable.
 -  In μVision, click the **Start/Stop Debug** session icon.
 
@@ -205,12 +202,11 @@ From the **Start Menu**, choose **Keil μVision5**. This loads the μVision5 IDE
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_debug.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 10. Debug Source Code*\
-
 
 Extra Optional Details on Keil μVision
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -239,34 +235,31 @@ Starting a project
 
    *Project Menu*
 
-
 -  Create a new folder (**ADIDemo**). To do so, go to **C:\\Analog Devices\\ADuCM36x\\ADIDemo** and enter **Demo** as the project name.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_new_project_name.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  In the **Select Device for Target 'Target 1'** window, select **Software Packs** and select **ADuCM360**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_select_device.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    *Select Device*
 
-
 -  In the **Manage Run-Time Environment** select the desired drivers to import to the project. For our example, select **CMSIS -> CORE**, **Device -> Startup**, and all the drivers in **Device -> Drivers**, and click **OK**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_manage_runtime.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    *Manage Run-Time Environment*
-
 
 -  In the project window, right-click on **Target1** and select **Options for Target 'Target1...'**
 
@@ -282,7 +275,6 @@ Starting a project
 
    *Target Options*
 
-
 -  Select the **Linker** tab and then select **Use Memory Layout from Target Dialog**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_linker.png
@@ -291,7 +283,6 @@ Starting a project
 .. container:: centeralign
 
    *Linker Options*
-
 
 -  In the **Output** tab, serlect **Create HEX File**. The hex file can be used by the JLINK Commander. Then select **OK**.
 
@@ -302,8 +293,10 @@ Starting a project
 
    *Output Options*
 
-
--  Connect the emulator to the ADuCM360 mini-board and to your PC's USB port using a USB cable. Note that an LED on the J-Link OB emulator blinks several times before staying on, indicating that the emulator is communicating correctly with the PC.
+-  Connect the emulator to the ADuCM360 mini-board and to your PC's USB port
+   using a USB cable. Note that an LED on the J-Link OB emulator blinks several
+   times before staying on, indicating that the emulator is communicating
+   correctly with the PC.
 
 Configuring the J-Link Debugger Driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -318,7 +311,6 @@ Configuring the J-Link Debugger Driver
 
    Selecting a debugger// //
 
-
 -  Configure the **Cortex JLink/JTrace Target Driver Setup** window as in the following picture:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_jlink_driver.png
@@ -327,7 +319,6 @@ Configuring the J-Link Debugger Driver
 .. container:: centeralign
 
    J-Link Target Driver Setup// //
-
 
 -  Select **OK**
 -  Under the **Utilities** tab, select **Use Target Driver for Flash Programming**. Then, select **Use Debug Driver** and select the option **Update Target before Debugging**.
@@ -339,7 +330,6 @@ Configuring the J-Link Debugger Driver
 
    Configuration of the Utilities Menu// //
 
-
 -  Click on **Settings**, and check that the **Flash Download** tab is configured as the following picture:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_flash_download.png
@@ -349,13 +339,14 @@ Configuring the J-Link Debugger Driver
 
    Flash Download Setup// //
 
-
 -  Select **OK**. All the options should be properly configured to compile, assemble, download and debug using J-Link Lite.
 
 Adding Project Files
 ^^^^^^^^^^^^^^^^^^^^
 
-At this point you can create and add your source code files necessary for your development. For this example, we are adding the main source file of an example project.
+At this point you can create and add your source code files necessary for your
+development. For this example, we are adding the main source file of an example
+project.
 
 Copy the file **C:\\Users\\rgrau\\AppData\\Local\\Arm\\Packs\\AnalogDevices\\ADuCM36x_DFP\\1.0.4\\Examples\\ADC\\ADCMeter.c** into the new project directory: **C:\\Analog Devices\\ADuCM36x\\ADIDemo**
 
@@ -368,7 +359,6 @@ Copy the file **C:\\Users\\rgrau\\AppData\\Local\\Arm\\Packs\\AnalogDevices\\ADu
 
    Adding existing files to the project// //
 
-
 -  Add the file **ADCMeter.c**
 -  Double click on **ADCMeter.c** in the **Project** window to open the file.
 
@@ -379,13 +369,11 @@ To compile/link ADCMeter.c, press **Ctrl+F7** or click on the **translate** icon
 
 Before the code can be downloaded to the ADuCM360, the entire project must be build. This is done by clicking on the **Rebuild** icon on the toolbar. It will also create a demo.elf file used by the debugger.
 
-
 |image3|
 
 .. container:: centeralign
 
    Build Project Successful// //
-
 
 The code can now be downloaded into the ADuCM360 clicking on the **Load** icon in the toolbar. Press the **Reset** button on the board, and the code starts running on the ADuCM360. The program measures the input signal applied across AIN0 and AIN1, converts this to a voltage, and sends this information in an ASCII string to the UART - baud rate 9600-8-N-1.
 
@@ -407,7 +395,8 @@ From the **Start Menu**, choose **IAR Embedded Workbench for ARM -> IAR EW For A
 Quick Start Steps
 ~~~~~~~~~~~~~~~~~
 
-Follow the steps in this section to get up and running with the example code provided with the evaluation software.
+Follow the steps in this section to get up and running with the example code
+provided with the evaluation software.
 
 These steps use the default driver and compiler settings.
 
@@ -416,45 +405,44 @@ These steps use the default driver and compiler settings.
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_cmsis_button.png
    :align: center
 
--  A prompt to create a new Workspace will appear. Select the desired Folder and name to save it. (Figure 11)
+-  A prompt to create a new Workspace will appear. Select the desired Folder and
+   name to save it. (Figure 11)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_workspace.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 11. Creation of a new Workspace*\
 
-
 -  The CMSIS Manager will launch. Select the **Devices** tab, and search for **aducm** in the **Search Device** bar. Select **ADuCM360**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_device_select.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  With the **ADuCM360** device selected, change to the **Examples** tab. Import the desired example, for example **RTD_DEMO**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_import_example.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  The example is imported into the workspace, as can be seen in Figure 12.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_example.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 12. RTD_Demo example*\
 
-
 -  To compile all files, select **Project -> Rebuild All**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_rebuild.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  If the Build is successful, the information is displayed in the **Build** details window.
 
@@ -465,7 +453,7 @@ These steps use the default driver and compiler settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_program.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Downloading Code into Flash
 ---------------------------
@@ -475,7 +463,8 @@ Windows Serial Downloader
 
 The Windows(r) Serial DOwnloader for Cortex-M3 based parts (CM3WSD) is a Windows software program that allows a user to serially download Intel Extended Hex files as created by the assembler/compiler to the :adi:`ADuCM360` via the serial port.
 
-The Intel Extended Hex file is downloaded into the on-chip Flash/EE program memory via a selected PC serial port.
+The Intel Extended Hex file is downloaded into the on-chip Flash/EE program
+memory via a selected PC serial port.
 
 Preparing for Download
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -498,7 +487,7 @@ Downloading using CM3WSD
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/cm3swd.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Running the Downloaded File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -511,7 +500,8 @@ Select **Reset** with P2.2 floating or pulled high. The monitor status box updat
 Manual Run Option
 """""""""""""""""
 
-Pull RESET low, then high (or float) on the mini-board to reset the ADuCM360 with P2.2 floating or pulled high. The program starts running automatically.
+Pull RESET low, then high (or float) on the mini-board to reset the ADuCM360
+with P2.2 floating or pulled high. The program starts running automatically.
 
 .. |EVAL-ADuCM360 Development System Connected to Analog Devices, inc. J-Link OB Emulator| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/board.png
 .. |Emulator Top View| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/emulator.png
@@ -520,5 +510,5 @@ Pull RESET low, then high (or float) on the mini-board to reset the ADuCM360 wit
 .. |Device Manager| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/drivers.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_copy_example.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/rtd_demo.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_build_successful.png

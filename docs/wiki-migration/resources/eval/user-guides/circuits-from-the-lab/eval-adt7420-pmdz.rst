@@ -3,28 +3,38 @@ EVAL-ADT7420-PMDZ Digital Temperature PMOD User Guide
 
 The :adi:`ADT7420` is a high accuracy digital temperature sensor offering breakthrough performance over a wide industrial range. It contains an internal band gap reference, a temperature sensor, and a 16-bit ADC to monitor and digitize the temperature to 0.0078°C resolution. By default, the ADC resolution is set to 13 bits (0.0625°C). The ADC resolution is a user-programmable and can be changed through the serial interface.
 
-The ADT7420 is guaranteed to operate over supply voltages from 2.7 V to 5.5 V. Operating at 3.3 V, the average supply current is typically 210 μA. This device also has a shutdown mode that powers down the device and offers a shutdown current of typically 2.0 μA at 3.3 V. The ADT7420 is rated for operation over the −40°C to +150°C temperature range.
+The ADT7420 is guaranteed to operate over supply voltages from 2.7 V to 5.5 V.
+Operating at 3.3 V, the average supply current is typically 210 μA. This device
+also has a shutdown mode that powers down the device and offers a shutdown
+current of typically 2.0 μA at 3.3 V. The ADT7420 is rated for operation over
+the −40°C to +150°C temperature range.
 
-Pin A0 and Pin A1 are available for address selection, giving the ADT7420 four possible I2C addresses. The CT pin is an open-drain output that becomes active when the temperature exceeds a programmable critical temperature limit. The INT pin is also an open-drain output that becomes active when the temperature exceeds a programmable limit. The INT pin and CT pin can operate in comparator and interrupt event modes.
+Pin A0 and Pin A1 are available for address selection, giving the ADT7420 four
+possible I2C addresses. The CT pin is an open-drain output that becomes active
+when the temperature exceeds a programmable critical temperature limit. The INT
+pin is also an open-drain output that becomes active when the temperature
+exceeds a programmable limit. The INT pin and CT pin can operate in comparator
+and interrupt event modes.
 
 For general board details and to buy a board, please visit the :adi:`EVAL-ADT7420-PMDZ` product page.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/adt7420/eval-adt7420-pmdz.png
    :align: center
-   :width: 350px
+   :width: 350
 
 Hardware
 --------
 
-This PMOD board is small in size with dimensions approximately 1 inch in width by 1 inch in length.
+This PMOD board is small in size with dimensions approximately 1 inch in width
+by 1 inch in length.
 
 Power Supply Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When using the EVAL-ADT7420-PMDZ, the 3.3 V power comes directly from the host board it is connected to. The power from the host is generally capable of providing up to 100 mA at 3.3 V, but for complete PMOD power specifications, please `click here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
-The fastest way to tell if the EVAL-ADT7420-PMDZ board is powered is by seeing if the on-board LED is illuminated. The LED can be found here on the board.
-
+The fastest way to tell if the EVAL-ADT7420-PMDZ board is powered is by seeing
+if the on-board LED is illuminated. The LED can be found here on the board.
 
 |image1|
 
@@ -33,7 +43,10 @@ Digital Interface (PMOD)
 
 The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
-The specific interface used for the EVAL-ADT7420-PMDZ boards is the extended I2C. In general ADI has adopted the extended I2C connector for all PMOD devices which have an I2C interface. It provides flexibility to add/daisy chain multiple I2C devices onto the same bus.
+The specific interface used for the EVAL-ADT7420-PMDZ boards is the extended
+I2C. In general ADI has adopted the extended I2C connector for all PMOD devices
+which have an I2C interface. It provides flexibility to add/daisy chain multiple
+I2C devices onto the same bus.
 
 ============= ============== ========
 P1 Pin Number Pin Function   Mnemonic
@@ -48,17 +61,20 @@ Pin 7         Digital Power  VDD
 Pin 8         Digital Power  VDD
 ============= ============== ========
 
-
-
 Jumper Configuration and Solder Links
 -------------------------------------
 
-The EVAL-ADT7420-PMDZ has some optional modes of operation to increase flexibility when using multiple EVAL-ADT7420-PMDZ boards in a single system and to help alert the Over/Under/Critical temperature readings. Each configuration is explained below.
+The EVAL-ADT7420-PMDZ has some optional modes of operation to increase
+flexibility when using multiple EVAL-ADT7420-PMDZ boards in a single system and
+to help alert the Over/Under/Critical temperature readings. Each configuration
+is explained below.
 
 ADT7420 I2C Address Selection Pins
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADT7420 can have up to 4 unique I2C device addresses, depending on the logic level of Pins A1 and A0. The default configuration for the EVAL-ADT7420-PMDZ is for A1 and A0 to be tied low, so the default I2C address is 0x48.
+The ADT7420 can have up to 4 unique I2C device addresses, depending on the logic
+level of Pins A1 and A0. The default configuration for the EVAL-ADT7420-PMDZ is
+for A1 and A0 to be tied low, so the default I2C address is 0x48.
 
 | |image2|
 | If you decide to change the I2C address, then you need to switch the position of the JP1 and JP2 solder links following the settings in the table below.
@@ -78,7 +94,10 @@ The ADT7420 can have up to 4 unique I2C device addresses, depending on the logic
 ADT7420 Over/Under/Critical Temperature Alerts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADT7420 has the capability of monitoring temperature and alerting users of Over/Under temperature conditions, as well as Critical temperature events. Access to these pins and functions are provided via the INT and CT connections on the board.
+The ADT7420 has the capability of monitoring temperature and alerting users of
+Over/Under temperature conditions, as well as Critical temperature events.
+Access to these pins and functions are provided via the INT and CT connections
+on the board.
 
 | |image3|
 | The temperatures are software-configurable, and all you need to do is monitor the INT (for Over/Under temp conditions) or CT (for Critical temp events) with respect to GND.
@@ -96,7 +115,13 @@ There are two device driver solutions that are provided for controlling the **EV
 
    -  The `ADT7420 Linux driver <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/hwmon/adt7x10.c>`_ is used in applications running the Linux operating system, typically on larger processors and SoC devices.
 
-      -  The ADT7420 Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
+      -  The ADT7420 Linux driver uses the Industrial Input/Output (IIO)
+         framework, greatly simplifying the development of application code via
+         the cross-platform Libiio library, which is written in C and includes
+         bindings for Python, MATLAB, C#, and other languages. Application code
+         can run directly on the platform board, communicating with the device
+         over the local backend, or from a remote host over the network or USB
+         backends.
 
 System Setup Using ADICUP3029
 -----------------------------
@@ -128,39 +153,44 @@ The following is the list of items needed in order to replicate this demo.
 .. note::
 
    
-   There are two basic ways to program the ADICUP3029 with the software for the ADT7420.
+   There are two basic ways to program the ADICUP3029 with the software for the
+   ADT7420.
    
    -  Dragging and Dropping the .Hex to the Daplink drive
    
-      -  Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+      -  Using the drag and drop method, the software is going to be a version
+         that Analog Devices creates for testing and evaluation purposes. This
+         is the EASIEST way to get started with the reference design.
    
    -  Building, Compiling, and Debugging using CCES
    
       -  Importing the project into :adi:`CrossCore Embedded Studio <en/design-center/evaluation-hardware-and-software/software/adswt-cces.html>` is going to allow you to change parameters and customize the software to your application, but will be a bit more advanced and will require you to download the CrossCore toolchain.
    
 
-
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Connect **EVAL-ADT7420-PMDZ** board at connector **P9** of the **EVAL-ADICUP3029**.
 
-2. Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029, and then connect it to a computer. The final setup should look similar to the picture below.
-
+2. Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029, and
+   then connect it to a computer. The final setup should look similar to the
+   picture below.
 
 |image4|
 
 3. Make sure the following switches are as shown from the table below.
 
-
 |switch_config.png|
 
-4. From your PC, open My Computer and look for the DAPLINK drive; if you see this, then the drivers are complete and correct.
-
+4. From your PC, open My Computer and look for the DAPLINK drive; if you see
+   this, then the drivers are complete and correct.
 
 |image5|
 
-3. Simply extract the provided .zip file. Once extracted, you will see the pre-built hex file for the ADT7420 demo. Then drag and drop this Hex file to the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red) LED will blink rapidly.
+3. Simply extract the provided .zip file. Once extracted, you will see the
+   pre-built hex file for the ADT7420 demo. Then drag and drop this Hex file to
+   the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red)
+   LED will blink rapidly.
 
 4. The DS2 will stop blinking and will stay ON once the programming is done.
 
@@ -216,7 +246,6 @@ Pin 7 and 8       VCCY_I2C
 
 The final setup should look similar below.
 
-
 |image6|
 
 3. Power up the **MAX32655FTHR** by connecting it to your laptop using a micro-USB cable.
@@ -229,7 +258,7 @@ The expected output viewed in the PuTTY is shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420_max32655-updated.png
    :align: center
-   :width: 400px
+   :width: 400
 
 MAX32650FTHR
 ~~~~~~~~~~~~
@@ -249,7 +278,6 @@ Pin 7 and 8       VCCY_I2C
 
 The final setup should look similar below.
 
-
 |image8|
 
 4. Power up the **MAX32650FTHR** by connecting it to your laptop using micro-USB. Connect **MAX32625PICO** to your laptop as well.
@@ -260,7 +288,6 @@ The final setup should look similar below.
 
 The expected output viewed in the PuTTY is shown below.
 
-
 |image9|
 
 System Setup Using EVAL-ADICUP360 (DEPRECATED)
@@ -270,8 +297,8 @@ The original software example for the EVAL-ADT7420-PMDZ was developed on the ADI
 
 .. note::
 
-   Note that the libiio, IIO Oscilloscope, and pyadi-iio sections below do NOT apply to this example.
-
+   Note that the libiio, IIO Oscilloscope, and pyadi-iio sections below do NOT
+   apply to this example.
 
 System Setup Using Raspberry Pi
 -------------------------------
@@ -322,18 +349,19 @@ To set up the circuit for evaluation, consider the following steps:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Connect the \*\* :adi:`EVAL-ADT7420-PMDZ` \*\* on the PMOD to Raspberry Pi Interposer board either via Port P3 or P4.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_with_rpi.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned SD card on the designated slot on the RPi.
 -  Connect the system to a monitor using an HDMI cable through the mini HDMI connector on the RPi.
 -  Connect a USB keyboard and mouse to the RPi through the USB ports.
--  Power on the RPi board by plugging in a 5 V power supply with a micro-USB connector. The final setup should look similar to the picture below.
+-  Power on the RPi board by plugging in a 5 V power supply with a micro-USB
+   connector. The final setup should look similar to the picture below.
 
 |resources-eval-user-guides-circuits-from-the-lab-adt7420-2.png|
 
@@ -343,19 +371,20 @@ Application Software (All Platforms)
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
-The Libiio is a library used for interfacing with IIO devices and is required to be installed on your computer.
+The Libiio is a library used for interfacing with IIO devices and is required to
+be installed on your computer.
 
 .. admonition:: Download
    :class: download
 
    Download and install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
-
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-ADT7420-PMDZ is attached. Two platforms are currently supported for the ADT7420: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the no-OS ADT7420 demo project. The user needs to supply a **URI**, which will be used in the context creation.
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to
+access it.
 
 For RPI Direct Local Access:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -377,8 +406,8 @@ Example:
 
 .. note::
 
-   Do note that the Windows machine and the RPI board should be connected to the same network in order for the machine to detect the device.
-
+   Do note that the Windows machine and the RPI board should be connected to the
+   same network in order for the machine to detect the device.
 
 For Windows machine connected to ADICUP3029:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -390,7 +419,10 @@ For Windows machine connected to ADICUP3029:
 Examples:
 
 -  In a Windows machine, you can check the port of your ADICUP3029 via Device Manager in the Ports (COM & LPT) section. If your device is in COM4, you have to use *iio_info -u serial:COM4* as your URI.
--  In a Unix-based machine, you will see it under the /dev/ directory in this format "ttyUSBn", where n is a number depending on how many serial USB devices are attached. If you see that your device is ttyUSB0, you have to use serial:/dev/ttyUSB0 as your URI.
+-  In a Unix-based machine, you will see it under the /dev/ directory in this
+   format "ttyUSBn", where n is a number depending on how many serial USB
+   devices are attached. If you see that your device is ttyUSB0, you have to use
+   serial:/dev/ttyUSB0 as your URI.
 
 IIO Commands
 ~~~~~~~~~~~~
@@ -417,7 +449,8 @@ The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libii
 
 Example:
 
--  To read the device ID (register = 0x02) of an ADT7420 interfaced via RPI from a Windows machine, enter the following code on the terminal:
+-  To read the device ID (register = 0x02) of an ADT7420 interfaced via RPI from
+   a Windows machine, enter the following code on the terminal:
 
 ::
 
@@ -430,28 +463,28 @@ IIO Oscilloscope
 
    Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
--  Press refresh to display available IIO Devices, once ADT7420 appeared, press connect.
+-  Press refresh to display available IIO Devices, once ADT7420 appeared, press
+   connect.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_iio_osc.png
    :alt: ADT7420 Oscilloscope Configuration
    :align: center
-   :width: 300px
+   :width: 300
 
 Debug Panel
 ^^^^^^^^^^^
 
-Below is the Debug panel of ADT7420 wherein you can directly access the device attributes.
-
+Below is the Debug panel of ADT7420 wherein you can directly access the device
+attributes.
 
 |ADT7420 Debug Panel|
 
 DMM Panel
 ^^^^^^^^^
 
-Access the DMM panel to see the instantaneous reading of the ADT7420 temperature reading.
-
+Access the DMM panel to see the instantaneous reading of the ADT7420 temperature
+reading.
 
 |ADT7420 DMM Panel|
 
@@ -474,14 +507,12 @@ At `line 38 of the example python script <https://github.com/analogdevicesinc/py
 
 Press enter and you will get these readings.
 
-
 |image10|
 
 .. admonition:: Download
    :class: download
 
    Github link for the Python sample script: :git-pyadi-iio:`ADT7420 Python Example <examples/adt7420_example.py>`
-
 
 More information and useful links
 ---------------------------------
@@ -505,7 +536,6 @@ Schematics, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Additional Information
 ----------------------
 
@@ -521,34 +551,33 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-ADT7420-PMDZ?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/adt7420/adt7420_power_led.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/adt7420/adt7420_i2c_layout.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/adt7420/adt7420_int_ct_layout.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/1.png
-   :width: 800px
+   :width: 800
 .. |switch_config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/switch_config.png
-   :width: 900px
+   :width: 900
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/daplink.jpg
-   :width: 300px
+   :width: 300
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/maximfthr/adt7420_max32655fthr.jpg
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/max31855/max32650fthr_with_pico.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/maximfthr/adt7420_max32650fthr.jpg
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_max32650_0x48_hex_output.png
-   :width: 400px
+   :width: 400
 .. |ADT7420 Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_iio_debug_panel.png
-   :width: 300px
+   :width: 300
 .. |ADT7420 DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_iio_dmm_panel.png
-   :width: 300px
+   :width: 300
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_pyadiio_example_max32650.png
-   :width: 600px
+   :width: 600
 
 .. |resources-eval-user-guides-circuits-from-the-lab-adt7420-2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/2.png

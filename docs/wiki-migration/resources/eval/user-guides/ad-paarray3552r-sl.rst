@@ -1,21 +1,20 @@
 AD-PAARRAY3552R-SL Overview
 ===========================
 
-
-
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages
 
    | The latest version of this document can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-paarray3552r-sl/index.html
 
-
 About the Device
 ----------------
 
 The :adi:`AD-PAARRAY3552R-SL` reference design provides biasing control and protection of Gallium Nitride (GaN) and Gallium Arsenide (GaAs) power amplifier (PA). It is designed for massive multiple input - multiple output (MIMO) and macro base station RF front-end applications.
 
-The system automatically manages the biasing sequence of GaN power amplifiers while continuously monitoring crucial parameters such voltages, currents, and temperatures.
+The system automatically manages the biasing sequence of GaN power amplifiers
+while continuously monitoring crucial parameters such voltages, currents, and
+temperatures.
 
 The core of this solution is the :adi:`AD3552R` high-speed, dual-channel, 16-bit DAC, which supports ultrafast sub-µs voltage settling time of GaN gates.
 
@@ -25,13 +24,11 @@ The on-board :adi:`MAX32666` ultralow power Arm Cortex-M4 microcontroller overse
 
 The :adi:`AD-PAARRAY3552R-SL` is a compact, user-friendly, microcontroller-controlled system designed to bias GaN PAs automatically and, to monitor the gate voltage, drain current, drain voltage, and transistor temperature.
 
-
 |image1|
 
 .. container:: center
 
    **AD-PAARRAY3552R-SL Board**
-
 
 Features
 --------
@@ -59,12 +56,11 @@ System Architecture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/ad-paarray3552r-sl_block_diagram.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: center
 
    **Figure 1. AD-PAARRAY3552R-SL System Block Diagram**
-
 
 Specifications
 ~~~~~~~~~~~~~~
@@ -121,7 +117,9 @@ Specifications
 | 1 x AD-PAARRAY3552R-SL board, 4 x Standoffs, 4 x Screws |                                                                                                |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
-The solution also comes with a pre-programmed firmware allowing the system to interface with a PC application for a system configuration, control, and data acquisition through serial interface.
+The solution also comes with a pre-programmed firmware allowing the system to
+interface with a PC application for a system configuration, control, and data
+acquisition through serial interface.
 
 In order to update the firmware on the on-board MCU, the user needs to purchase the :adi:`MAX32625 PICO Evaluation Kit <MAX32625PICO>` separately.
 
@@ -133,14 +131,16 @@ User Guides
 Software
 --------
 
-Visit this page to learn how to install the firmware and use the application GUI:
+Visit this page to learn how to install the firmware and use the application
+GUI:
 
 -  :doc:`AD-PAARRAY3552R-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-paarray3552r-sl/software>`
 
 Hardware Setup and Evaluation
 -----------------------------
 
-Get complete access to hardware configuration, design files, and procedure on how to use the AD-PAARRAY3552R-SL:
+Get complete access to hardware configuration, design files, and procedure on
+how to use the AD-PAARRAY3552R-SL:
 
 -  :doc:`AD-PAARRAY3552R-SL Hardware User Guide </wiki-migration/resources/eval/user-guides/ad-paarray3552r-sl/hardware>`
 
@@ -149,12 +149,12 @@ Get complete access to hardware configuration, design files, and procedure on ho
 Further Help
 ~~~~~~~~~~~~
 
-For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
+For questions and more information about this product, connect with us through
+the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/ad-paarray3552r-sl_angle.jpg
-   :width: 600px
+   :width: 600

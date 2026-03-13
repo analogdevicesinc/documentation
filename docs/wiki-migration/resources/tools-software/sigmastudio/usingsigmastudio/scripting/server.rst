@@ -3,14 +3,20 @@
 SigmaStudioServer
 =================
 
-An automation client can be used to access the objects, properties, methods, and events associated with the SigmaStudioServer interface. SigmaStudioServer is a .NET server as well as an ActiveX server.
+An automation client can be used to access the objects, properties, methods, and
+events associated with the SigmaStudioServer interface. SigmaStudioServer is a
+.NET server as well as an ActiveX server.
 
-To access the server interface, SigmaStudio and the client application have to be launched on the same PC, and then the client application has to point to the Analog.SigmaStudioServer.dll which is installed alongside SStudio.exe in the SigmaStudio program folder.
+To access the server interface, SigmaStudio and the client application have to
+be launched on the same PC, and then the client application has to point to the
+Analog.SigmaStudioServer.dll which is installed alongside SStudio.exe in the
+SigmaStudio program folder.
 
 SigmaStudioServer Commands (ISigmaStudioServer)
 -----------------------------------------------
 
-Once the server interface is launched, the following commands are available for use.
+Once the server interface is launched, the following commands are available for
+use.
 
 NEW_PROJECT
 ~~~~~~~~~~~
@@ -69,7 +75,8 @@ Download the active SigmaStudio project
 COMPILE_PROJECT_NAME
 ~~~~~~~~~~~~~~~~~~~~
 
-Link/Compile/Download the SigmaStudio project, specified as an .NET CLR compatible System.String
+Link/Compile/Download the SigmaStudio project, specified as an .NET CLR
+compatible System.String
 
 .. code:: csharp
 
@@ -195,7 +202,8 @@ Delay a SigmaStudio script for period specified as an argument
 SET_TIMEOUT
 ~~~~~~~~~~~
 
-Set SigmaStudio Server API wait timeout for the script. The default timeout set as 30 sec.
+Set SigmaStudio Server API wait timeout for the script. The default timeout set
+as 30 sec.
 
 .. code:: csharp
 
@@ -231,7 +239,8 @@ Write data array to IC regster(s)
 REGISTER_READ_BYTES
 ~~~~~~~~~~~~~~~~~~~
 
-Read bytes of data from an IC register(s) (active project must be compiled and downloaded)
+Read bytes of data from an IC register(s) (active project must be compiled and
+downloaded)
 
 .. code:: csharp
 
@@ -285,7 +294,8 @@ Write value to a Parameter, SStudio handles conversion
 PARAMETER_WRITE_USING_NAME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Write value to a Parameter using the parameter's name, SStudio handles conversion
+Write value to a Parameter using the parameter's name, SStudio handles
+conversion
 
 .. code:: csharp
 
@@ -321,7 +331,8 @@ Write value to a Parameter as float
 PARAMETER_WRITE_FLOAT_USING_NAME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Write value to a Parameter as float using the parameter name instaed of the parameter address.
+Write value to a Parameter as float using the parameter name instaed of the
+parameter address.
 
 .. code:: csharp
 
@@ -655,7 +666,9 @@ Fetch the properties of the objects on the active project\ ``bool GET_OBJECT_PRO
 
 *propertyParams* -> Parameters associated with the specified opcode
 
-The property interface require an opcode (Operation Code), which specifies the type of operation to be performed. Essential opcodes are listed in the table below:
+The property interface require an opcode (Operation Code), which specifies the
+type of operation to be performed. Essential opcodes are listed in the table
+below:
 
 ================== ================ =========================
 Opcode             Type             PropertyParams

@@ -3,22 +3,28 @@ Digital Interface Timing Verification
 
 The FMCOMMS[2345] boards featuring :adi:`AD9361` has a digital tuning feature (programmable IO delay) and in most cases the FPGA features programmable IO delay elements as well. The software tunes this interface for an optimal delay setting ensuring that the interface works over part to part variations (AD9361 and the baseband/FPGA), voltage, temperature, interface speeds and across different carrier boards (trace differences in PCB layout).
 
-The tuning may be done either in FPGA, AD9361 or both (though not necessary). The FPGA tuning may be the preferred option for you, as it can compensate for the high fan-out clock buffers, however, since not all FPGA devices have this option - in the ADI reference designs and software - we don't use the FPGA, and stick with the AD9361 tuning only.
+The tuning may be done either in FPGA, AD9361 or both (though not necessary).
+The FPGA tuning may be the preferred option for you, as it can compensate for
+the high fan-out clock buffers, however, since not all FPGA devices have this
+option - in the ADI reference designs and software - we don't use the FPGA, and
+stick with the AD9361 tuning only.
 
-In the ADI provided designs, the tuning algorithm works as follows (irrespective of which delay element is tuned):
+In the ADI provided designs, the tuning algorithm works as follows (irrespective
+of which delay element is tuned):
 
 The receive chain is validated first. The AD9361 is programmed to generate a `PRBS <https://en.wikipedia.org/wiki/Pseudorandom_binary_sequence>`_ (PN) BIST pattern at the digital interface. A corresponding (and matched) sequence monitor is implemented in the FPGA. The delay is sweeped from minimum to maximum monitoring the status signals. More precisely the function first sweeps all data delays (0..15) and then all clock delays (0..15). This happens at three different interface rates. A low rate of 25MSPS and a higher rates of 40 and 61.44MSPS. All pass and fails are stored in a field, while the results of the low and high rate are overlayed. The optimal delay is selected as the mid point of the range where the monitor locks.
 
 .. tip::
 
-   \ NOTE: bist_timing_analysis shown below only does a 2D pretty print of all Clock and Data delays combinations on RX at a given baseband rate.
+   \ NOTE: bist_timing_analysis shown below only does a 2D pretty print of all
+   Clock and Data delays combinations on RX at a given baseband rate.
 
    
    -  "``o``" = PASS
    -  "``.``" = FAIL
    
-   After its done the REG6 content is restored and nothing is selected! If you want to re-trigger the digital interface tune algorithm please see below.
-
+   After its done the REG6 content is restored and nothing is selected! If you
+   want to re-trigger the digital interface tune algorithm please see below.
 
 ::
 
@@ -66,15 +72,27 @@ The receive chain is validated first. The AD9361 is programmed to generate a `PR
 
 In the example above the clock delays are on the horizontal axis, while the data delays are displayed on the vertical axis. The ``ad9361_dig_tune()`` function overlays the two and would select a data delay of 11 (0xB).
 
-The next step is to tune the transmit path. Since AD9361 has no such monitors in the transmit path, it is set to be in digital loopback mode. Individual (separate equations) PRBS patterns are sent from the FPGA in the transmit path and are monitored in the receive path. The optimal delay is calculated the same way as before.
+The next step is to tune the transmit path. Since AD9361 has no such monitors in
+the transmit path, it is set to be in digital loopback mode. Individual
+(separate equations) PRBS patterns are sent from the FPGA in the transmit path
+and are monitored in the receive path. The optimal delay is calculated the same
+way as before.
 
-The device is then set to it's normal mode of operation. When enabling the FIR filter blocks inside the AD9361, tests have been shown that the data/clock delay slightly shifts. So in some cases when running with a high baseband sample rate of 61.44MSPS the data/clock delays originally computed during driver initialization don't work anymore. For this reason we always rerun the interface tuning algorithm whenever a filter is enabled at the target baseband rate. if the FIR is disabled the original settings are restored.
+The device is then set to it's normal mode of operation. When enabling the FIR
+filter blocks inside the AD9361, tests have been shown that the data/clock delay
+slightly shifts. So in some cases when running with a high baseband sample rate
+of 61.44MSPS the data/clock delays originally computed during driver
+initialization don't work anymore. For this reason we always rerun the interface
+tuning algorithm whenever a filter is enabled at the target baseband rate. if
+the FIR is disabled the original settings are restored.
 
-Interface tuning upon FIR enable can be omitted by setting following device tree attribute:
+Interface tuning upon FIR enable can be omitted by setting following device tree
+attribute:
 
 -  adi,digital-interface-tune-fir-disable
 
-In some cases the Digital Interface Timing Analysis and Verification is not required. For example:
+In some cases the Digital Interface Timing Analysis and Verification is not
+required. For example:
 
 -  on well understood custom board designs, where layout is fixed, and properly matched,
 -  where the interface runs at fewer (one) rates,
@@ -119,11 +137,17 @@ No-OS           init_param->tx_fb_clock_delay   0..15
 Debugging
 ---------
 
-When running into failures it's beneficial to enable extended debugging information. The code for the digital interface calibration features two verboseness levels.
+When running into failures it's beneficial to enable extended debugging
+information. The code for the digital interface calibration features two
+verboseness levels.
 
-Enabling them requires a driver rebuild in some situations. There is also a debugfs runtime API for it, however if the digital interface tune algorithm fails initially the driver probe and initialization is aborted and thus no device.
+Enabling them requires a driver rebuild in some situations. There is also a
+debugfs runtime API for it, however if the digital interface tune algorithm
+fails initially the driver probe and initialization is aborted and thus no
+device.
 
-Additional debug information can be enabled by adding the BE_VERBOSE and BE_MOREVERBOSE flags in the ad9361_post_setup() function.
+Additional debug information can be enabled by adding the BE_VERBOSE and
+BE_MOREVERBOSE flags in the ad9361_post_setup() function.
 
 .. code:: diff
 
@@ -240,6 +264,5 @@ The second argument is a bit mask flag which sets the verbosity level and possib
       0:# # # # # # # # # # # # # # # #
       1:# o o o o o o o o o o o o o o o
    
-
 
 As always - if you have any questions - feel free to ask in the :ez:`support forums <community/fpga>`

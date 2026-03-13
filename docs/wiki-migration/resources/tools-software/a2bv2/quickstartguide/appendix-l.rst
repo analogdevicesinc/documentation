@@ -3,20 +3,25 @@
 Two Step Discovery for AD2437 Platforms
 =======================================
 
-AD2437 Platforms support “Two step Discovery” to avoid enabling 24V biasing (High Power) without confirming that downstream device is the intended AD2437 based A2B device. During two step discovery, 5V biasing is enabled first using on board regulator to discover the device. Once discovery is done, EEPROM available on the sub node is read to confirm that it supports high power. Post that, rediscovery is initiated using 24V. Before initiating Two step discovery for downstream, it is required to confirm that 5V power supply on the upstream node is stable. GPIO7 is used to indicate that.
+AD2437 Platforms support “Two step Discovery” to avoid enabling 24V biasing
+(High Power) without confirming that downstream device is the intended AD2437
+based A2B device. During two step discovery, 5V biasing is enabled first using
+on board regulator to discover the device. Once discovery is done, EEPROM
+available on the sub node is read to confirm that it supports high power. Post
+that, rediscovery is initiated using 24V. Before initiating Two step discovery
+for downstream, it is required to confirm that 5V power supply on the upstream
+node is stable. GPIO7 is used to indicate that.
 
 Flowchart for Two Step Discovery
 --------------------------------
 
 Below figure captures the Two Step Discovery flow for AD2437 platforms
 
-
 |image1|
 
 .. container:: centeralign
 
    \ **Figure:** Two Step Discovery flow for AD2437 platforms
-
 
 EEPROM Content for Two Step Discovery
 -------------------------------------
@@ -52,24 +57,24 @@ Below Table lists down the EEPROM data required for Two Step Discovery
 
    \ **Table:** EEPROM Content for Two Step Discovery
 
-
 .. note::
 
-   Currently Software verifies only the Vendor ID, Product ID and High-Power configuration. Other checks would be added in the later release.
-
+   Currently Software verifies only the Vendor ID, Product ID and High-Power
+   configuration. Other checks would be added in the later release.
 
 Two Step Discovery configuration using SigmaStudio+
 ---------------------------------------------------
 
-User may decide to enable or disable the Two Step discovery for a given sub node using “Enable Two Step Discovery” checkbox. If this check box is unchecked, upstream node will directly enable 24V biasing without verifying the EEPROM content on sub node’s EEPROM.
-
+User may decide to enable or disable the Two Step discovery for a given sub node
+using “Enable Two Step Discovery” checkbox. If this check box is unchecked,
+upstream node will directly enable 24V biasing without verifying the EEPROM
+content on sub node’s EEPROM.
 
 |image2|
 
 .. container:: centeralign
 
    \ **Figure:** Enable/Disable Two Step Discovery flow for RJ45 platforms
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/rj45_twostepdisc.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/two_step_disovery.png

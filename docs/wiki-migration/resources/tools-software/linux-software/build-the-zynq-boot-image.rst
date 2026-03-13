@@ -5,10 +5,11 @@ How to build the Zynq boot image BOOT.BIN
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html\
 
+The boot image BOOT.BIN is built using the bootgen tool which requires several
+input files.
 
-The boot image BOOT.BIN is built using the bootgen tool which requires several input files.
-
-Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be found here:
+Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be
+found here:
 
 -  `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`_ projects
 
@@ -21,7 +22,8 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 Use script to build BOOT.BIN
 ----------------------------
 
-For ease of use, we provide a bash shell script which allows building BOOT.BIN from system_top.xsa and u-boot.elf
+For ease of use, we provide a bash shell script which allows building BOOT.BIN
+from system_top.xsa and u-boot.elf
 
 Download
 ~~~~~~~~
@@ -39,7 +41,6 @@ The script can be downloaded from here:
    
       $ chmod +x build_boot_bin.sh
    
-
 
 Usage
 ~~~~~
@@ -73,4 +74,3 @@ There is also a version of script that works in Windows Powershell: `build_boot_
    \ NOTE: u-boot.elf For those who don't want to build u-boot themselves. The u-boot.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz
 
    
-

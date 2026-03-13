@@ -9,7 +9,8 @@ Signal Subtract
 Description
 -----------
 
-The Signal Subtract block subtracts the input signals(all input signals are subtracted to the first signal) and outputs the difference result.
+The Signal Subtract block subtracts the input signals(all input signals are
+subtracted to the first signal) and outputs the difference result.
 
 Variants
 --------

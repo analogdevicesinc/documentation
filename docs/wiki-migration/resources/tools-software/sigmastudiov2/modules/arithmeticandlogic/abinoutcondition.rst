@@ -9,7 +9,9 @@ AB In-Out Condition
 Description
 -----------
 
-The ABIn-OutCondition block lets you compare the sample-by-sample level of two incoming signals (A & B) and output the sample of the signal meeting the condition.
+The ABIn-OutCondition block lets you compare the sample-by-sample level of two
+incoming signals (A & B) and output the sample of the signal meeting the
+condition.
 
 This algorithm works only for DSP's with conditional instruction.
 
@@ -33,7 +35,6 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ========= ========== ================ ============= ================
 AB In-Out B/S        B/S              S             NA
 ========= ========== ================ ============= ================
-
 
 | ===== Pins =====
 

@@ -4,14 +4,27 @@ DC2610A ACE Software User Guide
 Description
 -----------
 
-Demonstration circuit 2610A features the LTC6953, an Ultralow Jitter, a 4.5GHz Clock Distributor with 11 Outputs, and JESD204B Support. By default, the DC2610A is powered by a single 3.3V supply. An option is provided to power to the DC2610A from dual supplies, allowing for the LTC6953’s output supply pins to connect to an LTC Silent Switcher® and the LTC6953 input supply pin to connect to a low noise LDO. All differential inputs and seven of the differential outputs are populated with 0.5” spaced SMA connectors. These outputs are AC-coupled with 50Ω transmission lines making them suitable to drive 50Ω impedance instruments. The remaining four differential outputs are terminated with 100Ω.
+Demonstration circuit 2610A features the LTC6953, an Ultralow Jitter, a 4.5GHz
+Clock Distributor with 11 Outputs, and JESD204B Support. By default, the DC2610A
+is powered by a single 3.3V supply. An option is provided to power to the
+DC2610A from dual supplies, allowing for the LTC6953’s output supply pins to
+connect to an LTC Silent Switcher® and the LTC6953 input supply pin to connect
+to a low noise LDO. All differential inputs and seven of the differential
+outputs are populated with 0.5” spaced SMA connectors. These outputs are
+AC-coupled with 50Ω transmission lines making them suitable to drive 50Ω
+impedance instruments. The remaining four differential outputs are terminated
+with 100Ω.
 
-The LTC6953’s EZSync™ and SYSREF request functions are available via the LTC6953 SPI interface or the EZS_SRQ SMA/turret connectors. The DC2610A SMA placement was designed for ease of connection for all multi-part synchronization and SYSREF request modes.
+The LTC6953’s EZSync™ and SYSREF request functions are available via the LTC6953
+SPI interface or the EZS_SRQ SMA/turret connectors. The DC2610A SMA placement
+was designed for ease of connection for all multi-part synchronization and
+SYSREF request modes.
 
-A calibration path is provided to aid in accurate LTC6953 propagation delay measurements.
+A calibration path is provided to aid in accurate LTC6953 propagation delay
+measurements.
 
-A DC2026 USB serial controller board is used for SPI communication with the LTC6953, controlled by the ACE™ software and LTC6953 Plugin.
-
+A DC2026 USB serial controller board is used for SPI communication with the
+LTC6953, controlled by the ACE™ software and LTC6953 Plugin.
 
 |image1|
 
@@ -19,24 +32,23 @@ A DC2026 USB serial controller board is used for SPI communication with the LTC6
 
    Figure 1: DC2610A Board View and Connections
 
-
 Getting Started
 ---------------
 
-The DC2610A is easy to set up to evaluate the performance of the LTC6953. Follow the procedure below. The ACE Software and the DC2026 are required to control the DC2610A through a personal computer (PC)
+The DC2610A is easy to set up to evaluate the performance of the LTC6953. Follow
+the procedure below. The ACE Software and the DC2026 are required to control the
+DC2610A through a personal computer (PC)
 
 DC2026 Linduino Board Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Refer to Figure 2. Set the JP3 jumper to the 3.3V (preferred) or 5V position. Connect the DC2026 to one of your computer’s USB ports with the included USB cable. The DC2026 has the ability to run Linduino code, refer to :adi:`Design Center <en/design-center/evaluation-hardware-and-software/linduino.html?doc=DC2609A.pdf>`.
 
-
 |image2|
 
 .. note::
 
    Figure 2: DC2026 Board View and Connector Locations
-
 
 ACE and Plugin Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,13 +66,15 @@ You can install the LTC6953 plug-in from the ACE start-up page. You can install 
 
    Figure 3: ACE Plugin Search Screen
 
-
 Evalutaion Board Setup
 ~~~~~~~~~~~~~~~~~~~~~~
 
 -  Connect J30, J32, and J33 to the appropriate power supplies and apply power (see Figure 1 and the Typical DC2610A Requirements and Characteristics table).
 -  Connect the DC2026 to the DC2610A with the provided ribbon cable
--  Run the ACE application. Double click the LTC6953 icon that appears on the Attached Hardware tab when the DC2026 board is connected and attached to the board. If the icon does not appear, consider re-installing the LTC6953 plug-in or try refreshing the Attached hardware icon.
+-  Run the ACE application. Double click the LTC6953 icon that appears on the
+   Attached Hardware tab when the DC2026 board is connected and attached to the
+   board. If the icon does not appear, consider re-installing the LTC6953
+   plug-in or try refreshing the Attached hardware icon.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/board.ltc6953-plugin-attached-hardware-screen.png
    :align: center
@@ -69,10 +83,10 @@ Evalutaion Board Setup
 
    Figure 4: Attached Hardware Tab
 
-
 -  Connection is automatically established with DC2026. You can navigate to board and chip view.
 -  Double Click the LTC6953 Board Icon and the tab shown in Figure 5 appears.
--  Double click the LTC6953 icon that appears on the LTC6953 Board tab to open main control window shown in Figure 6.
+-  Double click the LTC6953 icon that appears on the LTC6953 Board tab to open
+   main control window shown in Figure 6.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ltc6953-boardview-on-ace.png
    :align: center
@@ -81,24 +95,23 @@ Evalutaion Board Setup
 
    Figure 5: LTC6953 Board View on ACE Software
 
-
 General Software Features
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In chip view, one can find various control features of LTC6953. One can read and control all registers mentioned in the :adi:`LTC6953 datasheet <LTC6953>`. Register Hb00 can easily be read by clicking the “Check Status Register” button. Small LED icons will be lit if the register bit value is high. Stat Pin output mask register value can be set visually to reflect which information will be carried to Stat Pin Output. The clock distribution circuit consists of eleven paths. Each path can be controlled individually. SRQEN bit, MODE, Power-down modes, divider value, digital delay, and analog delay of each channel can be modified from the chip view. EZsync mode and SYSREF features can be controlled from the chip view. EZSync Mode, SRQ Mode, and SysRef Pulse count can be adjusted. The main controls are available in the high-level register map shown in Figure 7. To modify registers, perform the following steps:
 
 -  Modify the registers as desired.
--  Click Apply Changes to load the modified settings to the device. This action loads the updated registers only.
+-  Click Apply Changes to load the modified settings to the device. This action
+   loads the updated registers only.
 
-By clicking Proceed to Memory Map button or Memory Map Side-By-Side button, register values can be seen.
-
+By clicking Proceed to Memory Map button or Memory Map Side-By-Side button,
+register values can be seen.
 
 |image3|
 
 .. note::
 
    Chip View of LTC6953 on ACE Software
-
 
 CML Outputs, OUT[10:0]
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -160,10 +173,10 @@ Troubleshooting
 **If the red LED(D1) does not illuminate**
 
 -  Ensure the LTC6953 input signal is at the LTC6953 IN– pin.
--  In ACE Chip View, click “Check Register Status”. STAT Output Pin should match STAT Pin Mask And Output.
+-  In ACE Chip View, click “Check Register Status”. STAT Output Pin should match
+   STAT Pin Mask And Output.
 
 **Verify DC2610A and LTC6953 Plugin Communication:** To verify communication with the DC2610A, Go to the start page or system view page and click the button shown below.
-
 
 |image4|
 
@@ -171,14 +184,15 @@ Troubleshooting
 
    Figure 7: Attached Hardware Tab on ACE
 
-
-LEDs on the Serial Interface Boards don’t light up, then perform the following steps:
+LEDs on the Serial Interface Boards don’t light up, then perform the following
+steps:
 
 -  Ensure the DC2026 is connected to the PC
 -  Disconnect and Reconnect DC2026 to PC
 -  Ensure DC2026 is connected to DC2610A
 -  Close ACE and Restart
--  Verify the DC2026 has the DC590B Emulator Sketch loaded by contacting the factory or following these steps.
+-  Verify the DC2026 has the DC590B Emulator Sketch loaded by contacting the
+   factory or following these steps.
 
    -  `Download QuikEval™ <http://ltspice.analog.com/software/ltcqev.exe>`_
    -  Run QuickEval (Linduino connected to PC)

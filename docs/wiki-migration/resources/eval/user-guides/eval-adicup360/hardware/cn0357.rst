@@ -7,7 +7,7 @@ The circuit shown in below uses the :adi:`ADA4528-2`, dual auto zero amplifier, 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0357/cn0357-01.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -16,18 +16,15 @@ Connectors and Jumper Configurations
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0357/cn0357-03.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Sensor Footprint
 ~~~~~~~~~~~~~~~~
-
-
 
 .. note::
 
    | NOTE - Three electrode electrochemical toxic gas sensors can be used with the EVAL-CN0357-ARDZ The footprint can accommodate 3 different sizes of sensors.
    | The Alphasense CO-AX electrochemical gas sensor was used during testing and programming.
-
 
 **Recommended PCB Sockets(for Alphasense Sensors)**
 
@@ -35,12 +32,14 @@ Sensor Footprint
 -  B Series Sensors - Mill-Max 0294-0-15-15-06-27-10-0
 -  D Series Sensors - Mill-Max 0667-0-15-15-30-27-10-0
 
--  The sensor may be connected to the M1 footprint using the appropriate pin sockets
+-  The sensor may be connected to the M1 footprint using the appropriate pin
+   sockets
 
 **Jumper P1 Settings**
 
 -  "0" position - Sensor output connected to ADC(defualt)
--  "1" position - Sensor output connected to A1 pin of ANALOG header, for connection to external ADCs
+-  "1" position - Sensor output connected to A1 pin of ANALOG header, for
+   connection to external ADCs
 
 Chip Select
 ~~~~~~~~~~~
@@ -50,7 +49,7 @@ Chip Select
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0357/cn0357-hdr-01.png
    :align: left
-   :width: 101px
+   :width: 101
 
 | Pin 1 shunted to Pin 2 CS connected to **Digital Pin 10**
 | Pin 3 shunted to Pin 4 CS connected to **Digital Pin 9**
@@ -59,7 +58,7 @@ Chip Select
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0357/cn0357-hdr-02.png
    :align: left
-   :width: 100px
+   :width: 100
 
 | Pin 1 shunted to Pin 2 CS connected to **Digital Pin 7**
 | Pin 3 shunted to Pin 4 CS connected to **Digital Pin 6**
@@ -99,7 +98,6 @@ Schematic, Bill of Materials, Gerber Files, Layout Files
    -  `Cadence Files <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0357/eval-cn0357-ardz-cadencelibrary-revb.zip>`_
    -  `Gerber Files <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0357/eval-cn0357-ardz-gbr-revb.zip>`_
    
-
 
 --------------
 

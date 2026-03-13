@@ -14,7 +14,8 @@ When using this card on the :adi:`PicoZed SDR SOM Development Kit <adrv9361-z703
 | ZYNQ ADRV9361 z7035 FMC RFCARD TDD Device Tree | :git-linux:`zynq-adrv9361-z7035-fmc-rfcard-tdd <arch/arm/boot/dts/zynq-adrv9361-z7035-fmc-rfcard-tdd.dts>`                                              |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-This device tree includes the devicetree for the PicoZed SDR SOM Development Kit but configures the AD9361:
+This device tree includes the devicetree for the PicoZed SDR SOM Development Kit
+but configures the AD9361:
 
 -  For TDD mode.
 -  Sets TX LO frequency to RX LO frequency.

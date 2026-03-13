@@ -10,13 +10,16 @@ Firmware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sw_setup/daplink.png
 
--  Copy the hex file to the DAPLINK drive to load the firmware to the EVAL-ADICUP3029. Note that the DAPLINK drive will disappear for a moment, then reappear after loading the firmware.
+-  Copy the hex file to the DAPLINK drive to load the firmware to the
+   EVAL-ADICUP3029. Note that the DAPLINK drive will disappear for a moment,
+   then reappear after loading the firmware.
 
 GUI
 ---
 
 -  Download the GUI zip archive from the CN-0507 product page.
 -  Extract the zip file to your PC.
--  Look inside the extracted files and launch the \*\* adi-vna-app.exe \*\* executable.
+-  Look inside the extracted files and launch the \*\* adi-vna-app.exe \*\*
+   executable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sw_setup/exe.png

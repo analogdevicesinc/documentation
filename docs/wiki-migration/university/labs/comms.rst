@@ -110,11 +110,17 @@ PlutoSDR based material:
 
 | 
 
-
 General Expected Background
 ===========================
 
-The communications labs and topics are split into two main categories: analog communications and digital communications. The analog communications sections require a basic background in certain analysis, as well as some introduction to continuous-time signal analysis. The digital communications topics are targeted at those with a solid background in digital signal processing and the fundamentals of modulation/demodulation. A basic understanding of probability tools is useful as well. Labs are performed in MATLAB, therefore knowledge of writing MATLAB code is essential.
+The communications labs and topics are split into two main categories: analog
+communications and digital communications. The analog communications sections
+require a basic background in certain analysis, as well as some introduction to
+continuous-time signal analysis. The digital communications topics are targeted
+at those with a solid background in digital signal processing and the
+fundamentals of modulation/demodulation. A basic understanding of probability
+tools is useful as well. Labs are performed in MATLAB, therefore knowledge of
+writing MATLAB code is essential.
 
 Related reference manuals are recommended:
 

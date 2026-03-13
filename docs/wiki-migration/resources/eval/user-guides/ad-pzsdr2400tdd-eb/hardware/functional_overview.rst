@@ -1,11 +1,12 @@
 AD-PZSDR2400TDD-EB Functional Overview
 ======================================
 
-A functional block diagram of the system is given below. The system consists of two transmit paths, two receive paths and power supply.
+A functional block diagram of the system is given below. The system consists of
+two transmit paths, two receive paths and power supply.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/hardware/2400tdd_block_diagram.jpg
    :alt: Block Diagram
-   :width: 600px
+   :width: 600
 
 Transmit
 --------
@@ -49,4 +50,5 @@ Key components:
 :adi:`ADM7171` Ultra low noise, 1 A LDO.
 ============================================ ===========================
 
-The board receives all the power from the carrier board through a 40 pin connector.
+The board receives all the power from the carrier board through a 40 pin
+connector.

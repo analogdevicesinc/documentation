@@ -16,7 +16,7 @@ The :adi:`AD-96TOF1-EBZ <en/design-center/evaluation-hardware-and-software/evalu
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tofebz/board_revc.jpg
    :alt: Rev C board
    :align: right
-   :width: 400px
+   :width: 400
 
 ::
 
@@ -53,18 +53,19 @@ The :adi:`AD-96TOF1-EBZ <en/design-center/evaluation-hardware-and-software/evalu
 
    For more information and how to buy the system please goto the :adi:`Analog Devices AD-96TOF1-EBZ Product page <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ad-96tof1-ebz.html>`
 
-
 --------------
 
 System setup & evaluation
 -------------------------
 
-The development kit is delivered with an SD card containing the evaluation software for the supported embedded platforms and a set of accessories required to put the system together and get it up and running in no time.
+The development kit is delivered with an SD card containing the evaluation
+software for the supported embedded platforms and a set of accessories required
+to put the system together and get it up and running in no time.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/96tof_box_contents.jpg
    :alt: Box contents
    :align: right
-   :width: 400px
+   :width: 400
 
 Development kit contents:
 
@@ -91,7 +92,6 @@ Development kit contents:
    -  :doc:`Nvidia Jetson Nano User Guide </wiki-migration/resources/eval/user-guides/ad-96tof1-ebz/ug_jetson>`
    
 
-
 --------------
 
 Application Development
@@ -100,22 +100,34 @@ Application Development
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/sdk_stack.png
    :alt: SDK Architecture
    :align: right
-   :width: 300px
+   :width: 300
 
-The system has options of USB, Ethernet or Wi-Fi to connect to a host computer, this flexibility enables evaluation across a wide range of use cases and environments. Sampling rates of up to 30fps are supported. Data is fed from the depth camera to the processor board over MIPI-CSI interface. This data is read using V4L2 capture driver and in-turn either feeds it to native SDK or sends it to the Host SDK over Ethernet, WiFi and USB interfaces. Native/Host SDK provides this data to user applications for further use. For ease of application, the SDK also provides OpenCV, Python and MATLAB wrappers such that developers can simply use these wrappers to develop application.
+The system has options of USB, Ethernet or Wi-Fi to connect to a host computer,
+this flexibility enables evaluation across a wide range of use cases and
+environments. Sampling rates of up to 30fps are supported. Data is fed from the
+depth camera to the processor board over MIPI-CSI interface. This data is read
+using V4L2 capture driver and in-turn either feeds it to native SDK or sends it
+to the Host SDK over Ethernet, WiFi and USB interfaces. Native/Host SDK provides
+this data to user applications for further use. For ease of application, the SDK
+also provides OpenCV, Python and MATLAB wrappers such that developers can simply
+use these wrappers to develop application.
 
-The Depth Perception Rapid Prototyping Platform supports a wide range of operating systems and programming languages. An open-source SDK that accompanies the hardware platform enables you to extract depth data from the camera on the processor and operating system of your choice. Windows and Linux support are built into the SDK as well as sample code and wrappers for various languages including Python, C/C++ and MATLAB. The SDK also integrates with 3rd party technologies like OpenCV and RoS.
+The Depth Perception Rapid Prototyping Platform supports a wide range of
+operating systems and programming languages. An open-source SDK that accompanies
+the hardware platform enables you to extract depth data from the camera on the
+processor and operating system of your choice. Windows and Linux support are
+built into the SDK as well as sample code and wrappers for various languages
+including Python, C/C++ and MATLAB. The SDK also integrates with 3rd party
+technologies like OpenCV and RoS.
 
 .. admonition:: Download
    :class: download
 
    `Access the full ADI 3D ToF software suite to get started <https://github.com/analogdevicesinc/aditof_sdk>`_
 
-
 .. note::
 
    `Get more information abut the available 3D ToF algorithms from Analog Devices <https://www.arrow.com/tofalgorithms>`_ `Explore the available 3D vision algorithms demos <https://github.com/robotics-ai/tof_process_public>`_
-
 
 --------------
 
@@ -124,13 +136,16 @@ Laser Safety
 
 .. important::
 
-   This device complies with International Standards IEC 60825-1:2014 & 2007 for a Class 1 laser product. This device also complies with 21 CFR 1040.10 and 1040.11 except for deviations pursuant to Laser Notice No. 50, dated June 24, 2007. Only use Software and Firmware updates that are specifically provided for this solution.
+   This device complies with International Standards IEC 60825-1:2014 & 2007 for
+   a Class 1 laser product. This device also complies with 21 CFR 1040.10 and
+   1040.11 except for deviations pursuant to Laser Notice No. 50, dated June 24,
+   2007. Only use Software and Firmware updates that are specifically provided
+   for this solution.
 
    
    `Laser Certification Report AD-96TOF1-EBZ Rev.B & Rev.C <https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tofebz/report_2132_ad-96tof1-ebz_60825_classification.pdf>`_
    
    `Laser Certification Report AD-96TOF1-EBZ Rev.D <https://wiki.analog.com/_media/resources/eval/user-guides/report_2388_60825_classification.pdf>`_
-
 
 --------------
 
@@ -160,9 +175,9 @@ Videos
 Help and Support
 ----------------
 
-For questions and more information please contact us on the Analog Devices Engineer Zone.
+For questions and more information please contact us on the Analog Devices
+Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone 3D ToF Depth Sensing <depth-perception-ranging-technologies/lidar-solutions/3d-tof-depth-sensing>`
-

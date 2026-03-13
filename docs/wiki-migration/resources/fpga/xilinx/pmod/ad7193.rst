@@ -15,7 +15,9 @@ The :adi:`AD7193` is a low noise, complete analog front end for high precision m
 Quick Start Guide
 -----------------
 
-The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided in the project \*.zip file combines the FPGA bit file and
+the SDK elf files. It may be used for a quick check on the system. All you need
+is the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -29,12 +31,11 @@ Required Software
 ~~~~~~~~~~~~~~~~~
 
 -  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
--  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet
+   LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
@@ -44,46 +45,60 @@ Running Demo (SDK) Program
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
-
 Avnet LX9 MicroBoard Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD7193\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD7193\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodAD5 to J5 connector of LX9 board, pins 1 to 6 (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+To begin, connect the PmodAD5 to J5 connector of LX9 board, pins 1 to 6 (see
+image below). You can use an extension cable for ease of use. Connect the USB
+cable from the PC to the USB-UART female connector of the board for the UART
+terminal. The board will be programmed through its USB male connector.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5.jpg
    :alt: PmodAD5 and LX-9
-   :width: 200px
+   :width: 200
 
 Digilent Nexys™3 Spartan-6 FPGA Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD7193\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD7193\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodAD5 to JA connector of Nexys™3 board, pins JA1 to JA6 (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodAD5 to JA connector of Nexys™3 board, pins JA1 to JA6
+(see image below). You can use an extension cable for ease of use. Connect the
+USB cables from the PC to the board, one for programming (Digilent USB device)
+and one for the UART terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_nexys3.jpg
    :alt: PmodAD5 and Nexys™3
-   :width: 200px
+   :width: 200
 
 Avnet ZedBoard
 ~~~~~~~~~~~~~~
 
-To begin, connect the PmodAD5 to JA connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodAD5 to JA connector of ZedBoard (see image below). You
+can use an extension cable for ease of use. Connect the USB cables from the PC
+to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_zed.jpg
    :alt: PmodAD5 and ZedBoard
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for Nexys3 and LX-9 MicroBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad7193/sw/AD7193.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to appropiate baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../ad7193/sw/AD7193.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5impact.jpg
    :alt: Programming FPGA in IMPACT
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for ZedBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,44 +107,47 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in
+   download.bat to match your Xilinx Installation path.
 
-
-If programming was successful, you should be seeing messages appear on the terminal window as shown in the figures below. After programming the AD7193, the program will display the values of all internal registers. After that, it will go through 5 Demo Modes.
+If programming was successful, you should be seeing messages appear on the
+terminal window as shown in the figures below. After programming the AD7193, the
+program will display the values of all internal registers. After that, it will
+go through 5 Demo Modes.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu1.jpg
    :alt: Display internal registers values
-   :width: 600px
+   :width: 600
 
 **Read Voltage Values referenced to AINCOM, UNIPOLAR Mode.**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu2.jpg
    :alt: Demo mode 1
-   :width: 600px
+   :width: 600
 
 **Read Voltage Values referenced to AINCOM, BIPOLAR Mode.**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu3.jpg
    :alt: Demo mode 2
-   :width: 600px
+   :width: 600
 
 **Read Differential Voltage Values, UNIPOLAR Mode.**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu4.jpg
    :alt: Demo mode 3
-   :width: 600px
+   :width: 600
 
 **Read Differential Voltage Values, BIPOLAR Mode.**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu5.jpg
    :alt: Demo mode 4
-   :width: 600px
+   :width: 600
 
 **Read Die Temperature Value.**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu6.jpg
    :alt: Demo mode 5
-   :width: 600px
+   :width: 600
 
 Using the reference design
 --------------------------
@@ -137,9 +155,14 @@ Using the reference design
 Functional Description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design is a simple SPI Interface, containing CS, SCLK, MISO, MOSI, but also a GPIO to read the RDY status on the MISO line. The information is displayed on UART.
+The reference design is a simple SPI Interface, containing CS, SCLK, MISO, MOSI,
+but also a GPIO to read the RDY status on the MISO line. The information is
+displayed on UART.
 
-The hardware SPI access allows sending and receiving data from the AD7193, programming its internal registers in order to decide which channels should be converted corresponding to AINCOM or its own differential pair, what GAIN, sampling frequency, etc.
+The hardware SPI access allows sending and receiving data from the AD7193,
+programming its internal registers in order to decide which channels should be
+converted corresponding to AINCOM or its own differential pair, what GAIN,
+sampling frequency, etc.
 
 .. important::
 
@@ -147,13 +170,18 @@ The hardware SPI access allows sending and receiving data from the AD7193, progr
    -  Connecting the PmodAD5 to the boards using an extension cable provides ease of use.
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD5 must be removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.25V
-   -  If using Xilinx Software Development Kit integrated Console as a Hyperterminal clinet, please uncomment all the commented getchar(); in main.c, because the Console sees [Enter] as 2 consecutive keypresses, so 2 getchar(); are required. If using Tera Term or other similar software, do not modify anything.
+   -  If using Xilinx Software Development Kit integrated Console as a
+      Hyperterminal clinet, please uncomment all the commented getchar(); in
+      main.c, because the Console sees [Enter] as 2 consecutive keypresses, so 2
+      getchar(); are required. If using Tera Term or other similar software, do
+      not modify anything.
    
-
 
 .. important::
 
-   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+   When using the ZedBoard reference design in order to develop your own
+   software, please make sure that the following options are set in
+   "system_config.h":
 
    
    .. code:: c
@@ -171,7 +199,6 @@ The hardware SPI access allows sending and receiving data from the AD7193, progr
       // GPIO used in the design
       #define USE_GPIO         0
    
-
 
 Downloads
 ---------
@@ -195,7 +222,6 @@ Downloads
    -  :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
    -  :git-no-OS:`Programming Script <Pmods/PmodAD5/bin>`
    
-
 
 More information
 ----------------

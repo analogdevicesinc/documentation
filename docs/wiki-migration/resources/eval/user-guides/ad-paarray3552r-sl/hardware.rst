@@ -12,7 +12,8 @@ This also includes a high-side NMOS static switch driver, :adi:`LTC7000`, which 
 
 The on-board :adi:`MAX32666` ultralow power Arm Cortex®-M4 microcontroller exposes all the necessary debug and programming features to enable a complete software development experience with the system. The system's firmware is based on ADI's open-source no-OS framework and a user-friendly graphical user interface (GUI) for evaluation and further development.
 
-The system can be powered from an external +38 V to +55 V supply, making it suitable for applications requiring high current capabilities.
+The system can be powered from an external +38 V to +55 V supply, making it
+suitable for applications requiring high current capabilities.
 
 Board Specifications
 --------------------
@@ -43,7 +44,7 @@ Primary Side
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/ad-paarray3552r-sl_front_view.png
    :align: center
-   :width: 800px
+   :width: 800
 
 **Figure 1. AD-PAARRAY3552R-SL Top Side**
 
@@ -60,10 +61,10 @@ Power Supply Connectors
    
    .. important::
 
-      Supply power to either P1 or P2 only and not at the same time Supplying power to both terminals may cause permanent damage to the device.
+      Supply power to either P1 or P2 only and not at the same time Supplying
+      power to both terminals may cause permanent damage to the device.
 
    
-
 
 LED Indicators
 ~~~~~~~~~~~~~~
@@ -78,19 +79,18 @@ LED Indicators
    -  **DS3** -> Indicates normal operation and good power regulation.
    
 
-
 Peripheral Connectors
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
-   These connectors are used for debugging, programming, and communication between the software and hardware.
+   These connectors are used for debugging, programming, and communication
+   between the software and hardware.
 
    
    -  **P5** -> USB-to-UART Serial Communication through micro-USB to USB cable
    -  **P6** -> Programming and debugging using 10-pin SWD cable
    
-
 
 Switches
 ~~~~~~~~
@@ -103,18 +103,19 @@ Switches
    -  **S3** -> MAX32666 Microcontroller Reset
    
 
-
 Test Points
 ~~~~~~~~~~~
 
 .. container:: indent
 
-   The reference design board is comprised of several test points. The table below describes some of the most significant test points and their descriptions.
+   The reference design board is comprised of several test points. The table
+   below describes some of the most significant test points and their
+   descriptions.
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/ad-paarray3552r-sl_test_points.png
       :align: center
-      :width: 800px
+      :width: 800
    
    **Figure 2. AD-PAARRAY3552R-SL Test Points**
    
@@ -140,7 +141,6 @@ Test Points
 
    
 
-
 Pin Turrets and Hooks
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -148,12 +148,13 @@ Pin Turrets and Hooks
 
    The :adi:`AD-PAARRAY3552R-SL` is designed for specific power amplifiers and is used on the RF signal chain, as shown below.
 
-
    |image1|
 
    **Figure 3. RF Signal Chain**
    
-   The bias lines of these amplifiers must be connected to the designated pinouts on the reference design board. Refer to the table below for the correct pin assignments.
+   The bias lines of these amplifiers must be connected to the designated
+   pinouts on the reference design board. Refer to the table below for the
+   correct pin assignments.
    
    .. container:: center round box
 
@@ -184,7 +185,6 @@ Pin Turrets and Hooks
 
    
 
-
 --------------
 
 Secondary Side
@@ -192,14 +192,16 @@ Secondary Side
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/ad-paarray3552r-sl_bottom.png
    :align: center
-   :width: 800px
+   :width: 800
 
 **Figure 4. AD-PAARRAY3552R-SL Bottom Side**
 
 SMD Packaging Provision
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  For easy evaluation, the board incorporates unpopulated SMD chip pads for 1210, 1206, 0805, and 0603 packaging. This allows the user to easily install a capacitive load of their choice.
+-  For easy evaluation, the board incorporates unpopulated SMD chip pads for
+   1210, 1206, 0805, and 0603 packaging. This allows the user to easily install
+   a capacitive load of their choice.
 
 --------------
 
@@ -230,7 +232,9 @@ Board Modification
 .. container:: indent
 
    
-   The AD-PAARRAY3552R-SL requires some hardware modifications, which will depend on the amplifier you plan to use. Here are the parameters that need modification before using the board:
+   The AD-PAARRAY3552R-SL requires some hardware modifications, which will
+   depend on the amplifier you plan to use. Here are the parameters that need
+   modification before using the board:
    
    -  Fault Settings
    -  Inrush Current Limiter
@@ -240,7 +244,10 @@ Board Modification
    
    .. container:: indent
 
-      The hardware is capable of detecting fault events such as overvoltage, overcurrent, and overtemperature. Below are the default settings for these fault events. You will need to adjust these settings based on the power amplifier you are using.
+      The hardware is capable of detecting fault events such as overvoltage,
+      overcurrent, and overtemperature. Below are the default settings for these
+      fault events. You will need to adjust these settings based on the power
+      amplifier you are using.
 
          
          -  Overvoltage: +55 V
@@ -294,7 +301,9 @@ Board Modification
                      
 
          
-         For this demo, we will be using the HMC8500 GaN Power Amplifier with an operating drain voltage of +28 V (absolute max = +35 V). It will have the following fault settings and its corresponding resistor values.
+         For this demo, we will be using the HMC8500 GaN Power Amplifier with an
+         operating drain voltage of +28 V (absolute max = +35 V). It will have
+         the following fault settings and its corresponding resistor values.
          
          .. container:: center round box
 
@@ -329,9 +338,17 @@ Board Modification
          
          Driving large capacitive loads such as complex electrical systems with large bypass capacitors should be powered using the circuit shown in the Figure below.\ |image2|\ **Figure 5. Inrush Current Limiter Circuit**
          
-         The pull-up gate drive to the power MOSFET from TGUP is passed through an RC delay network, RG and CG, which greatly reduces the turn-on ramp rate of the MOSFET. This dramatically reduces the inrush current from the source supply and reduces the transient ramp rate of the load allowing for slower activation of sensitive electrical loads such as power amplifiers.
+         The pull-up gate drive to the power MOSFET from TGUP is passed through
+         an RC delay network, RG and CG, which greatly reduces the turn-on ramp
+         rate of the MOSFET. This dramatically reduces the inrush current from
+         the source supply and reduces the transient ramp rate of the load
+         allowing for slower activation of sensitive electrical loads such as
+         power amplifiers.
          
-         The turn-off of the MOSFET is not affected by the RC delay network as the pull-down for the MOSFET gate is directly from the TGDN pin. Note that the voltage rating on capacitor CG needs to be the same or higher than the external MOSFET and CLOAD.
+         The turn-off of the MOSFET is not affected by the RC delay network as
+         the pull-down for the MOSFET gate is directly from the TGDN pin. Note
+         that the voltage rating on capacitor CG needs to be the same or higher
+         than the external MOSFET and CLOAD.
          
          The values for RG and CG to limit the inrush current can be calculated from the below equation:|image3|
          
@@ -357,11 +374,12 @@ Board Modification
                      
 
          
-         Note: The default inrush current circuitry (RG, RS, CG) on the board is not populated. The user will need to modify the board and install the appropriate values before using it.
+         Note: The default inrush current circuitry (RG, RS, CG) on the board is
+         not populated. The user will need to modify the board and install the
+         appropriate values before using it.
          
 
    
-
 
 General Setup
 -------------
@@ -412,9 +430,9 @@ General Setup
    -  For the automatic power sequence, the user only needs to press the "Start" button of the power-up under the "Device Group" section in the GUI. It will automatically perform the power-up sequencing requirement of the HMC8500. Please note that the automatic power sequencing has default gate voltage levels designed for the HMC8500 GaN Power Amplifier.\ |image13|\ **Figure 15. GUI Device Group**
    -  To change the default voltages in the automatic power sequencing, the user needs to modify the source code according to their power amplifier requirement.
    -  Once properly powered up, turn on the RF signal generator. On the signal analyzer, you should see an amplifier RF output signal of around +12 dBm at 2.4 GHz, indicating a successful power-up.\ |image14|\ **Figure 16. RF Output**
-   -  To power down, press the "Start" button of the power-down sequence and it automatically performs the power-down sequence requirement of the HMC8500.
+   -  To power down, press the "Start" button of the power-down sequence and it
+      automatically performs the power-down sequence requirement of the HMC8500.
    
-
 
 --------------
 
@@ -426,8 +444,10 @@ Power Sequencing
 
 .. container:: indent
 
-   The system exhibits an automated bias sequencing required by a power amplifier which minimizes human intervention and possible device damage. The default bias sequence implemented follows the common GaN power amplifier sequencing as shown below.
-
+   The system exhibits an automated bias sequencing required by a power
+   amplifier which minimizes human intervention and possible device damage. The
+   default bias sequence implemented follows the common GaN power amplifier
+   sequencing as shown below.
 
 |image15| |image16| **Figure 8. Power Sequence**
 
@@ -436,11 +456,15 @@ AD3552R DAC Settling Time
 
 .. container:: indent
 
-   The system enables an ultrafast sub-µs voltage settling time for GaN gates from pinch-off to the normal operating voltage by utilizing the AD3553R dual-channel, ultrafast, 16-bit DAC. This rapid voltage transition allows the board to meet the TDD switching requirements for biasing a GaN amplifier in RF front-end applications, such as 5G base station radio units.
+   The system enables an ultrafast sub-µs voltage settling time for GaN gates
+   from pinch-off to the normal operating voltage by utilizing the AD3553R
+   dual-channel, ultrafast, 16-bit DAC. This rapid voltage transition allows the
+   board to meet the TDD switching requirements for biasing a GaN amplifier in
+   RF front-end applications, such as 5G base station radio units.
 
    
-   The typical voltage transition time from GaN pinch-off to its normal operating voltage is shown in the figure below.
-
+   The typical voltage transition time from GaN pinch-off to its normal
+   operating voltage is shown in the figure below.
 
 |image17| |image18| **Figure 9. Settling Time**
 
@@ -474,7 +498,6 @@ Fault Event
 
    
 
-
 Fault Time Response
 -------------------
 
@@ -498,22 +521,22 @@ Fault Time Response
    **Figure 11. Fault Flag Time**
    
 
-
 Thermal Performance
 -------------------
 
 .. container:: indent
 
-   Figure 12 shows the temperature of the AD-PAARRAY3552R-SL board in normal operating conditions. This is the situation when all of the bias pins are sourcing their specified loads under normal operations.
+   Figure 12 shows the temperature of the AD-PAARRAY3552R-SL board in normal
+   operating conditions. This is the situation when all of the bias pins are
+   sourcing their specified loads under normal operations.
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/thermal.png
       :align: center
-      :width: 400px
+      :width: 400
    
    **Figure 12. Thermal Performance**
    
-
 
 --------------
 
@@ -540,52 +563,51 @@ Design and Integration Files
    -  `Allegro Project <https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/allegro_project.zip>`_
    
 
-
 --------------
 
 Further Help
 ~~~~~~~~~~~~
 
-For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
+For questions and more information about this product, connect with us through
+the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/ad-paarray3552r-sl_03.png
-   :width: 700px
+   :width: 700
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/inrush_current_limiter.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/formula.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/uart_connection.png
-   :width: 300px
+   :width: 300
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/psu_connection.png
-   :width: 300px
+   :width: 300
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/demo_signal_chain.png
-   :width: 500px
+   :width: 500
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/sig_gen_setup.png
-   :width: 500px
+   :width: 500
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/sig_analyzer_setup.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/cascaded_devices.png
-   :width: 500px
+   :width: 500
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/overall_setup.png
-   :width: 500px
+   :width: 500
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/gui_home.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/gui_control_group_main.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/gui_device_group.png
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/rf_output.png
-   :width: 500px
+   :width: 500
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/bias_sequencing_gan.png
-   :width: 500px
+   :width: 500
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/bias_sequencing_ldmos.png.jpg
-   :width: 500px
+   :width: 500
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/pinch_off_to_normal.png
-   :width: 500px
+   :width: 500
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/normal_to_pinch_off.png
-   :width: 500px
+   :width: 500

@@ -7,10 +7,11 @@ Updating Kuiper Linux
 
    
    -  Userspace Tools (GUI/tools, in the Linux rootfs).
-   -  ZYNQ Processing System / FPGA Boot Files & Linux kernel (the FAT32 BOOT partition).
+   -  ZYNQ Processing System / FPGA Boot Files & Linux kernel (the FAT32 BOOT
+      partition).
    
-   Upgrading one side, without upgrading the other might cause more problems than it solves. If you are upgrading, please upgrade both.
-
+   Upgrading one side, without upgrading the other might cause more problems
+   than it solves. If you are upgrading, please upgrade both.
 
 Staying up to date is a combination of:
 
@@ -26,14 +27,20 @@ If you need to use a proxy for any of these:
 User Space Tools
 ----------------
 
-There are a number of ADI provided tools in the file system. There is an easy way to rebuild these projects from source. The only requirement is an healthy image and active Internet connection.
+There are a number of ADI provided tools in the file system. There is an easy
+way to rebuild these projects from source. The only requirement is an healthy
+image and active Internet connection.
 
 In order to update all ADI tools - simply call the update script as shown below: In case you only want to update a certain project, the script accepts a single parameter, the ADI github project name. (https://github.com/analogdevicesinc)
 
 .. tip::
 
-   If you are using an old image & old update tools script - you may need to run the update tools script twice (the first time it updates the update script, and the second time it updates everything else). This has been resolved in the most recent update script (the script updates itself, and switches over to the new one), so you only need to do this if you are using an older version.
-
+   If you are using an old image & old update tools script - you may need to run
+   the update tools script twice (the first time it updates the update script,
+   and the second time it updates everything else). This has been resolved in
+   the most recent update script (the script updates itself, and switches over
+   to the new one), so you only need to do this if you are using an older
+   version.
 
 .. container:: box bggreen
 
@@ -45,13 +52,9 @@ In order to update all ADI tools - simply call the update script as shown below:
       root@analog:~# adi_update_tools.sh
    
 
-
-
-
 .. collapsible:: **Complete Update Tools Log** (Click to expand)
 
    ::
-
 
       2022-05-06 14:35:15 URL: http://github.com/analogdevicesinc 200 OK
         Updating linux_image_ADI-scripts BRANCH origin/master 
@@ -345,12 +348,14 @@ In order to update all ADI tools - simply call the update script as shown below:
       xdg-icon-resource uninstall --noupdate --size 128 adi-osc
       ....
 
-
-
 ZYNQ Processing System / FPGA Boot Files
 ----------------------------------------
 
-The default ADI ZYNQ image supports a variety of ZYNQ boards and reference designs. In order to keep those boot files up to date. There is a another script that downloads the latest builds from the ADI Wiki page and installs them onto the FAT32 partition on the SD Card. The only requirement is a healthy image and active Internet connection.
+The default ADI ZYNQ image supports a variety of ZYNQ boards and reference
+designs. In order to keep those boot files up to date. There is a another script
+that downloads the latest builds from the ADI Wiki page and installs them onto
+the FAT32 partition on the SD Card. The only requirement is a healthy image and
+active Internet connection.
 
 In order to update all ADI tools, simply call the **adi_update_boot.sh** script as shown below:
 
@@ -364,13 +369,9 @@ In order to update all ADI tools, simply call the **adi_update_boot.sh** script 
       root@analog:~# adi_update_boot.sh
    
 
-
-
-
 .. collapsible:: **Complete Update Boot Log** (Click to expand)
 
    ::
-
 
       Verifying if ./adi_update_boot.sh is up to date...
       HEAD is now at 425510e adi_update_boot.sh: Replace windows carrige/return
@@ -404,13 +405,10 @@ In order to update all ADI tools, simply call the **adi_update_boot.sh** script 
       Saving to: ‘latest_boot_partition.tar.gz’
       ...
 
-
-
-
-
 .. note::
 
-   It may happen that you have to copy manually the boot files to complete the update.
+   It may happen that you have to copy manually the boot files to complete the
+   update.
 
    | To do so, plug the SD card into your computer, and:
    
@@ -418,7 +416,8 @@ In order to update all ADI tools, simply call the **adi_update_boot.sh** script 
    -  Copy ${CONFIG}/BOOT.BIN to BOOT.BIN on the root of the SD card,
    -  Copy common/uImage to uImage on the root of the SD card.
    
-   (Replace ${CONFIG} with the config name that applies to your board and carrier combination, e.g. "zynq-zed-adv7511-ad9361" for a FMCOMMS2/3 on a ZedBoard.)
-
+   (Replace ${CONFIG} with the config name that applies to your board and
+   carrier combination, e.g. "zynq-zed-adv7511-ad9361" for a FMCOMMS2/3 on a
+   ZedBoard.)
 
 *End of Document*

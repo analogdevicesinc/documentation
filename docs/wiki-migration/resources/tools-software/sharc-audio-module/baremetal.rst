@@ -7,15 +7,28 @@ This framework is block-based and double-buffered. All audio processing is done 
 
 This framework supports the :doc:`Audio Project Fin </wiki-migration/resources/tools-software/sharc-audio-module/hardware/audioproj-fin>` using the expansion connector. It also supports other hardware connected over the :adi:`a2b` bus.
 
-The framework relies on a modular architecture which makes it easy to swap in/out different audio configurations, Fin board support, A2B module support, etc. without needing to modify your audio processing routines.
+The framework relies on a modular architecture which makes it easy to swap
+in/out different audio configurations, Fin board support, A2B module support,
+etc. without needing to modify your audio processing routines.
 
-The framework is easily configurable via a shared header file that is used to set up system-wide audio processing configurations (e.g. single or dual core processing, audio block size, audio sample rate, presence of daughter boards, which audio framework to use, etc.)
+The framework is easily configurable via a shared header file that is used to
+set up system-wide audio processing configurations (e.g. single or dual core
+processing, audio block size, audio sample rate, presence of daughter boards,
+which audio framework to use, etc.)
 
-The framework includes a very simple and efficient multi-core memory sharing mechanism which simplifies passing parameters and sharing state information between cores.
+The framework includes a very simple and efficient multi-core memory sharing
+mechanism which simplifies passing parameters and sharing state information
+between cores.
 
-The framework also includes a library of audio processing and audio effects code that can be used to create interesting effects pedals, musical instruments, etc.
+The framework also includes a library of audio processing and audio effects code
+that can be used to create interesting effects pedals, musical instruments, etc.
 
-The bare metal framework is designed to be easy to use and understand. There are no “black boxes” in this code. The code has been heavily commented so it can be modified and customized. The majority of the drivers are written to be simple and rely on direct control register reads and writes. This framework is designed to serve as an example of how to use some of the advanced functionality on the ADSP-SC589 to efficiently process audio using C and C++ algorithms.
+The bare metal framework is designed to be easy to use and understand. There are
+no “black boxes” in this code. The code has been heavily commented so it can be
+modified and customized. The majority of the drivers are written to be simple
+and rely on direct control register reads and writes. This framework is designed
+to serve as an example of how to use some of the advanced functionality on the
+ADSP-SC589 to efficiently process audio using C and C++ algorithms.
 
 Framework Documentation
 -----------------------
@@ -41,12 +54,14 @@ Framework Documentation
 Tutorials
 ---------
 
-Follow these tutorials to become familiar with bare metal audio framework and the various audio processing features and capabilities.
+Follow these tutorials to become familiar with bare metal audio framework and
+the various audio processing features and capabilities.
 
 Basic Audio Processing
 ~~~~~~~~~~~~~~~~~~~~~~
 
-These tutorials present the basic concepts of processing audio in real time using the bare metal audio framework.
+These tutorials present the basic concepts of processing audio in real time
+using the bare metal audio framework.
 
 -  :doc:`Tutorial: Audio Processing Basics with One or Two Cores </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/using-both-cores>`
 -  :doc:`Tutorial: Implementing a Tremolo Effect from Scratch with Tap-to-Set-Tempo Feature </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/tremelo-effect-tutorial>`
@@ -56,7 +71,8 @@ These tutorials present the basic concepts of processing audio in real time usin
 Working with the "Audio Elements" and "Audio Effects" Libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These tutorials will show users how to use the various audio elements and audio effects within the bare metal audio framework.
+These tutorials will show users how to use the various audio elements and audio
+effects within the bare metal audio framework.
 
 -  :doc:`Introduction to the "Audio Elements" and "Audio Effects" </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/audio-elements>`
 -  :doc:`Tutorial: Programming a Volume Control with the Audio Elements </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/volume-control-tutorial>`
@@ -69,4 +85,3 @@ Using MATLAB Generated Code in the Bare Metal Framework
 
 -  :doc:`Using a MATLAB Volume Control Function in the Framework </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/matlab_volume_control>`
 -  :doc:`Using a MATLAB Pitch Shift Algorithm in the Framework </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/matlab_pitchshift>`
-

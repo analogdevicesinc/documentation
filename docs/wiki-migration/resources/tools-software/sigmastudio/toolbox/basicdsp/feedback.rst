@@ -13,16 +13,16 @@ There are two versions of ' Feedback' algorithm.
 Feedback(Sample)
 ----------------
 
-Generates one sample delay in the signal path and reroutes the signal to an input occurring earlier in the path.
-
+Generates one sample delay in the signal path and reroutes the signal to an
+input occurring earlier in the path.
 
 |image1|
 
 Feedback(Block)
 ---------------
 
-Generates delay equal to one blocksize in the signal path and reroutes the signal to an input occurring earlier in the path.
-
+Generates delay equal to one blocksize in the signal path and reroutes the
+signal to an input occurring earlier in the path.
 
 |image2|
 
@@ -80,8 +80,8 @@ Supported DSPs
 
 ADAU145x
 
-====Example Usage===== The Signal Chain shown below feeds back the output of the adder block to the input of the subtractor after a block delay.
-
+====Example Usage===== The Signal Chain shown below feeds back the output of the
+adder block to the input of the subtractor after a block delay.
 
 |image3|
 

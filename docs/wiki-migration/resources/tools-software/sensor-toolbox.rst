@@ -15,7 +15,6 @@ The current stable Toolbox can be downloaded from the `Sensor Toolbox GitHub Rel
    -  `Analog Devices Inc, Sensor Toolbox Release Page <https://github.com/analogdevicesinc/SensorToolbox/releases>`_
    
 
-
 To interface and stream data with hardware will require installation of :doc:`libiio </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/libiio>` and one of two Hardware Support Packages from MathWorks. The libiio library can be obtained on the `Github <http://github.com/analogdevicesinc/libiio>`_ page of the project.
 
 Libiio Installers
@@ -29,7 +28,6 @@ Libiio Installers
    -  `Installer for latest nighty build (Windows 32-bit / 64-bit) <https://ci.appveyor.com/project/analogdevicesinc/libiio/build/artifacts?branch=master>`_ (may be unstable / buggy)
    
 
-
 Installation of either:
 
 .. admonition:: Download
@@ -40,10 +38,12 @@ Installation of either:
    -  `Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio <https://www.mathworks.com/help/supportpkg/plutoradio/index.html>`_
    
 
+is required to use the streaming system objects or blocks. These support
+packages provide the necessary libIIO MATLAB bindings used by ADI's system
+objects.
 
-is required to use the streaming system objects or blocks. These support packages provide the necessary libIIO MATLAB bindings used by ADI's system objects.
-
-Builds for the master branches are available as well if you want to use something newer:
+Builds for the master branches are available as well if you want to use
+something newer:
 
 Master Branch (Pre-release) Installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,11 +55,12 @@ Master Branch (Pre-release) Installer
    -  :git-SensorToolbox:`Sensor Toolbox Master Branch Installer README <README.md>`
    
 
-
 Toolbox Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
-Depending on your needs, different toolboxes will be required. For basic data streaming into MATLAB or Simulink only the following MathWorks toolboxes are required:
+Depending on your needs, different toolboxes will be required. For basic data
+streaming into MATLAB or Simulink only the following MathWorks toolboxes are
+required:
 
 -  `Communications Toolbox <https://www.mathworks.com/products/communications/>`_
 -  `DSP System Toolbox <https://www.mathworks.com/products/dsp-system/>`_
@@ -69,13 +70,17 @@ Depending on your needs, different toolboxes will be required. For basic data st
 Device Control and Data Streaming
 ---------------------------------
 
-Device interfaces which provide control and data streaming are implemented with MATLAB System Objects and Simulink Blocks. These System Objects can be access under the "adi" namespace in MATLAB and are followed by their part number or board name:
+Device interfaces which provide control and data streaming are implemented with
+MATLAB System Objects and Simulink Blocks. These System Objects can be access
+under the "adi" namespace in MATLAB and are followed by their part number or
+board name:
 
 ::
 
    adi.<Part or Board Name>
 
-For example, to instantiate an ADIS16460 object to control IMU it can be created as follows:
+For example, to instantiate an ADIS16460 object to control IMU it can be created
+as follows:
 
 ::
 
@@ -104,7 +109,8 @@ or
 Common Attributes
 ~~~~~~~~~~~~~~~~~
 
-There are some common attributes that need to be set for system objects and parts.
+There are some common attributes that need to be set for system objects and
+parts.
 
 -  ``uri`` Context address of IIO device. Possible options include:
 
@@ -143,7 +149,8 @@ The following have device-specific implementations in MATLAB and Simulink. If a 
 Examples
 --------
 
-Examples for streaming data are listed within the Toolbox documentation itself. To view run the following with MATLAB:
+Examples for streaming data are listed within the Toolbox documentation itself.
+To view run the following with MATLAB:
 
 ::
 
@@ -157,4 +164,3 @@ Help & Support
    
    -  Questions? :ez:`Ask Help & Support <linux-device-drivers/linux-software-drivers>`.
    
-

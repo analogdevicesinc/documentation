@@ -79,12 +79,24 @@ The IP core runs on the AXI clock and requires a frequency of 100MHz.
 Theory of Operation
 -------------------
 
-The main features of this IP core are its independent operation and the fact that it does not require an external temperature sensor. All of the mechanisms contained inside the core are controlled by a state machine, so that they do not depend on the software in case the software fails. The state machine uses the temperature it reads from the SYSMONE4 primitive or via the "temp_in" bus to decide the correct PWM duty-cycle. The temperature thresholds and hysteresis have defaults set in hardware and can be modified by the software. The INTERNAL_SYSMONE paramater is used to set the temperature values source, 0 when reading from temp_in and 1 when instantiating the internal SYSMONE primitive.
+The main features of this IP core are its independent operation and the fact
+that it does not require an external temperature sensor. All of the mechanisms
+contained inside the core are controlled by a state machine, so that they do not
+depend on the software in case the software fails. The state machine uses the
+temperature it reads from the SYSMONE4 primitive or via the "temp_in" bus to
+decide the correct PWM duty-cycle. The temperature thresholds and hysteresis
+have defaults set in hardware and can be modified by the software. The
+INTERNAL_SYSMONE paramater is used to set the temperature values source, 0 when
+reading from temp_in and 1 when instantiating the internal SYSMONE primitive.
 
 Running independently
 ~~~~~~~~~~~~~~~~~~~~~
 
-The hardware can operate with no input from the software; the IP core starts working after the bitstream is loaded, without the need to be brought out of reset. In order to activate the interrupts the software must write to the IRQ_MASK register. At this point the hardware starts operating and a minimal feedback is provided.
+The hardware can operate with no input from the software; the IP core starts
+working after the bitstream is loaded, without the need to be brought out of
+reset. In order to activate the interrupts the software must write to the
+IRQ_MASK register. At this point the hardware starts operating and a minimal
+feedback is provided.
 
 There are 9 temperature intervals defined in the hardware as below:
 
@@ -92,15 +104,30 @@ There are 9 temperature intervals defined in the hardware as below:
    :alt: PWM vs Temperature
    :align: center
 
-Five of these intervals have only one possible duty-cycle and four of them can have either of the neighbouring values. After reset the PWM duty-cycle will start as 100%. The state-machine will begin reading the temperature and will decide on the PWM duty cycle depending on which interval the value matches. The PWM duty-cycle will only change when the temperature enters one of the five intervals with a single PWM duty-cycle, in the other four the previous duty-cycle will be maintained. In these intervals its value will depend on whether the temperature is rising or falling. The temperature can be reconfigured by the software.
+Five of these intervals have only one possible duty-cycle and four of them can
+have either of the neighbouring values. After reset the PWM duty-cycle will
+start as 100%. The state-machine will begin reading the temperature and will
+decide on the PWM duty cycle depending on which interval the value matches. The
+PWM duty-cycle will only change when the temperature enters one of the five
+intervals with a single PWM duty-cycle, in the other four the previous
+duty-cycle will be maintained. In these intervals its value will depend on
+whether the temperature is rising or falling. The temperature can be
+reconfigured by the software.
 
-The temperature is obtained from the PL SYSMONE4 primitive as a 16 bit raw value or from the temp_in bus as 10 bit. This value can also be accessed by the software using the TEMPERATURE register however the reading is done periodically and overwrites the register so only the most value will be available. In order to keep the IP as light as possible, the temperateure values obtained are used as raw, it is not converted to Celsius. In order to convert to Celsius the following formula needs to be used:
+The temperature is obtained from the PL SYSMONE4 primitive as a 16 bit raw value
+or from the temp_in bus as 10 bit. This value can also be accessed by the
+software using the TEMPERATURE register however the reading is done periodically
+and overwrites the register so only the most value will be available. In order
+to keep the IP as light as possible, the temperateure values obtained are used
+as raw, it is not converted to Celsius. In order to convert to Celsius the
+following formula needs to be used:
 
 //Internal SYSMONE4 primitive: Temperature [C] = (ADC × 501.3743 / 2^bits) – 273.6777// `ug580 <https://www.xilinx.com/support/documentation/user_guides/ug580-ultrascale-sysmon.pdf>`_
 
 *Reading from temp_in: Temperature [C] = (ADC \*20 - 11195) / 41*
 
-There are five configurations described in the hardware, each with a corresponding tacho period +/- 25% tolerance.
+There are five configurations described in the hardware, each with a
+corresponding tacho period +/- 25% tolerance.
 
 *\*The tacho parameters are for a SUNON PF92251B1-000U-S99 fan*
 
@@ -123,22 +150,41 @@ Software control and customization
 
 The software can overwrite the temperature thresholds and the tacho values if needed. The TEMP_00_H -> TEMP_100_L registers can redefine the temperature intervals and the TACHO_25 -> TACHO_100 registers can also be used to redefine tacho values if a different fan is installed. In this case the TACHO\_\*_TOL registers must also be written in orded to provide tolerances. They must be calculated by the software as % of the nominal value *(i.e. 20% of 10000 = 2000)*.
 
-The software can also set a custom PWM duty-cycle by using the provided registers. All the values inside the PWM/TACHO registers are in clock-cycle periods. The software can provide custom tacho parameters for that desired PWM if it wants to continue to evaluate the tacho signal. The PWM period can be read from the PWM_PERIOD register and is by default 20000.
+The software can also set a custom PWM duty-cycle by using the provided
+registers. All the values inside the PWM/TACHO registers are in clock-cycle
+periods. The software can provide custom tacho parameters for that desired PWM
+if it wants to continue to evaluate the tacho signal. The PWM period can be read
+from the PWM_PERIOD register and is by default 20000.
 
 *i.e. 5KHz -> 20000 \* 10 ns = 200 us*
 
-The new PWM value must be greater or equal to the value selected by the hardware and less or equal to the PWM period. The software can use the PWM_WIDTH and PWM_PERIOD registers in order to make sure the new value is valid.
+The new PWM value must be greater or equal to the value selected by the hardware
+and less or equal to the PWM period. The software can use the PWM_WIDTH and
+PWM_PERIOD registers in order to make sure the new value is valid.
 
-After requesting a new duty-cycle there is a 5 second delay during which the hardware waits for the fan rotaion speed to stabilize. The software will then have to provide parameters for the tacho signal in order for the hardware to be able to evaluate it. To do this the software will have to write the TACHO_PERIOD and TACHO_TOLERANCE registers in that order. The software can read the TACHO_MEASUREMENT register to obtain the new tacho period and derive the tolerance value from it.
+After requesting a new duty-cycle there is a 5 second delay during which the
+hardware waits for the fan rotaion speed to stabilize. The software will then
+have to provide parameters for the tacho signal in order for the hardware to be
+able to evaluate it. To do this the software will have to write the TACHO_PERIOD
+and TACHO_TOLERANCE registers in that order. The software can read the
+TACHO_MEASUREMENT register to obtain the new tacho period and derive the
+tolerance value from it.
 
-A mearsurement is performed by averaging 2^AVP_POW consecutive tacho perdiod measurements. The time needed to finish a measurement depends on the frequency of the signal.
+A mearsurement is performed by averaging 2^AVP_POW consecutive tacho perdiod
+measurements. The time needed to finish a measurement depends on the frequency
+of the signal.
 
-The software can now use this register to read the new tacho pediod and then write it to the TACHO_PERIOD register. Then it can write a tolerance value to the TACHO_TOLERANCE register. The hardware will only start to monitor the tacho signal when the tolerance is provided.
+The software can now use this register to read the new tacho pediod and then
+write it to the TACHO_PERIOD register. Then it can write a tolerance value to
+the TACHO_TOLERANCE register. The hardware will only start to monitor the tacho
+signal when the tolerance is provided.
 
 Interrupts
 ~~~~~~~~~~
 
-The fan controller supports interrupts to both inform the software of any possible errors and also to facilitate the control of the core. There are four interrupt sources:
+The fan controller supports interrupts to both inform the software of any
+possible errors and also to facilitate the control of the core. There are four
+interrupt sources:
 
 ::
 
@@ -215,7 +261,6 @@ Base (common to all cores)
 | Tue Mar 14 10:17:59 2023 |        |                  |                       |      |            |                                                                                                                                                                                                                                                                                     |
 +--------------------------+--------+------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Common (axi_ad\*)
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -267,7 +312,6 @@ ADC Common (axi_ad\*)
 |         |        | [7:0]       | CUSTOM_CONTROL      | RW   | 0x00    |                                                                                                                                                                                                                                                                                                |
 +---------+--------+-------------+---------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADAQ8092
 ========
 
@@ -298,8 +342,6 @@ AD7606X_PI
 -  1 = CRC_ENABLED
 -  2 = STATUS_HEADER
 -  3 = CRC_STATUS
-
-
 
 \|
 
@@ -417,7 +459,6 @@ AD7606X_PI
 | Fri Aug 11 18:29:53 2023 |        |                     |                        |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+---------------------+------------------------+------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Channel (axi_ad\*)
 ----------------------
 
@@ -522,7 +563,6 @@ ADC Channel (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                      |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +--------------------------+--------+----------------------+------------------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 IO Delay Control (axi_ad\*)
 ---------------------------
 
@@ -551,7 +591,6 @@ IO Delay Control (axi_ad\*)
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                     |                    |      |         |                                                                                                                                                                                                                                                    |
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 DAC Common (axi_ad)
 -------------------
@@ -688,7 +727,6 @@ DAC Common (axi_ad)
 | Tue Mar 14 10:17:59 2023 |        |                     |                       |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+---------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DAC Channel (axi_ad\*)
 ----------------------
 
@@ -801,7 +839,6 @@ DAC Channel (axi_ad\*)
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Fri Sep 8 16:01:53 2023 |        |                   |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Generic TDD Control (axi_tdd)
 -----------------------------
@@ -1156,7 +1193,6 @@ Generic TDD Control (axi_tdd)
 | Tue Mar 14 10:17:59 2023 |        |                       |                     |      |                       |                                                                                                                                                                                                    |
 +--------------------------+--------+-----------------------+---------------------+------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Transceiver TDD Control (axi_ad\*)
 ----------------------------------
 
@@ -1302,7 +1338,6 @@ Transceiver TDD Control (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                            |                        |      |          |                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+----------------------------+------------------------+------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD TPL (up_tpl_common)
 ------------------------
 
@@ -1343,7 +1378,6 @@ JESD TPL (up_tpl_common)
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                      |             |      |         |                                                                                                            |
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
-
 
 JESD204 RX (axi_jesd204_rx)
 ---------------------------
@@ -1630,7 +1664,6 @@ JESD204 RX (axi_jesd204_rx)
 | Tue Mar 14 10:17:59 2023  |                 |                                |                              |        |             |                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD204 TX (axi_jesd204_tx)
 ---------------------------
 
@@ -1867,7 +1900,6 @@ JESD204 TX (axi_jesd204_tx)
 | Tue Mar 14 10:17:59 2023  |                 |                       |                          |        |             |                                                                                                                                                                                                                     |
 +---------------------------+-----------------+-----------------------+--------------------------+--------+-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DMA Controller (axi_dmac)
 -------------------------
 
@@ -2050,7 +2082,6 @@ DMA Controller (axi_dmac)
 | Thu Feb 1 12:18:03 2024 |        |                           |                           |      |                                 |                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+---------------------------+---------------------------+------+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Fan Controller (axi_fan_control)
 --------------------------------
 
@@ -2218,7 +2249,6 @@ Fan Controller (axi_fan_control)
 | Tue Mar 14 10:17:59 2023 |        |                   |                       |      |                        |                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +--------------------------+--------+-------------------+-----------------------+------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 System ID (axi_system_id)
 -------------------------
 
@@ -2259,7 +2289,6 @@ System ID (axi_system_id)
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                |                |      |            |                                                                                          |
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
-
 
 Clock Generator (axi_clkgen)
 ----------------------------
@@ -2307,7 +2336,6 @@ Clock Generator (axi_clkgen)
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                  |                   |      |         |                                                                                                                                                         |
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Clock Monitor (axi_clock_monitor)
 ---------------------------------
@@ -2401,7 +2429,6 @@ Clock Monitor (axi_clock_monitor)
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |               |               |      |            |                                |
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
-
 
 HDMI Transmit (axi_hdmi_tx)
 ---------------------------
@@ -2508,7 +2535,6 @@ HDMI Transmit (axi_hdmi_tx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                      |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 HDMI Receive (axi_hdmi_rx)
 --------------------------
 
@@ -2576,7 +2602,6 @@ HDMI Receive (axi_hdmi_rx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                 |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+-----------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 General Purpose Registers (axi_gpreg)
 -------------------------------------
 
@@ -2621,7 +2646,6 @@ General Purpose Registers (axi_gpreg)
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |              |              |      |            |                                                                                                                                                                                                                                        |
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 SPI Engine (axi_spi_engine)
 ---------------------------
@@ -2729,7 +2753,6 @@ SPI Engine (axi_spi_engine)
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                    |                    |      |             |                                                                                                                                                                                                                                                                                      |
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Xilinx XCVR (axi_xcvr) Regmap
 -----------------------------
@@ -2912,7 +2935,6 @@ Xilinx XCVR (axi_xcvr) Regmap
 | Tue Mar 14 10:17:59 2023 |        |               |                  |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 PWM Generator (axi_pwm_gen)
 ---------------------------
 
@@ -2921,7 +2943,6 @@ PWM Generator (axi_pwm_gen)
 .. important::
 
    This register map was moved at https://analogdevicesinc.github.io/hdl/library/axi_pwm_gen/index.html#register-map. The following table is NOT MAINTAINED ANYMORE.
-
 
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 | Address |        | Bits               | Name                                                                         | Type | Default    | Description                                                   |
@@ -2966,5 +2987,3 @@ PWM Generator (axi_pwm_gen)
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 |         |        | [31:0]             | PULSE_X_OFFSET[31:0] - base + 'h4 for each channel -> e.g. CH3 offset - 'hCC | RW   | 0x0000     | Pulse x offset, defined in number of clock cycles.            |
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
-
-

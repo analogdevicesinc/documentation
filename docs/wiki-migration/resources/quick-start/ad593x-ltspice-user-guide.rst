@@ -3,11 +3,10 @@ AD5933 LTSpice Model
 
 The :adi:`AD5933` is an impedance analyzer that works from 1 kHz to 100 kHz using a 16MHz system clock. The circuit incorporates the complete signal chain to generate, amplify, acquire and analyze the signals to measure an unknown impedance. A DDS with a single-ended, 10-bit, voltage output DAC, similar to the :adi:`AD9833`, provides the stimulus for the impedance under test. The device incorporates an amplifier with 4 output ranges to provide a suitable driving level for the impedance under test. On the receiving side, a Transimpedance Amplifier (TIA) converts the current across the unknown impedance into voltage. The TIA is followed by a Programmable-Gain Amplifier (PGA) to accommodate the signal to the range of the 12-bit ADC. The signal is windowed with a 1024-sample Hann window and then the DFT is computed using the phase and quadrature signals of the DDS. The result is provided in two 16-bit signed registers containing and real and imaginary part of the admittance.
 
-
 |AD5933 Block Diagram|
 
-The simulation model is represented with the following symbol. The use of the ports is explained below.
-
+The simulation model is represented with the following symbol. The use of the
+ports is explained below.
 
 |AD5933 Model Symbol|
 
@@ -62,13 +61,14 @@ Circuit Example
 
 The example provided with the circuit aims at demonstrating the use of the AD5933 model and explaining how to calculate admittance and impedance from the value of the real and imaginary registers. The contents of these registers do not correspond to the real and imaginary part of the admittance; they represent the amount of energy of signal in phase and in quadrature in relation to the transmitted signal. |image1|
 
-
 |image2|
 
 .. tip::
 
-   The imaginary register is not zero despite measuring a resistor because the AD5933 has an intrinsic phase shift due to the filters of the signal chain and the ADC conversion delay. This shift must be measured in calibration and discounted from subsequent measurements.
-
+   The imaginary register is not zero despite measuring a resistor because the
+   AD5933 has an intrinsic phase shift due to the filters of the signal chain
+   and the ADC conversion delay. This shift must be measured in calibration and
+   discounted from subsequent measurements.
 
 -  **Admittance Y** is calculated as:
 
@@ -102,8 +102,8 @@ where V\ :sub:`DD` is the analog supply voltage, V\ :sub:`AC` is the peak-to-pea
 
 .. |AD5933 Block Diagram| image:: https://wiki.analog.com/_media/resources/quick-start/ad5933_block_diagram.png
 .. |AD5933 Model Symbol| image:: https://wiki.analog.com/_media/resources/quick-start/ad5933_symbol.png
-   :width: 400px
+   :width: 400
 .. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/ad5933_application_example.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/quick-start/ad5933_simulation_result.png
-   :width: 600px
+   :width: 600

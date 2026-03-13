@@ -10,9 +10,11 @@ The ADXL372 demo project uses the **EVAL-ADXL372-ARDZ** shield which has an ADXL
 
 The **EVAL-ADICUP3029** is designed for IOT (Internet of Things) applications in mind, and therefore comes with on board **Bluetooth 5.0** module. The ADuCM3029 is placed in "Plexi" mode, to optimize it's ultra low power consumption and can only be woken up from an external interrupt that comes from the ADXL372 impact sensor. At that point the ADuCM3029 is placed into full power mode to do the other application tasks necessary, before being placed back into "Plexi" mode.
 
-The data is sent via Bluetooth 5.0 link to an iOS smart device, where all the max impact data can be read.
+The data is sent via Bluetooth 5.0 link to an iOS smart device, where all the
+max impact data can be read.
 
-Both boards and all components are used in their respective low power modes to optimize the solutions battery life.
+Both boards and all components are used in their respective low power modes to
+optimize the solutions battery life.
 
 Demo Requirements
 -----------------
@@ -36,7 +38,8 @@ The following is a list of items needed in order to replicate this demo.
    -  iOS IoTNode App *(optional)*
    -  Serial Terminal Program, Such as Putty or Tera Term
 
-      -  *(Required for running in release mode only and if you don't want to use the smart device app)*
+      -  *(Required for running in release mode only and if you don't want to
+         use the smart device app)*
 
 Setting up the Hardware
 -----------------------
@@ -45,7 +48,7 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Place the **EVAL-ADXL372-ARDZ-INT** on top of the **EVAL-ADICUP3029**.
 -  Make sure the jumpers **P10, P11, P12** are configured exactly as the picture below.
@@ -56,9 +59,10 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/eval_adxl_ardz_int.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
--  Plug in the micro USB cable into the (P10) USB port on the EVAL-ADICUP3029, and the other end into the PC or laptop.
+-  Plug in the micro USB cable into the (P10) USB port on the EVAL-ADICUP3029,
+   and the other end into the PC or laptop.
 
 Configuring the Software
 ------------------------
@@ -88,7 +92,7 @@ Following is the UART configuration.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/capture.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Smart Device Output
 ~~~~~~~~~~~~~~~~~~~
@@ -97,19 +101,20 @@ Open up the IoTNode app on your Smart Phone or Tablet.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_0005.png
    :align: center
-   :width: 500px
+   :width: 500
 
-Just press the Scan button on the bottom left corner in order for the app to start searching for Bluetooth devices.
+Just press the Scan button on the bottom left corner in order for the app to
+start searching for Bluetooth devices.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_0007.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Once the device is visible press connect to access the information provided over **Bluetooth**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_0010.png
    :align: center
-   :width: 500px
+   :width: 500
 
 After connecting to the device and generating enough G acceleration(**minimum of 10 G** on any axis), information will be displayed on the application. To generate this high value of acceleration you can try and hit the board on your hand ( do not put to much force in order to avoid damages to the device ).
 
@@ -117,18 +122,22 @@ After connecting to the device and generating enough G acceleration(**minimum of
 
    For more information regarding the mobile application please use the link for :doc:`Bluetooth Smart Device Apps </wiki-migration/resources/eval/user-guides/eval-adicup3029/smart_app>`\
 
-
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the ADXL372.
+There are two basic ways to program the ADICUP3029 with the software for the
+ADXL372.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_Asset_Health** can be found here:
 
@@ -144,7 +153,6 @@ The software for the **ADuCM3029_Asset_Health** can be found here:
    
    -  :git-EVAL-ADICUP3029:`ADuCM3029_Asset_Health Source Code <projects/ADuCM3029_Asset_Health>`
    
-
 
 How to use the Tools
 --------------------
@@ -166,7 +174,7 @@ Project Structure
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxl372.png
    :align: center
-   :width: 500px
+   :width: 500
 
 The project is structured in 3 layers:
 
@@ -174,6 +182,7 @@ The project is structured in 3 layers:
 -  Communication layer
 -  Application layer - ADuCM3029 and EM9304 BLE
 
-The ADXL372 transmits data to ADuCM3029 controller through the Communication layer. The data is processed and sent over BLE to a mobile device.
+The ADXL372 transmits data to ADuCM3029 controller through the Communication
+layer. The data is processed and sent over BLE to a mobile device.
 
 *End of Document*

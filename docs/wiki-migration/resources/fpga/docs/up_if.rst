@@ -41,7 +41,9 @@ uP interface and signals
 Timing diagram
 --------------
 
-The following timing diagram illustrates the signals and functionality of the interface. It show a register write access and two consecutive register read access.
+The following timing diagram illustrates the signals and functionality of the
+interface. It show a register write access and two consecutive register read
+access.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/up_if_2.svg
    :alt: UP interface timing diagram

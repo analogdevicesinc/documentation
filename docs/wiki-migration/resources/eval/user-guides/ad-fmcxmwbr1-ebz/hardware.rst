@@ -20,8 +20,8 @@ Kit Contents
 | Custom cable         | For power rails                                                     |
 +----------------------+---------------------------------------------------------------------+
 
-The FMC Xmicrowave bridge Kit contains both the FMC Xmicrowave Bridge Board and the FMC Xmicrowave Protoplate Board.
-
+The FMC Xmicrowave bridge Kit contains both the FMC Xmicrowave Bridge Board and
+the FMC Xmicrowave Protoplate Board.
 
 |image1|
 
@@ -29,8 +29,8 @@ The FMC Xmicrowave bridge Kit contains both the FMC Xmicrowave Bridge Board and 
 
    Figure. Contents of the AD-FMCXMWBR1-EBZ kit
 
-
-The boards are connected using a ribbon cable for the signal rails and another cable for the power rails.
+The boards are connected using a ribbon cable for the signal rails and another
+cable for the power rails.
 
 --------------
 
@@ -38,12 +38,11 @@ Specifications
 --------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/block_diagram.png
-   :width: 900px
+   :width: 900
 
 .. container:: centeralign
 
    Figure 2. Block Diagram of the FMC Xmicrowave bridge
-
 
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | Key Features            |                                                                                                 |
@@ -66,12 +65,20 @@ Connectivity and User interface
 
 -  FMC standard connector (FMC+ compatible)
 -  Raspberry Pi standard 40 pin connector
--  Connector headers for the cables that connect the adapter PCB and the interface PCB
+-  Connector headers for the cables that connect the adapter PCB and the
+   interface PCB
 
-Because it is intended to be compatible with various development boards, the FMC bridge cannot be built as a single board. The proposed solution is inspired from the design of the X-MW protoplate. An interface PCB, attached to the prototyping plate, will be connected to an FMC card with some ribbon cables for power and signals. There are two controlling modes for the AD-FMCXMWBR1-EBZ: with an FMC compatible device or an Raspberry Pi compatible device(such as the X-MW controller). The FMC bridge will direct from the development board to the protoplate two SPI buses, two I2C buses and 8 GPIO pins.
+Because it is intended to be compatible with various development boards, the FMC
+bridge cannot be built as a single board. The proposed solution is inspired from
+the design of the X-MW protoplate. An interface PCB, attached to the prototyping
+plate, will be connected to an FMC card with some ribbon cables for power and
+signals. There are two controlling modes for the AD-FMCXMWBR1-EBZ: with an FMC
+compatible device or an Raspberry Pi compatible device(such as the X-MW
+controller). The FMC bridge will direct from the development board to the
+protoplate two SPI buses, two I2C buses and 8 GPIO pins.
 
-In the image below are presented the signals on the FMC connector used in this design ( with italic fonts).
-
+In the image below are presented the signals on the FMC connector used in this
+design ( with italic fonts).
 
 |image2|
 
@@ -79,10 +86,12 @@ In the image below are presented the signals on the FMC connector used in this d
 
    Figure . Pinout of the FMC connector P1
 
-
-In the X-MW controller mode the protoplate has access to one SPI bus, one I2C bus and many GPIO pins. Connector P10 is compatible with the X-Microwave controller or a RaspberryPi. It can be connected with a ribbon cable and has the pinout as presented in Figure. In the same figure you can see the correspondence between the input pins of the FMC Bridge and the original X-MW protoplate interface board.
-
-
+In the X-MW controller mode the protoplate has access to one SPI bus, one I2C
+bus and many GPIO pins. Connector P10 is compatible with the X-Microwave
+controller or a RaspberryPi. It can be connected with a ribbon cable and has the
+pinout as presented in Figure. In the same figure you can see the correspondence
+between the input pins of the FMC Bridge and the original X-MW protoplate
+interface board.
 
 |image3|
 
@@ -90,8 +99,9 @@ In the X-MW controller mode the protoplate has access to one SPI bus, one I2C bu
 
    Figure 2. Pinout of the Rpi connector P10
 
-
-To connect wires on the protoplate you can solder them directly on the holes or use any male pin header with at least 0.230" (5.84mm) mating contact length and 0.320" (8.13mm) post contact length and 0.100" (2.54mm) pitch.
+To connect wires on the protoplate you can solder them directly on the holes or
+use any male pin header with at least 0.230" (5.84mm) mating contact length and
+0.320" (8.13mm) post contact length and 0.100" (2.54mm) pitch.
 
 Power
 ~~~~~
@@ -99,7 +109,12 @@ Power
 Input Power
 ^^^^^^^^^^^
 
-By default the AD-FMCXMWBR1-EBZ is supplied by the 12P0V pin the FMC connector. By the FMC standard this pin provides power from the carrier to the mezzanine card with maximum 1 A and maximum 1000 uF capacitive load. Because in max load all the circuits on the board need more than 1A there is an alternative supply method. For applications that require higher load currents, AD-FMCXMWBR1-EBZ can be supplied external from a power supply with the following specifications:
+By default the AD-FMCXMWBR1-EBZ is supplied by the 12P0V pin the FMC connector.
+By the FMC standard this pin provides power from the carrier to the mezzanine
+card with maximum 1 A and maximum 1000 uF capacitive load. Because in max load
+all the circuits on the board need more than 1A there is an alternative supply
+method. For applications that require higher load currents, AD-FMCXMWBR1-EBZ can
+be supplied external from a power supply with the following specifications:
 
 -  Input:100-2040V, 50-60 Hz
 -  Output: 12V 5.0A (minimum)
@@ -107,16 +122,13 @@ By default the AD-FMCXMWBR1-EBZ is supplied by the 12P0V pin the FMC connector. 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/p2_pinout.png
    :align: center
-   :width: 200px
+   :width: 200
 
 .. container:: centeralign
 
    Figure. Pinout of the input power connector P2
 
-
 The power path selection is achieved using the :adi:`LTC4418` dual channel prioritized powerpath controller. It connects one of the two power supplies to a common output, based on priority and validity. The higher priority supply defined in this case is the external supply.
-
-
 
 |image4|
 
@@ -124,8 +136,11 @@ The power path selection is achieved using the :adi:`LTC4418` dual channel prior
 
    Figure. Power path selection on AD-FMCXMWBR1EBZ
 
-
-The channels of LTC4418 have overvoltage and undervoltage thresholds defined, so the supply is considered valid when the voltage is within the OV UV window for at leas the configured validation time. If the external supply and the FMC 12V supplies are valid, leds DS1 and DS2 will be on, accordingly. The validity thresholds of the input supplies are listed in the table below:
+The channels of LTC4418 have overvoltage and undervoltage thresholds defined, so
+the supply is considered valid when the voltage is within the OV UV window for
+at leas the configured validation time. If the external supply and the FMC 12V
+supplies are valid, leds DS1 and DS2 will be on, accordingly. The validity
+thresholds of the input supplies are listed in the table below:
 
 =========================== =================== ============
 Input power supply validity                     
@@ -142,13 +157,14 @@ Input power supply validity
 
 .. important::
 
-   If connected, the external supply will be prioritized. Both supplies can be connected and valid at the same time.
-
+   If connected, the external supply will be prioritized. Both supplies can be
+   connected and valid at the same time.
 
 Output power
 ^^^^^^^^^^^^
 
-The AD-FMCXMWBR1-EBZ gives user access to the power supply pins of the FMC connector and creates new power supply rails as follows:
+The AD-FMCXMWBR1-EBZ gives user access to the power supply pins of the FMC
+connector and creates new power supply rails as follows:
 
 -  Direct from FMC:
 
@@ -169,16 +185,21 @@ The AD-FMCXMWBR1-EBZ gives user access to the power supply pins of the FMC conne
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/p11_pinout.png
    :align: center
-   :width: 200px
+   :width: 200
 
 .. container:: centeralign
 
    Figure. Pinout of P11-output power connector
 
-
-The user will have access on the FMC bridge to the power rails coming directly from the FPGA through the FMC connector. These supplies can be used, along with the power rails created on the FMC bridge(P11). The supply chain should provide some common voltage values suitable for the X-MW modules. Many of these modules have already integrated LDOs at the input so the voltage rails should provide enough headroom for the voltage so it does not drop under the desired value. If there are needed variable bias voltages in the prototype circuit, the FMC bridge will provide three potentiometer adjustable power supplies with a wide range of values.
-
-
+The user will have access on the FMC bridge to the power rails coming directly
+from the FPGA through the FMC connector. These supplies can be used, along with
+the power rails created on the FMC bridge(P11). The supply chain should provide
+some common voltage values suitable for the X-MW modules. Many of these modules
+have already integrated LDOs at the input so the voltage rails should provide
+enough headroom for the voltage so it does not drop under the desired value. If
+there are needed variable bias voltages in the prototype circuit, the FMC bridge
+will provide three potentiometer adjustable power supplies with a wide range of
+values.
 
 |image5|
 
@@ -186,18 +207,19 @@ The user will have access on the FMC bridge to the power rails coming directly f
 
    Figure. Power map of AD-FMCXMWBR1-EBZ for maximum load on all supplies
 
-
 Digital communication
 ~~~~~~~~~~~~~~~~~~~~~
 
-The X-MW blocks communicate with the controller through digital communication protocols. The paths for communication include:
+The X-MW blocks communicate with the controller through digital communication
+protocols. The paths for communication include:
 
 -  2x SPI rails with CLS, CIPO, COPI and CS0-7 signals
 -  2x I2C rails with SDA, SCL signals
 -  GPIO0-7
 
-All the above signals can be accessed on the P9 pin header. Using a ribbon cable, the signals are connected to the Protoplate interface board, where all the corresponding pads are labelled.
-
+All the above signals can be accessed on the P9 pin header. Using a ribbon
+cable, the signals are connected to the Protoplate interface board, where all
+the corresponding pads are labelled.
 
 |image6|
 
@@ -205,11 +227,18 @@ All the above signals can be accessed on the P9 pin header. Using a ribbon cable
 
    Figure. Pinout of the P9 output pin header
 
-
 Level translation
 ~~~~~~~~~~~~~~~~~
 
-To be able to use different FPGAs with modules that have different voltage requirements there is necessary to use some level translation IC's. The voltage level translation between the driver device and the receiver devices must be bidirectional and compatible with the common voltage levels of the FPGAs (1.8V, 3.3V). If the two levels do not suit the needs of the user, the 1.8V corresponding pins can be disconnected from the LDO output that generates it ( by desoldering R133) and use P12 as input for the new voltage rail. Each communication protocol can be independently level translated, and the feature is implemented as it follows:
+To be able to use different FPGAs with modules that have different voltage
+requirements there is necessary to use some level translation IC's. The voltage
+level translation between the driver device and the receiver devices must be
+bidirectional and compatible with the common voltage levels of the FPGAs (1.8V,
+3.3V). If the two levels do not suit the needs of the user, the 1.8V
+corresponding pins can be disconnected from the LDO output that generates it (
+by desoldering R133) and use P12 as input for the new voltage rail. Each
+communication protocol can be independently level translated, and the feature is
+implemented as it follows:
 
 +-----------------+---------------------+-----------------------------------+----------------+
 |                 | Level translator IC |                                   | Supply voltage |
@@ -225,12 +254,22 @@ To be able to use different FPGAs with modules that have different voltage requi
 | GPIO            | 74AVC4T774GUX       | 4 inputs, with direction pin each | 0.8V - 3.6V    |
 +-----------------+---------------------+-----------------------------------+----------------+
 
-GPIO direction pins are programmable from the FPGA. They are set by default to be 6 output pins and 2 input pins, but the user has the option to configure them as needed either through software or by desoldering the pull-up resistor(VADJ) and soldering it into pulldown (GND) position (footprint is available on the PCB).
+GPIO direction pins are programmable from the FPGA. They are set by default to
+be 6 output pins and 2 input pins, but the user has the option to configure them
+as needed either through software or by desoldering the pull-up resistor(VADJ)
+and soldering it into pulldown (GND) position (footprint is available on the
+PCB).
 
 Compatibility and Reconfigurability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The FMC bridge is mainly intended to be used with an FMC compatible development board which will be able to control the modules as well as the level translation ICs. Because these developments boards have a higher processing capability we are able to provide paths for two sets of each communication protocol (SPI, I2C) to the protoplate. The direction of the level shifters is also controlled by the FPGA by default. The system was designed in such a way that one SPI bus, one I2C bus and 8GPIO pins can be used in both control modes (not simultaneusly).
+The FMC bridge is mainly intended to be used with an FMC compatible development
+board which will be able to control the modules as well as the level translation
+ICs. Because these developments boards have a higher processing capability we
+are able to provide paths for two sets of each communication protocol (SPI, I2C)
+to the protoplate. The direction of the level shifters is also controlled by the
+FPGA by default. The system was designed in such a way that one SPI bus, one I2C
+bus and 8GPIO pins can be used in both control modes (not simultaneusly).
 
 --------------
 
@@ -244,16 +283,15 @@ Schematics and CAD files
    -  `AD-FMCBRIDGE1A BR-066232 Rev B Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/02_066232b_top.pdf>`_
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/ad-fmcxmwbr1-ebz_kit_set.jpg
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/fmc_pinout.png
-   :width: 900px
+   :width: 900
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/rpi_conn_pinout.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/input_power_priority.png
-   :width: 700px
+   :width: 700
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/power_map_revb.png
-   :width: 800px
+   :width: 800
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/p9_pinout.png
-   :width: 300px
+   :width: 300

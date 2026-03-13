@@ -9,7 +9,9 @@ Loudness With Filter
 Description
 -----------
 
-The Loudness with filter block applies the filter to the input signal and loudness will apply to the filtered signal. The loudness with the filter block gives access to a variety of filter algorithms. The available filter types are
+The Loudness with filter block applies the filter to the input signal and
+loudness will apply to the filtered signal. The loudness with the filter block
+gives access to a variety of filter algorithms. The available filter types are
 
 -  Second-Order Low Shelf
 -  Second-Order High Shelf
@@ -21,7 +23,8 @@ The Loudness with filter block applies the filter to the input signal and loudne
 Usage
 -----
 
-To access the filter click on the icon button and icon button image will change to reflect the selected filter type
+To access the filter click on the icon button and icon button image will change
+to reflect the selected filter type
 
 Targets Supported
 -----------------
@@ -55,7 +58,6 @@ Name                   Type           Description
 ---------------------- -------------- ----------------------
 Output0                Audio          Output channel0
 ====================== ============== ======================
-
 
 | ===== Configurable Parameters =====
 

@@ -3,7 +3,8 @@
 Biquad 3 channel 1 cascade
 ==========================
 
-This 3 channel Infinite Impulse Response (IIR) filter consists of a single Biquad section, five coefficients, and Direct-Form-2 implementation.
+This 3 channel Infinite Impulse Response (IIR) filter consists of a single
+Biquad section, five coefficients, and Direct-Form-2 implementation.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/biquad3ch1-tbx.jpg
 
@@ -18,7 +19,6 @@ Pin 1: Input1 decimal - Audio                    Audio ch2 Input
 Pin 2: Input1 decimal - Audio                    Audio ch3 Input
 ============= ================================== ====================
 
-
 | ====Output Pins====
 
 ============== ================================== ====================
@@ -28,7 +28,6 @@ Pin 0: Output  decimal - Audio                    Filtered ch1 Output
 Pin 1: Output1 decimal - Audio                    Filtered ch2 Output
 Pin 2: Output2 decimal - Audio                    Filtered ch3 Output
 ============== ================================== ====================
-
 
 | ==== Grow Algorithm ==== The module does not support Add and Growth.
 
@@ -66,7 +65,9 @@ Configuration
 Algorithm Description
 ---------------------
 
-3 channel Infinite Impulse Response (IIR) filter consists of a single Biquad section, five coefficients, and Direct-Form-2 implementation. The transfer function is as shown below
+3 channel Infinite Impulse Response (IIR) filter consists of a single Biquad
+section, five coefficients, and Direct-Form-2 implementation. The transfer
+function is as shown below
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/biquad3ch1-tf.jpg
 

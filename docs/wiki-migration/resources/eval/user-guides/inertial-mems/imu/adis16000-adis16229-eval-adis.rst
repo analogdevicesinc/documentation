@@ -8,7 +8,7 @@ The :adi:`ADIS16000` and :adi:`ADIS16229` enable creation of a simple wireless v
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-hook-up.png
    :align: center
-   :width: 600px
+   :width: 600
 
 REQUIRED MATERIALS
 ------------------
@@ -32,7 +32,8 @@ DEMO SYSTEM
 
 :doc:`ADIS16229 Wireless Vibration Monitoring Demonstration System </wiki-migration/resources/eval/user-guides/inertial-mems/imu/vibrationdemo>`
 
-Click on the link above to visit a demo system developed around the ADIS16000/ADIS16229.
+Click on the link above to visit a demo system developed around the
+ADIS16000/ADIS16229.
 
 ADIS16000 INSTALLATION ON EVAL-ADIS
 -----------------------------------
@@ -45,7 +46,6 @@ For those who would prefer to perform PC-based evaluation of the ADIS16000/ADIS1
 
    **NOTE:** Do not plug the :adi:`EVAL-ADIS` into the USB cable at this stage of the setup. Wait until after the software installation is complete.
 
-
 Step #1
 ~~~~~~~
 
@@ -57,9 +57,8 @@ Use the 4 M2 x.4 x 6mm screws from the included bag and line up the ADIS16COM1/P
 
    WARNING: Make sure that the connector cable going from J1 on the :adi:`EVAL-ADIS` is properly aligned to the J1 connector on the ADIS16COM1/PCBZ. The 16 pin cable is included with the :adi:`EVAL-ADIS` and proper mating is essential for correct operation.
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-interface-mnt.png
-   :width: 900px
+   :width: 900
 
 Step #2
 ~~~~~~~
@@ -74,7 +73,7 @@ ADIS16229 INSTALLATION
 This section is a continuation and focuses on :adi:`ADIS16229AMLZ <ADIS16229>` setup to complete the system. The ADIS16229AMLZ provides a lead structure that enables simple connection with standard batteries. The SMA connector interface enables the use of many different antennas.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-asy1.png
-   :width: 800px
+   :width: 800
 
 Step #1
 ~~~~~~~
@@ -87,18 +86,18 @@ The :adi:`ADIS16229AMLZ <ADIS16229>` module is a 47.0x37.6x22.6mm PCB structure 
 
    WARNING: Make sure the connector cable and the battery are installed correctly or the :adi:`ADIS16229AMLZ <ADIS16229>` may be damaged.
 
-
 Step #2
 ~~~~~~~
 
-The antenna connections to the SMA's are simple screw on connectors. Start by inserting the antenna straight onto the the SMA then gently screw it in. This should require very little force.
+The antenna connections to the SMA's are simple screw on connectors. Start by
+inserting the antenna straight onto the the SMA then gently screw it in. This
+should require very little force.
 
 |image9| |image10| |image11|
 
 .. container:: center round box
 
    **NOTE:** The antenna used in this :adi:`ADIS16229AMLZ <ADIS16229>` demonstration is: Linx Technology part number ANT-916-CW-QW-SMA. The antenna for the :adi:`ADIS16000AMLZ <ADIS16000>` is: Linx Technology part number ANT-916-CW-HWR-SMA. These are provided for the demonstration and may not suit all applications.
-
 
 VIBRATION SOFTWARE INSTALLATION
 -------------------------------
@@ -108,52 +107,62 @@ The :adi:`ADIS16229` vibration software link will be available shortly for downl
 USB Driver Installation
 -----------------------
 
-After downloading the EVAL-ADIS USB Driver file, extract the SDPDrivers.exe file from the zip file, into a convenient location and then double click on it to start the process.
+After downloading the EVAL-ADIS USB Driver file, extract the SDPDrivers.exe file
+from the zip file, into a convenient location and then double click on it to
+start the process.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-000.png
-   :width: 500px
+   :width: 500
 
 When the setup wizard opens, click on **Next** to start the installation process
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-001.png
-   :width: 500px
+   :width: 500
 
 Click on **Next** to accept the default driver location.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-002.png
-   :width: 500px
+   :width: 500
 
-The process will involve at least two progress bars that look like the following:
+The process will involve at least two progress bars that look like the
+following:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-003.png
-   :width: 500px
+   :width: 500
 
 If you encounter this type of message during the process, click on **Install** to continue with the installation.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-003a.png
-   :width: 500px
+   :width: 500
 
 Once the installation has completed, click on **Finish** to complete the process.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-004.png
-   :width: 500px
+   :width: 500
 
 VIBRATION SOFTWARE GUIDE
 ------------------------
 
-The user upon successful installation of the required Vibration Evaluation application and successful setup of Evaluation Hardware can proceed to power up ADIS16000 (Gateway Node) and one ADIS16229 (Sensor Node) at a time. The user can then proceed to start the Evaluation application.
+The user upon successful installation of the required Vibration Evaluation
+application and successful setup of Evaluation Hardware can proceed to power up
+ADIS16000 (Gateway Node) and one ADIS16229 (Sensor Node) at a time. The user can
+then proceed to start the Evaluation application.
 
 Main Menu Overview
 ------------------
 
-When the application is opened, SPI communication is setup between ADIS16000 (Gateway Node) and the Evaluation board. Upon successful SPI communication with ADIS16000, a command to add a sensor node to the network is issued. A User message briefly appears on the screen to let the user know that ADIS16000 is actively looking to add a sensor node to its network. When the sensor node is added to the network, the following message is displayed.
+When the application is opened, SPI communication is setup between ADIS16000
+(Gateway Node) and the Evaluation board. Upon successful SPI communication with
+ADIS16000, a command to add a sensor node to the network is issued. A User
+message briefly appears on the screen to let the user know that ADIS16000 is
+actively looking to add a sensor node to its network. When the sensor node is
+added to the network, the following message is displayed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-sensor-added.png
    :align: center
-   :width: 400px
+   :width: 400
 
 When the user clicks on **ok** in the above message, the main window with an active tab 'Sensor 1' appears on the screen as shown below.
-
 
 |image12|
 
@@ -162,25 +171,29 @@ When the user clicks on **ok** in the above message, the main window with an act
    **Error Messages:**
 
    
-   The application would fail to start in the event of no USB connection to the Evaluation board. When the user sees the following error message, Ensure that ADIS16000 is connected to the Eval Board.
+   The application would fail to start in the event of no USB connection to the
+   Evaluation board. When the user sees the following error message, Ensure that
+   ADIS16000 is connected to the Eval Board.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-16000-not-found.png
       :align: center
-      :width: 300px
+      :width: 300
    
    When the user sees the following error message, Ensure that ADIS16000 is selected in **Devices** drop-down menu.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-wrong-device.png
       :align: center
-      :width: 300px
+      :width: 300
    
-   User is notified of an unsuccessful addition of a sensor node to the network as shown below.
+   User is notified of an unsuccessful addition of a sensor node to the network
+   as shown below.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-sensor1-nf.png
       :align: center
-      :width: 300px
+      :width: 300
    
-   Unsuccessful addition of the sensor node can occur under the following circumstances..
+   Unsuccessful addition of the sensor node can occur under the following
+   circumstances..
    
    **Case 1:** A new sensor node had not been powered on during the initial start of the application. If this is the case, User can turn on the sensor and follow `connecting nodes <https://wiki.analog.com/adis16000-adis16229-eval-adis>`_ section for adding the new sensor.
    
@@ -189,7 +202,6 @@ When the user clicks on **ok** in the above message, the main window with an act
    **Case 3:** ADIS16000 or ADIS16229 is in an unknown state. Power cycle both the parts and restart the application.
    
 
-
 Manual Trigger Mode
 -------------------
 
@@ -197,7 +209,7 @@ A sensor was successfully added to the network. User can start a FFT capture fro
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-manual-fft.png
    :align: center
-   :width: 700px
+   :width: 700
 
 Automatic/Period Mode
 ---------------------
@@ -206,7 +218,7 @@ In order to change the mode from Manual to Periodic FFT, the drop down box needs
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-periodic-fft.png
    :align: center
-   :width: 700px
+   :width: 700
 
 Reconfiguring the Sensor Nodes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -219,25 +231,25 @@ Sensor node can be updated in a 4 step process..
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-register-menu.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Step 2:** In the register access menu, Scroll down to the registers of the respective sensor page indicated by Page column of the Table as shown below. Click on the register that needs to be modified
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-registers-defined.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Step 3:** Enter the new value in the box and hit Write.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-update-reg.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Step 4:** Scroll up to registers in Page 0 and then Select COMMAND_16K. Write the command 0x02 which is a command to update the sensor node. A wait of 400 ms will ensure that the sensor is updated with the new settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-glob-cmd-reg-update.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Sensor Reconfiguration in Periodic mode**
 
@@ -250,63 +262,82 @@ The user can alternately use Register access to set up the periodic mode. When a
 Connecting to ADIS16229 Nodes
 -----------------------------
 
-A user can add more sensors to the network by clicking on Network menu to invoke the Network control window followed by a 3 step process. The new sensors that need to be added to the network needs to be powered on one at a time during this process.
+A user can add more sensors to the network by clicking on Network menu to invoke
+the Network control window followed by a 3 step process. The new sensors that
+need to be added to the network needs to be powered on one at a time during this
+process.
 
-Step 1:Turn on one new sensor node that needs to be added to the network. Sensors already in the network can remain powered on.
+Step 1:Turn on one new sensor node that needs to be added to the network.
+Sensors already in the network can remain powered on.
 
-Step 2:Click on the desired new sensor # in the network control window which is not active (not already assigned).
+Step 2:Click on the desired new sensor # in the network control window which is
+not active (not already assigned).
 
 Step 3: Click on ADD sensor button to add the new sensor.
 
-After a wait time of 5 seconds, the sensor should be successfully added to the network. Now the user could move on to the addition of the next new node if needed.
+After a wait time of 5 seconds, the sensor should be successfully added to the
+network. Now the user could move on to the addition of the next new node if
+needed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-network.png
    :align: center
-   :width: 700px
+   :width: 700
 
 Alarm Configuration
 -------------------
 
-User can configure alarm thresholds for various sample rate options and bands using the Alarm Settings window that is invoked by clicking on Alarms menu
+User can configure alarm thresholds for various sample rate options and bands
+using the Alarm Settings window that is invoked by clicking on Alarms menu
 
 User can load a default setting for Alarms by first clicking on **Read Default Values** button and then clicking on **Write to Dut** button. After a wait time of 400 msecs, User can check if the operation was successful by clicking on **Read from DUT** button. Please note that **Write to DUT** command in the application flashes the settings on the part.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229_alarm_settings.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
-After this step, User can enable Alarms using the steps detailed in section Reconfiguring the Sensor nodes by
+After this step, User can enable Alarms using the steps detailed in section
+Reconfiguring the Sensor nodes by
 
 **Step 1 :** Write 0x03 to ALM_CTRL register in the respective sensor page.
 
 **Step 2 :** Write 0x02 to COMMAND_16K in page 0 to update the sensor node that was recently updated in the previous step.
 
-At this point, the Alarms are enabled in the sensor. Alarm status page can be opened to monitor alarms beyond this point.
+At this point, the Alarms are enabled in the sensor. Alarm status page can be
+opened to monitor alarms beyond this point.
 
-The user can initiate a capture in Manual FFT mode to check for the Alarms. At the end of the capture, the Alarm status should refresh indicating the status of Alarms in the capture.
+The user can initiate a capture in Manual FFT mode to check for the Alarms. At
+the end of the capture, the Alarm status should refresh indicating the status of
+Alarms in the capture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-alarms-status.png
    :align: center
-   :width: 700px
+   :width: 700
 
-When an alarm is triggered, the alarm status window indicates it with a yellow shade or a red shade on the corresponding band and axis in the table. The yellow shade indicates a lower threshold alarm has been activated. The red shade indicates that the higher threshold has been activated in the corresponding band and axis.
+When an alarm is triggered, the alarm status window indicates it with a yellow
+shade or a red shade on the corresponding band and axis in the table. The yellow
+shade indicates a lower threshold alarm has been activated. The red shade
+indicates that the higher threshold has been activated in the corresponding band
+and axis.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-alarm-level.png
    :align: center
-   :width: 700px
+   :width: 700
 
 Network Control
 ---------------
 
-When the sensor nodes are already connected to the network and Gateway Node is reset using Software reset or a Power cycle, the sensor nodes can be retrieved by using the following steps.
+When the sensor nodes are already connected to the network and Gateway Node is
+reset using Software reset or a Power cycle, the sensor nodes can be retrieved
+by using the following steps.
 
 **Step 1:** Click on the Network menu to invoke the Network control Window **Step 2:** Click on **Scan Network** button.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-scan-network.png
    :align: center
-   :width: 700px
+   :width: 700
 
-The Gateway node checks for every node in the network( Node 1 through 6) and updates its sensor map at the end of it.
+The Gateway node checks for every node in the network( Node 1 through 6) and
+updates its sensor map at the end of it.
 
 QUICK LINKS TO KEY ENGINEER ZONE CONTENT
 ----------------------------------------
@@ -314,26 +345,26 @@ QUICK LINKS TO KEY ENGINEER ZONE CONTENT
 MARC: Think about title for best branding
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-parts.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-system.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-16000-gateway.png
-   :width: 480px
+   :width: 480
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-16pin-cable.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-interface-16000amlz-mnt.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16000amlz.png
-   :width: 290px
+   :width: 290
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-block-mnt.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-batt1.png
-   :width: 450px
+   :width: 450
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-antenna-install.png
-   :width: 460px
+   :width: 460
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-blk-mnt-plugged-in.png
-   :width: 370px
+   :width: 370
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-system-done.png
-   :width: 850px
+   :width: 850
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-main.png
-   :width: 700px
+   :width: 700

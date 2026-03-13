@@ -4,22 +4,24 @@ Pattern Generator - Test Case
 Initial Setup
 -------------
 
-In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
+In order to proceed through the test case, first of all delete the Scopy \*.ini
+file (saves previous settings made in Scopy tool) from the following path on
+Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
-Open the Pattern Generator instrument. The interface should look like the picture below:
+Open the Pattern Generator instrument. The interface should look like the
+picture below:
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-initialsetup.jpg
-   :width: 700px
+   :width: 700
 
-Enable a channel and press multiple times on the "Run" button to check if the instrument works.
+Enable a channel and press multiple times on the "Run" button to check if the
+instrument works.
 
 Test Title
 ----------
 
 A. Individual Channel Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -55,12 +57,8 @@ A. Individual Channel Operation
    |                                                | 14. Use other channels, DIO2 to DIO15, and repeat steps to verify each.                                                                                                          |                     | Behavior of each channel should be the same as with DIO1, CH1.                                                                                                         |
    +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 B. Group Channel Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -128,12 +126,8 @@ B. Group Channel Operation
    |                                                                        | 7.2 Monitor the channels through logic analyzer. Refer to steps resources picture for the configuration of logic analyzer.                                                                                                 | |image94|           | The interface should look like in the "Step Resources" picture (left side).                                                                                                  |
    +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 C. Simultaneous Group and Individual Channels Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -153,12 +147,8 @@ C. Simultaneous Group and Individual Channels Operation
    |                                                                          | 6. Monitor the 2 groups and DIO4 through logic analyzer.                                                                                                                                                                                                                   | |image108|            | On logic analyzer, the plot should resemble the plot seen in pattern generator.                                                                                                                                                      |
    +--------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 D. Other Features
 ~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -202,273 +192,271 @@ D. Other Features
    | See more info                      | 7.1 Click the 'See more info' icon on the upper left of the pattern generator window.                                                          |                 | It should lead to the wiki page of pattern generator.                                                                                      |
    +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 Test Results will be recorded in the following document: `Pattern Generator Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/patterngenerator_-_test_case.xlsx>`_
 
 **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a1.jpg
-   :width: 100px
+   :width: 100
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a2.jpg
-   :width: 100px
+   :width: 100
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a3.jpg
-   :width: 100px
+   :width: 100
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a4a.jpg
-   :width: 100px
+   :width: 100
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a4b.jpg
-   :width: 100px
+   :width: 100
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a5a.jpg
-   :width: 100px
+   :width: 100
 .. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a5b.jpg
-   :width: 100px
+   :width: 100
 .. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a6a.jpg
-   :width: 100px
+   :width: 100
 .. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a10.jpg
-   :width: 100px
+   :width: 100
 .. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a12a.png
-   :width: 100px
+   :width: 100
 .. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a13.jpg
-   :width: 100px
+   :width: 100
 .. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a14a.png
-   :width: 100px
+   :width: 100
 .. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a14b.jpg
-   :width: 100px
+   :width: 100
 .. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a16a.png
-   :width: 100px
+   :width: 100
 .. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a16b.jpg
-   :width: 100px
+   :width: 100
 .. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a1.jpg
-   :width: 100px
+   :width: 100
 .. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a2.jpg
-   :width: 100px
+   :width: 100
 .. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a3.jpg
-   :width: 100px
+   :width: 100
 .. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a4a.jpg
-   :width: 100px
+   :width: 100
 .. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a4b.jpg
-   :width: 100px
+   :width: 100
 .. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a5a.jpg
-   :width: 100px
+   :width: 100
 .. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a5b.jpg
-   :width: 100px
+   :width: 100
 .. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a6a.jpg
-   :width: 100px
+   :width: 100
 .. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a10.jpg
-   :width: 100px
+   :width: 100
 .. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a12a.png
-   :width: 100px
+   :width: 100
 .. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a13.jpg
-   :width: 100px
+   :width: 100
 .. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a14a.png
-   :width: 100px
+   :width: 100
 .. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a14b.jpg
-   :width: 100px
+   :width: 100
 .. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a16a.png
-   :width: 100px
+   :width: 100
 .. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-a16b.jpg
-   :width: 100px
+   :width: 100
 .. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.1.png
-   :width: 100px
+   :width: 100
 .. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.2.jpg
-   :width: 100px
+   :width: 100
 .. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.3.jpg
-   :width: 100px
+   :width: 100
 .. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.4.jpg
-   :width: 100px
+   :width: 100
 .. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.5.jpg
-   :width: 100px
+   :width: 100
 .. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.6.jpg
-   :width: 100px
+   :width: 100
 .. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b2.1.jpg
-   :width: 100px
+   :width: 100
 .. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b2.2.jpg
-   :width: 100px
+   :width: 100
 .. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b2.3.jpg
-   :width: 100px
+   :width: 100
 .. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b2.4.jpg
-   :width: 100px
+   :width: 100
 .. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.1.png
-   :width: 100px
+   :width: 100
 .. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.2.jpg
-   :width: 100px
+   :width: 100
 .. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.3a.jpg
-   :width: 100px
+   :width: 100
 .. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.3b.jpg
-   :width: 100px
+   :width: 100
 .. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.4a.jpg
-   :width: 100px
+   :width: 100
 .. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.4b.jpg
-   :width: 100px
+   :width: 100
 .. |image47| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b4.1.jpg
-   :width: 100px
+   :width: 100
 .. |image48| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b4.2.jpg
-   :width: 100px
+   :width: 100
 .. |image49| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.1.jpg
-   :width: 100px
+   :width: 100
 .. |image50| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.2.jpg
-   :width: 100px
+   :width: 100
 .. |image51| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.3.jpg
-   :width: 100px
+   :width: 100
 .. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.4.jpg
-   :width: 100px
+   :width: 100
 .. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.5.jpg
-   :width: 100px
+   :width: 100
 .. |image54| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.6.jpg
-   :width: 100px
+   :width: 100
 .. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b6.1.jpg
-   :width: 100px
+   :width: 100
 .. |image56| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b6.2.jpg
-   :width: 100px
+   :width: 100
 .. |image57| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b6.3.jpg
-   :width: 100px
+   :width: 100
 .. |image58| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b6.4.jpg
-   :width: 100px
+   :width: 100
 .. |image59| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b7.1.jpg
-   :width: 100px
+   :width: 100
 .. |image60| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b7.2.jpg
-   :width: 100px
+   :width: 100
 .. |image61| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b8.1.jpg
-   :width: 100px
+   :width: 100
 .. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b8.2.jpg
-   :width: 100px
+   :width: 100
 .. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.1.png
-   :width: 100px
+   :width: 100
 .. |image64| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.2.jpg
-   :width: 100px
+   :width: 100
 .. |image65| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.3.jpg
-   :width: 100px
+   :width: 100
 .. |image66| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.4.jpg
-   :width: 100px
+   :width: 100
 .. |image67| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.5.jpg
-   :width: 100px
+   :width: 100
 .. |image68| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b1.6.jpg
-   :width: 100px
+   :width: 100
 .. |image69| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b2.1.jpg
-   :width: 100px
+   :width: 100
 .. |image70| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b2.2.jpg
-   :width: 100px
+   :width: 100
 .. |image71| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b2.3.jpg
-   :width: 100px
+   :width: 100
 .. |image72| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b2.4.jpg
-   :width: 100px
+   :width: 100
 .. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.1.png
-   :width: 100px
+   :width: 100
 .. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.2.jpg
-   :width: 100px
+   :width: 100
 .. |image75| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.3a.jpg
-   :width: 100px
+   :width: 100
 .. |image76| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.3b.jpg
-   :width: 100px
+   :width: 100
 .. |image77| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.4a.jpg
-   :width: 100px
+   :width: 100
 .. |image78| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b3.4b.jpg
-   :width: 100px
+   :width: 100
 .. |image79| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b4.1.jpg
-   :width: 100px
+   :width: 100
 .. |image80| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b4.2.jpg
-   :width: 100px
+   :width: 100
 .. |image81| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.1.jpg
-   :width: 100px
+   :width: 100
 .. |image82| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.2.jpg
-   :width: 100px
+   :width: 100
 .. |image83| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.3.jpg
-   :width: 100px
+   :width: 100
 .. |image84| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.4.jpg
-   :width: 100px
+   :width: 100
 .. |image85| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.5.jpg
-   :width: 100px
+   :width: 100
 .. |image86| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b5.6.jpg
-   :width: 100px
+   :width: 100
 .. |image87| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b6.1.jpg
-   :width: 100px
+   :width: 100
 .. |image88| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b6.2.jpg
-   :width: 100px
+   :width: 100
 .. |image89| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b6.3.jpg
-   :width: 100px
+   :width: 100
 .. |image90| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b6.4.jpg
-   :width: 100px
+   :width: 100
 .. |image91| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b7.1.jpg
-   :width: 100px
+   :width: 100
 .. |image92| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b7.2.jpg
-   :width: 100px
+   :width: 100
 .. |image93| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b8.1.jpg
-   :width: 100px
+   :width: 100
 .. |image94| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-b8.2.jpg
-   :width: 100px
+   :width: 100
 .. |image95| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c1.jpg
-   :width: 100px
+   :width: 100
 .. |image96| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c2a.jpg
-   :width: 100px
+   :width: 100
 .. |image97| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c2b.jpg
-   :width: 100px
+   :width: 100
 .. |image98| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c3.jpg
-   :width: 100px
+   :width: 100
 .. |image99| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c4.jpg
-   :width: 100px
+   :width: 100
 .. |image100| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c5.jpg
-   :width: 100px
+   :width: 100
 .. |image101| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c6.jpg
-   :width: 100px
+   :width: 100
 .. |image102| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c1.jpg
-   :width: 100px
+   :width: 100
 .. |image103| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c2a.jpg
-   :width: 100px
+   :width: 100
 .. |image104| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c2b.jpg
-   :width: 100px
+   :width: 100
 .. |image105| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c3.jpg
-   :width: 100px
+   :width: 100
 .. |image106| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c4.jpg
-   :width: 100px
+   :width: 100
 .. |image107| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c5.jpg
-   :width: 100px
+   :width: 100
 .. |image108| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-c6.jpg
-   :width: 100px
+   :width: 100
 .. |image109| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d1.1.jpg
-   :width: 100px
+   :width: 100
 .. |image110| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d1.2.jpg
-   :width: 100px
+   :width: 100
 .. |image111| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d2.1.jpg
-   :width: 100px
+   :width: 100
 .. |image112| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d2.2.jpg
-   :width: 100px
+   :width: 100
 .. |image113| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d4.1.jpg
-   :width: 100px
+   :width: 100
 .. |image114| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d4.2.jpg
-   :width: 100px
+   :width: 100
 .. |image115| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d5.2.png
-   :width: 100px
+   :width: 100
 .. |image116| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d5.3.png
-   :width: 100px
+   :width: 100
 .. |image117| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d6.1.png
-   :width: 100px
+   :width: 100
 .. |image118| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d6.3.png
-   :width: 100px
+   :width: 100
 .. |image119| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d6.4.png
-   :width: 100px
+   :width: 100
 .. |image120| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-dn6.1.jpg
-   :width: 100px
+   :width: 100
 .. |image121| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d1.1.jpg
-   :width: 100px
+   :width: 100
 .. |image122| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d1.2.jpg
-   :width: 100px
+   :width: 100
 .. |image123| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d2.1.jpg
-   :width: 100px
+   :width: 100
 .. |image124| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d2.2.jpg
-   :width: 100px
+   :width: 100
 .. |image125| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d4.1.jpg
-   :width: 100px
+   :width: 100
 .. |image126| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d4.2.jpg
-   :width: 100px
+   :width: 100
 .. |image127| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d5.2.png
-   :width: 100px
+   :width: 100
 .. |image128| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d5.3.png
-   :width: 100px
+   :width: 100
 .. |image129| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d6.1.png
-   :width: 100px
+   :width: 100
 .. |image130| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d6.3.png
-   :width: 100px
+   :width: 100
 .. |image131| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-d6.4.png
-   :width: 100px
+   :width: 100
 .. |image132| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/pg-dn6.1.jpg
-   :width: 100px
+   :width: 100

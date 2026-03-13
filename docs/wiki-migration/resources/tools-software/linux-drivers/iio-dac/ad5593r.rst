@@ -23,7 +23,21 @@ Description
    :alt: ad5593r_bd.png
    :align: right
 
-The AD5593R have eight I/Ox pins (I/O0 to I/O7) that can be independently configured as digital-to-analog converter (DAC) outputs, analog-to-digital converter (ADC) inputs, digital outputs, or digital inputs. When an I/Ox pin is configured as an analog output, it is driven by a 12-bit DAC. The output range of the DAC is 0 V to VREF or 0 V to 2 × VREF. When an I/Ox pin is configured as an analog input, it is connected to a 12-bit ADC via an analog multiplexer. The input range of the ADC is 0 V to VREF or 0 V to 2 × VREF. The ADC has a total throughput rate of 400 kSPS. The I/Ox pins can also be configured as digital, general-purpose input or output (GPIO) pins. The state of the GPIO pins can be set or read back by accessing the GPIO write data register or the GPIO read configuration register, respectively, via an I2C write or read operation. The AD5593R have an integrated 2.5 V, 25 ppm/°C reference, which is turned off by default, and an integrated temperature indicator, which gives an indication of the die temperature. The temperature value is read back as part of an ADC read sequence.
+The AD5593R have eight I/Ox pins (I/O0 to I/O7) that can be independently
+configured as digital-to-analog converter (DAC) outputs, analog-to-digital
+converter (ADC) inputs, digital outputs, or digital inputs. When an I/Ox pin is
+configured as an analog output, it is driven by a 12-bit DAC. The output range
+of the DAC is 0 V to VREF or 0 V to 2 × VREF. When an I/Ox pin is configured as
+an analog input, it is connected to a 12-bit ADC via an analog multiplexer. The
+input range of the ADC is 0 V to VREF or 0 V to 2 × VREF. The ADC has a total
+throughput rate of 400 kSPS. The I/Ox pins can also be configured as digital,
+general-purpose input or output (GPIO) pins. The state of the GPIO pins can be
+set or read back by accessing the GPIO write data register or the GPIO read
+configuration register, respectively, via an I2C write or read operation. The
+AD5593R have an integrated 2.5 V, 25 ppm/°C reference, which is turned off by
+default, and an integrated temperature indicator, which gives an indication of
+the die temperature. The temperature value is read back as part of an ADC read
+sequence.
 
 Source Code
 ===========
@@ -59,7 +73,7 @@ Hardware configuration
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/ad5592r_eval.jpg
    :alt: ad5592r_eval.jpg
-   :width: 600px
+   :width: 600
 
 Adding Linux driver support
 ===========================
@@ -67,12 +81,12 @@ Adding Linux driver support
 Enabling the driver
 -------------------
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD5593R Driver depends on CONFIG_I2C
-
 
 ::
 
@@ -134,7 +148,13 @@ Optional properties
 Device tree example
 ~~~~~~~~~~~~~~~~~~~
 
-The following example instanciates the ad5593r driver for a AD5593R device connected on a I2C bus. It sets the I/O0 port as a DAC, the I/O1 port as ADC. I/O2 and I/O3 are configured for primary function DAC the additional ADC can measure the voltage being provided by the DAC. This feature can monitor the output voltage to detect short circuits or overload conditions. I/O4 is connected to the ground with a pull-down resistor. The other I/Os are registered with the Linux GPIO subsystem.
+The following example instanciates the ad5593r driver for a AD5593R device
+connected on a I2C bus. It sets the I/O0 port as a DAC, the I/O1 port as ADC.
+I/O2 and I/O3 are configured for primary function DAC the additional ADC can
+measure the voltage being provided by the DAC. This feature can monitor the
+output voltage to detect short circuits or overload conditions. I/O4 is
+connected to the ground with a pull-down resistor. The other I/Os are registered
+with the Linux GPIO subsystem.
 
 ::
 
@@ -190,7 +210,8 @@ The following example instanciates the ad5593r driver for a AD5593R device conne
 Driver testing
 ==============
 
-If the driver correctly detected the device, the "iio_info" program should inform us about the available channels:
+If the driver correctly detected the device, the "iio_info" program should
+inform us about the available channels:
 
 ::
 
@@ -305,7 +326,6 @@ Show device name
       ad5593r
    
 
-
 Scales
 ------
 
@@ -329,7 +349,6 @@ Show current scale
       0.610351562
    
 
-
 Show available scales
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -345,7 +364,6 @@ Show available scales
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# cat in_voltage_scale_available
       0.610351562 1.220703124
    
-
 
 Change scales
 ~~~~~~~~~~~~~
@@ -363,7 +381,6 @@ Change scales
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# cat in_voltage_scale
       1.220703124
    
-
 
 Get channel Y input voltage
 ---------------------------
@@ -383,7 +400,6 @@ This specifies any shell prompt running on the target
       1491
    
 
-
 U = in_voltage3_raw \* in_voltage_scale = 1491 \* 0.610351562 = 910 mV
 
 Set channel Y output voltage
@@ -401,7 +417,6 @@ Set channel Y output voltage
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device2# echo 1638 > out_voltage0_raw
    
 
-
 **U** = *out_voltage0_raw \* out_voltage_scale* = 1638 \* 0.610351562 = **999.76 mV**
 
 Example obtaining the temperature in °C
@@ -416,7 +431,12 @@ For more information see also here: `IIO Kernel Documentation <https://git.kerne
 GPIO Testing
 ------------
 
-The GPIO sysfs interface allows users to manipulate any GPIO from userspace. Userspace utilizes a sysfs control interface to dynamically request and release individual GPIOs. Once a GPIO has been requested, writing to the newly created path allows you to control the direction and the data while reading from it returns the GPIO data (which usually corresponds to a 0 or 1 which represents the signal level).
+The GPIO sysfs interface allows users to manipulate any GPIO from userspace.
+Userspace utilizes a sysfs control interface to dynamically request and release
+individual GPIOs. Once a GPIO has been requested, writing to the newly created
+path allows you to control the direction and the data while reading from it
+returns the GPIO data (which usually corresponds to a 0 or 1 which represents
+the signal level).
 
 For more information see also here: `GPIO Kernel Documentation <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/gpio/sysfs.txt>`_
 
@@ -444,7 +464,6 @@ For more information see also here: `GPIO Kernel Documentation <https://git.kern
    base:890
    label:0-0010
    ngpio:8
-
 
    root@linaro-ubuntu-desktop:/sys/class/gpio/gpiochip890# cd ..
    root@linaro-ubuntu-desktop:/sys/class/gpio# echo 897 > export

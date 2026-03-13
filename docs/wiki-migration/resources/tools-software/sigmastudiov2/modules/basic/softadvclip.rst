@@ -9,7 +9,8 @@ Soft Clipper - Advanced
 Description
 -----------
 
-The Standard Clipper Advanced block is a soft clipper that clips the level of the input signal based on linear threshold.
+The Standard Clipper Advanced block is a soft clipper that clips the level of
+the input signal based on linear threshold.
 
 Targets Supported
 -----------------

@@ -5,7 +5,6 @@ AD7799 - Microcontroller No-OS Driver
 
    You're looking at a legacy page. A newer driver and reference project demo are available at :doc:`this page </wiki-migration/resources/tools-software/uc-drivers/ad7799>`.
 
-
 Supported Devices
 -----------------
 
@@ -23,7 +22,10 @@ Overview
 
 The :adi:`AD7798`/:adi:`AD7799` are low power, low noise, complete analog front ends for high precision measurement applications. The :adi:`AD7798`/:adi:`AD7799` contains a low noise, 16-/24-bit Σ-Δ ADC with three differential analog inputs. The on-chip, low noise instrumentation amplifier means that signals of small amplitude can be interfaced directly to the ADC. With a gain setting of 64, the rms noise is 27 nV for the :adi:`AD7799` and 40 nV for the :adi:`AD7798` when the update rate equals 4.17 Hz.
 
-On-chip features include a low-side power switch, reference detect, programmable digital output pins, burnout currents, and an internal clock oscillator. The output data rate from the part is software-programmable and can be varied from 4.17 Hz to 470 Hz.
+On-chip features include a low-side power switch, reference detect, programmable
+digital output pins, burnout currents, and an internal clock oscillator. The
+output data rate from the part is software-programmable and can be varied from
+4.17 Hz to 470 Hz.
 
 The part operates with a power supply from 2.7 V to 5.25 V. The :adi:`AD7798` consumes a current of 300 μA typical, whereas the :adi:`AD7799` consumes 380 μA typical. Both devices are housed in a 16-lead TSSOP package.
 
@@ -44,7 +46,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7799_eval_ebz.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -57,9 +64,14 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD7799 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD7799 driver can be used exactly as it is provided. There are three functions which are called by the AD7799 driver:
+The Communication Driver has a standard interface, so the AD7799 driver can be
+used exactly as it is provided. There are three functions which are called by
+the AD7799 driver:
 
 -  SPI_Init() – initializes the communication peripheral.
 -  SPI_Write() – writes data to the device.
@@ -71,7 +83,6 @@ The Communication Driver has a standard interface, so the AD7799 driver can be u
 .. container:: centeralign
 
    Driver architecture
-
 
 The implementation of these three functions depends on the used microcontroller.
 
@@ -109,7 +120,8 @@ Downloads
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD7799 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD7799
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -126,7 +138,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD7799EBZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+An EVAL-AD7799EBZ has to be interfaced with the Renesas Demonstration Kit (RDK)
+for RL78G13:
 
 ::
 
@@ -148,7 +161,8 @@ With the **Applilet3 for RL78G13** tool the following peripherals have to be con
 CSI10 (Clocked Serial Interface 10) – For the AD7792 part and the ST7579 LCD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+Choose to generate the Transmit/receive function for the CSI10 and configure the
+interface with the following settings:
 
 -  Transfer mode setting: **Single transfer mode**
 -  Data length setting : **8 bits**
@@ -166,7 +180,8 @@ Configure TM00 as an interval timer:
 
 -  Interval timer setting - Interval value(16 bits): **1** ms
 -  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
--  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an
+   interrupt (INTM00)//
 
 Watchdog Timer
 ~~~~~~~~~~~~~~
@@ -178,7 +193,10 @@ Disable the watchdog timer:
 Reference Project Overview
 --------------------------
 
-The demo program samples channel 1 at 16.7 Hz. The ADC is configured to work in bipolar mode and the gain of the In-Amp is set to 1. The hex values of the configuration and data registers are displayed on the LCD. The value of the Data register is also formatted to be displayed in mV.
+The demo program samples channel 1 at 16.7 Hz. The ADC is configured to work in
+bipolar mode and the gain of the In-Amp is set to 1. The hex values of the
+configuration and data registers are displayed on the LCD. The value of the Data
+register is also formatted to be displayed in mV.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7799_rl78g13_screen.jpg
    :align: center
@@ -186,16 +204,15 @@ The demo program samples channel 1 at 16.7 Hz. The ADC is configured to work in 
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
 
-
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the AD7799 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the AD7799
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -211,7 +228,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD7799EBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+An EVAL-AD7799EBZ board has to be interfaced with the Renesas Demonstration Kit
+(RDK) for RX62N:
 
 ::
 
@@ -228,7 +246,10 @@ An EVAL-AD7799EBZ board has to be interfaced with the Renesas Demonstration Kit 
 Reference Project Overview
 --------------------------
 
-The demo program samples channel 1 at 16.7 Hz. The ADC is configured to work in bipolar mode and the gain of the In-Amp is set to 1. The hex values of the configuration and data registers are displayed on the LCD. The value of the Data register is also formatted to be displayed in mV.
+The demo program samples channel 1 at 16.7 Hz. The ADC is configured to work in
+bipolar mode and the gain of the In-Amp is set to 1. The hex values of the
+configuration and data registers are displayed on the LCD. The value of the Data
+register is also formatted to be displayed in mV.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7799_rx62n_screen.jpg
    :align: center
@@ -236,17 +257,13 @@ The demo program samples channel 1 at 16.7 Hz. The ADC is configured to work in 
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

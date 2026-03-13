@@ -36,7 +36,8 @@ Anyone (ADI employees or non-employees) with an account on the ADI wiki can:
 Functionality Reserved for ADI employees
 ----------------------------------------
 
--  Learn how to review and approve edits that are submitted by registered users of the Wiki.
+-  Learn how to review and approve edits that are submitted by registered users
+   of the Wiki.
 
    -  :doc:`Reviewing and Approving Wiki Edits </wiki-migration/wiki/help/getting-started/approve>`
 

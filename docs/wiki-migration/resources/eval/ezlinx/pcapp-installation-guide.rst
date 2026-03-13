@@ -1,5 +1,3 @@
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -16,8 +14,6 @@
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 :doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
 
 ezLINX™ Sample PC Application Installation Guide
@@ -33,7 +29,7 @@ Windows XP / Vista / 7
 
 .. image:: https://wiki.analog.com/_media/ezlinx/pc_install_fig1_xp_v2.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Step 2:** Right click on *ezLINXPCApp.zip* and extract it.
 
@@ -42,28 +38,28 @@ Windows XP / Vista / 7
 .. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/pc_install_fig2_xp_v3.jpg
    :alt: Figure 2.
    :align: center
-   :width: 600px
+   :width: 600
 
 **Step 4:** Run *setup.exe* found in the extracted *ez*\ LINXPCApp archive. Windows will warn that the software publisher can not be verified (Figure 3 below). Ignore this and select “Install”.
 
 .. image:: https://wiki.analog.com/_media/ezlinx/pc_install_fig3_xp.jpg
    :alt: Figure 3.
    :align: center
-   :width: 400px
+   :width: 400
 
 **Step 5:** The installer will then check that you have the necessary software on your machine to install the application. If you do not have the necessary software you will be prompted to accept the license agreement for the .NET Framework v4 and/or Windows Installer 3.1 (See Figure 4. below). Accept these license agreements and the required software will be downloaded and installed.
 
 .. image:: https://wiki.analog.com/_media/ezlinx/license_agreement_1.jpg
    :alt: Figure 4.
    :align: center
-   :width: 400px
+   :width: 400
 
 **Step 6:** The *ez*\ LINX Sample PC Application will be installed (Figure 5 below). When the installer is finished the Sample PC Application will launch automatically.
 
 .. image:: https://wiki.analog.com/_media/ezlinx/pc_install_fig4_xp.jpg
    :alt: Figure 5.
    :align: center
-   :width: 400px
+   :width: 400
 
 Offline Installation
 --------------------
@@ -89,12 +85,12 @@ Windows XP
 .. image:: https://wiki.analog.com/_media/ezlinx/pc_install_fig5_xp.jpg
    :alt: Figure 7.
    :align: center
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/ezlinx/pc_install_fig6_xp.jpg
    :alt: Figure 8.
    :align: center
-   :width: 400px
+   :width: 400
 
 **Step 3:** Run *setup.exe* provided on the disk. Windows will warn that the software publisher can not be verified. Ignore this and select “Install”. The *ez*\ LINX Sample PC Application will be installed. When the installer is finished the Sample PC Application will start automatically.
 

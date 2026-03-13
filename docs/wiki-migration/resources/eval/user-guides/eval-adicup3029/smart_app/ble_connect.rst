@@ -1,12 +1,18 @@
 ADICUP3029 BLE Connection Documentation
 =======================================
 
-This is a guide with information regarding the BLE registration, data packet size, and configuration. This is will enable users to use the IoTNode smart app in applications leveraging the capabilities of ADICUP3029 board with Bluetooth connectivity.
+This is a guide with information regarding the BLE registration, data packet
+size, and configuration. This is will enable users to use the IoTNode smart app
+in applications leveraging the capabilities of ADICUP3029 board with Bluetooth
+connectivity.
 
 General Description/Overview
 ----------------------------
 
-IoTNode application permits the connection of a single board at a time to visualize data from it. However multiple sensors may be present on that board (ex. temperature, CO, acceleration). The information sent to the application is tied to the sensor id.
+IoTNode application permits the connection of a single board at a time to
+visualize data from it. However multiple sensors may be present on that board
+(ex. temperature, CO, acceleration). The information sent to the application is
+tied to the sensor id.
 
 The ADI BLE packet description currently has three types of packets:
 
@@ -34,7 +40,9 @@ Sensor ID Packet Type
 6 bits    2 bits
 ========= ===========
 
-You could have multiple sensors on a board with different ids the app shows information from one sensor at a time. It knows what information is related to which sensor by using the sensor id.
+You could have multiple sensors on a board with different ids the app shows
+information from one sensor at a time. It knows what information is related to
+which sensor by using the sensor id.
 
 Registration Packet
 ~~~~~~~~~~~~~~~~~~~

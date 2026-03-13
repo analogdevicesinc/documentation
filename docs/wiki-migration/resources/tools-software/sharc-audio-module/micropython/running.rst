@@ -1,12 +1,13 @@
 Tutorial: Running MicroPython on the SHARC Audio Module Main Board
 ==================================================================
 
-The fastest way of getting MicroPython to run on the board, is by flashing a pre-built MicroPython loader binary into the on-board SPI Flash and run the MicroPython from there.
+The fastest way of getting MicroPython to run on the board, is by flashing a
+pre-built MicroPython loader binary into the on-board SPI Flash and run the
+MicroPython from there.
 
 .. important::
 
    This would overwrite anything that is previously stored in the SPI Flash. If you only want to run MicroPython in RAM without erasing the Flash, refer to :doc:`Tutorial: Building MicroPython with CrossCore Embedded Stuidio </wiki-migration/resources/tools-software/sharc-audio-module/micropython/building>`. You may use the debug function of CrossCore Embedded Studio to run MicroPython from RAM.
-
 
 Obtain the pre-built binary
 ---------------------------
@@ -18,7 +19,9 @@ https://github.com/analogdevicesinc/micropython/releases
 Flash it into the SHARC Audio Module
 ------------------------------------
 
-There are various ways of doing this. Here I am using the CLDP (Command Line Device Programmer) bundled with the CrossCore Embedded Studio and the Bare Metal SDK.
+There are various ways of doing this. Here I am using the CLDP (Command Line
+Device Programmer) bundled with the CrossCore Embedded Studio and the Bare Metal
+SDK.
 
 -  Download the binary loader file (micropython-xxxxxx.ldr, xxxxxx is the build date).
 -  Open up a Command Prompt window and navigate to the directory where you put the loader file. (By using ``dir`` you should be able to see the loader file in the current directory.)
@@ -28,14 +31,16 @@ There are various ways of doing this. Here I am using the CLDP (Command Line Dev
    Platform        ADSP-SC589 via ICE-1000
    Processor       ADSP-SC589
    Core            1
-   Driver          C:\Analog Devices\SAM_BareMetal_SDK-Rel2.0.0\extras\flash-programmer\Supporting_Files\w25ql512fv_dpia_SC589_SHARC_Core1.dxe
+   Driver          C:\Analog
+   Devices\SAM_BareMetal_SDK-Rel2.0.0\extras\flash-programmer\Supporting_Files\w25ql512fv_dpia_SC589_SHARC_Core1.dxe
    Program         micropython-190227.ldr
    .................................................................................................................. done``
 
 Connect to the board
 --------------------
 
-Now MicroPython has been flashed into the board, follow these steps to connect to the board:
+Now MicroPython has been flashed into the board, follow these steps to connect
+to the board:
 
 -  Connect an FTDI USB-serial cable to the board, and plug the USB into the PC.
 -  You should be able to see a USB Serial Port device in the Device Manager, note the COM number.
@@ -45,4 +50,3 @@ Now MicroPython has been flashed into the board, follow these steps to connect t
 -  You should be able to see the Python console in the terminal window.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/micropython/mpy.png
-

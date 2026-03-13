@@ -12,7 +12,10 @@ Multi-Channel Multi-Tap Delay
 Description
 -----------
 
-The Multi Channel Multi Tap Delay cell provides a variable delay for each output from one of the selected input channel. Each input signal is called as channel and output is called as Tap. The amount of delay for each tap can be modified in real time by updating the current delay.
+The Multi Channel Multi Tap Delay cell provides a variable delay for each output
+from one of the selected input channel. Each input signal is called as channel
+and output is called as Tap. The amount of delay for each tap can be modified in
+real time by updating the current delay.
 
 Targets Supported
 -----------------
@@ -34,7 +37,6 @@ Name    Type  Description
 ======= ===== ===============
 Input X Audio Input Channel X
 ======= ===== ===============
-
 
 | ==== Output ====
 

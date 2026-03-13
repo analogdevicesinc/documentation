@@ -1,8 +1,6 @@
 Dynamometer Drive System
 ========================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,11 +17,9 @@ Dynamometer Drive System
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-dyno1-ebz.png
    :alt: Dynamometer Drive System
-   :width: 400px
+   :width: 400
 
 Features
 --------
@@ -39,7 +35,7 @@ Block Diagram
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/dyno_diagram.png
-   :width: 800px
+   :width: 800
 
 +---+
 +---+
@@ -108,11 +104,12 @@ Analog Discovery™
 In order interface the Dyno with the Analog Discovery™ USB Oscilloscope:
 
 -  Slide switch S2 to EXT_CTRL position
--  Insert the Analog Discovery™ in P1 the connector(with the Analog Devices logo facing the user)
+-  Insert the Analog Discovery™ in P1 the connector(with the Analog Devices logo
+   facing the user)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/dyno_discovery_control.jpg
    :alt: Dynamometer Drive System
-   :width: 400px
+   :width: 400
 
 Two software packages are available for interfacing with Analog Discovery™:
 
@@ -136,8 +133,8 @@ PWM3        Digital Channel 2        Phase C PWM (3.3V levels)
 
 .. warning::
 
-   The system needs a 5V 500mA power supply. The power connector is a 2.1 X 5.5MM jack with the center pin positive(+)
-
+   The system needs a 5V 500mA power supply. The power connector is a 2.1 X
+   5.5MM jack with the center pin positive(+)
 
 Downloads
 ---------
@@ -153,6 +150,5 @@ Downloads
    -  `Allegro Board File <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-dyno1-ebz_layout.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).
    
 
-
 .. |Dyno menu| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/dyno_menu.png
-   :width: 500px
+   :width: 500

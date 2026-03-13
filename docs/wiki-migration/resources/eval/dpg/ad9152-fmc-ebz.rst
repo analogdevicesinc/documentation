@@ -8,7 +8,10 @@ This user guide describes both the hardware and software setup needed to acquire
 
 The AD9152-FMC-EBZ has an FMC mezzanine card and connects to an :adi:`ADS7-V2 <eval-ads7-v2>` or :adi:`ADS8-V1 <eval-ads8-v1ebz>` data pattern generator system. The ADS7-V2/ADS8-V1 automatically formats the data and sends it to the EVB via its JESD204B lanes. +12V, +3.3V, and VADJ power supply rails are provided by the ADS7-V2/ADS8-V1 system via the FMC connector P1. A clock distribution chip (AD9516-1) is included on this EVB as a clock fan-out and frequency divider for the DACCLK, JESD204B SYSREF signals, and a GBTCLK clock used by the ADS7-V2/ADS8-V1.
 
-There is also an FMC standard I2C bus that is used by the ADS7-V2/ADS8-V1 to identify the board. This I2C interface is implemented in software in the AD9152-FMC-EBZ PIC processor (XU1). All ADS7-V2/ADS8-V1 to/from the EVB interface signals are connected via the FMC connector P1.
+There is also an FMC standard I2C bus that is used by the ADS7-V2/ADS8-V1 to
+identify the board. This I2C interface is implemented in software in the
+AD9152-FMC-EBZ PIC processor (XU1). All ADS7-V2/ADS8-V1 to/from the EVB
+interface signals are connected via the FMC connector P1.
 
 Typical Setup
 -------------
@@ -17,16 +20,13 @@ Typical Setup
 
    |image1|\ *Figure 1a. AD9152-FMC-EBZ Setup with ADS7-V2EBZ*\
 
-
 .. container:: centeralign
 
    |image2|\ *Figure 1b. AD9152-FMC-EBZ Setup with ADS8-V1EBZ*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files/Links
 -------------------
@@ -60,7 +60,6 @@ Software Needed
    -  Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
    
 
-
 Hardware Needed
 ---------------
 
@@ -89,13 +88,11 @@ Quick Start Guide
 
    \ |image3|\ *Figure 2. ADS7-V2 and AD9152 detected in DPG Software*\
 
-
 -  Start DPG Lite or DPG Downloader. A panel named after the detected controller board should appear at the bottom of the DPG window. The device on the evaluation board and the data interface should also be automatically detected by the software and shown at **Evaluation Board** and **Port Configuration**, respectively. See Figure 2.
 
 .. container:: centeralign
 
    \ |image4|\ *Figure 3. AD9152-FMC-EBZ detected in ACE*\
-
 
 -  Open ACE. The board will automatically be recognized by the software as shown in Figure 3. Otherwise, install the plugin for AD9152 evaluation board by following the steps in this page: :doc:`Quickstart - ACE Quickstart and Plug-in Installation </wiki-migration/resources/tools-software/ace/userguide/quickstart>`.
 
@@ -103,13 +100,12 @@ Quick Start Guide
 
    \ |image5|\ *Figure 4. ACE Initial Configuration Wizard*\
 
-
 .. container:: centeralign
 
    |image6|\ *Figure 5. ACE AD9152 Chip View Tab*\
 
-
--  In ACE, apply the configuration wizard settings enumerated below and shown in Figure 4. JESD204B PLL should lock and the indicator should turn green.
+-  In ACE, apply the configuration wizard settings enumerated below and shown in
+   Figure 4. JESD204B PLL should lock and the indicator should turn green.
 
    -  **FDAC:** 1.5 GHz
    -  **Interpolation:** 2
@@ -122,7 +118,6 @@ Quick Start Guide
 .. container:: centeralign
 
    \ |image7|\ *Figure 6. Single Tone and ADS7-V2 Configuration Panels in DPG*\
-
 
 -  In DPG Lite or DPG Downloader, configure single tone waveform generation. From the **Add Generator Waveforms** pulldown menu, select **Single Tone**. Apply the following settings:
 
@@ -139,23 +134,22 @@ Quick Start Guide
 
    \ |image8|\ *Figure 7. AD9152 DAC Output FFT for Data Rate = 700 MHz, FOUT = 100 MHz*\
 
-
 -  Press the download arrow (|9154_down_arrow.png|) then the play button (|9154_right_green_arrow.png|). As in Figure 6, **Serial Line Rate** should appear as 7.5 Gbps and **Sync Status** should have a check mark. The FFT plot of the DAC output is in Figure 7.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152-fmc-ebz_setup_with_labels.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152-fmc-ebz_setup2_with_labels.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152-fmc-ebz_dpg_board_detect_ads7.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-fmc-ebz_ace_board_detect_ads7.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-fmc-ebz_ace_configuration_wizard_ads7.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-fmc-ebz_ace_chipview_ads7.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-fmc-ebz_dpg_generate_output.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-fmc_dac_output.png
 .. |9154_down_arrow.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_down_arrow.png
 .. |9154_right_green_arrow.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_right_green_arrow.png

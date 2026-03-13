@@ -3,7 +3,8 @@ Mixers/Splitters
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-The Mixers/Splitters library of the ToolBox gives access to blocks that let you combine or split signals in various ways. The following block's are available:
+The Mixers/Splitters library of the ToolBox gives access to blocks that let you
+combine or split signals in various ways. The following block's are available:
 
 Mixers
 ------

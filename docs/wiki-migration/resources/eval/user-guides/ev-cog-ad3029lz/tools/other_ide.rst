@@ -1,12 +1,14 @@
 Using Keil IDE with EV-COG-AD3029LZ
 ===================================
 
-This will be a paragraph talk about why you might want to use Keil with the EV-COG-AD3029LZ.
+This will be a paragraph talk about why you might want to use Keil with the
+EV-COG-AD3029LZ.
 
 How to use EV-COG-AD3029LZ with Keil
 ------------------------------------
 
-In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the following steps.
+In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the
+following steps.
 
 -  Install mBed windows serial driver from
 
@@ -17,13 +19,13 @@ In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the f
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keildebug.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Under the CMSIS DAP Settings, select the SW option
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keilcmsisdap.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Push Crtl+F5 or in the Keil toolbar select **Debug** → **Start/Stop Debug Session**
 -  That’s it – You are ready to go.

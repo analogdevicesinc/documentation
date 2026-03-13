@@ -1,7 +1,10 @@
 Brushless DC Motor Control
 ==========================
 
-Brushless DC motors windings generate a trapezoidal back EMF synchronized to the position of the rotor magnet. Hall effect sensors are used to detect the rotor magnet position and provide signals indicating the “flat top” portion for each winding’s back EMF.
+Brushless DC motors windings generate a trapezoidal back EMF synchronized to the
+position of the rotor magnet. Hall effect sensors are used to detect the rotor
+magnet position and provide signals indicating the “flat top” portion for each
+winding’s back EMF.
 
 **Star Connection Control**
 
@@ -21,10 +24,10 @@ Brushless DC motors windings generate a trapezoidal back EMF synchronized to the
 **Sensorless control** can be achieved by detecting the zero crossings of the BEMF for each phase. *Benefits*: lower system cost, increased reliability. *Drawbacks*: BEMF zero crossings can’t be reliably detected at low motor speeds
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction/bldc_star.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction/bldc_star_switching.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction/bldc_delta.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction/bldc_delta_switching.png
-   :width: 300px
+   :width: 300

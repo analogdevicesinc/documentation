@@ -4,13 +4,21 @@ FAQ
 What is the System Demonstration Platform?
 ------------------------------------------
 
-The System Demonstration Platform (SDP) is a hardware and software platform that provides a means to communicate from the PC to ADI products and systems that require digital control and/or read back. It can also form the core of complex demonstration/proof of concept systems or ‘Circuits from the Lab’ developments. The hardware element of the platform consists of a series of controller boards, interposer boards and daughter boards.
+The System Demonstration Platform (SDP) is a hardware and software platform that
+provides a means to communicate from the PC to ADI products and systems that
+require digital control and/or read back. It can also form the core of complex
+demonstration/proof of concept systems or ‘Circuits from the Lab’ developments.
+The hardware element of the platform consists of a series of controller boards,
+interposer boards and daughter boards.
 
 -  The controller boards allow a connection to the PC via USB 2.0.
 -  Interposer board’s route the signals from the SDP connector to a second connector.
--  Daughter boards are the component specific evaluation boards or CftL reference circuit boards.
+-  Daughter boards are the component specific evaluation boards or CftL
+   reference circuit boards.
 
-The software element of the platform is specific to each of the daughter boards designed for the platform. Each product evaluation board or Circuit from the Lab Reference Circuit is shipped with application software for that product.
+The software element of the platform is specific to each of the daughter boards
+designed for the platform. Each product evaluation board or Circuit from the Lab
+Reference Circuit is shipped with application software for that product.
 
 What hardware does it use?
 --------------------------
@@ -30,7 +38,10 @@ Interposer Boards
 Daughter Boards
 ~~~~~~~~~~~~~~~
 
-SDP daughter boards are designed to meet the SDP Design guidelines ensuring that the boards can connect of either connector on the SDP-B. An SDP daughter board is generally a component evaluation board or Circuits from the Lab reference circuit board.
+SDP daughter boards are designed to meet the SDP Design guidelines ensuring that
+the boards can connect of either connector on the SDP-B. An SDP daughter board
+is generally a component evaluation board or Circuits from the Lab reference
+circuit board.
 
 3rd Party Boards
 ~~~~~~~~~~~~~~~~
@@ -40,16 +51,21 @@ SDP daughter boards are designed to meet the SDP Design guidelines ensuring that
 How big is it?
 --------------
 
-The SDP-B board is 60mm (2.36”) x 70mm (2.75”). The form factor is such that it has two identical connectors. The SDP-S board is 60mm (2.36") x 22mm (0.87"). It has one 120 pin connector. The SDP Breakout Board is 120mm (4.72”) x 58mm (2.28”). The BeMicro-SDP Interposer Board is 19mm (0.74") x 58mm (2.28").
+The SDP-B board is 60mm (2.36”) x 70mm (2.75”). The form factor is such that it
+has two identical connectors. The SDP-S board is 60mm (2.36") x 22mm (0.87"). It
+has one 120 pin connector. The SDP Breakout Board is 120mm (4.72”) x 58mm
+(2.28”). The BeMicro-SDP Interposer Board is 19mm (0.74") x 58mm (2.28").
 
 What about power?
 -----------------
 
--  The SDP-B board requires 200mA at 5V. This must be provided via Pin 1 (VIN) on the connector.
+-  The SDP-B board requires 200mA at 5V. This must be provided via Pin 1 (VIN)
+   on the connector.
 
    -  All the I/O on the Blackfin is 3.3v only. It is not 5v tolerant due to the fabrication process on which the Blackfin is manufactured.
    -  A 3.3v supply (limited to 20mA) is made available on the connector to allow you power your I/O voltage without having to generate a specific 3.3v supply for this.
-   -  The 5V USB is also directly connected to the USB_VBUS pin on the connector.
+   -  The 5V USB is also directly connected to the USB_VBUS pin on the
+      connector.
 
 -  The SDP-S board is powered over USB, requiring approx 83mA.
 
@@ -59,9 +75,12 @@ What about power?
 What about compatibility between controller boards & daughter boards? Will a daughter board work with either controller board?
 ------------------------------------------------------------------------------------------------------------------------------
 
-Any daughter board that is designed for the SDP-S is compatible with the SDP-B too. The product page for a particular daughter board will list its compatible controller boards. Relevant user software will be the same.
+Any daughter board that is designed for the SDP-S is compatible with the SDP-B
+too. The product page for a particular daughter board will list its compatible
+controller boards. Relevant user software will be the same.
 
-Due to the wide range of interfaces available on the SDP-B, and not on the SDP-S, the above does not apply in reverse.
+Due to the wide range of interfaces available on the SDP-B, and not on the
+SDP-S, the above does not apply in reverse.
 
 How much does it cost?
 ----------------------
@@ -104,7 +123,8 @@ The BeMicro-SDP Interposer can be purchased from Arrow at http://www.arrow.com
 How do I get started once I have SDP hardware?
 ----------------------------------------------
 
-You need an SDP controller board (SDP-B or SDP-S) and a compatible daughter board to get started with the SDP.
+You need an SDP controller board (SDP-B or SDP-S) and a compatible daughter
+board to get started with the SDP.
 
 -  Install the Software provided with the daughter board (component evaluation board or Circuit from the Lab reference circuit).
 -  Connect the daughter board to the SDP controller board (SDP-B or SDP-S) and connect to a USB 2.0 port on your PC.
@@ -113,13 +133,18 @@ You need an SDP controller board (SDP-B or SDP-S) and a compatible daughter boar
 I can’t connect to the SDP Controller board (SDP-B or SDP-S), what is wrong?
 ----------------------------------------------------------------------------
 
-Firstly check the SDP board has appeared in the Device Manager of your PC. (Right click on My Computer >> Manage >> Device Manager). Under the "ADI Development Tools" section you should find "Analog Devices System Demonstration Platform SDP-B" or "Analog Devices System Demonstration Platform SDP-S".
+Firstly check the SDP board has appeared in the Device Manager of your PC.
+(Right click on My Computer >> Manage >> Device Manager). Under the "ADI
+Development Tools" section you should find "Analog Devices System Demonstration
+Platform SDP-B" or "Analog Devices System Demonstration Platform SDP-S".
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/devmngr.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
-If the SDP controller is correctly installed on your system, ensure that the correct daughter board is connected off one of the connectors. Run the application software.
+If the SDP controller is correctly installed on your system, ensure that the
+correct daughter board is connected off one of the connectors. Run the
+application software.
 
 How do I get started with the BeMicro-SDP Interposer board?
 -----------------------------------------------------------

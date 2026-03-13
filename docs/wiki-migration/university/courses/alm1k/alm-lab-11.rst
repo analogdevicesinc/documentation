@@ -4,14 +4,22 @@ Activity: The Emitter follower (BJT) - ADALM1000
 Objective:
 ----------
 
-To investigate the simple NPN emitter follower amplifier also sometimes referred to as the common collector configuration.
+To investigate the simple NPN emitter follower amplifier also sometimes referred
+to as the common collector configuration.
 
 Notes:
 ------
 
-As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.
+As in all the ALM labs we use the following terminology when referring to the
+connections to the M1000 connector and configuring the hardware. The green
+shaded rectangles indicate connections to the M1000 analog I/O connector. The
+analog I/O channel pins are referred to as CA and CB. When configured to force
+voltage / measure current -V is added as in CA-V or when configured to force
+current / measure voltage -I is added as in CA-I. When a channel is configured
+in the high impedance mode to only measure voltage -H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V, CB-V for the voltage waveforms and CA-I, CB-I for the current waveforms.
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V, CB-V for the voltage waveforms and CA-I, CB-I for the current waveforms.
 
 Materials:
 ~~~~~~~~~~
@@ -23,27 +31,31 @@ Directions:
 
 The breadboard connections are shown in figure 1. The output of the channel A voltage generator, CA-V, is connected to the base terminal of Q\ :sub:`1`. The collector terminal is connected to the positive (+5 V) supply. The emitter terminal is connected to both the 2.2 KΩ load resistor and the channel B scope input CB-H. The other end of the load resistor is connected to ground.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Emitter Follower
 
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
-The channel A voltage generator should be configured for a 100 Hz Sine wave with 4.6 volt Max and 2.6 V Min. The channel B scope input, CB-H, is used to measure the voltage at the emitter. To measure the input to output error or offset, the CA-V - CB-V Math waveform can be displayed. To measure the input to output gain, the CB-V / CA-V Math waveform can be displayed.
+The channel A voltage generator should be configured for a 100 Hz Sine wave with
+4.6 volt Max and 2.6 V Min. The channel B scope input, CB-H, is used to measure
+the voltage at the emitter. To measure the input to output error or offset, the
+CA-V - CB-V Math waveform can be displayed. To measure the input to output gain,
+the CB-V / CA-V Math waveform can be displayed.
 
 Procedure:
 ~~~~~~~~~~
 
-The incremental Gain (Vout / Vin) of the emitter follower should ideally be 1 but will always be slightly less than 1. The gain is generally given by the following equation:
+The incremental Gain (Vout / Vin) of the emitter follower should ideally be 1
+but will always be slightly less than 1. The gain is generally given by the
+following equation:
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_e1.png
    :align: center
-   :width: 150px
+   :width: 150
 
 From the equation we can see that in order to obtain a gain close to one we can either increase R\ :sub:`L` or decrease r\ :sub:`e`. We also know that r\ :sub:`e` is a function of I\ :sub:`E` and that as I\ :sub:`E` increases r\ :sub:`e` decreases. Also from the circuit we can see that I\ :sub:`E` is related to R\ :sub:`L` and that as R\ :sub:`L` increases I\ :sub:`E` decreases. These two effects work counter to each other in the simple resistive loaded emitter follower. Thus to optimize the gain of the follower we need to explore ways to either decrease r\ :sub:`e` or increase R\ :sub:`L` without effecting the other.
 
@@ -56,13 +68,11 @@ Additional Materials:
 
 1 - 1 KΩ Resistor 1 - small signal NPN transistor ( Q\ :sub:`1` 2N3904) 2 - small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3` SSM2212) selected for best V\ :sub:`BE` matching
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Improved Emitter Follower
-
 
 Emitter follower output impedance
 ---------------------------------
@@ -70,7 +80,10 @@ Emitter follower output impedance
 Objective:
 ~~~~~~~~~~
 
-An important aspect of the emitter follower is to provide power or current gain. That is to say drive a lower resistance (impedance) load from a higher resistance (impedance) source. Thus it is instructive to measure the emitter follower output impedance.
+An important aspect of the emitter follower is to provide power or current gain.
+That is to say drive a lower resistance (impedance) load from a higher
+resistance (impedance) source. Thus it is instructive to measure the emitter
+follower output impedance.
 
 Materials:
 ~~~~~~~~~~
@@ -82,13 +95,11 @@ Directions:
 
 The circuit configuration shown in figure 3 adds a resistor R\ :sub:`2` to inject a test signal from channel A into the emitter (output) of Q\ :sub:`1`. The input, base of Q\ :sub:`1`, is tied to the fixed 2.5 V supply rail.
 
-
 |image3|
 
 .. container:: centeralign
 
    Figure 3 Output impedance test
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -115,18 +126,17 @@ Directions:
 
 The breadboard connections are shown in figure 4. The output of the channel A generator is connected to the base terminal of PNP transistor Q\ :sub:`1`. The collector terminal of Q\ :sub:`1` is connected to diode connected NPN Q\ :sub:`3` which is the input of a current mirror. The emitter terminal is connected to both resistor R\ :sub:`1`\ and the base terminal of NPN transistor Q\ :sub:`2`. Scope channel B is connected to both the emitter of Q\ :sub:`2` and the Collector of Q\ :sub:`4`. The emitters of both Q\ :sub:`3` and Q\ :sub:`4` are connected to ground. For best matching use the SSM2212 matched NPN pair for Q\ :sub:`3` and Q\ :sub:`4`.
 
-
 |image4|
 
 .. container:: centeralign
 
    Figure 4 Low offset follower
 
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
-The channel A generator should be configured for a 100 Hz Sine wave with 3 volt Max and a 2 volt Min. Both Scope vertical ranges are set to 0.5V/Div.
+The channel A generator should be configured for a 100 Hz Sine wave with 3 volt
+Max and a 2 volt Min. Both Scope vertical ranges are set to 0.5V/Div.
 
 Procedure:
 ~~~~~~~~~~
@@ -138,19 +148,20 @@ Now connect C\ :sub:`1` and R\ :sub:`2` and change the input wave shape of CA-V 
 Current Limit or Constant Current (Transistor Based)
 ----------------------------------------------------
 
-This is a modification of the emitter follower to limit the current output. If the output stage of an amplifier is an emitter follower it may be necessary to limit the maximum current that can be supplied to the output load.
+This is a modification of the emitter follower to limit the current output. If
+the output stage of an amplifier is an emitter follower it may be necessary to
+limit the maximum current that can be supplied to the output load.
 
 Circuit:
 ~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f5a.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    Figure 5 Emitter Current Limit
-
 
 Where:
 
@@ -171,10 +182,10 @@ http://en.wikipedia.org/wiki/Common_collector
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f1.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f2a.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f3a.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f4a.png
-   :width: 500px
+   :width: 500

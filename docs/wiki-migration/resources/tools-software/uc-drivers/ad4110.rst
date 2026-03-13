@@ -11,9 +11,18 @@ Overview
 
 The :adi:`AD4110` is a complete, single-channel, universal input analog-to-digital front end for industrial process control systems where sensor type flexibility is required.
 
-The high voltage input is fully software configurable for current or voltage ranges and allow direct interface to all standard industrial analog signal sources such as, ±20 mA, ±4 mA to ±20 mA, ±10 V, and all thermocouple types. Field power can be supplied for loop powered current output sensors. A range of excitation current sources for RTD sensors and other resistive sensors are included. The integrated programmable gain amplifier, PGA, offers sixteen gain settings from 0.2 to 24.
+The high voltage input is fully software configurable for current or voltage
+ranges and allow direct interface to all standard industrial analog signal
+sources such as, ±20 mA, ±4 mA to ±20 mA, ±10 V, and all thermocouple types.
+Field power can be supplied for loop powered current output sensors. A range of
+excitation current sources for RTD sensors and other resistive sensors are
+included. The integrated programmable gain amplifier, PGA, offers sixteen gain
+settings from 0.2 to 24.
 
-The high voltage input can be programmed to power up in either voltage or current mode. When programmed to current mode, the unique input circuit architecture provides a path for the loop current even in the absence of the system module power supply.
+The high voltage input can be programmed to power up in either voltage or
+current mode. When programmed to current mode, the unique input circuit
+architecture provides a path for the loop current even in the absence of the
+system module power supply.
 
 The :adi:`AD4110` provides internal front-end diagnostic functions to indicate overvoltage, undervoltage, open wire, overcurrent and overtemperature conditions. The high voltage input is overcurrent limited and overvoltage protected up to ±35 V.
 
@@ -183,4 +192,3 @@ Downloads
    -  :git-no-OS:`Implementation of AD4110 Driver. <drivers/afe/ad4110/ad4110.c>`
    -  :git-no-OS:`Header file of AD4110 Driver. <drivers/afe/ad4110/ad4110.h>`
    
-

@@ -15,7 +15,8 @@ In this page, we cover configuration and example on how to use USB interface in 
 Supported Board
 ---------------
 
-Below table shows numbers of the USB controller for SC589/584/573 chips [supported:✔; unsupported:✘]
+Below table shows numbers of the USB controller for SC589/584/573 chips
+[supported:✔; unsupported:✘]
 
 +------------------+-------------------------+-------------------------+-----------------------------+------------------------+
 | Board            | Hardware Port           |                         | USB 2.0 Supported Mode      |                        |
@@ -35,11 +36,11 @@ Below table shows numbers of the USB controller for SC589/584/573 chips [suppor
 |                  | USB1 - HS Port  ( J7 )  | ✔                       | ✘                           | ✘                      |
 +------------------+-------------------------+-------------------------+-----------------------------+------------------------+
 
-
 HOST - host only mode
 ---------------------
 
-With the USB Host mode, we can add a lot of USB dongle peripheral to the Ez-Kits and using the corresponding features.
+With the USB Host mode, we can add a lot of USB dongle peripheral to the Ez-Kits
+and using the corresponding features.
 
 \*\* Hardware Connection Software Configuration \*\**Step 1:** Linux kernel Configuration:
 
@@ -157,7 +158,8 @@ With the USB Device mode, we can connect the the Ez-Kits to a host PC other Host
 OTG - dual role mode
 --------------------
 
-The USB OTG port can work as either Host or Device, depends on the way we connect it, for Host or Device application, as illustrated previously.
+The USB OTG port can work as either Host or Device, depends on the way we
+connect it, for Host or Device application, as illustrated previously.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/003_usb_otg_mode_hardware_connection.png
    :align: center

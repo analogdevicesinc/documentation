@@ -4,7 +4,8 @@ AD9574 Evaluation Board User Guide
 Evaluation Board Features
 -------------------------
 
--  Simple power connection using 6 V wall adapter and on-board voltage regulators
+-  Simple power connection using 6 V wall adapter and on-board voltage
+   regulators
 
    -  Regulator easily bypassed for power measurements
 
@@ -40,11 +41,9 @@ Documents Needed
 
 General Description
 
-
 The :adi:`AD9574` evaluation board is a compact, easy-to-use platform for evaluating all features of the :adi:`AD9574`. The :adi:`AD9574` provides a multiple output clock generator function comprising of a dedicated PLL core optimized for Ethernet and gigabit line card applications. Configuring the :adi:`AD9574` for a particular application requires only the connection of external pull-up or pull-down resistors to the appropriate pin program reader pins (PPRx). These pins provide control of the internal dividers for establishing the desired frequency translations, clock output functionality, and input reference functionality. Connecting an external 19.44 MHz or 25 MHz oscillator to one or both of the REF0_P/REF0_N or REF1_P/REF1_N reference inputs results in a set of output frequencies prescribed by the PPRx pins. Connecting a stable clock source (8 kHz/10 MHz/19.44 MHz/25 MHz/38.88 MHz) to the monitor clock input enables the optional monitor circuit providing quality of service (QoS) status for REF0 or REF1.
 
 .. container:: centeralign
-
 
    ..
 
@@ -52,16 +51,18 @@ The :adi:`AD9574` evaluation board is a compact, easy-to-use platform for evalua
 
    *Figure 1. AD9574/PCBZ*
 
-
 Evaluation Board Hardware
 
-
-The following instructions are for setting up the physical connections to the AD9574/PCBZ evaluation board.
+The following instructions are for setting up the physical connections to the
+AD9574/PCBZ evaluation board.
 
 Power Connections
 ~~~~~~~~~~~~~~~~~
 
-Connect the included 6V wall supply to P500 to power all of the necessary on board components. Ensure the P501 jumper is connected between pins 1 and 2 and P502 is connected between pins 1 and 2. Alternatively, the user may remove the jumper at P502 and connect an external 3.3V supply to pin 2 and pin 3 (GND).
+Connect the included 6V wall supply to P500 to power all of the necessary on
+board components. Ensure the P501 jumper is connected between pins 1 and 2 and
+P502 is connected between pins 1 and 2. Alternatively, the user may remove the
+jumper at P502 and connect an external 3.3V supply to pin 2 and pin 3 (GND).
 
 Signal Connections
 ~~~~~~~~~~~~~~~~~~
@@ -69,33 +70,48 @@ Signal Connections
 Reference Inputs (REFx)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The AD9574/PCBZ allows for the reference inputs to be clocked by one of two crystal oscillators (XO) at Y202 and Y204 or via single ended SMA connectors J217 and J215. The default signal path is to use 25MHz CMOS XOs for both REF0_P and REF1_P.
+The AD9574/PCBZ allows for the reference inputs to be clocked by one of two
+crystal oscillators (XO) at Y202 and Y204 or via single ended SMA connectors
+J217 and J215. The default signal path is to use 25MHz CMOS XOs for both REF0_P
+and REF1_P.
 
-The following board modifications from the default BOM are required to use the SMA reference input connectors to supply a differential reference instead of the 25MHz XOs:
+The following board modifications from the default BOM are required to use the
+SMA reference input connectors to supply a differential reference instead of the
+25MHz XOs:
 
 -  Remove R217, R218, R224, and R225
 -  Place C221, C222, C226, and C227
 
-The following board modifications from the default BOM are required to use the SMA reference input connectors to supply an external single ended CMOS reference input instead of the 25MHz XOs:
+The following board modifications from the default BOM are required to use the
+SMA reference input connectors to supply an external single ended CMOS reference
+input instead of the 25MHz XOs:
 
 -  Remove R214, R217, R218, R221, R224, R225, T201 and T202
 -  Place R212, R219, C221, C222, C226, and C227 with 0Ω resistors.
 
 .. important::
 
-   Although the AD9574 evaluation board has the footprint for two crystal resonators Y201 and Y203, the AD9574 is not specified to work with crystal resonators and their usage in conjunction with the AD9574 is not recommended
-
+   Although the AD9574 evaluation board has the footprint for two crystal
+   resonators Y201 and Y203, the AD9574 is not specified to work with crystal
+   resonators and their usage in conjunction with the AD9574 is not recommended
 
 Monitor Clock Input (MCLK_x)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The AD9574/PCBZ provides a signal path to the MCLK_x inputs using SMA connector J216. The default BOM configuration allows for a 3.3V single ended CMOS signal to be applied to SMA connector J216 with the monitor clock input set to differential using the PPR6 biasing jumpers.
+The AD9574/PCBZ provides a signal path to the MCLK_x inputs using SMA connector
+J216. The default BOM configuration allows for a 3.3V single ended CMOS signal
+to be applied to SMA connector J216 with the monitor clock input set to
+differential using the PPR6 biasing jumpers.
 
-The following board modifications from the default BOM are required to use a single ended 3.3V CMOS signal with the monitor clock set to a single ended receiver:
+The following board modifications from the default BOM are required to use a
+single ended 3.3V CMOS signal with the monitor clock set to a single ended
+receiver:
 
 -  Replace C231 0Ω resistor.
 
-The following board modifications from the default BOM are required to convert a single ended signal to differential with the monitor clock receiver set to a differential receiver:
+The following board modifications from the default BOM are required to convert a
+single ended signal to differential with the monitor clock receiver set to a
+differential receiver:
 
 -  Remove R226 and R226
 -  Place balun T203
@@ -109,7 +125,8 @@ The AD9574/PCBZ contains jumpers to bias the following pins on the :adi:`AD9574`
 -  REF_SEL
 -  REFMON
 
-The following subsections describe the various configuration options for these pins.
+The following subsections describe the various configuration options for these
+pins.
 
 PPRx
 ^^^^
@@ -157,17 +174,13 @@ There are three headers, each 3 pins wide, to select the 8 states listed in **Ta
 
 .. container:: centeralign
 
-
    ..
 
 |image2|
 
    *Figure 2. PPRx Jumper Configuration*
 
-
 .. container:: centeralign
-
-
 
    ..
 
@@ -175,13 +188,13 @@ There are three headers, each 3 pins wide, to select the 8 states listed in **Ta
 
    *Figure 3. Example Configuration for State 0*
 
-
 Note that only two jumpers are needed to correctly terminate each PPRx pin; one to set the resistance value and one to terminate the resistance to VCC or GND. Please refer to the :adi:`AD9574` datasheet or page 3 of the evaluation board schematic for more information about the available settings for each PPRx pin.
 
 REF_SEL and REFMON
 ^^^^^^^^^^^^^^^^^^
 
-The REF_SEL and REFMON pins are tied low or high via jumpers P101 and P102 respectively.*\* Table 3*\* shows the functions of these pins.
+The REF_SEL and REFMON pins are tied low or high via jumpers P101 and P102
+respectively.*\* Table 3*\* shows the functions of these pins.
 
 **Table 3. REF_SEL and REFMON Settings**
 
@@ -201,10 +214,10 @@ There are 5 status LEDs:
 -  DS103 reflects the state of REF_ACT output pin: low when REF0 is the active reference and high when REF1 is the active reference
 -  DS104 reflects the state of REF_FHI output pin: high when the reference frequency is above the upper threshold limit
 -  DS105 reflects the state of REF_FLO output pin: high when the reference frequency is below the lower threshold limit
--  DS106 reflects the state of LD output pin: low when the PLL is unlocked and high when the PLL is locked
+-  DS106 reflects the state of LD output pin: low when the PLL is unlocked and
+   high when the PLL is locked
 
 Quick Start Guide
-
 
 The quick start section covers simple PLL operation to lock the :adi:`AD9574` PLL and output various frequencies on OUT0 through OUT6. See the :adi:`AD9574` datasheet for a detailed explanation of the various :adi:`AD9574` features.
 
@@ -245,11 +258,12 @@ Use the following steps to lock the AD9574 PLL to the on board 25MHz XO and outp
       -  PPR5: State 4
       -  PPR6: State 6
 
-The red LED labeled DS106 is connected to the LD pin through a buffer and should be illuminated indicating that the AD9574 is now in a locked condition.
+The red LED labeled DS106 is connected to the LD pin through a buffer and should
+be illuminated indicating that the AD9574 is now in a locked condition.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9574/ad9574_cropped.jpg
-   :width: 700px
+   :width: 700
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9574/pprx_1.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9574/pprx_2.png
-   :width: 200px
+   :width: 200

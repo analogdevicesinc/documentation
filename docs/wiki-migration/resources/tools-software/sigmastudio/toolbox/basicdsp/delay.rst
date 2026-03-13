@@ -3,9 +3,20 @@ Delay
 
 :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-The Delay block outputs a delayed version of the input signal. The input is delayed by the amount of samples reflected in the Cur numeric text box. The top drop-down menu labeled Max represents the largest amount of delay that could be applied to the input signal. If you select a new Max value in the drop-down menu, you will be forced to recompile.
+The Delay block outputs a delayed version of the input signal. The input is
+delayed by the amount of samples reflected in the Cur numeric text box. The top
+drop-down menu labeled Max represents the largest amount of delay that could be
+applied to the input signal. If you select a new Max value in the drop-down
+menu, you will be forced to recompile.
 
-The maximum delay available for a particular delay block depends on the total available system data RAM, which is specified in the DSP processor data sheet. Setting the Max control's value, allocates memory on the DSP, reserving that memory for use by this particular block only, and reducing the available memory for all other delay blocks in the design. This is a compiler directive and modifies the assembly code, so any time you change the Max setting you must recompile and download the program. The maximum delay value range is limited to the remaining unallocated memory of the RAM.
+The maximum delay available for a particular delay block depends on the total
+available system data RAM, which is specified in the DSP processor data sheet.
+Setting the Max control's value, allocates memory on the DSP, reserving that
+memory for use by this particular block only, and reducing the available memory
+for all other delay blocks in the design. This is a compiler directive and
+modifies the assembly code, so any time you change the Max setting you must
+recompile and download the program. The maximum delay value range is limited to
+the remaining unallocated memory of the RAM.
 
 There are two version of ' Delay ' algorithm.
 
@@ -15,8 +26,8 @@ There are two version of ' Delay ' algorithm.
 Delay (Real Signals)
 --------------------
 
-Delay the input samples in time domain by the amount of Current delay. The size of the delay buffer is Max delay.
-
+Delay the input samples in time domain by the amount of Current delay. The size
+of the delay buffer is Max delay.
 
 |image1|
 
@@ -24,7 +35,6 @@ Delay (Complex Signals)
 -----------------------
 
 Delay the input samples in frequency domain by the amount of current delay. This is a block based module. The size of the delay buffer is Max delay \* 2 + BlockSize \*2.
-
 
 |image2|
 
@@ -83,8 +93,8 @@ ADAU145x
 
 ====Example Usage=====
 
-Delaying the input samples in frequency domain cause the Pitch shift of input signal.
-
+Delaying the input samples in frequency domain cause the Pitch shift of input
+signal.
 
 |image3|
 

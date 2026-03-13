@@ -9,12 +9,15 @@ Square Wave
 Description
 -----------
 
-The Square Wave block generates a square wave at a constant level and at different frequencies.
+The Square Wave block generates a square wave at a constant level and at
+different frequencies.
 
 Usage
 -----
 
-This block has checkbox to enabled or disabled the algorithm. Check the box to enable this algorithm. It has the numeric text box to edit the frequency to generate the square wave at different frequencies.
+This block has checkbox to enabled or disabled the algorithm. Check the box to
+enable this algorithm. It has the numeric text box to edit the frequency to
+generate the square wave at different frequencies.
 
 Targets Supported
 -----------------

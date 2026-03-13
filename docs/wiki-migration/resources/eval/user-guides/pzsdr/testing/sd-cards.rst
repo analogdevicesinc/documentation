@@ -4,7 +4,8 @@ Creating ADRV9361 RF SOM production testing SD cards
 SOM2
 ----
 
-The code for all the various pieces required to create testing SD cards can be found on Github. See the following list for links to the various parts:
+The code for all the various pieces required to create testing SD cards can be
+found on Github. See the following list for links to the various parts:
 
 .. admonition:: Download
    :class: download
@@ -15,7 +16,9 @@ The code for all the various pieces required to create testing SD cards can be f
    -  U-Boot test branch: :git-u-boot-xlnx:`tree/pzsdr-test`
    -  U-Boot QSPI booting branch: :git-u-boot-xlnx:`tree/qspiboot`
    
-   A version of U-Boot built from the test branch will run through the tests assuming a properly formatted SD card while the QSPI branch is for flashing to the device.
+   A version of U-Boot built from the test branch will run through the tests
+   assuming a properly formatted SD card while the QSPI branch is for flashing
+   to the device.
    
    **No-OS:**
    
@@ -24,8 +27,11 @@ The code for all the various pieces required to create testing SD cards can be f
    
    Xilinx SDK 2015.2 is currently required to build both of these projects.
 
-
-In order to create an SD card for testing, the various test binaries, u-boot versions, and other files must be built and placed in the correct location in the boot partition of the standard SD card image. See the following hierarchy of test and flash related files on an SD card's boot partition mounted on /media/BOOT:
+In order to create an SD card for testing, the various test binaries, u-boot
+versions, and other files must be built and placed in the correct location in
+the boot partition of the standard SD card image. See the following hierarchy of
+test and flash related files on an SD card's boot partition mounted on
+/media/BOOT:
 
 ::
 
@@ -40,12 +46,16 @@ In order to create an SD card for testing, the various test binaries, u-boot ver
    ├── loopback.elf
    └── uImage
 
-Follow the instructions below to create the various files in the hierarchy seen above. Note that it is assumed the required Xilinx SDKs are installed and initialized properly for use in the current environment.
+Follow the instructions below to create the various files in the hierarchy seen
+above. Note that it is assumed the required Xilinx SDKs are installed and
+initialized properly for use in the current environment.
 
 FPGA bitstream
 ~~~~~~~~~~~~~~
 
-The bitstream is already available on the SD card in the bootgen_sysfiles.tgz file located in the related platform directory on the BOOT partition. This assumes the SD card's BOOT partition is already mounted at /media/BOOT.
+The bitstream is already available on the SD card in the bootgen_sysfiles.tgz
+file located in the related platform directory on the BOOT partition. This
+assumes the SD card's BOOT partition is already mounted at /media/BOOT.
 
 ::
 
@@ -65,7 +75,8 @@ Now we have to build a different bitstream used for various test features:
    git checkout dev
    make pzsdr.ccbrk
 
-Symlink the created bitstream into the unpacked bootgen directory for future use when building BOOT.BIN files.
+Symlink the created bitstream into the unpacked bootgen directory for future use
+when building BOOT.BIN files.
 
 ::
 
@@ -75,7 +86,8 @@ Symlink the created bitstream into the unpacked bootgen directory for future use
 Creating the main U-Boot test binary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The main U-Boot test ELF should be created using a process similar to the following:
+The main U-Boot test ELF should be created using a process similar to the
+following:
 
 ::
 
@@ -87,7 +99,10 @@ The main U-Boot test ELF should be created using a process similar to the follow
    make zynq_picozed_sdr2_defconfig
    make -j$(nproc)
 
-Next the BOOT.BIN file must be created. Note that the default bif file used for BOOT.BIN generation has a few file name mismatches in it. We've already corrected the bitstream name mismatch (since we symlinked our own version in) and to fix the FSBL so do the below (or change the name in the bif file):
+Next the BOOT.BIN file must be created. Note that the default bif file used for
+BOOT.BIN generation has a few file name mismatches in it. We've already
+corrected the bitstream name mismatch (since we symlinked our own version in)
+and to fix the FSBL so do the below (or change the name in the bif file):
 
 ::
 
@@ -135,7 +150,8 @@ Copy it into the previously created folder of bootgen files:
 
    cp u-boot ~/zynq-picozed-sdr2/bootgen/u-boot-picozed-qspi.elf
 
-Create a new bif file in ~/zynq-picozed-sdr2/bootgen named zynq-qspi.bif with the following content:
+Create a new bif file in ~/zynq-picozed-sdr2/bootgen named zynq-qspi.bif with
+the following content:
 
 ::
 
@@ -145,7 +161,8 @@ Create a new bif file in ~/zynq-picozed-sdr2/bootgen named zynq-qspi.bif with th
    ./u-boot-picozed-qspi.elf
    }
 
-This removes the FPGA bitstream from the generated BOOT.BIN (it'll be flashed separately) and points to our newly generated U-Boot ELF file.
+This removes the FPGA bitstream from the generated BOOT.BIN (it'll be flashed
+separately) and points to our newly generated U-Boot ELF file.
 
 Generate the new BOOT.BIN file:
 
@@ -214,7 +231,8 @@ TODO
 FMC Carrier
 -----------
 
-The code for all the various pieces required to create testing SD cards can be found on Github. See the following list for links to the various parts:
+The code for all the various pieces required to create testing SD cards can be
+found on Github. See the following list for links to the various parts:
 
 .. admonition:: Download
    :class: download
@@ -235,15 +253,17 @@ The code for all the various pieces required to create testing SD cards can be f
    
    The remaining files used by the tests can be found in the parent directory: :git-board-tests:`picozed-sdr2-fmc`
 
-
 First, write the latest available SD card image found at :doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux` to a spare card and prepare the card to boot into Linux as detailed on that page.
 
-When that is ready follow the instructions below the create the various files necessary to run the test suite.
+When that is ready follow the instructions below the create the various files
+necessary to run the test suite.
 
 FPGA bitstream
 ~~~~~~~~~~~~~~
 
-Unpack the bootgen_sysfiles.tgz file located in the related platform directory on the BOOT partition of the SD card. The following commands assume the SD card's BOOT partition is already mounted at /media/BOOT.
+Unpack the bootgen_sysfiles.tgz file located in the related platform directory
+on the BOOT partition of the SD card. The following commands assume the SD
+card's BOOT partition is already mounted at /media/BOOT.
 
 ::
 
@@ -262,7 +282,8 @@ Build a loopback-enabled bitstream:
    git checkout dev
    make pzsdr.ccfmc
 
-Symlink the created bitstream into the unpacked bootgen directory for future use when building BOOT.BIN files.
+Symlink the created bitstream into the unpacked bootgen directory for future use
+when building BOOT.BIN files.
 
 ::
 
@@ -272,7 +293,8 @@ Symlink the created bitstream into the unpacked bootgen directory for future use
 Creating the main U-Boot test binary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The main U-Boot test ELF should be created using a process similar to the following:
+The main U-Boot test ELF should be created using a process similar to the
+following:
 
 ::
 
@@ -284,7 +306,10 @@ The main U-Boot test ELF should be created using a process similar to the follow
    make zynq_picozed_sdr2_defconfig
    make -j$(nproc)
 
-Next the BOOT.BIN file must be created. Note that the default bif file used for BOOT.BIN generation has a few file name mismatches in it. We've already corrected the bitstream name mismatch (since we symlinked our own version in) and to fix the FSBL so do the below (or change the name in the bif file):
+Next the BOOT.BIN file must be created. Note that the default bif file used for
+BOOT.BIN generation has a few file name mismatches in it. We've already
+corrected the bitstream name mismatch (since we symlinked our own version in)
+and to fix the FSBL so do the below (or change the name in the bif file):
 
 ::
 
@@ -328,7 +353,10 @@ Next, create the no-OS loopback test ELF:
 Linux test scripts
 ~~~~~~~~~~~~~~~~~~
 
-Finally the test script repository must cloned onto the rootfs of the card and the script must be set to be run automated on boot. This can either be done by mounting the SD card on another computer or running the SD card on a board connected to the Internet which we'll assume is the case here.
+Finally the test script repository must cloned onto the rootfs of the card and
+the script must be set to be run automated on boot. This can either be done by
+mounting the SD card on another computer or running the SD card on a board
+connected to the Internet which we'll assume is the case here.
 
 Once the board is booted up open a terminal and run the following commands:
 
@@ -363,7 +391,8 @@ Finally, make the test script executable:
 
    chmod +x /home/analog/.config/autostart/picozed-sdr2-fmc-tests.desktop
 
-Now the SD card could be ready to automatically launch the test script in a terminal window on startup.
+Now the SD card could be ready to automatically launch the test script in a
+terminal window on startup.
 
 Breakout Board
 --------------

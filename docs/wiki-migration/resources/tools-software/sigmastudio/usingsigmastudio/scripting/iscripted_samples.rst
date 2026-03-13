@@ -8,8 +8,8 @@ This page shows few sample script of how to use the :doc:`Iscripted interface AP
 Control Updates
 ---------------
 
-The script below can be used to update various parameters in the schematic shown.
-
+The script below can be used to update various parameters in the schematic
+shown.
 
 |image1|
 
@@ -21,7 +21,6 @@ The script below can be used to update various parameters in the schematic shown
    ss.ObjectSetProperties("setControlValue", "Gain1", 0, 0, "Gain", 0.25);
    //set gain of 'Gain1_2' module to 0.15
    ss.ObjectSetProperties("setControlValue", "Gain1_2", 0, 0, "Gain", 0.15);
-
 
    //-------------------Delay ----------------------
    // Set current delay to 10 in 'Delay1'
@@ -35,7 +34,6 @@ The script below can be used to update various parameters in the schematic shown
    ss.ObjectSetProperties("setControlValue", "Param EQ1", 0, 0, "Frequency11", 100);
    // Update frequency of 3rd filter in 'Param EQ1 to 200
    ss.ObjectSetProperties("setControlValue", "Param EQ1", 0, 0, "Frequency12", 200);
-
 
    // Update gain of first filter in 'Param EQ1 to 0.15
    ss.ObjectSetProperties("setControlValue", "Param EQ1", 0, 0, "Gain10", 0.15);
@@ -51,8 +49,8 @@ The script below can be used to update various parameters in the schematic shown
 Get Current Growth
 ------------------
 
-The script below can be used to get current growth of modules in the schematic shown.
-
+The script below can be used to get current growth of modules in the schematic
+shown.
 
 |image2|
 
@@ -87,7 +85,8 @@ The script below can be used to get current growth of modules in the schematic s
 ICRegisterWrite And ICRegisterRead
 ----------------------------------
 
-The script below can be used to write and read the register without 'ICName' as a parameter.
+The script below can be used to write and read the register without 'ICName' as
+a parameter.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/scripting/registerreadandwritewithouticname.png
    :align: center
@@ -141,7 +140,8 @@ The script below can be used to write and read the register without 'ICName' as 
 Test the NxM Mixer (Linear)
 ---------------------------
 
-FOllowing script creates a schematic for ADAU1467 with NxM mixer and tests its functionality for a given input/output configuration.
+FOllowing script creates a schematic for ADAU1467 with NxM mixer and tests its
+functionality for a given input/output configuration.
 
 .. code:: csharp
 

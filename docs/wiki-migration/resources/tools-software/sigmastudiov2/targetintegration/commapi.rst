@@ -3,7 +3,10 @@
 Communication Library APIs
 ==========================
 
-This section provides a detailed description of the API structures and functions of SigmaStudio+ for SHARC (ADSP-SC5xx/ADSP-215xx) communication library. The sections describing the SigmaStudio+ communication library is organized as follows:
+This section provides a detailed description of the API structures and functions
+of SigmaStudio+ for SHARC (ADSP-SC5xx/ADSP-215xx) communication library. The
+sections describing the SigmaStudio+ communication library is organized as
+follows:
 
 - :doc:`Communication library and interface header file details </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/commapi/libfiles>`
 

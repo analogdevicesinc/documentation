@@ -94,7 +94,11 @@ Evaluation Boards
 Description
 -----------
 
-The ad525x_dpot driver exports a simple sysfs interface. This allows you to work with the immediate resistance settings as well as update the saved startup settings. Access to the factory programmed tolerance is also provided, but interpretation of this settings is required by the end application according to the specific part in use.
+The ad525x_dpot driver exports a simple sysfs interface. This allows you to work
+with the immediate resistance settings as well as update the saved startup
+settings. Access to the factory programmed tolerance is also provided, but
+interpretation of this settings is required by the end application according to
+the specific part in use.
 
 Files
 ~~~~~
@@ -137,22 +141,37 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
-
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
 Example Platform / Board file (I2C Interface)
 ---------------------------------------------
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 .. code:: C
 
@@ -170,12 +189,19 @@ For more information see: `instantiating-devices.rst </git.linux.org>documentati
 Example Platform / Board file (SPI Interface)
 ---------------------------------------------
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
-
 
 .. code:: C
 
@@ -210,16 +236,15 @@ For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi
       };
    
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ad525x_dpot driver depends on CONFIG_SPI or CONFIG_I2C
-
 
 ::
 
@@ -234,19 +259,21 @@ Hardware configuration
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/misc/pmoddpot_lr.png
    :alt: PmodDPOT, ADSP-BF537 EZKIZ
-   :width: 600px
+   :width: 600
 
 Driver testing
 ==============
 
-Locate the device in your sysfs tree. This is probably easiest by going into the common i2c directory and locating the device by the i2c slave address.
+Locate the device in your sysfs tree. This is probably easiest by going into the
+common i2c directory and locating the device by the i2c slave address.
 
 ::
 
        # ls /sys/bus/i2c/devices/
        0-0022  0-0027  0-002f
 
-So assuming the device in question is on the first i2c bus and has the slave address of 0x2f, we descend (unrelated sysfs entries have been trimmed).
+So assuming the device in question is on the first i2c bus and has the slave
+address of 0x2f, we descend (unrelated sysfs entries have been trimmed).
 
 ::
 

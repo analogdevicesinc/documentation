@@ -6,17 +6,22 @@ Please see the `resource <https://wiki.analog.com/../resources>`_ section to dow
 -  Launch the CCES IDE on your host & create a new workspace.
 -  Click on ``File`` -> ``Import..`` or click ``Import an existing CCES project`` from homepage as shown below.
 -  Then select ``General``-> ``Existing Projects into Workspace``.
--  Then choose the source code directory to import one or more projects from the selected directory
+-  Then choose the source code directory to import one or more projects from the
+   selected directory
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw10.png
    :align: center
-   :width: 600px
+   :width: 600
 
-The module application runs on the bootloader and the MDK provides APIs required for communication with the gateway. The bootloader and the MDK projects have to be added to the workspace. They can be downloaded from the resource page along with application source code. To add them to the workspace, follow the procedure described as above.
+The module application runs on the bootloader and the MDK provides APIs required
+for communication with the gateway. The bootloader and the MDK projects have to
+be added to the workspace. They can be downloaded from the resource page along
+with application source code. To add them to the workspace, follow the procedure
+described as above.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw11.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Setup path variables
 --------------------
@@ -32,9 +37,9 @@ Setup path variables
 
 .. important::
 
-   Make sure that the libraries and objects are not enclosed within inverted commas.
-
+   Make sure that the libraries and objects are not enclosed within inverted
+   commas.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw13.png
    :align: center
-   :width: 600px
+   :width: 600

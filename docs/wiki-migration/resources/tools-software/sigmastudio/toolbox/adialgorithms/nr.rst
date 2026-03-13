@@ -3,12 +3,26 @@ Noise Reduction (Standard)
 
 :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
 
-This Noise Reduction block is optimized for speech over a communication channel. The most common application is hands-free telephony, but the adaptive filtering is applicable in a wide range of systems. It is often used with Acoustic Echo Cancellation (AEC) to remove noise as well as echoes and reverberation. For applications that require low latency, such as communications in which both a direct acoustic path and an amplified path are present, the Low Latency Noise Reduction block is more suitable.
+This Noise Reduction block is optimized for speech over a communication channel.
+The most common application is hands-free telephony, but the adaptive filtering
+is applicable in a wide range of systems. It is often used with Acoustic Echo
+Cancellation (AEC) to remove noise as well as echoes and reverberation. For
+applications that require low latency, such as communications in which both a
+direct acoustic path and an amplified path are present, the Low Latency Noise
+Reduction block is more suitable.
 
 Implementation of Noise Reduction (Standard) on SigmaDSP
 --------------------------------------------------------
 
-The standard Noise Reduction block executes entirely with the block processing domain. A Hamm window is applied with 50% overlap before being processed in the frequency domain. Therefore, the block only appears in the Tree Toolbox when the Block Schematic tab is selected. Since the algorithm is optimized for speech, it runs at the reduced sampling rates standard in telephony. A single block processes samples at 8 kHz ("narrow band" or 4 kHz bandwidth). However, two blocks may be used together with quadrature mirror filters to effectively process 16 kHz audio ("wide band" or 8 kHz bandwidth). The discussion and diagrams below all describe use at 16 kHz sampling rate.
+The standard Noise Reduction block executes entirely with the block processing
+domain. A Hamm window is applied with 50% overlap before being processed in the
+frequency domain. Therefore, the block only appears in the Tree Toolbox when the
+Block Schematic tab is selected. Since the algorithm is optimized for speech, it
+runs at the reduced sampling rates standard in telephony. A single block
+processes samples at 8 kHz ("narrow band" or 4 kHz bandwidth). However, two
+blocks may be used together with quadrature mirror filters to effectively
+process 16 kHz audio ("wide band" or 8 kHz bandwidth). The discussion and
+diagrams below all describe use at 16 kHz sampling rate.
 
 SigmaStudio Blocks
 ------------------
@@ -21,7 +35,11 @@ SigmaStudio Blocks
 Parameters and Tuning
 ---------------------
 
-Aside from an enable/disable switch, the Noise Reduction block only has one parameter. The smoothing factor adjusts the block-to-block coefficient smoothing of the adaptive filter in the frequency domain. Note that the standard compliance testing was performed with the default parameter (0.2), and there is no guarantee of performance if this parameter is changed.
+Aside from an enable/disable switch, the Noise Reduction block only has one
+parameter. The smoothing factor adjusts the block-to-block coefficient smoothing
+of the adaptive filter in the frequency domain. Note that the standard
+compliance testing was performed with the default parameter (0.2), and there is
+no guarantee of performance if this parameter is changed.
 
 Using the Algorithm in a SigmaStudio Project
 ============================================
@@ -29,9 +47,14 @@ Using the Algorithm in a SigmaStudio Project
 Trial DLLs for Evaluation
 -------------------------
 
-The noise reduction block is available in a trial version that times out and mutes after 30 minutes. There is a counter on the block in the schematic that counts down the seconds until mute (shown as the full 1800 seconds in the image above). The timer is reset on each-compile-link-download.
+The noise reduction block is available in a trial version that times out and
+mutes after 30 minutes. There is a counter on the block in the schematic that
+counts down the seconds until mute (shown as the full 1800 seconds in the image
+above). The timer is reset on each-compile-link-download.
 
-The trial versions of the noise reduction block may be downloaded using the Downloadable Add-Ins feature of SigmaStudio version 4.2 and later. Access to the downloads may be found on the Tools menu:
+The trial versions of the noise reduction block may be downloaded using the
+Downloadable Add-Ins feature of SigmaStudio version 4.2 and later. Access to the
+downloads may be found on the Tools menu:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/aec/downloadable_algs_menu_in_ss.png
    :align: center
@@ -55,7 +78,9 @@ The basic AEC building block is optimized for an 8 kHz input and can be used dir
 
 **Pass the signal to the block domain for frequency domain processing**
 
-The three outputs for each of the two frequency bands are then fed into the block processing domain. These correspond to the inputs and outputs on the "Block Schematic" tab, separate from stream processing.
+The three outputs for each of the two frequency bands are then fed into the
+block processing domain. These correspond to the inputs and outputs on the
+"Block Schematic" tab, separate from stream processing.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/nr/flow3_to_block_domain.png
    :align: center

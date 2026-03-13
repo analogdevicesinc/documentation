@@ -11,9 +11,10 @@ The Audio Starter can support a variety of A2B Network configurations via a shel
 This example walks you through transferring an A2B network configuration file to your file system, discover the network and play A2B audio in both upstream and downstream configurations. This example uses the :adi:`EVAL-AD2428WB1BZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad2428wb1bz.html#eb-overview>` A2B evaluation board as a subordinate node.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example7.jpg
-   :width: 400px
+   :width: 400
 
-It contains 2 PDM Mics and TDM Audio connected to AUDIO IN/OUT (Analog) on the board. In this example, the network configuration is the following:
+It contains 2 PDM Mics and TDM Audio connected to AUDIO IN/OUT (Analog) on the
+board. In this example, the network configuration is the following:
 
 -  2 SAM->WBZ Downstream slots
 -  4 WBZ->SAM Upstream slots
@@ -59,7 +60,6 @@ EV-SC594-SOM/EV-SC598-SOM + Carrier
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | 5. Proceed to the software setup instructions *(common for all hardware variants)*                                                                                                                                                                                                                                                                                                                                      | NA        |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-
 
 Software Setup
 --------------
@@ -160,85 +160,83 @@ Audio Connection Setup: Downstream Audio
 | 4. Enable the analog audio source connected to the 3.5mm stereo cable. Audio should now be heard from the *AUDIO OUT* on the WBZ board, sourced from *LIN IN* on the SAM board.                                                                                                               |           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
-
 .. important::
 
    Having trouble? Check out our list of :doc:`common issues </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-b>`!
 
-
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cld2.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cld3.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_setup.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example12.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cld2.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cld3.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_setup.jpg
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example12.jpg
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/som_pwr.jpg
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc594_usb_phy.jpg
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example15.jpg
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example16.jpg
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/som_pwr.jpg
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc594_usb_phy.jpg
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example15.jpg
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example16.jpg
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example1.png
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example2.png
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/som_serial.jpg
-   :width: 400px
+   :width: 400
 .. |image20| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example4.png
-   :width: 400px
+   :width: 400
 .. |image21| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example3.png
-   :width: 400px
+   :width: 400
 .. |image22| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example5.png
-   :width: 400px
+   :width: 400
 .. |image23| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example6.png
-   :width: 400px
+   :width: 400
 .. |image24| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example1.png
-   :width: 400px
+   :width: 400
 .. |image25| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example2.png
-   :width: 400px
+   :width: 400
 .. |image26| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/som_serial.jpg
-   :width: 400px
+   :width: 400
 .. |image27| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example4.png
-   :width: 400px
+   :width: 400
 .. |image28| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example3.png
-   :width: 400px
+   :width: 400
 .. |image29| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example5.png
-   :width: 400px
+   :width: 400
 .. |image30| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/example6.png
-   :width: 400px
+   :width: 400
 .. |image31| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example.jpg
 .. |image32| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/format_cmd.png
-   :width: 400px
+   :width: 400
 .. |image33| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example1.jpg
 .. |image34| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/xmodem_send.png
-   :width: 400px
+   :width: 400
 .. |image35| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example2.jpg
 .. |image36| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example.jpg
 .. |image37| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/format_cmd.png
-   :width: 400px
+   :width: 400
 .. |image38| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example1.jpg
 .. |image39| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/xmodem_send.png
-   :width: 400px
+   :width: 400
 .. |image40| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example2.jpg
 .. |image41| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example3.jpg
 .. |image42| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example4.jpg
@@ -249,42 +247,42 @@ Audio Connection Setup: Downstream Audio
 .. |image47| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example6.jpg
 .. |image48| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example5.jpg
 .. |image49| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/route0.png
-   :width: 600px
+   :width: 600
 .. |image50| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/route1.png
-   :width: 600px
+   :width: 600
 .. |image51| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example9.jpg
-   :width: 400px
+   :width: 400
 .. |image52| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example8.jpg
-   :width: 400px
+   :width: 400
 .. |image53| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example10.jpg
-   :width: 400px
+   :width: 400
 .. |image54| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example11.jpg
-   :width: 400px
+   :width: 400
 .. |image55| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example13.jpg
-   :width: 400px
+   :width: 400
 .. |image56| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/route0.png
-   :width: 600px
+   :width: 600
 .. |image57| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/route1.png
-   :width: 600px
+   :width: 600
 .. |image58| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example9.jpg
-   :width: 400px
+   :width: 400
 .. |image59| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example8.jpg
-   :width: 400px
+   :width: 400
 .. |image60| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example10.jpg
-   :width: 400px
+   :width: 400
 .. |image61| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example11.jpg
-   :width: 400px
+   :width: 400
 .. |image62| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example13.jpg
-   :width: 400px
+   :width: 400
 .. |image63| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/route0.png
-   :width: 600px
+   :width: 600
 .. |image64| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/route1.png
-   :width: 600px
+   :width: 600
 .. |image65| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example14.jpg
-   :width: 400px
+   :width: 400
 .. |image66| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/route0.png
-   :width: 600px
+   :width: 600
 .. |image67| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/route1.png
-   :width: 600px
+   :width: 600
 .. |image68| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/a2b_example14.jpg
-   :width: 400px
+   :width: 400

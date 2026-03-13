@@ -130,11 +130,14 @@ If you have not set up the EVAL-AD4130-8WARDZ and controller board previously pl
 
 If you have not set up/installed the ACE plugin before please go to :doc:`Install Guide </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
 
--  Double click the AD4130-8 Eval Board icon to open the AD4130-8 Eval Board view window. The demo wizard will be on the left, either as shown in the figure below (Label 1) or already expanded. Expand the wizard by clicking the arrow (Label 2).
+-  Double click the AD4130-8 Eval Board icon to open the AD4130-8 Eval Board
+   view window. The demo wizard will be on the left, either as shown in the
+   figure below (Label 1) or already expanded. Expand the wizard by clicking the
+   arrow (Label 2).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  With the wizard expanded, select the noise test button (Label 3).
 -  The settings required for the demo are displayed to be viewed prior to writing to the AD4130-8 (Label 4). Click apply (Label 5) to write these settings to the board.
@@ -142,7 +145,7 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_summary.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  From here navigate to the chip view by double-clicking the AD4130-8 chip (Label 2).
 -  To make further changes to the configuration click on the dark blue block in the chip view (Label 1) or double click the memory map option (Label 2)
@@ -150,35 +153,57 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_chip_view.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  To gather samples, change the Samples Count (Label 1) to the number of samples required, then click the Run Once button (Label 2) to acquire the samples from the ADC. The image below shows an example of the main window after running a noise test.
+-  To gather samples, change the Samples Count (Label 1) to the number of
+   samples required, then click the Run Once button (Label 2) to acquire the
+   samples from the ADC. The image below shows an example of the main window
+   after running a noise test.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_data.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  For more information on the Waveform window go to the software section :doc:`here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
 
 Reading Samples from the ADC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The evaluation board is set up to use the external 2.5 V on-board reference (ADR391). To read samples from the ADC, do the following:
+The evaluation board is set up to use the external 2.5 V on-board reference
+(ADR391). To read samples from the ADC, do the following:
 
--  The value in the Refin1(+/−) field on the Configuration tab is set to 2.5 V by default to use the external 2.5 V on-board reference (ADR391). If a different reference is used to the AD4130-8, the Refin1(+/−) field should be updated accordingly. (The analysis results are based on the value set in this input field.)
+-  The value in the Refin1(+/−) field on the Configuration tab is set to 2.5 V
+   by default to use the external 2.5 V on-board reference (ADR391). If a
+   different reference is used to the AD4130-8, the Refin1(+/−) field should be
+   updated accordingly. (The analysis results are based on the value set in this
+   input field.)
 
    -  Information on the reference choice can be viewed in the :doc:`Reference Options Tab </wiki-migration/resources/eval/user-guides/ad4130-8/hardwareguide>`
 
--  When selecting Run Once, a batch of samples is read when clicking the button; the batch size is set by the value in the Samples field.
+-  When selecting Run Once, a batch of samples is read when clicking the button;
+   the batch size is set by the value in the Samples field.
 
-   -  When selecting Run Continuous, the software performs a continuous capture from the ADC by clicking the Run Once button. Click the Stop Capture button again to stop capturing data.
+   -  When selecting Run Continuous, the software performs a continuous capture
+      from the ADC by clicking the Run Once button. Click the Stop Capture
+      button again to stop capturing data.
 
--  Use the navigation tools within each graph to control the cursor, zooming, and panning.
+-  Use the navigation tools within each graph to control the cursor, zooming,
+   and panning.
 
 Reading Samples from the ADC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Find the waveforms resulting from the gathered samples in the Analysis tab. The waveform graph shows each successive sample of the ADC output (input referred). The indicators beside this graph show the channels converting. The navigation tools allow you to control the cursor, zooming, and panning. You can also display the conversions as voltages or codes. Below the graph are parameters, such as peak-to-peak noise and rms noise, in the Results section for the current batch of samples. If there are several enabled analog input channels, you can select each enabled channel and the conversions through the analyzed channel using the Results Tab. To save the data into an Excel file, select the Export button from the Results Tab. A Save dialog box is displayed, prompting you to save the data to an appropriate folder location.
+Find the waveforms resulting from the gathered samples in the Analysis tab. The
+waveform graph shows each successive sample of the ADC output (input referred).
+The indicators beside this graph show the channels converting. The navigation
+tools allow you to control the cursor, zooming, and panning. You can also
+display the conversions as voltages or codes. Below the graph are parameters,
+such as peak-to-peak noise and rms noise, in the Results section for the current
+batch of samples. If there are several enabled analog input channels, you can
+select each enabled channel and the conversions through the analyzed channel
+using the Results Tab. To save the data into an Excel file, select the Export
+button from the Results Tab. A Save dialog box is displayed, prompting you to
+save the data to an appropriate folder location.
 
 --------------
 
@@ -193,8 +218,10 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 
 .. note::
 
-   The AD4130-8 Ace plugin provides a demo mode for resistance temperature detector (RTD) sensors. The RTD demo mode allows the user to get up and running with the AD4130-8 and getting data by with just a view clicks of a button.
-
+   The AD4130-8 Ace plugin provides a demo mode for resistance temperature
+   detector (RTD) sensors. The RTD demo mode allows the user to get up and
+   running with the AD4130-8 and getting data by with just a view clicks of a
+   button.
 
 4-wire RTD Demo mode
 --------------------
@@ -220,11 +247,14 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_4_wire_rtd.jpg
    :align: center
 
--  Double click the AD4130-8 Eval Board icon to open the AD4130-8 Eval Board view window. The demo wizard will be on the left, either as shown in the figure below (Label 1) or already expanded. Expand the wizard by clicking the arrow (Label 2).
+-  Double click the AD4130-8 Eval Board icon to open the AD4130-8 Eval Board
+   view window. The demo wizard will be on the left, either as shown in the
+   figure below (Label 1) or already expanded. Expand the wizard by clicking the
+   arrow (Label 2).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_rtd_config_tab.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  With the wizard expanded, select the RTD button (Label 3).
 -  In the Configuration Options tab (Label 4), select 4 Wire for Number of Wires, select your RTD type either PT100 or PT1000 and pick which AVDD voltage you have set on the board either 1.8V or 3.3V. This will configure the AD4130-8 registers to the optimum RTD setup.
@@ -233,7 +263,7 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_rtd_config_tab_2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  From here navigate to the chip view by double-clicking the AD4130-8 chip (Label 2).
 -  To make further changes to the configuration click on the dark blue block in the chip view (Label 1) or double click the memory map option (Label 2)
@@ -241,13 +271,16 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_chip_view.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  To gather samples, change the Samples Count (Label 1) to the number of samples required, then click the Run Once button (Label 2) to acquire the samples from the ADC. The image below shows an example of the main window after running a RTD demo mode.
+-  To gather samples, change the Samples Count (Label 1) to the number of
+   samples required, then click the Run Once button (Label 2) to acquire the
+   samples from the ADC. The image below shows an example of the main window
+   after running a RTD demo mode.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_rtd_results_tab.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  To display the waveform data in degrees Celsius pick DegC in y-axis units dropdown (Label 3)
 -  For more information on the Waveform window go to the software section :doc:`here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
@@ -255,22 +288,44 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 Reading Samples from the ADC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The evaluation board is set up to use the external 2.044 V in the RTD demo mode(when AVDD is set to 3.3V in Configuration Options tab or it is 1.022V if 1.8V is selected) on-board reference (From the 5.11k ohm precision resistor). To read samples from the ADC, do the following:
+The evaluation board is set up to use the external 2.044 V in the RTD demo
+mode(when AVDD is set to 3.3V in Configuration Options tab or it is 1.022V if
+1.8V is selected) on-board reference (From the 5.11k ohm precision resistor). To
+read samples from the ADC, do the following:
 
--  The value in the Refin1(+/−) field on the Configuration tab is set to 2.5 V by default to use the external 2.5 V on-board reference (ADR391). If a different reference is used to the AD4130-8, the Refin1(+/−) field should be updated accordingly (i.e. 2.044 V for AVDD set to 3.3 V and 1.022 V for AVDD set to 1.8 V). (The analysis results are based on the value set in this input field.)
+-  The value in the Refin1(+/−) field on the Configuration tab is set to 2.5 V
+   by default to use the external 2.5 V on-board reference (ADR391). If a
+   different reference is used to the AD4130-8, the Refin1(+/−) field should be
+   updated accordingly (i.e. 2.044 V for AVDD set to 3.3 V and 1.022 V for AVDD
+   set to 1.8 V). (The analysis results are based on the value set in this input
+   field.)
 
    -  Information on the reference choice can be viewed in the :doc:`Reference Options Tab </wiki-migration/resources/eval/user-guides/ad4130-8/hardwareguide>`
 
--  When selecting Run Once, a batch of samples is read when clicking the button; the batch size is set by the value in the Samples field.
+-  When selecting Run Once, a batch of samples is read when clicking the button;
+   the batch size is set by the value in the Samples field.
 
-   -  When selecting Run Continuous, the software performs a continuous capture from the ADC by clicking the Run Once button. Click the Stop Capture button again to stop capturing data.
+   -  When selecting Run Continuous, the software performs a continuous capture
+      from the ADC by clicking the Run Once button. Click the Stop Capture
+      button again to stop capturing data.
 
--  Use the navigation tools within each graph to control the cursor, zooming, and panning.
+-  Use the navigation tools within each graph to control the cursor, zooming,
+   and panning.
 
 Reading Samples from the ADC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Find the waveforms resulting from the gathered samples in the Analysis tab. The waveform graph shows each successive sample of the ADC output (input referred). The indicators beside this graph show the channels converting. The navigation tools allow you to control the cursor, zooming, and panning. You can also display the conversions as temperature (degrees Celsius) or codes. Below the graph are parameters, such as peak-to-peak noise and rms noise, in the Results section for the current batch of samples. If there are several enabled analog input channels, you can select each enabled channel and the conversions through the analyzed channel using the Results Tab. To save the data into an Excel file, select the Export button from the Results Tab. A Save dialog box is displayed, prompting you to save the data to an appropriate folder location.
+Find the waveforms resulting from the gathered samples in the Analysis tab. The
+waveform graph shows each successive sample of the ADC output (input referred).
+The indicators beside this graph show the channels converting. The navigation
+tools allow you to control the cursor, zooming, and panning. You can also
+display the conversions as temperature (degrees Celsius) or codes. Below the
+graph are parameters, such as peak-to-peak noise and rms noise, in the Results
+section for the current batch of samples. If there are several enabled analog
+input channels, you can select each enabled channel and the conversions through
+the analyzed channel using the Results Tab. To save the data into an Excel file,
+select the Export button from the Results Tab. A Save dialog box is displayed,
+prompting you to save the data to an appropriate folder location.
 
 :doc:`Return to Software Guide </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
 

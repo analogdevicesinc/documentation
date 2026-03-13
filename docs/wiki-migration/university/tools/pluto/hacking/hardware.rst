@@ -1,7 +1,8 @@
 ADALM-PLUTO Hardware
 ====================
 
-Whether you want to understand the changes between revisions, or just understand how to probe the PCB, this is where all the information should be.
+Whether you want to understand the changes between revisions, or just understand
+how to probe the PCB, this is where all the information should be.
 
 Connectors
 ----------
@@ -9,26 +10,31 @@ Connectors
 The PlutoSDR includes a button (``S1`` on the PCB), and two USB connectors.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/button_plutosdr.png
-   :width: 500px
+   :width: 500
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/button_side_plutosdr.png.jpg
-   :width: 450px
+   :width: 450
 
-The button can be defined by software, it is normally held on with a paper clip or thumb tack during power on to put the device into a recovery mode. It can be re-purposed to do other things.
+The button can be defined by software, it is normally held on with a paper clip
+or thumb tack during power on to put the device into a recovery mode. It can be
+re-purposed to do other things.
 
-The first USB connector (the middle one) is the USB OTG connector (can be the USB HOST connector (cabled to a USB peripheral), or the USB peripheral connector (cabled to a USB Host)).
+The first USB connector (the middle one) is the USB OTG connector (can be the
+USB HOST connector (cabled to a USB peripheral), or the USB peripheral connector
+(cabled to a USB Host)).
 
-The second USB connector (the one on the side) is for power only when running in Host mode.
+The second USB connector (the one on the side) is for power only when running in
+Host mode.
 
 Removing the case
 -----------------
 
 |./back.png| The plastic case comes off quite easily, with the removal of two black `Phillips <https://en.wikipedia.org/wiki/List_of_screw_drives#Phillips>`_ screws on the bottom of the case. This is a picture of the pre-production Rev B boards. The production version may be different. It will for sure be `CE and FCC certified <https://wiki.analog.com/../common/regulatory_compliance>`_. (already passed).
 
-Removing the screws will allow you to take the top off the case, and expose the PCB.
+Removing the screws will allow you to take the top off the case, and expose the
+PCB.
 
 If you want to remove the PCB, and place it on the table, we recommend that you attach `Cylindrical Bumpers <https://www.digikey.com/3M156065-ND>`_ (also known as feet), on the PCB to protect the components on the bottom of the PCB. These are not included in the design, and must be purchased separately (as we don't expect too many people wanting to do this).
-
 
 Revisions
 ---------
@@ -39,20 +45,24 @@ Different revisions of the PlutoSDR does not include any major functionality cha
 -  1x Tx SMA, Tuning from 325 MHz to 3.8 GHz, 200 kHz - 20 MHz of instantaneous bandwidth
 -  1x USB 2.0 OTG
 -  1x USB power adapter
--  Linux / libIIO based software stack, compatible with MATLAB, Simulink, GNU Radio, Python, and others.
+-  Linux / libIIO based software stack, compatible with MATLAB, Simulink, GNU
+   Radio, Python, and others.
 
 .. important::
 
    When you order from ADI's :adi:`authorized channels <en/about-adi/corporate-information/sales-distribution.html>`, you may get any revision listed below; there is no way to order one specific revision (it's a single part number), so do not ask - it's not possible. *Normally* inventory is managed via a FIFO (First In; First Out) mechanism, so the oldest inventory is shipped when an order is placed. However - warehouses have been known to misplace a box, and ship older inventory later.
 
    
-   If you really want to purchase a specific version - I'm sorry. There is no way. That's just what you read in the paragraph above. Emailing anyone to ask for a specific version will just get the same answer, and will consume everyone's time. Please don't do it.
-
+   If you really want to purchase a specific version - I'm sorry. There is no
+   way. That's just what you read in the paragraph above. Emailing anyone to ask
+   for a specific version will just get the same answer, and will consume
+   everyone's time. Please don't do it.
 
 Which revision do I have?
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are three ways to tell which revision you have (and they should all match):
+There are three ways to tell which revision you have (and they should all
+match):
 
 Look at the sticker
 ^^^^^^^^^^^^^^^^^^^
@@ -61,7 +71,7 @@ It's printed on the back of the Pluto SDR (on the sticker) the below in Rev B:
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_sticker.png
    :align: center
-   :width: 200px
+   :width: 200
 
 info.html page
 ^^^^^^^^^^^^^^
@@ -77,7 +87,8 @@ The PCBs are slightly different (these pictures are the top sides).
 
 |image3| |image4|
 
-If you look close, the revision of the PCB is etched in metal on the side (Zoomed in for clarity).
+If you look close, the revision of the PCB is etched in metal on the side
+(Zoomed in for clarity).
 
 |image5| |image6|
 
@@ -98,7 +109,8 @@ There are new internal rev D features:
    -  second receive channel
    -  second transmit channel
    -  Clock input
-   -  Clock output (only a copy of Clock input, not functional for the internal clock)
+   -  Clock output (only a copy of Clock input, not functional for the internal
+      clock)
 
 -  USB UART
 -  breakout pins for I2C and SPI
@@ -107,15 +119,15 @@ There are new internal rev D features:
 u.FL to SMA cables can be picked up for a few dollars at a variety of locations including `Digkey <https://www.digikey.com/U.FL to SMA>`_, `Mouser <https://www.mouser.com/U.FL to SMA>`_, `AdaFruit <https://www.adafruit.com/product/851>`_ or `Sparkfun <https://www.sparkfun.com/products/9145>`_.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto.png
-   :width: 600px
+   :width: 600
 
 The standard features - Rx1, Rx2, USB OTG work as previously. See how to add these to your units, check out how to :doc:`set config settings </wiki-migration/university/tools/pluto/users/customizing>`.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/youtube>ph0kv4sgsui
    :alt: youtube>ph0Kv4SgSuI
 
-With a few more holes in the case, and a few dollars of cables, this should give you something like (this connects the additional Rx and Tx, and CLK input):
-
+With a few more holes in the case, and a few dollars of cables, this should give
+you something like (this connects the additional Rx and Tx, and CLK input):
 
 |image7|
 
@@ -132,8 +144,10 @@ With a few more holes in the case, and a few dollars of cables, this should give
    -  There are few pictures of rev D in the `Marketing <https://wiki.analog.com/../marketing>`_ section as well.
    
 
-
-The 2nd Rx/Tx channel internal to the rev D is not test during production test. If it works - bonus! If it doesn't work; Pluto is only advertised as a 1 Rx, 1 Tx radio, and that is guaranteed/production tested on each unit - and that is what you received.
+The 2nd Rx/Tx channel internal to the rev D is not test during production test.
+If it works - bonus! If it doesn't work; Pluto is only advertised as a 1 Rx, 1
+Tx radio, and that is guaranteed/production tested on each unit - and that is
+what you received.
 
 Why Do a rev E?
 ---------------
@@ -161,12 +175,18 @@ Revision B
    -  There are few pictures of rev B in the `Marketing <https://wiki.analog.com/../marketing>`_ section as well.
    
 
-
 Why do a Rev C?
 ~~~~~~~~~~~~~~~
 
--  our "low-risk" OTG changes, caused problems, since we put the VBUS monitoring (R88) on the wrong side of the fuse, and the inclusion of the DC choke. While the DC choke reduces noise, and there is no DC difference between PGDN, and GND, on certain hosts, with certain operating systems, there can be a 250mV AC difference between PGND and GND. Since the analog comparators inside the Microchip USB3320 will be referenced to GND (quiet), it appears to toggle between host mode and device mode. A temp workaround was to change this resistor (R88) from the recommended USB spec of 1k to 24.9k. R88 can be found on the back side, underneath the USB connector.
-
+-  our "low-risk" OTG changes, caused problems, since we put the VBUS monitoring
+   (R88) on the wrong side of the fuse, and the inclusion of the DC choke. While
+   the DC choke reduces noise, and there is no DC difference between PGDN, and
+   GND, on certain hosts, with certain operating systems, there can be a 250mV
+   AC difference between PGND and GND. Since the analog comparators inside the
+   Microchip USB3320 will be referenced to GND (quiet), it appears to toggle
+   between host mode and device mode. A temp workaround was to change this
+   resistor (R88) from the recommended USB spec of 1k to 24.9k. R88 can be found
+   on the back side, underneath the USB connector.
 
 |image8|
 
@@ -187,7 +207,6 @@ Revision A
    -  `Rev A Allegro Board File <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_brd_reva.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ to view.
    
 
-
 Why do a Rev B?
 ~~~~~~~~~~~~~~~
 
@@ -197,7 +216,8 @@ Why do a Rev B?
 -  were barely passing FCC, (due to noise @ 480MHz, which was also causing some RF issues at 480 MHz), so added DLW21HN900SQ2L (90Ω choke) on the USB lines.
 -  swapped QSPI flash and DDR3L devices, to something not on the obsolete list.
 -   based on early end user feedback, added some test points to unused pins to make extending the device a little easier.
--  based on early end user feedback, added On-The-Go support for USB. This was some minor power circuit, and monitoring VBUS, so was looked at as "low risk"
+-  based on early end user feedback, added On-The-Go support for USB. This was
+   some minor power circuit, and monitoring VBUS, so was looked at as "low risk"
 
 Datasheets
 ----------
@@ -209,7 +229,9 @@ Here are some pointers to datasheets that are sometimes hard to find.
 Before PlutoSDR
 ---------------
 
-Like all things, PlutoSDR is a integration/copy/paste of previous known working platforms. There were a few different AD936x /Zynq platforms that were worked on that we borrowed things from:
+Like all things, PlutoSDR is a integration/copy/paste of previous known working
+platforms. There were a few different AD936x /Zynq platforms that were worked on
+that we borrowed things from:
 
 -  :doc:`FMCOMMS3 FMC Card </wiki-migration/resources/eval/user-guides/ad-fmcomms3-ebz/hardware>`, which includes the baluns/RF and connection back to the Zynq
 -  :doc:`FMCOMMS5 FMC Card </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/hardware>`, which is where we borrowed the (buggy) oscillator design, since the AD9363 can not be used with a crystal.
@@ -222,20 +244,20 @@ Like all things, PlutoSDR is a integration/copy/paste of previous known working 
    Power Supply Rejection Ratio
 
 .. |./back.png| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/back.png
-   :width: 200px
+   :width: 200
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_info_version.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_info_version_c.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_b.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_c.png
-   :width: 195px
+   :width: 195
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_b_zoom.png
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_c_zoom.png
-   :width: 195px
+   :width: 195
 .. |image7| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_with_wires.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_r88.png
-   :width: 500px
+   :width: 500

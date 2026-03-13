@@ -41,7 +41,8 @@ Files
 Example platform device initialization
 ======================================
 
-The AXI HDMI driver is a platform driver and can currently only be instantiated via device tree.
+The AXI HDMI driver is a platform driver and can currently only be instantiated
+via device tree.
 
 Required devicetree properties:
 
@@ -92,12 +93,12 @@ Example:
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The DRM AXI HDMI driver depends on CONFIG_DRM
-
 
 ::
 
@@ -136,14 +137,20 @@ The Xorg graphical environment can be used with driver either using `xf86-video-
 xf86-video-fbdev
 ~~~~~~~~~~~~~~~~
 
-The fbdev driver will bind to the device by default, if no other driver has been bound to the device. This usually means that running a Xorg server without any additional configuration changes will come up with the fbdev driver.
+The fbdev driver will bind to the device by default, if no other driver has been
+bound to the device. This usually means that running a Xorg server without any
+additional configuration changes will come up with the fbdev driver.
 
 xf86-video-modesetting
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The xf86-video-modesetting driver is a driver which has been written to take advantage of the new Kernel Mode Setting (KMS) API of the DRM layer. This allows to switch between different screen resolutions at runtime (using the Xservers xrandr interface) and adds plug-and-play support for monitors.
+The xf86-video-modesetting driver is a driver which has been written to take
+advantage of the new Kernel Mode Setting (KMS) API of the DRM layer. This allows
+to switch between different screen resolutions at runtime (using the Xservers
+xrandr interface) and adds plug-and-play support for monitors.
 
-To enable the modesetting driver the following section has to be added to the Xorg config (/etc/X11/xorg.org).
+To enable the modesetting driver the following section has to be added to the
+Xorg config (/etc/X11/xorg.org).
 
 ::
 
@@ -168,4 +175,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

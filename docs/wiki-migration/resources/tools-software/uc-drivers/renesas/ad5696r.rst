@@ -23,15 +23,23 @@ The :adi:`AD5694`/:adi:`AD5696`, members of the nanoDAC+™ family are low power
 
 The :adi:`AD5694R`/:adi:`AD5695R`/:adi:`AD5696R` nanoDAC+TM are quad, 12/14/16-bit, rail-to-rail, voltage output DACs. The devices include a 2.5V, 2ppm/˚C internal reference (enabled by default) and a gain select pin giving a full-scale output of 2.5V (gain=1) or 5V (gain=2).
 
-These devices operate from a single 2.7 V to 5.5 V supply, are guaranteed monotonic by design and exhibit less than 0.1% FSR gain error and 1.5mV offset error performance. The devices are available in a 3mm X 3mm LFCSP and a TSSOP package.
+These devices operate from a single 2.7 V to 5.5 V supply, are guaranteed
+monotonic by design and exhibit less than 0.1% FSR gain error and 1.5mV offset
+error performance. The devices are available in a 3mm X 3mm LFCSP and a TSSOP
+package.
 
 The :adi:`AD5694`/:adi:`AD5696`/:adi:`AD5694R`/:adi:`AD5695R`/:adi:`AD5696R` also incorporate a power-on reset circuit and a RSTSEL pin that ensures that the DAC outputs power up to zero scale or midscale and remain at that level until a valid write takes place. Each part contains a per-channel power-down feature that reduces the current consumption of the device to 4 µA at 3 V while in power-down mode. The devices employ an I2C interface that operates at clock rates up to 400 kHz, and all devices contain a VLOGIC pin intended for 1.8 V/3 V/5 V logic.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval-ad5686rsdz.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -43,9 +51,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD5696R part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD5696R driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD5696R driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD5696R driver:
 
@@ -59,7 +71,6 @@ There are three functions which are called by the AD5696R driver:
 .. container:: centeralign
 
    I2C driver architecture
-
 
 The following functions are implemented in this version of AD5696R driver:
 
@@ -94,11 +105,11 @@ Downloads
    -  `AD5696R RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5696r_rl78g13.zip>`_
    
 
-
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD5696R demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD5696R
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -114,7 +125,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD5696RSDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+An EVAL-AD5696RSDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
+for RL78G13:
 
 ::
 
@@ -143,8 +155,6 @@ The reference project:
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
-

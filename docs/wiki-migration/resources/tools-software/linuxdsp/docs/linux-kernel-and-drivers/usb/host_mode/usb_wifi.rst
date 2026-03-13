@@ -28,7 +28,8 @@ From the visit `Linux-USB site <http://www.linux-usb.org/usb.ids>`_: **ID 2001:3
 -  Chipset drivers: `Linux wireless LAN support; chipset <http://linux-wless.passys.nl>`_
 -  Chipset firmware: `linux firmware <https://kernel.googlesource.com/pub/scm/linux/kernel/git>`_
 
-Now we can get the information of the chipset and it corresponding drivers and Firmware:
+Now we can get the information of the chipset and it corresponding drivers and
+Firmware:
 
 ::
 
@@ -51,18 +52,21 @@ Now we can get the information of the chipset and it corresponding drivers and F
 Hardware Configuration
 ----------------------
 
-Connect the USB micro-A plug to A receptacle adaptor cable (found in the EZ-Board box) to the OTG port, below photo shows when it acts as Host and connected to a USB Wireless dongle device.
+Connect the USB micro-A plug to A receptacle adaptor cable (found in the
+EZ-Board box) to the OTG port, below photo shows when it acts as Host and
+connected to a USB Wireless dongle device.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/host_mode/wireless.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
 Software Configuration
 ----------------------
 
-On the Yocto, Configure the linux-kernel as below to set the USB controller in Host only mode, and enable the USB wireless relevant supported operations.
+On the Yocto, Configure the linux-kernel as below to set the USB controller in
+Host only mode, and enable the USB wireless relevant supported operations.
 
 **Configure the USB drivers to host mod or (dual role mode)**
 
@@ -144,8 +148,6 @@ For the ID **``0cf3:7015``** chipset: Atheros **``AltAR7010+AR9287``**
                           <*>     Linux Community AR9170 802.11n USB support
                           [*]       SoftLED Support
 
-
-
 For the ID **``0bda:818b``** chipset **``rtl8188eu``** 
 
 .. collapsible:: Click to expand
@@ -161,8 +163,6 @@ For the ID **``0bda:818b``** chipset **``rtl8188eu``**
              [*] Staging drivers  --->
                     <M>   Realtek RTL8188EU Wireless LAN NIC driver
                 [*]     Realtek RTL8188EU AP mode
-
-
 
 **Adding the corresponding Firmware**
 
@@ -184,7 +184,9 @@ Add the additional Firmware:
 
 .. collapsible:: Click to expand
 
-   If we can't find the target chipset supported firmware from the linux-firmware_git.bb, we should write our own .bb file to fetch the corresponding Firmware or just adding it manually.
+   If we can't find the target chipset supported firmware from the
+   linux-firmware_git.bb, we should write our own .bb file to fetch the
+   corresponding Firmware or just adding it manually.
 
    **1. Manually fetch Firmware**
 
@@ -192,8 +194,6 @@ Add the additional Firmware:
 
       git clone https://kernel.googlesource.com/pub/scm/linux/kernel/git/vkoul/firmware
       sudo cp -r firmware/rtlwifi/rtl8192eu_nic.bin /romfs/lib/firmware/rtlwifi
-
-
 
 Reference:
 
@@ -227,7 +227,8 @@ Reference:
 Example Usage
 -------------
 
-Boot the generated Images and connect the USB Wireless Dongle to the target hardware board:
+Boot the generated Images and connect the USB Wireless Dongle to the target
+hardware board:
 
 **Step1. USB Wireless Dongle Detected**
 
@@ -411,8 +412,6 @@ Run the **wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant.conf** to creat
         -W = wait for a control interface monitor before starting
       example:
         wpa_supplicant -Dnl80211 -iwlan0 -c/etc/wpa_supplicant.conf
-
-
 
 --------------
 

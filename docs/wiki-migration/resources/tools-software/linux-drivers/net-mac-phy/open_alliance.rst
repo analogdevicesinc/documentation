@@ -13,13 +13,29 @@ Supported Boards
 Description
 -----------
 
-The IEEE 802.3cg project defines two 10 Mbit/s PHYs operating over a single pair of conductors. The 10BASE-T1L (Clause 146) is a long reach PHY supporting full duplex point-to-point operation over 1 km of single balanced pair of conductors. The 10BASE-T1S (Clause 147) is a short reach PHY supporting full / half duplex point-to-point operation over 15 m of single balanced pair of conductors, or half duplex multidrop bus operation over 25 m of single balanced pair of conductors.
+The IEEE 802.3cg project defines two 10 Mbit/s PHYs operating over a single pair
+of conductors. The 10BASE-T1L (Clause 146) is a long reach PHY supporting full
+duplex point-to-point operation over 1 km of single balanced pair of conductors.
+The 10BASE-T1S (Clause 147) is a short reach PHY supporting full / half duplex
+point-to-point operation over 15 m of single balanced pair of conductors, or
+half duplex multidrop bus operation over 25 m of single balanced pair of
+conductors.
 
-Furthermore, the IEEE 802.3cg project defines the new Physical Layer Collision Avoidance (PLCA) Reconciliation Sublayer (Clause 148) meant to provide improved determinism to the CSMA/CD media access method. PLCA works in conjunction with the 10BASE-T1S PHY operating in multidrop mode.
+Furthermore, the IEEE 802.3cg project defines the new Physical Layer Collision
+Avoidance (PLCA) Reconciliation Sublayer (Clause 148) meant to provide improved
+determinism to the CSMA/CD media access method. PLCA works in conjunction with
+the 10BASE-T1S PHY operating in multidrop mode.
 
-The aforementioned PHYs are intended to cover the low-speed / low-cost applications in industrial and automotive environment. The large number of pins (16) required by the MII interface, which is specified by the IEEE 802.3 in Clause 22, is one of the major cost factors that need to be addressed to fulfil this objective.
+The aforementioned PHYs are intended to cover the low-speed / low-cost
+applications in industrial and automotive environment. The large number of pins
+(16) required by the MII interface, which is specified by the IEEE 802.3 in
+Clause 22, is one of the major cost factors that need to be addressed to fulfil
+this objective.
 
-The MAC-PHY solution integrates an IEEE Clause 4 MAC and a 10BASE-T1x PHY exposing a low pin count Serial Peripheral Interface (SPI) to the host microcontroller. This also enables the addition of Ethernet functionality to existing low-end microcontrollers which do not integrate a MAC controller.
+The MAC-PHY solution integrates an IEEE Clause 4 MAC and a 10BASE-T1x PHY
+exposing a low pin count Serial Peripheral Interface (SPI) to the host
+microcontroller. This also enables the addition of Ethernet functionality to
+existing low-end microcontrollers which do not integrate a MAC controller.
 
 Source Code
 ===========
@@ -53,7 +69,8 @@ Files
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 -  Hit the search button (typically the slash "/" key)
 -  Type open_alliance, then hit Enter; if nothing shows up, the driver is not available in your kernel tree, please use `the ADI linux tree <https://github.com/analogdevicesinc/linux/>`_
@@ -85,11 +102,18 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-This requires that another 10BASE-T1L PHY be connected to the other end of the network cable, or that a media converter be used to convert to normal twisted-pair ethernet that standard ethernet cables use.
+This requires that another 10BASE-T1L PHY be connected to the other end of the
+network cable, or that a media converter be used to convert to normal
+twisted-pair ethernet that standard ethernet cables use.
 
-ADIN1110 communicates with the host via SPI. For 10 Mbps bandwidth, SPI frequency needs to be around 23 MHz. Lower SPI frequencies are supported but will result in a lower bandwidth. At 1 MHz the MAC will provide aprox. 0.4 Mbps of bandwidth.
+ADIN1110 communicates with the host via SPI. For 10 Mbps bandwidth, SPI
+frequency needs to be around 23 MHz. Lower SPI frequencies are supported but
+will result in a lower bandwidth. At 1 MHz the MAC will provide aprox. 0.4 Mbps
+of bandwidth.
 
-Connect to host the SCLK, CS_N, SDI, SDO and INT_N. (The INT_N is mandatory, see DT bindings). RX frames and sent TX frames are signaled to the host by INT_N IRQ pin.
+Connect to host the SCLK, CS_N, SDI, SDO and INT_N. (The INT_N is mandatory, see
+DT bindings). RX frames and sent TX frames are signaled to the host by INT_N IRQ
+pin.
 
 Device Tree
 -----------
@@ -131,9 +155,14 @@ ADIN1110 probes via devicetree.
 ifconfig
 --------
 
-This tool will display the general status of the available network interfaces. If they’ve obtained an IP address, RX packets/errors/dropped/etc, TX packets/errors/dropped/etc, MAC address, etc.
+This tool will display the general status of the available network interfaces.
+If they’ve obtained an IP address, RX packets/errors/dropped/etc, TX
+packets/errors/dropped/etc, MAC address, etc.
 
-Typically, if both TX & RX values are incremented, it means that it is working. Also note that there are error counters; if only the TX/RX counters increment, something may be wrong with the network connection. Check error/dropped counters too.
+Typically, if both TX & RX values are incremented, it means that it is working.
+Also note that there are error counters; if only the TX/RX counters increment,
+something may be wrong with the network connection. Check error/dropped counters
+too.
 
 ::
 
@@ -151,7 +180,9 @@ Typically, if both TX & RX values are incremented, it means that it is working. 
 ethtool
 -------
 
-This tool queries the MAC & PHY via the MAC driver. The MAC driver also allows access to the PHY registers. ethtool can be used to show & override link settings and other parameters for the MAC & PHY.
+This tool queries the MAC & PHY via the MAC driver. The MAC driver also allows
+access to the PHY registers. ethtool can be used to show & override link
+settings and other parameters for the MAC & PHY.
 
 Links for the tool:
 
@@ -160,8 +191,9 @@ Links for the tool:
 
 .. tip::
 
-   Some features of ethtool described here are available in newer versions of ethtool. If some of them don't work, consider upgrading or getting a newer version
-
+   Some features of ethtool described here are available in newer versions of
+   ethtool. If some of them don't work, consider upgrading or getting a newer
+   version
 
 Example: Seeing MAC & PHY info
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

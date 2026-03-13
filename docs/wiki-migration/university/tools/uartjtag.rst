@@ -12,27 +12,33 @@ Hardware
 
 Analog Devices provides a small adapter board :adi:`ADALM-UARTJTAG` to be used for JTAG and UART, in order to make that easier for programming and debugging. You are encouraged to use this on your designs for the same reason we do - the standard JTAG connector is huge, and there are times where good old fashion console UART is valuable for doing debug. The 1.8V supply on the connector above is the I/O voltage, and can be used anywhere between 1.8V and 3.3V.
 
-In the box, you should have received the UARTJTAG board, ribbon cable, and jumper.
+In the box, you should have received the UARTJTAG board, ribbon cable, and
+jumper.
 
 .. image:: https://wiki.analog.com/_media/university/tools/jtaguart/adalm-uartjtag.png
    :align: center
-   :width: 400px
+   :width: 400
 
-The PCB includes a jumper, which forces the Zynq to HALT on JTAG. This is great for halting, and not allowing anything to run, but does pull down a chip select for SPI flash, and will not allow the SPI flash to be found by the on-chip bootloader, or by U-Boot. (If you are loading a U-Boot over JTAG).
+The PCB includes a jumper, which forces the Zynq to HALT on JTAG. This is great
+for halting, and not allowing anything to run, but does pull down a chip select
+for SPI flash, and will not allow the SPI flash to be found by the on-chip
+bootloader, or by U-Boot. (If you are loading a U-Boot over JTAG).
 
 The pin connector is likely inserted into the ribbon cable:
 
 |3| |4|
 
-but can be removed, and either soldered to the PCB, or left in the ribbon cable, so you don't lose it.
+but can be removed, and either soldered to the PCB, or left in the ribbon cable,
+so you don't lose it.
 
 .. image:: https://wiki.analog.com/_media/university/tools/jtaguart/uartjtagcable.png
    :alt: 2
-   :width: 300px
+   :width: 300
 
 If you do want more, they can be obtained from `Samtec <https://www.samtec.com/products/ftsh-105-01-l-d>`_, `Digikey <https://www.digikey.com/SAM10499-ND>`_ or `Arrow <https://www.arrow.com/en/products/ftsh-105-01-l-d/samtec>`_.
 
-Anyone is free to use the same pinout on their platform - or copy the schematics and make it themselves.
+Anyone is free to use the same pinout on their platform - or copy the schematics
+and make it themselves.
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -49,7 +55,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project (get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ to view)
    
 
-
 Device Driver
 -------------
 
@@ -58,10 +63,9 @@ Device Driver
 
    `CP2103 Drivers <http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx>`_
 
-
 .. |ADLAM-UARTJTAG photo| image:: https://wiki.analog.com/_media/jtaguart/adalm-uartjtag.png
-   :width: 400px
+   :width: 400
 .. |3| image:: https://wiki.analog.com/_media/university/tools/jtaguart/uartjtagcablepluspins2.png
-   :width: 300px
+   :width: 300
 .. |4| image:: https://wiki.analog.com/_media/university/tools/jtaguart/uartjtagcablepluspins.png
-   :width: 200px
+   :width: 200

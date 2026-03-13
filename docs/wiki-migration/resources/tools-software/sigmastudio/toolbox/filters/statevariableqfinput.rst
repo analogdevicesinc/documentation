@@ -7,7 +7,8 @@ State Variable (Q/F Input)
 
 This block performs the same function as the :doc:`State Variable Q Input </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/statevariableqinput>`, with the difference being the frequency is now controlled by a third input pin called 'Frequency Input' instead of text window entry.
 
-The format for Q is 5.23 or 8.24 (depending on your processor), and it is inverted. In other words...
+The format for Q is 5.23 or 8.24 (depending on your processor), and it is
+inverted. In other words...
 
 Input to Q pin = :math:`1/Q`
 

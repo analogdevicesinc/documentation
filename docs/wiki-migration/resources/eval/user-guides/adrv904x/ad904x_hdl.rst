@@ -5,7 +5,6 @@ ADRV904x HDL reference design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/adrv904x/index.html\
 
-
 The reference design supports the following evaluation board:
 
 Supported Carriers
@@ -22,7 +21,6 @@ Block Diagram
 -------------
 
 The data path and clock domains are depicted on the below diagram:
-
 
 |image1|
 
@@ -51,7 +49,7 @@ The clock sources are depicted on the below diagram:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/adrv904x_clocking.png
    :align: center
-   :width: 400px
+   :width: 400
 
 More Information
 ----------------

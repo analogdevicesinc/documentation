@@ -53,7 +53,7 @@ Figure 2. EVAL-AD590-ARDZ EVALUATION BOARD
 .. image:: https://wiki.analog.com/_media/resources/eval/ad590_eval-ad590-ardz_top.jpg
    :alt: Figure 2. EVAL-AD590-ARDZ EVALUATION BOARD
    :align: center
-   :width: 400px
+   :width: 400
 
 Figure 3. EVAL-AD590-ARDZ BOARD AND SDP BOARD CONNECTED DIAGRAM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,7 +61,7 @@ Figure 3. EVAL-AD590-ARDZ BOARD AND SDP BOARD CONNECTED DIAGRAM
 .. image:: https://wiki.analog.com/_media/resources/eval/ad590_20220317_145849.jpg
    :alt: Figure 3. EVAL-AD590-ARDZ BOARD AND SDP BOARD CONNECTED DIAGRAM
    :align: center
-   :width: 600px
+   :width: 600
 
 Software Setup
 --------------

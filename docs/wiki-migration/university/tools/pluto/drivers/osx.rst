@@ -26,7 +26,6 @@ Serial
       adi-mm:tests analogdevices$
    
 
-
 Mass Storage
 ------------
 
@@ -39,34 +38,34 @@ Mass Storage
       /dev/disk1s1 on /Volumes/PlutoSDR (msdos, local, nodev, nosuid, noowners)
    
 
-
 Ethernet
 --------
 
 .. tip::
 
-   In order to use the ADALM-PLUTO (aka. PlutoSDR) or ADALM2000 (aka. M2k) with Mac OSX the ethernet compatibility mode must be set to USB CDC-NCM.
+   In order to use the ADALM-PLUTO (aka. PlutoSDR) or ADALM2000 (aka. M2k) with
+   Mac OSX the ethernet compatibility mode must be set to USB CDC-NCM.
 
    
    Please see instructions for :doc:`changing the usb ethernet compatibility mode </wiki-migration/university/tools/pluto/users/customizing>`.
 
-
 .. warning::
 
-   Like most of the network settings on Pluto or the M2k - things are meant to be easy to use. This also means things are inherently insecure.
+   Like most of the network settings on Pluto or the M2k - things are meant to
+   be easy to use. This also means things are inherently insecure.
 
    
    For example - the root password of Pluto is ``analog``. We post it on the Internet. Think about that for a moment. This could allow anyone with an IP connection to take over the device and use it for malicious purposes.
    
-   Never set up a bridge between the Internet and a network connected Pluto with the default images.
+   Never set up a bridge between the Internet and a network connected Pluto with
+   the default images.
 
+Unfortunately - nothing on your host understands the what the IP address of the
+usb device is. You, the human behind the keyboard need to understand this before
+any sort of networking will work. There are two main ways to do this:
 
-Unfortunately - nothing on your host understands the what the IP address of the usb device is. You, the human behind the keyboard need to understand this before any sort of networking will work. There are two main ways to do this:
-
-
-You should see something like this when you goto -> System Preferences -> Network.
-
-
+You should see something like this when you goto -> System Preferences ->
+Network.
 
 |image1|
 
@@ -84,7 +83,6 @@ You should see something like this when you goto -> System Preferences -> Networ
           media: autoselect
           status: active
    
-
 
 Adding a quick/short :git-plutosdr_scripts:`ssh config file <ssh_config>`, which describes the USB device can be helpful. It's maintained in github, and it's a simple matter of grabbing the raw text file. You shouldn't do the exact below unless you have no ``~/.ssh/config`` file. Otherwise, click `on this link <https://raw.githubusercontent.com/analogdevicesinc/plutosdr_scripts/master/ssh_config>`_ and copy/paste it into the system wide ``/etc/ssh/ssh_config`` file, or the user specific ``~/.ssh/config`` file.
 
@@ -106,7 +104,6 @@ Adding a quick/short :git-plutosdr_scripts:`ssh config file <ssh_config>`, which
       2017-01-26 19:47:51 (6.49 MB/s) - ‘~/.ssh/config’ saved [366/366]
    
 
-
 Since the ssh key on the pluto changes every boot, we want to be able to never store the key (so we store it to ``/dev/null``. This does make it easier to use (don't need to continually edit the ``known_hosts`` file), but does make things susceptible to man in the middle attacks.
 
 .. container:: box
@@ -123,7 +120,6 @@ Since the ssh key on the pluto changes every boot, we want to be able to never s
       Connection to 192.168.2.1 closed.
       adi-mm:tests analogdevices$ 
    
-
 
 if you have ``sshpass`` installed, you can use that so you dont need to type in a password:
 
@@ -146,7 +142,5 @@ if you have ``sshpass`` installed, you can use that so you dont need to type in 
       # 
    
 
-
-
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/drivers/screen_shot_2017-01-12_at_2.36.55_pm.png
-   :width: 400px
+   :width: 400

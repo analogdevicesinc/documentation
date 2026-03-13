@@ -6,7 +6,8 @@ The :adi:`SHARC Audio Module <sharcaudiomodule>` development environment is Anal
 Pre-Requisites and Requirements List
 ====================================
 
-There are a few things needed in order to successfully complete all the tutorials
+There are a few things needed in order to successfully complete all the
+tutorials
 
 -  Windows PC or laptop computer
 -  :adi:`ICE-1000/ICE-2000 JTAG Emulator <ice1000>`
@@ -32,7 +33,6 @@ Installing and Activating CrossCore Embedded Studio
 
    
 
-
 **Note:** It is recommended that you install into the default directories recommended by the CrossCore Embedded Studios installer. This way all the instructions and support provided will be easier.
 
 To install CrossCore Embedded Studio, double-click the installer executable (e.g. ``ADI_CrossCoreEmbeddedStudio-Rel2.10.0.exe``). By default the installer places all necessary components in the ``C:\Analog Devices\CrossCore Embedded Studio 2.10.0`` directory.
@@ -46,7 +46,6 @@ The first time you launch CrossCore Embedded Studio, you will be prompted to inp
    | ``EZK-CCES-9FYX-DSAC-FPNV-4WVP-E5X4-VGKC-GI01``
    
 
-
 The New License Wizard will guide you through the process.
 
 -  Select Yes to install a license at this time.
@@ -54,14 +53,17 @@ The New License Wizard will guide you through the process.
 -  Enter the serial number above and click Next.
 -  Choose "Install and activate a license on-line all in one step" and click Next.
 -  Complete your name and address and click Finish.
--  Once you see the "Your license has been successfully activated" message click OK.
+-  Once you see the "Your license has been successfully activated" message click
+   OK.
 
-Once the serial number has been activated, the CrossCore development tools will be enabled to allow you to connect to the ADSP-SC589 processor using an ICE-1000 emulator.
+Once the serial number has been activated, the CrossCore development tools will
+be enabled to allow you to connect to the ADSP-SC589 processor using an ICE-1000
+emulator.
 
 .. warning::
 
-   This license will only allow the use of ICE-1000 emulator hardware with CCES. If you have an ICE-2000 you will need a full CCES license.
-
+   This license will only allow the use of ICE-1000 emulator hardware with CCES.
+   If you have an ICE-2000 you will need a full CCES license.
 
 Installing the SHARC Audio Module Bare Metal SDK
 ================================================
@@ -72,7 +74,8 @@ Installing the SHARC Audio Module Bare Metal SDK
    **SHARC Audio Module Bare Metal SDK 2.2.0(LATEST-Needed for SHARC Audio Module HW rev 2.1+)**
 
    
-   Click the link to the release notes below to see the full list of changes in this release.
+   Click the link to the release notes below to see the full list of changes in
+   this release.
    
    .. container:: indent
 
@@ -80,14 +83,14 @@ Installing the SHARC Audio Module Bare Metal SDK
 
    
 
-
 .. admonition:: Download
    :class: download
 
    **SHARC Audio Module Bare Metal SDK 2.1.2**
 
    
-   Click the link to the release notes below to see the full list of changes in this release.
+   Click the link to the release notes below to see the full list of changes in
+   this release.
    
    .. container:: indent
 
@@ -95,31 +98,35 @@ Installing the SHARC Audio Module Bare Metal SDK
 
    
 
-
 Configuring The Hardware For Use With CCES
 ==========================================
 
 .. important::
 
-   When using CCES, the emulator can introduce some noise into the audio output stream when running. Disconnecting from CCES will produce an unaltered audio stream.
+   When using CCES, the emulator can introduce some noise into the audio output
+   stream when running. Disconnecting from CCES will produce an unaltered audio
+   stream.
 
-
-In order to use the ICE-1000 to connect to the SHARC Audio Module main board be sure to connect the adapter and cable to the ICE-1000 as shown below:
+In order to use the ICE-1000 to connect to the SHARC Audio Module main board be
+sure to connect the adapter and cable to the ICE-1000 as shown below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/ice_connections.jpg
-   :width: 600px
+   :width: 600
 
-The SHARC Audio Module main board must be powered and the ICE-1000 emulator must be connected to P1(DEBUG) as shown below:
+The SHARC Audio Module main board must be powered and the ICE-1000 emulator must
+be connected to P1(DEBUG) as shown below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/sam_connections.jpg
-   :width: 600px
+   :width: 600
 
 Help and Support
 ================
 
-Do you need help or have general support questions, then this section helps you resolve those.
+Do you need help or have general support questions, then this section helps you
+resolve those.
 
-This section should give you all the information you need to contact someone that can help answer your questions.
+This section should give you all the information you need to contact someone
+that can help answer your questions.
 
 Also, check out our :doc:`Troubleshooting </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/troubleshooting>` page for solutions to common problems with the SHARC Audio Module, CrossCore Embedded Studio 2.8.0, and the bare metal framework.
 
@@ -128,17 +135,23 @@ Hardware, Software, and Documentation Questions
 
 If you have questions on the SHARC Audio Module hardware or software or if you just want to show off your latest creation please visit the :ez:`SHARC Audio Module EngineerZone forum <dsp/software-and-development-tools/sharcaudiomodule>`.
 
-When asking a question please take the time to give a detailed description of your problem. If you are experiencing a problem please state the steps you have executed, the result you expected you would get and the result you actually got. By doing so you enable us to provide you precise and detailed answers in a timely manner.
+When asking a question please take the time to give a detailed description of
+your problem. If you are experiencing a problem please state the steps you have
+executed, the result you expected you would get and the result you actually got.
+By doing so you enable us to provide you precise and detailed answers in a
+timely manner.
 
 .. tip::
 
-   Before asking questions please take the time to check if somebody else already asked the same question. You might just find your question already answered.
-
+   Before asking questions please take the time to check if somebody else
+   already asked the same question. You might just find your question already
+   answered.
 
 CrossCore Embedded Studio Questions
 -----------------------------------
 
-If you have questions regarding the tools and tool chain that is used with the SHARC Audio Module, either post a question or send an email.
+If you have questions regarding the tools and tool chain that is used with the
+SHARC Audio Module, either post a question or send an email.
 
 -  :ez:`CrossCore Embedded Studio support community <community/dsp/software-and-development-tools/cces>` for questions about:
 
@@ -146,7 +159,8 @@ If you have questions regarding the tools and tool chain that is used with the S
    -  Build, debug, run, issues
    -  Other tools related issues
 
--  The CrossCore Embedded Studio team can also be emailed using the address below:
+-  The CrossCore Embedded Studio team can also be emailed using the address
+   below:
 
    -  `processor.tools.support@analog.com <https://wiki.analog.com/mailto/processor.tools.support@analog.com>`_
 
@@ -172,10 +186,10 @@ Check out our :doc:`audio elements and effects section </wiki-migration/resource
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/pdf-icon.png
-   :width: 16px
+   :width: 16
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/windows-icon.png
-   :width: 16px
+   :width: 16
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/pdf-icon.png
-   :width: 16px
+   :width: 16
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/windows-icon.png
-   :width: 16px
+   :width: 16

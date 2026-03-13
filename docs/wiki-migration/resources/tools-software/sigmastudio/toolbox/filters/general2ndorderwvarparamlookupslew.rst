@@ -7,7 +7,8 @@ General (2nd-Order w/ Param / Lookup / Slew)
 
 |general2ndparampic1.png| The General (2nd-Order / Lookup) block gives access to a wide variety of 2nd-order IIR (infinite impulse response) filter algorithms. See General 2nd-Order Filters (in Algorithm Information) for details about the algorithms driving these blocks.
 
-The filters available are: Tone Peaking General LP/HP Butterworth LP/HP Bessel LP/HP Chebyshev LP/HP
+The filters available are: Tone Peaking General LP/HP Butterworth LP/HP Bessel
+LP/HP Chebyshev LP/HP
 
 The block is simply a :ez:`double-precision <message/73876>` biquad filter that has stored a set of coefficients in tables in the DSP. To select curves (lookup), use an :doc:`Index Lookup Table </wiki-migration/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables/indexlookuptable>`, a :doc:`Counter </wiki-migration/resources/tools-software/sigmastudio/toolbox/counters/counter>` block, or a :doc:`DC Input </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources/dcinputentry>` block in your design and connect it to the red pin. Using the GPIO blocks you could control the selected responses with a knob, rotary encoder or button.
 
@@ -15,7 +16,10 @@ The block is simply a :ez:`double-precision <message/73876>` biquad filter that 
 
 Click the icon button:|general2ndparampic2.png|. The curve is defined using the Tone Control window (shown below).
 
-Enter the number of curves desired in the # Curves field. Enter Boosts, (overall) Gain, and Q in their fields. Enter the desired cutoff or center (peaking filters) frequency in the Frequency fields. Other parameters to enter will vary with filter type.
+Enter the number of curves desired in the # Curves field. Enter Boosts,
+(overall) Gain, and Q in their fields. Enter the desired cutoff or center
+(peaking filters) frequency in the Frequency fields. Other parameters to enter
+will vary with filter type.
 
 The variety and range of filters are remarkable, as can be seen from the many examples in the :doc:`General (2nd-Order / Lookup) </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/general2ndorderlookup>` topic page. Below is one:
 
@@ -28,8 +32,9 @@ The chief difference between the :doc:`General (2nd-Order / Lookup) </wiki-migra
 
 .. hint::
 
-   Note: For n curves, the selected index shouldn't exceed n - 1, i.e., the index range is 0 to n - 1. If you select an n th curve, misbehavior or errors may result.
-
+   Note: For n curves, the selected index shouldn't exceed n - 1, i.e., the
+   index range is 0 to n - 1. If you select an n th curve, misbehavior or errors
+   may result.
 
 .. |general2ndparampic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndparampic1.png
 .. |general2ndparampic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndparampic2.png

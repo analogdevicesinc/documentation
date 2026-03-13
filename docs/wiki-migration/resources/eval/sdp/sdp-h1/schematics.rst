@@ -1,7 +1,8 @@
 SDP-H1 Schematics
 =================
 
-This page provides schematics for the SDP-B board, and other useful hardware related documents.
+This page provides schematics for the SDP-B board, and other useful hardware
+related documents.
 
 SDP-H1 Board Schematics
 -----------------------

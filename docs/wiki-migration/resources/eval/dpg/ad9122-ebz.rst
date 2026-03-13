@@ -6,7 +6,9 @@ Preface
 
 This user guide describes both the hardware and software setup needed to acquire data capture from :adi:`AD9121-M5372-EBZ/AD9121-M5375-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9121.html#eb-overview>` / :adi:`AD9122-M5372-EBZ/AD9122-M5375-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9122.html#eb-overview>` / :adi:`AD9125-M5372-EBZ/AD9125-M5375-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9125.html>` evaluation board to characterize :adi:`AD9121 <media/en/technical-documentation/data-sheets/AD9121.pdf>` 14-bit / :adi:`AD9122 <media/en/technical-documentation/data-sheets/AD9122.pdf>` 16-bit, Dual, 1.23GSPS, TxDAC+® digital-to-analog converter or :adi:`AD9125 <static/imported-files/data_sheets/AD9125.pdf>` 16-bit, Dual, 1GSPS, TxDAC+® digital-to-analog converter. This guide shows how AD9121-M5375-EBZ, AD9122-M5375-EBZ, and AD9125-M5375-EBZ works with ADS7-V2/SDP-H1 controller board developed by Analog Devices. Link to the previous user guide document is provided for customers who still have the DPG2 controller board.
 
-This guide shows how AD9121 and AD9122 Evaluation boards works with ADS7-V2/SDP-H1 controller board and how AD9125 evaluation board works with SDP-H1 controller board
+This guide shows how AD9121 and AD9122 Evaluation boards works with
+ADS7-V2/SDP-H1 controller board and how AD9125 evaluation board works with
+SDP-H1 controller board
 
 Typical Setup
 -------------
@@ -15,16 +17,13 @@ Typical Setup
 
    \ |image1|\ *Figure 1a. AD9121-M5372-EBZ/AD9121-M5375-EBZ/AD9122-M5372-EBZ/AD9122-M5375-EBZ/AD9125-M5375-EBZ with SDP-H1 Setup*\
 
-
 .. container:: centeralign
 
    |image2|\ *Figure 1b. AD9121-M5372-EBZ/AD9121-M5375-EBZ/AD9122-M5372-EBZ/AD9122-M5375-EBZ with ADVS7-V2EBZ Setup*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files:
 --------------
@@ -47,7 +46,6 @@ Software Needed:
 .. important::
 
    Do not install ACE on a computer with DAC Software Suite.
-
 
 Hardware Needed:
 ----------------
@@ -79,7 +77,9 @@ Quick Start Guide
 Jumpers for Selecting the DAC Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Jumpers JP4, JP5, JP6, and JP17 select the output configuration. By default, the DAC output connected to the LPF and the ADL537x analog quadrature modulator. For selecting DAC output configuration, refer to Table 1 and Figure 2.
+Jumpers JP4, JP5, JP6, and JP17 select the output configuration. By default, the
+DAC output connected to the LPF and the ADL537x analog quadrature modulator. For
+selecting DAC output configuration, refer to Table 1 and Figure 2.
 
 \ *Table 1. Jumper Configurations for Viewing DAC Output and Modulator Output*\ 
 
@@ -100,11 +100,11 @@ DAC Output Configuration         Modulator Output Configuration
 
    \ *Figure 2. AD9121-M5375-EBZ/AD9122-M5375-EBZ/AD9125-M5375-EBZ Output Configuration*\
 
-
 Jumper for Selecting Power Supply
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The evaluation board has a provision for on board or external power supply configuration.
+The evaluation board has a provision for on board or external power supply
+configuration.
 
 Internal Power Supply
 ^^^^^^^^^^^^^^^^^^^^^
@@ -118,26 +118,24 @@ On board power supply is implemented by default using LDO. **JP1** selects the s
 
    \ |image4|\
 
-
 .. container:: centeralign
 
    \ *Figure 3. AD9122-M5375-EBZ IOVDD*\
 
-
 External Power Supply
 ^^^^^^^^^^^^^^^^^^^^^
 
-To implement external supply configuration, remove the header shunt of six pin jumpers, as shown in Figure 4. Refer to Table 2 for external supply jumper connection.
+To implement external supply configuration, remove the header shunt of six pin
+jumpers, as shown in Figure 4. Refer to Table 2 for external supply jumper
+connection.
 
 .. container:: centeralign
 
    \ |image5|\
 
-
 .. container:: centeralign
 
    \ *Figure 4. AD9122-M5375-EBZ Pin Jumpers*\
-
 
 \ *Table 2. Jumper Configurations for External Power Supply*\ 
 
@@ -155,7 +153,10 @@ AVDD5       JP11                 TP11(+5V), TP12 (GND)
 Jumper for Selecting Clock Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The AD9121-M5372-EBZ/AD9121-M5375-EBZ/AD9122-M5372-EBZ/AD9122-M5375-EBZ/AD9125-M5375-EBZ evaluates both the DAC outputs as well as the AQM outputs. Refer to Table 3 for clock configuration.
+The
+AD9121-M5372-EBZ/AD9121-M5375-EBZ/AD9122-M5372-EBZ/AD9122-M5375-EBZ/AD9125-M5375-EBZ
+evaluates both the DAC outputs as well as the AQM outputs. Refer to Table 3 for
+clock configuration.
 
 \ *Table 3. Clock Configuration*\ 
 
@@ -181,12 +182,14 @@ Evaluation Guide
    -  Connect SDP-H1/ADS7-V2EBZ to PC via USB and to a 12Vdc power supply.
    -  Set clock input/continuous wave generator to **500MHz** and **2dBm**.
 
--  Open ACE. The board will automatically be recognized by the software. Otherwise, install the plugin for AD9121/AD9122/AD9125 evaluation board. Double click this board then modify the configuration, as shown in Figure 5, and click "Apply".
+-  Open ACE. The board will automatically be recognized by the software.
+   Otherwise, install the plugin for AD9121/AD9122/AD9125 evaluation board.
+   Double click this board then modify the configuration, as shown in Figure 5,
+   and click "Apply".
 
 .. container:: centeralign
 
    \ |image6|\ *Figure 5. ACE Initial Configuration Wizard when using SDP-H1/ADS7-V2EBZ*\
-
 
 -  Open the DPGDownloaderLite. The evaluation board, controller board and DCO Frequency of around **250MHz** will be automatically recognized by DPG.
 
@@ -198,7 +201,6 @@ Evaluation Guide
 
    \ |image7|\ *Figure 6. AD9121/AD9122 SDP-H1 Port Configuration / AD9125 SDP-H1 Port Configuration*\
 
-
 -  In DPGDownloaderLite, **Add Generator Waveforms** pulldown menu select Single Tone and apply the settings as shown in Figure 7. Set the **Data Rate** to 250MHz and **Desired Frequency** to 29 MHz. Set **DAC Resolution** to the DAC’s number of bits to: **14 bits** for AD9121; **16 bits** for AD9122/AD9125. Check the “Generate Complex Data (I & Q)” box and “Unsigned Data” box.
 -  Select the in-phase tone from the **I Data Vector** pulldown menu and the quadrature tone from the **Q Data Vector** pulldown menu.
 
@@ -206,29 +208,28 @@ Evaluation Guide
 
    \ |image8|\ *Figure 7. DPGDownloader Waveform Configuration for AD9122-M5375-EBZ*\
 
-
--  Press the download arrow and then the play button. The spectrum similar to Figure 8 should appear in the signal/spectrum analyzer.
+-  Press the download arrow and then the play button. The spectrum similar to
+   Figure 8 should appear in the signal/spectrum analyzer.
 
 .. container:: centeralign
 
    \ |image9|\ *Figure 8. AD9122-M5375-EBZ FFT for Fdac=500MHz,2x Interpolation Fout=29MHz*\
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9122_sdp.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9122_ads.jpg
-   :width: 600px
+   :width: 600
 .. |ad9122_dac_output_config_2.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9122_dac_output_config_2.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9122_modulator_output_config.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9122_iovdd.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9122_7_jumpers_-_copy_2_.jpg
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9122_2_initial_config.jpg
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/sph_port_configuration.jpg
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9122_4_dpg.jpg
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9122_5_output.png
-   :width: 600px
+   :width: 600

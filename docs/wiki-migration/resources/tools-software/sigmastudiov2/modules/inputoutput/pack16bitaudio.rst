@@ -9,7 +9,8 @@ Pack 16 Bit Audio
 Description
 -----------
 
-This module accepts stereo audio channels and packs them into a single 16 bit audio stream at the output.
+This module accepts stereo audio channels and packs them into a single 16 bit
+audio stream at the output.
 
 Targets Supported
 -----------------

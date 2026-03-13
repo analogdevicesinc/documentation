@@ -5,10 +5,11 @@ Direct digital synthesis
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/common/ad_dds/index.html\
 
+The direct digital synthesis (DDS) is used to generate sine-waves on a
+clock(referenced to sampling clock).
 
-The direct digital synthesis (DDS) is used to generate sine-waves on a clock(referenced to sampling clock).
-
-Typically, in the reference designs each HDL DAC interface IP has a DDS for every channel.
+Typically, in the reference designs each HDL DAC interface IP has a DDS for
+every channel.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/dds_in_dac_core.svg
    :align: center
@@ -23,21 +24,27 @@ The resulting sine-wave can be changed at run time by 4 parameters:
 DDS basics
 ----------
 
-A generic DDS consists of a phase accumulator and a phase to amplitude converter.
+A generic DDS consists of a phase accumulator and a phase to amplitude
+converter.
 
-The phase accumulator is basically a counter that increments by a frequency word which determines a timely overflow(the actual period of the resulting signal).
+The phase accumulator is basically a counter that increments by a frequency word
+which determines a timely overflow(the actual period of the resulting signal).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/dds_basic.svg
    :align: center
 
-The phase to amplitude convertor is a bit more complex and is the main consumer of FPGA resources out of the DDS modules.
+The phase to amplitude convertor is a bit more complex and is the main consumer
+of FPGA resources out of the DDS modules.
 
 Currently in the reference designs there are support two types of phase to amplitude converters, polynomial and `CORDIC <https://en.wikibooks.org/wiki/Digital_Circuits/CORDIC>`_. The polynomial type uses more DSPs and way less LUTs and FFs in comparison to the CORDIC. Regarding precision/accuracy CORDIC is better.
 
 .. note::
 
-   NOTE: The CORDIC implementation is not optimal. The CORDIC phase to amplitude converter outputs a sine and a cosine, which can be used as I and Q. But because the DAC channel reference design requires dual tone + independent I/Q control. only the sine component is used out of a DDS instance, and multiple DDS instances are added for each tone and independent I/Q channels.
-
+   NOTE: The CORDIC implementation is not optimal. The CORDIC phase to amplitude
+   converter outputs a sine and a cosine, which can be used as I and Q. But
+   because the DAC channel reference design requires dual tone + independent I/Q
+   control. only the sine component is used out of a DDS instance, and multiple
+   DDS instances are added for each tone and independent I/Q channels.
 
 ADI DDS module
 --------------
@@ -95,7 +102,8 @@ Interface
 Control
 ~~~~~~~
 
-In the reference designs the DDS is controlled through the register map(dac channel section).
+In the reference designs the DDS is controlled through the register map(dac
+channel section).
 
 Base (common to all cores)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -162,7 +170,6 @@ Base (common to all cores)
 | Tue Mar 14 10:17:59 2023 |        |                  |                       |      |            |                                                                                                                                                                                                                                                                                     |
 +--------------------------+--------+------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Common (axi_ad\*)
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -214,7 +221,6 @@ ADC Common (axi_ad\*)
 |         |        | [7:0]       | CUSTOM_CONTROL      | RW   | 0x00    |                                                                                                                                                                                                                                                                                                |
 +---------+--------+-------------+---------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADAQ8092
 ========
 
@@ -245,8 +251,6 @@ AD7606X_PI
 -  1 = CRC_ENABLED
 -  2 = STATUS_HEADER
 -  3 = CRC_STATUS
-
-
 
 \|
 
@@ -364,7 +368,6 @@ AD7606X_PI
 | Fri Aug 11 18:29:53 2023 |        |                     |                        |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+---------------------+------------------------+------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Channel (axi_ad\*)
 ----------------------
 
@@ -469,7 +472,6 @@ ADC Channel (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                      |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +--------------------------+--------+----------------------+------------------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 IO Delay Control (axi_ad\*)
 ---------------------------
 
@@ -498,7 +500,6 @@ IO Delay Control (axi_ad\*)
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                     |                    |      |         |                                                                                                                                                                                                                                                    |
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 DAC Common (axi_ad)
 -------------------
@@ -635,7 +636,6 @@ DAC Common (axi_ad)
 | Tue Mar 14 10:17:59 2023 |        |                     |                       |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+---------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DAC Channel (axi_ad\*)
 ----------------------
 
@@ -748,7 +748,6 @@ DAC Channel (axi_ad\*)
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Fri Sep 8 16:01:53 2023 |        |                   |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Generic TDD Control (axi_tdd)
 -----------------------------
@@ -1103,7 +1102,6 @@ Generic TDD Control (axi_tdd)
 | Tue Mar 14 10:17:59 2023 |        |                       |                     |      |                       |                                                                                                                                                                                                    |
 +--------------------------+--------+-----------------------+---------------------+------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Transceiver TDD Control (axi_ad\*)
 ----------------------------------
 
@@ -1249,7 +1247,6 @@ Transceiver TDD Control (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                            |                        |      |          |                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+----------------------------+------------------------+------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD TPL (up_tpl_common)
 ------------------------
 
@@ -1290,7 +1287,6 @@ JESD TPL (up_tpl_common)
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                      |             |      |         |                                                                                                            |
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
-
 
 JESD204 RX (axi_jesd204_rx)
 ---------------------------
@@ -1577,7 +1573,6 @@ JESD204 RX (axi_jesd204_rx)
 | Tue Mar 14 10:17:59 2023  |                 |                                |                              |        |             |                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD204 TX (axi_jesd204_tx)
 ---------------------------
 
@@ -1814,7 +1809,6 @@ JESD204 TX (axi_jesd204_tx)
 | Tue Mar 14 10:17:59 2023  |                 |                       |                          |        |             |                                                                                                                                                                                                                     |
 +---------------------------+-----------------+-----------------------+--------------------------+--------+-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DMA Controller (axi_dmac)
 -------------------------
 
@@ -1997,7 +1991,6 @@ DMA Controller (axi_dmac)
 | Thu Feb 1 12:18:03 2024 |        |                           |                           |      |                                 |                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+---------------------------+---------------------------+------+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Fan Controller (axi_fan_control)
 --------------------------------
 
@@ -2165,7 +2158,6 @@ Fan Controller (axi_fan_control)
 | Tue Mar 14 10:17:59 2023 |        |                   |                       |      |                        |                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +--------------------------+--------+-------------------+-----------------------+------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 System ID (axi_system_id)
 -------------------------
 
@@ -2206,7 +2198,6 @@ System ID (axi_system_id)
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                |                |      |            |                                                                                          |
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
-
 
 Clock Generator (axi_clkgen)
 ----------------------------
@@ -2254,7 +2245,6 @@ Clock Generator (axi_clkgen)
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                  |                   |      |         |                                                                                                                                                         |
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Clock Monitor (axi_clock_monitor)
 ---------------------------------
@@ -2348,7 +2338,6 @@ Clock Monitor (axi_clock_monitor)
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |               |               |      |            |                                |
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
-
 
 HDMI Transmit (axi_hdmi_tx)
 ---------------------------
@@ -2455,7 +2444,6 @@ HDMI Transmit (axi_hdmi_tx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                      |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 HDMI Receive (axi_hdmi_rx)
 --------------------------
 
@@ -2523,7 +2511,6 @@ HDMI Receive (axi_hdmi_rx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                 |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+-----------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 General Purpose Registers (axi_gpreg)
 -------------------------------------
 
@@ -2568,7 +2555,6 @@ General Purpose Registers (axi_gpreg)
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |              |              |      |            |                                                                                                                                                                                                                                        |
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 SPI Engine (axi_spi_engine)
 ---------------------------
@@ -2676,7 +2662,6 @@ SPI Engine (axi_spi_engine)
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                    |                    |      |             |                                                                                                                                                                                                                                                                                      |
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Xilinx XCVR (axi_xcvr) Regmap
 -----------------------------
@@ -2859,7 +2844,6 @@ Xilinx XCVR (axi_xcvr) Regmap
 | Tue Mar 14 10:17:59 2023 |        |               |                  |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 PWM Generator (axi_pwm_gen)
 ---------------------------
 
@@ -2868,7 +2852,6 @@ PWM Generator (axi_pwm_gen)
 .. important::
 
    This register map was moved at https://analogdevicesinc.github.io/hdl/library/axi_pwm_gen/index.html#register-map. The following table is NOT MAINTAINED ANYMORE.
-
 
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 | Address |        | Bits               | Name                                                                         | Type | Default    | Description                                                   |
@@ -2914,15 +2897,14 @@ PWM Generator (axi_pwm_gen)
 |         |        | [31:0]             | PULSE_X_OFFSET[31:0] - base + 'h4 for each channel -> e.g. CH3 offset - 'hCC | RW   | 0x0000     | Pulse x offset, defined in number of clock cycles.            |
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 
-
-
 Config
 ------
 
 DDS_SCALE
 ~~~~~~~~~
 
-The DDS scale for a tone, contributes to the amplitude of the channel(I or Q - where it applies).
+The DDS scale for a tone, contributes to the amplitude of the channel(I or Q -
+where it applies).
 
 The format is 1.1.14 fixed point. See below:
 
@@ -2934,14 +2916,16 @@ The format is 1.1.14 fixed point. See below:
 
 The DDS scale is on 16-bits.
 
-The channel output is equal to (tone_1_fullscale \* scale_1) + (tone_2_fullscale \* scale_2).
+The channel output is equal to (tone_1_fullscale \* scale_1) + (tone_2_fullscale
+\* scale_2).
 
-The phase to amplitude converter always outputs the full-scale(unity sine) sinewave, independent on the phase and data widths.
+The phase to amplitude converter always outputs the full-scale(unity sine)
+sinewave, independent on the phase and data widths.
 
 .. note::
 
-   NOTE: if you do use both tones and set both scales to 0x4000, the channel output will over-range.
-
+   NOTE: if you do use both tones and set both scales to 0x4000, the channel
+   output will over-range.
 
 16'h4000 \* 1 + 16'h4000 \* 1 = 16'h8000 = 16'h1000000000000000
 
@@ -2952,7 +2936,9 @@ The phase to amplitude converter always outputs the full-scale(unity sine) sinew
 PHASE - DDS_INIT
 ~~~~~~~~~~~~~~~~
 
-All tones/channels start on a sync event(internal or external). The DDS_INIT value will be used by the phase accumulator as a starting point in other words as a phase offset.
+All tones/channels start on a sync event(internal or external). The DDS_INIT
+value will be used by the phase accumulator as a starting point in other words
+as a phase offset.
 
 The offset can be determined from the phase accumulator capacity 0 to :math:`2^phaseDW` represents (0° - 360°).
 
@@ -3012,18 +2998,37 @@ ad_dds_sine\_\*
 CLOCK RATIO
 ~~~~~~~~~~~
 
-The clock ratio (number data paths processed in parallel) instantiates more DDS logic, but it it is controlled by the same register map for all CLOCK_RATIO/DATA_PATH parameters.
+The clock ratio (number data paths processed in parallel) instantiates more DDS
+logic, but it it is controlled by the same register map for all
+CLOCK_RATIO/DATA_PATH parameters.
 
-Where is the CLOCK_RATIO > 1? This scenario can be found in every high speed DAC design. It is required because the FPGA fabric can't work at the same speed than that of a high speed converter(typically > 250M).
+Where is the CLOCK_RATIO > 1? This scenario can be found in every high speed DAC
+design. It is required because the FPGA fabric can't work at the same speed than
+that of a high speed converter(typically > 250M).
 
-Let's take the daq2(AD9144) as an example, where the clock ratio is 4, this ratio is chosen for the maximum sampling frequency 1GSPS, this results in an internal clock of 250MHz(device clock), which is closer to the upper limit of what some FPGAs can handle. So, in one clock cycle(250M) it needs to generate 4 consecutive samples in order to keep up with the DAC. This is done by 4 DDS modules. The phase accumulator part is all in one place and the phase to amplitude converters have dedicated sub-modules, as described above. When the frequency is changed by software the 4 phases accumulator are align for the new frequency word and/or frequency phase shift. The counter increment value will be multiplied with clock ratio(4), to get a continuity of the 4 consecutive samples generated at t, t+1, t+2, and so on.
+Let's take the daq2(AD9144) as an example, where the clock ratio is 4, this
+ratio is chosen for the maximum sampling frequency 1GSPS, this results in an
+internal clock of 250MHz(device clock), which is closer to the upper limit of
+what some FPGAs can handle. So, in one clock cycle(250M) it needs to generate 4
+consecutive samples in order to keep up with the DAC. This is done by 4 DDS
+modules. The phase accumulator part is all in one place and the phase to
+amplitude converters have dedicated sub-modules, as described above. When the
+frequency is changed by software the 4 phases accumulator are align for the new
+frequency word and/or frequency phase shift. The counter increment value will be
+multiplied with clock ratio(4), to get a continuity of the 4 consecutive samples
+generated at t, t+1, t+2, and so on.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/dds_clk_ratio_4.svg
    :align: center
 
-For scenarios where the synchronization signal comes from an external source and it is high for a longer period of time, the phase accumulator stages will be hold in reset, in order to avoid a noise like signal, caused by sending all the summed outputs of each DDS stage.
+For scenarios where the synchronization signal comes from an external source and
+it is high for a longer period of time, the phase accumulator stages will be
+hold in reset, in order to avoid a noise like signal, caused by sending all the
+summed outputs of each DDS stage.
 
-There is a minimum synchronization pulse width(delay) of n clock cycles, that is required to synchronize all phase accumulator stages, where n is equal to the CLK_RATIO.
+There is a minimum synchronization pulse width(delay) of n clock cycles, that is
+required to synchronize all phase accumulator stages, where n is equal to the
+CLK_RATIO.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/fw_sync_basics.svg
    :align: center
@@ -3041,7 +3046,10 @@ In the above diagram example:
 
 Each "i" is on 16 bits and each "s"(0-3) is on 64 bits. i(t)+ is the value of the previous i(t) plus the increment(FW\*CLOCK_RATIO).
 
-It should be mentioned that after the phase init fall-edge, until the first valid sample, there is a delay caused by the phase to angle converter type and in the case of the CORDIC type, number of rotation stages will also have a direct impact on this clock period delay.
+It should be mentioned that after the phase init fall-edge, until the first
+valid sample, there is a delay caused by the phase to angle converter type and
+in the case of the CORDIC type, number of rotation stages will also have a
+direct impact on this clock period delay.
 
 Performance analysis
 --------------------

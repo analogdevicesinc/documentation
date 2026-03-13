@@ -1,9 +1,14 @@
 Introduction
 ============
 
-The AD-TRXBOOST1-EBZ module is comprised of the ADL5610 which is an 18dB RF fixed gain block that can operate between 30MHz and 6 GHz with a low noise figure of 2.2dB, the ADL5521 which is a 20dB LNA that can operate between 400MHz and 4GHz with a low noise figure of 0.8dB, along with the ADP2370 switch regulator and two ADP7104 LDOs.
+The AD-TRXBOOST1-EBZ module is comprised of the ADL5610 which is an 18dB RF
+fixed gain block that can operate between 30MHz and 6 GHz with a low noise
+figure of 2.2dB, the ADL5521 which is a 20dB LNA that can operate between 400MHz
+and 4GHz with a low noise figure of 0.8dB, along with the ADP2370 switch
+regulator and two ADP7104 LDOs.
 
-For additional information or to purchase the AD-TRXBOOST1-EBZ, visit: www.analog.com/AD-TRXBOOST1-EBZ
+For additional information or to purchase the AD-TRXBOOST1-EBZ, visit:
+www.analog.com/AD-TRXBOOST1-EBZ
 
 Features
 ========

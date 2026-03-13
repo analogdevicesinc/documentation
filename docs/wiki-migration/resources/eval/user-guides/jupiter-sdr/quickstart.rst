@@ -10,7 +10,8 @@ Required Software
 -----------------
 
 -  SD Card 16GB image using the instructions here: :doc:`Kuiper Linux image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
--  Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees from source can be found here:
+-  Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees
+   from source can be found here:
 
    -  :doc:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
    -  :doc:`How to build the ZynqMP boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynqmp-boot-image>`
@@ -57,7 +58,9 @@ Testing
 -  Connect the Power Supply to USB Type-C power only connector - after this the Status LED turns on red.
 -  Press Power Button to boot up - short time after button press Status LED becomes purple (both red and blue LEDs are on)
 -  Observe kernel and serial console messages on your terminal.
--  Optionally connect test and measurement equipment to SMA ports or just connect the loopback cable included and use IIO Osciloscope to control the ADRV9002 settings.
+-  Optionally connect test and measurement equipment to SMA ports or just
+   connect the loopback cable included and use IIO Osciloscope to control the
+   ADRV9002 settings.
 
 Messages
 ~~~~~~~~
@@ -763,8 +766,6 @@ Messages
             root@analog:~#
    
 
-
-
 Make sure all devices are present
 ---------------------------------
 
@@ -784,7 +785,6 @@ Make sure all devices are present
               iio:device5: axi-adrv9002-tx2-lpc (buffer capable)
    
 
-
 RX gain control
 ---------------
 
@@ -802,11 +802,12 @@ The following commands enable the LNA on RX1A channel.
       root@analog:/sys/kernel/debug/iio/iio:device1# echo 1 > agpio4_value
    
 
-
 RF Add-on power enable
 ----------------------
 
-When RXB or TXB channels need to be used the RF Add-on board could be powered on with the following commands. Once the RF Add-on is powered up the TX amplifieres will be turned on.
+When RXB or TXB channels need to be used the RF Add-on board could be powered on
+with the following commands. Once the RF Add-on is powered up the TX amplifieres
+will be turned on.
 
 .. container:: box bggreen
 
@@ -821,7 +822,6 @@ When RXB or TXB channels need to be used the RF Add-on board could be powered on
       root@analog:/sys/class/gpio/gpio475# echo out > direction
       root@analog:/sys/class/gpio/gpio475# echo 1 > value
    
-
 
 TX channel selection
 --------------------
@@ -840,7 +840,6 @@ The transceiver TX could be routed to the main board output connector (TXA) or t
       tx_a tx_b
       root@analog:/sys/bus/iio/devices/iio:device1# echo tx_b > out_voltage0_port_select
    
-
 
 Video Configuration
 -------------------

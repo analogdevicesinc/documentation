@@ -1,12 +1,16 @@
 Using Keil or IAR Tools with EV-COG-AD3029LZ
 ============================================
 
-This will be a paragraph talk about why you might want to use Keil or IAR with the ADICUP3029. Perhaps you like the other tool chains and are familiar with them. Perhaps you have a full license and your company requires the work to be done using Keil or IAR. Please feel free to update and expand this paragraph.
+This will be a paragraph talk about why you might want to use Keil or IAR with
+the ADICUP3029. Perhaps you like the other tool chains and are familiar with
+them. Perhaps you have a full license and your company requires the work to be
+done using Keil or IAR. Please feel free to update and expand this paragraph.
 
 How to use EV-COG-AD3029LZ with Keil
 ------------------------------------
 
-In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the following steps.
+In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the
+following steps.
 
 -  Install mBed windows serial driver from
 
@@ -17,13 +21,13 @@ In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the f
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keildebug.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Under the CMSIS DAP Settings, select the SW option
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keilcmsisdap.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Push Crtl+F5 or in the Keil toolbar select **Debug** → **Start/Stop Debug Session**
 -  That’s it – You are ready to go.
@@ -31,7 +35,8 @@ In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the f
 How to use EV-COG-AD3029LZ with IAR
 -----------------------------------
 
-In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the following steps.
+In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the
+following steps.
 
 -  Install mBed windows serial driver from
 
@@ -42,19 +47,19 @@ In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the f
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/iar_options_cmsis-dap_debugger.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Under the Debugger-CMSIS DAP tab, select the SWD option
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/iar_cmsis-dap_debugger_setup.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Under the Debugger-CMSIS DAP tab, select Hardware for the reset type
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/reset.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Push the Green-Button – “Download and debug” – Another popup for C-SPY configuration opens up, just press “OK”
 -  That’s it – You are ready to go.

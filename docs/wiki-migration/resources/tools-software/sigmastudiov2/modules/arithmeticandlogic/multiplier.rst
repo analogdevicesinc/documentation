@@ -9,7 +9,10 @@ Multiplier
 Description
 -----------
 
-The Signal Multiply block multiplies the incoming signal with a control signal. Similarly Complex Real multiply multiplies the complex signal with the real input. This can be used for modulation or other design situations where multiply operation is needed.
+The Signal Multiply block multiplies the incoming signal with a control signal.
+Similarly Complex Real multiply multiplies the complex signal with the real
+input. This can be used for modulation or other design situations where multiply
+operation is needed.
 
 Variants
 --------

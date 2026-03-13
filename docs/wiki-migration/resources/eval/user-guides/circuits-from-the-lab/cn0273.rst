@@ -4,11 +4,17 @@ CN0273: High Speed FET Input Instrumentation Amplifier with Low Input Bias Curre
 OVERVIEW
 --------
 
-The circuit is a high speed FET input, gain-of-5 instrumentation amplifier (in-amp) with a wide bandwidth (35 MHz) and excellent ac common-mode rejection, CMR, (55 dB at 10 MHz). The circuit is ideal for applications where a high input impedance, fast in-amp is required, including RF, video, optical signal sensing, and high speed instrumentation. The high CMR and bandwidth also makes it ideal as a wideband differential line receiver. Ideal as a wideband differential line receiver.
+The circuit is a high speed FET input, gain-of-5 instrumentation amplifier
+(in-amp) with a wide bandwidth (35 MHz) and excellent ac common-mode rejection,
+CMR, (55 dB at 10 MHz). The circuit is ideal for applications where a high input
+impedance, fast in-amp is required, including RF, video, optical signal sensing,
+and high speed instrumentation. The high CMR and bandwidth also makes it ideal
+as a wideband differential line receiver. Ideal as a wideband differential line
+receiver.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0273/cn0273-hw-1024.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 --------------
 
@@ -45,17 +51,19 @@ Input Signal
 Peak to Peak Input Voltage Restriction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Maximum allowable differential input is ±3.5 V/G1, where G1 is the gain of the first stage.
+-  Maximum allowable differential input is ±3.5 V/G1, where G1 is the gain of
+   the first stage.
 
 .. note::
 
-   There is a tradeoff between the maximum allowable differential input and the closed-loop gain of the first stage.
-
+   There is a tradeoff between the maximum allowable differential input and the
+   closed-loop gain of the first stage.
 
 Common Mode Input Voltage Restriction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Allowable input common-mode range for the composite circuit is from −3.5 V to +2.2 V
+-  Allowable input common-mode range for the composite circuit is from −3.5 V to
+   +2.2 V
 
 Bandwidth Input Restriction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,12 +79,12 @@ Output Measurement
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0273/gain_output.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. note::
 
-   The output swing of the circuit is limited to ±3.5 V when operating on ±5 V supplies
-
+   The output swing of the circuit is limited to ±3.5 V when operating on ±5 V
+   supplies
 
 --------------
 
@@ -85,7 +93,7 @@ ADVANCED CONFIGURATION
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0273/gain_config1.png
    :align: center
-   :width: 300px
+   :width: 300
 
 FET Amplifier Input Gain Stage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,9 +109,10 @@ FET Amplifier Input Gain Stage
 
    
    -  For this circuit, a feedback resistor of 200 Ω was chosen. The feedback capacitor, CF, was 2 pF for the best bandwidth flatness.
-   -  When the inputs are common-mode, there is no current flowing through the RG gain resistor. Thus, the circuit acts as a buffer for the common-mode inputs.
+   -  When the inputs are common-mode, there is no current flowing through the
+      RG gain resistor. Thus, the circuit acts as a buffer for the common-mode
+      inputs.
    
-
 
 --------------
 
@@ -120,13 +129,11 @@ SCHEMATICS, PCB LAYOUT, BILL OF MATERIALS
    -  `Assembly Drawing <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0273/eval-cn0273-eb1z-assemblydrawing-reva.pdf>`_ (PDF)
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0273-EB1Z?&v=RevA>`_ to receive all these great benefits and more!
-
 
 *End of Document*

@@ -6,11 +6,14 @@ This example will use **EVAL-ADICUP3029** and **EVAL_AD5940ELCZ** to carry out a
 Overview
 --------
 
-Square wave voltammetry is an electrochemical technique where the voltage between the reference and sense electrode is incremented in a square wave fashion as in figure below. The response current on the working electrode is measured after each half step.
+Square wave voltammetry is an electrochemical technique where the voltage
+between the reference and sense electrode is incremented in a square wave
+fashion as in figure below. The response current on the working electrode is
+measured after each half step.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/sqrwavevoltammetry.png
    :align: center
-   :width: 200px
+   :width: 200
 
 For more details refer to the application note, AN-1563.
 
@@ -41,16 +44,17 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Place the **EVAL-AD5940ELCZ** on top of the **EVAL-ADICUP3029**.
 -  Ensure jumper on JP10 and JP11 is on PIN2 and PIN4
 -  Place jumper in position B on JP6 to connect the 1kΩ||3kΩ RE0 and SE0
--  Plug in the micro USB cable into the (P10) USB port on the EVAL-ADICUP3029, and the other end into the PC or laptop.
+-  Plug in the micro USB cable into the (P10) USB port on the EVAL-ADICUP3029,
+   and the other end into the PC or laptop.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/ad5940elcz.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Obtaining the Source Code
 -------------------------
@@ -66,11 +70,13 @@ The source code and include files of the **AD5940_SqrWveVoltammetry** can be fou
    `AD5940 SDK Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
    
 
-
 Configuring the Software
 ------------------------
 
-To compile and run the example open the project in either Keil or IAR. The AD5940RampStructInit() function is used to configure the main application parameters that control the excitation signal and the data acquisition. The parameters and their description are explained in the table below:
+To compile and run the example open the project in either Keil or IAR. The
+AD5940RampStructInit() function is used to configure the main application
+parameters that control the excitation signal and the data acquisition. The
+parameters and their description are explained in the table below:
 
 +-----------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Variable Name in Firmware . | Name on diagram | Description                                                                                                                                                                                                    |
@@ -94,12 +100,15 @@ To compile and run the example open the project in either Keil or IAR. The AD594
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/sqrwavevoltammetry.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Outputting Data
 ---------------
 
-The measurement results are sent to the PC via UART. To establish connection over UART, connect the Micro-USB cable to the PC and to the EVAL-ADICUP3029 board. A terminal program such as RealTerm or Putty is required to display the results
+The measurement results are sent to the PC via UART. To establish connection
+over UART, connect the Micro-USB cable to the PC and to the EVAL-ADICUP3029
+board. A terminal program such as RealTerm or Putty is required to display the
+results
 
 Following is the UART configuration.
 
@@ -112,10 +121,10 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
-The data on the terminal indicates the index number of the data point and the current measured in µA.
-
+The data on the terminal indicates the index number of the data point and the
+current measured in µA.
 
 |image1|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/realterm_ramp.png
-   :width: 600px
+   :width: 600

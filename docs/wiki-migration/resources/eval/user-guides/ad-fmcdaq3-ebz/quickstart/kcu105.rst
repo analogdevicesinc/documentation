@@ -27,18 +27,12 @@ Required Software
 
    \ :doc:`Pre-built Images for KCU105. </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`\
 
-
 Setting up the hardware (KCU105)
 --------------------------------
 
 You will need to:
 
-
-
 - Get the ` Xilinx KCU105 <https://www.xilinx.com/KCU105>`_ board
-
-
-
 
 |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-kcu105_daq3.jpg|
 
@@ -48,16 +42,15 @@ You will need to:
 - Plug the Power Supply into 12V Power input connector (J15)
 - Turn it on
 
-
 .. esd-warning::
-
 
 Programming the FPGA
 --------------------
 
 There are two ways of loading the design.
 
-One is using the XCST command line, and the second method is to run the Tcl script which takes care of loading the bit file and the Linux image.
+One is using the XCST command line, and the second method is to run the Tcl
+script which takes care of loading the bit file and the Linux image.
 
 If **no target** is shown, then check the following:
 
@@ -130,7 +123,8 @@ In Windows, run the XSCT terminal as **Administrator** from start menu → Xilin
 2. Loading the design using tcl script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado → Vivado TCL Shell. (In Linux, source the settings.sh file first)
+Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado →
+Vivado TCL Shell. (In Linux, source the settings.sh file first)
 
 ::
 
@@ -151,8 +145,8 @@ Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado 
 
 .. tip::
 
-   In case of using older releases of VIVADO xsct run.tcl command is replaced by xmd -tcl run.tcl
-
+   In case of using older releases of VIVADO xsct run.tcl command is replaced by
+   xmd -tcl run.tcl
 
 Remote IIO Oscilloscope
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -299,7 +293,6 @@ root analog
 
 Run **ifconfig** command in your UART terminal and get IP of the board
 
-
 |KCU105_console_ifconfig.png|
 
 ::
@@ -317,7 +310,6 @@ Run **ifconfig** command in your UART terminal and get IP of the board
 
 Open IIO Oscilloscope application and type **ip:**\ board_ip in the URI tab
 
-
 |iio_scope_board_ip-kcu105.png|
 
 You should see two screens:
@@ -325,7 +317,7 @@ You should see two screens:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/print_daq3_iio_osc_zcu102.png
    :alt: print_daq3_iio_osc_zcu102.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 More Information
 ----------------
@@ -334,7 +326,7 @@ More Information
 -  :doc:`AD-FMCDAQ3-EBZ HDL Reference Design </wiki-migration/resources/eval/user-guides/ad-fmcdaq3-ebz/reference_hdl>`
 
 .. |KCU105_console_ifconfig.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/kcu105_console_ifconfig.png
-   :width: 600px
+   :width: 600
 .. |iio_scope_board_ip-kcu105.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/iio_scope_board_ip-kcu105.png
 
 .. |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-kcu105_daq3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/kcu105_daq3.jpg

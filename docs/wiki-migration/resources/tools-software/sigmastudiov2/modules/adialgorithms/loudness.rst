@@ -14,7 +14,12 @@ Description
 
 **Loudness (Lower End)**: The Loudness (Lower End) algorithm raises the amplitude of bass frequencies for low volume levels.
 
-In all the 3 variants, the boost values are derived from the well-known equal-loudness curves of Fletcher and Munson and others. This research revealed that at low levels, lows and highs need to be considerably louder in order for the tonal balance to sound correctly proportioned and the overall sound to have the same apparent loudness to the human ear. This algorithm is fixed, not dynamic: it assumes that the input level is constant.
+In all the 3 variants, the boost values are derived from the well-known
+equal-loudness curves of Fletcher and Munson and others. This research revealed
+that at low levels, lows and highs need to be considerably louder in order for
+the tonal balance to sound correctly proportioned and the overall sound to have
+the same apparent loudness to the human ear. This algorithm is fixed, not
+dynamic: it assumes that the input level is constant.
 
 Variants
 --------
@@ -58,7 +63,6 @@ Name    Type  Description
 ======= ===== ==============
 Outputx Audio Output channel
 ======= ===== ==============
-
 
 | ===== Configurable Parameters =====
 

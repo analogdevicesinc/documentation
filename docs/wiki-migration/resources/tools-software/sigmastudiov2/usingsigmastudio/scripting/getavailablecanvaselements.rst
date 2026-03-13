@@ -3,7 +3,9 @@
 Get Available Canvas Elements
 =============================
 
-This action allows the user to obtain a list of all the available canvas/schematic Uid's in the given project. The function call takes in zero arguments. Returns the canvas/schematic uid in the form of list of strings.
+This action allows the user to obtain a list of all the available
+canvas/schematic Uid's in the given project. The function call takes in zero
+arguments. Returns the canvas/schematic uid in the form of list of strings.
 
 API
 ---

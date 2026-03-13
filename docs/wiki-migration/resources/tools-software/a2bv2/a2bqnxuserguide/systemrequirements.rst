@@ -3,7 +3,8 @@
 System Requirements
 ===================
 
-This section mentions the hardware and software requirements for running the demo on BeagleBone Black platform.
+This section mentions the hardware and software requirements for running the
+demo on BeagleBone Black platform.
 
 Hardware Requirements
 ---------------------
@@ -37,7 +38,8 @@ A2B Evaluation Hardware
 
 -  EVAL-AD2428WB1BZ Rev2.1 package
 
-   -  Evaluation Board EVAL-AD2428 WB1BZ (Stereo In, Stereo Out, Stereo Microphones)
+   -  Evaluation Board EVAL-AD2428 WB1BZ (Stereo In, Stereo Out, Stereo
+      Microphones)
 
       -  Twisted Pair A2B Cable with DuraClick connectors (30cm or 4m)
       -  3.5mm Audio cable or male-male adapter
@@ -68,4 +70,3 @@ Windows Host
 .. note::
 
    QNX Software Center and QNX Momentics are installed from a single installer.
-

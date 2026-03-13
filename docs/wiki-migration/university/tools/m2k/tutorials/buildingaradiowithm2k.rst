@@ -4,15 +4,20 @@ How to build a radio with the M2k
 Background
 ----------
 
-In order to be able to process radio signals with ADALM2000 is necessary a receiver that can convert the incoming RF signal to a lower intermediate frequency. The FM signal, centered on a carrier frequency with high values, is reduced to an intermediate value, called IF, through a downconverter receiver. The receiver built for the m2k-radio has a basic radio architecture with four main components: Antenna, Low noise amplifier, Mixer and a Local oscillator. These 3 main parts need additional components (usually some filters) in order to work well together and receive signals in certain desired bandwidths.
-
+In order to be able to process radio signals with ADALM2000 is necessary a
+receiver that can convert the incoming RF signal to a lower intermediate
+frequency. The FM signal, centered on a carrier frequency with high values, is
+reduced to an intermediate value, called IF, through a downconverter receiver.
+The receiver built for the m2k-radio has a basic radio architecture with four
+main components: Antenna, Low noise amplifier, Mixer and a Local oscillator.
+These 3 main parts need additional components (usually some filters) in order to
+work well together and receive signals in certain desired bandwidths.
 
 |image1|
 
 .. container:: centeralign
 
    Figure 1. Block Schematic of the M2k Receiver
-
 
 -  **Low noise amplifie\ r**: Because antennas are sources of weak signal, it is necessary to amplify the signal received through it but is also important to keep the noise level as low as possible. For this purpose, is used a low noise amplifier which amplifies a low power signal without introducing additional noise. As FM radio has a 200kHz bandwidth, from 88.1 to 108.1 MHz is important to use an LNA with a bandwidth that includes these frequencies.
 -  **Mixer**: A well-suited IC component for RF to IF down-conversion applications is the AD831 Low Distortion Mixer. It consists of a mixer core, a limiting amplifier, a low noise output amplifier, and a bias circuit. The mixer produces a high-level output at IFP and IFN—consisting of the sum and difference frequencies of the RF and LO inputs.
@@ -24,8 +29,11 @@ Hardware setup:
 EVAL boards interconnection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For building a first prototype, it is possible to find each block in the form of an EVAL-board which has all the necessary components already integrated and is ready to be easily used in the project. The blocks are interconnected with SMA connectors. The filters between the blocks can be used to reduce the unwanted frequencies so the acquired signal is at a better quality.
-
+For building a first prototype, it is possible to find each block in the form of
+an EVAL-board which has all the necessary components already integrated and is
+ready to be easily used in the project. The blocks are interconnected with SMA
+connectors. The filters between the blocks can be used to reduce the unwanted
+frequencies so the acquired signal is at a better quality.
 
 |image2|
 
@@ -33,12 +41,14 @@ For building a first prototype, it is possible to find each block in the form of
 
    Figure 2. EVAL Boards
 
-
 Power Supplies
 ~~~~~~~~~~~~~~
 
-The last thing necessary, from a hardware point of view, is the power supply. Using an external supply and some voltage regulators is possible to implement an easy solution. In this case, with a 12V supply and simple voltage regulators together with their bypass capacitors you can implement the 5V and 9V supplies needed for the boards.
-
+The last thing necessary, from a hardware point of view, is the power supply.
+Using an external supply and some voltage regulators is possible to implement an
+easy solution. In this case, with a 12V supply and simple voltage regulators
+together with their bypass capacitors you can implement the 5V and 9V supplies
+needed for the boards.
 
 |image3|
 
@@ -46,15 +56,14 @@ The last thing necessary, from a hardware point of view, is the power supply. Us
 
    Figure 3. Power Supplies schematic
 
-
    |image4|
 
 .. container:: centeralign
 
    Figure 4. Power Supplies breadboard connections
 
-
-The outputs of the regulators should be connected on the corresponding VCC pins/pads of each board (5V for LNA and PLL, 9V for the mixer).
+The outputs of the regulators should be connected on the corresponding VCC
+pins/pads of each board (5V for LNA and PLL, 9V for the mixer).
 
 Connections to M2k
 ~~~~~~~~~~~~~~~~~~
@@ -73,12 +82,11 @@ Connections to M2k
 
 .. image:: https://wiki.analog.com/_media/university/tools/adalm2000/pinout.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    Figure 5. M2k Pinout
-
 
    |image5|
 
@@ -86,13 +94,18 @@ Connections to M2k
 
    Figure 6. M2k Radio Receiver
 
-
 Software
 --------
 
-GNU Radio is a free and open-source software development toolkit that provides signal processing blocks to implement software radios. GNU Radio Companion (GRC) is a graphical tool for creating signal flow graphs and generating flow-graph source code. GNU Radio can be extended with own functionality and blocks using OutOfTreeModules. gr-m2k is a module containing blocks for interfacing with ADALM2000.
+GNU Radio is a free and open-source software development toolkit that provides
+signal processing blocks to implement software radios. GNU Radio Companion (GRC)
+is a graphical tool for creating signal flow graphs and generating flow-graph
+source code. GNU Radio can be extended with own functionality and blocks using
+OutOfTreeModules. gr-m2k is a module containing blocks for interfacing with
+ADALM2000.
 
-Creating a flowgraph in GRC, using GNU Radio 3.8, is an easy and fast solution. There are two possible approaches:
+Creating a flowgraph in GRC, using GNU Radio 3.8, is an easy and fast solution.
+There are two possible approaches:
 
 -  Creating a new out-of-tree module. Please check the available OutOfTreeModules `documentation <https://wiki.gnuradio.org/index.php/OutOfTreeModules#Tools_and_resources_at_my_disposal>`_
 -  Integrating the ADF4350 block with gr-m2k
@@ -102,7 +115,12 @@ All steps for integrating ADF4350 with gr-m2k will be further explained.
 ADF4350 block
 ~~~~~~~~~~~~~
 
-Controlling the radio implies controlling the output voltage frequency of ADF4350. A GRC block, integrated with M2k blocks, that controls the frequency can be created. no-OS provides a driver for ADF4350 that simplifies the work. This driver communicates using SPI. In the following steps we are going to create a GRC block for gr-m2k that uses libm2k communication segment integrated with no-OS drivers.
+Controlling the radio implies controlling the output voltage frequency of
+ADF4350. A GRC block, integrated with M2k blocks, that controls the frequency
+can be created. no-OS provides a driver for ADF4350 that simplifies the work.
+This driver communicates using SPI. In the following steps we are going to
+create a GRC block for gr-m2k that uses libm2k communication segment integrated
+with no-OS drivers.
 
 -  Install libm2k. Instructions can be found :doc:`here </wiki-migration/university/tools/m2k/libm2k/libm2k>`.
 -  Compile the gr-m2k blocks for your PC. Check the steps :doc:`here </wiki-migration/university/tools/m2k/libm2k/gr-m2k>`.
@@ -159,7 +177,9 @@ Add this file in the corresponding CMake file.
      adf4350_sink.h
      DESTINATION ${GR_INCLUDE_DIR}/m2k)
 
-In the make function add as parameters the URI and all attributes from the adf4350_init_param structure (23 attributes) found in the driver. This way they could be change from GRC without hard coding them.
+In the make function add as parameters the URI and all attributes from the
+adf4350_init_param structure (23 attributes) found in the driver. This way they
+could be change from GRC without hard coding them.
 
 **Create the implementation class**
 
@@ -195,7 +215,8 @@ In the source file (*adf4350_sink_impl.cc*) include the SPI extra header of libm
      m2KSpiInit.bit_numbering = MSB;
      m2KSpiInit.context = context;
 
-Initialize the adf4350 structure with the given parameters. The first parameter, spi_init_param, should contain these values:
+Initialize the adf4350 structure with the given parameters. The first parameter,
+spi_init_param, should contain these values:
 
 ::
 
@@ -272,7 +293,8 @@ GNU Radio 3.8 uses yml files for creating GRC blocks. Create a file *m2k_adf4350
          default: <value>
          hide: part  # optional
 
-This block is a sink for messages, not streams. To specify this create the following tag:
+This block is a sink for messages, not streams. To specify this create the
+following tag:
 
 ::
 
@@ -304,12 +326,12 @@ The file `m2k_fm.zip <https://wiki.analog.com/_media/university/tools/m2k/tutori
 This project was presented in GRCon 2019. Slides are available `here <https://www.gnuradio.org/grcon/grcon19/presentations/Building_a_radio_with_M2K_and_spare_parts/>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/adalm2000/block.png
-   :width: 700px
+   :width: 700
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/adalm2000/eval.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/adalm2000/supplies.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/adalm2000/power_supplies.png
-   :width: 900px
+   :width: 900
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/adalm2000/final_circ.png
-   :width: 800px
+   :width: 800

@@ -11,7 +11,6 @@ This is same for all applications.
 
    `Download Bootloader and MDK source code <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/src.zip>`_
 
-
 Example projects
 ----------------
 

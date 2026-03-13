@@ -23,7 +23,8 @@ Structure
 
 Description
 
-Configuration structure for connection component. This must be populated by the application before calling adi_ss_connection_init()API.
+Configuration structure for connection component. This must be populated by the
+application before calling adi_ss_connection_init()API.
 
 Fields
 

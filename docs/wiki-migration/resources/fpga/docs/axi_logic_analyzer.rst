@@ -1,7 +1,8 @@
 AXI_LOGIC_ANALYZER
 ==================
 
-The AXI_LOGIC_ANALYZER IP implements both a logic analyzer and a pattern generator, sharing the same pins
+The AXI_LOGIC_ANALYZER IP implements both a logic analyzer and a pattern
+generator, sharing the same pins
 
 More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`, and for DACs: :doc:`axi_dac_ip </wiki-migration/resources/fpga/docs/axi_dac_ip>`.
 
@@ -24,7 +25,6 @@ AXI logic analyzer main module:
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/axi_logic_analyzer_diagram.png
 
 Logic analyzer trigger submodule:
-
 
 |image1|
 
@@ -86,17 +86,27 @@ Interface
 Detailed Description
 --------------------
 
-The AXI_LOGIC_ANALYZER IP implements both a logic analyzer and a pattern generator functionality.
+The AXI_LOGIC_ANALYZER IP implements both a logic analyzer and a pattern
+generator functionality.
 
-There are 16-channel digital I/O pins. All the pins can be configured either as inputs (logic analyzer) or outputs (pattern generator). The pattern generator supports open drain outputs, configurable per pin.
+There are 16-channel digital I/O pins. All the pins can be configured either as
+inputs (logic analyzer) or outputs (pattern generator). The pattern generator
+supports open drain outputs, configurable per pin.
 
-The logic analyzer path can work at lower than the maximum rate by configuring the down sampling block. The same thing is done for the pattern generator using the up sampling block.
+The logic analyzer path can work at lower than the maximum rate by configuring
+the down sampling block. The same thing is done for the pattern generator using
+the up sampling block.
 
 The logic analyzer, can be synchronized(data delayed) to the ADC path()
 
-Triggering for the logic analyzer is implemented in this IP also. It can generate triggers based on ext trigger signals, ADC(Oscilloscope) trigger and the 16 bit input signals. In order to provide data before triggering, a variable length FIFO should be used with this IP. The length of the FIFO is configured through the TRIGGER_DELAY register. It can be bypassed if TRIGGER_DELAY is 0.
+Triggering for the logic analyzer is implemented in this IP also. It can
+generate triggers based on ext trigger signals, ADC(Oscilloscope) trigger and
+the 16 bit input signals. In order to provide data before triggering, a variable
+length FIFO should be used with this IP. The length of the FIFO is configured
+through the TRIGGER_DELAY register. It can be bypassed if TRIGGER_DELAY is 0.
 
-For each of the 18 pins triggering can be done based on rise edge, fall edge, any edge, high or low.
+For each of the 18 pins triggering can be done based on rise edge, fall edge,
+any edge, high or low.
 
 Register Map
 ------------

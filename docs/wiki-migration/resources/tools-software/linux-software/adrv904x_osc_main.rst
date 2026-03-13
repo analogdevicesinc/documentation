@@ -4,7 +4,8 @@ IIO OSC ADRV904x Capture Window
 Introduction
 ------------
 
-Main receivers RX1, RX2, RX3, RX4, RX5, RX6, RX7 and RX8 are handled by the axi-adrv904x-rx-hpc IIO device.
+Main receivers RX1, RX2, RX3, RX4, RX5, RX6, RX7 and RX8 are handled by the
+axi-adrv904x-rx-hpc IIO device.
 
 Channels:
 
@@ -23,11 +24,11 @@ Time Domain View
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv904x_osc_time_domain.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Frequency Domain View
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv904x_osc_freq_domain.png
    :align: center
-   :width: 600px
+   :width: 600

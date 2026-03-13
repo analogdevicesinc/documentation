@@ -21,7 +21,21 @@ Class AB amplifiers are often used as amplifier output stages in emitter-followe
 Objective
 ---------
 
-To study and understand push-pull Class B amplifiers constructed with BJTs as the amplifying elements and view the characteristic crossover distortion associated with them. To see how using level shifters to add a small amount of bias to the Class B amplifier sections to produce a push-pull Class AB amplifier can significantly reduce crossover distortion. To understand how the crossover distortion mechanism differs from other distortion mechanisms, and gets worse as a percentage of signal amplitude as the output signal gets smaller. To understand how thermal runaway can occur in Class AB amplifiers and investigate techniques to prevent it. Following completion of this lab you should be able to explain the basic operation of push-pull Class B and Class AB amplifiers that use BJTs as the amplifying elements, describe crossover distortion, explain how and why it happens, and how it differs from distortion caused by other mechanisms, describe what level shifters do, and explain what can cause thermal runaway in Class AB amplifiers, why it can be dangerous, and how it can be prevented.
+To study and understand push-pull Class B amplifiers constructed with BJTs as
+the amplifying elements and view the characteristic crossover distortion
+associated with them. To see how using level shifters to add a small amount of
+bias to the Class B amplifier sections to produce a push-pull Class AB amplifier
+can significantly reduce crossover distortion. To understand how the crossover
+distortion mechanism differs from other distortion mechanisms, and gets worse as
+a percentage of signal amplitude as the output signal gets smaller. To
+understand how thermal runaway can occur in Class AB amplifiers and investigate
+techniques to prevent it. Following completion of this lab you should be able to
+explain the basic operation of push-pull Class B and Class AB amplifiers that
+use BJTs as the amplifying elements, describe crossover distortion, explain how
+and why it happens, and how it differs from distortion caused by other
+mechanisms, describe what level shifters do, and explain what can cause thermal
+runaway in Class AB amplifiers, why it can be dangerous, and how it can be
+prevented.
 
 Materials and Apparatus
 -----------------------
@@ -45,44 +59,50 @@ Procedure
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_1.png
    :alt: lab_14_image_1.png
    :align: center
-   :width: 800px
+   :width: 800
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard
+-  Refer to the illustration below for one way to install the components in the
+   solderless breadboard
 
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_assembly_image_1.png
    :alt: lab_14_assembly_image_1.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 -  Run PixelPulse and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
 -  Set up the M1K to source voltage/measure current on Channel A and measure voltage on Channel B
 -  Set up Channel A source waveform for a 50 Hz “Sine” output that swings between 0.5 V and of 4.5 V
--  Observe the output voltage at the connection between the two emitters on Channel B and observe the large amount of crossover distortion that is present in the output signal as shown in the image below
+-  Observe the output voltage at the connection between the two emitters on
+   Channel B and observe the large amount of crossover distortion that is
+   present in the output signal as shown in the image below
 
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_2.png
    :alt: lab_14_image_2.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 -  Construct the following circuit on the solderless breadboard
 
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_3.png
    :alt: lab_14_image_3.png
    :align: center
-   :width: 800px
+   :width: 800
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard
+-  Refer to the illustration below for one way to install the components in the
+   solderless breadboard
 
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_assembly_image_2.png
    :alt: lab_14_assembly_image_2.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 -  Set up Channel A source waveform for a 50 Hz “Sine” output that swings between 1.0 V and of 4.0 V
 -  Observe the output voltage at the connection between the two emitters on Channel B and observe how the crossover distortion has been significantly improved due to the addition of the level shifting transistors, connected as diodes
 -  Estimate the voltage loss factor due to the voltage divider formed between the amplifier output resistance and the load resistance
--  Increase the input voltage amplitude to swing between 0.5 V and 4.5 V and observe the output waveform clipping that occurs due to the headroom loss incurred by the level shifters
+-  Increase the input voltage amplitude to swing between 0.5 V and 4.5 V and
+   observe the output waveform clipping that occurs due to the headroom loss
+   incurred by the level shifters
 
 Theory
 ------
@@ -93,14 +113,24 @@ Thermal runaway is a form of positive feedback, sometimes referred to as a self-
 
 Thermal runaway in BJT-based push-pull Class AB amplifiers occurs due to the negative temperature of the base-emitter voltage V\ :sub:`BE`. The V\ :sub:`BE` temperature coefficient is typically about -2 mV/°C. The worst bias arrangements for Class AB amplifiers with respect to thermal runaway are those that use bias voltages that are relatively fixed over temperature. A resistive voltage divider network provides bias voltages that are relatively fixed with temperature, and this is why they are not widely used as Class AB amplifier bias circuits. The following schematic illustrates a simple resistive voltage divider bias circuit that could be used to bias a BJT-based Class AB amplifier.\
 
-
 |lab_14_image_4.png|
 
 The resistor values would be chosen such that R\ :sub:`B1` = R\ :sub:`B4` and R\ :sub:`B2` = R\ :sub:`B3`. A potentiometer could also be placed between the two bases with a slightly different arrangement to provide an adjustable bias. In the schematic above the input signal would be applied between R\ :sub:`B2` and R\ :sub:`B3`. When properly designed, the voltage between the two bases would be equal to 2V\ :sub:`BE`\ (on) where V\ :sub:`BE`\ (on) is defined as the base-emitter voltage at which each transistor begins to conduct. The thermal runaway problem with fixed bias can now be addressed. As the base-emitter junction temperature increases, due to self-heating as well as potential ambient temperature increase, the base-emitter voltage would decrease by -2 mV/°C if it were not fixed by the resistive bias network. The collector current and base-emitter voltage have an exponential relationship, which must be obeyed. Since the base-emitter voltages are not allowed to decrease due to the fixed bias voltages provided by the voltage divider, the collector current increases instead according to the exponential dependence of I\ :sub:`C` on V\ :sub:`BE`. This arrangement presents an exponential dependence of collector current on temperature. As the collector current increases the base-emitter junction temperature increases, further increasing the collector current. Much as was the case in the carbon composition resistor, we have an unstable self-reinforcing feedback loop in the amplifier which produces thermal runaway, and will eventually destroy the transistors. Fortunately, there are a number of better biasing schemes that can be used to avoid thermal runaway.
 
 If we replace R\ :sub:`B2` and R\ :sub:`B3` with forward biased diodes, or transistors configured as diodes, we can cancel out the effects of the negative V\ :sub:`BE` temperature to a great degree as long as the current vs. voltage characteristics of these devices are well matched to those of the transistors in the amplifier and the temperature of all devices are very close. This is what we did in the lab when we added the transistors connected as diodes to the Class B amplifier to change it to a Class AB amplifier. A further improvement can be made to the circuit by converting the transistors connected as diodes to emitter follower stages, providing a high input impedance to the amplifier. This type of arrangement is commonly called a *diamond* stage. We can follow the bias voltage in the upper signal path as going up a V\ :sub:`BE` drop in the diode and down a V\ :sub:`BE` drop in the upper NPN transistor. Similarly, for the lower signal path we go down a V\ :sub:`BE` drop in the diode and up a V\ :sub:`BE` drop in the PNP transistor. Sometimes, however, this thermal compensation may not be enough to entirely avoid thermal runaway, since devices are not perfectly matched, and temperatures can vary between devices. A heat sink, if available, can be used to help equalize the temperature among all of the devices if all of the devices are thermally connected to it. Another technique that is often used is to place small resistors in series with the emitters of the amplifier transistors. Doing this produces negative feedback in the same was as discussed in the "Class A NPN Common-Emitter Amplifier" lab. This is why we placed the two 1.1 Ω resistors in series with the emitters of the two transistors.
 
-Crossover distortion is worse than other types of distortion since it is not reduced as a percentage of signal amplitude as the signal amplitude is reduced. Other distortion mechanisms produce harmonic distortion (distortion of the shape of a sine wave from its ideal shape) that scale with amplitude over a wide dynamic range, giving a rather constant percentage of harmonic distortion as the signal amplitude is varied. Crossover distortion, on the other hand, does not decrease with signal amplitude -- the dead zones stay the same -- so the distortion percentage in a signal actually increases as its amplitude decreases. Fortunately, negative feedback is often provided around amplifiers with push-pull Class AB output stages, which significantly reduces signal distortions. Clearly, the amplifiers themselves should be designed to produce minimal crossover distortion without the negative feedback.
+Crossover distortion is worse than other types of distortion since it is not
+reduced as a percentage of signal amplitude as the signal amplitude is reduced.
+Other distortion mechanisms produce harmonic distortion (distortion of the shape
+of a sine wave from its ideal shape) that scale with amplitude over a wide
+dynamic range, giving a rather constant percentage of harmonic distortion as the
+signal amplitude is varied. Crossover distortion, on the other hand, does not
+decrease with signal amplitude -- the dead zones stay the same -- so the
+distortion percentage in a signal actually increases as its amplitude decreases.
+Fortunately, negative feedback is often provided around amplifiers with
+push-pull Class AB output stages, which significantly reduces signal
+distortions. Clearly, the amplifiers themselves should be designed to produce
+minimal crossover distortion without the negative feedback.
 
 Observations and Conclusions
 ----------------------------
@@ -115,9 +145,11 @@ Observations and Conclusions
 -  Adding bias can produce thermal runaway, and avoiding the use of fixed bias sources can help avoid thermal runaway
 -  Diodes, transistors connected as diodes, and emitter follower stages can be used to implement bias that has temperature compensation that reduces the likelihood of thermal runaway
 -  In order to minimize the likelihood of thermal runaway, all devices should be kept at the same temperature; one way to implement this is to thermally connect all devices to the same heat sink
--  Small resistors can be placed in series with the emitters of Class AB emitter-follower amplifier stages in order to provide negative feedback in the bias circuit that can help prevent thermal runaway
+-  Small resistors can be placed in series with the emitters of Class AB
+   emitter-follower amplifier stages in order to provide negative feedback in
+   the bias circuit that can help prevent thermal runaway
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
 
 .. |lab_14_image_4.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_4.png
-   :width: 200px
+   :width: 200

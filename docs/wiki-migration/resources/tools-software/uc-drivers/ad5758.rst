@@ -40,7 +40,8 @@ In order to build the HDL design the user has to go through the following steps:
 Software Setup
 --------------
 
-In order to perform the software setup the user has to go through the following steps:
+In order to perform the software setup the user has to go through the following
+steps:
 
 -  Confirm that you have the right tools (the reference design requires XSDK)
 -  Clone the No-OS GitHub repository (the project is located at :git-no-OS:`ad5758-sdz` )
@@ -275,4 +276,3 @@ Downloads
    -  :git-hdl:`HDL Reference Design. <projects/ad5758_sdz>`
    -  :git-no-OS:`No-OS Reference Design. <drivers/dac/ad5758>`
    
-

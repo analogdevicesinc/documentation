@@ -21,19 +21,18 @@ Directions:
 
 Before starting make sure the power supplies on the ADALM2000 are turned off. The circuit and the connections to the Lab hardware are as indicated in figure 1. Scope input 1+ should to be connected to the junction of Q\ :sub:`1` and Q\ :sub:`2` bases. Scope input 2+ should to be connected to the junction of Q\ :sub:`1` and Q\ :sub:`2` emitters.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Push - Pull Output stage
 
-
 Hardware Setup:
 ---------------
 
-Channel one of the scope should be connected to display the output of the first generator and both scope channels 1 and 2 should be set to display 1V per division. The breadboard connections are shown in figure 2.
-
+Channel one of the scope should be connected to display the output of the first
+generator and both scope channels 1 and 2 should be set to display 1V per
+division. The breadboard connections are shown in figure 2.
 
 |image2|
 
@@ -41,12 +40,10 @@ Channel one of the scope should be connected to display the output of the first 
 
    Figure 2 Push - Pull Output stage Breadboard Circuit
 
-
 Procedure:
 ----------
 
 The waveform generator, W1, should be configured for a 1 KHz sine wave with 6.0 volt amplitude peak-to-peak and 0 offset. Using scope channel 1 to observe the input at W1 and scope channel 2 to observe the output of the amplifier at R\ :sub:`L`.
-
 
 |image3|
 
@@ -54,10 +51,10 @@ The waveform generator, W1, should be configured for a 1 KHz sine wave with 6.0 
 
    Figure 3 Push - Pull Output stage Waveforms
 
-
-Next, apply power and adjust the waveform generator so that W1 is a 100 Hz triangle wave with 0V offset and 3.0 V amplitude peak-to-peak. Use the oscilloscope in the x-y mode to observe the voltage-transfer curve of the circuit.
-
-
+Next, apply power and adjust the waveform generator so that W1 is a 100 Hz
+triangle wave with 0V offset and 3.0 V amplitude peak-to-peak. Use the
+oscilloscope in the x-y mode to observe the voltage-transfer curve of the
+circuit.
 
 |image4|
 
@@ -65,13 +62,14 @@ Next, apply power and adjust the waveform generator so that W1 is a 100 Hz trian
 
    Figure 4 Voltage-transfer curve
 
-
 Questions:
 ----------
 
-Record the curve on paper, label all breakpoints, slopes, and saturation levels, and justify them in terms of circuit operation and given component values.
+Record the curve on paper, label all breakpoints, slopes, and saturation levels,
+and justify them in terms of circuit operation and given component values.
 
-Switch the scope to just the time display mode, and adjust the waveform generator so that W1 is a 1 kHz sine wave with the amplitude = 0 V.
+Switch the scope to just the time display mode, and adjust the waveform
+generator so that W1 is a 1 kHz sine wave with the amplitude = 0 V.
 
 • Starting with the amplitude = 0 V, gradually increase it until you just begin to see a signal on scope channel 2 appear at the output. For what range of amplitude values of W1 can we say that both BJT's are essentially off? Confirm this by observing the voltages of the current-sensing resistances R\ :sub:`1` and R\ :sub:`2`.
 
@@ -79,7 +77,8 @@ Switch the scope to just the time display mode, and adjust the waveform generato
 
 • Repeat, but with W1 raised a 10.0V amplitude peak-to-peak value; and comment.
 
-Simulate the circuit of figure 1 using QUCS, compare with your lab findings, and justify any differences.
+Simulate the circuit of figure 1 using QUCS, compare with your lab findings, and
+justify any differences.
 
 Reducing Output Distortion:
 ===========================
@@ -91,41 +90,39 @@ Directions:
 
 With the power turned off, assemble the circuit of figure 5, keeping leads as short and neat as possible. NPN transistors Q\ :sub:`1` and Q\ :sub:`2`, PNP transistor Q\ :sub:`3`\ and Q\ :sub:`4` should be selected from the available devices with the best matching of V\ :sub:`BE`. Transistors fabricated in the same package such as the SSM2212 or the CA3046 tend to match much better than individual devices.
 
-
 |image5|
 
 .. container:: centeralign
 
    Figure 5 Push - Pull output stage with zero-crossing distortion elimination.
 
-
 If we examine, in figure 5, the loop formed by the base emitter voltages of Q\ :sub:`1`, Q\ :sub:`2`, Q\ :sub:`3` and Q\ :sub:`4` we know that the sum of the voltage drops around the loop must sum to zero. Thus if Q\ :sub:`1` is identical to Q\ :sub:`2` and Q\ :sub:`3` is identical to Q\ :sub:`4`, the voltage around the loop will be zero only when the current in Q\ :sub:`1` is identical to the current in Q\ :sub:`2` and the current in Q\ :sub:`3` is identical to the current in Q\ :sub:`4`. Thus when the output is at zero volts i.e. there is no current in R\ :sub:`L`, the input must also be at zero volts.
 
 Hardware Setup:
 ---------------
 
-Channel one of the scope should be connected to display the output of the first generator and both scope channels 1 and 2 should be set to display 1V per division. The breadboard connections are shown in figure 6.
-
+Channel one of the scope should be connected to display the output of the first
+generator and both scope channels 1 and 2 should be set to display 1V per
+division. The breadboard connections are shown in figure 6.
 
 |image6|
 
 .. container:: centeralign
 
-   Figure 6 Push - Pull Output stage with zero-crossing distortion elimination Breadboard Circuit
-
+   Figure 6 Push - Pull Output stage with zero-crossing distortion elimination
+   Breadboard Circuit
 
 Procedure:
 ----------
 
 The waveform generator, W1, should be configured for a 1 KHz sine wave with 6.0 volt amplitude peak-to-peak and 0 offset. Using scope channel 1 to observe the input at W1 and scope channel 2 to observe the output of the amplifier at R\ :sub:`L`.
 
-
 |image7|
 
 .. container:: centeralign
 
-   Figure 7 Push - Pull Output stage with zero-crossing distortion elimination Waveforms
-
+   Figure 7 Push - Pull Output stage with zero-crossing distortion elimination
+   Waveforms
 
 Questions:
 ----------
@@ -138,13 +135,13 @@ Using your scope input, measure Vout as well as the voltage across R\ :sub:`3` a
 
 Measure the input impedance by inserting a 10K? resistor in series with the signal generator (between W1 and the emitters of Q\ :sub:`1`\ and Q\ :sub:`3`) and connecting the channel 1 differential scope inputs, 1+ , 1- across the 10K? resistor. Capture the input current vs. the input voltage and calculate the input resistance from the slope of the curve. Justify your results based on the component values used in the circuit.
 
-Simulate the circuit of figure 5 using QUCS, compare with your lab findings, and justify any differences.
+Simulate the circuit of figure 5 using QUCS, compare with your lab findings, and
+justify any differences.
 
 Another Configuration:
 ======================
 
 Remembering the loop formed by the base emitter voltages of Q\ :sub:`1`, Q\ :sub:`2`, Q\ :sub:`3` and Q\ :sub:`4` we also know that the order of the voltage drops around the loop can be interchanged. So if we interchange the V\ :sub:`BE`'s of NPN Q\ :sub:`1` and PNP Q\ :sub:`3` we get the configuration shown in figure 3. Some of you may recognize the combination of Q\ :sub:`3` and Q\ :sub:`2` as the low offset follower we discussed earlier in the lab section on emitter followers. The circuit uses the V\ :sub:`BE` shift up of a PNP emitter follower to partially cancel the V\ :sub:`BE` shift down of an NPN emitter follower. Transistors Q\ :sub:`1` and Q\ :sub:`4`\ are simply the complement of Q\ :sub:`3` and Q\ :sub:`2`.
-
 
 |image8|
 
@@ -152,32 +149,30 @@ Remembering the loop formed by the base emitter voltages of Q\ :sub:`1`, Q\ :sub
 
    Figure 8 Emitter Follower zero-crossing distortion elimination
 
-
 Hardware Setup:
 ---------------
 
-Channel one of the scope should be connected to display the output of the first generator and both scope channels 1 and 2 should be set to display 1V per division. The breadboard connections are shown in figure 9.
-
+Channel one of the scope should be connected to display the output of the first
+generator and both scope channels 1 and 2 should be set to display 1V per
+division. The breadboard connections are shown in figure 9.
 
 |image9|
 
 .. container:: centeralign
 
-   Figure 9 Emitter Follower zero-crossing distortion elimination Breadboard Circuit
-
+   Figure 9 Emitter Follower zero-crossing distortion elimination Breadboard
+   Circuit
 
 Procedure:
 ----------
 
 The waveform generator, W1, should be configured for a 1 KHz sine wave with 6.0 volt amplitude peak-to-peak and 0 offset. Using scope channel 1 to observe the input at W1 and scope channel 2 to observe the output of the amplifier at R\ :sub:`L`.
 
-
 |image10|
 
 .. container:: centeralign
 
    Figure 10 Emitter Follower zero-crossing distortion elimination Waveforms
-
 
 \*\* Lab Resources:\*\*
 
@@ -194,7 +189,8 @@ Using your scope input, measure Vout as well as the voltage across R\ :sub:`3` a
 
 Measure the input impedance by inserting a 10KΩ resistor in series with the signal generator (between W1 and the bases of Q\ :sub:`1`\ and Q\ :sub:`3`) and connecting the channel 1 differential scope inputs, 1+ , 1- across the 10KΩ resistor. Capture the input current vs. the input voltage and calculate the input resistance from the slope of the curve. Justify your results based on the component values used in the circuit. How do your results compare to what you measured for the circuit in figure 5?
 
-Simulate the circuit of figure 3 using LTSpice or ADIsimPE, compare with your lab findings, and justify any differences.
+Simulate the circuit of figure 3 using LTSpice or ADIsimPE, compare with your
+lab findings, and justify any differences.
 
 .. admonition:: Download
    :class: download
@@ -206,7 +202,6 @@ Simulate the circuit of figure 3 using LTSpice or ADIsimPE, compare with your la
    -  LTspice files: :git-education_tools:`m2k/ltspice/output_stages_ltspice`
    
 
-
 For Further reading:
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -215,16 +210,16 @@ Output Stages :adi:`(MT-207) <static/imported-files/tutorials/MT-207.pdf>` `Push
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/electronics>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f1.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f2a.png
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f3_wf.png
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f4_tc.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f2.png
-   :width: 500px
+   :width: 500
 .. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f6.png
 .. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f7_wf.png
 .. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f3.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f9.png
 .. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f10_wf.png

@@ -3,31 +3,38 @@ EVAL-CN0521-EBZ User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0521-ebz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Overview
 --------
 
 The :adi:`EVAL-CN0521-EBZ` is a USB-powered, RF low noise amplifier (LNA) that is optimized for receiving signal chains in the 2.4 GHz ISM band. Using two :adi:`HMC639` amplifiers cascaded together, the design provides a gain of 21 dB and return losses of more than 10 dB throughout its RF band of operation.
 
-The board includes a high speed overpower cutoff that protects sensitive downstream equipment connected to the receiver system. The receiver system also automatically turns back on when the RF power level drops within the acceptable range.
+The board includes a high speed overpower cutoff that protects sensitive
+downstream equipment connected to the receiver system. The receiver system also
+automatically turns back on when the RF power level drops within the acceptable
+range.
 
 Designed to be used with the :adi:`ADALM-PLUTO`, the :adi:`EVAL-CN0521-EBZ` features a small form factor, with dimensions of 25.4 mm × 49.6 mm x 1.5748 mm (PCB only). The RF input and output are designed with a 50 Ω impedance, enabling direct connection between the circuit and standard 50 Ω systems.
 
-A micro-USB connector is used for the input power, allowing the evaluation board to use most +5 V wall wart power supplies available in the market.
+A micro-USB connector is used for the input power, allowing the evaluation board
+to use most +5 V wall wart power supplies available in the market.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/cn0518-top.png
    :align: center
-   :width: 500px
+   :width: 500
 
 *Figure 1. EVAL-CN0521-EBZ Reference Design Board*
 
@@ -43,13 +50,13 @@ Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/primary_side.png
    :align: center
-   :width: 800px
+   :width: 800
 
 *Figure 3. CN0521 Primary Side*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0518/secondary_side.png
    :align: center
-   :width: 800px
+   :width: 800
 
 *Figure 4. CN0521 Secondary Side*
 
@@ -124,7 +131,6 @@ The latest firmware version for the **ADALM-PLUTO** can be found here:
    -  `Pluto version latest release <https://github.com/analogdevicesinc/plutosdr-fw/releases/latest>`_
    
 
-
 ADALM-PLUTO Preparation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -138,7 +144,7 @@ Normal Operation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0521/test_setup.png
    :align: center
-   :width: 800px
+   :width: 800
 
 *Figure 5. EVAL-CN0521-EBZ Test Setup*
 
@@ -155,13 +161,12 @@ IIO Oscilloscope
 
    Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope. The instructions can be seen in the previous section.
 -  Press refresh to display available IIO devices. Once the :adi:`ADALM-PLUTO` appeared, press connect.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0521/connecting_of_iio_osc.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 *Figure 6. IIO Oscilloscope Configuration*
 
@@ -170,7 +175,7 @@ IIO Oscilloscope
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0521/capture_window.png
    :align: center
-   :width: 600px
+   :width: 600
 
 *Figure 7. CN0521 RF Output*
 
@@ -204,13 +209,11 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications and documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0521-EBZ?&v=Rev F>`_ to receive all these great benefits and more!
-
 
 *End of Document*

@@ -1,13 +1,20 @@
 Mobile Storage Interface for MMC/SD
 ===================================
 
-The ADSP-SC5xx processors provide a mobile storage interface (MSI). MSI is a fast, synchronous controller that uses various protocols to communicate with MMC, SD, and SDIO cards to address the growing storage need in embedded systems, handheld and consumer electronics applications requiring low power. The MSI is compatible with the following protocols.
+The ADSP-SC5xx processors provide a mobile storage interface (MSI). MSI is a
+fast, synchronous controller that uses various protocols to communicate with
+MMC, SD, and SDIO cards to address the growing storage need in embedded systems,
+handheld and consumer electronics applications requiring low power. The MSI is
+compatible with the following protocols.
 
 -  MMC (Multimedia Card) bus protocol
 -  SD (Secure Digital) bus protocol
 -  SDIO (Secure Digital Input Output) bus protocol
 
-All of these storage solutions use similar interface protocols. The main difference between MMC and SD support is the initialization sequence. The main difference between SD and SDIO support is the use of interrupt and read wait signals for SDIO.
+All of these storage solutions use similar interface protocols. The main
+difference between MMC and SD support is the initialization sequence. The main
+difference between SD and SDIO support is the use of interrupt and read wait
+signals for SDIO.
 
 Hardware Setup
 --------------
@@ -22,7 +29,7 @@ An ADSP-SC5xx EZ-Board:
 The SD/MMC card slot is **J18** on the SC589/SC573 EZKIT board and is **J6** on the SC589 MINI board. This slot accepts full-size SD and MMC cards, or microSD cards with an adapter.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mmc/lkad-mobile_storage_interface_for_mmc-hw_setup.jpg
-   :width: 400px
+   :width: 400
 
 Software Configuration
 ----------------------
@@ -30,7 +37,8 @@ Software Configuration
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-Add Bonnie++ package in the filesystem. Bonnie++ is a program for testing filesystem throughput, see www.coker.com.au/bonnie++ for details.
+Add Bonnie++ package in the filesystem. Bonnie++ is a program for testing
+filesystem throughput, see www.coker.com.au/bonnie++ for details.
 
 ::
 
@@ -56,7 +64,8 @@ Enable MSI Support
 File System Support
 ^^^^^^^^^^^^^^^^^^^
 
-If you want to mount an SD card in a particular format, you should compile the Linux kernel with the corresponding file-system first.
+If you want to mount an SD card in a particular format, you should compile the
+Linux kernel with the corresponding file-system first.
 
 **Example1**\ ：FAT32 SD card, corresponding filesystem is VFAT.  Configuration is shown below:
 
@@ -83,21 +92,33 @@ Build and Load Linux Kernel
 
 Run “\ **bitbake linux-adi -C compile**\ ” to compile the linux kernel to generate the zImage and dtb file.
 
-A kernel image and dtb file can now be built and loaded onto the target board.  See SC5xx ezkit Linux quick start guide for details.
+A kernel image and dtb file can now be built and loaded onto the target board.
+ See SC5xx ezkit Linux quick start guide for details.
 
 Usage of MSI
 ------------
 
-The most typical use of an SD Card in embedded applications is as a removable storage device (disk) that can be easily taken from the embedded target board. In such contexts, the SD Card installed to the embedded target board is typically already formatted with an MS-DOS file system. The Linux kernel must be specially configured to allow mounting the MS-DOS file system. See part 2 in section 2.1 for details. The mount utility is also needed. Typically,  mount will already be enabled in your busybox configuration.
+The most typical use of an SD Card in embedded applications is as a removable
+storage device (disk) that can be easily taken from the embedded target board.
+In such contexts, the SD Card installed to the embedded target board is
+typically already formatted with an MS-DOS file system. The Linux kernel must be
+specially configured to allow mounting the MS-DOS file system. See part 2 in
+section 2.1 for details. The mount utility is also needed. Typically,  mount
+will already be enabled in your busybox configuration.
 
 Formatting the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In order to use an SD Card with Linux we need to prepare it by formatting it in the correct format.
+In order to use an SD Card with Linux we need to prepare it by formatting it in
+the correct format.
 
-This section of instructions requires you to correctly identify the SD Card and format the card. If you select the wrong drive you may cause irreversible damage to you Host PC.
+This section of instructions requires you to correctly identify the SD Card and
+format the card. If you select the wrong drive you may cause irreversible damage
+to you Host PC.
 
-To format the SD Card, follow the commands below. The example code in this section assumes that the SD Card device is reported to be /dev/sdb. Ensure that you change these commands to use your device.
+To format the SD Card, follow the commands below. The example code in this
+section assumes that the SD Card device is reported to be /dev/sdb. Ensure that
+you change these commands to use your device.
 
 ::
 
@@ -127,7 +148,9 @@ To format the SD Card, follow the commands below. The example code in this secti
 Insert a pre-formatted card with an MS-DOS (FAT) file system to the SD Card slot on the ADSP-SC5xx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When you boot the zImage on the ADSP-SC5xx, there should be messages similar to the ones shown below. In the below example, Linux has detected an SD Card with a single partition on it:
+When you boot the zImage on the ADSP-SC5xx, there should be messages similar to
+the ones shown below. In the below example, Linux has detected an SD Card with a
+single partition on it:
 
 ::
 
@@ -141,7 +164,6 @@ Mount the MS-DOS file system on the SD Card
 This is done as follows:
 
 ::
-
 
    # mount -t vfat -o sync /dev/mmcblk0p1 /mnt
 
@@ -167,7 +189,9 @@ Refer to the last line in the below output:
 Write something to the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the below example, we store the current date and time to a log file, although in real-life applications you will probably want to do something more meaningful:
+In the below example, we store the current date and time to a log file, although
+in real-life applications you will probably want to do something more
+meaningful:
 
 ::
 

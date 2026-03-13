@@ -6,12 +6,22 @@ Overview
 
 The :adi:`CN0571` provides a completely galvanically isolated connection between a HDMI sink and a HDMI source running at 1080p/60Hz resolution.
 
-While galvanic isolation is typically not found implemented in a multimedia interface such as HDMI, many applications require the presence of such an isolation barrier. In general, galvanic isolation enables an interface with immunity to noise, ground loops and electrical line surges, while providing a safety barrier against electric shock for personnel and low voltage electronics. Certain applications, especially in the medical space, mandate this electrical safety via the relevant safety certification bodies and standards.
+While galvanic isolation is typically not found implemented in a multimedia
+interface such as HDMI, many applications require the presence of such an
+isolation barrier. In general, galvanic isolation enables an interface with
+immunity to noise, ground loops and electrical line surges, while providing a
+safety barrier against electric shock for personnel and low voltage electronics.
+Certain applications, especially in the medical space, mandate this electrical
+safety via the relevant safety certification bodies and standards.
 
-Traditionally, the challenges associated with implementing a galvanically isolated gigabit digital interface such as HDMI, have made it typically cost and time prohibitive, with solutions limited to optical fiber or complex SerDes circuits. Recent advances in high-speed digital isolation technology from Analog Devices, Inc. provides unique options to system designers wishing to isolate high resolution video interfaces.
+Traditionally, the challenges associated with implementing a galvanically
+isolated gigabit digital interface such as HDMI, have made it typically cost and
+time prohibitive, with solutions limited to optical fiber or complex SerDes
+circuits. Recent advances in high-speed digital isolation technology from Analog
+Devices, Inc. provides unique options to system designers wishing to isolate
+high resolution video interfaces.
 
 Building on the previous :adi:`CN0422` design (720p resolution Isolated HDMI), this circuit note describes a complete solution for implementing an isolated High-Definition Multimedia Interface (HDMI) port at up to 1080p resolution providing two means of patient protection (2MOPP) against secondary circuits, and one means of patient protection (1MOPP) against mains circuits for medical applications. The design is based on Analog Devices 2.5 Gbps isolated low voltage differential signaling (LVDS) transceivers :adi:`adn4624` and includes the :adi:`ad8195` HDMI buffer for compensating long HDMI cable losses.
-
 
 |Figure 1. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram|
 
@@ -19,17 +29,13 @@ Building on the previous :adi:`CN0422` design (720p resolution Isolated HDMI), t
 
    *Figure 1. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram*
 
-
 Figure 2 shows a simplified block diagram of the power isolation and the isolation of the HDMI signals. Number 1 through Number 5 show the start-up communication sequence through the :adi:`ADN4070` (1 - power), :adi:`ADuM321` (2 - HPD), :adi:`ADuM1252` (3 - DDC), and :adi:`ADN4624` with :adi:`AD8195` (4 - TMDS) between the HDMI source and HDMI sink.
-
-
 
 |Figure 2. Isolated HDMI Signal Flow Diagram|
 
 .. container:: center
 
    *Figure 2. Isolated HDMI Signal Flow Diagram*
-
 
 Hardware Setup
 --------------
@@ -62,12 +68,11 @@ Test Setup Functional Block Diagram
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571_test_setup.png
    :alt: Figure 4. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI test setup
    :align: center
-   :width: 2000px
+   :width: 2000
 
 .. container:: center
 
    *Figure 4. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Test Setup*
-
 
 Video Stream/Data Transfer Test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,7 +81,7 @@ Video Stream/Data Transfer Test
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/pc_display_settings.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Power the HDMI board by means of the power source and the USB Type C cable. The **LED D51** will light up.
 -  Connect the :adi:`EVAL-CN0571-EBZ <CN0571>` HDMI input (P2) to your PC or laptop using a HDMI cable.
@@ -111,7 +116,6 @@ Schematics, PCB Layout, Bill of Materials
    -  Assembly Drawing
    
 
-
 Registration
 ------------
 
@@ -119,10 +123,9 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0571-EBZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |Figure 1. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/full_block_diagram_final_copy.svg.png
-   :width: 3000px
+   :width: 3000
 .. |Figure 2. Isolated HDMI Signal Flow Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/simplified_block_diagram_final_copy.svg.png
-   :width: 600px
+   :width: 600

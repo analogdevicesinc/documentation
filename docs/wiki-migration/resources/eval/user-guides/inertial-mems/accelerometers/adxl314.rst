@@ -1,7 +1,10 @@
 Evaluating the ADXL314
 ======================
 
-The ADXL314 is a 3-axis accelerometer that provides low power consumption and high-resolution measurement up to ±200 g. The digital output data is formatted as 16-bit, twos complement data and is accessible through a SPI (3- or 4-wire) or I2C digital interface.
+The ADXL314 is a 3-axis accelerometer that provides low power consumption and
+high-resolution measurement up to ±200 g. The digital output data is formatted
+as 16-bit, twos complement data and is accessible through a SPI (3- or 4-wire)
+or I2C digital interface.
 
 Useful links:
 

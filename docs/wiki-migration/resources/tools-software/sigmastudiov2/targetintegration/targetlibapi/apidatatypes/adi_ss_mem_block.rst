@@ -14,7 +14,8 @@ Structure
 
 Description
 
-The structure ADI_SS_MEM_BLOCK captures the information about the individual memory blocks in the ADI_SS_MEM_MAP structure.
+The structure ADI_SS_MEM_BLOCK captures the information about the individual
+memory blocks in the ADI_SS_MEM_MAP structure.
 
 Fields
 

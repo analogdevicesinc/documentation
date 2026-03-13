@@ -4,12 +4,12 @@ A2B Class-D Amplifier Module for SHARC Audio Module
 The :doc:`SHARC Audio Module </wiki-migration/resources/tools-software/sharc-audio-module>` A\ :sup:`2`\ B Class-D Amplifier Module is an :adi:`a2b` connected board that contains two Class-D :adi:`SSM3582 <en/products/audio-video/audio-amplifiers/class-d-audio-amplifiers/ssm3582.html>` amplifier ICs, providing 4 channels of audio output.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/sam-class-d-top.png
-   :width: 500px
+   :width: 500
 
 **The A\ 2\ B Class-D Amplifier Module**
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/class-d-diagram.png
-   :width: 500px
+   :width: 500
 
 **Block Diagram of the A\ 2\ B Class-D Amplifier Module**
 
@@ -26,7 +26,6 @@ Schematics, PCB Layout, Bill of Materials
    -  `Bill of Materials <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/a0974-2017_bom_hlm.xlsx>`_
    -  `Fabrication and Assembly Files <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/adzs-audioa2bamp_design_files.zip>`_
    
-
 
 Automotive Audio Bus (A2B) Interface Duraclick (P4, P5)
 -------------------------------------------------------
@@ -85,7 +84,6 @@ The A\ :sup:`2`\ B Class-D Amplifier Module is designed to run off a 12v to 16v 
 .. note::
 
    The Class-D Amplifier Module is shipped with a US power supply. Here is a universal option: https://www.digikey.com/products/en?keywords=102-3580-ND\
-
 
 Power Supply Input (P10)
 ------------------------
@@ -146,4 +144,3 @@ EEPROM
 ------
 
 The A\ :sup:`2`\ B Class-D Amplifier Module has a TWI 256k EEPROM for configuration data. The EEPROM used is the `24FC256I/MS <http://www.microchip.com/wwwproducts/en/24FC256>`_.
-

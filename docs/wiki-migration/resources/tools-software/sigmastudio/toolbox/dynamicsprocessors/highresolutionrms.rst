@@ -6,9 +6,11 @@
 
 |highrespic1.png| This block uses a high-resolution rms dynamics processor that lets you control the rms TC (time constant), Hold, Decay, and Soft Knee behavior, and displays the compression curve graph for your curve drawing.
 
-Hi-Resolution RMS works on a longer average than peak processors, but, like them, it still won't allow fast loud transients to pass without compression.
+Hi-Resolution RMS works on a longer average than peak processors, but, like
+them, it still won't allow fast loud transients to pass without compression.
 
-Push Show Graph to open the Compression Curve window and drag, add and remove (right-click) control points to achieve your desired processing curve.
+Push Show Graph to open the Compression Curve window and drag, add and remove
+(right-click) control points to achieve your desired processing curve.
 
 Controls
 ========
@@ -25,7 +27,9 @@ Controls
 | Show Graph    | |highrespic6.png| | Opens the Compression Curve editor window.                                                                                                                                                                                                                                                          |
 +---------------+-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Shown below are the curves of the Hi-Resolution RMS dynamics processor (right) and the regular RMS processor (left). The number of data points in this block is double that in the ordinary one (66 instead of 33).
+Shown below are the curves of the Hi-Resolution RMS dynamics processor (right)
+and the regular RMS processor (left). The number of data points in this block is
+double that in the ordinary one (66 instead of 33).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/highrespic7.png
    :alt: highrespic7.png

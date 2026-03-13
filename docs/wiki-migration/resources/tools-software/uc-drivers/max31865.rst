@@ -27,7 +27,7 @@ Applications
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/max31865/max31865.png
    :align: center
-   :width: 400px
+   :width: 400
 
 ADI No-OS
 ~~~~~~~~~
@@ -53,8 +53,9 @@ The source code for MAX31865 driver can be found here:
    -  :git-no-OS:`Implementation of MAX31865 Driver <drivers/temperature/max31865pmb1/max31865.c>`
    
 
-
-This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the util library can be found here:
+This driver also uses the ADI utility library, so make sure you also add the
+necessary files to your project. The source code for the util library can be
+found here:
 
 .. admonition:: Download
    :class: download
@@ -64,8 +65,10 @@ This driver also uses the ADI utility library, so make sure you also add the nec
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
-
-To use the MAX32865 No-OS Driver, you need to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the MAX31865 driver and have to be implemented:
+To use the MAX32865 No-OS Driver, you need to provide the specific
+implementation for the communication APIs and the specific types they use. If
+the SPI communication is chosen, there are three functions which are called by
+the MAX31865 driver and have to be implemented:
 
 .. container:: center box
 
@@ -79,7 +82,6 @@ To use the MAX32865 No-OS Driver, you need to provide the specific implementatio
    +--------------------------------+---------------------------------------------+
    
 
-
 And there are two data types that have to be defined:
 
 .. container:: center box
@@ -92,8 +94,9 @@ And there are two data types that have to be defined:
    +--------------------------+---------------------------------------------------------+
    
 
-
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using, can
+be found below:
 
 .. admonition:: Download
    :class: download
@@ -102,11 +105,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
 
-
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and can be accessed in these links:
 
 .. admonition:: Download
    :class: download
@@ -116,21 +119,23 @@ Source code documentation for the driver is automatically generated using the Do
    -  `MAX31865 Source file <http://analogdevicesinc.github.io/no-OS/max31865_8c.html>`_
    
 
-
 Device Configuration
 --------------------
 
 Driver Initialization
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use the device, you need to provide the support for the communication protocol (SPI) as mentioned above.
+To use the device, you need to provide the support for the communication
+protocol (SPI) as mentioned above.
 
 The first API function to be called is **max31865_init**. Make sure that it returns 0. This indicates a successful driver initialization.
 
 Bias Configuration
 ~~~~~~~~~~~~~~~~~~
 
-When no conversions are being performed, VBIAS may be disabled to reduce power dissipation. When automatic (continuous) conversion mode is selected, VBIAS remains on continuously.
+When no conversions are being performed, VBIAS may be disabled to reduce power
+dissipation. When automatic (continuous) conversion mode is selected, VBIAS
+remains on continuously.
 
 .. container:: center box
 
@@ -140,11 +145,12 @@ When no conversions are being performed, VBIAS may be disabled to reduce power d
    +--------------------------+-------------------------------------------------------+
    
 
-
 Conversion Mode Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Conversion mode is configurable between automatic conversion mode where continuous conversion is used and "Normally Off" mode where 1-shot conversion is used, this also has a selectable 50/60Hz conversion rates.
+Conversion mode is configurable between automatic conversion mode where
+continuous conversion is used and "Normally Off" mode where 1-shot conversion is
+used, this also has a selectable 50/60Hz conversion rates.
 
 .. container:: center box
 
@@ -156,11 +162,14 @@ Conversion mode is configurable between automatic conversion mode where continuo
    +---------------------------+----------------------------------------------------+
    
 
-
 Fault Threshold Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The High Fault Threshold and Low Fault Threshold registers select the trip thresholds for RTD fault detection. The results of RTD conversions are compared with the values in these registers to generate the “Fault” bits in the Fault Status register. The RTD Data Registers, High Fault Threshold Registers, and Low Fault Threshold Registers all have the same format.
+The High Fault Threshold and Low Fault Threshold registers select the trip
+thresholds for RTD fault detection. The results of RTD conversions are compared
+with the values in these registers to generate the “Fault” bits in the Fault
+Status register. The RTD Data Registers, High Fault Threshold Registers, and Low
+Fault Threshold Registers all have the same format.
 
 .. container:: center box
 
@@ -174,21 +183,24 @@ The High Fault Threshold and Low Fault Threshold registers select the trip thres
    +----------------------------------+---------------------------------------------------------------------+
    
 
+.. note::
+
+   The RTD High bit in the Fault Status Register is set if the RTD resistance
+   register value is greater than or equal to the value in the High Fault
+   Threshold register. The POR value of the High Fault Threshold register is
+   FFFFh.
 
 .. note::
 
-   The RTD High bit in the Fault Status Register is set if the RTD resistance register value is greater than or equal to the value in the High Fault Threshold register. The POR value of the High Fault Threshold register is FFFFh.
-
-
-.. note::
-
-   The RTD Low bit in the Fault Status Register is set if the RTD resistance value is less than or equal to the value in the Low Fault Threshold register. The POR value of the Low Fault Threshold register is 0000h.
-
+   The RTD Low bit in the Fault Status Register is set if the RTD resistance
+   value is less than or equal to the value in the Low Fault Threshold register.
+   The POR value of the Low Fault Threshold register is 0000h.
 
 Wire Configuration
 ~~~~~~~~~~~~~~~~~~
 
-MAX31865 can be configured to support 2-wire, 3-wire and 4-wire types of RTD sensors.
+MAX31865 can be configured to support 2-wire, 3-wire and 4-wire types of RTD
+sensors.
 
 .. container:: center box
 
@@ -198,7 +210,6 @@ MAX31865 can be configured to support 2-wire, 3-wire and 4-wire types of RTD sen
    ====================== =======================================
    
 
-
 Driver Initialization Example
 -----------------------------
 
@@ -206,7 +217,6 @@ Example Initialization Using Maxim SDK as Platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
-
 
    int ret;
 
@@ -217,7 +227,6 @@ Example Initialization Using Maxim SDK as Platform
        .polarity = SPI_SS_POL_LOW,
        .vssel = MXC_GPIO_VSSEL_VDDIOH,
    };
-
 
    struct max31865_init_param max31865_ip = {
        .spi_init.device_id = 1,

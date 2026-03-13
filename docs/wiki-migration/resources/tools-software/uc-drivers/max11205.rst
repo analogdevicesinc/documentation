@@ -9,14 +9,22 @@ Supported Devices
 Overview
 --------
 
-The MAX11205 is an ultra-low-power (< 300µA max active current), high-resolution, serial output ADC. This device provides the highest resolution per unit power in the industry and is optimized for applications that require very high dynamic range with low power such as sensors on a 4mA to 20mA industrial control loop. The MAX11205 provides a high-accuracy internal oscillator that requires no external components.
+The MAX11205 is an ultra-low-power (< 300µA max active current),
+high-resolution, serial output ADC. This device provides the highest resolution
+per unit power in the industry and is optimized for applications that require
+very high dynamic range with low power such as sensors on a 4mA to 20mA
+industrial control loop. The MAX11205 provides a high-accuracy internal
+oscillator that requires no external components.
 
-When used with the specified data rates, the internal digital filter provides more than 80dB rejection of 50Hz or 60Hz line noise. The MAX11205 provides a simple 2-wire serial interface in the space-saving, 10-pin µMAX® package. The MAX11205 operates over the -40°C to +85°C temperature range.
+When used with the specified data rates, the internal digital filter provides
+more than 80dB rejection of 50Hz or 60Hz line noise. The MAX11205 provides a
+simple 2-wire serial interface in the space-saving, 10-pin µMAX® package. The
+MAX11205 operates over the -40°C to +85°C temperature range.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max11205pmb1.png
    :alt: max11205pmb1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 ADI No-OS
 ---------
@@ -41,8 +49,9 @@ The source code for MAX11205 driver can be found here:
    -   :git-no-OS:`Implementation of MAX11205 Driver <drivers/adc/max11205/max11205.c>`
    
 
-
-he driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
+he driver also uses the ADI util library, so make sure you also add the
+necessary files in your project. The source code for the util library can be
+found here:
 
 .. admonition:: Download
    :class: download
@@ -52,8 +61,10 @@ he driver also uses the ADI util library, so make sure you also add the necessar
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
-
-In order to be able to use this driver you will have to provide the specific implementation for the SPI communication APIs and the specific types they use. There are three functions which are called by the MAX11205 driver and have to be implemented:
+In order to be able to use this driver you will have to provide the specific
+implementation for the SPI communication APIs and the specific types they use.
+There are three functions which are called by the MAX11205 driver and have to be
+implemented:
 
 -  no_os_spi_init() – initializes the communication peripheral.
 -  no_os_spi_write_and_read() – writes and reads data to/from the device.
@@ -62,9 +73,12 @@ In order to be able to use this driver you will have to provide the specific imp
 And there are two data types that have to be defined:
 
 -  no_os_spi_desc - structure holding the SPI descriptor
--  no_os_spi_init_param - structure holding the parameters for SPI initialization
+-  no_os_spi_init_param - structure holding the parameters for SPI
+   initialization
 
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using can be
+found below:
 
 .. admonition:: Download
    :class: download
@@ -73,21 +87,25 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
 
-
-You will also have to provide specific APIs for IRQ handling. There are five functions which are called by the MAX11205 driver and have to be implemented:
+You will also have to provide specific APIs for IRQ handling. There are five
+functions which are called by the MAX11205 driver and have to be implemented:
 
 -  no_os_irq_disable - disables the given interrupt in the interrupt vector table
 -  no_os_irq_enable - enables the given interrupt in the interrupt vector table
 -  no_os_irq_unregister_callback - unregisters the given callback to the interrupt handler of the given interrupt
 -  no_os_irq_register_callback - registers the given callback to the interrupt handler of the given interrupt
--  no_os_irq_trigger_level_set - set the interrupt trigger level (used only for GPIO triggered interrupts)
+-  no_os_irq_trigger_level_set - set the interrupt trigger level (used only for
+   GPIO triggered interrupts)
 
 And there are two data types that have to be defined:
 
 -  no_os_irq_ctrl_desc - structure holding the IRQ descriptor
--  no_os_callback_desc - structure holding the interrupt handler callback function descriptor
+-  no_os_callback_desc - structure holding the interrupt handler callback
+   function descriptor
 
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using can be
+found below:
 
 .. admonition:: Download
    :class: download
@@ -96,8 +114,9 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for IRQ APIs <include/no_os_irq.h>`
    
 
-
-Finally, you will also have to provide specific APIs for GPIO handling. There are three functions which are called by the MAX11205 driver and have to be implemented:
+Finally, you will also have to provide specific APIs for GPIO handling. There
+are three functions which are called by the MAX11205 driver and have to be
+implemented:
 
 -  no_os_gpio_get_optional - returns the descriptor to a specific GPIO
 -  no_os_gpio_direction_input - enables the input direction o f the specified GPIO descriptor
@@ -106,9 +125,12 @@ Finally, you will also have to provide specific APIs for GPIO handling. There ar
 And there are two data types that have to be defined:
 
 -  no_os_gpio_desc - structure holding the GPIO descriptor
--  no_os_gpio_init_param - structure holding the parameters for GPIO initialization
+-  no_os_gpio_init_param - structure holding the parameters for GPIO
+   initialization
 
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using can be
+found below:
 
 .. admonition:: Download
    :class: download
@@ -117,11 +139,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for GPIO APIs <include/no_os_gpio.h>`
    
 
-
 MAX11205 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available below:
 
 -  `MAX11205 Header file <http://analogdevicesinc.github.io/no-OS/doxygen/max11205_8h.html>`_
 -  `MAX11205 Source file <http://analogdevicesinc.github.io/no-OS/doxygen/max11205_8c.html>`_
@@ -227,7 +249,8 @@ ADI IIO No-OS
 MAX11205 IIO No-OS driver
 -------------------------
 
-The MAX11205 IIO driver comes on top of MAX11205 driver and offers support for interfacing IIO clients through IIO lib.
+The MAX11205 IIO driver comes on top of MAX11205 driver and offers support for
+interfacing IIO clients through IIO lib.
 
 MAX11205 IIO Driver Source Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -242,11 +265,11 @@ The source code for MAX11205 driver can be found here:
    -   :git-no-OS:`Implementation of MAX11205 IIO Driver <drivers/adc/max11205/iio_max11205.c>`
    
 
-
 MAX11205 IIO Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the IIO driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the IIO driver is automatically generated using
+the Doxygen tool and it is available below:
 
 -  `MAX11205 IIO Header file <http://analogdevicesinc.github.io/no-OS/doxygen/iio__max11205_8h.html>`_
 -  `MAX11205 IIO Source file <http://analogdevicesinc.github.io/no-OS/doxygen/iio__max11205_8c.html>`_
@@ -275,12 +298,15 @@ The voltage channel has three attributes:
 
 -  raw - is the raw acceleration value read from the device (converted from 2's complement)
 -  sampling_frequency - is the sampling frequency for voltage data (a new measurement is available after 1/sampling_frequency [s])
--  scale - is the scale that has to be applied to the raw value in order to obtain the converted real value in mV (converted_voltage = raw \* scale [mV]). This value is dependent on the given reference voltage [mV].
+-  scale - is the scale that has to be applied to the raw value in order to
+   obtain the converted real value in mV (converted_voltage = raw \* scale
+   [mV]). This value is dependent on the given reference voltage [mV].
 
 Device buffers
 ^^^^^^^^^^^^^^
 
-The MAX11205 IIO devices driver supports the usage of a data buffer for reading purposes.
+The MAX11205 IIO devices driver supports the usage of a data buffer for reading
+purposes.
 
 MAX11205 IIO Driver Initialization Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

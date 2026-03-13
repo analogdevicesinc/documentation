@@ -24,7 +24,6 @@ General Setup
 
    \ NOTE: an RTD sensor can be bypassed by shorting P9 connector that can be seen in the :adi:`EVAL-CN0355-PMDZ` Evaluation Board
 
-
 Minimum PC/System Requirements
 ------------------------------
 
@@ -44,7 +43,6 @@ How to Install the Evaluation Software
 
    \ NOTE: It is recommended that you install the `CN0355 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0355>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0355\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 | |image1|
 | \* Click **"Next"** to view the installation review page
 | |image2|
@@ -55,11 +53,10 @@ How to Install the Evaluation Software
 | |image5|
 | \* Click **“Next”** to set the installation location for the SDP Drivers.
 
-
 .. tip::
 
-   \ NOTE: It is recommended that you install the drivers to the default directory path C:\\Program Files\\Analog Devices\\SDP\\Drivers
-
+   \ NOTE: It is recommended that you install the drivers to the default
+   directory path C:\\Program Files\\Analog Devices\\SDP\\Drivers
 
 | |image6|
 | \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software.
@@ -71,7 +68,6 @@ How to Install the Evaluation Software
 STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 ----------------------------------------------------
 
-
 | |image8|
 | \* Plug the mini end of the USB cable into connector J1 of the :adi:`EVAL-SDP-CB1Z` and connect the other end of the USB cable into the Laptop or PC.
 
@@ -80,20 +76,20 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 -  Connect the 12-pin right angle male pin header of :adi:`EVAL-CN0355-PMDZ` to the 12-pin right angle female pin header of :adi:`SDP-PMD-IB1Z`.
 -  Connect the +6V DC power supply or an equivalent power supply to JP1, the barrel jack wallwart terminal of the :adi:`SDP-PMD-IB1Z` interposer board.
 -  Connect the RTD sensor in P2 of :adi:`EVAL-CN0355-PMDZ`.
--  Set P3 and P4 jumper configuration according to the type of RTD sensor that will be used to evaluate the sensor
+-  Set P3 and P4 jumper configuration according to the type of RTD sensor that
+   will be used to evaluate the sensor
 
 .. tip::
 
    \ NOTE: jumper pin configuration to set up the RTD sensor can be seen at the back of :adi:`EVAL-CN0355-PMDZ` eval board.
 
-
 - Connect the Pressure transducer in P1 of :adi:`EVAL-CN0355-PMDZ`.
--  Set P5, P6 and P7 jumper configuration to the desired Bridge type transducer voltage drive
+-  Set P5, P6 and P7 jumper configuration to the desired Bridge type transducer
+   voltage drive
 
 .. tip::
 
    \ NOTE: jumper pin configuration to set up the Bridge type transducer voltage drive can be seen at the back of :adi:`EVAL-CN0355-PMDZ` eval board.
-
 
 - Plug in the wall wart and connect it to connector P8 of the :adi:`EVAL-CN0355-PMDZ`.
 
@@ -102,7 +98,6 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 RTD AND BRIDGE TYPE TRANSDUCER INTERFACING DIAGRAM
 --------------------------------------------------
 
-
 | |image9|
 | \* Interface the RTD and Bridge type transducer to the :adi:`EVAL-CN0355-PMDZ` as shown in the diagram above.
 
@@ -110,7 +105,6 @@ RTD AND BRIDGE TYPE TRANSDUCER INTERFACING DIAGRAM
 
 OPENING AND ENABLING THE EVALUATION SOFTWARE
 --------------------------------------------
-
 
 | |image10|
 | \* Launch the executable found at **C:\\Program Files\\Analog Devices\\CN0355**.
@@ -122,7 +116,6 @@ OPENING AND ENABLING THE EVALUATION SOFTWARE
 
 STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
 ------------------------------------------------------
-
 
 | |image11|
 | Below are the list of available software controls grouped according to their location in the software GUI:
@@ -144,8 +137,8 @@ STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
 
 .. tip::
 
-   \ NOTE: The chosen calibration settings will be enabled for configuration and the other calibration will be disabled and greyed out.
-
+   \ NOTE: The chosen calibration settings will be enabled for configuration and
+   the other calibration will be disabled and greyed out.
 
 - **2 – Point Calibration** – This button defines the values of the parameters to be used to calculate for the pressure read by the transducer using two data points calibration system without temperature compensation.
 
@@ -161,7 +154,6 @@ STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
 .. tip::
 
    \ NOTE: This information can be found in the transducer `datasheet <http://sensing.honeywell.com/product%20page?pr_id=141960>`_\
-
 
 - **4 – Point Calibration** – This button defines the values of the parameters to be used to calculate for the pressure read by the transducer using four data points calibration system with temperature compensation.
          -  **Pressure 1** – define the first pressure value point.
@@ -195,7 +187,6 @@ CALIBRATION PROCEDURE
 
 | This section explains the steps required to properly calibrate the :adi:`EVAL-CN0355-PMDZ`.
 
-
 .. tip::
 
    Pre-Calibration Note:
@@ -205,14 +196,14 @@ CALIBRATION PROCEDURE
    
       -  2 – point calibration does not require temperature oven to calibrate the system. It only requires the table to be filled-in with numbers from the datasheet.
       -  4 – point calibration requires an oven with calibrated temperature sensor and calibrated pressure source.
-      -  Dwell time of the temperature depends on the equipment that is being used to calibrate the system.
+      -  Dwell time of the temperature depends on the equipment that is being
+         used to calibrate the system.
    
    -  The voltage drive set in the evaluation software should correspond to the configured jumper set up found in :adi:`EVAL-CN0355-PMDZ`.
    -  All units is in PSI
-   -  Sensitivity is usually found in the datasheet of the transducer to be used.
+   -  Sensitivity is usually found in the datasheet of the transducer to be
+      used.
    
-
-
 
 | **2 – Point Calibration**
 | **Step 1** - Set the voltage use to drive the transducer. **Step 2** - Set the minimum and maximum operating range of the sensor in PSI. **Step 3** - Set the sensitivity of the transducer that will be used. **Step 4** - Go to Data Graph panel to view the measurement.
@@ -225,7 +216,6 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0355-PMDZ?&v=RevC>`_ to receive all these great benefits and more!
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0355/cn0355_image1.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0355/cn0355_image2.png

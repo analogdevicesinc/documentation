@@ -5,10 +5,9 @@ EVAL-ADIS2 Landing Page
 
    The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2top-web.png
    :align: center
-   :width: 180px
+   :width: 180
 
 Overview
 --------
@@ -32,14 +31,16 @@ EVAL-ADIS2 IMU Evaluation Software
 
 :doc:`EVAL-ADIS2 IMU Evaluation Software User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/imu/imu-evaluation-software>`
 
-This page walks through using the legacy IMU evaluation software to record and display inertial sensor data.
+This page walks through using the legacy IMU evaluation software to record and
+display inertial sensor data.
 
 EVAL-ADIS2 Vibration Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :doc:`EVAL-ADIS2 Vibration Evaluation Software User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/imu/vibrationevaluationprogram>`
 
-This page walks through using the legacy evaluation software to record and display vibration sensor data.
+This page walks through using the legacy evaluation software to record and
+display vibration sensor data.
 
 ADIS16000/ADIS16229 Evaluation with EVAL-ADIS/EVAL-ADIS2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

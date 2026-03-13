@@ -4,11 +4,17 @@ Integration Example for Renesas RX62N Processor
 Overview
 ========
 
-The Renesas Demonstration Kit (RDK) for RX62N is an evaluation and demonstration tool for Renesas RX62N microcontrollers. The goal is to provide the user with a powerful debug and demonstration platform targeted at common applications. The board also provides a useful platform for evaluating the Renesas suite of development tools for coding and debugging, using the High-performance Embedded Workshop (HEW) IDE as well as programming the device using the on-board SEGGER J-Link JTAG debugger.
+The Renesas Demonstration Kit (RDK) for RX62N is an evaluation and demonstration
+tool for Renesas RX62N microcontrollers. The goal is to provide the user with a
+powerful debug and demonstration platform targeted at common applications. The
+board also provides a useful platform for evaluating the Renesas suite of
+development tools for coding and debugging, using the High-performance Embedded
+Workshop (HEW) IDE as well as programming the device using the on-board SEGGER
+J-Link JTAG debugger.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/renesas/rx62n/yrdkrx62n.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 More Information
 ----------------
@@ -19,12 +25,17 @@ More Information
 Project Description
 ===================
 
-In this project it was used the generic driver for the ADXL345 part; the functions from the Communication Driver were implemented to run on a RX62N microcontroller.
+In this project it was used the generic driver for the ADXL345 part; the
+functions from the Communication Driver were implemented to run on a RX62N
+microcontroller.
 
-It was also created an example of using the functions implemented in the ADXL345 driver.
+It was also created an example of using the functions implemented in the ADXL345
+driver.
 
-In this example, the output data of each axis is read and displayed on the Renesas Demonstration Kit for RX62N board’s LCD. Were also activated “Single Tap”, “Double Tap” and “Free-Fall” interrupts. When one of them occurs, on the LCD screen appears a corresponding message.
-
+In this example, the output data of each axis is read and displayed on the
+Renesas Demonstration Kit for RX62N board’s LCD. Were also activated “Single
+Tap”, “Double Tap” and “Free-Fall” interrupts. When one of them occurs, on the
+LCD screen appears a corresponding message.
 
 |image1|
 
@@ -32,11 +43,12 @@ In this example, the output data of each axis is read and displayed on the Renes
 
    Main Screen
 
-
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Hardware Items
 --------------
@@ -54,7 +66,8 @@ Below is presented the list of required software tools:
 -  High-performance Embedded Workshop V.4.09.00.
 -  Renesas Peripheral Driver Library for RX62N processor.
 
-The High-performance Embedded Workshop and the Renesas Peripheral Driver Library are available on the RX62N RDK DVD or on the Renesas web page.
+The High-performance Embedded Workshop and the Renesas Peripheral Driver Library
+are available on the RX62N RDK DVD or on the Renesas web page.
 
 Downloads
 ---------
@@ -64,10 +77,11 @@ Downloads
 RX62N Software Design
 =====================
 
-This section presents the steps for developing a software application that will run on the RX62N RDK board for controlling and monitoring the operation of the ADI part.
+This section presents the steps for developing a software application that will
+run on the RX62N RDK board for controlling and monitoring the operation of the
+ADI part.
 
 Run “High-performance Embedded Workshop” integrated development environment.
-
 
 |image2|
 
@@ -75,20 +89,20 @@ Run “High-performance Embedded Workshop” integrated development environment.
 
    Choose “Create a new project workspace” option and press “OK”.
 
-
    |image3|
 
 .. container:: centeralign
 
-   From “Project Types” option select “Application”, name the Workspace and the Project “ADIEvalBoard”, select the “RX” CPU family and “Renesas RX Standard” tool chain. Press “OK”.
-
+   From “Project Types” option select “Application”, name the Workspace and the
+   Project “ADIEvalBoard”, select the “RX” CPU family and “Renesas RX Standard”
+   tool chain. Press “OK”.
 
    |image4|
 
 .. container:: centeralign
 
-   In the first windows, select “RX600” CPU series, “RX62N” CPU Type and press “Next”.
-
+   In the first windows, select “RX600” CPU series, “RX62N” CPU Type and press
+   “Next”.
 
    |image5|
 
@@ -96,20 +110,18 @@ Run “High-performance Embedded Workshop” integrated development environment.
 
    In the first “Option Setting” window keep default settings and press “Next”.
 
-
    |image6|
 
 .. container:: centeralign
 
    In the second “Option Setting” window keep default settings and press “Next”.
 
-
    |image7|
 
 .. container:: centeralign
 
-   In the “Setting the Content of Files to be generated” window keep default settings and press “Next”.
-
+   In the “Setting the Content of Files to be generated” window keep default
+   settings and press “Next”.
 
    |image8|
 
@@ -117,13 +129,12 @@ Run “High-performance Embedded Workshop” integrated development environment.
 
    In the “Setting the Standard Library” press “Disable all” and then “Next”.
 
-
    |image9|
 
 .. container:: centeralign
 
-   In the “Setting the Stack Area” window keep default settings and press “Next”.
-
+   In the “Setting the Stack Area” window keep default settings and press
+   “Next”.
 
    |image10|
 
@@ -131,27 +142,26 @@ Run “High-performance Embedded Workshop” integrated development environment.
 
    In the “Setting the Vector” window keep default settings and press “Next”.
 
-
    |image11|
 
 .. container:: centeralign
 
-   In the “Setting the Target System for Debugging” window choose “RX600 Segger J-Link” target and press “Next”.
-
+   In the “Setting the Target System for Debugging” window choose “RX600 Segger
+   J-Link” target and press “Next”.
 
    |image12|
 
 .. container:: centeralign
 
-   In the “Setting the Debugger Options” window keep default settings and press “Next”.
-
+   In the “Setting the Debugger Options” window keep default settings and press
+   “Next”.
 
    |image13|
 
 .. container:: centeralign
 
-   In the “Changing the Files Name to be created” window keep default settings and press “Finish”.
-
+   In the “Changing the Files Name to be created” window keep default settings
+   and press “Finish”.
 
    |image14|
 
@@ -159,25 +169,24 @@ Run “High-performance Embedded Workshop” integrated development environment.
 
    On the “Project Summary” window appeared press “OK”.
 
-
    |image15|
 
 .. container:: centeralign
 
    The workspace is created.
 
+Now we have to integrate into our project the RPDL (Renesas Peripheral Driver
+Library).
 
-Now we have to integrate into our project the RPDL (Renesas Peripheral Driver Library).
-
-Unzip the RPDL files (double-click on the file “RPDL_RX62N.exe”). The default location is “C:\\Renesas\\RPDL_RX62N”.
-
+Unzip the RPDL files (double-click on the file “RPDL_RX62N.exe”). The default
+location is “C:\\Renesas\\RPDL_RX62N”.
 
 |image16|
 
 .. container:: centeralign
 
-   Navigate to where the RPDL files were unpacked and double-click on the “Copy_RPDL_RX62N.bat” to start the copy process.
-
+   Navigate to where the RPDL files were unpacked and double-click on the
+   “Copy_RPDL_RX62N.bat” to start the copy process.
 
    |image17|
 
@@ -185,13 +194,12 @@ Unzip the RPDL files (double-click on the file “RPDL_RX62N.exe”). The defaul
 
    Type “4” to choose the LQFP package and press “Enter”.
 
-
    |image18|
 
 .. container:: centeralign
 
-   Type the full path where the project was created and press “Enter”. The default location is “C:\\WorkSpace\\ADIEvalBoard\\ADIEvalBoard”.
-
+   Type the full path where the project was created and press “Enter”. The
+   default location is “C:\\WorkSpace\\ADIEvalBoard\\ADIEvalBoard”.
 
    |image19|
 
@@ -199,25 +207,24 @@ Unzip the RPDL files (double-click on the file “RPDL_RX62N.exe”). The defaul
 
    After the files were copied, press any key to close the window.
 
-
 Now, we have to include the new directory into our project.
 
 Use the key sequence Alt, B, R to open the “RX Standard Toolchain” window.
 
-Select the C/C++ tab, select “Show entries for: Include file directories” and press “Add”.
-
+Select the C/C++ tab, select “Show entries for: Include file directories” and
+press “Add”.
 
 |image20|
 
 .. container:: centeralign
 
-   Select “Relative to: Project directory”, type “RPDL” as sub-directory and press “OK” two times.
-
+   Select “Relative to: Project directory”, type “RPDL” as sub-directory and
+   press “OK” two times.
 
 Now, we have to include the new source files into our project.
 
-Use the key sequence Alt, P, A to open the “Add files to project ‘ADIEvalBoard’” window.
-
+Use the key sequence Alt, P, A to open the “Add files to project ‘ADIEvalBoard’”
+window.
 
 |image21|
 
@@ -230,11 +237,10 @@ Use the key sequence Alt, P, A to open the “Add files to project ‘ADIEvalBoa
    
    Select all of the files and press “Add”.
 
-
-To avoid conflicts with standard project files, we have to remove the files “intprg.c” and “vecttbl.c” which are included in the project.
+To avoid conflicts with standard project files, we have to remove the files
+“intprg.c” and “vecttbl.c” which are included in the project.
 
 Use the key sequence Alt, P, R to open the “Remove Project Files” window.
-
 
 |image22|
 
@@ -242,24 +248,22 @@ Use the key sequence Alt, P, R to open the “Remove Project Files” window.
 
    Select the files, click on Remove and press “OK”.
 
-
 Now, we have to add the library file path into our project.
 
 Use the key sequence Alt, B, R to open the “RX Standard Toolchain” window.
 
-Select the Link/Library tab, select “Show entries for: Library files” and press “Add”.
-
+Select the Link/Library tab, select “Show entries for: Library files” and press
+“Add”.
 
 |image23|
 
 .. container:: centeralign
 
-   Select “Relative to: Project directory”, type “RPDL\\RX62N_library” as file path and press “OK”.
+   Select “Relative to: Project directory”, type “RPDL\\RX62N_library” as file
+   path and press “OK”.
 
-
-Because we removed the “intprg.c” file, we have to remove “PIntPrg” specified in option “start”.
-
-
+Because we removed the “intprg.c” file, we have to remove “PIntPrg” specified in
+option “start”.
 
 |image24|
 
@@ -267,17 +271,14 @@ Because we removed the “intprg.c” file, we have to remove “PIntPrg” spec
 
    Change “Category” to “Section”.
 
-
    |image25|
 
 .. container:: centeralign
 
    Press “Edit”, select “PIntPRG”, press “Remove” and “OK” two times.
 
-
-Now, we have to add our files (extracted from the zip file located in the "Software Tools" section) into the project.
-
-
+Now, we have to add our files (extracted from the zip file located in the
+"Software Tools" section) into the project.
 
 |image26|
 
@@ -288,11 +289,10 @@ Now, we have to add our files (extracted from the zip file located in the "Softw
    
    Note: We will replace the original “ADIEvalBoard.c” file.
 
-
 Now, we have to include the files into our project.
 
-Use the key sequence Alt, P, A to open the “Add files to project ‘ADIEvalBoard’” window.
-
+Use the key sequence Alt, P, A to open the “Add files to project ‘ADIEvalBoard’”
+window.
 
 |image27|
 
@@ -303,15 +303,16 @@ Use the key sequence Alt, P, A to open the “Add files to project ‘ADIEvalBoa
    
    From the “Files of type” drop-down list, select “Project Files”.
    
-   Select all the copied files except “ADIEvalBoard.c” (“ADIEvalBoard.c” is already included) and press “Add”.
-
+   Select all the copied files except “ADIEvalBoard.c” (“ADIEvalBoard.c” is
+   already included) and press “Add”.
 
 Now, the project is ready to be built.
 
-Press “F7”. The message after the Build Process is finished has to be “0 Errors, 0 Warnings”.
+Press “F7”. The message after the Build Process is finished has to be “0 Errors,
+0 Warnings”.
 
-To run the program on the board, you have to download the firmware into the microprocessor’s memory.
-
+To run the program on the board, you have to download the firmware into the
+microprocessor’s memory.
 
 |image28|
 
@@ -319,20 +320,18 @@ To run the program on the board, you have to download the firmware into the micr
 
    Change the Debug Session to “JLink”.
 
-
    |image29|
 
 .. container:: centeralign
 
    Save the “DefaultSession”.
 
-
    |image30|
 
 .. container:: centeralign
 
-   In the “Device” window select “RX62N Group”, “R5F562N8” device and press “Next”.
-
+   In the “Device” window select “RX62N Group”, “R5F562N8” device and press
+   “Next”.
 
    |image31|
 
@@ -340,20 +339,18 @@ To run the program on the board, you have to download the firmware into the micr
 
    In the “Communication” window keep default settings and press “Finish”.
 
-
    |image32|
 
 .. container:: centeralign
 
    In the “Configuration Properties” select 12 MHz input clock and press “OK”.
 
-
    |image33|
 
 .. container:: centeralign
 
-   From the top menu bar, select “Debug”, then “Download Modules”, finally “All Download Modules”.
-
+   From the top menu bar, select “Debug”, then “Download Modules”, finally “All
+   Download Modules”.
 
    |image34|
 
@@ -361,11 +358,10 @@ To run the program on the board, you have to download the firmware into the micr
 
    After the download is complete, click the “Reset Go” icon.
 
-
 Now, the program is running on the board.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/renesas/rx62n/adxl345_screen.jpg
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/renesas/rx62n/tutorial_01.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/renesas/rx62n/tutorial_02.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/renesas/rx62n/tutorial_03.png

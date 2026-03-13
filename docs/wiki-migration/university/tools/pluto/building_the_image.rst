@@ -5,7 +5,6 @@ Building the Firmware Image
 
    It is recommenced to use the pre-build images, which can be found at `github.com/analogdevicesinc/plutosdr-fw/ <https://github.com/analogdevicesinc/plutosdr-fw/releases/latest>`_. These are build and tested by Analog Devices, and should work on your PlutoSDR without issues. If you want to change functionality, you will need to follow these instructions. To test your image, it is recommended to use the :doc:`RAM Boot </wiki-migration/university/tools/pluto/devs/reboot>` rather than writing to flash the first time. This keep the default firmware while you are testing your image, so if something goes wrong - its a quick power cycle to fix things.
 
-
 Prerequisites
 -------------
 
@@ -17,7 +16,9 @@ Prerequisites
 -  You need `Xilinx Vivado Design Suite <https://www.xilinx.com/support/download.html>`_ to compile the Verilog into the FPGA bit file.
 -  You need `Xilinx Vivado Vitis <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`_ to compile C code for the ARM inside the AMD Zynq.
 
-   -  If you are using very old versions of Xilinx tools, you need to make sure that you have the 32-bit libraries (the Xilinx tools are distributed as 32-bit binaries).
+   -  If you are using very old versions of Xilinx tools, you need to make sure
+      that you have the 32-bit libraries (the Xilinx tools are distributed as
+      32-bit binaries).
 
 .. container:: box bggreen
 
@@ -29,7 +30,8 @@ Prerequisites
       rgetz@brain:~/github/temp/plutosdr-fw$ find /opt/Xilinx/ -name vivado -executable -type f | xargs file | grep ELF
       /opt/Xilinx/Vivado/2021.2/bin/unwrapped/lnx64.o/vivado: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.18, not stripped
    
-   If it reports as a 32-bit binary (which the above did not), and you are running on a 64-bit system, do:
+   If it reports as a 32-bit binary (which the above did not), and you are
+   running on a 64-bit system, do:
    
    ::
    
@@ -38,8 +40,8 @@ Prerequisites
       michael@HAL9000:~/devel$ sudo apt-get install libc6:i386 libstdc++6:i386
    
 
-
-There are a few other tools that are necessary in order to build your own Firmware Image.
+There are a few other tools that are necessary in order to build your own
+Firmware Image.
 
 .. container:: box bggreen
 
@@ -51,14 +53,12 @@ There are a few other tools that are necessary in order to build your own Firmwa
       michael@HAL9000:~/devel$ sudo apt-get install git build-essential ccache device-tree-compiler dfu-util fakeroot help2man libncurses5-dev libssl1.0-dev mtools rsync u-boot-tools bc python cpio zip unzip file wget
    
 
-
 Building
 --------
 
 .. tip::
 
    It is recommended that if you are building in a Virtual Machine (which is totally fine), the Base Memory be set to at least 4096 MBytes. The Xilinx `Vivado <https://www.xilinx.com/products/design-tools/vivado/memory.html>`_ tools require at least 1.6 Gig of memory when compile for the ``XC7Z010``. It has been reported that 2048 Mbytes is not enough, and will cause the tools to hang.
-
 
 Starting the build process is just a matter of typing ``make`` within the firmware repository. The Makefile requires a few environmental variables being set, and of course the ARM GCC toolchain in the PATH. Some paths maybe adjusted to match your Xilinx Vivado and Vitis install folders.
 
@@ -76,12 +76,12 @@ Starting the build process is just a matter of typing ``make`` within the firmwa
       michael@HAL9000:~/devel/plutosdr-fw$ make
    
 
-
 The initial build takes some time to complete, and also requires an INTERNET connection, since `buildroot <https://buildroot.org/>`_ downloads the source packages from the WEB.
 
 .. tip::
 
-   Depending on your distribution, you may need to force Vivado to use Gtk2. You can do that by adding:
+   Depending on your distribution, you may need to force Vivado to use Gtk2. You
+   can do that by adding:
 
    
    .. container:: box bggreen
@@ -96,7 +96,6 @@ The initial build takes some time to complete, and also requires an INTERNET con
 
    
    before you type ``make``.
-
 
 Build Artifacts
 ~~~~~~~~~~~~~~~
@@ -133,7 +132,6 @@ Build Artifacts
             -rw-rw-r-- 1 michael  16K Apr 19 17:39 zynq-pluto-sdr-revb.dtb
    
 
-
 Testing on the target
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -155,7 +153,6 @@ There is a script in the `plutosdr_scripts <https://github.com/plutosdr_scripts>
           Linux pluto 5.4.0-00535-g9c04de11ae53 #1 SMP PREEMPT Tue Feb 15 16:17:50 EST 2022 armv7l GNU/Linux
       rgetz@brain:~/github/plutosdr-fw$
    
-
 
 Main targets
 ~~~~~~~~~~~~
@@ -218,8 +215,8 @@ How does it work
 
 .. warning::
 
-   All these steps are automatically handled by make. They are just explained here, for those who are interested.
-
+   All these steps are automatically handled by make. They are just explained
+   here, for those who are interested.
 
 Build Linux kernel
 ------------------
@@ -241,8 +238,8 @@ Making custom kernel changes
 
 .. warning::
 
-   Normal users should not need to change their kernel, and this is only described for advanced users, or developers who periodically forget things
-
+   Normal users should not need to change their kernel, and this is only
+   described for advanced users, or developers who periodically forget things
 
 The command
 

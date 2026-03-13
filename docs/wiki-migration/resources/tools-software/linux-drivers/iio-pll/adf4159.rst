@@ -18,13 +18,27 @@ This driver supports the
 Description
 -----------
 
-The ADF4159 is a 13 GHz, fractional-N frequency synthesizer with modulation and both fast and slow waveform generation capability. The part uses a 25-bit fixed modulus, allowing subhertz frequency resolution.
+The ADF4159 is a 13 GHz, fractional-N frequency synthesizer with modulation and
+both fast and slow waveform generation capability. The part uses a 25-bit fixed
+modulus, allowing subhertz frequency resolution.
 
-The ADF4159 consists of a low noise digital phase frequency detector (PFD), a precision charge pump, and a programmable reference divider. The Σ-Δ-based fractional interpolator allows programmable fractional-N division. The INT and FRAC registers define an overall N divider as N = INT + (FRAC/225).
+The ADF4159 consists of a low noise digital phase frequency detector (PFD), a
+precision charge pump, and a programmable reference divider. The Σ-Δ-based
+fractional interpolator allows programmable fractional-N division. The INT and
+FRAC registers define an overall N divider as N = INT + (FRAC/225).
 
-The ADF4159 can be used to implement frequency shift keying (FSK) and phase shift keying (PSK) modulation. Frequency sweep modes are also available to generate various waveforms in the frequency domain, for example, sawtooth and triangular waveforms. Sweeps can be set to run automatically, or each step manually triggered by an external pulse. The ADF4159 features cycle slip reduction circuitry, which enables faster lock times without the need for modifications to the loop filter.
+The ADF4159 can be used to implement frequency shift keying (FSK) and phase
+shift keying (PSK) modulation. Frequency sweep modes are also available to
+generate various waveforms in the frequency domain, for example, sawtooth and
+triangular waveforms. Sweeps can be set to run automatically, or each step
+manually triggered by an external pulse. The ADF4159 features cycle slip
+reduction circuitry, which enables faster lock times without the need for
+modifications to the loop filter.
 
-Control of all on-chip registers is via a simple 3-wire interface. The ADF4159 operates with an analog power supply in the range of 2.7 V to 3.45 V and a digital power supply in the range of 1.62 V to 1.98 V. The device can be powered down when not in use.
+Control of all on-chip registers is via a simple 3-wire interface. The ADF4159
+operates with an analog power supply in the range of 2.7 V to 3.45 V and a
+digital power supply in the range of 1.62 V to 1.98 V. The device can be powered
+down when not in use.
 
 Applications
 
@@ -149,17 +163,18 @@ The adf4159 driver is a SPI bus driver and can be instantiated via device tree.
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The adf4159 driver depends on SPI and selects REGMAP_SPI
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -177,8 +192,15 @@ Hardware configuration
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -213,7 +235,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root@analog:/sys/bus/iio/devices/iio:device1#
    
 
-
 Show device name
 ----------------
 
@@ -228,7 +249,6 @@ Show device name
       adf4159
    
 
-
 Read output frequency
 ---------------------
 
@@ -242,7 +262,6 @@ Read output frequency
       root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency
       6000000000
    
-
 
 Set output frequency
 --------------------
@@ -261,7 +280,6 @@ Frequencies are in Hz
       6001000000
    
 
-
 Output power down
 -----------------
 
@@ -279,13 +297,12 @@ Output power down
       1
    
 
-
 Ramp modes
 ----------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/adf4159_ramp.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The ``ramp_mode`` attribute allows the user to control the output ramp mode of the chip. Valid values that can be written:
 
@@ -311,7 +328,6 @@ The ``ramp_mode`` attribute allows the user to control the output ramp mode of t
       continuous_sawtooth
    
 
-
 Ramp mode deviation step
 ------------------------
 
@@ -330,7 +346,6 @@ This attribute sets the ``deviation_step`` in Hz. Values can be positive or nega
       root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency_deviation_step
       998
    
-
 
 Ramp mode deviation range
 -------------------------
@@ -351,7 +366,6 @@ This attribute sets the ``deviation_range`` in Hz.
       9999960
    
 
-
 Ramp mode deviation time
 ------------------------
 
@@ -370,7 +384,6 @@ This attribute sets the ``deviation_time`` in us.
       root@analog:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_frequency_deviation_time
       10020
    
-
 
 Full device control via IIO debugfs
 -----------------------------------
@@ -436,7 +449,6 @@ This device features an additional debugfs ABI, allowing the user to control add
       root@analog:~#
    
 
-
 **Example:**
 
 .. container:: box bggreen
@@ -451,7 +463,6 @@ This device features an additional debugfs ABI, allowing the user to control add
       root@analog:~# iio_attr -c adf4159 altvoltage0 powerdown 0
       0
    
-
 
 More Information
 ================
@@ -474,6 +485,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/youtube>p_vntewue24
-

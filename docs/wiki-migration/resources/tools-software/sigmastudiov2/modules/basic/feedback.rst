@@ -9,11 +9,15 @@ Feedback
 Description
 -----------
 
-The feedback algorithm generates a delay in the signal path and reroutes signal to an input occurring earlier in the path. Note that this block must be used if feedback is required in your design.
+The feedback algorithm generates a delay in the signal path and reroutes signal
+to an input occurring earlier in the path. Note that this block must be used if
+feedback is required in your design.
 
-In sample schematic it generates one sample delay in the signal path and reroutes the signal to an input occurring earlier in the path.
+In sample schematic it generates one sample delay in the signal path and
+reroutes the signal to an input occurring earlier in the path.
 
-In block schematic it generates delay equal to one blocksize in the signal path and reroutes the signal to an input occurring earlier in the path.
+In block schematic it generates delay equal to one blocksize in the signal path
+and reroutes the signal to an input occurring earlier in the path.
 
 Targets Supported
 -----------------
@@ -44,7 +48,6 @@ Name    Type  Description
 ======= ===== ================
 Output0 Audio Output channel 0
 ======= ===== ================
-
 
 | ===== Configurable Parameters ===== No configurable parameters
 

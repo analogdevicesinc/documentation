@@ -5,10 +5,10 @@ AD9121/AD9122 Evaluation Board
 
    All of the below information also refers to the AD9121
 
-
 In addition to the :adi:`AD9122`, the evaluation boards also come with clocking and analog quadrature modulator circuits to ease system level solutions. The AD9122 evaluation board comes in two models; the AD9122-M5372-EBZ has the ADL5372 modulator on board, and the AD9122-M5375-EBZ has the ADL5375 modulator on-board. To operate the evaluation boards, the user must apply power, a clock source, a digital data source, and be able to observe the DAC output on either a spectrum analyzer or an oscilloscope. A low jitter sine or square wave clock will work well as a source. The evaluation board comes with software which allows the user to program the SPI port. Via the SPI port, the DUT and clock circuitry can be programmed into any of its various operating modes.
 
-Documentation and software updates for using High-Speed DAC Evaluation Boards are included in individual, self-extracting update files.
+Documentation and software updates for using High-Speed DAC Evaluation Boards
+are included in individual, self-extracting update files.
 
 Files included in the AD9122 Update:
 ------------------------------------

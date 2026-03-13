@@ -17,17 +17,20 @@ Once downloaded, double-click on the .nipkg file. The pre-installed NI Package M
 .. image:: https://raw.githubusercontent.com/juchong/ADIS16470-RoboRIO-Driver/master/docs/nipkg_icon.PNG
    :align: center
 
-Once you double-click on the installer file, the NI Package Manager will walk you through installing the library. Click Next at the window shown below to install the library.
+Once you double-click on the installer file, the NI Package Manager will walk
+you through installing the library. Click Next at the window shown below to
+install the library.
 
 .. note::
 
-   The library version shown in the screenshots on this page may be different than the latest version available on the GitHub page!
-
+   The library version shown in the screenshots on this page may be different
+   than the latest version available on the GitHub page!
 
 .. image:: https://raw.githubusercontent.com/juchong/ADIS16470-RoboRIO-Driver/master/docs/installing.PNG
    :align: center
 
-The package manager window should like like below if the library was properly installed.
+The package manager window should like like below if the library was properly
+installed.
 
 .. image:: https://raw.githubusercontent.com/juchong/ADIS16470-RoboRIO-Driver/master/docs/installed.PNG
    :align: center
@@ -35,16 +38,26 @@ The package manager window should like like below if the library was properly in
 Setting Up the IMU in Begin.vi
 ------------------------------
 
-Open your robot project, or create a new one if you don't have one created already, and open up your Begin.vi block diagram. This can be found in the project window under Team Code. All VIs for the ADIS16470 library can be found in the pallet shown below.
+Open your robot project, or create a new one if you don't have one created
+already, and open up your Begin.vi block diagram. This can be found in the
+project window under Team Code. All VIs for the ADIS16470 library can be found
+in the pallet shown below.
 
 .. image:: https://raw.githubusercontent.com/juchong/ADIS16470-RoboRIO-Driver/master/docs/menu.PNG
    :align: center
 
 The first step is to create a new instance of the IMU. Bring the Open VI into your Begin.vi code. You can optionally specify a custom calibration time as shown below, but the default is 4 seconds if you don't define it. Remember, it's vital that the robot remains **completely stationary** during this calibration time!
 
-Now you need to assign a reference name to this IMU so that you can refer to it in other VIs. Grab the Registry Set VI from the ADIS16470 IMU palette and place to the right of your Open VI. Then, connect the ADI IMU DevRef Out pin on the Open VI to the ADI IMU DevRef pin on the Registry Set VI.
+Now you need to assign a reference name to this IMU so that you can refer to it
+in other VIs. Grab the Registry Set VI from the ADIS16470 IMU palette and place
+to the right of your Open VI. Then, connect the ADI IMU DevRef Out pin on the
+Open VI to the ADI IMU DevRef pin on the Registry Set VI.
 
-Now you need to assign a name to your IMU. Right click on the "refnum name" pin on the Registry Set VI and click "Create --> Constant" and create a unique name that you will use to refer to this IMU in the rest of your code. I've named mine "MyIMU" but you can change this to whatever you want. When you're done, your IMU blocks in Begin.VI should look like this.
+Now you need to assign a name to your IMU. Right click on the "refnum name" pin
+on the Registry Set VI and click "Create --> Constant" and create a unique name
+that you will use to refer to this IMU in the rest of your code. I've named mine
+"MyIMU" but you can change this to whatever you want. When you're done, your IMU
+blocks in Begin.VI should look like this.
 
 .. image:: https://wiki.analog.com/_media/first/adis16470_imu_frc/470tutoriallabviewopen.png
    :align: center
@@ -63,11 +76,24 @@ Using the IMU in Your Robot Code
 Driver Station Example
 ----------------------
 
-As an example, let's publish the IMU's angle readings and status to the driver station. We will do this in the Periodic Tasks VI.
+As an example, let's publish the IMU's angle readings and status to the driver
+station. We will do this in the Periodic Tasks VI.
 
 To use any IMU VI, you first have to call the IMU you initialized in Begin.VI. Place an instance of Registry Get inside the 100ms loop and create the constant for your IMU name. **Don't forget to change the constant value to whatever you called your IMU in Begin.vi!** Then, place an instance of the Read VI next to it, and connect the two VIs together
 
-Now, go to your Dashboard pallet in the WPI Robotics Library and grab the NT Write Value VI and place two of them next to your Read and Status VIs. Note that when you first place this VI in your code, it will show as expecting a Boolean. This VI can actually automatically detect which data type you are feeding it and adjust accordingly. You can also use the drop-down menu below the VI icon and explicitly specify what data type you want it to expect, but it is usually best to leave it set to Automatic. Connect the ADIS1647 Value pin on the Read VI to the Boolean pin on the driver station VI you just placed. You will see that the icon will change to indicate what kind of data you are sending, which in this case is a Variant. Do the same for the ADIS16470 Status pin on the Status VI. Right click on the Name pins for each NT Write Value VI and select Create --> Constant and write a name for each of the indicators that will appear on the Driver Station.
+Now, go to your Dashboard pallet in the WPI Robotics Library and grab the NT
+Write Value VI and place two of them next to your Read and Status VIs. Note that
+when you first place this VI in your code, it will show as expecting a Boolean.
+This VI can actually automatically detect which data type you are feeding it and
+adjust accordingly. You can also use the drop-down menu below the VI icon and
+explicitly specify what data type you want it to expect, but it is usually best
+to leave it set to Automatic. Connect the ADIS1647 Value pin on the Read VI to
+the Boolean pin on the driver station VI you just placed. You will see that the
+icon will change to indicate what kind of data you are sending, which in this
+case is a Variant. Do the same for the ADIS16470 Status pin on the Status VI.
+Right click on the Name pins for each NT Write Value VI and select Create -->
+Constant and write a name for each of the indicators that will appear on the
+Driver Station.
 
 .. image:: https://wiki.analog.com/_media/first/adis16470_imu_frc/470anglesstatusexamplelabview.png
    :align: center

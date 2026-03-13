@@ -3,21 +3,26 @@ BLE Software Pack
 
 .. warning::
 
-   \ This CMSIS pack and its contents are DEPRECATED and no longer supported. Please do not use this moving forward
-
+   \ This CMSIS pack and its contents are DEPRECATED and no longer supported.
+   Please do not use this moving forward
 
 General Description/Overview
 ----------------------------
 
-BLE software pack contains source code written to interface the ADuCM3029 with the EM9304 radio.(Found on the EVAL-ADICUP3029) This software package acts as a library that can be used with any platform containing the ADuCM3029 and the EM9304.
+BLE software pack contains source code written to interface the ADuCM3029 with
+the EM9304 radio.(Found on the EVAL-ADICUP3029) This software package acts as a
+library that can be used with any platform containing the ADuCM3029 and the
+EM9304.
 
-To use the ADI_BLESoftware Pack with the ADICUP3029, you will also require the following software, tools, CMSIS Packs:
+To use the ADI_BLESoftware Pack with the ADICUP3029, you will also require the
+following software, tools, CMSIS Packs:
 
 -  CrossCore Embedded Studio
 -  ADuCM302x Device Family Pack
 -  ADICUP3029 Board Support Package
 
-For detailed information regarding the BLE software pack, please see our complete BLE software user guide.
+For detailed information regarding the BLE software pack, please see our
+complete BLE software user guide.
 
 .. hint::
 
@@ -25,13 +30,13 @@ For detailed information regarding the BLE software pack, please see our complet
    :git-EVAL-ADICUP3029:`BLE Software Pack 1.0.1 Release Notes <cmsis-packs/ADI-BleSoftware/Documents>`
    
 
-
 .. important::
 
    
-   You MUST have this software package installed on your laptop or PC in order to compile, debug, and run the applications using the Bluetooth for the ADICUP3029 platform.
+   You MUST have this software package installed on your laptop or PC in order
+   to compile, debug, and run the applications using the Bluetooth for the
+   ADICUP3029 platform.
    
-
 
 Downloading the BLE Software Pack
 ---------------------------------
@@ -44,7 +49,10 @@ The software pack can be downloaded in several ways.
 
 -  Downloaded to local directory
 
-   -  However if you do decide to download the BLE software pack to your PC/laptop directly, please use the link below, and make sure you save the software pack to the correct local directory for your applications/projects.
+   -  However if you do decide to download the BLE software pack to your
+      PC/laptop directly, please use the link below, and make sure you save the
+      software pack to the correct local directory for your
+      applications/projects.
 
 .. admonition:: Download
    :class: download
@@ -54,6 +62,5 @@ The software pack can be downloaded in several ways.
    
    :git-EVAL-ADICUP3029:`ADI_BLESoftware Pack 1.0.1 <cmsis-packs/ADI-BleSoftware>`
    
-
 
 *End of Document*

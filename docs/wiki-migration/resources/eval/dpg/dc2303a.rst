@@ -6,7 +6,9 @@ Preface
 
 This user guide describes both the hardware and software setup needed to acquire data capture from :adi:`DC2303A <ltc2000/#evaluation-kit>` evaluation board to characterize :adi:`ltc2000` / :adi:`ltc2000a` 16-/14-/11-bit, 2.5-/2.7-GSPS, RF Digital-to-Analog Converters.
 
-This guide provides instructions for using DC2303A with KC705 controller board. Link to the User Guide for DC2085A with Stratix IV is provided for customers who still have this evaluation board.
+This guide provides instructions for using DC2303A with KC705 controller board.
+Link to the User Guide for DC2085A with Stratix IV is provided for customers who
+still have this evaluation board.
 
 Typical Setup
 -------------
@@ -15,16 +17,13 @@ Typical Setup
 
    \ |image1|\
 
-
 .. container:: centeralign
 
    \ *Figure 1. LTC2000 / LTC2000A Typical Evaluation Setup Using DC2303A*\
 
-
 .. container:: centeralign
 
    \ *Table 1. DC2303A Variants*\
-
 
 .. container:: centeralign
 
@@ -41,11 +40,9 @@ Typical Setup
    ================ =========== ========== =============== ================
    
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files
 -------------
@@ -95,10 +92,11 @@ Quick Start Guide
 
 .. important::
 
-   Note: The 50-ohm resistor is required to allow the use of DC2159A for DAC evaluation.
+   Note: The 50-ohm resistor is required to allow the use of DC2159A for DAC
+   evaluation.
 
-
--  Switch on KC705. If the board is not pre-programmed, follow the steps below to configure the FPGA:
+-  Switch on KC705. If the board is not pre-programmed, follow the steps below
+   to configure the FPGA:
 
    -  Download and install **Vivado**.
 
@@ -119,41 +117,39 @@ Quick Start Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dac/launching_ltdacgen_(fpga_connected).png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 2. Launching LTDACGen (FPGA Connected)*\
 
-
 -  Select **Sine** from the dropdown menu under the *FPGA LVDS Data* panel then press **Add**. As can be seen in Figure 3, the frequency should be set to 400 MHz by default.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dac/generating_a_sine_wave_pattern_using_ltdacgen.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 3. Generating a Sine Wave Pattern using LTDACGen*\
 
-
 -  Change the *Center Frequency* to **200 MHz** then click the **Update FPGA** button to send the data to the FPGA and program the DAC.  The FFT plots similar to Figures 4 should appear in the signal/spectrum analyzer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dac/dc2303a_spectrumanalyzer.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 4. Spectrum Analyzer Output*\
-
 
 Troubleshooting
 ---------------
 
 -  Check if the USB cables are directly plugged into the PC USB ports to ensure enough power is supplied to the USB interface of KC705 and DC2159A.
 -  Check if a 50-ohm resistor is connected across CN2 pins 2 and 23.
--  Power cycle the KC705 controller board then perform Step 5 of the Quick Start Guide.
+-  Power cycle the KC705 controller board then perform Step 5 of the Quick Start
+   Guide.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dac/dc2303a_kc705.png
-   :width: 500px
+   :width: 500

@@ -11,22 +11,33 @@ Using Profiles
 
 There are several situations where profiles can be used.
 
-The state of a IIO-Oscilloscope session can be saved to a profile. In a similar way the state of the session can be restored by loading the saved profile or other profiles with different configurations.
+The state of a IIO-Oscilloscope session can be saved to a profile. In a similar
+way the state of the session can be restored by loading the saved profile or
+other profiles with different configurations.
 
-A special use of profiles is the ability to use them as a set of instructions in order to run/close the software, start/stop the data acquisition, test if certain software properties are within a specified range of values, log properties and their values to files, capture screenshots or display custom popup message.
+A special use of profiles is the ability to use them as a set of instructions in
+order to run/close the software, start/stop the data acquisition, test if
+certain software properties are within a specified range of values, log
+properties and their values to files, capture screenshots or display custom
+popup message.
 
 Profile Structure
 -----------------
 
-Properties that profiles contain are grouped into sections. Each section is designated to one different part of IIO-Oscilloscope. The following sections are recognized by the profile parser of the software:
+Properties that profiles contain are grouped into sections. Each section is
+designated to one different part of IIO-Oscilloscope. The following sections are
+recognized by the profile parser of the software:
 
 -  **[IIO Oscilloscope]** - Describes the configuration of the main window and global properties of the software.
 -  **[IIO Oscilloscope - Capture Window<N>]** - Describes the configuration of one plot window of the software. <N> is an unsigned integer value that specifies the index of the plot window that the configuration applies to.
 -  **[<Plugin Name>]** - Describes the configuration of a software plugin. <Plugin Name> is a string that matches the name of the plugin displayed on the main window.
 
-A section of a profile can be split which allows a section to be placed in more than one place inside a file.
+A section of a profile can be split which allows a section to be placed in more
+than one place inside a file.
 
-Sections can be skipped out of a profile without making the profile invalid. But as a result the software profile parser will use the default values for all properties that are related to that section.
+Sections can be skipped out of a profile without making the profile invalid. But
+as a result the software profile parser will use the default values for all
+properties that are related to that section.
 
 Profile Keywords
 ================
@@ -70,7 +81,8 @@ The *capture* instruction signals the software to start capturing data or to sto
 Loops
 -----
 
-Profile instructions that repeat themselves can be rewritten in a more compact way using loops. There are two types of available loops:
+Profile instructions that repeat themselves can be rewritten in a more compact
+way using loops. There are two types of available loops:
 
 -  **SEQ** - Loops through a sequence of numbers.
 -  **FOR** - Loops through a given list of values.
@@ -99,7 +111,8 @@ The *FOR* loop iterates through the values specified within the curly brackets. 
 
 **Where:** [var] - The name of the loop variable. Type: string. Longer names that 127 characters will be truncated. [space-separated values] - strings without the space character. **Applies in section:** All sections.
 
-Loops can be nested. Any combination is possible and the nesting level is not limited. Usage example:
+Loops can be nested. Any combination is possible and the nesting level is not
+limited. Usage example:
 
 ::
 
@@ -127,7 +140,9 @@ The *test* instruction tells the software profile parser to treat the profile as
 Property Testing
 ~~~~~~~~~~~~~~~~
 
-The instructions below will test if markers and iio attributes values are within a given interval. A test failure will stop the parsing of the profile and a popup with an error message will be displayed.
+The instructions below will test if markers and iio attributes values are within
+a given interval. A test failure will stop the parsing of the profile and a
+popup with an error message will be displayed.
 
 ::
 

@@ -51,7 +51,8 @@ DSP Parameter Information
 | n/a              | SoftClipNew1thRange1 | Constants                                 |
 +------------------+----------------------+-------------------------------------------+
 
-Note: The SoftClipNew1p1val and SoftClipNew1thRange1 parameters do not need to change when the GUI control is updated.
+Note: The SoftClipNew1p1val and SoftClipNew1thRange1 parameters do not need to
+change when the GUI control is updated.
 
 Algorithm Description
 ---------------------

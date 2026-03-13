@@ -1,7 +1,15 @@
 Yocto Linux for ADSP-SC5xx Processors: Licensing Information
 ============================================================
 
-The Yocto Linux for ADSP-SC5xx Processors product is provided in source form. Each source code module (zip file, Git repository) is provided with licensing information. As applications are developed and the development board file-system built, different packages will be added and removed, resulting in different licensing requirements for each customer. It is your responsibility to understand the software you are distributing and the licensing restrictions upon that software. The following information provided to assist you in understanding the license requirements that you will need to comply with when distributing your product.
+The Yocto Linux for ADSP-SC5xx Processors product is provided in source form.
+Each source code module (zip file, Git repository) is provided with licensing
+information. As applications are developed and the development board file-system
+built, different packages will be added and removed, resulting in different
+licensing requirements for each customer. It is your responsibility to
+understand the software you are distributing and the licensing restrictions upon
+that software. The following information provided to assist you in understanding
+the license requirements that you will need to comply with when distributing
+your product.
 
 Finding the Licensing Requirements for your Product Build
 ---------------------------------------------------------

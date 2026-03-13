@@ -33,10 +33,12 @@ Equipment Included with Calibration Board Kits (ADQUADMXFE-CAL)
    -  https://www.digikey.com/products/en?keywords=271-3102-ND
    -  https://www.digikey.com/products/en?keywords=TL875-ND
 
--  2x 3" MMCX-MMCX cables. Used to connect between Quad MxFE Board & Calibration Board
+-  2x 3" MMCX-MMCX cables. Used to connect between Quad MxFE Board & Calibration
+   Board
 
    -  https://www.samtec.com/products/rf316-03sp1-03sp1-0100
-   -  NOTE that will need to purchase an additional 30 of these to interface to the Calibration Board/Quad MxFE board
+   -  NOTE that will need to purchase an additional 30 of these to interface to
+      the Calibration Board/Quad MxFE board
 
 -  4x Board Standoffs
 -  1x PMOD ribbon cable
@@ -55,7 +57,8 @@ Required Additional Equipment
 
 -  2x USB Micro Cables
 -  50Ω SMA Cables - As Needed
--  32x MMCX-MMCX cables (2 are provided with the ADQUADMXFE-CAL kit). Used to connect between Quad MxFE Board & Calibration Board
+-  32x MMCX-MMCX cables (2 are provided with the ADQUADMXFE-CAL kit). Used to
+   connect between Quad MxFE Board & Calibration Board
 
    -  https://www.samtec.com/products/rf316-03sp1-03sp1-0100
 
@@ -78,7 +81,7 @@ Test Setup
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/qmxfe_quadmxfeinterconnectivitydiagram.png
-   :width: 800px
+   :width: 800
 
 --------------
 
@@ -104,7 +107,8 @@ The required FPGA files and ``.tcl`` scripts can be downloaded from here:
 
 -  :doc:`HDL/Image Files </wiki-migration/resources/eval/user-guides/quadmxfe/quick-start>`
 
-Once downloaded, unzip these files to a folder on the desktop called QuadMxFE (this directory will be used in XSCT).
+Once downloaded, unzip these files to a folder on the desktop called QuadMxFE
+(this directory will be used in XSCT).
 
 --------------
 
@@ -122,10 +126,9 @@ PuTTY helps to provide a view into the Linux and give additional controls and de
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/comport.png
    :align: left
-   :width: 400px
+   :width: 400
 
 In PuTTY, this should be opened with a baudrate of 115200.
-
 
 |image1|
 
@@ -140,14 +143,19 @@ In order to program the FPGA, the Vitis/Vivado tool suite is required: `Vivado T
 
    \ *Make sure to grab Vitis 2020.2 or earlier. The 2020.3 version does not support the VCU118!!!*\
 
-
-Grab the Self Extracting Web Installer from the full product installation section and run the installer. Choose the Vitis installation option which will include the Vivado install.
+Grab the Self Extracting Web Installer from the full product installation
+section and run the installer. Choose the Vitis installation option which will
+include the Vivado install.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/vitis_install.png
    :align: left
-   :width: 400px
+   :width: 400
 
-The main tool used for programming the FPGA is the Xilinx Software Commandline Tool is a tool included as part of the installation of the Xilinx Vitis platform. An example sequence of commands will resemble what is below. However, this will vary depending on the location of the files and programming will be performed later.
+The main tool used for programming the FPGA is the Xilinx Software Commandline
+Tool is a tool included as part of the installation of the Xilinx Vitis
+platform. An example sequence of commands will resemble what is below. However,
+this will vary depending on the location of the files and programming will be
+performed later.
 
 ::
 
@@ -165,10 +173,12 @@ MATLAB 2019b or 2020a (Optional)
 
 .. important::
 
-   MATLAB 2020a is the primary version that all the code is tested with. MATLAB 2020b IS NOT SUPPORTED
+   MATLAB 2020a is the primary version that all the code is tested with. MATLAB
+   2020b IS NOT SUPPORTED
 
-
-MATLAB is used to exercise the board through LibIIO objects and provide higher level application functionality. In order to work with the platform, a number of toolboxes and support packages are required: Required toolboxes:
+MATLAB is used to exercise the board through LibIIO objects and provide higher
+level application functionality. In order to work with the platform, a number of
+toolboxes and support packages are required: Required toolboxes:
 
 -  MATLAB Communications Toolbox
 -  DSP System Toolbox
@@ -220,17 +230,19 @@ Once these are powered up, program the FPGA:
 -  Open Putty at the correct COM port and baudrate of 115200. See this section to determine the correct COM port :doc:`Putty Configuration </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>`
 -  Open Xilinx Command Line Tool (XSCT). Open it from the Start Menu under Xilinx --> Xilinx Software Commandline Tool. Once the prompt is open, type: ``cd Desktop\QuadMxFE``\ If the files were unzipped somewhere else, then change directory to that folder.
 -  Run the loading script for the particular build by typing the following (example) in XSCT:``source run.vcu118_quad_ad9081_204c_txmode_11_rxmode_4_revc.tcl``\ The statement above will launch the programming of the first build, but the others can be run by changing the name of the particular .tcl file to be loaded
--  Wait for the programming to finish in XSCT. This should show that the tcfchan#1 was closed as the final step.
+-  Wait for the programming to finish in XSCT. This should show that the
+   tcfchan#1 was closed as the final step.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/running_fpgaload.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Wait for the build to boot completely by checking the Putty terminal window. The putty window shows the progress of the Linux image booting. Wait for the login prompt as shown at the bottom. |image2| This example output is from the Txmode 11 Rxmode 4 image output. At this point, the image is ready to use in MATLAB or additional debug steps can be performed. To log into the image, the username and password are ``UN: root
    PW: analog``
 -  At this point the FPGA has booted and all of the blue PLL lights should be illuminated. The FPGA is ready to be controlled from MATLAB or from IIO Oscilloscope.
 -  To work in IIO Oscilloscope, open IIO Oscilloscope and use the GUI
--  To control through MATLAB, Please refer to the following section. There are a number of example scripts that highlight various aspects of the Quad MxFE.
+-  To control through MATLAB, Please refer to the following section. There are a
+   number of example scripts that highlight various aspects of the Quad MxFE.
 
 --------------
 
@@ -371,14 +383,15 @@ QuadMxFE_SimpleTxRx.m
 The default test setup for this script uses the :doc:`16Tx/16Rx Calibration Board </wiki-migration/resources/eval/user-guides/quadmxfe/calboard>` as shown below in which each Tx channel is looped back into the adjacent Rx channel after going through a 10dB attenuator on the 16Tx/16Rx Calibration Board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/script_test_setup.png
-   :width: 800px
+   :width: 800
 
 This script is to be used with the Analog Devices Quad-MxFE Platform to demonstrate relatively simple MATLAB control of the system. It allows the user to configure the Tx and Rx aspects of the system by using the ``tx = adi.QuadMxFE.Tx`` and ``rx = adi.QuadMxFE.Rx`` system objects. The script then loads transmit waveforms and captures receive data for all channels on the system. All enabled Rx channels are then plotted in both the time domain and the frequency domain as an overlay plot. The script also polls the measured temperatures of the four :adi:`ADF4371` and four :adi:`AD9081` in the system and then plots those temperatures. **No Rx nor Tx calibration is performed, nor are any multi-chip synchronization algorithms.** The default configuration for this script uses the 16 Tx / 16 Rx Calibration Board in adjacent individual loopback mode. If the user does not have this part of the platform they will need to ensure they modify the script accordingly.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/screenshot_quadmxfe_systemalignmentfir.png
-   :width: 800px
+   :width: 800
 
-Using this script as a basis, the user can modify the script for their own use case such that they can:
+Using this script as a basis, the user can modify the script for their own use
+case such that they can:
 
 -  Inject Custom Tx Waveforms for Each Enabled Tx Channel Using ``tx(waveformDataMatrix)``
 -  Change Tx NCO Frequencies Using, For Example, ``tx.MainNCOFrequenciesChipA`` or ``tx.ChannelNCOFrequenciesChipA``
@@ -402,11 +415,13 @@ The default test setup for this script uses the :doc:`16Tx/16Rx Calibration Boar
 
 .. important::
 
-   Once the pFIRs have been enabled through this script, they will remain on and will cause problems if other non pFIR scripts are run. Therefore a complete platform reboot is required between running the pFIR script followed by any other MATLAB script
-
+   Once the pFIRs have been enabled through this script, they will remain on and
+   will cause problems if other non pFIR scripts are run. Therefore a complete
+   platform reboot is required between running the pFIR script followed by any
+   other MATLAB script
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/script_test_setup_combined_loopback.png
-   :width: 800px
+   :width: 800
 
 This script is to be used with the Analog Devices Quad-MxFE Platform to demonstrate MATLAB control of the programmable finite impulse response (pFIR) filters and NCO phase offsets in order to phase align all Rx and Tx channels in the system. It allows the user to configure the Tx and Rx aspects of the system and then load transmit waveforms and capture receive data for all channels on the system. The script uses the on-system DSP blocks to phase-align the :adi:`ADF4371` device clocks by a :doc:`PLL Synthesizer Phase Adjustment Process </wiki-migration/resources/eval/user-guides/quadmxfe/multichipsynchronization>`. After this, it phase-aligns all Tx channels and then loads a broadband chirp waveform into each Tx channel which spans the frequency range of the Tx I/Q data rate. It ends by also phase- and amplitude-aligning all Rx RF channels using the NCO phase offsets and pFIRs assigned to each Rx channel. It shows the process by which a calculated error response (with respect to Rx0 as the baseline) can be used to generate a 96-tap real pFIR design and then how to quantize and load that pFIR design into the system. Finally, it plots the results to determine the phase and amplitude alignment accuracy. It provides an example of how to use pFIRs with the system to obtain Rx channel equalization and gain flatness.
 
@@ -415,44 +430,51 @@ The output of this script are a few pFIR configuration files with a filename, fo
 **Figure 1**: The Tx phase-alignment results are shown using the pulsed baseband waveform in which only one Tx channel is output at a time but still uses the same Tx waveform matrix. After combining all the Tx channels however using the 16Tx/16Rx Calibration Board, and then injecting this signal into the first Rx channel of each MxFE (Rx0, Rx4, Rx8, and Rx12), the :adi:`ADF4371` phases are adjusted to ensure that the pulse phases of Tx0, Tx4, Tx8, and Tx12 are aligned. The top plots show the time response of received pulse trains, whereas the bottom plots show the cross-correlation of these signals with respect to Rx0.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/pll_phase_alignment_results.png
-   :width: 800px
+   :width: 800
 
 **Figure 2**: The Tx phases of the pulsed waveform used to determine Tx alignment is shown. A common receiver (Rx0) detects a pulse train with the number of pulses equal to the number of enabled Tx channels in the system. The phase of each pulse directly relates to the phase of the Tx channel. The bottom plot shows the phase alignment of all Tx pulses, which therefore correspond to phase-alignment of all Tx channels.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/tx_pulse_phase_alignment.png
-   :width: 800px
+   :width: 800
 
 **Figure 3**: Shows the time domain ADC capture, corresponding chirp FFT, and amplitude and phase errors for each channel with respect to Rx0 both before and after Rx calibration.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/pfir_alignment_quadmxfe.png
-   :width: 800px
+   :width: 800
 
 **Figure 4**: Shows the calculated error response of each Rx channel in terms of its phase and amplitude error prior to Rx calibration.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/pfir_error_response_quadmxfe.png
-   :width: 800px
+   :width: 800
 
 **Figure 5**: Presents the magnitude and phase response of the designed pFIRs based on that calculated error response.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/pfir_magnitude_phase_response_quadmxfe.png
-   :width: 800px
+   :width: 800
 
 **Figure 6**: Shows the individual pFIR tap coefficients both before and after quantization for each Rx channel.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/pfir_tap_coefficients_quadmxfe.png
-   :width: 800px
+   :width: 800
 
 **Figure 7**: Shows the combined Rx system performance using a single-tone waveform after all Rx channels are phase- and amplitude-aligned.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/combined_rx_improvements_quadmxfe.png
-   :width: 800px
+   :width: 800
 
 --------------
 
 QuadMxFE_MCS.m
 ^^^^^^^^^^^^^^
 
-This script is to be used with the Analog Devices Quad-MxFE Platform to demonstrate MATLAB control of the system. It allows the user to configure the Tx and Rx aspects of the system and then load transmit waveforms and capture receive data for all channels on the system. The script uses the on-system DSP blocks to align the device clocks and output/input RF channels using the NCO phase offsets. Finally, it plots the results of a multi-chip synchronization (MCS) algorithm and allows the user to save a .mat file containing the run results.
+This script is to be used with the Analog Devices Quad-MxFE Platform to
+demonstrate MATLAB control of the system. It allows the user to configure the Tx
+and Rx aspects of the system and then load transmit waveforms and capture
+receive data for all channels on the system. The script uses the on-system DSP
+blocks to align the device clocks and output/input RF channels using the NCO
+phase offsets. Finally, it plots the results of a multi-chip synchronization
+(MCS) algorithm and allows the user to save a .mat file containing the run
+results.
 
 This .mat file, if saved to the
 
@@ -460,11 +482,21 @@ This .mat file, if saved to the
 
    .\Baseline Files Using ADF4371 Phase Adjustment\Align Using Tx\
 
-directory after the first time the script is run, can be used as a baseline power-up synchronization comparison to subsequent script executions. In this way, the user can determine the performance of the MCS features on the platform and view the deterministic phase relationship of the NCO phase offsets for a given NCO frequency. The open circles are grabbed from the baseline in the directory shown above, whereas the solid dots are the new NCO phase offsets after a subsequent power cycle or script execution.
+directory after the first time the script is run, can be used as a baseline
+power-up synchronization comparison to subsequent script executions. In this
+way, the user can determine the performance of the MCS features on the platform
+and view the deterministic phase relationship of the NCO phase offsets for a
+given NCO frequency. The open circles are grabbed from the baseline in the
+directory shown above, whereas the solid dots are the new NCO phase offsets
+after a subsequent power cycle or script execution.
 
 The test setup is the same as that used for the QuadMxFE_SystemAlignmentFIR.m script. More information on MCS can be found in the :doc:`Multi-Chip Synchronization with the Quad-MxFE + Calibration Board User Guide </wiki-migration/resources/eval/user-guides/quadmxfe/multichipsynchronization>`.
 
-The output of this script includes a .mat file containing the script execution results with a filename dependent on the system configuration and date of execution; for example 3.2GHz_AlignADF4371s_1_AlignPLLRxs_0_1.9531MHzOffset_14_56_24\__11_11_2020.mat. Additionally, many figures are plotted to aid with system analysis:
+The output of this script includes a .mat file containing the script execution
+results with a filename dependent on the system configuration and date of
+execution; for example
+3.2GHz_AlignADF4371s_1_AlignPLLRxs_0_1.9531MHzOffset_14_56_24\__11_11_2020.mat.
+Additionally, many figures are plotted to aid with system analysis:
 
 **Figure 1**: The :adi:`ADF4371` PLL/synthesizer calibration results are shown on the top-left two plots, showing the alignment of each zeroth Tx channel on each MxFE in the platform. The two right plots show the time domain data capture after injecting a CW tone into each Tx channel, the corresponding normalized cross-correlation for each Rx channel after calibration, the FFT of that time domain capture, and the combined 16-channel FFT showing the improved noise floor performance.
 
@@ -496,12 +528,12 @@ QuadMxFE_ADCtoDAC_Loopback.m
 The Quad-MxFE Platform is capable of configuring each :adi:`ad9081` into a mode such that the digitized ADC output can be sent through the DDCs and looped back on-chip into the DUCs prior to being synthesized by the DACs. This allows the user to bypass the JESD204c digital interface and therefore achieve a low-latency loopback capability.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/qmxfe_mxfe_loopback_path.png
-   :width: 800px
+   :width: 800
 
 The default test setup for this script is shown below. This MATLAB script provides an example of this for all MxFEs in the system. If the user injects a combined Rx signal into ``J501`` of the 16Tx/16Rx Calibration Board and connects the combined Tx output to ``J502`` of the Calibration Board to a spectrum analyzer, then after running this script the user can then change the input frequency and/or amplitude to observe the repeating or frequency translating functions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/qmxfe_script_test_setup_adctodac_loopback.png
-   :width: 800px
+   :width: 800
 
 --------------
 
@@ -511,14 +543,17 @@ Debug
 No blue lights are visible on board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If no blue lights are visible on the board, then the PLLs are not locked. The most likely cause of this is the lack of a 500MHz source into J41. Check the input power and state of the source. It should be 500MHz @ ~0dBm. Once the 500MHz signal is verified, the FPGA programming must be rerun.
+If no blue lights are visible on the board, then the PLLs are not locked. The
+most likely cause of this is the lack of a 500MHz source into J41. Check the
+input power and state of the source. It should be 500MHz @ ~0dBm. Once the
+500MHz signal is verified, the FPGA programming must be rerun.
 
 :doc:`Back To Quad-MxFE Main Page </wiki-migration/resources/eval/user-guides/quadmxfe>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/putty_comport.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/putty_quad_mxfe.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/github.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/matlab_addon_xilinx_zynqbased_radio_communications_toolbox.png
-   :width: 800px
+   :width: 800

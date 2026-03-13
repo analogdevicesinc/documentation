@@ -18,7 +18,8 @@ For :adi:`ADIS16IM1/PCBZ <en/evaluation/eval-adis16imu1/eb.html>` details, visit
 OBSOLETE ADIS16XXX/PCBZ DOCUMENTATION
 =====================================
 
-For those who are looking for information on evaluation tool products, which are no longer available, here you go!
+For those who are looking for information on evaluation tool products, which are
+no longer available, here you go!
 
 :adi:`ADIS16362/PCBZ Evaluation Tool Web Page <en/mems-sensors/mems-inertial-sensors/adis16362/products/EVAL-ADIS16362/eb.html>`
 
@@ -35,20 +36,22 @@ For those who are looking for information on evaluation tool products, which are
 ADIS16350/PCBZ DESIGN
 =====================
 
-The original IMU breakout board supported our very first Inertial Measurement Unit product, the ADIS16350. This board provides a simple connector translation function.
+The original IMU breakout board supported our very first Inertial Measurement
+Unit product, the ADIS16350. This board provides a simple connector translation
+function.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/365et_pcb.jpg
-   :width: 500px
+   :width: 500
 
 **Legacy ADIS16135/PCBZ Layout**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16350-pcb-legacy-1.png
-   :width: 500px
+   :width: 500
 
 **Legacy ADIS16135/PCBZ J1 & J2 Pin Assignments**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16135-pcb-legacy-2.png
-   :width: 500px
+   :width: 500
 
 **Current Usage** While we plan to phase this board out, it is still used in the following products: ADIS16300/PCBZ, ADIS16305/PCBZ, ADIS16334/PCBZ, ADIS16360/PCBZ, ADIS16362/PCBZ, ADIS16364/PCBZ, ADIS16365/PCBZ, ADIS16367/PCBZ, ADIS16400/PCBZ, ADIS16407/PCBZ, ADIS16445/PCBZ and ADIS16448/PCBZ.
 
@@ -57,21 +60,24 @@ The original IMU breakout board supported our very first Inertial Measurement Un
 ADIS16135/PCBZ (LEGACY DESIGN)
 ==============================
 
-The original ADIS16135/PCBZ breakout board design used two different ribbon cable connectors.
+The original ADIS16135/PCBZ breakout board design used two different ribbon
+cable connectors.
 
 **Legacy ADIS16135/PCBZ Layout**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16135-pcb-legacy-1.png
-   :width: 500px
+   :width: 500
 
 **Legacy ADIS16135/PCBZ J1 & J2 Pin Assignments**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16135-pcb-legacy-2.png
-   :width: 500px
+   :width: 500
 
 **Legacy ADIS16135/PCBZ Electrical Schematic**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16135-pcb-legacy-3.png
-   :width: 500px
+   :width: 500
 
-This PCB design served the oldest version of the following breakout board products, all of which are now obsolete: ADIS16133/PCBZ, ADIS16135/PCBZ, ADIS16385/PCBZ
+This PCB design served the oldest version of the following breakout board
+products, all of which are now obsolete: ADIS16133/PCBZ, ADIS16135/PCBZ,
+ADIS16385/PCBZ

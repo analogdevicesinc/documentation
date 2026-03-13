@@ -4,7 +4,11 @@ Unlocking a "Bricked" ADICUP360
 Problem Statement
 -----------------
 
-Occasionally when you are debugging a new program or loading a pre-built .BIN file using the ADICUP360, the board can get stuck and becomes unusable(commonly known as "bricked"). This can happen because the code is in an endless loop, hard fault occurs, or other mistakes that make it so the board becomes unresponsive.
+Occasionally when you are debugging a new program or loading a pre-built .BIN
+file using the ADICUP360, the board can get stuck and becomes unusable(commonly
+known as "bricked"). This can happen because the code is in an endless loop,
+hard fault occurs, or other mistakes that make it so the board becomes
+unresponsive.
 
 The good thing is there is a way to recover your hardware from this condition!
 
@@ -19,7 +23,8 @@ How to Recover the ADICUP360
 
 -  Plug the other end of the USB cable into the computers USB port
 -  Open up the CM3WSD UART Programmer tool
--  Change the parameters of the utility to the following settings:(see image below)
+-  Change the parameters of the utility to the following settings:(see image
+   below)
 
    -  "Serial Port" = COM X (USB Serial Port)
    -  "Baudrate" = 9600
@@ -30,13 +35,14 @@ How to Recover the ADICUP360
 -  On the EVAL-ADICUP360 board, hold down the "**BOOT**" button
 -  On the EVAL-ADICUP360 board press and release the "**RESET**" button, but continue holding the "**BOOT**" button
 -  Go back to the CM3WSD UART Programmer application and hit the "**Start**" button
--  Allow the program to finish erasing the memory, and once its complete your EVAL-ADICUP360 will be ready for use once again.
+-  Allow the program to finish erasing the memory, and once its complete your
+   EVAL-ADICUP360 will be ready for use once again.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/cm3wsd_success.png
    :align: center
-   :width: 400px
+   :width: 400
 
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/cm3wsd_setup.png
-   :width: 400px
+   :width: 400

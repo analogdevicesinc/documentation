@@ -14,7 +14,11 @@ The :adi:`AD5766`/:adi:`AD5767` are 16-channel, 16-/12-bit, voltage output Digit
 
 The :adi:`AD5766`/:adi:`AD5767` have integrated output buffers which can sink or source up to 20 mA. This makes the :adi:`AD5766`/:adi:`AD5767` suitable for Indium Phosphide Mach Zehnder Modulator (InP-MZM) biasing applications.
 
-The part incorporates a power-on reset circuit that ensures that the DAC outputs power up to 0V and remain at this level until the output range of the DAC is configured. The outputs of all DACs are updated through register configuration, with the added functionality of user-selectable DAC channels to be simultaneously updated.
+The part incorporates a power-on reset circuit that ensures that the DAC outputs
+power up to 0V and remain at this level until the output range of the DAC is
+configured. The outputs of all DACs are updated through register configuration,
+with the added functionality of user-selectable DAC channels to be
+simultaneously updated.
 
 The :adi:`AD5766`/:adi:`AD5767` require four power supplies. AVCC is the analog supply for the low voltage DAC circuitry. AVDD and AVSS are the positive and negative high voltage power supplies for the output amplifiers. A VLOGIC supply pin is provided to set the logic levels for the digital interface pins.
 
@@ -158,10 +162,10 @@ Reference Design
 ----------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad5766_sdz_analog.png
-   :width: 800px
+   :width: 800
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad5766_sdz_logic.png
-   :width: 800px
+   :width: 800
 
 Downloads
 ---------
@@ -175,4 +179,3 @@ Downloads
    -  :git-hdl:`HDL Reference Design. <projects/ad5766_sdz>`
    -  :git-no-OS:`No-OS Reference Design. <projects/ad5766-sdz>`
    
-

@@ -1,7 +1,10 @@
 Porting MATLAB Coder Pitch Shift to SHARC Audio Module
 ======================================================
 
-Many customers utilize MATLAB to create custom audio effects and algorithms. This example will help customers go from concept to an actual product using the SHARC Audio Module. The PitchShifter Audio Plugin from MATLAB will be used for this example.
+Many customers utilize MATLAB to create custom audio effects and algorithms.
+This example will help customers go from concept to an actual product using the
+SHARC Audio Module. The PitchShifter Audio Plugin from MATLAB will be used for
+this example.
 
 Tuning the Algorithm in MATLAB
 ------------------------------
@@ -18,12 +21,13 @@ First, start audioTestBench in the MATLAB command window
 -  Change the parameters to see how the algorithm performs
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/tuning.png
-   :width: 600px
+   :width: 600
 
 Creating the Function to Apply the Pitch Shift
 ----------------------------------------------
 
-Although PitchShifter is one of the MATLAB Audio Plugin Examples, a function needs to be created that exercises the audiopluginexample.PitchShifter.
+Although PitchShifter is one of the MATLAB Audio Plugin Examples, a function
+needs to be created that exercises the audiopluginexample.PitchShifter.
 
 .. code:: c
 
@@ -49,7 +53,6 @@ MATLAB will need a test for the function that was created to verify parameters.
 
 .. code:: c
 
-
    AUDIO_BLOCK_SIZE = int32(32);
    audio_in = double(ones(AUDIO_BLOCK_SIZE,1));
    pitchShift = double(0);
@@ -59,7 +62,8 @@ MATLAB will need a test for the function that was created to verify parameters.
 Using MATLAB Coder
 ------------------
 
-MATLAB Coder will create code that can then be used in the SHARC Audio Module Bare Metal Framework
+MATLAB Coder will create code that can then be used in the SHARC Audio Module
+Bare Metal Framework
 
 Select Function
 ~~~~~~~~~~~~~~~
@@ -67,21 +71,22 @@ Select Function
 Browse to where the Pitch Shift function is stored.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/select_func.png
-   :width: 700px
+   :width: 700
 
 Define Input Types
 ~~~~~~~~~~~~~~~~~~
 
-Manually defining the input values can be done but pointing to the test function that was created already has them defined properly.
+Manually defining the input values can be done but pointing to the test function
+that was created already has them defined properly.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/define_input.png
-   :width: 700px
+   :width: 700
 
 Check For Issues
 ~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/check_issues.png
-   :width: 700px
+   :width: 700
 
 Generate Code
 ~~~~~~~~~~~~~
@@ -92,7 +97,7 @@ Generate Code
 -  **More Settings** will be needed in this case
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/gen_code1.png
-   :width: 700px
+   :width: 700
 
 Adjust Settings
 ~~~~~~~~~~~~~~~
@@ -102,13 +107,13 @@ Adjust Settings
 -  Make sure **Generate re-entrant code** is set to *yes*
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/gen_code2.png
-   :width: 700px
+   :width: 700
 
 Generate Code
 ~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/generate_code.png
-   :width: 700px
+   :width: 700
 
 --------------
 
@@ -120,12 +125,13 @@ This section will describe all steps to run the pitch shift algorithm in CCES.
 Create Project in CrossCore Embedded Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the Bare Metal Project Wizard to create a project that the MATLAB generated code can be integrated into. Using all the default settings in the wizard will create a working 3 core project.
+Use the Bare Metal Project Wizard to create a project that the MATLAB generated
+code can be integrated into. Using all the default settings in the wizard will
+create a working 3 core project.
 
 .. tip::
 
    Reference the :doc:`Bare Metal Project Wizard </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/project-wizard>` page for help creating a project.
-
 
 Integrate MATLAB Code Into a Bare Metal Project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -136,16 +142,18 @@ Integrate MATLAB Code Into a Bare Metal Project
    -  ..\\pitch_shifter\\pitch_shifter_core1\\src\\matlab
    -  CCES will automatically update to show this folder in its Project Explorer
 
--  Copy all files(excluding folders) from under applyPitchShift into the matlab folder
+-  Copy all files(excluding folders) from under applyPitchShift into the matlab
+   folder
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/integrating_code.jpg
-   :width: 800px
+   :width: 800
 
 Updating callback_audio_processing.cpp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  All code changes will be in callback_audio_processing.cpp for core 1
--  Use main.cpp in the MATLAB generated code as reference code showing how to setup and call the pitch shift algorithm.
+-  Use main.cpp in the MATLAB generated code as reference code showing how to
+   setup and call the pitch shift algorithm.
 
    -  .. \\MATLAB\\codegen\\lib\\applyPitchShift\\examples\\main.cpp
 
@@ -229,15 +237,17 @@ Update processaudio_callback() for core 1 to apply the pitch shift
 Hardware Connections
 ~~~~~~~~~~~~~~~~~~~~
 
-Before executing the application in CCES, the hardware should be setup as shown below in order for correct execution of the application.
+Before executing the application in CCES, the hardware should be setup as shown
+below in order for correct execution of the application.
 
 .. tip::
 
-   Revision 1.5 and greater of the SHARC Audio Module board does not use the FTDI cable. The circuit has been added to the board. A USB cable should be plugged into USB/UART(P6) instead of the FTDI cable connection shown.
-
+   Revision 1.5 and greater of the SHARC Audio Module board does not use the
+   FTDI cable. The circuit has been added to the board. A USB cable should be
+   plugged into USB/UART(P6) instead of the FTDI cable connection shown.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/hw_setup.png
-   :width: 800px
+   :width: 800
 
 Executing the Code in CCES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -246,10 +256,9 @@ Executing the Code in CCES
 
    Some knowledge of CrossCore Embedded Studio(CCES) is assumed here. If unfamiliar with CCES, please go through the :doc:`CCES Getting Started Guide </wiki-migration/resources/tools-software/crosscore/cces/getting-started>` prior to working in CCES.
 
-
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/debug_config.png
    :align: right
-   :width: 500px
+   :width: 500
 
 -  Build all 3 core projects
 -  Create the debug configuration to load all 3 cores using the ICE-1000
@@ -259,7 +268,6 @@ Executing the Code in CCES
 -  Be sure you have audio input to the board
 -  You should hear audio a few octaves higher than expected
 
-
 --------------
 
 Optimizing the Pitch Shift Algorithm
@@ -267,12 +275,9 @@ Optimizing the Pitch Shift Algorithm
 
 By default the optimizer in CCES is not enabled for the new matlab code.
 
-
-
 .. container:: left
 
    \ |image1|\
-
 
 | \* Right click on the matlab folder.
 
@@ -281,13 +286,15 @@ By default the optimizer in CCES is not enabled for the new matlab code.
 -  Check Enable optimization
 -  Rebuild and run the application
 
-
 --------------
 
 Verifying Optimization with Logging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Using the FTDI cable(Rev 1.4 boards) or a USB cable(Rev 1.5 boards), logging output can be seen when running the bare metal framework. Opening a console application, such as PuTTY, with the following serial settings should show the logging information.
+Using the FTDI cable(Rev 1.4 boards) or a USB cable(Rev 1.5 boards), logging
+output can be seen when running the bare metal framework. Opening a console
+application, such as PuTTY, with the following serial settings should show the
+logging information.
 
 Serial Settings
 """""""""""""""
@@ -305,8 +312,8 @@ Non-Optimized Optimized
 ============= =========
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/optimize_folder.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/debug_not_optimized.png
-   :width: 700px
+   :width: 700
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/debug_optimized.png
-   :width: 700px
+   :width: 700

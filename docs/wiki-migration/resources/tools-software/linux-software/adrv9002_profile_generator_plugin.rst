@@ -24,7 +24,7 @@ Functionalities
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iio_oscilloscope/adrv9002_profile_gen-controls.png
    :align: right
-   :width: 400px
+   :width: 400
 
 Profile Controls
 ----------------

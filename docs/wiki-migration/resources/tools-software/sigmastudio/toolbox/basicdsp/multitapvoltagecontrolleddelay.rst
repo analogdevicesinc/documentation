@@ -61,25 +61,46 @@ DSP Parameter Information
 Algorithm Description
 ~~~~~~~~~~~~~~~~~~~~~
 
-The multi-tap voltage controlled delay allows a single signal to be output as multiple, independently-delayed copies. By right-clicking and selecting the “grow” option, the user can increase the number of copies, or “taps”, to be output. A maximum of 16 taps is allowed per cell.
+The multi-tap voltage controlled delay allows a single signal to be output as
+multiple, independently-delayed copies. By right-clicking and selecting the
+“grow” option, the user can increase the number of copies, or “taps”, to be
+output. A maximum of 16 taps is allowed per cell.
 
-A delay “pool” size is chosen prior to compilation; this value will determine the amount of modulo data RAM that the compiler will attempt to reserve for each tap. The delay pool size is controlled by the drop-down menu in the middle of the cell. The equivalent delay in milliseconds is displayed below this menu. The calculation for the equivalent delay is based on the cell’s sample rate setting. Note that this delay pool size is reserved for each tap. It is not a shared pool that can be used by individual taps.
+A delay “pool” size is chosen prior to compilation; this value will determine
+the amount of modulo data RAM that the compiler will attempt to reserve for each
+tap. The delay pool size is controlled by the drop-down menu in the middle of
+the cell. The equivalent delay in milliseconds is displayed below this menu. The
+calculation for the equivalent delay is based on the cell’s sample rate setting.
+Note that this delay pool size is reserved for each tap. It is not a shared pool
+that can be used by individual taps.
 
-If the control input for any tap exceeds the maximum allowable delay for that tap, then the maximum value will be used.
+If the control input for any tap exceeds the maximum allowable delay for that
+tap, then the maximum value will be used.
 
-Care must be taken so that the control inputs never go below zero (integer). If the control input a negative number, the output of the algorithm will jump to -1 (decimal).
+Care must be taken so that the control inputs never go below zero (integer). If
+the control input a negative number, the output of the algorithm will jump to -1
+(decimal).
 
-As a simple example, a single tap can be used to delay an input signal. The example below shows three signals: input, output, and control signals. The output is a delayed copy of the input, and the control signal determines how much delay is used. In this example, 100 samples of delay is used.
+As a simple example, a single tap can be used to delay an input signal. The
+example below shows three signals: input, output, and control signals. The
+output is a delayed copy of the input, and the control signal determines how
+much delay is used. In this example, 100 samples of delay is used.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/multitapvoltagepic2.png
    :alt: multitapvoltagepic2.png
 
-If multiple taps are used, then the delay for each output will be determined separately, based on its corresponding control input pin. In the example below, Output 0 is delayed by 40 samples and Output 1 is delayed by 80 samples.
+If multiple taps are used, then the delay for each output will be determined
+separately, based on its corresponding control input pin. In the example below,
+Output 0 is delayed by 40 samples and Output 1 is delayed by 80 samples.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/multitapvoltagepic3.png
    :alt: multitapvoltagepic3.png
 
-The delay can be modified in real-time, but this will cause frequency distortion on the output. If delay needs to be modified in real-time, then muting the audio when changing the delay length can help to avoid distortion. Also, changing the delay length gradually can help to mitigate the severity of the frequency distortion. An example of extreme frequency warping is shown below.
+The delay can be modified in real-time, but this will cause frequency distortion
+on the output. If delay needs to be modified in real-time, then muting the audio
+when changing the delay length can help to avoid distortion. Also, changing the
+delay length gradually can help to mitigate the severity of the frequency
+distortion. An example of extreme frequency warping is shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/multitapvoltagepic4.png
    :alt: multitapvoltagepic4.png
@@ -87,7 +108,11 @@ The delay can be modified in real-time, but this will cause frequency distortion
 Example
 ~~~~~~~
 
-The following schematic image shows the Multi-Tap Voltage Controlled Delay being used with a sine tone generator as an input and two delay taps. The maximum delay is 100 samples. Output 0 is delayed by 20 samples and Output 1 is delayed by 40 samples. The schematic below additionally uses the Sine Tone, DC Source, and Output cells.
+The following schematic image shows the Multi-Tap Voltage Controlled Delay being
+used with a sine tone generator as an input and two delay taps. The maximum
+delay is 100 samples. Output 0 is delayed by 20 samples and Output 1 is delayed
+by 40 samples. The schematic below additionally uses the Sine Tone, DC Source,
+and Output cells.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/fractionalvoltagecontrolled.png
    :align: center
@@ -120,7 +145,11 @@ Algorithm Details
 Multi-Tap Voltage Controlled Delay (ADAU145x/ADAU146x)
 ------------------------------------------------------
 
-The Multi-Tap Voltage Controlled Delay for ADAU145x/ADAU146x provides a variable delay to a single audio input, producing multiple outputs. Each output signal is called a “tap.” The amount of delay for each tap can be modified in real-time by updating the value on the corresponding control input pin. It allows the user to choose in which memory the delay buffer to be stored.
+The Multi-Tap Voltage Controlled Delay for ADAU145x/ADAU146x provides a variable
+delay to a single audio input, producing multiple outputs. Each output signal is
+called a “tap.” The amount of delay for each tap can be modified in real-time by
+updating the value on the corresponding control input pin. It allows the user to
+choose in which memory the delay buffer to be stored.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/vcd_300.jpg
    :align: center
@@ -164,7 +193,8 @@ Configurations
 DSP Parameter Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No DSP parameters can be tuned, Link compile download is required when the DSP parameter is changed.
+No DSP parameters can be tuned, Link compile download is required when the DSP
+parameter is changed.
 
 Supported ICs
 ~~~~~~~~~~~~~

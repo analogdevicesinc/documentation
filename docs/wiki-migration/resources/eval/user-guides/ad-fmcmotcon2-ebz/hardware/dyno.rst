@@ -3,7 +3,7 @@ Dynamometer Drive System
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/mc2_dyno_single.jpg
    :alt: Dynamometer Drive System
-   :width: 400px
+   :width: 400
 
 Features
 --------
@@ -21,7 +21,7 @@ Block Diagram
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/dyno_diagram.png
-   :width: 800px
+   :width: 800
 
 +---+
 +---+
@@ -98,7 +98,7 @@ In order interface the Dyno with an external control system:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/dyno_ext_control.png
    :alt: Dynamometer Drive System
-   :width: 400px
+   :width: 400
 
 The external available signals are:
 
@@ -117,8 +117,8 @@ PWM3        Phase C PWM (3.3V levels)
 
 .. warning::
 
-   The system needs a 5V 500mA power supply. The power connector is a 2.1 X 5.5MM jack with the center pin positive(+)
-
+   The system needs a 5V 500mA power supply. The power connector is a 2.1 X
+   5.5MM jack with the center pin positive(+)
 
 Downloads
 ---------
@@ -134,6 +134,5 @@ Downloads
    -  `Allegro Board File <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/ad-dyno2-ebz_layout.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).
    
 
-
 .. |Dyno menu| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/dyno_menu.png
-   :width: 500px
+   :width: 500

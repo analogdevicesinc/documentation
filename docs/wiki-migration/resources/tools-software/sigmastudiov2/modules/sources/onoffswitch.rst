@@ -9,7 +9,8 @@ ON/OFF Switch
 Description
 -----------
 
-The OnOffSwitch block outputs a constant value of either 0.0(OFF) or 1.0(ON).Click the switch control with mouse to toggle the switch 'OFF' or 'ON'.
+The OnOffSwitch block outputs a constant value of either 0.0(OFF) or
+1.0(ON).Click the switch control with mouse to toggle the switch 'OFF' or 'ON'.
 
 Targets Supported
 -----------------
@@ -31,7 +32,6 @@ Name   Type    Description
 ====== ======= ================
 Enable Control Output channel 0
 ====== ======= ================
-
 
 | ===== Configurable Parameters =====
 

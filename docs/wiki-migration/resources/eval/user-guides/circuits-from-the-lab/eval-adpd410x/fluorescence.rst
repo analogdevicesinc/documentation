@@ -7,11 +7,16 @@ The :adi:`EVAL-ADPD410x-ARDZ` allows users to take advantage of the flexibility 
 
    This demo uses a lot of the optical, mechanical, and photodiode and LED components from the :adi:`CN0503` kit. This demo is especially prepared to show the ability of the :adi:`EVAL-ADPD410x-ARDZ` board to perform the same measurements as the :adi:`CN0503`. For a less complex demo setup, refer to the Turbidity Demo.
 
-
 General Description/Overview
 ----------------------------
 
-One method of measuring the amount of substance in a sample is by using fluorescent light. In this setup, a light is passed from a monochromatic source through the sample, and then the fluorescence in the substance is measured using a detector tuned to its wavelength. The intensity of the fluorescent light compared to the intensity of the incident light will be proportional to the amount of the fluorescent substance in the sample. An effective way of performing this is by using the setup shown below.
+One method of measuring the amount of substance in a sample is by using
+fluorescent light. In this setup, a light is passed from a monochromatic source
+through the sample, and then the fluorescence in the substance is measured using
+a detector tuned to its wavelength. The intensity of the fluorescent light
+compared to the intensity of the incident light will be proportional to the
+amount of the fluorescent substance in the sample. An effective way of
+performing this is by using the setup shown below.
 
 | Light is emitted from an LED at 365 nm wavelength. It then passes through a beam-splitter, which directs some of the incident light to a reference photodiode detector for sampling. Quinine in the sample fluoresces due to the 365 nm light and emits ~450 nm light. Another photodiode detector, sensitive to blue light frequencies, is positioned at 90 degrees from the light path to measure the intensity. This placement decreases the effects of the light emitted from the source LED. Additionally, a monochromatic filter is placed in front of the detector to further isolate the measurement.
 | |image1|
@@ -33,17 +38,17 @@ The following is a list of items needed to replicate this demo.
 -  Fluorescence Photodiode Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165220.jpg
-   :width: 100px
+   :width: 100
 
 -  Transmit Photodiode Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165212.jpg
-   :width: 100px
+   :width: 100
 
 -  365 nm LED Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130028.jpg
-   :width: 100px
+   :width: 100
 
 -  Male-to-female jumper headers for connection
 -  (**Optional**) Prepared samples with known quinine concentration measurement
@@ -102,7 +107,6 @@ Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. D
    -  :git-EVAL-ADICUP3029:`EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_adpd410x <projects/ADuCM3029_demo_adpd410x>`
    
 
-
 Optical Path Setup
 ------------------
 
@@ -116,7 +120,7 @@ The demo utilizes an optical path similar to the one used by :adi:`CN0503`, but 
 -  Insert the cuvette with the quinine sample to measure.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fluorescence_topviewpath.png
-   :width: 400px
+   :width: 400
 
 Hardware Connection
 -------------------
@@ -137,11 +141,17 @@ This demo uses a PyADI-IIO example script. See :doc:`Software Setup </wiki-migra
 
 |image8|
 
--  When the board is detected, you will be asked to specify the demo application to use. Since this setup is only applicable for fluorescence measurements, enter 1.
+-  When the board is detected, you will be asked to specify the demo application
+   to use. Since this setup is only applicable for fluorescence measurements,
+   enter 1.
 
 |image9|
 
--  A plot will appear showing the measured and computed quinine concentration. You have the option to save a copy of the displayed waveform at any point in time using the matplotlib controls at the top. Remove the cuvette and replace the quinine sample with a different concentration to observe the measurement change.
+-  A plot will appear showing the measured and computed quinine concentration.
+   You have the option to save a copy of the displayed waveform at any point in
+   time using the matplotlib controls at the top. Remove the cuvette and replace
+   the quinine sample with a different concentration to observe the measurement
+   change.
 
 |image10|
 
@@ -149,29 +159,28 @@ This demo uses a PyADI-IIO example script. See :doc:`Software Setup </wiki-migra
 
    The demo script uses the same polynomial approximation used in :doc:`Computing Quinine Concentration </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503/fluorescence>`.
 
-
 Reference Links
 ---------------
 
 -  :doc:`Hardware User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fluorescence_path.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fl_adpd410x_jumperconn.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/p10_empty.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/jp1_5v.png
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iosel_shunt.png
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/arduinoconnection.jpg
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_connection.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pyadiiio_example2_comport.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_selectapplication.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_fluorescenceresult.png
-   :width: 400px
+   :width: 400

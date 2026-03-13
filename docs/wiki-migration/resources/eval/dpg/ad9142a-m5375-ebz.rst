@@ -13,16 +13,13 @@ Typical Setup
 
    \ |image1|\ *Figure 1a. AD9142A-M5372-EBZ with SDP-H1 Setup*\
 
-
 .. container:: centeralign
 
    |image2|\ *Figure 1b. AD9142A-M5372-EBZ with ADVS7-V2EBZ Setup*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files:
 --------------
@@ -45,7 +42,6 @@ Software Needed:
 .. important::
 
    Do not install ACE on a computer with DAC Software Suite.
-
 
 Hardware Needed:
 ----------------
@@ -77,7 +73,9 @@ Quick Start Guide
 Jumpers for Selecting the DAC Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Jumpers JP4, JP5, JP6, and JP7 select the output configuration. By default, the DAC output connected to the LPF and the ADL537x analog quadrature modulator. For selecting DAC output configuration, refer to Table 1 and Figure 2.
+Jumpers JP4, JP5, JP6, and JP7 select the output configuration. By default, the
+DAC output connected to the LPF and the ADL537x analog quadrature modulator. For
+selecting DAC output configuration, refer to Table 1 and Figure 2.
 
 \ *Table 1. Jumper Configurations for Viewing DAC Output and Modulator Output*\ 
 
@@ -98,11 +96,11 @@ DAC Output Configuration Modulator Output Configuration
 
    \ *Figure 2. AD9142A-M5372-EBZ/AD9142A-M5375-EBZ Output Configuration*\
 
-
 Jumper for Selecting Clock Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The AD9142A-M5372-EBZ / AD9142A-M5375-EBZ evaluates both the DAC outputs as well as the AQM outputs. Refer to Table 3 for clock configuration.
+The AD9142A-M5372-EBZ / AD9142A-M5375-EBZ evaluates both the DAC outputs as well
+as the AQM outputs. Refer to Table 3 for clock configuration.
 
 \ *Table 3. Clock Configuration*\ 
 
@@ -126,12 +124,14 @@ Evaluation Guide
    -  Connect SDP-H1/ADS7-V2EBZ to PC via USB and to a 12Vdc power supply.
    -  Set clock input / continuous wave generator to **500MHz** and **2dBm**.
 
--  Open ACE. The board will automatically be recognized by the software. Otherwise, install the plugin for AD9142A-M5375-EBZ evaluation board. Double click this board then modify the configuration, as shown in Figure 5, and click "Apply".
+-  Open ACE. The board will automatically be recognized by the software.
+   Otherwise, install the plugin for AD9142A-M5375-EBZ evaluation board. Double
+   click this board then modify the configuration, as shown in Figure 5, and
+   click "Apply".
 
 .. container:: centeralign
 
    \ |image5|\ *Figure 5. ACE Initial Configuration Wizard when using SDP-H1/ADS7-V2EBZ*\
-
 
 -  Open the DPGDownloaderLite. The evaluation board, controller board and DCO Frequency of around **250MHz** will be automatically recognized by DPG.
 -  In DPGDownloaderLite, **Add Generator Waveforms** pulldown menu select Single Tone and apply the settings as shown in Figure 7. Set the **Data Rate** to 250MHz and **Desired Frequency** to 29 MHz. Set **DAC Resolution** to the DAC’s number of bits to **16 bits**. Check the **Generate Complex Data (I & Q)** box and uncheck the **Unsigned Data** box.
@@ -141,22 +141,21 @@ Evaluation Guide
 
    \ |image6|\ *Figure 7. DPGDownloader Waveform Configuration*\
 
-
--  Press the download arrow and then the play button. The spectrum similar to Figure 8 should appear in the signal/spectrum analyzer.
+-  Press the download arrow and then the play button. The spectrum similar to
+   Figure 8 should appear in the signal/spectrum analyzer.
 
 .. container:: centeralign
 
    \ |image7|\ *Figure 8. AD9142A-M5372-EBZ FFT for Fdac=500MHz,2x Interpolation Fout=29MHz*\
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142a_sdph1.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142a_ads7.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142a_dac_out.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142a_mod_out.jpg
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142a_ads7_initial_config.jpg
-   :width: 300px
+   :width: 300
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142a_sdp_dpg.jpg
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142a_sdph_output.png
-   :width: 600px
+   :width: 600

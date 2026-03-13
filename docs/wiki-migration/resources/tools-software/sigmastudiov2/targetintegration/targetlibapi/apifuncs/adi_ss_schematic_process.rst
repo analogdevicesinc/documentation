@@ -16,7 +16,10 @@ Prototype
 
 Description
 
-This is the modified process API. This function calls the function pointer of SS+. The function pointer of SS+ is the main entry point in the SS+ block which is created by SigmaStudio during the linking process. This process API is used in the Default Application provided in the package.
+This is the modified process API. This function calls the function pointer of
+SS+. The function pointer of SS+ is the main entry point in the SS+ block which
+is created by SigmaStudio during the linking process. This process API is used
+in the Default Application provided in the package.
 
 Parameters
 

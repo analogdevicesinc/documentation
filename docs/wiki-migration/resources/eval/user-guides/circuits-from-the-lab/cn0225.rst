@@ -6,15 +6,20 @@ Overview
 
 :adi:`CN0225` is a complete analog front end for digitizing ±10 V industrial level signals with a 16-bit differential input PulSAR® ADC. The circuit provides a high impedance instrumentation amplifier input with high CMR, level shifting, attenuation, and differential conversion, with only two analog components.The two active components which drive an AD7687 differential input 16-bit PulSAR ADC are the AD8295 precision instrumentation amplifier and the AD8275 level translator/ADC driver. An ADR431 low noise 2.5V XFET® reference supplies the voltage reference for the ADC.
 
-The AD8295 has two uncommited on-chip signal procesing amplifiers and two precisely matched 20 kΩ resistors in a small 4 mm X 4 mm package.
+The AD8295 has two uncommited on-chip signal procesing amplifiers and two
+precisely matched 20 kΩ resistors in a small 4 mm X 4 mm package.
 
-The AD8275 is a G = 0.2 difference amplifier that can be used to attenuate ±10 V industrial signals, and the attenuated signal can be easily interfaced to a single supply low voltage ADC. The AD8275 performs the attenuation and level shifting function in the circuit, maintaining good CMR without any need for external components.
+The AD8275 is a G = 0.2 difference amplifier that can be used to attenuate ±10 V
+industrial signals, and the attenuated signal can be easily interfaced to a
+single supply low voltage ADC. The AD8275 performs the attenuation and level
+shifting function in the circuit, maintaining good CMR without any need for
+external components.
 
 The :adi:`CN0225` needs +15 V, -15 V and +6 V power supply inputs and thus, needs a triple output DC power supply. The board also connects to ADI's System Demonstration Platform (**\*SDP**\ \*).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/cn0225-hw-1024.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -39,7 +44,7 @@ Block Assignments
 ~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/cn0225-hw-1024-edited.jpg
-   :width: 600px
+   :width: 600
 
 -  The :adi:`EVAL-CN0225-SDPZ <CN0225>` **(CN0225 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin Connector **(SDP Conn)**
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable
@@ -50,14 +55,15 @@ Block Assignments
 
 .. important::
 
-   Connect the (EVAL-CN0225-SDPZ) and the (SDP-B Board), then power the (EVAL-CN0225-SDPZ) through the triple output power supply before connecting the (SDP-B Board) to the PC
-
+   Connect the (EVAL-CN0225-SDPZ) and the (SDP-B Board), then power the
+   (EVAL-CN0225-SDPZ) through the triple output power supply before connecting
+   the (SDP-B Board) to the PC
 
 Setup Block Diagram
 ~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/cn0225-03-1024.png
-   :width: 600px
+   :width: 600
 
 Jumper Settings
 ~~~~~~~~~~~~~~~
@@ -65,7 +71,7 @@ Jumper Settings
 See the table in the image below for the jumper settings. Values in red are the default settings for the :adi:`EVAL-CN0225-SDPZ <CN0225>`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-45-44_pm.png
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -77,7 +83,6 @@ Installing the Evaluation Software
 .. tip::
 
    \ NOTE: It is recommended that you install the `CN0203 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0203/cn0203%20sdp%20eval%20software.zip>`_ to the default directory path C:\\Program Files (x86)\\Analog Devices\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
-
 
    |image1|
 
@@ -97,13 +102,14 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image5|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-36_pm.png
-   :width: 600px
+   :width: 600
 
 -  Press **“Next”** to set the installation location for the **SDP Drivers**
 
@@ -112,7 +118,6 @@ Installing the Evaluation Software
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image6|
 
@@ -138,7 +143,7 @@ Main Window
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-3-2017_3-29-38_pm_-_edited.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  **Board Connection Control Section**
 
@@ -185,8 +190,8 @@ Main Window
       -  Displays the measured ADC sample values vs time plot
       -  **Frequency Domain Tab**
 
-         -  Plots the FFT of the the ADC samples with the amplitudse in dB of the full scale ADC value
-
+         -  Plots the FFT of the the ADC samples with the amplitudse in dB of
+            the full scale ADC value
 
          |resources-eval-user-guides-circuits-from-the-lab-cn0225-11-3-2017_3-30-08_pm_-_edited.png|
 
@@ -201,7 +206,6 @@ Main Window
        **Read Firmware Button** reads the current SDP firmware for debugging
 
              .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-3-2017_3-30-38_pm_-_edited.png
-
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
@@ -247,7 +251,6 @@ Schematic, PCB Layout, Bill of Materials
    -  PADS project
    
 
-
 Registration
 ------------
 
@@ -255,26 +258,25 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0225-SDPZ?&v=Rev B>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-51-12_pm.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-52-02_pm.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-52-35_pm.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-53-43_pm.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-25_pm.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-54-25_pm.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-25_pm.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-36_pm.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-56-02_pm.png
-   :width: 600px
+   :width: 600
 
 .. |resources-eval-user-guides-circuits-from-the-lab-cn0225-11-3-2017_3-30-08_pm_-_edited.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-3-2017_3-30-08_pm_-_edited.png

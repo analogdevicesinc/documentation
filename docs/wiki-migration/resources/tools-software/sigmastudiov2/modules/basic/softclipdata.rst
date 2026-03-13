@@ -9,7 +9,8 @@ Soft Clipper - Data Controlled
 Description
 -----------
 
-This block clips off portions of signal voltages above and/or below certain limits.
+This block clips off portions of signal voltages above and/or below certain
+limits.
 
 Targets Supported
 -----------------

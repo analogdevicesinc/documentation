@@ -1,10 +1,10 @@
 .. warning::
 
-   \ This software uses an older version of libsmu / pysmu and is no longer recommended for use.
+   \ This software uses an older version of libsmu / pysmu and is no longer
+   recommended for use.
 
    
    :doc:`ALICE Desktop 1.3 </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` is now recommended.
-
 
 .. admonition:: Download
    :class: download
@@ -16,7 +16,6 @@
    -  `Latest release for 64 bit Python 2.7 <https://wiki.analog.com/_media/university/tools/alice-1.0-64bit-setup.zip>`_
    
 
-
 ALM1000 ALICE Software Suite
 ============================
 
@@ -24,7 +23,9 @@ ALICE (Active Learning Interface for Circuits and Electronics) is a open source 
 
 The use of Python affords a cross-platform (Windows, Linux, OS X) set of accessible tools for initial interactive explorations. **Python 2.7 and the numpy extension module must be installed on the user's computer before installing the ALICE tools.** These programs are written for Python 2.7 and will not run on Python 3.
 
-Interfaces for DC, AC, Time Domain and Frequency Domain analysis make exploring system behaviors across a wide range of signal amplitudes, frequencies, or phases a trivial exercise. It includes interfaces for :
+Interfaces for DC, AC, Time Domain and Frequency Domain analysis make exploring
+system behaviors across a wide range of signal amplitudes, frequencies, or
+phases a trivial exercise. It includes interfaces for :
 
 -  :doc:`Active Learning Interface (for) Circuits (and) Electronics </wiki-migration/university/tools/m1k/alice/users-guide>`
 -  :doc:`ALM1000 DC Volt Meter User Guide </wiki-migration/university/tools/m1k/alice/voltmeter-users-guide>`
@@ -37,7 +38,7 @@ Interfaces for DC, AC, Time Domain and Frequency Domain analysis make exploring 
 
 .. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f1.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Download
 ========
@@ -76,6 +77,8 @@ Raspberry Pi users with Raspbian need to have the Jessie distribution installed 
 Manually installing numpy Python extension
 ==========================================
 
-For Linux users, numpy might already be part of your Python 2.7 distribution. Otherwise you can download and install numpy through the software / package manager on your particular version of Linux.
+For Linux users, numpy might already be part of your Python 2.7 distribution.
+Otherwise you can download and install numpy through the software / package
+manager on your particular version of Linux.
 
 For Windows users, there are Windows binary installers that can be downloaded from `SourceForge <https://sourceforge.net/projects/numpy/files/NumPy/1.10.2/>`_. The latest version may or may not have a Windows binary so you may need to look back one or two version releases to find a Windows binary. As of this writing the newest version with a binary is numpy-1.10.2-win32-superpack-python2.7.exe 2015-12-14. Be sure to download the version for Python 2.7! Note that the developers have only created a Windows binary for 32 bit Python 2.7. Users more familiar with building from source code can download the source archive and use the setup scripts to install ( build ) numpy for their 64 bit version of Python.

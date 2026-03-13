@@ -9,7 +9,7 @@ Screenshots / Descriptions
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/partial_reconfiguration_plugin.png
    :align: right
-   :width: 460px
+   :width: 460
 
 Reconfigurable Partition
 ~~~~~~~~~~~~~~~~~~~~~~~~

@@ -4,14 +4,24 @@ Activity: BJT Current Mirror - ADALM1000
 Objective:
 ----------
 
-The goal of this activity is to study the BJT current source or current mirror. Important attributes for current sources include high output resistance with a wide range of voltage compliance and rejection of external variations such as power supply or temperature.
+The goal of this activity is to study the BJT current source or current mirror.
+Important attributes for current sources include high output resistance with a
+wide range of voltage compliance and rejection of external variations such as
+power supply or temperature.
 
 Notes:
 ------
 
-As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.
+As in all the ALM labs we use the following terminology when referring to the
+connections to the M1000 connector and configuring the hardware. The green
+shaded rectangles indicate connections to the M1000 analog I/O connector. The
+analog I/O channel pins are referred to as CA and CB. When configured to force
+voltage / measure current -V is added as in CA-V or when configured to force
+current / measure voltage -I is added as in CA-I. When a channel is configured
+in the high impedance mode to only measure voltage -H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
 
 Simple Current Mirror
 ---------------------
@@ -19,20 +29,19 @@ Simple Current Mirror
 Materials:
 ~~~~~~~~~~
 
-Analog Discovery Lab hardware Solder-less breadboard Jumper wires 2 - small signal NPN transistors (2N3904 or SSM2212)
+Analog Discovery Lab hardware Solder-less breadboard Jumper wires 2 - small
+signal NPN transistors (2N3904 or SSM2212)
 
 Directions:
 ~~~~~~~~~~~
 
 The good way to measure the characteristics of the current mirror is to reuse the same basic configuration that was used in the common emitter BJT curve tracer experiments. Diode connected transistor Q\ :sub:`1` is connected across the base and emitter terminals of Q\ :sub:`2`. I\ :sub:`in` will be equal to the Channel A output current. Iout will be the current measured by channel B.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Current mirror test circuit
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -46,7 +55,7 @@ Two identical transistors with the same base to emitter voltage will have the sa
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_e1.png
    :align: center
-   :width: 150px
+   :width: 150
 
 where: Is = the saturation current, and is a constant V\ :sub:`BE` is the base emitter voltage The thermal voltage, KT/q = 25.8 mV at room temperature
 
@@ -62,13 +71,11 @@ Current Mirror with Base Current Compensation
 
 Modify the simple mirror circuit by adding the base current compensation transistor Q\ :sub:`3` as shown below. Repeat the same procedure you followed for the simple mirror circuit. In addition to the same quantities and graphs, does your data indicate any advantage to this circuit? Any disadvantages?
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Current Mirror with Base Current Compensation
-
 
 **For Further Reading:**
 
@@ -77,15 +84,16 @@ http://en.wikipedia.org/wiki/Current_mirror
 Wilson Current Mirror
 ---------------------
 
-Modify the simple mirror into a Wilson Mirror as shown below. Repeat the same procedure you followed for the simple mirror circuit. In addition to the same quantities and graphs, does your data indicate any advantage to this circuit? Any disadvantages?
-
+Modify the simple mirror into a Wilson Mirror as shown below. Repeat the same
+procedure you followed for the simple mirror circuit. In addition to the same
+quantities and graphs, does your data indicate any advantage to this circuit?
+Any disadvantages?
 
 |image3|
 
 .. container:: centeralign
 
    Figure 3 Wilson current mirror
-
 
 Questions:
 ~~~~~~~~~~
@@ -97,8 +105,10 @@ http://en.wikipedia.org/wiki/Wilson_current_source
 Widlar current mirror
 ---------------------
 
-Modify the simple mirror into a Widlar Mirror as shown below. Repeat the same procedure you followed for the simple mirror circuit. In addition to the same quantities and graphs, does your data indicate any advantage to this circuit? Any disadvantages?
-
+Modify the simple mirror into a Widlar Mirror as shown below. Repeat the same
+procedure you followed for the simple mirror circuit. In addition to the same
+quantities and graphs, does your data indicate any advantage to this circuit?
+Any disadvantages?
 
 |image4|
 
@@ -106,11 +116,14 @@ Modify the simple mirror into a Widlar Mirror as shown below. Repeat the same pr
 
    Figure 4 Widlar current mirror
 
-
 Questions:
 ~~~~~~~~~~
 
-1. Use the output impedance of the simple mirror to determine the Early voltage for the NPN transistor. 2. Build a mirror using PNP transistors and use the output impedance of the simple mirror to determine the Early voltage for the PNP transistor. 3. The output impedance of a Widlar current mirror is approximately,
+1. Use the output impedance of the simple mirror to determine the Early voltage
+   for the NPN transistor. 2. Build a mirror using PNP transistors and use the
+   output impedance of the simple mirror to determine the Early voltage for the
+   PNP transistor. 3. The output impedance of a Widlar current mirror is
+   approximately,
 
 :math:`R_out = r_o[1 + g_m R_3]`
 
@@ -128,25 +141,25 @@ low Input Headroom Mirror
 Objective:
 ~~~~~~~~~~
 
-The goal of this activity is to study BJT current source or current mirror with lower input headroom requirements.
+The goal of this activity is to study BJT current source or current mirror with
+lower input headroom requirements.
 
 Materials:
 ~~~~~~~~~~
 
-1 - 150 KΩ Resistor (or a 100 KΩ in series with a 47 KΩ) 2 - small signal NPN transistor (2N3904 or SSM2212) 1 - small signal PNP transistor (2N3096)
+1 - 150 KΩ Resistor (or a 100 KΩ in series with a 47 KΩ) 2 - small signal NPN
+transistor (2N3904 or SSM2212) 1 - small signal PNP transistor (2N3096)
 
 Directions:
 ~~~~~~~~~~~
 
 The diode configuration with nearly zero turn on voltage from activity 2 is used here to make a current mirror. The current input node at the collector of Q\ :sub:`1` (base of PNP Q\ :sub:`3`) is now much closer to ground compared to the conventional current mirror. What advantages would this have over the conventional mirror?
 
-
 |image5|
 
 .. container:: centeralign
 
    Figure 5 Low input head room mirror
-
 
 Ideally the collector of PNP Q\ :sub:`3` would be connected to some negative voltage with respect to ground. Try connecting the collector of Q\ :sub:`3` to a negative voltage supplied by a battery connected with its + terminal connected to ground (collector of Q3 connected to - terminal of battery). What happens? Can the input node of the mirror get even closer to ground now?
 
@@ -157,12 +170,12 @@ Ideally the collector of PNP Q\ :sub:`3` would be connected to some negative vol
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f1.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f2.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f3.png
-   :width: 550px
+   :width: 550
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f4.png
-   :width: 550px
+   :width: 550
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f6.png
-   :width: 500px
+   :width: 500

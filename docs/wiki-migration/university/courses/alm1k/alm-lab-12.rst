@@ -9,19 +9,37 @@ To investigate the simple differential amplifier using NPN transistors.
 Notes:
 ------
 
-As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.
+As in all the ALM labs we use the following terminology when referring to the
+connections to the M1000 connector and configuring the hardware. The green
+shaded rectangles indicate connections to the M1000 analog I/O connector. The
+analog I/O channel pins are referred to as CA and CB. When configured to force
+voltage / measure current -V is added as in CA-V or when configured to force
+current / measure voltage -I is added as in CA-I. When a channel is configured
+in the high impedance mode to only measure voltage -H is added as CA-H.
 
-In this Lab you will be using both of the channels of the ALM1000 in the split Input / Output mode. CB-Out is used to denote the connection to the Output pin and CB-In is used to denote the Input pin on the (expanded) 8 pin connector.
+In this Lab you will be using both of the channels of the ALM1000 in the split
+Input / Output mode. CB-Out is used to denote the connection to the Output pin
+and CB-In is used to denote the Input pin on the (expanded) 8 pin connector.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
 
 Background:
 -----------
 
-First a few notes on hardware limitation issues. While the waveform generator in the ALM1000 system uses a 16 bit wide dynamic range DAC there is still significant wide band noise which can reduce the signal to noise ration when generating very small amplitude signals. The input signal level needed for the measurements in this lab activity is rather small because of the gain of the differential amplifier. If the waveform generator output were used directly the signal to noise ratio of its output is not high enough. The signal to noise ratio can be improved in this case by increasing the signal level and then placing an attenuator and filter ( single ended example shown in figure 1 ) between the generator outputs and the circuit inputs. The materials needed for this are:
+First a few notes on hardware limitation issues. While the waveform generator in
+the ALM1000 system uses a 16 bit wide dynamic range DAC there is still
+significant wide band noise which can reduce the signal to noise ration when
+generating very small amplitude signals. The input signal level needed for the
+measurements in this lab activity is rather small because of the gain of the
+differential amplifier. If the waveform generator output were used directly the
+signal to noise ratio of its output is not high enough. The signal to noise
+ratio can be improved in this case by increasing the signal level and then
+placing an attenuator and filter ( single ended example shown in figure 1 )
+between the generator outputs and the circuit inputs. The materials needed for
+this are:
 
 1 - 47Ω resistor 1 - 1KΩ resistor 1 - 0.1uF capacitors (marked 104)
-
 
 |image1|
 
@@ -29,26 +47,25 @@ First a few notes on hardware limitation issues. While the waveform generator in
 
    Figure 1 20:1 attenuator / filter example
 
-
 An attenuator and filter like this will be used in all parts of this lab.
 
 Materials:
 ~~~~~~~~~~
 
-ADALM1000 hardware module Solder-less breadboard and jumper wire kit 3 - 10KΩ resistors 1 - 47Ω resistor 2 - 1KΩ resistor 1 - 0.1uF capacitor (marked 104) 2 - Small signal NPN transistors (2N3904 or SSM2212 NPN matched pair)
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 3 - 10KΩ
+resistors 1 - 47Ω resistor 2 - 1KΩ resistor 1 - 0.1uF capacitor (marked 104) 2 -
+Small signal NPN transistors (2N3904 or SSM2212 NPN matched pair)
 
 Directions:
 ~~~~~~~~~~~
 
 Build the NPN differential pair test circuit shown in figure 2. The connections to the ALM1000 are as indicated in the green boxes. Q\ :sub:`1` and Q\ :sub:`2` should be selected from your available transistors with the best matching of V\ :sub:`BE`. The emitters of Q\ :sub:`1` and Q\ :sub:`2` share a common connection with one end of R\ :sub:`3`. The other end of R\ :sub:`3` is connected to ground (0V) and supplies the tail current. The base of Q\ :sub:`1` is connected to the output of the first arbitrary waveform generator, CH A, and the base of Q\ :sub:`2` is connected to the output of the second arbitrary waveform generator, CH B, through the 20:1 attenuator network. The two collector load resistors R\ :sub:`1` and R\ :sub:`3` connect between the collectors respectively of Q\ :sub:`1` and Q\ :sub:`2` and the positive supply +5V. The two Split I/O inputs AIN and BIN are used to measure the differential output as seen across the two 10K load resistors.
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Differential pair with tail resistor
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -58,7 +75,12 @@ Both channels A and B should be set to the SVMI Split I/O mode. Both generators 
 Procedure:
 ~~~~~~~~~~
 
-Set to display all four traces. Turn on the display of the average voltage for the CA-V and CB-V traces. Set the channel A input offset equal to the average value. The displayed average should now be nearly zero. Do the same with channel B. Set the channel A and B position to 0 ( the CA-V and CB-V traces should now be centered on the grid. Turn on the CA-V - CB-V math trace, this will now display the differential output voltage.
+Set to display all four traces. Turn on the display of the average voltage for
+the CA-V and CB-V traces. Set the channel A input offset equal to the average
+value. The displayed average should now be nearly zero. Do the same with channel
+B. Set the channel A and B position to 0 ( the CA-V and CB-V traces should now
+be centered on the grid. Turn on the CA-V - CB-V math trace, this will now
+display the differential output voltage.
 
 By changing the value of R\ :sub:`3`, you should explore the effects of the level of the tail current on the gain of the circuit and the linear input range and the shape of the nonlinear (tanh) fall off in the gain as the circuit saturates. With minor additions to the basic circuit, such as emitter degeneration resistors, you should also explore techniques to extend and linearize the range of the input swing and the effects on circuit gain.
 
@@ -72,19 +94,16 @@ Additional Materials:
 
 2 - small signal NPN transistors ( Q\ :sub:`3`, Q\ :sub:`4` 2N3904 or SSM2212)
 
-
 |image3|
 
 .. container:: centeralign
 
    Figure 3 Diff pair with tail current source
 
-
 Measuring Common Mode gain
 --------------------------
 
 Common mode rejection is a key aspect of the differential amplifier. CMR can be measured by connecting the base of both transistors Q\ :sub:`1` and Q\ :sub:`2` to the same input source. You should generate plots showing the differential output for both the resistively biased and current source biased differential pair as the common mode voltage is swept + and - 500mV around 2.5V.
-
 
 |image4|
 
@@ -92,19 +111,21 @@ Common mode rejection is a key aspect of the differential amplifier. CMR can be 
 
    Figure 4 Common Mode Gain configuration
 
-
 Questions:
 ~~~~~~~~~~
 
 Would you characterize this transistor amplifier as being inverting or non-inverting to outputs at each of the collector terminals with the base terminal of transistor Q\ :sub:`1` being considered the plus (non-inverting) input? Explain your answer.
 
-Describe what happens to each of the output voltages (CA-In and CB-In ) as the input voltage (CA-Out) increases, Decreases:
+Describe what happens to each of the output voltages (CA-In and CB-In ) as the
+input voltage (CA-Out) increases, Decreases:
 
 Suppose this differential-pair circuit was perfectly balanced. In this condition, how much voltage would be expected between the collector terminals of Q\ :sub:`1` and Q\ :sub:`2`?
 
-What is common-mode voltage, and how should a differential amplifier (ideally) respond to it?
+What is common-mode voltage, and how should a differential amplifier (ideally)
+respond to it?
 
-Repeat the common mode gain measurements on the circuit shown in figure 3 with the tail current source. How has the result changed and why.
+Repeat the common mode gain measurements on the circuit shown in figure 3 with
+the tail current source. How has the result changed and why.
 
 **For Further Reading:**
 
@@ -113,10 +134,10 @@ Repeat the common mode gain measurements on the circuit shown in figure 3 with t
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f1.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f2.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f3.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f4.png
-   :width: 600px
+   :width: 600

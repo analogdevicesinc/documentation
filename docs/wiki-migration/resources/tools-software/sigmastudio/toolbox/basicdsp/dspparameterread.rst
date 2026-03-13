@@ -3,8 +3,8 @@ DSP Parameter Read
 
 :doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-
-This module can be used to read any parameter/array of parameter values from schematic. Also it can write the read values to the file periodically.
+This module can be used to read any parameter/array of parameter values from
+schematic. Also it can write the read values to the file periodically.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/dspparamread.jpg
    :align: center
@@ -27,8 +27,8 @@ The module currently does not support grow/add functionality.
 Configurations
 --------------
 
-The DSP param readback module contains controls to initiate single read/continuous read.
-
+The DSP param readback module contains controls to initiate single
+read/continuous read.
 
 |image1|
 
@@ -40,7 +40,9 @@ The DSP param readback module contains controls to initiate single read/continuo
 | Continuous Read Circle | -             | -     | Click on this circle to initiate continious read. This will be visible only if the continuous read is enabled in the readback configuration |
 +------------------------+---------------+-------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
-After Link Compile Download right click on the module then select 'Configure...' to configure the parameter read options. After configuring, press read button/continuous read circle to initiate the read.
+After Link Compile Download right click on the module then select 'Configure...'
+to configure the parameter read options. After configuring, press read
+button/continuous read circle to initiate the read.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/dspparamreadcontext.jpg
    :align: center
@@ -76,7 +78,8 @@ After Link Compile Download right click on the module then select 'Configure...'
 
 -  Output file write is supported only if the continuous read is enabled.
 -  Once the file write is completed the continuous read will be stopped.
--  Any change in the schematic requires a new Link compile download for the updated parameters to appear in the configuration window.
+-  Any change in the schematic requires a new Link compile download for the
+   updated parameters to appear in the configuration window.
 
 Supported ICs
 -------------

@@ -10,19 +10,18 @@ Selection of A2B chains from multiple chains to aid Variant handling can be done
 **Exclude sub node from discovery:** To exclude the node from discovery, as well as the down nodes that are connected to it.
 
 -  Open the Main node platform page for the chain you wanted the exclude from the discovery.
--  Right click on the main node transceiver and click on "ExcludeNodeFromDiscovery" as shown below
+-  Right click on the main node transceiver and click on
+   "ExcludeNodeFromDiscovery" as shown below
 
 | |image1|
-
 
 .. container:: centeralign
 
    \ **Figure:** Exclude Node From Discovery
 
-
 .. note::
 
-   When the main node is excluded from discovery, the channel is not compiled until it is reincluded.
-
+   When the main node is excluded from discovery, the channel is not compiled
+   until it is reincluded.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/excludenodefromdiscovery.png

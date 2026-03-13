@@ -5,7 +5,8 @@ DTS Overlay
 
 The Raspberry Pi 4 Model B uses the `bcm2711-rpi-4-b.dts <https://github.com/raspberrypi/linux/blob/rpi-5.15.y/arch/arm/boot/dts/bcm2711-rpi-4-b.dts>`_ file to configure its peripherals. To interface the AD242x with the Raspberry Pi, additional configuration is required in an overlay file, which must then be added to the kernel.
 
-The overlay file rpi-ad242x-overlay.dts is provided below to enable the Codec on the Raspberry Pi:
+The overlay file rpi-ad242x-overlay.dts is provided below to enable the Codec on
+the Raspberry Pi:
 
 ::
 

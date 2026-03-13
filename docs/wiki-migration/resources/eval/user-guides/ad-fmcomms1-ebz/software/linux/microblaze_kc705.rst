@@ -1,8 +1,6 @@
 Linux on the Xilinx KC705 Kintex™-7 FPGA development Board
 ==========================================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,8 +17,6 @@ Linux on the Xilinx KC705 Kintex™-7 FPGA development Board
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 This guide provides some step-by-step instructions on how to build a Microblaze Linux Kernel image for the AD-FMCOMMS1 FMC board connected to an `KC705 <https://www.xilinx.com/KC705>`_.
 
 Required Software
@@ -35,16 +31,17 @@ Required Software
 
    Latest released files can be downloaded from :doc:`here </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`
 
-
 Build Linux - Step by Step instructions
 ---------------------------------------
 
 Get Microblaze Little Endian Toolchain from Xilinx
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Microblaze Little Endian Toolchain can be found in the Xilinx Vitis install folder:
+The Microblaze Little Endian Toolchain can be found in the Xilinx Vitis install
+folder:
 
-For 64-bit hosts use: /opt/Xilinx/Vitis/2021.2/gnu/microblaze/linux_toolchain/lin64_le/bin
+For 64-bit hosts use:
+/opt/Xilinx/Vitis/2021.2/gnu/microblaze/linux_toolchain/lin64_le/bin
 
 Get Linux kernel source
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +63,6 @@ Get Linux kernel source
       Dave@HAL9000:~/fmcomms1$
    
 
-
 Checkout main branch
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -85,7 +81,6 @@ Checkout main branch
       Dave@HAL9000:~/fmcomms1/linux$
    
 
-
 Set Environmental Variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -100,7 +95,6 @@ Set Environmental Variables
       Dave@HAL9000:~/fmcomms1/linux$ export ARCH=microblaze
       Dave@HAL9000:~/fmcomms1/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
    
-
 
 Configure Kernel for KC705 XCOMM platform (aka FMCOMMS1)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,7 +119,6 @@ Configure Kernel for KC705 XCOMM platform (aka FMCOMMS1)
       #
       Dave@HAL9000:~/fmcomms1/linux$
    
-
 
 Get Root File-System
 ~~~~~~~~~~~~~~~~~~~~
@@ -154,21 +147,25 @@ Get Root File-System
       Dave@HAL9000:~/linux$
    
 
-
 Build kernel
 ~~~~~~~~~~~~
 
-The result of building the kernel is an elf file in arch/microblaze/boot named simpleImage.<dts file name> based on the dts specified.
+The result of building the kernel is an elf file in arch/microblaze/boot named
+simpleImage.<dts file name> based on the dts specified.
 
-The build process for the kernel searches in the arch/microblaze/boot/dts directory for a specified device tree file and then builds the device tree into the kernel image.
+The build process for the kernel searches in the arch/microblaze/boot/dts
+directory for a specified device tree file and then builds the device tree into
+the kernel image.
 
-The following command shows the general format for the build target name. Note that the <dts file name> does not include the file extension ".dts".
+The following command shows the general format for the build target name. Note
+that the <dts file name> does not include the file extension ".dts".
 
 ::
 
    Dave@HAL9000:~/linux$ make simpleImage.<dts file name>
 
-To see what device-trees for the different FPGA carrier and FMC module combination exist type:
+To see what device-trees for the different FPGA carrier and FMC module
+combination exist type:
 
 ::
 
@@ -203,8 +200,8 @@ To see what device-trees for the different FPGA carrier and FMC module combinati
       Dave@HAL9000:~/devel/git/staging_3$
    
 
-
-The newly created Linux ELF file can now be loaded using the Xilinx ISE Microprocessor Debugger (XMD). Further instructions can be found here:
+The newly created Linux ELF file can now be loaded using the Xilinx ISE
+Microprocessor Debugger (XMD). Further instructions can be found here:
 
 :doc:`AD-FMCOMMS1-EBZ KC705 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart/microblaze_kc705>`
 
@@ -224,4 +221,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

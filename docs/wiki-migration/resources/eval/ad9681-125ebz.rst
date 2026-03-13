@@ -15,19 +15,17 @@ Typical Measurement Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9681-125ebz_top_level.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 1. Evaluation Board Connection—*\ :adi:`AD9681-125EBZ <AD9681>`\ *(Tyco connector version shown on Left) and* :adi:`HSC-ADC-EVALDZ <hsadcevalboard>` *(on Right)*
-
 
    |image1|
 
 .. container:: centeralign
 
    *Figure 1A. Evaluation Board Connection—*\ :adi:`AD9681-125EBZ <AD9681>`\ *(FMC connector version on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
-
 
 Features
 --------
@@ -75,14 +73,20 @@ This section provides quick start procedures for using the :adi:`AD9681-125EBZ <
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
 
-Before using the software for testing, configure the evaluation board as follows:
+Before using the software for testing, configure the evaluation board as
+follows:
 
 -  Connect the evaluation board to the data capture board, as shown in Figure 1. The Tyco connector version slides horizontally to connect to the :adi:`HSC-ADC-EVALDZ <hsadcevalboard>`. For the FMC connector version, align the FMC connector of the :adi:`AD9249-65EBZ <AD9249>` over the connector on the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>`, and carefully press them together. Note that FMC connectors often come from the factory with a sticker that prevents connection. Remove this sticker (if present) before attempting to make the connection.
 -  On the ADC evaluation board, confirm that the jumpers are installed as shown in Figure 2.
 -  Connect one 6V, 2.5A switching power supply (such as the CUI, Inc., EPS060250UH-PHP-SZ that is supplied) to the :adi:`AD9681-125EBZ <AD9681>`.
 -  Connect the 12V, 3.3A switching power supply to the :adi:`HSC-ADC-EVALDZ <hsadcevalboard>` board.
 -  Connect the capture board to the PC using a USB cable.
--  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal to the desired channel(s). Use a shielded, RG-58, 50Ω coaxial cable (optimally 1 m or shorter) to connect the signal generator. For best results, use a narrow-band, band-pass filter with 50Ω terminations and an appropriate center frequency. (Analog Devices, Inc. uses TTE, Allen Avionics, and K&L band-pass filters.)
+-  On the ADC evaluation board, use a clean signal generator with low phase
+   noise to provide an input signal to the desired channel(s). Use a shielded,
+   RG-58, 50Ω coaxial cable (optimally 1 m or shorter) to connect the signal
+   generator. For best results, use a narrow-band, band-pass filter with 50Ω
+   terminations and an appropriate center frequency. (Analog Devices, Inc. uses
+   TTE, Allen Avionics, and K&L band-pass filters.)
 
 Evaluation Board Hardware
 -------------------------
@@ -94,18 +98,48 @@ See :adi:`AD9681 Design Support <static/imported-files/eval_boards/AD9681_Design
 Power Supplies
 ~~~~~~~~~~~~~~
 
-This evaluation board comes with a wall-mountable switching power supply that provides a 6V, 2A maximum output. Connect the supply to a 100V ac to 240V ac, 47Hz to 63Hz wall outlet. The output from the supply is provided through a 2.1mm inner diameter jack that connects to the printed circuit board (PCB) at P101. The 6V supply is fused and conditioned on the PCB before connecting to the low dropout linear regulators that supply the proper bias to each of the various sections on the board.
+This evaluation board comes with a wall-mountable switching power supply that
+provides a 6V, 2A maximum output. Connect the supply to a 100V ac to 240V ac,
+47Hz to 63Hz wall outlet. The output from the supply is provided through a 2.1mm
+inner diameter jack that connects to the printed circuit board (PCB) at P101.
+The 6V supply is fused and conditioned on the PCB before connecting to the low
+dropout linear regulators that supply the proper bias to each of the various
+sections on the board.
 
-The evaluation board can be powered in a nondefault condition using external bench power supplies. To do this, remove the E102, E103, E110, and E113 ferrite beads to disconnect the on-board LDOs from the power planes. Note that in some board configurations some of these might already be uninstalled. P102 and P103 headers can be installed to facilitate connection of external bench supplies to the board. E106, E107, E108 and E109 need to be populated to connect P102 and P103 to the board power domains. A 1.8V , 0.5A supply is needed for both 1.8V_DUT_AVDD and 1.8V_DRVDD. Although the voltage requirements are the same for 1.8V_DUT_AVDD and 1.8V_DRVDD, it is recommended that separate supplies be used for each of these.
+The evaluation board can be powered in a nondefault condition using external
+bench power supplies. To do this, remove the E102, E103, E110, and E113 ferrite
+beads to disconnect the on-board LDOs from the power planes. Note that in some
+board configurations some of these might already be uninstalled. P102 and P103
+headers can be installed to facilitate connection of external bench supplies to
+the board. E106, E107, E108 and E109 need to be populated to connect P102 and
+P103 to the board power domains. A 1.8V , 0.5A supply is needed for both
+1.8V_DUT_AVDD and 1.8V_DRVDD. Although the voltage requirements are the same for
+1.8V_DUT_AVDD and 1.8V_DRVDD, it is recommended that separate supplies be used
+for each of these.
 
-Two additional supplies, 3.3V_CLK and 1.8V_DVDD, are used to power additional on board circuitry. If used, these supplies should each have at least 0.5A current capability.
+Two additional supplies, 3.3V_CLK and 1.8V_DVDD, are used to power additional on
+board circuitry. If used, these supplies should each have at least 0.5A current
+capability.
 
 Input Signals
 ~~~~~~~~~~~~~
 
-When connecting the ADC clock and analog source, use clean signal generators with low phase noise, such as the Rohde & Schwarz SMA, or an equivalent. Use a shielded, RG-58, 50Ω coaxial cable (optimally 1 m or shorter) for connecting to the evaluation board. Enter the desired frequency and amplitude (see the Specifications section in the data sheet). When connecting the analog input source, use of a multipole, narrow-band band-pass filter with 50Ω terminations is recommended. Analog Devices uses band-pass filters from TTE and K&L Microwave, Inc. Connect the filters as close to the evaluation board as possible.
+When connecting the ADC clock and analog source, use clean signal generators
+with low phase noise, such as the Rohde & Schwarz SMA, or an equivalent. Use a
+shielded, RG-58, 50Ω coaxial cable (optimally 1 m or shorter) for connecting to
+the evaluation board. Enter the desired frequency and amplitude (see the
+Specifications section in the data sheet). When connecting the analog input
+source, use of a multipole, narrow-band band-pass filter with 50Ω terminations
+is recommended. Analog Devices uses band-pass filters from TTE and K&L
+Microwave, Inc. Connect the filters as close to the evaluation board as
+possible.
 
-If an external clock source is used instead of the onboard crystal oscillator, it should also be supplied with a clean signal generator as previously specified for the analog input signals. Analog Devices evaluation boards typically can accept ~2.8V p-p or 13 dBm sine wave input for the clock at the board SMA clock connector. If an external off-board clock source is used, remove the jumper on J804, and C810, to disable and disconnect the on-board crystal oscillator.
+If an external clock source is used instead of the onboard crystal oscillator,
+it should also be supplied with a clean signal generator as previously specified
+for the analog input signals. Analog Devices evaluation boards typically can
+accept ~2.8V p-p or 13 dBm sine wave input for the clock at the board SMA clock
+connector. If an external off-board clock source is used, remove the jumper on
+J804, and C810, to disable and disconnect the on-board crystal oscillator.
 
 Output Signals
 ~~~~~~~~~~~~~~
@@ -115,7 +149,9 @@ The default setup uses the Analog Devices high speed converter evaluation platfo
 Jumper Settings
 ---------------
 
-Set the jumper settings/link options on the evaluation board for the required operating modes before powering on the board. The functions of the jumpers are described in Table 1. Figure 2 shows the default jumper settings.
+Set the jumper settings/link options on the evaluation board for the required
+operating modes before powering on the board. The functions of the jumpers are
+described in Table 1. Figure 2 shows the default jumper settings.
 
 Table 1. Jumper Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,13 +179,11 @@ Table 1. Jumper Settings
 
    *Figure 2. Default Jumper Connections for* :adi:`AD9681-125EBZ <AD9681>` *Board (Tyco connector version shown)*
 
-
    |image3|
 
 .. container:: centeralign
 
    *Figure 2A. Default Jumper Connections for* :adi:`AD9681-125EBZ <AD9681>` *Board (FMC connector version shown)*
-
 
 Evaluation Board Circuitry
 --------------------------
@@ -159,17 +193,22 @@ This section explains the default and optional ADC settings or modes allowed on 
 Power
 ~~~~~
 
-Connect the switching power supply that is supplied in the evaluation kit between a rated 100V ac to 240V ac, 47Hz to 63Hz wall outlet and P101.
+Connect the switching power supply that is supplied in the evaluation kit
+between a rated 100V ac to 240V ac, 47Hz to 63Hz wall outlet and P101.
 
 Analog Input
 ~~~~~~~~~~~~
 
-The eight channel inputs on the evaluation board are set up for a double balun-coupled analog input with a 50Ω impedance. The default analog input configuration supports analog input frequencies of up to ~200 MHz.
+The eight channel inputs on the evaluation board are set up for a double
+balun-coupled analog input with a 50Ω impedance. The default analog input
+configuration supports analog input frequencies of up to ~200 MHz.
 
 RBIAS
 ~~~~~
 
-RBIAS has a default setting of 10 kΩ (R205 and R288) to ground and is used to set the ADC core bias current. Note that using a resistor value other than 10kΩ, 1% resistors for RBIAS1 and RBIAS2 may degrade the performance of the device.
+RBIAS has a default setting of 10 kΩ (R205 and R288) to ground and is used to
+set the ADC core bias current. Note that using a resistor value other than 10kΩ,
+1% resistors for RBIAS1 and RBIAS2 may degrade the performance of the device.
 
 Clock
 ~~~~~
@@ -207,14 +246,16 @@ GND ("float" P1 Pin 5)                   Normal Operation
 1.8V_DUT_AVDD (jumper P1 Pin 5 to Pin 6) 10 0000 0000 0000
 ======================================== =================
 
-Note that the above settings only apply when CSB1 and CSB2 are tied high (P1 Pin 8 and Pin 11 "floating") at power up.
+Note that the above settings only apply when CSB1 and CSB2 are tied high (P1 Pin
+8 and Pin 11 "floating") at power up.
 
 Additional information on the Standalone (PIN) Mode is provided in the :adi:`AD9681` data sheet.
 
 Default Mode
 ~~~~~~~~~~~~
 
-To operate the device under test (DUT) using the SPI, follow the jumper settings for P1 as shown in Table 1.
+To operate the device under test (DUT) using the SPI, follow the jumper settings
+for P1 as shown in Table 1.
 
 How To Use The Software For Testing
 -----------------------------------
@@ -224,22 +265,20 @@ Setting up the ADC Data Capture
 
 The installers for VisualAnalog and SPIController are in the following locations: `visualanalog_setup.exe <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/visualanalog/visualanalog_setup.exe>`_ `spicontroller_setup.exe <https://wiki.analog.com/ftp/ftp.analog.com/pub/adispi/a2dcomponents/install/spicontroller_setup.exe>`_ Run these installers on the PC that is connected to the evaluation setup before proceeding.
 
-After configuring the board hardware, set up the ADC data capture using the following steps:
+After configuring the board hardware, set up the ADC data capture using the
+following steps:
 
 -  Start VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 3).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9681_va_new_canvas_window.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ *Figure 3. VisualAnalog, New Canvas Window*\
 
-
 -  After the template is selected, a message might appear asking if the default configuration can be used to program the FPGA (see Figure 4). If this message appears, click **Yes**, and the window will close.
-
-
 
 |image4|
 
@@ -247,17 +286,15 @@ After configuring the board hardware, set up the ADC data capture using the foll
 
    \ *Figure 4. VisualAnalog Default Configuration Message*\
 
-
 -  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window (see Figure 5), to see what is shown in Figure 6.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9681_va_toolbar_collapsed.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ *Figure 5. VisualAnalog Window Toolbar, Collapsed Display*
-
 
    |image5|
 
@@ -265,10 +302,8 @@ After configuring the board hardware, set up the ADC data capture using the foll
 
    \ *Figure 6. VisualAnalog, Main Window Expanded Display*\
 
-
-4. To configure VisualAnalog to operate with the AD9681, push the Settings button on the ADCDataCapture block, as shown in Figure 7.
-
-
+4. To configure VisualAnalog to operate with the AD9681, push the Settings
+   button on the ADCDataCapture block, as shown in Figure 7.
 
 |image6|
 
@@ -276,10 +311,13 @@ After configuring the board hardware, set up the ADC data capture using the foll
 
    \ *Figure 7. VisualAnalog ADC Data Capture Block*\
 
-
-5. In the ADC Data Capture Settings Window, General Tab, select AD9681 to be the device, enter the sample clock frequency (125 is the default value), as shown in Figure 8. The sample frequency entered here is used for scaling of frequency values in test results and graphs. In the Output Data field, the channels to be tested are selected, as well as the FFT capture depth ("Length"). Note that the total of the capture depths for all selected channels cannot exceed 256k.
-
-
+5. In the ADC Data Capture Settings Window, General Tab, select AD9681 to be the
+   device, enter the sample clock frequency (125 is the default value), as shown
+   in Figure 8. The sample frequency entered here is used for scaling of
+   frequency values in test results and graphs. In the Output Data field, the
+   channels to be tested are selected, as well as the FFT capture depth
+   ("Length"). Note that the total of the capture depths for all selected
+   channels cannot exceed 256k.
 
 |image7|
 
@@ -287,17 +325,13 @@ After configuring the board hardware, set up the ADC data capture using the foll
 
    \ *Figure 8. VisualAnalog ADC Data Capture Settings Window, General Tab*\
 
-
 6. In the ADC Data Capture Settings Window, Capture Board Tab, enter 30 in the Fill Delay field. Push the Browse button to navigate to the FPGA program file for the AD9681. The default installation location and filename will be similar to: For HSC-ADC-EVALDZ FPGA board C:\\Program Files (x86)\\Analog Devices\\VisualAnalog\\Hardware\\HADv6\\AD9681_hadv6.mcs For HSC-ADC-EVALEZ FPGA board C:\\Program Files (x86)\\Analog Devices\\VisualAnalog\\Hardware\\HADv6\\ad9681_evalez.mcs Select the appropriate program and then push the **program button**.
-
-
 
 |image8|
 
 .. container:: centeralign
 
    \ *Figure 9. VisualAnalog ADC Data Capture Settings Window, Capture Board Tab*\
-
 
 7. VisualAnalog is now setup to work with the AD9681-125EBZ in the default condition. Other VisualAnalog features and capture settings are documented in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*.
 
@@ -307,42 +341,38 @@ Evaluation And Test
 Setting up the SPI Controller Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
+After the ADC data capture board setup is complete, set up the SPI controller
+software using the following procedure:
 
 -  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select .cfg file whose name begins with AD9681. If not prompted, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 10).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9681_spicontroller_global_tab_chipid.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 10. SPI Controller, CHIP ID(1) Box*\
 
-
 -  Click the **New DUT** button in the **SPIController** window (see Figure 11)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9681_spicontroller_global_tab_newdut_button.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 11. SPI Controller, New DUT Button*\
 
-
 -  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 12), and the **MODES(8)** box (see Figure 13). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. If there is any interruption of the ADC clock during power-up or during operation, a Digital Reset may be needed to re-initialize the ADC (Figure 13). For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9681_spicontroller_adcbase0_tab_clkdiv.png
    :align: center
-   :width: 600px
-
-
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 12. SPI Controller, CLOCK DIVIDE(B) Box*\
-
 
 | |image9|
 
@@ -350,45 +380,42 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
    \ *Figure 13. SPI Controller, Chip Power Mode - Digital Reset Selection*\
 
-
 -  Note that other settings can be changed on the **ADCBase 0 tab** (see Figure 12) and the **ADC A** through **ADC D** tabs (see Figure 14) to set up the part in the desired mode. The **ADCBase 0** tab settings affect the entire part, whereas the settings on the **ADC A** through **ADC D** tabs each affect the selected channel only. The B1 (Bank1), B2 (Bank2) and All buttons at the right end of the SPIController button row (as seen in Figure 13 and Figure 14) determine which bank of ADCs is affected by the SPIController settings. The All button is pushed by default which means that the **ADCBase 0** tab settings affect all channels on both ADC banks. The settings in the **ADC A** through **ADC D** will likewise affect their respective channels in both banks. For example, with the All button pushed, settings in the **ADC A** tab will affect channels A1 and A2. If the All button is un-pushed and the B1 (Bank1) button remains pushed, the settings in the **ADC A** tab will only affect channel A1. See the data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9681_spicontroller_adca_tab.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 14. SPI Controller, Example ADC A Page*\
-
 
 -  Invoke a Digital Reset as shown in Figure 13 before testing. After selecting Reset, select Chip run to return to normal operation.
 -  To begin testing, click the **Run** or **Continuous Run** button in the **VisualAnalog** toolbar (see Figure 15).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9681_va_toolbar_collapsed_run_button.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 15. Run/Continuous Run Buttons (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display*\
 
-
 Adjusting the Amplitude of the Input Signal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next step is to adjust the amplitude of the input signal for each channel as follows:
+The next step is to adjust the amplitude of the input signal for each channel as
+follows:
 
 -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9681 FFT** window (see Figure 16).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9681_fft_example.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 16. Graph Window of VisualAnalog*
-
 
 -  Repeat this procedure for the other channels, if desired
 -  Click the floppy-disk icon within the **VisualAnalog Graph - AD9681 FFT** window to save the performance data as a .csv formatted file for plotting or analysis.
@@ -414,7 +441,8 @@ If the FFT appears normal but the performance is poor, check the following:
 -  Make sure that an appropriate filter is used on the analog input.
 -  Make sure that the signal generators for the clock and the analog input are clean (low phase noise).
 -  Change the analog input frequency slightly if noncoherent sampling is being used.
--  Make sure that the SPI configuration file matches the product being evaluated.
+-  Make sure that the SPI configuration file matches the product being
+   evaluated.
 
 If the FFT window remains blank after **Run** in VisualAnalog is clicked, do the following:
 
@@ -424,17 +452,17 @@ If the FFT window remains blank after **Run** in VisualAnalog is clicked, do the
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/wiki_diagram_ad9681-125bz_and_hsc-adc-evaldz.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9681_125ebz_default_jumpers.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9681-125ebz_jumpers.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/10235-005.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9681_va_avg_fft_window_2ch_expanded.png
-   :width: 700px
+   :width: 700
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9656_adc_datacapturesettings_button.png
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9681_adc_datacapturesettings_generaltab.png
-   :width: 500px
+   :width: 500
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9681_adc_datacapturesettings_captureboardtab.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad9681_spicontroller_adcbase0_tab_digreset.png
-   :width: 600px
+   :width: 600

@@ -8,7 +8,9 @@ If you need help getting started with the basics of programming your robot in ja
 Installing the Library
 ----------------------
 
-In order to use the IMU, you will need to download and install the appropriate library. The instructions below assume you are using VS Code, the official supported development environment for FRC.
+In order to use the IMU, you will need to download and install the appropriate
+library. The instructions below assume you are using VS Code, the official
+supported development environment for FRC.
 
 Offline Install
 ~~~~~~~~~~~~~~~
@@ -25,9 +27,20 @@ Offline Install
 Instance Definition and Instantiation
 -------------------------------------
 
-Before you can use the gyro in your code, you must first define an instance. Where exactly it needs to be defined will depend heavily on how your team organizes its robot code, but it needs to be accessible by the Robot class in order to work properly and give you no build errors. If your team is using an Iterative Robot with a RobotMap structure for example, you would put it inside of the RobotMap class. The ADIS16470 has its own dedicated class.
+Before you can use the gyro in your code, you must first define an instance.
+Where exactly it needs to be defined will depend heavily on how your team
+organizes its robot code, but it needs to be accessible by the Robot class in
+order to work properly and give you no build errors. If your team is using an
+Iterative Robot with a RobotMap structure for example, you would put it inside
+of the RobotMap class. The ADIS16470 has its own dedicated class.
 
-Because the IMU plugs directly into the SPI port, the library will pre-define your SPI port for you. IMU is a 3-axis sensor, so you will need to tell it which axis is the yaw axis. By default, this will be the Z axis if you don't define anything (this would be with the RoboRIO and the sensor sitting flat on or in the robot, facing up). Don't worry about defining an algorithm argument, the library will take care of this for you. A typical definition and instantiation will look like this:
+Because the IMU plugs directly into the SPI port, the library will pre-define
+your SPI port for you. IMU is a 3-axis sensor, so you will need to tell it which
+axis is the yaw axis. By default, this will be the Z axis if you don't define
+anything (this would be with the RoboRIO and the sensor sitting flat on or in
+the robot, facing up). Don't worry about defining an algorithm argument, the
+library will take care of this for you. A typical definition and instantiation
+will look like this:
 
 ::
 
@@ -38,17 +51,35 @@ Sensor Initialization/Calibration with calibrate()
 
 The IMU library will perform a calibration for you in its constructor, since this calibration MUST be performed in order for the IMU to function properly. The calibration inside of the constructor takes 4 seconds long by default, but you can change this by using the configCalTime() function. If you want to re-calibrate at some point in your code, you can call the calibrate() function. For more general information about offset calibration, please see the :doc:`general ADIS16470 </wiki-migration/first/adis16470_imu_frc>` IMU page.
 
-New for 2020, the calibrate() function now happens immediately when called. The ADIS16470 has an internal accumulation measurement which is applied as the new offset calibration value when calibrate() is called. Because of this, you should never run this command after the robot has started to move and should never be called after the robot start moving! This function is ideal for situations where the robot was powered on while moving during the initial calibration or if your robot has been sitting for a long time waiting for a match to start.
+New for 2020, the calibrate() function now happens immediately when called. The
+ADIS16470 has an internal accumulation measurement which is applied as the new
+offset calibration value when calibrate() is called. Because of this, you should
+never run this command after the robot has started to move and should never be
+called after the robot start moving! This function is ideal for situations where
+the robot was powered on while moving during the initial calibration or if your
+robot has been sitting for a long time waiting for a match to start.
 
 Using getAngle() and getRate()
 ------------------------------
 
-Now that your gyro is calibrated when the robot turns on, you can access data from the robot in your code. You can do this using the getAngle() method to obtain the robot's current yaw heading, or more rarely by using the getRate() method to obtain the current rotation rate being measured should you happen to need it. The most common places to use these functions are inside of the autonomousPeriodic() and teleopPeriodic() methods. By default, getAngle() returns the Y-axis angle, but you can change this by specifying a specific axis. If you know that your IMU will be mounted in such a way that the primary “yaw” axis is not the same as the IMU's Y axis, you can change the yaw axis by using setYawAxis().
+Now that your gyro is calibrated when the robot turns on, you can access data
+from the robot in your code. You can do this using the getAngle() method to
+obtain the robot's current yaw heading, or more rarely by using the getRate()
+method to obtain the current rotation rate being measured should you happen to
+need it. The most common places to use these functions are inside of the
+autonomousPeriodic() and teleopPeriodic() methods. By default, getAngle()
+returns the Y-axis angle, but you can change this by specifying a specific axis.
+If you know that your IMU will be mounted in such a way that the primary “yaw”
+axis is not the same as the IMU's Y axis, you can change the yaw axis by using
+setYawAxis().
 
 .. tip::
 
-   As a general note, the getAngle() functions will count continuously, meaning when they reach 360 degrees, they will continue to 361, not zero. This is to make any functionality in your code using the IMU angle easier to implement without having to keep track of where in the 0-360 range your robot is or how many rotations have happened.
-
+   As a general note, the getAngle() functions will count continuously, meaning
+   when they reach 360 degrees, they will continue to 361, not zero. This is to
+   make any functionality in your code using the IMU angle easier to implement
+   without having to keep track of where in the 0-360 range your robot is or how
+   many rotations have happened.
 
 Re-Zeroing the Sensor with reset()
 ----------------------------------
@@ -58,7 +89,8 @@ Sometimes it may be necessary to reset the IMU gyro's “zero degrees” positio
 Drive Straight Example
 ----------------------
 
-The code block shown below is a modification of the WPI Library gyro drive straight example to use the ADIS16470 IMU instead.
+The code block shown below is a modification of the WPI Library gyro drive
+straight example to use the ADIS16470 IMU instead.
 
 ::
 

@@ -3,7 +3,11 @@ Streaming Data from the CN0549 into MATLAB
 
 This page is going to discuss how to use the :adi:`CN0549` Machine Learning Enablement Platform for streaming high fidelity analog sensor data from a device under test (DUT), into MATLAB for data analysis. The goal is that once you have the data in these tools, you'll be able to create your own algorithms and train your system using your own data.
 
-This page will outline how to get the data from the sensor all the way to MATLAB, using open-source hardware and software from Analog Devices. At the end of this page, links will also be provided to specific examples done in MATLAB, where you can recreate each example using the training data and scripts provided.
+This page will outline how to get the data from the sensor all the way to
+MATLAB, using open-source hardware and software from Analog Devices. At the end
+of this page, links will also be provided to specific examples done in MATLAB,
+where you can recreate each example using the training data and scripts
+provided.
 
 Requirements
 ------------
@@ -11,7 +15,6 @@ Requirements
 .. important::
 
    This user guide page assumes that you have the complete CN0549 system put together. This includes both hardware and software setup. If you have not completed this step, please refer back to the :doc:`CN0549 user guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0549>` on how to get setup.
-
 
 Hardware:
 
@@ -43,8 +46,9 @@ System Setup
 .. tip::
 
    
-   The user guide shows the USB OTG connector and the HDMI cable installed, but those two steps will not be needed here since we are streaming data over the network into the laptop.
-
+   The user guide shows the USB OTG connector and the HDMI cable installed, but
+   those two steps will not be needed here since we are streaming data over the
+   network into the laptop.
 
 -  Connect one end of the Ethernet cable into the DE10-Nano, and the other end of the Ethernet cable into a router or other network connection.
 -  Plug the mini USB cable into the UART connector of the DE10-Nano.
@@ -52,7 +56,8 @@ System Setup
 
    -  A driver for the board should automatically be detected and installed on your PC. If this does not happen you may have to manually install that driver in order to continue. Here is a link to the `UART Serial Driver <https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers>`_
 
--  Plug the power supply into the wall outlet and use the DC barrel jack to power up the CN0549 setup.
+-  Plug the power supply into the wall outlet and use the DC barrel jack to
+   power up the CN0549 setup.
 
 System Block Diagram
 ~~~~~~~~~~~~~~~~~~~~
@@ -62,14 +67,16 @@ PPT picture of high level block diagram for the hardware and software
 Finding your DE10-Nano
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Before you can start gathering data, you first must locate the CN0549 system setup on your network.
+Before you can start gathering data, you first must locate the CN0549 system
+setup on your network.
 
 -  Setup a UART serial communication between your PC and the DE10-Nano board using the micro USB cable to USB type A
--  Using your device manager, locate the COM port assigned to the DE10-Nano board
+-  Using your device manager, locate the COM port assigned to the DE10-Nano
+   board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/com_port.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Open Putty, Tera Term, or other serial terminal program and open a terminal between the COM port the DE10-Nano board by setting the Baud rate to 115200, and connect.
 -  You'll now be prompted to provide a user name and password.
@@ -81,20 +88,20 @@ Before you can start gathering data, you first must locate the CN0549 system set
    | Username = analog and Password = analog.
    | Press the Enter key between each.
 
-
 -  Type **ifconfig** into the terminal, hit "Enter"
--  That should echo back some information where you can pull out the inet address of eth0.
+-  That should echo back some information where you can pull out the inet
+   address of eth0.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/serial_terminal_linux_ifconfig_inet.png
    :align: center
-   :width: 600px
+   :width: 600
 
 System Block Diagram
 ~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0549_matlab_generic_sw_blk_dig.png
    :align: center
-   :width: 1200px
+   :width: 1200
 
 Connecting to the CN0549 via MATLAB
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

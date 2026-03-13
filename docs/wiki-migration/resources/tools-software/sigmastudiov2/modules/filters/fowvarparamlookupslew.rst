@@ -8,12 +8,15 @@ First Order with Variable Param/Lookup/Slew
 Description
 ===========
 
-The First Order with Variable Parameter Lookup and Slew block gives access to a General Low-Pass and General High-Pass filter algorithms.
+The First Order with Variable Parameter Lookup and Slew block gives access to a
+General Low-Pass and General High-Pass filter algorithms.
 
 Usage
 =====
 
-To open the filter control window, click on the icon button. Select the desired filter type from the drop-down combo-box list. The filter will change in pop-up graph to reflect the selected filter type.
+To open the filter control window, click on the icon button. Select the desired
+filter type from the drop-down combo-box list. The filter will change in pop-up
+graph to reflect the selected filter type.
 
 Targets Supported
 =================
@@ -44,8 +47,6 @@ Name    Type  Description
 ======= ===== ================
 Output0 Audio Output channel 0
 ======= ===== ================
-
-
 
 .. |firstorderwithvarparamlookupslew.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/firstorderwithvarparamlookupslew.png
 .. |firstorderlookupslewwindow.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/firstorderlookupslewwindow.png

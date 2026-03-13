@@ -9,12 +9,15 @@ Master Control Port Status
 Description
 -----------
 
-The master control port Status block sends out the Master control port status in the output pins. Master control errors can be cleared by setting input pin to non-zero value
+The master control port Status block sends out the Master control port status in
+the output pins. Master control errors can be cleared by setting input pin to
+non-zero value
 
 Usage
 -----
 
-Use the output pins to monitor master control port status and error. The error can be cleared by inputting a non-zero value at the input.
+Use the output pins to monitor master control port status and error. The error
+can be cleared by inputting a non-zero value at the input.
 
 Targets Supported
 -----------------
@@ -36,7 +39,6 @@ Name        Type    Description
 =========== ======= ==================================================
 ClearErrors Control Any non -zero value in the input clears the error.
 =========== ======= ==================================================
-
 
 | ====Output Pins====
 

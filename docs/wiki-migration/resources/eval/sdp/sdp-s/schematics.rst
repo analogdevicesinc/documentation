@@ -1,7 +1,8 @@
 SDP-S Schematics
 ================
 
-This page provides schematics for the SDP-S board, and other useful hardware related documents.
+This page provides schematics for the SDP-S board, and other useful hardware
+related documents.
 
 SDP-S Board Schematics
 ----------------------

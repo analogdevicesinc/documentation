@@ -8,7 +8,8 @@ Refer :doc:`SigmaStudio+ scripting </wiki-migration/resources/tools-software/sig
 Purpose
 -------
 
-The document provides information on the access methods to A2B thrift APIs with code snippets to enable automation.
+The document provides information on the access methods to A2B thrift APIs with
+code snippets to enable automation.
 
 Function Definition
 ~~~~~~~~~~~~~~~~~~~

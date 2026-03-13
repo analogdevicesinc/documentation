@@ -50,7 +50,8 @@ GETTING STARTED
 EVALUATION BOARD SETUP PROCEDURE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To configure the EV1HMC8362LP6G or EV1HMC8364LP6G for the first time, perform the following steps.
+To configure the EV1HMC8362LP6G or EV1HMC8364LP6G for the first time, perform
+the following steps.
 
 -  Verify that the analog power supply that is used to power the evaluation board configured to allow an output of 6.0 V and 200 mA of compliance current.
 -  Disable the power supply output.
@@ -97,7 +98,8 @@ Although the EV1HMC8362LP6G and EV1HMC8364LP6G boards do not incorporate the ent
 DEFAULT CONFIGURATION
 ~~~~~~~~~~~~~~~~~~~~~
 
-All components necessary for local oscillator generation are inserted on the EV1HMC8362LP6G and EV1HMC8364LP6G boards.
+All components necessary for local oscillator generation are inserted on the
+EV1HMC8362LP6G and EV1HMC8364LP6G boards.
 
 EVALUATION BOARD SOFTWARE
 -------------------------
@@ -105,17 +107,30 @@ EVALUATION BOARD SOFTWARE
 SOFTWARE
 ~~~~~~~~
 
-Currently there is no software available for the EV1HMC8362LP6G and EV1HMC8364LP6G because they can be evaluated without the use of software. However, the EV1HMC8362LP6G and EV1HMC8364LP6G are configured in a manner that allows use of a Linduino, Arduino Uno, or similar microcontroller board, which may be beneficial for users needing to develop and test switching algorithms for their application. To connect the Arduino Uno microcontroller to the EV1HMC8362LP6G or EV1HMC8364LP6G, flip the Arduino Uno board over so that the digital input/output pins (Pin 8 through Pin 14) line up with Pin 3 to Pin 15 of Connector P3, respectively.
+Currently there is no software available for the EV1HMC8362LP6G and
+EV1HMC8364LP6G because they can be evaluated without the use of software.
+However, the EV1HMC8362LP6G and EV1HMC8364LP6G are configured in a manner that
+allows use of a Linduino, Arduino Uno, or similar microcontroller board, which
+may be beneficial for users needing to develop and test switching algorithms for
+their application. To connect the Arduino Uno microcontroller to the
+EV1HMC8362LP6G or EV1HMC8364LP6G, flip the Arduino Uno board over so that the
+digital input/output pins (Pin 8 through Pin 14) line up with Pin 3 to Pin 15 of
+Connector P3, respectively.
 
 EVALUATION AND TEST
 -------------------
 
-To configure the EV1HMC8362LP6G and EV1HMC8364LP6G for the first time, follow Step 1 through Step 6 outlined in the Evaluation Board Setup Procedure section. The frequency vs. tune voltage listed in the following steps are specific to the EV1HMC8362LP6G, but the same process is applicable to the EV1HMC8364LP6G. The frequency range and performance are different.
+To configure the EV1HMC8362LP6G and EV1HMC8364LP6G for the first time, follow
+Step 1 through Step 6 outlined in the Evaluation Board Setup Procedure section.
+The frequency vs. tune voltage listed in the following steps are specific to the
+EV1HMC8362LP6G, but the same process is applicable to the EV1HMC8364LP6G. The
+frequency range and performance are different.
 
 -  Enable the variable power supply and adjust the tuning voltage to 8.45 V.
 -  If the EV1HMC8362LP6G is configured correctly, a signal at approximately 13.5 GHz with approximately 0 dBm to 2 dBm of output power appears on a spectrum analyzer or signal source analyzer. Refer to Figure 4.
 -  Remove the bias for the buffer amplifier (VCB), which results in the output power decreasing by approximately 28 dBm. Refer to Figure 5.
--  Finally, use the signal source analyzer to measure the phase noise. Refer to Figure 6.
+-  Finally, use the signal source analyzer to measure the phase noise. Refer to
+   Figure 6.
 
 |image3| Figure 3. EV1HMC8362LP6G, VCO Band 1, VTUNE = 8.45 V, 13.5 GHz, Includes Insertion Loss of RF Cable
 
@@ -139,12 +154,12 @@ EV1HMC8364LP6G
 -  `BOM <https://wiki.analog.com/_media/resources/eval/hmc8364_evalboard.xlsx>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/figure_1_evb_pic.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/figure_2_p1_connector.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/figure_3_vco_band_1.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/figure_4._ev1hmc8362lp6g_vco_band_1_vtune_8.45_v_13.5_ghz_buffer_amplifier_disabled.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/figure_5_vco_band_1_pn_at_rf1.png
-   :width: 400px
+   :width: 400

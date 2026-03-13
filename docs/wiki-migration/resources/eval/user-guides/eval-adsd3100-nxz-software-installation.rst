@@ -30,7 +30,8 @@ Minimum Software Requirements
 Intro
 -----
 
--  Once installer is downloaded, run the application to see this window. Click 'Next'.
+-  Once installer is downloaded, run the application to see this window. Click
+   'Next'.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/s1.png
    :align: center
@@ -55,7 +56,8 @@ Installation Location
 Prerequisites Downloads
 -----------------------
 
-The installer will prompt the user to install the following pre-reqs if they are not detected on your pc
+The installer will prompt the user to install the following pre-reqs if they are
+not detected on your pc
 
 -  OpenCL 2.0 Runtime
 -  Visual Studio 2015 redistributable
@@ -63,10 +65,13 @@ The installer will prompt the user to install the following pre-reqs if they are
 Image Download
 --------------
 
--  Once the installer is done, the user will have the option to download the NXP image (Recommended for each install of sdk, backwards compatibility is not guaranteed)
+-  Once the installer is done, the user will have the option to download the NXP
+   image (Recommended for each install of sdk, backwards compatibility is not
+   guaranteed)
 
    -  If selected a command prompt will open with download status
-   -  The user can find the image in the 'Image' folder at the install location (See next section)
+   -  The user can find the image in the 'Image' folder at the install location
+      (See next section)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/s5.png
    :align: center
@@ -76,7 +81,7 @@ Image Folder Contents
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/image_folder.png
    :align: center
-   :width: 200px
+   :width: 200
 
 -  microsd-xxxxxxxx : NXP SOM sd card image
 
@@ -94,11 +99,11 @@ Image Folder Contents
 
    Please follow the steps here for correct update procedure : :doc:`eval-adtf3175d-nxz-bringup </wiki-migration/resources/eval/user-guides/eval-adtf3175d-nxz-bringup>`\
 
-
 Done
 ----
 
--  Once installation is done you can navigate to the installation folder to run the following applications:
+-  Once installation is done you can navigate to the installation folder to run
+   the following applications:
 
    -  :doc:`ADIToFGUI </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-gui>`
    -  :doc:`Data Collect (Command line interface) </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>`

@@ -24,7 +24,8 @@ The script will:
 -  clone the ADI kernel tree
 -  download the Linaro GCC toolchain [if no other is specified]
 -  build the ADI kernel tree
--  export/copy the Image file and device tree file out of the kernel build folder
+-  export/copy the Image file and device tree file out of the kernel build
+   folder
 
 Running the script in one line [with defaults]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,7 +97,6 @@ Build the kernel
      HOSTCC  scripts/basic/fixdep
      HOSTCC  scripts/basic/bin2c
 
-
    [ -- snip --]
 
      CC      init/version.o
@@ -142,9 +142,11 @@ Copy the generated files to your SD Card
 Building the ZynqMP boot image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
+The boot image BOOT.BIN is build using the bootgen tool which requires several
+input files.
 
-Instructions on how to build the Hardware Description File (HDF) handover file can be found here:
+Instructions on how to build the Hardware Description File (HDF) handover file
+can be found here:
 
 -  :doc:`Building HDL </wiki-migration/resources/fpga/docs/build>`
 
@@ -152,7 +154,8 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 
 -  `Build u-boot <http://www.wiki.xilinx.com/Build+U-Boot>`_
 
-   -  Make sure you checkout the proper git tag matching your Vivado Version (xilinx-v2018.2, xilinx-v2017.4, ...)
+   -  Make sure you checkout the proper git tag matching your Vivado Version
+      (xilinx-v2018.2, xilinx-v2017.4, ...)
 
 -  `Build FSBL <http://www.wiki.xilinx.com/Build+FSBL>`_
 -  `Build PMU Frimware <http://www.wiki.xilinx.com/Build+PMU+Firmware>`_
@@ -162,7 +165,9 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 Use script to build BOOT.BIN
 ----------------------------
 
-For ease of use we provide a bash shell script which allows building BOOT.BIN from system_top.hdf, u-boot.elf and either bl31.elf or a path to the Arm Trusted Firmware repository
+For ease of use we provide a bash shell script which allows building BOOT.BIN
+from system_top.hdf, u-boot.elf and either bl31.elf or a path to the Arm Trusted
+Firmware repository
 
 Download
 ~~~~~~~~
@@ -180,7 +185,6 @@ The script can be downloaded from here:
    
       $ chmod +x build_zynqmp_boot_bin.sh
    
-
 
 Usage
 ~~~~~
@@ -215,11 +219,11 @@ Usage
 
    
 
-
 AD-FMCXMWBR1-EBZ devicetree example
 ===================================
 
-An example of device tree for the AD-FMCXMWBR1-EBZ SPI/I2C/GPIO connections to different ADI devices:
+An example of device tree for the AD-FMCXMWBR1-EBZ SPI/I2C/GPIO connections to
+different ADI devices:
 
 -  :doc:`AD7291 </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad7291>`
 -  `AD5721 <https://github.com/torvalds/linux/blob/master/drivers/iio/dac/ad5761.c>`_

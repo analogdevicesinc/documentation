@@ -9,12 +9,15 @@ The :adi:`AD4116 <en/products/ad4116.html>` is a highly accurate, high resolutio
 Set-up Procedures
 -----------------
 
-After following the instructions in the Software Installation Procedures section, set up the evaluation board and SDP board as detailed in the Configuring the Evaluation and SDP Boards section.
+After following the instructions in the Software Installation Procedures
+section, set up the evaluation board and SDP board as detailed in the
+Configuring the Evaluation and SDP Boards section.
 
 .. important::
 
-   The evaluation software and drivers must be installed before connecting the EVAL-AD4116ASDZ evaluation board and EVAL-SDP-CB1Z board to the USB port of the PC to ensure the PC correctly recognizes the evaluation system.
-
+   The evaluation software and drivers must be installed before connecting the
+   EVAL-AD4116ASDZ evaluation board and EVAL-SDP-CB1Z board to the USB port of
+   the PC to ensure the PC correctly recognizes the evaluation system.
 
 **Configuring the Evaluation and SDP Boards** Use the following procedure to configure the boards
 
@@ -28,7 +31,7 @@ Evaluation Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/board_photo.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Hardware Link Options
 ---------------------
@@ -94,7 +97,9 @@ Serial Interface
 
 The evaluation board connects via the serial peripheral interface (SPI) to the Blackfin® :adi:`ADSP-BF527 <en/products/adsp-bf527.html>` on the SDP-B board. There are four primary signals: CS, SCLK, DIN, and DOUT/RDY (all are inputs, except for DOUT/RDY, which is an output). The EVAL-AD4116ASDZ evaluation board connects to any microcontroller board that uses the Arduino standard headers. This can be developed user code in for a variety of platforms.
 
-To operate the evaluation board in standalone mode, disconnect any board connected, J9 can be used to access all SPI signals and set the input/output voltage levels.
+To operate the evaluation board in standalone mode, disconnect any board
+connected, J9 can be used to access all SPI signals and set the input/output
+voltage levels.
 
 For an introduction to the Serial Peripheral Interface (SPI), click :adi:`here <en/analog-dialogue/articles/introduction-to-spi-interface.html>`
 
@@ -104,12 +109,21 @@ For an introduction to the Serial Peripheral Interface (SPI), click :adi:`here <
 Analog Inputs
 =============
 
-Eleven voltage inputs are available on P1 to P3. If a different common voltage must be set for single-ended measurement, remove LK2 and connect the desired voltage to VINCOM on P2. Five additional low-level inputs are available on P4. The differential voltage for these inputs is ±VREF only.
+Eleven voltage inputs are available on P1 to P3. If a different common voltage
+must be set for single-ended measurement, remove LK2 and connect the desired
+voltage to VINCOM on P2. Five additional low-level inputs are available on P4.
+The differential voltage for these inputs is ±VREF only.
 
 Reference Options
 =================
 
-The EVAL-AD4116ASDZ includes an external 2.5 V reference, the ADR4525ARZ. By default, LK1 is inserted, connecting the external reference to REF+ of the AD4116. Remove LK1 if using a different single-ended external reference. In the evaluation software, click the blue pop-up button associated with Setup 0 to Setup 7 to select the reference used for conversions by the AD4116. The pop-up button is located below the external reference controls in the block diagram (Label 7 in Figure 16).
+The EVAL-AD4116ASDZ includes an external 2.5 V reference, the ADR4525ARZ. By
+default, LK1 is inserted, connecting the external reference to REF+ of the
+AD4116. Remove LK1 if using a different single-ended external reference. In the
+evaluation software, click the blue pop-up button associated with Setup 0 to
+Setup 7 to select the reference used for conversions by the AD4116. The pop-up
+button is located below the external reference controls in the block diagram
+(Label 7 in Figure 16).
 
 Schematic, PCB Layout, Bill of Materials
 ========================================
@@ -126,6 +140,5 @@ Schematic, PCB Layout, Bill of Materials
    
    -  `bom.xlsx <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad4116asdz/bom.xlsx>`_
    
-
 
 :doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/software>` :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/eval-ad4116asdz>`

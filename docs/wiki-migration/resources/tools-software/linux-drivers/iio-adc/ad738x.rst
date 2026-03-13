@@ -87,7 +87,9 @@ The ADC is represented by a child node of the SPI controller that the ADC is att
            };
        };
 
-If the specific application has wiring that can't handle the max SPI SCLK rate for the ADC chip, a lower max rate can be specified, otherwise use the max rate from the datasheet (which may be different for some chips).
+If the specific application has wiring that can't handle the max SPI SCLK rate
+for the ADC chip, a lower max rate can be specified, otherwise use the max rate
+from the datasheet (which may be different for some chips).
 
 The ``spi-cpol`` flags also need to be set to ensure the correct settings for the clock polarity.
 
@@ -115,7 +117,8 @@ Power supplies should be described. Typically these will link to a ``compatible 
 Reference supplies
 ------------------
 
-The default of the evaluation boards is to use a 3.3V external reference wired to the REFIO pin. This is described with:
+The default of the evaluation boards is to use a 3.3V external reference wired
+to the REFIO pin. This is described with:
 
 ::
 
@@ -123,18 +126,21 @@ The default of the evaluation boards is to use a 3.3V external reference wired t
 
 To use the internal reference instead, omit this property.
 
-AD7380-4 and the ADAQ chips are an exception. They have an internal reference, but still requires an extra supply that is connected to the REFIN pin.
+AD7380-4 and the ADAQ chips are an exception. They have an internal reference,
+but still requires an extra supply that is connected to the REFIN pin.
 
 ::
 
                refin-supply = <&eval_u3>;
 
-AD7389-4 is another exception. It only has an internal reference, so both properties are always omitted.
+AD7389-4 is another exception. It only has an internal reference, so both
+properties are always omitted.
 
 Common mode supplies
 --------------------
 
-Some chips in this series are pseudo-differential ADCs. In this case, a voltage supply is needed for each negative input on the chip.
+Some chips in this series are pseudo-differential ADCs. In this case, a voltage
+supply is needed for each negative input on the chip.
 
 ::
 
@@ -191,7 +197,6 @@ Driver testing
       -rw-r--r-- 1 root root 4096 Sep 12 20:11 uevent
    
 
-
 Show device name
 ----------------
 
@@ -244,23 +249,31 @@ SPI offload trigger
 
 When using this chip with a SPI controller with offload capabilities, there will be ``in_voltage_sampling_frequency`` and ``in_voltage_sampling_frequency_available`` attributes on the IIO device. The ``in_voltage_sampling_frequency`` attribute will control the frequency of the hardware trigger, e.g. a PWM output. The ``in_voltage_sampling_frequency_available`` can be used to obtain the maximum sample rate (datasheet value).
 
-No manual setup of the trigger is needed other than setting the desired sample rate.
+No manual setup of the trigger is needed other than setting the desired sample
+rate.
 
 .. important::
 
    There is a quirk with single-ended chips. Due to the MUX to switch between banks of inputs, the effective sample rate is 1/2 of the ``in_voltage_sampling_frequency`` value when all channels are enabled at the same time in a buffered read. If only 1/2 of the channels are enabled, the MUX doesn't have to switch and the effective sample rate will match ``in_voltage_sampling_frequency``.
 
-
 Conventional IIO trigger
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
+If deviceX supports triggered sampling, it’s a so called trigger consumer and
+there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In
+this folder there is a file called current_trigger, allowing controlling and
+viewing the current trigger source connected to deviceX. Available trigger
+sources can be identified by reading the name file
+/sys/bus/iio/devices/triggerY/name. The same trigger source can connect to
+multiple devices, so a single trigger may initialize data capture or reading
+from a number of sensors, converters, etc.
 
 This driver uses **high resolution timers** as interrupt source
 
 **Description:** Hrtimer triggers creation and destruction
 
-Loading iio-trig-hrtimer module will register hrtimer trigger types allowing users to create hrtimer triggers:
+Loading iio-trig-hrtimer module will register hrtimer trigger types allowing
+users to create hrtimer triggers:
 
 .. container:: box bggreen
 
@@ -271,7 +284,6 @@ Loading iio-trig-hrtimer module will register hrtimer trigger types allowing use
    
       root:/sys/kernel/config/iio/triggers/hrtimer/> mkdir trigger0
    
-
 
 **Description:** Read name of trigger0
 
@@ -286,7 +298,6 @@ Loading iio-trig-hrtimer module will register hrtimer trigger types allowing use
       trigger0
    
 
-
 **Description:** Configure the sampling frequency of trigger0
 
 .. container:: box bggreen
@@ -300,7 +311,6 @@ Loading iio-trig-hrtimer module will register hrtimer trigger types allowing use
       trigger0
    
 
-
 **Description:** Make trigger0 to current trigger of device0
 
 .. container:: box bggreen
@@ -312,7 +322,6 @@ Loading iio-trig-hrtimer module will register hrtimer trigger types allowing use
    
       root:/sys/bus/iio/devices/iio:device0/> echo trigger0 > trigger/current_trigger
    
-
 
 **Description:** Read current trigger source of device0
 
@@ -326,7 +335,6 @@ Loading iio-trig-hrtimer module will register hrtimer trigger types allowing use
       root:/sys/bus/iio/devices/iio:device0/trigger> cat current_trigger
       trigger0
    
-
 
 Buffer management
 -----------------
@@ -342,7 +350,6 @@ Buffer management
       enable          length                   watermark
       root:/sys/bus/iio/devices/iio:device0/buffer>
    
-
 
 Every buffer implementation features a set of files:
 
@@ -364,19 +371,22 @@ Every buffer implementation features a set of files:
       root:/sys/bus/iio/devices/iio:device0/scan_elements>
    
 
-
 .. important::
 
-   When using the driver with SPI offloading, all channels must be enabled for buffered reads, otherwise enabling the buffer will fail with an error.
+   When using the driver with SPI offloading, all channels must be enabled for
+   buffered reads, otherwise enabling the buffer will fail with an error.
 
    
-   There is one exception to this for single-ended chips. Since there is a MUX, enabling 1/2 of the channels is also permitted as long as all of the enabled channels have the same MUX position (the first contiguous 1/2 or the last contiguous 1/2).
-
+   There is one exception to this for single-ended chips. Since there is a MUX,
+   enabling 1/2 of the channels is also permitted as long as all of the enabled
+   channels have the same MUX position (the first contiguous 1/2 or the last
+   contiguous 1/2).
 
 .. tip::
 
-   When using SPI offloading, the software timestamp attributes will not be present. This is due to having a hardware trigger in this case vs. a software trigger.
-
+   When using SPI offloading, the software timestamp attributes will not be
+   present. This is due to having a hardware trigger in this case vs. a software
+   trigger.
 
 **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:** Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
 
@@ -389,7 +399,8 @@ Oversampling
 
 This family of chips has two types of oversampling/averaging built into the hardware, *Normal average oversampling* and *rolling average oversampling*.
 
-Using rolling average oversampling is not supported in the Linux driver. Instead the data read can be averaged in software to achieve the same result.
+Using rolling average oversampling is not supported in the Linux driver. Instead
+the data read can be averaged in software to achieve the same result.
 
 Normal averaging oversampling is supported via the ``in_voltage_oversampling_ratio`` and ``in_voltage_oversampling_ratio_available`` attributes.
 
@@ -402,12 +413,12 @@ The latter can be read to get a list of supported values.
 
 Writing a value greater than 1 to ``in_voltage_oversampling_ratio`` will enable oversampling and writing ``1`` will disable oversampling.
 
-When oversampling is enabled, the resolution boost feature of the chip is also turned on.
+When oversampling is enabled, the resolution boost feature of the chip is also
+turned on.
 
 .. important::
 
    The resolution boost changes the ``scan_type`` for buffered reads. Older versions of ``libiio`` do not expect this to change. So you may need restart ``iiod``, for example, in order for it to pick up the change after oversampling is enabled. Otherwise it could misinterpret the data it is reading thinking it has a different binary format.
-
 
 Alert output
 ------------
@@ -416,7 +427,8 @@ The thresholds that drive the ALERT output on the chip are accessed via the ``ev
 
 These values are in raw units, so to set a specific voltage, the values of the ``scale`` attribute (and ``offset`` if present) needs to be taken into account.
 
-For example, if the reference voltage is 3.3V, the scale will be 0.050354003 which makes the default rising threshold 32768 \* 0.050354003 = 1650 mV.
+For example, if the reference voltage is 3.3V, the scale will be 0.050354003
+which makes the default rising threshold 32768 \* 0.050354003 = 1650 mV.
 
 The ``events/thresh_either_en`` attribute is used to enable or disable the /ALERT output pin on the chip. (If all SDO lines are being used, this will have no effect.)
 
@@ -443,6 +455,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

@@ -20,7 +20,8 @@ Is it a bug? or is it a feature request? Something not working properly (a bug) 
 
 Some :doc:`troubleshooting steps </wiki-migration/university/tools/m2k/scopy-troubleshooting>` that might be worth looking at to understand if you have a potential common hardware problem.
 
-Scopy is continuously being improved from one version to another, (with bug fixes) and with new features.
+Scopy is continuously being improved from one version to another, (with bug
+fixes) and with new features.
 
 -  ensure you are using the `latest release version <https://github.com/analogdevicesinc/scopy/releases/latest>`_ of scopy. If you can replicate the bug on that, try
 -  the most recent `nightly Winbdows builds <https://ci.appveyor.com/project/analogdevicesinc/scopy/build/artifacts>`_. It's possible that someone else already reported the bug, and it has been solved.
@@ -41,7 +42,9 @@ The ``*.ini`` files are simple text files:
 -  **``Scopy.ini``** : captures the state of all the instruments, and menu settings, and locations of all windows.
 -  **``Preferences.ini``** : controls the preferences of scopy
 
-When a bug/crash occurs, this files can be trivial in inspecting the configuration that caused Scopy to fail, and can be critical in getting allowing a developer to easily replicate the problem.
+When a bug/crash occurs, this files can be trivial in inspecting the
+configuration that caused Scopy to fail, and can be critical in getting allowing
+a developer to easily replicate the problem.
 
 In the Windows folder where the ".ini", a ``crashdmp`` folder will also be there that will contain additional information about the crash and where it happened. This is a Windows *small memory dump file*. The memory dump file contains the following information:
 
@@ -54,14 +57,21 @@ In the Windows folder where the ".ini", a ``crashdmp`` folder will also be there
 
 This can allow scopy developers to troubleshoot the issue with the Windows Debugger (``WinDbg.exe``) tool and understand where things crashed, without even having to replicate the steps that caused the crash. The easier it is to find the problem, the easier it is to fix it, and faster you can get back to work.
 
-Alongside the ".ini" files, if logging is enabled in Scopy, there should also be a file with the name "ScopyLog-yymmdd-hhmmss.id". In order to generate a log file, the debug logging must first be enabled via the Preferences Menu from the Debug Section(Enable Session Logging). Once Scopy is closed the debug logging is disabled. For each connection a new logging file is generated. This files will never be deleted by Scopy, they can be manually deleted by the user.
+Alongside the ".ini" files, if logging is enabled in Scopy, there should also be
+a file with the name "ScopyLog-yymmdd-hhmmss.id". In order to generate a log
+file, the debug logging must first be enabled via the Preferences Menu from the
+Debug Section(Enable Session Logging). Once Scopy is closed the debug logging is
+disabled. For each connection a new logging file is generated. This files will
+never be deleted by Scopy, they can be manually deleted by the user.
 
-In order to generate a logging file that provides the most information, after encountering a bug, restart Scopy, enable the session logging from the Preferences menu, then connect to the board and reproduce the exact steps that lead to the bug.
+In order to generate a logging file that provides the most information, after
+encountering a bug, restart Scopy, enable the session logging from the
+Preferences menu, then connect to the board and reproduce the exact steps that
+lead to the bug.
 
 .. important::
 
    Making a backup of the entire folder where the ``.ini`` files are located and adding it to the bug report is critical for developers.
-
 
 Older Versions of Scopy (v 1.2.0 and older) do not capture:
 
@@ -72,7 +82,10 @@ Older Versions of Scopy (v 1.2.0 and older) do not capture:
 Steps to reproduce the Bug
 --------------------------
 
-Some bugs might be obvious to reproduce (always clicking a button crashes Scopy), but some are hard and only happen in a specific configuration. Mentioning the exact steps that lead to the bug are trivial for us in order to properly reproduce it.
+Some bugs might be obvious to reproduce (always clicking a button crashes
+Scopy), but some are hard and only happen in a specific configuration.
+Mentioning the exact steps that lead to the bug are trivial for us in order to
+properly reproduce it.
 
 Example Report
 --------------
@@ -85,7 +98,8 @@ Example Report
 
 **Steps to reproduce the bug**:
 
-- Started the Signal Generator with the following configuration: 5khz 2V sine wave on channel 1 ...
+- Started the Signal Generator with the following configuration: 5khz 2V sine
+  wave on channel 1 ...
 
 - Started the Oscilloscope
 
@@ -93,4 +107,5 @@ Example Report
 
 - When enabling statistics in the measurements menu, Scopy crashes.
 
-Attached the ".ini" files also containing the "crashdump" folder (if on Windows) and the logging files if present
+Attached the ".ini" files also containing the "crashdump" folder (if on Windows)
+and the logging files if present

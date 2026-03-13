@@ -87,7 +87,7 @@ The :adi:`EVAL-ADISIMU1-RPIZ` allows multiple compatible IMU components (with th
 +--------------------------------------------------+----------+--------------------+-------------------+--------------------------+
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/top_perspective.png
-   :width: 500px
+   :width: 500
 
 Videos
 ------
@@ -95,7 +95,8 @@ Videos
 Unboxing and Hardware Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following video is a walkthrough for the unboxing experience and a guide for setting up the hardware to be ready for your own application development.
+The following video is a walkthrough for the unboxing experience and a guide for
+setting up the hardware to be ready for your own application development.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>vesometnpw8
    :alt: youtube>vesoMeTnPW8
@@ -104,26 +105,29 @@ The following video is a walkthrough for the unboxing experience and a guide for
 | ===== Inertial Measurement Unit(IMU)/Gyroscope Mounting ===== There are two ways you can mount components on the EVAL-ADISIMU1-RPIZ.
 
 -  Directly mount the IMU using the proper mounting location
--  Indirect connection using the P3 connector along with the ribbon cable and the breakout board
+-  Indirect connection using the P3 connector along with the ribbon cable and
+   the breakout board
 
-Any IMU can use the indirect method of connecting to the P3 header using the ribbon cable and it's corresponding breakout board. So the following sections are going to describe how to directly mount the compatible IMUs to the EVAL-ADISIMU1-RPIZ. Please see the pictures for device mounting hole locations.
-
+Any IMU can use the indirect method of connecting to the P3 header using the
+ribbon cable and it's corresponding breakout board. So the following sections
+are going to describe how to directly mount the compatible IMUs to the
+EVAL-ADISIMU1-RPIZ. Please see the pictures for device mounting hole locations.
 
 |image1|
 
 .. tip::
 
-   There are four(4) mounting holes without any labels. These mounting holes are assigned to mount the EVAL-ADISIMU1-RPIZ to the Raspberry Pi host board. There are four(4) nylon screws and spacers provided in the kit, and these should be used for this purpose. The nominal diameter of the four(4) holes is 3.175mm.
-
-
-
+   There are four(4) mounting holes without any labels. These mounting holes are
+   assigned to mount the EVAL-ADISIMU1-RPIZ to the Raspberry Pi host board.
+   There are four(4) nylon screws and spacers provided in the kit, and these
+   should be used for this purpose. The nominal diameter of the four(4) holes is
+   3.175mm.
 
 .. note::
 
    MACHINE SCREWS IMPACT LOCAL MAGNETIC FIELDS
 
    | The machine screws in the EVAL-ADISIMU1-RPIZ kit are made out of stainless steel, which can have some moderate impact on magnetic fields, local to the IMU. For those whose application demands the best magnetometer performance offered by these IMUs, consider using plastic screws that will not impact the magnetic fields around the devices.
-
 
 P2 Connection
 -------------
@@ -152,7 +156,7 @@ Mounting Materials
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_b.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The image below shows the proper mounting of IMU's on Mounting Slot B.
 
@@ -175,7 +179,7 @@ Mounting Materials
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_c.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Below is an example of proper mounting of IMU's on mounting hole C
 
@@ -205,7 +209,7 @@ Mounting Materials
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_f.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Below is an image that show proper mounting of IMU's on mounting slot F.
 
@@ -227,17 +231,19 @@ Mounting Materials
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_i.png
    :align: center
-   :width: 600px
+   :width: 600
 
-Below is an image that show proper mounting of IMU's on mounting slot I. Ensure that the machine screws are tightened on the bottom side of the board using the hex nuts as shown below:
+Below is an image that show proper mounting of IMU's on mounting slot I. Ensure
+that the machine screws are tightened on the bottom side of the board using the
+hex nuts as shown below:
 
 |image8|\ |image9|
 
 Raspberry Pi Connector
 ----------------------
 
-The 40 pin Raspberry Pi connector of the EVAL-ADISIMU1-RPIZ mounts directly on top of the Raspberry Pi 4, or equivalents, 40 pin male headers.
-
+The 40 pin Raspberry Pi connector of the EVAL-ADISIMU1-RPIZ mounts directly on
+top of the Raspberry Pi 4, or equivalents, 40 pin male headers.
 
 |image10|
 
@@ -247,17 +253,22 @@ Headers and Jumpers
 Real Time Clock
 ~~~~~~~~~~~~~~~
 
-Placing a shunt on this connector P1 provides power to the Real Time Clock (RTC) of the IMU's attached to connector P2
+Placing a shunt on this connector P1 provides power to the Real Time Clock (RTC)
+of the IMU's attached to connector P2
 
 Power
 ~~~~~
 
-The board has a selectable power between +5V or +3.3V from the RPI. The default power supply is +3.3V unless otherwise stated in the datasheet of the IMU. The power to the IMU can be selected using connector P5.
+The board has a selectable power between +5V or +3.3V from the RPI. The default
+power supply is +3.3V unless otherwise stated in the datasheet of the IMU. The
+power to the IMU can be selected using connector P5.
 
 .. warning::
 
-   It's critical to know the power supply required for the IMU you are using before changing this setting. If you power any IMU from 5V that was designed for 3.3V power, you will destroy the IMU and it will no longer function. This is a VERY EXPENSIVE mistake.
-
+   It's critical to know the power supply required for the IMU you are using
+   before changing this setting. If you power any IMU from 5V that was designed
+   for 3.3V power, you will destroy the IMU and it will no longer function. This
+   is a VERY EXPENSIVE mistake.
 
 ===== ====================================
 Power Shunt Position
@@ -272,7 +283,9 @@ Sync Selector
 Sync Header
 ^^^^^^^^^^^
 
-Header P6 allows for selectable sync signal to be used by the IMU's. It can be done by moving the shunt to select the source, either via RPI or an external source.
+Header P6 allows for selectable sync signal to be used by the IMU's. It can be
+done by moving the shunt to select the source, either via RPI or an external
+source.
 
 ==== ====================================
 Sync Shunt Position
@@ -284,7 +297,8 @@ Ext  Pin 3 and Pin 4
 Ext Sync Pads
 ^^^^^^^^^^^^^
 
-This allows for an external sync signal to be used in the system by installing an SMA connector on pads of connector J1.
+This allows for an external sync signal to be used in the system by installing
+an SMA connector on pads of connector J1.
 
 Test Points
 ~~~~~~~~~~~
@@ -328,26 +342,25 @@ Schematic, PCB Layout Files, Bill of Materials
    -  `Layout <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/08_059367b.pdf>`_
    
 
-
 *End of Document*
 
 .. |youtube>G-k81W2yJRY| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>g-k81w2yjry
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_b.jpg
-   :width: 450px
+   :width: 450
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201216_202707.jpg
-   :width: 332px
+   :width: 332
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/adis_mounting_c.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201216_202543.jpg
-   :width: 420px
+   :width: 420
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_f.jpg
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/hole_f.jpg
-   :width: 460px
+   :width: 460
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_i.jpg
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201211_212825.jpg
-   :width: 425px
+   :width: 425
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/dsc09075.png

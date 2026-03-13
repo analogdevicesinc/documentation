@@ -26,19 +26,17 @@ This is the Rev C schematic and layout files for the :adi:`ADRV1CRR-BOB` breakou
    -  `Rev C STP File <https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/BR-039931STP.7z>`_. Note: Some DNI components are populated.
    
 
-
 Top Board Picture
 ^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/picture.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Feature List
 ^^^^^^^^^^^^
 
 +---------------------------------------------------------------------+
-
 
 | 10/100/1000 Mbps Ethernet                                           |
 

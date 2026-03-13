@@ -14,7 +14,7 @@ The **CN0397_example** application perform ADC readings for all 3 channels, proc
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180123_171237.jpg
    :align: left
-   :width: 500px
+   :width: 500
 
 The 16-bits ADC data are received using **SPI interface** of the EVAL-ADICUP360 board. The **UART interface** (**9600** baud rate and **8-bits** data length) is used to send(and to receive) data to (from) a terminal window.
 
@@ -34,7 +34,7 @@ Beside **light intensity** and **light concentration** values, for each channel 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/table.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Demo Requirements
 -----------------
@@ -58,10 +58,12 @@ Setting up the Hardware
 
 -  Plug the **EVAL-CN0397-ARDZ** shield on top of the **Arduino Uno** development board by matching up the **POWER, ANALOG, DIGI0, DIGI1** connectors.
 
-   -  Note, the boards should only plug together one way, preventing reverse connections.
+   -  Note, the boards should only plug together one way, preventing reverse
+      connections.
 
 -  Connect a jumper on **P1** between position **1-2** on EVAL-CN0397-ARDZ.
--   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the other end into the PC or laptop.
+-   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the
+    other end into the PC or laptop.
 
 Obtaining the Source Code
 -------------------------
@@ -75,15 +77,15 @@ The source code and include files of the **CN0397_example** can be found here:
    :git-arduino:`CN0397_example at Github <Arduino%20Uno%20R3/examples/CN0397_example>`
    
 
-
 Project Structure
 -----------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino2.png
    :align: center
-   :width: 700px
+   :width: 700
 
-The Arduino Sketch is used to open the example into Arduino IDE. The project is composed of three main parts:
+The Arduino Sketch is used to open the example into Arduino IDE. The project is
+composed of three main parts:
 
 -  the main program (arduino sketch)
 -  application layer
@@ -100,9 +102,12 @@ Calibration procedure
 
 The **CN0397_example** needs to be calibrated first before using it in order to achieve best performance. A system zero offset calibration needs to be run to cancel the offset for all of the channels.
 
-Calibration, which is enabled by default, can be done by covering and not allowing any light to reach the photodiodes within the first 5 second of the program start.
+Calibration, which is enabled by default, can be done by covering and not
+allowing any light to reach the photodiodes within the first 5 second of the
+program start.
 
-Once all the channels have been calibrated, the circuit is now ready for use. The output data will be available for each LED on android device if enabled.
+Once all the channels have been calibrated, the circuit is now ready for use.
+The output data will be available for each LED on android device if enabled.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/calibration_1.png
    :align: center
@@ -113,25 +118,30 @@ Compiling, Verifying, and Programming
 -  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
 -  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
 
-These two steps can also be done using the quick buttons on the Arduino sketch. Check out the image below for locations of the quick buttons.
+These two steps can also be done using the quick buttons on the Arduino sketch.
+Check out the image below for locations of the quick buttons.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino_ide_verify_upload_buttons.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Outputting Data
 ---------------
 
-Data is output using the USB cable from the Arduino to the PC. The USB port acts as a serial terminal to display the data being transmitted via UART. Opening the serial terminal window from the Arduino IDE is very easy, simply click on the button shown in the picture below.
+Data is output using the USB cable from the Arduino to the PC. The USB port acts
+as a serial terminal to display the data being transmitted via UART. Opening the
+serial terminal window from the Arduino IDE is very easy, simply click on the
+button shown in the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino_ide_serial_terminal_button.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Serial Terminal Output
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You may need to configure the serial terminal depending on the current settings of the Arduino IDE. Make sure the settings are as follows:
+You may need to configure the serial terminal depending on the current settings
+of the Arduino IDE. Make sure the settings are as follows:
 
 ::
 
@@ -145,7 +155,8 @@ You may need to configure the serial terminal depending on the current settings 
 Tools Download and Help
 -----------------------
 
-The Arduino tools are easy to use, and there are many tutorials and users guides to help learn how to use the Arduino IDE.
+The Arduino tools are easy to use, and there are many tutorials and users guides
+to help learn how to use the Arduino IDE.
 
 For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
@@ -153,6 +164,5 @@ For more information on how to use the tool basics, please check out the `Arduin
    :class: download
 
    To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
-
 
 *End of Document*

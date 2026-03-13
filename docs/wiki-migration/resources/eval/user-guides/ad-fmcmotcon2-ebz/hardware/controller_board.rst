@@ -33,7 +33,7 @@ Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/controller_block_diagram_simplified.png
    :alt: Simplified Block Diagram
-   :width: 350px
+   :width: 350
 
 +---+
 +---+
@@ -100,12 +100,16 @@ ADC FPGA Interface
 -  10 / 20 MHz clock input
 -  1 bit digital data stream output
 
-The reconstruction of the data provided by the AD7403 modulator can be done using a SINC3 filter. A filter model and HDL implementation are provided in the AD7403 datasheet. Typical filter output characteristics:
+The reconstruction of the data provided by the AD7403 modulator can be done
+using a SINC3 filter. A filter model and HDL implementation are provided in the
+AD7403 datasheet. Typical filter output characteristics:
 
 -  Output code: 16 bit
 -  Sampling rate: 78kHz
 
-The output code resolution and sampling rate can be controlled by changing the filter’s model and decimation. Polyphase interpolation filters are utilized to increase the sampling rate of the system.
+The output code resolution and sampling rate can be controlled by changing the
+filter’s model and decimation. Polyphase interpolation filters are utilized to
+increase the sampling rate of the system.
 
 +---+
 +---+
@@ -124,10 +128,9 @@ Downloads
    -  `Allegro Board File <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/ad-fmcmotcon2-ebz_layout.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).
    
 
-
 .. |AD-FMC-MOTCON1-EBZ Top| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/ad-fmcmotcon2-ebz_top_parts.jpg
-   :width: 600px
+   :width: 600
 .. |AD-FMC-MOTCON1-EBZ Bottom| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/ad-fmcmotcon2-ebz_bottom_parts.jpg
-   :width: 600px
+   :width: 600
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad7401_logo.png
-   :width: 100px
+   :width: 100

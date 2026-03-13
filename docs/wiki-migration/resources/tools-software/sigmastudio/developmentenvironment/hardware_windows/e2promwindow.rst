@@ -3,7 +3,10 @@ E2Prom Read/Write Window
 
 :doc:`Click here to return to the Hardware Windows page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
 
-The E2Prom Read/Write window allows you to read and write program data to an E2Prom IC. This tool can be used with your own hardware systems or with the E2Prom available on some SigmaDSP evaluation boards. It also supports saving and loading the program data to files.
+The E2Prom Read/Write window allows you to read and write program data to an
+E2Prom IC. This tool can be used with your own hardware systems or with the
+E2Prom available on some SigmaDSP evaluation boards. It also supports saving and
+loading the program data to files.
 
 --------------
 
@@ -14,21 +17,23 @@ E2Prom Configruation:
 
    -
 
-
    |e2prompic1.png|
 
 -  Compile/Link/Download the project and verify that "Ready - Download" is displayed on the status bar.
--  To download the compiled project's program data to the E2Prom, Right-Click on the DSP block in the Hardware Configuration window and select*\* Write Latest Compilation to E2PROM*\* from the menu. Note if your E2Prom's size differs from the default 16kB size, you should first adjust the size setting in the Read/Write window (see below) before writing .
+-  To download the compiled project's program data to the E2Prom, Right-Click on
+   the DSP block in the Hardware Configuration window and select*\* Write Latest
+   Compilation to E2PROM*\* from the menu. Note if your E2Prom's size differs
+   from the default 16kB size, you should first adjust the size setting in the
+   Read/Write window (see below) before writing .
 
    -
-
 
    |e2prompic2.png|
 
--  If your hardware is setup correctly, you should see the Download E2Prom progress dialog.
+-  If your hardware is setup correctly, you should see the Download E2Prom
+   progress dialog.
 
    -
-
 
    |e2prompic3.png|
 
@@ -37,7 +42,9 @@ E2Prom Configruation:
 Using the E2Prom Read/Write window:
 -----------------------------------
 
-To open the E2Prom Read/Write window, Click the WinE2PromLoader tab at the bottom of the Hardware Configuration window or Right-click on the E2Prom IC block and select Read/Write Window from the menu.
+To open the E2Prom Read/Write window, Click the WinE2PromLoader tab at the
+bottom of the Hardware Configuration window or Right-click on the E2Prom IC
+block and select Read/Write Window from the menu.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/e2prompic5.png
    :alt: e2prompic5.png

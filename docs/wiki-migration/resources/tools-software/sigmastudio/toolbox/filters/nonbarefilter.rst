@@ -3,7 +3,9 @@
 Non Bare Filter
 ===============
 
-NonBare filters are second order filters which take the parameters directly. The filter parameters are converted to filter coefficients by the Module itself. Regalia-Mitra algorithm is used for this implementation.
+NonBare filters are second order filters which take the parameters directly. The
+filter parameters are converted to filter coefficients by the Module itself.
+Regalia-Mitra algorithm is used for this implementation.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/nonbare-tbx.jpg
 
@@ -16,7 +18,6 @@ Name         Format [int/dec] - [control/audio] Function Description
 Pin 0: Input decimal - Audio                    Audio input
 ============ ================================== ====================
 
-
 | ====Output Pins====
 
 ============= ================================== ====================
@@ -24,7 +25,6 @@ Name          Format [int/dec] - [control/audio] Function Description
 ============= ================================== ====================
 Pin 0: Output decimal - Audio                    Filtered output
 ============= ================================== ====================
-
 
 | ==== Grow Algorithm ==== The module does not support Add and Growth.
 
@@ -71,7 +71,9 @@ Configuration
 Algorithm Description
 ---------------------
 
-NonBare filters are second order filters which take the parameters directly. The filter parameters are converted to filter coefficients by the Module itself. Regalia-Mitra algorithm is used for this implementation.
+NonBare filters are second order filters which take the parameters directly. The
+filter parameters are converted to filter coefficients by the Module itself.
+Regalia-Mitra algorithm is used for this implementation.
 
 Supported ICs
 -------------

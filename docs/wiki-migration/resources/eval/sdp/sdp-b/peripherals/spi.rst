@@ -1,7 +1,11 @@
 SPI: Serial Port Interface
 ==========================
 
-The SPI interface on the SDP is a full duplex, synchronous serial interface. The SDP is the Master for all SPI transfers. When an SPI transfer occurs, data is simultaneously transmitted as new data is received. The SPI_CLK signal synchronises the shifting of data out and the sampling of data in on the two serial data pins (MOSI and MISO).
+The SPI interface on the SDP is a full duplex, synchronous serial interface. The
+SDP is the Master for all SPI transfers. When an SPI transfer occurs, data is
+simultaneously transmitted as new data is received. The SPI_CLK signal
+synchronises the shifting of data out and the sampling of data in on the two
+serial data pins (MOSI and MISO).
 
 ================= ============================== =======================
 Pin Blackfin Name Pin SDP 120 Pin Connector Name Description
@@ -20,7 +24,8 @@ SPISEL7           SPI_SEL_B                      SPI Slave Select 7
 SPISEL5           SPI_SEL_A                      SPI Slave Select 5
 ================= ============================== =======================
 
-Table 1: SPI Pin Assignments The maximum clock frequency for SPI transfers is: 30MHz. The maximum frame frequency for SPI transfers is shown below...
+Table 1: SPI Pin Assignments The maximum clock frequency for SPI transfers is:
+30MHz. The maximum frame frequency for SPI transfers is shown below...
 
 ============= ================================
 Transfer size Frame Freq Max ( for 30MHz sclk)
@@ -55,7 +60,11 @@ Table 3 : SPI Modes
 SPI Timing Examples
 -------------------
 
-Below are timing examples for each of the 4 data transfer sizes in the SDP-B SPI protocol. Note the wait times after the CS goes active and the wain times between successive bursts of 8 or 16 bit data in the 24 and 32bit transfers cannot be guaranteed but are included to give a rough estimate of the timing specifications for the SPI interface on the SDP.
+Below are timing examples for each of the 4 data transfer sizes in the SDP-B SPI
+protocol. Note the wait times after the CS goes active and the wain times
+between successive bursts of 8 or 16 bit data in the 24 and 32bit transfers
+cannot be guaranteed but are included to give a rough estimate of the timing
+specifications for the SPI interface on the SDP.
 
 | |image2|
 | Figure 2 : SPI transfer protocol, CPHA = 0, 8 bit data
@@ -78,7 +87,15 @@ Below are timing examples for each of the 4 data transfer sizes in the SDP-B SPI
 SPI Extended Interfaces for converters
 --------------------------------------
 
-This section introduces timing diagrams for interfacing to ADI parts that requires Busy or Ready signals combined to CS to decode the part. The singularity of these modes is that the MISO line provides double functionality, data and ready signal. The serial interface can operate in 3-wire mode by tying CS low. The end of conversion can be monitored using RDY and/or Busy. The DOUT/RDY pin functions as a data ready signal also, with the line going low when a new data-word is available in the output register. Given the complexity of the implementation, the description below provides an additional explanation of how these interfaces are programmed to be used within the SDP.
+This section introduces timing diagrams for interfacing to ADI parts that
+requires Busy or Ready signals combined to CS to decode the part. The
+singularity of these modes is that the MISO line provides double functionality,
+data and ready signal. The serial interface can operate in 3-wire mode by tying
+CS low. The end of conversion can be monitored using RDY and/or Busy. The
+DOUT/RDY pin functions as a data ready signal also, with the line going low when
+a new data-word is available in the output register. Given the complexity of the
+implementation, the description below provides an additional explanation of how
+these interfaces are programmed to be used within the SDP.
 
 | |image8|
 | Figure 8 : Single Read more with RDY
@@ -135,24 +152,24 @@ SPI Write Buffer U8       0x5C
 ========================= ====================
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl7.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl8.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl9.png
-   :width: 800px
+   :width: 800
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl10.png
-   :width: 800px
+   :width: 800
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl11.png
-   :width: 800px
+   :width: 800
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl12.png
-   :width: 700px
+   :width: 700
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl13.png
-   :width: 700px
+   :width: 700
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl14.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl15.png
-   :width: 700px
+   :width: 700
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl16.png
-   :width: 700px
+   :width: 700
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl17.png
-   :width: 700px
+   :width: 700

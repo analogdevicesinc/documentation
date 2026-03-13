@@ -10,15 +10,24 @@ ADSP-SC573 / ADSP-SC584 / ADSP-SC589 / ADSP-SC594 Target
 -  Launch CrossCore Embedded Studio.
 -  Uncheck “Build (if required) before launching” checkbox in Window->Preferences->Run/Debug->Launching.
 -  Select Run->Debug Configurations. The procedure debug session creation is different for SC598 compared to other SC5xx target platforms which is shown in below section. Create a new Debug configuration under ‘Application with CrossCore Debugger’. Select appropriate processor, connection type (to use On-board Debug Agent, please refer `Using SOM + SOM-CRR On-Board Debug Agent <https://wiki.analog.com/resources/tools-software/sigmastudiov2/gettingstarted/load_executable_using_cces_>`_ section) and platform. Click finish.
--  Load the prebuilt DXE’s for appropriate target ‘SS_App_Core0’ on Core 0, ‘SS_App_Core1.dxe’ on Core 1 and ‘SS_App_Core2.dxe’ on Core 2 as shown below figure. Prebuilt DXEs of each project can be found inside the respective ‘Release’ folders of each of the projects (under 'SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Demo' folder).
+-  Load the prebuilt DXE’s for appropriate target ‘SS_App_Core0’ on Core 0,
+   ‘SS_App_Core1.dxe’ on Core 1 and ‘SS_App_Core2.dxe’ on Core 2 as shown below
+   figure. Prebuilt DXEs of each project can be found inside the respective
+   ‘Release’ folders of each of the projects (under
+   'SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Demo' folder).
 
 |image1|
 
--  Double click on ‘SS_App_Core1.dxe’ of Core 1 and uncheck ‘Run immediately after load’ option as shown in the below figure. Repeat the same for ‘SS_App_Core2.dxe’ for Core 2.
+-  Double click on ‘SS_App_Core1.dxe’ of Core 1 and uncheck ‘Run immediately
+   after load’ option as shown in the below figure. Repeat the same for
+   ‘SS_App_Core2.dxe’ for Core 2.
 
 |image2|
 
--  Reset the board and press ‘Debug’ to launch the debug session. Click on “MP Resume” to run Core 0 (ARM). This enables the Core 1 and 2 (SHARC). Then individually select and run Core 1 and Core 2 by clicking on “Resume” as shown in below figure.
+-  Reset the board and press ‘Debug’ to launch the debug session. Click on “MP
+   Resume” to run Core 0 (ARM). This enables the Core 1 and 2 (SHARC). Then
+   individually select and run Core 1 and Core 2 by clicking on “Resume” as
+   shown in below figure.
 
 |image3|
 
@@ -28,7 +37,8 @@ ADSP-SC573 / ADSP-SC584 / ADSP-SC589 / ADSP-SC594 Target
 |image4|
 
    |image5|
--  Link compile download the SigmaStudio+ schematic if Demo or Lib integration application is used.
+-  Link compile download the SigmaStudio+ schematic if Demo or Lib integration
+   application is used.
 
 ADSP-21573 / ADSP-21584 / ADSP-21593 Target
 -------------------------------------------
@@ -37,15 +47,24 @@ ADSP-21573 / ADSP-21584 / ADSP-21593 Target
 -  Launch CrossCore Embedded Studio.
 -  Uncheck “Build (if required) before launching” checkbox in Window->Preferences->Run/Debug->Launching.
 -  Select Run->Debug Configurations. Create a new Debug configuration under ‘Application with CrossCore Debugger’. Select appropriate processor, connection type and platform. Click finish.
--  Load the prebuilt DXE’s for appropriate target ‘21584_preload_Core1.dxe” and “21573_preload_Core1.dxe” for 21584 and 21573 respectively, and “SS_App_Core1.dxe” on Core 1 and ‘SS_App_Core2.dxe’ on Core 2 as shown in below figure. Prebuilt DXEs of each project can be found inside the respective ‘Release’ folders of each of the projects (under 'SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Demo' folder).
+-  Load the prebuilt DXE’s for appropriate target ‘21584_preload_Core1.dxe” and
+   “21573_preload_Core1.dxe” for 21584 and 21573 respectively, and
+   “SS_App_Core1.dxe” on Core 1 and ‘SS_App_Core2.dxe’ on Core 2 as shown in
+   below figure. Prebuilt DXEs of each project can be found inside the
+   respective ‘Release’ folders of each of the projects (under
+   'SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Demo' folder).
 
 |image6|
 
--  Double click on ‘SS_App_Core2.dxe’ of Core 2 and uncheck ‘Run immediately after load’ option as shown in below figure.
+-  Double click on ‘SS_App_Core2.dxe’ of Core 2 and uncheck ‘Run immediately
+   after load’ option as shown in below figure.
 
 |image7|
 
--  Reset the board and press ‘Debug’ to launch the debug session. Click on “Resume” to run Core 1(SHARC). This enables the Core 2 (SHARC). Then individually select and run Core Core 2 by clicking on “Resume” as shown in below figure.
+-  Reset the board and press ‘Debug’ to launch the debug session. Click on
+   “Resume” to run Core 1(SHARC). This enables the Core 2 (SHARC). Then
+   individually select and run Core Core 2 by clicking on “Resume” as shown in
+   below figure.
 
 |image8|
 
@@ -55,7 +74,8 @@ ADSP-21573 / ADSP-21584 / ADSP-21593 Target
 |image9|
 
    |image10|
--  Link compile download the SigmaStudio+ schematic if Demo or Lib integration application is used.
+-  Link compile download the SigmaStudio+ schematic if Demo or Lib integration
+   application is used.
 
 ADSP-21568 / ADSP-21569 Target
 ------------------------------
@@ -64,15 +84,21 @@ ADSP-21568 / ADSP-21569 Target
 -  Launch CrossCore Embedded Studio.
 -  Uncheck “Build (if required) before launching” checkbox in Window->Preferences->Run/Debug->Launching.
 -  Select Run->Debug Configurations. Create a new Debug configuration under ‘Application with CrossCore Debugger’. Select appropriate processor, connection type and platform. Click finish.
--  The prebuilt DXE’s for the target ‘ezkit21569_preload.dxe” is automatically loaded on Core1. Load the prebuilt “SS_App_Core1.dxe” on Core 1. Prebuilt DXEs of each project can be found inside the respective ‘Release’ folders of each of the projects (under 'SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Demo' folder).
+-  The prebuilt DXE’s for the target ‘ezkit21569_preload.dxe” is automatically
+   loaded on Core1. Load the prebuilt “SS_App_Core1.dxe” on Core 1. Prebuilt
+   DXEs of each project can be found inside the respective ‘Release’ folders of
+   each of the projects (under
+   'SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Demo' folder).
 
 |image11|
 
--  Double click on ‘SS_App_Core1.dxe’ of Core 1 and uncheck ‘Run immediately after load’ option as shown in below figure.
+-  Double click on ‘SS_App_Core1.dxe’ of Core 1 and uncheck ‘Run immediately
+   after load’ option as shown in below figure.
 
 |image12|
 
--  Reset the board and press ‘Debug’ to launch the debug session. Click on “Resume” to run Core 1(SHARC) as shown in below figure.
+-  Reset the board and press ‘Debug’ to launch the debug session. Click on
+   “Resume” to run Core 1(SHARC) as shown in below figure.
 
 |image13|
 
@@ -81,7 +107,8 @@ ADSP-21568 / ADSP-21569 Target
 
 |image14|
 
--  Link compile download the SigmaStudio+ schematic if Demo or Lib integration application is used.
+-  Link compile download the SigmaStudio+ schematic if Demo or Lib integration
+   application is used.
 
 ADSP-SC598 EV-SOM Target
 ------------------------
@@ -89,7 +116,8 @@ ADSP-SC598 EV-SOM Target
 -  Establish the hardware setup as described in :doc:`ADSP-215xx/ADSP-SC5xx Hardware Setup </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/adsp-215xx_and_adsp-sc5xx>`.
 -  Launch CrossCore Embedded Studio.
 -  Uncheck “Build (if required) before launching” checkbox in Window->Preferences->Run/Debug->Launching.
--  Select Core0 CCES Project and go to Run->Debug Configurations. Create a new Debug configuration under ‘Application with GDB and OpenOCD(Emulaotr)’.
+-  Select Core0 CCES Project and go to Run->Debug Configurations. Create a new
+   Debug configuration under ‘Application with GDB and OpenOCD(Emulaotr)’.
 
 |image15|
 
@@ -97,45 +125,61 @@ ADSP-SC598 EV-SOM Target
 
 |image16|
 
--  Select appropriate build mode executable in the "Main" Tab and click on "Apply" and "Close".
+-  Select appropriate build mode executable in the "Main" Tab and click on
+   "Apply" and "Close".
 
 |image17|
 
--  Select Core1 CCES Project and go to Run->Debug Configurations. Create a new Debug configuration under ‘Application with CrossCore Debugger’, select appropriate processor and click on Next.
+-  Select Core1 CCES Project and go to Run->Debug Configurations. Create a new
+   Debug configuration under ‘Application with CrossCore Debugger’, select
+   appropriate processor and click on Next.
 
 |image18|
 
--  Select connection type as "Emulator" click on "Next" and in next window select appropriate emulator click on "Finish".
+-  Select connection type as "Emulator" click on "Next" and in next window
+   select appropriate emulator click on "Finish".
 
 |image19|
 
--  Load the prebuilt DXE’s for appropriate target ‘SS_App_Core1.dxe’ on Core 1 and ‘SS_App_Core2.dxe’ on Core 2 as shown below figure. Prebuilt DXEs of each project can be found inside the respective ‘Release’ folders of each of the projects (under 'SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Demo' folder).
+-  Load the prebuilt DXE’s for appropriate target ‘SS_App_Core1.dxe’ on Core 1
+   and ‘SS_App_Core2.dxe’ on Core 2 as shown below figure. Prebuilt DXEs of each
+   project can be found inside the respective ‘Release’ folders of each of the
+   projects (under 'SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Demo' folder).
 
 |image20|
 
 -  Since ARM is main core the SC598 preload .dxe can be removed from Core1 by selecting the preload .dxe and using "Remove" option on the right-side.
--  Double click on ‘SS_App_Core1.dxe’ of Core 1 and "Check" reset Core option, since preload .dxe file removed from Core1. Now click on "Apply" and "Close".
+-  Double click on ‘SS_App_Core1.dxe’ of Core 1 and "Check" reset Core option,
+   since preload .dxe file removed from Core1. Now click on "Apply" and "Close".
 
 |image21|
 
--  Select the Core0 CCES Project again and go to Run->Debug Configurations. Create a new Debug launch group under ‘Application with CrossCore Launch Group’.
+-  Select the Core0 CCES Project again and go to Run->Debug Configurations.
+   Create a new Debug launch group under ‘Application with CrossCore Launch
+   Group’.
 
 |image22|
 
--  Add the ‘Application with GDB and OpenOCD(Emulaotr)’ and ‘Application with CrossCore Debugger’ debug configuration one after other one using "Add.." button on the right and clicking on "OK".
+-  Add the ‘Application with GDB and OpenOCD(Emulaotr)’ and ‘Application with
+   CrossCore Debugger’ debug configuration one after other one using "Add.."
+   button on the right and clicking on "OK".
 
 |image23|
 
    |image24|
--  Reset the board, Apply and click on "Debug" button to start debug session. Select "OK" to open the debug window which will open a window on left side of Project explorer.
+-  Reset the board, Apply and click on "Debug" button to start debug session.
+   Select "OK" to open the debug window which will open a window on left side of
+   Project explorer.
 
 |image25|
 
--  Click on “Resume(F5)” to run Core 0 (ARM). This enables the Core 1 and 2 (SHARC).
+-  Click on “Resume(F5)” to run Core 0 (ARM). This enables the Core 1 and 2
+   (SHARC).
 
 |image26|
 
--  Then individually select and run Core 1 and Core 2 by clicking on “Resume(F5)” as shown in below figure.
+-  Then individually select and run Core 1 and Core 2 by clicking on
+   “Resume(F5)” as shown in below figure.
 
 |image27|
 
@@ -145,12 +189,17 @@ ADSP-SC598 EV-SOM Target
 |image28|
 
    |image29|
--  Link compile download the SigmaStudio+ schematic if Demo or Lib integration application is used.
+-  Link compile download the SigmaStudio+ schematic if Demo or Lib integration
+   application is used.
 
 .. note::
 
-   Link compile download schematic not required if DemoUc application is used, since the schematic source code already included in the target application. Also target framework and application don't support redownload of schematic, once downloaded on to the running target application. The target application should be rerun by resetting the target platform to download the schematic again.
-
+   Link compile download schematic not required if DemoUc application is used,
+   since the schematic source code already included in the target application.
+   Also target framework and application don't support redownload of schematic,
+   once downloaded on to the running target application. The target application
+   should be rerun by resetting the target platform to download the schematic
+   again.
 
 Using SOM + SOM-CRR On-Board Debug Agent
 ----------------------------------------
@@ -163,11 +212,13 @@ Using SOM + SOM-CRR On-Board Debug Agent
 -  Configuring the Switches:
 
    -  On the SOM-CRR board, locate SW1 (the mini switches).
-   -  Switch all six mini switches on SW1 from their default OFF position to the ON position.
+   -  Switch all six mini switches on SW1 from their default OFF position to the
+      ON position.
 
 -  Connecting USB Cables:
 
-   -  Connect the micro-USB end of the cable to the USB DA (P2) port on the SOM-CRR board.
+   -  Connect the micro-USB end of the cable to the USB DA (P2) port on the
+      SOM-CRR board.
 
 -  Launch CrossCore Embedded Studio:
 
@@ -176,20 +227,21 @@ Using SOM + SOM-CRR On-Board Debug Agent
 -  Adjust Preferences (Optional Step):
 
    -  Navigate to Window → Preferences → Run/Debug → Launching.
-   -  Uncheck the "Build (if required) before launching" checkbox to prevent automatic builds before launching.
+   -  Uncheck the "Build (if required) before launching" checkbox to prevent
+      automatic builds before launching.
 
 -  Configure Debug Settings:
 
    -  From the top menu, select Run → Debug Configurations.
    -  In the Debug Configurations window, create a new Debug configuration under the ‘Application with CrossCore Debugger’ section.
-   -  Select the appropriate processor for your setup in the configuration settings.
+   -  Select the appropriate processor for your setup in the configuration
+      settings.
 
    |image30|
 
 -  Select EZ-Kit Lite Option:
 
    -  In the Debug Configurations window, select the EZ-Kit Lite option.
-
 
    |image31|
 
@@ -199,7 +251,6 @@ Using SOM + SOM-CRR On-Board Debug Agent
 
    -  The option to use the Debug Agent will be visible.
 
-
    |image32|
 
    -  Click "Finish" to confirm and exit the configuration window.
@@ -207,7 +258,8 @@ Using SOM + SOM-CRR On-Board Debug Agent
 -  Load Prebuilt DXEs for Each Core:
 
    -  The prebuilt DXEs for each project can be found in the respective ‘Release’ folders (SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Demo) of each project.
-   -  ‘SS_App_Core0’ (Core 0), ‘SS_App_Core1.dxe’ (Core 1) and ‘SS_App_Core2.dxe’ (Core 2) as shown below.
+   -  ‘SS_App_Core0’ (Core 0), ‘SS_App_Core1.dxe’ (Core 1) and
+      ‘SS_App_Core2.dxe’ (Core 2) as shown below.
 
    |image33|
 
@@ -227,11 +279,13 @@ Using SC598 SOM + SOM-CRR On-Board Debug Agent
 -  Configuring the Switches:
 
    -  On the SOM-CRR board, locate SW1 (the mini switches).
-   -  Switch all six mini switches on SW1 from their default OFF position to the ON position.
+   -  Switch all six mini switches on SW1 from their default OFF position to the
+      ON position.
 
 -  Connecting USB Cables:
 
-   -  Connect the micro-USB end of the cable to the USB DA (P2) port on the SOM-CRR board.
+   -  Connect the micro-USB end of the cable to the USB DA (P2) port on the
+      SOM-CRR board.
 
 -  Launch CrossCore Embedded Studio:
 
@@ -240,23 +294,25 @@ Using SC598 SOM + SOM-CRR On-Board Debug Agent
 -  Adjust Preferences (Optional Step):
 
    -  Navigate to Window → Preferences → Run/Debug → Launching.
-   -  Uncheck the "Build (if required) before launching" checkbox to prevent automatic builds before launching.
+   -  Uncheck the "Build (if required) before launching" checkbox to prevent
+      automatic builds before launching.
 
 -  ARM Core Debug Configuration:
 
    -  Right-click on the ARM project and select Debug Configurations.
    -  Create a new debug configuration under ‘Application with GDB and OpenOCD (Emulator)’.
    -  Select the appropriate processor for your ARM core.
-   -  In the Target tab, under the Interface dropdown, select “Analog Devices Onboard Debug Agent”.
+   -  In the Target tab, under the Interface dropdown, select “Analog Devices
+      Onboard Debug Agent”.
 
    |image34|
 
 -  In the Main tab, select the ARM core DXE file.
 
-
 |image35|
 
-   -  Click "Apply" to save the configuration and then "Close" to exit the debug configuration window.
+   -  Click "Apply" to save the configuration and then "Close" to exit the debug
+      configuration window.
 
 -  SHARC Core Debug Configuration:
 
@@ -287,13 +343,14 @@ Using SC598 SOM + SOM-CRR On-Board Debug Agent
 
    |image38|
 
--  The previously selected Debug Configuration for both ARM and SHARC cores will appear under ‘Use an existing debug configuration’.
-
+-  The previously selected Debug Configuration for both ARM and SHARC cores will
+   appear under ‘Use an existing debug configuration’.
 
 |image39|
 
 -  Click "Finish" to apply the settings.
--  The final window will display the selected debug configurations for both the ARM and SHARC cores.
+-  The final window will display the selected debug configurations for both the
+   ARM and SHARC cores.
 
 |image40|
 
@@ -302,7 +359,9 @@ Using SC598 SOM + SOM-CRR On-Board Debug Agent
 Downloading Schematic from SigmaStudioPlus UI to Target
 -------------------------------------------------------
 
-Once the above-mentioned steps for loading the DXE are completed, the target application will be up and running, waiting to receive schematic data (SMAP) from the SigmaStudioPlus UI.
+Once the above-mentioned steps for loading the DXE are completed, the target
+application will be up and running, waiting to receive schematic data (SMAP)
+from the SigmaStudioPlus UI.
 
 Let’s take an example case with a dual-core processor:
 
@@ -323,82 +382,82 @@ Let’s take an example case with a dual-core processor:
    :align: center
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/584_1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/584_2.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/584_3.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sharc1_core_dxe.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sharc2_core_dxe.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21573_1.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21573_2.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21573_3.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sharc1_core_dxe.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sharc2_core_dxe.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/569_1.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/569_2.png
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/569_3.png
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sharc1_core_dxe.png
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_select_debugconfig.png
-   :width: 1080px
+   :width: 1080
 .. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_select_ice_emulator.png
-   :width: 1080px
+   :width: 1080
 .. |image17| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_select_core_exe.png
-   :width: 1080px
+   :width: 1080
 .. |image18| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_sh0_select_debugconfig.png
-   :width: 1080px
+   :width: 1080
 .. |image19| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_select_sh_emulator.png
-   :width: 1080px
+   :width: 1080
 .. |image20| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_sh0_select_exe.png
-   :width: 1080px
+   :width: 1080
 .. |image21| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_sh0_select_reset.png
-   :width: 1080px
+   :width: 1080
 .. |image22| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_select_launch_group.png
-   :width: 1080px
+   :width: 1080
 .. |image23| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_select_lg_core0debug.png
-   :width: 1080px
+   :width: 1080
 .. |image24| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_select_lg_core1debug.png
-   :width: 1080px
+   :width: 1080
 .. |image25| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_select_lg_debug_final.png
-   :width: 1080px
+   :width: 1080
 .. |image26| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_run_core0.png
-   :width: 1080px
+   :width: 1080
 .. |image27| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_run_core1_core2.png
-   :width: 1080px
+   :width: 1080
 .. |image28| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sharc1_core_dxe.png
-   :width: 600px
+   :width: 600
 .. |image29| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sharc2_core_dxe.png
-   :width: 600px
+   :width: 600
 .. |image30| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/debug1.png
-   :width: 1080px
+   :width: 1080
 .. |image31| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/debug2.png
-   :width: 650px
+   :width: 650
 .. |image32| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/debug3.png
-   :width: 650px
+   :width: 650
 .. |image33| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/debug4.png
-   :width: 650px
+   :width: 650
 .. |image34| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_debug1.png
-   :width: 650px
+   :width: 650
 .. |image35| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_debug2.png
-   :width: 650px
+   :width: 650
 .. |image36| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_debug3.png
-   :width: 650px
+   :width: 650
 .. |image37| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_debug5.png
-   :width: 650px
+   :width: 650
 .. |image38| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_debug4.png
-   :width: 650px
+   :width: 650
 .. |image39| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_debug8.png
-   :width: 650px
+   :width: 650
 .. |image40| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc598_debug7.png
-   :width: 650px
+   :width: 650

@@ -3,9 +3,13 @@ DC Input Entry
 
 :doc:`Click here to return to the sources page </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources>`
 
-The DC Input Block allows you to generate a DC (direct current) signal (a constant numerical value). This Block can be used to generate control signals for Multiplexers and Lookup Tables.
+The DC Input Block allows you to generate a DC (direct current) signal (a
+constant numerical value). This Block can be used to generate control signals
+for Multiplexers and Lookup Tables.
 
-The block's controls allow the DC value and the format to be set. There are 32 or 28 available bits which can be used to represent decimal values, depending on the SigmaDSP.
+The block's controls allow the DC value and the format to be set. There are 32
+or 28 available bits which can be used to represent decimal values, depending on
+the SigmaDSP.
 
 Output Pins
 ===========
@@ -41,7 +45,6 @@ GUI Control Name Compiler Name         Function Description
 ================ ===================== ====================
 DC               DCInp145XBlkAlg1value DC output signal
 ================ ===================== ====================
-
 
 | Here,
 

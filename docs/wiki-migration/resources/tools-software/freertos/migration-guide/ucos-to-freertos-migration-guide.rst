@@ -4,7 +4,10 @@
 Introduction
 ------------
 
-This page describes how to migrate the µC/OS-III to FreeRTOS for those customers who want to migrate their µC/OS-III-based application to FreeRTOS. You will find that migrating µC/OS-III Applications into FreeRTOS is quite straightforward and in most cases will requires just a few hours.
+This page describes how to migrate the µC/OS-III to FreeRTOS for those customers
+who want to migrate their µC/OS-III-based application to FreeRTOS. You will find
+that migrating µC/OS-III Applications into FreeRTOS is quite straightforward and
+in most cases will requires just a few hours.
 
 **Supported Boards**
 
@@ -33,13 +36,14 @@ Analog Devices **ADPS-SC5xx** \| **ADSP-215xx** \| **ADSP-BF7xx** series boards.
    -  Full API Map
    
 
-
 --------------
 
 Source Code Organisation
 ------------------------
 
-The folder structure for both µC/OS-III and FreeRTOS are shown below in Table 1. Simple replace the µC/OS-III source code with the files shown on the right column.
+The folder structure for both µC/OS-III and FreeRTOS are shown below in Table 1.
+Simple replace the µC/OS-III source code with the files shown on the right
+column.
 
 .. container:: column
 
@@ -101,7 +105,6 @@ The folder structure for both µC/OS-III and FreeRTOS are shown below in Table 1
                   └── os_cpu_xx.x
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -162,14 +165,13 @@ The folder structure for both µC/OS-III and FreeRTOS are shown below in Table 1
                       └── portmacro.h
    
 
-
 .. container:: Centeralign
 
    **Table 1** Source Code Directory Structures
 
-
-
-Like the µC/OS-III, the directory structure of FreeRTOS includes some files that implement the kernel core, other files implement specific kernel objects and services.The table annotations below describe the different groups
+Like the µC/OS-III, the directory structure of FreeRTOS includes some files that
+implement the kernel core, other files implement specific kernel objects and
+services.The table annotations below describe the different groups
 
 +-----------------------+----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Section               | Name                                                           | note                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -187,18 +189,19 @@ Like the µC/OS-III, the directory structure of FreeRTOS includes some files tha
 | **``Section (2-4)``** | **FreeRTOS Portable Code** ``proccessor-dependent, SHARC``     | Support for the ADSP-215XX / ADSP-SC5xx ``SHARC`` Core                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 +-----------------------+----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Interrupt Vector Table
 ----------------------
 
-Both µC/OS-III and FreeRTOS require two interrupt handlers that need to be installed in the Interrupt Vector Table(IVT).
+Both µC/OS-III and FreeRTOS require two interrupt handlers that need to be
+installed in the Interrupt Vector Table(IVT).
 
 -  **``PendSV Handler``**: Suspend system interrupt Vector
 -  **``SysTick Handler``**: System tick timer interrupt Vector.
 
 The **``Interrupt Vector Table``** is typically located at some known memory address (e.g. 0x00000000) and its default interrupt handlers are registered directly in some startup code in assembly language by the compiler.
 
-This startup code is compiler-dependent and varies widely depending on the architecture and semiconductor manufacturer.
+This startup code is compiler-dependent and varies widely depending on the
+architecture and semiconductor manufacturer.
 
 ADI provides the respective ``Interrupt Handler Vector Table`` for Processor ``BLACKFIN``, ``CORTEX-A5`` and ``SHARC`` on µC/OS-III and FreeRTOS listed in the following Table 2.
 
@@ -218,21 +221,22 @@ ADI provides the respective ``Interrupt Handler Vector Table`` for Processor ``B
 
    **Table 2** Cortex-A5/Blackfin/SHARC IRQ Handlers
 
-
-
 --------------
 
 Critical Sections
 -----------------
 
-Both in the µC/OS-III and FreeRTOS, kernel needs to disable interrupts during the critical section, and below will show the functions used in µC/OS-III and FreeRTOS.
+Both in the µC/OS-III and FreeRTOS, kernel needs to disable interrupts during
+the critical section, and below will show the functions used in µC/OS-III and
+FreeRTOS.
 
 .. container:: column
 
    **µC/OS-III**
 
    
-   All of the critical sections function macros that are currently protected by µC/OS-III :
+   All of the critical sections function macros that are currently protected by
+   µC/OS-III :
    
    .. code:: c
    
@@ -240,7 +244,6 @@ Both in the µC/OS-III and FreeRTOS, kernel needs to disable interrupts during t
       CPU_CRITICAL_ENTER()
       CPU_CRITICAL_EXIT()
    
-
 
 .. container:: column
 
@@ -256,8 +259,6 @@ Both in the µC/OS-III and FreeRTOS, kernel needs to disable interrupts during t
       taskENTER_CRITICAL_FROM_ISR()
       taskEXIT_CRITICAL_FROM_ISR()
    
-
-
 
 FreeRTOS provides two sets of kernel control APIs for critical sections:
 
@@ -306,7 +307,6 @@ Note That the ``configMAX_SYSCALL_INTERRUPT_PRIORITY`` in the FreeRTOS configura
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -334,13 +334,9 @@ Note That the ``configMAX_SYSCALL_INTERRUPT_PRIORITY`` in the FreeRTOS configura
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 3** Critical Sections
-
-
 
 For more information on Critical Sections, see the full documentation of `RTOS Kernel Control <https://www.freertos.org/taskENTER_CRITICAL_taskEXIT_CRITICAL.html>`_ in FreeRTOS API Reference.
 
@@ -405,7 +401,6 @@ Here is an example in using the Queue Send from an interrupt in µC/OS-III\ ``(l
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -434,17 +429,20 @@ Here is an example in using the Queue Send from an interrupt in µC/OS-III\ ``(l
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 4** Kernel Aware ISRs
 
-
-
 **Deferred Interrupt Handling**
 
-Generally, both for µC/OS-III and FreeRTOS, it is considered best practice to keep ISRs as short as possible. If there is a long-term response/pending in the IRS, The same as we called The tick task (OS_TickTask(), os_tick.c) and The ISR handler task (OS_IntQTask(), os_int.c) in the µC/OS-III, FreeRTOS also provides the ISR Handler mechanism called Deferred Interrupt Handling. Typically, it's to deliver the processing necessitated by the interrupt to be performed at a high priority unblocked task( High priority deferred interrupter handler task ), rather than within the ISR.
+Generally, both for µC/OS-III and FreeRTOS, it is considered best practice to
+keep ISRs as short as possible. If there is a long-term response/pending in the
+IRS, The same as we called The tick task (OS_TickTask(), os_tick.c) and The ISR
+handler task (OS_IntQTask(), os_int.c) in the µC/OS-III, FreeRTOS also provides
+the ISR Handler mechanism called Deferred Interrupt Handling. Typically, it's to
+deliver the processing necessitated by the interrupt to be performed at a high
+priority unblocked task( High priority deferred interrupter handler task ),
+rather than within the ISR.
 
 .. container:: column
 
@@ -453,7 +451,6 @@ Generally, both for µC/OS-III and FreeRTOS, it is considered best practice to k
 
       **Diagram**
 
-
       |image1|
 
    .. container:: Centeralign
@@ -461,9 +458,10 @@ Generally, both for µC/OS-III and FreeRTOS, it is considered best practice to k
       **Figure 1** Deferred Interrupt Processing
 
    
-   The above diagram showing how the deferred interrupt process, which to trigger a high-priority task and complete interrupt processing in this high-priority task.
+   The above diagram showing how the deferred interrupt process, which to
+   trigger a high-priority task and complete interrupt processing in this
+   high-priority task.
    
-
 
 .. container:: column
 
@@ -481,9 +479,8 @@ Generally, both for µC/OS-III and FreeRTOS, it is considered best practice to k
    +--------+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    
 
-
-
-Here provides two categories of methods for users in using the Deferred Interrupt Handling:
+Here provides two categories of methods for users in using the Deferred
+Interrupt Handling:
 
 -  **Unordered List ItemCentralised Deferred Interrupt Handling**: Centralised deferred interrupt handling is so called because each interrupt that uses this method executes in the context of the same RTOS daemon task
 -  **Unordered List ItemApplication Controlled Deferred Interrupt Handling**: Application controlled deferred interrupt handling is so called because each interrupt that uses this method executes in the context of a task created by the application writer
@@ -495,7 +492,12 @@ For example, the function pvPortMalloc() is forbidden to be called at any Standa
 Initializing and Starting the OS
 --------------------------------
 
-For both of the µC/OS-III and FreeRTOS, we need to use the corresponding function to start the Operating System (OS). The difference is that before calling any µC/OS-III function we need to initialize µC/OS-III by calling OSInit() and start multi-tasking by calling OSStart(), but at FreeRTOS, just call vTaskStartScheduler() to start the real-time scheduler after creating tasks and kernel objects.
+For both of the µC/OS-III and FreeRTOS, we need to use the corresponding
+function to start the Operating System (OS). The difference is that before
+calling any µC/OS-III function we need to initialize µC/OS-III by calling
+OSInit() and start multi-tasking by calling OSStart(), but at FreeRTOS, just
+call vTaskStartScheduler() to start the real-time scheduler after creating tasks
+and kernel objects.
 
 **µC/OS-III**
 
@@ -514,7 +516,11 @@ API to start the OS at FreeRTOS:
 
    vTaskStartScheduler()
 
-Typically, before the scheduler has been started, main() (or a function called by main()) will be executing. After the scheduler has been started, only tasks and interrupts will ever execute. Starting the scheduler causes the highest priority task that was created while the scheduler was in the Initialization state to enter the Running state.
+Typically, before the scheduler has been started, main() (or a function called
+by main()) will be executing. After the scheduler has been started, only tasks
+and interrupts will ever execute. Starting the scheduler causes the highest
+priority task that was created while the scheduler was in the Initialization
+state to enter the Running state.
 
 **Example Usage**
 
@@ -543,7 +549,6 @@ Typically, before the scheduler has been started, main() (or a function called b
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -570,13 +575,9 @@ Typically, before the scheduler has been started, main() (or a function called b
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 5** Starting the Kernels
-
-
 
 For more information, please see the full documentation of `RTOS Kernel Control to Start Scheduler <https://www.freertos.org/a00132.html>`_ in FreeRTOS API Reference.
 
@@ -585,7 +586,11 @@ For more information, please see the full documentation of `RTOS Kernel Control 
 Task Priorities
 ---------------
 
-In µC/OS-III, low priority numbers denote high priority tasks. On the other hand, a low-priority number corresponds to a low-priority level in FreeRTOS. Priority level zero (0) is thus the lowest priority level and priority configMAX_PRIORITIES - 1 is the highest priority level as shown in the following table.
+In µC/OS-III, low priority numbers denote high priority tasks. On the other
+hand, a low-priority number corresponds to a low-priority level in FreeRTOS.
+Priority level zero (0) is thus the lowest priority level and priority
+configMAX_PRIORITIES - 1 is the highest priority level as shown in the following
+table.
 
 .. container:: column
 
@@ -593,7 +598,6 @@ In µC/OS-III, low priority numbers denote high priority tasks. On the other han
 
    
    Both kernels have the Idle task at the lowest priority level. As same as the µC/OS-III changing the task's priority via the API ``OSTaskChangePrio()``, FreeRTOS also provides to queries or changes the priority of a task by calling the corresponding API Functions ``uxTaskPriorityGet()`` or ``vTaskPrioritySet()`` when the system is running.
-
 
 .. container:: column
 
@@ -611,8 +615,6 @@ In µC/OS-III, low priority numbers denote high priority tasks. On the other han
       **Table 6** Task Priority Levels
 
    
-
-
 
 **µC/OS-III**
 
@@ -633,21 +635,22 @@ Please find the examples in using these APIs at the full documentations `uxTaskP
 
    Both of µC/OS-III and FreeRTOS support multiple tasks at the same priority level. For more information on task priorities in FreeRTOS see the full documentation on `Task Priorities <https://freertos.org/RTOS-task-priority.html>`_ of the FreeRTOS Feature/Tasks.
 
-
 --------------
 
 Task Creation
 -------------
 
-In both µC/OS-III and FreeRTOS , tasks are written as an infinite loop function or, as a function that deletes the task once completed.
+In both µC/OS-III and FreeRTOS , tasks are written as an infinite loop function
+or, as a function that deletes the task once completed.
 
 .. container:: column
 
    **common**
 
    
-   Both µC/OS-III and FreeRTOS tasks support passing an argument to the task when it’s created and this argument is declared as a void \*. In other words, you do not need to change the function prototype of your task functions.
-
+   Both µC/OS-III and FreeRTOS tasks support passing an argument to the task
+   when it’s created and this argument is declared as a void \*. In other words,
+   you do not need to change the function prototype of your task functions.
 
 .. container:: column
 
@@ -657,8 +660,6 @@ In both µC/OS-III and FreeRTOS , tasks are written as an infinite loop function
    ``In µC/OS-III``: Kernel Objects are created statically only. They can be allocated dynamically but the functionality is not built-in µC/OS-III. Instead, you would need to allocate them in the Micrium Heap by using the Memory Module in µC/LIB.
    
    ``In FreeRTOS``: Kernel Objects such as tasks, queues, semaphores and mutexes can be created either statically or by dynamically allocating them in FreeRTOS’s heap.
-
-
 
 .. container:: col2
 
@@ -676,8 +677,6 @@ In both µC/OS-III and FreeRTOS , tasks are written as an infinite loop function
    And more detail about the FreeRTOS memory allocation can be found in `Memory Management <https://www.freertos.org/a00111.html>`_.
    
 
-
-
 For example, to migrate your tasks, locate in your project all the places where a task gets created by µC/OS-III ``OSTaskCreate()``, The equivalent API functions in FreeRTOS are/is ``xTaskCreate()`` and/or ``xTaskCreateStatic()``.
 
 **µC/OS-III**
@@ -690,7 +689,6 @@ For example, to migrate your tasks, locate in your project all the places where 
 **FreeRTOS**
 
 .. code:: c++
-
 
    xTaskCreate()
    xTaskCreateStatic()
@@ -759,7 +757,6 @@ For example, to migrate your tasks, locate in your project all the places where 
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -811,13 +808,9 @@ For example, to migrate your tasks, locate in your project all the places where 
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 7** Task Creation
-
-
 
 For more information on the task creation, see the full documentation of `Task Creation <https://www.freertos.org/a00019.html>`_ in FreeRTOS API Reference.
 
@@ -886,7 +879,6 @@ The following example shows a task that toggles a LED every 500ms. The 500ms del
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -913,13 +905,9 @@ The following example shows a task that toggles a LED every 500ms. The 500ms del
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 8** Task Delay - Relative
-
-
 
 If you want to delay a task for an absolute time, then you can use the API vTaskDelayUntil() to replace vTaskDelay(), The other option is a periodic delay as shown in the following example(``periodic``).
 
@@ -952,7 +940,6 @@ If you want to delay a task for an absolute time, then you can use the API vTask
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -983,13 +970,9 @@ If you want to delay a task for an absolute time, then you can use the API vTask
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 9** Task Delay - Periodic
-
-
 
 More about the Task Delay in FreeRTOS can be found at the Section of `Task Control <https://www.freertos.org/a00127.html>`_ of API Reference.
 
@@ -998,7 +981,9 @@ More about the Task Delay in FreeRTOS can be found at the Section of `Task Contr
 Task Suspend
 ------------
 
-Both of the µC/OS-III and FreeRTOS provide to Suspend and Resume the tasks by calling the relevant function interface. The suspended task is invisible for the scheduler, so it will never available until it is Resumed.
+Both of the µC/OS-III and FreeRTOS provide to Suspend and Resume the tasks by
+calling the relevant function interface. The suspended task is invisible for the
+scheduler, so it will never available until it is Resumed.
 
 **µC/OS-III**
 
@@ -1009,7 +994,8 @@ Both of the µC/OS-III and FreeRTOS provide to Suspend and Resume the tasks by c
 
 **FreeRTOS**
 
-In FreeRTOS, the corresponding APIs called with/without ISR for controlling tasks suspend/resume are provided as below:
+In FreeRTOS, the corresponding APIs called with/without ISR for controlling
+tasks suspend/resume are provided as below:
 
 .. code:: c++
 
@@ -1084,7 +1070,6 @@ In FreeRTOS, the corresponding APIs called with/without ISR for controlling task
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -1140,13 +1125,9 @@ In FreeRTOS, the corresponding APIs called with/without ISR for controlling task
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 10** Task Suspend
-
-
 
 For more information about the FreeRTOS task suspend and resume, please see the full documentation of `Task Control <https://www.freertos.org/a00130.html>`_ in FreeRTOS API Reference.
 
@@ -1155,7 +1136,11 @@ For more information about the FreeRTOS task suspend and resume, please see the 
 Scheduler Lock/Suspend
 ----------------------
 
-Both µC/OS-III and FreeRTOS allow a task to retain control of the CPU and suspend the remaining tasks (or lock the scheduler so that context switches will not occur until the scheduler is unlocked) even though other higher-priority tasks are ready-to-run. However but interrupts are still recognized and serviced (assuming interrupts are enabled).
+Both µC/OS-III and FreeRTOS allow a task to retain control of the CPU and
+suspend the remaining tasks (or lock the scheduler so that context switches will
+not occur until the scheduler is unlocked) even though other higher-priority
+tasks are ready-to-run. However but interrupts are still recognized and serviced
+(assuming interrupts are enabled).
 
 **µC/OS-III**
 
@@ -1184,15 +1169,17 @@ Both µC/OS-III and FreeRTOS allow a task to retain control of the CPU and suspe
    
    .. tip::
 
-      API functions that have the potential to cause a context switch (for example, Task delay, Queue/message blocking send, etc.) must not be called while the scheduler is locked/suspended.
+      API functions that have the potential to cause a context switch (for
+      example, Task delay, Queue/message blocking send, etc.) must not be called
+      while the scheduler is locked/suspended.
 
    
    .. tip::
 
-      xTaskResumeAll() only resumes the scheduler. It does not unsuspend tasks that were previously suspended by a call to vTaskSuspend().
+      xTaskResumeAll() only resumes the scheduler. It does not unsuspend tasks
+      that were previously suspended by a call to vTaskSuspend().
 
    
-
 
 **Example Usage**
 
@@ -1227,7 +1214,6 @@ Both µC/OS-III and FreeRTOS allow a task to retain control of the CPU and suspe
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -1259,18 +1245,17 @@ Both µC/OS-III and FreeRTOS allow a task to retain control of the CPU and suspe
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 11** Scheduler Suspend
 
-
-
 .. note::
 
-   At some point the task wants to perform a long operation during which it does not want to get swapped out. It cannot use taskENTER_CRITICAL() or taskEXIT_CRITICAL() as the length of the operation may cause interrupts to be missed - including the ticks, so you can use the scheduler suspend/lock API vTaskSuspendAll() and xTaskResumeAll() in this moment.
-
+   At some point the task wants to perform a long operation during which it does
+   not want to get swapped out. It cannot use taskENTER_CRITICAL() or
+   taskEXIT_CRITICAL() as the length of the operation may cause interrupts to be
+   missed - including the ticks, so you can use the scheduler suspend/lock API
+   vTaskSuspendAll() and xTaskResumeAll() in this moment.
 
 For more information about the FreeRTOS ``vTaskSuspendAll()`` and ``xTaskResumeAll()``, please see the full documentation of `RTOS Kernel Control <https://www.freertos.org/a00134.html>`_ in FreeRTOS API Reference.
 
@@ -1401,7 +1386,6 @@ The following example shows how to protect a shared resource with a mutex.
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -1449,13 +1433,9 @@ The following example shows how to protect a shared resource with a mutex.
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 12** Protecting a Shared Resource with a Mutex
-
-
 
 More examples in using the FreeRTOS Kernel Semaphores and Mutexes can be found in the :doc:`FreeRTOS Add-In Example Projects </wiki-migration/resources/tools-software/freertos/freertos-addin/examples>` .
 
@@ -1466,7 +1446,10 @@ Task Semaphores/Notifications
 
 **µC/OS-III**
 
-In µC/OS-III, for the Task Semaphore APIs, each task has its own built-in semaphore, that in those cases where your code knows which task to signal, makes for a simpler and more efficient code than using a separate semaphore object. The API functions for Task Semaphores start with the prefix OSTaskSemXXX().
+In µC/OS-III, for the Task Semaphore APIs, each task has its own built-in
+semaphore, that in those cases where your code knows which task to signal, makes
+for a simpler and more efficient code than using a separate semaphore object.
+The API functions for Task Semaphores start with the prefix OSTaskSemXXX().
 
 .. code:: c++
 
@@ -1478,7 +1461,11 @@ In µC/OS-III, for the Task Semaphore APIs, each task has its own built-in semap
 
 **FreeRTOS**
 
-Corresponding to the µC/OS-III Task Semaphore APIs is the Task Notifications Feature. Each FreeRTOS task has a 32-bit notification value which is initialized to zero when the RTOS task is created. An RTOS task notification is an event sent directly to a task that can unblock the receiving task, and optionally update the receiving task’s notification value.
+Corresponding to the µC/OS-III Task Semaphore APIs is the Task Notifications
+Feature. Each FreeRTOS task has a 32-bit notification value which is initialized
+to zero when the RTOS task is created. An RTOS task notification is an event
+sent directly to a task that can unblock the receiving task, and optionally
+update the receiving task’s notification value.
 
 .. code:: c++
 
@@ -1495,12 +1482,16 @@ More about the Task Notifications in FreeRTOS can be found at the Section of `Di
 Message Queues
 --------------
 
-Both kernels support inter-task communication, which allows a task or ISR to communicate information to another task.
+Both kernels support inter-task communication, which allows a task or ISR to
+communicate information to another task.
 
 .. container:: column
 
-   The difference between the µC/OS-III and FreeRTOS message queue functionality is that in µC/OS-III the data sent must remain in scope, because it is sent by reference instead of by value, but in FreeRTOS, the data sent no need to be remain in scope. In other words, unlike the µC/OS-III, FreeRTOS enables the data sent to be copied via the buffer or a pointer.
-
+   The difference between the µC/OS-III and FreeRTOS message queue functionality
+   is that in µC/OS-III the data sent must remain in scope, because it is sent
+   by reference instead of by value, but in FreeRTOS, the data sent no need to
+   be remain in scope. In other words, unlike the µC/OS-III, FreeRTOS enables
+   the data sent to be copied via the buffer or a pointer.
 
 .. container:: column
 
@@ -1513,8 +1504,6 @@ Both kernels support inter-task communication, which allows a task or ISR to com
    ``No-need-remain (in scope) Data sending`` ✘         ✔
    ========================================== ========= ========
    
-
-
 
 **µC/OS-III**
 
@@ -1599,8 +1588,6 @@ Mainly queue APIs in FreeRTOS.
    +-----------------------------+--------------------------------------------------------------------------------------------------------+
    
 
-
-
 For a more detailed description of each of the arguments/usage for the above FreeRTOS Queue APIs, please see the full documentation on the `Queues <https://www.freertos.org/Embedded-RTOS-Queues.html>`_ and `Queue Management <https://www.freertos.org/a00018.html>`_ section of FreeRTOS API Reference.
 
 **Example Usage**
@@ -1668,7 +1655,6 @@ For a more detailed description of each of the arguments/usage for the above Fre
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -1732,13 +1718,9 @@ For a more detailed description of each of the arguments/usage for the above Fre
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 13-1** Inter-task Communication - Tasks
-
-
 
 .. container:: column
 
@@ -1791,7 +1773,6 @@ For a more detailed description of each of the arguments/usage for the above Fre
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -1843,13 +1824,9 @@ For a more detailed description of each of the arguments/usage for the above Fre
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 13-2** Inter-task Communication - ISRs
-
-
 
 **Queue Sets**
 
@@ -1924,7 +1901,6 @@ Stream/Message buffers are an RTOS task to RTOS task, and interrupt to task comm
       xStreamBufferIsFull()
    
 
-
 .. container:: column
 
    **Message Buffers**
@@ -1945,8 +1921,6 @@ Stream/Message buffers are an RTOS task to RTOS task, and interrupt to task comm
       xMessageBufferIsFull()
    
 
-
-
 For a more detailed description of each of the arguments/usage for the above FreeRTOS Stream& Message Buffer APIs, please see the full documentation on the `Stream & Message Buffers <https://www.freertos.org/RTOS-stream-message-buffers.html>`_ and the API Reference sections of `Stream buffers <https://www.freertos.org/RTOS-stream-buffer-API.html>`_ and `Message Buffers <https://www.freertos.org/RTOS-message-buffer-API.html>`_.
 
 --------------
@@ -1954,7 +1928,9 @@ For a more detailed description of each of the arguments/usage for the above Fre
 Event Flags/Group
 -----------------
 
-Event flags are used when a task needs to synchronize with the occurrence of multiple events. Both µC/OS-III and FreeRTOS provide the Event Flags ( or 'Group') Feature for user to conveniently using it.
+Event flags are used when a task needs to synchronize with the occurrence of
+multiple events. Both µC/OS-III and FreeRTOS provide the Event Flags ( or
+'Group') Feature for user to conveniently using it.
 
 **µC/OS-III**
 
@@ -2010,7 +1986,8 @@ For a more detailed description of each of the arguments/usage for the above Fre
 
 **Example Usage**
 
-The following example demonstrates how to use the Event Flags in the both µC/OS-III and FreeRTOS.
+The following example demonstrates how to use the Event Flags in the both
+µC/OS-III and FreeRTOS.
 
 .. container:: column
 
@@ -2080,7 +2057,6 @@ The following example demonstrates how to use the Event Flags in the both µC/OS
           :
       }
    
-
 
 .. container:: column
 
@@ -2153,20 +2129,18 @@ The following example demonstrates how to use the Event Flags in the both µC/OS
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 14** Event Flags/Group
-
-
 
 --------------
 
 Software Timers
 ---------------
 
-Both kernels allows users to create a software timer that enable a function to be executed at a set time in the future, The timer can be configured to run continuously or only once (one-short).
+Both kernels allows users to create a software timer that enable a function to
+be executed at a set time in the future, The timer can be configured to run
+continuously or only once (one-short).
 
 **µC/OS-III**
 
@@ -2257,7 +2231,6 @@ For a more detailed description of each of the arguments/usage for the above Fre
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -2302,20 +2275,17 @@ For a more detailed description of each of the arguments/usage for the above Fre
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 15** Software Timers
-
-
 
 --------------
 
 Full API Map
 ------------
 
-Locate in your project all the rest of µC/OS-III API function calls, and replace them with their equivalent FreeRTOS API function.
+Locate in your project all the rest of µC/OS-III API function calls, and replace
+them with their equivalent FreeRTOS API function.
 
 +--------------------------------------------------+-------------------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Features                                         | µC/OS-III               | FreeRTOS                               | Description                                                                                                                                                                                                                |
@@ -2603,14 +2573,16 @@ Locate in your project all the rest of µC/OS-III API function calls, and replac
 
    **Table 16** API Mapping
 
-
-
 --------------
 
 Error Handling
 --------------
 
-The errors reported back from the FreeRTOS API are different from µC/OS-III. In µC/OS-III, each API function returns an error code concerning the outcome of the function call via a pointer to a variable of type OS_ERR that is always the last argument of the API function, but in FreeRTOS, Typically you just declare a variable to store the return value from some of the API functions.
+The errors reported back from the FreeRTOS API are different from µC/OS-III. In
+µC/OS-III, each API function returns an error code concerning the outcome of the
+function call via a pointer to a variable of type OS_ERR that is always the last
+argument of the API function, but in FreeRTOS, Typically you just declare a
+variable to store the return value from some of the API functions.
 
 .. container:: column
 
@@ -2638,7 +2610,6 @@ The errors reported back from the FreeRTOS API are different from µC/OS-III. In
       }
    
 
-
 .. container:: column
 
    **FreeRTOS**
@@ -2664,15 +2635,14 @@ The errors reported back from the FreeRTOS API are different from µC/OS-III. In
       }
    
 
-
-
 .. container:: Centeralign
 
    **Table 17 - 1** Error Handling
 
-
-
-As a basic error handling, you can simply check that the returned error code is OS_ERR_NONE, which is equivalent to the way you are currently doing it with FreeRTOS, where the returned error code can basically be either 0 or 1 as shown in the following table:
+As a basic error handling, you can simply check that the returned error code is
+OS_ERR_NONE, which is equivalent to the way you are currently doing it with
+FreeRTOS, where the returned error code can basically be either 0 or 1 as shown
+in the following table:
 
 +-------+---------------------------------------+--------------------------+------------------------------------------+
 | Group | Macro Name                            | Values                   | Note                                     |
@@ -2700,14 +2670,13 @@ As a basic error handling, you can simply check that the returned error code is 
 
    **Table 17 - 2** FreeRTOS Error Check Codes
 
-
-
 --------------
 
 Further Reading
 ---------------
 
-To learn more about FreeRTOS including the API reference and the Features, Please refer to ADI FreeRTOS Wiki and FreeRTOS.org official website.
+To learn more about FreeRTOS including the API reference and the Features,
+Please refer to ADI FreeRTOS Wiki and FreeRTOS.org official website.
 
 **ADI FreeRTOS:**
 
@@ -2732,4 +2701,4 @@ If you need further help with migrations, please get in touch via:
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/freertos/migration-guide/completing_interrupt_processing_in_a_high_priority_task.jpg
-   :width: 800px
+   :width: 800

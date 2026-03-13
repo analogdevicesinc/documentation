@@ -1,7 +1,10 @@
 Analog Devices Wiki Style Guide
 ===============================
 
-There are many style guides which are on line, before starting writing too much - take the time to read at least one. One of the key things to remember that your audience is technical, and their grammar/spelling is as bad as yours -- aim to inform, not to impress.
+There are many style guides which are on line, before starting writing too much
+- take the time to read at least one. One of the key things to remember that
+your audience is technical, and their grammar/spelling is as bad as yours -- aim
+to inform, not to impress.
 
 -  `DokuWiki's Style Guide <http://www.dokuwiki.org/tips:good_style>`_
 -  `Wikiversity Style Guide <http://en.wikiversity.org/wiki/Technical_writing_style>`_

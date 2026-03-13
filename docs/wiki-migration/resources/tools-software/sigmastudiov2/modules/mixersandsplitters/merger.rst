@@ -15,9 +15,12 @@ Variants
 Description
 -----------
 
-The Signal Merger block mixes a group of input signals and automatically decreases the signal levels in proportion to the number of inputs. This block helps to avoid level clipping without the need to manually adjust mix levels.
+The Signal Merger block mixes a group of input signals and automatically
+decreases the signal levels in proportion to the number of inputs. This block
+helps to avoid level clipping without the need to manually adjust mix levels.
 
-Complex Merger takes the real and imaginary part of input signal and merges to complex output signal. This is a block based module.
+Complex Merger takes the real and imaginary part of input signal and merges to
+complex output signal. This is a block based module.
 
 Targets Supported
 -----------------
@@ -27,7 +30,6 @@ Name   ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ====== ========== ================ ============= ================
 Merger B/S        B/S              B/S           B
 ====== ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -49,7 +51,6 @@ Name    Type                                   Description
 ======= ====================================== ================
 Output0 Control(ComplexPin for complex merger) Output channel 0
 ======= ====================================== ================
-
 
 | ===== Configurable Parameters =====
 

@@ -49,4 +49,5 @@ which can be used in the wiki, like `here <https://analogdevicesinc.github.io/Do
 
 There is also a shortlink for this ``:git-repo:`repo/path/ <path>``` which means in the wiki, you can do ``:git-scopy:`zipfile <js>``` like :git-scopy:`zipfile <js>`, and it will zip up the file, and download it.
 
-If it is just a single file (like the examples), we can just point to the top level directory, and people can download from github what they want.
+If it is just a single file (like the examples), we can just point to the top
+level directory, and people can download from github what they want.

@@ -1,7 +1,11 @@
 Taking Screenshots on the Xilinx Zynq or Altera SoC
 ===================================================
 
-Screenshot is an image taken by a computer to capture the visible items on the monitor or any other output devices. Normally, people want to do this to capture a screen for placement in this wiki. There are several ways of taking screenshots in Linux. We will cover few tools that are used for taking screenshots.
+Screenshot is an image taken by a computer to capture the visible items on the
+monitor or any other output devices. Normally, people want to do this to capture
+a screen for placement in this wiki. There are several ways of taking
+screenshots in Linux. We will cover few tools that are used for taking
+screenshots.
 
 There are two steps do getting screen shots on the wiki.
 
@@ -14,9 +18,13 @@ Taking Screenshots
 Use Print Screen
 ~~~~~~~~~~~~~~~~
 
-This is the most common method to take screenshots. Pressing the "Print Screen" key on the keyboard will take the screenshot of the “Entire Visible Screen”. On many keyboards, the "Print Screen" button will only be active if you hold down the "Function" button.
+This is the most common method to take screenshots. Pressing the "Print Screen"
+key on the keyboard will take the screenshot of the “Entire Visible Screen”. On
+many keyboards, the "Print Screen" button will only be active if you hold down
+the "Function" button.
 
-When we want to take a particular window, we can use "Alt+Print Screen". Alt+PrintScreen will take only the particular window which is currently active.
+When we want to take a particular window, we can use "Alt+Print Screen".
+Alt+PrintScreen will take only the particular window which is currently active.
 
 Use gnome-screenshot
 ~~~~~~~~~~~~~~~~~~~~

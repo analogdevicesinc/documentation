@@ -9,12 +9,15 @@ Sweep Look Up Sine
 Description
 -----------
 
-The Sweep (Lookup/Sine) block generates a sinewave that sweeps from a start to an end frequency. The sweep speed is determined by the number of steps and cycles per step.
+The Sweep (Lookup/Sine) block generates a sinewave that sweeps from a start to
+an end frequency. The sweep speed is determined by the number of steps and
+cycles per step.
 
 Usage
 -----
 
-Enter the desired start and stop frequency and step size using the edit controls:
+Enter the desired start and stop frequency and step size using the edit
+controls:
 
 -  **Initial Freq**
 
@@ -40,7 +43,10 @@ Enter the desired start and stop frequency and step size using the edit controls
 
    -  Sets the sweep speed, the relative duration of each sweep step.
 
-A valid slope range will be computed depending on the step size entered. The ending tone will be held until reset is clicked, which returns to the initial frequency. The plot below shows the correlation for sweep plots with varying step sizes and slopes.
+A valid slope range will be computed depending on the step size entered. The
+ending tone will be held until reset is clicked, which returns to the initial
+frequency. The plot below shows the correlation for sweep plots with varying
+step sizes and slopes.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sweeplookupsine008.jpg
    :align: center
@@ -65,7 +71,6 @@ Name   Type  Description
 ====== ===== ==============
 Output Audio Output channel
 ====== ===== ==============
-
 
 | ===== Configurable Parameters =====
 
@@ -95,7 +100,6 @@ slope          Gain, the sinetone wave to be multiplied FixPoint8d24
 step           slew step                                FixPoint8d24
 ison           Enabled/Disabled the sweep               FixPoint8d24
 ============== ======================================== =============
-
 
 | ===== DSP Parameter Computation ===== increment1= InitialFrequency/(FS/2)
 

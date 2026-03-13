@@ -91,4 +91,4 @@ Software Guide
       -  :doc:`Evaluation+ Windows </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/software>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-003.png
-   :width: 400px
+   :width: 400

@@ -3,12 +3,16 @@ Single Blend EQ
 
 :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
-The 'Single Blend EQ' block blends the filter coefficients of two second order filters according to the blend factor specified and performs filtering operation
+The 'Single Blend EQ' block blends the filter coefficients of two second order
+filters according to the blend factor specified and performs filtering operation
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/singleblendtreetool.png
    :align: center
 
-This block gives access to a wide variety of 2nd-order (biquad)filter algorithms. The blend factor can be entered(0-1) or changed using the slider. The Slew time can be entered in seconds (0-1) to slew from the initial blend factor to the target value.
+This block gives access to a wide variety of 2nd-order (biquad)filter
+algorithms. The blend factor can be entered(0-1) or changed using the slider.
+The Slew time can be entered in seconds (0-1) to slew from the initial blend
+factor to the target value.
 
 -  The available filter types are:
 -  Parametric
@@ -27,7 +31,11 @@ This block gives access to a wide variety of 2nd-order (biquad)filter algorithms
 -  Notch
 -  Chebyshev Low-Pass / High-Pass
 
-The slewing functionality is added for smooth transition from one blend factor to another when the blending factor is changed. The slewing takes place approximately in the time set by the user in the GUI. The slew time can be entered in the GUI slew Text box. The slew time range is limited between (0 to 1 second).
+The slewing functionality is added for smooth transition from one blend factor
+to another when the blending factor is changed. The slewing takes place
+approximately in the time set by the user in the GUI. The slew time can be
+entered in the GUI slew Text box. The slew time range is limited between (0 to 1
+second).
 
 Input Pins
 ----------
@@ -49,7 +57,6 @@ Output Pins
 +====================+====================================+======================+
 | Pin 0: Filter Out1 | decimal - audio                    | Filtered output      |
 +--------------------+------------------------------------+----------------------+
-
 
 Configuration
 -------------
@@ -98,7 +105,6 @@ Parameteric
 | Q                | 1.41          | 0-16        | Q Factor for filter calculations    |
 +------------------+---------------+-------------+-------------------------------------+
 
-
 Shelving
 ~~~~~~~~
 
@@ -141,7 +147,6 @@ General
 | Q                | 1.41            | 0-16                                 | Q Factor for filter calculations   |
 +------------------+-----------------+--------------------------------------+------------------------------------+
 
-
 Butterworth/Bessel
 ~~~~~~~~~~~~~~~~~~
 
@@ -157,7 +162,6 @@ Butterworth/Bessel
 +------------------+-----------------+-----------------------------------------------------------------------------+------------------------------------+
 | Gain             | 0dB             | -15 - 15 dB                                                                 | dB gain of the filter coefficients |
 +------------------+-----------------+-----------------------------------------------------------------------------+------------------------------------+
-
 
 Tone Control
 ~~~~~~~~~~~~
@@ -176,7 +180,6 @@ Tone Control
 +------------------+---------------+-------------+-------------------------------------------+
 | Bass Gain        | 0dB           | -15 - 15 dB | Bass dB gain of the filter coefficients   |
 +------------------+---------------+-------------+-------------------------------------------+
-
 
 IIR Coefficient
 ~~~~~~~~~~~~~~~
@@ -216,7 +219,6 @@ First Order Filters
 | Q                | 1.41                                        | 0-16              | Q Factor for filter calculations       |
 +------------------+---------------------------------------------+-------------------+----------------------------------------+
 
-
 All Pass,Peaking,Notch
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -233,7 +235,6 @@ All Pass,Peaking,Notch
 | Q                | 1.41          | 0-16        | Q Factor for filter calculations   |
 +------------------+---------------+-------------+------------------------------------+
 
-
 Chebyshev
 ~~~~~~~~~
 
@@ -249,7 +250,6 @@ Chebyshev
 +------------------+---------------+-------------+---------------------------------------+
 | Ripple           | 0.1           | 0-10        | Ripple Factor for filter calculations |
 +------------------+---------------+-------------+---------------------------------------+
-
 
 DSP Parameter Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -295,7 +295,8 @@ Note: The algorithm names for different algorithms for this module are:
 -  Single Blend EQ single precision algorithm(ADAU145x): SingleBlendEQSPAlg
 -  Single Blend EQ double precision algorithm(ADAU145x): SingleBlendEQDPAlg
 -  Single Blend EQ single precision algorithm(ADSPSC5xx): MChSingleBlendFiltAlg
--  Single Blend EQ extended precision algorithm(ADSPSC5xx): MChSingleBlendFiltEPAlg
+-  Single Blend EQ extended precision algorithm(ADSPSC5xx):
+   MChSingleBlendFiltEPAlg
 
 --------------
 

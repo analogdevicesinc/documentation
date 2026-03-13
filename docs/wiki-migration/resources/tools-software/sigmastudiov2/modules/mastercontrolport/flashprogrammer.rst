@@ -9,7 +9,9 @@ Flash Programmer
 Description
 -----------
 
-This module provides support to write raw data to the external flash memory using I2C/SPI. The I2C/SPI write is performed during the initialization before the audio processing in the schematic is started.
+This module provides support to write raw data to the external flash memory
+using I2C/SPI. The I2C/SPI write is performed during the initialization before
+the audio processing in the schematic is started.
 
 Usage
 -----
@@ -18,7 +20,9 @@ Writing a Wav file to SPI EEPROM using Flash Programmer (ADAU1452)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Add Flash Programmer module to the schematic.
--  Configure SPI parameters in the Control Port Properties window. (Below window shows SPI configuration required to write to EEPROM in EVAL-ADAU1452MINIZ board)
+-  Configure SPI parameters in the Control Port Properties window. (Below window
+   shows SPI configuration required to write to EEPROM in EVAL-ADAU1452MINIZ
+   board)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_window_ssp.jpg
    :alt: fp_window_ssp.jpg
@@ -32,13 +36,14 @@ Writing a Wav file to SPI EEPROM using Flash Programmer (ADAU1452)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_op_wnd_ssp.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  To verify the data written to the flash, click on the read button. The output window will indicate the verification status
+-  To verify the data written to the flash, click on the read button. The output
+   window will indicate the verification status
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/fp_verify_op_wnd_ssp.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Targets Supported
 -----------------

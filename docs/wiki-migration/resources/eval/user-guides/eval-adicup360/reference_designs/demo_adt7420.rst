@@ -12,7 +12,7 @@ The ADuCM360_demo_adt7420_pmdz project uses the :adi:`EVAL-ADT7420-PMDZ` which h
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adt7420/adicup360_adt7420_user_powered.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 The application reads the temperature data from the ADT7420 and displays the temperature in **[codes]** and **[C]** on a serial terminal. The temperature data can be changed between 16-bit(0.0078 C/LSB) and 13-bit(0.0625 C/LSB) accurate depending on the resolution needed. The application also prints out the device ID register, which is just a quick and easy check to ensure the reads are working properly.
 
@@ -20,7 +20,7 @@ All the outputs are printed from the UART to the USER USB port using P0.6 and P0
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adt7420/putty_output_display.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Demo Requirements
 -----------------
@@ -53,7 +53,7 @@ Setting up the hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adt7420/aduicup360_switch_config.png
    :align: center
-   :width: 500px
+   :width: 500
 
 ::
 
@@ -63,14 +63,19 @@ Setting up the hardware
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the ADT7420.
+There are two basic ways to program the ADICUP360 with the software for the
+ADT7420.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_adt7420** demo can be found here:
 
@@ -87,11 +92,9 @@ The software for the **ADuCM360_demo_adt7420** demo can be found here:
    -  :git-EVAL-ADICUP360:`AduCM3029_demo_adt7420 Source Code <projects/ADuCM360_demo_adt7420_pmdz>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -100,14 +103,12 @@ Configure the ADT7420 I2C address in the *ADT7420.h* file to match the hardware.
 
 ::
 
-
    /* ADT7420 I2C Address */
    #define ADT7420_ADDRESS    0x48      /* Default I2C Address of EVAL-ADT7420-PMDZ */
 
 Configure the ADT7420 in the operating mode you want using the *ADT7420.c* file
 
 ::
-
 
    uint8_t ui8configAdt7420 = (FAULT_TRIGGER_4 | CT_PIN_POLARITY | INT_PIN_POLARITY | INT_CT_MODE |CONTINUOUS_CONVERSION_MODE | RESOLUTION_13_BITS);
 
@@ -137,7 +138,6 @@ Configure the ADT7420 in the operating mode you want using the *ADT7420.c* file
 Assign values to your different temperature setpoints and alarms/interrupts in the *ADT7420.h* file
 
 ::
-
 
    /* Temperature monitoring parameters */
    #define TEMP_HIGH_SETPOINT             75          /* Value in Degree C */
@@ -170,7 +170,7 @@ The user must press the **<ENTER>** key each time they want to display the resul
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adt7420/putty_output_display.png
    :align: center
-   :width: 600px
+   :width: 600
 
 How to use the Tools
 --------------------
@@ -194,7 +194,7 @@ This is the **ADuCM360_demo_adt7420_pmdz** project structure. This project conta
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adt7420/adumc360_ide_project_structure.png
    :align: left
-   :width: 400px
+   :width: 400
 
 In the **src** and **include** folders you will find the source and header files related to adt7420_pmdz application. You can modify those files as appropriate for your application. The *Communication.c/h* files contain I2C and UART specific data, meanwhile the *ADT7420.c/h* files contain the temperature information data and threshold registers. Here are parameters you can configure:
 

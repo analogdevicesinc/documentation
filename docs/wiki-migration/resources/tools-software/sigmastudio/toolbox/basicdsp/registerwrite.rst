@@ -3,8 +3,8 @@ Register Write
 
 :doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-
-This module writes the value in the input pin to the DSP register address configured
+This module writes the value in the input pin to the DSP register address
+configured
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/regwrite1.png
    :align: center
@@ -24,7 +24,9 @@ Input Pins
 Grow Algorithm
 --------------
 
-The module currently supports growth. Both the control and pins are grown for each growth. Add algorithm functionality is not supported. The figure below shows the module when grown for 5.
+The module currently supports growth. Both the control and pins are grown for
+each growth. Add algorithm functionality is not supported. The figure below
+shows the module when grown for 5.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/regwrite2.png
    :align: center
@@ -48,7 +50,6 @@ GUI Control Name Compiler Name             Function Description
 ================ ========================= ====================
 Mute             RegisterWriteAlg1address0 Register Address
 ================ ========================= ====================
-
 
 | Here,
 

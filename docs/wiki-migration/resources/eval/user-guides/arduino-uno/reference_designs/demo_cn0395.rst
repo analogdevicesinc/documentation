@@ -6,7 +6,8 @@ The **CN0395_example** is a volatile organic compounds (VOC) detector demo proje
 General description
 -------------------
 
-This project is a good example of using ADI shields with Arduino boards for fast and easy prototyping.
+This project is a good example of using ADI shields with Arduino boards for fast
+and easy prototyping.
 
 The **CN0395_example** project uses the :doc:`EVAL-CN0395-ARDZ Shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0395>` which is a portable VOC detector which comes with a Figaro TGS8100 MOX sensor.
 
@@ -45,12 +46,14 @@ Setting up the hardware
 -----------------------
 
 -  Connect the EVAL-CN0411-ARDZ Shield to the Arduino connectors DIGITAL (PWM~), POWER, ANALOG IN and ICSP of the Arduino Uno board.
--  Plug in the USB cable from the PC to the Arduino Uno base board via the type B port on the board.
+-  Plug in the USB cable from the PC to the Arduino Uno base board via the type
+   B port on the board.
 
 Obtaining the source code
 -------------------------
 
-We recommend not opening the project directly, but rather make a local copy in your workspace and open it using Arduino/Genuino IDE.
+We recommend not opening the project directly, but rather make a local copy in
+your workspace and open it using Arduino/Genuino IDE.
 
 The source code and include files of the **CN0395_example** can be found on Github:
 
@@ -58,7 +61,6 @@ The source code and include files of the **CN0395_example** can be found on Gith
    :class: download
 
    :git-arduino:`CN0395_example at Github <Arduino%20Uno%20R3/examples/CN0395_example>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -90,8 +92,8 @@ The application allows the user to select between the two modes of operation:
 Heater Mode (RH)
 ~~~~~~~~~~~~~~~~
 
-The user can further choose the subroutine which determines the heater current (IH):
-
+The user can further choose the subroutine which determines the heater current
+(IH):
 
 |image1|
 
@@ -110,17 +112,25 @@ The user can further choose the subroutine which determines the heater current (
    -  ALPHA is the constant 0.003074
 
 -  The resulted RH is used to calculate IH and VH with constant resistance routine.
--  The resulted VH is further adjusted by using the constant heater voltage routine.
+-  The resulted VH is further adjusted by using the constant heater voltage
+   routine.
 
 **current** simply sets the IDAC to the desired current.
 
-After the completion of the routine, the application displays the measured values: RH_A (Ambient Heater Res ), VH (heater voltage), IH (heater current), RH (heater resistance), T_A (ambient temperature), HUM (ambient humidity), PH (heater power consumption), TH (heater temperature), ADC data (raw data read from ADC in hex), Ro ( sensor resistance measured in clean air).
-
+After the completion of the routine, the application displays the measured
+values: RH_A (Ambient Heater Res ), VH (heater voltage), IH (heater current), RH
+(heater resistance), T_A (ambient temperature), HUM (ambient humidity), PH
+(heater power consumption), TH (heater temperature), ADC data (raw data read
+from ADC in hex), Ro ( sensor resistance measured in clean air).
 
 |image2|
 
-At power up, the application starts in constant current mode and sets the default current to 8mA. Furthermore, it is assumed that the measurement circuit is placed in clean air, therefore we measure and store the sensor resistance in clean air (Ro). After each heater measurement mode change, it is assumed that the board is placed in clean air, and the Ro value is updated. This is required, because Ro is a function of the heater temperature.
-
+At power up, the application starts in constant current mode and sets the
+default current to 8mA. Furthermore, it is assumed that the measurement circuit
+is placed in clean air, therefore we measure and store the sensor resistance in
+clean air (Ro). After each heater measurement mode change, it is assumed that
+the board is placed in clean air, and the Ro value is updated. This is required,
+because Ro is a function of the heater temperature.
 
 |image3|
 
@@ -129,12 +139,13 @@ Sensor Resistance mode (RS)
 
 Sensor measurement is performed. The application can switch at any time to this mode by pressing the <ENTER> key. The :adi:`AD7988-1` ADC receives the voltage from the sense circuit (VRS). The switching is done by using :adi:`ADG884`.
 
-In background every time the application runs the gain-ranging algorithm and determines RS and the gas concentration (C) measured in PPM (parts per million):
-
+In background every time the application runs the gain-ranging algorithm and
+determines RS and the gas concentration (C) measured in PPM (parts per million):
 
 |image4|
 
-RS reading can also be performed by typing <operation RS>, but it does the same thing as pressing the <ENTER> key.
+RS reading can also be performed by typing <operation RS>, but it does the same
+thing as pressing the <ENTER> key.
 
 **Factory Calibration** The IDAC current from the ADN8810 is 1% accurate, therefore a factory calibration must be performed. The routine loads code 4095 into ADN8810 and reads the ADC, which ideally should be 9.94mA × 71.5Ω = 0.71V, or code [0.71/4.096] x 65,535 = 11,360. The gain correction factor k1 = 11,360/CODEFS. It is recommended that this is done only once. Follow the procedure:
 
@@ -145,17 +156,17 @@ RS reading can also be performed by typing <operation RS>, but it does the same 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/calibrate_w.jpg
    :align: center
-   :width: 850px
+   :width: 850
 
-From this point on, K1 is stored in permanent memory and applied to currents that are input. To read the gain correction factor from memory, type <calibrate r>.
-
+From this point on, K1 is stored in permanent memory and applied to currents
+that are input. To read the gain correction factor from memory, type <calibrate
+r>.
 
 |image5|
 
 **Help**
 
 Type <help> to see the available commands:
-
 
 |image6|
 
@@ -164,21 +175,24 @@ Project structure
 
 The CN0411_example is a C++ Arduino sketch.
 
-This project contains: system initialization part - setting Digital IO pins in the right mode; port configuration for SPI1, UART via Digital pin 0/Digital pin 1, I2C via SDA/SCL pins; SPI, UART, I2C read/write functions; AD7988 control, ADN8810 control, SHT30 control and VOC concentration computation.
+This project contains: system initialization part - setting Digital IO pins in
+the right mode; port configuration for SPI1, UART via Digital pin 0/Digital pin
+1, I2C via SDA/SCL pins; SPI, UART, I2C read/write functions; AD7988 control,
+ADN8810 control, SHT30 control and VOC concentration computation.
 
 All files are in the same folder as the .ino file and include the source and header files related to CN0395 software application. The *Communication.cpp/h* files contain SPI, UART and I2C specific data, the *AD7988.cpp/h* files contain the ADC control, the *ADN8810.cpp/h* files contain the IDAC control, the *SHT30.c/h* files contain the temperature/humidity sensor control, and the *CN0395.cpp/h* files contain commands, configurations and computations specific to the VOC detector application.
 
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rh_mode.jpg
-   :width: 850px
+   :width: 850
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/constant_voltage.jpg
-   :width: 850px
+   :width: 850
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/power_up.jpg
-   :width: 850px
+   :width: 850
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rs_mode_new.png
-   :width: 850px
+   :width: 850
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/calibrate_read.jpg
-   :width: 850px
+   :width: 850
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/help.jpg
-   :width: 850px
+   :width: 850

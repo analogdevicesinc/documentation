@@ -8,7 +8,7 @@ Standard RMS
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/standardrmsgraph.png
    :alt: standardrmsgraph.png
-   :width: 650px
+   :width: 650
 
 Variants
 --------
@@ -19,7 +19,9 @@ Variants
 Description
 -----------
 
-This Module computes the Gain of the Compressor. Compression happens by taking the RMS of the Average or Max of all inputs, and then looking up for the Gain based on the Compressor Graph.
+This Module computes the Gain of the Compressor. Compression happens by taking
+the RMS of the Average or Max of all inputs, and then looking up for the Gain
+based on the Compressor Graph.
 
 Targets Supported
 -----------------

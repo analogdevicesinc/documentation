@@ -3,7 +3,9 @@
 Open Existing Project
 =====================
 
-OpenExistingProject takes in one argument(filePath) and allows the user to open a SigmaStudio+ project in the given filepath. This API returns the SSPResult type.
+OpenExistingProject takes in one argument(filePath) and allows the user to open
+a SigmaStudio+ project in the given filepath. This API returns the SSPResult
+type.
 
 API
 ---
@@ -15,12 +17,14 @@ API
 Arguments
 ---------
 
--  filePath- The path along with the file name of the project which has to be opened in the SigmaStudio+ application.
+-  filePath- The path along with the file name of the project which has to be
+   opened in the SigmaStudio+ application.
 
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the OpenExistingProject action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+OpenExistingProject action.
 
 ::
 

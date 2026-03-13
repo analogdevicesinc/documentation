@@ -20,7 +20,9 @@ Supported Carriers
 Quick Start Guide
 -----------------
 
-The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal, ADI DAC software and the programmer (IMPACT).
+The bit file provided combines the FPGA bit file and the SDK elf files. It may
+be used for a quick check on the system. All you need is the hardware and a PC
+running a UART terminal, ADI DAC software and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -54,13 +56,15 @@ To begin make the following connections (see image below):
 -  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on ML605.
 -  Connect a USB cable to the AD9789-EBZ board.
 -  Connect an external clock source to AD9789-EBZ board's S1 (HF_DACCLK) SMA connector.
--  Connect a spectrum analyzer to AD9789-EBZ board's S5 (AOUT_DAC-) SMA connector.
+-  Connect a spectrum analyzer to AD9789-EBZ board's S5 (AOUT_DAC-) SMA
+   connector.
 
-Setup the clock source to be 2.4GHz/6dBm. After the hardware setup, turn the power on to the ML605 and the AD9789-EBZ boards.
+Setup the clock source to be 2.4GHz/6dBm. After the hardware setup, turn the
+power on to the ML605 and the AD9789-EBZ boards.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_setup.jpg
    :alt: Hardware setup
-   :width: 200px
+   :width: 200
 
 The reference design primarily supports four modes of operation.
 
@@ -76,7 +80,9 @@ The reference design primarily supports four modes of operation.
 | 0x3  | 'd'        | 32        | 16         | Complex     | N/A                  | QDUC Mode.        |
 +------+------------+-----------+------------+-------------+----------------------+-------------------+
 
-The reference design is NOT fully verified across all the modes. The delay/latency parameters may have to be adjusted depending on various features selected.
+The reference design is NOT fully verified across all the modes. The
+delay/latency parameters may have to be adjusted depending on various features
+selected.
 
 QAM Mapper Mode
 ~~~~~~~~~~~~~~~
@@ -105,26 +111,29 @@ Start ADI- AD9789 SPI program (see screenshot below)-
 -  Interpolating BPF Center Frequency: Set it to 834MHz click twice on the button to the right for the changes to take effect.
 -  Reference/Sample/Sync Clock Control: Make sure DCODIV is set to 0x1.
 -  Reference/Sample/Sync Clock Control: Set DSCPHZ to 0x0, click twice on PARAMNEW to take effect.
--  Reference/Sample/Sync Clock Control: Set SNCPHZ to 0x3, click twice on PARAMNEW to take effect.
+-  Reference/Sample/Sync Clock Control: Set SNCPHZ to 0x3, click twice on
+   PARAMNEW to take effect.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_intp_spi.jpg
    :alt: SPI setup
-   :width: 200px
+   :width: 200
 
 -  Start a UART terminal (57600 baud rate).
 -  Start IMPACT/XMD then program the device.
 
-If programming was successful, you should be seeing messages appear on the terminal as shown in figure below.
+If programming was successful, you should be seeing messages appear on the
+terminal as shown in figure below.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_intp_uart.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
-Select 'c' for the interpolation filter mode. The spectrum should appear as shown below. The DDS is set to 500KHz to 2000KHz.
+Select 'c' for the interpolation filter mode. The spectrum should appear as
+shown below. The DDS is set to 500KHz to 2000KHz.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_intp_spectrum.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
 QDUC Mode
 ~~~~~~~~~
@@ -147,26 +156,29 @@ Start ADI- AD9789 SPI program (see screenshot below)-
 -  Interpolating BPF Center Frequency: Set it to 834MHz click twice on the button to the right for the changes to take effect.
 -  Reference/Sample/Sync Clock Control: Make sure DCODIV is set to 0x1.
 -  Reference/Sample/Sync Clock Control: Set DSCPHZ to 0x0, click twice on PARAMNEW to take effect.
--  Reference/Sample/Sync Clock Control: Set SNCPHZ to 0x3, click twice on PARAMNEW to take effect.
+-  Reference/Sample/Sync Clock Control: Set SNCPHZ to 0x3, click twice on
+   PARAMNEW to take effect.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_qduc_spi.jpg
    :alt: SPI setup
-   :width: 200px
+   :width: 200
 
 -  Start a UART terminal (57600 baud rate).
 -  Start IMPACT/XMD then program the device.
 
-If programming was successful, you should be seeing messages appear on the terminal as shown in figure below.
+If programming was successful, you should be seeing messages appear on the
+terminal as shown in figure below.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_qduc_uart.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
-Select 'd' for the qduc mode. The spectrum should appear as shown below. The DDS is set to 3MHz.
+Select 'd' for the qduc mode. The spectrum should appear as shown below. The DDS
+is set to 3MHz.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_qduc_spectrum.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
 Using the reference design
 --------------------------
@@ -174,7 +186,10 @@ Using the reference design
 Functional description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design consists of a DDS module and a lvds interface. The DDS module consists of a Xilinx DDS core and DDR based DDS. It is possible to change the output data delay with respect to the DCO clock, as well as the FS to data delay. See the regmap file and the SDK c file.
+The reference design consists of a DDS module and a lvds interface. The DDS
+module consists of a Xilinx DDS core and DDR based DDS. It is possible to change
+the output data delay with respect to the DCO clock, as well as the FS to data
+delay. See the regmap file and the SDK c file.
 
 Registers
 ~~~~~~~~~
@@ -194,7 +209,6 @@ FPGA Referece Designs:
    -  **ML605 (bit/sw files)** `cf_ad9789_ebz_sw_14_4_2013_03_25.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9789_ebz_sw_14_4_2013_03_25.tar.gz>`_
    
 
-
 Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
 
 .. hint::
@@ -202,7 +216,6 @@ Only Xilinx coregen xco files are provided with the reference design. You must r
    
    -  Questions? :ez:`Ask Help & Support <fpga>`.
    
-
 
 Tar file contents
 -----------------

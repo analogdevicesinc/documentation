@@ -13,13 +13,13 @@ After following the instructions in the :doc:`Software Procedures </wiki-migrati
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170_sdpk1_connections.png
    :align: center
-   :width: 450px
+   :width: 450
 
 Block Diagram
 =============
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/ad4170_board_block_diagram.png
-   :width: 600px
+   :width: 600
 
 Hardware Link Options
 =====================
@@ -284,27 +284,31 @@ Connection Function Connection Function
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/ad4170_connections.png
    :align: center
-   :width: 600px
+   :width: 600
 
 SMB Connections
 ---------------
 
-There are 9 SMB connections on the board. To allow clock signals and analog inputs into the board.
+There are 9 SMB connections on the board. To allow clock signals and analog
+inputs into the board.
 
 -  SMB1 Brings external MCLK to the AD4170
 -  SMB2/3/4/5 bring AIN3/4/7/8 through the AC filters to the AD4170
 -  SMB6/7/8/9 bring AIN3/4/7/8 through the DC filters to the AD4170
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/ad4170_smb.png
-   :width: 400px
+   :width: 400
 
 Power Supplies
 ==============
 
-The evaluation board receives power through the controller board when connected to the PC via USB. Linear regulators generate the required power supply levels from the applied USB voltage.
+The evaluation board receives power through the controller board when connected
+to the PC via USB. Linear regulators generate the required power supply levels
+from the applied USB voltage.
 
 -  Location of AVDD, AVSS and IOVDD control links are highlighted in blue in the diagram below
--  Each regulators can be shut down using their shut down links highlighted in orange below
+-  Each regulators can be shut down using their shut down links highlighted in
+   orange below
 
 AVDD (LK30) and AVSS (LK33) selection
 -------------------------------------
@@ -358,12 +362,13 @@ IOVDD (LK32) selection
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/ad4170_power_supply.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Serial Interface
 ================
 
-There are four primary signals: CS, SCLK, SDI, and SDO/RDY (all are inputs, except for SDO/RDY, which is an output).
+There are four primary signals: CS, SCLK, SDI, and SDO/RDY (all are inputs,
+except for SDO/RDY, which is an output).
 
 Serial communication options
 ----------------------------
@@ -372,13 +377,16 @@ Serial communication options
 -  PMOD connector
 -  Standalone mode
 
-   -  Removing the jumper resistors R92,R86,R88,R90 and mounting them on R93,R87,R89,R91 gives exposure to spi signals on P3 connector, using the pins from these links can then be used to fly-wire the signals to an alternative digital capture setup
+   -  Removing the jumper resistors R92,R86,R88,R90 and mounting them on
+      R93,R87,R89,R91 gives exposure to spi signals on P3 connector, using the
+      pins from these links can then be used to fly-wire the signals to an
+      alternative digital capture setup
 
 For an introduction to the Serial Peripheral Interface (SPI), click :adi:`here <en/analog-dialogue/articles/introduction-to-spi-interface.html>`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/spi_pic.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Reference Options
 =================
@@ -397,12 +405,14 @@ Selecting the reference source:
 Software
 ~~~~~~~~
 
-Example shows setting reference for Channel 0, for channel n, go to register AFE[n]
+Example shows setting reference for Channel 0, for channel n, go to register
+AFE[n]
 
 -  Board should be correctly connected to ACE
 -  Open AD417x memory map
 -  Search for the AFE[0] register
--  Set the Data(control) to the desired reference source or the Data(hex) to the relevant bits
+-  Set the Data(control) to the desired reference source or the Data(hex) to the
+   relevant bits
 
    -  **Dedicated reference pins** REFIN1 +/- (Hex value 0).
 
@@ -412,7 +422,8 @@ Example shows setting reference for Channel 0, for channel n, go to register AFE
 Hardware
 ~~~~~~~~
 
-If REFIN1+/- is selected the options below are available using links LKREF+ and LKREF- shown in the diagram below
+If REFIN1+/- is selected the options below are available using links LKREF+ and
+LKREF- shown in the diagram below
 
 -  External Voltage reference (LTC6655 - Default)
 
@@ -433,7 +444,11 @@ Location of Reference related components Location of Reference Links
 GPIOs
 =====
 
-The General purpose input/output pins are powered by AVDD/AVSS. They can be used to provide AC-Excitation signals for AC-Excited sensors, using 2 or 4 outputs. Can be used to automatically control an external multiplexer by outputting the current sequencer channel. Other optional functions include Current Source outputs , 2nd Reference input, Power-down switch.
+The General purpose input/output pins are powered by AVDD/AVSS. They can be used
+to provide AC-Excitation signals for AC-Excited sensors, using 2 or 4 outputs.
+Can be used to automatically control an external multiplexer by outputting the
+current sequencer channel. Other optional functions include Current Source
+outputs , 2nd Reference input, Power-down switch.
 
 ========= =============
 GPIO      Functionality
@@ -457,32 +472,36 @@ GPIO0
 ~~~~~
 
 -  Available on the J4 connector. LK22 (posA)
--  Used to supply signal to the MOSFET circuit to allow for AC-excitation. LK22 (posB)
+-  Used to supply signal to the MOSFET circuit to allow for AC-excitation. LK22
+   (posB)
 
 GPIO1
 ~~~~~
 
 -  Available on the J4 connector. LK31(posA) L23(posA)
 -  Used as a Power Switch for Wire Bridge applications on J2 connector. LK31(posB)L23(posA)
--  Used to supply signal to the MOSFET circuit to allow for AC-excitation. L23(posB)
+-  Used to supply signal to the MOSFET circuit to allow for AC-excitation.
+   L23(posB)
 
 GPIO2
 ~~~~~
 
 -  Available as GPIO and used as current source (IOUT1) for RTD excitation on J1 connector. LK24 (posA) LK4(posA)
--  Used to supply signal to the MOSFET circuit to allow for AC-excitation. L24(posB)
+-  Used to supply signal to the MOSFET circuit to allow for AC-excitation.
+   L24(posB)
 
 GPIO3
 ~~~~~
 
 -  Available as GPIO and used as current source (IOUT0) for RTD excitation on J1 connector. LK25 (posA)
--  Used to supply signal to the MOSFET circuit to allow for AC-excitation. L25(posB)
+-  Used to supply signal to the MOSFET circuit to allow for AC-excitation.
+   L25(posB)
 
 MOSFET Circuit
 ^^^^^^^^^^^^^^
 
-Below is the circuit for the AC excitation circuit. This Circuit outputs to EXC+ and EXC- on J2. This is enabled when LK22,LK23,LK24,LK25 are in posB
-
+Below is the circuit for the AC excitation circuit. This Circuit outputs to EXC+
+and EXC- on J2. This is enabled when LK22,LK23,LK24,LK25 are in posB
 
 |image6|
 
@@ -503,9 +522,14 @@ Bill of Materials
 Sensor configurations
 =====================
 
-This section summarizes the sensor connection and jumper configuration used depending the selected demo mode. For every demo mode, the sensor can be connected to several input channels, therefore the EVAL must be correctly configured to ensure the proper operation.
+This section summarizes the sensor connection and jumper configuration used
+depending the selected demo mode. For every demo mode, the sensor can be
+connected to several input channels, therefore the EVAL must be correctly
+configured to ensure the proper operation.
 
-These configurations are the ones used by default with the provided mbed firmware. If any other configuration is desired, the software must be modified by the user.
+These configurations are the ones used by default with the provided mbed
+firmware. If any other configuration is desired, the software must be modified
+by the user.
 
 2 wire RTD
 ----------
@@ -561,16 +585,16 @@ Accelerometer
 |image8| \*Mount Resistors R24 and depopulate R25 to make AIN2 compatible for Accelerometer measurements.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/ad4170_links.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/ain34_ain78_ac_dc_selection.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/4170/hardware_guide/ad170_arduino_connection.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/hardware_guide/ad4170_ref_silk.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/hardware_guide/ad4170_lkref_zoom_silk.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/mosfet_circuit.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/4-wire_loadcell_dc_ch0.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/accelerometer_config_ch0.png

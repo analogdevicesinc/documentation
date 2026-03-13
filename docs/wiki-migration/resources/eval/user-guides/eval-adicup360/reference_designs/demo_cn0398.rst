@@ -13,7 +13,7 @@ The circuit is divided into three independent measurement front ends: pH, soil m
 |image1| The board offers the possibility to configure **Vin** supply voltage (**P10** connector) in order to use **5V** or **7V-12V**. Considering moisture sensor which is used, the **P8** connector configure **3.3V** or **5V** supply. The user has the possibility to select one of the three GPIOs available for ADC CS pin using **P5** connector (default configuration for P5 is 1-2 position). For temperature compensation can be used an RTD PT100 sensor, 2-wire (this is used in the demo), 3-wire or 4-wire connection (see **P1** connector). For this demo was used for the moisture measurement the *VH400* sensor (**P2**) and for pH measurement *Atlas Scientific* sensor (**J1**). The **DS1** LED is *ON* as long the pH value is measured and calculated and the **DS3** is *ON* as long as the moisture value is measured and calculated. The ADuCM360_demo_cn0398 application processes ADC outputs for all 3 channels (RTD, pH and moisture), calculates pH and moisture values using as input RTD temperature value. Those data are sent to serial interface, usig **UART** communication (**115200** baud rate and **8-bits** data length). The **24-bits** ADC data are received using **SPI** interface of the EVAL-ADICUP360 board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_3.png
-   :width: 800px
+   :width: 800
 
 The **temperature** value is calculated based on the **RTD resistance**:
 
@@ -26,12 +26,12 @@ The **temperature** value is calculated based on the **RTD resistance**:
 **1. RTD resistance > 100Ω**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_1.png
-   :width: 800px
+   :width: 800
 
 **2. RTD resistance ≤ 100Ω**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_2.png
-   :width: 800px
+   :width: 800
 
 The **pH** value can be calculated in two ways, so user can configure which one did he want for his application: using *two-point calibration* data or using *Nernst equation*. After initialization the user will be asked in the terminal window if he want to perform pH calibration -> in this case the pH value will be calculated using calibration measured value:
 
@@ -107,11 +107,12 @@ Video
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
+-  To program the base board, set the jumpers/switches as shown in the next
+   figure. The important jumpers/switches are highlighted in red.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/adicup360_hardware.jpg
    :align: center
-   :width: 650px
+   :width: 650
 
 -  Connect the **EVAL-CN0398-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Connect the pH sensor to the **J1** connector of the EVAL-CN0398-ARDZ.
@@ -120,23 +121,31 @@ Setting up the hardware
 
 .. important::
 
-   Extremely important to plug in an acceptable power supply to the barrel jack P11 of the EVAL-ADICUP360 if you are using a moisture sensor that requires voltage excitation greater than 5V on the EVAL-CN0398-ARDZ. Only moisture sensors using less than 3.3V can run off the USB power option.
-
+   Extremely important to plug in an acceptable power supply to the barrel jack
+   P11 of the EVAL-ADICUP360 if you are using a moisture sensor that requires
+   voltage excitation greater than 5V on the EVAL-CN0398-ARDZ. Only moisture
+   sensors using less than 3.3V can run off the USB power option.
 
 -  Set the jumpers on the **EVAL-CN0398-ARDZ** to the position shown below. FIXME (need picture)
--  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
+-  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
+   Debug USB.(P14)
 
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the CN0398.
+There are two basic ways to program the ADICUP360 with the software for the
+CN0398.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_cn0398** demo can be found here:
 
@@ -153,11 +162,9 @@ The software for the **ADuCM360_demo_cn0398** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0398 Source Code <projects/ADuCM360_demo_cn0398>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -189,11 +196,12 @@ Following is the UART configuration.
 
 -  The software will ask if you want to do a calibration, so type in [**n**] or [**y**].
 -  If [n] is selected, the software will ask if you would like to load the default configuration, or use the Nernst equations. Select one option.
--  The data output refreshes in the console window at the rate of the "display_refresh" parameter with the following results.
+-  The data output refreshes in the console window at the rate of the
+   "display_refresh" parameter with the following results.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_3.png
    :align: center
-   :width: 800px
+   :width: 800
 
 How to use the Tools
 --------------------
@@ -215,11 +223,14 @@ Project Structure
 
 The **ADuCM360_demo_cn0398** is a C++ project that uses ADuCM36x C/C++ Project structure.
 
-This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for ADC, SPI read/write; for configuring and reading from AD7124, UART via P0.6/P0.7; UART read/write functions; for calibration and displaying the results.
+This project contains: system initialization part - disabling watchdog, setting
+system clock, enabling clock for peripherals; port configuration for ADC, SPI
+read/write; for configuring and reading from AD7124, UART via P0.6/P0.7; UART
+read/write functions; for calibration and displaying the results.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/project_structure.png
    :align: left
-   :width: 220px
+   :width: 220
 
 In the **src** and **include** folders you will find the source and header files related to CN0398 software application. The *Communication.cpp/h* files contain **SPI** and **UART** specific data, meanwhile the *CN0398.cpp/h* files contain the calculation part, the *AD7124.c/h* files contain ADC channels handling. The pH calibration parameters are set at the run time, after initialization in the terminal window will appear information messages how to perform calibration part.
 
@@ -231,5 +242,5 @@ The **RTE** folder contains device and system related files:
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/398andaicup.png
-   :width: 650px
+   :width: 650
 .. |youtube>43GfiE8uAa4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/youtube>43gfie8uaa4

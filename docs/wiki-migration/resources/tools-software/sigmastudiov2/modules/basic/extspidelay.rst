@@ -9,7 +9,8 @@ External SPI Delay
 Description
 -----------
 
-The External SPI Delay cell can be used to implement off-chip delay using the SPI interface.
+The External SPI Delay cell can be used to implement off-chip delay using the
+SPI interface.
 
 Targets Supported
 -----------------
@@ -31,7 +32,6 @@ Name    Type  Description
 ======= ===== ===============
 Input X Audio Input Channel X
 ======= ===== ===============
-
 
 | ==== Output ====
 

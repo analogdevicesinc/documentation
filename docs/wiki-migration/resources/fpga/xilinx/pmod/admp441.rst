@@ -15,7 +15,9 @@ The :adi:`ADMP441` is a high performance, low power, digital output, omnidirecti
 Quick Start Guide
 -----------------
 
-The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided in the project \*.zip file combines the FPGA bit file and
+the SDK elf files. It may be used for a quick check on the system. All you need
+is the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -29,12 +31,11 @@ Required Software
 ~~~~~~~~~~~~~~~~~
 
 -  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
--  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet
+   LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
@@ -44,46 +45,61 @@ Running Demo (SDK) Program
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
-
 Avnet LX9 MicroBoard Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (ADMP441_lx9.zip) to the location you desire.
+Extract the project from the archive file (ADMP441_lx9.zip) to the location you
+desire.
 
-To begin, connect the PmodMIC2 to J5 connector of LX9 board (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+To begin, connect the PmodMIC2 to J5 connector of LX9 board (see image below).
+You can use an extension cable for ease of use. Connect the USB cable from the
+PC to the USB-UART female connector of the board for the UART terminal. The
+board will be programmed through its USB male connector.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_lx9.jpg
    :alt: PmodMIC2 and LX-9
-   :width: 200px
+   :width: 200
 
 Digilent Nexys™3 Spartan-6 FPGA Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (ADMP441_lx9.zip) to the location you desire.
+Extract the project from the archive file (ADMP441_lx9.zip) to the location you
+desire.
 
-To begin, connect the PmodMIC2 to JA connector of Nexys™3 board (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodMIC2 to JA connector of Nexys™3 board (see image
+below). You can use an extension cable for ease of use. Connect the USB cables
+from the PC to the board, one for programming (Digilent USB device) and one for
+the UART terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_nexys3.jpg
    :alt: PmodMIC2 and Nexys™3
-   :width: 200px
+   :width: 200
 
 Avnet ZedBoard
 ~~~~~~~~~~~~~~
 
-To begin, connect the PmodMIC2 to JD connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodMIC2 to JD connector of ZedBoard (see image below).
+You can use an extension cable for ease of use. Connect the USB cables from the
+PC to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_zed.jpg
    :alt: PmodMIC2 and ZedBoard
-   :width: 400px
+   :width: 400
 
 FPGA Configuration for Nexys3 and LX-9 MicroBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../admp441/sw/ADMP441.bit). Launch "data_capture.bat" from the "../DataCapture" folder.
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to appropiate baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../admp441/sw/ADMP441.bit). Launch
+"data_capture.bat" from the "../DataCapture" folder.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2impact.jpg
    :alt: Programming FPGA in IMPACT
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for ZedBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,8 +108,8 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
-
+   If the download script fails to run, modify the Xilinx Tools path in
+   download.bat to match your Xilinx Installation path.
 
 If programming was successful, you should see messages in the UART terminal.
 
@@ -102,13 +118,16 @@ If programming was successful, you should see messages in the UART terminal.
 .. important::
 
    
-   For reasons NOT depending on Analog Devices, the JTAG connection through which the stored data on the LX-9/Nexys3 is transfered to the \*.wav file is very slow. The process takes about 2 hours.
-
+   For reasons NOT depending on Analog Devices, the JTAG connection through
+   which the stored data on the LX-9/Nexys3 is transfered to the \*.wav file is
+   very slow. The process takes about 2 hours.
 
 Functional Description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design is a custom I2S interface used to communicate with the device. An interrupt signal is used to tell the user when new data has been read, an also if data was read when WS was low or high.
+The reference design is a custom I2S interface used to communicate with the
+device. An interrupt signal is used to tell the user when new data has been
+read, an also if data was read when WS was low or high.
 
 The ZedBoard design uses DMA to transfer data from the I2S Core to DDR.
 
@@ -116,9 +135,9 @@ The ZedBoard design uses DMA to transfer data from the I2S Core to DDR.
 
    
    -  Connecting the PmodMIC2 to the boards using an extension cable provides ease of use.
-   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and
+      ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-
 
 Downloads
 ---------
@@ -144,7 +163,6 @@ Downloads
    -  :git-no-OS:`Programming Script <Pmods/PmodMIC2/bin>`
    
 
-
 More information
 ----------------
 
@@ -155,6 +173,6 @@ More information
    :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |UART| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_menu1.jpg
-   :width: 600px
+   :width: 600
 .. |Data Capture| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_menu2.jpg
-   :width: 600px
+   :width: 600

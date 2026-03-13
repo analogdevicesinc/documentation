@@ -6,7 +6,9 @@ Getting Started with the ADSP-21569-SOM
 Overview
 --------
 
-There are several options for developing SigmaStudio+ projects with the ADSP21569 This example will use the ADSP-21569 SOM processor board and the EV-SOMCRR-EZKit carrier board
+There are several options for developing SigmaStudio+ projects with the
+ADSP21569 This example will use the ADSP-21569 SOM processor board and the
+EV-SOMCRR-EZKit carrier board
 
 Outline of Steps for Getting Started
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -17,12 +19,15 @@ Outline of Steps for Getting Started
 -  Install CrossCore Embedded Studio (CCES) tools
 
    -  CCES is used for compiling and linking SHARC code
-   -  CCES tools will be invoked (behind the scenes) by SigmaStudio+ to build the SHARC code
+   -  CCES tools will be invoked (behind the scenes) by SigmaStudio+ to build
+      the SHARC code
 
 -  Obtain and set up the hardware to use for your system
 
    -  for example: Processor System On Module (SOM) plus a base board to plug the SOM onto (carrier board). The carrier board (like the EV-SOMCRR-EZKIT) - this pair of boards is shown below
-   -  the EVAL-ADUSB2EBZ USB-to-I2C/SPI commincations adapter (also referred to as the USBi) - SPI communications is used for the SigmaStudio+ to SHARC programming and tuning
+   -  the EVAL-ADUSB2EBZ USB-to-I2C/SPI commincations adapter (also referred to
+      as the USBi) - SPI communications is used for the SigmaStudio+ to SHARC
+      programming and tuning
 
    |resources-tools-software-sigmastudiov2-tutorials-usbi.jpg|
 
@@ -30,68 +35,78 @@ Hardware for this Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  the SOM module used here is a Rev E with Rev 0.2 ADSP-21569 silicon (also tested with Rev B SOM and 0.0 silicon)
--  the EV-SOMCRR-EZKit carrier board is a Rev D (the version shown in the previous setup pages is a Rev A)
+-  the EV-SOMCRR-EZKit carrier board is a Rev D (the version shown in the
+   previous setup pages is a Rev A)
 
    -  (the version shown in the previous setup pages is a Rev A)
-   -  Note: the USBi header is flipped 180 degrees from the Rev A to the Rev D board (Rev A also uses an unshrouded header for the USBi connection at P3)
+   -  Note: the USBi header is flipped 180 degrees from the Rev A to the Rev D
+      board (Rev A also uses an unshrouded header for the USBi connection at P3)
 
 -  the SOM module plugs onto the carrier board
 
-   -  the SOM module is powered from the carrier board - Install a jumper on pins 2-3 of JP1 of the SOM module (towards the "POWER" label, this will select power from the carrier base board
+   -  the SOM module is powered from the carrier board - Install a jumper on
+      pins 2-3 of JP1 of the SOM module (towards the "POWER" label, this will
+      select power from the carrier base board
 
 -  assorted cables and power supply for the processor/carrier board
 
    -  3.5mm stereo audio cables for connecting the the EZKIT carrier board
    -  a mini USB cable for connecting the USBi to the PC
-   -  a micro USB cable to connect to the SOM (only used for initial loader file flashing). note the usb connector on the processor SOM may be different for other SOM boards
+   -  a micro USB cable to connect to the SOM (only used for initial loader file
+      flashing). note the usb connector on the processor SOM may be different
+      for other SOM boards
 
 .. important::
 
-   Before the SOM/carrier can be used with SigmaStudio+, the SOM's flash memory must be programmed (see steps below)
-
+   Before the SOM/carrier can be used with SigmaStudio+, the SOM's flash memory
+   must be programmed (see steps below)
 
 Setup the SOM and EzKit Carrier
 -------------------------------
 
-Here is a picture of the 21569 SOM installed on the EV-SOMCRR-EZKIT carrier board
-
+Here is a picture of the 21569 SOM installed on the EV-SOMCRR-EZKIT carrier
+board
 
 |image1|
 
 .. note::
 
-   Don't worry about the state of the LEDs at this point if you have not already programmed the loader (.ldr) file. Instructions for programming the loader file follow this section
-
+   Don't worry about the state of the LEDs at this point if you have not already
+   programmed the loader (.ldr) file. Instructions for programming the loader
+   file follow this section
 
 -  JP1 power to SOM should be on pins 2-3 (toward the POWER label)
 -  Boot Select switch should be on position 1 (SPI2 master boot) – this is after you have programmed the flash with the loader (.ldr file)
 
-   -  it is recommended to program the flash with the CrossCore serial flash programmer as I think it is much easier
+   -  it is recommended to program the flash with the CrossCore serial flash
+      programmer as I think it is much easier
 
 -  Power with 12V wall wart or 12V supply (supplied adapter is 1.6A)
--  USBi dongle (for connection to the PC) for SigmaStudio+ programming and tuning
+-  USBi dongle (for connection to the PC) for SigmaStudio+ programming and
+   tuning
 
    -  tested with USBi version 1.3, 1.4, and 1.5
 
 -  Connect and audio source to ADC 1-2
 -  Connect a powered speaker (or headphones) (can also use the headphones jack)
 -  LEDs 4 and 6 should light (with the modified ldr file), they will be off with the original ldr file supplied with the default installation of SigmaStudio+ for Sharc release 2.4.0
--  LED 8 and 9 will come on at startup/powerup and then LED 10 will light with a successful compile and download from SigmaStudio+
+-  LED 8 and 9 will come on at startup/powerup and then LED 10 will light with a
+   successful compile and download from SigmaStudio+
 
 .. note::
 
    SW1 dip switches originally are all ON (default with a new board) – this selects the on-board debugger. If using an ICE-1000 or ICE-2000, they all should be turned OFF (direction shown by arrow)
 
-
 Programming the Loader File
 ---------------------------
 
-At this point we are assuming that the hardware is set up and ready to program the loader file.
+At this point we are assuming that the hardware is set up and ready to program
+the loader file.
 
 .. note::
 
-   A modified loader file is provided here that can be used in place of the default loader if desired
-
+   A modified loader file is provided here that can be used in place of the
+   default loader if desired
 
 This is the modified loader file: `ss_app_21569_leds <https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/ss_app_21569_leds_.zip>`_
 
@@ -110,7 +125,6 @@ Steps to Program the Loader File
 
    -
 
-
    |image2|
 
 -  set the SOM boot mode switch to "3" (this puts the processor into UART boot mode), (don't power the carrier board yet)
@@ -118,15 +132,15 @@ Steps to Program the Loader File
 
    -
 
-
    |image3|
 
 -  power up the EzKit carrier board (with the SOM USB cable NOT connected)
 -  reset the board (either SW2 RESET pushbutton on the carrier board or the small SW2 RESET on the SOM)
--  To determine which serial port is used for programming, we start without the USB programming cable attached to the SOM. Note which COMM ports are shown in the Serial Port (B) fields:
+-  To determine which serial port is used for programming, we start without the
+   USB programming cable attached to the SOM. Note which COMM ports are shown in
+   the Serial Port (B) fields:
 
    -
-
 
    |image4|
 
@@ -139,13 +153,17 @@ Steps to Program the Loader File
 -  Press "Start" (F) to program the SPI flash device on the SOM
 -  The Status window will show the Download, Erase and Programming cycles and will respond with "Flash Completed"
 -  At this point, the programming USB cable can be disconnected from P2
--  Change the Boot Mode rotary selector to "1" (SPI flash boot) and power cycle or reset the board
+-  Change the Boot Mode rotary selector to "1" (SPI flash boot) and power cycle
+   or reset the board
 
    -  if using the "modified" loader file, LEDs 4 and 6 will be on and LED 7 will be off
    -  the board is now ready for connection to SigmaStudio+
-   -  programming the loader only needs to be done once (unless you want to change the framework/loader file for some reason)
+   -  programming the loader only needs to be done once (unless you want to
+      change the framework/loader file for some reason)
 
--  connect the USBi USB-to-SPI communications board to P3 (if not already attached). The RED power LED should be on and the YELLOW SPI LED should be on (solid).
+-  connect the USBi USB-to-SPI communications board to P3 (if not already
+   attached). The RED power LED should be on and the YELLOW SPI LED should be on
+   (solid).
 
 Test with SigmaStudio+
 ----------------------
@@ -164,13 +182,11 @@ At this point we are ready to run and audio project from SigmaStudio+
 
    -
 
-
    |image5|
 
 -  The USBi Firmware Version **must** be correctly set to match the USBi Revision being used! (from the **System** tab)
 
    -
-
 
    |image6|
 
@@ -186,14 +202,14 @@ At this point we are ready to run and audio project from SigmaStudio+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/21569som-ezkit.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/cces-serial-programmer.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/serialprog1.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/serialprog3.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/ss_screen1.jpg
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/ss_usbi.jpg
-   :width: 600px
+   :width: 600
 
 .. |resources-tools-software-sigmastudiov2-tutorials-usbi.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/usbi.jpg

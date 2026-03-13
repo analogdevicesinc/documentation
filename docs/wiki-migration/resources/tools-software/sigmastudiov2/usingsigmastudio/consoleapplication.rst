@@ -7,8 +7,13 @@ Console Application
 
    This feature is available from SigmaStudio+ 1.2.0
 
-
-SigmaStudio+ operations can be executed from Windows Command-line using the SS+ console application (SStudioPlusConsole.exe) provided in the Host folder of the installation location. This console application can perform several operations like Link-Compile-Download a project to target platform, updating the parameters, import SigmaStudio projects and many more. SStudio+ console application also supports batch file execution (i.e., multiple of commands can be executed using a batch file).
+SigmaStudio+ operations can be executed from Windows Command-line using the SS+
+console application (SStudioPlusConsole.exe) provided in the Host folder of the
+installation location. This console application can perform several operations
+like Link-Compile-Download a project to target platform, updating the
+parameters, import SigmaStudio projects and many more. SStudio+ console
+application also supports batch file execution (i.e., multiple of commands can
+be executed using a batch file).
 
 Getting Started with SStudio+
 -----------------------------
@@ -58,7 +63,8 @@ SStudio+ console application can be executed from Windows Command-line. Use “\
 
      version           Display version information.
 
-SStudio+ terminates after executing every command. To avoid terminating the SStudio+ after each command, set the continue property to true as shown below:
+SStudio+ terminates after executing every command. To avoid terminating the
+SStudio+ after each command, set the continue property to true as shown below:
 
 “\ **-c true**“ or “**--continue true**\ ”. Default value of this property will be 'False'.
 
@@ -75,7 +81,8 @@ Console commands returns integer type values indicating the message as follows:
 
 3 - Empty project path
 
-All other return values are specific to the commands. You can find the return values of a command by entering
+All other return values are specific to the commands. You can find the return
+values of a command by entering
 
 **<<command>> --help**
 
@@ -90,7 +97,8 @@ SStudioPlusConsole.exe lcd –p < project file path including project name >
 
    SStudioPlusConsole.exe lcd -p "C:\Users\Test_01.ssprj" --continue true
 
-The above command will open the project file, perform link-compile-download and display all the messages on the console.
+The above command will open the project file, perform link-compile-download and
+display all the messages on the console.
 
 **2. Update Numeric Property:**
 
@@ -104,5 +112,5 @@ The above command will update the DCValue on DCInput_0 to 5.
 
 .. note::
 
-   Command arguments can be provided in any order. If any single argument contains space in between, it can be mentioned inside the double quotation
-
+   Command arguments can be provided in any order. If any single argument
+   contains space in between, it can be mentioned inside the double quotation

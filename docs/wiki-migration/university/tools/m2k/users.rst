@@ -3,7 +3,7 @@ ADALM2000 for End Users
 
 .. image:: https://wiki.analog.com/_media/university/tools/adalm2000/adalm2000.jpg
    :align: right
-   :width: 300px
+   :width: 300
 
 Contents
 --------
@@ -46,7 +46,8 @@ Make sure all things are in ./users
    -  :doc:`ALICE Active Learning Interface (for) Circuits (and) Electronics for M2K: </wiki-migration/university/tools/m2k/alice/users-guide-m2k>`
    -  :doc:`MATLAB with libm2k </wiki-migration/university/tools/m2k/matlab>`
 
--  After everything is up and running, you can start building your own circuits using the following kit:
+-  After everything is up and running, you can start building your own circuits
+   using the following kit:
 
    -  :doc:`ADALP2000 Product Description </wiki-migration/university/tools/adalp2000/parts-index>`
 

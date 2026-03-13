@@ -15,7 +15,8 @@ The script will:
 -  clone the ADI kernel tree
 -  download the Linaro GCC toolchain [if no other is specified]
 -  build the ADI kernel tree
--  export/copy the Image file and device tree file out of the kernel build folder
+-  export/copy the Image file and device tree file out of the kernel build
+   folder
 
 Running the script in one line
 ------------------------------
@@ -47,7 +48,6 @@ Get Linux Kernel Source
       user@pc:~/nios2$
    
 
-
 Get Root Filesystem
 -------------------
 
@@ -70,7 +70,6 @@ Get Root Filesystem
       user@pc:~/nios2/linux$
    
 
-
 Set Environmental Variables
 ---------------------------
 
@@ -83,7 +82,6 @@ Set Environmental Variables
       user@pc:~/nios2/linux$ export CROSS_COMPILE=~/nios2/tools/bin/nios2-linux-gnu-
       user@pc:~/nios2/linux$
    
-
 
 Configure Kernel for Nios2 Platforms
 ------------------------------------
@@ -100,7 +98,6 @@ Configure Kernel for Nios2 Platforms
       user@pc:~/nios2/linux$
    
 
-
 Copy Corresponding Devicetree
 -----------------------------
 
@@ -116,7 +113,6 @@ Valid options: **a5gt_fmcjesdadc1.dts** , **a10gx_daq2.dts** , **a10gx_daq3.dts*
       user@pc:~/nios2/linux$ cp arch/nios2/boot/dts/your_setup.dts arch/nios2/boot/dts/devicetree.dts
       user@pc:~/nios2/linux$
    
-
 
 Build Kernel
 ------------
@@ -136,4 +132,3 @@ Build Kernel
       Kernel: arch/nios2/boot/zImage is ready
       user@pc:~/nios2/linux$
    
-

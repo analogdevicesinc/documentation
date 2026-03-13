@@ -6,11 +6,12 @@ Device Overview
 
 The :adi:`adxl317` is a 3-axis, 4kHz bandwidth accelerometer, capable of sensing a full-scale range of ±16 *g*, with 14 bits resolution. This sensor is well suited for wideband active noise control (ANC) applications, featuring very low latency from the moment of acceleration to the transmission of digital output data, even in noisy scenarios. The ADXL317 is designed to interface directly with the AD2425W A2B transceiver, or with any other I2S capable A2B transceiver, microcontroller or SDP.
 
-The ADXL317 reports positive acceleration when it is accelerated in the direction of the sensing axes shown in Figure 1.
+The ADXL317 reports positive acceleration when it is accelerated in the
+direction of the sensing axes shown in Figure 1.
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/xl-sensigaxes.png
    :align: center
-   :width: 200px
+   :width: 200
 
 **Figure 1:** Sensing axis.
 
@@ -18,7 +19,7 @@ Gravity, which is a constant +1 *g* acceleration force, also factors into the ov
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/xl-orientation2gravity.png
    :align: center
-   :width: 500px
+   :width: 500
 
 **Figure 2:** Acceleration response with respect to gravity.
 
@@ -27,17 +28,26 @@ The ADXL317 is supplied in a small, thin, 5 mm × 5 mm × 1.45 mm, 32-pin LFCSP 
 Application Circuit
 -------------------
 
-The ADXL317 has a single power input pin, VCC, which operates at a nominal voltage of 3.3 V. An internal regulator steps this voltage down to 1.8 V, accessible via VDD pin. The VCC and VDD pin must be properly bypassed, as shown in Figure 3, to remove ac fluctuations from the power supply. All its logic inputs and outputs support only 1.8V logic. This device has no internal clock, thus, clock must be supplied externally and must always be running at a rate of either 3.072 MHz or 6.144 MHz for the device to operate properly.
+The ADXL317 has a single power input pin, VCC, which operates at a nominal
+voltage of 3.3 V. An internal regulator steps this voltage down to 1.8 V,
+accessible via VDD pin. The VCC and VDD pin must be properly bypassed, as shown
+in Figure 3, to remove ac fluctuations from the power supply. All its logic
+inputs and outputs support only 1.8V logic. This device has no internal clock,
+thus, clock must be supplied externally and must always be running at a rate of
+either 3.072 MHz or 6.144 MHz for the device to operate properly.
 
 The figure bellow shows the recommended application circuit for this device.
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/xl317_basic_config3.png
    :align: center
-   :width: 500px
+   :width: 500
 
 **Figure 3:** Recommended application circuit. ALT_ADDR may be grounded or connected to VDD. The exposed pad on the bottom of the package must be connected to ground.
 
-The ADXL317 counts with two digital interfaces i2C and I2S. In both cases, the ADXL317 operates as a slave device, receiving commands and responding with requested data. These two ports operate independently and use separate pins. Therefore, these ports can be used simultaneously.
+The ADXL317 counts with two digital interfaces i2C and I2S. In both cases, the
+ADXL317 operates as a slave device, receiving commands and responding with
+requested data. These two ports operate independently and use separate pins.
+Therefore, these ports can be used simultaneously.
 
 I2C for device configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,7 +59,11 @@ The two I2C lines, SCL (Pin 10) and SDA (Pin 11), each require a pull-up resisto
 I2S/TDM for data streaming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-I2S/TDM is used for synchronous high-speed data streaming (not for user configuration) and consist of a 4-wire interface, comprising one continuous serial clock (BCLK), one synchronization signal (SYNC), and two serial data channels (DTX0 and DTX1), see Figure 3. It supports four packet formats, depending on the input clock frequency and system requirements:
+I2S/TDM is used for synchronous high-speed data streaming (not for user
+configuration) and consist of a 4-wire interface, comprising one continuous
+serial clock (BCLK), one synchronization signal (SYNC), and two serial data
+channels (DTX0 and DTX1), see Figure 3. It supports four packet formats,
+depending on the input clock frequency and system requirements:
 
 -  3.072 MHz clock:
 
@@ -63,12 +77,16 @@ I2S/TDM is used for synchronous high-speed data streaming (not for user configur
 
       -  16-bit TDM8.
 
-Note that 32-bit I2S/TDM2 mode requires two data pins, whereas the other three modes require only one. For all package formats, the frame frequency is 48kHz.
+Note that 32-bit I2S/TDM2 mode requires two data pins, whereas the other three
+modes require only one. For all package formats, the frame frequency is 48kHz.
 
 .. important::
 
-   The ADXL317 clock frequency have some tolerance, but the frame frequency must respect the number of bits per frame required for each package format. For example, if clock frequency used is 3MHz, and the device is configured for 16-bit TDM4 format, each frame must contain exactly 64 clock periods (64-bits). Therefor, the frame frequency will be 3MHz/64bits = 46.875 kHz.
-
+   The ADXL317 clock frequency have some tolerance, but the frame frequency must
+   respect the number of bits per frame required for each package format. For
+   example, if clock frequency used is 3MHz, and the device is configured for
+   16-bit TDM4 format, each frame must contain exactly 64 clock periods
+   (64-bits). Therefor, the frame frequency will be 3MHz/64bits = 46.875 kHz.
 
 ===== Initialization =====
 
@@ -83,7 +101,9 @@ There are a few tips that we recommend when initializing the ADXL317:
 -  Write 0xBC to the USER_REG_KEY register (Address 0x80).
 -  Write 0x43 to the USER_REG_KEY register (Address 0x80).
 
-After writing these two values, all writeable registers are unlocked and can be written to as normal. The two writes must be performed using two separate, single-byte writes. A multibyte write cannot be used.
+After writing these two values, all writeable registers are unlocked and can be
+written to as normal. The two writes must be performed using two separate,
+single-byte writes. A multibyte write cannot be used.
 
 **4)** Each axis has its own digital output filter stage (CIC filter, low pass IIR filter and high pass filter). By default all axis are configured for the higher bandwidth setting (4kHz). Modify the filters settings to adjust your needs.
 
@@ -91,16 +111,20 @@ After writing these two values, all writeable registers are unlocked and can be 
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/xl317_tdm4_2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 4:** Timing diagram for I2S_CFG0 = 0x91, I2S_CFG1 = 0x01 and CLOCK_RATE = 0x01.
 
 Data format
 -----------
 
-For either I2C or I2S/TDM, the acceleration data on each axis is transmitted in two's complement, left justified, 14-bits resolution format.
+For either I2C or I2S/TDM, the acceleration data on each axis is transmitted in
+two's complement, left justified, 14-bits resolution format.
 
-When using I2C, the acceleration data of each axis is stored in two 8-bits registers. For example, for X-axis X_DATA_LO is the low byte register and X_DATA_HI is the high byte register. The user must reconstruct the data as a 16-bits word length. The two less significant bits (LSB) are always zero.
+When using I2C, the acceleration data of each axis is stored in two 8-bits
+registers. For example, for X-axis X_DATA_LO is the low byte register and
+X_DATA_HI is the high byte register. The user must reconstruct the data as a
+16-bits word length. The two less significant bits (LSB) are always zero.
 
 In programming language this will be equivalent to:
 
@@ -146,4 +170,3 @@ where **X_g** is the X-axis acceleration in units of *g*.
 .. tip::
 
    Always review the :adi:`ADXL317 datasheet <media/en/technical-documentation/data-sheets/ADXL317.pdf>` for detailed information
-

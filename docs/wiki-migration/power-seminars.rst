@@ -3,7 +3,9 @@
 Customer Seminar
 ================
 
-Thank you for attending the global ADI Power customer seminar in your region. Below are the necessary downloads and seminar presentation files for you to use while running your LTpowerAnalyzer.
+Thank you for attending the global ADI Power customer seminar in your region.
+Below are the necessary downloads and seminar presentation files for you to use
+while running your LTpowerAnalyzer.
 
 .. image:: https://wiki.analog.com/_media/new_lttools_graphic_wo_powerplanner.jpg
 
@@ -14,9 +16,11 @@ Download the LTpowerAnalyzer software here:
 
 https://swdownloads.analog.com/LTpowerAnalyzer/SetupLTpowerAnalyzer.exe
 
-You may also access the LTpowerAnalyzer software from the main menu of LTpowerCAD by clicking the "Bench Testing" icon.
+You may also access the LTpowerAnalyzer software from the main menu of
+LTpowerCAD by clicking the "Bench Testing" icon.
 
-Software for LTpowerPlanner, LTpowerCAD, LTspice and all other ADI design tools are publicly available at:
+Software for LTpowerPlanner, LTpowerCAD, LTspice and all other ADI design tools
+are publicly available at:
 
 :adi:`en/resources/design-tools-and-calculators.html`
 
@@ -29,7 +33,8 @@ Section 1: Switch mode power supply compensation design (LTpowerPlanner)
 
 `switch_mode_power_supply_compensation_design.pdf <https://wiki.analog.com/_media/power-seminars/switch_mode_power_supply_compensation_design.pdf>`_
 
-Section 2: How to select compensation components and their effect on loop performance (LTpowerCAD)
+Section 2: How to select compensation components and their effect on loop
+performance (LTpowerCAD)
 
 `how_to_select_compensation_components_and_their_effect_on_loop_performance.pdf <https://wiki.analog.com/_media/power-seminars/how_to_select_compensation_components_and_their_effect_on_loop_performance.pdf>`_
 
@@ -52,7 +57,9 @@ Deutschland presentations
 Feedback
 ========
 
-We always want your feedback and want to make our seminars better. If you attended and have not yet filled out the feedback form, we would greatly appreciate it.
+We always want your feedback and want to make our seminars better. If you
+attended and have not yet filled out the feedback form, we would greatly
+appreciate it.
 
 https://forms.office.com/r/uPRtW4KjeN (Beaverton)
 
@@ -61,4 +68,6 @@ https://forms.office.com/r/Bvpmwqnv2n (Lynnwood)
 Questions
 =========
 
-If you have any questions, please contact your local ADI salesperson. If you are unable to contact them, feel free to email us here at adipowerseminar@analog.com.
+If you have any questions, please contact your local ADI salesperson. If you are
+unable to contact them, feel free to email us here at
+adipowerseminar@analog.com.

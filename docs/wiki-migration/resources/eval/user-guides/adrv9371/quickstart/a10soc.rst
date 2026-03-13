@@ -3,7 +3,7 @@ EVAL-ADRV9371 Arria10 SoC Development Kit Quick Start Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9371/quickstart/a10soc_adrv9371.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Requirements
 ------------
@@ -20,9 +20,7 @@ Requirements
 
 -  SD card with latest ADI Linux image
 
-
 .. esd-warning::
-
 
 Creating / Configuring the SD Card
 ----------------------------------
@@ -60,19 +58,24 @@ FMC Pin Connection Configuration Change
 
 .. important::
 
-   To be compatible with the EVAL-ADRV9371 the Arria10 SoC Development Kit requires a minor rework.
+   To be compatible with the EVAL-ADRV9371 the Arria10 SoC Development Kit
+   requires a minor rework.
 
+In the default configuration of the Arria10 SoC Development Kit some of the FMC
+header pins are connected to a dedicated clock chip. To be compatible with the
+EVAL-ADRV9371 these pins need to be connected directly to the FPGA.
 
-In the default configuration of the Arria10 SoC Development Kit some of the FMC header pins are connected to a dedicated clock chip. To be compatible with the EVAL-ADRV9371 these pins need to be connected directly to the FPGA.
-
-The connection of those pins can be changed by moving the position of four zero Ohm resistors:
+The connection of those pins can be changed by moving the position of four zero
+Ohm resistors:
 
 -  R612 to R610
 -  R613 to R611
 -  R621 to R620
 -  R633 to R632
 
-These resistors can be found on the backside of the Arria10 SoC Development Kit underneath the FMC A connector (J29). The following picture shows the required configuration to be compatible with the EVAL-ADRV9371.
+These resistors can be found on the backside of the Arria10 SoC Development Kit
+underneath the FMC A connector (J29). The following picture shows the required
+configuration to be compatible with the EVAL-ADRV9371.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/a10soc_fmc_rework.jpg
    :align: center
@@ -91,7 +94,8 @@ All jumpers and switches on the Arria10 SoC Development Kit should be in the `de
 Booting the System
 ------------------
 
-After turning on the power switch the following messages should appear on the serial console.
+After turning on the power switch the following messages should appear on the
+serial console.
 
 ::
 
@@ -114,7 +118,8 @@ After turning on the power switch the following messages should appear on the se
    Trying to boot from MMC1
    </nowiki>
 
-Configuring the FPGA will take a few seconds. Once the FPGA has been configured the green D18 LED will turn on and the boot process will continue.
+Configuring the FPGA will take a few seconds. Once the FPGA has been configured
+the green D18 LED will turn on and the boot process will continue.
 
 ::
 
@@ -177,8 +182,6 @@ Configuring the FPGA will take a few seconds. Once the FPGA has been configured 
    [    0.000000] OF: fdt: Machine model: Altera SOCFPGA Arria 10
    ...
    </nowiki>
-
-
 
 .. collapsible:: Complete kernel boot log (Click to expand)
 
@@ -603,8 +606,6 @@ Configuring the FPGA will take a few seconds. Once the FPGA has been configured 
       root@analog:~#
       </nowiki>
 
-
-
 Once the boot process has completed you'll be greeted with command prompt. As a quick check if the EVAL-ADRV9008/9 was correctly recognized run the \`iio_info\` command and filter for the registered devices.
 
 ::
@@ -632,16 +633,17 @@ IIO Oscilloscope Remote
 
 Please see also here::doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The IIO Oscilloscope application can be used to connect to another platform that has a connected device in order to configure the device and read data from it.
+The IIO Oscilloscope application can be used to connect to another platform that
+has a connected device in order to configure the device and read data from it.
 
 Build and start osc on a network enabled Linux host.
 
-Once the application is launched goto Settings -> Connect and enter the IP address of the target in the popup window.
+Once the application is launched goto Settings -> Connect and enter the IP
+address of the target in the popup window.
 
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
-
 
    |image1|
 
@@ -679,6 +681,5 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

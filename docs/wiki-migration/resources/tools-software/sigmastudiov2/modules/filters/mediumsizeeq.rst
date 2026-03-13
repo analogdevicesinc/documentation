@@ -8,12 +8,15 @@ Medium Size Eq
 Description
 -----------
 
-This block gives access to two general 2nd-order filters: Peaking and Shelving EQ.
+This block gives access to two general 2nd-order filters: Peaking and Shelving
+EQ.
 
 Usage
 -----
 
-To open the filter control window, click on the icon button. Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+To open the filter control window, click on the icon button. Select the desired
+filter type from the drop-down combo-box list. The filter controls and the icon
+button image will change to reflect the selected filter type.
 
 Targets Supported
 -----------------
@@ -49,7 +52,6 @@ Name    Type  Description
 ======= ===== ================
 Output0 Audio Output channel 0
 ======= ===== ================
-
 
 | ===== Configurable Parameters =====
 

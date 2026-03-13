@@ -1,23 +1,40 @@
 EVAL-CN0540-ARDZ Shield Overview
 ================================
 
-Monitoring the health of machinery can help predict changes in a machine’s condition. There are many methods of tracking a machine’s condition, but vibration analysis is the most commonly used one. By tracking the vibration analysis data over time, one can determine when a fault or failure is going to occur, along with the source of the fault. Knowing the condition of a certain machine will help not only increase efficiency and productivity, but create a safer working environment.
+Monitoring the health of machinery can help predict changes in a machine’s
+condition. There are many methods of tracking a machine’s condition, but
+vibration analysis is the most commonly used one. By tracking the vibration
+analysis data over time, one can determine when a fault or failure is going to
+occur, along with the source of the fault. Knowing the condition of a certain
+machine will help not only increase efficiency and productivity, but create a
+safer working environment.
 
-The reference design shown below, shows a high resolution, wide-bandwidth, high dynamic range, Integrated Electronics Piezoelectric (IEPE) compatible interface data acquisition system (DAQ) for interfacing with Integrated Circuit Piezo (ICP)/IEPE piezo vibration sensors. Most solutions which interface with piezo sensors in the market are AC coupled, lacking DC and sub-hertz measurement capability. This reference design is a DC coupled solution in which DC and sub-hertz precision are achieved.
+The reference design shown below, shows a high resolution, wide-bandwidth, high
+dynamic range, Integrated Electronics Piezoelectric (IEPE) compatible interface
+data acquisition system (DAQ) for interfacing with Integrated Circuit Piezo
+(ICP)/IEPE piezo vibration sensors. Most solutions which interface with piezo
+sensors in the market are AC coupled, lacking DC and sub-hertz measurement
+capability. This reference design is a DC coupled solution in which DC and
+sub-hertz precision are achieved.
 
 By looking at the complete data set from the vibration sensor in the frequency domain (DC – 50 kHz), the type and source of a machine fault can be better predicted using the; position, amplitude and number of harmonics found in the FFT spectrum.
 
-The data acquisition board incorporates a precision 24-bit, 1024kSPS Sigma-delta ADC AD7768-1 and a 16-bit voltage output DAC LTC2606. Used as the ADC driver is a high linearity FDA ADA4945-1 and a 200mA programmable 2-terminal current source LT3092. Analog input protection is provided by the switch ADG5421F. The data acquisition board is an Arduino compatible form factor, and can be interfaced and powered directly from most Arduino compatible development boards.
+The data acquisition board incorporates a precision 24-bit, 1024kSPS Sigma-delta
+ADC AD7768-1 and a 16-bit voltage output DAC LTC2606. Used as the ADC driver is
+a high linearity FDA ADA4945-1 and a 200mA programmable 2-terminal current
+source LT3092. Analog input protection is provided by the switch ADG5421F. The
+data acquisition board is an Arduino compatible form factor, and can be
+interfaced and powered directly from most Arduino compatible development boards.
 
 This user guide will discuss how to use an Arduino compatible micro-controller board and evaluation software to configure and collect vibration data from the :adi:`EVAL-CN0540-ARDZ Shield <CN0540>` **(CN0540 Board)**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_top.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_bottom.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Simplified functional block diagram
 -----------------------------------
@@ -31,7 +48,8 @@ Features
 -  Data acquisition solution fully characterized over -25°C to 85°C.
 -  Throughput of 1024kSPS.
 -  DC coupled for greater precision.
--  Powered and interfaced directly through an Arduino compatible development board.
+-  Powered and interfaced directly through an Arduino compatible development
+   board.
 
 Documents Needed
 ----------------
@@ -102,12 +120,18 @@ Arduino Power    1       NC       NC
 Piezo Accelerometer Sensor Results
 ----------------------------------
 
-To achieve reasonable noise measurements, the piezo accelerometer must be either stabilized using an active shaker table which cancels environmental vibrations or anchored to a massive object which makes sensor still. Anchoring to a massive object was used for a following measurements, where the piezo accelerometer was connected directly to the input of the signal chain.
+To achieve reasonable noise measurements, the piezo accelerometer must be either
+stabilized using an active shaker table which cancels environmental vibrations
+or anchored to a massive object which makes sensor still. Anchoring to a massive
+object was used for a following measurements, where the piezo accelerometer was
+connected directly to the input of the signal chain.
 
-The following figures show DC and AC coupled solution comparison, where the DC coupled version is producing more noise, but it is more linear. Whereas the AC coupled is nonlinear at very low frequencies (a spike near DC frequency bin), caused by a coupling capacitor.
+The following figures show DC and AC coupled solution comparison, where the DC
+coupled version is producing more noise, but it is more linear. Whereas the AC
+coupled is nonlinear at very low frequencies (a spike near DC frequency bin),
+caused by a coupling capacitor.
 
 .. container:: centeralign
-
 
    ..
 
@@ -115,10 +139,7 @@ The following figures show DC and AC coupled solution comparison, where the DC c
 
    *FFT for the DC coupled solution with passively stabilized piezo sensor connected.*
 
-
 .. container:: centeralign
-
-
 
    ..
 
@@ -126,11 +147,12 @@ The following figures show DC and AC coupled solution comparison, where the DC c
 
    *FFT for the AC coupled solution with passively stabilized piezo sensor connected.*
 
-
 (Optional) Hardware Interface
 -----------------------------
 
-The board includes many ways in its hardware to interface with the components. These are optional interfaces that can be used to externally control aspects of the components.
+The board includes many ways in its hardware to interface with the components.
+These are optional interfaces that can be used to externally control aspects of
+the components.
 
 +-----------+---------------------------------------------------------------------------------------------------------+
 | Connector | Description                                                                                             |
@@ -151,7 +173,9 @@ The board includes many ways in its hardware to interface with the components. T
 Test Points
 ~~~~~~~~~~~
 
-The board also has many test points, most of which are labelled and are fairly self-explanatory. The table below describes some of the most significant test points and their connections.
+The board also has many test points, most of which are labelled and are fairly
+self-explanatory. The table below describes some of the most significant test
+points and their connections.
 
 ========== =====================================================
 Test Point Description
@@ -165,7 +189,6 @@ IO2        Connects to pin 4 on the Arduino Analog connector.
 GPIO0      Connects to GPIO0 of the ADC.
 GPIO1      Connects to GPIO1 of the ADC.
 ========== =====================================================
-
 
 | ===== More Information and Useful Links =====
 
@@ -191,7 +214,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Software Projects and Platforms
 -------------------------------
 
@@ -206,7 +228,6 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0540-ARDZ?&v=RevC>`_ to receive all these great benefits and more!
-
 
 *End of Document*
 

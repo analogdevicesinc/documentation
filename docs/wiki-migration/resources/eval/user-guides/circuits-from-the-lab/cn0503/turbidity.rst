@@ -6,9 +6,19 @@ An important water quality indicator for almost any use is the presence of dispe
 General Description/Overview
 ----------------------------
 
-The EVAL-CN0503-ARDZ is a four-channel optical platform capable of fluorescence, absorbance and scattering measurements. The two middle channels/light paths are only capable of absorbance and 180-degree scattering measurements. This demo uses one of the side paths for 90- and 180-degree scattering measurements.
+The EVAL-CN0503-ARDZ is a four-channel optical platform capable of fluorescence,
+absorbance and scattering measurements. The two middle channels/light paths are
+only capable of absorbance and 180-degree scattering measurements. This demo
+uses one of the side paths for 90- and 180-degree scattering measurements.
 
-Turbidity measurements follow design standards requiring specific types of light sources and number and angle of detectors. One of the standards is ISO7027 Water Quality - Determination of Turbidity which requires a monochromatic light source usually an IR LED, and a primary detector at a 90-degree angle. The demo will follow the standard using a single 940nm LED and two detectors at 90- and 180-degree angles. The unit for turbidity under the standard is FTU and the CN0503 computes this using 2 linear approximations (for low and high turbidity measurements) obtained from a 3-point calibration.
+Turbidity measurements follow design standards requiring specific types of light
+sources and number and angle of detectors. One of the standards is ISO7027 Water
+Quality - Determination of Turbidity which requires a monochromatic light source
+usually an IR LED, and a primary detector at a 90-degree angle. The demo will
+follow the standard using a single 940nm LED and two detectors at 90- and
+180-degree angles. The unit for turbidity under the standard is FTU and the
+CN0503 computes this using 2 linear approximations (for low and high turbidity
+measurements) obtained from a 3-point calibration.
 
 Demo Requirements
 -----------------
@@ -20,7 +30,8 @@ The following is a list of items needed in order to replicate this demo.
 -  Host computer with CN0503 software (see `Quick Setup Guide <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_gui_quick_start_guide.docx>`_) and Microsoft Excel (Optional for computing the parameters of the linear approximation)
 -  Lumileds Luxeon IR Compact 940nm LED L1IZ-0940000000000 (https://www.digikey.com/en/products/detail/lumileds/L1IZ-0940000000000/7243419)
 -  Oakton T100 calibration kit (Optional for calibration) (https://www.amazon.com/Oakton-AO-35635-52-Replacement-Turbidity-Calibration/dp/B00DDOW1JS)
--  Test solutions (common household liquids, such as milk, mixed with water or cement slurry water)
+-  Test solutions (common household liquids, such as milk, mixed with water or
+   cement slurry water)
 
 Assembling the 940nm LED
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,12 +65,10 @@ Jumper Header Setting     Image
 
 .. important::
 
-   You can use either path 1 or 4 for turbidity measurements. The steps outlined here will use path 4, and setting LED4, P4ASEL, and P4BSEL.
-
+   You can use either path 1 or 4 for turbidity measurements. The steps outlined
+   here will use path 4, and setting LED4, P4ASEL, and P4BSEL.
 
 -  Connect the 940nm LED Board to LED4
-
-
 
 |image5|
 
@@ -99,11 +108,15 @@ Initial Connection and Setup
 |image11|
 
 -  Load the configuration file for pH Measurement (`cn0503_defaults_turbidity.zip <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_defaults_turbidity.zip>`_)
--  Configure the settings for path 4 with the desired name, set wavelength to 940nm, and select measurement type: turbidity.
+-  Configure the settings for path 4 with the desired name, set wavelength to
+   940nm, and select measurement type: turbidity.
 
 |image12|
 
--  Add empty an cuvette (or filled with distilled water) to the cuvette holder assembly and insert to path 4. Click Optimize LED for path 4. This properly sets the LED current in these paths so that the light intensity is close to 50%.
+-  Add empty an cuvette (or filled with distilled water) to the cuvette holder
+   assembly and insert to path 4. Click Optimize LED for path 4. This properly
+   sets the LED current in these paths so that the light intensity is close to
+   50%.
 
 |image13|
 
@@ -112,25 +125,29 @@ Initial Connection and Setup
 Linear Approximation using 3-Point Calibration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Turbidity measurement is sensitive to multiple factors including ambient light and particulate contamination of samples. A pseudo-three-point calibration routine allows for high precision turbidity measurements.
+Turbidity measurement is sensitive to multiple factors including ambient light
+and particulate contamination of samples. A pseudo-three-point calibration
+routine allows for high precision turbidity measurements.
 
--  Fill three different cuvettes with the 20, 100, and 800 FTU calibration solutions up to the level marking as shown below.
-
+-  Fill three different cuvettes with the 20, 100, and 800 FTU calibration
+   solutions up to the level marking as shown below.
 
 |image14|
 
--  Go to the main window of the application and set the optical path to RRAT and the click on Start Measurement.
+-  Go to the main window of the application and set the optical path to RRAT and
+   the click on Start Measurement.
 
 |image15|
 
--  Note the average value of the RRAT measured from the samples and stop measurement.
+-  Note the average value of the RRAT measured from the samples and stop
+   measurement.
    |image16|\ |image17|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_800ftu.png
-   :width: 200px
+   :width: 200
 
--  Two linear equations can be computed from the three turbidity (FTU) and average RRAT data points using the slope formula and point-slope form.
-
+-  Two linear equations can be computed from the three turbidity (FTU) and
+   average RRAT data points using the slope formula and point-slope form.
 
 |image18|
 
@@ -140,25 +157,28 @@ Turbidity measurement is sensitive to multiple factors including ambient light a
 
 .. important::
 
-   You can include more calibration points in the Excel table for both high and low turbidity ranges
-
+   You can include more calibration points in the Excel table for both high and
+   low turbidity ranges
 
 -  To use the linear approximation, go to the Settings Window then, the Advanced Settings Window. In the command field, enter the coefficients of the linear approximation following the syntax: *DEF3 INS1 <x-intercept> <slope>*
-
-
 
 |image20|
 
 .. important::
 
-   You can only use one linear approximation at a time using INS1. Select the measurement range best fitted for the liquid sample. You can also start with using the low turbidity range first before switching to the high turbidity measurement when the measured value is greater than 100 FTU
-
+   You can only use one linear approximation at a time using INS1. Select the
+   measurement range best fitted for the liquid sample. You can also start with
+   using the low turbidity range first before switching to the high turbidity
+   measurement when the measured value is greater than 100 FTU
 
 Performing a Turbidity Measurement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Set the INS1 polynomial to the linear approximation for either low or high turbidity measurement. If you are unsure of the turbidity range of the sample, choose the low turbidity range and check if the measurement is greater than 100 FTU. If it is, set the INS polynomial to the linear approximation for high turbidity measurements.
-
+-  Set the INS1 polynomial to the linear approximation for either low or high
+   turbidity measurement. If you are unsure of the turbidity range of the
+   sample, choose the low turbidity range and check if the measurement is
+   greater than 100 FTU. If it is, set the INS polynomial to the linear
+   approximation for high turbidity measurements.
 
 |image21|
 
@@ -166,18 +186,19 @@ Performing a Turbidity Measurement
 
 |image22|
 
--  Go back to the Main Window by clicking Okay to both the Advanced Settings and Settings. Select path 4 and, set display mode to INS1, and press Start Measurement.
+-  Go back to the Main Window by clicking Okay to both the Advanced Settings and
+   Settings. Select path 4 and, set display mode to INS1, and press Start
+   Measurement.
 
 |image23|
 
-
-
 .. important::
 
-   Optionally, you can set the unit displayed in the plot to FTU by writing this in the primary unit field of path 4 found by clicking the Advanced button in the Settings window.
+   Optionally, you can set the unit displayed in the plot to FTU by writing this
+   in the primary unit field of path 4 found by clicking the Advanced button in
+   the Settings window.
 
    | |image24|\
-
 
 Reference Links
 ---------------
@@ -187,50 +208,50 @@ Reference Links
 -  `Quick Setup Guide <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_gui_quick_start_guide.docx>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/940nm_assembly.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/iosel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1.8v_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_940nm.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/fl_fluorescentfilter.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4asel_-_0.png
-   :width: 100px
+   :width: 100
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4bsel_-_90.png
-   :width: 100px
+   :width: 100
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ph_mainwindow.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ph_opensettings.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_selectcom.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_wavelength.png
-   :width: 200px
+   :width: 200
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_optimizeled.png
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_level.png
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_calstart.png
-   :width: 600px
+   :width: 600
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_20ftu.png
-   :width: 200px
+   :width: 200
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_100ftu.png
-   :width: 200px
+   :width: 200
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_eqtn.png
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_calplot.png
-   :width: 600px
+   :width: 600
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_polylincmd.png
-   :width: 600px
+   :width: 600
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_polylincmd.png
-   :width: 600px
+   :width: 600
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_sample.png
-   :width: 600px
+   :width: 600
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_meas.png
-   :width: 600px
+   :width: 600
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_unit.png
-   :width: 600px
+   :width: 600

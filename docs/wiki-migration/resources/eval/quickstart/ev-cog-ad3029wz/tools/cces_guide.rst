@@ -1,7 +1,11 @@
 MCU Cog Quick Start Guide [using CCES]
 ======================================
 
-<note > \*\* There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. \*\* 
+<note > \*\* There are no seperate toolchain,On-Board Peripheral Drivers &
+Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers &
+Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change
+only the pin muxing based on the application.For help regarding pinmapping refer
+to the Hardware Details section. \*\*
 
 Setting up EV-COG-AD3029WZ is a three step process.
 
@@ -26,7 +30,8 @@ IDE Setup
 Software Packs and Driver Setup
 -------------------------------
 
--  Download the following packs for EV-COG-AD3029LZ (Packs are same for both EV-COG-AD3029LZ and EV-COG-AD3029WZ)
+-  Download the following packs for EV-COG-AD3029LZ (Packs are same for both
+   EV-COG-AD3029LZ and EV-COG-AD3029WZ)
 
    -  `ARM CMSIS Pack <https://keilpack.azureedge.net/pack/ARM.CMSIS.5.1.1.pack>`_
    -  `Analog Devices ADuCM302x Device Support Pack 3.1.0 (latest) <http://download.analog.com/tools/EZBoards/CM302x/Releases/AnalogDevices.ADuCM302x_DFP.3.1.0.pack>`_
@@ -41,11 +46,12 @@ Software Packs and Driver Setup
 Running an Example Project
 --------------------------
 
--  Power the MCU Cog using a USB (micro-B) Cable. You should see a red LED and a yellow LED turn on by default.
+-  Power the MCU Cog using a USB (micro-B) Cable. You should see a red LED and a
+   yellow LED turn on by default.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/img_2668.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 -  In CCES IDE, click CMSIS Pack Manager icon |image2|.
 -  Select EV-COG-AD3029LZ from the Boards tab on the Left panel. (see below image)
@@ -63,15 +69,14 @@ Running an Example Project
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/debug_config.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Click ok on Hardware Breakpoint Limited and Semihosting Enabled window.\
-
 
 |image5|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/hw_breakpoint.jpg
-   :width: 400px
+   :width: 400
 
 -  Click run |image6| on the Debug perspective.
 -  Now press BTN1 or BTN2 on EV-COG-AD3029LZ and inspect corresponding LED.
@@ -81,9 +86,8 @@ You are all set!
 Additional Packs
 ================
 
-For Sensor based application with BLE connectivity please download and install below packages.
-
-
+For Sensor based application with BLE connectivity please download and install
+below packages.
 
 - Download below packs
   - ` Analog Devices Sensor Drivers and Examples <http://download.analog.com/tools/Sensor_Software/Releases/AnalogDevices.ADI-SensorSoftware.1.1.0.pack>`_ - :doc:`Refer for more details </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/software/sensor>`
@@ -91,8 +95,8 @@ For Sensor based application with BLE connectivity please download and install b
    * Start CrossCore Embedded Studio.
    * Go to CMSIS Pack Manager by navigating to Windows ->Perspective ->Open Perspective ->Others -> CMSIS Pack Manager.
    * Install above downloaded packs by clicking Import Existing Packs icon  |resources-eval-user-guides-ev-cog-ad3029lz-import_existing_packs_icon.jpg|.
-   * Refer "Running Example Project" section as mentioned above to copy existing sensor or BLE based application to workspace.
-
+   * Refer "Running Example Project" section as mentioned above to copy existing
+     sensor or BLE based application to workspace.
 
 | End Document
 
@@ -103,7 +107,7 @@ For Sensor based application with BLE connectivity please download and install b
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/build_icon.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/debug_icon.jpg
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/semihosting.jpg
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/run_icon.jpg
 
 .. |resources-eval-user-guides-ev-cog-ad3029lz-import_existing_packs_icon.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/import_existing_packs_icon.jpg

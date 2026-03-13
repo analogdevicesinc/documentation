@@ -1,9 +1,16 @@
 ADRV9361-Z7035 User Guide - Introduction
 ========================================
 
-The ADRV9361-Z7035 is a Software Defined Radio (SDR) that combines the Analog Devices AD9361 integrated RF Agile Transceiver™ with the Xilinx Z7035 Zynq®-7000 All Programmable SoC in a small system-on-module (SOM) footprint suitable for end-product integration.
+The ADRV9361-Z7035 is a Software Defined Radio (SDR) that combines the Analog
+Devices AD9361 integrated RF Agile Transceiver™ with the Xilinx Z7035 Zynq®-7000
+All Programmable SoC in a small system-on-module (SOM) footprint suitable for
+end-product integration.
 
-Analog Devices carrier cards are available for fast prototype and are supported by robust simulation and code generation tools that integrate seamlessly with Xilinx Vivado® Design Suite. The final step for most applications includes designing a custom carrier card to mate with the ADRV9361 SDR SOM for end product deployment.
+Analog Devices carrier cards are available for fast prototype and are supported
+by robust simulation and code generation tools that integrate seamlessly with
+Xilinx Vivado® Design Suite. The final step for most applications includes
+designing a custom carrier card to mate with the ADRV9361 SDR SOM for end
+product deployment.
 
 Key Features
 ------------
@@ -21,7 +28,8 @@ Key Features
 Module Specs
 ------------
 
-The module specifications are summarized below. The rest of the document provides details.
+The module specifications are summarized below. The rest of the document
+provides details.
 
 +-------------------------------+------------------------------------------------------------+
 | Radio                         | Analog Devices AD9361 integrated RF Agile Transceiver™     |
@@ -77,16 +85,18 @@ The module specifications are summarized below. The rest of the document provide
 
 (1) uSD cage rated to -25°C to +85°C operating temperature
 
-Important! ADRV9361-Z7035 is not pin compatible with standard PicoZed (non-SDR) carrier cards. New pinouts were required mainly for the Zynq Z-7035 and AD9361 digital I/O.
+Important! ADRV9361-Z7035 is not pin compatible with standard PicoZed (non-SDR)
+carrier cards. New pinouts were required mainly for the Zynq Z-7035 and AD9361
+digital I/O.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/simplified_system_diagram.png
    :alt: Simplified System Diagram
    :align: center
-   :width: 800px
+   :width: 800
 
 Simplified System Diagram
 
 |ADRV9361-Z7035 SOM Device Callout| ADRV9361-Z7035 SOM Device Callout
 
 .. |ADRV9361-Z7035 SOM Device Callout| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/adrv9361-z7035_device_callout.png
-   :width: 800px
+   :width: 800

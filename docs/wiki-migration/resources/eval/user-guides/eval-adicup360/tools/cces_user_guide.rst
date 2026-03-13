@@ -1,11 +1,18 @@
 CrossCore Embedded Studio Quickstart User Guide
 ===============================================
 
-This page describes how to use the ADuCM36x Device Family Pack (DFP) with CrossCore Embedded Studio (CCES) to create, import, build and debug applications for the ADuCM360 processor. The ADuCM360 processor integrates an ARM Cortex-M3 microcontroller with dual 24-bit sigma delta analog to digital converters along with various other on-chip analog and digital blocks within a single package.
+This page describes how to use the ADuCM36x Device Family Pack (DFP) with
+CrossCore Embedded Studio (CCES) to create, import, build and debug applications
+for the ADuCM360 processor. The ADuCM360 processor integrates an ARM Cortex-M3
+microcontroller with dual 24-bit sigma delta analog to digital converters along
+with various other on-chip analog and digital blocks within a single package.
 
-This page describes how to install and work with the Analog Devices ADuCM36x DFP to start developing applications for the EVAL-ADICUP360. This page also highlights common problems and how to avoid them.
+This page describes how to install and work with the Analog Devices ADuCM36x DFP
+to start developing applications for the EVAL-ADICUP360. This page also
+highlights common problems and how to avoid them.
 
-Additional help documentation can be found by opening CCES and selecting "Help Contents" from the CCES Help menu.
+Additional help documentation can be found by opening CCES and selecting "Help
+Contents" from the CCES Help menu.
 
 This page covers:
 
@@ -24,22 +31,28 @@ This page covers:
 
    We have a playlist of YOU TUBE VIDEOS that can help you understand different aspects of CrossCore Embedded Studio. The videos talk about the ADICUP360, but the tools information is relevant for the ADICUP360 as well. `CrossCore Embedded Studio Videos <https://www.youtube.com/playlist?list=PLiwaj4qabLWycR06TNf8eqSwX7qkDbSu_>`_
 
-
 Workspace and Projects
 ----------------------
 
-A CCES workspace is a folder (e.g. c:\\Users\\anon\\cces\\2.7.0) that contains project resources and metadata. When projects are created or imported, details about that project are stored in the workspace. The workspace metadata also includes preferences set through the CCES Preferences dialog box and IDE window layouts. By default, CCES creates new projects within your workspace folder.
+A CCES workspace is a folder (e.g. c:\\Users\\anon\\cces\\2.7.0) that contains
+project resources and metadata. When projects are created or imported, details
+about that project are stored in the workspace. The workspace metadata also
+includes preferences set through the CCES Preferences dialog box and IDE window
+layouts. By default, CCES creates new projects within your workspace folder.
 
-Each time you start CCES, you will be prompted for a workspace location. You can opt to default to a workspace directory by choosing to use a workspace directory as your default. You will not be prompted the next time you open CCES.
+Each time you start CCES, you will be prompted for a workspace location. You can
+opt to default to a workspace directory by choosing to use a workspace directory
+as your default. You will not be prompted the next time you open CCES.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_workspace.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 How to install or upgrade the ADuCM36x Device Family Pack (DFP) or ARM CMSIS Pack for CCES
 ------------------------------------------------------------------------------------------
 
-CCES 2.7.0 does not comes with the ADuCM36x Device Family Pack (DFP) or the ARM CMSIS Pack file pre-installed.
+CCES 2.7.0 does not comes with the ADuCM36x Device Family Pack (DFP) or the ARM
+CMSIS Pack file pre-installed.
 
 Installing the ADuCM36x DFP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,7 +66,6 @@ Installing the ADuCM36x DFP
 .. important::
 
    The "Check for Updates on Web" option does not work to obtain the ADICUP360 / ADuCM36X pack. Instead, refer to the "Installing Locally Saved ADuCM36x Pack" section (below) after `downloading the ADuCM36x DFP <https://www.keil.arm.com/packs/aducm36x_dfp-analogdevices/boards/>`_.
-
 
 Installing the ARM CMSIS Pack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,11 +82,15 @@ Installing the ARM CMSIS Pack
 Installing Locally Saved ADuCM36x Pack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Alternatively, the ADuCM36x Device Family Pack (DFP) files can be installed using a local downloaded copy.
+Alternatively, the ADuCM36x Device Family Pack (DFP) files can be installed
+using a local downloaded copy.
 
 After downloading the .pack files from the Keil website (https://www.keil.com/dd2/pack/), select the Import Packs button in the CMSIS Pack Manager's Packs View, choose the .pack file as shown in the screenshot below, and click Open.
 
-You will be prompted to accept a license agreement and, after agreeing to it, the CMSIS-Pack file will be installed into CrossCore Embedded Studio's CMSIS-Pack installation directory (e.g. C:\\Analog Devices\\CrossCore Embedded Studio 2.7.0\\ARM\\packs\\AnalogDevices).
+You will be prompted to accept a license agreement and, after agreeing to it,
+the CMSIS-Pack file will be installed into CrossCore Embedded Studio's
+CMSIS-Pack installation directory (e.g. C:\\Analog Devices\\CrossCore Embedded
+Studio 2.7.0\\ARM\\packs\\AnalogDevices).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_import_pack.gif
    :align: right
@@ -82,13 +98,15 @@ You will be prompted to accept a license agreement and, after agreeing to it, th
 How to create a new project for the ADuCM360
 --------------------------------------------
 
-A project for ADuCM360 can be created using the New CrossCore Project Wizard. This wizard will guide you through the steps to create a new project.
+A project for ADuCM360 can be created using the New CrossCore Project Wizard.
+This wizard will guide you through the steps to create a new project.
 
 -  To create a new project, go to the menu bar and find *File -> New -> CrossCore Project*.
 -  Name the project, and then hit the Next button.
 -  Choose Processor family **ARM** and select Processor type **ADuCM360**.
 
-   -  There is no Silicon Revision Option for the ADuCM360, so it defaults to "none"
+   -  There is no Silicon Revision Option for the ADuCM360, so it defaults to
+      "none"
 
 -  Project configuration allows you to add additional Add-ins to your project, such as Pin Multiplexing and changing the template language for a generated main function etc. Typically no configuration or add-ons are necessary.
 -  Finally, press *Finish* and the project will be created and you can begin writing your program.
@@ -101,7 +119,11 @@ How to add startup code and core components to a new project for the ADuCM360
 
 A new or empty ADuCM360 project does not have startup code or a linker description file that maps code and data. It is necessary to add these components using the **Run-time Environment (RTE) Configuration Editor**.
 
-CrossCore Projects created for Analog Devices' Cortex-M based processors, such as ADuCM360 include a system.rteconfig file. Opening this file within the IDE will open the RTE Configuration Editor. Components from the CMSIS-Pack, such as drivers and services, can be added to a project by selecting them in the editor and clicking Save.
+CrossCore Projects created for Analog Devices' Cortex-M based processors, such
+as ADuCM360 include a system.rteconfig file. Opening this file within the IDE
+will open the RTE Configuration Editor. Components from the CMSIS-Pack, such as
+drivers and services, can be added to a project by selecting them in the editor
+and clicking Save.
 
 At minimum, a new ADuCM360 project **requires** the *Device::Startup*, *CMSIS::Core* and *Device::Global* Configuration components to be added to the project.
 
@@ -152,7 +174,8 @@ Opening Examples using the CCES Example Browser
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Launch the CCES Example Broswer by clicking on *Help --> Browse Examples*.
--  Select ADuCM36x_DFP[x.y.z] in Product drop-down list, select the example and click Open example. Then the example will be copied to your workspace.
+-  Select ADuCM36x_DFP[x.y.z] in Product drop-down list, select the example and
+   click Open example. Then the example will be copied to your workspace.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_example_browser.gif
    :align: right
@@ -161,7 +184,9 @@ How to Import Existing Projects from the GIT Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Open the GIT perspective by clicking "Open Perspective" icon on tool bar and selecting "Git" in the Open Perspective window (or choose the GIT perspective if already open).
--  Clone the Git repository which contains all the latest code and projects associated with the ADuCM360. Populate the URI field with the following address.
+-  Clone the Git repository which contains all the latest code and projects
+   associated with the ADuCM360. Populate the URI field with the following
+   address.
 
    -   **URI:** - `EVAL-ADICUP360 <https://github.com/analogdevicesinc/EVAL-ADICUP360>`_
    -  Click *Next*, *Next* and then *Finish*. There may be a pause while the branches are fetched.
@@ -194,7 +219,8 @@ Disabling/Enabling Semihosting
 
    -  Enable semi-hosting by selecting the **rdimon.specs** option.
 
-      -  Use this option if using the debugger for things like printf() or other similar tools.
+      -  Use this option if using the debugger for things like printf() or other
+         similar tools.
 
    -  Disable semi-hosting by selecting the **nosys.specs** or **None** options.
 
@@ -249,12 +275,15 @@ How to start and stop debugging an ADuCM360 application
 -  If you are already in the Debug Configurations dialog, then click *Debug*.
 -  If you are in the C Perspective, then you can launch the last Debug session by clicking the *Beetle* Debug button on the toolbar.
 -  You will be prompted to switch perspective to the Debug perspective. Click *Yes*. You can opt to not show this dialog again.
--  If your binary (program) was built with semi-hosting enabled, then CCES will warn you that you need to re-build the program when you want to run the program without a debugger attached.
+-  If your binary (program) was built with semi-hosting enabled, then CCES will
+   warn you that you need to re-build the program when you want to run the
+   program without a debugger attached.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png
    :align: center
 
--  If everything goes fine, in the Console window, you will see a report without errors.
+-  If everything goes fine, in the Console window, you will see a report without
+   errors.
 
    -  As a reference, the full text should be similar to:``Open On-Chip Debugger (OpenOCD) 0.9.0
       Licensed under GNU GPL v2
@@ -298,7 +327,8 @@ Linux USB Access
 How to create a Binary (.bin) or Intel Hex (.hex) file for an ADuCM360 application
 ----------------------------------------------------------------------------------
 
-Starting with CrossCore Embedded Studio (CCES) 2.8.0, the Artifact of your project build can now be a Binary or Intel Hex file.
+Starting with CrossCore Embedded Studio (CCES) 2.8.0, the Artifact of your
+project build can now be a Binary or Intel Hex file.
 
 -  Ensure that your program is built with semi-hosting disabled by visiting *Tools Settings \| Linker \| Libraries* and change *Semihosting support* to *nosys.specs* or *None*, depending on your application set-up.
 -  Rebuild your application.

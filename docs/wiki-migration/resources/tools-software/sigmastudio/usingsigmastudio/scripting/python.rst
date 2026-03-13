@@ -19,11 +19,9 @@ To set up the COM ports for SigmaStudio 4.0:
 
    Launch SigmaStudio before running your client [Python or LabView/Matlab]. Most clients assume the SigmaStudio endpoint is available. The corresponding error in Python is ``There was no endpoint listening at net.pipe//localhost/SigmaServerPipe``\
 
-
 .. note::
 
    Use win32com of version 300 to access SigmaStudio Server API's from python
-
 
 .. code:: python
 
@@ -77,7 +75,8 @@ To set up the COM ports for SigmaStudio 4.0:
 Register Write
 ~~~~~~~~~~~~~~
 
-The following code shows how to perform a register write of any length. Only the first three lines need be modified.
+The following code shows how to perform a register write of any length. Only the
+first three lines need be modified.
 
 .. code:: python
 
@@ -95,4 +94,3 @@ FIR Filter
 ~~~~~~~~~~
 
 Example code to interface with FIR Filters is available at :doc:`FIR Filter </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/firfilter>`.
-

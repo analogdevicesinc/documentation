@@ -139,7 +139,6 @@ Driver testing
       -rw-r--r-- 1 root root 4096 Sep 23 14:33 uevent
    
 
-
 Show device name
 ----------------
 
@@ -153,7 +152,6 @@ Show device name
       root@analog:/sys/bus/iio/devices/iio:device0# cat name
       adxl313
    
-
 
 Show scale
 ----------
@@ -171,7 +169,6 @@ Show scale
       0.009576806
    
 
-
 Show axis x measurement
 -----------------------
 
@@ -187,7 +184,6 @@ Show axis x measurement
       root@analog:/sys/bus/iio/devices/iio:device0# cat in_accel_x_raw
       -14
    
-
 
 Set sampling frequency
 ----------------------
@@ -208,7 +204,6 @@ Set sampling frequency
       12.500000
    
 
-
 Set calibbias for the Z channel
 -------------------------------
 
@@ -225,7 +220,6 @@ Set calibbias for the Z channel
       root@analog:/sys/bus/iio/devices/iio:device0# cat in_accel_z_calibbias
       4
    
-
 
 More Information
 ================
@@ -248,6 +242,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-accelerometer/youtube>p_vntewue24
-

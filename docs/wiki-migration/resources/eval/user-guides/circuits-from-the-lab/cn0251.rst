@@ -6,9 +6,18 @@ Overview
 
 :adi:`CN-0251 <CN0251>` is a flexible signal conditioning circuit for processing signals of wide dynamic range, varying from several mV p-p to 20 V p-p. The circuit provides the necessary conditioning and level shifting and achieves the dynamic range using the internal programmable gain amplifier (PGA) of the high resolution analog-to-digital converter (ADC).
 
-A ±10 V full-scale signal is very typical in process control and industrial automation applications; however, in some situations, the signal can be as small as several mV. Attenuation and level shifting is necessary to process a ±10 V signal with modern low voltage ADCs. However, amplification is needed for small signals to make use of the dynamic range of the ADC. Therefore, a circuit with a programmable gain function is desirable when the input signal varies over a wide range.
+A ±10 V full-scale signal is very typical in process control and industrial
+automation applications; however, in some situations, the signal can be as small
+as several mV. Attenuation and level shifting is necessary to process a ±10 V
+signal with modern low voltage ADCs. However, amplification is needed for small
+signals to make use of the dynamic range of the ADC. Therefore, a circuit with a
+programmable gain function is desirable when the input signal varies over a wide
+range.
 
-In addition, small signals may have large common-mode voltage swings; therefore, high common-mode rejection (CMR) is required. In some applications, where the source impedance is large, high impedance is also necessary for the analog front-end input circuit.
+In addition, small signals may have large common-mode voltage swings; therefore,
+high common-mode rejection (CMR) is required. In some applications, where the
+source impedance is large, high impedance is also necessary for the analog
+front-end input circuit.
 
 This user guide will discuss how to use the evaluation software to collect data from the :adi:`EVAL-CN0251-SDPZ` Evaluation Board **(CN-0251 Board)**
 
@@ -98,8 +107,6 @@ Software Control and Indicator Descriptions
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/cn0251-software.png
 
-
-
 - **Connect/Reconnect Button**
 - When this button is pressed, the SDP-B Board makes a USB connection to the CN-0288 Board.  A connection to the SDP-B Board must be made to use the software.
 - **Capture Data Button**
@@ -122,7 +129,6 @@ Software Control and Indicator Descriptions
 
    Jumpers JP3 and JP4 on the :adi:`EVAL-CN0251-SDPZ` (CN-0251 Board) must be populated to reflect the value displayed by this indicator
 
-
 - **AD7192 Gain Indicator**
 - This indicator displays the gain currently programmed into the :adi:`AD7192`.
 - **Samples to Capture Control**
@@ -132,7 +138,8 @@ Software Control and Indicator Descriptions
 - **Chart Controls**
 - These controls allow the user to zoom-in, zoom-out, and pan through the data collected.
 - **System Status String Indicator**
-- This indicator displays a message to the user detailing the current state of the software.
+- This indicator displays a message to the user detailing the current state of
+  the software.
 
 --------------
 
@@ -144,14 +151,12 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ NOTE: If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be
+   found at
 
    C:\\Program Files\\Analog Devices\\CN0251\\CN0251.exe\
 
-
 - Click the **Connect/Reconnect Button**. A window with a progress bar will load.
-
-
 
 |image6|
 
@@ -169,7 +174,6 @@ Capturing Data
 .. important::
 
    Changing this control will change the AD8475 Gain Indicator. Please ensure that JP3 and JP4 on the :adi:`EVAL-CN0251-SDPZ` (CN-0251 Board) are populated to reflect the gain displayed by the AD8475 Gain Indicator.
-
 
 -  Input the number of samples to capture into the **Samples to Capture Control**
 -  Click the **Capture Data Button** and wait until acquisition is complete.
@@ -193,12 +197,9 @@ Saving Data to a Spreadsheet File
 -  Name the file.
 -  Click the **OK Button**.
 
-
-
 .. note::
 
    | The software saves the spreadsheet file as ASCII text with columns separated by tabs.
-
 
 Registration
 ------------
@@ -207,15 +208,14 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0251-SDPZ?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 *End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/cn0251-test_setup.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/cn0251-jumpers.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/cn0251-discovery.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/scopy.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/run.png
-   :width: 80px
+   :width: 80
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/cn0251-software-wait.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/cn0251-capture-wait.png

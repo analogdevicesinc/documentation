@@ -75,34 +75,34 @@ SigmaStudio - SigmaStudio+ Comparison
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_splash.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssplus_splash.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_dynamicbass.png
-   :width: 150px
+   :width: 150
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_leveldetector.png
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssp_dynamicbass.png
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssp_leveldetector.png
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/algo_lib_ss.jpg
-   :width: 250px
+   :width: 250
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/algo_lib_ssp.jpg
-   :width: 250px
+   :width: 250
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_splash.png
-   :width: 300px
+   :width: 300
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssplus_splash.png
-   :width: 300px
+   :width: 300
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_dynamicbass.png
-   :width: 150px
+   :width: 150
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ss_leveldetector.png
-   :width: 200px
+   :width: 200
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssp_dynamicbass.png
-   :width: 200px
+   :width: 200
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/ssp_leveldetector.png
-   :width: 200px
+   :width: 200
 .. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/algo_lib_ss.jpg
-   :width: 250px
+   :width: 250
 .. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/comparison/algo_lib_ssp.jpg
-   :width: 250px
+   :width: 250

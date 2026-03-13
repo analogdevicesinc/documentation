@@ -8,13 +8,13 @@ OVERVIEW
 
    UPDATE NOTICE: This Wiki Guide covers the use of an evaluation tool (EVAL-ADISZ) that is no longer available for purchase, but this Wiki Guide remains online to support those who already have these tools. For all new :adi:`adis16209` users, please go to the :adi:`ADIS16209's product page <adis16209>`, then click on :adi:`Evaluation Kits <en/products/mems/accelerometers-special-purpose/adis16209.html#product-evaluationkit>` and then click on the See All tab to review a listing of the most current :adi:`adis16209` evaluation tools. Thank you!
 
-
 The :adi:`ADIS16209` is a high accuracy, digital inclinometer that accommodates both single-axis (±180°) and dual-axis (±90°) operation. The standard supply voltage (3.3 V) and serial peripheral interface (SPI) enable simple integration into most industrial system designs. A simple internal register structure handles all output data and configuration features. This includes access to the following output data: calibrated acceleration, accurate incline angles, power supply, internal temperature, auxiliary analog and digital input signals, diagnostic error flags, and programmable alarm conditions.
 
-The electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:
+The electrical connection typically only requires 5 I/O lines for synchronous
+data collection, as shown in the following figure:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/16209_spi_conn.png
-   :width: 500px
+   :width: 500
 
 ADIS16209/PCB BREAKOUT BOARD
 ----------------------------
@@ -40,7 +40,8 @@ Windows XP, Vista, 7
 
 .NET Framework 3.5
 
-NOTE: Newer versions of the .NET framework do not currently support the IMU Evaluation software package.
+NOTE: Newer versions of the .NET framework do not currently support the IMU
+Evaluation software package.
 
 PHYSICAL SETUP
 --------------
@@ -53,7 +54,6 @@ The :adi:`EVAL-ADIS16209 <ADIS16209>` provides the :adi:`EVAL-ADIS16209 <ADIS162
 
    **NOTE:** Do not plug the :adi:`EVAL-ADIS` into the USB cable at this stage of the setup. Wait until the software installation is complete.
 
-
 }
 
 Step #1
@@ -62,12 +62,12 @@ Step #1
 Connect the :adi:`ADIS16209/PCBZ <EVAL-ADIS16209>` to the :adi:`EVAL-ADIS`, using the ribbon cable (comes with :adi:`EVAL-ADIS`) and **J1** on both boards. **J1** on both boards share common pin assignments, for pins 1 through 12. So, make sure that the ribbon cable connects pins 1-12 on both **J1** connectors.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16209_pc_eval_wikiguide_01a.png
-   :width: 600px
+   :width: 600
 
 Since the :adi:`ADIS16209/PCBZ <EVAL-ADIS16209>` (J1) has only 12 pins, pins 13, 14, 15 and 16 on the :adi:`EVAL-ADIS` (J1) will remain unconnected through the ribbon cable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16209_pc_eval_wikiguide_01.png
-   :width: 600px
+   :width: 600
 
 Step #2
 ~~~~~~~
@@ -88,16 +88,14 @@ Step #4
 
 The following picture (left side) shows JP1 in the **+3.3V** position (factory-default). That is the correct JP1 jumper setting on the :adi:`EVAL-ADIS`) required for the :adi:`ADIS16209CCCZ <EVAL-ADIS16209>`.
 
-
 |image7|
 
 .. container:: center round box
 
    **NOTE:** If JP1 is left on **+5v** the software will look like the following picture. Move JP1 to the\ **+3.3V** setting to correct the problem.
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-wrong-voltage.png
-   :width: 800px
+   :width: 800
 
 IMU EVALUATION SOFTWARE INSTALLATION
 ------------------------------------
@@ -105,7 +103,7 @@ IMU EVALUATION SOFTWARE INSTALLATION
 :adi:`Click here to download the IMU Evaluation software <static/imported-files/eval_boards/IMU-Evaluation-EVAL-ADIS.zip>` to a personal computer, which enables PC-based evaluation of the :adi:`ADIS16209` on an :adi:`EVAL-ADIS` evaluation system. The download file will contain three separate files: The USB drivers (SDPDrivers.exe), the application file (IMUEvaluation.exe) and the revision table. Copy these files to a convenient folder for running the application from.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu-software.png
-   :width: 600px
+   :width: 600
 
 USB Driver Installation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -126,7 +124,9 @@ After the USB driver installation is complete, connect the :adi:`EVAL-ADIS` USB 
 Main Window
 ~~~~~~~~~~~
 
-Once the IMU Evaluation software starts-up, the Main Window will appear and look like the following picture. The second picture provides color-coded boxes to support further discussion of each function in this screen.
+Once the IMU Evaluation software starts-up, the Main Window will appear and look
+like the following picture. The second picture provides color-coded boxes to
+support further discussion of each function in this screen.
 
 |image12| |image13|
 
@@ -144,7 +144,10 @@ The **About** option provides more detail software revision information.
 
 The purple box identifies the output registers, which update, real-time, after pressing the **Read** button (see the red box for the location of the **Read** button).
 
-The yellow box identifies the two waveform recorder windows. The top window contains the gyroscope outputs. The bottom window contains the accelerometer responses. Also, each waveform matches the color of its register (see register titles in the purple box).
+The yellow box identifies the two waveform recorder windows. The top window
+contains the gyroscope outputs. The bottom window contains the accelerometer
+responses. Also, each waveform matches the color of its register (see register
+titles in the purple box).
 
 Register Access
 ~~~~~~~~~~~~~~~
@@ -152,18 +155,23 @@ Register Access
 The purpose of the **Register Access** window is to provide both read and write access to the user registers in the :adi:`ADIS16209`. The following picture shows the appearance of this window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-registers.png
-   :width: 800px
+   :width: 800
 
-The color coded boxes illustrate the different functions that this window provides.
+The color coded boxes illustrate the different functions that this window
+provides.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-registers-defined.png
-   :width: 800px
+   :width: 800
 
 The purple box identifies the register category. In addition to the Control/Status, this drop-down control offers access to **Output** and **Calibration** registers.
 
-The red box identifies all of the registers that are in the current category. Click on the register name to select a register for individual read/write access.
+The red box identifies all of the registers that are in the current category.
+Click on the register name to select a register for individual read/write
+access.
 
-The green box identifies the read/write control options for the current register selection. Use the hexadecimal format when writing commands to a particular register.
+The green box identifies the read/write control options for the current register
+selection. Use the hexadecimal format when writing commands to a particular
+register.
 
 The yellow box updates all the registers in the current category.
 
@@ -176,9 +184,13 @@ The Data Capture function supports synchronous data acquisition, based on the da
 
 |image14| |image15|
 
-The red box identifies all of the registers that are eligible for inclusion in the next acquisition process. Click on each box to include a register in the next data acquisition sequence. The box will have a check mark when it has been selected.
+The red box identifies all of the registers that are eligible for inclusion in
+the next acquisition process. Click on each box to include a register in the
+next data acquisition sequence. The box will have a check mark when it has been
+selected.
 
-The green box identifies the configuration box for the name and location of the data storage file.
+The green box identifies the configuration box for the name and location of the
+data storage file.
 
 The yellow box identifies a number of configuration options for the data acquisition process. The **Record Length** is a user input for the total number of samples in a data record. Note that all selected registers will have this number of samples in the data record file, after the acquisition process completes. After each update to the **Record Length** box, the software calculates the displays the total **Capture Time**. The **Add File Header** option allows the user to add or remove the header in the data storage file. The **Use Scaled Data** causes the software to convert the decimal, twos complement number into its representative value. The default setting for **Use Scaled Data**, option the gyroscope outputs will be in units of degrees/second.
 
@@ -190,7 +202,7 @@ The only **Advanced Options** control option that is relevant for the **ADIS1620
 NOTE: The option **Use External Trigger** will appear in this screen, but since the **ADIS16209** does not provide an external clock input function, this option does not apply to the **ADIS16209**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/advanced_options.png
-   :width: 400px
+   :width: 400
 
 EXAMPLE EXERCISES
 ~~~~~~~~~~~~~~~~~
@@ -198,32 +210,32 @@ EXAMPLE EXERCISES
 This section currently has no :adi:`ADIS16209`-specific content, but the :adi:`ADIS16448` Evaluation on the EVAL-ADIS Wiki Site has some good examples to start with.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/220-pcbz-dimensions.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16220cccz-dimensions.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-cable-conn.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-data-ready-wire.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-eval-locate-holes.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209pcbz-eval-adis.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-3.3v.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load1.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load2.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load3.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load4.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-imu-eval.png
-   :width: 800px
+   :width: 800
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-imu-eval-defined.png
-   :width: 800px
+   :width: 800
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-data-capture.png
-   :width: 440px
+   :width: 440
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-data-capture-defined.png
-   :width: 440px
+   :width: 440

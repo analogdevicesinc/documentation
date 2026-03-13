@@ -1,7 +1,10 @@
 .. important::
 
-   After 2020, we will begin to phase out the ADIS16448 IMU in favor of the newer ADIS16470 with updated features. We strongly encourage teams that have not obtained one of the newer IMUs to consider getting one from FIRST Choice this year. The ADIS16448 IMU is still supported, but stock will be limited and library updates/releases for this device will be slower.
-
+   After 2020, we will begin to phase out the ADIS16448 IMU in favor of the
+   newer ADIS16470 with updated features. We strongly encourage teams that have
+   not obtained one of the newer IMUs to consider getting one from FIRST Choice
+   this year. The ADIS16448 IMU is still supported, but stock will be limited
+   and library updates/releases for this device will be slower.
 
 ADIS16448 IMU Board for FIRST Robotics
 ======================================
@@ -20,22 +23,32 @@ Getting Started
 A Note on Offset Calibration
 ----------------------------
 
-To help the robot minimize start-up drift and improve overall sensor performance, an offset calibration function has been built into the IMU driver. This function captures several seconds worth of data and calculates an average offset which is then applied to the sensor outputs. By default, calibration is automatically started once the RoboRIO begins executing user code and usually takes about 10 seconds to complete. If your IMU board has a "Ready?" LED indicator, it will illuminate once calibration is complete.
+To help the robot minimize start-up drift and improve overall sensor
+performance, an offset calibration function has been built into the IMU driver.
+This function captures several seconds worth of data and calculates an average
+offset which is then applied to the sensor outputs. By default, calibration is
+automatically started once the RoboRIO begins executing user code and usually
+takes about 10 seconds to complete. If your IMU board has a "Ready?" LED
+indicator, it will illuminate once calibration is complete.
 
 .. important::
 
    The gyros used in the :adi:`ADIS16448` measure *angular rate*, not *angle!* Any movement during the offset calibration routine will introduce some error into every sensor measurement! Over time, this error, will appear as "drift" in your angle measurement. It is VERY important that the robot remains completely stationary during this calibration period!\
 
-
 .. tip::
 
-   Offset calibration should be performed as soon as the robot is powered on to prevent the routine from interfering with any autonomous code execution. If your gyro angle readings are drifting drastically, clicking Restart Robot Code in the driver station will force the RoboRIO to re-execute the offset calibration routine. This should fix any drift issues caused by a bad offset measurement.
-
+   Offset calibration should be performed as soon as the robot is powered on to
+   prevent the routine from interfering with any autonomous code execution. If
+   your gyro angle readings are drifting drastically, clicking Restart Robot
+   Code in the driver station will force the RoboRIO to re-execute the offset
+   calibration routine. This should fix any drift issues caused by a bad offset
+   measurement.
 
 Using the ADIS16448 IMU on Your Robot
 -------------------------------------
 
-For more information on how to add IMU functionality to your robot code, select your team's programming language from the list below.
+For more information on how to add IMU functionality to your robot code, select
+your team's programming language from the list below.
 
 :doc:`Using the ADIS16448 IMU in LabVIEW </wiki-migration/first/adis16448_imu_frc/labview>`
 
@@ -44,4 +57,4 @@ For more information on how to add IMU functionality to your robot code, select 
 :doc:`Using the ADIS16448IMU in Java </wiki-migration/first/adis16448_imu_frc/java>`
 
 .. |image1| image:: https://wiki.analog.com/_media/first/adis16448_rotation_figure.jpg
-   :width: 400px
+   :width: 400

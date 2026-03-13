@@ -36,7 +36,8 @@ Additionally, the instructions for installing RF Blockset Models for Analog Devi
 -  :doc:`What is libiio? </wiki-migration/resources/tools-software/linux-software/libiio>`
 -  Documentation: :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-If you would like to come by the earlier in the evening before 6pm, and check out things with your hardware, it would be appreciated.
+If you would like to come by the earlier in the evening before 6pm, and check
+out things with your hardware, it would be appreciated.
 
 If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions .
 

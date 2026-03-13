@@ -23,7 +23,7 @@ Simplified Block Diagram
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/block_diagram.png
    :alt: CN0548 Block Diagram
    :align: center
-   :width: 800px
+   :width: 800
 
 Onboard Configuration
 =====================
@@ -39,12 +39,11 @@ Unidirectional 0A                14A
 Bidirectional  -10A              10A
 ============== ================= =================
 
-
 | Jumper connections P12 and P13 configure the input current setting while jumpers P7 and P14 configure the input voltage setting. For a unipolar and unidirectional setting, the jumpers should be shorted to the GND pin. On the other hand, it should be connected to the 2.048V pin for a bipolar and bidirectional setting,.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/mode_jumper.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Configuring the Absolute Input Voltage Range
 --------------------------------------------
@@ -64,17 +63,17 @@ Configuring the Absolute Input Voltage Range
 16V Open Open Vin+ Open Open Vin-
 === ==== ==== ==== ==== ==== ====
 
-
 | ==== Chip Select ==== As mentioned in the Features section earlier, the CN0548 has a remappable Chip Select feature allowing the board to be stacked with other shields. By default, jumper P15 is shunted but this can be modified accordingly depending on the shields stacked and the user's application.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/chip_select.png
    :align: center
-   :width: 550px
+   :width: 550
 
 Demo Requirements
 =================
 
-A sample code for the board is already provided. The following is the list of items needed in order to run the given script.
+A sample code for the board is already provided. The following is the list of
+items needed in order to run the given script.
 
 Hardware:
 
@@ -102,30 +101,36 @@ Setting up the Hardware
 -----------------------
 
 -  Attach the **EVAL-CN0548-ARDZ** shield to the **EVAL-ADICUP3029** .
--  Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and connect it to a computer.
+-  Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and
+   connect it to a computer.
 
 Flashing the Firmware/Program
 -----------------------------
 
-The easiest way to get started with the CN0548 board is by using the pre-built hex file for the EVAL-ADICUP3029. Follow the steps provided:
+The easiest way to get started with the CN0548 board is by using the pre-built
+hex file for the EVAL-ADICUP3029. Follow the steps provided:
 
--  Make sure that the on-board switches of the EVAL-ADICUP3029 are configured as shown on the table below:
+-  Make sure that the on-board switches of the EVAL-ADICUP3029 are configured as
+   shown on the table below:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/adicup3029_settings.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect the ADICUP3029 to the PC host via micro-USB cable.
 -  From the PC, open *My Computer* and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/daplink_in_mycomputer.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Download the .hex file from the provided link below. Make sure to use the hex file corresponding to the input mode you configured. Simply drag and drop the .hex file to the DAPLINK drive in order to upload the program to the ADICUP3029. The DS2 (red) LED will blink rapidly. It will stop blinking and will stay ON once the uploading is done.
 -  Disconnect then reconnect the EVAL-ADICUP3029 to the host computer.
 
-For advanced applications, you may opt to build, compile, and debug the given project by installing the CrossCore Embedded Studio (CCES) environment. This method will allow you to explore the board capabilities in detail as well as have a customized project to fit your needs.
+For advanced applications, you may opt to build, compile, and debug the given
+project by installing the CrossCore Embedded Studio (CCES) environment. This
+method will allow you to explore the board capabilities in detail as well as
+have a customized project to fit your needs.
 
 The software for the **ADICUP3029_CN0548** demo can be found here:
 
@@ -143,7 +148,6 @@ The software for the **ADICUP3029_CN0548** demo can be found here:
    -  :git-EVAL-ADICUP3029:`CN0548 CCES Project <projects/ADuCM3029_demo_cn0548>`
    
 
-
 Using CrossCore Embedded Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -153,8 +157,9 @@ Using CrossCore Embedded Studio
 
    If this is your first time using CrossCore Embedded Studio, check the :doc:`user guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` to get you started
 
-
--  Once ready, you can opt to generate your own .hex file and use the first method to program the EVAL-ADICUP3029 or you can use a debug session by following the quickstart guide.
+-  Once ready, you can opt to generate your own .hex file and use the first
+   method to program the EVAL-ADICUP3029 or you can use a debug session by
+   following the quickstart guide.
 
 Code Snippet from the CCES Project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -168,12 +173,15 @@ Code Snippet from the CCES Project
 PyADI-IIO
 ---------
 
-PyADI-IIO is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+PyADI-IIO is a python abstraction module for ADI hardware with IIO drivers to
+make them easier to use. This module provides device-specific APIs built on top
+of the current libIIO python bindings. These interfaces try to match the driver
+naming as much as possible without the need to understand the complexities of
+libIIO and IIO.
 
 .. tip::
 
    Not yet familiar with PyADI-IIO? :doc:`Click here to get started </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
-
 
 Running the Example
 -------------------
@@ -183,7 +191,10 @@ Running the Example
 Starting a new session
 ~~~~~~~~~~~~~~~~~~~~~~
 
--  Download the given python script below and note where the file is located, you may opt to relocate the file to a different folder or directory. Using a terminal, navigate to the location of the file and run the script. <code> python CN0548_simple_plot.py </code>
+-  Download the given python script below and note where the file is located,
+   you may opt to relocate the file to a different folder or directory. Using a
+   terminal, navigate to the location of the file and run the script. <code>
+   python CN0548_simple_plot.py </code>
 
 .. admonition:: Download
    :class: download
@@ -192,39 +203,50 @@ Starting a new session
 
    :git-pyadi-iio:`CN0548_simple_plot.py <examples/cn0548>`\
 
-
 -  Upon running the script, some general reminders regarding the board usage will be displayed. Make sure to read these reminders before proceeding. Press the *Enter* key to proceed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/reminder.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  As mentioned earlier, the board has a memory feature that allows the user to quickly configure the sample code using the configuration from the last session. The user can decide whether to reuse the previous setting or set up a new configuration. The next items will discuss the program flow given that no session record file is found i.e. first run of the sample code.
-
+-  As mentioned earlier, the board has a memory feature that allows the user to
+   quickly configure the sample code using the configuration from the last
+   session. The user can decide whether to reuse the previous setting or set up
+   a new configuration. The next items will discuss the program flow given that
+   no session record file is found i.e. first run of the sample code.
 
 |image5|
 
-   \* The user will be asked to specify the expected voltage and current inputs i.e. whether unipolar or bipolar for the voltage and unidirectional or bidirectional for the current. In a separate window, a jumper map will be created corresponding to the voltage and current setting specified by the user.
+   \* The user will be asked to specify the expected voltage and current inputs
+   i.e. whether unipolar or bipolar for the voltage and unidirectional or
+   bidirectional for the current. In a separate window, a jumper map will be
+   created corresponding to the voltage and current setting specified by the
+   user.
 
    |image6|
 
    You may close the jumper window upon configuring the board jumpers.
-   \* After the board jumper configuration guide, the program will now begin its software configuration related queries. The table below shows the aspects that the user must configure.
+   \* After the board jumper configuration guide, the program will now begin its
+   software configuration related queries. The table below shows the aspects
+   that the user must configure.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/table_config.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Lastly, the sample code will ask the user for the port where the ADICUP3029 is connected. If the port is found, the sample code is now ready to parse readings from the board. Press *Enter* key to start board operation.
 
-
 |image7|
 
-   Regardless of whether the plot window is enabled or not, the board readings will be continuously displayed in the terminal.
+   Regardless of whether the plot window is enabled or not, the board readings
+   will be continuously displayed in the terminal.
 
    |image8|
 
-   In the next two figures, the CN0548 was used to monitor the performance of a 5V regulator. The first figure shows a plot in tracking mode where all data points are displayed. The second figure on the other hand is in non-tracking mode where the last 50 samples are being displayed.
+   In the next two figures, the CN0548 was used to monitor the performance of a
+   5V regulator. The first figure shows a plot in tracking mode where all data
+   points are displayed. The second figure on the other hand is in non-tracking
+   mode where the last 50 samples are being displayed.
    **Tracking Mode:**
 
    |image9|
@@ -233,12 +255,18 @@ Starting a new session
 
    |image10|
 
-   Tracking mode allows the user to observe the overall characteristic of the signal being measured. However, it should be noted that the plot will continue to compress as more data points are added. Non-tracking mode on the other hand allows a more refined view as it only shows the most recent measurements as desired by the user.
+   Tracking mode allows the user to observe the overall characteristic of the
+   signal being measured. However, it should be noted that the plot will
+   continue to compress as more data points are added. Non-tracking mode on the
+   other hand allows a more refined view as it only shows the most recent
+   measurements as desired by the user.
 
 .. note::
 
-   Do note that the plot windows are created using the matplotlib package of python. Hence, you have the option to save a copy of the displayed waveform at any point in time. This comes in handy when an unexpected noteworthy event happens and the data logging feature was not enabled.
-
+   Do note that the plot windows are created using the matplotlib package of
+   python. Hence, you have the option to save a copy of the displayed waveform
+   at any point in time. This comes in handy when an unexpected noteworthy event
+   happens and the data logging feature was not enabled.
 
 Data Logging
 ~~~~~~~~~~~~
@@ -281,7 +309,6 @@ Schematic, Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Registration
 ============
 
@@ -289,34 +316,33 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0548-ARDZ?&v=Rev B>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/cn0548_high_resolution_photo_3d_view.jpg
-   :width: 650px
+   :width: 650
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/cn0548_high_resolution_photo.jpg
-   :width: 800px
+   :width: 800
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/gain_jumper.png
-   :width: 700px
+   :width: 700
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/gain_config.png
-   :width: 400px
+   :width: 400
 .. |CCES code snippet| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/cces.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/new_overview.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/sample_configuration.png
-   :width: 800px
+   :width: 800
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/software_config.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/readings.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/tracking.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/non-tracking_a.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/csv_file.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/old_overview.png
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/session_record.png
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/session_record_detected.png
-   :width: 600px
+   :width: 600

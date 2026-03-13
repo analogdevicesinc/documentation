@@ -10,7 +10,7 @@ The ADuCM360_demo_adxl362 project uses the :doc:`EVAL-ADXL362-ARDZ shield </wiki
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adlx362_adicup360.jpg
    :align: left
-   :width: 450px
+   :width: 450
 
 The application reads the \*\* X \*\* , \*\* Y \*\*, and \*\* Z \*\* acceleration registers each **500 [ms]**. The acceleration in the 3 axes is displayed in **[mG]** on the LCD. Also this application demonstrates the usage of the motion switch. Movement zones - **UP**, **DOWN**, **RIGHT**, **LEFT**, **CENTER** - are displayed in the right side of the LCD.
 
@@ -24,11 +24,12 @@ Each **ADXL362** chip requires individual calibration which can be done by setti
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/adxl362-demo.jpg
    :align: right
-   :width: 300px
+   :width: 300
 
 The software puts the LCD in a "sleep" mode after **10 sec** if no movement of the boards is present. The system "wakes-up" if the acceleration on any axes is greater than **50 [mG]**. The threshold values can be adjusted by the user (:doc:`See the configuration part </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_adxl362>`).
 
-The acceleration axes, the temperature values and the motion grid are displayed as is presented in the picture on the right.
+The acceleration axes, the temperature values and the motion grid are displayed
+as is presented in the picture on the right.
 
 Demo Requirements
 -----------------
@@ -52,20 +53,21 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers as shown in the next figure. The important jumpers are highlighted in red.
+-  To program the base board, set the jumpers as shown in the next figure. The
+   important jumpers are highlighted in red.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
-   :width: 500px
+   :width: 500
 
 -  Set the jumpers on the EVAL-ADXL362-ARDZ shield as shown in the next figure.\
-
 
 |image1|
 
 .. note::
 
-   It's is recommended to select P1.4 pin for LCD_CS_SEL when using ADXL362 shield with ADICUP360 base board because P2.2 is also the BM pin and it can create problems in debug session.
-
+   It's is recommended to select P1.4 pin for LCD_CS_SEL when using ADXL362
+   shield with ADICUP360 base board because P2.2 is also the BM pin and it can
+   create problems in debug session.
 
 -  Plug the EVAL-ADXL362-ARDZ shield in the EVAL-ADICUP360 base board.
 -  Power EVAL-ADICUP360 base board via the DEBUG USB port (P14).
@@ -73,14 +75,19 @@ Setting up the hardware
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the ADXL362.
+There are two basic ways to program the ADICUP360 with the software for the
+ADXL362.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_adxl362** demo can be found here:
 
@@ -97,11 +104,9 @@ The software for the **ADuCM360_demo_adxl362** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_adxl362 Source Code <projects/ADuCM360_demo_adxl362>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -175,11 +180,12 @@ There is a movement plane offset to the right of the LDC screen which shows whic
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/adxl362-demo.jpg
    :align: right
-   :width: 300px
+   :width: 300
 
 Also this application demonstrates the usage of the motion switch. The software puts the LCD in a "sleep" mode after **10 sec** if no movement of the boards is present. The system "wakes-up" if the acceleration on any axes is greater than **50 [mG]**. The threshold values can be adjusted by the user (:doc:`by configurating the software </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_adxl362>`).
 
-The acceleration axes, the temperature values and the motion grid are displayed as is presented in the picture on the right.
+The acceleration axes, the temperature values and the motion grid are displayed
+as is presented in the picture on the right.
 
 How to use the Tools
 --------------------
@@ -203,7 +209,7 @@ The **ADuCM360_demo_adxl362** project use basic ARM Cortex-M C/C++ Project struc
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/structure_adxl362_03_09_2015.png
    :align: left
-   :width: 400px
+   :width: 400
 
 In the **src** and **include** folders you will find the source and header files related to adxl362 application. You can modify as you wanted those files. The *Communication.c/h* files contain SPI specific data, meanwhile the *ADXL362.c/h* files contain the accelerometer data and the *Lcd.c/h* files contain the LCD related information. Here you can configure:
 
@@ -215,4 +221,4 @@ The **RTE** folder contains device and system related files:
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/eval-adxl362-ardz_default_software_config.png
-   :width: 360px
+   :width: 360

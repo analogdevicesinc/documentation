@@ -4,9 +4,15 @@ Menu and Toolbar
 ================
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/developmentenvironment/menuandtoolbar/topmenu.png
-   :width: 600px
+   :width: 600
 
-The application toolbars provide buttons for common commands. The toolbar on top provides buttons with different functionalities which actually act as short-cut. These functionalities can also be chosen from the menu. Some of the options available through the toolbar include new project, open project, save project, close project, undo, redo, zoom in , zoom out, link, link compile, link compile download, clean link compile download and presets. The individual menu options are described in brief below.
+The application toolbars provide buttons for common commands. The toolbar on top
+provides buttons with different functionalities which actually act as short-cut.
+These functionalities can also be chosen from the menu. Some of the options
+available through the toolbar include new project, open project, save project,
+close project, undo, redo, zoom in , zoom out, link, link compile, link compile
+download, clean link compile download and presets. The individual menu options
+are described in brief below.
 
 File Menu
 ---------

@@ -9,7 +9,10 @@ Interface Read
 Description
 -----------
 
-The Interface Read block takes value from one of eight interface registers and makes it available in the schematic design. The yellow pin can connect to GPIO Conditioning block's yellow input pins. It is especially useful for parts that self-boot and use external interface registers.
+The Interface Read block takes value from one of eight interface registers and
+makes it available in the schematic design. The yellow pin can connect to GPIO
+Conditioning block's yellow input pins. It is especially useful for parts that
+self-boot and use external interface registers.
 
 Usage
 -----
@@ -17,7 +20,8 @@ Usage
 Select a particular interface from the drop-down.
 
 -  Every input must be connected to an output, else there will be errors on compilation.
--  Observe that as you drag more output blocks to your schematic, your number of interfaces available decreases.
+-  Observe that as you drag more output blocks to your schematic, your number of
+   interfaces available decreases.
 
 Note: This block is only available for DSPs with GPIOs or auxiliary ADC.
 
@@ -41,7 +45,6 @@ Name          Type  Description
 ============= ===== =============================
 InterfaceRead Logic Interface read output channel
 ============= ===== =============================
-
 
 | ===== Configurable Parameters =====
 

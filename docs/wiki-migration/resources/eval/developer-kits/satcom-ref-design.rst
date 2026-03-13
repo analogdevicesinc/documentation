@@ -7,12 +7,18 @@ Types of ADEF Reference Designs
 -------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/02_077511a_adeftypesofplatforms.png
-   :width: 600px
+   :width: 600
 
 General Overview
 ----------------
 
-For satellite communication systems that require in-mission frequency band reconfiguration, a multi-path design can be used to implement a single hardware design that can operate from L band to Ka band. This reference design shows an approach to developing a hybrid beamforming RX and TX system with up/down conversion that covers X, Ku and Ka band for satellite communication. However, the up/down converter can be bypassed to enable operation in the UHF, L, S, and C bands.
+For satellite communication systems that require in-mission frequency band
+reconfiguration, a multi-path design can be used to implement a single hardware
+design that can operate from L band to Ka band. This reference design shows an
+approach to developing a hybrid beamforming RX and TX system with up/down
+conversion that covers X, Ku and Ka band for satellite communication. However,
+the up/down converter can be bypassed to enable operation in the UHF, L, S, and
+C bands.
 
 The reference design includes all aspects of the system including:
 
@@ -41,13 +47,15 @@ Specifications and Array Level Beamforming
 
 **Click below to see the specifications for each subarray and full system level architecture along with beamforming**
 
-
-
 .. collapsible:: **1. Subarray Architecture and Specifications**
 
    **Sub Array**
 
-   The Satcom Phased Array Reference Design is a hybrid beamforming array that is modeled with 512 elements. The signal chain system is designed in a tiled fashion of 32 sub arrays. Shown below is a sub array. Each sub array has 16 channels for RX and 16 channels for TX, making up the entire 512 element hybrid array 16x32.
+   The Satcom Phased Array Reference Design is a hybrid beamforming array that
+   is modeled with 512 elements. The signal chain system is designed in a tiled
+   fashion of 32 sub arrays. Shown below is a sub array. Each sub array has 16
+   channels for RX and 16 channels for TX, making up the entire 512 element
+   hybrid array 16x32.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_entire_chain_updated_v3.jpg
       :align: center
@@ -109,19 +117,18 @@ Specifications and Array Level Beamforming
    | 
    | ----
 
-
-
-
-
 .. collapsible:: **2. Full 512-Element Hybrid Array Architecture and Specifications**
 
    **Full 512-Element Hybrid Array**
 
-   Shown below is the entire 512 element hybrid beamforming array. The system is capable of beamforming up to four independent analog beams. Each sub array steers four analog beams using 16 elements for a 16:1 analog combing ratio. The entire array combines 32 channels of each beam in the digital domain for a 32:1 digital combining ratio.
+   Shown below is the entire 512 element hybrid beamforming array. The system is
+   capable of beamforming up to four independent analog beams. Each sub array
+   steers four analog beams using 16 elements for a 16:1 analog combing ratio.
+   The entire array combines 32 channels of each beam in the digital domain for
+   a 32:1 digital combining ratio.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_entire_chain_array_v1.jpg
       :align: center
-
 
    **System Level Specifications (Ka Band Variant)**
 
@@ -197,41 +204,55 @@ Specifications and Array Level Beamforming
    | DC Power per Element    | 1.7 W typ.                     |                                             |
    +-------------------------+--------------------------------+---------------------------------------------+
 
-
-
-
-
 .. collapsible:: **3. Beamforming Patterns and Block Diagrams**
 
    **Ka-band Beam Pattern Directivity**
 
-   The following images were generated with the MATLAB Sensor Array Toolbox. Array geometry assumes 512 elements in 16x32 fashion with Taylor tapering in both row and column with 30dB sidelobe rejection.
+   The following images were generated with the MATLAB Sensor Array Toolbox.
+   Array geometry assumes 512 elements in 16x32 fashion with Taylor tapering in
+   both row and column with 30dB sidelobe rejection.
 
    **512 Element TX Beam Pattern Directivity at Ka Band (19.5GHz)**
-
 
    |image1|
 
    **512 Element RX Beam Pattern Directivity at Ka Band (29GHz)**
 
-
    |image2|
 
    **Ka-band RX Beamforming Implementation**
 
-   Each of the four analog beams are steered using the variable amplitude and phase (VAP) blocks inside the ADAR3000 and ADAR3001 analog beamforming IC’s. Each subarray has 4 transmit and 4 receive channels for a total of 128 channels that are digitally combined 32:1 in a dedicated FPGA or digital ASIC. Shown below are 4 large analog beams for RX; Each with a digital beam inside, which is controlled by weights withing the FPGA or ASIC.
+   Each of the four analog beams are steered using the variable amplitude and
+   phase (VAP) blocks inside the ADAR3000 and ADAR3001 analog beamforming IC’s.
+   Each subarray has 4 transmit and 4 receive channels for a total of 128
+   channels that are digitally combined 32:1 in a dedicated FPGA or digital
+   ASIC. Shown below are 4 large analog beams for RX; Each with a digital beam
+   inside, which is controlled by weights withing the FPGA or ASIC.
 
-   To increase the number of digital beams inside each analog beam, one can make copies of all phased array time domain data in the digital domain. Looking at the image below, there is a condensed diagram of the system to emphasize the delineation between analog and digital beamforming. Channels are color coded to show which beam they belong to. In the case of 4 digital beams, there are 32 instances of each analog beam that are combined in the digital domain. All of the channels from analog beam 1 are combined: Ch1, Ch5, Ch9, … , Ch125. All the channels from analog beam 2 are combined: Ch2, Ch6, Ch10, … , Ch126. So on and so fourth for beams 3 and 4.
+   To increase the number of digital beams inside each analog beam, one can make
+   copies of all phased array time domain data in the digital domain. Looking at
+   the image below, there is a condensed diagram of the system to emphasize the
+   delineation between analog and digital beamforming. Channels are color coded
+   to show which beam they belong to. In the case of 4 digital beams, there are
+   32 instances of each analog beam that are combined in the digital domain. All
+   of the channels from analog beam 1 are combined: Ch1, Ch5, Ch9, … , Ch125.
+   All the channels from analog beam 2 are combined: Ch2, Ch6, Ch10, … , Ch126.
+   So on and so fourth for beams 3 and 4.
 
    **512 Element RX Hybrid Beamforming (4Beams)**
 
-
    |image3|
 
-   For 8 digital beams, ADC data is copied in the digital domain as shown in the picture below. Once the data is copied, it can be manipulated produce twice as many digital beams inside the analog beams. Theoretically, an infinite amount of digital beams inside each analog beam is realizable, but the caveat is FPGA processing power. After a certain number of beams, the task will be too computationally intensive to produce more. Further, each of the digital beams also have a finite beamwidth. At some point the beamwidths of digital beam inside each of the four analog beams will overlap and will be redundant.
+   For 8 digital beams, ADC data is copied in the digital domain as shown in the
+   picture below. Once the data is copied, it can be manipulated produce twice
+   as many digital beams inside the analog beams. Theoretically, an infinite
+   amount of digital beams inside each analog beam is realizable, but the caveat
+   is FPGA processing power. After a certain number of beams, the task will be
+   too computationally intensive to produce more. Further, each of the digital
+   beams also have a finite beamwidth. At some point the beamwidths of digital
+   beam inside each of the four analog beams will overlap and will be redundant.
 
    **512 Element RX Hybrid Beamforming (8Beams)**
-
 
    |image4|
 
@@ -246,13 +267,10 @@ Signal Chain Resources
    -  :doc:`LO Generation Overview and Theory of Operation </wiki-migration/resources/eval/developer-kits/satcom-ref-design/lo-overview>`
    
 
-
 --------------
 
 Power Supply Design
 -------------------
-
-
 
 .. collapsible:: The power solution for the Wideband Satcom Front End provides regulation for the four major functional blocks in the system:
 
@@ -289,14 +307,10 @@ Power Supply Design
    .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/digitizer_power_supplies_4_18_2023.png
       :align: center
 
-
-
 --------------
 
 Bill of Materials
 -----------------
-
-
 
 .. collapsible:: The table below lists the part numbers for the components used in the design. Where space qualified parts are not available, the commercial part number is listed. Some of the part numbers listed below are space specials which do not appear on analog.com. Please contact ADI sales or an authorized distributor for more information and to receive orderable part numbers.
 
@@ -384,14 +398,10 @@ Bill of Materials
    | DIGI      |   | :adi:`ADF4371`                                                                                                                                |   | 62.5 MHz to 32 GHz Synthesizer with Integrated VCO                |   | 7x7 LGA             |   | Silicon                           |   | Commerical            |   | Recommended for New Designs |
    +-----------+---+-----------------------------------------------------------------------------------------------------------------------------------------------+---+-------------------------------------------------------------------+---+---------------------+---+-----------------------------------+---+-----------------------+---+-----------------------------+
 
-
-
 --------------
 
 Software and Simulation Downloads
 ---------------------------------
-
-
 
 .. collapsible:: Download the simulation models and device drivers below:
 
@@ -406,9 +416,7 @@ Software and Simulation Downloads
 
       Keysight Genesys TX RF Signal Chain: `full_tx_signal_chain.zip <https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/full_tx_signal_chain.zip>`_
 
-
       MATLAB TX 512-element phased array model: `sensorarray_19.5ghz_tx.zip <https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/sensorarray_19.5ghz_tx.zip>`_
-
 
    **RX Downloads**
 
@@ -417,9 +425,7 @@ Software and Simulation Downloads
 
       Keysight Genesys RX RF Signal Chain: Coming Soon
 
-
       MATLAB RX 512-element phased array model: `sensorarray_29ghz_rx.zip <https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/sensorarray_29ghz_rx.zip>`_
-
 
    **Supported Device Drivers**
 
@@ -440,8 +446,6 @@ Software and Simulation Downloads
    -  :adi:`AD9082-FMCA-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9082.html>`
    -  :adi:`EVAL-ADF4371`
    -  :adi:`DC2610A Demo Board for LTC6953 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/dc2610a.html>`
-
-
 
 --------------
 
@@ -469,14 +473,13 @@ Help and Support
 
    For support on this reference design, please contact us through our technical support portal: :adi:`en/support/technical-support.html`
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/3d_tx_directivity_.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/3d_rx_directivity_.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/array_level_beamforming_implementation_block_diagram_4_beams.jpg
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/array_level_beamforming_implementation_block_diagram_8_beams.jpg
-   :width: 600px
+   :width: 600

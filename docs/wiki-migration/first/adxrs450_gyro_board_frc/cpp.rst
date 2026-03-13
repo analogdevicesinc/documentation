@@ -8,7 +8,13 @@ If you need help getting started with the basics of programming your robot in C+
 Instance Definition and Instantiation
 -------------------------------------
 
-Before you can use the gyro in your code, you must first define an instance. Where exactly it needs to be defined will depend heavily on how your team organizes its robot code, but it needs to be accessible by the Robot class in order to work properly and give you no build errors. If your team is using an Iterative Robot with a RobotMap structure for example, you would put it inside of the RobotMap class. The ADXRS450 has its own dedicated class in the frc namespace and inherits properties from the Gyro class.
+Before you can use the gyro in your code, you must first define an instance.
+Where exactly it needs to be defined will depend heavily on how your team
+organizes its robot code, but it needs to be accessible by the Robot class in
+order to work properly and give you no build errors. If your team is using an
+Iterative Robot with a RobotMap structure for example, you would put it inside
+of the RobotMap class. The ADXRS450 has its own dedicated class in the frc
+namespace and inherits properties from the Gyro class.
 
 When you instantiate your gyro, you will need to define which SPI port the device will be using. Depending on how you have set up your gyro (:doc:`see notes on the general FRC Gyro page </wiki-migration/first/adxrs450_gyro_board_frc>`), this will vary, but should usually be set to CS0. Alternatively, you can leave the port out of the instantiation and the robot will default to CS0.
 
@@ -20,12 +26,20 @@ Once your gyro is defined and instantiated, you will need to initialize it with 
 Using GetAngle() and GetRate()
 ------------------------------
 
-Now that your gyro is calibrated when the robot turns on, you can access data from the robot in your code. You can do this using the GetAngle() method to obtain the robot's current heading, or more rarely by using the GetRate() method to obtain the current rotation rate being measured should you happen to need it. The most common places to use these functions are inside of the AutonomousPeriodic() and TeleopPeriodic() methods.
+Now that your gyro is calibrated when the robot turns on, you can access data
+from the robot in your code. You can do this using the GetAngle() method to
+obtain the robot's current heading, or more rarely by using the GetRate() method
+to obtain the current rotation rate being measured should you happen to need it.
+The most common places to use these functions are inside of the
+AutonomousPeriodic() and TeleopPeriodic() methods.
 
 .. tip::
 
-   As a general note, the GetAngle() method will count continuously, meaning when it reaches 360 degrees, it will continue to 361, not zero. This is to make any functionality in your code using the gyro angle easier to implement without having to keep track of where in the 0-360 range your robot is or how many rotations have happened.
-
+   As a general note, the GetAngle() method will count continuously, meaning
+   when it reaches 360 degrees, it will continue to 361, not zero. This is to
+   make any functionality in your code using the gyro angle easier to implement
+   without having to keep track of where in the 0-360 range your robot is or how
+   many rotations have happened.
 
 Re-Zeroing the Sensor with Reset()
 ----------------------------------
@@ -35,7 +49,9 @@ Sometimes it may be necessary to reset the gyro's “zero degrees” position. A
 Drive Straight Example
 ----------------------
 
-As a simple example, we will be modifying the Drive Straight Gyro Example that comes pre-packaged with the WPI library to use the ADXRS450 instead of an analog gyro. This is what you will see when you open the existing example:
+As a simple example, we will be modifying the Drive Straight Gyro Example that
+comes pre-packaged with the WPI library to use the ADXRS450 instead of an analog
+gyro. This is what you will see when you open the existing example:
 
 ::
 
@@ -100,7 +116,8 @@ As a simple example, we will be modifying the Drive Straight Gyro Example that c
 
    START_ROBOT_CLASS(Robot)
 
-First, we need to tell the program to include the right header file for the ADI gyro. Change AnalogGyro.h to ADXRS450_Gyro.h at the top of the page.
+First, we need to tell the program to include the right header file for the ADI
+gyro. Change AnalogGyro.h to ADXRS450_Gyro.h at the top of the page.
 
 ::
 
@@ -122,7 +139,11 @@ First, we need to tell the program to include the right header file for the ADI 
    #include <Joystick.h>
    #include <Spark.h>
 
-Now you'll need to change the method that's being called within RobotInit(), since SetSensitivity() doesn't apply to our gyro. You can replace the text "SetSensitivity" with "Calibrate" so that we can perform the required calibration sequence. You should also delete the kVoltsPerDegreePerSecond argument, since Calibrate does not accept any arguments.
+Now you'll need to change the method that's being called within RobotInit(),
+since SetSensitivity() doesn't apply to our gyro. You can replace the text
+"SetSensitivity" with "Calibrate" so that we can perform the required
+calibration sequence. You should also delete the kVoltsPerDegreePerSecond
+argument, since Calibrate does not accept any arguments.
 
 ::
 
@@ -164,7 +185,15 @@ Now you'll need to change the method that's being called within RobotInit(), sin
            m_robotDrive.ArcadeDrive(m_joystick.GetY(), turningValue);
        }
 
-TeleopPeriodic can be left alone, since GetAngle() is the same for both gyro types. Now we get to the private definitions of the Robot class for this example. First you can delete the definition for kVoltsPerDegreePerSecond, since this variable is no longer needed and we don't want it consuming memory. You can also delete the two comments above it since they don't apply to the ADXRS450 gyro. You also need to change the class on your gyro definition from AnalogGyro to ADXRS450_Gyro in the instantiation. You can also delete the argument if your gyro is in the default configuration. Otherwise, change it to the port you will be using. I've configured mine by explicitly defining the C0 port below.
+TeleopPeriodic can be left alone, since GetAngle() is the same for both gyro
+types. Now we get to the private definitions of the Robot class for this
+example. First you can delete the definition for kVoltsPerDegreePerSecond, since
+this variable is no longer needed and we don't want it consuming memory. You can
+also delete the two comments above it since they don't apply to the ADXRS450
+gyro. You also need to change the class on your gyro definition from AnalogGyro
+to ADXRS450_Gyro in the instantiation. You can also delete the argument if your
+gyro is in the default configuration. Otherwise, change it to the port you will
+be using. I've configured mine by explicitly defining the C0 port below.
 
 ::
 
@@ -208,7 +237,8 @@ TeleopPeriodic can be left alone, since GetAngle() is the same for both gyro typ
        frc::Joystick m_joystick{kJoystickPort};
    };
 
-Go ahead and build your code to ensure there are no errors. This is what you should have once you're done.
+Go ahead and build your code to ensure there are no errors. This is what you
+should have once you're done.
 
 ::
 

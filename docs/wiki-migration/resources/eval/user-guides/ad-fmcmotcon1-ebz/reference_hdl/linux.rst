@@ -1,8 +1,6 @@
 Xilinx HDL Reference Design
 ===========================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,14 +17,14 @@ Xilinx HDL Reference Design
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-This design is targeted for Zynq based FPGA systems. It has the complete infrastructure for Linux support.
+This design is targeted for Zynq based FPGA systems. It has the complete
+infrastructure for Linux support.
 
 Reference Design
 ----------------
 
-The reference design contains HDL blocks for interfacing with the various components of the motor control hardware:
+The reference design contains HDL blocks for interfacing with the various
+components of the motor control hardware:
 
 -  **ADC Interface** - Implements the communication with the AD7401 sigma delta modulators present on the AD-FMCMOTCON1-EBZ and also the SINC3 filters for demodulating the 1-bit digital stream provided by these parts. This HDL block exposes a set of registers that can be accessed through the AXI Lite interface. An AXI Streaming interface connected to a DMA controller allows the block to stream real time data to the application layer.
 -  **Controller Interface** - Implements the interface to the IP control blocks in the system. An AXI Streaming interface connected to a DMA controller allows the block to stream real time data to the application layer.
@@ -35,12 +33,13 @@ The reference design contains HDL blocks for interfacing with the various compon
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/reference_hdl/mc_design.png
    :alt: Reference Design
-   :width: 600px
+   :width: 600
 
 Vivado Design Generation
 ------------------------
 
-Start Vivado in GUI mode, in a Windows environment. The project is generateed using the Vivado TCL console by issuing the following commands:
+Start Vivado in GUI mode, in a Windows environment. The project is generateed
+using the Vivado TCL console by issuing the following commands:
 
 -  *cd [project_path]/projects/motor_control/zed*
 -  *source ./system_project.tcl*
@@ -60,14 +59,12 @@ Downloads
    :
    
 
-
 Setting up Linux
 ----------------
 
 .. note::
 
    For instructions on how to setup linux on the ZED board, please follow instructions at: :doc:`Linux on Zynq Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/quickstart/zynq>`
-
 
 Support
 -------
@@ -77,4 +74,3 @@ Support
    
    -  Questions? :ez:`Ask Help & Support <fpga>`.
    
-

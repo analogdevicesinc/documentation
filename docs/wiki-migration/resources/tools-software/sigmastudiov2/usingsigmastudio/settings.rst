@@ -20,7 +20,7 @@ Canvas
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/settings4.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  **Enable Resize** - Enable this to support resizing the shapes on canvas.
 -  **Enable Rotate** - Enable this to support rotating the shapes on canvas.
@@ -32,7 +32,8 @@ Scripting
 -  **Port Number** - Port number to be used while connecting from a scripting client. Use different port numbers when multiple instances of SigmaStudio+ are running on the same PC.
 -  **Configure Port** - Click to reconfigure using the new port number
 
-In this section the port number can be specified which will be used by the scripting tool and also provides an option to configure the port.
+In this section the port number can be specified which will be used by the
+scripting tool and also provides an option to configure the port.
 
 Processor
 ---------
@@ -47,15 +48,17 @@ Export
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/settings_export.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Custom Platforms
 ----------------
 
-This section provides an option to specify the Custom Platforms folder location. SigmaStudio+ uses this location to load newly defined platforms and list them in the toolbox.
+This section provides an option to specify the Custom Platforms folder location.
+SigmaStudio+ uses this location to load newly defined platforms and list them in
+the toolbox.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/settings6.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Refer to :doc:`Defining new Platforms </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/defineplatforms>` for more details on defining new platforms.

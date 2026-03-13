@@ -38,8 +38,6 @@ Output0                           Audio   Filter Output
 ExtGain0(Table Interpolator Only) Control External Gain Input
 ================================= ======= ===================
 
-
-
 Configurable Parameters
 -----------------------
 
@@ -61,7 +59,8 @@ Configurable Parameters
 | Precisiontype_StageX | Single        | Single/Double | Precision type of individual filter stage         |
 +----------------------+---------------+---------------+---------------------------------------------------+
 
-Note : \_StageX - Refers to parameters of each stage. X represents the stage index.
+Note : \_StageX - Refers to parameters of each stage. X represents the stage
+index.
 
 DSP Parameters
 --------------

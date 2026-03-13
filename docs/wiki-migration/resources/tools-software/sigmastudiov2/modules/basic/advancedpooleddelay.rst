@@ -57,10 +57,13 @@ Note: X - Channel Index
 
 .. note::
 
-   The individual maximum delays of channels is limited to 2000ms each and the sum of each channel's MaxDelay cannot exceed the total maximum delay of 64000ms.
+   The individual maximum delays of channels is limited to 2000ms each and the
+   sum of each channel's MaxDelay cannot exceed the total maximum delay of
+   64000ms.
 
-
-When the input channels are grown (max upto 32), the Total Delay (in ms) displayed will be the sum of individual delay assigned for each channel (which will be calculated internally) as shown below.
+When the input channels are grown (max upto 32), the Total Delay (in ms)
+displayed will be the sum of individual delay assigned for each channel (which
+will be calculated internally) as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/advancedpooleddelay2.png
    :alt: advancedpooleddelay2.png

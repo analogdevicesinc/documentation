@@ -1,8 +1,6 @@
 AD-FMCMOTCON1-EBZ Quick Start Guides
 ====================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,8 +17,6 @@ AD-FMCMOTCON1-EBZ Quick Start Guides
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the `AD-FMCMOTCON1-EBZ </>`_ on various FPGA development boards.
 
 Quick Start Guides are available for
@@ -30,4 +26,4 @@ Quick Start Guides are available for
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/mc_system_iio_scope.jpg
    :alt: FMCMOTCON1 on Zed board running linux
-   :width: 500px
+   :width: 500

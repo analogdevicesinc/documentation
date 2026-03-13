@@ -5,7 +5,6 @@ HDL Architecture
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest guide at https://analogdevicesinc.github.io/hdl/user_guide/architecture.html\
 
-
 Every HDL design of a reference project can be divided into two subsystems:
 
 -  **Base design** --- description of what the **carrier** contains:
@@ -54,7 +53,9 @@ Typical project diagram
 Base Design
 ~~~~~~~~~~~
 
-The base design contains all the I/O peripheral and memory interfaces and processing components, which are necessary for a fully functional Linux system. The majority of these components are Intel and Xilinx IP cores.
+The base design contains all the I/O peripheral and memory interfaces and
+processing components, which are necessary for a fully functional Linux system.
+The majority of these components are Intel and Xilinx IP cores.
 
 Typically, this contains:
 
@@ -84,9 +85,14 @@ Worth mentioning in case of SoCs, the **Hard Processor System** (HPS) or **Proce
 Memory Interface Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In almost all cases, the carrier board is not made and designed by Analog Devices, so the external memory solution of the system is given. Meaning we can not support, modify or alter this important part of the system, in several cases we even have system limitations because of it (e.g. the memory interface is not fast enough to handle the required data throughput).
+In almost all cases, the carrier board is not made and designed by Analog
+Devices, so the external memory solution of the system is given. Meaning we can
+not support, modify or alter this important part of the system, in several cases
+we even have system limitations because of it (e.g. the memory interface is not
+fast enough to handle the required data throughput).
 
-Under the two links below the user can find the landing page of the available memory solutions for both Altera and Xilinx:
+Under the two links below the user can find the landing page of the available
+memory solutions for both Altera and Xilinx:
 
 -  Intel's memory interfaces: https://www.intel.com/content/www/us/en/programmable/support/support-resources/external-memory.html
 -  Xilinx's memory interfaces: https://www.xilinx.com/products/intellectual-property/mig.html#documentation
@@ -94,7 +100,11 @@ Under the two links below the user can find the landing page of the available me
 Peripheral Interfaces
 ^^^^^^^^^^^^^^^^^^^^^
 
-These interfaces are used to control external peripherals located on the prototyping board or the FMC IO board. In HDL, these ports are named slightly different than how they're in the documentations. Thus, to make it easier for beginners, here you have the naming of the ports depending on the microprocessor used.
+These interfaces are used to control external peripherals located on the
+prototyping board or the FMC IO board. In HDL, these ports are named slightly
+different than how they're in the documentations. Thus, to make it easier for
+beginners, here you have the naming of the ports depending on the microprocessor
+used.
 
 SPI
 """
@@ -104,7 +114,11 @@ In general, the base system has two Serial Peripheral Interfaces, which are used
 I2C/I2S/SPDIF
 """""""""""""
 
-A couple of carrier boards require these standard interfaces for different purposes, for example, a configuration interface for an audio peripheral device. These peripherals do not necessarily have vital roles in the reference design, it's more like a generic goal to support all the provided peripherals of the carrier board.
+A couple of carrier boards require these standard interfaces for different
+purposes, for example, a configuration interface for an audio peripheral device.
+These peripherals do not necessarily have vital roles in the reference design,
+it's more like a generic goal to support all the provided peripherals of the
+carrier board.
 
 HDMI
 """"
@@ -117,11 +131,15 @@ GPIOs
 The general rule of thumb is to define 64 GPIO pins for the base design:
 
 -  bits [31: 0] always belong to the carrier board;
--  bits [63:32] will be assigned to switches, buttons and/or LEDs, which can be found on the FMC board.
+-  bits [63:32] will be assigned to switches, buttons and/or LEDs, which can be
+   found on the FMC board.
 
-When some of these GPIOs are not used, the input pins should have the output pins driven to them, so that Vivado will not complain about inputs not being assigned to.
+When some of these GPIOs are not used, the input pins should have the output
+pins driven to them, so that Vivado will not complain about inputs not being
+assigned to.
 
-Depending on the processor type, add these values to the GPIO number from the HDL project to obtain the final number used in software:
+Depending on the processor type, add these values to the GPIO number from the
+HDL project to obtain the final number used in software:
 
 -  PS7 EMIO offset = 54
 -  PS8 EMIO offset = 78
@@ -132,14 +150,18 @@ Connectivity
 -  Ethernet
 -  USB OTG
 
-These interfaces designs are borrowed from the golden reference design of the board.
+These interfaces designs are borrowed from the golden reference design of the
+board.
 
 Interrupts
 ^^^^^^^^^^
 
-When developing the Linux software parts for an HDL project, the interrupts number to the PS have a different number in the software side.
+When developing the Linux software parts for an HDL project, the interrupts
+number to the PS have a different number in the software side.
 
-Not a rule, but in our designs we preffer to use firstly the interrupts from 15 and to go down to 0. Be careful when assigning one, because it might be used in the base design of the carrier!
+Not a rule, but in our designs we preffer to use firstly the interrupts from 15
+and to go down to 0. Be careful when assigning one, because it might be used in
+the base design of the carrier!
 
 Always check which are used (in */projects/common/:math:`carrier/`\ carrier_system_bd.tcl*)
 
@@ -166,15 +188,11 @@ HDL interrupt Linux Zynq Actual Zynq Linux ZynqMP Actual ZynqMP
 0             29         61          89           121
 ============= ========== =========== ============ =============
 
-
-
 Board design
 ~~~~~~~~~~~~
 
 Board capabilities - Xilinx platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -218,7 +236,6 @@ Board capabilities - Xilinx platforms
 
    **VADJ values**
 
-
    +--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
    | Board name                                                                           | FMC 1                | FMC 2                | Family              |
    +======================================================================================+======================+======================+=====================+
@@ -256,22 +273,16 @@ Board capabilities - Xilinx platforms
    | (\* bold) = default VADJ
    | FMC1 & FMC2 columns -> depending on the power supply of the device connected to the FMC, the custom VADJ will have the value supported by both the carrier and the device(s)
 
-
    ++++
-
-
 
 Board capabilities - Intel platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
    ++++ Board capabilities \|
 
    **Board capabilities - Intel**
-
 
    +------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------+
    | Board name                                                                                                                                           | FMC connector 1       | FMC connector 2       |
@@ -284,7 +295,6 @@ Board capabilities - Intel platforms
    +------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------+
 
    **VADJ values**
-
 
    +------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+---------------------------------+
    | Board name                                                                                                                                           | FMC 1                                 | FMC 2                           |
@@ -299,10 +309,7 @@ Board capabilities - Intel platforms
    | (\* bold) = default VADJ
    | FMC1 & FMC2 columns -> depending on the power supply of the device connected to the FMC, the custom VADJ will have the value supported by both the carrier and the device(s)
 
-
    ++++
-
-
 
 --------------
 
@@ -312,7 +319,6 @@ File structure of a project
 .. tip::
 
    In :git-hdl:`/projects/common/$carrier_name/ <projects/common>` you can find templates for the *system_top.v*, *Makefile*, etc. to help you when creating a new project.
-
 
 Project files for Xilinx boards
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -333,7 +339,8 @@ A project for a Xilinx FPGA board should contain the following files:
 
       -  the I/O ports of this module are declared in either *system_bd.tcl* or in the **board** design file
       -  this can be visualized in Vivado at the Block Design section
-      -  the base design, board design and system_bd.tcl describe this module, making the connections between the instantiated IPs
+      -  the base design, board design and system_bd.tcl describe this module,
+         making the connections between the instantiated IPs
 
 Project files for Intel boards
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -353,7 +360,8 @@ A project for an Intel FPGA board should contain the following files:
 Examples
 --------
 
-Some carriers have a different name for these files, for example A10SoC has constraints file for both PL side and PS side:
+Some carriers have a different name for these files, for example A10SoC has
+constraints file for both PL side and PS side:
 
 -  a10soc_plddr4_assign.tcl --- constraints file for the PL
 -  a10soc_system_assign.tcl --- constraints file for the PS

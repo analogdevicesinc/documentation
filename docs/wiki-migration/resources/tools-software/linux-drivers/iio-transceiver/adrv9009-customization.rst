@@ -3,11 +3,12 @@ ADRV9009/ADRV9008 Device Driver Customization
 
 .. hint::
 
-   There are configuration options that must be set properly. Some others allow you to set defaults, but can be changed anytime later using the driver API. But most of these options don't need to be changed at all.
+   There are configuration options that must be set properly. Some others allow
+   you to set defaults, but can be changed anytime later using the driver API.
+   But most of these options don't need to be changed at all.
 
    
    If unsure please see the manual or don't change!
-
 
 The Linux platform allows you to examine and determine optimal settings for your target application: See here: :doc:`ADRV9009/ADRV9008 Advanced Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_advanced_plugin>`
 

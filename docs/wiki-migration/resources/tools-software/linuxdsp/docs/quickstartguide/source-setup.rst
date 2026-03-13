@@ -4,7 +4,8 @@ Setting Up The Sources
 Repository URLs
 ---------------
 
-The following ADI managed repositories are used for the development of Linux for SC5xx:
+The following ADI managed repositories are used for the development of Linux for
+SC5xx:
 
 +------------------------------------------------------------------------------------+----------------------+---------------------------+-----------------------+
 | URL                                                                                | Description          | Latest Development Branch | Latest Release Branch |
@@ -33,7 +34,8 @@ The following ADI managed repositories are used for the development of Linux for
    curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ./bin/repo
    chmod a+x ./bin/repo
 
-To set up the sources for development invoke repo with the path to the repo manifest and the active development branch:
+To set up the sources for development invoke repo with the path to the repo
+manifest and the active development branch:
 
 ::
 
@@ -43,7 +45,7 @@ To set up the sources for development invoke repo with the path to the repo mani
 After the sync finished, you would get files just like the picture shows below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/yocto.png
-   :width: 400px
+   :width: 400
 
 --------------
 

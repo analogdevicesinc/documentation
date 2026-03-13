@@ -20,8 +20,8 @@ When the condition is met, your output sample is A; otherwise it's B.
 
 .. hint::
 
-   Note that you will need to recompile your project every time you select a different condition.
-
+   Note that you will need to recompile your project every time you select a
+   different condition.
 
 For a sample design using this block, see the :doc:`Basic DSP </wiki-migration/resources/tools-software/sigmastudio/tutorials/basicdspexamples>` example.
 

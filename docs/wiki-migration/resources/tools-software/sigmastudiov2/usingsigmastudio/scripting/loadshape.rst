@@ -3,7 +3,8 @@
 Load Shape
 ==========
 
-This action allows the user to load a saved shape file into their desired shape. The function call takes in 2 arguments. This API returns the SSPResult type.
+This action allows the user to load a saved shape file into their desired shape.
+The function call takes in 2 arguments. This API returns the SSPResult type.
 
 API
 ---
@@ -21,7 +22,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information for the LoadShape action.
+SSPResult contains 'IsSuccess' flag and 'Message' information for the LoadShape
+action.
 
 ::
 

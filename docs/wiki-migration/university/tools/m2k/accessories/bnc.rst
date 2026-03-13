@@ -13,12 +13,19 @@ Features
 -  AC or DC coupling on all channels
 -  Possibility to reconfigure the analog inputs as differential input channels
 -  Access to all other ADALM2000 output pins
--  Oscilloscope probes, BNC to grabber cables and mini grabber test clips are included in the package
+-  Oscilloscope probes, BNC to grabber cables and mini grabber test clips are
+   included in the package
 
 Description
 -----------
 
-The AD-M2KBNC-EBZ has 2 single ended input channels and 2 single ended output channels. All these channels are terminated in a right-angle BNC connector which provides quick connection and a locking mechanism. The single ended input channels can be reconfigured as differential input channels by modifying a solder jumper on the bottom of the board. In this way, all 4 BNC connectors will be used for the analog input section and the output of the M2K is still available on the 30 pin header of the board.
+The AD-M2KBNC-EBZ has 2 single ended input channels and 2 single ended output
+channels. All these channels are terminated in a right-angle BNC connector which
+provides quick connection and a locking mechanism. The single ended input
+channels can be reconfigured as differential input channels by modifying a
+solder jumper on the bottom of the board. In this way, all 4 BNC connectors will
+be used for the analog input section and the output of the M2K is still
+available on the 30 pin header of the board.
 
 Applications
 ~~~~~~~~~~~~
@@ -38,7 +45,7 @@ Package contents
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/ad-m2kbnc-ebz-angle-web.png
    :align: center
-   :width: 600px
+   :width: 600
 
 |image3| |image4| |image5|
 
@@ -46,14 +53,13 @@ Package contents
 
    Figure 2. AD-M2KBNC-EBZ Isometric view - Package contents
 
-
 --------------
 
 Getting started
 ---------------
 
-The BNC adapter board is simply plugged into the ADALM2000 and can be used straight away. It does not need any supply or additional circuitry.
-
+The BNC adapter board is simply plugged into the ADALM2000 and can be used
+straight away. It does not need any supply or additional circuitry.
 
 |image6|
 
@@ -61,20 +67,19 @@ The BNC adapter board is simply plugged into the ADALM2000 and can be used strai
 
    Figure 3. AD-M2KBNC-EBZ connected to ADALM2000
 
-
 AC/DC Coupling
 ~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/coupling_highlight.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    Figure 4. AD-M2KBNC-EBZ jumpers for AD/DC coupling
 
-
-The input and output channels of this board can be AC or DC coupled using the shunt jumpers. In the following table is presented the jumper configuration:
+The input and output channels of this board can be AC or DC coupled using the
+shunt jumpers. In the following table is presented the jumper configuration:
 
 +--------------------------+-------------------------+--------------------+--------------------+
 | Jumper                   | Missing                 | Jumper 1-2 shorted | Jumper 2-3 shorted |
@@ -107,8 +112,8 @@ The :adi:`AD-M2KBNC-EBZ` inputs are reconfigurable. By default 1+ and 2+ channel
 
 .. container:: centeralign
 
-   Figure 5. AD-M2KBNC-EBZ bottom solderjumpers(left-single ended inputs, right-differential inputs)
-
+   Figure 5. AD-M2KBNC-EBZ bottom solderjumpers(left-single ended inputs,
+   right-differential inputs)
 
 Schematics and CAD Files
 ------------------------
@@ -122,20 +127,19 @@ Schematics and CAD Files
    -  `Rev B Cadence Project <https://wiki.analog.com/_media/university/tools/m2k/accessories/20-064107-01b.zip>`_
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/ad-m2kbnc-ebz-top-web.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/ad-m2kbnc-ebz-bottom-web.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/ad-m2kbnc-ebz_oscilloscope_probes-web.png
-   :width: 250px
+   :width: 250
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/ad-m2kbnc-ebz_bnc_to_grabber_cables-web.png
-   :width: 250px
+   :width: 250
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/ad-m2kbnc-ebz_mini_grabber_test_clips-web.png
-   :width: 250px
+   :width: 250
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/20220314_104919.jpg
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/input_path_single_ended.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/input_path_differential.png
-   :width: 400px
+   :width: 400

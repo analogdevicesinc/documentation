@@ -4,7 +4,11 @@ Introduction
 Analog Devices FreeRTOS
 -----------------------
 
-The Analog Devices FreeRTOS product is a modified version of the FreeRTOS Kernel, providing support for the Analog Devices Blackfin (BF70x), SHARC+ (ADSP-215xx/ADSP-SC5xx) and SHARC-FX (ADSP-218xx/ADSP-SC8xx) DSP families. It is stand-alone set of sources based on version 10.5.1 of the FreeRTOS operating system.
+The Analog Devices FreeRTOS product is a modified version of the FreeRTOS
+Kernel, providing support for the Analog Devices Blackfin (BF70x), SHARC+
+(ADSP-215xx/ADSP-SC5xx) and SHARC-FX (ADSP-218xx/ADSP-SC8xx) DSP families. It is
+stand-alone set of sources based on version 10.5.1 of the FreeRTOS operating
+system.
 
 :doc:`Initial setup documentation and User Guides </wiki-migration/resources/tools-software/freertos/rtos-user-guide>` have been created to help users get started with using FreeRTOS with CrossCore Embedded Studio.
 

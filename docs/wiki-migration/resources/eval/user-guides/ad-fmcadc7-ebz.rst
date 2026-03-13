@@ -6,12 +6,19 @@ Introduction
 
 The :adi:`AD-FMCADC7-EBZ` is a high speed single channel data acquisition board featuring the :adi:`AD9625` a single channel differential Analog-to-Digital converter at 2.5 GHz and an :adi:`ADL5567` dual channel differential 4.8 GHz amplifier. This is an FMC compatible board. The clocking can be done three different ways including external variations and on-board variations with Crystek oscillator and an :adi:`ADF4355-2`.
 
-ADI also provides reference designs (HDL and software) for this board to work with commonly available Altera and Xilinx development boards.
+ADI also provides reference designs (HDL and software) for this board to work
+with commonly available Altera and Xilinx development boards.
 
 Hardware
 --------
 
-The AD-FMCADC7-EBZ board's primary purpose is to demonstrate the capabilities of the devices on board quickly and easily by providing a seamless interface to an FMC carrier platform and running the reference design on the carrier FPGA. The board is designed to self power and self clock when connected to the FMC carrier. The analog signals ( AIN+ and AIN-) are connected to J202 and J201. This rapid prototyping board is default set up with to utilize input J202 for a single-ended connection from a signal generator.
+The AD-FMCADC7-EBZ board's primary purpose is to demonstrate the capabilities of
+the devices on board quickly and easily by providing a seamless interface to an
+FMC carrier platform and running the reference design on the carrier FPGA. The
+board is designed to self power and self clock when connected to the FMC
+carrier. The analog signals ( AIN+ and AIN-) are connected to J202 and J201.
+This rapid prototyping board is default set up with to utilize input J202 for a
+single-ended connection from a signal generator.
 
 Devices
 ~~~~~~~
@@ -33,7 +40,7 @@ The FMC board includes the following products by Analog Devices:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fmcadc7-top.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 ::
 
@@ -41,7 +48,7 @@ The FMC board includes the following products by Analog Devices:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fmcadc7-bot.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 ::
 
@@ -59,12 +66,18 @@ The AD-FMCADC7-EBZ includes various clocking options:
 Analog Front End
 ~~~~~~~~~~~~~~~~
 
-The AD-FMCADC7-EBZ uses a active front end designed for very wide bandwidth. A single ended input needs to be provided to the analog inputs at -15dBm. The broadband amplifier gains and converts the analog input signal deferentially to the converter's inputs and has a 1.8GHz bandwidth at -3dB. The amplifier's gain can be adjusted independently with some simple resistor modifications.
+The AD-FMCADC7-EBZ uses a active front end designed for very wide bandwidth. A
+single ended input needs to be provided to the analog inputs at -15dBm. The
+broadband amplifier gains and converts the analog input signal deferentially to
+the converter's inputs and has a 1.8GHz bandwidth at -3dB. The amplifier's gain
+can be adjusted independently with some simple resistor modifications.
 
 Revision B
 ~~~~~~~~~~
 
-The revision B board is default set for the amplifier to be at max gain with dc coupling. Hardware changes are required to change either the gain or dc coupling to ac coupling.
+The revision B board is default set for the amplifier to be at max gain with dc
+coupling. Hardware changes are required to change either the gain or dc coupling
+to ac coupling.
 
 Downloads (Hardware)
 --------------------
@@ -79,4 +92,3 @@ Downloads (Hardware)
    -  `Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/ad_fmcadcv7b.pdf>`_
    -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcadcv7b-ebz_bom-12142015-final.xls>`_
    
-

@@ -1,11 +1,17 @@
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/pyadi-iio_logo_600.png
    :align: center
-   :width: 400px
+   :width: 400
 
 pyadi-iio: Device Specific Python Interfaces For IIO Drivers
 ============================================================
 
-To simplify the use of different devices a python package was created interface with the different IIO drivers. The module pyadi-iio, provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO. In general, if you are familiar with python this is a great starting point for using different ADI parts and can even run on some ADI development systems as well.
+To simplify the use of different devices a python package was created interface
+with the different IIO drivers. The module pyadi-iio, provides device-specific
+APIs built on top of the current libIIO python bindings. These interfaces try to
+match the driver naming as much as possible without the need to understand the
+complexities of libIIO and IIO. In general, if you are familiar with python this
+is a great starting point for using different ADI parts and can even run on some
+ADI development systems as well.
 
 Basic Installation
 ------------------
@@ -27,7 +33,6 @@ Windows Installation
    
    `LibIIO <https://github.com/analogdevicesinc/libiio/releases>`_
 
-
 -  Download and install Python
 
 .. admonition:: Download
@@ -35,7 +40,6 @@ Windows Installation
 
    
    `Python for Windows <https://www.python.org/downloads/windows/>`_
-
 
 -  Install the libIIO bindings through pip.\ ``pip install pylibiio``
 -  Install the PyADI-IIO through pip.\ ``pip install pyadi-iio``

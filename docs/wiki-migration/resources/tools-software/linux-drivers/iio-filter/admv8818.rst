@@ -16,11 +16,22 @@ This driver supports the
 Description
 -----------
 
-The ADMV8818-EP is a fully monolithic microwave integrated circuit (MMIC) that features a digitally selectable frequency of operation. The device features four independently controlled high-pass filters (HPFs) and four independently controlled low-pass filters (LPFs) that span the 2 GHz to 18 GHz frequency range.
+The ADMV8818-EP is a fully monolithic microwave integrated circuit (MMIC) that
+features a digitally selectable frequency of operation. The device features four
+independently controlled high-pass filters (HPFs) and four independently
+controlled low-pass filters (LPFs) that span the 2 GHz to 18 GHz frequency
+range.
 
-The flexible architecture of the ADMV8818-EP allows the 3 dB cutoff frequency (f3dB) of the high-pass and low-pass filters to be controlled independently to generate up to 4 GHz of bandwidth. The digital logic control on each filter is 4 bits wide (16 states) and controls the on-chip reactive elements to adjust the f3dB. The typical insertion loss is 9 dB, and the wideband rejection is 35 dB, which is ideally suited for minimizing system harmonics.
+The flexible architecture of the ADMV8818-EP allows the 3 dB cutoff frequency
+(f3dB) of the high-pass and low-pass filters to be controlled independently to
+generate up to 4 GHz of bandwidth. The digital logic control on each filter is 4
+bits wide (16 states) and controls the on-chip reactive elements to adjust the
+f3dB. The typical insertion loss is 9 dB, and the wideband rejection is 35 dB,
+which is ideally suited for minimizing system harmonics.
 
-This tunable filter can be used as a smaller alternative to large switched filter banks and cavity tuned filters, and this device provides a dynamically adjustable solution in advanced communications applications.
+This tunable filter can be used as a smaller alternative to large switched
+filter banks and cavity tuned filters, and this device provides a dynamically
+adjustable solution in advanced communications applications.
 
 Source Code
 ===========
@@ -96,17 +107,18 @@ The ADF4371 driver is a SPI bus driver and can be instantiated via device tree.
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADMV8818 driver depends on SPI and selects REGMAP_SPI
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -123,8 +135,15 @@ Hardware configuration
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -157,7 +176,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root@analog:/sys/bus/iio/devices/iio:device0#
    
 
-
 Show device name
 ----------------
 
@@ -172,7 +190,6 @@ Show device name
       admv8818
    
 
-
 Read channel bandwidth frequency
 --------------------------------
 
@@ -186,7 +203,6 @@ Read channel bandwidth frequency
       root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_band_pass_bandwidth_3db_frequency
       750
    
-
 
 Set channel bandwidth frequency
 -------------------------------
@@ -203,7 +219,6 @@ Set channel bandwidth frequency
       734
    
 
-
 Read channel center frequency
 -----------------------------
 
@@ -217,7 +232,6 @@ Read channel center frequency
       root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_band_pass_center_frequency
       5055
    
-
 
 Set channel center frequency
 ----------------------------
@@ -234,7 +248,6 @@ Set channel center frequency
       4023
    
 
-
 Read low pass 3db frequency
 ---------------------------
 
@@ -248,7 +261,6 @@ Read low pass 3db frequency
       root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_low_pass_3db_frequency
       5430
    
-
 
 Set channel low pass 3db frequency
 ----------------------------------
@@ -265,7 +277,6 @@ Set channel low pass 3db frequency
       8200
    
 
-
 Read high pass 3db frequency
 ----------------------------
 
@@ -279,7 +290,6 @@ Read high pass 3db frequency
       root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_filter_high_pass_3db_frequency
       4680
    
-
 
 Set channel high pass 3db frequency
 -----------------------------------
@@ -296,7 +306,6 @@ Set channel high pass 3db frequency
       5960
    
 
-
 Read scale
 ----------
 
@@ -310,7 +319,6 @@ Read scale
       root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_scale
       1000000
    
-
 
 Set channel scale
 -----------------
@@ -327,11 +335,11 @@ Set channel scale
       10000000
    
 
-
 Filter mode
 -----------
 
-The mode allows the user to access enable/disable/register/unregister the clock rate notifier. Valid values that can be written:
+The mode allows the user to access enable/disable/register/unregister the clock
+rate notifier. Valid values that can be written:
 
 .. container:: box bggreen
 
@@ -348,7 +356,6 @@ The mode allows the user to access enable/disable/register/unregister the clock 
       root@analog:/sys/bus/iio/devices/iio:device0# cat out_altvoltage0_mode
       bypass
    
-
 
 More Information
 ================
@@ -371,6 +378,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-filter/youtube>p_vntewue24
-

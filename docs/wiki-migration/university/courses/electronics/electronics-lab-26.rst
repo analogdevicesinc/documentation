@@ -16,24 +16,19 @@ Directions:
 
 Build the circuit shown in figure 1 on your solder-less breadboard using the 1N4735 6.1 volt zener diode. Use AWG1 (5V constant) and the -5V Vn user supply to establish the DC supply V\ :sub:`IN`. Use various fixed and variable resistors for R\ :sub:`L`.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Zener Diode regulator
 
-
 Hardware Setup:
-
-
 
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Zener Diode regulator Breadboard Circuit
-
 
 Procedure:
 ----------
@@ -49,7 +44,6 @@ Procedure:
 
    Figure 3 R\ :sub:`L` = Open Circuit Zener Diode regulator waveform
 
-
 -  10 kΩ
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav2.png
@@ -58,7 +52,6 @@ Procedure:
 .. container:: centeralign
 
    Figure 4 R\ :sub:`L` = 10kΩ Zener Diode regulator waveform
-
 
 -  1 kΩ
 
@@ -69,7 +62,6 @@ Procedure:
 
    Figure 5 R\ :sub:`L` = 1kΩ Zener Diode regulator waveform
 
-
 -  100 Ω
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav4.png
@@ -78,7 +70,6 @@ Procedure:
 .. container:: centeralign
 
    Figure 6 R\ :sub:`L` = 100Ω Zener Diode regulator waveform
-
 
 2. Replace the load R\ :sub:`L` with a 5KΩ potentiometer, and adjust the potentiometer to determine the minimum value of R\ :sub:`L` for which V\ :sub:`L` remains within 10% of the zener voltage V\ :sub:`Z`. Measure and report the resistance you set the potentiometer to. How does this resistance relate to the value of R\ :sub:`S`?
 
@@ -100,15 +91,14 @@ As we saw in the simple zener diode regulator in figure 1, the maximum load curr
 Additional Materials:
 ---------------------
 
-2 - NPN transistors (2N3904 and TIP31) 2 - small signal diodes (1N914 or similar)
-
+2 - NPN transistors (2N3904 and TIP31) 2 - small signal diodes (1N914 or
+similar)
 
 |image3|
 
 .. container:: centeralign
 
    Figure 2, Adding a current amplifier stage
-
 
 Directions:
 -----------
@@ -132,7 +122,6 @@ Add questions here:
    -  LTSpice files: :git-education_tools:`m2k/ltspice/zener_reg_ltspice`
    
 
-
 For Further Reading
 -------------------
 
@@ -141,7 +130,7 @@ Zener Diodes http://en.wikipedia.org/wiki/Zener_diode
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a26_f1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-bb.png
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a26_f2.png
-   :width: 500px
+   :width: 500

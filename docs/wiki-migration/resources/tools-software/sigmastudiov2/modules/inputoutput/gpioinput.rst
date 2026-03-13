@@ -18,27 +18,35 @@ GPIO Output
 Description
 ~~~~~~~~~~~
 
-The General Purpose Input block allows signals from the hardware's GPIO input pins to be used in a schmeatic design. The output pin should typcially be connected to a GPIO Conditioning block. There are 26 selectable inputs to this GPIO block.
+The General Purpose Input block allows signals from the hardware's GPIO input
+pins to be used in a schmeatic design. The output pin should typcially be
+connected to a GPIO Conditioning block. There are 26 selectable inputs to this
+GPIO block.
 
-The General Purpose Output block routes a signal to the hardware's GPIO output. Each block is linked to one output channel.
+The General Purpose Output block routes a signal to the hardware's GPIO output.
+Each block is linked to one output channel.
 
 .. note::
 
-   Note: The block is only available for DSPs that include GPIO. To configure the hardware's GPIO input and outputs settings, see the processors Register Control Window.
-
+   Note: The block is only available for DSPs that include GPIO. To configure
+   the hardware's GPIO input and outputs settings, see the processors Register
+   Control Window.
 
 Usage
 ~~~~~
 
-To use the GPIO Input: Select the channel desired for sending your signal using the General Purpose Input drop-down control.
+To use the GPIO Input: Select the channel desired for sending your signal using
+the General Purpose Input drop-down control.
 
 -  Every enabled input must be connected to an output, else there will be errors on compilation.
--  Observe that as you drag more output blocks to your schematic, your number of input channels available in the drop-down decreases.
+-  Observe that as you drag more output blocks to your schematic, your number of
+   input channels available in the drop-down decreases.
 
 To use the GPIO Output:
 
 -  Use the drop-down to select the hardware GPIO output that is assigned to the block.
--  Observe that as you drag more blocks to your schematic, your number of output channels available in the drop-down list decreases.
+-  Observe that as you drag more blocks to your schematic, your number of output
+   channels available in the drop-down list decreases.
 
 Targets Supported
 ~~~~~~~~~~~~~~~~~
@@ -66,7 +74,6 @@ Name    Type  Description
 Output0 Logic Output channel 0
 ======= ===== ================
 
-
 | ====GPIO Output====
 
 Input
@@ -77,8 +84,6 @@ Name   Type  Description
 ====== ===== ===============
 Input0 Logic Input channel 0
 ====== ===== ===============
-
-
 
 Configurable Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~

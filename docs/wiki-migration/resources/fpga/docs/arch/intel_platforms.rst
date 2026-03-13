@@ -24,4 +24,6 @@ VADJ values
 | `Stratix10SoC <https://www.intel.com/content/www/us/en/programmable/products/boards_and_kits/dev-kits/altera/stratix-10-soc-development-kit.html>`_  | **\*3.3V**/1.8V/1.2V                  | **\*3.3V**/1.8V/1.2V            |
 +------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+---------------------------------+
 
-(\* bold) = default VADJ FMC1 & FMC2 columns -> depending on the power supply of the device connected to the FMC, the custom VADJ will have the value supported by both the carrier and the device(s)
+(\* bold) = default VADJ FMC1 & FMC2 columns -> depending on the power supply of
+the device connected to the FMC, the custom VADJ will have the value supported
+by both the carrier and the device(s)

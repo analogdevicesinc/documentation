@@ -4,7 +4,10 @@ IIO OSC AD9371 Capture Window
 Introduction
 ------------
 
-Main receivers RX1 and RX2 are handled by the axi-ad9371-rx-hpc IIO device, while the observation is handled by the axi-ad9371-rx-obs-hpc device. Splitting into two devices was necessary since RX and OBS may run at different baseband rates.
+Main receivers RX1 and RX2 are handled by the axi-ad9371-rx-hpc IIO device,
+while the observation is handled by the axi-ad9371-rx-obs-hpc device. Splitting
+into two devices was necessary since RX and OBS may run at different baseband
+rates.
 
 Channels:
 
@@ -21,8 +24,8 @@ Screenshots
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_cap_time.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_cap_freq.png
    :align: center
-   :width: 600px
+   :width: 600

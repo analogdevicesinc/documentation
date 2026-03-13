@@ -5,14 +5,18 @@ Output
 
 --------------
 
-The Output block routes signals to the hardwares physical outputs. Each block is linked to a single output channel.
+The Output block routes signals to the hardwares physical outputs. Each block is
+linked to a single output channel.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/outputpic1.png
    :alt: outputpic1.png
 
-Using the drop-down list, select the output channel to associate with a particular block.
+Using the drop-down list, select the output channel to associate with a
+particular block.
 
-Observe that as you drag more output blocks to your schematic, the number of output channels available in the drop-down list decreases because each output can only be associate with a single output block at a time.
+Observe that as you drag more output blocks to your schematic, the number of
+output channels available in the drop-down list decreases because each output
+can only be associate with a single output block at a time.
 
 If you have multiple DSP processors in a design, specify which processor to associate with the output block by right-clicking the block and selecting Add Algorithm > IC # > *DSP Type* from the menu.
 
@@ -24,7 +28,8 @@ The hardware outputs for a particular processor are limited. While designing you
 Relationship Between Hardware Outputs and SigmaStudio Output Channels
 ---------------------------------------------------------------------
 
-The relationship between an output cell in SigmaStudio and the physical output pin on the chip can vary in some cases depending on register settings.
+The relationship between an output cell in SigmaStudio and the physical output
+pin on the chip can vary in some cases depending on register settings.
 
 AD1940/AD1941
 ~~~~~~~~~~~~~
@@ -173,39 +178,48 @@ ADAU1781
 | DIG7                       | N/A                                     | Eighth TDM channel on ADC_SDATA  |
 +----------------------------+-----------------------------------------+----------------------------------+
 
-
 AD1953 Output
 -------------
 
 .. warning::
 
-   The AD1953 is not recommended for new designs. Information is included here for reference only.
+   The AD1953 is not recommended for new designs. Information is included here
+   for reference only.
 
-
-The AD1953 has the DACs built into the DSP core, so you must choose an interpolation filter for the output. To use Output blocks with the AD1953 you will need to add an algorithm. As shown below, right-click the block to select which interpolating filter you would like to implement in the DSP core.
+The AD1953 has the DACs built into the DSP core, so you must choose an
+interpolation filter for the output. To use Output blocks with the AD1953 you
+will need to add an algorithm. As shown below, right-click the block to select
+which interpolating filter you would like to implement in the DSP core.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/outputpic3.png
    :alt: outputpic3.png
 
-Next, designate the channel on the block to be left, right, or sub. Only one block can write to the same output channel.
+Next, designate the channel on the block to be left, right, or sub. Only one
+block can write to the same output channel.
 
 Following are descriptions of the interpolation filters:
 
 **Write to DAC No Interp**
 
-Writes to the DAC registers with no interpolation. Useful for subwoofer outputs, where it does not matter that distortion above 2kHz rises (output slewing) and HF response suffers (sinc(x) droop).
+Writes to the DAC registers with no interpolation. Useful for subwoofer outputs,
+where it does not matter that distortion above 2kHz rises (output slewing) and
+HF response suffers (sinc(x) droop).
 
 **Interpolator 8x 27dB**
 
-27dB DAC interpolation filter. Response flat to 20kHz with a 48kHz sample rate. Stopband starts at 40kHz ??TKTK, so images of frequencies above 8 kHz will not be attenuated strongly. Lowest-quality, but very low MIPS: uses 37 instructions.
+27dB DAC interpolation filter. Response flat to 20kHz with a 48kHz sample rate.
+Stopband starts at 40kHz ??TKTK, so images of frequencies above 8 kHz will not
+be attenuated strongly. Lowest-quality, but very low MIPS: uses 37 instructions.
 
 **Interpolator 8x 70dB**
 
-Highest-quality interpolation filter: flat to 20kHz with a 44.1kHz sample rate. Uses 80 instructions.
+Highest-quality interpolation filter: flat to 20kHz with a 44.1kHz sample rate.
+Uses 80 instructions.
 
 **Interpolator 8x 50dB @48kHz**
 
-50dB interpolation filter. Flat to 20kHz with a 48kHz sample rate; uses 53 instructions.
+50dB interpolation filter. Flat to 20kHz with a 48kHz sample rate; uses 53
+instructions.
 
 ADAU145x Output
 ---------------
@@ -223,7 +237,9 @@ Input Pins
 Grow Algorithm
 ~~~~~~~~~~~~~~
 
-This output module supports growth upto 16 channels. The output algorithm will be optimized to reduce MIPS when the grown output channels are consecutive and the starting index is a multiple of 4.
+This output module supports growth upto 16 channels. The output algorithm will
+be optimized to reduce MIPS when the grown output channels are consecutive and
+the starting index is a multiple of 4.
 
 Relationship Between Hardware Outputs and SigmaStudio Output Channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

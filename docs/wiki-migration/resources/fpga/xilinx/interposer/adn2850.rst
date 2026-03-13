@@ -20,18 +20,16 @@ This document presents the steps to setup an environment for using the :adi:`EVA
    :alt: img_adn2850.jpg
    :align: center
 
-
 .. note::
 
    See `common_sdp <https://wiki.analog.com/common_sdp>`_
-
 
 Below is presented a picture of **SDP-B** Controller Board with the **EVAL-ADN2850SDZ** Evaluation Board.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adn2850_sdp1z.png
    :alt: adn2850_sdp1z.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The :adi:`ADN2850` is a dual-channel, nonvolatile memory, digitally controlled resistors with 1024-step resolution, offering guaranteed maximum low resistor tolerance error of ±8%. The device performs the same electronic adjustment function as a mechanical rheostat with enhanced resolution, solid state reliability, and superior low temperature coefficient performance. The versatile programming of the ADN2850 via an SPI®-compatible serial interface allows 16 modes of operation and adjustment including scratchpad programming, memory storing and restoring, increment/decrement, ±6 dB/step log taper adjustment, wiper setting readback, and extra EEMEM for user-defined information such as memory data for other components, look-up table, or system identification information.
 
@@ -47,7 +45,9 @@ More information
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Required Hardware
 -----------------
@@ -75,15 +75,15 @@ Downloads
    -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
    
 
-
 Hardware setup
 --------------
 
 .. important::
 
    
-   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
-
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that
+   the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to
+   change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
@@ -91,7 +91,8 @@ Hardware setup
 Reference Project Overview
 --------------------------
 
-The following commands were implemented in this version of EVAL-ADN2850 reference project for Xilinx KC705 FPGA board.
+The following commands were implemented in this version of EVAL-ADN2850
+reference project for Xilinx KC705 FPGA board.
 
 +-------------------+-------------------------------------------------------------------------------+
 | Command           | Description                                                                   |
@@ -174,31 +175,28 @@ The following commands were implemented in this version of EVAL-ADN2850 referenc
 |                   | 0x0 - this device has one tolerance register                                  |
 +-------------------+-------------------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+Commands can be executed using a serial terminal connected to the UART
+peripheral of Xilinx KC705 FPGA.
 
-The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
-
+The following image shows a generic list of commands in a serial terminal
+connected to Xilinx KC705 FPGA's UART peripheral.
 
 |Terminal_KC705.jpg|
 
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `import_workspace <https://wiki.analog.com/import_workspace>`_
-
 
 More information
 ================
 
 -  :doc:`ADN2850 Digital Potentiometer Linux Driver </wiki-migration/resources/tools-software/linux-drivers/misc/dpot>`
 
-
 .. note::
 
    See `ez_common <https://wiki.analog.com/ez_common>`_
-
 
 .. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/terminal_kc705.jpg

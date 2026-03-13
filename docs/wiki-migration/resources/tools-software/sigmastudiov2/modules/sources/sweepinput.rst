@@ -9,7 +9,11 @@ Sweep Input
 Description
 -----------
 
-The Sweep block generates a sinewave that sweeps from a start frequency to an end frequency. The sweep rate is determined by the number of sweep steps and cycles per step. In case of the linear sweep, the frequency sweep is linear across time whereas in the case of log sweep input, the frequency sweeps logarithmically cross time. The following variants of the module are available:
+The Sweep block generates a sinewave that sweeps from a start frequency to an
+end frequency. The sweep rate is determined by the number of sweep steps and
+cycles per step. In case of the linear sweep, the frequency sweep is linear
+across time whereas in the case of log sweep input, the frequency sweeps
+logarithmically cross time. The following variants of the module are available:
 
 -  Linear Sweep Input
 -  Linear Sweep With Input Tone Burst
@@ -19,7 +23,8 @@ The Sweep block generates a sinewave that sweeps from a start frequency to an en
 Usage
 -----
 
-Enter the desired start and stop frequency and step size using the edit controls:
+Enter the desired start and stop frequency and step size using the edit
+controls:
 
 -  **Start Freq**
 
@@ -68,7 +73,6 @@ Name   Type  Description
 ====== ===== ==============
 Output Audio Output channel
 ====== ===== ==============
-
 
 | ===== Configurable Parameters =====
 

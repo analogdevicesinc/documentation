@@ -4,7 +4,9 @@ Activity: The Clapp Oscillator
 Objective:
 ----------
 
-Oscillators come in many forms. In this lab activity we will explore the Clapp configuration which uses a taped capacitor divider to provide the feedback path and a series LC resonator.
+Oscillators come in many forms. In this lab activity we will explore the Clapp
+configuration which uses a taped capacitor divider to provide the feedback path
+and a series LC resonator.
 
 Background:
 -----------
@@ -13,23 +15,21 @@ A Clapp oscillator is in effect a series tuned version of the Colpitts oscillato
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/ata1_e1.png
    :align: center
-   :width: 200px
+   :width: 200
 
 Ignoring the transistor capacitive effect between the base and collector, the resonant frequency may be calculated using the total equivalent capacitance (C\ :sub:`TOT`) given by:
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/aclap-osc_e2.png
    :align: center
-   :width: 200px
+   :width: 200
 
 Figure 1 shows a typical Clapp oscillator. The frequency determining series resonant tuned circuit is formed by L\ :sub:`1` and C\ :sub:`TOT` and is used as the collector load impedance of the common base amplifier Q\ :sub:`1`. A large inductance, L\ :sub:`2`, provides a DC path for the collector current while presenting a high impedance at the resonate frequency. This gives the amplifier a high gain only at the resonant frequency. This configuration of the Hartley oscillator uses a common base amplifier, the base of Q\ :sub:`1`\ is biased to an appropriate DC level by resistor divider R\ :sub:`1` and R\ :sub:`2` but is connected directly to an AC ground by C\ :sub:`4`. In the common base mode the output voltage waveform at the collector, and the input signal at the emitter are in phase. This ensures that the fraction of the output signal from the node between C\ :sub:`1` and C\ :sub:`2`, fed back from the tuned collector load to the emitter provides the required positive feedback.
-
 
 |image1|
 
 .. container:: centeralign
 
    Figure 1, Basic Clapp Oscillator
-
 
 The combination of C\ :sub:`1`\ and C\ :sub:`2` also forms a low frequency time constant with the emitter resistor R\ :sub:`3` to provide an average DC voltage level proportional to the amplitude of the feedback signal at the emitter of Q\ :sub:`1`. This provides automatic control of the gain of the amplifier to give the closed loop gain of 1 required by the oscillator. The emitter resistor R\ :sub:`3` is not decoupled because the emitter node is used as the common base amplifier input. The base is connected to AC ground by C\ :sub:`4`, which will provide a very low reactance at the oscillator frequency.
 
@@ -48,13 +48,11 @@ Directions:
 
 Build the Clapp Oscillator shown in figure 2 using your solder-less breadboard. Pick standard values from your parts kit for bias resistors R\ :sub:`1` and R\ :sub:`2` such that with emitter resistor R\ :sub:`3`\ set to 470 Ω, the collector current in NPN transistor Q\ :sub:`1` is approximately 1 mA. Start with C\ :sub:`1` = 1 nF and C\ :sub:`2` = 4.7 nF. The frequency of the oscillator can be from around 500 KHz to 2 MHz depending on the values chosen for C\ :sub:`1`, C\ :sub:`2`, C\ :sub:`3` and L\ :sub:`1`. Calculate a value for C\ :sub:`3` and pick the closest value from your parts kit. This oscillator circuit can produce a sine wave output in excess of 10 Vpp at an approximate frequency set by the value chosen for L\ :sub:`1`.
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Clapp Oscillator
-
 
 Hardware Setup:
 ---------------
@@ -63,13 +61,13 @@ Hardware Setup:
 
    \ |image3|\
 
-
 .. container:: centeralign
 
    Figure 3 Clapp Oscillator Breadboard circuit
 
-
-The green squares indicate where to connect the ADALM2000 module AWG, scope channels and power supplies. Be sure to only turn on the power supplies after you double check your wiring.
+The green squares indicate where to connect the ADALM2000 module AWG, scope
+channels and power supplies. Be sure to only turn on the power supplies after
+you double check your wiring.
 
 Procedure:
 ----------
@@ -82,11 +80,9 @@ A plot example using R\ :sub:`1`\ =10KΩ, R\ :sub:`2`\ =1KΩ, R\ :sub:`3`\ =100�
 
    \ |image4|\
 
-
 .. container:: centeralign
 
    Figure 4 Clapp Oscillator plot
-
 
 Questions:
 ----------
@@ -119,7 +115,6 @@ Fill in the table below with the measured frequency for other L\ :sub:`1` values
    -  LTspice files: :git-education_tools:`m2k/ltspice/clapp_osc_ltspice`
    
 
-
 **For Further Reading:**
 
 http://en.wikipedia.org/wiki/Clapp_oscillator http://en.wikipedia.org/wiki/Barkhausen_stability_criterion
@@ -127,8 +122,8 @@ http://en.wikipedia.org/wiki/Clapp_oscillator http://en.wikipedia.org/wiki/Barkh
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/aclap-osc_f1.png
-   :width: 530px
+   :width: 530
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/aclap-osc_f2.png
-   :width: 530px
+   :width: 530
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/clapp_osc-bb.png
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/clapp_osc-wav.png

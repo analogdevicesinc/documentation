@@ -7,7 +7,6 @@
    
    :doc:`/wiki-migration/resources/tools-software/sigmastudio/releaseinfo`
 
-
 Analog Devices Inc. SigmaStudio™ Version History
 ================================================
 
@@ -24,9 +23,13 @@ Installation Notes
 System Requirements
 ^^^^^^^^^^^^^^^^^^^
 
-Windows 7 x86/x64\* Windows Vista\* Windows XP Professional or Home Edition with SP2*\* Microsoft .NET Framework 3.5 256 MB of RAM (256 MB recommended) 50 MB of available hard disk space 1024 x 768 screen resolution USB 2.0 data port (Required for use with Evaluation hardware only)
+Windows 7 x86/x64\* Windows Vista\* Windows XP Professional or Home Edition with
+SP2*\* Microsoft .NET Framework 3.5 256 MB of RAM (256 MB recommended) 50 MB of
+available hard disk space 1024 x 768 screen resolution USB 2.0 data port
+(Required for use with Evaluation hardware only)
 
-- The user must be an administrator when installing SigmaStudio. \* \* ADI no longer supports Windows XP
+- The user must be an administrator when installing SigmaStudio. \* \* ADI no
+  longer supports Windows XP
 
 To install SigmaStudio™ 3.12 or higher versions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -35,12 +38,11 @@ To install SigmaStudio™ 3.12 or higher versions
 -  Double-click on the SigmaStudio 3.x installer, “Sigma Studio xxx.exe”, to start the installation.
 -  Review the contents of the license agreement, if you agree click “I Agree”.
 -  SigmaStudio 3.x may be installed alongside or over an existing copy of SigmaStudio, Select an existing installation directory if you want to overwrite a previous SigmaStudio version.
--  If you are installing SigmaStudio for the first time, restart your computer when the installation is complete.
+-  If you are installing SigmaStudio for the first time, restart your computer
+   when the installation is complete.
 
 Updates SigmaStudio 3.12.3 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -51,12 +53,8 @@ Updates SigmaStudio 3.12.3 BETA
    -  External SPI Delay module can now support 24 bit addressable SPI RAMs for ADAU145x.
    -  Text In filter’s user control is updated
 
-
-
 Bug Fixes SigmaStudio 3.12.3 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -71,12 +69,8 @@ Bug Fixes SigmaStudio 3.12.3 BETA
    -  Schematic status update is corrected for “Allow Realtime AB Testing” feature.
    -  Issue with the FIR filter MIPS calculation is fixed for ADAU144x.
 
-
-
 Updates SigmaStudio 3.12.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -86,28 +80,22 @@ Updates SigmaStudio 3.12.2 BETA
    -  Hilbert Transform, Voice Activity Detector (VAD), Super Bass algorithms are implemented for ADAU145X processor.
    -  New version of Dynamics Processors which outputs compressor gain is added
    -  Linear Interpolator algorithm is implemented as a growable algorithm for ADAU145X and ADAU144X processors.
-   -  Support to directly switch the communication protocol from I2C to SPI for ADAU144x
-
-
+   -  Support to directly switch the communication protocol from I2C to SPI for
+      ADAU144x
 
 Bug Fixes SigmaStudio 3.12.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  ADAU145X, fix incorrect hold logic for “Max and Hold”, “Max Abs and Hold”, and “Min and Hold” blocks.
    -  Reverb algorithm for AD1940.
    -  ParametricEQ fixed for first order filter on ADAU145x.
-   -  Fixed transfer function calculation of Subtraction and Signal Invert modules for ADAU145x
-
-
+   -  Fixed transfer function calculation of Subtraction and Signal Invert
+      modules for ADAU145x
 
 Updates SigmaStudio 3.12.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -119,36 +107,25 @@ Updates SigmaStudio 3.12.1 BETA
    -  Holters filter with agnostic GUI.
    -  ADAU1772 is SPI ready.
 
-
-
 Bug Fixes SigmaStudio 3.12.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Mid EQ out of index issue caused by opening a SStudio v3.9 or older version project.
    -  ADAU1450 register controls user interface fixed
 
-
-
 Updates SigmaStudio 3.12.0 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Support for multi-rate signal flow (multiple sampling rates or block-sizes in a single schematic design window).
-   -  Multi Tap Gain algorithm implemented for AD194x, ADAU170x, ADAU176x processors.
-
-
+   -  Multi Tap Gain algorithm implemented for AD194x, ADAU170x, ADAU176x
+      processors.
 
 Bug Fixes SigmaStudio 3.12.0 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -157,12 +134,8 @@ Bug Fixes SigmaStudio 3.12.0 BETA
    -  ADAU145x register window on the routing matrix and serial ports.
    -  Parametric EQ cell, low pass and high pass first order filter selection.
 
-
-
 Updates SigmaStudio 3.11.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -173,12 +146,8 @@ Updates SigmaStudio 3.11.2 BETA
    -  N-channel peak compressor implemented for ADAU145X processor
    -  Multi Tap Gain algorithm implemented for ADAU145x processor
 
-
-
 Bug Fixes SigmaStudio 3.11.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -187,12 +156,8 @@ Bug Fixes SigmaStudio 3.11.2 BETA
    -  ADAU145x Logic “AB in CD out” condition fixed, GUI was not setting proper algorithm mode
    -  Loading “hierarchy board” file caused mouse cursor to disappear
 
-
-
 Updates SigmaStudio 3.11.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -200,14 +165,11 @@ Updates SigmaStudio 3.11.1 BETA
    -  RealTimeDisplay cell now supports ADAU145x data format.
    -  Added ADAU1452 NLMS filter algorithm.
    -  Mono Dynamics Bass Boost and Adaptive Mixer Dual graph algorithms added for ADAU145x.
-   -  Configurable SPI memory erase cycle time to support large flash memories for ADAU145x.
-
-
+   -  Configurable SPI memory erase cycle time to support large flash memories
+      for ADAU145x.
 
 Bug Fixes SigmaStudio 3.11.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -222,50 +184,35 @@ Bug Fixes SigmaStudio 3.11.1 BETA
    -  ADAU145x block processing context save/restore added for peripheral math accelerators.
    -  ADAU145X rounding mode is now disabled (round to –inf) by default.
 
-
-
 Updates SigmaStudio 3.11.0 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Adding Advanced Pith Shifter DEMO algorithm
    -  Adding single precision ParametricEQ.
 
-
-
 Bug Fixes SigmaStudio 3.11.0 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Export files using CRC and clearing Program memory methods were missing.
    -  Fixed the real delay wrong calculated of fractional delay.
 
-
-
 Updates SigmaStudio 3.10.4 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  New multi-tap delay mixer: AD194x, ADAU170x, ADAU176x, ADAU144x
    -  New linear value NxM mixer (all processors).
    -  ADAU145x algorithms: Standard Compressor, DC Blocking Filter, Pink Noise Filter, Lookup Table (8.24), Pulse Count, Timer, Stop Watch, Envelope, State Machine, MUX w/ slew, Voltage Controlled Delay, Multi-tap Delay, Fractional Delay, Max, Min, One Shot, Value Cross, Value Hold, Abs Max, Master Port Delay, Master Port Writer.
-   -  ADAU145X framework changes required for silicon Revision D support (backward compatible)
-
-
+   -  ADAU145X framework changes required for silicon Revision D support
+      (backward compatible)
 
 Bug Fixes SigmaStudio 3.10.4 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -281,26 +228,19 @@ Bug Fixes SigmaStudio 3.10.4 BETA
    -  Fixed ADAU145X NxM mixer algorithm, gain values not downloaded
    -  Fixed ADAU145X GPIO algorithm: interrupt protection required
 
-
-
 Updates SigmaStudio 3.10.3 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Added multiple channels FIR and obsolete the old one.
    -  Added lower range log look up table which ranged from -90dB to +6 dB.
    -  ADAU145X framework updated
-   -  Added no MIPS and no Data usage switch for ADAU1761, ADAU1781 and ADAU144x.
-
-
+   -  Added no MIPS and no Data usage switch for ADAU1761, ADAU1781 and
+      ADAU144x.
 
 Bug Fixes SigmaStudio 3.10.3 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -311,12 +251,8 @@ Bug Fixes SigmaStudio 3.10.3 BETA
    -  NxM mixer cell has been modified so that the export files avoid the address repetition.
    -  ParametricEQ multiple filter bug for ADAU145x core.
 
-
-
 Updates SigmaStudio 3.10.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -324,12 +260,8 @@ Updates SigmaStudio 3.10.2 BETA
    -  Enable / Disable button got bigger for most filters. A new phase shift button was included on the filters.
    -  Updated DSP Configuration Window for ADAU145x
 
-
-
 Bug Fixes SigmaStudio 3.10.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -338,37 +270,26 @@ Bug Fixes SigmaStudio 3.10.2 BETA
    -  Fixed the ADAU1461 I/O problem on digital input 9.
    -  Fixed MidEQ Shelving filter downloading coefficients twice.
 
-
-
 Updates SigmaStudio 3.10.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  New ADAU145X processor
    -  Add Standard Dynamics processors for ADAU1701 and AD1940.
    -  New Real Time Display and Single Level detector with no MIPS and no Data usage for ADAU144x, and low power DSP.
-   -  New Stereo and Mono Peak Dynamics Processors with higher range (-90 dB, +24 dB) with and without external detect for ADAU1701 and AD1940.
-
-
+   -  New Stereo and Mono Peak Dynamics Processors with higher range (-90 dB,
+      +24 dB) with and without external detect for ADAU1701 and AD1940.
 
 Bug Fixes SigmaStudio 3.10.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  VCO with reset algorithm for ADAU1701 and AD1940 is fixed.
 
-
-
 Updates SigmaStudio 3.10.0 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -377,72 +298,51 @@ Updates SigmaStudio 3.10.0 BETA
    -  New parameter read back block with no DATA instructions, for ADAU176x, ADAU1781 and ADAU144x.
    -  New linear sweep blocks (2 externally triggered and 2 on/off switch).
 
-
-
 Bug Fixes SigmaStudio 3.10.0 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  SigmaStudio load time has been reduced.
    -  Pulse generator approximates user’s duty cycle input.
 
-
-
 Updates SigmaStudio 3.9.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Export to Linux files now supports XML format. Implementation of Export to Linux files for ADAU1701.
    -  Single band level detector supports linear display.
-   -  New peak dynamics processors with external detect (Mono/Stereo) that supports fast release for low frequencies.
-
-
+   -  New peak dynamics processors with external detect (Mono/Stereo) that
+      supports fast release for low frequencies.
 
 Bug Fixes SigmaStudio 3.9.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    (None)
 
-
-
 Updates SigmaStudio 3.9.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Single band level detector has now a new graphic adjustable display.
    -  Added All-pass selection to “First Order Filters” type in General (2nd Order) Filter
-   -  Added user selectable phase wrapped/un-wrapped and radians/degrees options in probe window
-
-
+   -  Added user selectable phase wrapped/un-wrapped and radians/degrees options
+      in probe window
 
 Bug Fixes SigmaStudio 3.9.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  FIR Filter table is fixed, with all coefficients set to zero except the first.
-
-
+   -  FIR Filter table is fixed, with all coefficients set to zero except the
+      first.
 
 Updates SigmaStudio 3.9.0 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -454,14 +354,11 @@ Updates SigmaStudio 3.9.0 BETA
    -  Added two externally triggered sweeps for ADAU170x and ADAU144x.
    -  Added square root approximation for ADAU170x and ADAU144x.
    -  Added peak compressor with zero cross for ADAU176x, ADAU1781 and ADAU144x.
-   -  Added elliptical interpolated IIR low pass filter for ADAU176x, ADAU1781 and ADAU144X.
-
-
+   -  Added elliptical interpolated IIR low pass filter for ADAU176x, ADAU1781
+      and ADAU144X.
 
 Bug Fixes SigmaStudio 3.9.0 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -469,78 +366,61 @@ Bug Fixes SigmaStudio 3.9.0 BETA
    -  Decrease font size and add tooltips in the ADAU144X register window to fix readability issues.
    -  Optimized schematic linking reduces compile times for large projects
 
-
-
 Updates SigmaStudio 3.8.2
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Added optimized sine tone generator which used subroutine.
    -  SigmaStudio application was not appearing in the toolbar at launch when opened with a project.
-   -  Sequence Window download operation was inserting read-back after each write, this is now a user option “Verify on Download” that is disabled by default.
-
-
+   -  Sequence Window download operation was inserting read-back after each
+      write, this is now a user option “Verify on Download” that is disabled by
+      default.
 
 Bug Fixes SigmaStudio 3.8.2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Additional .dspproj file can now be opened from Windows Explorer when SigmaStudio is already running.
    -  SigmaStudio application was not appearing in the toolbar at launch when opened with a project.
-   -  Sequence Window download operation was inserting read-back after each write, this is now a user option “Verify on Download“ that is disabled by default.
-
-
+   -  Sequence Window download operation was inserting read-back after each
+      write, this is now a user option “Verify on Download“ that is disabled by
+      default.
 
 Updates SigmaStudio 3.8.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Added Virtual Control Interface, user customizable system tuning graphical interface.
-
-
+   -  Added Virtual Control Interface, user customizable system tuning graphical
+      interface.
 
 Bug Fixes SigmaStudio 3.8.0 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
    -  Fix duplicate parameter naming in “Export System Files” for the Pitch Transpose.
-   -  Certain projects were set as dirty (i.e. modified) immediately on file open.
-
-
+   -  Certain projects were set as dirty (i.e. modified) immediately on file
+      open.
 
 Updates SigmaStudio 3.7.7
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Windows Administrator privileges are required for installation
 
       -  The option for installing as ‘All Users’ or ‘Just Me’ was removed.
-      -  The default location of the Sample Scripts and Sample Schematics has changed
+      -  The default location of the Sample Scripts and Sample Schematics has
+         changed
 
    -  Automatic Add-Ins: at startup SigmaStudio will automatically scan all DLL files located in the SigmaStudio installation directly and enable them for use in SigmaStudio. The existing Tools \| Add-Ins Browser can still be used to add external libraries or disable a library.
    -  The “Reverb” algorithm’s user interface has been visually redesigned.
 
-
-
 Bug Fixes SigmaStudio 3.7.6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -550,12 +430,8 @@ Bug Fixes SigmaStudio 3.7.6
    -  Hierarchy board load behavior changed to better support large hierarchy files. Loading a hierarchy board is now a destruction (non-undoable) operation.
    -  SignalDetection decay time fixed for ADAU1701 and AD1940.
 
-
-
 Enhancements SigmaStudio 3.7.6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -563,23 +439,16 @@ Enhancements SigmaStudio 3.7.6
    -  ADAU1772 included.
    -  Added a Mono peak compressor with external detection.
 
-
-
 Bug Fixes SigmaStudio 3.7.5 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  The continuous read check box’s check status of RealTimeDisplay was disturbed.
-
-
+   -  The continuous read check box’s check status of RealTimeDisplay was
+      disturbed.
 
 Enhancements SigmaStudio 3.7.5 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -588,12 +457,8 @@ Enhancements SigmaStudio 3.7.5 BETA
    -  Gain Envelope algorithms moved from “ADI Algorithms” category to “Volume Controls”.
    -  ADAU1772 DSP is now added into SigmaStudio environment.
 
-
-
 Bug Fixes SigmaStudio 3.7.4 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -604,14 +469,11 @@ Bug Fixes SigmaStudio 3.7.4 BETA
    -  Modified “Pitch Transpose” using UIData serialization.
    -  Copy/Paste of block hierarchy board is fixed. This will prevent boards containing block processing modules getting pasted in the sample processing design tab.
    -  Copy/Paste of sample hierarchy board is fixed. This will prevent all sub-boards getting pasted in the main design tab.
-   -  Scripting interface is fixed. This will remove the restrictions in connecting 2 block processing modules using script.
-
-
+   -  Scripting interface is fixed. This will remove the restrictions in
+      connecting 2 block processing modules using script.
 
 Enhancements SigmaStudio 3.7.4 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -623,69 +485,46 @@ Enhancements SigmaStudio 3.7.4 BETA
    -  Filter stability criteria imposed on "State Variable Filter" controls.
    -  More automation APIs added to SigmaStudioServer.
 
-
-
 Bug Fixes SigmaStudio 3.7.3 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    (None)
 
-
-
 Enhancements SigmaStudio 3.7.3 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Add a mono super bass.
    -  Add a gain output volume control.
 
-
-
 Bug Fixes SigmaStudio 3.7.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  TreeToolbox multiple DSP crash fixed.
 
-
-
 Enhancements SigmaStudio 3.7.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Sound String algorithm added.
    -  Probe – Stimulus data flow efficiency enhanced.
 
-
-
 Bug Fixes SigmaStudio 3.6.3 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Unordered List ItemParametric EQ first order filter coefficients are now generated correctly.
-
-
+   -  Unordered List ItemParametric EQ first order filter coefficients are now
+      generated correctly.
 
 Enhancements SigmaStudio 3.6.3 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -694,48 +533,34 @@ Enhancements SigmaStudio 3.6.3 BETA
    -  SigmaStudio will no longer use elevation to open.
    -  TCP/IP implementation for ADAU1761.
 
-
-
 Bug Fixes SigmaStudio 3.6.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Unordered List ItemFilter table generator format fix. This will prevent the user to input an unsupported format.
-
-
+   -  Unordered List ItemFilter table generator format fix. This will prevent
+      the user to input an unsupported format.
 
 Enhancements SigmaStudio 3.6.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Unordered List ItemPolar plotter is now part of Basic DSP toolbox.
 
-
-
 Bug Fixes SigmaStudio 3.6.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Fixed bug in 8 channel cross mixer caused when growing the cell by more than one.
    -  Export files naming issues on variable declarations were fixed.
    -  Standard Dynamics processors attack and hold value issues fixed.
-   -  ADAU1x61 Signal Path registers had been corrected from a series of GUI components out of their place.
-
-
+   -  ADAU1x61 Signal Path registers had been corrected from a series of GUI
+      components out of their place.
 
 Enhancements SigmaStudio 3.6.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -745,49 +570,35 @@ Enhancements SigmaStudio 3.6.1 BETA
    -  Index Selectable EQ Cell enhanced its GUI: Now it only displays the row of filters that is selected. It updates the window when selecting different rows. The focus on the add, delete, and show buttons is selected as not focused after moving the mouse pointer away from them.
    -  Read/Write and Sequencer window now updates the Register Window.
 
-
-
 SigmaStudio 3.5 Release
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Unordered List ItemIncludes all bug fixes and enhancements from previous SigmaStudio 3.5.x Beta
-
-
+   -  Unordered List ItemIncludes all bug fixes and enhancements from previous
+      SigmaStudio 3.5.x Beta
 
 Bug Fixes SigmaStudio 3.5.7 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Optimized filters transfer function is now fixed.
    -  SigmaServer external interface fixed to support for Windows7
 
-
-
 Enhancements in SigmaStudio 3.5.7 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Two Dimensional Lookup table algorithm has been added.
    -  Support for SSM2529.
    -  SSM2518 included.
-   -  ALT+Drag wiring mode, connects all pins in source black to all pins in destination block
-
-
+   -  ALT+Drag wiring mode, connects all pins in source black to all pins in
+      destination block
 
 Bug Fixes SigmaStudio 3.5.6 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -798,36 +609,25 @@ Bug Fixes SigmaStudio 3.5.6 BETA
    -  When saving as while on Block processing tab the Main form title now updates.
    -  NumericTextBox enable/disable back color is now fixed.
 
-
-
 Enhancements in SigmaStudio 3.5.6 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Index Independent EQ has now a new control GUI. It depicts a clue description tooltip for each button. It has two extra buttons that adds and removes rows.
    -  Lookup Table now is expressed on both linear and dB units.
 
-
-
 Bug Fixes SigmaStudio 3.5.5 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Fixed transfer function for subtraction library. The TF has it’s polarity inverted, The code was corrected.
-   -  ADAU1x61 register window added “User” preset on the ALC Presets, fixing a bug where the Left/Right input volumes were disabled.
-
-
+   -  ADAU1x61 register window added “User” preset on the ALC Presets, fixing a
+      bug where the Left/Right input volumes were disabled.
 
 Enhancements in SigmaStudio 3.5.5 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -835,12 +635,8 @@ Enhancements in SigmaStudio 3.5.5 BETA
    -  Added quadrature output VCO.
    -  Added adaptive beam forming algorithm.
 
-
-
 Bug Fixes SigmaStudio 3.5.4 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -848,12 +644,8 @@ Bug Fixes SigmaStudio 3.5.4 BETA
    -  For the AD193x family, on PLL and Clock Control Register 1 the ADC Clock definition was swapped. Now it is reverted and working properly.
    -  ADAU1x81 register 0x4010 bitfield [2] enable -> 0 and disable -> 1.
 
-
-
 Enhancements in SigmaStudio 3.5.4 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -863,80 +655,55 @@ Enhancements in SigmaStudio 3.5.4 BETA
    -  DC Block filter is now double precision.
    -  Compiler Output information for multiple ICs.
 
-
-
 Bug Fixes SigmaStudio 3.5.3 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Unordered List ItemSequencer Output Export Files fixed and support for multiple IC sequences.
-
-
+   -  Unordered List ItemSequencer Output Export Files fixed and support for
+      multiple IC sequences.
 
 Enhancements in SigmaStudio 3.5.3 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
    (None)
-
-
 
 Bug Fixes SigmaStudio 3.5.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Unordered List ItemFix on the PARAMS.h file from the “Export Output Files” tool.
-
-
+   -  Unordered List ItemFix on the PARAMS.h file from the “Export Output Files”
+      tool.
 
 Enhancements in SigmaStudio 3.5.2 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
    -  No need to re-compile “Frozen” schematics. All the download information is stored in the schematic.
-   -  RMS Dynamics Processors: Capability to switch between Units from dB/s to milliseconds and vice versa.
-
-
+   -  RMS Dynamics Processors: Capability to switch between Units from dB/s to
+      milliseconds and vice versa.
 
 Bug Fixes SigmaStudio 3.5.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    (None)
 
-
-
 Enhancements in SigmaStudio 3.5.1 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Micro Controller output files will no longer show “NumBytes_IC_1.dat” or “TxBuffer_IC_1.dat” to reduce redundant output information.
    -  All Filters have a new upper frequency limit of 96 kHz.
 
-
-
 Bug Fixes SigmaStudio 3.5.0 BETA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -945,14 +712,11 @@ Bug Fixes SigmaStudio 3.5.0 BETA
    -  Adding new modules:
 
       -  Optimized Single Precision Filter 1-Channel (ADAU144x, ADAU176x, ADAU178x)
-      -  Optimized Double Precision Filter 1-Channel (ADAU144x, ADAU176x, ADAU178x)
-
-
+      -  Optimized Double Precision Filter 1-Channel (ADAU144x, ADAU176x,
+         ADAU178x)
 
 SigmaStudio 3.4
 ~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -979,14 +743,11 @@ SigmaStudio 3.4
    -  Added the Real Time Display algorithm, which is a graphical version of the Readback algorithm.
    -  Added Signal Detect algorithm and cell
    -  Fixed bug on non programmable IC’s (showing a communication error)
-   -  HW Configuration and Schematic Tabs are displayed as tabs and not as buttons.
-
-
+   -  HW Configuration and Schematic Tabs are displayed as tabs and not as
+      buttons.
 
 Enhancements in SigmaStudio 3.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -996,7 +757,9 @@ Enhancements in SigmaStudio 3.3.0
       -  Default Installation file path location for x64 architecture is Program Files (x64).
       -  Default SigmaStudio projects including the “Sample Schematics” path location is \\<users>\\Documents\\Analog Devices\\SigmaStudio <version>\\Projects.
       -  Addins.xml default path is AppData\\Roaming\\Analog Devices\\SigmaStudio <version>
-      -  During installation process, the user will be prompted with an additional USBi installation. This is to install the right USBi drivers into the current machine and it only needs to be run once.
+      -  During installation process, the user will be prompted with an
+         additional USBi installation. This is to install the right USBi drivers
+         into the current machine and it only needs to be run once.
 
    -  PLL wait command during “download-compile”.
    -  Export uC files with the wait command. This includes Sequencer support on wait command.
@@ -1009,12 +772,8 @@ Enhancements in SigmaStudio 3.3.0
    -  Addition of SuperBass algorithm to standard library
    -  Increase of Index Lookup Table size to 500 from 100
 
-
-
 Enhancements in SigmaStudio 3.2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1027,7 +786,8 @@ Enhancements in SigmaStudio 3.2.0
       -  Voice Activity Detector (VAD) Standard (ADAU144x, ADAU176x, ADAU178x)
       -  Voice Activity Detector (VAD) With Acceleration (ADAU144x, ADAU176x, ADAU178x)
       -  Endless Loop Chime (AD1940, ADAU170x, ADAU144x, ADAU176x, ADAU178x)
-      -  Peak Envelope Ext. Decay (AD1940, ADAU170x, ADAU144x, ADAU176x, ADAU178x)
+      -  Peak Envelope Ext. Decay (AD1940, ADAU170x, ADAU144x, ADAU176x,
+         ADAU178x)
 
    -  SigmaStudio A/B comparison download time enhanced.
    -  Implementation of CRC and Watchdog for ADAU144x.
@@ -1089,14 +849,11 @@ Enhancements in SigmaStudio 3.2.0
    -  Fixed internal hierarchy cell renaming bugs
    -  Capture window and exported uC files display the algorithm hierarchical structure on parameters
    -  Read back cell now has a variable timer for continuous reads.
-   -  Added base address, offset, and algorithm index to be used for report on selected ICs.
-
-
+   -  Added base address, offset, and algorithm index to be used for report on
+      selected ICs.
 
 SigmaStudio 3.2.0 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1126,26 +883,20 @@ SigmaStudio 3.2.0 Major Bug Fixes
    -  Hierarchy cell renaming fixes.
    -  Filter Q maximum value bug fix.
 
-
-
 Enhancements in SigmaStudio 3.1.20
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Added Self-boot EEPROM \*.hex file export to Sequence Window for custom self-boot configurations.
    -  Re-introduce GPIO Conditioning “Up/Down control, index output” algorithm, useful when indexing multiple lookup tables from the same GPIO input.
    -  Added a new Context Menu to the read back module that would allow continuous read back with a .5 seconds timer.
-   -  Fixed a bug found on the control that controls filter’s Q were it allowed values higher than 15 to be written were the application was throwing an exception.
-
-
+   -  Fixed a bug found on the control that controls filter’s Q were it allowed
+      values higher than 15 to be written were the application was throwing an
+      exception.
 
 SigmaStudio 3.1.20 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1154,12 +905,8 @@ SigmaStudio 3.1.20 Major Bug Fixes
    -  Include “DSP Readback” algorithm’s parameter definitions in exported system header files.
    -  Add ADAV46xx I2C interfaces for EVAL-ADUSB2 (USBi)
 
-
-
 Enhancements in SigmaStudio 3.1.9
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1169,48 +916,40 @@ Enhancements in SigmaStudio 3.1.9
       -  Standard RMS (ADAU144x, ADAU176x, ADAU178x)
       -  Value Cross Detection (AD1940, ADAU170x, ADAU144x, ADAU176x, ADAU178x)
       -  Pulse Counter (AD1940, ADAU170x, ADAU144x, ADAU176x, ADAU178x)
-      -  Running Average Envelope (AD1940, ADAU170x, ADAU144x, ADAU176x, ADAU178x)
+      -  Running Average Envelope (AD1940, ADAU170x, ADAU144x, ADAU176x,
+         ADAU178x)
 
    -  Sequence Window: The ability to export independent files for each sequence mode for uC usage.
    -  Filter Bypass added to MidEQ Filter
 
-
-
 SigmaStudio 3.1.9 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  The Envelope Folder in Dynamics Processing was organized in the TreeToolBox to reflect proper naming match to algorithms. [Previously named “RMS” envelope is actually the square output of the RMS envelope – See the help file for more information]
    -  Naming fixed for parameters in the Multiple Control mixer. This problem only exhibited itself when multiple instances and growths of the algorithm were present causing a naming conflict violation.
-   -  Chime GUI. An error occurred while the user put together two drag points. Each drag point will be separated to avoid this common error.
-
-
+   -  Chime GUI. An error occurred while the user put together two drag points.
+      Each drag point will be separated to avoid this common error.
 
 Enhancements in SigmaStudio 3.1.8
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Added the Index Selectable Independent Multiple Bi-quad Filter algorithm for GEN2
+   -  Added the Index Selectable Independent Multiple Bi-quad Filter algorithm
+      for GEN2
 
       -  1 Channel Single Precision
       -  1 Channel Double Precision
       -  2 Channel Single Precision
       -  2 Channel Double Precision
 
-   -  Added Beta version of Phase Response for Transfer Function Window using Probe/Stimuli
-
-
+   -  Added Beta version of Phase Response for Transfer Function Window using
+      Probe/Stimuli
 
 SigmaStudio 3.1.8 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1219,16 +958,13 @@ SigmaStudio 3.1.8 Major Bug Fixes
    -  System Export Files bugs fixed, undefined registers and register name conflicts
    -  SigmaStudio Script, “ObjectConnect()” function errors fixed.
 
-
-
 Enhancements in SigmaStudio 3.1.7
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Added a filter bypass option on the control for the following filter cells:
+   -  Added a filter bypass option on the control for the following filter
+      cells:
 
       -  General (2nd Order)
       -  Text-In Filter
@@ -1237,28 +973,22 @@ Enhancements in SigmaStudio 3.1.7
       -  Index Selectable Independent Multiple Band
       -  General 2nd Order Index Selectable
 
-   -  Added the Index Selectable Independent Multiple Biquad Filter algorithm for GEN
+   -  Added the Index Selectable Independent Multiple Biquad Filter algorithm
+      for GEN
 
-   Note: This was incorrectly implemented in 3.1.7. This feature is available in version 3.1.8
-
-
+   Note: This was incorrectly implemented in 3.1.7. This feature is available in
+   version 3.1.8
 
 SigmaStudio 3.1.7 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Fixed FIR Table Editor window from crashing upon initial open/close without modifying points
    -  Fixed opacity Bug on Parametric EQ algorithm upon download
 
-
-
 Enhancements in SigmaStudio 3.1.6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1268,24 +998,16 @@ Enhancements in SigmaStudio 3.1.6
    -  Standard RMS Dynamics Processor: Low Range (-90 - 6 dB); real time signal representation on the dynamic graph; Compressor and Expander Ratio slider; Attack, Hold, and Release are now displayed in milliseconds; and it is available only for Gen 3 DSPs.
    -  Chime- Envelope with and without infinite loop.
 
-
-
 SigmaStudio 3.1.6 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Export System Files, fixed errors in (\*.h) header file register/param definitions.
    -  Non-Modulo fix.
 
-
-
 SigmaStudio 3.1.5 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1293,12 +1015,8 @@ SigmaStudio 3.1.5 Major Bug Fixes
    -  ADAU144x non-modulo size no longer fixed at 256 data values
    -  Gain (RC slew) and 2Channel – Double Precision, Optimized algorithms updated to properly support all GEN3 parts
 
-
-
 Enhancements in SigmaStudio 3.1.4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1308,48 +1026,39 @@ Enhancements in SigmaStudio 3.1.4
       -  Offline Microphone Match
       -  Combo Peak/RMS Compressor
 
-   -  New Settings Toolbar feature added to support multiple coefficient parameter settings for a schematic project.
-
-
+   -  New Settings Toolbar feature added to support multiple coefficient
+      parameter settings for a schematic project.
 
 SigmaStudio 3.1.4 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
    -  USB Communication channel for ADAU170x fixed to allow proper communication for certain parameters.
-   -  The Link/Compile/Download sequence was modified to ensure the proper register sequence and sample rate is set for GEN3 ICs.
-
-
+   -  The Link/Compile/Download sequence was modified to ensure the proper
+      register sequence and sample rate is set for GEN3 ICs.
 
 Enhancements in SigmaStudio 3.1.3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  The entire library of filters, now support a lower limit center or cutoff frequency of 1Hz on all filter controls. Previous versions of SigmaStudio limited the lowest frequency value that could be entered, but now all filter controls allow values down to 1Hz.
-
-
+   -  The entire library of filters, now support a lower limit center or cutoff
+      frequency of 1Hz on all filter controls. Previous versions of SigmaStudio
+      limited the lowest frequency value that could be entered, but now all
+      filter controls allow values down to 1Hz.
 
 SigmaStudio 3.1.3 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  The SW Clickless Mute algorithm was not working properly for the ADAU170x IC. A new method for downloading the proper mute coefficient was implemented to fix this issue.
-
-
+   -  The SW Clickless Mute algorithm was not working properly for the ADAU170x
+      IC. A new method for downloading the proper mute coefficient was
+      implemented to fix this issue.
 
 Enhancements in SigmaStudio 3.1.2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1359,60 +1068,52 @@ Enhancements in SigmaStudio 3.1.2
       -  Square Root (Standard)
       -  Square Root (Ultra Precision)
 
-
-
 SigmaStudio 3.1.2 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  The beginning code for GEN3 cores was updated to reflect a new order of initialization for use with the DAGS. Any new ICs used in projects will have the updated code. Existing schematic projects will have the old default beginning code saved. In order to update to the newest beginning code, drop a new IC in the hardware window of the project schematic and copy the existing algorithms to the new IC.
-   -  The Parameter Index Lookup Filters have renamed coefficients to avoid a potential bug. This only exhibited itself with more than 10 instantiations of the algorithms each with 10 or more curves. The algorithms affected were:
+   -  The Parameter Index Lookup Filters have renamed coefficients to avoid a
+      potential bug. This only exhibited itself with more than 10 instantiations
+      of the algorithms each with 10 or more curves. The algorithms affected
+      were:
 
       -  General (2nd Order/Lookup)
       -  General 2nd Order Index Selectable – Double and Single Precision
       -  General 2nd Order w var Param/Lookup/Slew
 
    -  The Parameter Index Lookup Filter Cell had legacy code that downloaded incorrect filter values to the DSP. This mechanism was updated to ensure proper filter coefficient download.
-   -  Multiple Link/Compile/Download compilations for GEN3 projects using algorithm code with DAG updates cause intermittent behavior with coefficient download. A new register sequence is implemented for the Link/Compile/Download operation to ensure proper coefficient operation.
-
-
+   -  Multiple Link/Compile/Download compilations for GEN3 projects using
+      algorithm code with DAG updates cause intermittent behavior with
+      coefficient download. A new register sequence is implemented for the
+      Link/Compile/Download operation to ensure proper coefficient operation.
 
 Enhancements in SigmaStudio 3.1.1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Added new algorithms to the Index Selectable Independent Multiple Band Filter
+   -  Added new algorithms to the Index Selectable Independent Multiple Band
+      Filter
 
       -  2 Channel Single Precision
       -  1 Channel Double Precision
       -  1 Channel Single Precision
 
-
-
 SigmaStudio 3.1.1 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  The following GEN3 SW Slew Volume algorithms were fixed to support double precision volume handling for low signal levels.
+   -  The following GEN3 SW Slew Volume algorithms were fixed to support double
+      precision volume handling for low signal levels.
 
       -  Gain (RC Slew)
       -  Growable Single Vol Ctrl
 
-
-
 Enhancements in SigmaStudio 3.1.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1452,12 +1153,8 @@ Enhancements in SigmaStudio 3.1.0
       -  Data Controlled Clip
       -  Standard Cubic Soft Clip
 
-
-
 SigmaStudio 3.1.0 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1475,12 +1172,8 @@ SigmaStudio 3.1.0 Major Bug Fixes
    -  Fixed the 1702 Maximum Memory of Parameter RAM to 1024
    -  Fixed Index Selectable Filter for Chebyshev Filters
 
-
-
 Enhancements in SigmaStudio 3.0.13
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1494,39 +1187,29 @@ Enhancements in SigmaStudio 3.0.13
    -  Modified Non Modulo Register assignation.
    -  Increased maximum number of tabs available for FIR filters.
 
-
-
 SigmaStudio 3.0.13 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Microsoft .NET Framework 3.0/3.5 causing SigmaStudio crash at startup
    -  SigmaStudio Sampling Rate, 11.025kHz instead of 11kHz, 22.05kHz instead of 22kHz
    -  Feedback algorithm fixed for ADAU144x
-   -  ADAU1701/1401 register controls updated for compatibility with revised silicon
-
-
+   -  ADAU1701/1401 register controls updated for compatibility with revised
+      silicon
 
 Enhancements in SigmaStudio 3.0.12
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Improved Index Selectable Filter: Maximum filter count increased to 100, optimized user interface response. Added First Order index selectable filter algorithm.
    -  Algorithm optimizations for “General 1st/2nd Order w var Param/Lookup/Slew” and “Parameter Tone with Index Lookup Tables” blocks.
-   -  Improved Alias block, alias blocks share a common name for easier identification.
-
-
+   -  Improved Alias block, alias blocks share a common name for easier
+      identification.
 
 SigmaStudio 3.0.12 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1534,163 +1217,124 @@ SigmaStudio 3.0.12 Major Bug Fixes
    -  1st order High-Pass filter algorithm update, now has constant gain across all frequencies.
    -  “On/Off Switch” source set to off on SigmaStudio download.
 
-
-
 Enhancements in SigmaStudio 3.0.11
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Add support for ADAV46xx products, Audio Processors for Advanced TV.
 
-
-
 SigmaStudio 3.0.11 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Prevent use of comma ‘,’ or space ‘ ‘ for numerical decimal place in non-English versions of Windows, only the period character ‘.’ is supported.
-
-
+   -  Prevent use of comma ‘,’ or space ‘ ‘ for numerical decimal place in
+      non-English versions of Windows, only the period character ‘.’ is
+      supported.
 
 Enhancements in SigmaStudio 3.0.10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
    -  Capture window display mode of Address in hexadecimal format and Data in binary format.
-   -  User Comment font can be modified by right clicking the User Comment block.
-
-
+   -  User Comment font can be modified by right clicking the User Comment
+      block.
 
 SigmaStudio 3.0.10 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Parametric EQ block did not support multi-channel input, the first input was processed and copied to all outputs. Any additional inputs were ignored.
    -  Signal Merger and Signal Add blocks had the same algorithm name which introduced errors when using both blocks in the same schematic design. The Signal Merger’s algorithm has been renamed. This change should not affect legacy designs.
    -  Alias Block caused errors when using Copy and Paste. Alias blocks could not be renamed.
-   -  General (2nd Order) “Tone Control” filter equations were not included in the Help file.
-
-
+   -  General (2nd Order) “Tone Control” filter equations were not included in
+      the Help file.
 
 Enhancements in SigmaStudio 3.0.9
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
    -  It is no longer required to connect unused block output pin to the “Schematic Terminal” block. Linking will succeed with unconnected output pins.
-   -  USBSerialConverter (EVAL-ADUSB1) supports SPI communication with all SigmaDSP ICs; previously SPI was only available for AD1940.
-
-
+   -  USBSerialConverter (EVAL-ADUSB1) supports SPI communication with all
+      SigmaDSP ICs; previously SPI was only available for AD1940.
 
 SigmaStudio 3.0.8 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Fix ADAU1701/1702 safeload write for EVAL-ADUSB2 (USBi) interface.
 
-
-
 Enhancements in SigmaStudio 3.0.7
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  E2PROM download and read/write support added for EVAL-ADUSB2 (USBi) interface.
-
-
+   -  E2PROM download and read/write support added for EVAL-ADUSB2 (USBi)
+      interface.
 
 SigmaStudio 3.0.7 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
    -  “DSP Readback” block’s value can be incorrect when reading from a GPIO input.
-   -  ADAU1702 compiler has incorrect size of 512 for Parameter RAM, should be 1024.
-
-
+   -  ADAU1702 compiler has incorrect size of 512 for Parameter RAM, should be
+      1024.
 
 SigmaStudio 3.0.6 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Fixed, unexpected error dialogs when compiling projects. Caused by Enhanced schematic status indicator introduced in 3.0.4.
-
-
+   -  Fixed, unexpected error dialogs when compiling projects. Caused by
+      Enhanced schematic status indicator introduced in 3.0.4.
 
 SigmaStudio 3.0.5 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Fixed, mouse cursor could disappear in schematic window after compilation.
 
-
-
 Enhancements in SigmaStudio 3.0.4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Improved low signal level performance for RMS Compressor blocks.
-   -  Enhanced schematic status indicator, now displays USB communication status. Refer to the “Link/Compile/Download” topic in the SigmaStudio Help for more information.
-
-
+   -  Enhanced schematic status indicator, now displays USB communication
+      status. Refer to the “Link/Compile/Download” topic in the SigmaStudio Help
+      for more information.
 
 SigmaStudio 3.0.4 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
-   -  Fixed compressor Hold and Decay time-constant controls. In previous versions the TC calculation was incorrect, limiting the time-constants to a smaller range than is supported by the compressor algorithms. Depending on Hold and Decay settings, this fix may affect the system response in legacy designs utilizing RMS compressor blocks.
-
-
+   -  Fixed compressor Hold and Decay time-constant controls. In previous
+      versions the TC calculation was incorrect, limiting the time-constants to
+      a smaller range than is supported by the compressor algorithms. Depending
+      on Hold and Decay settings, this fix may affect the system response in
+      legacy designs utilizing RMS compressor blocks.
 
 Enhancements in SigmaStudio 3.0.3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click for details
 
    -  Parametric EQ: graphical adjustment of filter response, create complex responses using up to 15 cascaded 2nd order filters, available in the Toolbox’s “Filters” category.
-   -  Crossover: graphical design of 2-way and 3-way crossover filters, selectable crossover types (2nd-8th order Linkwitz-Riley, 2nd-4th order Butterworth, and 2nd-4th order Bessel) , available in the Toolbox’s “Filters” category.
-
-
+   -  Crossover: graphical design of 2-way and 3-way crossover filters,
+      selectable crossover types (2nd-8th order Linkwitz-Riley, 2nd-4th order
+      Butterworth, and 2nd-4th order Bessel) , available in the Toolbox’s
+      “Filters” category.
 
 SigmaStudio 3.0.3 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1699,24 +1343,18 @@ SigmaStudio 3.0.3 Major Bug Fixes
    -  Links (Wires) between hierarchy boards are not created during paste operation or board file loading.
    -  "Delete" command missing in schematic right click menu.
 
-
-
 SigmaStudio 3.0.2 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
    -  Maximum delay value set to 1 sample on during cut/paste or undo/redo operation.
-   -  Default block name and block “Settings” set during copy/paste are not equivalent, this causes settings malfunction and name conflicts until the project is reloaded.
-
-
+   -  Default block name and block “Settings” set during copy/paste are not
+      equivalent, this causes settings malfunction and name conflicts until the
+      project is reloaded.
 
 SigmaStudio 3.0.1 Major Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1724,12 +1362,8 @@ SigmaStudio 3.0.1 Major Bug Fixes
    -  Edit Control drawing error when scrolling or displaying overlapped dialogs.
    -  Probe Window "Always on top" behavior is unexpected.
 
-
-
 Enhancements in SigmaStudio 3.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click for details
 
@@ -1745,9 +1379,8 @@ Enhancements in SigmaStudio 3.0.0
    -  Undo/Redo support, All design modification can be undone and re-done.
    -  Cut/Copy/Paste support, schematic design blocks (blocks) can be copied and pasted, within a design and between project files.
    -  Schematic Printing, schematic designs can be printed.
-   -  Enhanced capture window, communication capture window can be docked and customized.
-
-
+   -  Enhanced capture window, communication capture window can be docked and
+      customized.
 
 Bug Reports
 -----------
@@ -1764,6 +1397,8 @@ If you have an idea or request for additional features or enhancements of SigmaS
 Legal Notices
 -------------
 
-SigmaStudio is a registered trademark of Analog Devices, Inc. All other trademarks are the property of their respective owners.
+SigmaStudio is a registered trademark of Analog Devices, Inc. All other
+trademarks are the property of their respective owners.
 
-Analog Devices, Inc, One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. © 2015 Analog Devices, Inc. All rights reserved.
+Analog Devices, Inc, One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106,
+U.S.A. © 2015 Analog Devices, Inc. All rights reserved.

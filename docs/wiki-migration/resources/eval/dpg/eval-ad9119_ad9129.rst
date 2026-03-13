@@ -6,7 +6,9 @@ Preface
 
 This user guide describes both the hardware and software setup needed to acquire data capture from :adi:`AD9119-EBZ <eval-ad9119>` / :adi:`AD9129-EBZ <eval-ad9129>` evaluation board to characterize :adi:`AD9119` / :adi:`AD9129` 11-/14-Bit, 5.7 GSPS, RF Digital-to-Analog Converter.
 
-This guide shows how AD9119-EBZ and AD9129-EBZ works with ADS7-V2 controller board developed by Analog Devices. Link to the previous user guide document is provided for customers who still have the DPG2 controller board.
+This guide shows how AD9119-EBZ and AD9129-EBZ works with ADS7-V2 controller
+board developed by Analog Devices. Link to the previous user guide document is
+provided for customers who still have the DPG2 controller board.
 
 Typical Setup
 =============
@@ -15,11 +17,9 @@ Typical Setup
 
    \ |image1| *Figure 1. EVAL-AD9119 / EVAL-AD9129 Evaluation Setup*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files:
 ==============
@@ -42,7 +42,6 @@ Software Needed:
 
    \ Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
 
-
 Hardware Needed:
 ================
 
@@ -62,7 +61,10 @@ Hardware Needed:
 Quick Start Guide
 =================
 
--  Attach the evaluation board to the FMC connector of ADS7-V2 using the AD-DAC-FMC-ADP adapter board. Connect continuous wave generator for clock input to J3, and the DAC output from J1 to a signal/spectrum analyzer. Refer to Figures 1.
+-  Attach the evaluation board to the FMC connector of ADS7-V2 using the
+   AD-DAC-FMC-ADP adapter board. Connect continuous wave generator for clock
+   input to J3, and the DAC output from J1 to a signal/spectrum analyzer. Refer
+   to Figures 1.
 
    -  Connect ADS-V2 to PC via USB and to a 12V 60W AC/DC power supply. Switch the board ON using S1 beside the connector for 12V supply.
    -  Connect evaluation board to PC via USB and apply power to evaluation board. The board should draw ~330mA at the 5V supply and ~12mA at the -5V supply when there is no sine input to J3 CLOCK and the board should draw ~620mA at (5V) and ~60mA at (-5V) when sine wave input is applied to J3 CLOCK and DPG Lite is set up.
@@ -76,15 +78,15 @@ Quick Start Guide
 
    \ |image2|\ *Figure 2. ACE Initial Board Configuration Wizard*\
 
-
 -  Double click the AD9119/AD9129 Box to open chip view.
 
-   -  The PLL and DLL should both be locked and the delay cells should be checked. If not, click Read All in the upper left corner of the page. And configure the chip view as per Figure 3.
+   -  The PLL and DLL should both be locked and the delay cells should be
+      checked. If not, click Read All in the upper left corner of the page. And
+      configure the chip view as per Figure 3.
 
 .. container:: centeralign
 
    \ |image3|\ *Figure 3. ACE Initial Board Configuration Wizard*\
-
 
 -  Start DPG Lite or DPG Downloader.
 
@@ -100,25 +102,26 @@ Quick Start Guide
 
    \ |image4|\ *Figure 4. DPG Lite session*\
 
-
--  Press the download arrow and then the play button. The FFT plot similar to Figure 5 should appear in the signal/spectrum analyzer.
+-  Press the download arrow and then the play button. The FFT plot similar to
+   Figure 5 should appear in the signal/spectrum analyzer.
 
 .. container:: centeralign
 
    \ |image5|\ *Figure 5. EVAL-AD9119 / AD9129 FFT for Data Rate = 2.5 GHz, Fout = 411 MHz*\
 
-
 Troubleshooting
 ===============
 
-This section lists items to check and practices to use when debugging any unexpected performance of a board. If unexpected results occur:
+This section lists items to check and practices to use when debugging any
+unexpected performance of a board. If unexpected results occur:
 
 -  Check if the Voltage supply test points of the evaluation board have the correct value.
 -  Check if all (3) blue LEDs on the AD-DAC-FMC-ADP board is lit up. Reconnect the board to the FMC connector of ADS7-V2 if not lit up.
 -  Check if the ADS7-V2 is being supplied properly by 12Vdc adaptor. Some LEDs on the ADS7-V2 should lit up.
 -  Power cycle both the ADS7-V2 and the AD9119 / AD9129 evaluation board.
 -  Check on the Spectrum Analyzer if the DAC clock inputs are properly driven. For 2.5GHz clock, the spectrum analyzer should detect a weak signal at 2.5GHz. If not detected, check properly the clock source and connections.
--  Disconnect and reconnect the ADS7-V2 and AD9119 / AD9129 evaluation board. Reopen DPG Lite software.
+-  Disconnect and reconnect the ADS7-V2 and AD9119 / AD9129 evaluation board.
+   Reopen DPG Lite software.
 
 AD91x9-MIX-EBZ and AD91x9-CBLTX-EBZ (Obsolete) Documentation
 ============================================================
@@ -128,10 +131,10 @@ AD91x9-MIX-EBZ and AD91x9-CBLTX-EBZ (Obsolete) Documentation
 
 AD9129-MIX-EBZ
 
-
 | AD9119-CBLTX-EBZ (Obsolete)
 
-AD9129-CBLTX-EBZ (Obsolete)                                                           |
+AD9129-CBLTX-EBZ (Obsolete)
+|
 
 +===================+===============================================================================================================================================================+===============================================================================================================================+
 | Quick Start Guide | :doc:`ad9119-mix-ebz </wiki-migration/resources/eval/dpg/ad9119-mix-ebz>`\ :doc:`ad9129-mix-ebz </wiki-migration/resources/eval/dpg/ad9129-mix-ebz>`          | `ad9119/ad9129-cbltx-ebz <https://wiki.analog.com/_media/resources/eval/dpg/user-guide/ad9129-cbltx-ebz.pdf>`_                |
@@ -154,12 +157,12 @@ AD9129-CBLTX-EBZ (Obsolete)                                                     
 Download the `AD9119 / AD9129 Update <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/hsdac_update/hsdacupdate_ad9129_1.0.5031.26742.exe>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_typicalsetup.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_runexamplestartuproutine_evbview.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_config_chipview.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_dpglite.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_sfdr.png
-   :width: 600px
+   :width: 600

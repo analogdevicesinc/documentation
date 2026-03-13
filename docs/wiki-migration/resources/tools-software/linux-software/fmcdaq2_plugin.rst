@@ -11,7 +11,7 @@ The DAQ2/3 view is divided in three sections:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/daq2_3_plugin.png
    :align: right
-   :width: 400px
+   :width: 400
 
 ADC
 ===
@@ -29,7 +29,8 @@ DDS
    -  Independent I/Q Control
    -  DAC Buffer Output
 
-      -  Any data using the buffer must be of even length with the standard DMA drivers and HDL.
+      -  Any data using the buffer must be of even length with the standard DMA
+         drivers and HDL.
 
    -  Disabled
 

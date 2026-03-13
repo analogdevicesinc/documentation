@@ -26,15 +26,27 @@ Description
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/adxl346_functional_block_diagram.png
    :alt: ADXL346_FUNCTIONAL_BLOCK_DIAGRAM.png
-   :width: 550px
+   :width: 550
 
-The ADXL345 is a small, thin, ultra low power, 3-axis accelerometer with high resolution (13-bit) measurement up to ±16 g. Digital output data is formatted as 16-bit twos complement and is accessible through either a SPI (3- or 4- wire) or I2C digital interface.
+The ADXL345 is a small, thin, ultra low power, 3-axis accelerometer with high
+resolution (13-bit) measurement up to ±16 g. Digital output data is formatted as
+16-bit twos complement and is accessible through either a SPI (3- or 4- wire) or
+I2C digital interface.
 
-The ADXL345 is well suited for mobile device applications. It measures the static acceleration of gravity in tilt-sensing applications, as well as dynamic acceleration resulting from motion or shock. Its high resolution (4mg/LSB) enables resolution of inclination changes of as little as 0.25°.
+The ADXL345 is well suited for mobile device applications. It measures the
+static acceleration of gravity in tilt-sensing applications, as well as dynamic
+acceleration resulting from motion or shock. Its high resolution (4mg/LSB)
+enables resolution of inclination changes of as little as 0.25°.
 
-Several special sensing functions are provided. Activity and inactivity sensing detect the presence or lack of motion and if the acceleration on any axis exceeds a user-set level. Tap sensing detects single and double taps. Free-Fall sensing detects if the device is falling. These functions can be mapped to interrupt output pins. An integrated 32 level FIFO can be used to store data to minimize host processor intervention.
+Several special sensing functions are provided. Activity and inactivity sensing
+detect the presence or lack of motion and if the acceleration on any axis
+exceeds a user-set level. Tap sensing detects single and double taps. Free-Fall
+sensing detects if the device is falling. These functions can be mapped to
+interrupt output pins. An integrated 32 level FIFO can be used to store data to
+minimize host processor intervention.
 
-Low power modes enable intelligent motion-based power management with threshold sensing and active acceleration measurement at extremely low power dissipation.
+Low power modes enable intelligent motion-based power management with threshold
+sensing and active acceleration measurement at extremely low power dissipation.
 
 :adi:`ADXL345 <en/mems-and-sensors/imems-accelerometers/adxl345/products/product.html>` - Small, Ultra Low Power, 3-Axis, ±2/4/8/16g Digital Accelerometer :adi:`ADXL346 <en/mems-and-sensors/imems-accelerometers/adxl346/products/product.html>` - Ultra Low Power, Three-Axis, +-2/4/8/16g Digital Accelerometer :adi:`ADXL375 <en/mems-and-sensors/imems-accelerometers/adxl375/products/product.html>` - Low Power, Three-Axis, +-200g Digital Accelerometer
 
@@ -96,7 +108,8 @@ ADXL34x Linux Driver Features
 -  User selectable Sample Rate / Bandwidth trough sysfs hooks
 -  User selectable resolution
 -  Support for 32 level output data FIFO that minimizes host processor load
--  Option to report acceleration as Linux Input Absolute or Relative events. (EV_ABS or EV_REL)
+-  Option to report acceleration as Linux Input Absolute or Relative events.
+   (EV_ABS or EV_REL)
 
 -  Motion detection functions
 
@@ -107,7 +120,8 @@ ADXL34x Linux Driver Features
    -  Activity/Inactivity monitoring
 
       -  User selectable Linux Input Event Code for Activity/Inactivity reporting
-      -  Option to minimize host processor load and save additional power by automatically switch to sleep mode during periods of inactivity.
+      -  Option to minimize host processor load and save additional power by
+         automatically switch to sleep mode during periods of inactivity.
 
 ::
 
@@ -153,7 +167,9 @@ Files
 ADXL345/6 driver porting
 ------------------------
 
-Starting with linux-2.6.36 the ADXL34x driver is mainlined. If you are using an pre linux-2.6.36 kernel get the source from our repositories and add them to your kernel tree.
+Starting with linux-2.6.36 the ADXL34x driver is mainlined. If you are using an
+pre linux-2.6.36 kernel get the source from our repositories and add them to
+your kernel tree.
 
 If you are using a kernel version **without the threaded irq capabilities (< 2.6.30) get there driver from here:**
 
@@ -229,12 +245,20 @@ If you are using a kernel version **without the threaded irq capabilities (< 2.6
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
-
-Digital Accelerometer characteristics are highly application specific and may vary between boards and models. The platform_data for the device's "struct device" holds this information.
+Digital Accelerometer characteristics are highly application specific and may
+vary between boards and models. The platform_data for the device's "struct
+device" holds this information.
 
 .. code:: c
 
@@ -598,12 +622,19 @@ Digital Accelerometer characteristics are highly application specific and may va
 Example Platform / Board file (SPI Interface Option)
 ----------------------------------------------------
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
-
 
 These snippets are all from the same file. ``arch/blackfin/mach-bf548/boards/ezkit.c``:
 
@@ -717,14 +748,23 @@ Required devicetree properties:
 Example Platform / Board file (I2C Interface Option)
 ----------------------------------------------------
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 These snippets are all from the same file. ``arch/blackfin/mach-bf548/boards/ezkit.c``:
 
@@ -783,12 +823,12 @@ Required devicetree properties:
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADXL34x Driver depends on CONFIG_SPI or CONFIG_I2C
-
 
 ::
 
@@ -875,7 +915,8 @@ This means that the SPI communication and initilaization with the ADXL34x failed
 Checking for proper installation
 --------------------------------
 
-After the kernel boot your device folder should include at least one device node for the accelerometer
+After the kernel boot your device folder should include at least one device node
+for the accelerometer
 
 ::
 
@@ -946,13 +987,13 @@ Use the evtest utility to test proper function
 
 .. tip::
 
-   In case you move the accelerometer and don't receive events, it's likely that something with your Interrupt is wrong. check irq number in your platform device file
-
+   In case you move the accelerometer and don't receive events, it's likely that
+   something with your Interrupt is wrong. check irq number in your platform
+   device file
 
 .. tip::
 
    In case you get a message like: ``evtest: No such device``, it's likely that you have not install the necessary modules
-
 
 Visualizing Linux Input Events using df_input example from DirectFB
 -------------------------------------------------------------------
@@ -1051,11 +1092,13 @@ See table above for supported sample rates
 
 .. tip::
 
-   Be aware: The ADXL34x conforms to The I2C Bus Specification, Version 2.1, January 2000, available from Phillips Semiconductor. It supports standard (100 kHz) and fast (400 kHz) data transfer modes.
+   Be aware: The ADXL34x conforms to The I2C Bus Specification, Version 2.1,
+   January 2000, available from Phillips Semiconductor. It supports standard
+   (100 kHz) and fast (400 kHz) data transfer modes.
 
    
-   Very high output data rates are only possible via fast I2C (400kHz) or the SPI interface.
-
+   Very high output data rates are only possible via fast I2C (400kHz) or the
+   SPI interface.
 
 Enabling / Disabling the Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1089,8 +1132,8 @@ Download Raspbian “wheezy” SD Card Image from here: http://www.raspberrypi.o
 
 .. warning::
 
-   This example assumes that /dev/sdc is the SD-Card reader. All content will be lost!
-
+   This example assumes that /dev/sdc is the SD-Card reader. All content will be
+   lost!
 
 .. container:: box bggreen
 
@@ -1111,7 +1154,6 @@ Download Raspbian “wheezy” SD Card Image from here: http://www.raspberrypi.o
       Dave@HAL9000:~/devel/pshare/RaspberryPi$
    
 
-
 Compile a kernel
 ----------------
 
@@ -1123,7 +1165,6 @@ There are two ways to compile a new Kernel -
 .. tip::
 
    In order to speed things up - we compile the kernel on a foreign host.
-
 
 Get ARM tools and RaspberryPi kernel source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1141,7 +1182,6 @@ Create an empty directory
       Dave@HAL9000:~/devel/git$ mkdir RaspberryPi
       Dave@HAL9000:~/devel/git$ cd RaspberryPi
    
-
 
 Get tools
 ^^^^^^^^^
@@ -1162,7 +1202,6 @@ Get tools
       Resolving deltas: 100% (6433/6433), done.
       Checking out files: 100% (10692/10692), done.
    
-
 
 Get Kernel Source
 ^^^^^^^^^^^^^^^^^
@@ -1185,11 +1224,9 @@ Get Kernel Source
       Dave@HAL9000:~/devel/git/RaspberryPi$
    
 
-
 .. tip::
 
    See here: http://elinux.org/RPi_Kernel_Compilation
-
 
 Download and apply patches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1217,7 +1254,6 @@ Get patch files here:
       #endif
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -1234,7 +1270,6 @@ Get patch files here:
       Dave@HAL9000:~/devel/git/RaspberryPi/linux$
    
 
-
 Add ARM toolchain to the PATH variable and set ARCH and CROSS_COMPILE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1249,7 +1284,6 @@ Add ARM toolchain to the PATH variable and set ARCH and CROSS_COMPILE
       Dave@HAL9000:~/devel/git/RaspberryPi/linux$ export ARCH=arm
       Dave@HAL9000:~/devel/git/RaspberryPi/linux$ export CROSS_COMPILE=arm-linux-gnueabihf-
    
-
 
 Load kernel config for bcmrpi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1267,7 +1301,6 @@ Load kernel config for bcmrpi
       #
    
 
-
 Now build your kernel
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -1280,7 +1313,6 @@ Now build your kernel
    
       Dave@HAL9000:~/devel/git/RaspberryPi/linux$ make -j5
    
-
 
 Copy kernel image and modules to SD Card
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1296,12 +1328,11 @@ Copy kernel image and modules to SD Card
       Dave@HAL9000:~/devel/git/RaspberryPi/linux$ sudo ARCH=arm make modules_install INSTALL_MOD_PATH=/media/10b4c001-2137-4418-b29e-57b7d15a6cbc
    
 
-
 Connect ADXL345 development Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-misc/rpi_adxl345.jpg
-   :width: 800px
+   :width: 800
 
 http://elinux.org/RPi_Low-level_peripherals
 
@@ -1323,7 +1354,6 @@ Load the I2C Bus driver module
       pi@raspberrypi ~ $ sudo modprobe i2c-bcm2708
    
 
-
 Check if ADXL345 was successfully probed / instantiated
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1339,7 +1369,6 @@ Check if ADXL345 was successfully probed / instantiated
       pi@raspberrypi ~ $
    
 
-
 Get evtest tool
 ^^^^^^^^^^^^^^^
 
@@ -1352,7 +1381,6 @@ Get evtest tool
    
       pi@raspberrypi ~ $ sudo apt-get install evtest
    
-
 
 Driver test
 ^^^^^^^^^^^
@@ -1414,7 +1442,6 @@ Driver test
       Event: time 1345080075.096269, -------------- SYN_REPORT ------------
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -1436,7 +1463,6 @@ Driver test
       187:        784      GPIO  1-0053
       Err:          0
    
-
 
 .. container:: box bggreen
 
@@ -1462,15 +1488,12 @@ Driver test
       pi@raspberrypi /sys/bus/i2c/devices/1-0053 $
    
 
-
 More Information
 ================
-
 
 .. note::
 
    See `resources/tools-software/linux-drivers/snippets <https://wiki.analog.com/resources/tools-software/linux-drivers/snippets#input_pointers>`_
-
 
 ADXL345/6 Android Acceleration Sensor
 -------------------------------------

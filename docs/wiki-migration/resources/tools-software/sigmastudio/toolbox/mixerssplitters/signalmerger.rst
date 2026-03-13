@@ -6,7 +6,9 @@ Signal Merger
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/signalmerger_054.jpg
    :align: right
 
-The Signal Merger mixes a group of input signals and automatically decreases the signal levels in proportion to the number of inputs -- as described in the table below:
+The Signal Merger mixes a group of input signals and automatically decreases the
+signal levels in proportion to the number of inputs -- as described in the table
+below:
 
 ::
 
@@ -19,4 +21,5 @@ The Signal Merger mixes a group of input signals and automatically decreases the
 
 This block's algorithm can be grown up to 15 inputs.
 
-This block helps to avoid level overages (clipping) without the need to manually adjust mix levels.
+This block helps to avoid level overages (clipping) without the need to manually
+adjust mix levels.

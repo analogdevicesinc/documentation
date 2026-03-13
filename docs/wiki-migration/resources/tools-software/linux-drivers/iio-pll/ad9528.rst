@@ -9,17 +9,31 @@ Supported Devices
 Description
 -----------
 
-The AD9528 is a two-stage PLL with an integrated JESD204B SYSREF generator for multiple device synchronization.
+The AD9528 is a two-stage PLL with an integrated JESD204B SYSREF generator for
+multiple device synchronization.
 
-The first stage PLL (PLL1) provides input reference conditioning by reducing the jitter present on a system clock. The second stage PLL (PLL2) provides high frequency clocks that achieve low integrated jitter as well as low broadband noise from the clock output drivers. The external VCXO provides the low noise reference required by PLL2 to achieve the restrictive phase noise and jitter requirements necessary to achieve acceptable performance. The on-chip VCO tunes from 3.450 GHz to 4.025 GHz. The integrated SYSREF generator outputs single shot, N-shot, or continuous signals synchronous to the PLL1 and PLL2 outputs to time align multiple devices
+The first stage PLL (PLL1) provides input reference conditioning by reducing the
+jitter present on a system clock. The second stage PLL (PLL2) provides high
+frequency clocks that achieve low integrated jitter as well as low broadband
+noise from the clock output drivers. The external VCXO provides the low noise
+reference required by PLL2 to achieve the restrictive phase noise and jitter
+requirements necessary to achieve acceptable performance. The on-chip VCO tunes
+from 3.450 GHz to 4.025 GHz. The integrated SYSREF generator outputs single
+shot, N-shot, or continuous signals synchronous to the PLL1 and PLL2 outputs to
+time align multiple devices
 
-The AD9528 generates two outputs (Output 1 and Output 2) with a maximum frequency of 1.25 GHz, and 12 outputs up to 1 GHz. Each output can be configured to output directly from PLL1, PLL2, or the internal SYSREF generator. Each of the 14 output channels contains a divider with coarse digital phase adjustment and an analog fine phase delay block that allows complete flexibility in timing alignment across all 14 outputs.
+The AD9528 generates two outputs (Output 1 and Output 2) with a maximum
+frequency of 1.25 GHz, and 12 outputs up to 1 GHz. Each output can be configured
+to output directly from PLL1, PLL2, or the internal SYSREF generator. Each of
+the 14 output channels contains a divider with coarse digital phase adjustment
+and an analog fine phase delay block that allows complete flexibility in timing
+alignment across all 14 outputs.
 
 Please see also here: :doc:`Changing the VCXO frequency </wiki-migration/resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/ad9528.jpg
    :align: center
-   :width: 900px
+   :width: 900
 
 Source Code
 ===========
@@ -49,12 +63,12 @@ Files
 Enabling the driver
 ===================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD9528 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -87,7 +101,8 @@ Available properties
    -  "REF_MODE_REVERT_TO_REFA": Revert to REFA
    -  "REF_MODE_SELECT_REFA": Select REFA
    -  "REF_MODE_SELECT_REFB": Select REFB
-   -  "REF_MODE_EXT_REF": Select REFB if the REF_SEL pin is low, select REFA if the REF_SEL pin is high.
+   -  "REF_MODE_EXT_REF": Select REFB if the REF_SEL pin is low, select REFA if
+      the REF_SEL pin is high.
 
 -  **adi,refa-enable**: Enable REFA input
 -  **adi,refb-enable**: Enable REFB input
@@ -119,7 +134,8 @@ Available properties
 Adding channels
 ~~~~~~~~~~~~~~~
 
-Channels can be specified using child nodes. The following properties are applicable to them:
+Channels can be specified using child nodes. The following properties are
+applicable to them:
 
 -  **reg**: The identifier of the channel
 -  **adi,extended-name**: Optional descriptive channel name
@@ -142,9 +158,11 @@ Channels can be specified using child nodes. The following properties are applic
 Device tree example
 ~~~~~~~~~~~~~~~~~~~
 
-The following example instanciates the ad9528 driver for a AD9528 device connected on the SPI bus to the chip-select line 0.
+The following example instanciates the ad9528 driver for a AD9528 device
+connected on the SPI bus to the chip-select line 0.
 
-The various macros used are defined in the header file: <dt-bindings/iio/frequency/ad9528.h>
+The various macros used are defined in the header file:
+<dt-bindings/iio/frequency/ad9528.h>
 
 ::
 

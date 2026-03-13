@@ -81,11 +81,32 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The PeakRMS Combo algorithm offers a dual-detection path. The RMS and Peak envelope of the detector input signal are calculated. Depending on the time constants used for each detection (Peak and RMS) and ADI proprietary code, the algorithm switches between using RMS and Peak detection in order to apply the compressor gain adjustment. This results in getting the "best of both worlds" with both Peak and RMS compression. Typically, there are complaints that RMS is too slow to react to fast spikes in signal input. Peak detectors can handle these fast spikes, but then do not have a natural sound response to the increase in signal level. The generated images below show the difference in output signal for RMS, Peak, and Combo compressor.
+The PeakRMS Combo algorithm offers a dual-detection path. The RMS and Peak
+envelope of the detector input signal are calculated. Depending on the time
+constants used for each detection (Peak and RMS) and ADI proprietary code, the
+algorithm switches between using RMS and Peak detection in order to apply the
+compressor gain adjustment. This results in getting the "best of both worlds"
+with both Peak and RMS compression. Typically, there are complaints that RMS is
+too slow to react to fast spikes in signal input. Peak detectors can handle
+these fast spikes, but then do not have a natural sound response to the increase
+in signal level. The generated images below show the difference in output signal
+for RMS, Peak, and Combo compressor.
 
-The clipped brown signal is an input sine tone at a low level, that immediately increases in level. All three compressors have a limiting compressor curve set at -20dB. The Red curve is the RMS output, showing the first initial peaks still getting through to the output because the of the slower attack time constant. The purple curve is the Peak output, showing the quick attenuation of the peak, but unnatural ripple introduced by the quick attack. The light-blue output is the Combo compressor. Note that the first peak is attenuated quickly (not as severe as the Peak) but much more than the RMS. However, there still is a natural decrease in signal level from the initial attack, which subjectively sounds better than the harsh peak detection.
+The clipped brown signal is an input sine tone at a low level, that immediately
+increases in level. All three compressors have a limiting compressor curve set
+at -20dB. The Red curve is the RMS output, showing the first initial peaks still
+getting through to the output because the of the slower attack time constant.
+The purple curve is the Peak output, showing the quick attenuation of the peak,
+but unnatural ripple introduced by the quick attack. The light-blue output is
+the Combo compressor. Note that the first peak is attenuated quickly (not as
+severe as the Peak) but much more than the RMS. However, there still is a
+natural decrease in signal level from the initial attack, which subjectively
+sounds better than the harsh peak detection.
 
-Playing with both the RMS and Peak detection time constants on this control can yield different results, but the default settings on the control are recommended as a starting point. The graph below was generated with the default time constant settings.
+Playing with both the RMS and Peak detection time constants on this control can
+yield different results, but the default settings on the control are recommended
+as a starting point. The graph below was generated with the default time
+constant settings.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peakrmsnopic2.png
    :alt: peakrmsnopic2.png
@@ -93,7 +114,21 @@ Playing with both the RMS and Peak detection time constants on this control can 
 Example
 -------
 
-The following schematic image shows the PeakRMS Combo algorithm being used on a stereo signal. The external detector path is fed with the larger signal between L and R. This ensures that any rise in signal from either channel will ensure that the output level is reduced. Other applications may be more lenient and can use the average signal between L and R to drive the detector path. For that method you would simply sum the left and right using a Signal Merger cell. The schematic below uses the Input, AB in/out Condition, and Output cells. Before the signal is compared you must obtain the absolute value of the two signals. If you do not then the AB compare cell will be comparing two signals where one can be a high level negative signal and the other can be a small positive signal so the output would be the small positive signal since it is the greater of the two. So for this to function as intended you must compare the absolute value of the two signals and take the greater of the two. Internally, the compressor sidechain will take the absolute value so this will not change how the sidechain functions.
+The following schematic image shows the PeakRMS Combo algorithm being used on a
+stereo signal. The external detector path is fed with the larger signal between
+L and R. This ensures that any rise in signal from either channel will ensure
+that the output level is reduced. Other applications may be more lenient and can
+use the average signal between L and R to drive the detector path. For that
+method you would simply sum the left and right using a Signal Merger cell. The
+schematic below uses the Input, AB in/out Condition, and Output cells. Before
+the signal is compared you must obtain the absolute value of the two signals. If
+you do not then the AB compare cell will be comparing two signals where one can
+be a high level negative signal and the other can be a small positive signal so
+the output would be the small positive signal since it is the greater of the
+two. So for this to function as intended you must compare the absolute value of
+the two signals and take the greater of the two. Internally, the compressor
+sidechain will take the absolute value so this will not change how the sidechain
+functions.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peakrmstopic3-1.jpg
    :alt: peakrmstopic3-1.jpg

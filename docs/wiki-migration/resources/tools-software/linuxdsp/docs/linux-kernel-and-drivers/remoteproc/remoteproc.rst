@@ -4,7 +4,9 @@ Remoteproc Drivers
 Introduction
 ------------
 
-This page introduces the remoteproc support in linux kernel on ADI sc5xx platforms. The remoteproc framework allows users to control(load firmware, start and stop) remote processors from ARM side.
+This page introduces the remoteproc support in linux kernel on ADI sc5xx
+platforms. The remoteproc framework allows users to control(load firmware, start
+and stop) remote processors from ARM side.
 
 Hardware Setup
 --------------
@@ -35,7 +37,8 @@ Then run **bitbake linux-adi -C compile** to generate kernel image zImage and dt
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-Add the firmware package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
+Add the firmware package in the filesystem, it's enabled in adsp-sc5xx-full
+image by default.
 
 ::
 
@@ -70,7 +73,6 @@ Set the firmware name through sysfs
 
    The blinky_Core1_sc589.ldr is one SHARC LED blinking application generated through ADI :adi:`CrossCore® Embedded Studio <en/design-center/evaluation-hardware-and-software/software/adswt-cces.html>`. Refer this page for :doc:`How to generate remoteproc LDR file in CCES </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/remoteproc/remoteproc_ldr_generate>`.
 
-
 Start the SHARC Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -83,7 +85,9 @@ The LED will start blinking on sc589-ezkit board.
 Remote Processor Stop
 ~~~~~~~~~~~~~~~~~~~~~
 
-Run the below command, one SOFT irq would be raised through SEC interface to SHARC core, SHARC core will release all related resources(interrupts, hardwares, etc) and set itself to IDLE state once receiving the interrupt.
+Run the below command, one SOFT irq would be raised through SEC interface to
+SHARC core, SHARC core will release all related resources(interrupts, hardwares,
+etc) and set itself to IDLE state once receiving the interrupt.
 
 ::
 

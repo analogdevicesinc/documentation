@@ -1,14 +1,11 @@
 EVAL-ISOMAX User Guide
 ======================
 
-
-
 .. note::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
    | This user guide is now available at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-isomax/index.html
-
 
 Overview
 --------
@@ -17,7 +14,7 @@ The :adi:`EVAL-ISOMAX` is an integrated dual isoSPI adapter and microcontroller 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_angle.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
 Features
 ~~~~~~~~
@@ -27,7 +24,8 @@ Features
 -  Includes two isoSPi ports for reversible isoSPI support
 -  Configurable powering options for LPCM support isoSPI connections through simple DuraClik connectors
 -  Stackable and allows daisy chain of up to eight (8) ADBMS6830BMSW boards
--  With PC-based software for control and data analysis using Broad Market Browser BMS GUI
+-  With PC-based software for control and data analysis using Broad Market
+   Browser BMS GUI
 
 Applications
 ~~~~~~~~~~~~
@@ -47,14 +45,14 @@ What's Inside the Box?
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_package_contents.png
    :align: center
-   :width: 600px
+   :width: 600
 
 System Architecture
 ~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_block_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -63,12 +61,11 @@ Components and Connections
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/primary_side.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: center
 
    **EVAL-ISOMAX Hardware Components**
-
 
 --------------
 
@@ -84,12 +81,11 @@ Option 1: Using the EVAL-ISOMAX as Standalone MCU with other ADI Broad Market BM
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/using_isomax_with_other_adi_bm_boards.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: center
 
    **Sample Battery Monitoring Setup with the EVAL-ADBMS6830BMSW**
-
 
 Option 2: Using the EVAL-ISOMAX as a Secondary Device to other MCU Boards
 -------------------------------------------------------------------------
@@ -98,20 +94,17 @@ Option 2: Using the EVAL-ISOMAX as a Secondary Device to other MCU Boards
 
    See below configuration using different MCUs:
 
-
    |image1|
 
 .. container:: center
 
    **Sample Cell Monitoring Setup using the AD-APARD32690-SL as Main Microcontroller Board and EVAL-ISOMAX as isoSPI Adapter**
 
-
    |image2|
 
 .. container:: center
 
    **Sample Pack Monitoring Setup using the SDP-K1 as Main Microcontroller Board and EVAL-ISOMAX as isoSPI Adapter**
-
 
 --------------
 
@@ -120,13 +113,13 @@ Getting Started
 
 .. tip::
 
-   Please refer to the following pages for detailed instructions on how to set up the EVAL-ISOMAX for evaluation.
+   Please refer to the following pages for detailed instructions on how to set
+   up the EVAL-ISOMAX for evaluation.
 
    
    -  :doc:`EVAL-ISOMAX Hardware User Guide </wiki-migration/resources/eval/user-guides/eval-isomax/hardware>`
    -  :doc:`EVAL-ISOMAX Software User Guide </wiki-migration/resources/eval/user-guides/eval-isomax/software>`
    
-
 
 --------------
 
@@ -155,18 +148,17 @@ Design and Integration Files
    -  Allegro Project
    
 
-
 Help and Support
 ----------------
 
-For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
+For questions and more information about this product, connect with us through
+the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_with_ad-apard32690-sl.png
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/adbms2950_with_isomax_and_sdp-k1.png
-   :width: 700px
+   :width: 700

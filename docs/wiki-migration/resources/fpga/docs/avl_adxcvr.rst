@@ -1,7 +1,16 @@
 Avalon Transceiver Core
 =======================
 
-The Avalon ADI Transceiver (avl_adxcvr) core is implements a JESD link between an Altera (Intel) device and the converter device. It instantiates the Altera transceivers and the JESD core. This core is a 'direct-hdl-inference' core. That is, it does NOT have any HDL files. The core infers the Altera IP cores and generates a top level wrapper file on the fly. This method is necessary for some of the Altera IP cores that do not support direct HDL inference (some actually do, but you may end up with a lot of mess). The core also support 'transceiver sharing' by which you may instantiate multiple links (separate pairs) but merge them together (joined pairs). The core also allows transceiver sharing across asymmetrical and multiple links across the receive and transmit pairs.
+The Avalon ADI Transceiver (avl_adxcvr) core is implements a JESD link between
+an Altera (Intel) device and the converter device. It instantiates the Altera
+transceivers and the JESD core. This core is a 'direct-hdl-inference' core. That
+is, it does NOT have any HDL files. The core infers the Altera IP cores and
+generates a top level wrapper file on the fly. This method is necessary for some
+of the Altera IP cores that do not support direct HDL inference (some actually
+do, but you may end up with a lot of mess). The core also support 'transceiver
+sharing' by which you may instantiate multiple links (separate pairs) but merge
+them together (joined pairs). The core also allows transceiver sharing across
+asymmetrical and multiple links across the receive and transmit pairs.
 
 Features
 --------
@@ -29,7 +38,17 @@ The core instantiates one or more of the following components.
 Transceiver Sharing
 -------------------
 
-An Altera transceiver PHY is a transmit and receive pair. If you infer a PHY in a transmit only core for a DAC device link, you are also consuming a receive channel even if NOT used. The same applies to a receive only core for an ADC device link. This IP core is meant to provide the 'sharing' of these transmit and receive channels across multiple instantiations. As an example you may infer a transmit only core of 4 lanes (T1), a receive only core of 2 lanes (R1) and another receive only core of 2 lanes (R2). It is possible to merge these three instantiations to use only 4 PHY channels. However, the software may access them as if they are independent and separate. The core also supports a lane multiplexing so that the transmit and receive cores may occupy any channels within their range.
+An Altera transceiver PHY is a transmit and receive pair. If you infer a PHY in
+a transmit only core for a DAC device link, you are also consuming a receive
+channel even if NOT used. The same applies to a receive only core for an ADC
+device link. This IP core is meant to provide the 'sharing' of these transmit
+and receive channels across multiple instantiations. As an example you may infer
+a transmit only core of 4 lanes (T1), a receive only core of 2 lanes (R1) and
+another receive only core of 2 lanes (R2). It is possible to merge these three
+instantiations to use only 4 PHY channels. However, the software may access them
+as if they are independent and separate. The core also supports a lane
+multiplexing so that the transmit and receive cores may occupy any channels
+within their range.
 
 Parameters
 ----------
@@ -70,7 +89,9 @@ Parameters
 
 Notes:
 
--  These parameters are passed to the Altera cores 'altera_jesd204' and 'altera_xcvr_atx_pll_a10'. Please refer to the documentation of these cores for a description of these parameters.
+-  These parameters are passed to the Altera cores 'altera_jesd204' and
+   'altera_xcvr_atx_pll_a10'. Please refer to the documentation of these cores
+   for a description of these parameters.
 
 Interface
 ---------
@@ -109,17 +130,25 @@ Notes:
 
 -  The ports 'sys_clk', 'ref_clk' and 'core_clk' corresponds to the 'SYSCLK_FREQUENCY', 'REFCLK_FREQUENCY' and 'CORECLK_FREQUENCY' parameters respectively.
 -  All reconfiguration interfaces are 'AVALON' slave interfaces and must be connected to the CPU.
--  The 'tx_ip\_' and 'tx_phy\_' ports allow lane swapping within a link. If no swapping is desired, simply match them up with their indices. That is, tx_ip_s_0 == tx_phy_s_0 and tx_ip_d_0 == tx_phy_d_0. If swapping is desired the '\_s\_' and '\_p\_' pairs serve as a cross-bar switch for the IP and the PHY.
+-  The 'tx_ip\_' and 'tx_phy\_' ports allow lane swapping within a link. If no
+   swapping is desired, simply match them up with their indices. That is,
+   tx_ip_s_0 == tx_phy_s_0 and tx_ip_d_0 == tx_phy_d_0. If swapping is desired
+   the '\_s\_' and '\_p\_' pairs serve as a cross-bar switch for the IP and the
+   PHY.
 
 Register Map
 ------------
 
-This core is a wrapper function for the above mentioned Altera IP cores. The register map of this core is one or more of its sub-cores.
+This core is a wrapper function for the above mentioned Altera IP cores. The
+register map of this core is one or more of its sub-cores.
 
 Software Guidelines
 -------------------
 
-The core supports 'transceiver sharing' as described above, hence the same PHY is accessable from two different address regions. In other words, a transmit core can potentially access a receive core and corrupt the settings. There is no 'protection' of functionalities within the core.
+The core supports 'transceiver sharing' as described above, hence the same PHY
+is accessable from two different address regions. In other words, a transmit
+core can potentially access a receive core and corrupt the settings. There is no
+'protection' of functionalities within the core.
 
 More Information
 ----------------

@@ -8,12 +8,12 @@ ASRC Input
 Description
 -----------
 
-The ASRC Input blocks route signals between the schematic design and the hardware ASRCs (Asynchronous Sample Rate Converters).
+The ASRC Input blocks route signals between the schematic design and the
+hardware ASRCs (Asynchronous Sample Rate Converters).
 
 .. note::
 
    These blocks are only available for use with DSPs that have integrated ASRCs.
-
 
 Usage
 -----
@@ -21,7 +21,9 @@ Usage
 Use the input block's check boxes to enable or disable particular inputs.
 
 -  Every ASRC Output must have its input connected, else there will be errors on compilation.
--  To change the ASRC input's Sampling Rate , Right-click the block name and select Set Sampling Rate, which brings up the Sampling Rate window (default is 48 kHz).
+-  To change the ASRC input's Sampling Rate , Right-click the block name and
+   select Set Sampling Rate, which brings up the Sampling Rate window (default
+   is 48 kHz).
 
 Targets Supported
 -----------------
@@ -44,7 +46,6 @@ Name   Type  Description
 Output Audio Outputs the asrc audio to the pin
 ====== ===== =================================
 
-
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+--------------+-----------------------------+
@@ -61,7 +62,6 @@ Parameter Name Description                         ADAU145x/ADAU146x
 ============== =================================== =================
 gain           gain to be applied to input channel FixPoint8d24
 ============== =================================== =================
-
 
 | ===== DSP Parameter Computation ===== gain= Gain
 

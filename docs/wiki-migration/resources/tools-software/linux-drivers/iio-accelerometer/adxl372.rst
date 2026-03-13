@@ -140,7 +140,6 @@ Driver testing
       -rw-r--r-- 1 root root 4096 Oct 25 04:25 uevent
    
 
-
 Show device name
 ----------------
 
@@ -154,7 +153,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:device0> cat name
       adxl372
    
-
 
 Show scale
 ----------
@@ -172,7 +170,6 @@ Show scale
       0.958241
    
 
-
 Show axis x measurement
 -----------------------
 
@@ -188,7 +185,6 @@ Show axis x measurement
       root:/sys/bus/iio/devices/iio:device0> cat in_accel_x_raw
       -5
    
-
 
 Set sampling frequency
 ----------------------
@@ -209,7 +205,6 @@ Set sampling frequency
       3200
    
 
-
 Show available bandwidths for the current set frequency
 -------------------------------------------------------
 
@@ -226,7 +221,6 @@ Show available bandwidths for the current set frequency
       200 400 800 1600 3200
       root:/sys/bus/iio/devices/iio:device0>
    
-
 
 Change the bandwidth
 --------------------
@@ -253,7 +247,6 @@ Change the bandwidth
       800
    
 
-
 Using the FIFO Buffer
 ---------------------
 
@@ -279,7 +272,6 @@ Trigger management
       root:/sys/bus/iio/devices/iio:device0> cat trigger/current_trigger
       adxl372-dev-*
    
-
 
 Buffer management
 ~~~~~~~~~~~~~~~~~
@@ -309,10 +301,10 @@ Buffer management
       root:/sys/bus/iio/devices/iio:device0/scan_elements>
    
 
-
 Before enabling the buffer, a few steps need to be completed.
 
--  For example, if we want the FIFO to store sample sets of concurrent 3-axis data, we need to enable the scan elements:
+-  For example, if we want the FIFO to store sample sets of concurrent 3-axis
+   data, we need to enable the scan elements:
 
 .. container:: box bggreen
 
@@ -326,7 +318,6 @@ Before enabling the buffer, a few steps need to be completed.
       root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_accel_z_en
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -338,7 +329,6 @@ Before enabling the buffer, a few steps need to be completed.
       enable hwfifo_enabled  hwfifo_watermark  hwfifo_watermark_max  hwfifo_watermark_min  length watermark
       root:/sys/bus/iio/devices/iio:device0/buffer>
    
-
 
 -  Set the buffer length:
 
@@ -352,10 +342,10 @@ Before enabling the buffer, a few steps need to be completed.
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 1024 > length
    
 
-
 -  Set the fifo watermak:
 
-Because we enabled all three channels, then the watermark can be set to a maximum of 170 sample sets.
+Because we enabled all three channels, then the watermark can be set to a
+maximum of 170 sample sets.
 
 .. container:: box bggreen
 
@@ -366,7 +356,6 @@ Because we enabled all three channels, then the watermark can be set to a maximu
    
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 170 > watermark
    
-
 
 The FIFO can also be configured to store peak acceleration (x, y, and z) for every over-threshold event. This can be done by writing 1 to the **peak_fifo_mode_enable** attribute:
 
@@ -379,7 +368,6 @@ The FIFO can also be configured to store peak acceleration (x, y, and z) for eve
    
       root:/sys/bus/iio/devices/iio:device0> echo 1 > peak_fifo_mode_enable
    
-
 
 Note that this mode can work only if all three axis are enabled.
 
@@ -395,7 +383,6 @@ Note that this mode can work only if all three axis are enabled.
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 1 > enable
    
 
-
 To read samples:
 
 .. container:: box bggreen
@@ -408,13 +395,16 @@ To read samples:
       root:/sys/bus/iio/devices/iio:device0/buffer> cat /dev/iio:device0
    
 
-
 Low level register access via debugfs (direct_reg_access)
 =========================================================
 
-Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver. Accessing debugfs requires root privileges.
+Some IIO drivers feature an optional debug facility, allowing users to read or
+write registers directly. Special care needs to be taken when using this
+feature, since you can modify registers on the back of the driver. Accessing
+debugfs requires root privileges.
 
-In order to identify if the IIO device in question feature this option you first need to identify the IIO device number.
+In order to identify if the IIO device in question feature this option you first
+need to identify the IIO device number.
 
 Therefore read the name attribute of each IIO device
 
@@ -430,8 +420,8 @@ Therefore read the name attribute of each IIO device
       root@analog:~#
    
 
-
-Change directory to /sys/kernel/debug/iio/iio:deviceX and check if the direct_reg_access file exists.
+Change directory to /sys/kernel/debug/iio/iio:deviceX and check if the
+direct_reg_access file exists.
 
 .. container:: box bggreen
 
@@ -445,7 +435,6 @@ Change directory to /sys/kernel/debug/iio/iio:deviceX and check if the direct_re
       ls direct_reg_access
       root@analog:/sys/kernel/debug/iio/iio:device0#
    
-
 
 Reading
 
@@ -463,7 +452,6 @@ Reading
       root@analog:/sys/kernel/debug/iio/iio:device0#
    
 
-
 Writing
 
 Write ADDRESS VALUE
@@ -480,7 +468,6 @@ Write ADDRESS VALUE
       0x80
       root@analog:/sys/kernel/debug/iio/iio:device0#
    
-
 
 More Information
 ================
@@ -503,6 +490,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-accelerometer/youtube>p_vntewue24
-

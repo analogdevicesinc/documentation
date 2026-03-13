@@ -166,4 +166,5 @@ XML File
 JSON File
 ---------
 
-This file is similar to the XML file described above but generated in JSON format.
+This file is similar to the XML file described above but generated in JSON
+format.

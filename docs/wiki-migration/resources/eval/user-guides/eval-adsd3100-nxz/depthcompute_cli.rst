@@ -3,8 +3,8 @@ Depth Compute Command Line Interface (CLI)
 
 .. important::
 
-   This tool has been removed from the host starting with Eval Kit version 5.0.0.
-
+   This tool has been removed from the host starting with Eval Kit version
+   5.0.0.
 
 Description
 -----------
@@ -24,9 +24,10 @@ EVAL-ADSD3100-NXZ and EVAL-ADTF3175-NXZ Example
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz/run_depthcompute.png
    :align: center
-   :width: 800px
+   :width: 800
 
--  Processed Data is stored in proc_data folder - Please refer to python scripts in depth_compute folder for visualization examples
+-  Processed Data is stored in proc_data folder - Please refer to python scripts
+   in depth_compute folder for visualization examples
 
 EVAL-ADTF3175D-NXZ Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,12 +39,14 @@ EVAL-ADTF3175D-NXZ Example
    -  MP mode : ``tofi_compute_depth.exe --I=data_output --CCB=../XXX.ccb --MODE=1 --O=proc_data_mp --INI=../config/RawToDepthAdsd3500_lr-native.ini --ISP_Enable=1``
    -  QMP mode : ``tofi_compute_depth.exe --I=data_output_qmp --CCB=../XXX.ccb --MODE=1 --O=proc_data_qmp --INI=../config/RawToDepthAdsd3500_lr-native.ini --ISP_Enable=1``
 
--  Processed Data is stored in proc_data folder - Please refer to python scripts in depth_compute folder for visualization examples
+-  Processed Data is stored in proc_data folder - Please refer to python scripts
+   in depth_compute folder for visualization examples
 
 Processing the outputs
 ~~~~~~~~~~~~~~~~~~~~~~
 
-If you followed the above steps and are running this from the installer then the following commands should work.
+If you followed the above steps and are running this from the installer then the
+following commands should work.
 
 -  ``cd path/of/tofi_compute_depth.exe``
 

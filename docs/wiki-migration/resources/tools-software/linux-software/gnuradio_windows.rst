@@ -1,8 +1,6 @@
 GNU Radio with IIO for Windows
 ==============================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,14 +17,17 @@ GNU Radio with IIO for Windows
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-Analog Devices provides a Windows binary installer for GNU Radio with support for IIO based devices like ADALM-Pluto, FMComms2/3/4/5, and other devices. Windows is not a primary platform for GNU Radio and is not thoroughly tested, and support through the GNU Radio community is limited. For users looking to build custom out-of-tree modules, it is recommended to do so with GNU Radio on a Linux based system.
+Analog Devices provides a Windows binary installer for GNU Radio with support
+for IIO based devices like ADALM-Pluto, FMComms2/3/4/5, and other devices.
+Windows is not a primary platform for GNU Radio and is not thoroughly tested,
+and support through the GNU Radio community is limited. For users looking to
+build custom out-of-tree modules, it is recommended to do so with GNU Radio on a
+Linux based system.
 
 .. important::
 
-   This old binary was removed, since we don't want people to go down a path that no one will get any support on. If you need it, build it from source.
-
+   This old binary was removed, since we don't want people to go down a path
+   that no one will get any support on. If you need it, build it from source.
 
 Licensing
 ---------
@@ -46,15 +47,22 @@ The entire build process is detailed here `README <https://github.com/tfcollins/
 Support
 -------
 
-This installer is provided with only support for questions relating to the gr-iio blocks specifically and the driver software associated with libiio.
+This installer is provided with only support for questions relating to the
+gr-iio blocks specifically and the driver software associated with libiio.
 
 -  Questions relating to the ADALM-Pluto should be asked in :ez:`Virtual Classroom for ADI University Program <community/university-program>`.
 -  Questions relating to other Analog Devices IIO supported devices should be asked in the :ez:`Linux forums <community/linux-device-drivers/linux-software-drivers>`.
 
 .. warning::
 
-   While both the community and Analog Devices provide best efforts for support, no one has any obligation to provide maintenance or support for any of the Software distributed or found on this site. Just as you are free to use any of the software you find on this site (under that software package's license), you are free use an alternative, which may include commercial/deterministic support.
+   While both the community and Analog Devices provide best efforts for support,
+   no one has any obligation to provide maintenance or support for any of the
+   Software distributed or found on this site. Just as you are free to use any
+   of the software you find on this site (under that software package's
+   license), you are free use an alternative, which may include
+   commercial/deterministic support.
 
    
-   We reserves the right to change anything (source code, circuits, schematics, forum content, policies, procedures, etc) at any time without notice, but is under no obligation to do so.
-
+   We reserves the right to change anything (source code, circuits, schematics,
+   forum content, policies, procedures, etc) at any time without notice, but is
+   under no obligation to do so.

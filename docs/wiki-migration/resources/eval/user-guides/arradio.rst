@@ -103,6 +103,6 @@ Videos
    :alt: youtube>rdwdi8eIxRQ
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcadc2-ebz/rfc_top_01.jpg
-   :width: 420px
+   :width: 420
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcadc2-ebz/rfc_bot_01.jpg
-   :width: 420px
+   :width: 420

@@ -5,7 +5,8 @@ phatstereo
 
 |phatpic1.png| Phat-Stereo is a spreading algorithm that uses stereo cross-coupling to simulate surround sound in stereo speakers and other 2-channel situations. The ear is most responsive to interaural phase shifts below 2 kHz, so this increase in phase shift results in a widening of the stereo image.
 
-A 3D enhancement, it yields an enriched surround field both for headphones and for stereo speakers.
+A 3D enhancement, it yields an enriched surround field both for headphones and
+for stereo speakers.
 
 Two parameters control the block:
 

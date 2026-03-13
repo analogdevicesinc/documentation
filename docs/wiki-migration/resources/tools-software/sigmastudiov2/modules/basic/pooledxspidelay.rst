@@ -11,9 +11,19 @@ xSPI Pooled Delay
 Description
 -----------
 
-The xSPI Pooled Delay block generates a delayed version of the input signal by utilizing external RAM connected via xSPI. The delay duration is determined by the number of samples specified in the 'Cur' numeric text box. The 'Max' numeric text box defines the maximum allowable delay that can be applied to the input signal. Memory for the delay line is allocated based on the 'TotalDelay' parameter, which sets the size of the memory pool shared across different delay lines. If you change the 'Max' value using the drop-down menu, recompilation will be required.
+The xSPI Pooled Delay block generates a delayed version of the input signal by
+utilizing external RAM connected via xSPI. The delay duration is determined by
+the number of samples specified in the 'Cur' numeric text box. The 'Max' numeric
+text box defines the maximum allowable delay that can be applied to the input
+signal. Memory for the delay line is allocated based on the 'TotalDelay'
+parameter, which sets the size of the memory pool shared across different delay
+lines. If you change the 'Max' value using the drop-down menu, recompilation
+will be required.
 
-The maximum delay that a specific delay block can support depends on the total available external RAM, as detailed in the external RAM's datasheet. When you set the 'Max' control value, a corresponding amount of memory is allocated on the external RAM, reserving it exclusively for that delay block.
+The maximum delay that a specific delay block can support depends on the total
+available external RAM, as detailed in the external RAM's datasheet. When you
+set the 'Max' control value, a corresponding amount of memory is allocated on
+the external RAM, reserving it exclusively for that delay block.
 
 Pins
 ----
@@ -77,7 +87,6 @@ Code (Bytes) Coeff(Bytes)       Data32(Bytes)
 2256         12 + 84(Framework) 296 + 256 (internal state)
 ============ ================== ==========================
 
-
 | ===== MIPS (Delay = Block size )=====
 
 ============= ============== ================
@@ -86,16 +95,17 @@ Default(1 Ch) 2 Growth(2 Ch) 32 Growth(32 Ch)
 5.8           12.3           270.1
 ============= ============== ================
 
-
-
-
 .. note::
 
-   To enhance performance, the Max or Current (Cur) delay values can be increased in steps of 0.5 millisecond. Optimal performance is typically achieved when the equivalent millisecond to sample values are divisible by the schematic block size.
+   To enhance performance, the Max or Current (Cur) delay values can be
+   increased in steps of 0.5 millisecond. Optimal performance is typically
+   achieved when the equivalent millisecond to sample values are divisible by
+   the schematic block size.
 
    
-   If additional delay is required in the range of 1 to 24 samples, we can insert internal delay modules, as the main delay module only supports increments of 0.5 millisecond (24 samples if sampling rate is 48000).
-
+   If additional delay is required in the range of 1 to 24 samples, we can
+   insert internal delay modules, as the main delay module only supports
+   increments of 0.5 millisecond (24 samples if sampling rate is 48000).
 
 Example Schematic
 =================

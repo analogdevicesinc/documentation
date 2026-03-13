@@ -1,12 +1,13 @@
 Using a MATLAB Volume Control Function in the Framework
 =======================================================
 
-MATLAB gives users the ability to create powerful audio algorithms. This tutorial gives an overview of how to create a simple volume control function and then add it to the baremetal framework.
+MATLAB gives users the ability to create powerful audio algorithms. This
+tutorial gives an overview of how to create a simple volume control function and
+then add it to the baremetal framework.
 
 .. important::
 
    All MATLAB work was using version R2018b
-
 
 Creating a Function in MATLAB
 -----------------------------
@@ -24,7 +25,11 @@ From the **Home** tab choose **New::Function** and then overwrite all template c
 
    end
 
-This function takes an input audio channel, multiplies it by vol_ctrl_factor and stores the result in the output audio channel. It simply changes the volume. Notice that we don't use a for loop because MATLAB has built in implicit expansion for scalar \* vector multiplication. The file name should match the function name so name the file volume_control.
+This function takes an input audio channel, multiplies it by vol_ctrl_factor and
+stores the result in the output audio channel. It simply changes the volume.
+Notice that we don't use a for loop because MATLAB has built in implicit
+expansion for scalar \* vector multiplication. The file name should match the
+function name so name the file volume_control.
 
 Testing the Newly Created Function in MATLAB
 --------------------------------------------
@@ -47,7 +52,6 @@ Generating C Code with MATLAB Coder
 .. important::
 
    This page assumes that users have already gone through the :doc:`Getting Started and Support </wiki-migration/resources/tools-software/sharc-audio-module/gettingstarted>` and :doc:`Bare Metal Framework </wiki-migration/resources/tools-software/sharc-audio-module/baremetal>` content.
-
 
 Selecting the Function
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -92,7 +96,8 @@ Adding the Code to the Framework
 Now we have our C++ function ready to add to the framework. There are multiple ways to do this but the easiest in this case is to just add the function to callback_audio_processing.cpp. Using the SHARC Audio Module Bare Metal Project wizard, users should choose all default options **with the addition of selecting the Audio Project Fin**.
 
 -  Once the projects are created in CCES, open the callback_audio_processing.cpp file for core 1.
--  Copy the generated code from MATLAB Coder and paste it at the top of callback_audio_processing.cpp.
+-  Copy the generated code from MATLAB Coder and paste it at the top of
+   callback_audio_processing.cpp.
 
 ::
 
@@ -120,7 +125,8 @@ Now we have our C++ function ready to add to the framework. There are multiple w
        volume_control(audiochannel_0_left_in, pot0_val, audiochannel_0_left_out);
        volume_control(audiochannel_0_right_in, pot0_val, audiochannel_0_right_out);
 
-The code will read the value of HADC0 and pass that into the volume_control() function created from MATLAB Coder to allow the volume to be adjusted.
+The code will read the value of HADC0 and pass that into the volume_control()
+function created from MATLAB Coder to allow the volume to be adjusted.
 
 Hardware Setup
 ^^^^^^^^^^^^^^
@@ -133,4 +139,6 @@ Hardware Setup
 Build and Run the Code in CCES
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At this point it is assumed that users are familiar with using the framework in CCES. Build and run the code in CCES and notice that turning HADC0 will increase or decrease the volume.
+At this point it is assumed that users are familiar with using the framework in
+CCES. Build and run the code in CCES and notice that turning HADC0 will increase
+or decrease the volume.

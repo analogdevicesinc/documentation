@@ -1,8 +1,6 @@
 Low Voltage Drive Board
 =======================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -18,8 +16,6 @@ Low Voltage Drive Board
    which means it is no longer maintained or actively updated, even though the
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
-
-
 
 Features and Block Diagram
 --------------------------
@@ -89,7 +85,7 @@ Connectors
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_connectors.jpg
    :alt: AD-FMC-MOTCON1-EBZ Connectors
-   :width: 400px
+   :width: 400
 
 Power connector
 ~~~~~~~~~~~~~~~
@@ -111,7 +107,7 @@ Switches
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_buttons.jpg
    :alt: AD-FMC-MOTCON1-EBZ Buttons
-   :width: 600px
+   :width: 600
 
 Emergency Stop Switch
 ~~~~~~~~~~~~~~~~~~~~~
@@ -150,7 +146,7 @@ Power Map
 ---------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_power_map.png
-   :width: 400px
+   :width: 400
 
 +---+
 +---+
@@ -158,7 +154,8 @@ Power Map
 Motor Driver Interface
 ----------------------
 
-The IRS2336D Three Phase Gate Driver IC has the following interface signals features:
+The IRS2336D Three Phase Gate Driver IC has the following interface signals
+features:
 
 -  3 pairs of complementary PWM signals with inverted logic
 -  PWM frequency up to 150 kHz
@@ -183,12 +180,11 @@ Downloads
    -  `Allegro Board File <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/ad-drvlv1-ebz_layout.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_block_diagram_simplified.png
-   :width: 350px
+   :width: 350
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_block_diagram.png
-   :width: 500px
+   :width: 500
 .. |AD-DRVLV1-EBZ Top| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-drvlv1-ebz_top_parts.jpg
-   :width: 600px
+   :width: 600
 .. |AD-DRVLV1-EBZ Bottom| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-drvlv1-ebz_bottom_parts.jpg
-   :width: 600px
+   :width: 600

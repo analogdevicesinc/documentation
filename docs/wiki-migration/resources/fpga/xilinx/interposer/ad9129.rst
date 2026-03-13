@@ -20,7 +20,9 @@ Supported Carriers
 Quick Start Guide
 -----------------
 
-The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal, ADI DAC software and the programmer (IMPACT).
+The bit file provided combines the FPGA bit file and the SDK elf files. It may
+be used for a quick check on the system. All you need is the hardware and a PC
+running a UART terminal, ADI DAC software and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -56,31 +58,37 @@ To begin make the following connections (see image below):
 -  Connect an external clock source to AD9129-EBZ board's J3 SMA connector.
 -  Connect a spectrum analyzer to AD9129-EBZ board's J1 SMA connector.
 
-Setup the clock source to be 2.4GHz/0dBm. After the hardware setup, turn the power on to the ML605 and the AD9129-EBZ boards.
+Setup the clock source to be 2.4GHz/0dBm. After the hardware setup, turn the
+power on to the ML605 and the AD9129-EBZ boards.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9129_ebz_setup.jpg
    :alt: Hardware setup
-   :width: 200px
+   :width: 200
 
-Start ADI- AD9129 SPI program (see screenshot below) and click on "Run Forever" button.
+Start ADI- AD9129 SPI program (see screenshot below) and click on "Run Forever"
+button.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9129_ebz_spi.jpg
    :alt: Hardware setup
-   :width: 200px
+   :width: 200
 
-Start IMPACT, and initialze the JTAG chain. The program should recognize the Virtex 6 device. Start a UART terminal (set to 57600 baud rate) and then program the device.
+Start IMPACT, and initialze the JTAG chain. The program should recognize the
+Virtex 6 device. Start a UART terminal (set to 57600 baud rate) and then program
+the device.
 
-If programming was successful, you should be seeing messages appear on the terminal as shown in figure below.
+If programming was successful, you should be seeing messages appear on the
+terminal as shown in figure below.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9129_ebz_uart.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
-After DDS is enabled, disable and enable the DLL on the AD9129 SPI interface. You should see the spectrum analyzer displaying a 300MHz tone.
+After DDS is enabled, disable and enable the DLL on the AD9129 SPI interface.
+You should see the spectrum analyzer displaying a 300MHz tone.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9129_ebz_spectrum.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
 Using the reference design
 --------------------------
@@ -90,7 +98,10 @@ Functional description
 
 The reference design consists of a DDS module and a lvds interface.
 
-The DDS module consists of a Xilinx IP core and a DDR-DDS. Internally the DDS runs at fDAC/3 clock. The DDR-DDS allows any pattern to be generated in the memory to be driven to the DAC. The output samples are interleaved and driven by the lvds interface.
+The DDS module consists of a Xilinx IP core and a DDR-DDS. Internally the DDS
+runs at fDAC/3 clock. The DDR-DDS allows any pattern to be generated in the
+memory to be driven to the DAC. The output samples are interleaved and driven by
+the lvds interface.
 
 Registers
 ~~~~~~~~~
@@ -108,7 +119,6 @@ Downloads
    -  **ML605 SW/Bit files** `cf_ad9129_ebz_sw_14_4_2013_03_12.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9129_ebz_sw_14_4_2013_03_12.tar.gz>`_
    
 
-
 Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
 
 .. hint::
@@ -116,7 +126,6 @@ Only Xilinx coregen xco files are provided with the reference design. You must r
    
    -  Questions? :ez:`Ask Help & Support <fpga>`.
    
-
 
 Tar file contents
 -----------------

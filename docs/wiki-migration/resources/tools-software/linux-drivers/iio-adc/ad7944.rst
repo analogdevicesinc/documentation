@@ -66,7 +66,9 @@ The ADC is represented by a child node of the SPI controller that the ADC is att
            };
        };
 
-If the specific application has wiring that can't handle the max SPI SCLK rate for the ADC chip, a lower max rate can be specified, otherwise use the max rate from the datasheet (which may be different for some chips).
+If the specific application has wiring that can't handle the max SPI SCLK rate
+for the ADC chip, a lower max rate can be specified, otherwise use the max rate
+from the datasheet (which may be different for some chips).
 
 ::
 
@@ -77,7 +79,9 @@ There are multiple ways that the chip can be wired to the SPI bus. The datasheet
 3-wire mode
 ~~~~~~~~~~~
 
-In this mode, the CS line of the SPI controller is connected to the CNV pin of the ADC. The SDI line of the SPI controller is connected to the SDO pin of the ADC. The SDI pin of the ADC is hard-wired high.
+In this mode, the CS line of the SPI controller is connected to the CNV pin of
+the ADC. The SDI line of the SPI controller is connected to the SDO pin of the
+ADC. The SDI pin of the ADC is hard-wired high.
 
 ::
 
@@ -99,7 +103,9 @@ If using the `Pulsar ADC HDL project <http://analogdevicesinc.github.io/hdl/proj
 4-wire mode
 ~~~~~~~~~~~
 
-In this mode, the CS line on the SPI controller is connected to the SDI pin on the ADC. The SDI line on the SPI controller is connected to the SDO pin on the ADC. A GPIO on the Linux host is connected to the CNV pin on the ADC.
+In this mode, the CS line on the SPI controller is connected to the SDI pin on
+the ADC. The SDI line on the SPI controller is connected to the SDO pin on the
+ADC. A GPIO on the Linux host is connected to the CNV pin on the ADC.
 
 This is the default mode, so in this case, the ``adi,spi-mode`` property is omitted, but GPIO connected to the CNV pin needs to be specified.
 
@@ -112,7 +118,10 @@ If using the `Pulsar ADC HDL project <http://analogdevicesinc.github.io/hdl/proj
 Daisy chain mode
 ~~~~~~~~~~~~~~~~
 
-In this mode, the CS line of the SPI controller is connected to the CNV pin of all of the ADCs. The SDI line of the SPI controller is connected to the SDO pin of the ADC. The SDI pin of the ADC is connected to the SDO pin of the next ADC in the chain. The SDI pin of the last ADC in the chain is hard-wired low.
+In this mode, the CS line of the SPI controller is connected to the CNV pin of
+all of the ADCs. The SDI line of the SPI controller is connected to the SDO pin
+of the ADC. The SDI pin of the ADC is connected to the SDO pin of the next ADC
+in the chain. The SDI pin of the last ADC in the chain is hard-wired low.
 
 ::
 
@@ -149,7 +158,8 @@ Power supplies should be described (although Linux will create one if these are 
 Reference supplies
 ------------------
 
-There are 3 ways to supply a reference voltage. The default of the evaluation boards is to use a 5V external reference.
+There are 3 ways to supply a reference voltage. The default of the evaluation
+boards is to use a 5V external reference.
 
 Internal reference
 ~~~~~~~~~~~~~~~~~~
@@ -174,7 +184,8 @@ If using an external reference (PDREF is wired high, REFIN is wired low, REF is 
 
                ref-supply = <&eval_u5>;
 
-In this case, is important that this indicates the voltage level that is being supplied.
+In this case, is important that this indicates the voltage level that is being
+supplied.
 
 ::
 
@@ -191,9 +202,11 @@ In this case, is important that this indicates the voltage level that is being s
 Turbo pin
 ---------
 
-In order to achieve the max sample rate, TURBO has to be enabled. Disabling TURBO can save power.
+In order to achieve the max sample rate, TURBO has to be enabled. Disabling
+TURBO can save power.
 
-If the TURBO pin is connected to a GPIO, it must be specified. This is the default of the Pulsar ADC HDL project.
+If the TURBO pin is connected to a GPIO, it must be specified. This is the
+default of the Pulsar ADC HDL project.
 
 ::
 
@@ -245,7 +258,8 @@ In this case the driver for the AD7944 chip is at ``/sys/bus/iio/devices/iio:dev
 Sysfs attributes
 ~~~~~~~~~~~~~~~~
 
-The sysfs attributes are used to get information about the device and also configure the device.
+The sysfs attributes are used to get information about the device and also
+configure the device.
 
 Informational
 ^^^^^^^^^^^^^
@@ -273,7 +287,6 @@ The voltage measurement done by the chip is represented as an IIO channel. These
 
    For fully differential chips like :adi:`AD7986`, the attributes will be ``in_voltage0-voltage1_scale`` and ``in_voltage0-voltage1_raw``
 
-
 The ``scale`` attribute is based on the reference voltage being used and returns the value needed to convert the ``raw`` value to millivolts.
 
 Reading the ``raw`` attribute will trigger a single conversion on the ADC and return the result.
@@ -283,7 +296,8 @@ In this example, the voltage measured was: :math:`raw \times scale = 1229 \times
 Sampling frequency
 ^^^^^^^^^^^^^^^^^^
 
-When using a SPI controller with SPI offload support, there is also an additional attribute for controlling the sample rate.
+When using a SPI controller with SPI offload support, there is also an
+additional attribute for controlling the sample rate.
 
 ::
 
@@ -291,7 +305,8 @@ When using a SPI controller with SPI offload support, there is also an additiona
    root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_sampling_frequency
    1000000
 
-Reading returns the current sampling frequency in Hz and writing will set the value.
+Reading returns the current sampling frequency in Hz and writing will set the
+value.
 
 ``in_voltage0_sampling_frequency_available`` will give the max sample rate for the chip, e.g. 2.5 MHz for AD7944.
 
@@ -324,8 +339,8 @@ To efficiently read multiple samples, a buffer interface is provided. The contro
 
    General information on these attributes can be found in the `Linux kernel documentation <https://www.kernel.org/doc/html/latest/iio/iio_devbuf.html>`_.
 
-
-Using the buffer will be slightly different depending on if using a SPI offload or not.
+Using the buffer will be slightly different depending on if using a SPI offload
+or not.
 
 +----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | With SPI offload                                                           | Without SPI offload                                                                                                                                       |
@@ -337,7 +352,8 @@ Using the buffer will be slightly different depending on if using a SPI offload 
 | Maximum sample rate can be achieved (assuming proper wiring, etc.).        | Maximum sample rate is limited by Linux host CPU speed and use by other processes.                                                                        |
 +----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Here is an example of how to read a few values at a low sample rate for testing using a Linux host with SPI offload support:
+Here is an example of how to read a few values at a low sample rate for testing
+using a Linux host with SPI offload support:
 
 ::
 
@@ -381,7 +397,7 @@ A :adi:`ADALM2000` (also known as M2K) can be used to to generate a signal. This
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7944/zedboard-eval-ad7985fmcz-m2k.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Typical ZedBoard software setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -394,7 +410,8 @@ ADI provides a :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linu
 Typical test application software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ADI provides several open source tools to make it easy to get started with using Linux IIO drivers.
+ADI provides several open source tools to make it easy to get started with using
+Linux IIO drivers.
 
 IIO Oscilloscope
 ^^^^^^^^^^^^^^^^
@@ -409,22 +426,26 @@ Scopy
 Examples
 ^^^^^^^^
 
-Here are a couple of example of how to use these tools together to test an ADC on an evaluation board connected to a development board running Linux.
+Here are a couple of example of how to use these tools together to test an ADC
+on an evaluation board connected to a development board running Linux.
 
 Measure constant voltage
 """"""""""""""""""""""""
 
-A quick way check if the ADC is working correctly is to generate a constant voltage on the input and measure it using the DMM feature of the IIO Oscilloscope. For example, if you generate a constant 3 V DC signal, you should see something like this:
+A quick way check if the ADC is working correctly is to generate a constant
+voltage on the input and measure it using the DMM feature of the IIO
+Oscilloscope. For example, if you generate a constant 3 V DC signal, you should
+see something like this:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7944/scopy-constant-3v-0v.png
    :alt: M2K is set up to generate 3 V constant signal.
    :align: center
-   :width: 800px
+   :width: 800
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7944/iio-osc-ad7985-dmm-voltage0-3v.png
    :alt: Linux driver is measuring something very close to 3 V.
    :align: center
-   :width: 600px
+   :width: 600
 
 Capture many samples for analysis
 """""""""""""""""""""""""""""""""
@@ -437,26 +458,34 @@ If you are using a setup with SPI offload support, first select the sample rate 
 
    If you are using a setup without SPI offload support, a trigger source must be set up manually and can't be controlled via the *IIO Oscilloscope* app. See :doc:`example </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad738x>`.
 
-
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7944/iio-osc-ad7985-debug-voltage0-samp-freq-1mhz.png
    :alt: Capturing 4000 samples at 1MSPS
    :align: center
-   :width: 600px
+   :width: 600
 
-Then you will need to set up a signal generator to generate an appropriate signal. This family of chips has unipolar inputs (voltage can't go below 0V) so an offset will need to be configured in the signal generator. The maximum allowable voltage is the same as the reference voltage. The default on the evaluation boards is 5V. Typically, the offset will be configured to 1/2 of the reference voltage, in this case, 2.5 V. A 1 kHz sine wave with peak-to-peak voltage of something a bit smaller than the full measurable range is a reasonable place to start.
+Then you will need to set up a signal generator to generate an appropriate
+signal. This family of chips has unipolar inputs (voltage can't go below 0V) so
+an offset will need to be configured in the signal generator. The maximum
+allowable voltage is the same as the reference voltage. The default on the
+evaluation boards is 5V. Typically, the offset will be configured to 1/2 of the
+reference voltage, in this case, 2.5 V. A 1 kHz sine wave with peak-to-peak
+voltage of something a bit smaller than the full measurable range is a
+reasonable place to start.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7944/scopy-sine-4v-p-p-2.5v-offset-1khz-const-0v.png
    :alt: Generating 4V peak-to-peak signal with 2.5 V offset at 1 kHz
    :align: center
-   :width: 800px
+   :width: 800
 
 Once the trigger and signal generator are configured correctly, open a new *Plot* window, enable all channels, enter the number of samples required and perform a capture. Save the data to a ``.csv`` file if you need to perform additional analysis.
 
 .. note::
 
-   When using SPI offloading for high-speed data capture, the first sample will always contain stale sample data and should be discarded. For example, a "bad" datapoint can be see at the start of the plot below. This is normal and can't be avoided for technical reasons when doing high-speed data capture.
-
+   When using SPI offloading for high-speed data capture, the first sample will
+   always contain stale sample data and should be discarded. For example, a
+   "bad" datapoint can be see at the start of the plot below. This is normal and
+   can't be avoided for technical reasons when doing high-speed data capture.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7944/iio-osc-ad7985-capture-voltage0-1msps-4000s.png
    :align: center
-   :width: 800px
+   :width: 800

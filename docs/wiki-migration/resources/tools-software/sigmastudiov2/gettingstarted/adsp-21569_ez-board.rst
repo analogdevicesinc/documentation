@@ -7,14 +7,15 @@ Connections
 -----------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21569.png
-   :width: 600px
+   :width: 600
 
 ADSP-21569 Board Connections
 
 Settings
 --------
 
-The board settings for running SigmaStudio on ADSP-21569 EZ-BOARD, using the Default Application is given in the below tables.
+The board settings for running SigmaStudio on ADSP-21569 EZ-BOARD, using the
+Default Application is given in the below tables.
 
 ====== ==========================
 Switch Setting

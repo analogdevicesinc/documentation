@@ -7,7 +7,7 @@ OVERVIEW
 The :adi:`ADIS16228` iSensor® is a complete vibration sensing system that combines triaxial acceleration sensing with advanced time domain and frequency domain signal processing. Time domain signal processing includes a programmable decimation filter and selectable windowing function. The electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-228-hookup.png
-   :width: 400px
+   :width: 400
 
 ADIS16228/PCB BREAKOUT BOARD
 ----------------------------
@@ -35,7 +35,8 @@ SYSTEM REQUIREMENTS
 
 Windows XP, Vista, 7 (32-bit systems only)
 
-NOTE: All the required files are contained in the .Cab file and deployed during software package install.
+NOTE: All the required files are contained in the .Cab file and deployed during
+software package install.
 
 PHYSICAL SETUP
 --------------
@@ -70,12 +71,12 @@ Step #3
 The following picture (left side) shows JP1 in the **+3.3V** position (factory-default). That is the correct JP1 jumper setting on the :adi:`ADISUSB`) required for the :adi:`ADIS16228CMLZ <en/mems-sensors/mems-accelerometers/adis16228/products/product.html>`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-3.3v-setting.png
-   :width: 400px
+   :width: 400
 
 NOTE: If JP1 is left on **+5v** the software will look like the following picture. Move JP1 to the\ **+3.3V** setting to correct the problem.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-wrong-voltage.png
-   :width: 800px
+   :width: 800
 
 ADIS16228_Evaluation SOFTWARE
 -----------------------------
@@ -83,25 +84,27 @@ ADIS16228_Evaluation SOFTWARE
 :adi:`Click here to download the ADIS16228 Evaluation Software <static/imported-files/eval_boards/228ES1.zip>` to a personal computer, which enables PC-based evaluation of the :adi:`ADIS16228` on an :adi:`ADISUSB` evaluation system. The download file will contain three separate files: The CAB file (ADIS16228_EVAL_Rev_1.cab), the setup file (setup.exe) and the setup list. Copy these files to a convenient folder for running the application from.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-228-zip.png
-   :width: 800px
+   :width: 800
 
 Navigate to the folder where the files were saved and double click the setup.exe file. The following pictures are a guide for the ADIS16228 software install. The **Welcome** screen will appear click **OK** to continue.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-228-welcome.png
-   :width: 600px
+   :width: 600
 
-Please choose a directory for the software application or use the default settings (recommended) and click the computer icon button to go to the next step.
+Please choose a directory for the software application or use the default
+settings (recommended) and click the computer icon button to go to the next
+step.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-228-begininstall.png
-   :width: 600px
+   :width: 600
 
 Choose a program group or use the default settings (recommended) and click **Continue**. The last picture confirms completion click **OK** to finish.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-228-prgm-group.png
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-228-done.png
-   :width: 400px
+   :width: 400
 
 USB Driver Installation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +127,9 @@ After the USB driver installation is complete, connect the :adi:`ADISUSB` USB co
 Main Window
 ~~~~~~~~~~~
 
-Once the ADIS16228 Evaluation Software starts-up, the Main Window will appear and look like the following picture. The second picture provides color-coded boxes to support further discussion of each function in this screen.
+Once the ADIS16228 Evaluation Software starts-up, the Main Window will appear
+and look like the following picture. The second picture provides color-coded
+boxes to support further discussion of each function in this screen.
 
 |image18| |image19|
 
@@ -136,7 +141,8 @@ The **Datalog** option provides the core data collection function.
 
 The **Start** option will start the selected mode capture process.
 
-The yellow box identifies the waveform recorder window. The window contains the three accelerometer responses.
+The yellow box identifies the waveform recorder window. The window contains the
+three accelerometer responses.
 
 Register Access
 ~~~~~~~~~~~~~~~
@@ -144,18 +150,23 @@ Register Access
 The purpose of the **Register Access** window is to provide both read and write access to the user registers in the :adi:`ADIS16228`. The following picture shows the appearance of this window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-adisusb-reg.png
-   :width: 600px
+   :width: 600
 
-The color coded boxes illustrate the different functions that this window provides.
+The color coded boxes illustrate the different functions that this window
+provides.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-adisusb-reg-defined.png
-   :width: 600px
+   :width: 600
 
 The purple box identifies the register category. In addition to the Control/Status, this drop-down control offers access to **Output** and **Calibration** registers.
 
-The red box identifies all of the registers that are in the current category. Click on the register name to select a register for individual read/write access.
+The red box identifies all of the registers that are in the current category.
+Click on the register name to select a register for individual read/write
+access.
 
-The green box identifies the read/write control options for the current register selection. Use the hexadecimal format when writing commands to a particular register.
+The green box identifies the read/write control options for the current register
+selection. Use the hexadecimal format when writing commands to a particular
+register.
 
 The yellow box updates all the registers in the current category.
 
@@ -170,16 +181,19 @@ The Data Capture function supports synchronous data acquisition, based on the da
 
 |image20| |image21|
 
-The Main screen upper right corner datalog option should be checked to enable the datalog function.
+The Main screen upper right corner datalog option should be checked to enable
+the datalog function.
 
-The green box identifies the configuration box for the name and location of the data storage file.
+The green box identifies the configuration box for the name and location of the
+data storage file.
 
 The yellow box identifies a number of configuration options for the data acquisition process. The **Scaled Units** option causes the software to convert the decimal, twos complement number into its representative value. For example, when enabling **Use Scaled Data,** the accelerometer outputs will be in units of g's `g-force <https://en.wikipedia.org/wiki/G-force>`_.
 
 EXAMPLE EXERCISES
 ~~~~~~~~~~~~~~~~~
 
-Click on the following links to access example exercises for this evaluation tool and software package:
+Click on the following links to access example exercises for this evaluation
+tool and software package:
 
 :ez:`A Simple Vibration Demonstration with the ADIS16228 and ADISUSB <docs/DOC-2420>`
 
@@ -188,44 +202,44 @@ Click on the following links to access example exercises for this evaluation too
 :ez:`ADIS16228 Evaluation Tools, The Compressor Case, Revisited <docs/DOC-2543>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228pcbz-mnt.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-part-dimensions.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-mating-connector.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228pcbz-schematic.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-pcbz-parts.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-j2-insert1.png
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-pcbz-secure.png
-   :width: 300px
+   :width: 300
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-j1-cable-option.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-j1-cable-option12pin.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-j1-cable-option16pin.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-adis16228pcbz-mount.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-mounted12pin-cable-zoom.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-secured-on-adisusb.png
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-foundnewhardware.png
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-install.png
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-wizard.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-complete-wizard.png
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-228-main-screen.png
-   :width: 800px
+   :width: 800
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-228-main-screen-defined.png
-   :width: 800px
+   :width: 800
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-adisusb-datalog.png
-   :width: 400px
+   :width: 400
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-adisusb-datalog-defined.png
-   :width: 400px
+   :width: 400

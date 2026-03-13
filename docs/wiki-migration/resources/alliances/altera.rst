@@ -4,11 +4,9 @@ Intel Reference Designs
 Hardware
 ========
 
-
 .. note::
 
    See `thirdparty <https://wiki.analog.com/thirdparty>`_
-
 
 Add on Boards
 -------------
@@ -396,204 +394,204 @@ The :adi:`CED1Z <EVAL-CED>` board is part of a next generation platform from Ana
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
 
 .. |/resources/fpga/altera/bemicro/ad7091_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7091_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7091r_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7091r_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7176_2_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7176_2_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7291_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7291_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7298_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7298_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7327_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7327_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7328_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7328_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7366_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7366_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7367_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7367_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7450a_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7450a_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7490_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7490_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7492_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7492_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7656_1_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7656_1_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7657_1_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7657_1_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7658_1_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7658_1_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7683_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7683_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7685_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7685_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7686_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7686_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7687_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7687_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7688_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7688_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7690_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7690_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7691_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7691_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7693_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7693_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7942_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7942_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7946_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7946_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7980_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7980_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7982_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7982_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7983_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7983_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad7984_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7984_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5415_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5415_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5421\_-\_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5421_-_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5449_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5449_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5443_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5443_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5541a_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5541a_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5542a_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5542a_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5543_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5543_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5570_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5570_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5629r_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5629r_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5668_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5668_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5669r_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5669r_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5686r_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5686r_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5694r_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5694r_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5696r_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5696r_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5755_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5755_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5757_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5757_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5760_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5760_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5780_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5780_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5781_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5781_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5790_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5790_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5791\_-\_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5791_-_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad2850_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad2850_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5110_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5110_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5162_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5162_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5172_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5172_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5232_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5232_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5235_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5235_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5252_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5252_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5254_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5254_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5270_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5270_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad5272_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5272_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad8403\_-\_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad8403_-_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad9833\_-\_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad9833_-_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad9834_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad9834_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad9837_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad9837_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad9838_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad9838_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/admp441_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/admp441_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/adf4001_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4001_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/adf4002_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4002_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/adf4106_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4106_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/adf4156_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4156_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/adf4157_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4157_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/ad2s1205_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad2s1205_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0150_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0150_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0178_bemicro.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0178_bemicro.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0187_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0187_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0188_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0188_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0189.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0189.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0194_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0194_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0202_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0202_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0203_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0203_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0204_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0204_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0209_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0209_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0216_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0216_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0218_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0218_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0235_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0235_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0240_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0240_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0241_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0241_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/bemicro/cn0271_bemicro.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0271_bemicro.jpg
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_ad7262.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7262.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_ad7400a.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7400a.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_ad7401.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7401.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_ad7606.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7606.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/cedz/img_0024.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/img_0024.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_ad7626.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7626.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_ad7682.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7682.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_ad7689.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7689.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_ad7699.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7699.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_ad7763.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7763.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_ad7766.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7766.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/img_0024.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/img_0024.png
-   :width: 150px
+   :width: 150
 .. |/resources/fpga/altera/ced1z/ced1z_adas3022.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_adas3022.png
-   :width: 150px
+   :width: 150

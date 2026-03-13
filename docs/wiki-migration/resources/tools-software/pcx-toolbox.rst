@@ -18,7 +18,6 @@ Alternatively, the toolbox can also be installed using the .mltbx installer file
    -  `Analog Devices Inc, Precision Toolbox - MathWorks File Exchange <https://www.mathworks.com/matlabcentral/fileexchange/125890-analog-devices-inc-precision-toolbox>`_
    
 
-
 To interface and stream data with hardware will require installation of :doc:`libiio </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/libiio>` and one of two Hardware Support Packages from MathWorks. The libiio library can be obtained on the `Github <http://github.com/analogdevicesinc/libiio>`_ page of the project.
 
 Libiio Installers
@@ -32,7 +31,6 @@ Libiio Installers
    -  `Installer for latest nighty build (Windows 32-bit / 64-bit) <https://ci.appveyor.com/project/analogdevicesinc/libiio/build/artifacts?branch=master>`_ (may be unstable / buggy)
    
 
-
 Installation of one of the following:
 
 .. admonition:: Download
@@ -43,13 +41,13 @@ Installation of one of the following:
    -  `Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio <https://www.mathworks.com/help/supportpkg/plutoradio/index.html>`_
    
 
-
 .. important::
 
    Skip the Zynq SDR or ADALM-PLUTO post-installation steps. They are not used. The FPGA carrier board SD card images are available on the :doc:`AD-FMC-SDCARD for Zynq & Altera SoC Quick Start Guide page </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
-
-is required to use the streaming system objects or blocks. These support packages provide the necessary libIIO MATLAB bindings used by ADI's system objects.
+is required to use the streaming system objects or blocks. These support
+packages provide the necessary libIIO MATLAB bindings used by ADI's system
+objects.
 
 Useful Articles
 ---------------
@@ -63,15 +61,18 @@ Useful Articles
 Building the Toolbox Manually
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The toolbox can only be built under Linux or with Cygwin on a Windows platform. Conveniently, the entire process is automated with a Makefile located in the CI/scripts folder of the repository. The following is required on the system before the build process can be run:
+The toolbox can only be built under Linux or with Cygwin on a Windows platform.
+Conveniently, the entire process is automated with a Makefile located in the
+CI/scripts folder of the repository. The following is required on the system
+before the build process can be run:
 
 -  A supported MATLAB version installed in the default location (/usr/local/MATLAB)
 -  Packages: git zip unzip tar make wget sed
 
 .. warning::
 
-   You should only manually build the toolbox if you require a custom branch or no toolbox installer is available
-
+   You should only manually build the toolbox if you require a custom branch or
+   no toolbox installer is available
 
 First clone the repo and move into it:
 
@@ -95,7 +96,9 @@ To create an installable tlbx file run:
 Supported Converters
 --------------------
 
-The following have device-specific implementations in MATLAB and Simulink. If a device has an IIO driver, MATLAB support is possible, but a device-specific MATLAB or Simulink interface may not exist yet.
+The following have device-specific implementations in MATLAB and Simulink. If a
+device has an IIO driver, MATLAB support is possible, but a device-specific
+MATLAB or Simulink interface may not exist yet.
 
 +-----------------+------------+-------------------+-----------+----------------------------------------+
 | Evaluation Card | FPGA Board | Streaming Support | Targeting | Variants and Minimum Supported Release |
@@ -123,4 +126,3 @@ Help & Support
    
    -  Questions? :ez:`Ask Help & Support <linux-device-drivers/linux-software-drivers>`.
    
-

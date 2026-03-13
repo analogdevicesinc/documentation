@@ -34,59 +34,80 @@ Materials
 Background
 ----------
 
-A buck converter, while not necessarily a simple circuit, can be thought of of as an L-C-R filter, where a switching waveform is applied to the input of the filter, and the output is an averaged representation of the switching waveform. Boost converters, on the other hand, are a bit more mysterious - a low voltage is used to "charge" an inductor, storing energy in a magnetic field. This stored energy is then released into a load that is at a higher voltage than that used to charge the inductor... like magic.
+A buck converter, while not necessarily a simple circuit, can be thought of of
+as an L-C-R filter, where a switching waveform is applied to the input of the
+filter, and the output is an averaged representation of the switching waveform.
+Boost converters, on the other hand, are a bit more mysterious - a low voltage
+is used to "charge" an inductor, storing energy in a magnetic field. This stored
+energy is then released into a load that is at a higher voltage than that used
+to charge the inductor... like magic.
 
 Activity 1: An Overcompensated Voltage-Mode Boost Converter
 -----------------------------------------------------------
 
-Before we dig into too much theory, let's at least get the boost converter into regulation... The goal of this experiment is to produce an accurate output voltage, regardless of changes in input voltage ("line regulation") and changes in output loading conditions ("load regulation"). We'll do this by dynamically changing the duty cycle of the PWM generator in response to changes in the output voltage - if the output voltage is a bit too high, reduce the PWM duty cycle. If the output voltage is a bit too low, increase the PWM duty cycle.
+Before we dig into too much theory, let's at least get the boost converter into
+regulation... The goal of this experiment is to produce an accurate output
+voltage, regardless of changes in input voltage ("line regulation") and changes
+in output loading conditions ("load regulation"). We'll do this by dynamically
+changing the duty cycle of the PWM generator in response to changes in the
+output voltage - if the output voltage is a bit too high, reduce the PWM duty
+cycle. If the output voltage is a bit too low, increase the PWM duty cycle.
 
-This is called "voltage mode" control because the error signal (how far we are off from the desired output voltage) directly controls the input voltage to output voltage ratio (set by the duty cycle.)
+This is called "voltage mode" control because the error signal (how far we are
+off from the desired output voltage) directly controls the input voltage to
+output voltage ratio (set by the duty cycle.)
 
-Figure 1 below shows the boost power stage from the open-loop exercise, but with the duty cycle potentiometer replaced by an op-amp circuit configured as an inverting integrator. This circuit compares a scaled version of the output voltage against an accurate 1.25V reference voltage, and performes the following actions, stated qualitiatively:
+Figure 1 below shows the boost power stage from the open-loop exercise, but with
+the duty cycle potentiometer replaced by an op-amp circuit configured as an
+inverting integrator. This circuit compares a scaled version of the output
+voltage against an accurate 1.25V reference voltage, and performes the following
+actions, stated qualitiatively:
 
 -  If the output voltage is a little bit too low, the output voltage ramps up slowly.
 -  If the output voltage is MUCH too low, the output voltage ramps up quickly.
 -  If the output voltage is a little bit too high, the output voltage ramps down slowly.
 -  If the output voltage is MUCH too high, the output voltage ramps down quickly.
--  And finally, if the output voltage is "just right", hold the output voltage constant
+-  And finally, if the output voltage is "just right", hold the output voltage
+   constant
 
 .. image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_voltage_mode_no_mbrook.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    Figure 1. Voltage Mode boost Converter
 
-
-But since the integrator output is connected to the LTC6992-3's MOD pin, an increase / decrease in voltage will directly cause a corresponding increase / decrease in the MOSFET's duty cycle, which will tend to bring the output voltage toward the "just right" voltage.
+But since the integrator output is connected to the LTC6992-3's MOD pin, an
+increase / decrease in voltage will directly cause a corresponding increase /
+decrease in the MOSFET's duty cycle, which will tend to bring the output voltage
+toward the "just right" voltage.
 
 Also note the following simplifications:
 
 -  LTC7001 gate driver replaced with a voltage-controlled voltage source with a gain of 1
 -  MOD positive clamp circuit replaced with an ideal diode and voltage source
 
-Open the CL_boost_voltage_mode.asc simulaton, verify that the lower two 200Ω load resistors are connected (100Ω total load), and run it. Observe the turn-on transient, which has quite a bit of overshoot, but then stabilizes at 12.0V. Zoom in on the switch node and inductor current after the intial transient, shown in Figure 2. Note that the circuit is operating in DCM.
-
+Open the CL_boost_voltage_mode.asc simulaton, verify that the lower two 200Ω
+load resistors are connected (100Ω total load), and run it. Observe the turn-on
+transient, which has quite a bit of overshoot, but then stabilizes at 12.0V.
+Zoom in on the switch node and inductor current after the intial transient,
+shown in Figure 2. Note that the circuit is operating in DCM.
 
 |image1|
 
 .. container:: centeralign
 
-   Figure 2. Voltage Mode boost Converter Simulation, switch node and inductor current
-
+   Figure 2. Voltage Mode boost Converter Simulation, switch node and inductor
+   current
 
 BEFORE APPLYING POWER… Configure the ADALM-SR1 board as shown in Figure 3 below:
-
-
 
 |image2|
 
 .. container:: centeralign
 
    Figure 3. ADALM-SR1 Configuration for Voltage Mode boost Operation
-
 
 Install the following jumpers:
 
@@ -113,10 +134,14 @@ Additionally - install the following components:
 -  10kΩ resistor between TP21, TP19
 -  10kΩ resistor between TP14, TP17
 
-Connect a 5V, 1A USB power supply to the Auxiliary Power micro USB jack. At this point, the frequency can be fine-tuned by looking at the D0 signal in Scopy's logic analyzer. Set the frequency to 20kHz (50μs period)
+Connect a 5V, 1A USB power supply to the Auxiliary Power micro USB jack. At this
+point, the frequency can be fine-tuned by looking at the D0 signal in Scopy's
+logic analyzer. Set the frequency to 20kHz (50μs period)
 
-Ramp the Power Input to 5V and observe the current sense and switch node waveforms. Note that Scopy's vertical scale can be entered arbitrarily - enter a value of 280mV/Div, which corresponds to 400mA/Div. Figure 4 shows the measured results; compare with the simulated result in Figure 3.
-
+Ramp the Power Input to 5V and observe the current sense and switch node
+waveforms. Note that Scopy's vertical scale can be entered arbitrarily - enter a
+value of 280mV/Div, which corresponds to 400mA/Div. Figure 4 shows the measured
+results; compare with the simulated result in Figure 3.
 
 |image3|
 
@@ -124,10 +149,9 @@ Ramp the Power Input to 5V and observe the current sense and switch node wavefor
 
    Figure 4. Measured Results, switch node and inductor current
 
-
-Decrease the load to 200Ω by removing one of the 200Ω jumpers and note that the duty cycle decreases automatically to maintain 12V at the output as shown in Figure 5.
-
-
+Decrease the load to 200Ω by removing one of the 200Ω jumpers and note that the
+duty cycle decreases automatically to maintain 12V at the output as shown in
+Figure 5.
 
 |image4|
 
@@ -135,10 +159,8 @@ Decrease the load to 200Ω by removing one of the 200Ω jumpers and note that th
 
    Figure 5. Measured switch node voltage and inductor current, 200Ω load
 
-
-Adjusting the LTspice simulation accordingly shows close correlation to the measured results as shown in Figure 6.
-
-
+Adjusting the LTspice simulation accordingly shows close correlation to the
+measured results as shown in Figure 6.
 
 |image5|
 
@@ -146,43 +168,63 @@ Adjusting the LTspice simulation accordingly shows close correlation to the meas
 
    Figure 6. Simulated switch node voltage and inductor current, 200Ω load
 
-
 Activity 2: Closed-loop, current-mode, overcompensated for guaranteed stability
 -------------------------------------------------------------------------------
 
-The goal of this experiment is identical to the previous one: to produce an accurate output voltage, regardless of changes in input voltage or output loading. But instead of directly changing the duty cycle of the PWM generator, we'll instead modulate the peak inductor current - if the output voltage is a bit too high, reduce the peak inductor current. If the output voltage is a bit too low, increase the peak inductor current.
+The goal of this experiment is identical to the previous one: to produce an
+accurate output voltage, regardless of changes in input voltage or output
+loading. But instead of directly changing the duty cycle of the PWM generator,
+we'll instead modulate the peak inductor current - if the output voltage is a
+bit too high, reduce the peak inductor current. If the output voltage is a bit
+too low, increase the peak inductor current.
 
-This is called "current mode" control because of the error signal (how far we are off from the desired output voltage) is directly compared to the peak inductor controlling the current in the circuit. Conceptually this makes the inductor a controlled current source.
+This is called "current mode" control because of the error signal (how far we
+are off from the desired output voltage) is directly compared to the peak
+inductor controlling the current in the circuit. Conceptually this makes the
+inductor a controlled current source.
 
 .. note::
 
    Consider Reordering, put after Voltage Mode is done.
 
-
 Activity 3: Voltage-mode loop optimization
 ------------------------------------------
 
-The previous examples were overcompensated so that the steady-state operation of the control loop could be analyzed, without too much concern that it would burst into oscillation. The next few experiments will demonstrate the drawback of overcompensation (slow response to changes in conditions), and outline the procedure for making it a bit more "snappy", while still not oscillating.
+The previous examples were overcompensated so that the steady-state operation of
+the control loop could be analyzed, without too much concern that it would burst
+into oscillation. The next few experiments will demonstrate the drawback of
+overcompensation (slow response to changes in conditions), and outline the
+procedure for making it a bit more "snappy", while still not oscillating.
 
-The first step in speeding up the response by adjusting the compensator is to understand the response of the power stage to the output of the compensator. Or stated another way, to find the transfer function from a wiggle at the power stage's control input to the output actually moving. A great reference for some of these ideas is Linear Technology (Analog Devices) Application Note 47, Appendix C "The Oscillation Problem - Frequency Compensation Without Tears" (insert URL)
+The first step in speeding up the response by adjusting the compensator is to
+understand the response of the power stage to the output of the compensator. Or
+stated another way, to find the transfer function from a wiggle at the power
+stage's control input to the output actually moving. A great reference for some
+of these ideas is Linear Technology (Analog Devices) Application Note 47,
+Appendix C "The Oscillation Problem - Frequency Compensation Without Tears"
+(insert URL)
 
 Boost Power Stage Continuous model, voltage-mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Consider the ADALM-SR1 power stage when configured for open-loop, duty cycle control mode, with the LTC6992-3 PWM generator providing the gate control:
+Consider the ADALM-SR1 power stage when configured for open-loop, duty cycle
+control mode, with the LTC6992-3 PWM generator providing the gate control:
 
 .. note::
 
-   Dig into differences between boost and buck stages in terms of dynamic response, output impedance, etc.
+   Dig into differences between boost and buck stages in terms of dynamic
+   response, output impedance, etc.
 
-
-Let's take our newfound knowledge of the power stage, and analyze the closed-loop response with the overcompensated compensator.
+Let's take our newfound knowledge of the power stage, and analyze the
+closed-loop response with the overcompensated compensator.
 
 (predict linearized response, phase margin, then compare with ADALM-SR1 results)
 
-(Measured results with ADALM-SR1 using Middlebrook circuit, step response and cutoff.)
+(Measured results with ADALM-SR1 using Middlebrook circuit, step response and
+cutoff.)
 
-(speed up compensator to some reasonable fraction of power stage, predict result, compare against ADALM-SR1)
+(speed up compensator to some reasonable fraction of power stage, predict
+result, compare against ADALM-SR1)
 
 Activity 4: Current-mode loop optimization
 ------------------------------------------
@@ -193,18 +235,17 @@ Intro on differences in control dynamics...
 
    
 
-
    ..
 
 **Return to** :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>` **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_100_load_sim.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/sr1_config_cl_vmode_boost.png
-   :width: 1000px
+   :width: 1000
 .. |image3| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_100_load_scopy.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_200_load_scopy.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_200_load_sim.png
-   :width: 600px
+   :width: 600

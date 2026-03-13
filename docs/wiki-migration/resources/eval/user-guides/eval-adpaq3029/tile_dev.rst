@@ -1,7 +1,8 @@
 EVAL-ADPAQ3029 - Tile (GUI) development
 =======================================
 
-Application development for the Moduware platform consists of two primary parts: Firmware and Web based GUI application.
+Application development for the Moduware platform consists of two primary parts:
+Firmware and Web based GUI application.
 
 Firmware
 --------
@@ -11,7 +12,8 @@ The firmware for the application development can be created in CrossCore Embedde
 GUI Application
 ---------------
 
-Moduware Modpack Tiles are created through the web based application consisting of:
+Moduware Modpack Tiles are created through the web based application consisting
+of:
 
 -  ``driver.json``: register commands allowing the web based tile to communicate with the hardware registers (0x2700-0x27FF). Formatting of return data (0x2800+)
 -  ``index.html``: User interface (ie: buttons, displays, etc.)
@@ -31,7 +33,8 @@ Please find the example source code for Tile development in :doc:`resources </wi
 
    -  Event listeners using the variables declared in index.html i.e: document.addEventListener(‘click’, function(e))
    -  Event listeners can call other functions within scripts.js
-   -  Functions called by an event listener can remain local or make a callback to the firmware to obtain data or change the state of the hardware
+   -  Functions called by an event listener can remain local or make a callback
+      to the firmware to obtain data or change the state of the hardware
 
 Deployment
 ~~~~~~~~~~
@@ -40,7 +43,8 @@ Installing Moduware App
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Install the basic version of the Moduware app that can be downloaded from the website https://Moduware.com/app/. The app is also available on play store.
--  Once the application is installed, launch the application. The following GUI is displayed when the application is opened.
+-  Once the application is installed, launch the application. The following GUI
+   is displayed when the application is opened.
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile2.png>`_
 
@@ -48,16 +52,19 @@ Installing Moduware App
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile3.png>`_
 
--  Once the connection is established between phone and the gateway, the screen appears as shown in the image.
+-  Once the connection is established between phone and the gateway, the screen
+   appears as shown in the image.
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile4.png>`_
 
--  Since the Moduware phone backpack supports up to 6 slots to connect 6 different modules, the application shows 6 tiles. Since there is no firmware in the module and no tile has been stored in the mobile device memory, a dummy tile is displayed on the screen.
+-  Since the Moduware phone backpack supports up to 6 slots to connect 6
+   different modules, the application shows 6 tiles. Since there is no firmware
+   in the module and no tile has been stored in the mobile device memory, a
+   dummy tile is displayed on the screen.
 
 .. note::
 
    Make sure you turn on bluetooth before scanning for devices
-
 
 Installing Tile GUI
 ^^^^^^^^^^^^^^^^^^^
@@ -78,4 +85,3 @@ Once Tile development is complete and ready to test/run on smartphone:
 .. note::
 
    Many a times, there may be a dummy tile being dispalyed on the ``Moduware`` app as seen in the image. In this case, just disconnect the power cable from the modules and connect them back again.\ `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile6.png>`_
-

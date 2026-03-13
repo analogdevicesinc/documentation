@@ -19,9 +19,9 @@ GATE DRIVER MODULE WOLFSPEED SiC
    -  Independent High Side and Low Side PWM inputs (Single control with 70ns deadtime for testing)
    -  1xLT3999 + 1xADuM4xxx for both High Side and Low Side
    -  Full tested ‘Desat protection’
-   -  Low inductive and high current terminals for V+, V- and AC phase connection
+   -  Low inductive and high current terminals for V+, V- and AC phase
+      connection
    
-
 
 .. container:: center
 
@@ -31,7 +31,6 @@ GATE DRIVER MODULE WOLFSPEED SiC
    -  ADuM4135
    -  LT3999
    
-
 
 --------------
 
@@ -51,10 +50,9 @@ Evaluation Boards Pricing displayed is based on 1-piece.
 
 .. danger::
 
-   SAFETY NOTICE - This is a high Voltage Board - 1200V. Only qualified person to test this device in a suitable Lab environment.
-
+   SAFETY NOTICE - This is a high Voltage Board - 1200V. Only qualified person
+   to test this device in a suitable Lab environment.
 
 .. note::
 
    Contact: RenwBoards@analog.com
-

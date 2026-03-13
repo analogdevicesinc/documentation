@@ -12,7 +12,9 @@ Description
 
 The :adi:`LTC6952` is a high performance, ultralow jitter, JESD204B/C clock generation and distribution IC. It includes a Phase Locked Loop (PLL) core, consisting of a reference divider, phase-frequency detector (PFD) with a phase-lock indicator, ultralow noise charge pump and integer feedback divider.
 
-The LTC6952’s eleven outputs can be configured is up to five JESD204B/C subclass 1 device clock/SYSREF pairs plus one general purpose output, or simply eleven general purpose clock outputs for non-JESD204B/C applications.
+The LTC6952’s eleven outputs can be configured is up to five JESD204B/C subclass
+1 device clock/SYSREF pairs plus one general purpose output, or simply eleven
+general purpose clock outputs for non-JESD204B/C applications.
 
 This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting serial interface PLL Synthesizers. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
 
@@ -42,12 +44,12 @@ Files
 Enabling the driver
 ===================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The LTC6952 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -77,7 +79,8 @@ Required properties:
 Adding channels
 ~~~~~~~~~~~~~~~
 
-Channels can be specified using child nodes. The following properties are applicable to them:
+Channels can be specified using child nodes. The following properties are
+applicable to them:
 
 -  **reg**: The identifier of the channel.
 -  **adi,extended-name**: Descriptive channel name.
@@ -88,7 +91,8 @@ Channels can be specified using child nodes. The following properties are applic
 Device tree example
 ~~~~~~~~~~~~~~~~~~~
 
-The following example instantiates the LTC6962 driver for a LTC6962 device connected on the SPI bus to the chip-select line 0.
+The following example instantiates the LTC6962 driver for a LTC6962 device
+connected on the SPI bus to the chip-select line 0.
 
 ::
 

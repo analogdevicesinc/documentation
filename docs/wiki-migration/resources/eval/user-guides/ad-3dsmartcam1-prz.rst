@@ -5,12 +5,10 @@ AD-3DSMARTCAM1-PRZ
 
    This system has reached its end of life and cannot be purchased anymore.
 
-
 Introduction
 ------------
 
 The :adi:`AD-3DSMARTCAM1-PRZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/AD-SMARTCAM1-PRZ.html>` is a 2D & 3D machine vision solution with AI edge processing capabilities. It can be used for implementing advance machine vision applications for different industry segments including logistics, robotics, agriculture and people activity monitoring.
-
 
 |3D Smart Camera|
 
@@ -21,7 +19,7 @@ What's inside
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/exploded_view.png
    :alt: 3D Smart Camera Exploded View
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -74,17 +72,19 @@ Specifications
 | Dimensions                     | |image2|                                                                                    |
 +--------------------------------+---------------------------------------------------------------------------------------------+
 
-
 Development
 -----------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/sdk_stack.png
    :alt: SDK Architecture
    :align: right
-   :width: 300px
+   :width: 300
 
-An open-source SDK that accompanies the hardware platform enables you to configure the system and extract depth and RGB data from the camera on the system of your choice. Windows and Linux support are built into the SDK as well as sample code and wrappers for various languages including Python, C/C++ and MATLAB. The SDK also integrates with 3rd party technologies like OpenCV and RoS.
-
+An open-source SDK that accompanies the hardware platform enables you to
+configure the system and extract depth and RGB data from the camera on the
+system of your choice. Windows and Linux support are built into the SDK as well
+as sample code and wrappers for various languages including Python, C/C++ and
+MATLAB. The SDK also integrates with 3rd party technologies like OpenCV and RoS.
 
 |Bindings|
 
@@ -93,13 +93,14 @@ An open-source SDK that accompanies the hardware platform enables you to configu
 
    `Access the open source ADI 3D ToF SDK to get started <https://github.com/analogdevicesinc/aditof_sdk>`_
 
-
 --------------
 
 Applications
 ------------
 
-A set of applications have been developed for the 3D Smart Camera to showcase the system's capabilities but also to be used as a starting point for custom development.
+A set of applications have been developed for the 3D Smart Camera to showcase
+the system's capabilities but also to be used as a starting point for custom
+development.
 
 Box dimensioning
 ~~~~~~~~~~~~~~~~
@@ -108,12 +109,15 @@ Box dimensioning
    :alt: youtube>G-9UfaZXUCk
    :align: right
 
-Detecting and measuring the size of boxes is the base of many use cases for logistics, industrial and commercial applications. By combining the information received for the 3D and 2D sensors, the 3D Smart Camera can reliably measure boxes of various sizes with an accuracy between 0.5cm and 2cm per each dimension, depending on the operating conditions and box characteristics.
+Detecting and measuring the size of boxes is the base of many use cases for
+logistics, industrial and commercial applications. By combining the information
+received for the 3D and 2D sensors, the 3D Smart Camera can reliably measure
+boxes of various sizes with an accuracy between 0.5cm and 2cm per each
+dimension, depending on the operating conditions and box characteristics.
 
 .. note::
 
    `Box dimensioning app <https://github.com/robotics-ai/tof_process_public/tree/main/box_measure>`_
-
 
 People detection and tracking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +128,6 @@ People detection and tracking
 
    `People detection and tracking app <https://github.com/robotics-ai/tof_process_public/tree/main/door_sense>`_
 
-
 Robot navigation
 ~~~~~~~~~~~~~~~~
 
@@ -134,7 +137,6 @@ Robot navigation
 
    `Robot navigation app <https://github.com/robotics-ai/tof_process_public/tree/main/slam>`_
 
-
 Space mapping
 ~~~~~~~~~~~~~
 
@@ -143,7 +145,6 @@ Space mapping
 .. note::
 
    `Space mapping app <https://github.com/robotics-ai/tof_process_public/tree/main/3d_mapping>`_
-
 
 --------------
 
@@ -156,7 +157,6 @@ Getting your system up and running
 
    :doc:`3D Smart Camera User Guide </wiki-migration/resources/eval/user-guides/ad-3dsmartcam1-prz/ug_system_setup>`
 
-
 --------------
 
 Laser Safety
@@ -164,31 +164,34 @@ Laser Safety
 
 .. important::
 
-   This device complies with International Standards IEC 60825-1:2014 & 2007 for a Class 1 laser product. This device also complies with 21 CFR 1040.10 and 1040.11 except for deviations pursuant to Laser Notice No. 50, dated June 24, 2007. Only use Software and Firmware updates that are specifically provided for this solution.
-
+   This device complies with International Standards IEC 60825-1:2014 & 2007 for
+   a Class 1 laser product. This device also complies with 21 CFR 1040.10 and
+   1040.11 except for deviations pursuant to Laser Notice No. 50, dated June 24,
+   2007. Only use Software and Firmware updates that are specifically provided
+   for this solution.
 
 --------------
 
 Help and Support
 ----------------
 
-For questions and more information please contact us on the Analog Devices Engineer Zone.
+For questions and more information please contact us on the Analog Devices
+Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone 3D ToF Depth Sensing <depth-perception-ranging-technologies/lidar-solutions/3d-tof-depth-sensing>`
 
-
 .. |3D Smart Camera| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-3dsmartcam1-prz/ad-3dsmartcam1-przangle1-web.gif
-   :width: 400px
+   :width: 400
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-3dsmartcam1-prz/samxl.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-3dsmartcam1-prz/samxl.png
-   :width: 400px
+   :width: 400
 .. |Bindings| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/logos.png
-   :width: 500px
+   :width: 500
 .. |youtube>-CErH6ROli8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>-cerh6roli8
 .. |youtube>XKTGsVNyvrg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>xktgsvnyvrg
 .. |youtube>mL542eUw_dg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>ml542euw_dg
 .. |Smart Camera Desktop| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/jetson_desktop.png
-   :width: 300px
+   :width: 300

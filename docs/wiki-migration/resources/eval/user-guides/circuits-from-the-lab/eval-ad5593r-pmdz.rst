@@ -1,11 +1,14 @@
 EVAL-AD5593R-PMDZ Overview
 ==========================
 
-EVAL-AD5593R-PMDZ is a minimalist 8-channel, 12-Bit, Configurable ADC/DAC/GPIO with on-chip Reference, I2C interface PMOD module. This board serves as a low-cost alternative to the full-featured product evaluation boards, with terminal block connections and no extra signal conditioning.
+EVAL-AD5593R-PMDZ is a minimalist 8-channel, 12-Bit, Configurable ADC/DAC/GPIO
+with on-chip Reference, I2C interface PMOD module. This board serves as a
+low-cost alternative to the full-featured product evaluation boards, with
+terminal block connections and no extra signal conditioning.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/eval-ad5593r-pmdz-top-web.png
    :align: center
-   :width: 400px
+   :width: 400
 
 This user guide will focus on the hardware aspect of the :adi:`EVAL-AD5593R-PMDZ` including the connectors, indicators, and different configurations a user would require in order to use the hardware. There is also a link to the design files as well as software reference designs that use the hardware with example embedded firmware for a real demo.
 
@@ -14,12 +17,14 @@ Simplified functional block diagram
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval_ad5593r-pmod/ad5593r_block_diagram.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Connectors and Configuration
 ----------------------------
 
-The following section reviews all the hardware connectors and how to interface with them. It also reviews configuration options and well as important onboard indicators.
+The following section reviews all the hardware connectors and how to interface
+with them. It also reviews configuration options and well as important onboard
+indicators.
 
 Analog/Digital I/O Connector (P2 & P3)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,17 +65,17 @@ Pin No. Pin Name Pin Description
 Test Points
 ~~~~~~~~~~~
 
-Users can also check the I2C signal quality and voltage supply of the board using test points labeled RST, SCL, SDA, and VLOGIC.
+Users can also check the I2C signal quality and voltage supply of the board
+using test points labeled RST, SCL, SDA, and VLOGIC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/5593-1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Voltage Reference Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The default connection of the AD5593R **Vref** pin is shorted at pin 1 of the JP1 solder jumper where you can easily configure your voltage reference input at pin 1 of terminal block P3, either from an external source or internal 2.5V
-
 
 |image1|
 
@@ -78,7 +83,6 @@ LED Indicator
 ~~~~~~~~~~~~~
 
 The DS1 is the power green LED indicator of the board.
-
 
 |image2|
 
@@ -100,7 +104,13 @@ There are two device driver solutions that are provided for controlling the **EV
 
    -  The :doc:`AD5593R Linux driver </wiki-migration/resources/tools-software/linux-drivers/iio-dac/ad5593r>` is used in applications running the Linux operating system, typically on larger processors and SoC devices.
 
-      -  The AD5593R Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
+      -  The AD5593R Linux driver uses the Industrial Input/Output (IIO)
+         framework, greatly simplifying the development of application code via
+         the cross-platform Libiio library, which is written in C and includes
+         bindings for Python, MATLAB, C#, and other languages. Application code
+         can run directly on the platform board, communicating with the device
+         over the local backend, or from a remote host over the network or USB
+         backends.
 
 System Setup Using ADICUP3029
 -----------------------------
@@ -127,17 +137,19 @@ The following is the list of items needed in order to replicate this demo.
 .. note::
 
    
-   There are two basic ways to program the ADICUP3029 with the software for the AD5593R.
+   There are two basic ways to program the ADICUP3029 with the software for the
+   AD5593R.
    
    -  Dragging and Dropping the Hex to the Daplink drive
    
-      -  Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+      -  Using the drag and drop method, the software is going to be a version
+         that Analog Devices creates for testing and evaluation purposes. This
+         is the EASIEST way to get started with the reference design.
    
    -  Building, Compiling, and Debugging using CCES
    
       -  Importing the project into :adi:`CrossCore Embedded Studio <en/design-center/evaluation-hardware-and-software/software/adswt-cces.html>` is going to allow you to change parameters and customize the software to your application, but will a bit more advanced and will require you to download the CrossCore toolchain.
    
-
 
 .. admonition:: Download
    :class: download
@@ -154,41 +166,41 @@ The following is the list of items needed in order to replicate this demo.
    -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_AD5593R Source Code <projects/ADuCM3029_demo_ad5592r_ad5593r>`
    
 
-
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Connect **EVAL-AD5593R-PMDZ** board at connector **P9** of the **EVAL-ADICUP3029**.
 
-
 |image3|
 
-2. Connect a micro-USB cable to the P9 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
-
+2. Connect a micro-USB cable to the P9 connector of the EVAL-ADICUP3029 and
+   connect it to a computer. The final setup should look similar to the picture
+   below.
 
 |image4|
 
 3. Make sure the following switches are as shown in the table below.
 
-
 |switch_config.png|
 
-4. From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
-
+4. From your PC, open My Computer and look for the DAPLINK drive, if you see
+   this then the drivers are complete and correct.
 
 |image5|
 
-3. Simply extract the provided zip file. Once extracted, you will see the pre-built hex file for the AD5593R demo. Then drag and drop this Hex file to the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red) LED will blink rapidly.
+3. Simply extract the provided zip file. Once extracted, you will see the
+   pre-built hex file for the AD5593R demo. Then drag and drop this Hex file to
+   the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red)
+   LED will blink rapidly.
 
 4. The DS2 will stop blinking and will stay ON once the programming is done.
 
-5. Open PuTTY or other similar software. Check the Device Manager to set the correct COM port for the ADICUP3029. Set the baud rate to 115200.
-
+5. Open PuTTY or other similar software. Check the Device Manager to set the
+   correct COM port for the ADICUP3029. Set the baud rate to 115200.
 
 |image6|
 
 6. The expected output viewed in the PuTTY is shown below.
-
 
 |image7|
 
@@ -234,14 +246,17 @@ Follow the configuration procedure under **Configuring the SD Card for Raspberry
 
 .. important::
 
-   The EVAL-AD5593R-PMDZ board has a 100k pullup resistor on the RESET pin, which correspond to Raspberry Pi GPIO13 and GPIO17 on PMD-RPI-INTZ P3 and P4, respectively. The default state of these pins is input, with a weak pulldown, but it is strong enough to pull the RESET line low. Adding the following line to config.txt will switch to pullup:
+   The EVAL-AD5593R-PMDZ board has a 100k pullup resistor on the RESET pin,
+   which correspond to Raspberry Pi GPIO13 and GPIO17 on PMD-RPI-INTZ P3 and P4,
+   respectively. The default state of these pins is input, with a weak pulldown,
+   but it is strong enough to pull the RESET line low. Adding the following line
+   to config.txt will switch to pullup:
 
    
    ::
    
       gpio=13,17=pu,ip
    
-
 
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -252,22 +267,23 @@ To set up the circuit for evaluation, consider the following steps:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Connect the \*\* :adi:`EVAL-AD5593R-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad5593r-pmdz.html>` \*\* on the PMOD to Raspberry Pi Interposer board either via Port P3 or P4.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/5593_rpi.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned SD card into the designated slot on the RPi.
 -  Connect the system to a monitor using an HDMI cable through the mini HDMI connector on the RPi.
 -  Connect a USB keyboard and mouse to the RPi through the USB ports.
--  Power on the RPi board by plugging in a 5V power supply with a micro-USB connector. The final setup should look similar to the picture below.
+-  Power on the RPi board by plugging in a 5V power supply with a micro-USB
+   connector. The final setup should look similar to the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/setup_5593.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Application Software (All Platforms)
 ------------------------------------
@@ -275,19 +291,20 @@ Application Software (All Platforms)
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
-The Libiio is a library used for interfacing with IIO devices and is required to be installed on your computer.
+The Libiio is a library used for interfacing with IIO devices and is required to
+be installed on your computer.
 
 .. admonition:: Download
    :class: download
 
    Download and Install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
-
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-AD5593R-PMDZ is attached. Two platforms are currently supported for the AD5593R: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the no-OS AD5593R demo project. The user needs to supply a **URI** which will be used in the context creation.
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to
+access it.
 
 For RPI Direct Local Access:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -309,8 +326,8 @@ Example:
 
 .. note::
 
-   Do note that the Windows machine and the RPI board should be connected to the same network in order for the machine to detect the device.
-
+   Do note that the Windows machine and the RPI board should be connected to the
+   same network in order for the machine to detect the device.
 
 IIO Commands
 ~~~~~~~~~~~~
@@ -337,7 +354,8 @@ The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libii
 
 Example:
 
--  To read the device ID (register = 0x02) of an AD5593R interfaced via RPI from a Windows machine, enter the following code on the terminal:
+-  To read the device ID (register = 0x02) of an AD5593R interfaced via RPI from
+   a Windows machine, enter the following code on the terminal:
 
 ::
 
@@ -350,28 +368,28 @@ IIO Oscilloscope
 
    Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
--  Press refresh to display available IIO Devices, once ad5593r appeared, press connect.
+-  Press refresh to display available IIO Devices, once ad5593r appeared, press
+   connect.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/5593_iio_connect.jpg
    :alt: AD5593R Oscilloscope Configuration
    :align: center
-   :width: 300px
+   :width: 300
 
 Debug Panel
 ^^^^^^^^^^^
 
-Below is the Debug panel of AD5593R wherein you can directly access the attributes of the device.
-
+Below is the Debug panel of AD5593R wherein you can directly access the
+attributes of the device.
 
 |AD5593R Debug Panel|
 
 DMM Panel
 ^^^^^^^^^
 
-Access the DMM panel to see the instantaneous reading of the input capacitances and the device temperature.
-
+Access the DMM panel to see the instantaneous reading of the input capacitances
+and the device temperature.
 
 |AD5593R DMM Panel|
 
@@ -391,7 +409,6 @@ After installing and configuring PYADI-IIO in your machine, you are now ready to
 
 Press enter and you will get these readings.
 
-
 |AD5593R|
 
 .. admonition:: Download
@@ -400,7 +417,6 @@ Press enter and you will get these readings.
    Github link for the Python sample script: :git-pyadi-iio:`AD5593R Python Example <examples/ad5592r_example.py>`
 
    
-
 
 More Information and Useful Links
 ---------------------------------
@@ -424,7 +440,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Additional Information
 ----------------------
 
@@ -440,28 +455,27 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD5593R-PMDZ?&v=RevC>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/5593-2.png
-   :width: 250px
+   :width: 250
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/5593-3.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/img_3001.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/img_2998.jpg
-   :width: 400px
+   :width: 400
 .. |switch_config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/switch_config.png
-   :width: 900px
+   :width: 900
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/daplink.jpg
-   :width: 300px
+   :width: 300
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/ad5593_putty.png
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/ad5593_example_adicup.png
-   :width: 600px
+   :width: 600
 .. |AD5593R Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/5593_debug.jpg
-   :width: 300px
+   :width: 300
 .. |AD5593R DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/5593_dmm.jpg
-   :width: 300px
+   :width: 300
 .. |AD5593R| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/5593_pyadi.jpg
-   :width: 600px
+   :width: 600

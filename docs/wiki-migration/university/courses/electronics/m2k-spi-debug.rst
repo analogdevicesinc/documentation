@@ -8,82 +8,121 @@ The objective of this tutorial is to use the Logic Analyzer instrument provided 
 
 The :doc:`Total Dissolved Solids Measurements Demo (TDS) </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cn0411>` project will be used as an example. The project uses the :adi:`EVAL-CN0411-ARDZ shield <cn0411>` mounted to the :adi:`EVAL-ADICUP360` microcontroller board. The shield includes two SPI devices: an :adi:`AD5683R`, 16-bit, voltage-output DAC, and an :adi:`AD7124-8`, low noise, low power, 24-bit Sigma-Delta ADC.
 
-The TDS project includes a function to set the DAC voltage and read it back via the ADC, providing a complete example of a SPI transaction for analysis. (for more details on how setup and use the software, please refer to the TDS Demo link above).
+The TDS project includes a function to set the DAC voltage and read it back via
+the ADC, providing a complete example of a SPI transaction for analysis. (for
+more details on how setup and use the software, please refer to the TDS Demo
+link above).
 
 Background
 ----------
 
-Serial peripheral interface (SPI) is one of the most widely used interfaces between microcontrollers and peripheral ICs such as sensors, ADCs, DACs, shift registers, SRAM, and others. It is a synchronous, serial, full-duplex, master-slave-based interface used for short distance communication, usually on the same PC board. Data transfer is synchronized by a clock, where data can be read on the rising or falling clock edge, depending on the mode. Separate signals are used for data from the master to the slave and vice-versa, such that both master and slave can transmit data at the same time.
+Serial peripheral interface (SPI) is one of the most widely used interfaces
+between microcontrollers and peripheral ICs such as sensors, ADCs, DACs, shift
+registers, SRAM, and others. It is a synchronous, serial, full-duplex,
+master-slave-based interface used for short distance communication, usually on
+the same PC board. Data transfer is synchronized by a clock, where data can be
+read on the rising or falling clock edge, depending on the mode. Separate
+signals are used for data from the master to the slave and vice-versa, such that
+both master and slave can transmit data at the same time.
 
 .. container:: centeralign
 
    \ |image1|\
 
-
 .. container:: centeralign
 
    Figure 1. SPI master-slave configuration
-
 
 The SPI bus includes four logic signals:
 
 -  CS: Chip Select or Slave Select (often active low, output from master)
 -  SCLK: Serial Clock (output from master)
 -  MOSI: Master Output Slave Input, or Master Out Slave In (data output from master)
--  MISO: Master Input Slave Output, or Master In Slave Out (data output from slave)
+-  MISO: Master Input Slave Output, or Master In Slave Out (data output from
+   slave)
 
-A typical full-duplex SPI interface uses all four of these signals, and is referred to as a "4-wire" interface. 3-wire interfaces may be employed where only unidirectional communication is required. For example, a single-channel ADC that does not require any configuration may only have CS, SCLK, and MISO signals. Similarly, a single-channel DAC may only have CS, SCLK, and MOSI signals. This tutorial will focus on the 4-wire SPI interface.
+A typical full-duplex SPI interface uses all four of these signals, and is
+referred to as a "4-wire" interface. 3-wire interfaces may be employed where
+only unidirectional communication is required. For example, a single-channel ADC
+that does not require any configuration may only have CS, SCLK, and MISO
+signals. Similarly, a single-channel DAC may only have CS, SCLK, and MOSI
+signals. This tutorial will focus on the 4-wire SPI interface.
 
-The Chip Select (CS) signal from the master is used to select a single slave and enable its SPI interface. Usually it is an active low signal; a high level will disable the slave device such that it ignores any activity on the SPI bus and tri-states its MISO output. When multiple slaves are used, an individual chip select signal is required for each slave device. Only the selected slave device (whose CS signal is asserted) is allowed to drive MISO. (The master drives SCK and MOSI signals continuously, idling high or low between transactions depending on the SPI mode.)
+The Chip Select (CS) signal from the master is used to select a single slave and
+enable its SPI interface. Usually it is an active low signal; a high level will
+disable the slave device such that it ignores any activity on the SPI bus and
+tri-states its MISO output. When multiple slaves are used, an individual chip
+select signal is required for each slave device. Only the selected slave device
+(whose CS signal is asserted) is allowed to drive MISO. (The master drives SCK
+and MOSI signals continuously, idling high or low between transactions depending
+on the SPI mode.)
 
-The device that generates the clock signal (SCLK) is called the master. Data transmitted between the master and the slave is synchronized to the clock generated by the master. SPI interfaces can have only one master and can have one or multiple slaves.
+The device that generates the clock signal (SCLK) is called the master. Data
+transmitted between the master and the slave is synchronized to the clock
+generated by the master. SPI interfaces can have only one master and can have
+one or multiple slaves.
 
-MOSI and MISO are the data lines. MOSI transmits data from the master to the slave and MISO transmits data from the slave to the master. (As noted in the CS signal description, only one slave device drives MISO at a time.)
+MOSI and MISO are the data lines. MOSI transmits data from the master to the
+slave and MISO transmits data from the slave to the master. (As noted in the CS
+signal description, only one slave device drives MISO at a time.)
 
-To begin SPI communication, the master must select a slave by asserting its CS signal. During SPI communication, the data is simultaneously transmitted (shifted out serially onto the MOSI bus) and received (the data on the MISO bus is sampled or read in). The active serial clock edge synchronizes the shifting and sampling of the data.
+To begin SPI communication, the master must select a slave by asserting its CS
+signal. During SPI communication, the data is simultaneously transmitted
+(shifted out serially onto the MOSI bus) and received (the data on the MISO bus
+is sampled or read in). The active serial clock edge synchronizes the shifting
+and sampling of the data.
 
-The SPI interface may use one of four modes defined by two parameters, CPOL and CPHA, which specify whether the rising or falling edge of the clock is used to sample and/or shift the data, and whether the clock idles high or low between transactions. It is essential that the master and slave are configured to the same SPI mode - often the slave device's mode is fixed, while the master's can be configured either at run-time (as is often the case for microcontrollers and microprocessors) or at compile-time (as is the case with some FPGA SPI IP cores).
+The SPI interface may use one of four modes defined by two parameters, CPOL and
+CPHA, which specify whether the rising or falling edge of the clock is used to
+sample and/or shift the data, and whether the clock idles high or low between
+transactions. It is essential that the master and slave are configured to the
+same SPI mode - often the slave device's mode is fixed, while the master's can
+be configured either at run-time (as is often the case for microcontrollers and
+microprocessors) or at compile-time (as is the case with some FPGA SPI IP
+cores).
 
 .. container:: centeralign
 
    \ |image2|\
 
-
 .. container:: centeralign
 
    Figure 2. SPI Modes
 
+CPOL stands for Clock POLarity and designates the default value (high/low) of
+the SCK signal when the bus is idle. CPHA stands for Clock PHAse and determines
+which edge of the clock data is sampled (rising edge/falling edge). The data
+sheet for the slave device will specify these parameters so that the master can
+be configured accordingly.
 
-CPOL stands for Clock POLarity and designates the default value (high/low) of the SCK signal when the bus is idle. CPHA stands for Clock PHAse and determines which edge of the clock data is sampled (rising edge/falling edge). The data sheet for the slave device will specify these parameters so that the master can be configured accordingly.
-
-An example of SPI transfers for the two CPOL configurations is presented in Figure 3. 8 data bits are sent, starting with MSB.
+An example of SPI transfers for the two CPOL configurations is presented in
+Figure 3. 8 data bits are sent, starting with MSB.
 
 .. container:: centeralign
 
    \ |image3|\
 
-
 .. container:: centeralign
 
    Figure 3. SPI Transfer Example
 
-
 Hardware Configuration
 ----------------------
 
-Figure 4. shows the hardware connection between M2K board and EVAL-ADICUP360 + EVAL-CN0411-ARDZ shield.
+Figure 4. shows the hardware connection between M2K board and EVAL-ADICUP360 +
+EVAL-CN0411-ARDZ shield.
 
 .. container:: centeralign
 
    \ |image4|\
 
-
 .. container:: centeralign
 
    Figure 4. SPI Debug Hardware Setup
 
-
-The SPI pins for the CN0411 shield are available for monitoring at port DIGI1. Since we have 2 slaves connected to the master (ADC and DAC), there are 2 pins corresponding to the Chip Select of each slave.
+The SPI pins for the CN0411 shield are available for monitoring at port DIGI1.
+Since we have 2 slaves connected to the master (ADC and DAC), there are 2 pins
+corresponding to the Chip Select of each slave.
 
 **EVAL-CN011-ARDZ SPI pin configuration:** Port DIGI1:
 
@@ -115,7 +154,8 @@ Connect the M2K pins to the CN0411 as follows:
 Scopy Logic Analyzer Configuration
 ----------------------------------
 
-Several SPI configuration parameters need to be determined in order to properly configure Scopy. For the CN0411 project, they are as follows:
+Several SPI configuration parameters need to be determined in order to properly
+configure Scopy. For the CN0411 project, they are as follows:
 
 -  SPI Clock rate - 1MHz
 -  CPOL - High (1) for ADC and DAC
@@ -130,23 +170,20 @@ An overview of the user interface is shown in Figure 5.
 
    \ |image5|\
 
-
 .. container:: centeralign
 
    Figure 5. Scopy SPI Debug Setup
 
-
-Open the Logic Analyzer instrument, select DIO0-DIO3 lines and press the "Group with selected" button.
+Open the Logic Analyzer instrument, select DIO0-DIO3 lines and press the "Group
+with selected" button.
 
 .. container:: centeralign
 
    \ |image6|\
 
-
 .. container:: centeralign
 
    Figure 6. Logic Analyzer group channels
-
 
 Select the channel group formed and apply the SPI decoder. While the group is selected, open settings menu by pressing the |image7| button on the top right side of the user interface. A settings panel will appear for the SPI decoder, allowing the signal-channel configuration and parameters setup. Apply the parameters listed above to the group, noting that ADC and DAC have a different Clock Phase setting.
 
@@ -154,46 +191,49 @@ Select the channel group formed and apply the SPI decoder. While the group is se
 
    \ |image8|\
 
-
 .. container:: centeralign
 
    Figure 7. Group Settings
 
-
-The Logic Analyzer must be set up to "catch" the SPI transfer on the Logic Analyzer plot. Therefore we need to configure a trigger. Since the SPI transfer starts when the Chip Select signal is asserted low, the falling edge of the CS channel can be used as the trigger.
+The Logic Analyzer must be set up to "catch" the SPI transfer on the Logic
+Analyzer plot. Therefore we need to configure a trigger. Since the SPI transfer
+starts when the Chip Select signal is asserted low, the falling edge of the CS
+channel can be used as the trigger.
 
 .. container:: centeralign
 
    \ |image9|\
 
-
 .. container:: centeralign
 
    Figure 8. Trigger Settings
 
-
 SPI Transmit
 ------------
 
-This example verifies that for a given software command, the correct configuration bits and output code are sent to the DAC. Make sure that the correct DAC CS pin is connected to the M2K digital pin (see Hardware Configuration step).
+This example verifies that for a given software command, the correct
+configuration bits and output code are sent to the DAC. Make sure that the
+correct DAC CS pin is connected to the M2K digital pin (see Hardware
+Configuration step).
 
-To set the DAC output to 1.0V, the value that needs to be written can be computed using the DAC voltage-to-value formula:
+To set the DAC output to 1.0V, the value that needs to be written can be
+computed using the DAC voltage-to-value formula:
 
 :math:`\displaystyle CODE=V_out \times DAC_FS/V_ref=\frac{1.0V \times (2^16-1)}{2}.5V=26214=6666(hex)`
 
-Set the Time Base of the Logic Analyzer instrument to 10us and the Trigger Position at 35us and run a Single sweep.
+Set the Time Base of the Logic Analyzer instrument to 10us and the Trigger
+Position at 35us and run a Single sweep.
 
 .. container:: centeralign
 
    \ |image10|\
 
-
 .. container:: centeralign
 
    Figure 9. General Settings
 
-
-The Logic Analyzer will wait for the falling edge of the CS signal to be triggered.
+The Logic Analyzer will wait for the falling edge of the CS signal to be
+triggered.
 
 Run the "setdac 1.0" command. This will initiate the SPI transmission.
 
@@ -203,22 +243,30 @@ The result is presented in Figure 10.
 
    \ |image11|\
 
-
 .. container:: centeralign
 
    Figure 10. SPI Write sequence
 
-
-Analyzing the plot, 3 bytes (24 bits) are sent on the MOSI line, starting with MSB. The first four bits correspond to the command bits, 0x3, which is the "Write DAC and input register" command. This is followed by 16 bits representing the DAC output code computed previously (0x6666). The final four bits are "don't care", and are set to zero in the software (although they do not have to be zero.)
+Analyzing the plot, 3 bytes (24 bits) are sent on the MOSI line, starting with
+MSB. The first four bits correspond to the command bits, 0x3, which is the
+"Write DAC and input register" command. This is followed by 16 bits representing
+the DAC output code computed previously (0x6666). The final four bits are "don't
+care", and are set to zero in the software (although they do not have to be
+zero.)
 
 SPI Receive
 -----------
 
-The ADC output code will now be analyzed to confirm that it corresponds to 1.0V. (The voltage at the DAC output can also be double-checked with a voltmeter if desired.)
+The ADC output code will now be analyzed to confirm that it corresponds to 1.0V.
+(The voltage at the DAC output can also be double-checked with a voltmeter if
+desired.)
 
-First, connect the M2K DIO3 pin to the ADC CS pin (DIGI1 Pin 2). Since the SPI configuration slightly differs from the one of the DAC (See SPI parameters list), modify the group settings menu, setting the Clock Phase (CPHA) to 1.
+First, connect the M2K DIO3 pin to the ADC CS pin (DIGI1 Pin 2). Since the SPI
+configuration slightly differs from the one of the DAC (See SPI parameters
+list), modify the group settings menu, setting the Clock Phase (CPHA) to 1.
 
-Run a Single Sweep on the Logic Analyzer instrument again and run the "readdac" command. This will read the ADC channel corresponding to the DAC output.
+Run a Single Sweep on the Logic Analyzer instrument again and run the "readdac"
+command. This will read the ADC channel corresponding to the DAC output.
 
 The result is shown in Figure 11.
 
@@ -226,28 +274,32 @@ The result is shown in Figure 11.
 
    \ |image12|\
 
-
 .. container:: centeralign
 
    Figure 11. SPI Read sequence
 
+The data on the MOSI line corresponds to the ADC's register address (0x42)
+followed by three dummy bytes (0x00) while the register value is being received.
 
-The data on the MOSI line corresponds to the ADC's register address (0x42) followed by three dummy bytes (0x00) while the register value is being received.
-
-While the dummy bytes are being sent, the ADC simultaneously sends the 24-bit value stored in the requested register on the MISO line (0x665DBF).
+While the dummy bytes are being sent, the ADC simultaneously sends the 24-bit
+value stored in the requested register on the MISO line (0x665DBF).
 
 The ADC code can then be converted to voltage using the following formula:
 
 :math:`V_out = (CODE \times V_ref)/ ADC_FS = (665DBF(hex) \times 2.5V) / (2^24-1) = 0.9996V`
 
-As expected, the DAC voltage is very close to the voltage that the DAC was set to previously.
+As expected, the DAC voltage is very close to the voltage that the DAC was set
+to previously.
 
-Therefore, we can conclude that SPI communication, both writing and reading, worked properly.
+Therefore, we can conclude that SPI communication, both writing and reading,
+worked properly.
 
 Conclusion
 ----------
 
-In addition to SPI, the application includes a set of decoders covering a large number of communication protocols such as I2C, I2S, UART, JTAG, and others, making ADALM2000 a powerful tool for analyzing and debugging digital signals.
+In addition to SPI, the application includes a set of decoders covering a large
+number of communication protocols such as I2C, I2S, UART, JTAG, and others,
+making ADALM2000 a powerful tool for analyzing and debugging digital signals.
 
 Further Reading:
 ~~~~~~~~~~~~~~~~
@@ -261,7 +313,7 @@ Further Reading:
 -  :doc:`EVAL-ADICUP360 User Guide </wiki-migration/resources/eval/user-guides/eval-adicup360>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/spi_diagram.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/spi_cpha_cpol.png
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/spi_transfer_example.png
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/hw_spi_m2k_cn0411.jpg

@@ -7,14 +7,15 @@ Connections
 -----------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/ev-sc598_hw_setup_comments.png
-   :width: 1080px
+   :width: 1080
 
 EV-SC598-SOM with EV-SOM-CRR EZ-Kit Connections
 
 Settings
 --------
 
-The board settings for running SigmaStudio+ EV-SC598-SOM with EV-SOM-CRR EZ-Kit, using the Default Application is given in the below tables.
+The board settings for running SigmaStudio+ EV-SC598-SOM with EV-SOM-CRR EZ-Kit,
+using the Default Application is given in the below tables.
 
 ====== ===================================
 Switch Setting

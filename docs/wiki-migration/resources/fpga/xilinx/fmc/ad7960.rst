@@ -24,7 +24,12 @@ Supported Carriers
 Quick Start Guide
 -----------------
 
-The reference design has been tested with KC705. It should be easily portable to other boards such as ML605 and VC707, only the UCF and MHS files need to be changed. The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and the programmer (IMPACT). This bit file configuration also captures 8192 samples from the ADC and saves them in a \*.csv file.
+The reference design has been tested with KC705. It should be easily portable to
+other boards such as ML605 and VC707, only the UCF and MHS files need to be
+changed. The bit file provided combines the FPGA bit file and the SDK elf files.
+It may be used for a quick check on the system. All you need is the hardware and
+the programmer (IMPACT). This bit file configuration also captures 8192 samples
+from the ADC and saves them in a \*.csv file.
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -36,19 +41,17 @@ Required Hardware
 Required Software
 ~~~~~~~~~~~~~~~~~
 
--  Xilinx ISE (Programmer (IMPACT) is sufficient for the demo and is available on Webpack). Use the latest version or the one used in the reference design.
+-  Xilinx ISE (Programmer (IMPACT) is sufficient for the demo and is available
+   on Webpack). Use the latest version or the one used in the reference design.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
    If you are not familiar with KC705 and/or Xilix tools, please visit
 
    | `products/boards-and-kits/EK-K7-KC705-G.htm <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_ for details.
-
 
 Extract the project from the archive file to the location you desire.
 
@@ -59,22 +62,22 @@ To begin, connect the EVAL-AD7960FMCZ board to the FMC-HPC or FMC-LPC connector 
 
 KC705 and AD7960 FMC-LPC Connection
 
-
 |KC705 LPC Hardware setup|
 
 KC705 and AD7960 FMC-HPC Connection
-
 
 |KC705 HPC Hardware setup|
 
 FPGA Configuration
 ~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and initialze the JTAG chain. The program should recognize the FPGA device. Program the device using the ”../Bit/system.bit” file provided in the reference design archive..
+Start IMPACT, and initialze the JTAG chain. The program should recognize the
+FPGA device. Program the device using the ”../Bit/system.bit” file provided in
+the reference design archive..
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_impact.jpg
    :alt: FPGA Programming
-   :width: 400px
+   :width: 400
 
 Data Capture
 ~~~~~~~~~~~~
@@ -83,23 +86,21 @@ At this point everything is set up and it is possible to start the evaluation of
 
 Data Capture Script
 
-
 |Data Capture|
 
 Acquisition.csv
-
 
 |Acquisition File|
 
 UART Messages
 
-
 |UART Messages|
 
 .. tip::
 
-   The first time the data capture script is run it is possible that an error will occur while the script is trying to connect to the system. Just run the script again and the error shouldn't appear anymore.
-
+   The first time the data capture script is run it is possible that an error
+   will occur while the script is trying to connect to the system. Just run the
+   script again and the error shouldn't appear anymore.
 
 Using the reference design
 --------------------------
@@ -107,7 +108,12 @@ Using the reference design
 Functional description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design is built on a Microblaze based system. It consists of two functional modules, a LVDS interface, and a DMA interface. The LVDS interface captures and buffers data from the ADC. The data is captured using Echoed-Clock mode or Self-Clock mode (depending on the project). The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software, and transfered to the PC using a \*.tcl script.
+The reference design is built on a Microblaze based system. It consists of two
+functional modules, a LVDS interface, and a DMA interface. The LVDS interface
+captures and buffers data from the ADC. The data is captured using Echoed-Clock
+mode or Self-Clock mode (depending on the project). The DMA interface then
+transfers the samples to the external DDR-DRAM. The capture is initiated by the
+software, and transfered to the PC using a \*.tcl script.
 
 Downloads
 ---------
@@ -123,13 +129,11 @@ FPGA Referece Designs:
    -  **KC705 Self Clock Using IDELAYE2:** `cf_ad7960_kc705_self_iodelay_edk_14_3_2013_07_17.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7960_kc705_self_iodelay_edk_14_3_2013_07_17.zip>`_ FMC-LPC
    
 
-
 .. hint::
 
    
    -  Questions? :ez:`Ask Help & Support <fpga>`.
    
-
 
 Zip file contents
 -----------------
@@ -150,12 +154,12 @@ More information
 -  :ez:`Ask questions about the FPGA reference design <community/fpga>`
 
 .. |KC705 LPC Hardware setup| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_kc705_setup_lpc.jpg
-   :width: 400px
+   :width: 400
 .. |KC705 HPC Hardware setup| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_kc705_setup_hpc.jpg
-   :width: 400px
+   :width: 400
 .. |Data Capture| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_datacapture.jpg
-   :width: 400px
+   :width: 400
 .. |Acquisition File| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_acquisition_file.jpg
-   :width: 400px
+   :width: 400
 .. |UART Messages| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/teraterm_adc.png
-   :width: 400px
+   :width: 400

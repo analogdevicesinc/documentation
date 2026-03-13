@@ -16,7 +16,6 @@ Designed to be used with the :adi:`ADALM-PLUTO`, the :adi:`EVAL-CN0522-EBZ <en/d
    -  :adi:`EVAL-CN0522-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0522.html>` Circuit Evaluation Board
    
 
-
 Evaluation Board Hardware
 -------------------------
 
@@ -26,7 +25,7 @@ Primary Side
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_revb_primary_with_labels.png
    :alt: Figure 2. Top View of EVAL-CN0522-EBZ
    :align: center
-   :width: 600px
+   :width: 600
 
 RFIN Plug (J1)
 ^^^^^^^^^^^^^^
@@ -51,7 +50,7 @@ LED Indicators (DS1 and DS2)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_ds1-ds2_table.png
    :align: center
-   :width: 350px
+   :width: 350
 
 Secondary Side
 ~~~~~~~~~~~~~~
@@ -59,7 +58,7 @@ Secondary Side
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_revb_secondary_with_labels.png
    :alt: Figure 3. Bottom View of EVAL-CN0522-EBZ
    :align: center
-   :width: 600px
+   :width: 600
 
 Power Supply Connector (P1)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,20 +74,19 @@ Changing the ADT6402 Trip Point (JP1 and JP2)
 
 *The trip point can be set using the solder jumpers JP1 and JP2, as shown in the table below.*
 
-
 |image6|
 
 .. important::
 
-   Due to the high thermal dissipation of RF amplifiers, the first three and last three options should not be used.
-
+   Due to the high thermal dissipation of RF amplifiers, the first three and
+   last three options should not be used.
 
 Connecting the EVAL-CN0522-EBZ to the ADALM-PLUTO
 -------------------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0417.png
    :align: center
-   :width: 400px
+   :width: 400
 
 To properly operate the :adi:`EVAL-CN0522-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0522.html>` using the :adi:`ADALM-PLUTO`, follow the steps below:
 
@@ -100,7 +98,6 @@ To properly operate the :adi:`EVAL-CN0522-EBZ <en/design-center/reference-design
 
    Warning: Do not directly connect the RFOUT port of the :adi:`EVAL-CN0522-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0522.html>` to the Rx port of the :adi:`ADALM-PLUTO`. The maximum RF input that the :adi:`ADALM-PLUTO` can safely handle is +2.5 dBm.
 
-
 Evaluation Board Schematic, Artwork and Bill of Materials
 ---------------------------------------------------------
 
@@ -109,14 +106,14 @@ Assembly Drawing
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_assembly_drawing.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Board Dimensions
 ~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_dimensions.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Schematic, Layout and Bill of Materials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,7 +130,6 @@ Schematic, Layout and Bill of Materials
    -  Allegro Layout Files
    -  Assembly Drawing
    
-
 
 More Information and Useful Links
 ---------------------------------
@@ -152,18 +148,17 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0522-EBZ?&v=RevB>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_j1.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_j2.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_ds1-ds2_led_.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_p1.png
-   :width: 150px
+   :width: 150
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_jp1-jp2_temp_switch_.png
-   :width: 150px
+   :width: 150
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_jp1-jp2_table.png
-   :width: 500px
+   :width: 500

@@ -1,7 +1,8 @@
 ADIS1649x EVALUATION GUIDE
 ==========================
 
-The following tools that provide support for early evaluation of IMUs in the ADIS1649x product family:
+The following tools that provide support for early evaluation of IMUs in the
+ADIS1649x product family:
 
 -  The :adi:`ADIS16IMU1/PCBZ <EVAL-ADIS16IMU1>` is the **breakout board** for the ADIS1649x, which provides a simple way to connect to the ADIS1649x using a 16-pin, 1mm ribbon cable.
 
@@ -9,7 +10,8 @@ The following tools that provide support for early evaluation of IMUs in the ADI
 
 -  The :adi:`IMU Evaluation Software <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADIS2.html#eb-relatedsoftware>` works in conjunction with the :adi:`EVAL-ADIS2` and provides a convenient method for functional validation and some parametric-level characterization of the behaviors in the ADIS1649x.
 
-Please review all instructions before starting to install any of these tools, as following the proper sequence is often the fastest path to successful operation.
+Please review all instructions before starting to install any of these tools, as
+following the proper sequence is often the fastest path to successful operation.
 
 Connecting the ADIS1649x to the Breakout Board
 ----------------------------------------------
@@ -27,7 +29,7 @@ The ADIS1613x, ADIS1636x, ADIS16375, ADIS1640x, ADIS1648x and ADIS1649x IMU prod
 Here is a picture of the contents that come with the :adi:`ADIS16IMU1/PCB <en/evaluation/eval-adis16imu1/eb.html#buy>`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb_kitpic.jpg
-   :width: 300px
+   :width: 300
 
 ORDERING
 --------
@@ -37,17 +39,25 @@ To order this breakout board, please visit :adi:`the ADIS16IMU1/PCB web site (cl
 IMU/GYROSCOPE MOUNTING HOLES
 ----------------------------
 
-The ADIS16IMU1/PCBZ provides several sets of mounting holes that line up with mounting holes and tabs on the following products: ADIS1613x, ADIS1636x, ADIS16375, ADIS1640x ADIS1648x and ADIS1649x products. Please see the following picture for device mounting hole locations.
+The ADIS16IMU1/PCBZ provides several sets of mounting holes that line up with
+mounting holes and tabs on the following products: ADIS1613x, ADIS1636x,
+ADIS16375, ADIS1640x ADIS1648x and ADIS1649x products. Please see the following
+picture for device mounting hole locations.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1_pcb_basicdimensions.png
-   :width: 800px
+   :width: 800
 
-NOTE: The nominal diameter of the four holes, located in each corner of this PCB, is 3.175mm.
+NOTE: The nominal diameter of the four holes, located in each corner of this
+PCB, is 3.175mm.
 
 MACHINE SCREWS IMPACT ON LOCAL MAGNETIC FIELDS
 ----------------------------------------------
 
-The machine screws in the ADIS16IMU1/PCBZ kit are made out of stainless steel, which can have some moderate impact on magnetic fields, local to the IMU. For those whose application demands the best magnetometer performance offered by these IMUs, consider using plastic screws that will not impact the magnetic fields around the devices.
+The machine screws in the ADIS16IMU1/PCBZ kit are made out of stainless steel,
+which can have some moderate impact on magnetic fields, local to the IMU. For
+those whose application demands the best magnetometer performance offered by
+these IMUs, consider using plastic screws that will not impact the magnetic
+fields around the devices.
 
 DUT Connection
 --------------
@@ -55,15 +65,18 @@ DUT Connection
 ADIS16133, ADIS16135, ADIS1636 Mounting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the M2x0.4x16mm machine screws (provided in pink bag) for mounting these products to the ADIS16IMU1/PCBZ and set their torque for 20 inch-ounces. The yellow-highlights in the top-view picture illustrate the location of the mounting holes for these products.
+Use the M2x0.4x16mm machine screws (provided in pink bag) for mounting these
+products to the ADIS16IMU1/PCBZ and set their torque for 20 inch-ounces. The
+yellow-highlights in the top-view picture illustrate the location of the
+mounting holes for these products.
 
 .. warning::
 
-   WARNING: Remove the jumper from JP1 when using the ADIS16IMU1/PCB to evaluate these products.
-
+   WARNING: Remove the jumper from JP1 when using the ADIS16IMU1/PCB to evaluate
+   these products.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb_13x.jpg
-   :width: 300px
+   :width: 300
 
 ADIS16360, ADIS16362, ADIS16364, ADIS16365, ADIS16367, ADIS16400, ADIS16405, ADIS16407 Mounting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,9 +87,8 @@ Use the M2x0.4x4mm machine screws (provided in pink bag) for mounting these prod
 
    WARNING: Remove the jumper from JP1 when using the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1/eb.html#buy>` to evaluate these products.
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb_36x.jpg
-   :width: 300px
+   :width: 300
 
 ADIS16375, ADIS16480, ADIS16485, ADIS16488 Mounting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,14 +97,21 @@ Use the M2x0.4mm machine screws (provided in pink bag) for mounting these produc
 
 **Mounting Holes**
 
-The mounting holes are presently tapped for use with M2x0.4mm. While the pre-tapped holes provide convenience in the mounting process, they also constrain the mounting hole location in a manner that can result in a translational force on the electrical connector. This violates one of the "best-practice" criteria in the product datasheets and can impact key bias stability behaviors. For those who want to preserve best performance, open the diameter of these holes to 2.85mm and use a washer/nut combination on the backside of the interface board to secure the ADIS1648x to its surface.
+The mounting holes are presently tapped for use with M2x0.4mm. While the
+pre-tapped holes provide convenience in the mounting process, they also
+constrain the mounting hole location in a manner that can result in a
+translational force on the electrical connector. This violates one of the
+"best-practice" criteria in the product datasheets and can impact key bias
+stability behaviors. For those who want to preserve best performance, open the
+diameter of these holes to 2.85mm and use a washer/nut combination on the
+backside of the interface board to secure the ADIS1648x to its surface.
 
 :ez:`Click here to see learn more about "best-practices" in mounting the ADIS1648x <mems/w/documents/4440/faq-adis1648x-mounting-tips>`
 
 Here is an example of the ADIS16IMU1/PCBZ, with an ADIS16485AMLZ mounted to it.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16488-pcb-web.jpg
-   :width: 300px
+   :width: 300
 
 Make sure that the connector pins are in alignment with J2 on the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1/eb.html#buy>`, before pressing it into place.
 
@@ -102,11 +121,10 @@ Here is a close-up view, which shows the
 
    correct connector alignment
 
-
 .
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis1648x_evaladis_install_step01-02b.jpg
-   :width: 300px
+   :width: 300
 
 This picture provides an example of the an
 
@@ -114,11 +132,10 @@ This picture provides an example of the an
 
    incorrect connector alignment
 
-
 . Note that this view is on the EVAL-ADISZ board, not the :adi:`ADIS16IMU1/PCBZ <en/evaluation/eval-adis16imu1/eb.html#buy>`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis1648x_evaladis_install_step01-03.jpg
-   :width: 300px
+   :width: 300
 
 ADIS16490, ADIS16495, ADIS16497 Mounting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,17 +150,18 @@ Using the silk screen as a guideline for where to start (silk variation may resu
 STEP #2
 ^^^^^^^
 
-Verify the alignment with J2 and then gently press the ADIS1649x into J2. Here is a picture of what this looks like, when the ADIS1649x has proper insertion alignment into J2.
+Verify the alignment with J2 and then gently press the ADIS1649x into J2. Here
+is a picture of what this looks like, when the ADIS1649x has proper insertion
+alignment into J2.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_003c.jpg
-   :width: 430px
+   :width: 430
 
 Here are two examples of
 
 .. container:: em
 
    incorrect
-
 
 insertion alignment.
 
@@ -163,7 +181,6 @@ Secure the 16-pin, 1mm ribbon cable to J1 and use that to connect to an embedded
 
    correct
 
-
 insertion alignment between the ribbon cable and J1.
 
 |image6| |image7|
@@ -174,7 +191,6 @@ The following two pictures illustrate
 
    incorrect
 
-
 insertion alignment between the ribbon cable and J1.
 
 |image8| |image9| |image10|
@@ -182,17 +198,21 @@ insertion alignment between the ribbon cable and J1.
 STEP #5
 ^^^^^^^
 
-When connecting the other end of the ribbon cable to an embedded processor board, take note of the pin 1 location for J1, using the following picture:
+When connecting the other end of the ribbon cable to an embedded processor
+board, take note of the pin 1 location for J1, using the following picture:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_004c.jpg
-   :width: 430px
+   :width: 430
 
 JP1 Settings by DUT Model
 -------------------------
 
-JP1 controls the power supply to the VDDRTC function on the ADIS16375 and all parts in the ADIS1648x family, including the ADIS16485 and ADIS16488A. For all other products, do not install JP1.
+JP1 controls the power supply to the VDDRTC function on the ADIS16375 and all
+parts in the ADIS1648x family, including the ADIS16485 and ADIS16488A. For all
+other products, do not install JP1.
 
-Please use the following table to determine how to use JP1 on the ADIS16IMU1/PCBZ.
+Please use the following table to determine how to use JP1 on the
+ADIS16IMU1/PCBZ.
 
 ================ ==============
 DUT MODEL NUMBER JP1 INSTALLED?
@@ -229,15 +249,18 @@ This can also connect to J1 on the EVAL-ADIS2
 INTERFACE CONNECTOR
 -------------------
 
-J1 is the electrical connector that provides direct access to power, ground and critical digital I/O pins on the devices. It is a 16-pin, dual-row, 2-mm pitch connector.
+J1 is the electrical connector that provides direct access to power, ground and
+critical digital I/O pins on the devices. It is a 16-pin, dual-row, 2-mm pitch
+connector.
 
 Pin Assignments
 ~~~~~~~~~~~~~~~
 
-Here are the pin assignments for J1, which is the connector that will interface with an embedded processor board.
+Here are the pin assignments for J1, which is the connector that will interface
+with an embedded processor board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb-j1-connector.png
-   :width: 200px
+   :width: 200
 
 Ribbon Cable Options
 ~~~~~~~~~~~~~~~~~~~~
@@ -248,42 +271,41 @@ ELECTRICAL SCHEMATIC
 --------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb-schematic.png
-   :width: 400px
+   :width: 400
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_002c.jpg
-   :width: 270px
+   :width: 270
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_000c.jpg
-   :width: 240px
+   :width: 240
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_001c.jpg
-   :width: 310px
+   :width: 310
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_003ac.jpg
-   :width: 430px
+   :width: 430
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_003bc.jpg
-   :width: 410px
+   :width: 410
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_005c.jpg
-   :width: 420px
+   :width: 420
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_006c.jpg
-   :width: 360px
+   :width: 360
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_007c.jpg
-   :width: 290px
+   :width: 290
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_008c.jpg
-   :width: 270px
+   :width: 270
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_009c.jpg
-   :width: 270px
+   :width: 270
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_imu1_web_00.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_imu1_web_01.png
-   :width: 400px
-
+   :width: 400
 
 ADIS16IMU1/PCBZ Pin Assignments
 -------------------------------
 
-Here are the pin assignments for J1, which is the connector that will interface with an embedded processor board.
+Here are the pin assignments for J1, which is the connector that will interface
+with an embedded processor board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb-j1-connector.png
-   :width: 200px
-
+   :width: 200
 
 Connecting to the EVAL-ADIS2
 ----------------------------
@@ -291,7 +313,7 @@ Connecting to the EVAL-ADIS2
 J1 on the :adi:`eval-adis2` has the same pin assignments as J1 on the :adi:`ADIS16IMU1/PCB <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADIS16IMU1.html>`. Use a 16-pin, 1mm ribbon cable to connect these two boards together.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis2_wikiguide_bb_010.jpg
-   :width: 600px
+   :width: 600
 
 Do not connect the **EVAL-ADIS2** to the PC yet.
 
@@ -308,12 +330,14 @@ Visit the :adi:`Software <en/design-center/evaluation-hardware-and-software/eval
 STEP #2
 ~~~~~~~
 
-Unpack the zip file and copy the driver file (SDPDrivers_2.exe) into a temporary location.
+Unpack the zip file and copy the driver file (SDPDrivers_2.exe) into a temporary
+location.
 
 STEP #3
 ~~~~~~~
 
-Double click on the driver file and follow the prompts to finish the installation process.
+Double click on the driver file and follow the prompts to finish the
+installation process.
 
 STEP #4
 ~~~~~~~
@@ -321,7 +345,7 @@ STEP #4
 Click on **Next** when this window pops up.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16490_wg_0000.png
-   :width: 600px
+   :width: 600
 
 STEP #5
 ~~~~~~~
@@ -329,12 +353,13 @@ STEP #5
 Click on **Install** when this window pops up.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16490_wg_001.png
-   :width: 600px
+   :width: 600
 
-This graphic illustrates what this will look like during the installation process
+This graphic illustrates what this will look like during the installation
+process
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16490_wg_002.png
-   :width: 600px
+   :width: 600
 
 STEP #6
 ~~~~~~~
@@ -342,16 +367,19 @@ STEP #6
 Click on **Finish** when this window appears
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16490_wg_003.png
-   :width: 600px
+   :width: 600
 
 IMU Evaluation Software Download
 --------------------------------
 
-Click on the following link and save the file to a convenient location on the test PC. Then extract two files into the folder that the application will run out of.
+Click on the following link and save the file to a convenient location on the
+test PC. Then extract two files into the folder that the application will run
+out of.
 
 `imu_evaluation.zip <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_evaluation.zip>`_
 
 CONNECTIVITY WITH EMBEDDED PROCESSORS
 -------------------------------------
 
-The ADIS16490 supports communication with most embedded processor platforms, using
+The ADIS16490 supports communication with most embedded processor platforms,
+using

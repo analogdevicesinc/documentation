@@ -17,13 +17,14 @@ Windows Installer 3.1 Installation
 ezLINX Sample PC Application Installation
 -----------------------------------------
 
-Install the ezLINX PC Application setup found in the Software/PC Application Installation folder located on the ezLINX Software Package DVD. The latest version of this software can be downloaded from the link below.
+Install the ezLINX PC Application setup found in the Software/PC Application
+Installation folder located on the ezLINX Software Package DVD. The latest
+version of this software can be downloaded from the link below.
 
 .. admonition:: Download
    :class: download
 
    :adi:`Download Sample PC Application Installation files <static/imported-files/eval_boards/ezLINXPCApp.zip>`
-
 
 Run the setup by double clicking on the setup.exe file. This should start the installation process and when completed the window below will open: |image3| This window indicates that the software installation was successful and is now running.
 
@@ -32,7 +33,8 @@ Connecting the ezLINX board to the PC
 
 -  Connect the ezLINX board to the power supply using the supplied AC adapter
 -  Connect the ezLINX board to the PC using the supplied USB A to USB mini B cable.
--  Ignore the found new hardware prompt that pops up in the bottom right corner of the screen
+-  Ignore the found new hardware prompt that pops up in the bottom right corner
+   of the screen
 
 Installing the USB drivers
 --------------------------
@@ -41,7 +43,6 @@ Installing the USB drivers
    :class: download
 
    :adi:`Download the Windows 32-bit driver <static/imported-files/eval_boards/ezLINXGadgetEthernetUSBDriver.zip>`
-
 
 | Navigate to the device manager of your PC through the following pathway:
 | Go to the Startup menu and select Control Panel
@@ -62,7 +63,8 @@ Installing the USB drivers
 | Select "have disk" and using the browse button on the next window, locate the Windows 32-bit driver on the ezLINX DVD located in the Software/ezLINX drivers/32-bit folder. Click on the OK button. Click on the next button. |image11| On this screen click "continue anyway". This will install the driver and the PC can now recognize the ezLINX board as the "Linux USB Etheret/RNDIS Gadget".
 | ===== Setting up the gadget ethernet IP Address ===== Go to the Control Panel then Navigate to the Network Connections window |image12| Locate the connection with the device name "Linux USB Ethernet/RNDIS Gadget" |image13| Right click on the connection and select properties. In the following list select "Internet protocol (TCP/IP)" |image14| Click on the Properties button. This will bring you to the window where the IP address of the windows gadget ethernet driver can be set. Enter the following into the window: |image15|
 
-Click on the OK button and then click on the close button. The IP address of the windows gadget ethernet driver has now been set.
+Click on the OK button and then click on the close button. The IP address of the
+windows gadget ethernet driver has now been set.
 
 Setting up the ezLINX board IP address
 --------------------------------------
@@ -73,24 +75,24 @@ Setting up the ezLINX board IP address
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/windowsinstaller.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/dotnetframework.jpg
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/sw_successinstallation.jpg
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/controlpanel.jpg
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/systemaccess.jpg
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/systemproperties.jpg
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/devicemanager.jpg
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/hardwareupdate.jpg
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/hardwareupdatewinzar.jpg
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/selectnetworkadapter.jpg
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/hardwareinstallation.jpg
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/networkconnection.jpg
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/localareaconnection.jpg
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/connectionproperties.jpg
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/ipaddress.jpg
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/configinterface.jpg
-   :width: 300px
+   :width: 300
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/xp/gpiointerface.jpg
-   :width: 300px
+   :width: 300

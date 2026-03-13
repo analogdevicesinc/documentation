@@ -1,22 +1,22 @@
 AD-PQMON-SL: Power Quality Analyzer
 ===================================
 
-
-
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages
 
    | The latest version of this document can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-pqmon-sl/index.html
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/ade9430_angle.jpg
-   :width: 600px
+   :width: 600
 
 Overview
 --------
 
-Power quality monitoring is becoming important to keep power grids clean despite the harmonics introduced by inverter-based resources. Such activity improves the stability and reliability of the grid and improves equipment health by preventing flickering or blackouts.
+Power quality monitoring is becoming important to keep power grids clean despite
+the harmonics introduced by inverter-based resources. Such activity improves the
+stability and reliability of the grid and improves equipment health by
+preventing flickering or blackouts.
 
 The **AD-PQMON-SL** is a power quality monitoring solution based on the :adi:`ADE9430`, which is a high performance, polyphase energy and Class S power quality monitoring and energy metering device.
 
@@ -24,7 +24,7 @@ This reference design also has an on-board processor, the :adi:`MAX32650` an ult
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/ad-pqmon-sl_block_diagram.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 Features
 --------
@@ -61,11 +61,11 @@ Applications
 
    For more information about the hardware see the :doc:`AD-PQMON-SL Hardware User Guide </wiki-migration/resources/eval/user-guides/ad-pqmon-sl/hardware>`
 
-
 System setup & evaluation
 -------------------------
 
-The solution is delivered with a set of accessories required to put the system together and get it up and running.
+The solution is delivered with a set of accessories required to put the system
+together and get it up and running.
 
 This is what you'll find in the development kit box:
 
@@ -78,7 +78,6 @@ The :adi:`AD-PQMON-SL` comes with pre-programmed firmware enabling the system to
 .. note::
 
    :doc:`Getting the system up and running </wiki-migration/resources/eval/user-guides/ad-pqmon-sl/software>`
-
 
 Helpful documents
 -----------------
@@ -117,7 +116,6 @@ Design and Integration Files
    -  Allegro Project
    
 
-
 Application Development
 -----------------------
 
@@ -135,7 +133,6 @@ The :adi:`AD-PQMON-SL` firmware is based on ADI's open-source no-OS framework. I
    
    `Scopy 2 download link <https://swdownloads.analog.com/cse/scopy/ad-pqmon-sl/scopy-windows-x86_64-setup-7797088.zip>`_
 
-
 --------------
 
 Support
@@ -146,5 +143,5 @@ Support
    Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
 
    
-   It should be noted that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.
-
+   It should be noted that the older the tools' versions and release branches
+   are, the lower the chances to receive support from ADI engineers.

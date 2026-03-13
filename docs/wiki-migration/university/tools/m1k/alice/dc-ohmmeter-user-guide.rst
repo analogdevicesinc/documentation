@@ -4,20 +4,21 @@ DC Ohmmeter Virtual Instruments for ADALM1000 in ALICE 1.3
 Objective:
 ----------
 
-This document serves as the DC Ohmmeter section of the User’s Guide in the ALICE 1.3 Desktop software interface written for use with the ADALM1000 active learning kit hardware.
+This document serves as the DC Ohmmeter section of the User’s Guide in the ALICE
+1.3 Desktop software interface written for use with the ADALM1000 active
+learning kit hardware.
 
 DC Ohmmeter Window:
 -------------------
 
-The method used to measure unknown resistance is based on the voltage divider configuration shown figure 1.
-
+The method used to measure unknown resistance is based on the voltage divider
+configuration shown figure 1.
 
 |image1|
 
 .. container:: centeralign
 
    Figure 1, Voltage Divider Method
-
 
 If we assume that voltage source V\ :sub:`S` is known, resistance of R\ :sub:`1` is known and we can measure voltage V\ :sub:`2`, the voltage across R\ :sub:`2`, we can use the voltage divider formula to calculate the resistance of R\ :sub:`2`.
 
@@ -40,8 +41,9 @@ Built into the ALM1000 is a switch that can connect an on-board 50 Ohm resistor 
 
 The series resistance of the switch, which is approximately 1 Ohm, must be included in the value of R\ :sub:`2`. The actual value for R\ :sub:`2` is more like slightly less than 51 Ohms. Of course the true value for R\ :sub:`2` can be found by calibrating its value based on measuring a known precision resistor standard.
 
-Both ways can be used in the DC Ohmmeter tool. The test voltage can be adjusted as well as the value of the known resistor. The Ext Int selector picks which variation will be used to calculate the unknown resistance.
-
+Both ways can be used in the DC Ohmmeter tool. The test voltage can be adjusted
+as well as the value of the known resistor. The Ext Int selector picks which
+variation will be used to calculate the unknown resistance.
 
 |image2|
 
@@ -49,12 +51,11 @@ Both ways can be used in the DC Ohmmeter tool. The test voltage can be adjusted 
 
    Figure2, DC Ohmmeter window
 
-
 **For Further Reading:**
 
 **Return to the** :doc:`ALICE Main Page </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`\ **.**
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-fig6.png
-   :width: 450px
+   :width: 450
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/dc-ohmmeter-screen.png
-   :width: 300px
+   :width: 300

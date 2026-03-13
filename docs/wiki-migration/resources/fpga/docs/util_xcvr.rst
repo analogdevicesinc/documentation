@@ -5,13 +5,11 @@ UTIL_ADXCVR core for Xilinx devices
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/xilinx/util_adxcvr/index.html\
 
-
 The :git-hdl:`library/xilinx/util_adxcvr` IP core instantiates a Gigabit Transceiver (GT) and sets up the required configuration. Basically, it is a simple wrapper file for a GT\* Column, exposing just the necessary ports and attributes.
 
 .. important::
 
    To understand the below wiki page is important to have a basic understanding about `High Speed Serial I/O <http://lmgtfy.com/?q=High+Speed+Serial+IO>`_ interfaces and Gigabit Serial Transceivers. To find more information about these technologies, please visit the `Xilinx's solution center <https://www.xilinx.com/support/answers/37181.html>`_.
-
 
 Currently this IP supports three different GT types:
 
@@ -32,7 +30,8 @@ Features
 Block Diagram
 -------------
 
-The following diagram shows a GTXE2 Column, which contains four GT Quads. Each quad contains a GTEX2_COMMON and four GTXE2_CHANNEL primitives.
+The following diagram shows a GTXE2 Column, which contains four GT Quads. Each
+quad contains a GTEX2_COMMON and four GTXE2_CHANNEL primitives.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/gtx_column.png
    :alt: GTXE2 Column
@@ -153,25 +152,31 @@ Design Guidelines
 
    Please refer to :doc:`Xilinx FPGAs Transceivers Wizard </wiki-migration/resources/fpga/docs/xgt_wizard>` to generate the optimal parameters needed to configure the transceivers for your project.
 
-
 Physical constraints considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The util_adxcvr allocates resources/quads (channels and common) sequentially. Meaning, if you have 8 lanes it will insert two quads, 4 channels and a common block for each quad.
+The util_adxcvr allocates resources/quads (channels and common) sequentially.
+Meaning, if you have 8 lanes it will insert two quads, 4 channels and a common
+block for each quad.
 
-Channels within a quad are tightly coupled to the common block, the placement of the channel resources can be permuted within a quad and is affected by the constraint file with the restriction that rx\_<N>_p/n connect to tx\_<N>_p/n must connect to the same channel.
+Channels within a quad are tightly coupled to the common block, the placement of
+the channel resources can be permuted within a quad and is affected by the
+constraint file with the restriction that rx\_<N>_p/n connect to tx\_<N>_p/n
+must connect to the same channel.
 
-Supposing we have the following pin constraints and connections to the util_adxcvr:
-
+Supposing we have the following pin constraints and connections to the
+util_adxcvr:
 
 |image1|
 
 So in this case we end up with a conflict during implementation: |image2| We have to ensure that in implementation the mapping is correct either by rearranging the Rx connections |image3| or by rearranging the Tx connections of the util_adxcvr:
 
-
 |image4|
 
-In such cases, when rearrangement is required due placement constraints, complementary reordering is required either in the converter device (lane crossbars) or inside the FPGA between the physical and link layer, to connect the logical lanes with the same index on both end of the link.
+In such cases, when rearrangement is required due placement constraints,
+complementary reordering is required either in the converter device (lane
+crossbars) or inside the FPGA between the physical and link layer, to connect
+the logical lanes with the same index on both end of the link.
 
 Software Guidelines
 -------------------

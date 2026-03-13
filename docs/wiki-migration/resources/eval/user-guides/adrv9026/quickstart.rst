@@ -5,7 +5,6 @@ ADRV9026 Quick Start Guides
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/eval/user-guide/transceiver/adrv9026/quickstart/index.html\
 
-
 The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the :adi:`EVAL-ADRV9026/ADRV9029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADRV9026.html>` boards on various FPGA development boards. They will discuss how to program the bitstream, run a no-OS program, or boot a Linux distribution.
 
 Supported Carriers
@@ -44,11 +43,12 @@ ZCU102 + EVAL
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009/adrv9009_zcu102_quickstart.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Unboxing guide
 ~~~~~~~~~~~~~~
 
-Detailed description of the setup procedure for ADRV9009 (similar procedure for ADRV9026/9029):
+Detailed description of the setup procedure for ADRV9009 (similar procedure for
+ADRV9026/9029):
 
 :ez:`Detailed unboxing guide <cfs-file/__key/communityserver-discussions-components-files/703/AD9371-and-ADRV9009-setup-with-ZCU102-or-ZC706-April2019.pdf>`

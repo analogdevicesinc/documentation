@@ -3,7 +3,9 @@
 Export Preset
 =============
 
-This action allows the user to export the given preset to a file. The function call takes in 2 arguments. Return type is a SSPResult which contains a IsSuccess flag for success/failure and Message in the form of list of strings.
+This action allows the user to export the given preset to a file. The function
+call takes in 2 arguments. Return type is a SSPResult which contains a IsSuccess
+flag for success/failure and Message in the form of list of strings.
 
 API
 ---
@@ -21,7 +23,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the ExportPreset action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+ExportPreset action.
 
 ::
 

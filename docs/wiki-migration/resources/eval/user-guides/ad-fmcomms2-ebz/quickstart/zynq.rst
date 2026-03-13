@@ -1,15 +1,23 @@
 AD-FMCOMMS2/3/4/5-EBZ Zynq and ZED Quick Start Guide
 ====================================================
 
-This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCOMMS2-EBZ or AD-FMCOMMS3-EBZ or AD-FMCOMMS4-EBZ or AD-FMCOMMS5-EBZ on either:
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the AD-FMCOMMS2-EBZ or AD-FMCOMMS3-EBZ or
+AD-FMCOMMS4-EBZ or AD-FMCOMMS5-EBZ on either:
 
 -  `ZC702 <https://www.xilinx.com/ZC702>`_ (FMCOMMS2/3/4/5)
 -  `ZC706 <https://www.xilinx.com/ZC706>`_ (FMCOMMS2/3/4/5)
 -  `ZED Board <http://zedboard.org/product/zedboard/>`_ (FMCOMMS2/3/4)
 
-Which board you want to use is completely up to you. There isn't much of a difference from evaluation of the transceiver standpoint - the difference is really up to you, and how much you want to add into the FPGA for your specific/custom design. (The ZC706 [1]_ includes a much larger FPGA , which includes for your custom design than what exists on the ZC702 [2]_, or ZED Board [3]_).
+Which board you want to use is completely up to you. There isn't much of a
+difference from evaluation of the transceiver standpoint - the difference is
+really up to you, and how much you want to add into the FPGA for your
+specific/custom design. (The ZC706 [1]_ includes a much larger FPGA , which
+includes for your custom design than what exists on the ZC702 [2]_, or ZED Board
+[3]_).
 
-The base functionality (play, and record RF waveforms) is the same on any platform.
+The base functionality (play, and record RF waveforms) is the same on any
+platform.
 
 Requirements
 ------------
@@ -25,9 +33,7 @@ Creating / Configuring the SD Card
 
 Create the :doc:`SD Image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` for Zynq/ZED Boards. (it is a single image for all boards)
 
-
 .. esd-warning::
-
 
 Setting up the hardware (ZC706)
 -------------------------------
@@ -38,7 +44,6 @@ You will need to:
 
    -
 
-
    |http---www.xilinx.com-images-product-images-zc706-base-board.jpg|
 
 -  Prepare the SD card with the proper Linux image (from :doc:`here </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` and pay attention to the Linux/Windows setup).
@@ -47,12 +52,15 @@ You will need to:
 -  Plug your HDMI display device into the HDMI Video Connector (P1)
 -  Plug your USB mouse/keyboard into the USB 2.0 ULPI Controller, w/Micro-B Connector (J49)
 -  Plug the Power Supply into 12V Power input connector (J22) (DO NOT turn the device on).
--  Set the jumpers: The main one is: SW11 - Big Blue Switch in the middle, which controls the Boot Mode, it needs to be set: 1: Down, 2: Down, 3: Up, 4: Up, 5: Down. Other Jumpers can be checked via looking at the picture. (click the picture to make it bigger)
+-  Set the jumpers: The main one is: SW11 - Big Blue Switch in the middle, which
+   controls the Boot Mode, it needs to be set: 1: Down, 2: Down, 3: Up, 4: Up,
+   5: Down. Other Jumpers can be checked via looking at the picture. (click the
+   picture to make it bigger)
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
    :alt: zc706plusfmcjesdadc1.png
    :align: right
-   :width: 200px
+   :width: 200
 
 -  Turn it on.
 -  Wait ~30 seconds for the "DONE" LED to turn green. This is above the power switch.
@@ -67,21 +75,18 @@ Booting the SD Card
 
    -  IIO Scope tool:
 
-
    |image1|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/fmcomms2-osc-plugin.png
-   :width: 200px
-
-
+   :width: 200
 
 - Learn more about the :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
-   * You are done. You can interact with the GUI either over the network, or with the HDMI monitor/USB keyboard mouse.
+   * You are done. You can interact with the GUI either over the network, or
+     with the HDMI monitor/USB keyboard mouse.
 
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
-
 
    |image2|
 
@@ -113,11 +118,10 @@ You will need to:
 
    If you want to manually build the HDL project and make the BOOT.BIN, see :doc:`this tutorial </wiki-migration/resources/fpga/docs/build>`. For the Zynq Linux kernel and the devicetree, check :doc:`this tutorial </wiki-migration/resources/tools-software/linux-build/generic/zynq>`.
 
-
 Setup/Wiring. (click to enlarge):
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zed_setup.jpg
-   :width: 300px
+   :width: 300
 
 **Note:** For proper robustness shield the ZED board with a plexi-glass cover. Add a "Touch-Screw" (A2, stainless steel) and connect it via a 270kOhm resistor to a GND pin. Touch this screw prior any handling of any board. It ensures proper and painless ESD discharge.
 
@@ -132,10 +136,10 @@ Setup/Wiring. (click to enlarge):
 
 .. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/fmcomms2-iio-osc.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300
 .. |ZED Board prepared| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zed_sw.png
-   :width: 400px
+   :width: 400
 
 .. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: https://wiki.analog.com/_media/http///www.xilinx.com/images/product-images/zc706-base-board.jpg

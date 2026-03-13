@@ -1,5 +1,3 @@
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -15,15 +13,10 @@
    which means it is no longer maintained or actively updated, even though the
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
-
-
-
 
 AD-FMComms1-EBZ : no-OS Software Drivers
 ========================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -40,18 +33,20 @@ AD-FMComms1-EBZ : no-OS Software Drivers
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-The reference design is a combination of hardware (the FMComms1 Card + the FPGA base platform), the HDL, and the software that is either running on the Microblaze, or ARM Cores.
+The reference design is a combination of hardware (the FMComms1 Card + the FPGA
+base platform), the HDL, and the software that is either running on the
+Microblaze, or ARM Cores.
 
 XCOMM API
 ---------
 
-An API is available to be used on systems without OS to interact with the FMCOMMS1 board. The API provides all the necessary functions to control the various components on the FMCOMMS1 board.
+An API is available to be used on systems without OS to interact with the
+FMCOMMS1 board. The API provides all the necessary functions to control the
+various components on the FMCOMMS1 board.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/xcomm_api.png
    :alt: XCOMM API
-   :width: 400px
+   :width: 400
 
 The FMCOMMS1 drivers stack is structured on three layers:
 
@@ -150,7 +145,6 @@ The latest stable source code can be downloaded from the Analog Devices github.
    
    https://github.com/analogdevicesinc/no-OS/tree/2014_R2/fmcomms1
 
-
 Using the XCOMM API
 -------------------
 
@@ -163,13 +157,16 @@ An example is provided in the source code on how to use the XCOMM API to:
 -  set the receive and transmit frequencies
 -  send a sinewave over the air and receive it back
 
-The example code outputs on the UART the status of each operation as shown below.
+The example code outputs on the UART the status of each operation as shown
+below.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/xcomm_test.png
    :alt: XCOMM Test Program Output
-   :width: 400px
+   :width: 400
 
-A UART terminal can be used to capture the output of the example program. The number of used UART port depends on the computer's configuration. The following settings must used in the UART terminal:
+A UART terminal can be used to capture the output of the example program. The
+number of used UART port depends on the computer's configuration. The following
+settings must used in the UART terminal:
 
 -  Baud Rate: 115200bps
 -  Data: 8 bit
@@ -183,6 +180,4 @@ After running the example program the system is configured to generate a sinewav
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/xcomm_chipscope.png
    :alt: ADC output
-   :width: 500px
-
-
+   :width: 500

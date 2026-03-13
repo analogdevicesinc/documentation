@@ -3,23 +3,34 @@
 Algorithm Designer
 ==================
 
-Algorithm Designer offers the flexibility to create a custom SigmaStudio+ block with runtime control over the parameters. SigmaStudio+ Algorithm Designer has two use cases:
+Algorithm Designer offers the flexibility to create a custom SigmaStudio+ block
+with runtime control over the parameters. SigmaStudio+ Algorithm Designer has
+two use cases:
 
 -  Algorithm Designer can be used as Designer Control module which could be inserted in the schematic as a generic module. Designer Control can implement any algorithm and offer provision for run-time parameter tuning. Since edits can be made to the source code as well as parameters in the Designer Control and the schematic can be immediately compiled and executed, this is useful during the development phase of the module.
--  Algorithm Designer can generate a reusable SigmaStudio+ block in the form of a DLL from an Algorithm using CrossCore Embedded Studio tools. The resulting SigmaStudio+ Add-In library file (Plug-In) can be reused and redistributed just like built-in SigmaStudio+ Algorithms.
+-  Algorithm Designer can generate a reusable SigmaStudio+ block in the form of
+   a DLL from an Algorithm using CrossCore Embedded Studio tools. The resulting
+   SigmaStudio+ Add-In library file (Plug-In) can be reused and redistributed
+   just like built-in SigmaStudio+ Algorithms.
 
-This page describes the steps required to use Algorithm Designer as Designer Control module as well as steps required to generate a custom SigmaStudio+ Plug-In using CrossCore Embedded Studio tools and Algorithm Designer.
+This page describes the steps required to use Algorithm Designer as Designer
+Control module as well as steps required to generate a custom SigmaStudio+
+Plug-In using CrossCore Embedded Studio tools and Algorithm Designer.
 
 .. note::
 
-   The initial version of the Algorithm Designer supports only ADSP-215xx/ADSP-SC5xx series of processors. From SigmaStudioPlus 2.1.0 version onwards, the Algorithm Designer supports ADSP-214xx processors also.
-
+   The initial version of the Algorithm Designer supports only
+   ADSP-215xx/ADSP-SC5xx series of processors. From SigmaStudioPlus 2.1.0
+   version onwards, the Algorithm Designer supports ADSP-214xx processors also.
 
 Implementing Custom Algorithm using Algorithm Designer Module
 -------------------------------------------------------------
 
-Algorithm Designer Module is a generic module which can be inserted in the schematic. Once inserted in the schematic, this module can be used to directly implement custom block processing algorithms without the need of generating a Plug-In. Run-time control of parameters are also supported on the Algorithm Designer Module.
-
+Algorithm Designer Module is a generic module which can be inserted in the
+schematic. Once inserted in the schematic, this module can be used to directly
+implement custom block processing algorithms without the need of generating a
+Plug-In. Run-time control of parameters are also supported on the Algorithm
+Designer Module.
 
 |image1|
 
@@ -27,23 +38,26 @@ Algorithm Designer Module is a generic module which can be inserted in the schem
 
    \ **Figure:** Algorithm Designer Module in SigmaStudioPlus for Griffin processors
 
-
    |image2|
 
 .. container:: centeralign
 
    \ **Figure:** Algorithm Designer Module in SigmaStudioPlus for Legacy SHARC processors
 
-
 Insert Module and Launch Designer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This module is listed under “Designer” category in the tool-box as shown in the above two images. This module is available only on the block processing schematic. When inserted in the schematic, the module will have no input-output pins. The Algorithm Designer window can be launched by double clicking on the Algorithm Designer module inserted in the schematic.
+This module is listed under “Designer” category in the tool-box as shown in the
+above two images. This module is available only on the block processing
+schematic. When inserted in the schematic, the module will have no input-output
+pins. The Algorithm Designer window can be launched by double clicking on the
+Algorithm Designer module inserted in the schematic.
 
 Configure the module using Algorithm Designer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Algorithm Designer will be used to configure the algorithm source code and parameters of the Algorithm Designer Module. Steps involved are:
+Algorithm Designer will be used to configure the algorithm source code and
+parameters of the Algorithm Designer Module. Steps involved are:
 
 -  Define Source
 -  Define Parameters
@@ -59,13 +73,11 @@ Compile the Schematic with Designer Control
 
 Once the above steps are completed, the input-output pins on the Algorithm Designer module can be connected to the schematic. The Algorithm Designer window can be either left open or closed before compiling the schematic. Ensure to save the Designer project before closing the Algorithm Designer window. Link-Compile-Download the schematic. Please refer the :doc:`figure </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule>` below.
 
-
 |image3|
 
 .. container:: centeralign
 
    \ **Figure:** Schematic with Designer Module's Link-Compile-Download option in UI
-
 
 Tune Custom Algorithm using Algorithm Designer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +116,6 @@ Algorithm Designer can be launched in 2 ways.
 .. container:: centeralign
 
    \ **Figure:** Algorithm Designer Launcher
-
 
 Configure the module using Algorithm Designer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

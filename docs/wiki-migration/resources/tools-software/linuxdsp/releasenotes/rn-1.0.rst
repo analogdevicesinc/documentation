@@ -14,12 +14,14 @@ The Yocto Linux for ADSP-SC5xx processors product is formally supported on **Ubu
 Supported Processors and EZ-KITs
 --------------------------------
 
-The following processors and silicon revisions are supported by the Yocto Linux for ADSP-SC5xx product.
+The following processors and silicon revisions are supported by the Yocto Linux
+for ADSP-SC5xx product.
 
 .. important::
 
-   Note: The supported processor silicon revision list is different from the Linux Add-In product. Earlier revisions of some EZ-KITs contained different hardware. These are not supported by the Yocto Linux product.
-
+   Note: The supported processor silicon revision list is different from the
+   Linux Add-In product. Earlier revisions of some EZ-KITs contained different
+   hardware. These are not supported by the Yocto Linux product.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+
 | Development Board                                                                                                                                              | Supported Revision |
@@ -46,12 +48,14 @@ For installation on the development board your host PC will require:
 
 -  Two open USB ports
 
-Note: The Yocto Linux product is built from source. For improved performance we recommend at least 4 cores and a SSD disk.
+Note: The Yocto Linux product is built from source. For improved performance we
+recommend at least 4 cores and a SSD disk.
 
 Obtaining Technical Support
 ---------------------------
 
-You can reach Analog Devices software and tools technical support in the following ways:
+You can reach Analog Devices software and tools technical support in the
+following ways:
 
 -  Post your questions in the software and development tools support community at `\ :ez:`dsp/software-and-development-tools/linux-for-adsp-sc5xx-processors/f/q-a%7CAnalog` Devices Engineer Zone <https://wiki.analog.com/\>`_ ®
 -  E-mail your questions about processors and processor applications to processor.support@analog.com
@@ -66,7 +70,8 @@ This is the first release of the Yocto Linux for ADSP-SC5xx Processors product.
 Notable Changes from the Linux Add-In Product
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following major changes have occurred since the last release of the Linux Add-In for Cross-Core Embedded Studio:
+The following major changes have occurred since the last release of the Linux
+Add-In for Cross-Core Embedded Studio:
 
 -  Replaced Buildroot build system with Yocto (version Thud)
 -  Upgraded Linux kernel from 4.04 to 4.19 LTS
@@ -85,7 +90,8 @@ The following issues are known for this release:
 -  ADSP-SC573 does not support the WVGA/LCD EI3 Extender Board. This is a limitation of the EZ-Kit. Driver support is provided and the extender may be used with a compatible custom board.
 -  ADSP-SC573 EZ-KIT is only supported for BOM versions >= 1.8. Due to issues with the SD Card support, the ADSP-SC573 port in this release will only be supported on versions of the ADSP-SC573 EZ-KIT whose BOM version is at least 1.8. The BOM version is recorded on the underside of the EZ-KIT on a square white sticker.
 -  SD Card and Rotary can't work simultaneously on ADSP-SC573 EZ-KIT. This is a limitation of the multiplexing pin conflict of the EZ-Kit. Rotary is disabled by default out of box on ADSP-SC573 EZ-KIT.
--  QT, Mplayer and Bluetooth ALSA for all processors are not support in this release.
+-  QT, Mplayer and Bluetooth ALSA for all processors are not support in this
+   release.
 
 --------------
 

@@ -21,18 +21,16 @@ This document presents the steps to setup an environment for using the :adi:`EVA
    :alt: img_ad5270.jpg
    :align: center
 
-
 .. note::
 
    See `common_sdp <https://wiki.analog.com/common_sdp>`_
-
 
 Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5270SDZ** Evaluation Board.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5270_sdp1z.png
    :alt: ad5270_sdp1z.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The **EVAL-AD5270SDZ** evaluation board is a member of a growing number of boards available for the **SDP**. Designed to help customers evaluate performance or quickly prototype new **AD5270** circuits and reduce design time, the **EVAL-AD5270SDZ** evaluation board can operate in single-supply and dual-supply mode and incorporates an internal power supply powered from the USB.
 
@@ -48,7 +46,9 @@ More information
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Required Hardware
 -----------------
@@ -77,7 +77,6 @@ Downloads
    -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
    
 
-
 Run the Demonstration Project
 =============================
 
@@ -87,8 +86,9 @@ Hardware setup
 .. important::
 
    
-   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
-
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that
+   the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to
+   change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
@@ -96,7 +96,8 @@ Hardware setup
 Reference Project Overview
 --------------------------
 
-The following commands were implemented in this version of EVAL-AD5270 reference project for Xilinx KC705 FPGA board.
+The following commands were implemented in this version of EVAL-AD5270 reference
+project for Xilinx KC705 FPGA board.
 
 +------------------+------------------------------------------------------------------------+
 | Command          | Description                                                            |
@@ -124,31 +125,28 @@ The following commands were implemented in this version of EVAL-AD5270 reference
 | **power?**       | Displays the power status of the device.                               |
 +------------------+------------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+Commands can be executed using a serial terminal connected to the UART
+peripheral of Xilinx KC705 FPGA.
 
-The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
-
+The following image shows a generic list of commands in a serial terminal
+connected to Xilinx KC705 FPGA's UART peripheral.
 
 |Terminal_KC705.jpg|
 
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `import_workspace <https://wiki.analog.com/import_workspace>`_
-
 
 More information
 ================
 
 -  :doc:`AD5270 Digital Potentiometer Linux Driver </wiki-migration/resources/tools-software/linux-drivers/misc/dpot>`
 
-
 .. note::
 
    See `ez_common <https://wiki.analog.com/ez_common>`_
-
 
 .. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/terminal_kc705.jpg

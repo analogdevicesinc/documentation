@@ -15,20 +15,32 @@ This on board reference can be bypassed by placing C301 (0.1uF) and removing R36
 
 .. important::
 
-   If you change the frequency of the reference clock, you must update the device tree.
-
+   If you change the frequency of the reference clock, you must update the
+   device tree.
 
 External PLL
 ------------
 
-While the AD9361 contains two identical synthesizers to generate the required LO signals for the RF signal paths: one for the receiver and one for the transmitter, and these PLLs require no external components; for phase sync'ed applications, it is sometimes easier/better to use an external LO for an improvement in phase noise, and overall easier phase synchronization.
+While the AD9361 contains two identical synthesizers to generate the required LO
+signals for the RF signal paths: one for the receiver and one for the
+transmitter, and these PLLs require no external components; for phase sync'ed
+applications, it is sometimes easier/better to use an external LO for an
+improvement in phase noise, and overall easier phase synchronization.
 
 Rev B
 ~~~~~
 
-The FMComms5 comes with the layout provisions to accept the ADF5355. In the interim, an external LO signal can be injected into J302. This LO will be distributed to the two AD9361s by the Inphi 13617. Similar to the reference clock distribution, length matching is very critical for the external LO routes.
+The FMComms5 comes with the layout provisions to accept the ADF5355. In the
+interim, an external LO signal can be injected into J302. This LO will be
+distributed to the two AD9361s by the Inphi 13617. Similar to the reference
+clock distribution, length matching is very critical for the external LO routes.
 
-When the ADF5355 is available, it can be inserted into the design by soldering down the device, placing C331 and C332 and removing C390. In this configuration the RFOutA port of the ADF5355 port is in circuit, which allows for external LO generation up to 7GHz (divided to 3.5GHz in the AD9361). To generate an LO signal up to 8GHz (4GHz after the divide by 2 in the AD9361), the RFOutB node must be used. To select this net remove C331 and C332, and place C353 and C390.
+When the ADF5355 is available, it can be inserted into the design by soldering
+down the device, placing C331 and C332 and removing C390. In this configuration
+the RFOutA port of the ADF5355 port is in circuit, which allows for external LO
+generation up to 7GHz (divided to 3.5GHz in the AD9361). To generate an LO
+signal up to 8GHz (4GHz after the divide by 2 in the AD9361), the RFOutB node
+must be used. To select this net remove C331 and C332, and place C353 and C390.
 
 Rev C
 ~~~~~
@@ -39,9 +51,10 @@ To bypass the ADF5355 and use an external LO, hardware modifications are necessa
 
 .. important::
 
-   The hardware modifications (moving the cap, removing the cap, adding the resistor, is difficult since the components are tiny (0402 packages or 1 x 0.5 mm) and should be done by skilled professionals only
-
+   The hardware modifications (moving the cap, removing the cap, adding the
+   resistor, is difficult since the components are tiny (0402 packages or 1 x
+   0.5 mm) and should be done by skilled professionals only
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms5-ebz/hardware/img_0246.jpg
    :align: center
-   :width: 500px
+   :width: 500

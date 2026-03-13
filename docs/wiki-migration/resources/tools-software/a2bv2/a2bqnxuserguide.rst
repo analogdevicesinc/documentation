@@ -1,7 +1,11 @@
 A2B Stack QNX User Guide
 ========================
 
-Welcome to the QNX User Guide for integrating the A2B (Automotive Audio Bus) Stack. This guide aims to provide you with comprehensive instructions on how to seamlessly integrate the A2B Stack into your QNX environment. It includes detailed steps for incorporating the stack into your custom platform and provides a sample example demo to help you get started.
+Welcome to the QNX User Guide for integrating the A2B (Automotive Audio Bus)
+Stack. This guide aims to provide you with comprehensive instructions on how to
+seamlessly integrate the A2B Stack into your QNX environment. It includes
+detailed steps for incorporating the stack into your custom platform and
+provides a sample example demo to help you get started.
 
 Contents
 --------

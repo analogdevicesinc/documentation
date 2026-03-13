@@ -8,12 +8,24 @@ AD654 LED Flasher Lab
 Introduction
 ------------
 
-The AD654 is a voltage-to-frequency converter that is often used to convert sensor-derived information in voltage form, such as the voltage obtained from a temperature sensor, into frequency, in order to reliably transmit the information from one point to another. In many situations, frequency transmission is more robust than simple voltage transmission. In this experiment we construct a simple circuit to flash a LED at a frequency that depends on the voltage applied to the AD654.
+The AD654 is a voltage-to-frequency converter that is often used to convert
+sensor-derived information in voltage form, such as the voltage obtained from a
+temperature sensor, into frequency, in order to reliably transmit the
+information from one point to another. In many situations, frequency
+transmission is more robust than simple voltage transmission. In this experiment
+we construct a simple circuit to flash a LED at a frequency that depends on the
+voltage applied to the AD654.
 
 Objective
 ---------
 
-To build a simple LED flashing circuit using one IC and a few external components. To show a simple negative feedback amplifier, and show how to compensate for input bias currents. Following completion of this lab you should be able to describe the basic operation of the AD654 and its major application, explain what bias currents are and how to compensate for them, and describe the basic behavior of the two inputs of an op-amp that is connected in a negative feedback configuration.
+To build a simple LED flashing circuit using one IC and a few external
+components. To show a simple negative feedback amplifier, and show how to
+compensate for input bias currents. Following completion of this lab you should
+be able to describe the basic operation of the AD654 and its major application,
+explain what bias currents are and how to compensate for them, and describe the
+basic behavior of the two inputs of an op-amp that is connected in a negative
+feedback configuration.
 
 Materials and Apparatus
 -----------------------
@@ -31,26 +43,28 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the circuit shown in the schematic below on the solderless breadboard; note that the +5 V power is to be supplied by the M1K
+-  Construct the circuit shown in the schematic below on the solderless
+   breadboard; note that the +5 V power is to be supplied by the M1K
 
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_3_image_1.png
    :alt: lab_3_image_1.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard
+-  Refer to the illustration below for one way to install the components in the
+   solderless breadboard
 
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_3_assembly_image_1e.png
    :alt: lab_3_assembly_image_1e.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Refer to the illustration below that shows how to connect the components
 
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_3_assembly_image_2a.png
    :alt: lab_3_assembly_image_2a.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Run PixelPulse on the computer and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -75,13 +89,18 @@ The oscillation frequency is determined by R\ :sub:`T` and C\ :sub:`T`. In volta
 
 The op-amp requires a small input bias current on each input, and these currents are closely, but not perfectly matched. The current flowing through R\ :sub:`T` produces a voltage drop across R\ :sub:`T`, introducing an error into the frequency setting. Compensation resistor, R\ :sub:`C`, a resistor equal in value to R\ :sub:`T`, is added to the non-inverting input (Pin 4) to produce a nearly identical voltage drop is as is across R\ :sub:`T`. This technique minimizes the offset error between the two op-amp inputs, and produces the most accurate output frequency. This is an important consideration in circuits that are used as voltage-to-frequency converters, but not so important in simple LED flashing circuits. When observing the voltage on Pin 4, a jumper wire must be placed across R\ :sub:`C` (shown as dotted line in the schematic) in order to eliminate DC losses that occur due to the M1K input loading the 5 MΩ source resistance.
 
-In a voltage-feedback op-amp circuit, negative feedback causes the feedback voltage on the inverting input to track the voltage on the non-inverting input. The voltage on Pin 3 is the feedback voltage, and this should track the voltage applied to Pin 4 very closely as long as the output of the emitter follower can follow it and the input common-mode range is not violated.
+In a voltage-feedback op-amp circuit, negative feedback causes the feedback
+voltage on the inverting input to track the voltage on the non-inverting input.
+The voltage on Pin 3 is the feedback voltage, and this should track the voltage
+applied to Pin 4 very closely as long as the output of the emitter follower can
+follow it and the input common-mode range is not violated.
 
 Observations and Conclusions
 ----------------------------
 
 -  The AD654 is a voltage-to frequency converter that can be used for many functions, ranging from precise signal transmission to simple LED flashing
 -  Op-amp circuits require input bias currents, and offset errors can be minimized by matching the resistances that each input bias current flows through
--  The two voltage-feedback op-amp input voltage levels track each other closely when negative feedback is applied around the op-amp
+-  The two voltage-feedback op-amp input voltage levels track each other closely
+   when negative feedback is applied around the op-amp
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`

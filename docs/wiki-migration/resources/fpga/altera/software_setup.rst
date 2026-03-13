@@ -5,51 +5,51 @@
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/new_app.png
    :alt: Creating a new application project
    :align: center
-   :width: 650px
+   :width: 650
 
 -  Add a new Hardware Platform: click **...** from the **Target Hardware information** section.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/config_hw_platform.png
    :alt: Creating a new hardware platform
    :align: center
-   :width: 450px
+   :width: 450
 
 -   Specify the already generated Hardware Platform Specification File (more details about the generation: :doc:`/wiki-migration/resources/fpga/docs/build`): in the **SOPC Information File name** section and browse the desired file.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/config_hw_platform_2.png
    :alt: Config HW 2
    :align: center
-   :width: 450px
+   :width: 450
 
 -  Give a name to the project and select the **Blank Project** template and click **Finish**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/config_new_proj.png
    :alt: Config new project
    :align: center
-   :width: 450px
+   :width: 450
 
 -  The new **Blank project** should look like:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/blank_proj.png
    :alt: Blank project
    :align: center
-   :width: 650px
+   :width: 650
 
 -  Create a new folder called **src** under **sw** folder
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/new_folder.png
    :alt: New folder
    :align: center
-   :width: 650px
+   :width: 650
 
 -  Copy all the source code files into the **src** directory.
 
 -  The SDK should automatically build the projects and the Console window will display the result of the build. If the build is not done automatically select the **Project -> Build Automatically** menu option.
 
--  At this point the software project setup is complete, the FPGA can be programmed and the software can be downloaded into the system.
+-  At this point the software project setup is complete, the FPGA can be
+   programmed and the software can be downloaded into the system.
 
 -  You can program the FPGA by opening **Programmer (Quartus Prime)** provided by the Quartus Prime Software Suite. Click the **Auto Detect** button. The detected devices should be displayed now in the device list.
-
 
 |Programmer|
 
@@ -58,14 +58,14 @@
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/add_sof.png
    :alt: Empty application project
    :align: center
-   :width: 650px
+   :width: 650
 
 -  After the FPGA was programmed, we need to create a new Run configuration in the Nios II project, by selecting **Run** -> **Run Configurations...**, in the Run Configuration windows select the **Nios II Hardware** and click at the **New Configuration** button at the upper left corner.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/run_config.png
    :alt: Create new run configuration
    :align: center
-   :width: 650px
+   :width: 650
 
 -  At the **Project** tab define your current project name and application executable. (.elf)
 

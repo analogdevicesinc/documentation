@@ -5,24 +5,23 @@ EVAL-ADIS2 Evaluation System Hardware User Guide
 
    The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
-
 The :adi:`EVAL-ADIS2` is a PC-based evaluation system that supports communication with most ADIS16xxx products, using the "breakout board" evaluation tools for each product. The following diagram illustrates the data sensor data flow when using the :adi:`EVAL-ADIS2`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2top-web.png
    :align: center
-   :width: 200px
+   :width: 200
 
-The following image identifies the key features associated with this evaluation system.
+The following image identifies the key features associated with this evaluation
+system.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2_wikiguide_00.png
-   :width: 600px
+   :width: 600
 
 EVAL-ADIS2 Compatibility Matrix
 -------------------------------
 
-Expand the table below to view a list of compatible devices, breakout boards, and jumper settings.
-
-
+Expand the table below to view a list of compatible devices, breakout boards,
+and jumper settings.
 
 .. collapsible:: Click to expand
 
@@ -138,8 +137,6 @@ Expand the table below to view a list of compatible devices, breakout boards, an
    | :adi:`ADIS16507-3AMLZ`                                       | :adi:`ADIS16507-3/PCBZ <EVAL-ADIS16507>`                                                                                    | +3.3V              | :adi:`IMU Evaluation Software <media/en/evaluation-boards-kits/evaluation-software/IMU_Evaluation.zip>`                                                |
    +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 EVAL-ADIS2 Kit Contents
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -157,7 +154,6 @@ EVAL-ADIS2 Kit Contents
 
    The :adi:`EVAL-ADIS2` kit does not include any device-specific breakout board or sensor module.
 
-
 Minimum PC System Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -170,7 +166,7 @@ EVAL-ADIS2 Mechanical Drawings
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2_dimensions.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Click `here <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval_adis2_15Jul2019.pdf>`_ for a more detailed mechanical drawing of the :adi:`EVAL-ADIS2` evaluation board.
 
@@ -179,7 +175,7 @@ EVAL-ADIS2 J1 (Sensor Interface) Pin Assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16imu1-pcb-j1-connector.png
    :align: center
-   :width: 200px
+   :width: 200
 
 EVAL-ADIS2 Quick-Start Guide
 ----------------------------
@@ -199,11 +195,9 @@ The jumper labeled **JP1** provides three power supply options for evaluating ou
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2_jp1_wikiguide_00.png
    :align: center
-   :width: 300px
+   :width: 300
 
 Use the table below to identify the correct JP1 setting for your sensor.
-
-
 
 .. collapsible:: Click to expand
 
@@ -295,18 +289,19 @@ Use the table below to identify the correct JP1 setting for your sensor.
    | :adi:`ADIS16507-3AMLZ`                                       |                                                          |
    +--------------------------------------------------------------+----------------------------------------------------------+
 
-
-
 .. important::
 
-   \ External Supply Setting To use the external supply option, remove the header from JP1 and solder the middle post to the hole with the EXT label on the EVAL-ADIS2.
+   \ External Supply Setting To use the external supply option, remove the
+   header from JP1 and solder the middle post to the hole with the EXT label on
+   the EVAL-ADIS2.
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2_jp1_wikiguide_01.png
       :align: center
-      :width: 350px
+      :width: 350
    
-   After soldering the connector, apply the external supply to J3 as shown below.
+   After soldering the connector, apply the external supply to J3 as shown
+   below.
 
    
    |image1|
@@ -318,11 +313,9 @@ Connecting a Sensor Breakout Board
 
    All sensor modules require a breakout board to interface with the :adi:`EVAL-ADIS2`. Model-specific breakout boards will only support products that require solder reflow attachment. Generic breakout boards support products that feature an onboard connector and must be purchased in addition to the sensor module.
 
-
 The following table provides a summary of supported, **model-specific** breakout boards.
 
 +--------------------------------------------------------------+
-
 
 | Model-Specific Part Numbers                                  |
 
@@ -380,7 +373,6 @@ The following table provides a summary of supported, **generic** breakout boards
 
 +--------------------------------------------------------------+
 
-
 | GENERIC BREAKOUT BOARDS                                      |
 
 +==============================================================+
@@ -420,7 +412,6 @@ The J1 connector on the :adi:`EVAL-ADIS2` supports a remote connection to compat
    
    +------------------------------------------------------------+
 
-
    
    | LEGACY EVALUATION BOARDS                                   |
 
@@ -452,7 +443,6 @@ The J1 connector on the :adi:`EVAL-ADIS2` supports a remote connection to compat
    
    Pins 13, 14, 15, and 16 on the IDC ribbon cable will remain connected, as shown in the image below. |warning|\
 
-
 Installing the EVAL-ADIS2 USB Driver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -462,38 +452,39 @@ Installing the EVAL-ADIS2 USB Driver
 
    This application requires Microsoft .NET 3.5 to be installed and enabled on the host PCs running Windows 10. Additional information on enabling .NET 3.5 can be found `here <https://answers.microsoft.com/en-us/windows/forum/windows_10-windows_install-winpc/installingenabling-net-35-on-windows-10/fe7b4699-c096-4369-b06f-e1063da42e18>`_.
 
-
-After downloading the EVAL-ADIS USB Driver file, extract the SDPDrivers.exe file from the zip archive to a convenient location on your PC. Double click on the extracted file to start the installation process.
+After downloading the EVAL-ADIS USB Driver file, extract the SDPDrivers.exe file
+from the zip archive to a convenient location on your PC. Double click on the
+extracted file to start the installation process.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/sdpdriverinstall_01.png
-   :width: 500px
+   :width: 500
 
 Click on **Next** to accept the default driver location.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/sdpdriverinstall_02.png
-   :width: 500px
+   :width: 500
 
-The process will involve at least two progress bars that look like the following:
+The process will involve at least two progress bars that look like the
+following:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/sdpdriverinstall_03.png
-   :width: 500px
+   :width: 500
 
 If you encounter this type of message during the process, click on **Install** to continue with the installation.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-003a.png
-   :width: 500px
+   :width: 500
 
 Once the installation has been completed, click on **Finish** to complete the process.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/usbdriver-install-004.png
-   :width: 500px
+   :width: 500
 
 Downloading the EVAL-ADIS2 Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the table below to find and download the appropriate software for your specific sensor.
-
-
+Use the table below to find and download the appropriate software for your
+specific sensor.
 
 .. collapsible:: Click to expand
 
@@ -609,8 +600,6 @@ Use the table below to find and download the appropriate software for your speci
    | :adi:`ADIS16507-3AMLZ`                                       | :adi:`ADIS16507-3/PCBZ <EVAL-ADIS16507>`                                                                                    | +3.3V              | :adi:`IMU Evaluation Software <media/en/evaluation-boards-kits/evaluation-software/IMU_Evaluation.zip>`                                                |
    +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 Connecting the EVAL-ADIS2 to the Host PC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -628,9 +617,8 @@ Connect the :adi:`EVAL-ADIS2` to any **USB 2.0** port on your PC using the inclu
    ======================== =============== ===========================
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2_usb_connection_web_00.png
-      :width: 500px
+      :width: 500
    
-
 
 Start the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -648,16 +636,16 @@ Vibration Evaluation Software
 Please visit the :doc:`EVAL-ADIS2 Vibration Evaluation Software User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/imu/vibrationevaluationprogram>` for additional instructions on using the software to interface with a sensor.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2_jp1_wikiguide_02.png
-   :width: 350px
+   :width: 350
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2_j1_wikiguide_00.png
-   :width: 420px
+   :width: 420
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2_j1_wikiguide_01.png
-   :width: 420px
+   :width: 420
 .. |warning| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16209_pc_eval_wikiguide_01.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-wiki-led-00.jpg
-   :width: 250px
+   :width: 250
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-wiki-led-01.jpg
-   :width: 260px
+   :width: 260
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-wiki-led-02.jpg
-   :width: 250px
+   :width: 250

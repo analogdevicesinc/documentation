@@ -1,7 +1,9 @@
 Linux
 =====
 
-The JESD204 Interface Framework provides out of the box linux support for many of the ADI JESD204 based converters, clock chips and both Xilinx and Altera FPGA transceivers.
+The JESD204 Interface Framework provides out of the box linux support for many
+of the ADI JESD204 based converters, clock chips and both Xilinx and Altera FPGA
+transceivers.
 
 -  :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
 -  :doc:`JESD204B/C Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`: Linux driver for the JESD204B transmit core.
@@ -23,13 +25,15 @@ The JESD204 Interface Framework provides out of the box linux support for many o
    -  :doc:`ADRV9009, ADRV9008 highly integrated, wideband RF transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
    -  :doc:`AD9371, AD9375 highly integrated, wideband RF transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9371>`
 
-
 Kernel Configuration
 --------------------
 
-The first requirement for the JESD204 drivers to be supported by Linux is that they are compiled either as part of the kernel or as a kernel module. We recommend using them integrated in the kernel.
+The first requirement for the JESD204 drivers to be supported by Linux is that
+they are compiled either as part of the kernel or as a kernel module. We
+recommend using them integrated in the kernel.
 
-The physical layer support, implementing the reconfiguration of the FPGA transceiver for both Xilinx and Intel/Altera:
+The physical layer support, implementing the reconfiguration of the FPGA
+transceiver for both Xilinx and Intel/Altera:
 
 ::
 
@@ -46,7 +50,8 @@ The physical layer support, implementing the reconfiguration of the FPGA transce
                <*>   Generic AXI JESD204B configuration driver
            [--snip--]
 
-The data link layer support, implementing reconfiguration of JESD204 specific parameters. This applies for both Xilinx and Intel/Altera designs:
+The data link layer support, implementing reconfiguration of JESD204 specific
+parameters. This applies for both Xilinx and Intel/Altera designs:
 
 ::
 
@@ -62,7 +67,8 @@ The data link layer support, implementing reconfiguration of JESD204 specific pa
                <*>   Analog Devices AXI JESD204B TX Support
            [--snip--]
 
-Transport layer support, implementing ADC/DAC chip configuration and HDL IP configuration:
+Transport layer support, implementing ADC/DAC chip configuration and HDL IP
+configuration:
 
 .. code:: tcl
 
@@ -94,18 +100,24 @@ Clock device support:
 Devicetree Configuration
 ------------------------
 
-After enabling the drivers in the kernel, the devicetree needs to be created and configured.
+After enabling the drivers in the kernel, the devicetree needs to be created and
+configured.
 
-The devicetree is a description of the system hardware components that can be found both inside the FPGA, like the the JESD204 PHY, link and transport layer cores, as well as outside on the PCB like the JESD204 ADC or DAC and the clockchips.
+The devicetree is a description of the system hardware components that can be
+found both inside the FPGA, like the the JESD204 PHY, link and transport layer
+cores, as well as outside on the PCB like the JESD204 ADC or DAC and the
+clockchips.
 
-The description in the devicetree is loaded by the operating system and is used to configure the device drivers at system boot time.
+The description in the devicetree is loaded by the operating system and is used
+to configure the device drivers at system boot time.
 
 For more information about devicetree visit `devicetree.org <http://devicetree.org>`_.
 
 Physical Layer
 ~~~~~~~~~~~~~~
 
-Initially, the physical layer needs to be configured. The parameters depend on the HDL implementation and what clock is used as device clock.
+Initially, the physical layer needs to be configured. The parameters depend on
+the HDL implementation and what clock is used as device clock.
 
 Required properties: **compatible**: Must always be “adi,axi-adxcvr-1.00” **reg**: Base address and register area size. This parameter expects a register range **clock-names**: List of input clock names - “s_axi_aclk”, “device_clk” **clocks**: Clock phandles and specifiers (See clock bindings for details on clock-names and clocks) **clock-output-names**: Generated clocks **adi,sys-clk-select**: 2 bit variable. For ultrascale, it selects the PLL reference clock source to be forwarded to the OUTCLK MUX: 0-CPLL, 3-QPLL0. Check RX/TXSYSCLKSEL parameter in the transceiver documentation for the FPGA you're using **adi,out-clk-select**: 3 bit variable. Controls the OUTCLKSEL multiplexer, controlling what will be forwarded to OUTCLK pin. Check RX/TXOUTCLKSEL parameter in the transceiver documentation for the FPGA you're using Optional properties: **adi,use-lpm-enable**: If set, the transceiver will be used in LPM mode. Otherwise, will be used in DFE mode. See transceiver documentation for details **adi,use-cpll-enable**: If set, the CPLL will be used for these transceivers
 
@@ -179,7 +191,8 @@ Required properties: **compatible**: Must always be “adi,axi-jesd204b-tx-1.00.
 Transport Layer
 ~~~~~~~~~~~~~~~
 
-when instantiating the transport layer, a DMA IP should also be instantiated for both the RX and TX path.
+when instantiating the transport layer, a DMA IP should also be instantiated for
+both the RX and TX path.
 
 .. code:: dts
 
@@ -232,12 +245,15 @@ when instantiating the transport layer, a DMA IP should also be instantiated for
 Device Drivers
 ~~~~~~~~~~~~~~
 
-Here we instantiate the device drivers, which will configure the actual ADC, DAC and clock generating chips.
+Here we instantiate the device drivers, which will configure the actual ADC, DAC
+and clock generating chips.
 
 Clock chip
 ^^^^^^^^^^
 
-Depending on the schematic and available reference clock, the boot configuration should be done in the device-tree. Depending on the schematic, each output may have different functions. This configuration can be modified at runtime.
+Depending on the schematic and available reference clock, the boot configuration
+should be done in the device-tree. Depending on the schematic, each output may
+have different functions. This configuration can be modified at runtime.
 
 .. code:: dts
 
@@ -399,7 +415,8 @@ The script will:
 -  clone the ADI kernel tree
 -  download the Linaro GCC toolchain [if no other is specified]
 -  build the ADI kernel tree
--  export/copy the Image file and device-tree file out of the kernel build folder
+-  export/copy the Image file and device-tree file out of the kernel build
+   folder
 
 ::
 
@@ -429,7 +446,8 @@ Booting Linux on A10SOC
 Status Registers
 ----------------
 
-The JESD204B Interface framework provides several status functions for both TX and RX.
+The JESD204B Interface framework provides several status functions for both TX
+and RX.
 
 axi-jesd204-tx
 ~~~~~~~~~~~~~~

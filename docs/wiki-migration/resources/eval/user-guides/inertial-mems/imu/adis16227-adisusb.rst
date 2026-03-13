@@ -7,7 +7,7 @@ OVERVIEW
 The :adi:`ADIS16227` iSensor® is a triaxial, wide bandwidth, vibration-sensing system. It combines a triaxial MEMS accelerometer with a sampling and advanced signal processing system. The SPI-compatible port and user register structure provide convenient access to frequency domain vibration data and many user controls. The electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-spi-elect-conn.png
-   :width: 400px
+   :width: 400
 
 ADIS16227/PCB BREAKOUT BOARD
 ----------------------------
@@ -31,7 +31,8 @@ SYSTEM REQUIREMENTS
 
 Windows XP, Vista, 7 (32-bit systems only)
 
-NOTE: All the required files are contained in the .Cab file and deployed during software package install.
+NOTE: All the required files are contained in the .Cab file and deployed during
+software package install.
 
 PHYSICAL SETUP
 --------------
@@ -64,12 +65,12 @@ Step #3
 The following picture (left side) shows JP1 in the **+3.3V** position (factory-default). That is the correct JP1 jumper setting on the :adi:`ADISUSB`) required for the :adi:`ADIS16227CMLZ <en/mems-sensors/mems-accelerometers/adis16227/products/product.html>`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-3.3v-setting.png
-   :width: 400px
+   :width: 400
 
 NOTE: If JP1 is left on **+5v** the software will look like the following picture. Move JP1 to the\ **+3.3V** setting to correct the problem.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-screen-voltage_error.png
-   :width: 800px
+   :width: 800
 
 ADIS16227_Evaluation SOFTWARE
 -----------------------------
@@ -77,17 +78,19 @@ ADIS16227_Evaluation SOFTWARE
 :adi:`Click here to download the ADIS16227 Evaluation Software <static/imported-files/eval_boards/ADIS1622x_eval_software.zip>` to a personal computer, which enables PC-based evaluation of the :adi:`ADIS16227` on an :adi:`ADISUSB` evaluation system. The download file will contain three separate files: The CAB file (ADIS16227_EVAL_Rev_2.cab), the setup file (setup.exe) and the setup list. Copy these files to a convenient folder for running the application from.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-zipfile-download.png
-   :width: 900px
+   :width: 900
 
 Navigate to the folder where the files were saved and double click the setup.exe file. The following pictures are a guide for the :adi:`ADIS16227` software install. The **Welcome** screen will appear click **OK** to continue.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-welcome.png
-   :width: 600px
+   :width: 600
 
-Please choose a directory for the software application or use the default settings (recommended) and click the computer icon button to go to the next step.
+Please choose a directory for the software application or use the default
+settings (recommended) and click the computer icon button to go to the next
+step.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-install.png
-   :width: 600px
+   :width: 600
 
 Choose a program group or use the default settings (recommended) and click **Continue**. The last picture confirms completion click **OK** to finish.
 
@@ -126,7 +129,9 @@ The **Datalog** option provides the core data collection function.
 
 The **Start** option will start the selected mode capture process.
 
-The yellow box identifies the waveform recorder window. The window contains the three accelerometer responses. Also, each waveform matches the color of its register.
+The yellow box identifies the waveform recorder window. The window contains the
+three accelerometer responses. Also, each waveform matches the color of its
+register.
 
 Register Access
 ~~~~~~~~~~~~~~~
@@ -134,18 +139,23 @@ Register Access
 The purpose of the **Register Access** window is to provide both read and write access to the user registers in the :adi:`ADIS16227`. The following picture shows the appearance of this window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-registers.png
-   :width: 600px
+   :width: 600
 
-The color coded boxes illustrate the different functions that this window provides.
+The color coded boxes illustrate the different functions that this window
+provides.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-register-defined.png
-   :width: 600px
+   :width: 600
 
 The purple box identifies the register category. In addition to the Control/Status, this drop-down control offers access to **Output** and **Calibration** registers.
 
-The red box identifies all of the registers that are in the current category. Click on the register name to select a register for individual read/write access.
+The red box identifies all of the registers that are in the current category.
+Click on the register name to select a register for individual read/write
+access.
 
-The green box identifies the read/write control options for the current register selection. Use the hexadecimal format when writing commands to a particular register.
+The green box identifies the read/write control options for the current register
+selection. Use the hexadecimal format when writing commands to a particular
+register.
 
 The yellow box updates all the registers in the current category.
 
@@ -170,36 +180,36 @@ EXAMPLE EXERCISES
 This section currently has no :adi:`ADIS16227`-specific content, but the :doc:`ADIS16448 Evaluation on the EVAL-ADIS Wiki Site </wiki-migration/resources/eval/user-guides/inertial-mems/imu/adis16448>` has some good examples to start with.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-dimensions.png
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-pcbz-mount-holes.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-pcbz-schematic.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-pcbz-parts.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-pcbz-part-mounted.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-mount-locates.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-mounted.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-prgm-group.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-finish.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-foundnewhardware.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-install.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-wizard.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-complete-wizard.png
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-screen.png
-   :width: 800px
+   :width: 800
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-screen-defined.png
-   :width: 800px
+   :width: 800
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-datalog.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-datalog-defined.png
-   :width: 400px
+   :width: 400

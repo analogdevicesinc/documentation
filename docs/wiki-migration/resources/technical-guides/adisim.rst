@@ -16,5 +16,4 @@ Resources
 -  Amplitude and frequency sweeps
 -  Generate a list of ADCs that meet your signal processing requirements
 
-
 | :adi:`AN_737` AN-737 Application Note, *How ADIsimADC Models an ADC*, provides a description of how behavioral simulation is used to model an ADC.

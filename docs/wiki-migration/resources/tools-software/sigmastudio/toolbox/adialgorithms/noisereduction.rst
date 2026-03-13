@@ -56,18 +56,30 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The Noise Reduction algorithm is a "blind" processing function that operates automatically on an input signal to attempt to remove noise from the signal.
+The Noise Reduction algorithm is a "blind" processing function that operates
+automatically on an input signal to attempt to remove noise from the signal.
 
-When signal components are deemed to be not part of the desired signal, the algorithm will smoothly mute those frequency components until they are required again.
+When signal components are deemed to be not part of the desired signal, the
+algorithm will smoothly mute those frequency components until they are required
+again.
 
-This algorithm was intended to be used only in voice applications. Using this algorithm with signals such as music will not yield the desired results, because the algorithm will remove components of the signal that will degrade the quality of the music itself.
+This algorithm was intended to be used only in voice applications. Using this
+algorithm with signals such as music will not yield the desired results, because
+the algorithm will remove components of the signal that will degrade the quality
+of the music itself.
 
-The default values in the GUI control for this algorithm provide a good starting point for system design tuning. However, depending on the application, some adjustments might be necessary to get the optimal performance from this algorithm. Much of this tuning is a subjective response to what sounds best, but it is important to mind the recommended value ranges mentioned in the GUI Controls Function Description.
+The default values in the GUI control for this algorithm provide a good starting
+point for system design tuning. However, depending on the application, some
+adjustments might be necessary to get the optimal performance from this
+algorithm. Much of this tuning is a subjective response to what sounds best, but
+it is important to mind the recommended value ranges mentioned in the GUI
+Controls Function Description.
 
 Example
 -------
 
-Typically, the algorithm is inserted as one of the first processing blocks in a signal chain.
+Typically, the algorithm is inserted as one of the first processing blocks in a
+signal chain.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/noiseremovalexample.jpg
    :alt: noiseremovalexample.jpg

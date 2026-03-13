@@ -9,27 +9,26 @@ IIO context timeout (libiio)
 
 .. tip::
 
-   Increase iio_context_set_timeout() timeout parameter or set to 0 to disables the timeout
-
+   Increase iio_context_set_timeout() timeout parameter or set to 0 to disables
+   the timeout
 
 Buffer handling, sizes and counts
 ---------------------------------
 
-Typically set to a frame or chunk size suitable for signal processing (e.g. N x FFT_size)
+Typically set to a frame or chunk size suitable for signal processing (e.g. N x
+FFT_size)
 
 -  Small buffers -> less latency but more overhead
 -  Large buffers -> less overhead but more latency
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/internals/libiio_highspeed_interface.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. tip::
 
-   \ Number of discrete buffers are configurable, default is 4. Can change this using iio_device_set_kernel_buffers_count()\
-
-
-
+   \ Number of discrete buffers are configurable, default is 4. Can change this
+   using iio_device_set_kernel_buffers_count()\
 
 .. tip::
 
@@ -37,11 +36,10 @@ Typically set to a frame or chunk size suitable for signal processing (e.g. N x 
 
    | *iio_device_create_buffer()*\
 
-
 .. tip::
 
-   \ FIFO like behavior new data is dropped in case it's not consumed fast enough!\
-
+   \ FIFO like behavior new data is dropped in case it's not consumed fast
+   enough!\
 
 IIO buffer DMA max block size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,7 +69,6 @@ Set via **/sys/module/industrialio_buffer_dma/parameters/max_block_size** in byt
       root@analog:~#
    
 
-
 Kernel command line
 ^^^^^^^^^^^^^^^^^^^
 
@@ -90,8 +87,8 @@ Linux Contiguous Memory Allocator (or CMA)
 
 .. tip::
 
-   Depending on your IIO buffer DMA max block size and number of kernel buffer count you may need to CMA size\
-
+   Depending on your IIO buffer DMA max block size and number of kernel buffer
+   count you may need to CMA size\
 
 Capturing large contiguous buffers
 ----------------------------------

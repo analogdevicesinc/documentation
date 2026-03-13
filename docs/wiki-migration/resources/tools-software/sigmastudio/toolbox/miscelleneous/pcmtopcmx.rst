@@ -3,7 +3,11 @@
 PCM to PCMx
 ===========
 
-PCM to PCMx conversion will have a control signal, which will carry the header information required by the PCMx signal, and 2 Data (PCM) pins, each carrying Linear PCM data, of size Schematic Block Size, as input. The output is PCMx format which will have 3 \* Schematic Block Size no of samples. PCM to PCMx does the reverse of PCMx to PCM module.
+PCM to PCMx conversion will have a control signal, which will carry the header
+information required by the PCMx signal, and 2 Data (PCM) pins, each carrying
+Linear PCM data, of size Schematic Block Size, as input. The output is PCMx
+format which will have 3 \* Schematic Block Size no of samples. PCM to PCMx does
+the reverse of PCMx to PCM module.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/miscelleneous/pcm2pcmx-tbx.jpg
 
@@ -43,7 +47,6 @@ GUI Control Name Default Value Range Function Description
 -                -             -     -
 ================ ============= ===== ====================
 
-
 | ====DSP Parameter Information====
 
 ================ ============= ====================
@@ -51,7 +54,6 @@ GUI Control Name Compiler Name Function Description
 ================ ============= ====================
 -                -             -
 ================ ============= ====================
-
 
 | ==== Algorithm Description ==== PCM to PCMx conversion will have a control signal, which will carry the header information required by the PCMx signal, and 2 Data (PCM) pins, each carrying Linear PCM data, of size Schematic Block Size, as input. The output is PCMx format which will have 3 \* Schematic Block Size no of samples.
 

@@ -9,13 +9,19 @@ Supported Devices
 Description
 -----------
 
-The AD7877 is a 12-bit, successive approximation ADC with a synchronous serial interface and low on resistance switches for driving touch screens.
+The AD7877 is a 12-bit, successive approximation ADC with a synchronous serial
+interface and low on resistance switches for driving touch screens.
 
 To reduce the effects of noise from LCDs, the acquisition phase of the on-board ADC is controlled via the STOPACQ pin. User-programmable conversion controls include **variable acquisition time** and **first conversion delay**. Up to **16 averages can be taken per conversion**. There is also an **on-board DAC for LCD back-light or contrast control**. The AD7877 runs in either slave or master mode using a **conversion sequencer and timer**. It is ideal for battery-powered systems such as personal digital assistants with resistive touch screens and other portable equipment.
 
-The AD7877 operates from a single 2.7 V to 5.25 V power supply, and features throughput rates of 125 kSPS. The AD7877 features direct battery measurement on two inputs, temperature and touch-pressure measurement.
+The AD7877 operates from a single 2.7 V to 5.25 V power supply, and features
+throughput rates of 125 kSPS. The AD7877 features direct battery measurement on
+two inputs, temperature and touch-pressure measurement.
 
-The AD7877 also has an on-board reference of 2.5 V. When not in use, it can be shut down to conserve power. An external reference can also be applied and varied from 1 V to +VCC, with an analog input range of 0 V to VREF. The device includes a shutdown mode that reduces its current consumption to less than 1 μA.
+The AD7877 also has an on-board reference of 2.5 V. When not in use, it can be
+shut down to conserve power. An external reference can also be applied and
+varied from 1 V to +VCC, with an analog input range of 0 V to VREF. The device
+includes a shutdown mode that reduces its current consumption to less than 1 μA.
 
 |ad7877_block_dia.png| |ad7877_input_structure.png|
 
@@ -60,12 +66,19 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
-
-Touchscreen characteristics vary between boards and models. The platform_data for the device's "struct device" holds this information.
+Touchscreen characteristics vary between boards and models. The platform_data
+for the device's "struct device" holds this information.
 
 <source trunk/include/linux/spi/ad7877.h c linux-kernel>
 
@@ -75,26 +88,37 @@ These snippets are all from the same file. ``arch/blackfin/mach-bf537/boards/pna
 
    #include <linux/spi/ad7877.h>
 
-<source trunk/arch/blackfin/mach-bf537/boards/pnav10.c:spi_ad7877_chip_info{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/pnav10.c:bfin_ad7877_ts_info{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/pnav10.c:spi_ad7877_chip_info{} c
+linux-kernel> <source
+trunk/arch/blackfin/mach-bf537/boards/pnav10.c:bfin_ad7877_ts_info{} c
+linux-kernel>
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
-
-<source trunk/arch/blackfin/mach-bf537/boards/pnav10.c:bfin_spi_board_info[] c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/pnav10.c:bfin_spi_board_info[] c
+linux-kernel>
 
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD7877 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -128,12 +152,13 @@ Hardware configuration
 
 .. tip::
 
-   The AD7877 Linux Driver only uses the /DAV Data Available Interrupt. /PENIRQ is not used. STOPACQ can be used to reduce the effect of noise from an LCD screen on the touch screen measurements.
-
+   The AD7877 Linux Driver only uses the /DAV Data Available Interrupt. /PENIRQ
+   is not used. STOPACQ can be used to reduce the effect of noise from an LCD
+   screen on the touch screen measurements.
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/ad7877_example_schematic.png
    :alt: ad7877_example_schematic.png
-   :width: 800px
+   :width: 800
 
 Driver testing
 ==============
@@ -245,18 +270,19 @@ Check that the interrupt is registered.
 
 .. tip::
 
-   In case you touch the surface and don't receive events, it's likely that something with your /DAV Interrupt is wrong. check irq number in your platform device file
-
+   In case you touch the surface and don't receive events, it's likely that
+   something with your /DAV Interrupt is wrong. check irq number in your
+   platform device file
 
 .. tip::
 
    In case you get a message like: ``evtest: No such device``, it's likely that you have not install the necessary modules
 
-
 Aux functions
 -------------
 
-Under the device folder there are auxiliary functions such as temperature, GPIO, DAC and ADC read backs and controls.
+Under the device folder there are auxiliary functions such as temperature, GPIO,
+DAC and ADC read backs and controls.
 
 ::
 
@@ -298,11 +324,9 @@ Under the device folder there are auxiliary functions such as temperature, GPIO,
 More Information
 ================
 
-
 .. note::
 
    See `resources/tools-software/linux-drivers/snippets <https://wiki.analog.com/resources/tools-software/linux-drivers/snippets#input_pointers>`_
-
 
 .. |ad7877_block_dia.png| image:: https://wiki.analog.com/_media/software/driver/linux/ad7877_block_dia.png
 .. |ad7877_input_structure.png| image:: https://wiki.analog.com/_media/software/driver/linux/ad7877_input_structure.png

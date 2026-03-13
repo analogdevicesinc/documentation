@@ -1,20 +1,32 @@
 2-24GHz RF Rx & Tx Front End for MxFE
 =====================================
 
-The 2-24GHz RF Front End is a complete RF receiver and transmitter front end designed to meet the specifications of typical wideband instrumentation and electronic warfare (EW) systems. The latest generation of high performance RF/microwave and mixed signal components available from ADI are used to reduce system SWaP (size, weight, and power) and architectural complexity.
+The 2-24GHz RF Front End is a complete RF receiver and transmitter front end
+designed to meet the specifications of typical wideband instrumentation and
+electronic warfare (EW) systems. The latest generation of high performance
+RF/microwave and mixed signal components available from ADI are used to reduce
+system SWaP (size, weight, and power) and architectural complexity.
 
-The full system block diagram is shown below, consisting of four functional blocks- the receiver front end, transmitter front end, digitizer, and LO generation.
-
+The full system block diagram is shown below, consisting of four functional
+blocks- the receiver front end, transmitter front end, digitizer, and LO
+generation.
 
 |image1|
 
 Specifications
 --------------
 
-The receiver and transmitter specifications, shown in the table below, are fairly typical of many wideband instrumentation and EW systems in operation today. The signal chain is capable of 1GHz instantaneous bandwidth (IBW) in both receive and transmit modes across the full 2-24GHz operating range.
+The receiver and transmitter specifications, shown in the table below, are
+fairly typical of many wideband instrumentation and EW systems in operation
+today. The signal chain is capable of 1GHz instantaneous bandwidth (IBW) in both
+receive and transmit modes across the full 2-24GHz operating range.
 
-These specs may not be "one-size-fits-all" for every potential use case, but the signal chain architecture and component selection is extremely flexible, allowing for modifications of the individual pieces to meet specific performance or functionality targets. Everything from the digitizer sample rates to the individual RF components and signal chain filtering can be adjusted to facilitate changes in frequency planning or system-level functionality.
-
+These specs may not be "one-size-fits-all" for every potential use case, but the
+signal chain architecture and component selection is extremely flexible,
+allowing for modifications of the individual pieces to meet specific performance
+or functionality targets. Everything from the digitizer sample rates to the
+individual RF components and signal chain filtering can be adjusted to
+facilitate changes in frequency planning or system-level functionality.
 
 |image2|
 
@@ -59,7 +71,10 @@ Resources
 Bill of Materials
 =================
 
-The full Bill of Materials (BOM) is provided for planning purposes. The list below does not include passive devices typically used for filtering power supplies, control lines, loop filters, etc... This is provided for planning purposes only.
+The full Bill of Materials (BOM) is provided for planning purposes. The list
+below does not include passive devices typically used for filtering power
+supplies, control lines, loop filters, etc... This is provided for planning
+purposes only.
 
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+---------------------+---------------------------------------+
 | Circuit                | Part Number                                                                                                                                                  | QTY | Manufacturer        | Notes                                 |
@@ -199,7 +214,6 @@ The full Bill of Materials (BOM) is provided for planning purposes. The list bel
 
 | 
 
-
 .. admonition:: Download
    :class: download
 
@@ -212,7 +226,6 @@ The full Bill of Materials (BOM) is provided for planning purposes. The list bel
    -  Company Location
    -  Application/Use Case
    
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24blockdiagram.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/full_spec_table_r1p01.png

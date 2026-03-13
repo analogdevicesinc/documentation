@@ -3,8 +3,9 @@ Flash Programmer (ADAU145x)
 
 :doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
 
-
-This module provides support to write raw data to the external flash memory using I2C/SPI. The I2C/SPI write is performed during the initialization before the audio processing in the schematic is started.
+This module provides support to write raw data to the external flash memory
+using I2C/SPI. The I2C/SPI write is performed during the initialization before
+the audio processing in the schematic is started.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/flashprogrammer.jpg
    :align: center
@@ -13,7 +14,6 @@ Configurations
 --------------
 
 Click on the configure button to configure the SPI/I2C interface for the module.
-
 
 |image1|
 
@@ -80,7 +80,9 @@ Any change in these SPI/I2C configuration parameters requires a recompilation.
 Writing Multiple Files
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Number of files to be written can be configured by right clicking on the module. All the files will be written one after another if multiple files are selected. This support upto 32 files.
+Number of files to be written can be configured by right clicking on the module.
+All the files will be written one after another if multiple files are selected.
+This support upto 32 files.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/fflash_contextmenu.jpg
    :align: center
@@ -95,7 +97,9 @@ Writing a Wav file to SPI EEPROM using Flash Programmer (ADAU1452)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Add Flash Programmer module to the schematic.
--  Configure SPI parameters in the Control Port Properties window. (Below window shows SPI configuration required to write to EEPROM in EVAL-ADAU1452MINIZ board)
+-  Configure SPI parameters in the Control Port Properties window. (Below window
+   shows SPI configuration required to write to EEPROM in EVAL-ADAU1452MINIZ
+   board)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/flashprogrammerblockerasemutiplefilesconfigurableaddress.png
    :align: center
@@ -113,7 +117,8 @@ Writing a Wav file to SPI EEPROM using Flash Programmer (ADAU1452)
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/flash_writing.jpg
    :align: center
 
--  After the write is completed, press Yes in the following window to verify the write operation.
+-  After the write is completed, press Yes in the following window to verify the
+   write operation.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/flash_verify.jpg
    :align: center
@@ -123,7 +128,8 @@ Writing a Wav file to SPI EEPROM using Flash Programmer (ADAU1452)
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/flash_verify2.jpg
    :align: center
 
--  Verification will fail if the file is more than 128 KBytes. Make sure file is not more than 128 KBytes and re-write if it is failed.
+-  Verification will fail if the file is more than 128 KBytes. Make sure file is
+   not more than 128 KBytes and re-write if it is failed.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/flash_fail.jpg
    :align: center

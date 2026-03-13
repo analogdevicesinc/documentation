@@ -34,7 +34,7 @@ Functional Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/12528-001.png
    :align: center
-   :width: 600px
+   :width: 600
 
 *\*\* Figure 1. Functional Block Diagram \*\**
 
@@ -59,11 +59,12 @@ Quick Start Noise Test
 -  Insert Link LK8 to Link LK12 to initiate the noise performance test mode. In this mode, analog input channels short to the REFOUT pin.
 -  Click Start Sampling to acquire samples from the ADC (see Figure 7).
 
-The Samples numeric control in the top right corner of the main window sets the number of samples collected in each batch (see Figure 7).
+The Samples numeric control in the top right corner of the main window sets the
+number of samples collected in each batch (see Figure 7).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/board_picture_12528-002-rk.png
    :align: center
-   :width: 500px
+   :width: 500
 
 **Figure 2. Hardware Configuration, Setting Up the** :adi:`EVAL-AD7175-2SDZ` **Evaluation Board**
 
@@ -159,7 +160,18 @@ The :adi:`EVAL-AD7175-2SDZ` evaluation board connects via the serial peripheral 
 Power Supplies
 --------------
 
-Power the evaluation board from the ac-to-dc adapter connected to J5, or from an external bench top supply applied to J3 or J9. Linear LDOs generate the required voltages from the applied input voltage (VIN) rail when using J3 or J5. Use J9 to bypass the on-board regulators. An ADP7118 regulator generates the 5 V (single supply) and 2.5 V (split supply) supplies for the AVDD1 and AVDD2 rails to the ADC; a second ADP7118 generates 3.3 V for the IOVDD rail. The ADP7104 supplies 5 V for the SDP-B controller board as well as 5 V for the ADM660 voltage converter to generate −5 V to supply the ADP7182. The ADP7182 generates the −2.5 V supply for AVSS when operating in split supply mode. Each supply is decoupled where it enters the board and again at each device in accordance with the schematic. Table 3 shows the various power supply configurations available, including split supply operation.
+Power the evaluation board from the ac-to-dc adapter connected to J5, or from an
+external bench top supply applied to J3 or J9. Linear LDOs generate the required
+voltages from the applied input voltage (VIN) rail when using J3 or J5. Use J9
+to bypass the on-board regulators. An ADP7118 regulator generates the 5 V
+(single supply) and 2.5 V (split supply) supplies for the AVDD1 and AVDD2 rails
+to the ADC; a second ADP7118 generates 3.3 V for the IOVDD rail. The ADP7104
+supplies 5 V for the SDP-B controller board as well as 5 V for the ADM660
+voltage converter to generate −5 V to supply the ADP7182. The ADP7182 generates
+the −2.5 V supply for AVSS when operating in split supply mode. Each supply is
+decoupled where it enters the board and again at each device in accordance with
+the schematic. Table 3 shows the various power supply configurations available,
+including split supply operation.
 
 **Table 3. Power Supply Configurations**  [3]_
 
@@ -181,12 +193,15 @@ Power Supply Configurations
 Single Supply (Regulated)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are two available power supply options for the single supply (regulated) configuration.
+There are two available power supply options for the single supply (regulated)
+configuration.
 
 -  An ac-to-dc adapter (included) connected to J5. Set LK2 to Position B.
--  A bench top power supply connected to J3. Set LK2 to Position A, and ensure that AVSS = AGND = 0 V.
+-  A bench top power supply connected to J3. Set LK2 to Position A, and ensure
+   that AVSS = AGND = 0 V.
 
-Set all other links and solder links to the default settings as outlined in Table 1.
+Set all other links and solder links to the default settings as outlined in
+Table 1.
 
 Single Supply (Unregulated)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -200,7 +215,8 @@ To set up the evaluation board, use the following procedure:
 -  Connect 3.3 V to J9 at the terminal labeled IOVDD.
 -  Connect the 7 V to 9 V input to J5.
 
-Set all other links and solder links to the default settings as outlined in Table 1.
+Set all other links and solder links to the default settings as outlined in
+Table 1.
 
 Split Supply (Regulated)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -212,7 +228,8 @@ To set up the evaluation board, use the following procedure:
 -  Set LK1 to Position B, which sets the input to the power monitor circuitry to work with the lower AVDD1 supply of 2.5 V.
 -  Connect a bench top power supply to J5 and set LK2 to Position B.
 
-Set all other links and solder links to the default settings as outlined in Table 1.
+Set all other links and solder links to the default settings as outlined in
+Table 1.
 
 Split Supply (Unregulated)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -226,9 +243,11 @@ To set up the evaluation board, use the following procedure:
 -  Connect −2.5 V to J9 at the terminal labeled AVSS.
 -  Connect 3.3 V to J9 at the terminal labeled IOVDD.
 -  Connect 7 V to 9 V to J5.
--  Set LK1 to Position B. This sets the input to the power monitor circuitry to work with the lower AVDD1 supply of 2.5 V.
+-  Set LK1 to Position B. This sets the input to the power monitor circuitry to
+   work with the lower AVDD1 supply of 2.5 V.
 
-Set all other links and solder links set to the default settings as outlined in Table 1.
+Set all other links and solder links set to the default settings as outlined in
+Table 1.
 
 Analog Inputs
 -------------
@@ -253,18 +272,24 @@ software Installation
 
 The :adi:`EVAL-AD7175-2SDZ` evaluation kit includes software on a CD. Double-click the setup.exe file from the CD to run the installer. The default installation location for the software is **C:\\Program Files\\Analog Devices\\AD7175-2 Eval+\\**.
 
-Install the Eval+ software before connecting the evaluation board and EVAL-SDP-CB1Z board to the USB port of the PC to ensure that the evaluation system is correctly recognized when connected to the PC.
+Install the Eval+ software before connecting the evaluation board and
+EVAL-SDP-CB1Z board to the USB port of the PC to ensure that the evaluation
+system is correctly recognized when connected to the PC.
 
 There are two parts to the installation.
 
 -  :adi:`AD7175-2` Eval+ software installation
 -  :adi:`EVAL-SDP-CB1Z` system demonstration platform board drivers and Ssrc SVG Plugin installation
 
-Place the software and drivers in the appropriate locations by proceeding through all of the installation steps. Connect the EVAL-SDP-CB1Z board to the PC only after the software and drivers install. The installer may prompt you to allow the program to make changes to the computer. Click Yes to proceed (see Figure 3).
+Place the software and drivers in the appropriate locations by proceeding
+through all of the installation steps. Connect the EVAL-SDP-CB1Z board to the PC
+only after the software and drivers install. The installer may prompt you to
+allow the program to make changes to the computer. Click Yes to proceed (see
+Figure 3).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/12528-003.png
    :align: center
-   :width: 400px
+   :width: 400
 
 **Figure 3. AD7175-2 User Account Control Permission Dialog Box**
 
@@ -272,11 +297,14 @@ You may receive a security warning as part of the SDP-B controller board driver 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/12528-004.png
    :align: center
-   :width: 400px
+   :width: 400
 
 **Figure 4.** :adi:`EVAL-SDP-CB1Z` **Drivers Installation Confirmation Dialog Box**
 
-After installation is complete, connect the evaluation board to the SDP-B board as shown in Figure 2. Connect the evaluation board via the USB cable to the computer. Follow these steps to verify that the SDP-B controller board driver is installed and working correctly:
+After installation is complete, connect the evaluation board to the SDP-B board
+as shown in Figure 2. Connect the evaluation board via the USB cable to the
+computer. Follow these steps to verify that the SDP-B controller board driver is
+installed and working correctly:
 
 -  Allow the **Found New Hardware Wizard** to run.
 -  When the drivers are installed, check that the board has connected correctly by looking at the **Device Manager** of the PC. The **Device Manager** can be found by right clicking **My Computer**, selecting **Manage**, then **Device Manager** from the list of **System Tools** (see Figure 5).
@@ -284,14 +312,16 @@ After installation is complete, connect the evaluation board to the SDP-B board 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/12528-005.png
    :align: center
-   :width: 400px
+   :width: 400
 
 **Figure 5. Device Manager**
 
 Launching the Software
 ----------------------
 
-The Eval+ software can be launched when the evaluation board and SDP-B board are correctly connected to the PC. The Eval+ software can also be operated without hardware.
+The Eval+ software can be launched when the evaluation board and SDP-B board are
+correctly connected to the PC. The Eval+ software can also be operated without
+hardware.
 
 To launch the software, complete the following steps:
 
@@ -300,7 +330,7 @@ To launch the software, complete the following steps:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/12528-006.png
    :align: center
-   :width: 400px
+   :width: 400
 
 **Figure 6. Select Interface Dialog Box**
 
@@ -333,17 +363,22 @@ The **Ext. REF** field sets the external reference voltage used for calculating 
 Functional Block Diagram (5)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The functional block diagram of the ADC shows each of the separate functional blocks within the ADC. Clicking a configuration button on this graph opens the configuration popup window for that block. Not all blocks have a configuration button.
+The functional block diagram of the ADC shows each of the separate functional
+blocks within the ADC. Clicking a configuration button on this graph opens the
+configuration popup window for that block. Not all blocks have a configuration
+button.
 
 Configuration Popup Button (6)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each configuration popup button opens a different window allowing for configuration of the relevant functional block.
+Each configuration popup button opens a different window allowing for
+configuration of the relevant functional block.
 
 Channel Configuration Overview (7)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section shows the channel configuration, including setup and analog inputs. The channel configuration section allows a quick check of how the ADC is set up.
+This section shows the channel configuration, including setup and analog inputs.
+The channel configuration section allows a quick check of how the ADC is set up.
 
 Status Bar (8)
 ~~~~~~~~~~~~~~
@@ -353,37 +388,49 @@ The status bar displays status updates such as **Analysis Completed** and **Rese
 Analog Supply Voltage (9 & 13)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sets the analog supply voltages used in the functional model for checking power supply limits and calculating the power dissipation figures. These controls are only visible when Functional Model evaluation mode is enabled.
+Sets the analog supply voltages used in the functional model for checking power
+supply limits and calculating the power dissipation figures. These controls are
+only visible when Functional Model evaluation mode is enabled.
 
 Digital Supply Voltage (10)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sets the digital supply voltage used in the functional model for checking power supply limits and calculating the power dissipation figures. This control is only visible when Functional Model evaluation mode is enabled.
+Sets the digital supply voltage used in the functional model for checking power
+supply limits and calculating the power dissipation figures. This control is
+only visible when Functional Model evaluation mode is enabled.
 
 Analog Input Voltage (11)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sets the analog input voltages used in the functional model for calculating the ADC output codes. Note: The voltages set on these controls are DC only voltage with no noise. These controls are only visible when Functional Model evaluation mode is enabled.
+Sets the analog input voltages used in the functional model for calculating the
+ADC output codes. Note: The voltages set on these controls are DC only voltage
+with no noise. These controls are only visible when Functional Model evaluation
+mode is enabled.
 
 External SCLK Frequency (12)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sets the external SCLK frequency for the SPI interface. This value is used in the functional model to determine if they SCLK frequency is within the permitted range. This control is only visible when Functional Model evaluation mode is enabled.
+Sets the external SCLK frequency for the SPI interface. This value is used in
+the functional model to determine if they SCLK frequency is within the permitted
+range. This control is only visible when Functional Model evaluation mode is
+enabled.
 
 External MCLK Frequency (14)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set the external MCLK frequency to be used when an external clock source is selected by the ADC when using the functional model. This control is only visible when Functional Model evaluation mode is enabled.
+Set the external MCLK frequency to be used when an external clock source is
+selected by the ADC when using the functional model. This control is only
+visible when Functional Model evaluation mode is enabled.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/configuration_overview_hw_mode_12528-007-rk.png
    :align: center
-   :width: 600px
+   :width: 600
 
 *\**Figure 7.**\ Configuration** Tab of the* :adi:`AD7175-2` *Eval+ software in Hardware Evaluation Mode*\**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/configuration_overview_fm_mode.png
    :align: center
-   :width: 600px
+   :width: 600
 
 *\**Figure 8.**\ Configuration** Tab of the* :adi:`AD7175-2` *Eval+ Software in Functional Model Evaluation Mode*\**
 
@@ -408,12 +455,17 @@ Click the **Sample** button to start gathering ADC results. Results appear in th
 Waveform Graph and Controls (20 and 21)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The data waveform shows each successive sample of the ADC output. Zoom in on the data using the control toolbar (21) in the graph. Change the scales on the graph by typing values into the x-axis and y-axis.
+The data waveform shows each successive sample of the ADC output. Zoom in on the
+data using the control toolbar (21) in the graph. Change the scales on the graph
+by typing values into the x-axis and y-axis.
 
 Channel Selection (22)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This control chooses which channels display on the data waveform, and also shows the analog inputs for the channel labeled next to the on and off controls. These controls only affect the display of the channels and have no effect on the channel settings in the ADC register map.
+This control chooses which channels display on the data waveform, and also shows
+the analog inputs for the channel labeled next to the on and off controls. These
+controls only affect the display of the channels and have no effect on the
+channel settings in the ADC register map.
 
 Display Units and Axis Controls (23)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -432,7 +484,7 @@ The **Noise Analysis** section displays the results of the noise analysis for th
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/waveform_tab_12528-008-rk.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 9. Waveform Tab of the** :adi:`AD7175-2` **Eval+ Software**
 
@@ -442,37 +494,47 @@ Histogram Tab (26)
 Histogram Graph and Controls (27 and 28)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The data histogram shows the number of times each sample of the ADC output occurs. Zoom in on the data using the control toolbar (28) in the graph. Change the scales on the graph by typing values into the x-axis and y-axis.
+The data histogram shows the number of times each sample of the ADC output
+occurs. Zoom in on the data using the control toolbar (28) in the graph. Change
+the scales on the graph by typing values into the x-axis and y-axis.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/histogram_tab_12528-009-rk.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 10. Histogram Tab of the** :adi:`AD7175-2` **Eval+ Software**
 
 Calculated Performance Tab (29)
 -------------------------------
 
-The Calculated Performance tab shows a number of ADC performance parameters which are calculated using the ADC functional model. All results in the tab are for the current analysis channel (16).
+The Calculated Performance tab shows a number of ADC performance parameters
+which are calculated using the ADC functional model. All results in the tab are
+for the current analysis channel (16).
 
 Filter Profile & Response (30 & 31)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Shows a frequency response graph for the selected digital filter the rejection / attenuation of the digital filter over the Rej BW for f1 and f2 in dB.
+Shows a frequency response graph for the selected digital filter the rejection /
+attenuation of the digital filter over the Rej BW for f1 and f2 in dB.
 
 Performance Summary (32)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Shows the total power consumption of the part in the current configuration as well as the current consumption on each of the power supply rails. Also shows timing information about the currently selected output data rate (Tsettle, Fnotch, fADC).
+Shows the total power consumption of the part in the current configuration as
+well as the current consumption on each of the power supply rails. Also shows
+timing information about the currently selected output data rate (Tsettle,
+Fnotch, fADC).
 
 Timing Diagram (33)
 ~~~~~~~~~~~~~~~~~~~
 
-This graph shows the digital interface timing diagram for the current configuration. It shows the timing for both the configuration of the ADC and the subsequent data reads from the ADC.
+This graph shows the digital interface timing diagram for the current
+configuration. It shows the timing for both the configuration of the ADC and the
+subsequent data reads from the ADC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/calculated_performance_tab.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 11. Calculated Performance Tab of the** :adi:`AD7175-2` **Eval+ Software**
 
@@ -482,36 +544,45 @@ Register Map Tab (34)
 Register Tree (35)
 ~~~~~~~~~~~~~~~~~~
 
-This control shows the full register map in a tree control. Each register is shown; clicking on the expand button next to each register shows all the bit fields contained within that register.
+This control shows the full register map in a tree control. Each register is
+shown; clicking on the expand button next to each register shows all the bit
+fields contained within that register.
 
 Register Control (36)
 ~~~~~~~~~~~~~~~~~~~~~
 
-This control allows the user to change the individual bit of the register selected in the register tree (35) by clicking on the bits or by programming the register value directly into the number control field on the right.
+This control allows the user to change the individual bit of the register
+selected in the register tree (35) by clicking on the bits or by programming the
+register value directly into the number control field on the right.
 
 Bit Field List (37)
 ~~~~~~~~~~~~~~~~~~~
 
-This list shown all the bit fields of the register selected in the register tree (35). Change the values by using the drop-down box or by directly entering a value into the number control field on the right.
+This list shown all the bit fields of the register selected in the register tree
+(35). Change the values by using the drop-down box or by directly entering a
+value into the number control field on the right.
 
 Documentation (38)
 ~~~~~~~~~~~~~~~~~~
 
-This field contains the documentation for the register of the bit field selected in the register tree (35).
+This field contains the documentation for the register of the bit field selected
+in the register tree (35).
 
 Save and Load (39 and 41)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Save and Load buttons allow the user to save the current register map setting to a file and to load the setting from the same file.
+The Save and Load buttons allow the user to save the current register map
+setting to a file and to load the setting from the same file.
 
 Exiting the Software
 --------------------
 
-To exit the software, click the close button at the top right corner of the main window (see Figure 7).
+To exit the software, click the close button at the top right corner of the main
+window (see Figure 7).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-2/register_map_tab_12528-010-rk.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 12. Register Map Tab of the** :adi:`AD7175-2` **Eval+ Software**
 

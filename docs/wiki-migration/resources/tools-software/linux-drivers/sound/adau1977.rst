@@ -45,12 +45,20 @@ Files
 Example device initialization
 =============================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
-
-The platform data for the ADAU1977 allow to specify the MICBIAS pin voltage. If no platform data is specified (i.e. set to NULL) the default voltage of 8.5 V will be used.
+The platform data for the ADAU1977 allow to specify the MICBIAS pin voltage. If
+no platform data is specified (i.e. set to NULL) the default voltage of 8.5 V
+will be used.
 
 .. code:: c
 
@@ -89,9 +97,14 @@ The platform data for the ADAU1977 allow to specify the MICBIAS pin voltage. If 
 Voltage Supplies
 ----------------
 
-The ADAU1977 driver expects a regulator supply for the AVDD voltage to be specified. This allows the driver to disable the supply when not needed, which helps to conserve power. Additionally the driver optionally accepts a supply for the DVDD voltage. If a supply for the DVDD voltage is specified the driver will use that regulator and disable the internal LDO.
+The ADAU1977 driver expects a regulator supply for the AVDD voltage to be
+specified. This allows the driver to disable the supply when not needed, which
+helps to conserve power. Additionally the driver optionally accepts a supply for
+the DVDD voltage. If a supply for the DVDD voltage is specified the driver will
+use that regulator and disable the internal LDO.
 
-When using machine board files to register the device the regulators can be specified in the board file.
+When using machine board files to register the device the regulators can be
+specified in the board file.
 
 .. code:: c
 
@@ -159,7 +172,8 @@ When using devicetree the regulators should be specified in the devicetree. For 
 Devicetree bindings
 -------------------
 
-The ADAU1977 driver is fully devicetree compatible. Depending on the bus type the device is connected to different properties must/can be specified.
+The ADAU1977 driver is fully devicetree compatible. Depending on the bus type
+the device is connected to different properties must/can be specified.
 
 **Shared required properties:**
 
@@ -194,16 +208,26 @@ The ADAU1977 driver is fully devicetree compatible. Depending on the bus type th
 I2C
 ---
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
 
-
-The I2C device id depends on the ADDR0 and ADDR1 pin settings and needs to be set according to your board setup.
+The I2C device id depends on the ADDR0 and ADDR1 pin settings and needs to be
+set according to your board setup.
 
 ===== ===== =============
 ADDR1 ADDR0 I2C device id
@@ -275,12 +299,19 @@ Devicetree
 SPI
 ---
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
-
 
 .. code:: c
 
@@ -438,7 +469,8 @@ Supported DAI formats
 System clock configuration
 --------------------------
 
-The sysclk can either be provided by the internal PLL derived from the MCLK signal or by the LRCLK signal.
+The sysclk can either be provided by the internal PLL derived from the MCLK
+signal or by the LRCLK signal.
 
 .. code:: c
 
@@ -451,19 +483,35 @@ The sysclk can either be provided by the internal PLL derived from the MCLK sign
        ADAU1977_SYSCLK_SRC_LRCLK,
    };
 
-If the MCLK is used the supported sampling rates of the device is constraint to those sample rates that can be derived from the the MCLK. The constraints are setup in the CODEC driver's startup routine. This means that the sysclk needs to be configured before the CODEC's startup callback is called. This can either be done from the machine driver's startup or init callback.
+If the MCLK is used the supported sampling rates of the device is constraint to
+those sample rates that can be derived from the the MCLK. The constraints are
+setup in the CODEC driver's startup routine. This means that the sysclk needs to
+be configured before the CODEC's startup callback is called. This can either be
+done from the machine driver's startup or init callback.
 
-For some hardware configurations it might be possible to change the MCLK frequency at runtime (e.g. to support both 44.1kHz and 48kHz based sample rates). In this case in order for the CODEC driver to not set any sample rate constraints the sysclk frequency should be set to 0 until it has been decided which MCLK frequency is used. This can for example be implemented by setting the sysclk to 0 in the machine driver's startup callback and setting it to the actual frequency in the hw_params callback.
+For some hardware configurations it might be possible to change the MCLK
+frequency at runtime (e.g. to support both 44.1kHz and 48kHz based sample
+rates). In this case in order for the CODEC driver to not set any sample rate
+constraints the sysclk frequency should be set to 0 until it has been decided
+which MCLK frequency is used. This can for example be implemented by setting the
+sysclk to 0 in the machine driver's startup callback and setting it to the
+actual frequency in the hw_params callback.
 
 TDM configuration
 -----------------
 
-The TDM mode of the ADAU1977 can be configured using the snd_soc_dai_set_tdm_slot() function.
+The TDM mode of the ADAU1977 can be configured using the
+snd_soc_dai_set_tdm_slot() function.
 
 -  The number of slots can be either 2, 4, 8 or 16. If the number of slots is set to 0 the device will go to I2S mode.
 -  The slot width can be 16, 24, 32 bits per slot (In master mode only 16 and 32 bits per slot are supported)
 -  tx_mask must always be 0.
--  Each slot can hold the data sample of one channel. Which slot holds which channel is configured by rx_mask. The first bit that is set in rx_mask is the slot that holds the first channel, the second bit the slot that holds the second channel and so on. If less then 4 bits are set the channels for which no slot has been provided are disabled. (E.g. 0x33, configures channel 0 to slot 0, channel 1 to slot 1, channel 2 to slot 4 and channel 3 to slot 4).
+-  Each slot can hold the data sample of one channel. Which slot holds which
+   channel is configured by rx_mask. The first bit that is set in rx_mask is the
+   slot that holds the first channel, the second bit the slot that holds the
+   second channel and so on. If less then 4 bits are set the channels for which
+   no slot has been provided are disabled. (E.g. 0x33, configures channel 0 to
+   slot 0, channel 1 to slot 1, channel 2 to slot 4 and channel 3 to slot 4).
 
 Example TDM configuration:
 
@@ -471,7 +519,9 @@ Example TDM configuration:
 
        ret = snd_soc_dai_set_tdm_slot(codec_dai, 0x00, 0x0f, 4, 32);
 
-To configure whether the unused TDM slots should be tristated or actively driven low the snd_soc_dai_set_tristate() function is used. By default they are driven low.
+To configure whether the unused TDM slots should be tristated or actively driven
+low the snd_soc_dai_set_tristate() function is used. By default they are driven
+low.
 
 Example tristate configuration:
 
@@ -502,7 +552,6 @@ Fixed MCLK
        .codec_name = "adau1977.0-0011",
        .init = eval_adau1977_init,
        .dai_fmt = SND_SOC_DAIFMT_I2S
-
 
            SND_SOC_DAIFMT_NB_NF |
 
@@ -552,7 +601,6 @@ Configurable MCLK
        .init = eval_adau1977_init,
        .dai_fmt = SND_SOC_DAIFMT_I2S
 
-
            SND_SOC_DAIFMT_NB_NF |
 
            SND_SOC_DAIFMT_CBM_CFM,
@@ -562,4 +610,3 @@ Configurable MCLK
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

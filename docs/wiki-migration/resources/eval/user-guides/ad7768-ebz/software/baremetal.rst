@@ -14,19 +14,33 @@ The :adi:`AD7768` has three modes: fast mode (256 kSPS maximum, 110.8 kHz input 
 
 The :adi:`AD7768` offers extensive digital filtering capabilities, such as a wideband, low ±0.005 dB pass-band ripple, antialiasing low-pass filter with sharp roll-off, and 105 dB attenuation at the Nyquist frequency.
 
-Frequency domain measurements can use the wideband linear phase filter. This filter has a flat pass band (±0.005 dB ripple) from dc to 102.4 kHz at 256 kSPS, from dc to 51.2 kHz at 128 kSPS, or from dc to 12.8 kHz at 32 kSPS.
+Frequency domain measurements can use the wideband linear phase filter. This
+filter has a flat pass band (±0.005 dB ripple) from dc to 102.4 kHz at 256 kSPS,
+from dc to 51.2 kHz at 128 kSPS, or from dc to 12.8 kHz at 32 kSPS.
 
 The :adi:`AD7768` also offers sinc response via a sinc5 filter, a low latency path for low bandwidth, and low noise measurements. The wideband and sinc5 filters can be selected and run on a per channel basis.
 
-Within these filter options, the user can improve the dynamic range by selecting from decimation rates of ×32, ×64, ×128, ×256, ×512, and ×1024. The ability to vary the decimation filtering optimizes noise performance to the required input bandwidth.
+Within these filter options, the user can improve the dynamic range by selecting
+from decimation rates of ×32, ×64, ×128, ×256, ×512, and ×1024. The ability to
+vary the decimation filtering optimizes noise performance to the required input
+bandwidth.
 
-Embedded analog functionality on each ADC channel makes design easier, such as a precharge buffer on each analog input that reduces analog input current and a precharge reference buffer per channel reduces input current and glitches on the reference input terminals.
+Embedded analog functionality on each ADC channel makes design easier, such as a
+precharge buffer on each analog input that reduces analog input current and a
+precharge reference buffer per channel reduces input current and glitches on the
+reference input terminals.
 
-The device operates with a 5 V AVDD1A and AVDD1B supply, a 2.25 V to 5.0 V AVDD2A and AVDD2B supply, and a 2.5 V to 3.3 V or 1.8 V IOVDD supply (see the 1.8 V IOVDD Operation section for specific requirements for operating at 1.8 V IOVDD).
+The device operates with a 5 V AVDD1A and AVDD1B supply, a 2.25 V to 5.0 V
+AVDD2A and AVDD2B supply, and a 2.5 V to 3.3 V or 1.8 V IOVDD supply (see the
+1.8 V IOVDD Operation section for specific requirements for operating at 1.8 V
+IOVDD).
 
-The device requires an external reference; the absolute input reference voltage range is 1 V to AVDD1 − AVSS.
+The device requires an external reference; the absolute input reference voltage
+range is 1 V to AVDD1 − AVSS.
 
-The specified operating temperature range is −40°C to +105°C. The device is housed in a 10 mm × 10 mm 64-lead LQFP package with a 12 mm × 12 mm printed circuit board (PCB) footprint.
+The specified operating temperature range is −40°C to +105°C. The device is
+housed in a 10 mm × 10 mm 64-lead LQFP package with a 12 mm × 12 mm printed
+circuit board (PCB) footprint.
 
 Supported devices
 ~~~~~~~~~~~~~~~~~
@@ -54,14 +68,16 @@ In order to build the HDL design the user has to go through the following steps:
 -  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
 
-The HDL architecture comprises a serial data path that enables all the ADC channels and a parallel data path, so that the user can enable only the desired channels.
+The HDL architecture comprises a serial data path that enables all the ADC
+channels and a parallel data path, so that the user can enable only the desired
+channels.
 
 HDL block diagram
 ~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7768evb_fmc_hdl.svg
    :alt: Xilinx HDL Block Diagram
-   :width: 800px
+   :width: 800
 
 HDL Downloads
 ~~~~~~~~~~~~~
@@ -72,7 +88,6 @@ HDL Downloads
    
    -  AD7768-EVB HDL Project - :git-hdl:`projects/ad7768evb`
    
-
 
 No-OS Downloads
 ~~~~~~~~~~~~~~~
@@ -85,4 +100,3 @@ No-OS Downloads
    -  Generic Platform Drivers - :git-no-OS:`https:github.com/analogdevicesinc/no-OS/tree/main/common_drivers/platform_drivers]] \* AD7768 Driver - https:\ github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/ad7768 \* ADC Core Driver - [[https:github.com/analogdevicesinc/no-OS/tree/main/legacy/common_drivers/adc_core|https:\ github.com/analogdevicesinc/no-OS/tree/main/common_drivers/adc_core <legacy/common_drivers/platform_drivers>`
    -  no-OS IIO - :doc:`iio </wiki-migration/resources/tools-software/no-os-software/iio>`
    
-

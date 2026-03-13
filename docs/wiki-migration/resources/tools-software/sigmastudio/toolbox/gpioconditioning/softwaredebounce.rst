@@ -7,8 +7,11 @@ Software Debounce
 
 Typically, this block is used to debounce a GPIO input signal.
 
-To use this block, drag it into the schematic and connect the input to a GPIO signal.
+To use this block, drag it into the schematic and connect the input to a GPIO
+signal.
 
-The debounce time control sets the time constant for the debouncer, in samples; the default is 20. For best results adjust the value by trial and error for whatever hardware is connected to the GPIO input.
+The debounce time control sets the time constant for the debouncer, in samples;
+the default is 20. For best results adjust the value by trial and error for
+whatever hardware is connected to the GPIO input.
 
 .. |softdebpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/softdebpic1.png

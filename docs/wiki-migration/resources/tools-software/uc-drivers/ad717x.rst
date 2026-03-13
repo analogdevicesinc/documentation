@@ -4,12 +4,18 @@ AD717X No-OS Software Drivers
 Introduction
 ------------
 
-This document describes the No-OS software used to control the AD717X family parts and the AD4111 device. It also includes an example of how to initialize a AD7176 part.
+This document describes the No-OS software used to control the AD717X family
+parts and the AD4111 device. It also includes an example of how to initialize a
+AD7176 part.
 
 Overview
 --------
 
-The AD717x family of products are fast settling, high resolution, highly accurate, multiplexed Σ-Δ analog-to-digital converters (ADC) for low bandwidth input signals, with resolution options of both 32bit and 24bit available. The products are available in both TSSOP of LFCSP depending on the product selected. AD717x family of devices include:
+The AD717x family of products are fast settling, high resolution, highly
+accurate, multiplexed Σ-Δ analog-to-digital converters (ADC) for low bandwidth
+input signals, with resolution options of both 32bit and 24bit available. The
+products are available in both TSSOP of LFCSP depending on the product selected.
+AD717x family of devices include:
 
 -  :adi:`AD7175-2`
 -  :adi:`AD7175-8`
@@ -24,11 +30,34 @@ The AD717x family of products are fast settling, high resolution, highly accurat
 -  :adi:`AD4115`
 -  :adi:`AD4116`
 
-The inputs to the ADC can be configured as fully differential or pseudo differential inputs depending on the product chosen, this can be done via the integrated crosspoint multiplexer. An integrated precision, 2.5 V, low drift (2ppm/°C), band gap internal reference (with an output reference buffer) adds functionality and reduces the external component count. A maximum channel scan data rate is 50 kSPS (with a settling time of 20 μs), resulting in fully settled data of 17 noise free bits. User-selectable output data rates range from 5 SPS to 250 kSPS can be obtained from AD7175, AD7176 and AD7177 devices. A maximum channel scan data rate is 6.1 kSPS (with a settling time of 161 μs). User-selectable output data rates range from 1.25 SPS to 31.25 kSPS can be obtained from AD7172, AD7173 devices. The AD717x devices offers three key digital filters. The fast settling filter maximizes the channel scan rate. The Sinc3 filter maximizes the resolution for single-channel, low speed applications. For 50 Hz and 60 Hz environments, the AD717x specific filter minimizes the settling times or maximizes the rejection of the line frequency. These enhanced filters enable simultaneous 50 Hz and 60 Hz rejection with a 27 SPS output data rate (with a settling time of 36 ms). System offset and gain errors can be corrected on a per channel basis. This per channel configurability extends to the type of filter and output data rate used for each channel. All switching of the crosspoint multiplexer is controlled by the ADC and can be configured to automatically control an external multiplexer via the GPIO pins. The specified operating temperature range is −40°C to +105°C.
+The inputs to the ADC can be configured as fully differential or pseudo
+differential inputs depending on the product chosen, this can be done via the
+integrated crosspoint multiplexer. An integrated precision, 2.5 V, low drift
+(2ppm/°C), band gap internal reference (with an output reference buffer) adds
+functionality and reduces the external component count. A maximum channel scan
+data rate is 50 kSPS (with a settling time of 20 μs), resulting in fully settled
+data of 17 noise free bits. User-selectable output data rates range from 5 SPS
+to 250 kSPS can be obtained from AD7175, AD7176 and AD7177 devices. A maximum
+channel scan data rate is 6.1 kSPS (with a settling time of 161 μs).
+User-selectable output data rates range from 1.25 SPS to 31.25 kSPS can be
+obtained from AD7172, AD7173 devices. The AD717x devices offers three key
+digital filters. The fast settling filter maximizes the channel scan rate. The
+Sinc3 filter maximizes the resolution for single-channel, low speed
+applications. For 50 Hz and 60 Hz environments, the AD717x specific filter
+minimizes the settling times or maximizes the rejection of the line frequency.
+These enhanced filters enable simultaneous 50 Hz and 60 Hz rejection with a 27
+SPS output data rate (with a settling time of 36 ms). System offset and gain
+errors can be corrected on a per channel basis. This per channel configurability
+extends to the type of filter and output data rate used for each channel. All
+switching of the crosspoint multiplexer is controlled by the ADC and can be
+configured to automatically control an external multiplexer via the GPIO pins.
+The specified operating temperature range is −40°C to +105°C.
 
 The :adi:`AD4111`, :adi:`AD4112`, :adi:`AD4114`, :adi:`AD4115` and :adi:`AD4116` are low power, low noise, 24-bit, sigma delta (Σ-Δ) analog-to-digital converters (ADC) that integrate analog front ends (AFE) for fully differential or single-ended rail-to-rail, buffered bipolar, ±10 V voltage inputs, and 0 mA to 20 mA current inputs. They also integrate key analog and digital signal conditioning blocks to configure eight individual setups for each analog input channel in use. The AD4111 and AD4112 feature a maximum channel scan rate of 6.2 kSPS (161 μs) for fully settled data.
 
-The AD411x family also has the unique feature of open wire detection on the voltage inputs (patent pending) for system level diagnostics using a single 5 V or 3.3 V power supply. It is housed in a 40-lead, 6 mm × 6 mm LFCSP package.
+The AD411x family also has the unique feature of open wire detection on the
+voltage inputs (patent pending) for system level diagnostics using a single 5 V
+or 3.3 V power supply. It is housed in a 40-lead, 6 mm × 6 mm LFCSP package.
 
 Applications
 ~~~~~~~~~~~~
@@ -64,8 +93,8 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD717X family, which may be used, without modifications, with any microcontroller.
--  The Generic Platform Driver, which implements the actual communications with the device.
-
+-  The Generic Platform Driver, which implements the actual communications with
+   the device.
 
 Generic platform driver description
 ===================================
@@ -213,17 +242,17 @@ The following structs and enums are used for the **GPIO** interface:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers-all/gpio_driver_architecture.png
    :align: center
 
-
-
 AD717X Family Driver Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The AD717X driver contains the following:
 
 -  AD717X.h - Header file of the driver. Contains the register map definitions, the driver function declarations, custom data types to be used by the driver and driver specific constants.
--  AD717X.c - Implementation file of the driver. Contains the implementations of the driver functions.
+-  AD717X.c - Implementation file of the driver. Contains the implementations of
+   the driver functions.
 
-The driver works with any of the following headers by including them in your main project just as you include the ad717x.h header:
+The driver works with any of the following headers by including them in your
+main project just as you include the ad717x.h header:
 
 -  AD7172_2_regs.h
 -  AD7172_4_regs.h
@@ -234,7 +263,8 @@ The driver works with any of the following headers by including them in your mai
 -  AD7177_2_regs.h
 -  AD411x_regs.h
 
-Each header declares an array of all register of the device that the header describes.
+Each header declares an array of all register of the device that the header
+describes.
 
 The following functions are implemented in this version of AD717X driver:
 
@@ -277,13 +307,19 @@ Downloads
    -  **Generic Platform Driver** :git-no-OS:`drivers/platform/generic`
    
 
-
 Using the API
 -------------
 
-The driver can only work together with a structure that holds the state of a device, where state means all information about the device including a copy of all register values written to the device at a certain point. This structure will henceforth be referred as an instance of a driver. All driver functions take a handler of a driver instance as the first argument. This allows the driver to be used with multiple devices simultaneously, without the need to replicate the .c and .h files.
+The driver can only work together with a structure that holds the state of a
+device, where state means all information about the device including a copy of
+all register values written to the device at a certain point. This structure
+will henceforth be referred as an instance of a driver. All driver functions
+take a handler of a driver instance as the first argument. This allows the
+driver to be used with multiple devices simultaneously, without the need to
+replicate the .c and .h files.
 
-Before using any API call an instance of the driver must first be created and then initialized using the AD717X_Init() which has the following parameters:
+Before using any API call an instance of the driver must first be created and
+then initialized using the AD717X_Init() which has the following parameters:
 
 -  **device**: the reference of the new driver instance. A new instance can be obtained by simply declaring a pointer to one then using it to call AD717X_Init(): <code c> ad717x_device \*my_ad7176_2; </code>
 -  **init_param**: the initialization structure. One must be declared and initial values must be added before calling AD717X_Init(). <code c> ad717x_init_param ad7176_2_init_param; </code> ad717x_init_param has the following definition: <code c> typedef struct {
@@ -352,8 +388,6 @@ The following code snipped provides an example of driver usage:
 More information
 ================
 
-
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

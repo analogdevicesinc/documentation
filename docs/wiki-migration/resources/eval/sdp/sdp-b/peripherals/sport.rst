@@ -1,7 +1,8 @@
 SPORT: Synchronous Serial Peripheral Port
 =========================================
 
-Sport interface supports a variety of serial data communication protocols. Key features and capability of SPORT interface are
+Sport interface supports a variety of serial data communication protocols. Key
+features and capability of SPORT interface are
 
 -  Continuously running clock
 -  Serial data words from 3 to 32 bits in lengths, either MSB or LSB first
@@ -50,20 +51,20 @@ Index Element Channel
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl1.png
    :alt: sdp-b_periphexpl1.png
    :align: left
-   :width: 750px
+   :width: 750
 
-Similarly data read from the SDP SPORT Interface in secEnable mode must be de-interleaved in the top level application to separate the data into data from DR0 and DR1.
+Similarly data read from the SDP SPORT Interface in secEnable mode must be
+de-interleaved in the top level application to separate the data into data from
+DR0 and DR1.
 
 Understanding the Frame Sync Signal
 -----------------------------------
-
 
 | An Early Frame Sync Signal will be active for one clock pulse, and then become deactivate. Once the signal has been deactivated, valid data will be available.
 | A Late Frame Sync Signal frames the valid data, so is active for the length of time that valid data is available and is deactivated once the word to be transmitted or received has been fully sent.
 
 | |sdp-b_periphexpl2.png|
 | Figure 1 : SPORT Frame Sync Signals
-
 
 | Receive Data
 
@@ -72,7 +73,6 @@ Understanding the Frame Sync Signal
 
 | |sdp-b_periphexpl4.png|
 | Figure 3 : SPORT_DR0/SPORT_DR1 & late frame sync
-
 
 | Transmit Data
 
@@ -83,10 +83,10 @@ Understanding the Frame Sync Signal
 | SPORT0 is on Connector A of the SDP, SPORT1 is on Connector B of the SDP. The SPORT Interface Pins are 3.3V tolerant only.
 
 .. |sdp-b_periphexpl2.png| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl2.png
-   :width: 500px
+   :width: 500
 .. |sdp-b_periphexpl3.png| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl3.png
-   :width: 500px
+   :width: 500
 .. |sdp-b_periphexpl4.png| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl4.png
-   :width: 500px
+   :width: 500
 .. |sdp-b_periphexpl5.png| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl5.png
-   :width: 500px
+   :width: 500

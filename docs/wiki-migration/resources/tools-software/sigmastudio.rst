@@ -3,13 +3,16 @@ SigmaStudio and SigmaDSP Documentation
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/screenhunter_01_jun._05_11.56.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 *Welcome to the Analog Devices SigmaStudio Graphical Development Tool!*
 
 :adi:`sigmastudio` was developed specifically for use with our :adi:`SigmaDSP audio processors <sigmadsp>`. Recently, support was also added for :adi:`SHARC processors <SS4SHARC>`. This graphical development environment allows engineers with little or no DSP coding experience to add quality digital signal processing to their designs. In addition, it allows experienced engineers to quickly create complicated signal flows while at the same time focusing on more complex signal processing algorithms. SigmaStudio offers a variety of signal processing blocks that can be wired together, as in a schematic, and generate production-ready code while providing a graphical control surface for fine tuning parameters.
 
-This tool was originally tailored for engineers tasked with migrating analog sound processing systems to digital ones; yet it is powerful enough to satisfy more experienced DSP designers. SigmaStudio can help users reduce development times, lower costs without sacrificing quality or performance.
+This tool was originally tailored for engineers tasked with migrating analog
+sound processing systems to digital ones; yet it is powerful enough to satisfy
+more experienced DSP designers. SigmaStudio can help users reduce development
+times, lower costs without sacrificing quality or performance.
 
 --------------
 
@@ -53,11 +56,10 @@ Getting Support
 
    Download the latest version of SigmaStudio at our :adi:`download site <sigmastudiodownload>`.
 
-
 .. tip::
 
-   In SigmaStudio 4.5.1 Beta and above, pressing F1 while an algorithm is highlighted will bring you directly to its Wiki page.
-
+   In SigmaStudio 4.5.1 Beta and above, pressing F1 while an algorithm is
+   highlighted will bring you directly to its Wiki page.
 
 SigmaStudio and SigmaDSP FAQ is available in the SigmaDSP EngineerZone :ez:`documents section <dsp/sigmadsp/w/documents>`. Use the left sidebar to navigate between topics.
 

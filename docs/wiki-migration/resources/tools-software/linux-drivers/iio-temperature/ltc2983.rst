@@ -46,17 +46,18 @@ Files
 Example SPI device initialization
 =================================
 
-The devices can only be instantiated via device tree, along with all the sensors attached to it.
+The devices can only be instantiated via device tree, along with all the sensors
+attached to it.
 
 Adding Linux driver support
 ===========================
 
-Configure kernel with “make menuconfig” (alternatively use “make xconfig” or “make qconfig”).
+Configure kernel with “make menuconfig” (alternatively use “make xconfig” or
+“make qconfig”).
 
 .. hint::
 
    The LTC2983 driver depends CONFIG_SPI.
-
 
 ::
 
@@ -76,8 +77,15 @@ Hardware configuration
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -107,7 +115,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root:/sys/bus/iio/devices/iio:device0>
    
 
-
 Show device name
 ----------------
 
@@ -122,7 +129,6 @@ Show device name
       ltc2983
    
 
-
 Show temperature
 ----------------
 
@@ -136,7 +142,6 @@ Show temperature
       root:/sys/bus/iio/devices/iio:device0> cat in_temp0_thermistor_raw
       1048576
    
-
 
 Show temperature scale
 ----------------------
@@ -154,7 +159,6 @@ Show temperature scale
       0.000976562
    
 
-
 Show voltage
 ------------
 
@@ -168,7 +172,6 @@ Show voltage
       root:/sys/bus/iio/devices/iio:device0> cat in_voltage0_direct_adc_raw
       2621440
    
-
 
 Show Voltage scale
 ------------------
@@ -185,7 +188,6 @@ Show Voltage scale
       root:/sys/bus/iio/devices/iio:device0> cat in_voltage_scale
       0.000000476
    
-
 
 More Information
 ================
@@ -208,6 +210,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-temperature/youtube>p_vntewue24
-

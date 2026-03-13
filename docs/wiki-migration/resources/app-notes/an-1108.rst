@@ -8,12 +8,23 @@ View the original :adi:`AN-1108 <media/en/technical-documentation/application-no
 Introduction
 ------------
 
-This application note describes how to load a sinusoidal waveform on the output of the AD9832/AD9835 parts. This includes setting up the AD9832/AD9835 from a power-on scenario, setting up the FSELECT control bit, and loading new data to the part while using the FSELECT control bit.
+This application note describes how to load a sinusoidal waveform on the output
+of the AD9832/AD9835 parts. This includes setting up the AD9832/AD9835 from a
+power-on scenario, setting up the FSELECT control bit, and loading new data to
+the part while using the FSELECT control bit.
 
 Programming the AD9832/AD9835
 -----------------------------
 
-When the AD9832/AD9835 is powered up, the part should be reset. This resets the appropriate internal registers to 0 to provide an analog output of full scale. To avoid spurious DAC outputs while the AD9832 is being initialized, the RESET bit should be set to 1 until the part is ready to begin generating an output. The RESET bit does not reset the phase, frequency, or control registers. These registers will contain invalid data, and, therefore, should be set to a known value by the user. The RESET bit should then be set to 0 to begin generating an output. The data appears on the DAC output seven to eight MCLK cycles after RESET is set to 0.
+When the AD9832/AD9835 is powered up, the part should be reset. This resets the
+appropriate internal registers to 0 to provide an analog output of full scale.
+To avoid spurious DAC outputs while the AD9832 is being initialized, the RESET
+bit should be set to 1 until the part is ready to begin generating an output.
+The RESET bit does not reset the phase, frequency, or control registers. These
+registers will contain invalid data, and, therefore, should be set to a known
+value by the user. The RESET bit should then be set to 0 to begin generating an
+output. The data appears on the DAC output seven to eight MCLK cycles after
+RESET is set to 0.
 
 Functional Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,7 +39,8 @@ A simple example is best to explain how to program the AD9832 and the AD9835. Fo
 Example 1: Setting Up the Part After Power-Up
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The aim is to generate two output frequencies, loading 3 kHz to the FREQ0 register, and 10 kHz to the FREQ1 register, with a 25 MHz MCLK.
+The aim is to generate two output frequencies, loading 3 kHz to the FREQ0
+register, and 10 kHz to the FREQ1 register, with a 25 MHz MCLK.
 
 The dial-up code for this is defined by the equation
 
@@ -75,7 +87,12 @@ Use the register tables in the :adi:`AD9832` or :adi:`AD9835` data sheet for ref
 
 0xD000—Resets AD9832
 
-RESET Bit D12 is set to 1. This resets the internal registers to 0, which corresponds to an analog output of full scale (see Figure 2). Ch1 is the spurious output set to reset. Ch2 is FSYNC, Ch3 is SDATA, and Ch4 is SCLK. Note that data is valid on the falling edge of SCLK. Ignore the SDATA high after eight SCLK cycles; this is an inherent feature of the particular SPI driver used and does not affect the part.
+RESET Bit D12 is set to 1. This resets the internal registers to 0, which
+corresponds to an analog output of full scale (see Figure 2). Ch1 is the
+spurious output set to reset. Ch2 is FSYNC, Ch3 is SDATA, and Ch4 is SCLK. Note
+that data is valid on the falling edge of SCLK. Ignore the SDATA high after
+eight SCLK cycles; this is an inherent feature of the particular SPI driver used
+and does not affect the part.
 
 |an1108-09651-002.png| *Figure 2. Put AD9832/AD9835 in Reset--0xD000*
 
@@ -111,14 +128,17 @@ RESET Bit D12 is set to 1. This resets the internal registers to 0, which corres
 
 0xC000—Frequency Register 1, L LSB data.
 
--  Exit reset mode. A 3 kHz signal, from the FREQ0 register, appears at the output of the DAC eight MCLK cycles after the RESET bit is set to 0.
+-  Exit reset mode. A 3 kHz signal, from the FREQ0 register, appears at the
+   output of the DAC eight MCLK cycles after the RESET bit is set to 0.
 
 |an1108-09651-004.png| *Figure 4. Take Part Out of Reset--0xC000*
 
 Example 2: Changing the FSELECT Bit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The part is now set up with a 3 kHz signal on the output and is controllable by the FSELECT bit, as opposed to the FSELECT pin. To change this frequency to 10 KHz requires only a write to the control register to change the FSELECT bit.
+The part is now set up with a 3 kHz signal on the output and is controllable by
+the FSELECT bit, as opposed to the FSELECT pin. To change this frequency to 10
+KHz requires only a write to the control register to change the FSELECT bit.
 
 0x5800—Selects the FREQ1 register.
 
@@ -134,7 +154,8 @@ To return to the 3 kHz FREQ0 output, reset the FSELECT bit to 0.
 Example 3: Updating the Output as Needed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next step is to change the FREQ1 register from 10 kHz to 40 kHz without entering RESET mode.
+The next step is to change the FREQ1 register from 10 kHz to 40 kHz without
+entering RESET mode.
 
 -  For FREQ1 = 40 kHz
 

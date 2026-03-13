@@ -135,7 +135,8 @@ The left connector when looking at the connection on the DPG from the evaluation
 Right Side Connector
 --------------------
 
-The right connector when looking at the connection on the DPG from the evaluation board side (J18 on the DPG2, J10 on the DPG3)
+The right connector when looking at the connection on the DPG from the
+evaluation board side (J18 on the DPG2, J10 on the DPG3)
 
 +------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Pin  | Name        | Description                                                                                                                                            |

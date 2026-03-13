@@ -8,14 +8,25 @@ Gain Envelope
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/gainenvelopewindow.png
    :alt: gainenvelopewindow.png
-   :width: 600px
+   :width: 600
 
 Description
 -----------
 
-The Generic Gain Envelope algorithm has a fully programmable gain envelope. The envelope is accessible by clicking the cell’s icon. The length of the envelope is controlled by the Maximum Time control, which is set in milliseconds. Points on the curve can be moved by click-dragging. New points can be added by double-clicking. Points can be removed by right-clicking and selecting “remove point.” In this case, the point closest to the mouse cursor will be removed. The envelope must have at least 3 points. Point values can be fine-tuned using the text input boxes on the right side of the envelope control window. In Generic Gain Envelope, when the control input goes to 1, the gain envelope begins. When the control input goes to 0, the gain envelope stops, regardless of whether the envelope has completed or not.
+The Generic Gain Envelope algorithm has a fully programmable gain envelope. The
+envelope is accessible by clicking the cell’s icon. The length of the envelope
+is controlled by the Maximum Time control, which is set in milliseconds. Points
+on the curve can be moved by click-dragging. New points can be added by
+double-clicking. Points can be removed by right-clicking and selecting “remove
+point.” In this case, the point closest to the mouse cursor will be removed. The
+envelope must have at least 3 points. Point values can be fine-tuned using the
+text input boxes on the right side of the envelope control window. In Generic
+Gain Envelope, when the control input goes to 1, the gain envelope begins. When
+the control input goes to 0, the gain envelope stops, regardless of whether the
+envelope has completed or not.
 
-In the case of the Generic Gain Envelope Alg EndlessLoop algorithm, the envelope will loop continuously until the control input goes to 0.
+In the case of the Generic Gain Envelope Alg EndlessLoop algorithm, the envelope
+will loop continuously until the control input goes to 0.
 
 Variants
 --------
@@ -104,5 +115,3 @@ StartGain          = Math.Pow(10, (GainValue_Point[0] / 20))
 lowestgain         =0.00000025
 numberofgainpoints = GainPoints count - 1
 ================== =========================================
-
-

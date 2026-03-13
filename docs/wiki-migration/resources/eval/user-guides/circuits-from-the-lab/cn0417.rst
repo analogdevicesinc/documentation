@@ -10,8 +10,8 @@ The :adi:`ADL5606` is a broadband, two-stage, 1 W RF driver amplifier that opera
 
 The :adi:`LTM8045` is an integrated switching DC/DC converter that contains a current mode controller, power switching element, power coupled inductor, power Schottky diode, and a modest amount of input and output capacitance. It can be configured as a SEPIC or inverting converter by simply grounding the appropriate output rail.
 
-The EVAL-CN0417-EBZ board connects through SMA and is powered by the bus voltage from the USB port.
-
+The EVAL-CN0417-EBZ board connects through SMA and is powered by the bus voltage
+from the USB port.
 
 |image1|
 
@@ -30,7 +30,7 @@ Block assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417/revb_blockd.jpg
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Terminal block **J1** is the SMA female connector for RF input, and would normally be connected to an SDR.
 -  Terminal block **J2** is the SMA male connector for RF output, and would normally be connected to an antenna
@@ -41,7 +41,7 @@ Test setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417/10-31-2018_10-51-55_am.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Plug in the micro-USB end of the micro-USB cable or power adapter to P1 of the :adi:`EVAL-CN0417-EBZ Board <CN0417>`
 -  Plug the other end of the cable into a power outlet or a PC USB port providing at least 500 mA.
@@ -51,8 +51,6 @@ Test setup
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
-
-
 
 - After completing the setup, the :adi:`EVAL-CN0417-EBZ Board <CN0417>` will automatically turn on and output the amplified version of the input.
 
@@ -77,12 +75,11 @@ WARNING
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417/pluto_setup_1.jpg
-      :width: 900px
+      :width: 900
    
    We test the :adi:`EVAL-CN0417-EBZ Board <CN0417>` in this configuration, by ensuring the Tx attenuator is set to an attenuation of 30dB or more. This ensures the gain of +20dB from the :adi:`EVAL-CN0417-EBZ Board <CN0417>` will not exceed the maximum ratings for the RF Input.
    
    Never do this in normal operation.
-
 
 More Information and Useful Links
 ---------------------------------
@@ -97,7 +94,6 @@ More Information and Useful Links
    -  :adi:`ADL5606 Product Page <ADL5606>`
    -  :adi:`LTM8045 Product Page <LTM8045>`
    
-
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -114,7 +110,6 @@ Schematic, PCB Layout, Bill of Materials
    -  PADS project
    
 
-
 Registration
 ------------
 
@@ -122,10 +117,9 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0417-EBZ?&v=RevC>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417/block_diagram3.png
-   :width: 900px
+   :width: 900
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0417.png
-   :width: 300px
+   :width: 300

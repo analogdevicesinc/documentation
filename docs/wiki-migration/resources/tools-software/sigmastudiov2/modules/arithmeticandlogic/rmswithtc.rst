@@ -9,7 +9,8 @@ RMS With TC
 Description
 -----------
 
-The RMSWithTC block computes the RMS of the input signals with time constant specified in the text field.
+The RMSWithTC block computes the RMS of the input signals with time constant
+specified in the text field.
 
 Targets Supported
 -----------------
@@ -19,7 +20,6 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ========= ========== ================ ============= ================
 RMSWithTC S/B        S/B              NA            B
 ========= ========== ================ ============= ================
-
 
 | ===== Pins =====
 

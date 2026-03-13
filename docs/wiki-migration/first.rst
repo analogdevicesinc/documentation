@@ -3,7 +3,9 @@ FIRST Robotics Competition Kit of Parts (KoP) Donation Resources
 
 This is the central location for all documentation relating to ADI's parts donations to the FRC Kit of Parts. Here you will find links to code examples, software libraries, user guides, and other resources for all of ADI's FRC components. If you can't find the answer to your question here, please reach out to us at `frcsupport@analog.com <https://wiki.analog.com/mailto/frcsupport@analog.com>`_.
 
-Analog Devices currently provides three different sensor solutions to teams. Which one is best for you will depend on your team's experience with sensors, desired performance, and the available ports on your RoboRIO.
+Analog Devices currently provides three different sensor solutions to teams.
+Which one is best for you will depend on your team's experience with sensors,
+desired performance, and the available ports on your RoboRIO.
 
 If you want to learn about the basics of using sensors for autonomous navigation, check out our 2019 Championship Conference presentation, presented by engineer Mark Looney. You can watch a recording of the Detroit presentation (coming soon), or `access the slide deck here <https://wiki.analog.com/_media/first/mems_imus_in_av_gnc_firstrobitics_2019.pdf>`_.
 
@@ -42,11 +44,14 @@ For more information on getting started with the ADIS16448 IMU, check out the :d
 
 .. important::
 
-   After 2020, we will begin to phase out the ADIS16448 IMU in favor of the newer ADIS16470 with updated features. We strongly encourage teams that have not obtained one of the newer IMUs to consider getting one from FIRST Choice this year. The ADIS16448 IMU is still supported, but stock will be limited and library updates/releases for this device will be slower.
-
+   After 2020, we will begin to phase out the ADIS16448 IMU in favor of the
+   newer ADIS16470 with updated features. We strongly encourage teams that have
+   not obtained one of the newer IMUs to consider getting one from FIRST Choice
+   this year. The ADIS16448 IMU is still supported, but stock will be limited
+   and library updates/releases for this device will be slower.
 
 .. |image1| image:: https://wiki.analog.com/_media/first/am-3555-2.jpg
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/first/adis16470_spi_board-cropped.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/first/imu.jpg

@@ -12,7 +12,11 @@ The following steps describe the procedure to run a sample demo in PC mode
 -  Discovery and configuration of A2B nodes and peripheral devices as per the schematic will be done by the A2B Bus Analyzer Device if it is used for Main Node Emulation
 -  All the events through the A2B network will be captured by the A2B Bus Analyzer Device when used as Bus Monitor
 -  A2B Bus Analyzer Device will be discovered as a Sub Node by the A2B Eval Main Node when used as a Sub Node Emulator.
--  After successful discovery and initialization, audio routing can be observed as per the stream configuration for the schematic. The sink and source audio streams of A2B Bus Analyzer Main/Sub Node Emulator and audio streams detected by the A2B Bus Analyzer Bus Monitor will be displayed on the A2B Bus Analyzer UI.
+-  After successful discovery and initialization, audio routing can be observed
+   as per the stream configuration for the schematic. The sink and source audio
+   streams of A2B Bus Analyzer Main/Sub Node Emulator and audio streams detected
+   by the A2B Bus Analyzer Bus Monitor will be displayed on the A2B Bus Analyzer
+   UI.
 
 Here are some more examples for analyzer
 ----------------------------------------

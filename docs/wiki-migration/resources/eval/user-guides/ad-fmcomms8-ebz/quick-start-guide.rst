@@ -1,9 +1,11 @@
 FMCOMMS8 Quick Start Guide
 ==========================
 
-This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the FMCOMMS8 on ADRV9009-ZU11EG and ZCU102.
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the FMCOMMS8 on ADRV9009-ZU11EG and ZCU102.
 
-Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees from source can be found here:
+Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees
+from source can be found here:
 
 -  :doc:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
 -  :doc:`How to build the ZynqMP boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynqmp-boot-image>`
@@ -17,7 +19,8 @@ Required Software
 FMCOMMS8 Specific Boot Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After writing the image, on the boot partition FMCOMMS8 specific files can be added from:
+After writing the image, on the boot partition FMCOMMS8 specific files can be
+added from:
 
 -  `FMCOMMS8 with ADRV9009-ZU11EG HW Rev.B boot files (2019_R2 Relase) <https://swdownloads.analog.com/cse/boot_partition_files/2019_R2/latest_boot_partition.tar.xz>`_ - from folder zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8
 
@@ -66,9 +69,7 @@ Optional Hardware
 Testing
 =======
 
-
 .. esd-warning::
-
 
 Hardware Setup
 --------------
@@ -86,29 +87,27 @@ ADRV9009-ZU11EG
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/adrv2crr_rev_a_and_b_sw_jmp_settings.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Configure ``ADRV2CRR-FMC`` for SD BOOT from carrier using ``S9``. See picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/adrv9009-zu11g-sd-card-select.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Turn on the power switch on the carrier board using ``S12``.
 -  Optionally connect test and measurement equipment to U.FL RF ports.
--  Observe kernel and serial console messages on your terminal. (use the first ttyUSB or COM port registered, Baud rate 115200 (8N1))
+-  Observe kernel and serial console messages on your terminal. (use the first
+   ttyUSB or COM port registered, Baud rate 115200 (8N1))
 
 Messages
 ^^^^^^^^
-
-
 
 .. collapsible:: Complete kernel boot log (Click to expand)
 
    .. container:: box bggreen
 
       This specifies any shell prompt running on the target
-
 
       ::
 
@@ -561,8 +560,6 @@ Messages
 
          root@analog:~#
 
-
-
 Make sure all devices are present
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -587,7 +584,6 @@ Make sure all devices are present
               iio:device8: adrv9009-phy-b
               iio:device9: axi-adrv9009-rx-hpc (buffer capable)
    
-
 
 Check clock chip lock status on SoM, FMCOMMS8 and Carrier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -638,7 +634,6 @@ Check clock chip lock status on SoM, FMCOMMS8 and Carrier
       SYNC Status:    Unsynchronized
       Lock Status:    PLL1 & PLL2 Locked
    
-
 
 Synchronizing the ADRV9009s
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -729,23 +724,21 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
         SYNC~                   deasserted
    
 
-
 ZCU102
 ~~~~~~
 
-For ZCU102, FMCOMMS8 board connects to the HPC0 connector. The carrier setup requires power, UART (115200), ethernet (Linux), DisplayPort and/or JTAG connections.
+For ZCU102, FMCOMMS8 board connects to the HPC0 connector. The carrier setup
+requires power, UART (115200), ethernet (Linux), DisplayPort and/or JTAG
+connections.
 
 Messages
 ^^^^^^^^
-
-
 
 .. collapsible:: Complete kernel boot log (Click to expand)
 
    .. container:: box bggreen
 
       This specifies any shell prompt running on the target
-
 
       ::
 
@@ -757,7 +750,6 @@ Messages
          NOTICE:  BL31: v2.0(release):xilinx-v2019.2
          NOTICE:  BL31: Built : 10:19:24, Jan 13 2020
          PMUFW:  v1.1
-
 
          U-Boot 2018.01-21436-gbba91bc203 (Jan 13 2020 - 10:50:58 +0200) Xilinx ZynqMP ZCU102 rev1.0, Build: jenkins-development-build_uboot-1
 
@@ -1311,8 +1303,6 @@ Messages
 
          root@analog:~#
 
-
-
 Make sure all devices are present
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1333,7 +1323,6 @@ Make sure all devices are present
               iio:device2: ad7291
               iio:device0: ams
    
-
 
 Check clock chip lock status on FMCOMMS8
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1360,7 +1349,6 @@ Check clock chip lock status on FMCOMMS8
       SYNC Status:    Unsynchronized
       Lock Status:    PLL1 & PLL2 Locked
    
-
 
 Synchronizing the ADRV9009s
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1407,7 +1395,6 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
         Initial Lane Alignment Sequence   Yes    Yes    Yes    Yes     Yes    Yes    Yes    Yes
    
 
-
 Video Configuration
 -------------------
 
@@ -1418,18 +1405,19 @@ IIO Oscilloscope Remote
 
 Please see also here::doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The IIO Oscilloscope application can be used to connect to another platform that has a connected device in order to configure the device and read data from it.
+The IIO Oscilloscope application can be used to connect to another platform that
+has a connected device in order to configure the device and read data from it.
 
 Build and start osc on a network enabled Linux host.
 
-Once the application is launched goto Settings -> Connect and enter the IP address of the target in the popup window.
+Once the application is launched goto Settings -> Connect and enter the IP
+address of the target in the popup window.
 
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
 
-
    |image1|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

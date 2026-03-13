@@ -1,7 +1,12 @@
 Frequency Hopping Example Design
 ================================
 
-This article will explain an example design that utilizes the frequency hopping features of the AD9361 transceiver through the use of its built-in fastlock profiles under external pin control. Since this example focuses on features that are generally used in tightly time-constrained applications, the design will be done primarily built around logic for the FPGA fabric and software control interfaces. The following topics will be discussed:
+This article will explain an example design that utilizes the frequency hopping
+features of the AD9361 transceiver through the use of its built-in fastlock
+profiles under external pin control. Since this example focuses on features that
+are generally used in tightly time-constrained applications, the design will be
+done primarily built around logic for the FPGA fabric and software control
+interfaces. The following topics will be discussed:
 
 -  AD9361 fastlock for fast frequency hopping
 -  Creating a custom reference design for MathWorks HDL Coder
@@ -12,30 +17,63 @@ This article will explain an example design that utilizes the frequency hopping 
 AD9361 Fastlock for Fast Frequency Hopping
 ------------------------------------------
 
-The AD9361 transceiver has a massive LO tuning range from 70 MHz to 6 GHz in roughly ~4 Hz steps. Allowing for support of many different applications for the transceiver. However, move the LO across this range has strict requirements, specifically for the internal VCXO driving the RX or TX paths. Whenever an LO change of 100 MHz is required from a calibrated frequency, the VCXO must be first moved and re-calibrated. This is automatically performed by the driver, and monitoring the PLL lock settings will show the TX or RX PLL unlocking during this frequency change and re-calibration phase. During this process, a series of values are written into the VCXO calibration registers that are unique for that LO frequency. The during of the re-calibration can vary depending on the divider ratio used to generate the LO in question. This will normally range from X to Y. During this phase data receiver or transmitted is invalid, and only will become valid once the related PLL is locked.
+The AD9361 transceiver has a massive LO tuning range from 70 MHz to 6 GHz in
+roughly ~4 Hz steps. Allowing for support of many different applications for the
+transceiver. However, move the LO across this range has strict requirements,
+specifically for the internal VCXO driving the RX or TX paths. Whenever an LO
+change of 100 MHz is required from a calibrated frequency, the VCXO must be
+first moved and re-calibrated. This is automatically performed by the driver,
+and monitoring the PLL lock settings will show the TX or RX PLL unlocking during
+this frequency change and re-calibration phase. During this process, a series of
+values are written into the VCXO calibration registers that are unique for that
+LO frequency. The during of the re-calibration can vary depending on the divider
+ratio used to generate the LO in question. This will normally range from X to Y.
+During this phase data receiver or transmitted is invalid, and only will become
+valid once the related PLL is locked.
 
-In order to increase this LO transition rate, it is possible to save these calibrations on-chip for future need LO switches. These extra registers are called fastlock registers or fastlock profiles, and a maximum of 8 are provided on-chip. If more are needed, calibration information can be pulled off-chip then loaded from the baseband processor in the future. When using these fastlock profiles, a user can simply recall a fastlock profile from the desired register set and the LO will move to the frequency associated with that profile and the LO will lock-in with ~15-25us depending on configuration and LO frequency. The selection of profiles can be done over SPI, or more commonly, over direct external pins provided at the CTRL_IN interfaces of the transceiver. The pin control interface will be used in this design since it is the fastest and most deterministic.
+In order to increase this LO transition rate, it is possible to save these
+calibrations on-chip for future need LO switches. These extra registers are
+called fastlock registers or fastlock profiles, and a maximum of 8 are provided
+on-chip. If more are needed, calibration information can be pulled off-chip then
+loaded from the baseband processor in the future. When using these fastlock
+profiles, a user can simply recall a fastlock profile from the desired register
+set and the LO will move to the frequency associated with that profile and the
+LO will lock-in with ~15-25us depending on configuration and LO frequency. The
+selection of profiles can be done over SPI, or more commonly, over direct
+external pins provided at the CTRL_IN interfaces of the transceiver. The pin
+control interface will be used in this design since it is the fastest and most
+deterministic.
 
 Fastlock Controller IP
 ----------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/tutorials/hoppingdiagram.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    \ *Frequency Hopper Controller Reference Design Interfaces*\
 
+For this design, an HDL Coder workflow will be used to both generate the
+additional controlling IP, but also to stitch the generated IP into a custom
+reference design. The diagram above outlines the connections of the Hop
+Controller which is responsible for selecting specific fastlock profiles, as
+well as managing receive DMA to only capture data during the dwell period after
+the AD9361 has transitioned between frequencies.
 
-For this design, an HDL Coder workflow will be used to both generate the additional controlling IP, but also to stitch the generated IP into a custom reference design. The diagram above outlines the connections of the Hop Controller which is responsible for selecting specific fastlock profiles, as well as managing receive DMA to only capture data during the dwell period after the AD9361 has transitioned between frequencies.
-
-The custom HDL reference design will be adapted from the standard design provided for the ADRV9361-Z7035 RF-SOM with FMC carrier board. From the original design, two main changes are made to support this frequency hopping use case. These changes are:
+The custom HDL reference design will be adapted from the standard design
+provided for the ADRV9361-Z7035 RF-SOM with FMC carrier board. From the original
+design, two main changes are made to support this frequency hopping use case.
+These changes are:
 
 -  Modify the CTRL_OUT connections in the reference design to allow connection to a custom IP core. By default, the CTRL_OUT pins are connected directly to the Zynq's ARM GPIO controller.
--  Modify the CTRL_IN connections to be exposed as standalone ports, similarly to what is done for the CTRL_OUT pins. By default, these pins go directly back to the ARM as well.
+-  Modify the CTRL_IN connections to be exposed as standalone ports, similarly
+   to what is done for the CTRL_OUT pins. By default, these pins go directly
+   back to the ARM as well.
 
-These are accomplished by modifying two files. The main system wrapper (system_top.v) to unbundle the desired ports:
+These are accomplished by modifying two files. The main system wrapper
+(system_top.v) to unbundle the desired ports:
 
 ::
 
@@ -96,9 +134,16 @@ Back in MATLAB, a new interface definition file set is created. This simply requ
 Control Logic For Fastlock
 --------------------------
 
-The Hop Controller has two main modes, hop enabled and hop disabled. In the hop disabled mode, the controller will use the current index last provided by the internal state machine. If the HOPPER_MANUAL_PROFILE_ENABLE register is set, the profile used will be based on the HOPPER_MANUAL_PROFILE register.
+The Hop Controller has two main modes, hop enabled and hop disabled. In the hop
+disabled mode, the controller will use the current index last provided by the
+internal state machine. If the HOPPER_MANUAL_PROFILE_ENABLE register is set, the
+profile used will be based on the HOPPER_MANUAL_PROFILE register.
 
-In hopping mode, when the HOPPER_MANUAL_PROFILE_ENABLE register is not set, the controller will rotate through profiles 0-7 in order. When 7 is reached the internal counter rolls back to start at 0 again. It will remain at the profile for 20+N samples where N is the value provided in the HOPPER_DWELL_SAMPLES register.
+In hopping mode, when the HOPPER_MANUAL_PROFILE_ENABLE register is not set, the
+controller will rotate through profiles 0-7 in order. When 7 is reached the
+internal counter rolls back to start at 0 again. It will remain at the profile
+for 20+N samples where N is the value provided in the HOPPER_DWELL_SAMPLES
+register.
 
 Register map:
 
@@ -124,7 +169,8 @@ To provide configuration to the Hop Controller IP an IIO driver was implemented,
 Required devicetree properties:
 
 -  compatible: Should always be “adi,axi-hopper-1.00”
--  reg: Base address and register area size. This parameter expects a register range.
+-  reg: Base address and register area size. This parameter expects a register
+   range.
 
 Example
 
@@ -138,7 +184,15 @@ Example
 Device Attributes
 ~~~~~~~~~~~~~~~~~
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every one of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every one of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 ::
 
@@ -178,7 +232,7 @@ Since there is an IIO driver for the Hop Controller it can be controlled remotel
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/tutorials/hop_result.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Running the Demo
 ~~~~~~~~~~~~~~~~
@@ -186,7 +240,6 @@ Running the Demo
 .. tip::
 
    \ `Demo Video <https://vimeo.com/337844457>`_\
-
 
 Requirements:
 

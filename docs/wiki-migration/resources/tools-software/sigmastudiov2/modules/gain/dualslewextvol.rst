@@ -14,12 +14,18 @@ Location of the Module:
 Description
 -----------
 
-The Dual Slew External Volume Gain adjusts external audio signal levels with independent fade-in and fade-out times, using slew rate limiters to ensure smooth, click-free transitions.
+The Dual Slew External Volume Gain adjusts external audio signal levels with
+independent fade-in and fade-out times, using slew rate limiters to ensure
+smooth, click-free transitions.
 
 Usage
 -----
 
-Use the Dual Slew External Volume Gain to control the amplitude of external audio sources with precise timing. Adjust the independent fade-in and fade-out parameters to define how quickly the signal reaches or leaves its target level. This feature is ideal for preventing clicks, pops, or abrupt volume changes in audio systems, ensuring smooth and consistent level transitions.
+Use the Dual Slew External Volume Gain to control the amplitude of external
+audio sources with precise timing. Adjust the independent fade-in and fade-out
+parameters to define how quickly the signal reaches or leaves its target level.
+This feature is ideal for preventing clicks, pops, or abrupt volume changes in
+audio systems, ensuring smooth and consistent level transitions.
 
 Targets Supported
 -----------------

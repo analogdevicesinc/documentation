@@ -42,4 +42,3 @@ Downloads
    -  :git-no-OS:`Implementation of AD7606 Driver. <drivers/adc/ad7606/ad7606.c>`
    -  :git-no-OS:`Header file of AD7606 Driver. <drivers/adc/ad7606/ad7606.h>`
    
-

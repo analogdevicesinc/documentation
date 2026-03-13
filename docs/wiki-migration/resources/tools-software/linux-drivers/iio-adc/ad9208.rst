@@ -33,11 +33,44 @@ Description
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad9208-fbl.png
    :align: center
-   :width: 400px
+   :width: 400
 
-The AD9208 is a dual, 14-bit, 3 GSPS analog-to-digital converter (ADC). The device has an on-chip buffer and a sample-and-hold circuit designed for low power, small size, and ease of use. This product is designed to support communications applications capable of direct sampling wide bandwidth analog signals of up to 5 GHz. The −3 dB bandwidth of the ADC input is 9 GHz. The AD9208 is optimized for wide input bandwidth, high sampling rate, excellent linearity, and low power in a small package.
+The AD9208 is a dual, 14-bit, 3 GSPS analog-to-digital converter (ADC). The
+device has an on-chip buffer and a sample-and-hold circuit designed for low
+power, small size, and ease of use. This product is designed to support
+communications applications capable of direct sampling wide bandwidth analog
+signals of up to 5 GHz. The −3 dB bandwidth of the ADC input is 9 GHz. The
+AD9208 is optimized for wide input bandwidth, high sampling rate, excellent
+linearity, and low power in a small package.
 
-The dual ADC cores feature a multistage, differential pipelined architecture with integrated output error correction logic. Each ADC features wide bandwidth inputs supporting a variety of user-selectable input ranges. An integrated voltage reference eases design considerations. The analog input and clock signals are differential inputs. The ADC data outputs are internally connected to four digital downconverters (DDCs) through a crossbar mux. Each DDC consists of up to five cascaded signal processing stages: a 48-bit frequency translator (numerically controlled oscillator (NCO)), and up to four half-band decimation filters. The NCO has the option to select preset bands over the general-purpose input/output (GPIO) pins, which enables the selection of up to three bands. Operation of the AD9208 between the DDC modes is selectable via SPI-programmable profiles. In addition to the DDC blocks, the AD9208 has several functions that simplify the automatic gain control (AGC) function in a communications receiver. The programmable threshold detector allows monitoring of the incoming signal power using the fast detect control bits in Register 0x0245 of the ADC. If the input signal level exceeds the programmable threshold, the fast detect indicator goes high. Because this threshold indicator has low latency, the user can quickly turn down the system gain to avoid an overrange condition at the ADC input. In addition to the fast detect outputs, the AD9208 also offers signal monitoring capability. The signal monitoring block provides additional information about the signal being digitized by the ADC. The user can configure the Subclasss 1 JESD204B-based high speed serialized output in a variety of one-lane, two-lane, four-lane, and eight-lane configurations, depending on the DDC configuration and the acceptable lane rate of the receiving logic device. Multidevice synchronization is supported through the SYSREF± and SYNCINB± input pins. The AD9208 has flexible power-down options that allow significant power savings when desired. All of these features can be programmed using a 3-wire serial port interface (SPI). This product is protected by a U.S. patent.
+The dual ADC cores feature a multistage, differential pipelined architecture
+with integrated output error correction logic. Each ADC features wide bandwidth
+inputs supporting a variety of user-selectable input ranges. An integrated
+voltage reference eases design considerations. The analog input and clock
+signals are differential inputs. The ADC data outputs are internally connected
+to four digital downconverters (DDCs) through a crossbar mux. Each DDC consists
+of up to five cascaded signal processing stages: a 48-bit frequency translator
+(numerically controlled oscillator (NCO)), and up to four half-band decimation
+filters. The NCO has the option to select preset bands over the general-purpose
+input/output (GPIO) pins, which enables the selection of up to three bands.
+Operation of the AD9208 between the DDC modes is selectable via SPI-programmable
+profiles. In addition to the DDC blocks, the AD9208 has several functions that
+simplify the automatic gain control (AGC) function in a communications receiver.
+The programmable threshold detector allows monitoring of the incoming signal
+power using the fast detect control bits in Register 0x0245 of the ADC. If the
+input signal level exceeds the programmable threshold, the fast detect indicator
+goes high. Because this threshold indicator has low latency, the user can
+quickly turn down the system gain to avoid an overrange condition at the ADC
+input. In addition to the fast detect outputs, the AD9208 also offers signal
+monitoring capability. The signal monitoring block provides additional
+information about the signal being digitized by the ADC. The user can configure
+the Subclasss 1 JESD204B-based high speed serialized output in a variety of
+one-lane, two-lane, four-lane, and eight-lane configurations, depending on the
+DDC configuration and the acceptable lane rate of the receiving logic device.
+Multidevice synchronization is supported through the SYSREF± and SYNCINB± input
+pins. The AD9208 has flexible power-down options that allow significant power
+savings when desired. All of these features can be programmed using a 3-wire
+serial port interface (SPI). This product is protected by a U.S. patent.
 
 Source Code
 ===========
@@ -285,17 +318,18 @@ Example devicetree SPI device initialization
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD9208 driver depends on CONFIG_SPI
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -316,7 +350,9 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Hardware configuration
 ======================
 
-In case the driver probes and the device instantiates without errors. Your systems kernel messages should include some lines, which may look like the one shown below.
+In case the driver probes and the device instantiates without errors. Your
+systems kernel messages should include some lines, which may look like the one
+shown below.
 
 This specifies the root console running on the target
 
@@ -366,10 +402,18 @@ This specifies the root console running on the target
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
-
-Some device attributes control the ADC HDL Core, others features of the ADC and associated clock providers.
+Some device attributes control the ADC HDL Core, others features of the ADC and
+associated clock providers.
 
 .. container:: box bggreen
 
@@ -406,7 +450,6 @@ Some device attributes control the ADC HDL Core, others features of the ADC and 
       root@analog:/sys/bus/iio/devices/iio:device1#
    
 
-
 Documentation for IIO device the subfolders, device and channel attributes can be found here: :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
 
 Show device name
@@ -422,7 +465,6 @@ Show device name
       root@analog:/sys/bus/iio/devices/iio:device1# cat name
       axi-ad9208-0-hpc
    
-
 
 More Information
 ================
@@ -445,6 +487,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

@@ -9,14 +9,16 @@ Nth Order Filter
    :alt: nthorderfilter.png
    :align: right
 
-The Nth Order Filter is a combination of biquad filters to form Nth order filter.
+The Nth Order Filter is a combination of biquad filters to form Nth order
+filter.
 
 -  The available filter types are:
 -  Butterworth Low-Pass / High-Pass
 -  Chebyshev 1 Low-Pass / High-Pass
 -  Chebyshev 2 Low-Pass / High-Pass
 
-The Filter has 3 selectable filter types to perform LowPass/HighPass filtering.The algorithm can be extended upto 8 input pins.
+The Filter has 3 selectable filter types to perform LowPass/HighPass
+filtering.The algorithm can be extended upto 8 input pins.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/nthorderfiltergrowth.png
    :alt: nthorderfiltergrowth.png

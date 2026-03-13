@@ -19,7 +19,12 @@ The :adi:`AD5668` device is a low power, octal, 16-bit, buffered voltage-output 
 
 The :adi:`AD5668` has an on-chip reference with an internal gain of 2. The AD5668-1 has an 1.25 V 5 ppm/°C reference, giving a full-scale output range of 2.5 V; the AD5668-2, -3 has a 2.5 V 5 ppm/°C reference, giving a full-scale output range of 5 V. The on-board reference is off at power-up, allowing the use of an external reference. The internal reference is enabled via a software write.
 
-The part incorporates a power-on reset circuit that ensures that the DAC output powers up to 0 V (AD5668-1, -2) or midscale (AD5668-3) and remains powered up at this level until a valid write takes place. The part contains a power-down feature that reduces the current consumption of the device to 400 nA at 5 V and provides software-selectable output loads while in power-down mode for any or all DAC channels.
+The part incorporates a power-on reset circuit that ensures that the DAC output
+powers up to 0 V (AD5668-1, -2) or midscale (AD5668-3) and remains powered up at
+this level until a valid write takes place. The part contains a power-down
+feature that reduces the current consumption of the device to 400 nA at 5 V and
+provides software-selectable output loads while in power-down mode for any or
+all DAC channels.
 
 The outputs of all DACs can be updated simultaneously using the LDAC function, with the added functionality of user-selectable DAC channels to simultaneously update. There is also an asynchronous CLR that updates all DACs to a user-programmable code—zero scale, midscale, or full scale.
 
@@ -38,7 +43,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5668.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -51,9 +61,14 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD5668 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD5668 driver can be used exactly as it is provided. There are three functions which are called by the AD5668 driver:
+The Communication Driver has a standard interface, so the AD5668 driver can be
+used exactly as it is provided. There are three functions which are called by
+the AD5668 driver:
 
 -  SPI_Init() – initializes the communication peripheral.
 -  SPI_Write() – writes data to the device.
@@ -65,7 +80,6 @@ The Communication Driver has a standard interface, so the AD5668 driver can be u
 .. container:: centeralign
 
    Driver architecture
-
 
 The implementation of these three functions depends on the used microcontroller.
 
@@ -89,7 +103,8 @@ Downloads
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD5668 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD5668
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -106,7 +121,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD5668EBZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+An EVAL-AD5668EBZ has to be interfaced with the Renesas Demonstration Kit (RDK)
+for RL78G13:
 
 ::
 
@@ -125,7 +141,8 @@ With the **Applilet3 for RL78G13** tool the following peripherals have to be con
 CSI10 (Clocked Serial Interface 10) – For the ADI part and the ST7579 LCD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+Choose to generate the Transmit/receive function for the CSI10 and configure the
+interface with the following settings:
 
 -  Transfer mode setting: **Single transfer mode**
 -  Data length setting : **8 bits**
@@ -143,7 +160,8 @@ Configure TM00 as an interval timer:
 
 -  Interval timer setting - Interval value(16 bits): **1** ms
 -  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
--  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an
+   interrupt (INTM00)//
 
 Watchdog Timer
 ~~~~~~~~~~~~~~
@@ -163,16 +181,15 @@ The reference project generates an 1 Hz sine wave on all channels.
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
 
-
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the AD5668 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the AD5668
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -188,7 +205,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD5668SDZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+An EVAL-AD5668SDZ board has to be interfaced with the Renesas Demonstration Kit
+(RDK) for RX62N:
 
 ::
 
@@ -210,17 +228,13 @@ The reference project generates an 1 Hz sine wave on all channels.
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

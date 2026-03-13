@@ -23,30 +23,30 @@ Receive path of AD9361 with and without TRXBOOST1
 +-------------------------------------+-----------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/rx_path.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/tx_path.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_without_lna_input_-15dbm.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_with_lna_input_-15dbm.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_without_lna_input_-20dbm.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_with_lna_input_-20dbm.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_without_lna_input_-80dbm.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_with_lna_input_-80dbm.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_without_lna_input_-15dbm.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_with_lna_input_-15dbm.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_without_lna_input_-20dbm.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_with_lna_input_-20dbm.png
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_without_lna_input_-80dbm.png
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/channel_01_with_lna_input_-80dbm.png
-   :width: 600px
+   :width: 600

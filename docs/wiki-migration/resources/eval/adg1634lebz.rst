@@ -37,13 +37,25 @@ Equipment Needed
 General Description
 -------------------
 
-The EVAL-ADG1634LEBZ is the evaluation board for the ADG1634L. The ADG1634L contains four independent single-pole, double-throw (SPDT) switches. Each switch conducts equally well in both directions when on, and each switch has an input signal range that extends to the supplies. In the off condition, signal levels up to the supplies are blocked.
+The EVAL-ADG1634LEBZ is the evaluation board for the ADG1634L. The ADG1634L
+contains four independent single-pole, double-throw (SPDT) switches. Each switch
+conducts equally well in both directions when on, and each switch has an input
+signal range that extends to the supplies. In the off condition, signal levels
+up to the supplies are blocked.
 
-An external VL supply pin provides logic control flexibility for lower logic controls. The ADG1634L is both 1.2 V and 1.8 V JEDEC Standard compliant.
+An external VL supply pin provides logic control flexibility for lower logic
+controls. The ADG1634L is both 1.2 V and 1.8 V JEDEC Standard compliant.
 
-Figure 1 shows the EVAL-ADG1634LEBZ in a typical evaluation setup. The EVAL-ADG1634LEBZ is placed to the center of the evaluation board, and eight test points and SMB sockets are provided to connect to each of the sources and one test point and SMB socket for drain inputs. Three screw terminals are used to power the device. A 5-pin header is provided for user-defined digital voltage if required.
+Figure 1 shows the EVAL-ADG1634LEBZ in a typical evaluation setup. The
+EVAL-ADG1634LEBZ is placed to the center of the evaluation board, and eight test
+points and SMB sockets are provided to connect to each of the sources and one
+test point and SMB socket for drain inputs. Three screw terminals are used to
+power the device. A 5-pin header is provided for user-defined digital voltage if
+required.
 
-Full specifications on the ADG1634L are available in the ADG1634L data sheet available from Analog Devices, Inc., and should be consulted in conjunction with this user guide when using the evaluation board.
+Full specifications on the ADG1634L are available in the ADG1634L data sheet
+available from Analog Devices, Inc., and should be consulted in conjunction with
+this user guide when using the evaluation board.
 
 Revision History
 ----------------
@@ -55,12 +67,11 @@ ADG1634L Evaluation Board Layout
 
 .. image:: https://wiki.analog.com/_media/resources/eval/eval-adg1634lebz_top-web.gif
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 1. EVAL-ADG1634LEBZ*
-
 
 Evaluation Board Hardware
 -------------------------
@@ -73,12 +84,21 @@ Connector P1 provides access to the supply pins of the ADG1634L. V\ :sub:`DD`, G
 Input Signals
 ~~~~~~~~~~~~~
 
-Three screw connectors, P3, P4, P5, and P6 are provided to connect to both the source and drain pins of the ADG1634L. Additional subminiature Version B (SMB) connector pads are available if extra connections are required. Each trace on the source and drain side includes two sets of 0603 pads, which can place a load on the signal path to the ground. A 0 Ω resistor is placed in the signal path and can be replaced with a user-defined value. The resistor combined with the 0603 pads can create a simple resistor-capacitor (RC) filter.
+Three screw connectors, P3, P4, P5, and P6 are provided to connect to both the
+source and drain pins of the ADG1634L. Additional subminiature Version B (SMB)
+connector pads are available if extra connections are required. Each trace on
+the source and drain side includes two sets of 0603 pads, which can place a load
+on the signal path to the ground. A 0 Ω resistor is placed in the signal path
+and can be replaced with a user-defined value. The resistor combined with the
+0603 pads can create a simple resistor-capacitor (RC) filter.
 
 Link Options
 ~~~~~~~~~~~~
 
-A number of link options are provided on the EVAL-ADG1634LEBZ board that must be set for the required operating conditions before use. Table 1 shows the summary of the link headers and how they are used on the evaluation board. The functions of these link options are described in detail in Table 2.
+A number of link options are provided on the EVAL-ADG1634LEBZ board that must be
+set for the required operating conditions before use. Table 1 shows the summary
+of the link headers and how they are used on the evaluation board. The functions
+of these link options are described in detail in Table 2.
 
 .. container:: column
 
@@ -92,7 +112,6 @@ A number of link options are provided on the EVAL-ADG1634LEBZ board that must be
    \            B      GND
    ============ ====== ===========
    
-
 
 .. container:: COLUMN
 
@@ -110,23 +129,23 @@ A number of link options are provided on the EVAL-ADG1634LEBZ board that must be
    +--------------+--------------------------------------------------------------------------+
    
 
-
 SMB Connectors
 ~~~~~~~~~~~~~~
 
-The parallel interface of the AD1634L is controlled manually using the link headers of JP13 to JP17, or it can be accessed using the SMB connectors, IN1 to IN4. To use the SMB connectors, remove the link headers of JP13 to JP17.
+The parallel interface of the AD1634L is controlled manually using the link
+headers of JP13 to JP17, or it can be accessed using the SMB connectors, IN1 to
+IN4. To use the SMB connectors, remove the link headers of JP13 to JP17.
 
 Evaluation Board Schematics and Artwork
 ---------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adg1634l_input-output_schematic.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    *Figure 2. EVAL-ADG1634LEBZ Schematic 1*
-
 
    |image1|
 
@@ -134,13 +153,11 @@ Evaluation Board Schematics and Artwork
 
    *Figure 3. EVAL-ADG1634LEBZ Schematic 2*
 
-
    |image2|
 
 .. container:: centeralign
 
    *Figure 4. EVAL-ADG1634LEBZ Silkscreen*
-
 
    |image3|
 
@@ -148,13 +165,11 @@ Evaluation Board Schematics and Artwork
 
    *Figure 5. EVAL-ADG1634LEBZ Top Layer*
 
-
    |image4|
 
 .. container:: centeralign
 
    *Figure 6. EVAL-ADG1634LEBZ Layer 2*
-
 
    |image5|
 
@@ -162,13 +177,11 @@ Evaluation Board Schematics and Artwork
 
    *Figure 7. EVAL-ADG1634LEBZ Layer 3*
 
-
    |image6|
 
 .. container:: centeralign
 
    *Figure 8. EVAL-ADG1634LEBZ Bottom Layer*
-
 
 Ordering Information
 --------------------
@@ -212,16 +225,15 @@ Bill of Materials
    +-------------------------------+-----------------------------------------------------------------------------------+----------------------+---------------------+
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_supply_pins.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_silkscreen.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l1.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l2.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l3.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l4.png
-   :width: 600px
+   :width: 600

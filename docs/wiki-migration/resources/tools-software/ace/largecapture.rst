@@ -3,44 +3,44 @@ Preparing your Laptop or PC for Large Captures
 
 .. important::
 
-   You may need to contact your system administrator or IT department before changing these settings
-
+   You may need to contact your system administrator or IT department before
+   changing these settings
 
 -  Ensure you have at least 100GB of free disk space and at least 16GB of RAM.
 -  Navigate to "System" in Control Panel (Windows 10)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_152927.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Go to "Advanced System Settings"
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_153421.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Go to Performance and Settings
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_153421.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Go to Advanced and Select "Change"
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_154148.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Choose the option to "Automatically manage paging file..."
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_154333.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. important::
 
-   Continuous use of paging files with an SSD based storage device may result in excessive wear!
-
+   Continuous use of paging files with an SSD based storage device may result in
+   excessive wear!
 
 Limitations and What to Expect
 ==============================
@@ -50,18 +50,24 @@ Limitations and What to Expect
 -  Most Capture Controllers (e.g. ADS7-V2) take a snapshot to onboard RAM as the data rate is often too high to continuously transfer to the PC (reliably). For the SDP-H1 that's 64MB and the ADS7-V2 about 4GB.
 -  The FFT analysis library is limited to (2^31)-1 element double arrays. Note that Complex Samples are passed as an interleaved double array, the limitation for Complex FFTs is 2^30 I&Q samples.
 -  Depending on the size of the Capture it could take a long time.
--  As the operation is memory intensive some applications may stop responding or your system may become unstable.
+-  As the operation is memory intensive some applications may stop responding or
+   your system may become unstable.
 
 Capturing Raw Data to File to Avoid Delays
 ==========================================
 
-If you want to do large captures, we still recommend that you capture the raw data directly to file using the Remote Control service and a scripting/automation language of your choice. e.g. Python, Matlab or Labview. This will bypass the ACE GUI and analysis libraries and allow you to work with the data directly.
+If you want to do large captures, we still recommend that you capture the raw
+data directly to file using the Remote Control service and a
+scripting/automation language of your choice. e.g. Python, Matlab or Labview.
+This will bypass the ACE GUI and analysis libraries and allow you to work with
+the data directly.
 
 -  :doc:`ACE Remote Control </wiki-migration/resources/tools-software/ace/remotecontrol>`
 
 ACE Plug-ins that Support Large Captures
 ========================================
 
-We will add to this list as we are informed of plug-in updates, this is not authoritative, always check for plug-in and ACE updates.
+We will add to this list as we are informed of plug-in updates, this is not
+authoritative, always check for plug-in and ACE updates.
 
 -  AD9208

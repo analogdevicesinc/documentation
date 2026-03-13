@@ -3,17 +3,33 @@ This page contains a few lose documentation snippets used in various spots.
 IIO device files
 ================
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 IIO devices with trigger consumer interface
 ===========================================
 
-If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
+If deviceX supports triggered sampling, it’s a so called trigger consumer and
+there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In
+this folder there is a file called current_trigger, allowing controlling and
+viewing the current trigger source connected to deviceX. Available trigger
+sources can be identified by reading the name file
+/sys/bus/iio/devices/triggerY/name. The same trigger source can connect to
+multiple devices, so a single trigger may initialize data capture or reading
+from a number of sensors, converters, etc.
 
 .. hint::
 
-   Trigger Consumers: Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
-
+   Trigger Consumers: Currently triggers are only used for the filling of
+   software ring buffers and as such any device supporting INDIO_RING_TRIGGERED
+   has the consumer interface automatically created.
 
 **Description:** Read name of triggerY
 
@@ -28,7 +44,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
       irqtrig56
    
 
-
 **Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ), to current trigger of deviceX
 
 .. container:: box bggreen
@@ -40,7 +55,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
       root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
-
 
 **Description:** Read current trigger source of deviceX
 
@@ -54,7 +68,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
       root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
-
 
 Standalone trigger drivers
 ==========================
@@ -74,7 +87,13 @@ Standalone trigger drivers
 Buffer management
 =================
 
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -102,11 +121,19 @@ Typical ADC scan elements
 Event Management
 ================
 
-The Industrial I/O subsystem provides support for passing hardware generated events up to userspace.
+The Industrial I/O subsystem provides support for passing hardware generated
+events up to userspace.
 
-In IIO events are not used for passing normal readings from the sensing devices to userspace, but rather for out of band information. Normal data reaches userspace through a low overhead character device - typically via either software or hardware buffer. The stream format is pseudo fixed, so is described and controlled via sysfs rather than adding headers to the data describing what is in it.
+In IIO events are not used for passing normal readings from the sensing devices
+to userspace, but rather for out of band information. Normal data reaches
+userspace through a low overhead character device - typically via either
+software or hardware buffer. The stream format is pseudo fixed, so is described
+and controlled via sysfs rather than adding headers to the data describing what
+is in it.
 
-Pretty much all IIO events correspond to thresholds on some value derived from one or more raw readings from the sensor. They are provided by the underlying hardware.
+Pretty much all IIO events correspond to thresholds on some value derived from
+one or more raw readings from the sensor. They are provided by the underlying
+hardware.
 
 **Examples include:**
 
@@ -123,7 +150,9 @@ Events have timestamps.
 
 -  Single user at a time.
 
--  Simple chrdev per device (aggregation across devices doesn't really make sense for IIO as you tend to really care which sensor caused the event rather than just that it happened.)
+-  Simple chrdev per device (aggregation across devices doesn't really make
+   sense for IIO as you tend to really care which sensor caused the event rather
+   than just that it happened.)
 
 **The format is:**
 
@@ -170,16 +199,18 @@ Typical event attributes
 Low level register access via debugfs (direct_reg_access)
 =========================================================
 
-Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver.
+Some IIO drivers feature an optional debug facility, allowing users to read or
+write registers directly. Special care needs to be taken when using this
+feature, since you can modify registers on the back of the driver.
 
 .. tip::
 
    To simplify direct register access you may want to use the libiio :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command line utility.
 
-
 Accessing debugfs requires root privileges.
 
-In order to identify if the IIO device in question feature this option you first need to identify the IIO device number.
+In order to identify if the IIO device in question feature this option you first
+need to identify the IIO device number.
 
 Therefore read the name attribute of each IIO device
 
@@ -201,7 +232,6 @@ Therefore read the name attribute of each IIO device
       root@analog:~#
    
 
-
 Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the direct_reg_access file exists.
 
 .. container:: box bggreen
@@ -216,7 +246,6 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the dire
       direct_reg_access
    
 
-
 **Reading**
 
 .. container:: box bggreen
@@ -230,7 +259,6 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the dire
       root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access
       0x40
    
-
 
 **Writing**
 
@@ -247,7 +275,6 @@ Write ADDRESS VALUE
       root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access
       0x50
    
-
 
 **Accessing HDL CORE registers**
 
@@ -272,7 +299,6 @@ The register map for typical ADI HDL cores can be found here: :doc:`Register Map
       0x80062
    
 
-
 IIO pointers
 ============
 
@@ -293,6 +319,5 @@ IIO pointers
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-
 
 .. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_vntewue24

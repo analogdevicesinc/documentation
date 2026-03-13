@@ -54,7 +54,10 @@ Three Speaker System
 Algorithm Description
 ~~~~~~~~~~~~~~~~~~~~~
 
-The Automatic Speaker EQ is located in the ADI Algorithms section of the SigmaStudio Toolbox. Once included in the project, it is necessary to choose the proper algorithm for the current design. The Automatic Speaker EQ supports up to three-way speaker designs.
+The Automatic Speaker EQ is located in the ADI Algorithms section of the
+SigmaStudio Toolbox. Once included in the project, it is necessary to choose the
+proper algorithm for the current design. The Automatic Speaker EQ supports up to
+three-way speaker designs.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq2.png
    :alt: AutoEQ2.png
@@ -87,7 +90,8 @@ Controls
 Target Response Tab
 ~~~~~~~~~~~~~~~~~~~
 
-The next tab provides tools to allow the user to design the desired target response for each transducer.
+The next tab provides tools to allow the user to design the desired target
+response for each transducer.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq4.png
    :alt: AutoEQ4.png
@@ -113,7 +117,8 @@ Controls
 Design Settings Tab
 ~~~~~~~~~~~~~~~~~~~
 
-This tab provides controls to customize the operation of the Automatic Speaker EQ algorithm.
+This tab provides controls to customize the operation of the Automatic Speaker
+EQ algorithm.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq5.png
    :alt: AutoEQ5.png
@@ -135,7 +140,10 @@ Controls
 Filter Tabs
 ~~~~~~~~~~~
 
-After running the Automatic Speaker EQ algorithm, the Filters tab is automatically displayed. The Filters tab shows the results of the algorithm and allows the user to change the values of the filters as desired. The control is the same as the Parametric EQ included in Sigma Studio.
+After running the Automatic Speaker EQ algorithm, the Filters tab is
+automatically displayed. The Filters tab shows the results of the algorithm and
+allows the user to change the values of the filters as desired. The control is
+the same as the Parametric EQ included in Sigma Studio.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq6.png
    :alt: AutoEQ6.png
@@ -158,12 +166,15 @@ Controls
 Multiband Controls
 ~~~~~~~~~~~~~~~~~~
 
-The multiband versions of the Automatic Speaker EQ algorithm contain two extra tabs to aid in designing a crossover for the system.
+The multiband versions of the Automatic Speaker EQ algorithm contain two extra
+tabs to aid in designing a crossover for the system.
 
 Crossover Tab
 ~~~~~~~~~~~~~
 
-The crossover tab is the same as the crossover control included in Sigma Studio. The initial crossover points are set at the cutoff frequencies defined on the Target Tab. The user is then free to edit them as needed.
+The crossover tab is the same as the crossover control included in Sigma Studio.
+The initial crossover points are set at the cutoff frequencies defined on the
+Target Tab. The user is then free to edit them as needed.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq7.png
    :alt: AutoEQ7.png
@@ -183,7 +194,10 @@ Controls
 Crossover Tab Alignment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Because the Automatic Speaker EQ uses IIR filters, the phase of the signal is affected. This creates a need to align the crossover filters to prevent unwanted cancellation due to phase irregularities. The alignment tab will help fix any phase-related cancellation and allow the user to fine-tune the system.
+Because the Automatic Speaker EQ uses IIR filters, the phase of the signal is
+affected. This creates a need to align the crossover filters to prevent unwanted
+cancellation due to phase irregularities. The alignment tab will help fix any
+phase-related cancellation and allow the user to fine-tune the system.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq8.png
    :alt: AutoEQ8.png
@@ -201,7 +215,8 @@ Controls
 Filter Initialization/ Target From Filters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The dialogs for defining a target from filters and for initializing filters are the same.
+The dialogs for defining a target from filters and for initializing filters are
+the same.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq9.png
    :alt: AutoEQ9.png
@@ -215,13 +230,17 @@ The dialogs for defining a target from filters and for initializing filters are 
 
 .. important::
 
-   Some filters are fixed by default because they are special cases. Butterworth, Bessel, and Chebyshev filters are all special cases of high/low pass filters and cannot be modified by the algorithm. To have a high/low pass filter be optimized by the Automatic Speaker EQ, use the general high/low pass.
-
+   Some filters are fixed by default because they are special cases.
+   Butterworth, Bessel, and Chebyshev filters are all special cases of high/low
+   pass filters and cannot be modified by the algorithm. To have a high/low pass
+   filter be optimized by the Automatic Speaker EQ, use the general high/low
+   pass.
 
 Advanced Settings
 ~~~~~~~~~~~~~~~~~
 
-The advanced settings are located on the Design Settings tab. They are hidden by default, but pushing the “Show Advanced Settings” button will make them appear.
+The advanced settings are located on the Design Settings tab. They are hidden by
+default, but pushing the “Show Advanced Settings” button will make them appear.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq10.png
    :alt: AutoEQ10.png
@@ -249,6 +268,9 @@ The advanced settings are located on the Design Settings tab. They are hidden by
 Menu Bar
 ~~~~~~~~
 
-The menu on the Automatic Speaker EQ has some advanced functions associated with it. Under File, there are controls to load/save configurations. The Design menu has functions to import/export the target of the currently viewed tab, as well as to initiate the design process or reset the control.
+The menu on the Automatic Speaker EQ has some advanced functions associated with
+it. Under File, there are controls to load/save configurations. The Design menu
+has functions to import/export the target of the currently viewed tab, as well
+as to initiate the design process or reset the control.
 
 .. |AutoEQ1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/autoeq1.png

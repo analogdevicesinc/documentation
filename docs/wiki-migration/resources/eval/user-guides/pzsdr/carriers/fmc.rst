@@ -56,7 +56,6 @@ ADRV1CRR-FMC Rev. C
    -  `Letter of Volatility <https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/letter_of_volatility_adrv1-fmc.pdf>`_
    
 
-
 Trips and Tricks
 ----------------
 
@@ -65,7 +64,7 @@ External AD9361 reference clock via J1
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/pzsdr_ext_clk.png
    :align: center
-   :width: 800px
+   :width: 800
 
 An external Reference Clock can be supplied via J1. In order the switch the source the :git-linux:`arch/arm/boot/dts/zynq-adrv9361-z7035.dtsi` device tree needs to be modified.
 

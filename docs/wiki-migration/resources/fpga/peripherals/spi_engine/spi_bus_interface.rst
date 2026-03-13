@@ -5,7 +5,6 @@ SPI Bus Interface
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/spi_engine/spi-bus-interface.html\
 
-
 The SPI bus interface carries logical low-level SPI bus signals.
 
 Files
@@ -42,7 +41,10 @@ IO configuration
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/spi_bus.png
    :align: right
 
-The SPI bus interface only carries a logical representation of the low-level SPI bus signals. The top-level module in the FPGA design project is responsible for translating the signal to physical SPI bus signals by instantiating and connecting it to appropriate IO primitives.
+The SPI bus interface only carries a logical representation of the low-level SPI
+bus signals. The top-level module in the FPGA design project is responsible for
+translating the signal to physical SPI bus signals by instantiating and
+connecting it to appropriate IO primitives.
 
 The ``sclk`` and ``cs`` signals can typically be directly connected to a output buffer. ``sdi`` should be connected to a mux, that depending on the setting of the ``three_wire`` signal connects to a input buffer connected to the ``miso`` signal or to a input buffer connected to the ``mosi`` signal. The ``sdo`` signal should be connected to a output tri-state buffer with the ``sdo_t`` signal controlling the tri-state setting.
 
@@ -51,7 +53,9 @@ In some configurations three-wire support may not be required and ``sdi`` can di
 Example Verilog IO configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following example Verilog code shows the most generic IO configuration, which represents the diagram above. Depending on system requirements some simplification might be possible.
+The following example Verilog code shows the most generic IO configuration,
+which represents the diagram above. Depending on system requirements some
+simplification might be possible.
 
 Signals with **phy** prefix are assumed to be connected to the physical input/output pins and signals with the **spi** prefix are assumed to be connected SPI-Engine bus interface.
 

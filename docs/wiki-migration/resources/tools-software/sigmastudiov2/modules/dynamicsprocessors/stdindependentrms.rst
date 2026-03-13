@@ -8,12 +8,16 @@ Standard Independent RMS
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/standardidprmsgraph.png
    :alt: standardidprmsgraph.png
-   :width: 650px
+   :width: 650
 
 Description
 -----------
 
-The Standard Independent RMS Compressor is a stereo compressor that allows direct control over threshold and ratio. In the pop-up GUI, graphical controls are given for threshold, ratio, and time constants. Also there are visual indicators showing input, output, and compression levels. The detection signal used for this RMS compressor is based on the sum of Left and Right channels.
+The Standard Independent RMS Compressor is a stereo compressor that allows
+direct control over threshold and ratio. In the pop-up GUI, graphical controls
+are given for threshold, ratio, and time constants. Also there are visual
+indicators showing input, output, and compression levels. The detection signal
+used for this RMS compressor is based on the sum of Left and Right channels.
 
 Targets Supported
 -----------------

@@ -9,12 +9,16 @@ Pulse Generator
 Description
 -----------
 
-The Pulse Generator block generates pulse at different frequencies with a configurable duty cycle.
+The Pulse Generator block generates pulse at different frequencies with a
+configurable duty cycle.
 
 Usage
 -----
 
-This block has checkbox to enabled or disabled the algorithm. Check the box to enable this algorithm. It has the text fields for frequency and duty cycle to generate the pulse at different frequencies with different "ON" and "OFF" time of the pulse.It has the radio button to round the coefficients.
+This block has checkbox to enabled or disabled the algorithm. Check the box to
+enable this algorithm. It has the text fields for frequency and duty cycle to
+generate the pulse at different frequencies with different "ON" and "OFF" time
+of the pulse.It has the radio button to round the coefficients.
 
 Targets Supported
 -----------------
@@ -38,8 +42,6 @@ Name    Type    Description
 ======= ======= ================
 Output0 Control Output channel 0
 ======= ======= ================
-
-
 
 | ===== Configurable Parameters =====
 

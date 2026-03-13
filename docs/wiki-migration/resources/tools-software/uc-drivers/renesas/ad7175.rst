@@ -19,7 +19,12 @@ The :adi:`AD7175-2` is a low noise, fast settling, multiplexed, 2/4 channel(full
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7175_sdz.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -31,9 +36,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD7175 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD7175 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD7175 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD7175 driver:
 
@@ -47,7 +56,6 @@ There are three functions which are called by the AD7175 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of AD7175 driver:
 
@@ -76,7 +84,8 @@ Downloads
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD7175 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD7175
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -92,7 +101,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD7175-2SDZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+An EVAL-AD7175-2SDZ board has to be interfaced with the Renesas Demonstration
+Kit (RDK) for RL78G13:
 
 ::
 
@@ -108,7 +118,8 @@ An EVAL-AD7175-2SDZ board has to be interfaced with the Renesas Demonstration Ki
 Reference Project Overview
 --------------------------
 
-The reference project reads data from the AD7175 part and displays it on the LCD.
+The reference project reads data from the AD7175 part and displays it on the
+LCD.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7175_rl78g13_screen.jpg
    :align: center
@@ -116,17 +127,13 @@ The reference project reads data from the AD7175 part and displays it on the LCD
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

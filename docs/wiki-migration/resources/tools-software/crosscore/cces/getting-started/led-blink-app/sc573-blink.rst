@@ -1,22 +1,37 @@
 ADSP-SC573 LED Blink Example Application
 ========================================
 
-To help get started using CCES, here are steps to create an example application to blink an LED on the ADSP-SC573 EZ-Kit. This step-by-step example assumes you are familiar with the C/C++ programming language and how to access CCES Online Help for information on the APIs.
+To help get started using CCES, here are steps to create an example application
+to blink an LED on the ADSP-SC573 EZ-Kit. This step-by-step example assumes you
+are familiar with the C/C++ programming language and how to access CCES Online
+Help for information on the APIs.
 
 To begin, follow the instructions in the :doc:`Creating Projects in CCES </wiki-migration/resources/tools-software/crosscore/cces/getting-started/create>` section of this guide to create the CCES_Example project for your ADSP-SC573 board. A project will appear for each core of the board, called **CCES_Example_Core0**, **CCES_Example_Core1**, and **CCES_Example_Core2**.
 
-Open the CCES_Example_Core0.c, CCES_Example_Core1.c, and CCES_Example_Core2.c files located in the src folder of each project (Figure 1). These are the main C files that we will be writing the example application in.
+Open the CCES_Example_Core0.c, CCES_Example_Core1.c, and CCES_Example_Core2.c
+files located in the src folder of each project (Figure 1). These are the main C
+files that we will be writing the example application in.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/led-blink-app/open_example_code.png
-   :width: 400px
+   :width: 400
 
 *Figure 1. Open Example Code*
 
-The template code generated at project start-up by CCES includes auto-generated .c and .h files that take the project name. In the CCES_Example_Core0.c file, there is a skeletal main() function containing only three function calls. The adi_initComponents() function is used to initialize drivers and services that were included using the system configuration utility. This is a necessary function in main(), and all of your code that belongs in the main() function should come after this call. Without this function call, the designated add-ins will not operate. The adi_core_enable function tells the other processor cores to begin executing their code. The C files for the other cores contain only a call to adi_initComponents().
+The template code generated at project start-up by CCES includes auto-generated
+.c and .h files that take the project name. In the CCES_Example_Core0.c file,
+there is a skeletal main() function containing only three function calls. The
+adi_initComponents() function is used to initialize drivers and services that
+were included using the system configuration utility. This is a necessary
+function in main(), and all of your code that belongs in the main() function
+should come after this call. Without this function call, the designated add-ins
+will not operate. The adi_core_enable function tells the other processor cores
+to begin executing their code. The C files for the other cores contain only a
+call to adi_initComponents().
 
 The CCES system services include a GPIO service, which is used in this example application. This service can be used to set direction, as well as read, set, toggle, and clear pins. There are also polling and interrupt methods available through the GPIO service. The GPIO Service Help information is located in Online Help under **CrossCore Embedded Studio 2.x.x → System Run-Time Documentation → System Services and Device Drivers → ADSP-SC57x (Cortex-A Core) API Reference → Modules → GPIO Service** and **CrossCore Embedded Studio 2.x.x → System Run-Time Documentation → System Services and Device Drivers → ADSP-SC57x (SHARC+ Core) API Reference → Modules → GPIO Service**.
 
-Provided here is the code example for a multi-core LED blink application on the ADSP-SC573 EZ-Kit:
+Provided here is the code example for a multi-core LED blink application on the
+ADSP-SC573 EZ-Kit:
 
 CCES_Example_Core0.c
 --------------------
@@ -147,19 +162,28 @@ CCES_Example_Core2.c
 
 *Figure 2. LED Blink Application for the ADSP-SC573 EZ-Kit*
 
-The first step in writing this LED Blink example is to include the header for the GPIO service in each source file:
+The first step in writing this LED Blink example is to include the header for
+the GPIO service in each source file:
 
 #include <services/gpio/adi_gpio.h>
 
-Each of the system services contains header files located in the \\services sub-directory in your CCES installation. We then need to declare a variable for the return values from the system service and device driver APIs:
+Each of the system services contains header files located in the \\services
+sub-directory in your CCES installation. We then need to declare a variable for
+the return values from the system service and device driver APIs:
 
 ADI_GPIO_RESULT result;
 
-Next, we set the direction of the I/O pins connected to the LEDs to be outputs via the adi_gpio_SetDirection() function. The APIs have return values that indicate success or failure and can provide valuable debugging information, and this example uses result for each of the API calls to the GPIO service.
+Next, we set the direction of the I/O pins connected to the LEDs to be outputs
+via the adi_gpio_SetDirection() function. The APIs have return values that
+indicate success or failure and can provide valuable debugging information, and
+this example uses result for each of the API calls to the GPIO service.
 
-Finally, to actually blink the LED, the adi_gpio_Toggle() GPIO toggle API is called from within an infinite loop, buffered on each iteration by a delay loop to space out toggling of the GPIO state.
+Finally, to actually blink the LED, the adi_gpio_Toggle() GPIO toggle API is
+called from within an infinite loop, buffered on each iteration by a delay loop
+to space out toggling of the GPIO state.
 
-Note that, if we were registering GPIO callbacks, we would need to allocate memory to hold callback information and then initialize the GPIO service by calling adi_gpio_Init().
+Note that, if we were registering GPIO callbacks, we would need to allocate
+memory to hold callback information and then initialize the GPIO service by
+calling adi_gpio_Init().
 
 Now you are ready to :doc:`Debug </wiki-migration/resources/tools-software/crosscore/cces/getting-started/debug>` your application.
-

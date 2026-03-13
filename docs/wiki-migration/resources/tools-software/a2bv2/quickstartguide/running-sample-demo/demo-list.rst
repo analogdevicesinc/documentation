@@ -3,12 +3,14 @@
 Running Sample demo
 ===================
 
-Using SigmaStudio+ the A2B system can be directly controlled from a connected computer without involving a microcontroller or a DSP. This mode is helpful for quick testing of the capabilities of AD24xx without the need for a microcontroller in the system.
+Using SigmaStudio+ the A2B system can be directly controlled from a connected
+computer without involving a microcontroller or a DSP. This mode is helpful for
+quick testing of the capabilities of AD24xx without the need for a
+microcontroller in the system.
 
 .. note::
 
    Please refer Appendices :doc:`Navigating A2B schematic </wiki-migration/resources/tools-software/a2bv2/quickstartguide/appendix-a>` for information about navigating in SigmaStudio+ for A2B use-case.
-
 
 Software Setup
 --------------

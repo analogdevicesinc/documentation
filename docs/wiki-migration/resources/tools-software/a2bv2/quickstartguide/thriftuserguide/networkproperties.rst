@@ -13,7 +13,8 @@ List of API in Network Properties
 Get Network Policy
 ------------------
 
-This API used for Getting A2B network policy for the specified A2B channel. It takes elementUid as argument and returns A2B Network policy information.
+This API used for Getting A2B network policy for the specified A2B channel. It
+takes elementUid as argument and returns A2B Network policy information.
 
 **API:** AnalogDevices.SigmaStudio.Scripting.A2bNwPolicy GetNwPolicy(string elementUid);
 
@@ -21,7 +22,9 @@ This API used for Getting A2B network policy for the specified A2B channel. It t
 
 -  “elementUid” = UID of the A2B Channel
 
-A2B Network policy contains below parameters for users to update Network policy from thrift. Rest of the parameters are read only parameters and not to be changed.
+A2B Network policy contains below parameters for users to update Network policy
+from thrift. Rest of the parameters are read only parameters and not to be
+changed.
 
 -  DsvryMode
 -  NDiscoveryStartDelay
@@ -33,7 +36,8 @@ A2B Network policy contains below parameters for users to update Network policy 
 -  OLineFaultDbSettings.nNumAttemptsCritical
 -  OLineFaultDbSettings.RediscoveryInterval
 
-This API returns List of all Network property details for the selected A2B Channel.
+This API returns List of all Network property details for the selected A2B
+Channel.
 
 **Result:** This API returns List of Network properties details for the selected A2B Channel.
 
@@ -54,7 +58,10 @@ This API returns List of all Network property details for the selected A2B Chann
 Update Network Policy
 ---------------------
 
-This API used for Updating A2B network policy for the specified A2B channel. It takes elementUid and NwPolicy as argument and returns SSPResult. It is recommended to read the network policy using GetNwPolicy before updating the policy.
+This API used for Updating A2B network policy for the specified A2B channel. It
+takes elementUid and NwPolicy as argument and returns SSPResult. It is
+recommended to read the network policy using GetNwPolicy before updating the
+policy.
 
 **API:** AnalogDevices.SigmaStudio.Scripting.A2bNwPolicy UpdateNetworkPolicy (string elementUid, list NwPolicy);
 
@@ -77,7 +84,8 @@ This API used for Updating A2B network policy for the specified A2B channel. It 
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateNetworkPolicy action.
 
 -  IsSuccess is set to 'True' if the UpdateNetworkPolicy was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -126,7 +134,8 @@ This API used for Updating A2B network policy for the specified A2B channel. It 
 Get Level Stack Debug Info
 --------------------------
 
-This API used for getting information of Stack Level Debug information for the specified A2B channel. It takes elementUid as argument and returns SSPResult.
+This API used for getting information of Stack Level Debug information for the
+specified A2B channel. It takes elementUid as argument and returns SSPResult.
 
 **API:** AnalogDevices.SigmaStudio.Scripting.LevelListSent GetLevelStackDbgSettings (string elementUid)
 
@@ -153,7 +162,8 @@ This API used for getting information of Stack Level Debug information for the s
 Get Domain Stack Debug Info
 ---------------------------
 
-This API used for getting information of Stack Domain Debug information for the specified A2B channel. It takes elementUid as argument and returns SSPResult.
+This API used for getting information of Stack Domain Debug information for the
+specified A2B channel. It takes elementUid as argument and returns SSPResult.
 
 **API:** AnalogDevices.SigmaStudio.Scripting.DomainListSent GetDomainStackDbgSettings (string elementUid)
 
@@ -180,7 +190,9 @@ This API used for getting information of Stack Domain Debug information for the 
 Update Stack Level Debug Settings
 ---------------------------------
 
-This API used for updating the Trace level Debug settings for the specified A2B channel. It takes elementUid and LevelListSent as argument and returns SSPResult.
+This API used for updating the Trace level Debug settings for the specified A2B
+channel. It takes elementUid and LevelListSent as argument and returns
+SSPResult.
 
 **API:** SSPResult UpdateLevelStackDbgSettings (string elementUid, List LevelListSent);
 
@@ -196,7 +208,8 @@ This API used for updating the Trace level Debug settings for the specified A2B 
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateLevelStackDbgSettings action.
 
 -  IsSuccess is set to 'True' if the UpdateLevelStackDbgSettings was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -219,7 +232,9 @@ This API used for updating the Trace level Debug settings for the specified A2B 
 Update Stack Domain Debug Settings
 ----------------------------------
 
-This API used for updating the Trace Domain Debug settings for the specified A2B channel. It takes elementUid and DomainListSent as argument and returns SSPResult.
+This API used for updating the Trace Domain Debug settings for the specified A2B
+channel. It takes elementUid and DomainListSent as argument and returns
+SSPResult.
 
 **API:** SSPResult UpdateDomainStackDbgSettings (string elementUid, List DomainListSent);
 
@@ -235,7 +250,8 @@ This API used for updating the Trace Domain Debug settings for the specified A2B
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateDomainStackDbgSettings action.
 
 -  IsSuccess is set to 'True' if the UpdateDomainStackDbgSettings was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -257,10 +273,9 @@ This API used for updating the Trace Domain Debug settings for the specified A2B
 
 .. note::
 
-   After executing the necessary APIs, proceed with the Link Operation to view the settings in the graphical user interface (GUI).
-
+   After executing the necessary APIs, proceed with the Link Operation to view
+   the settings in the graphical user interface (GUI).
 
 .. tip::
 
    For additional details on Network properties, you may refer the :doc:`A2B Plugin for SigmaStudio+ Quick start Guide </wiki-migration/resources/tools-software/a2bv2/quickstartguide/appendix-a>`.
-

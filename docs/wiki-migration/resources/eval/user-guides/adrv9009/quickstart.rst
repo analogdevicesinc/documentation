@@ -55,7 +55,7 @@ ZCU102 + ADRV9009/PCBZ
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009/adrv9009_zcu102_quickstart.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Unboxing guide
 ~~~~~~~~~~~~~~

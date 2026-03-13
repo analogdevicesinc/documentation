@@ -140,7 +140,6 @@ Driver testing
       -rw-r--r--  1 root root 4096 Nov 11 15:44 uevent
    
 
-
 Show device name
 ----------------
 
@@ -154,7 +153,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:device0> cat name
       adxl355
    
-
 
 Show scale
 ----------
@@ -172,7 +170,6 @@ Show scale
       0.000038245
    
 
-
 Show axis x measurement
 -----------------------
 
@@ -188,7 +185,6 @@ Show axis x measurement
       root:/sys/bus/iio/devices/iio:device0> cat in_accel_x_raw
       -33631
    
-
 
 Set sampling frequency
 ----------------------
@@ -210,7 +206,6 @@ Set sampling frequency
       4000.000000
    
 
-
 Show available bandwidths for the current set frequency
 -------------------------------------------------------
 
@@ -225,7 +220,6 @@ Show available bandwidths for the current set frequency
       0.000000 9.880000 2.483360 0.621800 0.154480 0.038160 0.009520
       root:/sys/bus/iio/devices/iio:device0>
    
-
 
 Change the bandwidth
 --------------------
@@ -246,7 +240,6 @@ Change the bandwidth
       0.621800
    
 
-
 Trigger management
 ~~~~~~~~~~~~~~~~~~
 
@@ -260,7 +253,6 @@ Trigger management
       root:/sys/bus/iio/devices/iio:device0> cat trigger/current_trigger
       adxl355-dev-*
    
-
 
 Buffer management
 ~~~~~~~~~~~~~~~~~
@@ -293,7 +285,6 @@ Buffer management
       root:/sys/bus/iio/devices/iio:device0/scan_elements>
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -305,7 +296,6 @@ Buffer management
       data_available  enable  length  watermark
       root:/sys/bus/iio/devices/iio:device0/buffer>
    
-
 
 -  Set the buffer length:
 
@@ -319,7 +309,6 @@ Buffer management
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 1024 > length
    
 
-
 -  Enable the buffer:
 
 .. container:: box bggreen
@@ -332,7 +321,6 @@ Buffer management
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 1 > enable
    
 
-
 To read samples:
 
 .. container:: box bggreen
@@ -344,7 +332,6 @@ To read samples:
    
       root:/sys/bus/iio/devices/iio:device0/buffer> cat /dev/iio:device0
    
-
 
 More Information
 ================
@@ -367,6 +354,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-accelerometer/youtube>p_vntewue24
-

@@ -27,7 +27,11 @@ Screw terminals P1, P5 and P9 are connectors for the anode and cathode for each 
 3 Pin Headers
 ~~~~~~~~~~~~~
 
-The 3 pin header is used to add LED's to series string of each channel. Placing a shunt on +XLEDN, where X is for the channel to be controlled and N refers to the LED number, adds the next LED on the string and placing the shunt on GND position terminates the string, connecting the last LED to the negative terminal.
+The 3 pin header is used to add LED's to series string of each channel. Placing
+a shunt on +XLEDN, where X is for the channel to be controlled and N refers to
+the LED number, adds the next LED on the string and placing the shunt on GND
+position terminates the string, connecting the last LED to the negative
+terminal.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cftl-led-bar/cftl-led-bar_silkscreen.jpg
    :align: center
@@ -38,7 +42,9 @@ LED Ratings
 Red Channel
 ~~~~~~~~~~~
 
-Each LED on this string has a typical forward voltage of 2.9V and tested with 500mA of current. Adding LED's to the string of LED's in series will result in a higher forward voltage. Please see below table for reference:
+Each LED on this string has a typical forward voltage of 2.9V and tested with
+500mA of current. Adding LED's to the string of LED's in series will result in a
+higher forward voltage. Please see below table for reference:
 
 ============ ================================
 No. of LED's Minimum Forward Voltage Required
@@ -51,7 +57,9 @@ No. of LED's Minimum Forward Voltage Required
 Green Channel
 ~~~~~~~~~~~~~
 
-Each LED on this string has a typical forward voltage of 3.21V and tested with 500mA of current. Adding LED's to the string of LED's in series will result in a higher forward voltage. Please see below table for reference:
+Each LED on this string has a typical forward voltage of 3.21V and tested with
+500mA of current. Adding LED's to the string of LED's in series will result in a
+higher forward voltage. Please see below table for reference:
 
 ============ ================================
 No. of LED's Minimum Forward Voltage Required
@@ -64,7 +72,9 @@ No. of LED's Minimum Forward Voltage Required
 Blue Channel
 ~~~~~~~~~~~~
 
-Each LED on this string has a typical forward voltage of 2.95V and tested with 500mA of current. Adding LED's to the string of LED's in series will result in a higher forward voltage. Please see below table for reference:
+Each LED on this string has a typical forward voltage of 2.95V and tested with
+500mA of current. Adding LED's to the string of LED's in series will result in a
+higher forward voltage. Please see below table for reference:
 
 ============ ================================
 No. of LED's Minimum Forward Voltage Required
@@ -89,7 +99,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Related Hardware
 ----------------
 
@@ -101,6 +110,5 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/CFTL-LED-BAR?&v=Rev A>`_ to receive all these great benefits and more!
-
 
 *End of Document*

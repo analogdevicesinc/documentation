@@ -7,7 +7,8 @@ RMS (Display)
 
 |rmsdisplaypic1.png| This block functions exactly like :doc:`RMS (gain) </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsgain>` with the Stereo 1 RMS algorithm, except that it comes with a signal level display.
 
-The left bar shows the input level and the right bar the compression ratio. The On button toggles the level display on and off.
+The left bar shows the input level and the right bar the compression ratio. The
+On button toggles the level display on and off.
 
 For a sample design using this block, see the :doc:`Dynamics Processor Example </wiki-migration/resources/tools-software/sigmastudio/tutorials/dynamicsprocessorexamples>`.
 

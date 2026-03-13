@@ -8,7 +8,8 @@ General Description/Overview
 
 The **ADuCM_demo_cn0414** project uses **EVAL-CN0414-ARDZ** to provide a complete, fully isolated and highly flexible, four channel analog input system. The **EVAL-CN0414-ARDZ** is suitable for programmable logic controllers (**PLC**) and distributed control system (**DCS**) applications that require multiple voltage inputs. It boasts **open wire detection** and has **HART**-compatible, 4 mA to 20 mA current inputs, all protected from transient overvoltage or overcurrent events, suitable for the most harsh industrial environments.
 
-The circuit can be divided into the following parts: the ADC, the input channels, the HART modem and the memory.
+The circuit can be divided into the following parts: the ADC, the input
+channels, the HART modem and the memory.
 
 The **ADC** is the core of the **EVAL-CN0414-ARDZ** shield. It is an :adi:`AD4111` with 8 single or 4 differential voltage channels and 4 current channels. The input channels in this application are configured as 4 differential voltage channels and the current channels. The application maintains 8 internal registers, one for each channel, that are updated periodically, on a timer interrupt, with the latest conversion results. This way, on a single read, the user can have the data on a channel without waiting for a conversion. |Timer diagram| Alternatively the user can request a burst read of up to 2000 samples returned at the ADC output data rate. The application uses the **ADCs Open-Wire Detection** capabilities for the voltage channels. When activated this option also tracks the state of the channel connection on every read and gives a warning when a channel is disconnected.
 
@@ -43,13 +44,15 @@ Setting up the Hardware
 -----------------------
 
 -  Connect **EVAL-CN0414-ARDZ** board to the **EVAL-ADICUP3029**.
--  Set the jumpers into the position shown below. This is the standard position and only works for one board systems.
+-  Set the jumpers into the position shown below. This is the standard position
+   and only works for one board systems.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0414_jumper_pos2.jpg
    :alt: Standard jumper position
    :align: center
 
--  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
+-  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect
+   it to a computer. The final setup should look similar to the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/eval_cn0414_ardz_hard_setup3.jpg
    :alt: Hardware setup example
@@ -76,8 +79,6 @@ external Actual reference voltage
 
 Outputting Data
 ---------------
-
-
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
@@ -153,8 +154,6 @@ preferences.
 
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
-
-
 
 Available commands
 ~~~~~~~~~~~~~~~~~~
@@ -242,14 +241,19 @@ Typing **help** or **h** after initial calibration sequence will display the lis
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0414.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0414.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cn0414** can be found here:
 
@@ -265,7 +269,6 @@ The software for the **ADuCM3029_demo_cn0414** can be found here:
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0414 Source Code <projects/ADuCM3029_demo_cn0414>`
    
-
 
 How to use the Tools
 --------------------
@@ -306,7 +309,8 @@ The main process routine implements the **CLI** and calls the commands input by 
    :alt: Process flow chart
    :align: center
 
-The flow chart below represents the way the channel registers are updated. Only one channel is active at any one time (the channel that must be read).
+The flow chart below represents the way the channel registers are updated. Only
+one channel is active at any one time (the channel that must be read).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0414_update_channel_flow.png
    :alt: Update channel flow chart

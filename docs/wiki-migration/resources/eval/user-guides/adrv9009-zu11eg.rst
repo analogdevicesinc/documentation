@@ -35,7 +35,7 @@ ADRV9009-ZU11EG Highlevel specification
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg.png
    :align: right
-   :width: 200px
+   :width: 200
 
 -  Zynq UltraScale+ ZU11EG
 
@@ -71,7 +71,9 @@ ADRV9009-ZU11EG Highlevel specification
 -  Storage and operating temperature
 
    -  Storage temperature range supported is -40⁰C to +65⁰C
-   -  Operating temperature for prototyping with the heatsink supplied is +25C. For specific use cases thermal analysis is required to cover varying environmental conditions and required performance levels.
+   -  Operating temperature for prototyping with the heatsink supplied is +25C.
+      For specific use cases thermal analysis is required to cover varying
+      environmental conditions and required performance levels.
 
 --------------
 
@@ -95,15 +97,16 @@ Hardware Design Details
    -  Unload 0 Ohm resistors from location R77, R112 and insert to R110, R111
    
 
-
 -  :doc:`ADRV9009-ZU11EG </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/hardware>`
--  Included are further details on the RF-SOM schematics, BOM, system clocking tree, mechanical specs, power tree, electrical interface.
+-  Included are further details on the RF-SOM schematics, BOM, system clocking
+   tree, mechanical specs, power tree, electrical interface.
 
 -  :doc:`ADRV2CRR-FMC </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/adrv2crr-fmc_carrier_board>`
 -  Included are schematics, BOM, mechanical specs, high level system view.
 
 -  :doc:`AD-FMCOMMS8-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcomms8-ebz>`
--  Included are schematics, BOM, mechanical specs, high level system view, Start Guide with link the the required software to get up and running.
+-  Included are schematics, BOM, mechanical specs, high level system view, Start
+   Guide with link the the required software to get up and running.
 
 --------------
 
@@ -114,18 +117,32 @@ Multiple ADRV9009-ZU11EG’s can be synchronized together enabling a complete so
 
 The ADRV9009-ZU11EG has extensive I/O capability. Combined with the ADRV2CRR-FMC evaluation carrier board a variety of high speed I/O can be evaluated, including USB3, USB2, PCIe 3.0 x8, QSFP+, SFP+, 1Gb Ethernet x2, and CPRI capability. Please review the I/O functionality reference table provided in the :doc:`ADRV2CRR-FMC </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/adrv2crr-fmc_carrier_board>` homepage for more details on the functionality provided.
 
-An additional High Pin Count FMC Daughter Board (AD-FMCOMMS8-EBZ) can be plugged into the carrier board with a further two ADRV9009 Transceivers increasing to a total of Eight Tx and Rx channels. A design can easily be evaluated and then integrated seamlessly into a custom carrier for further prototyping, or a final product greatly accelerating time to market.
+An additional High Pin Count FMC Daughter Board (AD-FMCOMMS8-EBZ) can be plugged
+into the carrier board with a further two ADRV9009 Transceivers increasing to a
+total of Eight Tx and Rx channels. A design can easily be evaluated and then
+integrated seamlessly into a custom carrier for further prototyping, or a final
+product greatly accelerating time to market.
 
-Platform development support includes examples of Linux Industrial I/O (IIO) Applications, MATLAB®, Simulink®, GNU Radio, and streaming interfaces for custom C, C++, python, and C# applications. HDL reference designs and drivers will be provided to help users get up and running faster. Due to varying implementation options for the various I/O interfaces different levels of functionality will be provided for each one, further details will be available in the applications section.
+Platform development support includes examples of Linux Industrial I/O (IIO)
+Applications, MATLAB®, Simulink®, GNU Radio, and streaming interfaces for custom
+C, C++, python, and C# applications. HDL reference designs and drivers will be
+provided to help users get up and running faster. Due to varying implementation
+options for the various I/O interfaces different levels of functionality will be
+provided for each one, further details will be available in the applications
+section.
 
 --------------
 
 System setup & evaluation
 -------------------------
 
-The ADRV9009-ZU11EG can be booted from the onboard SD card slot or the SD card slot on the ADRV2CRR-FMC carrier board. An SD card containing a bootable image ships in the ADRV2CRR-FMC carrier kit.
+The ADRV9009-ZU11EG can be booted from the onboard SD card slot or the SD card
+slot on the ADRV2CRR-FMC carrier board. An SD card containing a bootable image
+ships in the ADRV2CRR-FMC carrier kit.
 
-Users should check that they have the appropriate Vivado license in place to be able to use and build the reference HDL code provided for the Ultrascale+ MPSOC in the system.
+Users should check that they have the appropriate Vivado license in place to be
+able to use and build the reference HDL code provided for the Ultrascale+ MPSOC
+in the system.
 
 People who follow the flow that is outlined, have a much better experience with things. However, like many things, documentation is never as complete as it should be. If you have any questions, feel free to :ez:`ask <fpga>`.
 
@@ -220,12 +237,12 @@ Details on how the ADRV9009-ZU11EG is functionally tested can be found here.
 Help and Support
 ----------------
 
-For questions and more information please contact us on the Analog Devices Engineer Zone.
+For questions and more information please contact us on the Analog Devices
+Engineer Zone.
 
 .. hint::
 
    :ez:`fpga`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009_zu11eg/sdr_book.png
-   :width: 200px
+   :width: 200

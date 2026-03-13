@@ -12,15 +12,30 @@ Supported Boards
 Description
 -----------
 
-The ADIN1100 is a low power single port 10BASE-T1L transceiver designed for industrial Ethernet applications and is compliant with the IEEE 802.3cg Ethernet standard for long reach 10 Mb/s Single Pair Ethernet. It integrates an Ethernet PHY core with all the associated analog circuitry, input and output clock buffering, the management interface control register and subsystem registers, as well as the MAC interface and control logic to manage the reset and clock control and pin configuration.
+The ADIN1100 is a low power single port 10BASE-T1L transceiver designed for
+industrial Ethernet applications and is compliant with the IEEE 802.3cg Ethernet
+standard for long reach 10 Mb/s Single Pair Ethernet. It integrates an Ethernet
+PHY core with all the associated analog circuitry, input and output clock
+buffering, the management interface control register and subsystem registers, as
+well as the MAC interface and control logic to manage the reset and clock
+control and pin configuration.
 
-The PHY core supports the 1.0 V pk-pk operating mode and the 2.4 V pk-pk operating mode defined in the standard and can operate from a single power supply rail of 1.8V or 3.3V, with the lower voltage option supporting the 1.0 V pk-pk transmit voltage level.
+The PHY core supports the 1.0 V pk-pk operating mode and the 2.4 V pk-pk
+operating mode defined in the standard and can operate from a single power
+supply rail of 1.8V or 3.3V, with the lower voltage option supporting the 1.0 V
+pk-pk transmit voltage level.
 
-The 1.0 V pk-pk operating mode, external termination resistors and independent Rx/Tx pins make the ADIN1100 suited to intrinsic safety applications.
+The 1.0 V pk-pk operating mode, external termination resistors and independent
+Rx/Tx pins make the ADIN1100 suited to intrinsic safety applications.
 
-The ADIN1100 has an integrated voltage supply monitoring circuit and power on reset circuitry to improve system level robustness.
+The ADIN1100 has an integrated voltage supply monitoring circuit and power on
+reset circuitry to improve system level robustness.
 
-The MDIO interface is a two-wire serial interface for communication between a host processor or MAC and the ADIN1100, thereby allowing access to control and status information in the PHY core management registers. This interface is compatible with both the IEEE 802.3 Standard Clause 22 and Clause 45 management frame structures.
+The MDIO interface is a two-wire serial interface for communication between a
+host processor or MAC and the ADIN1100, thereby allowing access to control and
+status information in the PHY core management registers. This interface is
+compatible with both the IEEE 802.3 Standard Clause 22 and Clause 45 management
+frame structures.
 
 The ADIN1100 is available in a 6 mm × 6 mm 40-ld package.
 
@@ -48,7 +63,8 @@ Files
 Example platform device initialization
 ======================================
 
-The ADIN 10BASE-T1L PHY driver instantiates via Linux's phylib framework, which is typically enabled on most systems.
+The ADIN 10BASE-T1L PHY driver instantiates via Linux's phylib framework, which
+is typically enabled on most systems.
 
 Depending on the MAC driver that is used and the operating mode (MII, RMII), a device-tree entry for the PHY may or may-not be needed. The PHY can be configured via HW pins (:adi:`see datasheet <media/en/technical-documentation/data-sheets/ADIN1100.pdf>`).
 
@@ -59,7 +75,6 @@ Depending on the MAC driver that is used and the operating mode (MII, RMII), a d
 ::
 
    Example:
-
 
        ethernet-mac0 {
            #address-cells = <1>;
@@ -86,7 +101,8 @@ Depending on the MAC driver that is used and the operating mode (MII, RMII), a d
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 -  Hit the search button (typically the slash "/" key)
 -  Type ADIN1100, then hit Enter; if nothing shows up, the driver is not available in your kernel tree, please use `the ADI linux tree <https://github.com/analogdevicesinc/linux/>`_
@@ -109,23 +125,34 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-This requires that another 10BASE-T1L PHY be connected to the other end of the network cable, or that a media converter be used to convert to normal twisted-pair ethernet that standard ethernet cables use.
+This requires that another 10BASE-T1L PHY be connected to the other end of the
+network cable, or that a media converter be used to convert to normal
+twisted-pair ethernet that standard ethernet cables use.
 
 .. important::
 
-   Depending on the userspace image that is being used, the network cards may [or may not get a DHCP address]. This is because there is a NetworkManager instance that handles this automatically.
+   Depending on the userspace image that is being used, the network cards may
+   [or may not get a DHCP address]. This is because there is a NetworkManager
+   instance that handles this automatically.
 
    
-   If NetworkManager isn't running, it sometimes works to obtain a DHCP lease via dhclient eth0 [or eth1 or eth2, depending which MAC is attached to the ADIN 10BASE-T1L PHY].
+   If NetworkManager isn't running, it sometimes works to obtain a DHCP lease
+   via dhclient eth0 [or eth1 or eth2, depending which MAC is attached to the
+   ADIN 10BASE-T1L PHY].
    
-
 
 ifconfig
 --------
 
-This tool will display the general status of the available network interfaces. If they’ve obtained an IP address, RX packets/errors/dropped/etc, TX packets/errors/dropped/etc, MAC address, etc.
+This tool will display the general status of the available network interfaces.
+If they’ve obtained an IP address, RX packets/errors/dropped/etc, TX
+packets/errors/dropped/etc, MAC address, etc.
 
-Typically, if both TX & RX values are incremented, it means that it is working. Also note that there are error counters; if only the TX/RX counters increment, something may be wrong in the configuration between MAC & PHY, or sometimes at the physical configuration (i.e. clocks not working, pins not connected properly, etc).
+Typically, if both TX & RX values are incremented, it means that it is working.
+Also note that there are error counters; if only the TX/RX counters increment,
+something may be wrong in the configuration between MAC & PHY, or sometimes at
+the physical configuration (i.e. clocks not working, pins not connected
+properly, etc).
 
 ::
 
@@ -158,14 +185,17 @@ Typically, if both TX & RX values are incremented, it means that it is working. 
 ethtool
 -------
 
-This tool queries the MAC & PHY via the MAC driver. The MAC driver should also allows access to the PHY registers.
+This tool queries the MAC & PHY via the MAC driver. The MAC driver should also
+allows access to the PHY registers.
 
 .. important::
 
-   If ethtool does not work, it should be resolved in the MAC driver. The MAC driver is not in the direct scope of Analog Devices support, since MACs are typically manufactured & supported by other companies
+   If ethtool does not work, it should be resolved in the MAC driver. The MAC
+   driver is not in the direct scope of Analog Devices support, since MACs are
+   typically manufactured & supported by other companies
 
-
-ethtool can be used to show & override link settings and other parameters for the MAC & PHY.
+ethtool can be used to show & override link settings and other parameters for
+the MAC & PHY.
 
 Links for the tool:
 
@@ -174,8 +204,9 @@ Links for the tool:
 
 .. tip::
 
-   Some features of ethtool described here are available in newer versions of ethtool. If some of them don't work, consider upgrading or getting a newer version
-
+   Some features of ethtool described here are available in newer versions of
+   ethtool. If some of them don't work, consider upgrading or getting a newer
+   version
 
 Example: Seeing MAC & PHY info
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -208,7 +239,8 @@ Example: Seeing MAC & PHY info
 Example: changing link autonegotiation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since the PHY can only do 10 Mbps full-duplex, the only operation possible here is to disable auto-negotiation and set preferred/forced master/slave
+Since the PHY can only do 10 Mbps full-duplex, the only operation possible here
+is to disable auto-negotiation and set preferred/forced master/slave
 
 ::
 
@@ -223,9 +255,11 @@ Since the PHY can only do 10 Mbps full-duplex, the only operation possible here 
 ADIN1100 cable test tool
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-ADIN1100 supports multiple cable diagnostics options. Some of them could not be added in the driver as ethtool ops.
+ADIN1100 supports multiple cable diagnostics options. Some of them could not be
+added in the driver as ethtool ops.
 
-If you want control over those features from C code, add those files to your project:
+If you want control over those features from C code, add those files to your
+project:
 
 +----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                                |
@@ -308,8 +342,9 @@ This is a more system-general test but it also validates the PHY.
 
 .. tip::
 
-   More tools are available for this sort of testing (iperf3, netperf, etc), but iperf is one of the more basic/simple ones to do this validation. If this one achieves expected results, others should too
-
+   More tools are available for this sort of testing (iperf3, netperf, etc), but
+   iperf is one of the more basic/simple ones to do this validation. If this one
+   achieves expected results, others should too
 
 On one of the endpoints with the ADIN1100, run:
 
@@ -361,4 +396,3 @@ Ethernet pointers
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

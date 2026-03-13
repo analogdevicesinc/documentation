@@ -4,9 +4,13 @@ Power System Management on Linux Tutorial
 Introduction
 ------------
 
-The goal of this tutorial is to equip the reader with a collection of hardware and software tools for working with Power System Management devices, and more generally, devices that fall under the Linux hardware monitoring kernel API (HWMON) framework.
+The goal of this tutorial is to equip the reader with a collection of hardware
+and software tools for working with Power System Management devices, and more
+generally, devices that fall under the Linux hardware monitoring kernel API
+(HWMON) framework.
 
-The tutorial will focus on using standard tools and simple examples that can be used for debug and development.
+The tutorial will focus on using standard tools and simple examples that can be
+used for debug and development.
 
 Also note that the tutorial is geared toward Linux-based systems, in contrast to bare-metal, no-OS applications. A great resource for learning about this use case is the `Linduino to PSM adapter shield <ad>:adi:`dc2294a>`__`. The instructions for this board go over how to run several examples on the Linduino (A clone of the Arduino UNO).
 
@@ -15,8 +19,11 @@ Videos
 
 .. note::
 
-   This video includes installation and configuration of Kuiper Linux, as well as building and installing the development branch of the libiio with HWMON support. The video will be re-done (and re-hosted on the CftL YouTube channel) once these features are merged to master and included in a Kuiper release.
-
+   This video includes installation and configuration of Kuiper Linux, as well
+   as building and installing the development branch of the libiio with HWMON
+   support. The video will be re-done (and re-hosted on the CftL YouTube
+   channel) once these features are merged to master and included in a Kuiper
+   release.
 
    |youtube>mR9V8uN390M|
 
@@ -50,17 +57,16 @@ Add the following line to config.txt:
 
    dtoverlay=rpi-dc1962c
 
-Make the fllowing connections between the DC1962C and the Raspberry Pi, following the pin mapping in Figure 1 and corresponding photo in Figure 2.
+Make the fllowing connections between the DC1962C and the Raspberry Pi,
+following the pin mapping in Figure 1 and corresponding photo in Figure 2.
 
 .. note::
 
    Pin mapping diagram
 
-
 .. container:: centeralign
 
    Figure 1. Pin Mapping Diagram
-
 
    |image1|
 
@@ -68,11 +74,9 @@ Make the fllowing connections between the DC1962C and the Raspberry Pi, followin
 
    Figure 2. Connections with Discrete Wires
 
-
 .. note::
 
    Update photo when production boards arrive
-
 
    |image2|
 
@@ -81,7 +85,6 @@ Make the fllowing connections between the DC1962C and the Raspberry Pi, followin
       Figure 3. Connections with DesignSpark adapter
 
    
-
 
 Toolbox Item: i2cdetect
 -----------------------
@@ -96,8 +99,8 @@ And observe the output as shown in Figure X.
 
 .. note::
 
-   Re-take screenshot with other EEPROMs on experimenter setup disabled (0x50-0x53)
-
+   Re-take screenshot with other EEPROMs on experimenter setup disabled
+   (0x50-0x53)
 
    |image3|
 
@@ -107,8 +110,14 @@ And observe the output as shown in Figure X.
 
    
 
-
-The LTC2974, LTC2977, and LTC3880 are at I2C addresses 0x32, 0x33, and 0x30, respectively. i2c-detect reports "UU" for these addresses because these devices are controlled from kernelspace, and users cannot access them directly. The onboard 24AA02 EEPROM is not associated with a driver. The upper nibble of the i2c address is 0x5, and the lower 3 bits select banks within the device. Externally, addresses 0x50 to 0x57 are acknowledged. Note that no data transfer actually occurs, the i2c-detect command is simply testing which devices acknowledge, then a stop condition is issued.
+The LTC2974, LTC2977, and LTC3880 are at I2C addresses 0x32, 0x33, and 0x30,
+respectively. i2c-detect reports "UU" for these addresses because these devices
+are controlled from kernelspace, and users cannot access them directly. The
+onboard 24AA02 EEPROM is not associated with a driver. The upper nibble of the
+i2c address is 0x5, and the lower 3 bits select banks within the device.
+Externally, addresses 0x50 to 0x57 are acknowledged. Note that no data transfer
+actually occurs, the i2c-detect command is simply testing which devices
+acknowledge, then a stop condition is issued.
 
 Toolbox Item: LM Sensors utilities
 ----------------------------------
@@ -122,7 +131,6 @@ Toolbox Item: LM Sensors utilities
    
       sudo apt-get install lm-sensors
    
-
 
 ::
 
@@ -150,7 +158,9 @@ Yup, this really works!
 
 .. note::
 
-   ToDo: Remove when merged to master and included in Kuiper release The libiio master branch now includes HWMON support, but is not included in the latest Kuiper release. It needs to be installed manually - but fear not, It's easy:
+   ToDo: Remove when merged to master and included in Kuiper release The libiio
+   master branch now includes HWMON support, but is not included in the latest
+   Kuiper release. It needs to be installed manually - but fear not, It's easy:
 
    
    ::
@@ -162,7 +172,6 @@ Yup, this really works!
       sudo reboot
    
 
-
 iio_info
 
 IIO Oscilloscope
@@ -172,24 +181,31 @@ Hopefully PyADI-IIO in the not too distant future
 Toolbox Item: pmbus_dpsm utilities
 ----------------------------------
 
-When you need to dig in deeper, use cases, noting that you have to remove the device tree overlay in order to use userspace functions.
+When you need to dig in deeper, use cases, noting that you have to remove the
+device tree overlay in order to use userspace functions.
 
 Putting it all together: A Run-time Logging Application
 -------------------------------------------------------
 
-Put together a simple python script to periodically log data from the power stick over time, and save to a local file. Show how this can be used to detect anomalies, trends toward higher operating temperatures, and other diagnostic stuff.
+Put together a simple python script to periodically log data from the power
+stick over time, and save to a local file. Show how this can be used to detect
+anomalies, trends toward higher operating temperatures, and other diagnostic
+stuff.
 
-Show both a python HWMON example running locally, and a libiio based example that can run either locally or remotely.
+Show both a python HWMON example running locally, and a libiio based example
+that can run either locally or remotely.
 
 Conclusion
 ----------
 
-Existing PSM tools are the workhorse of system design and bringup. The Linux HWMON drivers and utilities are additional tools available for run-time debug and monitoring. (obviously this conclusion needs work...)
+Existing PSM tools are the workhorse of system design and bringup. The Linux
+HWMON drivers and utilities are additional tools available for run-time debug
+and monitoring. (obviously this conclusion needs work...)
 
 .. |youtube>mR9V8uN390M| image:: https://wiki.analog.com/_media/university/labs/software/youtube>mr9v8un390m
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/software/psm_hwmon_linux_tutorial/rpi_power_stick_jumpers.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/labs/software/psm_hwmon_linux_tutorial/rpi_adapter_power_stick.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/university/labs/software/psm_hwmon_linux_tutorial/i2c-detect_drivers_enabled.png
-   :width: 400px
+   :width: 400

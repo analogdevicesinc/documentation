@@ -1,14 +1,19 @@
 Software example using EV-COG-SMARTMESH1Z
 =========================================
 
-This document explains how temperature data can be sent via EV-COG-SMARTMESH1Z configured in the slave mode to the E-manager connected to the users PC. It also explains the software flow and how to view the expected output.
+This document explains how temperature data can be sent via EV-COG-SMARTMESH1Z
+configured in the slave mode to the E-manager connected to the users PC. It also
+explains the software flow and how to view the expected output.
 
 Software Details
 ----------------
 
-A modular software framework is provided for quick application prototyping. Based on the application use case, developers need to download the respective software packs.
+A modular software framework is provided for quick application prototyping.
+Based on the application use case, developers need to download the respective
+software packs.
 
-The EV-COG-SMARTMESH1Z interfaced EV-COG-AD3029LZ , software development kit consists of these packs:-
+The EV-COG-SMARTMESH1Z interfaced EV-COG-AD3029LZ , software development kit
+consists of these packs:-
 
 #. :adi:`BSP - Board Support Package for EV-COG-AD3029LZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-aducm3029-ezkit.html#eb-relatedsoftware>`- This pack along with the DFP is required to develop applications using the on-board drivers.
 
@@ -21,7 +26,7 @@ Software Overview
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/tools/software_over.png
    :align: center
-   :width: 300px
+   :width: 300
 
 ::
 
@@ -32,7 +37,9 @@ Software Overview
 Software Architecture
 ---------------------
 
-This section gives user a basic understanding on how the software is designed for handling both transmission and reception of packets between the EV-COG-SMARTMESH1Z and EV-COG-AD3029LZ.
+This section gives user a basic understanding on how the software is designed
+for handling both transmission and reception of packets between the
+EV-COG-SMARTMESH1Z and EV-COG-AD3029LZ.
 
 To download the software source from Analog Devices Git - click on :git-EV-COG-AD3029LZ:`"SmartMesh-Temperature-Sensor-Software" <SmartMesh_temp_slavemode_licensed_v2.0>`
 
@@ -41,34 +48,44 @@ Transmission of Packets
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/tools/transmit.png
    :align: center
-   :width: 300px
+   :width: 300
 
-The Application level software handles tasks such as invoking API commands, handling API replies and performing user-application specific tasks. The C-Lib later performs HDLC packetization and other tasks there by making it easy for the user to send commands to the EV-COG-SMARTMESH1Z. In the BSP, APIs specific to UART communication aid in sending transmit packets over the UART lines.
+The Application level software handles tasks such as invoking API commands,
+handling API replies and performing user-application specific tasks. The C-Lib
+later performs HDLC packetization and other tasks there by making it easy for
+the user to send commands to the EV-COG-SMARTMESH1Z. In the BSP, APIs specific
+to UART communication aid in sending transmit packets over the UART lines.
 
 Reception of Packets
 ~~~~~~~~~~~~~~~~~~~~
 
-When EV-COG-SMARTMESH1Z sends a packet to EV-COG-AD3029LZ, the received packet is written to a circular buffer using the UART specific APIs of the BSP. At the application level software , the circular buffer is continuously checked for data written. When a byte of data is written to the circular buffer, the application level software calls routines that handle the data written to the buffer. The C-Lib processes the received packet and sends a callback to the application level software with only the required field in the received packet.
+When EV-COG-SMARTMESH1Z sends a packet to EV-COG-AD3029LZ, the received packet
+is written to a circular buffer using the UART specific APIs of the BSP. At the
+application level software , the circular buffer is continuously checked for
+data written. When a byte of data is written to the circular buffer, the
+application level software calls routines that handle the data written to the
+buffer. The C-Lib processes the received packet and sends a callback to the
+application level software with only the required field in the received packet.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/tools/receive.png
    :align: center
-   :width: 305px
+   :width: 305
 
 Software Flow:-
 ---------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/tools/iamge6.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Interface Guide
 ---------------
 
-This section covers the various steps involved in the interface of the EV-COG-SMARTMESH1Z with EV-COG-AD3029LZ and thereby run the C-library on the EV-COG-AD3029LZ and get it to talk to EV-COG-SMARTMESH1Z.
+This section covers the various steps involved in the interface of the
+EV-COG-SMARTMESH1Z with EV-COG-AD3029LZ and thereby run the C-library on the
+EV-COG-AD3029LZ and get it to talk to EV-COG-SMARTMESH1Z.
 
 Following are the steps involved :-
-
-
 
 - Connect the EV-COG-SMARTMESH1Z with EV-COG-AD3029LZ  as shown in the Board Interface section.
 - Download and Install the necessary soft wares for working with  the EV-COG-SMARTMESH1Z and EV-COG-AD3029LZ as mentioned in the Software Details section.
@@ -139,8 +156,9 @@ Example project
    To download an example project to interface EV-COG-SMARTMESH1Z with EV-COG-AD3029LZ click on :git-EV-COG-AD3029LZ:`"SmartMesh-Temperature-Sensor-Software" <SmartMesh_temp_slavemode_licensed_v2.0>`
 
    
-   The example project sends temperature data or a dummy data to the manager which can be viewed on TempMonitor(GUI) or on the APIExplorer(GUI) of the manager.
-
+   The example project sends temperature data or a dummy data to the manager
+   which can be viewed on TempMonitor(GUI) or on the APIExplorer(GUI) of the
+   manager.
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 

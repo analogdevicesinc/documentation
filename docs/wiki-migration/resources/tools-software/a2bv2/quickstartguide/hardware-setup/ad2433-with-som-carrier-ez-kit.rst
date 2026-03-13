@@ -8,7 +8,8 @@ AD2433 with SOM carrier ez-kit
 Evaluation boards
 -----------------
 
-The AD243x standard power evaluation boards used in the demos are explained in the following subsections.
+The AD243x standard power evaluation boards used in the demos are explained in
+the following subsections.
 
 ADZS2433-MINI
 ~~~~~~~~~~~~~
@@ -20,12 +21,11 @@ ADZS2433-MINI
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/adzs-ad2433mini.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure:** ADZS-2433MINI
-
 
 Hardware modifications
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -53,12 +53,11 @@ EVAL-AD2433WB1BZ
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-2433wb1bz_new.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure:** EVAL-AD2433WB1BZ board
-
 
 Jumper settings
 ^^^^^^^^^^^^^^^
@@ -82,15 +81,14 @@ Connections
 
 To run the sample demo, the following setup connections are to be made.
 
-
 |image1|
 
 .. container:: centeralign
 
    \ **Figure:** Multi-main connections using PC(Host) and ADSP-21596 SOM carrier kit and ADZS2433MINI’s
 
-
-The step described in this section are recommended to run the following configurations
+The step described in this section are recommended to run the following
+configurations
 
 -  AD2433 multi-main sample demo using ADSP-21596 platform and PC as host.
 
@@ -99,17 +97,23 @@ The Evaluation boards shall be connected in the following order.
 -  Connect the EV-21569-SOM to the EV-SOMCRR-EZKIT.
 -  Connect one of the two ADZS2433-MINI boards to J10 A2B interface of the EV-SOMCRR-EZKIT. Let this be “main node 0” with I2C address configured to be 0x68.
 -  Connect other ADZS2433-MINI to J11 A2B interface of the EV-SOMCRR-EZKIT. Let this be “main node 1” with I2C address configured to be 0x6A.
--  For A2B chain 0:- ADZS2433-MINI (Main node 0) EVAL-AD2433WB1BZ (Sub node 0) EVAL-AD2433WB1BZ (Sub node 1), the connections are as follows
+-  For A2B chain 0:- ADZS2433-MINI (Main node 0) EVAL-AD2433WB1BZ (Sub node 0)
+   EVAL-AD2433WB1BZ (Sub node 1), the connections are as follows
 
-   -  Connect twisted-pair wire between the “B” connector on the main node 0 board and the “A” connector on the sub node 0 board.
+   -  Connect twisted-pair wire between the “B” connector on the main node 0
+      board and the “A” connector on the sub node 0 board.
 
-      -  Connect twisted-pair wire between the “B” connector on the sub node 0 board and the “A” connector on the sub node 1 board.
+      -  Connect twisted-pair wire between the “B” connector on the sub node 0
+         board and the “A” connector on the sub node 1 board.
 
--  For A2B chain 1:- ADZS2433-MINI (Main node 1) EVAL-AD2433WB1BZ (Sub node 2) EVAL-AD2433WB1BZ (Sub node 3), the connections are as follows
+-  For A2B chain 1:- ADZS2433-MINI (Main node 1) EVAL-AD2433WB1BZ (Sub node 2)
+   EVAL-AD2433WB1BZ (Sub node 3), the connections are as follows
 
-   -  Connect twisted-pair wire between the “B” connector on the main node 1 board and the “A” connector on the sub node 2 board.
+   -  Connect twisted-pair wire between the “B” connector on the main node 1
+      board and the “A” connector on the sub node 2 board.
 
-      -  Connect twisted-pair wire between the “B” connector on the sub node 2 board and the “A” connector on the sub node 3 board.
+      -  Connect twisted-pair wire between the “B” connector on the sub node 2
+         board and the “A” connector on the sub node 3 board.
 
 -  Connect 12V power supply to the power connector of EV-SOMCRR-EZKIT.
 
@@ -121,11 +125,10 @@ Audio In/out for ADSP-21569 and PC as a host – multi-main
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ad2433_multimain.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    \ **Figure:** Sample audio setup
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections_using_pc_host_.png

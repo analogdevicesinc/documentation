@@ -13,9 +13,11 @@ The Pluto will automount any `USB mass storage device <https://en.wikipedia.org/
 
 For those interested, it will do that via the automounter script in ``/lib/mdev/automounter.sh`` which is maintained `here <https://github.com/analogdevicesinc/buildroot/blob/pluto/board/pluto/automounter.sh>`_.
 
-Note 1 : if you're editing the runme.sh file from windows, make sure you use 'LF' as file line ending.
+Note 1 : if you're editing the runme.sh file from windows, make sure you use
+'LF' as file line ending.
 
-Note 2 : The power supply (and USB cable quality) of the ADALM-PLUTO have an influence on the otg storage device plug detection.
+Note 2 : The power supply (and USB cable quality) of the ADALM-PLUTO have an
+influence on the otg storage device plug detection.
 
 Basic Example
 ~~~~~~~~~~~~~
@@ -37,7 +39,9 @@ For those who just want to do something, create a ``runme0.sh`` file on a thumb 
 
 and insert the USB thumb drive in to Pluto.
 
-The LED should stop blinking, and you have run your application. To safely unmount the drive, you should press the button, which will cause the drive to by sync'ed, file systems caches flushed, and properly unmount the drive.
+The LED should stop blinking, and you have run your application. To safely
+unmount the drive, you should press the button, which will cause the drive to by
+sync'ed, file systems caches flushed, and properly unmount the drive.
 
 Advanced examples
 ~~~~~~~~~~~~~~~~~
@@ -45,7 +49,10 @@ Advanced examples
 Send a tone
 ^^^^^^^^^^^
 
-The code below sets up a tone, and plays it out via the DDS (the AD9361's test mode). It then unmounts the drive it is running on, so you can unplug the USB drive. All that is necessary is to boot while the uSB drive is plugged in, and that is it. This example requires at least firmware v0.22.
+The code below sets up a tone, and plays it out via the DDS (the AD9361's test
+mode). It then unmounts the drive it is running on, so you can unplug the USB
+drive. All that is necessary is to boot while the uSB drive is plugged in, and
+that is it. This example requires at least firmware v0.22.
 
 .. code:: bash
 
@@ -79,7 +86,9 @@ The code below sets up a tone, and plays it out via the DDS (the AD9361's test m
 Re purposing the button
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The below script will change the function of the button. Rather than unmounting things, it pressing the button will run a script. Holding the button for longer than 5 seconds will unmount things.
+The below script will change the function of the button. Rather than unmounting
+things, it pressing the button will run a script. Holding the button for longer
+than 5 seconds will unmount things.
 
 This requires a few different scripts, and modification of a configuration file.
 

@@ -12,7 +12,8 @@ To build project with no-OS IIO support go to the desired no-OS project folder `
 
 ``make IIOD=y``
 
-Depending on the project and hardware used, the platform might have to be specified inside the Makefile in the project folder, or from command line:
+Depending on the project and hardware used, the platform might have to be
+specified inside the Makefile in the project folder, or from command line:
 
 ``make PLATFORM=desired_platform clean_all``
 
@@ -20,15 +21,9 @@ Depending on the project and hardware used, the platform might have to be specif
 
 For more information about building projects, go to: :doc:`https://github.com/analogdevicesinc/no-OS/wiki/Building-no-OS-on-Linux </wiki-migration/resources/no-os/build>`. After build, execute command:
 
-
-
 .. collapsible:: Xilinx(Click to expand)
 
    ``make run``
-
-
-
-
 
 .. collapsible:: Linux (Click to expand)
 
@@ -38,9 +33,8 @@ For more information about building projects, go to: :doc:`https://github.com/an
 
       Make sure IIOD is not already running! It can be stopped it with: ``sudo systemctl stop iiod``
 
-
-
-The binaries are loaded to the board. Next, it is possible to connect with a libiio client.
+The binaries are loaded to the board. Next, it is possible to connect with a
+libiio client.
 
 For debugging and development execute command:
 
@@ -63,20 +57,20 @@ For a graphical user interface and plots IIO-Oscilloscope is one possible client
 Connecting to IIO-Oscilloscope with the serial context:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/no-os-software/iio/iio_osc_uart.png
-   :width: 400px
+   :width: 400
 
 And with network:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/no-os-software/screenshot_from_2021-04-29_02-04-15.png
-   :width: 400px
+   :width: 400
 
 Once connected, two windows should pop up.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/no-os-software/screenshot_from_2021-04-29_02-04-15.png
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/no-os-software/screenshot_from_2021-04-29_02-06-48.png
-   :width: 400px
+   :width: 400
 
 Python device over iio client
 -----------------------------
@@ -90,11 +84,14 @@ A demo iio application can be found in the following location:
 
 :git-no-OS:`projects/iio_demo`
 
-This project is independent of a physical device and should be used as reference, when creating a new iio application for a new iio device. To view information regarding the devices, one can use:
+This project is independent of a physical device and should be used as
+reference, when creating a new iio application for a new iio device. To view
+information regarding the devices, one can use:
 
 ``iio_info -u serial:/dev/ttyUSB0,115200`` or, ``iio_info -u ip:host`` (only on Linux)
 
-To load data into RAM, that could be seen in iio-oscilloscope application, execute the following command:
+To load data into RAM, that could be seen in iio-oscilloscope application,
+execute the following command:
 
 ``cat sample_sine.dat | iio_writedev -u serial:/dev/ttyUSB0,115200 -b 400 dac_demo``
 
@@ -104,7 +101,7 @@ FOLDER STRUCTURE
 ================
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/no-os-software/iio_folder_structure.png
-   :width: 400px
+   :width: 400
 
 \*\* iio_app*\* – IIO application interface. Sets IIO application communication interface and executes the main application, where commands are received, parsed, and executed. This module is necessary.
 
@@ -120,4 +117,4 @@ SOFTWARE ARCHITECTURE
 The relations between modules can be seen in the following figure.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/no-os-software/iio_diagram.png
-   :width: 400px
+   :width: 400

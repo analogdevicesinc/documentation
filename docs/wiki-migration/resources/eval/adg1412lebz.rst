@@ -41,7 +41,11 @@ The EVAL-ADG1412LEBZ is the evaluation board for the :adi:`adg1412L`. The :adi:`
 
 An external VL supply pin provides logic control flexibility for lower logic controls. The :adi:`adg1412L` is both 1.2 V and 1.8 V JEDEC Standard compliant.
 
-Figure 1 shows the EVAL-ADG1412LEBZ in a typical evaluation setup. The EVAL-ADG1412LEBZ is placed in the center of the evaluation board, and four test points and SMB sockets are provided to connect to each of the sources and drain inputs. Three screw terminals are used to power the device. A 5-pin header is provided for user-defined digital voltage if required.
+Figure 1 shows the EVAL-ADG1412LEBZ in a typical evaluation setup. The
+EVAL-ADG1412LEBZ is placed in the center of the evaluation board, and four test
+points and SMB sockets are provided to connect to each of the sources and drain
+inputs. Three screw terminals are used to power the device. A 5-pin header is
+provided for user-defined digital voltage if required.
 
 Full specifications on the :adi:`adg1412L` are available in the :adi:`adg1412L` data sheet available from Analog Devices, Inc., and should be consulted in conjunction with this user guide when using the evaluation board.
 
@@ -55,12 +59,11 @@ ADG1412L Evaluation Board Layout
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adg1412l_eval_board.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 1. EVAL-ADG1412LEBZ*
-
 
 Evaluation Board Hardware
 -------------------------
@@ -75,12 +78,18 @@ Input Signals
 
 Two-screw connectors, P3, P4, P5, and P6 are provided to connect to both the source and drain pins of the :adi:`adg1412L`. Additional subminiature Version B (SMB) connector pads are available if extra connections are required.
 
-Each trace on the source and drain side includes two sets of 0603 pads, which can place a load on the signal path to the ground. A 0 Ω resistor is placed in the signal path and can be replaced with a user-defined value. The resistor combined with the 0603 pads can create a simple resistor-capacitor (RC) filter.
+Each trace on the source and drain side includes two sets of 0603 pads, which
+can place a load on the signal path to the ground. A 0 Ω resistor is placed in
+the signal path and can be replaced with a user-defined value. The resistor
+combined with the 0603 pads can create a simple resistor-capacitor (RC) filter.
 
 Link Options
 ~~~~~~~~~~~~
 
-A number of link options are provided on the EVAL-ADG1412LEBZ board that must be set for the required operating conditions before use. Table 1 shows the summary of the link headers and how they are used on the evaluation board. The functions of these link options are described in detail in Table 2.
+A number of link options are provided on the EVAL-ADG1412LEBZ board that must be
+set for the required operating conditions before use. Table 1 shows the summary
+of the link headers and how they are used on the evaluation board. The functions
+of these link options are described in detail in Table 2.
 
 .. container:: column
 
@@ -94,7 +103,6 @@ A number of link options are provided on the EVAL-ADG1412LEBZ board that must be
    \           B      GND
    =========== ====== ===========
    
-
 
 .. container:: COLUMN
 
@@ -112,7 +120,6 @@ A number of link options are provided on the EVAL-ADG1412LEBZ board that must be
    +-------------+----------------------------------------------------------------------------------------------------------------+
    
 
-
 SMB Connectors
 ~~~~~~~~~~~~~~
 
@@ -123,12 +130,11 @@ Evaluation Board Schematics and Artwork
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adg1412l_schematic.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    *Figure 2. EVAL-ADG1412LEBZ Schematic 1*
-
 
    |image1|
 
@@ -136,13 +142,11 @@ Evaluation Board Schematics and Artwork
 
    *Figure 3. EVAL-ADG1412LEBZ Silkscreen*
 
-
    |image2|
 
 .. container:: centeralign
 
    *Figure 4. EVAL-ADG1412LEBZ Top Layer*
-
 
    |image3|
 
@@ -150,20 +154,17 @@ Evaluation Board Schematics and Artwork
 
    *Figure 5. EVAL-ADG1412LEBZ Layer 2*
 
-
    |image4|
 
 .. container:: centeralign
 
    *Figure 6. EVAL-ADG1412LEBZ Layer 3*
 
-
    |image5|
 
 .. container:: centeralign
 
    *Figure 7. EVAL-ADG1412LEBZ Bottom Layer*
-
 
 Ordering Information
 --------------------
@@ -207,14 +208,13 @@ Bill of Materials
    +----------------------+-----------------------------------------------------------------------------------+----------------------+------------------------------------------------+
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_silkscreen.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l1.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l2.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l3.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l4.png
-   :width: 600px
+   :width: 600

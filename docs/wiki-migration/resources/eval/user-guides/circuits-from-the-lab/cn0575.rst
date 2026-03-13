@@ -1,27 +1,26 @@
 EVAL-CN0575-RPIZ User Guide
 ===========================
 
-
-
 .. note::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
    | This user guide is now available at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0575-rpiz/index.html
 
-
 General Description
 -------------------
 
 The :adi:`EVAL-CN0575-RPIZ <CN0575>` is a 10BASE-T1L MAC/PHY interface with Single Pair Power over Ethernet (SPoE) for development of field devices and applications on a Raspberry Pi platform board. The SPoE powered device (PD) and isolated flyback regulator provide 5 V power to the platform board and attached application circuitry. SPoE Class 12 (8.4 W, 24 V nominal) and Class 13 (7.7 W, 55 V nominal) are supported.
 
-Designed for use on the Raspberry Pi platform, the CN0575 hardware features a 40-pin GPIO header, and follows the same mechanical dimensions as a standard HAT.
+Designed for use on the Raspberry Pi platform, the CN0575 hardware features a
+40-pin GPIO header, and follows the same mechanical dimensions as a standard
+HAT.
 
 To allow board stacking and development of field device applications using Raspberry Pi HATs, an additional GPIO header with extended leads is included with each evaluation board. However, the :adi:`CN0575` can also be used on its own as a basic temperature sensing field device with remote user input/output via an onboard button and LED.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/63305_2.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Evaluation Board Hardware
 -------------------------
@@ -31,7 +30,7 @@ Primary Side
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/eval-cn0575-rpiz-top-with-labels.png
    :align: center
-   :width: 600px
+   :width: 600
 
 10BASE-T1L Port (P1 and P2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -80,18 +79,16 @@ SPoE PD Power Class Selection (JP1 and JP2)
 
    The :adi:`CN0575` was designed and evaluated for PD Classes 12 and 13. However, Classes 10 and 11 may still be usable, depending on the power requirements of the Raspberry Pi model used (and its peripherals).
 
-
 .. important::
 
    Warning: Do not use PD Classes 14 and 15. The :adi:`EVAL-CN0575-RPIZ <CN0575>` evaluation board is not designed to handle these higher power specifications.
-
 
 Secondary Side
 ~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/eval-cn0575-rpiz-bottom-with-labels.png
    :align: center
-   :width: 600px
+   :width: 600
 
 ADIN1110 SW Power-Down Enable and SPI Configuration (JP3 to JP5)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -120,8 +117,6 @@ Shorted     Open        Generic SPI with 8-bit CRC
 Shorted     Shorted     Generic SPI without 8-bit CRC (Default)
 =========== =========== =======================================
 
-
-
 ADT75 I²C Bus Address Selection (JP6 to JP8)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -141,8 +136,6 @@ A               A   B   0X4E
 A               A   A   0X4F
 =============== === === ===============
 
-
-
 Optional GPIO Pins (JP9 to JP13)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -150,7 +143,7 @@ By default, some functions of the :adi:`EVAL-CN0575-RPIZ <CN0575>` are connected
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/jp11-jp12-jp13.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 +--------+--------+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Jumper | GPIO   | Circuit Function                                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -192,11 +185,10 @@ General Purpose LED and Button Connections (JP14 and JP15)
 
 | 
 
-
 .. tip::
 
-   External hardware can be connected to the TEST button and ALERT LED using the BTN_IO and LED_IO test points, respectively.
-
+   External hardware can be connected to the TEST button and ALERT LED using the
+   BTN_IO and LED_IO test points, respectively.
 
 --------------
 
@@ -244,22 +236,23 @@ Setup with SPoE via PSE or DC Power Supply:
 
 .. note::
 
-   Power coupling boards compatible with the EVAL-ADIN1100 for various SPoE classes and droop levels are in development. Alternatively, use a media converter that supports SPoE PSE functionality.
+   Power coupling boards compatible with the EVAL-ADIN1100 for various SPoE
+   classes and droop levels are in development. Alternatively, use a media
+   converter that supports SPoE PSE functionality.
 
    
    Refer to the LTC4296-1 datasheet for example coupling networks.
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/test-setup-block-diagram.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Setup without SPoE (USB-Powered Application):
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/block_diagram-new-2.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Software Setup
 ~~~~~~~~~~~~~~
@@ -273,7 +266,7 @@ Complete instructions, including where to download the SD card image, how to wri
 
 .. image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/command_prompt.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Configuring the Micro-SD Card
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -286,7 +279,8 @@ To do this, follow the Hardware Configuration procedure under **Configuring the 
 
    dtoverlay=rpi-cn0575
 
-Save the file and reboot the system by entering the following command in the console:
+Save the file and reboot the system by entering the following command in the
+console:
 
 ::
 
@@ -305,14 +299,14 @@ Follow the below procedure to determine the IP address assigned by the Raspberry
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/ifconfig.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Basic Operation
 ~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/setup.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 To establish a 10BASE-T1L connection to a Raspberry Pi using the :adi:`EVAL-CN0575-RPIZ <CN0575>` evaluation board and run a basic temperature measurement example, follow the below procedure:
 
@@ -326,17 +320,20 @@ To establish a 10BASE-T1L connection to a Raspberry Pi using the :adi:`EVAL-CN05
    -  Set the output of the PSE or DC power supply to either 24V (Class 12) or 55V (Class 13), depending on the settings of **JP1** and **JP2** on the CN0575 board.
 
       -  Using wires, connect the output of an SPoE power coupler to the **P1** terminal block on the :adi:`EVAL-CN0575-RPIZ <CN0575>` circuit evaluation board. Similarly, connect the data input of the power coupler to the **P101** terminal block on the :adi:`EVAL-ADIN1100EBZ <eval-adin1100>` evaluation board.
-      -  Connect the output of the SPoE PSE (or DC power supply) to the power input of the SPoE power coupler and enable it.
+      -  Connect the output of the SPoE PSE (or DC power supply) to the power
+         input of the SPoE power coupler and enable it.
 
 -  *Operation without SPoE (USB-Powered Application):*
 
    -  Using wires, connect the **P1** terminal block on the :adi:`EVAL-CN0575-RPIZ <CN0575>` circuit evaluation board to the **P101** terminal block on the :adi:`EVAL-ADIN1100EBZ <eval-adin1100>` evaluation board.
 
-      -  Connect the USB wall adapter to the power connector on the Raspberry Pi.
+      -  Connect the USB wall adapter to the power connector on the Raspberry
+         Pi.
 
 -  Wait for the **LINK** LED on the :adi:`EVAL-CN0575-RPIZ <CN0575>` circuit evaluation board and the **LED_0** LED on the :adi:`EVAL-ADIN1100EBZ <eval-adin1100>` evaluation board to turn on and start blinking at the same time. This indicates that a 10BASE-T1L link has been established.
 -  On the host PC, run PuTTY and connect to the Raspberry Pi using the :adi:`EVAL-CN0575-RPIZ <CN0575>` IP address.
--  In the Raspberry Pi console, navigate to the examples directory of pyadi-iio. Run the temperature measurement example by entering the following command:
+-  In the Raspberry Pi console, navigate to the examples directory of pyadi-iio.
+   Run the temperature measurement example by entering the following command:
 
 ::
 
@@ -344,14 +341,16 @@ To establish a 10BASE-T1L connection to a Raspberry Pi using the :adi:`EVAL-CN05
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/adt75-example.png
    :align: center
-   :width: 500px
+   :width: 500
 
 --------------
 
 More Complete Example with Digital I/O
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A more complete example that blinks the onboard LED and reads the push button is also provided. Note that this script can be run either directly on the Raspberry Pi, or remotely from a host computer.
+A more complete example that blinks the onboard LED and reads the push button is
+also provided. Note that this script can be run either directly on the Raspberry
+Pi, or remotely from a host computer.
 
 From the Raspberry Pi command line, run:
 
@@ -375,7 +374,7 @@ Typical output is shown below:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/cn0575_example_screenshot.png
    :align: center
-   :width: 500px
+   :width: 500
 
 --------------
 
@@ -403,7 +402,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 --------------
 
 Additional Information and Useful Links
@@ -427,20 +425,19 @@ Hardware Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0575-RPIZ?&v=RevC>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/10base-t1l-port.jpg
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/adin1110-leds.jpg
-   :width: 150px
+   :width: 150
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/ltc9111-jumpers.jpg
-   :width: 150px
+   :width: 150
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/jp3-jp4-jp5.jpg
-   :width: 250px
+   :width: 250
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/jp6-jp7-jp8.jpg
-   :width: 125px
+   :width: 125
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/jp14-jp15.jpg
-   :width: 125px
+   :width: 125
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0575/c16_marking.png
-   :width: 100px
+   :width: 100

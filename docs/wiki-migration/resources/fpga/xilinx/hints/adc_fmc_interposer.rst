@@ -6,18 +6,20 @@ Overview
 
 The :adi:`High Speed ADC FMC Interposer <en/evaluation/eval-adc-fmc-int/eb.html>` allows ADC evaluation boards to interface with Xilinx's evaluation platforms (FMC carriers). The combination (evaluation board + interposer) may not work with all carriers. In some cases, even if there is a complete map of all the evaluation boards I/O to the carrier (through the interposer), the location and nature of the I/O might prevent the system to be functional.
 
-
 |High Speed ADC FMC Interposer (B)|
 
 .. note::
 
    The information on this page is preliminary and is subject to change.
 
-
 Quick Check
 -----------
 
-The quick check below provides NO modifications on the interposer and minimum effort in terms of HDL development. If an evaluation board I/O passes the quick check, you could probably use the coregen generated I/O interface as it is and will have less trouble making the system functional. You may still need to make modifications on the evaluation board (see sections below).
+The quick check below provides NO modifications on the interposer and minimum
+effort in terms of HDL development. If an evaluation board I/O passes the quick
+check, you could probably use the coregen generated I/O interface as it is and
+will have less trouble making the system functional. You may still need to make
+modifications on the evaluation board (see sections below).
 
 IOSTANDARD
 ~~~~~~~~~~
@@ -35,7 +37,8 @@ Data Rates
 Summary
 ^^^^^^^
 
--  The table below lists highest available data rate per carrier. If you use a different primitive, you may not be able to run the design at these rates.
+-  The table below lists highest available data rate per carrier. If you use a
+   different primitive, you may not be able to run the design at these rates.
 
 Details
 ^^^^^^^
@@ -179,7 +182,8 @@ Summary
 
 -  The ADC clock must be connected to P2.A10/P2.B10 (of the interposer) labeled usually DCLKB1+/DCLKB1-.
 -  The ADC data lines, including any framing information and status (such as FCO and OR) must be within D15+/D15- to D0+/D0-. These data lines are mapped to P2 connector's A/B and C/D rows.
--  The SPI chip select signals must use the LA connections mentioned in the LPC table above.
+-  The SPI chip select signals must use the LA connections mentioned in the LPC
+   table above.
 
 Details
 ^^^^^^^
@@ -281,7 +285,8 @@ Summary
 ^^^^^^^
 
 -  The reference clock must be connected to P3.C10/P3.D10 (of the interposer) labeled usually MGTCLK1+/MGTCLK1-.
--  The data lane (only 1 is available on LPC), must use P3.C9/P3.D9 (of the interposer) labeled usually SD1+/SD1-.
+-  The data lane (only 1 is available on LPC), must use P3.C9/P3.D9 (of the
+   interposer) labeled usually SD1+/SD1-.
 
 Details
 ^^^^^^^
@@ -314,7 +319,10 @@ Summary
 
 -  The HPC GBT pins are an extension of the LPC GBT quad, usually SD2 to SD4 are in the same quad as SD1. If using any of the SD2 to SD4 lanes, the reference clock must be connected to MGTCLK1+/MGTCLK1-.
 -  If using SD5 to SD8, reference clock must be connected to P3.C1/P3.D1 (of the interposer) labeled usually MGTCLK2+/MGTCLK2-.
--  The carriers usually assign adjacent quad GBTs to the SD1 to SD8 signals, so either MGTCLK1 or MGTCLK2 should work. However, to be safe, unless there are more than 4 lanes it is better if the same quad reference clock is connected to the FPGA.
+-  The carriers usually assign adjacent quad GBTs to the SD1 to SD8 signals, so
+   either MGTCLK1 or MGTCLK2 should work. However, to be safe, unless there are
+   more than 4 lanes it is better if the same quad reference clock is connected
+   to the FPGA.
 
 Details
 ^^^^^^^
@@ -369,7 +377,11 @@ Exceptions (LPC and HPC)
 Summary
 ^^^^^^^
 
--  The following LPC and HPC signals provide FPGA connectivity, but are NOT recommended. Note that it is possible to use these pins in some cases, most likely they are on different but adjacent bank with others. However there are carriers (such as VC707) where this is not the case. If the banks are not adjacent, the skew may be different and the interface may not work properly.
+-  The following LPC and HPC signals provide FPGA connectivity, but are NOT
+   recommended. Note that it is possible to use these pins in some cases, most
+   likely they are on different but adjacent bank with others. However there are
+   carriers (such as VC707) where this is not the case. If the banks are not
+   adjacent, the skew may be different and the interface may not work properly.
 
 Details
 ^^^^^^^

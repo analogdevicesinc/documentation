@@ -1,11 +1,17 @@
 CrossCore Embedded Studio Quickstart User Guide
 ===============================================
 
-This page describes how to use the ADuCM302x Device Family Pack (DFP) with CrossCore Embedded Studio (CCES) to create, import, build and debug applications for the ADuCM302x processor. The ADuCM302x processor integrates an ARM Cortex-M3 microcontroller with various on-chip peripherals within a single package.
+This page describes how to use the ADuCM302x Device Family Pack (DFP) with
+CrossCore Embedded Studio (CCES) to create, import, build and debug applications
+for the ADuCM302x processor. The ADuCM302x processor integrates an ARM Cortex-M3
+microcontroller with various on-chip peripherals within a single package.
 
-This page describes how to install and work with the Analog Devices ADuCM302x DFP to start developing applications for the EVAL-ADICUP3029. This page also highlights common problems and how to avoid them.
+This page describes how to install and work with the Analog Devices ADuCM302x
+DFP to start developing applications for the EVAL-ADICUP3029. This page also
+highlights common problems and how to avoid them.
 
-Additional help documentation can be found by opening CCES and selecting "Help Contents" from the CCES Help menu.
+Additional help documentation can be found by opening CCES and selecting "Help
+Contents" from the CCES Help menu.
 
 This page covers:
 
@@ -26,22 +32,29 @@ This page covers:
 
    We have a playlist of YOUTUBE VIDEOS that can help you understand different functions and features of CrossCore Embedded Studio. `CrossCore Embedded Studio Videos <https://www.youtube.com/playlist?list=PLiwaj4qabLWycR06TNf8eqSwX7qkDbSu_>`_
 
-
 Workspace and Projects
 ----------------------
 
-A CCES workspace is a folder (e.g. c:\\Users\\anon\\cces\\2.6.0) that contains project resources and metadata. When projects are created or imported, details about that project are stored in the workspace. The workspace metadata also includes preferences set through the CCES Preferences dialog box and IDE window layouts. By default, CCES creates new projects within your workspace folder.
+A CCES workspace is a folder (e.g. c:\\Users\\anon\\cces\\2.6.0) that contains
+project resources and metadata. When projects are created or imported, details
+about that project are stored in the workspace. The workspace metadata also
+includes preferences set through the CCES Preferences dialog box and IDE window
+layouts. By default, CCES creates new projects within your workspace folder.
 
-Each time you start CCES, you will be prompted for a workspace location. You can opt to default to a workspace directory by choosing to use a workspace directory as your default. You will not be prompted the next time you open CCES.
+Each time you start CCES, you will be prompted for a workspace location. You can
+opt to default to a workspace directory by choosing to use a workspace directory
+as your default. You will not be prompted the next time you open CCES.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-workspace.png
    :align: center
-   :width: 500px
+   :width: 500
 
 How to install or upgrade Packs for CCES
 ----------------------------------------
 
-CCES 2.6.0 does not comes with the Analog Device specific packs or the ARM CMSIS Pack file pre-installed. The following Packs are required to use the EVAL-ADICUP3029 along with the hardware examples and wireless connectivity
+CCES 2.6.0 does not comes with the Analog Device specific packs or the ARM CMSIS
+Pack file pre-installed. The following Packs are required to use the
+EVAL-ADICUP3029 along with the hardware examples and wireless connectivity
 
 -  ADuCM302x Device Family Pack (DFP)
 -  ARM CMSIS Pack
@@ -62,11 +75,15 @@ ADuCM302x Device Family Pack (DFP)
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-cmsis-pack-aducm302x-dfp-200.png
    :align: center
 
-Alternatively, the ADuCM3029 Device Family Pack (DFP) files can be installed using a local download.
+Alternatively, the ADuCM3029 Device Family Pack (DFP) files can be installed
+using a local download.
 
 After downloading the .pack files from the Keil website (https://www.keil.com/dd2/pack/), select the Import Packs button in the CMSIS Pack Manager's Packs View, choose the .pack file as shown in the screenshot below, and click Open.
 
-You will be prompted to accept a license agreement and, after agreeing to it, the CMSIS-Pack file will be installed into CrossCore Embedded Studio's CMSIS-Pack installation directory (e.g. C:\\Analog Devices\\CrossCore Embedded Studio 2.6.0\\ARM\\packs\\AnalogDevices).
+You will be prompted to accept a license agreement and, after agreeing to it,
+the CMSIS-Pack file will be installed into CrossCore Embedded Studio's
+CMSIS-Pack installation directory (e.g. C:\\Analog Devices\\CrossCore Embedded
+Studio 2.6.0\\ARM\\packs\\AnalogDevices).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-cmsis-pack-import-200.png
    :align: center
@@ -87,7 +104,8 @@ ARM CMSIS Pack
 How to create a new project for the ADuCM3029
 ---------------------------------------------
 
-A project for ADuCM3029 can be created using the New CrossCore Project Wizard. This wizard will guide you through the steps to create a new project.
+A project for ADuCM3029 can be created using the New CrossCore Project Wizard.
+This wizard will guide you through the steps to create a new project.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/analogtv>5588125388001
    :alt: analogTV>5588125388001
@@ -110,11 +128,19 @@ A project for ADuCM3029 can be created using the New CrossCore Project Wizard. T
 How to add startup code and core components to a new project for the ADuCM3029
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An out-of-the-box ADuCM3029 project does not have startup code or a linker description file that maps code and data. It is necessary to add these components using the Run-time Environment (RTE) Configuration Editor.
+An out-of-the-box ADuCM3029 project does not have startup code or a linker
+description file that maps code and data. It is necessary to add these
+components using the Run-time Environment (RTE) Configuration Editor.
 
-CrossCore Projects created for Analog Devices' Cortex-M based processors, such as ADuCM3029 include a system.rteconfig file. Opening this file within the IDE will open the RTE Configuration Editor. Components from the CMSIS-Pack, such as drivers and services, can be added to a project by selecting them in the editor and clicking Save.
+CrossCore Projects created for Analog Devices' Cortex-M based processors, such
+as ADuCM3029 include a system.rteconfig file. Opening this file within the IDE
+will open the RTE Configuration Editor. Components from the CMSIS-Pack, such as
+drivers and services, can be added to a project by selecting them in the editor
+and clicking Save.
 
-At minimum, a new ADuCM3029 project will require the Device::Startup, CMSIS::Core and Device::Global Configuration components to be added to the project.
+At minimum, a new ADuCM3029 project will require the Device::Startup,
+CMSIS::Core and Device::Global Configuration components to be added to the
+project.
 
 -  Double-click on the system.rteconfig to open the RTE Configuration Editor.
 -  Select Device::Startup, CMSIS::Core and Device::Global Configuration.
@@ -131,7 +157,8 @@ There are three(3) methods for importing existing projects:
 
 -  Examples that you have saved to a local drive on your PC.
 -  Examples that come with the Analog Devices Pack.
--  Examples which are in the ADICUP3029 GIT repository (most up to date content).
+-  Examples which are in the ADICUP3029 GIT repository (most up to date
+   content).
 
 How to Import Existing Projects Saved to a Local Drive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,7 +190,8 @@ Opening Examples using the CCES Example Browser
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Launch the CCES Example Broswer by clicking on *Help --> Browse Examples*
--  Select ADuCM302x_DFP[x.y.z] in Product drop-down list, select the example and click Open example. Then the example will be copied to your workspace.
+-  Select ADuCM302x_DFP[x.y.z] in Product drop-down list, select the example and
+   click Open example. Then the example will be copied to your workspace.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/analogtv>5588123788001
    :alt: analogTV>5588123788001
@@ -171,10 +199,13 @@ Opening Examples using the CCES Example Browser
 How to Import Existing Projects from the GIT Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-( Note that at the time of writing, the EVAL-ADICUP3029 GIT repo. is work In Progress )
+( Note that at the time of writing, the EVAL-ADICUP3029 GIT repo. is work In
+Progress )
 
 -  Open the GIT perspective by clicking "Open Perspective" icon on tool bar and selecting "Git" in the Open Perspective window (or choose the GIT perspective if already open).
--  Clone the Git repository which contains all the latest code and projects associated with the ADuCM360. Populate the URI field with the following address.
+-  Clone the Git repository which contains all the latest code and projects
+   associated with the ADuCM360. Populate the URI field with the following
+   address.
 
    -   **URI:** - `EVAL-ADICUP3029 <https://github.com/analogdevicesinc/EVAL-ADICUP3029>`_
    -  Click *Next*, *Next* and then *Finish*. There may be a pause while the branches are fetched.
@@ -210,7 +241,8 @@ Enabling/Disabling Semihosting
 
    -  Enable semi-hosting by selecting the **rdimon.specs** option.
 
-      -  Use this option if using the debugger for things like printf() or other similar tools.
+      -  Use this option if using the debugger for things like printf() or other
+         similar tools.
 
    -  Disable semi-hosting by selecting the **nosys.specs** or **None** options.
 
@@ -282,7 +314,9 @@ How to start and stop debugging an ADuCM3029 application
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-perspective.png
    :align: center
 
--  If your binary (program) was built with semi-hosting enabled, then CCES will warn you that you need to re-build the program when you want to run the program without a debugger attached.
+-  If your binary (program) was built with semi-hosting enabled, then CCES will
+   warn you that you need to re-build the program when you want to run the
+   program without a debugger attached.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png
    :align: center
@@ -293,7 +327,8 @@ How to start and stop debugging an ADuCM3029 application
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-openocd-firewall.png
    :align: center
 
--  If everything goes fine, in the Console window, you will see a report without errors.
+-  If everything goes fine, in the Console window, you will see a report without
+   errors.
 
    -  As a reference, the full text should be similar to:``Open On-Chip Debugger (OpenOCD) 0.9.0
       Licensed under GNU GPL v2
@@ -315,7 +350,10 @@ How to start and stop debugging an ADuCM3029 application
       adapter speed: 1000 kHz
       Info : accepting 'gdb' connection on tcp/3333``
 
--  Your program's execution is stopped automatically at the first breakpoint which is at the beginning of main() loop. You can use the debug functions and features of the CCES environment. (Such as stepping through, breakpoints, register reads, variable values, etc.)
+-  Your program's execution is stopped automatically at the first breakpoint
+   which is at the beginning of main() loop. You can use the debug functions and
+   features of the CCES environment. (Such as stepping through, breakpoints,
+   register reads, variable values, etc.)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debugging.png
    :align: center

@@ -22,6 +22,5 @@ Circuit Overview
 
    \ |ADHV4702-1 Schematic|\ *Figure 1. ADHV4702-1 DGND and SD pin modification circuit using external discrete parts*
 
-
 .. |ADHV4702-1 Schematic| image:: https://wiki.analog.com/_media/resources/technical-guides/adhv4702-1_dgnd_modification.png
-   :width: 800px
+   :width: 800

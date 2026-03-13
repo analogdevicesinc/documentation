@@ -9,49 +9,63 @@ LEDs
 There are eight LEDs located on the SDP-B board (see Figure HWD1).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-h1/sdp-h1leds.png
-   :width: 200px
+   :width: 200
 
 Figure HWD1 : LEDs
 
 FMC_PWR_GD LED
 ~~~~~~~~~~~~~~
 
-This green LED indicates that the three power supplies supplying power to the FMC connector (12P0V, 3P3V and VADJ) are turned on.
+This green LED indicates that the three power supplies supplying power to the
+FMC connector (12P0V, 3P3V and VADJ) are turned on.
 
 BF_PWR LED
 ~~~~~~~~~~
 
-This green LED indicates that the SDP-H1 Blackfin processor is powered. This is not an indication of USB connectivity between the SDP-H1 and the PC.
+This green LED indicates that the SDP-H1 Blackfin processor is powered. This is
+not an indication of USB connectivity between the SDP-H1 and the PC.
 
 FPGA_DONE LED
 ~~~~~~~~~~~~~
 
-This green LED indicates whether or not the FPGA has been configured. When it is turned off the FPGA is unconfigured. When it is turned on the FPGA is configured. During repeated FPGA configuring, the LED will momentarily turn off until the configuration process has completed.
+This green LED indicates whether or not the FPGA has been configured. When it is
+turned off the FPGA is unconfigured. When it is turned on the FPGA is
+configured. During repeated FPGA configuring, the LED will momentarily turn off
+until the configuration process has completed.
 
 LED0, LED1 and LED2 LEDs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-These red (LED0), orange (LED1) and green (LED2) LEDs are connected to the FPGA and can be used by the user for whatever purpose they see fit.
+These red (LED0), orange (LED1) and green (LED2) LEDs are connected to the FPGA
+and can be used by the user for whatever purpose they see fit.
 
 STATUS LED
 ~~~~~~~~~~
 
-The orange status LED is an LED used as a diagnostic tool for evaluation application developers. When there are two or more identical SDP controller board and daughter board combin-ations connected to the PC simultaneously, the status LED flashes during the connect routine to help the user identify which board they will communicate with.
+The orange status LED is an LED used as a diagnostic tool for evaluation
+application developers. When there are two or more identical SDP controller
+board and daughter board combin-ations connected to the PC simultaneously, the
+status LED flashes during the connect routine to help the user identify which
+board they will communicate with.
 
 SYS_POWER LED
 ~~~~~~~~~~~~~
 
-This green LED indicates that the power supplies supplying power to the FPGA, DDR2, SRAM and Blackfin are turned on.
+This green LED indicates that the power supplies supplying power to the FPGA,
+DDR2, SRAM and Blackfin are turned on.
 
 Connector Details
 -----------------
 
-The SDP-H1 board has a 120-pin SDP connector and a Low Pin Count (LPC) female FMC connector.
+The SDP-H1 board has a 120-pin SDP connector and a Low Pin Count (LPC) female
+FMC connector.
 
 Connector A - 120 Pin Connector
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Through this Hirose FX8-120P-SV1(91), 120 pin header, connector, the peripheral communication interfaces of ADSP-BF527 Blackfin processor are exposed. The exposed peripherals are:
+Through this Hirose FX8-120P-SV1(91), 120 pin header, connector, the peripheral
+communication interfaces of ADSP-BF527 Blackfin processor are exposed. The
+exposed peripherals are:
 
 -  SPI
 -  SPORT
@@ -62,14 +76,18 @@ Through this Hirose FX8-120P-SV1(91), 120 pin header, connector, the peripheral 
 -  UART
 -  Timers
 
-Also, included on the connector specification are input and output power pins, ground pins, and pins reserved for future use.
+Also, included on the connector specification are input and output power pins,
+ground pins, and pins reserved for future use.
 
 For further details on the peripheral interfaces, including timing diagrams, see the :adi:`ADSP-BF52x Blackfin Processor Hardware Reference <en/embedded-processing-dsp/blackfin/processors/manuals/resources/index.html>`
 
 Connector Pin Assignments
 -------------------------
 
-The connector pin assignments for the Connector A has been defined independently of the any internal pin sharing that occurs on the Blackfin processor. The below table lists the connector pins and identifies the functionality assigned to each connector pin for Connector A.
+The connector pin assignments for the Connector A has been defined independently
+of the any internal pin sharing that occurs on the Blackfin processor. The below
+table lists the connector pins and identifies the functionality assigned to each
+connector pin for Connector A.
 
 120 Pin Connector Pin Assignments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -320,7 +338,9 @@ The connector pin assignments for the Connector A has been defined independently
 
 :sup:`1` Functionality not implemented on the SDP board :sup:`2` Shared across both connectors.
 
-Each interface provided by the SDP-B is available on unique pins of the SDP-B’s 120 pin connector. The connector pin numbering scheme is out-line in Figure HWD2.
+Each interface provided by the SDP-B is available on unique pins of the SDP-B’s
+120 pin connector. The connector pin numbering scheme is out-line in Figure
+HWD2.
 
 |image1| Figure HWD2 : Connector A, 120 Pin connector outline
 
@@ -658,7 +678,14 @@ FMC Connector Pin Assigments
 POWER
 -----
 
-The SDP-H1 must be powered using the enclosed 12V 30W wall-wart power supply. This 12V supply is converted, using on-board DC/DC switching regulators, to power all on-board systems as well as supply power to any daughterboard connected to the FMC connector. The table below outlines the voltage and currents available to daughterboards connected to the FMC connector (as required by the VITA 57 specification). Please note that the maximum allowed power budget for the daughterboard is 10W (for further information see the VITA 57 specification).
+The SDP-H1 must be powered using the enclosed 12V 30W wall-wart power supply.
+This 12V supply is converted, using on-board DC/DC switching regulators, to
+power all on-board systems as well as supply power to any daughterboard
+connected to the FMC connector. The table below outlines the voltage and
+currents available to daughterboards connected to the FMC connector (as required
+by the VITA 57 specification). Please note that the maximum allowed power budget
+for the daughterboard is 10W (for further information see the VITA 57
+specification).
 
 ============== ============= ============== =========== =========
 Voltage Supply Voltage Range Number of Pins Max Current Tolerance
@@ -669,27 +696,36 @@ VADJ           1.2-3.3V      2              2 A         +/- 5%
 12P0V          12V           2              1 A         +/- 5%
 ============== ============= ============== =========== =========
 
-The SDP-H1 board also provides 3.3V at 20mA on Pin 116 (VIO_3.3) to connected daughter boards as the VIO voltage for the daughter board. Pin 5 (USB_VBUS) is connected to an internal 5V power supply, providing 5V ±10% as an output of the SDP board.
+The SDP-H1 board also provides 3.3V at 20mA on Pin 116 (VIO_3.3) to connected
+daughter boards as the VIO voltage for the daughter board. Pin 5 (USB_VBUS) is
+connected to an internal 5V power supply, providing 5V ±10% as an output of the
+SDP board.
 
 MECHANICAL SPECIFICATIONS
 -------------------------
 
-The mechanical specifications of the SDP-H1 board are 4.33" × 4.17" (110 mm × 106 mm). The height of the 120-pin connect-ors from the bottom of the board is approximately 0.152" (3.86 mm). The height of the FMC-LPC connector from the top of the board is approximately 0.258” (6.55 mm). The tallest component on the top is the DC power input connector at approximately 0.433" (11 mm) and the tallest component on the bottom is the inductor L9 at approximately 0.157" (4 mm) (The rubber feet on the bottom of the board are 0.311” (7.9mm) tall).
+The mechanical specifications of the SDP-H1 board are 4.33" × 4.17" (110 mm ×
+106 mm). The height of the 120-pin connect-ors from the bottom of the board is
+approximately 0.152" (3.86 mm). The height of the FMC-LPC connector from the top
+of the board is approximately 0.258” (6.55 mm). The tallest component on the top
+is the DC power input connector at approximately 0.433" (11 mm) and the tallest
+component on the bottom is the inductor L9 at approximately 0.157" (4 mm) (The
+rubber feet on the bottom of the board are 0.311” (7.9mm) tall).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-h1/sdp-h1dimension.png
-   :width: 200px
+   :width: 200
 
 Figure HWD2 : SDP-H1 Dimensions
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-h1/sdp-h1height.png
-   :width: 200px
+   :width: 200
 
 Figure HWD3 : SDP-H1 Vertical height
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-h1/sdp-hunderneath.png
-   :width: 200px
+   :width: 200
 
 Figure HWD4 : SDP-H1 Bottom of SDP-H1
 
 .. |image1| image:: https://wiki.analog.com/_media/eval/sdp/fig2-2.jpg
-   :width: 200px
+   :width: 200

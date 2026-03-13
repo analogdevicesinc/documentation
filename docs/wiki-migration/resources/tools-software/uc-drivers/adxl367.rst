@@ -30,7 +30,7 @@ Applications
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/eval-adxl367-sdp-angle-web.gif
    :align: center
-   :width: 400px
+   :width: 400
 
 ADI No-OS
 ---------
@@ -55,8 +55,9 @@ The source code for ADXL367 driver can be found here:
    -   :git-no-OS:`Implementation of ADXL367 Driver <drivers/accel/adxl367/adxl367.c>`
    
 
-
-The driver also uses the ADI util, delay and print_log libraries, so make sure you also add the necessary files in your project. The source code for the libraries can be found here:
+The driver also uses the ADI util, delay and print_log libraries, so make sure
+you also add the necessary files in your project. The source code for the
+libraries can be found here:
 
 .. admonition:: Download
    :class: download
@@ -69,8 +70,10 @@ The driver also uses the ADI util, delay and print_log libraries, so make sure y
    -  :git-no-OS:`Header of ADI print_log library <util/no_os_print_log.h>`
    
 
-
-In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the ADXL367 driver and have to be implemented:
+In order to be able to use this driver you will have to provide the specific
+implementation for the communication APIs and the specific types they use. If
+the SPI communication is chosen, there are three functions which are called by
+the ADXL367 driver and have to be implemented:
 
 -  no_os_spi_init() – initializes the communication peripheral.
 -  no_os_spi_write_and_read() – writes and reads data to/from the device.
@@ -79,9 +82,11 @@ In order to be able to use this driver you will have to provide the specific imp
 And there are two data types that have to be defined:
 
 -  no_os_spi_desc - structure holding the SPI descriptor
--  no_os_spi_init_param - structure holding the parameters for SPI initialization
+-  no_os_spi_init_param - structure holding the parameters for SPI
+   initialization
 
-If the I2C communication is chosen, there are four functions which are called by the ADXL367 driver:
+If the I2C communication is chosen, there are four functions which are called by
+the ADXL367 driver:
 
 -  i2c_init() – initializes the communication peripheral.
 -  i2c_write() – writes data to the device.
@@ -91,9 +96,12 @@ If the I2C communication is chosen, there are four functions which are called by
 And there are two data types that have to be defined:
 
 -  no_os_i2c_desc - structure holding the I2C descriptor
--  no_os_i2c_init_param - structure holding the parameters for I2C initialization
+-  no_os_i2c_init_param - structure holding the parameters for I2C
+   initialization
 
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using can be
+found below:
 
 .. admonition:: Download
    :class: download
@@ -103,11 +111,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
 
-
 ADXL367 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available below:
 
 -  `ADXL367 Header file <http://analogdevicesinc.github.io/no-OS/adxl367_8h.html>`_
 -  `ADXL367 Source file <http://analogdevicesinc.github.io/no-OS/adxl367_8c.html>`_
@@ -158,7 +166,8 @@ The following events can be mapped to the interrupt pins:
 -  FIFO READY interrupt - it is set if there is at least one sample available in the FIFO output buffer.
 -  ACTIVITY interrupt - it is set when the measured acceleration on any axis is above the set threshold, using **adxl367_setup_activity_detection** API. A read of the status register clears the interrupt, but this interrupt is triggered again at the end of the next measurement if the activity conditions are still satisfied.
 -  INACTIVITY interrupt - it is set when the measured acceleration on any axis is below the set threshold, using **adxl367_setup_inactivity_detection** API. A read of the status register clears the interrupt, but this interrupt is triggered again at the end of the next measurement if the inactivity conditions are still satisfied.
--  AWAKE interrupt - it is set if the accelerometer is in an active state (AWAKE = 1)
+-  AWAKE interrupt - it is set if the accelerometer is in an active state (AWAKE
+   = 1)
 
 ADXL367 Device Measurements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -169,7 +178,8 @@ Operation Mode Setting
 After the specific configuration was performed as mentioned above, you can set the device in the desired measurement mode, using **adxl367_set_power_mode** API. The available operation modes for measurement are as follows:
 
 -  ADXL367_OP_MEASURE - measurement mode
--  ADXL367_OP_STANDBY - stand-by mode, mode in which the configuration of the device should be done
+-  ADXL367_OP_STANDBY - stand-by mode, mode in which the configuration of the
+   device should be done
 
 Temperature Data
 ~~~~~~~~~~~~~~~~
@@ -251,7 +261,8 @@ ADI IIO No-OS
 ADXL367 IIO No-OS driver
 ------------------------
 
-The ADXL367 IIO driver comes on top of ADXL367 driver and offers support for interfacing IIO clients through IIO lib.
+The ADXL367 IIO driver comes on top of ADXL367 driver and offers support for
+interfacing IIO clients through IIO lib.
 
 ADXL367 IIO Device Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -264,7 +275,8 @@ ADXL367 IIO device does not have any device specific attributes.
 Device Channels
 ~~~~~~~~~~~~~~~
 
-ADXL367 IIO device has 0 input channels and 4 output channels: 3 acceleration channels and 1 temperature channel.
+ADXL367 IIO device has 0 input channels and 4 output channels: 3 acceleration
+channels and 1 temperature channel.
 
 Acceleration channels
 ^^^^^^^^^^^^^^^^^^^^^
@@ -275,7 +287,9 @@ The acceleration channels are:
 -  Channel 1: Y axis
 -  Channel 2: Z axis
 
-Each acceleration channel has 6 attributes. 4 of these attributes are shared in value with the other acceleration channels and 2 of these attributes can have different values for each channel.
+Each acceleration channel has 6 attributes. 4 of these attributes are shared in
+value with the other acceleration channels and 2 of these attributes can have
+different values for each channel.
 
 The attributes are:
 
@@ -284,7 +298,8 @@ The attributes are:
 -  sampling_frequency (shared) - is the sampling frequency for acceleration data. This value is common for all three acceleration channels and for temperature, too.
 -  sampling_frequency_available (shared) - is the list of available sampling frequency values. This list is common for all three acceleration channels.
 -  scale (shared) - is the scale that has to be applied to the raw value in order to obtain the converted real value in m/s^2.
--  scale_available (shared) - lists the available scale options (in this way device's range can be modified)
+-  scale_available (shared) - lists the available scale options (in this way
+   device's range can be modified)
 
 ::
 
@@ -301,7 +316,8 @@ The channel has 3 attributes, as follows:
 
 -  offset - is the offset that has to be applied to the raw value in order to obtain the converted real value in degrees Celsius.
 -  raw - is the raw temperature value read from the device.
--  scale - is the scale that has to be applied to the raw value in order to obtain the converted real value in degrees Celsius.
+-  scale - is the scale that has to be applied to the raw value in order to
+   obtain the converted real value in degrees Celsius.
 
 ::
 
@@ -310,7 +326,8 @@ The channel has 3 attributes, as follows:
 Device buffers
 ~~~~~~~~~~~~~~
 
-The ADXL367 IIO devices driver supports the usage of a data buffer for reading purposes.
+The ADXL367 IIO devices driver supports the usage of a data buffer for reading
+purposes.
 
 ADXL367 IIO Driver Initialization Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

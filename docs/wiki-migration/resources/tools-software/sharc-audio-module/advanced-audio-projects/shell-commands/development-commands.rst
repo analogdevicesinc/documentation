@@ -1,7 +1,10 @@
 Development and Debug Commands
 ==============================
 
-The purpose of these commands is to help users or developers of the Audio Starter debug system level issues, issues with hardware connections, etc. This section describes each of the development and debug related shell commands in detail.
+The purpose of these commands is to help users or developers of the Audio
+Starter debug system level issues, issues with hardware connections, etc. This
+section describes each of the development and debug related shell commands in
+detail.
 
 --------------
 
@@ -35,7 +38,6 @@ Live File Editing (edit)
 |                   | |image12|                                                                                                                                                                                                                                                                                                                                               |
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Example Shell Command (test)
 ----------------------------
 
@@ -59,7 +61,6 @@ Example Shell Command (test)
 |                   | |image22|                                                                                                                                                                                                                                                                                                                    |
 +-------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Automated On-Target Command Execution (run)
 -------------------------------------------
 
@@ -73,7 +74,6 @@ Automated On-Target Command Execution (run)
    -  EV-SC594-SOM - TBD
    -  EV-SC598-SOM - TBD
    
-
 
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Description**   | This command executes a series of shell commands that are stored in a *.cmd* that lives in one of the available file-systems on the Audio Starter. This can be useful for quickly and automatically running a series of commands in a sequence, especially as the state of the Audio Starter is not persistent across a power-cycle.                                            |
@@ -101,7 +101,6 @@ Automated On-Target Command Execution (run)
 |                   | This will run *file1.cmd* and *file2.cmd* 10 times.                                                                                                                                                                                                                                                                                                                             |
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Internal Flash Hex Dump (dump)
 ------------------------------
 
@@ -123,7 +122,6 @@ Internal Flash Hex Dump (dump)
 |                   | This will dump 6 bytes starting from address 0xA.                                                                              |
 |                   | |image30|                                                                                                                      |
 +-------------------+--------------------------------------------------------------------------------------------------------------------------------+
-
 
 File-System File Hex Dump (fdump)
 ---------------------------------
@@ -148,7 +146,6 @@ File-System File Hex Dump (fdump)
 |                   | |image34|                                                                                                                                                                                                                                                                                                        |
 +-------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 System Delay (delay)
 --------------------
 
@@ -167,7 +164,6 @@ System Delay (delay)
 |                   | An example of a delay in a *.cmd* which routes the ADC Input to a wave file for recording, turns on a wave sink, delays for 10 seconds to finish the recording, then turns the recording off. |
 |                   | |image38|                                                                                                                                                                                     |
 +-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Execute Raw I2C Transfer (i2c)
 ------------------------------
@@ -228,7 +224,6 @@ Execute Raw I2C Transfer (i2c)
 |                   | |image64|                                                                                                                                                                                                                                                                                                                                                                                         |
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Check for Active I2C Devices (i2c_probe)
 ----------------------------------------
 
@@ -248,7 +243,6 @@ Check for Active I2C Devices (i2c_probe)
 |                   | |image68|                                                                                                                                                                                                                              |
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Stack Usage (stacks)
 --------------------
 
@@ -267,7 +261,6 @@ Stack Usage (stacks)
 | **Example Usage** | *stacks*                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |                   | |image72|                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 CPU System Utilization (cpu)
 ----------------------------
@@ -289,7 +282,6 @@ CPU System Utilization (cpu)
 |                   | |image76|                                                                                                                                                                                                                                                                                                                                                                                            |
 +-------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 System Logging Report (syslog)
 ------------------------------
 
@@ -307,7 +299,6 @@ System Logging Report (syslog)
 | **Example Usage** | *syslog*                                                                                                                                                                                                                                                                                                                           |
 |                   | |image80|                                                                                                                                                                                                                                                                                                                          |
 +-------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 USB Audio Statistics (usb)
 --------------------------
@@ -336,7 +327,6 @@ USB Audio Statistics (usb)
 |                   | This sets the domain of the USB in (Tx) to be on the A2B Domain.                                                                                                                                                                                                    |
 |                   | |image88|                                                                                                                                                                                                                                                           |
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Dynamic Memory Allocation Usage (meminfo)
 -----------------------------------------
@@ -376,7 +366,6 @@ Dynamic Memory Allocation Usage (meminfo)
 |                   | |image92|                                                                                                                                                                                                                                                                                                                                     |
 +-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Software Reflash (update)
 -------------------------
 
@@ -398,7 +387,6 @@ Software Reflash (update)
 |                   | |image101|                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |                   | |image102|                                                                                                                                                                                                                                                                                                                                                                                                                      |
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Shell Screen Resize (resize)
 ----------------------------
@@ -423,7 +411,6 @@ Shell Screen Resize (resize)
 |                   | |image108|                                                                                                                                                                                                                                                                                                                          |
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Shell Output Redirect (shell)
 -----------------------------
 
@@ -437,7 +424,6 @@ Shell Output Redirect (shell)
    -  EV-SC594-SOM - TBD
    -  EV-SC598-SOM - TBD
    
-
 
 +-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Description**   | This command provides the ability to redirect print statements from the system and shell commands to something other than standard output, i.e. to the system log or to a specified output file.                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -470,7 +456,6 @@ Shell Output Redirect (shell)
 |                   | |image118|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 +-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Argument Echo (echo)
 --------------------
 
@@ -484,7 +469,6 @@ Argument Echo (echo)
    -  EV-SC594-SOM - TBD
    -  EV-SC598-SOM - TBD
    
-
 
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Description**   | This command provides the ability to echo a string back to the system output. This can be useful for debugging and scripting of the shell command file (*.cmd*). See the *run* command for more details. |
@@ -504,248 +488,247 @@ Argument Echo (echo)
 |                   | |image122|                                                                                                                                                                                               |
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/edit_help.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit1.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit3.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit4.jpg
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit5.jpg
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/edit_help.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit1.jpg
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit.jpg
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit3.jpg
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit4.jpg
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit5.jpg
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test.jpg
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test1.jpg
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test3.jpg
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/test_help.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test4.jpg
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test.jpg
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test1.jpg
-   :width: 400px
+   :width: 400
 .. |image20| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test3.jpg
-   :width: 400px
+   :width: 400
 .. |image21| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/test_help.png
-   :width: 400px
+   :width: 400
 .. |image22| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test4.jpg
-   :width: 400px
+   :width: 400
 .. |image23| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/help_run.jpg
-   :width: 400px
+   :width: 400
 .. |image24| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/run.png
-   :width: 400px
+   :width: 400
 .. |image25| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/help_run.jpg
-   :width: 400px
+   :width: 400
 .. |image26| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/run.png
-   :width: 400px
+   :width: 400
 .. |image27| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/dump.jpg
-   :width: 400px
+   :width: 400
 .. |image28| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/dump.png
-   :width: 400px
+   :width: 400
 .. |image29| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/dump.jpg
-   :width: 400px
+   :width: 400
 .. |image30| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/dump.png
-   :width: 400px
+   :width: 400
 .. |image31| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/fdump_help.png
-   :width: 400px
+   :width: 400
 .. |image32| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/fdump.png
-   :width: 400px
+   :width: 400
 .. |image33| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/fdump_help.png
-   :width: 400px
+   :width: 400
 .. |image34| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/fdump.png
-   :width: 400px
+   :width: 400
 .. |image35| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/delay_help.png
-   :width: 400px
+   :width: 400
 .. |image36| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/delay.jpg
-   :width: 400px
+   :width: 400
 .. |image37| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/delay_help.png
-   :width: 400px
+   :width: 400
 .. |image38| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/delay.jpg
-   :width: 400px
+   :width: 400
 .. |image39| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/restartexample.jpg
-   :width: 400px
+   :width: 400
 .. |image40| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_single_8bit.jpg
-   :width: 400px
+   :width: 400
 .. |image41| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_single_16bit.jpg
-   :width: 400px
+   :width: 400
 .. |image42| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_burst_8bit.jpg
-   :width: 400px
+   :width: 400
 .. |image43| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_burst_16bit.jpg
-   :width: 400px
+   :width: 400
 .. |image44| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_single_8bit.jpg
-   :width: 400px
+   :width: 400
 .. |image45| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_single_16bit.jpg
-   :width: 400px
+   :width: 400
 .. |image46| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_burst_8bit.jpg
-   :width: 400px
+   :width: 400
 .. |image47| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_burst_16bit.jpg
-   :width: 400px
+   :width: 400
 .. |image48| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_help.jpg
-   :width: 400px
+   :width: 400
 .. |image49| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_readexample.jpg
-   :width: 400px
+   :width: 400
 .. |image50| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_readexample1.jpg
-   :width: 400px
+   :width: 400
 .. |image51| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_writeexample.jpg
-   :width: 400px
+   :width: 400
 .. |image52| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/restartexample.jpg
-   :width: 400px
+   :width: 400
 .. |image53| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_single_8bit.jpg
-   :width: 400px
+   :width: 400
 .. |image54| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_single_16bit.jpg
-   :width: 400px
+   :width: 400
 .. |image55| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_burst_8bit.jpg
-   :width: 400px
+   :width: 400
 .. |image56| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_burst_16bit.jpg
-   :width: 400px
+   :width: 400
 .. |image57| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_single_8bit.jpg
-   :width: 400px
+   :width: 400
 .. |image58| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_single_16bit.jpg
-   :width: 400px
+   :width: 400
 .. |image59| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_burst_8bit.jpg
-   :width: 400px
+   :width: 400
 .. |image60| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_burst_16bit.jpg
-   :width: 400px
+   :width: 400
 .. |image61| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_help.jpg
-   :width: 400px
+   :width: 400
 .. |image62| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_readexample.jpg
-   :width: 400px
+   :width: 400
 .. |image63| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_readexample1.jpg
-   :width: 400px
+   :width: 400
 .. |image64| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_writeexample.jpg
-   :width: 400px
+   :width: 400
 .. |image65| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/i2c_probe_help.png
-   :width: 400px
+   :width: 400
 .. |image66| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/i2c_probe.png
-   :width: 400px
+   :width: 400
 .. |image67| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/i2c_probe_help.png
-   :width: 400px
+   :width: 400
 .. |image68| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/i2c_probe.png
-   :width: 400px
+   :width: 400
 .. |image69| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/stacks_help.png
-   :width: 400px
+   :width: 400
 .. |image70| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/stacks.png
-   :width: 400px
+   :width: 400
 .. |image71| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/stacks_help.png
-   :width: 400px
+   :width: 400
 .. |image72| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/stacks.png
-   :width: 400px
+   :width: 400
 .. |image73| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/cpu_help.png
-   :width: 400px
+   :width: 400
 .. |image74| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/cpu.png
-   :width: 400px
+   :width: 400
 .. |image75| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/cpu_help.png
-   :width: 400px
+   :width: 400
 .. |image76| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/cpu.png
-   :width: 400px
+   :width: 400
 .. |image77| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/syslog_help.png
-   :width: 400px
+   :width: 400
 .. |image78| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/syslog.png
-   :width: 400px
+   :width: 400
 .. |image79| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/syslog_help.png
-   :width: 400px
+   :width: 400
 .. |image80| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/syslog.png
-   :width: 400px
+   :width: 400
 .. |image81| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/usb_help.png
-   :width: 400px
+   :width: 400
 .. |image82| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/usb.png
-   :width: 400px
+   :width: 400
 .. |image83| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/usbreset.jpg
-   :width: 400px
+   :width: 400
 .. |image84| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/usba2b.jpg
-   :width: 400px
+   :width: 400
 .. |image85| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/usb_help.png
-   :width: 400px
+   :width: 400
 .. |image86| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/usb.png
-   :width: 400px
+   :width: 400
 .. |image87| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/usbreset.jpg
-   :width: 400px
+   :width: 400
 .. |image88| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/usba2b.jpg
-   :width: 400px
+   :width: 400
 .. |image89| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/meminfo_help.png
-   :width: 400px
+   :width: 400
 .. |image90| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/meminfo.png
-   :width: 400px
+   :width: 400
 .. |image91| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/meminfo_help.png
-   :width: 400px
+   :width: 400
 .. |image92| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/meminfo.png
-   :width: 400px
+   :width: 400
 .. |image93| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/update_help.png
-   :width: 400px
+   :width: 400
 .. |image94| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/update.png
-   :width: 400px
+   :width: 400
 .. |image95| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/receive2.jpg
-   :width: 400px
+   :width: 400
 .. |image96| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/update.jpg
-   :width: 400px
+   :width: 400
 .. |image97| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/update2.jpg
-   :width: 400px
+   :width: 400
 .. |image98| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/update_help.png
-   :width: 400px
+   :width: 400
 .. |image99| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/update.png
-   :width: 400px
+   :width: 400
 .. |image100| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/receive2.jpg
-   :width: 400px
+   :width: 400
 .. |image101| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/update.jpg
-   :width: 400px
+   :width: 400
 .. |image102| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/update2.jpg
-   :width: 400px
+   :width: 400
 .. |image103| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize.jpg
-   :width: 400px
+   :width: 400
 .. |image104| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize2.jpg
-   :width: 400px
+   :width: 400
 .. |image105| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize3.jpg
-   :width: 400px
+   :width: 400
 .. |image106| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize.jpg
-   :width: 400px
+   :width: 400
 .. |image107| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize2.jpg
-   :width: 400px
+   :width: 400
 .. |image108| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize3.jpg
-   :width: 400px
+   :width: 400
 .. |image109| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect.jpg
-   :width: 400px
+   :width: 400
 .. |image110| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect1.jpg
-   :width: 400px
+   :width: 400
 .. |image111| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect2.jpg
-   :width: 400px
+   :width: 400
 .. |image112| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect3.jpg
-   :width: 400px
+   :width: 400
 .. |image113| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect4.jpg
-   :width: 400px
+   :width: 400
 .. |image114| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect.jpg
-   :width: 400px
+   :width: 400
 .. |image115| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect1.jpg
-   :width: 400px
+   :width: 400
 .. |image116| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect2.jpg
-   :width: 400px
+   :width: 400
 .. |image117| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect3.jpg
-   :width: 400px
+   :width: 400
 .. |image118| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect4.jpg
-   :width: 400px
+   :width: 400
 .. |image119| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/echo.jpg
-   :width: 400px
+   :width: 400
 .. |image120| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/echo1.jpg
-   :width: 400px
+   :width: 400
 .. |image121| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/echo.jpg
-   :width: 400px
+   :width: 400
 .. |image122| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/echo1.jpg
-   :width: 400px
+   :width: 400

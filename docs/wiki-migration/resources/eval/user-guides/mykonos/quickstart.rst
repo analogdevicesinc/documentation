@@ -1,12 +1,16 @@
 ADRV9371/PCBZ Quick Start Guides
 ================================
 
-The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the ADRV9371-N/PCBZ, ADRV9371-W/PCBZ boards on various FPGA development boards. They will discuss how to program the bitstream, run a no-OS program or boot a Linux distribution.
+The Quick Start Guides provide a simple step by step instruction on how to do an
+initial system setup for the ADRV9371-N/PCBZ, ADRV9371-W/PCBZ boards on various
+FPGA development boards. They will discuss how to program the bitstream, run a
+no-OS program or boot a Linux distribution.
 
 Supported Carriers
 ------------------
 
-The ADRV9371/PCBZ is, by definition a "FPGA mezzanine card" (FMC), that means it needs a carrier to plug into. The carriers we support are:
+The ADRV9371/PCBZ is, by definition a "FPGA mezzanine card" (FMC), that means it
+needs a carrier to plug into. The carriers we support are:
 
 +----------------------------------------------------------------------------------------------------------------------+-----------------+-----------------+-----------------+
 | Board                                                                                                                | ADRV9371-N/PCBZ | ADRV9371-W/PCBZ | ADRV9375-N/PCBZ |
@@ -44,14 +48,17 @@ The supported OS are:
 Hardware Setup
 --------------
 
-In most carriers, the ADRV9371/PCBZ board connects to the HPC connector (unless otherwise noted). The carrier setup requires power, UART (115200), ethernet (Linux), HDMI (if available) and/or JTAG (no-OS) connections. A few typical setups are shown below.
+In most carriers, the ADRV9371/PCBZ board connects to the HPC connector (unless
+otherwise noted). The carrier setup requires power, UART (115200), ethernet
+(Linux), HDMI (if available) and/or JTAG (no-OS) connections. A few typical
+setups are shown below.
 
 ZC706 + ADRV9371/PCBZ
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/mykonos_system_overview.png
    :align: center
-   :width: 800px
+   :width: 800
 
 ZCU102 + ADRV9371/PCBZ
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -42,7 +42,7 @@ Setting up the Hardware
 -  Plug in the micro USB cable into the **(P10)** USB port on the EVAL-ADICUP3029, and the other end into the PC or laptop.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_pmodacl2.jpg
-   :width: 650px
+   :width: 650
 
 Configuring the Software
 ------------------------
@@ -55,7 +55,8 @@ In the *adxl362_app.h* header files you can configure the following parameters:
 Outputting Data
 ---------------
 
-Once the hardware is setup and software is configured, user needs to select how they want to view the data coming from the accelerometer sensor(ADXL362).
+Once the hardware is setup and software is configured, user needs to select how
+they want to view the data coming from the accelerometer sensor(ADXL362).
 
 There are **three** different ways to visualize the data:
 
@@ -64,7 +65,6 @@ There are **three** different ways to visualize the data:
 -  IoTNode Smart Device App
 
 Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard.
-
 
 |image1|
 
@@ -87,16 +87,19 @@ Debug Mode
 
 **Debug launch mode** is used when connected to the debugger. In debug mode, all the outputs are directed to the console window of the CrossCore tools via semihosting. The data is also sent by default to the IoTNode smart app (ADI_APP_USE_BLUETOOTH =1), but can be turned of if desired by setting ADI_APP_USE_BLUETOOTH = 0.
 
-Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to android application.
+Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to
+android application.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxl362_debug_ouputble.png
-   :width: 920px
+   :width: 920
 
-If you have the app installed on your phone, these figure shows the output on android device.
+If you have the app installed on your phone, these figure shows the output on
+android device.
 
 .. important::
 
-   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your phone.
+   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your
+   phone.
 
    
    -  Simply open up the IoTNode application on your phone.
@@ -104,15 +107,16 @@ If you have the app installed on your phone, these figure shows the output on an
    -  Once you find your demo, click on it to open it up.
    
 
-
 |image2| |image3|
 
-It's important to remember that when you use the Debug.launch file that you hit the "play" button when using the tools or else your program will not run.
+It's important to remember that when you use the Debug.launch file that you hit
+the "play" button when using the tools or else your program will not run.
 
-Figure shows when ADI_APP_USE_BLUETOOTH is set to 0, Sensor data is printed on to console.
+Figure shows when ADI_APP_USE_BLUETOOTH is set to 0, Sensor data is printed on
+to console.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxl362_debug_ouput.png
-   :width: 920px
+   :width: 920
 
 Release Mode
 ~~~~~~~~~~~~
@@ -131,13 +135,15 @@ Release Mode
 Figure shows when ADI_APP_USE_BLUETOOTH is set to 1
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adx362_reease_output.png
-   :width: 920px
+   :width: 920
 
-If you have the app installed on your phone, these figure shows the output on android device.
+If you have the app installed on your phone, these figure shows the output on
+android device.
 
 .. important::
 
-   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your phone.
+   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your
+   phone.
 
    
    -  Simply open up the IoTNode application on your phone.
@@ -145,23 +151,28 @@ If you have the app installed on your phone, these figure shows the output on an
    -  Once you find your demo, click on it to open it up.
    
 
-
 |image4| |image5|
 
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the ADXL362 PmodACL2.
+There are two basic ways to program the ADICUP3029 with the software for the
+ADXL362 PmodACL2.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain. Below screen shot shows how to open project from CCES Example browser.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain. Below screen shot
+shows how to open project from CCES Example browser.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/sensorexampleselection.jpg
-   :width: 920px
+   :width: 920
 
 The source code and include files of the **ADuCM3029_demo_adxl362** demo can be found here:
 
@@ -177,7 +188,6 @@ The source code and include files of the **ADuCM3029_demo_adxl362** demo can be 
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_adxl362 Source Code <projects/ADuCM3029_demo_adxl362>`
    
-
 
 How to use the Tools
 --------------------
@@ -199,10 +209,12 @@ Project Structure
 
 The **ADICUP3029_ADXL362** is a C project that uses ADuCM3029 C/C++ Project structure.
 
-This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI read/write; configuring and reading from ADXL362, UART read/write functions;
+This project contains: system initialization part - disabling watchdog, setting
+system clock, enabling clock for peripherals; port configuration for SPI
+read/write; configuring and reading from ADXL362, UART read/write functions;
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxl362_project.jpg
-   :width: 300px
+   :width: 300
 
 adxl362_app.cpp and adxl362_app.h are the main source and header files related to **ADICUP3029_ADXL362** be found under RTE/ADuCM3029 folder.ADXL362 sensor software drivers are located in RTE/Sensor folder. All ADuCM3029 related drivers can BLE related files can be seen under RTE/Board_Support folder.
 
@@ -211,12 +223,12 @@ adxl362_app.cpp and adxl362_app.h are the main source and header files related t
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxl362_dev.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxl362_screen2.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxl362_dev.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxl362_screen2.png
-   :width: 300px
+   :width: 300

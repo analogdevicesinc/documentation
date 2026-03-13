@@ -4,12 +4,14 @@ Digital IO - Test Case
 Initial Setup
 -------------
 
-In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
+In order to proceed through the test case, first of all delete the Scopy \*.ini
+file (saves previous settings made in Scopy tool) from the following path on
+Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
 Open the DigitalIO instrument. The interface should look like the picture below:
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/digitalio_init.png
-   :width: 700px
+   :width: 700
 
 Press multiple times on the "Run" button to check if the instrument works.
 
@@ -18,8 +20,6 @@ Test Title
 
 A. IO Operation
 ~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -59,12 +59,8 @@ A. IO Operation
    |                                       | 16. In step 2 replace with channel 7 and in step 3 by turn channels from 0 to 6 and from 8 to 15. Then, for each replacement repeat steps from 4 to 13. |                     |                                                                                                                                                                         |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 B. Group Operation
 ~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -92,101 +88,99 @@ B. Group Operation
    |                                     | 9. Set DIO 0-7 as input and DIO 8-15 as output. Repeat step 2. |                 | For each value set for the DIO 8-15 group, the same value must be displayed on the DIO 0-7 group. |
    +-------------------------------------+----------------------------------------------------------------+-----------------+---------------------------------------------------------------------------------------------------+
 
-
-
 Test Results will be recorded in the following document: `Digital IO - Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/digitalio_-_test_case.xlsx>`_
 
 **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/dio-individual.png
-   :width: 100px
+   :width: 100
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/0out.png
-   :width: 100px
+   :width: 100
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/7in.png
-   :width: 100px
+   :width: 100
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/0-7pin_connection.png
-   :width: 100px
+   :width: 100
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high0-7.png
-   :width: 100px
+   :width: 100
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low0-7.png
-   :width: 100px
+   :width: 100
 .. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/0-ps_7-vm_pin_connection.png
-   :width: 100px
+   :width: 100
 .. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low0.png
-   :width: 100px
+   :width: 100
 .. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low-voltmeter.png
-   :width: 100px
+   :width: 100
 .. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high0.png
-   :width: 100px
+   :width: 100
 .. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high-voltmeter.png
-   :width: 100px
+   :width: 100
 .. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ps-low.png
-   :width: 100px
+   :width: 100
 .. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/7low.png
-   :width: 100px
+   :width: 100
 .. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ps-high.png
-   :width: 100px
+   :width: 100
 .. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/7high.png
-   :width: 100px
+   :width: 100
 .. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/dio-individual.png
-   :width: 100px
+   :width: 100
 .. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/0out.png
-   :width: 100px
+   :width: 100
 .. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/7in.png
-   :width: 100px
+   :width: 100
 .. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/0-7pin_connection.png
-   :width: 100px
+   :width: 100
 .. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high0-7.png
-   :width: 100px
+   :width: 100
 .. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low0-7.png
-   :width: 100px
+   :width: 100
 .. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/0-ps_7-vm_pin_connection.png
-   :width: 100px
+   :width: 100
 .. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low0.png
-   :width: 100px
+   :width: 100
 .. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low-voltmeter.png
-   :width: 100px
+   :width: 100
 .. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high0.png
-   :width: 100px
+   :width: 100
 .. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high-voltmeter.png
-   :width: 100px
+   :width: 100
 .. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ps-low.png
-   :width: 100px
+   :width: 100
 .. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/7low.png
-   :width: 100px
+   :width: 100
 .. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/ps-high.png
-   :width: 100px
+   :width: 100
 .. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/7high.png
-   :width: 100px
+   :width: 100
 .. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/dio-group.png
-   :width: 100px
+   :width: 100
 .. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group-pinconnection.png
-   :width: 100px
+   :width: 100
 .. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/dio07out.png
-   :width: 100px
+   :width: 100
 .. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/dio815in.png
-   :width: 100px
+   :width: 100
 .. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/grp-val0.png
-   :width: 100px
+   :width: 100
 .. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/grp-val128.png
-   :width: 100px
+   :width: 100
 .. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/grp-val170.png
-   :width: 100px
+   :width: 100
 .. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/grp-val255.png
-   :width: 100px
+   :width: 100
 .. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/dio-group.png
-   :width: 100px
+   :width: 100
 .. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group-pinconnection.png
-   :width: 100px
+   :width: 100
 .. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/dio07out.png
-   :width: 100px
+   :width: 100
 .. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/dio815in.png
-   :width: 100px
+   :width: 100
 .. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/grp-val0.png
-   :width: 100px
+   :width: 100
 .. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/grp-val128.png
-   :width: 100px
+   :width: 100
 .. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/grp-val170.png
-   :width: 100px
+   :width: 100
 .. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/grp-val255.png
-   :width: 100px
+   :width: 100

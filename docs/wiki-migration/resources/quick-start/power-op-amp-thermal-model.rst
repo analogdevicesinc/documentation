@@ -20,11 +20,10 @@ All LTspice Circuits used are available at `LTspice Schematics <https://wiki.ana
 
    \ *Keep all files in the zip folder in the same folder on your local PC. Run any “.asc” file out of that folder to have all the respective plot windows prepopulated, with the relevant waveforms at simulation time.*\
 
-
 --------------
 
 Power Op Amp Thermal Model Block Diagram
 ========================================
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/thermal_model_block_diagram.png
-   :width: 1000px
+   :width: 1000

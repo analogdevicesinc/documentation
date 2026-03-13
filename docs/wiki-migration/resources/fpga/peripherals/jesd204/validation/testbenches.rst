@@ -1,7 +1,9 @@
 JESD204 Testbenches
 ===================
 
-Various levels of testbenches are available from component level to system level covering the whole stack including physical layer, link layer and transport layer components.
+Various levels of testbenches are available from component level to system level
+covering the whole stack including physical layer, link layer and transport
+layer components.
 
 Component level testbenches
 ---------------------------
@@ -9,14 +11,16 @@ Component level testbenches
 Location of testbenches
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The component level testbnenches are located in the hdl repository, near to the JESD204 IPs itself in the tb folder.
+The component level testbnenches are located in the hdl repository, near to the
+JESD204 IPs itself in the tb folder.
 
 :git-hdl:`Component level testbenches <library/jesd204/tb>`
 
 Supported simulators
 ~~~~~~~~~~~~~~~~~~~~
 
-The simulator can be selected through the SIMULATOR environment variable. Supported values are:
+The simulator can be selected through the SIMULATOR environment variable.
+Supported values are:
 
 ========== ==================================
 $SIMULATOR Simulator name
@@ -65,7 +69,8 @@ The system level testbenches reside in a separate github repository: :git-testbe
 Supported simulators
 ~~~~~~~~~~~~~~~~~~~~
 
-The test environment is built around Xilinx AXI VIPs so the only supported simulator is:
+The test environment is built around Xilinx AXI VIPs so the only supported
+simulator is:
 
 -  Xilinx Vivado matching the current hdl release version requirements
 
@@ -79,7 +84,10 @@ List of JESD system level testbenches
 Testbench architecture
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The devices under test (jesd204 components) are placed in a test harness which is made of several Xilinx verification IP's: clock and reset generators, AXI verification IPs to emulate the control side of the processor or to emulate a DDR storage module.
+The devices under test (jesd204 components) are placed in a test harness which
+is made of several Xilinx verification IP's: clock and reset generators, AXI
+verification IPs to emulate the control side of the processor or to emulate a
+DDR storage module.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/validation/examplesystemleveltestbench.jpg
    :align: center

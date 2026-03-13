@@ -9,11 +9,19 @@ DSP Readback Generic
 Description
 -----------
 
-The DSP Readback Generic block lets allow you read a specific sample from a block of samples. The drop-down control allows you to enter the which sample be read.
+The DSP Readback Generic block lets allow you read a specific sample from a
+block of samples. The drop-down control allows you to enter the which sample be
+read.
 
-The number displayed onscreen is the data value sent back from the DSP considering all the blocks to the left of the Readback block. Every time you click Read, this value will be updated with the latest from the DSP. By displaying the output value from any block, in any format desired, Readback is used chiefly for debugging, and probably will prove very handy.
+The number displayed onscreen is the data value sent back from the DSP
+considering all the blocks to the left of the Readback block. Every time you
+click Read, this value will be updated with the latest from the DSP. By
+displaying the output value from any block, in any format desired, Readback is
+used chiefly for debugging, and probably will prove very handy.
 
-Values can be read back in either hex or decimal. For the latter, you must specify what format you want the number to be displayed in. Any changes to this format will shift the decimal value of the number displayed.
+Values can be read back in either hex or decimal. For the latter, you must
+specify what format you want the number to be displayed in. Any changes to this
+format will shift the decimal value of the number displayed.
 
 Targets Supported
 -----------------
@@ -45,7 +53,6 @@ Name    Type    Description
 Output0 Control Output channel 0
 ======= ======= ================
 
-
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+----------------+------------------------------------------------------+
@@ -63,5 +70,3 @@ Parameter Name Description                  ADSP-214xx/SC5xx/215xx
 Sample         reads the sample from target Float
 Value          Read back value from the DSP Float
 ============== ============================ ======================
-
-

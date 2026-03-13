@@ -1,14 +1,26 @@
 University Program online teaching materials
 ============================================
 
-The University Program brings the analog signal processing technology the company has developed to the academic community in a way that is open and accessible to faculty and students in the form of analog design kits and analog components, online and downloadable software and teaching materials, online support, textbooks, reference designs and lab projects to enrich students’ education about analog circuits and their application to core engineering and physical science curricula.
+The University Program brings the analog signal processing technology the
+company has developed to the academic community in a way that is open and
+accessible to faculty and students in the form of analog design kits and analog
+components, online and downloadable software and teaching materials, online
+support, textbooks, reference designs and lab projects to enrich students’
+education about analog circuits and their application to core engineering and
+physical science curricula.
 
-The following tutorial materials from the ADI archives are arranged into similar typical course topic areas. They might be suitable as a substitute for a text book in some courses or for use as supplementary material to augment a text book.
+The following tutorial materials from the ADI archives are arranged into similar
+typical course topic areas. They might be suitable as a substitute for a text
+book in some courses or for use as supplementary material to augment a text
+book.
 
 Analog Electronics
 ==================
 
-These tutorial pages centered around analog electronics comprise ideal Op Amp basics, Op Amp error sources and specifications along with specility amplifiers like Instrumentation amplifiers, variable gain amplifiers, log amplifiers, analog multipliers, analog switches and voltage references.
+These tutorial pages centered around analog electronics comprise ideal Op Amp
+basics, Op Amp error sources and specifications along with specility amplifiers
+like Instrumentation amplifiers, variable gain amplifiers, log amplifiers,
+analog multipliers, analog switches and voltage references.
 
 Table of Contents:
 ------------------
@@ -221,7 +233,9 @@ Active Filters
 eBooks in pdf:
 ==============
 
-Individual chapters--or a zip file containing all chapters--of these book chapters and seminar notes can be downloaded by selecting the appropriate links below.
+Individual chapters--or a zip file containing all chapters--of these book
+chapters and seminar notes can be downloaded by selecting the appropriate links
+below.
 
 Introduction to Electronics I and II:
 -------------------------------------

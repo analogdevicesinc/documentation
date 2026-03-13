@@ -3,4 +3,5 @@
 Log Sweep
 =========
 
-LogSweepBurstInput LogSweepBurstSwitch LogSweepWithContInput LogSweepWithContSwitch
+LogSweepBurstInput LogSweepBurstSwitch LogSweepWithContInput
+LogSweepWithContSwitch

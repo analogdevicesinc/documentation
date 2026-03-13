@@ -13,7 +13,12 @@ The :adi:`AD5791` is a single 20-bit, unbuffered voltage-output digital-to-analo
 
 The :adi:`AD5791` offers a relative accuracy specification of ±1 LSB max, and operation is guaranteed monotonic with a ±1 LSB differential nonlinearity (DNL) maximum specification.
 
-The device uses a versatile 3-wire serial interface that operates at clock rates up to 35 MHz and that is compatible with standard serial peripheral interface (SPI), QSPI™, MICROWIRE™, and DSP interface standards. The device incorporates a power-on reset circuit that ensures the DAC output powers up to 0 V and in a known output impedance state and remains in this state until a valid write to the device takes place.
+The device uses a versatile 3-wire serial interface that operates at clock rates
+up to 35 MHz and that is compatible with standard serial peripheral interface
+(SPI), QSPI™, MICROWIRE™, and DSP interface standards. The device incorporates a
+power-on reset circuit that ensures the DAC output powers up to 0 V and in a
+known output impedance state and remains in this state until a valid write to
+the device takes place.
 
 Applications:
 
@@ -106,4 +111,3 @@ Downloads
    -  :git-no-OS:`Implementation of AD5791 Driver. <drivers/dac/ad5791/ad5791.c>`
    -  :git-no-OS:`Header file of AD5791 Driver. <drivers/dac/ad5791/ad5791.h>`
    
-

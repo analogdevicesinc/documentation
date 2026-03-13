@@ -43,7 +43,6 @@ Name           Type  Description
 FilteredOutput Audio Filtered Output Signal
 ============== ===== ======================
 
-
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------------+-------------------------------+

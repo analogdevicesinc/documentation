@@ -1,8 +1,6 @@
 Software for the AD-FMCOMMS1-EBZ
 ================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -18,8 +16,6 @@ Software for the AD-FMCOMMS1-EBZ
    which means it is no longer maintained or actively updated, even though the
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
-
-
 
 -  :doc:`Linux </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux>`
 -  :doc:`No-OS drivers </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/baremetal>`

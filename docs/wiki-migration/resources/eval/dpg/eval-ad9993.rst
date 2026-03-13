@@ -11,7 +11,8 @@ AD9993 Evaluation Board
 
 The :adi:`AD9993` evaluation boards...
 
-Documentation and software updates for using High-Speed DAC Evaluation Boards are included in individual, self-extracting update files.
+Documentation and software updates for using High-Speed DAC Evaluation Boards
+are included in individual, self-extracting update files.
 
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | Item              | AD9993-EBZ                                                                                                                                      |

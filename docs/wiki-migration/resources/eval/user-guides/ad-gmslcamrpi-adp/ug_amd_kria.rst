@@ -24,20 +24,20 @@ Hardware changes
 
 **GMSL Deserializer Evaluation Kit (MAX96724)**
 
--  Flip the SW5 switches to the ON position - enables I2C communication over the CSI bus
+-  Flip the SW5 switches to the ON position - enables I2C communication over the
+   CSI bus
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/gmsl_deserializer_sw5.jpg
-   :width: 300px
+   :width: 300
 
 -  Bridge R88 - provides VDDIO to the adapter
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/deserializer_resistors.jpg
-   :width: 300px
+   :width: 300
 
 .. note::
 
    Make sure you have all the PoC-related jumpers set to the corresponding VPOC_x point (ref. :adi:`datasheet <media/en/technical-documentation/data-sheets/max96724-bak-evk-max96724r-bak-evk.pdf>` p. 15/22) (1 to 4 for the possible serializer inputs to the quad deserializer).
-
 
 -  Example from the datasheet - J3 for SIOA input:
 
@@ -76,24 +76,34 @@ System setup
 -  Connect the **KV260 evaluation kit** to the power supply
 -  Connect the **MAX96724 evaluation kit** to the power supply and put the corresponding switch in the **"ON"** position
 -  KV260 will boot by default from QSPI. It must be forced to boot from SD card to correctly load the custom BOOT.BIN. For this please follow the guide `here <https://xilinx.github.io/kria-apps-docs/creating_applications/2022.1/build/html/docs/bootmodes.html>`_ and run **boot_sd** boot mode
--  Connect a USB mouse and keyboard to the KV260 evaluation kit. It's possible to use either a mouse & keyboard combo or a separate mouse and keyboard
+-  Connect a USB mouse and keyboard to the KV260 evaluation kit. It's possible
+   to use either a mouse & keyboard combo or a separate mouse and keyboard
 
 .. note::
 
    Ubuntu credentials user:analog/pass:analog
 
-
 .. note::
 
-   To change the number of cameras that would be used in the setup, you would need to change the default devicetree binary that is located in the boot partition of the SD card to the corresponding number of cameras (between 1 and 2), by overwriting the system.dtb to an one from the corresponding directory. The devicetree binary options are located in the bootfs partiiton (in nr_cams/1cam or 2cams directory/system.dtb). The bootfs partition can be mounted by using the mount utility: e.g. mount /dev/mmcblk1p1 /mnt.
-
+   To change the number of cameras that would be used in the setup, you would
+   need to change the default devicetree binary that is located in the boot
+   partition of the SD card to the corresponding number of cameras (between 1
+   and 2), by overwriting the system.dtb to an one from the corresponding
+   directory. The devicetree binary options are located in the bootfs partiiton
+   (in nr_cams/1cam or 2cams directory/system.dtb). The bootfs partition can be
+   mounted by using the mount utility: e.g. mount /dev/mmcblk1p1 /mnt.
 
    |image3|
 
 .. note::
 
-   The setup from the attached figure contains the two SWs of the GMSL Deserializer RPi adapter as follows: the SW1 set to the left side and the SW3 oriented to the connected flex cable, in the upper part in this case, oriented to the P6 flex cable connector. In addition to the connections from the figure, please make sure that the Kria KV260 and MAX96724 evaluation kits are powered up using their corresponding power-related barrel jack connectors.
-
+   The setup from the attached figure contains the two SWs of the GMSL
+   Deserializer RPi adapter as follows: the SW1 set to the left side and the SW3
+   oriented to the connected flex cable, in the upper part in this case,
+   oriented to the P6 flex cable connector. In addition to the connections from
+   the figure, please make sure that the Kria KV260 and MAX96724 evaluation kits
+   are powered up using their corresponding power-related barrel jack
+   connectors.
 
 --------------
 
@@ -103,24 +113,31 @@ Running the evaluation application
 Once Linux boots you'll see on the HDMI monitor the Linux desktop and on the top left corner a shortcut to the script named **video_cfg.sh**. Double clicking on the icon will start the media-ctl configuration script. The script is running in background without any pop ups.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/kria_video_cfg.png
-   :width: 600px
+   :width: 600
 
 After the script was executed once, one should double click on Qt V4L2 test Utility icon to start the video capture application. A window like bellow should open. First the user must select **video0** device by clicking the open icon.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/qv4l2_select_video_dev.png
-   :width: 600px
+   :width: 600
 
 A new instance of Qt V4L2 test Utility should be started and selected **video1** this time. After this step the play button should be pressed on both Qt V4L2 test Utility instances. Video should be visible on the 2 windows.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/qv4l2_video.jpg
-   :width: 600px
+   :width: 600
 
-OpenGL rendering is recommended to be disabled by accessing Qt V4L2 test Utility capture menu. Capture will start only if both Qt V4L2 test Utility instances are on play state. This is a current HDL limitation.
+OpenGL rendering is recommended to be disabled by accessing Qt V4L2 test Utility
+capture menu. Capture will start only if both Qt V4L2 test Utility instances are
+on play state. This is a current HDL limitation.
 
 RTP-based Streaming
 ~~~~~~~~~~~~~~~~~~~
 
--  In order to do a streaming of the data that is captured from the cameras to an external machine, you can use the 1G Ethernet-based transmission available through the attached port of the KV260 evaluation kit and a streaming-related application such as the one available in the GStreamer framework (an e.g. would be the RTP-based streaming support for uncompressed data available in the GStreamer).
+-  In order to do a streaming of the data that is captured from the cameras to
+   an external machine, you can use the 1G Ethernet-based transmission available
+   through the attached port of the KV260 evaluation kit and a streaming-related
+   application such as the one available in the GStreamer framework (an e.g.
+   would be the RTP-based streaming support for uncompressed data available in
+   the GStreamer).
 
 Power off sequence
 ~~~~~~~~~~~~~~~~~~
@@ -142,8 +159,8 @@ The project and the project's overview can be found at the following links: :git
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ser_interposer.jpg
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/deser_interposer.jpg
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/kria_adapter.jpg
-   :width: 1000px
+   :width: 1000

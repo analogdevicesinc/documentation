@@ -5,7 +5,6 @@ SPI-Engine Offload Control Interface
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/spi_engine/offload-control-interface.html\
 
-
 The SPI-Engine offload control interface is used to configure and control a :doc:`SPI-Engine offload core </wiki-migration/resources/fpga/peripherals/spi_engine/offload>`. It is used to activate/deactivate the core as well re-program the command and SDO data RAM.
 
 Files

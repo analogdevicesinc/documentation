@@ -4,7 +4,8 @@ AD9371/AD9375 No-OS Setup
 Xilinx Platform
 ---------------
 
-This guide provides some quick instructions on how to setup the AD9371 mykonos on:
+This guide provides some quick instructions on how to setup the AD9371 mykonos
+on:
 
 -  `KCU105 <https://www.xilinx.com/KCU105>`_
 -  `ZC706 <https://www.xilinx.com/ZC706>`_
@@ -15,11 +16,9 @@ Required Software
 
 -  We're upgrade the Xilinx tools on every release. The supported version number can be found in our :git-hdl:`git repository <tree/master>`.
 
-
 .. note::
 
    See `resources/eval/user-guides/mykonos/../../../../../resources/fpga/xilinx/software_setup <https://wiki.analog.com/resources/eval/user-guides/mykonos/../../../../../resources/fpga/xilinx/software_setup>`_
-
 
 Files
 ~~~~~
@@ -28,7 +27,8 @@ Files
 
    -  Download from :git-no-OS:`projects/ad9371/src`
 
-      -  Next copy the files intro the src folder of your newly created project. You can do this with Ctrl+C Ctrl+V or simple drag and drop
+      -  Next copy the files intro the src folder of your newly created project.
+         You can do this with Ctrl+C Ctrl+V or simple drag and drop
 
 -  **API Source Code**
 
@@ -36,7 +36,9 @@ Files
 
       -  Unzip the archive and go into **src->api** folder
       -  Next copy the **ad9528** and **mykonos** folder to the **src** folder of your project. Do **NOT** copy the common.c and common.h files provided by the api. For now, use the ones downloaded from github.
-      -  Make sure the paths for the directories are included. Right click on the src folder from Project Explorer and go to Properties -> C/C++ Build -> Settings -> ARM v7 gcc compiler -> Directories
+      -  Make sure the paths for the directories are included. Right click on
+         the src folder from Project Explorer and go to Properties -> C/C++
+         Build -> Settings -> ARM v7 gcc compiler -> Directories
 
       |resources-eval-user-guides-mykonos-src_properties.jpg|
 
@@ -44,14 +46,14 @@ Files
 
        .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/folder_selection.png
 
-   * Repeat the procedure for mykonos, src and mykonos_debug. The included paths should look like this:
+   * Repeat the procedure for mykonos, src and mykonos_debug. The included paths
+     should look like this:
 
        .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/included_paths.png
 
    * Add the above folders also for **Configuration: Debug**
 
        .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/configuration_debug.png
-
 
 -  **Transceiver Evaluation Software**
 
@@ -60,18 +62,23 @@ Files
       -  Next, generate the profile by using the :doc:`MATLAB Profile Generator </wiki-migration/resources/eval/user-guides/mykonos/software/filters>`. The profiles can be used with the **Transceiver Evaluation Software** to evaluate system performance.
       -  Further, import the profile into TES, and generate the Mykonos initialization structures which are used by the No-OS driver (Tools -> Create Script -> C Script). Follow the *AD9370 Quick Start Guide.pdf* from AD9371 Transceiver Evaluation Software\\Resources folder.
       -  The script generates **headless.c, headless.h, myk.c, myk.h and myk_ad9528init.c** files. Add **myk.c**, **myk.h** and **myk_ad9528init.c** to the **src** folder of your project. Do NOT add headless.c and headless.h, instead use the files provided in github.
-      -  The build should return no error and Project Explorer should look like this:
+      -  The build should return no error and Project Explorer should look like
+         this:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/project_explorer.png
    :align: center
-   :width: 250px
+   :width: 250
 
--  Note: The AD9371/AD9375 evaluation board contains an on-board voltage controlled crystal oscillator (VCXO), there are limitations with the default hardware configuration in the scenario where user desired device frequencies are not related to the on-board 122.88 MHz VCXO by a rational fraction.
+-  Note: The AD9371/AD9375 evaluation board contains an on-board voltage
+   controlled crystal oscillator (VCXO), there are limitations with the default
+   hardware configuration in the scenario where user desired device frequencies
+   are not related to the on-board 122.88 MHz VCXO by a rational fraction.
 
 Push data into/out of the AD9371/AD9375
 ---------------------------------------
 
-Below is defined the dac_core structures used by the dac_setup() and dac_write_custom_data() functions:
+Below is defined the dac_core structures used by the dac_setup() and
+dac_write_custom_data() functions:
 
 .. code:: C
 
@@ -96,7 +103,8 @@ Below is defined the dac_core structures used by the dac_setup() and dac_write_c
                dac_data_src sel;               // set to one of the enumerated type above.
        }dac_channel;
 
-Below is defined the adc_core structure used by the adc_setup() and adc_capture() functions:
+Below is defined the adc_core structure used by the adc_setup() and
+adc_capture() functions:
 
 .. code:: C
 
@@ -117,16 +125,18 @@ Below is defined the adc_core structure used by the adc_setup() and adc_capture(
 
 -  Set dac_data_src to **DAC_SRC_DMA**.
 -  dac_write_custom_data() function takes as argument the **sine_lut_iq** array which contains the custom data to be transmitted.
--  The format for each I and Q is 16-bit signed two's complement. I and Q together make up one 32-bit tx sample.
+-  The format for each I and Q is 16-bit signed two's complement. I and Q
+   together make up one 32-bit tx sample.
 
 **Capture data**
 
 -  Once DDS or DMA mode is selected and the project configuration can be ran.
--  Open an UART terminal, set the baud rate to 115200bps and make sure the initialization was completed, as in the screenshot bellow:
+-  Open an UART terminal, set the baud rate to 115200bps and make sure the
+   initialization was completed, as in the screenshot bellow:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/tera_term_init.png
    :align: center
-   :width: 650px
+   :width: 650
 
 -  Next, download the capture scripts from the `git repository <https://github.com/analogdevicesinc/no-OS/tree/2018_R2/ad9371/scripts>`_.
 -  **capture.bat** script contains the path of the Xilinx SDK, the default is **"C:\\Xilinx\\SDK\\$VERSION"**; if on your PC the path is different, you need to update it according to your project setup.
@@ -140,7 +150,8 @@ Below is defined the adc_core structure used by the adc_setup() and adc_capture(
 Intel/Altera Platform
 ---------------------
 
-This guide provides some quick instructions on how to setup the AD9371 mykonos on:
+This guide provides some quick instructions on how to setup the AD9371 mykonos
+on:
 
 -  `Intel/Altera Arria 10 <https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-a10-gx-fpga.html>`_
 
@@ -152,7 +163,9 @@ Required Software
 Altera Software setup
 ~~~~~~~~~~~~~~~~~~~~~
 
-This section is intended to give a briefly review about how the user can make a new application project for his or her hdl design. If you are an advanced user, you probably want to skip this section.
+This section is intended to give a briefly review about how the user can make a
+new application project for his or her hdl design. If you are an advanced user,
+you probably want to skip this section.
 
 Before the image can be loaded the **Quartus Prime 16.0** tool or the `Quartus Prime 16.0 Programmer <http://dl.altera.com/16.0/>`_ must be installed on your computer.
 
@@ -193,7 +206,8 @@ Before the image can be loaded the **Quartus Prime 16.0** tool or the `Quartus P
 
    -  Download from :git-no-OS:`projects/ad9371/src`
 
-      -  Next copy the files intro the src folder of your newly created project. You can do this with Ctrl+C Ctrl+V or simple drag and drop
+      -  Next copy the files intro the src folder of your newly created project.
+         You can do this with Ctrl+C Ctrl+V or simple drag and drop
 
 -  **API Source Code**
 
@@ -209,7 +223,11 @@ Before the image can be loaded the **Quartus Prime 16.0** tool or the `Quartus P
       -  Next, generate the profile by using the :doc:`MATLAB Profile Generator </wiki-migration/resources/eval/user-guides/mykonos/software/filters>`. The profiles can be used with the **Transceiver Evaluation Software** to evaluate system performance.
       -  Further, import the profile into TES, and generate the Mykonos initialization structures which are used by the No-OS driver (Tools -> Create Script -> C Script). Follow the *AD9370 Quick Start Guide.pdf* from AD9371 Transceiver Evaluation Software\\Resources folder.
       -  The script generates **headless.c, headless.h, myk.c, myk.h and myk_ad9528init.c** files. Add **myk.c**, **myk.h** and **myk_ad9528init.c** to the **src** folder of your project. Do NOT add headless.c and headless.h, instead use the files provided in github.
-      -  Note: The AD9371/AD9375 evaluation board contains an on-board voltage controlled crystal oscillator (VCXO), there are limitations with the default hardware configuration in the scenario where user desired device frequencies are not related to the on-board 122.88 MHz VCXO by a rational fraction.
+      -  Note: The AD9371/AD9375 evaluation board contains an on-board voltage
+         controlled crystal oscillator (VCXO), there are limitations with the
+         default hardware configuration in the scenario where user desired
+         device frequencies are not related to the on-board 122.88 MHz VCXO by a
+         rational fraction.
 
 -  Nios II Eclipse should automatically build the projects and the Console window will display the result of the build. If the build is not done automatically select the **Project**→**Build Automatically** menu option.
 -  Note: if you get this error: warning: Unable to reach (null) (at 0x00088608) from the global pointer (at 0x000752b8) because the offset (78672) is out of the allowed range, -32678 to 32767, a quick workaround can be found on the `Altera support page <https://www.altera.com/support/support-resources/knowledge-base/solutions/rd02132012_291.html>`_: modify the linker.x file from your bsp by deleting **+ SIZEOF (.rwdata)** from this one line:
@@ -246,7 +264,8 @@ Before the image can be loaded the **Quartus Prime 16.0** tool or the `Quartus P
 Push data into/out of the AD9371/AD9375
 ---------------------------------------
 
-Below is defined the dac_core structures used by the dac_setup() and dac_write_custom_data() functions:
+Below is defined the dac_core structures used by the dac_setup() and
+dac_write_custom_data() functions:
 
 .. code:: C
 
@@ -271,7 +290,8 @@ Below is defined the dac_core structures used by the dac_setup() and dac_write_c
                dac_data_src sel;               // set to one of the enumerated type above.
        }dac_channel;
 
-Below is defined the adc_core structure used by the adc_setup() and adc_capture() functions:
+Below is defined the adc_core structure used by the adc_setup() and
+adc_capture() functions:
 
 .. code:: C
 
@@ -292,12 +312,14 @@ Below is defined the adc_core structure used by the adc_setup() and adc_capture(
 
 -  Set dac_data_src to **DAC_SRC_DMA**.
 -  dac_write_custom_data() function takes as argument the **sine_lut_iq** array which contains the custom data to be transmitted.
--  The format for each I and Q is 16-bit signed two's complement. I and Q together make up one 32-bit tx sample.
+-  The format for each I and Q is 16-bit signed two's complement. I and Q
+   together make up one 32-bit tx sample.
 
 **Capture data**
 
 -  Once DDS or DMA mode is selected and the project configuration can be ran.
--  Open an UART terminal, set the baud rate to 115200bps and make sure the initialization was completed, as in the screenshot bellow:
+-  Open an UART terminal, set the baud rate to 115200bps and make sure the
+   initialization was completed, as in the screenshot bellow:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/nios_ii_console_done.png
    :align: center
@@ -309,7 +331,8 @@ Below is defined the adc_core structure used by the adc_setup() and adc_capture(
 
 === Download no-OS =====
 
-The source code of the no-OS software and the scripts can be downloaded from the Analog Devices github.
+The source code of the no-OS software and the scripts can be downloaded from the
+Analog Devices github.
 
 .. admonition:: Download
    :class: download

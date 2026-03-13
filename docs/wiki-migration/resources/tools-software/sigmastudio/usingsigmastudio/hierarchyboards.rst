@@ -3,7 +3,11 @@ Hierarchy Boards
 
 :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
 
-For complex system designs, it can become difficult to manage a large number schematic block's in a single design window and it is desirable to have additional schematic workspace and the ability to organize design components. Schematic Hierarchy Boards allows you to create multiple layers within the schematic design window expanding the schematic workspace.
+For complex system designs, it can become difficult to manage a large number
+schematic block's in a single design window and it is desirable to have
+additional schematic workspace and the ability to organize design components.
+Schematic Hierarchy Boards allows you to create multiple layers within the
+schematic design window expanding the schematic workspace.
 
 -  Create Hierarchy Boards
 -  Hide, Freeze, and Navigation
@@ -30,8 +34,13 @@ Along with the hierarchy board block, a hierarchy tab is created, located at the
 
 .. hint::
 
-   Note: It is possible to create nested hierarchy boards (a hierarchy board with-in another hierarchy board's tab). To create a nested board, first select a hierarchy tab at the bottom of the Schematic window, then drag-and-drop a hierarchy board block. If you hover the mouse button over a board tab, the tool-tip will display the "path" of the board (the location of the board block relative to Main). This is helpful when several board's have the same name, which is common when using board files.
-
+   Note: It is possible to create nested hierarchy boards (a hierarchy board
+   with-in another hierarchy board's tab). To create a nested board, first
+   select a hierarchy tab at the bottom of the Schematic window, then
+   drag-and-drop a hierarchy board block. If you hover the mouse button over a
+   board tab, the tool-tip will display the "path" of the board (the location of
+   the board block relative to Main). This is helpful when several board's have
+   the same name, which is common when using board files.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic3.png
    :alt: hierarchypic3.png
@@ -44,9 +53,15 @@ See the :doc:`Hierarchy Board </wiki-migration/resources/tools-software/sigmastu
 Hide, Freeze, and Navigation
 ----------------------------
 
-To locate the hierarchy board block for a particular hierarchy tab, select the hierarchy tab at the bottom of the Schematic window, then double click the tab. This will display the design layer that contains the associated Hierarchy board block. Similarly, you can double click a hierarchy board block to display its design layer.
+To locate the hierarchy board block for a particular hierarchy tab, select the
+hierarchy tab at the bottom of the Schematic window, then double click the tab.
+This will display the design layer that contains the associated Hierarchy board
+block. Similarly, you can double click a hierarchy board block to display its
+design layer.
 
-Right-click the hierarchy block to display the block's context menu. This menu includes commands for view the board layer, hiding the board's tab, and freezing the board design.
+Right-click the hierarchy block to display the block's context menu. This menu
+includes commands for view the board layer, hiding the board's tab, and freezing
+the board design.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic4.png
    :alt: hierarchypic4.png
@@ -57,7 +72,10 @@ Right-click the hierarchy block to display the block's context menu. This menu i
 Hierarchy Board Files
 ---------------------
 
-The entire contents of a Hierarchy Board layer (inputs, outputs, blocks, wires, and nested hierarchy boards) along with the board's Hide/Freeze state can be saved to a Hierarchy Board File (\*.dspbrd). This allows you to create reusable design components and import then into new SigmaStudio projects.
+The entire contents of a Hierarchy Board layer (inputs, outputs, blocks, wires,
+and nested hierarchy boards) along with the board's Hide/Freeze state can be
+saved to a Hierarchy Board File (\*.dspbrd). This allows you to create reusable
+design components and import then into new SigmaStudio projects.
 
 **To Create a Board File:**
 
@@ -75,7 +93,10 @@ Right-Click on the hierarchy board block and select **File - Save Board** from t
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic6.png
    :alt: hierarchypic6.png
 
-The loaded board name is changed to match the saved board name, and all the blocks contained in the hierarchy board's layer are loaded into a new tab. In the example below, the Mixer block was saved to a file and then loaded into a new hierarchy board block, Mixer_2.
+The loaded board name is changed to match the saved board name, and all the
+blocks contained in the hierarchy board's layer are loaded into a new tab. In
+the example below, the Mixer block was saved to a file and then loaded into a
+new hierarchy board block, Mixer_2.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic7.png
    :alt: hierarchypic7.png

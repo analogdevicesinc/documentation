@@ -5,7 +5,6 @@ Network_Configuration
 
 This xml element contains sub elements with attributes as below:
 
-
 |image1|
 
 -  Discovery_Mode – Simple/Modified/Optimized - Discovery mode selection.

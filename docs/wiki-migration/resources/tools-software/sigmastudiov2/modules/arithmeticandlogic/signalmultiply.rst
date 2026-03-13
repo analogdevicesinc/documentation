@@ -9,7 +9,9 @@ Signal Multiply
 Description
 -----------
 
-The Signal Multiply block multiplies two incoming signals together. This can be used for modulation or other design situations where multiply operation is needed.
+The Signal Multiply block multiplies two incoming signals together. This can be
+used for modulation or other design situations where multiply operation is
+needed.
 
 Variants
 --------

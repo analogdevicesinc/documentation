@@ -4,14 +4,16 @@ Activity: Op Amp Open Loop Gain and Offset, For ADALM1000
 Objective:
 ----------
 
-This lab activity will use the ADALM1000 to measure the open‐loop gain characteristics of a OP97 opamp using two methods.
+This lab activity will use the ADALM1000 to measure the open‐loop gain
+characteristics of a OP97 opamp using two methods.
 
 Notes:
 ------
 
 As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current –V is added as in CA-V or when configured to force current / measure voltage –I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage –H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
 
 Background:
 -----------
@@ -31,30 +33,45 @@ ADALM1000 hardware module 1 – OP97 opamp 2 – 100 Ω resistors 2 – 4.7 K�
 
 Construct the circuit shown in figure 1. Before inserting the 1 MΩ and 100 Ω R\ :sub:`1` and R\ :sub:`2` resistors in the circuit, measure and record the values of the two resistors using a DMM if available. Use these measurements to accurately compute the ratio of the input sweep voltage output by CH-A to the attenuated voltage at the opamp non-inverting input ( pin 3 ). Offset trim resistors R\ :sub:`4` and R\ :sub:`5` are optional and may be needed if the offset voltage of the op-amp being tested is too large such that the output voltage does not change over the full range of the CHA output voltage swing.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1, Open-Loop Gain test circuit, Method 1
 
-
 Procedure:
 ~~~~~~~~~~
 
 Set AWG CHA output Min voltage to 0 and Max voltage to 5. This will swing the voltage on R\ :sub:`1` from ‐2.5V to +2.5V with respect to the fixed 2.5 V common mode level applied at the inverting input of the opamp through R\ :sub:`3`. Set the frequency to 10 Hz and the shape to sawtooth. Adjust the horizontal time scale to display one full sweep of the sawtooth wave.
 
-From the Curves drop down menu select the CA-V and CB-V traces for display. On the right hand side of the scope screen enter 2.5 for the CA-V and CB-V offset adjustment. This is because in this experiment we are referencing all the measurements to the +2.5 V common rail. Also enter 0 for the CH-A and CH-B vertical position settings ( along bottom of scope screen ). The vertical scale should now be centered on 0 and go from -2.5 to +2.5.
+From the Curves drop down menu select the CA-V and CB-V traces for display. On
+the right hand side of the scope screen enter 2.5 for the CA-V and CB-V offset
+adjustment. This is because in this experiment we are referencing all the
+measurements to the +2.5 V common rail. Also enter 0 for the CH-A and CH-B
+vertical position settings ( along bottom of scope screen ). The vertical scale
+should now be centered on 0 and go from -2.5 to +2.5.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-olg-f3.png
    :align: center
-   :width: 500px
+   :width: 500
 
-CH-B will display the output voltage. The open‐loop DC gain of the amplifier is measured by calculating the slope of the output voltage where it changes. The gain is simply the ratio of the change in Vout to the change in Vin. Make sure you take into account the scaling factor of the resistor voltage divider in your circuit when calculating the actual change in Vin ( difference between pins 2 and 3 ).
+CH-B will display the output voltage. The open‐loop DC gain of the amplifier is
+measured by calculating the slope of the output voltage where it changes. The
+gain is simply the ratio of the change in Vout to the change in Vin. Make sure
+you take into account the scaling factor of the resistor voltage divider in your
+circuit when calculating the actual change in Vin ( difference between pins 2
+and 3 ).
 
-You may need to modify the settings in the CHA Min and Max values to reduce the sweep range of the CHA input voltage to accurately measure the output voltage swing. It should also be noted that the waveform frequency will likely needed to be adjusted and must be quite low, probably no more than a fraction of 1 Hz because of the low corner frequency of the open-loop gain (around 2 Hz for the OP97).
+You may need to modify the settings in the CHA Min and Max values to reduce the
+sweep range of the CHA input voltage to accurately measure the output voltage
+swing. It should also be noted that the waveform frequency will likely needed to
+be adjusted and must be quite low, probably no more than a fraction of 1 Hz
+because of the low corner frequency of the open-loop gain (around 2 Hz for the
+OP97).
 
-Reminder: You must take into account the scaling factor of the resistive divider in your circuit when calculating. The program will report values relative to the swept voltage at CHA output, not Vin.
+Reminder: You must take into account the scaling factor of the resistive divider
+in your circuit when calculating. The program will report values relative to the
+swept voltage at CHA output, not Vin.
 
 **Method 2**
 
@@ -64,17 +81,17 @@ A second test circuit for measuring DC open-loop gain ( and gain nonlinearity ) 
 
 The value of R\ :sub:`1` is chosen to result in a voltage at V\ :sub:`Y` measurable by the ALM1000 input channel B depending on the expected values of V\ :sub:`OS`.
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 2, Open-Loop Gain test circuit, Method 2
 
-
 The +1 to +4 V sawtooth waveform from the channel A output is multiplied by the signal gain, –1, and forces the op amp output voltage V\ :sub:`X` to swing from + 4 V to +1 V. Because of the gain factor applied to the offset voltage, the offset adjust potentiometer, R\ :sub:`5`, is added to allow the initial output offset to be set to zero. Also, note that the waveform frequency must be quite low, probably no more than a fraction of 1 Hz because of the low corner frequency of the open-loop gain (around 2 Hz for the OP97).
 
-Reminder: You must take into account the scaling factor of the resistive divider in your circuit when calculating. The program will report values relative to the swept voltage at CHA output, not Vin.
+Reminder: You must take into account the scaling factor of the resistive divider
+in your circuit when calculating. The program will report values relative to the
+swept voltage at CHA output, not Vin.
 
 **Resources:**
 
@@ -88,6 +105,6 @@ Here is a good technical paper on how to make :adi:`Simple Op Amp Measurements <
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-olg-f1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-olg-f2.png
-   :width: 600px
+   :width: 600

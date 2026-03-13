@@ -5,7 +5,7 @@ Typical Setup
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/ad9083ebz-ads8-v3ebztop-ethernet.jpg
-   :width: 650px
+   :width: 650
 
 *Figure 1. AD9083EBZ Evaluation Board and ADS8-V3EBZ Data Capture Board*
 
@@ -15,7 +15,8 @@ Equipment Needed
 -  High Quality Analog Signal Source.
 -  Bandpass filter for the Analog Signal Source.
 -  The AD9083 PLL Reference Clock, FPGA Reference Clock and FPGA Global Clock are provided by the on-board AD9528 JESD204B Clock Generator.
--  PC running Windows® with admin privileges and an available ethernet and USB port. Windows® 7 and Windows® 10 are currently supported by ACE.
+-  PC running Windows® with admin privileges and an available ethernet and USB
+   port. Windows® 7 and Windows® 10 are currently supported by ACE.
 
 Hardware Needed
 ---------------
@@ -45,11 +46,14 @@ Board Design and Integration Files
 Set Up MicroZed™ Connection
 ---------------------------
 
-Before performing the evaluation of the AD9083, the Ethernet interface to the MicroZed™ board must be set up by configuring the network interface between the PC and the MicroZed™ board.
+Before performing the evaluation of the AD9083, the Ethernet interface to the
+MicroZed™ board must be set up by configuring the network interface between the
+PC and the MicroZed™ board.
 
 **MicroSD Card for the MicroZed™ Board**
 
-To ensure proper connection between the microSD card and the MicroZed™ board, follow these steps:
+To ensure proper connection between the microSD card and the MicroZed™ board,
+follow these steps:
 
 ::
 
@@ -58,7 +62,7 @@ To ensure proper connection between the microSD card and the MicroZed™ board, 
    -As a precaution, ensure that the MicroZed™ board is seated properly on the ADS8-V3EBZ. Only a visual inspection is needed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/sd-card-location.jpg
-   :width: 400px
+   :width: 400
 
 *Figure 2. MicroSD Card Slot in MicroZed Board **Configure the Network Interface to the MicroZed™ Board**
 
@@ -86,7 +90,10 @@ Download and run the ACE installer from the :adi:`ACE web page <ace>` . After th
 
 **Plugin Installation from ACE**
 
-Installing plugins can be performed using the Plug-in Marketplace feature in the ACE software as described in this section. Plugins can also be downloaded from the ACE software page by searching for the relevant device number within the ACE software.
+Installing plugins can be performed using the Plug-in Marketplace feature in the
+ACE software as described in this section. Plugins can also be downloaded from
+the ACE software page by searching for the relevant device number within the ACE
+software.
 
 To install a plugin from ACE, follow these steps:
 
@@ -100,56 +107,72 @@ To install a plugin from ACE, follow these steps:
    -Click Close.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/manage_plugins.png
-   :width: 600px
+   :width: 600
 
 *Figure 3. ACE Manage Plug-ins Window **Plugin Installation from the Web**
 
 To install the plugin from the web, follow these steps:
 
-
-
 - Ensure that the ACE software is installed.
 - From the ACE software page on the Analog Devices, Inc.,:adi:`ACE web page <ace>`, navigate to the ACE Evaluation Board Plug-ins section and search for the device to evaluate.
 - Click the AD9083 board plugin. The board plugin automatically downloads to the PC. When the download is complete, locate the downloaded file. Note that if the browser used for the plugin download is Internet Explorer, the file extension of the plugin file is .zip. If this occurs, right click the file and rename the file extension to .acezip.
 - Double click the .acezip file to automatically install the plugin.
-- The plugin installation process open the ACE software. Close ACE after plugin installation completes.
+- The plugin installation process open the ACE software. Close ACE after plugin
+  installation completes.
 
 Introduction to the AD9083 Plugin
 ---------------------------------
 
-The AD9083 plugin allows the user to evaluate the AD9083 chip via the AD9083EBZ evaluation board. The AD9083EBZ provides the power and clocking necessary to evaluate the AD9083 16-Channel ADC. The Power Delivery Network is powered by a LTM8074 1.2A Silent Switcher µModule Regulator and clocking is provided by a AD9528 JESD204B Clock Generator. The reference for the AD9528 is a on-board 100 MHz VCXO.
+The AD9083 plugin allows the user to evaluate the AD9083 chip via the AD9083EBZ
+evaluation board. The AD9083EBZ provides the power and clocking necessary to
+evaluate the AD9083 16-Channel ADC. The Power Delivery Network is powered by a
+LTM8074 1.2A Silent Switcher µModule Regulator and clocking is provided by a
+AD9528 JESD204B Clock Generator. The reference for the AD9528 is a on-board 100
+MHz VCXO.
 
-The AD9083EBZ Plugin will configure the AD9083 using the API. The Plugin generates the API commands, which are then downloaded to the MicroZed™, which in turn configures the AD9083.
+The AD9083EBZ Plugin will configure the AD9083 using the API. The Plugin
+generates the API commands, which are then downloaded to the MicroZed™, which in
+turn configures the AD9083.
 
-The Plugin will also configure the AD9528 using the clocking requirements from the Startup Wizard.
+The Plugin will also configure the AD9528 using the clocking requirements from
+the Startup Wizard.
 
-To start using the AD9083EBZ, first ensure the board is connected as shown in Figure 1. Next, ensure that the ADS8-V3EBZ board is powered on before opening ACE. When the user opens the ACE software, the plugin appears in the Attached Hardware section of the ACE GUI (see Figure 3).
+To start using the AD9083EBZ, first ensure the board is connected as shown in
+Figure 1. Next, ensure that the ADS8-V3EBZ board is powered on before opening
+ACE. When the user opens the ACE software, the plugin appears in the Attached
+Hardware section of the ACE GUI (see Figure 3).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/attached-hardware.png
-   :width: 600px
+   :width: 600
 
 *Figure 4. AD9083EBZ Evaluation Board and ADS8-V3EBZ Data Capture Board **Board View**
 
-Double clicking the board icon in the Attached Hardware section in ACE opens the AD9083EBZ board view.
+Double clicking the board icon in the Attached Hardware section in ACE opens the
+AD9083EBZ board view.
 
-The board view tab enables the user to quickly set up the AD9083. Figure 4 shows the STARTUP WIZARD pane within the AD9083EBZ board view. It may take several moments for the board view to initialize.
+The board view tab enables the user to quickly set up the AD9083. Figure 4 shows
+the STARTUP WIZARD pane within the AD9083EBZ board view. It may take several
+moments for the board view to initialize.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/ad9083_-_2_narrow_bw_mode_startup_wizzard.png
-   :width: 800px
+   :width: 800
 
 *Figure 5. AD9083EBZ Evaluation Board Quick Configuration **Chip View**
 
-Double clicking the AD9083 icon in the board view opens the chip view. The chip view enables the user to customize the AD9083 beyond the functions available in the board view.
+Double clicking the AD9083 icon in the board view opens the chip view. The chip
+view enables the user to customize the AD9083 beyond the functions available in
+the board view.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9083/ad9083_-_4_narrow_bw_mode_ad9083.png
-   :width: 600px
+   :width: 600
 
 *Figure 6. AD9083EBZ Evaluation Board Quick Configuration*
 
 Evaluation
 ----------
 
-The AD9083 can be configured in many different ways. We will provide examples for several configurations here.
+The AD9083 can be configured in many different ways. We will provide examples
+for several configurations here.
 
 **Wide Bandwidth Real Output Mode**
 
@@ -178,12 +201,14 @@ Parameters:
 
 You should see an FFT after setting up the board as shown and running the macro.
 
-
 |Figure 6. AD9083EBZ Wide Bandwidth Real Output Mode Typical FFT|
 
 *Figure 7. AD9083EBZ Wide Bandwidth Real Output Mode Typical FFT **Narrow Bandwidth Complex Output Mode**
 
-This configuration is suitable for applications such as phased-array radar. The output bandwidth is ± 12.7187 MHz. This example uses an Analog input frequency of 70.5MHz and the NCO frequency is 70.3125 MHz. Using the AD9083EBZ Startup Wizard, configure the AD9083 using the parameters below.
+This configuration is suitable for applications such as phased-array radar. The
+output bandwidth is ± 12.7187 MHz. This example uses an Analog input frequency
+of 70.5MHz and the NCO frequency is 70.3125 MHz. Using the AD9083EBZ Startup
+Wizard, configure the AD9083 using the parameters below.
 
 Parameters:
 
@@ -209,7 +234,6 @@ Parameters:
    -Click "Run Once"
 
 You should see an FFT after setting up the board as shown and running the macro.
-
 
 |Figure 6. AD9083EBZ Narrow Bandwidth Complex Output Mode Typical FFT|
 
@@ -248,7 +272,6 @@ Parameters:
 
 You should see an FFT after setting up the board as shown and running the macro.
 
-
 |image1|
 
 *Figure 9. AD9083EBZ Precision Time Domain Mode Typical FFT*
@@ -256,31 +279,33 @@ You should see an FFT after setting up the board as shown and running the macro.
 External Trigger
 ----------------
 
-SMA connector J2 on the ADS8v3 can be used as an optional trigger so that the data capture start time can be controlled. The trigger requires a 1.8V active high pulse width that is longer than the FPGA internal peripheral clock, which has a frequency of 50 MHz. To enable the external trigger:
+SMA connector J2 on the ADS8v3 can be used as an optional trigger so that the
+data capture start time can be controlled. The trigger requires a 1.8V active
+high pulse width that is longer than the FPGA internal peripheral clock, which
+has a frequency of 50 MHz. To enable the external trigger:
 
 1. Click on "Navigate to FPGA SPI" on the block diagram of the AD9083 Chip View
-
 
 |image2|
 
 2. Click on the "+" sign next to Address (Hex) 0106.
 
-
 |image3|
 
-3. Click on the "0" that is on the same row as "ext_trig_en". The 0 will change to a 1.
-
+3. Click on the "0" that is on the same row as "ext_trig_en". The 0 will change
+   to a 1.
 
 |image4|
 
 4. Click "Apply Changes"
 
-
 |image5|
 
-SMA connector J3 is normally used as a system ready indicator. It indicates that the FPGA is ready to accept an external trigger.
+SMA connector J3 is normally used as a system ready indicator. It indicates that
+the FPGA is ready to accept an external trigger.
 
-To capture data, click on "Run Once" as normal. Capture will begin once 1.8V is detected on connector J2 of the ADS8v3.
+To capture data, click on "Run Once" as normal. Capture will begin once 1.8V is
+detected on connector J2 of the ADS8v3.
 
 Troubleshooting Notes
 ---------------------
@@ -322,16 +347,16 @@ V1P8V  TP14       1.8V
      *Make sure P3 (Power Down / Standby Jumper) is not jumped.
 
 .. |Figure 6. AD9083EBZ Wide Bandwidth Real Output Mode Typical FFT| image:: https://wiki.analog.com/_media/resources/eval/ad9083/wide_bw_mode.png
-   :width: 600px
+   :width: 600
 .. |Figure 6. AD9083EBZ Narrow Bandwidth Complex Output Mode Typical FFT| image:: https://wiki.analog.com/_media/resources/eval/ad9083/narrow_bw_mode.png
-   :width: 600px
+   :width: 600
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9083/ad9083_ptd.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9083/navigate_to_fpga_spi.png
-   :width: 396px
+   :width: 396
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9083/0106.png
-   :width: 555px
+   :width: 555
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9083/ext_trig_en.png
-   :width: 1652px
+   :width: 1652
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9083/apply_changes.png
-   :width: 94px
+   :width: 94

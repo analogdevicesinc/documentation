@@ -13,7 +13,6 @@ This page will go through how to build and run the demo from the **software** po
 
 An overview about the theme can be seen in the following diagram:
 
-
 |image1|
 
 Software flow
@@ -57,8 +56,6 @@ The following is a list of items needed in order to replicate this demo.
 UART demo with precompiled program
 ----------------------------------
 
-
-
 .. collapsible:: Click to expand
 
    -  Set the :doc:`UART switch </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` to USB.
@@ -79,11 +76,9 @@ UART demo with precompiled program
    .. admonition:: Download
       :class: download
 
-
       Precompiled **ADuCM3029_demo_cn0536** project with **UART** communication:
 
       `ADuCM3029_demo_cn0536_uart.hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0536_uart.hex>`_
-
 
    -  :doc:`Upload </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>` the precompiled .hex file to the board. (Copy the .hex file to the DAPLINK drive)
    -  Reset the board from the :doc:`RESET </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` push button.
@@ -99,12 +94,8 @@ UART demo with precompiled program
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/uart_output.png
       :align: center
 
-
-
 MQTT (Wi-Fi) demo with precompiled program
 ------------------------------------------
-
-
 
 .. collapsible:: initialState="visible"
 
@@ -136,11 +127,9 @@ MQTT (Wi-Fi) demo with precompiled program
    .. admonition:: Download
       :class: download
 
-
       Precompiled **ADuCM3029_demo_cn0536** project with **MQTT** communication:
 
       `ADuCM3029_demo_cn0536_mqtt.hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0536_mqtt.hex>`_
-
 
    -  Create a hotspot or set a WiFi network with the following values (It must have **Internet** connection):
 
@@ -156,13 +145,13 @@ MQTT (Wi-Fi) demo with precompiled program
 
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/blue_led.jpg
       :align: center
-      :width: 400px
+      :width: 400
 
    -  If the setup completed **succesfully**, the **green** led will be turned **on** (blue will be turned off). This means that the program is sending data to the server.
 
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/green_led.jpg
       :align: center
-      :width: 400px
+      :width: 400
 
    -  In case of an **error** during setup or during program execution, both leds will **blink alternated** with a 1 second period.
    -  Data will be sent to:
@@ -172,7 +161,8 @@ MQTT (Wi-Fi) demo with precompiled program
 
    -  Use one of the below methods to view the data
 
-   XHIDDENSTART Use MQTT Web Client to view data initialState="visible" XHIDDENSTARTSTOP
+   XHIDDENSTART Use MQTT Web Client to view data initialState="visible"
+   XHIDDENSTARTSTOP
 
    -  Open the `MQTT Web Client <http://www.hivemq.com/demos/websocket-client>`_
    -  Set the above server to connect to:
@@ -190,10 +180,6 @@ MQTT (Wi-Fi) demo with precompiled program
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/mqtt_mesages.jpg
       :align: center
 
-
-
-
-
 .. collapsible:: Use MQTT local html client to view data
 
    -  Download the `HTML MQTT client <https://raw.githubusercontent.com/analogdevicesinc/EVAL-ADICUP3029/master/projects/ADuCM3029_demo_cn0536/demo.html>`_ (Rigth click on the link -> *Save link as...*)
@@ -204,29 +190,22 @@ MQTT (Wi-Fi) demo with precompiled program
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/local_html.jpg
       :align: center
 
-
-
-
-
 .. collapsible:: Use MQTT python client to view data
 
    -  Get the `python script <https://raw.githubusercontent.com/analogdevicesinc/EVAL-ADICUP3029/master/projects/ADuCM3029_demo_cn0536/scripts/main.py>`_ (Rigth click on the link -> *Save link as...*).
    -  Run a terminal (cmd in windows) where the file was downloaded.
    -  Install the needed python dependencies with: ``python -m pip install paho-mqtt matplotlib parse``
    -  Run the python sample script: ``python main.py``
-   -  A new plot windows will be created and the recieved data will be printed also in to the terminal:
+   -  A new plot windows will be created and the recieved data will be printed
+      also in to the terminal:
 
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/mqtt_plot.png
       :align: center
-
-
 
 XHIDDENEND
 
 Working with the software
 -------------------------
-
-
 
 .. collapsible:: Getting started with the software
 
@@ -243,13 +222,10 @@ Working with the software
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0536/proj_structure.png
       :align: center
 
-
-
-
-
 .. collapsible:: Editing software parameters
 
-   -  For Geiger Counter configuration see geiger_counter.h. The default configuration means:
+   -  For Geiger Counter configuration see geiger_counter.h. The default
+      configuration means:
 
       -  Output data will be calculated at each 10 seconds
       -  A average filter is applied on the last 5 samples
@@ -271,7 +247,8 @@ Working with the software
           */
          #define JUMPER_CONFIG   2``
 
-   -  For communication configuration see communication.h: The default configuration means:
+   -  For communication configuration see communication.h: The default
+      configuration means:
 
       -  **MQTT** is used as **default** communication method. If something goes wrong with Wi-fi, communication will start over UART.
          In order to use UART from the beginning, set the **COMUNICATION_METHOD** macro to UART
@@ -306,15 +283,9 @@ Working with the software
          #define MQTT_CLIENT_NAME    "analog_client"
          #define MQTT_PUBLISH_TOPIC  "analog_test_topic"``
 
-
-
-
-
 .. collapsible:: Build and debug the project
 
    :doc:`How to build and a CCES project </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`
-
-
 
 *End of Document*
 

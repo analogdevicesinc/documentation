@@ -1,14 +1,11 @@
 AD-BMSE2E3W-SL User Guide
 =========================
 
-
-
 .. note::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
    | This User Guide is now available at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-bmse2e3w-sl/index.html
-
 
 .. admonition:: Download
    :class: download
@@ -19,20 +16,29 @@ AD-BMSE2E3W-SL User Guide
    Marketing Brochure: `High Performance Light Electric Vehicle BMS (pdf) <https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/high-performance_light_electric_vehicle_bms.pdf>`_
    
 
-
 Overview
 --------
 
 The **AD-BMSE2E3W-SL** is a BMS reference design for light electric vehicles (LEVs). With a voltage range of 72 V to 96 V, this solution is suitable for electric 2-wheeler and 3-wheeler vehicles with high current capacity ranging up to 100 A.
 
-This single-board system utilizes the best-in-class ADBMS6830 cell monitoring chip that is capable of monitoring up to 2x 16-channel. This board also features battery pack monitoring using the ADBMS2950. The ADBMS6822 dual isoSPI transceiver provides a built-in 2-wire reversible isoSPI connection, which simplifies the communication of BMS parts in a daisy chain configuration before sending the data to SPI lines in the microcontroller.
+This single-board system utilizes the best-in-class ADBMS6830 cell monitoring
+chip that is capable of monitoring up to 2x 16-channel. This board also features
+battery pack monitoring using the ADBMS2950. The ADBMS6822 dual isoSPI
+transceiver provides a built-in 2-wire reversible isoSPI connection, which
+simplifies the communication of BMS parts in a daisy chain configuration before
+sending the data to SPI lines in the microcontroller.
 
-The on-board MAX32690 MCU, when loaded with the firmware, can perform BMS measurements such as cell voltage (average and filtered), and pack voltage and pack current measurement. The board also has a charge, pre-charge, and discharge mode that can be controlled by the ADBMS2950 pack monitor chip.
+The on-board MAX32690 MCU, when loaded with the firmware, can perform BMS
+measurements such as cell voltage (average and filtered), and pack voltage and
+pack current measurement. The board also has a charge, pre-charge, and discharge
+mode that can be controlled by the ADBMS2950 pack monitor chip.
 
-The AD-BMSE2E3W-SL is designed to perform either in embedded mode or using a GUI, where it calculates the battery's State of Charge (SoC) and State of Health (SoH) through enhanced coulomb counting technique.
+The AD-BMSE2E3W-SL is designed to perform either in embedded mode or using a
+GUI, where it calculates the battery's State of Charge (SoC) and State of Health
+(SoH) through enhanced coulomb counting technique.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/ad-bmse2e3w-sl_angle.jpg
-   :width: 500px
+   :width: 500
 
 Features
 --------
@@ -75,7 +81,7 @@ System Architecture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/updated_block_diagram_72vto96v.png
    :align: right
-   :width: 1000px
+   :width: 1000
 
 Specifications
 --------------
@@ -161,11 +167,12 @@ Specifications
 What's Inside the Box?
 ----------------------
 
-Upon purchase of the AD-BMSE2E3W-SL kit, the package comes with the following boards and accessories:
+Upon purchase of the AD-BMSE2E3W-SL kit, the package comes with the following
+boards and accessories:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/ad-bmse2e3w-sl_package_contents.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 --------------
 
@@ -174,7 +181,7 @@ Components and Connections
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/revised_ad-bmse2e3w-sl_board_with_pin_labels.png
    :align: center
-   :width: 3000px
+   :width: 3000
 
 +-----------------------------+---------------------------------------+---------------------------------------------------------------------------------------+
 | **Hardware Part Functions** |                                       |                                                                                       |
@@ -218,11 +225,16 @@ Components and Connections
 System Evaluation
 =================
 
-Follow the setup shown in the diagram below to get the board up and running. Ensure that the hardware parts and equipment are complete based on list of Equipment Needed. The banana plug cables used in this setup only have a maximum rating of 10A. Cables suitable for higher current rating must be used if the intended application operates at range higher than 10A. Note that the AD-BMSE2E3W-SL board can only accommodate up to 100A.
+Follow the setup shown in the diagram below to get the board up and running.
+Ensure that the hardware parts and equipment are complete based on list of
+Equipment Needed. The banana plug cables used in this setup only have a maximum
+rating of 10A. Cables suitable for higher current rating must be used if the
+intended application operates at range higher than 10A. Note that the
+AD-BMSE2E3W-SL board can only accommodate up to 100A.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/system_evaluation_set-up.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 Equipment Needed
 ----------------
@@ -239,33 +251,43 @@ Equipment Needed
 
 .. warning::
 
-   This reference design has not undergone compliant testing for EMI/ EMC standards for automotive. It is up for the user to do its qualification as the requirements vary depending on its end application or use cases.
-
-
+   This reference design has not undergone compliant testing for EMI/ EMC
+   standards for automotive. It is up for the user to do its qualification as
+   the requirements vary depending on its end application or use cases.
 
 .. esd-warning::
-
 
 Hardware Setup
 --------------
 
 .. important::
 
-   For high current applications requiring greater than 50 A, it is advisable to install a heat sink to protect the pre-charge, charge, and discharge MOSFETs from overheating.
+   For high current applications requiring greater than 50 A, it is advisable to
+   install a heat sink to protect the pre-charge, charge, and discharge MOSFETs
+   from overheating.
 
    
-   The AD-BMSE2E3W-SL Kit has 7 available HEATSINK PIN-FIN W/TAPE (375424B00034G) easy-to install, adhesive type, aluminum top mount heat sink than can be installed directly on top of the board.
+   The AD-BMSE2E3W-SL Kit has 7 available HEATSINK PIN-FIN W/TAPE
+   (375424B00034G) easy-to install, adhesive type, aluminum top mount heat sink
+   than can be installed directly on top of the board.
    
-   Peel off the protective film from the bottom of each heat sink and firmly press each one on top of the following FETs:
+   Peel off the protective film from the bottom of each heat sink and firmly
+   press each one on top of the following FETs:
    
-   (1) Attach the 5 heat sinks on the top layer of the board (Q4, Q5, Q6, Q7, and Q9),
+   (1) Attach the 5 heat sinks on the top layer of the board (Q4, Q5, Q6, Q7,
+   and Q9),
    
    (2) the remaining 2 heat sinks on the bottom layer of the board (Q3 and Q8).
 
+The board utilizes the DC2472A battery emulator as input for cell voltage
+measurement. The DC2472A allows a cell voltage of 1.4 V (min) to 4.2 V (max).
+Follow below steps to set up the board for cell measurement:
 
-The board utilizes the DC2472A battery emulator as input for cell voltage measurement. The DC2472A allows a cell voltage of 1.4 V (min) to 4.2 V (max). Follow below steps to set up the board for cell measurement:
-
-1. Screw the two cell connector blocks to the two DC2472A battery emulators. Note that the first two terminals and the last terminal of each DC2472A cell connector must be left hanging (refer to below figure). Make sure to also set the last two terminals' input to low voltage or equivalent range of roughly 1.4V per cell.
+1. Screw the two cell connector blocks to the two DC2472A battery emulators.
+   Note that the first two terminals and the last terminal of each DC2472A cell
+   connector must be left hanging (refer to below figure). Make sure to also set
+   the last two terminals' input to low voltage or equivalent range of roughly
+   1.4V per cell.
 
 +---------------------------------------------------------------+
 | |image1|                                                      |
@@ -278,10 +300,12 @@ The board utilizes the DC2472A battery emulator as input for cell voltage measur
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/usb_emulator.png
    :align: center
 
-3. Set the DC2472A battery emulators to the lowest voltage by fully turning the Cell Voltage Adjustment Potentiometer counterclockwise.
+3. Set the DC2472A battery emulators to the lowest voltage by fully turning the
+   Cell Voltage Adjustment Potentiometer counterclockwise.
 
-4. Attach the MAX32625PICO programmer to the AD-BMSE2E3W-SL board using the 10-pin ribbon SWD cable. Power the MAX32625PICO using a micro-USB to USB cable connected to the Host PC.
-
+4. Attach the MAX32625PICO programmer to the AD-BMSE2E3W-SL board using the
+   10-pin ribbon SWD cable. Power the MAX32625PICO using a micro-USB to USB
+   cable connected to the Host PC.
 
 |image2|
 
@@ -303,38 +327,40 @@ The board utilizes the DC2472A battery emulator as input for cell voltage measur
 
       .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
          :align: center
-         :width: 400px
+         :width: 400
 
       -   Release the button once the MAINTENANCE drive is mounted.
       -   Drag and drop (to the MAINTENANCE drive) the firmware image.
-      -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the AD-BMSE2E3W-SL Board.
-
-
-   
-
-
-5. Connect the alligator clip cable (red) to the VBATTP Pin or the 3rd of Pin 17 header of the DC2472A battery emulator. Then insert the other end of the cable (banana jack plug) to TP16 (VBAT+ terminal) of the AD-BMSE2E3W-SL board.
-
-
+      -   After a few seconds, the MAINTENANCE drive will disappear and be
+          replaced by a drive named DAPLINK. This indicates that the process is
+          complete, and the MAX32625PICO can now be used to flash the firmware
+          of the AD-BMSE2E3W-SL Board.
 
    
 
+5. Connect the alligator clip cable (red) to the VBATTP Pin or the 3rd of Pin 17
+   header of the DC2472A battery emulator. Then insert the other end of the
+   cable (banana jack plug) to TP16 (VBAT+ terminal) of the AD-BMSE2E3W-SL
+   board.
+
+   
 
 |image3|
 
-6. Connect the alligator clip cable (black) to the GND (VBAT-) supply of the DC2472A battery emulator. Then, connect the other end of the cable to the Rsense (top side) of the AD-BMSE2E3W-SL.
-
+6. Connect the alligator clip cable (black) to the GND (VBAT-) supply of the
+   DC2472A battery emulator. Then, connect the other end of the cable to the
+   Rsense (top side) of the AD-BMSE2E3W-SL.
 
 |image4|
 
-7. Set the DC2472A battery emulators to HIGH voltage or equivalent to 4.1 V per cell by turning the Cell Voltage Adjustment Potentiometer clockwise.
+7. Set the DC2472A battery emulators to HIGH voltage or equivalent to 4.1 V per
+   cell by turning the Cell Voltage Adjustment Potentiometer clockwise.
 
-8. Check the supply for the following test points as described in the diagram and table below. Make sure that the voltage levels are within the specified range.
-
+8. Check the supply for the following test points as described in the diagram
+   and table below. Make sure that the voltage levels are within the specified
+   range.
 
 |image5|
-
-
 
 +--------------------------------------+----------------------------+----------------------------------------------------+------------------------------+
 | **Hardware Supply Quick Test Point** |                            |                                                    |                              |
@@ -361,12 +387,12 @@ The board utilizes the DC2472A battery emulator as input for cell voltage measur
 
 .. tip::
 
-   The AD-BMSE2E3W-SL comes complete with firmware examples and easy-to-use application GUI.
+   The AD-BMSE2E3W-SL comes complete with firmware examples and easy-to-use
+   application GUI.
 
    
    Access the software resources and see the setup procedure in the :doc:`AD-BMSE2E3W-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-bmse2e3w-sl/software>` .
    
-
 
 --------------
 
@@ -376,11 +402,14 @@ Application
 72V to 96V Light EV Basic System Application
 --------------------------------------------
 
-Below diagram depicts the essential components needed when using this BMS reference design for basic electric 2-wheeler or 3-wheeler applications. Each block represents a component. Use the diagram as a guide to understand the system operation.
+Below diagram depicts the essential components needed when using this BMS
+reference design for basic electric 2-wheeler or 3-wheeler applications. Each
+block represents a component. Use the diagram as a guide to understand the
+system operation.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/72v-96v_vehicle_system.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 1. **Battery Cell/Pack Block** - This block is where your battery supply or source is located. There are two configurations on how to connect the battery cells to the BMS:
 
@@ -392,8 +421,9 @@ Below diagram depicts the essential components needed when using this BMS refere
 
 .. note::
 
-   The setup shown in this User Guide uses the single side depopulation method only in connecting/aligning the cell to the BMS. The dual side depopulation is not yet supported by the software.
-
+   The setup shown in this User Guide uses the single side depopulation method
+   only in connecting/aligning the cell to the BMS. The dual side depopulation
+   is not yet supported by the software.
 
 2. **BMS Block** - This block is where the BMS Cell and Pack Monitoring and MCU control happens. This block is also responsible for the control of the *Charging* (if the battery needs to be charged) and *Discharging* (when the battery needs to deliver voltage output going to the load side).
 
@@ -409,23 +439,22 @@ Below diagram depicts the essential components needed when using this BMS refere
 
    For the BASIC CAN setup, we use the PCAN-USB connector (https://www.peak-system.com/PCAN-USB.199.0.html?&L=1) as our CAN interpreter. This product is *not included* in the AD-BMSE2E3W-SL Kit and needs to be purchased separately.
 
-
 4. **Load** - This block is where you can place your external load. The voltage output at this level can vary from 72V to 96V with 50A to 100A range current capacity. The system implements a low side current sensing using Rshunt (sense resistor) where the VBAT- of the battery is connected to the upper end of the Rshunt bar and Shunt- is connected to the lower end of the Rshunt. The Shunt- will then be connected to the end of the load or the negative supply of the load.
-
-
 
 |image14|
 
 .. tip::
 
-   Combining all components such as the Battery Cell/Pack, BMS, User Interface Display, and the Load will create an easy-to-use BMS system for E2W/E3W vehicle applications.
+   Combining all components such as the Battery Cell/Pack, BMS, User Interface
+   Display, and the Load will create an easy-to-use BMS system for E2W/E3W
+   vehicle applications.
 
    
    After the set up for vehicle and load connection is done, you can now load the sample firmware for vehicle application. Please follow procedure found in the :doc:`software installation page </wiki-migration/resources/eval/user-guides/ad-bmse2e3w-sl/software>`.
    
-   Open the GUI and input the battery parameters. You should now be able to monitor the battery via GUI.
+   Open the GUI and input the battery parameters. You should now be able to
+   monitor the battery via GUI.
    
-
 
 --------------
 
@@ -456,38 +485,37 @@ Design & Integration Files
    -  Allegro Project
    
 
-
 Help and Support
 ----------------
 
-For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer
+Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_emulator_pins.png
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/max32625_power_usb_pc.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/connector_supply_vbattp.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/gnd_vbat-_to_gnd_sense.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/quick_test_points.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/single_side_cell_depopulation.png
-   :width: 500px
+   :width: 500
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dual_side_cell_depopulation.png
-   :width: 500px
+   :width: 500
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/single_side_cell_depopulation.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dual_side_cell_depopulation.png
-   :width: 500px
+   :width: 500
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/uart_comm.png
-   :width: 500px
+   :width: 500
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/basic_can_comm.png
-   :width: 500px
+   :width: 500
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/uart_comm.png
-   :width: 500px
+   :width: 500
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/basic_can_comm.png
-   :width: 500px
+   :width: 500
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/load_diagram.png
-   :width: 500px
+   :width: 500

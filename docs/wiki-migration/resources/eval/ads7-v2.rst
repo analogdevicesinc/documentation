@@ -21,13 +21,11 @@ ADS7-V2EBZ Features
 
 5. Simple USB port interface (2.0).
 
-
 |image1|
 
 .. container:: centeralign
 
    *Figure 1. ADS7-V2EBZ High Speed Evaluation Board*
-
 
 Using the ADS7-V2EBZ to evaluate High Speed A/D Converters
 ==========================================================
@@ -35,15 +33,17 @@ Using the ADS7-V2EBZ to evaluate High Speed A/D Converters
 Overview
 --------
 
-When connected to a specified Analog Devices high speed adc evaluation board, the ADS7-V2 works as a data acquistion board. Designed to support the highest speed JESD204B A/D Converters, the FPGA on the ADS7-V2 acts as the data receiver, while the ADC is the data transmitter. A typical test setup is shown below.
-
+When connected to a specified Analog Devices high speed adc evaluation board,
+the ADS7-V2 works as a data acquistion board. Designed to support the highest
+speed JESD204B A/D Converters, the FPGA on the ADS7-V2 acts as the data
+receiver, while the ADC is the data transmitter. A typical test setup is shown
+below.
 
 |image2|
 
 .. container:: centeralign
 
    *Figure 2. ADS7-V2 connected to High Speed A/D Converter Evaluation Board*
-
 
 Helpful Documents
 -----------------
@@ -73,6 +73,6 @@ ADS7-V2EBZ Supported ADC Evaluation Boards
 Refer to the Analog Devices High Speed ADC capture board product page at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for a table of ADS7-V2EBZ compatible ADC evaluation boards.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ads7-v2ebz.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9680_ads7-v2ebz_setup.jpg
-   :width: 600px
+   :width: 600

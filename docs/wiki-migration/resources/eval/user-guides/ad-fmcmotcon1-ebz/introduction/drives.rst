@@ -11,4 +11,4 @@ A **Motor Drive** is a system that varies the motor electrical input power to co
 **Market sub-segments in motor control - partners and system value from ADI**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction/drive_segments.png
-   :width: 400px
+   :width: 400

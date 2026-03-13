@@ -1,8 +1,6 @@
 Linux on the Xilinx ML605 Virtex6 FPGA development Board
 ========================================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,14 +17,12 @@ Linux on the Xilinx ML605 Virtex6 FPGA development Board
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 This guide provides some step-by-step instructions on how to build a Microblaze Linux Kernel image for the AD-FMCOMMS1 FMC board connected to an `ML605 <https://www.xilinx.com/ML605>`_.
 
 .. important::
 
-   Building Linux on ML605 Virtex6 board remains on this website only for legacy purposes. The Linux support for this carrier has been discontinued.
-
+   Building Linux on ML605 Virtex6 board remains on this website only for legacy
+   purposes. The Linux support for this carrier has been discontinued.
 
 Required Software
 -----------------
@@ -57,7 +53,6 @@ Get Microblaze Little Endian Toolchain from Xilinx
       [--snip--]
    
 
-
 Untar Toolchain
 ~~~~~~~~~~~~~~~
 
@@ -71,7 +66,6 @@ Untar Toolchain
       Dave@HAL9000:~/fmcomms1$ cd microblaze_v1.0_le/
       Dave@HAL9000:~/fmcomms1/microblaze_v1.0_le$ tar xzf microblazeel-unknown-linux-gnu.tar.gz
    
-
 
 Get Linux kernel source
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,7 +87,6 @@ Get Linux kernel source
       Dave@HAL9000:~/fmcomms1$
    
 
-
 Checkout master branch
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -110,7 +103,6 @@ Checkout master branch
       Dave@HAL9000:~/fmcomms1/linux$
    
 
-
 Set Environmental Variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -125,7 +117,6 @@ Set Environmental Variables
       Dave@HAL9000:~/fmcomms1/linux$ export ARCH=microblaze
       Dave@HAL9000:~/fmcomms1/linux$ export CROSS_COMPILE=microblazeel-unknown-linux-gnu-
    
-
 
 Configure Kernel for ML605 XCOMM platform (aka FMCOMMS1)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,7 +141,6 @@ Configure Kernel for ML605 XCOMM platform (aka FMCOMMS1)
       #
       Dave@HAL9000:~/fmcomms1/linux$
    
-
 
 Get Root File-System
 ~~~~~~~~~~~~~~~~~~~~
@@ -178,7 +168,6 @@ Get Root File-System
       2012-12-19 09:25:30 (1.42 MB/s) - `rootfs.cpio.gz' saved [2958801/2958801]
       Dave@HAL9000:~/fmcomms1/linux$
    
-
 
 Build kernel
 ~~~~~~~~~~~~
@@ -212,14 +201,13 @@ Build kernel
       Dave@HAL9000:~/devel/git/staging_3$
    
 
-
 Generate ML605 SysACE Compact Flash File
 ----------------------------------------
 
 .. tip::
 
-   Following example shows building the System ACE file on a Linux host. Same steps can alternatively performed on a Windows ISE installation.
-
+   Following example shows building the System ACE file on a Linux host. Same
+   steps can alternatively performed on a Windows ISE installation.
 
 Create a directory and gather required files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -236,7 +224,6 @@ Create a directory and gather required files
       Dave@HAL9000:~/fmcomms1/build$ cp ~/fpgahdl_xilinx/cf_xcomm/implementation/system.bit .
       Dave@HAL9000:~/fmcomms1/build$ cp ../linux/arch/microblaze/boot/simpleImage.cf_xcomm_ml605 .
    
-
 
 Source Xilinx ISE settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -259,7 +246,6 @@ On Windows open a ISE Design Suite Command Prompt.
       . /opt/Xilinx/14.1/ISE_DS/ISE/.settings64.sh /opt/Xilinx/14.1/ISE_DS/ISE
       . /opt/Xilinx/14.1/ISE_DS/SysGen/.settings64.sh /opt/Xilinx/14.1/ISE_DS/SysGen
    
-
 
 Run XMD genace tcl script
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -309,8 +295,9 @@ Run XMD genace tcl script
       SystemACE file 'linux.ace' created
    
 
-
-The newly created System ACE file can now be transferred to an Compact Flash card. Instructions on how to format and setup the CF Card and configure the ML605 for SysACE boot can be found here:
+The newly created System ACE file can now be transferred to an Compact Flash
+card. Instructions on how to format and setup the CF Card and configure the
+ML605 for SysACE boot can be found here:
 
 :doc:`AD-FMCOMMS1-EBZ ML605 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart/microblaze_ml605>`
 
@@ -330,4 +317,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

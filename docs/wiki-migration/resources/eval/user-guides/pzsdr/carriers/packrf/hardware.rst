@@ -4,7 +4,8 @@ ADRV-PackRF Hardware
 PackRF Downloads
 ----------------
 
-This section contains information regarding mechanical aspects of the PackRF Radios: Pictures of the copper, board dimensions, PCB stackup, 3D models
+This section contains information regarding mechanical aspects of the PackRF
+Radios: Pictures of the copper, board dimensions, PCB stackup, 3D models
 
 .. admonition:: Download
    :class: download
@@ -15,7 +16,6 @@ This section contains information regarding mechanical aspects of the PackRF Rad
    -  `PackRF Carrier Card Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/BOM_PackRF_carrier_board.xlsx>`_
    -  `Portable Radio Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/pack_rf_bill_of_materials.xlsx>`_
    
-
 
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------+----------+
 | Quantity | Description                                                                                                                                 | Image    |
@@ -52,14 +52,14 @@ This section contains information regarding mechanical aspects of the PackRF Rad
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/pelican_case.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/img_2440.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/gps1.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/pelican_case.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/img_2440.jpg
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/gps1.jpg
-   :width: 400px
+   :width: 400

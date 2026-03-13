@@ -3,31 +3,40 @@ TCP/IP Channels (ADAU144x / ADAU145x / ADAU146x)
 
 :doc:`Click here to return to the Using SigmaStudio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
 
-The TCP/IP channel can be used to connect with the SigmaDSP in case the SigmaDSP is present at a different location and cannot be physically connected the the PC that is running SigmaStudio. SigmaStudio communicates with a server connected to the SigmaDSP using TCP/IP.
+The TCP/IP channel can be used to connect with the SigmaDSP in case the SigmaDSP
+is present at a different location and cannot be physically connected the the PC
+that is running SigmaStudio. SigmaStudio communicates with a server connected to
+the SigmaDSP using TCP/IP.
 
-The TCPIP channel is present under the Communication Channels tree as shown in the figure below:
-
+The TCPIP channel is present under the Communication Channels tree as shown in
+the figure below:
 
 |image1|
 
-Drag and Drop the channel onto the configuration tab and connect it to the IC. An option to open a TCPIP form will appear in the context menu as shown below:
+Drag and Drop the channel onto the configuration tab and connect it to the IC.
+An option to open a TCPIP form will appear in the context menu as shown below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/context_menu.jpg
    :align: center
 
-A TCPIP from is launched when Show TCPIP form is clicked. The form is as shown in the figure below:
+A TCPIP from is launched when Show TCPIP form is clicked. The form is as shown
+in the figure below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/tcpip_form.jpg
    :align: center
 
-Enter the IP address and the port number on which the server connected to SigmaDSP is listening on in the TCPIP form. Click on Open connection to open the connection with the server.
+Enter the IP address and the port number on which the server connected to
+SigmaDSP is listening on in the TCPIP form. Click on Open connection to open the
+connection with the server.
 
-Once the server is connected, SigmaStudio is free to send and receive data to and from the server.
+Once the server is connected, SigmaStudio is free to send and receive data to
+and from the server.
 
 Write Data Format
 -----------------
 
-SigmaStudio sends the code and parameter information to the server connected to SigmaDSP in the following format:
+SigmaStudio sends the code and parameter information to the server connected to
+SigmaDSP in the following format:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/writeformat.jpg
    :align: center
@@ -58,7 +67,8 @@ Fields
 Readback from the DSP
 ---------------------
 
-In order to achieve readback, SigmaStudio send a read request. The server connected to SigmaDSP must respond to the read request with a read response.
+In order to achieve readback, SigmaStudio send a read request. The server
+connected to SigmaDSP must respond to the read request with a read response.
 
 Read Request format
 ~~~~~~~~~~~~~~~~~~~
@@ -90,7 +100,8 @@ Fields
 Read Response Format
 ~~~~~~~~~~~~~~~~~~~~
 
-The server connected to SigmaDSP has to respond to the read request in the following format:
+The server connected to SigmaDSP has to respond to the read request in the
+following format:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/readresponse2.jpg
    :align: center

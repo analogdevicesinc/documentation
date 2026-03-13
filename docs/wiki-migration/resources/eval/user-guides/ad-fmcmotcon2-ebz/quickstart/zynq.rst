@@ -1,7 +1,8 @@
 AD-FMCMOTCON2-EBZ Linux on Zynq Quick Start Guide
 =================================================
 
-This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCMOTCON2-EBZ on either:
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the AD-FMCMOTCON2-EBZ on either:
 
 -  `ZED Board <http://zedboard.org/product/zedboard>`_, Rev C or later
 
@@ -31,12 +32,12 @@ Booting the SD Card
 
    -  IIO Scope tool:
 
-
    |image1|
 
    -  Learn more about the :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
 
--  You are now done with booting from the SD card. You can interact with the GUI either over the network, or with the HDMI monitor/USB keyboard mouse.
+-  You are now done with booting from the SD card. You can interact with the GUI
+   either over the network, or with the HDMI monitor/USB keyboard mouse.
 
 Using IIO SCOPE for AD-FMCMOTCON2-EBZ
 -------------------------------------
@@ -47,10 +48,9 @@ Using IIO SCOPE for AD-FMCMOTCON2-EBZ
 
    Even thought this is Linux, this is a persistent file system. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with: ``sudo shutdown -h now``
 
-
    |image2|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/iio_scope.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

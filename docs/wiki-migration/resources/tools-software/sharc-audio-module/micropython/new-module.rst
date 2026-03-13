@@ -1,12 +1,16 @@
 Tutorial: Creating a New C-language MicroPython Module
 ======================================================
 
-Python modules in MicroPython can be either written in Python or C. Modules written in C would have better performance, but worse portability. It is advised only implement highly platform dependent modules or performance critical modules in C.
+Python modules in MicroPython can be either written in Python or C. Modules
+written in C would have better performance, but worse portability. It is advised
+only implement highly platform dependent modules or performance critical modules
+in C.
 
 A module template
 -----------------
 
-Here is a template that can be used as a starting point of writing a new module in C.
+Here is a template that can be used as a starting point of writing a new module
+in C.
 
 .. code:: c
 
@@ -31,9 +35,14 @@ Here is a template that can be used as a starting point of writing a new module 
        .globals = (mp_obj_dict_t*)&foo_module_globals,
    };
 
-In this template, it declares a module called foo and has one member function called bar. With no arguments, when called, it returns True. If arguments need to be added, all arguments need to have type of mp_obj_t, and the MP_DEFINE_CONST_FUN_OBJ_X macro should be changed to reflect the argument number (for example, use MP_DEFINE_CONST_FUN_OBJ_2 if the function has 2 arguments.)
+In this template, it declares a module called foo and has one member function
+called bar. With no arguments, when called, it returns True. If arguments need
+to be added, all arguments need to have type of mp_obj_t, and the
+MP_DEFINE_CONST_FUN_OBJ_X macro should be changed to reflect the argument number
+(for example, use MP_DEFINE_CONST_FUN_OBJ_2 if the function has 2 arguments.)
 
-To link this module into a MicroPython build, one also needs to add the module into the builtin list in mpconfigport.h:
+To link this module into a MicroPython build, one also needs to add the module
+into the builtin list in mpconfigport.h:
 
 .. code:: c
 
@@ -41,4 +50,3 @@ To link this module into a MicroPython build, one also needs to add the module i
        { MP_ROM_QSTR(MP_QSTR_foo), MP_ROM_PTR(&mp_module_foo) }, \
 
 And add the file implement the library into Makefile.
-

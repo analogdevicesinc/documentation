@@ -6,7 +6,8 @@ This page describes using MATLAB with DPG2 and DPG3 pattern generators. For the 
 MATLAB R2008b and Earlier
 -------------------------
 
-To begin, use the MATLAB command actxserver to connect to the DPG Software Suite.
+To begin, use the MATLAB command actxserver to connect to the DPG Software
+Suite.
 
 For the DPG2, use:
 
@@ -32,14 +33,17 @@ Most of the commands found in the `programming_reference <https://wiki.analog.co
    -  The "Int" integer format referenced in the `programming_reference <https://wiki.analog.com/programming_reference>`_ is the same as the MATLAB data type int32. The "Double" data type is the same as MATLAB's type double. Most matrices in MATLAB are type double, unless specifically cast to a different data type.
    -  When setting the idle pattern, the SetPatternInt2D(int[,] pattern) method will need to be used. Setting the IdlePattern.Pattern property is not supported by MATLAB. The idle pattern will need to be an array (matrix) of type int32 (as opposed to the default of type double). An array x which is of type double can be converted to an integer array by the MATLAB command int32(x).
    -  Be aware of any vector length restrictions for the particular pattern generator you are communicating to. For example, the length of a vector on the DPG2 must be divisible by 256.
-   -  The Interleaved commands take one vector and split it between the two output ports on the pattern generator. For single ports DACs which take interleaved data, you will need to interleave the channels before providing the data to the pattern generator.
+   -  The Interleaved commands take one vector and split it between the two
+      output ports on the pattern generator. For single ports DACs which take
+      interleaved data, you will need to interleave the channels before
+      providing the data to the pattern generator.
    
-
 
 Vector Downloading
 ~~~~~~~~~~~~~~~~~~
 
-Because of the above restrictions with MATLAB, only the following DownloadVector commands are valid:
+Because of the above restrictions with MATLAB, only the following DownloadVector
+commands are valid:
 
 +---------------------+--------------------------------+-----------------------------------+
 |                     | int32                          | double                            |
@@ -52,7 +56,8 @@ Because of the above restrictions with MATLAB, only the following DownloadVector
 MATLAB R2009a and Later
 -----------------------
 
-In versions of MATLAB starting with R2009a, a direct connection to the DPG libraries is now possible. To begin, follow these steps:
+In versions of MATLAB starting with R2009a, a direct connection to the DPG
+libraries is now possible. To begin, follow these steps:
 
 Connect to the top-level DPG library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,11 +86,11 @@ This example will connect to a DPG2:
 
    The index of *hardwarePlugins* corresponding to a particular hardware type could change if you ever update your DAC Software Suite. It is advisable to select the index of the *hardwarePlugins* array by querying the *FriendlyName* and selecting the one that has the correct name.
 
-
 Connect to a specific device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now you can query the interface to see if any hardware of this type (in this case, a DPG2) is actually connected:
+Now you can query the interface to see if any hardware of this type (in this
+case, a DPG2) is actually connected:
 
 .. code:: matlab
 
@@ -100,7 +105,10 @@ The *devices* array now contains a reference to each physically attached pattern
 Configure the pattern generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The FPGA in the pattern generator can be setup for several different interface standards. Select the appropriate configuration for the evaluation board connected to the pattern generator, and configure the FPGA. In this example, an LVDS interface will be used:
+The FPGA in the pattern generator can be setup for several different interface
+standards. Select the appropriate configuration for the evaluation board
+connected to the pattern generator, and configure the FPGA. In this example, an
+LVDS interface will be used:
 
 .. code:: matlab
 
@@ -109,7 +117,8 @@ The FPGA in the pattern generator can be setup for several different interface s
 Load a vector into the pattern generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step in loading a vector into a pattern generator is to convert the MATLAB array into a format recognizable by the DPG software:
+The first step in loading a vector into a pattern generator is to convert the
+MATLAB array into a format recognizable by the DPG software:
 
 .. code:: matlab
 
@@ -121,7 +130,8 @@ The new array can now be loaded into the pattern generator. There are numerous w
 
    >> dpg2.DownloadInterleavedVectorInt1D(dpg_array,2,true);
 
-Once the vector is loaded, the Play Mode should be set to Loop, followed by the command to begin vector playback:
+Once the vector is loaded, the Play Mode should be set to Loop, followed by the
+command to begin vector playback:
 
 .. code:: matlab
 
@@ -133,12 +143,14 @@ Formatting the input data
 
 How the data is formatted in *original_array* will vary depending on what DAC the data is being sent to. The data itself is not interpreted by the download functions (bits in = bits out). Therefore, the data format (binary, two's compliment, etc) must match what the DAC is expecting.
 
-The DPG has two LVDS buses, which become interleaved into one vector. The data must be inserted into the data array properly for it to be de-interleaved by the DPG.
+The DPG has two LVDS buses, which become interleaved into one vector. The data
+must be inserted into the data array properly for it to be de-interleaved by the
+DPG.
 
-For example, on an AD9739 (dual-port, single DAC), the data would look like this:
+For example, on an AD9739 (dual-port, single DAC), the data would look like
+this:
 
 +----------+
-
 
 | Sample 1 |
 
@@ -163,7 +175,6 @@ For example, on an AD9739 (dual-port, single DAC), the data would look like this
 On the AD9122 (dual DAC, single port), the data would look like:
 
 +------------+
-
 
 | I Sample 1 |
 

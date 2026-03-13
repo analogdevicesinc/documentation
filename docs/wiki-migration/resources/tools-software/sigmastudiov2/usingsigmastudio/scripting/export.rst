@@ -3,7 +3,10 @@
 Export System files
 ===================
 
-This action allows the user to export the project files to a specified file location. The function call takes in 2 arguments. Return type is a SSPResult which contains a IsSuccess flag for success/failure and Message in the form of list of strings.
+This action allows the user to export the project files to a specified file
+location. The function call takes in 2 arguments. Return type is a SSPResult
+which contains a IsSuccess flag for success/failure and Message in the form of
+list of strings.
 
 API
 ---
@@ -21,7 +24,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information for the Export action.
+SSPResult contains 'IsSuccess' flag and 'Message' information for the Export
+action.
 
 ::
 

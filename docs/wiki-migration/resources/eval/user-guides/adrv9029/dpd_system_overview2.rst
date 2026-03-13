@@ -1,11 +1,12 @@
 ADRV9029 DPD System Overview
 ============================
 
-A simplified block diagram of the ADRV9029 transceiver DPD system is shown in the figure below
+A simplified block diagram of the ADRV9029 transceiver DPD system is shown in
+the figure below
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpd_simplifiedblockdiagram.png
    :align: center
-   :width: 800px
+   :width: 800
 
 **Transmit Datapath** – The digital baseband signal from the JESD de-framer output goes through an optional Crest Factor Reduction (CFR) block for reduction of the overall peak to average power ratio(PAPR) of the signal followed by a digital interpolation filter which interpolates the baseband signal by a factor of 1x, 2x or 4x for analyzing the baseband signal over the DPD analysis bandwidth. The inverse PA model is applied by the DPD engine, followed by the rest of the transmit signal chain including digital to analog conversion, up conversion by a mixer before the signal is fed into the actual amplifier.
 

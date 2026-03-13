@@ -7,10 +7,15 @@ Filters
 
 .. hint::
 
-   Note: Most of these filters allow either double- or single-precision computation. Double-precision should be used unless the DSP is running out of resources. Single-precision should not be used for signal content below 1/10 the sampling frequency (5kHz for a typical 48kSPS system), or for high-Q filters.
+   Note: Most of these filters allow either double- or single-precision
+   computation. Double-precision should be used unless the DSP is running out of
+   resources. Single-precision should not be used for signal content below 1/10
+   the sampling frequency (5kHz for a typical 48kSPS system), or for high-Q
+   filters.
 
-
-The Filters library of the Toolbox lets you access numerous filter / EQ blocks for shaping the frequency content of your signal. The following blocks are available:
+The Filters library of the Toolbox lets you access numerous filter / EQ blocks
+for shaping the frequency content of your signal. The following blocks are
+available:
 
 FIR Filters
 -----------

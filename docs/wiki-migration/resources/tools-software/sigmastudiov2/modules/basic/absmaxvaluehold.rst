@@ -9,7 +9,11 @@ Absolute Max Value Hold
 Description
 -----------
 
-The AbsMaxValueHold block monitors one (or more) input(s) and routes the absolute max value of the input to the output. This block holds the absolute max value while the control input is 0 and reset the absolute max value while the control input is 1. Note - In case of ADSP-214xx and ADSP-215xx/SC5xx, there will be per channel max hold and not max hold across channels.
+The AbsMaxValueHold block monitors one (or more) input(s) and routes the
+absolute max value of the input to the output. This block holds the absolute max
+value while the control input is 0 and reset the absolute max value while the
+control input is 1. Note - In case of ADSP-214xx and ADSP-215xx/SC5xx, there
+will be per channel max hold and not max hold across channels.
 
 Targets Supported
 -----------------

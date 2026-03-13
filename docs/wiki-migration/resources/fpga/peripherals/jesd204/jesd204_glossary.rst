@@ -5,7 +5,6 @@ JESD204B Glossary
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/jesd204/index.html\
 
-
 Control characters
 ------------------
 

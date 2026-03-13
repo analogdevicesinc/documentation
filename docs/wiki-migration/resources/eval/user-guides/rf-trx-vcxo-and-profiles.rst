@@ -6,13 +6,25 @@ Changing the VCXO frequency
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9528_fbl.png
    :align: center
-   :width: 400px
+   :width: 400
 
-The ADRV9009, ADRV9008-1, ADRV9008-2, AD9371, AD9375 evaluation boards contains an on-board VCXO (Voltage Controlled Crystal Oscillator) as well as the AD9528 chip responsible for the device clock and SYSREF signal generation and distribution. With the hardware configuration provided on the evaluation board, a user can generate device clock frequencies such as 122.88MHz, 153.6MHz, 184.32MHz, 245.76MHz, and 307.2MHz. There are limitations with the default hardware configuration in the scenario where a user desired device frequencies are not related to the on-board 122.88MHz VCXO by a rational fraction. Examples of such device clock frequency are: 125MHz, 133.33MHz, 250MHz and 266.66MHz. The document below outlines these limitations as well as explains how they can be overcome with an AD9371 evaluation board hardware modification. Pretty much the same things also apply for all the other devices listed above.
+The ADRV9009, ADRV9008-1, ADRV9008-2, AD9371, AD9375 evaluation boards contains
+an on-board VCXO (Voltage Controlled Crystal Oscillator) as well as the AD9528
+chip responsible for the device clock and SYSREF signal generation and
+distribution. With the hardware configuration provided on the evaluation board,
+a user can generate device clock frequencies such as 122.88MHz, 153.6MHz,
+184.32MHz, 245.76MHz, and 307.2MHz. There are limitations with the default
+hardware configuration in the scenario where a user desired device frequencies
+are not related to the on-board 122.88MHz VCXO by a rational fraction. Examples
+of such device clock frequency are: 125MHz, 133.33MHz, 250MHz and 266.66MHz. The
+document below outlines these limitations as well as explains how they can be
+overcome with an AD9371 evaluation board hardware modification. Pretty much the
+same things also apply for all the other devices listed above.
 
 -  :ez:`Evaluation-board-vcxo-selection <wide-band-rf-transceivers/design-support-ad9371/w/documents/10080/ad9371-evaluation-board-vcxo-selection>`
 
-This page is supposed to be a system level addition to the aforementioned document with some extra tips and tricks.
+This page is supposed to be a system level addition to the aforementioned
+document with some extra tips and tricks.
 
 Rational
 --------
@@ -26,14 +38,21 @@ Some reasons why someone would change the onboard VCXO:
 Procedure
 ---------
 
-In the following example procedure the VCXO is changed to 80MHz to achieve 240, 200, 120, 100 MSPS baseband rates. In general, more common would be to use a 125MHz VCXO instead.
+In the following example procedure the VCXO is changed to 80MHz to achieve 240,
+200, 120, 100 MSPS baseband rates. In general, more common would be to use a
+125MHz VCXO instead.
 
 Physically replace the onboard VCXO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
-   If you just want to test things without VCXO, there is the option to bypass the VCXO and PLL1 and directly feed an external clock into the AD9528 via the REF_CLK_IN SMA which is typically used to feed the external reference for PLL1. Some resistors and caps need to be flipped. Check the Eval board schematics for more details. In such case you would bypass PLL1 and use differential input.
+   If you just want to test things without VCXO, there is the option to bypass
+   the VCXO and PLL1 and directly feed an external clock into the AD9528 via the
+   REF_CLK_IN SMA which is typically used to feed the external reference for
+   PLL1. Some resistors and caps need to be flipped. Check the Eval board
+   schematics for more details. In such case you would bypass PLL1 and use
+   differential input.
 
    
    ::
@@ -45,14 +64,12 @@ Physically replace the onboard VCXO
       }
    
 
-
 Adjust the adi,vcxo-freq device tree property with the used VCXO frequency in Hz
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
    Please see here as well: :doc:`AD9528 Low Jitter Clock Generator Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/ad9528>`
-
 
 ::
 
@@ -63,7 +80,9 @@ Adjust the adi,vcxo-freq device tree property with the used VCXO frequency in Hz
 Plan the distribution clock
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are basically two configuration options. In both examples described below the distribution clock is set to 1200MHz. So each AD9528 output channel can be set to 1200MHz / N where N = 1..256.
+There are basically two configuration options. In both examples described below
+the distribution clock is set to 1200MHz. So each AD9528 output channel can be
+set to 1200MHz / N where N = 1..256.
 
 Manual configuration
 ^^^^^^^^^^^^^^^^^^^^
@@ -107,7 +126,8 @@ Or to use the device driver automatic configuration. This way you only need to s
 Updating the default RF Transceiver Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that we know we can generate output clocks such as 80MHz (N=15) 100MHz (N=12) or 120MHz (N=10) we need to create a RF transceiver profile using:
+Now that we know we can generate output clocks such as 80MHz (N=15) 100MHz
+(N=12) or 120MHz (N=10) we need to create a RF transceiver profile using:
 
 -  :doc:`MATLAB Profile Generator for AD9371 </wiki-migration/resources/eval/user-guides/mykonos/software/filters>`
 -  :adi:`MATLAB Filter Wizard / Profile Generator for ADRV9009 <media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2.4.zip>`
@@ -116,12 +136,14 @@ This procedure is not going to describe this process, however once the profile i
 
 .. note::
 
-   It’s a bit out of scope to cover capabilities and constrains of all FPGA vendor architectures. (Xilinx GTX, GTH, GTY type transceivers with their CPLLs and QPLLs or Intel ATX PLL, FPLL, CDR PLL, etc.)
-
+   It’s a bit out of scope to cover capabilities and constrains of all FPGA
+   vendor architectures. (Xilinx GTX, GTH, GTY type transceivers with their
+   CPLLs and QPLLs or Intel ATX PLL, FPLL, CDR PLL, etc.)
 
 But a good value from various perspectives (such as deterministic latency and link clock) is to choose ``Lane rate / 40``.
 
-Some typical example below, where TX and ORX run at the same baseband rate, and RX is ½ TX rate.
+Some typical example below, where TX and ORX run at the same baseband rate, and
+RX is ½ TX rate.
 
 -  TX : FC=\ **240** MSPS, M=\ **4**, L=\ **4**, N’=16, S=1:
 
@@ -137,11 +159,21 @@ Some typical example below, where TX and ORX run at the same baseband rate, and 
 
 **So here Device Clock == FMC Clock = Lane rate / 40 = 120 MHz would be a perfect match. We choose 120MHz in this configuration.**
 
-Once we have changed the clock chip distribution clock, we must also update the default transceiver profile, which is configured for initial setup. Failure to do so can result in the transceiver device driver asking for a clock tree which is not achievable since the AD9528 clock chip driver dynamically controls the output divider but not the PLL2 VCO and distribution clock.
+Once we have changed the clock chip distribution clock, we must also update the
+default transceiver profile, which is configured for initial setup. Failure to
+do so can result in the transceiver device driver asking for a clock tree which
+is not achievable since the AD9528 clock chip driver dynamically controls the
+output divider but not the PLL2 VCO and distribution clock.
 
-The MATLAB Filter Wizard / Profile Generator generates a XML style output file. It’s pretty easy to understand and can be easily matched to the Linux device tree properties. Besides single key value pairs there are also signed filter coefficients which must be converted to an array style. It’s important to know that signed values must be put in braces. Everything that differs in value must be updated.
+The MATLAB Filter Wizard / Profile Generator generates a XML style output file.
+It’s pretty easy to understand and can be easily matched to the Linux device
+tree properties. Besides single key value pairs there are also signed filter
+coefficients which must be converted to an array style. It’s important to know
+that signed values must be put in braces. Everything that differs in value must
+be updated.
 
-Below you cab find a quick and dirty bash script, which allows you to extract the filter arrays:
+Below you cab find a quick and dirty bash script, which allows you to extract
+the filter arrays:
 
 .. code:: bash
 
@@ -166,7 +198,12 @@ Below you cab find a quick and dirty bash script, which allows you to extract th
        fi
    done < "$1"
 
-In the example below we don’t change things directly in the provided default device trees. In fact there are several which recursively include them. Instead we create a new file (zynq-zc706-adv7511-adrv9371-vcxo80.dts), place it in the same folder, and we include the default dts file. Then we reference the devicetree phandles and either overwrite or delete properties. This way we only handle changes which matters and don't end up maintaining a complete new file.
+In the example below we don’t change things directly in the provided default
+device trees. In fact there are several which recursively include them. Instead
+we create a new file (zynq-zc706-adv7511-adrv9371-vcxo80.dts), place it in the
+same folder, and we include the default dts file. Then we reference the
+devicetree phandles and either overwrite or delete properties. This way we only
+handle changes which matters and don't end up maintaining a complete new file.
 
 =============== ===============================================
 \               Devicetrees can be found or must be placed here
@@ -248,13 +285,20 @@ HDL
 
 If the desired design has other configuration than the default one, you will have to do some modifications to the HDL and devicetree. First of all, the project has to be parametrized in order for this flow to work. A quick check for the **MAX_TX/RX/RX_OS_NUM_OF_LANES** variable into the **common/adrv9009zu11eg_bd.tcl** file would ensure that: :git-hdl:`common/adrv9009zu11eg_bd.tcl <projects/adrv9009zu11eg/common/adrv9009zu11eg_bd.tcl>`
 
-If the condition above is valid, you can jump to the last step from the HDL section. Then, the AXI_XCVR IP has to be configured with the MAX_TX/RX/RX_OS_NUM_OF_LANES instead of TX/RX/RX_OS_NUM_OF_LANES. Check for the ad_xcvrconn function call and use it with a partial lane map as in this example:
+If the condition above is valid, you can jump to the last step from the HDL
+section. Then, the AXI_XCVR IP has to be configured with the
+MAX_TX/RX/RX_OS_NUM_OF_LANES instead of TX/RX/RX_OS_NUM_OF_LANES. Check for the
+ad_xcvrconn function call and use it with a partial lane map as in this example:
 
 ::
 
    ad_xcvrcon  util_adrv9009_som_xcvr axi_adrv9009_som_tx_xcvr axi_adrv9009_som_tx_jesd {0 1 2 3 4 5 6 7} core_clk_a {} $MAX_TX_NUM_OF_LANES {0 1 4 5}
 
-What this does is it gives the util the maximum number of lanes, but only binds the one in the partial lane map (the last list given as a parameter). For the lane map (the first list given as a parameter) it needs to contain all the lanes. The order might be different, depending on the hardware configuration and FMC connections.
+What this does is it gives the util the maximum number of lanes, but only binds
+the one in the partial lane map (the last list given as a parameter). For the
+lane map (the first list given as a parameter) it needs to contain all the
+lanes. The order might be different, depending on the hardware configuration and
+FMC connections.
 
 After doing all the modifications mentioned above, you can just run:
 
@@ -269,17 +313,23 @@ After figuring out the HDL, download the transceiver evaluation software from th
 
 :adi:`en/design-center/landing-pages/001/transceiver-evaluation-software.html`
 
-The image below contains the first page of the configuration panel. Here you will have to set the device to adrv9009, the desired device clock frequency, the channels that you want to enable and the profile for each of these channels.
+The image below contains the first page of the configuration panel. Here you
+will have to set the device to adrv9009, the desired device clock frequency, the
+channels that you want to enable and the profile for each of these channels.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/talise3.png
    :alt: talise3.png
 
-Move to the JESD204b Setup tab. Here you can choose what lanes do you want to use in the design, but please keep in mind that the lanes must correspond to the ones picked in HDL.
+Move to the JESD204b Setup tab. Here you can choose what lanes do you want to
+use in the design, but please keep in mind that the lanes must correspond to the
+ones picked in HDL.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/talise4.png
    :alt: talise4.png
 
-Now, from the top left corner click Tools, then Create Script and then Init .c Files. If everything goes well you will be welcomed by a success message and you will have a .c file that contains values corresponding the devicetree setup.
+Now, from the top left corner click Tools, then Create Script and then Init .c
+Files. If everything goes well you will be welcomed by a success message and you
+will have a .c file that contains values corresponding the devicetree setup.
 
 Devicetree
 ~~~~~~~~~~
@@ -310,7 +360,9 @@ First, create a new dts file that contains in its name the number of lanes that 
        };
    };
 
-Here are overwritten the parameters accountable for tx number of lanes and rx_os number of converters (because TX and RX_OS share the same clock => it is recommended to use the same M)
+Here are overwritten the parameters accountable for tx number of lanes and rx_os
+number of converters (because TX and RX_OS share the same clock => it is
+recommended to use the same M)
 
 Troubleshooting
 ---------------
@@ -322,13 +374,21 @@ Requesting device clock failed
 
    ad9371 spi32766.1: Requesting device clock 120000000 failed got 122880000
 
-If you see something like this in your kernel startup messages (dmesg) this indicates that the clock chip distribution clock was not properly set. Check the clock chip (AD9528/HMC7044/etc.) device tree properties.
+If you see something like this in your kernel startup messages (dmesg) this
+indicates that the clock chip distribution clock was not properly set. Check the
+clock chip (AD9528/HMC7044/etc.) device tree properties.
 
 ::
 
    adrv9009 spi1.0: Requesting device clock 200000000 failed got 187500000
 
-In this particular case the HMC7044 or HMC7043 is used as clock provider. The VCO frequency pas properly set to 3000MHz, from an 100MHz VCXO. However the HMC7044 output divider supports even divide ratios from 2 to 4094. The supported odd divide ratios are 1, 3, and 5. All even and odd divide ratios have 50.0% duty cycle. So in this case a odd divider of 15 is required which the HMC7044 can't support. So the device driver rounded up to 16, which lead to this error. A workaround in this case is to use an VCO of 2800 MHz instead.
+In this particular case the HMC7044 or HMC7043 is used as clock provider. The
+VCO frequency pas properly set to 3000MHz, from an 100MHz VCXO. However the
+HMC7044 output divider supports even divide ratios from 2 to 4094. The supported
+odd divide ratios are 1, 3, and 5. All even and odd divide ratios have 50.0%
+duty cycle. So in this case a odd divider of 15 is required which the HMC7044
+can't support. So the device driver rounded up to 16, which lead to this error.
+A workaround in this case is to use an VCO of 2800 MHz instead.
 
 Requesting [deframer|framer] lanerate failed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -347,9 +407,14 @@ Requesting [deframer|framer] lanerate failed
    adrv9009 spi1.0: Request framer lanerate 8000000 kHz failed (-22)
    adrv9009: probe of spi1.0 failed with error -22
 
-Depending on the FPGA gigabit transceiver architecture GTX, GTH, GTY, etc. and the PLL used the VCO tuning ranges might not fit the requested rate. In this case ‘’Request [deframer|framer] lanerate” error is printed. And the driver probe errors with -EINVAL (-22).
+Depending on the FPGA gigabit transceiver architecture GTX, GTH, GTY, etc. and
+the PLL used the VCO tuning ranges might not fit the requested rate. In this
+case ‘’Request [deframer|framer] lanerate” error is printed. And the driver
+probe errors with -EINVAL (-22).
 
-For example GTX QPLL actually have two none overlapping frequency bands with a hole in the middle. GTH and GTY do have two QPLLs with slightly different VCO min/max.
+For example GTX QPLL actually have two none overlapping frequency bands with a
+hole in the middle. GTH and GTY do have two QPLLs with slightly different VCO
+min/max.
 
 -  To avoid these issues increasing/decreasing the number of Lanes used can be useful.
 -  Often increasing the QPLL/CPLL reference frequency from lanerate/40 to lanerate/20 can help with that error as well.
@@ -411,7 +476,9 @@ ARM Mailbox Busy. Command not executed in MYKONOS_sendArmCommand()
    (256)
    ad9371: probe of spi0.1 failed with error -14
 
-This indicates an ARM firmware internal error. Which can be caused by some erroneous or incomplete profile. Please double check all the settings in the devicetree.
+This indicates an ARM firmware internal error. Which can be caused by some
+erroneous or incomplete profile. Please double check all the settings in the
+devicetree.
 
 ERROR: 321: Tx Profile IQrate and filter settings are not possible with current CLKPLL frequency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -422,7 +489,8 @@ ERROR: 321: Tx Profile IQrate and filter settings are not possible with current 
 
 This error originates here:`drivers/iio/adc/talise/talise.c <https://github.com/analogdevicesinc/linux/blob/dce31cdd28bb67462af01cc72d396bf00a7896c5/drivers/iio/adc/talise/talise.c#L2230]>`_
 
-And typically means that either the profile wizard created an invalid profile or that an typo was introduced in the device tree.
+And typically means that either the profile wizard created an invalid profile or
+that an typo was introduced in the device tree.
 
 In one particular case the issue was with the **adi,dig-clocks-clk-pll-hs-div** property. A new profile required 2.0 instead of 2.5.
 

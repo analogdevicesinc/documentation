@@ -8,16 +8,29 @@ Multi-Tap Voltage Controlled Delay
 Description
 -----------
 
-The Multi-Tap Voltage Controlled Delay cell provides a variable delay to a single audio input, producing multiple outputs. Each output signal is called a “tap.” The amount of delay for each tap can be modified in real-time by updating the value on the corresponding control input pin.
+The Multi-Tap Voltage Controlled Delay cell provides a variable delay to a
+single audio input, producing multiple outputs. Each output signal is called a
+“tap.” The amount of delay for each tap can be modified in real-time by updating
+the value on the corresponding control input pin.
 
 Usage
 -----
 
-The multi-tap voltage controlled delay allows a single signal to be output as multiple, independently-delayed copies. By right-clicking and selecting the “NumChannels” option, the user can increase the number of copies, or “taps”, to be output.
+The multi-tap voltage controlled delay allows a single signal to be output as
+multiple, independently-delayed copies. By right-clicking and selecting the
+“NumChannels” option, the user can increase the number of copies, or “taps”, to
+be output.
 
-A delay “Max” size is chosen prior to compilation; this value will determine the amount of modulo data RAM that the compiler will attempt to reserve for each tap. The equivalent delay in milliseconds/samples is displayed below this menu. Note that this delay Max size is reserved for each tap. It is not a shared Max-Delay that can be used by individual taps.
+A delay “Max” size is chosen prior to compilation; this value will determine the
+amount of modulo data RAM that the compiler will attempt to reserve for each
+tap. The equivalent delay in milliseconds/samples is displayed below this menu.
+Note that this delay Max size is reserved for each tap. It is not a shared
+Max-Delay that can be used by individual taps.
 
-If the control input for any tap exceeds the maximum allowable delay for that tap, then the maximum value will be used. Care must be taken so that the control inputs never go below zero (integer). If the control input a negative number, the output of the algorithm will jump to -1 (decimal).
+If the control input for any tap exceeds the maximum allowable delay for that
+tap, then the maximum value will be used. Care must be taken so that the control
+inputs never go below zero (integer). If the control input a negative number,
+the output of the algorithm will jump to -1 (decimal).
 
 Variants
 --------

@@ -23,8 +23,8 @@ Below is a summary of the configuration settings on the board:
    *AVSS = − 15 V
    *DVCC = AVCC = 5 V
 
-The AD74115H board was configured using the SDP-K1 interface board and a python script.
-
+The AD74115H board was configured using the SDP-K1 interface board and a python
+script.
 
 |image1|
 
@@ -32,11 +32,13 @@ The AD74115H board was configured using the SDP-K1 interface board and a python 
 
    *Figure 1 ADP1034 and AD74115H Block Diagram*
 
-
 Performance Criteria
 ~~~~~~~~~~~~~~~~~~~~
 
-The results of an immunity test are typically classified into four categories, as listed in Table 1. The end-application requirements and its ability to tolerate transient noise determine whether the system sees the specific performance criteria as a failure or not.
+The results of an immunity test are typically classified into four categories,
+as listed in Table 1. The end-application requirements and its ability to
+tolerate transient noise determine whether the system sees the specific
+performance criteria as a failure or not.
 
 Table 1
 ~~~~~~~
@@ -58,7 +60,8 @@ Table 1
 Performance Summary
 -------------------
 
-Table 2 gives a summary of the immunity test results. More details are available on each test result linked at the end.
+Table 2 gives a summary of the immunity test results. More details are available
+on each test result linked at the end.
 
 Table 2
 ~~~~~~~
@@ -95,4 +98,4 @@ Table 2
 -  :doc:`AD74115H Surge Test Results </wiki-migration/resources/technical-guides/surge>` - Provides all the details of the ESD tests and results.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/technical-guides/ad74115h_adp1034_circuit_diagram.png
-   :width: 900px
+   :width: 900

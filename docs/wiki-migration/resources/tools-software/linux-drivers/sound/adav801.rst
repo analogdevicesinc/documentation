@@ -7,7 +7,8 @@ Supported devices
 -  :adi:`ADAV801`
 -  :adi:`ADAV803`
 
-ADAV801 and ADAV803 differs in serial interface. ADAV801 uses SPI, while ADAV803 uses I2C.
+ADAV801 and ADAV803 differs in serial interface. ADAV801 uses SPI, while ADAV803
+uses I2C.
 
 Reference Circuits
 ------------------
@@ -136,7 +137,8 @@ Currently unsupported features
 ADAV80X evaluation board driver
 ===============================
 
-There is no dedicated Blackfin STAMP evaluation board for the ADAV80X. During test and driver development we used the EVAL-ADAV801/ADAV803 board.
+There is no dedicated Blackfin STAMP evaluation board for the ADAV80X. During
+test and driver development we used the EVAL-ADAV801/ADAV803 board.
 
 It can be easily wired to the Blackfin STAMP SPORT header.
 
@@ -197,10 +199,12 @@ Enable ALSA SoC evaluation board driver:
 Hardware configuration
 ----------------------
 
-Default setting for the 12-way DIP switch: from SW11 to SW0 - 110001110001. Keep all switch and jumpers as default value defined in the manual, except:
+Default setting for the 12-way DIP switch: from SW11 to SW0 - 110001110001. Keep
+all switch and jumpers as default value defined in the manual, except:
 
 -  Playback Port Source: SW11: 0, SW10: 0 (Make it tri-state since we connect playback port to Blackfin SPORT)
--  ADAV80x MCLK Source: SW0: 0, LK4: A, LK5: ON, LK6: ON (Use the on board cystal oscillator as MCLK source).
+-  ADAV80x MCLK Source: SW0: 0, LK4: A, LK5: ON, LK6: ON (Use the on board
+   cystal oscillator as MCLK source).
 
 To test using BF537-STAMP board, connect **play** and **rec** port on the ADAV80X evaluation board with SPORT0 on STAMP. Connect **CPORT** pins also to corresponding pins STAMP. Also, please make sure to connect the **GND** of the two boards together to get better signal.
 
@@ -224,7 +228,6 @@ Load the driver and make sure the sound card is properly instantiated.
       asoc: ADAV80X <-> bf5xx-i2s mapping ok
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -240,4 +243,3 @@ Load the driver and make sure the sound card is properly instantiated.
       Recording WAVE 'stdin' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
       Playing WAVE 'stdin' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
    
-

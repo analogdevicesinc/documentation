@@ -18,12 +18,15 @@ Varaints
 Description
 -----------
 
-The Multiple Volume Control block allows gain adjustment to be made to each of the inputs individually. Every input pin has its own volume control.
+The Multiple Volume Control block allows gain adjustment to be made to each of
+the inputs individually. Every input pin has its own volume control.
 
 Usage
 -----
 
-The Slider control's min/max value and step size can be customized. To modify the slider's settings, right-click on the control which will display the control pop-up window
+The Slider control's min/max value and step size can be customized. To modify
+the slider's settings, right-click on the control which will display the control
+pop-up window
 
 Targets Supported
 -----------------
@@ -49,7 +52,6 @@ Name   Type  Description
 ====== ===== ===============
 InputX Audio Input channel X
 ====== ===== ===============
-
 
 | ==== Output ====
 

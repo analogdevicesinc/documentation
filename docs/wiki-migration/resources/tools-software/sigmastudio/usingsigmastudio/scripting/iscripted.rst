@@ -3,10 +3,10 @@
 IScripted Interface
 ===================
 
-Analog.SStudioScripting.IScripted is contained in a .NET assembly, BaseLib.dll, installed in the SigmaStudio folder.
+Analog.SStudioScripting.IScripted is contained in a .NET assembly, BaseLib.dll,
+installed in the SigmaStudio folder.
 
 Script window can be used to run scripts using the Iscripted interface.
-
 
 |image1|
 
@@ -210,7 +210,8 @@ Build Plug-In DLL using Algorithm Designer
 
 *fullyQualifiedLibraryName* -> fully qualified path of the output DLL
 
-Note: The DSP IC has to be there in new schematic window before calling this API.
+Note: The DSP IC has to be there in new schematic window before calling this
+API.
 
 For example,
 
@@ -220,9 +221,13 @@ sigmastudio.ProjectNew();
 
 sigmastudio.ObjectInsert( "ADSP-214xx" );
 
-eResult = sigmastudio.BuildExternalModule("IC 1", "C:\\\\Analog Devices\\\\SoftwareModules\\\\SigmaStudioForSHARC-SH-Rel2.2.0\\\\Target\\\\ExtModules\\\\Biquad\\\\adi_Biquad.ssg", "C:\\\\Analog Devices\\\\SoftwareModules\\\\SigmaStudioForSHARC-SH-Rel2.2.0\\\\Target\\\\ExtModules\\\\Biquad\\\\adi_biquad.dll");
+eResult = sigmastudio.BuildExternalModule("IC 1", "C:\\\\Analog
+Devices\\\\SoftwareModules\\\\SigmaStudioForSHARC-SH-Rel2.2.0\\\\Target\\\\ExtModules\\\\Biquad\\\\adi_Biquad.ssg",
+"C:\\\\Analog
+Devices\\\\SoftwareModules\\\\SigmaStudioForSHARC-SH-Rel2.2.0\\\\Target\\\\ExtModules\\\\Biquad\\\\adi_biquad.dll");
 
-Set the “Schematic Block Size” of IC and Algorithms belonging to the IC for the active project
+Set the “Schematic Block Size” of IC and Algorithms belonging to the IC for the
+active project
 
 .. code:: csharp
 
@@ -498,7 +503,8 @@ Write parameter data, specifying target fixed-point format
 
 *valToWrite* -> Parameter data value to write
 
-Write parameter data, specifying target fixed-point format and parameter name instead of parameter address.
+Write parameter data, specifying target fixed-point format and parameter name
+instead of parameter address.
 
 .. code:: csharp
 
@@ -528,7 +534,8 @@ Write parameter data array, specifying target fixed-point format
 
 *valsToWrite* -> Parameter data values to write
 
-Write parameter data array, specifying target fixed-point format and parameter name instead of parameter address.
+Write parameter data array, specifying target fixed-point format and parameter
+name instead of parameter address.
 
 .. code:: csharp
 
@@ -556,7 +563,8 @@ Write parameter data, floating point value
 
 *valToWrite* -> Parameter data value to write
 
-Write parameter data as floating point value using parameter name instead of parameter address.
+Write parameter data as floating point value using parameter name instead of
+parameter address.
 
 .. code:: csharp
 
@@ -582,7 +590,8 @@ Write multiple contiguous parameters, floating point value.
 
 *valsToWrite* -> Parameter data values to write
 
-Write multiple contiguous parameters as floating point value using parameter name instead of parameter address.
+Write multiple contiguous parameters as floating point value using parameter
+name instead of parameter address.
 
 .. code:: csharp
 
@@ -654,7 +663,8 @@ Write multiple parameters via safeload, floating point values
 
 *valsToWrite* -> Parameter data values to write
 
-Load comma-delineated byte data from a text file at a particular parameter/parameter
+Load comma-delineated byte data from a text file at a particular
+parameter/parameter
 
 .. code:: csharp
 
@@ -681,7 +691,8 @@ Read fixed-point parameter data, read value returned as float
 
 *intbits* = number of integer (magnitude) bits *fracbits* -> number of fraction bits
 
-Read fixed-point parameter data using parameter name, read value returned as float
+Read fixed-point parameter data using parameter name, read value returned as
+float
 
 .. code:: csharp
 
@@ -723,7 +734,8 @@ Read fixed-point parameter data array, read values returned as float[]
 
 *bRet* -> result, true if read was successful asdf
 
-Read fixed-point parameter data array using the parameter name, read values returned as float[]
+Read fixed-point parameter data array using the parameter name, read values
+returned as float[]
 
 .. code:: csharp
 
@@ -758,7 +770,8 @@ Read fixed-point parameter data array, read values returned in float[]
 Parameter Address
 ~~~~~~~~~~~~~~~~~
 
-API returns all the parameters' name and addresses for a IC in the current schematic.
+API returns all the parameters' name and addresses for a IC in the current
+schematic.
 
 .. code:: csharp
 
@@ -770,7 +783,8 @@ API returns all the parameters' name and addresses for a IC in the current schem
 
 *addresses* Returns the array of parameter addresses corresponding to names[].
 
-API returns all the parameters' name and addresses for a cell/module in the current schematic.
+API returns all the parameters' name and addresses for a cell/module in the
+current schematic.
 
 .. code:: csharp
 
@@ -784,7 +798,8 @@ API returns all the parameters' name and addresses for a cell/module in the curr
 
 *addresses* Returns the array of parameter addresses corresponding to names[].
 
-API returns all the parameters' name and addresses for a cell/module in the current schematic.
+API returns all the parameters' name and addresses for a cell/module in the
+current schematic.
 
 .. code:: csharp
 
@@ -963,7 +978,10 @@ Insert an object into a specific open project, at a specific position
 
 *objectName* -> return name of inserted object, null if insertion fails
 
-NOTE: Schematic objects are inserted into the currently selected hierarchy board of ‘Schematic’ tab by default. Use ‘BlockObjectInsert’ function instead of ‘ObjectInsert’ function to insert Schematic objects into the ‘Block Schematic’ tab.
+NOTE: Schematic objects are inserted into the currently selected hierarchy board
+of ‘Schematic’ tab by default. Use ‘BlockObjectInsert’ function instead of
+‘ObjectInsert’ function to insert Schematic objects into the ‘Block Schematic’
+tab.
 
 Remove
 ------
@@ -1009,7 +1027,8 @@ Delete an object from a specific open project
 Connection
 ----------
 
-Use the functions below for connecting an object’s input and output in a project.
+Use the functions below for connecting an object’s input and output in a
+project.
 
 Connect a pair of objects’ output to input in the active project
 
@@ -1074,7 +1093,8 @@ Connect a pair of objects’ output to input in a specific open project
 Disconnect
 ----------
 
-The functions below are used to disconnect input and output from objects in a project.
+The functions below are used to disconnect input and output from objects in a
+project.
 
 Disconnect output from input of a pair of objects in the active project
 
@@ -1139,14 +1159,16 @@ Disconnect output from input of a pair of objects in a specific open project
 Console/ File IO
 ----------------
 
-The following functions print any message given to the output window in the script editor.
+The following functions print any message given to the output window in the
+script editor.
 
 .. code:: csharp
 
    HResult Print( string message);
    HResult PrintLine( string message);
 
-The following sample code shows how to read parameters from a file using C# file IO.
+The following sample code shows how to read parameters from a file using C# file
+IO.
 
 .. code:: csharp
 
@@ -1300,7 +1322,11 @@ Fetch an object's properties or parameters in the active project
 
 *propertyParams* -> Parameters associated with the specified opcode
 
-The property interfaces require an opcode (Operation Code), which specifies the type of operation to be performed. Relevant opcodes depend on the type of object. Some opcodes apply to all objects (e.g. setPosition and setName); others are specific to particular object categories. Essential opcodes are listed in the table below:
+The property interfaces require an opcode (Operation Code), which specifies the
+type of operation to be performed. Relevant opcodes depend on the type of
+object. Some opcodes apply to all objects (e.g. setPosition and setName); others
+are specific to particular object categories. Essential opcodes are listed in
+the table below:
 
 +--------------------------+----------------------------+-----------------------------------------------+
 | Opcode                   | Type                       | PropertyParams                                |
@@ -1366,9 +1392,13 @@ NOTE: Control value names can be viewed as tooltip information. Please refer :do
 Reflection Support
 ------------------
 
-The functions below may be used to access methods, properties and fields from SigmaStudio object using C# reflection.
+The functions below may be used to access methods, properties and fields from
+SigmaStudio object using C# reflection.
 
-There are two kinds of object used in the SigmaStudio schematic modules. Cell Object and Algorithm Object. Cell object contains the GUI related information. Algorithm object contains algorithm related information. There can be multiple algorithm objects in a single cell object.
+There are two kinds of object used in the SigmaStudio schematic modules. Cell
+Object and Algorithm Object. Cell object contains the GUI related information.
+Algorithm object contains algorithm related information. There can be multiple
+algorithm objects in a single cell object.
 
 .. code:: csharp
 
@@ -1377,7 +1407,9 @@ There are two kinds of object used in the SigmaStudio schematic modules. Cell Ob
 
 *objectName* -> Name of the Cell object.
 
-API uses the Reflection's GetProperty() method and returns the PropertyInfo for the module with the name 'objectName in the schematic. ObjectGetProperties() retuns all the public properties in the object.
+API uses the Reflection's GetProperty() method and returns the PropertyInfo for
+the module with the name 'objectName in the schematic. ObjectGetProperties()
+retuns all the public properties in the object.
 
 .. code:: csharp
 
@@ -1388,7 +1420,9 @@ API uses the Reflection's GetProperty() method and returns the PropertyInfo for 
 
 *propertyName* -> Name of the property to get from the object.
 
-API uses the Reflection's GetField() method and returns the FieldInfo for the module with the name 'objectName in the schematic. ObjectGetFields() retuns all the public fields in the object.
+API uses the Reflection's GetField() method and returns the FieldInfo for the
+module with the name 'objectName in the schematic. ObjectGetFields() retuns all
+the public fields in the object.
 
 .. code:: csharp
 
@@ -1399,7 +1433,9 @@ API uses the Reflection's GetField() method and returns the FieldInfo for the mo
 
 *fieldName* -> Name of the field to get from the object.
 
-API uses the Reflection's GetMethod() method and returns the MethodInfo for the module with the name 'objectName in the schematic. ObjecMethodss() returns all the public methods in the object.
+API uses the Reflection's GetMethod() method and returns the MethodInfo for the
+module with the name 'objectName in the schematic. ObjecMethodss() returns all
+the public methods in the object.
 
 .. code:: csharp
 
@@ -1413,7 +1449,8 @@ API uses the Reflection's GetMethod() method and returns the MethodInfo for the 
 Examples
 ~~~~~~~~
 
-The following shows an example of how to access the Checkbox in the mute module using refection.
+The following shows an example of how to access the Checkbox in the mute module
+using refection.
 
 .. code:: csharp
 
@@ -1449,7 +1486,8 @@ The following shows an example of how to access the Checkbox in the mute module 
    System.Reflection.PropertyInfo propInfo = ss.ObjectGetProperty(arr[0],"IsChecked");
    propInfo.SetValue(arr[0], false, null);
 
-The following example calls the 'PackDataAllControls' method from the cell object. This method downloads all the parameters from the module.
+The following example calls the 'PackDataAllControls' method from the cell
+object. This method downloads all the parameters from the module.
 
 .. code:: csharp
 
@@ -1509,7 +1547,8 @@ Manipulate SigmaStudio settings in the active project
 | 
 | Table 3: Command and Arguments for Settings API
 
-1 x.y.z denotes the version of SigmaStudio for SHARC. Refer Release Notes for version information of SigmaStudio for SHARC
+1 x.y.z denotes the version of SigmaStudio for SHARC. Refer Release Notes for
+version information of SigmaStudio for SHARC
 
 Manipulate properties in the IC Control window
 
@@ -1564,7 +1603,14 @@ Enable or disable a Plug-In added to the SigmaStudio Add-Ins window
 
 *state* -> “True” or “False” indicating whether to ‘enable’ or ‘disable’ Plug-In
 
-The first argument, which is the name of the Plug-In, can either be the full path of the Plug-In DLL as listed in the Add-Ins list or only the file name of the Plug-In DLL. SigmaStudio will first try to match the argument string against full path of the Plug-Ins in the Add-Ins list. If a match is not found, the string is matched against the file name of the Plug-Ins. If multiple Plug-Ins with the name passed as argument are present in the Add-Ins list, only the first occurrence in the list is modified by this function. The Plug-In name is case insensitive.
+The first argument, which is the name of the Plug-In, can either be the full
+path of the Plug-In DLL as listed in the Add-Ins list or only the file name of
+the Plug-In DLL. SigmaStudio will first try to match the argument string against
+full path of the Plug-Ins in the Add-Ins list. If a match is not found, the
+string is matched against the file name of the Plug-Ins. If multiple Plug-Ins
+with the name passed as argument are present in the Add-Ins list, only the first
+occurrence in the list is modified by this function. The Plug-In name is case
+insensitive.
 
 Float Packets Interface
 -----------------------
@@ -1572,9 +1618,11 @@ Float Packets Interface
 ICParameterSafeload
 ~~~~~~~~~~~~~~~~~~~
 
-The function has two overloaded methods as shown in prototype-1 and prototype-2 given below.
+The function has two overloaded methods as shown in prototype-1 and prototype-2
+given below.
 
-This is an API to handle floating point packets and hence is applicable for SHARC only.
+This is an API to handle floating point packets and hence is applicable for
+SHARC only.
 
 Prototype-1
 ^^^^^^^^^^^
@@ -1585,7 +1633,9 @@ Prototype-1
 
 *Description*
 
-The method sends a parameter data to the address specified by the write address for the specified IC. The parameters will be loaded to the target using the “Safeload” mechanism.
+The method sends a parameter data to the address specified by the write address
+for the specified IC. The parameters will be loaded to the target using the
+“Safeload” mechanism.
 
 *Parameters*
 
@@ -1605,7 +1655,8 @@ Name:DataToWrite
 
 Type:Single
 
-Description:Single precision floating point parameter value to be written to target memory.
+Description:Single precision floating point parameter value to be written to
+target memory.
 
 Prototype-2
 ^^^^^^^^^^^
@@ -1616,7 +1667,9 @@ Prototype-2
 
 *Description*
 
-The method sends an array of parameter data of size “WriteNumParams” to the address specified by the write address for the specified IC. The parameters will be loaded to the target using the “Safeload” mechanism.
+The method sends an array of parameter data of size “WriteNumParams” to the
+address specified by the write address for the specified IC. The parameters will
+be loaded to the target using the “Safeload” mechanism.
 
 *Parameters*
 
@@ -1642,14 +1695,17 @@ Name:DataToWrite
 
 Type:Single
 
-Description:Single precision floating point array of parameter values to be written to target parameter memory.
+Description:Single precision floating point array of parameter values to be
+written to target parameter memory.
 
 ICParameterWrite
 ~~~~~~~~~~~~~~~~
 
-The function has two overloaded methods as shown in prototype-1 and prototype-2 given below.
+The function has two overloaded methods as shown in prototype-1 and prototype-2
+given below.
 
-This is an API to handle floating point packets and hence is applicable for SHARC only.
+This is an API to handle floating point packets and hence is applicable for
+SHARC only.
 
 Prototype-1
 ^^^^^^^^^^^
@@ -1660,7 +1716,9 @@ Prototype-1
 
 *Description*
 
-The method sends a parameter data to the address specified by the write address for the specified IC. The parameters will be loaded to the target without “Safeload” mechanism.
+The method sends a parameter data to the address specified by the write address
+for the specified IC. The parameters will be loaded to the target without
+“Safeload” mechanism.
 
 *Parameters*
 
@@ -1680,7 +1738,8 @@ Name:DataToWrite
 
 Type:Single
 
-Description:Single precision floating point parameter value to be written to target memory.
+Description:Single precision floating point parameter value to be written to
+target memory.
 
 Prototype-2
 ^^^^^^^^^^^
@@ -1691,7 +1750,9 @@ Prototype-2
 
 *Description*
 
-The method sends an array of parameter data of size “WriteNumParams” to the address specified by the write address for the specified IC. The parameters will be loaded to the target as a block without using the “Safeload” mechanism.
+The method sends an array of parameter data of size “WriteNumParams” to the
+address specified by the write address for the specified IC. The parameters will
+be loaded to the target as a block without using the “Safeload” mechanism.
 
 *Parameters*
 
@@ -1717,12 +1778,14 @@ Name:DataToWrite
 
 Type:Single
 
-Description:Single precision floating point array of parameter values to be written to target parameter memory.
+Description:Single precision floating point array of parameter values to be
+written to target parameter memory.
 
 ICParameterRead
 ~~~~~~~~~~~~~~~
 
-This is an API to handle floating point packets and hence is applicable for SHARC only.
+This is an API to handle floating point packets and hence is applicable for
+SHARC only.
 
 Prototype
 ^^^^^^^^^
@@ -1733,7 +1796,8 @@ Prototype
 
 *Description*
 
-The method reads a parameter data from the address specified by the read address for the specified IC.
+The method reads a parameter data from the address specified by the read address
+for the specified IC.
 
 *Parameters*
 
@@ -1747,12 +1811,14 @@ Name:readAddress
 
 Type:int32
 
-Description:Offset address location from parameter memory from where the parameter needs to be read
+Description:Offset address location from parameter memory from where the
+parameter needs to be read
 
 SHARCTargetBoot
 ---------------
 
-This is applicable only for the SHARC target, where booting using a Loader File is applicable.
+This is applicable only for the SHARC target, where booting using a Loader File
+is applicable.
 
 Prototype
 ~~~~~~~~~
@@ -1783,12 +1849,16 @@ Name:bootArgs
 
 Type:ArrayList
 
-Description:Arguments for boot configuration ArrayList with the boot option (2, 3, 4, 5 or 10) as the first entry 2: Analog-In 3: Digital-In 4: Digital-Out alone 5: Analog\\Digital Co-existence 10: Analog\\Digital Co-existence (Digital Clock)
+Description:Arguments for boot configuration ArrayList with the boot option (2,
+3, 4, 5 or 10) as the first entry 2: Analog-In 3: Digital-In 4: Digital-Out
+alone 5: Analog\\Digital Co-existence 10: Analog\\Digital Co-existence (Digital
+Clock)
 
 SHARCReadMIPS
 -------------
 
-This API is applicable only for the SHARC target, to get the MIPS information from the target.
+This API is applicable only for the SHARC target, to get the MIPS information
+from the target.
 
 Prototype
 ~~~~~~~~~
@@ -1812,7 +1882,8 @@ Description:Name of the IC from which to read the MIPS
 SHARCReadLibVersion
 -------------------
 
-This API is applicable for SHARC target only, to fetch the target library version from the target.
+This API is applicable for SHARC target only, to fetch the target library
+version from the target.
 
 Prototype
 ~~~~~~~~~
@@ -1823,7 +1894,8 @@ Prototype
 
 *Description*
 
-The method is used to read version number of the Target Library running on SHARC Target processor.
+The method is used to read version number of the Target Library running on SHARC
+Target processor.
 
 *Parameters*
 
@@ -1958,14 +2030,19 @@ Type: int
 Example for Python :
 ^^^^^^^^^^^^^^^^^^^^
 
-PORT_SETTINGS = VARIANT(pythoncom.VT_ARRAY\| pythoncom.VT_I4, [1048576,0x03,0x02,0x03,0x06,0xc7,10,10000,256,1,0])
+PORT_SETTINGS = VARIANT(pythoncom.VT_ARRAY\| pythoncom.VT_I4,
+[1048576,0x03,0x02,0x03,0x06,0xc7,10,10000,256,1,0])
 
 Example for .sss:
 ^^^^^^^^^^^^^^^^^
 
-System.Collections.Generic.List<int> PORT_SETTINGS = new System.Collections.Generic.List<int>();
+System.Collections.Generic.List<int> PORT_SETTINGS = new
+System.Collections.Generic.List<int>();
 
-PORT_SETTINGS.Add(1048576); PORT_SETTINGS.Add(0x03); PORT_SETTINGS.Add(0x02); PORT_SETTINGS.Add(0x03); PORT_SETTINGS.Add(0x06); PORT_SETTINGS.Add(0xc7); PORT_SETTINGS.Add(10); PORT_SETTINGS.Add(10000); PORT_SETTINGS.Add(256); PORT_SETTINGS.Add(1); PORT_SETTINGS.Add(0);
+PORT_SETTINGS.Add(1048576); PORT_SETTINGS.Add(0x03); PORT_SETTINGS.Add(0x02);
+PORT_SETTINGS.Add(0x03); PORT_SETTINGS.Add(0x06); PORT_SETTINGS.Add(0xc7);
+PORT_SETTINGS.Add(10); PORT_SETTINGS.Add(10000); PORT_SETTINGS.Add(256);
+PORT_SETTINGS.Add(1); PORT_SETTINGS.Add(0);
 
 Selfboot write
 ~~~~~~~~~~~~~~
@@ -2091,7 +2168,8 @@ Read
 
 *Description*
 
-The method is used to Write / from Read the values of the parameter to/from IPAT Address.
+The method is used to Write / from Read the values of the parameter to/from IPAT
+Address.
 
 *Parameters*
 
@@ -2158,4 +2236,4 @@ The commumnication channel USBi/AARDVARK
 Type & Name: int ICType
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/scripting/script1.jpg
-   :width: 400px
+   :width: 400

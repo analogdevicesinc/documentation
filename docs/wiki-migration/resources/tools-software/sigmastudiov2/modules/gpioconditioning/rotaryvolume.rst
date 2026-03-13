@@ -9,14 +9,30 @@ Rotary Volume
 Description
 -----------
 
-The Rotary Volume block controls the volume level of an input audio signal, using the GPIO rotary encoder inputs. This block has the functionality of the Rotary Encoder, Up/Down Control, Index lookup Table, and SW External Volume control blocks all in one algorithm control. The user has the flexibility to define a custom volume curve that will be scrolled through by the rotary encoder.
+The Rotary Volume block controls the volume level of an input audio signal,
+using the GPIO rotary encoder inputs. This block has the functionality of the
+Rotary Encoder, Up/Down Control, Index lookup Table, and SW External Volume
+control blocks all in one algorithm control. The user has the flexibility to
+define a custom volume curve that will be scrolled through by the rotary
+encoder.
 
 Usage
 -----
 
-The Rotary Volume control allows a GPIO inputs from a rotary encoder to control a custom volume curve. The volume curve can be any linear, logarithmic, or custom curve designed with any number of points. When the encoder is turned the volume will increase or decrease according to the volume curve in the table. The transition between points in the table has a smooth transition and the rate is determined by the Slew rate parameter. The Debounce time is used to smooth the actual physical input of the GPIO rotary encoder.
+The Rotary Volume control allows a GPIO inputs from a rotary encoder to control
+a custom volume curve. The volume curve can be any linear, logarithmic, or
+custom curve designed with any number of points. When the encoder is turned the
+volume will increase or decrease according to the volume curve in the table. The
+transition between points in the table has a smooth transition and the rate is
+determined by the Slew rate parameter. The Debounce time is used to smooth the
+actual physical input of the GPIO rotary encoder.
 
-The following image shows how two GPIO inputs are used to control the volume algorithm in the Rotary Volume block. The Rotary Volume algorithm has been grown in order to support stereo audio. A mux switch allows comparison between the direct signal from the Inputs, and the volume adjusted signal, routed to the Outputs. The Interface Read and Write blocks allow the last volume level to be saved and recalled.
+The following image shows how two GPIO inputs are used to control the volume
+algorithm in the Rotary Volume block. The Rotary Volume algorithm has been grown
+in order to support stereo audio. A mux switch allows comparison between the
+direct signal from the Inputs, and the volume adjusted signal, routed to the
+Outputs. The Interface Read and Write blocks allow the last volume level to be
+saved and recalled.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gpioconditioning/rotary_vol_eg_ssp.jpg
    :alt: rotary_vol_eg_ssp.jpg

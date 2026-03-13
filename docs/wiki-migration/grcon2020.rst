@@ -1,7 +1,10 @@
 GRCon 2020 Workshops
 ====================
 
-For those attending the PlutoSDR workshop at GRCon 2020, hosted by ADI, thanks. In order to make your experience better (less installing software while others are using the hardware) please have the following software installed on your machine:
+For those attending the PlutoSDR workshop at GRCon 2020, hosted by ADI, thanks.
+In order to make your experience better (less installing software while others
+are using the hardware) please have the following software installed on your
+machine:
 
 -  **libIIO library:**
 
@@ -35,7 +38,9 @@ For those attending the PlutoSDR workshop at GRCon 2020, hosted by ADI, thanks. 
    -  Installation instructions for Linux users are here: :doc:`GNU Radio </wiki-migration/resources/tools-software/linux-software/gnuradio>`
    -  For macOS GNU Radio and gr-iio can be installed from macports
 
-The Workshops are on Wednesday and Thursday. If you would like to come by the booth, and check out things with your hardware on Monday or Tuesday during the expo hours, it would be appreciated.
+The Workshops are on Wednesday and Thursday. If you would like to come by the
+booth, and check out things with your hardware on Monday or Tuesday during the
+expo hours, it would be appreciated.
 
 If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions .
 

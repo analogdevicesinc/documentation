@@ -10,12 +10,15 @@ Video
 General Description
 -------------------
 
-The Spectrum Analyzer instrument captures the signal in frequency domain where the signals are displayed as a function of their frequency. The M2K’s Spectrum Analyzer makes use of probes 1 and 2 which are capable of measuring signals at ±25V.
+The Spectrum Analyzer instrument captures the signal in frequency domain where
+the signals are displayed as a function of their frequency. The M2K’s Spectrum
+Analyzer makes use of probes 1 and 2 which are capable of measuring signals at
+±25V.
 
 .. note::
 
-   A Calibration feature automatically starts for the Spectrum Analyzer instrument when Scopy connects to an M2k device.
-
+   A Calibration feature automatically starts for the Spectrum Analyzer
+   instrument when Scopy connects to an M2k device.
 
 --------------
 
@@ -43,7 +46,9 @@ Channel Settings
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-ch-sample.png
    :align: center
 
-The channel setting allows the user to set the desired computation or variations on the signal that wants to be analyzed. The proper FFT computation and the type of averaging desired to use is set here.
+The channel setting allows the user to set the desired computation or variations
+on the signal that wants to be analyzed. The proper FFT computation and the type
+of averaging desired to use is set here.
 
 -  **Channel menu button**: This button will bring out the channel settings either for channel 1 or 2.
 -  **Type**: The options available in the drop down menu are the several types of averaging available in Scopy’s Spectrum Analyzer. This will improve the accuracy and repeatability of measurements. The summary of the averaging types are written below.
@@ -69,7 +74,7 @@ For the description of the *Window Function* see below:
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/use-cases/spectrum_analyzer_windowtype.png
       :align: right
-      :width: 200px
+      :width: 200
 
    ::
 
@@ -83,27 +88,24 @@ For the description of the *Window Function* see below:
 
    Visit https://ccrma.stanford.edu/~jos/sasp/Spectrum_Analysis_Windows.html for a detailed explanation
 
-
-
 For the description of the *Averaging Types* see below: 
 
 .. collapsible:: Click to expand
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/use-cases/spectrum_analyzer_channeltype.png
       :align: right
-      :width: 200px
+      :width: 200
 
    -  **RMS Averaging**: Reduces fluctuations in the data but does not reduce the actual noise floor. With a sufficient number of averages, a very good approximation of the actual random noise floor can be displayed. RMS averaging involves magnitudes only and has no phase information.
 
       -  RMS Linear Averaging: n samples all added together then divided by n.
-      -  RMS Exponential Averaging: 1/nth of current magnitude, added together with n-1 of previous magnitude.
+      -  RMS Exponential Averaging: 1/nth of current magnitude, added together
+         with n-1 of previous magnitude.
 
    -  **Peak hold**: The new spectral magnitudes are compared to the previous data, and if the new data is larger, the new data is stored. The resulting display shows the peak magnitudes which occurred in the previous group of spectra.
    -  **Peak hold continuous**: Similar with the peak and hold averaging except it looks at the number of instantaneous spectra recorded until measurement is restarted.
    -  **Min hold**: The new spectral magnitudes are compared to the previous data, and if the new data is lower, the new data is stored. The resulting display shows the peak magnitudes which occurred in the previous group of spectra.
    -  **Min hold continuous**: Similar with the Min hold averaging except it looks at the number of instantaneous spectra recorded until measurement is restarted.
-
-
 
 --------------
 
@@ -122,9 +124,13 @@ Averaging
 -  **Averaging**: Sets the desired amount of averaging.
 -  **History button**: Turn average history on/off (this affects the way the average is being processed and it is available only for the following average types: Linear RMS and Linear DB).
 
-The average value can be set to maximum 1000 for the following average types: Peak Hold, Min Hold, Linear RMS and Linear DB. The average value can be set to maximum 1000000 for the following average types: Peak Hold Continuous, Min Hold Continuous, Exponential RMS, Exponential DB. For Linear RMS and Linear DB the maximum average value is influenced by the History button. If the History button is ON, the maximum value is 1000. If the History button is OFF, the maximum value is 1000000.
-
-
+The average value can be set to maximum 1000 for the following average types:
+Peak Hold, Min Hold, Linear RMS and Linear DB. The average value can be set to
+maximum 1000000 for the following average types: Peak Hold Continuous, Min Hold
+Continuous, Exponential RMS, Exponential DB. For Linear RMS and Linear DB the
+maximum average value is influenced by the History button. If the History button
+is ON, the maximum value is 1000. If the History button is OFF, the maximum
+value is 1000000.
 
 Snapshot
 ~~~~~~~~
@@ -150,7 +156,9 @@ Sweep Setting
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-sweep-settings.png
    :align: center
 
-Sweep menu allows the user to make changes on the Spectrum Analyzer’s signal plot window depending on the desired frequency to be analyzed. All the changes made applies to both channels.
+Sweep menu allows the user to make changes on the Spectrum Analyzer’s signal
+plot window depending on the desired frequency to be analyzed. All the changes
+made applies to both channels.
 
 -  **Sweep menu button**: This button will bring out the sweep setting.
 -  **Logarithmic/Linear frequency switch**: Change the frequency displayed on the plot between linear and logarithmic.
@@ -169,7 +177,9 @@ Markers
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/spectrum-markers.png
    :align: center
 
-Markers allow the user to measure the amplitude on a specific frequency. Scopy allows the user to have multiple markers on each channel. The marker controls makes it flexible enough for quick spectrum measurement.
+Markers allow the user to measure the amplitude on a specific frequency. Scopy
+allows the user to have multiple markers on each channel. The marker controls
+makes it flexible enough for quick spectrum measurement.
 
 -  **Marker Settings**: This button will bring out the Marker Settings.
 -  **Marker Enable button**: Enable/Disable button of the markers. The marker is turned on when the box is filled with colors. Scopy allows 5 markers to be turned on at the same time.
@@ -185,7 +195,7 @@ Markers allow the user to measure the amplitude on a specific frequency. Scopy a
 
 .. note::
 
-   For additional marker control. Each markers may be moved by dragging it on the Signal plot window.
-
+   For additional marker control. Each markers may be moved by dragging it on
+   the Signal plot window.
 
 **Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`

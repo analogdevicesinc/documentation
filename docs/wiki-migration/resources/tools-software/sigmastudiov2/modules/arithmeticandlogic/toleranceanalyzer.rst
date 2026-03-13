@@ -9,7 +9,11 @@ Tolerance Analyzer
 Description
 -----------
 
-This block is for any application where you need to verify a given value's tolerance limits. It is especially useful for testing environments where the Sigma DSP needs to perform system diagnostics. The Tolerance Analyzer outputs either one or zero based on input level: if the level falls within the limits specified, it outputs one at the output pin; otherwise it outputs zero.
+This block is for any application where you need to verify a given value's
+tolerance limits. It is especially useful for testing environments where the
+Sigma DSP needs to perform system diagnostics. The Tolerance Analyzer outputs
+either one or zero based on input level: if the level falls within the limits
+specified, it outputs one at the output pin; otherwise it outputs zero.
 
 **Values in the controls are integer (32.0 or 28.0) format. Audio data is not directly compatible with these inputs
 
@@ -67,4 +71,5 @@ DSP Parameters
 | lower          | Compute the output value based on limits | NA                     | 8.24 format |
 +----------------+------------------------------------------+------------------------+-------------+
 
-As long as the input remains within the limit, the module outputs 1. When the signal is out of (above or below) the limit, the block outputs 0
+As long as the input remains within the limit, the module outputs 1. When the
+signal is out of (above or below) the limit, the block outputs 0

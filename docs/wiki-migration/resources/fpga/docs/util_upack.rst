@@ -1,7 +1,14 @@
 Channel UNPACK Utility Core
 ===========================
 
-The channel UNPACK utility core (util_upack) is meant to allow one or more channels to be enabled by software without any padding. This allows full usage of the DMA bandwidth without any overhead. This core is normally works with the DAC and DMA modules. The DAC interface is channel based (one interface per each DAC channel) and consists of enable, valid and data signals. The DMA interface is a single FIFO interface consisting of valid and data signals. The enable signals are usually controlled by software. The core simply unpacks the DMA data into the individual channels as defined by the enables.
+The channel UNPACK utility core (util_upack) is meant to allow one or more
+channels to be enabled by software without any padding. This allows full usage
+of the DMA bandwidth without any overhead. This core is normally works with the
+DAC and DMA modules. The DAC interface is channel based (one interface per each
+DAC channel) and consists of enable, valid and data signals. The DMA interface
+is a single FIFO interface consisting of valid and data signals. The enable
+signals are usually controlled by software. The core simply unpacks the DMA data
+into the individual channels as defined by the enables.
 
 Features
 --------
@@ -13,7 +20,15 @@ Features
 Functional Description
 ----------------------
 
-The core 'collects' samples from the DMA interface (or any other source) and passes it to the DAC on every valid request from the DAC. This is best explained through some examples. Let's consider a 4 channel DAC with a channel data width of 32 bits. That is, the DAC requires two 16-bit samples be present at its input for all channels when the valid is asserted. The DMA interface in this case is an interleaved 8 samples (128 bits) stream. This is because irrespective of the DAC channel data width, the software always sees data as 'samples interleaved'. The same data set may drive a DAC core with a channel width of 128 bits or 16 bits.
+The core 'collects' samples from the DMA interface (or any other source) and
+passes it to the DAC on every valid request from the DAC. This is best explained
+through some examples. Let's consider a 4 channel DAC with a channel data width
+of 32 bits. That is, the DAC requires two 16-bit samples be present at its input
+for all channels when the valid is asserted. The DMA interface in this case is
+an interleaved 8 samples (128 bits) stream. This is because irrespective of the
+DAC channel data width, the software always sees data as 'samples interleaved'.
+The same data set may drive a DAC core with a channel width of 128 bits or 16
+bits.
 
 a. Four channels enabled (4'b1111)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,7 +48,11 @@ c. Two channels enabled (4'b1100)
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/2channel_upack_4.svg
    :alt: Upack data flow, when 4 channel is enabled
 
-This data unpacking now needs to factor in the valid and the number of samples that are to be read from the DMA. It is quite simple a valid at the DAC interface translates into a data required count based on the number of enables. So if three channels are enabled the requirement is 6 samples, so the core initiates a read from the DMA three out of four clock cycles.
+This data unpacking now needs to factor in the valid and the number of samples
+that are to be read from the DMA. It is quite simple a valid at the DAC
+interface translates into a data required count based on the number of enables.
+So if three channels are enabled the requirement is 6 samples, so the core
+initiates a read from the DMA three out of four clock cycles.
 
 Parameters
 ----------

@@ -3,13 +3,14 @@ Multiple Control Mute
 
 :doc:`Click here to return to the Volume Controls section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/volumecontrols>`
 
-
-This module applies mute to the input when enabled. When the module is grown the mute selection is separate for each of the inputs. It comes in two versions.
+This module applies mute to the input when enabled. When the module is grown the
+mute selection is separate for each of the inputs. It comes in two versions.
 
 -  Multiple Control Mute (No Slew)
 -  Multiple Control Mute (HW Slew)
 
-HW slew version shall apply the slew whenever mute parameter is changed to avoid click noise.
+HW slew version shall apply the slew whenever mute parameter is changed to avoid
+click noise.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/mcm.png
    :align: center
@@ -23,7 +24,6 @@ Name         Format [int/dec] - [control/audio] Function Description
 Pin 0: Input dec- audio                         Input Audio
 ============ ================================== ====================
 
-
 | ===== Output Pins =====
 
 ============= ================================== =======================
@@ -32,12 +32,12 @@ Name          Format [int/dec] - [control/audio] Function Description
 Pin 1: Output dec- audio                         Output audio with gain.
 ============= ================================== =======================
 
-
-
 Grow Algorithm
 --------------
 
-The module currently supports growth. Both the control and pins are grown for each growth. Add algorithm functionality is not supported. The figure below shows the module when grown for 5 channels.
+The module currently supports growth. Both the control and pins are grown for
+each growth. Add algorithm functionality is not supported. The figure below
+shows the module when grown for 5 channels.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/mcm2.png
    :align: center
@@ -56,7 +56,8 @@ Configurations
 Slew Configuration
 ------------------
 
-In the case of HW slew version. The slew shape can be chosen by right clicking on the module.
+In the case of HW slew version. The slew shape can be chosen by right clicking
+on the module.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/mcm3.png
    :align: center
@@ -99,7 +100,6 @@ HW Slew
 -   Red - Instance Number (Changes for each instance)
 -   Blue - Parameter Name
 -   Brown - Channel Number (Changes for each channel when grown)
-
 
 | **Note:** Mute parameter shall be repeated for each channel when the algorithm is grown.
 

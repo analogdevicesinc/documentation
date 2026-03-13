@@ -3,16 +3,19 @@ AD-GMSL522-SL User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-gmsl522-sl/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Overview
 --------
@@ -20,7 +23,7 @@ Overview
 The **AD-GMSL522-SL** is a :adi:`Gigabit Multimedia Serial Link (GMSL) <en/solutions/gigabit-mulitimedia-serial-link.html>`-enabled NVIDIA Jetson Xavier NX-based hardware and software solution that allows for prototyping with GMSL technology. This solution creates a scalable, user friendly, GMSL platform for receiving and transmitting data over GMSL. It supports two forms of camera input -- either straight CSI data coming through a SAMTEC connector from a GMSL evaluation kit, or via camera modules using GMSL2 or GMSL1 technology to connect to the on-board :adi:`MAX96724` via COAX connectors. The package also includes software tools to enable development of GMSL applications. Among these tools are modified L4T kernels that support certain camera modules and documentation that allows any user to update these kernels for their specific hardware needs. The design also incorporates the MAX96724GTN/VY+ Quad tunneling GMSL2/1 to CSI-2 deserializer and MAX96717GTJ/VY+ CSI-2 to GMSL2 serializer and provides a reliable platform to evaluate high-bandwidth GMSL.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/ad-viper-sl_angle.jpg
-   :width: 500px
+   :width: 500
 
 --------------
 
@@ -51,7 +54,7 @@ System Architecture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/block_diagram.png
    :align: center
-   :width: 800px
+   :width: 800
 
 --------------
 
@@ -126,7 +129,6 @@ Specifications
    +-----------------------------------------+----------------------------------------------------------------+
    
 
-
 --------------
 
 Software Development
@@ -141,13 +143,13 @@ System Setup and Evaluation
 
 .. tip::
 
-   Get complete access to hardware components, design files, and procedure on how to setup and use the AD-GMSL522-SL Carrier Board:
+   Get complete access to hardware components, design files, and procedure on
+   how to setup and use the AD-GMSL522-SL Carrier Board:
 
    
    -  :doc:`AD-GMSL522-SL Getting Started Guide </wiki-migration/resources/eval/user-guides/ad-gmsl522-sl/getting-started>`
    -  :doc:`AD-GMSL522-SL Hardware Guide </wiki-migration/resources/eval/user-guides/ad-gmsl522-sl/hardware>`
    
-
 
 --------------
 
@@ -171,10 +173,10 @@ Support
 
 .. hint::
 
-   For questions and more information, please contact us on the Analog Devices Engineer Zone.
+   For questions and more information, please contact us on the Analog Devices
+   Engineer Zone.
 
    
    -  :ez:`EngineerZone Linux Software Drivers <community/linux-software-drivers>`
    -  :ez:`EngineerZone FPGA Reference Designs <community/fpga>`
    
-

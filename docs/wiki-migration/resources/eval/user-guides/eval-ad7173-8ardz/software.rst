@@ -11,12 +11,15 @@ The quick start guide is available on the landing page here :doc:`(Quick Start G
 Installation Guide
 ------------------
 
-The EVAL-AD7173-8ARDZ evaluation kit includes a link to the software that needs to be installed before using the EVAL-AD7173-8ARDZ evaluation board.
+The EVAL-AD7173-8ARDZ evaluation kit includes a link to the software that needs
+to be installed before using the EVAL-AD7173-8ARDZ evaluation board.
 
 .. important::
 
-   \ Warning: The evaluation software and drivers must be installed before connecting both the evaluation board and the SDP-K1 board to the PC. This ensures that the evaluations system is correctly recognized when it is connected to the PC.
-
+   \ Warning: The evaluation software and drivers must be installed before
+   connecting both the evaluation board and the SDP-K1 board to the PC. This
+   ensures that the evaluations system is correctly recognized when it is
+   connected to the PC.
 
 Installing the ACE Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,23 +28,28 @@ To install the **ACE** software,
 
 -  With the SDP board disconnected from the USB port of the PC, download the ACE evaluation software package to start the ACE evaluation software installation
 -  Click on **Download ACE Installer**
--  Run the installer and follow the instructions to complete the software installation process
+-  Run the installer and follow the instructions to complete the software
+   installation process
 
-During the installation process, be sure to select Precision Converter Components when prompted and enable the LibIIO Wrapper to ensure that all necessary software components are installed.
+During the installation process, be sure to select Precision Converter
+Components when prompted and enable the LibIIO Wrapper to ensure that all
+necessary software components are installed.
 
 .. tip::
 
-   The LibIIO Wrapper must be installed for ACE to detect the connected hardware. If you need to install the LibIIO Wrapper after ACE has been installed, click the 'Help' button in the main ACE window. In the 'ACE Help' panel that appears expand the 'Application Resources' section, and you will find a link to run a local copy of the LibIIO Wrapper Installer.
-
+   The LibIIO Wrapper must be installed for ACE to detect the connected
+   hardware. If you need to install the LibIIO Wrapper after ACE has been
+   installed, click the 'Help' button in the main ACE window. In the 'ACE Help'
+   panel that appears expand the 'Application Resources' section, and you will
+   find a link to run a local copy of the LibIIO Wrapper Installer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad4111ardz/libiio.png
    :align: center
-   :width: 400px
+   :width: 400
 
 **Figure 3. Select Precision Converter Components during ACE installation**
 
 When the following prompt appears, be sure to select **LibIIO** and **LibIIODrivers** options, then click **Install**.
-
 
 |image1|
 
@@ -50,7 +58,8 @@ When the following prompt appears, be sure to select **LibIIO** and **LibIIODriv
 Evaluation Hardware Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When the ACE evaluation software installation is complete, take the following steps to set up the SDP-K1 and evaluation board together.
+When the ACE evaluation software installation is complete, take the following
+steps to set up the SDP-K1 and evaluation board together.
 
 -  Connect the SDP-K1 and evaluation board using the Arduino headers.
 -  Connect the power supplies configuration.
@@ -62,17 +71,22 @@ Software Operation
 
 To start the ACE evaluation software, from the Windows Start menu, click Analog Devices > ACE. The software window opens (See Figure 5) until the software recognizes the AD7173-8 evaluation board. When the software recognizes the board, double-click on the icon in the **Start** view to open the main window seen in Figure 6. Make sure that you already have the AD717x-8 plugin in the plugin manager.
 
-By clicking on the part in the main ACE evaluation software window (See Figure 6), the chip view will be opened (Figure 7).
+By clicking on the part in the main ACE evaluation software window (See Figure
+6), the chip view will be opened (Figure 7).
 
-The chip view shows the block diagram of the AD7173-8. This tab allows the user to select inputs, set up the ADC, reset the ADC, and view errors present, as well as configure the device for different demonstration modes. Figure 7 shows the chip view in detail, and the following sections discuss the different elements on the Chip view of the software window.
+The chip view shows the block diagram of the AD7173-8. This tab allows the user
+to select inputs, set up the ADC, reset the ADC, and view errors present, as
+well as configure the device for different demonstration modes. Figure 7 shows
+the chip view in detail, and the following sections discuss the different
+elements on the Chip view of the software window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7173-8/ace_figure_5.png
-   :width: 800px
+   :width: 800
 
 **Figure 5. ACE Evaluation Select Interface Window**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7173-8/ace_figure_6.png
-   :width: 800px
+   :width: 800
 
 **Figure 6. ACE Evaluation Software Main Window**
 
@@ -84,17 +98,27 @@ The **Configuration tab** shows a block diagram of the AD7173-8. This tab allows
 Functional Block Diagram (1)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The functional block diagram of the AD7173-8 (Label 1 in Figure 7) shows each of the functional blocks within the AD7173-8. Clicking a functional block on this diagram opens the configuration pop-up window for that block.
+-  The functional block diagram of the AD7173-8 (Label 1 in Figure 7) shows each
+   of the functional blocks within the AD7173-8. Clicking a functional block on
+   this diagram opens the configuration pop-up window for that block.
 
 Configuration Pop-Up Button (2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Each block has a pop-up window (Label 2 in Figure 7) which opens a different window to configure the relevant block.
+-  Each block has a pop-up window (Label 2 in Figure 7) which opens a different
+   window to configure the relevant block.
 
 External Parameters (3, 4, 5, 6)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  There are three external parameters that are set by the EVAL-AD7173-8ARDZ but must be entered into the software: the AVDD1 and AVDD2 (Label 3 in Figure 7), external reference (Label 4 in Figure 7), IOVDD (Label 5 in Figure 7)and AVSS (Label 6 in Figure 7). The external reference on the EVAL-AD7173-8ARDZ is set to 2.5 V by using an ADR4525. If bypassing the ADR4525 on the board, change the external reference voltage value in the software to ensure correct calculation of results in the Waveform and Histogram tabs in the Waveform Analysis window.
+-  There are three external parameters that are set by the EVAL-AD7173-8ARDZ but
+   must be entered into the software: the AVDD1 and AVDD2 (Label 3 in Figure 7),
+   external reference (Label 4 in Figure 7), IOVDD (Label 5 in Figure 7)and AVSS
+   (Label 6 in Figure 7). The external reference on the EVAL-AD7173-8ARDZ is set
+   to 2.5 V by using an ADR4525. If bypassing the ADR4525 on the board, change
+   the external reference voltage value in the software to ensure correct
+   calculation of results in the Waveform and Histogram tabs in the Waveform
+   Analysis window.
 
 Status Bar (7)
 ^^^^^^^^^^^^^^
@@ -112,7 +136,7 @@ Waveform Analysis Button (9)
 -  Opens the Waveform tab.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-8/slide1.jpg
-   :width: 900px
+   :width: 900
 
 **Figure 7. AD7173-8 Functional Block Diagram**
 
@@ -124,17 +148,22 @@ The **Waveform tab** can display the different waveforms for voltage input, curr
 Waveform Graph and Controls (10, 11)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The data waveform graph (Label 10 in Figure 8) shows each successive sample of the ADC output. Zoom in on the data in the graph using the control toolbar (Label 11 in Figure 8). Change the scales on the graph by typing values into the x-axis and y-axis fields.
+-  The data waveform graph (Label 10 in Figure 8) shows each successive sample
+   of the ADC output. Zoom in on the data in the graph using the control toolbar
+   (Label 11 in Figure 8). Change the scales on the graph by typing values into
+   the x-axis and y-axis fields.
 
 Samples (12)
 ^^^^^^^^^^^^
 
--  The Samples numeric control (Label 12 in Figure 8) set the number of samples gathered per batch.
+-  The Samples numeric control (Label 12 in Figure 8) set the number of samples
+   gathered per batch.
 
 Serial Interface and Internal Reference (13)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Sets the ADC mode, enables DATA_STAT and Internal Reference (Label 13 in Figure 8).
+-  Sets the ADC mode, enables DATA_STAT and Internal Reference (Label 13 in
+   Figure 8).
 
 Run (14)
 ^^^^^^^^
@@ -144,12 +173,16 @@ Run (14)
 Channel Selection (15)
 ^^^^^^^^^^^^^^^^^^^^^^
 
--  The Channel Selection control (Label 15 in Figure 8) selects which channel/s is displayed on the data waveform. These controls only affect the waveform graphs and have no effect on the channel settings in the ADC register map.
+-  The Channel Selection control (Label 15 in Figure 8) selects which channel/s
+   is displayed on the data waveform. These controls only affect the waveform
+   graphs and have no effect on the channel settings in the ADC register map.
 
 Display Units and Axis Controls (16)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Click the Units dropdown box (Label 16 in Figure 8) to select whether the data graph displays in units of voltages/amps or codes. This control is independent for each graph.
+-  Click the Units dropdown box (Label 16 in Figure 8) to select whether the
+   data graph displays in units of voltages/amps or codes. This control is
+   independent for each graph.
 
 Results Pane (17)
 ^^^^^^^^^^^^^^^^^
@@ -158,33 +191,40 @@ Results Pane (17)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-8/slide2.jpg
    :align: center
-   :width: 1000px
+   :width: 1000
 
 **Figure 8. AD7175-8 Waveform Tab**
 
 HISTOGRAM TAB
 ~~~~~~~~~~~~~
 
-The Histogram tab generates a histogram using the gathered samples and processes the data, calculating the peak-to-peak noise, rms noise, and resolution.
+The Histogram tab generates a histogram using the gathered samples and processes
+the data, calculating the peak-to-peak noise, rms noise, and resolution.
 
 Histogram Graph and Controls (18, 19)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The data histogram graph (Label 18 in Figure 9) shows the number of times each sample of the ADC output occurs. Zoom in on the data using the control toolbar (Label 19 in Figure 9) in the graph.
+-  The data histogram graph (Label 18 in Figure 9) shows the number of times
+   each sample of the ADC output occurs. Zoom in on the data using the control
+   toolbar (Label 19 in Figure 9) in the graph.
 
 Channel Selection (20)
 ^^^^^^^^^^^^^^^^^^^^^^
 
--  The Channel Selection control (Label 15 in Figure 8) selects which channel/s is displayed on the data waveform. These controls only affect the waveform graphs and have no effect on the channel settings in the ADC register map.
+-  The Channel Selection control (Label 15 in Figure 8) selects which channel/s
+   is displayed on the data waveform. These controls only affect the waveform
+   graphs and have no effect on the channel settings in the ADC register map.
 
 Display Units and Axis Controls (21)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Click the Units dropdown box (Label 21 in Figure 9) to select whether the data graph displays in units of voltages/amps or codes. This control is independent for each graph.
+-  Click the Units dropdown box (Label 21 in Figure 9) to select whether the
+   data graph displays in units of voltages/amps or codes. This control is
+   independent for each graph.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-8/slide3.jpg
    :align: center
-   :width: 1000px
+   :width: 1000
 
 **Figure 9. Histogram Tab**
 
@@ -194,17 +234,28 @@ Memory Map
 Register Tree (22)
 ^^^^^^^^^^^^^^^^^^
 
--  The register maps nested list (Label 22 in Figure 10) shows the full register map in a tree control. Each register is shown. Clicking the expand button next to each register shows all the bit fields contained within that register.
+-  The register maps nested list (Label 22 in Figure 10) shows the full register
+   map in a tree control. Each register is shown. Clicking the expand button
+   next to each register shows all the bit fields contained within that
+   register.
 
 Register Tree Search (23)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The register tree search box (Label 23 in Figure 10) allows the user to search the tree for any register or bit field. Enter a value into this field to filter the register tree.
+-  The register tree search box (Label 23 in Figure 10) allows the user to
+   search the tree for any register or bit field. Enter a value into this field
+   to filter the register tree.
 
 Register and Bit Field Control (24, 25, 26, 27)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The register and bit field control section (Label 24 in Figure 10) allows the user to change the individual bit of the register selected in the register tree by clicking the bits or by programming the register value directly into the number control field (Label 25 in Figure 10). This control also shows all bit fields for the selected register. Change the values by using a dropdown box (Label 26 in Figure 10) or by selecting or clearing a checkbox (Label 27 in Figure 10).
+-  The register and bit field control section (Label 24 in Figure 10) allows the
+   user to change the individual bit of the register selected in the register
+   tree by clicking the bits or by programming the register value directly into
+   the number control field (Label 25 in Figure 10). This control also shows all
+   bit fields for the selected register. Change the values by using a dropdown
+   box (Label 26 in Figure 10) or by selecting or clearing a checkbox (Label 27
+   in Figure 10).
 
 Documentation (28)
 ^^^^^^^^^^^^^^^^^^
@@ -214,17 +265,19 @@ Documentation (28)
 Import and Export (29)
 ^^^^^^^^^^^^^^^^^^^^^^
 
--  Save and Load (Label 29 in Figure 10) allow the user to save the current register map setting to a file and to load the setting from the same file, respectively.
+-  Save and Load (Label 29 in Figure 10) allow the user to save the current
+   register map setting to a file and to load the setting from the same file,
+   respectively.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-8/slide4.jpg
    :align: center
-   :width: 1000px
+   :width: 1000
 
 **Figure 10. Memory Map**
 
 :doc:`Return to Hardware Guide </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/hardware_guide>` :doc:`Return to Homepage </wiki-migration/resources/eval/eval-ad7173-8ardz>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad4111ardz/libiio_drivers.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad4111ardz/ad4111_documentation_button.png
-   :width: 20px
+   :width: 20

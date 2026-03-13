@@ -1,7 +1,9 @@
 DokuWiki Test Page
 ==================
 
-This page is intended for verifying that upgrades of DokuWiki did not break our existing plugins and customizations. Every change that matters should be sampled on this page.
+This page is intended for verifying that upgrades of DokuWiki did not break our
+existing plugins and customizations. Every change that matters should be sampled
+on this page.
 
 Remember that you have to edit this page in order to force a cache refresh.
 
@@ -34,7 +36,8 @@ If you want to make additional information available that is `folded or hidden <
 Inline:
 ~~~~~~~
 
-This is example ~~text \| with some of it only shown when you unfold it~~. And after that the text just continues to flow in the same paragraph.
+This is example ~~text \| with some of it only shown when you unfold it~~. And
+after that the text just continues to flow in the same paragraph.
 
 Block:
 ~~~~~~
@@ -47,11 +50,9 @@ This is example text.
 This table is only shown when you unfold the block
 ========== ============= =========================
 
-
 .. note::
 
    See `some other wiki page <https://wiki.analog.com/some other wiki page>`_
-
 
 ========== ============= =========================
 This table is only shown when you unfold the block
@@ -64,7 +65,8 @@ graphviz
 
 This can create directed and non-directed graph images from a textual description language called “\ `dot <http://www.graphviz.org/doc/info/lang.html>`_\ ” using the Graphviz program. `graphviz <https://www.dokuwiki.org/plugin:graphviz>`_.
 
-<graphviz dot> digraph { 1 -> 2 -> 3 -> 4 -> 5 ->6 -> 1; 1 -> 3 -> 5; 2 -> 4 -> 6; } </graphviz>
+<graphviz dot> digraph { 1 -> 2 -> 3 -> 4 -> 5 ->6 -> 1; 1 -> 3 -> 5; 2 -> 4 ->
+6; } </graphviz>
 
 ::
 
@@ -81,15 +83,10 @@ include
 
 Allows you to `include <https://www.dokuwiki.org/plugin:include>`_ different wiki pages in the current page. Simply enclose the ID of the page to be included in double curly brackets:
 
-
-
-
-
    
 .. note::
 
    See `[id] <https://wiki.analog.com/[id]#[section]>`_
-
 
 +-----------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------+
 | [id]      | page ID of the page to include; some `#macros <https://wiki.analog.com/>`_ are possible; shortcuts are resolved (``:``, ``.``, ``..``)  | required                            |
@@ -113,19 +110,19 @@ Allows you to `include <https://www.dokuwiki.org/plugin:include>`_ different wik
 
 Example:
 
-
-
-
-
    
 Analog Devices Wiki
 ===================
 
-This wiki provides developers using Analog Devices products with software and documentation, including HDL interface code, software drivers, and reference project examples for FPGA connectivity. It also contains user guides for some Analog Devices evaluation boards to help developers get up and running fast.
+This wiki provides developers using Analog Devices products with software and
+documentation, including HDL interface code, software drivers, and reference
+project examples for FPGA connectivity. It also contains user guides for some
+Analog Devices evaluation boards to help developers get up and running fast.
 
 University students can find lab exercises built around the use of the Analog Devices Active Learning Modules, such as the :adi:`ADALM1000`, :adi:`ADALM2000`, :adi:`ADALM-PLUTO`.
 
-To find content on the Wiki, search for keywords or browse one of the categories below.
+To find content on the Wiki, search for keywords or browse one of the categories
+below.
 
 Browse the Wiki
 ---------------
@@ -164,19 +161,20 @@ Analog Devices Support
 
 Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the `EngineerZone Support Community <https://ez.analog.com/>`_.
 
-
-
 provides the first section of the start page
-
 
 Analog Devices Wiki
 ===================
 
-This wiki provides developers using Analog Devices products with software and documentation, including HDL interface code, software drivers, and reference project examples for FPGA connectivity. It also contains user guides for some Analog Devices evaluation boards to help developers get up and running fast.
+This wiki provides developers using Analog Devices products with software and
+documentation, including HDL interface code, software drivers, and reference
+project examples for FPGA connectivity. It also contains user guides for some
+Analog Devices evaluation boards to help developers get up and running fast.
 
 University students can find lab exercises built around the use of the Analog Devices Active Learning Modules, such as the :adi:`ADALM1000`, :adi:`ADALM2000`, :adi:`ADALM-PLUTO`.
 
-To find content on the Wiki, search for keywords or browse one of the categories below.
+To find content on the Wiki, search for keywords or browse one of the categories
+below.
 
 Browse the Wiki
 ---------------
@@ -214,8 +212,6 @@ Analog Devices Support
 ----------------------
 
 Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the `EngineerZone Support Community <https://ez.analog.com/>`_.
-
-
 
 interwiki links
 ---------------
@@ -236,7 +232,8 @@ math
 
 size (optional) the base glyph size in pixels - default value: 12.
 
-alignment can be controlled in the same way as DokuWiki images, one space to the left to right align, one to the right to left align, one on each side to centre.
+alignment can be controlled in the same way as DokuWiki images, one space to the
+left to right align, one to the right to left align, one on each side to centre.
 
 -   :math:`S(f)(t)=a_{0}+sumn=1+inftya_{n} cos(n \omega t)+b_{n} sin(n \omega t)`
 -  <m 8>delim{lbrace}{matrix{3}{1}\ |3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0|}{ }</m>
@@ -247,7 +244,9 @@ syntax can be found in the `math <https://wiki.analog.com/math>`_ page.
 note
 ----
 
-Notes have changed recently -- please use the new format. With the new format, comes new options! You can control the corners (square [default] or round), if it has an icon or not, and the width. See the examples below.
+Notes have changed recently -- please use the new format. With the new format,
+comes new options! You can control the corners (square [default] or round), if
+it has an icon or not, and the width. See the examples below.
 
 .. note::
 
@@ -260,7 +259,6 @@ Notes have changed recently -- please use the new format. With the new format, c
 
    
 
-
 .. tip::
 
    
@@ -271,7 +269,6 @@ Notes have changed recently -- please use the new format. With the new format, c
       text which you want in the box
 
    
-
 
 .. important::
 
@@ -284,7 +281,6 @@ Notes have changed recently -- please use the new format. With the new format, c
 
    
 
-
 .. warning::
 
    
@@ -296,7 +292,6 @@ Notes have changed recently -- please use the new format. With the new format, c
 
    
 
-
 .. hint::
 
    
@@ -307,7 +302,6 @@ Notes have changed recently -- please use the new format. With the new format, c
       text which you want in the box
 
    
-
 
 .. admonition:: Download
    :class: download
@@ -322,7 +316,6 @@ Notes have changed recently -- please use the new format. With the new format, c
 
    
 
-
 .. note::
 
    
@@ -333,7 +326,6 @@ Notes have changed recently -- please use the new format. With the new format, c
             * list of things todo, or that are in progress
 
    
-
 
 **Safety Notes:**
 
@@ -350,7 +342,6 @@ Notes have changed recently -- please use the new format. With the new format, c
 
    
 
-
 .. warning::
 
    warning - normal text is black.
@@ -363,7 +354,6 @@ Notes have changed recently -- please use the new format. With the new format, c
             //warning// - normal text is black.
 
    
-
 
 .. caution::
 
@@ -378,7 +368,6 @@ Notes have changed recently -- please use the new format. With the new format, c
 
    
 
-
 .. container:: round notice
 
    **notice** - normal text is white
@@ -392,7 +381,6 @@ Notes have changed recently -- please use the new format. With the new format, c
 
    
 
-
 .. container:: round safety
 
    **safety** - normal text is white
@@ -405,7 +393,6 @@ Notes have changed recently -- please use the new format. With the new format, c
             //safety// - normal text is white
 
    
-
 
 You can use notes and boxes also inside text with paragraphs like this (the key thing to notice is the case of the ``WRAP`` or ``wrap`` keyword): info, text between help, text between alert, text between important, text between tip, text between download, text betweentodo and round box and danger, warning, caution, notice, safety.
 
@@ -422,7 +409,8 @@ source
 
    <source path:part language repository>
 
-where part can be, numeric, two regular expressions (no spaces - it's a bug I haven't cared about - complain if it is a big deal to you), or function names.
+where part can be, numeric, two regular expressions (no spaces - it's a bug I
+haven't cared about - complain if it is a big deal to you), or function names.
 
 ::
 
@@ -441,13 +429,16 @@ where part can be, numeric, two regular expressions (no spaces - it's a bug I ha
 
 If your regular expressions are a little rusty - check out a short `reference <http://www.regular-expressions.info/reference.html>`_
 
-path can also have globs in it - it help pick the latest version in a branch. for example, this uses latest busybox version in trunk (sometimes there is more than one)
+path can also have globs in it - it help pick the latest version in a branch.
+for example, this uses latest busybox version in trunk (sometimes there is more
+than one)
 
 ::
 
    <source master/cf_lib/edk/pcores/axi_adc_2c_v1_00_a/regmap.txt:/REGISTER/-/0x02/ txt fpgahdl_xilinx>
 
-<source master/cf_lib/edk/pcores/axi_adc_2c_v1_00_a/regmap.txt:/REGISTER/-/0x02/ txt fpgahdl_xilinx>
+<source master/cf_lib/edk/pcores/axi_adc_2c_v1_00_a/regmap.txt:/REGISTER/-/0x02/
+txt fpgahdl_xilinx>
 
 For example:
 
@@ -486,7 +477,6 @@ xterms within ``
       test:~ #>
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -499,7 +489,6 @@ xterms within ``
       Linux:~ $>
    
 
-
 wrap
 ----
 
@@ -511,12 +500,9 @@ Basic syntax
 
 An uppercase **** (or alternatively **<block>** or **<div>**) creates a **``div``** and should be used for **"big"** containers, **surrounding** paragraphs, lists, tables, etc.
 
-
-
 .. container:: classes width :language
 
       "big" content
-
 
 ::
 
@@ -564,12 +550,9 @@ Columns and Floats
 
 You can have columns easily by adding the class ``column`` and a width, e.g.
 
-
-
 .. container:: column
 
    ...content...
-
 
 .. container:: column
 
@@ -597,7 +580,6 @@ You can have columns easily by adding the class ``column`` and a width, e.g.
       No Headline
    
 
-
 .. container:: column
 
    **Different Floating Options**
@@ -610,7 +592,6 @@ You can have columns easily by adding the class ``column`` and a width, e.g.
    -  **``right``** will let the wrap float right
    -  **``center``** will position the wrap in the horizontal center of the page
    
-
 
 .. container:: column
 
@@ -632,14 +613,11 @@ You can have columns easily by adding the class ``column`` and a width, e.g.
    A **table** inside a column or box will always be **100% wide**. This makes positioning and sizing tables possible.
    
 
-
-After using any of the float classes, you might come across something like this, where the following text protrudes into the space where only the floating containers should be ...
-
+After using any of the float classes, you might come across something like this,
+where the following text protrudes into the space where only the floating
+containers should be ...
 
 ... to prevent that, you should simply add
-
-
-
 
 after your last column.
 
@@ -659,7 +637,6 @@ Multi-columns
    
    :!: Note: Multi-columns don't make sense for spans.
 
-
 Alignments
 ~~~~~~~~~~
 
@@ -674,23 +651,17 @@ You can use these different text alignments:
 
    Center aligned text ...
 
-
 .. container:: rightalign
 
    ... and right aligned.
-
-
-
 
 .. container:: centeralign
 
       Center aligned text ...
 
-
 .. container:: rightalign
 
       ... and right aligned.
-
 
 :!: You cannot add alignments to spans.
 
@@ -708,7 +679,6 @@ Boxes and Notes
    -  ``round`` can be added to anything with a background colour or a border and will only work in modern browsers (no Internet Explorer)
    
 
-
 .. note::
 
    Info
@@ -717,7 +687,6 @@ Boxes and Notes
    :
    
    
-
 
 .. tip::
 
@@ -728,7 +697,6 @@ Boxes and Notes
    
    
 
-
 .. important::
 
    Important
@@ -737,7 +705,6 @@ Boxes and Notes
    :
    
    
-
 
 .. warning::
 
@@ -748,7 +715,6 @@ Boxes and Notes
    
    
 
-
 .. hint::
 
    Help
@@ -757,7 +723,6 @@ Boxes and Notes
    :
    
    
-
 
 .. admonition:: Download
    :class: download
@@ -769,7 +734,6 @@ Boxes and Notes
    
    
 
-
 .. note::
 
    Todo
@@ -778,8 +742,6 @@ Boxes and Notes
    :
    
    
-
-
 
 **Safety Notes:**
 
@@ -792,7 +754,6 @@ Boxes and Notes
    
    
 
-
 .. warning::
 
    Warning
@@ -801,7 +762,6 @@ Boxes and Notes
    :
    
    
-
 
 .. caution::
 
@@ -812,7 +772,6 @@ Boxes and Notes
    
    
 
-
 .. container:: round notice left
 
    **Notice**
@@ -821,7 +780,6 @@ Boxes and Notes
    :
    
    
-
 
 .. container:: round safety left
 
@@ -832,9 +790,9 @@ Boxes and Notes
    
    
 
-
-
-You can use notes and boxes also inside text with spans like this: info, help, alert, important, tip, download, todo and round box and danger, warning, caution, notice, safety.
+You can use notes and boxes also inside text with spans like this: info, help,
+alert, important, tip, download, todo and round box and danger, warning,
+caution, notice, safety.
 
 ::
 
@@ -883,9 +841,6 @@ Prewrap
       Inside this code block the words will wrap to a new line although they are all in one line.
    
 
-
-
-
 .. container:: prewrap 250px
 
    
@@ -895,7 +850,6 @@ Prewrap
    
    :
    
-
 
 Spoiler
 ^^^^^^^
@@ -924,11 +878,9 @@ Pagebreak
 
 The following will add a pagebreak:
 
-
 ::
 
    The following will add a pagebreak:
-
 
 This has no effect on the browser screen. A `pagebreak <http://reference.sitepoint.com/css/page-break-after>`_ will force a new page in printouts.
 
@@ -941,7 +893,6 @@ The following will try to avoid a pagebreak:
 
    much content, belonging together (like a long table)
 
-
 ::
 
    The following will try to avoid a pagebreak:
@@ -949,7 +900,6 @@ The following will try to avoid a pagebreak:
 .. container:: nopagebreak
 
    much content, belonging together (like a long table)
-
 
 This also has no effect on the browser screen. It will try to `avoid a page break <http://reference.sitepoint.com/css/page-break-inside>`_ in printouts.
 
@@ -974,7 +924,8 @@ This text does not appear on the screen, but only in print.
 Typography
 ~~~~~~~~~~
 
-I advise against using the following typography classes. It's better to create semantic classes that reflect their meaning instead.
+I advise against using the following typography classes. It's better to create
+semantic classes that reflect their meaning instead.
 
 -  font family: ``sansserif``, ``serif``, ``monospace``
 -  font size: ``bigger``, ``muchbigger``, ``smaller``
@@ -1005,9 +956,6 @@ You can combine and nest all classes and types of boxes, e.g.
 
    
 
-
-
-
 .. container:: box bggreen fgblack 350px right :en
 
       **__Outer green box floats right__**
@@ -1026,21 +974,19 @@ You can combine and nest all classes and types of boxes, e.g.
 
    
 
-
 Language and Text Direction
 ---------------------------
 
-You can change the language and the reading direction of a wrap container by simply adding a colon followed by the language code, like this:
+You can change the language and the reading direction of a wrap container by
+simply adding a colon followed by the language code, like this:
 
 .. container:: :he
 
    זוהי עברית. ((This means "This is Hebrew.", at least according to `Google Translate <http://translate.google.com/>`_.))
 
-
 .. container:: :he
 
    זוהי עברית.  [1]_
-
 
 The text direction (``rtl``, right to left or ``ltr``, left to right) will get inserted automatically and is solely dependent on the language. The list of currently supported languages is taken from: http://meta.wikimedia.org/wiki/Template:List_of_language_names_ordered_by_code (If you specify a language not listed there, it simply won't do anything.)
 
@@ -1065,7 +1011,8 @@ Works the same/similar way:
 
 <code> |youtube>LCf-\_iREESQ|\ </code>
 
-find the video you want to watch, and then use it's "tag" in the url to encode it.
+find the video you want to watch, and then use it's "tag" in the url to encode
+it.
 
 .. image:: https://wiki.analog.com/_media/wiki/youtube>lcf-_ireesq
    :alt: youtube>LCf-\_iREESQ

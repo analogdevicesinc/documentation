@@ -9,7 +9,9 @@ Pack 16 Bit Audio
 Description
 -----------
 
-This module accepts a packed 16 bit packed audio (upper 16 bits - left channel, lower 16 bits- right channel) channel and un-packs them into left and right audio streams at the output.
+This module accepts a packed 16 bit packed audio (upper 16 bits - left channel,
+lower 16 bits- right channel) channel and un-packs them into left and right
+audio streams at the output.
 
 Targets Supported
 -----------------
@@ -32,7 +34,6 @@ Name  Type  Description
 Input Audio Audio Input to be unpacked
 ===== ===== ==========================
 
-
 | ==== Output ====
 
 ======= ===== ====================================
@@ -41,7 +42,6 @@ Name    Type  Description
 Output0 Audio unpacked output audio- left channel
 Output1 Audio unpacked output audio -right channel
 ======= ===== ====================================
-
 
 | ===== Configurable Parameters =====
 

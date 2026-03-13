@@ -9,7 +9,8 @@ Signal Divide
 Description
 -----------
 
-The Signal Divide block divide two incoming signals. The division is performed by using the Newton-Rapson method.
+The Signal Divide block divide two incoming signals. The division is performed
+by using the Newton-Rapson method.
 
 Variants
 --------

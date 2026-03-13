@@ -10,7 +10,7 @@ The ADRV9009 Transceivers include integrated LO and phase synchronization. Overa
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/fmcomms8-top.png
    :align: right
-   :width: 400px
+   :width: 400
 
 Highlevel Specification
 -----------------------
@@ -29,7 +29,7 @@ Highlevel Specification
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/fmcomms8-bot.png
    :align: right
-   :width: 400px
+   :width: 400
 
 ::
 
@@ -55,15 +55,12 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 --------------
 
 Getting Started
 ~~~~~~~~~~~~~~~
 
 The following is leveraged directly from the ADRV9009-ZU11EG RF-SOM site.
-
-
 
 - Quick Start Guides
   - :doc:`FMCOMMS8 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcomms8-ebz/quick-start-guide>`

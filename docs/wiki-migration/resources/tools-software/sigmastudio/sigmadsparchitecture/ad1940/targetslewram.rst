@@ -3,15 +3,23 @@ Target Slew Ram
 
 :doc:`Click here to return to the AD1940 Architecture page </wiki-migration/resources/tools-software/sigmastudio/sigmadsparchitecture/ad1940>`
 
-Target/Slew RAM is a hardware-optimized function that allows volume or other parameter level changes to ramp to subsequent levels without audible clicks/pops.
+Target/Slew RAM is a hardware-optimized function that allows volume or other
+parameter level changes to ramp to subsequent levels without audible
+clicks/pops.
 
-In audio systems, abrupt changes in volume position or other parameters produce unpredictable noises. See the sample schematic below showing possible real-time changes that can produce clicks/pops:
+In audio systems, abrupt changes in volume position or other parameters produce
+unpredictable noises. See the sample schematic below showing possible real-time
+changes that can produce clicks/pops:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/sigmadsparchitecture/ad1940/targetslew1.png
    :alt: targetslew1.png
    :align: center
 
-This noise arises from an audio signal getting scaled by a step function, which causes an unwanted response. The step function contains an impulse (Dirac delta function d(k)). It can be shown that the impulse d(k) is a frequency-limited white noise. This noise is unwanted in all audio applications. See below for a graphic representation of this signal noise caused by the step function:
+This noise arises from an audio signal getting scaled by a step function, which
+causes an unwanted response. The step function contains an impulse (Dirac delta
+function d(k)). It can be shown that the impulse d(k) is a frequency-limited
+white noise. This noise is unwanted in all audio applications. See below for a
+graphic representation of this signal noise caused by the step function:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/sigmadsparchitecture/ad1940/targetslew2.png
    :alt: targetslew2.png
@@ -19,18 +27,23 @@ This noise arises from an audio signal getting scaled by a step function, which 
 
 There are a couple of possible solutions to consider for this noise problem:
 
--  We can continuously write an incremented value to the DSP until we reach the desired value. Problems:
+-  We can continuously write an incremented value to the DSP until we reach the
+   desired value. Problems:
 
    -  Microcontroller-intensive
    -  Difficult to write because of timing and slope-shape considerations.
 
--  We can use target/slew RAM to automatically do the required ramping with one simple command without the need to mute the DSP. Below is the result:
+-  We can use target/slew RAM to automatically do the required ramping with one
+   simple command without the need to mute the DSP. Below is the result:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/sigmadsparchitecture/ad1940/targetslew3.png
    :alt: targetslew3.png
    :align: center
 
-SigmaStudio’s volume control and mux blocks both use the slew RAM to cleanly ramp volume from one level to another. Thus for the all the volume control cells, you have the option of using target/slew RAM as your algorithm to prevent the noise inherent in switching levels.
+SigmaStudio’s volume control and mux blocks both use the slew RAM to cleanly
+ramp volume from one level to another. Thus for the all the volume control
+cells, you have the option of using target/slew RAM as your algorithm to prevent
+the noise inherent in switching levels.
 
 There are 4 types of slope that can be used with the target/slew RAM:
 
@@ -45,9 +58,12 @@ For details, see the AD1940/1941 Volume Control Algorithms page.
    :alt: targetslew4.png
    :align: center
 
-Although target/slew RAM is useful for eliminating unwanted noise, there are some drawbacks:
+Although target/slew RAM is useful for eliminating unwanted noise, there are
+some drawbacks:
 
 -  We are forced to write the values using the safeload registers.
 -  We cannot read back from the target/slew RAM to verify the written value.
 -  We can perform this functionality in software, although that will take possibly scarce program RAM (MIPS) and wouldn't be optimized.
--  Limited number: the 1940 currently has 64 target/slew RAM locations, which should be used only when a parameter or set of parameters is going to get modified at runtime in the final application.
+-  Limited number: the 1940 currently has 64 target/slew RAM locations, which
+   should be used only when a parameter or set of parameters is going to get
+   modified at runtime in the final application.

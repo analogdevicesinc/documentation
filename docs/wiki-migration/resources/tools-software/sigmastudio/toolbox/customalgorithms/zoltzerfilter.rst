@@ -5,7 +5,8 @@ Zoltzer Filter
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/customalgorithms/zoltzer_filter.png
 
-This is a parametric peaking equalizer filter based on the implementation of Udo Zölzer (sometimes spelled Zolzer or Zoelzer).
+This is a parametric peaking equalizer filter based on the implementation of Udo
+Zölzer (sometimes spelled Zolzer or Zoelzer).
 
 Variants
 --------
@@ -31,7 +32,6 @@ Name         Format [int/dec] - [control/audio] Function Description
 Pin 0: Input decimal - Audio                    Audio Input
 ============ ================================== ====================
 
-
 | ====Output Pins====
 
 ============= ================================== ====================
@@ -39,7 +39,6 @@ Name          Format [int/dec] - [control/audio] Function Description
 ============= ================================== ====================
 Pin 0: Output decimal - Audio                    Scaled Output
 ============= ================================== ====================
-
 
 | ==== Grow Algorithm ==== The module supports Growth up to 15 Pins. It also supports Add Algorithm.
 

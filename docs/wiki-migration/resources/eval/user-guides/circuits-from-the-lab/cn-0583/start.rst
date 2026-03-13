@@ -3,22 +3,25 @@ CN0583 Smoke Detector Module User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0583-som/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 The hardware used for evaluation of the :adi:`CN0583` smoke detector module is composed of two parts — the **EVAL-CN0583-SOM** smoke detector system-on-module (SOM), and the **EVAL-CN0583-CRR1** carrier board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/cn0583_combo_front.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 The **EVAL-CN0583-SOM** is a standalone module designed for development of smoke detection applications. The :adi:`CN0583` SOM integrates an :adi:`ADPD188BI` smoke sensor, a :adi:`MAX32660` microcontroller, and regulated DC power supplies needed for proper operation. The SOM only requires DC power and ground connections from a host system to run a smoke detection application, and will output an alarm signal via a GPIO pin.
 
@@ -36,7 +39,7 @@ The SOM has 28 castellated "pins" divided into two 14-pin rows and arranged in a
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/eval-cn0583-som_front.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 +------------+-----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | Pin Number | Pin Name  | Function                                                                                                                                        |
@@ -100,20 +103,18 @@ The SOM has 28 castellated "pins" divided into two 14-pin rows and arranged in a
 
 | 
 
-
 .. note::
 
    Refer to the :adi:`ADPD188BI` and :adi:`MAX32660` data sheets for details on the available functions of their respective GPIO pins.
-
 
 .. tip::
 
    The actual functions of the digital pins are user-configurable and are determined by how the :adi:`MAX32660` GPIO pins are configured in the SOM firmware. When changing the pin assignments, check if the new pinout will conflict with the onboard circuity of the the carrier board.
 
-
 .. important::
 
-   Do not set P0.0 and P0.1 to any other function besides SWDIO and SWDCLK to avoid issues with reprogramming the SOM using the carrier board.
+   Do not set P0.0 and P0.1 to any other function besides SWDIO and SWDCLK to
+   avoid issues with reprogramming the SOM using the carrier board.
 
    
    If this was accidentally done and there is a need to upload a new firmware, the flash memory of the :adi:`MAX32660` must first be erased prior to reprogramming. To do this, install `Maxim Microcontrollers SDK <https://analog-devices-msdk.github.io/msdk/USERGUIDE/#installation>`_ and `Visual Studio Code <https://analog-devices-msdk.github.io/msdk/USERGUIDE/#getting-started-with-visual-studio-code>`_, then perform the following steps:
@@ -123,9 +124,9 @@ The SOM has 28 castellated "pins" divided into two 14-pin rows and arranged in a
    -  Connect the RESET pin of the SOM to any GND pin.
    -  Run the ‘\ erase flash\ ’ task in Visual Studio Code. (You may see a 'target not halted' message on the terminal, but this is expected).
    -  Disconnect the RESET pin of the SOM from GND.
-   -  Power cycle the SOM by disconnecting the power source, and then immediately reconnecting it afterward.
+   -  Power cycle the SOM by disconnecting the power source, and then
+      immediately reconnecting it afterward.
    
-
 
 UART Cable Connection
 ~~~~~~~~~~~~~~~~~~~~~
@@ -134,7 +135,7 @@ There are 4 test points on the SOM that can be used to access the UART port of t
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/eval-cn0583-som_uart_header_circled.jpg
    :align: right
-   :width: 200px
+   :width: 200
 
 +------------+----------+--------------------------------------------------------------------------------------------+
 | Pin Number | Pin Name | Function                                                                                   |
@@ -155,7 +156,7 @@ Refer to the table below on setting the **JP1** and **JP4** jumpers to select th
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/eval-cn0583-som_jp1_jp4.jpg
    :align: right
-   :width: 120px
+   :width: 120
 
 +----------------------+-----+----------------------------------------------------------------------------------+
 | Jumper Configuration |     | Function                                                                         |
@@ -176,7 +177,7 @@ Depending on your specific power and application requirements, it may be desirab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/eval-cn0583-som_jp2_jp3.jpg
    :align: right
-   :width: 80px
+   :width: 80
 
 +--------+---------------+----------------------------------------------------------------------------------------------------+
 | Jumper | Configuration | Function                                                                                           |
@@ -200,16 +201,22 @@ The **EVAL-CN0583-CRR1** is a carier board designed to directly mount the **EVAL
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/eval-cn0583-crrz_front.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 SOM Mounting
 ~~~~~~~~~~~~
 
-The two rows of pogo pins (P1, P2) are spring-loaded connectors used to mount the SOM. The SOM is inserted between these connectors "one side at a time" by aligning one castellated edge with a row of carrier board pogo pins, and then pressing into them. Once one row of pins has been pushed in, the other side of the SOM can be lowered and similarly inserted. Once released, the SOM will be mechanically secured with each of the castellated pin electrically connected with the pogo pins.
+The two rows of pogo pins (P1, P2) are spring-loaded connectors used to mount
+the SOM. The SOM is inserted between these connectors "one side at a time" by
+aligning one castellated edge with a row of carrier board pogo pins, and then
+pressing into them. Once one row of pins has been pushed in, the other side of
+the SOM can be lowered and similarly inserted. Once released, the SOM will be
+mechanically secured with each of the castellated pin electrically connected
+with the pogo pins.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/cn0583_combo_cutout.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 Power Source Options
 ~~~~~~~~~~~~~~~~~~~~
@@ -218,7 +225,7 @@ Depending on the application requirements, input power to the SOM can be supplie
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/eval-cn0583-crr1_jp1.jpg
    :align: right
-   :width: 120px
+   :width: 120
 
 ====== ============= ==================================================
 Jumper Configuration Input Power
@@ -228,13 +235,11 @@ JP1    BATTERY       CR123A battery.
        USB POWER     USB bus power via the **P6** connector. *Default*.
 ====== ============= ==================================================
 
-
-
-
 .. important::
 
-   Only the input power source of the SOM can be switched using jumper JP1. The onboard programmer/debugger on the carrier board will always draw power from the USB connector.
-
+   Only the input power source of the SOM can be switched using jumper JP1. The
+   onboard programmer/debugger on the carrier board will always draw power from
+   the USB connector.
 
 Push Buttons
 ~~~~~~~~~~~~
@@ -264,7 +269,7 @@ The carrier board includes a micro-SD card slot to enable storage of smoke data.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/eval-cn0583-crr1_sd_select.jpg
    :align: right
-   :width: 160px
+   :width: 160
 
 ====== ============= ==============================================
 Jumper Configuration Function
@@ -273,8 +278,6 @@ JP2    ON            Enable micro-SD card functionality. *Default*.
        OFF           Disable micro-SD card functionality.
 ====== ============= ==============================================
 
-
-
 Programming the Debugger
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -282,7 +285,7 @@ The debugger circuit used in the carrier board is based on the :adi:`MAX32625PIC
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/eval-cn0583-crr1_swd_pinout.jpg
    :align: right
-   :width: 200px
+   :width: 200
 
 +------------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | Pin Number | Pin Name | Function                                                                                                                                  |
@@ -339,9 +342,11 @@ Hardware Setup
 Programming the SOM
 ~~~~~~~~~~~~~~~~~~~
 
-This step is only required if you want to update the firmware of the CN0583 SOM. The programming may be done over DAPLINK, as following:
+This step is only required if you want to update the firmware of the CN0583 SOM.
+The programming may be done over DAPLINK, as following:
 
--  Download the hex file for the demo application. Alternatively, you may use your own hex file.
+-  Download the hex file for the demo application. Alternatively, you may use
+   your own hex file.
 
 .. admonition:: Download
    :class: download
@@ -356,25 +361,38 @@ This step is only required if you want to update the firmware of the CN0583 SOM.
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 -  Connect the EVAL-CN0583-CRR1 carrier board to your PC using an USB cable.
 -  Wait for the DAPLINK directory to appear on your PC's filesystem.
 -  Copy the hex file to the DAPLINK directory.
 -  The hex file will now be written in the MAX32660's flash memory (this should take a few seconds). After that, the DAPLINK directory will be deleted.
--  Wait for the DAPLINK directory to be created again (without unplugging the USB cable). After that, the CN0583 SOM is programmed with the new firmware. You may now use the CLI application by following the steps in the next section.
+-  Wait for the DAPLINK directory to be created again (without unplugging the
+   USB cable). After that, the CN0583 SOM is programmed with the new firmware.
+   You may now use the CLI application by following the steps in the next
+   section.
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
 
-A serial terminal is an application that runs on a PC or laptop that is used to display data and interact with a connected device (including many of the Circuits from the Lab reference designs). The device's UART peripheral is most often connected to a UART to USB interface IC, which appears as a traditional COM port on the host PC/ laptop. (Traditionally, the device's UART port would have been connected to an RS-232 line driver / receiver and connected to the PC via a 9-pin or 25-pin serial port.) There are many open-source applications, and while there are many choices, typically we use one of the following:
+A serial terminal is an application that runs on a PC or laptop that is used to
+display data and interact with a connected device (including many of the
+Circuits from the Lab reference designs). The device's UART peripheral is most
+often connected to a UART to USB interface IC, which appears as a traditional
+COM port on the host PC/ laptop. (Traditionally, the device's UART port would
+have been connected to an RS-232 line driver / receiver and connected to the PC
+via a 9-pin or 25-pin serial port.) There are many open-source applications, and
+while there are many choices, typically we use one of the following:
 
 -  `Tera Term <https://ttssh2.osdn.jp/index.html.en>`_
 -  `Putty <https://www.putty.org/>`_
 -  `Real Term <https://realterm.sourceforge.io/>`_
 
-Before continuing, please make sure you download and install one of the above programs.
+Before continuing, please make sure you download and install one of the above
+programs.
 
-There are several parameters on all serial terminal programs that must be setup properly in order for the PC and the connected device to communicate. Below are the common settings that must match on both the PC side and the connected UART device.
+There are several parameters on all serial terminal programs that must be setup
+properly in order for the PC and the connected device to communicate. Below are
+the common settings that must match on both the PC side and the connected UART
+device.
 
 -  **COM Port** - This is the physical connection made to your PC or laptop, typically made through a USB cable but can be any serial communications cable. You can determine the COM port assigned to your device by visiting the device manager on your computer. Another method for identifying which COM port is associated with a USB-based device is to look at which COM ports are present before plugging in your device, then plug in your device, and look for a new COM port.
 -  **Baud Rate** - This is the speed at which data is being transferred from the connected device to your PC. These parameters must be the same on both devices or data will be corrupted. The default setting for most of the reference designs in 115200.
@@ -389,21 +407,30 @@ In many instances there are other options that each of the different serial term
 
 -  Plug in your connected device using a USB cable or other serial cable.
 -  Wait for the device driver of the connected device to install on your PC or Laptop.
--  Open your device manager, and find out which COM port was assigned to your device.
+-  Open your device manager, and find out which COM port was assigned to your
+   device.
 
 |image2|
 
 -  Open up your serial terminal program (e.g., PuTTY)
--  Click on the serial configuration tab or window, and input the settings to match the requirements of your connected device. The default baud rate for most of the reference designs is 115200. Make sure that you use the correct baud rate for your application.
+-  Click on the serial configuration tab or window, and input the settings to
+   match the requirements of your connected device. The default baud rate for
+   most of the reference designs is 115200. Make sure that you use the correct
+   baud rate for your application.
 
 |image3|
 
 -  Ensure you click on the checkboxes for **Implicit CR in every LF** and **Implicit LF in every CF**.
--  Ensure that local echo and line editing are enabled, so that you can see what you type and are able to correct mistakes. (Some devices may echo typed characters - if so, you will see each typed character twice. If this happens, turn off local echo.)
+-  Ensure that local echo and line editing are enabled, so that you can see what
+   you type and are able to correct mistakes. (Some devices may echo typed
+   characters - if so, you will see each typed character twice. If this happens,
+   turn off local echo.)
 
 |image4|
 
--  Click on the open button, and as long as your connected device and serial terminal program are setup the same, then you should be able to start entering commands.
+-  Click on the open button, and as long as your connected device and serial
+   terminal program are setup the same, then you should be able to start
+   entering commands.
 
 Available Commands
 ~~~~~~~~~~~~~~~~~~
@@ -450,11 +477,10 @@ Typing **help** (or simply **h**) after the initial calibration sequence will di
 
 | 
 
-
 .. note::
 
-   By default, the output mode and data rate are set to PTR and 0.163 (1/6) samples per second, respectively.
-
+   By default, the output mode and data rate are set to PTR and 0.163 (1/6)
+   samples per second, respectively.
 
 Example Output Data
 ~~~~~~~~~~~~~~~~~~~
@@ -463,11 +489,11 @@ Below are examples of the :adi:`CN0583` boards outputting data in PTR and raw co
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/terminal_ptr_stream.png
    :align: center
-   :width: 700px
+   :width: 700
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/terminal_code_stream.png
    :align: center
-   :width: 700px
+   :width: 700
 
 Test Results
 ------------
@@ -479,11 +505,11 @@ Test Results
    
    -  `Test Report for UL-217 8th Edition using the ADSW-SMOKEALGO-PRODLIC algorithm with the CN0583 Hardware <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/ul-217_8th_edition_test_report.pdf>`_
    
-   The hardware and algorithm were also verified using the EN54-7/EN14604 Standard and the results are available here:
+   The hardware and algorithm were also verified using the EN54-7/EN14604
+   Standard and the results are available here:
    
    -  `Test Report for EN54-7/EN-14604 Standard using the ADSW-SMOKEALGO-PRODLIC algorithm with the CN0583 Hardware <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/en-14604_and_en54-7_test_report.pdf>`_
    
-
 
 Device Driver Support
 ---------------------
@@ -509,7 +535,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Assembly Drawing
    
 
-
 Additional Information and Useful Links
 ---------------------------------------
 
@@ -528,14 +553,13 @@ Hardware Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0583-SOM?&v=RevC>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/daplink.png
-   :width: 900px
+   :width: 900
 .. |image2| image:: https://wiki.analog.com/_media/wiki/device_manager.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/putty_settings.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/wiki/putty_terminal_options.png
-   :width: 400px
+   :width: 400

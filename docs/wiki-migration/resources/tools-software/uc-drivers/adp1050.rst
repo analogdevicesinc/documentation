@@ -16,14 +16,14 @@ The :adi:`ADP1050` has four programmable pulse-width modulation (PWM) outputs ca
 GitHub Driver Documentation
 ---------------------------
 
-Any other driver related documentation can be found on GitHub by following the next link:
+Any other driver related documentation can be found on GitHub by following the
+next link:
 
 .. container:: round
 
    
    -  :git-no-OS:`Documentation of ADP1050 Driver. <drivers/power/adp1050/README.rst>`
    
-
 
 Downloads
 ---------
@@ -35,4 +35,3 @@ Downloads
    -  :git-no-OS:`Implementation of ADP1050 Driver. <drivers/power/adp1050/adp1050.c>`
    -  :git-no-OS:`Header file of ADP1050 Driver. <drivers/power/adp1050/adp1050.h>`
    
-

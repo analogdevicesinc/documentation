@@ -11,12 +11,17 @@ Description
 
 The Gain block scales the input signal by the specified value in the text field.
 
-The value (Linear) specified in the textbox is the multiplication factor. The value of “1” will not change the gain value and the value of “0” will mute the audio. The major functionality of Linear Gain module with slew is that, RAM gradually ramps the signal from original to target value rather than a sudden jump of signal.
+The value (Linear) specified in the textbox is the multiplication factor. The
+value of “1” will not change the gain value and the value of “0” will mute the
+audio. The major functionality of Linear Gain module with slew is that, RAM
+gradually ramps the signal from original to target value rather than a sudden
+jump of signal.
 
 Usage
 -----
 
-Linear or dB value can be entered by clicking on "Lin" or "dB" selection on the UI ( Multiple Control Gain has Linear input only)
+Linear or dB value can be entered by clicking on "Lin" or "dB" selection on the
+UI ( Multiple Control Gain has Linear input only)
 
 Pins
 ----
@@ -74,15 +79,13 @@ Configurable Parameters
 
    \ **Figure:** Signal behavior when the Slew Duration (ms) is set to 100 ms and the Gain value transitions from 1 to 0
 
-
    |image2|
 
 .. container:: centeralign
 
    \ **Figure:** Signal behavior when the Slew Duration (ms) is set to 1000 ms and the Gain value transitions from 0 to 1
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/100milliseconds.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/gain/1000milliseconds.png
-   :width: 600px
+   :width: 600

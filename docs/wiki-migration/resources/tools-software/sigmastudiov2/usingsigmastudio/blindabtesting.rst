@@ -9,7 +9,7 @@ This feature can be launched by selecting "**Blind A/B Preset Testing**" from th
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/blindabpreset.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Test Procedure
 --------------

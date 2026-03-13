@@ -9,7 +9,9 @@ Hilbert Transform
 Description
 -----------
 
-The Hilbert Transform block is used to compute the imaginary part(y(t)) of the analytic signal xa(t) from given its real part (x(t)). Hilbert transform will phase shift every component in x(t) by ± 90 degrees.
+The Hilbert Transform block is used to compute the imaginary part(y(t)) of the
+analytic signal xa(t) from given its real part (x(t)). Hilbert transform will
+phase shift every component in x(t) by ± 90 degrees.
 
 Targets Supported
 -----------------
@@ -41,7 +43,6 @@ Name            Type  Description
 RealOutput      Audio Output channel 0
 ImaginaryOutput Audio Output channel 1
 =============== ===== ================
-
 
 | ===== Configurable Parameters ===== No Configurable parameters
 

@@ -9,12 +9,16 @@ Digital Microphone Input
 Description
 -----------
 
-The Digital Microphone Input block receives input from the hardware's microphone input pins and makes it available in the schematic design.
+The Digital Microphone Input block receives input from the hardware's microphone
+input pins and makes it available in the schematic design.
 
 Usage
 -----
 
-Check the block for the input channel(s) you with to enable. Un-check the box disable an input channel. The pin will turn blue when an input is enabled and grey when disabled. The default block has two pins enabled, for stereo connection.
+Check the block for the input channel(s) you with to enable. Un-check the box
+disable an input channel. The pin will turn blue when an input is enabled and
+grey when disabled. The default block has two pins enabled, for stereo
+connection.
 
 Targets Supported
 -----------------
@@ -37,7 +41,6 @@ Name    Type  Description
 Output0 Audio Mic Output channel 0
 Output1 Audio Mic Output channel 1
 ======= ===== ====================
-
 
 | ===== Configurable Parameters =====
 

@@ -3,7 +3,8 @@
 Biquad Cascade 8 channel 5 cascade
 ==================================
 
-This Infinite Impulse Response (IIR) filter consists of a cascade of 5 Biquad sections and 8 audio input channels.
+This Infinite Impulse Response (IIR) filter consists of a cascade of 5 Biquad
+sections and 8 audio input channels.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/biquad8ch5-tbx.jpg
 
@@ -23,7 +24,6 @@ Pin 6: Input7 decimal - Audio                    Audio ch7 Input
 Pin 7: Input8 decimal - Audio                    Audio ch8 Input
 ============= ================================== ====================
 
-
 | ====Output Pins====
 
 ============== ================================== ====================
@@ -38,7 +38,6 @@ Pin 5: Output6 decimal - Audio                    Filtered ch6 Output
 Pin 6: Output7 decimal - Audio                    Filtered ch7 Output
 Pin 7: Output8 decimal - Audio                    Filtered ch8 Output
 ============== ================================== ====================
-
 
 | ==== Grow Algorithm ==== The module does not support Add and Growth.
 
@@ -76,7 +75,8 @@ Configuration
 Algorithm Description
 ---------------------
 
-This Infinite Impulse Response (IIR) filter consists of a cascade of 5 Biquad sections and 8 audio input channels. The transfer function is as shown below
+This Infinite Impulse Response (IIR) filter consists of a cascade of 5 Biquad
+sections and 8 audio input channels. The transfer function is as shown below
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/biquad8ch5-tf.jpg
 

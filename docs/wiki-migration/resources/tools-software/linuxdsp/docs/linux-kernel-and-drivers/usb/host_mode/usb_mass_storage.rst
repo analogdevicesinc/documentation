@@ -4,22 +4,27 @@ USB Mass Storage
 Hardware Configuration
 ----------------------
 
-Connect the USB micro-A plug to A receptacle adaptor cable (found in the EZ-Board box) to the OTG port, below photo shows when it acts as Host and connected to a USB memory stick.
-
+Connect the USB micro-A plug to A receptacle adaptor cable (found in the
+EZ-Board box) to the OTG port, below photo shows when it acts as Host and
+connected to a USB memory stick.
 
 |image1|
 
 Software Configuration
 ----------------------
 
-On the Yocto, Configure the linux-kernel as below to set the USB controller in Host only mode, and enable the USB Mass Storage support. check the directory of "yocto/build" and Clean up and setup the linux-kernel configuration with commands:
+On the Yocto, Configure the linux-kernel as below to set the USB controller in
+Host only mode, and enable the USB Mass Storage support. check the directory of
+"yocto/build" and Clean up and setup the linux-kernel configuration with
+commands:
 
 .. code:: console
 
    $ bitbake linux-adi -c cleansstate
    $ bitbake linux-adi -c menuconfig
 
-And In the pop-up window of linux-kenel configuration, configure as follows Configure the USB drivers to host mode
+And In the pop-up window of linux-kenel configuration, configure as follows
+Configure the USB drivers to host mode
 
 .. code:: shell
 
@@ -55,7 +60,8 @@ Then Save the linux-kernel configuration and build the target images:
 Example Usage
 -------------
 
-Boot the generated Images and connect the USB memory storage, kernel outputs messages looks like below:
+Boot the generated Images and connect the USB memory storage, kernel outputs
+messages looks like below:
 
 .. code:: console
 

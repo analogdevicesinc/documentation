@@ -5,14 +5,14 @@ The FMCOMMS5 plugin works with the `IIO Oscilloscope <https://wiki.analog.com/ii
 
 .. note::
 
-   For the main OSC plot window: The allowed channel sections are based on following rules:
+   For the main OSC plot window: The allowed channel sections are based on
+   following rules:
 
    
    -  Channels need to enabled pairwise I & Q. (example voltage0 & voltage1 or voltage2 & voltage3, etc. )
    -  The number of enabled pairwise channels need to be equal between the two devices.
    -  Devices are split as following: voltage0..3 Device A, voltage4..7 Device B
    
-
 
 If you want to go play with ``/sys/bus/iio/devices/....`` and manipulate the devices behind the back of the GUI, it's still possible to see the settings by clicking the "refresh" button at the bottom of the GUI.
 
@@ -27,7 +27,7 @@ The FMComms5 view is divided in four sections:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/fmcomms5_plugin.png
    :align: right
-   :width: 380px
+   :width: 380
 
 Device Global Settings
 ----------------------

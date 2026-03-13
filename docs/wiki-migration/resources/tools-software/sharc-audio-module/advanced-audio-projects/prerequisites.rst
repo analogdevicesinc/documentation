@@ -41,8 +41,6 @@ A2B Audio
 -  `Portable speaker with 3.5mm Aux Jack <https://www.amazon.com/Wireless-Speakers-Leadsound-Portable-computer/dp/B01HB18IZ4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=AHMAYDZNJIWS6&th=1>`_ or equivalent
 -  `3.5MM Stereo Audio Cable <https://www.amazon.com/Sabrent-Plated-Premium-Auxiliary-CB-AUX5/dp/B01277P0CG/ref=sr_1_3?crid=1UF9AE07JP2YC&keywords=3.5mm+stereo+cable+male+to+male+sabrent&qid=1666283694&qu=eyJxc2MiOiIwLjc4IiwicXNhIjoiMC4wMCIsInFzcCI6IjAuMDAifQ%3D%3D&sprefix=3.5mm+stereo+cable+male+to+male+sabrent%2Caps%2C113&sr=8-3>`_ or equivalent
 
-
-
 Software Prerequisites
 ----------------------
 
@@ -53,7 +51,8 @@ Software Prerequisites
 -  Software Package with bootloader/pre-built LDRs.
 -  Software Package with Audio Starter
 -  Your Preferred Serial Terminal Program such as `TeraTerm <https://osdn.net/projects/ttssh2/releases/>`_
--  If running the Ethernet Audio example - your preferred VBAN audio player such as Voicemeeter Standard
+-  If running the Ethernet Audio example - your preferred VBAN audio player such
+   as Voicemeeter Standard
 
 Install GIT For Windows
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +65,6 @@ Install GIT For Windows
 | 2. Follow the instructions to install provided by the setup installer, choosing the options that best suit your needs. | |image7| |image8| |image9| |image10| |image11| |image12| |
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
-
 Install CrossCore Embedded Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -75,7 +73,6 @@ Follow the instructions :doc:`here </wiki-migration/resources/tools-software/sha
 *Note that CCES requires a license to run. The SAM board comes with an ICE-1000 evaluation license which can be found here:* :doc:`gettingstarted#installing_and_activating_crosscore_embedded_studio </wiki-migration/resources/tools-software/sharc-audio-module/gettingstarted>`\ *. For more details about licensing, refer to:* :ez:`dsp/software-and-development-tools/cces/w/documents/5311/how-can-i-obtain-and-install-a-licenses-for-crosscore-embedded-studio`
 
 *You will also need a *myAnalog* account, so proceed to register or log-in, if prompted when installing CCES:*
-
 
 |image13|
 
@@ -91,7 +88,6 @@ Download Bootloader Software
 +-------------------------------------------------------------------------------------------------------------+-----------+
 | 2. Keep track of where this project is unzipped as it will be referenced later as <BOOTLOADER_PROJECT_ROOT> |           |
 +-------------------------------------------------------------------------------------------------------------+-----------+
-
 
 Clone Repository/Download Application Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,7 +112,6 @@ Clone Repository/Download Application Software
 | 6. Keep track of where the application was cloned or downloaded as it will be referred to later as <project_root>                                                                                                                                     |           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
-
 Install Your Preferred Serial Terminal Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -126,7 +121,6 @@ Note that some parts of the SAM program use* `XMODEM <https://en.wikipedia.org/w
 .. tip::
 
    TeraTerm v5.0 or greater users may want to adjust their Enconding and Font settings. :doc:`See known issues </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-b>`.
-
 
 --------------
 
@@ -141,39 +135,38 @@ Install Your Preferred VBAN Audio Program
 
    Having trouble? Check out our list of :doc:`common issues </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-b>`!
 
-
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git1.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git2.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git3.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git4.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git5.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git6.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git1.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git2.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git3.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git4.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git5.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git6.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces_install.jpg
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/downloadzip.png
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/downloadzip.png
-   :width: 600px
+   :width: 600
 .. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/gitclone1.png
 .. |image17| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/changedirectory.png
 .. |image18| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/clone1.png

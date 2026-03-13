@@ -5,10 +5,13 @@ Configuration Options for AD-FMCOMMS11-EBZ boards
 
    We are in the process of migrating our documentation to GitHubIO. This page is is now part of the FMCOMMS11 HDL project documentation, found at https://analogdevicesinc.github.io/hdl/projects/fmcomms11/index.html\
 
+Several GPO and GPIO pins are brought to the RF card through connector J2, found
+on the bottom of the PCB. These pins allow configuration of the PA, LNA and SPDT
+switch found on the PCB. These devices are summarized in a table below.
 
-Several GPO and GPIO pins are brought to the RF card through connector J2, found on the bottom of the PCB. These pins allow configuration of the PA, LNA and SPDT switch found on the PCB. These devices are summarized in a table below.
-
-Several solder link are brought to the RF card to allow optional clock referece for the clock management uni, ADC and DAC. These configuration options are summarized in a table below.
+Several solder link are brought to the RF card to allow optional clock referece
+for the clock management uni, ADC and DAC. These configuration options are
+summarized in a table below.
 
 Design Cross Section
 

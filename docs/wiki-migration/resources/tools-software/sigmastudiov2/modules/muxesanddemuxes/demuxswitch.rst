@@ -8,7 +8,8 @@ Switch Demultiplexer
 Description
 -----------
 
-The Demux Switch block routes an input signal to one of many possible outputs. The strip of radio buttons is used to select an output.
+The Demux Switch block routes an input signal to one of many possible outputs.
+The strip of radio buttons is used to select an output.
 
 Variants
 --------
@@ -33,7 +34,6 @@ Name          ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 2xN (SW Slew) S          S                NA            NA
 2xN (HW Slew) NA         NA               S             NA
 ============= ========== ================ ============= ================
-
 
 | ===== Pins =====
 

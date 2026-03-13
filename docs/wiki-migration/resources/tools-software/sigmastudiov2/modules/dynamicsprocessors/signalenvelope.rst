@@ -5,12 +5,15 @@ Signal Envelope
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/signalenv.png
    :alt: signalenv.png
-   :width: 200px
+   :width: 200
 
 Description
 -----------
 
-The Signal Envelope block measures the rms average value of the input signals.Holds the signal level for time specified in Hold Control(ms) before starting increase/decrease the output signal level,when there is a change in input signal level.
+The Signal Envelope block measures the rms average value of the input
+signals.Holds the signal level for time specified in Hold Control(ms) before
+starting increase/decrease the output signal level,when there is a change in
+input signal level.
 
 Targets Supported
 -----------------
@@ -41,7 +44,6 @@ Name   Type  Description
 ====== ===== ==============
 Output Audio Output channel
 ====== ===== ==============
-
 
 | ===== Configurable Parameters =====
 

@@ -8,7 +8,7 @@ The :adi:`PMD-RPI-INTZ` is an add-on adapter board for the Raspberry Pi that all
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intzangle.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 The :adi:`PMD-RPI-INTZ` follows the standard Raspberry Pi HAT mechanical specifications, minus the cutouts for the camera and display flexis. An ID EEPROM is also included on the board to allow auto-configuration.
 
@@ -20,25 +20,24 @@ The :adi:`PMD-RPI-INTZ` follows the standard Raspberry Pi HAT mechanical specifi
    -  :adi:`PMD-RPI-INTZ` Adapter Board (:adi:`Buy <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/PMD-RPI-INTZ>`)
    
 
-
 Adapter Board Hardware
 ----------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-top-labels.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. important::
 
    There is no level translation provided on the :adi:`PMD-RPI-INTZ`. Only connect devices that operate with 3.3V logic levels. Do not apply higher logic levels on the IO pins to avoid damaging the Raspberry Pi.
-
 
 SPI Pmod Connectors (P1 and P2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |image1| Pmod devices that use the SPI interface should be connected to either of the two 2x6 female headers located on the left-hand side of the :adi:`PMD-RPI-INTZ`. Each header pin is connected to a Raspberry Pi GPIO pin through the 40 pin connector (P9).
 
-The table below lists the default Raspberry Pi GPIO pin assignments for the P1 pins and their corresponding functions.
+The table below lists the default Raspberry Pi GPIO pin assignments for the P1
+pins and their corresponding functions.
 
 +-----------------------------------+-----------------------------------------+-----------------------------------------------------------------------------------+
 | SPI Pmod Connector #1 (P1) Pinout |                                         |                                                                                   |
@@ -72,7 +71,8 @@ The table below lists the default Raspberry Pi GPIO pin assignments for the P1 p
 
 ¹IO pin shared with the QuikEval™ Demo Board Connector (P5).
 
-²IO pins shared with the SPI Pmod Connector #2 (P2) and the QuikEval™ Demo Board Connector (P5).
+²IO pins shared with the SPI Pmod Connector #2 (P2) and the QuikEval™ Demo Board
+Connector (P5).
 
 |image2| Similarly, the table below lists the default Raspberry Pi GPIO pin assignments for the P2 pins and their corresponding functions.
 
@@ -106,14 +106,16 @@ The table below lists the default Raspberry Pi GPIO pin assignments for the P1 p
 | 12                                | 3V3 Power                               | **SPI Pmod #2 VCC.** Connected to the 3.3V Regulator Output of the Raspberry Pi.  |
 +-----------------------------------+-----------------------------------------+-----------------------------------------------------------------------------------+
 
-¹IO pins shared with the SPI Pmod Connector #1 (P1) and the QuikEval™ Demo Board Connector (P5).
+¹IO pins shared with the SPI Pmod Connector #1 (P1) and the QuikEval™ Demo Board
+Connector (P5).
 
 I²C Pmod Connectors (P3 and P4)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |image3| Pmod devices that use the I²C interface should be connected to either of the two 2x6 female headers located on the lower side of the :adi:`PMD-RPI-INTZ`. Each header pin is connected to a Raspberry Pi GPIO pin through the 40 pin connector (P9).
 
-The table below lists the default Raspberry Pi GPIO pin assignments for the P3 pins and their corresponding functions.
+The table below lists the default Raspberry Pi GPIO pin assignments for the P3
+pins and their corresponding functions.
 
 +-----------------------------------+-----------------------------------------+----------------------------------------------------------------------------------+
 | I²C Pmod Connector #1 (P3) Pinout |                                         |                                                                                  |
@@ -135,7 +137,8 @@ The table below lists the default Raspberry Pi GPIO pin assignments for the P3 p
 
 ¹IO pins shared with the I2C Pmod Connector #2 (P4), the QuikEval™ Demo Board Connector (P5) and the :adi:`DC1613A`-Compatible Demo Board Connector (P6).
 
-Similarly, the table below lists the default Raspberry Pi GPIO pin assignments for the P4 pins and their corresponding functions.
+Similarly, the table below lists the default Raspberry Pi GPIO pin assignments
+for the P4 pins and their corresponding functions.
 
 +-----------------------------------+-----------------------------------------+----------------------------------------------------------------------------------+
 | I²C Pmod Connector #2 (P4) Pinout |                                         |                                                                                  |
@@ -159,11 +162,13 @@ Similarly, the table below lists the default Raspberry Pi GPIO pin assignments f
 
 .. note::
 
-   Connecting Hardware Designed for Digilent I²C Pmod Interface Specification Ver. 1.0.0:
+   Connecting Hardware Designed for Digilent I²C Pmod Interface Specification
+   Ver. 1.0.0:
 
    
-   Version 1.0.0 of the Digilent Pmod Interface Specification required 2×4 headers to be used for I²C devices; Pmod boards that follow this old standard should be connected to either P3 or P4 as shown below:
-
+   Version 1.0.0 of the Digilent Pmod Interface Specification required 2×4
+   headers to be used for I²C devices; Pmod boards that follow this old standard
+   should be connected to either P3 or P4 as shown below:
 
    
    |image4|
@@ -173,11 +178,12 @@ QuikEval™ Demo Board Connector and SPI/I²C Switch (P5 and SW1)
 
 QuikEval™ demonstration boards should be connected to the 14-pin shrouded header through a :adi:`CA2440` ribbon cable (included with each demo board). Each header pin is connected to a Raspberry Pi GPIO pin through the 40 pin connector (P9).
 
-The table below lists the default Raspberry Pi GPIO pin assignments for the P5 pins and their corresponding functions.
+The table below lists the default Raspberry Pi GPIO pin assignments for the P5
+pins and their corresponding functions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-quikeval-connector.png
    :align: right
-   :width: 250px
+   :width: 250
 
 +--------------------------------------------+------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | QuikEval™ Demo Board Connector (P5) Pinout |                                          |                                                                                                                                     |
@@ -213,12 +219,13 @@ The table below lists the default Raspberry Pi GPIO pin assignments for the P5 p
 | 14                                         | Pin 15 (GPIO22)                          | **QuikEval™ Demo Board GPIO.** Actual function depends on the demo board.                                                           |
 +--------------------------------------------+------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
-¹IO pins shared with the SPI Pmod Connector #1 (P1) and the SPI Pmod Connector #2 (P2).
+¹IO pins shared with the SPI Pmod Connector #1 (P1) and the SPI Pmod Connector
+#2 (P2).
 
 ²IO pins shared with the I2C Pmod Connector #1 (P3), the I2C Pmod Connector #2 (P4) and the :adi:`DC1613A`-Compatible Demo Board Connector (P6).
 
-QuikEval™ demonstration boards will use either the SPI or the I²C interface, depending on the model. Change the setting of the slide switch SW1 accordingly.
-
+QuikEval™ demonstration boards will use either the SPI or the I²C interface,
+depending on the model. Change the setting of the slide switch SW1 accordingly.
 
 |image5|
 
@@ -236,17 +243,17 @@ QuikEval™ demonstration boards will use either the SPI or the I²C interface, 
    +----------------+------------------------------------------------------------+
    
 
-
 DC1613A-Compatible Demo Board Connector (P6)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :adi:`DC1613A`-Compatible demonstration boards should be connected to the 12-pin shrouded header above P4. Each header pin is connected to a Raspberry Pi GPIO pin through the 40 pin connector (P9).
 
-The table below lists the default Raspberry Pi GPIO pin assignments for the P6 pins and their corresponding functions.
+The table below lists the default Raspberry Pi GPIO pin assignments for the P6
+pins and their corresponding functions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-psm-connector.png
    :align: right
-   :width: 250px
+   :width: 250
 
 +-----------------------------------------------------+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | DC1613A-Compatible Demo Board Connector (P6) Pinout |                                         |                                                                                                                                             |
@@ -278,9 +285,11 @@ The table below lists the default Raspberry Pi GPIO pin assignments for the P6 p
 | 12                                                  | Pin 3 (I²C1 SDA)¹                       | **DC1613A-Compatible Demo Board AUXSDA.** I²C Data exchanged between the Raspberry Pi and the demo board EEPROM.                            |
 +-----------------------------------------------------+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
-¹IO pins shared with the I2C Pmod Connector #1 (P3), the I2C Pmod Connector #2 (P4) and the QuikEval™ Demo Board Connector (P5).
+¹IO pins shared with the I2C Pmod Connector #1 (P3), the I2C Pmod Connector #2
+(P4) and the QuikEval™ Demo Board Connector (P5).
 
-²IO pins normally disconnected from the Raspberry Pi. Short the appropriate solder pads between P10 and P11 to enable these pins.
+²IO pins normally disconnected from the Raspberry Pi. Short the appropriate
+solder pads between P10 and P11 to enable these pins.
 
 Changing the Raspberry Pi GPIO Assignments
 ------------------------------------------
@@ -289,7 +298,7 @@ The :adi:`PMD-RPI-INTZ` maps the GPIO pins of the Raspberry Pi as shown in the t
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-raspberry-pi-connector.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
 +--------------------------------------+--------------+----------------+----+--------------+-------------------------------------------+
 | Raspberry Pi Connector (P9) Pinout   |              |                |    |              |                                           |
@@ -340,11 +349,13 @@ The :adi:`PMD-RPI-INTZ` maps the GPIO pins of the Raspberry Pi as shown in the t
 | 
 | The adapter board is designed so that most of these IO signals pass through the rows of test points and solder jumpers at the center. This way, if a different set of GPIO pin assignments is needed (or desired), the default connections can be changed by simply removing the appropriate solder jumper(s) and then placing a wire between the test points of interest.
 
-Refer to below pictures and tables for the signal names available on each test point. Raspberry Pi GPIO pins are connected to P8 and P10; PMD-RPI-INTZ Pmod and demo board pins are connected to P7 and P11.
+Refer to below pictures and tables for the signal names available on each test
+point. Raspberry Pi GPIO pins are connected to P8 and P10; PMD-RPI-INTZ Pmod and
+demo board pins are connected to P7 and P11.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-gpio-jumpers.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 +-------------------+-----------------------+------------+---------------------------+-------------------+
 | **P8 Pin Number** | **Raspberry Pi GPIO** | **Jumper** | **PMD-RPI-INTZ Signal**   | **P7 Pin Number** |
@@ -422,7 +433,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Registration
 ------------
 
@@ -430,18 +440,17 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/PMD-RPI-INTZ?&v=Rev D>`_ to receive all these great benefits and more!
 
-
 *End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-spi-pmod-connectors.png
-   :width: 250px
+   :width: 250
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-spi-pmod-labels.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-i2c-pmod-connectors.png
-   :width: 250px
+   :width: 250
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-i2c-pmod-2x4.png
-   :width: 250px
+   :width: 250
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-sw1.jpg
-   :width: 150px
+   :width: 150
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-gpio-jumpers-2.jpg
-   :width: 400px
+   :width: 400

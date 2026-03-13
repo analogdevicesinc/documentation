@@ -11,7 +11,13 @@ The master control port boot time I/O block allows communication with multiple e
 How to configure the Control Port I/O block:
 --------------------------------------------
 
-1) Drag the block into a schematic design. 2) Click the Configure... button and select the required protocol and settings for the external device. 3) Select a "Sequence File" that defines the desired communication with the device. 4) Click "OK". The control port data will be embedded in the DSP program. 5) Add multiple instances to configure multiple slaves during the initialization. 6) Change the Slave Number in the module to configure the sequence in which the instances are executed.
+1) Drag the block into a schematic design. 2) Click the Configure... button and
+   select the required protocol and settings for the external device. 3) Select
+   a "Sequence File" that defines the desired communication with the device. 4)
+   Click "OK". The control port data will be embedded in the DSP program. 5) Add
+   multiple instances to configure multiple slaves during the initialization. 6)
+   Change the Slave Number in the module to configure the sequence in which the
+   instances are executed.
 
 Control Port Properties
 -----------------------

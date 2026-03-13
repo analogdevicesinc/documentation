@@ -1,7 +1,8 @@
 FreeRTOS Users Guide
 ====================
 
-This User's Guide document provides instructions on getting started with FreeRTOS in CrossCore Embedded Studio.
+This User's Guide document provides instructions on getting started with
+FreeRTOS in CrossCore Embedded Studio.
 
 If you are using System Services and Device Drivers with FreeRTOS, then please read the section :doc:`System Services and Device Drivers with FreeRTOS </wiki-migration/resources/tools-software/freertos/rtos-user-guide/using-cces-system-services-and-device-drivers-freertos>`.
 

@@ -3,8 +3,8 @@ Nios2 Linux on the Altera FPGA Development Boards
 
 .. warning::
 
-   \ NOTE: Support for the A10GX carrier is discontinued and will not be supported in future releases. Last pre-build images can be found here.
-
+   \ NOTE: Support for the A10GX carrier is discontinued and will not be
+   supported in future releases. Last pre-build images can be found here.
 
 Loading Pre-built Images
 ------------------------
@@ -38,14 +38,17 @@ Download the pre-built image for you setup:
 .. image:: https://wiki.analog.com/_media/section>/resources/tools-software/linux-software/adi-kuiper_images/master#master_nios2_images&
    :alt: master#master_nios2_images&
 
-If you are using a Windows machine and Quartus II is installed, the easiest way of loading the design is to directly run program.bat script (make sure that the Quartus II path specified in the script match the one from your machine). It will program the board and will launch a nios2-terminal where the Linux console messages will be printed.
+If you are using a Windows machine and Quartus II is installed, the easiest way
+of loading the design is to directly run program.bat script (make sure that the
+Quartus II path specified in the script match the one from your machine). It
+will program the board and will launch a nios2-terminal where the Linux console
+messages will be printed.
 
 An example of Linux console messages that are printed by the target: 
 
 .. collapsible:: Complete kernel boot log (Click to expand)
 
    .. container:: box bggreen
-
 
       ::
 
@@ -165,16 +168,17 @@ An example of Linux console messages that are printed by the target:
          Welcome to Buildroot
          buildroot login:
 
-
-
 IIO Oscilloscope Remote
 -----------------------
 
-The IIO Oscilloscope application can be used to remotely connect to another platform that has a connected IIO device in order to configure the device and read data from it.
+The IIO Oscilloscope application can be used to remotely connect to another
+platform that has a connected IIO device in order to configure the device and
+read data from it.
 
 To install the application, please follow the instructions from here: :doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-Once the application is launched go to Settings -> Connect and enter the IP address of the target in the popup window. Click Refresh and OK.
+Once the application is launched go to Settings -> Connect and enter the IP
+address of the target in the popup window. Click Refresh and OK.
 
 Note: The IP address of the target can be found by looking to the Linux console messages (*Lease of 10.50.1.114 obtained, lease time 28800*) or using the Linux ifconfig command (log in using user *root* and password *analog*):
 
@@ -202,13 +206,13 @@ Note: The IP address of the target can be found by looking to the Linux console 
              RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
    #
 
-Some examples of the IIO Oscilloscope running on Windows and connected remotely to a target that runs Linux:
+Some examples of the IIO Oscilloscope running on Windows and connected remotely
+to a target that runs Linux:
 
 |image1| |image2|
 
 Build Linux
 -----------
-
 
 Build Linux - Script method
 ===========================
@@ -227,7 +231,8 @@ The script will:
 -  clone the ADI kernel tree
 -  download the Linaro GCC toolchain [if no other is specified]
 -  build the ADI kernel tree
--  export/copy the Image file and device tree file out of the kernel build folder
+-  export/copy the Image file and device tree file out of the kernel build
+   folder
 
 Running the script in one line
 ------------------------------
@@ -259,7 +264,6 @@ Get Linux Kernel Source
       user@pc:~/nios2$
    
 
-
 Get Root Filesystem
 -------------------
 
@@ -282,7 +286,6 @@ Get Root Filesystem
       user@pc:~/nios2/linux$
    
 
-
 Set Environmental Variables
 ---------------------------
 
@@ -295,7 +298,6 @@ Set Environmental Variables
       user@pc:~/nios2/linux$ export CROSS_COMPILE=~/nios2/tools/bin/nios2-linux-gnu-
       user@pc:~/nios2/linux$
    
-
 
 Configure Kernel for Nios2 Platforms
 ------------------------------------
@@ -312,7 +314,6 @@ Configure Kernel for Nios2 Platforms
       user@pc:~/nios2/linux$
    
 
-
 Copy Corresponding Devicetree
 -----------------------------
 
@@ -328,7 +329,6 @@ Valid options: **a5gt_fmcjesdadc1.dts** , **a10gx_daq2.dts** , **a10gx_daq3.dts*
       user@pc:~/nios2/linux$ cp arch/nios2/boot/dts/your_setup.dts arch/nios2/boot/dts/devicetree.dts
       user@pc:~/nios2/linux$
    
-
 
 Build Kernel
 ------------
@@ -349,9 +349,6 @@ Build Kernel
       user@pc:~/nios2/linux$
    
 
-
-
-
 Quickstart Guides
 -----------------
 
@@ -361,6 +358,6 @@ Quickstart Guides
 -  :doc:`ADRV9009 Arria10GX Quickstart </wiki-migration/resources/eval/user-guides/adrv9009/quickstart/a10gx>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/nios2/a10gx_daq2_iio_scope.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/nios2/a5gt_fmcjesdadc1_iio_scope.png
-   :width: 500px
+   :width: 500

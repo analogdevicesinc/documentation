@@ -48,7 +48,8 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The following table shows what the data output value will be for given input values, based on the selection from the Drop Down Display.
+The following table shows what the data output value will be for given input
+values, based on the selection from the Drop Down Display.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/zerocomparatorpic2.png
    :alt: zerocomparatorpic2.png
@@ -61,7 +62,9 @@ The following schematic image shows both the :doc:`Buffer </wiki-migration/resou
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/zerocomparatorpic3.png
    :alt: zerocomparatorpic3.png
 
-Example: To logically invert the output of the Signal Detection block (which is either a 1.0 or 0.0 in 5.23 format), you would use a Zero Comparator with bit=23 setting to produce 0.0 or 1.0 in 5.23 format as output.
+Example: To logically invert the output of the Signal Detection block (which is
+either a 1.0 or 0.0 in 5.23 format), you would use a Zero Comparator with bit=23
+setting to produce 0.0 or 1.0 in 5.23 format as output.
 
 Algorithm Details
 -----------------

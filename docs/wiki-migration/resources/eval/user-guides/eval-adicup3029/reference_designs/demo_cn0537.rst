@@ -13,8 +13,8 @@ The application has two main stages:
 -  Initialization
 -  Main process
 
-In the initialization process the software modules and part drivers are instantiated and set to initial values.
-
+In the initialization process the software modules and part drivers are
+instantiated and set to initial values.
 
 |image1|
 
@@ -24,8 +24,8 @@ The main process has two modes of operation: **idle** and **streaming**. In **id
 
 .. note::
 
-   Note that for the log to be complete, the file opened on the card must also be closed for the data to be saved.
-
+   Note that for the log to be complete, the file opened on the card must also
+   be closed for the data to be saved.
 
 Using the **'stream'** command the process switches to **streaming mode** where smoke data is taken out at the set sampling rate. After **temperature compensation** and **PTR calculation**, data is fed to the algorithm to determine the alarm state. If the alarm is triggered the buzzer is activated and the alarm can only be reset by pressing the button on the shield or calling the **'reset_alarm'** command on the **CLI**. If working parameters need to be adjusted, it is recommended to return to **idle mode** by calling the **'idle'** command and adjusting as necessary and then return to the **stream mode**.
 
@@ -57,7 +57,8 @@ Setting up the Hardware
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0537_arduino.jpg
    :align: center
 
--  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
+-  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect
+   it to a computer. The final setup should look similar to the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0537_system_pc.jpg
    :align: center
@@ -65,10 +66,14 @@ Setting up the Hardware
 Programming the Firmware
 ------------------------
 
-This application software is used with the ADICUP3029 to demonstrate the capabilities of the CN0537 evaluation board. To upload the CN0537 software to the ADICUP3029, connect both boards together through the Arduino form factor connectors (P1 to P4 on the CN0537) and plug them to a computer through USB.
+This application software is used with the ADICUP3029 to demonstrate the
+capabilities of the CN0537 evaluation board. To upload the CN0537 software to
+the ADICUP3029, connect both boards together through the Arduino form factor
+connectors (P1 to P4 on the CN0537) and plug them to a computer through USB.
 
-Upon connection, the hardware should appear as a DAPLINK drive on the computer. Drag and drop the ADuCM3029_demo_cn0537.hex file to the DAPLINK drive to program the ADICUP3029.
-
+Upon connection, the hardware should appear as a DAPLINK drive on the computer.
+Drag and drop the ADuCM3029_demo_cn0537.hex file to the DAPLINK drive to program
+the ADICUP3029.
 
 |image2|
 
@@ -82,11 +87,8 @@ Upon connection, the hardware should appear as a DAPLINK drive on the computer. 
    -  `Smoke Detector Demo Software for EN-14604 (.hex file) <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/aducm3029_demo_cn0537_en14604.zip>`_
    
 
-
 Outputting Data
 ---------------
-
-
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
@@ -163,8 +165,6 @@ preferences.
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
 
-
-
 Available commands
 ~~~~~~~~~~~~~~~~~~
 
@@ -225,16 +225,18 @@ Typing **help** or **h** after initial calibration sequence will display the lis
 UL-217 Testing Results
 ----------------------
 
-Using both the EVAL-CN0537-ARDZ and the EVAL-CN0537-ALGO (now referred as ADSW-SMOKEALGO-PRODLIC), the setup was tested at a certified testing facility (Intertek) and passed all the smoke sensor aspects of the UL-217 8th Ed. standards. You can view the entire report here.
+Using both the EVAL-CN0537-ARDZ and the EVAL-CN0537-ALGO (now referred as
+ADSW-SMOKEALGO-PRODLIC), the setup was tested at a certified testing facility
+(Intertek) and passed all the smoke sensor aspects of the UL-217 8th Ed.
+standards. You can view the entire report here.
 
 .. admonition:: Download
    :class: download
 
    `UL-217 8th Ed. testing and results document <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/intertek_test_report_on_eval-cn0537-algo.pdf>`_
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0537_initialization.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_uploading_hex_file.png
-   :width: 600px
+   :width: 600

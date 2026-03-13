@@ -59,7 +59,11 @@ DSP Parameter Information
 Example
 -------
 
-This example shows the mono peak compressor being used on an analog input. Depending on the application, a variety of transfer curves could be used to achieve the desired effect. For example, when used on a microphone input, a noise gate curve could be implemented to remove the noise floor when no signal of interest is present.
+This example shows the mono peak compressor being used on an analog input.
+Depending on the application, a variety of transfer curves could be used to
+achieve the desired effect. For example, when used on a microphone input, a
+noise gate curve could be implemented to remove the noise floor when no signal
+of interest is present.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/monopeakpic2.png
    :alt: monopeakpic2.png

@@ -11,7 +11,9 @@ ADI_ADRV9025_DPD_NO_PATHDELAY_ERROR
 -  Sanity check to ensure that PA is turned on. Also, ensure that the PA current consumption in standby condition(Iq) matches the specification.
 -  Ensure that the external Tx to ORx routing matches the Tx to ORx mapping setup during init
 -  Ensure that there exists a valid signal path from Tx to ORx
--  Run the external path delay init cal with mask value 0x200000 and enable the DPD tracking cal post successful execution of the external path delay init cal.
+-  Run the external path delay init cal with mask value 0x200000 and enable the
+   DPD tracking cal post successful execution of the external path delay init
+   cal.
 
 ADI_ADRV9025_DPD_ORX_SIGNAL_TOO_SMALL_ERROR
 -------------------------------------------
@@ -174,14 +176,17 @@ ADI_ADRV9025_DPD_STABILITY_ERROR
 
 -  The Direct EVM(ORx and Pre-DPD actuator data) and Indirect EVM(ORx and Post-DPD actuator data) has exceeded the limits. By default, a 5% limit on direct EVM and an 8% limit on indirect EVM is imposed.
 -  An underflow OR overflow of pre-DPD Tx RMS power/ post-DPD Tx RMS power/ORx RMS power has occured. The threshold is configurable via adi_adrv9010_DpdFaultConditionsSet( ) API
--  An underflow OR overflow of pre-DPD Tx Peak power/ post-DPD Tx Peak power/ORx Peak power has occured. The threshold is configurable via adi_adrv9010_DpdFaultConditionsSet( ) API
+-  An underflow OR overflow of pre-DPD Tx Peak power/ post-DPD Tx Peak power/ORx
+   Peak power has occured. The threshold is configurable via
+   adi_adrv9010_DpdFaultConditionsSet( ) API
 
 **RECOMMENDED RECOVERY ACTIONS**
 
 -  For EVM errors, please ensure that there is no interference in the ORx path such that it could cause a large enough error b/w the Tx and ORx samples.
 -  The DPD stability statistics can be retrieved via adi_adrv9010_DpdStatusGet() API for examination.
 -  The stability fault conditions including EVM errors and power level thresholds for triggering a stability error is configurable via adi_adrv9010_DpdFaultConditionsSet() API. The thresholds can be relaxed to see if DPD recovers from the error condition.
--  Finally, the recovery actions on occurence of fault conditions is configurable via adi_adrv9010_DpdRecoveryActionSet() API.
+-  Finally, the recovery actions on occurence of fault conditions is
+   configurable via adi_adrv9010_DpdRecoveryActionSet() API.
 
 ADI_ADRV9025_DPD_TRACK_CLGC_SYNC_ERROR
 --------------------------------------
@@ -231,7 +236,9 @@ ADI_ADRV9025_DPD_MUTEX_CREATION_ERROR
 
 -  Disable CLGC tracking calibration via TrackingCalsEnableSet() cmd and re-enable CLGC tracking. If the error is not resolved move to next step
 -  Disable CLGC tracking and DPD tracking via TrackingCalsEnableSet() cmd and enable DPD tracking cal only. If the DPD updates are happening correctly, enable CLGC tracking. If the error persists move to next step
--  Disable all tracking calibrations via TrackingCalsEnableSet() cmd and bringup one cmd at a time. If the error persists a full system reset might be required
+-  Disable all tracking calibrations via TrackingCalsEnableSet() cmd and bringup
+   one cmd at a time. If the error persists a full system reset might be
+   required
 
 ADI_ADRV9025_DPD_DATA_CAPTURE_TIMEOUT_ERROR
 -------------------------------------------
@@ -241,7 +248,8 @@ ADI_ADRV9025_DPD_DATA_CAPTURE_TIMEOUT_ERROR
 **RECOMMENDED RECOVERY ACTIONS**
 
 -  Review the test vector under to make sure there are no discrepancies
--  Ensure that there are no peaks in the last 4096 samples of the test vector before Tx EN goes low in TDD mode.
+-  Ensure that there are no peaks in the last 4096 samples of the test vector
+   before Tx EN goes low in TDD mode.
 
 ADI_ADRV9025_DPD_LDL_SOLVER_ERROR
 ---------------------------------
@@ -254,7 +262,8 @@ ADI_ADRV9025_DPD_CHOL_SOLVER_ERROR
 **RECOMMENDED RECOVERY ACTIONS**
 
 -  Ensure that the path delay value is correct. Run path delay calibration again if required.
--  Reduce the degree of the polynomial in the DPD model by reducing the value of 'k'
+-  Reduce the degree of the polynomial in the DPD model by reducing the value of
+   'k'
 
 ADI_ADRV9025_DPD_UNITY_MODEL_UNAVAILABLE_ERROR
 ----------------------------------------------
@@ -264,10 +273,11 @@ ADI_ADRV9025_DPD_UNITY_MODEL_UNAVAILABLE_ERROR
 **RECOMMENDED RECOVERY ACTIONS**
 
 -  Inspect the DPD model and re-assign any DPD model entries assigned to LUT numbers 28, 29 or 30.
--  The DPD Model entry LUT assignment can be found under the encircled column in a DPD model file as shown below.
+-  The DPD Model entry LUT assignment can be found under the encircled column in
+   a DPD model file as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/madurdpdmodel.jpg
-   :width: 400px
+   :width: 400
 
 ADI_ADRV9025_DPD_UNKNOWN_RPC_ERROR
 ----------------------------------

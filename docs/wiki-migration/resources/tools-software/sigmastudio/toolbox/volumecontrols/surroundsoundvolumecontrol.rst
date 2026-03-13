@@ -7,7 +7,9 @@ Surround Sound Volume Control
 | The Surround Sound Volume Control block enables positioning of source elements relative to a listener head. The default block has one source centered in front of the listener. Right-click the block border or title to grow the algorithm up to 6 sources. The figure at right is the default algorithm grown by 4, to achieve a typical 5-channel surround speaker setup. | |surroundsoundvolumecontrol1.jpg| |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
 
-Sources and head can be dragged to any position in the room, or set more precisely via the Set Positions and Room Dimensions form (right-click the center of the block). Its parameters include:
+Sources and head can be dragged to any position in the room, or set more
+precisely via the Set Positions and Room Dimensions form (right-click the center
+of the block). Its parameters include:
 
 -  Units -- English (US) or Metric
 -  Coordinate System -- Cartesian or Polar
@@ -15,7 +17,8 @@ Sources and head can be dragged to any position in the room, or set more precise
 -  Head location
 -  Source locations
 
-Press Resize to accept changes. Grayed-out source locations mean the source is not currently added.
+Press Resize to accept changes. Grayed-out source locations mean the source is
+not currently added.
 
 A typical living room / HT setup is shown below:
 

@@ -3,8 +3,8 @@ Register Read
 
 :doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-
-This module reads any user accessible register from the DSP and gives out in the output Pin.
+This module reads any user accessible register from the DSP and gives out in the
+output Pin.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/regread.png
    :align: center
@@ -28,7 +28,9 @@ Output Pins
 Grow Algorithm
 --------------
 
-The module currently supports growth. Both the control and pins are grown for each growth. Add algorithm functionality is not supported. The figure below shows the module when grown for 5.
+The module currently supports growth. Both the control and pins are grown for
+each growth. Add algorithm functionality is not supported. The figure below
+shows the module when grown for 5.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/readread2.png
    :align: center
@@ -52,7 +54,6 @@ GUI Control Name Compiler Name            Function Description
 ================ ======================== ====================
 Mute             RegisterReadAlg1address0 Register Address
 ================ ======================== ====================
-
 
 | Here,
 

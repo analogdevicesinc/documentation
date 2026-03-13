@@ -32,7 +32,14 @@ The AD9144 Evaluation Board software runs on the easy-to-use ACE (Analysis|Contr
 Hardware Setup
 --------------
 
-Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source should be connected to the SMA connector, J1. This is the DACCLK input. The spectrum analyzer should be connected to the SMA connector, J4. A +1.0V power supply must be connected to the VTT probe point near SMA connector J9, along with a GND connection to the GND probe point next to it. The evaluation board connects to the DPG3 through the connectors P4. The PC should be connected to the EVB using the mini-USB connector XP2 after installation of the Evaluation Board software. Figure 1 shows the block diagram of the set-up.
+Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source
+should be connected to the SMA connector, J1. This is the DACCLK input. The
+spectrum analyzer should be connected to the SMA connector, J4. A +1.0V power
+supply must be connected to the VTT probe point near SMA connector J9, along
+with a GND connection to the GND probe point next to it. The evaluation board
+connects to the DPG3 through the connectors P4. The PC should be connected to
+the EVB using the mini-USB connector XP2 after installation of the Evaluation
+Board software. Figure 1 shows the block diagram of the set-up.
 
 .. container:: center
 
@@ -44,14 +51,17 @@ Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source sh
    +--------------------------------------------------------+----------------------------------+
    
 
-
 Single-Tone Demonstration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | These settings configure the AD9144 to output a sine wave using the DPG3 and allow the user to view the single-tone performance at the DAC output, under the condition: Fdata = 750MHz, 2X interpolation, IF = 112MHz.
 | === Single Tone Demo Lab Bench Configuration Procedure:=== These settings configure the AD9144 to output a 112MHz -1dbFS sine wave using the DPG3 on all four AD9144 DACs.
 
-- Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1500MHz, and the output level to 3dBm. The spectrum analyzer can be configured as shown in Figure 8 with a resolution bandwidth of 100kHz. Choose an Input Attenuation of 24dB.
+- Configure the hardware according to the hardware set-up instructions given in
+  the Hardware Setup section above. Set the frequency of the DAC clock signal
+  generator to 1500MHz, and the output level to 3dBm. The spectrum analyzer can
+  be configured as shown in Figure 8 with a resolution bandwidth of 100kHz.
+  Choose an Input Attenuation of 24dB.
 
 | - On your lab computer, open the ACE application (Start > All Programs > Analog Devices > ACE). You will see the GUI shown in Figure 5 come up.
 
@@ -60,9 +70,7 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 
 | 1. Open DPG Downloader. It will say AD9144 as shown in Figure 3
 
-
 .. container:: center
-
 
    ..
 
@@ -76,9 +84,7 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 
    | 2. To load the proper panel, select the Port Configuration option for "QBF 1x8 85G 425M" for single link (for dual link cases choose "QBF 2x4 85G 425M"). Select the JESD Mode drop-down to Mode 0 and Subclass to 0. Create a single-tone vector with a Data Rate of 750MHz, Desired Frequency of 112MHz, Amplitude of -1dBFS, uncheck the Unsigned Data checkbox and check the Generate Complex I & Q Data box. Select the I and Q vectors for each of the 4 DAC vector input options, as shown in Figure 4.
 
-
 .. container:: center
-
 
    ..
 
@@ -92,12 +98,11 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 
    |
 
-
-3. Open ACE. It should recognize the AD9144-EBZ in the attached hardware section when the application startup screen displays, as shown in Figure 5. Double-click on the AD9144-EBZ icon to navigate to the board view.
-
+3. Open ACE. It should recognize the AD9144-EBZ in the attached hardware section
+   when the application startup screen displays, as shown in Figure 5.
+   Double-click on the AD9144-EBZ icon to navigate to the board view.
 
 .. container:: center
-
 
    ..
 
@@ -111,12 +116,13 @@ Single Tone Demo Hardware and Software Start Up Procedure:
 
    |
 
-
-4. In the Setup Wizard, select single link, JESD Mode 0, Interpolation 2 and FDAC 1.5GHz, as shown in Figure 6. Hit "Apply" and the wizard will execute a startup routine to configure the AD9516 and AD9144. // // Once complete, the SERDES PLL lock indicator on the board will turn green if it locked and the display will look like Figure 7.
-
+4. In the Setup Wizard, select single link, JESD Mode 0, Interpolation 2 and
+   FDAC 1.5GHz, as shown in Figure 6. Hit "Apply" and the wizard will execute a
+   startup routine to configure the AD9516 and AD9144. // // Once complete, the
+   SERDES PLL lock indicator on the board will turn green if it locked and the
+   display will look like Figure 7.
 
 .. container:: center
-
 
    ..
 
@@ -129,11 +135,9 @@ Single Tone Demo Hardware and Software Start Up Procedure:
    +-------------------------------------+
    
 
-
 .. container:: center
 
    
-
 
    ..
 
@@ -146,12 +150,9 @@ Single Tone Demo Hardware and Software Start Up Procedure:
    +-----------------------------------------------------+
    
 
-
 | 5. Return to DPGDownloader and note the Serial Line Rate readback should read 7.5Gbps indicating that the clocks going to the FPGA are configured properly for this setup. 6. Click Download (|9154_down_arrow.png|) and Play (|9154_right_green_arrow.png|). The 'Sync Status' checkmark should turn green indicating that the SYNCOUTb level is high and the link is up, as shown in Figure 7. The spectrum in Figure 8 will appear on all 4 DAC outputs (J17, J4, J5, and J14).
 
-
 .. container:: center
-
 
    ..
 
@@ -164,39 +165,38 @@ Single Tone Demo Hardware and Software Start Up Procedure:
    +---------------------------------------+
    
 
-
-8. Figure 8 shows what you will see at the output of the DACs on the Spectrum Analyzer.
+8. Figure 8 shows what you will see at the output of the DACs on the Spectrum
+   Analyzer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/figure_8_ad9144_fmc_ebz_spectrum_capture_1.png
 
 +------------------------------------------------+
-
 
 | Figure 8. DAC Output Spectrum Analyzer Display |
 
 +------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/figure_1.png
-   :width: 440px
+   :width: 440
    :height: 260px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144_ebz_photo.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/figure_1.png
-   :width: 440px
+   :width: 440
    :height: 260px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144_ebz_photo.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_dpgstartup.png
-   :width: 900px
+   :width: 900
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_dpgsetup.png
-   :width: 900px
+   :width: 900
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_acestartup.png
-   :width: 900px
+   :width: 900
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_acesetup.png
-   :width: 900px
+   :width: 900
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_acewizran.png
-   :width: 900px
+   :width: 900
 .. |9154_down_arrow.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_down_arrow.png
 .. |9154_right_green_arrow.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_right_green_arrow.png
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9144/ad9144-ebz_dpgdwnld.png
-   :width: 900px
+   :width: 900

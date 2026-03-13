@@ -8,9 +8,16 @@ If you need help getting started with the basics of programming your robot in ja
 Definition and Instantiation
 ----------------------------
 
-Before you can read data from the gyro, you'll need to define and instantiate an ADXRS450_Gyro object in your code as part of the Robot class. Where exactly you decide to put it will depend on how your team organizes your robot code, but as long as it is accessible by the Robot class, you will be able to use it.
+Before you can read data from the gyro, you'll need to define and instantiate an
+ADXRS450_Gyro object in your code as part of the Robot class. Where exactly you
+decide to put it will depend on how your team organizes your robot code, but as
+long as it is accessible by the Robot class, you will be able to use it.
 
-When you instantiate your gyro, you will need to define which SPI port the device will be using. Depending on how you have set up your gyro (see notes on the general FRC Gyro page), this will vary, but should usually be set to CS0. Alternatively, you can leave the port out of the instantiation and the robot will default to CS0.
+When you instantiate your gyro, you will need to define which SPI port the
+device will be using. Depending on how you have set up your gyro (see notes on
+the general FRC Gyro page), this will vary, but should usually be set to CS0.
+Alternatively, you can leave the port out of the instantiation and the robot
+will default to CS0.
 
 Sensor Initialization and Calibration with calibrate()
 ------------------------------------------------------
@@ -20,12 +27,19 @@ Once your gyro is defined and instantiated, you will need to initialize it with 
 Using getAngle() and getRate()
 ------------------------------
 
-Now that your sensor is calibrated you can start reading data from the gyro. You can use getAngle() to obtain the robot's current heading as a double. If you ever need it you can also request the current rotation rate using getRate(), though this is typically very rare. You'll typically use these in either autonomousPeriodic() and teleopPeriodic().
+Now that your sensor is calibrated you can start reading data from the gyro. You
+can use getAngle() to obtain the robot's current heading as a double. If you
+ever need it you can also request the current rotation rate using getRate(),
+though this is typically very rare. You'll typically use these in either
+autonomousPeriodic() and teleopPeriodic().
 
 .. tip::
 
-   As a general note, the getAngle() method will count continuously, meaning when it reaches 360 degrees, it will continue to 361, not zero. This is to make any functionality in your code using the gyro angle easier to implement without having to keep track of where in the 0-360 range your robot is or how many rotations have happened.
-
+   As a general note, the getAngle() method will count continuously, meaning
+   when it reaches 360 degrees, it will continue to 361, not zero. This is to
+   make any functionality in your code using the gyro angle easier to implement
+   without having to keep track of where in the 0-360 range your robot is or how
+   many rotations have happened.
 
 Re-Zeroing the Gyro with reset()
 --------------------------------
@@ -35,7 +49,10 @@ Sometimes it may be necessary to reset the gyro's "zero degrees" position. All g
 Drive Straight Example
 ----------------------
 
-To show you how you would use the gyro in your code, we'll take a look at the gyro example that comes packaged in the WPI library and modify it to use the ADXRS450 gyro instead of the analog gyro. When you open the example, it should look like this.
+To show you how you would use the gyro in your code, we'll take a look at the
+gyro example that comes packaged in the WPI library and modify it to use the
+ADXRS450 gyro instead of the analog gyro. When you open the example, it should
+look like this.
 
 ::
 
@@ -96,7 +113,10 @@ To show you how you would use the gyro in your code, we'll take a look at the gy
        }
    }
 
-First we will need to tell the program to import the correct library for using the ADXRS450. Change your import statement from AnalogGyro to ADXRS450_Gyro like below. You'll also need to import the SPI library so you can use the SPI port in your code, which is required for the gyro to communicate with the RoboRIO.
+First we will need to tell the program to import the correct library for using
+the ADXRS450. Change your import statement from AnalogGyro to ADXRS450_Gyro like
+below. You'll also need to import the SPI library so you can use the SPI port in
+your code, which is required for the gyro to communicate with the RoboRIO.
 
 ::
 
@@ -119,7 +139,11 @@ First we will need to tell the program to import the correct library for using t
    import edu.wpi.first.wpilibj.Spark;
    import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
-Now we need to fix all of the variable definitions. You'll need to fix the gyro port variable as well as the gyro itself, and delete the kVoltsPerDegrePerSecond variable and its related comments. In case you're using a port other than CS0, I've explicitly defined my gyro port below. If you're using CS0, you don't have to include the port.
+Now we need to fix all of the variable definitions. You'll need to fix the gyro
+port variable as well as the gyro itself, and delete the kVoltsPerDegrePerSecond
+variable and its related comments. In case you're using a port other than CS0,
+I've explicitly defined my gyro port below. If you're using CS0, you don't have
+to include the port.
 
 ::
 
@@ -159,7 +183,9 @@ Now we need to fix all of the variable definitions. You'll need to fix the gyro 
        private ADXRS450_Gyro m_gyro = new ADXRS450_Gyro(kGyroPort);
        private Joystick m_joystick = new Joystick(kJoystickPort);
 
-Next you'll need to fix the method called in robotInit() to be calibrate() instead of setSensitivity(). You can also delete the argument from setSensitivity(), since calibrate does not take any arguments.
+Next you'll need to fix the method called in robotInit() to be calibrate()
+instead of setSensitivity(). You can also delete the argument from
+setSensitivity(), since calibrate does not take any arguments.
 
 ::
 
@@ -175,7 +201,9 @@ Next you'll need to fix the method called in robotInit() to be calibrate() inste
            m_gyro.calibrate();
        }
 
-You can leave teleopPeriodic() alone since nothing is different here between using data from an analog gyro and the ADXRS450. When you're done, your code should now look like this.
+You can leave teleopPeriodic() alone since nothing is different here between
+using data from an analog gyro and the ADXRS450. When you're done, your code
+should now look like this.
 
 ::
 

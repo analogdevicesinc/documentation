@@ -8,7 +8,8 @@ The :adi:`X-Band Development Platform <en/design-center/evaluation-hardware-and-
 
 The X-Band Development Platform highlights a complete system solution. It is intended as a testbed for demonstrating hybrid beamforming phased array radar as well as the implementation of system level calibrations, beamforming algorithms, and other signal processing algorithms. The system is designed to mate with a `ZCU102 <https://www.xilinx.com/ZCU102>`_ Evaluation Board from Xilinx®, featuring the Zynq® UltraScale+™ ZU9EG FPGA, with provided reference software, HDL code, and MATLAB system-level interfacing.
 
-The system can be used to enable quick time-to-market development programs for applications like:
+The system can be used to enable quick time-to-market development programs for
+applications like:
 
 -  ADEF (Phased-Array, RADAR, EW, SATCOM)
 -  Hybrid Beamforming

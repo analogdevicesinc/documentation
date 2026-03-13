@@ -15,7 +15,6 @@ The current stable Toolbox can be downloaded from the `RF Microwave Toolbox GitH
    -  `Analog Devices Inc, RF Microwave Toolbox Release Page <https://github.com/analogdevicesinc/RFMicrowaveToolbox/releases>`_
    
 
-
 To interface and stream data with hardware will require installation of :doc:`libiio </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/libiio>` and one of two Hardware Support Packages from MathWorks. The libiio library can be obtained on the `Github <http://github.com/analogdevicesinc/libiio>`_ page of the project.
 
 Libiio Installers
@@ -29,7 +28,6 @@ Libiio Installers
    -  `Installer for latest nighty build (Windows 32-bit / 64-bit) <https://ci.appveyor.com/project/analogdevicesinc/libiio/build/artifacts?branch=master>`_ (may be unstable / buggy)
    
 
-
 Installation of either:
 
 .. admonition:: Download
@@ -40,18 +38,21 @@ Installation of either:
    -  `Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio <https://www.mathworks.com/help/supportpkg/plutoradio/index.html>`_
    
 
-
 .. important::
 
    Skip the Zynq SDR or ADALM-PLUTO post-installation steps. They are not used. The FPGA carrier board SD card images are available on the :doc:`AD-FMC-SDCARD for Zynq & Altera SoC Quick Start Guide page </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
-
-is required to use the streaming system objects or blocks. These support packages provide the necessary libIIO MATLAB bindings used by ADI's system objects.
+is required to use the streaming system objects or blocks. These support
+packages provide the necessary libIIO MATLAB bindings used by ADI's system
+objects.
 
 Building the Toolbox Manually
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The toolbox can only be built under Linux or with Cygwin on a Windows platform. Conveniently, the entire process is automated with a Makefile located in the CI/scripts folder of the repository. The following is required on the system before the build process can be run:
+The toolbox can only be built under Linux or with Cygwin on a Windows platform.
+Conveniently, the entire process is automated with a Makefile located in the
+CI/scripts folder of the repository. The following is required on the system
+before the build process can be run:
 
 -  A supported MATLAB version installed in the default location (/usr/local/MATLAB)
 -  A supported Vivado version installed in the default location (/opt/Xilinx)
@@ -59,8 +60,8 @@ The toolbox can only be built under Linux or with Cygwin on a Windows platform. 
 
 .. warning::
 
-   You should only manually build the toolbox if you require a custom branch or no toolbox installer is available
-
+   You should only manually build the toolbox if you require a custom branch or
+   no toolbox installer is available
 
 First clone the repo and move into it:
 
@@ -84,19 +85,26 @@ To create a installable tlbx file run:
 Device Control and Data Streaming
 ---------------------------------
 
-Device interfaces which provide control and data streaming are implemented with MATLAB System Objects and Simulink Blocks. These System Objects can be access under the "adi" namespace in MATLAB and are followed by their part number or board name and finally Tx or Rx:
+Device interfaces which provide control and data streaming are implemented with
+MATLAB System Objects and Simulink Blocks. These System Objects can be access
+under the "adi" namespace in MATLAB and are followed by their part number or
+board name and finally Tx or Rx:
 
 ::
 
    adi.<Part or Board Name>.<Tx or Rx>
 
-For example, to instantiate a Stingray object to control the X-Band Development Platform it can be created as follows:
+For example, to instantiate a Stingray object to control the X-Band Development
+Platform it can be created as follows:
 
 ::
 
    bf = adi.Stingray;
 
-The Stingray Evaluation board contains an ADXUD1AEBZ, ADF4371 and LTC2314. Therefore, it uses the objects corresponding to these devices along with ADAR100x, a genric ADAR1000 superclass under the hood. Similarly, ADALM-PHASER class is also derived from low level objects based on their parts.
+The Stingray Evaluation board contains an ADXUD1AEBZ, ADF4371 and LTC2314.
+Therefore, it uses the objects corresponding to these devices along with
+ADAR100x, a genric ADAR1000 superclass under the hood. Similarly, ADALM-PHASER
+class is also derived from low level objects based on their parts.
 
 For example usage of certain objects, it can be useful to inspect their related test code which exercises initiations in different configurations. The available code is available in the GitHub repo folder :git-RFMicrowaveToolbox:`here <test>`, where object tests have the naming convention <Object>Tests.m.
 
@@ -121,7 +129,8 @@ or
 Common Attributes
 ~~~~~~~~~~~~~~~~~
 
-There are some common attributes that need to be set for system objects and parts.
+There are some common attributes that need to be set for system objects and
+parts.
 
 -  ``uri`` Context address of IIO device.
 
@@ -135,7 +144,8 @@ If a driver attribute or setting is not available in the standard objects it can
 Examples
 --------
 
-Examples for streaming data and targeting FPGAs are listed within the Toolbox documentation itself. To view run the following with MATLAB:
+Examples for streaming data and targeting FPGAs are listed within the Toolbox
+documentation itself. To view run the following with MATLAB:
 
 ::
 
@@ -149,4 +159,3 @@ Help & Support
    
    -  Questions? :ez:`Ask Help & Support <sw-interface-tools>`.
    
-

@@ -39,22 +39,37 @@ Files
 Example device initialization
 -----------------------------
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
-
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
 I2C
 ~~~
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 .. code:: c
 
@@ -273,9 +288,13 @@ Each PLLs input frequency can be selected from a variety of signals:
        ADAU1373_PLL_SRC_MCLK2 = 11,
    };
 
-The input frequency must configured to be between 7813 and 27000000 Hz. The output frequency must be configured to be between 45158000 and 49152000. Configuring the PLL with other input or output frequency will fail.
+The input frequency must configured to be between 7813 and 27000000 Hz. The
+output frequency must be configured to be between 45158000 and 49152000.
+Configuring the PLL with other input or output frequency will fail.
 
-The PLL runs at 1024 times the base sample rate. So for a 48000 Hz based sample rate you'd normally choose 49152000 Hz for the PLL output frequncey and for a 44100 Hz based sample rate 45158400 Hz.
+The PLL runs at 1024 times the base sample rate. So for a 48000 Hz based sample
+rate you'd normally choose 49152000 Hz for the PLL output frequncey and for a
+44100 Hz based sample rate 45158400 Hz.
 
 DAI configuration
 -----------------
@@ -330,7 +349,8 @@ Supported DAI formats
 DAI sysclk
 ~~~~~~~~~~
 
-The DAIs can either use PLL1 or PLL2 as source. When configuring a DAI its rate should be set to the rate of the source PLL.
+The DAIs can either use PLL1 or PLL2 as source. When configuring a DAI its rate
+should be set to the rate of the source PLL.
 
 .. code:: c
 
@@ -484,7 +504,9 @@ Hardware configuration
 
 Connect the STAMP SPORT 0 port (P6) to the EVAL-ADAU1373 J23 and J28 headers.
 
-Note that the SPORT has separate signals for the capture and playback clocks, while the ADAU1373 uses the same clock signals for both, so the EVAL-ADU1373 clock signal pins need to be connected to two STAMP pins each.
+Note that the SPORT has separate signals for the capture and playback clocks,
+while the ADAU1373 uses the same clock signals for both, so the EVAL-ADU1373
+clock signal pins need to be connected to two STAMP pins each.
 
 +-----------------------------------------------------------+-------------------+---------------+
 | STAMP pin                                                 | EVAL-ADAU1373 pin | Function      |
@@ -524,7 +546,6 @@ Load the driver and make sure the sound card is properly instantiated.
       asoc: ADAU1373 <-> bf5xx-i2s mapping ok
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -540,4 +561,3 @@ Load the driver and make sure the sound card is properly instantiated.
       Recording WAVE 'stdin' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
       Playing WAVE 'stdin' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
    
-

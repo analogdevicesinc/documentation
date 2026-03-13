@@ -17,7 +17,8 @@ There are two different versions of the SPI Read module.
 SPI Periodic Read
 -----------------
 
-The 'SPI Periodic Read' block reads a particular sub address from any SPI slave periodically and sends the value read in the output pin.
+The 'SPI Periodic Read' block reads a particular sub address from any SPI slave
+periodically and sends the value read in the output pin.
 
 Usage
 -----
@@ -27,13 +28,17 @@ Click on Settings to configure the parameters for SPI read.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/spi_read_wndw_ssp.jpg
    :alt: spi_read_wndw_ssp.jpg
 
-To monitor multiple registers in the same slave, create multiple instances of the cell.
+To monitor multiple registers in the same slave, create multiple instances of
+the cell.
 
 Support for Different Slave Select
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration → ICx - ADAU145x Register Controls → MULTIPURPOSE/AUXADC)
-
+If the device to be programmed is selected through MP0 (the /SS_M pin), no
+configuration is required in the register controls. Otherwise, the multipurpose
+pin must be configured to act as the slave select in the Register Window.
+(Hardware Configuration → ICx - ADAU145x Register Controls →
+MULTIPURPOSE/AUXADC)
 
 |image1|
 
@@ -41,7 +46,9 @@ If the device to be programmed is selected through MP0 (the /SS_M pin), no confi
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-The following table shows the mapping between the module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
+The following table shows the mapping between the module's parameter and the
+register control window. Please note that for some other blocks, there is an
+offset of 1 between the module parameter and the register control window.
 
 +----------------------------------------+------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register control |
@@ -79,7 +86,6 @@ Name     Type    Description
 ======== ======= ==========================
 SPI Data Control Outputs data read over SPI
 ======== ======= ==========================
-
 
 | ===== Configurable Parameters =====
 
@@ -140,7 +146,8 @@ readInstruction = SPIReadInstruction < < (8\* AddressLength)+  [1]_
 SPI Read with external Trigger
 ------------------------------
 
-The 'SPI Read with external Trigger' block reads a particular sub address from any I2C slave when a rising edge is detected in the input pin.
+The 'SPI Read with external Trigger' block reads a particular sub address from
+any I2C slave when a rising edge is detected in the input pin.
 
 Usage
 -----
@@ -152,8 +159,11 @@ Click on |image2| to configure the parameters for SPI read.
 Support for Different Slave Select
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration → ICx - ADAU145x Register Controls → MULTIPURPOSE/AUXADC)
-
+If the device to be programmed is selected through MP0 (the /SS_M pin), no
+configuration is required in the register controls. Otherwise, the multipurpose
+pin must be configured to act as the slave select in the Register Window.
+(Hardware Configuration → ICx - ADAU145x Register Controls →
+MULTIPURPOSE/AUXADC)
 
 |image4|
 
@@ -161,7 +171,9 @@ If the device to be programmed is selected through MP0 (the /SS_M pin), no confi
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-The following table shows the mapping between the module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
+The following table shows the mapping between the module's parameter and the
+register control window. Please note that for some other blocks, there is an
+offset of 1 between the module parameter and the register control window.
 
 +----------------------------------------+------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register control |
@@ -200,7 +212,6 @@ Name    Type    Description
 Trigger Control Rising edge in this signal initiates read
 ======= ======= =========================================
 
-
 | ====Output Pins====
 
 ======== ======= ==========================
@@ -208,7 +219,6 @@ Name     Type    Description
 ======== ======= ==========================
 SPI Data Control Outputs data read over SPI
 ======== ======= ==========================
-
 
 | ===== Configurable Parameters =====
 
@@ -277,9 +287,9 @@ readInstruction = SPIReadInstruction < < (8\* AddressLength)+  [2]_
    8\* (4 - (AddressLength + SPICommandLength
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/slave_selection_mpx_ssp.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/spi.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/spi_read_wndw_ssp.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/slave_selection_mpx_ssp.jpg
-   :width: 400px
+   :width: 400

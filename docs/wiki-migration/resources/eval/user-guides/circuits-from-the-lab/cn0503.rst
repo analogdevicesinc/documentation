@@ -8,7 +8,6 @@ EVAL-CN0503-ARDZ Hardware User Guide
    
    The latest version of this page can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0503-ardz/index.html
 
-
 | :adi:`CN0503` is a reconfigurable multi-parameter optical liquid measurement platform capable of performing colorimetry, turbidity, and fluorometry. The design minimizes complexity by using a highly integrated multimodal sensor front end capable of simultaneously driving four LEDs, and synchronously measuring four pairs of photodiodes at a flexible sampling rate. Furthermore, the front end has on-chip digital filters and high ambient light rejection which allow the platform to operate regardless of environmental lighting conditions. |image1|
 
 Materials Needed
@@ -115,8 +114,6 @@ Spare Lumiled LED Board
 
 ========================== =============
 
-
-
 Photodiode (PD) Boards
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -135,8 +132,6 @@ Fluorescent PD Board
 
 ==================== =========
 
-
-
 Assembling the Mechanical Fixtures
 ----------------------------------
 
@@ -151,12 +146,9 @@ Mounting the Base
 | A `Mounted Base <https://wiki.analog.com/>`_ fits on top of the `Main Board <https://wiki.analog.com/>`_ by following the outlined position in the silkscreen. At its bottom, attach 4 `M1 magnets <https://wiki.analog.com/>`_ to the provisions as shown below.
 | |image55|
 
-
-
 .. important::
 
    Watch out for these magnets as they may fall off when placing the `Mounted Base <https://wiki.analog.com/>`_ on top of the `Main Board <https://wiki.analog.com/>`_\
-
 
 | The `Mounted Base <https://wiki.analog.com/>`_ will fit snugly between the LED and PD connectors.
 | |image56|
@@ -168,29 +160,23 @@ Connecting the LED and Photodiode (PD) Boards
 
 The `LED Boards <https://wiki.analog.com/>`_ are drawn with a huge 'X' on the silkscreen which marks the center of the area of interest or the active area of the LED. To mount the `LED Boards <https://wiki.analog.com/>`_, face the top of the board with the LED facing towards the small window of the `Mounted Base <https://wiki.analog.com/>`_ and attach the 4-pin female connectors to the jumper headers marked LED as shown below.
 
-
 |image58|
-
-
 
 .. important::
 
-   Be sure to check if the 'X' mark is centered at the middle of the small window of the base
-
+   Be sure to check if the 'X' mark is centered at the middle of the small
+   window of the base
 
 | To mount the photodiode (PD) boards, face the top of the board with the photodiode facing towards the small window of the base and attach the 4-pin female connectors to the jumper headers marked PD as shown below. |image59| |image60|
-
-
 
 .. important::
 
    The two `Fluorescent PD Boards <https://wiki.analog.com/>`_ should be placed at opposite sides of the base. The exact centering of the photodiode is not crucial
 
-
 .. tip::
 
-   To replace or remove the PD and LED boards, pull the the notch in each board using a flat screw driver or fingernail to lift it up from the jumper headers
-
+   To replace or remove the PD and LED boards, pull the the notch in each board
+   using a flat screw driver or fingernail to lift it up from the jumper headers
 
 Inserting the Flourescent Filters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -204,8 +190,8 @@ Assembling the Tower
 
 .. tip::
 
-   Following the proper order of steps to assemble the tower makes it easier to do as well as prioritizes the important optical glass pieces.
-
+   Following the proper order of steps to assemble the tower makes it easier to
+   do as well as prioritizes the important optical glass pieces.
 
 Securing the Beamsplitter
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -213,7 +199,6 @@ Securing the Beamsplitter
 The `Beamsplitter <https://wiki.analog.com/>`_ is used to direct the light path to both the liquid sample in the `Cuvette <https://wiki.analog.com/>`_ as well as the reference photodiode located below it. It is angled at 45 degrees with respect to the light path and should be held tightly in place. Slight movements of the `Beamsplitter <https://wiki.analog.com/>`_ will affect the measurement ratios obtained from the transmit photodiode and reference photodiode.
 
 -  Starting with the `Cuvette Holder <https://wiki.analog.com/>`_, insert two `Hex Nuts <https://wiki.analog.com/>`_ to each of the two circular depressions as shown below. These should be completely pressed and held tight to the depression to avoid the hassle of them coming off later.
-
 
 |image62|
 
@@ -229,12 +214,9 @@ The `Beamsplitter <https://wiki.analog.com/>`_ is used to direct the light path 
 
    |image65|
 
-
-
 .. tip::
 
    Check for slight movements of `Beamsplitter <https://wiki.analog.com/>`_ by listening for clicking sounds when you shake the `Cuvette Holder <https://wiki.analog.com/>`_.
-
 
 Securing the Condenser Lens
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -242,7 +224,6 @@ Securing the Condenser Lens
 The `Condenser Lens <https://wiki.analog.com/>`_ is used to focus and direct the light from the LED to through the tower and form the light path. Thus, it is important that the `Condenser Lens <https://wiki.analog.com/>`_ be positioned properly and tightly secured so that no slight movements occur.
 
 -  Attach 2 `Hex Nuts <https://wiki.analog.com/>`_ to each of the two circular depressions on the `Cuvette Holder <https://wiki.analog.com/>`_ as shown below. These should be completely pressed and held tight to the depression to avoid the hassle of them coming off later.
-
 
 |image66|
 
@@ -254,12 +235,9 @@ The `Condenser Lens <https://wiki.analog.com/>`_ is used to focus and direct the
 
    |image68|
 
-
-
 .. tip::
 
    Check for slight movements of the lens by listening for clicking sounds when you shake the `Cuvette Holder <https://wiki.analog.com/>`_.
-
 
 Adding a Narrowband Transmit Filter and Neutral Density Filter (Optional)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -268,10 +246,7 @@ Adding a Narrowband Transmit Filter and Neutral Density Filter (Optional)
 
    This step is typically not required, because the EVAL-CN0503-ARDZ kit does not contain these components. Both the `Narrowband Transmit Filter <https://wiki.analog.com/>`_ and `Neutral Density Filter <https://wiki.analog.com/>`_ are optional items which can be added to the optical path if your application requires it.
 
-
 -  The `Narrowband Transmit Filter <https://wiki.analog.com/>`_ is used to select specific wavelengths of light from a wideband LED. Place the filter in to the `Cuvette Holder <https://wiki.analog.com/>`_ as shown below. The placement does not need to be as secure and tight as the `Beamsplitter <https://wiki.analog.com/>`_ and `Condenser Lens <https://wiki.analog.com/>`_.
-
-
 
 |image69|
 
@@ -285,7 +260,6 @@ Placing the Cuvette Cover
 The `Cuvette Cover <https://wiki.analog.com/>`_ secures the hold for the `Cuvette <https://wiki.analog.com/>`_ and shields the measurement light path from external sources. It also prevents the optional filters to be knocked out of the `Cuvette Holder <https://wiki.analog.com/>`_. Thus, it is necessary to lock the `Cuvette Holder <https://wiki.analog.com/>`_ as detailed below.
 
 -  Insert a `Hex Nut <https://wiki.analog.com/>`_ in the depression in the `Cuvette Cover <https://wiki.analog.com/>`_. This should be completely pressed and held tight to the depression to avoid the hassle of it coming off later.
-
 
 |image71|
 
@@ -305,7 +279,6 @@ Placing the Cuvette
 | **(Optional)** The `Cuvette Holder <https://wiki.analog.com/>`_ is a tight fit for 10mm by 10mm `Cuvette <https://wiki.analog.com/>`_. When using a smaller-sized cuvette, a provisional screw hole can be used to press against the `Cuvette <https://wiki.analog.com/>`_ and secure it.
 
 -  Remove the `Cuvette Cover <https://wiki.analog.com/>`_ and insert a `Hex Nut <https://wiki.analog.com/>`_ in the depression in the `Cuvette Holder <https://wiki.analog.com/>`_ as shown below. This should be completely pressed and held tight to the depression to avoid the hassle of it coming off later.
-
 
 |image75|
 
@@ -345,7 +318,8 @@ Jumper Settings
 1.8V LDO Enable
 ~~~~~~~~~~~~~~~
 
-P1.8V enables the 1.8V LDO supply which sources its input voltage from the Arduino 3.3V pin. By default, a shunt is placed in P1.8V.
+P1.8V enables the 1.8V LDO supply which sources its input voltage from the
+Arduino 3.3V pin. By default, a shunt is placed in P1.8V.
 
 ======================== =============== =========
 P1.8 Shunt               1.8V LDO Status Image
@@ -360,12 +334,9 @@ P1.8 Shunt               1.8V LDO Status Image
 
 ======================== =============== =========
 
-
-
 .. important::
 
    When using :adi:`CN0503` with an Arduino microcontroller, the LDO should be enabled. When using :adi:`CN0503` with the EVAL-ADPDUCZ, the LDO should be disabled.
-
 
 IO Voltage Selection
 ~~~~~~~~~~~~~~~~~~~~
@@ -390,7 +361,9 @@ Connecting pins 1 and 2
 LED Supply Selection
 ~~~~~~~~~~~~~~~~~~~~
 
-There are 4 jumper selection headers to set the supply source of each of the four LED connections. Each follow the same selection rules for shunt placement. By default, a shunt is placed connecting pins 1 and 2 for all 4 jumper headers.
+There are 4 jumper selection headers to set the supply source of each of the
+four LED connections. Each follow the same selection rules for shunt placement.
+By default, a shunt is placed connecting pins 1 and 2 for all 4 jumper headers.
 
 ======================= ================================ =========
 LD1SEL Shunt Position   Source of LED1 supply            Image
@@ -407,7 +380,6 @@ Connecting pins 1 and 2
 Connecting pins 3 and 4                                  
 ======================= ================================ =========
 
-
 | ^ LD2SEL Shunt Position ^ Source of LED2 supply ^ Image ^
 
 ======================= ================================ =========
@@ -422,7 +394,6 @@ Connecting pins 1 and 2
 
 Connecting pins 3 and 4                                  
 ======================= ================================ =========
-
 
 | ^ LD3SEL Shunt Position ^ Source of LED3 supply ^ Image ^
 
@@ -439,7 +410,6 @@ Connecting pins 1 and 2
 Connecting pins 3 and 4                                  
 ======================= ================================ =========
 
-
 | ^ LD4SEL Shunt Position ^ Source of LED4 supply ^ Image ^
 
 ======================= ================================ =========
@@ -455,12 +425,9 @@ Connecting pins 1 and 2
 Connecting pins 3 and 4                                  
 ======================= ================================ =========
 
-
-
 .. tip::
 
    Each LED is connected to a transistor which protects the LED drivers of the :adi:`ADPD4101` from overvoltage.
-
 
 =========== ======================= ======================= =========
 LED Channel Shunt Position          LED Power Source        Image
@@ -594,26 +561,38 @@ Demo Hardware Setup
 Optical Path 1
 ~~~~~~~~~~~~~~
 
-In optical path 1, the experiment shows the detection of quinine in tonic water using fluorescence measurements. Optionally, you can also use samples of soda water and de-ionized water for comparison.
+In optical path 1, the experiment shows the detection of quinine in tonic water
+using fluorescence measurements. Optionally, you can also use samples of soda
+water and de-ionized water for comparison.
 
 -  :doc:`Optical Platform: Fluorescence Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ) </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503/fluorescence>`
 
 Optical Path 2
 ~~~~~~~~~~~~~~
 
-In optical path 2, the experiment shows pH measurement by using colorimetry to detect changes the solution through the bromothymol blue indicator. As pH changes from an acidic level to a neutral and basic level, bromothymol blue changes color from yellow to blue. A yellow colored solution will block 430nm light while a blue colored solution will allow it to pass. The change in pH can be done using a simple aquarium kit.
+In optical path 2, the experiment shows pH measurement by using colorimetry to
+detect changes the solution through the bromothymol blue indicator. As pH
+changes from an acidic level to a neutral and basic level, bromothymol blue
+changes color from yellow to blue. A yellow colored solution will block 430nm
+light while a blue colored solution will allow it to pass. The change in pH can
+be done using a simple aquarium kit.
 
 -  :doc:`Optical Platform: pH Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ) </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503/colorimetry>`
 
 Optical Path 3
 ~~~~~~~~~~~~~~
 
-In optical path 3, the experiment shows nitrate detection using colorimetry. Using the API reagent found in nitrate test kits, a solution with a higher concentration of nitrate turns into a darker shade of red. As a result, the degree of absorbance of 615nm light decreases with the increasing nitrate concentration.
+In optical path 3, the experiment shows nitrate detection using colorimetry.
+Using the API reagent found in nitrate test kits, a solution with a higher
+concentration of nitrate turns into a darker shade of red. As a result, the
+degree of absorbance of 615nm light decreases with the increasing nitrate
+concentration.
 
 -  :doc:`Optical Platform: Nitrate Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ) </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503/nitrate-measurement>`
    ==== Optical Path 4 ====
 
-In optical path 4, the experiment shows turbidity measurements of cloudy water made by adding a a drop of milk and de-ionized water using 530nm light.
+In optical path 4, the experiment shows turbidity measurements of cloudy water
+made by adding a a drop of milk and de-ionized water using 530nm light.
 
 -  :doc:`Optical Platform: Turbidity Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ) </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503/turbidity>`
 
@@ -641,7 +620,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 3D Printed Files (Mechanical Base and Cuvette Holder)
 -----------------------------------------------------
 
@@ -660,11 +638,9 @@ Schematic, PCB Layout, Bill of Materials
       -  Lens Cover
    
 
-
 .. note::
 
    ADI has ordered additional assembled Cuvette Holders from `Shapeways <https://www.shapeways.com/>`_ and received high quality prints back, although there are certainly other vendors capable of printing these files. ADI is not responsible for any printing mishaps or issues with the printing vendors, we are merely providing our feedback.
-
 
 Registration
 ------------
@@ -673,239 +649,238 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0503-ARDZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/fullphoto.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_160726.jpg
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165212.jpg
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165220.jpg
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/towerbase.jpg
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cuvetteholder.jpg
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/beamsplittercover.jpg
-   :width: 200px
+   :width: 200
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/lenscover.jpg
-   :width: 200px
+   :width: 200
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cuvettecover.jpg
-   :width: 200px
+   :width: 200
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173638.jpg
-   :width: 200px
+   :width: 200
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173707.jpg
-   :width: 200px
+   :width: 200
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_174738.jpg
-   :width: 200px
+   :width: 200
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_112002.jpg
-   :width: 200px
+   :width: 200
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173902.jpg
-   :width: 200px
+   :width: 200
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_174224.jpg
-   :width: 200px
+   :width: 200
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173924.jpg
-   :width: 200px
+   :width: 200
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173939.jpg
-   :width: 200px
+   :width: 200
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_114125.jpg
-   :width: 200px
+   :width: 200
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/m2_magnet.jpg
-   :width: 200px
+   :width: 200
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/standoffs.jpg
-   :width: 200px
+   :width: 200
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173657.jpg
-   :width: 200px
+   :width: 200
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173651.jpg
-   :width: 200px
+   :width: 200
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_160726.jpg
-   :width: 200px
+   :width: 200
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165212.jpg
-   :width: 200px
+   :width: 200
 .. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165220.jpg
-   :width: 200px
+   :width: 200
 .. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/towerbase.jpg
-   :width: 200px
+   :width: 200
 .. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cuvetteholder.jpg
-   :width: 200px
+   :width: 200
 .. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/beamsplittercover.jpg
-   :width: 200px
+   :width: 200
 .. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/lenscover.jpg
-   :width: 200px
+   :width: 200
 .. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cuvettecover.jpg
-   :width: 200px
+   :width: 200
 .. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173638.jpg
-   :width: 200px
+   :width: 200
 .. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173707.jpg
-   :width: 200px
+   :width: 200
 .. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_174738.jpg
-   :width: 200px
+   :width: 200
 .. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_112002.jpg
-   :width: 200px
+   :width: 200
 .. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173902.jpg
-   :width: 200px
+   :width: 200
 .. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_174224.jpg
-   :width: 200px
+   :width: 200
 .. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173924.jpg
-   :width: 200px
+   :width: 200
 .. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173939.jpg
-   :width: 200px
+   :width: 200
 .. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_114125.jpg
-   :width: 200px
+   :width: 200
 .. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/m2_magnet.jpg
-   :width: 200px
+   :width: 200
 .. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/standoffs.jpg
-   :width: 200px
+   :width: 200
 .. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173657.jpg
-   :width: 200px
+   :width: 200
 .. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173651.jpg
-   :width: 200px
+   :width: 200
 .. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/pathlayout.jpg
-   :width: 600px
+   :width: 600
 .. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130028.jpg
-   :width: 200px
+   :width: 200
 .. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130034_1.jpg
-   :width: 200px
+   :width: 200
 .. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130012_1.jpg
-   :width: 200px
+   :width: 200
 .. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130004_1.jpg
-   :width: 200px
+   :width: 200
 .. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130019_1.jpg
-   :width: 200px
+   :width: 200
 .. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_125936_1.jpg
-   :width: 200px
+   :width: 200
 .. |image51| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_125953_1.jpg
-   :width: 200px
+   :width: 200
 .. |image52| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130040_1.jpg
-   :width: 200px
+   :width: 200
 .. |image53| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165212.jpg
-   :width: 200px
+   :width: 200
 .. |image54| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165220.jpg
-   :width: 200px
+   :width: 200
 .. |image55| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_094741.jpg
-   :width: 600px
+   :width: 600
 .. |image56| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_100643.jpg
-   :width: 600px
+   :width: 600
 .. |image57| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_113023.jpg
-   :width: 600px
+   :width: 600
 .. |image58| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_113432.jpg
-   :width: 600px
+   :width: 600
 .. |image59| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_103950.jpg
-   :width: 400px
+   :width: 400
 .. |image60| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_104010.jpg
-   :width: 400px
+   :width: 400
 .. |image61| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_112032.jpg
-   :width: 600px
+   :width: 600
 .. |image62| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_185807.jpg
-   :width: 400px
+   :width: 400
 .. |image63| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_185845.jpg
-   :width: 400px
+   :width: 400
 .. |image64| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_185908.jpg
-   :width: 400px
+   :width: 400
 .. |image65| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190014.jpg
-   :width: 400px
+   :width: 400
 .. |image66| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190111.jpg
-   :width: 400px
+   :width: 400
 .. |image67| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190145.jpg
-   :width: 400px
+   :width: 400
 .. |image68| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190252.jpg
-   :width: 400px
+   :width: 400
 .. |image69| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190425.jpg
-   :width: 400px
+   :width: 400
 .. |image70| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190439.jpg
-   :width: 400px
+   :width: 400
 .. |image71| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190531.jpg
-   :width: 400px
+   :width: 400
 .. |image72| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190545.jpg
-   :width: 400px
+   :width: 400
 .. |image73| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190713.jpg
-   :width: 400px
+   :width: 400
 .. |image74| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190743.jpg
-   :width: 400px
+   :width: 400
 .. |image75| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190512.jpg
-   :width: 400px
+   :width: 400
 .. |image76| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190755.jpg
-   :width: 400px
+   :width: 400
 .. |youtube>FaHWg4H_XkU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>fahwg4h_xku
 .. |youtube>bH7nCD6H8c0| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>bh7ncd6h8c0
 .. |youtube>97YHC4MVhbU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>97yhc4mvhbu
 .. |image77| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190852.jpg
-   :width: 400px
+   :width: 400
 .. |image78| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/jumperlocations.jpg
-   :width: 600px
+   :width: 600
 .. |image79| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1.8v_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image80| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1.8v.png
-   :width: 100px
+   :width: 100
 .. |image81| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/iosel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image82| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/iosel_-_ext.png
-   :width: 100px
+   :width: 100
 .. |image83| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image84| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-ext.png
-   :width: 100px
+   :width: 100
 .. |image85| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image86| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ext.png
-   :width: 100px
+   :width: 100
 .. |image87| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image88| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ext.png
-   :width: 100px
+   :width: 100
 .. |image89| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image90| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ext.png
-   :width: 100px
+   :width: 100
 .. |image91| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image92| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-ext.png
-   :width: 100px
+   :width: 100
 .. |image93| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image94| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ext.png
-   :width: 100px
+   :width: 100
 .. |image95| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image96| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ext.png
-   :width: 100px
+   :width: 100
 .. |image97| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ard.png
-   :width: 100px
+   :width: 100
 .. |image98| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ext.png
-   :width: 100px
+   :width: 100
 .. |image99| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1asel_-_0.png
-   :width: 100px
+   :width: 100
 .. |image100| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1asel_-_90.png
-   :width: 100px
+   :width: 100
 .. |image101| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1asel_-_0.png
-   :width: 100px
+   :width: 100
 .. |image102| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1asel_-_90.png
-   :width: 100px
+   :width: 100
 .. |image103| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1bsel_-_90.png
-   :width: 100px
+   :width: 100
 .. |image104| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1bsel_-_0.png
-   :width: 100px
+   :width: 100
 .. |image105| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1bsel_-_90.png
-   :width: 100px
+   :width: 100
 .. |image106| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1bsel_-_0.png
-   :width: 100px
+   :width: 100
 .. |image107| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4asel_-_0.png
-   :width: 100px
+   :width: 100
 .. |image108| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4asel_-_90.png
-   :width: 100px
+   :width: 100
 .. |image109| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4asel_-_0.png
-   :width: 100px
+   :width: 100
 .. |image110| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4asel_-_90.png
-   :width: 100px
+   :width: 100
 .. |image111| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4bsel_-_90.png
-   :width: 100px
+   :width: 100
 .. |image112| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4bsel_-_0.png
-   :width: 100px
+   :width: 100
 .. |image113| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4bsel_-_90.png
-   :width: 100px
+   :width: 100
 .. |image114| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4bsel_-_0.png
-   :width: 100px
+   :width: 100
 .. |image115| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200502_160856.jpg
-   :width: 600px
+   :width: 600

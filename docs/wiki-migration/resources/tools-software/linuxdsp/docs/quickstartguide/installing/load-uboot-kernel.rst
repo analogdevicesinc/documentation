@@ -1,7 +1,8 @@
 Load the U-boot and Linux Kernel with Script
 ============================================
 
-There is a tool available in $yoctoDir/sources/load-uboot-kernel folder which can be used to load the u-boot and kernel automatically.
+There is a tool available in $yoctoDir/sources/load-uboot-kernel folder which
+can be used to load the u-boot and kernel automatically.
 
 --------------
 
@@ -21,7 +22,8 @@ The macros provided by option like ``-m $machine`` have higher priority than mac
 Method 1: Use Macros in config.py file
 --------------------------------------
 
-User just need to update the config.py file then run LUK.py, this is a better choice when user want to load manually.
+User just need to update the config.py file then run LUK.py, this is a better
+choice when user want to load manually.
 
 ::
 
@@ -31,7 +33,9 @@ User just need to update the config.py file then run LUK.py, this is a better ch
 Method 2: Change Macros via options
 -----------------------------------
 
-Options from user have higher priority, when both options specified and macros in config.py, the tool will use options and keep the config.py no change, this is a better choice when user want to load in automation testing.
+Options from user have higher priority, when both options specified and macros
+in config.py, the tool will use options and keep the config.py no change, this
+is a better choice when user want to load in automation testing.
 
 ::
 
@@ -59,7 +63,8 @@ Options from user have higher priority, when both options specified and macros i
 Help
 ====
 
-Options just provide the necessary macros that should be changed according to different situations.
+Options just provide the necessary macros that should be changed according to
+different situations.
 
 ::
 

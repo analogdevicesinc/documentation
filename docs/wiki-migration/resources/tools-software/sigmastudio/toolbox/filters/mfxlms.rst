@@ -3,8 +3,16 @@ Modified FXLMS(ADAU145x)
 
 :doc:`Click here to return to the Filters section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
-
-This module implements the Modified Filtered-X LMS algorithm which is an adaptive FIR filter based on minimizing the least mean squared value of the error signal. The algorithm is applied to noise cancellation applications where it takes into account the fact that the point of cancellation is not at the anti-noise output speaker but at the position of the error microphone. The module provides a training mode which enables training and estimating the secondary paths between the output speakers and the error microphones as FIR filter coefficients. These coefficients are then used in the run-time mode of the module to take into account the paths and provide effective noise cancellation based on the reference inputs.
+This module implements the Modified Filtered-X LMS algorithm which is an
+adaptive FIR filter based on minimizing the least mean squared value of the
+error signal. The algorithm is applied to noise cancellation applications where
+it takes into account the fact that the point of cancellation is not at the
+anti-noise output speaker but at the position of the error microphone. The
+module provides a training mode which enables training and estimating the
+secondary paths between the output speakers and the error microphones as FIR
+filter coefficients. These coefficients are then used in the run-time mode of
+the module to take into account the paths and provide effective noise
+cancellation based on the reference inputs.
 
 The module can be found at the below location in the tree tool box:
 
@@ -16,7 +24,7 @@ The module can be found at the below location in the tree tool box:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mfxlms-block_diagram.png
    :align: center
-   :width: 700px
+   :width: 700
 
 The above figure shows the block diagram of the MFxLMS system where,
 
@@ -64,7 +72,8 @@ Input Pins
 Grow Algorithm
 --------------
 
-The reference, error and anti-noise can be grown independently. Undo and Redo will not be supported for this module's growth functionality.
+The reference, error and anti-noise can be grown independently. Undo and Redo
+will not be supported for this module's growth functionality.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mfxlms-growth.png
    :align: center
@@ -75,17 +84,17 @@ Configurations
 The module features two modes
 
 -  Training mode- In this mode secondary path estimation is done using an internally generated white noise source for each output selection.
--  Run-time mode- In this mode the adaptive filter converges to provide an anti noise output opposite in phase to the noise signal to be cancelled.
+-  Run-time mode- In this mode the adaptive filter converges to provide an anti
+   noise output opposite in phase to the noise signal to be cancelled.
 
-The modes can be selected by selecting the appropriate mode tab in the MFXLMS settings form.
-
+The modes can be selected by selecting the appropriate mode tab in the MFXLMS
+settings form.
 
 |image1|
 
 .. important::
 
    NOTE: Changing modes requires a re-download operation to be performed.
-
 
 GUI Controls
 ------------
@@ -182,7 +191,12 @@ Example
 Active Noise Cancellation using MFXLMS filter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section demonstrates active noise cancellation using the MFXLMS filter module. The module is run at a lower sample rate of 2000Hz by means of a down-sampling module, the output is later up-sampled to the input sample rate by means of a up sampling module.The down and up sampling module chain is constructed in hierarchy boards as show below. the Anti- aliasing filters are included in the signal chain.
+This section demonstrates active noise cancellation using the MFXLMS filter
+module. The module is run at a lower sample rate of 2000Hz by means of a
+down-sampling module, the output is later up-sampled to the input sample rate by
+means of a up sampling module.The down and up sampling module chain is
+constructed in hierarchy boards as show below. the Anti- aliasing filters are
+included in the signal chain.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mfxlms-down_sampler.png
    :align: center
@@ -190,14 +204,32 @@ This section demonstrates active noise cancellation using the MFXLMS filter modu
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mfxlms-upsampler.png
    :align: center
 
-The below schematic shows the module in the training mode. The inputs are muted. To obtain the secondary path coefficients, the training tab is opened in the form, the tap length, step size and the output selection is set and the module is downloaded in the training mode. To start the training the start button is clicked. The training is stopped by clicking on the stop button. Then click on Upload button, the coefficients will be displayed in a window. This can be saved in a text file.
+The below schematic shows the module in the training mode. The inputs are muted.
+To obtain the secondary path coefficients, the training tab is opened in the
+form, the tap length, step size and the output selection is set and the module
+is downloaded in the training mode. To start the training the start button is
+clicked. The training is stopped by clicking on the stop button. Then click on
+Upload button, the coefficients will be displayed in a window. This can be saved
+in a text file.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mfxlms-training.png
    :align: center
 
-The below schematic shows the module in the run time mode. The Run-time LMS tap-length, Step size are set. The Secondary path coefficients can be set by using the file exported in the training mode. The input reference approximates the error signal to be cancelled. The error microphone output is fed to the error pin( this error input is the residual from the destructive interference between the noise and the anti-noise signal in the acoustic domain). The Anti noise pin is connected to the cancellation speaker to cancel the noise in the acoustic domain. The schematic is link compile downloaded. The mean square error pin is monitored to observe the drop in the error levels indicating noise cancellation.
+The below schematic shows the module in the run time mode. The Run-time LMS
+tap-length, Step size are set. The Secondary path coefficients can be set by
+using the file exported in the training mode. The input reference approximates
+the error signal to be cancelled. The error microphone output is fed to the
+error pin( this error input is the residual from the destructive interference
+between the noise and the anti-noise signal in the acoustic domain). The Anti
+noise pin is connected to the cancellation speaker to cancel the noise in the
+acoustic domain. The schematic is link compile downloaded. The mean square error
+pin is monitored to observe the drop in the error levels indicating noise
+cancellation.
 
-On convergence, the LMS coefficients may be read and saved to a text file by clicking the current LMS coefficients button. These coefficients can be loaded as the initial LMS coefficients using the initial LMS coefficients for faster convergence.
+On convergence, the LMS coefficients may be read and saved to a text file by
+clicking the current LMS coefficients button. These coefficients can be loaded
+as the initial LMS coefficients using the initial LMS coefficients for faster
+convergence.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mfxlms-runtime.png
    :align: center

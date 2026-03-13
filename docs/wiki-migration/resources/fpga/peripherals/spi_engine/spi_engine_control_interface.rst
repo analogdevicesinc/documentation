@@ -5,8 +5,9 @@ SPI Engine Control Interface
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/spi_engine/control-interface.html\
 
-
-The SPI Engine Control Interface is used to exchange data between different cores within the SPI Engine framework. It is used to exchange the commands and synchronization points as well as the SPI bus transmit and receive data.
+The SPI Engine Control Interface is used to exchange data between different
+cores within the SPI Engine framework. It is used to exchange the commands and
+synchronization points as well as the SPI bus transmit and receive data.
 
 The interface consists of four streams:
 
@@ -15,7 +16,11 @@ The interface consists of four streams:
 -  The SDI stream which carries the received data from the SPI bus. (Slave to Master)
 -  The SYNC stream which carries the synchronization events. (Slave to Master)
 
-Each of the streams has a valid, ready and data signal. They follow the handshaking protocol as defined by the AXI standard. Meaning the master asserts valid when the data on the data signal is valid and the slave asserts ready when it is able to accept new data. If both valid and ready are asserted at the same time the data has been transmitted from the master to the slave.
+Each of the streams has a valid, ready and data signal. They follow the
+handshaking protocol as defined by the AXI standard. Meaning the master asserts
+valid when the data on the data signal is valid and the slave asserts ready when
+it is able to accept new data. If both valid and ready are asserted at the same
+time the data has been transmitted from the master to the slave.
 
 Files
 -----

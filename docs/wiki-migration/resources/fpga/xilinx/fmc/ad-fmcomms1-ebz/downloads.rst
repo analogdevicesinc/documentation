@@ -1,8 +1,6 @@
 FMComms1 Downloads
 ==================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,8 +17,6 @@ FMComms1 Downloads
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 .. admonition:: Download
    :class: download
 
@@ -29,7 +25,6 @@ FMComms1 Downloads
    -  `Assembly Files <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/20_011018b-assy.zip>`_
    -  `Build Files <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/20_011018b.zip>`_
    
-
 
 FPGA Reference Designs on GitHub :
 
@@ -42,8 +37,8 @@ FPGA Reference Designs on GitHub :
    -  `fpgahdl_xilinx <https://github.com/analogdevicesinc/fpgahdl_xilinx>`_
    
 
-
-The repository will not contain Xilinx core generator and IP files. You must obtain these files from Xilinx.
+The repository will not contain Xilinx core generator and IP files. You must
+obtain these files from Xilinx.
 
 .. hint::
 
@@ -51,13 +46,13 @@ The repository will not contain Xilinx core generator and IP files. You must obt
    -  Questions? :ez:`Ask Help & Support <fpga>`.
    
 
-
 Tar file contents
 -----------------
 
 The tar file contains, in most cases, the following files and/or directories. To rebuild the reference design simply double click the XMP file and run the tool. To build SDK, select a workspace and use the C file to build the elf file. Please refer to `Xilinx EDK documentation <https://www.xilinx.com/support/documentation/dt_edk_edk13-2.htm>`_ for details.
 
-In the case of Zynq, the same procedure applies, except that you must create a FSBL or run the PS7 initialization tcl scripts before the SDK program.
+In the case of Zynq, the same procedure applies, except that you must create a
+FSBL or run the PS7 initialization tcl scripts before the SDK program.
 
 +-------------------+------------------------------------------------------------------------------------------------------+
 | license.txt       | ADI license & copyright information.                                                                 |

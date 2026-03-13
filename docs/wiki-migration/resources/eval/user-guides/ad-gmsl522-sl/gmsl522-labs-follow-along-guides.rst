@@ -5,8 +5,8 @@ The following guides are to be used in conjunction with the relevant GMSLU cours
 
 .. note::
 
-   Use the Table of Contents on the right side of the page to easily navigate to the guide for the course you are interested in.
-
+   Use the Table of Contents on the right side of the page to easily navigate to
+   the guide for the course you are interested in.
 
 GMSLU Course: GMSL522D - Quick Start
 ------------------------------------
@@ -16,9 +16,11 @@ Coming soon!
 GMSLU Course: GMSL522E - MAX96724 Video Pattern Generator
 ---------------------------------------------------------
 
-In this course, the MAX96724 is programmed to output a repeating colorbar pattern without any necessary video input. This feature allows customers to easily test out their SoC's MIPI receiver very easily and quickly. Make sure to watch the proceeding GMSLU lab videos pertaining to the GMSL522 development board before continuing with this exercise.
-
-
+In this course, the MAX96724 is programmed to output a repeating colorbar
+pattern without any necessary video input. This feature allows customers to
+easily test out their SoC's MIPI receiver very easily and quickly. Make sure to
+watch the proceeding GMSLU lab videos pertaining to the GMSL522 development
+board before continuing with this exercise.
 
 - Connect a USB cable between P6 of the GMSL522 board, and your Windows PC.
 - On the GMSL522 board, change directory to where the GMSL server app is located: **//cd ~/gmsl/AD-GMSL522-SL/gmsl-uart-server-app///**
@@ -35,9 +37,12 @@ In this course, the MAX96724 is programmed to output a repeating colorbar patter
 GMSL522F - MAX96717 Video Pattern Generator
 -------------------------------------------
 
-In this course, the MAX96717 to output a repeating colorbar pattern without any necessary video input. This feature allows customers to easily test out many of the features in both the MAX96717 as the MAX96724 without the added difficulty of bringing up an image sensor. Make sure to watch the proceeding GMSLU lab videos pertaining to the GMSL522 development board before continuing with this exercise.
-
-
+In this course, the MAX96717 to output a repeating colorbar pattern without any
+necessary video input. This feature allows customers to easily test out many of
+the features in both the MAX96717 as the MAX96724 without the added difficulty
+of bringing up an image sensor. Make sure to watch the proceeding GMSLU lab
+videos pertaining to the GMSL522 development board before continuing with this
+exercise.
 
 - Connect a USB cable between P6 of the GMSL522 board, and your Windows PC.
 - Connect a fakra coax cable between J7 and J2 of the GMSL522 board.

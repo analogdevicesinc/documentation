@@ -30,13 +30,28 @@ Software Requirement
 General Description
 -------------------
 
-The EV-ADAQ7768-1FMC1Z evaluation kit features the ADAQ7768-1, a 24-bit, single-channel precision data acquisition system (DAQ) μModule® system. The evaluation board demonstrates the performance of the ADAQ7768-1 μModule and is a versatile tool for a variety of applications.
+The EV-ADAQ7768-1FMC1Z evaluation kit features the ADAQ7768-1, a 24-bit,
+single-channel precision data acquisition system (DAQ) μModule® system. The
+evaluation board demonstrates the performance of the ADAQ7768-1 μModule and is a
+versatile tool for a variety of applications.
 
-The EV-ADAQ7768-1FMC1Z board connects to the USB port of the PC through the system demonstration platform (SDP-H1). By default, all the necessary supply rails on the EV-ADAQ7768-1FMC1Z are powered by a 3.3 V rail coming from the SDP-H1. The 3.3 V rail is regulated by the on-board power solution to ±15 V and 5.3 V to power the ADAQ7768-1 and its support components.
+The EV-ADAQ7768-1FMC1Z board connects to the USB port of the PC through the
+system demonstration platform (SDP-H1). By default, all the necessary supply
+rails on the EV-ADAQ7768-1FMC1Z are powered by a 3.3 V rail coming from the
+SDP-H1. The 3.3 V rail is regulated by the on-board power solution to ±15 V and
+5.3 V to power the ADAQ7768-1 and its support components.
 
-The EV-ADAQ7768-1FMC1Z is used alongside a downloadable evaluation software (ACE) that fully configures the ADAQ7768-1 device register functionality, and also provides DC and AC time and frequency domain analysis in the form of waveform graphs, histograms, and associated noise analysis for ADC performance evaluation. The ACE software controls the EV-ADAQ7768-1FMC1Z over the USB through the system demonstration platform (SDPH1).
+The EV-ADAQ7768-1FMC1Z is used alongside a downloadable evaluation software
+(ACE) that fully configures the ADAQ7768-1 device register functionality, and
+also provides DC and AC time and frequency domain analysis in the form of
+waveform graphs, histograms, and associated noise analysis for ADC performance
+evaluation. The ACE software controls the EV-ADAQ7768-1FMC1Z over the USB
+through the system demonstration platform (SDPH1).
 
-The ADAQ7768-1 data sheet provides a full description and complete specifications of the ADAQ7768-1. Consult it in conjunction with this user guide when using the evaluation board. Full details on the SDP-H1 are available on the SDP-H1 product page.
+The ADAQ7768-1 data sheet provides a full description and complete
+specifications of the ADAQ7768-1. Consult it in conjunction with this user guide
+when using the evaluation board. Full details on the SDP-H1 are available on the
+SDP-H1 product page.
 
 Evaluation Board Photograph
 ---------------------------
@@ -44,7 +59,6 @@ Evaluation Board Photograph
 .. container:: centeralign
 
    |image1| *Figure 1. Board Photo*
-
 
 Quick Start Guide
 -----------------
@@ -57,22 +71,19 @@ To begin using the evaluation board, take the following steps:
 -  Connect the 12V DC supply to the SDP-H1 system demonstration platform board and then connect to the PC using the supplied USB cable. Choose to automatically search for the drivers for the SDP-H1 if prompted by the operating system.
 -  Launch the ACE (Analysis, Control, Evaluation) software from the **Analog Devices** subfolder in the **Programs** menu.
 
-To power off, first close the software. Then press the reset button on the SDP-H1 before disconnecting the power or USB.
+To power off, first close the software. Then press the reset button on the
+SDP-H1 before disconnecting the power or USB.
 
 Design Overview
 ---------------
 
-
-
 .. container:: centeralign
-
 
    ..
 
 |image2|
 
    | *Figure 2. Functional Block Diagram*
-
 
 Evaluation Board Hardware
 -------------------------
@@ -107,7 +118,8 @@ Hardware Link Options
 On-Board Connectors
 ^^^^^^^^^^^^^^^^^^^
 
-Table 2 provides information about the external on-board connectors on the EV-ADAQ7768-1FMC1Z.
+Table 2 provides information about the external on-board connectors on the
+EV-ADAQ7768-1FMC1Z.
 
 **Table 2. On-Board Connectors**
 
@@ -136,9 +148,18 @@ Table 2 provides information about the external on-board connectors on the EV-AD
 Power Supplies
 ~~~~~~~~~~~~~~
 
-The evaluation board requires 3.3V power supply to operate. By default, the 3.3V rail is supplied by the SDP-H1, and the SDP-H1 is powered by a 12V wall adapter. The terminal block P14, can also be used to supply the evaluation board with 3.3V in case the user prefers to evaluate the EV-ADAQ7768-1FMC1Z with a third-party capture board.
+The evaluation board requires 3.3V power supply to operate. By default, the 3.3V
+rail is supplied by the SDP-H1, and the SDP-H1 is powered by a 12V wall adapter.
+The terminal block P14, can also be used to supply the evaluation board with
+3.3V in case the user prefers to evaluate the EV-ADAQ7768-1FMC1Z with a
+third-party capture board.
 
-The EV-ADAQ7768-1FMC1Z uses LT3095 (U2), a dual channel integrated boost and LDO regulator in a single package. LT3095 generates the +15V needed by the VDD_PGA pin of ADAQ7768-1 and a 5.3V to supply the built-in LDO of ADAQ7768-1. The LDO of the ADAQ7768-1 is used to power the VDD2_PGA, VDD_FDA, VDD_ADC, VDD2_ADC, and the ADR4540 reference device as shown on ADAQ7768-1 Datasheet Quick Start Up Guide.
+The EV-ADAQ7768-1FMC1Z uses LT3095 (U2), a dual channel integrated boost and LDO
+regulator in a single package. LT3095 generates the +15V needed by the VDD_PGA
+pin of ADAQ7768-1 and a 5.3V to supply the built-in LDO of ADAQ7768-1. The LDO
+of the ADAQ7768-1 is used to power the VDD2_PGA, VDD_FDA, VDD_ADC, VDD2_ADC, and
+the ADR4540 reference device as shown on ADAQ7768-1 Datasheet Quick Start Up
+Guide.
 
 ADP2300 (U1) is used to scale the 3.3V from SDP-H1 to -16V, while ADP7182 (U3) — a low noise LDO, regulates the voltage to -15V which is used by the VSS_PGA.
 
@@ -147,12 +168,14 @@ The 3.3V from SDP-H1 is also used to supply the power needed on the VDD_IO.
 Board Connection
 ^^^^^^^^^^^^^^^^
 
-Follow the board connection shown in Figure 4. Connect the SDP-H1 with the 12V wall adapter and to PC through a USB cable.
+Follow the board connection shown in Figure 4. Connect the SDP-H1 with the 12V
+wall adapter and to PC through a USB cable.
 
 Configuring the Evaluation and SDP Board
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Connect the SDP-H1 to P1 on the EV-AD7768-1FMCZ board. Screw the two boards together.
+Connect the SDP-H1 to P1 on the EV-AD7768-1FMCZ board. Screw the two boards
+together.
 
 Evaluation Board Software
 -------------------------
@@ -169,8 +192,9 @@ Warning
 
 .. warning::
 
-   To ensure the evaluation system is correctly recognized when it is connected to the PC, install the ACE software and SDP-H1 driver first before connecting the EV-ADAQ7768-1FMC1Z and SDP-H1 board to the USB port of the PC.
-
+   To ensure the evaluation system is correctly recognized when it is connected
+   to the PC, install the ACE software and SDP-H1 driver first before connecting
+   the EV-ADAQ7768-1FMC1Z and SDP-H1 board to the USB port of the PC.
 
 ++++ Installing the ACE Software \|
 
@@ -188,13 +212,11 @@ To install the ACE software, take the following steps:
 
    |image3|\ *Figure 5. Evaluation Software Install Confirmation*
 
-
 -  Read the software license agreement and click I Agree (see Figure 6).
 
 .. container:: centeralign
 
    |image4|\ *Figure 6. License Agreement*
-
 
 -  Choose an installation location and click **Next** (see Figure 7).
 
@@ -202,13 +224,11 @@ To install the ACE software, take the following steps:
 
    |image5|\ *Figure 7. Choose Install Location*
 
-
 -  Select the **Pre-Requisites** checkbox to include the installation of the SDP-H1 driver. Click **Install** (see Figure 8).
 
 .. container:: centeralign
 
    |image6|\ *Figure 8. Choose Components*
-
 
 -  The **Windows Security** window appears. Click **Install** (see Figure 9). The installation is in progress. No action is required (see Figure 10).
 
@@ -216,11 +236,9 @@ To install the ACE software, take the following steps:
 
    |image7|\ *Figure 9. Windows Security Window*
 
-
 .. container:: centeralign
 
    |image8|\ *Figure 10. Installation in Progress*
-
 
 -  The installation is complete (see Figure 11). Click **Next >** and then click **Finish** to complete.
 
@@ -228,36 +246,38 @@ To install the ACE software, take the following steps:
 
    |image9|\ *Figure 11. Installation Complete*
 
-
 ++++ |image10|\ |image11|\ |image12|\
-
-
 
 |image13|
 
 Evaluation Board Setup Procedures
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The EV-ADAQ7768-1FMC1Z connects to the SDP-H1. The SDP-H1 board serves as the communication link between the PC and the EV-ADAQ7768-1FMC1Z. Figure 3 shows a diagram of the connections between the EV-ADAQ7768-1FMC1Z and the SDP-H1 board.
+The EV-ADAQ7768-1FMC1Z connects to the SDP-H1. The SDP-H1 board serves as the
+communication link between the PC and the EV-ADAQ7768-1FMC1Z. Figure 3 shows a
+diagram of the connections between the EV-ADAQ7768-1FMC1Z and the SDP-H1 board.
 
 Connecting the EV-ADAQ7768-1FMC1Z and the SDP-H1 to a PC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After installing the ACE software, take the following steps to set up the EV-ADAQ7768-1FMC1Z and the SDP-H1, as shown in Figure 3:
+After installing the ACE software, take the following steps to set up the
+EV-ADAQ7768-1FMC1Z and the SDP-H1, as shown in Figure 3:
 
 -  Ensure that all configuration links are in the appropriate positions, as detailed from Table 1.
 -  Connect the EV-ADAQ7768-1FMC1Z securely to the 160-way connector on the SDP-H1. The EV-ADAQ7768-1FMC1Z does not require an external power supply adapter.
--  Connect the SDP-H1 to the PC via the USB cable and power it up with the 12V wall adapter included in the SDP-H1 kit
+-  Connect the SDP-H1 to the PC via the USB cable and power it up with the 12V
+   wall adapter included in the SDP-H1 kit
 
 .. container:: centeralign
 
    |image14| *Figure 3. Board Connection*
 
-
 Setting Up the System for Data Capture
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After completing the steps in the Evaluation Board Software section and the Evaluation Board Hardware section, set up the system for data capture as follows:
+After completing the steps in the Evaluation Board Software section and the
+Evaluation Board Hardware section, set up the system for data capture as
+follows:
 
 -  Run the **Found New Hardware Wizard** after the SDP-H1 system demonstration platform board is plugged into the PC. If using Windows XP, the user may need to search for the SDP-H1 drivers. Automatically search for the drivers for the SDP-H1 system demonstration platform board if prompted by the operating system.
 -  Check that the evaluation board is connecting to the PC correctly using the **Device Manager** of the PC. Access the Device Manager as follows:
@@ -271,11 +291,12 @@ After completing the steps in the Evaluation Board Software section and the Eval
 
    |image15|\ *Figure 4. Checking that the Evaluation Board is connected to the PC correctly*
 
-
 Disconnecting the EV-ADAQ7768-1FMC1Z
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Disconnect power from the SDP-H1 or press the reset tact switch located alongside the mini-USB port on the SDP-H1 before disconnecting the EV-ADAQ7768-1FMC1Z from the SDP-H1.
+Disconnect power from the SDP-H1 or press the reset tact switch located
+alongside the mini-USB port on the SDP-H1 before disconnecting the
+EV-ADAQ7768-1FMC1Z from the SDP-H1.
 
 ACE Software Operation
 ----------------------
@@ -283,14 +304,14 @@ ACE Software Operation
 Launching the Software
 ~~~~~~~~~~~~~~~~~~~~~~
 
-After completing the steps in the Setting Up the System for Data Capture section, take the following steps to launch the ACE software:
+After completing the steps in the Setting Up the System for Data Capture
+section, take the following steps to launch the ACE software:
 
 -  From the **Start** menu, select **All Programs > Analog Devices > ACE > ACE.exe** to open the main software window shown in Figure 5.
 
 .. container:: centeralign
 
    |image16|\ *Figure 5. EV-ADAQ7768-1FMC1Z ACE Software Main Window*
-
 
 -  The EV-ADAQ7768-1FMC1Z icon appears in the **Attached Hardware** section.
 -  If the EV-ADAQ7768-1FMC1Z is not connected to the USB port via the SDP-H1 board when the software is launched, the EV-ADAQ7768-1FMC1Z board icon does not appear in the **Attached Hardware** section. Connect the EV-ADAQ7768-1FMC1Z and SDP-H1 board to the USB port of the PC and wait a few seconds, then continue following these instructions.
@@ -300,13 +321,11 @@ After completing the steps in the Setting Up the System for Data Capture section
 
    |image17|\ *Figure 6. EV-ADAQ7768-1FMC1Z Board View*
 
-
 -  Double-click the **EV-ADAQ7768-1FMC1Z chip icon** to open the window shown in Figure 7.
 
 .. container:: centeralign
 
    |image18|\ *Figure 7. EV-ADAQ7768-1FMC1Z Chip View*
-
 
 -  Click **Software Defaults** and then click **Apply Changes**.
 -  Click **Proceed to Analysis** to open the EV-ADAQ7768-1FMC1Z analysis shown in Figure 8.
@@ -314,7 +333,6 @@ After completing the steps in the Setting Up the System for Data Capture section
 .. container:: centeralign
 
    *Figure 8. EV-ADAQ7768-1FMC1Z Analysis View*
-
 
 Startup Sequence
 ~~~~~~~~~~~~~~~~
@@ -324,7 +342,8 @@ After running the software, the following sequence of event occurs:
 -  The software accesses the EPPROM on the main evaluation board, which contains the board ID
 -  Once the EEPROM value is verified, the PC loads the corresponding firmware to the FPGA on the SDP-H1.
 -  After the loading of the firmware, the SDP-H1 supplies the 3.3V to the main evaluation board and establishes communication with the DUT.
--  The software then loads a preset of register values to the DUT’s user register map to configure the DUT to the tool’s default operating mode.
+-  The software then loads a preset of register values to the DUT’s user
+   register map to configure the DUT to the tool’s default operating mode.
 
 Description of the Analysis Window
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -336,7 +355,9 @@ The **Analysis** view window contains the **Waveform** tab (see Figure 8), the *
 Capture Settings
 ^^^^^^^^^^^^^^^^
 
-The General Capture Settings allows the user to configure the Sample Count and the ODR (Output Data Rate). These settings reflect in the registers automatically before data capture.
+The General Capture Settings allows the user to configure the Sample Count and
+the ODR (Output Data Rate). These settings reflect in the registers
+automatically before data capture.
 
 The **Sample Count** enables the user to select the number of samples per capture. The default value is set at 8192 samples, which can also be changed to the selection of the dropdown list, ranging from 512 to 131072 samples.
 
@@ -367,28 +388,33 @@ Waveform Tab
 
 The **Waveform** tab displays data in form of time vs. discrete data values with the results, as shown in Figure 8.
 
-The data waveform graph shows each successive sample of the µModule output. The user can zoom in on and pan over the waveform graph using the embedded waveform tools above the graph.
+The data waveform graph shows each successive sample of the µModule output. The
+user can zoom in on and pan over the waveform graph using the embedded waveform
+tools above the graph.
 
 Click the display unit’s dropdown list (shown with the **Codes** option selected in Figure 8) to select whether the data graph displays in units of hexadecimal, volts, or codes. The axis controls are dynamic.
 
-When selecting either y-scale dynamic or x-scale dynamic, the corresponding axis width automatically adjusts to show the entire range of the µModule results after each batch of samples.
+When selecting either y-scale dynamic or x-scale dynamic, the corresponding axis
+width automatically adjusts to show the entire range of the µModule results
+after each batch of samples.
 
 .. container:: centeralign
 
    |image19|\ *Figure 8. EV-ADAQ7768-1FMC1Z Waveform*
 
-
 Histogram Tab
 ^^^^^^^^^^^^^
 
-The Histogram tab contains the histogram graph, together with the capture results related to the DC performance (as shown in Figure 9).
+The Histogram tab contains the histogram graph, together with the capture
+results related to the DC performance (as shown in Figure 9).
 
-The histogram graph displays the number of hits per code within the sampled data. This graph is useful for DC analysis and indicates the noise performance of the device.
+The histogram graph displays the number of hits per code within the sampled
+data. This graph is useful for DC analysis and indicates the noise performance
+of the device.
 
 .. container:: centeralign
 
    |image20| *Figure 9. EV-ADAQ7768-1FMC1Z Histogram*
-
 
 FFT Tab
 ^^^^^^^
@@ -403,16 +429,15 @@ The **Distortion** section displays the harmonic content of the sampled signal, 
 
    |image21|\ *Figure 10. EV-ADAQ7768-1FMC1Z FFT*
 
-
 .. container:: centeralign
 
    |image22|\ *Figure 11. EV-ADAQ7768-1FMC1Z FFT (with shorted inputs)*
 
-
 Exiting the Software
 ~~~~~~~~~~~~~~~~~~~~
 
-To exit the software, click file icon on the upper right tab and then click Exit.
+To exit the software, click file icon on the upper right tab and then click
+Exit.
 
 Configuring the Board
 ---------------------
@@ -427,12 +452,12 @@ There are two ways to control the DUT input range.
 
 By default, the ACE software uses the GPIO to control the input range. The user can configure the PGIA gain by clicking the PGIA icon in the **Chip View** of the ACE software to select the input ranges. Once done, the user must click **Apply Changes** located at the upper left corner in order for the PGIA gain to take effect.
 
-The user needs to set S2 switches to LO in order to properly control the device input range using GPIO.
+The user needs to set S2 switches to LO in order to properly control the device
+input range using GPIO.
 
 .. container:: centeralign
 
    |Figure 12. Input range selection menu|\ *Figure 12. Input range selection menu*
-
 
 Alternatively, the user can choose to select the input range through an onboard mechanical switch S2. For this to work, check the **Control PGIA with switch** in the PGIA Gain section. Then, click the **Apply Changes** for this to take effect.
 
@@ -440,8 +465,10 @@ Alternatively, the user can choose to select the input range through an onboard 
 
    |Figure 13. Input range mode selection| *Figure 13. Input range mode selection*
 
-
-The user can then control the input range setting using switch S2, see Table 3 for more details. Note, when choosing the manual input range control option, the user is responsible of adjusting the Gain Mode Setting in the software accordingly in order for the software to display the correct measurement result.
+The user can then control the input range setting using switch S2, see Table 3
+for more details. Note, when choosing the manual input range control option, the
+user is responsible of adjusting the Gain Mode Setting in the software
+accordingly in order for the software to display the correct measurement result.
 
 **Table 3. Configuration Switch S2 Functions**
 
@@ -478,42 +505,54 @@ Input Configuration
 
 Provide the input signal through screw terminal or the SMB connectors.
 
-The default board inputs are floating with high impedance. The user needs to ensure the source signal is properly biased to a common mode voltage.
+The default board inputs are floating with high impedance. The user needs to
+ensure the source signal is properly biased to a common mode voltage.
 
-The true dynamic range of the board can be measured by connect the two inputs to the board’s ground reference through the screw terminal by a short piece of wire.
+The true dynamic range of the board can be measured by connect the two inputs to
+the board’s ground reference through the screw terminal by a short piece of
+wire.
 
 .. container:: centeralign
 
    |Figure 14. Short the inputs to ground with wire to measure the signal chain dynamic range| *Figure 14. Short the inputs to ground with wire to measure the signal chain dynamic range*
-
 
 Configuring the DUT
 -------------------
 
 The default configuration sets the DUT with the wideband low ripple (brick wall) filter with ODR=256ksps. The user can see the result by clicking **Proceed to Analysis > Run Once** button in the Chip View of the software.
 
-Refer to the ADAQ7768-1 datasheet for more information on the DUT register configuration.
+Refer to the ADAQ7768-1 datasheet for more information on the DUT register
+configuration.
 
-The ADAQ7768-1 has excellent performance in both AC and DC measurement. The digital filter inside the ADAQ7768-1 can be programmed with a wide range of decimation ratios to achieve input bandwidth from a few Hertz to a maximum of 204kHz.
+The ADAQ7768-1 has excellent performance in both AC and DC measurement. The
+digital filter inside the ADAQ7768-1 can be programmed with a wide range of
+decimation ratios to achieve input bandwidth from a few Hertz to a maximum of
+204kHz.
 
 AC Measurement
 ~~~~~~~~~~~~~~
 
-By default, the software configures the DUT to perform wide bandwidth measurement with the wideband low ripple digital filter (brick wall) of 110kHz of -3dB BW.
+By default, the software configures the DUT to perform wide bandwidth
+measurement with the wideband low ripple digital filter (brick wall) of 110kHz
+of -3dB BW.
 
-In this mode the user can evaluate the wide band dynamic range (noise) as well as other AC performances such as SNR, THD and SFDR etc.
+In this mode the user can evaluate the wide band dynamic range (noise) as well
+as other AC performances such as SNR, THD and SFDR etc.
 
-The user can also test the device’s anti-aliasing performance by sweeping an out of band signal to the input across frequency.
+The user can also test the device’s anti-aliasing performance by sweeping an out
+of band signal to the input across frequency.
 
 .. container:: centeralign
 
    |image23|\ *Figure 15. FFT plot for a typical AC measurement*
 
-
 DC Measurement
 ~~~~~~~~~~~~~~
 
-A Sinc3 filter with ODR=50SPS is a sweet spot for the measurement of a pure DC signal. As the Sinc notch appears at 50Hz and can be used to reject the 50Hz line frequency. Take the following steps to setup the DUT for a 50SPS Sinc3 filter:
+A Sinc3 filter with ODR=50SPS is a sweet spot for the measurement of a pure DC
+signal. As the Sinc notch appears at 50Hz and can be used to reject the 50Hz
+line frequency. Take the following steps to setup the DUT for a 50SPS Sinc3
+filter:
 
 -  As an example for RMS noise, short IN- and IN+ connectors to ground.
 -  At the Chip View of the ACE software, click the **Filter Configuration** icon.
@@ -524,23 +563,19 @@ A Sinc3 filter with ODR=50SPS is a sweet spot for the measurement of a pure DC s
 
    |image24| // Figure 16. Set the digital filter type.//
 
-
 .. container:: centeralign
 
    |image25| // Figure 17. Set the Sinc3 filter decimation ratio.//
 
-
 .. container:: centeralign
 
    |image26| // Figure 18. Sinc3 filter decimation ratio using Memory Map View.//
-
 
 -  Before clicking on the **Run Once** button, make sure to adjust the number of samples to be collected accordingly.
 
 .. container:: centeralign
 
    |image27| *Figure 19. Change the number of samples to collect per sample run*
-
 
 -  Collecting the default 8192 samples at 50SPS will take 8192\*1/50/60=2.73 minutes! Start with 1024 samples, which should take about 20 seconds. Generate new capture using 1024 samples.
 
@@ -549,33 +584,29 @@ A Sinc3 filter with ODR=50SPS is a sweet spot for the measurement of a pure DC s
    
    |image28| *Figure 20. FFT plot for a typical DC measurement, with Gain6 mode, input shorted, ODR=50sps, 1024 samples.*
 
-
 -  The same condition (Sinc3 50SPS) is used to measure Low Frequency Noise, as specified in the datasheet. In the **Histogram** tab, noise is displayed as Transition noise in LSB. To compare with datasheet’s referred to input (RTI) Low Frequency Noise in μVrms, apply the formula:
 
 .. container:: centeralign
-
 
    ..
 
 |image29|
 
--  For example, using Gain2 Mode (AFE_GAIN = 1.3 V/V) with measured Transition Noise = 1.508 LSB = 0.566 μVrms RTI.
+-  For example, using Gain2 Mode (AFE_GAIN = 1.3 V/V) with measured Transition
+   Noise = 1.508 LSB = 0.566 μVrms RTI.
 
 .. container:: centeralign
 
    |image30| *Figure 21. Histogram of output codes. with Gain2 mode, input shorted, ODR=50sps, 1024 samples.*
-
 
 Calculating SINC3_DEC_RATE Value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | For a 16.384 MHz MCLK to achieve an ODR of 50 Hz using the Sinc3 filter, use the following equation and determine the DEC_RATE:
 
-
 .. container:: centeralign
 
    :math:`ODR = Mclk/MclkDiv \times DecRate`
-
 
 With the ADAQ7768-1 MCLK_DIV = 2,
 
@@ -583,24 +614,31 @@ With the ADAQ7768-1 MCLK_DIV = 2,
 
    :math:`DecRate = Mclk/MclkDiv \times ODR = 163,840`
 
-
-To program the Sinc3 decimation ratio, the user must first calculate for the equivalent Sinc3 decimation ratio to be written on SINC3_DECIMATION_RATE registers (SINC3_DEC_RATE_MSB and SINC3_DEC_RATE_LSB) using the equation below:
+To program the Sinc3 decimation ratio, the user must first calculate for the
+equivalent Sinc3 decimation ratio to be written on SINC3_DECIMATION_RATE
+registers (SINC3_DEC_RATE_MSB and SINC3_DEC_RATE_LSB) using the equation below:
 
 .. container:: centeralign
 
    :math:`Equivalent DecRate = DecRate/32 -1 = 5119`
 
+To set the decimation ration to 163,840, write the equivalent hexadecimal value
+of 5119 to SINC3_DEC_RATE_MSB and SINC3_DEC_RATE_LSB registers because the value
+in the register is incremented by 1 and then multiplied by 32 to give the actual
+decimation rate.
 
-To set the decimation ration to 163,840, write the equivalent hexadecimal value of 5119 to SINC3_DEC_RATE_MSB and SINC3_DEC_RATE_LSB registers because the value in the register is incremented by 1 and then multiplied by 32 to give the actual decimation rate.
-
-Refer to the ADAQ7768-1 datasheet for more information on the DUT register configuration.
+Refer to the ADAQ7768-1 datasheet for more information on the DUT register
+configuration.
 
 Reset Switches
 ~~~~~~~~~~~~~~
 
-Press S1 switch to reset the DUT. Resetting the DUT will reset all the register settings to its default value.
+Press S1 switch to reset the DUT. Resetting the DUT will reset all the register
+settings to its default value.
 
-A reset switch is also available on the SDP-H1 to reset the interface board. Resetting the digital interface board will result in losing communication with the DUT.
+A reset switch is also available on the SDP-H1 to reset the interface board.
+Resetting the digital interface board will result in losing communication with
+the DUT.
 
 The user can restart the software tool to re-initialize the board.
 
@@ -611,11 +649,9 @@ Evaluation Board Schematic
 
    |image31| *Figure 22. EV-ADAQ7768-1FMC1Z Board Schematic Page 1*
 
-
 .. container:: centeralign
 
    |image32| *Figure 23. EV-ADAQ7768-1FMC1Z Board Schematic Page 2*
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq7768-1/adaq7768-1_evb.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq7768-1/fig_2_functional_block_diagram.jpg
@@ -632,7 +668,7 @@ Evaluation Board Schematic
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq7768-1/picture2.svg
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq7768-1/fig_4_board_connection.png
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq7768-1/fig_12_checking_that_the_evb_is_connected_to_the_pc_correctly.png
-   :width: 600px
+   :width: 600
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq7768-1/fig_13_ev-adaq7768-1fmc1z_ace_software_main_window_new.png
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq7768-1/fig_14_ev-adaq7768-1fmc1z_board_view_new.png
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq7768-1/fig_15_ev-adaq7768-1fmc1z_chip_view_new.png

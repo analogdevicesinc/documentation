@@ -3,23 +3,30 @@
 Target and Communication Libraries Integration
 ==============================================
 
-This section briefs about the implementation and configuration details of different components of the SigmaStudio+ for SHARCa
+This section briefs about the implementation and configuration details of
+different components of the SigmaStudio+ for SHARCa
 
 Integrating target and communication libraries into custom real-time application
 
-In order to create an Application (SHARC in this case), running the communication library and target libraries, users must do the following:
+In order to create an Application (SHARC in this case), running the
+communication library and target libraries, users must do the following:
 
-1. In CrossCore Embedded Studio, start a new CrossCore Project. Enter the name of the project, type of project, processor etc. when requested, and proceed by pressing ‘Next’.
+1. In CrossCore Embedded Studio, start a new CrossCore Project. Enter the name
+   of the project, type of project, processor etc. when requested, and proceed
+   by pressing ‘Next’.
 
-2. Add the SigmaStudio+ for SHARC communication library and target library to the project from the installed Add-ins for the project using system.svc setting.
+2. Add the SigmaStudio+ for SHARC communication library and target library to
+   the project from the installed Add-ins for the project using system.svc
+   setting.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/library_21569.jpg
-   :width: 800px
+   :width: 800
 
-3. Pin Multiplexing to be enable in system properties for enabling the SPI1 as mentions below:
+3. Pin Multiplexing to be enable in system properties for enabling the SPI1 as
+   mentions below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/pin_mux_21569_final.jpg
-   :width: 800px
+   :width: 800
 
 4. Include the following header files in the main Application code.
 
@@ -31,11 +38,21 @@ In order to create an Application (SHARC in this case), running the communicatio
      d. adi_ss_communication.h
      e. adi_ss_ssn.h
 
-5. Copy the adi_ss_gmap.asm and adi_ss_app.ldf files from example lib Integration application (Example: C:\\Analog Devices\\SigmaStudioPlus-Relx.x.x\\Target\\Examples\\LibraryIntegration\\ADSP-21569\\LibIntegrationExample_Core1\\src) into your project source folder.
+5. Copy the adi_ss_gmap.asm and adi_ss_app.ldf files from example lib
+   Integration application (Example: C:\\Analog
+   Devices\\SigmaStudioPlus-Relx.x.x\\Target\\Examples\\LibraryIntegration\\ADSP-21569\\LibIntegrationExample_Core1\\src)
+   into your project source folder.
 
-6. Refer the app.ldf available in the respective processor library Integration example project in the below path: "C:\\Analog Devices\\SigmaStudioPlus-Relx.x.x\\Target\\Examples\\LibraryIntegration", and update the memory sections, stack and heap allocation and inclusion of “adi_ss_app.ldf” file in the app.ldf. The app.ldf will be present in the CCES project's "system-->startup_ldf" folder.
+6. Refer the app.ldf available in the respective processor library Integration
+   example project in the below path: "C:\\Analog
+   Devices\\SigmaStudioPlus-Relx.x.x\\Target\\Examples\\LibraryIntegration", and
+   update the memory sections, stack and heap allocation and inclusion of
+   “adi_ss_app.ldf” file in the app.ldf. The app.ldf will be present in the CCES
+   project's "system-->startup_ldf" folder.
 
-Also note that if your system does not have L3 memory, you need to make a change to the following section in your app.ldf as follows, which is needed for the SigmaStudio GMAP memory allocation.
+Also note that if your system does not have L3 memory, you need to make a change
+to the following section in your app.ldf as follows, which is needed for the
+SigmaStudio GMAP memory allocation.
 
 ::
 
@@ -52,7 +69,8 @@ Also note that if your system does not have L3 memory, you need to make a change
     mem_L2_bw_SS4G_Data    { TYPE(BW RAM) START(0x200D8000) END(0x200f9fff) WIDTH(8) }
     #endif
 
-7. Allocate instance memory for connection and communication component within the main application code, as shown below.
+7. Allocate instance memory for connection and communication component within
+   the main application code, as shown below.
 
 ::
 
@@ -64,7 +82,8 @@ Also note that if your system does not have L3 memory, you need to make a change
     SECTION("ss_app_data0_fast")
     uint8_t adi_ss_connection_mem[ADI_SS_CONNECTION_MEMSIZE];
 
-8.Declare the SSnconfig, Backchannel info variables and the functions needed for SSncofig, in the global space of the main application as shown below:
+8.Declare the SSnconfig, Backchannel info variables and the functions needed for
+SSncofig, in the global space of the main application as shown below:
 
 ::
 
@@ -103,7 +122,8 @@ Also note that if your system does not have L3 memory, you need to make a change
                                          uint32_t nBlockSize,
                                          uint32_t nShiftFlag);
 
-9.Declare the variables required for the connection and communication configuration as shown below within the main:
+9.Declare the variables required for the connection and communication
+configuration as shown below within the main:
 
 ::
 
@@ -116,7 +136,8 @@ Also note that if your system does not have L3 memory, you need to make a change
       ADI_SS_COMM_RESULT eCommRet = ADI_SS_COMM_FAILED;
       ADI_SS_COMM_HANDLE hCommHandle;
 
-10.Make the connection and communication configuration initialization as follows:
+10.Make the connection and communication configuration initialization as
+follows:
 
 ::
 
@@ -153,7 +174,8 @@ Also note that if your system does not have L3 memory, you need to make a change
         exit(-1);
       }
 
-11.The adi_ss_comm_callback_cmd4 and adi_SMAP_Application_Callback function callbacks need to be defined in the main application file as shown below:
+11.The adi_ss_comm_callback_cmd4 and adi_SMAP_Application_Callback function
+callbacks need to be defined in the main application file as shown below:
 
 ::
 
@@ -169,7 +191,8 @@ Also note that if your system does not have L3 memory, you need to make a change
        ;
       }
 
-12.The SSnconfig needs to be done after waiting for SMAP to be downloaded from SigmaStudio Host as shown below:
+12.The SSnconfig needs to be done after waiting for SMAP to be downloaded from
+SigmaStudio Host as shown below:
 
 ::
 
@@ -229,7 +252,11 @@ Also note that if your system does not have L3 memory, you need to make a change
        pSSOutBuff[i] = pSSInBuff[i];
       }
 
-13.The schematic process function can be called within the main process loop as shown below. The copyfix2float() will convert the fixed point input samples to floating point data that can be processed in the schematic_process function. Also the copyfloat2fix() will convert the processed data to fixed point to be sent to the Sport buffers.
+13.The schematic process function can be called within the main process loop as
+shown below. The copyfix2float() will convert the fixed point input samples to
+floating point data that can be processed in the schematic_process function.
+Also the copyfloat2fix() will convert the processed data to fixed point to be
+sent to the Sport buffers.
 
 ::
 
@@ -246,10 +273,11 @@ Also note that if your system does not have L3 memory, you need to make a change
         CopyFloat2Fix(pSSOutBuff[i], 1, (volatile uint32_t * )&pSportOut[i], NUM_CHANNELS, BLOCK_SIZE, 0u);
       }
 
-14. Please include the “src” path for including the “adi_ss_app.ldf” file as shown below.
+14. Please include the “src” path for including the “adi_ss_app.ldf” file as
+    shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/src_21569.jpg
-   :width: 800px
+   :width: 800
 
 **Note:**
 

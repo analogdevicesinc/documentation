@@ -1,9 +1,14 @@
 What is libsmu?
 ===============
 
-A C++ library containing abstractions for streaming data to and from USB-connected analog interface devices, currently supporting the Analog Devices' ADALM1000. Building off of LibUSB for cross-platform operation, it offers the sourcing of repeated waveforms, configuration of hardware, and measuring of signals.
+A C++ library containing abstractions for streaming data to and from
+USB-connected analog interface devices, currently supporting the Analog Devices'
+ADALM1000. Building off of LibUSB for cross-platform operation, it offers the
+sourcing of repeated waveforms, configuration of hardware, and measuring of
+signals.
 
-Python bindings are also provided in the form of the pysmu module. See instructions below for how to build them.
+Python bindings are also provided in the form of the pysmu module. See
+instructions below for how to build them.
 
 How to install it?
 ==================
@@ -15,7 +20,6 @@ Download
    :class: download
 
    Go to the `latest release page <https://github.com/analogdevicesinc/libsmu/releases/latest>`_ and download the package that fits your system.
-
 
 Installation
 ------------
@@ -42,7 +46,13 @@ Download the specific libsmu .deb package for your Linux distribution from the `
 Python bindings for Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you want to install pysmu (the Python bindings for libsmu), you can download the specific .deb package. Currently we are supporting the default Python versions for each Ubuntu version (3.5 for Ubuntu 16, 3.6 for Ubuntu 18, 3.8 for Ubuntu 20). The package name should start with python3 and contain the OS version. These packages contain the Python bindings for libsmu. Go to the folder you downloaded the package in and open a terminal, then run the following command:
+If you want to install pysmu (the Python bindings for libsmu), you can download
+the specific .deb package. Currently we are supporting the default Python
+versions for each Ubuntu version (3.5 for Ubuntu 16, 3.6 for Ubuntu 18, 3.8 for
+Ubuntu 20). The package name should start with python3 and contain the OS
+version. These packages contain the Python bindings for libsmu. Go to the folder
+you downloaded the package in and open a terminal, then run the following
+command:
 
 ::
 
@@ -53,7 +63,8 @@ MacOS
 
 Download the specific libsmu .pkg package for your MacOS distribution from the `releases <https://github.com/analogdevicesinc/libm2k/releases/latest>`_ section. Currently we are supporting MacOS 10.13, 10.14 and 10.15. The package name should start with libsmu and contain the MacOS version.
 
-Open a terminal and run the following command which will install only the base library in /Library/Frameworks.
+Open a terminal and run the following command which will install only the base
+library in /Library/Frameworks.
 
 ::
 
@@ -186,7 +197,9 @@ Documentation
 
 Doxygen-based documentation is available on `the github pages <https://analogdevicesinc.github.io/libsmu/>`_.
 
-This can also be built locally if enabled using the CMake option mentioned above. After make is run, the generated documentation files can then be found in the html subdirectory of the build directory.
+This can also be built locally if enabled using the CMake option mentioned
+above. After make is run, the generated documentation files can then be found in
+the html subdirectory of the build directory.
 
 Testing
 -------
@@ -198,16 +211,21 @@ The `Google Test framework <https://github.com/google/googletest>`_ is used to r
    analog@analog:~$ cmake -DBUILD_TESTS=ON ..
    analog@analog:~$ make check
 
-Note that at least one device should be inserted to the system for the checks to run properly.
+Note that at least one device should be inserted to the system for the checks to
+run properly.
 
 Python
 ------
 
-Python Bindings are enabled by default and can be disabled using the CMake option mentioned above.
+Python Bindings are enabled by default and can be disabled using the CMake
+option mentioned above.
 
-Note that this will build only one version of Python for the first supported implementation it finds installed on the system.
+Note that this will build only one version of Python for the first supported
+implementation it finds installed on the system.
 
-To build them for other versions it's easiest to build them manually via the setup.py script in the regular python manner if libsmu has already been built and/or installed on the host machine.
+To build them for other versions it's easiest to build them manually via the
+setup.py script in the regular python manner if libsmu has already been built
+and/or installed on the host machine.
 
 ::
 
@@ -227,9 +245,14 @@ Regenerate runtime linker cache after install:
 
    analog@analog:~$ sudo ldconfig
 
-If the same errors still happen, make sure the directory the libsmu library is installed to is in the sourced files for /etc/ld.so.conf before running ldconfig.
+If the same errors still happen, make sure the directory the libsmu library is
+installed to is in the sourced files for /etc/ld.so.conf before running
+ldconfig.
 
-In addition, the udev rules file (53-adi-m1k-usb.rules) is installed by default to give regular users access to devices supported by libsmu. Udev has to be forced to reload its rules files in order to use the new file without rebooting the system.
+In addition, the udev rules file (53-adi-m1k-usb.rules) is installed by default
+to give regular users access to devices supported by libsmu. Udev has to be
+forced to reload its rules files in order to use the new file without rebooting
+the system.
 
 Reload udev rules files:
 
@@ -237,7 +260,10 @@ Reload udev rules files:
 
    analog@analog:~$ sudo udevadm control --reload-rules
 
-Finally, for python support on Debian/Ubuntu derived distros users will have to export PYTHONPATH or perform a similar method since hand-built modules are installed to the site-packages directory (which isn't in the standard search list) while distro provided modules are placed in dist-packages.
+Finally, for python support on Debian/Ubuntu derived distros users will have to
+export PYTHONPATH or perform a similar method since hand-built modules are
+installed to the site-packages directory (which isn't in the standard search
+list) while distro provided modules are placed in dist-packages.
 
 Add pysmu module directory to python search path:
 
@@ -245,4 +271,5 @@ Add pysmu module directory to python search path:
 
    $ export PYTHONPATH=/usr/local/lib/python3.7/site-packages:${PYTHONPATH}
 
-Note the command will have to be altered for targets with different bitness or python versions.
+Note the command will have to be altered for targets with different bitness or
+python versions.

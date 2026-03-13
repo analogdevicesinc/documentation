@@ -11,7 +11,8 @@ There are two different versions of I2C Read module.
 I2C Periodic Read
 -----------------
 
-The 'I2C Periodic Read' block reads a particular sub address from any I2C slave periodically and sends the value read in the output pin.
+The 'I2C Periodic Read' block reads a particular sub address from any I2C slave
+periodically and sends the value read in the output pin.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2cperiodicread.jpg
    :align: center
@@ -31,7 +32,8 @@ Output Pins
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2creadwindow.jpg
    :align: center
 
-Create Multiple instances for monitoring multiple slaves/ multiple sub address from same slave.
+Create Multiple instances for monitoring multiple slaves/ multiple sub address
+from same slave.
 
 GUI Control
 ~~~~~~~~~~~
@@ -84,7 +86,8 @@ Input Pins
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2creadwindow2.jpg
    :align: center
 
-Create Multiple instances for monitoring multiple slaves/ multiple sub address from same slave.
+Create Multiple instances for monitoring multiple slaves/ multiple sub address
+from same slave.
 
 GUI Control
 ~~~~~~~~~~~

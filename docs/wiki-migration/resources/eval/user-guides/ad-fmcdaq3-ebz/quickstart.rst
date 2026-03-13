@@ -1,12 +1,16 @@
 AD-FMCDAQ3-EBZ Quick Start Guides
 =================================
 
-The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the AD-FMCDAQ3-EBZ boards on various FPGA development boards. They will discuss how to program the bitstream, run a no-OS program or boot a Linux distribution.
+The Quick Start Guides provide a simple step by step instruction on how to do an
+initial system setup for the AD-FMCDAQ3-EBZ boards on various FPGA development
+boards. They will discuss how to program the bitstream, run a no-OS program or
+boot a Linux distribution.
 
 Supported Carriers
 ------------------
 
-The AD-FMCDAQ3-EBZ is, by definition a "FPGA mezzanine card" (FMC), that means it needs a carrier to plug into. The carriers we support are:
+The AD-FMCDAQ3-EBZ is, by definition a "FPGA mezzanine card" (FMC), that means
+it needs a carrier to plug into. The carriers we support are:
 
 +------------------------------------------------------------------------+----------------+
 | Board                                                                  | AD-FMCDAQ3-EBZ |
@@ -47,8 +51,11 @@ The supported OS are:
 Hardware Setup
 --------------
 
-In most carriers, the AD-FMCDAQ3-EBZ board connects to the HPC connector (unless otherwise noted). The carrier setup requires power, UART (115200), ethernet (Linux), HDMI (if available) and/or JTAG (no-OS) connections. A typical setup is shown below.
+In most carriers, the AD-FMCDAQ3-EBZ board connects to the HPC connector (unless
+otherwise noted). The carrier setup requires power, UART (115200), ethernet
+(Linux), HDMI (if available) and/or JTAG (no-OS) connections. A typical setup is
+shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/hardware/daq3_zc706_setup.jpg
    :align: center
-   :width: 600px
+   :width: 600

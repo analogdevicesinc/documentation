@@ -9,4 +9,5 @@ Asymmetric Soft Clipper - Standard Cubic
 Description
 -----------
 
-The Asymmetric Clipper Cubic is a soft-clipper that clips the input data signal according to clip up/down values set by data control input pins.
+The Asymmetric Clipper Cubic is a soft-clipper that clips the input data signal
+according to clip up/down values set by data control input pins.

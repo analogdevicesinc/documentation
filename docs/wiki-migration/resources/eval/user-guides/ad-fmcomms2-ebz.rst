@@ -11,7 +11,7 @@ The AD-FMComms2-EBZ board is very similar to the `ad-fmcomms3-ebz <https://wiki.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/fmcomms2c_top.png
    :align: right
-   :width: 400px
+   :width: 400
 
 Table of Contents
 -----------------
@@ -148,7 +148,8 @@ Software Defined Radio using the Linux IIO Framework
 ADI Articles
 ~~~~~~~~~~~~
 
--   Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio
+-   Four Quick Steps to Production: Using Model-Based Design for
+    Software-Defined Radio
 
    -  :adi:`Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
    -  :adi:`Part 2—Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
@@ -164,6 +165,4 @@ MathWorks Webinars
 Warning
 -------
 
-
 .. esd-warning::
-

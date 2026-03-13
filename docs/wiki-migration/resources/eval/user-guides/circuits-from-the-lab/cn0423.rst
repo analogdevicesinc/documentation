@@ -9,7 +9,8 @@ The :adi:`CN0423` demonstrates a proven and tested electromagnetic compatibility
 Hardware Connections
 ====================
 
-The following sections will describe the hardware in more detail, as well as explain the different connections and how to use them.
+The following sections will describe the hardware in more detail, as well as
+explain the different connections and how to use them.
 
 -  **P1** for JTAG/SWD debug
 -  **P2** for field side power
@@ -20,7 +21,11 @@ The following sections will describe the hardware in more detail, as well as exp
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0423/emc_board.jpg
    :align: center
 
-To evaluate the full function of CN0423, you need following equipment: EVAL-AD5758EMC evaluation board Power Supply A PC with Microsoft Windows 7 or later OS and USB 2.0 or faster USB port A USB mini B cable To reprogram or debug CN0423, you need following extra equipment J-link debug cable or equivalent JTAG/SWD debug cable
+To evaluate the full function of CN0423, you need following equipment:
+EVAL-AD5758EMC evaluation board Power Supply A PC with Microsoft Windows 7 or
+later OS and USB 2.0 or faster USB port A USB mini B cable To reprogram or debug
+CN0423, you need following extra equipment J-link debug cable or equivalent
+JTAG/SWD debug cable
 
 EVAL-AD5758EMC link options
 
@@ -43,15 +48,24 @@ EVAL-AD5758EMC link options
 Usage Instructions
 ==================
 
-The EVAL-CN0423 can work off either two separate 24V supplies, or a single 24V supply.
+The EVAL-CN0423 can work off either two separate 24V supplies, or a single 24V
+supply.
 
-The EVAL-CN0423 can be run by either being connected to a PC or in standalone mode.
+The EVAL-CN0423 can be run by either being connected to a PC or in standalone
+mode.
 
-The graphic user interface (GUI) on the PC is used to configure the operational parametres such as DAC output range, output code, and ADC sequencing. The GUI displays the fault flag map and plots the reading from the AD5758 on-chip diagnostic ADC nodes.
+The graphic user interface (GUI) on the PC is used to configure the operational
+parametres such as DAC output range, output code, and ADC sequencing. The GUI
+displays the fault flag map and plots the reading from the AD5758 on-chip
+diagnostic ADC nodes.
 
-Once the operational parametres are programmed in the on-board flash memory, the board can be disconnected from the PC or controller board while the software remains operational. The operation is as simple as powering up the board and pushing the ‘RUN’ or ‘STOP’ button on the EVAL-CN0423 board.
+Once the operational parametres are programmed in the on-board flash memory, the
+board can be disconnected from the PC or controller board while the software
+remains operational. The operation is as simple as powering up the board and
+pushing the ‘RUN’ or ‘STOP’ button on the EVAL-CN0423 board.
 
-'BOOT' and 'RESET' button can be used to download firmware to the microprocessor through the serial port.
+'BOOT' and 'RESET' button can be used to download firmware to the microprocessor
+through the serial port.
 
 How to download firmware to the CN0423
 --------------------------------------
@@ -77,6 +91,5 @@ Schematic, Bill of Materials, Gerber Files, Source Code
    -  EMC Testing Results
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0423/download.png
-   :width: 400px
+   :width: 400

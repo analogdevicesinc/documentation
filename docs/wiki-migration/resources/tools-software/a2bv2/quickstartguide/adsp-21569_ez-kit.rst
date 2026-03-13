@@ -3,7 +3,13 @@
 Using ADSP-21569 EZ-Kit
 =======================
 
-The ADSP-21569 EZ-Kit leverages the SigmaStudio+ framework to simplify the development and deployment of audio processing applications, particularly in A2B network environments. By flashing the SS+ target framework onto the board, developers can use graphical schematics to configure audio signal paths, manage A2B nodes, and deploy DSP algorithms without writing low-level code. The framework supports real-time interaction with the board through USBi and JTAG, enabling rapid prototyping and debugging of complex audio systems.
+The ADSP-21569 EZ-Kit leverages the SigmaStudio+ framework to simplify the
+development and deployment of audio processing applications, particularly in A2B
+network environments. By flashing the SS+ target framework onto the board,
+developers can use graphical schematics to configure audio signal paths, manage
+A2B nodes, and deploy DSP algorithms without writing low-level code. The
+framework supports real-time interaction with the board through USBi and JTAG,
+enabling rapid prototyping and debugging of complex audio systems.
 
 Flashing the target framework
 -----------------------------

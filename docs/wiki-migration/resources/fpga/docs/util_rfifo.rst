@@ -5,16 +5,24 @@ UTIL_RFIFO
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/util_rfifo/index.html\
 
+UTIL_RFIFO is a core designed to downscale the clock rate of the TX data path.
+There are scenarios when the device clock (interface clock) is too high (above
+200 MHz), making a challenge to integrate any processing cores between the
+device core and UPACK/DMA, because of the small timing margins. By reducing the
+clock rate of the data path, the user can easily integrate any custom processing
+core into the design.
 
-UTIL_RFIFO is a core designed to downscale the clock rate of the TX data path. There are scenarios when the device clock (interface clock) is too high (above 200 MHz), making a challenge to integrate any processing cores between the device core and UPACK/DMA, because of the small timing margins. By reducing the clock rate of the data path, the user can easily integrate any custom processing core into the design.
-
-In order to define the correct configuration, the following questions needs to be answered:
+In order to define the correct configuration, the following questions needs to
+be answered:
 
 -  What is the clock rate of the device core's data interface? (dout_clk)
 -  What is the data rate of the device core's data interface? (dout_valid@dout_clk)
 -  What is the targeted clock rate of the data path (din_clk), and how we can achieve it, respecting the main rule of thumb: **input data rate must be equal to the output data rate**?
 
-If the device clock rate is equal to the device data rate, the only solution to downscale the clock rate is to increase the data width of the output ports of the FIFO. Currently the util_rfifo supports four data width ratios: 1:1/1:2/1:4/1:8.
+If the device clock rate is equal to the device data rate, the only solution to
+downscale the clock rate is to increase the data width of the output ports of
+the FIFO. Currently the util_rfifo supports four data width ratios:
+1:1/1:2/1:4/1:8.
 
 Features
 --------
@@ -30,7 +38,7 @@ Timing diagram
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/rfifo_timing_diagram.png
    :align: center
-   :width: 900px
+   :width: 900
 
 Parameters
 ----------

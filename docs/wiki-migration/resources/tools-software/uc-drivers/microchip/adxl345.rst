@@ -1,7 +1,6 @@
 ADXL345 - No-OS Driver for Microchip Microcontroller Platforms
 ==============================================================
 
-
 ADXL345 No-OS Driver
 ====================
 
@@ -26,14 +25,20 @@ Reference Circuits
 Overview
 --------
 
-
 The :adi:`ADXL345` is a small, thin, low power, 3-axis accelerometer with high resolution (13-bit) measurement at up to ±16 g. Digital output data is formatted as 16-bit twos complement and is accessible through either a SPI (3- or 4-wire) or I2C digital interface.
 
 The :adi:`ADXL345` is well suited for mobile device applications. It measures the static acceleration of gravity in tilt-sensing applications, as well as dynamic acceleration resulting from motion or shock. Its high resolution (4 mg/LSB) enables measurement of inclination changes less than 1.0°.
 
-Several special sensing functions are provided. Activity and inactivity sensing detect the presence or lack of motion and if the acceleration on any axis exceeds a user-set level. Tap sensing detects single and double taps. Free-fall sensing detects if the device is falling. These functions can be mapped to one of two interrupt output pins. An integrated, patent pending 32-level first in, first out (FIFO) buffer can be used to store data to minimize host processor intervention.
+Several special sensing functions are provided. Activity and inactivity sensing
+detect the presence or lack of motion and if the acceleration on any axis
+exceeds a user-set level. Tap sensing detects single and double taps. Free-fall
+sensing detects if the device is falling. These functions can be mapped to one
+of two interrupt output pins. An integrated, patent pending 32-level first in,
+first out (FIFO) buffer can be used to store data to minimize host processor
+intervention.
 
-Low power modes enable intelligent motion-based power management with threshold sensing and active acceleration measurement at extremely low power dissipation.
+Low power modes enable intelligent motion-based power management with threshold
+sensing and active acceleration measurement at extremely low power dissipation.
 
 The :adi:`ADXL345` is supplied in a small, thin, 3 mm × 5 mm × 1 mm, 14-lead, plastic package.
 
@@ -45,9 +50,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/adxl345_pmod_acl.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ------------------
@@ -55,11 +63,16 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the ADXL345 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the ADXL345 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the ADXL345 driver can be
+used exactly as it is provided.
 
-If the SPI communication is chosen, there are three functions which are called by the ADXL345 driver:
+If the SPI communication is chosen, there are three functions which are called
+by the ADXL345 driver:
 
 -  SPI_Init() – initializes the communication peripheral.
 -  SPI_Write() – writes data to the device.
@@ -72,8 +85,8 @@ If the SPI communication is chosen, there are three functions which are called b
 
    SPI driver architecture
 
-
-If the I2C communication is chosen, there are three functions which are called by the ADXL345 driver:
+If the I2C communication is chosen, there are three functions which are called
+by the ADXL345 driver:
 
 -  I2C_Init() – initializes the communication peripheral.
 -  I2C_Write() – writes data to the device.
@@ -85,7 +98,6 @@ If the I2C communication is chosen, there are three functions which are called b
 .. container:: centeralign
 
    I2C driver architecture
-
 
 The implementation of these three functions depends on the used microcontroller.
 
@@ -119,8 +131,6 @@ The following functions are implemented in this version of ADXL345 driver:
 | void ADXL345_SetRangeResolution(unsigned char gRange, unsigned char fullRes)                                                                                                                      | Selects the measurement range.                                                      |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-
-
 **HW Platform(s):**
 
 -  `Digilent Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
@@ -140,11 +150,11 @@ Downloads
    -  **PIC32MX320F128H Common Drivers:** :git-no-OS:`Microchip/PIC32MX320F128H/Common`
    
 
-
 Digilent Cerebot MX3cK Quick Start Guide
 ========================================
 
-This section contains a description of the steps required to run the ADXL345 demonstration project on a Digilent Cerebot MX3cK platform.
+This section contains a description of the steps required to run the ADXL345
+demonstration project on a Digilent Cerebot MX3cK platform.
 
 Required Hardware
 -----------------
@@ -161,16 +171,18 @@ Required Software
 
 .. note::
 
-   The ADXL345 demonstration project for PIC32MX320F128H consists of three parts: the ADXL345 Driver, the PmodACL Demo for PIC32MX320F128H and the PIC32MX320F128H Common Drivers.
+   The ADXL345 demonstration project for PIC32MX320F128H consists of three
+   parts: the ADXL345 Driver, the PmodACL Demo for PIC32MX320F128H and the
+   PIC32MX320F128H Common Drivers.
 
    
    All three parts have to be downloaded.
 
-
 Hardware Setup
 --------------
 
-A PmodACL can be connected to the J2 connector of Cerebot MX3cK development board for I2C operation,
+A PmodACL can be connected to the J2 connector of Cerebot MX3cK development
+board for I2C operation,
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_acl_i2c_pic32.jpg
    :align: center
@@ -183,7 +195,8 @@ or to the JE connector of Cerebot MX3cK development board for SPI operation.
 Reference Project Overview
 --------------------------
 
-The following commands were implemented in this version of ADXL345 reference project for Cerebot MX3cK board.
+The following commands were implemented in this version of ADXL345 reference
+project for Cerebot MX3cK board.
 
 ============== =====================================================
 Command        Description
@@ -200,16 +213,16 @@ accelerationZ? Displays the acceleration on Z axis.
 interrupts?    Displays the state of the interrupts.
 ============== =====================================================
 
-Commands can be executed using a serial terminal connected to the UART1 peripheral of PIC32MX320F128H.
+Commands can be executed using a serial terminal connected to the UART1
+peripheral of PIC32MX320F128H.
 
-The following image shows a generic list of commands in a serial terminal connected to processor’s UART peripheral.
-
+The following image shows a generic list of commands in a serial terminal
+connected to processor’s UART peripheral.
 
 |image1|
 
 Software Project Setup
 ----------------------
-
 
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -240,7 +253,8 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
    :align: center
 
--  After the project is created, all the downloaded source files have to be copied in the project folder and included in the project.
+-  After the project is created, all the downloaded source files have to be
+   copied in the project folder and included in the project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
    :align: center
@@ -250,12 +264,11 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
 
-
-
 Digilent Cerebot MC7 Quick Start Guide
 ======================================
 
-This section contains a description of the steps required to run the ADXL345 demonstration project on a Digilent Cerebot MC7 platform.
+This section contains a description of the steps required to run the ADXL345
+demonstration project on a Digilent Cerebot MC7 platform.
 
 Required Hardware
 -----------------
@@ -272,7 +285,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodACL can be connected to the J6 connector of Cerebot MC7 development board for I2C operation,
+A PmodACL can be connected to the J6 connector of Cerebot MC7 development board
+for I2C operation,
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_acl_i2c_dspic33.jpg
    :align: center
@@ -285,7 +299,8 @@ or to the JB connector of Cerebot MC7 development board for SPI operation.
 Reference Project Overview
 --------------------------
 
-Following commands were implemented in this version of ADXL345 reference project for Cerebot MC7 board.
+Following commands were implemented in this version of ADXL345 reference project
+for Cerebot MC7 board.
 
 +----------------+----------------------------------------------------------------------+
 | Command        | Description                                                          |
@@ -301,16 +316,16 @@ Following commands were implemented in this version of ADXL345 reference project
 | interrupts?    | Displays the state of the interrupts.                                |
 +----------------+----------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART1 peripheral of dsPIC33FJ128MC706A.
+Commands can be executed using a serial terminal connected to the UART1
+peripheral of dsPIC33FJ128MC706A.
 
-The following image shows a list of commands in a serial terminal connected to processor’s UART peripheral.
-
+The following image shows a list of commands in a serial terminal connected to
+processor’s UART peripheral.
 
 |image2|
 
 Software Project Setup
 ----------------------
-
 
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -341,7 +356,8 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
    :align: center
 
--  After the project is created, the source files have to be copied in the project folder and included in the project.
+-  After the project is created, the source files have to be copied in the
+   project folder and included in the project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
    :align: center
@@ -351,12 +367,11 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
    :align: center
 
-
-
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
 ==========================================================
 
-This section contains a description of the steps required to run the ADXL345 chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
+This section contains a description of the steps required to run the ADXL345
+chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
 
 Required Hardware
 -----------------
@@ -372,7 +387,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodACL can be connected to the J2 connector of Cerebot MX3cK development board for I2C operation,
+A PmodACL can be connected to the J2 connector of Cerebot MX3cK development
+board for I2C operation,
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_acl_i2c_pic32_arduino.jpg
    :align: center
@@ -385,7 +401,8 @@ or to the JE connector of Cerebot MX3cK development board for SPI operation.
 Reference Project Overview
 --------------------------
 
-Following commands were implemented in this version of ADXL345 reference project for Cerebot MX3cK board.
+Following commands were implemented in this version of ADXL345 reference project
+for Cerebot MX3cK board.
 
 +----------------+----------------------------------------------------------------------+
 | Command        | Description                                                          |
@@ -413,7 +430,6 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
@@ -437,19 +453,14 @@ This section presents the steps for developing a chipKIT application that will r
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_3.png
    :align: center
 
-
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_dspic33.png

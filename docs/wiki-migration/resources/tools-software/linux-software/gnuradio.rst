@@ -5,8 +5,8 @@ GNU Radio is a free & open-source software development toolkit that provides sig
 
 .. warning::
 
-   If you are using gnuradio 3.10 or newer gr-iio is already provided within the base install of gnuradio itself. 3.9 is not supported in any form by gr-iio.
-
+   If you are using gnuradio 3.10 or newer gr-iio is already provided within the
+   base install of gnuradio itself. 3.9 is not supported in any form by gr-iio.
 
 Linux Installation
 ==================
@@ -94,7 +94,8 @@ Build and install libiio from source:
 GNU Radio and gr-iio
 --------------------
 
-If you did not install libiio from source you will need the following packages as well:
+If you did not install libiio from source you will need the following packages
+as well:
 
 -  bison
 -  flex
@@ -121,8 +122,11 @@ GNU Radio 3.7
 
    We would highly recommend upgrading to gr-3.8+. gr-iio was accepted into `gr-iio mainline gnuradio <https://github.com/analogdevicesinc/gr-iio mainline gnuradio>`_ and will be directly provided with it from 3.10+
 
-
-On Ubuntu 16.04 or newer GNU Radio can be installed from the package management. The installed version should be compatible with the gr-iio package build from source. Libiio and gr-iio may also be available from the package management, but to get the latest and most feature complete work, it’s recommend to build it from the latest github sources.
+On Ubuntu 16.04 or newer GNU Radio can be installed from the package management.
+The installed version should be compatible with the gr-iio package build from
+source. Libiio and gr-iio may also be available from the package management, but
+to get the latest and most feature complete work, it’s recommend to build it
+from the latest github sources.
 
 ::
 
@@ -160,7 +164,8 @@ Build and install gr-iio from source:
 GNU Radio 3.8.2
 ~~~~~~~~~~~~~~~
 
-GNU Radio 3.8.2 is already installed on the latest Kuiper version, but if for some reason you have to install it, here is how:
+GNU Radio 3.8.2 is already installed on the latest Kuiper version, but if for
+some reason you have to install it, here is how:
 
 ::
 
@@ -177,15 +182,23 @@ For 3.7, GNU Radio will recommend you include ``/usr/local/lib${type}/python${PY
 
    cmake -DCMAKE_INSTALL_PREFIX=/usr .
 
-For 3.7, certain binary installs of GNU Radio, python binding are placed in a competing folder to GNU Radio's built-in blocks. This may require you to manually copy blocks between the /usr/lib and /usr/local/lib. If you receive import error for iio_swig this is likely the case. To remedy this move the blocks between the necessary folders:
+For 3.7, certain binary installs of GNU Radio, python binding are placed in a
+competing folder to GNU Radio's built-in blocks. This may require you to
+manually copy blocks between the /usr/lib and /usr/local/lib. If you receive
+import error for iio_swig this is likely the case. To remedy this move the
+blocks between the necessary folders:
 
 ::
 
    cp -r /usr/local/lib/python2.7/dist-packages/gnuradio/iio /usr/lib/python2.7/dist-packages/gnuradio/
 
-This is due to the iio python blocks being placed in the gnuradio subfolder. This is required since the iio language binding for python would overwrite these blocks.
+This is due to the iio python blocks being placed in the gnuradio subfolder.
+This is required since the iio language binding for python would overwrite these
+blocks.
 
-For 3.8, make sure the gr-iio swig interface is on your PYTHONPATH. Otherwise, you will get import errors in python. The common command would be (depending on OS and install location):
+For 3.8, make sure the gr-iio swig interface is on your PYTHONPATH. Otherwise,
+you will get import errors in python. The common command would be (depending on
+OS and install location):
 
 ::
 
@@ -218,7 +231,8 @@ Next back in Ubuntu, add the following to your .bashrc file:
 
 Then in Ubuntu source the file with command ``source ~/.bashrc``
 
-Next, launch Xming in Windows which should only add an icon to your taskbar tray.
+Next, launch Xming in Windows which should only add an icon to your taskbar
+tray.
 
 Finally, launch GNU Radio Companion from Ubuntu with command ``gnuradio-companion``\ This should launch the familar GUI for GNU Radio.
 
@@ -238,8 +252,13 @@ Using the FMCOMMS-2/3/4 blocks
 
 .. note::
 
-   Although the GNU Radio block is called "FMCOMMS-2", it will work with the any of the AD-FMCOMMS[234], ADRV9361, ADRV9364, ADRV9363 or ARRADIO boards. The FMCOMMS-2 IIO blocks can run over the IP network or USB. By setting the "IIO context URI" parameter to the IP address of the target board, you can stream samples from/to the remote board. It should be preferred when possible, as it is faster, knowing that the target board does not have the processing power of your PC.
-
+   Although the GNU Radio block is called "FMCOMMS-2", it will work with the any
+   of the AD-FMCOMMS[234], ADRV9361, ADRV9364, ADRV9363 or ARRADIO boards. The
+   FMCOMMS-2 IIO blocks can run over the IP network or USB. By setting the "IIO
+   context URI" parameter to the IP address of the target board, you can stream
+   samples from/to the remote board. It should be preferred when possible, as it
+   is faster, knowing that the target board does not have the processing power
+   of your PC.
 
 Common
 ~~~~~~
@@ -252,7 +271,7 @@ Source Block
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/fmcomms234_source.png
    :align: right
-   :width: 300px
+   :width: 300
 
 -  **RF Bandwidth(MHz):** Configures RX analog filters: RX TIA LPF and RX BB LPF. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 -  **Sample Rate(MSPS):** Frequency at which the hardware will input/output samples. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
@@ -275,7 +294,7 @@ Sink Block
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/fmomms234_sink.png
    :align: right
-   :width: 300px
+   :width: 300
 
 -  **RF Bandwidth(MHz):** Configures TX analog filters: TX BB LPF and TX Secondary LPF. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 -  **Sample Rate(MSPS):** Frequency at which the hardware will input/output samples :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
@@ -305,7 +324,7 @@ Source Block
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/plutosdr_source.png
    :align: right
-   :width: 300px
+   :width: 300
 
 -  **RF Bandwidth(MHz):** Configures RX analog filters: RX TIA LPF and RX BB LPF. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 -  **Sample Rate(MSPS):** Frequency at which the hardware will input/output samples. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
@@ -326,7 +345,7 @@ Sink Block
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/plutosdr_sink.png
    :align: right
-   :width: 300px
+   :width: 300
 
 -  **RF Bandwidth(MHz):** Configures TX analog filters: TX BB LPF and TX Secondary LPF. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 -  **Sample Rate(MSPS):** Frequency at which the hardware will input/output samples :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
@@ -341,4 +360,5 @@ Sink Block
 IIO Examples
 ------------
 
-Several sample flow graphs that use the FMCOMMS-2/3/4 IIO blocks are provided in our GNU Radio repository. They can be found in the "iio-example" folder.
+Several sample flow graphs that use the FMCOMMS-2/3/4 IIO blocks are provided in
+our GNU Radio repository. They can be found in the "iio-example" folder.

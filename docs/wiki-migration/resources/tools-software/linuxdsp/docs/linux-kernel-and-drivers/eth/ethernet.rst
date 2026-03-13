@@ -4,7 +4,10 @@ Ethernet driver and performance
 Introduction
 ------------
 
-This document describes how to enable the gigabit and 10/100 Ethernet devices on the ADSP-SC5xx Ezkit board in Linux. The performance benchmark data of the gigabit Ethernet device are provided for reference. The data is collected when running netperf testing with an Ubuntu host PC.
+This document describes how to enable the gigabit and 10/100 Ethernet devices on
+the ADSP-SC5xx Ezkit board in Linux. The performance benchmark data of the
+gigabit Ethernet device are provided for reference. The data is collected when
+running netperf testing with an Ubuntu host PC.
 
 Hardware Requirement
 --------------------
@@ -18,8 +21,10 @@ Hardware Requirement
 
 .. note::
 
-   ADSP-SC573 EZ-kit board and ADSP-SC589 EZ-kit board version 2.0 have the TI DP83867 as the Gigabit Ethernet PHY device on the boards, other ADSP-SC5XX EZ-kit boards have the TI DP83865 as the Gigabit Ethernet PHY device on the boards.
-
+   ADSP-SC573 EZ-kit board and ADSP-SC589 EZ-kit board version 2.0 have the TI
+   DP83867 as the Gigabit Ethernet PHY device on the boards, other ADSP-SC5XX
+   EZ-kit boards have the TI DP83865 as the Gigabit Ethernet PHY device on the
+   boards.
 
 Software Configuration
 ----------------------
@@ -27,7 +32,9 @@ Software Configuration
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-The netperf test utility is optional. You can build it for both the target board and your host Linux system. Add the netperf package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
+The netperf test utility is optional. You can build it for both the target board
+and your host Linux system. Add the netperf package in the filesystem, it's
+enabled in adsp-sc5xx-full image by default.
 
 ::
 
@@ -57,7 +64,9 @@ The on-chip Ethernet devices on the ADSP-SC5xx serial processors can be enabled 
 Enable Ethernet PHY device driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Different version's EZ-kit has the different Gigabit Ethernet PHY device on board, therefore, various Ethernet PHY device drivers should be enabled in the Linux kernel configuration system for ADSP-SC5XX EZ-kit boards.
+Different version's EZ-kit has the different Gigabit Ethernet PHY device on
+board, therefore, various Ethernet PHY device drivers should be enabled in the
+Linux kernel configuration system for ADSP-SC5XX EZ-kit boards.
 
 ::
 
@@ -135,7 +144,8 @@ Configure Device Tree
 Performance Benchmark Example
 -----------------------------
 
-The Ethernet performance is tested with the netperf utility running on a Linux host on one end, and on the ADSP-SC5xx EZKIT board on the other end.
+The Ethernet performance is tested with the netperf utility running on a Linux
+host on one end, and on the ADSP-SC5xx EZKIT board on the other end.
 
 Netperf Example Usage
 ~~~~~~~~~~~~~~~~~~~~~

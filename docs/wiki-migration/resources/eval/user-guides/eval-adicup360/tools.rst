@@ -1,7 +1,8 @@
 Tool Chain Guides
 =================
 
-This chapter provides all the necessary steps to get the software environment up and running.
+This chapter provides all the necessary steps to get the software environment up
+and running.
 
 It contains four main sections:
 

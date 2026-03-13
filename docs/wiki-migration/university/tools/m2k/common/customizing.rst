@@ -6,7 +6,8 @@ If you are already on a 192.168.2.\* network
 
 In `RFC 1918 <https://tools.ietf.org/html/rfc1918>`_ the `Internet Engineering Task Force <http://ietf.org/>`_ has directed the `Internet Assigned Numbers Authority <https://www.iana.org/>`_ to reserve the IPv4 address range the ``192.168.*.*`` (and others) for `private networks <https://en.wikipedia.org/wiki/Private_network>`_. Analog Devices picked the ``192.168.2.*`` subnet for it's private network for host to M2K devices, but there isn't anything stopping other people (including yourself) to be running a real network on the ``192.168.2.*`` subnet.
 
-It's a quick update to change the M2K network settings, which is described below.
+It's a quick update to change the M2K network settings, which is described
+below.
 
 Multiple devices
 ----------------
@@ -14,14 +15,15 @@ Multiple devices
 When using multiple M2K devices on the same host, there are a few options:
 
 -  usb mode via libiio, no changes are required, and things will work out of the box
--  network mode, where changes to the network settings are required (more below).
+-  network mode, where changes to the network settings are required (more
+   below).
 
 In network mode, the default configuration is to have an `IP address <https://en.wikipedia.org/wiki/IP_address>`_ for the host (``192.168.2.10``), and the actual M2K device (``192.168.2.1``). As one can expect - IP addresses are expected to be unique, and the default configuration works well when you have one device, but not as well when you have multiple.
 
 In order to use multiple devices, you must change their IP address. This is managed by updating the ``config.txt`` file on the M2K mass storage device.
 
 .. image:: https://wiki.analog.com/_media/university/tools/adalm2000/common/win_config_file.png
-   :width: 800px
+   :width: 800
 
 ::
 
@@ -58,7 +60,9 @@ Diagnostic Report
 
 Setting this to ``1`` will generate a file called ``diagnostic_report``, which contains various status information about the system and the Hardware.
 
-The information contained in this report can be used to asses and debug system problems or failures. In order to guarantee fast and precise support it is recommended to always include a diagnostic when reporting a problem.
+The information contained in this report can be used to asses and debug system
+problems or failures. In order to guarantee fast and precise support it is
+recommended to always include a diagnostic when reporting a problem.
 
 DFU
 ~~~
@@ -78,7 +82,8 @@ Setting this to ``1`` will calibrate the board.
 Changing the root password on the target
 ----------------------------------------
 
-In M2k firmware version v0.26 and later there are two new command/scripts, facilitating persistent SSH key and password changes.
+In M2k firmware version v0.26 and later there are two new command/scripts,
+facilitating persistent SSH key and password changes.
 
 Use the ``device_passwd`` command to permanently change the password. This script/command calls the Linux passwd command and stores all user/password related files on mtd2 (JFFS2). The next time the system boots it will check all the MD5 sums and then uses this password instead.
 
@@ -98,13 +103,13 @@ Use the ``device_passwd`` command to permanently change the password. This scrip
       #
    
 
-
 **Note:** In case you forgot your password, there a mechanism which allows you to revert to the default password using the config.txt file on the mass storage device. Add ``revert_passwd = 1`` under the ``[ACTIONS]`` sections, then follow the procedure described here: :doc:`Config File ACTIONS </wiki-migration/university/tools/m2k/common/customizing>`
 
 Enabling persistent SSH keys
 ----------------------------
 
-In M2k firmware version v0.26 and later there are two new command/scripts, facilitating persistent SSH key and password changes.
+In M2k firmware version v0.26 and later there are two new command/scripts,
+facilitating persistent SSH key and password changes.
 
 Use the ``device_persistent_keys`` command to permanently store your private SSH dropbear keys. This script/command copies the current key or generates one, which is now stored on mtd2 (JFFS2). The next time the system boots it will check the MD5 sum and then uses this key instead.
 
@@ -122,4 +127,3 @@ Use the ``device_persistent_keys`` command to permanently store your private SSH
       Fingerprint: sha1!! 10:9c:40:18:f8:e3:10:f1:c8:62:ba:8d:27:48:1b:35:16:8d:a5:f5
       #
    
-

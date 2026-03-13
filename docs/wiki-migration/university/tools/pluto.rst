@@ -3,11 +3,17 @@ ADALM-PLUTO Overview
 
 .. image:: https://wiki.analog.com/_media/pluto/pluto_in_hand.png
    :align: right
-   :width: 250px
+   :width: 250
 
 The :adi:`ADALM-PLUTO` Active Learning Module (PlutoSDR) :adi:`Buy <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM-PLUTO>` is an easy to use tool available from Analog Devices Inc. (ADI) that can be used to introduce fundamentals of `Software Defined Radio (SDR) <https://en.wikipedia.org/wiki/Software-defined_radio>`_ or `Radio Frequency (RF) <https://en.wikipedia.org/wiki/Radio_frequency>`_ or `Communications <https://en.wikipedia.org/wiki/Communication_theory>`_ as advanced topics in electrical engineering in a self or instructor lead setting. The PlutoSDR allows students to better understand the real-world RF around them, and is applicable for all students, at all levels, from all backgrounds. Early learning in a hands-on manner with the PlutoSDR will ensure a solid foundation for students to build on, as they pursue science, technology, or engineering degrees.
 
-The PlutoSDR Active Learning Module is a tool that closes the relationship between theory and practical radio frequency activities of the user. It provides a personal portable lab that, when used with a host, can augment the learning that takes place in the classroom. A variety of software packages such as MATLAB or Simulink provide an innovative graphical user interface (GUI), allowing intuitive usage and minimizing the learning curve, enabling students to learn faster, work smarter, and explore more!
+The PlutoSDR Active Learning Module is a tool that closes the relationship
+between theory and practical radio frequency activities of the user. It provides
+a personal portable lab that, when used with a host, can augment the learning
+that takes place in the classroom. A variety of software packages such as MATLAB
+or Simulink provide an innovative graphical user interface (GUI), allowing
+intuitive usage and minimizing the learning curve, enabling students to learn
+faster, work smarter, and explore more!
 
 The :adi:`ADALM-PLUTO` Active Learning Module is a learning tool for everyone.
 
@@ -20,8 +26,10 @@ PlutoSDR is a self-contained RF lab in your hand. It's more than the combination
 
 .. tip::
 
-   PlutoSDR will populate as a Mass Storage Device when plugged into a computer. The presented storage device contains a getting started guide (info.html), configuration control for your device (config.txt), and licensing information (LICENSE.html).
-
+   PlutoSDR will populate as a Mass Storage Device when plugged into a computer.
+   The presented storage device contains a getting started guide (info.html),
+   configuration control for your device (config.txt), and licensing information
+   (LICENSE.html).
 
 -  :doc:`PlutoSDR Users & students </wiki-migration/university/tools/pluto/users>`
 
@@ -32,17 +40,25 @@ PlutoSDR is a self-contained RF lab in your hand. It's more than the combination
 
 -  :doc:`HDL and Embedded Software Resources </wiki-migration/university/tools/pluto/developers>`:
 
-   -  This material is for those who normally write custom software or HDL (for the FPGA) that runs directly on the PlutoSDR. This may put the PlutoSDR in different modes, and support different external USB devices (including LAN (via USB), or WiFi (via USB)), extending the capabilities of the device. This includes all the information to compile HDL projects, compile kernels, change to custom USB PID/VID and/or run custom user space applications. For example, you could set up:
+   -  This material is for those who normally write custom software or HDL (for
+      the FPGA) that runs directly on the PlutoSDR. This may put the PlutoSDR in
+      different modes, and support different external USB devices (including LAN
+      (via USB), or WiFi (via USB)), extending the capabilities of the device.
+      This includes all the information to compile HDL projects, compile
+      kernels, change to custom USB PID/VID and/or run custom user space
+      applications. For example, you could set up:
 
       -  a standalone airplane tracking station which communicates to the internet via Wifi or LAN.
       -  a mobile terminal to emulate someone else's keyboard.
 
 -  :doc:`PCB and Layout Resources </wiki-migration/university/tools/pluto/hackers>`:
 
-   -  This section may be useful for those taking the PCB out of the case and making hardware modifications, or connecting GPIO to different devices, or attempting to synchronize multiple PlutoSDRs together. Since this is pretty wide open, we don't have any examples of this - but we do provide the info needed, including all the schematics and layout.
+   -  This section may be useful for those taking the PCB out of the case and
+      making hardware modifications, or connecting GPIO to different devices, or
+      attempting to synchronize multiple PlutoSDRs together. Since this is
+      pretty wide open, we don't have any examples of this - but we do provide
+      the info needed, including all the schematics and layout.
 
 It's expected that most people will work their way down through each section, reading and skimming most of the content. The content is in a constant state of improvement, so if you do have a question, please ask at :ez:`EngineerZone <community/university-program>`, or check the :doc:`help and support </wiki-migration/university/tools/pluto/help_support>` page.
 
-
 .. esd-warning::
-

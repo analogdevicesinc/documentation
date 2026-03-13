@@ -1,9 +1,12 @@
 Rebooting Pluto/M2k
 ===================
 
-There are few different use cases, and methods to locally (USB/Serial), or remotely (USB/Network) to reboot a Pluto/M2k.
+There are few different use cases, and methods to locally (USB/Serial), or
+remotely (USB/Network) to reboot a Pluto/M2k.
 
-Pluto/M2k was designed never to have to be rebooted - but software bugs happen. Before you reboot things - try to ask yourself "why", what went wrong, how do I reproduce, and how can I file a bug report that will help someone debug.
+Pluto/M2k was designed never to have to be rebooted - but software bugs happen.
+Before you reboot things - try to ask yourself "why", what went wrong, how do I
+reproduce, and how can I file a bug report that will help someone debug.
 
 ::
 
@@ -92,7 +95,6 @@ Reboot to DFU-RAM
           sudo dfu-util -d 0456:b673,0456:b674 -D ./build/pluto.dfu -a firmware.dfu
           sudo dfu-util -d 0456:b673,0456:b674  -a firmware.dfu -e
    
-
 
 Reboot to DFU-Flash
 -------------------

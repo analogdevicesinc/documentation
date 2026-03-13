@@ -2,15 +2,12 @@
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/linux/kernel/zynq.html
 
-
-
 Building the Zynq Linux kernel and devicetrees from source
 ==========================================================
 
 .. warning::
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/linux/kernel/zynq.html
-
 
 The script method
 -----------------
@@ -28,7 +25,8 @@ The script will:
 -  clone the ADI kernel tree
 -  download the Linaro GCC toolchain [if no other is specified]
 -  build the ADI kernel tree
--  export/copy the Image file and device tree file out of the kernel build folder
+-  export/copy the Image file and device tree file out of the kernel build
+   folder
 
 Running the script in one line [with defaults]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,60 +60,47 @@ Checkout the Release branch
 
    Use the latest release, if not required otherwise!
 
-
 +----------------------------+
-
-
 
 | Release names and Branches |
 
 +============================+
 
-
 | 2014_R2                    |
 
 +----------------------------+
-
 
 | 2015_R2                    |
 
 +----------------------------+
 
-
 | 2016_R1                    |
 
 +----------------------------+
-
 
 | 2016_R2                    |
 
 +----------------------------+
 
-
 | 2017_R1                    |
 
 +----------------------------+
-
 
 | 2018_R1                    |
 
 +----------------------------+
 
-
 | 2018_R2                    |
 
 +----------------------------+
-
 
 | 2019_R1                    |
 
 +----------------------------+
 
-
 | 2019_R2                    |
 
 +----------------------------+
-
 
 | 2021_R1                    |
 
@@ -130,9 +115,11 @@ Checkout the Release branch
 Setup cross compile environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are a few toolchains that can be used. The Xilinx toolchain is recommended, but the Linaro toolchain can also be used.
+There are a few toolchains that can be used. The Xilinx toolchain is
+recommended, but the Linaro toolchain can also be used.
 
-Other toolchains/compilers for ARM may work as well, but the ones described here have been tested and found to work.
+Other toolchains/compilers for ARM may work as well, but the ones described here
+have been tested and found to work.
 
 Using the Xilinx toolchain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,7 +152,6 @@ Release names and Branches Required Vivado/Vitis versions
 
    Find the path to the Xilinx installation folder, and then use it to replace this string: :math:`PATH_to_Xilinx that is written above. Same goes for the `\ Vitis_version, where you choose the Vitis version.
 
-
 Using the Linaro toolchain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -186,7 +172,9 @@ Example:
 Configure the kernel
 ~~~~~~~~~~~~~~~~~~~~
 
-Inside the repository, generate the configuration file before building the kernel tree. The command shown below is generic and is not project specific. As long as the board is a ZYNQ FPGA, use the configuration below.
+Inside the repository, generate the configuration file before building the
+kernel tree. The command shown below is generic and is not project specific. As
+long as the board is a ZYNQ FPGA, use the configuration below.
 
 ::
 
@@ -314,7 +302,8 @@ Build the one that fits your FPGA carrier and FMC card
 | zynq-zed-imageon                                  | `Zed Board <http://zedboard.org/product/zedboard>`_                           | FMC-IMAGEON                                                                                                                                                                                                          |
 +---------------------------------------------------+-------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Building the device tree uses 'make' by turning the .dts file to a .dtb. The command is simply 'make' plus the device tree name with a .dtb file extension.
+Building the device tree uses 'make' by turning the .dts file to a .dtb. The
+command is simply 'make' plus the device tree name with a .dtb file extension.
 
 ::
 
@@ -338,9 +327,12 @@ On the target platform
 Modifying devicetrees
 ~~~~~~~~~~~~~~~~~~~~~
 
-1. Make sure the boot partition is mounted. On new images, this can be done by right-clicking the boot icon on the desktop and selecting the "Mount Volume" option. The partition will then be mounted at /media/analog/boot.
+1. Make sure the boot partition is mounted. On new images, this can be done by
+   right-clicking the boot icon on the desktop and selecting the "Mount Volume"
+   option. The partition will then be mounted at /media/analog/boot.
 
-2. Convert the compiled devicetree related to the target back into an editable format.
+2. Convert the compiled devicetree related to the target back into an editable
+   format.
 
 ::
 
@@ -348,7 +340,9 @@ Modifying devicetrees
 
 3. Modify the devicetree.dts file as required.
 
-4. Recompile the devicetree file. Note that this will overwrite the original dtb file, copy or rename the original file if you want to keep it before running this step.
+4. Recompile the devicetree file. Note that this will overwrite the original dtb
+   file, copy or rename the original file if you want to keep it before running
+   this step.
 
 ::
 
@@ -357,7 +351,6 @@ Modifying devicetrees
 Building the Zynq boot image
 ----------------------------
 
-
 How to build the Zynq boot image BOOT.BIN
 =========================================
 
@@ -365,10 +358,11 @@ How to build the Zynq boot image BOOT.BIN
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html\
 
+The boot image BOOT.BIN is built using the bootgen tool which requires several
+input files.
 
-The boot image BOOT.BIN is built using the bootgen tool which requires several input files.
-
-Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be found here:
+Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be
+found here:
 
 -  `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`_ projects
 
@@ -381,7 +375,8 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 Use script to build BOOT.BIN
 ----------------------------
 
-For ease of use, we provide a bash shell script which allows building BOOT.BIN from system_top.xsa and u-boot.elf
+For ease of use, we provide a bash shell script which allows building BOOT.BIN
+from system_top.xsa and u-boot.elf
 
 Download
 ~~~~~~~~
@@ -399,7 +394,6 @@ The script can be downloaded from here:
    
       $ chmod +x build_boot_bin.sh
    
-
 
 Usage
 ~~~~~
@@ -433,8 +427,3 @@ There is also a version of script that works in Windows Powershell: `build_boot_
    \ NOTE: u-boot.elf For those who don't want to build u-boot themselves. The u-boot.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz
 
    
-
-
-
-
-

@@ -11,18 +11,18 @@ Unlike the normal :doc:`Logic - And, Or, Nand, Nor </wiki-migration/resources/to
 
 **To change the operator:** Left click on the icon button, each click will toggle the active operator which is shown in the icon image and label.
 
-
 |logicpic2.png|
 
 .. hint::
 
-   Note: the operator is a compile time settings you will have to compile and download the project each time you change the operator.
-
+   Note: the operator is a compile time settings you will have to compile and
+   download the project each time you change the operator.
 
 Example
 -------
 
-In the following example, the words 0x000000AA and 0x0000000F have the AND logic operator applied to them. The resulting output is 0x0000000A.
+In the following example, the words 0x000000AA and 0x0000000F have the AND logic
+operator applied to them. The resulting output is 0x0000000A.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/bitwiselogicexample.jpg
    :alt: bitwiselogicexample.jpg

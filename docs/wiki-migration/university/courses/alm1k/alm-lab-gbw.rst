@@ -4,14 +4,17 @@ Activity: Op-Amp Gain Bandwidth Product, For ADALM1000
 Objective:
 ----------
 
-The objective of this activity is to explore a key parameter that affects the performance of op-amps at high frequencies. The parameter is the gain-bandwidth product (GBW) or unity gain bandwidth.
+The objective of this activity is to explore a key parameter that affects the
+performance of op-amps at high frequencies. The parameter is the gain-bandwidth
+product (GBW) or unity gain bandwidth.
 
 Notes:
 ------
 
 As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current –V is added as in CA-V or when configured to force current / measure voltage –I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage –H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
 
 Background:
 -----------
@@ -24,24 +27,22 @@ G\ :sub:`f` is defined as the gain-bandwidth product, GBW, and for all input fre
 
 Figure 1, from the OP97 datasheet, graphically illustrates this relationship. When feedback is provided, as in an inverting amplifier, the gain is given by G = –R\ :sub:`2`/R\ :sub:`1`; however, it must be recognized that the magnitude of this gain can never exceed the gain as given by the gain-bandwidth product.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 OP97 Open-Loop Gain, Phase vs. Frequency
 
-
-The OP97 amplifier has a pin ( pin 5 ) which allows the user to connect an external frequency compensation capacitor to effectively lower the gain-bandwidth product. Figure 2 shows the change in bandwidth for different external capacitors.
-
-
+The OP97 amplifier has a pin ( pin 5 ) which allows the user to connect an
+external frequency compensation capacitor to effectively lower the
+gain-bandwidth product. Figure 2 shows the change in bandwidth for different
+external capacitors.
 
 |image2|
 
 .. container:: centeralign
 
    Figure 2, OP97 Gain Bandwidth Product vs external compensation capacitor
-
 
 Materials:
 ~~~~~~~~~~
@@ -53,18 +54,27 @@ Directions:
 
 Build the circuit shown in figure 3 on your solderless breadboard to measure the frequency response of a inverting amplifier configured with a closed loop gain of 1000. Because the circuit’s gain is so high, the circuit needs to be driven with a very small input signal. Since the AWG generator cannot accurately produce small signals with low noise, a 1/1000 voltage divider, R\ :sub:`3`, R\ :sub:`4`\ \||R\ :sub:`1`, is used to reduce the 2V p-p sine signal to 2 mV p-p at the inverting amplifier input. R\ :sub:`4` and R\ :sub:`1` are effectively in parallel due to the "virtual ground" at pin 2. The parallel combination of R\ :sub:`4` and R\ :sub:`1` will be 50 Ω which with the 47 KΩ R\ :sub:`3` results in a divider ratio close to 1/1000.
 
-
 |image3|
 
 .. container:: centeralign
 
    Figure 3, Inverting amplifier with gain of 1000
 
-
 Procedure:
 ~~~~~~~~~~
 
-Set CH-A to SVMI mode and shape sine. Set the Min value to 1.5 V and the Max value to 3.5 V. Set the frequency of AWG channel A to 250 Hz. Set CH-B to Hi-Z mode. To insure that the amplifier output is the correct amplitude and not clipped, use the ALICE Oscilloscope tool to measure the signal in the time domain. Because the attenuation of the voltage divider is approximately the same as the inverting gain the output should be inverted and have about the same amplitude as the input from AWG CH-A. The input offset voltage of the op-amp is also multiplied by the gain of 1000. If the input offset is greater than 1 or 2 mV adjusting the average level of the AWG A signal will not be sufficient to bring the output signal within range. For those cases where the input offset voltage is large injecting a small DC correction voltage at the non-inverting input will be necessary.
+Set CH-A to SVMI mode and shape sine. Set the Min value to 1.5 V and the Max
+value to 3.5 V. Set the frequency of AWG channel A to 250 Hz. Set CH-B to Hi-Z
+mode. To insure that the amplifier output is the correct amplitude and not
+clipped, use the ALICE Oscilloscope tool to measure the signal in the time
+domain. Because the attenuation of the voltage divider is approximately the same
+as the inverting gain the output should be inverted and have about the same
+amplitude as the input from AWG CH-A. The input offset voltage of the op-amp is
+also multiplied by the gain of 1000. If the input offset is greater than 1 or 2
+mV adjusting the average level of the AWG A signal will not be sufficient to
+bring the output signal within range. For those cases where the input offset
+voltage is large injecting a small DC correction voltage at the non-inverting
+input will be necessary.
 
 R\ :sub:`5` can be optionally added if the amplifier shows any instability ( small oscillations ) when driving the relatively large input capacitance of CH-B.
 
@@ -72,19 +82,26 @@ Use the ALICE Bode plotter tool to measure the gain ( and optionally the phase )
 
 Find the -3dB frequency or F\ :sub:`cf` on the Bode plot ( magenta curve in figure 4). Calculate the GBW by multiplying this by the absolute value of the gain, R\ :sub:`2`/R\ :sub:`1` or 1000 in this case.
 
-
 |image4|
 
 .. container:: centeralign
 
    Figure 4, typical OP97 Bode Plot Gain = 1000
 
+Based on figure 2, connect different values of capacitors from pin 5 of the OP97
+to ground. Try values in the range of 100 pF to 10 nF and see how your results
+compare to figure 2.
 
-Based on figure 2, connect different values of capacitors from pin 5 of the OP97 to ground. Try values in the range of 100 pF to 10 nF and see how your results compare to figure 2.
+From your parts kit substitute other op-amp models and make the same frequency
+response plots and calculate the GBW. Be sure to properly connect each version
+according to its package and pinout. Single op-amps tend to have similar pinouts
+but not the same as duals or quads. Compare your measured results to each
+amplifier’s datasheet specification for GBW.
 
-From your parts kit substitute other op-amp models and make the same frequency response plots and calculate the GBW. Be sure to properly connect each version according to its package and pinout. Single op-amps tend to have similar pinouts but not the same as duals or quads. Compare your measured results to each amplifier’s datasheet specification for GBW.
-
-Note: the ADTL082 amplifier requires a minimum of 8 volts for the power supply and will not operate properly with just the +5 Volts available from the ALM1000. The minus supply of the ADTL082 can be connected to a 3 V battery connected from ground ( battery + ) to pin 4 ( -Vs ) such that -3V is provided.
+Note: the ADTL082 amplifier requires a minimum of 8 volts for the power supply
+and will not operate properly with just the +5 Volts available from the ALM1000.
+The minus supply of the ADTL082 can be connected to a 3 V battery connected from
+ground ( battery + ) to pin 4 ( -Vs ) such that -3V is provided.
 
 **Resources:**
 
@@ -100,10 +117,10 @@ Here is a good technical paper on how to make :adi:`Simple Op Amp Measurements <
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f2.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f3.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f4.png
-   :width: 600px
+   :width: 600

@@ -5,7 +5,6 @@ Block Max and Hold
 
 +--------------------------------------------------------------------------------------------------------------------+
 
-
 | The Max and Hold is a block algorithm compares the input sample with held max value and outputs the highest value. |
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -36,7 +35,8 @@ Output Pins
 Grow Algorithm
 --------------
 
-The module supports growth of Input channels up to 16 and one reset pin. Add Algorithm is not supported.
+The module supports growth of Input channels up to 16 and one reset pin. Add
+Algorithm is not supported.
 
 GUI Controls
 ------------
@@ -51,13 +51,15 @@ No DSP parameters
 Algorithm Description
 ---------------------
 
-This module compares the each channel inputs samples in Block of input samples with held_max value and outputs highest value when reset is Off. Compares the each channel inputs samples in Block of input samples and outputs the highest value when reset pin is high.
+This module compares the each channel inputs samples in Block of input samples
+with held_max value and outputs highest value when reset is Off. Compares the
+each channel inputs samples in Block of input samples and outputs the highest
+value when reset pin is high.
 
 Supported IC's
 --------------
 
 +----------+
-
 
 | ADAU145x |
 

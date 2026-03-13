@@ -3,7 +3,9 @@
 Save Sequence
 =============
 
-This action allows the user to save a sequence file in XML format, which contains all the details from the sequence window. The function call takes in 1 arguments. This API returns the SSPResult type.
+This action allows the user to save a sequence file in XML format, which
+contains all the details from the sequence window. The function call takes in 1
+arguments. This API returns the SSPResult type.
 
 API
 ---
@@ -20,7 +22,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the SaveSequence action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+SaveSequence action.
 
 ::
 

@@ -8,7 +8,7 @@ Standard Peak
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/standardpeakgraph.png
    :alt: standardpeakgraph.png
-   :width: 650px
+   :width: 650
 
 Variants
 --------
@@ -19,7 +19,11 @@ Variants
 Description
 -----------
 
-The Standard Peak Compressor is a stereo compressor that allows direct control over threshold and ratio. In the pop-up GUI, graphical controls are given for threshold, ratio, and time constants. Also there are visual indicators showing input, output, and compression levels. The detection signal used for this Peak compressor is based on the sum of Left and Right channels.
+The Standard Peak Compressor is a stereo compressor that allows direct control
+over threshold and ratio. In the pop-up GUI, graphical controls are given for
+threshold, ratio, and time constants. Also there are visual indicators showing
+input, output, and compression levels. The detection signal used for this Peak
+compressor is based on the sum of Left and Right channels.
 
 Targets Supported
 -----------------

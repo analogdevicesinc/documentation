@@ -1,7 +1,6 @@
 AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ on Microblaze
 ===========================================
 
-
 Linux on the Xilinx FPGA development Board
 ==========================================
 
@@ -9,15 +8,14 @@ Linux on the Xilinx FPGA development Board
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/linux/kernel/microblaze.html
 
-
 .. note::
 
    This content is purely informational, and the best place for questions about this content is normally `Xilinx <https://forums.xilinx.com/t5/Embedded-Linux/bd-p/ELINUX>`_, or a friendly consultant (who you will pay), or `trainer <https://training.linuxfoundation.org/training/embedded-linux-development/>`_. These instructions work for us. That does not mean they are complete, accurate, or supported.
 
-
 20
 
-This guide provides some step-by-step instructions on how to build a Microblaze Linux Kernel image for the FMC board connected to an
+This guide provides some step-by-step instructions on how to build a Microblaze
+Linux Kernel image for the FMC board connected to an
 
 -  `KC705 <https://www.xilinx.com/KC705>`_
 -  `KCU105 <https://www.xilinx.com/KCU105>`_
@@ -33,14 +31,14 @@ Required Software
 -  `Xilinx Vivado Design Suite (Microblaze GNU Tools) <https://www.xilinx.com/products/design-tools/vivado.html>`_
 -  `Microblaze GNU Toolchain <http://xilinx.wikidot.com/mb-gnu-tools>`_ (See note below)
 
-Microblaze gnu toolchain from Xilinx is no longer available on git. Please use gnu tools from Vitis installation as below:
+Microblaze gnu toolchain from Xilinx is no longer available on git. Please use
+gnu tools from Vitis installation as below:
 
 ~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/::math:`PATH ~/linux` export ARCH=microblaze ~/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
 
 .. tip::
 
    Latest released files can be downloaded from :doc:`here </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`
-
 
 Build Linux - Step by Step instructions
 ---------------------------------------
@@ -69,7 +67,6 @@ Get Linux kernel source
       Resolving deltas: 100% (2296596/2296596), done.
    
 
-
 Checkout main branch
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -87,7 +84,6 @@ Checkout main branch
       Switched to a new branch 'main'
    
 
-
 Set Environmental Variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -103,17 +99,16 @@ Set Environmental Variables
       ~/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
    
 
-
 .. tip::
 
-   Instead of sourcing the Vivado settings64.sh script you can alternatively add your microblaze gcc toolchain directly to your PATH variable:
+   Instead of sourcing the Vivado settings64.sh script you can alternatively add
+   your microblaze gcc toolchain directly to your PATH variable:
 
    
    ::
    
       ~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/:$PATH
    
-
 
 Configure Kernel
 ~~~~~~~~~~~~~~~~
@@ -130,7 +125,6 @@ Configure Kernel
       # configuration written to .config
       #
    
-
 
 Get Root File-System
 ~~~~~~~~~~~~~~~~~~~~
@@ -159,21 +153,25 @@ The root file system or rootfs contains everything (besides the Linux kernel its
       2022-01-18 09:52:12 (3,32 MB/s) - ‘rootfs.cpio.gz’ saved [6772207/6772207]
    
 
-
 Build kernel
 ~~~~~~~~~~~~
 
-The result of building the kernel is an elf file in arch/microblaze/boot named simpleImage.<dts file name> based on the dts specified.
+The result of building the kernel is an elf file in arch/microblaze/boot named
+simpleImage.<dts file name> based on the dts specified.
 
-The build process for the kernel searches in the arch/microblaze/boot/dts directory for a specified device tree file and then builds the device tree into the kernel image.
+The build process for the kernel searches in the arch/microblaze/boot/dts
+directory for a specified device tree file and then builds the device tree into
+the kernel image.
 
-The following command shows the general format for the build target name. Note that the <dts file name> does not include the file extension ".dts".
+The following command shows the general format for the build target name. Note
+that the <dts file name> does not include the file extension ".dts".
 
 ::
 
    ~/linux$ make simpleImage.<dts file name>
 
-To see what device-trees for the different FPGA carrier and FMC module combination exist type:
+To see what device-trees for the different FPGA carrier and FMC module
+combination exist type:
 
 ::
 
@@ -224,21 +222,22 @@ To see what device-trees for the different FPGA carrier and FMC module combinati
       Kernel: arch/microblaze/boot/simpleImage.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1 is ready  (#3678)
    
 
-
 .. tip::
 
-   The STRIP image found under arch/microblaze/boot/ is the ELF image which can be loaded via the debugger
-
+   The STRIP image found under arch/microblaze/boot/ is the ELF image which can
+   be loaded via the debugger
 
 Boot Kernel on FPGA Microblaze
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Then one method to load the kernel onto the already built and running FPGA which has the Microblaze processor is to launch XMD or XSDB from the Xilinx Vivado toolset from within .../linux/arch/microblaze/boot and run from the XMD or XSDB shell:
+Then one method to load the kernel onto the already built and running FPGA which
+has the Microblaze processor is to launch XMD or XSDB from the Xilinx Vivado
+toolset from within .../linux/arch/microblaze/boot and run from the XMD or XSDB
+shell:
 
 .. important::
 
    XMD has been deprecated and will be removed in the future. XSDB/XSCT replaces XMD and provides additional functionality. Xilinx recommends you switch to XSDB for command line debugging. You can find more information about these tools in the `Embedded System Tools Reference Manual <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2017_4/ug1043-embedded-system-tools.pdf>`_ (UG1043)
-
 
 For XMD:
 
@@ -286,15 +285,14 @@ From XSDB or XSCT:
 
    xsdb> source run.tcl
 
-(more details, methods of how to get bit file and kernel on flash and/or boot off SD Card is appreciated)
-
-
-
+(more details, methods of how to get bit file and kernel on flash and/or boot
+off SD Card is appreciated)
 
 AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide
 ==========================================================
 
-This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ on:
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ on:
 
 -  `KC705 <https://www.xilinx.com/KC705>`_
 -  `KCU105 <https://www.xilinx.com/KCU105>`_
@@ -336,8 +334,6 @@ Download the pre-build image for you device in question.
    | Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    | HDL branch: hdl_2023_r2
    | HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
-
-
 
 +--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card   | Download                                                                                                                                                                           |
@@ -393,8 +389,6 @@ Download the pre-build image for you device in question.
    | HDL branch: hdl_2022_r2
    | HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
-
-
 +--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card   | Download                                                                                                                                                                            |
 +==============+============+=====================================================================================================================================================================================+
@@ -445,8 +439,6 @@ Download the pre-build image for you device in question.
    | HDL branch: hdl_2021_r2
    | HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
-
-
 +--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card   | Download                                                                                                                                                                            |
 +==============+============+=====================================================================================================================================================================================+
@@ -489,8 +481,6 @@ Download the pre-build image for you device in question.
    | HDL branch: hdl_2021_r1
    | HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
-
-
 +--------------+------------+-----------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card   | Download                                                                                                        |
 +==============+============+=================================================================================================================+
@@ -522,8 +512,6 @@ Download the pre-build image for you device in question.
    | Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    | HDL branch: hdl_2019_r2
    | HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
-
-
 
 +--------------+--------------+---------------------------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card     | Download                                                                                                                        |
@@ -575,8 +563,6 @@ Download the pre-build image for you device in question.
    | Vivado branch:hdl_2018_r1
    | Vivado repository:`hdl <https://github.com/analogdevicesinc/hdl>`_
 
-
-
 +--------------+-------------+------------------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card    | Download                                                                                                               |
 +==============+=============+========================================================================================================================+
@@ -618,7 +604,8 @@ Download the pre-build image for you device in question.
 .. image:: https://wiki.analog.com/_media/section>/resources/tools-software/linux-software/adi-kuiper_images/master#master_microblaze_images&
    :alt: master#master_microblaze_images&
 
-There are two ways of loading the design. One is using the XMD command line. Open a xmd command window/shell and enter the commands manually.
+There are two ways of loading the design. One is using the XMD command line.
+Open a xmd command window/shell and enter the commands manually.
 
 Below is just a example and the file-names may vary.
 
@@ -642,7 +629,6 @@ Below is just a example and the file-names may vary.
          * XMD v2014.2 (64-bit)
            ** SW Build 932637 on Wed Jun 11 13:12:06 MDT 2014
              ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
-
 
          XMD% fpga -f download.bit                                                                                                                                                                                    
          Configuring Device 1 (xcku040) with Bitstream -- download.bit
@@ -720,9 +706,9 @@ Below is just a example and the file-names may vary.
 
          RUNNING> XMD%
 
-
-
-XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows, you can run the XSCT terminal from start menu -> Xilinx Design Tools -> Xilinx Software Command Line Tool...
+XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows,
+you can run the XSCT terminal from start menu -> Xilinx Design Tools -> Xilinx
+Software Command Line Tool...
 
 .. container:: box bgblue
 
@@ -791,8 +777,10 @@ XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows, yo
       xsdb%
    
 
-
-The second method is to run the tcl script which takes care of loading the bit file and the linux image. Run Vivado TCL Shell from Windows start menu -> Xilinx Design Suite -> Vivado -> Vivado TCL Shell. (In Linux, source the settings.sh file first)
+The second method is to run the tcl script which takes care of loading the bit
+file and the linux image. Run Vivado TCL Shell from Windows start menu -> Xilinx
+Design Suite -> Vivado -> Vivado TCL Shell. (In Linux, source the settings.sh
+file first)
 
 Then run the tcl script:
 
@@ -855,12 +843,11 @@ Then run the tcl script:
       xsdb%
    
 
-
-
 Messages
 --------
 
-If you are interested in the Linux console messages and command line interface, connect a USB cable to the USB UART port. Terminal settings are 115200,8N1.
+If you are interested in the Linux console messages and command line interface,
+connect a USB cable to the USB UART port. Terminal settings are 115200,8N1.
 
 There are two users:
 
@@ -873,14 +860,16 @@ analog analog
 
 If you FPGA carrier board (`KC705 <https://www.xilinx.com/KC705>`_, `vc707 <https://www.xilinx.com/vc707>`_, `ml605 <https://www.xilinx.com/ml605>`_) features a LCD display and the board is connected to a DHCP enabled network. You should also see it's IP address printed on the display. This allows you to connect remote to the board as well. (ssh, libiio remote)
 
-Unlike shown in the picture below you won't see the second line. In case the IP address is 192.168.2.2, this indicates that DHCP failed and it's now using it's default address. This address may not be within your subnet, and things therefore may fail.
+Unlike shown in the picture below you won't see the second line. In case the IP
+address is 192.168.2.2, this indicates that DHCP failed and it's now using it's
+default address. This address may not be within your subnet, and things
+therefore may fail.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/ml605-lcd.png
    :alt: LCD image
-   :width: 200px
+   :width: 200
 
 You should see the kernel start-up messages as follows:
-
 
 .. container:: box bggreen
 
@@ -1034,31 +1023,30 @@ You should see the kernel start-up messages as follows:
       #
    
 
-
 IIO Oscilloscope Remote
 -----------------------
 
 Please see also here::doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The IIO Oscilloscope application can be used to connect to another platform that has a connected device in order to configure the device and read data from it.
+The IIO Oscilloscope application can be used to connect to another platform that
+has a connected device in order to configure the device and read data from it.
 
 Build and start osc on a network enabled Linux host.
 
-Once the application is launched goto Settings -> Connect and enter the IP address of the target in the popup window.
+Once the application is launched goto Settings -> Connect and enter the IP
+address of the target in the popup window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/connect.png
    :alt: Connect Window
    :align: center
-   :width: 300px
+   :width: 300
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/plot_window.png
    :alt: Plot
    :align: center
-   :width: 800px
+   :width: 800
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/daq2_plugin.png
    :alt: DAQ2 plugin
    :align: center
-   :width: 800px
-
-
+   :width: 800

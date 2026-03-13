@@ -7,12 +7,16 @@ See the :adi:`Analog Devices Product Home Page <en/design-center/reference-desig
 
 The purpose of the radio is to provide an RF platform to software developers, system architects, and product developers who want a single platform which operates over a wide tuning range (70 MHz – 6 GHz). PackRF accelerates development from initial evaluation to field deployment.
 
-The radio is contained inside a blue aluminum enclosure with access to connections for power, ethernet, USB, OLED, audio and micro SD card. Antenna’s connect to SMA’s on the second face plate (not shown here) for TX, RX, monitoring and GPS I/O’s. Silkscreen on the radio contains various part numbers and links to additional material.
+The radio is contained inside a blue aluminum enclosure with access to
+connections for power, ethernet, USB, OLED, audio and micro SD card. Antenna’s
+connect to SMA’s on the second face plate (not shown here) for TX, RX,
+monitoring and GPS I/O’s. Silkscreen on the radio contains various part numbers
+and links to additional material.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/pelican_case.jpg
    :alt: PackRF
    :align: center
-   :width: 600px
+   :width: 600
 
 Portable Radio Reference Design
 -------------------------------
@@ -22,9 +26,14 @@ The radios are referred to as 'Portable Radio Reference Design'. Each one is a c
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/production_build.png
    :alt: 1 Portable Radio Unit
    :align: center
-   :width: 600px
+   :width: 600
 
-Included with the radio module is a complete single carrier modem reference design. The modem is designed as a constantly transmitting frequency division duplexing (FDD) system with a single transmit channel (uplink) and single receive channel (downlink), enabling a single bidirectional point-to-point link between two nodes. A complete wireless video link can be demonstrated with the webcams provided in this kit between disjoint nodes.
+Included with the radio module is a complete single carrier modem reference
+design. The modem is designed as a constantly transmitting frequency division
+duplexing (FDD) system with a single transmit channel (uplink) and single
+receive channel (downlink), enabling a single bidirectional point-to-point link
+between two nodes. A complete wireless video link can be demonstrated with the
+webcams provided in this kit between disjoint nodes.
 
 Radio Hardware
 ~~~~~~~~~~~~~~
@@ -76,6 +85,5 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/ADRV-PACKRF?&v=RevE>`_ to receive all these great benefits and more!
-
 
 *End of Document*

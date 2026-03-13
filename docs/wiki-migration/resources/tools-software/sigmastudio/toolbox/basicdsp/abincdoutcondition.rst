@@ -7,7 +7,9 @@ AB In / CD Out Condition
 
 |abincdpic1.png| This algorithm works only for DSPs with a conditional instruction.
 
-The AB In / CD Out Condition block lets you compare the sample-by-sample level of two incoming signals (AB) and output the sample of one of two new signals (CD), depending on the condition.
+The AB In / CD Out Condition block lets you compare the sample-by-sample level
+of two incoming signals (AB) and output the sample of one of two new signals
+(CD), depending on the condition.
 
 Click the blue icon in the block to select what condition you want to execute:
 

@@ -56,9 +56,16 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The SuperPhat algorithm is a playback spatializer that takes a stereo image, and widens the signal for playback from two closely spaced speakers. The algorithm accepts a stereo signal and outputs an enhanced stereo image for playback. The algorithm is based on proprietary filtering and gain adjustment in order to produce the widened image.
+The SuperPhat algorithm is a playback spatializer that takes a stereo image, and
+widens the signal for playback from two closely spaced speakers. The algorithm
+accepts a stereo signal and outputs an enhanced stereo image for playback. The
+algorithm is based on proprietary filtering and gain adjustment in order to
+produce the widened image.
 
-The two parameters available for adjustment Spread Frequency and Effect Gain, change the responsiveness of the effect. Depending on the actual physical end system, different values should be used to obtain the optimal effect. Subjective listening tests are the recommended way to set the values for these parameters.
+The two parameters available for adjustment Spread Frequency and Effect Gain,
+change the responsiveness of the effect. Depending on the actual physical end
+system, different values should be used to obtain the optimal effect. Subjective
+listening tests are the recommended way to set the values for these parameters.
 
 Example
 -------

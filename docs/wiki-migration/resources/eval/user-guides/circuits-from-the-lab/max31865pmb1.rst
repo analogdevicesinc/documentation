@@ -5,7 +5,7 @@ The :adi:`MAX31865PMB1` peripheral module provides the necessary hardware to int
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31865/max31865_board.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Hardware
 --------
@@ -27,13 +27,14 @@ Connector CON1 provides connection to the IC pins, as follows:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31865/5-5-2023_10-07-41_am.png
    :align: center
-   :width: 650px
+   :width: 650
 
 RTD configuration
 ~~~~~~~~~~~~~~~~~
 
-Two jumpers at J2 are provided to select either 2-wire or 3-wire RTD configuration. For 2-wire RTD, install both jumpers, from 1-2 and 3-4. For 3-wire RTD, install jumper from 3-4 only.
-
+Two jumpers at J2 are provided to select either 2-wire or 3-wire RTD
+configuration. For 2-wire RTD, install both jumpers, from 1-2 and 3-4. For
+3-wire RTD, install jumper from 3-4 only.
 
 |image1|
 
@@ -42,11 +43,14 @@ Digital Interface (PMOD)
 
 The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
-The MAX31865PMB1 peripheral module can plug directly into a Pmod-compatible port (configured for SPI) through connector J1. Connector J1 provides a connection of the module to the host. The pin functions and pin assignments adhere to the Pmod standard recommended by Digilent.
+The MAX31865PMB1 peripheral module can plug directly into a Pmod-compatible port
+(configured for SPI) through connector J1. Connector J1 provides a connection of
+the module to the host. The pin functions and pin assignments adhere to the Pmod
+standard recommended by Digilent.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31865/max31865_spi.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Device Driver Support
 ---------------------
@@ -61,7 +65,13 @@ There are two device driver solutions that are provided for controlling the **MA
 
    -  The :git-linux:`MAX31865 Linux driver <drivers/iio/temperature/max31865.c>` is used in applications running the Linux operating system, typically on larger processors and SoC devices.
 
-      -  The MAX31865 Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
+      -  The MAX31865 Linux driver uses the Industrial Input/Output (IIO)
+         framework, greatly simplifying the development of application code via
+         the cross-platform Libiio library, which is written in C and includes
+         bindings for Python, MATLAB, C#, and other languages. Application code
+         can run directly on the platform board, communicating with the device
+         over the local backend, or from a remote host over the network or USB
+         backends.
 
 More information and Useful links
 ---------------------------------
@@ -81,7 +91,6 @@ Schematics, PCB Layout, Bill of Materials
    -  :adi:`MAX31865PMB1 Datasheet <media/en/technical-documentation/data-sheets/MAX31865PMB1.pdf>`
    
 
-
 Additional Information
 ----------------------
 
@@ -97,6 +106,5 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/MAX31865PMB1?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31865/5-5-2023_10-09-41_am.png
-   :width: 250px
+   :width: 250

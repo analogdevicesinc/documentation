@@ -28,31 +28,35 @@ Running the Software
 **There must only be one System Demonstration Platform (SDP) Board Connected to the PC when running the software.**
 
 -  Connect the evaluation board to the SDP as described in the Evaluation Kit User Guide.
--  To run the software, click Start → All Programs → Analog Devices → Nanodac+ Evaluation Board Programmer → Nanodac+ Evaluation Board Programmer.
+-  To run the software, click Start → All Programs → Analog Devices → Nanodac+
+   Evaluation Board Programmer → Nanodac+ Evaluation Board Programmer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/nanodacplus_welcomemessage.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Click Continue to continue.
--  If nanoDAC+ evaluation board is not found, the below message will appear. Reset the SDP board and wait for 30 seconds before clicking OK. Click Cancel to exit the software.
+-  If nanoDAC+ evaluation board is not found, the below message will appear.
+   Reset the SDP board and wait for 30 seconds before clicking OK. Click Cancel
+   to exit the software.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/nanodacplus_boardnotfound.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  When the evaluation board is identified by the software, a prompt will appear for the user to select the evaluation software to reprogram the board to.
+-  When the evaluation board is identified by the software, a prompt will appear
+   for the user to select the evaluation software to reprogram the board to.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/nanodacplus_chooseplatform.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Select the evaluation platform, and confirm in the following window.
 -  When programming is complete, it is reported to the user.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/nanodacplus_confirmation.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Click OK to close the application.
 

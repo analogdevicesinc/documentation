@@ -5,7 +5,6 @@ News
 
    Support or Query: tof@analog.com
 
-
 **2025-09-12**: Release 6.1.0 is available on GitHub; see `ToF/releases <https://github.com/analogdevicesinc/ToF/releases>`_
 
 .. important::
@@ -15,18 +14,23 @@ News
    
    \* The documentation is now a part of the release and is also in the GitHub repo: `External Link <https://github.com/analogdevicesinc/ToF/blob/v6.1.0/doc/user-guide/ADTF3175D-EvalKit-610.md>`_
 
-
 EVAL-ADTF3175D-NXZ
 ------------------
 
-Analog Devices 3D time of flight (ToF) camera products capture depth information, enabling advanced machine vision applications and allowing people and devices to sense, capture and interact with their spatial environments.
+Analog Devices 3D time of flight (ToF) camera products capture depth
+information, enabling advanced machine vision applications and allowing people
+and devices to sense, capture and interact with their spatial environments.
 
 For more information see: :adi:`Time of Flight Camera – System Overview <en/analog-dialogue/articles/time-of-flight-system-design-part-1-system-overview.html>`
 
 Introduction
 ~~~~~~~~~~~~
 
-The EVAL-ADTF3175D-NXZ time of flight (ToF) evaluation kit is showcasing the ADTF3175 module with ADI's depth ISP, the ADSD3500. The kit supports ethernet over USB connectivity to a PC for real-time visualization, capture and post processing of depth data. The kit includes host PC software (Windows) and an open source multi-platform SDK for custom application development.
+The EVAL-ADTF3175D-NXZ time of flight (ToF) evaluation kit is showcasing the
+ADTF3175 module with ADI's depth ISP, the ADSD3500. The kit supports ethernet
+over USB connectivity to a PC for real-time visualization, capture and post
+processing of depth data. The kit includes host PC software (Windows) and an
+open source multi-platform SDK for custom application development.
 
 Key Features
 ^^^^^^^^^^^^
@@ -44,14 +48,12 @@ Key Features
    ================ ====================================
    
 
-
 Modes of Operation
 ^^^^^^^^^^^^^^^^^^
 
 .. container:: indent
 
    See the :doc:`Modes Table </wiki-migration/resources/eval/user-guides/eval-adtf3175d-nxz/mode_table>` page.
-
 
 What is included in the kit?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -70,7 +72,7 @@ What is included in the kit?
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/crosby2.jpg
    :alt: crosby2.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 --------------
 
@@ -119,8 +121,6 @@ System Information
 
 Note: Do not use USB Type-C to USB Type-A adapters.
 
-
-
 ; Dimensions : 66mm x 58.6mm x 67.9mm
 ; Enclosure Drawing : `Link <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175d-nxz_drawing_v1.pdf>`_
 ; Laser Safety : Class 1
@@ -153,7 +153,6 @@ Index of Pages
      - :doc:`Python Tools </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz/tof_auxtools_cli>`
      - :doc:`Depth Compute CLI Tool (4.3.0 or older) </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz/depthcompute_cli>`
    
-
 
 --------------
 

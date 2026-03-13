@@ -6,7 +6,10 @@ Setting Up a Debug Session
 Overview
 --------
 
-Once your audio starter project has been set up and you have started making modifications to the software, you may want to load the software onto the target and step through the code to view the code execution. Setting up a debug session in Cross Core Embedded Studio will help with this.
+Once your audio starter project has been set up and you have started making
+modifications to the software, you may want to load the software onto the target
+and step through the code to view the code execution. Setting up a debug session
+in Cross Core Embedded Studio will help with this.
 
 *Note that these instructions are limited and only explain the setup items which are specific for the audio starter projects. For more in-depth Cross Core tutorials and how to use the full capabilities of the debugger, refer to the*\ :adi:`Documentation & Resources for CCES <en/design-center/evaluation-hardware-and-software/software/adswt-cces.html#software-requirement>`
 
@@ -68,7 +71,6 @@ Debug Session - ADZS-SC584-EZLITE
 | 14. To run the code, press the *Resume (F5)* play button. Or to start stepping through the code, hit the *Step (F10)* button.                                                                                                                                                                                                         | |image35| |image36|  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
 
-
 Debug Session - ADZS-SC589-MINI
 -------------------------------
 
@@ -124,7 +126,6 @@ Debug Session - ADZS-SC589-MINI
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
 | 14. To run the code, press the *Resume (F5)* play button. Or to start stepping through the code, hit the *Step (F10)* button.                                                                                                                                                                                                         | |image71| |image72|  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
-
 
 Debug Session - EV-SC594-SOM + Carrier
 --------------------------------------
@@ -182,7 +183,6 @@ Debug Session - EV-SC594-SOM + Carrier
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 | 14. To run the code, press the *Resume (F5)* play button. Or to start stepping through the code, hit the *Step (F10)* button.                                                                                                                                                                                                         | |image107| |image108| |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-
 
 Debug Session - EV-SC598-SOM + Carrier
 --------------------------------------
@@ -270,351 +270,349 @@ Debug Session - EV-SC598-SOM + Carrier
 | 27. If everything loaded correctly, the debugger will halt at ARM main and both ARM + SHARC processes will be visible in the Debug window.                                                                                                                                                                                              | |image170|             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 
-
 .. important::
 
    Having trouble? Check out our list of :doc:`common issues </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-b>`!
 
-
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces26.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces1.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces2.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces3.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces4.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces5.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces6.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces7.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces8.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces9.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces10.png
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces11.png
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces12.png
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces13.png
-   :width: 600px
+   :width: 600
 .. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces14.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces24.png
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces25.png
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces.png
-   :width: 600px
+   :width: 600
 .. |image20| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces26.png
-   :width: 200px
+   :width: 200
 .. |image21| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces1.png
-   :width: 600px
+   :width: 600
 .. |image22| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces2.png
-   :width: 600px
+   :width: 600
 .. |image23| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces3.png
-   :width: 600px
+   :width: 600
 .. |image24| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces4.png
-   :width: 600px
+   :width: 600
 .. |image25| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces5.png
-   :width: 600px
+   :width: 600
 .. |image26| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces6.png
-   :width: 600px
+   :width: 600
 .. |image27| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces7.png
-   :width: 600px
+   :width: 600
 .. |image28| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces8.png
-   :width: 600px
+   :width: 600
 .. |image29| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces9.png
-   :width: 600px
+   :width: 600
 .. |image30| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces10.png
-   :width: 600px
+   :width: 600
 .. |image31| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces11.png
-   :width: 600px
+   :width: 600
 .. |image32| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces12.png
-   :width: 600px
+   :width: 600
 .. |image33| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces13.png
-   :width: 600px
+   :width: 600
 .. |image34| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces14.png
-   :width: 400px
+   :width: 400
 .. |image35| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces24.png
-   :width: 400px
+   :width: 400
 .. |image36| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces25.png
-   :width: 400px
+   :width: 400
 .. |image37| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces.png
-   :width: 600px
+   :width: 600
 .. |image38| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces26.png
-   :width: 200px
+   :width: 200
 .. |image39| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces1.png
-   :width: 600px
+   :width: 600
 .. |image40| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces2.png
-   :width: 600px
+   :width: 600
 .. |image41| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces15.png
-   :width: 600px
+   :width: 600
 .. |image42| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces4.png
-   :width: 600px
+   :width: 600
 .. |image43| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces16.png
-   :width: 600px
+   :width: 600
 .. |image44| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces17.png
-   :width: 600px
+   :width: 600
 .. |image45| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces18.png
-   :width: 600px
+   :width: 600
 .. |image46| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces19.png
-   :width: 600px
+   :width: 600
 .. |image47| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces20.png
-   :width: 600px
+   :width: 600
 .. |image48| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces21.png
-   :width: 600px
+   :width: 600
 .. |image49| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces22.png
-   :width: 600px
+   :width: 600
 .. |image50| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces12.png
-   :width: 600px
+   :width: 600
 .. |image51| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces23.png
-   :width: 600px
+   :width: 600
 .. |image52| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces14.png
-   :width: 400px
+   :width: 400
 .. |image53| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces24.png
-   :width: 400px
+   :width: 400
 .. |image54| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces25.png
-   :width: 400px
+   :width: 400
 .. |image55| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces.png
-   :width: 600px
+   :width: 600
 .. |image56| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces26.png
-   :width: 200px
+   :width: 200
 .. |image57| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces1.png
-   :width: 600px
+   :width: 600
 .. |image58| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces2.png
-   :width: 600px
+   :width: 600
 .. |image59| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces15.png
-   :width: 600px
+   :width: 600
 .. |image60| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces4.png
-   :width: 600px
+   :width: 600
 .. |image61| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces16.png
-   :width: 600px
+   :width: 600
 .. |image62| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces17.png
-   :width: 600px
+   :width: 600
 .. |image63| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces18.png
-   :width: 600px
+   :width: 600
 .. |image64| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces19.png
-   :width: 600px
+   :width: 600
 .. |image65| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces20.png
-   :width: 600px
+   :width: 600
 .. |image66| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces21.png
-   :width: 600px
+   :width: 600
 .. |image67| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces22.png
-   :width: 600px
+   :width: 600
 .. |image68| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces12.png
-   :width: 600px
+   :width: 600
 .. |image69| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces23.png
-   :width: 600px
+   :width: 600
 .. |image70| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces14.png
-   :width: 400px
+   :width: 400
 .. |image71| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces24.png
-   :width: 400px
+   :width: 400
 .. |image72| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces25.png
-   :width: 400px
+   :width: 400
 .. |image73| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces.png
-   :width: 400px
+   :width: 400
 .. |image74| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces26.png
-   :width: 200px
+   :width: 200
 .. |image75| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces1.png
-   :width: 600px
+   :width: 600
 .. |image76| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces2.png
-   :width: 600px
+   :width: 600
 .. |image77| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step1.jpg
-   :width: 400px
+   :width: 400
 .. |image78| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces4.png
-   :width: 600px
+   :width: 600
 .. |image79| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step2.jpg
-   :width: 400px
+   :width: 400
 .. |image80| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step3.jpg
-   :width: 400px
+   :width: 400
 .. |image81| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step4.jpg
-   :width: 400px
+   :width: 400
 .. |image82| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step5.jpg
-   :width: 400px
+   :width: 400
 .. |image83| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step6.jpg
-   :width: 400px
+   :width: 400
 .. |image84| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step7.jpg
-   :width: 400px
+   :width: 400
 .. |image85| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step9.jpg
-   :width: 400px
+   :width: 400
 .. |image86| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step10.jpg
-   :width: 400px
+   :width: 400
 .. |image87| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step8.jpg
-   :width: 400px
+   :width: 400
 .. |image88| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces14.png
-   :width: 400px
+   :width: 400
 .. |image89| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces24.png
-   :width: 400px
+   :width: 400
 .. |image90| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces25.png
-   :width: 400px
+   :width: 400
 .. |image91| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces.png
-   :width: 400px
+   :width: 400
 .. |image92| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces26.png
-   :width: 200px
+   :width: 200
 .. |image93| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces1.png
-   :width: 600px
+   :width: 600
 .. |image94| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces2.png
-   :width: 600px
+   :width: 600
 .. |image95| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step1.jpg
-   :width: 400px
+   :width: 400
 .. |image96| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces4.png
-   :width: 600px
+   :width: 600
 .. |image97| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step2.jpg
-   :width: 400px
+   :width: 400
 .. |image98| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step3.jpg
-   :width: 400px
+   :width: 400
 .. |image99| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step4.jpg
-   :width: 400px
+   :width: 400
 .. |image100| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step5.jpg
-   :width: 400px
+   :width: 400
 .. |image101| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step6.jpg
-   :width: 400px
+   :width: 400
 .. |image102| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step7.jpg
-   :width: 400px
+   :width: 400
 .. |image103| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step9.jpg
-   :width: 400px
+   :width: 400
 .. |image104| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step10.jpg
-   :width: 400px
+   :width: 400
 .. |image105| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/step8.jpg
-   :width: 400px
+   :width: 400
 .. |image106| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces14.png
-   :width: 400px
+   :width: 400
 .. |image107| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces24.png
-   :width: 400px
+   :width: 400
 .. |image108| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces25.png
-   :width: 400px
+   :width: 400
 .. |image109| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces.png
-   :width: 400px
+   :width: 400
 .. |image110| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces26.png
-   :width: 200px
+   :width: 200
 .. |image111| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces1.png
-   :width: 600px
+   :width: 600
 .. |image112| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug.jpg
-   :width: 400px
+   :width: 400
 .. |image113| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug1.jpg
-   :width: 400px
+   :width: 400
 .. |image114| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug2.jpg
-   :width: 400px
+   :width: 400
 .. |image115| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug3.jpg
-   :width: 400px
+   :width: 400
 .. |image116| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug4.jpg
-   :width: 400px
+   :width: 400
 .. |image117| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug.jpg
-   :width: 400px
+   :width: 400
 .. |image118| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug5.jpg
-   :width: 400px
+   :width: 400
 .. |image119| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug6.jpg
-   :width: 400px
+   :width: 400
 .. |image120| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug7.jpg
-   :width: 400px
+   :width: 400
 .. |image121| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug9.jpg
-   :width: 400px
+   :width: 400
 .. |image122| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug10.jpg
-   :width: 400px
+   :width: 400
 .. |image123| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces4.png
-   :width: 400px
+   :width: 400
 .. |image124| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug11.jpg
-   :width: 400px
+   :width: 400
 .. |image125| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug12.jpg
-   :width: 400px
+   :width: 400
 .. |image126| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug13.jpg
-   :width: 400px
+   :width: 400
 .. |image127| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug14.jpg
-   :width: 400px
+   :width: 400
 .. |image128| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug15.jpg
-   :width: 400px
+   :width: 400
 .. |image129| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug16.jpg
-   :width: 400px
+   :width: 400
 .. |image130| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug26.jpg
-   :width: 400px
+   :width: 400
 .. |image131| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug27.jpg
-   :width: 400px
+   :width: 400
 .. |image132| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug28.jpg
-   :width: 400px
+   :width: 400
 .. |image133| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug20.jpg
-   :width: 400px
+   :width: 400
 .. |image134| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug29.jpg
-   :width: 400px
+   :width: 400
 .. |image135| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug22.jpg
-   :width: 400px
+   :width: 400
 .. |image136| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces24.jpg
-   :width: 400px
+   :width: 400
 .. |image137| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug23.jpg
-   :width: 400px
+   :width: 400
 .. |image138| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug24.jpg
-   :width: 400px
+   :width: 400
 .. |image139| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug25.jpg
-   :width: 400px
+   :width: 400
 .. |image140| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces.png
-   :width: 400px
+   :width: 400
 .. |image141| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces26.png
-   :width: 200px
+   :width: 200
 .. |image142| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces1.png
-   :width: 600px
+   :width: 600
 .. |image143| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug.jpg
-   :width: 400px
+   :width: 400
 .. |image144| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug1.jpg
-   :width: 400px
+   :width: 400
 .. |image145| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug2.jpg
-   :width: 400px
+   :width: 400
 .. |image146| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug3.jpg
-   :width: 400px
+   :width: 400
 .. |image147| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug4.jpg
-   :width: 400px
+   :width: 400
 .. |image148| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug.jpg
-   :width: 400px
+   :width: 400
 .. |image149| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug5.jpg
-   :width: 400px
+   :width: 400
 .. |image150| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug6.jpg
-   :width: 400px
+   :width: 400
 .. |image151| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug7.jpg
-   :width: 400px
+   :width: 400
 .. |image152| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug9.jpg
-   :width: 400px
+   :width: 400
 .. |image153| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug10.jpg
-   :width: 400px
+   :width: 400
 .. |image154| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces4.png
-   :width: 400px
+   :width: 400
 .. |image155| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug11.jpg
-   :width: 400px
+   :width: 400
 .. |image156| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug12.jpg
-   :width: 400px
+   :width: 400
 .. |image157| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug13.jpg
-   :width: 400px
+   :width: 400
 .. |image158| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug14.jpg
-   :width: 400px
+   :width: 400
 .. |image159| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug15.jpg
-   :width: 400px
+   :width: 400
 .. |image160| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug16.jpg
-   :width: 400px
+   :width: 400
 .. |image161| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug26.jpg
-   :width: 400px
+   :width: 400
 .. |image162| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug27.jpg
-   :width: 400px
+   :width: 400
 .. |image163| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug28.jpg
-   :width: 400px
+   :width: 400
 .. |image164| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug20.jpg
-   :width: 400px
+   :width: 400
 .. |image165| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug29.jpg
-   :width: 400px
+   :width: 400
 .. |image166| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug22.jpg
-   :width: 400px
+   :width: 400
 .. |image167| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces24.jpg
-   :width: 400px
+   :width: 400
 .. |image168| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug23.jpg
-   :width: 400px
+   :width: 400
 .. |image169| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug24.jpg
-   :width: 400px
+   :width: 400
 .. |image170| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/sc598_debug25.jpg
-   :width: 400px
+   :width: 400

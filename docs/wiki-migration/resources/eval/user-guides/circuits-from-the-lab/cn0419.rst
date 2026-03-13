@@ -10,8 +10,8 @@ The :adi:`ADuM4160` is a USB port isolator, based on Analog Devices, Inc., iCoup
 
 The :adi:`ADuM5020` is an isoPower®, integrated, isolated dc-to-dc converter. Based on the Analog Devices, Inc., iCoupler® technology, this dc-to-dc converter provides regulated, isolated power that is below CISPR22 Class B limits at full load on a 2-layer printed circuit board (PCB) with ferrites.
 
-The EVAL-CN0419-EBZ board connects through a USB Type A Plug and is powered by the bus voltage from the USB port.
-
+The EVAL-CN0419-EBZ board connects through a USB Type A Plug and is powered by
+the bus voltage from the USB port.
 
 |image1|
 
@@ -38,7 +38,7 @@ Block assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/block_assign.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Terminal block **P1** is the USB Male plug to be inserted to USB port
 -  Terminal block **P2** is the USB Female receptacle for the peripheral
@@ -59,8 +59,10 @@ Peripheral devices run at one of three speeds, low (1.5 Mbps), full (12 Mbps), a
    -  Examples:phones, audio devices, and compressed video
    -  Bus rate: 12 Mb/s
 
-The isolator is hardwired for the desired speed setting, either full speed or low speed. A switch at the upstream side allows the user to select between these speeds. To switch between the two modes, flip the actuator of S1 switch to FS mode as indicated in silkscreen for full speed operation and LS mode otherwise.
-
+The isolator is hardwired for the desired speed setting, either full speed or
+low speed. A switch at the upstream side allows the user to select between these
+speeds. To switch between the two modes, flip the actuator of S1 switch to FS
+mode as indicated in silkscreen for full speed operation and LS mode otherwise.
 
 |image2|
 
@@ -70,7 +72,7 @@ The isolator is hardwired for the desired speed setting, either full speed or lo
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/fs_mode.png
    :align: center
-   :width: 500px
+   :width: 500
 
 ::
 
@@ -81,7 +83,7 @@ Test setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/setup_diagram2.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Set the switch S1 to full speed or low speed operation depending on the peripheral specifications.
 -  Connect the peripheral to P2 of the :adi:`EVAL-CN0419-EBZ <CN0419>`
@@ -92,11 +94,10 @@ Running the System
 
 -  Make sure the setting for S1 is correct based on the peripheral device.
 
-
-
 - Plug P1 of the board into the PC/host, the :adi:`EVAL-CN0419-EBZ <CN0419>` is automatically turned on and providing isolation. DS1 will light up as an indication that the board is delivering power to the peripheral device.
 - The PC/host must recognize the peripheral connected to make sure the setup is working.
-- Upon successful connection, you can now provide your peripheral the isolated power!
+- Upon successful connection, you can now provide your peripheral the isolated
+  power!
 
 --------------
 
@@ -123,7 +124,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro project
    
 
-
 Registration
 ------------
 
@@ -131,10 +131,9 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0419-EBZ?&v=RevB>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/figure_7.png
-   :width: 650px
+   :width: 650
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0419/ls_mode.png
-   :width: 500px
+   :width: 500

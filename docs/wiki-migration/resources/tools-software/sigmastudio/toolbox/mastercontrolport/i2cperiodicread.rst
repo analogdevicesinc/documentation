@@ -3,18 +3,20 @@ I2C Periodic Read
 
 :doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
 
-The 'I2C Periodic Read' block reads a particular sub address from any I2C slave periodically and sends the value read in the output pin.
+The 'I2C Periodic Read' block reads a particular sub address from any I2C slave
+periodically and sends the value read in the output pin.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2cread.jpg
    :align: center
-   :width: 80px
+   :width: 80
 
 Click on the configure button to configure the parameters for I2C read.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/i2creadwindow.jpg
    :align: center
 
-Create Multiple instances for monitoring multiple slaves/ multiple sub address from same slave.
+Create Multiple instances for monitoring multiple slaves/ multiple sub address
+from same slave.
 
 GUI Control
 -----------

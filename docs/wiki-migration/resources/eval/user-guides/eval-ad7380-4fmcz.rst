@@ -16,7 +16,10 @@ Evaluation Boards
 Features
 ========
 
-Fully featured evaluation board for testing multichannel, simultaneous sampling ADCs On-board reference, reference buffer, and ADC driver On-board power supplies Compatible with the SDP-H1 board PC-based software for control and data analysis
+Fully featured evaluation board for testing multichannel, simultaneous sampling
+ADCs On-board reference, reference buffer, and ADC driver On-board power
+supplies Compatible with the SDP-H1 board PC-based software for control and data
+analysis
 
 Evaluation Kit Contents
 =======================
@@ -40,13 +43,11 @@ The EVAL-AD7380-4FMCZ is a fully-featured evaluation board designed to evaluate 
 
 .. container:: centeralign
 
-
    ..
 
 |image1|
 
    *\**Figure 1. EVAL-AD7380-4FMCZ EVALUATION BOARD (LEFT) CONNECTED TO SDP-H1 BOARD (RIGHT)***
-
 
 Evaluation Board Quick Start Guide
 ==================================
@@ -70,13 +71,11 @@ Evaluation Board Connection Diagram
 
 .. container:: centeralign
 
-
    ..
 
 |image2|
 
    *\**Figure 2. Typical Setup of the EVAL-AD7380-4FMCZ and the SDP-H1 Board***
-
 
 Evaluation Board Hardware
 =========================
@@ -110,23 +109,25 @@ Ensure that all link positions are set according to the required operating mode 
 
 .. container:: centeralign
 
-
    ..
 
 |image3|
 
    **Figure 3. EVAL-AD7380-4FMCZ Functional Block Diagram**
 
-
 Link Configuration Options
 --------------------------
 
-Multiple link options must be set properly to select the appropriate operating setup before using the EVAL-AD7380-4FMCZ. The functions of these options are detailed in Table 2.
+Multiple link options must be set properly to select the appropriate operating
+setup before using the EVAL-AD7380-4FMCZ. The functions of these options are
+detailed in Table 2.
 
 Setup Conditions
 ~~~~~~~~~~~~~~~~
 
-Ensure that all link positions are set as required by the selected operating mode before applying power and signals to the EVAL-AD7380-4FMCZ. Table 2 shows the default positions of the links when the EVAL-AD7380-4FMCZ is packaged.
+Ensure that all link positions are set as required by the selected operating
+mode before applying power and signals to the EVAL-AD7380-4FMCZ. Table 2 shows
+the default positions of the links when the EVAL-AD7380-4FMCZ is packaged.
 
 **Table 2. Link Options for EVAL-AD7380-4FMCZ**
 
@@ -156,12 +157,18 @@ Evaluation Board Circuitry
 Sockets and Connectors
 ----------------------
 
-The sockets and connectors on the EVAL-AD7380-4FMCZ are described in Table 3. The default interface to the EVAL-AD7380-4FMCZ is via the P7 connector, which connects the EVAL-AD7380-4FMCZ to the SDP-H1 board. When using the EVAL-AD7380-4FMCZ in standalone mode, communication is achieved via the P3 header pins.
+The sockets and connectors on the EVAL-AD7380-4FMCZ are described in Table 3.
+The default interface to the EVAL-AD7380-4FMCZ is via the P7 connector, which
+connects the EVAL-AD7380-4FMCZ to the SDP-H1 board. When using the
+EVAL-AD7380-4FMCZ in standalone mode, communication is achieved via the P3
+header pins.
 
 Test Points
 ===========
 
-There are several test points and single-in-line (SIL) headers on the EVAL-AD7380-4FMCZ. These test points and headers provide access to the evaluation board signals to allow probing, evaluation and debugging.
+There are several test points and single-in-line (SIL) headers on the
+EVAL-AD7380-4FMCZ. These test points and headers provide access to the
+evaluation board signals to allow probing, evaluation and debugging.
 
 **Table 3. On-Board Sockets and Connectors**
 
@@ -225,7 +232,6 @@ To install the *ACE* software, take the following steps:
 
    
 
-
 -  Read the software license agreement and click **I Agree** (see Figure 5).
 
 .. container:: centeralign
@@ -233,7 +239,6 @@ To install the *ACE* software, take the following steps:
    \ |image5|//**Figure 5. License Agreement** //
 
    
-
 
 -  Choose an installation location and click **Next** > (see Figure 6).
 
@@ -243,7 +248,6 @@ To install the *ACE* software, take the following steps:
 
    
 
-
 -  Select the **PreRequisites** checkbox to include the installation of the SDP-H1 driver and click **Install** (see Figure 7).
 
 .. container:: centeralign
@@ -251,7 +255,6 @@ To install the *ACE* software, take the following steps:
    \ |image7|//**Figure 7. Choose Components Section** //
 
    
-
 
 -  The **Windows Security** window appears. Click **Install** (see Figure 8). The installation is in progress. No action is required (see Figure 9).
 
@@ -261,11 +264,9 @@ To install the *ACE* software, take the following steps:
 
    
 
-
 .. container:: centeralign
 
    |image9|//**Figure 9. Installation in Progress** //
-
 
 -  When the installation is complete (see Figure 10), click **Next** > and then click **Finish** to complete.
 
@@ -273,16 +274,21 @@ To install the *ACE* software, take the following steps:
 
    \ |image10|//**Figure 10. Installation Completed** //
 
-
 Evaluation Board Setup Procedures
 =================================
 
-Figure 2 shows a diagram of the connections between the EVAL-AD7380-4FMCZ and the SDP-H1 board. To ensure that the evaluation system is recognized when it is connected to the PC, install the ACE software and SDP-H1 driver before connecting the EVAL-AD7380-4FMCZ and the SDP-H1 board to the USB port of the PC. When the ACE software installation is complete, set up the EVAL-AD7380-4FMCZ and the SDP-H1 board as described in the following sections.
+Figure 2 shows a diagram of the connections between the EVAL-AD7380-4FMCZ and
+the SDP-H1 board. To ensure that the evaluation system is recognized when it is
+connected to the PC, install the ACE software and SDP-H1 driver before
+connecting the EVAL-AD7380-4FMCZ and the SDP-H1 board to the USB port of the PC.
+When the ACE software installation is complete, set up the EVAL-AD7380-4FMCZ and
+the SDP-H1 board as described in the following sections.
 
 Connecting the EVAL-AD7380-4FMCZ and the SDP-H1 Board to the PC
 ---------------------------------------------------------------
 
-To connect the EVAL-AD7380-4FMCZ and the SDP-H1 board to the PC, take the following steps:
+To connect the EVAL-AD7380-4FMCZ and the SDP-H1 board to the PC, take the
+following steps:
 
 -  Ensure that all configuration links are in the appropriate positions, as detailed in Table 2.
 -  Connect the EVAL-AD7380-4FMCZ securely to the P7 connector on the SDP-H1 board. The EVAL-AD7380-4FMCZ does not require an external power supply adapter.
@@ -294,8 +300,6 @@ Verifying Board Connection
 
 To verify the board connection, take the following steps:
 
-
-
 - When the SDP-H1 board is plugged into the PC, allow the **Found New Hardware Wizard** to run. If using Windows XP, search for the SDP-H1 drivers. If prompted by the operating system, choose to automatically search for the drivers for the SDP-H1 board.
 - A window may appear asking for permission to allow the program to make changes to the computer. In this case, click **Yes**. The **Computer Management** window opens.
 - Under System Tools, click **Device Manager** and use the **Device Manager** window to ensure that the SDP-H1 board is connected to the PC properly. If the SDP-H1 driver software is installed and the board is connected to the PC properly, **Analog Devices SDP-H1** appears under **ADI Development Tools** in the **Device Manager window**, as shown in Figure 11.
@@ -306,11 +310,12 @@ To verify the board connection, take the following steps:
 
    
 
-
 Disconnecting the EVAL-AD7380-4FMCZ
 -----------------------------------
 
-Always remove power from the SDP-H1 board and the EVAL-AD7380-4FMCZ or click the reset tact switch located alongside the USB port before disconnecting the EVAL-AD7380-4FMCZ from the SDP-H1 board.
+Always remove power from the SDP-H1 board and the EVAL-AD7380-4FMCZ or click the
+reset tact switch located alongside the USB port before disconnecting the
+EVAL-AD7380-4FMCZ from the SDP-H1 board.
 
 Using the ACE Software for Testing
 ==================================
@@ -318,7 +323,10 @@ Using the ACE Software for Testing
 Launching ACE Software
 ----------------------
 
-When the EVAL-AD7380-4FMCZ and SDP-H1 boards are properly connected to the PC, launch the ACE software. To launch the ACE software, take the following steps (note that all functionality is the same for the AD7389-4 and the AD7381-4 with the chip view specific to the AD7389-4 or the AD7381-4):
+When the EVAL-AD7380-4FMCZ and SDP-H1 boards are properly connected to the PC,
+launch the ACE software. To launch the ACE software, take the following steps
+(note that all functionality is the same for the AD7389-4 and the AD7381-4 with
+the chip view specific to the AD7389-4 or the AD7381-4):
 
 ::
 
@@ -333,33 +341,32 @@ When the EVAL-AD7380-4FMCZ and SDP-H1 boards are properly connected to the PC, l
    
    |image11| //**Figure 12. ACE Software Main Window** //
 
-
 .. container:: centeralign
 
    |image12| //**Figure 13. EVAL-AD7380-4FMCZ View** //
 
-
 Chip View
 ~~~~~~~~~
 
-When the software installation procedures and the evaluation board setup procedures are complete, set up the system for data capture by taking the following steps:
+When the software installation procedures and the evaluation board setup
+procedures are complete, set up the system for data capture by taking the
+following steps:
 
 ::
 
      - Block icons that are dark blue are programmable blocks. Click a dark blue block icon to open a configurable pop-up window that allows customization for data capture, as shown in the oversampling block in Figure 15.
      - Enter the reference voltage value in the Reference Voltage box at the top of the window when External Reference is selected. The default value for the external reference is set to 3.3 V.
 
-See the Software Installation Procedures section and the Evaluation Board Setup Procedures section for additional information.
+See the Software Installation Procedures section and the Evaluation Board Setup
+Procedures section for additional information.
 
 .. container:: centeralign
 
    \ |image13| //**Figure 14. Chip View** //
 
-
 .. container:: centeralign
 
    |image14| //**Figure 15. Pop-Up Configurable Window** //
-
 
 Memory Map Window Features
 --------------------------
@@ -405,13 +412,11 @@ To revert all register values back to the default values, click **Software Defau
 
    \ |image15| //**Figure 16. Memory Map View** *
 
-
 ===== Analysis View ===== Click **Proceed to Analysis** in the bottom right corner of the chip view window (see Figure 14) to open the analysis view window shown in Figure 17. The analysis view contains the **Waveform tab**,**Histogram tab**, and **FFT tab.** *
 
 .. container:: centeralign
 
    \ **Figure 17. Analysis View**
-
 
 ==== Waveform Tab ==== The **Waveform** tab displays data in the form of time vs. discrete data values with the results, as shown in Figure 18. The **Capture** pane contains the capture settings, which reflect onto the registers automatically before data capture.
 
@@ -455,7 +460,6 @@ The **Histogram** tab contains the histogram graph and the **Results** pane, as 
 
    \ |image16| //**Figure 19. Histogram Tab** //
 
-
 FFT Tab
 ~~~~~~~
 
@@ -464,7 +468,6 @@ The **FFT** tab displays FFT information for the last batch of samples gathered,
 .. container:: centeralign
 
    \ |image17| //**Figure 20. FFT Tab** //
-
 
 Analysis Pane
 ~~~~~~~~~~~~~
@@ -487,38 +490,38 @@ Evaluation Board Design Files
 Board schematic, layout and BOM files. `eval-ad7380-4fmcz_design_files.zip <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7380-4fmcz_design_files.zip>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-001.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-002_.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-003.jpg
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-004.jpg
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-005.jpg
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-006.jpg
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-007.jpg
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-008.jpg
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-009.jpg
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-010.jpg
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-012.jpg
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-013.jpg
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-014.jpg
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-015.jpg
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-016.jpg
-   :width: 600px
+   :width: 600
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-019.jpg
-   :width: 600px
+   :width: 600
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-020.jpg
-   :width: 600px
+   :width: 600
 
 .. |resources-eval-user-guides-ad7380-4_fig-011.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-011.jpg

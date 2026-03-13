@@ -8,12 +8,13 @@ General Description/Overview
 
 The purpose of this project is to help you to get used with UART peripheral of **ADuCM3029** microcontroller. The source code example can serve as a template for a resident command line interpreter, complementing any other user application functionality. Interrupt-based receiving of text commands from the UART is implemented. As soon as a command is entered, an execution request flag is raised to signal the main loop. The commands are recognised and may be executed immediately or later depending on the priority of the current tasks.
 
-You can use any Terminal session you want, such as Putty or Serial Terminal with Eclipse Kepler (incorporated in Eclipse environment).
+You can use any Terminal session you want, such as Putty or Serial Terminal with
+Eclipse Kepler (incorporated in Eclipse environment).
 
 A serial connection of a PC to the **EVAL-ADICUP3029** board using the user USB connector is required to test and use the CLI application (**EVAL-ADICUP3029** board incorporates an FTDI USB-to-serial converter). Any terminal application run on a PC at 9600-8-N-1 without flow control can be used to 'talk' to the **EVAL-ADICUP3029** board. After connecting and sending CR (by pressing Enter), the command prompt '»' and a welcome message should appear.
 
-The user must type the word <help> in order to bring up the CLI menu shown below.
-
+The user must type the word <help> in order to bring up the CLI menu shown
+below.
 
 |image1|
 
@@ -64,21 +65,26 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_front_refrence_s2_position_for_usb.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Plug in the board.
 
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CLI Demo.
+There are two basic ways to program the ADICUP3029 with the software for the CLI
+Demo.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cli** can be found here:
 
@@ -95,11 +101,9 @@ The software for the **ADuCM3029_demo_cli** can be found here:
    -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_cli Source Code <projects/ADuCM3029_demo_cli>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`
-
 
 Configuring the Software
 ------------------------
@@ -149,4 +153,4 @@ For more detailed instructions on importing this application/demo example into t
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/terminal_cli_26_08_2015.png
-   :width: 450px
+   :width: 450

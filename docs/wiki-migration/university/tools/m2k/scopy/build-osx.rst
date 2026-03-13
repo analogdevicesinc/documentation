@@ -4,7 +4,8 @@ Building Scopy on OSX
 Using existing DMG Installers
 -----------------------------
 
-Scopy DMG Installers for OSX are available for each release. The oldest supported OSX version is 10.11.
+Scopy DMG Installers for OSX are available for each release. The oldest
+supported OSX version is 10.11.
 
 .. admonition:: Download
    :class: download
@@ -13,11 +14,12 @@ Scopy DMG Installers for OSX are available for each release. The oldest supporte
    -  Download: `OSX installer <https://github.com/analogdevicesinc/scopy/releases/latest>`_
    
 
-
 Installing the dependencies
 ---------------------------
 
-You can also build Scopy from source, instead of using the provided installer. Before building Scopy on OSX systems, you need to make sure all the requirements are installed.
+You can also build Scopy from source, instead of using the provided installer.
+Before building Scopy on OSX systems, you need to make sure all the requirements
+are installed.
 
 **Setup Python**
 
@@ -133,7 +135,8 @@ You can also build Scopy from source, instead of using the provided installer. B
 
 Before building Qwt, you need to check out your version of qmake.
 
-Please make sure you are using Qt 5. For the next steps, use the full path to qmake.
+Please make sure you are using Qt 5. For the next steps, use the full path to
+qmake.
 
 Now we can build and install Qwt:
 
@@ -166,7 +169,8 @@ Change QWT_POLAR_INSTALL_PREFIX to /usr/local and remove the following lines:
      QWT_POLAR_CONFIG += QwtPolarFramework
      QWT_POLAR_INSTALL_FEATURES = $${QWT_POLAR_INSTALL_PREFIX}/features
 
-After that, change QWT_POLAR_INSTALL_PREFIX to /usr/local and QWT_POLAR_INSTALL_HEADERS to $${QWT_POLAR_INSTALL_PREFIX}/include/qwt
+After that, change QWT_POLAR_INSTALL_PREFIX to /usr/local and
+QWT_POLAR_INSTALL_HEADERS to $${QWT_POLAR_INSTALL_PREFIX}/include/qwt
 
 ::
 
@@ -214,7 +218,8 @@ This will fetch the latest sources from GitHub to a "scopy" directory.
        mkdir build && cd build
        cmake ..**
 
-If everything goes well, the output should be "Configuring done" and "Generating done".
+If everything goes well, the output should be "Configuring done" and "Generating
+done".
 
 Now build the project:
 

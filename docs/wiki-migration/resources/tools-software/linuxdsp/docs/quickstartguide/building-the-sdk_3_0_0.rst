@@ -5,16 +5,16 @@ Building The SDK
 
    This version is under development
 
-
 .. important::
 
    In order to build the SDK it is necessary to follow the relevant Quickstart Guide. For instructions, please refer to :doc:`Linux for ADSP-SC5xx Processors 3.0.0 </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>`\
 
-
 Preparing the buildtool
 -----------------------
 
-Yocto requires the environment to be configured before building is possible.  A setup-environment script in the griffin, gxp or gxp2 folder contains all the required environment settings.
+Yocto requires the environment to be configured before building is possible.  A
+setup-environment script in the griffin, gxp or gxp2 folder contains all the
+required environment settings.
 
 ::
 
@@ -38,17 +38,25 @@ or
 
    $ source setup-environment -m adsp-sc598-som-ezkit
 
-Sourcing the script will configure your build environment and create a build folder along with a local build configuration file.  See the Yocto Manual for further details.
+Sourcing the script will configure your build environment and create a build
+folder along with a local build configuration file.  See the Yocto Manual for
+further details.
 
 .. important::
 
-   Note that the build environment needs to be sourced once only before building.  If later working in a different terminal the setup-environment script should be sourced again.  If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
-
+   Note that the build environment needs to be sourced once only before
+   building.  If later working in a different terminal the setup-environment
+   script should be sourced again.  If sourcing the setup-environment script is
+   done without specifying the machine Yocto will reuse the previous
+   configuration settings and retain any changes made to the files in the conf
+   folder.
 
 Building the SDK
 ----------------
 
-The SDK can be built for the adsp-sc5xx-minimal image or the adsp-sc5xx-full image. To build the SDK for the adsp-sc5xx-minimal image invoke bitbake from within the build directory created previously.
+The SDK can be built for the adsp-sc5xx-minimal image or the adsp-sc5xx-full
+image. To build the SDK for the adsp-sc5xx-minimal image invoke bitbake from
+within the build directory created previously.
 
 ::
 
@@ -60,7 +68,8 @@ or for the adsp-sc5xx-full image
 
    $ bitbake adsp-sc5xx-full -c populate_sdk
 
-When the build has completed you will find a set of files in the <BUILD_DIR>/tmp/deploy/sdk directory. For example, the full image on SC594:
+When the build has completed you will find a set of files in the
+<BUILD_DIR>/tmp/deploy/sdk directory. For example, the full image on SC594:
 
 ::
 

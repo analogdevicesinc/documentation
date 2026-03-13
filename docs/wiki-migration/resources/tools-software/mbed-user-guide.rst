@@ -13,14 +13,18 @@ Step 2 - Download and install compiler
 
 Download and install the GNU ARM Embedded Toolchain from https://launchpad.net/gcc-arm-embedded/5.0/5-2015-q4-major
 
-When setup prompts to add path to the environment variables it is recommended to pick yes.
+When setup prompts to add path to the environment variables it is recommended to
+pick yes.
 
 Step 3 - mbed libraries
 -----------------------
 
-The Analog Devices mbed repository does not contain the mbed libraries, so in order to compile the projects, you need to download the mbed libraries specific to the board you are using.
+The Analog Devices mbed repository does not contain the mbed libraries, so in
+order to compile the projects, you need to download the mbed libraries specific
+to the board you are using.
 
-The mbed libraries can be built from source or downloading them from the online compiler (much easier but requires creating account).
+The mbed libraries can be built from source or downloading them from the online
+compiler (much easier but requires creating account).
 
 In order to build from source:
 
@@ -42,21 +46,26 @@ The following steps are detailed at https://developer.mbed.org/handbook/mbed-too
 
 Add path to compiler in \\tools\\settings.py. It should be something like this:
 
--  GCC_ARM_PATH = "c:\\\\Program Files (x86)\\\\GNU Tools ARM Embedded\\\\5.2 2015q4\\\\bin"
+-  GCC_ARM_PATH = "c:\\\\Program Files (x86)\\\\GNU Tools ARM Embedded\\\\5.2
+   2015q4\\\\bin"
 
 In .\\tools run
 
 -  python build.py -h
 
-this will output the help of the build function and make sure everything is installed properly
+this will output the help of the build function and make sure everything is
+installed properly
 
 Run
 
 -  python build.py -m NUCLEO_F411RE -t GCC_ARM
 
-to build the mbed libraries for the Nucleo MCU. If other targets are needed, simply change the NUCLEO_F411RE parameter to the appropriate target. A list of targets can be found in the command help issued before.
+to build the mbed libraries for the Nucleo MCU. If other targets are needed,
+simply change the NUCLEO_F411RE parameter to the appropriate target. A list of
+targets can be found in the command help issued before.
 
-When the process finishes, the sources will be available in the \\.build folder. Copy the contents of the folder to the Analog Devices mbed repository.
+When the process finishes, the sources will be available in the \\.build folder.
+Copy the contents of the folder to the Analog Devices mbed repository.
 
 Steps for downloading libraries from online compiler: The easiest way to get the mbed libraries specific for your board is to download them from the online compiler. In order to do this, you should create an account on https://developer.mbed.org/.
 
@@ -69,19 +78,23 @@ Download and install GNU ARM Windows Build Tools from https://github.com/gnuarme
 
 \\2.6-201507152002\\bin
 
-We should now be able to build a project. In order to test this, go to the Analog devices repository, open a terminal in mbed-adi\\examples\\adxl362_example and run "make all"
+We should now be able to build a project. In order to test this, go to the
+Analog devices repository, open a terminal in
+mbed-adi\\examples\\adxl362_example and run "make all"
 
-If all the paths were set, the build process should conclude with the following message
-
+If all the paths were set, the build process should conclude with the following
+message
 
 |image4|
 
-If the mbed board is connected to the PC, a new drive should appear labeled NODE-F411RE(for STNucleo F411RE). Copy the .bin file that was created after running "make all" to this drive. The bin file will be flashed to the board.
+If the mbed board is connected to the PC, a new drive should appear labeled
+NODE-F411RE(for STNucleo F411RE). Copy the .bin file that was created after
+running "make all" to this drive. The bin file will be flashed to the board.
 
 |image5|.
 
-The quickest way to do this, after "make all" run the "copy <project_binary_file>.bin <mbed_drive_letter>:"
-
+The quickest way to do this, after "make all" run the "copy
+<project_binary_file>.bin <mbed_drive_letter>:"
 
 |image6|
 
@@ -100,7 +113,9 @@ Download and install the latest version of Java Runtime Environment(if you don't
 Step 7 - Download and install GNU ARM Eclipse plugins and OpenOCD debugger
 --------------------------------------------------------------------------
 
-Open Eclipse, go to Help-> Eclipse Marketplace. Search for GNU ARM Eclipse and click install on the first result. This The options should have the OpenOCD plugin checked. After installation is successful close Eclipse.
+Open Eclipse, go to Help-> Eclipse Marketplace. Search for GNU ARM Eclipse and
+click install on the first result. This The options should have the OpenOCD
+plugin checked. After installation is successful close Eclipse.
 
 Download and install the latest version of OpenOCD debugger for eclipse from https://github.com/gnuarmeclipse/openocd/releases Run Eclipse and in the Eclipse menu, go to (Window →) Preferences → Run/Debug → OpenOCD and click "Restore defaults". This should enable the OpenOCD plugin if it was installed correctly.
 
@@ -109,25 +124,36 @@ Additional information can be found at http://gnuarmeclipse.github.io/debug/open
 Step 8 - Importing, building and debugging the project.
 -------------------------------------------------------
 
-In order to import a project in eclipse go to File -> Import. In the C/C++ category, select Existing Code as Makefile Project, and navigate to an example project in the mbed-adi repository.
+In order to import a project in eclipse go to File -> Import. In the C/C++
+category, select Existing Code as Makefile Project, and navigate to an example
+project in the mbed-adi repository.
 
-Toolchain for Indexer Settings can be set to <none> After the project was imported, simply rightclick the project in the project explorer(left-hand side) and select Build project. After building, the console view of Eclipse should look like this:
+Toolchain for Indexer Settings can be set to <none> After the project was
+imported, simply rightclick the project in the project explorer(left-hand side)
+and select Build project. After building, the console view of Eclipse should
+look like this:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/2016-06-28_16_44_45-c_c_-_cn0398_example_libraries_cn0398_cn0398.cpp_-_eclipse.png
    :align: center
 
-In order to debug the project. Go to Run -> Debug configurations. Double click the GDB OpenOCD Debugging to create a new debug configuration. In the C/C\\+\\+ application edit box, navigate to the elf file generated by the build. In the debugger tab, under config options put "-f board/st_nucleo_f4.cfg". This enables debug configuration for the ST Nucleo board.
+In order to debug the project. Go to Run -> Debug configurations. Double click
+the GDB OpenOCD Debugging to create a new debug configuration. In the C/C\\+\\+
+application edit box, navigate to the elf file generated by the build. In the
+debugger tab, under config options put "-f board/st_nucleo_f4.cfg". This enables
+debug configuration for the ST Nucleo board.
 
-Other board/target configurations can be found in the openOCD folder in \\scripts\\board and \\scripts\\target. Also change the executable in GDB Client Setup to arm-none-eabi-gdb.
+Other board/target configurations can be found in the openOCD folder in
+\\scripts\\board and \\scripts\\target. Also change the executable in GDB Client
+Setup to arm-none-eabi-gdb.
 
 Click debug, and Eclipse should start the debug process
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/2016-06-28_14_53_14-nucleo-f411re_mbed.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/2016-06-28_14_49_54-mbed_compiler.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/2016-06-28_14_52_20-mbed_compiler_nucleo_blink_led.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/2016-10-26_17_07_23-c_windows_system32_cmd.exe.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/2016-10-26_16_37_36-computer.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/2016-10-26_17_04_09-c_windows_system32_cmd.exe.png

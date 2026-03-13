@@ -46,12 +46,11 @@ ADA4355 Evaluation System
 -  **LPF** drop down menu is used to set the Analog Low Pass Filter inside the ADA4355.
 -  **Current Driver On** radio button is used to enable or disable the laser driver from pulsing the laser.
 
-
-
 - ** PD Voltage** drop down menu is used to set the Reverse Bias Voltage of the Photo Detector when using the on-board APD bias generator.
 - **DC Current** drop down menu is used to set the DC current through the laser diode. This biases the laser to a threshold level just below the current level where the laser would begin to emit light. The default and recommended level for the included laser diode is 10mA. See Figure 11 and Figure 12.
 - **Pulsed Current** drop down menu is used to set the pulsed current through the laser diode. See Figure 11 and Figure 12.
-- Pulse Width is the width of the optical pulse launched into the fiber. This setting is in steps of 2nS and cannot exceed 20uS.
+- Pulse Width is the width of the optical pulse launched into the fiber. This
+  setting is in steps of 2nS and cannot exceed 20uS.
 
 |resources-eval-figure12_ada4355.png| *Figure 12. DC current and pulsed current definition*
 - **Samples** drop down menu specifies the number of samples to be collected for each pulse. The samples collected are referred to as a "Frame" |resources-eval-ada4355_frame.jpg|  *Figure 13.*
@@ -101,7 +100,8 @@ Tool Bar
 For Only Application Board User
 -------------------------------
 
--  D23 in the FMC Connector, which is labeled as "1P8VA_EN", needs to be driven by more than 1.2V to make the ADA4355 Application board work properly.
+-  D23 in the FMC Connector, which is labeled as "1P8VA_EN", needs to be driven
+   by more than 1.2V to make the ADA4355 Application board work properly.
 
 Downloads
 =========
@@ -111,37 +111,36 @@ Downloads
 
    `ada4355_evaluation_board.zip <https://wiki.analog.com/_media/resources/eval/ada4355_evaluation_board.zip>`_\ `ada4355_evaluation_board_schematics.pdf <https://wiki.analog.com/_media/resources/eval/ada4355_evaluation_board_schematics.pdf>`_\ `ada4355_kc705_bitfile.zip <https://wiki.analog.com/_media/resources/eval/ada4355_kc705_bitfile.zip>`_
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/kintexkit_angle-web.gif
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/figure2_ada4355.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/figure_3_ada4355.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/figure_4_ada4355.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/figure_5_ada4355.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/full_system1.jpg
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/figure7_ada4355.png
-   :width: 200px
+   :width: 200
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/figure8_ada4355.png
-   :width: 200px
+   :width: 200
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/ada4355_averages.jpg
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/figure14_ada4355.jpg
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/figure15_ada4355.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/figure16_ada4355.jpg
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/figure17_ada4355.jpg
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/figure18_ada4355.jpg
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/toolbar_ada4355.png
-   :width: 400px
+   :width: 400
 
 .. |resources-eval-ada4355_frame.jpg| image:: https://wiki.analog.com/_media/resources/eval/ada4355_frame.jpg
 .. |resources-eval-figure12_ada4355.png| image:: https://wiki.analog.com/_media/resources/eval/figure12_ada4355.png

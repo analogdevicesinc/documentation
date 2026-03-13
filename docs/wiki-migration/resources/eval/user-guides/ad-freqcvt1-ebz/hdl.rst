@@ -3,7 +3,10 @@ HDL support for AD-FREQCVT1-EBZ board
 
 The :doc:`AD-FREQCVT1-EBZ </wiki-migration/resources/eval/user-guides/ad-freqcvt1-ebz>` board can be configured through an SPI interface, using the provided 12-pin ribbon cable. Care should be taken to connect the cable to the PMOD connector the same way on carrier and board side too.
 
-The FMCOMMS2/3 HDL design fully supports the AD-FREQCVT1-EBZ board by enabling the second SPI interface of the Processing System 7 IP core, in this way providing full access for the software to configure and setup the frequency converter board.
+The FMCOMMS2/3 HDL design fully supports the AD-FREQCVT1-EBZ board by enabling
+the second SPI interface of the Processing System 7 IP core, in this way
+providing full access for the software to configure and setup the frequency
+converter board.
 
 Supported carriers
 ------------------

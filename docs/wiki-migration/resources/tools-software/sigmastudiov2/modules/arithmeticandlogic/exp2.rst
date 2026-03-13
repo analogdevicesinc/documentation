@@ -17,7 +17,6 @@ Name ADAU-145x ADAU-146x ADSP-214xx ADSP-SC5xx
 Exp2 Yes       Yes       Yes        Yes
 ==== ========= ========= ========== ==========
 
-
 | ===== Pins =====
 
 Input
@@ -48,4 +47,5 @@ No configurable parameters
 DSP Parameters
 --------------
 
-2 Power x is equivalent to e^(x ln 2). Taylor series expansion of e^x is used to compute the value of 2 Power x.
+2 Power x is equivalent to e^(x ln 2). Taylor series expansion of e^x is used to
+compute the value of 2 Power x.

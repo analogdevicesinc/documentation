@@ -3,7 +3,8 @@ Multiplexers/Demultiplexers
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-The Multiplexer and Demultiplexer library of the ToolBox contains blocks for multiplexing or demultiplexing signals in various ways.
+The Multiplexer and Demultiplexer library of the ToolBox contains blocks for
+multiplexing or demultiplexing signals in various ways.
 
 The following blocks are available:
 

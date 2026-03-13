@@ -43,7 +43,8 @@ Required devicetree properties for the AD5770R:
 Optional properties:
 
 -  vref: Specify the voltage of the external reference used.
--  reset-gpios: GPIO spec for the RESET pin. If specified, it will be asserted during driver probe.
+-  reset-gpios: GPIO spec for the RESET pin. If specified, it will be asserted
+   during driver probe.
 
 ::
 
@@ -96,7 +97,8 @@ Optional properties:
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -116,8 +118,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -165,7 +174,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r-- 1 root root 4096 Jul 18 12:12 uevent
    
 
-
 Show device name
 ----------------
 
@@ -180,13 +188,13 @@ Show device name
       ad5770r
    
 
-
 Show scale
 ----------
 
 **Description:** /sys/bus/iio/devices/iio:deviceX/out_currentY_scale
 
-scale to be applied to out_currentY_raw in order to obtain the measured current in milliamps.
+scale to be applied to out_currentY_raw in order to obtain the measured current
+in milliamps.
 
 .. container:: box bggreen
 
@@ -198,7 +206,6 @@ scale to be applied to out_currentY_raw in order to obtain the measured current 
       root@raspberrypi:/sys/bus/iio/devices/iio:device0# cat out_current0_scale
       0.018310546
    
-
 
 Set channel Y output current
 ----------------------------
@@ -216,7 +223,6 @@ Raw (unscaled, no bias etc.) output current for channel Y.
    
       root@raspberrypi:/sys/bus/iio/devices/iio:device0# echo 5000 > out_current0_raw
    
-
 
 **I** = *out_current0_raw \* out_current0_scale* = 5000 \* 0,018310546 = **91,55273 mA**
 
@@ -242,7 +248,6 @@ Enable power down mode for the device
       0
    
 
-
 Show available filter frequencies
 ---------------------------------
 
@@ -260,7 +265,6 @@ Show available filter frequencies
       root@raspberrypi:/sys/bus/iio/devices/iio:device0# cat out_current_filter_low_pass_3db_frequency_available
       153 357 715 1400 2800 262000
    
-
 
 Set channel Y filter frequency
 ------------------------------
@@ -283,7 +287,6 @@ Set channel Y filter frequency
       1400
    
 
-
 More Information
 ================
 
@@ -305,6 +308,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/youtube>p_vntewue24
-

@@ -10,12 +10,16 @@ Polynomial
 Description
 -----------
 
-The Polynomial block computes the polynomial equation of (N - 1)th order.Where N specifies in the text field.
+The Polynomial block computes the polynomial equation of (N - 1)th order.Where N
+specifies in the text field.
 
 Usage
 -----
 
-Enter the order of the equation in the text field and to open the table editor to enter the coefficients, click on the table button. if N = 5, This block computes the polynomial equation of 4th order.The table editor contains 5 coefficients and those are in the order of a0,a1,a2,a3, and a4 respectively.
+Enter the order of the equation in the text field and to open the table editor
+to enter the coefficients, click on the table button. if N = 5, This block
+computes the polynomial equation of 4th order.The table editor contains 5
+coefficients and those are in the order of a0,a1,a2,a3, and a4 respectively.
 
 Variants
 --------

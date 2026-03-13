@@ -1,7 +1,10 @@
 Approving Wiki Pages
 ====================
 
-A small colour-coded banner is always located at the top of each page, with information about the Approval/Draft status. It's not that we don't trust you, but many readers of the wiki appreciate that the content has been vetted and reviewed before it is moved to the approved status.
+A small colour-coded banner is always located at the top of each page, with
+information about the Approval/Draft status. It's not that we don't trust you,
+but many readers of the wiki appreciate that the content has been vetted and
+reviewed before it is moved to the approved status.
 
 By default, any user who is logged into the wiki will see the latest revision of a page, if they do not specify which revision they want. However, someone who is not logged in will see the latest approved revision by default (unless there isn't one). All users can still view any revision of a page if they specifically request it – whether or not it is approved.
 

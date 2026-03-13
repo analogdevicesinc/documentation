@@ -1,17 +1,20 @@
 .. important::
 
-   Please Note,The CoraZ7 support with ACE is still in progress and not yet released!
-
+   Please Note,The CoraZ7 support with ACE is still in progress and not yet
+   released!
 
 Getting Started with ADI Kuiper Linux for Evaluation on Cora Z7
 ===============================================================
 
-This is to help you quickly setup an ADI Product Evaluation Board that is supported by a controller board that uses ADI Kuiper Linux and ADI ACE software. The EVAL-SD-CZ7-KUIPERZ SD Card contains a pre-configured version ADI Kuiper Linux intended for use with ACE and is included as part of the supported Product Evaluation Board kit.
+This is to help you quickly setup an ADI Product Evaluation Board that is
+supported by a controller board that uses ADI Kuiper Linux and ADI ACE software.
+The EVAL-SD-CZ7-KUIPERZ SD Card contains a pre-configured version ADI Kuiper
+Linux intended for use with ACE and is included as part of the supported Product
+Evaluation Board kit.
 
 .. note::
 
    If you are looking for the normal ADI Kuiper Linux SD card image, that is available from this page: :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
-
 
 Additional System Requirements
 ------------------------------
@@ -31,7 +34,7 @@ Getting Started
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ace_sidebar-check-for-updates.png
    :align: center
-   :width: 200px
+   :width: 200
 
 -  Run ACE and select ‘Plug-in Manager’ from the ACE sidebar to install the board plug-in that supports the Product Evaluation Board and select Available Packages. You can use the search field to help filter the list of boards to find the relevant one. An ACE Quickstart guide is available here: :doc:`ACE Quickstart - Using ACE and Installing Plug-ins </wiki-migration/resources/tools-software/ace/userguide/quickstart>`
 
@@ -39,21 +42,18 @@ Getting Started
 
    \ |image1|\
 
-
 .. container:: column right
-
-
 
    ..
 
 |image2|
 
--  Insert the EVAL-SD-CZ7-KUIPERZ SD card into the SD card slot on the underside of the CoraZ7.
+-  Insert the EVAL-SD-CZ7-KUIPERZ SD card into the SD card slot on the underside
+   of the CoraZ7.
 
 .. note::
 
    If there is a need to re-image or create a new SD card, instructions are available here: :doc:`ADI Kuiper Linux with support for ACE Evaluation </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images_for_ace>`.
-
 
 ::
 
@@ -61,7 +61,7 @@ Getting Started
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/combinedjumpers_cz7.png
    :align: center
-   :width: 400px
+   :width: 400
 
 +-----------------+--------------------------------------------------------------------------------+---------------------------------+
 | Jumper Location | Description                                                                    | Shunt Placement                 |
@@ -71,19 +71,28 @@ Getting Started
 | JP3             | Selects how the CoraZ7-07s board is powered. We are powering from the USB port | Across Pins 2 & 3 (labeled USB) |
 +-----------------+--------------------------------------------------------------------------------+---------------------------------+
 
--  Connect the Product Evaluation Board to the Arduino connector on the Cora Z7. There may be additional steps and hardware, e.g., function generators connections and setup. This information may be included with the eval kit or can be found in the User Guide on the corresponding Product Evaluation Boards page on www.analog.com
+-  Connect the Product Evaluation Board to the Arduino connector on the Cora Z7.
+   There may be additional steps and hardware, e.g., function generators
+   connections and setup. This information may be included with the eval kit or
+   can be found in the User Guide on the corresponding Product Evaluation Boards
+   page on www.analog.com
 
--  Connect the Ethernet cable directly from the PC to the Ethernet port on the Cora Z7 (May need to use an adapter if there's no Ethernet port on your PC).
+-  Connect the Ethernet cable directly from the PC to the Ethernet port on the
+   Cora Z7 (May need to use an adapter if there's no Ethernet port on your PC).
 
--  Connect the USB from the PC to the micro-USB port on the CoraZ7. The red LD7/POWER LED should turn on.
+-  Connect the USB from the PC to the micro-USB port on the CoraZ7. The red
+   LD7/POWER LED should turn on.
 
--  The green LD1 LED then starts blinking ~20-30 seconds later which indicates the boot process is complete.
+-  The green LD1 LED then starts blinking ~20-30 seconds later which indicates
+   the boot process is complete.
 
--  Launch the ACE software from the Analog Devices folder in the Windows Start menu. The Evaluation Board should appear in the ACE Start Tab >> Attached Hardware view.
+-  Launch the ACE software from the Analog Devices folder in the Windows Start
+   menu. The Evaluation Board should appear in the ACE Start Tab >> Attached
+   Hardware view.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad4630-24-eval-board/ace_attached_hw-screen.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Beyond Evaluation…
 ------------------
@@ -101,6 +110,6 @@ Getting Support
 -  Finally, if you need additional support, please contact ADI using the `EngineerZone <https://ez.analog.com/>`_ forums.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ace_sidebar-plug-in_manager.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ace_plug-in_manager-avaialable_selected.png
-   :width: 200px
+   :width: 200

@@ -24,7 +24,10 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the :adi:`ADPD4100`/:adi:`ADPD4101` part, which may be used, without modifications, with any microcontroller.
--  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Drivers, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
 The Communication Driver has a standard interface, so the :adi:`ADPD4100`/:adi:`ADPD4101` driver can be used exactly as it is provided.
 
@@ -454,4 +457,3 @@ Downloads
    -  :git-no-OS:`Implementation of ADPD410X Driver. <drivers/photo-electronic/adpd410x/adpd410x.c>`
    -  :git-no-OS:`Header file of ADPD410X Driver. <drivers/photo-electronic/adpd410x/adpd410x.h>`
    
-

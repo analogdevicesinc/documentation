@@ -8,7 +8,12 @@ Overview
 
 The :adi:`CN0345` can process eight gain-independent channels and is compatible with both single-ended and differential input signals. The analog front end includes the :adi:`ADG1207` multiplexer, the :adi:`AD8251` programmable gain instrumentation amplifier (PGIA), the :adi:`AD8475` as a precision ADC driver for performing the single-ended-to-differential conversion, and the :adi:`AD7982`, an 18-bit, 1 MSPS PulSAR ADC. Gain configurations of 0.4, 0.8, 1.6, and 3.2 are available.
 
-The maximum sample rate of the system is 1 MSPS. The channel switching logic is synchronous to the ADC conversions, and the maximum channel switching rate is 1 MHz. A single channel can be sampled at up to 1 MSPS with 18-bit resolution. Channel switching rates up to 750 kHz also provide 18-bit performance. The system also features low power consumption, consuming only 240 mW at the maximum ADC throughput rate of 1 MSPS.
+The maximum sample rate of the system is 1 MSPS. The channel switching logic is
+synchronous to the ADC conversions, and the maximum channel switching rate is 1
+MHz. A single channel can be sampled at up to 1 MSPS with 18-bit resolution.
+Channel switching rates up to 750 kHz also provide 18-bit performance. The
+system also features low power consumption, consuming only 240 mW at the maximum
+ADC throughput rate of 1 MSPS.
 
 This user guide will discuss how to operate the :adi:`EVAL-SDP-CB1Z <SDP>` and the evaluation software to configure and collect data from the :adi:`EVAL-CN0345-SDZ <CN0345>` Evaluation Board (**CN-0345 Board**). A complete design support package for the :adi:`EVAL-CN0345-SDZ <CN0345>` evaluation board containing schematics, layouts (native and Gerber), and bill-of-materials can be found at: :adi:`CN0345-DesignSupport`.
 
@@ -36,7 +41,7 @@ General Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_2_generalsetupblockdiagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Installing the Software
 -----------------------
@@ -45,7 +50,7 @@ Installing the Software
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_4_install2.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Click **Next** to view the installation review page. // |image2| //
 -  Click **Next** to start the installation. // |image3| //
@@ -112,7 +117,8 @@ Configuration Tab
 
 -  Sequences
 
-   -  Selects the number of sequence iterations to be performed for each acquisition.
+   -  Selects the number of sequence iterations to be performed for each
+      acquisition.
 
 -  Single Capture
 
@@ -150,7 +156,8 @@ Multi-Channel Tab
 
 -  Multi-Channel Waveform Plot
 
-   -  Displays the data readback from each of the active and visible channels in the conversion sequence.
+   -  Displays the data readback from each of the active and visible channels in
+      the conversion sequence.
 
 -  Multi-Channel Selectors
 
@@ -176,7 +183,8 @@ Single-Channel Tab
 
 -  Waveform/Histogram/FFT Sub-tabs
 
-   -  Selects whether to display the Waveform, Histogram, or FFT data and analysis items for the selected channel.
+   -  Selects whether to display the Waveform, Histogram, or FFT data and
+      analysis items for the selected channel.
 
 -  Waveform/Histogram/FFT Plot
 
@@ -184,7 +192,10 @@ Single-Channel Tab
 
 -  Single-Channel Selectors
 
-   -  Selects which channel's Waveform, Histogram, and FFT are being displayed. Note: only one channel can be displayed at once. Channels that are not included in the sequence can be selected, but their plots will not contain any data.
+   -  Selects which channel's Waveform, Histogram, and FFT are being displayed.
+      Note: only one channel can be displayed at once. Channels that are not
+      included in the sequence can be selected, but their plots will not contain
+      any data.
 
 -  Y-Axis Display Format
 
@@ -202,7 +213,7 @@ Program Sequencer
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_12_sequencerpopup.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Select All
 
@@ -218,7 +229,8 @@ Program Sequencer
 
 -  Gain Selectors
 
-   -  Sets the gain for each of the channels included in the channel/gain sequence.
+   -  Sets the gain for each of the channels included in the channel/gain
+      sequence.
 
 -  OK
 
@@ -233,7 +245,7 @@ Set Channel/Gain Manually
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_13_manualpopup.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Channel Set
 
@@ -259,7 +271,8 @@ Edit Plot Colors
 
 -  Plot Color Selectors
 
-   -  Sets the color for each channel's plot, the plot background, and grid lines.
+   -  Sets the color for each channel's plot, the plot background, and grid
+      lines.
 
 -  Example Display
 
@@ -384,7 +397,7 @@ The sequence configuration establishes the order of channel and gain settings in
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_20_sequencerforconversions.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Capturing Samples
 ~~~~~~~~~~~~~~~~~
@@ -410,17 +423,17 @@ After capturing samples or loading a previous set of conversion results, the dat
 |image10| |image11| |image12|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_3_install1.png
-   :width: 700px
+   :width: 700
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_5_install3.png
-   :width: 700px
+   :width: 700
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_6_install4.png
-   :width: 700px
+   :width: 700
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_7_install5.png
-   :width: 700px
+   :width: 700
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_9_sdpinstallation2.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_10_sdpinstallation3.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_17_loadingbar.png
-   :width: 450px
+   :width: 450
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_18_connectionfailure.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_multichanneldata.png
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_21_singlechannelwaveformdata.png

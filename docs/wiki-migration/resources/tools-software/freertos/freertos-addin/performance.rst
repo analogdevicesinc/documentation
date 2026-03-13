@@ -27,7 +27,8 @@ The benchmark data is available for the following EZ-Kits:
 Timer Cycles
 ~~~~~~~~~~~~
 
-The following benchmarks report time and cycle count measurements for post and pending operations using varying methods of communication.
+The following benchmarks report time and cycle count measurements for post and
+pending operations using varying methods of communication.
 
 Projects below are executed to gather the benchmark data:
 
@@ -40,7 +41,8 @@ Projects below are executed to gather the benchmark data:
 Space
 ~~~~~
 
-The following benchmarks report code size for several common RTOS operations within FreeRTOS.
+The following benchmarks report code size for several common RTOS operations
+within FreeRTOS.
 
 Projects below are executed to gather the benchmark data:
 

@@ -14,7 +14,12 @@ Surround Sound Volume Control
 Description
 -----------
 
-The Surround Sound Volume Control block enables positioning of source elements relative to a listener head. The default block has one source centered in front of the listener. Right-click the block border or title to grow the algorithm up to 6 sources. Sources and head can be dragged to any position in the room, or set more precisely via the Set Positions and Room Dimensions form (right-click the center of the block). Its parameters include:
+The Surround Sound Volume Control block enables positioning of source elements
+relative to a listener head. The default block has one source centered in front
+of the listener. Right-click the block border or title to grow the algorithm up
+to 6 sources. Sources and head can be dragged to any position in the room, or
+set more precisely via the Set Positions and Room Dimensions form (right-click
+the center of the block). Its parameters include:
 
 -  Units -- English (US) or Metric
 -  Coordinate System -- Cartesian or Polar
@@ -22,7 +27,8 @@ The Surround Sound Volume Control block enables positioning of source elements r
 -  Head location
 -  Source locations
 
-Press Resize to accept changes. Grayed-out source locations mean the source is not currently added.
+Press Resize to accept changes. Grayed-out source locations mean the source is
+not currently added.
 
 Targets Supported
 -----------------
@@ -97,15 +103,21 @@ Configurable Parameters
 | 
 | ===== DSP Parameter Computation ===== Cartesian:
 
-distance= Math.Sqrt(Math.Pow(sourceX - \_headLocationX, 2) + Math.Pow(sourceY - \_headLocationY, 2));
+distance= Math.Sqrt(Math.Pow(sourceX - \_headLocationX, 2) + Math.Pow(sourceY -
+\_headLocationY, 2));
 
-Polar: headXCart = \_headLocationX \* Math.Sin(\_headLocationY); headYCart = \_headLocationX \* Math.Cos(\_headLocationY);
+Polar: headXCart = \_headLocationX \* Math.Sin(\_headLocationY); headYCart =
+\_headLocationX \* Math.Cos(\_headLocationY);
 
-sourceXCart = sourceX \* Math.Sin(sourceY); sourceYCart = sourceX \* Math.Cos(sourceY);
+sourceXCart = sourceX \* Math.Sin(sourceY); sourceYCart = sourceX \*
+Math.Cos(sourceY);
 
-distance = Math.Sqrt(Math.Pow(sourceXCart - headXCart, 2) + Math.Pow(sourceYCart - headYCart, 2));
+distance = Math.Sqrt(Math.Pow(sourceXCart - headXCart, 2) + Math.Pow(sourceYCart
+- headYCart, 2));
 
-US-Feet: if (distance <= 2) then, computedGain = \_globalGain + 6 - 10 \* Math.Log10((distance + 2) / 2); if (distance > 2) then, computedGain = \_globalGain + 8.989 - 20 \* Math.Log10((distance + 2) / 2);
+US-Feet: if (distance <= 2) then, computedGain = \_globalGain + 6 - 10 \*
+Math.Log10((distance + 2) / 2); if (distance > 2) then, computedGain =
+\_globalGain + 8.989 - 20 \* Math.Log10((distance + 2) / 2);
 
 Metric:
 

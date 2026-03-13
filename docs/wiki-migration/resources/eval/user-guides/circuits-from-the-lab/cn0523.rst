@@ -3,16 +3,19 @@ EVAL-CN0523-EBZ User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0523-ebz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Overview
 --------
@@ -23,12 +26,13 @@ An overtemperature management feature is implemented on the :adi:`EVAL-CN0523-EB
 
 Designed to be used with the :adi:`ADALM-PLUTO`, or other software defined radio platform, the board features a small form factor, with dimensions of 25.4 mm × 50.8 mm x 1.5748 mm (PCB only). The RF input and output are designed with a 50 Ω impedance, enabling direct connection between the circuit and standard 50 Ω systems.
 
-A micro-USB connector is used for the input power, allowing the evaluation board to use most +5 V wall wart power supplies available in the market.
+A micro-USB connector is used for the input power, allowing the evaluation board
+to use most +5 V wall wart power supplies available in the market.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/cn0523_simplified_block_diagram.png
    :alt: cn0523_simplified_block_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 *Figure 1. EVAL-CN0523-EBZ Block Diagram*
 
@@ -43,7 +47,7 @@ Primary Side
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/top_temp.jpg
    :alt: top_temp.jpg
    :align: center
-   :width: 700px
+   :width: 700
 
 *Figure 2. CN0523 Primary Side*
 
@@ -73,14 +77,13 @@ LED Indicators
    =============================== ======= ================
    
 
-
 Secondary Side
 ~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/bot_temp.jpg
    :alt: bot_temp.jpg
    :align: center
-   :width: 700px
+   :width: 700
 
 *Figure 3. CN0523 Secondary Side*
 
@@ -96,7 +99,7 @@ Changing the Temperature Switch Trip Point (JP1, JP2, JP3)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/jmp_settings.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 *Figure 4. ADT6401 Jumper Setting*
 
@@ -136,11 +139,10 @@ Changing the Temperature Switch Trip Point (JP1, JP2, JP3)
    +----------------------------------------+------------------+-----------------+----------------+
    
 
-
 .. important::
 
-   Due to the considerable thermal dissipation of the RF amplifiers, the last three options should not be used.
-
+   Due to the considerable thermal dissipation of the RF amplifiers, the last
+   three options should not be used.
 
 --------------
 
@@ -173,7 +175,6 @@ Firmware
    -  `Pluto version latest release <https://github.com/analogdevicesinc/plutosdr-fw/releases/latest>`_
    
 
-
 -  In order to properly operate the ADALM PLUTO, you need to setup and configure it. Follow the procedure through this :doc:`link </wiki-migration/university/tools/pluto/users/firmware>`.
 
 --------------
@@ -191,16 +192,19 @@ Test Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/full_hw_setup.jpg
    :align: center
-   :width: 700px
+   :width: 700
 
 *Figure 5. EVAL-CN0523-EBZ Test Setup*
 
 .. warning::
 
-   Warning: Connecting the CN0523 directly to the PlutoSDR input (Rx) may result in an exceedance of its absolute maximum ratings of +2.5 dBm. Such an action may lead to permanent damage to the PlutoSDR. It is strongly recommended to use a 30 dB or 40 dB attenuator at the RX input of the ADALM PLUTO to avoid incurring damage.
+   Warning: Connecting the CN0523 directly to the PlutoSDR input (Rx) may result
+   in an exceedance of its absolute maximum ratings of +2.5 dBm. Such an action
+   may lead to permanent damage to the PlutoSDR. It is strongly recommended to
+   use a 30 dB or 40 dB attenuator at the RX input of the ADALM PLUTO to avoid
+   incurring damage.
 
    
-
 
 --------------
 
@@ -235,13 +239,11 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Board File
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications and documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0523-EBZ?&v=Rev F>`_ to receive all these great benefits and more!
-
 
 *End of Document*

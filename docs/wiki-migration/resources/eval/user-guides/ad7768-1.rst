@@ -8,41 +8,58 @@ The :adi:`AD7768-1` is a low power, high performance, Σ-Δ analog-to-digital co
 
 The :adi:`AD7768-1` achieves a 108.5 dB dynamic range when using the low ripple, finite impulse response (FIR) digital filter at 256 kSPS, giving 110.8 kHz input bandwidth (BW), combined with ±1.1 ppm integral nonlinearity (INL), ±30 µV offset error, and ±30 ppm gain error.
 
-Wider bandwidth, up to 500 kHz Nyquist, 204 kHz, −3 dB, is available using the sinc5 filter, enabling a view of signals over an extended range.
+Wider bandwidth, up to 500 kHz Nyquist, 204 kHz, −3 dB, is available using the
+sinc5 filter, enabling a view of signals over an extended range.
 
 The :adi:`AD7768-1` offers the user the flexibility to configure and optimize for input BW vs. output data rate (ODR) and vs. power dissipation. The flexibility of the :adi:`AD7768-1` allows for dynamic analysis of a changing input signal, making it particularly useful in general-purpose data acquisition systems. The selection of one of three available power modes allows the designer to achieve required noise targets while minimizing power consumption. The design of the :adi:`AD7768-1` is unique in that it becomes a reusable and flexible platform for low power dc and high performance ac measurement modules.
 
 The :adi:`AD7768-1` achieves the optimum balance of dc and ac performance with excellent power efficiency. The following three operating modes allow the user to tailor the input BW vs. power budgets:
 
--  Fast mode offers both a sinc filter with up to 256 kSPS and 52.2 kHz of bandwidth, and 26.4 mW of power consumption, or a FIR filter with up to 256 kSPS, 110.8 kHz of bandwidth, and 36.8 mW of power consumption
+-  Fast mode offers both a sinc filter with up to 256 kSPS and 52.2 kHz of
+   bandwidth, and 26.4 mW of power consumption, or a FIR filter with up to 256
+   kSPS, 110.8 kHz of bandwidth, and 36.8 mW of power consumption
 
--  Median mode offers a FIR filter with up to 128 kSPS, 55.4 kHz of bandwidth, and 19.7 mW of power consumption
+-  Median mode offers a FIR filter with up to 128 kSPS, 55.4 kHz of bandwidth,
+   and 19.7 mW of power consumption
 
--  Low power mode offers a FIR filter with up to 32 kSPS, 13.85 kHz of bandwidth, and 6.75 mW of power consumption
+-  Low power mode offers a FIR filter with up to 32 kSPS, 13.85 kHz of
+   bandwidth, and 6.75 mW of power consumption
 
 The :adi:`AD7768-1` offers extensive digital filtering capabilities that can meet a wide range of system requirements. The filter options allow configuration for frequency domain measurements with tight gain error over frequency, linear phase response requirements (brick wall filter), a lower latency path (sinc5 or sinc3) for use in control loop applications, and measuring dc inputs with the ability to configure the sinc3 filter to reject the line frequency of either 50 Hz or 60 Hz. All filters offer programmable decimation.
 
-A 1.024 MHz sinc5 filter path exists for users seeking an even higher output data rate. This path is quantization noise limited; therefore, it is best suited for customers requiring minimum latency for control loops or implementing custom digital filtering on an external field programmable gate array (FPGA) or digital signal processor (DSP).
+A 1.024 MHz sinc5 filter path exists for users seeking an even higher output
+data rate. This path is quantization noise limited; therefore, it is best suited
+for customers requiring minimum latency for control loops or implementing custom
+digital filtering on an external field programmable gate array (FPGA) or digital
+signal processor (DSP).
 
 Filter options include the following:
 
 -  A low ripple FIR filter with a ±0.005 dB pass-band ripple to 102.4 kHz
 
--  A low latency sinc5 filter with up to a 1.024 MHz data rate to maximize control loop responsiveness
+-  A low latency sinc5 filter with up to a 1.024 MHz data rate to maximize
+   control loop responsiveness
 
--  A low latency sinc3 filter that is fully programmable, with 50 Hz/60 Hz rejection capabilities
+-  A low latency sinc3 filter that is fully programmable, with 50 Hz/60 Hz
+   rejection capabilities
 
 When using the :adi:`AD7768-1`, embedded analog functionality within the :adi:`AD7768-1` greatly reduces the design burden over the entire application range. The precharge buffer on each analog input decreases analog input current compared to competitive offerings, simplifying the task of an external amplifier to drive the analog input.
 
-A full buffer input on the reference vastly reduces the input current, providing a high impedance input for the external reference device or in buffering any reference sense resistor scenarios used in ratiometric measurements.
+A full buffer input on the reference vastly reduces the input current, providing
+a high impedance input for the external reference device or in buffering any
+reference sense resistor scenarios used in ratiometric measurements.
 
-The device operates with a 5.0 V AVDD1 − AVSS supply, a 2.0 V to 5.0 V AVDD2 − AVSS supply, and a 1.8 V to 3.3 V IOVDD − DGND supply.
+The device operates with a 5.0 V AVDD1 − AVSS supply, a 2.0 V to 5.0 V AVDD2 −
+AVSS supply, and a 1.8 V to 3.3 V IOVDD − DGND supply.
 
-In low power mode, the AVDD1, AVDD2, and IOVDD supplies can run from a single 3.3 V rail.
+In low power mode, the AVDD1, AVDD2, and IOVDD supplies can run from a single
+3.3 V rail.
 
-The device requires an external reference; the absolute input reference (REFIN) voltage range is 1 V to AVDD1 − AVSS.
+The device requires an external reference; the absolute input reference (REFIN)
+voltage range is 1 V to AVDD1 − AVSS.
 
-The specified operating temperature range is −40°C to +125°C. The device is housed in a 4 mm × 5 mm, 28-lead LFCSP.
+The specified operating temperature range is −40°C to +125°C. The device is
+housed in a 4 mm × 5 mm, 28-lead LFCSP.
 
 Supported devices
 ~~~~~~~~~~~~~~~~~
@@ -214,7 +231,6 @@ HDL Downloads
    -  :git-hdl:`ad77681evb HDL Project. <projects/ad77681evb>`
    
 
-
 No-OS Downloads
 ---------------
 
@@ -224,4 +240,3 @@ No-OS Downloads
    
    -  `ad7768-1fmcz <https://github.com/analogdevicesinc/no-OS/tree/ad7768_1/ad7768-1fmcz>`_
    
-

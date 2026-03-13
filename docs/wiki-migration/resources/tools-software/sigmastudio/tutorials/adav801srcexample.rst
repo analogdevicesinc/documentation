@@ -3,7 +3,9 @@ Sample Rate Converter (SRC) example
 
 :doc:`Click here to return to the Tutorials page </wiki-migration/resources/tools-software/sigmastudio/tutorials>`
 
-Here is an example of how to use the Sample Rate Converter in the ADAV801 audio codec. The input will be an 1kHz test tone with a sample rate of 11.5kHz and the codec will output the same 1 kHz tone with a new sample rate of 44.1 kHz.
+Here is an example of how to use the Sample Rate Converter in the ADAV801 audio
+codec. The input will be an 1kHz test tone with a sample rate of 11.5kHz and the
+codec will output the same 1 kHz tone with a new sample rate of 44.1 kHz.
 
 The routing inside the chip will be as follows:
 
@@ -18,15 +20,17 @@ The routing inside the chip will be as follows:
 
 .. tip::
 
-   Please refer to the following supporting documents if any further clarification is needed throughout this example
+   Please refer to the following supporting documents if any further
+   clarification is needed throughout this example
 
    
    -  :adi:`ADAV801 datasheet <static/imported-files/data_sheets/ADAV801.pdf>`
    -  :adi:`Application Note AN-749 <static/imported-files/application_notes/60376866819334AN749_0.pdf>`
    
 
-
-In order to achieve this routing, the Datapath Control Register 1 (0x62) register needs to be set. If you desire different routing for your own project, refer to the datasheet page listed in the following table(s).
+In order to achieve this routing, the Datapath Control Register 1 (0x62)
+register needs to be set. If you desire different routing for your own project,
+refer to the datasheet page listed in the following table(s).
 
 +-----------------------------+------------------+----------------+------------------+
 | Register Name               | Register Setting | Datasheet Page | Register Address |
@@ -34,7 +38,10 @@ In order to achieve this routing, the Datapath Control Register 1 (0x62) registe
 | Datapath Control Register 1 | 10100xxx         | Page 45        | (0x62)           |
 +-----------------------------+------------------+----------------+------------------+
 
-Now you need to set the clocks for the desired output sampling rate, 44.1KHz in this example. Create the master clock using PLL2. You will need to modify the PLL Control Register 1 (0x74), PLL Control Register 2 (0x75), Internal Clocking Control Register 1 (0x76), and Internal Clocking Control Register (0x77).
+Now you need to set the clocks for the desired output sampling rate, 44.1KHz in
+this example. Create the master clock using PLL2. You will need to modify the
+PLL Control Register 1 (0x74), PLL Control Register 2 (0x75), Internal Clocking
+Control Register 1 (0x76), and Internal Clocking Control Register (0x77).
 
 +--------------------------------------+------------------+----------------+------------------+
 | Register Name                        | Register Setting | Datasheet Page | Register Address |
@@ -48,7 +55,8 @@ Now you need to set the clocks for the desired output sampling rate, 44.1KHz in 
 | Internal Clocking Control Register 2 | xxxxx00x         | page 55        | (0x77)           |
 +--------------------------------------+------------------+----------------+------------------+
 
-To assign the new clock to the sample rate converter master clock (SRC MCLK), modify the SRC and Clock Control (0x00) register.
+To assign the new clock to the sample rate converter master clock (SRC MCLK),
+modify the SRC and Clock Control (0x00) register.
 
 ===================== ================ ============== ================
 Register Name         Register Setting Datasheet Page Register Address
@@ -56,7 +64,10 @@ Register Name         Register Setting Datasheet Page Register Address
 SRC and Clock Control 0000xx01         page 32        (0x00)
 ===================== ================ ============== ================
 
-You can use this same clock as the source for the Record Port by modifying the Record Port Control (0x06) register. It is also important to make sure that the Playback Port is in slave mode, so modifying the Playback Port Control (0x04) register is necessary.
+You can use this same clock as the source for the Record Port by modifying the
+Record Port Control (0x06) register. It is also important to make sure that the
+Playback Port is in slave mode, so modifying the Playback Port Control (0x04)
+register is necessary.
 
 +--------------------------------+------------------+----------------+------------------+
 | Register Name                  | Register Setting | Datasheet Page | Register Address |
@@ -82,15 +93,15 @@ To verify that the sample rate conversion is working correctly, a 1 Khz tone wit
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/inputfreq.png
    :alt: InputFreq.png
    :align: center
-   :width: 600px
+   :width: 600
 
 To verify the correct output, a probe was placed on the LRCLK pin of the Record Port I\ :sup:`2`\ S output of the ADAV801. The signal was also analyzed to ensure the correct 1 kHz tone output.
 
 |OutputFreq.png| |fft.png| |levels.png|
 
 .. |OutputFreq.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/outputfreq.png
-   :width: 600px
+   :width: 600
 .. |fft.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/fft.png
-   :width: 600px
+   :width: 600
 .. |levels.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/levels.png
-   :width: 600px
+   :width: 600

@@ -9,7 +9,13 @@ Master Control Port IO
 Description
 -----------
 
-The master control port I/O block allows communication with one external device during DSP program initialization. Typically this block is used to configure an external device like a converter or codec. Communication (read or write) over the master control port bus (I2C or SPI) occurs only once at start-up of the DSP program, and prior to audio processing. The data transferred between host and device is defined in a SigmaStudio sequence file which can be generated using the sequence window.
+The master control port I/O block allows communication with one external device
+during DSP program initialization. Typically this block is used to configure an
+external device like a converter or codec. Communication (read or write) over
+the master control port bus (I2C or SPI) occurs only once at start-up of the DSP
+program, and prior to audio processing. The data transferred between host and
+device is defined in a SigmaStudio sequence file which can be generated using
+the sequence window.
 
 Usage
 -----

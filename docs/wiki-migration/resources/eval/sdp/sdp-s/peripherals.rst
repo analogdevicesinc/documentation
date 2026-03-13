@@ -1,7 +1,8 @@
 SDP-S Peripherals Explained
 ===========================
 
-The SDP-S’s peripherals are a subset of the SDP-B's peripherals. This document aims to outline these peripherals and their implementation on the SDP board.
+The SDP-S’s peripherals are a subset of the SDP-B's peripherals. This document
+aims to outline these peripherals and their implementation on the SDP board.
 
 TWI/I2C : TWO WIRE INTERFACE
 ----------------------------
@@ -14,6 +15,10 @@ For more details on TWI/I\ :sup:`2`\ C, click :doc:`here </wiki-migration/resour
 SPI: Serial Port Interface
 --------------------------
 
-The SPI interface on the SDP-S is a full duplex, synchronous serial interface. The SDP-S is the Master for all SPI transfers. When an SPI transfer occurs, data is simultaneously transmitted as new data is received. The SPI_CLK signal synchronises the shifting of data out and the sampling of data in on the two serial data pins (MOSI and MISO).
+The SPI interface on the SDP-S is a full duplex, synchronous serial interface.
+The SDP-S is the Master for all SPI transfers. When an SPI transfer occurs, data
+is simultaneously transmitted as new data is received. The SPI_CLK signal
+synchronises the shifting of data out and the sampling of data in on the two
+serial data pins (MOSI and MISO).
 
 For more details on SPI, click :doc:`here </wiki-migration/resources/eval/sdp/sdp-s/peripherals/spi>`!

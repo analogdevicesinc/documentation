@@ -7,15 +7,18 @@ Stopwatch
 
 |stopwatchpic1.png| The stopwatch block allows for a stop, start, and reset counting mechanism. When one needs to know how long something takes (i.e. how many samples have passed), you signal the start and stop of an event, and a stopwatch measures the time between the signaling of the start and stop. Stopwatches also allow for the count to be reset to zero to measure additional time intervals.
 
-The stopwatch allows external signals to control the start and stop of the counter. The output of the stopwatch block is the total sample count, in 28.0 data format, for the active period. When active, the output value and count are incremented for every sample period.
+The stopwatch allows external signals to control the start and stop of the
+counter. The output of the stopwatch block is the total sample count, in 28.0
+data format, for the active period. When active, the output value and count are
+incremented for every sample period.
 
 **Inputs:**
-
 
 |stopwatchpic2.png|
 
 -  The top input pin is the START pin. While the STOP pin signal is zero (see below), an input value greater than zero triggers the counter to start, a zero value will stop the counter.
--  The bottom input pin is the STOP pin. An input value greater than zero will stop the counter (regardless of the value of the start pin).
+-  The bottom input pin is the STOP pin. An input value greater than zero will
+   stop the counter (regardless of the value of the start pin).
 
 **Reset button:**
 
@@ -23,7 +26,9 @@ The **Reset** button resets the value of the counter and output to zero. If the 
 
 --------------
 
-Below are graphs showing values for START, STOP, and the resulting output values. The vertical red lines on the count output denote when the RESET button is pressed.
+Below are graphs showing values for START, STOP, and the resulting output
+values. The vertical red lines on the count output denote when the RESET button
+is pressed.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/stopwatchpic3.png
    :alt: stopwatchpic3.png
@@ -40,7 +45,11 @@ In this example, the stopwatch can count up to a maximum of 93.02 minutes.
 
 **Example:**
 
-Below is a sample schematic showing the basic operation of the Stopwatch. The DC input blocks along with a mono switch, allow for the start and stop pins to be toggled from 0 to 1. This controls the beginning and end of the count. The reset button on the stopwatch controls a coefficient parameter that clears the value of the counter.
+Below is a sample schematic showing the basic operation of the Stopwatch. The DC
+input blocks along with a mono switch, allow for the start and stop pins to be
+toggled from 0 to 1. This controls the beginning and end of the count. The reset
+button on the stopwatch controls a coefficient parameter that clears the value
+of the counter.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/stopwatchpic4.png
    :alt: stopwatchpic4.png

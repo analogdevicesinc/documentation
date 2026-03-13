@@ -4,7 +4,9 @@ How to Generate Remoteproc LDR File in CCES
 Introduction
 ------------
 
-This document introduces the steps to generate the ldr file for remoteproc function in one SHARC core(Core1 or Core2) CCES project. Take the remoteproc sharc template example as the SHARC core CCES project.
+This document introduces the steps to generate the ldr file for remoteproc
+function in one SHARC core(Core1 or Core2) CCES project. Take the remoteproc
+sharc template example as the SHARC core CCES project.
 
 Project Configuration
 ---------------------
@@ -42,7 +44,8 @@ Before configuring the CCES project, we need to import the SHARC CCES project in
 
 |image1| |image2|
 
-The ldr file will be generated in the Debug or Release folder of the CCES project after building the project.
+The ldr file will be generated in the Debug or Release folder of the CCES
+project after building the project.
 
 --------------
 

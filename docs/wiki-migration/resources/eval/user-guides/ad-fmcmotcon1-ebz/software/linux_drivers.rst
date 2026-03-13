@@ -1,8 +1,6 @@
 Linux Drivers
 =============
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,8 +17,6 @@ Linux Drivers
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 |IIO| The Linux Industrial I/O (IIO) subsystem is intended to provide support for devices that, in some sense, are analog-to-digital or digital-to-analog converters. Devices that fall into this category are:
 
 -  ADCs - can be used on ADCs ranging from a 1MSPS SoC ADC to >250 MSPS industrial ADCs
@@ -30,7 +26,10 @@ Linux Drivers
 -  Pressure, temperature, and light sensors, etc.
 -  RF Transceivers (like the AD9361)
 
-The IIO Divers for the motor control solution require the HDL cores to have a specified register map. A DMA interface is set up for high speed data transfer using multiple multiplexed data channels. Below is the list of IIO drivers for the motor control solution.
+The IIO Divers for the motor control solution require the HDL cores to have a
+specified register map. A DMA interface is set up for high speed data transfer
+using multiple multiplexed data channels. Below is the list of IIO drivers for
+the motor control solution.
 
 +-----------------+----------------------------------------------------+-------------------------------------------+
 | IIO DriverName  | Description                                        | Channels                                  |
@@ -49,7 +48,9 @@ The IIO Divers for the motor control solution require the HDL cores to have a sp
 | **ad-mc-ctrl**  | Driver for the motor controller block              | CH1 : CH8 - Controller monitoring signals |
 +-----------------+----------------------------------------------------+-------------------------------------------+
 
-Each IIO driver has in the device tree and entry related to the actual driver and an entry corresponding to the allocated DMA. Below is an example of how the device tree looks for the motor control IIO drivers.
+Each IIO driver has in the device tree and entry related to the actual driver
+and an entry corresponding to the allocated DMA. Below is an example of how the
+device tree looks for the motor control IIO drivers.
 
 ::
 
@@ -121,4 +122,4 @@ Each IIO driver has in the device tree and entry related to the actual driver an
    };
 
 .. |IIO| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/iio_logo.png
-   :width: 200px
+   :width: 200

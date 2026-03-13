@@ -5,7 +5,6 @@ IIO Plugin for Visual Analog
 
    This software is `deprecated <https://en.wikipedia.org/wiki/Deprecation>`_ and is no longer supported/tested. It is described here for historical purposes only. If you have questions, please try things out with `IIO Scope <https://wiki.analog.com/../../iio_oscilloscope>`_, or ask questions on :ez:`EngineerZone <linux-device-drivers/linux-software-drivers>`.
 
-
 About
 -----
 
@@ -27,19 +26,21 @@ Downloads
    -  `IIO Plugin for Visual Analog <https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`_
    
 
-
 .. note::
 
    
    -  The old plugin can be used by users that still run old versions of libiio on their targets. It also installs Libiio locally, next to the plugin.
-   -  The new plugin works with Libiio 0.10 which needs to be installed separately. \First, look for 'LibIIO Setup x86' in 'Programs and Features' and uninstall it, then uninstall the old IIO plugin, if exists and then install the new one.
+   -  The new plugin works with Libiio 0.10 which needs to be installed
+      separately. \First, look for 'LibIIO Setup x86' in 'Programs and Features'
+      and uninstall it, then uninstall the old IIO plugin, if exists and then
+      install the new one.
    
-
 
 Setup
 =====
 
-In order to establish the connection between the host PC and the target, there are several steps you need to follow on both sides.
+In order to establish the connection between the host PC and the target, there
+are several steps you need to follow on both sides.
 
 Target side:
 
@@ -93,12 +94,20 @@ User Guide
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_plugin_settings.png
    :align: center
 
--  The component will be the data source of your signal chain. To connect it to output components such as a Graph or data format components such as an Input Formatter use the right sided connectors of the component. You should use as many connectors as the number of enabled channels otherwise the extra connectors will be invalidated (the grey square icon will turn white and when the Run or Continuous Run buttons are pressed the software will mark the lines as invalid using red crosses).
+-  The component will be the data source of your signal chain. To connect it to
+   output components such as a Graph or data format components such as an Input
+   Formatter use the right sided connectors of the component. You should use as
+   many connectors as the number of enabled channels otherwise the extra
+   connectors will be invalidated (the grey square icon will turn white and when
+   the Run or Continuous Run buttons are pressed the software will mark the
+   lines as invalid using red crosses).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_plugin_component_pins.png
    :align: center
 
--  The default height of the component allows for a maximum of 4 connectors. In certain situations where a device has more channels you can always resize the height of the component to get access to as many connectors as you need.
+-  The default height of the component allows for a maximum of 4 connectors. In
+   certain situations where a device has more channels you can always resize the
+   height of the component to get access to as many connectors as you need.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_plugin_extend_connectors.png
    :align: center

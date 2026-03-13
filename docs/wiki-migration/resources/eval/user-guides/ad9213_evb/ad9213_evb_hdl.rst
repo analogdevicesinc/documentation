@@ -5,12 +5,10 @@ AD9213-EVB HDL reference design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad9213_evb/index.html\
 
-
 .. admonition:: Download
    :class: download
 
    :git-hdl:`projects/ad9213_evb`
-
 
 The reference design supports the following evaluation board:
 
@@ -35,12 +33,18 @@ Block Diagram
 
 The data path and clock domains are depicted on the below diagram:
 
-
 |image1|
 
-The design has one JESD receive chain having 16 lanes at rate of 12.5Gbps. The JESD receive chain consists of a physical layer represented by an XCVR module, a link layer represented by an RX JESD LINK module. The transport layer is common and is represented by a RX JESD TPL module. The link operates in Subclass 1 by using the SYSREF signal to edge align the internal local multiframe clock and to release the received data in the same moment from all lanes, therefore ensuring that data from all channels is synchronized at the application layer.
+The design has one JESD receive chain having 16 lanes at rate of 12.5Gbps. The
+JESD receive chain consists of a physical layer represented by an XCVR module, a
+link layer represented by an RX JESD LINK module. The transport layer is common
+and is represented by a RX JESD TPL module. The link operates in Subclass 1 by
+using the SYSREF signal to edge align the internal local multiframe clock and to
+release the received data in the same moment from all lanes, therefore ensuring
+that data from all channels is synchronized at the application layer.
 
-The link is set for full bandwidth mode and operates with the following parameters:
+The link is set for full bandwidth mode and operates with the following
+parameters:
 
 -  Deframer paramaters: L=16, M=1, F=2, S=16, N’=16, N=16
 -  GLBLCLK – 312.5MHz (Lane Rate/40)

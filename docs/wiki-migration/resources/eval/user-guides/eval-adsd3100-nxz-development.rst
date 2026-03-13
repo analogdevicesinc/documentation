@@ -5,7 +5,8 @@ GitHub repo for SDK source code: `ToF <https://github.com/analogdevicesinc/ToF>`
 
 Doxygen documentation (via the GitHub ToF repo): https://analogdevicesinc.github.io/ToF/
 
-The SDK API is used to control the setup the camera and SDK, control the camera and get frames.
+The SDK API is used to control the setup the camera and SDK, control the camera
+and get frames.
 
 There are several examples provided with the SDK: :git-ToF:`ToF/tree/master/examples <examples>`
 
@@ -43,7 +44,8 @@ Case 2: SDK for use in Embedded Linux SoC
 SDK Version
 ~~~~~~~~~~~
 
-The following APIs can be used to retrieve version and Git details on the SDK in use.
+The following APIs can be used to retrieve version and Git details on the SDK in
+use.
 
 -  aditof::getApiVersion(): The API version of the SDK.
 -  aditof::getBranchVersion(): The branch name from which the SDK was built.
@@ -59,7 +61,8 @@ The SDK uses the **Status** enum for return codes. See https://analogdevicesinc.
 Dissecting the first-frame C++ Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Note, it is expected the following example runs on the NXP directly - and not the host, being Windows or Desktop Linux.
+Note, it is expected the following example runs on the NXP directly - and not
+the host, being Windows or Desktop Linux.
 
 Source code: `ToF?master/examples/first-frame/main.cpp <https://github.com/ToF?master/examples/first-frame/main.cpp>`_
 
@@ -132,7 +135,10 @@ Initialize the selected camera.
 Step 4 (optional): Display Version Details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This optional step returns and displays version details. These details are populated based on the ADI ToF eval platform. The user may need to populate these in a different manner in their platform. In which case investigate the CameraDetails class further.
+This optional step returns and displays version details. These details are
+populated based on the ADI ToF eval platform. The user may need to populate
+these in a different manner in their platform. In which case investigate the
+CameraDetails class further.
 
 ::
 
@@ -159,7 +165,10 @@ Returns details on the frame information available from the camera.
 
 To understand what can be returned the please reference the definition of **availableFrameTypes** in `adsd3500_sensor.h <https://github.com/ToF?master/sdk/src/connections/target/adsd3500_sensor.h>`_
 
-For the Crosby, the frames are defined in the code block below. From this we can see the attached camera provides the following modes: lrqm, srqmp, lrmp and srmp. As well as the types of frames available for each mode and the sizes of the frames.
+For the Crosby, the frames are defined in the code block below. From this we can
+see the attached camera provides the following modes: lrqm, srqmp, lrmp and
+srmp. As well as the types of frames available for each mode and the sizes of
+the frames.
 
 ::
 
@@ -336,7 +345,7 @@ The following section goes through important chunks of the python example.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/example1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Specify IP of all connected cameras
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -426,7 +435,8 @@ Call request frame by passing a tof.Frame object.
 Frame details
 ~~~~~~~~~~~~~
 
-After first frame is captured, the frame details are available from the tof.Frame() object
+After first frame is captured, the frame details are available from the
+tof.Frame() object
 
 ::
 

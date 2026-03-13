@@ -20,7 +20,8 @@ If you’re not familiar with IIO, please start reading here:
 Controlling the transceiver
 ---------------------------
 
-The code snippet below is a minimalistic example without error checking. It shows how to control the AD936x transceiver via a remote connection.
+The code snippet below is a minimalistic example without error checking. It
+shows how to control the AD936x transceiver via a remote connection.
 
 -  Create IIO IP Network context. Instead of ``ip:xxx.xxx.xxx.xxx`` it'll also accept ``usb:XX.XX.X``
 -  Get the AD936x PHY device structure

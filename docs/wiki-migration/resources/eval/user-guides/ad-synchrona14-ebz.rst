@@ -3,23 +3,33 @@ AD-SYNCHRONA14-EBZ User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-synchrona14-ebz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Overview
 --------
 
 The **AD-SYNCHRONA14-EBZ** is an ideal self-contained device suitable for applications that require a highly accurate frequency and phase-controlled source clock. It is designed around the :adi:`AD9545`, a quad input synchronizer and jitter cleaner, and the :adi:`HMC7044`, a 3.2 GHz, 14-output high performance jitter attenuator. This board greatly simplifies clock distribution and multichannel synchronization in complex systems. Using popular industry connectors such as SMA and `Samtec Circular RF Twinax <https://www.samtec.com/cables/high-speed/assemblies/shielded>`_, most labs have cables that are compatible with this device. It is intended for use in a lab environment by trained professionals for evaluation and prototyping purposes and can be used as a reference design for integrating into custom applications.
 
-With its on-board internal oven-controlled crystal oscillator (OCXO), the AD-SYNCHRONA14-EBZ can operate in standalone mode or be fed from a choice of external sources such as three separate high speed differential clock inputs, a 10 MHz reference, and a 1 pps input. This flexibility, combined with the capability to select either of the internal voltage-controlled crystal oscillator (VCXO) options of 100 MHz or 122.88 MHz, gives almost unlimited choice for the frequency of interest and accuracy needed for a wide variety of application areas.
+With its on-board internal oven-controlled crystal oscillator (OCXO), the
+AD-SYNCHRONA14-EBZ can operate in standalone mode or be fed from a choice of
+external sources such as three separate high speed differential clock inputs, a
+10 MHz reference, and a 1 pps input. This flexibility, combined with the
+capability to select either of the internal voltage-controlled crystal
+oscillator (VCXO) options of 100 MHz or 122.88 MHz, gives almost unlimited
+choice for the frequency of interest and accuracy needed for a wide variety of
+application areas.
 
  |image1| |image2| *Figure 1. AD-SYNCHRONA14-EBZ Front and Back Panel* 
 
@@ -72,7 +82,8 @@ Key Features
 Power Supply
 ~~~~~~~~~~~~
 
-Use a 12 Volts dc power supply with a minimum power of 36 W and a 2.1 x 5.5 mm barrel jack.
+Use a 12 Volts dc power supply with a minimum power of 36 W and a 2.1 x 5.5 mm
+barrel jack.
 
 Block Diagram
 ~~~~~~~~~~~~~
@@ -81,11 +92,14 @@ Block Diagram
 
    |image3| *Figure 2. AD-SYNCHRONA14-EBZ Simplified Block Diagram*
 
-
 Clock Output Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are a total of 14 high speed clocks that come out of the final clock mux; these can range from 2150 MHz to 3550 MHz in different modes and connection schemes. The maximum clock output is 2400 MHz, which can be divided down by 1, 2, 3, 4, 5, 6, and even numbers up to 4094. Moreover, the output clock resolution depends on the “Clock Distribution Frequency”, and the divider value.
+There are a total of 14 high speed clocks that come out of the final clock mux;
+these can range from 2150 MHz to 3550 MHz in different modes and connection
+schemes. The maximum clock output is 2400 MHz, which can be divided down by 1,
+2, 3, 4, 5, 6, and even numbers up to 4094. Moreover, the output clock
+resolution depends on the “Clock Distribution Frequency”, and the divider value.
 
 The outputs are hardware configurable as **LVPECL**, **LVDS**, and **CMOS**.
 
@@ -131,7 +145,8 @@ The table below shows the default configuration:
 | CLKOUT13         | CH7                  | J6 (P), J8 (N)             | CMOS                  |
 +------------------+----------------------+----------------------------+-----------------------+
 
-The default configuration can be changed. Each channel has all the footprints for the passive components.
+The default configuration can be changed. Each channel has all the footprints
+for the passive components.
 
 ::
 
@@ -140,7 +155,6 @@ The default configuration can be changed. Each channel has all the footprints fo
 .. container:: centeralign
 
    |image4| *Figure 3. AD-SYNCHRONA14-EBZ Channel Configuration*
-
 
 +------------+----------------------------------------------------------------------------------------------------------------+
 | For LVDS   | Insert C61, C62 and R95, R96 for downstream devices with high impedance input.                                 |
@@ -160,7 +174,8 @@ Check the :adi:`HMC7044` data sheet (page 21) for more details on output configu
 100 Ω Differential Connectors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-CH11, CH12, CH13, and CH14 are 100 Ω impedance differential outputs with circular RF Twinax Jack.
+CH11, CH12, CH13, and CH14 are 100 Ω impedance differential outputs with
+circular RF Twinax Jack.
 
 The `CJT-BH connector series <https://www.samtec.com/products/cjt-bh>`_ from Samtec are paired with `C28S connector series <https://www.samtec.com/products/c28s>`_ – Circular RF Twinax Cable Assembly.
 
@@ -172,7 +187,6 @@ On the back panel, there are 3 differential 100 Ω inputs.
 In the standard configuration, **CH1** is disconnected from the SMA connectors. The reason for this is that inside the AD-SYNCHRONA14-EBZ, there are two temperature-compensated crystal oscillators (TCXOs) connected to this channel (38.4 MHz and 40 MHz). To use the SMA cables, insert C69 and C70, and remove C282 and C134.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 | **CH2** goes directly into :adi:`HMC7044` and it is ac-coupled.                                             |
 
@@ -206,7 +220,8 @@ The VCXOs are 100 MHz and 122.88 MHz; both of which are software selectable and 
 
 There are also two **TCXOs** (±1 ppm), 40 MHz and 38.4 MHz that can be used as reference for PLL1 of :adi:`HMC7044`.
 
-Switching between VCXOs goes together with switching the TCXOs; 100 MHz with 40 MHz, and 122.88 MHz with 38.4 MHz.
+Switching between VCXOs goes together with switching the TCXOs; 100 MHz with 40
+MHz, and 122.88 MHz with 38.4 MHz.
 
 The :adi:`AD9545` has a **50 MHz OCXO** (±10 ppb) reference, so AD-SYNCHRONA14-EBZ can be used as a standalone device, providing high frequency stability.
 
@@ -231,7 +246,6 @@ The Raspberry Pi inside AD-SYNCHRONA14-EBZ runs the **RaspAP**, which is an appl
 .. note::
 
    Make sure that you are using an IP in the same class on your PC.
-
 
 To find the IP of the SYNCHRONA:
 
@@ -295,7 +309,6 @@ To find the IP of the SYNCHRONA:
    
    |image5| *Figure 4. PuTTY Terminal View*
 
-
 General Page
 ~~~~~~~~~~~~
 
@@ -305,20 +318,20 @@ The General Page of the GUI allows users to enable/disable channels, and set the
 
    |image6| *Figure 5. GUI - General Page View*
 
-
-There are two VCXOs inside the AD-SYNCHRONA14-EBZ. Based on the frequencies you set in the General Page, the switch between the two VCXOs will be done automatically and the PLL frequency will be calculated.
+There are two VCXOs inside the AD-SYNCHRONA14-EBZ. Based on the frequencies you
+set in the General Page, the switch between the two VCXOs will be done
+automatically and the PLL frequency will be calculated.
 
 .. important::
 
    \ The values on each channel need to be submultiples of the PLL frequency.
 
-
-If one or more of the values cannot be obtained from dividing the PLL frequency, the GUI will return the message:
+If one or more of the values cannot be obtained from dividing the PLL frequency,
+the GUI will return the message:
 
 .. container:: center round box
 
    **Invalid Frequencies: Cannot solve HMC7044 clock configuration....**
-
 
 To apply the settings you made, click on the **Reload Config** button.
 
@@ -327,7 +340,6 @@ To apply the settings you made, click on the **Reload Config** button.
 .. container:: centeralign
 
    |image7| *Figure 6. Coarse Delay Settings Menu*
-
 
 In the General Page, users can see three status icons (left to right):
 
@@ -341,7 +353,6 @@ In the General Page, users can see three status icons (left to right):
 
    |image8| *Figure 7. AD-SYNCHRONA14-EBZ Status Icons*
 
-
 In the General Page, you also have access to importing and exporting a **devicetree** with your settings.
 
 -  When importing a devicetree, make sure that the name of the file is **rpi-ad9545-hmc7044.dtbo**
@@ -350,29 +361,32 @@ In the General Page, you also have access to importing and exporting a **devicet
 Advanced Page
 ~~~~~~~~~~~~~
 
-In the Advanced Page of the GUI, you can find a detailed block diagram of AD-SYNCHRONA14-EBZ.
+In the Advanced Page of the GUI, you can find a detailed block diagram of
+AD-SYNCHRONA14-EBZ.
 
-As shown in the illustration below, you can see the VCXO that is being used (highlighted in green). Also, the valid inputs on the left side are highlighted in green. In this case, a 10 MHz reference is connected into REF_IN.
+As shown in the illustration below, you can see the VCXO that is being used
+(highlighted in green). Also, the valid inputs on the left side are highlighted
+in green. In this case, a 10 MHz reference is connected into REF_IN.
 
 .. container:: centeralign
 
    |image9| *Figure 8. GUI - Advanced Page View*
-
 
 Input Priority
 ^^^^^^^^^^^^^^
 
 The input priority table is used to prioritize the input references.
 
--  Set the input priority table by dragging each reference upwards or downwards, as shown in the figure below:
+-  Set the input priority table by dragging each reference upwards or downwards,
+   as shown in the figure below:
 
 .. container:: centeralign
 
    |image10| *Figure 9. Input Priority Menu*
 
-
 -  Click on **Reload Config** to apply the changes.
--  If one of the references is invalid, AD-SYNCHRONA14-EBZ will jump automatically to the next valid reference.
+-  If one of the references is invalid, AD-SYNCHRONA14-EBZ will jump
+   automatically to the next valid reference.
 
 Coarse Delay & Fine Delay
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -383,19 +397,18 @@ Coarse delay and fine delay settings are also available in the **Advanced Page**
 
    |image11| *Figure 10. Coarse and Fine Delay Settings Menu*
 
-
 -  Use the arrows to set the coarse and the fine delay.
 -  Click on **Reload Config** to apply the changes.
 
 Debug Page
 ~~~~~~~~~~
 
-This page features various debug information. On top of this, more actions are available for users' access, as shown in the illustration below:
+This page features various debug information. On top of this, more actions are
+available for users' access, as shown in the illustration below:
 
 .. container:: centeralign
 
    |image12| *Figure 11. Debug Page View*
-
 
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Features Available in Debug Page | Function                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -418,9 +431,11 @@ This page features various debug information. On top of this, more actions are a
 Standalone Use Case
 ~~~~~~~~~~~~~~~~~~~
 
-The AD-SYNCHRONA14-EBZ can be used as a standalone device without the need of an external clock reference.
+The AD-SYNCHRONA14-EBZ can be used as a standalone device without the need of an
+external clock reference.
 
-Inside the AD-SYNCHRONA14-EBZ, there is a Raspberry Pi connected to all the clock ICs that run all the drivers.
+Inside the AD-SYNCHRONA14-EBZ, there is a Raspberry Pi connected to all the
+clock ICs that run all the drivers.
 
 In the standalone use case, the main clock reference is the 50 MHz OCXO (Rakon U8216LF) that feeds the :adi:`AD9545` clock IC. The 50 MHz OCXO used in this design has a frequency stability over temperature of ±10 ppb, and a warm up time of about 60 seconds for the reference frequency to be within ±20 ppb.
 
@@ -429,7 +444,6 @@ The :adi:`AD9545` can provide any clock frequency up to 500 MHz. The differentia
 .. container:: centeralign
 
    |image13| *Figure 12. AD-SYNCHRONA14-EBZ Functional Block Diagram*
-
 
 The AD-SYNCHRONA14-EBZ also includes 100 MHz and 122.88 MHz VCXOs, making it capable to provide frequencies for instrumentation and telecom applications. Depending on the type of application and range of frequencies you want to use, the firmware will automatically switch between the VCXOs and change the output frequency of :adi:`AD9545`.
 
@@ -440,19 +454,23 @@ ADD-ON Voltage Translation Board
 
    |image14| *Figure 13. Add-on Voltage Translation Board*
 
+Inside the AD-SYNCHRONA14-EBZ package, you can find an ADD-ON board that allows
+you to connect via SPI with an external CPU or FPGA. It has voltage translators
+able to function from 0.9 V to 5 V. It also gives access to the Raspberry Pi
+UART via USB.
 
-Inside the AD-SYNCHRONA14-EBZ package, you can find an ADD-ON board that allows you to connect via SPI with an external CPU or FPGA. It has voltage translators able to function from 0.9 V to 5 V. It also gives access to the Raspberry Pi UART via USB.
+When the EN jumper (enable) is placed, the SPI interface is disconnected from
+the Raspberry Pi inside, allowing external SPI control.
 
-When the EN jumper (enable) is placed, the SPI interface is disconnected from the Raspberry Pi inside, allowing external SPI control.
+The VIO_SELECT allows the user to select V_IO voltage of 1.8 V (on-board) or the
+external V_IO voltage connected on P3.
 
-The VIO_SELECT allows the user to select V_IO voltage of 1.8 V (on-board) or the external V_IO voltage connected on P3.
-
-The VCXO 100 MHz jumper forces the use of the 100 MHz VCXO inside AD-SYNCHRONA14-EBZ.
+The VCXO 100 MHz jumper forces the use of the 100 MHz VCXO inside
+AD-SYNCHRONA14-EBZ.
 
 .. container:: centeralign
 
    |image15| *Figure 14. Top View of the Add-on Voltage Translation Board*
-
 
 Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -466,36 +484,35 @@ Design and Integration Files
    `Schematic ADD-ON BOARD <https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/02-068851-01-a.pdf>`_
    
 
-
 *End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/synchrona_front.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/synchrona_back.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/block_diagram.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/channel_configuration.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/putty_terminal.jpg
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/gui_general.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/coarse_delay.png
-   :width: 900px
+   :width: 900
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/status_icons.png
-   :width: 300px
+   :width: 300
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/gui_advanced.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/input_table.png
-   :width: 200px
+   :width: 200
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/fine_delay.png
-   :width: 200px
+   :width: 200
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/synchrona_debug.png
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/hmc-refin.png
-   :width: 900px
+   :width: 900
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/ad-synchrona-ebz.jpg
-   :width: 300px
+   :width: 300
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/ad-synchrona14-ebz2_top-1000.jpg
-   :width: 500px
+   :width: 500

@@ -3,7 +3,6 @@ Multi-Chip Synchronization with the Quad-MxFE + Calibration Board
 
 The Quad-MxFE Platform, in conjunction with the :doc:`16 Tx / 16 Rx Calibration Board </wiki-migration/resources/eval/user-guides/quadmxfe/calboard>`, has demonstrated multi-chip synchronization (MCS) of the four :adi:`AD9081`\ s on the system. MCS provides the user with a known, **deterministic phase** after each power cycle for a given operating frequency. The platform provides MATLAB scripts which can be tweaked for a particular customer application to showcase MCS on their own system.
 
-
 |image1|
 
 It is helpful to define a few terms prior to a MCS discussion.
@@ -15,21 +14,25 @@ It is helpful to define a few terms prior to a MCS discussion.
 
 The :adi:`AD9081` contains digital signal processing (DSP) blocks on-silicon to allow for channel-to-channel digital phase and/or amplitude calibration techniques to be implemented as part, or the entirety, of the system level calibration. Some of these phase adjustment knobs occur at the numerically-controlled oscillators (NCOs) residing in the 4x Coarse (Main) Digital Up/Down Converters (DUC/DDCs) and 8x Fine (Channelizer) DUC/DDCs. Additionally, on the Rx side, on-silicon programmable finite impulse response (pFIR) blocks allow for equalization of both phase and amplitude for all Rx channels in the system. Each of these DSP blocks must be synchronized when dealing with multiple MxFE® chips in a system.
 
-
 |image2|
 
-Multi-chip synchronization using the AD9081/AD9082 is achieved with the help of two distinct features within the chipset:
+Multi-chip synchronization using the AD9081/AD9082 is achieved with the help of
+two distinct features within the chipset:
 
 -  **One-Shot Sync**: Helps to align baseband data and some internal clocks
 -  **NCO Master-Slave Sync**: Helps to align the multiple NCOs spanning across all the chips on the platform
 
-There are multiple signals on the platform which are used to achieve MCS. SYSREF signals are used to help achieve One-Shot Sync. GPIO signals are used to implement NCO Master-Slave Sync. Additionally, to achieve MCS while the system undergoes a change in thermal gradients requires use of the PLL phases sent into the device clock pins of each MxFE®.
+There are multiple signals on the platform which are used to achieve MCS. SYSREF
+signals are used to help achieve One-Shot Sync. GPIO signals are used to
+implement NCO Master-Slave Sync. Additionally, to achieve MCS while the system
+undergoes a change in thermal gradients requires use of the PLL phases sent into
+the device clock pins of each MxFE®.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/quadmxfe_mcs_board.png
-   :width: 800px
+   :width: 800
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/quadmxfe_mcsgoals.png
-   :width: 1200px
+   :width: 1200
 
 One-Shot Sync
 =============
@@ -46,7 +49,6 @@ PLL Synthesizer Phase Adjustments
 
 The :adi:`ADF4371` PLL synthesizers allow for relative sample clock phase adjustments injected into each digitizer IC. Thermal drift, and the resulting PLL phase drift between the sample clock and the SYSREF of each IC, is compensated by creating a feedback mechanism which ensures that the first transmit channel of each :adi:`AD9081` is phase-aligned to the first :adi:`AD9081` IC’s first transmit channel, as shown in the figure below. To achieve this feedback loop, the first transmit channel of each MxFE® outputs a signal which differentiates itself from the other transmit channels. These four signals are combined and sent into a common receiver, which for this system is labeled Rx0.
 
-
 |image3|
 
 A receiver data capture is obtained which then allows the user to apply cross-correlation techniques to determine the complex phase offsets between these four transmit channels, *φ\ TxOffset*. The :adi:`ADF4371` PLL synthesizer ICs contain within them a voltage-controlled oscillator (VCO) which are operating at a frequency *f\ VCO_PLL*. The measured phase offsets *φ\ TxOffset* are then related to the required PLL phase adjustment *φ\ PLL_Adj* and the RF frequency *f\ carrier* such that:
@@ -56,7 +58,7 @@ A receiver data capture is obtained which then allows the user to apply cross-co
 Using this formula, the :adi:`ADF4371` PLL synthesizer phases can be adjusted by a new known amount to establish a common Tx baseline between all digitizer ICs for all power cycles, as shown in the figure below. The open circles for each channel shown in the figure correspond to the first power cycle, whereas all the other solid dots correspond to subsequent power cycles. As can be seen from this figure, the calibrated Tx phase offsets for the first (and second) channelizers of all :adi:`AD9081`\ s are phase aligned. The second channelizer of each digitizer IC is aligned in this instance as well because two channelizers are used for each DAC in the system.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/quadmxfe_txalignment.png
-   :width: 800px
+   :width: 800
 
 Publications
 ============
@@ -66,8 +68,8 @@ Publications
 :doc:`Back To Quad-MxFE Main Page </wiki-migration/resources/eval/user-guides/quadmxfe>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/calibrationboardconnected.jpg
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/quadmxfe_mxfephaseadjustknobs.png
-   :width: 800px
+   :width: 800
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/quadmxfe_pllphaseadjustwithcalibrationboard.png
-   :width: 800px
+   :width: 800

@@ -3,20 +3,26 @@ System Implementation
 
 :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
 
-When you have finished designing your schematic and have compiled your project, you are ready to translate your design into microcontroller code, following these basic steps:
+When you have finished designing your schematic and have compiled your project,
+you are ready to translate your design into microcontroller code, following
+these basic steps:
 
 -  Obtain parameters and addresses from SigmaStudio (export the .params, .hex, and .h files).
 -  Parse the file with parameter information.
 -  Incorporate (integrate) into microcontroller code.
 
-To access the parameters and addresses from SigmaStudio, you must have already compiled your project and exported the parameter files. After doing that, you'll have two parameter files:
+To access the parameters and addresses from SigmaStudio, you must have already
+compiled your project and exported the parameter files. After doing that, you'll
+have two parameter files:
 
 -  *yourfilename*.hex - hex values of parameters to be written to DSP.
 -  *yourfilename*.params - detailed file with addresses and values of all parameters.
 
 You can view sample \*.params and \*.hex files in the :doc:`Export Program and Parameters </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/exportprogramandparameterdata>` topic.
 
-Following is an example of how you can integrate the parameters into microcontroller code (AD1940). The highlighted functions in the main function are also defined:
+Following is an example of how you can integrate the parameters into
+microcontroller code (AD1940). The highlighted functions in the main function
+are also defined:
 
 |codepic1.png| |codepic2.png| |codepic3.png| |codepic4.png| |codepic5.png| |codepic6.png|
 
@@ -36,8 +42,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    #define byte unsigned char
 
-
-
    // Microcontroller Code MAIN program
 
    int main(void)
@@ -50,19 +54,13 @@ Following is an example of how you can integrate the parameters into microcontro
 
    Mute();
 
-
-
    // Write a program to DSP
 
    SpiWrite(PROG_START_ADR, PROGRAM_DATA, PROG_LENGTH\*6);
 
-
-
    // Wait some time
 
    Wait(...);
-
-
 
    // Write a parameter file
 
@@ -72,8 +70,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    UnMute();
 
-
-
    // Write a single value (0.242) to specified address
 
    // The address, MODULE_Main_Single1_VALUE, is defined in the
@@ -82,8 +78,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    ParamWrite(MODULE_Main_Single1_VALUE, 0.242);
 
-
-
    // Example safeload of single parameter, will safeload 1.999 in 5.23
 
    // format to address 2
@@ -91,8 +85,6 @@ Following is an example of how you can integrate the parameters into microcontro
    // This function includes the initiate safeload to parameter RAM
 
    SafeloadSingleParamWrite(2, 1.999);
-
-
 
    // Example of a multiple parameter safeload (i.e. filter coefficients)
 
@@ -112,13 +104,9 @@ Following is an example of how you can integrate the parameters into microcontro
 
    InitSafeloadParam();
 
-
-
    return 0;
 
    }
-
-
 
    // Microcontroller Code Wait function
 
@@ -140,8 +128,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    }
 
-
-
    // Microcontroller Code Mute function
 
    void Mute()
@@ -160,8 +146,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    }
 
-
-
    // Microcontroller Code UnMute function
 
    void UnMute()
@@ -179,8 +163,6 @@ Following is an example of how you can integrate the parameters into microcontro
    Wait(20);
 
    }
-
-
 
    // Microcontroller SpiWrite function
 
@@ -202,8 +184,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    address_hi = (byte)(address>>8); // get high byte of address shift left by 8 bits
 
-
-
    // Fill in your write function here
 
    SPI_TX_REG = 0x00; // Write to DSP at chip address 0
@@ -220,15 +200,11 @@ Following is an example of how you can integrate the parameters into microcontro
 
    }
 
-
-
    // Note: After each write to SPI_TX_REG, you may need to verify that the buffer
 
    // has been emptied (meaning the write has completed). This is hardware-specific.
 
    }
-
-
 
    // Microcontroller Code - functions, write a single parameter
 
@@ -246,8 +222,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    }
 
-
-
    // Microcontroller Code functions, safeload: single parameter write
 
    void SafeloadSingleParamWrite(short address, float param)
@@ -255,8 +229,6 @@ Following is an example of how you can integrate the parameters into microcontro
    {
 
    byte param_hex[4] = {0x00, 0x00, 0x00, 0x00};
-
-
 
    //convert decimal paramater value to 5.23 format
 
@@ -274,8 +246,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    paramex_hex[4]=param_hex[3];
 
-
-
    SafeParam(SAFELOAD_DATA_0, paramex_hex);
 
    SafeAddr(SAFELOAD_ADDRESS_0, address);
@@ -283,8 +253,6 @@ Following is an example of how you can integrate the parameters into microcontro
    InitSafeloadParam();
 
    }
-
-
 
    // Microcontroller Code functions, safeload: multiple parameter write
 
@@ -296,8 +264,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    byte param_hex[4] = {0x00, 0x00, 0x00, 0x00};
 
-
-
    //convert decimal paramater value to 5.23 format
 
    To523(param, param_hex);
@@ -314,15 +280,11 @@ Following is an example of how you can integrate the parameters into microcontro
 
    paramex_hex[4]=param_hex[3];
 
-
-
    SafeParam(SAFELOAD_DATA_0+location, paramex_hex);
 
    SafeAddr(SAFELOAD_ADDRESS_0+location, address);
 
    }
-
-
 
    // Microcontroller Code - functions, safeload: Initiate the safeload
 
@@ -334,19 +296,13 @@ Following is an example of how you can integrate the parameters into microcontro
 
    byte corecontrol[2] = {2, 0};
 
-
-
    //Read contents of core control register
 
    SpiRead(CORE_CONTROL_REG, corecontrol, 2);
 
-
-
    //Set Initiate Safe Transfer to Param RAM bit
 
    corecontrol[1] = corecontrol[1] | 0x10;
-
-
 
    //Write back to core control register
 
@@ -355,8 +311,6 @@ Following is an example of how you can integrate the parameters into microcontro
    Wait(20);  //Wait 20us
 
    }
-
-
 
    //Microcontroller Code - functions, SpiRead
 
@@ -370,8 +324,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    byte address_lo = 0; //DSP register/RAM address lo byte
 
-
-
    //get low byte of register/RAM address
 
    address_lo = (byte)address;
@@ -379,8 +331,6 @@ Following is an example of how you can integrate the parameters into microcontro
    //get high byte of address shift, left by 8 bits
 
    address_hi = (byte)(address>>8);
-
-
 
    //Fill in you write function here
 
@@ -390,8 +340,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    SPI_RX_REG = address_lo;  //Write lo address byte
 
-
-
    for (i=0; i<length; i++) //read specified length of data
 
    {
@@ -400,15 +348,11 @@ Following is an example of how you can integrate the parameters into microcontro
 
    }
 
-
-
    // Note: After each write to SPI_TX_REG, you may need to verify that the buffer has
 
    // been emptied (meaning the write has completed). This is hardware-specific.
 
    }
-
-
 
    //Microcontroller Code - functions, Safeload: SafeAddr
 
@@ -420,8 +364,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    byte safe_addr_hi;
 
-
-
    //get low byte of register/RAM address
 
    safe_addr_lo=(byte)safe_addr;
@@ -430,13 +372,9 @@ Following is an example of how you can integrate the parameters into microcontro
 
    safe_addr_hi=(byte)(safe_addr>>8);
 
-
-
    byte param_addr_lo;
 
    byte param_addr_hi;
-
-
 
    //get low byte of parameter address
 
@@ -446,23 +384,17 @@ Following is an example of how you can integrate the parameters into microcontro
 
    param_addr_hi=(byte)(param_addr>>8);
 
-
-
    SPI_TX_REG = 0x00; // Write to DSP at chip address 0
 
    SPI_TX_REG = safe_addr_hi; //Write high byte of safeload address
 
    SPI_TX_REG = safe_addr_lo; //Write low byte of safeload address
 
-
-
    SPI_TX_REG = param_addr_hi; //Write high byte of parameter address
 
    SPI_TX_REG = param_addr_lo; //Write low byte of parameter address
 
    }
-
-
 
    //Microcontroller Code - functions, Safeload: SafeParam
 
@@ -474,8 +406,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    byte safe_param_hi;
 
-
-
    //get low byte of register/RAM address
 
    safe_param_lo=(byte)safe_param;
@@ -484,15 +414,11 @@ Following is an example of how you can integrate the parameters into microcontro
 
    safe_param_hi=(byte)(safe_param>>8);
 
-
-
    SPI_TX_REG = 0x00; //Write to DSP at chip address 0
 
    SPI_TX_REG = safe_param_hi; //Write high byte of Safeload address
 
    SPI_TX_REG = safe_param_lo; //Write low byte of Safeload address
-
-
 
    SPI_TX_REG = param_data[4]; //Write parameter byte 4 (MSBs)
 
@@ -506,11 +432,7 @@ Following is an example of how you can integrate the parameters into microcontro
 
    }
 
-
-
    // Note: SafeParam and SafeAddr must be executed together.
-
-
 
    // Microcontroller code - functions: convert a float number to 5.23 format
 
@@ -522,8 +444,6 @@ Following is an example of how you can integrate the parameters into microcontro
 
    long param227;
 
-
-
    //multiply decimal number by 2^23
 
    param223 = param_dec * (1 << 23);
@@ -531,8 +451,6 @@ Following is an example of how you can integrate the parameters into microcontro
    //convert to positive binary
 
    param227 = param223 + (1 << 27);
-
-
 
    param_hex[3]=(byte)param227;  //get byte 3 (LSBs) of parameter value
 

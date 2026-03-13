@@ -9,7 +9,8 @@ Inverse Square Root
 Description
 -----------
 
-The Inverse Square Root block computes the reciprocal of square root of the input signal.
+The Inverse Square Root block computes the reciprocal of square root of the
+input signal.
 
 Targets Supported
 -----------------
@@ -19,7 +20,6 @@ Name                ADSP-214xx      ADSP-215xx/SC5xx ADAU145x/146x
 =================== =============== ================ =============
 Inverse Square Root Schematic/Block Schematic/Block  NA
 =================== =============== ================ =============
-
 
 | ===== Pins =====
 

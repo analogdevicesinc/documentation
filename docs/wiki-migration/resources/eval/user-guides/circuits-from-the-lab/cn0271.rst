@@ -10,7 +10,8 @@ A fixed gain instrumentation amplifier in the :adi:`AD8495` amplifies the small 
 
 The :adi:`AD8476` differential amplifier provides the correct signal levels and common-mode voltage to drive the :adi:`AD7790` 16-bit, Σ-Δ ADC.
 
-The circuit provides a compact low cost solution for thermocouple signal conditioning and high resolution analog-to-digital conversion.
+The circuit provides a compact low cost solution for thermocouple signal
+conditioning and high resolution analog-to-digital conversion.
 
 This user guide will discuss how to use the evaluation software to collect data from the :adi:`EVAL-CN0271-SDPZ` Evaluation Board **(CN-0271 Board)**
 
@@ -53,7 +54,6 @@ Installing the Software
 
    \ NOTE: It is recommended that you install the `CN-0271 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0271>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0271\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
    |image2|
 
 -  Click **Next** to view the installation review page
@@ -68,8 +68,9 @@ Installing the Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image5|
 
@@ -80,7 +81,6 @@ Installing the Software
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image6|
 
@@ -97,12 +97,10 @@ Software Control and Indicator Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-software.png
-   :width: 900px
+   :width: 900
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-software2.png
-   :width: 900px
-
-
+   :width: 900
 
 - **Connect/Reconnect Button**
 - When this button is pressed, the SDP-B Board makes a USB connection to the CN-0288 Board.  A connection to the SDP-B Board must be made to use the software.
@@ -113,7 +111,6 @@ Software Control and Indicator Descriptions
 
    
    NOTE: If the Enable Real-Time Checkbox is checked, this value is ignored
-
 
 - **Acquire Samples Button**
 - When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
@@ -134,7 +131,8 @@ Software Control and Indicator Descriptions
 - **System Status String Indicator**
 - This indicator displays a message to the user detailing the current state of the software.
 - **System Status LED Indicator**
-- This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.
+- This indicator displays the current state of the software in the form of an
+  LED.  There are three status LED colors.
 
 |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-inactive.png| Inactive
 
@@ -144,12 +142,12 @@ Software Control and Indicator Descriptions
 - **Update Rate Radio Buttons**
 - This control is used to change the output word rate of the :adi:`AD7790`.  The default value is __120 Hz__ and is highlighted in **bold** on the **Configure System Tab**.
 - **Burnout Current Radio Buttons**
-- When this control is enabled the 100nA current sources in the signal path are enabled.
+- When this control is enabled the 100nA current sources in the signal path are
+  enabled.
 
 .. important::
 
    The burnout currents can be enabled only when the buffer is active.
-
 
 - **Buffer Select Radio Buttons**
 - This control is used to set the mode of the :adi:`AD7790`.  The default value is __Unbuffered Mode__ and is highlighted in **bold** on the **Configure System Tab**.
@@ -171,7 +169,8 @@ Software Control and Indicator Descriptions
 - This control is used to modify the high calibration temperature setpoint.
 - The default value is 900°C.
 - **Calibrate Button**
-- Pressing this button calibrates the system using the values populated in the calibration temperature numerical controls.
+- Pressing this button calibrates the system using the values populated in the
+  calibration temperature numerical controls.
 
 --------------
 
@@ -183,14 +182,12 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ NOTE: If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be
+   found at
 
    C:\\Program Files\\Analog Devices\\CN0271\\CN0271.exe\
 
-
 - Click the **Connect/Reconnect Button**. A window with a progress bar will load.
-
-
 
 |image7|
 
@@ -225,12 +222,9 @@ Saving Data to a Spreadsheet File
 -  Name the file.
 -  Click the **OK Button**.
 
-
-
 .. note::
 
    | The software saves the spreadsheet file as ASCII text with columns separated by tabs.
-
 
 Registration
 ------------
@@ -238,7 +232,6 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0271-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-test_setup.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-install1.png

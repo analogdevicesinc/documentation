@@ -233,7 +233,6 @@ Driver testing
       -rw-r--r-- 1 root root 4096 Jul 31 15:17 uevent
    
 
-
 Show device name
 ----------------
 
@@ -247,7 +246,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:device0> cat name
       ad5696
    
-
 
 Show scale
 ----------
@@ -265,7 +263,6 @@ Show scale
       0.038146972
    
 
-
 Set channel Y output voltage
 ----------------------------
 
@@ -282,7 +279,6 @@ Raw (unscaled, no bias etc.) output voltage for channel Y.
    
       root:/sys/bus/iio/devices/iio:device0> echo 10000 > out_voltage0_raw
    
-
 
 **U** = *out_voltage0_raw \* out_voltage_scale* = 10000 \* 0.038140 = **381.40 mV**
 
@@ -304,7 +300,6 @@ List available power down modes
       1kohm_to_gnd 100kohm_to_gnd three_state
    
 
-
 Set channel Y power down mode
 -----------------------------
 
@@ -318,7 +313,8 @@ Set channel Y power down mode
 three_state    left floating
 ============== ===========================================
 
-For a list of available output power down options read out_voltageX_powerdown_mode_available.
+For a list of available output power down options read
+out_voltageX_powerdown_mode_available.
 
 .. container:: box bggreen
 
@@ -331,7 +327,6 @@ For a list of available output power down options read out_voltageX_powerdown_mo
       root:/sys/bus/iio/devices/iio:device0> cat out_voltage0_powerdown_mode
       three_state
    
-
 
 Enable power down mode on output Y
 ----------------------------------
@@ -355,7 +350,6 @@ Enable power down mode on output Y
       0
    
 
-
 Buffer Support
 ==============
 
@@ -363,8 +357,8 @@ Buffer Support
 
 .. important::
 
-   In order to use this functionality the interrupt pin must be tied to the PWM generation pin
-
+   In order to use this functionality the interrupt pin must be tied to the PWM
+   generation pin
 
 .. container:: box bggreen
 
@@ -380,7 +374,6 @@ Buffer Support
       2000
    
 
-
 Enable buffered channels
 ------------------------
 
@@ -392,13 +385,12 @@ Enable buffered channels
 
    \ sample_ch0|sample_ch1|sample_ch2\
 
-
-If only channel 1 is enabled the buffer samples will have the following configuration:
+If only channel 1 is enabled the buffer samples will have the following
+configuration:
 
 .. tip::
 
    \ sample_ch1|sample_ch1|sample_ch1\
-
 
 .. container:: box bggreen
 
@@ -422,7 +414,6 @@ If only channel 1 is enabled the buffer samples will have the following configur
       root@analog:/sys/bus/iio/devices/iio:device0/buffer# echo 1 > enable
    
 
-
 **Sending a buffer sample example:**
 
 .. container:: box bggreen
@@ -434,7 +425,6 @@ If only channel 1 is enabled the buffer samples will have the following configur
    
       root@analog:/sys/bus/iio/devices/iio:device0/buffer# echo -n -e '\x22\x33' > /dev/iio\:device0
    
-
 
 More Information
 ================
@@ -457,6 +447,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/youtube>p_vntewue24
-

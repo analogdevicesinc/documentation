@@ -5,14 +5,17 @@ ADXL362 Real-Time Evaluation System
 
    This page is under construction.
 
-
 Resources
 ---------
 
 Kit Contents
 ~~~~~~~~~~~~
 
-1 x Low-Power Inertial Sensor Evaluation Board (LP-ISEB) (also referred to as Motherboard) 1 x ADXL362 Satellite Board 1 x ADXL362 Micropower MEMS Accelerometer 1 x Ribbon Cable (connects Motherboard to Satellite board) 1 x USB cable (connects Motherboard to computer) 8 x Standoffs + screws (stabilize the Motherboard and Satellite board on a flat surface)
+1 x Low-Power Inertial Sensor Evaluation Board (LP-ISEB) (also referred to as
+Motherboard) 1 x ADXL362 Satellite Board 1 x ADXL362 Micropower MEMS
+Accelerometer 1 x Ribbon Cable (connects Motherboard to Satellite board) 1 x USB
+cable (connects Motherboard to computer) 8 x Standoffs + screws (stabilize the
+Motherboard and Satellite board on a flat surface)
 
 Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -36,7 +39,6 @@ Installation Files
    -  **LabView environment and GUI installer:** :adi:`.zip <static/imported-files/eval_boards/ADXL362_EVB_GUI_Installer.zip>`
    
 
-
 --------------
 
 Quick Start Guide
@@ -50,14 +52,12 @@ For first-time installations
    
    +-------------------------------------------------------------------------------------------------------------------+
 
-
    
    | :!:\*\* If you've never used ANY of Analog Devices' Inertial Sensor Evaluation Kits before\*, start here! \*\*:!: |
 
    | *\*This includes any of ``EVAL-ADXL###Z-M``, ``EVAL-ADXRS###Z-M`` and ``EVAL-ADXL###Z-MLP``.*                     |
    +-------------------------------------------------------------------------------------------------------------------+
    
-
 
 -  **Begin by installing the drivers.**
    Click on the link `above <https://wiki.analog.com/>`_ to download the driver installer. Extract the entire contents of the folder and run the file **ADI_ISEB_USB_Drivers.exe**.
@@ -72,25 +72,29 @@ For first-time installations
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/start_menu.png
    :alt: Click for full-size image
-   :width: 200px
+   :width: 200
 
 The GUI starts up grayed out with all functions disabled. Before testing any devices, you must associate the software GUI with the installed hardware by selecting the appropriate COM port from the menu in the lower left corner. **Follow** :doc:`these instructions </wiki-migration/resources/eval/user-guides/inertial-mems/evalsystem/findyourcomport>` **if you do not know which COM port to use.**
 
-Selecting the appropriate COM port and clicking Connect should enable all GUI functionality.
+Selecting the appropriate COM port and clicking Connect should enable all GUI
+functionality.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/1.png
    :alt: Click for full-size image
    :align: center
-   :width: 400px
+   :width: 400
 
-// // To end the program, click the “Quit Program” button at the bottom right corner of the GUI screen, and then use the X at the top right to close the window.
+// // To end the program, click the “Quit Program” button at the bottom right
+corner of the GUI screen, and then use the X at the top right to close the
+window.
 
 --------------
 
 Debug Tips
 ----------
 
-In no particular order, here are a few tips for troubleshooting the system when things aren’t working:
+In no particular order, here are a few tips for troubleshooting the system when
+things aren’t working:
 
 -  If you see a yellow triangle next to the icon in the Device Manager, consult the Driver Troubleshooting section.
 -  Verify the COM port in the Device Manager window. Ensure that you are connecting to this COM port when opening the GUI.
@@ -111,7 +115,8 @@ In no particular order, here are a few tips for troubleshooting the system when 
 The GUI
 -------
 
-The ADXL362 Evaluation System GUI includes 4 tabs for evaluation of various paramaters:
+The ADXL362 Evaluation System GUI includes 4 tabs for evaluation of various
+paramaters:
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 | `Real-time data <https://wiki.analog.com/>`_:          | **View and save real-time acceleration measurements under user-input settings.** |
@@ -129,16 +134,20 @@ The ADXL362 Evaluation System GUI includes 4 tabs for evaluation of various para
 | `Configuration <https://wiki.analog.com/>`_:           | **Write to and read from device registers.**                                     |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 
-
 Real-Time Data
 ~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/2.png
    :alt: Click for full-size image
    :align: center
-   :width: 600px
+   :width: 600
 
-The Real Time Data tab configures the inertial sensor evaluation system and the ADXL362 for real-time acceleration monitoring. The tab contains an oscilloscope-like interface that you can use to view the output of the accelerometer and adjust the relevant parameters, such as output data rate, measurement range, output format, different work mode for power/noise tradeoff and Self Test (see figure above).
+The Real Time Data tab configures the inertial sensor evaluation system and the
+ADXL362 for real-time acceleration monitoring. The tab contains an
+oscilloscope-like interface that you can use to view the output of the
+accelerometer and adjust the relevant parameters, such as output data rate,
+measurement range, output format, different work mode for power/noise tradeoff
+and Self Test (see figure above).
 
 **Configuration options:**
 
@@ -160,7 +169,6 @@ The Real Time Data tab configures the inertial sensor evaluation system and the 
 
       The Save functionality is capable of saving unlimited data. To keep file size manageable, the data is split up into up to 11 separate .txt files. The first 10 files have a capacity of 64000 samples. The 11th file will contain all remaining data.
    The name and location of the first .txt file are specified by the user upon clicking the ``View & Save Meas`` button. All 11 files are created as soon as the first file name and location are specified. Consecutive numeric suffixes are appended to the specified file name, and all 11 files are saved to the same location. For example, if the first file is named ``ADXL362Test.txt`` and saved to the desktop, then 11 files will be automatically created on the desktop: ``ADXL362Test.txt``, ``ADXL362Test_1.txt``, ..., ``ADXL362Test_10.txt``. Files will be filled in order as data becomes available. When measurement is stopped (via the GUI), empty files are automatically deleted.
-
 
 -  **Stop real-time measurement** by clicking the **``Stop Meas``** button.
 
@@ -195,9 +203,10 @@ When used properly, the ADXL362 offers extremely low *system-level* power consum
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/3.png
    :alt: Click for full-size image
    :align: center
-   :width: 600px
+   :width: 600
 
-The following functionality is available to you within the Power Consumption tab:
+The following functionality is available to you within the Power Consumption
+tab:
 
 Modes of Operation
 ^^^^^^^^^^^^^^^^^^
@@ -205,12 +214,15 @@ Modes of Operation
 -  Measurement: Configures the accelerometer for measurement mode, in which acceleration is sampled continuously at the specified data rate.
 -  Standby: Configures the accelerometer for Standby. The device is non-operational and consumes only 10 nA.
 -  Auto Sleep: Configures the accelerometer for autosleep. When inactivity is detected, the accelerometer enters a low-power, low-bandwidth mode; when activity is detected, the accelerometer enters measurement mode.
--  Wake Up: Configures the accelerometer for wakeup mode. This is a low-power, low-bandwidth mode in which acceleration is sampled ~6 times per second, and the accelerometer sleeps to conserve power between samples.
+-  Wake Up: Configures the accelerometer for wakeup mode. This is a low-power,
+   low-bandwidth mode in which acceleration is sampled ~6 times per second, and
+   the accelerometer sleeps to conserve power between samples.
 
 -  Meas Range: select the desired full-scale measurement range.
 -  Data Rate (Hz): choose the desired output data rate from the pull-down list.
 -  Half BW: select whether the anti-aliasing filter bandwidth is set to 1/2 ODR (wider bandwidth for given ODR) or 1/4 ODR (less susceptibility to aliasing, therefore improved signal integrity).
--  Low Noise Mode: choose between Normal Mode (lowest power consumption), Low Noise Mode, and Ultralow Noise Mode (lowest noise).
+-  Low Noise Mode: choose between Normal Mode (lowest power consumption), Low
+   Noise Mode, and Ultralow Noise Mode (lowest noise).
 
 Activity Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -218,18 +230,19 @@ Activity Configuration
 -  ✔ Activity Interrupt: when checked, enables activity detection.
 -  THRESH_ACT [mg]: specify the threshold, in m\ *g*, for activity detection.
 -  Time_Act [num]: specifies the number of consecutive samples that must be above the activity threshold (THRESH_ACT) for an activity event.
--  Coupling: selects between AC (Referenced) and DC (Absolute) activity detection.
+-  Coupling: selects between AC (Referenced) and DC (Absolute) activity
+   detection.
 
 Temperature
 ~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/4.png
    :alt: Click for full-size image
-   :width: 600px
+   :width: 600
 
 Configuration
 ~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/5.png
    :alt: Click for full-size image
-   :width: 600px
+   :width: 600

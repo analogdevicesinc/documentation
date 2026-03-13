@@ -8,9 +8,15 @@ State Variable
 Description
 -----------
 
-The State Variable filter can generate three types of filters: low pass, high pass, and bandpass. The low pass and high pass outputs are inverted in phase while the band pass maintains the phase. The three output pins let you choose among LP, HP, BP filters. The nature of this algorithm is to compute the coefficients for all filter types, giving you access to all of the filters simultaneously.
+The State Variable filter can generate three types of filters: low pass, high
+pass, and bandpass. The low pass and high pass outputs are inverted in phase
+while the band pass maintains the phase. The three output pins let you choose
+among LP, HP, BP filters. The nature of this algorithm is to compute the
+coefficients for all filter types, giving you access to all of the filters
+simultaneously.
 
-StateVaribale (Q input & Q/F Input): Frequency and Q values are controlled using input pins.
+StateVaribale (Q input & Q/F Input): Frequency and Q values are controlled using
+input pins.
 
 Variants
 --------
@@ -59,7 +65,6 @@ HighPass_Output Audio Output channel 1
 BandPass_Output Audio Output channel 2
 =============== ===== ================
 
-
 | ===== Configurable Parameters =====
 
 ================== ============= ============= ======================
@@ -68,7 +73,6 @@ GUI Parameter Name Default Value Range         Function Description
 Frequency          73            0 to 19148 Hz Cut-off frequency
 OneOverQ           0.71          0.5 to 10     Q factor of the filter
 ================== ============= ============= ======================
-
 
 | ===== DSP Parameters =====
 

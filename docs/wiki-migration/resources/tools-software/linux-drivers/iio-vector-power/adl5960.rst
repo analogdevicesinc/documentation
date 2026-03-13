@@ -14,7 +14,9 @@ Evaluation Boards
 Description
 -----------
 
-The ADL5960 is a wideband, vector network analyzer front-end that consists of a bidirectional bridge, downconverters, programmable IF amplifiers, and a configurable local oscillator (LO) interface.
+The ADL5960 is a wideband, vector network analyzer front-end that consists of a
+bidirectional bridge, downconverters, programmable IF amplifiers, and a
+configurable local oscillator (LO) interface.
 
 This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting integrated Vector Network Analyzer Front-Ends. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
 
@@ -45,12 +47,19 @@ Files
 | dt-bindings   | :git-linux:`Documentation/devicetree/bindings/iio/frequency/adi,adl5960.yaml`                                                                                                                 |
 +---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
-
 
 Devicetree properties
 ~~~~~~~~~~~~~~~~~~~~~
@@ -137,12 +146,12 @@ Example
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADL5960 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -156,8 +165,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Hardware configuration
 ======================
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -221,7 +237,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root@analog:/sys/bus/iio/devices/iio:device7#
    
 
-
 LO Frequency
 ------------
 
@@ -234,7 +249,8 @@ LO Mode
 
 **What:** ``/sys/bus/iio/devices/iio:deviceX/in_altvoltage0_lo_mode`` **Description:** The frequency divider and multipliers in the LO interface enable measurement sweeps beyond the operating frequency range of the source driving the (LOP, LOM) pins. This enables operation over the full 20 GHz bandwidth of the ADL5960 using a 6 GHz synthesizer as the LO source.
 
-This attribute Configures the LO path multiplier/divider or bypass. Reading returns the actual mode.
+This attribute Configures the LO path multiplier/divider or bypass. Reading
+returns the actual mode.
 
 Available LO Modes
 ------------------
@@ -330,6 +346,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-vector-power/youtube>p_vntewue24
-

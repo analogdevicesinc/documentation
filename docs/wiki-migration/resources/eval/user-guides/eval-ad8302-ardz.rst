@@ -3,7 +3,7 @@ EVAL-AD8302-ARDZ
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad8302-top-clean.jpg
    :alt: EVAL-AD8302-ARDZ
-   :width: 600px
+   :width: 600
 
 | The :adi:`EVAL-AD8302-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD8302-ARDZ.html>` shield illustrates the functionality of the :adi:`AD8302 <en/products/amplifiers/rf-power-detectors/log-detectors/ad8302.html>`, a **gain and phase detector** which operates for frequencies **up to 2.7 GHz**. The voltage outputs of the AD8302 are routed to the ANALOG IN connector of the Arduino base board. This allows the RF power detector’s output voltage to be easily digitized and processed by the Arduino base board’s integrated six-channel ADC.
 | The power supply for the board comes from the Arduino base board through the POWER connector (5V). So there is **no need to connect an external power supply**.
@@ -55,10 +55,8 @@ Software Installation
 
 .. important::
 
-   If previously downloaded evaluation software cannot detect board, download the evaluation software again to get the software fix version.
-
-
-
+   If previously downloaded evaluation software cannot detect board, download
+   the evaluation software again to get the software fix version.
 
 -  Extract the Software GUI.zip to your computer.
 -  Connect the EVAL-ADICUP3029 board using micro USB cable
@@ -72,10 +70,8 @@ Software Installation
 
 .. important::
 
-   After loading the hex file to the DAPLINK drive the window explorer must automatically close or else you need to load the hex file to the drive again.
-
-
-
+   After loading the hex file to the DAPLINK drive the window explorer must
+   automatically close or else you need to load the hex file to the drive again.
 
 -  After the **windows explorer automatically closes**, reset the EVAL-ADICUP3029 board by pressing the S1 (reset) button on the board.
 -  Go to extracted files and look for **power_detector.exe** file and double click to run the software. The Connection Window will open.
@@ -94,27 +90,18 @@ Connection Window
 
 |APP_window|
 
-
-
 .. note::
 
-   If there is more than one EVAL-ADICUP3029 installed, select the port where EVAL-ADICUP3029 and EVAL-AD8302-ARDZ connected
-
-
-
+   If there is more than one EVAL-ADICUP3029 installed, select the port where
+   EVAL-ADICUP3029 and EVAL-AD8302-ARDZ connected
 
 -  Set Baudrate to 115200
 -  Select Auto-detect on Shield type.
 -  Click Connect. The Measurement Window should Open.
 
-
-
 .. important::
 
    Console Log must indicate AD8302 shield detected with ADiCUP. If previously downloaded evaluation software cannot connect, go back to `Software Installation <https://wiki.analog.com/>`_ step 2 and download the evaluation software again to get the software fix version.
-
-
-
 
 Measurement Window
 ~~~~~~~~~~~~~~~~~~
@@ -123,10 +110,9 @@ Measurement Window
 
 .. note::
 
-   If calibration is skipped at some frequencies, the default calibration coefficients will be used (user calibration coefficients and default calibration coefficients are INITIALLY the same).
-
-
-
+   If calibration is skipped at some frequencies, the default calibration
+   coefficients will be used (user calibration coefficients and default
+   calibration coefficients are INITIALLY the same).
 
 Related topic: `Calibration of EVAL-AD8302-ARDZ <https://wiki.analog.com/>`_
 
@@ -143,14 +129,9 @@ To make single measurement:
 -  Uncheck Continuous Measurement
 -  Click Measure Button
 
-
-
 .. important::
 
    Not entering the correct frequency may result to less accurate measurements.
-
-
-
 
 To continuously make measurements:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -160,14 +141,9 @@ To continuously make measurements:
 -  Click Measure Button
 -  Click Stop to stop measuring at the last measurement
 
-
-
 .. important::
 
    Not entering the correct frequency may result to less accurate measurements.
-
-
-
 
 To switch windows:
 ^^^^^^^^^^^^^^^^^^
@@ -207,26 +183,32 @@ Calibration Window
 
 .. tip::
 
-   User must be able to synchronize the phase of input signals perhaps, by using external devices/equipment, to do this calibration
-
+   User must be able to synchronize the phase of input signals perhaps, by using
+   external devices/equipment, to do this calibration
 
 .. tip::
 
-   If desired frequency of calibration or measurement is not on the list, calibrate on the immediate higher frequency available and on the immediate lower frequency available. If desired frequency is higher/lower than the available frequency selection, calibrate only on the highest/lowest frequency selection
-
+   If desired frequency of calibration or measurement is not on the list,
+   calibrate on the immediate higher frequency available and on the immediate
+   lower frequency available. If desired frequency is higher/lower than the
+   available frequency selection, calibrate only on the highest/lowest frequency
+   selection
 
 Calibration Methodology
 =======================
 
-Calibration can be implemented using 2, 3, or 4-point calibration techniques which can be used to approximate nearly linear response characteristics such as in AD8302. A typical characteristic of the AD8302 for magnitude difference of 1.9GHz input signals is shown in Figure 1. This is TPC4 from the AD8302 datasheet.
-
+Calibration can be implemented using 2, 3, or 4-point calibration techniques
+which can be used to approximate nearly linear response characteristics such as
+in AD8302. A typical characteristic of the AD8302 for magnitude difference of
+1.9GHz input signals is shown in Figure 1. This is TPC4 from the AD8302
+datasheet.
 
 |fig50|
 
 .. container:: centeralign
 
-   Figure 1. AD8302 Characteristic Response to Magnitude Difference for 1.9GHz Signals
-
+   Figure 1. AD8302 Characteristic Response to Magnitude Difference for 1.9GHz
+   Signals
 
 **Two-point calibration** is the simplest calibration technique. This models the magnitude transfer function of the AD8302 and ADC as a **single straight line**
 
@@ -240,11 +222,17 @@ MAG is the RF Power Magnitude being measured
 
 CODE is the ADC code
 
-SLOPE is the slope of the AD8302transfer function's linear model (unit is LSBs/dB)
+SLOPE is the slope of the AD8302transfer function's linear model (unit is
+LSBs/dB)
 
-INTERCEPT is the (extrapolated) input RF power level which would yield and ADC code of 0 (this is a theoretical value with a unit of dBm)
+INTERCEPT is the (extrapolated) input RF power level which would yield and ADC
+code of 0 (this is a theoretical value with a unit of dBm)
 
-SLOPE and INTERCEPT are calculated and stored during the calibration process by applying two known RF power levels, MAG1 and MAG2 (these RF power levels should be within the linear input range of the AD8302) and measuring the corresponding ADC codes, CODE1 and CODE2. The equations for calculating SLOPE and INTERCEPT are as follows:
+SLOPE and INTERCEPT are calculated and stored during the calibration process by
+applying two known RF power levels, MAG1 and MAG2 (these RF power levels should
+be within the linear input range of the AD8302) and measuring the corresponding
+ADC codes, CODE1 and CODE2. The equations for calculating SLOPE and INTERCEPT
+are as follows:
 
 ::
 
@@ -256,7 +244,8 @@ SLOPE and INTERCEPT are calculated and stored during the calibration process by 
 
 If there is some non-linearity in the transfer function of the RF detector, the number of calibration points can be increased to improve measurement accuracy. To implement **three-point calibration**, three known power levels are applied MAG1, MAG2 and MAG3 (MAG1 should be greater than MAG2 which should be greater than MAG3) and the corresponding ADC codes are noted (CODE1, CODE2, CODE3)
 
-This results in two SLOPE values and two INTERCEPT values which are calculated using the equations
+This results in two SLOPE values and two INTERCEPT values which are calculated
+using the equations
 
 ::
 
@@ -274,7 +263,8 @@ This results in two SLOPE values and two INTERCEPT values which are calculated u
 
    INTERCEPT2 = MAG2-(CODE2/SLOPE2)
 
-After calibration when measuring RF input power, the power is calculated using the appropriate equation
+After calibration when measuring RF input power, the power is calculated using
+the appropriate equation
 
 ::
 
@@ -288,14 +278,25 @@ After calibration when measuring RF input power, the power is calculated using t
 
    MAG = (CODE/SLOPE2)+INTERCEPT2   (if CODE < CODE2)
 
-To decide which equation and calibration coefficients to use, the CODE from the ADC should be compared to CODE2 (CODE2 is the demarcation point between the two calibration regions). This will indicate which region of the AD8302's transfer function the RF power magnitude is located. For example, if the ADC CODE is greater than CODE2, this will indicate that the input power is greater than MAG2. So SLOPE1 and INTERCEPT1 should be used to calculate the input power. Because of the need to identify the region in which the measured RF input power is located, the CODE2 value should also be stored after calibration along with the SLOPE1, SLOPE2, INTERCEPT1 AND INTERCEPT2.
+To decide which equation and calibration coefficients to use, the CODE from the
+ADC should be compared to CODE2 (CODE2 is the demarcation point between the two
+calibration regions). This will indicate which region of the AD8302's transfer
+function the RF power magnitude is located. For example, if the ADC CODE is
+greater than CODE2, this will indicate that the input power is greater than
+MAG2. So SLOPE1 and INTERCEPT1 should be used to calculate the input power.
+Because of the need to identify the region in which the measured RF input power
+is located, the CODE2 value should also be stored after calibration along with
+the SLOPE1, SLOPE2, INTERCEPT1 AND INTERCEPT2.
 
-This technique can be extended to four or more calibration points. This may improve measurement accuracy at the cost of more complex calibration.
+This technique can be extended to four or more calibration points. This may
+improve measurement accuracy at the cost of more complex calibration.
 
 Development on EVAL-ADICUP3029
 ==============================
 
-Development packages are available for C and Python. Other development environments may be used but this development guided is focused on software development on CrossCore Embedded Studio (for C) and on Pycharm(for Python).
+Development packages are available for C and Python. Other development
+environments may be used but this development guided is focused on software
+development on CrossCore Embedded Studio (for C) and on Pycharm(for Python).
 
 C Development Guide
 -------------------
@@ -310,7 +311,6 @@ Installations
 
    Assumes a fresh installation of all required software
 
-
 Setting Up CrossCore Embedded Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -321,7 +321,9 @@ Setting Up CrossCore Embedded Studio
 
 -  Switch back to **C/C++ window** |c-dev-window| and close CCES 2.8.1
 -  Download `power_detector_sample_c_code_and_header_files.zip <https://wiki.analog.com/_media/resources/eval/user-guides/power_detector_sample_c_code_and_header_files.zip>`_ and unzip it.
--  Run the "AD8302 Sample C Code and Header Files.exe" and select "C:\\Users\\YourUsername\\cces\\2.8.1" as the destination folder. The ad8302 folder should appear in C:\\Users\\YourUsername\\cces\\2.8.1 .
+-  Run the "AD8302 Sample C Code and Header Files.exe" and select
+   "C:\\Users\\YourUsername\\cces\\2.8.1" as the destination folder. The ad8302
+   folder should appear in C:\\Users\\YourUsername\\cces\\2.8.1 .
 
 |rfdet-c-unzip|
 
@@ -346,7 +348,8 @@ Development on CrossCore Embedded Studio
 |rfdet-c-console-ad8302|
 
 -  After it finishes building, click Debug and click Application with GDB and OpenOCD (Emulator). Copy the following Debug configurations on the new window that will appear then click the Debug button.
--  On the Debug window, click the Resume to run and display the results on the Console window.
+-  On the Debug window, click the Resume to run and display the results on the
+   Console window.
 
 Python Development Guide
 ------------------------
@@ -373,7 +376,9 @@ Setting Up PyCharm
 
 |rfdet-py-scripts|
 
--  Launch PyCharm and set up PyCharm interpreter by clicking file>>settings>>Project>>Project Interpreter choose python 3.7 then click “Ok”.
+-  Launch PyCharm and set up PyCharm interpreter by clicking
+   file>>settings>>Project>>Project Interpreter choose python 3.7 then click
+   “Ok”.
 
 Python Development
 ~~~~~~~~~~~~~~~~~~
@@ -395,7 +400,8 @@ Hardware Reference Information
    :class: download
 
    
-   Downloadable files contain the hardware reference information of EVAL-AD8302-ARDZ:
+   Downloadable files contain the hardware reference information of
+   EVAL-AD8302-ARDZ:
    
    `Schematic Diagram of EVAL-AD8302-ARDZ <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-sch.pdf>`_
    
@@ -405,7 +411,6 @@ Hardware Reference Information
    
    `Archive of .art files of EVAL-AD8302-ARDZ <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-art.zip>`_
    
-
 
 Help and Support
 ================
@@ -417,7 +422,7 @@ For any queries regarding the hardware and evaluation software, contact as at :e
 .. |APP_window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection-refresh.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-measurement.png
 .. |fig50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-ad8302_datasheet_tpc4.png
-   :width: 600px
+   :width: 600
 .. |c-dev-window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-dev-window.png
 .. |rfdet-c-unzip| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-unzip.png
 .. |rfdet-c-folder-ad8302| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-folder-ad8302.png

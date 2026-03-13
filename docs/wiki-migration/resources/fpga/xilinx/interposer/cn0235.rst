@@ -20,20 +20,18 @@ This document presents the steps to setup an environment for using the :adi:`EVA
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0235.jpg
    :alt: cn0235.jpg
    :align: center
-   :width: 400px
-
+   :width: 400
 
 .. note::
 
    See `common_sdp <https://wiki.analog.com/common_sdp>`_
-
 
 Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0235-SDPZ** Evaluation Board.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0235_sdp1z.jpg
    :alt: cn0235_sdp1z.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 The :adi:`CN0235` board is a fully isolated lithium ion battery monitoring and protection system. Lithium ion (Li-Ion) battery stacks contain a large number of individual cells that must be monitored correctly in order to enhance the battery efficiency, prolong the battery life, and ensure safety.
 
@@ -53,7 +51,9 @@ More information
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Required Hardware
 -----------------
@@ -82,7 +82,6 @@ Downloads
    -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
    
 
-
 Run the Demonstration Project
 =============================
 
@@ -92,8 +91,9 @@ Hardware setup
 .. important::
 
    
-   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
-
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that
+   the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to
+   change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
@@ -101,7 +101,8 @@ Hardware setup
 Reference Project Overview
 --------------------------
 
-The following commands were implemented in this version of EVAL-CN0235 reference project for Xilinx KC705 FPGA board.
+The following commands were implemented in this version of EVAL-CN0235 reference
+project for Xilinx KC705 FPGA board.
 
 +-----------------------+------------------------------------------------------------------------------------------+
 | Command               | Description                                                                              |
@@ -185,31 +186,28 @@ The following commands were implemented in this version of EVAL-CN0235 reference
 | **selfTestAD8280!**   | Performs the self test for both AD8280 devices on the board (one master and one slave).  |
 +-----------------------+------------------------------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+Commands can be executed using a serial terminal connected to the UART
+peripheral of Xilinx KC705 FPGA.
 
-The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
-
+The following image shows a generic list of commands in a serial terminal
+connected to Xilinx KC705 FPGA's UART peripheral.
 
 |Terminal_KC705.jpg|
 
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `import_workspace <https://wiki.analog.com/import_workspace>`_
-
 
 More information
 ================
 
 -  :doc:`AD7887 IIO ADC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad7887>`
 
-
 .. note::
 
    See `ez_common <https://wiki.analog.com/ez_common>`_
-
 
 .. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/terminal_kc705.jpg

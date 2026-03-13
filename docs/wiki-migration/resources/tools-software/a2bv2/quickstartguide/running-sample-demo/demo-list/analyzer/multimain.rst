@@ -15,9 +15,8 @@ Connections and audio configuration
 
 .. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/multimain_analyzer.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    \ **Figure:** Connection and sample audio configuration
-

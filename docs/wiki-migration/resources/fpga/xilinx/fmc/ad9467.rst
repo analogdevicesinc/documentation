@@ -5,7 +5,6 @@ AD9467 Native FMC Card / Xilinx Reference Design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad9467_fmc/index.html\
 
-
 Introduction
 ------------
 
@@ -30,28 +29,34 @@ Xilinx block diagram
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9467_ebz/ad9467_fmc.svg
    :alt: Xilinx HDL Block Diagram
-   :width: 500px
+   :width: 500
 
 AD9467 FMC card block diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9467_ebz/ad9467_fmc_card.svg
    :alt: Xilinx HDL Block Diagram
-   :width: 400px
+   :width: 400
 
 Description
 ~~~~~~~~~~~
 
-The reference design is built on a ARM/Microblaze based system tailored for Linux. A functional block diagram of the design is given below.
+The reference design is built on a ARM/Microblaze based system tailored for
+Linux. A functional block diagram of the design is given below.
 
-Through an SPI interface, the software can access the AD9467/AD9517-4 registers, given the possibility to initialize and configure the ADC and/or clock chip.
+Through an SPI interface, the software can access the AD9467/AD9517-4 registers,
+given the possibility to initialize and configure the ADC and/or clock chip.
 
-The LVDS interface captures and buffers data from the ADC. The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software.
+The LVDS interface captures and buffers data from the ADC. The DMA interface
+then transfers the samples to the external DDR-DRAM. The capture is initiated by
+the software. The status of capture (overflow, over the range) are reported back
+to the software.
 
 Clock selection
 ~~~~~~~~~~~~~~~
 
-The board provides three (some modification maybe necessary) possible clock paths for clocking the AD9467, as follows:
+The board provides three (some modification maybe necessary) possible clock
+paths for clocking the AD9467, as follows:
 
 Default clock input
 ^^^^^^^^^^^^^^^^^^^
@@ -76,12 +81,13 @@ A **differential LVPECL or LVDS clock driver** can also be used to clock the ADC
 -  Populate (C304, C305) for LVPECL clock driver **or** (C306, C307) for LVDS clock driver, with 0.1 µF capacitors
 -  Remove C209 and C210 to disconnect the default clock path inputs
 
-The AD9517 has many SPI-selectable options that are set to a default mode of operation. Consult the AD9517 data sheet for more information about these and other options.
+The AD9517 has many SPI-selectable options that are set to a default mode of
+operation. Consult the AD9517 data sheet for more information about these and
+other options.
 
 .. important::
 
    Please make sure you have removed or inserted the corresponding components on the board to select the desired clock path. The schematic of the board can be found `here <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/02-041710-01-c-1.pdf>`_.
-
 
 Hardware description
 ~~~~~~~~~~~~~~~~~~~~
@@ -89,7 +95,7 @@ Hardware description
 To find out more information about the :adi:`AD9467-FMC-250EBZ <eval-ad9467.html>` board hardware, default operation and jumper selection settings please read the Evaluation User Guide of the board: :doc:`ad9467-fmc-250ebz </wiki-migration/resources/eval/ad9467-fmc-250ebz>` and the one of the other board, with an FMC interposer :adi:`UG200 <media/en/technical-documentation/user-guides/UG-200.pdf>`.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9467_fmc.jpg
-   :width: 300px
+   :width: 300
 
 Quick start guide
 -----------------
@@ -114,9 +120,14 @@ Using the HDL reference design
 
 Check this wiki page if you're not familiar about :doc:`how to build an ADI HDL project </wiki-migration/resources/fpga/docs/build>`.
 
-The PN9/PN23 sequences are not compatible with O.150. Please use the equations given in the reference design. They follow the polynomial equations as in O.150, but ONLY the msb is inverted.
+The PN9/PN23 sequences are not compatible with O.150. Please use the equations
+given in the reference design. They follow the polynomial equations as in O.150,
+but ONLY the msb is inverted.
 
-The AD9467 drives the interleaved first byte (D15:D1) on the rising edge and second byte (D14:D0) on the falling edge of DCO clock. However in certain frequencies the captured data (from IDDR) seems to be reverse. If that occurs try setting the "capture select" bit (register 0x0a, bit 0).
+The AD9467 drives the interleaved first byte (D15:D1) on the rising edge and
+second byte (D14:D0) on the falling edge of DCO clock. However in certain
+frequencies the captured data (from IDDR) seems to be reverse. If that occurs
+try setting the "capture select" bit (register 0x0a, bit 0).
 
 Using the Software Reference Design
 -----------------------------------
@@ -133,7 +144,8 @@ The software project contains 3 components: the AD9467-FMC-EBZ reference design 
 AD9467 Software Driver
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Below is presented a short description of all the functions provided in the driver.
+Below is presented a short description of all the functions provided in the
+driver.
 
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function                                                         | Description                                                                                                                                                                                                                                 |
@@ -190,11 +202,9 @@ Software Setup
 
    Instruction about how to create a software application can be found :doc:`here </wiki-migration/resources/fpga/xilinx/software_setup>`.
 
-
 .. important::
 
    C302 and C303 are not installed as indicated in the Schematic and BOM.
-
 
 **Board Files:**
 
@@ -206,7 +216,6 @@ Software Setup
    -  `Bill of Materials for Rev C <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/9467fmc01c_bom.xls>`_
    -  `AD9467FMC-250EBZ Gerber/Layout Fabrication Files <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/9467fmc01c.zip>`_
    
-
 
 Resources
 ---------
@@ -237,4 +246,5 @@ Support
 
 Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
 
-It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.
+It should be noted, that the older the tools' versions and release branches are,
+the lower the chances to receive support from ADI engineers.

@@ -9,7 +9,10 @@ Limiter With Hold
 Description
 -----------
 
-The LimiterWithHold block computes the RMS level of the incoming audio signal and attempts to prevent it from exceeding the threshold by automatically reducing its gain. Hold controls the rate of the time limiter will respond to change in input signal.
+The LimiterWithHold block computes the RMS level of the incoming audio signal
+and attempts to prevent it from exceeding the threshold by automatically
+reducing its gain. Hold controls the rate of the time limiter will respond to
+change in input signal.
 
 Targets Supported
 -----------------
@@ -40,7 +43,6 @@ Name    Type  Description
 ======= ===== ===============
 Output0 Audio Output channel0
 ======= ===== ===============
-
 
 | ===== Configurable Parameters =====
 

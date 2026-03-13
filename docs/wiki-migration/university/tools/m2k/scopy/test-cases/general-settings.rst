@@ -4,7 +4,9 @@ General Settings - Test Case
 Initial Setup
 -------------
 
-In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
+In order to proceed through the test case, first of all delete the Scopy \*.ini
+file (saves previous settings made in Scopy tool) from the following path on
+Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
 Open Scopy instrument. The interface should look like the pictures below:
 
@@ -15,8 +17,6 @@ Test Case
 
 Installation
 ~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -52,12 +52,8 @@ Installation
    |                                   | 1.8 If you opt to use the application for later, choose the “No, I will restart the computer later” option and click “Finish.”                                                                                                                                                       | |image30|       | The prompt will look like the Step Resources picture.                                                                                              |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 M2K Connection and Calibration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -85,12 +81,8 @@ M2K Connection and Calibration
    | Manual Calibration feature using remote connection           | 5.1 After connecting the M2K, manually calibrate the device by clicking the "Calibrate" button.                                                                | |image42|       | M2K will calibrate. The calibration indicator on Oscilloscope, Spectrum Analyzer, Network Analyzer, Signal Generator and Voltmeter instrument should start.                                                                                                          |
    +--------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 Save and Load Profile
 ~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -184,12 +176,8 @@ Save and Load Profile
    |                                                                                     | 6.12 Reload the default setting by deleting the file in C:\\Users\\your_username\\AppData\\Roaming\\ADI. Reload “profile3.ini”, and run Power Supply, Voltmeter and Signal Generator.            |                     | The result should be the same on the saved profile. The network analyzer’s setting should be retained.                                                                                                                                                                         |
    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 Preferences
 ~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -251,12 +239,8 @@ Preferences
    |                      | d. Run Network Analyzer                                                                                                                                                                                                                                 |                    |                                                                                                                                                                                                                                                                                                                          |
    +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 Test index_file parameter
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -272,8 +256,6 @@ Test index_file parameter
    |                           | 8.4 Repeat steps 1 to 3 on different sites such as Analog's Main page and other trusted web sites                                                        |                 | The html version should appear on Scopy's home.                                                    |
    +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------+
 
-
-
 Test Results will be recorded in the following document: `General Setting Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/GeneralSettings_-_test_case.xlsx>`_
 
 **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
@@ -281,165 +263,165 @@ Test Results will be recorded in the following document: `General Setting Test C
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3.png
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_1.png
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_uninstall.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_1.png
-   :width: 300px
+   :width: 300
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_2.png
-   :width: 300px
+   :width: 300
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_3.png
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_driver_installation_1.png
-   :width: 300px
+   :width: 300
 .. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_driver_installation_2.png
-   :width: 300px
+   :width: 300
 .. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_4.png
-   :width: 300px
+   :width: 300
 .. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_5.png
-   :width: 300px
+   :width: 300
 .. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_6.png
-   :width: 300px
+   :width: 300
 .. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver.png
-   :width: 300px
+   :width: 300
 .. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver_1.png
-   :width: 300px
+   :width: 300
 .. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver_2.png
-   :width: 300px
+   :width: 300
 .. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver_3.png
-   :width: 300px
+   :width: 300
 .. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver_4.png
-   :width: 300px
+   :width: 300
 .. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_uninstall.png
-   :width: 200px
+   :width: 200
 .. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_1.png
-   :width: 300px
+   :width: 300
 .. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_2.png
-   :width: 300px
+   :width: 300
 .. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_3.png
-   :width: 300px
+   :width: 300
 .. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_driver_installation_1.png
-   :width: 300px
+   :width: 300
 .. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_driver_installation_2.png
-   :width: 300px
+   :width: 300
 .. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_4.png
-   :width: 300px
+   :width: 300
 .. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_5.png
-   :width: 300px
+   :width: 300
 .. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_installation_6.png
-   :width: 300px
+   :width: 300
 .. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver.png
-   :width: 300px
+   :width: 300
 .. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver_1.png
-   :width: 300px
+   :width: 300
 .. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver_2.png
-   :width: 300px
+   :width: 300
 .. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver_3.png
-   :width: 300px
+   :width: 300
 .. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_device_driver_4.png
-   :width: 300px
+   :width: 300
 .. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_initial_setup_1.png
-   :width: 300px
+   :width: 300
 .. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_initial_setup_step1-2.png
-   :width: 300px
+   :width: 300
 .. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step1-4.png
-   :width: 300px
+   :width: 300
 .. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step3-1.png
-   :width: 300px
+   :width: 300
 .. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step3-3.png
-   :width: 300px
+   :width: 300
 .. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step4-1.png
-   :width: 300px
+   :width: 300
 .. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_initial_setup_1.png
-   :width: 300px
+   :width: 300
 .. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_initial_setup_step1-2.png
-   :width: 300px
+   :width: 300
 .. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step1-4.png
-   :width: 300px
+   :width: 300
 .. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step3-1.png
-   :width: 300px
+   :width: 300
 .. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step3-3.png
-   :width: 300px
+   :width: 300
 .. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step4-1.png
-   :width: 300px
+   :width: 300
 .. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step6-1.png
-   :width: 300px
+   :width: 300
 .. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step6-1a.png
-   :width: 300px
+   :width: 300
 .. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_saveandload_step2.png
-   :width: 300px
+   :width: 300
 .. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_saveandload_step3.png
-   :width: 300px
+   :width: 300
 .. |image47| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step1.png
-   :width: 300px
+   :width: 300
 .. |image48| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step7.png
-   :width: 300px
+   :width: 300
 .. |image49| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_saveandload_step9.png
-   :width: 300px
+   :width: 300
 .. |image50| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_saveandload_step10.png
-   :width: 300px
+   :width: 300
 .. |image51| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_saveandload_step11.png
-   :width: 300px
+   :width: 300
 .. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step6-1.png
-   :width: 300px
+   :width: 300
 .. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step6-1a.png
-   :width: 300px
+   :width: 300
 .. |image54| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_saveandload_step2.png
-   :width: 300px
+   :width: 300
 .. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_saveandload_step3.png
-   :width: 300px
+   :width: 300
 .. |image56| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step1.png
-   :width: 300px
+   :width: 300
 .. |image57| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step7.png
-   :width: 300px
+   :width: 300
 .. |image58| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_saveandload_step9.png
-   :width: 300px
+   :width: 300
 .. |image59| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_saveandload_step10.png
-   :width: 300px
+   :width: 300
 .. |image60| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_saveandload_step11.png
-   :width: 300px
+   :width: 300
 .. |image61| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-8.png
-   :width: 300px
+   :width: 300
 .. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-2.png
-   :width: 300px
+   :width: 300
 .. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3c.png
-   :width: 300px
+   :width: 300
 .. |image64| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3b.png
-   :width: 300px
+   :width: 300
 .. |image65| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3d.png
-   :width: 300px
+   :width: 300
 .. |image66| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting__step7-4a.png
-   :width: 300px
+   :width: 300
 .. |image67| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-4b.png
-   :width: 300px
+   :width: 300
 .. |image68| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-4c.png
-   :width: 300px
+   :width: 300
 .. |image69| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-5a.png
-   :width: 300px
+   :width: 300
 .. |image70| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.01.png
-   :width: 300px
+   :width: 300
 .. |image71| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_step7-5b.png
-   :width: 300px
+   :width: 300
 .. |image72| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-8.png
-   :width: 300px
+   :width: 300
 .. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-2.png
-   :width: 300px
+   :width: 300
 .. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3c.png
-   :width: 300px
+   :width: 300
 .. |image75| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3b.png
-   :width: 300px
+   :width: 300
 .. |image76| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-3d.png
-   :width: 300px
+   :width: 300
 .. |image77| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting__step7-4a.png
-   :width: 300px
+   :width: 300
 .. |image78| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-4b.png
-   :width: 300px
+   :width: 300
 .. |image79| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-4c.png
-   :width: 300px
+   :width: 300
 .. |image80| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step7-5a.png
-   :width: 300px
+   :width: 300
 .. |image81| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.01.png
-   :width: 300px
+   :width: 300
 .. |image82| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_step7-5b.png
-   :width: 300px
+   :width: 300
 .. |image83| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_indexfile_step1.png
 .. |image84| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_general_setting_indexfile_step2.png
 .. |image85| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/_scopy_general_setting_step8-3.png

@@ -13,7 +13,12 @@ Make sure you install the latest driver -
 Use compliant USB cable
 -----------------------
 
-Some USB cables are incapable of power delivery necessary to the ADALM2000 (or are just plain flakey). Please use the provided USB cable. Also in order to troubleshoot this, you try using two cables, plug in a separate cable to the USB connector for power delivery (to the USB power connector), while using the center USB connector for data transfer. If using two cables works, it normally means it's a cable, or voltage droop issue on the host.
+Some USB cables are incapable of power delivery necessary to the ADALM2000 (or
+are just plain flakey). Please use the provided USB cable. Also in order to
+troubleshoot this, you try using two cables, plug in a separate cable to the USB
+connector for power delivery (to the USB power connector), while using the
+center USB connector for data transfer. If using two cables works, it normally
+means it's a cable, or voltage droop issue on the host.
 
 Reinstall & INI files
 ---------------------
@@ -26,14 +31,16 @@ Reinstall & INI files
 
 and delete (or rename) ``Scopy.ini``, ``Scopy.ini.bak``, ``Preferences.ini``, ``Preferences.ini.bak``. The preference is to rename things with a different suffix, so if you need to report a bug, the file still exists.
 
-Scopy configuration can sometimes get messed up when updating as opposed to uninstall/reinstall. If you are facing this issue, you can try uninstalling Scopy and then reinstall.
+Scopy configuration can sometimes get messed up when updating as opposed to
+uninstall/reinstall. If you are facing this issue, you can try uninstalling
+Scopy and then reinstall.
 
 .. important::
 
    Make sure that after uninstall Scopy's folder is clear
 
-
-Make sure you install Scopy in a location that doesn't require any write privileges since Scopy needs to write to it's installation folder.
+Make sure you install Scopy in a location that doesn't require any write
+privileges since Scopy needs to write to it's installation folder.
 
 Network is going down when connecting ADALM2000
 -----------------------------------------------
@@ -63,7 +70,9 @@ Uninstall and reinstall the software
 Make sure the system doesn't limit the USB power consumption
 ------------------------------------------------------------
 
-Some laptops limit the amount of current that can be delivered via an USB port (either native or from a docking station/usb hub). In order to workaround this issue you can try the following:
+Some laptops limit the amount of current that can be delivered via an USB port
+(either native or from a docking station/usb hub). In order to workaround this
+issue you can try the following:
 
 -  Go to Device Manager tool in Windows OS
 -  Go to Universal Serial Bus Controllers
@@ -91,29 +100,37 @@ or
 Scopy white screen on Windows
 -----------------------------
 
-Scopy displaying a white screen on startup (combined with hangs or crashes) is an issue that indicates OpenGL incompatibility with your system due to a missing or outdated graphics driver/DirectX/OpenGl Driver.
+Scopy displaying a white screen on startup (combined with hangs or crashes) is
+an issue that indicates OpenGL incompatibility with your system due to a missing
+or outdated graphics driver/DirectX/OpenGl Driver.
 
 -  Disable OpenGL usage in favor software rendering by setting the **general_use_opengl** preference in preferences.ini to **false**.
 -  On Windows Virtual Machine, enable 3d hardware acceleration.
 
-In recent Scopy versions, a pop-up will appear when this issue is detected, the preference will be automatically disabled and Scopy will try to restart. For older Scopy versions, please do this manually.
+In recent Scopy versions, a pop-up will appear when this issue is detected, the
+preference will be automatically disabled and Scopy will try to restart. For
+older Scopy versions, please do this manually.
 
 Debugging with WinDbg - Advanced, Windows Only
 ----------------------------------------------
 
-Download the debug files associated with your release. From the same place you downloaded the release, download the "debug-64.zip" file. If you can't remember where you downloaded the release from, a safe bet would be to redownload and reinstall Scopy and the appropriate debug archive.
+Download the debug files associated with your release. From the same place you
+downloaded the release, download the "debug-64.zip" file. If you can't remember
+where you downloaded the release from, a safe bet would be to redownload and
+reinstall Scopy and the appropriate debug archive.
 
 .. important::
 
-   It is critical that the debug file and Scopy is the same version for this to work
-
+   It is critical that the debug file and Scopy is the same version for this to
+   work
 
 -  Unzip debug-64.zip to a location.
--  Copy the .pdb files to Scopy.exe's location. The installation folder should look like this:
+-  Copy the .pdb files to Scopy.exe's location. The installation folder should
+   look like this:
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopydebugfiles.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Open WinDbg (x64)
 -  File -> Open Executable (CTRL+E) -> Navigate to Scopy.exe -> Select Scopy.exe
@@ -131,8 +148,9 @@ You can now reproduce bug/crash/hang
 -  View -> Processes & Threads (ALT+9) (so you can cycle through different threads) (opens window like 4 in screenshot)
 -  Call Stack -> Source (to enable source mapping) (button 1 in screenshot)
 -  Command -> run: ".dump <file_name.dmp>" to create crash dump that can be sent to the developers (Command window input - 5 in screenshot)
--  You can look around to figure out where it crashed/why (3 in screenshot shows source mapping - where the hang occurs)
+-  You can look around to figure out where it crashed/why (3 in screenshot shows
+   source mapping - where the hang occurs)
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopywindbginterface.png
    :align: center
-   :width: 600px
+   :width: 600

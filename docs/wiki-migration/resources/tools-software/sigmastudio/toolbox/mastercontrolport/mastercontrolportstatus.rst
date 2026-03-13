@@ -6,7 +6,9 @@ Master Control Port Status (ADAU145x)
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/status.jpg
    :align: center
 
-The master control port Status block sends out the Master control port status in the output pins. Master control errors can be cleared by setting input pin to non-zero value.
+The master control port Status block sends out the Master control port status in
+the output pins. Master control errors can be cleared by setting input pin to
+non-zero value.
 
 Input Pins
 ----------

@@ -25,12 +25,11 @@ Typical Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/ad9695-ads7-v2.jpg
    :align: center
-   :width: 620px
+   :width: 620
 
 .. container:: centeralign
 
    *Figure 1.* :adi:`AD9695-1300EBZ <AD9695>` *(Left) and* :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>` *(Right)*\
-
 
    |image1|
 
@@ -38,11 +37,9 @@ Typical Setup
 
    *Figure 2. Top of* :adi:`AD9695-1300EBZ <AD9695>` *Board*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Features
 ========
@@ -88,19 +85,19 @@ Equipment Needed
 Getting Started
 ===============
 
-This section provides quick start procedures for using the AD9695 evaluation board.
+This section provides quick start procedures for using the AD9695 evaluation
+board.
 
 Connector Layout
 ----------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/fpgapinlabeling.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    \ *Figure 3.* :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>` *Connector Layout*\
-
 
    |image2|
 
@@ -108,30 +105,29 @@ Connector Layout
 
    \ *Figure 4.* :adi:`AD9695-1300EBZ <AD9695>` *Connector Layout*\
 
-
 .. tip::
 
    Tip: For more information on Sysref (J200), see the :adi:`JESD204B Survival Guide <media/en/technical-documentation/technical-articles/JESD204B-Survival-Guide.pdf>`.
 
-
 .. warning::
 
-   \ Warning: The AD9695-1300EBZ is electrostatic discharge (ESD) sensitive. Handle the device with care, and employ conducting wrist straps or antistatic bags when handling the board.\
-
+   \ Warning: The AD9695-1300EBZ is electrostatic discharge (ESD) sensitive.
+   Handle the device with care, and employ conducting wrist straps or antistatic
+   bags when handling the board.\
 
 Configuring the Board
 ---------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/9695_pins.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 5. Jumper connections on* :adi:`AD9695-1300EBZ <AD9695>`\
 
-
-Before using the software for testing, configure the evaluation boards as follows:
+Before using the software for testing, configure the evaluation boards as
+follows:
 
 -  Before connecting the AD9695 to the ADS7-V2, jump the following pins: **P307**, **P308**, **P309**, **P311**, **P304**, **P305**, **P312**, and **P602** (SPI Enable). Do not jump **P100** (Power Down/Standby) and **P1**. Supply the Reference Clock through the ADS7-V2. Jump **P401** towards the inside of the board, to power the board via FMC. See Figure 5 for all jumper connections.
 -  Ensure that the data capture board is switched to “OFF.” (**S1** on the data capture board) Connect the evaluation board to the data capture board via the FMC connector found on the underside of the board, as shown in Figure 1. Connect the power supply and USB cable to the data capture board.
@@ -142,7 +138,6 @@ Before using the software for testing, configure the evaluation boards as follow
 
    \ *Figure 6. Device Manager showing* `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_\
 
-
 -  If the Device Manager does not show the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ listed as shown in Figure 6, unplug all USB devices from the PC, uninstall and re-install ACE and restart the hardware setup from step 1.
 -  On the AD9695 evaluation board, provide a clean, low jitter 1300 MHz clock source to connector **P202** (preferably via a shielded RG-58 50 Ω coaxial cable) and set the amplitude to 10 dBm. This is the ADC Sample Clock.
 -  On the ADS7-V2, provide a clean, low jitter clock source to connector **J3** and set the amplitude to 10 dBm. This is the Reference Clock for the gigabit transceivers in the FPGA. The REFCLK frequency can be calculated using the following empirical formulae:
@@ -151,26 +146,21 @@ Before using the software for testing, configure the evaluation boards as follow
 
    :math:`\displaystyle LaneLineRate=M \times Nprime \times (\frac{10}{8}) \times f_{out}/L` bps/lane, where
 
-
 .. container:: centeralign
 
    :math:`f_{out} = f_{ADC SAMPLE CLOCK}/DecimationRatio`
-
 
 .. container:: centeralign
 
    :math:`Nprime=8 or 16`
 
-
 .. container:: centeralign
 
    :math:`REFCLK = LaneLineRate/20`
 
-
 .. container:: centeralign
 
    :sub:`(Default Nprime = 16; DCM = Chip Decimation Ratio (DCM = 1 for Full Bandwidth Mode); M = Virtual Converters; L = Lanes)`
-
 
 -  On the AD9695 evaluation board, connect a clean signal generator with low phase noise to **J101** or **J104** via coaxial cable for channels A and B respectively. It is recommended to use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency.
 
@@ -182,29 +172,28 @@ ACE Setup
 
 .. tip::
 
-   Tip: Some browsers (Such as Internet Explorer) may save the file as a .zip file instead of an .acezip file. If this happens, simply download and rename the file with an .acezip file extension.
-
-
-
+   Tip: Some browsers (Such as Internet Explorer) may save the file as a .zip
+   file instead of an .acezip file. If this happens, simply download and rename
+   the file with an .acezip file extension.
 
 -  Once the .acezip file has been downloaded from the Analog Devices website, right click on it and install the plug-in, or double click to install.
 -  Click Start -> All Programs -> Analog Devices -> ACE -> ACE
 -  The AD9695 plug-in should appear as in Figure 7 if installed correctly.
--  If the AD9695 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.
+-  If the AD9695 plug-in does not appear, or no board is detected, make sure the
+   ADS7-V2 is powered on and the evaluation board is properly connected. Make
+   sure that ACE has been updated to the most recent version and the necessary
+   plug-ins have been installed.
 
 .. container:: centeralign
 
    \ |image4|\ *Figure 7. ACE's AD9695 Plug-in*\
 
-
-
-
 .. note::
 
-   Note: Differences may occur between ACE plug-in versions, including the version number seen in Figure 7 above or components in any of the other images below - however, these will not affect the performance of the part nor the fundamental features described in this user guide.
-
-
-
+   Note: Differences may occur between ACE plug-in versions, including the
+   version number seen in Figure 7 above or components in any of the other
+   images below - however, these will not affect the performance of the part nor
+   the fundamental features described in this user guide.
 
 -  Click on the plug-in to open it. \ |image5|\ 
 
@@ -212,17 +201,16 @@ ACE Setup
 
    \ *Figure 8. AD9695 Chip View*\
 
-
--  Click on the navigation tab labeled "AD9695-1300EBZ" to open the AD9695 board view.
+-  Click on the navigation tab labeled "AD9695-1300EBZ" to open the AD9695 board
+   view.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/9695navtab.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    \ *Figure 9. AD9695-1300EBZ Navigator Tab*\
-
 
    |image6|
 
@@ -230,29 +218,32 @@ ACE Setup
 
    \ *Figure 10. AD9695-1300EBZ Board View*\
 
-
--  Click on the "Program FPGA" button. This will program the FPGA on the ADS7-V2 to communicate with the AD9695-1300EBZ. 
+-  Click on the "Program FPGA" button. This will program the FPGA on the ADS7-V2
+   to communicate with the AD9695-1300EBZ.
 
 .. warning::
 
-   \ Warning: Programming the FPGA will power the AD9695 evaluation board via the FMC connector. Removing any of the board's power jumpers (as seen in Figure 5) while the board is on or in operation may cause damage to the board and/or chip. Removing the board while it is being powered via the FMC connector may also cause damage to the board.\
-
-
-
+   \ Warning: Programming the FPGA will power the AD9695 evaluation board via
+   the FMC connector. Removing any of the board's power jumpers (as seen in
+   Figure 5) while the board is on or in operation may cause damage to the board
+   and/or chip. Removing the board while it is being powered via the FMC
+   connector may also cause damage to the board.\
 
 Obtaining a Full Bandwidth Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Under Initial Configuration, set the Clock Input to 1300 MHz. Set the Number of Lane to 4. Change the number of Virtual Converter to 1. Change the number of Octets per Frame to 1. Click Apply to apply the chip settings. Set the reference clock to 325 MHz to match these settings.
+-  Under Initial Configuration, set the Clock Input to 1300 MHz. Set the Number
+   of Lane to 4. Change the number of Virtual Converter to 1. Change the number
+   of Octets per Frame to 1. Click Apply to apply the chip settings. Set the
+   reference clock to 325 MHz to match these settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/9695chipsetting.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    \ *Figure 11. Chip Settings*\
-
 
  |image7|\ 
 
@@ -260,13 +251,11 @@ Obtaining a Full Bandwidth Capture
 
    \ *Figure 12. Apply Settings*\
 
-
 -  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the Read All button.\ |image8|\ 
 
 .. container:: centeralign
 
    \ *Figure 13. Read All*\
-
 
 -  Issue a data path reset to the AD9695 by clicking its checkbox and clicking Apply Changes. The data path reset bit will automatically self clear.\ |image9|\ 
 
@@ -274,13 +263,11 @@ Obtaining a Full Bandwidth Capture
 
    \ *Figure 14. Data path reset*\
 
-
  |image10|\ 
 
 .. container:: centeralign
 
    \ *Figure 15. Apply Changes*\
-
 
 -   If the PLL Lock Lost indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.\ |image11|\ 
 
@@ -288,13 +275,11 @@ Obtaining a Full Bandwidth Capture
 
    \ *Figure 16. PLL Lock Lost*\
 
-
  |image12|\ 
 
 .. container:: centeralign
 
    \ *Figure 17. Link Power Down*\
-
 
 -  Enable the link again and Apply Changes.\ |image13|\ 
 
@@ -302,13 +287,11 @@ Obtaining a Full Bandwidth Capture
 
    \ *Figure 18. Link Enable*\
 
-
 -  Click Proceed to Analysis. This is ACE's Analysis tool for data from the ADC, displaying both sample plots and FFTs. Click on DDCFFT and run one capture.\ |image14|\ 
 
 .. container:: centeralign
 
    \ *Figure 19. Analysis Tool*\
-
 
  |image15|\ 
 
@@ -316,22 +299,19 @@ Obtaining a Full Bandwidth Capture
 
    \ *Figure 20. Display FFTs*\
 
-
  |image16|\ 
 
 .. container:: centeralign
 
    \ *Figure 21. Run one capture*\
 
-
-
-
 .. important::
 
-   Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE's data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.
-
-
-
+   Tip: Capturing data using another program (e.g. VisualAnalog, proprietary
+   code, etc.) while using ACE concurrently may cause errors in ACE's data
+   capture. If this occurs, the best solution is to restart the evaluation
+   boards and work solely via ACE, or to setup the part in ACE then capture
+   solely in the other program.
 
 -  Channel A and Channel B can be selected individually to display their FFTs.\ |image17|\ 
 
@@ -339,17 +319,16 @@ Obtaining a Full Bandwidth Capture
 
    \ *Figure 22. Channel Selection*\
 
-
--  A successful capture is shown below, with a filtered 533 MHz signal inputted at on Channel A.
+-  A successful capture is shown below, with a filtered 533 MHz signal inputted
+   at on Channel A.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/9695fullbwfft.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    \ *Figure 23. Example Input to Channel A*\
-
 
 Obtaining a DDC Capture
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -360,13 +339,11 @@ Obtaining a DDC Capture
 
    \ *Figure 24. DDC Chip Settings*\
 
-
 -  The chip view will update to reflect the changes. Click on the NCO block to change the Noise Controlled Oscillator's frequency to 500 MHz. Enable the 6dB gain for the DDC from the dropdown menu. Click Apply Changes to apply both.\ |image19|\ 
 
 .. container:: centeralign
 
    \ *Figure 25. NCO Frequency Setting*\
-
 
  |image20|\ 
 
@@ -374,13 +351,11 @@ Obtaining a DDC Capture
 
    \ *Figure 26. DDC Gain*\
 
-
 -  Navigate to the second DDC (DDC1) and make the same changes.\ |image21|\ 
 
 .. container:: centeralign
 
    \ *Figure 27. DDC Selection*\
-
 
 -  In Analysis, run a capture. DDC0 can be selected from Channel A and DDC1 can be selected from Channel B.
 -  A successful capture is shown below, with a filtered 495 MHz signal inputted on Channel A / DDC0.\ |image22|\ 
@@ -389,14 +364,16 @@ Obtaining a DDC Capture
 
    \ *Figure 28. Example Input to DDC0*\
 
-
 Troubleshooting Tips
 ====================
 
 EVALUATION BOARD ISN'T FUNCTIONING PROPERLY
 -------------------------------------------
 
--  It is possible that a board component has been rendered inoperable by ESD, removing a jumper during powered operation, accidental shorting while probing, etc. Try checking the supply domain voltages of the board while it is powered. They should be as follows:
+-  It is possible that a board component has been rendered inoperable by ESD,
+   removing a jumper during powered operation, accidental shorting while
+   probing, etc. Try checking the supply domain voltages of the board while it
+   is powered. They should be as follows:
 
 ============ ====== ========== ===============
 Domain       Jumper Test Point Approx. Voltage
@@ -420,14 +397,18 @@ EVALUATION BOARD IS NOT COMMUNICATING WITH THE ADS7-V2 / NO SPI COMMUNICATION
 -  Check Test Point 307 - test point for the AVDD_1P8_SPI supply domain, jumper P312 - and make sure it is around 1.8 volts.
 -  To test SPI operation, attempt to both read and write to register 0x000A using ACE's Register Debugger (View -> Register Debugger). This register is an open register available for testing memory reads and writes. If the value written to this register does not reset after writing it, SPI is operational.
 -  All registers reading back as either all ones or all zeros (i.e., 0xFF or 0x00) may indicate no SPI communication.
--  Register 0x0000 (SPI Configuration A) reading back 0x81 in ACE may indicate no SPI communication as a result of the FPGA on the ADS7-V2 not being programmed.
+-  Register 0x0000 (SPI Configuration A) reading back 0x81 in ACE may indicate
+   no SPI communication as a result of the FPGA on the ADS7-V2 not being
+   programmed.
 
 EVALUATION BOARD FAILS TO CAPTURE DATA
 --------------------------------------
 
 -  Ensure that the board is functioning properly and that SPI communication is successful - see previous troubleshooting tips.
 -  Check the Clock Detect register 0x011B to see if the inputted clock is being detected. 0x01 indicates detection, 0x00 indicates no clock detected. Check the signal generator inputting on connector P202. Try checking the common mode voltage on the clock pins, which should be roughly two-thirds of AVDD_0P9. Try placing a differential oscilloscope probe on the clock pins to see if the clock signal is reaching the chip.
--  Check the PLL Locked indicator (see Figure 16) or register 0x056F (PLL Status). If the light is green / if the register reads back 0x80, the PLL is locked. If it is not locked:
+-  Check the PLL Locked indicator (see Figure 16) or register 0x056F (PLL
+   Status). If the light is green / if the register reads back 0x80, the PLL is
+   locked. If it is not locked:
 
    -  Check the clock being inputted to connector P202 (in this guide, 625 MHz).
    -  Check the JESD settings under the Initial Configuration. Reference the AD9695 datasheet for supported lane options.
@@ -435,46 +416,46 @@ EVALUATION BOARD FAILS TO CAPTURE DATA
    -  Make sure P100 (Power Down / Standby Jumper, see Figure 5) is not jumped.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/ad9695-2.jpg
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/9695_connections.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/0.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/9695attachedhardware.jpg
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/2p0.png
-   :width: 500px
+   :width: 500
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/9695programfpga.jpg
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/6.png
-   :width: 200px
+   :width: 200
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/7.png
-   :width: 100px
+   :width: 100
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/6p0.png
-   :width: 250px
+   :width: 250
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/7p0.png
-   :width: 100px
+   :width: 100
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/8.png
-   :width: 100px
+   :width: 100
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/9.png
-   :width: 500px
+   :width: 500
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/11.png
-   :width: 500px
+   :width: 500
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/12.png
-   :width: 500px
+   :width: 500
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/13.png
-   :width: 100px
+   :width: 100
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/14.png
-   :width: 150px
+   :width: 150
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/15.png
-   :width: 200px
+   :width: 200
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/17.png
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/18p0.png
-   :width: 200px
+   :width: 200
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/19.png
-   :width: 200px
+   :width: 200
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/20.png
-   :width: 200px
+   :width: 200
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/21.png
-   :width: 600px
+   :width: 600

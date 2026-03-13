@@ -6,7 +6,7 @@ The :adi:`EVAL-AD7124-8-PMDZ` is a minimalist 8-channel, low noise, low power, 2
 All pins of the :adi:`AD7124-8` are exposed, which makes the :adi:`EVAL-AD7124-8-PMDZ` very flexible and easy to use.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-8-pmdz_top.jpg
-   :width: 600px
+   :width: 600
 
 Functional block diagram
 ------------------------
@@ -27,7 +27,9 @@ The integrated channel sequencer allows several channels to be enabled simultane
 
 The :adi:`AD7124-8` also has extensive diagnostic functionality integrated as part of its comprehensive feature set. These diagnostics include a cyclic redundancy check (CRC) on the SPI data, signal chain checks, and serial interface checks, which lead to a more robust solution. These diagnostics reduce the need for external components to implement diagnostics, resulting in reduced board space needs, reduced design cycle times and cost savings. The failure modes effects and diagnostic analysis (FMEDA) of a typical application has shown a safe failure fraction (SFF) greater than 90% according to IEC 61508.
 
-The device operates with a single analog power supply from 2.7 V to 3.6 V or a dual 1.8 V power supply. The digital supply has a range of 1.65 V to 3.6 V, eliminating the need for external logic level shifters.
+The device operates with a single analog power supply from 2.7 V to 3.6 V or a
+dual 1.8 V power supply. The digital supply has a range of 1.65 V to 3.6 V,
+eliminating the need for external logic level shifters.
 
 Connectors and Configuration
 ----------------------------
@@ -40,7 +42,7 @@ AD7124-8 Inputs/Outputs Connections
 All the analog and digital input/output pins available on the :adi:`EVAL-AD7124-8-PMDZ` are brought out to two (2) separate 16 row 0.1" gold plated through holes.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-8-pmdz_top.jpg
-   :width: 700px
+   :width: 700
 
 ============ =========== ============ =========
 Connector P2             Connector P3 
@@ -64,16 +66,19 @@ REFIN1(+)    15          PSW          13
 
 .. tip::
 
-   Note: Not all pins require inputs. The following pins are exposed and can be used if necessary if they are first disconnected from their default onboard connection if that connection exists. (AVSS, AVDD, REFIN1(+), REFIN1(-), CLK, REFOUT, SYNC, PSW). Please refer to the datasheet to learn more about their function
-
+   Note: Not all pins require inputs. The following pins are exposed and can be
+   used if necessary if they are first disconnected from their default onboard
+   connection if that connection exists. (AVSS, AVDD, REFIN1(+), REFIN1(-), CLK,
+   REFOUT, SYNC, PSW). Please refer to the datasheet to learn more about their
+   function
 
 Digital Communications
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Digital communication on the EVAL-AD7124-8-PMDZ is accomplished using a standard expanded SPI PMOD port.
+The Digital communication on the EVAL-AD7124-8-PMDZ is accomplished using a
+standard expanded SPI PMOD port.
 
 +--------------+
-
 
 | Connector P1 |
 
@@ -126,10 +131,11 @@ The Digital communication on the EVAL-AD7124-8-PMDZ is accomplished using a stan
 Solder Jumpers
 ~~~~~~~~~~~~~~
 
-Eight solder jumpers are available at the bottom of the board, if you want to change the operating modes. See the schematic for more details.
+Eight solder jumpers are available at the bottom of the board, if you want to
+change the operating modes. See the schematic for more details.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-8-pmdz_bottom.jpg
-   :width: 700px
+   :width: 700
 
 +-------------------------------------------------------------+---------------+------------------+
 | Description and default connection                          | Solder Jumper | Default Position |
@@ -171,7 +177,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Additional Information and Useful Links
 ---------------------------------------
 
@@ -190,6 +195,5 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD7124-8-PMDZ?&v=RevB>`_ to receive all these great benefits and more!
-
 
 *End of Document*

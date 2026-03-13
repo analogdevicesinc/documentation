@@ -3,7 +3,7 @@ ADRV9001/2 Prototyping Platform User Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/16658_50037.png
    :align: left
-   :width: 200px
+   :width: 200
 
 The :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` (low band, 30MHz – 3GHz) and :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` (high band, 3GHz – 6GHz) are FMC radio cards for the :adi:`ADRV9002` highly integrated RF transceiver, offering dual channel transmitters and dual channel receivers, integrated synthesizers, and digital signal processing functions. The IC delivers a versatile combination of high performance and low power consumption required by battery powered radio equipment and can operate in both FDD and TDD modes. The ADRV9002 operates from 30 MHz to 6000 MHz covering the VHF, licensed and unlicensed cellular bands, and ISM bands. The IC is capable of supporting both narrowband and wideband standards up to 40MHz bandwidth on both receive and transmit.
 
@@ -11,7 +11,7 @@ While the complete chip level design package can be found on :adi:`the ADI web s
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/42975_50034.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 User Resources
 --------------
@@ -76,7 +76,8 @@ People who follow the flow that is outlined, have a much better experience with 
 
       -   :ez:`Design Support Community ADRV9001-ADRV9007 <wide-band-rf-transceivers/design-support-adrv9001-adrv9007>`
 
-   -  For Evaluation System Software support (TES GUI, ADRV9001 API driver, etc.) go to:
+   -  For Evaluation System Software support (TES GUI, ADRV9001 API driver,
+      etc.) go to:
 
       -  :ez:`TES GUI Software Support Community ADRV9001-ADRV9007 <wide-band-rf-transceivers/tes-gui-software-support-adrv9001-adrv9007>`
 
@@ -84,7 +85,8 @@ People who follow the flow that is outlined, have a much better experience with 
 
       -  :ez:`FPGA Reference Designs <community/fpga>` sub-community.
 
-   -  For questions regarding the the ADI Linux distribution, the Linux drivers, or the device trees for the ADRV9001/2 based platforms, please use the
+   -  For questions regarding the the ADI Linux distribution, the Linux drivers,
+      or the device trees for the ADRV9001/2 based platforms, please use the
 
       -  :ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>` sub-community.
 
@@ -99,15 +101,16 @@ Downloads
 
 Binaries:
 
-Osc for windows can be downloaded directly from Github. Go to to the following link and download the latest release.
+Osc for windows can be downloaded directly from Github. Go to to the following
+link and download the latest release.
 
 -  `IIO-Scope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
-The latest boot files for adrv9002 (for all supported carriers) can be found in the latest Kuiper Image release (note one can choose between downloading the full image or just the boot partition):
+The latest boot files for adrv9002 (for all supported carriers) can be found in
+the latest Kuiper Image release (note one can choose between downloading the
+full image or just the boot partition):
 
 -  :doc:`Kuiper Image </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
-
-
 
 .. collapsible:: Older releases (Click to expand)
 
@@ -116,9 +119,8 @@ The latest boot files for adrv9002 (for all supported carriers) can be found in 
    -  `adrv9002_B0_2019_r2_prerelease.zip <http://swdownloads.analog.com/cse/tmp/B0_2019_r2_pre_release_zcu102.zip>`_
    -  `adrv9002_B0_2019_r2_4_1_2021.zip <http://swdownloads.analog.com/cse/tmp/B0_2019_r2_4_1_2021_zcu102.zip>`_
 
-
-
-Source code have been posted on following branches on github, or has been already merged into master:
+Source code have been posted on following branches on github, or has been
+already merged into master:
 
 -  :git-linux:`drivers/iio/adc/navassa`
 -  https://github.com/analogdevicesinc/hdl/tree/adrv9001_zcu102/projects/adrv9001
@@ -138,7 +140,8 @@ Software Defined Radio using the Linux IIO Framework
 ADI Articles
 ~~~~~~~~~~~~
 
--   Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio
+-   Four Quick Steps to Production: Using Model-Based Design for
+    Software-Defined Radio
 
    -  :adi:`Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
    -  :adi:`Part 2—Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
@@ -154,6 +157,4 @@ MathWorks Webinars
 Warning
 -------
 
-
 .. esd-warning::
-

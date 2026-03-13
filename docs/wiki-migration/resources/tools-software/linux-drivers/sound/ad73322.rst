@@ -6,7 +6,8 @@ This driver is written for a custome board which has 4 cascaded AD73322s,but sin
 Adding Kernel Support
 ---------------------
 
-To add support for the AD73322 to the kernel build system, a few things must be enabled properly for things to work. The configuration is as following:
+To add support for the AD73322 to the kernel build system, a few things must be
+enabled properly for things to work. The configuration is as following:
 
 ::
 
@@ -25,12 +26,17 @@ To add support for the AD73322 to the kernel build system, a few things must be 
               (12)  PF pin for AD73322 Chip Reset
 
 -  "Blackfin Audio SPORT port" has 3 options:0,1 or 2,if you only have one card on SPORT0 or SPORT1,then input 0 or 1.if you have 2 cards on both SPORT0 and SPORT1 then input 2.
--  Default PF pins used above may have been requested by other devices,if so, you need either disable that device or select another one.
+-  Default PF pins used above may have been requested by other devices,if so,
+   you need either disable that device or select another one.
 
 Testing the built in kernel driver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If audio is configured as modules, skip this section. If audio is built into kernel and you have booted the kernel, you need to check if audio is working: Check the boot messages to see if you have booted the correct kernel. During kernel booting, it should print out message like this(There are two cards on both SPORT0 and SPORT1 in this case):
+If audio is configured as modules, skip this section. If audio is built into
+kernel and you have booted the kernel, you need to check if audio is working:
+Check the boot messages to see if you have booted the correct kernel. During
+kernel booting, it should print out message like this(There are two cards on
+both SPORT0 and SPORT1 in this case):
 
 ::
 
@@ -45,7 +51,11 @@ Usage notes
 
 **Configure file:**
 
-Since AD73322 card has at least two pairs of ADC/DAC(also called input/output devices, and index of device is mapped to index of ADC/DAC in cascade mode),a configure file is needed to make full use of all these devices,otherwise only the first pair of ADC/DAC of card 0 can be used as default devices.An example of the config file is as following,it should be copy to /etc/asound.conf
+Since AD73322 card has at least two pairs of ADC/DAC(also called input/output
+devices, and index of device is mapped to index of ADC/DAC in cascade mode),a
+configure file is needed to make full use of all these devices,otherwise only
+the first pair of ADC/DAC of card 0 can be used as default devices.An example of
+the config file is as following,it should be copy to /etc/asound.conf
 
 ::
 
@@ -122,4 +132,10 @@ Since AD73322 card has at least two pairs of ADC/DAC(also called input/output de
 Driver Souce code note
 ----------------------
 
-As mentioned above this driver is written for a customer board( with 4 cascaded AD73322 on it),and there are wrong mappings between the input Jacks and and input data lines on the board,so a function named get_cap_slotindex is implemented to correct it.Normally,it is not necessary and just get the slot_index by NUM_DEVICE_CHAN-(index+1),please refer to playback side functions.Also please feel free to tell the author if you find that something need be changed for your card,Since we want it to be more generic.
+As mentioned above this driver is written for a customer board( with 4 cascaded
+AD73322 on it),and there are wrong mappings between the input Jacks and and
+input data lines on the board,so a function named get_cap_slotindex is
+implemented to correct it.Normally,it is not necessary and just get the
+slot_index by NUM_DEVICE_CHAN-(index+1),please refer to playback side
+functions.Also please feel free to tell the author if you find that something
+need be changed for your card,Since we want it to be more generic.

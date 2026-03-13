@@ -5,8 +5,9 @@ This page describes how to install drivers without an installer, as in the case 
 
 .. tip::
 
-   Use the Table of Contents on the right to scroll to instructions for your operating system. Note that your system may behave slightly differently, but the overall procedure remains the same.
-
+   Use the Table of Contents on the right to scroll to instructions for your
+   operating system. Note that your system may behave slightly differently, but
+   the overall procedure remains the same.
 
 Windows 7
 ---------
@@ -23,11 +24,9 @@ Windows 7
    -  Right-click on the Unknown Device and select **Update Driver Installation...**. Follow the remaining instructions below.
    
 
-
 -  Select **Let me pick...**, then click **Next**.
 
 .. container:: indent
-
 
    ..
 
@@ -37,7 +36,6 @@ Windows 7
 
 .. container:: indent
 
-
    ..
 
 |image2|
@@ -45,7 +43,6 @@ Windows 7
 -  Click **Have Disk...**.
 
 .. container:: indent
-
 
    ..
 
@@ -55,7 +52,6 @@ Windows 7
 
 .. container:: indent
 
-
    ..
 
 |image4|
@@ -63,7 +59,6 @@ Windows 7
 -  Navigate to the ``.inf`` file on your hard drive or CD.
 
 .. container:: indent
-
 
    ..
 
@@ -73,7 +68,6 @@ Windows 7
 
 .. container:: indent
 
-
    ..
 
 |image6|
@@ -82,7 +76,6 @@ Windows 7
 
 .. container:: indent
 
-
    ..
 
 |image7|
@@ -90,7 +83,6 @@ Windows 7
 -  Respond **Continue Anyway** or **Install** to the warning.
 
 .. container:: indent
-
 
    ..
 
@@ -103,7 +95,6 @@ Windows 7
    
    |image9|\
 
-
 --------------
 
 Windows XP
@@ -114,7 +105,6 @@ Windows XP
 
 .. container:: indent
 
-
    ..
 
 |image10|
@@ -122,7 +112,6 @@ Windows XP
 -  Select **Don't search. I will choose the driver to install**, then click **Next**.
 
 .. container:: indent
-
 
    ..
 
@@ -132,7 +121,6 @@ Windows XP
 
 .. container:: indent
 
-
    ..
 
 |image12|
@@ -140,7 +128,6 @@ Windows XP
 -  Click **Have Disk...**.
 
 .. container:: indent
-
 
    ..
 
@@ -150,7 +137,6 @@ Windows XP
 
 .. container:: indent
 
-
    ..
 
 |image14|
@@ -158,7 +144,6 @@ Windows XP
 -  Navigate to the ``.inf`` file on your hard drive or CD and click **Open**.
 
 .. container:: indent
-
 
    ..
 
@@ -168,7 +153,6 @@ Windows XP
 
 .. container:: indent
 
-
    ..
 
 |image16|
@@ -176,7 +160,6 @@ Windows XP
 -  Select "ADI Inertial Sensor Development Board" in the **Model** list, and click **Next >**.
 
 .. container:: indent
-
 
    ..
 
@@ -186,7 +169,6 @@ Windows XP
 
 .. container:: indent
 
-
    ..
 
 |image18|
@@ -195,46 +177,45 @@ Windows XP
 
 .. container:: indent
 
-
    ..
 
 |image19|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/install_5.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/install_6.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/install_7.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/install_8.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/install_9.jpg
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/install_9p1.jpg
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/install_10.jpg
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/install_11.jpg
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/install_done.jpg
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/winxpinstall0.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/winxpinstall1.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/winxpinstall2.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/winxpinstall3.png
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/winxpinstall4.png
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/winxpinstall5.png
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/winxpinstall6.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/winxpinstall7.png
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/winxpinstall8.png
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evalsystem/winxpinstall9.png
-   :width: 400px
+   :width: 400

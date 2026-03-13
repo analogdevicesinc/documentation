@@ -14,9 +14,15 @@ The v14 of the tool is capable of
 Analyzing PA Response
 =====================
 
-Analyzing the PA response on the feedback loop and ensuring that the PA response is reasonable is critical for good DPD performance. In order to capture the transmitted and observed samples on the feedback loop (open loop DPD response), the user can force a unity gain response on the DPD actuator by configuring a Tx/ORx mean power threshold (such as -1dBFS) for DPD updates prior to enabling the DPD tracking calibration.
+Analyzing the PA response on the feedback loop and ensuring that the PA response
+is reasonable is critical for good DPD performance. In order to capture the
+transmitted and observed samples on the feedback loop (open loop DPD response),
+the user can force a unity gain response on the DPD actuator by configuring a
+Tx/ORx mean power threshold (such as -1dBFS) for DPD updates prior to enabling
+the DPD tracking calibration.
 
-The following code snippet shows how to configure the DPD to engage the actuator in bypass mode (output = input)
+The following code snippet shows how to configure the DPD to engage the actuator
+in bypass mode (output = input)
 
 .. code:: python
 
@@ -78,24 +84,33 @@ After setting up the actuator in bypass mode via \*\* DpdStabilityCfgSet( )*\* a
        dpdCaptureDataDump()
        print 'Data Buffer Capture complete!'
 
-A batch of 4096 samples of Tu and ORx data is written to a .txt file in tab separated IQ format.
+A batch of 4096 samples of Tu and ORx data is written to a .txt file in tab
+separated IQ format.
 
-Once you have the 4096 samples logged, the Tu and ORx data can be loaded to the ADI DPD analysis tool, by specifying corresponding Tu and ORx data files as well as an output directory for data to be saved to. This is shown in the figure below.
+Once you have the 4096 samples logged, the Tu and ORx data can be loaded to the
+ADI DPD analysis tool, by specifying corresponding Tu and ORx data files as well
+as an output directory for data to be saved to. This is shown in the figure
+below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adidpdanalysistool_loaddata.png
    :align: center
-   :width: 1200px
+   :width: 1200
 
-The PA responses (Time domain, Power Spectral Density, CCDF, AM/PM and Gain response) can be plotted in a tabbed window shown below. Plotting a response will automatically select the tab corresponding to the plotted data. The user may also click on a tab to view the specific data plot.
+The PA responses (Time domain, Power Spectral Density, CCDF, AM/PM and Gain
+response) can be plotted in a tabbed window shown below. Plotting a response
+will automatically select the tab corresponding to the plotted data. The user
+may also click on a tab to view the specific data plot.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adidpdanalysistool_ampm.png
    :align: center
-   :width: 1200px
+   :width: 1200
 
 Identifying an Optimal DPD Model
 ================================
 
-After validating that the PA response is reasonable as shown in the previous section, the user may proceed to identifying an optimal model for their Power Amplifier based on the open loop PA response seen in the previous section.
+After validating that the PA response is reasonable as shown in the previous
+section, the user may proceed to identifying an optimal model for their Power
+Amplifier based on the open loop PA response seen in the previous section.
 
 Sweeping DPD Models
 -------------------
@@ -104,31 +119,44 @@ ADI provides two methods of model selection: existing model sweep/search or a mo
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adidpdanalysistool_modelsweep.png
    :align: center
-   :width: 1200px
+   :width: 1200
 
-The user can then sort the DPD models by pressing the "Sort DPD Models" button. A loading bar will update the progress of the sweep, before outputing a text file with the DPD models, which are sorted by NMSE. The PSD of the model results will be shown in the PSD Model tab of the figure viewer.
+The user can then sort the DPD models by pressing the "Sort DPD Models" button.
+A loading bar will update the progress of the sweep, before outputing a text
+file with the DPD models, which are sorted by NMSE. The PSD of the model results
+will be shown in the PSD Model tab of the figure viewer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adidpdanalysistool_modelsweep_process.png
    :align: center
-   :width: 1200px
+   :width: 1200
 
 An example of the output file is shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adidpdanalysistool_output_nmse.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Pruning DPD Models
 ------------------
 
-Model pruning optimization can be conducted by selecting a model coefficient/feature limit using the "Model Coeff Count" slider. 255 coefficients can be selected for default operation and 510 for partial DPD operation. A selection of 255 coefficients is recommended.
+Model pruning optimization can be conducted by selecting a model
+coefficient/feature limit using the "Model Coeff Count" slider. 255 coefficients
+can be selected for default operation and 510 for partial DPD operation. A
+selection of 255 coefficients is recommended.
 
-Other parameters, such as nonlinearity order of the DPD model basis functions can be specified. It is recommended that the user uses the default parameters shown below.
+Other parameters, such as nonlinearity order of the DPD model basis functions
+can be specified. It is recommended that the user uses the default parameters
+shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adidpdanalysistool_dpdpruning.png
    :align: center
-   :width: 1200px
+   :width: 1200
 
-Pressing the "Generate DPD Models" button will begin the model optimization, which may take up to 10 minutes to complete. The progress bar will update for each of the eight models created. The PSD of the model results will be shown in the PSD Model tab of the figure viewer. Models are output to the 'Data Export Folder' under the subfolder 'models'.
+Pressing the "Generate DPD Models" button will begin the model optimization,
+which may take up to 10 minutes to complete. The progress bar will update for
+each of the eight models created. The PSD of the model results will be shown in
+the PSD Model tab of the figure viewer. Models are output to the 'Data Export
+Folder' under the subfolder 'models'.
 
-Documentation for the GUI and its features can be easily accessed through the help toolbar option.
+Documentation for the GUI and its features can be easily accessed through the
+help toolbar option.

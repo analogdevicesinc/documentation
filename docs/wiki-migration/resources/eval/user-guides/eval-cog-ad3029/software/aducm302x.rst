@@ -6,13 +6,14 @@ General Description/Overview
 
 The ADuCM302x Device Family Pack (DFP) provides access to all the necessary on-chip peripheral drivers for both the :adi:`ADuCM3029` and the :adi:`ADuCM3027` devices. This software layer is the foundation layer needed when writing applications using this microprocessor family. When combined with the **EV-COG-AD3029LZ** software pack as well as the Sensors software pack, there are many great **Internet of Things(IoT)** applications and demos that can be replicated using the **EV-COG-AD3029LZ** development platform.
 
-The following on-chip drivers are provided as part of the ADuCM302x Device Family Pack:
+The following on-chip drivers are provided as part of the ADuCM302x Device
+Family Pack:
 
 -  spi
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/software/software_packs_aducm302x_device_block_diagram.png
    :align: right
-   :width: 600px
+   :width: 600
 
 -  i2c
 -  uart
@@ -26,7 +27,8 @@ The following on-chip drivers are provided as part of the ADuCM302x Device Famil
 -  adc
 -  tmr
 
-For detailed information regarding the ADuCM302x DFP, please see our complete ADuCM302x software user guide.
+For detailed information regarding the ADuCM302x DFP, please see our complete
+ADuCM302x software user guide.
 
 .. hint::
 
@@ -34,18 +36,19 @@ For detailed information regarding the ADuCM302x DFP, please see our complete AD
    `ADuCM302x DFP Release Notes <http://download.analog.com/tools/EZBoards/CM302x/Releases/Release_2.0.0/ADuCM302x_DFP_2.0.0_Release_Notes.pdf>`_
    
 
-
 .. important::
 
    
-   You MUST have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the EV-COG-AD3029LZ platform.
+   You MUST have this software package installed on your laptop or PC in order
+   to compile, debug, and run the applications for the EV-COG-AD3029LZ platform.
    
-
 
 Downloading the ADuCM302x Software Pack
 ---------------------------------------
 
-The software pack can be installed directly by the tool chain's CMSIS pack manager. Optionally, you may download and then use the CMSIS pack manager's manual installation to install the pack.
+The software pack can be installed directly by the tool chain's CMSIS pack
+manager. Optionally, you may download and then use the CMSIS pack manager's
+manual installation to install the pack.
 
 -  Downloaded via the tool chain's CMSIS pack manager
 
@@ -53,7 +56,11 @@ The software pack can be installed directly by the tool chain's CMSIS pack manag
 
 -  Downloaded to local directory
 
-   -  However if you do decide to download the ADuCM302x software pack to your PC/laptop directly, please use the link below to download the pack file from Keil's website. You will then need to "import" the pack file using your tool chain's CMSIS pack manager's import feature. Note that all software packs can be downloaded from Keil's website.
+   -  However if you do decide to download the ADuCM302x software pack to your
+      PC/laptop directly, please use the link below to download the pack file
+      from Keil's website. You will then need to "import" the pack file using
+      your tool chain's CMSIS pack manager's import feature. Note that all
+      software packs can be downloaded from Keil's website.
 
 .. admonition:: Download
    :class: download
@@ -61,7 +68,6 @@ The software pack can be installed directly by the tool chain's CMSIS pack manag
    
    `ADuCM302x DFP 2.0.0 <http://download.analog.com/tools/EZBoards/CM302x/Releases/AnalogDevices.ADuCM302x_DFP.2.0.0.pack>`_
    
-
 
 *End of Document*
 

@@ -12,20 +12,32 @@ General 2nd Order with Var Param Lookup Slew
 Description
 ===========
 
-The General (2nd-Order / Lookup) block gives access to a wide variety of 2nd-order IIR (infinite impulse response) filter algorithms. See General 2nd-Order Filters (in Algorithm Information) for details about the algorithms driving these blocks.
+The General (2nd-Order / Lookup) block gives access to a wide variety of
+2nd-order IIR (infinite impulse response) filter algorithms. See General
+2nd-Order Filters (in Algorithm Information) for details about the algorithms
+driving these blocks.
 
-The filters available are: Tone Peaking General LP/HP Butterworth LP/HP Bessel LP/HP Chebyshev LP/HP
+The filters available are: Tone Peaking General LP/HP Butterworth LP/HP Bessel
+LP/HP Chebyshev LP/HP
 
-The block is simply a double-precision biquad filter that has stored a set of coefficients in tables in the DSP. To select curves (lookup), use an Index Lookup Table, a Counter block, or a DC Input block in your design and connect it to the red pin.
+The block is simply a double-precision biquad filter that has stored a set of
+coefficients in tables in the DSP. To select curves (lookup), use an Index
+Lookup Table, a Counter block, or a DC Input block in your design and connect it
+to the red pin.
 
 Usage
 =====
 
-Click the icon button:. The curve is defined using the Tone Control window (shown above).
+Click the icon button:. The curve is defined using the Tone Control window
+(shown above).
 
-Enter the number of curves desired in the # Curves field. Enter Boosts, (overall) Gain, and Q in their fields. Enter the desired cutoff or center (peaking filters) frequency in the Frequency fields. Other parameters to enter will vary with filter type.
+Enter the number of curves desired in the # Curves field. Enter Boosts,
+(overall) Gain, and Q in their fields. Enter the desired cutoff or center
+(peaking filters) frequency in the Frequency fields. Other parameters to enter
+will vary with filter type.
 
-The variety and range of filters are remarkable, as can be seen from the many examples in the General (2nd-Order / Lookup) topic page.
+The variety and range of filters are remarkable, as can be seen from the many
+examples in the General (2nd-Order / Lookup) topic page.
 
 Targets Supported
 =================
@@ -57,7 +69,6 @@ Name    Type  Description
 ======= ===== ===================
 Output0 Audio The filtered output
 ======= ===== ===================
-
 
 | ===== Configurable Parameters =====
 

@@ -20,7 +20,8 @@ Structure
 
 Description
 
-The communication component configuration structure to be populated by the application.
+The communication component configuration structure to be populated by the
+application.
 
 Fields
 

@@ -9,7 +9,9 @@ GALA With Filter
 Description
 -----------
 
-GALA With Filter block applies the filtering to the input signal first and then applies the variable GALA gain to the filtered input signal with change in control input value(Speed/Engine Noise)
+GALA With Filter block applies the filtering to the input signal first and then
+applies the variable GALA gain to the filtered input signal with change in
+control input value(Speed/Engine Noise)
 
 Targets Supported
 -----------------
@@ -41,7 +43,6 @@ Name    Type  Description
 ======= ===== ===============
 Output0 Audio Output channel0
 ======= ===== ===============
-
 
 | ===== Configurable Parameters =====
 

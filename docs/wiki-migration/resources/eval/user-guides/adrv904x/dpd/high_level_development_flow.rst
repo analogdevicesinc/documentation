@@ -1,8 +1,9 @@
-A typical development flow for DPD development with the ADRV904x Integrated DPD transceiver is shown below
+A typical development flow for DPD development with the ADRV904x Integrated DPD
+transceiver is shown below
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adrv904x_dpd_highleveldevflow.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 1. **PA Selection:** The DPD development with the ADRV904x transceiver starts with PA selection for the radio's frequency of operation. ADI works closely with PA vendors to evaluate the ADI DPD with the latest and greatest PAs from the vendors. Contact ADI for evaluation reports for a specific PA of interest with ADI DPD.
 

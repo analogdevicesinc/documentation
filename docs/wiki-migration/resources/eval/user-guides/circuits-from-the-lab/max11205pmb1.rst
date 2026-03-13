@@ -5,7 +5,7 @@ The :adi:`MAX11205PMB1` peripheral module provides the necessary hardware to int
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205pmb1.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Hardware
 --------
@@ -39,7 +39,7 @@ Pin 6         Digital Power       VDD
 ============= =================== ========
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/max11205pmb1/max11205pmb1-layout.png
-   :width: 300px
+   :width: 300
 
 Device Driver Support
 ---------------------
@@ -54,7 +54,13 @@ There are two device driver solutions that are provided for controlling the **MA
 
    -  The :doc:`MAX11205 Linux driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/max11205>` is used in applications running the Linux operating system, typically on larger processors and SoC devices.
 
-      -  The MAX11205 Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
+      -  The MAX11205 Linux driver uses the Industrial Input/Output (IIO)
+         framework, greatly simplifying the development of application code via
+         the cross-platform Libiio library, which is written in C and includes
+         bindings for Python, MATLAB, C#, and other languages. Application code
+         can run directly on the platform board, communicating with the device
+         over the local backend, or from a remote host over the network or USB
+         backends.
 
 System Setup Using MAX32655FTHR
 -------------------------------
@@ -101,7 +107,6 @@ Pin 6 (VCC)           VCC
 
 3. Connect **MAX32655FTHR** pin P0_22 (MISO) to P1_6.\
 
-
 |MAX32655FTHR|
 
 The final setup should look similar as shown below. |image1| 4. Power up the **MAX32655FTHR** by connecting it to your laptop using a micro-USB cable.
@@ -112,7 +117,6 @@ The final setup should look similar as shown below. |image1| 4. Power up the **M
 
 The expected output viewed in the PuTTY is shown below.
 
-
 |image2|
 
 Application Software (All Platforms)
@@ -121,19 +125,20 @@ Application Software (All Platforms)
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
-The Libiio is a library used for interfacing with IIO devices and is required to be installed on your computer.
+The Libiio is a library used for interfacing with IIO devices and is required to
+be installed on your computer.
 
 .. admonition:: Download
    :class: download
 
    Download and install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
-
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the MAX11205PMB1 is attached. One platform is currently supported for the MAX11205PMB1: the MAX32655FTHR running the no-OS MAX11205 demo project. The user needs to supply a **URI**, which will be used in the context creation.
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to
+access it.
 
 For Windows machine connected to MAX32655FTHR:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -177,20 +182,20 @@ IIO Oscilloscope
 
    Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application.  The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
--  Press refresh to display available IIO Devices, once MAX11205PMB1 appeared, press connect.
+-  Press refresh to display available IIO Devices, once MAX11205PMB1 appeared,
+   press connect.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_connect.png
    :alt: MAX11205PMB1 Oscilloscope Configuration
    :align: center
-   :width: 250px
+   :width: 250
 
 Debug Panel
 ^^^^^^^^^^^
 
-Below is the Debug panel of MAX11205PMB1 wherein you can directly access the device attributes.
-
+Below is the Debug panel of MAX11205PMB1 wherein you can directly access the
+device attributes.
 
 |MAX11205PMB1 Debug Panel|
 
@@ -198,7 +203,6 @@ DMM Panel
 ^^^^^^^^^
 
 Access the DMM panel to see the instantaneous reading of the voltage.
-
 
 |MAX11205PMB1 DMM Panel|
 
@@ -214,10 +218,12 @@ Running the example
 
 After installing and configuring PYADI-IIO in your machine, you are now ready to run Python script examples. In our case, run the **max11205_example.py** found in the examples folder.
 
-<code> analog@analog:~$ python pyadi-iio/examples/max11205_example.py serial:<serial port>,57600</code>
+<code> analog@analog:~$ python pyadi-iio/examples/max11205_example.py
+serial:<serial port>,57600</code>
 
-In a Windows machine, you can check the port of your MAX32655FTHR via Device Manager in the Ports (COM & LPT) section. If your device is in COM4, you have to use "python pyadi-iio/examples/max11205_example.py serial:COM4,57600".
-
+In a Windows machine, you can check the port of your MAX32655FTHR via Device
+Manager in the Ports (COM & LPT) section. If your device is in COM4, you have to
+use "python pyadi-iio/examples/max11205_example.py serial:COM4,57600".
 
 |image4|
 
@@ -225,7 +231,6 @@ In a Windows machine, you can check the port of your MAX32655FTHR via Device Man
    :class: download
 
    Github link for the Python sample script: :git-pyadi-iio:`MAX11205 Python Example <examples/max11205_example.py>`
-
 
 More information and Useful links
 ---------------------------------
@@ -246,7 +251,6 @@ Schematics, PCB Layout, Bill of Materials
    -  :adi:`UG-5466: Analog Essentials Getting Started Guide for LX9 and Nexys3 <media/en/technical-documentation/user-guides/analog-essentials-getting-started-guide-for-lx9-and-nexys3.pdf>`
    
 
-
 Additional Information
 ----------------------
 
@@ -262,18 +266,17 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/MAX11205PMB1?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 .. |MAX32655FTHR| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max32655fthr.png
-   :width: 500px
+   :width: 500
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_setup.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_basic.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_iio_info.png
-   :width: 600px
+   :width: 600
 .. |MAX11205PMB1 Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_debug.png
-   :width: 400px
+   :width: 400
 .. |MAX11205PMB1 DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_dmm.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_iio_example.png
-   :width: 600px
+   :width: 600

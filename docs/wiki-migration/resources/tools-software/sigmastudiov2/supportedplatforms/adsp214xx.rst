@@ -3,7 +3,8 @@
 ADSP-214xx
 ==========
 
-This processor can be inserted on to the custom platform as ADSP-214xx target processor. This is configured by default as ADSP-21489.
+This processor can be inserted on to the custom platform as ADSP-214xx target
+processor. This is configured by default as ADSP-21489.
 
 Processor Settings
 ------------------

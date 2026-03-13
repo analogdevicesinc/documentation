@@ -7,7 +7,11 @@ Capture Window
    :alt: 1000
    :align: center
 
-The Capture Window captures all data packets send from SigmaStudio+ to the target hardware. This includes packets sent as part of Link-Compile-Download operation, Parameter Tuning, Register Updates, Sequence Window writes etc. Capturing data packets is active only when a communication device is present in the project. This window is docked at the bottom of the application by default.
+The Capture Window captures all data packets send from SigmaStudio+ to the
+target hardware. This includes packets sent as part of Link-Compile-Download
+operation, Parameter Tuning, Register Updates, Sequence Window writes etc.
+Capturing data packets is active only when a communication device is present in
+the project. This window is docked at the bottom of the application by default.
 
 The following controls are provided on the Capture Window:
 

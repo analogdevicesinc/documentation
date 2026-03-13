@@ -6,7 +6,8 @@ Introduction
 
 Bluetooth is a low-cost, low-power, short-range wireless technology. It was designed as a replacement for cables and other short-range technologies like IrDA. Bluetooth operates in "personal area" range, that typically extends up to 10 meters. More information about Bluetooth can be found at <http://www.bluetooth.com/>.
 
-Linux has support for almost any Bluetooth USB dongle. This document will guide users on how to set up a Bluetooth USB dongle on Linux.
+Linux has support for almost any Bluetooth USB dongle. This document will guide
+users on how to set up a Bluetooth USB dongle on Linux.
 
 Hardware Setup
 --------------
@@ -45,9 +46,11 @@ Please enable Bluetooth Support and the HCI USB driver.
            [*]   Bluetooth device drivers
                  <*> HCI USB driver
 
-Note that by the default configuration, the USB port works on OTG mode. Users need to probe the USB Bluetooth dongle before it can work.
+Note that by the default configuration, the USB port works on OTG mode. Users
+need to probe the USB Bluetooth dongle before it can work.
 
-Otherwise users can select USB host mode for the USB dongle. For detailed information about how to configure USB, please refer to USB interface
+Otherwise users can select USB host mode for the USB dongle. For detailed
+information about how to configure USB, please refer to USB interface
 
 (Optional)
 
@@ -63,7 +66,8 @@ Otherwise users can select USB host mode for the USB dongle. For detailed inform
 Configure package
 ~~~~~~~~~~~~~~~~~
 
-Add the Bluetooth relevant packages in the filesystem, they're enabled in adsp-sc5xx-full image by default.
+Add the Bluetooth relevant packages in the filesystem, they're enabled in
+adsp-sc5xx-full image by default.
 
 ::
 
@@ -78,12 +82,14 @@ Add the Bluetooth relevant packages in the filesystem, they're enabled in adsp-s
           bluetooth \
           "
 
-Then run “bitbake adsp-sc5xx-minimal -C compile” or “bitbake adsp-sc5xx-full -C compile” to generate the filesystem.
+Then run “bitbake adsp-sc5xx-minimal -C compile” or “bitbake adsp-sc5xx-full -C
+compile” to generate the filesystem.
 
 Example
 -------
 
-Plug in the USB dongle. If the USB interface is in host mode the device should be detected automatically:
+Plug in the USB dongle. If the USB interface is in host mode the device should
+be detected automatically:
 
 .. code:: c++
 

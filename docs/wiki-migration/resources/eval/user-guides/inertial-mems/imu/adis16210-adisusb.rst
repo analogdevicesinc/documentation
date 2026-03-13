@@ -7,7 +7,7 @@ OVERVIEW
 The :adi:`ADIS16210` iSensor® is a digital inclinometer system that provides precise measurements for both pitch and roll angles over a full orientation range of ±180°. It combines a MEMS tri-axial acceleration sensor with signal processing, addressable user registers for data collection/programming, and a SPI-compatible serial interface. The electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-elect-connection.png
-   :width: 500px
+   :width: 500
 
 ADIS16210/PCB BREAKOUT BOARD
 ----------------------------
@@ -35,7 +35,8 @@ SYSTEM REQUIREMENTS
 
 Windows XP, Vista, 7 (32-bit systems only)
 
-NOTE: All the required files are contained in the .Cab file and deployed during software package install.
+NOTE: All the required files are contained in the .Cab file and deployed during
+software package install.
 
 PHYSICAL SETUP
 --------------
@@ -70,12 +71,12 @@ Step #3
 The following picture (left side) shows JP1 in the **+3.3V** position (factory-default). That is the correct JP1 jumper setting on the :adi:`ADISUSB`) required for the :adi:`ADIS16210CMLZ <en/mems-sensors/mems-accelerometers/adis16210/products/product.html>`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-3.3v-setting.png
-   :width: 400px
+   :width: 400
 
 NOTE: If JP1 is left on **+5v** the software will look like the following picture. Move JP1 to the\ **+3.3V** setting to correct the problem.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-main-screen-voltage-error.png
-   :width: 800px
+   :width: 800
 
 ADIS16210_Evaluation SOFTWARE
 -----------------------------
@@ -83,17 +84,19 @@ ADIS16210_Evaluation SOFTWARE
 :adi:`Click here to download the ADIS16210 Evaluation Software <static/imported-files/eval_boards/ADIS16210_eval_Software.zip>` to a personal computer, which enables PC-based evaluation of the :adi:`ADIS16210` on an :adi:`ADISUSB` evaluation system. The download file will contain three separate files: The CAB file (ADIS16210_EVAL_Rev_2.cab), the setup file (setup.exe) and the setup list. Copy these files to a convenient folder for running the application from.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-zipfile.png
-   :width: 800px
+   :width: 800
 
 Navigate to the folder where the files were saved and double click the setup.exe file. The following pictures are a guide for the :adi:`ADIS16210` software install. The **Welcome** screen will appear click **OK** to continue.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-welcome.png
-   :width: 600px
+   :width: 600
 
-Please choose a directory for the software application or use the default settings (recommended) and click the computer icon button to go to the next step.
+Please choose a directory for the software application or use the default
+settings (recommended) and click the computer icon button to go to the next
+step.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-install.png
-   :width: 600px
+   :width: 600
 
 Choose a program group or use the default settings (recommended) and click **Continue**. The last picture confirms completion click **OK** to finish.
 
@@ -124,7 +127,8 @@ Once the :adi:`ADIS16210` Evaluation Software starts-up, the Main Window will ap
 
 |image20| |image21|
 
-The orange box identifies the drop-down menus, which provide a number of useful features.
+The orange box identifies the drop-down menus, which provide a number of useful
+features.
 
 The **Registers** option provides a listing of user-configurable registers in the :adi:`ADIS16210` and also provides read/write access to each one of these registers.
 
@@ -132,7 +136,10 @@ The **Datalog** option provides the core data collection function.
 
 The purple box identifies the output registers, which update, real-time, after pressing the **Read** button (see the red box for the location of the **Read** button).
 
-The yellow box identifies the two waveform recorder windows. The top window contains the three gyroscope outputs. The bottom window contains the three accelerometer responses. Also, each waveform matches the color of its register (see register titles in the purple box).
+The yellow box identifies the two waveform recorder windows. The top window
+contains the three gyroscope outputs. The bottom window contains the three
+accelerometer responses. Also, each waveform matches the color of its register
+(see register titles in the purple box).
 
 Register Access
 ~~~~~~~~~~~~~~~
@@ -140,18 +147,23 @@ Register Access
 The purpose of the **Register Access** window is to provide both read and write access to the user registers in the :adi:`ADIS16210`. The following picture shows the appearance of this window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-register.png
-   :width: 600px
+   :width: 600
 
-The color coded boxes illustrate the different functions that this window provides.
+The color coded boxes illustrate the different functions that this window
+provides.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-register-define.png
-   :width: 600px
+   :width: 600
 
 The purple box identifies the register category. In addition to the Control/Status, this drop-down control offers access to **Output** and **Calibration** registers.
 
-The red box identifies all of the registers that are in the current category. Click on the register name to select a register for individual read/write access.
+The red box identifies all of the registers that are in the current category.
+Click on the register name to select a register for individual read/write
+access.
 
-The green box identifies the read/write control options for the current register selection. Use the hexadecimal format when writing commands to a particular register.
+The green box identifies the read/write control options for the current register
+selection. Use the hexadecimal format when writing commands to a particular
+register.
 
 The yellow box updates all the registers in the current category.
 
@@ -166,9 +178,13 @@ The Data Capture function supports synchronous data acquisition, based on the da
 
 |image22| |image23|
 
-The red box identifies all of the registers that are eligible for inclusion in the next acquisition process. Click on each box to include a register in the next data acquisition sequence. The box will have a check mark when it has been selected.
+The red box identifies all of the registers that are eligible for inclusion in
+the next acquisition process. Click on each box to include a register in the
+next data acquisition sequence. The box will have a check mark when it has been
+selected.
 
-The green box identifies the configuration box for the name and location of the data storage file.
+The green box identifies the configuration box for the name and location of the
+data storage file.
 
 The yellow boxes identify a number of configuration options for the data acquisition process. The **Samples per File** is a user input for the total number of samples in a data record. Note that all selected registers will have this number of samples in the data record file, after the acquisition process completes. After each update to the **Record Length** box, the software calculates the displays the total **Capture Time**. The **Numeric data only... No file header** option allows the user to add or remove the header in the data storage file. The **LSB Data only... No Scaling** causes the software to convert the decimal, twos complement number into its representative value. The default setting for **LSB Data only... No Scaling**, option the gyroscope outputs will be in units of degrees/second.
 
@@ -178,48 +194,48 @@ EXAMPLE EXERCISES
 This section currently has no :adi:`ADIS16210`-specific content, but the :doc:`ADIS16448 Evaluation on the EVAL-ADIS Wiki Site </wiki-migration/resources/eval/user-guides/inertial-mems/imu/adis16448>` has some good examples to start with.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228pcbz-mnt.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-part-dimensions.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-mating-connector.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228pcbz-schematic.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-pcbz-parts.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-j2-insert1.png
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-pcbz-secure.png
-   :width: 300px
+   :width: 300
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-j1-cable-option.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-j1-cable-option12pin.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-j1-cable-option16pin.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-adis16228pcbz-mount.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-mounted12pin-cable-zoom.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-secured-on-adisusb.png
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-prgm-group.png
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-finishedl.png
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-foundnewhardware.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-install.png
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-wizard.png
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-complete-wizard.png
-   :width: 400px
+   :width: 400
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-main-screen.png
-   :width: 800px
+   :width: 800
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-main-screen-defined.png
-   :width: 800px
+   :width: 800
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-datalog.png
-   :width: 400px
+   :width: 400
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-adisusb-datalog-definition.png
-   :width: 400px
+   :width: 400

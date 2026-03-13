@@ -1,7 +1,9 @@
 Configuration Options for AD-PZSDR2400TDD-EB boards
 ===================================================
 
-Several GPO and GPIO pins are brought to the RF card through connector J2, found on the bottom of the PCB. These pins allow configuration of the PA, LNA and SPDT switch found on the PCB. These devices are summarized in a table below.
+Several GPO and GPIO pins are brought to the RF card through connector J2, found
+on the bottom of the PCB. These pins allow configuration of the PA, LNA and SPDT
+switch found on the PCB. These devices are summarized in a table below.
 
 Design Cross Section
 

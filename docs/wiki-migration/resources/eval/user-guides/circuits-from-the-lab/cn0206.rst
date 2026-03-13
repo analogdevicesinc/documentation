@@ -3,8 +3,9 @@ CN0206 -- Complete Type T Thermocouple Measurement System with Cold Junction Com
 
 .. important::
 
-   This particular reference design has been RETIRED or DEPRECATED, which means it is no longer supported. This page is here for historical/reference purposes only.
-
+   This particular reference design has been RETIRED or DEPRECATED, which means
+   it is no longer supported. This page is here for historical/reference
+   purposes only.
 
 Overview
 --------
@@ -28,7 +29,8 @@ General Setup
 -  1 USB Type-A plug to USB Mini-B plug cable
 -  1 Six Volt DC Wall Wart (:adi:`EVAL-CFTL-6V-PWRZ`)
 -  1 Thermocouple Source (Tester used in this guide is the Omega CL540ZA)
--  1 T-type Thermocouple Wire (Cable used in this guide is the Omega CL-300-CABLE-T-2)
+-  1 T-type Thermocouple Wire (Cable used in this guide is the Omega
+   CL-300-CABLE-T-2)
 
 Minimum PC/System Requirements
 ------------------------------
@@ -78,29 +80,30 @@ Step by Step Instruction for Connecting the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-hardware-connected-sdps-cn0206.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Plug the mini end of the USB cable into connector J2 of the :adi:`EVAL-SDP-CS1Z <SDP-S>` and connect the other end of the USB cable into the Laptop or PC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-hardware-connected-usb-sdps-cn0206.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Plug in the wall wart and connect it to connector J2 of the :adi:`eval-cn0206-sdpz`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-powerpluggedin-hardware-connected-sdps-cn0206.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Plug one end of the t-type thermocouple wire into the thermocouple source.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-tcouplepluggedin-powerpluggedin-hardware-connected-sdps-cn0206.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Plug the second end of the t-type thermocouple wire into connector J1 on the :adi:`eval-cn0206-sdpz`.
 
-   -  Line up the colors of the metal on the male end with the colors of the metal on the female end.
+   -  Line up the colors of the metal on the male end with the colors of the
+      metal on the female end.
 
 Opening and Enabling the Evaluation Software
 --------------------------------------------
@@ -118,7 +121,8 @@ Opening and Enabling the Evaluation Software
 Step by Step Instruction to Using the Evaluation Software
 ---------------------------------------------------------
 
--  The following is a list of all available software controls and displays, grouped according to their location in the software:
+-  The following is a list of all available software controls and displays,
+   grouped according to their location in the software:
 
    -  **System Controls**
 
@@ -172,7 +176,9 @@ Calibration
    -  Observe the temperature reading in the digital display below the chart (This is **Output Temp1**)
    -  Repeat steps one through four but make **Input Temp2** 350°C.
    -  Navigate back to the Calibration Page on the Main Tab and press **Calibrate**. This will complete the two point calibration and any future samples converted by the ADC will automatically be corrected.
-   -  The thermocouple response is non-linear and depending on the temperature range of interest, the calibration inputs can be changed by the user to provide different results.
+   -  The thermocouple response is non-linear and depending on the temperature
+      range of interest, the calibration inputs can be changed by the user to
+      provide different results.
 
 Registration
 ------------
@@ -180,6 +186,5 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0206-SDPZ?&v=Rev A>`_ to receive all these great benefits and more!
-
 
 *End of document*

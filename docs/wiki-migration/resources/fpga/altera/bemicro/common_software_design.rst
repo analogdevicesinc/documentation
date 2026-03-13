@@ -7,8 +7,10 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera 12.0sp2-> 
 
 .. tip::
 
-   NOTE: Windows 7 users will need to right-click and select Run as administrator. Another method is to right-click and select Properties and click on the Compatibility tab and select the Run This Program As An Administrator checkbox, which will make this a permanent change.
-
+   NOTE: Windows 7 users will need to right-click and select Run as
+   administrator. Another method is to right-click and select Properties and
+   click on the Compatibility tab and select the Run This Program As An
+   Administrator checkbox, which will make this a permanent change.
 
 1. Initialize Eclipse workspace
 -------------------------------
@@ -18,7 +20,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera 12.0sp2-> 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseworkspace.png
    :alt: eclipseworkspace.png
    :align: center
-   :width: 500px
+   :width: 500
 
 2. Create a new software project in the SBT
 -------------------------------------------
@@ -28,7 +30,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera 12.0sp2-> 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image025.png
    :alt: image025.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Click the **Browse** button in the **SOPC Information File Name** dialog box.
 -  Select the **uC.sopcinfo** file located in the **ADIEvalBoardLab/FPGA** directory.
@@ -39,9 +41,10 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera 12.0sp2-> 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseblankproject.png
    :alt: eclipseblankproject.png
    :align: center
-   :width: 400px
+   :width: 400
 
-The tool will create two new software project directories. Each Nios II application has 2 project directories in the Eclipse workspace.
+The tool will create two new software project directories. Each Nios II
+application has 2 project directories in the Eclipse workspace.
 
 -  The application software project itself - this where the application lives.
 -  The second is the **Board Support Package (BSP)** project associated with the main application software project. This project will build the system library drivers for the specific SOPC system. This project inherits the name from the main software project and appends “\ **\_bsp**\ ” to that.
@@ -49,9 +52,12 @@ The tool will create two new software project directories. Each Nios II applicat
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojects.png
    :alt: eclipseprojects.png
    :align: center
-   :width: 300px
+   :width: 300
 
-Since you chose the blank project template, there are no source files in the application project directory at this time. The BSP contains a directory of software drivers as well as a system.h header file, system initialization source code and other software infrastructure.
+Since you chose the blank project template, there are no source files in the
+application project directory at this time. The BSP contains a directory of
+software drivers as well as a system.h header file, system initialization source
+code and other software infrastructure.
 
 Configure the Board Support Package
 ===================================
@@ -62,7 +68,7 @@ Configure the Board Support Package
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspmenu.png
    :alt: eclipsebspmenu.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The software project provided in this lab does not make use of an operating system. All *stdout*, *stdin* and *stderr* messages will be directed to the *jtag_uart*.
 
@@ -74,7 +80,7 @@ The software project provided in this lab does not make use of an operating syst
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image033.png
    :alt: image033.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Select **File -> Save** to save the board support package configuration to the *settings.bsp* file.
 -  Click the **Generate** button to update the BSP.
@@ -96,7 +102,7 @@ In addition to the board support package settings configured using the **BSP Edi
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspproperties.png
    :alt: eclipsebspproperties.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Add source code to the project
 ==============================
@@ -108,21 +114,24 @@ In Windows Explorer locate the project directory which contains a directory call
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsecopysources.png
    :alt: eclipsecopysources.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  A dialog box will appear to select the desired operation. Select the option **Copy files and folders** and press **OK**.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/copyfileconfirmation.png
    :alt: copyfileconfirmation.png
    :align: center
-   :width: 400px
+   :width: 400
 
--  This should cause the source files to be physically copied into the file system location of the software project directory and register these source files within the Eclipse workspace so that they appear in the Project Explorer file listing.
+-  This should cause the source files to be physically copied into the file
+   system location of the software project directory and register these source
+   files within the Eclipse workspace so that they appear in the Project
+   Explorer file listing.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojectstructure.png
    :alt: eclipseprojectstructure.png
    :align: center
-   :width: 300px
+   :width: 300
 
 Configure Application Project Build Properties
 ==============================================
@@ -137,7 +146,7 @@ Just as you configured the optimization level for the BSP project, you should se
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojectproperties12.png
    :alt: eclipseprojectproperties12.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Compile, Download and Run the Software Project
 ==============================================
@@ -172,7 +181,7 @@ The **BeMicroSDK** hardware is designed with a *System ID* peripheral. This peri
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ignoreid.png
    :alt: ignoreid.png
    :align: center
-   :width: 500px
+   :width: 500
 
 3. Run the Software Project on the Target
 -----------------------------------------
@@ -183,21 +192,20 @@ To run the software project on the Nios II processor:
 
 This will re-build the software project to create an up–to-date executable and then download the code into memory on the **BeMicroSDK** hardware. The debugger resets the Nios II processor, and it executes the downloaded code. Note that the code is verified in memory before it is executed.
 
-
 |image063.png|
 
 .. hint::
 
-   The code size and start address might be different than the ones displayed in the above screenshot.
-
+   The code size and start address might be different than the ones displayed in
+   the above screenshot.
 
 .. |eclipsebuildbsp.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildbsp.png
-   :width: 400px
+   :width: 400
 .. |eclipsebuildproj.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildproj.png
-   :width: 400px
+   :width: 400
 .. |eclipserunconfig.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipserunconfig.png
-   :width: 400px
+   :width: 400
 .. |image059.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image059.png
-   :width: 400px
+   :width: 400
 .. |image063.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image063.png
-   :width: 400px
+   :width: 400

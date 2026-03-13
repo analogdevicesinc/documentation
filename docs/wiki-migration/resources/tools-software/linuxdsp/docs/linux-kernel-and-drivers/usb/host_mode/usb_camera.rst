@@ -1,29 +1,34 @@
 USB Camera Support
 ==================
 
-
 Hardware Configuration
 ----------------------
 
-Connect the USB micro-A plug to A receptacle adapter cable (found in the EZ-Board box) to the OTG port, below photo shows when it acts as Host and connected to a USB Camera device.
+Connect the USB micro-A plug to A receptacle adapter cable (found in the
+EZ-Board box) to the OTG port, below photo shows when it acts as Host and
+connected to a USB Camera device.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/host_mode/ca.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
 Software Configuration
 ----------------------
 
-On the Yocto, Configure the linux-kernel as below to set the USB controller in Host only mode, and enable the USB Camera relevant supported operations. Check the directory of "yocto/build" and Clean up and setup the linux-kernel configuration with commands:
+On the Yocto, Configure the linux-kernel as below to set the USB controller in
+Host only mode, and enable the USB Camera relevant supported operations. Check
+the directory of "yocto/build" and Clean up and setup the linux-kernel
+configuration with commands:
 
 .. code:: console
 
    $ bitbake linux-adi -c cleansstate
    $ bitbake linux-adi -c menuconfig
 
-And In the pop-up window of linux-kenel configuration, configure as follows Configure the USB drivers to host mod or (dual role mode)
+And In the pop-up window of linux-kenel configuration, configure as follows
+Configure the USB drivers to host mod or (dual role mode)
 
 .. code:: shell
 
@@ -70,7 +75,8 @@ Enable the I2C
                      <*> ADI TWI I2C support
                      (50)  ADI TWI I2C clock (kHz)
 
-XHIDDENSTART Click to expand XHIDDENSTARTSTOP Virtual terminal & frame buffer support (ARM core may not need this configurations)
+XHIDDENSTART Click to expand XHIDDENSTARTSTOP Virtual terminal & frame buffer
+support (ARM core may not need this configurations)
 
 .. code:: shell
 
@@ -112,7 +118,8 @@ Then save the linux-kernel configuration and build the target images:
 Example Usage
 -------------
 
-Boot the generated Images and connect the USB Camera, kernel outputs messages looks like below:
+Boot the generated Images and connect the USB Camera, kernel outputs messages
+looks like below:
 
 .. code:: console
 
@@ -177,7 +184,9 @@ Play the usb_camera.mp4 on the host PC
 
    $ ffplay usb_camera.mp4
 
-If the recored could play successfully then the test can pass, if you could not play the video using ffplay command, you could double click the video and then play.
+If the recored could play successfully then the test can pass, if you could not
+play the video using ffplay command, you could double click the video and then
+play.
 
 --------------
 

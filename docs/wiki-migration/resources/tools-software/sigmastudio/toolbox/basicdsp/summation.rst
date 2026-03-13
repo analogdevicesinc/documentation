@@ -9,12 +9,14 @@ Summation
 Description
 -----------
 
-The Summation block adds the input to the sum of previous inputs and outputs the result of sum.
+The Summation block adds the input to the sum of previous inputs and outputs the
+result of sum.
 
 Usage
 -----
 
-The Reset pin is available to reset the summation result. Other than the zero to reset pin, resets the summation value.
+The Reset pin is available to reset the summation result. Other than the zero to
+reset pin, resets the summation value.
 
 Targets Supported
 -----------------

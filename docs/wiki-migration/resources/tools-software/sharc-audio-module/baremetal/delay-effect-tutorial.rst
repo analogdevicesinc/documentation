@@ -1,7 +1,8 @@
 Tutorial: Implementing a Basic Delay Effect
 ===========================================
 
-In this tutorial, we’ll use the bare metal framework to implement a basic echo / delay effect.
+In this tutorial, we’ll use the bare metal framework to implement a basic echo /
+delay effect.
 
 Bare Metal Project Wizard Setup
 -------------------------------
@@ -9,19 +10,22 @@ Bare Metal Project Wizard Setup
 Using the :doc:`bare metal project wizard </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/project-wizard>`:
 
 -  Give the project a meaningful name, click Next
--  Choose the Audio Project Fin on the Expansion Fin Selection Page because it is required for part of the tutorial, click Finish
+-  Choose the Audio Project Fin on the Expansion Fin Selection Page because it
+   is required for part of the tutorial, click Finish
 
 **No other options need to be changed.**
 
 Echo Effect Basics
 ------------------
 
-An echo effect is based on a delay line, a number of adders, and gain elements as shown below.
+An echo effect is based on a delay line, a number of adders, and gain elements
+as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/echo_structure.gif
    :alt: Basic echo effect
 
-The light blue elements in the figure represent the typical adjustable parameters on an delay processor, namely:
+The light blue elements in the figure represent the typical adjustable
+parameters on an delay processor, namely:
 
 -  *Feedback*: determines how much of the delayed signal is added back into the original signal. This effects how long the echo lasts.
 -  *Delay*: determines the time between the original signal and the time-delayed signal, as a number of audio samples. A high value may sound like you’re in the mountains (hello hello hello hello) while a smaller value will sound more like a dry room or underneath a bridge.
@@ -41,11 +45,16 @@ All of our code will be placed in ``src/callback_audio_processing.cpp`` of the S
 Step 2: declare the required global variables, including the delay lines
 ------------------------------------------------------------------------
 
-We’re going to build a stereo echo which means that we’ll process the left and right channel independently, each through an echo effect of its own.
+We’re going to build a stereo echo which means that we’ll process the left and
+right channel independently, each through an echo effect of its own.
 
-The SHARC Audio Module board has a very large amount of DDR SDRAM that is perfect to implement long delay lines.
+The SHARC Audio Module board has a very large amount of DDR SDRAM that is
+perfect to implement long delay lines.
 
-First, let's declare two large floating point buffers (a stereo pair) and instruct the linker to place them in SDRAM. We will declare buffers large enough to hold 5 seconds of audio. The following formula can help us establish how big that is:
+First, let's declare two large floating point buffers (a stereo pair) and
+instruct the linker to place them in SDRAM. We will declare buffers large enough
+to hold 5 seconds of audio. The following formula can help us establish how big
+that is:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/delay_formula.gif
    :alt: Delay formula
@@ -153,7 +162,7 @@ Now compile, upload and run your code.
 Note that when running your code as part of a debug session, the IDDE will pause the execution automatically upon entering a core's ``main()`` function. Press the Resume button (see below) for all three cores to allow them to run in order to hear audio.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/debugcores.png
-   :width: 800px
+   :width: 800
 
 Additional Things To Try
 ------------------------
@@ -161,7 +170,9 @@ Additional Things To Try
 Routing audio to / from other peripherals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can route audio to/from other peripherals by simply utilizing different buffers. For example, the following code snippet routes the output audio data to the S/PDIF transmitter instead of the DACs on the ADAU1761:
+You can route audio to/from other peripherals by simply utilizing different
+buffers. For example, the following code snippet routes the output audio data to
+the S/PDIF transmitter instead of the DACs on the ADAU1761:
 
 .. code:: c
 
@@ -183,9 +194,12 @@ Halt Core 0 (ARM core) and open up an Expressions window in CCES. Add the variab
 Have an Audio Project Fin? Wire in the POTs to control the effect in real time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Audio Project Fin is an expansion board that has 1/4" instrument jacks, 3 pots, push-buttons and a MIDI interface.
+The Audio Project Fin is an expansion board that has 1/4" instrument jacks, 3
+pots, push-buttons and a MIDI interface.
 
-The multicore memory structure contains the current value of each pot. We can overwrite the fixed delay length, feedback, and dry/wet values with values sensed dynamically from these pots.
+The multicore memory structure contains the current value of each pot. We can
+overwrite the fixed delay length, feedback, and dry/wet values with values
+sensed dynamically from these pots.
 
 First, let's create two extra global variables to hold the new delay length:
 
@@ -229,4 +243,3 @@ This is a situation where we should take advantage of the ``processAudio_Backgro
    delay_len_samples = new_delay_len_samples;
 
 Note that the delay length will only increase *after* the zeroing of both delay line expansion areas so it is quite safe. Now compile, upload and run your code again. You can turn the pots on the Audio Project Fin to control the delay parameters in real time.
-

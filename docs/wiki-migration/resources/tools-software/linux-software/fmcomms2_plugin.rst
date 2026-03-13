@@ -16,7 +16,7 @@ The AD936X view is divided in four sections:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/fmcomms2_plugin.png
    :align: right
-   :width: 380px
+   :width: 380
 
 Device Global Settings
 ----------------------
@@ -94,7 +94,6 @@ One CW Tone
 
 In **One CW Tone** mode one continuous wave (CW) tone will be outputted. The plugin displays the controls to set the Frequency, Amplitude and Phase for just one tone and makes sure that the amplitude of the other tone is set to 0. The resulting signal will be outputted on the Channel I of the DAC and the exact same signal but with a difference in phase of 90 degrees will be outputted on the Channel Q of the DAC.
 
-
 Two CW Tone
 ~~~~~~~~~~~
 
@@ -102,7 +101,6 @@ Two CW Tone
    :align: right
 
 In **Two CW Tone** mode two continuous wave (CW) tones will be outputted. The plugin displays the controls to set the frequencies F1 and F2, amplitudes A1 and A2, phases P1 and P2 for the two tones. The resulting signal will be outputted on the Channel I of the DAC and the exact same signal but with a difference in phase of 90 degrees will be outputted on the Channel Q of the DAC.
-
 
 Independent I/Q Control
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,9 +112,9 @@ In **Independent I/Q Control** the plugin displays the controls to set the frequ
 
 .. note::
 
-   Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) = A1 \* sin(2 \* π \* F1 \* t + P1) + A2 \* sin(2 \* π \* F2 \* t + P2), where A-amplitude, F-frequency, P-phase of a tone.
-
-
+   Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) = A1
+   \* sin(2 \* π \* F1 \* t + P1) + A2 \* sin(2 \* π \* F2 \* t + P2), where
+   A-amplitude, F-frequency, P-phase of a tone.
 
 DAC Buffer Output
 ~~~~~~~~~~~~~~~~~
@@ -126,22 +124,27 @@ DAC Buffer Output
 **Restrictions:**
 
 -  There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
--  Due to hardware limitation only specific combinations of enabled channels are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is enabled then it can be any of them. If two channels are enabled then channels 0, 1 or channels 2, 3 can be enabled and so on.
-
+-  Due to hardware limitation only specific combinations of enabled channels are
+   possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is
+   enabled then it can be any of them. If two channels are enabled then channels
+   0, 1 or channels 2, 3 can be enabled and so on.
 
 Disable
 ~~~~~~~
 
-In this mode both DDS and DMA are disabled causing the DAC channels to stop transmitting any data.
+In this mode both DDS and DMA are disabled causing the DAC channels to stop
+transmitting any data.
 
 .. note::
 
-   Upon pressing Reload Settings button the values will be reloaded with the corresponding driver values. Useful in scenarios where the diver values get changed outside this plugin (e.g with the use of Debug plugin) and a refresh on plugin's values is needed.
-
+   Upon pressing Reload Settings button the values will be reloaded with the
+   corresponding driver values. Useful in scenarios where the diver values get
+   changed outside this plugin (e.g with the use of Debug plugin) and a refresh
+   on plugin's values is needed.
 
 .. hint::
 
-   Some plugin values will be rounded to the nearest value supported by the hardware.
-
+   Some plugin values will be rounded to the nearest value supported by the
+   hardware.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/dac_output_buffer_panel.png

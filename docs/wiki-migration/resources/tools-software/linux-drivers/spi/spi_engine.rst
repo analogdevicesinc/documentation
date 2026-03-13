@@ -45,7 +45,8 @@ Devicetree bindings
 
 **Optional subnodes**
 
-Subnodes are use to represent the SPI slave devices connected to the SPI master. They follow the generic SPI bindings as outlined in spi-bus.txt.
+Subnodes are use to represent the SPI slave devices connected to the SPI master.
+They follow the generic SPI bindings as outlined in spi-bus.txt.
 
 Example
 ~~~~~~~
@@ -72,4 +73,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

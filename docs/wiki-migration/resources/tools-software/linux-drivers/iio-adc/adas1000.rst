@@ -47,10 +47,16 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
-
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
 .. code:: c
 
@@ -79,16 +85,27 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
        .high_performance = true,
    };
 
-If no platform data is provided the driver will use the device's default setting for all registers.
+If no platform data is provided the driver will use the device's default setting
+for all registers.
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
-
-Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+Depending on the converter IC used, you may need to set the modalias
+accordingly, matching your part name. It may also required to adjust
+max_speed_hz. Please consult the datasheet, for maximum spi clock supported by
+the device in question.
 
 .. code:: c
 
@@ -120,12 +137,12 @@ Depending on the converter IC used, you may need to set the modalias accordingly
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADAS1000 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -146,8 +163,15 @@ Hardware configuration
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -210,7 +234,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root:/sys/devices/platform/bfin-spi.0/spi0.12/iio:device0>
    
 
-
 Show device name
 ----------------
 
@@ -225,15 +248,16 @@ Show device name
       adas1000
    
 
-
-Contains the device name, this will always be "adas1000" for the adas1000 driver.
+Contains the device name, this will always be "adas1000" for the adas1000
+driver.
 
 List available low filter frequencies
 -------------------------------------
 
 **Description:** in_voltage-voltage_filter_low_pass_3db_frequency_available
 
-Lists all available low pass filter frequencies, which may be set by writing to in_voltage-voltage_filter_low_pass_3db_frequency.
+Lists all available low pass filter frequencies, which may be set by writing to
+in_voltage-voltage_filter_low_pass_3db_frequency.
 
 .. container:: box bggreen
 
@@ -247,13 +271,13 @@ Lists all available low pass filter frequencies, which may be set by writing to 
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
    
 
-
 Set and show low filter frequency
 ---------------------------------
 
 **Description:** in_voltage-voltage_filter_low_pass_3db_frequency
 
-Writing to this file will set the low pass filter frequency, reading from this file will show the currently selected low pass filter.
+Writing to this file will set the low pass filter frequency, reading from this
+file will show the currently selected low pass filter.
 
 .. container:: box bggreen
 
@@ -270,15 +294,15 @@ Writing to this file will set the low pass filter frequency, reading from this f
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
    
 
-
 .. hint::
 
-   The low pass filter will only be active when sampling with 2kHz base frequency.
-
+   The low pass filter will only be active when sampling with 2kHz base
+   frequency.
 
 === List available sampling frequencies === **Description:** in_voltage-voltage_sampling_frequency_available
 
-Lists all available sampling frequencies, which may be set by writing to in_voltage-voltage_sampling_frequency.
+Lists all available sampling frequencies, which may be set by writing to
+in_voltage-voltage_sampling_frequency.
 
 .. container:: box bggreen
 
@@ -292,18 +316,19 @@ Lists all available sampling frequencies, which may be set by writing to in_volt
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
    
 
-
 .. hint::
 
-   The only actuall supported sampling rates by the ADAS1000 are 128000, 16000 and 2000, all other sampling rates will be achieved by using a 2x or 4x decimation filter.
-
+   The only actuall supported sampling rates by the ADAS1000 are 128000, 16000
+   and 2000, all other sampling rates will be achieved by using a 2x or 4x
+   decimation filter.
 
 Set and show filter frequency
 -----------------------------
 
 **Description:** in_voltage-voltage_sampling_frequency
 
-Writing to this file will set the sampling frequency, reading from the file will return the currently selected sampling frequency.
+Writing to this file will set the sampling frequency, reading from the file will
+return the currently selected sampling frequency.
 
 .. container:: box bggreen
 
@@ -316,7 +341,6 @@ Writing to this file will set the sampling frequency, reading from the file will
       4000
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
    
-
 
 Setting a new sampling frequency can be done by writing to the file.
 
@@ -333,13 +357,13 @@ Setting a new sampling frequency can be done by writing to the file.
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
    
 
-
 List available ADC gain values
 ------------------------------
 
 **Description:** in_voltage-voltage_scale_available
 
-List the available ADC gain settings, which can be set using in_voltage-voltage_scale.
+List the available ADC gain settings, which can be set using
+in_voltage-voltage_scale.
 
 .. container:: box bggreen
 
@@ -353,13 +377,13 @@ List the available ADC gain settings, which can be set using in_voltage-voltage_
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
    
 
-
 Set and ADC gain value
 ----------------------
 
 **Description:** in_voltage-voltage_scale
 
-Scale to be applied to in_voltageY-voltageZ_raw in order to obtain the measured voltage in millivolts.
+Scale to be applied to in_voltageY-voltageZ_raw in order to obtain the measured
+voltage in millivolts.
 
 .. container:: box bggreen
 
@@ -376,13 +400,14 @@ Scale to be applied to in_voltageY-voltageZ_raw in order to obtain the measured 
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
    
 
-
 Set ADC calibration gain
 ------------------------
 
 **Description:** in_voltage0-voltage2_calibscale in_voltage0-voltage5_calibscale in_voltage1-voltage0_calibscale in_voltage1-voltage2_calibscale in_voltage1-voltage5_calibscale in_voltage2-voltage5_calibscale in_voltage3-voltage5_calibscale in_voltage4-voltage5_calibscale
 
-Set the channel calibration gain. Writing to these files will set the calibration gain for the respective channel. Valid values are in the range of -2048 to 2047.
+Set the channel calibration gain. Writing to these files will set the
+calibration gain for the respective channel. Valid values are in the range of
+-2048 to 2047.
 
 .. container:: box bggreen
 
@@ -397,11 +422,12 @@ Set the channel calibration gain. Writing to these files will set the calibratio
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
    
 
-
 .. hint::
 
-   in_voltage0-voltage2_calibscale and in_voltage0-voltage5_calibscale, in_voltage1-voltage0_calibscale and in_voltage1-voltage5_calibscale, in_voltage1-voltage2_calibscale and in_voltage2-voltage5_calibscale refer to the same set of calibration data.
-
+   in_voltage0-voltage2_calibscale and in_voltage0-voltage5_calibscale,
+   in_voltage1-voltage0_calibscale and in_voltage1-voltage5_calibscale,
+   in_voltage1-voltage2_calibscale and in_voltage2-voltage5_calibscale refer to
+   the same set of calibration data.
 
 List available Right Leg drive outputs
 --------------------------------------
@@ -421,7 +447,6 @@ List available values for the rld_out_select file.
       rl la ll ra v1 v2
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
    
-
 
 Select Right Leg drive output electrode
 ---------------------------------------
@@ -443,13 +468,14 @@ Set the Right Leg drive output electrode.
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
    
 
-
 Enable/Disable Right Leg drive output
 -------------------------------------
 
 **Description:** rld_powerdown
 
-Enable or disable the Right Leg drive output. Writing a '0' to this file will enable the Right Leg drive, writing a '1' to this file will enable the Right Leg drive.
+Enable or disable the Right Leg drive output. Writing a '0' to this file will
+enable the Right Leg drive, writing a '1' to this file will enable the Right Leg
+drive.
 
 .. container:: box bggreen
 
@@ -465,13 +491,13 @@ Enable or disable the Right Leg drive output. Writing a '0' to this file will en
       0
    
 
-
 Setup Right Leg drive summing junction configuration
 ----------------------------------------------------
 
 **Description:** rld_summing_junction_ce_en rld_summing_junction_la_en rld_summing_junction_ll_en rld_summing_junction_ra_en rld_summing_junction_v1_en rld_summing_junction_v2_en
 
-Writing a '1' to a file will add the respective channel to the Right Leg driver summing junction, writing a '0' will remove it.
+Writing a '1' to a file will add the respective channel to the Right Leg driver
+summing junction, writing a '0' will remove it.
 
 .. container:: box bggreen
 
@@ -487,13 +513,13 @@ Writing a '1' to a file will add the respective channel to the Right Leg driver 
       1
    
 
-
 Setup VCM summing junction configuration
 ----------------------------------------
 
 **Description:** vcm_summing_junction_ce_en vcm_summing_junction_la_en vcm_summing_junction_ll_en vcm_summing_junction_ra_en vcm_summing_junction_v1_en vcm_summing_junction_v2_en
 
-Writing a '1' to a file will add the respective channel to the VCM summing junction, writing a '0' will remove it.
+Writing a '1' to a file will add the respective channel to the VCM summing
+junction, writing a '0' will remove it.
 
 .. container:: box bggreen
 
@@ -509,13 +535,13 @@ Writing a '1' to a file will add the respective channel to the VCM summing junct
       1
    
 
-
 Enable/Disable shield driver
 ----------------------------
 
 **Description:** shield_driver_powerdown
 
-Enable or disable the shield driver. Writing a '0' to this file will enable the shild driver, writing a '1' to this file will enable the shield driver.
+Enable or disable the shield driver. Writing a '0' to this file will enable the
+shild driver, writing a '1' to this file will enable the shield driver.
 
 .. container:: box bggreen
 
@@ -531,7 +557,6 @@ Enable or disable the shield driver. Writing a '0' to this file will enable the 
       0
    
 
-
 out_voltage6_calibration_offset
 
 Enable/Disable calibration DAC
@@ -539,7 +564,9 @@ Enable/Disable calibration DAC
 
 **Description:** out_voltage6_calibration_powerdown
 
-Enable or disable the calibration DAC. Writing a '0' to this file will enable the calibration DAC, writing a '1' to this file will disable the calibration DAC.
+Enable or disable the calibration DAC. Writing a '0' to this file will enable
+the calibration DAC, writing a '1' to this file will disable the calibration
+DAC.
 
 .. container:: box bggreen
 
@@ -554,7 +581,6 @@ Enable or disable the calibration DAC. Writing a '0' to this file will enable th
       root:/sys/devices/platform/bfin-spi.0/spi_master/spi0/spi0.18/iio:device0> cat out_voltage6_calibration_raw
       0
    
-
 
 Set calibration DAC output value
 --------------------------------
@@ -575,7 +601,6 @@ Sets the calibration DAC output value. Valid values are in the range of 0-1023.
       100
    
 
-
 Show calibration DAC scale
 --------------------------
 
@@ -592,22 +617,28 @@ Show calibration DAC scale
       0.002346
    
 
-
-Vout = (out_voltage6_calibration_offset + out_voltage6_calibration_raw) \* out_voltage6_calibration_scale
+Vout = (out_voltage6_calibration_offset + out_voltage6_calibration_raw) \*
+out_voltage6_calibration_scale
 
 Debugfs
 -------
 
-The adas1000 driver exposes also some files, which are meant for debugging purposes, in debugfs. These files can be used to read the OPSTAT register and to configure the testtone generator.
+The adas1000 driver exposes also some files, which are meant for debugging
+purposes, in debugfs. These files can be used to read the OPSTAT register and to
+configure the testtone generator.
 
-root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access pll_locked testtone_la_en testtone_v1_en fuse_crc_failure testtone_en testtone_ll_en testtone_v2_en fuse_status testtone_frequency testtone_out_en pll_lock_lost testtone_internal testtone_ra_en root:/sys/kernel/debug/iio/iio:device0>
+root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access pll_locked
+testtone_la_en testtone_v1_en fuse_crc_failure testtone_en testtone_ll_en
+testtone_v2_en fuse_status testtone_frequency testtone_out_en pll_lock_lost
+testtone_internal testtone_ra_en root:/sys/kernel/debug/iio/iio:device0>
 
 Direct register read and write acccess
 --------------------------------------
 
 **Description:** direct_reg_access
 
-Allows direct register access to the device. To write to a register write the register address and the register value seperated by a space to the file.
+Allows direct register access to the device. To write to a register write the
+register address and the register value seperated by a space to the file.
 
 .. container:: box bggreen
 
@@ -619,8 +650,8 @@ Allows direct register access to the device. To write to a register write the re
       root:/sys/kernel/debug/iio/iio:device0> echo 0x12 0x17 > direct_reg_access
    
 
-
-To read a register value, first write the register address to the file followed by a read.
+To read a register value, first write the register address to the file followed
+by a read.
 
 .. container:: box bggreen
 
@@ -632,7 +663,6 @@ To read a register value, first write the register address to the file followed 
       root:/sys/kernel/debug/iio/iio:device0> echo 0x05 > direct_reg_access
       root:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access
    
-
 
 Check fuse CRC status
 ---------------------
@@ -664,8 +694,8 @@ Enable the testtone generator.
 
 .. hint::
 
-   If both the testtone and the calibration DAC are enabled, the testtone will take precedence.
-
+   If both the testtone and the calibration DAC are enabled, the testtone will
+   take precedence.
 
 Set testtone frequnecy
 ----------------------
@@ -696,8 +726,8 @@ Enables or disables testtone output to the external CAL_DAC_IO pin.
 
 .. hint::
 
-   The testtone signal will be routed to the CAL_DAC_IO pin by default and only if internal routing is enabled this switch will have an effect.
-
+   The testtone signal will be routed to the CAL_DAC_IO pin by default and only
+   if internal routing is enabled this switch will have an effect.
 
 Enable testtone routing to individual ECG channels
 --------------------------------------------------
@@ -709,7 +739,9 @@ Enables the internal testtone routing to the individual ECG channels.
 Trigger management
 ------------------
 
-The adas1000 driver will register a IIO trigger for the device. The trigger will be hooked up to the devices DATARDY IRQ. Normally you would want to use this trigger as the trigger for the device.
+The adas1000 driver will register a IIO trigger for the device. The trigger will
+be hooked up to the devices DATARDY IRQ. Normally you would want to use this
+trigger as the trigger for the device.
 
 .. container:: box bggreen
 
@@ -723,11 +755,16 @@ The adas1000 driver will register a IIO trigger for the device. The trigger will
       adas1000-dev0
    
 
-
 Buffer management
 -----------------
 
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -748,7 +785,6 @@ Every buffer implementation features a set of files:
 
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
-
 
 .. container:: box bggreen
 
@@ -773,7 +809,6 @@ Every buffer implementation features a set of files:
       root:/sys/devices/platform/bfin-spi.0/spi_master/spi0/spi0.18/iio:device0/scan_elements>
    
 
-
 ==================== ================
 Channel              Function
 ==================== ================
@@ -787,7 +822,10 @@ in_voltage3-voltage5 V1-VCM (V1')
 in_voltage4-voltage5 V2-VCM (V2')
 ==================== ================
 
-If any of the first three channels is selected the device will operate in Lead mode, otherwise it will operate in single-end mode. If channels from the first three channels are selected channels from the second three channels can not be selected and vice versa.
+If any of the first three channels is selected the device will operate in Lead
+mode, otherwise it will operate in single-end mode. If channels from the first
+three channels are selected channels from the second three channels can not be
+selected and vice versa.
 
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
@@ -797,7 +835,6 @@ If any of the first three channels is selected the device will operate in Lead m
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 More Information
 ================
@@ -820,6 +857,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

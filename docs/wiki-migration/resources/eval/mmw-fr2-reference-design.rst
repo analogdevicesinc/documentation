@@ -1,15 +1,36 @@
 mmW FR2 Reference Design for Wireless Test
 ==========================================
 
-The need for ubiquitous connectivity, high speed data, wide bandwidth streaming is driving newer wireless technologies like 5G, 6G, Wi-Fi 7 & 8 and UWB. As these newer standards emerge, the testing complexity is also increasing such as wider bandwidths, higher frequencies, complex modulations, higher dynamic range. Instrumentation customers are seeking solutions that tame their measurement challenges, shorten their development times, and provide the highest performance.
+The need for ubiquitous connectivity, high speed data, wide bandwidth streaming
+is driving newer wireless technologies like 5G, 6G, Wi-Fi 7 & 8 and UWB. As
+these newer standards emerge, the testing complexity is also increasing such as
+wider bandwidths, higher frequencies, complex modulations, higher dynamic range.
+Instrumentation customers are seeking solutions that tame their measurement
+challenges, shorten their development times, and provide the highest
+performance.
 
-ADI’s mmW FR2 Radio Front End (RFFE) reference design aims to address these challenges for Test and Measurement customers. It supports frequencies from 18-55GHz and instantaneous bandwidths up to 8GHz. The FR2 RFFE includes TX and RX modes for signal generation and spectrum analysis applications respectively. Each TX & RX path have a dedicated LO inputs to support TDD and FDD operation.
+ADI’s mmW FR2 Radio Front End (RFFE) reference design aims to address these
+challenges for Test and Measurement customers. It supports frequencies from
+18-55GHz and instantaneous bandwidths up to 8GHz. The FR2 RFFE includes TX and
+RX modes for signal generation and spectrum analysis applications respectively.
+Each TX & RX path have a dedicated LO inputs to support TDD and FDD operation.
 
-The FR3 reference design uses ADI’s latest RF signal conditioning solutions such as the ADMV1355 Intergrated Up-Converter, ADMV1455 Integrated Down-Converter, ADL8106 LNA, ADPA7009 Power Amplifier and ADRF5740 Digital Attenuators. The design also includes other critical functions of clocking and power management to simply customer implementation.
+The FR3 reference design uses ADI’s latest RF signal conditioning solutions such
+as the ADMV1355 Intergrated Up-Converter, ADMV1455 Integrated Down-Converter,
+ADL8106 LNA, ADPA7009 Power Amplifier and ADRF5740 Digital Attenuators. The
+design also includes other critical functions of clocking and power management
+to simply customer implementation.
 
-The RFFE is agnostic to the data converter used; however, it is recommended to use ADI’s MxFE data converter solutions. The measurements shown in the ensuing section uses the Apollo MxFE ADC and DAC.
+The RFFE is agnostic to the data converter used; however, it is recommended to
+use ADI’s MxFE data converter solutions. The measurements shown in the ensuing
+section uses the Apollo MxFE ADC and DAC.
 
-18-55 GHz RF Front-End Design includes complete TX and RX signal chains with 4 GHz of iBW. The design supports both 5G/6G signal generation and spectrum analyzer/demodulator. I/Q IF ports are provided for TX inputs and RX has a single IF output. TX and RX each have their own output/input 1.85mm interface connector. both TX and RX each have dedicated LO inputs to support FDD or TDD operation.
+18-55 GHz RF Front-End Design includes complete TX and RX signal chains with 4
+GHz of iBW. The design supports both 5G/6G signal generation and spectrum
+analyzer/demodulator. I/Q IF ports are provided for TX inputs and RX has a
+single IF output. TX and RX each have their own output/input 1.85mm interface
+connector. both TX and RX each have dedicated LO inputs to support FDD or TDD
+operation.
 
 Evaluation Kit
 --------------
@@ -99,12 +120,12 @@ RX Performance Data
 |image4| |image5|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/fr2_diagram_for_wiki.jpg
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/fr2_tx_gain.jpg
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/fr2_tx_p1db.jpg
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/fr2_rx_gain.jpg
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/fr2_rx_nf.jpg
-   :width: 500px
+   :width: 500

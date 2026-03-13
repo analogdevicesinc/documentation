@@ -5,15 +5,16 @@ Picture and Main components
 ---------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/parts_list.png
-   :width: 1200px
+   :width: 1200
 
 Size
 ----
 
-The size of the board (not including the SMA connectors, which project beyond the edge of the board) is 3.12 inches by 2.72 inches (or about 79mm x 69mm).
+The size of the board (not including the SMA connectors, which project beyond
+the edge of the board) is 3.12 inches by 2.72 inches (or about 79mm x 69mm).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq2_dimensions.png
-   :width: 400px
+   :width: 400
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -29,4 +30,3 @@ Schematic, PCB Layout, Bill of Materials
    -  Bill of Materials
    -  Allegro Project
    
-

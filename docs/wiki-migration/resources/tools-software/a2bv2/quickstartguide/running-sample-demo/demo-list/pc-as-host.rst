@@ -25,7 +25,8 @@ Steps to run demo in PC mode
 
 The following steps describe the procedure to run a sample demo in PC mode
 
--  Open an A2B schematic from (<A2B plugin for SigmaStudio+ installation path>>\\Schematics\\PC).
+-  Open an A2B schematic from (<A2B plugin for SigmaStudio+ installation
+   path>>\\Schematics\\PC).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_demo_schematic_in_pc_mode.png
    :align: center
@@ -34,10 +35,13 @@ The following steps describe the procedure to run a sample demo in PC mode
 
    \ **Figure:** Sample demo schematic in PC mode
 
+-  Make sure that .xml files are provided for programming on main and sub A2B
+   evaluation boards, the procedure to find the peripheral settings window is as
+   follows:
 
--  Make sure that .xml files are provided for programming on main and sub A2B evaluation boards, the procedure to find the peripheral settings window is as follows:
-
-   -  Open the platform view either by double clicking on the platform or by clicking on “Canvas” option under the platform in the Project tree as shown in figure.
+   -  Open the platform view either by double clicking on the platform or by
+      clicking on “Canvas” option under the platform in the Project tree as
+      shown in figure.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/platform_view_in_sigmastudio_.png
    :align: center
@@ -46,8 +50,9 @@ The following steps describe the procedure to run a sample demo in PC mode
 
    \ **Figure:** Platform view in SigmaStudio+
 
-
--  The peripheral settings can be opened by double clicking on the peripheral or by clicking on the “Settings” option under the peripheral in project tree and select the xml as shown in figure.
+-  The peripheral settings can be opened by double clicking on the peripheral or
+   by clicking on the “Settings” option under the peripheral in project tree and
+   select the xml as shown in figure.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/peripheral_window_new.png
    :align: center
@@ -55,7 +60,6 @@ The following steps describe the procedure to run a sample demo in PC mode
 .. container:: centeralign
 
    \ **Figure:** Peripheral Settings window
-
 
 ::
 
@@ -70,5 +74,5 @@ The following steps describe the procedure to run a sample demo in PC mode
 
    \ **Figure:** Link-Compile-Download option in SigmaStudio+
 
-
--  After successful discovery and initialization audio routing can be observed as per the sample demo configuration.
+-  After successful discovery and initialization audio routing can be observed
+   as per the sample demo configuration.

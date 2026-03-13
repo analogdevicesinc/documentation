@@ -32,4 +32,5 @@ Click here to download the HT DAQ Viewer application: `ev-ht-200cdaq1_ht_daq_vie
 Firmware and HT DAQ Viewer Source
 ---------------------------------
 
-Firmware and HT DAQ Viewer projects are located on the ADI GitHub at www.github.com/analogdevicesinc/hightemp.
+Firmware and HT DAQ Viewer projects are located on the ADI GitHub at
+www.github.com/analogdevicesinc/hightemp.

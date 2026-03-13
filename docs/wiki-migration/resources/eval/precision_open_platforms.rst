@@ -4,14 +4,36 @@ Precision Open Platforms
 Introduction
 ------------
 
-The value and differentiation in customer systems is increasingly dependent on software and digital content. Analog Devices Inc. (ADI) delivers many products that have software-dependent features, and therefore require support through the typical development project life cycle: evaluation --> prototyping --> implementation --> deployment. The traditional evaluation experience combined hardware and software that allowed the customer to test drive a product (or solution), but typically limited has limited ability to enable the customer to move to the next phase without considerable effort. This model has historically used one-off solutions that could not be otherwise leveraged. ADI is now developing comprehensive solutions for new products (and existing) that combine hardware and software to support both evaluation and initial system prototyping for our customers, and in many cases, full application reference designs. This is accomplished by providing open source, reusable software components (device drivers, example code and HDL); using common hardware form factors (FMC, Arduino) that allow easy migration to other software and hardware environments; and using 3rd party as well as internally developed open system boards that use common software environments and tools. The intent is to make it easier for our customers to use tools that they are already familiar with and leverage resources that are available in existing communities (e.g., Linux, Python, Matlab, Arduino, Mbed).
+The value and differentiation in customer systems is increasingly dependent on
+software and digital content. Analog Devices Inc. (ADI) delivers many products
+that have software-dependent features, and therefore require support through the
+typical development project life cycle: evaluation --> prototyping -->
+implementation --> deployment. The traditional evaluation experience combined
+hardware and software that allowed the customer to test drive a product (or
+solution), but typically limited has limited ability to enable the customer to
+move to the next phase without considerable effort. This model has historically
+used one-off solutions that could not be otherwise leveraged. ADI is now
+developing comprehensive solutions for new products (and existing) that combine
+hardware and software to support both evaluation and initial system prototyping
+for our customers, and in many cases, full application reference designs. This
+is accomplished by providing open source, reusable software components (device
+drivers, example code and HDL); using common hardware form factors (FMC,
+Arduino) that allow easy migration to other software and hardware environments;
+and using 3rd party as well as internally developed open system boards that use
+common software environments and tools. The intent is to make it easier for our
+customers to use tools that they are already familiar with and leverage
+resources that are available in existing communities (e.g., Linux, Python,
+Matlab, Arduino, Mbed).
 
-This page provides an overview of ADI's open platforms ecosystem and provides links to specific examples of Precision system solutions that are currently supported and resources.
+This page provides an overview of ADI's open platforms ecosystem and provides
+links to specific examples of Precision system solutions that are currently
+supported and resources.
 
 Supported Platforms
 -------------------
 
-ADI currently supports the following system boards that are used with Precision products.
+ADI currently supports the following system boards that are used with Precision
+products.
 
 Digilent ZedBoard
 ~~~~~~~~~~~~~~~~~
@@ -36,7 +58,8 @@ Table 1. ZedBoard Features
 Supported ADI Precision Products
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following precision products have supported solutions that have been deployed on the ZedBoard.
+The following precision products have supported solutions that have been
+deployed on the ZedBoard.
 
 Table 2. ZedBoard compatible Precision products
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -161,7 +184,9 @@ Industrial Input/Output (IIO) Subsystem
 
 The IIO subsystem that comes with the Kuiper Linux distribution simplifies that process of accessing hardware devices such as data converters, sensors, PLLs and many other programmable components. IIO is included as a C library with an API that simplifies device configuration and data streaming. A basic overview of the IIO subsystem can be found :doc:`here (Linux Industrial I/O Subsystem) </wiki-migration/resources/tools-software/linux-software/libiio>` and :doc:`here (About libiio) </wiki-migration/resources/tools-software/linux-software/libiio_internals>`. More information on downloading and building IIO can be found :doc:`here (What is libiio?) </wiki-migration/software/linux/docs/iio/iio>`.
 
-Building PC applications that use IIO is also possible. The latter Wiki page contains a link to an IIO Windows download. Installing the Windows IIO library is also necessary to use the following software frameworks with IIO
+Building PC applications that use IIO is also possible. The latter Wiki page
+contains a link to an IIO Windows download. Installing the Windows IIO library
+is also necessary to use the following software frameworks with IIO
 
 Users that have the latest version of ACE installed should have support for IIO installed by default. The latest Windows drivers are available :doc:`here </wiki-migration/university/tools/pluto/drivers/windows>` and a link to the version provided with ACE can be found by pressing the 'Help' button in the ACE main window, and looking in the 'Application Resources >> IIO Resources' panel section.
 
@@ -183,6 +208,6 @@ Mbed
 Analog Devices has adopted the open source Mbed RTOS because its supported by a full IDE and allows users to easily migrate applications across boards that support Mbed, subject only to the hardware capability. The :doc:`Mbed: User Guide for SDP-K1 </wiki-migration/resources/tools-software/mbed>` page contains links to the Mbed tool chain as well as instructions for setting up the IDE and running code on the SDP-K1.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/eval-sdp-ck1ztop-web.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/eval-sdp-ck1zbottom-web.png
-   :width: 400px
+   :width: 400

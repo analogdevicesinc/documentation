@@ -128,6 +128,4 @@ Table of Contents
 Warning
 -------
 
-
 .. esd-warning::
-

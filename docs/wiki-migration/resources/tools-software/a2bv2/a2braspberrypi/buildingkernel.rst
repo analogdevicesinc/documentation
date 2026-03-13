@@ -3,12 +3,12 @@
 Building the Kernel and Running Application
 ===========================================
 
-To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps to download, compile, and install it for optimal performance.
+To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps
+to download, compile, and install it for optimal performance.
 
 .. note::
 
    If using a system with an encryption mechanism, ensure a LAN connection between the system and the Raspberry Pi for file transfers, as the build may fail due to encryption issues. We recommend using *scp* commands for secure transfers over the LAN connection.
-
 
 -  Flash the Raspberry Pi OS to the SD card using the following link: :doc:`Raspberry Pi4 </wiki-migration/resources/tools-software/a2bv2/a2braspberrypi/raspberrypiboard>`
 -  Boot the Raspberry Pi by inserting the flashed SD card, connecting the power supply, and ensuring the mouse, keyboard, and monitor are properly connected. Alternatively, you can use SSH to communicate with the Raspberry Pi. For SSH setup, refer to the following link: `SSH Configuration <https://www.raspberrypi.com/documentation/computers/remote-access.html#ssh>`_.
@@ -27,7 +27,6 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
 
    The build process may take some time to complete.
 
-
 -  Install the kernel and modules with the following commands:``sudo make modules_install
    sudo cp arch/arm64/boot/dts/broadcom/*.dtb /boot/firmware/
    sudo cp arch/arm64/boot/dts/overlays/*.dtb* /boot/firmware/overlays/
@@ -38,8 +37,14 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
 
 .. note::
 
-   The Raspberry Pi uses a configuration file instead of the BIOS you would expect to find on a conventional PC. The system configuration parameters, which would traditionally be edited and stored using a BIOS, are stored instead in an optional text file named config.txt. This is read by the GPU before the ARM CPU and Linux are initialized. It must therefore be located on the first (boot) partition of your SD card, alongside bootcode.bin and start.elf. This file is normally accessible as /boot/config.txt from Linux, and must be edited as the root user.
-
+   The Raspberry Pi uses a configuration file instead of the BIOS you would
+   expect to find on a conventional PC. The system configuration parameters,
+   which would traditionally be edited and stored using a BIOS, are stored
+   instead in an optional text file named config.txt. This is read by the GPU
+   before the ARM CPU and Linux are initialized. It must therefore be located on
+   the first (boot) partition of your SD card, alongside bootcode.bin and
+   start.elf. This file is normally accessible as /boot/config.txt from Linux,
+   and must be edited as the root user.
 
 -  Reboot the Raspberry Pi to apply the changes.\ ``sudo reboot``
 -  After rebooting, check the connected I2C devices with the following command: ``i2cdetect –y 1``\ The AD2428 Mini should be detected as an I2C device. In this scenario, 0x6C and 0x6D are the I2C addresses of the connected devices with the Raspberry Pi 4.
@@ -63,8 +68,8 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
 
 .. note::
 
-   The hw:Card#,Device# values for the command are derived from the aplay -l listing, as shown in above steps image.
-
+   The hw:Card#,Device# values for the command are derived from the aplay -l
+   listing, as shown in above steps image.
 
 -  The libasound2-dev package, which provides the necessary development files for ALSA, must be installed.\ ``sudo apt update
    sudo apt install libasound2-dev:armhf``
@@ -85,15 +90,15 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
 
    Replace <MakeFile> with the appropriate Makefile created for the application.
 
-
 -  Run the A2B application with sudo permissions using the following command:``Sudo ./<Builded Application>``
 
 .. note::
 
-   Make sure to run the aplay or arecord command mentioned in above steps to enable BCLK and FS to the AD2428 Mini.
+   Make sure to run the aplay or arecord command mentioned in above steps to
+   enable BCLK and FS to the AD2428 Mini.
 
-
--  Discovery should occur as shown in below image, and downstream audio will be available at Sub node 1's Headphone OUT.
+-  Discovery should occur as shown in below image, and downstream audio will be
+   available at Sub node 1's Headphone OUT.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/ouput_disc.png
    :align: center
@@ -102,20 +107,22 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
 
    This has been tested on a Raspberry Pi 4 with Raspberry Pi OS 64-bit.
 
-
 .. note::
 
-   The *-dv* option is used to specify debug and verbose logging during the execution of the application. This causes additional information pertaining to the a2b interrupts to be displayed on the console.
+   The *-dv* option is used to specify debug and verbose logging during the
+   execution of the application. This causes additional information pertaining
+   to the a2b interrupts to be displayed on the console.
 
-
--  To verify Upstream Audio at RPi’s Headphones, provide Audio IN at Sub Node 1. Record on Card 1, Device 1 (ad242x) interface of RPi and play on Card 0, Device 0 (Headphones) as shown in below image.
+-  To verify Upstream Audio at RPi’s Headphones, provide Audio IN at Sub Node 1.
+   Record on Card 1, Device 1 (ad242x) interface of RPi and play on Card 0,
+   Device 0 (Headphones) as shown in below image.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/audio_check.png
    :align: center
 
 .. note::
 
-   hw:1,1 is derived from ‘arecord -l’ command and hw:0,0 derived from ‘aplay -l’
-
+   hw:1,1 is derived from ‘arecord -l’ command and hw:0,0 derived from ‘aplay
+   -l’
 
 **PREV :** :doc:`Setup Details </wiki-migration/resources/tools-software/a2bv2/a2braspberrypi/setupdetails>` **NEXT :** :doc:`DTS Overlay </wiki-migration/resources/tools-software/a2bv2/a2braspberrypi/dtsoverlay>`

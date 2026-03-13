@@ -1,14 +1,17 @@
 AXI_ADC_DECIMATE
 ================
 
-The AXI_ADC_DECIMATE IP allows decimating of the input data by 10/100/1000/10000/100000, with filtering and arbitrary decimation by dropping samples.
+The AXI_ADC_DECIMATE IP allows decimating of the input data by
+10/100/1000/10000/100000, with filtering and arbitrary decimation by dropping
+samples.
 
 More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`.
 
 .. important::
 
-   The axi_adc_decimate was design to interface with 12 bit converters, even though the input data bus width is 16, it will not work with anything higher then 12 bit sign extended(to 16bit) data.
-
+   The axi_adc_decimate was design to interface with 12 bit converters, even
+   though the input data bus width is 16, it will not work with anything higher
+   then 12 bit sign extended(to 16bit) data.
 
 Features
 --------
@@ -16,7 +19,8 @@ Features
 -  AXI Lite control/status interface
 -  Allows decimation by 10/100/1000/10000/100000 with filtering
 -  Allows arbitrary decimation by dropping samples
--  Filtering is implemented by a 6 sections CIC programmable rate filter and a compensation FIR filter.
+-  Filtering is implemented by a 6 sections CIC programmable rate filter and a
+   compensation FIR filter.
 
 Block Diagram
 -------------
@@ -80,13 +84,20 @@ Interface
 Detailed Description
 --------------------
 
-For some applications, the maximum sampling rate is not required and leads to lots of samples transferred to memory. In order to avoid that, the decimation IP is used.
+For some applications, the maximum sampling rate is not required and leads to
+lots of samples transferred to memory. In order to avoid that, the decimation IP
+is used.
 
-The decimation block allows decimating the input data so that the sampling frequency to be reduced by 10, 100, 1000, 10000, 100000, with filtering.
+The decimation block allows decimating the input data so that the sampling
+frequency to be reduced by 10, 100, 1000, 10000, 100000, with filtering.
 
-The filtering is implemented by a 6 sections CIC programmable rate filter which allows decimation by 5/50/500/5000/50000 and a compensation FIR filter (decimation by 2).
+The filtering is implemented by a 6 sections CIC programmable rate filter which
+allows decimation by 5/50/500/5000/50000 and a compensation FIR filter
+(decimation by 2).
 
-At the end of the filter chain, there is an arbitrary decimation block. The arbitrary decimation can be activated independently and it does not implement any type of filtering.
+At the end of the filter chain, there is an arbitrary decimation block. The
+arbitrary decimation can be activated independently and it does not implement
+any type of filtering.
 
 Register Map
 ------------

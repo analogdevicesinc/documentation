@@ -7,7 +7,8 @@ Software Requirements
 ---------------------
 
 -  CrossCore Embedded Studio v2.10.0 or above. This can be downloaded from www.analog.com/cces
--  SigmaStudio+ 2.3.0 (Update 3) or above. This can be downloaded form www.analog.com/SigmaStudio+
+-  SigmaStudio+ 2.3.0 (Update 3) or above. This can be downloaded form
+   www.analog.com/SigmaStudio+
 
 Hardware Requirements
 ---------------------

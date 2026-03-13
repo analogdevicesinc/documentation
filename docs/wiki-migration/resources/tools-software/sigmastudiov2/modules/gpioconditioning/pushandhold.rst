@@ -9,12 +9,14 @@ Push and Hold
 Description
 -----------
 
-This block can be used for functions like a pushbutton, to condition a GPIO input to create pulses in response to the user pushing or holding the button.
+This block can be used for functions like a pushbutton, to condition a GPIO
+input to create pulses in response to the user pushing or holding the button.
 
 Usage
 -----
 
-A typical application would be a volume control comprising two buttons, one for up and the other for down.
+A typical application would be a volume control comprising two buttons, one for
+up and the other for down.
 
 -  Drag the block into the workspace.
 -  Right-click it and select the algorithm:
@@ -27,8 +29,11 @@ A typical application would be a volume control comprising two buttons, one for 
 
 .. hint::
 
-   Note: For the picture above right, push_hold was selected. Use push/hold 2-in 2-out to condition two GPIO inputs, for example one up and one down. Push/hold with mute works the similarly but with the extra feature that if both buttons are pressed, a mute pulse is generated (bottom output pin). To un-mute, any of the buttons can be pressed.
-
+   Note: For the picture above right, push_hold was selected. Use push/hold 2-in
+   2-out to condition two GPIO inputs, for example one up and one down.
+   Push/hold with mute works the similarly but with the extra feature that if
+   both buttons are pressed, a mute pulse is generated (bottom output pin). To
+   un-mute, any of the buttons can be pressed.
 
 Targets Supported
 -----------------
@@ -60,7 +65,6 @@ Name    Type    Description
 Output0 Control Push and hold output
 ======= ======= ====================
 
-
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+------------+-----------------------------------------------------------------------------------------+
@@ -80,7 +84,6 @@ Parameter Name Description            ADAU145x/ADAU146x
 holdtime       hold time in samples   Integer32
 repeattime     repeat time in samples Integer32
 ============== ====================== =================
-
 
 | ===== DSP Parameter Computation =====
 

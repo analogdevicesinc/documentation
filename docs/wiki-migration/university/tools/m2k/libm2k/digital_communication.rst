@@ -31,7 +31,8 @@ Check the *ENABLE_TOOLS* box in CMake GUI.
 Protocols
 =========
 
-There is a common structure to use for all the protocols when trying to communicate with other device using libm2k:
+There is a common structure to use for all the protocols when trying to
+communicate with other device using libm2k:
 
 -  initialize the protocol
 -  read/write packets
@@ -43,11 +44,16 @@ Initialization of any protocol can be split into:
 -  generic attributes initialization
 -  protocol descriptor initialization
 
-The structure that stores all ADALM-2000 specific attributes can be found in the extra header, while all generic attributes are found in the standard header. For example SPI generic attributes are found in *<libm2k/tools/spi.hpp>*, while SPI specific attributes of ADALM-2000 are found in *<libm2k/tools/spi_extra.hpp>*.
+The structure that stores all ADALM-2000 specific attributes can be found in the
+extra header, while all generic attributes are found in the standard header. For
+example SPI generic attributes are found in *<libm2k/tools/spi.hpp>*, while SPI
+specific attributes of ADALM-2000 are found in *<libm2k/tools/spi_extra.hpp>*.
 
 -  Instantiate and set all parameters of the init structure from the extra header (m2k_protocol_init).
 -  Instantiate and set all parameters of the init structure from the standard header (protocol_init_param). This structure contains a parameter called extra. The value of this parameter is supposed to be a reference to the structure from the extra header.
--  Instantiate a protocol descriptor and then call the init function that will populate the descriptor with the information found in initial structures. Use this descriptor every time when a writing/reading operation is performed.
+-  Instantiate a protocol descriptor and then call the init function that will
+   populate the descriptor with the information found in initial structures. Use
+   this descriptor every time when a writing/reading operation is performed.
 
 SPI
 ---
@@ -334,7 +340,8 @@ Libm2k and no-OS drivers
 
 Analog Devices offers a variety of `No-OS drivers <https://github.com/analogdevicesinc/no-os>`_ for a variety peripherals in a hardware agnostic format. These drivers can be interfaced with the libm2k in order to use the M2K as a master to configure/use the peripheral. Documentation for the drivers available :doc:`here </wiki-migration/resources/no-os/drivers>`.
 
-In order to integrate libm2k with no-OS drivers some standard steps must be followed:
+In order to integrate libm2k with no-OS drivers some standard steps must be
+followed:
 
 -  drivers inclusion
 -  libm2k headers inclusion
@@ -343,15 +350,24 @@ In order to integrate libm2k with no-OS drivers some standard steps must be foll
    -  C++ file
    -  drivers included as external C
 
-Including all required driver files in the project is the first step in integrating libm2k with no-OS drivers.
+Including all required driver files in the project is the first step in
+integrating libm2k with no-OS drivers.
 
-The drivers will include some protocols, for example *"i2c.h"*. The afferent header of libm2k, *<libm2k/tool/i2c.hpp>*, does not match with the header included by the drivers (*"i2c.h"*). In order not to modify the drivers we are going to create a header named after the protocol (*"i2c.h"*) in which the libm2k header will be included. For example create the *"i2c.h"* header in which you will include *<libm2k/tools/i2c.hpp>*.
+The drivers will include some protocols, for example *"i2c.h"*. The afferent
+header of libm2k, *<libm2k/tool/i2c.hpp>*, does not match with the header
+included by the drivers (*"i2c.h"*). In order not to modify the drivers we are
+going to create a header named after the protocol (*"i2c.h"*) in which the
+libm2k header will be included. For example create the *"i2c.h"* header in which
+you will include *<libm2k/tools/i2c.hpp>*.
 
-Each file that will call libm2k methods should be a C++ file. The inclusion of any driver in a C++ file has to be marked as an external C file inclusion.
+Each file that will call libm2k methods should be a C++ file. The inclusion of
+any driver in a C++ file has to be marked as an external C file inclusion.
 
 **Example:**
 
-AD5592r can be independently configured as DAC outputs, ADC inputs, digital outputs, or digital inputs. In this example we are going to generate ascending voltage values, communicating with the chip using SPI.
+AD5592r can be independently configured as DAC outputs, ADC inputs, digital
+outputs, or digital inputs. In this example we are going to generate ascending
+voltage values, communicating with the chip using SPI.
 
 -  Hardware configuration (ADALM-2000 <- -> AD5592r):
 
@@ -390,7 +406,9 @@ AD5592r can be independently configured as DAC outputs, ADC inputs, digital outp
          usleep(msecs * 1000);
      }
 
--  Create spi.h and i2c.h headers (we are not going to use I²C in this example, but AD5592r drivers include I²C header). In each file include the afferent header of libm2k.
+-  Create spi.h and i2c.h headers (we are not going to use I²C in this example,
+   but AD5592r drivers include I²C header). In each file include the afferent
+   header of libm2k.
 
 ::
 

@@ -30,7 +30,8 @@ Initialization example
 DMA Transfer
 ------------
 
-A structure that specifies the DMA transfer characteristics is required for sending/receiving data.
+A structure that specifies the DMA transfer characteristics is required for
+sending/receiving data.
 
 .. code:: c
 
@@ -47,7 +48,8 @@ A structure that specifies the DMA transfer characteristics is required for send
        uint32_t dest_addr;
    };
 
-The following examples show the three types of DMA transfers possible: memory to device (e.g., DAC), device (e.g., ADC) to memory, and memory to memory.
+The following examples show the three types of DMA transfers possible: memory to
+device (e.g., DAC), device (e.g., ADC) to memory, and memory to memory.
 
 Memory to device transfer
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +77,8 @@ The code snippet below transfers in a loop an array named ``sine_lut_iq``, witte
 Note
 ^^^^
 
--  After each DMA transfer, the program has to invalidate the cache for the associated data.
+-  After each DMA transfer, the program has to invalidate the cache for the
+   associated data.
 
 .. code:: c
 
@@ -83,7 +86,12 @@ Note
    Xil_DCacheInvalidateRange((uintptr_t)dac_buffer, sizeof(sine_lut_iq));
 
 -  Only a memory to device transfer can be CYCLIC.
--  A CYCLIC transfer uses the hardware feature of the DMAC IP Core that automatically disables interrupts for the corresponding instance and cyclically sends the data if this does not exceed the maximum transfer size specified in the HDL. If the CYCLIC flag is set and the transfer exceeds the maximum size for one transmission, then the cyclic sending of the data is solved by the driver through the use of interrupts.
+-  A CYCLIC transfer uses the hardware feature of the DMAC IP Core that
+   automatically disables interrupts for the corresponding instance and
+   cyclically sends the data if this does not exceed the maximum transfer size
+   specified in the HDL. If the CYCLIC flag is set and the transfer exceeds the
+   maximum size for one transmission, then the cyclic sending of the data is
+   solved by the driver through the use of interrupts.
 
 Device to memory transfer
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,19 +124,25 @@ The code snippet below transfers ``sizeof(adc_buffer)`` bytes of data from an AD
 Note
 ^^^^
 
--  After each DMA transfer, the program has to invalidate the cache for the associated data.
+-  After each DMA transfer, the program has to invalidate the cache for the
+   associated data.
 
 .. code:: c
 
    /* Invalidate cache data. Example for a Xilinx platform. */
    Xil_DCacheInvalidateRange((uintptr_t)adc_buffer, sizeof(adc_buffer));
 
--  If the size exceeds the maximum transfer size specified in the HDL and if interrupts are enabled for the DMAC instance, then all the data is retrieved. If interrupts are disabled, only a transfer with the maximum size is performed and the application has to manage the reading of the entire amount of data.
+-  If the size exceeds the maximum transfer size specified in the HDL and if
+   interrupts are enabled for the DMAC instance, then all the data is retrieved.
+   If interrupts are disabled, only a transfer with the maximum size is
+   performed and the application has to manage the reading of the entire amount
+   of data.
 
 Memory to memory transfer
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A memory to memory transfer sends the specified amount of data from the source address to the destination.
+A memory to memory transfer sends the specified amount of data from the source
+address to the destination.
 
 .. code:: c
 
@@ -157,7 +171,8 @@ A memory to memory transfer sends the specified amount of data from the source a
 Note
 ^^^^
 
--  After each DMA transfer, the program has to invalidate the cache for the associated data.
+-  After each DMA transfer, the program has to invalidate the cache for the
+   associated data.
 
 .. code:: c
 
@@ -167,7 +182,8 @@ Note
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available at:
 
 -  `AXI DMAC IP Core Header file <http://analogdevicesinc.github.io/no-OS/axi__dmac_8h.html>`_
 -  `AXI DMAC IP Core Source file <http://analogdevicesinc.github.io/no-OS/axi__dmac_8c.html>`_
@@ -182,4 +198,3 @@ Source Code
    -  :git-no-OS:`Implementation of AXI DMAC IP Core Driver. <drivers/axi_core/axi_dmac/axi_dmac.c>`
    -  :git-no-OS:`\|Header of the AXI DMAC IP Core Driver. <drivers/axi_core/axi_dmac/axi_dmac.h>`
    
-

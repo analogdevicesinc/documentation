@@ -4,15 +4,24 @@ ADC PGA Calibration
 Overview
 --------
 
-The AD5940 has a large number of possible current and gain stages to its SAR ADC. The ADC voltage input has 5x PGA gain settings. There are separate Offset and Gain calibration registers for each gain setting. The ADC can work in low power mode from 16MHz clock or in high power mode from 32MHz clock. Self-calibration code was developed so the ADC can self calibrate itself for all configuration without the need for an external precision voltage source. It uses the internal 1.82V reference. The accuracy of the reference is ±5 mV with only 20 ppm/ºC drift. This means it is suitable for self-calibration. The figure below displays the various current and voltage input options for the ADC.
+The AD5940 has a large number of possible current and gain stages to its SAR
+ADC. The ADC voltage input has 5x PGA gain settings. There are separate Offset
+and Gain calibration registers for each gain setting. The ADC can work in low
+power mode from 16MHz clock or in high power mode from 32MHz clock.
+Self-calibration code was developed so the ADC can self calibrate itself for all
+configuration without the need for an external precision voltage source. It uses
+the internal 1.82V reference. The accuracy of the reference is ±5 mV with only
+20 ppm/ºC drift. This means it is suitable for self-calibration. The figure
+below displays the various current and voltage input options for the ADC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/calibration_routines/adc_circuits.png
-   :width: 600px
+   :width: 600
 
 Calibration Steps
 -----------------
 
-The following are the steps involved for calibrating the ADC PGA offset and gain errors:
+The following are the steps involved for calibrating the ADC PGA offset and gain
+errors:
 
 ::
 
@@ -23,7 +32,9 @@ The following are the steps involved for calibrating the ADC PGA offset and gain
 Using the ADC Calibration Function in the SDK
 ---------------------------------------------
 
-The ADC PGA calibration code is implemented in the AD5940 SDK. The function AD5940_ADCPGACal() is used. It accepts one input argument of type ADCPGACal_Type. The members of this datatype and their function are as follows:
+The ADC PGA calibration code is implemented in the AD5940 SDK. The function
+AD5940_ADCPGACal() is used. It accepts one input argument of type
+ADCPGACal_Type. The members of this datatype and their function are as follows:
 
 -  SysClkFreq - defines the frequency of the system clock. Should be 16MHz
 -  AdcClkFreq - defines the frequency of the ADC clock. Should be 16MHz or 32MHz.
@@ -35,7 +46,9 @@ The ADC PGA calibration code is implemented in the AD5940 SDK. The function AD59
 -  PGACalType - type of calibration. Offset, gain or both.
 -  TimeOut10us - Timeout for ADC measurement.
 
-If the PGA needs to be calibrated for a gain of 9 the PGA gain of 1 must be calibrated first. The following is example code to calibrate the PGA offset and gain for all settings:
+If the PGA needs to be calibrated for a gain of 9 the PGA gain of 1 must be
+calibrated first. The following is example code to calibrate the PGA offset and
+gain for all settings:
 
 ::
 

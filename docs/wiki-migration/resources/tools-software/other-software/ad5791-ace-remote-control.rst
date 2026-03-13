@@ -19,7 +19,8 @@ Hardware
 
 -  +/-15V Power Supply for the evaluation board.
 -  A Digital Multimeter that supports VISA. The `Keysight 3458A Digital Multimeter <https://www.keysight.com/en/pdx-2905513-pn-3458A/digital-multimeter-8-digit?cc=SG&lc=eng>`_ was used when the script was written. For a different instrument, you need to consult it's manufacturer's website/documentation.
--  A USB to GPIB or equivalent connector for interfacing the instrument to your PC.
+-  A USB to GPIB or equivalent connector for interfacing the instrument to your
+   PC.
 
 Software
 ~~~~~~~~
@@ -38,7 +39,7 @@ Setting Up the python environment
 -  Download and install Python 3.7 from `here <https://www.python.org/downloads/>`_. Make sure that the "Add Python 3.7 to PATH" option is enabled.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/other-software/python_installation.png
-   :width: 600px
+   :width: 600
 
 -  Open a command prompt/powershell window in the same directory as the extracted files. Then install the required packages by running the following command:``pip install -r requirements.txt``
 -  Run the script by using the command:``python Main.py``
@@ -54,17 +55,19 @@ Setting up communication between ACE and the Python script
 -  Open ACE, then go to Tools -> Settings.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/other-software/go_to_settings.png
-   :width: 200px
+   :width: 200
 
--  Go to IPC Server Tab and ensure that it is enabled. Also ensure that a port is allocated.
+-  Go to IPC Server Tab and ensure that it is enabled. Also ensure that a port
+   is allocated.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/other-software/ipc_server.png
-   :width: 600px
+   :width: 600
 
--  In the file "ACERemoteController.py", ensure that the port number matches on line 70.
+-  In the file "ACERemoteController.py", ensure that the port number matches on
+   line 70.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/other-software/line_70.png
-   :width: 600px
+   :width: 600
 
 Running the application
 -----------------------
@@ -80,21 +83,24 @@ Running the application
 .. image:: https://wiki.analog.com/_media/resources/tools-software/other-software/ad5791_code_constants.png
    :align: center
 
--  Constants for code range (maximum and minimum), number of codes to jump through and the voltage span according to the reference fed to the DAC.
+-  Constants for code range (maximum and minimum), number of codes to jump
+   through and the voltage span according to the reference fed to the DAC.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/other-software/ad5791_code_range.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Run the script by using the command:``python Main.py``
--  After the script finishing capturing data, you should see the results window similar to this:
+-  After the script finishing capturing data, you should see the results window
+   similar to this:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/other-software/results.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  A spreadsheet will be exported to the home directory that contains all the values captured and plotted.
+-  A spreadsheet will be exported to the home directory that contains all the
+   values captured and plotted.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/other-software/spreadsheet.png
    :align: center
-   :width: 600px
+   :width: 600

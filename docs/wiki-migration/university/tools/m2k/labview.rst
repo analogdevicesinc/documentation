@@ -1,7 +1,8 @@
 Using ADALM2000 With LabVIEW
 ============================
 
-The ADALM2000 (M2K) can be controlled in LabVIEW. Controlling M2K is provided through a set of bindings for libm2k.
+The ADALM2000 (M2K) can be controlled in LabVIEW. Controlling M2K is provided
+through a set of bindings for libm2k.
 
 The C++ API reference is available on `GitHub <https://analogdevicesinc.github.io/libm2k/index.html>`_.
 
@@ -19,20 +20,25 @@ Installing
 
 The LabVIEW wrapper is available only starting from official version v0.4.0.
 
-In the libm2k system installer, check the "Install wrapper for LabVIEW bindings" box. The base library and the wrapper will be installed in your system.
+In the libm2k system installer, check the "Install wrapper for LabVIEW bindings"
+box. The base library and the wrapper will be installed in your system.
 
 -  Download the latest ADALM2000 VI Package from the Release section on the following page: `ADALM2000 LabVIEW repository <https://github.com/analogdevicesinc/libm2k-labview>`_.
 
-Load the VIP package in the VI Package Manager, install the package. After that, there will be a new palette, named Analog Devices -> ADALM2000, in LabVIEW.
+Load the VIP package in the VI Package Manager, install the package. After that,
+there will be a new palette, named Analog Devices -> ADALM2000, in LabVIEW.
 
 Windows Support
 ===============
 
--  After checking the "Install wrapper for LabVIEW bindings" box, the system installer will install libm2k.dll and libm2k_lv.dll in your Windows system.
+-  After checking the "Install wrapper for LabVIEW bindings" box, the system
+   installer will install libm2k.dll and libm2k_lv.dll in your Windows system.
 
-If libm2k_lv does not appear in the system path, the LabVIEW bindings will not find the exposed methods and will not work.
+If libm2k_lv does not appear in the system path, the LabVIEW bindings will not
+find the exposed methods and will not work.
 
--  In the VI Package Manager, you should load the .vip package and then install it.
+-  In the VI Package Manager, you should load the .vip package and then install
+   it.
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/libm2k/install-vipackage.png
 
@@ -40,16 +46,13 @@ If libm2k_lv does not appear in the system path, the LabVIEW bindings will not f
 
    The VI Package was tested on version 2015 and 2020 of LabVIEW on Windows.
 
-
 .. note::
 
    As this is still under development, bugs might still appear.
 
-
 .. note::
 
    Not every libm2k method is supported yet, but may be added in the future.
-
 
 Support
 =======
@@ -62,7 +65,6 @@ Examples and LabVIEW palette
 ============================
 
 The ADALM2000 palette can be found under the "Analog Devices" category.
-
 
 |image1|
 

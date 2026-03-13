@@ -3,23 +3,30 @@
 Exporting A2B System Configuration files
 ========================================
 
-A2B system configuration can be exported to files so that they can be used for configuring A2B system using a microcontroller or from different development environment.
+A2B system configuration can be exported to files so that they can be used for
+configuring A2B system using a microcontroller or from different development
+environment.
 
-A valid error free A2B schematic can be exported into C programming language and XML formats. The C format configuration files are used in Target software for A2B network configuration. As the configuration is stored in generic C format this file can also be taken to other environments supporting C programming language.
+A valid error free A2B schematic can be exported into C programming language and
+XML formats. The C format configuration files are used in Target software for
+A2B network configuration. As the configuration is stored in generic C format
+this file can also be taken to other environments supporting C programming
+language.
 
 .. note::
 
    The A2B system configuration files can also be exported using Thrift Automation. For more information, refer to ":doc:`Export A2B System Configuration Files Using Thrift </wiki-migration/resources/tools-software/a2bv2/quickstartguide/thriftuserguide/exportandimportproperties>`."
 
-
-The XML format file is more readable and thus enables easy understanding of A2B system configuration flow.
+The XML format file is more readable and thus enables easy understanding of A2B
+system configuration flow.
 
 The following options are available for the user to export A2B system configuration. Each option is explained in more detail in Section :doc:`General View Configuration files </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles>` and :doc:`Command List files </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles>`. These files can be used to configure A2B network.
 
 -  General View Configuration Files (C and XML format)
 -  I2C/SPI command list Files (XML and C format)
 
-The following steps describe the procedure for exporting A2B system configuration files
+The following steps describe the procedure for exporting A2B system
+configuration files
 
 -  Create a valid A2B schematic as explained in :doc:`Drawing A2B schematics </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/drawinga2bschematics>` (or open an existing A2B Schematic project) in SigmaStudio+.
 -  Save and Link the schematics.
@@ -31,10 +38,7 @@ The following steps describe the procedure for exporting A2B system configuratio
 
    **Figure :** Exporting system configuration
 
-
 A dialog box appears as shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles>`. Export required configuration file using appropriate tab.
-
-
 
 |image2|
 
@@ -42,14 +46,13 @@ A dialog box appears as shown in below :doc:`Figure </wiki-migration/resources/t
 
    \ **Figure :** System Configuration File export window
 
-
 .. note::
 
    
    -  Manual editing of exported XML is not recommended.
-   -  Changes done to the schematic after last Link will not be reflected in the export. Hence schematic shall be always saved and Linked before exporting.
+   -  Changes done to the schematic after last Link will not be reflected in the
+      export. Hence schematic shall be always saved and Linked before exporting.
    
-
 
 Here are different configuration files that can be exported
 
@@ -64,7 +67,11 @@ The following sub-sections describe the workflow associated with using different
 Loading Network Configuration
 -----------------------------
 
-To specify A2B stack running on the Target processor can load the network wide configuration from EEPROM ensure to define the macro ‘A2B_FEATURE_EEPROM_OR_FILE_PROCESSING ’ and ‘A2B_BCF_FROM_SOC_EEPROM’ and undefined ‘ADI_SIGMASTUDIO_BCF’ in ADI_A2B_Software-RelX.Y.Z\\Target\\examples\\demo\\a2b-xx\\a2bstack-pal\\platform\\a2b\\features.h.
+To specify A2B stack running on the Target processor can load the network wide
+configuration from EEPROM ensure to define the macro
+‘A2B_FEATURE_EEPROM_OR_FILE_PROCESSING ’ and ‘A2B_BCF_FROM_SOC_EEPROM’ and
+undefined ‘ADI_SIGMASTUDIO_BCF’ in
+ADI_A2B_Software-RelX.Y.Z\\Target\\examples\\demo\\a2b-xx\\a2bstack-pal\\platform\\a2b\\features.h.
 
 Alternatively, network wide configuration can be sourced to target software from .dat file via the local file system. This is explained in :doc:`Loading Network Configuration from .DAT file </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles-list/dat>`
 

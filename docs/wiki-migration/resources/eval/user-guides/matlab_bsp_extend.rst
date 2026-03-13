@@ -1,14 +1,20 @@
 Extending Device Interfaces
 ===========================
 
-By default, only a small number of settings are available as direct attributes for many of the devices like the transceiver. This is primarily done to not burden the user with too many knobs which they do not care about since a device the transceiver can have over 100 addressable attributes. However, sometimes you want to get access to more IIO attributes available in the driver.
+By default, only a small number of settings are available as direct attributes
+for many of the devices like the transceiver. This is primarily done to not
+burden the user with too many knobs which they do not care about since a device
+the transceiver can have over 100 addressable attributes. However, sometimes you
+want to get access to more IIO attributes available in the driver.
 
 The MATLAB and Simulink interfaces can be extended in two ways.
 
 Directly Addressing Attributes
 ------------------------------
 
-1. Directly address properties through the underlying libIIO API calls. By default the AD9361 receiver interfaces only provide or control the following properties:
+1. Directly address properties through the underlying libIIO API calls. By
+   default the AD9361 receiver interfaces only provide or control the following
+   properties:
 
 ::
 

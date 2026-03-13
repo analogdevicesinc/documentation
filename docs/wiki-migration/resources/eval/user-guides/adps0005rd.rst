@@ -4,12 +4,11 @@ AD-PS0005-RD User Guide
 .. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad-ps0005-rd_top-angle-evaluation-board.png
    :alt: AD-PS0005-RD Board
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: center
 
    **Figure 1. AD-PS0005-RD Board**
-
 
 Overview
 --------
@@ -47,7 +46,6 @@ Block Diagram
 
    **Figure 2. Simplified System Block Diagram**
 
-
 Specifications
 --------------
 
@@ -70,11 +68,9 @@ Specifications
    +-----------------+---------------------------------------+--------------------------------------+
    
 
-
 .. container:: center
 
    **Table 1. Board Performance Summary**
-
 
 Components and Connections
 --------------------------
@@ -82,12 +78,11 @@ Components and Connections
 .. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_in_out.png
    :alt: AD-PS0005-RD Inputs and Outputs
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: center
 
    **Figure 3. Inputs and Outputs**
-
 
 Power Supply Connection
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,11 +94,9 @@ Power Supply Connection
 
    Supply power to either TP10/TP12 or TP11/E5.
 
-
 .. warning::
 
    Observe the correct polarity to prevent damage to the board.
-
 
 LED Indicators
 ~~~~~~~~~~~~~~
@@ -111,12 +104,11 @@ LED Indicators
 .. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_led.png
    :alt: AD-PS0005-RD LED Location
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: center
 
    **Figure 4. LED Location**
-
 
 .. container:: center
 
@@ -140,11 +132,9 @@ LED Indicators
    ============ =========================================================
    
 
-
 .. container:: center
 
    **Table 2. LED Designation and Description**
-
 
 Switches
 ~~~~~~~~
@@ -152,12 +142,11 @@ Switches
 .. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_switches.png
    :alt: AD-PS0005-RD Switch Location
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: center
 
    **Figure 5. Switch Location**
-
 
 Hardware switches used to set Device Address:
 
@@ -169,12 +158,11 @@ Turrets
 .. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_turrets.png
    :alt: AD-PS0005-RD Turrets Location
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: center
 
    **Figure 6. Turrets Location**
-
 
 .. container:: center
 
@@ -199,11 +187,9 @@ Turrets
    ======== =========== ========
    
 
-
 .. container:: center
 
    **Table 3. Turrets Designation and Description**
-
 
 Jumpers
 ~~~~~~~
@@ -211,12 +197,11 @@ Jumpers
 .. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_jumper.png
    :alt: AD-PS0005-RD Jumpers Locations
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: center
 
    **Figure 7. Jumpers Location**
-
 
 .. container:: center
 
@@ -240,11 +225,9 @@ Jumpers
    =========== ============ ===============
    
 
-
 .. container:: center
 
    **Table 4. Jumpers Designation and Description**
-
 
 Board Evaluation
 ----------------
@@ -268,12 +251,11 @@ Hardware Setup
 .. image:: https://wiki.analog.com/_media/onunloaddisablefetch/ad_ps0005_rd_setup_voltage.png
    :alt: Sample Setup for Voltage Measurement
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: center
 
    **Figure 8. Sample Setup for Voltage Measurement**
-
 
 Test Measurement
 ~~~~~~~~~~~~~~~~
@@ -309,18 +291,15 @@ Test Measurement
    +----------------+-----------+-----------+------------------------+-------------------------+
    
 
-
 .. container:: center
 
    **Table 5. Expected Voltage Measurements**
-
 
    |Sample Setup for Efficiency Test|
 
 .. container:: center
 
    **Figure 9. Sample Setup for Efficiency Test**
-
 
 Efficiency
 ~~~~~~~~~~
@@ -333,11 +312,9 @@ Efficiency
 
    **Figure 10. Efficiency vs. Load Current**
 
-
 .. note::
 
    :adi:`LTM4681` and :adi:`LTM4655` efficiency results are referenced to VIN 12V to be comparable with their datasheet specifications.
-
 
 Output Regulation
 ~~~~~~~~~~~~~~~~~
@@ -349,7 +326,6 @@ Output Regulation
 .. container:: center
 
    **Figure 11. Output Regulation vs. Load Current**
-
 
 Software Setup
 --------------
@@ -366,20 +342,19 @@ Requirements
 
 Connect the :adi:`DC1613A` as shown below:
 
-
 |DC1613A Connection|
 
 .. container:: center
 
    **Figure 12. DC1613A Connection Location**
 
-
 Software Installation
 ~~~~~~~~~~~~~~~~~~~~~
 
 1. Download and install :adi:`LTpowerPlay`.
 
-2. Request an LTpowerPlay License. When LTpowerPlay launches the first time, it will prompt you to request a license.
+2. Request an LTpowerPlay License. When LTpowerPlay launches the first time, it
+   will prompt you to request a license.
 
 -  Click '**Request a License Key...**'
 -  Enter the required information.
@@ -397,24 +372,19 @@ Software Operation
 
 1. Double click on LTpowerPlay icon and follow the onscreen instructions.
 
-
 |LTpowerPlay Startup Screen|
 
 .. container:: center
 
    **Figure 13. LTpowerPlay Startup Screen**
 
-
 2. Once you clicked on **Detect Chips**, it will open the main screen. The devices should be enumerated in the left pane.
-
-
 
 |LTpowerPlay Main Screen|
 
 .. container:: center
 
    **Figure 14. LTpowerPlay Main Screen**
-
 
 Resources
 ---------
@@ -439,7 +409,6 @@ Design & Integration Files
    -  Allegro Project
    
 
-
 Help and Support
 ----------------
 
@@ -447,12 +416,11 @@ Help and Support
 
    Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone Support Community <reference-designs>` forum.
 
-
 .. |Sample Setup for Efficiency Test| image:: https://wiki.analog.com/_media/onunloaddisablefetch/ad_ps0005_rd_setup.png
-   :width: 600px
+   :width: 600
 .. |DC1613A Connection| image:: https://wiki.analog.com/_media/onunloaddisablefetch/dc1613a_connection.png
-   :width: 600px
+   :width: 600
 .. |LTpowerPlay Startup Screen| image:: https://wiki.analog.com/_media/onunloaddisablefetch/ltpowerpay_startup.png
-   :width: 600px
+   :width: 600
 .. |LTpowerPlay Main Screen| image:: https://wiki.analog.com/_media/onunloaddisablefetch/ltpowerpay.png
-   :width: 600px
+   :width: 600

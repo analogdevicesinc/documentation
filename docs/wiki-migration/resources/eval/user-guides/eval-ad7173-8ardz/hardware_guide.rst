@@ -9,12 +9,15 @@ The :adi:`AD7173-8 <en/products/ad7173-8.html>` is a highly accurate, high resol
 Set-up Procedures
 -----------------
 
-After following the instructions in the Software Installation Procedures section, set up the evaluation board and the SDP-K1 board as detailed in this section.
+After following the instructions in the Software Installation Procedures
+section, set up the evaluation board and the SDP-K1 board as detailed in this
+section.
 
 .. important::
 
-   The ACE software and drivers must be installed before connecting the EVAL-AD7173-8ARDZ and the EVAL-SDP-CK1Z board to the USB port of the PC to ensure that the PC correctly recognizes the evaluation system
-
+   The ACE software and drivers must be installed before connecting the
+   EVAL-AD7173-8ARDZ and the EVAL-SDP-CK1Z board to the USB port of the PC to
+   ensure that the PC correctly recognizes the evaluation system
 
 **Configuring the Evaluation and SDP Boards** Use the following procedure to configure the boards
 
@@ -27,7 +30,7 @@ Evaluation Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7173-8/65008_2.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Hardware Link Options
 ---------------------
@@ -120,9 +123,12 @@ On Board Connections
 Power Supplies
 ==============
 
-The evaluation board receives power through the controller board when connected to the PC via 5V USB. Linear regulators generate the required power supply levels from the applied USB voltage.
+The evaluation board receives power through the controller board when connected
+to the PC via 5V USB. Linear regulators generate the required power supply
+levels from the applied USB voltage.
 
--  Each regulator can be shut down using their shut down links highlighted in orange below.
+-  Each regulator can be shut down using their shut down links highlighted in
+   orange below.
 
 AVDD1 and AVSS selection (S1)
 -----------------------------
@@ -177,7 +183,10 @@ AVDD1 and AVSS selection (S1)
 Serial Interface
 ~~~~~~~~~~~~~~~~
 
-There are four primary signals: CS, SCLK, MOSI/DIN, and MISO/DOUT (all are inputs, except for MISO/DOUT, which is an output). The EVAL-AD7175-8ARDZ evaluation board connects to any microcontroller board that uses the Arduino standard headers. This can be developed user code in for a variety of platforms.
+There are four primary signals: CS, SCLK, MOSI/DIN, and MISO/DOUT (all are
+inputs, except for MISO/DOUT, which is an output). The EVAL-AD7175-8ARDZ
+evaluation board connects to any microcontroller board that uses the Arduino
+standard headers. This can be developed user code in for a variety of platforms.
 
 Serial communication options
 ----------------------------
@@ -186,13 +195,14 @@ Serial communication options
 -  PMOD connector
 -  Standalone mode
 
-     \* Removing the links LK21, LK22, LK23, and LK24, then using J5 to access all SPI signals and set the input/output voltage levels.
+     \* Removing the links LK21, LK22, LK23, and LK24, then using J5 to access
+     all SPI signals and set the input/output voltage levels.
 
 For an introduction to the Serial Peripheral Interface (SPI), click :adi:`here <en/analog-dialogue/articles/introduction-to-spi-interface.html>`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-8/spi.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Analog Inputs
 =============
@@ -212,12 +222,14 @@ Selecting the reference source:
 Software
 ~~~~~~~~
 
-Example shows setting reference for Channel 0, for channel n, go to register SETUPCON[n]
+Example shows setting reference for Channel 0, for channel n, go to register
+SETUPCON[n]
 
 -  Board should be correctly connected to ACE.
 -  Open AD7175-8 memory map (Memory Map Side-By-Side)
 -  Search for the SETUPCON[0] register
--  Set the REF_SEL_N[0] to the desired reference source or the Data(hex) to the relevant bits
+-  Set the REF_SEL_N[0] to the desired reference source or the Data(hex) to the
+   relevant bits
 
    -  **On board External reference 1** REF+/- (Hex value 00, Binary Value 00).
 
@@ -227,7 +239,7 @@ Example shows setting reference for Channel 0, for channel n, go to register SET
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7175-8/ref_figure.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Hardware
 ~~~~~~~~
@@ -258,6 +270,5 @@ Schematic, PCB Layout, Bill of Materials
    
    -  `Bill of Materials.xlsx <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7175-8ardz/Bill of Materials.xlsx>`_
    
-
 
 :doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/eval-ad7173-8ardz/software>` :doc:`Return to Homepage </wiki-migration/resources/eval/eval-ad7173-8ardz>`

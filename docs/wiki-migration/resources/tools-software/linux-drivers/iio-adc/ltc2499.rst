@@ -47,7 +47,9 @@ Example device tree
 Driver testing
 ==============
 
-When configured with channel 0 as voltage output, channel 1 as current output, channel 2 as voltage input and channel 3 as current input, the following structure is created under the corresponding IIO device.
+When configured with channel 0 as voltage output, channel 1 as current output,
+channel 2 as voltage input and channel 3 as current input, the following
+structure is created under the corresponding IIO device.
 
 .. container:: box bggreen
 
@@ -100,7 +102,6 @@ When configured with channel 0 as voltage output, channel 1 as current output, c
       -rw-r--r-- 1 root root 4096 Sep 22 15:17 uevent
    
 
-
 Show device name
 ----------------
 
@@ -114,7 +115,6 @@ Show device name
       root@analog:/sys/bus/iio/devices/iio:device0# cat name
       ltc2499
    
-
 
 Show raw measurement
 --------------------
@@ -132,7 +132,6 @@ Show raw measurement
       16777216
    
 
-
 Show scale
 ----------
 
@@ -148,7 +147,6 @@ Show scale
       root@analog:/sys/bus/iio/devices/iio:device0# cat in_voltage_scale
       0.000074505
    
-
 
 More Information
 ================
@@ -171,6 +169,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

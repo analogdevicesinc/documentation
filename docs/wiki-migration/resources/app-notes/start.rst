@@ -1,7 +1,8 @@
 Application Notes
 =================
 
-Select application notes from Analog Devices are available on the Analog Devices Wiki. Feel free to edit or make additions to these versions.
+Select application notes from Analog Devices are available on the Analog Devices
+Wiki. Feel free to edit or make additions to these versions.
 
 :doc:`AN-1119: Printed Circuit Board Layout Guidelines for Step-Down Regulators, Optimizing for Low Noise Design with Dual Channel Switching Controllers </wiki-migration/resources/app-notes/an-1119>`
 

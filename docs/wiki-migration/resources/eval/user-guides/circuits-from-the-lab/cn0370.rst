@@ -10,7 +10,6 @@ Overview
 
 This user guide will discuss how to use the :adi:`EVAL-SDP-CB1Z`, :adi:`SDP-I-PMOD <SDP-PMD-IB1Z>` and the evaluation software to be able to write and collect data from :adi:`EVAL-CN070-PMDZ <EVAL-CN0370-SDPZ>`. The evaluation board has provisions to read the output voltage of the DAC and an option to use an external supply voltage for the LED.
 
-
 |image1|
 
 Required Equipment
@@ -29,7 +28,8 @@ Required Equipment
 
 -  Power supply: 6 V wall wart.
 -  Agilent 34401A Multimeter or equivalent.
--  A GPIB-to-USB cable (Required only when taking linearity tests for the circuit).
+-  A GPIB-to-USB cable (Required only when taking linearity tests for the
+   circuit).
 
 General Setup
 -------------
@@ -37,7 +37,9 @@ General Setup
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/cn0370-1.1.png
    :align: center
 
--  Connect the 120-pin connector J4 on the PMD-SDP-IB1Z interposer board to the connector marked CON A on the EVAL-SDP-CB1Z (SDP) evaluation board. Shunt on JP1 to be place on the +5.0V configuration.
+-  Connect the 120-pin connector J4 on the PMD-SDP-IB1Z interposer board to the
+   connector marked CON A on the EVAL-SDP-CB1Z (SDP) evaluation board. Shunt on
+   JP1 to be place on the +5.0V configuration.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/cn0370-2.jpg
    :align: center
@@ -59,7 +61,8 @@ General Setup
 
 -  LED_SUPPLY is the supply for the LED. It can be taken from the PMOD supply or an external voltage supply,VEXT. It is shorted by a shunt to PMOD by default.
 -  Test point VCC and AGDN are used to take voltage measurements.
--  VEXT is used to supply an external voltage to the LED supply (Input range: +20max).
+-  VEXT is used to supply an external voltage to the LED supply (Input range:
+   +20max).
 
 Installing the Software
 -----------------------
@@ -82,7 +85,8 @@ Installing the Software
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/sw-3.png
    :align: center
 
--  Upon completion of the installation of the CN-0370 Evaluation Software, the installer for the ADI SDP Drivers will execute.
+-  Upon completion of the installation of the CN-0370 Evaluation Software, the
+   installer for the ADI SDP Drivers will execute.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/sw-4.png
    :align: center
@@ -92,7 +96,8 @@ Installing the Software
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/sw-5.png
    :align: center
 
--  Press Install to install the SDP Drivers and complete the installation of all software. Click Close when done.
+-  Press Install to install the SDP Drivers and complete the installation of all
+   software. Click Close when done.
 
 Using the Evaluation Software
 -----------------------------
@@ -111,7 +116,9 @@ Main Tab
 
    -  This is a selector where the user can choose the input mode of changing the amount of current or changing the actual DAC code being written
    -  Input Current Mode- the amount of current desired for the LED is adjusted and by pushing the Write Data button writes the data into the board.
-   -  Input Code Mode- the exact code is written on the Code box, and the amount of current output is automatically adjusted by pushing the Write Data button.
+   -  Input Code Mode- the exact code is written on the Code box, and the amount
+      of current output is automatically adjusted by pushing the Write Data
+      button.
 
 -  External Resistor
 
@@ -119,11 +126,13 @@ Main Tab
 
 -  Iout
 
-   -  This control will enable the user to change the amount of current flowing through the LED
+   -  This control will enable the user to change the amount of current flowing
+      through the LED
 
 -  R_limit
 
-   -  This is the value of the resistor that limits the amount of current through the LED, it is set to a default value of 124Ω
+   -  This is the value of the resistor that limits the amount of current
+      through the LED, it is set to a default value of 124Ω
 
 Writing data
 ~~~~~~~~~~~~
@@ -159,14 +168,12 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Layout Files
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0370-PMDZ?&v=RevB>`_ to receive all these great benefits and more!
-
 
 *End of Document*
 

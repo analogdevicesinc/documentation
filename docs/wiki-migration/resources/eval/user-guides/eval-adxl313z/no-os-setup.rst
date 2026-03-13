@@ -13,7 +13,6 @@ Breakout Board Overview
 
 The :adi:`EVAL-ADXL312Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-adxl312.html>`, :adi:`EVAL-ADXL313Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-adxl313.html>`, and :adi:`EVAL-ADXL314Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-adxl314z.html>` are simple breakout boards that enable easy connection of the mounted accelerometer into an existing system.
 
-
 |EVAL-ADXL312Z|
 
 Hardware Specifications
@@ -22,7 +21,8 @@ Hardware Specifications
 Power Supply Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The breakout boards has to be supplied with a power between 2.0 and 3.6V. The host system should be capable of providing a 3.3V supply.
+The breakout boards has to be supplied with a power between 2.0 and 3.6V. The
+host system should be capable of providing a 3.3V supply.
 
 Digital Interface (SPI 3-Wire communication)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,7 +45,7 @@ Pin 10        Interrupt 1 Output               INT1
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adxl313z/eval-adxl313-ztop-web.png
    :alt: EVAL-ADXL313Z
    :align: center
-   :width: 200px
+   :width: 200
 
 ADI No-OS
 ---------
@@ -59,7 +59,9 @@ ADXL313 Driver
 
 Information about the ADXL313 driver can be found here: :doc:`ADXL313 driver </wiki-migration/resources/tools-software/uc-drivers/adxl313>`.
 
-Make sure that you specify the correct device type (ID_ADXL31x) during initialization, so that it matches the device one on your breakout board or in your system.
+Make sure that you specify the correct device type (ID_ADXL31x) during
+initialization, so that it matches the device one on your breakout board or in
+your system.
 
 .. code:: C
 
@@ -115,7 +117,8 @@ Basic Project
 Makefile Selection
 ^^^^^^^^^^^^^^^^^^
 
-In order to build the basic project make sure you have the following configuration in the Makefile:
+In order to build the basic project make sure you have the following
+configuration in the Makefile:
 
 ::
 
@@ -123,16 +126,22 @@ In order to build the basic project make sure you have the following configurati
    BASIC_EXAMPLE = y
    IIO_EXAMPLE = n
 
-When running make command make sure to specify the platform you want to build the project for.
+When running make command make sure to specify the platform you want to build
+the project for.
 
 Project Description
 ^^^^^^^^^^^^^^^^^^^
 
-The basic project contains the generic HAL initialization of the used platform, together with the SPI and UART driver configuration and initialization.
+The basic project contains the generic HAL initialization of the used platform,
+together with the SPI and UART driver configuration and initialization.
 
-The SPI driver is used to communicate with the device on the breakout board, while the UART driver is used to display on the host machine the measured data.
+The SPI driver is used to communicate with the device on the breakout board,
+while the UART driver is used to display on the host machine the measured data.
 
-The basic project contains the ADXL313 driver initialization in 3-Wire SPI mode, performs a self-test routine for the device, configures the device, and periodically lists the contents of the FIFO in the terminal via a serial connection.
+The basic project contains the ADXL313 driver initialization in 3-Wire SPI mode,
+performs a self-test routine for the device, configures the device, and
+periodically lists the contents of the FIFO in the terminal via a serial
+connection.
 
 The code is available :git-no-OS:`here <projects/eval-adxl313z/src/examples/basic>`.
 
@@ -195,7 +204,8 @@ IIO Project
 Makefile Selection
 ^^^^^^^^^^^^^^^^^^
 
-In order to build the IIO project make sure you have the following configuration in the Makefile:
+In order to build the IIO project make sure you have the following configuration
+in the Makefile:
 
 ::
 
@@ -203,7 +213,8 @@ In order to build the IIO project make sure you have the following configuration
    BASIC_EXAMPLE = n
    IIO_EXAMPLE = y
 
-When running make command make sure to specify the platform you want to build the project for.
+When running make command make sure to specify the platform you want to build
+the project for.
 
 Project Description
 ^^^^^^^^^^^^^^^^^^^
@@ -214,7 +225,11 @@ If you are not familiar with ADI IIO Application, please take a look at::doc:`II
 
 This IIO Project uses IIO-Oscilloscope as a client. If you are not familiar with ADI IIO-Oscilloscope Client, please take a look at: :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
 
-The No-OS IIO Application together with the No-OS IIO ADXL313 driver take care of all the backend logic needed to setup the IIO server. The user has to initialize the IIO device and call the IIO app as shown below. The read buffer is used for storing data which will be available on the plot in the IIO Oscilloscope Client.
+The No-OS IIO Application together with the No-OS IIO ADXL313 driver take care
+of all the backend logic needed to setup the IIO server. The user has to
+initialize the IIO device and call the IIO app as shown below. The read buffer
+is used for storing data which will be available on the plot in the IIO
+Oscilloscope Client.
 
 .. code:: C
 
@@ -253,7 +268,9 @@ The No-OS IIO Application together with the No-OS IIO ADXL313 driver take care o
 Project Execution
 ^^^^^^^^^^^^^^^^^
 
-After flashing and running the application, IIO Oscilloscope can be used to make the desired configuration and obtain the desired data. Snippets from IIO Oscilloscope, when running the IIO Project, follow.
+After flashing and running the application, IIO Oscilloscope can be used to make
+the desired configuration and obtain the desired data. Snippets from IIO
+Oscilloscope, when running the IIO Project, follow.
 
 Below you can see the Connection window for IIO Oscilloscope. The handshake is performed and the device is detected over UART. After pressing the **Connect** button we can see the device in the list, together with its channels and we can see the measured data.
 
@@ -261,13 +278,29 @@ Below you can see the Connection window for IIO Oscilloscope. The handshake is p
    :alt: IIO Oscilloscope serial connection to board
    :align: center
 
-Below you can see the Simple View which contains the read data from the accelerometer. Observe how the measurements change. The accelerometer is positioned such that the gravitational force is first perpendicular on its XY plane. In this case the measured acceleration on Z axis is ~g and the measured acceleration on X and Y axis is ~ 0. The accelerometer is then positioned such that the gravitational force is perpendicular on its XZ plane. In this case the measured acceleration on Y axis is ~g, on X and Z axis is ~ 0). The device used for this example is an ADXL314. Finally, the accelerometer is positioned such that the gravitation force is perpendicular on its YZ plane. In this case the measured acceleration on on X axis is ~g and the measured acceleration on Y and Z axis is ~0.
+Below you can see the Simple View which contains the read data from the
+accelerometer. Observe how the measurements change. The accelerometer is
+positioned such that the gravitational force is first perpendicular on its XY
+plane. In this case the measured acceleration on Z axis is ~g and the measured
+acceleration on X and Y axis is ~ 0. The accelerometer is then positioned such
+that the gravitational force is perpendicular on its XZ plane. In this case the
+measured acceleration on Y axis is ~g, on X and Z axis is ~ 0). The device used
+for this example is an ADXL314. Finally, the accelerometer is positioned such
+that the gravitation force is perpendicular on its YZ plane. In this case the
+measured acceleration on on X axis is ~g and the measured acceleration on Y and
+Z axis is ~0.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adxl313z/readings_debug_debian.gif
    :alt: IIO Oscilloscope Measurements
    :align: center
 
-Below you can see the Debug View which contains the list of attributes for each channel of the selected device. Some attributes, like the calibbias, range, sampling frequency, scale (applicable only for ADXL312 and ADXL313) can be changed by the user, while the other attributes can be just read. You may also observe that some attributes of the acceleration channels are shared in value, range, sampling frequency, and scale, while calibbias and raw attributes may have different value for each acceleration channel.
+Below you can see the Debug View which contains the list of attributes for each
+channel of the selected device. Some attributes, like the calibbias, range,
+sampling frequency, scale (applicable only for ADXL312 and ADXL313) can be
+changed by the user, while the other attributes can be just read. You may also
+observe that some attributes of the acceleration channels are shared in value,
+range, sampling frequency, and scale, while calibbias and raw attributes may
+have different value for each acceleration channel.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adxl313z/settings_debug_adxl313.gif
    :alt: Debug View ADXL313
@@ -279,11 +312,15 @@ Range and scale cannot be changed for ADXL314.
    :alt: Debug View ADXL314
    :align: center
 
-Below you can see the Plot View for the acceleration data. The Plot view shows the raw vales measured by the accelerometer. In this case the device is moved such that the gravitational force is perpendicular on XY, XZ and YZ planes. You may observe the spikes in the data due to the sudden change of the accelerometer.
+Below you can see the Plot View for the acceleration data. The Plot view shows
+the raw vales measured by the accelerometer. In this case the device is moved
+such that the gravitational force is perpendicular on XY, XZ and YZ planes. You
+may observe the spikes in the data due to the sudden change of the
+accelerometer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adxl313z/plot.gif
    :alt: Plot example
    :align: center
 
 .. |EVAL-ADXL312Z| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/adi/eval-adxl312zangle-web.png
-   :width: 200px
+   :width: 200

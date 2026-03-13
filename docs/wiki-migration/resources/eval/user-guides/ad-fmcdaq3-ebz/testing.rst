@@ -1,11 +1,12 @@
-
 Production testing of the AD-FMCDAQ2 / AD-FMCDAQ3
 =================================================
 
 Overview
 --------
 
-The production testing is quite simple. Since each board has been completely characterized, and we know the layout is good, we can just look for gross errors.
+The production testing is quite simple. Since each board has been completely
+characterized, and we know the layout is good, we can just look for gross
+errors.
 
 The test is broken down into the following sections:
 
@@ -24,14 +25,19 @@ The explanation of how the valid ranges are calculated is similar to the same te
 Signals
 ~~~~~~~
 
-First the noise floor is checked when no input is supplied to make sure it is within a certain threshold. Then tones of approximately 97 MHz, 185 MHz, and 233 MHz are input against each channel individually and the fundamental frequency as well as the 2nd through 7th harmonics are checked to make sure they are within set bounds.
+First the noise floor is checked when no input is supplied to make sure it is
+within a certain threshold. Then tones of approximately 97 MHz, 185 MHz, and 233
+MHz are input against each channel individually and the fundamental frequency as
+well as the 2nd through 7th harmonics are checked to make sure they are within
+set bounds.
 
 Required Software
 -----------------
 
 **Creating a ZY706 carrier SD test card**
 
--  First, write the latest available SD card image found to a spare card and prepare the card to boot into Linux.
+-  First, write the latest available SD card image found to a spare card and
+   prepare the card to boot into Linux.
 
 .. admonition:: Download
    :class: download
@@ -41,7 +47,6 @@ Required Software
    -   `Actual file for FMCDAQ3 <https://swdownloads.analog.com/cse/prod_test_rel/fmcdaq3_test/fmcdaq3_carrier.zip>`_
    -  Checksum ``57ade50f1add6596c1501e0388f7fcfa``
    
-
 
 **Creating a Raspberry Pi SD test card**
 
@@ -55,7 +60,6 @@ Required Software
    -   `Actual file for FMCDAQ3 <https://swdownloads.analog.com/cse/prod_test_rel/fmcdaq3_test/rpi_daq3_prod.zip>`_
    -  Checksum ``7b49ab20b2f9d28afdb8703e6f19b498``
    
-
 
 Required hardware
 -----------------
@@ -76,7 +80,7 @@ Required setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq3-setup.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Attach the RF loopback cables to the board. The images at the bottom of the page show the correct placement for each type of AD-FMCDAQ board.
 -  Insert the SD card into the carrier board.
@@ -88,21 +92,25 @@ Required setup
 -  Connect the scanner to Raspberry Pi
 -  Power the carrier board and Raspberry Pi
 
-Make sure to connect to your WIFI Network before testing. You can exit the test window by pressing CTRL+C in order to access the connection. Reboot the system in order to return to the test window.
-
+Make sure to connect to your WIFI Network before testing. You can exit the test
+window by pressing CTRL+C in order to access the connection. Reboot the system
+in order to return to the test window.
 
 |image1|
 
 Test process
 ------------
 
-Firstly, make sure all the required steps from the setup explained above are completed. Once the setup is ready, testing should be done using the following steps:
+Firstly, make sure all the required steps from the setup explained above are
+completed. Once the setup is ready, testing should be done using the following
+steps:
 
--   Power the carrier board and the Raspberry Pi. The following screen will appear once the system has booted.
+-   Power the carrier board and the Raspberry Pi. The following screen will
+    appear once the system has booted.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/fmcdaq3-startup-screen.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  The testing sequence can be started by selecting one of the menu items. **In order to start testing, an Ethernet cable should be connected between Raspberry Pi and DUT**.
 
@@ -113,19 +121,20 @@ Firstly, make sure all the required steps from the setup explained above are com
    -  Test 2 for FMCDAQ2
    
 
-
--  At the beginning of every test, the connection with DUT is checked. If the connection is correctly established, the following message will be printed.
+-  At the beginning of every test, the connection with DUT is checked. If the
+   connection is correctly established, the following message will be printed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/fmcdaq3-eth-err.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Use the scanner to scan the QR code on the board
--  If one of the tests failed, the FAILED message will be printed as in the screen capture below:
+-  If one of the tests failed, the FAILED message will be printed as in the
+   screen capture below:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/fmcdaq3-failed.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  In case of a failed test, the tester can repeat the test immediately. The test can be repeated an undefined number of times.
 -  After completing the test, power off the carrier by typing 4. After several seconds, power off the carrier board using the physical switch.
@@ -134,8 +143,11 @@ Firstly, make sure all the required steps from the setup explained above are com
 
 .. important::
 
-   When testing is finished, ZC706 and the Raspberry Pi should always be powered off from terminal before power is unplugged, otherwise the SD cards can be corrupted. First select item 4 to power off the carrier. After a few seconds, turn off the switch. After the ZC706 is off, the Raspberry Pi can be turned off selecting item 3.
-
+   When testing is finished, ZC706 and the Raspberry Pi should always be powered
+   off from terminal before power is unplugged, otherwise the SD cards can be
+   corrupted. First select item 4 to power off the carrier. After a few seconds,
+   turn off the switch. After the ZC706 is off, the Raspberry Pi can be turned
+   off selecting item 3.
 
 ===================== =====================
 Cable placement                             
@@ -152,11 +164,9 @@ FMCDAQ2             FMCDAQ3 top             FMCDAQ3 bottom
 =================== ======================= ==========================
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/wifi_connection.png
-   :width: 600px
+   :width: 600
 .. |daq2_connection.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq2_connection.png
 .. |daq3_connection.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq3_connection.png
 .. |daq2_heatsink.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq2_heatsink.png
 .. |daq3_heatsink_top.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq3_heatsink_top.png
 .. |daq3_heatsink_bottom.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq3_heatsink_bottom.png
-
-

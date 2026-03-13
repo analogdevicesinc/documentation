@@ -9,7 +9,11 @@ Clipping Detection
 Description
 -----------
 
-The clipping detection module can be used to identify whether there is a clipping in a particular wave form. It indicates the signal reaching the onset of its maximum permitted peak-to-peak voltage value before an overload is occurring. This will help in preventing severe, audible distortion to be generated through the audio signal chain.
+The clipping detection module can be used to identify whether there is a
+clipping in a particular wave form. It indicates the signal reaching the onset
+of its maximum permitted peak-to-peak voltage value before an overload is
+occurring. This will help in preventing severe, audible distortion to be
+generated through the audio signal chain.
 
 Targets Supported
 -----------------
@@ -41,7 +45,6 @@ Name         Type    Description
 Output0      Audio   Output channel0
 ClippingFlag Control Clipping detection flag
 ============ ======= =======================
-
 
 | ===== Configurable Parameters =====
 

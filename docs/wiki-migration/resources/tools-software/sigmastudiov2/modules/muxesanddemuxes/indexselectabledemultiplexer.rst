@@ -9,7 +9,10 @@ Index Selectable Demultiplexer
 Description
 -----------
 
-The Index Selectable Demultiplexer block route an input to one of many possible output pins. The output is selected based on a control signal value from an Index Lookup Table, RMS Table, or DC Input block. The slew variant of Index Selectable Demux allows smooth transition when switching outputs.
+The Index Selectable Demultiplexer block route an input to one of many possible
+output pins. The output is selected based on a control signal value from an
+Index Lookup Table, RMS Table, or DC Input block. The slew variant of Index
+Selectable Demux allows smooth transition when switching outputs.
 
 Variants
 --------

@@ -3,12 +3,15 @@ Magnitude of Complex Number
 
 :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-Conjugate Magnitude takes the Complex Signal(x + j y) of input signal and compute the magnitude (squareroot(x^2 + y^2)) of input signal and pass to output. This is a block based module.
+Conjugate Magnitude takes the Complex Signal(x + j y) of input signal and
+compute the magnitude (squareroot(x^2 + y^2)) of input signal and pass to
+output. This is a block based module.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/magnitudeofcomplexnumber.png
    :align: center
 
-Note:- The Context Menu “Input Source” option added to this module to select the algorithm for Complex FFT and Real FFT as shown below
+Note:- The Context Menu “Input Source” option added to this module to select the
+algorithm for Complex FFT and Real FFT as shown below
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/cmplxmgtdcnxtmenu.png
    :align: center

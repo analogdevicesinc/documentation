@@ -9,7 +9,9 @@ Up Down Control LUT
 Description
 -----------
 
-This block takes in two inputs, one up and one down, and uses them to generate an index for a lookup table. The starting index is pre-loaded into an interface register and the up/down inputs increment or decrement the value.
+This block takes in two inputs, one up and one down, and uses them to generate
+an index for a lookup table. The starting index is pre-loaded into an interface
+register and the up/down inputs increment or decrement the value.
 
 Usage
 -----

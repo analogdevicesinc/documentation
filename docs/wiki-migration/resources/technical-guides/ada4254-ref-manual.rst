@@ -3,22 +3,36 @@
 General Information
 ===================
 
-The ADA4254 reference manual should be used in conjunction with the device datasheet and is intended for use as a guide to setting up the ADA4254 for a user-specific application. It describes user-programmable registers and the data signal path for the ADA4254 to assist in determining which internal components require programming. Several examples are provided to assist with this task.
+The ADA4254 reference manual should be used in conjunction with the device
+datasheet and is intended for use as a guide to setting up the ADA4254 for a
+user-specific application. It describes user-programmable registers and the data
+signal path for the ADA4254 to assist in determining which internal components
+require programming. Several examples are provided to assist with this task.
 
 Digital Interface Overview
 ==========================
 
-The ADA4254 features a 4-wire SPI interface which operates in SPI Mode 0 when CS is low. The falling edge of SCLK is the drive edge and the rising edge of SCLK is the sample edge. In this mode, data is clocked out of the device on the falling (drive) edge of SCLK and data is clocked into the device on the rising (sample) edge. The ADA4254 SPI interface uses 16-bit instructions with each instruction including a single read/write bit, seven address bits and eight data bits. The drive and sample edges of SCLK are shown in Figure 1.
+The ADA4254 features a 4-wire SPI interface which operates in SPI Mode 0 when CS
+is low. The falling edge of SCLK is the drive edge and the rising edge of SCLK
+is the sample edge. In this mode, data is clocked out of the device on the
+falling (drive) edge of SCLK and data is clocked into the device on the rising
+(sample) edge. The ADA4254 SPI interface uses 16-bit instructions with each
+instruction including a single read/write bit, seven address bits and eight data
+bits. The drive and sample edges of SCLK are shown in Figure 1.
 
 .. container:: centeralign
 
    \ |image1|\ *Figure 1. SCLK Edges in SPI Mode 0*
 
-
 Locked/Unlocked Reserved Bits
 =============================
 
-Some registers in the ADA4254 contain RESERVED bits that do not affect the operation of the device and are described as being either LOCKED or UNLOCKED. A RESERVED bit whose state can be changed (written to) is said to be UNLOCKED whereas LOCKED bits remain in their default state (0x0). The user-accessible register map for the ADA4254, showing the distribution of RESERVED bits is shown in Figure 2.
+Some registers in the ADA4254 contain RESERVED bits that do not affect the
+operation of the device and are described as being either LOCKED or UNLOCKED. A
+RESERVED bit whose state can be changed (written to) is said to be UNLOCKED
+whereas LOCKED bits remain in their default state (0x0). The user-accessible
+register map for the ADA4254, showing the distribution of RESERVED bits is shown
+in Figure 2.
 
 +-------------+-----------------+------------------------+------------------------+------------------------+------------------+------------------------+------------------------+-----------------+-----------------------+
 | Reg Address | Name            | Bit 7                  | Bit 6                  | Bit 5                  | Bit 4            | Bit 3                  | Bit 2                  | Bit 1           | Bit 0                 |
@@ -143,13 +157,16 @@ GPIO0 to GPIO4 have their own Special Functions that can be enabled through "Spe
 
 .. important::
 
-   When using an external clock with the ADA4254, it is important for it to have a frequency between 0.8MHz to 1.2MHz and a 50% duty cycle to ensure proper device operation. Clock signals with a higher frequency must be divided down to 1MHz.
-
+   When using an external clock with the ADA4254, it is important for it to have
+   a frequency between 0.8MHz to 1.2MHz and a 50% duty cycle to ensure proper
+   device operation. Clock signals with a higher frequency must be divided down
+   to 1MHz.
 
 Memory Map (MM)/Read-Only Memory (ROM) CRC Functionality
 ========================================================
 
-For added robustness, the ADA4254 performs a CRC check on its memory map and ROM.
+For added robustness, the ADA4254 performs a CRC check on its memory map and
+ROM.
 
 **MM/ROM CRC Calculation at Power-Up** A CRC calculation is performed on the default values of on-chip registers (MM) at power-up. Registers 0x03, 0x04 and 0x05 are excluded from this check because their contents change independently of SPI write operations. The result of the MM CRC calculation is stored as a “Golden” value. A CRC calculation is also performed on all fuse (ROM) registers and the result is stored as a separate "Golden" value. Sometime after the initial CRC is completed, the state machine begins running.
 
@@ -159,10 +176,19 @@ For added robustness, the ADA4254 performs a CRC check on its memory map and ROM
 
    \ |image2|// Figure 3. CRC State Machine - High Level Operation//
 
+A MM CRC calculation lasts for 19 oscillator clock cycles (~19μs) while a ROM
+CRC calculation lasts for 32 oscillator clock cycles (~32μs). The comparison
+between the calculated CRC and the “Golden” value occurs on the oscillator clock
+edge which follows the end of the calculation. If the MM CRC or ROM CRC flags
+are disabled prior to the state machines starting, then a CRC is not performed.
 
-A MM CRC calculation lasts for 19 oscillator clock cycles (~19μs) while a ROM CRC calculation lasts for 32 oscillator clock cycles (~32μs). The comparison between the calculated CRC and the “Golden” value occurs on the oscillator clock edge which follows the end of the calculation. If the MM CRC or ROM CRC flags are disabled prior to the state machines starting, then a CRC is not performed.
-
-Depending on the where it is in a cycle, the state machine looks for changes to the MM and for activity on the SPI - see “Detection of SPI Activity during MM CRC/ROM CRC State Machine Cycles”. If a change to the MM is detected, a new “Golden” value is calculated before it begins to calculate an updated CRC checksum using the current register values. If SPI activity (read or write) is detected during the MM CRC calculation, the state machine remains idle until the next state machine clock edge.
+Depending on the where it is in a cycle, the state machine looks for changes to
+the MM and for activity on the SPI - see “Detection of SPI Activity during MM
+CRC/ROM CRC State Machine Cycles”. If a change to the MM is detected, a new
+“Golden” value is calculated before it begins to calculate an updated CRC
+checksum using the current register values. If SPI activity (read or write) is
+detected during the MM CRC calculation, the state machine remains idle until the
+next state machine clock edge.
 
 **ROM CRC Error** Fuse values cannot be changed by a user so if a ROM CRC error occurs it is strongly recommended to reset or power-cycle the ADA4254. If the ROM CRC error does not clear, it is possible that the device has been permanently damaged.
 
@@ -171,7 +197,9 @@ Depending on the where it is in a cycle, the state machine looks for changes to 
 Detection of SPI Activity During MM/ROM CRC State Machine Cycles
 ================================================================
 
-The ADA4254 uses Method 1 to detect SPI activity and force the state machine to the idle state. The ADA4254 uses Method 2 to detect changes to user registers and force a recalculation of the “Golden” value.
+The ADA4254 uses Method 1 to detect SPI activity and force the state machine to
+the idle state. The ADA4254 uses Method 2 to detect changes to user registers
+and force a recalculation of the “Golden” value.
 
 **Method 1: SPI Activity During MM CRC Calculations** During the 19 oscillator clocks of the MM CRC calculation, the ADA4254 looks for SPI activity (read or write) from the first rising edge of SCLK after CSB goes low to when CSB goes high after a read/write operation. The signal that is active during this time is sampled using the internal oscillator clock (Figure 4). If this signal is sampled correctly, the state machine remains idle until the next edge of the state machine clock. Note that this does not trigger a recalculation of the “Golden” CRC value, and Method 2 must be used instead.
 
@@ -186,7 +214,9 @@ The ADA4254 uses Method 1 to detect SPI activity and force the state machine to 
 Troubleshooting MM CRC Flags
 ============================
 
-These exceptional events, where an MM CRC error is flagged, may happen individually or collectively. If more than one occurs simultaneously, implement each applicable resolution.
+These exceptional events, where an MM CRC error is flagged, may happen
+individually or collectively. If more than one occurs simultaneously, implement
+each applicable resolution.
 
 **Case 1** Gain reset is enabled (G_RST_DIS is set to “0”) and an overvoltage condition occurs in one or more of the input amplifiers that lasts more than 200 μs. The gain in the Gain_Mux register resets to 1/16 without the user writing to the part (the state machine won’t detect any activity). The “Golden” value won’t be recalculated, and the MM CRC error flag is tripped.
 

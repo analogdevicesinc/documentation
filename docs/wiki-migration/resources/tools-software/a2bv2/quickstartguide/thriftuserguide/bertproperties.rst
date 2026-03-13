@@ -9,14 +9,16 @@ List of API in BERT Properties
 BERT PRBS Test
 --------------
 
-This API is used to Run PRBS Test. It takes elementUid and property name and property value as arguments and returns SSPResult.
+This API is used to Run PRBS Test. It takes elementUid and property name and
+property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  BertCalcLinkStatus – To check Link status
 
@@ -33,7 +35,8 @@ This API is used to Run PRBS Test. It takes elementUid and property name and pro
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateBoolProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -92,14 +95,16 @@ This API is used to Run PRBS Test. It takes elementUid and property name and pro
 BERT Audio Test
 ---------------
 
-This API is used to Run PRBS Test. It takes elementUid and property name and property value as arguments and returns SSPResult.
+This API is used to Run PRBS Test. It takes elementUid and property name and
+property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  BertCalcLinkStatus – To check Link status
 
@@ -124,7 +129,8 @@ This API is used to Run PRBS Test. It takes elementUid and property name and pro
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateBoolProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -183,4 +189,3 @@ This API is used to Run PRBS Test. It takes elementUid and property name and pro
 .. tip::
 
    For more information about BERT, you can refer to the :doc:`A2B Plugin for SigmaStudio+ User Guide </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkanalysisanddebug>`.
-

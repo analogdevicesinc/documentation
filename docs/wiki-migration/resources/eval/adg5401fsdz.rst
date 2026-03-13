@@ -50,7 +50,6 @@ Evaluation Board Photograph
 
    |image1|\ *Figure 1. EVAL-ADG5401FSDZ*
 
-
 Evaluation Board Hardware
 -------------------------
 
@@ -151,7 +150,6 @@ The :adi:`AD5423` address pins, AD0 and AD1, are used in conjunction with the ad
    +------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 .. container:: COLUMN
 
    
@@ -194,7 +192,6 @@ The :adi:`AD5423` address pins, AD0 and AD1, are used in conjunction with the ad
    +---------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 Evaluation Software Quick Start Procedures
 ------------------------------------------
 
@@ -208,7 +205,6 @@ When the installation completes, the EVAL-AD5423SDZ evaluation board plug-in app
 .. container:: centeralign
 
    \ |image2| *Figure 2. EVAL-AD5423SDZ Evaluation Board Plug-in Window after Opening the* :adi:`ACE <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>` *Software*\
-
 
 Initial Setup
 ~~~~~~~~~~~~~
@@ -225,28 +221,27 @@ To set up the EVAL-ADG5401FSDZ, take the following steps:
    
    |image3| *Figure 3. EVAL-AD5423SDZ Plug-In Not Installed*
 
-
--  When setting up the evaluation board for the first time, the EVAL-AD5423SDZ plug-in may need to be installed. If the plug-in appears as shown in Figure 6, go to Step 7. If the plugin appears as shown in Figure 3, click the button that is circled in red in Figure 3. After clicking this button, the pop-up window shown in Figure 4 appears. Click Yes.
+-  When setting up the evaluation board for the first time, the EVAL-AD5423SDZ
+   plug-in may need to be installed. If the plug-in appears as shown in Figure
+   6, go to Step 7. If the plugin appears as shown in Figure 3, click the button
+   that is circled in red in Figure 3. After clicking this button, the pop-up
+   window shown in Figure 4 appears. Click Yes.
 
 .. container:: centeralign
 
    \ |image4| *Figure 4. Installing Plug-In Pop-Up Window*
 
-
 -   A new window appears, as shown in Figure 5. Navigate to the **Board.AD5423** plug-in and click **Install Selected**. The EVAL-AD5423SDZ plug-in installs and is displays, as shown in Figure 6.
-
 
 .. container:: centeralign
 
    |image5| *Figure 5. Plug-In Manager Window* |image6| *Figure 6. Attached Hardware Pane with EVAL-AD5423SDZ Connection*
-
 
 -  Double-click **EVAL-AD5423SDZ** to open the :adi:`AD5423` block diagram (see Figure 7). The **INITIAL CONFIGURATION** pane appears on the left side of the window. Several register settings can be configured in this pane and are written to the device in the appropriate order. The **DIG_DIAG_STATUS, RESET_OCCURED**, and **CAL_MEM_UNREFRESHED** LED indicators in the window are illuminated red by default.
 
 .. container:: centeralign
 
    \ |image7| *Figure 7.* :adi:`AD5423` *Block Diagram in the* :adi:`ACE <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>` *Software*
-
 
 -  Writing the initial configuration values clears these error flags. If the device is power cycled, or if the USB cable is disconnected and reconnected while the :adi:`ACE <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>` software is open, contact with the EVAL-ADG5401FSDZ can be lost. If contact is lost, click the **System** tab, click the USB symbol on the **EVAL-AD5423SDZ**, and then click **Acquire** to communicate with the EVAL-ADG5401FSDZ.
 
@@ -260,7 +255,6 @@ A full description of each block and register setting is available in the :adi:`
 .. container:: centeralign
 
    \ |image8| *Figure 8.* :adi:`AD5423` *Block Diagram with Labels*\
-
 
 .. container:: COLUMN
 
@@ -332,7 +326,6 @@ A full description of each block and register setting is available in the :adi:`
    +-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 .. container:: COLUMN
 
    
@@ -371,11 +364,9 @@ A full description of each block and register setting is available in the :adi:`
    +-------+----------------------------------------------------------------------------------------------------------------+
    
 
-
 .. container:: centeralign
 
    |image9| *Figure 9.* :adi:`AD5423` *Memory Map in the* :adi:`ACE <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>` *Software*
-
 
 Initial Configuration
 ~~~~~~~~~~~~~~~~~~~~~
@@ -393,7 +384,6 @@ To change the DAC voltage or current output level, write the appropriate hexadec
 
    \ |image10| *Figure 10.* :adi:`AD5423` **DAC Confif Register** Pop-Up Menu*
 
-
 Writing to the ADC Configuration Register
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -404,7 +394,6 @@ The dropdown list in the **SEQUENCE_COMMAND** pane contains only an initiate sin
 .. container:: centeralign
 
    \ |image11| *Figure 11.* :adi:`AD5423` *ADC Configuration Register*
-
 
 Updating Diagnostic Results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -420,7 +409,6 @@ To update the digital and analog diagnostic result registers, click **Update and
    
    |image13| *Figure 13.* :adi:`AD5423` *Analog Diagnostic Register*
 
-
 Example Configuration Sequences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -429,7 +417,6 @@ Several example configuration sequences are available. Click **Example Sequences
 .. container:: centeralign
 
    \ |image14| *Figure 14. Example Sequences Window* |image15| *Figure 15. Selecting an Example Sequence*
-
 
 ACE Tool Views
 --------------
@@ -449,7 +436,8 @@ Use the register debugger tool to perform raw writes to and reads from the devic
 Events Tool
 ~~~~~~~~~~~
 
-The events tool view contains a list of errors, warnings, and information messages generated within the application software.
+The events tool view contains a list of errors, warnings, and information
+messages generated within the application software.
 
 Evaluation Board Schematic and Artwork
 --------------------------------------
@@ -477,7 +465,6 @@ Evaluation Board Schematic and Artwork
    
    |image25| *Figure 25. EVAL-ADG5401FSDZ Secondary Layer, Bottom Layer*
    
-
 
 Ordering Information
 --------------------
@@ -579,7 +566,6 @@ Bill of Materials
    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+----------------------+
    
 
-
 .. container:: column
 
    
@@ -608,7 +594,6 @@ Bill of Materials
    +----------------------+---------------------------------------------+--------------------------------+--------------------+
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/eval-adg5401fsdz.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/eval-ad5423sdz_evaluation_board_plug-in_window_after_opening_the_ace_software.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/eval-ad5423sdz_plug-in_not_installed.png
@@ -625,15 +610,15 @@ Bill of Materials
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/example_sequences_window.png
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/selecting_an_example_sequence.png
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/eval-adg5401fsdz_supplies_and_reference_options_schematic.png
-   :width: 800px
+   :width: 800
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/sdp-s_board_connections.png
-   :width: 800px
+   :width: 800
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/adp1301-1_pmu_schematic.png
-   :width: 800px
+   :width: 800
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/ad5423_schematic.png
-   :width: 800px
+   :width: 800
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/adg5401f_schematic.png
-   :width: 800px
+   :width: 800
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/eval-adg5401fsdz_silkscreen.jpg
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/eval-adg5401fsdz_top_layer.jpg
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/eval-adg5401fsdz_layer_2.jpg

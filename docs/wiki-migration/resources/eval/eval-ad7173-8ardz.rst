@@ -6,7 +6,7 @@ The :adi:`EVAL-AD7173-8ARDZ <en/design-center/evaluation-hardware-and-software/e
 The AD717x Eval+ software fully configures the :adi:`AD7173-8 <en/products/ad7173-8.html>` device functionality via a user accessible register interface and provides dc time domain analysis in the form of waveform graphs, histograms, and associated noise analysis for ADC performance evaluation. Full specifications on the :adi:`AD7173-8 <en/products/ad7173-8.html>` are available in the product data sheet, which should be consulted in conjunction with this user guide when working with the evaluation board. Full details for the SDP-K1 controller board are available on the Analog Devices website.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7173-8/ebal_board_block_diagram.png
-   :width: 800px
+   :width: 800
 
 **Figure 1. Evaluation Board Block Diagram**
 
@@ -60,10 +60,11 @@ Use the following procedure to capture data quickly:
 -  Double click the AD7173-8 chip then click the **“Proceed to Waveform Analysis”**.
 -  In the Waveform Analysis tab, the user can capture and measure the data by clicking **“Run Once”**.
 
-The sample count in the top left area of the Waveform Analysis tab sets the number of samples collected in each batch.
+The sample count in the top left area of the Waveform Analysis tab sets the
+number of samples collected in each batch.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7173-8/65008_2.jpg
-   :width: 800px
+   :width: 800
 
 **Figure 2. Evaluation Board Hardware Configuration**
 

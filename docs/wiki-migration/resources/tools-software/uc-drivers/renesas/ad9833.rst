@@ -19,7 +19,12 @@ The :adi:`AD9833` is a low power, programmable waveform generator capable of pro
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad9833.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -31,9 +36,14 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD9833 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD9833 driver can be used exactly as it is provided. There are three functions which are called by the AD9833 driver:
+The Communication Driver has a standard interface, so the AD9833 driver can be
+used exactly as it is provided. There are three functions which are called by
+the AD9833 driver:
 
 -  SPI_Init() – initializes the communication peripheral.
 -  SPI_Write() – writes data to the device.
@@ -45,7 +55,6 @@ The Communication Driver has a standard interface, so the AD9833 driver can be u
 .. container:: centeralign
 
    Driver architecture
-
 
 The implementation of these three functions depends on the used microcontroller.
 
@@ -87,11 +96,11 @@ Downloads
       -  `AD9833 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad9833_rx62n.zip>`_
    
 
-
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the AD9833 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the AD9833
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -107,7 +116,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD9833SDZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+An EVAL-AD9833SDZ board has to be interfaced with the Renesas Demonstration Kit
+(RDK) for RX62N:
 
 ::
 
@@ -125,7 +135,8 @@ An EVAL-AD9833SDZ board has to be interfaced with the Renesas Demonstration Kit 
 Reference Project Overview
 --------------------------
 
-The demo program sets up the AD9833 part to output sinusoidal, triangle and square waves. The frequency and the type of the wave are displayed on the LCD.
+The demo program sets up the AD9833 part to output sinusoidal, triangle and
+square waves. The frequency and the type of the wave are displayed on the LCD.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad9833_screen.jpg
    :align: center
@@ -133,17 +144,13 @@ The demo program sets up the AD9833 part to output sinusoidal, triangle and squa
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

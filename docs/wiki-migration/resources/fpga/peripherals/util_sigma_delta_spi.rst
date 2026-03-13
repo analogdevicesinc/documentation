@@ -5,12 +5,13 @@ Sigma-Delta SPI Util FPGA Peripheral
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/util_sigma_delta_spi/index.html\
 
-
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/util_sigma_delta_spi.png
    :align: right
 
-ADCs from the Analog Devices Sigma-Delta converter family use a low-level communication protocol that multiplexes the SPI bus MISO signal and the data ready interrupt signal over the same physical wire (DOUT/RDY). The Sigma-Delta SPI Util peripheral can be used to de-multiplex these signals inside a FPGA.
-
+ADCs from the Analog Devices Sigma-Delta converter family use a low-level
+communication protocol that multiplexes the SPI bus MISO signal and the data
+ready interrupt signal over the same physical wire (DOUT/RDY). The Sigma-Delta
+SPI Util peripheral can be used to de-multiplex these signals inside a FPGA.
 
 Files
 -----

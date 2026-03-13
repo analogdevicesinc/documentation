@@ -9,7 +9,8 @@ Text-In Eq
 Description
 -----------
 
-The Text-In Eq block gives access to a wide variety of 2nd-order (biquad)filter algorithms.
+The Text-In Eq block gives access to a wide variety of 2nd-order (biquad)filter
+algorithms.
 
 The available filter types are:
 
@@ -29,7 +30,9 @@ The available filter types are:
 Usage
 -----
 
-To open the filter control window, click on the icon button. Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+To open the filter control window, click on the icon button. Select the desired
+filter type from the drop-down combo-box list. The filter controls and the icon
+button image will change to reflect the selected filter type.
 
 Targets Supported
 -----------------
@@ -65,7 +68,6 @@ Name    Type  Description
 ======= ===== ================
 Output0 Audio Output channel 0
 ======= ===== ================
-
 
 | ===== Configurable Parameters =====
 

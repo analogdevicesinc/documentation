@@ -47,12 +47,20 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
-
-The reference voltage or external reference clock may vary between boards and models. The platform_data for the device's "struct device" holds this information.
+The reference voltage or external reference clock may vary between boards and
+models. The platform_data for the device's "struct device" holds this
+information.
 
 *File*: drivers/staging/iio/impedance-analyzer/ad5933.h:ad5933_platform_data
 
@@ -78,19 +86,29 @@ The reference voltage or external reference clock may vary between boards and mo
 
 .. tip::
 
-   In case platform_data is not present or set to NULL, the driver will use the AD5933 internal 16.776MHz reference clock.
+   In case platform_data is not present or set to NULL, the driver will use the
+   AD5933 internal 16.776MHz reference clock.
 
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
-
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
 
-
-Depending on the converter IC used, you may need to set the I2C_BOARD_INFO name accordingly, matching your part name.
+Depending on the converter IC used, you may need to set the I2C_BOARD_INFO name
+accordingly, matching your part name.
 
 =============== ===================
 ADI part number I2C_BOARD_INFO Name
@@ -128,12 +146,12 @@ AD5934          ad5934
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The driver depends on CONFIG_I2C
-
 
 ::
 
@@ -157,13 +175,20 @@ Hardware configuration
 ======================
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-impedance-analyzer/ad5933_eval_lr.jpg
-   :width: 600px
+   :width: 600
 
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -176,19 +201,25 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    root:/sys/bus/iio/devices/iio:deviceX> **ls -l**
    drwxr-xr-x    4 root     root             0 Jan  1 21:48 buffer
    -rw-r--r--    1 root     root          4096 Jan  1 21:48 in_voltage0_scale
-   -r--r--r--    1 root     root          4096 Jan  1 21:48 in_voltage0_scale_available
+   -r--r--r--    1 root     root          4096 Jan  1 21:48
+   in_voltage0_scale_available
    -r--r--r--    1 root     root          4096 Jan  1 21:48 name
-   -rw-r--r--    1 root     root          4096 Jan  1 21:48 out_voltage0_freq_increment
-   -rw-r--r--    1 root     root          4096 Jan  1 21:48 out_voltage0_freq_points
-   -rw-r--r--    1 root     root          4096 Jan  1 21:48 out_voltage0_freq_start
+   -rw-r--r--    1 root     root          4096 Jan  1 21:48
+   out_voltage0_freq_increment
+   -rw-r--r--    1 root     root          4096 Jan  1 21:48
+   out_voltage0_freq_points
+   -rw-r--r--    1 root     root          4096 Jan  1 21:48
+   out_voltage0_freq_start
    -rw-r--r--    1 root     root          4096 Jan  1 21:48 out_voltage0_scale
-   -r--r--r--    1 root     root          4096 Jan  1 21:48 out_voltage0_scale_available
-   -rw-r--r--    1 root     root          4096 Jan  1 21:48 out_voltage0_settling_cycles
+   -r--r--r--    1 root     root          4096 Jan  1 21:48
+   out_voltage0_scale_available
+   -rw-r--r--    1 root     root          4096 Jan  1 21:48
+   out_voltage0_settling_cycles
    drwxr-xr-x    2 root     root             0 Jan  1 21:48 power
-   lrwxrwxrwx    1 root     root             0 Jan  1 21:48 subsystem -> ../../../o
+   lrwxrwxrwx    1 root     root             0 Jan  1 21:48 subsystem ->
+   ../../../o
    -r--r--r--    1 root     root          4096 Jan  1 21:48 in_temp0_raw
    -rw-r--r--    1 root     root          4096 Jan  1 21:48 uevent``\
-
 
 Show device name
 ----------------
@@ -203,7 +234,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:deviceX> cat name
       ad5933
    
-
 
 Set sweep start frequency
 -------------------------
@@ -224,7 +254,6 @@ Frequency sweep start frequency in Hz.
       14999
    
 
-
 Set frequency increment
 -----------------------
 
@@ -239,7 +268,6 @@ Set frequency increment
    
       root:/sys/bus/iio/devices/iio:deviceX> echo 200 > out_voltageY_freq_increment
    
-
 
 Set number of frequency points
 ------------------------------
@@ -258,7 +286,6 @@ Set number of frequency points
       100
    
 
-
 Set number of settling time cycles
 ----------------------------------
 
@@ -276,7 +303,6 @@ Set number of settling time cycles
       15
    
 
-
 Show available output ranges
 ----------------------------
 
@@ -292,7 +318,6 @@ Show available output ranges
       root:/sys/bus/iio/devices/iio:deviceX> cat out_voltage0_scale_available
       1980 970 383 198
    
-
 
 Set output range
 ----------------
@@ -311,7 +336,6 @@ Set output range
       1980
    
 
-
 Show available input scales
 ---------------------------
 
@@ -327,7 +351,6 @@ Show available input scales
       root:/sys/bus/iio/devices/iio:deviceX> cat in_voltage0_scale_available
       1 0.2
    
-
 
 Set input scale
 ---------------
@@ -349,7 +372,8 @@ Show internal temperature
 
 **Description:** /sys/bus/iio/devices/iio:deviceX/in_temp0_input Shows temperature in milli degrees Celsius.
 
-The on-chip temperature sensor allows an accurate measurement of the ambient device temperature. The measurement range of the sensor is −40°C to +125°C.
+The on-chip temperature sensor allows an accurate measurement of the ambient
+device temperature. The measurement range of the sensor is −40°C to +125°C.
 
 .. container:: box bggreen
 
@@ -361,7 +385,6 @@ The on-chip temperature sensor allows an accurate measurement of the ambient dev
       root:/sys/bus/iio/devices/iio:deviceX> cat in_temp0_input
       27987
    
-
 
 Buffer management
 -----------------
@@ -378,8 +401,13 @@ Buffer management
       root:/sys/bus/iio/devices/iio:deviceX/buffer>
    
 
-
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -401,7 +429,6 @@ Every buffer implementation features a set of files:
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -414,7 +441,6 @@ Every buffer implementation features a set of files:
       in_voltage0_imag_index  in_voltage0_real_en     in0_voltage_real_type
    
 
-
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
 
@@ -423,7 +449,6 @@ Every buffer implementation features a set of files:
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 .. container:: box bggreen
 
@@ -441,13 +466,13 @@ Every buffer implementation features a set of files:
       in_voltage0_real_type:  s16/16>>0
    
 
-
 Buffer Example
 --------------
 
 .. container:: box bggreen
 
-   This specifies any shell prompt running on the target - Example command sequence
+   This specifies any shell prompt running on the target - Example command
+   sequence
 
    
    ::
@@ -459,7 +484,6 @@ Buffer Example
       > echo 512 > buffer/length
       > echo 1 > buffer/enable
    
-
 
 Data interpretation
 ~~~~~~~~~~~~~~~~~~~
@@ -512,7 +536,6 @@ Z = **in_voltage0_real** + i \**in_voltage0_imag**
       0000194
    
 
-
 More Information
 ================
 
@@ -534,6 +557,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-impedance-analyzer/youtube>p_vntewue24
-

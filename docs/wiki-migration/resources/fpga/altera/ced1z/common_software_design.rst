@@ -7,8 +7,10 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 
 .. tip::
 
-   NOTE: Windows 7 users will need to right-click and select Run as administrator. Another method is to right-click and select Properties and click on the Compatibility tab and select the Run This Program As An Administrator checkbox, which will make this a permanent change.
-
+   NOTE: Windows 7 users will need to right-click and select Run as
+   administrator. Another method is to right-click and select Properties and
+   click on the Compatibility tab and select the Run This Program As An
+   Administrator checkbox, which will make this a permanent change.
 
 1. Initialize Eclipse workspace
 -------------------------------
@@ -18,7 +20,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseworkspace.png
    :alt: eclipseworkspace.png
    :align: center
-   :width: 800px
+   :width: 800
 
 2. Create a new software project in the SBT
 -------------------------------------------
@@ -28,7 +30,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image025.png
    :alt: image025.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Click the **Browse** button in the **SOPC Information File Name** dialog box.
 -  Select the **uC.sopcinfo** file located in the **ADIEvalBoard/FPGA** directory.
@@ -39,9 +41,10 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseblankproject.png
    :alt: eclipseblankproject.png
    :align: center
-   :width: 600px
+   :width: 600
 
-The tool will create two new software project directories. Each Nios II application has 2 project directories in the Eclipse workspace.
+The tool will create two new software project directories. Each Nios II
+application has 2 project directories in the Eclipse workspace.
 
 -  The application software project itself - this where the application lives.
 -  The second is the **Board Support Package (BSP)** project associated with the main application software project. This project will build the system library drivers for the specific SOPC system. This project inherits the name from the main software project and appends “\ **\_bsp**\ ” to that.
@@ -49,9 +52,12 @@ The tool will create two new software project directories. Each Nios II applicat
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojects.png
    :alt: eclipseprojects.png
    :align: center
-   :width: 300px
+   :width: 300
 
-Since you chose the blank project template, there are no source files in the application project directory at this time. The BSP contains a directory of software drivers as well as a system.h header file, system initialization source code and other software infrastructure.
+Since you chose the blank project template, there are no source files in the
+application project directory at this time. The BSP contains a directory of
+software drivers as well as a system.h header file, system initialization source
+code and other software infrastructure.
 
 Configure the Board Support Package
 ===================================
@@ -62,7 +68,7 @@ Configure the Board Support Package
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspmenu.png
    :alt: eclipsebspmenu.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The software project provided in this lab does not make use of an operating system. All *stdout*, *stdin* and *stderr* messages will be directed to the *jtag_uart*.
 
@@ -74,9 +80,10 @@ The software project provided in this lab does not make use of an operating syst
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/cedzmainsettings.png
    :alt: cedzmainsettings.png
    :align: center
-   :width: 800px
+   :width: 800
 
-The memory used by the design is should be changed from OnChip ram to SRAM for the .text region.
+The memory used by the design is should be changed from OnChip ram to SRAM for
+the .text region.
 
 -  Select **Linker Script** tab.
 -  Change .text region **Linker Region Name** from **onchip_mem** to **sram**.
@@ -84,7 +91,7 @@ The memory used by the design is should be changed from OnChip ram to SRAM for t
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1zlinkersettings.png
    :alt: ced1zlinkersettings.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Select **File -> Save** to save the board support package configuration to the *settings.bsp* file.
 -  Click the **Generate** button to update the BSP.
@@ -106,7 +113,7 @@ In addition to the board support package settings configured using the **BSP Edi
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspproperties.png
    :alt: eclipsebspproperties.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Add source code to the project
 ==============================
@@ -118,7 +125,7 @@ In Windows Explorer locate the project directory which contains a directory call
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsecopy.png
    :alt: eclipsecopy.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  A dialog box will appear to select the desired operation. Select the option **Copy files and folders** and press **OK**.
 
@@ -126,7 +133,10 @@ In Windows Explorer locate the project directory which contains a directory call
    :alt: image039.png
    :align: center
 
--  This should cause the source files to be physically copied into the file system location of the software project directory and register these source files within the Eclipse workspace so that they appear in the Project Explorer file listing.
+-  This should cause the source files to be physically copied into the file
+   system location of the software project directory and register these source
+   files within the Eclipse workspace so that they appear in the Project
+   Explorer file listing.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseproject.png
    :alt: eclipseproject.png
@@ -145,12 +155,13 @@ Just as you configured the optimization level for the BSP project, you should se
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojproperties.png
    :alt: eclipseprojproperties.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Define Application Include Directories
 ======================================
 
-Application code can be conveniently organized in a directory structure. This section shows how to define these paths in the makefile.
+Application code can be conveniently organized in a directory structure. This
+section shows how to define these paths in the makefile.
 
 -  In the Eclipse environment double click on **my_include_paths.in** to open the file.
 -  Click the **Ctrl** and **A** keys to select all the text. Click the **Ctrl** and **C** keys to copy all the text.
@@ -158,7 +169,7 @@ Application code can be conveniently organized in a directory structure. This se
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseinclude.png
    :alt: eclipseinclude.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Double click on **Makefile** to open the file.
 -  If you see the message shown here about resources being out of sync, right click on the **Makefile** and select **Refresh**.
@@ -196,8 +207,10 @@ These 2 steps will compile and build the associated board support package, then 
 
 .. important::
 
-   In case an error appears at compile time with a description like : //section .rodata loaded at [00400164,00400477] overlaps section .text loaded at [00400164,004054d7] // the enable_alt_load_copy_exceptions option must be unchecked from BSP Editor -> Main -> Settings -> Advanced-> hal.linker
-
+   In case an error appears at compile time with a description like : //section
+   .rodata loaded at [00400164,00400477] overlaps section .text loaded at
+   [00400164,004054d7] // the enable_alt_load_copy_exceptions option must be
+   unchecked from BSP Editor -> Main -> Settings -> Advanced-> hal.linker
 
 2. Verify the Board Connection
 ------------------------------
@@ -219,7 +232,7 @@ The **CED1Z** hardware is designed with a *System ID* peripheral. This periphera
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/ignoreid.png
    :alt: ignoreid.png
    :align: center
-   :width: 800px
+   :width: 800
 
 3. Run the Software Project on the Target
 -----------------------------------------
@@ -232,18 +245,18 @@ To run the software project on the Nios II processor:
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsestartprogram.png
    :alt: eclipsestartprogram.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. hint::
 
-   The code size and start address might be different than the ones displayed in the above screenshot.
-
+   The code size and start address might be different than the ones displayed in
+   the above screenshot.
 
 .. |eclipsebuildbsp.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildbsp.png
-   :width: 400px
+   :width: 400
 .. |eclipsebuildproj.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildproj.png
-   :width: 400px
+   :width: 400
 .. |eclipserunconfig.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipserunconfig.png
-   :width: 400px
+   :width: 400
 .. |image059.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image059.png
-   :width: 400px
+   :width: 400

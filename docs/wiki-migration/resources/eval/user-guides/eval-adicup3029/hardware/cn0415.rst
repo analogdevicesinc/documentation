@@ -3,24 +3,36 @@ EVAL-CN0415-ARDZ Shield
 
 :adi:`CN0415` is a robust pulse-width modulation (PWM) solenoid driver circuit in an Arduino shield form factor. Target applications include motion control, latches, clamps, brakes, clutches, proportional gas valves, proportional liquid valves, and other industrial applications. The circuit provides accurate, closed-loop current control in 2-state solenoid applications, allowing low-voltage solenoids to be used over a wide range of supply voltages, tolerating overvoltage and under voltage transient conditions caused by cold-cranking and load dump conditions.
 
-
 |image1|
 
 Simplified functional block diagram
 -----------------------------------
 
-The simplified circuit diagram shown in figure 1 is a robust solution for accurately and efficiently driving proportional and two-state solenoid actuators. Applications include motion control, latches, clamps, brakes, clutches, proportional gas valves, and proportional liquid valves. The circuit provides accurate, closed-loop current control in 2-state solenoid applications, allowing low-voltage solenoids to be used over a wide range of supply voltages. Initial pull-in current, pull-in time delay, and hold current are independently adjustable in software, greatly reducing power consumption in applications in which the solenoid is continuously energized.
+The simplified circuit diagram shown in figure 1 is a robust solution for
+accurately and efficiently driving proportional and two-state solenoid
+actuators. Applications include motion control, latches, clamps, brakes,
+clutches, proportional gas valves, and proportional liquid valves. The circuit
+provides accurate, closed-loop current control in 2-state solenoid applications,
+allowing low-voltage solenoids to be used over a wide range of supply voltages.
+Initial pull-in current, pull-in time delay, and hold current are independently
+adjustable in software, greatly reducing power consumption in applications in
+which the solenoid is continuously energized.
 
-The circuit provides a complete driver solution in proportional valve applications; pulse-width modulation (PWM) duty cycle and frequency can be directly controlled by an external PID controller, and a dither current with programmable frequency and amplitude can be enabled in order to reduce mechanical stiction.
+The circuit provides a complete driver solution in proportional valve
+applications; pulse-width modulation (PWM) duty cycle and frequency can be
+directly controlled by an external PID controller, and a dither current with
+programmable frequency and amplitude can be enabled in order to reduce
+mechanical stiction.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0415/basic_block_diagram1.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 Power Supply Requirements
 -------------------------
 
-The CN0415 requires a power supply voltage between 6V and 24V. The current requirement can be as high as 3A, depending on the solenoid's DC resistance.
+The CN0415 requires a power supply voltage between 6V and 24V. The current
+requirement can be as high as 3A, depending on the solenoid's DC resistance.
 
 Solenoid Requirements
 ---------------------
@@ -29,10 +41,11 @@ A Deltrol model `TAU0730T-02 <https://media.digikey.com/pdf/Data%20Sheets/Adafru
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0415/sensor_interface.png
    :align: center
-   :width: 600px
+   :width: 600
 
-When driving low voltage solenoids from a high input supply voltage, solenoid current can be limited in software and by adjusting the overcurrent latchoff threshold set by R10-11.
-
+When driving low voltage solenoids from a high input supply voltage, solenoid
+current can be limited in software and by adjusting the overcurrent latchoff
+threshold set by R10-11.
 
 |image2|
 
@@ -65,13 +78,13 @@ LED Indicators
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0415/board_power_led_indicator.png
    :align: center
-   :width: 600px
+   :width: 600
 
 ADC Chip Select Jumper Pin Selection
 ------------------------------------
 
-The chip select jumper settings allows the user to stack up multiple boards to the microcontroller board when using SPI digital communication protocol.
-
+The chip select jumper settings allows the user to stack up multiple boards to
+the microcontroller board when using SPI digital communication protocol.
 
 |image3|
 
@@ -88,11 +101,13 @@ The chip select jumper settings allows the user to stack up multiple boards to t
 PWM Jumper Pin Selection
 ------------------------
 
-The PWM jumper pin selection allows the user to choose from the GPIO pins of the microcontroller to generate excitation rectangular pulse which goes to the N-Channel Mosfet gate driver.
+The PWM jumper pin selection allows the user to choose from the GPIO pins of the
+microcontroller to generate excitation rectangular pulse which goes to the
+N-Channel Mosfet gate driver.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0415/pwm_select1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 +-------------+----------+-------------------------------------------------------------------+
 | Jumper Name | Position | Description                                                       |
@@ -160,16 +175,24 @@ Other Configuration Options (Default Positions Indicated)
 Arduino Interface
 -----------------
 
-The EVAL-CN0415-ARDZ is compatible with the EVAL-ADICUP3029 platform. Because the ADICUP3029 is an Arduino form factor compatible development board, many other equivalent Arduino form factor development board can also be used simply by writing custom code. Below is the pinout of the custom connector of the EVAL-CN0415-ARDZ eval board.
+The EVAL-CN0415-ARDZ is compatible with the EVAL-ADICUP3029 platform. Because
+the ADICUP3029 is an Arduino form factor compatible development board, many
+other equivalent Arduino form factor development board can also be used simply
+by writing custom code. Below is the pinout of the custom connector of the
+EVAL-CN0415-ARDZ eval board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0415/detailed_diagram3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Software
 --------
 
-The ADuCM3029_demo_cn0415 provides a solution for controlling and monitoring solenoid actuator current, using an EVAL-CN0415-ARDZ shield installed on an EVAL-ADICUP3029 base board. The user interface is implemented as a command line interface (CLI) through a serial UART connection. The project is created using CrossCore Embedded Studio and GNU ARM compiler.
+The ADuCM3029_demo_cn0415 provides a solution for controlling and monitoring
+solenoid actuator current, using an EVAL-CN0415-ARDZ shield installed on an
+EVAL-ADICUP3029 base board. The user interface is implemented as a command line
+interface (CLI) through a serial UART connection. The project is created using
+CrossCore Embedded Studio and GNU ARM compiler.
 
 -  :doc:`CN0415 Demo using EVAL-ADICUP3029 </wiki-migration/resources/eval/user-guides/eval-adicup3029/reference_designs/demo_cn0415>`
 
@@ -187,7 +210,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Gerber Files
    -  Assembly Files
    
-
 
 More Information and Useful Links
 ---------------------------------
@@ -208,12 +230,11 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0415-ARDZ?&v=RevB>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0415/cn0415_board.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0415/ov_threshhold.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0415/chip_select1.png
-   :width: 600px
+   :width: 600

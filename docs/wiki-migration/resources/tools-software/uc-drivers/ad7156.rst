@@ -11,12 +11,13 @@ Evaluation Boards
 Overview
 ========
 
-
 The :adi:`AD7156` delivers a complete signal processing solution for capacitive sensors, featuring an ultralow power converter with fast response time.
 
 The :adi:`AD7156` uses an Analog Devices, Inc., capacitance-to-digital converter (CDC) technology, which combines features important for interfacing to real sensors, such as high input sensitivity and high tolerance of both input parasitic ground capacitance and leakage current.
 
-The integrated adaptive threshold algorithm compensates for any variations in the sensor capacitance due to environmental factors like humidity and temperature or due to changes in the dielectric material over time.
+The integrated adaptive threshold algorithm compensates for any variations in
+the sensor capacitance due to environmental factors like humidity and
+temperature or due to changes in the dielectric material over time.
 
 By default, the :adi:`AD7156` operates in standalone mode using the fixed power-up settings and indicates detection on two digital outputs. Alternatively, the :adi:`AD7156` can be interfaced to a micro-controller via the serial interface, the internal registers can be programmed with user-defined settings, and the data and status can be read from the part.
 
@@ -35,9 +36,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/ad7156_pmod_cdc1.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -45,7 +49,12 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD7156 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver. The Communication Driver has a standard interface, so the AD7156 driver can be used exactly as it is provided.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver. The Communication
+   Driver has a standard interface, so the AD7156 driver can be used exactly as
+   it is provided.
 
 There are three functions which are called by the AD7156 driver:
 
@@ -59,7 +68,6 @@ There are three functions which are called by the AD7156 driver:
 .. container:: centeralign
 
    I2C driver architecture
-
 
 The following functions are implemented in this version of AD7156 driver:
 

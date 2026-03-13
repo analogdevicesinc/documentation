@@ -1,17 +1,27 @@
 EVAL-CN0418-ARDZ Shield Overview
 ================================
 
-The circuit shown in Figure 1 provides a complete, fully isolated and highly flexible, 4-channel analog output system suitable for programmable logic controllers (PLCs) and distributed control system (DCS) applications that require ±5 V, ±10 V voltage and 4 mA to 20 mA current output with HART-compatibility. All outputs are protected from transients and are suitable for the most harsh industrial environments.
+The circuit shown in Figure 1 provides a complete, fully isolated and highly
+flexible, 4-channel analog output system suitable for programmable logic
+controllers (PLCs) and distributed control system (DCS) applications that
+require ±5 V, ±10 V voltage and 4 mA to 20 mA current output with
+HART-compatibility. All outputs are protected from transients and are suitable
+for the most harsh industrial environments.
 
-The HART compatibility of this module provides a complete field communications solution that is simple to use, low cost, and extremely reliable.
+The HART compatibility of this module provides a complete field communications
+solution that is simple to use, low cost, and extremely reliable.
 
-The circuit is powered from a standard 24 V bus supply, with on-board filtering and protection circuitry. Because many factories and industrial environments power their PLC/DCS from a 24 V standard bus line, this module is easy to integrate into any existing system. This module can also be powered from other standard supplies, starting from 12 VDC to 28 VDC
+The circuit is powered from a standard 24 V bus supply, with on-board filtering
+and protection circuitry. Because many factories and industrial environments
+power their PLC/DCS from a 24 V standard bus line, this module is easy to
+integrate into any existing system. This module can also be powered from other
+standard supplies, starting from 12 VDC to 28 VDC
 
 This user guide will discuss how to use the :adi:`EVAL-EVAL-ADICUP3029 <EVAL-ADICUP3029>` and evaluation software to configure and collect data from the :adi:`EVAL-CN0418-ARDZ Evaluation Board <CN0418>` **(CN-0418 Board)**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0418/cn0418_board_images_rev_b.png
    :align: center
-   :width: 600px
+   :width: 600
 
 EVAL-CN0418-ARDZ attached to EVAL-ADICUP3029
 ============================================
@@ -41,7 +51,7 @@ Equipment
 -  CN0418 Evaluation Software
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0418/board_set_up_of_cn0418_and_adicup3029.png
-   :width: 1000px
+   :width: 1000
 
 -  The :adi:`EVAL-CN0418-ARDZ <CN0418>` **(CN-0418 Board)** connects to the :adi:`EVAL-ADICUP3029` **(ADICUP3029 Board)**
 -  The :adi:`EVAL-ADICUP3029` **(ADICUP3029 Board)** connects to the PC via the USB cable.
@@ -61,7 +71,6 @@ Default Shunt Jumper (P9 and P10) and DIP Switches (S3 and S4) Configuration
 
 The default jumper position for **P9** and **P10** are shorted at position 1 and 2 while the two DIP switches **S3** and **S4** should be in **ON state** switch position.
 
-
 |image1|
 
 +----------------------------------------------------+---+---+-------------------------------------------------------+---+---+
@@ -72,7 +81,8 @@ The default jumper position for **P9** and **P10** are shorted at position 1 and
 Single board
 ^^^^^^^^^^^^
 
-If only a single board is used, then connect jumpers P9 and P10 as shown in the table below.
+If only a single board is used, then connect jumpers P9 and P10 as shown in the
+table below.
 
 +------------------------+--------------+------------------+------------------------+--------------+-----------------+
 | Position               | Description  | Mode             | Position               | Description  | Mode            |
@@ -83,7 +93,12 @@ If only a single board is used, then connect jumpers P9 and P10 as shown in the 
 Multi board
 ^^^^^^^^^^^
 
-If more than one board is stacked (up to 4), then each board must be set to a different DAC and HART select address. Connect jumpers P9 and P10 as shown in the table below, and ensure that the software is configured accordingly. On a given board, set the DAC and HART address to the same position. If necessary, the software can be changed to address differently the DAC and HART on a given board.
+If more than one board is stacked (up to 4), then each board must be set to a
+different DAC and HART select address. Connect jumpers P9 and P10 as shown in
+the table below, and ensure that the software is configured accordingly. On a
+given board, set the DAC and HART address to the same position. If necessary,
+the software can be changed to address differently the DAC and HART on a given
+board.
 
 +-------------------------+----------------+---------------------+--------------------------+----------------+--------------------+
 | Position                | Description    | Mode                | Position                 | Description    | Mode               |
@@ -100,11 +115,12 @@ If more than one board is stacked (up to 4), then each board must be set to a di
 Default EEPROM Address configuration of Solder Jumper position JP2, JP3 and JP4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-EEPROM default address configuration of the board is "000" you can configure the EEPROM I2C address from 000 to 111.
+EEPROM default address configuration of the board is "000" you can configure the
+EEPROM I2C address from 000 to 111.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0418/eeprom_default_address.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Default EEPROM WP ( Write Protect) mode configuration of Solder Jumper JP1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,7 +129,7 @@ EEPROM **WP** pin can be configured as single or multi board operation. The defa
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0418/eeprom_wp_mode.png
    :align: center
-   :width: 600px
+   :width: 600
 
 +-------------------------+----------------------------------------------------------------------------+
 | JP1 soldering position  |                                                                            |
@@ -130,7 +146,7 @@ EEPROM **WP** pin can be configured as single or multi board operation. The defa
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0418/cn0418_output_terminals.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Peripheral Connectors
 ~~~~~~~~~~~~~~~~~~~~~
@@ -240,7 +256,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Software
 ========
 
@@ -253,11 +268,10 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0418-ARDZ?&v=RevC>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0418/deffault_switches.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0418/hart_selection_single_j.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/hart_selection_single.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0418/dac_selection_single_j.png
@@ -299,18 +313,18 @@ Registration
 .. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0418/dac_selection_multi_3_j.png
 .. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cs_selection_multi_3.png
 .. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jp1_s.png
-   :width: 60px
+   :width: 60
 .. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jp1_s_d.png
-   :width: 130px
+   :width: 130
 .. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jp1_m.png
-   :width: 60px
+   :width: 60
 .. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jp1_m_d.png
-   :width: 130px
+   :width: 130
 .. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jp1_s.png
-   :width: 60px
+   :width: 60
 .. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jp1_s_d.png
-   :width: 130px
+   :width: 130
 .. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jp1_m.png
-   :width: 60px
+   :width: 60
 .. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jp1_m_d.png
-   :width: 130px
+   :width: 130

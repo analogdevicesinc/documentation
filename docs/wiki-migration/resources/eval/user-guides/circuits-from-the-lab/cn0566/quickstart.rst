@@ -10,7 +10,6 @@ Unboxing / Setup Video
 
 .. container:: centeralign
 
-
    ..
 
 |youtube>a6MeTsatTUg|
@@ -47,18 +46,22 @@ Equipment Required
 
 -  **Other**
 
-   -  Wired or Wireless network connection, with access to the internet (for accessing update files from Github.)
+   -  Wired or Wireless network connection, with access to the internet (for
+      accessing update files from Github.)
 
 .. admonition:: Download
    :class: download
 
-   This is the step file for the HB100 holder, with a 1/4-20 thread for a standard camera mount. HB100s can vary from manufacturer to manufacturer, so please do a quick measurement on the one you have, and make any necessary adjustments to the step file.
+   This is the step file for the HB100 holder, with a 1/4-20 thread for a
+   standard camera mount. HB100s can vary from manufacturer to manufacturer, so
+   please do a quick measurement on the one you have, and make any necessary
+   adjustments to the step file.
 
    
-   Alternatively, use one of the other mounting methods described in the quick-start video.
+   Alternatively, use one of the other mounting methods described in the
+   quick-start video.
    
    `HB100 Holder Step File <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/hb100_holder.zip>`_
-
 
 --------------
 
@@ -67,7 +70,7 @@ Overview Photo
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-08-38_pm.png
    :align: center
-   :width: 250px
+   :width: 250
 
 *<fc>Figure 2. EVAL-CN0566-RPIZ Circuit Evaluation Block assignment*
 
@@ -90,7 +93,6 @@ Download the image from:
    -  Checksum 2023-04-02-ADI-Kuiper-full.img: ``aeff476b577b45cc6ce6ce02403a57c2``
    
 
-
 Complete instructions for how to write it to the SD card and how to configure an example system are provided at :doc:`Analog Devices Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
 **Hints:** The Kuiper Linux wiki pages give a few options, but the "official" Raspberry Pi imager is very straightforward: `Raspberry Pi Imager <https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/>`_
@@ -99,7 +101,6 @@ Complete instructions for how to write it to the SD card and how to configure an
 
    Switch to `ADI Kuiper Imager <https://github.com/analogdevicesinc/adi-kuiper-imager>`_ once it's stable and documented on the wiki.
 
-
 After writing the image, if a window pops up saying "this card needs to be formatted, would you like to format it now?", the answer is **NO.** Eject the card and insert it into the Raspberry Pi's SD card slot.
 
 Assembling, Booting and Configuring the System
@@ -107,7 +108,7 @@ Assembling, Booting and Configuring the System
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-37-00_pm.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Figure 3. Test Setup Functional Block Diagram
 
@@ -117,7 +118,8 @@ Figure 3. Test Setup Functional Block Diagram
 -  EITHER:
 
    -  Connect an HDMI display, USB keyboard, and USB mouse to the Raspberry pi, OR
-   -  For remote login, connect the Raspberry Pi's Ethernet jack to your wired network, or directly to a host computer's Ethernet jack
+   -  For remote login, connect the Raspberry Pi's Ethernet jack to your wired
+      network, or directly to a host computer's Ethernet jack
 
 -  Power up the setup through the type-C port of the CN0566. Do NOT connect a supply to the Raspberry Pi.
 -  Wait for Raspberry Pi to boot. (This may take a minute or two, as the filesystem is expanded on first boot.)
@@ -128,7 +130,15 @@ Figure 3. Test Setup Functional Block Diagram
 Configuring the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The easiest way to configure the SD card is by running a setup script. This does require a wired or wireless internet connection, but it is much easier than doing things manually. A wired connection is fairly straightforward if your network supports DHCP. If you need to use a wireless connection, you'll have to boot to the graphical desktop and connect manually. Once connected to a network, run the following commands (and take a look at the setup script if you're suspicious, and note that there may be some updates as newer versions of Kuiper Linux are released.) The script is commented if you want a detailed description of what it's doing.
+The easiest way to configure the SD card is by running a setup script. This does
+require a wired or wireless internet connection, but it is much easier than
+doing things manually. A wired connection is fairly straightforward if your
+network supports DHCP. If you need to use a wireless connection, you'll have to
+boot to the graphical desktop and connect manually. Once connected to a network,
+run the following commands (and take a look at the setup script if you're
+suspicious, and note that there may be some updates as newer versions of Kuiper
+Linux are released.) The script is commented if you want a detailed description
+of what it's doing.
 
 ::
 
@@ -139,15 +149,20 @@ The easiest way to configure the SD card is by running a setup script. This does
 
 (Wait for the system to reboot) **Note:** After running the script, the hostname will be **phaser.local**
 
-If you are going to be running scripts and other software directly on the Raspberry Pi, it's a good idea set a few options using the Raspberry Pi configuration utility. This can be accessed from the Start Menu under Preferences, or by running:
+If you are going to be running scripts and other software directly on the
+Raspberry Pi, it's a good idea set a few options using the Raspberry Pi
+configuration utility. This can be accessed from the Start Menu under
+Preferences, or by running:
 
 ::
 
    sudo raspi-config
 
-from the command line. Set the locale, keyboard, timezone, and wifi country (if you'll be connecting to your network by wifi.)
+from the command line. Set the locale, keyboard, timezone, and wifi country (if
+you'll be connecting to your network by wifi.)
 
-You'll also need to downgrade the numpy version to fix a compatibility issue with our existing example python scripts:
+You'll also need to downgrade the numpy version to fix a compatibility issue
+with our existing example python scripts:
 
 ::
 
@@ -156,7 +171,9 @@ You'll also need to downgrade the numpy version to fix a compatibility issue wit
 Software Quick Start
 ~~~~~~~~~~~~~~~~~~~~
 
-At this point, the GUI can be run from the command line. Power up the HB100 source with either a 3V benchtop power supply or two AA cells and aim it a the phaser antenna. Run the following command to find the HB100 frequency:
+At this point, the GUI can be run from the command line. Power up the HB100
+source with either a 3V benchtop power supply or two AA cells and aim it a the
+phaser antenna. Run the following command to find the HB100 frequency:
 
 ::
 
@@ -165,15 +182,16 @@ At this point, the GUI can be run from the command line. Power up the HB100 sour
 
 Ideally, there should be a single, sharp peak as shown in the figure below.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1. Find HB100 script
 
-
-If there is a single prominent peak, enter "y". If there are several peaks or no visible peak, close the plot and enter 'n' at the prompt. Reposition the HB100 (and make sure there are no other sources nearby), then re-run the script. Next run the GUI:
+If there is a single prominent peak, enter "y". If there are several peaks or no
+visible peak, close the plot and enter 'n' at the prompt. Reposition the HB100
+(and make sure there are no other sources nearby), then re-run the script. Next
+run the GUI:
 
 ::
 
@@ -181,7 +199,6 @@ If there is a single prominent peak, enter "y". If there are several peaks or no
    python phaser_gui.py
 
 The GUI should load and begin displaying the beam pattern as shown below.
-
 
 |image2|
 
@@ -197,14 +214,22 @@ The phaser board is initially uncalibrated; each element will have a slightly di
    cd ~/pyadi-iio/examples/phaser
    python phaser_examples.py cal
 
-The script provides debug information and plots as it is running, you may have to close out of each plot for the script to proceed. After running this script, files gain_cal_val.pkl and phase_cal_val.pkl will be placed in the working directory. The GUI program will also load these files automatically when run again.
+The script provides debug information and plots as it is running, you may have
+to close out of each plot for the script to proceed. After running this script,
+files gain_cal_val.pkl and phase_cal_val.pkl will be placed in the working
+directory. The GUI program will also load these files automatically when run
+again.
 
 Refer to :doc:`CN0566 Calibration </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/calibration>` for additional details
 
 Appendix: Pluto Setup
 ---------------------
 
-The Pluto that ships with the phaser kit has been pre-configured. In case something goes wrong, here is how to update the firmware and settings. For the CN0566, the TDD engine and additional control signals are required for some configurations, and were added as of Pluto firmware 0.38. The latest firmware is available from:
+The Pluto that ships with the phaser kit has been pre-configured. In case
+something goes wrong, here is how to update the firmware and settings. For the
+CN0566, the TDD engine and additional control signals are required for some
+configurations, and were added as of Pluto firmware 0.38. The latest firmware is
+available from:
 
 `plutosdr-fw/releases <https://github.com/analogdevicesinc/plutosdr-fw/releases>`_
 
@@ -218,7 +243,8 @@ The next step is to update the Pluto configuration to enable the AD9361's second
    fw_setenv mode 2r2t
    reboot
 
-Verify that the configuration was programmed properly by entering the following commands:
+Verify that the configuration was programmed properly by entering the following
+commands:
 
 ::
 
@@ -272,11 +298,10 @@ Appendix: Configuration Script Notes
       hdmi_mode=82
    
 
-
 *End of Document*
 
 .. |youtube>a6MeTsatTUg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/youtube>a6metsattug
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/calibration/find_hb100_step_1.png
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phaser_gui_screenshot.png
-   :width: 600px
+   :width: 600

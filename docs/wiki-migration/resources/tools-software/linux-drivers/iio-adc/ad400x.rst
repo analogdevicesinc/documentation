@@ -62,12 +62,15 @@ Files
 Driver setup
 ============
 
-Since AD4003/4007/4011/4020 are high speed analog-to-digital converters with speeds up to 2 MSPS, additional components are required to achieve high performance. In this scenario, the following HDL components are required:
+Since AD4003/4007/4011/4020 are high speed analog-to-digital converters with
+speeds up to 2 MSPS, additional components are required to achieve high
+performance. In this scenario, the following HDL components are required:
 
 -  :doc:`SPI Engine </wiki-migration/resources/fpga/peripherals/spi_engine>`
 -  :doc:`High-Speed DMA Controller Peripheral </wiki-migration/resources/fpga/docs/axi_dmac>`
 
-The device will interface with these components and follow the device tree bindings.
+The device will interface with these components and follow the device tree
+bindings.
 
 .. container:: box bggreen
 
@@ -100,7 +103,6 @@ The device will interface with these components and follow the device tree bindi
    
         dmas:
           description:
-
 
             DMA specifier, consisting of a phandle to DMA controller node.
           maxItems: 1
@@ -185,7 +187,6 @@ The device will interface with these components and follow the device tree bindi
       examples:
         *
 
-
           spi {
               #address-cells = <1>;
               #size-cells = <0>;
@@ -238,7 +239,6 @@ The device will interface with these components and follow the device tree bindi
           };
    
 
-
 See the :doc:`Evaluating AD400X and ADAQ400X devices </wiki-migration/resources/eval/ad400x-eval-board>` user guide for examples of device trees used with devices supported by the ad400x Linux driver.
 
 Adding Linux driver support
@@ -247,12 +247,12 @@ Adding Linux driver support
 Enabling the driver
 -------------------
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD400x driver depends on CONFIG_SPI_MASTER
-
 
 ::
 
@@ -272,8 +272,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
@@ -282,7 +289,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 .. container:: box bggreen
 
@@ -314,7 +320,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r-- 1 root root 4096 Apr  2 21:43 uevent
    
 
-
 Show device name
 ----------------
 
@@ -328,7 +333,6 @@ Show device name
       root@analog:~# cat /sys/bus/iio/devices/iio:device1/name
       adaq4003
    
-
 
 Show channel scale
 ------------------
@@ -346,7 +350,6 @@ Show channel scale
       0.019073486
    
 
-
 Configure sampling rate
 -----------------------
 
@@ -363,7 +366,6 @@ Configure sampling rate
       2000000
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -375,7 +377,6 @@ Configure sampling rate
       root@analog:~# cat /sys/bus/iio/devices/iio:device1/sampling_frequency
       1000000
    
-
 
 Buffer management
 -----------------
@@ -397,8 +398,13 @@ Buffer management
       -r--r--r-- 1 root root 4096 Apr  3 08:11 watermark
    
 
-
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -420,7 +426,6 @@ Every buffer implementation features a set of files:
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -435,7 +440,6 @@ Every buffer implementation features a set of files:
       -r--r--r-- 1 root root 4096 Apr  3 08:11 in_voltage0_type
    
 
-
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
 
@@ -444,7 +448,6 @@ Every buffer implementation features a set of files:
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 .. container:: box bggreen
 
@@ -459,7 +462,6 @@ Every buffer implementation features a set of files:
       in_voltage0_type:le:s18/32>>0
    
 
-
 Buffer Example
 --------------
 
@@ -467,7 +469,8 @@ When the buffer is enabled, the ad400x driver prepares a read transfer and confi
 
 .. container:: box bggreen
 
-   This specifies any shell prompt running on the target - Example command sequence
+   This specifies any shell prompt running on the target - Example command
+   sequence
 
    
    ::
@@ -480,11 +483,13 @@ When the buffer is enabled, the ad400x driver prepares a read transfer and confi
       32768
    
 
-
 Data interpretation
 ~~~~~~~~~~~~~~~~~~~
 
-Each buffer entry contains one sample. The amount of bits and their meaning will vary according to ADC precision and output code pattern (whether output code is twos complement or not). Buffer raw data may be retrieved by reading the character device associated with the ADC device.
+Each buffer entry contains one sample. The amount of bits and their meaning will
+vary according to ADC precision and output code pattern (whether output code is
+twos complement or not). Buffer raw data may be retrieved by reading the
+character device associated with the ADC device.
 
 .. container:: box bggreen
 
@@ -499,7 +504,6 @@ Each buffer entry contains one sample. The amount of bits and their meaning will
       4757 4801 4823 4826 4812 4800 4789 4770 4749 4724 4700 4677 4653 4644 4633 4639 4659 4695 4738 4777 4798 4799 4794 4785 4772 4755 4735 4712 4692 4668 4652 4646
       4641 4648 4674 4709 4753 4793 4817 4818 4808 4797 4780 4764 4748 4724 4699 4674 4656 4639 4627 4633 4644 4677 4716 4765 4794 4804 4801 4791 4778 4763 4744 4721
    
-
 
 Remove the ``-n`` parameter to keep reading the buffer continuously. To stop capture, disable the buffer by writing 0 to ``/sys/bus/iio/devices/iio:device1/buffer/enable``.
 
@@ -524,6 +528,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

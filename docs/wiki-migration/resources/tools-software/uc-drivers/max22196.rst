@@ -15,14 +15,14 @@ The :adi:`MAX22194`, :adi:`MAX22196`\ is an industrial octal digital input that 
 GitHub Driver Documentation
 ---------------------------
 
-Any other driver related documentation can be found on GitHub by following the next link:
+Any other driver related documentation can be found on GitHub by following the
+next link:
 
 .. container:: round
 
    
    -  :git-no-OS:`Documentation of MAX22196 Driver. <drivers/digital-io/max22196/README.rst>`
    
-
 
 Downloads
 ---------
@@ -34,4 +34,3 @@ Downloads
    -  :git-no-OS:`Implementation of MAX22196 Driver. <drivers/digital-io/max22196/max22196.c>`
    -  :git-no-OS:`Header file of MAX22196 Driver. <drivers/digital-io/max22196/max22196.h>`
    
-

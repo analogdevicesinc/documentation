@@ -49,7 +49,6 @@ Specifications
 | Network data protocol | RTP over UDP with software implementation and option for licensable FPGA accelerated RTP & UDP stack |
 +-----------------------+------------------------------------------------------------------------------------------------------+
 
-
 System setup & evaluation
 -------------------------
 
@@ -57,20 +56,19 @@ System setup & evaluation
 
    Follow the :doc:`AD-GMSL2ETH-SL System Setup & Evaluation </wiki-migration/resources/eval/user-guides/ad-gmsl2eth-sl-guide>` guide to get the system up and running.
 
-
 --------------
 
 Help and Support
 ----------------
 
-For questions and more information, please contact us on the Analog Devices Engineer Zone.
+For questions and more information, please contact us on the Analog Devices
+Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl2eth-sl.jpg
-   :width: 350px
+   :width: 350
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl2eth-sl-block-diagram.png
-   :width: 480px
+   :width: 480

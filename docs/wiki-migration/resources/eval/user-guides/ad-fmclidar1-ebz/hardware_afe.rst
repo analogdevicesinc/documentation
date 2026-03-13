@@ -8,18 +8,24 @@ The AFE board receives the optical reflected signal, converts it to an electrica
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/afe_board.png
    :alt: AFE Block Diagram
    :align: left
-   :width: 500px
+   :width: 500
 
 The single-ended output is converted to a differential voltage using an :adi:`ADA4950 <en/products/ada4950-1.html>`. The differential gain is set to 1 and the appropriate common mode voltage Vcm is applied. In case there is no signal at the input, the output differential voltage should be zero, otherwise there would be excessive current at the ADA4950 output. The no signal differential voltage is reduced using a negative feedback circuit featuring the :adi:`LT6016 <en/products/lt6016.html>` rail-to-rail input operational amplifiers and the :adi:`ADR3525 <en/products/adr3525.html>`, a low power, high precision CMOS voltage reference. Also, a programmable voltage at the inverting inputs of the ADA4950 ICs contributes to the proper functioning of this negative feedback circuit. The Vcm is set by using the dedicated common mode voltage pins on the ADA4950 and the AD9094 on the DAQ board, respectively. The :adi:`LT8331 <en/products/lt8331.html>` is used to generate the bias voltage for the APD, which is programmable between -120V and -300V. Additionally, the APD temperature is measured, which enables the adjustment of the bias voltage for maximum APD SNR regardless of temperature. The APD bias voltage can be set according to the following formula:
 
 :math:`\displaystyle N = \frac{(-122V-Vbias) \times 4096}{5V \times 18.18},` where N is the DAC code and Vbias is the desired APD bias voltage in volts. If N = 0, Vbias is around -122V.
 
-At the single ended output, the resting voltage is approximately 1.0V. Loaded with 100Ω or higher load, the output can swing to 3V. This is equivalent to a 2VP-P swing. However, in case there is low frequency noise at the input current, the resting voltage is no longer a constant of approximately 1.0V. In order to mitigate this problem, a negative feedback circuit is used. The loop bandwidth must be low such that it doesn’t affect the useful narrow signal pulses received from the APD.
+At the single ended output, the resting voltage is approximately 1.0V. Loaded
+with 100Ω or higher load, the output can swing to 3V. This is equivalent to a
+2VP-P swing. However, in case there is low frequency noise at the input current,
+the resting voltage is no longer a constant of approximately 1.0V. In order to
+mitigate this problem, a negative feedback circuit is used. The loop bandwidth
+must be low such that it doesn’t affect the useful narrow signal pulses received
+from the APD.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/lidar_tia_signal_chain.jpg
    :alt: AFE board signal chain
    :align: center
-   :width: 600px
+   :width: 600
 
 The TIA output is fed to the ADA4950, a buffer which converts the signal from single-ended to differential. The differential gain is 1 and the output common mode voltage is set to about 1.4V via an input. The buffer inverting input *Vtilt*, which is programmable, must be set equal to *Vrest*, otherwise the difference between the two will be repeated at the output as a differential voltage. *Vtilt* can be set using the following formula:
 
@@ -32,10 +38,9 @@ The TIA output is fed to the ADA4950, a buffer which converts the signal from si
 
    `Rev B Design Files(Schematics, Layout, BOM) <https://wiki.analog.com/_media/resources/eval/user-guides/AD-FMCLIDAR1-EBZ/revb_afe.zip>`_
 
-
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/afe_top_pic.jpg
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/afe_bot_pic.jpg
-   :width: 300px
+   :width: 300

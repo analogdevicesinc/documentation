@@ -1,19 +1,42 @@
 Device Tree - Overlays
 ======================
 
-Device trees are inherently complex files encapsulating the entire hardware profile of an embedded system, ranging from the lowest level DMA and interrupt controllers of a SoC, all the way through all the peripherals attached to all buses.  Prior to device trees being incorporated into Linux, hardware information was hard coded into the kernel, meaning the entire Linux system needed to be rebuilt for hardware tweaks. Not practical at all.  Device trees improved upon this by having a single source of hardware information being read in at boot time to describe how to initialize the system, which can be built separately from the main Linux kernel.
+Device trees are inherently complex files encapsulating the entire hardware
+profile of an embedded system, ranging from the lowest level DMA and interrupt
+controllers of a SoC, all the way through all the peripherals attached to all
+buses.  Prior to device trees being incorporated into Linux, hardware
+information was hard coded into the kernel, meaning the entire Linux system
+needed to be rebuilt for hardware tweaks. Not practical at all.  Device trees
+improved upon this by having a single source of hardware information being read
+in at boot time to describe how to initialize the system, which can be built
+separately from the main Linux kernel.
 
-Device tree overlays are the next iteration of this progression, by allowing portions of the system's device tree to be patched at boot time through simple overlay files.  This allows the overlay developer to focus just on necessary changes the overlay needs and has several benefits:
+Device tree overlays are the next iteration of this progression, by allowing
+portions of the system's device tree to be patched at boot time through simple
+overlay files.  This allows the overlay developer to focus just on necessary
+changes the overlay needs and has several benefits:
 
 -  The complexities of the entire system can be ignored
 -  Reduces risk of accidental modify a core system function when working with the full tree
 -  Lots of overlays can be developed for a hardware platform, changing which are enabled from boot to boot
--  Overlays can be applied to multiple hardware platforms (under certain conditions)
+-  Overlays can be applied to multiple hardware platforms (under certain
+   conditions)
 
 A Practical Use Case
 --------------------
 
-One great use case to illustrate the benefits of device tree overlays is utilizing ADI's Kuiper Linux distribution to evaluate hardware with a Raspberry PI.   The Kuiper Linux kernel comes pre-installed with all of ADI's Linux device drivers pre-loaded.   This is a great feature, and time saver for customers, as rebuilding a Linux kernel can be cumbersome and problematic.  However, since most (if not all) of our devices sit on non-enumerable buses (I2C, SPI, etc), a device tree entry must exist for the devices present.  This is where overlays come in.  An overlay for each device can be created, allowing customers to mix and match which overlays are included at boot to support their hardware.  Similarly, if a device parameter needs to be modified, a new overlay for that device can simply be created, versus a full device tree modification.   This can also facilitate testing multiple device configurations easily.
+One great use case to illustrate the benefits of device tree overlays is
+utilizing ADI's Kuiper Linux distribution to evaluate hardware with a Raspberry
+PI.   The Kuiper Linux kernel comes pre-installed with all of ADI's Linux device
+drivers pre-loaded.   This is a great feature, and time saver for customers, as
+rebuilding a Linux kernel can be cumbersome and problematic.  However, since
+most (if not all) of our devices sit on non-enumerable buses (I2C, SPI, etc), a
+device tree entry must exist for the devices present.  This is where overlays
+come in.  An overlay for each device can be created, allowing customers to mix
+and match which overlays are included at boot to support their hardware. 
+Similarly, if a device parameter needs to be modified, a new overlay for that
+device can simply be created, versus a full device tree modification.   This can
+also facilitate testing multiple device configurations easily.
 
 A listing of the overlays that come pre-included with Kuiper Linux can be found here: https://github.com/analogdevicesinc/linux/tree/rpi-6.1.y/arch/arm/boot/dts/overlays
 
@@ -25,14 +48,16 @@ The device tree overlay format is nearly identical to a standard device tree.  
 Header
 ~~~~~~
 
-Device tree overlays are essentially standalone device trees.  As such, all overlay files must start with the device tree header:
+Device tree overlays are essentially standalone device trees.  As such, all
+overlay files must start with the device tree header:
 
 ::
 
    /dts-v1/;
    /plugin/;
 
-If there are any include files (discussed later), the #include statements will occur prior to header:
+If there are any include files (discussed later), the #include statements will
+occur prior to header:
 
 ::
 
@@ -59,13 +84,16 @@ Following the header, the remainder of the overlay is encapsulated within the ro
 
 .. tip::
 
-   Device trees use the same commenting syntax as C files. Use // and /\* \*/ as necessary to comment the device trees.
-
+   Device trees use the same commenting syntax as C files. Use // and /\* \*/ as
+   necessary to comment the device trees.
 
 Fragments
 ~~~~~~~~~
 
-Fragments are a unique feature specific to overlay files.  For every node of the system's device tree that will be modified by the overlay, it should be encapsulated in a fragment.  The following example shows 2 fragments within the root node, but the count is not limited.
+Fragments are a unique feature specific to overlay files.  For every node of the
+system's device tree that will be modified by the overlay, it should be
+encapsulated in a fragment.  The following example shows 2 fragments within the
+root node, but the count is not limited.
 
 ::
 
@@ -111,7 +139,9 @@ The first item within a fragment is defining the target node to modify.  This w
 Overlay Content
 ~~~~~~~~~~~~~~~
 
-Finally, the actual content of each overlay fragment is defined. In this very simple, hypothetical, example, an adxl375 is added to i2c1, and a ad5686 added to spi0.
+Finally, the actual content of each overlay fragment is defined. In this very
+simple, hypothetical, example, an adxl375 is added to i2c1, and a ad5686 added
+to spi0.
 
 ::
 
@@ -162,12 +192,20 @@ where:
 -  ``my_overlay.dtso`` is our overlay source file
 -  ``> my_overlay.dtbo`` is the output redirected to be written to the ``my_overlay.dtbo`` file
 
-This command performs the necessary steps for simple overlays which do not rely on any #include or other pre-processor directives.
+This command performs the necessary steps for simple overlays which do not rely
+on any #include or other pre-processor directives.
 
 Overlays with #include
 ~~~~~~~~~~~~~~~~~~~~~~
 
-As hardware and systems become more complicated, as well as a desire to limit the use of 'magic numbers' and replace them with constants, device trees have begun to utilize include files to standardize definitions. This is nearly identical to the process a C compiler will use to handle a #include statement.   It's easy to understand benefits to having cleaner, more maintainable device trees through the use of pre-processor constants.  However, utilizing the #include feature makes building the device trees and overlays more complicated. This will be covered in an upcoming page.
+As hardware and systems become more complicated, as well as a desire to limit
+the use of 'magic numbers' and replace them with constants, device trees have
+begun to utilize include files to standardize definitions. This is nearly
+identical to the process a C compiler will use to handle a #include statement. 
+ It's easy to understand benefits to having cleaner, more maintainable device
+trees through the use of pre-processor constants.  However, utilizing the
+#include feature makes building the device trees and overlays more complicated.
+This will be covered in an upcoming page.
 
 Applying Overlays
 -----------------
@@ -175,17 +213,23 @@ Applying Overlays
 RaspberryPI
 ~~~~~~~~~~~
 
-For RaspberryPI's the overlay .dtbo file can be placed in the /boot/overlays folder of the SD card to allow it to be found at boot time.  To enable the overlay, the /boot/config.txt file must modified.  Open /boot/config.txt in your favorite editor (such as mousepad) add or remove the necessary dtoverlay lines.
+For RaspberryPI's the overlay .dtbo file can be placed in the /boot/overlays
+folder of the SD card to allow it to be found at boot time.  To enable the
+overlay, the /boot/config.txt file must modified.  Open /boot/config.txt in your
+favorite editor (such as mousepad) add or remove the necessary dtoverlay lines.
 
 .. important::
 
    You'll need to be an administrator, or open the config.txt as ``sudo`` to be able to save the changes.
 
-
-The dtoverlay line(s) specify which overlay files should be incorporated at boot time.  The following example shows adding the rpi-adxl345.dtbo overlay, simply use your overlay file name instead. Important! Note the .dtbo file extension is omitted as this is automatically implied.
+The dtoverlay line(s) specify which overlay files should be incorporated at boot
+time.  The following example shows adding the rpi-adxl345.dtbo overlay, simply
+use your overlay file name instead. Important! Note the .dtbo file extension is
+omitted as this is automatically implied.
 
 ::
 
    dtoverlay=rpi-adxl345
 
-You can add as many overlays to the config.txt file as you need to describe your hardware.  Once saved, reboot the system to see the changes applied.
+You can add as many overlays to the config.txt file as you need to describe your
+hardware.  Once saved, reboot the system to see the changes applied.

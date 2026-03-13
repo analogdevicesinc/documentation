@@ -3,7 +3,7 @@ ADALM-PLUTO Detailed Specifications
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/pluto_on_desk.png
    :align: right
-   :width: 200px
+   :width: 200
 
 Features List:
 
@@ -67,7 +67,8 @@ Features List:
       -  `MT25QU256ABA8E12-1SIT <https://www.micron.com/products/nor-flash/serial-nor-flash/part-catalog/mt25qu256aba8e12-1sit>`_
       -  32 Mbyte
       -  Quad I/O provides throughput up to 54 MBps
-      -  Minimum 100,000 ERASE cycles (don't update the firmware more times than this)
+      -  Minimum 100,000 ERASE cycles (don't update the firmware more times than
+         this)
 
 -  Power
 

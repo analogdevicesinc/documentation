@@ -1,12 +1,13 @@
 AD-FMCDAQ2-EBZ Zynq ZC706 Quick Start Guide
 ===========================================
 
-This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCDAQ2-EBZ on:
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the AD-FMCDAQ2-EBZ on:
 
 -  `ZC706 <https://www.xilinx.com/ZC706>`_ (rev 1.1 or higher)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/ad-fmcdaq2-ebz_zc706.png
-   :width: 600px
+   :width: 600
 
 Requirements
 ------------
@@ -22,9 +23,7 @@ Creating / Configuring the SD Card
 
 :doc:`Create SD Image for Zynq Boards. (it is a single image for all boards) </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
-
 .. esd-warning::
-
 
 Setting up the hardware (ZC706)
 -------------------------------
@@ -35,7 +34,6 @@ You will need to:
 
    -
 
-
    |http---www.xilinx.com-images-product-images-zc706-base-board.jpg|
 
 -  Insert the SD-CARD into the SD Card Interface Connector (J30)
@@ -43,20 +41,22 @@ You will need to:
 -  Plug your HDMI display device into the HDMI Video Connector (P1)
 -  Plug your USB mouse/keyboard into the USB 2.0 ULPI Controller, w/Micro-B Connector (J49)
 -  Plug the Power Supply into 12V Power input connector (J22) (DO NOT turn the device on).
--  Set the jumpers: The main one is: SW11 - Big Blue Switch in the middle, which controls the Boot Mode, it needs to be set: 1: Down, 2: Down, 3: Up, 4: Up, 5: Down. Other Jumpers can be checked via looking at the picture. (click the picture to make it bigger)
+-  Set the jumpers: The main one is: SW11 - Big Blue Switch in the middle, which
+   controls the Boot Mode, it needs to be set: 1: Down, 2: Down, 3: Up, 4: Up,
+   5: Down. Other Jumpers can be checked via looking at the picture. (click the
+   picture to make it bigger)
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
    :alt: zc706plusfmcjesdadc1.png
    :align: right
-   :width: 200px
+   :width: 200
 
 -  Turn it on.
 -  Wait ~30 seconds for the "DONE" LED to turn green. This is above the power switch.
--  Wait another ~30 seconds for the HDMI display device to start showing signs of life.
+-  Wait another ~30 seconds for the HDMI display device to start showing signs
+   of life.
 
 Alternatively, you can connect to board using USB-to-UART cable (using for example ``TeraTerm``). Check network IP (for example by running ``ifconfig`` command), run ``enable_dummy_display.sh`` and then you can also connect by VNC without using a monitor.
-
-
 
 .. collapsible:: **Boot Log** (Click to expand)
 
@@ -646,18 +646,18 @@ Alternatively, you can connect to board using USB-to-UART cable (using for examp
       Last login: Fri May  6 13:55:18 BST 2022 on ttyPS0
       root@analog:~#
 
-
-
 After booting process is complete, you can open IIO-Oscilloscope. Learn more about it :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can interact with the IIO-Osc GUI either directly or over the network.
 
 .. important::
 
-   Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. You can shut down the board from terminal as well with
+   Even thought this is Linux, this is a persistent file systems. Care should be
+   taken not to corrupt the file system -- please shut down things, don't just
+   turn off the power switch. You can shut down the board from terminal as well
+   with
 
    
    ``sudo shutdown -h now`` or ``sudo poweroff``
    
-
 
 .. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
 

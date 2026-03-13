@@ -8,9 +8,14 @@ The Residential Smart Smoke Sensor Demo provides a demonstration on how to imple
 
 The :adi:`CN0583` smoke detector module is composed of two parts -- the EVAL-CN0583-SOM smoke detector system-on-module (SOM), and the EVAL-CN0583-CRR1 carrier board.
 
-The EVAL-CN0583-SOM is a standalone module designed for development of smoke detection applications, which integrates an ADPD188BI smoke sensor, a MAX32660 microcontroller, and regulated DC power supplies needed for proper operation.
+The EVAL-CN0583-SOM is a standalone module designed for development of smoke
+detection applications, which integrates an ADPD188BI smoke sensor, a MAX32660
+microcontroller, and regulated DC power supplies needed for proper operation.
 
-The EVAL-CN0583-CRR1 is an easy-to-use carrier board developed for evaluation of the SOM and enable rapid prototyping. The CN0583 carrier board has an onboard debugger based on the MAX32625PICO that allows drag-and-drop programming of the SOM and USB-UART communication.
+The EVAL-CN0583-CRR1 is an easy-to-use carrier board developed for evaluation of
+the SOM and enable rapid prototyping. The CN0583 carrier board has an onboard
+debugger based on the MAX32625PICO that allows drag-and-drop programming of the
+SOM and USB-UART communication.
 
 This provides a UL-217 and EN 14604 compliant solution to smoke detection.
 
@@ -41,7 +46,9 @@ Hardware Setup
 -  Install the ADPD188BI smoke chamber on the primary side of the SOM.
 -  Carefully insert the SOM between P1 and P2 of the carrier board, following the cutout on the center. The proper orientation of the module will have pin 1 closest to the buzzer, and pin 28 on the side with the test button.
 -  Connect the P6 on the carrier board to the computer using the micro-USB cable.
--  On the computer, check if the CN0583 hardware setup is recognized as a DAPLINK drive. This will indicate that the necessary drivers are complete and correct.
+-  On the computer, check if the CN0583 hardware setup is recognized as a
+   DAPLINK drive. This will indicate that the necessary drivers are complete and
+   correct.
 
 Software Setup
 ~~~~~~~~~~~~~~
@@ -51,7 +58,8 @@ Programming the SOM
 
 This step is only required if you want to update the firmware of the CN0583 SOM. The programming may be done over DAPLINK, as following: *Insert warning that we are going to need the firmware file that enables the buzzer of the CN0583 board on a smoke event.*
 
--  Download the hex file for the demo application. Alternatively, you may use your own hex file.
+-  Download the hex file for the demo application. Alternatively, you may use
+   your own hex file.
 
 .. admonition:: Download
    :class: download
@@ -66,33 +74,44 @@ This step is only required if you want to update the firmware of the CN0583 SOM.
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 -  Connect the EVAL-CN0583-CRR1 carrier board to your PC using an USB cable.
 -  Wait for the DAPLINK directory to appear on your PC's filesystem.
 -  Copy the hex file to the DAPLINK directory.
 -  The hex file will now be written in the MAX32660's flash memory (this should take a few seconds). After that, the DAPLINK directory will be deleted.
--  Wait for the DAPLINK directory to be created again (without unplugging the USB cable). After that, the CN0583 SOM is programmed with the new firmware. You may now use the CLI application by following the steps in the next section.
+-  Wait for the DAPLINK directory to be created again (without unplugging the
+   USB cable). After that, the CN0583 SOM is programmed with the new firmware.
+   You may now use the CLI application by following the steps in the next
+   section.
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
 
 -  Plug in your connected device using a USB cable or other serial cable.
 -  Wait for the device driver of the connected device to install on your PC or Laptop.
--  Open your device manager, and find out which COM port was assigned to your device.
+-  Open your device manager, and find out which COM port was assigned to your
+   device.
 
 |image1|
 
 -  Open up your serial terminal program (e.g., PuTTY)
--  Click on the serial configuration tab or window, and input the settings to match the requirements of your connected device. The default baud rate for most of the reference designs is 115200. Make sure that you use the correct baud rate for your application.
+-  Click on the serial configuration tab or window, and input the settings to
+   match the requirements of your connected device. The default baud rate for
+   most of the reference designs is 115200. Make sure that you use the correct
+   baud rate for your application.
 
 |image2|
 
 -  Ensure you click on the checkboxes for **Implicit CR in every LF** and **Implicit LF in every CF**.
--  Ensure that local echo and line editing are enabled, so that you can see what you type and are able to correct mistakes. (Some devices may echo typed characters - if so, you will see each typed character twice. If this happens, turn off local echo.)
+-  Ensure that local echo and line editing are enabled, so that you can see what
+   you type and are able to correct mistakes. (Some devices may echo typed
+   characters - if so, you will see each typed character twice. If this happens,
+   turn off local echo.)
 
 |image3|
 
--  Click on the open button, and as long as your connected device and serial terminal program are setup the same, then you should be able to start entering commands.
+-  Click on the open button, and as long as your connected device and serial
+   terminal program are setup the same, then you should be able to start
+   entering commands.
 
 Running the Demo
 ----------------
@@ -118,8 +137,8 @@ Press ENTER.
 
 .. tip::
 
-   Note that the alarm will settle down to go back to its normal state after a few seconds along with the buzzer.
-
+   Note that the alarm will settle down to go back to its normal state after a
+   few seconds along with the buzzer.
 
 ::
 
@@ -152,10 +171,10 @@ Typing **help** (or simply **h**) after the initial calibration sequence will di
 +---------------------+------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/wiki/device_manager.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0583/putty_settings.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/wiki/putty_terminal_options.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/start/stream.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/start/stream_high.png

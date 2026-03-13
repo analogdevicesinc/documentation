@@ -4,7 +4,7 @@ System Configuration File (system.svc)
 Every CCES project contains a *system configuration* file. The file is the IDE's interface for adding to and managing pre-written software components in a project's configuration, such as system services, device drivers, add-ins, and LDF/startup code. The system configuration file is named **system.svc**, and it resides in the root of each project or the root of each core (for multi-core processors). The IDE provides the System Configuration Utility for maintaining the system.svc file. Double-clicking the system.svc file in the*\* Project Explorer*\* view opens the file in the utility editor, as shown in Figure 1.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/system.svc.png
-   :width: 400px
+   :width: 400
 
 *Figure 1. System Configuration Utility*
 
@@ -19,16 +19,28 @@ The **Pin Multiplexing** add-in provides a GUI to configure pin usage to support
 To install additional add-ins, click **Add…** and the selection window in Figure 19 will appear.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/add-ins.png
-   :width: 600px
+   :width: 600
 
 *Figure 2. Add New Add-ins*
 
-There are also add-ins for the various system services (e.g., RTC and GPIO) and device drivers (for supported peripherals such as PPI, SPI, SPORT, etc.).
+There are also add-ins for the various system services (e.g., RTC and GPIO) and
+device drivers (for supported peripherals such as PPI, SPI, SPORT, etc.).
 
 System Services and Device Drivers (SSDD)
 =========================================
 
-System Services and Device Drivers provide easy-to-use C/C++ APIs to expedite application development. Device drivers are available for most on-chip infrastructure blocks/peripherals and for several external system components, such as flash memory, converters, audio/video codecs, etc. These drivers leverage the underlying System Services, which provide the same high-level APIs to work with power/clocks, DMA, interrupts, etc., and oftentimes the Device Drivers make the calls into the System Services automatically, removing the developer from bit-level concerns in configuration registers that may be required as a result of changes made at a high level. For example, if a change is made to the clock settings, the properly-used drivers and services will make sure that clock specifications are being met and that system-level adjustments such as DDR refresh rate are automatically checked and corrected, as needed.
+System Services and Device Drivers provide easy-to-use C/C++ APIs to expedite
+application development. Device drivers are available for most on-chip
+infrastructure blocks/peripherals and for several external system components,
+such as flash memory, converters, audio/video codecs, etc. These drivers
+leverage the underlying System Services, which provide the same high-level APIs
+to work with power/clocks, DMA, interrupts, etc., and oftentimes the Device
+Drivers make the calls into the System Services automatically, removing the
+developer from bit-level concerns in configuration registers that may be
+required as a result of changes made at a high level. For example, if a change
+is made to the clock settings, the properly-used drivers and services will make
+sure that clock specifications are being met and that system-level adjustments
+such as DDR refresh rate are automatically checked and corrected, as needed.
 
 With the introduction of CCES, the System Services and Devices Drivers have been upgraded to SSDD 2.0 from the 1.0 version that was available in VisualDSP++®. The System Services and Device Drivers provide easy-to-use C/C++ APIs to expedite application development. The documentation for these APIs is available via Online Help under **CrossCore Embedded Studio 2.x.x → System Run-Time Documentation → System Services and Device Drivers**.
 
@@ -38,7 +50,7 @@ Project Properties
 Each project or core (for multi-core processors) contains properties that control the build of the program, processor settings, linker and loader options, etc. To access the **Properties**, go to the **Project Explorer** view, right-click on your main project or core folder, and select **Properties**. The Properties window will appear, giving you many options to choose from. The most commonly accessed options are the **Processor Settings** and **Tool Settings** tabs located on **C/C++ Build → Settings** page, as shown in Figure 3.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/properties.png
-   :width: 600px
+   :width: 600
 
 *Figure 3. Settings Properties of Project*
 
@@ -51,4 +63,3 @@ Within this Property Settings window, you can modify the Tool Settings, such as 
 -  The **Build Steps** tab provides a means of adding command-line directives before and after those defined by the Tool Settings tab to be invoked automatically when the project is built. For example, launching the Command-Line Device Programmer to program the flash automatically after the loader file is generated by the build is supported in the Post-build steps on this tab.
 
 -  The **Build Artifact** tab gives the flexibility to modify the output file type for the project to generate a processor executable (DXE), a bootable loader image (LDR), or a static library to be included as part of other projects (DLB), controlled via the **Artifact Type** pull-down. For example, a DXE is what is needed to debug the code in a simulator or emulator session, which employs the tool chain up to and including the linker. Once fully debugged, the DXE needs to be made into a defined boot stream, which requires the Loader component of the tool chain as well. Changing the Artifact type to **Loader File** and setting the appropriate fields in the Loader property pages on the Tool Settings tab is all that is required.
-

@@ -10,7 +10,10 @@ Linux Drivers
 -  Pressure, temperature, and light sensors, etc.
 -  RF Transceivers (like the AD9361)
 
-The IIO Divers for the motor control solution require the HDL cores to have a specified register map. A DMA interface is set up for high speed data transfer using multiple multiplexed data channels. Below is the list of IIO drivers for the motor control solution.
+The IIO Divers for the motor control solution require the HDL cores to have a
+specified register map. A DMA interface is set up for high speed data transfer
+using multiple multiplexed data channels. Below is the list of IIO drivers for
+the motor control solution.
 
 +--------------------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | IIO DriverName     | Channel  | Description                                                                                                                                                                                            |
@@ -40,7 +43,9 @@ The IIO Divers for the motor control solution require the HDL cores to have a sp
 | **ad-mc-ctrl-m2**  | Not used |                                                                                                                                                                                                        |
 +--------------------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Each IIO driver has in the device tree and entry related to the actual driver and an entry corresponding to the allocated DMA. Below is an example of how the device tree looks for the motor control IIO drivers.
+Each IIO driver has in the device tree and entry related to the actual driver
+and an entry corresponding to the allocated DMA. Below is an example of how the
+device tree looks for the motor control IIO drivers.
 
 ::
 
@@ -167,4 +172,4 @@ Each IIO driver has in the device tree and entry related to the actual driver an
    };
 
 .. |IIO| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/software/iio_logo.png
-   :width: 200px
+   :width: 200

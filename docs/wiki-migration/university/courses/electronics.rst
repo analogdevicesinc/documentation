@@ -1,7 +1,11 @@
 Electronics I and II:
 =====================
 
-These course materials cover topics in the physics and operation of semiconductor diodes, bipolar junction transistors, and field-effect transistors in elementary analog circuits. Amplifier biasing, small-signal analysis, and frequency response. Elementary bipolar and MOSFET digital circuits, analog-to-digital and digital-to-analog conversion.
+These course materials cover topics in the physics and operation of
+semiconductor diodes, bipolar junction transistors, and field-effect transistors
+in elementary analog circuits. Amplifier biasing, small-signal analysis, and
+frequency response. Elementary bipolar and MOSFET digital circuits,
+analog-to-digital and digital-to-analog conversion.
 
 The textbooks and teaching materials provided on this wiki are considered open source and available for free use in non-commercial educational and academic settings. **The only requirement is that they continue to retain the attribution to Analog Devices Inc.** Supplying them on the ADI wiki allows registered users to contribute to the materials posted here improving the content and keeping them up to date.
 

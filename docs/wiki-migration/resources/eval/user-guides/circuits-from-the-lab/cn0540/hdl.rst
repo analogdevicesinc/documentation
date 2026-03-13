@@ -5,13 +5,17 @@ CN0540 HDL Reference Design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/cn0540/index.html\
 
-
 Overview
 --------
 
-The HDL reference design for the CN0540 provides all the interfaces that are necessary to interact with the devices on the 24-bit data acquisition system designed for IEPE sensors.
+The HDL reference design for the CN0540 provides all the interfaces that are
+necessary to interact with the devices on the 24-bit data acquisition system
+designed for IEPE sensors.
 
-The design have a SPI Engine instance to control and acquire data from the AD7768-1 24-bit precisions ADC, providing support to capture continuous samples at maximum sampling rate. Currently the design support FPGA carriers from both Intel and Xilinx.
+The design have a SPI Engine instance to control and acquire data from the
+AD7768-1 24-bit precisions ADC, providing support to capture continuous samples
+at maximum sampling rate. Currently the design support FPGA carriers from both
+Intel and Xilinx.
 
 Used devices
 ~~~~~~~~~~~~
@@ -56,7 +60,6 @@ HDL Downloads
    -  :git-hdl:`CN0540 HDL Project. <projects/cn0540>`
    
 
-
 Software sources
 ----------------
 
@@ -68,4 +71,3 @@ Software sources
    -  :git-linux:`Cora Z7-07S Linux Project. <tree/master>`
    -  :git-linux:`DE10-Nano Linux Project. <tree/master>`
    
-

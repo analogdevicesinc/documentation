@@ -3,11 +3,16 @@ EVAL-CN0410-ARDZ Shield Demo
 
 :adi:`CN0410` is an Arduino compatible shield that is optimized for smart agriculture to control current passing through LED's. The :adi:`CN0410` is used along the the CFTL-LED Bar that has LED's with specific wavelengths that plants utilize.
 
-The circuit shown below is a complete 3-channel single-supply, 16-bit unbuffered voltage output DAC that maintains ±2 LSB integral and differential nonlinearity by utilizing a CMOS DAC. This circuit has a voltage to current conversion that controls the amount of current passing through an LED by using a MOSFET in its configuration. The circuit also has an isoSPI repeater that allows multiple boards to be controlled with a single master.
+The circuit shown below is a complete 3-channel single-supply, 16-bit unbuffered
+voltage output DAC that maintains ±2 LSB integral and differential nonlinearity
+by utilizing a CMOS DAC. This circuit has a voltage to current conversion that
+controls the amount of current passing through an LED by using a MOSFET in its
+configuration. The circuit also has an isoSPI repeater that allows multiple
+boards to be controlled with a single master.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0410.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Demo Requirements
 -----------------
@@ -37,7 +42,12 @@ Setting up the Hardware
 Chip Select
 ~~~~~~~~~~~
 
-The chip select pin of the AD5686 is hardware configurable and routed to 3 general purpose I/O pins on the board. Use the table below to change the location of the chip select simply by moving the shunt on P21, and ensuring the software is configured the same way. By default the chip select is located on GPIO 8. This feature allows multiple boards using SPI communications protocol to be stacked on top of each other.
+The chip select pin of the AD5686 is hardware configurable and routed to 3
+general purpose I/O pins on the board. Use the table below to change the
+location of the chip select simply by moving the shunt on P21, and ensuring the
+software is configured the same way. By default the chip select is located on
+GPIO 8. This feature allows multiple boards using SPI communications protocol to
+be stacked on top of each other.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0410/cs.jpg
 
@@ -62,7 +72,8 @@ The software for EVAL-CN0410 does not require any particular configurations in o
 Outputting Data
 ---------------
 
-After the application starts the user can send commands to set the output of the DAC channels. Available commands:
+After the application starts the user can send commands to set the output of the
+DAC channels. Available commands:
 
 -  set_a value
 -  set_b value
@@ -73,12 +84,13 @@ The value can be between 0 and 65535.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0410_putty.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Serial Terminal Output
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Once the hardware and software is configured, user needs to follow on screen instructions to run EVAL-CN0410 demo.
+Once the hardware and software is configured, user needs to follow on screen
+instructions to run EVAL-CN0410 demo.
 
 Following is the UART configuration.
 
@@ -94,14 +106,19 @@ Following is the UART configuration.
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0410.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0410.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cn0410** can be found here:
 
@@ -117,7 +134,6 @@ The software for the **ADuCM3029_demo_cn0410** can be found here:
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0410 Source Code <projects/ADuCM3029_demo_cn0410>`
    
-
 
 How to use the Tools
 --------------------
@@ -146,4 +162,4 @@ The project is structured in 3 sections :
 |image1| // End of Document //
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0410_struct.png
-   :width: 400px
+   :width: 400

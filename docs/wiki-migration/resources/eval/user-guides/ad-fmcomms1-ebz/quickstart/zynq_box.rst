@@ -1,8 +1,6 @@
 FMComms1 Demo System
 ====================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,9 +17,9 @@ FMComms1 Demo System
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-Congratulations, you are about to assemble a demo system, which should have everything you need to properly demo the FMComms1 system and the Xilinx Zynq-7000 All Programmable SoC.
+Congratulations, you are about to assemble a demo system, which should have
+everything you need to properly demo the FMComms1 system and the Xilinx
+Zynq-7000 All Programmable SoC.
 
 If you don't have a box, and you need to self assemble your kit, please refer to the standard `zynq <https://wiki.analog.com/zynq>`_ documents.
 
@@ -40,7 +38,8 @@ Contents:
 
 Required external equipment:
 
--  HDMI Display device (Monitor, projector, HDMI capture card, etc) and HDMI cable.
+-  HDMI Display device (Monitor, projector, HDMI capture card, etc) and HDMI
+   cable.
 
 Instructions:
 
@@ -64,9 +63,9 @@ Here are some pictures showing the FMComms1 board connected to the Zedboard:
 |image1| |image2|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart/20130808_154634.jpg
-   :width: 400px
+   :width: 400
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart/20130808_153759.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart/20130808_154712.jpg
-   :width: 415px
+   :width: 415

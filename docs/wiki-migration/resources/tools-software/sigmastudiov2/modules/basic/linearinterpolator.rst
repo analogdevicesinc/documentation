@@ -12,9 +12,22 @@ Linear Interpolator
 Description
 -----------
 
-The Linear Interpolator maps an input function to a set of data points that are stored in an index table. If the input function does not align exactly with a table point, the output value will be approximated using a linear interpolant, or a line drawn between the two closest points on the index table. Linear interpolation is a common calculation for a variety of computing applications such as computer graphics. In SigmaStudio, it can be used to make an input-to-output transfer function for audio or control signals without requiring many table points or calculations
+The Linear Interpolator maps an input function to a set of data points that are
+stored in an index table. If the input function does not align exactly with a
+table point, the output value will be approximated using a linear interpolant,
+or a line drawn between the two closest points on the index table. Linear
+interpolation is a common calculation for a variety of computing applications
+such as computer graphics. In SigmaStudio, it can be used to make an
+input-to-output transfer function for audio or control signals without requiring
+many table points or calculations
 
-The linear interpolation cell performs interpolation of a data set. The input of the linear interpolation cell must lie between a set minimum and maximum value. The input values between the min and max input values are mapped linearly to an index number between 0 and n, with n representing the maximum index. For example, if input = min, then index 0 is selected. If input = max, then index n is selected. If the input lies halfway between two indices, then the output will be the average of the two corresponding points in the data set.
+The linear interpolation cell performs interpolation of a data set. The input of
+the linear interpolation cell must lie between a set minimum and maximum value.
+The input values between the min and max input values are mapped linearly to an
+index number between 0 and n, with n representing the maximum index. For
+example, if input = min, then index 0 is selected. If input = max, then index n
+is selected. If the input lies halfway between two indices, then the output will
+be the average of the two corresponding points in the data set.
 
 Targets Supported
 -----------------

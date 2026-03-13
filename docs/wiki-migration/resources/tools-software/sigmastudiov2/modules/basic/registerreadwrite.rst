@@ -8,14 +8,17 @@ Register Read or Write
 Description
 -----------
 
-The Register Read module reads any user accessible register from the DSP and gives out in the output Pin.
+The Register Read module reads any user accessible register from the DSP and
+gives out in the output Pin.
 
-The Register Write module writes the value in the input pin to the DSP register address configured.
+The Register Write module writes the value in the input pin to the DSP register
+address configured.
 
 Configuration
 -------------
 
-This module supports growth. Address control will be repeated for each channels when grown. And address can be specified either in hexadecimal or decimal.
+This module supports growth. Address control will be repeated for each channels
+when grown. And address can be specified either in hexadecimal or decimal.
 
 Variants
 --------

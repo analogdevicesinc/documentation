@@ -8,7 +8,7 @@ Arduino interface is found on many development platforms and is used on many pro
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pmd-ard-intz/board.png
    :alt: board.png
-   :width: 650px
+   :width: 650
 
 General Setup
 -------------
@@ -16,41 +16,52 @@ General Setup
 Power Source Settings
 ~~~~~~~~~~~~~~~~~~~~~
 
-The circuit is powered either by the voltages coming from the Arduino headers or the input DC voltage supplied from the barrel jack of the MCU baseboard. Switch S1 is used to choose where the system voltages (3.3V and 5V) is sourced from.
+The circuit is powered either by the voltages coming from the Arduino headers or
+the input DC voltage supplied from the barrel jack of the MCU baseboard. Switch
+S1 is used to choose where the system voltages (3.3V and 5V) is sourced from.
 
-Positioning S1 to ARD will cause the board to use voltage supplied from the MCU baseboard headers. Positioning S2 to LDO uses the DC voltage supplied from the barrel jack of the MCU baseboard, then regulated by LT1763-3.3 and LT1763-5 to provide the 3.3V and 5V system voltage respectively.
+Positioning S1 to ARD will cause the board to use voltage supplied from the MCU
+baseboard headers. Positioning S2 to LDO uses the DC voltage supplied from the
+barrel jack of the MCU baseboard, then regulated by LT1763-3.3 and LT1763-5 to
+provide the 3.3V and 5V system voltage respectively.
 
-A green LED (labeled DS1) should be lit to indicate that the board is powered up.
+A green LED (labeled DS1) should be lit to indicate that the board is powered
+up.
 
 .. important::
 
    Recommended external supply voltage is 7 to 13 volts.
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pmd-ard-intz/powersource.png
    :alt: powersource.png
-   :width: 200px
+   :width: 200
 
 Logic Voltage Settings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Each Pmod port has bidirectional voltage level translators. This enables compatibility with Pmod modules and MCU baseboards that has different logic voltage levels.
+Each Pmod port has bidirectional voltage level translators. This enables
+compatibility with Pmod modules and MCU baseboards that has different logic
+voltage levels.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pmd-ard-intz/logic_voltage.png
    :alt: logic_voltage.png
-   :width: 300px
+   :width: 300
 
-The logic voltage level of each Pmod port can be set to either 3.3V or 5V using the shunt connectors P4,P5,P6, and P7.
+The logic voltage level of each Pmod port can be set to either 3.3V or 5V using
+the shunt connectors P4,P5,P6, and P7.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pmd-ard-intz/vlogic.png
    :alt: vlogic.png
-   :width: 250px
+   :width: 250
 
-Meanwhile, the logic voltage source of the MCU baseboard can be chosen from the IOREF from the MCU baseboard header and the 3.3V and 5V system voltages using the shunt connector between P22 and P21 (encircled blue in Fig D). Preferably, this should be set to IOREF to ensure a proper voltage setting.
+Meanwhile, the logic voltage source of the MCU baseboard can be chosen from the
+IOREF from the MCU baseboard header and the 3.3V and 5V system voltages using
+the shunt connector between P22 and P21 (encircled blue in Fig D). Preferably,
+this should be set to IOREF to ensure a proper voltage setting.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pmd-ard-intz/ioref.png
    :alt: ioref.png
-   :width: 200px
+   :width: 200
 
 Reset Logic Active State
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,7 +70,7 @@ The reset button (S2) on PMD-ARD-INTZ resets the MCU baseboard and all of the Pm
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pmd-ard-intz/reset.png
    :alt: reset.png
-   :width: 400px
+   :width: 400
 
 Pmod Interface Types
 --------------------
@@ -69,7 +80,10 @@ The Pmod connectors on the PMD-ARD-INTZ follow the latest `Digilent Pmod Interfa
 SPI Ports
 ~~~~~~~~~
 
-Pmod ports (P11,P12, and P13) follows the expanded SPI interface. P11 and P12 are dedicated SPI ports while P13 can be configured to either expanded SPI or expanded UART. To configure P13 as expanded SPI, set the shunt connectors P8, P9, and P10 similiar to the encircled in Figure A.
+Pmod ports (P11,P12, and P13) follows the expanded SPI interface. P11 and P12
+are dedicated SPI ports while P13 can be configured to either expanded SPI or
+expanded UART. To configure P13 as expanded SPI, set the shunt connectors P8,
+P9, and P10 similiar to the encircled in Figure A.
 
 ======= ============= ============= =============
 Pin No. P11: SPI 0    P12: SPI 1    P13: SPI 2
@@ -90,12 +104,15 @@ Pin No. P11: SPI 0    P12: SPI 1    P13: SPI 2
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pmd-ard-intz/p13_spi.png
    :alt: p13_spi.png
-   :width: 200px
+   :width: 200
 
 I²C Port
 ~~~~~~~~
 
-Pmod port (P16) is designed to interface to both old and new I²C modules. The older versions of I²C pmod (2×4 connector) should be attached to pins 3-4 and 9-10 of P16 and new versions of I²C pmod (1×6 connector) should be attached to pins 1-6 or pins 7-12 of P16 as shown in the table below.
+Pmod port (P16) is designed to interface to both old and new I²C modules. The
+older versions of I²C pmod (2×4 connector) should be attached to pins 3-4 and
+9-10 of P16 and new versions of I²C pmod (1×6 connector) should be attached to
+pins 1-6 or pins 7-12 of P16 as shown in the table below.
 
 ======= ============ ============
 Pin No. P16: New I²C P16: Old I²C
@@ -114,16 +131,18 @@ Pin No. P16: New I²C P16: Old I²C
 12      VCC          VCC
 ======= ============ ============
 
-Pull-up resistors (4.7 kΩ) for SCL and SDA lines are also provided. Apply a short on solder jumpers P14, P15, P17, and P18 to use the pull-up resistors.
+Pull-up resistors (4.7 kΩ) for SCL and SDA lines are also provided. Apply a
+short on solder jumpers P14, P15, P17, and P18 to use the pull-up resistors.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pmd-ard-intz/i2c_pullup.png
    :alt: i2c_pullup.png
-   :width: 300px
+   :width: 300
 
 UART Port
 ~~~~~~~~~
 
-Pmod port (P13) can be reconfigured between an expanded SPI and expanded UART. To configure P13 as expanded UART, set the shunt connectors P8, P9, and P10.
+Pmod port (P13) can be reconfigured between an expanded SPI and expanded UART.
+To configure P13 as expanded UART, set the shunt connectors P8, P9, and P10.
 
 ======= =============
 Pin No. P13: UART
@@ -144,7 +163,7 @@ Pin No. P13: UART
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pmd-ard-intz/p13_uart.png
    :alt: p13_uart.png
-   :width: 200px
+   :width: 200
 
 --------------
 
@@ -163,13 +182,11 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/PMD-ARD-INTZ?&v=Rev D>`_ to receive all these great benefits and more!
-
 
 *End of document*

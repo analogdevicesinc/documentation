@@ -17,7 +17,8 @@ The script will:
 -  clone the ADI kernel tree
 -  download the Linaro GCC toolchain [if no other is specified]
 -  build the ADI kernel tree
--  export/copy the Image file and device tree file out of the kernel build folder
+-  export/copy the Image file and device tree file out of the kernel build
+   folder
 
 Running the script in one line [with defaults]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,10 +34,7 @@ Checkout the Release branch
 
    If not otherwise required always use the latest release!
 
-
 +----------------------------+
-
-
 
 | Release names and Branches |
 
@@ -73,7 +71,8 @@ Setup cross compile environment variables
 
 There are a few toolchains that can be used.
 
-Other toolchains/compilers for ARM may work as well, but the ones described here have been tested and found to work.
+Other toolchains/compilers for ARM may work as well, but the ones described here
+have been tested and found to work.
 
 Using the Linaro toolchain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,7 +94,8 @@ Example:
 Clone the ADI kernel tree
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you do not yet have a local copy of ADI's kernel tree, you can get it via git from:
+If you do not yet have a local copy of ADI's kernel tree, you can get it via git
+from:
 
 ::
 
@@ -104,7 +104,8 @@ If you do not yet have a local copy of ADI's kernel tree, you can get it via git
 Configure the kernel
 ~~~~~~~~~~~~~~~~~~~~
 
-Inside the repository, generate the configuration file before building the kernel tree.
+Inside the repository, generate the configuration file before building the
+kernel tree.
 
 ::
 

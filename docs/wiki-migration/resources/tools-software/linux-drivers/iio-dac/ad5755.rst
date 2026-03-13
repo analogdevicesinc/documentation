@@ -52,14 +52,24 @@ Files
 Example platform device initialization
 ======================================
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
-
-Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+Depending on the converter IC used, you may need to set the modalias
+accordingly, matching your part name. It may also required to adjust
+max_speed_hz. Please consult the datasheet, for maximum spi clock supported by
+the device in question.
 
 .. code:: c
 
@@ -94,12 +104,12 @@ Depending on the converter IC used, you may need to set the modalias accordingly
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD5755 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -122,8 +132,15 @@ Hardware configuration
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -171,7 +188,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r--    1 root     root          4096 Jan  2 21:54 uevent
    
 
-
 Show device name
 ----------------
 
@@ -186,13 +202,13 @@ Show device name
       ad5755
    
 
-
 Show scale
 ----------
 
 **Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_scale /sys/bus/iio/devices/iio:deviceX/out_currentY_scale
 
-scale to be applied to out_voltageY_raw/out_currentY_raw in order to obtain the measured voltage in millivolts.
+scale to be applied to out_voltageY_raw/out_currentY_raw in order to obtain the
+measured voltage in millivolts.
 
 .. container:: box bggreen
 
@@ -207,14 +223,14 @@ scale to be applied to out_voltageY_raw/out_currentY_raw in order to obtain the 
       0.000244100
    
 
-
 Show offset
 -----------
 
 | **Description:**
 | /sys/bus/iio/devices/iio:deviceX/out_offsetY_raw
 
-Raw offset to be applied to out_voltageY_raw in order to obtain the measured voltage in millivolts. The offset is applied before scale is applied.
+Raw offset to be applied to out_voltageY_raw in order to obtain the measured
+voltage in millivolts. The offset is applied before scale is applied.
 
 .. container:: box bggreen
 
@@ -228,7 +244,6 @@ Raw offset to be applied to out_voltageY_raw in order to obtain the measured vol
       root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat out_current0_offset
       16384
    
-
 
 Set channel Y output voltage
 ----------------------------
@@ -247,7 +262,6 @@ Raw (unscaled, no bias etc.) output voltage/current for channel Y.
       root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> echo 10000 > out_voltage2_raw
    
 
-
 **U** = *(out_voltage2_raw + out_voltage2_offset) \* out_voltage2_scale* = (10000 - TBD) \* 0,038140 *mV* = **TBD mV** **I** = *(out_current0_raw + out_current0_offset) \* out_current0_scale* = (10000 + 16384) \* 0,000244100 *mV* = **6.4403344 mA**
 
 Calibrate channel Y gain
@@ -255,7 +269,9 @@ Calibrate channel Y gain
 
 **Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_calibscale /sys/bus/iio/devices/iio:deviceX/out_currentY_calibscale
 
-Each channel has an adjustable gain which can be used to calibrate the channel's scale and compensate for full-scale errors. The default value is 65535, minium value is 0, maximum value is 65535.
+Each channel has an adjustable gain which can be used to calibrate the channel's
+scale and compensate for full-scale errors. The default value is 65535, minium
+value is 0, maximum value is 65535.
 
 If scale calibration is used the following formula can be used calculate the output voltage: **U** = *( ( ( out_voltageY_raw + out_voltageY_offset ) \* ( out_voltageY_calibscale + 1 ) ) / 2^16 + out_voltageY_calibbias ) \* out_voltageY_scale*
 
@@ -264,14 +280,17 @@ Calibrate channel Y offset
 
 **Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_calibbias /sys/bus/iio/devices/iio:deviceX/out_currentY_calibbias
 
-Each channel has an adjustable offset which can be used to calibrate the channel's offset and compensate for zero-scale errors. The default value is 0, minium value is -32768, maximum value is 32767.
+Each channel has an adjustable offset which can be used to calibrate the
+channel's offset and compensate for zero-scale errors. The default value is 0,
+minium value is -32768, maximum value is 32767.
 
 If offset calibration is used the following formula can be used calculate the output voltage: **U** = *( ( ( out_voltageY_raw + out_voltageY_offset ) \* ( out_voltageY_calibscale + 1 ) ) / 2^16 + out_voltageY_calibbias ) \* out_voltageY_scale*
 
 Enable power down mode for the device
 -------------------------------------
 
-/sys/bus/iio/devices/iio:deviceX/out_voltageY_powerdown /sys/bus/iio/devices/iio:deviceX/out_currentY_powerdown
+/sys/bus/iio/devices/iio:deviceX/out_voltageY_powerdown
+/sys/bus/iio/devices/iio:deviceX/out_currentY_powerdown
 
 **Description:** Writing 1 causes channel Y to enter power down mode. Clearing returns to normal operation.
 
@@ -289,7 +308,6 @@ Enable power down mode for the device
       root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat out_voltage2_powerdown
       0
    
-
 
 More Information
 ================
@@ -312,6 +330,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/youtube>p_vntewue24
-

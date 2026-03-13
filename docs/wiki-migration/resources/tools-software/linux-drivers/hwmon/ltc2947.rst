@@ -53,7 +53,9 @@ Files
 Example I2C & SPI device initialization
 =======================================
 
-The LTC2947 supports both I2C and SPI interfaces, so one of the drivers can be used depending on which kind of device is instantiated. Currently, the devices can only be instantiated via device tree.
+The LTC2947 supports both I2C and SPI interfaces, so one of the drivers can be
+used depending on which kind of device is instantiated. Currently, the devices
+can only be instantiated via device tree.
 
 Required devicetree properties:
 
@@ -97,17 +99,19 @@ For more supported devicetree properties take a look to :git-linux:`dt-bindings 
 Enabling Linux driver support
 =============================
 
-Configure kernel with “make menuconfig” (alternatively use “make xconfig” or “make qconfig”).
+Configure kernel with “make menuconfig” (alternatively use “make xconfig” or
+“make qconfig”).
 
 .. hint::
 
-   The LTC2947 SPI driver depends CONFIG_SPI and the LTC2947 I2C driver depends on CONFIG_I2C.
-
+   The LTC2947 SPI driver depends CONFIG_SPI and the LTC2947 I2C driver depends
+   on CONFIG_I2C.
 
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -129,7 +133,12 @@ Driver testing
 HWMON device files
 ------------------
 
-Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX, where X is the hwmon device index. Under every of these directory folders there are a set of files, depending on what kind of hardware monitoring is supported (temperature, voltage). In order to determine which hwmon device corresponds to which hardware chip, the user can read the name file under /sys/class/hwmon/hwmonX/name.
+Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX,
+where X is the hwmon device index. Under every of these directory folders there
+are a set of files, depending on what kind of hardware monitoring is supported
+(temperature, voltage). In order to determine which hwmon device corresponds to
+which hardware chip, the user can read the name file under
+/sys/class/hwmon/hwmonX/name.
 
 .. container:: box bggreen
 
@@ -224,7 +233,6 @@ Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX, w
       root:/sys/class/hwmon/hwmon1>
    
 
-
 For each type of monitored value (current, power), the file will look like **:math:`{type}_`\ {monitored_value}\_\ :math:`{channel}**, where **`\ {monitored_value}** can be the current value, the high threshold, etc... The channel is the index when, for example, a device can monitor more than one voltage. For more information on the files format, take a look to `sysfs-interface <https://www.kernel.org/doc/Documentation/hwmon/sysfs-interface>`_.
 
 Show device name
@@ -241,11 +249,11 @@ Show device name
       ltc2947
    
 
-
 Show current values
 ~~~~~~~~~~~~~~~~~~~
 
-The device supports readings of current, voltage, power, temperature and energy. To get, for example, the value of the monitored voltage:
+The device supports readings of current, voltage, power, temperature and energy.
+To get, for example, the value of the monitored voltage:
 
 .. container:: box bggreen
 
@@ -257,7 +265,6 @@ The device supports readings of current, voltage, power, temperature and energy.
       root:/sys/class/hwmon/hwmon1> cat in0_input
       4910
    
-
 
 Show highest read value
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -273,7 +280,6 @@ Show highest read value
       5026
    
 
-
 Show lowest read value
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -287,7 +293,6 @@ Show lowest read value
       root:/sys/class/hwmon/hwmon1> cat in0_lowest
       4754
    
-
 
 Show high threshold
 ~~~~~~~~~~~~~~~~~~~
@@ -303,7 +308,6 @@ Show high threshold
       5500
    
 
-
 Show low threshold
 ~~~~~~~~~~~~~~~~~~
 
@@ -317,7 +321,6 @@ Show low threshold
       root:/sys/class/hwmon/hwmon1> cat in0_min
       4500
    
-
 
 Show high threshold alarm
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -333,7 +336,6 @@ Show high threshold alarm
       0
    
 
-
 Show low threshold alarm
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -347,7 +349,6 @@ Show low threshold alarm
       root:/sys/class/hwmon/hwmon1> cat in0_min_alarm
       0
    
-
 
 Show fault
 ~~~~~~~~~~
@@ -365,11 +366,11 @@ When the **:math:`{type}_`\ {channel}_fault** files are present, the user can re
       0
    
 
-
 Show label
 ~~~~~~~~~~
 
-Some channels, support a label attribute which specifies the name of the channel being monitored.
+Some channels, support a label attribute which specifies the name of the channel
+being monitored.
 
 .. container:: box bggreen
 
@@ -382,11 +383,12 @@ Some channels, support a label attribute which specifies the name of the channel
       DVCC
    
 
-
 Show Overflow alarm
 ~~~~~~~~~~~~~~~~~~~
 
-These properties are custom and not part of the sysfs-hwmon interface. However, the device set's an alarm when register overflow is near for accumulated values (in this case, energy).
+These properties are custom and not part of the sysfs-hwmon interface. However,
+the device set's an alarm when register overflow is near for accumulated values
+(in this case, energy).
 
 .. container:: box bggreen
 
@@ -398,7 +400,6 @@ These properties are custom and not part of the sysfs-hwmon interface. However, 
       root:/sys/class/hwmon/hwmon1> cat energy1_overflow_alarm
       0
    
-
 
 Set High threshold
 ~~~~~~~~~~~~~~~~~~
@@ -413,7 +414,6 @@ Set High threshold
       root:/sys/class/hwmon/hwmon1> echo 5500 > in0_max
    
 
-
 Set Low threshold
 ~~~~~~~~~~~~~~~~~
 
@@ -427,7 +427,6 @@ Set Low threshold
       root:/sys/class/hwmon/hwmon1> echo 4500 > in0_min
    
 
-
 Reset History
 ~~~~~~~~~~~~~
 
@@ -440,7 +439,6 @@ Reset History
    
       root:/sys/class/hwmon/hwmon1> echo 1 > in0_reset_history
    
-
 
 More Information
 ================
@@ -456,4 +454,3 @@ HWMON pointers
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

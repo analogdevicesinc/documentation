@@ -15,7 +15,9 @@ The :adi:`AD5933` is a high precision impedance converter system solution that c
 Quick Start Guide
 -----------------
 
-The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided in the project \*.zip file combines the FPGA bit file and
+the SDK elf files. It may be used for a quick check on the system. All you need
+is the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -29,12 +31,11 @@ Required Software
 ~~~~~~~~~~~~~~~~~
 
 -  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
--  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet
+   LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
@@ -44,46 +45,60 @@ Running Demo (SDK) Program
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
-
 Avnet LX9 MicroBoard Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD5933\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD5933\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodIA to J5 connector of LX9 board, pins 3 to 6 (see image below). You must use an extension cable. . Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+To begin, connect the PmodIA to J5 connector of LX9 board, pins 3 to 6 (see
+image below). You must use an extension cable. . Connect the USB cable from the
+PC to the USB-UART female connector of the board for the UART terminal. The
+board will be programmed through its USB male connector.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia.jpg
    :alt: PmodIA and LX-9
-   :width: 200px
+   :width: 200
 
 Digilent Nexys™3 Spartan-6 FPGA Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD5933\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD5933\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodIA to JA connector of Nexys™3 board, pins JA3 to JA6 (see image below). You must use an extension cable. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodIA to JA connector of Nexys™3 board, pins JA3 to JA6
+(see image below). You must use an extension cable. Connect the USB cables from
+the PC to the board, one for programming (Digilent USB device) and one for the
+UART terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_nexys3.jpg
    :alt: PmodIA and Nexys™3
-   :width: 200px
+   :width: 200
 
 Avnet ZedBoard
 ~~~~~~~~~~~~~~
 
-To begin, connect the PmodIA to JC1 connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodIA to JC1 connector of ZedBoard (see image below). You
+can use an extension cable for ease of use. Connect the USB cables from the PC
+to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_zed.jpg
    :alt: PmodIA and ZedBoard
-   :width: 400px
+   :width: 400
 
 FPGA Configuration for Nexys3 and LX-9 MicroBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad5933/sw/AD5933.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to appropiate baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../ad5933/sw/AD5933.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodiaimpact.jpg
    :alt: Programming FPGA in IMPACT
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for ZedBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,10 +107,17 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in
+   download.bat to match your Xilinx Installation path.
 
-
-If programming was successful, you should be seeing messages appear on the terminal window as shown in the figures below. After programming the AD5933 device, the program will automatically read the temperature value of the AD5933. Afterwards it will start a calibration process. Use a 47 Kohm resistor for this purpose. After calibration is complete, the user will be promped to change the 47 Kohm resistor with the desired component for measurement, and press [Enter] afterwards. The result of the measurement will be printed on the terminal window both in ohms and Kohms.
+If programming was successful, you should be seeing messages appear on the
+terminal window as shown in the figures below. After programming the AD5933
+device, the program will automatically read the temperature value of the AD5933.
+Afterwards it will start a calibration process. Use a 47 Kohm resistor for this
+purpose. After calibration is complete, the user will be promped to change the
+47 Kohm resistor with the desired component for measurement, and press [Enter]
+afterwards. The result of the measurement will be printed on the terminal window
+both in ohms and Kohms.
 
 |UART messeges| |image1| |image2|
 
@@ -112,13 +134,16 @@ The reference design is a consists of an IIC interface between the FPGA and the 
    
    -  Connecting the PmodIA to the boards using an extension cable is mandatory.
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
-   -  The default value for the calibration resistor is 47 Kohms. If another resistor is used for calibration, please modify the parameter value in main.c, AD5933_CalculateGainFactor function.
+   -  The default value for the calibration resistor is 47 Kohms. If another
+      resistor is used for calibration, please modify the parameter value in
+      main.c, AD5933_CalculateGainFactor function.
    
-
 
 .. important::
 
-   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+   When using the ZedBoard reference design in order to develop your own
+   software, please make sure that the following options are set in
+   "system_config.h":
 
    
    .. code:: c
@@ -138,7 +163,6 @@ The reference design is a consists of an IIC interface between the FPGA and the 
    
    If you encounter a compilation error regarding functions from "math.h", please follow the answer from Xilinx in order to enable the Math Libraries: http://www.xilinx.com/support/answers/52971.htm
    
-
 
 Downloads
 ---------
@@ -163,7 +187,6 @@ Downloads
    -  :git-no-OS:`Programming Script <Pmods/PmodIA/bin>`
    
 
-
 Linux Device Driver
 ===================
 
@@ -175,11 +198,15 @@ Preparing the SD Card
 In order to prepare the SD Card for booting Linux on the ZedBoard:
 
 -  Download the device tree: :git-no-OS:`PmodIA Linux devicetree <Pmods/PmodIA/dts>`
--  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
+-  Follow the instructions on the following wiki page, but use the device tree
+   downloaded on the previous step
 
    -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
 
-Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD
+Card and power on the board. If everything is correct, the system should boot
+up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate
+115200.
 
 There are 2 ways to test the driver.
 
@@ -191,7 +218,8 @@ Using the terminal window
 
 Open a new terminal window by pressing **Ctrl+Alt+T**.
 
-Navigate to the location of the device and identify it using the following commands:
+Navigate to the location of the device and identify it using the following
+commands:
 
 ::
 
@@ -311,7 +339,8 @@ Show internal temperature
 
 **Description**: Shows temperature in milli degrees Celsius.
 
-The on-chip temperature sensor allows an accurate measurement of the ambient device temperature. The measurement range of the sensor is −40°C to +125°C.
+The on-chip temperature sensor allows an accurate measurement of the ambient
+device temperature. The measurement range of the sensor is −40°C to +125°C.
 
 ::
 
@@ -321,7 +350,13 @@ The on-chip temperature sensor allows an accurate measurement of the ambient dev
 Buffer Management
 ~~~~~~~~~~~~~~~~~
 
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -380,7 +415,9 @@ index         datum              type
 
 Z = **in_voltage0_real_raw** + i \**in_voltage0_imag_raw**
 
-The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+The commands written above can also be used if not using an HDMI monitor and a
+wireless keyboard, by using a serial terminal, and typing the commands after the
+system boot-up is complete.
 
 More information
 ----------------
@@ -392,8 +429,8 @@ More information
    :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |UART messeges| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_menu1.jpg
-   :width: 600px
+   :width: 600
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_menu2.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_menu3.jpg
-   :width: 600px
+   :width: 600

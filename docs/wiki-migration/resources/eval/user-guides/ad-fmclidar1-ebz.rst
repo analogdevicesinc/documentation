@@ -5,7 +5,6 @@ AD-FMCLIDAR1-EBZ
 
    \ NOTE: Support for the ad_fmclidar_ebz is discontinued on all supported carriers: Arria10 SOC, zc706 and zcu102. ad_fmclidar_ebz will not be supported in future releases, last release in which pre-build files can be found is 2021_r1. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all available Kuiper Linux releases.
 
-
 Introduction
 ------------
 
@@ -22,7 +21,7 @@ The :adi:`AD-FMCLIDAR1-EBZ <en/design-center/evaluation-hardware-and-software/ev
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/lidar_system_1.jpg
    :alt: Complete system assembled including additional optics and FPGA board
    :align: right
-   :width: 400px
+   :width: 400
 
 -  1D Non-Scanning LiDAR
 -  Horizontal resolution 16 pixels
@@ -43,7 +42,7 @@ The :adi:`AD-FMCLIDAR1-EBZ <en/design-center/evaluation-hardware-and-software/ev
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/highlevel_blk_dig.png
    :align: right
-   :width: 400px
+   :width: 400
 
 **DAQ Board**
 
@@ -66,7 +65,6 @@ The :adi:`AD-FMCLIDAR1-EBZ <en/design-center/evaluation-hardware-and-software/ev
 
    For more information and how to buy the system please goto the :adi:`Analog Devices AD-FMCLIDAR1-EBZ Product page <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/AD-FMCLIDAR1-EBZ.html>`
 
-
 --------------
 
 System setup & evaluation
@@ -77,7 +75,7 @@ The development kit is delivered with an SD card containing the evaluation softw
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/box_contents.jpg
    :alt: Box contents
    :align: right
-   :width: 400px
+   :width: 400
 
 This is what you'll find in the development kit box:
 
@@ -96,7 +94,6 @@ The tripod shown in the system picture from the **Introduction** section is not 
 
    :doc:`Getting the system up and running </wiki-migration/resources/eval/user-guides/ad-fmclidar1-ebz/system_evaluation>`
 
-
 --------------
 
 Application Development
@@ -105,15 +102,20 @@ Application Development
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/lidar_sw_fwrk.png
    :alt: SDK Architecture
    :align: right
-   :width: 300px
+   :width: 300
 
-The Lidar Prototyping Platform software framework is common across all hardware variants, developed with industry standard tools and interfaces. The necessary parameters are exposed for customers to develop their own proprietary solutions. Support is provided to cover a broad base of operating systems used across different industry areas. There is a proven ADI JESD framework available to reduce development complexity and time, and guarantees deterministic transfer of data from the APD to the host processing system.
+The Lidar Prototyping Platform software framework is common across all hardware
+variants, developed with industry standard tools and interfaces. The necessary
+parameters are exposed for customers to develop their own proprietary solutions.
+Support is provided to cover a broad base of operating systems used across
+different industry areas. There is a proven ADI JESD framework available to
+reduce development complexity and time, and guarantees deterministic transfer of
+data from the APD to the host processing system.
 
 .. admonition:: Download
    :class: download
 
    :git-hdl:`Access the LiDAR Prototyping Platform software and get started <projects/ad_fmclidar1_ebz>`
-
 
 --------------
 
@@ -122,20 +124,25 @@ Laser Safety
 
 .. important::
 
-   This device complies with International Standards IEC 60825-1:2014 & 2007 for a Class 1 laser product. This device also complies with 21 CFR 1040.10 and 1040.11 except for deviations pursuant to Laser Notice No. 50, dated June 24, 2007. Only use Software and Firmware updates that are specifically provided for this solution.
+   This device complies with International Standards IEC 60825-1:2014 & 2007 for
+   a Class 1 laser product. This device also complies with 21 CFR 1040.10 and
+   1040.11 except for deviations pursuant to Laser Notice No. 50, dated June 24,
+   2007. Only use Software and Firmware updates that are specifically provided
+   for this solution.
 
    
    `Laser Certification Report <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/report_2223_fmclidar1_60825_classification.pdf>`_
    
    `Additional values tested <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/fmclidar1_additional_testing.pdf>`_
 
-
 --------------
 
 Example
 -------
 
-As an example to prove out the overall system functionality a demo using select optics was chosen to have the capability to detect an object of approximately 1m x 1m in size at 60m range with 50% reflective characteristic.
+As an example to prove out the overall system functionality a demo using select
+optics was chosen to have the capability to detect an object of approximately 1m
+x 1m in size at 60m range with 50% reflective characteristic.
 
 -  For the AFE Board a 1"(25.4mm) diameter lens, option from Thorlabs LA1951-B-N-BK7, was chosen (included in the box)
 -  For the laser board a custom Fast Axis Collimator optic was selected to narrow the vertical FoV from 30°(natural dispersion of the laser) down to 1° to help achieve the 60m range. Mounting of these lenses requires a custom lens holder and also active lens alignment fitting during the manufacturing process. This was done at `FISBA <https://www.fisba.com/>`_, a worldwide leading supplier of customized optical components, systems and microsystems with locations across Europe and in the US.
@@ -144,7 +151,6 @@ As an example to prove out the overall system functionality a demo using select 
 .. note::
 
    Application note: `Making distance measurements with the AD-FMCLIDAR1-EBZ <https://wiki.analog.com/_media/resources/eval/user-guides/lidar_measurement.pdf>`_
-
 
 --------------
 
@@ -156,7 +162,7 @@ Videos & Articles
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/:adi:`-/media/images/analog-dialogue/en/volume-54/number-1/articles/open-source-lidar-prototyping-platform/open-source-lidar-prototyping-platform.jpg`
    :alt: :adi:`-/media/images/analog-dialogue/en/volume-54/number-1/articles/open-source-lidar-prototyping-platform/open-source-lidar-prototyping-platform.jpg`
    :align: left
-   :width: 200px
+   :width: 200
 
 :adi:`Open-Source LIDAR Prototyping Platform <analog-dialogue/articles/open-source-lidar-prototyping-platform>`
 
@@ -165,12 +171,12 @@ Videos & Articles
 Help and Support
 ----------------
 
-For questions and more information please contact us on the Analog Devices Engineer Zone.
+For questions and more information please contact us on the Analog Devices
+Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <depth-perception-ranging-technologies/lidar-solutions>`
-
 
 .. |youtube>776jK4yPvjI| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>776jk4ypvji
 .. |youtube>uOehjnhe7Zc| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>uoehjnhe7zc

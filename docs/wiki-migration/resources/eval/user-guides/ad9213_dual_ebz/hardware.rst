@@ -6,21 +6,21 @@ Evaluation Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213_dual_ebz_layout.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Scalable Clocking Architecture
 ------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9213_dual_ebz_scalable_architecture_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Power Distribution Network
 --------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9213_dual_ebz_power_distribution_network_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Downloads
 =========

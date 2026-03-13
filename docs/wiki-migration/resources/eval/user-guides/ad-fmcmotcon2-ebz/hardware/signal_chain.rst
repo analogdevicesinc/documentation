@@ -1,7 +1,11 @@
 AD-FMCMOTCON2-EBZ Signal Measurement Chain
 ==========================================
 
-The motor control system allows the measurement of the Ia(phase A current), Ib(phase B current) and Vbus using signal chains which involve components from both the controller and low voltage driver boards. The entire analog frontend is placed on the drive board and only digital signals are exchanged between the controller and drive boards.
+The motor control system allows the measurement of the Ia(phase A current),
+Ib(phase B current) and Vbus using signal chains which involve components from
+both the controller and low voltage driver boards. The entire analog frontend is
+placed on the drive board and only digital signals are exchanged between the
+controller and drive boards.
 
 Ia, Ib Measurement Signal Chain
 -------------------------------
@@ -11,7 +15,7 @@ The Ia and Ib currents are sensed using 10mΩ shunt resistors. The ADC is placed
 The equation for calculating Ia or Ib is: :math:`I = (ADCvalue - 2^{ADCbits-1}) \times ADCrange / 2^{ADCbits-1} \times R_shunt` where $delimlbracematrix{4}{1}\ |R_shunt = 10e-3 Ω} {ADCrange = 320e-3 V} {ADCbits = 16| $
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/current_chain.png
-   :width: 800px
+   :width: 800
 
 Vbus Measurement Signal Chain
 -----------------------------
@@ -21,6 +25,6 @@ Vbus sensing is done on the drive board using a resistive divider and the :adi:`
 The equation for calculating Vbus is: :math:`V = (ADCvalue-2^{ADCbits-1}) \times ADCrange / 2^{ADCbits-1} \times gain` where :math:`\displaystyle delimlbracematrix{5}{1}{{ADCrange = 320e-3 V} {ADCbits = 16 } \frac{gain=1}{220.1} }{ }`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/vbus_chain.png
-   :width: 800px
+   :width: 800
 
 .. |R_shunt = 10e-3 Ω} {ADCrange = 320e-3 V} {ADCbits = 16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/r_shunt_=_10e-3_ω}_{adcrange_=_320e-3_v}_{adcbits_=_16

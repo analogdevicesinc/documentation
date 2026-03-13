@@ -12,5 +12,5 @@ Refer :doc:`steps to run sample demo in PC as host </wiki-migration/resources/to
 
 .. note::
 
-   Jumper setting and board setup of AD2328 is similar to AD2428 and therefore the same can be used
-
+   Jumper setting and board setup of AD2328 is similar to AD2428 and therefore
+   the same can be used

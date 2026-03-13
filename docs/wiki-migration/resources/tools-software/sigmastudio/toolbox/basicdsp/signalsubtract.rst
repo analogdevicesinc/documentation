@@ -35,12 +35,17 @@ Input_Pin 0 any - any                          Difference term
 Algorithm Description
 ~~~~~~~~~~~~~~~~~~~~~
 
-A standard subtraction operation is performed. When the algorithm is grown new input pins appear. These input pins represent more subtrahend terms so that the resulting output formula is: Output_Pin 0 = Input_Pin 0 - (Input_Pin1 + Input_Pin2 + Input_Pin3 + ... Input_PinN)
+A standard subtraction operation is performed. When the algorithm is grown new
+input pins appear. These input pins represent more subtrahend terms so that the
+resulting output formula is: Output_Pin 0 = Input_Pin 0 - (Input_Pin1 +
+Input_Pin2 + Input_Pin3 + ... Input_PinN)
 
 Example
 ~~~~~~~
 
-The subtraction block can be used along with other arithmetic operators to realize many typical DSP functions. It is a basic building block that allows difference operations to be performed.
+The subtraction block can be used along with other arithmetic operators to
+realize many typical DSP functions. It is a basic building block that allows
+difference operations to be performed.
 
 The subtraction block can also be useful when debugging a schematic project. In the following example subtraction is used to compare the output of the :doc:`Crossover Filter </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/crossover>` and two separate :doc:`General 2nd Order </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/general2ndorder>` filters set-up to do a cross-over functionality. By subtracting the two "low" outputs and the two "high" outputs, you can verify that both filters are the same if the resulting output in the :doc:`Readback </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp/dspreadback>` window is 0.
 
@@ -75,7 +80,9 @@ Algorithm Details
 Subtraction (Complex Signals)
 -----------------------------
 
-This algorithm subtracts the complex signals. (All real parts are subtracted to the first signal's real part and all imaginary parts are subtracted to first signals imaginary part)This is a block based module.
+This algorithm subtracts the complex signals. (All real parts are subtracted to
+the first signal's real part and all imaginary parts are subtracted to first
+signals imaginary part)This is a block based module.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/complexsubtract.jpg
    :align: center

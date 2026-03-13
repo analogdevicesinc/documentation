@@ -2,20 +2,29 @@
 
    Under Development
 
-
 EVAL-CN0561-ARDZ User Guide
 ===========================
 
 Overview
 --------
 
-Monitoring the health of machinery can help predict changes in a machine’s condition. There are many methods of tracking a machine’s condition, but vibration analysis is the most commonly used one. By tracking the vibration analysis data over time, one can determine when a fault or failure is going to occur, along with the source of the fault. Knowing the condition of a certain machine will help not only increase efficiency and productivity, but create a safer working environment.
+Monitoring the health of machinery can help predict changes in a machine’s
+condition. There are many methods of tracking a machine’s condition, but
+vibration analysis is the most commonly used one. By tracking the vibration
+analysis data over time, one can determine when a fault or failure is going to
+occur, along with the source of the fault. Knowing the condition of a certain
+machine will help not only increase efficiency and productivity, but create a
+safer working environment.
 
-The reference design shown below, shows a high resolution, wide-bandwidth, high dynamic range, Integrated Electronics Piezoelectric (IEPE) compatible interface data acquisition system (DAQ) for interfacing with Integrated Circuit Piezo (ICP)/IEPE piezo vibration sensors. This reference design is an AC-coupled solution targeted for wide band IEPE based sensors.
+The reference design shown below, shows a high resolution, wide-bandwidth, high
+dynamic range, Integrated Electronics Piezoelectric (IEPE) compatible interface
+data acquisition system (DAQ) for interfacing with Integrated Circuit Piezo
+(ICP)/IEPE piezo vibration sensors. This reference design is an AC-coupled
+solution targeted for wide band IEPE based sensors.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/circuits-from-the-lab/cn0561/eval-cn0561-ardz_angle-evaluation-board.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 By looking at the complete data set from the vibration sensor in the frequency domain (DC – 50 kHz), the type and source of a machine fault can be better predicted using the; position, amplitude and number of harmonics found in the FFT spectrum.
 
@@ -25,13 +34,13 @@ Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/blockdiagramcn561.jpg
-   :width: 1000px
+   :width: 1000
 
 Simplified Signal Chain Schematic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/figure_1_2.jpg
-   :width: 800px
+   :width: 800
 
 Features
 ~~~~~~~~
@@ -39,7 +48,8 @@ Features
 -  Data acquisition solution fully characterized over -40°C to 85°C
 -  Throughput of up to 1496 kSPS
 -  Alias-free and resistive inputs: No low pass filter or Driver needed
--  Powered and interfaced directly through an Arduino compatible development board
+-  Powered and interfaced directly through an Arduino compatible development
+   board
 
 --------------
 
@@ -59,7 +69,8 @@ Equipment Required
 -  NUCLEO-H563ZI board
 -  IIO Occilloscope Software
 -  USB Type C to USB cable
--  Precision AC source (for example, AP2700, Brüel & Kjær, or similar precision sine generator)
+-  Precision AC source (for example, AP2700, Brüel & Kjær, or similar precision
+   sine generator)
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
@@ -67,14 +78,17 @@ Hardware Connection
 The basic test setup requires the EVAL-CN0561-ARDZ board to be plugged into the Nucelo-H563ZI board. The Nucleo H563ZI board is required to capture and display the data. Software is available on this page: :doc:`/wiki-migration/resources/tools-software/linux-software/iio_oscilloscope`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_7.png
-   :width: 600px
+   :width: 600
 
-Mount the EVAL-CN0561-ARDZ evaluation board on the carrier board (NUCLEO-H563ZI) by plugging it into the Arduino header as shown below.
+Mount the EVAL-CN0561-ARDZ evaluation board on the carrier board (NUCLEO-H563ZI)
+by plugging it into the Arduino header as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_8.jpg
-   :width: 600px
+   :width: 600
 
-To test the basic functionality of the board, connect a precision, high quality sine wave or arbitrary waveform generator to the analog input connector of the EVAL-CN0561-ARDZ board.
+To test the basic functionality of the board, connect a precision, high quality
+sine wave or arbitrary waveform generator to the analog input connector of the
+EVAL-CN0561-ARDZ board.
 
 Follow these steps to set up the EVAL-CN0561-ARDZ and the associated software:
 
@@ -100,7 +114,8 @@ Follow these steps to set up the EVAL-CN0561-ARDZ and the associated software:
 Connectors
 ~~~~~~~~~~
 
-All connectors listed below provide extensive options for playing around with the data acquisition board.
+All connectors listed below provide extensive options for playing around with
+the data acquisition board.
 
 -  P1, P2, P4, P5: Arduino Connectors
 -  P17: Arduino Zio connector
@@ -117,13 +132,13 @@ Arduino Pin Assignments
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino.jpg
-   :width: 600px
+   :width: 600
 
 Test points
 ~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/testpoint.jpg
-   :width: 600px
+   :width: 600
 
 Configurations
 ~~~~~~~~~~~~~~
@@ -140,14 +155,16 @@ Configurations
 
 **Instrumentation Amplifier Gain Settings**
 
-Gain is controlled using GPIO functionality of AD4134 which is accessible using SPI.
+Gain is controlled using GPIO functionality of AD4134 which is accessible using
+SPI.
 
-Please configure the GPIO's as output using the GPIO_DIR_CTRL register. Use the GPIO_DATA to write High and low levels on the pins.
+Please configure the GPIO's as output using the GPIO_DIR_CTRL register. Use the
+GPIO_DATA to write High and low levels on the pins.
 
 Gain settings are same for group of CH0 & CH1, and for group CH2 & CH3.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/user_guide_gain_cn0561.jpg
-   :width: 600px
+   :width: 600
 
 LED Indicators
 ~~~~~~~~~~~~~~
@@ -157,7 +174,8 @@ LED Indicators
 Host Processor Connector
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Arduino and Zio Connectors: P1, P2, P4, P5 & P17. These connect to 3.3V Arduino boards
+-  Arduino and Zio Connectors: P1, P2, P4, P5 & P17. These connect to 3.3V
+   Arduino boards
 
 Precision Converters Firmware Build Guide
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -177,7 +195,6 @@ Schematic, PCB Layout, Bill of Materials
    -  PCB Layout
    -  Bill of Materials
    
-
 
 Additional Information and Useful Links
 ---------------------------------------

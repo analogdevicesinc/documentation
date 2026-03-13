@@ -1,7 +1,8 @@
 Tools and Driver Details
 ========================
 
-This chapter provides all the necessary steps to download, install, and setup the software environment from Analog Devices.
+This chapter provides all the necessary steps to download, install, and setup
+the software environment from Analog Devices.
 
 It contains two main sections:
 

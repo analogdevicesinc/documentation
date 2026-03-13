@@ -1,7 +1,6 @@
 ADP5589 - No-OS Driver for Renesas Microcontroller Platforms
 ============================================================
 
-
 Supported Devices
 =================
 
@@ -15,7 +14,6 @@ Evaluation Boards
 Overview
 ========
 
-
 The :adi:`ADP5589` is a 19 channel GPIO (General Purpose Input/Output) port expander with built-in keypad matrix decoder, programmable logic, reset logic, and PWM generator. The IC is capable of handling QWERTY size keyboards and GPIO expansion. I/O expander ICs are used in portable devices (phones, remote controls, & cameras) and non-portable applications (healthcare, industrial & instrumentation). I/O expanders can be used to increase the number of I/Os available to a processor or to reduce the number of I/Os required through interface connectors for front panel designs.
 
 The :adi:`ADP5589` handles all key scanning and decoding and can flag the main processor via an interrupt line that new key events have occurred. GPI changes and logic changes can also be tracked as events via the FIFO, eliminating the need to monitor different registers for event changes. The :adi:`ADP5589` is equipped with a FIFO to store up to 16 events. Events can be read back by the processor via an I2C-compatible interface.
@@ -25,9 +23,12 @@ The :adi:`ADP5589` frees up the main processor from having to monitor the keypad
 .. image:: https://wiki.analog.com/_media/resources/pmods/adp5589_pmod_ioxp.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -35,9 +36,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the ADP5589 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the ADP5589 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the ADP5589 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the ADP5589 driver:
 
@@ -51,7 +56,6 @@ There are three functions which are called by the ADP5589 driver:
 .. container:: centeralign
 
    I2C driver architecture
-
 
 The implementation of these three functions depends on the used microcontroller.
 
@@ -83,8 +87,6 @@ The following functions are implemented in this version of ADP5589 driver:
 | void ADP5589_KeyLock(unsigned char firstEvent, unsigned char secondEvent, unsigned char pmodPort)   | Locks the ADP5589 and requests Password for unlock.                                 |
 +-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-
-
 **HW Platform(s):**
 
 -  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
@@ -105,11 +107,11 @@ Downloads
    -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
-
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the ADP5589 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the ADP5589
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -126,7 +128,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodIOXP has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+A PmodIOXP has to be interfaced with the Renesas Demonstration Kit (RDK) for
+RL78G13:
 
 ::
 
@@ -148,7 +151,8 @@ The reference project:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adp5589_rl78g13_screen_1.jpg
    :align: center
 
--  after the keypad is unlocked, it will display on the LCD the last pressed key and the status of R0 pin; also the PWM generator is enabled on pin R3.
+-  after the keypad is unlocked, it will display on the LCD the last pressed key
+   and the status of R0 pin; also the PWM generator is enabled on pin R3.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adp5589_rl78g13_screen_2.jpg
    :align: center
@@ -156,16 +160,15 @@ The reference project:
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 Renesas RL78G14 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the ADP5589 demonstration project on a Renesas RL78G14 platform using the PmodIOXP.
+This section contains a description of the steps required to run the ADP5589
+demonstration project on a Renesas RL78G14 platform using the PmodIOXP.
 
 Required Hardware
 -----------------
@@ -182,16 +185,18 @@ Required Software
 
 .. note::
 
-   The ADP5589 demonstration project for the Renesas RL78G14 platform consists of three parts: the ADP5589 Driver, the PmodIOXP Demo for RL78G14 and the RL78G14 Common Drivers.
+   The ADP5589 demonstration project for the Renesas RL78G14 platform consists
+   of three parts: the ADP5589 Driver, the PmodIOXP Demo for RL78G14 and the
+   RL78G14 Common Drivers.
 
    
    All three parts have to be downloaded.
 
-
 Hardware Setup
 --------------
 
-A PmodIOXP has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G14:
+A PmodIOXP has to be interfaced with the Renesas Demonstration Kit (RDK) for
+RL78G14:
 
 ::
 
@@ -213,7 +218,9 @@ The reference project:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adp5589_rl78g14_screen_1.jpg
    :align: center
 
--  after the keypad is unlocked, it will display on the LCD the last pressed and released key(which can be different keys) and the status of R0 pin; also the PWM generator is enabled on pin R3.
+-  after the keypad is unlocked, it will display on the LCD the last pressed and
+   released key(which can be different keys) and the status of R0 pin; also the
+   PWM generator is enabled on pin R3.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adp5589_rl78g14_screen_2.jpg
    :align: center
@@ -221,16 +228,15 @@ The reference project:
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`_
 
-
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the ADP5589 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the ADP5589
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -248,7 +254,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodIOXP has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+A PmodIOXP has to be interfaced with the Renesas Demonstration Kit (RDK) for
+RX62N:
 
 ::
 
@@ -268,7 +275,8 @@ The reference project waits for a password to unlock the keypad.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ioxp_rx62n_screen_1.jpg
    :align: center
 
-After the keypad is unlocked the state of the pin R0 and the key presses are displayed on the LCD. Also the PWM generator is enabled on pin R3.
+After the keypad is unlocked the state of the pin R0 and the key presses are
+displayed on the LCD. Also the PWM generator is enabled on pin R3.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ioxp_rx62n_screen_2.jpg
    :align: center
@@ -276,20 +284,15 @@ After the keypad is unlocked the state of the pin R0 and the key presses are dis
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-

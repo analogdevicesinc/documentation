@@ -1,7 +1,11 @@
 AXI Laser Driver IP core
 ========================
 
-The axi_laser_driver IP generate all the necessary control signal for the ad_fmclidar1_ebz prototyping platform, to drive the laser, switch between the TIA channels and synchronize all the data flow inside the FPGA. This documentation covers the main functionality of the IP core and its software programmable registers.
+The axi_laser_driver IP generate all the necessary control signal for the
+ad_fmclidar1_ebz prototyping platform, to drive the laser, switch between the
+TIA channels and synchronize all the data flow inside the FPGA. This
+documentation covers the main functionality of the IP core and its software
+programmable registers.
 
 Features
 --------

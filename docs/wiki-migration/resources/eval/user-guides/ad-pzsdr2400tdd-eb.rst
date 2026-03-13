@@ -7,7 +7,7 @@ The purpose of the :adi:`AD-PZSDR2400TDD-EB` is to provide the user with a tunab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/pcb_top.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Table of Contents
 -----------------
@@ -36,6 +36,4 @@ People who follow the flow that is outlined, have a much better experience with 
 Warning
 -------
 
-
 .. esd-warning::
-

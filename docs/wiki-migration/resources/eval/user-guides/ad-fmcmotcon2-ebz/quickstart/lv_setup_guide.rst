@@ -2,7 +2,7 @@ Hardware Setup Guide
 ====================
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mc2_system.jpg
-   :width: 600px
+   :width: 600
 
 Supported Carriers
 ------------------
@@ -31,7 +31,7 @@ Getting Started
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/connections.jpg
    :alt: connections
-   :width: 600px
+   :width: 600
 
 -  Make sure the **Emergency Stop** switch is pressed (more information about drive board buttons :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_board>`)
 -  Insert the DYNO sensor wire in the P3 connector on the controller board with the black wire towards the ZedBoad. In case an encoder is used there is a one to one correspondence of the encoder's pins to the pins of the P3 connector.

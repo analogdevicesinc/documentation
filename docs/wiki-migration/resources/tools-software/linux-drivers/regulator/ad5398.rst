@@ -15,7 +15,10 @@ Evaluation Boards
 Description
 ===========
 
-AD5398 and AD5821 is a single 10-bit DAC with 120mA output current sink capability. I2C bus is connected to enable/disable output and set the proper output current value. This driver adapts to voltage and current regulator framework in Linux kernel.
+AD5398 and AD5821 is a single 10-bit DAC with 120mA output current sink
+capability. I2C bus is connected to enable/disable output and set the proper
+output current value. This driver adapts to voltage and current regulator
+framework in Linux kernel.
 
 Source Code
 -----------
@@ -41,14 +44,18 @@ Files
 Adding Linux driver support
 ---------------------------
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD5398/AD5821 Driver depends on CONFIG_I2C
 
-
-Select voltage and current regulator framework support and enable AD5398/AD5821 driver. Don't forget to select virtual regulator consumer and userspace regulator consumer as module. Because AD5398 driver is loaded after I2C bus finish initialization at kernel booting, built-in consumers may be loaded earlier and find supply in AD5398 driver is not available.
+Select voltage and current regulator framework support and enable AD5398/AD5821
+driver. Don't forget to select virtual regulator consumer and userspace
+regulator consumer as module. Because AD5398 driver is loaded after I2C bus
+finish initialization at kernel booting, built-in consumers may be loaded
+earlier and find supply in AD5398 driver is not available.
 
 ::
 
@@ -62,23 +69,35 @@ Select voltage and current regulator framework support and enable AD5398/AD5821 
 Customize Device Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The platform info defined in bf537-stamp board file is for ad5398 and ad5821 only. If you want to customize this driver for other compatible current regulator DAC, you should revise the platform information accordingly.
+The platform info defined in bf537-stamp board file is for ad5398 and ad5821
+only. If you want to customize this driver for other compatible current
+regulator DAC, you should revise the platform information accordingly.
 
 -  Define device supply name exported by the driver.
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_consumer{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_consumer{} c
+linux-kernel>
 
 -  Define supply value range.
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_regulator_data{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_regulator_data{} c
+linux-kernel>
 
--  Define supply name in platform_data for the virtual consumer to match and use.
+-  Define supply name in platform_data for the virtual consumer to match and
+   use.
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_virt_consumer_device{} c linux-kernel>
+<source
+trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_virt_consumer_device{} c
+linux-kernel>
 
 -  Define supply name for the user space consumer to match and use.
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_bulk_data{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_userspace_comsumer_data{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_userspace_consumer_device{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_bulk_data{} c
+linux-kernel> <source
+trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_userspace_comsumer_data{} c
+linux-kernel> <source
+trunk/arch/blackfin/mach-bf537/boards/stamp.c:ad5398_userspace_consumer_device{}
+c linux-kernel>
 
 Driver Testing
 ~~~~~~~~~~~~~~
@@ -98,7 +117,6 @@ Check regulator driver initialization information at kernel booting.
       ad5398 0-000c: ad5398 regulator driver loaded
       i2c-bfin-twi i2c-bfin-twi.0: Blackfin BF5xx on-chip I2C TWI Contoller, regs_base@ffc01400
    
-
 
 Check if AD5398 is probed properly.
 
@@ -137,7 +155,6 @@ Check if AD5398 is probed properly.
       disabled
    
 
-
 Insert virtual consumer driver module and check usability.
 
 .. container:: box bggreen
@@ -171,7 +188,6 @@ Insert virtual consumer driver module and check usability.
       120000
    
 
-
 Insert user space consumer driver module and check usability.
 
 .. container:: box bggreen
@@ -200,8 +216,8 @@ Insert user space consumer driver module and check usability.
       enabled
    
 
-
 .. tip::
 
-   To control ADC to output a given current, you only need to set the value to sysfs entry min_microamps in virtual consumer platform device. The driver adjusts the output according to the min current value received.
-
+   To control ADC to output a given current, you only need to set the value to
+   sysfs entry min_microamps in virtual consumer platform device. The driver
+   adjusts the output according to the min current value received.

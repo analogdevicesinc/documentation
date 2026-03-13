@@ -5,7 +5,6 @@ EVAL-AD4858 HDL Reference Design
 
    This documentation is deprecated The new doc is available at https://analogdevicesinc.github.io/hdl/projects/ad485x_fmcz/index.html
 
-
 Overview
 --------
 
@@ -47,7 +46,8 @@ Clock scheme
 | Depending on the configuration used (CMOS or LVDS), the scheme differs a little bit. See the differences between the diagrams from below.
 | |image1|
 
-Because of limitations from the evaluation board, we used an internal clock of the FPGA.
+Because of limitations from the evaluation board, we used an internal clock of
+the FPGA.
 
 Therefore, the external clocks given to AXI_AD4858 IP are:
 
@@ -88,7 +88,9 @@ The :adi:`AD4858 <en/products/ad4858.html>` chip has 3 modes of configuration re
 Limitations
 ^^^^^^^^^^^
 
-The period of the SCKI clock signal is limited to a minimum of 2.5ns (at most 400MHz). Having SCKI frequency constrained, the case where the conversion time is maximum (715ns) is not achievable with the 24 and 32-bit packet formats.
+The period of the SCKI clock signal is limited to a minimum of 2.5ns (at most
+400MHz). Having SCKI frequency constrained, the case where the conversion time
+is maximum (715ns) is not achievable with the 24 and 32-bit packet formats.
 
 In other words, if you want to use the maximum conversion rate of 400MHz, then you can use **only** the 20-bit packet format.
 
@@ -105,7 +107,6 @@ IP list
    -  :git-hdl:`AXI_DMAC <library/axi_dmac>`
    -  :git-hdl:`UTIL_CPACK2 <library/util_pack/util_cpack2>`
    
-
 
 CPU/Memory interconnects addresses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -202,7 +203,6 @@ Resources
    -  :git-linux:`AD4858-FMCZ Linux driver <drivers/iio/adc/ad4858.c>`
    
 
-
 More information
 ----------------
 
@@ -222,6 +222,7 @@ Support
 
 Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
 
-It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.
+It should be noted, that the older the tools' versions and release branches are,
+the lower the chances to receive support from ADI engineers.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/ad4858/ad4858_fmcz_clock_path.jpg

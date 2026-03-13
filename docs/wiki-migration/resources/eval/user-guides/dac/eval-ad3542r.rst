@@ -36,7 +36,8 @@ General Description
 
 The EVAL-AD3542RFMCZ is an evaluation board for the :adi:`AD3542R` ultrafast 16-bit precision DAC.
 
-The board allows testing all the output ranges of the DAC, waveform generation, power supply and reference options.
+The board allows testing all the output ranges of the DAC, waveform generation,
+power supply and reference options.
 
 The EVAL-AD3542RFMCZ interfaces to the USB port of a PC via a system demonstration platform (:adi:`SDP-H1` board). It can also be connected to a different controller board using the pin header connector at position P5.
 
@@ -49,7 +50,6 @@ Evaluation Board Photograph
 
    
    .. container:: half column
-
 
    
       ..
@@ -73,15 +73,19 @@ The EVAL-AD3542R uses the :adi:`ACE` software with the AD35X2R Plugin for evalua
 -  Download and run the latest version of the :adi:`ACE` installer. It installs the application and the necessary drivers for the :adi:`SDP-H1` controller board.
 -  Click on the Plugin Manager item on the left-hand menu as shown in Figure 1.
 -  Go to Available Packages, select Board.AD35X2R and click on the Install Selected button at the bottom of the list. Once the plugin is installed, it moves to the Installed Packages section.
--  Click on the Home item on the left-hand menu. If the EVAL-AD3542R board is connected it will show up in the Attached Hardware section as shown in Figure 2. If you don't have an EVAL-AD3542R board, you can still explore the functionality of the plugin by double clicking on the desired board in the Explore Without Hardware list.
+-  Click on the Home item on the left-hand menu. If the EVAL-AD3542R board is
+   connected it will show up in the Attached Hardware section as shown in Figure
+   2. If you don't have an EVAL-AD3542R board, you can still explore the
+   functionality of the plugin by double clicking on the desired board in the
+   Explore Without Hardware list.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/plug-in_manager_with_red_squares.png
-   :width: 600px
+   :width: 600
 
 **Figure 1. Plug-in Manager**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/start_tab_with_red_squares.png
-   :width: 600px
+   :width: 600
 
 **Figure 2. Start Tab**
 
@@ -94,7 +98,11 @@ To set up the evaluation board, take the following steps:
 -  Plug the EVAL-AD3542R evaluation board on the SDP-H1 controller board.
 -  Connect the wall-plug brick power supply to the SDP-H1 DC jack and power from the AC network. Power LEDs on the SDP-H1 board turn on green.
 -  Connect the USB cable between the SDP-H1 board and the PC.
--  ACE should now be able to detect the board and show it in the Attached Hardware section, as shown in Figure 2. Double click on the board icon to open the board view, as seen in Figure 5. The board view shows the relevant parts included in the evaluation board, where the AD3542R chip is highlighted in a darker blue.
+-  ACE should now be able to detect the board and show it in the Attached
+   Hardware section, as shown in Figure 2. Double click on the board icon to
+   open the board view, as seen in Figure 5. The board view shows the relevant
+   parts included in the evaluation board, where the AD3542R chip is highlighted
+   in a darker blue.
 
 Evaluation Board Hardware
 -------------------------
@@ -104,7 +112,9 @@ Power Supplies
 
 The EVAL-AD3542R includes a complete power conversion solution to allow powering the evaluation board from the SDP-H1. The board includes a DC/DC converter :adi:`LTC7149` to generate -7V from the 12V power provided by SDP-H1. LDOs :adi:`LT3045` and :adi:`LT3094` are used to generate the positive and negative supplies for the transimpedance amplifiers, which are selectable using switch S1. Additional LT3045 LDOs are used to generate the supplies for the logic and the DAC core of the AD3542R. This power solution is configured with the default link settings shown in Table 2.
 
-Alternatively, the board can be powered from a collection of external power supplies via connector P3. The assignment of the pins in connector P3 is listed in Table 1.
+Alternatively, the board can be powered from a collection of external power
+supplies via connector P3. The assignment of the pins in connector P3 is listed
+in Table 1.
 
 Table 1. Pin Assignment on Power Supply Connector P3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -130,7 +140,10 @@ The EVAL- AD3542R also integrates an on-board 2.5V analog reference :adi:`ADR452
 Power Supply Configuration for Transimpedance Amplifier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The supply for the transimpedance amplifier integrated in AD3542R must be adjusted depending on the selected output span using switch S1. Table 2 presents the three possible supply configurations. The correspondence with the output range is shown in Table 7.
+The supply for the transimpedance amplifier integrated in AD3542R must be
+adjusted depending on the selected output span using switch S1. Table 2 presents
+the three possible supply configurations. The correspondence with the output
+range is shown in Table 7.
 
 Table 2. Transimpedance Amplifier Supply Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -147,14 +160,17 @@ Right       -2.5/7V 7.7V         -2.7V
 
    Do not change the position of S1 while the board is powered up.
 
-
 Link Options
 ~~~~~~~~~~~~
 
-The EVAL-AD3542R board is delivered with the links placed in the default positions listed in Table 3. This configuration is suitable for operating the board right out of the box. However, the links J_FB0, J_FB1 and J_REF may need to be adjusted depending on the configuration set in the registers of the AD3542R. Refer to Figure 3 to locate the position of links and connectors.
+The EVAL-AD3542R board is delivered with the links placed in the default
+positions listed in Table 3. This configuration is suitable for operating the
+board right out of the box. However, the links J_FB0, J_FB1 and J_REF may need
+to be adjusted depending on the configuration set in the registers of the
+AD3542R. Refer to Figure 3 to locate the position of links and connectors.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/board_layout.png
-   :width: 600px
+   :width: 600
 
 **Figure 3. Board Layout**
 
@@ -216,7 +232,9 @@ Table 4. List of Connectors
 | P5        | P5         | -           | Digital signal connector. This connector is used to control the AD3542R with a controller different from SDP-H1. The pin assignment is listed in Table 4. The pin header is not assembled by default so that the holes can be used as test points for the digital signals. |
 +-----------+------------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Connector P5 is used to connect an external controller when the SDP-H1 is not present. This connector grants access to all the digital signals of AD3542R and some board supplies and control lines.
+Connector P5 is used to connect an external controller when the SDP-H1 is not
+present. This connector grants access to all the digital signals of AD3542R and
+some board supplies and control lines.
 
 Table 5. Pin Assignment on Connector P5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -265,7 +283,8 @@ Table 5. Pin Assignment on Connector P5
 | 20         | VLOGIC_FMC      | Test Pin for VLOGIC_FMC power supplied from the SDP-H1.                                                                                                                                            |
 +------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-The board includes several test points to access relevant signals. Only TP4 has the test ring assembled. The list is given in Table 6.
+The board includes several test points to access relevant signals. Only TP4 has
+the test ring assembled. The list is given in Table 6.
 
 Table 6. List of Test Points
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -312,12 +331,24 @@ Table 7. Transimpedance Gain Setting
 -  Using a high-impedance probe on test points TP2 and TP3. Oscilloscope probes, active or passive, have high impedance. However, since the test points are close to the driver the effect of impedance mismatch is not visible. The main drawback is the tolerance of the probe ratio and the noise picked up in the ground lead. This method is suitable for quick checks and slew rate measurement.
 -  Using a coaxial cable with the oscilloscope in high impedance. This solution reduces noise pick-up and eliminates the uncertainty of the probe, allowing accurate measurements with dynamic signals, such as settling time. To attenuate reflections from the oscilloscope, 47Ω resistors are included by default in positions R4 and R5. This configuration can be used to measure the output noise density with the oscilloscope configured in AC mode.
 -  Using a coaxial cable with the oscilloscope in 50Ω impedance. A matching pad must be used so that the impedance seen at the coaxial connector is 50Ω. For example, 976Ω for R4 or R5, 52.3Ω for R28 or R29 and 0Ω for C15 or C16. This solution provides perfect impedance matching on both sides of the coaxial cable while the DAC sees 1kΩ load. The signal is attenuated by a factor 19.55 (25.8 dB). This configuration can be used to measure settling time very accurately. It is not suitable for noise measurements because the attenuation of the matching pad sets the noise below the sensitivity of the spectrum analyzer.
--  Using a coaxial cable to drive a medium-impedance load, for example 500Ω. This configuration is half-way between perfect impedance matching and high-impedance termination. It provides better matching in high speed, lower noise susceptibility and lower power dissipation with DC voltage. The driver is series-terminated to 47Ω (R4 or R5) to match the nominal impedance of the cable while the receiver is terminated to 500Ω (for example, an oscilloscope in 1MΩ impedance with 500Ω on a Tee connector). To minimize DC loss, 1μH inductors are used at L5 and L6. A snubber network can be added on R28, R29, C15 and C16 to reduce the overshoot caused by these inductors.
+-  Using a coaxial cable to drive a medium-impedance load, for example 500Ω.
+   This configuration is half-way between perfect impedance matching and
+   high-impedance termination. It provides better matching in high speed, lower
+   noise susceptibility and lower power dissipation with DC voltage. The driver
+   is series-terminated to 47Ω (R4 or R5) to match the nominal impedance of the
+   cable while the receiver is terminated to 500Ω (for example, an oscilloscope
+   in 1MΩ impedance with 500Ω on a Tee connector). To minimize DC loss, 1μH
+   inductors are used at L5 and L6. A snubber network can be added on R28, R29,
+   C15 and C16 to reduce the overshoot caused by these inductors.
 
 .. note::
 
-   Square waves may not look perfectly square on many oscilloscopes. This is due to the large variation in DC levels affecting the oscilloscope front end or ADC. This results in the flat top and bottom of the waveform showing a slow drift. The effect increases when zooming in the signal due to overdrive recovery in the oscilloscope front end. It is recommended to use the 50Ω matching pad to reduce the span of the signal.
-
+   Square waves may not look perfectly square on many oscilloscopes. This is due
+   to the large variation in DC levels affecting the oscilloscope front end or
+   ADC. This results in the flat top and bottom of the waveform showing a slow
+   drift. The effect increases when zooming in the signal due to overdrive
+   recovery in the oscilloscope front end. It is recommended to use the 50Ω
+   matching pad to reduce the span of the signal.
 
 ACE Plug-In Description And Features
 ------------------------------------
@@ -328,30 +359,33 @@ ACE Plug-In Hierarchy
 ACE has several views to control different aspects of the DAC. When a view is first opened it creates a new tab at the top of the main window. The AD3542R plugin has a Board View, a Chip View, a Memory Map view, a Waveform Generator view, and a Vector Generator view. Figure 4 shows the hierarchical relation between these views. For additional information refer to the The user manual that is accessible from the help panel displayed when clicking on the Help button on the lower left angle of the application. There is also an :doc:`ACE Wiki </wiki-migration/resources/tools-software/ace>` with additional information.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/ace_hierarchy.png
-   :width: 400px
+   :width: 400
 
 **Figure 4. ACE Plugin Hierarchy**
-
 
 |image1|
 
 Board View
 ~~~~~~~~~~
 
-The board view displays a simplified diagram of the evaluation board including some relevant connectors and the interconnection between chips, as seen in Figure 5. Analog Devices chips are shown with their part number and the AD3542R is highlighted in darker blue.
+The board view displays a simplified diagram of the evaluation board including
+some relevant connectors and the interconnection between chips, as seen in
+Figure 5. Analog Devices chips are shown with their part number and the AD3542R
+is highlighted in darker blue.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/board_view.png
-   :width: 600px
+   :width: 600
 
 **Figure 5. AD3542R Board View**
 
-The actions that can be performed at this level are displayed as buttons at the top of the main window, as seen in Figure 6.
+The actions that can be performed at this level are displayed as buttons at the
+top of the main window, as seen in Figure 6.
 
 -  **Poll Device:** this action is performed automatically every second to verify that the evaluation board is connected to the system. The button allows turning on or off this feature.
 -  **Reset Board:** this action performs a power cycle on the evaluation board, bringing everything back to default.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/board_view_buttons.png
-   :width: 300px
+   :width: 300
 
 **Figure 6. AD3542R Board View Buttons**
 
@@ -360,7 +394,10 @@ To open the chip view, double-click on the AD3542R block.
 Chip View
 ~~~~~~~~~
 
-The Chip View displays a simplified internal diagram of the chip showing the interface logic, the DAC cores, the precision feedback resistors and the relevant pins for those blocks. This view contains three interactive areas, as depicted in Figure 7:
+The Chip View displays a simplified internal diagram of the chip showing the
+interface logic, the DAC cores, the precision feedback resistors and the
+relevant pins for those blocks. This view contains three interactive areas, as
+depicted in Figure 7:
 
 -  **Button list.** These buttons perform the following actions on the chip:
 
@@ -375,14 +412,18 @@ The Chip View displays a simplified internal diagram of the chip showing the int
 -  **Shortcuts to other views.** There are two buttons on the lower right corner to access the Register Map view and the Waveform Generator view. The use of these panels is explained in the sections Memory Map View and Generating a Waveform.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/chip_view_with_labels.png
-   :width: 600px
+   :width: 600
 
 **Figure 7. Chip View**
 
 Memory Map View
 ~~~~~~~~~~~~~~~
 
-The Memory Map view displays the entire configuration space of the AD3542R. The configuration space can be displayed as a list of registers or as a list of bit fields. The application allows sorting by any of the column categories or searching by register name or field name. Registers can be displayed collapsed or expanded into its bit fields, as shown in Figure 8.
+The Memory Map view displays the entire configuration space of the AD3542R. The
+configuration space can be displayed as a list of registers or as a list of bit
+fields. The application allows sorting by any of the column categories or
+searching by register name or field name. Registers can be displayed collapsed
+or expanded into its bit fields, as shown in Figure 8.
 
 This view has the following interactive elements:
 
@@ -404,21 +445,24 @@ This view has the following interactive elements:
 -  **Bit field values.** Registers can be expanded into their bit fields and each bit can be edited individually by clicking on it to toggle its value. Modified registers are highlighted in bold.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/register_map_with_labels.png
-   :width: 600px
+   :width: 600
 
 **Figure 8. AD3542R Memory Map View**
 
 Waveform Generator View
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The waveform generator view allows assigning vectors to the channels and starting or stopping waveform generation. A screenshot of this view is given in Figure 9.
+The waveform generator view allows assigning vectors to the channels and
+starting or stopping waveform generation. A screenshot of this view is given in
+Figure 9.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/waveform_generator_view.png
-   :width: 600px
+   :width: 600
 
 **Figure 9. Waveform Generator View**
 
-The operation mode of AD3542R and the assignment of the waveforms is controlled from the Transmit pane that contains the following controls:
+The operation mode of AD3542R and the assignment of the waveforms is controlled
+from the Transmit pane that contains the following controls:
 
 -  **Generate Vectors:** this button opens the Vector Generator view there waveforms can be defined, scaled, loaded or exported. The use of this generator is covered in section Vector Generator View.
 -  **DAC Mode:** radio buttons allow selecting Fast Mode that uses 16-bit data or Precision Mode that uses 24-bit data. The same mode is used for both DAC channels when operated simultaneously.
@@ -444,14 +488,16 @@ Table 8. Update Rate Combinations
 **Figure 10. Waveform Generation in Dual Mode**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/transmit_pane_simultaneous_mode.png
-   :width: 200px
+   :width: 200
 
 **Figure 11. Waveform Generation in Simultanoeus Mode**
 
 Manual Register Configuration for Streaming Mode
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-If the Auto Register Update checkbox is not checked, the streaming mode parameters have to be configured manually in the memory map before pressing the Play button. The following registers must be set:
+If the Auto Register Update checkbox is not checked, the streaming mode
+parameters have to be configured manually in the memory map before pressing the
+Play button. The following registers must be set:
 
 -  STREAM_MODE register (0x0E). Length value should be set according to Table 9.
 -  TRANSFER_REGISTER (0x0F). Set STREAM_LENGTH_KEEP_VALUE bit to 1.
@@ -471,7 +517,10 @@ Table 9. Stream Mode Length Values
 Vector Generator View
 ~~~~~~~~~~~~~~~~~~~~~
 
-The Vector Generator view allows defining or loading waveforms that can later be assigned to the DAC channels. Waveforms are identified by name. The generator automatically adapts the sample rate based on the operating mode and the number of DAC channels enabled. A snapshot of this view if presented in Figure 12.
+The Vector Generator view allows defining or loading waveforms that can later be
+assigned to the DAC channels. Waveforms are identified by name. The generator
+automatically adapts the sample rate based on the operating mode and the number
+of DAC channels enabled. A snapshot of this view if presented in Figure 12.
 
 The Vector Generator tool is composed of the following sections:
 
@@ -492,14 +541,15 @@ The Vector Generator tool is composed of the following sections:
 -  **Waveform FFT.** The frequency-domain analysis of the selected waveform is displayed in this window. The plot window allows zooming, panning and measuring on the spectrum.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/vector_generator_with_labels.png
-   :width: 800px
+   :width: 800
 
 **Figure 12. Vector Generator View**
 
 Creating a Waveform
 ~~~~~~~~~~~~~~~~~~~
 
-Follow these steps to produce a dual waveform playback on the EVAL-AD3542R evaluation board:
+Follow these steps to produce a dual waveform playback on the EVAL-AD3542R
+evaluation board:
 
 -  From the start page, double click on the board icon to open the *Board view*.
 -  Double click on the AD3542R block to open the *Chip View*.
@@ -509,17 +559,22 @@ Follow these steps to produce a dual waveform playback on the EVAL-AD3542R evalu
 -  Follow the instructions given in *Vector Generator View* to create a 1 kHz sinewave and a 1 kHz sawtooth.
 -  Follow the shortcuts in the gray bar at the top of the window to go back to the *Chip View*. Then click on the button Proceed to Waveform Generator to open the *Waveform Generator View*.
 -  Select Fast Mode and enable channels 1 and 2. Then unfold the Channel 1 and Channel 2 sections to select each of the waveforms you created. Finally click the Play button.
--  The LED on EVAL-AD3542R changes from green to blue and the playback starts. The waveforms should look like the ones shown in Figure 13 in the oscilloscope.
+-  The LED on EVAL-AD3542R changes from green to blue and the playback starts.
+   The waveforms should look like the ones shown in Figure 13 in the
+   oscilloscope.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/waveforms_on_oscilloscope.png
-   :width: 600px
+   :width: 600
 
 **Figure 13. Dual Waveform Output**
 
 Unsupported Features in the Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The current version of EVAL-AD3542R ACE Plugin (1.2021.38200) does not support all the board features at the moment. ACE notifies when an update of the plugin is available, so these features will be progressively incorporated. These are the features not currently supported:
+The current version of EVAL-AD3542R ACE Plugin (1.2021.38200) does not support
+all the board features at the moment. ACE notifies when an update of the plugin
+is available, so these features will be progressively incorporated. These are
+the features not currently supported:
 
 -  DAC output range selection and customization.
 -  CRC checking.
@@ -541,11 +596,10 @@ Schematic, PCB Layout, Bill of Materials
    -  `EVAL-AD3542RFMCZ Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/05-050892-01-d.xlsx>`_
    
 
-
 .. |eval-ad3542rfmcz_top-web.gif| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/eval-ad3542rfmcz_top-web.gif
-   :width: 400px
+   :width: 400
 .. |eval-ad3542rfmcz_bottom-web2.gif| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/eval-ad3542rfmcz_bottom-web2.gif
-   :width: 400px
+   :width: 400
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/chip_view_with_labels.svg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad3542r/transmit_pane_dual_mode.png
-   :width: 200px
+   :width: 200

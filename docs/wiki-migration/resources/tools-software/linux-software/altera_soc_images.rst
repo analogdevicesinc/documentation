@@ -5,7 +5,6 @@ Altera SOC Quick Start Guide
 
    We are in the process of migrating our documentation to GitHubIO. A better and more concise version of this page can be found at https://analogdevicesinc.github.io/hdl/user_guide/build_intel_boot_image.html\
 
-
 Download Prebuild Images
 ------------------------
 
@@ -16,8 +15,8 @@ Download Prebuild Images
    -  :doc:`Download Release Images </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
    
 
-
-Now, depending if you are using Linux or Windows, follow these instructions to write the file to your SD card.
+Now, depending if you are using Linux or Windows, follow these instructions to
+write the file to your SD card.
 
 -  :doc:`linux_hosts </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
 -  :doc:`windows_hosts </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
@@ -50,9 +49,12 @@ Clone the kernel tree, point environment to an arm architecture cross compiler, 
 Building the Hardware Design
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you skipped the instruction on "Building the Linux Kernel image and the Devicetree" above, it is still necessary to do the step regarding cross compilers.
+If you skipped the instruction on "Building the Linux Kernel image and the
+Devicetree" above, it is still necessary to do the step regarding cross
+compilers.
 
--  Change directory to where the project is located. Clone the HDL repository if it does not exist yet in local directory.
+-  Change directory to where the project is located. Clone the HDL repository if
+   it does not exist yet in local directory.
 
 ::
 
@@ -74,7 +76,8 @@ If you skipped the instruction on "Building the Linux Kernel image and the Devic
 Building the Preloader and Bootloader Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This flow applies starting with release 2021_R1 / Quartus Pro version 20.1. For older versions of the flow see previous versions of this page.
+This flow applies starting with release 2021_R1 / Quartus Pro version 20.1. For
+older versions of the flow see previous versions of this page.
 
 -  Change directory to where the project is located:
 
@@ -119,7 +122,8 @@ This flow applies starting with release 2021_R1 / Quartus Pro version 20.1. For 
    $ sed -i 's/ghrd_10as066n2/soc_system/g' board/altera/arria10-socdk/fit_spl_fpga.its
    $ tools/mkimage -E -f board/altera/arria10-socdk/fit_spl_fpga.its fit_spl_fpga.itb
 
--  Make extlinux.conf linux configuration file - this extlinux folder shall be copied to /BOOT partition of the SD Card
+-  Make extlinux.conf linux configuration file - this extlinux folder shall be
+   copied to /BOOT partition of the SD Card
 
 ::
 
@@ -159,7 +163,6 @@ Creating the Preloader and Bootloader partition
    /dev/mmcblk0p1          8192  1056767  1048576  2.0G c W95 FAT32 (LBA)
    /dev/mmcblk0p2       1056768 14497791 13441024  6.4G 83 Linux
    /dev/mmcblk0p3      14497792 14499839     2048    1M a2 unknown
-
 
    Command (m for help): d
    Partition number (1-3, default 3): 3
@@ -218,7 +221,7 @@ IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/altera_soc/a10soc_adrv9371x.png
-   :width: 800px
+   :width: 800
 
 ARRADIO + Terasic SoCkit Development Kit
 ----------------------------------------
@@ -250,9 +253,12 @@ Clone the kernel tree, point environment to an arm architecture cross compiler, 
 Building the Hardware Design
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you skipped the instruction on "Building the Linux Kernel image and the Devicetree" above, it is still necessary to do the step regarding cross compilers.
+If you skipped the instruction on "Building the Linux Kernel image and the
+Devicetree" above, it is still necessary to do the step regarding cross
+compilers.
 
--  Change directory to where the project is located. Clone the HDL repository if it does not exist yet in local directory.
+-  Change directory to where the project is located. Clone the HDL repository if
+   it does not exist yet in local directory.
 
 ::
 
@@ -274,7 +280,8 @@ If you skipped the instruction on "Building the Linux Kernel image and the Devic
 Building the Preloader and Bootloader Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This flow applies starting with release 2021_R1 / Quartus Standard version 20.1. For older versions of the flow see previous versions of this page.
+This flow applies starting with release 2021_R1 / Quartus Standard version 20.1.
+For older versions of the flow see previous versions of this page.
 
 -  Change directory to where the project is located
 
@@ -315,7 +322,8 @@ This flow applies starting with release 2021_R1 / Quartus Standard version 20.1.
    make socfpga_cyclone5_defconfig
    make -j4
 
--  Make u-boot.scr file - this file shall be copied to /BOOT partition of the SD Card
+-  Make u-boot.scr file - this file shall be copied to /BOOT partition of the SD
+   Card
 
 ::
 
@@ -323,7 +331,8 @@ This flow applies starting with release 2021_R1 / Quartus Standard version 20.1.
    $ echo "fpga load 0 \${loadaddr} \$filesize;" >> u-boot.txt
    $ ./tools/mkimage -A arm -O linux -T script -C none -a 0 -e 0 -n "Cyclone V script" -d u-boot.txt u-boot.scr
 
--  Make extlinux.conf linux configuration file - this extlinux folder shall be copied to /BOOT partition of the SD Card
+-  Make extlinux.conf linux configuration file - this extlinux folder shall be
+   copied to /BOOT partition of the SD Card
 
 ::
 
@@ -343,7 +352,6 @@ Terasic SoCkit Jumper Configuration
 ======= ========= ========= ======== ======== ========
 
 +--------------+
-
 
 | JP2          |
 
@@ -427,7 +435,7 @@ IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/altera_soc/altera_soc.png
-   :width: 800px
+   :width: 800
 
 Building the no-OS project using DS-5
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -437,26 +445,26 @@ Building the no-OS project using DS-5
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/altera_soc/ds5_import.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Copy all the source files and the **u-boot-spl**:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/altera_soc/ds5_copy_source_files.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Build the project
 -  Use the **ad9361** debug configuration for programming and debugging the project:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/altera_soc/ds5_debug_configuration.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Watch on the **App Console** the printed messages:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/altera_soc/ds5_app_console.png
    :align: center
-   :width: 300px
+   :width: 300
 
 CN0540 + DE10Nano Development Kit
 ---------------------------------
@@ -490,9 +498,12 @@ Clone the kernel tree, point environment to an arm architecture cross compiler, 
 Building the Hardware Design
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you skipped the instruction on "Building the Linux Kernel image and the Devicetree" above, it is still necessary to do the step regarding cross compilers.
+If you skipped the instruction on "Building the Linux Kernel image and the
+Devicetree" above, it is still necessary to do the step regarding cross
+compilers.
 
--  Change directory to where the project is located. Clone the HDL repository if it does not exist yet in local directory.
+-  Change directory to where the project is located. Clone the HDL repository if
+   it does not exist yet in local directory.
 
 ::
 
@@ -514,7 +525,8 @@ If you skipped the instruction on "Building the Linux Kernel image and the Devic
 Building the Preloader and Bootloader Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This flow applies starting with release 2021_R1 / Quartus Standard version 20.1. For older versions of the flow see previous versions of this page.
+This flow applies starting with release 2021_R1 / Quartus Standard version 20.1.
+For older versions of the flow see previous versions of this page.
 
 -  Change directory to where the project is located
 
@@ -549,7 +561,8 @@ This flow applies starting with release 2021_R1 / Quartus Standard version 20.1.
    $ git checkout socfpga_v2021.10
    $ ./arch/arm/mach-socfpga/qts-filter.sh cyclone5 ../../../ ../ ./board/altera/cyclone5-socdk/qts/
 
--  Make extlinux.conf linux configuration file - this extlinux folder shall be copied to /BOOT partition of the SD Card
+-  Make extlinux.conf linux configuration file - this extlinux folder shall be
+   copied to /BOOT partition of the SD Card
 
 ::
 
@@ -566,7 +579,8 @@ This flow applies starting with release 2021_R1 / Quartus Standard version 20.1.
    make socfpga_cyclone5_defconfig
    make -j4
 
--  Make u-boot.scr file - this file shall be copied to /BOOT partition of the SD Card
+-  Make u-boot.scr file - this file shall be copied to /BOOT partition of the SD
+   Card
 
 ::
 
@@ -580,7 +594,6 @@ Creating the Micro-SD Card
 .. tip::
 
    \ :doc:`Create SD Image for DE10Nano SoCkit board. (it is a single image for all boards). </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`\
-
 
 ::
 
@@ -606,7 +619,6 @@ Configuring the Micro-SD Card
 
 ::
 
-
    user@debian:~$ sudo mount /dev/sdd1 /media/data/BOOT/
    user@debian:~$ lsblk
 
@@ -615,7 +627,6 @@ Configuring the Micro-SD Card
    ├─sdd1        8:49   1     2G  0 part /media/data/BOOT
    ├─sdd2        8:50   1  27.1G  0 part
    └─sdd3        8:51   1     8M  0 part
-
 
    user@debian:~/Workspace/hdl/projects/cn0540/de10nano$ sudo cp soc_system.rbf /media/data/BOOT/
    user@debian:~/Workspace/hdl/projects/cn0540/de10nano/software/bootloader/u-boot-socfpga$ sudo cp u-boot.scr /media/data/BOOT/
@@ -663,7 +674,6 @@ You will need to:
 
 -  Get the `DE10-Nano FPGA Board <https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1046>`_.
 
-
 |zedboard.png|
 
 -  Insert the Micro-SD into the Micro-SD Interface Connector (J11).
@@ -675,14 +685,12 @@ You will need to:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/de10-nano_fpga_switch_matrix.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Turn it on.
 -  Wait ~30 seconds for the “DONE” LED to turn blue.
 
-
 .. esd-warning::
-
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
@@ -690,4 +698,4 @@ IIO Oscilloscope
 .. image:: https://wiki.analog.com/_media/playground/cn0540_de10nano_waveforms_.png
 
 .. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad777x-ardz/zedboard.png
-   :width: 600px
+   :width: 600

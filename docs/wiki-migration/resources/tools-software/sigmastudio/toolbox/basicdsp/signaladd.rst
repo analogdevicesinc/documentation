@@ -19,7 +19,9 @@ Care must be taken to avoid clipping. If automatic gain reduction is needed to a
 2 Channel Signal Add (Real Signals)
 -----------------------------------
 
-This algorithm adds the 2 signal and produces an real signal. When the algorithm is grown it takes multiple pairs of input signal and adds each pair to produce an output signal.
+This algorithm adds the 2 signal and produces an real signal. When the algorithm
+is grown it takes multiple pairs of input signal and adds each pair to produce
+an output signal.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/2chadder.png
    :align: center
@@ -33,7 +35,6 @@ Name             Format [int/dec] - [control/audio] Function Description
 Pin 0: Operand 1 any                                Input signal 1
 Pin 1: Operand 2 any                                Input signal 2
 ================ ================================== ====================
-
 
 | ====Output Pins====
 
@@ -57,7 +58,8 @@ ADAU145x
 Signal Add (Complex Signals)
 ----------------------------
 
-This algorithm adds the complex signals. (All real parts are summed together and all imaginary parts are summed together)This is a block based module.
+This algorithm adds the complex signals. (All real parts are summed together and
+all imaginary parts are summed together)This is a block based module.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/complexadd.jpg
    :align: center
@@ -94,7 +96,6 @@ Example Usage
 ~~~~~~~~~~~~~
 
 This can be used to add two signals FFT's result as shown below.
-
 
 |image1|
 

@@ -3,20 +3,27 @@
 Transmitter Front End Overview & Theory Of Operation
 ====================================================
 
-The 2-24GHz transmitter block diagram is shown below. The following wiki sections will go into more detail on the theory of operation of the individual, functional blocks of the signal chain.
+The 2-24GHz transmitter block diagram is shown below. The following wiki
+sections will go into more detail on the theory of operation of the individual,
+functional blocks of the signal chain.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/txblockdiagram.png
    :align: center
-   :width: 990px
+   :width: 990
 
 IF Input Stage
 --------------
 
-The DAC output first feeds into the IF input section (block diagram below) of the front end with 4.8GHz low-pass filtering to reject the DAC image spurious. The IF input frequency is 4-5GHz and within the 1st Nyquist of the DAC sampling at 12GSPS. After the image LPF comes an ADRF5730 digital step attenuator for fine resolution level control, an LNA, and an additional LPF for additional suppression of DAC output spurious.
+The DAC output first feeds into the IF input section (block diagram below) of
+the front end with 4.8GHz low-pass filtering to reject the DAC image spurious.
+The IF input frequency is 4-5GHz and within the 1st Nyquist of the DAC sampling
+at 12GSPS. After the image LPF comes an ADRF5730 digital step attenuator for
+fine resolution level control, an LNA, and an additional LPF for additional
+suppression of DAC output spurious.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx_if_input_section.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Frequency Conversion Stage & Frequency Plan
 -------------------------------------------
@@ -27,19 +34,20 @@ For the 2-7GHz RF output band, a dual-frequency conversion heterodyne signal pat
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/txfreqconversionsection.png
    :align: center
-   :width: 600px
+   :width: 600
 
-The figure below provides an additional frequency plan visualization showing the individual frequency conversion steps for each frequency band.
+The figure below provides an additional frequency plan visualization showing the
+individual frequency conversion steps for each frequency band.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/txfreqplan.png
    :align: center
-   :width: 500px
+   :width: 500
 
 The following table summarizes the possible frequency conversion paths:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx_frequency_plan.png
    :align: center
-   :width: 900px
+   :width: 900
 
 RF Output Stage
 ---------------
@@ -48,28 +56,33 @@ The RF output stage, shown in the figure below, is comprised of a wideband :adi:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx_rf_output_section.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Timing & Control
 ----------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx_switch_and_atten_ctrl.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Transmitter Performance Simulations
 -----------------------------------
 
-Keysight Systemvue/Genesys was used for detailed signal chain modelling and cascade analysis. Every component in the signal chain was modelled with frequency-dependent sys-parameter or s-parameter datasets to ensure accurate simulation results. The Genesys signal chain model shown below takes into account the following components:
+Keysight Systemvue/Genesys was used for detailed signal chain modelling and
+cascade analysis. Every component in the signal chain was modelled with
+frequency-dependent sys-parameter or s-parameter datasets to ensure accurate
+simulation results. The Genesys signal chain model shown below takes into
+account the following components:
 
 -  Manufacturer-provided, frequency-dependent s-parameter or sys-parameter datasets for every active and passive RF component
 -  A standalone model of the ADMV8818 tunable bandpass filter configured to tune a 1GHz wide passband to the RF center frequency during frequency sweeps. The ADMV8818 internal bypass path is engaged above 18GHz.
 -  A standalone model of the HMC882A tunable lowpass filter configured to tune its 3dB corner frequency minimize LO feedthrough and spurious
--  Frequency-dependent component interconnect modelling i.e. PCB trace loss approximation for DC-50GHz CPWG traces, 8mil Rogers 4003 PCB stackup
+-  Frequency-dependent component interconnect modelling i.e. PCB trace loss
+   approximation for DC-50GHz CPWG traces, 8mil Rogers 4003 PCB stackup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx_genesys_simulation.png
    :align: center
-   :width: 900px
+   :width: 900
 
 .. admonition:: Download
    :class: download
@@ -83,24 +96,28 @@ Keysight Systemvue/Genesys was used for detailed signal chain modelling and casc
    -  Application/Use Case
    
 
-
-The Genesys workspace already has numerous system analysis and Matlab-based frequency sweeps in place, including the following functionality:
+The Genesys workspace already has numerous system analysis and Matlab-based
+frequency sweeps in place, including the following functionality:
 
 -  2-24GHz CW input sweep with Matlab equation-based frequency plan automated to ensure correct signal chain configuration for any given RF output frequency. All LO frequencies, frequency-dependent RF paths, and tunable filter passbands are automatically tune during sweep.
--  Gain levelling implemented using the IF DSAs to normalize cascaded gain to the lowest-gain frequency point for optimal flatness (+/- 2dB).
+-  Gain levelling implemented using the IF DSAs to normalize cascaded gain to
+   the lowest-gain frequency point for optimal flatness (+/- 2dB).
 
 **Transmitter Performance (Gain, OIP3, and OP1dB), 2-24GHz, Rough Gain Levelling Implemented**
 
-As described above, the following plot assumes PCB implementation with low loss traces. This plot shows the Gain, OIP3, and OP1dB performance of the transmitter across frequency:
+As described above, the following plot assumes PCB implementation with low loss
+traces. This plot shows the Gain, OIP3, and OP1dB performance of the transmitter
+across frequency:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx_rf_performance.png
    :align: center
-   :width: 950px
+   :width: 950
 
 **Transmitter Output Spectrum, +12dBm out @ 12.5GHz**
 
-The following plot shows the spectral output power components of the transmitter at +12dBm input power and 12.5GHz frequency:
+The following plot shows the spectral output power components of the transmitter
+at +12dBm input power and 12.5GHz frequency:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx_output_spectrum_12ghz.png
    :align: center
-   :width: 950px
+   :width: 950

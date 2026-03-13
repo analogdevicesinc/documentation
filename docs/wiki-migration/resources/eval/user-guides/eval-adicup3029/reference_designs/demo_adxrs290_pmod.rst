@@ -12,35 +12,46 @@ The ADuCM3029_demo_adxrs290_pmdz project uses the :adi:`EVAL-ADXRS290-PMDZ` whic
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/eval-adxrs290-pmdz_top.png
    :align: center
-   :width: 300px
+   :width: 300
 
-The application senses and reads the \*\* X-axis \*\* and \*\* Y-axis \*\* rate that is also called a roll and pitch rate sensing device. It produces a positive output voltage for clockwise rotation about the x-axis and y-axis.
+The application senses and reads the \*\* X-axis \*\* and \*\* Y-axis \*\* rate
+that is also called a roll and pitch rate sensing device. It produces a positive
+output voltage for clockwise rotation about the x-axis and y-axis.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/roll_and_pitch.png
    :align: center
-   :width: 400px
+   :width: 400
 
-The ADXRS290 provides an output full-scale range of ±100°/s with a sensitivity of 200 LSB/°/s. Its resonating disk sensor structure enables angular rate measurement about the axes normal to the sides of the package around an in-plane axis. Angular rate data is formatted as 16-bit twos complement and is accessible through a SPI digital interface. The ADXRS290 exhibits a low noise floor of 0.004°/s/√Hz and features programmable high-pass and lowpass filters.
+The ADXRS290 provides an output full-scale range of ±100°/s with a sensitivity
+of 200 LSB/°/s. Its resonating disk sensor structure enables angular rate
+measurement about the axes normal to the sides of the package around an in-plane
+axis. Angular rate data is formatted as 16-bit twos complement and is accessible
+through a SPI digital interface. The ADXRS290 exhibits a low noise floor of
+0.004°/s/√Hz and features programmable high-pass and lowpass filters.
 
-In digital mode, the ADXRS290 communicates via 4-wire SPI and operates as a slave. Ignore data transmitted from the ADXRS290 to the master device during writes to the ADXRS290. Wire the ADXRS290 for SPI communication. The maximum SPI clockspeed is 5 MHz, with 12 pF maximum loading.
+In digital mode, the ADXRS290 communicates via 4-wire SPI and operates as a
+slave. Ignore data transmitted from the ADXRS290 to the master device during
+writes to the ADXRS290. Wire the ADXRS290 for SPI communication. The maximum SPI
+clockspeed is 5 MHz, with 12 pF maximum loading.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/spi_comm.png
    :align: center
-   :width: 400px
+   :width: 400
 
-All the outputs are printed from the UART to the USER USB port and can be read on the PC using a serial terminal program, such as Putty or Tera Term.
+All the outputs are printed from the UART to the USER USB port and can be read
+on the PC using a serial terminal program, such as Putty or Tera Term.
 
 The application builds upon the **no-OS** device and platform drivers and a minimal **CLI** module to provide a robust command set to set the range and output value of the channels.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/software_architecture.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The program first initializes the hardware system as well as the driver handlers, then goes into the main process that just implements the **CLI** process and waits for user commands. If a command is received, it is executed and the program returns to the main loop.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/software_routine.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Demo Requirements
 -----------------
@@ -68,7 +79,8 @@ Setting up the Hardware
 -----------------------
 
 -  Connect **EVAL-ADXRS290-PMDZ** board to the **EVAL-ADICUP3029** using connector **P8**.
--  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
+-  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect
+   it to a computer. The final setup should look similar to the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxrs290_pc.jpg
    :align: center
@@ -76,14 +88,19 @@ Setting up the Hardware
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the ADXRS290.
+There are two basic ways to program the ADICUP3029 with the software for the
+ADXRS290.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADICUP3029_ADXRS290** demo can be found here:
 
@@ -99,7 +116,6 @@ The software for the **ADICUP3029_ADXRS290** demo can be found here:
    
    -  `ADuCM3029_demo_adxrs290_pmdz at Github <https://github.com/kister-jimenez/ADuCM3029_demo_adxrs290pmdz>`_
    
-
 
 How to use the Tools
 --------------------
@@ -119,7 +135,8 @@ For more detailed instructions on importing this application/demo example into t
 Project Structure
 ~~~~~~~~~~~~~~~~~
 
-Beside the IDE generated sources the project structure is divided into high level software modules and low level software modules.
+Beside the IDE generated sources the project structure is divided into high
+level software modules and low level software modules.
 
 The high level modules are in the **src** folder and are:
 
@@ -130,13 +147,11 @@ The high level modules are in the **src** folder and are:
 
 The low level modules are the platform drivers and are included in the **platform_source** and **platform_include** folders.
 
-
 |image1|
 
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -144,7 +159,6 @@ Configuring the Software Parameters
 -  **Gyroscope range setting** - *ADXRS290_RANGE* parameter - 2, 4, or 8 are acceptable values to set the [g] range for the ADXRS290 (*ADXRS290.h*).
 
 ::
-
 
    #define ADXRS290_SENSE        2
 
@@ -187,17 +201,18 @@ Following is the UART configuration.
 It should now display the value similar to the image below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/screenshot_cli.png
-   :width: 400px
+   :width: 400
 
-The user must press the reset button on ADICUP3029 each time they want to display the results.
+The user must press the reset button on ADICUP3029 each time they want to
+display the results.
 
 Digital Communications
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Digital communication on the EVAL-ADXRS290-PMDZ is accomplished using a standard expanded SPI PMOD port.
+The Digital communication on the EVAL-ADXRS290-PMDZ is accomplished using a
+standard expanded SPI PMOD port.
 
 +--------------+
-
 
 | Connector P1 |
 
@@ -247,7 +262,6 @@ Schematic, PCB Layout, Bill of Materials
    -  `Allegro Project <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/20-065300-01a.zip>`_
    -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/bom.zip>`_
    
-
 
 Additional Information and Useful Links
 ---------------------------------------

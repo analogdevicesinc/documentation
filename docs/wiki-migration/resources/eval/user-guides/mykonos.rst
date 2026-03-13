@@ -3,13 +3,13 @@ AD9371 & AD9375 Prototyping Platform User Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9371-bc_196-adi_m.png
    :align: left
-   :width: 300px
+   :width: 300
 
 The :adi:`ADRV9371-W/PRBZ <EVAL-ADRV9371>`, :adi:`ADRV9371-N/PCBZ <EVAL-ADRV9371>` and :adi:`ADRV9375-N/PCBZ <ADRV9375>` are FMC radio cards for the :adi:`AD9371` respectively :adi:`AD9375`, a highly integrated RF Transceiver™. While the complete chip level design package can be found on the the :adi:`the ADI web site <en/license/licensing-agreement/ad9371.html>`, information on the card and how to use it, the design package that surrounds it, and the software which can make it work can be found here.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9371-n_pcbz_side.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Table of Contents
 -----------------
@@ -100,7 +100,8 @@ Software Defined Radio using the Linux IIO Framework
 ADI Articles
 ~~~~~~~~~~~~
 
--   Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio
+-   Four Quick Steps to Production: Using Model-Based Design for
+    Software-Defined Radio
 
    -  :adi:`Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
    -  :adi:`Part 2—Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
@@ -116,6 +117,4 @@ MathWorks Webinars
 Warning
 -------
 
-
 .. esd-warning::
-

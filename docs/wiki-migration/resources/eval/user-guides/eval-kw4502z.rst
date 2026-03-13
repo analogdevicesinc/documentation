@@ -4,18 +4,31 @@ Low Frequency Noise KWIK Lecture + Lab
 General Description
 -------------------
 
-The Low Frequency Noise Know-how with Integrated Knowledge (KWIK) Lecture and Lab is a training module regarding amplifier noise. It is a combination of a lecture and a hands-on activity to understand the amplifier noise, especially low frequency noise.
+The Low Frequency Noise Know-how with Integrated Knowledge (KWIK) Lecture and
+Lab is a training module regarding amplifier noise. It is a combination of a
+lecture and a hands-on activity to understand the amplifier noise, especially
+low frequency noise.
 
 The Low Frequency Noise KWIK Demo provides a lecture material about the importance of noise, noise in time/frequency domain, types of noise, thermal noise in resistors, transistors, and amplifier. It also includes calculation and simulations using LTspice and ADI\ :sup:`SM` Precision Studio.
 
-The Low Frequency Noise KWIK Demo provides a hands-on activity allowing the user to measure the low frequency noise of three general operational amplifiers (op amp): (1) low power op amp, (2) low noise, bipolar op amp, and (3) low noise, zero drift op amp, with the use of ADALM2000 Active Learning Module.
+The Low Frequency Noise KWIK Demo provides a hands-on activity allowing the user
+to measure the low frequency noise of three general operational amplifiers (op
+amp): (1) low power op amp, (2) low noise, bipolar op amp, and (3) low noise,
+zero drift op amp, with the use of ADALM2000 Active Learning Module.
 
-The Low Frequency Noise KWIK Demo uses an easy to use demonstration board, specifically, EVAL-KW4502Z, that directly plugs into the ADALM2000.
+The Low Frequency Noise KWIK Demo uses an easy to use demonstration board,
+specifically, EVAL-KW4502Z, that directly plugs into the ADALM2000.
 
 Objective
 ---------
 
-The Low Frequency Noise KWIK Lecture and Lab aims to understand and measure the amplifier low frequency noise. Specifically, to estimate the 0.1 Hz to 10 Hz noise of the three different operational amplifiers, namely, LT1782, ADA4077, and ADA4522, using noise calculations and simulations. Also, to measure the 0.1 Hz to 10 Hz noise of the amplifiers using the EVAL-KW4502Z plugged into ADALM2000. Moreover, the acquired noise in the calculations, simulations, and measurements will be compared to the datasheet information.
+The Low Frequency Noise KWIK Lecture and Lab aims to understand and measure the
+amplifier low frequency noise. Specifically, to estimate the 0.1 Hz to 10 Hz
+noise of the three different operational amplifiers, namely, LT1782, ADA4077,
+and ADA4522, using noise calculations and simulations. Also, to measure the 0.1
+Hz to 10 Hz noise of the amplifiers using the EVAL-KW4502Z plugged into
+ADALM2000. Moreover, the acquired noise in the calculations, simulations, and
+measurements will be compared to the datasheet information.
 
 Lecture Materials
 -----------------
@@ -48,14 +61,9 @@ LTspice Simulation Circuits
 
 All LTspice Circuits used are available at `0.1 Hz to 10 Hz Filter, 60dB LTSpice Simulation Files <https://wiki.analog.com/_media/resources/eval/user-guides/0.1_hz_to_10_hz_filter_60db.zip>`_
 
-
-
-
-
 .. tip::
 
    *Keep all files in the zip folder in the same folder on your local PC.*
-
 
 --------------
 
@@ -65,17 +73,17 @@ KWIK Demo PCB Image
 **EVAL-KW502Z Top View**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-kw4502z_top.jpg
-   :width: 400px
+   :width: 400
 
 **EVAL-KW502Z Bottom View**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-kw4502z_bottom.jpg
-   :width: 400px
+   :width: 400
 
 **EVAL-KW502Z Angle View**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-kw4502z_angle.jpg
-   :width: 400px
+   :width: 400
 
 EVAL-KW4502Z Gerber Files
 =========================

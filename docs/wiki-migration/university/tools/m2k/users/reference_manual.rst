@@ -6,7 +6,10 @@ Overview
 
 The easy to use :adi:`ADALM2000` active learning module (M2K) helps introduce electrical engineering students and hobbyists to the fundamentals of signals and systems. Designed for students at all levels and from all backgrounds, the module can be used for both instructor-led and self-directed learning to help students develop a foundation in exploring signals and systems into the tens of MHz that they can build on as they pursue science, technology, or engineering degrees, without the cost and bulk associated with traditional lab gear.
 
-With 12-bit ADCs(running at 100MSPS) and DACs(at 150MSPS), the ADALM2000 brings the power of high performance lab equipment to the palm of your hand. When coupled with Analog Devices' Scopy graphical application software running on a computer, provides the user with the following high performance instrumentation:
+With 12-bit ADCs(running at 100MSPS) and DACs(at 150MSPS), the ADALM2000 brings
+the power of high performance lab equipment to the palm of your hand. When
+coupled with Analog Devices' Scopy graphical application software running on a
+computer, provides the user with the following high performance instrumentation:
 
 -  Two-channel oscilloscope with differential inputs
 -  Two-channel arbitrary waveform generator (AWG)
@@ -26,15 +29,11 @@ Small enough to fit in a shirt pocket, the M2K is completely self-contained and 
 
    \ |image1|\ |image2|\
 
-
 .. container:: centeralign
 
    Figure 1. ADALM2000
 
-
 .. container:: centeralign
-
-
 
    ..
 
@@ -43,7 +42,6 @@ Small enough to fit in a shirt pocket, the M2K is completely self-contained and 
 .. container:: centeralign
 
    Figure 2. ADALM2000 Pinout
-
 
 The ADALM2000 board is based on the `Xilinx Zynq All Programmable SoC <https://www.xilinx.com/products/silicon-devices/soc/zynq-7000.html>`_ (AP SoC) which integrates the software programmability of an ARM-based processor with the hardware programmability of an FPGA, enabling hardware acceleration while integrating CPU, DSP, ASSP, and mixed signal functionality into a single device. The device used in the M2K features a single-core ARM Cortex™-A9 processor mated with 28nm Artix®-7 based programmable logic, outfitted with commonly used hardened peripherals (USB, SPI, etc.)
 
@@ -59,13 +57,11 @@ Block Diagram
 
    \
 
-
    |image4|
 
 .. container:: centeralign
 
    Figure 3. ADALM2000 block diagram
-
 
 The block diagram is divided in the following blocks:
 
@@ -93,8 +89,12 @@ The block diagram is divided in the following blocks:
 ADC/DAC AD9963
 --------------
 
-The AD9963 is a 12-bit, low power Mixed signal Front end converters that provides two ADC channels with sample rates of 100 MSPS and two DAC channels with sample rates to 170 MSPS. The AD9963 offers high performance with low power consumption, high integration and a flexible digital interface. The M2K operates the ADC channels at a maximum sample rate of 100 MSPS, and the DAC channels at a maximum sample rate of 150 MSPS.
-
+The AD9963 is a 12-bit, low power Mixed signal Front end converters that
+provides two ADC channels with sample rates of 100 MSPS and two DAC channels
+with sample rates to 170 MSPS. The AD9963 offers high performance with low power
+consumption, high integration and a flexible digital interface. The M2K operates
+the ADC channels at a maximum sample rate of 100 MSPS, and the DAC channels at a
+maximum sample rate of 150 MSPS.
 
 |image5|
 
@@ -102,21 +102,23 @@ The AD9963 is a 12-bit, low power Mixed signal Front end converters that provide
 
    Figure 4. AD9963 ADC/DAC
 
-
 Analog Inputs
 -------------
 
 Input Dividers and Gain Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The gain mode is selected in this stage by the SoC, enabling the corresponding switch from ADG612 device. ADG612 is a monolithic CMOS device containing four independently selectable switches with the characteristics:
+The gain mode is selected in this stage by the SoC, enabling the corresponding
+switch from ADG612 device. ADG612 is a monolithic CMOS device containing four
+independently selectable switches with the characteristics:
 
 -  Ultralow charge injection (1 pC typically)
 -  Dual ±2.7 V to ±5.5 V or single +2.7 V to +5.5 V operation
 -  Automotive temperature range: −40°C to +125°C
 -  Small, 16-lead TSSOP and SOIC packages
 
-The ADALM2000 hardware design includes two gain range settings for the analog input voltage divider:
+The ADALM2000 hardware design includes two gain range settings for the analog
+input voltage divider:
 
 -  High gain mode: for signals from -2.5 V to +2.5V
 -  Low gain mode: for signals from -25 V to 25 V
@@ -129,21 +131,22 @@ A logic high on EN_SC1_HG turns switch 1 and switch 3 on, selecting high gain mo
 
    Figure 5. Input divider and gain control stage
 
-
 Buffers
 ~~~~~~~
 
-After the input divider stage in the signal chain is the buffer stage. A dual AD8066 FET input Op Amp is configured as a unity-gain buffer that presents a high-impedance to the dividers' outputs and drives the following stage. R-C compensation networks in the figure help to maximize the bandwidth and reduce peaking (especially at unity gain).
+After the input divider stage in the signal chain is the buffer stage. A dual
+AD8066 FET input Op Amp is configured as a unity-gain buffer that presents a
+high-impedance to the dividers' outputs and drives the following stage. R-C
+compensation networks in the figure help to maximize the bandwidth and reduce
+peaking (especially at unity gain).
 
 .. container:: centeralign
 
    \ |image8|\
 
-
 .. container:: centeralign
 
    Figure 6. Buffer stage
-
 
 The useful features of the AD8066 are:
 
@@ -164,10 +167,17 @@ The useful features of the AD8066 are:
 ADC Drivers
 ~~~~~~~~~~~
 
-The ADC driver consists of a ADA4940 for each analog input channel. This fully differential ADC driver is a low noise, low distortion device, with very low power consumption. Along with the passive components, this stage gives gain factor equal to 1.3 for the differential signal that comes from the previous buffer stage and a gain factor equal to 1 for the offset and reference signals.
+The ADC driver consists of a ADA4940 for each analog input channel. This fully
+differential ADC driver is a low noise, low distortion device, with very low
+power consumption. Along with the passive components, this stage gives gain
+factor equal to 1.3 for the differential signal that comes from the previous
+buffer stage and a gain factor equal to 1 for the offset and reference signals.
 
-Another ADA4940 and 2 Schottky diodes are used to provide protection to the ADC inputs of each channel against voltage levels above the absolute maximum ratings. In the datasheet of AD9963 the full scale input range of the ADC is 1.56Vpp differential with an absolute maximum rating from -0.3V to 2.1V so the protection circuit will clamp voltages around these values.
-
+Another ADA4940 and 2 Schottky diodes are used to provide protection to the ADC
+inputs of each channel against voltage levels above the absolute maximum
+ratings. In the datasheet of AD9963 the full scale input range of the ADC is
+1.56Vpp differential with an absolute maximum rating from -0.3V to 2.1V so the
+protection circuit will clamp voltages around these values.
 
 |image9|
 
@@ -175,11 +185,13 @@ Another ADA4940 and 2 Schottky diodes are used to provide protection to the ADC 
 
    Figure 7. ADC Driver
 
-
 References and offset
 ~~~~~~~~~~~~~~~~~~~~~
 
-Reference and offset voltages are implemented with an AD8567, a dual, micropower, precision, rail-to-rail input/output amplifier optimized for high output current capability and large capacitive loads. Other features of this operational amplifier are:
+Reference and offset voltages are implemented with an AD8567, a dual,
+micropower, precision, rail-to-rail input/output amplifier optimized for high
+output current capability and large capacitive loads. Other features of this
+operational amplifier are:
 
 -  low offset voltage (max 350 uV)
 -  low input bias current (max 20pA)
@@ -188,8 +200,8 @@ Reference and offset voltages are implemented with an AD8567, a dual, micropower
 -  Single-supply operation: 2.7V to 18V
 -  Dual-supply operation: ±1.35 V to ±9 V
 
-The reference stage has a 1.2V reference input signal. The reference signal is amplified with a gain equal to 1.333 before it reaches the ADC driver.
-
+The reference stage has a 1.2V reference input signal. The reference signal is
+amplified with a gain equal to 1.333 before it reaches the ADC driver.
 
 |image10|
 
@@ -197,10 +209,8 @@ The reference stage has a 1.2V reference input signal. The reference signal is a
 
    Figure 8. Reference Amplifier
 
-
-In the offset stage, the input signal is generated by AD5625 12-bit nanoDAC. This signal is amplified with 2.693 before it reaches ADC driver.
-
-
+In the offset stage, the input signal is generated by AD5625 12-bit nanoDAC.
+This signal is amplified with 2.693 before it reaches ADC driver.
 
 |image11|
 
@@ -208,17 +218,15 @@ In the offset stage, the input signal is generated by AD5625 12-bit nanoDAC. Thi
 
    Figure 9. Offset Amplifier
 
-
-The reference and offset voltages are derived from an AD5625 nanoDAC, which uses a 2-wire I2-compatible serial interface.It has single supply operation(from 2.7V to 5.5V) and is guaranteed monotonic by design.
-
-
+The reference and offset voltages are derived from an AD5625 nanoDAC, which uses
+a 2-wire I2-compatible serial interface.It has single supply operation(from 2.7V
+to 5.5V) and is guaranteed monotonic by design.
 
 |image12|
 
 .. container:: centeralign
 
    Figure 10 . AD5625 nanoDAC
-
 
 Waveform Generator
 ------------------
@@ -228,13 +236,11 @@ I/V
 
 The AD9963 DACs are a current steering architecture, so it is necessary to convert the TXIP,TXIN,TXQP,TXQN outputs to a voltage for the AWG frontend. This operation is performed by an AD8058 dual voltage feedback amplifier. The output currents from the TXIP and TXIN pins are complementary, meaning that the sum of the two currents always equals the full-scale current of the DAC. The digital input code to the DAC determines the effective differential current delivered to the load. TXIP provides maximum output current when all bits are high. The output currents vs. DACCODE for the DAC outputs are expressed as :math:`I_TXIP=[DACCODE/2^N] \times I_OUTFS` where :math:`DACCODE = 0 to 2^N-1.` The DAC full-scale output current is regulated by the reference control amplifier and is determined by the product of a reference current, a programmable reference resistor, an internal programmable resistor, and a pair of programmable gain scaling parameters. There are a number of adjustments that can be made to scale IOUTFS to provide programmability in the output signal level. There are 2 available ranges for the DAC full scale current: 4 mA full scale or 1 mA full scale. This current is converted by the AD8058 into voltage for the last stages of the AWG front end.
 
-
 |image13|
 
 .. container:: centeralign
 
    Figure 11. Current to voltage converter
-
 
 The AD8058 has a very low input bias current value (typically 0.5 µA) and is and is configured as a current to voltage converter such that: :math:`V_+=V_-` :math:`V_-=V_out+(I_(DAC-AWG1N) \times R_95)` :math:`V_+=(I_(DAC-AWG1P) \times R_93)` :math:`V_out=I_(DAC-AWG1P) \times R_93 - I_(DAC-AWG1N) \times R_95` The output voltage range of the AD8050 will be different, depending on the DAC full scale output current:
 
@@ -247,8 +253,8 @@ Input current (AD8058) Output Voltage (AD8058)
 Output stages
 ~~~~~~~~~~~~~
 
-The AWG reference is generated with ADR3412 high accuracy voltage reference. The 1.2 V signal is then passed through a buffer implemented with AD8657.
-
+The AWG reference is generated with ADR3412 high accuracy voltage reference. The
+1.2 V signal is then passed through a buffer implemented with AD8657.
 
 |image14|
 
@@ -256,10 +262,7 @@ The AWG reference is generated with ADR3412 high accuracy voltage reference. The
 
    Figure 12. AWG reference
 
-
 The offset of the signal generator channels is provided by the AD5625 nanoDAC.
-
-
 
 |image15|
 
@@ -267,19 +270,21 @@ The offset of the signal generator channels is provided by the AD5625 nanoDAC.
 
    Figure 13. Gain and offset stage of the AWG frontend
 
-
 Clock and Oscillator
 --------------------
 
-The ADF4360-9 is the clock generator used in ADALM2000, with a 20MHz reference generated by a precision oscillator(Y1). This integrated integer-N synthesizer and voltage controlled oscillator (VCO) allows a frequency range of between 65 MHz to 400 MHz. The ADF4360-9 is programmed through a 3-wire interface, the power supply range is 3.0 V to 3.6 V, and a low-power shutdown mode reduces supply current to 7μA.
-
+The ADF4360-9 is the clock generator used in ADALM2000, with a 20MHz reference
+generated by a precision oscillator(Y1). This integrated integer-N synthesizer
+and voltage controlled oscillator (VCO) allows a frequency range of between 65
+MHz to 400 MHz. The ADF4360-9 is programmed through a 3-wire interface, the
+power supply range is 3.0 V to 3.6 V, and a low-power shutdown mode reduces
+supply current to 7μA.
 
 |image16|
 
 .. container:: centeralign
 
    Figure 14. Oscillator and Clock Generator
-
 
 Digital IO
 ----------
@@ -288,28 +293,38 @@ Digital IO
 
    \ |image17|\
 
-
 .. container:: centeralign
 
    Figure 15. Digital I/O
 
-
-Digital IO connections to P1 are shown in the figure above. P1 is the end user signal connector, with 30 pins corresponding to the input analog channels, the user power supplies, the signal generator channels, 4 GND pins and digital IO pins. The Digital IO interface includes 18 pins, 16 of which are the Digital IO channels and the other two are trigger pins. IO pins are LVCMOS3V3 compatible and have ESD protection for large currents provided by Schottky Diodes (D11-D19). Short circuit protection is provided by the PRG18BB221MB1RB PTC protection devices on the digital lines (RT10-18). These components provide fault protection at the expense of limiting the bandwidth of the digital pins slightly when configured as inputs. Similarly, in digital output mode, the 200Ω resistance and the capacitance of the circuit being driven will limit bandwidth.
+Digital IO connections to P1 are shown in the figure above. P1 is the end user
+signal connector, with 30 pins corresponding to the input analog channels, the
+user power supplies, the signal generator channels, 4 GND pins and digital IO
+pins. The Digital IO interface includes 18 pins, 16 of which are the Digital IO
+channels and the other two are trigger pins. IO pins are LVCMOS3V3 compatible
+and have ESD protection for large currents provided by Schottky Diodes
+(D11-D19). Short circuit protection is provided by the PRG18BB221MB1RB PTC
+protection devices on the digital lines (RT10-18). These components provide
+fault protection at the expense of limiting the bandwidth of the digital pins
+slightly when configured as inputs. Similarly, in digital output mode, the 200Ω
+resistance and the capacitance of the circuit being driven will limit bandwidth.
 
 .. note::
 
    input bandwidth calculation based on 200Ω and 4.4pF + Zynq Cin
 
-
 .. warning::
 
-   Note: When connecting the digital pins to any external device and the ADALM2000 is powered off, the ESD protection diodes on the ADALM2000 will turn on, pulling any signals to ground. Any high logic level of the external signal will be reduced to ~ 0.6V.
-
+   Note: When connecting the digital pins to any external device and the
+   ADALM2000 is powered off, the ESD protection diodes on the ADALM2000 will
+   turn on, pulling any signals to ground. Any high logic level of the external
+   signal will be reduced to ~ 0.6V.
 
 .. note::
 
-   Would be good to describe a practical series resistance to safely sniff 5V logic, considering the unpowered case where the internal 3.3V supply could potentially be "dragged" higher than 3.3V
-
+   Would be good to describe a practical series resistance to safely sniff 5V
+   logic, considering the unpowered case where the internal 3.3V supply could
+   potentially be "dragged" higher than 3.3V
 
 Power Supplies
 --------------
@@ -317,8 +332,16 @@ Power Supplies
 User power supplies
 ~~~~~~~~~~~~~~~~~~~
 
-The user power supplies are implemented with two ADA4805 amplifiers, one in noninverting configuration for the positive power supply and the other in inverting configuration for the negative power supply. These amplifiers are rail-to-rail output, with ultralow pupply current (500µA per amplifier) and with a typical 0.2 µV/°C offset drift. A shutdown pin allows dynamic management of the amplifier's supply current. The outputs are guaranteed to source and sink 58mA, making them suitable for use as an adjustable positive or negative power supply with a maximum specified load current of 50mA. Compensation networks allow the amplifier to drive a 1μF output capacitance, providing a low AC output impedance to the load.
-
+The user power supplies are implemented with two ADA4805 amplifiers, one in
+noninverting configuration for the positive power supply and the other in
+inverting configuration for the negative power supply. These amplifiers are
+rail-to-rail output, with ultralow pupply current (500µA per amplifier) and with
+a typical 0.2 µV/°C offset drift. A shutdown pin allows dynamic management of
+the amplifier's supply current. The outputs are guaranteed to source and sink
+58mA, making them suitable for use as an adjustable positive or negative power
+supply with a maximum specified load current of 50mA. Compensation networks
+allow the amplifier to drive a 1μF output capacitance, providing a low AC output
+impedance to the load.
 
 |image18|
 
@@ -326,10 +349,9 @@ The user power supplies are implemented with two ADA4805 amplifiers, one in noni
 
    Figure 16. User power supplies
 
-
-The ADA4805 shutdown pin is controlled by the SoC through a p-Channel MOSFET. The device will turn of if the pin is pulled to a voltage with more than 1V below midsupply.
-
-
+The ADA4805 shutdown pin is controlled by the SoC through a p-Channel MOSFET.
+The device will turn of if the pin is pulled to a voltage with more than 1V
+below midsupply.
 
 |image19|
 
@@ -337,10 +359,9 @@ The ADA4805 shutdown pin is controlled by the SoC through a p-Channel MOSFET. Th
 
    Figure 17. Enable supplies
 
-
-Control signals for the supplies are generated by an AD5627 dual 12 bit nanoDAC, with an output range of 0-1V corresponding to a range of 0 to 5.02V for the positive supply and 0 to -5.1V for the negative supply.
-
-
+Control signals for the supplies are generated by an AD5627 dual 12 bit nanoDAC,
+with an output range of 0-1V corresponding to a range of 0 to 5.02V for the
+positive supply and 0 to -5.1V for the negative supply.
 
 |image20|
 
@@ -348,18 +369,19 @@ Control signals for the supplies are generated by an AD5627 dual 12 bit nanoDAC,
 
    Figure 18. AD5627 nanoDAC
 
-
 The amplifier used for the positive user power supply has a gain of 5.02: :math:`\displaystyle gain_pos=1+(R_161/R_158)=1+(\frac{4.02k}{1k})=5.02` For the negative user supply amplifier the gain is -5.1: :math:`\displaystyle gain_neg=-(R_160/R_159)=-(\frac{5.1k}{1k})=-5.1`
 
-The outputs of the ADA4805s (SUPPLY_POS and SUPPLY_NEG) correspond to the V+ and V- pins on the user connector. Output voltages are also monitored through scaling circuits with a gains of 1/2 and -1/2 that are then connected to the AD9963's AUXIO pins. The monitoring function is useful for detecting supply overcurrent and / or short circuits in the circuit being powered.
-
+The outputs of the ADA4805s (SUPPLY_POS and SUPPLY_NEG) correspond to the V+ and
+V- pins on the user connector. Output voltages are also monitored through
+scaling circuits with a gains of 1/2 and -1/2 that are then connected to the
+AD9963's AUXIO pins. The monitoring function is useful for detecting supply
+overcurrent and / or short circuits in the circuit being powered.
 
 |image21|
 
 .. container:: centeralign
 
    Figure 19. User supply signals division
-
 
 The positive supply monitoring signal is obtained with a resistive divider with a gain of 1/2 and the negative supply monitor signal is obtained with an inverting amplifier with gain -1/2: :math:`\displaystyle G=-(R_136/R_139)=-(\frac{2k}{4.02k})=-\frac{1}{2}`
 
@@ -369,8 +391,13 @@ Internal power supplies
 Analog Power supplies
 ^^^^^^^^^^^^^^^^^^^^^
 
-There are 3 voltage rails in the positive analog section derived from the main USB connector or auxiliary USB power connector. An ADP2370 synchronous buck regulator provides the 3.3V voltage rail. This is a high efficiency, low quiescent current dc-to-dc converter which uses a proprietary high speed current mode and constant frequency PWM control scheme for excellent stability and transient response. This rail is used to supply the clock generator, the ADC drivers and the current-to-voltage converters of the AWG front end.
-
+There are 3 voltage rails in the positive analog section derived from the main
+USB connector or auxiliary USB power connector. An ADP2370 synchronous buck
+regulator provides the 3.3V voltage rail. This is a high efficiency, low
+quiescent current dc-to-dc converter which uses a proprietary high speed current
+mode and constant frequency PWM control scheme for excellent stability and
+transient response. This rail is used to supply the clock generator, the ADC
+drivers and the current-to-voltage converters of the AWG front end.
 
 |image22|
 
@@ -378,10 +405,13 @@ There are 3 voltage rails in the positive analog section derived from the main U
 
    Figure 20. 3.3 V positive voltage rail
 
-
-An ADP1614 step-up converter provides the 6V voltage rail. This is a dc-to-dc switching converter with an integrated power switch capable of providing an output voltage up to 20V. The device operates in a current-mode pulse-width modulation with up to 94% efficiency. Due to this architecture is allowed excellent transient response and easy noise filtering. This rail is used to supply the user power supply amplifiers, the switches used in the input signal chain, and the amplifiers of the AWG front end.
-
-
+An ADP1614 step-up converter provides the 6V voltage rail. This is a dc-to-dc
+switching converter with an integrated power switch capable of providing an
+output voltage up to 20V. The device operates in a current-mode pulse-width
+modulation with up to 94% efficiency. Due to this architecture is allowed
+excellent transient response and easy noise filtering. This rail is used to
+supply the user power supply amplifiers, the switches used in the input signal
+chain, and the amplifiers of the AWG front end.
 
 |image23|
 
@@ -389,10 +419,11 @@ An ADP1614 step-up converter provides the 6V voltage rail. This is a dc-to-dc sw
 
    Figure 21. 6 V positive voltage rail
 
-
-An LT1761 LDO Micropower Regulator provides the low-noise 4V rail used to supply the amplifiers from the buffer stage of the input signal chain. This is a low dropout regulator with low quiescent and shutdown current and with an input voltage range of 1.8V to 20V, output current of 100mA, and a dropout voltage of 300mV.
-
-
+An LT1761 LDO Micropower Regulator provides the low-noise 4V rail used to supply
+the amplifiers from the buffer stage of the input signal chain. This is a low
+dropout regulator with low quiescent and shutdown current and with an input
+voltage range of 1.8V to 20V, output current of 100mA, and a dropout voltage of
+300mV.
 
 |image24|
 
@@ -400,10 +431,13 @@ An LT1761 LDO Micropower Regulator provides the low-noise 4V rail used to supply
 
    Figure 22. 4 V positive voltage rail
 
-
-The negative analog section has 3 voltage rails, -6V, -3.3V and -5V. An ADP5074 inverting regulator provides -6V from the 5V USB input. It has a wide input voltage range (from 2.85V to 15V) and its integrated main switch enables the generation of an adjustable negative output down to 39V below the input voltage. This rail is used to supply the amplifiers of the user power supplies, the switches used in the input signal chain, and the amplifiers of the AWG front end.
-
-
+The negative analog section has 3 voltage rails, -6V, -3.3V and -5V. An ADP5074
+inverting regulator provides -6V from the 5V USB input. It has a wide input
+voltage range (from 2.85V to 15V) and its integrated main switch enables the
+generation of an adjustable negative output down to 39V below the input voltage.
+This rail is used to supply the amplifiers of the user power supplies, the
+switches used in the input signal chain, and the amplifiers of the AWG front
+end.
 
 |image25|
 
@@ -411,10 +445,10 @@ The negative analog section has 3 voltage rails, -6V, -3.3V and -5V. An ADP5074 
 
    Figure 23. -6 V voltage rail
 
-
-An ADP7182 regulates the -6V rail to -3.3V. This device is is a CMOS, low dropout (LDO) linear regulator that operates from −2.7 V to −28 V and provides up to −200 mA of output current. This rail is used to supply the ADC drivers and the current-to-voltage converters of the AWG front end.
-
-
+An ADP7182 regulates the -6V rail to -3.3V. This device is is a CMOS, low
+dropout (LDO) linear regulator that operates from −2.7 V to −28 V and provides
+up to −200 mA of output current. This rail is used to supply the ADC drivers and
+the current-to-voltage converters of the AWG front end.
 
 |image26|
 
@@ -422,10 +456,10 @@ An ADP7182 regulates the -6V rail to -3.3V. This device is is a CMOS, low dropou
 
    Figure 24. -3.3 V voltage rail
 
-
-An LT1964ES5-5 provides the -5V rail. This device is a low-noise, Low Dropout Negative micropower Regulator with a fixed output voltage of -5V capable of supplying 200mA of output current. This rail is used to supply the amplifiers from the buffer stage of the input signal chain.
-
-
+An LT1964ES5-5 provides the -5V rail. This device is a low-noise, Low Dropout
+Negative micropower Regulator with a fixed output voltage of -5V capable of
+supplying 200mA of output current. This rail is used to supply the amplifiers
+from the buffer stage of the input signal chain.
 
 |image27|
 
@@ -433,12 +467,16 @@ An LT1964ES5-5 provides the -5V rail. This device is a low-noise, Low Dropout Ne
 
    Figure 25. -5 V voltage rail
 
-
 Digital Power supplies
 ^^^^^^^^^^^^^^^^^^^^^^
 
-There are 4 supply rails for the digital section of the board. These rails are provided by two ADP2114 Dual Step-Down DC-to-DC Regulators. This device is a synchronous step-down switching regulator with two independent outputs. It provides high efficiency(up to 95%) and operates at switching frequencies up to 2MHz. The input voltage range is 2.75V to 5.5V and the output is either fixed or adjustable. One of the ADP2114s is used to provide 1.8V for the ADC/DAC and 1.35V for the DDR3 memory.
-
+There are 4 supply rails for the digital section of the board. These rails are
+provided by two ADP2114 Dual Step-Down DC-to-DC Regulators. This device is a
+synchronous step-down switching regulator with two independent outputs. It
+provides high efficiency(up to 95%) and operates at switching frequencies up to
+2MHz. The input voltage range is 2.75V to 5.5V and the output is either fixed or
+adjustable. One of the ADP2114s is used to provide 1.8V for the ADC/DAC and
+1.35V for the DDR3 memory.
 
 |image28|
 
@@ -446,10 +484,8 @@ There are 4 supply rails for the digital section of the board. These rails are p
 
    Figure 26. 1.8V and 1.35 digital voltage rail
 
-
-The other ADP2114 is used to provide the 1.0V VCCPINT rail, which supplies the SoC, and the 3.3V rail which supplies the ADC and DACs.
-
-
+The other ADP2114 is used to provide the 1.0V VCCPINT rail, which supplies the
+SoC, and the 3.3V rail which supplies the ADC and DACs.
 
 |image29|
 
@@ -457,11 +493,11 @@ The other ADP2114 is used to provide the 1.0V VCCPINT rail, which supplies the S
 
    Figure 27. 1V and 3.3V digital voltage rail
 
-
 USB Controller
 --------------
 
-A Microchip USB3320 Hi-Speed USB 2.0 transceiver provides a USB PHY and ULPI connectivity to the SoC. The USB interface provides the following functions:
+A Microchip USB3320 Hi-Speed USB 2.0 transceiver provides a USB PHY and ULPI
+connectivity to the SoC. The USB interface provides the following functions:
 
 -  USB 2 (480 Mbits/seconds)
 -  libiio USB device for communicating to the device
@@ -474,22 +510,21 @@ A Microchip USB3320 Hi-Speed USB 2.0 transceiver provides a USB PHY and ULPI con
 
    -  provides access to the Linux console on the M2K device via USB Communication Device Class Abstract Control Model (`USB CDC ACM <https://en.wikipedia.org/wiki/USB_communications_device_class>`_) specification
 
--  Mass Storage Device : this will appear to the host as a disk, where you can find links for software uploads, and the serial number of the device.
+-  Mass Storage Device : this will appear to the host as a disk, where you can
+   find links for software uploads, and the serial number of the device.
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/users/usb_phy.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    Figure 28. Usb PHY
 
-
 Memory
 ------
 
 System memory is a Micron `MT41K256M16TW-107 <https://www.micron.com/parts/dram/ddr3-sdram/mt41k256m16tw-107>`_ 4Gbit (512 MByte), 1066 Mbps, DDR3L low voltage SDRAM. This memory is used for temporary storage of streaming data as well as the operating system.
-
 
 |image30|
 
@@ -497,17 +532,13 @@ System memory is a Micron `MT41K256M16TW-107 <https://www.micron.com/parts/dram/
 
    Figure 29 . DDR3 memory
 
-
 Firmware is stored in a Micron `MT25QU256ABA8E12-1SIT <https://www.micron.com/products/nor-flash/serial-nor-flash/part-catalog/mt25qu256aba8e12-1sit>`_ 265Mbyte, 90MBps Serial Flash. This device has an endurance of 100,000 ERASE cycles minimum (don't update the firmware more times than this).
-
-
 
 |image31|
 
 .. container:: centeralign
 
    Figure 30. Flash memory
-
 
 SoC
 ---
@@ -534,8 +565,8 @@ Additional information may be found at `Zynq-7000 All Programmable SoC Overview 
 Power
 -----
 
-The board is completely self powered from USB and has two USB connectors: One for power and data and one for optional power.
-
+The board is completely self powered from USB and has two USB connectors: One
+for power and data and one for optional power.
 
 |image32|
 
@@ -543,17 +574,17 @@ The board is completely self powered from USB and has two USB connectors: One fo
 
    Figure 31. USB connectors
 
-
-Bus power from both USB connectors are pass through an LTC4415 dual monolithic ideal diodes with adjustable current limit, where the data USB bus current limit is set to 1A and the power USB bus current limit is set to 2A. The two ideal diodes are independently enabled and prioritized using inputs EN1 and /EN2 such that the power USB connector has the higher priority.
-
-
+Bus power from both USB connectors are pass through an LTC4415 dual monolithic
+ideal diodes with adjustable current limit, where the data USB bus current limit
+is set to 1A and the power USB bus current limit is set to 2A. The two ideal
+diodes are independently enabled and prioritized using inputs EN1 and /EN2 such
+that the power USB connector has the higher priority.
 
 |image33|
 
 .. container:: centeralign
 
    Figure 32. Power selector
-
 
 Features
 --------
@@ -675,68 +706,68 @@ Other Features
    -  :doc:`ALICE Active Learning Interface (for) Circuits (and) Electronics for M2K </wiki-migration/university/tools/m2k/alice/users-guide-m2k>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/users/adalm2000_board2.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/users/adalm2000_board1.png
-   :width: 305px
+   :width: 305
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/users/adalm2000-pin-wires.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/users/block_diagram_m2k.png
-   :width: 700px
+   :width: 700
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/users/ad9963.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/users/inout_div_gainctrl_p.png
-   :width: 500px
+   :width: 500
 .. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/users/input_div_gainctr_n.png
-   :width: 500px
+   :width: 500
 .. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/users/m2k_sc_buffer.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/users/adc_driver.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/users/scope_reference.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/users/scope_offset.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/users/ad5625.png
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/users/curent.voltage_awg.png
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/users/awg_reference.png
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/users/gain_offset_awg.png
-   :width: 700px
+   :width: 700
 .. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/users/clocking.png
-   :width: 900px
+   :width: 900
 .. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/users/digitaliopins.png
-   :width: 1000px
+   :width: 1000
 .. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/users/user_powersupplies.png
-   :width: 600px
+   :width: 600
 .. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/users/enable_supplies.png
-   :width: 300px
+   :width: 300
 .. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/users/ad5627.png
-   :width: 500px
+   :width: 500
 .. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/users/supply_monitor.png
-   :width: 600px
+   :width: 600
 .. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/users/3v3_rail.png
-   :width: 800px
+   :width: 800
 .. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/users/6v_rail.png
-   :width: 800px
+   :width: 800
 .. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/users/4v_rail.png
-   :width: 400px
+   :width: 400
 .. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/users/m6v_rail.png
-   :width: 800px
+   :width: 800
 .. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/users/m3v3_rail.png
-   :width: 600px
+   :width: 600
 .. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/users/m5v_rail.png
-   :width: 600px
+   :width: 600
 .. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/users/digital_1v8_1v35.png
-   :width: 700px
+   :width: 700
 .. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/users/digital_3v3.png
-   :width: 700px
+   :width: 700
 .. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/users/ddr3.png
-   :width: 700px
+   :width: 700
 .. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/users/flash.png
-   :width: 800px
+   :width: 800
 .. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/users/usb_conn.png
-   :width: 600px
+   :width: 600
 .. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/users/power_selector.png
-   :width: 800px
+   :width: 800

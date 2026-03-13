@@ -76,7 +76,8 @@ Analog to Digital Converters
 
 :doc:`User Guide for 14-/16-/18-Bit ADCs from the 10 LEAD PulSAR® Family </wiki-migration/resources/eval/10-lead-pulsar-adc-evaluation-board>`
 
--  AD7685, AD7686, AD7687, AD7688, AD7690, AD7691, AD7980, AD7982, AD7983, AD7984, AD7988-1/AD7988-5
+-  AD7685, AD7686, AD7687, AD7688, AD7690, AD7691, AD7980, AD7982, AD7983,
+   AD7984, AD7988-1/AD7988-5
 
 :doc:`User Guide for the AD6676EBZ, a High Dynamic range, Wideband IF Receiver </wiki-migration/resources/eval/ad6676-wideband_rx_subsystem_ad6676ebz>`
 

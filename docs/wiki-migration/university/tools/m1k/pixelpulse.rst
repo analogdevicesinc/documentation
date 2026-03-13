@@ -7,7 +7,6 @@
    -  `Latest release <https://github.com/analogdevicesinc/Pixelpulse2/releases/latest>`_
    
 
-
 Pixelpulse
 ==========
 
@@ -15,19 +14,26 @@ Pixelpulse is a open source application, which provides a user interface for vis
 
 Fully cross-platform (Windows, Linux, OS X) using the `Qt5 <http://qt-project.org/>`_ graphics toolkit and OpenGL accelerated density-gradiated rendering, it provides a powerful and accessible tool for initial interactive explorations.
 
-Intuitive click-and-drag interfaces make exploring system behaviors across a wide range of signal amplitudes, frequencies, or phases a trivial exercise. Just click once to source a constant voltage or current and see what happens. Choose a function (sawtooth, triangle, sinusoidal, square) - adjust parameters, and make waves.
+Intuitive click-and-drag interfaces make exploring system behaviors across a
+wide range of signal amplitudes, frequencies, or phases a trivial exercise. Just
+click once to source a constant voltage or current and see what happens. Choose
+a function (sawtooth, triangle, sinusoidal, square) - adjust parameters, and
+make waves.
 
-Zoom in and out with your scroll wheel or multitouch gestures (on supported platforms and hardware). Hold "Shift" to for Y-axis zooming.
+Zoom in and out with your scroll wheel or multitouch gestures (on supported
+platforms and hardware). Hold "Shift" to for Y-axis zooming.
 
 Click and drag the X axis to pan in time.
 
 .. image:: https://wiki.analog.com/_media/university/tools/m1k/pixelpulse.png
-   :width: 400px
+   :width: 400
 
 Identify Devices
 ----------------
 
-If multiple ADALM1000 are connected to Pixelpulse2, you can identify each device from the GUI by clicking each of the ADALM1000 labels from the left of the screen. The corresponding device will start blinking.
+If multiple ADALM1000 are connected to Pixelpulse2, you can identify each device
+from the GUI by clicking each of the ADALM1000 labels from the left of the
+screen. The corresponding device will start blinking.
 
 Acquisition Settings
 --------------------
@@ -37,14 +43,17 @@ There are use cases where a specific circuit may provide a delayed response to a
 .. image:: https://wiki.analog.com/_media/university/tools/m1k/pp2_acquisition_settings.png
    :alt: Acquisition Settings Panel
    :align: right
-   :width: 350px
+   :width: 350
 
 This can be done from the **Acquisition Settings** menu that will open up a settings dialog where the desired delay can be set.
 
 -  **Delay** spinbox: Set the amount of time the acquisition should be delayed with. The smallest step size is 10 microseconds. A 1 ms step size is possible using the PageUp / PageDown buttons.
 -  **Show delay** checkbox: If checked will make a status bar visible at the bottom of the main window that displays the delay that is currently set.
 
-Note that during the time the acquisition is being delayed with the excitation signal continues to be transmitted. E.g. if Sample Time = 100 ms and Delay = 25 ms the excitation signal will run for 125 ms and the captured data that will be displayed will contain information from T0=25 ms until T1=125 ms.
+Note that during the time the acquisition is being delayed with the excitation
+signal continues to be transmitted. E.g. if Sample Time = 100 ms and Delay = 25
+ms the excitation signal will run for 125 ms and the captured data that will be
+displayed will contain information from T0=25 ms until T1=125 ms.
 
 Display Settings
 ----------------
@@ -52,7 +61,7 @@ Display Settings
 .. image:: https://wiki.analog.com/_media/university/tools/m1k/pp2_display_settings.png
    :alt: Display settings panel
    :align: right
-   :width: 350px
+   :width: 350
 
 Customize the coloring scheme of the plots within the application.
 
@@ -65,20 +74,26 @@ The dialog can be accessed from Settings -> Display settings.
 -  **Time Plots** checkbox: If checked, settings are applied to the time plots.
 -  **XY Plots** checkbox: If checked, settings are applied to the XY plots.
 
-Scroll, use the left/right arrow or click and drag the user friendly sliders to change the settings.
+Scroll, use the left/right arrow or click and drag the user friendly sliders to
+change the settings.
 
-Use any other feature that Pixelpulse provides without closing the display settings dialog.
+Use any other feature that Pixelpulse provides without closing the display
+settings dialog.
 
-Save or restore your preferred settings with all the other saved data using Save Session or Restore Session.
+Save or restore your preferred settings with all the other saved data using Save
+Session or Restore Session.
 
 Data logging
 ------------
 
-Pixelpulse2 contains a data logging mechanism. This can be very useful for capturing data for a longer period of time.
+Pixelpulse2 contains a data logging mechanism. This can be very useful for
+capturing data for a longer period of time.
 
 To enable the data logging mechanism, you can check the Data logging button from Pixelpulse's menu. |image1|\ In order to do this, you must select a Sample time of 1 or 10 seconds. After each 1, respectively 10, seconds, the generated data from the last interval of time will be stored into a file. The stored data contains the minimum, maximum and average current and voltage value for both channels A and B, for each connected device and the timestamp relative to the logging process start time.
 
-The log file's name has the following pattern: PP_Log\_<timestamp>.csv. The timestamp is composed from the date and time at which the file was created. In the following picture you can see a sample of a log file.
+The log file's name has the following pattern: PP_Log\_<timestamp>.csv. The
+timestamp is composed from the date and time at which the file was created. In
+the following picture you can see a sample of a log file.
 
 .. image:: https://wiki.analog.com/_media/university/tools/m1k/log_sample.png
    :align: center
@@ -94,7 +109,9 @@ Download
 
 The latest release of Pixelpulse is available for download on `Github <https://github.com/analogdevicesinc/Pixelpulse2/releases/latest>`_.
 
-A release contains multiple binaries that allow Pixelpulse2 to be deployed on systems that run Windows and OS X. Linux users will currently have to build their own version from source.
+A release contains multiple binaries that allow Pixelpulse2 to be deployed on
+systems that run Windows and OS X. Linux users will currently have to build
+their own version from source.
 
 The typical list of files that a release contains:
 
@@ -114,6 +131,5 @@ Building from source
 
    When running Pixelpulse under Linux please make sure to run it as root.
 
-
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/data_logging.png
-   :width: 200px
+   :width: 200

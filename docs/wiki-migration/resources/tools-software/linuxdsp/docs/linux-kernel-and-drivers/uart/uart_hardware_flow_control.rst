@@ -4,7 +4,8 @@ User manual for uart hardware flow control in linux kernel
 Introduction
 ------------
 
-This section describes the steps required to enable UART hardware flow control on ADSP-SC5xx board.
+This section describes the steps required to enable UART hardware flow control
+on ADSP-SC5xx board.
 
 Hardware Setup
 --------------
@@ -33,7 +34,8 @@ Configure Linux kernel
 Configure Device tree
 ~~~~~~~~~~~~~~~~~~~~~
 
-Run “bitbake linux-adi -c devshell” to enter into the kernel source code and then change the device tree files.
+Run “bitbake linux-adi -c devshell” to enter into the kernel source code and
+then change the device tree files.
 
 Add in uart0 node of **'linux source code directory'/arch/arm/boot/dts/sc58x.dtsi** or **'linux source code directory'/arch/arm/boot/dts/sc57x.dtsi**
 
@@ -45,19 +47,22 @@ Add in uart0 node of **'linux source code directory'/arch/arm/boot/dts/sc58x.dts
    ...
    };
 
-Then run bitbake linux-adi -C compile to generate kernel image zImage and dtb file.
+Then run bitbake linux-adi -C compile to generate kernel image zImage and dtb
+file.
 
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-Add the rtscts-test package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
+Add the rtscts-test package in the filesystem, it's enabled in adsp-sc5xx-full
+image by default.
 
 ::
 
    vim build/conf/local.conf
    IMAGE_INSTALL_append = "rtscts-test"
 
-Then run “bitbake adsp-sc5xx-minimal -C compile” or “bitbake adsp-sc5xx-full -C compile” to generate the filesystem.
+Then run “bitbake adsp-sc5xx-minimal -C compile” or “bitbake adsp-sc5xx-full -C
+compile” to generate the filesystem.
 
 Example
 -------
@@ -80,10 +85,12 @@ Test
 
    SD CARD shouldn't be in the card slot due to the pin signal interference.
 
-
 **1) Input invalid before Linux boot up**
 
-After powering-off and restarting the board you will find that UBoot doesn't accept the input from the serial console. Instead it automatically boot up kernel according to its predefined parameters. Once the Linux kernel has been booted it will accept input..
+After powering-off and restarting the board you will find that UBoot doesn't
+accept the input from the serial console. Instead it automatically boot up
+kernel according to its predefined parameters. Once the Linux kernel has been
+booted it will accept input..
 
 **2) run rtscts_test case**
 
@@ -93,8 +100,8 @@ After powering-off and restarting the board you will find that UBoot doesn't acc
 
 .. note::
 
-   In the above command the serial device is given as an example, and will not necessarily be ttySC0.
-
+   In the above command the serial device is given as an example, and will not
+   necessarily be ttySC0.
 
 --------------
 

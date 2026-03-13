@@ -3,7 +3,10 @@ AD7124 No-OS Software
 
 .. important::
 
-   You're looking at a legacy page. The driver API has since changed and does not correspond anymore to the driver for ad7124 available in no-OS repository. However, you may use the code in the following no-OS projects to see examples of ad7124 driver usage:
+   You're looking at a legacy page. The driver API has since changed and does
+   not correspond anymore to the driver for ad7124 available in no-OS
+   repository. However, you may use the code in the following no-OS projects to
+   see examples of ad7124 driver usage:
 
    
    :git-no-OS:`no-OS/tree/master/projects/ad7124-4sdz <projects/ad7124-4sdz>`
@@ -11,11 +14,11 @@ AD7124 No-OS Software
    :git-no-OS:`no-OS/tree/master/projects/ad7124-8pmdz <projects/ad7124-8pmdz>`
    
 
-
 Introduction
 ------------
 
-This document describes the No-OS software used to control the AD7124 part and includes an example of how to initialize a AD7124 part.
+This document describes the No-OS software used to control the AD7124 part and
+includes an example of how to initialize a AD7124 part.
 
 Overview
 --------
@@ -44,9 +47,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD7124 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD7124 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD7124 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD7124 driver:
 
@@ -61,12 +68,12 @@ There are three functions which are called by the AD7124 driver:
 
    SPI driver architecture
 
-
 The AD7124 driver contains the following:
 
 -  AD7124.h - Header file of the driver. Contains the driver function declarations, custom data types to be used by the driver and driver specific constants.
 -  AD7124.c - Implementation file of the driver. Contains the implementations of the driver functions.
--  AD7124_regs.h - Register map of the driver. Contains the register map definitions and an array of all device registers to be used with the driver.
+-  AD7124_regs.h - Register map of the driver. Contains the register map
+   definitions and an array of all device registers to be used with the driver.
 
 The following functions are implemented in this version of AD7124 driver:
 
@@ -111,13 +118,19 @@ Downloads
    -  **Generic Platform Driver** :git-no-OS:`drivers/platform/generic`
    
 
-
 Using the API
 -------------
 
-The driver can only work together with a structure that holds the state of a device, where state means all information about the device including a copy of all register values written to the device at a certain point. This structure will henceforth be referred as an instance of a driver. All driver functions take a handler of a driver instance as the first argument. This allows the driver to be used with multiple devices simultaneously, without the need to replicate the .c and .h files.
+The driver can only work together with a structure that holds the state of a
+device, where state means all information about the device including a copy of
+all register values written to the device at a certain point. This structure
+will henceforth be referred as an instance of a driver. All driver functions
+take a handler of a driver instance as the first argument. This allows the
+driver to be used with multiple devices simultaneously, without the need to
+replicate the .c and .h files.
 
-Before using any API call, an instance of the driver must first be created and then initialized using the AD7124_Setup() which has the following parameters:
+Before using any API call, an instance of the driver must first be created and
+then initialized using the AD7124_Setup() which has the following parameters:
 
 -  **device**: the reference of the new driver instance. A new instance can be obtained by simply declaring one: <code c> struct ad7124_device my_ad7124; </code>
 -  **slave_select**: the index of the SPI Chip Select. It will be stored into the driver instance to be used with all SPI calls for that particular instance.
@@ -140,7 +153,6 @@ The following code snipped provides an example of driver usage:
        long timeout = 1000;                               /* Number of tries before a function times out */
        long ret = 0;                                      /* Return value */
        long sample;                                       /* Stores raw value read from the ADC */
-
 
        /* Initialize AD7124 device. */
        ret = AD7124_Setup(ad7124_handler, AD7124_SLAVE_ID, (ad7124_st_reg *)&ad7124_regs);
@@ -176,8 +188,6 @@ The following code snipped provides an example of driver usage:
 More information
 ================
 
-
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

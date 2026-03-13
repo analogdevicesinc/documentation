@@ -7,7 +7,8 @@ Sine Tone
 | The Tone (Lookup/Sine) block generates a tone from a lookup table, keeping the level constant regardless of frequency. Set the tone frequency in text field or use the arrows; the checkbox turns the tone on and off. | |image2| |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 
-To change the source's Sampling Rate, Right-click in the block and select Set Sampling Rate, which will open the Sampling Rate window (default is 44.1 kHz).
+To change the source's Sampling Rate, Right-click in the block and select Set
+Sampling Rate, which will open the Sampling Rate window (default is 44.1 kHz).
 
 GUI Control
 -----------

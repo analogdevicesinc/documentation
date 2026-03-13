@@ -31,9 +31,17 @@ Reference Circuits
 Overview
 --------
 
-The AD5426/AD5432/AD5443 are CMOS 8-, 10-, and 12-bit current output digital-to-analog converters (DACs), respectively. These devices operate from a 2.5 V to 5.5 V power supply, making them suitable for battery-powered applications and many other applications.
+The AD5426/AD5432/AD5443 are CMOS 8-, 10-, and 12-bit current output
+digital-to-analog converters (DACs), respectively. These devices operate from a
+2.5 V to 5.5 V power supply, making them suitable for battery-powered
+applications and many other applications.
 
-These DACs use a double buffered, 3-wire serial interface that is compatible with SPI, QSPI™, MICROWIRE™, and most DSP interface standards. In addition, a serial data out pin (SDO) allows for daisy-chaining when multiple packages are used. Data readback allows the user to read the contents of the DAC register via the SDO pin. On power-up, the internal shift register and latches are filled with 0s and the DAC outputs are at zero scale.
+These DACs use a double buffered, 3-wire serial interface that is compatible
+with SPI, QSPI™, MICROWIRE™, and most DSP interface standards. In addition, a
+serial data out pin (SDO) allows for daisy-chaining when multiple packages are
+used. Data readback allows the user to read the contents of the DAC register via
+the SDO pin. On power-up, the internal shift register and latches are filled
+with 0s and the DAC outputs are at zero scale.
 
 Applications
 ~~~~~~~~~~~~
@@ -51,7 +59,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5443_sdz.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -63,9 +76,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD5443 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD5443 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD5443 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD5443 driver:
 
@@ -79,7 +96,6 @@ There are three functions which are called by the AD5443 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of AD5443 driver:
 
@@ -106,7 +122,8 @@ Downloads
 Renesas RX63N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the AD5443 demonstration project on a Renesas RX63N platform.
+This section contains a description of the steps required to run the AD5443
+demonstration project on a Renesas RX63N platform.
 
 Required Hardware
 -----------------
@@ -123,7 +140,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD5443SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RX63N:
+An EVAL-AD5443SDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
+for RX63N:
 
 ::
 
@@ -138,30 +156,25 @@ An EVAL-AD5443SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) 
 Reference Project Overview
 --------------------------
 
-The reference project initializes the device and writes a value to DAC register once every second.
-
+The reference project initializes the device and writes a value to DAC register
+once every second.
 
 |image1|
 
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx63n_software_design <https://wiki.analog.com/rx63n_software_design>`_
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5443_rx63n_screen.jpg

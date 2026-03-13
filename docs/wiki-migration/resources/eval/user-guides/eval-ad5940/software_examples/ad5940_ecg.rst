@@ -6,7 +6,11 @@ This demo will use **EVAL-ADICUP3029** and **EVAL_AD5940BIOZ** boards to carry o
 Overview
 --------
 
-This example project is designed to carry out electrocardiograph (ECG) measurements. The EVAL-AD5940BIOZ evaluation board has both the AD5940 and also the AD8233 ECG front end devices. The AD8233 filters the ECG signal and is connected to the AD5940 which measures the output of the AD8233 through it's SAR ADC.
+This example project is designed to carry out electrocardiograph (ECG)
+measurements. The EVAL-AD5940BIOZ evaluation board has both the AD5940 and also
+the AD8233 ECG front end devices. The AD8233 filters the ECG signal and is
+connected to the AD5940 which measures the output of the AD8233 through it's SAR
+ADC.
 
 Measurement Requirements
 ------------------------
@@ -36,18 +40,19 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Place the **EVAL-AD5940BIOZ** on top of the **EVAL-ADICUP3029**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/eval-ad5940bioz_ecg.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect the provided ECG cables to an ECG simulator as per above image.
 -  There are a number of jumpers that can figure the AD8233 in different configuration. For optimum performance leave them in the default configuration. Optionally refer to the :adi:`AD8233 <media/en/technical-documentation/data-sheets/ad8233.pdf>` datasheet and the :doc:`AD5940 Bio-Electric Shield </wiki-migration/resources/eval/user-guides/eval-ad5940/hardware/eval-ad5940bioz>` board page for details
 -  Plug in the micro USB cable into the (P10) USB port on the EVAL-ADICUP3029, and the other end into the PC or laptop.
--  The following table shows the jumper settins to configure the ECG measurement system
+-  The following table shows the jumper settins to configure the ECG measurement
+   system
 
 +------------------------+----------------+------------------------------------------------------------+
 | Connector              | Jmpr Position. | Description                                                |
@@ -95,14 +100,15 @@ The source code and include files for the project can be found on Git
    `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
    
 
-
 Configuring the Software
 ------------------------
 
-The SDK provides firmware to measure the ECG signal. However the firmware is configured to send the raw ADC results to a terminal program. For an ECG measurement SensorPal will configure the ECG measurement and graph the results. The following image shows the ECG results in SensoPal
-
+The SDK provides firmware to measure the ECG signal. However the firmware is
+configured to send the raw ADC results to a terminal program. For an ECG
+measurement SensorPal will configure the ECG measurement and graph the results.
+The following image shows the ECG results in SensoPal
 
 |image1|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/sensorpal_ecg.png
-   :width: 600px
+   :width: 600

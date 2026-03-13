@@ -4,14 +4,16 @@ EV-COG-AD3029LZ Development Kit
 | The :adi:`EV-COG-AD3029LZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EV-COG-AD3029.html>` (referred also as MCU Cog) is a development platform based on the industry leading ultra low power :adi:`ADuCM3029`
 | 32-bit ARM Cortex™-M3 microcontroller. The platform is designed to be an advanced development and prototyping vehicle to get customer ideas from concept to production with lower risk and faster time to market. |image1| Add-on hardware modules (also called as GEARs), MCU drivers and software application examples form Cog ecosystem. This ecosystem helps customers realize the solution faster, and thus helping them in faster time to market products.
 
-Applications using EV-COG-AD3029LZ board can be developed using one of the following toolchains.
+Applications using EV-COG-AD3029LZ board can be developed using one of the
+following toolchains.
 
 -  CrossCore Embedded Studio 2.7.0 and above - an Eclipse based Analog Devices Interactive Development Environment.
 -  IAR Embedded Workbench for ARM 8.20 and above
 -  Keil uVision 4 and above
 -  ARM mbed compiler
 
-Make sure a valid license for the selected toolchain is installed before using EV-COG-AD3029LZ board.
+Make sure a valid license for the selected toolchain is installed before using
+EV-COG-AD3029LZ board.
 
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/introduction>`
 -  `Software Packs & Board Support Package <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz/packs_&_bsp>`_: EV-COG-AD3029LZ software architecture is categorized into 4 groups as below.
@@ -60,5 +62,5 @@ For more details refer below links.
 -  `Help & Support <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz/help_&_support>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/wiki-cog-3029.png
-   :width: 450px
+   :width: 450
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/drawing1-copy.png

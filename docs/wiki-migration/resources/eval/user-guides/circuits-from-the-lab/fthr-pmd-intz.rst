@@ -3,16 +3,19 @@ FTHR-PMD-INTZ Feather-to-PMOD Interposer Hardware User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/fthr-pmd-intz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Overview
 --------
@@ -29,7 +32,6 @@ This interposer board provides such solution and allows interfacing with up to t
    -  :adi:`FTHR-PMD-INTZ` Adapter Board (:adi:`Buy <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/FTHR-PMD-INTZ>`)
    
 
-
 Adapter Board Hardware
 ----------------------
 
@@ -40,7 +42,8 @@ Power Configuration
 
 The circuit is powered by the voltage coming from the Maxim Feather headers. |image3| *<fc>Figure 3. Power Jumpers*
 
-The table below lists the power configuration for this interposer board. The default voltage configuration for all is 3V3.
+The table below lists the power configuration for this interposer board. The
+default voltage configuration for all is 3V3.
 
 +----------+---------------------------+---------------------+----------------------+
 | **Part** | **Description**           | **Left Connection** | **Right Connection** |
@@ -55,7 +58,8 @@ The table below lists the power configuration for this interposer board. The def
 SPI Pmod Connector (P6)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Connect Pmod devices that use SPI interface to the left-hand side Pmod connector, as shown below.
+Connect Pmod devices that use SPI interface to the left-hand side Pmod
+connector, as shown below.
 
 |image4| *<fc>Figure 4. SPI PMOD Connector*
 
@@ -82,7 +86,8 @@ The table below lists the corresponding pin assignment
 I2C Pmod Connector (P7)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Pmod devices that use I2C interface should be connected to the right Pmod connector.
+Pmod devices that use I2C interface should be connected to the right Pmod
+connector.
 
 |image5| *<fc>Figure 5. I2C PMOD Connector*
 
@@ -123,7 +128,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Additional Information and Useful Links
 =======================================
 
@@ -144,12 +148,12 @@ Reference Demos & Software
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/fthr/fthr-pmd-intz_rev_0_angle.png
-   :width: 450px
+   :width: 450
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/fthr/fthr-pmd-intz_hardware.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/fthr/power_jumpers_with_label.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/fthr/spi.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/fthr/i2c.png
-   :width: 600px
+   :width: 600

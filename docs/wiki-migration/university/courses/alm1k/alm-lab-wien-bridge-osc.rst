@@ -4,7 +4,11 @@ Activity: The Wien bridge oscillator - ADALM1000
 Objective:
 ----------
 
-Oscillators are circuits that generate periodic waveforms without any input signal. They generally include some form of amplifier stage like transistors or OP-AMPs with a feedback network consisting of passive devices such as resistors, capacitors, or inductors, In this activity the Wien bridge oscillator will be examined.
+Oscillators are circuits that generate periodic waveforms without any input
+signal. They generally include some form of amplifier stage like transistors or
+OP-AMPs with a feedback network consisting of passive devices such as resistors,
+capacitors, or inductors, In this activity the Wien bridge oscillator will be
+examined.
 
 Notes:
 ------
@@ -14,8 +18,10 @@ As in all the ALM labs we use the following terminology when referring to the co
 Background:
 -----------
 
-The Wien bridge oscillator is one of the simplest oscillators circuits, figure 1 shows the basic circuit configuration. An op-amp is used as the amplifying stage and the RC band pass Wien Bridge consisting of R1, C1 and R2, C2 is used as the frequency selective positive feedback network.
-
+The Wien bridge oscillator is one of the simplest oscillators circuits, figure 1
+shows the basic circuit configuration. An op-amp is used as the amplifying stage
+and the RC band pass Wien Bridge consisting of R1, C1 and R2, C2 is used as the
+frequency selective positive feedback network.
 
 |image1|
 
@@ -23,10 +29,17 @@ The Wien bridge oscillator is one of the simplest oscillators circuits, figure 1
 
    Figure 1; Wien bridge oscillator LTspice simulation schematic
 
-
-The Wien Bridge oscillator as shown in figure 1 provides a good example to better understand oscillator design using feedback analysis. Feedback analysis is used to test if your design is stable (well behaved) or unstable (may oscillate). Feedback analysis simply means opening the feedback loop and injecting an AC signal where the new configuration can now be considered the input as shown in figure 2. We can open the loop of the oscillator between the output of the amplifier and the frequency selective network. This works as a good point to break the loop because of the relatively low output impedance of the amplifier. Similarly, the AC source VINJ also has a low output impedance. Therefore, opening the loop at this point does not significantly alter the circuit behavior.
-
-
+The Wien Bridge oscillator as shown in figure 1 provides a good example to
+better understand oscillator design using feedback analysis. Feedback analysis
+is used to test if your design is stable (well behaved) or unstable (may
+oscillate). Feedback analysis simply means opening the feedback loop and
+injecting an AC signal where the new configuration can now be considered the
+input as shown in figure 2. We can open the loop of the oscillator between the
+output of the amplifier and the frequency selective network. This works as a
+good point to break the loop because of the relatively low output impedance of
+the amplifier. Similarly, the AC source VINJ also has a low output impedance.
+Therefore, opening the loop at this point does not significantly alter the
+circuit behavior.
 
 |image2|
 
@@ -34,10 +47,15 @@ The Wien Bridge oscillator as shown in figure 1 provides a good example to bette
 
    Figure 2, Simulation schematic for injecting a test signal
 
+By measuring the gain (magnitude) and phase (time-shift) of signal as it travels
+around the opened loop, it can be determined if the circuit will operate as an
+amplifier or an oscillator when the loop is closed.
 
-By measuring the gain (magnitude) and phase (time-shift) of signal as it travels around the opened loop, it can be determined if the circuit will operate as an amplifier or an oscillator when the loop is closed.
-
-When designing an oscillator, the idea is to choose component values that will make the open-loop analysis meet the conditions for oscillation at the frequency of interest. The conditions for oscillation are as follows: If, at the frequency of interest, the AC gain around the opened loop is (at least) 1 V/V and the total phase shift is -360° or 0°, the circuit will oscillate at that frequency.
+When designing an oscillator, the idea is to choose component values that will
+make the open-loop analysis meet the conditions for oscillation at the frequency
+of interest. The conditions for oscillation are as follows: If, at the frequency
+of interest, the AC gain around the opened loop is (at least) 1 V/V and the
+total phase shift is -360° or 0°, the circuit will oscillate at that frequency.
 
 There are two sections of the Wien Bridge oscillator circuit. The first is an RC band pass filter network and the second is an amplifier. Both are necessary to achieve the conditions for oscillations. The RC filter network is characterized by a center frequency F\ :sub:`o`.
 
@@ -64,7 +82,11 @@ Run a simulation of just the non-inverting gain stage. View the AC output of the
 Oscillator Operation
 ~~~~~~~~~~~~~~~~~~~~
 
-It’s time to close the loop and simulate the full Wien Bridge Oscillator in the time domain. Run a transient simulation of the closed-loop circuit and plot the waveform at the output of the amplifier. Does the circuit oscillate? I it does not oscillate you may need to adjust the values of resistors R3-R6. How much time does it take for the amplitude to stabilize?
+It’s time to close the loop and simulate the full Wien Bridge Oscillator in the
+time domain. Run a transient simulation of the closed-loop circuit and plot the
+waveform at the output of the amplifier. Does the circuit oscillate? I it does
+not oscillate you may need to adjust the values of resistors R3-R6. How much
+time does it take for the amplitude to stabilize?
 
 What happens if there’s not enough gain around the loop? Reduce R\ :sub:`6` to 1 kΩ making the total loop gain less than 1. Run a simulation. The output might ring briefly and die away, but there’s not enough gain to sustain oscillations.
 
@@ -76,8 +98,9 @@ ADALM1000 hardware module Solderless breadboard and jumper wires 2 – 1.5 KΩ r
 Directions:
 ~~~~~~~~~~~
 
-Construct the oscillator circuit as shown in figure 3 on the solder-less breadboard. Be sure to carefully note the power and ground connections to the OP848 op-amp before applying power to the circuit.
-
+Construct the oscillator circuit as shown in figure 3 on the solder-less
+breadboard. Be sure to carefully note the power and ground connections to the
+OP848 op-amp before applying power to the circuit.
 
 |image3|
 
@@ -85,10 +108,14 @@ Construct the oscillator circuit as shown in figure 3 on the solder-less breadbo
 
    Figure 3, Breadboard schematic
 
+Both AWG channels Mode should be set to Hi_Z Split I/O because we will not be
+using any signal sources just yet, only using the Scope channels (AIN and BIN)
+to measure the circuit waveforms.
 
-Both AWG channels Mode should be set to Hi_Z Split I/O because we will not be using any signal sources just yet, only using the Scope channels (AIN and BIN) to measure the circuit waveforms.
-
-Temporarily disconnect the two diodes from the circuit. Adjust Potentiometer R5 until the circuit just starts to oscillate. Note the relative P-P amplitude seen on the op-amp output (AIN) and the P-P amplitude seen on the op-amp + input pin 3. It should be 1/3.
+Temporarily disconnect the two diodes from the circuit. Adjust Potentiometer R5
+until the circuit just starts to oscillate. Note the relative P-P amplitude seen
+on the op-amp output (AIN) and the P-P amplitude seen on the op-amp + input pin
+3. It should be 1/3.
 
 Loop Gain Procedure:
 ~~~~~~~~~~~~~~~~~~~~
@@ -102,8 +129,8 @@ To measure the loop gain use the Bode Plotting tool. Open the loop by disconnect
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_wien-brigde-osc-fig1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_wien-brigde-osc-fig2.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_wien-brigde-osc-fig3.png
-   :width: 600px
+   :width: 600

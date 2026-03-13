@@ -8,15 +8,17 @@ The Faust Code for the MIDI Controlled Reverb
 
 Multiple `examples <https://github.com/moforte/sam-faust/tree/master/faust-examples>`_ for the SHARC audio module have been put together and hosted on github. In order to successfully run this example, please clone this repository.
 
-For this particular example workflow, we will be looking at the freeverb example from the git repository.
+For this particular example workflow, we will be looking at the freeverb example
+from the git repository.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/freeverb1.gif
-   :width: 600px
+   :width: 600
 
 -  Open the Faust `online editor <https://faust.grame.fr/editor>`_.
 -  You can copy the contents into the editor 2 different ways
 
-   -  Name the \*.dsp file freeverbForBrowser.dsp. and copy the contents of freeverbForBrowser.dsp into the online editor.
+   -  Name the \*.dsp file freeverbForBrowser.dsp. and copy the contents of
+      freeverbForBrowser.dsp into the online editor.
 
       -  Drag the freeverbForBrowser.dsp file into the tile bar of the editor
 
@@ -29,38 +31,38 @@ The block diagram button |image2| can be used to generate a hierarchical block d
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module//faust11.png
    :alt: /faust11.png
-   :width: 540px
+   :width: 540
    :height: 160px
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module//faust12.png
    :alt: /faust12.png
-   :width: 1000px
+   :width: 1000
    :height: 595px
 
 Creating Files for use with the Baremetal Framework
 ---------------------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/freeverb2.gif
-   :width: 600px
+   :width: 600
 
 -  Click the ``Export/compile to a specific platform`` button
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
-   :width: 50px
+   :width: 50
 
 -  In the first dropdown box, choose ``sam``
 -  In the second dropdown box, choose ``sam-source-midi`` and then ``Export``:
 
 .. note::
 
-   \ faust2sam will generate the following three C++ source files, which is the algorithm.
+   \ faust2sam will generate the following three C++ source files, which is the
+   algorithm.
 
    
    -  ``fast_pow2.h``
    -  ``samFaustDSP.cpp``
    -  ``samFaustDSP.h``
    
-
 
 -  Click on the QR code that shows to download the files
 -  These 3 source files can be copied to the Faust directory in the CCES framework. The framework can then be compiled and downloaded to the SHARC Audio Module.
@@ -74,6 +76,6 @@ When you run the project through the debugger, you will be able to control the *
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png
-   :width: 50px
+   :width: 50
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/diagram_button.png
-   :width: 50px
+   :width: 50

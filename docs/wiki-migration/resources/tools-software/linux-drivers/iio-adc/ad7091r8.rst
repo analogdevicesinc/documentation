@@ -44,12 +44,16 @@ The :adi:`ad7091r-2`, :adi:`ad7091r-4`, and :adi:`AD7091r-8` are 2-/4-/8-channel
 
 The :adi:`AD7091R-2/AD7091R-4/AD7091R-8 <media/en/technical-documentation/data-sheets/AD7091R-2_7091R-4_7091R-8.pdf>` family offers up to eight single-ended analog input channels with a channel sequencer that allows a preprogrammed selection of channels to be converted sequentially.
 
-The conversion process and data acquisition are controlled using the CONVST pin, which is pulsed on every read to the conversion result register. Writing and reading to registers other than the conversion result register will not trigger a pulse on the CONVST line.
+The conversion process and data acquisition are controlled using the CONVST pin,
+which is pulsed on every read to the conversion result register. Writing and
+reading to registers other than the conversion result register will not trigger
+a pulse on the CONVST line.
 
 Hardware configuration
 ======================
 
-Use the test points for interfacing the EVAL-AD7091R-xSDZ with a machine running Linux.
+Use the test points for interfacing the EVAL-AD7091R-xSDZ with a machine running
+Linux.
 
 The instructions below describe how to set up :adi:`EVAL-AD7091R-xSDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7091r-2.html>` with `RPI-4 <https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>`_.
 
@@ -78,15 +82,18 @@ Use a soldering iron to change a few soldering links.
 -  Power VDD and Vdrive supplied with `RPI-4 <https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>`_ 3.3V pins.
 -  Solder R68 points together (enable drive the RESET pin through RESET test point)
 -  Unsolder LK13 and LK14 from position A and solder them in position C (tie MUX_OUT with ADC_IN).
--  Unsolder SL09 and SL10 from position A and solder each of them to position B to allow the VIN7 signal to bypass the input buffer.
+-  Unsolder SL09 and SL10 from position A and solder each of them to position B
+   to allow the VIN7 signal to bypass the input buffer.
 
-After the changes in the link positions and soldering links, the EVAL-AD7091R-xSDZ evaluation board should look like the following.
+After the changes in the link positions and soldering links, the
+EVAL-AD7091R-xSDZ evaluation board should look like the following.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7091r8/eval-ad7091r-8-links.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
-There are a number of connections to make between the ADC evaluation board and the Linux machine.
+There are a number of connections to make between the ADC evaluation board and
+the Linux machine.
 
 +------------------------------+-------------------------------+--------------------------------------------------------+
 | EVAL-AD7091R-xSDZ test point | Pin Function                  | `RPI-4 <https://www.raspberrypi.com/products ^         |
@@ -114,15 +121,17 @@ There are a number of connections to make between the ADC evaluation board and t
 | GND (J9)                     | Power Supply Ground           | GND (pin 6)                                            |
 +------------------------------+-------------------------------+--------------------------------------------------------+
 
-Where J4 is the external VDRIVE and GND power connector and J9 is the external VDD and GND power connector.
+Where J4 is the external VDRIVE and GND power connector and J9 is the external
+VDD and GND power connector.
 
 Here is how it looks after everything is connected.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7091r8/eval-ad7091r-8-sdz-raspberrypi.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
-The collection of jumpers looks messy and hard to follow so review the textual description in case of doubt.
+The collection of jumpers looks messy and hard to follow so review the textual
+description in case of doubt.
 
 Adding Linux driver support
 ===========================
@@ -130,12 +139,12 @@ Adding Linux driver support
 Enabling the driver
 -------------------
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD7091R8 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -245,17 +254,24 @@ Device tree overlay example
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
-   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses the interface can be found here:
+   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses
+   the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 Show device name
 ----------------
@@ -270,7 +286,6 @@ Show device name
       marcelo@raspberrypi:~ $ cat /sys/bus/iio/devices/iio\:device0/name
       ad7091r-8
    
-
 
 Show channel scale
 ------------------
@@ -287,7 +302,6 @@ Show channel scale
       marcelo@raspberrypi:~ $ cat /sys/bus/iio/devices/iio\:device0/in_voltage_scale
       0.610351562
    
-
 
 Example test single-shot readings through IIO device sysfs interface.
 
@@ -331,7 +345,6 @@ Example test single-shot readings through IIO device sysfs interface.
       marcelo@raspberrypi:~ $ cat /sys/bus/iio/devices/iio\:device0/in_voltage6_raw
       1
    
-
 
 Play with IIO events
 --------------------
@@ -423,7 +436,6 @@ Example monitoring IIO events and being notified when ADC readings fall above or
       2694
    
 
-
 The ``iio_event_monitor`` program can be obtained from the Linux kernel sources.
 
 .. container:: box bggreen
@@ -447,7 +459,6 @@ The ``iio_event_monitor`` program can be obtained from the Linux kernel sources.
       Event: time: 1703012646651554473, type: voltage, channel: 6, evtype: thresh, direction: falling
    
 
-
 More Information
 ================
 
@@ -469,6 +480,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

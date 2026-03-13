@@ -1,7 +1,9 @@
 Tools and Driver Details
 ========================
 
-This chapter provides all the necessary steps to download, install, and setup the software environment from Analog Devices. There is also information on the different USB modes and drivers needed.
+This chapter provides all the necessary steps to download, install, and setup
+the software environment from Analog Devices. There is also information on the
+different USB modes and drivers needed.
 
 It contains four main sections:
 

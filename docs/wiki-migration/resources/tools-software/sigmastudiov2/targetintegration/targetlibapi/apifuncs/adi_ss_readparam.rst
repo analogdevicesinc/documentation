@@ -14,7 +14,8 @@ Prototype
 
 Description
 
-This function is used to read a single or a set of parameters from the SS+ parameter memory space.
+This function is used to read a single or a set of parameters from the SS+
+parameter memory space.
 
 Parameters
 

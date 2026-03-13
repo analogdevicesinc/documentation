@@ -2,13 +2,26 @@ Xilinx SDSoc Targeting Example
 ==============================
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/targetting/sdsoc_logo.png
-   :width: 200px
+   :width: 200
 
-The Xilinx SDSoC™ development environment is a member of the Xilinx SDx™ family that provides a greatly simplified ASSP-like C/C++ programming experience including an easy to use Eclipse IDE and a comprehensive design environment for heterogeneous Zynq® All Programmable SoC and MPSoC deployment. Complete with the industry’s first C/C++ full-system optimizing compiler, SDSoC delivers system level profiling, automated software acceleration in programmable logic, automated system connectivity generation, and libraries to speed programming.
+The Xilinx SDSoC™ development environment is a member of the Xilinx SDx™ family
+that provides a greatly simplified ASSP-like C/C++ programming experience
+including an easy to use Eclipse IDE and a comprehensive design environment for
+heterogeneous Zynq® All Programmable SoC and MPSoC deployment. Complete with the
+industry’s first C/C++ full-system optimizing compiler, SDSoC delivers system
+level profiling, automated software acceleration in programmable logic,
+automated system connectivity generation, and libraries to speed programming.
 
 To access the capabilities of SDSoC, please visit http://www.xilinx.com/products/design-tools/software-zone/sdsoc.html
 
-Analog Devices is an SDSoC development environment-qualified Xilinx Alliance Member and offers FMC boards and reference designs that can be used together with the SDSoC environment. Each SDSoC design is based on a platform which defines the hardware and software components on which the SDSoC compiler and linker generate hardware functions and IP-based data motion networks for communication between hardware functions and the platform as well as software drivers and applications. Currently Analog Devices provides SDSoC platform support for the following FMCOMMSx SDR systems:
+Analog Devices is an SDSoC development environment-qualified Xilinx Alliance
+Member and offers FMC boards and reference designs that can be used together
+with the SDSoC environment. Each SDSoC design is based on a platform which
+defines the hardware and software components on which the SDSoC compiler and
+linker generate hardware functions and IP-based data motion networks for
+communication between hardware functions and the platform as well as software
+drivers and applications. Currently Analog Devices provides SDSoC platform
+support for the following FMCOMMSx SDR systems:
 
 -  :adi:`AD-FMComms2-EBZ`
 -  :adi:`AD-FMComms3-EBZ`
@@ -21,7 +34,11 @@ The supported Xilinx Zynq based carriers are:
 FMCOMMSx SDSoC Platforms
 ------------------------
 
-The FMCOMMSx SDSoC platforms are automatically generated from the Analog Devices HDL reference designs that accompany the FMCOMMSx boards. Platform generation is done by running a tcl script in the Vivado tcl console. This script creates the platform Vivado project from the HDL reference design, as well as the platform software files. The generated platforms support Linux OS.
+The FMCOMMSx SDSoC platforms are automatically generated from the Analog Devices
+HDL reference designs that accompany the FMCOMMSx boards. Platform generation is
+done by running a tcl script in the Vivado tcl console. This script creates the
+platform Vivado project from the HDL reference design, as well as the platform
+software files. The generated platforms support Linux OS.
 
 Platform generation steps:
 
@@ -31,7 +48,7 @@ Platform generation steps:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/targetting/sdsoc_platform_folder.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Open Vivado and in the tcl console *cd* to the target project sdsoc folder, *eg. \\hdl\\projects\\fmcomms2\\zc702*
 -  Update the HDL design to Vivado 2015.2 by running the *sdsoc_platform/update_hdl.tcl* script. This step needs to be ran only once after downloading the HDL reference design.
@@ -40,7 +57,7 @@ Platform generation steps:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/targetting/tcl_update_hdl.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. admonition:: Download
    :class: download
@@ -53,11 +70,14 @@ Platform generation steps:
    -  `FMCOMMS3 + ZC706 SDSoC platform generation files <https://wiki.analog.com/_media/resources/eval/user-guides/targetting/fmcomms3_zc706_sdsoc_platform.zip>`_
    
 
-
 FMCOMMS2 SDSoC Example
 ----------------------
 
-The platform is accompanied by an example SDSoC project which implements a DDS block that will generate a CW that can be sent/received using the Analog Devices FMCOMMS2 board and the Xilinx ZC702 carrier board. The received signal can be displayed in the Analog Devices Linux IIO Oscillscope application. These are the steps to recreate the DDS project.
+The platform is accompanied by an example SDSoC project which implements a DDS
+block that will generate a CW that can be sent/received using the Analog Devices
+FMCOMMS2 board and the Xilinx ZC702 carrier board. The received signal can be
+displayed in the Analog Devices Linux IIO Oscillscope application. These are the
+steps to recreate the DDS project.
 
 -  Download the SDSoC DDS project source code using the link in the *Downloads* section below
 -  Start the SDSoC terminal and *cd* to the location where the project source code was extracted
@@ -73,7 +93,7 @@ The platform is accompanied by an example SDSoC project which implements a DDS b
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/targetting/dds_out.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. admonition:: Download
    :class: download
@@ -81,4 +101,3 @@ The platform is accompanied by an example SDSoC project which implements a DDS b
    
    -  `SDSoC DDS source code <https://wiki.analog.com/_media/resources/eval/user-guides/targetting/sdsoc_dds_src.zip>`_
    
-

@@ -6,7 +6,10 @@ RMS Table
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables/rmstable_004.jpg
    :align: right
 
-The RMS Table takes an input signal and outputs the interpolated mapped value of the signal, relative to the table, depending on the calculated rms input. The block uses rms average values and maps them to the user-selectable table values, employing linear interpolation in between table values.
+The RMS Table takes an input signal and outputs the interpolated mapped value of
+the signal, relative to the table, depending on the calculated rms input. The
+block uses rms average values and maps them to the user-selectable table values,
+employing linear interpolation in between table values.
 
 Three parameters are available through the edit boxes / control arrows:
 
@@ -18,7 +21,10 @@ Three parameters are available through the edit boxes / control arrows:
 | Decay (dB/s)  | |image6| | Controls the rate at which the output signal returns to a lower detected level. Decay is responsible for releasing the signal at a given rate. This is also referred to as the release time. |
 +---------------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Press Show Table to view and edit the table values. The calculated signal RMS values are mapped to an index in the table. The maximum table resolution is approximately 96 dB with indices spaced 3 dB apart (as shown in the example below).
+Press Show Table to view and edit the table values. The calculated signal RMS
+values are mapped to an index in the table. The maximum table resolution is
+approximately 96 dB with indices spaced 3 dB apart (as shown in the example
+below).
 
 =========== =================== ==============================
 Table Index Detected Value (dB) Mapped Values (user-specified)

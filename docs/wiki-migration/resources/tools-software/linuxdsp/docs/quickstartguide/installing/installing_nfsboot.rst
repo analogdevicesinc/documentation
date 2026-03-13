@@ -14,7 +14,9 @@ ADI provides two kinds of images to allow users to boot from NFS.
 -  adsp-sc5xx-full
 -  adsp-sc5xx-minimal
 
-The minimal image is a subset of the full image which has less packages than full image. There is no difference for the Linux kernel in the minimal and full image.
+The minimal image is a subset of the full image which has less packages than
+full image. There is no difference for the Linux kernel in the minimal and full
+image.
 
 Run "**bitbake <TARGET>**" to generate the images you want.
 
@@ -54,7 +56,8 @@ See the **Appendix** at the bottom of this page to expand the <MACHINE> and <FUL
 Copy zImage and dtb File
 ------------------------
 
-The kernel image zImage and dtb file are loaded to target board through TFTP, first you should copy them to tftpboot directory.
+The kernel image zImage and dtb file are loaded to target board through TFTP,
+first you should copy them to tftpboot directory.
 
 ::
 
@@ -86,7 +89,8 @@ Boot into U-boot and then run the command "**run nfsboot**":
    Hit any key to stop autoboot:  0
    sc # run nfsboot
 
-The linux kernel would then boot up and the file system stored in HOST Ubuntu is mounted via NFS.
+The linux kernel would then boot up and the file system stored in HOST Ubuntu is
+mounted via NFS.
 
 ::
 
@@ -94,7 +98,6 @@ The linux kernel would then boot up and the file system stored in HOST Ubuntu is
    Starting syslogd/klogd: done
      * Starting Avahi mDNS/DNS-SD Daemon: avahi-daemon
       ...done.
-
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@

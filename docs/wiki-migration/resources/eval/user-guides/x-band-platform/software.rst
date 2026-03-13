@@ -22,7 +22,6 @@ PuTTY helps to provide a view into the Linux and give additional controls and de
 
    In PuTTY, this should be opened with a baudrate of 115200.
 
-
 --------------
 
 MATLAB 2021b or 2022a
@@ -32,8 +31,9 @@ MATLAB 2021b or 2022a
 
    MATLAB 2021b is the primary version that all the code is tested with.
 
-
-MATLAB is used to exercise the board through LibIIO objects and provide higher level application functionality. In order to work with the platform, a number of toolboxes and support packages are required: Required toolboxes:
+MATLAB is used to exercise the board through LibIIO objects and provide higher
+level application functionality. In order to work with the platform, a number of
+toolboxes and support packages are required: Required toolboxes:
 
 -  MATLAB Communications Toolbox
 -  DSP System Toolbox
@@ -41,7 +41,8 @@ MATLAB is used to exercise the board through LibIIO objects and provide higher l
 -  Curve Fitting Toolbox
 -  Instrument Control Toolbox
 -  Communications Toolbox Support Package for Xilinx Zynq-Based Radio. Installed through MATLAB Add-On Explorer.
--  Analog Devices High Speed Converter Toolbox. Can be installed through MATLAB Add-On Explorer or latest version here:
+-  Analog Devices High Speed Converter Toolbox. Can be installed through MATLAB
+   Add-On Explorer or latest version here:
 
 .. admonition:: Download
    :class: download
@@ -50,8 +51,8 @@ MATLAB is used to exercise the board through LibIIO objects and provide higher l
    -  `High Speed Converter Toolbox Download Page <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_
    
 
-
--  Analog Devices RF Microwave Toolbox. Can be installed through MATLAB Add-On Explorer or latest version here:
+-  Analog Devices RF Microwave Toolbox. Can be installed through MATLAB Add-On
+   Explorer or latest version here:
 
 .. admonition:: Download
    :class: download
@@ -60,7 +61,6 @@ MATLAB is used to exercise the board through LibIIO objects and provide higher l
    -  `RF Microwave Toolbox Download Page <https://github.com/analogdevicesinc/RFMicrowaveToolbox>`_
    
 
-
 Customers can request a free trial via the `Communications Toolbox product page <https://urldefense.com/v3/__https://www.mathworks.com/products/communications.html__;!!A3Ni8CS0y2Y!u2iVBukmDblhk9-FINa9SNIcuL_Ap61oG1IvWi0qWnxrwju6qXrNws1jybUn_UlFhkQ$>`_, or they can request a `Software-Defined Radio Design trial “package” <https://urldefense.com/v3/__https://www.mathworks.com/campaigns/products/trials/targeted/sdr.html__;!!A3Ni8CS0y2Y!u2iVBukmDblhk9-FINa9SNIcuL_Ap61oG1IvWi0qWnxrwju6qXrNws1jybUnqe87Ows$>`_, which includes MATLAB, Simulink, DSP System Toolbox, Signal Processing Toolbox, and Communications Toolbox.
 
 --------------
@@ -68,12 +68,11 @@ Customers can request a free trial via the `Communications Toolbox product page 
 ZCU102 Set Up
 =============
 
-This guide will walk you through setting up the ZCU102 FPGA platform to work with the X-Band Developer's Kit.
+This guide will walk you through setting up the ZCU102 FPGA platform to work
+with the X-Band Developer's Kit.
 
 SD Card Setup
 -------------
-
-
 
 .. collapsible:: Click to expand
 
@@ -83,30 +82,33 @@ SD Card Setup
       -  :doc:`Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
 
    -  Determine which version of the MxFE board you have. The version is printed in copper on the bottom right corner of the board with the RF connectors facing North. The writing is covered in soldermask and can be somewhat difficult to read. The board version should either be "B", "C", or "D".
-   -  There are three pertinent files to copy to the root of the SD card's /BOOT/ section:
+   -  There are three pertinent files to copy to the root of the SD card's
+      /BOOT/ section:
 
       -  Image, located in "zynqmp-common" folder
       -  BOOT.BIN, located in "zynqmp-zcu102-rev10-stingray" folder
-      -  system.dtb, located in subfolders of "zynqmp-zcu102-rev10-stingray" folder
+      -  system.dtb, located in subfolders of "zynqmp-zcu102-rev10-stingray"
+         folder
 
    .. note::
 
-      There are 3 folders in the "zynqmp-zcu102-rev10-stingray" folder. Be sure to take the "system.dtb" that corresponds with the clocking architecture of your setup.
-
+      There are 3 folders in the "zynqmp-zcu102-rev10-stingray" folder. Be sure
+      to take the "system.dtb" that corresponds with the clocking architecture
+      of your setup.
 
    .. note::
 
-      Be sure to rename the correct \*.dtb file for your version of the AD9081 board to "system.dtb".
-
+      Be sure to rename the correct \*.dtb file for your version of the AD9081
+      board to "system.dtb".
 
    .. warning::
 
-      \ If your computer encrypts removable media for security purposes, it's easiest to use a personal computer to do this step. If encryption issues persist, use the file below which has AES disabled. This is version 2021_R1.\
-
+      \ If your computer encrypts removable media for security purposes, it's
+      easiest to use a personal computer to do this step. If encryption issues
+      persist, use the file below which has AES disabled. This is version
+      2021_R1.\
 
    `ZCU102 Configuration Files, 100MHz VCXO, AES Disabled <https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/zcu102_config_files_100mhz_vcxo_rev10_aes_disabled.zip>`_
-
-
 
 ZCU102 Configurations
 ---------------------
@@ -114,23 +116,23 @@ ZCU102 Configurations
 Boot from SD Card
 ~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click to expand
 
-   To configure the ZCU102 to boot from the SD card, set SW6 as shown below. SW6 is halfway between the SD card input and the vertical SMA connectors on the ZCU102.
-
+   To configure the ZCU102 to boot from the SD card, set SW6 as shown below. SW6
+   is halfway between the SD card input and the vertical SMA connectors on the
+   ZCU102.
 
    |SW6 Configuration for SD Card Boot|
 
 USB Host Mode
 ~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click to expand
 
-   Setting up the ZCU102 in USB Host Mode allows the use of USB peripherals such as a keyboard and mouse. This can be useful for operating the board directly rather than having to use the UART connection or some other form of indirect control. Configure the jumpers as indicated below:
+   Setting up the ZCU102 in USB Host Mode allows the use of USB peripherals such
+   as a keyboard and mouse. This can be useful for operating the board directly
+   rather than having to use the UART connection or some other form of indirect
+   control. Configure the jumpers as indicated below:
 
    -  Shunt J7
    -  J109 -> Shunt pins 2-3
@@ -141,8 +143,6 @@ USB Host Mode
    .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_usb_host_mode.jpg
       :alt: Jumper Configuration for USB Host Mode
       :align: center
-
-
 
 DisplayPort Not Working
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -162,7 +162,13 @@ The ZCU102 uses a RJ45 ethernet cable to connect the ethernet port on the board 
 ADAR1000EVAL1Z Power Sequence
 -----------------------------
 
-The proper power on sequencing for the ADAR1000EVAL1Z is embedded within the firmware of the ZCU102. The embedded script pulses the proper signal nets in the correct order (POWER_UP_DOWN and 5V_CTRL) automatically upon booting the FPGA. The power down sequence is not enabled in software. The ADAR1000EVAL1Z board can be powered down manually by pressing the RESET button on the primary side of the ADAR1000EVAL1Z board. The following steps need to be completed by the user to implement the ADAR1000EVAL1Z power up sequencing script.
+The proper power on sequencing for the ADAR1000EVAL1Z is embedded within the
+firmware of the ZCU102. The embedded script pulses the proper signal nets in the
+correct order (POWER_UP_DOWN and 5V_CTRL) automatically upon booting the FPGA.
+The power down sequence is not enabled in software. The ADAR1000EVAL1Z board can
+be powered down manually by pressing the RESET button on the primary side of the
+ADAR1000EVAL1Z board. The following steps need to be completed by the user to
+implement the ADAR1000EVAL1Z power up sequencing script.
 
 -  Open a UART terminal connecting to the FGPA :doc:`Setting up ZCU102 UART </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynqmp>`
 -  Download WinSCP
@@ -173,7 +179,6 @@ The proper power on sequencing for the ADAR1000EVAL1Z is embedded within the fir
    
    -  `WinSCP Download <https://winscp.net/eng/download.php>`_
    
-
 
 -  Connect to the ZCU102 via WinSCP
 
@@ -219,18 +224,23 @@ The proper power on sequencing for the ADAR1000EVAL1Z is embedded within the fir
 
 .. note::
 
-   Due to the hardware design of the ADAR1000EVAL1Z, the user needs to keep in mind the power up and power down execution. If the power sequence is not followed in the correct order from, then the power sequence state will be indeterminate and a hard reset is required to revert to a known power state.
+   Due to the hardware design of the ADAR1000EVAL1Z, the user needs to keep in
+   mind the power up and power down execution. If the power sequence is not
+   followed in the correct order from, then the power sequence state will be
+   indeterminate and a hard reset is required to revert to a known power state.
 
    
-   For example the proper sequence is as follows: Power Up -> Power Down -> Power Up -> Power Down
-
+   For example the proper sequence is as follows: Power Up -> Power Down ->
+   Power Up -> Power Down
 
 --------------
 
 ADXUD1AEBZ Interposer FMC EEPROM Progamming
 -------------------------------------------
 
-The ADXUD1AEBZ Interposer Board FMC EEPROM is not factory programmed. The following commands in a UART Terminal (e.g. PuTTY) can be executed to program the FMC EEPROM.
+The ADXUD1AEBZ Interposer Board FMC EEPROM is not factory programmed. The
+following commands in a UART Terminal (e.g. PuTTY) can be executed to program
+the FMC EEPROM.
 
 ::
 
@@ -265,8 +275,8 @@ Software Architecture
 
 .. tip::
 
-   All programmable devices on the X-Band platform are abstracted by IIO devices.
-
+   All programmable devices on the X-Band platform are abstracted by IIO
+   devices.
 
 +-------------+------------------+--------------------------------------------------------------------------------------------------------------------------+
 | IIO Device  | Device Name      | Driver Documentation                                                                                                     |
@@ -326,8 +336,8 @@ The X-Band Platform can be controlled via MATLAB using example scripts which are
 
 .. note::
 
-   It's recommended to install via the download from GitHub as this is generally more up to date than the MATLAB Add-On Explorer page
-
+   It's recommended to install via the download from GitHub as this is generally
+   more up to date than the MATLAB Add-On Explorer page
 
 +-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
 | MATLAB Toolboxes                                                                                                                    |                                  |       |
@@ -509,7 +519,10 @@ The control interface for the X-Band Platform is implemented using standard syst
 XBDP_SimpleRx.m
 ~~~~~~~~~~~~~~~
 
-This script is to be used with the Analog Devices X-Band Platform to demonstrate relatively simple MATLAB control of the system. It allows the user to configure the Rx aspects of the system by using the and rx = adi.AD9081.Rx and sray = adi.Stingray system objects.
+This script is to be used with the Analog Devices X-Band Platform to demonstrate
+relatively simple MATLAB control of the system. It allows the user to configure
+the Rx aspects of the system by using the and rx = adi.AD9081.Rx and sray =
+adi.Stingray system objects.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xbdp_simplerx_sampledomainplot.png
    :align: center
@@ -523,7 +536,8 @@ This script is to be used with the Analog Devices X-Band Platform to demonstrate
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xbdp_simplerx_freqdomainplot_2.png
    :align: center
 
-Using this script as a basis, the user can modify the script for their own use case such that they can:
+Using this script as a basis, the user can modify the script for their own use
+case such that they can:
 
 -  View Analog Array Channel Mapping Using, For Example, **sray.ArrayMap**
 -  Change Rx NCO Frequencies Using, For Example, **rx.MainNCOFrequencies** or **rx.ChannelNCOFrequencies**
@@ -542,9 +556,13 @@ Using this script as a basis, the user can modify the script for their own use c
 XBDP_SimpleTx.m
 ~~~~~~~~~~~~~~~
 
-This script is to be used with the Analog Devices X-Band Platform to demonstrate relatively simple MATLAB control of the system. It allows the user to configure the Tx aspects of the system by using the and tx = adi.AD9081.Tx and sray = adi.Stingray system objects.
+This script is to be used with the Analog Devices X-Band Platform to demonstrate
+relatively simple MATLAB control of the system. It allows the user to configure
+the Tx aspects of the system by using the and tx = adi.AD9081.Tx and sray =
+adi.Stingray system objects.
 
-Using this script as a basis, the user can modify the script for their own use case such that they can:
+Using this script as a basis, the user can modify the script for their own use
+case such that they can:
 
 -  View Analog Array Channel Mapping Using, For Example, **sray.ArrayMap**
 -  Change Tx NCO Frequencies Using, For Example, **tx.MainNCOFrequencies** or **tx.ChannelNCOFrequencies**
@@ -562,15 +580,14 @@ Using this script as a basis, the user can modify the script for their own use c
 Matlab Channel Mapping
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Matlab attribute mapping is linear indexed and matches that of the hardware channel mapping as shown in the figure below.
-
+The Matlab attribute mapping is linear indexed and matches that of the hardware
+channel mapping as shown in the figure below.
 
 |ADAR1000EVAL1Z Cell and Channel Mapping|
 
 .. tip::
 
    For example, sray.RxGain(1) will modify the gain for channel 1 and sray.RxGain(23) modifies the gain for channel 23. sray.RxGain = (127\*ones(2,4) zeros(2,4);zeros(2,4) 127\*ones(2,4)); will set the gain for subarray 1 and 3 to max gain and subarray 2 and 4 to 0 gain.
-
 
 --------------
 
@@ -664,7 +681,6 @@ HMC7044 PLL Lock
 
    The HMC7044 reference clock priority is: [CLKIN1 → CLKIN0 → CLKIN2 → CLKIN3]. In this example, an external reference clock of 100MHz is applied and is selected as the reference clock source. If no external clock is detected, then the clock priority will be sequenced and the next available source will be chosen. See the :doc:`Hardware Clocking Architecture </wiki-migration/resources/eval/user-guides/x-band-platform/hardware>` for additional information.
 
-
 --------------
 
 JESD Status
@@ -703,7 +719,8 @@ JESD Status
 Firmware Identifiers
 ~~~~~~~~~~~~~~~~~~~~
 
-A unique identifier will be returned for the Image, system.dtb, and BOOT.BIN files installed on the SD card using the md5 command.
+A unique identifier will be returned for the Image, system.dtb, and BOOT.BIN
+files installed on the SD card using the md5 command.
 
 ::
 
@@ -728,8 +745,9 @@ A unique identifier will be returned for the Image, system.dtb, and BOOT.BIN fil
 
 .. note::
 
-   The returned identifiers in the example may not match the most recent firmware file versions. This is an example to show the use of the md5 command.
-
+   The returned identifiers in the example may not match the most recent
+   firmware file versions. This is an example to show the use of the md5
+   command.
 
 --------------
 
@@ -741,9 +759,9 @@ For additional questions or support, please visit the Engineering Zone forum at 
 :doc:`X Band Development Platform Main Page </wiki-migration/resources/eval/user-guides/x-band-platform>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/comport.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/putty.png
-   :width: 400px
+   :width: 400
 .. |SW6 Configuration for SD Card Boot| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_sw6_sdcard.jpg
 .. |ADAR1000EVAL1Z Cell and Channel Mapping| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/channel_mapping.png
-   :width: 400px
+   :width: 400

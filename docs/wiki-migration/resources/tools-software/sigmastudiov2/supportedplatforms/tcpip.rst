@@ -3,12 +3,17 @@
 TCP/IP
 ======
 
-The TCP/IP communication adaptor can be used to connect with a target in case the target is present at a different location and cannot be physically connected the the PC that is running SigmaStudio+. SigmaStudio+ communicates with a server connected to the target using TCP/IP. The TCP/IP is present under the Communication Adaptors tree within the toolbox.
+The TCP/IP communication adaptor can be used to connect with a target in case
+the target is present at a different location and cannot be physically connected
+the the PC that is running SigmaStudio+. SigmaStudio+ communicates with a server
+connected to the target using TCP/IP. The TCP/IP is present under the
+Communication Adaptors tree within the toolbox.
 
 Settings
 ========
 
-Following options are available on the settings window, which can be launched by double clicking on the TCP/IP shape in canvas
+Following options are available on the settings window, which can be launched by
+double clicking on the TCP/IP shape in canvas
 
 -  IP Address - IP address on which the server connected to target is listening
 -  Port - Port number on which the server connected to target is listening
@@ -17,12 +22,14 @@ Following options are available on the settings window, which can be launched by
 -  Register ASAP Connection - Establish connection without performing the background operations
 -  Max Buffer Size - Maximum data buffer size
 
-Once the server is connected, SigmaStudio is free to send and receive data to and from the server.
+Once the server is connected, SigmaStudio is free to send and receive data to
+and from the server.
 
 Write Data Format
 =================
 
-SigmaStudio+ sends the code and parameter information to the server connected to target in the following format:
+SigmaStudio+ sends the code and parameter information to the server connected to
+target in the following format:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/writeformat.jpg
    :align: center

@@ -4,7 +4,8 @@ Mode Table
 Description
 -----------
 
-The mode number and .ini file counterparts are different based on different batches of ADTF3175D kits. Please find the right column for your kit below.
+The mode number and .ini file counterparts are different based on different
+batches of ADTF3175D kits. Please find the right column for your kit below.
 
 Table for serial numbers starting with 'am'
 -------------------------------------------

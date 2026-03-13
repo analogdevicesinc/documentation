@@ -3,7 +3,11 @@ Inputs And Outputs
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-The toolbox's I/O library gives you access to the input/output blocks essential for bringing the signal from the hardware IC's physical input connections, into the schematic design, and back out to the hardware's output connections. The available input and output blocks will depend on the particular processor used in your design.
+The toolbox's I/O library gives you access to the input/output blocks essential
+for bringing the signal from the hardware IC's physical input connections, into
+the schematic design, and back out to the hardware's output connections. The
+available input and output blocks will depend on the particular processor used
+in your design.
 
 -  :doc:`ASRC Input/Output </wiki-migration/resources/tools-software/sigmastudio/toolbox/io/asrcinputoutput>`
 -  :doc:`ASRC Input with Gain </wiki-migration/resources/tools-software/sigmastudio/toolbox/io/asrcinputwithgain>`
@@ -20,7 +24,12 @@ The toolbox's I/O library gives you access to the input/output blocks essential 
 
 .. hint::
 
-   Note: The Input and output blocks represent physical and limited hardware resources. If you attempt to insert more input or output blocks than there are available resources you will receive the "Not enough DSP Resources for this Algorithm" error. For example, only one input block per processor can be used in a schematic. In additional, inputs and outputs can only be assigned to a single block at a time. For example, you cannot create two output blocks that represent the same output channel.
-
+   Note: The Input and output blocks represent physical and limited hardware
+   resources. If you attempt to insert more input or output blocks than there
+   are available resources you will receive the "Not enough DSP Resources for
+   this Algorithm" error. For example, only one input block per processor can be
+   used in a schematic. In additional, inputs and outputs can only be assigned
+   to a single block at a time. For example, you cannot create two output blocks
+   that represent the same output channel.
 
 See the :doc:`GPIO Conditioning Examples </wiki-migration/resources/tools-software/sigmastudio/tutorials/gpioconditioningexample>` topic for sample schematics.

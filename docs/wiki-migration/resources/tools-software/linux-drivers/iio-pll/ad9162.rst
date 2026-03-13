@@ -26,7 +26,12 @@ HDL Support
 Description
 -----------
 
-The AD9161/AD91621 are high performance, 11-bit/16-bit digital-to-analog converters (DACs) that supports data rates to 6 GSPS. The DAC core is based on a quad-switch architecture coupled with a 2x interpolator filter that enables an effective DAC update rate of up to 12 GSPS in some modes. The high dynamic range and bandwidth makes these DACs ideally suited for the most demanding high speed radio frequency (RF) DAC applications.
+The AD9161/AD91621 are high performance, 11-bit/16-bit digital-to-analog
+converters (DACs) that supports data rates to 6 GSPS. The DAC core is based on a
+quad-switch architecture coupled with a 2x interpolator filter that enables an
+effective DAC update rate of up to 12 GSPS in some modes. The high dynamic range
+and bandwidth makes these DACs ideally suited for the most demanding high speed
+radio frequency (RF) DAC applications.
 
 Source Code
 ===========
@@ -89,17 +94,18 @@ For detailed information about the required/optional devicetree properties look 
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD9162 driver depends on CONFIG_SPI and CONFIG_CF_AXI_DDS
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -122,8 +128,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 The driver has two main ways of functioning depending on the :git-linux:`adi,standalone-probe <Documentation/devicetree/bindings/iio/frequency/ad916x.yaml#L49>` devicetree property. If set, the driver will probe in standalone mode which means that it won't link with the :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`. This means that different attributes will be seen depending on the working mode. The next ABI is the same independent of the working mode.
 
@@ -141,7 +154,6 @@ Show device name
       ad9166
    
 
-
 Change NCO Frequency
 --------------------
 
@@ -149,7 +161,8 @@ What: **out_voltageX_nco_frequency**
 
 Set channel NCO frequency (fCARRIER) in Hz
 
-Range is: −fclk/2 ≤ fCARRIER < +fclk/2 or 0 ≤ fCARRIER < fclk if FIR85 is enabled
+Range is: −fclk/2 ≤ fCARRIER < +fclk/2 or 0 ≤ fCARRIER < fclk if FIR85 is
+enabled
 
 .. container:: box bggreen
 
@@ -162,7 +175,6 @@ Range is: −fclk/2 ≤ fCARRIER < +fclk/2 or 0 ≤ fCARRIER < fclk if FIR85 is 
       analog@analog:/sys/bus/iio/devices/iio:device2 $ cat out_altvoltage0_nco_frequency
       1000000000
    
-
 
 Standalone Mode
 ---------------
@@ -195,7 +207,6 @@ This mode can be used together with :git-linux:`adi,dc-test-en <Documentation/de
       -rw-r--r-- 1 root root 4096 Jan 18 22:03 uevent
    
 
-
 Change DC Test Word
 ~~~~~~~~~~~~~~~~~~~
 
@@ -215,13 +226,17 @@ Set the DC test word data. This will be the data source of the digital path when
       100
    
 
-
 Change Temperature Sensor Single point calibration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What: **in_tempX_single_point_calib**
 
-This setting allows for runtime calibration of the device internal temperature sensor (mostly useful for evaluation and testing). For that, a valid temperature in milli degrees °C should be written to this attribute. Internally, the driver will get the raw temperature value. With this pair of values, the driver can then calculate the parameters needed to get the processed temperature from the sensor...
+This setting allows for runtime calibration of the device internal temperature
+sensor (mostly useful for evaluation and testing). For that, a valid temperature
+in milli degrees °C should be written to this attribute. Internally, the driver
+will get the raw temperature value. With this pair of values, the driver can
+then calculate the parameters needed to get the processed temperature from the
+sensor...
 
 .. container:: box bggreen
 
@@ -232,7 +247,6 @@ This setting allows for runtime calibration of the device internal temperature s
    
       analog@analog:/sys/bus/iio/devices/iio:device2 $ echo 45000 > in_temp0_single_point_calib
    
-
 
 Read Temperature
 ~~~~~~~~~~~~~~~~
@@ -252,7 +266,6 @@ To get the temperature already processed in milli degrees °C:
       75000
    
 
-
 What: **in_tempX_raw**
 
 To get the raw value:
@@ -267,7 +280,6 @@ To get the raw value:
       analog@analog:/sys/bus/iio/devices/iio:device2 $ cat in_temp0_raw
       25010
    
-
 
 Enable FIR85 filter
 ~~~~~~~~~~~~~~~~~~~
@@ -287,7 +299,6 @@ With fir85 enabled, 0 ≤ fCARRIER < fclk.
       analog@analog:/sys/bus/iio/devices/iio:device2 $ cat fir85_enable
       1
    
-
 
 Attached Mode
 -------------
@@ -334,7 +345,6 @@ As said, in this mode the driver is used in conjunction with the :doc:`AXI DAC H
       -rw-r--r-- 1 root root 4096 Apr 27 16:20 uevent
    
 
-
 Enable FIR85 filter
 ~~~~~~~~~~~~~~~~~~~
 
@@ -353,7 +363,6 @@ With fir85 enabled, 0 ≤ fCARRIER < fclk.
       analog@analog:/sys/bus/iio/devices/iio:device6 $ cat out_voltage_fir85_enable
       1
    
-
 
 Documentation for following subfolders and channel attributes can be found here: :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
 
@@ -401,6 +410,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/youtube>p_vntewue24
-

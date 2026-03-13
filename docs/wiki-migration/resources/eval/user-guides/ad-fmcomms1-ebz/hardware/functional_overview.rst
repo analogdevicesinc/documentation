@@ -1,8 +1,6 @@
 AD-FMCOMMS1-EBZ Functional Overview
 ===================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,13 +17,13 @@ AD-FMCOMMS1-EBZ Functional Overview
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-A functional block diagram of the system is given below. The system consists of four functional partitions - transmit path, receive path, clocking and power supply.
+A functional block diagram of the system is given below. The system consists of
+four functional partitions - transmit path, receive path, clocking and power
+supply.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/cf_xcomm_kc705_bd.jpg
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 Transmit
 --------
@@ -44,7 +42,11 @@ Key components:
 
 In the transmit direction, the system converts complex I and Q signals to a corresponding RF signal. The :adi:`AD9122` DAC interpolates the data and applies a frequency translation to the baseband. The complex baseband shifts the fundamental signal away from DC where LO feed-through and images can be easily filtered and otherwise mitigated. This complex analog output from the DAC feeds an :adi:`ADL5375` quadrature modulator via an appropriate filter and matching stage where it is translated to the specified RF output frequency. This signal is then passed through an image rejection filter to an :adi:`ADL5602` for +20dB gain. The RF output power control is accomplished by adjusting the baseband data, RF outputs up to 4GHz can be synthesized in the transmit direction at power levels up to 7.5dBm.
 
-The reference design generates the signals for AD9122 either from an internal DDS or external memory (via VDMA). The internal DDS consists of four independent signal generators with programmable phase offset and frequency. These four signal generators are paired to create two tones that are interleaved and driven to the DAC.
+The reference design generates the signals for AD9122 either from an internal
+DDS or external memory (via VDMA). The internal DDS consists of four independent
+signal generators with programmable phase offset and frequency. These four
+signal generators are paired to create two tones that are interleaved and driven
+to the DAC.
 
 Receive
 -------
@@ -65,11 +67,12 @@ In the receive direction, the system converts a RF signal into complex I and Q s
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/adl5380_lowrange_basebandrespose.png
    :alt: RF = 400 MHz to 3 GHz, Normalized IQ Baseband Frequency Response
-   :width: 400px
+   :width: 400
 
 The resulting I and Q baseband signals are filtered and then passed to the :adi:`AD8366` DVGA, which provides up between 4.5 dB to 20.25 dB of gain. An anti-alias filter is used to remove harmonics and other out of band signals before the signal is digitized with the :adi:`AD9643`.
 
-The reference design transfers the received data to DDR via DMA. An optional off-line FFT core may be used to generate a spectrum plot.
+The reference design transfers the received data to DDR via DMA. An optional
+off-line FFT core may be used to generate a spectrum plot.
 
 Clocking
 --------
@@ -102,7 +105,8 @@ These clocks can be changed, but the key thing to remember is that the AD9523 dr
 Clock Sync
 ~~~~~~~~~~
 
-It is possible to synchronize multiple boards on the same FPGA platform to the same master clock.
+It is possible to synchronize multiple boards on the same FPGA platform to the
+same master clock.
 
 Power
 -----
@@ -130,4 +134,4 @@ To increase receive sensitivity, the receive path may be driven by an optional o
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/block_diagram.png
    :align: center
-   :width: 600px
+   :width: 600

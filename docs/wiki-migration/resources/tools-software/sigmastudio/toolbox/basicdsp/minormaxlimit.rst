@@ -3,7 +3,10 @@
 Block MinOrMax Limit(ADAU145x)
 ==============================
 
-Min or Max Limit is a block processing module which compares each input sample in block of input samples with a constant scalar value. By default it will Max Limit Algorithm. Option to select Max Limit or Min Limit Algorithm by clicking on bit map icon.
+Min or Max Limit is a block processing module which compares each input sample
+in block of input samples with a constant scalar value. By default it will Max
+Limit Algorithm. Option to select Max Limit or Min Limit Algorithm by clicking
+on bit map icon.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/minormaxlimit.png
    :align: center
@@ -29,7 +32,8 @@ Output Pins
 Grow Algorithm
 --------------
 
-The module supports growth of Input and Output channels dependently up to 16. Add Algorithm is not supported.
+The module supports growth of Input and Output channels dependently up to 16.
+Add Algorithm is not supported.
 
 GUI Controls
 ------------
@@ -58,13 +62,13 @@ Here,
 Algorithm Description
 ---------------------
 
-This module compares the constant value specified in the textbox to each of the input samples in an input block.
+This module compares the constant value specified in the textbox to each of the
+input samples in an input block.
 
 Supported IC's
 --------------
 
 +----------+
-
 
 | ADAU145x |
 

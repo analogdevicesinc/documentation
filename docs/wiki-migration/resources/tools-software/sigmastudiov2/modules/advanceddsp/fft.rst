@@ -12,22 +12,35 @@ Description
 FFT
 ~~~
 
-N-point FFT is performed on the samples, where N is configurable and should be a power of 2, greater than or equal to 16. The twiddle coefficients are calculated within the code and output is given as PCMx samples, the BlockSize of which is 3 \* Schematic Block Size. The first Schematic BlockSize number of samples in a PCMx output contains the header information to be carried on to the next Module (say in this case IFFT). The header information contains fields such as PCMx type (Windowing done), N, Count (if N>Schematic BlockSize). Since memory size depends on the value of N, downloading the Schematic (Link-Compile-Download) is necessary when N value is changed.
+N-point FFT is performed on the samples, where N is configurable and should be a
+power of 2, greater than or equal to 16. The twiddle coefficients are calculated
+within the code and output is given as PCMx samples, the BlockSize of which is 3
+\* Schematic Block Size. The first Schematic BlockSize number of samples in a
+PCMx output contains the header information to be carried on to the next Module
+(say in this case IFFT). The header information contains fields such as PCMx
+type (Windowing done), N, Count (if N>Schematic BlockSize). Since memory size
+depends on the value of N, downloading the Schematic (Link-Compile-Download) is
+necessary when N value is changed.
 
 FFT Windowed
 ~~~~~~~~~~~~
 
-In the Windowed FFT version, Raised Cosine window is used for windowing samples. Windowing is done for samples before calculating FFT and ‘overlap and add’ is done after IFFT. Here the windowing is done for 2N samples and therefore FFT done for 2N samples.
+In the Windowed FFT version, Raised Cosine window is used for windowing samples.
+Windowing is done for samples before calculating FFT and ‘overlap and add’ is
+done after IFFT. Here the windowing is done for 2N samples and therefore FFT
+done for 2N samples.
 
 Real FFT
 ~~~~~~~~
 
-Real FFT is a block processing module which computes the FFT of real signals. It is for reduced memory and Mips.
+Real FFT is a block processing module which computes the FFT of real signals. It
+is for reduced memory and Mips.
 
 Complex FFT
 ~~~~~~~~~~~
 
-Complex FFT is a block processing module which performs N point complex FFT of the input signal, where N stands for BlockSize.
+Complex FFT is a block processing module which performs N point complex FFT of
+the input signal, where N stands for BlockSize.
 
 Variants
 --------
@@ -48,7 +61,6 @@ FFT Windowed NA         B                NA            B
 Real FFT     NA         NA               B             NA
 Complex FFT  NA         NA               B             NA
 ============ ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -74,7 +86,6 @@ Output1 PCMx    Second Output channel (FFT and FFT Windowed)
 Output  Audio   Output channel (Real FFT)
 Output  Complex Output channel (Complex FFT)
 ======= ======= ============================================
-
 
 | ===== Configurable Parameters =====
 

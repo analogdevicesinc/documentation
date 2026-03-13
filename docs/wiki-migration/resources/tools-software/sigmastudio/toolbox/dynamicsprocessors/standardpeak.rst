@@ -84,7 +84,10 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The Standard Peak Compressor is meant to function like most other SigmaStudio peak compressors. The performance and main algorithm driving the Standard Peak is the same as the other compressors in the same library folder (Peak - Standard Resolution - Lower Range). The main differences are outlined here:
+The Standard Peak Compressor is meant to function like most other SigmaStudio
+peak compressors. The performance and main algorithm driving the Standard Peak
+is the same as the other compressors in the same library folder (Peak - Standard
+Resolution - Lower Range). The main differences are outlined here:
 
 -  Compression Curve control over threshold and ratio vs. 33 customizable points
 -  Attack/Decay time constant control in (ms) vs. (dB/s)
@@ -94,12 +97,17 @@ The Standard Peak Compressor is meant to function like most other SigmaStudio pe
 
 \*The Standard Peak Compressor is a stereo compressor with the detection method tied directly to the inputs. Thus the detection signal used to drive the compression is: Input Gain \* (L + R)/2. There is no choice for an external signal to drive the compression. This detection method is the same as selecting "No External Detection" on other compressors in the same library folder.
 
-If independent control of the detection method is desired for compression, the Standard Independent Peak compressor should be used. This allows different functionality to link or unlink the detection method for left and right channels.
+If independent control of the detection method is desired for compression, the
+Standard Independent Peak compressor should be used. This allows different
+functionality to link or unlink the detection method for left and right
+channels.
 
 Example
 -------
 
-This is an example of the compressor being used directly on the input signal. The compressor is connected to an external Volume Control for a post gain level before sending to the outputs.
+This is an example of the compressor being used directly on the input signal.
+The compressor is connected to an external Volume Control for a post gain level
+before sending to the outputs.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/standardpeakpic3.png
    :alt: standardpeakpic3.png

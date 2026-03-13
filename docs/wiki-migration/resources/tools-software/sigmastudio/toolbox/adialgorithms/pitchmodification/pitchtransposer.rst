@@ -5,7 +5,6 @@ Pitch Transposer
 
    Under Construction
 
-
 :doc:`Click here to return to the Pitch Modification page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification>`
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+
@@ -58,28 +57,31 @@ TBD              TBD           TBD
 Algorithm Description
 ---------------------
 
-The algorithm takes an input signal and shifts it in frequency up or down depending on the settings of the control. Here is a time-domain display of a sine tone being shifted in frequency. The top sine tone is the input signal, and the bottom sine tone is the output.
+The algorithm takes an input signal and shifts it in frequency up or down
+depending on the settings of the control. Here is a time-domain display of a
+sine tone being shifted in frequency. The top sine tone is the input signal, and
+the bottom sine tone is the output.
 
-Approximate Output frequency = Input frequency - (Input frequency \* (Delay Reserved x 0.001) x Max shift(%))
+Approximate Output frequency = Input frequency - (Input frequency \* (Delay
+Reserved x 0.001) x Max shift(%))
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/pitch_shift_up.png
    :alt: pitch_shift_up.png
 
-Here is the same example in the frequency domain. This picture shows the frequency domain of the input signal.
-
+Here is the same example in the frequency domain. This picture shows the
+frequency domain of the input signal.
 
 |Before_Pitch_Shift.png|
 
 This picture shows the frequency domain of the output signal.
-
 
 |After_Pitch_Shift.png|
 
 Example
 -------
 
-The algorithm can simply be inserted into the signal chain to shift the frequency of the signal that is input to it.
-
+The algorithm can simply be inserted into the signal chain to shift the
+frequency of the signal that is input to it.
 
 |System_Picture.png|
 

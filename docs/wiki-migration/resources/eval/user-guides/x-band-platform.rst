@@ -8,7 +8,8 @@ The :adi:`X-Band Development Platform <en/design-center/evaluation-hardware-and-
 
 The X-Band Development Platform highlights a complete system solution. It is intended as a testbed for demonstrating hybrid beamforming phased array radar as well as the implementation of system level calibrations, beamforming algorithms, and other signal processing algorithms. The system is designed to mate with a `ZCU102 <https://www.xilinx.com/ZCU102>`_ Evaluation Board from Xilinx®, featuring the Zynq® UltraScale+™ ZU9EG FPGA, with provided reference software, HDL code, and MATLAB system-level interfacing.
 
-The system can be used to enable quick time-to-market development programs for applications like:
+The system can be used to enable quick time-to-market development programs for
+applications like:
 
 -  ADEF (Phased-Array, RADAR, EW, SATCOM)
 -  Hybrid Beamforming
@@ -49,7 +50,8 @@ AD9081-FMCA-EBZ MxFE Evaluation Board
 
 -  Mates with Xilinx ZCU102 Evaluation Board (Not Included)
 
-   -  On-Board Power Regulation Powered by ZCU102 Evaluation Board via FMC Connector
+   -  On-Board Power Regulation Powered by ZCU102 Evaluation Board via FMC
+      Connector
 
 -  4x RF Receive (Rx) Channels (8x Digital Rx Channels)
 -  Total 4x 12-bit 4GSPS ADC
@@ -68,17 +70,19 @@ AD9081-FMCA-EBZ MxFE Evaluation Board
 General Description
 ===================
 
-This user guide serves as the main source of information for system engineers and software developers using the X-Band Phased Array Development Platform. The target application is phased array radars, electronic warfare, and ground-based SATCOM, specifically a 32-channel transmit/32 receive hybrid beamforming phased array phased array at X-Band (8 GHz to 12 GHz).
+This user guide serves as the main source of information for system engineers
+and software developers using the X-Band Phased Array Development Platform. The
+target application is phased array radars, electronic warfare, and ground-based
+SATCOM, specifically a 32-channel transmit/32 receive hybrid beamforming phased
+array phased array at X-Band (8 GHz to 12 GHz).
 
 The system platform highlights a complete system solution. It is intended as a testbed for demonstrating phased array system level calibrations, hybrid beam forming (analog/digital) algorithms, and other signal processing algorithms. The board is designed to mate with a `ZCU102 <https://www.xilinx.com/ZCU102>`_ Evaluation Board from Xilinx®, which features the Zynq® UltraScale+™ ZU9EG FPGA, with provided reference software and HDL code.
-
 
 |1000|
 
 .. container:: centeralign
 
    \ **Figure 1: High Level Block Diagram**\
-
 
 --------------
 

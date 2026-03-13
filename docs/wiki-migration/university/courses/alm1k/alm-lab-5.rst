@@ -4,14 +4,22 @@ Activity: Common Emitter Amplifier, For ADALM1000
 Objective:
 ----------
 
-The purpose of this activity is to investigate the common emitter configuration using the BJT device.
+The purpose of this activity is to investigate the common emitter configuration
+using the BJT device.
 
 Notes:
 ------
 
-As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.
+As in all the ALM labs we use the following terminology when referring to the
+connections to the M1000 connector and configuring the hardware. The green
+shaded rectangles indicate connections to the M1000 analog I/O connector. The
+analog I/O channel pins are referred to as CA and CB. When configured to force
+voltage / measure current -V is added as in CA-V or when configured to force
+current / measure voltage -I is added as in CA-I. When a channel is configured
+in the high impedance mode to only measure voltage -H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
 
 Simple Common Emitter Amplifier
 -------------------------------
@@ -19,20 +27,19 @@ Simple Common Emitter Amplifier
 Materials:
 ~~~~~~~~~~
 
-ADALM1000 hardware module Solder-less breadboard 4 - Resistors 1 - 50 KΩ Variable resistor, potentiometer 1 - small signal NPN transistor (2N3904)
+ADALM1000 hardware module Solder-less breadboard 4 - Resistors 1 - 50 KΩ
+Variable resistor, potentiometer 1 - small signal NPN transistor (2N3904)
 
 Directions:
 ~~~~~~~~~~~
 
 The configuration, shown in figure 1, demonstrates the NPN transistor used as a common emitter amplifier. Output load resistor R\ :sub:`L` is chosen such that for the desired nominal collector current I\ :sub:`C`, approximately one half of the +5 V voltage (2.5 V) appears at V\ :sub:`CE`. Adjustable resistor Rpot along with Rb sets the nominal bias operating point for the transistor (I\ :sub:`B`) to set the required I\ :sub:`C`. Voltage divider R\ :sub:`1`/R\ :sub:`2` is chosen to provide a sufficiently large attenuation of the input stimulus from waveform generator channel A. This is done to more easily view the channel A generator signal, given the rather small signal that will appear at the base of the transistor, V\ :sub:`BE`. The attenuated CA-V generator signal is AC coupled into the base of the transistor by the 4.7 uF capacitor so as not to disturb the DC bias condition.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Common emitter amplifier configuration
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -46,13 +53,13 @@ The voltage gain, A, of the common emitter amplifier can be expressed as the rat
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5_e1.png
    :align: center
-   :width: 170px
+   :width: 170
 
 The small signal emitter resistance is 1/g\ :sub:`m` and can be viewed as being in series with the emitter. Now with a signal applied to the base the same current (neglecting base current) flows in r\ :sub:`e` and the collector load R\ :sub:`L`. Thus the gain A is given by the ratio of R\ :sub:`L` to r\ :sub:`e`.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5_e2.png
    :align: center
-   :width: 200px
+   :width: 200
 
 Self-biased configuration with negative feedback.
 -------------------------------------------------
@@ -60,15 +67,14 @@ Self-biased configuration with negative feedback.
 Objective:
 ~~~~~~~~~~
 
-The purpose of this section is to investigate effect of adding negative feedback to stabilize the DC operating point.
-
+The purpose of this section is to investigate effect of adding negative feedback
+to stabilize the DC operating point.
 
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Self Biased configuration
-
 
 Questions:
 ~~~~~~~~~~
@@ -81,7 +87,8 @@ Adding emitter degeneration
 Objective:
 ~~~~~~~~~~
 
-The purpose of this section is to investigate effect of the addition of emitter degeneration.
+The purpose of this section is to investigate effect of the addition of emitter
+degeneration.
 
 Additional Materials:
 ~~~~~~~~~~~~~~~~~~~~~
@@ -93,13 +100,11 @@ Directions:
 
 Disconnect the emitter of Q\ :sub:`1` from ground and insert R\ :sub:`E`, a 5KΩ potentiometer, as shown in the following diagram. Adjust R\ :sub:`E` while noting the output signal seen at the collector of the transistor.
 
-
 |image3|
 
 .. container:: centeralign
 
    Figure 3 Emitter degeneration added
-
 
 Questions:
 ~~~~~~~~~~
@@ -113,13 +118,11 @@ Increasing the AC gain of emitter degenerated amplifier
 
 Adding the emitter degeneration resistor has improved the stability of the DC operating point at the cost decreased amplifier gain. A higher gain for AC signals can be restored to some extent by adding capacitor C\ :sub:`2`\ across the degeneration resistor R\ :sub:`E` as shown in figure 4.
 
-
 |image4|
 
 .. container:: centeralign
 
    Figure 4 C\ :sub:`2` added to increase AC gain
-
 
 **Resources:**
 
@@ -133,10 +136,10 @@ http://en.wikipedia.org/wiki/Common_emitter_amplifier
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5_f1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5_f2.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5_f3.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5_f4.png
-   :width: 600px
+   :width: 600

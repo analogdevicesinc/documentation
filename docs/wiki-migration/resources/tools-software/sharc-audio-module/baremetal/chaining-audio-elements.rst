@@ -1,7 +1,10 @@
 Tutorial: Chaining Audio Elements and Audio Effects
 ===================================================
 
-The power of the audio elements is how they can be combined in novel ways to create audio effects. In this tutorial, we'll implement a bank of band-pass filters that feed into a set of different delay lines set to different delay lengths.
+The power of the audio elements is how they can be combined in novel ways to
+create audio effects. In this tutorial, we'll implement a bank of band-pass
+filters that feed into a set of different delay lines set to different delay
+lengths.
 
 To do this, we'll first need to declare instances of the biquad and integer_delay_lpf audio elements at the top of ``src/callback_audio_processing.cpp`` on the first SHARC core.
 
@@ -82,4 +85,3 @@ Finally, we'll process audio in ``void processaudio_callback(void)``. First, we 
        delay_read(&delay_2, audio_temp_2, audiochannel_0_right_out, AUDIO_BLOCK_SIZE);
 
    }
-

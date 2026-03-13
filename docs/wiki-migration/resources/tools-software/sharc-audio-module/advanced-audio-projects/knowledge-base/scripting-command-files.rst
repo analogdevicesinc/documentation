@@ -4,12 +4,18 @@ Creating and Executing Script Files
 Overview
 --------
 
-The purpose of this article is to give an overview of how to perform automated scripting to execute a series of shell commands either at startup or on-demand via another shell commands, or the pushbuttons. This can be helpful for testing when a series of commands is known, automate complex routing schemes, dump debug info and to share established commands with other engineers.
+The purpose of this article is to give an overview of how to perform automated
+scripting to execute a series of shell commands either at startup or on-demand
+via another shell commands, or the pushbuttons. This can be helpful for testing
+when a series of commands is known, automate complex routing schemes, dump debug
+info and to share established commands with other engineers.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase9.jpg
-   :width: 600px
+   :width: 600
 
-There are several methods for creating or putting script files in the file-system and there are also several methods for executing these script files as well. See below for more details on each method.
+There are several methods for creating or putting script files in the
+file-system and there are also several methods for executing these script files
+as well. See below for more details on each method.
 
 Getting your script in the filesystem
 -------------------------------------
@@ -25,8 +31,6 @@ Script files, typically in the filename format of *<filename>.cmd* typically res
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 3        | :doc:`cp </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/filesystem-commands>`              | If you already have a *<filename>.cmd* file on your SD Card that you transferred from your PC to your SD Card, you can use the copy command to move the file from one filesystem to another. |
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 
 Executing Script Commands
 -------------------------
@@ -44,28 +48,29 @@ This script allows you to execute a set of commands, automatically at startup. T
 
 *cp <filename>.cmd sf:shell.cmd*
 
-Below is a simple example to set up a route, turn on a wav recording, record for 30 seconds, then stop and close the file.
+Below is a simple example to set up a route, turn on a wav recording, record for
+30 seconds, then stop and close the file.
 
 |image1| |image2|
 
 .. important::
 
-   Startup script may be aborted halfway through its execution by pressing CTRL+C like any other shell script. However, user must be aware that depending on system timing some commands may be executed before terminal is connected to SAM and startup script is able to be aborted.
-
+   Startup script may be aborted halfway through its execution by pressing
+   CTRL+C like any other shell script. However, user must be aware that
+   depending on system timing some commands may be executed before terminal is
+   connected to SAM and startup script is able to be aborted.
 
 If you find yourself in the above sticky situation, where you are blocked for too long, or you file has become corrupted such that the shell cannot boot any longer, you will need a way to remove the *sf:shell.cmd* file. You can do this by establishing a connection via :doc:`telent </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/telnet-session>`, assuming you have the Audio Starter IP Address, and remove the offending file. A system reset after this will allow you to boot properly.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase12.jpg
-   :width: 600px
+   :width: 600
 
 If you don't have your Audio Starter IP address, you can run a command like *arp -a* to see the list of IP Addresses on the network (for DHCP supported Audio Starters):
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase13.jpg
-   :width: 400px
+   :width: 400
 
 It is highly recommended that you perform some validation on your startup scripts using the :doc:`run </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/development-commands>` command prior to putting them in the SPIFFS file system to avoid the above scenario.
-
-
 
 Pushbutton Scripts
 ~~~~~~~~~~~~~~~~~~
@@ -78,16 +83,17 @@ Pushbutton Scripts
 | *pushbtn2.cmd*  | *Default* - See :doc:`drive </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/filesystem-commands>` command to get the default filesystem (SD Card is typical).            | On PB2 Press       |
 +-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+
 
-These scripts allow you to execute a set of commands, on physical press of one of the buttons listed below . This script MUST be called one of the names listed above and must reside in the default filesystem.
+These scripts allow you to execute a set of commands, on physical press of one
+of the buttons listed below . This script MUST be called one of the names listed
+above and must reside in the default filesystem.
 
 The following examples display the current :doc:`wav </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/audio-commands>` configuration in the :doc:`syslog </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/development-commands>`, when pressed:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase14.jpg
-   :width: 400px
+   :width: 400
 
-Note that if the file with the exact names don't exist, this will be reported in the system log that the file could not be opened.
-
-
+Note that if the file with the exact names don't exist, this will be reported in
+the system log that the file could not be opened.
 
 Run Command Scripts
 ~~~~~~~~~~~~~~~~~~~
@@ -98,14 +104,14 @@ Run Command Scripts
 | *<any>*         | Any filesystem available - See :doc:`drive </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/filesystem-commands>` command.            | On shell execution of :doc:`run </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/development-commands>` command.                         |
 +-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-The run command works similarly to the pushbutton commands, except that you can specify the command name of your choosing, filesystem of your choosing and you execute it via the shell, rather than using physical hardware.
+The run command works similarly to the pushbutton commands, except that you can
+specify the command name of your choosing, filesystem of your choosing and you
+execute it via the shell, rather than using physical hardware.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/run.png
-   :width: 400px
-
-
+   :width: 400
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase10.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase11.jpg
-   :width: 400px
+   :width: 400

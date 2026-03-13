@@ -91,7 +91,11 @@ DSP parameter Information
 Algorithm Description
 ---------------------
 
-The Standard Independent Peak Compressor is meant to function like most other SimgaStudio peak compressors. The performance and main algorithm driving the Standard Peak is the same as the other compressors in the same library folder (Peak - Standard Resolution - Lower Range). The main differences are outlined here:
+The Standard Independent Peak Compressor is meant to function like most other
+SimgaStudio peak compressors. The performance and main algorithm driving the
+Standard Peak is the same as the other compressors in the same library folder
+(Peak - Standard Resolution - Lower Range). The main differences are outlined
+here:
 
 -  Compression Curve control over threshold and ratio vs. 33 customizable points
 -  Attack/Decay time constant control in (ms) vs. (dB/s)
@@ -103,18 +107,26 @@ The Standard Independent Peak Compressor is meant to function like most other Si
 
 **Unlinked:**
 
-The detection signals for left and right will independently drive the gain curve. Both channels follow the same curve, but depending on the detection level, different gains will be selected from the curve to be applied for left and right.
+The detection signals for left and right will independently drive the gain
+curve. Both channels follow the same curve, but depending on the detection
+level, different gains will be selected from the curve to be applied for left
+and right.
 
 **Linked:**
 
-The detection signals for left and right will be compared. The larger of the two detection signals will be used to drive the gain curve. Thus the same gain compensation will be used for left and right.
+The detection signals for left and right will be compared. The larger of the two
+detection signals will be used to drive the gain curve. Thus the same gain
+compensation will be used for left and right.
 
-If an average between left and right channels is desired for the detection method, the Standard Peak compressor should be used.
+If an average between left and right channels is desired for the detection
+method, the Standard Peak compressor should be used.
 
 Example
 -------
 
-This is an example of the compressor being used directly on the input signal. The compressor is connected to an external Volume Control for a post gain level before sending to the outputs.
+This is an example of the compressor being used directly on the input signal.
+The compressor is connected to an external Volume Control for a post gain level
+before sending to the outputs.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/standardindpic3.png
    :alt: standardindpic3.png

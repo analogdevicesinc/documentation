@@ -8,8 +8,9 @@ The Isolated I2C port is implemented using the :adi:`ADuM1250` I2C Isolator and 
 .. image:: https://wiki.analog.com/_media/ezlinx/isolatedi2c.png
    :alt: Figure 1. Isolated I2C schematic
    :align: center
-   :width: 600px
+   :width: 600
 
 VDD1 of the :adi:`ADuM1250` and VDD1 of the :adi:`ADuM5000` are both powered by 3.3V. The ADuM5000 will generate an isolated 3.3V which is used to supply power to VDD2 of the :adi:`ADuM1250`.
 
-A three pin screw terminal connector, J22, is used for easy access to the SDA (Pin 1), SCL (Pin 2) and I2C_ISO_GND (Pin 3) connections.
+A three pin screw terminal connector, J22, is used for easy access to the SDA
+(Pin 1), SCL (Pin 2) and I2C_ISO_GND (Pin 3) connections.

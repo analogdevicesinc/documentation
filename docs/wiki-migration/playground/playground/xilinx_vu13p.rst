@@ -3,8 +3,6 @@
 Xilinx Virtex UltraScale+ VU13P Power Solutions
 ===============================================
 
-
-
 HTG-910: Xilinx Virtex UltraScale+ Low-Profile PCI Express Development Platform
 ===============================================================================
 
@@ -16,15 +14,20 @@ Status ✔ Fully Validated
 
 |image2| The HTG-910 is low profile network card that provides access to eight lanes of PCI Express. It is populated with the Xilinx Zynq Virtex Ultrascale VU5P, VU9P, VU13P or Ultrascale VU190 FPGA. Analog Devices power solution on this platform is fully validated to meet the requirements of Xilinx Zynq Virtex Ultrascale FPGAs to ensure a robust power delivery solution.
 
-DC/DC μModule regulators are used on the HTG-910 to power Xilinx FPGA and/or SoC rails as well as other system rails. These regulators are highly integrated solutions with built in controller, power FETs, inductors, and capacitors that simplify layout and provide robust power delivery performance.
+DC/DC μModule regulators are used on the HTG-910 to power Xilinx FPGA and/or SoC
+rails as well as other system rails. These regulators are highly integrated
+solutions with built in controller, power FETs, inductors, and capacitors that
+simplify layout and provide robust power delivery performance.
 
-We provide supporting documentation including power schematics, layout, LTpowerPlanner and applicable LTpowerPlay configuration files to enable you to validate the power solution for your application seamlessly.
+We provide supporting documentation including power schematics, layout,
+LTpowerPlanner and applicable LTpowerPlay configuration files to enable you to
+validate the power solution for your application seamlessly.
 
 Power Tree
 ----------
 
 .. image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/htg-910-power-tree-picture.png
-   :width: 300px
+   :width: 300
 
 Support Files
 -------------
@@ -52,14 +55,11 @@ ADI Parts Used
 +--------------------------------------+---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/board.png
-   :width: 32px
+   :width: 32
 .. |image2| image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/htg910.png
-   :width: 200px
-
-
+   :width: 200
 
 --------------
-
 
 Virtex UltraScale+ Generic Power Solution
 =========================================
@@ -70,9 +70,12 @@ Type   |image1| Paper Design
 Status ★ Proposed
 ====== =====================
 
-This Virtex UltraScale+ power solution is a general purpose power tree for the Xilinx Virtex UltraScale+ series of FPGAs. Blah, blah, blah...
+This Virtex UltraScale+ power solution is a general purpose power tree for the
+Xilinx Virtex UltraScale+ series of FPGAs. Blah, blah, blah...
 
-Supporting documentation includes schematics, layout, LTpowerCAD and applicable LTpowerPlay configuration files to enable you to validate the power solution for your application seamlessly.
+Supporting documentation includes schematics, layout, LTpowerCAD and applicable
+LTpowerPlay configuration files to enable you to validate the power solution for
+your application seamlessly.
 
 Power Tree
 ----------
@@ -94,6 +97,4 @@ Rail/Function Part Number Description
 ============= =========== ===========
 
 .. |image1| image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/paper.png
-   :width: 32px
-
-
+   :width: 32

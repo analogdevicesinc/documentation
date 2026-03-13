@@ -5,7 +5,6 @@ CN0363 DMA Sequencer FPGA Peripheral
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/cn0363/cn0363_dma_sequencer.html\
 
-
 The CN0363 Sequencer FPGA Peripheral is part of the :doc:`EVAL-CN0363-PMDZ HDL reference design </wiki-migration/resources/eval/user-guides/eval-cn0363-pmdz/reference_hdl>` and is responsible to sequence the various data channels to the DMA.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/cn0363/cn0363_dma_sequencer.png

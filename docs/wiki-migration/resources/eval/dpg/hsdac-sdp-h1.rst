@@ -3,10 +3,14 @@ SDP-H1 for High-Speed DAC Evaluation
 
 .. hint::
 
-   The SDP-H1 platform is used to evaluate many types of Analog Devices components and systems. The information on this page applies only to High-Speed DAC evaluation.
+   The SDP-H1 platform is used to evaluate many types of Analog Devices
+   components and systems. The information on this page applies only to
+   High-Speed DAC evaluation.
 
-
-The SDP-H1 is a device designed to support the evaluation of Analog Devices' High-Speed Digital-to-Analog Converters (DAC). The device is connected to a PC over USB, and allows a user to download a data vector into the SDP-H1, which is then played out to an attached DAC evaluation board.
+The SDP-H1 is a device designed to support the evaluation of Analog Devices'
+High-Speed Digital-to-Analog Converters (DAC). The device is connected to a PC
+over USB, and allows a user to download a data vector into the SDP-H1, which is
+then played out to an attached DAC evaluation board.
 
 **Please note:** Analog Devices' pattern generators and high-speed DAC evaluation boards are designed and sold solely to support an efficient and thorough means by which to evaluate Analog Devices high speed DACs in a lab environment for a wide range of end applications. Any application or use of the pattern generators and/or high-speed DAC evaluation boards, other than specified above, will not be supported.*
 
@@ -54,7 +58,6 @@ Hardware Specifications
 
    Some PCs with USB 3.0 *SuperSpeed* ports have been unable to communicate reliably with the SDP-H1. On these PCs, the standard USB 2.0 ports (without the |image1| logo) should be used with the SDP-H1.
 
-
 Connector Pinouts
 =================
 
@@ -63,7 +66,8 @@ The SDP-H1 platform utilizes the standard VITA 57.1 "FMC-LPC" connector. See the
 Firmware Update
 ===============
 
-The firmware of the SDP-H1 is updated automatically every time the platform is used. No user interaction is required.
+The firmware of the SDP-H1 is updated automatically every time the platform is
+used. No user interaction is required.
 
 Support
 =======
@@ -73,4 +77,4 @@ Please contact `DPG Support <https://wiki.analog.com/mailto/dpg.support@analog.c
 Please contact `ACE Support <https://wiki.analog.com/mailto/ace.support@analog.com>`_ if you are using :doc:`DPG Lite </wiki-migration/resources/tools-software/ace/dpg-lite>` with :doc:`ACE </wiki-migration/resources/tools-software/ace>`.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/500px-usb_3.0_icon.png
-   :width: 50px
+   :width: 50

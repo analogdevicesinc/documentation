@@ -3,7 +3,6 @@ EVAL-ADPD410x-ARDZ User Guide
 
 The :adi:`EVAL-ADPD410x-ARDZ` is a simple, Arduino form-factor breakout board for developing :adi:`ADPD4100` and :adi:`ADPD4101` applications. The :adi:`ADPD4101`, interfaced through I2C, and the :adi:`ADPD4100`, interfaced through SPI, are highly versatile, multimodal sensor front ends, stimulating up to eight light emitting diodes (LEDs) and measuring the return signal on up to eight separate current inputs. There are a number of other evaluation platforms for these devices, including the :adi:`EVAL-ADPD4100Z-PPG`, optimized for photoplethysmograph applications, and the reference design :adi:`CN0503`, optimized for optical liquid analysis applications such as colorimetry, turbidity, and fluorescence. The :adi:`EVAL-ADPD410x-ARDZ` board come in handy for adapting these evaluation boards to meet specific application requirements, as well as for "ground up" development of new applications.
 
-
 |image1|
 
 Features
@@ -17,7 +16,9 @@ Device Driver and Support
 
 A no-OS device driver and an example program are provided, targeting the :adi:`EVAL-ADICUP3029` platform. The ADICUP3029 example application uses the ADPD410x no-OS driver and emulates the Linux IIO framework through the tinyiiod daemon library. The application communicates with the host computer via the serial backend over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
 
-Similarly, utility software (such as iio_info, IIO Oscilloscope, PyADI-IIO, etc.) typically associated with Linux systems can be used with this no-OS implementation.
+Similarly, utility software (such as iio_info, IIO Oscilloscope, PyADI-IIO,
+etc.) typically associated with Linux systems can be used with this no-OS
+implementation.
 
 Materials Needed
 ----------------
@@ -93,7 +94,6 @@ SPI or I2C Interface
 
 Below is a photo of the :adi:`ADPD4100` (SPI) board with all the correct shunt and solder jumper connections.
 
-
 |image9|
 
 +------------------------------------------------------+-----------------------------------+----------------+
@@ -102,29 +102,36 @@ Below is a photo of the :adi:`ADPD4100` (SPI) board with all the correct shunt a
 | :adi:`ADPD4101` (I2C)                                | Shorted R6 and R7, Open R8 and R9 | |image11|      |
 +------------------------------------------------------+-----------------------------------+----------------+
 
-Below is a photo of the EVAL-ADPD4101-ARDZ (I2C) board with all the correct shunt and solder jumper connections.
-
+Below is a photo of the EVAL-ADPD4101-ARDZ (I2C) board with all the correct
+shunt and solder jumper connections.
 
 |image12|
 
 Prototyping Connectors
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The board has two parallel 18-pin, 100-mil pitch male connectors, which give access to the LED driver channels, the photodiode inputs, custom I/O pins from the AFE, and supply voltage for the LED. The user can use this along with the break-away protoboard to implement a custom circuit for testing. The pin assignment and functions are shown below.
+The board has two parallel 18-pin, 100-mil pitch male connectors, which give
+access to the LED driver channels, the photodiode inputs, custom I/O pins from
+the AFE, and supply voltage for the LED. The user can use this along with the
+break-away protoboard to implement a custom circuit for testing. The pin
+assignment and functions are shown below.
 
 |image13|\ |image14|
 
 Pins labeled **XYC** (where X refers to LED 1, 2, 3, or 4, and Y refers to channel A or B) denote connections to the LED cathode which are voltage protected via transistors to the ADPD4100/1 LED inputs (denoted by **LXY**). It is recommended to connect LED cathodes to these pins instead of connecting directly to **LXY** pins. **PDXY** (X refers to photodiode 1, 2, 3, or 4 and Y refers to channel A or B) pins denote photodiode signal inputs to the AFE. **ACOM** and **BCOM** pins refer to the common cathode bias output for photodiode sensors. These should be connected to the cathodes of photodiodes in the matching channel (for example, photodiodes connected to PD1A, PD2A, PD3A, and PD4A should have their cathodes connected to ACOM).
 
-A simple circuit for testing LED driver outputs and photodiode current sensing using the break-away prototype board can easily be set up using optocouplers, as shown below.
+A simple circuit for testing LED driver outputs and photodiode current sensing
+using the break-away prototype board can easily be set up using optocouplers, as
+shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/testschematic.png
-   :width: 600px
+   :width: 600
 
 General Connection
 ~~~~~~~~~~~~~~~~~~
 
--  Set the following EVAL-ADICUP3029 switches according to their configuration on the table.
+-  Set the following EVAL-ADICUP3029 switches according to their configuration
+   on the table.
 
 ========== =============
 Switch     Configuration
@@ -136,7 +143,7 @@ POWER (S5) WALL/USB
 -  Connect the :adi:`EVAL-ADPD410x-ARDZ` to the :adi:`EVAL-ADICUP3029` using the headers shown. See correct Jumper Configuration for both evaluation boards :doc:`here </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x>`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/arduinoconnection.jpg
-   :width: 400px
+   :width: 400
 
 Driver / Firmware Setup
 -----------------------
@@ -148,10 +155,11 @@ Dragging and Dropping the Hex File to the Daplink Drive
 
 -  Ensure that the :adi:`EVAL-ADICUP3029` board switches are set to the correct configuration, as detailed in :doc:`General Connection </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x>`.
 -  Connect the :adi:`EVAL-ADICUP3029` board to the PC or laptop using the Micro USB to USB cable.
--  Drag and Drop the appropriate .hex file from the list below to the Daplink Drive.
+-  Drag and Drop the appropriate .hex file from the list below to the Daplink
+   Drive.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/daplink_windows_explorer.png
-   :width: 550px
+   :width: 550
 
 -  The drive will unmount once the .hex file is dropped and wait for it to reappear. Once it does, press the reset button of the :adi:`EVAL-ADICUP3029` to ensure that the microcontroller is updated.
 
@@ -169,7 +177,6 @@ Dragging and Dropping the Hex File to the Daplink Drive
    -  :git-EVAL-ADICUP3029:`EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_adpd410x <projects/ADuCM3029_demo_adpd410x>`.
    
 
-
 Using CrossCore Embedded Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -180,7 +187,6 @@ Using CrossCore Embedded Studio
 
    If this is your first time using CrossCore Embedded Studio, check the :doc:`user guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` to get started.
 
-
 -  Once ready, you can opt to generate your own .hex file and use the first method to program the :adi:`EVAL-ADICUP3029` or you can use a debug session by following the quickstart guide.
 
 CrossCore Project Header File Configuration
@@ -190,18 +196,15 @@ CrossCore Project Header File Configuration
 
    -  For EVAL-ADPD4100-ARDZ
 
-
    |image15|
 
 -  For EVAL-ADPD4101-ARDZ
-
 
 |image16|
 
 You can configure the default timeslots and other settings of the :adi:`ADPD4100` or :adi:`ADPD4101` using :git-EVAL-ADICUP3029:`projects/ADuCM3029_demo_adpd410x/src/adpd410x_app_config.h`.
 
 -  You can set the default number of active timeslots and output data rate.
-
 
 |image17|
 
@@ -215,26 +218,31 @@ You can configure the default timeslots and other settings of the :adi:`ADPD4100
 
 |image19|
 
-   Each timeslot input can be set to use a pair of input pins of the ADPD4100/1. Below are possible pair options:
+   Each timeslot input can be set to use a pair of input pins of the ADPD4100/1.
+   Below are possible pair options:
 
    |image20|
 
--  Each of the input pins can be disabled or routed to any or both of the channels. Below are the possible configurations of the input pins.
+-  Each of the input pins can be disabled or routed to any or both of the
+   channels. Below are the possible configurations of the input pins.
 
 |image21|
 
 -  **Timeslot Input Preconditioning**
-   Timeslot inputs have programmable connections, which precondition the sensor to set operating conditions before sampling. Below are the possible options:
+   Timeslot inputs have programmable connections, which precondition the sensor
+   to set operating conditions before sampling. Below are the possible options:
 
    |image22|
 
 -  **TIA Reference Voltage**
-   The reference voltage of the Trans-Impedance Amplifier (TIA) is configurable. Below are the possible values:
+   The reference voltage of the Trans-Impedance Amplifier (TIA) is configurable.
+   Below are the possible values:
 
    |image23|
 
 -  **TIA Gain Resistor**
-   The gain resistor used by the TIA is configurable for each input channel. Below are the possible values:
+   The gain resistor used by the TIA is configurable for each input channel.
+   Below are the possible values:
 
    |image24|
 
@@ -243,15 +251,23 @@ You can configure the default timeslots and other settings of the :adi:`ADPD4100
    -  **4-Pulse Reverse Pattern**
       Each pulse from the LED in a set of 4 can be configured to either have an on-off or off-on integrator chopping sequence. This is a 4-bit value, 1 bit for each pulse. Setting a bit reverses the integrator chopping sequence for that pulse.
    -  **4-Pulse Subtract Pattern**
-      The mathematical operation performed on a digitized ADC sample can be set to addition or subtraction for each pulse in a set of 4. This is a 4-bit value, 1 bit for each pulse. Setting a bit negates the operation for that pulse.
+      The mathematical operation performed on a digitized ADC sample can be set
+      to addition or subtraction for each pulse in a set of 4. This is a 4-bit
+      value, 1 bit for each pulse. Setting a bit negates the operation for that
+      pulse.
 
 -  **Byte Number**
    This sets the number of data bytes used in the timeslot.
 -  **Decimation Factor**
-   The decimation factor sets the number of time slot values used in the final sample.
+   The decimation factor sets the number of time slot values used in the final
+   sample.
    ``output data rate = sample rate / (decimation factor - 1)``
 -  **LED Output**
-   The 4 LED outputs have configurable output current and can be set to either channel A or channel B only. You can define the LED value directly or through fields. The first 7 bits are for the output current, which scale from 1.5 mA to 200 mA for 0x01 to 0x7F. The last bit is for the output channel. Setting this bit selects channel B while clearing selects channel A.
+   The 4 LED outputs have configurable output current and can be set to either
+   channel A or channel B only. You can define the LED value directly or through
+   fields. The first 7 bits are for the output current, which scale from 1.5 mA
+   to 200 mA for 0x01 to 0x7F. The last bit is for the output channel. Setting
+   this bit selects channel B while clearing selects channel A.
 
    |image25|
 
@@ -261,7 +277,6 @@ You can configure the default timeslots and other settings of the :adi:`ADPD4100
    This sets the number of repeat ADC conversions\\\\. This value can range from 0x01 to 0xFF\\\\. ``total number of pulses = ADC cycles X Number of Repeats``
 
 Here is an example timeslot setting used in the pre-built hex files:
-
 
 |image26|
 
@@ -289,7 +304,6 @@ Examples:
 
 An example output of this command should look like the one below:
 
-
 |image27|
 
 Reading and Configuring the Device from Command Line
@@ -311,10 +325,10 @@ The -c option of the :doc:`iio_attr </wiki-migration/resources/tools-software/li
 -  <URI> specifies the URI similar to the one used in :doc:`Connection </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x>`.
 -  <DEVICENAME> specifies the device name, which is **adpd410x**.
 -  <CHANNELNAME> specifies the channel name, which are formatted as voltageX where X can be from 0 to 7.
--  <ATTRIBUTE> specifies the name of the channel attribute, which is raw. This is a read-only attribute.
+-  <ATTRIBUTE> specifies the name of the channel attribute, which is raw. This
+   is a read-only attribute.
 
 An example output of this command should look like the one below:
-
 
 |image28|
 
@@ -336,7 +350,6 @@ The -d option of the :doc:`iio_attr </wiki-migration/resources/tools-software/li
 
 An example output of this command should look like the one below:
 
-
 |image29|
 
 IIO Oscilloscope
@@ -346,45 +359,48 @@ IIO Oscilloscope
 
    Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases.
 
-
 -  Install and start IIO-Oscilloscope. There are two options you can use to select IIO contexts. First, you can use the Serial option and input the correct port settings of the board from the Device Manager. Another way is by manually entering the URI used in :doc:`Connection </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x>`.
-
-
 
 |image30|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iio-oscilloscopemanualcontext.png
-   :width: 400px
+   :width: 400
 
--  Press Refresh to display available IIO Devices, and once adpd410x is detected, press Connect. It may take several presses to Connect before the software proceeds and opens the Debug Panel and Waveform Panel\\\\.
+-  Press Refresh to display available IIO Devices, and once adpd410x is
+   detected, press Connect. It may take several presses to Connect before the
+   software proceeds and opens the Debug Panel and Waveform Panel\\\\.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iio-oscilloscopedetecteddevice.png
-   :width: 400px
+   :width: 400
 
 Debug Panel
 ^^^^^^^^^^^
 
-In the Debug Panel, you can directly access the device/channel attributes and even the device registers. Remember to select first the adpd410x in the Device Selection section.
-
+In the Debug Panel, you can directly access the device/channel attributes and
+even the device registers. Remember to select first the adpd410x in the Device
+Selection section.
 
 |image31|
 
 Waveform Panel
 ^^^^^^^^^^^^^^
 
-The Waveform panel, also known as the Capture window, displays the real-time waveform of selected photodiode channels of the ADPD410x. Select the desired channels to display in the upper left section. You can also edit the plot settings in the left section.
+The Waveform panel, also known as the Capture window, displays the real-time
+waveform of selected photodiode channels of the ADPD410x. Select the desired
+channels to display in the upper left section. You can also edit the plot
+settings in the left section.
 
 .. important::
 
-   You cannot use the Debug Panel and the Waveform Panel simultaneously. Using the Waveform Panel will freeze the Debug Panel.
-
+   You cannot use the Debug Panel and the Waveform Panel simultaneously. Using
+   the Waveform Panel will freeze the Debug Panel.
 
 |image32| |image33|
 
 .. important::
 
-   For best device operation and waveform captured, it is recommended to use a time domain plot with 20 samples.
-
+   For best device operation and waveform captured, it is recommended to use a
+   time domain plot with 20 samples.
 
 Python and PyADI-IIO
 ~~~~~~~~~~~~~~~~~~~~
@@ -396,8 +412,8 @@ Installing the Packages
 
 .. important::
 
-   PyADI-IIO requires a Python installed on your computer. It is recommended to install Python 3.7 or higher.
-
+   PyADI-IIO requires a Python installed on your computer. It is recommended to
+   install Python 3.7 or higher.
 
 Install PyADI-IIO using one of the methods in :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`\\\\.
 
@@ -414,7 +430,6 @@ If you are using `pip <https://pip.pypa.io/en/stable>`_, you can install all of 
 .. important::
 
    One of the packages in *requirements_adiplot.txt* is the PyQt5. If you already have a pre-installed PyQt5 prior to the installation of the packages, it is suggested that you uninstall the said package in the virtual environment. Duplicate installations may sometimes cause errors that inhibit the system from displaying the real-time plot. This can easily be done by inputting the command: *pip uninstall PyQt5* while the virtual environment is active.
-
 
 Running the Examples
 ^^^^^^^^^^^^^^^^^^^^
@@ -440,11 +455,15 @@ For example 2, follow these steps:
 
 |image36|
 
--  When the board is detected, you will be asked to specify the number of channels (1 to 8) you want to read. Then, you need to specify the desired channel numbers (1 to 8).
+-  When the board is detected, you will be asked to specify the number of
+   channels (1 to 8) you want to read. Then, you need to specify the desired
+   channel numbers (1 to 8).
 
 |image37|
 
--  A plot will appear showing the specified channels. You have the option to save a copy of the displayed waveform at any point in time using the matplotlib controls at the top.
+-  A plot will appear showing the specified channels. You have the option to
+   save a copy of the displayed waveform at any point in time using the
+   matplotlib controls at the top.
 
 |image38|
 
@@ -459,7 +478,10 @@ For example 3, follow these steps:
 |image39|
 
 -  **Open Onboard LED Test**
-   The test samples raw ADC values from the onboard photodiode and checks whether it is consistent with the standard. Make sure that all shunts on jumper header P10 are present and connected. A sample passing result is shown below
+   The test samples raw ADC values from the onboard photodiode and checks
+   whether it is consistent with the standard. Make sure that all shunts on
+   jumper header P10 are present and connected. A sample passing result is shown
+   below
 
    |image40|
 
@@ -468,12 +490,14 @@ For example 3, follow these steps:
 
    |image41|
 
-   This test checks if the sampled raw ADC value has significantly increased from the standard uncovered value. A sample passing result is shown below.
+   This test checks if the sampled raw ADC value has significantly increased
+   from the standard uncovered value. A sample passing result is shown below.
 
    |image42|
 
 -  **No Load Test**
-   Remove all shunts on jumper header P10. This test checks the photodiode input when no external sensor is connected. A sample passing result is shown below.
+   Remove all shunts on jumper header P10. This test checks the photodiode input
+   when no external sensor is connected. A sample passing result is shown below.
    |image43|.
 -  **Mounted Jig Test**
    Using the simple test schematic shown in :doc:`Connection </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x>`, a test board was fabricated using `MOC207M <https://www.onsemi.com/pdf/datasheet/moc217m-d.pdf>`_ optocouplers. Remove all shunts on jumper header P10 and connect the test jig to the :adi:`EVAL-ADPD410x-ARDZ`, as shown below. **(The test jig shown below was fabricated with female headers for easy mounting)**
@@ -499,7 +523,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Additional Information and Useful Links
 ---------------------------------------
 
@@ -514,96 +537,95 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0511-RPIZ?&v=RevD>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/20220105_094532.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iosel_shunt.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/p10_shunt.png
-   :width: 100px
+   :width: 100
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/p10_shunt.png
-   :width: 100px
+   :width: 100
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/jp1_5v.png
-   :width: 100px
+   :width: 100
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/p9_p13_p17_p22_p11_p15_p19_p24.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/adpd4100_r8_r9.png
-   :width: 100px
+   :width: 100
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/adpd4100_r8_r9.png
-   :width: 100px
+   :width: 100
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/spi.jpg
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/adpd4101_r6_r7.png
-   :width: 100px
+   :width: 100
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/adpd4101_r6_r7.png
-   :width: 100px
+   :width: 100
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/i2c.jpg
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pinassignment.jpg
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pinassignmentdiagram.png
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd4100_support.png
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd4101_support.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/activetimeslots_odr.png
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/timeslot_datastructure.png
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/timeslot_inputs.png
-   :width: 400px
+   :width: 400
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/timeslot_pairoptions.png
-   :width: 400px
+   :width: 400
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/timeslot_inputoptions.png
-   :width: 400px
+   :width: 400
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/timeslot_precond.png
-   :width: 400px
+   :width: 400
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/timeslot_tiavref.png
-   :width: 400px
+   :width: 400
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/timeslot_tiares.png
-   :width: 400px
+   :width: 400
 .. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/timeslot_led.png
-   :width: 400px
+   :width: 400
 .. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/timeslot_example.png
-   :width: 400px
+   :width: 400
 .. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/iio_info_-_output.png
-   :width: 600px
+   :width: 600
 .. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/rawchanneliio.png
-   :width: 600px
+   :width: 600
 .. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/sampling_frequency_iio.png
-   :width: 600px
+   :width: 600
 .. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iio-oscilloscopeserialcontext.png
-   :width: 400px
+   :width: 400
 .. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iio-oscilloscopedebugwindow.png
-   :width: 400px
+   :width: 400
 .. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iio-oscilloscopeplotinstructions.png
-   :width: 400px
+   :width: 400
 .. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iio-oscilloscopeplot.png
-   :width: 400px
+   :width: 400
 .. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pyadiiio_example1_comport.png
-   :width: 400px
+   :width: 400
 .. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pyadiiio_example1_read.png
-   :width: 400px
+   :width: 400
 .. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pyadiiio_example2_comport.png
-   :width: 400px
+   :width: 400
 .. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pyadiiio_example2_inputchannels.png
-   :width: 400px
+   :width: 400
 .. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pyadiiio_example2_plot.png
-   :width: 400px
+   :width: 400
 .. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/softwarewindow.png
-   :width: 600px
+   :width: 600
 .. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/openledresult.png
-   :width: 600px
+   :width: 600
 .. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/coveredled.jpg
-   :width: 400px
+   :width: 400
 .. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/coveredledresult.png
-   :width: 600px
+   :width: 600
 .. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/noloadtestresult.png
-   :width: 600px
+   :width: 600
 .. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/testjig_connection.jpg
-   :width: 600px
+   :width: 600
 .. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/mountedjigtestresult.png
-   :width: 600px
+   :width: 600

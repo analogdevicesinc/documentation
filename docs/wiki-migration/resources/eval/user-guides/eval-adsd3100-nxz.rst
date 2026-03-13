@@ -6,15 +6,21 @@ EVAL-ADSD3100-NXZ
 
    `Download the latest software package from here <https://github.com/analogdevicesinc/ToF/releases>`_
 
-
-Analog Devices 3D time of flight (ToF) camera products capture depth information, enabling advanced machine vision applications and allowing people and devices to sense, capture and interact with their spatial environments.
+Analog Devices 3D time of flight (ToF) camera products capture depth
+information, enabling advanced machine vision applications and allowing people
+and devices to sense, capture and interact with their spatial environments.
 
 For more information see: :adi:`Time of Flight Camera – System Overview <en/analog-dialogue/articles/time-of-flight-system-design-part-1-system-overview.html>`
 
 Introduction
 ------------
 
-The EVAL-ADSD3100-NXZ time of flight (ToF) evaluation kit is a complete high-resolution (1Mpixel) 3D depth camera system assembled with the NXP i.MX 8M Plus processor. The camera supports USB connectivity to a PC for real-time visualization, capture and post processing of depth data. The kit includes host PC software (Windows/Linux) and an open source multi-platform SDK for custom application development.
+The EVAL-ADSD3100-NXZ time of flight (ToF) evaluation kit is a complete
+high-resolution (1Mpixel) 3D depth camera system assembled with the NXP i.MX 8M
+Plus processor. The camera supports USB connectivity to a PC for real-time
+visualization, capture and post processing of depth data. The kit includes host
+PC software (Windows/Linux) and an open source multi-platform SDK for custom
+application development.
 
 Key Features
 ~~~~~~~~~~~~
@@ -32,7 +38,6 @@ Key Features
    ================ =====================================
    
 
-
 Modes of Operation
 ~~~~~~~~~~~~~~~~~~
 
@@ -45,7 +50,6 @@ Modes of Operation
    7           Quarter-Megapixel (qmp)  512x512     5.2m   15
    ========== ======================= ========== ===== ===
    
-
 
 What is included in the kit?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +71,6 @@ What is included in the kit?
    ======== ========
    
    **Note:** the stand is *not* included.
-
 
 --------------
 
@@ -99,8 +102,6 @@ System Information
 
 Note: Do not use USB Type-C to USB Type-A adapters.
 
-
-
 ; Dimensions : 38mm x 72.5mm x 87mm
 ; Schematics : `eval-adsd3100-nxz_drawing_v1.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz_drawing_v1.pdf>`_
 ; Laser Safety : Class 1
@@ -128,7 +129,6 @@ Index of Pages
    
    \* :doc:`EVAL-ADSD3100-NXZ Development </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-development>`
 
-
 --------------
 
 Terms
@@ -143,6 +143,6 @@ Terms
    ; VCSEL : Vertical-Cavity Surface-Emitting Laser
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adsd3100_noenc.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adsd3100_w_enc.png
-   :width: 200px
+   :width: 200

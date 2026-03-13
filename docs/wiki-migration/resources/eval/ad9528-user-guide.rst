@@ -4,13 +4,16 @@ AD9528 Evaluation Board User Guide
 Features
 --------
 
--  Simple power connection using 6 V wall adapter and on-board voltage regulators.
+-  Simple power connection using 6 V wall adapter and on-board voltage
+   regulators.
 
-   -  Multiple power configurations to evaluate performance with buck regulators and/or LDO regulators.
+   -  Multiple power configurations to evaluate performance with buck regulators
+      and/or LDO regulators.
 
 -  Prepopulated VCXO with universal pad.
 
-   -  Universal pad allows for various VCXO package sizes to be used and evaluated.
+   -  Universal pad allows for various VCXO package sizes to be used and
+      evaluated.
 
 -  2 reference input SMA connectors
 -  2 ac-coupled single-ended SMA output connectors(2 differential paths)
@@ -21,7 +24,8 @@ Features
    -  External SYSREF Request
 
 -  USB connection to PC
--  Microsoft Windows-based evaluation software with simple graphical user interface (supports 64-bit versions of Windows)
+-  Microsoft Windows-based evaluation software with simple graphical user
+   interface (supports 64-bit versions of Windows)
 
 Equipment Needed
 ----------------
@@ -51,11 +55,9 @@ Documents Needed
 
 General Description
 
-
 This user guide describes specific functionality of the :adi:`AD9528` evaluation board hardware and evaluation board software. General software features including software installation instructions are covered in the :doc:`Clock Generation and Distribution Evaluation Software User Guide </wiki-migration/resources/eval/csg-evalsoftware-user-guide>`. The :adi:`AD9528` evaluation board is a compact, easy-to-use platform for evaluating all features of the :adi:`AD9528 JESD204B Clock Generator <AD9528>`. The :adi:`AD9528` is a dual loop jitter cleaner and clock generator with internal SYSREF generator compliant with JEDEC JESD204B for multi-device synchronization. The :adi:`AD9528` can output up to 14 clock signals, with any output configurable to PLL1direct out, PLL2, or SYSREF. 8 total outputs, 2 reference inputs, and a SYSREF input are accessible on the evaluation board. The AD9528/PCBZ has a fully configurable power supply to allow the user to evaluate the AD9528 while being powered directly by buck regulators or external LDOs. Use this user guide in conjunction with the AD9528 data sheet and software documentation available at www.analog.com.
 
 .. container:: centeralign
-
 
    ..
 
@@ -63,11 +65,11 @@ This user guide describes specific functionality of the :adi:`AD9528` evaluation
 
    *Figure 1. AD9528/PCBZ*
 
-
 Evaluation Board Hardware
 
-
-The following instructions are for setting up the physical connections to the AD9528/PCBZ. The user must install the evaluation software prior to connecting the evaluation board to their PC.
+The following instructions are for setting up the physical connections to the
+AD9528/PCBZ. The user must install the evaluation software prior to connecting
+the evaluation board to their PC.
 
 Power Connections
 ~~~~~~~~~~~~~~~~~
@@ -101,9 +103,11 @@ The following instructions assume that the power supply is correctly configured 
 -  Connect the USB cable to the evaluation board and computer.
 
    -  The red LED labeled CR300 on the AD9528 evaluation board will illuminate.
-   -  The red LED labeled USB_STATUS (CR2) will blink once the evaluation board has successfully communicated with the PC.
+   -  The red LED labeled USB_STATUS (CR2) will blink once the evaluation board
+      has successfully communicated with the PC.
 
-Refer to the Evaluation Board Software section for details on running the AD9528 evaluation board software.
+Refer to the Evaluation Board Software section for details on running the AD9528
+evaluation board software.
 
 Signal Connections
 ~~~~~~~~~~~~~~~~~~
@@ -132,10 +136,9 @@ A low phase noise VCXO with single ended 3.3V CMOS output is populated by defaul
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9528/vcxopad.png
       :align: center
-      :width: 500px
+      :width: 500
    
    *Figure 2. VCXO_IN Input Options*
-
 
 -  **Using an External 3.3V CMOS VCXO Daughter Board**
 
@@ -183,10 +186,15 @@ A low phase noise VCXO with single ended 3.3V CMOS output is populated by defaul
 Outputs
 ^^^^^^^
 
-Connect an oscilloscope, spectrum analyzer, or other lab equipment to any of the horizontal OUTx inputs on the edge of the board. OUT0, OUT1, OUT11, and OUT12 are differentially terminated with 100Ω and ac coupled to SMA connectors J10-J13 and J34-J37. OUT4, OUT5, OUT8, and OUT9 are differentially terminated with 100Ω and combined to one output via a balun to SMA connectors J18, J20, J26 and J29. Baluns T8 and T13 can be removed and shorted so that both the positive and negative outputs from OUT4 and OUT9 can be connected to SMA connectors.
+Connect an oscilloscope, spectrum analyzer, or other lab equipment to any of the
+horizontal OUTx inputs on the edge of the board. OUT0, OUT1, OUT11, and OUT12
+are differentially terminated with 100Ω and ac coupled to SMA connectors J10-J13
+and J34-J37. OUT4, OUT5, OUT8, and OUT9 are differentially terminated with 100Ω
+and combined to one output via a balun to SMA connectors J18, J20, J26 and J29.
+Baluns T8 and T13 can be removed and shorted so that both the positive and
+negative outputs from OUT4 and OUT9 can be connected to SMA connectors.
 
 Evaluation Board Software
-
 
 The :adi:`AD9528` evaluation software allows the user to control the full functionality of the :adi:`AD9528` through SPI communication on the evaluation board and a fully interactive software GUI. Please see the :doc:`Clock Generation and Distribution Evaluation Software User Guide </wiki-migration/resources/eval/csg-evalsoftware-user-guide>` for general information on installing and running the software including software features that are redundant across multiple Clock and Distribution products.
 
@@ -203,17 +211,19 @@ Main Window
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9528/ad9528_main_window.png
       :align: center
-      :width: 800px
+      :width: 800
    
    *Figure 3. AD9528 Evaluation Software Main Window*
 
-
 AD9528 Evaluation Board Quick Start
 
+The quick start section covers only simple PLL operation to lock both AD9528
+PLLs and output two high speed sample clocks and two SYSREF signals. See the
+AD9528 data sheet and Evaluation Software Components section for a detailed
+explanation of the various AD9528 features.
 
-The quick start section covers only simple PLL operation to lock both AD9528 PLLs and output two high speed sample clocks and two SYSREF signals. See the AD9528 data sheet and Evaluation Software Components section for a detailed explanation of the various AD9528 features.
-
-Table 2 describes a summary of one possible operating mode of the AD9528 which is setup used for this quick start guide.
+Table 2 describes a summary of one possible operating mode of the AD9528 which
+is setup used for this quick start guide.
 
 **Table 2. Quick Start Summary**
 
@@ -247,22 +257,25 @@ Table 2 describes a summary of one possible operating mode of the AD9528 which i
 | Output Divider                    | 10 on OUT0 and 5 on OUT10                |
 +-----------------------------------+------------------------------------------+
 
-Use the following steps to configure and lock both AD9528 PLLs by loading a premade setup file.
+Use the following steps to configure and lock both AD9528 PLLs by loading a
+premade setup file.
 
 -  Apply a 0dBm 122.88MHz signal to SMA connector J27 (REFA_P).
 -  Download the **AD9528 Quick Start Setup File** found online on the :adi:`AD9528 Evaluation Board Page <EVAL-AD9528>`.
 -  Once downloaded, the setup file can be loaded into the evaluation board by opening the AD9528 Evaluation Software, click File> Load Setup, and select the appropriate .stp file.
--  A prompt will display that the settings from the setup file have been loaded into the AD9528. A VCO calibration is needed to lock the output PLL to the new AD9528 settings. Press Yes to perform a VCO calibration and output synchronization.
+-  A prompt will display that the settings from the setup file have been loaded
+   into the AD9528. A VCO calibration is needed to lock the output PLL to the
+   new AD9528 settings. Press Yes to perform a VCO calibration and output
+   synchronization.
 
 .. container:: centeralign
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9528/vco_calibratin_output_synchronization_prompt.png
       :align: center
-      :width: 300px
+      :width: 300
    
    *Figure 4. VCO Calibration and Output Synchronization Prompt*
-
 
 -  The “\ **LD**\ ” indicator for both PLL1 and PLL2 should illuminate green on the main window to signify that both PLLs are locked.
 -  Issue a 4 Pulse N-Shot SYSREF:
@@ -273,4 +286,4 @@ Use the following steps to configure and lock both AD9528 PLLs by loading a prem
       -  Press **Load**
 
 .. |ad9528evaluationboard.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9528/ad9528evaluationboard.jpg
-   :width: 800px
+   :width: 800

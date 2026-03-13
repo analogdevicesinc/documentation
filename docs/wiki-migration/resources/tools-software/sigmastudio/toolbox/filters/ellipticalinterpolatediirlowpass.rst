@@ -67,7 +67,6 @@ Pin0 Audio filtered output
 Pin1 Audio filtered output
 ==== ===== ===============
 
-
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------+-------------------------------------------+

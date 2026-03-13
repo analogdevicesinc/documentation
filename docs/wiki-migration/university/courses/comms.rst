@@ -3,11 +3,21 @@ Digital Communications
 
 The objective of this course material is to provide hands-on learning experiences using Software-Defined Radio and other instrumentation for engineering students and industry practitioners who are interested in mastering the design, implementation, and experimentation of communication systems. :doc:`This material </wiki-migration/university/labs/comms>` and :adi:`related textbook <sdrforengineers>` provides a fresh perspective on understanding and creating new communication systems from scratch. Communication system engineers need to understand the impact of the hardware on the performance of the communication algorithms being used and how well the overall system operates to recovers the intercepted signal.
 
-This material is written for both industry practitioners who are seeking to enhance their skill set by learning about the design and implementation of communication systems using SDR technology, as well as both undergraduate and graduate students who would like to learn about and master communication systems technology in order to become the next generation of industry practitioners and academic researchers. The book contains theoretical explanations about the various elements forming a communication system, practical hands-on examples, and lessons that help synthesize these concepts, and a wealth of important facts and details to take into consideration when building a real-world communication system.
+This material is written for both industry practitioners who are seeking to
+enhance their skill set by learning about the design and implementation of
+communication systems using SDR technology, as well as both undergraduate and
+graduate students who would like to learn about and master communication systems
+technology in order to become the next generation of industry practitioners and
+academic researchers. The book contains theoretical explanations about the
+various elements forming a communication system, practical hands-on examples,
+and lessons that help synthesize these concepts, and a wealth of important facts
+and details to take into consideration when building a real-world communication
+system.
 
 The web site `sdrforengineers <http://sdrforengineers.com/>`_ provides supplementary materials for the text, hands-on content, labs, assignments, end of chapter questions, that anyone can use or contribute to. Additionally, this is outlined with other ADI offering :doc:`here </wiki-migration/university/labs/comms>` under the general banner of communication systems.
 
-You may download the book in its entirety here in pdf format, SDR for Engineers, or by chapter below.
+You may download the book in its entirety here in pdf format, SDR for Engineers,
+or by chapter below.
 
 Table of Contents
 -----------------

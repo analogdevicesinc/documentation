@@ -3,9 +3,12 @@ AD-96TOF1-EBZ Laser Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tofebz/3dtof_laser_blk_dig.png
    :align: right
-   :width: 400px
+   :width: 400
 
-The laser board generates the IR light pulses to illuminate the scene. It connects directly to the AFE board and is powered and controlled through the interface connector, with an option of external power if needed for specific use case with different VCSEL.
+The laser board generates the IR light pulses to illuminate the scene. It
+connects directly to the AFE board and is powered and controlled through the
+interface connector, with an option of external power if needed for specific use
+case with different VCSEL.
 
 **Key parts:**
 
@@ -19,11 +22,9 @@ The laser board generates the IR light pulses to illuminate the scene. It connec
 
    The previous board versions (Rev. B and Rev. C) use MOSFET driver: :adi:`ADP3624`\
 
-
 --------------
 
 .. admonition:: Download
    :class: download
 
    `Rev. B Hardware design files (including schematics, BoM and layout) <https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tofebz/tof_laser_revb.zip>`_ `Rev. C Hardware design files (including schematics, BoM and layout) <https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tofebz/tof_laser_revc.zip>`_ `Rev. D Hardware design files (including schematics, BoM and layout) <https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tofebz/tof_laser_revd.zip>`_
-

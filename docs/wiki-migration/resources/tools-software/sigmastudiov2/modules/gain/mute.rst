@@ -21,9 +21,13 @@ Variants
 Description
 ===========
 
-The Mute module provides an option to mute the input signal. By default the signal is passed to the output unchanged. When mute is enabled, there will be no signal available at the output.
+The Mute module provides an option to mute the input signal. By default the
+signal is passed to the output unchanged. When mute is enabled, there will be no
+signal available at the output.
 
-The mute block is available as a Slew or Non-Slew algorithm. The Slew version of the algorithm will smoothly transition the gain to its target value, eliminating any click or pops, but require more system resources.
+The mute block is available as a Slew or Non-Slew algorithm. The Slew version of
+the algorithm will smoothly transition the gain to its target value, eliminating
+any click or pops, but require more system resources.
 
 Multiple Control Mute provide separate mute selection control for each inputs
 

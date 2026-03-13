@@ -13,7 +13,14 @@ Requirements
 Noise Test Demo
 ~~~~~~~~~~~~~~~
 
-While the AD7124-4/AD7124-8 is a 24-bit ADC, there will be noise or flicker in the LSBs. This is expected for sigma delta converters. The noise test measures the noise for an externally shorted input. The magnitude of the noise is dependent on the output data rate, gain and filter type selected. For a shorted input, the noise of the AD7124-4/AD7124-8’s internal blocks only are measured i.e. the ADC core and the PGA. Note that for a shorted input, the reference (internal or external) does not contribute to the noise measurement. The reference noise becomes important for non-zero inputs.
+While the AD7124-4/AD7124-8 is a 24-bit ADC, there will be noise or flicker in
+the LSBs. This is expected for sigma delta converters. The noise test measures
+the noise for an externally shorted input. The magnitude of the noise is
+dependent on the output data rate, gain and filter type selected. For a shorted
+input, the noise of the AD7124-4/AD7124-8’s internal blocks only are measured
+i.e. the ADC core and the PGA. Note that for a shorted input, the reference
+(internal or external) does not contribute to the noise measurement. The
+reference noise becomes important for non-zero inputs.
 
 Hardware Set-up
 ^^^^^^^^^^^^^^^
@@ -29,7 +36,6 @@ See layout below for jumper locations
 
 All other jumpers in their default positions, see :doc:`Hardware Link Options </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>`
 
-
 |image1|
 
 Software Procedure
@@ -38,7 +44,7 @@ Software Procedure
 Below details the procedure for setting up the Eval software to perform a noise test. For information opening the Eval+ software see: :doc:`Quick Start Guide </wiki-migration/resources/eval/user-guides/ad7124-x>` Once the software has been launched and the evaluation board is selected the, configuration tab of Eval+ software (shown below) should be displayed. For full information on the Eval+ software please go to the :doc:`Eval+ Software Windows </wiki-migration/resources/eval/user-guides/ad7124-x/software>` section.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_homepage_noise_test.png
-   :width: 600px
+   :width: 600
 
 Noise test (1)
 """"""""""""""
@@ -70,12 +76,14 @@ Section          Setting          Value
 Tutorial Access (2)
 """""""""""""""""""
 
-For quick access to the tutorial click the blue question mark icon next to the Noise Test button
+For quick access to the tutorial click the blue question mark icon next to the
+Noise Test button
 
 External Reference (3)
 """"""""""""""""""""""
 
-The external reference is set to 2.5V by default, if a different external reference is used, fill in this value in the box.
+The external reference is set to 2.5V by default, if a different external
+reference is used, fill in this value in the box.
 
 Sampling mode (4)
 """""""""""""""""
@@ -87,22 +95,27 @@ Sampling mode (4)
 Required Samples (5)
 """"""""""""""""""""
 
-To select the number of samples per batch required from the ADC in a batch, enter the value in the samples box. Default value is 100 samples
+To select the number of samples per batch required from the ADC in a batch,
+enter the value in the samples box. Default value is 100 samples
 
 Sample (6)
 """"""""""
 
-The sample button sends the configuration to the evaluation board and initiates the data collection effort.
+The sample button sends the configuration to the evaluation board and initiates
+the data collection effort.
 
-While the software is communicating with the board and retrieving the data, the window below will be displayed
-
+While the software is communicating with the board and retrieving the data, the
+window below will be displayed
 
 |image2|
 
 Waveform Tab
 ^^^^^^^^^^^^
 
-Following the completion of the test, the waveform tab will display the the gathered samples. The plot shows each successive sample of the ADC (input referred). Indicators on the right of the screen show the channels being converted. These conversions can be displayed as codes or as volts
+Following the completion of the test, the waveform tab will display the the
+gathered samples. The plot shows each successive sample of the ADC (input
+referred). Indicators on the right of the screen show the channels being
+converted. These conversions can be displayed as codes or as volts
 
 The **analysis** section displays key parameters for the current batch of samples including; *peak-to-peak noise* and *rms noise*. More information on the `waveform tab can be found here <https://wiki.analog.com/resources/eval/user-guides/ad7124/software>`_
 
@@ -119,7 +132,11 @@ To **save the conversion data** into an Excel file, right-click the waveform gra
 2 Wire RTD Demo
 ~~~~~~~~~~~~~~~
 
-The AD7124-4/8 offers programmable precision current sources for use with RTD sensors. In 2-wire RTD mode a single current source is required and this current can be made available on any AINx pin. Due to the error associated with lead resistance 2-wire RTD configurations should only be used when lead wires are short to minimize the error.
+The AD7124-4/8 offers programmable precision current sources for use with RTD
+sensors. In 2-wire RTD mode a single current source is required and this current
+can be made available on any AINx pin. Due to the error associated with lead
+resistance 2-wire RTD configurations should only be used when lead wires are
+short to minimize the error.
 
 Hardware Set-up
 ^^^^^^^^^^^^^^^
@@ -132,12 +149,18 @@ Specific Requirements
 -  5.11kΩ precision resistor
 -  250Ω resistor for headroom on the REFIN- buffer.
 
-The configuration for the 2-wire RTD circuit is shown below. The current flows through RL1, the RTD and RL2. The voltage generated is sensed across AIN2 and AIN3. In this configuration RL1 and RL2 will add errors as they are in series with the RTD. To minimize this error, ensure that lead wires are as short as possible.
+The configuration for the 2-wire RTD circuit is shown below. The current flows
+through RL1, the RTD and RL2. The voltage generated is sensed across AIN2 and
+AIN3. In this configuration RL1 and RL2 will add errors as they are in series
+with the RTD. To minimize this error, ensure that lead wires are as short as
+possible.
 
-This current also flows through the precision 5.11kΩ resistor. The resistor is connected across REFIN1+ and REFIN1- which generated the reference voltage for the ADC allowing for a ratiometric configuration.
+This current also flows through the precision 5.11kΩ resistor. The resistor is
+connected across REFIN1+ and REFIN1- which generated the reference voltage for
+the ADC allowing for a ratiometric configuration.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/2-wire_circuit.png
-   :width: 400px
+   :width: 400
 
 Jumper positions
 """"""""""""""""
@@ -154,7 +177,7 @@ See layout below for jumper locations
 All other jumpers in their default positions, see :doc:`Hardware Link Options </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/software/ad7124_silk_2wire.png
-   :width: 600px
+   :width: 600
 
 Software
 ^^^^^^^^
@@ -162,7 +185,6 @@ Software
 Below details the procedure for setting up the Eval software to perform a 2-Wire RTD measurement. For information opening the Eval+ software see: :doc:`Quick Start Guide </wiki-migration/resources/eval/user-guides/ad7124-x>`.
 
 Once the software has been launched and the evaluation board is selected the, configuration tab of Eval+ software (shown below) should be displayed. For full information on the Eval+ software please go to the `Eval+ Software <https://wiki.analog.com/resources/eval/user-guides/ad7124/software>`_ section.
-
 
 |image3|
 
@@ -200,7 +222,8 @@ Section          Setting          Value
 Tutorial Access (2)
 """""""""""""""""""
 
-For quick access to the tutorial click the blue question mark icon next to the 2-Wire RTD button
+For quick access to the tutorial click the blue question mark icon next to the
+2-Wire RTD button
 
 Sampling mode (3)
 """""""""""""""""
@@ -212,22 +235,27 @@ Sampling mode (3)
 Required Samples (4)
 """"""""""""""""""""
 
-To select the number of samples required from the ADC in a batch, enter the value in the samples box. Default value is 100 samples.
+To select the number of samples required from the ADC in a batch, enter the
+value in the samples box. Default value is 100 samples.
 
 Sample (5)
 """"""""""
 
-The sample button sends the configuration to the evaluation board and initiates the data collection effort.
+The sample button sends the configuration to the evaluation board and initiates
+the data collection effort.
 
-While the software is communicating with the board and retrieving the data, the window below will be displayed
-
+While the software is communicating with the board and retrieving the data, the
+window below will be displayed
 
 |image4|
 
 Waveform Tab
 ^^^^^^^^^^^^
 
-Following the completion of the test, the waveform tab will display the the gathered samples. The plot shows each successive sample of the ADC (input referred). Indicators on the right of the screen show the channels being converted. These conversions can be displayed as codes or as volts
+Following the completion of the test, the waveform tab will display the the
+gathered samples. The plot shows each successive sample of the ADC (input
+referred). Indicators on the right of the screen show the channels being
+converted. These conversions can be displayed as codes or as volts
 
 The **analysis** section displays key parameters for the current batch of samples including; *peak-to-peak noise* and *rms noise*. More information on the :doc:`waveform tab can be found here </wiki-migration/resources/eval/user-guides/ad7124-x/software>`
 
@@ -244,7 +272,9 @@ To **save the conversion data** into an Excel file, right-click the waveform gra
 3 Wire RTD Demo
 ~~~~~~~~~~~~~~~
 
-The AD7124-4/8 offers programmable precision current sources for use with RTD sensors. In 3-wire RTD mode, two identically matched current sources are required and this current can be made available on any AINx pin.
+The AD7124-4/8 offers programmable precision current sources for use with RTD
+sensors. In 3-wire RTD mode, two identically matched current sources are
+required and this current can be made available on any AINx pin.
 
 Hardware Set-up
 ^^^^^^^^^^^^^^^
@@ -255,13 +285,17 @@ Specific Requirements
 -  3-wire Pt100 RTD sensor
 -  Sensor voltage measured across AIN2-AIN3
 -  5.11kΩ precision resistor
--  250Ω resistor for headroom may be required if a Pt1000 RTD is used with a gain of 1.
+-  250Ω resistor for headroom may be required if a Pt1000 RTD is used with a
+   gain of 1.
 
-The configuration for the 3-wire RTD circuit is shown below. The reference voltage is generated across a precision resistor connected between REFIN1+ and REFIN1- using one of the matched currents. This ensures that the analog input voltage remains ratiometric to the reference voltage.
+The configuration for the 3-wire RTD circuit is shown below. The reference
+voltage is generated across a precision resistor connected between REFIN1+ and
+REFIN1- using one of the matched currents. This ensures that the analog input
+voltage remains ratiometric to the reference voltage.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/3-wire_circuit.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Jumper positions
 """"""""""""""""
@@ -278,7 +312,7 @@ See layout below for jumper locations
 All other jumpers in their default positions, see :doc:`Hardware Link Options </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/software/ad7124_silk_2wire.png
-   :width: 600px
+   :width: 600
 
 Software
 ^^^^^^^^
@@ -288,7 +322,7 @@ Below details the procedure for setting up the Eval software to perform a 3-Wire
 Once the software has been launched and the evaluation board is selected the, configuration tab of Eval+ software (shown below) should be displayed. For full information on the Eval+ software please go to the :doc:`Eval+ Software </wiki-migration/resources/eval/user-guides/ad7124-x/software>` section.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_homepage_3-wire_rtd.png
-   :width: 600px
+   :width: 600
 
 3-Wire RTD (1)
 """"""""""""""
@@ -325,7 +359,8 @@ Section          Setting          Value
 Tutorial Access (2)
 """""""""""""""""""
 
-For quick access to the tutorial click the blue question mark icon next to the 3-Wire RTD button
+For quick access to the tutorial click the blue question mark icon next to the
+3-Wire RTD button
 
 Sampling mode (3)
 """""""""""""""""
@@ -337,22 +372,27 @@ Sampling mode (3)
 Required Samples (4)
 """"""""""""""""""""
 
-To select the number of samples required from the ADC in a batch, enter the value in the samples box. Default value is 100 samples.
+To select the number of samples required from the ADC in a batch, enter the
+value in the samples box. Default value is 100 samples.
 
 Sample (5)
 """"""""""
 
-The sample button sends the configuration to the evaluation board and initiates the data collection effort.
+The sample button sends the configuration to the evaluation board and initiates
+the data collection effort.
 
-While the software is communicating with the board and retrieving the data, the window below will be displayed
-
+While the software is communicating with the board and retrieving the data, the
+window below will be displayed
 
 |image5|
 
 Waveform Tab
 ^^^^^^^^^^^^
 
-Following the completion of the test, the waveform tab will display the the gathered samples. The plot shows each successive sample of the ADC (input referred). Indicators on the right of the screen show the channels being converted. These conversions can be displayed as codes or as volts
+Following the completion of the test, the waveform tab will display the the
+gathered samples. The plot shows each successive sample of the ADC (input
+referred). Indicators on the right of the screen show the channels being
+converted. These conversions can be displayed as codes or as volts
 
 The **analysis** section displays key parameters for the current batch of samples including; *peak-to-peak noise* and *rms noise*. More information on the :doc:`waveform tab can be found here </wiki-migration/resources/eval/user-guides/ad7124-x/software>`
 
@@ -369,7 +409,9 @@ To **save the conversion data** into an Excel file, right-click the waveform gra
 4 Wire RTD Demo
 ~~~~~~~~~~~~~~~
 
-The AD7124-4/8 offers a programmable precision current source for use with 4-wire RTD sensors. In 4-wire RTD mode, a single current source is required and this current can be made available on any AINx pin.
+The AD7124-4/8 offers a programmable precision current source for use with
+4-wire RTD sensors. In 4-wire RTD mode, a single current source is required and
+this current can be made available on any AINx pin.
 
 Hardware Set-up
 ^^^^^^^^^^^^^^^
@@ -382,11 +424,16 @@ Specific Requirements
 -  5.11kΩ precision resistor
 -  250Ω resistor for headroom
 
-The configuration for the 4-wire RTD circuit is shown below. The reference voltage is generated across a precision resistor connected between REFIN1+ and REFIN1- using the generated current. This ensures that the analog input voltage remains ratiometric to the reference voltage. The voltage generated across the RTD sensor corresponds to the voltage between AIN2 and AIN3. The current flows through RL1 and RL4.
+The configuration for the 4-wire RTD circuit is shown below. The reference
+voltage is generated across a precision resistor connected between REFIN1+ and
+REFIN1- using the generated current. This ensures that the analog input voltage
+remains ratiometric to the reference voltage. The voltage generated across the
+RTD sensor corresponds to the voltage between AIN2 and AIN3. The current flows
+through RL1 and RL4.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/4-wire_circuit.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Jumper positions
 """"""""""""""""
@@ -404,7 +451,7 @@ All other jumpers in their default positions, see :doc:`Hardware Link Options </
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/software/ad7124_silk_2wire.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Software
 ^^^^^^^^
@@ -415,7 +462,7 @@ Once the software has been launched and the evaluation board is selected the, co
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_homepage_4-wire_rtd.png
    :align: center
-   :width: 600px
+   :width: 600
 
 4-Wire RTD (1)
 ^^^^^^^^^^^^^^
@@ -451,7 +498,8 @@ Section          Setting          Value
 Tutorial Access (2)
 """""""""""""""""""
 
-For quick access to the tutorial click the blue question mark icon next to the 4-Wire RTD button
+For quick access to the tutorial click the blue question mark icon next to the
+4-Wire RTD button
 
 Sampling mode (3)
 """""""""""""""""
@@ -463,22 +511,27 @@ Sampling mode (3)
 Required Samples (4)
 """"""""""""""""""""
 
-To select the number of samples required from the ADC in a batch, enter the value in the samples box. Default value is 100 samples.
+To select the number of samples required from the ADC in a batch, enter the
+value in the samples box. Default value is 100 samples.
 
 Sample (5)
 """"""""""
 
-The sample button sends the configuration to the evaluation board and initiates the data collection effort.
+The sample button sends the configuration to the evaluation board and initiates
+the data collection effort.
 
-While the software is communicating with the board and retrieving the data, the window below will be displayed
-
+While the software is communicating with the board and retrieving the data, the
+window below will be displayed
 
 |image6|
 
 Waveform Tab
 ^^^^^^^^^^^^
 
-Following the completion of the test, the waveform tab will display the the gathered samples. The plot shows each successive sample of the ADC (input referred). Indicators on the right of the screen show the channels being converted. These conversions can be displayed as codes or as volts
+Following the completion of the test, the waveform tab will display the the
+gathered samples. The plot shows each successive sample of the ADC (input
+referred). Indicators on the right of the screen show the channels being
+converted. These conversions can be displayed as codes or as volts
 
 The **analysis** section displays key parameters for the current batch of samples including; *peak-to-peak noise* and *rms noise*. More information on the :doc:`waveform tab can be found here </wiki-migration/resources/eval/user-guides/ad7124-x/software>`
 
@@ -495,7 +548,8 @@ To **save the conversion data** into an Excel file, right-click the waveform gra
 Thermocouple Demo
 ~~~~~~~~~~~~~~~~~
 
-The voltage generated across the thermocouple is measured with respect to an absolute reference, for example this reference is the internal reference.
+The voltage generated across the thermocouple is measured with respect to an
+absolute reference, for example this reference is the internal reference.
 
 Hardware Set-up
 ^^^^^^^^^^^^^^^
@@ -508,15 +562,23 @@ Specific Requirements
 -  5.11kΩ precision resistor
 -  250Ω resistor for headroom on the REFIN- buffer.
 
-Shown in the diagram are the connections used for the measurement. Thermocouple itself is connected to A2 connector (see the silk screen below) on the EVAL Board. This connector is connected to analog pins AIN2 and AIN3.
+Shown in the diagram are the connections used for the measurement. Thermocouple
+itself is connected to A2 connector (see the silk screen below) on the EVAL
+Board. This connector is connected to analog pins AIN2 and AIN3.
 
-A thermistor or a RTD is connected between AIN4 and AIN5 used for the cold junction measurement, this uses a ratiometric configuration where the reference is provided externally from one of the on chip precision excitation currents and a precision resistor across the REFIN1(+/-).
+A thermistor or a RTD is connected between AIN4 and AIN5 used for the cold
+junction measurement, this uses a ratiometric configuration where the reference
+is provided externally from one of the on chip precision excitation currents and
+a precision resistor across the REFIN1(+/-).
 
-In this example a thermistor is used (R28) which is connected across AIN4 and AIN5. The cold junction compensation measurement uses a ratiometric configuration where the 500μA on-chip excitation current is used to excite the thermistor. This current is also connected across the 5.11kΩ precision resistor.
+In this example a thermistor is used (R28) which is connected across AIN4 and
+AIN5. The cold junction compensation measurement uses a ratiometric
+configuration where the 500μA on-chip excitation current is used to excite the
+thermistor. This current is also connected across the 5.11kΩ precision resistor.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/thermocouple_circuit.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Jumper positions
 """"""""""""""""
@@ -534,7 +596,7 @@ All other jumpers in their default positions, see :doc:`Hardware Link Options </
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/software/ad7124_silk_theromocouple.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Software
 ^^^^^^^^
@@ -544,7 +606,7 @@ Below details the procedure for setting up the Eval software to perform a Thermo
 Once the software has been launched and the evaluation board is selected the, configuration tab of Eval+ software (shown below) should be displayed. For full information on the Eval+ software please go to the :doc:`Eval+ Software </wiki-migration/resources/eval/user-guides/ad7124-x/software>` section.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_homepage_thermocouple.png
-   :width: 600px
+   :width: 600
 
 Thermocouple (1)
 ^^^^^^^^^^^^^^^^
@@ -584,7 +646,8 @@ Channel_0        Internal reference True
 Tutorial Access (2)
 """""""""""""""""""
 
-For quick access to the tutorial click the blue question mark icon next to the Thermocouple button
+For quick access to the tutorial click the blue question mark icon next to the
+Thermocouple button
 
 Sampling mode (3)
 """""""""""""""""
@@ -596,22 +659,27 @@ Sampling mode (3)
 Required Samples (4)
 """"""""""""""""""""
 
-To select the number of samples required from the ADC in a batch, enter the value in the samples box. Default value is 100 samples.
+To select the number of samples required from the ADC in a batch, enter the
+value in the samples box. Default value is 100 samples.
 
 Sample (5)
 """"""""""
 
-The sample button sends the configuration to the evaluation board and initiates the data collection effort.
+The sample button sends the configuration to the evaluation board and initiates
+the data collection effort.
 
-While the software is communicating with the board and retrieving the data, the window below will be displayed
-
+While the software is communicating with the board and retrieving the data, the
+window below will be displayed
 
 |image7|
 
 Waveform Tab
 ^^^^^^^^^^^^
 
-Following the completion of the test, the waveform tab will display the the gathered samples. The plot shows each successive sample of the ADC (input referred). Indicators on the right of the screen show the channels being converted. These conversions can be displayed as codes or as volts
+Following the completion of the test, the waveform tab will display the the
+gathered samples. The plot shows each successive sample of the ADC (input
+referred). Indicators on the right of the screen show the channels being
+converted. These conversions can be displayed as codes or as volts
 
 The **analysis** section displays key parameters for the current batch of samples including; *peak-to-peak noise* and *rms noise*. More information on the :doc:`waveform tab can be found here </wiki-migration/resources/eval/user-guides/ad7124-x/software>`
 
@@ -628,7 +696,13 @@ To **save the conversion data** into an Excel file, right-click the waveform gra
 Thermistor Demo
 ~~~~~~~~~~~~~~~
 
-For this thermistor demo, a 10kΩ (44031) NTC thermistor sensor was used which is specified to measure temperature from -50°C to 150°C. The 44031 has a resistance of 10kΩ at 25°C, 441.117kΩ at -50°C and 237.16Ω at 150°C. This thermistor was chosen as it is a precision thermistor (accuracy of 0.1°C between 0°C and 70°C) and highlights the precision achievable from the AD7124. There are a large number of thermistors available with different accuracies ranging from 0.5°C to 1°C.
+For this thermistor demo, a 10kΩ (44031) NTC thermistor sensor was used which is
+specified to measure temperature from -50°C to 150°C. The 44031 has a resistance
+of 10kΩ at 25°C, 441.117kΩ at -50°C and 237.16Ω at 150°C. This thermistor was
+chosen as it is a precision thermistor (accuracy of 0.1°C between 0°C and 70°C)
+and highlights the precision achievable from the AD7124. There are a large
+number of thermistors available with different accuracies ranging from 0.5°C to
+1°C.
 
 Hardware Set-up
 ^^^^^^^^^^^^^^^
@@ -642,12 +716,20 @@ Specific Requirements
 
 Shown in the diagram is the configuration used for this Thermistor demo. The thermistor is connected in series with a precision reference resistor (RSENSE) in a voltage divider configuration. The internal 2.5V reference of the AD7124-4/AD7124-8 is connected to the thermistor top side of the voltage divider and the bottom side of the precision reference resistor is connected to AVSS. The precision resistor, RSENSE is used to calculate the current through the thermistor. Voltage excitation rather than an excitation current is used to excite the thermistor, the reason for this is that as the thermistor has high resistance at low temperatures, (441.117kOhms), therefore and even the lowest excitation current provided by the AD7124-4/8 would generate a voltage greater than (AVDD – AVSS) at these low temperatures.
 
-For this demo the voltage across the thermistor is measured using analog inputs the Ain2 and Ain3 inputs of the AD7124-4/AD7124-8. This voltage is then used to calculate the current through the thermistor [REFOUT/(Vthermistor + Vrsense)] where Vrsense = (REFOUT - Vthermistor) and from this hence the resistance of the thermistor is calculated.
+For this demo the voltage across the thermistor is measured using analog inputs
+the Ain2 and Ain3 inputs of the AD7124-4/AD7124-8. This voltage is then used to
+calculate the current through the thermistor [REFOUT/(Vthermistor + Vrsense)]
+where Vrsense = (REFOUT - Vthermistor) and from this hence the resistance of the
+thermistor is calculated.
 
-Since the thermistor has higher resistance values at lower temperature, the signal levels are larger (approximately 2.44V at -50°C) thus a gain of 1 is used in this configuration.
+Since the thermistor has higher resistance values at lower temperature, the
+signal levels are larger (approximately 2.44V at -50°C) thus a gain of 1 is used
+in this configuration.
 
-As the thermistor and RSENSE are driven from the internal reference and, the internal reference is also used as the reference for the ADC measurement, this gives a ratiometric configuration. This means that any variation of the reference voltage does not affect the system accuracy.
-
+As the thermistor and RSENSE are driven from the internal reference and, the
+internal reference is also used as the reference for the ADC measurement, this
+gives a ratiometric configuration. This means that any variation of the
+reference voltage does not affect the system accuracy.
 
 |image8|
 
@@ -667,7 +749,7 @@ All other jumpers in their default positions, see :doc:`Hardware Link Options </
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/software/ad7124_silk_2wire.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Software
 ^^^^^^^^
@@ -678,7 +760,7 @@ Once the software has been launched and the evaluation board is selected the, co
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/software/eval_plus_homepage_thermistor.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Thermistor (1)
 """"""""""""""
@@ -714,7 +796,8 @@ Section         Setting          Value
 Tutorial Access (2)
 """""""""""""""""""
 
-For quick access to the tutorial click the blue question mark icon next to the Thermistor button
+For quick access to the tutorial click the blue question mark icon next to the
+Thermistor button
 
 Sampling mode (3)
 """""""""""""""""
@@ -726,22 +809,27 @@ Sampling mode (3)
 Required Samples (4)
 """"""""""""""""""""
 
-To select the number of samples required from the ADC in a batch, enter the value in the samples box. Default value is 100 samples.
+To select the number of samples required from the ADC in a batch, enter the
+value in the samples box. Default value is 100 samples.
 
 Sample (5)
 """"""""""
 
-The sample button sends the configuration to the evaluation board and initiates the data collection effort.
+The sample button sends the configuration to the evaluation board and initiates
+the data collection effort.
 
-While the software is communicating with the board and retrieving the data, the window below will be displayed
-
+While the software is communicating with the board and retrieving the data, the
+window below will be displayed
 
 |image9|
 
 Waveform Tab
 ^^^^^^^^^^^^
 
-Following the completion of the test, the waveform tab will display the the gathered samples. The plot shows each successive sample of the ADC (input referred). Indicators on the right of the screen show the channels being converted. These conversions can be displayed as codes or as volts
+Following the completion of the test, the waveform tab will display the the
+gathered samples. The plot shows each successive sample of the ADC (input
+referred). Indicators on the right of the screen show the channels being
+converted. These conversions can be displayed as codes or as volts
 
 The **analysis** section displays key parameters for the current batch of samples including; *peak-to-peak noise* and *rms noise*. More information on the :doc:`waveform tab can be found here </wiki-migration/resources/eval/user-guides/ad7124-x/software>`
 
@@ -764,20 +852,20 @@ To **save the conversion data** into an Excel file, right-click the waveform gra
 :doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/ad7124-x/software>` :doc:`Continue to Hardware Guide </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>` :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad7124-x>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_layout_noise_test.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_test_underway.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_homepage_2-wire_rtd.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_test_underway.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_test_underway.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_test_underway.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_test_underway.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/software/thermistor_circuit.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software_examples/eval_plus_test_underway.png
-   :width: 400px
+   :width: 400

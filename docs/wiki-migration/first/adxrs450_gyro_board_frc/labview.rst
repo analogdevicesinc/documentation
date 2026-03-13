@@ -5,18 +5,30 @@ This guide will walk you through the various features of the WPI Library for the
 
 If you need help getting started with the basics of programming your robot in LabVIEW, you may want to check out the WPI Screensteps documentation, which can be found `here <https://wpilib.screenstepslive.com/s/currentCS/m/labview>`_.
 
-As with any LabVIEW robot project, there are a few places you must place code in order to use the gyro board: Begin.vi, Finish.vi, and any .vi in which you want to access gyro data. The screenshots in this example assume you are starting from the Arcade robot project, but the steps are the same for any robot project.
+As with any LabVIEW robot project, there are a few places you must place code in
+order to use the gyro board: Begin.vi, Finish.vi, and any .vi in which you want
+to access gyro data. The screenshots in this example assume you are starting
+from the Arcade robot project, but the steps are the same for any robot project.
 
 Setting Up the Gyro in Begin.vi
 -------------------------------
 
-Open your robot project, or create a new one if you don't have one created already, and open up your Begin.vi block diagram. This can be found in the project window under Team Code.
+Open your robot project, or create a new one if you don't have one created
+already, and open up your Begin.vi block diagram. This can be found in the
+project window under Team Code.
 
-The first step is to create a new instance of the gyro, then assign a reference name to it so that you can call the gyro reference anywhere in your robot code. You can find the gyro VI under WPI Robotics Library --> Sensors --> Gyro. Bring the Gyro Open VI into your Begin.vi code. It doesn't matter where you place it in this VI.
+The first step is to create a new instance of the gyro, then assign a reference
+name to it so that you can call the gyro reference anywhere in your robot code.
+You can find the gyro VI under WPI Robotics Library --> Sensors --> Gyro. Bring
+the Gyro Open VI into your Begin.vi code. It doesn't matter where you place it
+in this VI.
 
 |image1| |image2| |image3|
 
-When you first bring the instance into your code, it will default to an analog gyro, so you will need to change the type using the drop-down menu below the VI's icon. Select "XRS450 SPI Open" to tell your robot that you're working with the ADXRS450 board.
+When you first bring the instance into your code, it will default to an analog
+gyro, so you will need to change the type using the drop-down menu below the
+VI's icon. Select "XRS450 SPI Open" to tell your robot that you're working with
+the ADXRS450 board.
 
 .. image:: https://wiki.analog.com/_media/first/beginviplacegyro.png
    :align: center
@@ -26,7 +38,10 @@ Next, you need to tell LabVIEW which SPI "chip select" (CS) it will be using. Ri
 .. image:: https://wiki.analog.com/_media/first/beginvicreatespiport.png
    :align: center
 
-Now you need to assign a reference name to this gyro so that you can refer to it in other VIs. Grab the Registry Set VI from the Gyro palette and place to the right of your Open VI. Then, connect the GyroDevRef pin on the Open VI to the GyroDevRef on the Registry Set VI.
+Now you need to assign a reference name to this gyro so that you can refer to it
+in other VIs. Grab the Registry Set VI from the Gyro palette and place to the
+right of your Open VI. Then, connect the GyroDevRef pin on the Open VI to the
+GyroDevRef on the Registry Set VI.
 
 .. image:: https://wiki.analog.com/_media/first/beginviplacegyroref.png
    :align: center
@@ -34,7 +49,10 @@ Now you need to assign a reference name to this gyro so that you can refer to it
 .. image:: https://wiki.analog.com/_media/first/beginviconnectrefset.png
    :align: center
 
-Now you need to assign a name to your gyro. Right click on the "refnum name" pin on the Registry Set VI and click "Create --> Constant" and create a unique name that you will use to refer to this gyro in the rest of your code. I've left the default value of "My Gyro RefNum" but you can change this to whatever you want.
+Now you need to assign a name to your gyro. Right click on the "refnum name" pin
+on the Registry Set VI and click "Create --> Constant" and create a unique name
+that you will use to refer to this gyro in the rest of your code. I've left the
+default value of "My Gyro RefNum" but you can change this to whatever you want.
 
 .. image:: https://wiki.analog.com/_media/first/beginvicreatestringname.png
    :align: center
@@ -45,7 +63,14 @@ Now you need to assign a name to your gyro. Right click on the "refnum name" pin
 Closing Communication in Finish.vi
 ----------------------------------
 
-Whenever you open a communication bus in your robot code, you have to close those communications when your robot code finishes, just like you have to close all of the programs running on a computer before you can shut it down properly. This is done in the Finish.vi code. Open your robot project and open up the Finish.vi block diagram. Then, place an instance of the Registry Get VI on the outside of the Flat Sequence Structure (the film strip boxes), and an instance of Gyro Close VI on the inside of the first panel of the Flat Sequence Structure.
+Whenever you open a communication bus in your robot code, you have to close
+those communications when your robot code finishes, just like you have to close
+all of the programs running on a computer before you can shut it down properly.
+This is done in the Finish.vi code. Open your robot project and open up the
+Finish.vi block diagram. Then, place an instance of the Registry Get VI on the
+outside of the Flat Sequence Structure (the film strip boxes), and an instance
+of Gyro Close VI on the inside of the first panel of the Flat Sequence
+Structure.
 
 .. image:: https://wiki.analog.com/_media/first/finishviblocksneeded.png
    :align: center
@@ -58,7 +83,11 @@ Then, connect the GyroDevRef pins of both VIs together.
 .. image:: https://wiki.analog.com/_media/first/finishviblocksconnected.png
    :align: center
 
-Now, create a string constant by right clicking on the Gyro RefName pin on the Registry Get VI and clicking Create --> Constant. Rename this string to be the same name you used when instantiating the gyro in your Begin.vi code. I've left mine as the default, since that's what I used in my Begin.vi code. You're now ready to call data from the gyro!
+Now, create a string constant by right clicking on the Gyro RefName pin on the
+Registry Get VI and clicking Create --> Constant. Rename this string to be the
+same name you used when instantiating the gyro in your Begin.vi code. I've left
+mine as the default, since that's what I used in my Begin.vi code. You're now
+ready to call data from the gyro!
 
 .. image:: https://wiki.analog.com/_media/first/finishvidone.png
    :align: center
@@ -72,20 +101,34 @@ Using the Gyro in Your Robot Code
 
 .. note::
 
-   In my example below, I'm going to be reporting the gyro angle to the driver station from the Teleop.vi. In practice, you should really put this type of action in the PeriodicTasks.vi, but this is just an example. These steps will apply to anywhere you want to use either of the VIs listed above.
-
+   In my example below, I'm going to be reporting the gyro angle to the driver
+   station from the Teleop.vi. In practice, you should really put this type of
+   action in the PeriodicTasks.vi, but this is just an example. These steps will
+   apply to anywhere you want to use either of the VIs listed above.
 
 To use any Gyro VI, you first have to call the Gyro you initialized in Begin.VI. You saw this when we completed our gyro setup in Finish.vi. Go ahead and place an instance of Gyro Registry Get in your block diagram and create the constant for your gyro name. **Don't forget to change the constant value to whatever you called your gyro in Begin.vi!** I've left mine as the default, since that is what I used.
 
 .. image:: https://wiki.analog.com/_media/first/teleopviexamplegetrefnum.png
    :align: center
 
-Now, place an instance of the Get Angle VI next to it, and wire it up as shown below, just like you did for Gyro Close in your Finish.vi block diagram. Then, go to your Dashboard pallet in the WPI Robotics Library and grab the NT Write Value VI and place it next to your Get Angle VI. Note that when you first place this VI in your code, it will show as expecting a Boolean. This VI can actually automatically detect which data type you are feeding it and adjust accordingly. You can also use the drop-down menu below the VI icon and explicitly specify what data type you want it to expect, but it is usually best to leave it set to Automatic as shown below.
+Now, place an instance of the Get Angle VI next to it, and wire it up as shown
+below, just like you did for Gyro Close in your Finish.vi block diagram. Then,
+go to your Dashboard pallet in the WPI Robotics Library and grab the NT Write
+Value VI and place it next to your Get Angle VI. Note that when you first place
+this VI in your code, it will show as expecting a Boolean. This VI can actually
+automatically detect which data type you are feeding it and adjust accordingly.
+You can also use the drop-down menu below the VI icon and explicitly specify
+what data type you want it to expect, but it is usually best to leave it set to
+Automatic as shown below.
 
 .. image:: https://wiki.analog.com/_media/first/teleopvidriverstationwrite.png
    :align: center
 
-Now, connect the Angle pin on the Get Angle VI to the Boolean pin on the driver station VI you just placed. You will see that the icon will change to indicate what kind of data you are sending, which in this case is a Double. Right click on the Name pin and select Create --> Constant and write a name for the indicator that will appear on the Driver Station.
+Now, connect the Angle pin on the Get Angle VI to the Boolean pin on the driver
+station VI you just placed. You will see that the icon will change to indicate
+what kind of data you are sending, which in this case is a Double. Right click
+on the Name pin and select Create --> Constant and write a name for the
+indicator that will appear on the Driver Station.
 
 .. image:: https://wiki.analog.com/_media/first/teleopvidone.png
    :align: center

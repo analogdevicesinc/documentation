@@ -18,7 +18,8 @@ Description
 
 This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting Digital Step Attenuator IIO devices with gpio interface. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
 
--  HMC425A 0.5 dB LSB GaAs MMIC 6-BIT DIGITAL POSITIVE CONTROL ATTENUATOR, 2.2 - 8.0 GHz
+-  HMC425A 0.5 dB LSB GaAs MMIC 6-BIT DIGITAL POSITIVE CONTROL ATTENUATOR, 2.2 -
+   8.0 GHz
 
 Source Code
 ===========
@@ -96,12 +97,12 @@ Example
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The HMC425A Driver depends on CONFIG_GPIOLIB
-
 
 ::
 
@@ -118,8 +119,15 @@ Hardware configuration
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -143,7 +151,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r--    1 root     root          4096 Jan  1 00:00 uevent
    
 
-
 Show device name
 ----------------
 
@@ -159,13 +166,13 @@ Show device name
       hmc425a
    
 
-
 Set ChannelY Gain
 -----------------
 
 /sys/bus/iio/devices/iio:deviceX/out_voltageY_hardwaregain
 
-Hardware applied gain factor. If shared across all channels, <type>_hardwaregain is used.
+Hardware applied gain factor. If shared across all channels, <type>_hardwaregain
+is used.
 
 .. container:: box bggreen
 
@@ -181,7 +188,6 @@ Hardware applied gain factor. If shared across all channels, <type>_hardwaregain
       root:/> cat out_voltage0_hardwaregain
       -10.000000 dB
    
-
 
 More Information
 ================
@@ -204,6 +210,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-amplifiers/youtube>p_vntewue24
-

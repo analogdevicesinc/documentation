@@ -5,11 +5,12 @@ AXI SPI Engine FPGA Peripheral
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/spi_engine/axi_spi_engine.html\
 
-
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/spi_engine_axi.png
    :align: right
 
-The AXI SPI Engine peripheral allows asynchronous interrupt-driven memory-mapped access to a SPI Engine Control Interface. This is typically used in combination with a software program to dynamically generate SPI transactions.
+The AXI SPI Engine peripheral allows asynchronous interrupt-driven memory-mapped
+access to a SPI Engine Control Interface. This is typically used in combination
+with a software program to dynamically generate SPI transactions.
 
 The peripheral has also support for providing memory-mapped access to one or more `SPI Engine Offload <https://wiki.analog.com/offload>`_ cores and change its content dynamically at runtime.
 
@@ -130,7 +131,6 @@ Base (common to all cores)
 | Tue Mar 14 10:17:59 2023 |        |                  |                       |      |            |                                                                                                                                                                                                                                                                                     |
 +--------------------------+--------+------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Common (axi_ad\*)
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -182,7 +182,6 @@ ADC Common (axi_ad\*)
 |         |        | [7:0]       | CUSTOM_CONTROL      | RW   | 0x00    |                                                                                                                                                                                                                                                                                                |
 +---------+--------+-------------+---------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADAQ8092
 ========
 
@@ -213,8 +212,6 @@ AD7606X_PI
 -  1 = CRC_ENABLED
 -  2 = STATUS_HEADER
 -  3 = CRC_STATUS
-
-
 
 \|
 
@@ -332,7 +329,6 @@ AD7606X_PI
 | Fri Aug 11 18:29:53 2023 |        |                     |                        |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+---------------------+------------------------+------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Channel (axi_ad\*)
 ----------------------
 
@@ -437,7 +433,6 @@ ADC Channel (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                      |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +--------------------------+--------+----------------------+------------------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 IO Delay Control (axi_ad\*)
 ---------------------------
 
@@ -466,7 +461,6 @@ IO Delay Control (axi_ad\*)
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                     |                    |      |         |                                                                                                                                                                                                                                                    |
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 DAC Common (axi_ad)
 -------------------
@@ -603,7 +597,6 @@ DAC Common (axi_ad)
 | Tue Mar 14 10:17:59 2023 |        |                     |                       |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+---------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DAC Channel (axi_ad\*)
 ----------------------
 
@@ -716,7 +709,6 @@ DAC Channel (axi_ad\*)
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Fri Sep 8 16:01:53 2023 |        |                   |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Generic TDD Control (axi_tdd)
 -----------------------------
@@ -1071,7 +1063,6 @@ Generic TDD Control (axi_tdd)
 | Tue Mar 14 10:17:59 2023 |        |                       |                     |      |                       |                                                                                                                                                                                                    |
 +--------------------------+--------+-----------------------+---------------------+------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Transceiver TDD Control (axi_ad\*)
 ----------------------------------
 
@@ -1217,7 +1208,6 @@ Transceiver TDD Control (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                            |                        |      |          |                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+----------------------------+------------------------+------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD TPL (up_tpl_common)
 ------------------------
 
@@ -1258,7 +1248,6 @@ JESD TPL (up_tpl_common)
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                      |             |      |         |                                                                                                            |
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
-
 
 JESD204 RX (axi_jesd204_rx)
 ---------------------------
@@ -1545,7 +1534,6 @@ JESD204 RX (axi_jesd204_rx)
 | Tue Mar 14 10:17:59 2023  |                 |                                |                              |        |             |                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD204 TX (axi_jesd204_tx)
 ---------------------------
 
@@ -1782,7 +1770,6 @@ JESD204 TX (axi_jesd204_tx)
 | Tue Mar 14 10:17:59 2023  |                 |                       |                          |        |             |                                                                                                                                                                                                                     |
 +---------------------------+-----------------+-----------------------+--------------------------+--------+-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DMA Controller (axi_dmac)
 -------------------------
 
@@ -1965,7 +1952,6 @@ DMA Controller (axi_dmac)
 | Thu Feb 1 12:18:03 2024 |        |                           |                           |      |                                 |                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+---------------------------+---------------------------+------+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Fan Controller (axi_fan_control)
 --------------------------------
 
@@ -2133,7 +2119,6 @@ Fan Controller (axi_fan_control)
 | Tue Mar 14 10:17:59 2023 |        |                   |                       |      |                        |                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +--------------------------+--------+-------------------+-----------------------+------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 System ID (axi_system_id)
 -------------------------
 
@@ -2174,7 +2159,6 @@ System ID (axi_system_id)
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                |                |      |            |                                                                                          |
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
-
 
 Clock Generator (axi_clkgen)
 ----------------------------
@@ -2222,7 +2206,6 @@ Clock Generator (axi_clkgen)
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                  |                   |      |         |                                                                                                                                                         |
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Clock Monitor (axi_clock_monitor)
 ---------------------------------
@@ -2316,7 +2299,6 @@ Clock Monitor (axi_clock_monitor)
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |               |               |      |            |                                |
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
-
 
 HDMI Transmit (axi_hdmi_tx)
 ---------------------------
@@ -2423,7 +2405,6 @@ HDMI Transmit (axi_hdmi_tx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                      |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 HDMI Receive (axi_hdmi_rx)
 --------------------------
 
@@ -2491,7 +2472,6 @@ HDMI Receive (axi_hdmi_rx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                 |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+-----------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 General Purpose Registers (axi_gpreg)
 -------------------------------------
 
@@ -2536,7 +2516,6 @@ General Purpose Registers (axi_gpreg)
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |              |              |      |            |                                                                                                                                                                                                                                        |
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 SPI Engine (axi_spi_engine)
 ---------------------------
@@ -2644,7 +2623,6 @@ SPI Engine (axi_spi_engine)
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                    |                    |      |             |                                                                                                                                                                                                                                                                                      |
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Xilinx XCVR (axi_xcvr) Regmap
 -----------------------------
@@ -2827,7 +2805,6 @@ Xilinx XCVR (axi_xcvr) Regmap
 | Tue Mar 14 10:17:59 2023 |        |               |                  |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 PWM Generator (axi_pwm_gen)
 ---------------------------
 
@@ -2836,7 +2813,6 @@ PWM Generator (axi_pwm_gen)
 .. important::
 
    This register map was moved at https://analogdevicesinc.github.io/hdl/library/axi_pwm_gen/index.html#register-map. The following table is NOT MAINTAINED ANYMORE.
-
 
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 | Address |        | Bits               | Name                                                                         | Type | Default    | Description                                                   |
@@ -2882,8 +2858,6 @@ PWM Generator (axi_pwm_gen)
 |         |        | [31:0]             | PULSE_X_OFFSET[31:0] - base + 'h4 for each channel -> e.g. CH3 offset - 'hCC | RW   | 0x0000     | Pulse x offset, defined in number of clock cycles.            |
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 
-
-
 +-------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Access Type | Name             | Description                                                                                                                                                                  |
 +=============+==================+==============================================================================================================================================================================+
@@ -2899,34 +2873,80 @@ PWM Generator (axi_pwm_gen)
 Theory of Operation
 -------------------
 
-Typically a software application running on a CPU will be able to execute much faster than the SPI engine command will be processed. In order to allow the software to execute other tasks while the SPI engine is busy processing commands the AXI SPI Engine peripheral offers interrupt-driven notification which can be used to notify the software when a SPI command has been executed. In order to reduce the necessary context switches the AXI SPI Engine peripheral incorporates FIFOs to buffer the command as well as the data streams.
+Typically a software application running on a CPU will be able to execute much
+faster than the SPI engine command will be processed. In order to allow the
+software to execute other tasks while the SPI engine is busy processing commands
+the AXI SPI Engine peripheral offers interrupt-driven notification which can be
+used to notify the software when a SPI command has been executed. In order to
+reduce the necessary context switches the AXI SPI Engine peripheral incorporates
+FIFOs to buffer the command as well as the data streams.
 
 FIFOs
 ~~~~~
 
-The AXI SPI Engine peripheral has three FIFOs, one for each of the command, SDO and SDI streams. The size of the FIFOs can be configured by setting the CMD_FIFO_ADDRESS_WIDTH, SDO_FIFO_ADDRESS_WIDTH and SDI_FIFO_ADDRESS_WIDTH parameters.
+The AXI SPI Engine peripheral has three FIFOs, one for each of the command, SDO
+and SDI streams. The size of the FIFOs can be configured by setting the
+CMD_FIFO_ADDRESS_WIDTH, SDO_FIFO_ADDRESS_WIDTH and SDI_FIFO_ADDRESS_WIDTH
+parameters.
 
 One end of the FIFOs are connected to a memory-mapped register and can be accessed via the AXI-Lite interface. The other end is directly connected to the matching stream of the `spi_engine_control_interface <https://wiki.analog.com/spi_engine_control_interface>`_.
 
-Data can be inserted into the command FIFO by writing to the CMD_FIFO register and new data can be inserted into the SDO_FIFO register. If an application attempts to write to a FIFO while the FIFO is already full the data is discarded and the state of the FIFO remains unmodified. The number of empty entries in the command and SDO FIFO can be queried by reading the CMD_FIFO_ROOM or SDO_FIFO_ROOM register.
+Data can be inserted into the command FIFO by writing to the CMD_FIFO register
+and new data can be inserted into the SDO_FIFO register. If an application
+attempts to write to a FIFO while the FIFO is already full the data is discarded
+and the state of the FIFO remains unmodified. The number of empty entries in the
+command and SDO FIFO can be queried by reading the CMD_FIFO_ROOM or
+SDO_FIFO_ROOM register.
 
-Data can be removed from the SDI FIFO by reading from the SDI_FIFO register. If an application attempts to read data while the FIFO is empty undefined data is returned and the state of the FIFO remains unmodified. It is possible to read the first entry in the SDI FIFO without removing it by reading from the SDI_FIFO_PEEK register. The number of valid entries in the SDI FIFO register can be queried by reading the SDI_FIFO_LEVEL register.
+Data can be removed from the SDI FIFO by reading from the SDI_FIFO register. If
+an application attempts to read data while the FIFO is empty undefined data is
+returned and the state of the FIFO remains unmodified. It is possible to read
+the first entry in the SDI FIFO without removing it by reading from the
+SDI_FIFO_PEEK register. The number of valid entries in the SDI FIFO register can
+be queried by reading the SDI_FIFO_LEVEL register.
 
-If the peripheral is disabled by setting the ENABLE register to 0 any data stored in the FIFOs is discarded and the state of the FIFO is reset.
+If the peripheral is disabled by setting the ENABLE register to 0 any data
+stored in the FIFOs is discarded and the state of the FIFO is reset.
 
 Synchronization Events
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Synchronization events can be used to notify the software application about the progress of the command stream. An application can insert a SYNC instruction at any point in the command stream. If the execution module reaches the SYNC instruction it will generate an event on the SYNC stream. When this event is received by the AXI SPI Engine peripheral it will update the SYNC_ID register with the received event ID and will assert the SYNC_EVENT interrupt.
+Synchronization events can be used to notify the software application about the
+progress of the command stream. An application can insert a SYNC instruction at
+any point in the command stream. If the execution module reaches the SYNC
+instruction it will generate an event on the SYNC stream. When this event is
+received by the AXI SPI Engine peripheral it will update the SYNC_ID register
+with the received event ID and will assert the SYNC_EVENT interrupt.
 
-Typically the SYNC instruction should be inserted after the last instruction in a SPI transaction. This will allow the application to be notified about the completion of the transaction and allows it to do further processing based on the result of the transaction.
+Typically the SYNC instruction should be inserted after the last instruction in
+a SPI transaction. This will allow the application to be notified about the
+completion of the transaction and allows it to do further processing based on
+the result of the transaction.
 
-It is recommended that synchronization IDs are generated in a monotonic incrementing or decrementing manner. This makes it possible to easily check if an event has completed by checking if it is less or equal (incrementing IDs) or more or equal (decrementing IDs) to the ID of the last completed event.
+It is recommended that synchronization IDs are generated in a monotonic
+incrementing or decrementing manner. This makes it possible to easily check if
+an event has completed by checking if it is less or equal (incrementing IDs) or
+more or equal (decrementing IDs) to the ID of the last completed event.
 
 Interrupts
 ~~~~~~~~~~
 
-The SPI Engine AXI peripheral has 4 internal interrupts. One for each of the FIFOs which are asserted when the FIFO level falls bellow the almost empty level (for the command or SDO FIFO) or rises above the almost full level (for the SDI FIFO). And one interrupt which is asserted when a new synchronization event arrives. The peripheral has 1 external interrupt which is supposed to be connected to the upstream interrupt controller. The external interrupt is a logical OR-operation over the internal interrupts, meaning if at least one of the internal interrupts is asserted the external interrupt is asserted and only if all internal interrupts are de-asserted the external interrupt is de-asserted. In addition, each interrupt has a mask bit which can be used to stop the propagation of the internal interrupt to the external interrupt. If an interrupt is masked it will count towards the external interrupt state as if it were not asserted. The mask bits can be modified by writing to the IRQ_MASK register. The raw interrupt status can be read from the IRQ_SOURCE register and the combined state of the IRQ_MASK and raw interrupt state can be read from the IRQ_PENDING register.
+The SPI Engine AXI peripheral has 4 internal interrupts. One for each of the
+FIFOs which are asserted when the FIFO level falls bellow the almost empty level
+(for the command or SDO FIFO) or rises above the almost full level (for the SDI
+FIFO). And one interrupt which is asserted when a new synchronization event
+arrives. The peripheral has 1 external interrupt which is supposed to be
+connected to the upstream interrupt controller. The external interrupt is a
+logical OR-operation over the internal interrupts, meaning if at least one of
+the internal interrupts is asserted the external interrupt is asserted and only
+if all internal interrupts are de-asserted the external interrupt is
+de-asserted. In addition, each interrupt has a mask bit which can be used to
+stop the propagation of the internal interrupt to the external interrupt. If an
+interrupt is masked it will count towards the external interrupt state as if it
+were not asserted. The mask bits can be modified by writing to the IRQ_MASK
+register. The raw interrupt status can be read from the IRQ_SOURCE register and
+the combined state of the IRQ_MASK and raw interrupt state can be read from the
+IRQ_PENDING register.
 
 ::
 
@@ -2936,14 +2956,27 @@ The SPI Engine AXI peripheral has 4 internal interrupts. One for each of the FIF
 FIFO Threshold Interrupts
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The FIFO threshold interrupts can be used by software for flow control of the command, SDI and SDO streams. If an application wants to send more data than what fits into the FIFO can write samples into the FIFO until it is full then suspend operation wait for the almost empty interrupt and continue writing data to the FIFO. Similarly, when the application wants to read more data than what fits into FIFO it should listen for the almost full interrupt and read data from the FIFO when it occurs.
+The FIFO threshold interrupts can be used by software for flow control of the
+command, SDI and SDO streams. If an application wants to send more data than
+what fits into the FIFO can write samples into the FIFO until it is full then
+suspend operation wait for the almost empty interrupt and continue writing data
+to the FIFO. Similarly, when the application wants to read more data than what
+fits into FIFO it should listen for the almost full interrupt and read data from
+the FIFO when it occurs.
 
-The FIFO threshold interrupt is asserted when then FIFO level rises above the watermark and is automatically de-asserted when the level drops below the watermark.
+The FIFO threshold interrupt is asserted when then FIFO level rises above the
+watermark and is automatically de-asserted when the level drops below the
+watermark.
 
 SYNC_EVENT Interrupt
 ^^^^^^^^^^^^^^^^^^^^
 
-The SYNC_EVENT interrupt is asserted when a new sync event is received from the sync stream. An application that generated a SYNC instruction on the command stream can use this interrupt to be notified when the sync instruction has been completed. To de-assert, the SYNC_EVENT interrupt the reception of the interrupt needs to be acknowledged by the application by writing a 1 to the SYNC_EVENT bit in the IRQ_PENDING register.
+The SYNC_EVENT interrupt is asserted when a new sync event is received from the
+sync stream. An application that generated a SYNC instruction on the command
+stream can use this interrupt to be notified when the sync instruction has been
+completed. To de-assert, the SYNC_EVENT interrupt the reception of the interrupt
+needs to be acknowledged by the application by writing a 1 to the SYNC_EVENT bit
+in the IRQ_PENDING register.
 
 More Information
 ----------------

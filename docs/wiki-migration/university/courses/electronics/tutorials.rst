@@ -5,7 +5,9 @@ The :doc:`ADALM2000 </wiki-migration/university/tools/m2k>` (M2K) Active Learnin
 
 Besides the various :doc:`Lab Activities </wiki-migration/university/courses/electronics/labs>` that can be performed, ADALM2000 is also a great alternative for engineers to evaluate/debug their embedded systems projects.
 
-A list of ADALM2000 tutorials was created in conjunction with other projects/boards provided by Analog Devices, but they are developed in such a manner that can be easily adjusted to the user's needs.
+A list of ADALM2000 tutorials was created in conjunction with other
+projects/boards provided by Analog Devices, but they are developed in such a
+manner that can be easily adjusted to the user's needs.
 
 The tutorials provided on this wiki are considered open source and available for free use. **The only requirement is that they continue to retain the attribution to Analog Devices Inc.** Supplying them on the ADI wiki allows registered users to contribute to the materials posted here improving the content and keeping them up to date.
 

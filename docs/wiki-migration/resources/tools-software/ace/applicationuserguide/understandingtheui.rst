@@ -6,7 +6,12 @@ You can return to the ACE Application User Guide Homepage here: :doc:`Applicatio
 Understanding the User Interface
 --------------------------------
 
-The user interface (UI) of ACE is based on a hierarchy of views which mirrors the evaluation setup from the system level to the register level. It is designed to educate the user in the functional operation of the component and allow the user to access the system at a level of abstraction with which they are comfortable. This section will outline the key features and functions of each view.
+The user interface (UI) of ACE is based on a hierarchy of views which mirrors
+the evaluation setup from the system level to the register level. It is designed
+to educate the user in the functional operation of the component and allow the
+user to access the system at a level of abstraction with which they are
+comfortable. This section will outline the key features and functions of each
+view.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/understandingtheui/hierarchy.png
    :alt: hierarchy.png

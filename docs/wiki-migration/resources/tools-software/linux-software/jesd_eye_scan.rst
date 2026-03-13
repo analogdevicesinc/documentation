@@ -4,33 +4,54 @@ JESD204 Eye Scan
 About
 -----
 
-The combination of increasing JESD204B serial line rates and PCB based attenuation and distortion increasing, the quality and correctness of differential pair at a JESD204B receiver becomes questionable. The combination of the bit sampling time decreasing (as speed increases), and channel attenuation increasing (as speed increases) both negatively impact the data recovery from the received serial data stream.
+The combination of increasing JESD204B serial line rates and PCB based
+attenuation and distortion increasing, the quality and correctness of
+differential pair at a JESD204B receiver becomes questionable. The combination
+of the bit sampling time decreasing (as speed increases), and channel
+attenuation increasing (as speed increases) both negatively impact the data
+recovery from the received serial data stream.
 
-This poses a challenge in most designs to system bring-up and release to production because the quality of the line cannot be determined by measuring the far-end eye opening at the receiver pins with readily available lab equipment. Not only does this require prohibitively expensive equipment  [1]_, or it becomes impossible, as the received eye measured on the printed circuit board can appear to be completely closed.
+This poses a challenge in most designs to system bring-up and release to
+production because the quality of the line cannot be determined by measuring the
+far-end eye opening at the receiver pins with readily available lab equipment.
+Not only does this require prohibitively expensive equipment  [1]_, or it
+becomes impossible, as the received eye measured on the printed circuit board
+can appear to be completely closed.
 
-How is anyone supposed to release a product to manufacturing when they don't know if the 10 prototypes that are working are accidentally successful or if they have plenty of design margin?
+How is anyone supposed to release a product to manufacturing when they don't
+know if the 10 prototypes that are working are accidentally successful or if
+they have plenty of design margin?
 
 FPGA Hardware
 -------------
 
-Luckily, the problem of verifying high speed transceiver performance was solved by the FPGA manufactures years ago, and we can take advantage of the functionality they have added to their chips to determine the overall design margin in a JESD204B solution without purchasing expensive test equipment.
+Luckily, the problem of verifying high speed transceiver performance was solved
+by the FPGA manufactures years ago, and we can take advantage of the
+functionality they have added to their chips to determine the overall design
+margin in a JESD204B solution without purchasing expensive test equipment.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/xilinx_transceiver.png
-   :width: 500px
+   :width: 500
 
 This illustrates the blocks dedicated to achieving signal integrity in the Xilinx 7-Series FPGA GTP transceivers. All the shaded blocks — PLL, TX pre-emphasis, RX automatic gain control (`AGC <https://en.wikipedia.org/wiki/Automatic_gain_control>`_), RX linear equalization (EQ), RX clock data recovery (`CDR <https://en.wikipedia.org/wiki/Clock_recovery>`_), and adaptation block all ensure as robust as link as possible. The 2-D Eye Scan block attached to the receive path provides the functionality of an on-chip scope to visualize post-equalization signal quality in a JESD204B receiver.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/xilinx_2d_eye_scan.png
-   :width: 400px
+   :width: 400
 
 As shown above, eye scan runs a separate sampler (figure on the left) which can be adjusted in the horizontal (time) and vertical (amplitude) dimension in parallel with the normal CDR data sampler located in the middle of the horizontal and vertical sale. Xilinx uses this to transfer data over JTAG to create a representative picture on your development host with their `IBERT <https://www.xilinx.com/support/documentation/sw_manuals/xilinx13_1/ug811_ChipScopeUsingIBERTwithAnalyzer.pdf>`_ tool.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/xilinx_2d_eye_scan_logic.png
-   :width: 400px
+   :width: 400
 
-For each offset setting, the error counter is cleared, and a specified number of bits are transmitted. The data and offset samples are compared bit by bit. When the two samples are not equal, the error counter is incremented. when the specific number of bits are complete, the comparison stops, and bit error rate can be calculated by dividing the error counts by the number of bits transmitted.
+For each offset setting, the error counter is cleared, and a specified number of
+bits are transmitted. The data and offset samples are compared bit by bit. When
+the two samples are not equal, the error counter is incremented. when the
+specific number of bits are complete, the comparison stops, and bit error rate
+can be calculated by dividing the error counts by the number of bits
+transmitted.
 
-This statistically recreates the eye diagram after the equalizer, showing how much design margin is in the system.
+This statistically recreates the eye diagram after the equalizer, showing how
+much design margin is in the system.
 
 BERT Testing
 ------------
@@ -61,16 +82,24 @@ Clearly - this isn't practical, so what we attempt to do
 Mask
 ----
 
-The JESD204B specification outlines an receive keep-out mask based on channel baud rate. To be compliant, the signals at the receiver must stay outside the pre-defined mask area for the baud rate in use.
+The JESD204B specification outlines an receive keep-out mask based on channel
+baud rate. To be compliant, the signals at the receiver must stay outside the
+pre-defined mask area for the baud rate in use.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/jesd_rx_mask.jpg
-   :width: 400px
+   :width: 400
 
-However, this specification is provided in millivolts and time (in unit intervals). As discussed above, the 2-D eye scan operates after the AGC and equalizer blocks inside the FPGA, so it is difficult (impossible) to correlate voltage on the Rx pins of the FPGA, to the vertical axis in the 2-D statistical eye diagram.
+However, this specification is provided in millivolts and time (in unit
+intervals). As discussed above, the 2-D eye scan operates after the AGC and
+equalizer blocks inside the FPGA, so it is difficult (impossible) to correlate
+voltage on the Rx pins of the FPGA, to the vertical axis in the 2-D statistical
+eye diagram.
 
-The vertical axis in the 2-D statistical eye diagram is in "codes", not millivolts.
+The vertical axis in the 2-D statistical eye diagram is in "codes", not
+millivolts.
 
-The mask that is shown is not the JESD204B mask, but the Xilinx CDR mask - since this is really the only thing that really matters inside the FPGA.
+The mask that is shown is not the JESD204B mask, but the Xilinx CDR mask - since
+this is really the only thing that really matters inside the FPGA.
 
 Software
 --------
@@ -78,9 +107,19 @@ Software
 Overview
 ~~~~~~~~
 
-The JESD204B eye scan tool that Analog Devices created runs natively on a the ZC706 (under Linux) and creates the pictures below. It does this by using the Xilinx hardware described above, using an HDL/Linux reference design that was created by Analog Devices.
+The JESD204B eye scan tool that Analog Devices created runs natively on a the
+ZC706 (under Linux) and creates the pictures below. It does this by using the
+Xilinx hardware described above, using an HDL/Linux reference design that was
+created by Analog Devices.
 
-This reference design gathers data directly from the on-chip Receive margin analysis feature in the 7 series IBERT core and manages the data locally inside the FPGA or one of the ARM dual-core Cortex-A9 processors, displaying the data on a HDMI monitor. This measures link robustness using actual JESD204B serial data running from the converter to the FPGA. This use of “live” data enables signal fidelity to be monitored even after the design has been deployed in the field, which allows for real-time and predictive maintenance over the life of the product.
+This reference design gathers data directly from the on-chip Receive margin
+analysis feature in the 7 series IBERT core and manages the data locally inside
+the FPGA or one of the ARM dual-core Cortex-A9 processors, displaying the data
+on a HDMI monitor. This measures link robustness using actual JESD204B serial
+data running from the converter to the FPGA. This use of “live” data enables
+signal fidelity to be monitored even after the design has been deployed in the
+field, which allows for real-time and predictive maintenance over the life of
+the product.
 
 Also see here: :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>`
 
@@ -89,7 +128,8 @@ Source
 
 `jesd-eye-scan-gtk application <https://github.com/analogdevicesinc/jesd-eye-scan-gtk>`_
 
-When building the source code, make sure that gnuplot & libgtk3-dev & required build dependencies are installed.
+When building the source code, make sure that gnuplot & libgtk3-dev & required
+build dependencies are installed.
 
 On Debian/Ubuntu do:
 
@@ -137,7 +177,6 @@ Running local
       root ~ # jesd_eye_scan &
    
 
-
 Running remote (X11 forwarding)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -159,11 +198,12 @@ When using the :doc:`AD-FMC-SDCARD for Zynq/Intel SoC </wiki-migration/resources
       Select axi-adxcvr-rx device!
    
 
-
 Running remote (sshfs)
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This remote option uses the Secure SHell FileSystem (SSHFS), and might be suitable for remote systems without X support, such as our minimal Microblaze systems. It therefore requires sshd running on the target.
+This remote option uses the Secure SHell FileSystem (SSHFS), and might be
+suitable for remote systems without X support, such as our minimal Microblaze
+systems. It therefore requires sshd running on the target.
 
 .. container:: box bggreen
 
@@ -177,11 +217,11 @@ This remote option uses the Secure SHell FileSystem (SSHFS), and might be suitab
       dave@HAL9000:/home/dave# LC_ALL=c jesd_eye_scan -p /home/dave/mnt
    
 
-
 .. important::
 
-   The LC_ALL=c prefix for the command is important when running remote, because the locale on the client system can influence the format of the data. If it is incorrect, the plot will be empty.
-
+   The LC_ALL=c prefix for the command is important when running remote, because
+   the locale on the client system can influence the format of the data. If it
+   is incorrect, the plot will be empty.
 
 Output
 ~~~~~~
@@ -189,19 +229,24 @@ Output
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/jesd204-eye-scan1.png
    :alt: Main Window
    :align: center
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/jesd204-eye-scan2.png
    :alt: Status Information
    :align: center
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/jesd204-eye-scan3.png
    :alt: Lane Information
    :align: center
-   :width: 600px
+   :width: 600
 
-The numbers under the "Eye Opening", define the eye opening (same amount of errors in the H and V dimensions as the centre (no errors). The units are in Unit intervals (in the time domain), and "codes" in the Voltage scale. Codes are a unit-less dimension since this is after the equalizer and there is no way to correlate voltage at the pins, and the offset codes that are used to control this value.
+The numbers under the "Eye Opening", define the eye opening (same amount of
+errors in the H and V dimensions as the centre (no errors). The units are in
+Unit intervals (in the time domain), and "codes" in the Voltage scale. Codes are
+a unit-less dimension since this is after the equalizer and there is no way to
+correlate voltage at the pins, and the offset codes that are used to control
+this value.
 
 The colours in the `Heat Map <https://en.wikipedia.org/wiki/Heat_map>`_ are the number of errors at that point.
 
@@ -210,17 +255,21 @@ Requirements
 
 -  JESD204B converter
 -  ZC706, ZCU102 or running remote VC707, KC705, KCU105
--  ADI Linux image on SD Card (ZC706), or ADI kernel with the ADI Microblaze Root File System (VC707, KC705, KCU105)
+-  ADI Linux image on SD Card (ZC706), or ADI kernel with the ADI Microblaze
+   Root File System (VC707, KC705, KCU105)
 
 Tweaking
 --------
 
-Now that you have a way to look at the JESD204B receive link, and can start determining what the tweaks you can make to the JESD204B interface on the transmit side (converter). The converter settings can adjust:
+Now that you have a way to look at the JESD204B receive link, and can start
+determining what the tweaks you can make to the JESD204B interface on the
+transmit side (converter). The converter settings can adjust:
 
 -  JESD204B pre-emphasis
 -  JESD204B CML differential output drive level
 
-By tweaking these values, you can open/close the eye while trading off power consumption, and potentiality EMI emissions.
+By tweaking these values, you can open/close the eye while trading off power
+consumption, and potentiality EMI emissions.
 
 References/More reading
 -----------------------

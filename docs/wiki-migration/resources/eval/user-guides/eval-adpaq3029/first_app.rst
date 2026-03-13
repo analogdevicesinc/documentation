@@ -18,7 +18,6 @@ EVAL-ADPAQ3029 - First application [RGB LED]
    
    `Tile GUI application <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/moduware.tile.example-led-rgb.zip>`_\
 
-
 -  The mapping of the RGB LED with the ADPAQ GPIOs is given below
 
 .. container:: round box
@@ -33,7 +32,6 @@ EVAL-ADPAQ3029 - First application [RGB LED]
    ========= ==============
    
 
-
 -  Launch the CCES IDE and import the first 3 projects into CCES as explained :doc:`here </wiki-migration/resources/eval/user-guides/eval-adpaq3029/fw_dev/import_prj>`.
 -  Build and flash the firmware binary (\*.bin) as explained :doc:`here </wiki-migration/resources/eval/user-guides/eval-adpaq3029/fw_dev>`
 -  Deploy the tile application as explained\ :doc:`here </wiki-migration/resources/eval/user-guides/eval-adpaq3029/tile_dev>`
@@ -46,10 +44,12 @@ EVAL-ADPAQ3029 - First application [RGB LED]
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app1.png>`_
 
--  The tile of the RGBLED app which was uploaded earlier will appear as shown in the image.
+-  The tile of the RGBLED app which was uploaded earlier will appear as shown in
+   the image.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app2.png
    :align: center
-   :width: 400px
+   :width: 400
 
--  Test the application using GUI, by pressing R, G and B color buttons to observe change in the LED color in ADPAQ Dev module.
+-  Test the application using GUI, by pressing R, G and B color buttons to
+   observe change in the LED color in ADPAQ Dev module.

@@ -1,5 +1,3 @@
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -16,8 +14,6 @@
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 ezLINX™ iCoupler® Isolated Interface Development Environment
 ============================================================
 
@@ -26,7 +22,11 @@ The *ez*LINX*i*Coupler Isolated Interface Development environment provides devel
 Quick Start Installation Setup Guide
 ------------------------------------
 
-The following guides give a complete step-by-step guide for the initial setup of the ezLINX board, including software installation for the ezLINX application, driver installation and setting the IP address. Before starting the setup guide, check that you have all of the necessary items from the following list to complete the setup process:
+The following guides give a complete step-by-step guide for the initial setup of
+the ezLINX board, including software installation for the ezLINX application,
+driver installation and setting the IP address. Before starting the setup guide,
+check that you have all of the necessary items from the following list to
+complete the setup process:
 
 Evaluation Kit Contents
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,11 +68,9 @@ Hardware
 
    
 
-
 .. container:: col2 right 300px
 
    
-
 
    ..
 
@@ -86,7 +84,6 @@ Hardware
 
    
 
-
 .. container:: col2 right 300px
 
    
@@ -96,7 +93,6 @@ Hardware
       :adi:`Download Bill of materials <static/imported-files/eval_boards/ezLINX-PCB-Bill_of_Materials.pdf>`
 
    
-
 
 .. container:: col1 left 600px
 
@@ -111,7 +107,6 @@ Hardware
    
    A full list of jumper configurations for the *ez*\ LINX hardware can be found :doc:`here </wiki-migration/resources/eval/ezlinx/config>`.
 
-
 Software
 --------
 
@@ -125,9 +120,8 @@ Sample PC Application Software
    
    .. image:: https://wiki.analog.com/_media/eval/ezlinx-pcapp.png
       :align: center
-      :width: 600px
+      :width: 600
    
-
 
 .. container:: col1 right 300px
 
@@ -139,11 +133,9 @@ Sample PC Application Software
 
    
 
-
 .. container:: col2 right 300px
 
    
-
 
    ..
 
@@ -156,7 +148,6 @@ Sample PC Application Software
       :adi:`Download PC Application Source Code <static/imported-files/eval_boards/ezLINXPCAppSourceCode.zip>`
 
    
-
 
 Sample PC Application Software User guide
 -----------------------------------------
@@ -194,4 +185,4 @@ Software License
 :doc:`Software License </wiki-migration/resources/eval/ezlinx/software_license>`
 
 .. |image1| image:: https://wiki.analog.com/_media/eval/ezlinxblockdiagram.png
-   :width: 550px
+   :width: 550

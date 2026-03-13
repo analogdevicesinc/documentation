@@ -3,7 +3,8 @@
 Signal Chain
 ============
 
-Insert some descriptive text here. What is signal chain? What does it encompass? What does it not?
+Insert some descriptive text here. What is signal chain? What does it encompass?
+What does it not?
 
 :doc:`Solution Examples </wiki-migration/playground/playground/signal_chain/solutions>`
 

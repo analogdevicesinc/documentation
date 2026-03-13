@@ -1,4 +1,3 @@
-
 AD5755 - Microcontroller No-OS Driver
 =====================================
 
@@ -24,12 +23,21 @@ AD5755
 
 The :adi:`AD5755` is is a quad, voltage and current output DAC that operates with a power supply range from −26.4 V to +33 V. On-chip dynamic power control minimizes package power dissipation in current mode. This is achieved by regulating the voltage on the output driver from 7.4 V to 29.5 V using a dc-to-dc boost converter optimized for minimum on chip power dissipation.
 
-The part uses a versatile 3-wire serial interface that operates at clock rates of up to 30 MHz and is compatible with standard SPI, QSPI™, MICROWIRE™, DSP, and microcontroller inter-face standards. The interface also features optional CRC-8 packet error checking, as well as a watchdog timer that monitors activity on the interface.
+The part uses a versatile 3-wire serial interface that operates at clock rates
+of up to 30 MHz and is compatible with standard SPI, QSPI™, MICROWIRE™, DSP, and
+microcontroller inter-face standards. The interface also features optional CRC-8
+packet error checking, as well as a watchdog timer that monitors activity on the
+interface.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5755_sdz.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -41,9 +49,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD5755 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD5755 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD5755 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD5755 driver:
 
@@ -57,7 +69,6 @@ There are three functions which are called by the AD5755 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of AD5755 driver:
 
@@ -104,11 +115,11 @@ Downloads
    -  `AD5755 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5755_rl78g13.zip>`_
    
 
-
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD5755 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD5755
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -124,7 +135,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD5755SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+An EVAL-AD5755SDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
+for RL78G13:
 
 ::
 
@@ -145,7 +157,8 @@ An EVAL-AD5755SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) 
 Reference Project Overview
 --------------------------
 
-The reference project outputs a square signal on channel A, and DC voltage signals on channels B, C and D.
+The reference project outputs a square signal on channel A, and DC voltage
+signals on channels B, C and D.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5755_rl78g13_screen.jpg
    :align: center
@@ -153,19 +166,13 @@ The reference project outputs a square signal on channel A, and DC voltage signa
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-
-
-

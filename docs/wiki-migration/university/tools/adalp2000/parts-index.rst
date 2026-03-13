@@ -10,13 +10,14 @@ ADALP2000 Product Description
    
    The latest version of this page can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/adalp2000/index.html
 
-
 .. image:: https://wiki.analog.com/_media/university/tools/adalp2000/kit_contents.jpg
-   :width: 550px
+   :width: 550
 
 The :adi:`ADALP2000` Parts Kit contains a large selection of components perfect for creating a wide variety of useful circuits and devices. Featuring a variety of components from Analog Devices, the kit includes transistors, resistors, capacitors, diodes, sensors, and variety of useful ICs including op-amps, converters, and regulators.
 
-We are on Rev B of the ADALP2000 parts kit, and its BIGGER and more COMPREHENSIVE than ever. Below is a complete rundown of the components that can be found within the kit.
+We are on Rev B of the ADALP2000 parts kit, and its BIGGER and more
+COMPREHENSIVE than ever. Below is a complete rundown of the components that can
+be found within the kit.
 
 A :adi:`complete list <media/en/evaluation-boards-kits/evaluation-board/ADALP2000-product-highlights.pdf>` and description of components is listed below.
 
@@ -24,14 +25,13 @@ A :adi:`complete list <media/en/evaluation-boards-kits/evaluation-board/ADALP200
 
    |image1| It is possible that some inductors included in the ADALP2000 parts kit may have sustained some cosmetic impairments during shipping and handling. These inductors are 100% functional, and while the cosmetic issues does not *look* nice, it does not affect the electrical performance, and all devices meet their datasheet specifications.
 
-
 .. important::
 
    |image2| Note that the pinout of some of the breakout boards is mirrored. This was done to maintain a 300-mil row spacing, maximizing available breadboard connection points. Double-check all pinouts before building your circuit.
 
    
-   In the figure on the side, the red numbers mark the standard pinout. Refer to the white numbers on the breakout board for the correct pinout.
-
+   In the figure on the side, the red numbers mark the standard pinout. Refer to
+   the white numbers on the breakout board for the correct pinout.
 
 Kit Contents
 ------------
@@ -221,262 +221,262 @@ Images
 ======
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/adalp2000/inductor_damage.png
-   :width: 100px
+   :width: 100
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad7920_pinout_error.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad22151.jpg
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad5626.jpg
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad7920.jpg
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad8210.jpg
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad8226.jpg
-   :width: 200px
+   :width: 200
 .. |image8| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad8542.jpg
-   :width: 200px
+   :width: 200
 .. |image9| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_adp3300.jpg
-   :width: 200px
+   :width: 200
 .. |image10| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_adtl082.jpg
-   :width: 200px
+   :width: 200
 .. |image11| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_adxl327.jpg
-   :width: 200px
+   :width: 200
 .. |image12| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_lt3092.jpg
-   :width: 200px
+   :width: 200
 .. |image13| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ltc1541.jpg
-   :width: 200px
+   :width: 200
 .. |image14| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ltc6992-1.jpg
-   :width: 200px
+   :width: 200
 .. |image15| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ltm8067.jpg
-   :width: 200px
+   :width: 200
 .. |image16| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_hph1-0190.jpg
-   :width: 200px
+   :width: 200
 .. |image17| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_hph1-1400.jpg
-   :width: 200px
+   :width: 200
 .. |image18| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_trrs_microphone_in.jpg
-   :width: 200px
+   :width: 200
 .. |image19| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_micro-_usb_connector.jpg
-   :width: 200px
+   :width: 200
 .. |image20| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad584.jpg
-   :width: 200px
+   :width: 200
 .. |image21| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad592.jpg
-   :width: 200px
+   :width: 200
 .. |image22| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad654.jpg
-   :width: 200px
+   :width: 200
 .. |image23| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad2210.jpg
-   :width: 200px
+   :width: 200
 .. |image24| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad8561.jpg
-   :width: 200px
+   :width: 200
 .. |image25| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_lt3080.png
-   :width: 200px
+   :width: 200
 .. |image26| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_ltc1043.png
-   :width: 200px
+   :width: 200
 .. |image27| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_ltc1054.png
-   :width: 200px
+   :width: 200
 .. |image28| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_ltc1485.png
-   :width: 200px
+   :width: 200
 .. |image29| image:: https://wiki.analog.com/_media/university/tools/adalp2000/op27.jpg
-   :width: 200px
+   :width: 200
 .. |image30| image:: https://wiki.analog.com/_media/university/tools/adalp2000/op37.jpg
-   :width: 200px
+   :width: 200
 .. |image31| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_op97.png
-   :width: 200px
+   :width: 200
 .. |image32| image:: https://wiki.analog.com/_media/university/tools/adalp2000/op482.jpg
-   :width: 200px
+   :width: 200
 .. |image33| image:: https://wiki.analog.com/_media/university/tools/adalp2000/op484.jpg
-   :width: 200px
+   :width: 200
 .. |image34| image:: https://wiki.analog.com/_media/university/tools/adalp2000/tmp01.jpg
-   :width: 200px
+   :width: 200
 .. |image35| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_sn74hc04n.png
-   :width: 200px
+   :width: 200
 .. |image36| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_sn74hc08n.png
-   :width: 200px
+   :width: 200
 .. |image37| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_sn74hc32n.png
-   :width: 200px
+   :width: 200
 .. |image38| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_sn74hc273n.png
-   :width: 200px
+   :width: 200
 .. |image39| image:: https://wiki.analog.com/_media/university/tools/adalp2000/breadboard_small.png
-   :width: 200px
+   :width: 200
 .. |image40| image:: https://wiki.analog.com/_media/university/tools/adalp2000/jumper_wires.png
-   :width: 200px
+   :width: 200
 .. |image41| image:: https://wiki.analog.com/_media/university/tools/adalp2000/screwdriver.png
-   :width: 200px
+   :width: 200
 .. |image42| image:: https://wiki.analog.com/_media/university/tools/adalp2000/microphone.png
-   :width: 200px
+   :width: 200
 .. |image43| image:: https://wiki.analog.com/_media/university/tools/adalp2000/speaker_front.png
-   :width: 200px
+   :width: 200
 .. |image44| image:: https://wiki.analog.com/_media/university/tools/adalp2000/thermister.jpg
-   :width: 150px
+   :width: 150
 .. |image45| image:: https://wiki.analog.com/_media/university/tools/adalp2000/power-res.jpg
-   :width: 150px
+   :width: 150
 .. |image46| image:: https://wiki.analog.com/_media/university/tools/adalp2000/pots.png
-   :width: 200px
+   :width: 200
 .. |image47| image:: https://wiki.analog.com/_media/university/tools/adalp2000/transistor.jpg
-   :width: 150px
+   :width: 150
 .. |image48| image:: https://wiki.analog.com/_media/university/tools/adalp2000/transistor.jpg
-   :width: 150px
+   :width: 150
 .. |image49| image:: https://wiki.analog.com/_media/university/tools/adalp2000/irf510.jpg
-   :width: 150px
+   :width: 150
 .. |image50| image:: https://wiki.analog.com/_media/university/tools/adalp2000/tip31.jpg
-   :width: 150px
+   :width: 150
 .. |image51| image:: https://wiki.analog.com/_media/university/tools/adalp2000/tip32.jpg
-   :width: 150px
+   :width: 150
 .. |image52| image:: https://wiki.analog.com/_media/university/tools/adalp2000/zvn2110a.jpg
-   :width: 150px
+   :width: 150
 .. |image53| image:: https://wiki.analog.com/_media/university/tools/adalp2000/zvn3310.jpg
-   :width: 150px
+   :width: 150
 .. |image54| image:: https://wiki.analog.com/_media/university/tools/adalp2000/zvp2110a.jpg
-   :width: 150px
+   :width: 150
 .. |image55| image:: https://wiki.analog.com/_media/university/tools/adalp2000/leds.jpg
-   :width: 150px
+   :width: 150
 .. |image56| image:: https://wiki.analog.com/_media/university/tools/adalp2000/qed-123.jpg
-   :width: 150px
+   :width: 150
 .. |image57| image:: https://wiki.analog.com/_media/university/tools/adalp2000/qsd123.jpg
-   :width: 150px
+   :width: 150
 .. |image58| image:: https://wiki.analog.com/_media/university/tools/adalp2000/1n914.jpg
-   :width: 150px
+   :width: 150
 .. |image59| image:: https://wiki.analog.com/_media/university/tools/adalp2000/1n4001.jpg
-   :width: 150px
+   :width: 150
 .. |image60| image:: https://wiki.analog.com/_media/university/tools/adalp2000/1n914.jpg
-   :width: 150px
+   :width: 150
 .. |image61| image:: https://wiki.analog.com/_media/university/tools/adalp2000/zener_test.png
-   :width: 400px
+   :width: 400
 .. |image62| image:: https://wiki.analog.com/_media/university/tools/adalp2000/1n914.jpg
-   :width: 150px
+   :width: 150
 .. |image63| image:: https://wiki.analog.com/_media/university/tools/adalp2000/qsc114.jpg
-   :width: 150px
+   :width: 150
 .. |image64| image:: https://wiki.analog.com/_media/university/tools/adalp2000/inductors.png
-   :width: 200px
+   :width: 200
 .. |image65| image:: https://wiki.analog.com/_media/university/tools/adalp2000/20k.jpg
-   :width: 150px
+   :width: 150
 .. |image66| image:: https://wiki.analog.com/_media/university/tools/adalp2000/caps.jpg
-   :width: 200px
+   :width: 200
 .. |image67| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad22151.jpg
-   :width: 200px
+   :width: 200
 .. |image68| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad5626.jpg
-   :width: 200px
+   :width: 200
 .. |image69| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad7920.jpg
-   :width: 200px
+   :width: 200
 .. |image70| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad8210.jpg
-   :width: 200px
+   :width: 200
 .. |image71| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad8226.jpg
-   :width: 200px
+   :width: 200
 .. |image72| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ad8542.jpg
-   :width: 200px
+   :width: 200
 .. |image73| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_adp3300.jpg
-   :width: 200px
+   :width: 200
 .. |image74| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_adtl082.jpg
-   :width: 200px
+   :width: 200
 .. |image75| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_adxl327.jpg
-   :width: 200px
+   :width: 200
 .. |image76| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_lt3092.jpg
-   :width: 200px
+   :width: 200
 .. |image77| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ltc1541.jpg
-   :width: 200px
+   :width: 200
 .. |image78| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ltc6992-1.jpg
-   :width: 200px
+   :width: 200
 .. |image79| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_ltm8067.jpg
-   :width: 200px
+   :width: 200
 .. |image80| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_hph1-0190.jpg
-   :width: 200px
+   :width: 200
 .. |image81| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_hph1-1400.jpg
-   :width: 200px
+   :width: 200
 .. |image82| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_trrs_microphone_in.jpg
-   :width: 200px
+   :width: 200
 .. |image83| image:: https://wiki.analog.com/_media/university/tools/adalp2000/new/bob_micro-_usb_connector.jpg
-   :width: 200px
+   :width: 200
 .. |image84| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad584.jpg
-   :width: 200px
+   :width: 200
 .. |image85| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad592.jpg
-   :width: 200px
+   :width: 200
 .. |image86| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad654.jpg
-   :width: 200px
+   :width: 200
 .. |image87| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad2210.jpg
-   :width: 200px
+   :width: 200
 .. |image88| image:: https://wiki.analog.com/_media/university/tools/adalp2000/ad8561.jpg
-   :width: 200px
+   :width: 200
 .. |image89| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_lt3080.png
-   :width: 200px
+   :width: 200
 .. |image90| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_ltc1043.png
-   :width: 200px
+   :width: 200
 .. |image91| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_ltc1054.png
-   :width: 200px
+   :width: 200
 .. |image92| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_ltc1485.png
-   :width: 200px
+   :width: 200
 .. |image93| image:: https://wiki.analog.com/_media/university/tools/adalp2000/op27.jpg
-   :width: 200px
+   :width: 200
 .. |image94| image:: https://wiki.analog.com/_media/university/tools/adalp2000/op37.jpg
-   :width: 200px
+   :width: 200
 .. |image95| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_op97.png
-   :width: 200px
+   :width: 200
 .. |image96| image:: https://wiki.analog.com/_media/university/tools/adalp2000/op482.jpg
-   :width: 200px
+   :width: 200
 .. |image97| image:: https://wiki.analog.com/_media/university/tools/adalp2000/op484.jpg
-   :width: 200px
+   :width: 200
 .. |image98| image:: https://wiki.analog.com/_media/university/tools/adalp2000/tmp01.jpg
-   :width: 200px
+   :width: 200
 .. |image99| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_sn74hc04n.png
-   :width: 200px
+   :width: 200
 .. |image100| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_sn74hc08n.png
-   :width: 200px
+   :width: 200
 .. |image101| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_sn74hc32n.png
-   :width: 200px
+   :width: 200
 .. |image102| image:: https://wiki.analog.com/_media/university/tools/adalp2000/dip_sn74hc273n.png
-   :width: 200px
+   :width: 200
 .. |image103| image:: https://wiki.analog.com/_media/university/tools/adalp2000/breadboard_small.png
-   :width: 200px
+   :width: 200
 .. |image104| image:: https://wiki.analog.com/_media/university/tools/adalp2000/jumper_wires.png
-   :width: 200px
+   :width: 200
 .. |image105| image:: https://wiki.analog.com/_media/university/tools/adalp2000/screwdriver.png
-   :width: 200px
+   :width: 200
 .. |image106| image:: https://wiki.analog.com/_media/university/tools/adalp2000/microphone.png
-   :width: 200px
+   :width: 200
 .. |image107| image:: https://wiki.analog.com/_media/university/tools/adalp2000/speaker_front.png
-   :width: 200px
+   :width: 200
 .. |image108| image:: https://wiki.analog.com/_media/university/tools/adalp2000/thermister.jpg
-   :width: 150px
+   :width: 150
 .. |image109| image:: https://wiki.analog.com/_media/university/tools/adalp2000/power-res.jpg
-   :width: 150px
+   :width: 150
 .. |image110| image:: https://wiki.analog.com/_media/university/tools/adalp2000/pots.png
-   :width: 200px
+   :width: 200
 .. |image111| image:: https://wiki.analog.com/_media/university/tools/adalp2000/transistor.jpg
-   :width: 150px
+   :width: 150
 .. |image112| image:: https://wiki.analog.com/_media/university/tools/adalp2000/transistor.jpg
-   :width: 150px
+   :width: 150
 .. |image113| image:: https://wiki.analog.com/_media/university/tools/adalp2000/irf510.jpg
-   :width: 150px
+   :width: 150
 .. |image114| image:: https://wiki.analog.com/_media/university/tools/adalp2000/tip31.jpg
-   :width: 150px
+   :width: 150
 .. |image115| image:: https://wiki.analog.com/_media/university/tools/adalp2000/tip32.jpg
-   :width: 150px
+   :width: 150
 .. |image116| image:: https://wiki.analog.com/_media/university/tools/adalp2000/zvn2110a.jpg
-   :width: 150px
+   :width: 150
 .. |image117| image:: https://wiki.analog.com/_media/university/tools/adalp2000/zvn3310.jpg
-   :width: 150px
+   :width: 150
 .. |image118| image:: https://wiki.analog.com/_media/university/tools/adalp2000/zvp2110a.jpg
-   :width: 150px
+   :width: 150
 .. |image119| image:: https://wiki.analog.com/_media/university/tools/adalp2000/leds.jpg
-   :width: 150px
+   :width: 150
 .. |image120| image:: https://wiki.analog.com/_media/university/tools/adalp2000/qed-123.jpg
-   :width: 150px
+   :width: 150
 .. |image121| image:: https://wiki.analog.com/_media/university/tools/adalp2000/qsd123.jpg
-   :width: 150px
+   :width: 150
 .. |image122| image:: https://wiki.analog.com/_media/university/tools/adalp2000/1n914.jpg
-   :width: 150px
+   :width: 150
 .. |image123| image:: https://wiki.analog.com/_media/university/tools/adalp2000/1n4001.jpg
-   :width: 150px
+   :width: 150
 .. |image124| image:: https://wiki.analog.com/_media/university/tools/adalp2000/1n914.jpg
-   :width: 150px
+   :width: 150
 .. |image125| image:: https://wiki.analog.com/_media/university/tools/adalp2000/zener_test.png
-   :width: 400px
+   :width: 400
 .. |image126| image:: https://wiki.analog.com/_media/university/tools/adalp2000/1n914.jpg
-   :width: 150px
+   :width: 150
 .. |image127| image:: https://wiki.analog.com/_media/university/tools/adalp2000/qsc114.jpg
-   :width: 150px
+   :width: 150
 .. |image128| image:: https://wiki.analog.com/_media/university/tools/adalp2000/inductors.png
-   :width: 200px
+   :width: 200
 .. |image129| image:: https://wiki.analog.com/_media/university/tools/adalp2000/20k.jpg
-   :width: 150px
+   :width: 150
 .. |image130| image:: https://wiki.analog.com/_media/university/tools/adalp2000/caps.jpg
-   :width: 200px
+   :width: 200

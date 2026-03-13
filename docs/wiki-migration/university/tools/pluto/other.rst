@@ -3,10 +3,13 @@ Pluto
 
 .. hint::
 
-   Reference on this page to any specific commercial or non-commercial application does not constitute its endorsement or recommendation by Analog Devices. This is for informational purposes only, and does not constitute that Analog Devices supports these applications in any manner.
+   Reference on this page to any specific commercial or non-commercial
+   application does not constitute its endorsement or recommendation by Analog
+   Devices. This is for informational purposes only, and does not constitute
+   that Analog Devices supports these applications in any manner.
 
-
-There are a variety of tools and applications that work with the ADALM-PLUTO, including:
+There are a variety of tools and applications that work with the ADALM-PLUTO,
+including:
 
 +----------------------------------------------------------------------------+---------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Framework / Application                                                    | License | OS             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |

@@ -9,7 +9,7 @@ Introduction
 The guidelines on these pages are intended to help A\ :sup:`2`\ B users configure and use the Analog Devices' (ADI) A\ :sup:`2`\ B Bus Analyzer tool in Monitor and/or Node Emulator modes for AD242x and AD243x devices with HDAC/Duraclik connectors. AD241x and devices with XLR/RJ45 connectors (AD2437) are not supported.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image1.png
-   :width: 600px
+   :width: 600
 
 Installation and Upgrades
 =========================
@@ -34,7 +34,8 @@ The A\ :sup:`2`\ B Bus Analyzer runs on Windows, Linux, and macOS. The Operating
 Software Installation Instructions
 ----------------------------------
 
-The following sub-sections include installation information for the supported OS platforms.
+The following sub-sections include installation information for the supported OS
+platforms.
 
 Windows
 ~~~~~~~
@@ -110,12 +111,12 @@ A brand-new Analyzer will show a License error when you first try to connect to 
 Select **Activate or Update License…**
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image6.png
-   :width: 400px
+   :width: 400
 
 **Enter** the License key that you received when you purchased the A\ :sup:`2`\ B Bus Analyzer select the **Activate** **online** if you have access to the Internet or **Activate** offline if you already have a validation code or you want to request one.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image7.png
-   :width: 400px
+   :width: 400
 
 **Complete** the required fields and click **Activate**. Your product should now be activated. Use Help \| Email Support... menu option to contact technical support should you have any issues.
 
@@ -131,12 +132,13 @@ The upgrade process is the same for all supported operating systems.
 
 Run the A\ :sup:`2`\ B Bus Analyzer, visit the Home screen, click 'Check for Updates'. If a newer version is available 'Download' and then 'Restart to Install' to update your copy of A\ :sup:`2`\ B Bus Analyzer.
 
-You can also use the Help \| Check for Updates... menu item to find out if there are any new updates available.
+You can also use the Help \| Check for Updates... menu item to find out if there
+are any new updates available.
 
 After the A\ :sup:`2`\ B Bus Analyzer software updates, settings from the previous version are preserved.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image9.png
-   :width: 600px
+   :width: 600
 
 Updating A2B Bus Analyzer firmware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -146,7 +148,7 @@ The current firmware version on the device is shown on the Home screen after co
 If a firmware update is available, click 'Update Firmware' and follow the on-screen instructions to flash the new version to your A\ :sup:`2`\ B Bus Analyzer.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image10.png
-   :width: 600px
+   :width: 600
 
 A2B Bus Analyzer Package Contents
 =================================
@@ -170,7 +172,8 @@ A2B Bus Analyzer Package Contents
 +-------------+-----------------------------------------------------------+--------------+
 
 -  The physical dimension of A2B Bus Analyzer box is 15.25" x 9.5" x 4.125".
--  The A2B Bus Analyzer box alone weighs about 533 g. The entire box (including connectors and power supply) may weigh ~ 1kg.
+-  The A2B Bus Analyzer box alone weighs about 533 g. The entire box (including
+   connectors and power supply) may weigh ~ 1kg.
 
 Getting Started with A2B Bus Analyzer
 =====================================
@@ -185,14 +188,16 @@ Bus Analyzer Setup
 2. Connect 12V power supply to A\ :sup:`2`\ B Bus Analyzer.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image12.png
-   :width: 350px
+   :width: 350
 
 3. Ensure your A\ :sup:`2`\ B Bus Analyzer software is installed, registered, and upgraded as explained in the Installation and Upgrades section of this guide.
 
-\*\* Note: \*\* If using USB-C for Power, use one of the recommended wall adapters. Refer to the A2B Bus Analyzer User Manual for more details.
+\*\* Note: \*\* If using USB-C for Power, use one of the recommended wall
+adapters. Refer to the A2B Bus Analyzer User Manual for more details.
 
-4. Launch A2B Bus Analyzer application. Connect to your A2B Bus Analyzer device by selecting it from the device selection drop-down menu then clicking the Power button. Once connected, the Power button becomes green.
-
+4. Launch A2B Bus Analyzer application. Connect to your A2B Bus Analyzer device
+   by selecting it from the device selection drop-down menu then clicking the
+   Power button. Once connected, the Power button becomes green.
 
 |image7|
 
@@ -216,7 +221,7 @@ For 0.35mm2 Cable
 Drawing
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/cable.jpg
-   :width: 600px
+   :width: 600
 
 Using Analyzer as Bus Monitor
 -----------------------------
@@ -226,7 +231,7 @@ Using Analyzer as Bus Monitor
 For custom cabling, please use the below pinout details
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/monitor_pins.png
-   :width: 400px
+   :width: 400
 
 -  P1 (towards main): 1 - NC, 2 - AN, 3 - AP, 4 – NC (left to right)
 -  P2 (towards sub): 1 - NC, 2 - AP, 3 - AN, 4 – NC (left to right)
@@ -236,22 +241,22 @@ For custom cabling, please use the below pinout details
 **Note:** It is recommended to place the analyzer between the Main and first Sub node (Sub node 0) to allow capturing of all events on the bus.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image13.png
-   :width: 400px
+   :width: 400
 
 3. Launch the A\ :sup:`2`\ B Bus Analyzer application and create a new project or open an existing project using the links on the Welcome panel.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image14.png
-   :width: 600px
+   :width: 600
 
 4. Switch to Bus Monitor view using the link in the side panel.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/qsg_mon2.png
-   :width: 600px
+   :width: 600
 
 5. Activate bus monitoring by sliding the Enable Switch
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/qsg_mon3.png
-   :width: 600px
+   :width: 600
 
 6. Click Play to start capturing audio and event traffic on the bus.
 
@@ -261,16 +266,22 @@ For custom cabling, please use the below pinout details
 
 8. With network discovery initiated on the host, the A\ :sup:`2`\ B Bus Analyzer application will begin capturing event and audio traffic. Use Audio-Output controls to playback captured audio on the device's Line Out/SPDIF Out or Save as .WAV File or even stream to Host PC over USB using drivers appropriate for your platform (ASIO/ALSA/CoreAudio).
 
-\*\* Note: \*\* Refer to the A2B Bus Analyzer User Manual for more advanced device usage.
+\*\* Note: \*\* Refer to the A2B Bus Analyzer User Manual for more advanced
+device usage.
 
-9. Click Stop to finish collecting audio and event traffic. Collected data can be saved to a file (CSV or JSON) using the Download button.
+9. Click Stop to finish collecting audio and event traffic. Collected data can
+   be saved to a file (CSV or JSON) using the Download button.
 
 .. tip::
 
-   AD2438/30 evaluation boards have only one A2B port and the analog front end expects straight-through UTP cabling where as the default cables with the A2B Bus Analyzer box is cross-over cables.
+   AD2438/30 evaluation boards have only one A2B port and the analog front end
+   expects straight-through UTP cabling where as the default cables with the A2B
+   Bus Analyzer box is cross-over cables.
 
    
-   For usage with AD2438/30 evaluation boards, the monitor connection needs to be different as shown in below diagram. Ensure that the upstream node's A2B_CONTROL.XCVRBINV bit is set.
+   For usage with AD2438/30 evaluation boards, the monitor connection needs to
+   be different as shown in below diagram. Ensure that the upstream node's
+   A2B_CONTROL.XCVRBINV bit is set.
    
    Note: AD2438 can only be used as Main node.
 
@@ -295,44 +306,58 @@ For customer cabling, please use the below pinout details:
 - P3 (towards main): 1- AN, 2- AP (left to right)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/emulator_pins.png
-   :width: 400px
+   :width: 400
 
 Main Node Emulator
 ~~~~~~~~~~~~~~~~~~
 
 1. Complete steps in the Bus Analyzer Setup section above.
 
-2. Connect Sub node or chain of Sub nodes to the node emulator port labelled “TOWARDS SUB” on STD or HIGH PWR depending on the power configuration of the node being emulated.
+2. Connect Sub node or chain of Sub nodes to the node emulator port labelled
+   “TOWARDS SUB” on STD or HIGH PWR depending on the power configuration of the
+   node being emulated.
 
 **Note:** **AD242x node emulator** is also supported on STD PWR. Thus use emulator port labelled “TOWARDS SUB” on STD PWR port to connect sub node(s) when emulating AD242x Main node.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/stdpower1.png
-   :width: 600px
+   :width: 600
 
 3. Switch to the A\ :sup:`2`\ B Bus Analyzer application and create a new project or open an existing project using the options on the Welcome panel. Ensure to check Enable Standard-Power/High-Power Emulator option if available when creating a new project.
 
-4. Switch to Emulator view (Std/High) using the side panel and turn on the function by sliding the Enable switch. Ensure the Power icon is green at this time. If not green, click on the Reset, wait for a few seconds (until the status LED on the unit turns full green) and connect again using the Power icon.
+4. Switch to Emulator view (Std/High) using the side panel and turn on the
+   function by sliding the Enable switch. Ensure the Power icon is green at this
+   time. If not green, click on the Reset, wait for a few seconds (until the
+   status LED on the unit turns full green) and connect again using the Power
+   icon.
 
 5. Configure the device by setting properties as per the node being emulated. Ensure to set Emulate option to ‘Main’. When emulating a Main node, the network information corresponding to the connected nodes shall be provided as a .dat file exported from SigmaStudio (or SigmaStudio+) for A\ :sup:`2`\ B.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/emuconnect1.png
-   :width: 600px
+   :width: 600
 
 **Note:** A\ :sup:`2`\ B SW release package Rel 19.9.0 or higher must be used to export adi_a2b_busconfig.dat when using SigmaStudio. Refer to SigmaStudio user guide documentation available in the A\ :sup:`2`\ B SW package on how to create A\ :sup:`2`\ B project in SigmaStudio and export a .dat file.
 
-6. Click on the ‘Apply’ button to set the emulator in Main node mode and initiate the discovery/configuration of the network as per the provided .dat file.
+6. Click on the ‘Apply’ button to set the emulator in Main node mode and
+   initiate the discovery/configuration of the network as per the provided .dat
+   file.
 
-7. A successful discovery of the network is indicated with the Discovery status icon turning green.
+7. A successful discovery of the network is indicated with the Discovery status
+   icon turning green.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/emustatus.png
-   :width: 600px
+   :width: 600
 
-8. Switch to the Audio panel to view audio streams sourced or sinked by the node. Use Audio Output controls to listen/save/stream any audio stream(s) of interest. Use Audio Input controls to feed audio from Line/SPDIF/File/USB In or Test Tones/Loop back options on to the bus.
+8. Switch to the Audio panel to view audio streams sourced or sinked by the
+   node. Use Audio Output controls to listen/save/stream any audio stream(s) of
+   interest. Use Audio Input controls to feed audio from Line/SPDIF/File/USB In
+   or Test Tones/Loop back options on to the bus.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/emuaudio.png
-   :width: 600px
+   :width: 600
 
-9. Switch to the Data panel to view SPI data tunnel streams (if any) available on the node. Use Data controls to send/receive data over SPI tunnels different transfer modes.
+9. Switch to the Data panel to view SPI data tunnel streams (if any) available
+   on the node. Use Data controls to send/receive data over SPI tunnels
+   different transfer modes.
 
 Sub Node Emulator
 ~~~~~~~~~~~~~~~~~
@@ -344,36 +369,51 @@ Sub Node Emulator
 **Note:**\** AD242x node emulator*\* is also supported on STD PWR. Thus use emulator ports labelled TOWARDS MAIN and TOWARDS SUB on STD PWR when emulating AD242x Sub node.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/stdpowersub1.png
-   :width: 600px
+   :width: 600
 
 3. Switch to A\ :sup:`2`\ B Bus Analyzer application and create a new project or open an existing project using the options on the Welcome panel. Ensure to check Enable Standard-Power/High-Power Emulator option if available when creating a new project.
 
-4. Switch to Emulator view (Std/High) using the side panel and turn on the function by sliding the Enable switch. Ensure the Power icon is green at this time. If not green, click on the Reset, wait for a few seconds until the status LED on the unit turns full green and connect again using the Power icon.
+4. Switch to Emulator view (Std/High) using the side panel and turn on the
+   function by sliding the Enable switch. Ensure the Power icon is green at this
+   time. If not green, click on the Reset, wait for a few seconds until the
+   status LED on the unit turns full green and connect again using the Power
+   icon.
 
-5. Configure the device by setting properties as per the node being emulated. Ensure to set Emulate option to ‘Sub’.
+5. Configure the device by setting properties as per the node being emulated.
+   Ensure to set Emulate option to ‘Sub’.
 
 **Note:** When emulating a Sub node, the configuration information corresponding to the emulated node is automatically detected by the Analyzer from the bus.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/emuconnectsub1.png
-   :width: 600px
+   :width: 600
 
-6. Click on the ‘Apply’ button to set the emulator in Sub node mode (indicated by Node Active icon turning green).
+6. Click on the ‘Apply’ button to set the emulator in Sub node mode (indicated
+   by Node Active icon turning green).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/emustatussub1.png
-   :width: 600px
+   :width: 600
 
 7. Switch to the A\ :sup:`2`\ B network host program (e.g., SigmaStudio or Head-unit software) and initiate discovery process.
 
 **Note:** A\ :sup:`2`\ B SW release package Rel 19.9.0 or higher must be used when using SigmaStudio. Refer to SigmaStudio user guide documentation available in the A\ :sup:`2`\ B SW package on how to create A\ :sup:`2`\ B project in SigmaStudio.
 
-8. With network discovery initiated on the host, Analyzer will auto detect the settings for the Sub node being emulated (based on the Analyzer position in the network) and configures itself to emulate the Sub node. A successful discovery of Analyzer as a sub node is indicated by the Discovery status icon turning green.
+8. With network discovery initiated on the host, Analyzer will auto detect the
+   settings for the Sub node being emulated (based on the Analyzer position in
+   the network) and configures itself to emulate the Sub node. A successful
+   discovery of Analyzer as a sub node is indicated by the Discovery status icon
+   turning green.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/emudiscoverysub1.png
-   :width: 600px
+   :width: 600
 
-9. Switch to the Audio panel to view audio streams sourced or sinked by the node. Use Audio Output controls to listen/save/stream any audio stream(s) of interest. Use Audio Input controls to feed audio from Line/SPDIF/File/USB In or Test Tones/Loop back options on to the bus.
+9. Switch to the Audio panel to view audio streams sourced or sinked by the
+   node. Use Audio Output controls to listen/save/stream any audio stream(s) of
+   interest. Use Audio Input controls to feed audio from Line/SPDIF/File/USB In
+   or Test Tones/Loop back options on to the bus.
 
-10. Switch to the Data panel to view SPI data tunnel streams (if any) available on the node. Use Data controls to send/receive data over SPI tunnels different transfer modes.
+10. Switch to the Data panel to view SPI data tunnel streams (if any) available
+    on the node. Use Data controls to send/receive data over SPI tunnels
+    different transfer modes.
 
 Using A2B Bus Analyzer with SigmaStudio+
 ========================================
@@ -385,7 +425,8 @@ SigmaStudio+ supports representation of A\ :sup:`2`\ B Bus Analyzer for creating
 -  Automatic Emulator Enable and .DAT file Apply of a schematic
 -  Node highlighting and Line fault error notification in SigmaStudio+ during Main Node Emulation
 -  Post Discovery Register Read/Write from SigmaStudio+ during Main Node Emulation
--  Post Discovery Peripheral Read/Write from SigmaStudio+ during Main Node Emulation
+-  Post Discovery Peripheral Read/Write from SigmaStudio+ during Main Node
+   Emulation
 
 **Note:** SigmaStudio+ release package 2.0.0 and A2B-SS+ Plugin release package 1.1.0 or above need to be installed for using the A\ :sup:`2`\ B Bus Analyzer with SigmaStudio+. Refer to AE_65_A2B-SSPlus_QuickStartGuide in the A2B-SS+ plugin installation package for steps to create schematics with A\ :sup:`2`\ B Bus Analyzer hardware in the network. Refer to the user guide PDF which can be found in the A2B Bus Analyzer software installation for steps to Launch and operate A2B Bus Analyzer UI from SigmaStudio+. Section :doc:`Further documentation </wiki-migration/resources/tools-software/a2b-bus-analyzer/quick-start-guide>` describes how to find the User Guide.
 
@@ -394,24 +435,25 @@ Further documentation
 
 Most of the user documentation is located, with this guide in the Analog Devices wiki under :doc:`A2B Bus Analyzer Homepage </wiki-migration/resources/tools-software/a2b-bus-analyzer>`.
 
-The exception is a more in-depth user guide PDF which can be found in the A2B Bus Analyzer software installation. You can access it under the Help menu
+The exception is a more in-depth user guide PDF which can be found in the A2B
+Bus Analyzer software installation. You can access it under the Help menu
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/userguidemenu.png
-   :width: 200px
+   :width: 200
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image16.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/cross_over_cables.jpg
-   :width: 600px
+   :width: 600

@@ -1,12 +1,15 @@
 ADSP-BF707 LED Blink Example
 ============================
 
-To help get started using CCES, here are steps to create an example application to blink an LED on the ADSP-BF707 EZ-Kit. This step-by-step example assumes familiarity with the C/C++ programming language and how to access CCES Online Help for information on the APIs.
+To help get started using CCES, here are steps to create an example application
+to blink an LED on the ADSP-BF707 EZ-Kit. This step-by-step example assumes
+familiarity with the C/C++ programming language and how to access CCES Online
+Help for information on the APIs.
 
 If not done already, follow the instructions in the :doc:`Creating Projects in CCES </wiki-migration/resources/tools-software/crosscore/cces/getting-started/create>` section of this guide to create the **CCES_Example** project for your ADSP-BF707 board. Switch the Editor view to the *CCES_Example.c* tab, as shown in Figure 1.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/led-blink-app/cces_editor.png
-   :width: 600px
+   :width: 600
 
 *Figure 1. CCES Example.c*
 
@@ -14,7 +17,8 @@ The template code generated at project start-up by CCES includes auto-generated 
 
 The CCES system services include a GPIO service, which is used in this example application. This service can be used to set the direction of the GPIO pins, as well as read, set, toggle, and clear the states of each pin. Polling of pin states and interrupt methods are available through the GPIO service as well, which is documented in Online Help under **CrossCore Embedded Studio 2.x.x → System Run-Time Documentation → System Services and Device Drivers → ADSP-BF70x API Reference → Modules → GPIO Service**.
 
-Provided here is the full code example needed to blink the LED on the ADSP-BF707 EZ-Kit, and a description of the code follows:
+Provided here is the full code example needed to blink the LED on the ADSP-BF707
+EZ-Kit, and a description of the code follows:
 
 .. code:: c
 
@@ -65,19 +69,33 @@ Each of the system services has a dedicated header file located in the **\\servi
 
 **#include** <services/gpio/adi_gpio.h> ← Must Be Added
 
-The next step is to define the object array which will contain the GPIO service data. This array will be used during the initialization of the GPIO service, and the macro definitions utilized can be found in the adi_gpio.h file added above.
+The next step is to define the object array which will contain the GPIO service
+data. This array will be used during the initialization of the GPIO service, and
+the macro definitions utilized can be found in the adi_gpio.h file added above.
 
 **#define** GPIO_MEMORY_SIZE (ADI_GPIO_CALLBACK_MEM_SIZE\*2)
 
 static uint8_t gpioMemory[GPIO_MEMORY_SIZE];
 
-A variable is then required for the return values from the system service and device driver APIs:
+A variable is then required for the return values from the system service and
+device driver APIs:
 
 ADI_GPIO_RESULT result;
 
-Since the goal of this example is to build a simple blink application, the GPIO service needs to be initialized with the call to the adi_gpio_Init() function, and the direction of the I/O pin connected to the LED must be set as an output pin via the adi_gpio_SetDirection() function. The APIs have return values that indicate success or failure, which can provide valuable debug information, and this example uses result for each of the API calls to the GPIO service. Because of the simple nature of this example (i.e., only one pin is used, and only one service is being initialized), there is no error-checking implemented. A more complex system should utilize error-checking to ensure that the device drivers and system services are all being initialized and used properly.
+Since the goal of this example is to build a simple blink application, the GPIO
+service needs to be initialized with the call to the adi_gpio_Init() function,
+and the direction of the I/O pin connected to the LED must be set as an output
+pin via the adi_gpio_SetDirection() function. The APIs have return values that
+indicate success or failure, which can provide valuable debug information, and
+this example uses result for each of the API calls to the GPIO service. Because
+of the simple nature of this example (i.e., only one pin is used, and only one
+service is being initialized), there is no error-checking implemented. A more
+complex system should utilize error-checking to ensure that the device drivers
+and system services are all being initialized and used properly.
 
-Finally, to actually blink the LED, the adi_gpio_Toggle() GPIO toggle API is called from within an infinite while(1) loop, buffered on each iteration by the for(int x = 0; x<5000000; x++) delay loop to space out toggling of the GPIO state.
+Finally, to actually blink the LED, the adi_gpio_Toggle() GPIO toggle API is
+called from within an infinite while(1) loop, buffered on each iteration by the
+for(int x = 0; x<5000000; x++) delay loop to space out toggling of the GPIO
+state.
 
 Now you are ready to :doc:`Debug </wiki-migration/resources/tools-software/crosscore/cces/getting-started/debug>` your application.
-

@@ -14,4 +14,3 @@ Dialogs
 :doc:`Script </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/script>`
 
 :doc:`Undo History </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/undohistory>` \*\*
-

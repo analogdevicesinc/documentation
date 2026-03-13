@@ -30,14 +30,23 @@ Output Pins
 Algorithm Description
 ---------------------
 
-This is the "standard" implementation of the square root function. It provides an approximation of the square root value of the input. For negative inputs to the block, the absolute value is taken before calculating the square root. Imaginary numbers are not supported. The following graph shows an input tone signal full scale at 500Hz (blue) and the resulting output through the square root block (red).
+This is the "standard" implementation of the square root function. It provides
+an approximation of the square root value of the input. For negative inputs to
+the block, the absolute value is taken before calculating the square root.
+Imaginary numbers are not supported. The following graph shows an input tone
+signal full scale at 500Hz (blue) and the resulting output through the square
+root block (red).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/squarerootpic2.png
    :alt: squarerootpic2.png
 
 **Standard Vs. Ultra Precision** The main difference between this "standard" implementation and the Ultra Precision square root, is instruction program count vs. accuracy. The ultra precision algorithm requires many more instructions (141 compared to 81) but is a bit accurate execution of the square root function for the SigmaDSP processor.
 
-The accuracy difference between the two algorithms is a noise floor around approximately -78dB. The below plot shows a subtraction of the outputs from the Ultra Precision and the Standard square root functions. Notice that the noise floor difference is independent of signal level, thus the square root using the Standard approach is less accurate for low level signals.
+The accuracy difference between the two algorithms is a noise floor around
+approximately -78dB. The below plot shows a subtraction of the outputs from the
+Ultra Precision and the Standard square root functions. Notice that the noise
+floor difference is independent of signal level, thus the square root using the
+Standard approach is less accurate for low level signals.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/squarerootpic3.png
    :alt: squarerootpic3.png

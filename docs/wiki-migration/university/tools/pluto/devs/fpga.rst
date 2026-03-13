@@ -1,21 +1,29 @@
 Accessing Pluto's FPGA Over JTAG
 ================================
 
-Connecting to Pluto over JTAG requires a standard JTAG programmer from Xilinx or a simplier solution like the JTAG-HS3+JTAGUART programmer. We will be using the JTAG-HS3+JTAGUART in this guide.
+Connecting to Pluto over JTAG requires a standard JTAG programmer from Xilinx or
+a simplier solution like the JTAG-HS3+JTAGUART programmer. We will be using the
+JTAG-HS3+JTAGUART in this guide.
 
-First, open up PlutoSDR's case and locate the JTAG_BOOT connector holes on the bottom left portion of the PCB. Using an 8 pin ribbon cable from your JTAG programmer connect to those pins as shown in the figure below.
+First, open up PlutoSDR's case and locate the JTAG_BOOT connector holes on the
+bottom left portion of the PCB. Using an 8 pin ribbon cable from your JTAG
+programmer connect to those pins as shown in the figure below.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/devs/thumbnail_image2.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
-After the JTAG programmer is connected, provide power to PlutoSDR using either of its USB connectors. Once powered the D5 led should illuminate to signal the JTAG connection to the programmer is alive. This will appear like the figure below.
+After the JTAG programmer is connected, provide power to PlutoSDR using either
+of its USB connectors. Once powered the D5 led should illuminate to signal the
+JTAG connection to the programmer is alive. This will appear like the figure
+below.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/devs/thumbnail_image1.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
-Next we can go into vivado and check the hardware manager for connectivity. This can be done with xsct as follows:
+Next we can go into vivado and check the hardware manager for connectivity. This
+can be done with xsct as follows:
 
 ::
 
@@ -25,7 +33,6 @@ Next we can go into vivado and check the hardware manager for connectivity. This
    * Xilinx Software Commandline Tool (XSCT) v2017.4.1
      *** Build date : Jan 30 2018-15:42:35
        ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
-
 
    xsct% connect -host localhost -port 3121
    tcfchan#0
@@ -37,7 +44,6 @@ Next we can go into vivado and check the hardware manager for connectivity. This
    xsct%
 
 Alternatively in the GUI, PlutoSDR should appear as so:
-
 
 |image1|
 
@@ -75,12 +81,17 @@ Be sure to match the vendor and product IDs of your device. Then do:
    sudo udevadm control --reload-rules
    sudo udevadm trigger
 
-Ensure that you are in the group plugdev. Run the command 'groups'. If not, add yourself to the plugdev group and logout and back in afterwards.
+Ensure that you are in the group plugdev. Run the command 'groups'. If not, add
+yourself to the plugdev group and logout and back in afterwards.
 
 Unbricking PlutoSDR
 -------------------
 
-If for some reason PlutoSDR does not boot, if the firmware update failed for example, the device will appear in DFU mode (1 solid LED and no blinking LED) but not actually boot into DFU. This happens when u-boot or the FSBL is corrupted. This is unlikely but can happen. To fix this you can leverage the JTAG bootstrap zip part of each release. To do so perform the following:
+If for some reason PlutoSDR does not boot, if the firmware update failed for
+example, the device will appear in DFU mode (1 solid LED and no blinking LED)
+but not actually boot into DFU. This happens when u-boot or the FSBL is
+corrupted. This is unlikely but can happen. To fix this you can leverage the
+JTAG bootstrap zip part of each release. To do so perform the following:
 
 -  Plug in JTAG as documented above into Pluto and verify you can connect with Vivado
 -  Download the JTAG bootstrap zip from the firmware release page (plutosdr-jtag-bootstrap-<Firmware Version>.zip)
@@ -91,4 +102,4 @@ If for some reason PlutoSDR does not boot, if the firmware update failed for exa
 -  Flash the firmware as usual with the :doc:`DFU utils as documented here </wiki-migration/university/tools/pluto/users/firmware>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/devs/plutohardwareserver.png
-   :width: 400px
+   :width: 400

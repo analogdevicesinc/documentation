@@ -10,15 +10,19 @@ In the No-OS driver the values directly correspond to members of the (mykonosDev
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/mykonosdevice_t.png
    :alt: mykonosDevice_t structure
    :align: center
-   :width: 500px
+   :width: 500
 
 See more details about :doc:`AD9371/AD9375 Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9371-customization>`.
 
-In order for the settings made on these plugin to take affect, the Save Settings button must be pressed. It should be noted that the driver then reinitialized the AD9371 from reset, which will rerun all calibrations and this may take several seconds to complete.
+In order for the settings made on these plugin to take affect, the Save Settings
+button must be pressed. It should be noted that the driver then reinitialized
+the AD9371 from reset, which will rerun all calibrations and this may take
+several seconds to complete.
 
 .. tip::
 
-   \ TIP: After you customized the driver for your application needs you can read back all values from the Linux debugfs:
+   \ TIP: After you customized the driver for your application needs you can
+   read back all values from the Linux debugfs:
 
    
    .. container:: box bggreen
@@ -56,7 +60,6 @@ In order for the settings made on these plugin to take affect, the Save Settings
    For the No-OS driver the mapping can be found here: :doc:`AD9371 Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9371-customization>`
    
 
-
 Screenshots / Descriptions
 --------------------------
 
@@ -66,7 +69,7 @@ Clock Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_clk.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 Calibrations
 ~~~~~~~~~~~~
@@ -74,7 +77,7 @@ Calibrations
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_cal.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 TX Settings
 ~~~~~~~~~~~
@@ -82,7 +85,7 @@ TX Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_tx.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 RX Settings
 ~~~~~~~~~~~
@@ -90,7 +93,7 @@ RX Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_rx.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 Observation RX Settings
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,7 +101,7 @@ Observation RX Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_obs.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 Gain Settings
 ~~~~~~~~~~~~~
@@ -106,7 +109,7 @@ Gain Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_gain.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 AGC Settings
 ~~~~~~~~~~~~
@@ -114,7 +117,7 @@ AGC Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_agc.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 ARM GPIO Settings
 ~~~~~~~~~~~~~~~~~
@@ -122,7 +125,7 @@ ARM GPIO Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_arm_gpio.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 GPIO Settings
 ~~~~~~~~~~~~~
@@ -130,7 +133,7 @@ GPIO Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_gpio.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 AUX DAC Settings
 ~~~~~~~~~~~~~~~~
@@ -138,7 +141,7 @@ AUX DAC Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_aux_dac.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 JESD204B Framer Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -146,7 +149,7 @@ JESD204B Framer Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_framer.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 JESD204B Deframer Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,7 +157,7 @@ JESD204B Deframer Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_deframer.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 BIST
 ~~~~
@@ -162,21 +165,26 @@ BIST
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_bist.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
-BIST stands for Build-In Self-Test. Selections on this Tab take immediately effect and therefore don’t require the Save Settings Button. Functionality exposed here is only meant to inject test patterns/data than can be used to validate the Digital Interface or functionality of the device.
+BIST stands for Build-In Self-Test. Selections on this Tab take immediately
+effect and therefore don’t require the Save Settings Button. Functionality
+exposed here is only meant to inject test patterns/data than can be used to
+validate the Digital Interface or functionality of the device.
 
 There are three major facilities.
 
 BIST Tone
 ^^^^^^^^^
 
-User selectable tone with frequency in kHz, that can be injected into the TX path.
+User selectable tone with frequency in kHz, that can be injected into the TX
+path.
 
 BIST PRBS
 ^^^^^^^^^
 
-Pseudorandom Binary Sequence (PRBS) that can either injected into the RX or TX path.
+Pseudorandom Binary Sequence (PRBS) that can either injected into the RX or TX
+path.
 
 BIST Loopback
 ^^^^^^^^^^^^^
@@ -189,7 +197,7 @@ DPD Setup (AD9375 only)
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_dpd.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 CLGC Setup (AD9375 only)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,7 +205,7 @@ CLGC Setup (AD9375 only)
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_clgc.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 VSWR Setup (AD9375 only)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -205,4 +213,4 @@ VSWR Setup (AD9375 only)
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/myk_vswr.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600

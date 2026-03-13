@@ -13,7 +13,6 @@ Intro screen
 
 -
 
-
 |image1|
 
 -
@@ -28,7 +27,6 @@ Scope Screens
 ~~~~~~~~~~~~~
 
 -
-
 
 |image4|
 
@@ -49,18 +47,18 @@ Scope Screens
 |image8|
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/shots/intro_screen_w_m2k_selected.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/shots/intro_screen_w_m2k.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/shots/intro_screen.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/shots/scope.png
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/shots/scope2.png
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/shots/scope3.png
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/shots/scope4.png
-   :width: 200px
+   :width: 200
 .. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/shots/scope_boost.png
-   :width: 200px
+   :width: 200

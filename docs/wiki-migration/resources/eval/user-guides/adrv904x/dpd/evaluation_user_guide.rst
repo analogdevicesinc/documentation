@@ -10,25 +10,32 @@ CONFIGURING THE ADRV904x TRANSCEIVER
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adrv904x_profiles.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Locate the "is_TDD" in the profile json file at the location shown above and set the value of "**is_TDD**" setting to "**false**" as highlighted below to enable DPD to run in FDD mode. There are a total of 4 "is_TDD" switches in the profile json where this modification needs to be made.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adrv904x_tdd_setting.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Now, we proceed to programming ADRV904x with the profile UC69. Browse to the "**Use Case Selector**" page under ADRV9040 system explorer. Select the profile "**ADRV904x_UC69_400M_BYPASS_204C_8T8R2OR_LS**" as highlighted in the picture below. Click the "**Generate Profiles**" button followed by the "**Program**" button encircled in the picture below. On successful programming of the device, proceed to next step. Review the :ez:`ADRV904X Unboxing and Evaluation Guide <cfs-file/__key/communityserver-wikis-components-files/00-00-00-06-91/EVAL_2D00_ADRV904X_2D00_UG_2D00_2229_5F00_Preliminary_5F00_EZ.pdf>` in case of errors
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/programuc69.jpg
    :align: center
 
--  We can proceed to transmit the waveform now. Browse to the Tx Vectors page under ADRV9040->Runtime labeled 1 in the picture below. Ensure that TDD State Machine Enable is unchecked as shown in box labeled 2 in the picture below. Ensure that Tx Mode Select is set to SPI and Tx Trigger is set to Immediate Trigger as shown in box 3. We can proceed to load a waveform by clicking the Vectors button labeled 4 in the picture below.
+-  We can proceed to transmit the waveform now. Browse to the Tx Vectors page
+   under ADRV9040->Runtime labeled 1 in the picture below. Ensure that TDD State
+   Machine Enable is unchecked as shown in box labeled 2 in the picture below.
+   Ensure that Tx Mode Select is set to SPI and Tx Trigger is set to Immediate
+   Trigger as shown in box 3. We can proceed to load a waveform by clicking the
+   Vectors button labeled 4 in the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/transmit1.jpg
    :align: center
 
--  The Vectors tab enables the user to load a custom waveform as shown in the picture below. In this example, a 10x20MHz LTE signal sampled at 491.52MSPS matching the Tx rate of UC69 is loaded.
+-  The Vectors tab enables the user to load a custom waveform as shown in the
+   picture below. In this example, a 10x20MHz LTE signal sampled at 491.52MSPS
+   matching the Tx rate of UC69 is loaded.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/txvectors.jpg
    :align: center
@@ -37,31 +44,42 @@ CONFIGURING THE ADRV904x TRANSCEIVER
 
    -  Check the correct Enable box corresponding to the Tx channel used. In this example, we use Tx0
    -  Check the Observable button corresponding to the Tx channel used for testing. In this example, we map Tx0 to ORx0.
-   -  Select the appropriate waveform from the drop down list. Select the optimum attenuation and click on the "Play" button encircled below to play the waveform out of Koror. Please note that it can take several seconds to load the waveform on ADS10 and play the waveform. At this stage the external power amplifiers can be turned on to observe the spectral output
+   -  Select the appropriate waveform from the drop down list. Select the
+      optimum attenuation and click on the "Play" button encircled below to play
+      the waveform out of Koror. Please note that it can take several seconds to
+      load the waveform on ADS10 and play the waveform. At this stage the
+      external power amplifiers can be turned on to observe the spectral output
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/transmitfinal.jpg
    :align: center
 
 -  The user can now proceed to check the transmit output on the spectrum analyzer and calibrate the output of the power amplifier. Additionally, the user can verify the ORx data looks correct by capturing data on the ORx data as shown in the picture below.
--  NOTE: Please ensure that ORx peak power doesn't exceed -6dBFS (normalized peak magnitude of 0.5) to prevent ADC saturation. Since Koror uses direct sampling ADC on ORx, the signal + image power at ADC is 6dB higher than what the DPD sees.
+-  NOTE: Please ensure that ORx peak power doesn't exceed -6dBFS (normalized
+   peak magnitude of 0.5) to prevent ADC saturation. Since Koror uses direct
+   sampling ADC on ORx, the signal + image power at ADC is 6dB higher than what
+   the DPD sees.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/orxcapture.jpg
    :align: center
 
--  The ORx attenuation can be adjusted to optimum levels through the encircled ORx attenuation section in the ORx capture page
+-  The ORx attenuation can be adjusted to optimum levels through the encircled
+   ORx attenuation section in the ORx capture page
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/orxattenuation.jpg
    :align: center
 
--  Once the Transmit path and observation path signal levels have been calibrated, now we can proceed to configuring the DPD through the following steps
+-  Once the Transmit path and observation path signal levels have been
+   calibrated, now we can proceed to configuring the DPD through the following
+   steps
 
    -  ADI releases DPD Model Libraries as part of the `ADRV904x SW package <https://form.analog.com/form_pages/softwaremodules/SRF.aspx>`_ shown in the picture below. We can pick any DPD model from the library for simplicity. DPD Model optimization will be covered in the next few sections
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/dpdmodeldirectory.jpg
    :align: center
 
--  Load the DPD Model and click the Apply button as shown in the picture below under the ADRV9040->DPD tab. All the parameters must be populated automatically from the DPD model text file, if it is loaded successfully.
-
+-  Load the DPD Model and click the Apply button as shown in the picture below
+   under the ADRV9040->DPD tab. All the parameters must be populated
+   automatically from the DPD model text file, if it is loaded successfully.
 
 |resources-eval-user-guides-adrv904x-dpd-dpdmodelload.jpg|
 
@@ -71,11 +89,10 @@ CONFIGURING THE ADRV904x TRANSCEIVER
 
 -  Setup the DPD tracking configuration as shown in the picture below. Apply the configuration by clicking on the "**Apply Tracking Config**" button. Click the "**Reset DPD**" button to reset DPD to a known good state and then enable DPD tracking calibration by clicking on the "**Enable DPD Tracking Cal**" button.
 
-
 |resources-eval-user-guides-adrv904x-dpd-dpdtrackingconfig.jpg|
 
--  At this point we must see the ACLR converge on the spectrum analyzer and also see the DPD update count continuously incrementing.
-
+-  At this point we must see the ACLR converge on the spectrum analyzer and also
+   see the DPD update count continuously incrementing.
 
 |resources-eval-user-guides-adrv904x-dpd-dpdupdating.jpg|
 

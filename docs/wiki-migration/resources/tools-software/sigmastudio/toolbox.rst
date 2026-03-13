@@ -3,9 +3,12 @@ SigmaStudio Toolbox
 
 :doc:`Click here to return to the SigmaStudio and SigmaDSP Documentation top page. </wiki-migration/resources/tools-software/sigmastudio>`
 
-The Toolbox contains the building blocks for constructing a system design. The available blocks will depend on the DSP processor(s) used in the project.
+The Toolbox contains the building blocks for constructing a system design. The
+available blocks will depend on the DSP processor(s) used in the project.
 
-Click a category to access detailed algorithm information. In most cases you can also select an algorithm in SigmaStudio, then press F1, to directly access its Wiki page.
+Click a category to access detailed algorithm information. In most cases you can
+also select an algorithm in SigmaStudio, then press F1, to directly access its
+Wiki page.
 
 -  :doc:`System </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign>`
 -  :doc:`ADI Algorithms </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
@@ -15,7 +18,8 @@ Click a category to access detailed algorithm information. In most cases you can
 
 -  :doc:`Basic DSP </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-   -  Delay, DSP Functions, Arithmetic Operations, Gain Cells, Logic, Index Lookup Tables
+   -  Delay, DSP Functions, Arithmetic Operations, Gain Cells, Logic, Index
+      Lookup Tables
 
 -  :doc:`Counters </wiki-migration/resources/tools-software/sigmastudio/toolbox/counters>`
 -  :doc:`Dynamics Processors </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
@@ -24,7 +28,8 @@ Click a category to access detailed algorithm information. In most cases you can
 
 -  :doc:`Filters </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
-   -  FIR Filters, Adaptive FIR Filters, Second Order Filters, Parametric Filters, Crossover, Miscellaneous Filters
+   -  FIR Filters, Adaptive FIR Filters, Second Order Filters, Parametric
+      Filters, Crossover, Miscellaneous Filters
 
 -  :doc:`Frequency Domain </wiki-migration/resources/tools-software/sigmastudio/toolbox/frequencydomain>` (ADAU145x, ADSP-2158x, and ADSP-SC58x only)
 
@@ -36,7 +41,8 @@ Click a category to access detailed algorithm information. In most cases you can
 
 -  :doc:`Input / Output </wiki-migration/resources/tools-software/sigmastudio/toolbox/io>`
 
-   -  Input/Output from/to hardware: ASRC, SPDIF, GPIO, Serial Ports, Interface Write/Read
+   -  Input/Output from/to hardware: ASRC, SPDIF, GPIO, Serial Ports, Interface
+      Write/Read
 
 -  :doc:`Level Detectors / Lookup Tables </wiki-migration/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables>`
 
@@ -69,7 +75,8 @@ Click a category to access detailed algorithm information. In most cases you can
 
 -  :doc:`Sources </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources>`
 
-   -  Chimes, DC Sources, Sweeps, Switches, Voltage Controlled, Noise, WAV Player
+   -  Chimes, DC Sources, Sweeps, Switches, Voltage Controlled, Noise, WAV
+      Player
 
 -  :doc:`Volume Controls </wiki-migration/resources/tools-software/sigmastudio/toolbox/volumecontrols>`
 

@@ -8,7 +8,8 @@ AD243x High Power
 Evaluation boards
 -----------------
 
-The AD243x high power evaluation boards used in the demos are explained in the following subsections.
+The AD243x high power evaluation boards used in the demos are explained in the
+following subsections.
 
 EVAL-AD2435WA3LZ
 ~~~~~~~~~~~~~~~~
@@ -22,12 +23,11 @@ EVAL-AD2435WA3LZ
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2435wa3lz_board_new.png
    :align: center
-   :width: 900px
+   :width: 900
 
 .. container:: centeralign
 
    \ **Figure:** EVAL-AD2435WA3LZ board
-
 
 EVAL-AD2435WJ3LZ
 ~~~~~~~~~~~~~~~~
@@ -42,12 +42,11 @@ EVAL-AD2435WJ3LZ
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2435j3lz_new.png
    :align: center
-   :width: 900px
+   :width: 900
 
 .. container:: centeralign
 
    \ **Figure:** EVAL-AD2435WJ3LZ board
-
 
 Connections
 -----------
@@ -57,12 +56,12 @@ To run the sample demo, the following setup connections are to be made.
 Jumper setting
 ~~~~~~~~~~~~~~
 
-Jumper settings (default) for EVAL-AD2435WA3LZ (Main) and EVAL-AD2435WJ3LZ (Sub 0 and Sub 1) are as shown in table.
+Jumper settings (default) for EVAL-AD2435WA3LZ (Main) and EVAL-AD2435WJ3LZ (Sub
+0 and Sub 1) are as shown in table.
 
 .. container:: centeralign
 
    \ **Table:** Jumper Settings: High Power
-
 
 +------------+---------------------------------+--------------+---+------------+---------------------------------+-----------+-----------+
 | **Jumper** | **Purpose in EVAL-AD2435WA3LZ** | **Main**     |   | **Jumper** | **Purpose in EVAL-AD2435WJ3LZ** | **Sub 0** | **Sub 1** |
@@ -124,8 +123,8 @@ A2B Evaluation boards shall be connected in the following order
 
 .. note::
 
-   This connection is recommended for running the High-power sample demo using PC as host.
-
+   This connection is recommended for running the High-power sample demo using
+   PC as host.
 
    |image1|
 
@@ -133,14 +132,15 @@ A2B Evaluation boards shall be connected in the following order
 
    \ **Figure:** A2B Eval board connections: High Power
 
-
 USBi/Aardvark
 ~~~~~~~~~~~~~
 
 For Aardvark, download and install the “USB Drivers – Windows” from Total Phase website.
 
 -  Attach an USBi/Aardvark cable to the main board (SIGMA STUDIO PLUS) connector as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad243x-high-power>`. Other end of the cable should be connected to the PC.
--  This connection is required to override the schematic for the main node SigmaDSP ADAU1452. The connection is also used to directly control A2B system when PC is used as the target processor.
+-  This connection is required to override the schematic for the main node
+   SigmaDSP ADAU1452. The connection is also used to directly control A2B system
+   when PC is used as the target processor.
 
 **Audio In/out**
 
@@ -150,11 +150,10 @@ For Aardvark, download and install the “USB Drivers – Windows” from Total 
 .. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/ad2435_audio_config.png
    :alt: Sample Audio Configuration figure
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure:** Sample Audio Configuration figure
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/img_20241009_141342.jpg

@@ -9,9 +9,12 @@ This document presents the steps to setup an environment for using the :adi:`EVA
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_adas3022.png
    :alt: ced1z_adas3022.png
    :align: center
-   :width: 500px
+   :width: 500
 
-The CED1Z board is intended for use in evaluation, demonstration and development of systems using Analog Devices precision converters. It provides the necessary communications between the converter and the PC, programming or controlling the device, transmitting or receiving data over a USB link.
+The CED1Z board is intended for use in evaluation, demonstration and development
+of systems using Analog Devices precision converters. It provides the necessary
+communications between the converter and the PC, programming or controlling the
+device, transmitting or receiving data over a USB link.
 
 The :adi:`ADAS3023` is a complete 16-bit successive approximation based analog-to-digital data acquisition system. This device is capable of simultaneously sampling up to 500 kSPS for two channels, 250 kSPS for four channels, 167 kSPS for six channels, and 125 kSPS for eight channels manufactured on the Analog Devices, Inc., proprietary iCMOS® high voltage industrial process technology. The ADAS3023 integrates an 8-channel low leakage track and hold, a programmable gain instrumentation amplifier (PGIA) stage with a high common-mode rejection offering four differential input ranges, a precision low drift 4.096 V reference and buffer, and a 16-bit charge redistribution successive approximation register (SAR) analog-to-digital converter (ADC). The ADAS3023 can resolve differential input ranges of up to ±20.48 V when using ±15 V supplies.
 
@@ -26,7 +29,9 @@ More information
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Hardware Items
 --------------
@@ -36,7 +41,8 @@ Below is presented the list of required hardware items:
 -  Analog Devices :adi:`EVAL-CED Converter Evaluation and Development (CED) Board <EVAL-CED>`
 -  `Terasic USB Blaster <http://www.terasic.com.tw/>`_
 -  **EVAL-ADAS3023EDZ** evaluation board
--  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with
+   a minimum of 512MB of system memory
 
 Software Tools
 --------------
@@ -80,48 +86,56 @@ Create a folder called “\ **ADIEvalBoard**\ ” on your PC and extract the **a
 Install the USB-Blaster Device Driver
 -------------------------------------
 
-
-The USB Blaster is used to program the FPGA on the CED1Z board and also for data exchange between the system and a PC. To install the driver plug the Terasic USB Blaster into one of the PCs USB ports. Your Windows PC will find the new hardware and try to install the driver.
+The USB Blaster is used to program the FPGA on the CED1Z board and also for data
+exchange between the system and a PC. To install the driver plug the Terasic USB
+Blaster into one of the PCs USB ports. Your Windows PC will find the new
+hardware and try to install the driver.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image007.png
    :alt: image007.png
    :align: center
-   :width: 350px
+   :width: 350
 
 Since Windows cannot locate the driver for the device the automatic installation will fail and the driver has to be installed manually. In the *Device Manager* right click on the **USB-Blaster** device and select **Update Driver Software**.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image009.png
    :alt: image009.png
    :align: center
-   :width: 700px
+   :width: 700
 
 In the next dialog box select the option **Browse my computer for driver software**. A new dialog will open where it is possible to point to the driver’s location. Set the location to **altera\\11.0\\quartus\\drivers\\usb-blaster** and press **Next**.
 
 |image011.png| |image013.png|
 
-
 .. tip::
 
-   If Windows presents you with a message that the drivers have not passed Windows Logo testing, please click “\ Install this driver software anyway\ ”. Upon installation completion a message will be displayed to inform that the installation is finished.
-
+   If Windows presents you with a message that the drivers have not passed
+   Windows Logo testing, please click “\ Install this driver software anyway\ ”.
+   Upon installation completion a message will be displayed to inform that the
+   installation is finished.
 
 |image017.png|\ |image016.jpg|
 
 .. |image011.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image011.png
-   :width: 400px
+   :width: 400
 .. |image013.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image013.png
-   :width: 400px
+   :width: 400
 .. |image017.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image017.png
-   :width: 400px
+   :width: 400
 .. |image016.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image016.jpg
-   :width: 400px
-
-
+   :width: 400
 
 ADAS3023 Evaluation Project Overview
 ====================================
 
-The evaluation project contains all the source files needed to build a system that can be used to configure the ADAS3023 and capture data from it. The system consists of a Nios II softcore processor that is implemented in the FPGA found on the CED1Z board and a PC application. The softcore controls the communication with the Device Under Test (DUT) and the data capture process. The captured data is saved into the SRAM of the CED1Z board and aftwerwards it is read by the PC application and saved into a comma separated values (.csv) file that can be used for further data analysis.
+The evaluation project contains all the source files needed to build a system
+that can be used to configure the ADAS3023 and capture data from it. The system
+consists of a Nios II softcore processor that is implemented in the FPGA found
+on the CED1Z board and a PC application. The softcore controls the communication
+with the Device Under Test (DUT) and the data capture process. The captured data
+is saved into the SRAM of the CED1Z board and aftwerwards it is read by the PC
+application and saved into a comma separated values (.csv) file that can be used
+for further data analysis.
 
 FPGA Design
 -----------
@@ -149,12 +163,18 @@ ADAS3023_0                    0x000000c0 -
 **Table 1 System components**            
 ============================= ========== ===
 
-The Nios II processor contains a peripheral that implements the communication protocol with the DUT. The peripheral is divided into three logical modules: a module which implements the interface with the Avalon bus , a module which implements an Avalon master interface which is used to write data directly in the SRAM and a module which communicates with the evaluation board. Following is presented a block diagram of the HDL core and a description of the interface signals.
+The Nios II processor contains a peripheral that implements the communication
+protocol with the DUT. The peripheral is divided into three logical modules: a
+module which implements the interface with the Avalon bus , a module which
+implements an Avalon master interface which is used to write data directly in
+the SRAM and a module which communicates with the evaluation board. Following is
+presented a block diagram of the HDL core and a description of the interface
+signals.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/adas3023_core_pinout.png
    :alt: Avalon core pinout diagram
    :align: center
-   :width: 500px
+   :width: 500
 
 Table 2 describes the port definitions of the Avalon peripheral:
 
@@ -232,19 +252,21 @@ Table 3 describes the registers of the Avalon peripheral:
 ADAS3023 HDL driver
 -------------------
 
-In order to acquire data from the ADAS3023, several modules are implemented on the Evaluation Board FPGA.
+In order to acquire data from the ADAS3023, several modules are implemented on
+the Evaluation Board FPGA.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/adas3023edz_system.png
    :alt: Evaluation board driver overview
    :align: center
-   :width: 800px
+   :width: 800
 
-The ADAS3023 module is the actual driver of the ADAS3023 data acquisition system.
+The ADAS3023 module is the actual driver of the ADAS3023 data acquisition
+system.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/adas3023_pinout.png
    :alt: ADAS3023 module pinout
    :align: center
-   :width: 500px
+   :width: 500
 
 +------------------------------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------+
 | Port                                                 | Direction | Width | Description                                                                                           |
@@ -290,32 +312,48 @@ The ADAS3023 module is the actual driver of the ADAS3023 data acquisition system
 | **Table 3 Port description for the ADAS3023 module** |           |       |                                                                                                       |
 +------------------------------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------+
 
-The CED1Z_interface module is used to communicate with the CED1Z board. The PLL module is used to generate 100MHz clock signal from the 100MHz external clock signal available on the evaluation board.
+The CED1Z_interface module is used to communicate with the CED1Z board. The PLL
+module is used to generate 100MHz clock signal from the 100MHz external clock
+signal available on the evaluation board.
 
 Quick Evaluation
 ================
 
-The next sections of this document present all the steps needed to create a fully functional project that can be used for evaluating the operation of the ADI platform. It is possible to skip these steps and load in the FPGA an image that contains a fully functional system that can be used for platform evalution. The first step of the quick evaluation process is to program the FPGA with the image provided in the lab files. Before the image can be loaded the Quartus II Web Edition tool or the Quartus II Programmer must be installed on your computer. To load the FPGA image you must first make sure that the USB cable is not connected to the CED1Z board. Connect the USB Blaster to the J6 connector of the CED1Z and power the board. Run the program_fpga.bat batch file located in the ADIEvalBoard/FPGA folder.
+The next sections of this document present all the steps needed to create a
+fully functional project that can be used for evaluating the operation of the
+ADI platform. It is possible to skip these steps and load in the FPGA an image
+that contains a fully functional system that can be used for platform evalution.
+The first step of the quick evaluation process is to program the FPGA with the
+image provided in the lab files. Before the image can be loaded the Quartus II
+Web Edition tool or the Quartus II Programmer must be installed on your
+computer. To load the FPGA image you must first make sure that the USB cable is
+not connected to the CED1Z board. Connect the USB Blaster to the J6 connector of
+the CED1Z and power the board. Run the program_fpga.bat batch file located in
+the ADIEvalBoard/FPGA folder.
 
-The Evaluation Board design presented on this page is different than the default design loaded on the ADAS3023EDZ. In order to use the design from this page, the Evaluation Board FPGA must be reprogrammed. To reprogram the FPGA on the Evaluation board, the following steps must be followed, AFTER the CED1Z FPGA has been programmed using program_fpga.bat:
+The Evaluation Board design presented on this page is different than the default
+design loaded on the ADAS3023EDZ. In order to use the design from this page, the
+Evaluation Board FPGA must be reprogrammed. To reprogram the FPGA on the
+Evaluation board, the following steps must be followed, AFTER the CED1Z FPGA has
+been programmed using program_fpga.bat:
 
 -  1. Connect the USB-Blaster to the P2 port
 -  2. Start Quartus II, Start Tools ->Programmer
 -  3. Select Mode Active Serial Programming
 -  4. Press Add File and select EvalBoardFPGA/EvalBoardAdas3023.pof
 -  5. Check Program/Configure and Press Start.
--  6. After the programming ends, power off the CED1Z and reprogramm it using program_fpga.bat as described above.
+-  6. After the programming ends, power off the CED1Z and reprogramm it using
+   program_fpga.bat as described above.
 
 .. hint::
 
-   This is a one time operation, as the programming is done on a non volatile memory on the Evaluation Board.
-
+   This is a one time operation, as the programming is done on a non volatile
+   memory on the Evaluation Board.
 
 In order to acquire data, follow the instructions in the **Evaluation Project Data Acquisition** section.
 
 NIOS II Software Design
 =======================
-
 
 This section presents the steps for developing a software application that will run on the **CED1Z** system and will be used for controlling and monitoring the operation of the ADI evaluation board.
 
@@ -326,8 +364,10 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 
 .. tip::
 
-   NOTE: Windows 7 users will need to right-click and select Run as administrator. Another method is to right-click and select Properties and click on the Compatibility tab and select the Run This Program As An Administrator checkbox, which will make this a permanent change.
-
+   NOTE: Windows 7 users will need to right-click and select Run as
+   administrator. Another method is to right-click and select Properties and
+   click on the Compatibility tab and select the Run This Program As An
+   Administrator checkbox, which will make this a permanent change.
 
 1. Initialize Eclipse workspace
 -------------------------------
@@ -337,7 +377,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseworkspace.png
    :alt: eclipseworkspace.png
    :align: center
-   :width: 800px
+   :width: 800
 
 2. Create a new software project in the SBT
 -------------------------------------------
@@ -347,7 +387,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image025.png
    :alt: image025.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Click the **Browse** button in the **SOPC Information File Name** dialog box.
 -  Select the **uC.sopcinfo** file located in the **ADIEvalBoard/FPGA** directory.
@@ -358,9 +398,10 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseblankproject.png
    :alt: eclipseblankproject.png
    :align: center
-   :width: 600px
+   :width: 600
 
-The tool will create two new software project directories. Each Nios II application has 2 project directories in the Eclipse workspace.
+The tool will create two new software project directories. Each Nios II
+application has 2 project directories in the Eclipse workspace.
 
 -  The application software project itself - this where the application lives.
 -  The second is the **Board Support Package (BSP)** project associated with the main application software project. This project will build the system library drivers for the specific SOPC system. This project inherits the name from the main software project and appends “\ **\_bsp**\ ” to that.
@@ -368,9 +409,12 @@ The tool will create two new software project directories. Each Nios II applicat
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojects.png
    :alt: eclipseprojects.png
    :align: center
-   :width: 300px
+   :width: 300
 
-Since you chose the blank project template, there are no source files in the application project directory at this time. The BSP contains a directory of software drivers as well as a system.h header file, system initialization source code and other software infrastructure.
+Since you chose the blank project template, there are no source files in the
+application project directory at this time. The BSP contains a directory of
+software drivers as well as a system.h header file, system initialization source
+code and other software infrastructure.
 
 Configure the Board Support Package
 ===================================
@@ -381,7 +425,7 @@ Configure the Board Support Package
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspmenu.png
    :alt: eclipsebspmenu.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The software project provided in this lab does not make use of an operating system. All *stdout*, *stdin* and *stderr* messages will be directed to the *jtag_uart*.
 
@@ -393,9 +437,10 @@ The software project provided in this lab does not make use of an operating syst
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/cedzmainsettings.png
    :alt: cedzmainsettings.png
    :align: center
-   :width: 800px
+   :width: 800
 
-The memory used by the design is should be changed from OnChip ram to SRAM for the .text region.
+The memory used by the design is should be changed from OnChip ram to SRAM for
+the .text region.
 
 -  Select **Linker Script** tab.
 -  Change .text region **Linker Region Name** from **onchip_mem** to **sram**.
@@ -403,7 +448,7 @@ The memory used by the design is should be changed from OnChip ram to SRAM for t
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1zlinkersettings.png
    :alt: ced1zlinkersettings.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Select **File -> Save** to save the board support package configuration to the *settings.bsp* file.
 -  Click the **Generate** button to update the BSP.
@@ -425,7 +470,7 @@ In addition to the board support package settings configured using the **BSP Edi
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspproperties.png
    :alt: eclipsebspproperties.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Add source code to the project
 ==============================
@@ -437,7 +482,7 @@ In Windows Explorer locate the project directory which contains a directory call
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsecopy.png
    :alt: eclipsecopy.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  A dialog box will appear to select the desired operation. Select the option **Copy files and folders** and press **OK**.
 
@@ -445,7 +490,10 @@ In Windows Explorer locate the project directory which contains a directory call
    :alt: image039.png
    :align: center
 
--  This should cause the source files to be physically copied into the file system location of the software project directory and register these source files within the Eclipse workspace so that they appear in the Project Explorer file listing.
+-  This should cause the source files to be physically copied into the file
+   system location of the software project directory and register these source
+   files within the Eclipse workspace so that they appear in the Project
+   Explorer file listing.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseproject.png
    :alt: eclipseproject.png
@@ -464,12 +512,13 @@ Just as you configured the optimization level for the BSP project, you should se
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojproperties.png
    :alt: eclipseprojproperties.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Define Application Include Directories
 ======================================
 
-Application code can be conveniently organized in a directory structure. This section shows how to define these paths in the makefile.
+Application code can be conveniently organized in a directory structure. This
+section shows how to define these paths in the makefile.
 
 -  In the Eclipse environment double click on **my_include_paths.in** to open the file.
 -  Click the **Ctrl** and **A** keys to select all the text. Click the **Ctrl** and **C** keys to copy all the text.
@@ -477,7 +526,7 @@ Application code can be conveniently organized in a directory structure. This se
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseinclude.png
    :alt: eclipseinclude.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Double click on **Makefile** to open the file.
 -  If you see the message shown here about resources being out of sync, right click on the **Makefile** and select **Refresh**.
@@ -515,8 +564,10 @@ These 2 steps will compile and build the associated board support package, then 
 
 .. important::
 
-   In case an error appears at compile time with a description like : //section .rodata loaded at [00400164,00400477] overlaps section .text loaded at [00400164,004054d7] // the enable_alt_load_copy_exceptions option must be unchecked from BSP Editor -> Main -> Settings -> Advanced-> hal.linker
-
+   In case an error appears at compile time with a description like : //section
+   .rodata loaded at [00400164,00400477] overlaps section .text loaded at
+   [00400164,004054d7] // the enable_alt_load_copy_exceptions option must be
+   unchecked from BSP Editor -> Main -> Settings -> Advanced-> hal.linker
 
 2. Verify the Board Connection
 ------------------------------
@@ -538,7 +589,7 @@ The **CED1Z** hardware is designed with a *System ID* peripheral. This periphera
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/ignoreid.png
    :alt: ignoreid.png
    :align: center
-   :width: 800px
+   :width: 800
 
 3. Run the Software Project on the Target
 -----------------------------------------
@@ -551,37 +602,47 @@ To run the software project on the Nios II processor:
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsestartprogram.png
    :alt: eclipsestartprogram.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. hint::
 
-   The code size and start address might be different than the ones displayed in the above screenshot.
-
+   The code size and start address might be different than the ones displayed in
+   the above screenshot.
 
 .. |eclipsebuildbsp.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildbsp.png
-   :width: 400px
+   :width: 400
 .. |eclipsebuildproj.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildproj.png
-   :width: 400px
+   :width: 400
 .. |eclipserunconfig.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipserunconfig.png
-   :width: 400px
+   :width: 400
 .. |image059.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image059.png
-   :width: 400px
-
-
+   :width: 400
 
 Evaluation Project Data Acquisition
 ===================================
 
-After the FPGA is correctly programmed the data acquisition process can start by executing the data_acquisition.bat script.
+After the FPGA is correctly programmed the data acquisition process can start by
+executing the data_acquisition.bat script.
 
-The ADAS3023 can be configured by editing the data_capture.tcl script, and configuring each bit of the CONFIGURATION register. Each time the script is changed, the CED1Z must be powered off and reprogrammed. If the data is acquired in WARP mode, the first acquisition may not be correct.
+The ADAS3023 can be configured by editing the data_capture.tcl script, and
+configuring each bit of the CONFIGURATION register. Each time the script is
+changed, the CED1Z must be powered off and reprogrammed. If the data is acquired
+in WARP mode, the first acquisition may not be correct.
 
-If the resulting csv file is opened with Microsoft Excel, the data will be displayed on a single column if the sequencer is disabled or on 8 columns if the basic sequencer is enabled. Each column represents a channel. If the ADAS3023 is configured to acquire less than 8 channels the remaining channels will have a constant value. For example, in the below picture, the ADAS3023 was configure to acquire data on 4 differential channels, a sine signal was applied on the first channel and the rest were left floating. In this case, the first column can be plotted as a sine wave, the next 3 have some noise on them, and the last 4 have a constant value of 0.
+If the resulting csv file is opened with Microsoft Excel, the data will be
+displayed on a single column if the sequencer is disabled or on 8 columns if the
+basic sequencer is enabled. Each column represents a channel. If the ADAS3023 is
+configured to acquire less than 8 channels the remaining channels will have a
+constant value. For example, in the below picture, the ADAS3023 was configure to
+acquire data on 4 differential channels, a sine signal was applied on the first
+channel and the rest were left floating. In this case, the first column can be
+plotted as a sine wave, the next 3 have some noise on them, and the last 4 have
+a constant value of 0.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/4chan.png
    :alt: Plot of acquired data
    :align: center
-   :width: 800px
+   :width: 800
 
 More information
 ================

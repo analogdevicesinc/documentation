@@ -17,7 +17,10 @@ The polar plot module displays the input signal coefficient in a polar plot
 Usage
 -----
 
-Polar plot is a plot of magnitude versus phase angle in complex plane . (i.e. locus of magnitude traced by the phasor by varying frequency from zero to infinity). The polar plot can capture the system behavior over the entire frequency range in a single plot
+Polar plot is a plot of magnitude versus phase angle in complex plane . (i.e.
+locus of magnitude traced by the phasor by varying frequency from zero to
+infinity). The polar plot can capture the system behavior over the entire
+frequency range in a single plot
 
 Targets Supported
 -----------------
@@ -27,7 +30,6 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
 ========= ========== ================ =============
 PolarPlot NA         Block            NA
 ========= ========== ================ =============
-
 
 | ===== Pins =====
 
@@ -39,7 +41,6 @@ Name            Type  Description
 =============== ===== =============
 Address Pointer Audio Input Address
 =============== ===== =============
-
 
 | ===== Configurable Parameters =====
 

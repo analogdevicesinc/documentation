@@ -4,7 +4,8 @@ CAN Bus Data Transaction
 Introduction
 ------------
 
-This document describes how to do a data transaction test via CAN bus on SC5xx EZ-Board. Take ADSP SC589-EZKIT as an example.
+This document describes how to do a data transaction test via CAN bus on SC5xx
+EZ-Board. Take ADSP SC589-EZKIT as an example.
 
 Hardware Setup
 --------------
@@ -15,9 +16,11 @@ Two ADSP-SC5xx EZ-Boards:
 -  ADSP-SC584 Ezkit v1.0 and above, or,
 -  ADSP-SC573 Ezkit v1.2 (BOM 1.8) and above
 
-An RJ-11 crossover cable Connect the RJ-11 port labelled "CAN0/HU CONTROL" or "ACN1/ENGINE"on each board together with the crossover cable.
+An RJ-11 crossover cable Connect the RJ-11 port labelled "CAN0/HU CONTROL" or
+"ACN1/ENGINE"on each board together with the crossover cable.
 
-Connect a serial cable for each of the board to PC so we have a serial console for each of the boards.
+Connect a serial cable for each of the board to PC so we have a serial console
+for each of the boards.
 
 Software Setup
 --------------
@@ -41,7 +44,9 @@ Run **bitbkae linux-adi -c menuconfig** and configure the kernel as follows:
        [*] SPI support  --->
            <*>   SPI controller v3 for ADI
 
-For ADSP-SC573 Ezkit, Users should additionally disable the MMC support from Linux Kernel menuconfig due to pin conflict. Please refer to Mobile Storage Interface for MMC/SD.
+For ADSP-SC573 Ezkit, Users should additionally disable the MMC support from
+Linux Kernel menuconfig due to pin conflict. Please refer to Mobile Storage
+Interface for MMC/SD.
 
 ::
 
@@ -54,7 +59,8 @@ For ADSP-SC573 Ezkit, Users should additionally disable the MMC support from L
 Configure Device Tree
 ~~~~~~~~~~~~~~~~~~~~~
 
-Need to disable the spidev from the device tree file due to SPI chip select line conflict. Please refer to SPI Driver;
+Need to disable the spidev from the device tree file due to SPI chip select line
+conflict. Please refer to SPI Driver;
 
 For ADSP-SC573 Ezkit:
 
@@ -134,7 +140,8 @@ Run the data sending program on the other board:
    root:/> cansend can0 1F334455#1122334455667788
    root:/> cansend can0 1F334455#R
 
-You should now see the transmitted data printing on the console of the receiving board:
+You should now see the transmitted data printing on the console of the receiving
+board:
 
 ::
 

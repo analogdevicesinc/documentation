@@ -9,9 +9,13 @@ Down Sampling
 Description
 -----------
 
-The Down Sampling module is mainly used to get the input samples to a lower the process and sampling rate. For example the bass portion of the audio need not to be processed at higher sampling rates as the frequencies associated with bass are low.
+The Down Sampling module is mainly used to get the input samples to a lower the
+process and sampling rate. For example the bass portion of the audio need not to
+be processed at higher sampling rates as the frequencies associated with bass
+are low.
 
-This module takes the DownSample factor from the GUI parameters and down-samples the input accordingly.
+This module takes the DownSample factor from the GUI parameters and down-samples
+the input accordingly.
 
 Targets Supported
 -----------------
@@ -21,7 +25,6 @@ Name         ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ============ ========== ================ ============= ================
 Down-Sampler B          B                S             B
 ============ ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -42,7 +45,6 @@ Name   Type  Description
 ====== ===== ===================
 Output Audio Down sampled output
 ====== ===== ===================
-
 
 | ===== Configurable Parameters =====
 

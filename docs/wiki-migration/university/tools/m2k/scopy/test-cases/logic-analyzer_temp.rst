@@ -4,9 +4,12 @@ Logic Analyzer - Test Case
 Initial Setup
 -------------
 
-In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
+In order to proceed through the test case, first of all delete the Scopy \*.ini
+file (saves previous settings made in Scopy tool) from the following path on
+Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
-Open the Logic Analyzer instrument. The interface should look like the picture below:
+Open the Logic Analyzer instrument. The interface should look like the picture
+below:
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la-initialsetup.png
 
@@ -17,8 +20,6 @@ Test Title
 
 A. Individual Pin Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -98,12 +99,8 @@ A. Individual Pin Operation
    |                                                      | 12. Repeat steps 1 to 7 using DIO1 to DIO15 of both pattern generator and logic analyzer                                                                                                                                                                                                                                 |                                 | The results should all be the same                                                                                                                                                                       |
    +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 B. Group Operation
 ~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -148,12 +145,8 @@ B. Group Operation
    |               | 17. Repeat step 14 to 16 for DIO1. . . .DIO15                                                                                                                                                                                                                                                                                                            |                       | The result should be the same                                                                                                           |
    +---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 C. Additional Features
 ~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -195,285 +188,283 @@ C. Additional Features
    |                                                 | 7. Go through every decoder and each Group by option it has and press the Single button                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | |image138|      | When pressing Single button it should only reset the filters and Search. Make sure that the table is correctly organized each time                                                                             |
    +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 Test Results will be recorded in the following document: `Logic Analyzer Test Case <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/logic_analyzer_-_test_case.xlsx>`_
 
 **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0a.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1a.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.2a.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2a.png
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3a.png
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4.0a.png
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4.1a.png
-   :width: 200px
+   :width: 200
 .. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5a.png
-   :width: 200px
+   :width: 200
 .. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6a.png
-   :width: 200px
+   :width: 200
 .. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0b.png
-   :width: 200px
+   :width: 200
 .. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1b.png
-   :width: 200px
+   :width: 200
 .. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2b.png
-   :width: 200px
+   :width: 200
 .. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3b.png
-   :width: 200px
+   :width: 200
 .. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4b.png
-   :width: 200px
+   :width: 200
 .. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5b.png
-   :width: 200px
+   :width: 200
 .. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6b.png
-   :width: 200px
+   :width: 200
 .. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step7b.png
-   :width: 200px
+   :width: 200
 .. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_exttrig_source.png
-   :width: 200px
+   :width: 200
 .. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_settings.png
-   :width: 200px
+   :width: 200
 .. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_waiting.png
-   :width: 200px
+   :width: 200
 .. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/logic_waiting.png
-   :width: 200px
+   :width: 200
 .. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0b.png
-   :width: 200px
+   :width: 200
 .. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1b.png
-   :width: 200px
+   :width: 200
 .. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2b.png
-   :width: 200px
+   :width: 200
 .. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3e.png
-   :width: 200px
+   :width: 200
 .. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4e.png
-   :width: 200px
+   :width: 200
 .. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5e.png
-   :width: 200px
+   :width: 200
 .. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6e.png
-   :width: 200px
+   :width: 200
 .. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0c.png
-   :width: 200px
+   :width: 200
 .. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2c.png
-   :width: 200px
+   :width: 200
 .. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3c.png
-   :width: 200px
+   :width: 200
 .. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4c.png
-   :width: 200px
+   :width: 200
 .. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5c.png
-   :width: 200px
+   :width: 200
 .. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step7.0c.png
-   :width: 200px
+   :width: 200
 .. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step8c.png
-   :width: 200px
+   :width: 200
 .. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step10c.png
-   :width: 200px
+   :width: 200
 .. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0a.png
-   :width: 200px
+   :width: 200
 .. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1a.png
-   :width: 200px
+   :width: 200
 .. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.2a.png
-   :width: 200px
+   :width: 200
 .. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2a.png
-   :width: 200px
+   :width: 200
 .. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3a.png
-   :width: 200px
+   :width: 200
 .. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4.0a.png
-   :width: 200px
+   :width: 200
 .. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4.1a.png
-   :width: 200px
+   :width: 200
 .. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5a.png
-   :width: 200px
+   :width: 200
 .. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6a.png
-   :width: 200px
+   :width: 200
 .. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0b.png
-   :width: 200px
+   :width: 200
 .. |image47| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1b.png
-   :width: 200px
+   :width: 200
 .. |image48| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2b.png
-   :width: 200px
+   :width: 200
 .. |image49| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3b.png
-   :width: 200px
+   :width: 200
 .. |image50| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4b.png
-   :width: 200px
+   :width: 200
 .. |image51| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5b.png
-   :width: 200px
+   :width: 200
 .. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6b.png
-   :width: 200px
+   :width: 200
 .. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step7b.png
-   :width: 200px
+   :width: 200
 .. |image54| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_exttrig_source.png
-   :width: 200px
+   :width: 200
 .. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_settings.png
-   :width: 200px
+   :width: 200
 .. |image56| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_waiting.png
-   :width: 200px
+   :width: 200
 .. |image57| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/logic_waiting.png
-   :width: 200px
+   :width: 200
 .. |image58| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0b.png
-   :width: 200px
+   :width: 200
 .. |image59| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1b.png
-   :width: 200px
+   :width: 200
 .. |image60| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2b.png
-   :width: 200px
+   :width: 200
 .. |image61| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3e.png
-   :width: 200px
+   :width: 200
 .. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4e.png
-   :width: 200px
+   :width: 200
 .. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5e.png
-   :width: 200px
+   :width: 200
 .. |image64| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6e.png
-   :width: 200px
+   :width: 200
 .. |image65| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0c.png
-   :width: 200px
+   :width: 200
 .. |image66| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2c.png
-   :width: 200px
+   :width: 200
 .. |image67| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3c.png
-   :width: 200px
+   :width: 200
 .. |image68| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4c.png
-   :width: 200px
+   :width: 200
 .. |image69| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5c.png
-   :width: 200px
+   :width: 200
 .. |image70| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step7.0c.png
-   :width: 200px
+   :width: 200
 .. |image71| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step8c.png
-   :width: 200px
+   :width: 200
 .. |image72| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step10c.png
-   :width: 200px
+   :width: 200
 .. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step1.0a.png
-   :width: 200px
+   :width: 200
 .. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step1.1a.png
-   :width: 200px
+   :width: 200
 .. |image75| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step2a.png
-   :width: 200px
+   :width: 200
 .. |image76| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step3.0a.png
-   :width: 200px
+   :width: 200
 .. |image77| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step3.1a.png
-   :width: 200px
+   :width: 200
 .. |image78| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step4a.png
-   :width: 200px
+   :width: 200
 .. |image79| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step5.0a.png
-   :width: 200px
+   :width: 200
 .. |image80| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step5.1a.png
-   :width: 200px
+   :width: 200
 .. |image81| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step6a.png
-   :width: 200px
+   :width: 200
 .. |image82| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step7a.png
-   :width: 200px
+   :width: 200
 .. |image83| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step9a.png
-   :width: 200px
+   :width: 200
 .. |image84| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step9.1a.png
-   :width: 200px
+   :width: 200
 .. |image85| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step10a.png
-   :width: 200px
+   :width: 200
 .. |image86| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step11a.png
-   :width: 200px
+   :width: 200
 .. |image87| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step14.1a.png
-   :width: 200px
+   :width: 200
 .. |image88| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step15a.png
-   :width: 200px
+   :width: 200
 .. |image89| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step1.0a.png
-   :width: 200px
+   :width: 200
 .. |image90| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step1.1a.png
-   :width: 200px
+   :width: 200
 .. |image91| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step2a.png
-   :width: 200px
+   :width: 200
 .. |image92| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step3.0a.png
-   :width: 200px
+   :width: 200
 .. |image93| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step3.1a.png
-   :width: 200px
+   :width: 200
 .. |image94| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step4a.png
-   :width: 200px
+   :width: 200
 .. |image95| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step5.0a.png
-   :width: 200px
+   :width: 200
 .. |image96| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step5.1a.png
-   :width: 200px
+   :width: 200
 .. |image97| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step6a.png
-   :width: 200px
+   :width: 200
 .. |image98| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step7a.png
-   :width: 200px
+   :width: 200
 .. |image99| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step9a.png
-   :width: 200px
+   :width: 200
 .. |image100| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step9.1a.png
-   :width: 200px
+   :width: 200
 .. |image101| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step10a.png
-   :width: 200px
+   :width: 200
 .. |image102| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step11a.png
-   :width: 200px
+   :width: 200
 .. |image103| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step14.1a.png
-   :width: 200px
+   :width: 200
 .. |image104| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step15a.png
-   :width: 200px
+   :width: 200
 .. |image105| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1d.png
-   :width: 200px
+   :width: 200
 .. |image106| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2d.png
-   :width: 200px
+   :width: 200
 .. |image107| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3d.png
-   :width: 200px
+   :width: 200
 .. |image108| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6d.png
-   :width: 200px
+   :width: 200
 .. |image109| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step1b.png
-   :width: 200px
+   :width: 200
 .. |image110| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step2b.png
-   :width: 200px
+   :width: 200
 .. |image111| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step3b.png
-   :width: 200px
+   :width: 200
 .. |image112| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step4b.png
-   :width: 200px
+   :width: 200
 .. |image113| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_print.png
-   :width: 200px
+   :width: 200
 .. |image114| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_plotscreenshot.png
-   :width: 200px
+   :width: 200
 .. |image115| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step1.png
-   :width: 200px
+   :width: 200
 .. |image116| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step2.png
-   :width: 200px
+   :width: 200
 .. |image117| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step3.png
-   :width: 200px
+   :width: 200
 .. |image118| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step4.png
-   :width: 200px
+   :width: 200
 .. |image119| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step5.png
-   :width: 200px
+   :width: 200
 .. |image120| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step6.png
-   :width: 200px
+   :width: 200
 .. |image121| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step7.png
-   :width: 200px
+   :width: 200
 .. |image122| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1d.png
-   :width: 200px
+   :width: 200
 .. |image123| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2d.png
-   :width: 200px
+   :width: 200
 .. |image124| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3d.png
-   :width: 200px
+   :width: 200
 .. |image125| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6d.png
-   :width: 200px
+   :width: 200
 .. |image126| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step1b.png
-   :width: 200px
+   :width: 200
 .. |image127| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step2b.png
-   :width: 200px
+   :width: 200
 .. |image128| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step3b.png
-   :width: 200px
+   :width: 200
 .. |image129| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step4b.png
-   :width: 200px
+   :width: 200
 .. |image130| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_print.png
-   :width: 200px
+   :width: 200
 .. |image131| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_plotscreenshot.png
-   :width: 200px
+   :width: 200
 .. |image132| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step1.png
-   :width: 200px
+   :width: 200
 .. |image133| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step2.png
-   :width: 200px
+   :width: 200
 .. |image134| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step3.png
-   :width: 200px
+   :width: 200
 .. |image135| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step4.png
-   :width: 200px
+   :width: 200
 .. |image136| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step5.png
-   :width: 200px
+   :width: 200
 .. |image137| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step6.png
-   :width: 200px
+   :width: 200
 .. |image138| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step7.png
-   :width: 200px
+   :width: 200

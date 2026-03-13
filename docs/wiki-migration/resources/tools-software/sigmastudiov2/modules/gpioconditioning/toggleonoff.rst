@@ -9,12 +9,20 @@ Toggle On-Off
 Description
 -----------
 
-The Toggle On/Off cell toggles its output when it detects a rising edge on its input. The amplitude of the output signal can be set using the drop-down control in the cell's GUI.
+The Toggle On/Off cell toggles its output when it detects a rising edge on its
+input. The amplitude of the output signal can be set using the drop-down control
+in the cell's GUI.
 
 Usage
 -----
 
-The toggle on/off cell detects rising edges on its input and toggles its output each time another rising edge is encountered. In other words, if the output is zero and a rising edge appears on the input, the output will change to one. Conversely, if the output is one and a rising edge appears on the input, the output will change to zero. The bit to be toggled at the output is chosen using the drop down in the module UI. The other bits (other than the selected one) of the output remain zero.
+The toggle on/off cell detects rising edges on its input and toggles its output
+each time another rising edge is encountered. In other words, if the output is
+zero and a rising edge appears on the input, the output will change to one.
+Conversely, if the output is one and a rising edge appears on the input, the
+output will change to zero. The bit to be toggled at the output is chosen using
+the drop down in the module UI. The other bits (other than the selected one) of
+the output remain zero.
 
 Targets Supported
 -----------------

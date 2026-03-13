@@ -7,7 +7,7 @@ OVERVIEW
 The :adi:`ADIS16240` iSensor® is a complete vibration sensing system that combines triaxial acceleration sensing with advanced time domain and frequency domain signal processing. Time domain signal processing includes a programmable decimation filter and selectable windowing function. The electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-spi-conn.png
-   :width: 500px
+   :width: 500
 
 ADIS16240/PCB BREAKOUT BOARD
 ----------------------------
@@ -31,7 +31,8 @@ SYSTEM REQUIREMENTS
 
 Windows XP, Vista, 7 (32-bit systems only)
 
-NOTE: All the required files are contained in the .Cab file and deployed during software package install.
+NOTE: All the required files are contained in the .Cab file and deployed during
+software package install.
 
 PHYSICAL SETUP
 --------------
@@ -43,7 +44,7 @@ The :adi:`ADIS16240/PCBZ <en/mems-sensors/mems-accelerometers/adis16240/products
 **NOTE:** Do not plug the :adi:`ADISUSB` into the USB cable at this stage of the setup. Wait until the software installation is complete.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusbz.png
-   :width: 400px
+   :width: 400
 
 Step #1
 ~~~~~~~
@@ -51,7 +52,7 @@ Step #1
 The connection to the :adi:`ADIS16240/PCBZ <en/mems-sensors/mems-accelerometers/adis16240/products/EVAL-ADIS16240/eb.html>` is simple using J1 and a 12 pin cable included with the :adi:`ADISUSB`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-pcbz.png
-   :width: 500px
+   :width: 500
 
 **WARNING:** Make sure that the connector cable going from J1 on the :adi:`ADIS16240/PCBZ <en/mems-sensors/mems-accelerometers/adis16240/products/EVAL-ADIS16240/eb.html>` is properly aligned to the J1 connector on the :adi:`ADISUSB`. The 12 pin cable is included with the :adi:`ADISUSB`.
 
@@ -68,12 +69,12 @@ Step #3
 The following picture shows JP1 in the **+3.3V** position (factory-default). That is the correct JP1 jumper setting on the :adi:`ADISUSB`) required for the :adi:`ADIS16240/PCBZ <en/mems-sensors/mems-accelerometers/adis16240/products/EVAL-ADIS16240/eb.html>`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusbz-3.3v-setting.png
-   :width: 600px
+   :width: 600
 
 **NOTE:** If JP1 is left on **+5v** the software will look like the following picture. Move JP1 to the\ **+3.3V** setting to correct the problem.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-main-screen-voltage-error.png
-   :width: 800px
+   :width: 800
 
 ADIS16240 Evaluation SOFTWARE
 -----------------------------
@@ -81,17 +82,19 @@ ADIS16240 Evaluation SOFTWARE
 :adi:`Click here to download the ADIS16240 Evaluation Software <static/imported-files/eval_boards/240ES.zip>` to a personal computer, which enables PC-based evaluation of the :adi:`ADIS16240` on an :adi:`ADISUSB` evaluation system. The download file will contain three separate files: The CAB file (ADIS16240_Rev_1.cab), the setup file (setup.exe), and the setup list. Copy these files to a convenient folder for running the application from.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-zipfile-download.png
-   :width: 800px
+   :width: 800
 
 Navigate to the folder where the files were saved and double click the setup.exe file. The following pictures are a guide for the :adi:`ADIS16240` Evaluation Software install. The **Welcome** screen will appear click **OK** to continue.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-welcome.png
-   :width: 500px
+   :width: 500
 
-Please choose a directory for the software application or use the default settings (recommended) and click the computer icon button to go to the next step.
+Please choose a directory for the software application or use the default
+settings (recommended) and click the computer icon button to go to the next
+step.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-install.png
-   :width: 600px
+   :width: 600
 
 Choose a program group or use the default settings (recommended) and click **Continue**. The last picture confirms completion click **OK** to finish.
 
@@ -117,7 +120,8 @@ Once the :adi:`ADIS16240` Software starts-up, the Main Window will appear and lo
 
 |image12| |image13|
 
-The orange box identifies the drop-down menus, which provide a number of useful features.
+The orange box identifies the drop-down menus, which provide a number of useful
+features.
 
 The **Registers** option provides a listing of user-configurable registers in the :adi:`ADIS16240` and also provides read/write access to each one of these registers.
 
@@ -125,7 +129,8 @@ The **Datalog** option provides the core data collection function.
 
 The purple box identifies the output registers, which update, real-time, after pressing the **Read** button (see the red box for the location of the **Read** button).
 
-The yellow box identifies the waveform recorder window. The window contains the accelerometer outputs.
+The yellow box identifies the waveform recorder window. The window contains the
+accelerometer outputs.
 
 Register Access
 ~~~~~~~~~~~~~~~
@@ -133,18 +138,23 @@ Register Access
 The purpose of the **Register Access** window is to provide both read and write access to the user registers in the :adi:`ADIS16240`. The following picture shows the appearance of this window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-register.png
-   :width: 600px
+   :width: 600
 
-The color coded boxes illustrate the different functions that this window provides.
+The color coded boxes illustrate the different functions that this window
+provides.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-register-defined.png
-   :width: 600px
+   :width: 600
 
 The purple box identifies the register category. In addition to the Control/Status, this drop-down control offers access to **Output** and **Calibration** registers.
 
-The red box identifies all of the registers that are in the current category. Click on the register name to select a register for individual read/write access.
+The red box identifies all of the registers that are in the current category.
+Click on the register name to select a register for individual read/write
+access.
 
-The green box identifies the read/write control options for the current register selection. Use the hexadecimal format when writing commands to a particular register.
+The green box identifies the read/write control options for the current register
+selection. Use the hexadecimal format when writing commands to a particular
+register.
 
 The yellow box updates all the registers in the current category.
 
@@ -159,11 +169,24 @@ The Data Capture function supports synchronous data acquisition, based on the da
 
 |image14| |image15|
 
-The red box identifies all of the registers that are eligible for inclusion in the next acquisition process. Click on each box to include a register in the next data acquisition sequence. The box will have a check mark when it has been selected.
+The red box identifies all of the registers that are eligible for inclusion in
+the next acquisition process. Click on each box to include a register in the
+next data acquisition sequence. The box will have a check mark when it has been
+selected.
 
-The green box identifies the configuration box for the name and location of the data storage file.
+The green box identifies the configuration box for the name and location of the
+data storage file.
 
-The yellow boxes identify a number of configuration options for the data acquisition process. The Samples per File is a user input for the total number of samples in a data record. Note that all selected registers will have this number of samples in the data record file, after the acquisition process completes. After each update to the Record Length box, the software calculates then displays the total Capture Time. The Numeric Data Only…No File Header option allows the user to add or remove the header in the data storage file. The Record as LSB's...No Scaling causes the software to convert the decimal, twos complement number into its representative value. For example, when enabling No Scale LSB's Only, the gyroscope output will be in units of degrees/second.
+The yellow boxes identify a number of configuration options for the data
+acquisition process. The Samples per File is a user input for the total number
+of samples in a data record. Note that all selected registers will have this
+number of samples in the data record file, after the acquisition process
+completes. After each update to the Record Length box, the software calculates
+then displays the total Capture Time. The Numeric Data Only…No File Header
+option allows the user to add or remove the header in the data storage file. The
+Record as LSB's...No Scaling causes the software to convert the decimal, twos
+complement number into its representative value. For example, when enabling No
+Scale LSB's Only, the gyroscope output will be in units of degrees/second.
 
 EXAMPLE EXERCISES
 ~~~~~~~~~~~~~~~~~
@@ -171,32 +194,32 @@ EXAMPLE EXERCISES
 This section currently has no :adi:`ADIS16240`-specific content, but the :doc:`ADIS16448 Evaluation on the EVAL-ADIS Wiki Site </wiki-migration/resources/eval/user-guides/inertial-mems/imu/adis16448>` has some good examples to start with.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/220-pcbz-dimensions.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-pcbz-schematic.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-package-drawing.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-all-parts.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-mounted-on-adisusb.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-program-group.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-completed.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-foundnewhardware.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-install.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-wizard.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-complete-wizard.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-main-screen.png
-   :width: 800px
+   :width: 800
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-main-screen-defined.png
-   :width: 800px
+   :width: 800
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-datalog.png
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/240-datalog-defined.png
-   :width: 400px
+   :width: 400

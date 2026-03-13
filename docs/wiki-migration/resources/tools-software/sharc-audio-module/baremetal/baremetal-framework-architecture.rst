@@ -4,7 +4,9 @@ Baremetal Framework Project Structure
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>uaer53acoco
    :alt: youtube>uAER53AcOco
 
-There are three distinct Project folders which each correspond to the code running on a distinct processor core of the ADSP-SC589. Furthermore, there are some folders which contain code that is shared between the three cores.
+There are three distinct Project folders which each correspond to the code
+running on a distinct processor core of the ADSP-SC589. Furthermore, there are
+some folders which contain code that is shared between the three cores.
 
 -  ``sam_baremetal_framework_core0`` - Code for ARM code
 -  ``sam_baremetal_framework_core1`` - Code for SHARC Core 1
@@ -36,13 +38,16 @@ SHARC Core 1 is responsible for the following:
 -  Setting up the interrupts needed to let core 2 know audio data is ready
 -  Calling the user’s audio callback function
 
-The framework can be configured for single-core processing or dual-core processing.
+The framework can be configured for single-core processing or dual-core
+processing.
 
-When the framework is configured for single-core processing, the processing flow works as such:
+When the framework is configured for single-core processing, the processing flow
+works as such:
 
 ``ADC`` -> ``SHARC Core 1`` -> ``DACs``
 
-And when the framework is configure for dual-core processing, SHARC Core 1 still manages the flow of audio data to and from the ADCs and DACs.
+And when the framework is configure for dual-core processing, SHARC Core 1 still
+manages the flow of audio data to and from the ADCs and DACs.
 
 ``ADC`` -> ``SHARC Core 1 [processing]`` -> ``SHARC Core 2 [processing]`` -> ``SHARC Core 1 [final data transfer]`` -> ``DACs``
 
@@ -63,9 +68,11 @@ All three projects have a few key folders:
 -  ``common/`` - files that are shared between all three cores
 -  ``faust/`` - if you have generated source files using the Faust synthesis tool, place these files here
 
-Each core also has one or more callbacks which is where your custom audio processing (or MIDI processing) resides. These callbacks have been architected such that all of the underlying mechanics of the audio movement and event generation have been abstracted so they are hardware platform agnostic.
+Each core also has one or more callbacks which is where your custom audio
+processing (or MIDI processing) resides. These callbacks have been architected
+such that all of the underlying mechanics of the audio movement and event
+generation have been abstracted so they are hardware platform agnostic.
 
 -  ``Callback_Audio_Processing.cpp`` - add your C or C++ audio processing functions to this file
 -  ``Callback_MIDI_Message.cpp`` - add any MIDI processing functions to this file
 -  ``Callback_Pushbuttons.cpp`` - add any code to respond to push button events to this file
-

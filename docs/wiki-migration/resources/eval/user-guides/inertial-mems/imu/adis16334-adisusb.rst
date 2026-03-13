@@ -7,7 +7,7 @@ OVERVIEW
 The :adi:`ADIS16334` is a low-profile, high-performance IMU that uses a serial peripheral interface for data communications. This interface enables direct connection with a large variety of embedded processor products. This electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16334-uc-hook-up.png
-   :width: 400px
+   :width: 400
 
 ADIS16334/PCB BREAKOUT BOARD
 ----------------------------
@@ -31,7 +31,8 @@ SYSTEM REQUIREMENTS
 
 Windows XP, Vista, 7 (32-bit systems only)
 
-NOTE: All the required files are contained in the .Cab file and deployed during software package install.
+NOTE: All the required files are contained in the .Cab file and deployed during
+software package install.
 
 PHYSICAL SETUP
 --------------
@@ -74,7 +75,7 @@ Secure the :adi:`ADIS16334AMLZ <ADIS16334>` body, to a system frame using (4) M2
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-334-secured.png
    :align: left
-   :width: 400px
+   :width: 400
 
 Step #5
 ~~~~~~~
@@ -86,7 +87,7 @@ The following picture (left side) shows JP1 in the **+3.3V** position (factory-d
 **NOTE:** If JP1 is left on **+3.3V**, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_6dof-error.png
-   :width: 800px
+   :width: 800
 
 IMU_6DOF Six Degrees of Freedom Demonstration SOFTWARE
 ------------------------------------------------------
@@ -94,17 +95,19 @@ IMU_6DOF Six Degrees of Freedom Demonstration SOFTWARE
 :adi:`Click here to download the IMU-6DOF Six Degrees of Freedom Software <static/imported-files/eval_boards/IMU_6DOF_2.zip>` to a personal computer, which enables PC-based evaluation of the :adi:`ADIS16334` on an :adi:`ADISUSB` evaluation system. The download file will contain three separate files: The CAB file (IMU_6DOF.cab), the setup file (setup.exe) and the setup list. Copy these files to a convenient folder for running the application from.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_6dof-software-zip.png
-   :width: 800px
+   :width: 800
 
 Navigate to the folder where the files were saved and double click the setup.exe file. The following pictures are a guide for the IMU_6DOF software install. The **Welcome** screen will appear click **OK** to continue.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_6dof-v2welcome.png
-   :width: 600px
+   :width: 600
 
-Please choose a directory for the software application or use the default settings (recommended) and click the computer icon button to go to the next step.
+Please choose a directory for the software application or use the default
+settings (recommended) and click the computer icon button to go to the next
+step.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_6dof-v2install.png
-   :width: 600px
+   :width: 600
 
 Choose a program group or use the default settings (recommended) and click **Continue**. The last picture confirms completion click **OK** to finish.
 
@@ -131,10 +134,12 @@ After the USB driver installation is complete, connect the :adi:`ADISUSB` USB co
 Main Window
 ~~~~~~~~~~~
 
-Once the IMU_6DOF Six Degrees of Freedom Demonstration Software starts-up, the Main Window will appear and look like the following picture (which has highlights to support additional descriptions, see below the graphic).
+Once the IMU_6DOF Six Degrees of Freedom Demonstration Software starts-up, the
+Main Window will appear and look like the following picture (which has
+highlights to support additional descriptions, see below the graphic).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-334-main-defined.png
-   :width: 800px
+   :width: 800
 
 The orange box identifies the drop-down menus, which provide a number of useful features. The **Devices** option provides a list of products for :adi:`ADIS16334` Evaluation, click on **Devices** and then select :adi:`ADIS16334`. The green box shows the current device selection, which in this case, identifies the :adi:`ADIS16334` as the current selection.
 
@@ -144,7 +149,10 @@ The **Datalog** option provides the core data collection function.
 
 The purple box identifies the output registers, which update, real-time, after pressing the **Read** button (see the red box for the location of the **Read** button).
 
-The yellow box identifies the two waveform recorder windows. The top window contains the three gyroscope outputs. The bottom window contains the three accelerometer responses. Also, each waveform matches the color of its register (see register titles in the purple box).
+The yellow box identifies the two waveform recorder windows. The top window
+contains the three gyroscope outputs. The bottom window contains the three
+accelerometer responses. Also, each waveform matches the color of its register
+(see register titles in the purple box).
 
 Register Access
 ~~~~~~~~~~~~~~~
@@ -152,18 +160,23 @@ Register Access
 The purpose of the **Register Access** window is to provide both read and write access to the user registers in the :adi:`ADIS16334`. The following picture shows the appearance of this window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_6dof-334-reg.png
-   :width: 600px
+   :width: 600
 
-The color coded boxes illustrate the different functions that this window provides.
+The color coded boxes illustrate the different functions that this window
+provides.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_6dof-334-reg-defined.png
-   :width: 600px
+   :width: 600
 
 The purple box identifies the register category. In addition to the Control/Status, this drop-down control offers access to **Output** and **Calibration** registers.
 
-The red box identifies all of the registers that are in the current category. Click on the register name to select a register for individual read/write access.
+The red box identifies all of the registers that are in the current category.
+Click on the register name to select a register for individual read/write
+access.
 
-The green box identifies the read/write control options for the current register selection. Use the hexadecimal format when writing commands to a particular register.
+The green box identifies the read/write control options for the current register
+selection. Use the hexadecimal format when writing commands to a particular
+register.
 
 The yellow box updates all the registers in the current category.
 
@@ -178,7 +191,10 @@ Data Capture Menu
 
 |image20| |image21|
 
-''The red box identifies all of the registers that are eligible for inclusion in the next acquisition process. Click on each box to include a register in the next data acquisition sequence. The box will have a check mark when it has been selected. ''
+''The red box identifies all of the registers that are eligible for inclusion in
+the next acquisition process. Click on each box to include a register in the
+next data acquisition sequence. The box will have a check mark when it has been
+selected. ''
 
 ``The green box identifies the configuration box for the name and location of the data storage file.``
 
@@ -190,44 +206,44 @@ EXAMPLE EXERCISES
 ``This section currently has no ADIS16334-specific content, but the ADIS16448 Evaluation on the EVAL-ADIS Wiki Site has some good examples to start with.``
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/448-eval-adis-step1-01.jpg
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/448-eval-adis-step1-03.jpg
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/448-eval-adis-step1-02.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/448-eval-adis-step1-04.jpg
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/448-eval-adis-step1-05.jpg
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-parts.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-334_mnt-holes.png
-   :width: 300px
+   :width: 300
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-334-physicalmnt.png
-   :width: 300px
+   :width: 300
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-334-j4-connection.png
-   :width: 300px
+   :width: 300
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-334-flex-screws.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-334-sliding-to-locateholes.png
-   :width: 300px
+   :width: 300
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-3.3v-setting.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-5v-markedsetting.png
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_6dof-v2programgroup.png
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_6dof-v2completed-install.png
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-foundnewhardware.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-install.png
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-wizard.png
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-complete-wizard.png
-   :width: 400px
+   :width: 400
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_6dof-334-datalog.png
-   :width: 400px
+   :width: 400
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu_6dof-334-datalog-defined.png
-   :width: 400px
+   :width: 400

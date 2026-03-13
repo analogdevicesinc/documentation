@@ -1,7 +1,8 @@
 ADI Space-Qualified Products List
 =================================
 
-This page provides an overview of all parts included in the Analog Device SPACE product portfolio.
+This page provides an overview of all parts included in the Analog Device SPACE
+product portfolio.
 
 .. admonition:: Download
    :class: download
@@ -12,8 +13,8 @@ This page provides an overview of all parts included in the Analog Device SPACE 
    
    `adi_space_portfolio_2026-01-26.xlsx <https://wiki.analog.com/_media/offcfg/adi_space_portfolio_2026-01-26.xlsx>`_ Last Modified Date: **26 January 2026**
    
-   This is a working document that is regularly updated. Please check back frequently for the latest version.
-
+   This is a working document that is regularly updated. Please check back
+   frequently for the latest version.
 
 Support & Contact Information
 -----------------------------
@@ -25,4 +26,3 @@ Support & Contact Information
    -  For technical support, please contact your local Field Applications Engineer or `Submit a Technical Support Case <https://support.analog.com/en-US/technical-support/create-case-techsupport/>`_
    -  For more information, including reference block diagrams and detailed screening flow information, visit :adi:`analog.com/space <en/solutions/aerospace-and-defense/space.html>`
    
-

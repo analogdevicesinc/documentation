@@ -12,31 +12,41 @@ Every HDL design of a reference project can be divided into two subsystems:
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/base_platform_12.svg
    :alt: HDL system architecture
    :align: center
-   :width: 800px
+   :width: 800
 
 DAQ2 Hardware Architecture
 --------------------------
 
 |dac2_top.jpg| |Block Diagram|
 
-The AD-FMCDAQ2-EBZ module is comprised of the AD9680 dual, 14-bit, 1.0 GSPS, JESD204B ADC, the AD9144 quad, 16-bit, 2.8 GSPS, JESD204B DAC, the AD9523-1 clock, and power management components.
+The AD-FMCDAQ2-EBZ module is comprised of the AD9680 dual, 14-bit, 1.0 GSPS,
+JESD204B ADC, the AD9144 quad, 16-bit, 2.8 GSPS, JESD204B DAC, the AD9523-1
+clock, and power management components.
 
-A functional block diagram of the system is given below. The system consists of four functional partitions - transmit path, receive path, clocking, control interfaces and power management.
+A functional block diagram of the system is given below. The system consists of
+four functional partitions - transmit path, receive path, clocking, control
+interfaces and power management.
 
 Transmit Path
 ~~~~~~~~~~~~~
 
-The reference design generates the signals for AD9144, using the JESD204B interface to transfer data and SPI and GPIO for controlling the part. The JESD204B connection is done through 4 lanes at 10Gbps.
+The reference design generates the signals for AD9144, using the JESD204B
+interface to transfer data and SPI and GPIO for controlling the part. The
+JESD204B connection is done through 4 lanes at 10Gbps.
 
 Receive Path
 ~~~~~~~~~~~~
 
-The reference design captures data from the AD9680 through the JESD204B interface and uses SPI and GPIO for controlling the part. The JESD204B connection is done through 4 lanes at 10Gbps.
+The reference design captures data from the AD9680 through the JESD204B
+interface and uses SPI and GPIO for controlling the part. The JESD204B
+connection is done through 4 lanes at 10Gbps.
 
 Clocking
 ~~~~~~~~
 
-The system is clocked through an on board crystal (125MHz). The clock path mainly consists of the AD9523-1 which upconverts this signal to ~3GHz, and then divides this back down to any integer divider of this ~3GHz output.
+The system is clocked through an on board crystal (125MHz). The clock path
+mainly consists of the AD9523-1 which upconverts this signal to ~3GHz, and then
+divides this back down to any integer divider of this ~3GHz output.
 
 The default reference design that ADI provides does the following:
 
@@ -50,9 +60,13 @@ The default reference design that ADI provides does the following:
    -  1000 MHz for the ADC sample rate
    -  500 MHz for the reference clocks to FPGA
 
--  These rates can be changed, but only based on the limitations of the AD9523-1, the lowest JESD clocks the FPGA will support, and the min number of lanes the ADC and DAC support. The JESD Interface framework understands all these heuristics, and configures everything accordingly.
+-  These rates can be changed, but only based on the limitations of the
+   AD9523-1, the lowest JESD clocks the FPGA will support, and the min number of
+   lanes the ADC and DAC support. The JESD Interface framework understands all
+   these heuristics, and configures everything accordingly.
 
-The AD9523-1 also supplies the SYSREF signal to all parts of the JESD204B system allowing for deterministic latency in the system.
+The AD9523-1 also supplies the SYSREF signal to all parts of the JESD204B system
+allowing for deterministic latency in the system.
 
 References
 ----------
@@ -60,6 +74,6 @@ References
 :adi:`AD9144 Datasheet <media/en/technical-documentation/data-sheets/AD9144.pdf>` :adi:`AD9680 Datasheet <media/en/technical-documentation/data-sheets/AD9680.pdf>` :adi:`AD9523-1 Datasheet <media/en/technical-documentation/data-sheets/AD9523-1.pdf>` :doc:`AD-FMCDAQ2-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz>`
 
 .. |dac2_top.jpg| image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/tutorial/dac2_top.jpg
-   :width: 300px
+   :width: 300
 .. |Block Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/hardware/block_diagram.png
-   :width: 500px
+   :width: 500

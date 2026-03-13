@@ -3,23 +3,31 @@ USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0582-usbz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 General Description
 -------------------
 
-CN0582 or the USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System is a system board capable of reading data from analog (IEPE) accelerometers. The analog IEPE inputs also contain current source switches to accommodate sensors that might need external power and individual channel offset voltage setting.
+CN0582 or the USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System is a
+system board capable of reading data from analog (IEPE) accelerometers. The
+analog IEPE inputs also contain current source switches to accommodate sensors
+that might need external power and individual channel offset voltage setting.
 
-Aside from IEPE sensor measurements, the board is also an arbitrary sine wave generator providing stimulus to an external vibration shaker and a multi-channel data acquisition system.
+Aside from IEPE sensor measurements, the board is also an arbitrary sine wave
+generator providing stimulus to an external vibration shaker and a multi-channel
+data acquisition system.
 
 --------------
 
@@ -54,19 +62,20 @@ Requirements
 
 .. important::
 
-   NOTE: For the External Power Supply, the Recommended voltage is from 4.5V to 5.5V.
-
+   NOTE: For the External Power Supply, the Recommended voltage is from 4.5V to
+   5.5V.
 
 Installation Guide
 ------------------
 
-The CN0582 Evaluation Software.exe is a single file installer that includes the GUI installer, uninstaller, and driver installer. The installer will create the files and folders required to operate CN0582 and the corresponding applications.
+The CN0582 Evaluation Software.exe is a single file installer that includes the
+GUI installer, uninstaller, and driver installer. The installer will create the
+files and folders required to operate CN0582 and the corresponding applications.
 
 .. admonition:: Download
    :class: download
 
    `CN0582 Evaluation Software Installer <http://swdownloads.analog.com/cse/cftl/CN0582/CN0582%20EVALUATION%20SOFTWARE%20INSTALLER.EXE>`_
-
 
 | **GUI Installer**
 | This will setup the dependencies folder which will also contain the USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System GUI executable file.
@@ -81,8 +90,9 @@ The CN0582 Evaluation Software.exe is a single file installer that includes the 
 
 .. note::
 
-   The folder containing the screenshots from the file export functionality (Multi-Channel Vibration Test Platform File Exports folder) isn’t deleted by this installer so this should be deleted manually.
-
+   The folder containing the screenshots from the file export functionality
+   (Multi-Channel Vibration Test Platform File Exports folder) isn’t deleted by
+   this installer so this should be deleted manually.
 
 --------------
 
@@ -133,7 +143,6 @@ Quick Start Guide
 
    
 
-
 | **USB Boot**
 | |image5| **SPI Boot**
 | |image6|
@@ -150,7 +159,7 @@ Graphical User Interface Start Up
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/user_interface.png
    :align: center
-   :width: 3000px
+   :width: 3000
 
 DAQ Settings
 ------------
@@ -166,8 +175,9 @@ DAQ Settings
 
 .. important::
 
-   Note: It is best to check the IEPE sensor requirements before using supplying external power supply to avoid incurring permanent damage to either board or sensor.
-
+   Note: It is best to check the IEPE sensor requirements before using supplying
+   external power supply to avoid incurring permanent damage to either board or
+   sensor.
 
 | **Current Source**
 | This control group is responsible for providing a standard IEPE sensor an external power supply if needed (4mA / channel). Individual channel external power supply is enabled/disabled by toggling their corresponding slider.
@@ -192,7 +202,6 @@ DAQ Settings
    -  50
    -  100
    
-
 
 **Sensor DC Bias** The sensor DC bias converts the input based on corresponding sensor's bias specification to a voltage offset such that the signal falls within the ADC's optimal capture range.
 
@@ -221,7 +230,8 @@ DAQ Settings
    Plots frequency domain data of enabled channels. Y-axis is dBm, X – axis is frequency (Hz).
 
 -  **Time and Frequency Domain**
-   This plot option allows simultaneous display of both Time and Frequency Domain representation of captured data.
+   This plot option allows simultaneous display of both Time and Frequency
+   Domain representation of captured data.
 
 | **File Export**
 | Saves a screenshot of the selected graph/s.
@@ -231,7 +241,8 @@ DAQ Settings
 -  **Frequency Domain**
    Saves screenshot of Frequency Domain graph.
 -  **External Trigger**
-   When selected, a positive pulse must be sent to the trigger in connector to begin capture, allowing beginning of capture via hardware trigger.
+   When selected, a positive pulse must be sent to the trigger in connector to
+   begin capture, allowing beginning of capture via hardware trigger.
 
 --------------
 
@@ -254,7 +265,6 @@ Vibration Test
    -  Stop Frequency - Final frequency for the vibration test.
    
 
-
 **3. G-Settings** Sets the amount of G to be used and the measure
 
 .. note::
@@ -264,7 +274,6 @@ Vibration Test
    -  Peak to Peak
    -  RMS
    
-
 
 **4. Limit Lines** Shows line options available to display with captured data for limit testing
 
@@ -276,7 +285,6 @@ Vibration Test
    -  Both
    
 
-
 **5. Reference & DUT Sensor Setup Section** Current Source, Coupling, Gain, and Sensor DC Bias settings operate similar to DAQ counterpart. Refer to DAQ section for reference on these items.
 
 **Sensor Sensitivity** Sets the sensitivity (Volts / G) for each sensor attached on the input channels. Channel 0 (topmost) serves as the reference amplitude for the vibration test while other channels are for other DUT.
@@ -286,7 +294,6 @@ Vibration Test
 .. important::
 
    ADXL digital sensor functionality not yet incorporated as of this version.
-
 
 **6. Graph Display Settings** **Plot Type** Selects the plot type to be displayed. Options include Voltage scale, DUT, or Self-Scan.
 
@@ -298,7 +305,6 @@ Vibration Test
    -  Self-Scan: reference channel + setup calibration.
    
 
-
 **Plot Scale** Selects the scale for the Y-axis of the graph. Options include Magnitude (g), Decibel (Log(g)), Vrms, or Decibel (Log(Vrms)).
 
 .. note::
@@ -309,7 +315,6 @@ Vibration Test
    -  Vrms: Y-axis is in Vrms.
    -  Decibel (Log(Vrms)): Y-axis is log(Vrms).
    
-
 
 **Graph Display** Displays the reference sensor and DUT amplitude/s vs. frequency for the performed vibration test.
 
@@ -339,7 +344,6 @@ Sine Generation Window
    -  Stop Frequency – last frequency to be generated to the output.
    
 
-
 **4. Duration Per Frequency(mS)** Delay (in milliseconds / mS) before switching from one frequency output to another.
 
 --------------
@@ -352,11 +356,13 @@ Before simulating the program, setting up the hardware is necessary.
 -  Connect the EVAL-CN0582 to the Vibration Shaker using a BNC connector.
 -  By using SMA connector, connect the Piezo Reference Sensor of the Vibration Shaker to channel 0.
 -  Attach another SMA connector from the Test Sensor going to channel 1 of the EVAL-CN0582.
--  Power up the CN0582 by connecting the Type C end of the USB cable to the board and the other end to the host. There should be a RED and GREEN LED lit up on the board to note proper power up.
+-  Power up the CN0582 by connecting the Type C end of the USB cable to the
+   board and the other end to the host. There should be a RED and GREEN LED lit
+   up on the board to note proper power up.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/hardware_setup.jpg
    :align: center
-   :width: 3000px
+   :width: 3000
 
 --------------
 
@@ -370,10 +376,13 @@ To test the program with IEPE sensors the following equipment is needed:
 -  EVAL-CN0582-USBZ.
 -  BNC-SMA coaxial cable.
 -  USB C cable
--  Analog input source (optional): // Signal Generator (Square, Sine, Sawtooth etc.)//
+-  Analog input source (optional): // Signal Generator (Square, Sine, Sawtooth
+   etc.)//
    *IEPE Accelerometer (i.e., PCB MC325C67) + Shaker + SMA coaxial cables.**Procedure:**
 
-1. Run the CN0582 Evaluation Software. Follow the prompts until the GUI main window appears. Only the GREEN LED should be lit up on the board to note a successful firmware upload as well.
+1. Run the CN0582 Evaluation Software. Follow the prompts until the GUI main
+   window appears. Only the GREEN LED should be lit up on the board to note a
+   successful firmware upload as well.
 
 | 2. Navigate to the DAQ or Vibration Test window by clicking the following image on the left side of the GUI.
 | |image10|
@@ -382,10 +391,11 @@ To test the program with IEPE sensors the following equipment is needed:
 
 -  IEPE Accelerometers + Shaker: Connect one accelerometer (reference) to Analog Input Channel 0. If applicable, connect the other accelerometers to other Analog Input Channels.
 -  With or without external signal generator: Use the BNC-to-SMA coaxial cable to connect the signal generator output to Analog Input Channel 0. If there’s an external signal generator, connect this to another Analog Input Channel.
--  The Shaker must be initially off before setting and running the necessary parameters.
+-  The Shaker must be initially off before setting and running the necessary
+   parameters.
 
-4. Toggle the current source (for IEPE accelerometer), gain, coupling, and sensor dc bias settings as needed.
-
+4. Toggle the current source (for IEPE accelerometer), gain, coupling, and
+   sensor dc bias settings as needed.
 
 |image11|
 
@@ -393,30 +403,31 @@ To test the program with IEPE sensors the following equipment is needed:
 
    Vibration Testing Window Settings
 
+5. On the channel selector section, enable the channel where the other Analog
+   Input source is connected.
 
-5. On the channel selector section, enable the channel where the other Analog Input source is connected.
-
-6. Click set when the parameters have been chosen, then press Start to launch the test.
+6. Click set when the parameters have been chosen, then press Start to launch
+   the test.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/0582_firmware_image.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/multi-channel_vibration_test_power_supply.png
-   :width: 3000px
+   :width: 3000
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/fx3.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/uninstall.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/multi-channel_vibration_test_usbboot.png
-   :width: 800px
+   :width: 800
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/multi-channel_vibration_test_spiboot.png
-   :width: 800px
+   :width: 800
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/daq.png
-   :width: 3000px
+   :width: 3000
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/vs_interface.png
-   :width: 3000px
+   :width: 3000
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/sine_interf.png
-   :width: 3000px
+   :width: 3000
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/htu_overview.png
-   :width: 3000px
+   :width: 3000
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/htu_vibration_test.png
-   :width: 3000px
+   :width: 3000

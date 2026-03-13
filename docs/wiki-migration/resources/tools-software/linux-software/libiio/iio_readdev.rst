@@ -33,7 +33,8 @@ iio_readdev
        -a, --auto
                Scan for available contexts and if only one is available use it.
 
-a quick example, captures 4 frames of 256 samples, (1024 samples in total), from the receive side of the ADALM-PLUTO.
+a quick example, captures 4 frames of 256 samples, (1024 samples in total), from
+the receive side of the ADALM-PLUTO.
 
 -  find the device:``analog@imhotep:~/github/libiio/build$ **iio_info -s**
    Library version: 0.9 (git tag: 263bd08)
@@ -41,9 +42,12 @@ a quick example, captures 4 frames of 256 samples, (1024 samples in total), from
    Available contexts:
        0: 0456:b673 (Analog Devices Inc. PlutoSDR (ADALM-PLUTO)), serial=104473222a87000c0a000e009b8ed5102e [usb:3.80.5]``
 -  find the streaming device ``analog@imhotep:~$ **iio_attr -u usb:3.80.5 -s -c *ad **
-   dev 'cf-ad9361-dds-core-lpc', channel 'voltage0' (output, index: 0, format: le:S16/16>>0)
-   dev 'cf-ad9361-dds-core-lpc', channel 'voltage1' (output, index: 1, format: le:S16/16>>0)
-   dev 'cf-ad9361-lpc', channel 'voltage0' (input, index: 0, format: le:S12/16>>0)
+   dev 'cf-ad9361-dds-core-lpc', channel 'voltage0' (output, index: 0, format:
+   le:S16/16>>0)
+   dev 'cf-ad9361-dds-core-lpc', channel 'voltage1' (output, index: 1, format:
+   le:S16/16>>0)
+   dev 'cf-ad9361-lpc', channel 'voltage0' (input, index: 0, format:
+   le:S12/16>>0)
    dev 'cf-ad9361-lpc', channel 'voltage1' (input, index: 1, format: le:S12/16>>0)``\ In this case (which happens to use the ADALM-PLUTO, it is ``cf-ad9361-lpc`` for the input (rx), and ``cf-ad9361-dds-core-lpc`` for the output.
 -  put the device into Digital loopback mode, so we know what we should be seeing\ ``analog@imhotep:~$ **iio_attr -u usb:3.80.5  -D ad9361-phy loopback 1**
    dev 'ad9361-phy', debug attr 'loopback', value :'0'
@@ -51,41 +55,52 @@ a quick example, captures 4 frames of 256 samples, (1024 samples in total), from
    dev 'ad9361-phy', debug attr 'loopback', value :'1'``
 -  set the DDS to something slow, so it is easier to see, and we don't alias when looking at things in the time domain.\ ``analog@imhotep:~$ **iio_attr -a -c cf-ad9361-dds-core-lpc altvoltage0 frequency 50000**
    Using auto-detected IIO context at URI "usb:2.26.5"
-   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage0' (output), id 'TX1_I_F1', attr 'frequency', value '9279985'
+   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage0' (output), id 'TX1_I_F1',
+   attr 'frequency', value '9279985'
    wrote 5 bytes to frequency
-   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage0' (output), id 'TX1_I_F1', attr 'frequency', value '50034'
+   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage0' (output), id 'TX1_I_F1',
+   attr 'frequency', value '50034'
 
    analog@imhotep:~$ **iio_attr -a -c cf-ad9361-dds-core-lpc altvoltage2 frequency 50000**
    Using auto-detected IIO context at URI "usb:2.26.5"
-   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage2' (output), id 'TX1_I_F2', attr 'frequency', value '9279985'
+   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage2' (output), id 'TX1_I_F2',
+   attr 'frequency', value '9279985'
    wrote 5 bytes to frequency
    dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage2' (output), id 'TX1_I_F2', attr 'frequency', value '50034'``
 -  set the amplitude of the DDS, so you know what it is:``analog@imhotep:~$ **iio_attr -a -c cf-ad9361-dds-core-lpc altvoltage0 scale 0.4**
    Using auto-detected IIO context at URI "usb:2.26.5"
-   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage0' (output), id 'TX1_I_F1', attr 'scale', value '0.000000'
+   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage0' (output), id 'TX1_I_F1',
+   attr 'scale', value '0.000000'
    wrote 4 bytes to scale
-   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage0' (output), id 'TX1_I_F1', attr 'scale', value '0.400024'
+   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage0' (output), id 'TX1_I_F1',
+   attr 'scale', value '0.400024'
 
    analog@imhotep:~$ **iio_attr -a -c cf-ad9361-dds-core-lpc altvoltage1 scale 0.0**
    Using auto-detected IIO context at URI "usb:2.26.5"
-   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage1' (output), id 'TX1_I_F2', attr 'scale', value '0.000000'
+   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage1' (output), id 'TX1_I_F2',
+   attr 'scale', value '0.000000'
    wrote 4 bytes to scale
-   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage1' (output), id 'TX1_I_F2', attr 'scale', value '0.000000'
+   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage1' (output), id 'TX1_I_F2',
+   attr 'scale', value '0.000000'
 
    analog@imhotep:~$ **iio_attr -a -c cf-ad9361-dds-core-lpc altvoltage2 scale 0.4**
    Using auto-detected IIO context at URI "usb:2.26.5"
-   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage2' (output), id 'TX1_I_F2', attr 'scale', value '0.000000'
+   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage2' (output), id 'TX1_I_F2',
+   attr 'scale', value '0.000000'
    wrote 4 bytes to scale
-   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage2' (output), id 'TX1_I_F2', attr 'scale', value '0.400024'
+   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage2' (output), id 'TX1_I_F2',
+   attr 'scale', value '0.400024'
 
    analog@imhotep:~$ **iio_attr -a -c cf-ad9361-dds-core-lpc altvoltage3 scale 0.0**
    Using auto-detected IIO context at URI "usb:2.26.5"
-   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage3' (output), id 'TX1_I_F2', attr 'scale', value '0.000000'
+   dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage3' (output), id 'TX1_I_F2',
+   attr 'scale', value '0.000000'
    wrote 4 bytes to scale
    dev 'cf-ad9361-dds-core-lpc', channel 'altvoltage3' (output), id 'TX1_I_F2', attr 'scale', value '0.000000'``
 -  Set the sample rate to something reasonable for the DDS frequency\ ``analog@imhotep:~$ **iio_attr -a -i -c ad9361-phy voltage0 sampling_frequency 3000000**
    Using auto-detected IIO context at URI "usb:2.29.5"
-   dev 'ad9361-phy', channel 'voltage0' (input), attr 'sampling_frequency', value '3000000'
+   dev 'ad9361-phy', channel 'voltage0' (input), attr 'sampling_frequency',
+   value '3000000'
    wrote 8 bytes to sampling_frequency
    dev 'ad9361-phy', channel 'voltage0' (input), attr 'sampling_frequency', value '3000000'``
 -  capture 1024 samples in 256 sample buffers ``analog@imhotep:~$ **iio_readdev -u usb:3.80.5 -b 256 -s 1024 cf-ad9361-lpc > samples.dat**``
@@ -108,4 +123,4 @@ a quick example, captures 4 frames of 256 samples, (1024 samples in total), from
    dev 'ad9361-phy', channel 'voltage0' (input), attr 'sampling_frequency', value '30720000'``\ You can expect that 30.72 MSPS is too fast to stream over USB with zero gaps between buffers. Increasing the buffer length is the best thing to do.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/sine_wave_pluto.png
-   :width: 600px
+   :width: 600

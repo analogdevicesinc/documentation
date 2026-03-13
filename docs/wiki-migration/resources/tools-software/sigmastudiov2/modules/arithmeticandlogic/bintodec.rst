@@ -50,7 +50,8 @@ NumChannels: Module supports growth of input pins.
 Example Usage
 -------------
 
-This module can be used with GPIOs to convert the multiple GPIO's value into a single integer value.
+This module can be used with GPIOs to convert the multiple GPIO's value into a
+single integer value.
 
 ====== ====== ====================== ==========================
 GPIO_0 GPIO_1 BinToDec Output (32.0) Lookup Table Output (8.24)
@@ -60,6 +61,5 @@ GPIO_0 GPIO_1 BinToDec Output (32.0) Lookup Table Output (8.24)
 0      1      2                      2 db
 1      1      3                      3 db
 ====== ====== ====================== ==========================
-
 
 | ===== DSP Parameters ===== NO DSP parameters

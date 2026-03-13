@@ -3,7 +3,10 @@ Up Sampling
 
 :doc:`Click here to return to the Multi-rate processing section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/multirateprocessing>`
 
-The Up sampling module is mainly used to get the input samples to a higher sampling rates after processing the audio at lower sampling rates.For example the bass of the audio can be processed at lower sampling rates and then taken to the higher sampling rates.
+The Up sampling module is mainly used to get the input samples to a higher
+sampling rates after processing the audio at lower sampling rates.For example
+the bass of the audio can be processed at lower sampling rates and then taken to
+the higher sampling rates.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/multirateprocessing/upsampling4p6.png
    :align: center
@@ -26,7 +29,6 @@ Name          Format [int/dec] - [control/audio] Function Description
 Pin 0: Output decimal - audio                    Upsampled Output
 ============= ================================== ====================
 
-
 | ===== Grow Algorithm ===== The module can be grown upto 8 channels. All the input signals are upsampled by the same upsample rate.
 
 Configurations
@@ -40,12 +42,13 @@ The upsample factor can be changed by combo box.
 | Upsample Factor  | 2             | 2,3,4,6,8,16 | The factor at with the input sample rate will be multipiled |
 +------------------+---------------+--------------+-------------------------------------------------------------+
 
-The upsampler can either insert zeros or repeat the previous sample(Zero Order Hold) during upsampling. This can be configured in the contex menu.
-
+The upsampler can either insert zeros or repeat the previous sample(Zero Order
+Hold) during upsampling. This can be configured in the contex menu.
 
 |image1|
 
-Change in the 'Insertion Type' , 'Upsample Factor' or 'LPF' needs a recompilation of the schematic.
+Change in the 'Insertion Type' , 'Upsample Factor' or 'LPF' needs a
+recompilation of the schematic.
 
 DSP Parameter Information
 -------------------------

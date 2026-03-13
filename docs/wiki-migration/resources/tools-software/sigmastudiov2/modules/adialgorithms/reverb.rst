@@ -9,7 +9,10 @@ Reverb
 Description
 -----------
 
-The Reverb algorithm simulates the natural reverberation of an echoic space, such as a performance hall, and mixes it back into the original signal. Technically, reverberation is the total sound-field remaining in an enclosed space after initial sources are not active.
+The Reverb algorithm simulates the natural reverberation of an echoic space,
+such as a performance hall, and mixes it back into the original signal.
+Technically, reverberation is the total sound-field remaining in an enclosed
+space after initial sources are not active.
 
 Targets Supported
 -----------------
@@ -19,7 +22,6 @@ Name   ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ====== ========== ================ ============= ================
 Reverb B          B                S             B
 ====== ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -42,7 +44,6 @@ Name              Type  Description
 LeftReverbOutput  Audio Output channel0
 RightReverbOutput Audio Output channel1
 ================= ===== ===============
-
 
 | ===== Configurable Parameters =====
 

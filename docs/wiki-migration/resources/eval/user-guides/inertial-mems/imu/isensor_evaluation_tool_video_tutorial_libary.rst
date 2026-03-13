@@ -1,7 +1,8 @@
 ISENSOR VIDEO TUTORIAL LIBRARY
 ==============================
 
-This page offers product-specific organization of the video tutorials. Use the Table of Contents to quickly access the products of interest.
+This page offers product-specific organization of the video tutorials. Use the
+Table of Contents to quickly access the products of interest.
 
 **Internet Explorer** users will want to make sure that **Protected Mode** has been *diabled* before clicking on any of these links.
 
@@ -12,7 +13,9 @@ If you must click on the box to disable it, make sure to click on **Apply** befo
 ADIS1648x VIDEOS
 ----------------
 
-Click on the video titles to directly access the video tutorial files. When there is only a title, that indicates that this video is in planning or production, but will be available in the near future.
+Click on the video titles to directly access the video tutorial files. When
+there is only a title, that indicates that this video is in planning or
+production, but will be available in the near future.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | TITLE/LINK                                                                                                                                                | TYPE | DURATION | SUMMARY                                                                                                                                                                                                                 |
@@ -72,4 +75,3 @@ ADIS16228 VIDEOS
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ez:`Data Capture Demonstration & FFT Header Explanation <servlet/JiveServlet/download/10833-1-22679/ADIS16228_Vid_Tut_DataCapture_01.mp4>`                       |                                                                                                                                                                          |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-

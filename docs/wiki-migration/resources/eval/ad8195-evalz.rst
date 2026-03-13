@@ -15,21 +15,17 @@ Typical Setup
 
    \ |image1| *Figure 1. AD8195-EVALZ Evaluation Board*\
 
-
 .. container:: centeralign
 
    |image2| *Figure 2. AD8195 Evaluation Setup*\
-
 
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
 
-
 .. container:: centeralign
 
    \ *Table 1. Jumper Functionality*\
-
 
 +---------------------+------------+--------------------------------------------------+--------------------------------------------------------------+
 | Function            | Designator | Functionality when jumper is installed           | Functionality when jumper is *not* installed                 |
@@ -44,7 +40,6 @@ Typical Setup
 .. container:: centeralign
 
    \ *Table 2. Switch Functionality*\
-
 
 +---------------------------+------------+--------------------------------+--------------------------------+
 | Function                  | Designator | Functionality when switch is 1 | Functionality when switch is 0 |
@@ -81,20 +76,23 @@ Quick Start Guide
 -  Confirm that switches SW2 and SW3 are set to 1.
 -  Connect the wall adapter DC plug to P1 of the evaluation board and the AC plug to a 90 ~ 264 VAC socket. Check that regulated +3.3V and +5V voltages can be observed at test points labeled “+3P3V” and “+5V_INTERNAL”, respectively.
 -  Connect HDMI cable from the video and audio source to the evaluation board HDMI input connector P2.
--  Connect HDMI cable from the evaluation board HDMI output connector P4 to HDMI display (sink). Video and audio should be observed on the monitor.
+-  Connect HDMI cable from the evaluation board HDMI output connector P4 to HDMI
+   display (sink). Video and audio should be observed on the monitor.
 
 Troubleshooting
 ---------------
 
-This section lists items to check and practices to use when debugging any unexpected performance of a board. If unexpected results occur:
+This section lists items to check and practices to use when debugging any
+unexpected performance of a board. If unexpected results occur:
 
 -  Check if each voltage supply test point of the evaluation board has the correct value.
 -  Check if the jumpers are appropriately configured.
 -  Check if the switches are set to the intended positions.
 -  Power cycle the AD8195 evaluation board.
--  Disconnect and reconnect the source and sink from/to the AD8195 evaluation board.
+-  Disconnect and reconnect the source and sink from/to the AD8195 evaluation
+   board.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad8195-evalz_eval_board.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad8195-evalz_eval_setup.jpg
-   :width: 600px
+   :width: 600

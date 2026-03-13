@@ -17,10 +17,16 @@ Virtual Control Interface
 
 .. important::
 
-   This document describes the Virtual Control Interface (also known as “HMI”) of the SigmaStudio development environment. This feature provides a user configurable interface for multiple parameter control within the SigmaStudio development environment for system tuning and control emulation. The examples or explanations and any source-code contained in this document are provided to you “AS IS” without any warranties of any kind. The implied warranties of non-infringement, merchantability and fitness for a particular purpose are expressly disclaimed.
+   This document describes the Virtual Control Interface (also known as “HMI”)
+   of the SigmaStudio development environment. This feature provides a user
+   configurable interface for multiple parameter control within the SigmaStudio
+   development environment for system tuning and control emulation. The examples
+   or explanations and any source-code contained in this document are provided
+   to you “AS IS” without any warranties of any kind. The implied warranties of
+   non-infringement, merchantability and fitness for a particular purpose are
+   expressly disclaimed.
 
    
-
 
 Installation
 ------------
@@ -32,13 +38,14 @@ Files required: **VirtualInterface.dll**
 -  To install, copy the “VirtualInterface.dll” file into the SigmaStudio installation directory (typically C:\\Program Files\\Analog Devices\\SigmaStudio 3.7). Note this step may require that your Windows user account has administrative privileges.
 -  Either: (a) Restart SigmaStudio OR (b) Select the “Tools \| Add-Ins Browser…” menu, click “Add DLL” button, choose the VirtualInterface.dll file copied in step one, and press the “Save” button.
 -  Create a New project or open an existing SigmaStudio project file.
--  The “Control UI” cell is available in the “Processors” folder of the Hardware Configuration toolbox.
+-  The “Control UI” cell is available in the “Processors” folder of the Hardware
+   Configuration toolbox.
 
 Getting Started
 ---------------
 
-Drag and drop the “Control UI” cell from the Toolbox into the Hardware Configuration tab of a SigmaStudio project.
-
+Drag and drop the “Control UI” cell from the Toolbox into the Hardware
+Configuration tab of a SigmaStudio project.
 
 |vci1.png|
 
@@ -48,7 +55,8 @@ Drag and drop the “Control UI” cell from the Toolbox into the Hardware Confi
    :alt: vci2.png
    :align: center
 
-The Control Window consists of 10 control cells. Each cell can contain a virtual user control, a knob, a slider, a button or a switch.
+The Control Window consists of 10 control cells. Each cell can contain a virtual
+user control, a knob, a slider, a button or a switch.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci3.png
    :alt: vci3.png
@@ -81,36 +89,51 @@ A control of the selected type is created in the control window cell.
    :alt: vci6.png
    :align: center
 
-Values: The control’s minimum and maximum display value and value resolution (“step”) can be modified. To change the control’s values, right click on the control and control the desired values in the properties window.
+Values: The control’s minimum and maximum display value and value resolution
+(“step”) can be modified. To change the control’s values, right click on the
+control and control the desired values in the properties window.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci7.png
    :alt: vci7.png
    :align: center
 
-Note the mapping between a virtual control’s value and an assigned parameter is defined via lookup tables as described below. The min, max, and step settings of the virtual control have no direct relationship to the parameter lookup tables; the parameter lookup index is calculated dynamically accordingly to the position between min and max. Meaning, you can set the GUI range to any arbitrary range of values per your preference, internally the control range is converted to a linear map of lookup table indices.
+Note the mapping between a virtual control’s value and an assigned parameter is
+defined via lookup tables as described below. The min, max, and step settings of
+the virtual control have no direct relationship to the parameter lookup tables;
+the parameter lookup index is calculated dynamically accordingly to the position
+between min and max. Meaning, you can set the GUI range to any arbitrary range
+of values per your preference, internally the control range is converted to a
+linear map of lookup table indices.
 
 Assign Parameters
 -----------------
 
-One or more schematic cell algorithm parameters can be assigned to a virtual control. To assign a parameter for control, click on the control cell arrow or right click on the control cell and select “Assign…” from the menu. This will open the parameter assignment dialog.
+One or more schematic cell algorithm parameters can be assigned to a virtual
+control. To assign a parameter for control, click on the control cell arrow or
+right click on the control cell and select “Assign…” from the menu. This will
+open the parameter assignment dialog.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci8.png
    :alt: vci8.png
    :align: center
 
-The “Assign Parameter Control” dialog lists all parameters in a SigmaStudio schematic project that are available for control. They are organized according to schematic hierarchy and cell name.
+The “Assign Parameter Control” dialog lists all parameters in a SigmaStudio
+schematic project that are available for control. They are organized according
+to schematic hierarchy and cell name.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci9.png
    :alt: vci9.png
    :align: center
 
-Select the check box next to one or more parameters to assign them to the Virtual Interface control.
+Select the check box next to one or more parameters to assign them to the
+Virtual Interface control.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci10.png
    :alt: vci10.png
    :align: center
 
-When selection is complete, press the “Assign” button to commit the parameter control assignment operation.
+When selection is complete, press the “Assign” button to commit the parameter
+control assignment operation.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci11.png
    :alt: vci11.png
@@ -125,9 +148,15 @@ Parameter assignment will automatically open the *Value Conversion Table Editor*
 Value Conversion Table Editor
 -----------------------------
 
-A value conversion table must be defined for each assigned parameter. The Virtual Control (knob or slider) value is converted to an integer index between 0 and the number of “Steps” defined for the lookup table. Schematic parameter values are set according to the values defined for each step in the virtual control lookup table.
+A value conversion table must be defined for each assigned parameter. The
+Virtual Control (knob or slider) value is converted to an integer index between
+0 and the number of “Steps” defined for the lookup table. Schematic parameter
+values are set according to the values defined for each step in the virtual
+control lookup table.
 
-The Value Conversion Table Editor window can be opened at any time by clicking the arrow in a control cell or by right clicking and selecting “Properties…” from the menu.
+The Value Conversion Table Editor window can be opened at any time by clicking
+the arrow in a control cell or by right clicking and selecting “Properties…”
+from the menu.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci13.png
    :alt: vci13.png
@@ -155,20 +184,27 @@ The Value Conversion Table Editor window can be opened at any time by clicking t
 
 **Table Import/Export:**
 
-All values in the parameter conversion table editor window can be Imported from or exported to a text file. To import table data, click the “Import…” button in the Table Editor window, and to export the table data, click the “Export…” button.
+All values in the parameter conversion table editor window can be Imported from
+or exported to a text file. To import table data, click the “Import…” button in
+the Table Editor window, and to export the table data, click the “Export…”
+button.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci17.png
    :alt: vci17.png
    :align: center
 
-The text file format is CSV (comma separated values) where each table column is enclosed in curly braces, for example a file with two parameter columns:
+The text file format is CSV (comma separated values) where each table column is
+enclosed in curly braces, for example a file with two parameter columns:
 
 ::
 
        {0, -5, -7, -9, -12, -15, -18, -24, -28, -30, -32, -36, -40, -44, -50, -60 },
        {-60, -50, -44, -40, -36, -32, -30, -28, -24, -18, -15, -12, -9, -7, -5, 0 },
 
-If the data file contains less data than the defined table ‘Steps’, zeros are inserted for any undefined indices. If the file contains more data than the defined table Steps, only the first n-step values are imported and the excess data is ignored.
+If the data file contains less data than the defined table ‘Steps’, zeros are
+inserted for any undefined indices. If the file contains more data than the
+defined table Steps, only the first n-step values are imported and the excess
+data is ignored.
 
 **Table Column Commands:** Right click on a value conversion table column to open the table commands menu.
 
@@ -176,7 +212,9 @@ If the data file contains less data than the defined table ‘Steps’, zeros ar
    :alt: vci18.png
    :align: center
 
-Each column in the table editor represents the value mapping for a single parameter in the schematic design. The following editing commands are supported for each parameter table column:
+Each column in the table editor represents the value mapping for a single
+parameter in the schematic design. The following editing commands are supported
+for each parameter table column:
 
 +------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Copy Column Data:**  | Copies a single table column’s value to the clipboard. A table can be copied and pasted between columns in the editor window.                                     |
@@ -193,17 +231,29 @@ Each column in the table editor represents the value mapping for a single parame
 Usage
 -----
 
-The Virtual controls, settings, and value mappings are saved in a SigmaStudio project file. The virtual control will modify the value of the assigned parameters simultaneously and can be used during design tuning. Note that the virtual control is a SigmaStudio user interface object only, and does not generate any additional DSP assembly code or directly affect the final program.
+The Virtual controls, settings, and value mappings are saved in a SigmaStudio
+project file. The virtual control will modify the value of the assigned
+parameters simultaneously and can be used during design tuning. Note that the
+virtual control is a SigmaStudio user interface object only, and does not
+generate any additional DSP assembly code or directly affect the final program.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci19.png
    :alt: vci19.png
    :align: center
 
-The control and value mapping is One-Way, from the virtual control to the assigned parameter control. The virtual control will set the value of all assigned schematic controls when changed. However, setting the value of an assigned parameter directly in the schematic view does NOT update the value(s) of the virtual control or other assigned parameters.
+The control and value mapping is One-Way, from the virtual control to the
+assigned parameter control. The virtual control will set the value of all
+assigned schematic controls when changed. However, setting the value of an
+assigned parameter directly in the schematic view does NOT update the value(s)
+of the virtual control or other assigned parameters.
 
 **Capture Window Bypass**
 
-The Virtual Control Interface bypasses the capture window for UI efficiency (a large number of parameter write operations are generated for each increment of a Virtual Control). For this reason control changes from the Virtual Control Interface window are not shows in the capture window even though the values are being written to the USB interface.
+The Virtual Control Interface bypasses the capture window for UI efficiency (a
+large number of parameter write operations are generated for each increment of a
+Virtual Control). For this reason control changes from the Virtual Control
+Interface window are not shows in the capture window even though the values are
+being written to the USB interface.
 
 Known Issues
 ------------
@@ -212,7 +262,11 @@ ALPHA v1.0
 ~~~~~~~~~~
 
 -  Schematic view name changes, both hierarchy boards or algorithm cells will not update the Virtual Interface Control and assignment is lost. All renamed cell(s) must be manually re-assigned to the virtual control. (will be addressed in 1.1 release).
--  Virtual Interface assignment is only available for cell GUI controls (algorithm parameters without a schematic view GUI control cannot be assigned). Also a cell’s GUI parameters must support the UI “settings” feature of SigmaStudio (some legacy cells and interim custom cells may not support this feature). Can be addresses on a case-by-case basis as needed.
+-  Virtual Interface assignment is only available for cell GUI controls
+   (algorithm parameters without a schematic view GUI control cannot be
+   assigned). Also a cell’s GUI parameters must support the UI “settings”
+   feature of SigmaStudio (some legacy cells and interim custom cells may not
+   support this feature). Can be addresses on a case-by-case basis as needed.
 
 .. |vci.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci.png
 .. |vci1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci1.png

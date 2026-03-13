@@ -3,7 +3,11 @@
 AGC compressor core
 ===================
 
-This Module is the gain computation part of a compressor. Compression happens by taking the RMS of i/p samples i.e. by passing the input samples through a low-pass filter, converting this to dB scale and then looking up the corresponding gain value. There is a threshold set as a parameter in the Module, below which compression occurs.
+This Module is the gain computation part of a compressor. Compression happens by
+taking the RMS of i/p samples i.e. by passing the input samples through a
+low-pass filter, converting this to dB scale and then looking up the
+corresponding gain value. There is a threshold set as a parameter in the Module,
+below which compression occurs.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/agc_compressor_core-tbx.jpg
 
@@ -16,7 +20,6 @@ Name         Format [int/dec] - [control/audio] Function Description
 Pin 0: Input decimal - Audio                    Input
 ============ ================================== ====================
 
-
 | ====Output Pins====
 
 ============= ================================== ====================
@@ -24,7 +27,6 @@ Name          Format [int/dec] - [control/audio] Function Description
 ============= ================================== ====================
 Pin 0: Output decimal - Audio                    Output
 ============= ================================== ====================
-
 
 | ==== Grow Algorithm ==== The module does not support Add and Growth.
 
@@ -78,7 +80,11 @@ Configuration
 Algorithm Description
 ---------------------
 
-This Module is the gain computation part of a compressor. Compression happens by taking the RMS of i/p samples i.e. by passing the input samples through a low-pass filter, converting this to dB scale and then looking up the corresponding gain value. There is a threshold set as a parameter in the Module, below which compression occurs.
+This Module is the gain computation part of a compressor. Compression happens by
+taking the RMS of i/p samples i.e. by passing the input samples through a
+low-pass filter, converting this to dB scale and then looking up the
+corresponding gain value. There is a threshold set as a parameter in the Module,
+below which compression occurs.
 
 Supported ICs
 -------------

@@ -9,9 +9,13 @@ Karplus-Strong String Sound Synthesis
 
 An explanation of the basic theory is located on the Wikipedia page https://en.wikipedia.org/wiki/Karplus%E2%80%93Strong_string_synthesis.
 
-The slider control is the length of the initial delay line. The minimum value is 70 samples and the maximum is 350 samples.
+The slider control is the length of the initial delay line. The minimum value is
+70 samples and the maximum is 350 samples.
 
-The "fback Gain" is the feedback gain of the filter. It only accepts a small range of values. It must never exceed 1 so the maximum value you can enter is 0.999899983406067 (0x00, 0x7F, 0xFC, 0xB9). The minimum value is 0.899999976158142 (0x00, 0x73, 0x33, 0x33).
+The "fback Gain" is the feedback gain of the filter. It only accepts a small
+range of values. It must never exceed 1 so the maximum value you can enter is
+0.999899983406067 (0x00, 0x7F, 0xFC, 0xB9). The minimum value is
+0.899999976158142 (0x00, 0x73, 0x33, 0x33).
 
 The LPass filter input is the lowpass filter cutoff frequency.
 

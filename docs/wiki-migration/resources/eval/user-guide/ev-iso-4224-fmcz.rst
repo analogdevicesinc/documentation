@@ -38,7 +38,6 @@ The :adi:`EV-ISO-4224-FMCZ` is an isolated digital and power reference design fo
 
    {{ :resources:eval:user-guide:ev-iso-4224-fmcz:ev-iso-4224-fmcz_and_zedboard_connection.png?600 \|\ |image1| *Figure 1. EV-ISO-4224-FMCZ Connection with Zedboard*
 
-
 Getting Started
 ---------------
 
@@ -53,7 +52,6 @@ Download the :adi:`Analysis/Control/Evaluation (ACE) Software <en/resources/eval
 
    To ensure that the evaluation system is correctly recognized when it is connected to the PC, install the ACE and the :adi:`ADAQ4224` ACE Plug-in first before connecting the :adi:`EV-ISO-4224-FMCZ` and ZedBoard™ to the PC.
 
-
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
@@ -63,16 +61,16 @@ The :adi:`EV-ISO-4224-FMCZ` connects to the ZedBoard™. The ZedBoard™ serves 
 
    |image2| *Figure 2. Hardware Evaluation Setup*
 
-
 -  Configure the P1 & P2 links on the :adi:`EV-ISO-4224-FMCZ`. Short pin 1 and pin 2 for both P1 and P2 jumper links.
 -  Configure the VADJ and Boot links on the ZedBoard™ as shown on Figure 3.
 -  Connect the :adi:`EV-ISO-4224-FMCZ` securely to the 160-way connector on the ZedBoard™. The :adi:`EV-ISO-4224-FMCZ` does not require an external power supply adapter.
--  Connect the ZedBoard™ USB_OTG port to the PC, this micro USB to USBA cable is included on the ZedBoard™ kit. Power it up with the 12 V wall adapter included in the kit.
+-  Connect the ZedBoard™ USB_OTG port to the PC, this micro USB to USBA cable is
+   included on the ZedBoard™ kit. Power it up with the 12 V wall adapter
+   included in the kit.
 
 .. container:: centeralign
 
    |image3| *Figure 3. Zedboard Link Configuration*
-
 
 Software GUI Setup
 ------------------
@@ -90,7 +88,6 @@ After installing **ACE** (see the Software Installation Procedures section), run
 
    |image4| *Figure 4. Launching **ACE.exe** from Start Menu*
 
-
 ACE Main Window
 ~~~~~~~~~~~~~~~
 
@@ -99,13 +96,11 @@ ACE Main Window
 
 .. container:: centeralign
 
-
    ..
 
 |image5|
 
    *Figure 5. ACE Main Window*
-
 
 Board View
 ~~~~~~~~~~
@@ -116,24 +111,19 @@ Board View
 
 .. container:: centeralign
 
-
    ..
 
 |image6|
 
    *Figure 6. Board View Window*
 
-
 .. container:: centeralign
-
-
 
    ..
 
 |image7|
 
    *Table 1. Max Sampling Frequency*
-
 
 ADAQ4224 Chip View Window
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,13 +134,11 @@ ADAQ4224 Chip View Window
 
 .. container:: centeralign
 
-
    ..
 
 |image8|
 
    *Figure 7. ADAQ4224 Chip View Window*
-
 
 ADAQ4224 Temperature Sensor Chip View Window
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -161,23 +149,21 @@ ADAQ4224 Temperature Sensor Chip View Window
 
 .. container:: centeralign
 
-
    ..
 
 |image9|
 
    *Figure 8.* :adi:`ADAQ4224` *Temp Sensor Chip View Window*
 
-
 ADAQ4224 Analysis Window
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  The no. of samples per capture can be set in this window.
 -  A Coherency calculator can also be used to calculate for a coherent input frequency with respect to the set sampling frequency and no. of samples.
--  There are different tabs that can be selected to perform a waveform capture, an FFT capture and a histogram capture.
+-  There are different tabs that can be selected to perform a waveform capture,
+   an FFT capture and a histogram capture.
 
 .. container:: centeralign
-
 
    ..
 
@@ -185,21 +171,20 @@ ADAQ4224 Analysis Window
 
    *Figure 9.* :adi:`ADAQ4224` *Analysis Window*
 
-
 ADAQ4224 Temp Sensor Analysis Window
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Click on the Start Button to display the temperature conversions. The plot will display the MIN/MAX Alarm thresholds and the actual temperature measured.
+-  Click on the Start Button to display the temperature conversions. The plot
+   will display the MIN/MAX Alarm thresholds and the actual temperature
+   measured.
 
 .. container:: centeralign
-
 
    ..
 
 |image11|
 
    *Figure 10.* :adi:`ADAQ4224` *Temp Sensor Analysis Window*
-
 
 EV-ISO-4224-FMCZ AC Performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -208,25 +193,21 @@ EV-ISO-4224-FMCZ AC Performance
 
 .. container:: centeralign
 
-
    ..
 
 |image12|
 
    *Figure 11. SNR vs. GAIN*
 
-
 -  **THD**
 
 .. container:: centeralign
-
 
    ..
 
 |image13|
 
    *Figure 12. THD vs. GAIN*
-
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -242,7 +223,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Bill of Materials
    -  Gerber and Assembly Files
    
-
 
 Additional Information and Useful Links
 ---------------------------------------
@@ -271,32 +251,31 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EV-ISO-4224-FMCZ?&v=RevD>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/ev-iso-4224-fmcz_and_zedboard_connection.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/ev-iso-4224-fmcz_setup.png
-   :width: 800px
+   :width: 800
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/zedboard_links.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/ace_launch.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/ace_main_window.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/board_view.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/max_sampling_frequency.jpg
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/adaq4224_chip_view.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/adaq4224_temp_chip_view.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq4224_analysis_window.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/adaq4224_temp_analysis_view_window.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/snr_iso_vs_gain.svg
-   :width: 700px
+   :width: 700
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guide/ev-iso-4224-fmcz/thd_iso_vs_gain.svg
-   :width: 700px
+   :width: 700

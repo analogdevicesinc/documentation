@@ -6,7 +6,9 @@ Introduction
 
 `Regulatory compliance <https://en.wikipedia.org/wiki/Regulatory_compliance>`_ means conforming to a rule, such as a specification, policy, standard or law. Most products that ships into a country need to pass a variety of tests and regulations specific to that country.
 
-Due to the increasing number of regulations, organizations are increasingly adopting the use of consolidated sets of compliance controls. This means once you normally get one, you can have them all.
+Due to the increasing number of regulations, organizations are increasingly
+adopting the use of consolidated sets of compliance controls. This means once
+you normally get one, you can have them all.
 
 Reports
 -------

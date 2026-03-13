@@ -10,7 +10,10 @@ Overview
 | |Figure 1. EVAL-CN0422-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram|
 | *Figure 1. EVAL-CN0422-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram*
 
-Figure 2 shows a simplified block diagram of the power isolation and the isolation of the HDMI Version 1.3a signals. Number 1 through Number 5 show the start-up communication sequence through the ADN4654, ADuM1250, and ADuM5020 devices between the HDMI source and HDMI sink.
+Figure 2 shows a simplified block diagram of the power isolation and the
+isolation of the HDMI Version 1.3a signals. Number 1 through Number 5 show the
+start-up communication sequence through the ADN4654, ADuM1250, and ADuM5020
+devices between the HDMI source and HDMI sink.
 
 | |Figure 2. Isolated HDMI Signal Flow Diagram|
 | *Figure 2. Isolated HDMI Signal Flow Diagram*
@@ -23,7 +26,8 @@ To test the :adi:`EVAL-CN0422-EBZ <CN0422>` in your system, first connect a 5V /
 | |Figure 3. EVAL-CN0422-EBZ iCoupler® isolation connections|
 | *Figure 3. EVAL-CN0422-EBZ iCoupler® isolation connections.*
 
-A system compatibility test can be performed to compare an isolated and non-isolated display. This test setup is described below.
+A system compatibility test can be performed to compare an isolated and
+non-isolated display. This test setup is described below.
 
 Required Equipment
 ~~~~~~~~~~~~~~~~~~
@@ -50,7 +54,10 @@ Getting Started
 -  Configure EVAL-ADV7625-SMZ in 1:2 HDMI splitter mode by connecting the board to a pc/laptop using a bulk USB to RS-232 cable.
 -  A jumper must be installed across J15 on the EVAL-ADV7625-SMZ for programming.
 -  Open a serial terminal applciation such as PuTTY or Tera Term and configure the serial settings as 115,200 baud, eight data bits, no parity, one stop bit, and no flow control.
--  Using a serial terminal applciation, type in the commands 'hdmia a' and 'hdmia b'. Typing help via RS-232 lists the commands that can be used to control the board and indicates the version of the firmware and the build date.
+-  Using a serial terminal applciation, type in the commands 'hdmia a' and
+   'hdmia b'. Typing help via RS-232 lists the commands that can be used to
+   control the board and indicates the version of the firmware and the build
+   date.
    *Visit* :adi:`UG-603 <media/en/technical-documentation/user-guides/EVAL-ADV7625-SMZ_UG-603.pdf>` *for a detailed guide of EVAL-ADV7625-SMZ*
 -  Add a HDMI video and audio source to the EVAL-ADV7625-SMZ RxA input (J2).
 -  Connect EVAL-ADV7625-SMZ TxA output (J7) to EVAL-CN0422-EBZ input (J3).
@@ -59,8 +66,9 @@ Getting Started
 
 .. note::
 
-   The HDMI video/audio source appears on Display 1 and Display 2. Observing both displays confirms that the isolated HDMI is transparent. Both displays are visually identical
-
+   The HDMI video/audio source appears on Display 1 and Display 2. Observing
+   both displays confirms that the isolated HDMI is transparent. Both displays
+   are visually identical
 
 Schematics, PCB Layout, Bill of Materials
 -----------------------------------------
@@ -77,7 +85,6 @@ Schematics, PCB Layout, Bill of Materials
    -  Assembly Drawing
    
 
-
 Registration
 ------------
 
@@ -85,13 +92,12 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0422-EBZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |Figure 1. EVAL-CN0422-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0422/sch.jpg
-   :width: 1300px
+   :width: 1300
 .. |Figure 2. Isolated HDMI Signal Flow Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0422/flow.png
 .. |Figure 3. EVAL-CN0422-EBZ iCoupler® isolation connections| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0422/setup_2.jpg
-   :width: 650px
+   :width: 650
 .. |Figure 3. EVAL-CN0422-EBZ iCoupler® Isolation for HDMI test setup.| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0422/setup_1.jpg
-   :width: 400px
+   :width: 400

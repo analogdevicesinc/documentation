@@ -1,7 +1,8 @@
 USB Gadget Zero
 ===============
 
-This page provides how to use the USB Gadget Zero on ADSP-SC5xx board, and it will include the below test:
+This page provides how to use the USB Gadget Zero on ADSP-SC5xx board, and it
+will include the below test:
 
 -  USB gadget zero bulk
 -  USB Gadget zero control
@@ -12,8 +13,8 @@ This page provides how to use the USB Gadget Zero on ADSP-SC5xx board, and it wi
 Hardware Configuration
 ----------------------
 
-Connect the USB micro-B plug cable into the USB HS/OTG Device port, as showing below:
-
+Connect the USB micro-B plug cable into the USB HS/OTG Device port, as
+showing below:
 
 |image1|
 
@@ -22,7 +23,8 @@ Connect the USB micro-B plug cable into the USB HS/OTG Device port, as showing
 Software Configuration
 ----------------------
 
-On the Yocto, Configure the linux-kernel as below to set the USB controller in Gadget only mode, and enable the USB Gadget zero relevant options.
+On the Yocto, Configure the linux-kernel as below to set the USB controller in
+Gadget only mode, and enable the USB Gadget zero relevant options.
 
 .. code:: console
 
@@ -151,4 +153,4 @@ Please following the `usbtest <http://www.linux-usb.org/usbtest>`_ to get the re
 **Go TO** :doc:`USB Interface </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/start>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/gadget-mode/002_usb_interface-device_application.jpg
-   :width: 600px
+   :width: 600

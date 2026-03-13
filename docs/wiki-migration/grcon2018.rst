@@ -1,7 +1,10 @@
 GRCon 2018 Workshops
 ====================
 
-For those attending the PlutoSDR workshop at GRCon 2018, hosted by ADI, thanks. In order to make your experience better (less installing software while others are using the hardware) please have the following software installed on your machine:
+For those attending the PlutoSDR workshop at GRCon 2018, hosted by ADI, thanks.
+In order to make your experience better (less installing software while others
+are using the hardware) please have the following software installed on your
+machine:
 
 -  **libIIO library:**
 
@@ -30,8 +33,8 @@ For those attending the PlutoSDR workshop at GRCon 2018, hosted by ADI, thanks. 
 
 .. warning::
 
-   Those installing on Linux use the attr-block branch of gr-iio. This contains the new IIO Attribute blocks needed for the labs
-
+   Those installing on Linux use the attr-block branch of gr-iio. This contains
+   the new IIO Attribute blocks needed for the labs
 
 The Workshops are on Tuesday. If you would like to come by the booth, and check out things with your hardware on Monday during the expo hours, it would be appreciated. Also - attending Michael Hennerich's discussion on *ARM PlutoSDR With Custom Applications* Monday afternoon is highly recommended.
 

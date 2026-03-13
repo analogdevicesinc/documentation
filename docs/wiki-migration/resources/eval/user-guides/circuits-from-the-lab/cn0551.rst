@@ -16,7 +16,6 @@ Designed to be used with the :adi:`ADALM-PLUTO`, the :adi:`EVAL-CN0551-EBZ <en/d
    -  :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` Circuit Evaluation Board
    
 
-
 Evaluation Board Hardware
 -------------------------
 
@@ -26,7 +25,7 @@ Primary Side
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-top.png
    :alt: Figure 1. Top View of EVAL-CN0522-EBZ
    :align: center
-   :width: 1000px
+   :width: 1000
 
 RFIN Plug (J1)
 ^^^^^^^^^^^^^^
@@ -72,12 +71,13 @@ Secondary Side
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-bottom.png
    :alt: Figure 6. Bottom View of EVAL-CN0551-EBZ
    :align: center
-   :width: 1000px
+   :width: 1000
 
 Changing the Temperature Switch Trip Point (JP1 and JP2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The trip point of the temperature switch can be set using the solder jumpers JP1 and JP2, as shown in the table below.
+The trip point of the temperature switch can be set using the solder jumpers JP1
+and JP2, as shown in the table below.
 
 |Figure 7. ADT6401 Jumper Settings| *When the board temperature reaches the trip point, the* :adi:`ADT6401` *will disable the supply voltage to the amplifier stages.*
 
@@ -107,23 +107,21 @@ The trip point of the temperature switch can be set using the solder jumpers JP1
 
 | 
 
-
 .. important::
 
-   Due to considerable thermal dissipation of the RF amplifiers, the last three options should not be used.
-
+   Due to considerable thermal dissipation of the RF amplifiers, the last three
+   options should not be used.
 
 Connecting the EVAL-CN0551-EBZ to the ADALM-PLUTO
 -------------------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0417.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. note::
 
    An :adi:`EVAL-CN0417-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0417.html>` is shown in this picture. However, the same connections also apply for the :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>`.
-
 
 To properly operate the :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` using the :adi:`ADALM-PLUTO`, follow the steps below:
 
@@ -134,7 +132,6 @@ To properly operate the :adi:`EVAL-CN0551-EBZ <en/design-center/reference-design
 .. warning::
 
    Warning: Do not directly connect the RFOUT port of the :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` to the Rx port of the :adi:`ADALM-PLUTO`. The maximum RF input that the :adi:`ADALM-PLUTO` can safely handle is +2.5 dBm.
-
 
 Schematic, Layout and Bill of Materials
 ---------------------------------------
@@ -151,7 +148,6 @@ Schematic, Layout and Bill of Materials
    -  Allegro Layout Files
    -  Assembly Drawing
    
-
 
 More Information and Useful Links
 ---------------------------------
@@ -175,16 +171,15 @@ Board Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register Now <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0551-EBZ?&v=RevD>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |Figure 2. RFIN Port| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-rfin.png
-   :width: 150px
+   :width: 150
 .. |Figure 3. RFOUT Port| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-rfout.png
-   :width: 150px
+   :width: 150
 .. |Figure 4. LED Indicators| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-led.png
-   :width: 100px
+   :width: 100
 .. |Figure 5. Micro-USB Port| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-usb.png
-   :width: 150px
+   :width: 150
 .. |Figure 7. ADT6401 Jumper Settings| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-jumpers.png
-   :width: 100px
+   :width: 100

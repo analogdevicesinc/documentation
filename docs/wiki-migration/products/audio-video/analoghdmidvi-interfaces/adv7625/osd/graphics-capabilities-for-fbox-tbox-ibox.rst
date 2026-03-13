@@ -6,9 +6,24 @@ ADV7625/ADV7626/ADV7627 OSD graphic capabilities using Fbox, Ibox and Tbox
 Overview
 ========
 
-The ADV7625/ADV7626/ADV7627 offer a simple low cost on screen display for video overlay on HDMI. The hardware implementation uses Text boxes ( Tbox), filled boxes ( Fbox) and icon boxes (Ibox) to create basic text based OSD overlay. The hardware offers a 16x16 resolution for text characters with ability to scale from 1 to 15 using pixel repetition. The pixel repetition in most cases does not provide good quality text as a result. The Blimp OSD Designer software tool abstracts the drawing hardware components and optimizes their use by treating them all as graphic components that can display both images or text and can span across multiple 16x16 boundaries in the case of Tboxes to create larger high quality fonts. On larger resolutions like 1080p and 4k, a compromise will usually have to be made between limiting OSD content or using scaling to have more content but with lower resolution.
+The ADV7625/ADV7626/ADV7627 offer a simple low cost on screen display for video
+overlay on HDMI. The hardware implementation uses Text boxes ( Tbox), filled
+boxes ( Fbox) and icon boxes (Ibox) to create basic text based OSD overlay. The
+hardware offers a 16x16 resolution for text characters with ability to scale
+from 1 to 15 using pixel repetition. The pixel repetition in most cases does not
+provide good quality text as a result. The Blimp OSD Designer software tool
+abstracts the drawing hardware components and optimizes their use by treating
+them all as graphic components that can display both images or text and can span
+across multiple 16x16 boundaries in the case of Tboxes to create larger high
+quality fonts. On larger resolutions like 1080p and 4k, a compromise will
+usually have to be made between limiting OSD content or using scaling to have
+more content but with lower resolution.
 
-This application note details the capabilities of the ADV7625 OSD as implemented in Blimp. with these guidelines, user can plan the graphic and text layout of each pages for their OSD design. the best way to verify is by using Blimp to add graphics and text to a page and test it with the OSD hardware emulator which comes with Blimp.
+This application note details the capabilities of the ADV7625 OSD as implemented
+in Blimp. with these guidelines, user can plan the graphic and text layout of
+each pages for their OSD design. the best way to verify is by using Blimp to add
+graphics and text to a page and test it with the OSD hardware emulator which
+comes with Blimp.
 
 Reference parts
 ===============
@@ -24,14 +39,19 @@ TBox
 
 -  Each Tbox has 256x16 pixels. Each Tbox uses 16x16 blocks from graphic memory assigned by index.
 -  Graphic memory: Up to 256 unique blocks of 16x16 pixels with for each color = 65536 pixels ( Graphic memory of 256 16x16 blocks)
--  Blocks of n multiples of 16x16 can be reused for maximum of 262144 pixels ( 640 256x16 blocks) Example: 16x16 blocks that are all same color or pattern can be reused.
+-  Blocks of n multiples of 16x16 can be reused for maximum of 262144 pixels (
+   640 256x16 blocks) Example: 16x16 blocks that are all same color or pattern
+   can be reused.
 
 Limitations
 -----------
 
 -  Limit of 2560 pixels horizontally. Can be grouped by multiple of 160 pixels blocks in width.
 -  Height can be grouped by a multiple of 16 pixels block
--  Up to 16 colors can be displayed at any time. So different pages cold use different set of 16 colors. This needs to be discussed during page layout when defining demo graphics. We will clearly indicate which images are by pages. Each color uses overlapped display memory from above.
+-  Up to 16 colors can be displayed at any time. So different pages cold use
+   different set of 16 colors. This needs to be discussed during page layout
+   when defining demo graphics. We will clearly indicate which images are by
+   pages. Each color uses overlapped display memory from above.
 
 **Table 1: Tbox image size limits by number of colors ( with scaling = 1 )**
 
@@ -75,7 +95,8 @@ Ibox
 ====
 
 -  Up to 64 blocks of 8x8 pixels with 32 colors support = 4096 pixels.
--  Blocks of n multiple of 8x8 can be reused for maximum of 8192 pixels ( 128 8x8 blocks)
+-  Blocks of n multiple of 8x8 can be reused for maximum of 8192 pixels ( 128
+   8x8 blocks)
 
 Limitations
 -----------
@@ -95,7 +116,8 @@ Scaling
 =======
 
 -  The sizes shown above are with both vertical and horizontal scaling to 1.
--  The size can be increased by the scaling factor at the cost of losing resolution quality
+-  The size can be increased by the scaling factor at the cost of losing
+   resolution quality
 
 Graphics examples
 =================

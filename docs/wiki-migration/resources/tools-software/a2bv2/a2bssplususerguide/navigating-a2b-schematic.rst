@@ -6,7 +6,8 @@ SUPPORTED PLATFORMS
 Standard Platforms
 ------------------
 
-The A2B Plugin for SigmaStudio+ gives the following default platforms for the user:
+The A2B Plugin for SigmaStudio+ gives the following default platforms for the
+user:
 
 **A2B**
 
@@ -44,46 +45,51 @@ The A2B Plugin for SigmaStudio+ gives the following default platforms for the us
 
    Refer :doc:`A2B Bus Analyzer Platform </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/a2banalyzerplatform>` for further information on Analyzer.
 
-
    |image1|
 
 .. container:: centeralign
 
    **Figure:** A2B platforms in toolbox
 
-
 Transceivers and Peripherals
 ----------------------------
 
-In addition to these, the plugin also provides a range of transceivers and generic peripheral devices as follows:
+In addition to these, the plugin also provides a range of transceivers and
+generic peripheral devices as follows:
 
 -  AD242x, AD243x Main transceiver
 -  AD242x, AD243x Subordinate transceiver
 -  Generic device: A device that takes an xml file as input for programming via I2C and SPI.
--  Non-Programmable generic device: A device that is used for representing not programmable peripherals in A2B system (e.g. Microphone).
+-  Non-Programmable generic device: A device that is used for representing not
+   programmable peripherals in A2B system (e.g. Microphone).
 
-These devices are available as part of the toolbox once inside the platform view/canvas as shown in below, the platform canvas can be opened by double clicking on the platform in the system view or by clicking the “Canvas” option under the platform in the Project window.
+These devices are available as part of the toolbox once inside the platform
+view/canvas as shown in below, the platform canvas can be opened by double
+clicking on the platform in the system view or by clicking the “Canvas” option
+under the platform in the Project window.
 
 Custom Platforms
 ----------------
 
-A2B Platforms different from standard platforms can be created using custom platforms. This is also available as part of tool box.
+A2B Platforms different from standard platforms can be created using custom
+platforms. This is also available as part of tool box.
 
 .. note::
 
    \ :doc:`How to create loadable custom platforms </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/defineplatforms>`
 
-
 .. note::
 
    \ `Refer <https://wiki.analog.com/resources/tools-software/sigmastudiov2/usingsigmastudio/_customvsstandard>`_ Standard vs Custom Platforms
 
-
 Generic device
 --------------
 
-A generic device is not a fixed-function peripheral but rather a configurable node that can be programmed to behave in specific ways depending on the system requirements. These generic devices can be programmable or non-programmable. This is part of custom platform / standard platform. This can be programmed via I2C/SPI using xml files which is provided as an input as shown in the figure.
-
+A generic device is not a fixed-function peripheral but rather a configurable
+node that can be programmed to behave in specific ways depending on the system
+requirements. These generic devices can be programmable or non-programmable.
+This is part of custom platform / standard platform. This can be programmed via
+I2C/SPI using xml files which is provided as an input as shown in the figure.
 
 |image2|
 
@@ -91,8 +97,7 @@ A generic device is not a fixed-function peripheral but rather a configurable no
 
    **Figure:** XML update for Peripheral device
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/tree_toolbox_.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/1961_peripheral.png
-   :width: 400px
+   :width: 400

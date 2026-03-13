@@ -3,7 +3,9 @@
 Read
 ====
 
-This action allows the user to Read the value of the given property in a specific module/shape. The function call takes in 2 arguments. This action returns the property value and it's type.
+This action allows the user to Read the value of the given property in a
+specific module/shape. The function call takes in 2 arguments. This action
+returns the property value and it's type.
 
 API
 ---

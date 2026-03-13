@@ -9,19 +9,29 @@ The :adi:`AD-96TOF1-EBZ <en/design-center/evaluation-hardware-and-software/evalu
 Calibration Overview
 --------------------
 
-Calibration is required for the AD-96TOF1-EBZ to map the depth output of the system to the real world. The accuracy of depth is dependent on the calibration environment as well as the target environment conditions. Depth calibration is performed by placing a target at the known distance in from of the TOF system. The system runs the specific mode that is being calibrated. During calibration the illumination pulse of the system is delayed relative to the capture time to simulate different distances, this is referred to as a sweep. The captured data is used to generate a gain, offset, and look-up table. Each mode requires its own calibration and parameters.
+Calibration is required for the AD-96TOF1-EBZ to map the depth output of the
+system to the real world. The accuracy of depth is dependent on the calibration
+environment as well as the target environment conditions. Depth calibration is
+performed by placing a target at the known distance in from of the TOF system.
+The system runs the specific mode that is being calibrated. During calibration
+the illumination pulse of the system is delayed relative to the capture time to
+simulate different distances, this is referred to as a sweep. The captured data
+is used to generate a gain, offset, and look-up table. Each mode requires its
+own calibration and parameters.
 
 Calibration Pipeline
 --------------------
 
-The following procedure takes place when running a calibration ("params" are configurable in JSON files specified later in this document):
+The following procedure takes place when running a calibration ("params" are
+configurable in JSON files specified later in this document):
 
 -  Firmware specified from the **.json** file is loaded into the system;
 -  The system is turned on and allowed to run for a certain warmup period;
 -  The sweep starts and a specified number of depth frames are collected for each sweep step;
 -  Calibration parameters are calculated and stored into new firmware files;
 -  Firmware files are stored to **/"results_path"/"unique_id"/"mode"/latest/lf_files**;
--  The user can run these files directly from Example.py or can load these files into EEPROM and then run from Example.py.
+-  The user can run these files directly from Example.py or can load these files
+   into EEPROM and then run from Example.py.
 
 Physical Setup
 --------------
@@ -31,11 +41,11 @@ To run a linear calibration a target is placed a known distance away from the To
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/room_setup1.png
    :alt: Example of room setup
    :align: right
-   :width: 300px
+   :width: 300
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/room_setup2.png
    :alt: Example pf closed space setup
-   :width: 300px
+   :width: 300
 
 Calibration Configuration
 -------------------------
@@ -48,7 +58,8 @@ To run a calibration first it is necessary to enter the correct parameters to a 
 -  warmup_time: Specify how long the camera warms up before calibration;
 -  target_distance: Specify the distance of the target from the sensor in mm.
 
-The parameters available in the config file are shown below. (Supported parameters are highlighted, the unhighlighted parameters are not to be modified)
+The parameters available in the config file are shown below. (Supported
+parameters are highlighted, the unhighlighted parameters are not to be modified)
 
 +-------------------+---------------------------------+-------------------------------------------------+
 | Parameter         | Value                           | Description                                     |
@@ -131,7 +142,9 @@ Calibrate and store to EEPROM Example
 The following steps run through a **near mode calibration** with the target positioned at 300mm:
 
 -  Place target 300mm away from the sensor;
--  Modify the following parameters in the sweep_config_near.json file, located in the firmware path (aditof_sdk/tools/calibration-96tof1/config/BM_Kit/Near):
+-  Modify the following parameters in the sweep_config_near.json file, located
+   in the firmware path
+   (aditof_sdk/tools/calibration-96tof1/config/BM_Kit/Near):
 
    -  "unique_id": "0001"
    -  "target_distance": 300
@@ -140,7 +153,8 @@ The following steps run through a **near mode calibration** with the target posi
 -  Open terminal and run the following commands:
 
    -  cd aditof_sdk/tools/calibration-96tof1
-   -  sudo python3 calibrate_single_mode.py config/BM_Kit/Near/sweep_config_near.json
+   -  sudo python3 calibrate_single_mode.py
+      config/BM_Kit/Near/sweep_config_near.json
 
 -  The calibrated firmware and data will be stored in saved_results/0001/near
 -  In config/eeprom_replace_config.json modify the following parameters:
@@ -158,4 +172,3 @@ The following steps run through a **near mode calibration** with the target posi
    :class: download
 
    `Calibration Assembly Document <https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/calibration_assembly_doc.pdf>`_
-

@@ -24,7 +24,13 @@ The :adi:`AD7779` includes a 12-bit SAR ADC. This ADC can be used for :adi:`AD77
 
 The :adi:`AD7779` contains a 2.5 V reference and reference buffer. The reference has a typical temperature coefficient of 10 ppm/°C. The :adi:`AD7779` offers two modes of operation: high resolution mode and low power mode. High resolution mode provides a higher dynamic range while consuming 10.75 mW per channel; low power mode consumes just 3.37 mW per channel at a reduced dynamic range specification.
 
-The specified operating temperature range is −40°C to +105°C, although the device is operational up to +125°C. Note that throughout this data sheet, certain terms are used to refer to either the multifunction pins or a range of pins. The multifunction pins, such as DCLK0/SDO, are referred to either by the entire pin name or by a single function of the pin, for example, DCLK0, when only that function is relevant. In the case of ranges of pins, AVSSx refers to the following pins: AVSS1A, AVSS1B, AVSS2A, AVSS2B, AVSS3, and AVSS4.
+The specified operating temperature range is −40°C to +105°C, although the
+device is operational up to +125°C. Note that throughout this data sheet,
+certain terms are used to refer to either the multifunction pins or a range of
+pins. The multifunction pins, such as DCLK0/SDO, are referred to either by the
+entire pin name or by a single function of the pin, for example, DCLK0, when
+only that function is relevant. In the case of ranges of pins, AVSSx refers to
+the following pins: AVSS1A, AVSS1B, AVSS2A, AVSS2B, AVSS3, and AVSS4.
 
 Applications:
 
@@ -312,4 +318,3 @@ Downloads
    -  :git-no-OS:`Implementation of AD7779 Driver. <drivers/adc/ad7779/ad7779.c>`
    -  :git-no-OS:`Header file of AD7779 Driver. <drivers/adc/ad7779/ad7779.h>`
    
-

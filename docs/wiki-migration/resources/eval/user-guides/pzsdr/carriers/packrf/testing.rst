@@ -4,16 +4,25 @@ ADRV-PACKRF Production Testing
 Overview
 --------
 
-Production tests for ADRV-PACKRF BOX are composed of a series of Bash scripts that run both on Raspberry Pi and DUT (Device under test). The tester only interacts with the Raspberry Pi through a keyboard and monitor. Connected to the Raspberry PI should be an HDMI display where information about tests, required tester actions and results are displayed.
+Production tests for ADRV-PACKRF BOX are composed of a series of Bash scripts
+that run both on Raspberry Pi and DUT (Device under test). The tester only
+interacts with the Raspberry Pi through a keyboard and monitor. Connected to the
+Raspberry PI should be an HDMI display where information about tests, required
+tester actions and results are displayed.
 
-Assembling of the box is split in two phases (Partial Assembly and Full Assembly). After each assembly phase the corresponding testing batch must be run.
+Assembling of the box is split in two phases (Partial Assembly and Full
+Assembly). After each assembly phase the corresponding testing batch must be
+run.
 
-If one of the test fails the testing sequence will stop and "FAILED" message will be printed. Tester can get information related to what component failed. After that he can either try to test again or mark the tested device as defective.
+If one of the test fails the testing sequence will stop and "FAILED" message
+will be printed. Tester can get information related to what component failed.
+After that he can either try to test again or mark the tested device as
+defective.
 
-A set of log files is created and stored on Raspberry PI SD card. These logs can be used to supervise the testing process.
+A set of log files is created and stored on Raspberry PI SD card. These logs can
+be used to supervise the testing process.
 
 The complete test jig should look like:
-
 
 |image1|
 
@@ -51,7 +60,9 @@ Test Setup
 -  Connect a USB keyboard to the Raspberry PI.
 -  Connect an Ethernet cable to the Raspberry Pi and Radio.
 
-   -  The Ethernet port of the Raspberry PI is configured with static IP and a DHCP server is running on it. So is not recommended to connect anything other than the POE-Injector or the RFSOM-BOX.
+   -  The Ethernet port of the Raspberry PI is configured with static IP and a
+      DHCP server is running on it. So is not recommended to connect anything
+      other than the POE-Injector or the RFSOM-BOX.
 
 -  Connect a 5V Power Supply to the "PWR IN" port of the Raspberry PI.
 -  Turn on the Raspberry Pi. After it powers on it should boot up Linux and the testing screen should be visible on the monitor.
@@ -65,7 +76,8 @@ The SD card image used for production testing has no differences compared to the
 Raspberry PI SD card
 ~~~~~~~~~~~~~~~~~~~~
 
-The SD image used is based on Raspbian Stretch with desktop. On top of that the "setup_env.sh" script should be run to prepare the testing framework.
+The SD image used is based on Raspbian Stretch with desktop. On top of that the
+"setup_env.sh" script should be run to prepare the testing framework.
 
 To set the PI SD card please follow the steps:
 
@@ -164,16 +176,16 @@ Test Procedure
 -  :doc:`PackRF assembly </wiki-migration/resources/eval/user-guides/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>` and testing is complete.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/packrf_test_jig.jpg
-   :width: 600px
+   :width: 600
 .. |guides-pzsdr-carriers-packrf-start_screen.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/start_screen.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/pre_assemb_fail.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/partial_assemb_pass.jpg
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/sma_loopback.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/rf_test.png
-   :width: 600px
+   :width: 600
 
 .. |guides-pzsdr-carriers-packrf-start_screen.jpg| image:: https://wiki.analog.com/_media/guides/pzsdr/carriers/packrf/start_screen.jpg

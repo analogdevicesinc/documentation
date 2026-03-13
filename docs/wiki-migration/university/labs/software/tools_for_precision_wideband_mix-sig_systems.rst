@@ -6,13 +6,17 @@ Tools for Precision Wideband Mixed Signal System Design
 Introduction
 ------------
 
-The goal of this tutorial is to equip the reader with a collection of hardware and software tools for developing precision wideband mixed-signal applications.
+The goal of this tutorial is to equip the reader with a collection of hardware
+and software tools for developing precision wideband mixed-signal applications.
 
-\*\* Content Guide:\*\* This tutorial includes complete written instructions, a video guide, and a slide deck that can be used for delivering as a hands-on workshop.
+\*\* Content Guide:\*\* This tutorial includes complete written instructions, a
+video guide, and a slide deck that can be used for delivering as a hands-on
+workshop.
 
 What exactly does "Precision Wideband" mean? In the context of this tutorial, the "wideband" part means that **unlike** "low speed" applications, timing, or jitter, of individual samples with respect to previous and future samples **IS** critical. The application involves extracting information from arrays of samples that are correlated with each other in some way. AC performance metrics such as signal to noise ratio and total harmonic distortion extracted from a Fourier transform of the data **will** be considered. Even if the end applicaiton does not involve sinewaves, these metrics are almost always a useful indicator of performance.
 
-The "precision" part means that DC parameters such as offset, gain error, linearity, and temperature drift are also important.
+The "precision" part means that DC parameters such as offset, gain error,
+linearity, and temperature drift are also important.
 
 **In contrast** - sample jitter is important in a "wideband" application. If you are measuring signal to noise ratio, the Signal to Noise ratio (SNR) can be no greater than:
 
@@ -20,7 +24,10 @@ The "precision" part means that DC parameters such as offset, gain error, linear
 
 In this tutorial, we will be generating excitation waveforms, digitizing time-domain signals, performing Fast Fourier Transforms (FFTs), extracting features from the frequency domain, and calculating measurement parameters. We **will** be measuring AC Signal to Noise Ratio (SNR), Total Harmonic Distortion (THD), measuring steps, wiggles, and other situations where precise timing is required.
 
-Throughout the exercises we'll be writing simple Python code to capture and analyze data, using the industry standard Industrial I/O (IIO) framework to interact with the ADC, and the popular NumPy and Matplotlib Python libraries. Thus this exercise also serves as a mini-tutorial on Python.
+Throughout the exercises we'll be writing simple Python code to capture and
+analyze data, using the industry standard Industrial I/O (IIO) framework to
+interact with the ADC, and the popular NumPy and Matplotlib Python libraries.
+Thus this exercise also serves as a mini-tutorial on Python.
 
 Materials
 ---------
@@ -42,7 +49,9 @@ Materials
 -  :adi:`ADALM2000 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html>`
 -  Clone or download zip of the Python code for this tutorial from: `Python Code for the Hardware and Software Tools for Precision Wideband Instrumentation Workshop <https://github.com/cristina-suteu/ftc23-hstpwi/>`_
 
-This probably isn't necessary as of Kuiper 2022r2, but just in case you want to update pyadi-iio or have the examples in your home directory, run these commands in a terminal:
+This probably isn't necessary as of Kuiper 2022r2, but just in case you want to
+update pyadi-iio or have the examples in your home directory, run these commands
+in a terminal:
 
 ::
 
@@ -58,23 +67,25 @@ This tutorial builds on the concepts covered in: Introduction to the basic conce
 Slide Deck and Video
 --------------------
 
-Since this tutorial is also designed to be presented as a live, hands-on workshop, a slide deck is provided here:
+Since this tutorial is also designed to be presented as a live, hands-on
+workshop, a slide deck is provided here:
 
 .. admonition:: Download
    :class: download
 
    `Tools for Low-Speed Mixed Signal System Design Slide Deck <https://wiki.analog.com/_media/university/labs/software/tools_for_precision_wideband_mix-sig_systems/tools_for_precision_wideband_instrumentation_workshop.pptx>`_
 
-
-A complete video run-through is also provided, either as a companion to following the tutorial yourself, or to practice before presenting as a hands-on workshop:
+A complete video run-through is also provided, either as a companion to
+following the tutorial yourself, or to practice before presenting as a hands-on
+workshop:
 
 .. note::
 
-   Video to come soon, in the meantime please enjoy this primer on precision wideband applications:
+   Video to come soon, in the meantime please enjoy this primer on precision
+   wideband applications:
 
    
    .. container:: centeralign
-
 
    
       ..
@@ -83,8 +94,8 @@ A complete video run-through is also provided, either as a companion to followin
 
 .. note::
 
-   Finish Me (Translate slide deck and video into complete written instructions with photos, diagrams, etc.)
-
+   Finish Me (Translate slide deck and video into complete written instructions
+   with photos, diagrams, etc.)
 
 Preparation - a few resources for learning Python
 -------------------------------------------------

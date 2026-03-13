@@ -3,7 +3,7 @@ AD9081 & AD9082 & AD9988 & AD9986 Prototyping Platform User Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081-fmca-ebz_ad9082-fmca-ebz.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The :adi:`AD9081-FMCA-EBZ`, :adi:`AD9988-FMCB-EBZ` or :adi:`AD9082-FMCA-EBZ`, :adi:`AD9986-FMCB-EBZ` is a FMC cards for the :adi:`AD9081`, :adi:`AD9988` or :adi:`AD9082`, :adi:`AD9986`, information on the card and how to use it with standard Xilinx and Intel Carriers, the design package that surrounds it, and the software which can make it work can be found here.
 
@@ -89,7 +89,6 @@ Software support
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
-
 Useful links
 ------------
 
@@ -145,4 +144,3 @@ Software support
 ----------------
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
-

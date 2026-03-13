@@ -4,14 +4,22 @@ ADRV936X_RFSOM production testing
 Overview
 --------
 
-The production test of the SOM has several built-in tests that run and return a pass or failed status. See the following list for summaries of the current tests:
+The production test of the SOM has several built-in tests that run and return a
+pass or failed status. See the following list for summaries of the current
+tests:
 
 -  USB media: Data is saved to an attached USB media drive, read back, and verified. If the data is different or there are other USB issues (device not attached, enumeration problems, etc) the test will fail.
 -  Ethernet: The breakout board give itself a static IP address and tries to ping the computer's static address that it's directly connected to. The test passes if a response is received, otherwise it fails.
 -  FPGA loopback: Electrical connectivity is tested using the test fixture attached to the breakout board by writing, reading and verifying data in the GPIO registers.
--  AD9361: The RF performance and related factors for the ad9361 part are tested via a python script. Note that all the TX<->RX loopbacks are required otherwise the tests will fail.
+-  AD9361: The RF performance and related factors for the ad9361 part are tested
+   via a python script. Note that all the TX<->RX loopbacks are required
+   otherwise the tests will fail.
 
-The script also proceeds to write required files to QSPI flash in order to allow booting from it, querying a connected frequency counter to store the actual AD9361 reference clock out frequency, as well as allowing the user to enter in the remaining suffix for the board's MAC address. These values are saved as variables and stored in the flash memory.
+The script also proceeds to write required files to QSPI flash in order to allow
+booting from it, querying a connected frequency counter to store the actual
+AD9361 reference clock out frequency, as well as allowing the user to enter in
+the remaining suffix for the board's MAC address. These values are saved as
+variables and stored in the flash memory.
 
 Power Sequencer
 ---------------
@@ -23,7 +31,6 @@ Power Sequencer
 .. important::
 
    :doc:`Sequencer programming steps </wiki-migration/resources/eval/user-guides/pzsdr/power-and-sequencing>`\
-
 
 Test image
 ----------
@@ -45,11 +52,9 @@ The production test software running on the target device is available as a preb
    -  `Actual file for SOM2 Testing <https://swdownloads.analog.com/cse/prod_test_rel/picozed_test/picozed-sdr2-brk-test-2020_14_08.img.tar.xz>`_
    
 
-
 .. important::
 
    It is also possible to manually create one using :doc:`these instructions </wiki-migration/resources/eval/user-guides/pzsdr/testing/sd-cards>`.
-
 
 .. admonition:: Download
    :class: download
@@ -61,7 +66,6 @@ The production test software running on the target device is available as a preb
    -  `Actual file for SOM1 Testing <https://swdownloads.analog.com/cse/prod_test_rel/picozed_test/picozed-sdr1-brk-test-2020_14_08.img.tar.xz>`_
    
 
-
 .. admonition:: Download
    :class: download
 
@@ -72,16 +76,18 @@ The production test software running on the target device is available as a preb
    -  `Raspberry Pi file for SOM2 Testing <https://swdownloads.analog.com/cse/prod_test_rel/adrv9361_bob/raspberry_pi_som2_test.zip>`_
    
 
-
 .. important::
 
    It is also possible to manually create one using :doc:`these instructions </wiki-migration/resources/eval/user-guides/pzsdr/testing/sd-cards>`.
 
-
 Test script
 -----------
 
-A series of bash and python scripts are used to test aforementioned functionalities and to automate post-test functions. They are used to save the board model and check AD9361 reference clock frequency in addition to writing all the required boot files to QSPI flash in order to support booting Linux directly from it.
+A series of bash and python scripts are used to test aforementioned
+functionalities and to automate post-test functions. They are used to save the
+board model and check AD9361 reference clock frequency in addition to writing
+all the required boot files to QSPI flash in order to support booting Linux
+directly from it.
 
 Required hardware
 -----------------
@@ -102,15 +108,21 @@ Required hardware
 Required setup
 --------------
 
--  Raspberry Pi 4 with attached mouse and keyboard running the provided scripts and an Ethernet cable plugged into both the breakout board and the Raspberry Pi. In addition, two USB cables should be plugged into the Raspberry Pi board: the first goes to the UART port on the breakout board and the second goes to the USB-GPIB module on the frequency counter.
+-  Raspberry Pi 4 with attached mouse and keyboard running the provided scripts
+   and an Ethernet cable plugged into both the breakout board and the Raspberry
+   Pi. In addition, two USB cables should be plugged into the Raspberry Pi
+   board: the first goes to the UART port on the breakout board and the second
+   goes to the USB-GPIB module on the frequency counter.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/raspberry_pi_4_setup.jpg
    :alt: raspberry_pi_4_setup.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Insert the SOM onto the breakout board.
--  Make sure the boot select switches are set to boot off the SOM's SD card and that the SD card containing the production test software is inserted. See the image below for proper boot select switch positions.
+-  Make sure the boot select switches are set to boot off the SOM's SD card and
+   that the SD card containing the production test software is inserted. See the
+   image below for proper boot select switch positions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-som-bootselect.jpg
    :align: center
@@ -119,37 +131,51 @@ Required setup
 -  Insert the USB cable into the UART port and into the Raspberry
 -  Insert the flash drive into the OTG port on the breakout board. Make sure the USB jumper is set to OTG mode on the breakout board, see the image below for confirmation of correct positioning.
 -  Insert the frequency counter USB into the Raspberry Pi.
--  The "INPUT A" of the frequency counter should be attached to the pin on the fan plugin nearest to the power switch on the breakout board and to a ground location such as the pin accessible through the cutout on the side of the JTAG header. Below there's a view of the probe locations. Also, note the labels on the USB ports in order to plug them in the right locations for the media drive and UART connection to the Raspberry Pi.
+-  The "INPUT A" of the frequency counter should be attached to the pin on the
+   fan plugin nearest to the power switch on the breakout board and to a ground
+   location such as the pin accessible through the cutout on the side of the
+   JTAG header. Below there's a view of the probe locations. Also, note the
+   labels on the USB ports in order to plug them in the right locations for the
+   media drive and UART connection to the Raspberry Pi.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr2-test-setup.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
--  SOM2 has loopbacks placed between TX1A↔RX1A, TX1B↔RX1B, TX2A↔RX2A, and TX2B↔RX2B as seen in the first image below. SOM1 has loopbacks placed between TXA↔RXA and TXB→RXB as seen in the second image.
+-  SOM2 has loopbacks placed between TX1A↔RX1A, TX1B↔RX1B, TX2A↔RX2A, and
+   TX2B↔RX2B as seen in the first image below. SOM1 has loopbacks placed between
+   TXA↔RXA and TXB→RXB as seen in the second image.
 
 |image1| |image2|
 
 .. warning::
 
-   Careful while attaching and removing the loopback cables since they are fragil. Make sure they aren't broken before the test because this may lead to test fails.
-
+   Careful while attaching and removing the loopback cables since they are
+   fragil. Make sure they aren't broken before the test because this may lead to
+   test fails.
 
 Test process
 ------------
 
--  Before starting the testing, ensure you have added the MAC Address sticker on the board similarly to the photo below.
+-  Before starting the testing, ensure you have added the MAC Address sticker on
+   the board similarly to the photo below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/mac_address.png
    :alt: &400
    :align: center
 
 -  Make sure the sequencer is programmed before starting the production testing.
--  Make sure all the required setup explained above is completed and the frequency counter is turned on in addition to the Raspberry Pi running the test script. Once the test setup is ready, SOM testing should be done using the following steps:
+-  Make sure all the required setup explained above is completed and the
+   frequency counter is turned on in addition to the Raspberry Pi running the
+   test script. Once the test setup is ready, SOM testing should be done using
+   the following steps:
 
 .. important::
 
-   If it is the first time you run a test on your setup, there will be a prompt asking you to input the password for uploading test logs remotely. Type in the password provided and press enter. The password is then stored locally and there will be no need to this further.
-
+   If it is the first time you run a test on your setup, there will be a prompt
+   asking you to input the password for uploading test logs remotely. Type in
+   the password provided and press enter. The password is then stored locally
+   and there will be no need to this further.
 
 -  Place a new SOM module onto the breakout board
 
@@ -163,17 +189,21 @@ Test process
    :align: center
 
 -  Scan the serial number on the board using the scanner
--  When prompted on the Raspberry Pi monitor, enter in the remaining suffix characters to set the MAC address for the board.
+-  When prompted on the Raspberry Pi monitor, enter in the remaining suffix
+   characters to set the MAC address for the board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/2_test.png
    :align: center
 
--  Once the test has been completed, the 'PASSED' message will be prompted on the screen.
+-  Once the test has been completed, the 'PASSED' message will be prompted on
+   the screen.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_7.png
    :align: center
 
--  When the test process is over, power-off the breakout board by selecting option 3, before powering it off manually. Then, insert the next module for testing.
+-  When the test process is over, power-off the breakout board by selecting
+   option 3, before powering it off manually. Then, insert the next module for
+   testing.
 
 FMC Carrier
 ~~~~~~~~~~~
@@ -181,7 +211,8 @@ FMC Carrier
 Overview
 --------
 
-The carrier tests run on boot up on Raspberry Pi via a script in a terminal window. See the following list for summaries of the current tests:
+The carrier tests run on boot up on Raspberry Pi via a script in a terminal
+window. See the following list for summaries of the current tests:
 
 -  USB device mode: Micro USB cable is connected between raspberry pi and carrier, the test checks that the carrier is listed as usb gadget device
 -  USB host mode: a Micro USB (male) an adapter to type A (female) is used to connect a usb flash, lsusb linux command is run on carrier to see if host mode is enabled and flash is detected, check speed with hdparm, check that partition is mounted
@@ -190,7 +221,13 @@ The carrier tests run on boot up on Raspberry Pi via a script in a terminal wind
 -  HDMI: Monitor connectivity is checked through physical displaying output on the attached monitor
 -  Clocks: he clock monitor IP (axi_clock_monitor) is used to test several clock signal paths. The IP features a mechanism which measures the input clock frequency relative to the system clock and stores the result in an internal register. By checking if the measured clock signal is within an expected range the path is validated. 4 clock signals are measured, 3 of them generated by the FMC loopback at the same frequency of 156MHz and one is generated by the AD9517 PLL
 -  SFP+, FMC loopback test. This is an instance of the axi_adxcvr_lb which is used to test 2 transceiver lanes. One transceiver lane (lane 0) is used for the FMC connector P2 and the other one (lane 1) for the SFP peripheral on the P1 connector. The test is performed continuously inside the IP core and the result is written to an internal status register. Each lane will have a corresponding status bit. Data is generated and verified by the core for each lane individually. The software must read the register to get the result.
--  FMC, Camera, Pmod gpio test.There are 3 instances of the axi_gpio IP core used to test general purpose signal paths for the FMC connector (P2), the camera connector (P9) and the (P11) PMOD connector. The FMC connector has the most signals (68) out of the three peripherals requiring three GPIO channels (GPIO_LB_0 ch1, ch2 and GPIO_LB_1 ch1), the CAM connector uses 2 channels and the PMOD uses 1. The test is performed by walking 0 across the signals of each channel, reading back the signals and checking for expected behaviour.
+-  FMC, Camera, Pmod gpio test.There are 3 instances of the axi_gpio IP core
+   used to test general purpose signal paths for the FMC connector (P2), the
+   camera connector (P9) and the (P11) PMOD connector. The FMC connector has the
+   most signals (68) out of the three peripherals requiring three GPIO channels
+   (GPIO_LB_0 ch1, ch2 and GPIO_LB_1 ch1), the CAM connector uses 2 channels and
+   the PMOD uses 1. The test is performed by walking 0 across the signals of
+   each channel, reading back the signals and checking for expected behaviour.
 
 Test image
 ----------
@@ -209,11 +246,12 @@ The production test software running on the target device is available as a preb
    -  Checksum ``d2c1ad4dfd4d91c5601be28a7d227c9c``
    
 
-
 Raspberry microSD Card
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The SD image used is based on Raspbian with desktop. On top of that are installed the testing scripts. The image can be created starting from vanilla Raspbian.
+The SD image used is based on Raspbian with desktop. On top of that are
+installed the testing scripts. The image can be created starting from vanilla
+Raspbian.
 
 .. admonition:: Download
    :class: download
@@ -224,11 +262,9 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    -  Checksum ``d15c432f121141fc9cede87c0576e312``
    
 
-
 .. note::
 
    To write it on SD card can follow the instructions: `Installing PI images <https://www.raspberrypi.org/documentation/installation/installing-images/>`_
-
 
 Required hardware
 -----------------
@@ -255,7 +291,8 @@ Required hardware
 Required setup
 --------------
 
--  SOM board plugged into a carrier board with the card and boot select switches set to boot from the carrier SD card slot (as seen in the image below).
+-  SOM board plugged into a carrier board with the card and boot select switches
+   set to boot from the carrier SD card slot (as seen in the image below).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-ccfmc-bootselect.jpg
    :alt: pzsdr-ccfmc-bootselect.jpg
@@ -273,55 +310,66 @@ Required setup
 
 .. important::
 
-   Before starting the test process, please make sure to place the sticker with the QR code and the serial number on top of the board, as pictured below.
-
+   Before starting the test process, please make sure to place the sticker with
+   the QR code and the serial number on top of the board, as pictured below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/img_1735_qr.jpg
 
 See the following image of a board set up to run the production tests.
 
-
 |image3|
 
-Make sure to connect to your WIFI Network before testing. You can exit the test window by pressing CTRL+C in order to access the connection. Reboot the system in order to return to the test window.
-
+Make sure to connect to your WIFI Network before testing. You can exit the test
+window by pressing CTRL+C in order to access the connection. Reboot the system
+in order to return to the test window.
 
 |image4|
 
 Test process
 ------------
 
-First make sure all the required setup explained above is ready. Once that is done, testing carrier boards should be done using the following steps:
+First make sure all the required setup explained above is ready. Once that is
+done, testing carrier boards should be done using the following steps:
 
 -  Insert an SD card with the production test software into the carrier slot.
 -  Insert card in Raspberry and power it on.
 -  Power on the ADRV1CRR-FMC board.
--  The Pi should display the test interface once it booted, as presented in the image below
+-  The Pi should display the test interface once it booted, as presented in the
+   image below
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/initial_screen.png
 
 -  Using option number 3 in the menu, the carrier test starts. In order to test the device, an ethernet cable must be connected between Pi and carrier. Connection is verified at the beginning of the test.
 -  After connection is verified, the QR code with the board's serial number must be scanned in order to continue. The serial number may also be entered from the keyboard.
--  Tests should start automatically and begin with USB-gadget and UART testing. These tests run on the Raspberry.
+-  Tests should start automatically and begin with USB-gadget and UART testing.
+   These tests run on the Raspberry.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adr1crr_test_begin.png
    :alt: adr1crr_test_begin.png
 
--  The following tests run directly on the carrier via SSH. When prompted, you should insert the password for the carrier, like in the image above. The default password is analog. If all the tests completed appropriately, a 'PASSED' message will be displayed on the screen.
+-  The following tests run directly on the carrier via SSH. When prompted, you
+   should insert the password for the carrier, like in the image above. The
+   default password is analog. If all the tests completed appropriately, a
+   'PASSED' message will be displayed on the screen.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_pass_adrv1crr.png
 
--  In case a test fails, a message is prompted asking whether the test should be repeated. A test can be re-run any number of times. If the test keeps failing, the user can opt to close the test, which leads to a 'FAILED' message in red being displayed on the screen. However, the test can be continued for the rest of the components. In this case, the number of failing tests will be displayed along with the 'FAILED' message at the end.
-
+-  In case a test fails, a message is prompted asking whether the test should be
+   repeated. A test can be re-run any number of times. If the test keeps
+   failing, the user can opt to close the test, which leads to a 'FAILED'
+   message in red being displayed on the screen. However, the test can be
+   continued for the rest of the components. In this case, the number of failing
+   tests will be displayed along with the 'FAILED' message at the end.
 
 |image5|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adrv1crr_test_failed.png
 
--  At completion, the menu of the testing interface appears again. Option 5 can be used to power off the ADRV. After that, it is safe to physically toggle the power switch on the board.
+-  At completion, the menu of the testing interface appears again. Option 5 can
+   be used to power off the ADRV. After that, it is safe to physically toggle
+   the power switch on the board.
 
 The regular test process can be observed below.
-
 
 |image6|
 
@@ -334,11 +382,16 @@ Raspberry Pi test suite
 Overview
 ~~~~~~~~
 
-The breakout board tests run via the U-Boot post testing framework while an attached Raspberry Pi automates the pass/fail mechanism via a looped expect script reading the breakout board's output over a serial connection. See the following list for summaries of the current tests:
+The breakout board tests run via the U-Boot post testing framework while an
+attached Raspberry Pi automates the pass/fail mechanism via a looped expect
+script reading the breakout board's output over a serial connection. See the
+following list for summaries of the current tests:
 
 -  USB media: Data is saved to an attached USB media drive, read back, and verified. If the data is different or there are other USB issues (device not attached, enumeration problems, etc) the test will fail.
 -  Ethernet: The breakout board give itself a static IP address and tries to ping the computer's static address that it's directly connected to. The test passes if a response is received, otherwise it fails.
--  Buttons: The user running the test must interactively toggle the buttons which triggers a LED to blink. Note that when using adrv9364_rfsom boards only buttons S7, S8, and S9 are tested due to pin count limitations.
+-  Buttons: The user running the test must interactively toggle the buttons
+   which triggers a LED to blink. Note that when using adrv9364_rfsom boards
+   only buttons S7, S8, and S9 are tested due to pin count limitations.
 
 Required hardware
 ~~~~~~~~~~~~~~~~~
@@ -361,20 +414,26 @@ Required setup
 -  Ethernet cable plugged in between the breakout board and the Raspberry Pi.
 -  USB media drive inserted into the USB hub that plugs into the OTG adapter and then into the breakout board's USB OTG port.
 -  Two pin jumper inserted to enable USB OTG mode.
--  USB cable plugged into Raspberry Pi and the micro USB UART port on the breakout board.
+-  USB cable plugged into Raspberry Pi and the micro USB UART port on the
+   breakout board.
 
 See the following images of a Raspberry Pi and breakout board set up to run the production tests. |brkout-setup.jpg|
-
 
 |rpi-setup.jpg|
 
 Test process
 ~~~~~~~~~~~~
 
-First make sure all the required setup explained above is ready. Once that is done, testing breakout boards should be done using the following steps:
+First make sure all the required setup explained above is ready. Once that is
+done, testing breakout boards should be done using the following steps:
 
 -  Insert the adrv9364_rfsom board with test suite SD card into the breakout board.
--  Make sure the power, USB, and Ethernet cables are plugged in and then power on the board. Confirm the green power LED and blue FPGA LED are both lit after a few seconds have passed (see the picture below). If two green LEDs are lit on the SOM without the blue FPGA LED being lit this means that the FPGA isn't getting configured properly which means there is an issue during early bring up such as the board's power sequence not running correctly.
+-  Make sure the power, USB, and Ethernet cables are plugged in and then power
+   on the board. Confirm the green power LED and blue FPGA LED are both lit
+   after a few seconds have passed (see the picture below). If two green LEDs
+   are lit on the SOM without the blue FPGA LED being lit this means that the
+   FPGA isn't getting configured properly which means there is an issue during
+   early bring up such as the board's power sequence not running correctly.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-som-poweron-leds.jpg
    :alt: pzsdr-som-poweron-leds.jpg
@@ -382,14 +441,19 @@ First make sure all the required setup explained above is ready. Once that is do
 
 -  The board will start U-Boot which will run the tests after initialization.
 -  Tests should start automatically and be shown on the serial terminal.
--  When prompted on screen as seen in the following image, toggle the buttons (S7 through S9) on the board. Note that the DS3 LED should light up when the buttons are in the on state. In order to pass the test the buttons must be toggled on and off within a minute of starting the test, otherwise the test will timeout and fail.
+-  When prompted on screen as seen in the following image, toggle the buttons
+   (S7 through S9) on the board. Note that the DS3 LED should light up when the
+   buttons are in the on state. In order to pass the test the buttons must be
+   toggled on and off within a minute of starting the test, otherwise the test
+   will timeout and fail.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/rpi-button.jpg
    :alt: rpi-button.jpg
    :align: center
 
--  When the tests pass, a related message will be shown on screen in green. If any test fails, a message will shown in red instead. The following images show what the screen should look like in these cases.
-
+-  When the tests pass, a related message will be shown on screen in green. If
+   any test fails, a message will shown in red instead. The following images
+   show what the screen should look like in these cases.
 
 |rpi-pass.jpg|
 
@@ -397,10 +461,17 @@ First make sure all the required setup explained above is ready. Once that is do
    :alt: rpi-fail.jpg
    :align: center
 
--  Once the tests are complete, keep the Raspberry Pi running and turn off the breakout board. Then unplug the power, USB, and Ethernet cables from the breakout board in addition to removing the adrv9364_rfsom. Plug all the cables back into the next breakout board and repeat the process from the beginning.
+-  Once the tests are complete, keep the Raspberry Pi running and turn off the
+   breakout board. Then unplug the power, USB, and Ethernet cables from the
+   breakout board in addition to removing the adrv9364_rfsom. Plug all the
+   cables back into the next breakout board and repeat the process from the
+   beginning.
 
-When done testing, hit button #23 on the Raspberry Pi to power down the system and give the system a few seconds before pulling the power cable. The screen should display a bunch of service stopping messages before finally stating "Starting Power-off" (as seen below) at which point it's safe to pull the power cable.
-
+When done testing, hit button #23 on the Raspberry Pi to power down the system
+and give the system a few seconds before pulling the power cable. The screen
+should display a bunch of service stopping messages before finally stating
+"Starting Power-off" (as seen below) at which point it's safe to pull the power
+cable.
 
 |rpi-poweroff.jpg|
 
@@ -410,11 +481,13 @@ Linux test suite
 Overview
 ~~~~~~~~
 
-The breakout board tests run on boot up into Linux via a script. See the following list for summaries of the current tests:
+The breakout board tests run on boot up into Linux via a script. See the
+following list for summaries of the current tests:
 
 -  USB media: Data is saved to an attached USB media drive, read back, and verified. If the data is different or there are other USB issues (device not attached, enumeration problems, etc) the test will fail.
 -  Ethernet: A loopback module is used to perform a simple loopback test.
--  Switches/buttons: The user running the test must interactively toggle the switches and buttons which trigger the related LEDs.
+-  Switches/buttons: The user running the test must interactively toggle the
+   switches and buttons which trigger the related LEDs.
 
 Test image
 ~~~~~~~~~~
@@ -442,21 +515,28 @@ Required setup
 -  USB media drive inserted into the USB hub that plugs into the OTG adapter and then into the carrier's USB OTG port.
 -  Two pin jumper inserted to enable USB OTG mode.
 -  `Cypress USB driver <http://www.cypress.com/documentation/other-resources/usb-serial-drivers>`_ installed for connecting to the UART on Windows (or the cp210x module loaded on Linux)
--  USB cable plugged into computer and the micro USB UART port on the breakout board and the computer running your favorite terminal emulator (e.g. TeraTerm, PuTTY, minicom, picocom, etc) connected to the related serial port.
+-  USB cable plugged into computer and the micro USB UART port on the breakout
+   board and the computer running your favorite terminal emulator (e.g.
+   TeraTerm, PuTTY, minicom, picocom, etc) connected to the related serial port.
 
 See the following image of a board set up to run the production tests.
-
 
 |pzsdr-ccbrk-setup.jpg|
 
 Test process
 ~~~~~~~~~~~~
 
-First make sure all the required setup explained above is ready. Once that is done, testing breakout boards should be done using the following steps:
+First make sure all the required setup explained above is ready. Once that is
+done, testing breakout boards should be done using the following steps:
 
 -  Insert the arv9361_rf SOM board with test suite SD card into the breakout board.
 -  Make sure all the switches (S1 through S4) are set to the off position (they should all be toggled towards the label side as seen in the image above).
--  Make sure the power cable is plugged in and then power on the board. Confirm the green power LED and blue FPGA LED are both lit after a few seconds have passed (see the picture below). If two green LEDs are lit on the SOM without the blue FPGA LED being lit this means that the FPGA isn't getting configured properly which means there is an issue during early bring up such as the board's power sequence not running correctly.
+-  Make sure the power cable is plugged in and then power on the board. Confirm
+   the green power LED and blue FPGA LED are both lit after a few seconds have
+   passed (see the picture below). If two green LEDs are lit on the SOM without
+   the blue FPGA LED being lit this means that the FPGA isn't getting configured
+   properly which means there is an issue during early bring up such as the
+   board's power sequence not running correctly.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-som-poweron-leds.jpg
    :alt: pzsdr-som-poweron-leds.jpg
@@ -467,7 +547,9 @@ First make sure all the required setup explained above is ready. Once that is do
 -  When prompted, toggle the switches (S1 through S4) and buttons (S6 through S9) on the board. Note that the related LEDs should light up when the switches or buttons are in the on state (e.g. LED DS3 should light up when switch S1 or button S6 are enabled). In order to pass the test all switches and buttons must be toggled on and off. If this is not done within a minute of starting the test, it will timeout and fail.
 -  The others tests will run without requiring user input once the switch and button tests are finished.
 -  When the tests pass, the DS3 through DS6 LEDs will be solid. See the picture below for an example of LEDs lit after a successful test run. |pzsdr-ccbrk-passed.jpg| If any test fails LEDs DS3 through DS6 will be blinking and the script output will note the failure.
--  Finally hit the Enter key to power down the system. The message "System halted" should be shown on the serial output when it's safe to physically toggle the power switch on the board.
+-  Finally hit the Enter key to power down the system. The message "System
+   halted" should be shown on the serial output when it's safe to physically
+   toggle the power switch on the board.
 
 Breakout board Raspberry Pi test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -475,7 +557,10 @@ Breakout board Raspberry Pi test
 Overview
 --------
 
-The breakout board tests run via the U-Boot post testing framework while an attached Raspberry Pi automates the pass/fail mechanism via a looped expect script reading the breakout board's output over a serial connection. See the following list for summaries of the current tests:
+The breakout board tests run via the U-Boot post testing framework while an
+attached Raspberry Pi automates the pass/fail mechanism via a looped expect
+script reading the breakout board's output over a serial connection. See the
+following list for summaries of the current tests:
 
 -   **Buttons**: The user running the test must interactively toggle the buttons which trigger a LED to blink. Note that when using SOM1 boards only buttons S7, S8, and S9 are tested due to pin count limitations.
 -   **USB media**: Data is saved to an attached USB media drive, read back and verified. If the data is different or there are other USB issues (device not attached, enumeration problems, etc) the test will fail.
@@ -499,7 +584,6 @@ The production test software running on the target device is available as a preb
       * Checksum ''''
    
 
-
 .. admonition:: Download
    :class: download
 
@@ -513,11 +597,9 @@ The production test software running on the target device is available as a preb
       * Checksum ''''
    
 
-
 .. important::
 
    It is also possible to manually create one using :doc:`these instructions </wiki-migration/resources/eval/user-guides/pzsdr/testing/sd-cards>`.
-
 
 Required hardware
 -----------------
@@ -529,7 +611,8 @@ Required hardware
 -   1 two pin jumper to set the USB mode
 -   1 adrv9361_rfsom module
 -   1 adrv936x_rfsom breakout board and power adapter
--   1 microSD card using the latest ADI Zynq image configured to run the test suite
+-   1 microSD card using the latest ADI Zynq image configured to run the test
+    suite
 
 Required setup
 --------------
@@ -538,20 +621,15 @@ Required setup
 
    This setup needs to be done only once.
 
-
 **1. SDR2 SOM** board **with SD card inserted** configurated to run the test suite and **S1** dip switch on the **"SDSOM"** position.
-
-
 
 |image7|
 
 **2. USB** media drive into the **OTG** adapter.
 
-
 |image8|
 
 **3. Raspberry Pi powered on** configurated to run the breakout board test with a **USB cable attached**. After about a couple seconds the following message will be printed on the screen “POWER ON BRK”. At this point, the Raspberry Pi is ready to test the breakout board.
-
 
 |image9|
 
@@ -570,7 +648,6 @@ Test process
 
 **6.** Insert a jumper on the P9 header, between pin 1 & 2, to enable USB OTG mode.
 
-
 |image10|
 
 **7.** Make sure the power cable is plugged in and then power on the board. Confirm the green power LED and blue FPGA LED are both lit after a few seconds have passed (see the picture below). If two green LEDs are lit on the SOM without the blue FPGA LED being lit this means that the FPGA isn't getting configured properly which means there is an issue during early bring up such as the board's power sequence not running correctly.
@@ -579,11 +656,9 @@ Test process
 
 **9.** Tests should start automatically and be shown on the Raspberry Pi display.
 
-
 |image11|
 
 **10.** When prompted, toggle the switches (S1 through S4) and buttons (S6 through S9) on the board. Note that the related LEDs should light up when the switches or buttons are in the on the state (e.g. LED DS3 should light up when switch S1 or button S6 are enabled). In order to pass the test, all switches and buttons must be toggled on and off. If this is not done within a minute of starting the test, it will timeout and fail.
-
 
 |image12|
 
@@ -593,7 +668,8 @@ Test process
 |image13| |image14|
 ========= =========
 
-If any test fails LEDs DS3 through DS6 will be blinking and the script output will note the failure.
+If any test fails LEDs DS3 through DS6 will be blinking and the script output
+will note the failure.
 
 ========= ========= =========
 |image15| |image16| |image17| 
@@ -608,7 +684,6 @@ If any test fails LEDs DS3 through DS6 will be blinking and the script output wi
 **13.** Once the test is complete turn off the breakout board, unplug the power, USB cables and Ethernet loopback module from the breakout board in addition to removing the SDR2 SOM. Plug all the cables back into the next breakout board and repeat the process from the beginning. If you want to start the test again, for the same breakout board, power off and then power on the breakout board or reset the SDR2 SOM board to repeat the test automaticaly.
 
 **When done testing**, hit **button #27 on the Raspberry Pi display** to **power down** the system and give the system a few seconds before pulling the power cable.
-
 
 |image20|
 
@@ -625,12 +700,12 @@ Demo Test process
    :align: center
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-rf-loopback.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr1-rf-loopback.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/img_1736.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/wifi_connection.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/camera_test_fail_adrv1crr.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/211213_gif_adrvtest_passed_1_5sec.gif
 .. |brkout-setup.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/brkout-setup.jpg
@@ -640,34 +715,34 @@ Demo Test process
 .. |pzsdr-ccbrk-setup.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-ccbrk-setup.jpg
 .. |pzsdr-ccbrk-passed.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-ccbrk-passed.jpg
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/sdr2_som.jpg
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/usb_drive_otg.jpg
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/raspberry_pi_setup.jpg
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/breakout_board_setup.jpg
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-som-poweron-leds.jpg
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/start_toggle.png
-   :width: 250px
+   :width: 250
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_pass.png
-   :width: 250px
+   :width: 250
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-ccbrk-passed.jpg
-   :width: 370px
+   :width: 370
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_toggle.png
-   :width: 250px
+   :width: 250
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_usb.png
-   :width: 250px
+   :width: 250
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_ethernet.png
-   :width: 250px
+   :width: 250
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_pass_end.png
-   :width: 250px
+   :width: 250
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_end.png
-   :width: 250px
+   :width: 250
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/power_off_pi.png
-   :width: 250px
+   :width: 250
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/reboot_pi.png
-   :width: 250px
+   :width: 250
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/get_all_ip.png
-   :width: 250px
+   :width: 250

@@ -3,8 +3,9 @@
 
 .. important::
 
-   Support for AD971x/AD911x-DPG2 project on this website only for legacy purposes. The support for this project has been discontinued, latest tested files can be found in the Downloads section.
-
+   Support for AD971x/AD911x-DPG2 project on this website only for legacy
+   purposes. The support for this project has been discontinued, latest tested
+   files can be found in the Downloads section.
 
 Supported Devices
 -----------------
@@ -32,7 +33,9 @@ The :adi:`AD9114`/:adi:`AD9115`/:adi:`AD9116`/:adi:`AD9117` are pin-compatible d
 Quick Start Guide
 -----------------
 
-The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal, ADI DAC software and the programmer (IMPACT).
+The bit file provided combines the FPGA bit file and the SDK elf files. It may
+be used for a quick check on the system. All you need is the hardware and a PC
+running a UART terminal, ADI DAC software and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -57,16 +60,14 @@ Bit file
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. tip::
 
    If you are not familiar with ML605 and/or Xilix tools, please visit
 
    | `products/boards/ml605/reference_designs.htm <https://www.xilinx.com/products/boards/ml605/reference_designs.htm>`_ for details.
 
-
-Extract the project from the archive file (AD911x.zip) to the location you desire.
+Extract the project from the archive file (AD911x.zip) to the location you
+desire.
 
 To begin make the following connections (see image below):
 
@@ -74,7 +75,8 @@ Programming the PIC
 ^^^^^^^^^^^^^^^^^^^
 
 -  Connect the USB cable from the PC to the AD911x-DPG2-EBZ board.
--  Connect the programming cables from the PIC ICSP to the programming pins on connector XP1 as follows:
+-  Connect the programming cables from the PIC ICSP to the programming pins on
+   connector XP1 as follows:
 
    -  **PGD 1**
 
@@ -86,7 +88,8 @@ Programming the PIC
             -  **GND 6**
 
 -  Program the PIC using the AD911x_SPI_Adapter.hex file found in the project \*.zip archive.
--  Disconnect the programming cables and the USB Cable from the AD911x-DPG2-EBZ board.
+-  Disconnect the programming cables and the USB Cable from the AD911x-DPG2-EBZ
+   board.
 
 Connections
 ^^^^^^^^^^^
@@ -103,27 +106,38 @@ Connections
 Programming the FPGA
 ^^^^^^^^^^^^^^^^^^^^
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to 115200 baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad911x/sw/AD911x.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to 115200 baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../ad911x/sw/AD911x.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9116impact.jpg
    :alt: Programming ML605 in iMPACT
-   :width: 200px
+   :width: 200
 
 Setting up uC/Probe
 ^^^^^^^^^^^^^^^^^^^
 
-Launch Micrium uC/Probe and load the interface located in the project folder (../ad911x/sw/AD911x_Interface.wsp). In options, select RS-232 and set Baud Rate to 115200.
+Launch Micrium uC/Probe and load the interface located in the project folder
+(../ad911x/sw/AD911x_Interface.wsp). In options, select RS-232 and set Baud Rate
+to 115200.
 
 |ucProbe RS-232 Settings| |uCProbe RS-232 Settings|
 
 uC/Probe Interface
 ^^^^^^^^^^^^^^^^^^
 
-Click Play, and afterwards click on the ON/OFF Button. The Green LED on the button should light up. Set the options you desire by clicking on the red buttons and moving the sliders. After you are finished setting up the device, press "SEND AD911x SETTINGS" button. Now the device is programmed, and you should see the results on the S4 and S6 connectors on the AD911x Evaluation Board.
+Click Play, and afterwards click on the ON/OFF Button. The Green LED on the
+button should light up. Set the options you desire by clicking on the red
+buttons and moving the sliders. After you are finished setting up the device,
+press "SEND AD911x SETTINGS" button. Now the device is programmed, and you
+should see the results on the S4 and S6 connectors on the AD911x Evaluation
+Board.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9116interface_new.png
    :alt: uCProbe Interface
-   :width: 600px
+   :width: 600
 
 The User Interface is divided in 13 sections, described below:
 
@@ -132,15 +146,18 @@ The User Interface is divided in 13 sections, described below:
 
    -  DATADIR sets the transmission mode (ON = LSB First, OFF = MSB First)
 
-      -  LNGINS sets the number of address bits used by the Instruction Word (ON = 13 bits, OFF = 5 bits)
+      -  LNGINS sets the number of address bits used by the Instruction Word (ON
+         = 13 bits, OFF = 5 bits)
 
 -  **Section 3** Modifies the way data is received from the DDS Module:
 
-   -  TWOS sets the input data format (ON = Twos complement, OFF = Unsigned Binary)
+   -  TWOS sets the input data format (ON = Twos complement, OFF = Unsigned
+      Binary)
 
       -  IFIRST selects pairing of input data (ON = I First on data input pads, OFF = Q First on data input pads)
       -  IRISING selects data latch edge (ON = I data latched on rising edge, OFF = Q data latched on rising edge)
-      -  SIMUL selects DCLKIO type (ON = do not allow simultaneous input and output on DCLKIO, OFF = allow simultaneous input and output on DLCKIO)
+      -  SIMUL selects DCLKIO type (ON = do not allow simultaneous input and
+         output on DCLKIO, OFF = allow simultaneous input and output on DLCKIO)
 
 -  **Section 4** is used to select IRset and QRset Resistor values, using the corresponding slider
 -  **Section 5** selects differend Power Down possibilities:
@@ -153,11 +170,13 @@ The User Interface is divided in 13 sections, described below:
       -  QSLEEP turns Q DAC output current ON/OFF
       -  ICLKOFF turns I DAC Clock ON/OFF
       -  QCLKOFF turns Q DAC Clock ON/OFF
-      -  EXTREF selects internal voltage reference (ON = Reference OFF, OFF = Reference ON)
+      -  EXTREF selects internal voltage reference (ON = Reference OFF, OFF =
+         Reference ON)
 
 -  **Section 6**
 
-   -  Set IRcml and QRcml Resistor values, and also I DAC and Q DAC Gain values by using the sliders provided
+   -  Set IRcml and QRcml Resistor values, and also I DAC and Q DAC Gain values
+      by using the sliders provided
 
 -  **Section 7** is used to set the increment value for the DDS Core using the sliders provided
 -  **Section 8** Set different clock modes (see datasheet pg. 42 for details)
@@ -170,7 +189,8 @@ The User Interface is divided in 13 sections, described below:
       -  DIVSEL selects clock divide ratio by 2^n (n value selected using slider)
       -  CALEN starts calibration process
       -  CALSTATI shows the status of the calibration process for I Channel (Green = Done)
-      -  CALSTATQ shows the status of the calibration process for Q Channel (Green = Done)
+      -  CALSTATQ shows the status of the calibration process for Q Channel
+         (Green = Done)
 
 -  **Section 11** is used to set parameters for AD9512 Clock Distribution IC (divide ratio for Data and DAC Clock)
 -  **Section 12** User must press the button in order for the AD911x related modifications to take place
@@ -181,9 +201,9 @@ The User Interface is divided in 13 sections, described below:
    
    -  If you drag a slider and it doesn't change the value in the numeric indicator next to it, please press Stop and then Play again. At the bottom of the screen, the bytes/sec should be increasing with 200 per second. If they increase only with 50 per second, please press Stop and Play again.
    -  If you receive (Pc Port Open) at the bottom of the screen, please press Stop, close your COM port, reprogram the FPGA, launch the software and try again.
-   -  In Section 10 please select DIVSEL so that (DCLKIO / 2^n) is between 0.5 MHz and 4 MHz for optimal Calibration results
+   -  In Section 10 please select DIVSEL so that (DCLKIO / 2^n) is between 0.5
+      MHz and 4 MHz for optimal Calibration results
    
-
 
 Downloads
 ---------
@@ -192,7 +212,6 @@ Downloads
    :class: download
 
    `Reference design source code <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9116.zip>`_
-
 
 Support
 -------
@@ -208,12 +227,12 @@ No-OS Questions
 For questions regarding the no-OS drivers for any of the components on the AD-FMCOMMS2-EBZ please use the :ez:`Microcontroller and No-OS Driver <community/linux-device-drivers/microcontroller-no-os-drivers>` sub-community.
 
 .. |ML605 and AD9116 connected on LPC port| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ml605_ad9916.jpg
-   :width: 200px
+   :width: 200
 .. |SPI Wiring on AD9116| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9916_spi.jpg
-   :width: 200px
+   :width: 200
 .. |SPI Wiring on ML605| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ml605_ad9116_spi.jpg
-   :width: 200px
+   :width: 200
 .. |ucProbe RS-232 Settings| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9116ucprobesettings1.jpg
-   :width: 200px
+   :width: 200
 .. |uCProbe RS-232 Settings| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9116ucprobesettings2.jpg
-   :width: 200px
+   :width: 200

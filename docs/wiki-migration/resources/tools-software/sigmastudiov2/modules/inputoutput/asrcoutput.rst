@@ -9,20 +9,23 @@ ASRC Output
 Description
 -----------
 
-The ASRC Output block routes signals between the schematic design and the hardwares ASRCs (Asynchronous Sample Rate Converters).
+The ASRC Output block routes signals between the schematic design and the
+hardwares ASRCs (Asynchronous Sample Rate Converters).
 
 .. note::
 
    These blocks are only available for use with DSPs that have integrated ASRCs.
 
-
 Usage
 -----
 
-Use the output block's drop-down list control to select from the available ASRCs.
+Use the output block's drop-down list control to select from the available
+ASRCs.
 
 -  Every ASRC Output must have its input connected, else there will be errors on compilation.
--  Observe that as you drag more ASRC output blocks into the schematic, the number of available outputs in the drop-down decreases because they can only be represented by one block at a time.
+-  Observe that as you drag more ASRC output blocks into the schematic, the
+   number of available outputs in the drop-down decreases because they can only
+   be represented by one block at a time.
 
 Targets Supported
 -----------------
@@ -45,7 +48,6 @@ Name  Type  Description
 input Audio Outputs the audio to the hardware pin
 ===== ===== =====================================
 
-
 | ===== Configurable Parameters =====
 
 ===================== ============= ======= =======================
@@ -53,7 +55,6 @@ GUI Parameter Name    Default Value Range   Function Description
 ===================== ============= ======= =======================
 SelectedASRCOPChannel 0             0 to 15 Selected output channel
 ===================== ============= ======= =======================
-
 
 | ===== DSP Parameters =====
 

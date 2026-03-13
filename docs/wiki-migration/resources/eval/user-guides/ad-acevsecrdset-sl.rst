@@ -3,16 +3,19 @@ AD-ACEVSECRDSET-SL User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-acevsecrdset-sl/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Introduction
 ------------
@@ -20,13 +23,16 @@ Introduction
 The :adi:`AD-ACEVSECRDSET-SL <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-bct2ade9113-sl.html>` is a complete Type 2 EVSE 3.6 kW charging cable solution, providing a reference design intended for evaluation and prototyping of EV charging systems.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl_angle.jpg
-   :width: 400px
+   :width: 400
 
 The system includes the :adi:`ADE9113` 3-channel isolated sigma-delta (Σ-Δ) ADC for voltage and current measurement on the single-phase power input and measurement of the relay voltage for solder contacts detection and relay state of health. Safe operation is enabled by the inclusion of a 6 mA DC / 30 mA rms RCD. Detection of overvoltage, undervoltage, overcurrent, overtemperature and EV diode presence are also available.
 
 The :adi:`MAX32655` ultralow power ARM® Cortex®-M4 processor implements the logic for system control and communication with the EV over the control pilot interface. A programming and debugging interface are included. The MAX32655 Bluetooth 5.2 interface enables connectivity to external devices.
 
-The design is accompanied by an open-source software stack and reference applications, enabling custom software development to start from a proven implementation validated to meet the applicable standards. The system is designed to meet the IEC61851 and IEC62752 standards.
+The design is accompanied by an open-source software stack and reference
+applications, enabling custom software development to start from a proven
+implementation validated to meet the applicable standards. The system is
+designed to meet the IEC61851 and IEC62752 standards.
 
 Features
 --------
@@ -53,7 +59,7 @@ Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/block_diagram_new.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Specifications
 --------------
@@ -93,20 +99,19 @@ Specifications
    =================================== ====================================
    
 
-
 System Setup
 ------------
 
 .. tip::
 
-   For Hardware & Software Setup instructions, please check out the following pages:
+   For Hardware & Software Setup instructions, please check out the following
+   pages:
 
    
    -  :doc:`AD-ACEVSECRDSET-SL Hardware User Guide </wiki-migration/resources/eval/user-guides/ad-acevsecrdset-sl/hardware>`
    
    -  :doc:`AD-ACEVSECRDSET-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-acevsecrdset-sl/software>`
    
-
 
 --------------
 
@@ -145,7 +150,6 @@ Design and Integration Files
    -  Allegro Project
    
 
-
 --------------
 
 Registration
@@ -154,4 +158,3 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/AD-ACEVSECRDSET-SL>`_ to receive all these great benefits and more!
-

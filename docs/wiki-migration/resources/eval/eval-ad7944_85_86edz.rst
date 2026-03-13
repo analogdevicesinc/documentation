@@ -13,7 +13,7 @@ Features
 
 .. image:: https://wiki.analog.com/_media/resources/eval/10387-001.jpg
    :align: right
-   :width: 600px
+   :width: 600
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
@@ -62,7 +62,8 @@ The EVAL-AD79XXEDZ is an evaluation board for the 20-lead :adi:`AD7944` (14-bit)
 Quickstart
 ==========
 
--  Install the software from the enclosed CD or by downloading from the Analog Devices, Inc., Website, at www.analog.com.
+-  Install the software from the enclosed CD or by downloading from the Analog
+   Devices, Inc., Website, at www.analog.com.
 
    -  Ensure the evaluation board is disconnected from the USB port of the PC while installing the software.
    -  A PC restart may be required after installation.
@@ -79,9 +80,11 @@ Quickstart
 -  Apply a signal source to the AIN+/AIN− SMB inputs on the evaluation board.
 -  Configure the signal source for the appropriate signal applied to the input of the device.
 -  Capture data by initiating a single capture **(F3)** or a continuous capture **(F4)**.
--  See details on configuring the software in the Running the ADC Analysis Software section.
+-  See details on configuring the software in the Running the ADC Analysis
+   Software section.
 
-Note that the measurements made by Analog Devices use the Audio Precision SYS-2522.
+Note that the measurements made by Analog Devices use the Audio Precision
+SYS-2522.
 
 |image1| **Figure 2. Hardware Configuration—Setting up the Evaluation Board**
 
@@ -90,9 +93,13 @@ Evaluation Board Hardware
 
 The low power, :adi:`AD7944`/:adi:`AD7985`/:adi:`AD7986` ADCs offer very high performance of up to 2.0 MSPS (:adi:`AD7986`) and 2.5 MSPS (:adi:`AD7944` and :adi:`AD7985`) throughput rates using a flexible parallel interface on the 96-pin interface to the :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` board.
 
-The evaluation board is designed to demonstrate the performance of the ADC and to provide an easy-to-understand interface for a variety of system applications.
+The evaluation board is designed to demonstrate the performance of the ADC and
+to provide an easy-to-understand interface for a variety of system applications.
 
-The evaluation board is ideal for use with the Analog Devices Converter and Evaluation Development EVAL-CED1Z (CED). The design offers the flexibility of applying external control signals and is capable of generating conversion results on parallel 16-bit wide buffered outputs.
+The evaluation board is ideal for use with the Analog Devices Converter and
+Evaluation Development EVAL-CED1Z (CED). The design offers the flexibility of
+applying external control signals and is capable of generating conversion
+results on parallel 16-bit wide buffered outputs.
 
 Figure 2 shows the EVAL-AD7944/AD7985/AD7986EBZ evaluation board. The on-board FPGA, U3, provides the necessary control signals for conversion and deserializes the serial data as the :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/products/product.html>` board uses a parallel interface. The evaluation board is a flexible design that enables the user to choose among many different board configurations, analog signal conditioning, reference, and different modes of conversion data.
 
@@ -103,7 +110,15 @@ Device Description
 
 The :adi:`AD7944` is a 14-bit, 2.5 MSPS successive approximation analog-to-digital converter (SAR ADC), whereas the :adi:`AD7985` is a 16-bit version of the SAR ADC. The :adi:`AD7986` is an 18-bit, 2 MSPS SAR ADC.
 
-These ADCs are low power and high speed and include an internal conversion clock, an internal reference (and buffer), error correction circuits, and a versatile serial interface port. On the rising edge of CNV, the ADC samples an analog input, IN+, between 0 V and REF with respect to the ground sense, IN−. The ADCs feature a very high sampling rate turbo mode (TURBO is high) and a reduced power normal mode (TURBO is low) for low power applications where the power is scaled with the throughput. A full description of these products is available in their respective data sheets and should be consulted when using this evaluation board.
+These ADCs are low power and high speed and include an internal conversion
+clock, an internal reference (and buffer), error correction circuits, and a
+versatile serial interface port. On the rising edge of CNV, the ADC samples an
+analog input, IN+, between 0 V and REF with respect to the ground sense, IN−.
+The ADCs feature a very high sampling rate turbo mode (TURBO is high) and a
+reduced power normal mode (TURBO is low) for low power applications where the
+power is scaled with the throughput. A full description of these products is
+available in their respective data sheets and should be consulted when using
+this evaluation board.
 
 Power Supplies
 --------------
@@ -113,40 +128,76 @@ Power is supplied to the board through P1 when used with the :adi:`EVAL-CED1Z <e
 Standalone Operation
 --------------------
 
-The evaluation board can be used in standalone mode without the CED controller board. In this case, power supplies need to be applied to the board at P4 or at the relevant test points. At a minimum, the board requires ±5 V, +12 V, +7 V, or + 2.5 V. See the Design Support Package section for details regarding power supply connections.
+The evaluation board can be used in standalone mode without the CED controller
+board. In this case, power supplies need to be applied to the board at P4 or at
+the relevant test points. At a minimum, the board requires ±5 V, +12 V, +7 V, or
++ 2.5 V. See the Design Support Package section for details regarding power
+supply connections.
 
 Grounding
 ---------
 
-The evaluation board ground plane is separated into two sections: a plane for the digital interface circuitry and an analog plane for the analog input and external reference circuitry. To attain high resolution performance, the board was designed to ensure that all digital ground return paths do not cross the analog ground return paths by connecting the planes together directly under the converter.
+The evaluation board ground plane is separated into two sections: a plane for
+the digital interface circuitry and an analog plane for the analog input and
+external reference circuitry. To attain high resolution performance, the board
+was designed to ensure that all digital ground return paths do not cross the
+analog ground return paths by connecting the planes together directly under the
+converter.
 
 Conversion Control
 ------------------
 
-The on-board FPGA performs a number of digital functions, one of them being the deserialization of the serial conversion results as the CED data capture board uses a 16-bit parallel interface. If desired, the deserialized data can be monitored on the 96-pin edge connecter, P1, BD[15:0]. The CED uses a buffered busy signal, BBUSY, as the general interrupt for data.
+The on-board FPGA performs a number of digital functions, one of them being the
+deserialization of the serial conversion results as the CED data capture board
+uses a 16-bit parallel interface. If desired, the deserialized data can be
+monitored on the 96-pin edge connecter, P1, BD[15:0]. The CED uses a buffered
+busy signal, BBUSY, as the general interrupt for data.
 
 Analog Inputs
 -------------
 
-The analog inputs to the evaluation board are J1, J2, and SMB (push on). These inputs are buffered with dedicated amplifier circuitry (A2, A3, and discretes) to allow configuration changes such as positive or negative gain, input range scaling, filtering, addition of a dc component, and use of different op amps and supplies. The analog input amplifiers are set as unity-gain buffers at the factory. The supplies are selectable with solder pads and are set for the +7 V to −5 V ranges.
+The analog inputs to the evaluation board are J1, J2, and SMB (push on). These
+inputs are buffered with dedicated amplifier circuitry (A2, A3, and discretes)
+to allow configuration changes such as positive or negative gain, input range
+scaling, filtering, addition of a dc component, and use of different op amps and
+supplies. The analog input amplifiers are set as unity-gain buffers at the
+factory. The supplies are selectable with solder pads and are set for the +7 V
+to −5 V ranges.
 
-The default configuration sets both A2 and A3 at midscale generated from either a buffered reference voltage divider or the internal reference of the ADC.
+The default configuration sets both A2 and A3 at midscale generated from either
+a buffered reference voltage divider or the internal reference of the ADC.
 
-The evaluation board is factory configured for providing either a single-ended path or a fully differential path. Because the AD7986 is differential, both inputs and amplifier circuits are used to buffer the IN+ and IN- inputs of the ADCs. For the AD7944 and AD7985 evaluation boards, only the J2, A3, and associated circuitry is used in the path.
+The evaluation board is factory configured for providing either a single-ended
+path or a fully differential path. Because the AD7986 is differential, both
+inputs and amplifier circuits are used to buffer the IN+ and IN- inputs of the
+ADCs. For the AD7944 and AD7985 evaluation boards, only the J2, A3, and
+associated circuitry is used in the path.
 
-For dynamic performance, an FFT test can be executed by applying a very low distortion ac source. For low frequency testing, an audio precision source can be used directly because the outputs on these are isolated. Set the audio precision outputs for balanced and floating. Although different sources can be used, most are single ended and use a fixed output resistance.
+For dynamic performance, an FFT test can be executed by applying a very low
+distortion ac source. For low frequency testing, an audio precision source can
+be used directly because the outputs on these are isolated. Set the audio
+precision outputs for balanced and floating. Although different sources can be
+used, most are single ended and use a fixed output resistance.
 
-Because the evaluation board uses the amplifiers in unity gain, the noninverting input has a common-mode input with a 590 Ω series resistor, which needs to be taken into account when directly connecting a source (voltage divider).
+Because the evaluation board uses the amplifiers in unity gain, the noninverting
+input has a common-mode input with a 590 Ω series resistor, which needs to be
+taken into account when directly connecting a source (voltage divider).
 
 Serial Interface
 ----------------
 
-The 3-wire serial interface SDI, SCK, and SDO together with CNV are present on the digital interface test points, and FPGA buffered versions are on the 96-pin connector, P1. The on-board Altera FPGA can be reprogrammed to the user’s configuration as the serial device and U1 is in-circuit programmable.
+The 3-wire serial interface SDI, SCK, and SDO together with CNV are present on
+the digital interface test points, and FPGA buffered versions are on the 96-pin
+connector, P1. The on-board Altera FPGA can be reprogrammed to the user’s
+configuration as the serial device and U1 is in-circuit programmable.
 
 Jumpers, Solder Pads and test points
 ------------------------------------
 
-A number of 3-pin jumpers, solder pads, and test points are provided on the evaluation board and are detailed in Table 1, Table 2, and Table 7. Most of the 3-pin jumpers are used for the reference selection of the ADCs (see the Reference Options section for details and settings).
+A number of 3-pin jumpers, solder pads, and test points are provided on the
+evaluation board and are detailed in Table 1, Table 2, and Table 7. Most of the
+3-pin jumpers are used for the reference selection of the ADCs (see the
+Reference Options section for details and settings).
 
 Table 1. 3-Pin Jumper Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,7 +248,11 @@ Solder pads are factory configured for the device being evaluated.
 Reference Options
 -----------------
 
-The AD7944/AD7985/AD7986 each have an internal 4.096 V reference together with an internal buffer useful for using an external reference, or it can use an external 5.0 V reference directly. The evaluation board can be configured to use any of these references. A number of jumpers are used to set the reference and are detailed in Table 3.
+The AD7944/AD7985/AD7986 each have an internal 4.096 V reference together with
+an internal buffer useful for using an external reference, or it can use an
+external 5.0 V reference directly. The evaluation board can be configured to use
+any of these references. A number of jumpers are used to set the reference and
+are detailed in Table 3.
 
 External Reference: Factory Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -218,20 +273,30 @@ P12    PDREF to VIO
 BVDD   5 V (factory default)
 ====== =====================
 
-To use an external reference source as opposed to the internal reference, there are two methods available, as follows:
+To use an external reference source as opposed to the internal reference, there
+are two methods available, as follows:
 
 -  For an external unbuffered reference, leave P10 to P12 as the factory settings, open P2, and connect a source to the REF test point.
--  The ability to buffer the user external reference is also available. In this case, replace P2, open P9, and apply the source to the VREF test point.
+-  The ability to buffer the user external reference is also available. In this
+   case, replace P2, open P9, and apply the source to the VREF test point.
 
 ADC Reference Supply, BVDD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The evaluation board includes a 5 V source for the ADC reference supply, BVDD, set with a pair of solder pads of either 5 V or EXT_B, and a test point, EXT_B. For the best performance, derive this supply from the external reference. To use the EXT_B, remove the solder from the 5 V pad and solder the EXT_B pad to BVDD.
+The evaluation board includes a 5 V source for the ADC reference supply, BVDD,
+set with a pair of solder pads of either 5 V or EXT_B, and a test point, EXT_B.
+For the best performance, derive this supply from the external reference. To use
+the EXT_B, remove the solder from the 5 V pad and solder the EXT_B pad to BVDD.
 
 Internal 4.096 V Reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADC has an internal 4.096 V precision reference and can be used on most applications. Connecting PDREF to GND enables the internal reference. When the internal reference is enabled, 4.096 V as well as a 1.2 V band gap are present on the ADC REF pin and test point. Note when using the internal reference, external sources must not be connected to these test points because they are directly connected to the ADC pins.
+The ADC has an internal 4.096 V precision reference and can be used on most
+applications. Connecting PDREF to GND enables the internal reference. When the
+internal reference is enabled, 4.096 V as well as a 1.2 V band gap are present
+on the ADC REF pin and test point. Note when using the internal reference,
+external sources must not be connected to these test points because they are
+directly connected to the ADC pins.
 
 Table 4. Internal Reference Jumper Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -250,7 +315,13 @@ BVDD   5 V (factory)
 Internal Reference Buffer
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The internal reference buffer is useful when using an external 1.2 V reference. When using the internal reference buffer, applying 1.2 V to REFIN, which is directly connected to the REFIN pin of the ADC, produces 4.096 V at the REF pin of the ADC. Because there is no 1.2 V reference on the board, there are two methods to generate a 1.2 V reference. The first method is to connect an external source to the REFIN test point using the jumper settings listed in Table 5.
+The internal reference buffer is useful when using an external 1.2 V reference.
+When using the internal reference buffer, applying 1.2 V to REFIN, which is
+directly connected to the REFIN pin of the ADC, produces 4.096 V at the REF pin
+of the ADC. Because there is no 1.2 V reference on the board, there are two
+methods to generate a 1.2 V reference. The first method is to connect an
+external source to the REFIN test point using the jumper settings listed in
+Table 5.
 
 Table 5. Fully External Reference Buffer Jumper Configuration: REFIN Test Point Method
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -293,7 +364,11 @@ The :adi:`EVAL-CED1Z <en/analog-to-digital-converters/ad-converters/eval-ced/pro
 Software Installation
 ~~~~~~~~~~~~~~~~~~~~~
 
-It is recommended to close all Windows® applications prior to installing the software. The evaluation board comes with a CD as part of the evaluation kit. The latest software versions are always available from the Analog Devices product page, visit www.analog.com. Note that the user must accept the license agreement during the installation process.
+It is recommended to close all Windows® applications prior to installing the
+software. The evaluation board comes with a CD as part of the evaluation kit.
+The latest software versions are always available from the Analog Devices
+product page, visit www.analog.com. Note that the user must accept the license
+agreement during the installation process.
 
 |image2| **Figure 3. To Install, the User Must Accept License Agreement**
 
@@ -334,7 +409,10 @@ If the driver was not installed properly, Windows does not recognize the CEDIZ b
 
 The USB device can be opened to view its uninstalled properties, as shown in Figure 14. |image13| **Figure 14. USB Device Uninstalled Properties**
 
-The most usual reason for uninstalled properties is caused by the installation of the software and drivers by a user without administrative privileges. If this is the case, log on as an administrator with full privileges and reinstall the software.
+The most usual reason for uninstalled properties is caused by the installation
+of the software and drivers by a user without administrative privileges. If this
+is the case, log on as an administrator with full privileges and reinstall the
+software.
 
 Running the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -363,7 +441,8 @@ The evaluation board includes software for analyzing the :adi:`AD7944`, :adi:`AD
 
    *
 
-Refer to Figure 15 to Figure 20 for additional details and features of the software.
+Refer to Figure 15 to Figure 20 for additional details and features of the
+software.
 
 The ADC analysis software is located at C:\\Program Files\\Analog Devices\\ PulSAR ADC Evaluation Software\\Eval PulSAR CED.exe. A shortcut is also added to the Windows **Start** menu under **Analog Devices PulSAR ADC Evaluation Software, Eval PulSAR CED.** To run the software, select the program from either location.
 
@@ -376,7 +455,8 @@ The following steps detail the operation of the software located in the default 
 
 -  To start the software, click the arrow in the upper left corner of the screen. When running, the arrow icon is displayed as shown in the area in Figure 15 marked with the Number 1.
 -  Select the device to be evaluated (see the area in Figure 15 marked with the Number 2).
--  Set the controls (see the area in Figure 15 marked with the Number 3) for the following:
+-  Set the controls (see the area in Figure 15 marked with the Number 3) for the
+   following:
 
    -  **Sample Frequency:** Enter the sample rate in kHz. Units can be used such as 10k (case sensitive) for 10,000,000 Hz or 10 MSPS.
    -  **Input Range:** Because the ADCs have a variable input range depending on the reference voltage, select the correct one (4.096 V or 5 V) to display the correct LSB size.
@@ -409,7 +489,8 @@ To use the on-screen help. Select **Help**, **Show Context Help** or click **Hel
 Histogram Controls
 ^^^^^^^^^^^^^^^^^^
 
-The histogram controls, shown in the area indicated by Number 2 in Figure 16, are used for axes and zooming panning, as follows:
+The histogram controls, shown in the area indicated by Number 2 in Figure 16,
+are used for axes and zooming panning, as follows:
 
 Graph Axis Lock
 ^^^^^^^^^^^^^^^
@@ -419,12 +500,14 @@ Locks the graph axis to automatically fit the data.
 Axis Rescaling
 ^^^^^^^^^^^^^^
 
-Uses the last axis set by the user. These allow the user to rescale the x- and y-axis, respectively, to the automatic values.
+Uses the last axis set by the user. These allow the user to rescale the x- and
+y-axis, respectively, to the automatic values.
 
 Axis Properties
 ^^^^^^^^^^^^^^^
 
-These are used to set the x- and y-axis properties, such as format, precision, color, and so forth.
+These are used to set the x- and y-axis properties, such as format, precision,
+color, and so forth.
 
 Cursor Display
 ^^^^^^^^^^^^^^
@@ -505,7 +588,8 @@ If the software does not read any data back, take the following steps:
 
 -  Check that power is applied to the CED board and that the voltages are present on the P connectors as described in Table 3.
 -  Confirm the signal source is applied and outputting the expected signal.
--  Probe different points in the signal path to ensure that the applied signal is present at the input of both the driver amplifiers and the ADC.
+-  Probe different points in the signal path to ensure that the applied signal
+   is present at the input of both the driver amplifiers and the ADC.
 
 If there are issues getting SNR performance, note the following:
 
@@ -567,44 +651,44 @@ Related Links
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad7944_85_86.jpg
-   :width: 900px
+   :width: 900
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/10387-003.jpg
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/10387-004.jpg
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/10387-005.jpg
-   :width: 300px
+   :width: 300
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/10387-006.jpg
-   :width: 300px
+   :width: 300
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/10387-007.jpg
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/10387-008.jpg
-   :width: 300px
+   :width: 300
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/10387-009.jpg
-   :width: 300px
+   :width: 300
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/10387-010.jpg
-   :width: 300px
+   :width: 300
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/10387-011.jpg
-   :width: 300px
+   :width: 300
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/10387-012.jpg
-   :width: 300px
+   :width: 300
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/10387-013.jpg
-   :width: 300px
+   :width: 300
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/10387-014.jpg
-   :width: 300px
+   :width: 300
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/10387-015.jpg
-   :width: 700px
+   :width: 700
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/10387-016.jpg
-   :width: 700px
+   :width: 700
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/10387-017.jpg
-   :width: 700px
+   :width: 700
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/10387-018.jpg
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/10387-019.jpg
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/10387-020.jpg
-   :width: 700px
+   :width: 700
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/10387-021.jpg
-   :width: 700px
+   :width: 700
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/10387-022.jpg
-   :width: 700px
+   :width: 700

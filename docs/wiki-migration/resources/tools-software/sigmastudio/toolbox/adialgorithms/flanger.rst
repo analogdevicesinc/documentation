@@ -5,9 +5,14 @@ Flanger
 
 --------------
 
-Flanging is a classic audio phasing effect which generates a swirling frequency (moving comb filter) effect. Flanging is produced by mixing the input single with a delayed copy of itself where the delay time is continuously varied at a low frequency. The Flanger algorithm supports growing by one to support stereo processing.
+Flanging is a classic audio phasing effect which generates a swirling frequency
+(moving comb filter) effect. Flanging is produced by mixing the input single
+with a delayed copy of itself where the delay time is continuously varied at a
+low frequency. The Flanger algorithm supports growing by one to support stereo
+processing.
 
-Flanging is typically used for guitar but can be utilized as a special vocal effect.
+Flanging is typically used for guitar but can be utilized as a special vocal
+effect.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/flangerpic1.png
    :alt: flangerpic1.png
@@ -22,7 +27,10 @@ Flanging is typically used for guitar but can be utilized as a special vocal eff
 
 **Algorithm:**
 
-Flanger utilizes an FIR comb filter with a short delay time (typically <15ms). The delay time is continuously modulated by a low-frequency-oscillator creating the characteristic flanging sound when the filter notches sweep up and down the in frequency over time.
+Flanger utilizes an FIR comb filter with a short delay time (typically <15ms).
+The delay time is continuously modulated by a low-frequency-oscillator creating
+the characteristic flanging sound when the filter notches sweep up and down the
+in frequency over time.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/flangerpic2.png
    :alt: flangerpic2.png

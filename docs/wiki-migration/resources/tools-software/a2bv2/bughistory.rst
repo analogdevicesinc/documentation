@@ -21,4 +21,5 @@ Bugs fixed in A2B Plugin for SigmaStudio+ v2.0.0
 -  Stack and SS+ behavior are different on peripheral failure
 -  Chiron SYNC issue when only a SOFTRST is provided at the main node
 -  Partial discovery fails when a node is dropped and there is no upstream from the dropped node
--  Security Vulnerabilities Addressed - nanopb version(To encode and decode dat) migrated to 0.4.9.1
+-  Security Vulnerabilities Addressed - nanopb version(To encode and decode dat)
+   migrated to 0.4.9.1

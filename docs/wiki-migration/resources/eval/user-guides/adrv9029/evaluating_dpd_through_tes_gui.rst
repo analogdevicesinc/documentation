@@ -8,98 +8,135 @@ CONFIGURING THE ADRV9029 TRANSCEIVER
 
 -  Connect various hardware components of the evaluation system as shown in the :doc:`Pre-Requisites page </wiki-migration/resources/eval/user-guides/adrv9029/prerequisites>`.
 
--  In the "Overview" window of the ADRV9029 TES GUI, select the profile "51_nonLinkSharing" as shown in the figure below. The profile defines the data rates of the transceiver.
+-  In the "Overview" window of the ADRV9029 TES GUI, select the profile
+   "51_nonLinkSharing" as shown in the figure below. The profile defines the
+   data rates of the transceiver.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_profileselection.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  In the "Tx" window of the ADRV9029 TES GUI, you will notice that both the DPD Half Band filters are enabled in the Tx signal chain for the profile 51_nonLinkSharing. Each half band provides an interpolation of 2x. The cascaded interpolation rate is 4x for this profile.
+-  In the "Tx" window of the ADRV9029 TES GUI, you will notice that both the DPD
+   Half Band filters are enabled in the Tx signal chain for the profile
+   51_nonLinkSharing. Each half band provides an interpolation of 2x. The
+   cascaded interpolation rate is 4x for this profile.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/uc51_txpath.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  In the "Initialization" window of the ADRV9029 TES GUI, configure the LO frequency to match the frequency of operation of the Power Amplifier under test. Also ensure the ORx LO is connected to the same LO as Tx and the Tx to ORx mapping matches the physical Tx to ORx connection.
+-  In the "Initialization" window of the ADRV9029 TES GUI, configure the LO
+   frequency to match the frequency of operation of the Power Amplifier under
+   test. Also ensure the ORx LO is connected to the same LO as Tx and the Tx to
+   ORx mapping matches the physical Tx to ORx connection.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_initializationwindow.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  Set the Tx and ORx attenuation to a reasonably high value in the "Initialization" window, so that the PA is not over-driven and ORx ADC does not saturate.
+-  Set the Tx and ORx attenuation to a reasonably high value in the
+   "Initialization" window, so that the PA is not over-driven and ORx ADC does
+   not saturate.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_inittxattenandorxgain.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  **Please turn off the PA before programming the device so that the PA is not damaged by high amplitude tones transmitted by the ADRV9029 during initial calibration**.
 
 PROGRAMMING THE ADRV9029 TRANSCEIVER
 ------------------------------------
 
-After configuring the ADRV9029 transceiver settings as shown in the previous section, click the "Program" button in the ADRV9029 TES GUI to program the ADRV9029 transceiver
+After configuring the ADRV9029 transceiver settings as shown in the previous
+section, click the "Program" button in the ADRV9029 TES GUI to program the
+ADRV9029 transceiver
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_program.png
    :align: center
-   :width: 600px
+   :width: 600
 
 On successful completion of ADRV9029 transceiver programming, the TES GUI will display a "**Programmed Successfully**" message on the bottom right hand corner of the ADRV9029 TES GUI as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_programmingsuccessful.png
    :align: center
-   :width: 600px
+   :width: 600
 
 EVALUATING DPD ON THE ADRV9029 TRANSCEIVER
 ------------------------------------------
 
--  Load an OFDM signal such as LTE20 / NR100 in a tab-separated IQ format through the "Transmitter" tab of the ADRV9029 TES GUI. Click on the "Tones" button and check the "Load File" option on all 4 transmitters. Now, browse to the location where the file is stored through the "File to Load" window. Load the same Tx waveforms to all 4 transmitters.
+-  Load an OFDM signal such as LTE20 / NR100 in a tab-separated IQ format
+   through the "Transmitter" tab of the ADRV9029 TES GUI. Click on the "Tones"
+   button and check the "Load File" option on all 4 transmitters. Now, browse to
+   the location where the file is stored through the "File to Load" window. Load
+   the same Tx waveforms to all 4 transmitters.
 
-Adjust the digital scaling if required and hit the "Submit" button to load the waveform to the eval platform. Finally, click on the play button next to "Tones" to start transmitting the waveform on the ADRV9029 Transceiver.
+Adjust the digital scaling if required and hit the "Submit" button to load the
+waveform to the eval platform. Finally, click on the play button next to "Tones"
+to start transmitting the waveform on the ADRV9029 Transceiver.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_loadingtxwaveform.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  Turn on the PA and bring the PA to it's rated power by adjusting the Tx Front End attenuation on the ADRV9029 Transceiver through the "Tx Attenuation" setting under the Transmitter tab of ADRV9029 TES GUI.
+-  Turn on the PA and bring the PA to it's rated power by adjusting the Tx Front
+   End attenuation on the ADRV9029 Transceiver through the "Tx Attenuation"
+   setting under the Transmitter tab of ADRV9029 TES GUI.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_txattenadjust.png
    :align: center
-   :width: 400px
+   :width: 400
 
--  Adjust the ORx gain under the "Obs Rx" tab of the ADRV9029 GUI to ensure that the observation channel is not saturating.
+-  Adjust the ORx gain under the "Obs Rx" tab of the ADRV9029 GUI to ensure that
+   the observation channel is not saturating.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_orx_setup.png
    :align: center
-   :width: 400px
+   :width: 400
 
--  Browse to the DFE Tab in the ADRV9029 TES GUI. Load a DPD model by clicking the "Load Model from file" button in the "DPD Model Setup" User Interface. The DPD model is a polynomial function that models the PA through memory terms(i,j) and polynomial degree 'k'. ADI provides a set of pre-calculated DPD models that can be accessed in the "Resources" folder of the ADRV9029 TES GUI Installation directory. After loading the DPD model, set the linear term coefficient corresponding to (i=1,j=1,k=0) to 1 + j0 as shown in the figure below. For evaluation purposes, any model can be chosen. To optimize the DPD model for a particular PA, follow the instructions on the DPD Model Optimization page.
-
+-  Browse to the DFE Tab in the ADRV9029 TES GUI. Load a DPD model by clicking
+   the "Load Model from file" button in the "DPD Model Setup" User Interface.
+   The DPD model is a polynomial function that models the PA through memory
+   terms(i,j) and polynomial degree 'k'. ADI provides a set of pre-calculated
+   DPD models that can be accessed in the "Resources" folder of the ADRV9029 TES
+   GUI Installation directory. After loading the DPD model, set the linear term
+   coefficient corresponding to (i=1,j=1,k=0) to 1 + j0 as shown in the figure
+   below. For evaluation purposes, any model can be chosen. To optimize the DPD
+   model for a particular PA, follow the instructions on the DPD Model
+   Optimization page.
 
 |resources-eval-user-guides-adrv9029-adrv9029_dpd_modelload.png|
 
--  Configure ‘DPD Tracking Config’ parameters (default values provide a good starting point).
-
+-  Configure ‘DPD Tracking Config’ parameters (default values provide a good
+   starting point).
 
 |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingconfig.png|
 
--  In the "DPD functions" window under the DFE Tab of ADRV9029 TES GUI, select desired Tx channel to apply settings(In this example Tx1 is selected).
+-  In the "DPD functions" window under the DFE Tab of ADRV9029 TES GUI, select
+   desired Tx channel to apply settings(In this example Tx1 is selected).
 
-   -  Apply DPD model on the M and C tables using ‘Apply Model on Device from M Table’ and ‘Apply Model on Device from C Table’ buttons. The C-Table is a low power model only applicable in DPD Mode 2.
+   -  Apply DPD model on the M and C tables using ‘Apply Model on Device from M
+      Table’ and ‘Apply Model on Device from C Table’ buttons. The C-Table is a
+      low power model only applicable in DPD Mode 2.
 
-      -  Apply DPD tracking configuration by clicking on ‘Apply Tracking Config’ button.
+      -  Apply DPD tracking configuration by clicking on ‘Apply Tracking Config’
+         button.
 
-         -  Run Path Delay initial calibration using ‘Run Path Delay Init Cal’ button.
+         -  Run Path Delay initial calibration using ‘Run Path Delay Init Cal’
+            button.
 
-            -  Click ‘Enable DPD on selected channels (only)’ to enable DPD Tracking.
-
+            -  Click ‘Enable DPD on selected channels (only)’ to enable DPD
+               Tracking.
 
             |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingcal_enable.png|
 
--  Now the DPD tracking must be enabled and running. The DPD status can be monitored by selecting the Tx channel and clicking the "Get DPD Status and Statistics" button. Ensure that the error status returns "No Error" and the "Iteration Count" and "Update Count" fields are incrementing
+-  Now the DPD tracking must be enabled and running. The DPD status can be
+   monitored by selecting the Tx channel and clicking the "Get DPD Status and
+   Statistics" button. Ensure that the error status returns "No Error" and the
+   "Iteration Count" and "Update Count" fields are incrementing
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdstatus.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. |resources-eval-user-guides-adrv9029-adrv9029_dpd_modelload.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpd_modelload.png
 .. |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingcal_enable.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdtrackingcal_enable.png

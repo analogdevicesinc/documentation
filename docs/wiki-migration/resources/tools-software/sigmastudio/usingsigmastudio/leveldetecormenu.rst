@@ -6,23 +6,34 @@ Level Detectors Menu Options
 Level Detectors
 ---------------
 
-The Level Detector blocks calculate the input signal level, reading directly from the hardware in real time, and display the level graphically in meter displays. The Single-Level Detector calculates and displays the rms level of the signal, shown in dB.
-
+The Level Detector blocks calculate the input signal level, reading directly
+from the hardware in real time, and display the level graphically in meter
+displays. The Single-Level Detector calculates and displays the rms level of the
+signal, shown in dB.
 
 |image1|
 
 Enable All Level Detectors
 --------------------------
 
-Though, Level Detectors having switch to "ON/OFF" reading signal level from hardware in real time, user has to turn ON level detectors one by one by manually clicking "ON" button of each Level Detector. But, this "Enable All Level Detectors" option will automatically "ON" All Level Detectors in the schematic by either clicking "Enable All Level Detectors" option in "Actions" menu bar or by using "ctrl+F9" keyboard shortcut.
+Though, Level Detectors having switch to "ON/OFF" reading signal level from
+hardware in real time, user has to turn ON level detectors one by one by
+manually clicking "ON" button of each Level Detector. But, this "Enable All
+Level Detectors" option will automatically "ON" All Level Detectors in the
+schematic by either clicking "Enable All Level Detectors" option in "Actions"
+menu bar or by using "ctrl+F9" keyboard shortcut.
 
 |image2| |image3|
 
 Disable All Level Detectors
 ---------------------------
 
-Though, Level Detectors having switch to "ON/OFF" reading signal level from hardware in real time, user has to turn OFF level detectors one by one by manually clicking "OFF" button of each Level Detector. But, this "Disable All Level Detectors" option will automatically "OFF" All Level Detectors in the schematic by either clicking "Disable All Level Detectors" option in "Actions" menu bar or by using "ctrl+F10" keyboard shortcut.
-
+Though, Level Detectors having switch to "ON/OFF" reading signal level from
+hardware in real time, user has to turn OFF level detectors one by one by
+manually clicking "OFF" button of each Level Detector. But, this "Disable All
+Level Detectors" option will automatically "OFF" All Level Detectors in the
+schematic by either clicking "Disable All Level Detectors" option in "Actions"
+menu bar or by using "ctrl+F10" keyboard shortcut.
 
 |image4|
 

@@ -6,7 +6,9 @@ Analog Devices Bluetooth Low Energy Software
 General Description/Overview
 ----------------------------
 
-Connectivity pack includes Bluetooth Low Energy (BLE) drivers for EV-COG-AD3029LZ. Following are the requirements to use BLE drives available in the pack.
+Connectivity pack includes Bluetooth Low Energy (BLE) drivers for
+EV-COG-AD3029LZ. Following are the requirements to use BLE drives available in
+the pack.
 
 -  :doc:`EV-COG-AD3029LZ MCU Cog </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/cog_hw_userguide>`
 -  :doc:`EV-COG-BLEINTP1Z Connectivity Cog </wiki-migration/resources/eval/user-guides/ev-cog-bleintp1z>`
@@ -17,14 +19,14 @@ Connectivity Pack for BLE contains the following examples
 -  Proximity Reporter
 -  Data Exchange (Hello World)
 
-For detailed information regarding the BLE Connectivity Pack, please see Release Notes.
+For detailed information regarding the BLE Connectivity Pack, please see Release
+Notes.
 
 .. hint::
 
    `BLE Connectivity Pack <http://download.analog.com/tools/BLE_Software/Releases/Release_1.0.0/ADI-BleSoftware_1.0.0_Release_Notes.pdf>`_
 
    
-
 
 Downloading the Sensor Software Pack
 ------------------------------------
@@ -43,8 +45,6 @@ The software pack can be downloaded in following way.
    
    `ADI-BLESoftware pack 1.0.0 <http://download.analog.com/tools/BLE_Software/Releases/AnalogDevices.ADI-BleSoftware.1.0.0.pack>`_
    
-
-
 
 | End Document
 

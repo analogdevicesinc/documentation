@@ -38,7 +38,7 @@ ADAU145x/ADAU146x
 **Integrated examples can be launched from the 'Help' menu of SigmaStudio+. Also the exmaples can be saved to local PC using "Save-As" option in File menu.**
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/ssplus_examples_help.png
-   :width: 1080px
+   :width: 1080
 
 Tutorials
 ---------

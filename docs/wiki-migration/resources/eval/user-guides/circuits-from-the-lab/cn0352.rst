@@ -6,7 +6,10 @@ Overview
 
 :adi:`CN-0352 <CN0352>` is a cost effective, multi-channel battery testing reference system designed for signle-cell Li-ion battery with open circuit voltage(OCV) between 3.5V to 4.4V.
 
-It can handle charging-discharging cycle with CC(Constant Current), CV(Constant Voltage) charging mode with configurable termination control. During testing, the battery information including voltage, current and temperature are gathered, then sent and storted on PC through RS485 communication bus.
+It can handle charging-discharging cycle with CC(Constant Current), CV(Constant
+Voltage) charging mode with configurable termination control. During testing,
+the battery information including voltage, current and temperature are gathered,
+then sent and storted on PC through RS485 communication bus.
 
 Each :adi:`CN-0352 <CN0352>` battery testing module could handle 8-channel Li-ion battery cell. With RS485 commumication bus, the testing channels could be extended upto more than hundred channels. The limitation is the communication bandwidth of RS485.
 
@@ -15,8 +18,12 @@ Each :adi:`CN-0352 <CN0352>` battery testing module could handle 8-channel Li-io
    DISCLAIMER
 
    
-   THIS EVALUATION SYSTEM INTERFACES TO LITHIUM ION BATTERIES WHICH CAN BE DAMAGED, CATCH ON FIRE, OR EXPLODE IF OVERCHARGED, OVER-DISCHARGED, OR SUBJECTED TO SOURCE OR SINK CURRENTS THAT EXCEED THE BATTERY MANUFACTURER’S SPECIFICATIONS. TAKE ALL NECESSARY STEPS TO PROTECT USERS DURING OPERATION. ADI MAKES NO GUARANTEES TO THE SAFETT AND TAKES NO RESPONSIBILITY TO ANY POTENTIAL SAFETY HAZARD DURING DEMONSTRATION.
-
+   THIS EVALUATION SYSTEM INTERFACES TO LITHIUM ION BATTERIES WHICH CAN BE
+   DAMAGED, CATCH ON FIRE, OR EXPLODE IF OVERCHARGED, OVER-DISCHARGED, OR
+   SUBJECTED TO SOURCE OR SINK CURRENTS THAT EXCEED THE BATTERY MANUFACTURER’S
+   SPECIFICATIONS. TAKE ALL NECESSARY STEPS TO PROTECT USERS DURING OPERATION.
+   ADI MAKES NO GUARANTEES TO THE SAFETT AND TAKES NO RESPONSIBILITY TO ANY
+   POTENTIAL SAFETY HAZARD DURING DEMONSTRATION.
 
 --------------
 
@@ -35,7 +42,8 @@ Required Equipment
 -  USB to RS485 adapter supporting baud rate of 115200 bps.
 -  CN0352 evaluation software (see link provided in CN0352 User Guide).
 -  Li-ion battery cells (For safety consideration during demostration, using the Li-ion battery with integrated protection circuit is highly recommended)
--  Battery holder board in order to connect battery to EVAL-CN0352-EB1Z evaluation system.
+-  Battery holder board in order to connect battery to EVAL-CN0352-EB1Z
+   evaluation system.
 
 --------------
 
@@ -45,22 +53,32 @@ Evaluation System Setup
 EVAL-CN0352-EB1Z Module Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The EVAl-CN0352-EB1Z, battery test system in Figure below is composed of multiple I/O boards (EVAL-CN0352-EB1Z_IO) for handling the charging and discharging process, an MCU board (EVAL-CN0352-EB1Z_MCU) for battery data acquisition, testing, monitoring,and temperature management, and a backplane base board (EVAL-CN0352-EB1Z_BAS) that provides the signal interconnections between the MCU board and the multiple I/O boards.
+The EVAl-CN0352-EB1Z, battery test system in Figure below is composed of
+multiple I/O boards (EVAL-CN0352-EB1Z_IO) for handling the charging and
+discharging process, an MCU board (EVAL-CN0352-EB1Z_MCU) for battery data
+acquisition, testing, monitoring,and temperature management, and a backplane
+base board (EVAL-CN0352-EB1Z_BAS) that provides the signal interconnections
+between the MCU board and the multiple I/O boards.
 
-The picture below shows all 3 type of boards and give each connector a serial number for better understanding. See the tables below with detais of the connectors and jumpers on each board.
-
+The picture below shows all 3 type of boards and give each connector a serial
+number for better understanding. See the tables below with detais of the
+connectors and jumpers on each board.
 
 |image1|
 
 .. note::
 
-   See the red dots on the picture. Each dot indicate the 1st pin location on the connector. the Pin1-to-Pin1 hookup must always be done during EVAL-CN0352-EB1Z module setup process.
-
+   See the red dots on the picture. Each dot indicate the 1st pin location on
+   the connector. the Pin1-to-Pin1 hookup must always be done during
+   EVAL-CN0352-EB1Z module setup process.
 
 External Connectors
 ^^^^^^^^^^^^^^^^^^^
 
-External Connectors are used to connect with external power supply, FAN, batterys and temperature sensors. It is important to connect them correctly by know the pin definition on each of them. See the table below for this information.
+External Connectors are used to connect with external power supply, FAN,
+batterys and temperature sensors. It is important to connect them correctly by
+know the pin definition on each of them. See the table below for this
+information.
 
 +---------------------------------+---------+-------------+----------------------------------------+-----------------------------------+
 | Connector NO.                   | Pin No. | Pin Name    | Function                               | Note                              |
@@ -117,7 +135,10 @@ External Connectors are used to connect with external power supply, FAN, battery
 Internal Connectors
 ^^^^^^^^^^^^^^^^^^^
 
-It is necessary to have one BAS board, one MCU board and at least one I/O Board to setup the demo system. The Internal Connectors are used for EVAL-CN0352-EB1Z module setup. MCU and I/O board need to be plugged into the connectors on BAS board correctly.
+It is necessary to have one BAS board, one MCU board and at least one I/O Board
+to setup the demo system. The Internal Connectors are used for EVAL-CN0352-EB1Z
+module setup. MCU and I/O board need to be plugged into the connectors on BAS
+board correctly.
 
 +---------------+------------------------+------------------------------------------------------------------+
 | Connector NO. | Function               | Note                                                             |
@@ -138,7 +159,8 @@ It is necessary to have one BAS board, one MCU board and at least one I/O Board 
 Jumpers
 ^^^^^^^
 
-There are some jumpers on each board with different function listed below. See the table as a summary for the function and suggested configurations.
+There are some jumpers on each board with different function listed below. See
+the table as a summary for the function and suggested configurations.
 
 +------------------------------+---------------+------------------------------------------------+-------------------------------------+
 | Jumper NO.                   | Configuration | Function                                       | Note                                |
@@ -159,11 +181,13 @@ There are some jumpers on each board with different function listed below. See t
 Boards Hooking Up
 ^^^^^^^^^^^^^^^^^
 
-The picture below shows the way to hook up the BAS, I\\Os and MCU boards together. It is necessary to have at least one I/O board to make system working correctly.
+The picture below shows the way to hook up the BAS, I\\Os and MCU boards
+together. It is necessary to have at least one I/O board to make system working
+correctly.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/eval-cn0352-eb1z_hookingup.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
 EVAL-CN0352-EB1Z Demo System Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,7 +200,6 @@ EVAL-CN0352-EB1Z Demo System Setup
 
 See the picture below showing the whole CN0352 demo system.
 
-
 |image2|
 
 .. note::
@@ -188,9 +211,10 @@ See the picture below showing the whole CN0352 demo system.
    -  [4] Using a battery with protection circuit integrated is highly recommended for demonstration.
    -  [5] 4-wire Kelvin connection is recommended.
    -  [6] There is no battery holding board in CN0352 package. Customer need to prepare the battery holding board for a good connection
-   -  [7] The default RT table if for ERTJZEG103JA, the Thermistor 10k NTC from Panisonic. If using different sensor, the RT table need to be modified to fit the new sensor.
+   -  [7] The default RT table if for ERTJZEG103JA, the Thermistor 10k NTC from
+      Panisonic. If using different sensor, the RT table need to be modified to
+      fit the new sensor.
    
-
 
 --------------
 
@@ -206,19 +230,22 @@ If you see the picture below, then click **finish** to complete the software ins
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_installation.png
    :align: center
-   :width: 500px
+   :width: 500
 
 *Italic Text*
 
 Software Function Introduction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Double click the CN0352.exe, then the interface of CN0352 evaluation software shows up.
-
+Double click the CN0352.exe, then the interface of CN0352 evaluation software
+shows up.
 
 |image3|
 
-The evaluation board would send related command frame down to one or more EVAL-CN0352-EB1Z demos one the same RS485 bus regards to the button been clicked by customer. Then the EVAL-CN0352-EB1Z addressed will do related operations and may or may not send back feedback data.
+The evaluation board would send related command frame down to one or more
+EVAL-CN0352-EB1Z demos one the same RS485 bus regards to the button been clicked
+by customer. Then the EVAL-CN0352-EB1Z addressed will do related operations and
+may or may not send back feedback data.
 
 System Operation Tab
 ^^^^^^^^^^^^^^^^^^^^
@@ -300,8 +327,8 @@ For easy to do the operation and see the result, the **Configuration** block and
 Battery Plots
 """""""""""""
 
-Battery Plots showns all the battery information since the testing started. All the information are shown on the plot.
-
+Battery Plots showns all the battery information since the testing started. All
+the information are shown on the plot.
 
 |image9|
 
@@ -351,7 +378,7 @@ Communication Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_com_steps.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Open the CN0352 Evaluation software by click the CN0352.exe. This program can be found on desktop or Start Menu\\All Programs\\Analog Devices\\CN0352.exe
 -  Click the **COM** drop down menu to selec the COM port that stand for your USB to RS485 adapter.
@@ -362,7 +389,7 @@ IO Programm
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_idprogsteps.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Click the **Module ID Programmer** page.
 -  If there are multiple modules, Assign a different ID to each Module.If there is only one EVAL-CN0352-EB1Z module, then you could program the module ID to 0x01 to get a quicker scaning process
@@ -374,7 +401,7 @@ Battery Testing
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_eswdemosteps1.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Click **Configuration** Tab
 -  Click **Battery Scan** button to scan all the available battery channels on RS485 bus.
@@ -390,9 +417,9 @@ Battery Testing
    
    -  Click Battery Scan button, switch to Battery Summary tab. It shold listed all the battery channels available on RS485 bus. if not, click the Stop button and click Run button.
    -  This CN0352 evaluation software on PC is designed with simple testing and just for demonstration. The operation failure may happen during testing.
-   -  The EVAL-CN0352-EB1Z firmware in C code is designed with simple test and just for demonstration. The operation failure may happen during testing.
+   -  The EVAL-CN0352-EB1Z firmware in C code is designed with simple test and
+      just for demonstration. The operation failure may happen during testing.
    
-
 
 --------------
 
@@ -401,23 +428,27 @@ Battery Testing
    DISCLAIMER
 
    
-   THIS EVALUATION SYSTEM INTERFACES TO LITHIUM ION BATTERIES WHICH CAN BE DAMAGED, CATCH ON FIRE, OR EXPLODE IF OVERCHARGED, OVER-DISCHARGED, OR SUBJECTED TO SOURCE OR SINK CURRENTS THAT EXCEED THE BATTERY MANUFACTURER’S SPECIFICATIONS. TAKE ALL NECESSARY STEPS TO PROTECT USERS DURING OPERATION. ADI MAKES NO GUARANTEES TO THE SAFETT AND TAKES NO RESPONSIBILITY TO ANY POTENTIAL SAFETY HAZARD DURING DEMONSTRATION.
-
+   THIS EVALUATION SYSTEM INTERFACES TO LITHIUM ION BATTERIES WHICH CAN BE
+   DAMAGED, CATCH ON FIRE, OR EXPLODE IF OVERCHARGED, OVER-DISCHARGED, OR
+   SUBJECTED TO SOURCE OR SINK CURRENTS THAT EXCEED THE BATTERY MANUFACTURER’S
+   SPECIFICATIONS. TAKE ALL NECESSARY STEPS TO PROTECT USERS DURING OPERATION.
+   ADI MAKES NO GUARANTEES TO THE SAFETT AND TAKES NO RESPONSIBILITY TO ANY
+   POTENTIAL SAFETY HAZARD DURING DEMONSTRATION.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_connector2.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_demo_system1.jpg
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_01_main_configuraion.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/leftest.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/left.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/digital_id.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/right.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/rightest.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_batteryplot.png
-   :width: 500px
+   :width: 500
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_batterysummary.png
-   :width: 500px
+   :width: 500
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_batteryidprog.png
-   :width: 500px
+   :width: 500

@@ -1,12 +1,16 @@
 Network Configuration
 =====================
 
-There are two types of network configuration supported by the Analog Devices Kuiper Linux Distribution:
+There are two types of network configuration supported by the Analog Devices
+Kuiper Linux Distribution:
 
 -  Dynamic Configuration (default)
 -  Static Configuration
 
-Updating the networking configuration will require a serial connection (UART), existing network connection, or having a physical keyboard/mouse/monitor connected. In all cases, to find out what your Ethernet port IP address is within ADI Kuiper Linux all you need to do is type the following:
+Updating the networking configuration will require a serial connection (UART),
+existing network connection, or having a physical keyboard/mouse/monitor
+connected. In all cases, to find out what your Ethernet port IP address is
+within ADI Kuiper Linux all you need to do is type the following:
 
 -  Open up a terminal window
 -  Type in the following command and hit <Enter> ``ifconfig``
@@ -14,7 +18,7 @@ Updating the networking configuration will require a serial connection (UART), e
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/serial_terminal_linux_ifconfig_inet.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Dynamic Host Configuration Protocol (DHCP)
 ------------------------------------------
@@ -24,7 +28,9 @@ By default, the Ethernet port of your host platform is configured for DHCP when 
 Request a New DHCP IP Address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you require a new IP address for some reason (Perhaps your internet isn't working or there are multiple devices using the same address) use the following instructions.
+If you require a new IP address for some reason (Perhaps your internet isn't
+working or there are multiple devices using the same address) use the following
+instructions.
 
 -  Open up a terminal window
 -  Type in the following command and hit <Enter> ``sudo dhclient -r eth0``
@@ -41,7 +47,8 @@ If you require a new IP address for some reason (Perhaps your internet isn't wor
 Return from Static IP Address Configuration to DCHP IP Address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are returning from a static IP configuration, and require to have a new DHCP IP address assigned to the host platform, follow these steps:
+If you are returning from a static IP configuration, and require to have a new
+DHCP IP address assigned to the host platform, follow these steps:
 
 -  Open a terminal window
 -  Type in the following command and hit <Enter> ``enable_dhcp.sh``
@@ -50,7 +57,10 @@ If you are returning from a static IP configuration, and require to have a new D
 
 .. important::
 
-   Some versions of Kuiper have an incompatible configuration script for enabling static addresses. If you receive the error "can't read /etc/NetworkManager/NetworkManager.conf: No such file or directory", you will need to do the following.
+   Some versions of Kuiper have an incompatible configuration script for
+   enabling static addresses. If you receive the error "can't read
+   /etc/NetworkManager/NetworkManager.conf: No such file or directory", you will
+   need to do the following.
 
    
    -  Use your PC to get the updated script `enable_dhcp.sh <https://raw.githubusercontent.com/analogdevicesinc/linux_image_ADI-scripts/master/enable_dhcp.sh>`_
@@ -104,16 +114,18 @@ If you are returning from a static IP configuration, and require to have a new D
       sudo chmod +x /usr/local/bin/enable_dhcp.sh
    
 
-
 Setting a Static IP Address Configuration
 -----------------------------------------
 
-If you desire to directly connect the Ethernet port of your host platform to the Ethernet port of another host, such as a PC (without the use of a network or router) a static configuration is required.
+If you desire to directly connect the Ethernet port of your host platform to the
+Ethernet port of another host, such as a PC (without the use of a network or
+router) a static configuration is required.
 
 Kuiper Linux
 ~~~~~~~~~~~~
 
-In order to change the default settings of ADI Kuiper Linux please use the following steps.
+In order to change the default settings of ADI Kuiper Linux please use the
+following steps.
 
 -  Open up a terminal window
 -  Type in the following command and hit <Enter> ``enable_static_ip.sh <ip address> eth0`` Where *<ip address>* is a usable and unique value such as **192.168.255.1**
@@ -122,7 +134,10 @@ In order to change the default settings of ADI Kuiper Linux please use the follo
 
 .. important::
 
-   Some versions of Kuiper have an incompatible configuration script for enabling static addresses. If you receive the error "can't read /etc/NetworkManager/NetworkManager.conf: No such file or directory", you will need to do the following.
+   Some versions of Kuiper have an incompatible configuration script for
+   enabling static addresses. If you receive the error "can't read
+   /etc/NetworkManager/NetworkManager.conf: No such file or directory", you will
+   need to do the following.
 
    
    -  Use your PC to get the updated script `enable_static_ip.sh <https://raw.githubusercontent.com/analogdevicesinc/linux_image_ADI-scripts/master/enable_static_ip.sh>`_
@@ -187,8 +202,9 @@ In order to change the default settings of ADI Kuiper Linux please use the follo
       sudo chmod +x /usr/local/bin/enable_static_ip.sh
    
 
-
-Once complete, you will need to change the networking configuration of your PC. I am going to use a Windows 10 PC as an example, but similar procedures can be done with MAC OS and Linux based Machines.
+Once complete, you will need to change the networking configuration of your PC.
+I am going to use a Windows 10 PC as an example, but similar procedures can be
+done with MAC OS and Linux based Machines.
 
 Windows Operating System
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -198,27 +214,30 @@ Windows Operating System
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/network_sharing_adaptor.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Find the Ethernet Port and right-click and select **Properties**
 -  Find the **Internet Protocol Version 4 (IPv4)** and click on **Properties**
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ipv4_properties.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Select the radio button that says **Use this IP Address**
 -  Enter in the IP address you want to use. To connect with the host board above use an address such as the subnet is the same but the final address is different. For example **192.168.255.2**
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/static_ip.png
    :align: center
-   :width: 400px
+   :width: 400
 
-Now you will be ready to directly connect your ADI Kuiper Linux host directly to your PC using the Ethernet port of both devices.
+Now you will be ready to directly connect your ADI Kuiper Linux host directly to
+your PC using the Ethernet port of both devices.
 
 .. note::
 
-   Remember once you are done to come back into the setting on your PC to change the Ethernet port back to the Obtain an IP address automatically radio button. Otherwise anything connected to your PC using the Ethernet port will likely not work.
-
+   Remember once you are done to come back into the setting on your PC to change
+   the Ethernet port back to the Obtain an IP address automatically radio
+   button. Otherwise anything connected to your PC using the Ethernet port will
+   likely not work.
 
 *End of Document*

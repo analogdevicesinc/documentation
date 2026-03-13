@@ -1,7 +1,6 @@
 AD7091R - No-OS Driver for Microchip Microcontroller Platforms
 ==============================================================
 
-
 Supported Devices
 =================
 
@@ -14,7 +13,6 @@ Evaluation Boards
 
 Overview
 ========
-
 
 The :adi:`AD7091R` is a 12-bit successive approximation analog-to-digital converter (ADC) that offers ultralow power consumption (typically 349 µA at 3 V and 1 MSPS) while achieving fast throughput rates (1 MSPS with a 50 MHz SCLK). The :adi:`AD7091R` uses advanced design and process techniques to achieve this very low power dissipation at high throughput rates. The part also features an on-chip, accurate 2.5 V reference.
 
@@ -44,9 +42,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/ad7091r_pmod_ad6.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -54,9 +55,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD7091R part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD7091R driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD7091R driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD7091R driver:
 
@@ -70,7 +75,6 @@ There are three functions which are called by the AD7091R driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of AD7091R driver:
 
@@ -89,8 +93,6 @@ The following functions are implemented in this version of AD7091R driver:
 +-----------------------------------------------------------+-----------------------------------------------------+
 | float AD7091R_ConvertToVolts(short rawSample, float vRef) | Converts a 12-bit raw sample to volts.              |
 +-----------------------------------------------------------+-----------------------------------------------------+
-
-
 
 **HW Platform(s):**
 
@@ -111,11 +113,11 @@ Downloads
    -  **PIC32MX320F128H Common Drivers:** :git-no-OS:`Microchip/PIC32MX320F128H/Common`
    
 
-
 Digilent Cerebot MX3cK Quick Start Guide
 ========================================
 
-This section contains a description of the steps required to run the AD7091R demonstration project on a Digilent Cerebot MX3cK platform.
+This section contains a description of the steps required to run the AD7091R
+demonstration project on a Digilent Cerebot MX3cK platform.
 
 Required Hardware
 -----------------
@@ -132,17 +134,18 @@ Required Software
 
 .. note::
 
-   The AD7091R demonstration project for PIC32MX320F128H consists of three parts: the AD7091R Driver, the PmodAD6 Demo for PIC32MX320F128H and the PIC32MX320F128H Common Drivers.
+   The AD7091R demonstration project for PIC32MX320F128H consists of three
+   parts: the AD7091R Driver, the PmodAD6 Demo for PIC32MX320F128H and the
+   PIC32MX320F128H Common Drivers.
 
    
    All three parts have to be downloaded.
 
-
 Hardware Setup
 --------------
 
-A PmodAD6 has to be connected to the JE connector of Cerebot MX3cK development board.
-
+A PmodAD6 has to be connected to the JE connector of Cerebot MX3cK development
+board.
 
 |image1|
 
@@ -150,14 +153,15 @@ A PmodAD6 has to be connected to the JE connector of Cerebot MX3cK development b
 
    
    -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD6 must be removed and the external AVDD signal must be connected to J2 Pin 1. The range for AVDD is 2.7V ≤ AVDD ≤ 5.25V.
-   -  When using external VREF, connect the VREF signal to J2 Pin 3. The range for external VREF is 2.7V ≤ VREF ≤ AVDD.
+   -  When using external VREF, connect the VREF signal to J2 Pin 3. The range
+      for external VREF is 2.7V ≤ VREF ≤ AVDD.
    
-
 
 Reference Project Overview
 --------------------------
 
-The following commands were implemented in this version of AD7091R reference project for Cerebot MX3cK board.
+The following commands were implemented in this version of AD7091R reference
+project for Cerebot MX3cK board.
 
 +-----------+------------------------------------------------------------------+
 | Command   | Description                                                      |
@@ -177,23 +181,24 @@ The following commands were implemented in this version of AD7091R reference pro
 | register? | Initiates a conversion and displays the value from the register. |
 +-----------+------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART1 peripheral of PIC32MX320F128H.
+Commands can be executed using a serial terminal connected to the UART1
+peripheral of PIC32MX320F128H.
 
-The following image shows a generic list of commands in a serial terminal connected to processor’s UART peripheral.
-
+The following image shows a generic list of commands in a serial terminal
+connected to processor’s UART peripheral.
 
 |image2|
 
 .. important::
 
    
-   -  The reference used to convert the raw data to volts is 2.5V. When using an external VREF, set the V_REF constant in 'PmodAD6 Demo' to the used external voltage value.
+   -  The reference used to convert the raw data to volts is 2.5V. When using an
+      external VREF, set the V_REF constant in 'PmodAD6 Demo' to the used
+      external voltage value.
    
-
 
 Software Project Setup
 ----------------------
-
 
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -224,7 +229,8 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
    :align: center
 
--  After the project is created, all the downloaded source files have to be copied in the project folder and included in the project.
+-  After the project is created, all the downloaded source files have to be
+   copied in the project folder and included in the project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
    :align: center
@@ -234,12 +240,11 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
 
-
-
 Digilent Cerebot MC7 Quick Start Guide
 ======================================
 
-This section contains a description of the steps required to run the AD7091R demonstration project on a Digilent Cerebot MC7 platform.
+This section contains a description of the steps required to run the AD7091R
+demonstration project on a Digilent Cerebot MC7 platform.
 
 Required Hardware
 -----------------
@@ -256,7 +261,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodAD6 can be connected to the JB connector of Cerebot MC7 development board for SPI operation,
+A PmodAD6 can be connected to the JB connector of Cerebot MC7 development board
+for SPI operation,
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad6_mc7.jpg
    :align: center
@@ -264,7 +270,8 @@ A PmodAD6 can be connected to the JB connector of Cerebot MC7 development board 
 Reference Project Overview
 --------------------------
 
-Following commands were implemented in this version of AD7091R reference project for Cerebot MC7 board.
+Following commands were implemented in this version of AD7091R reference project
+for Cerebot MC7 board.
 
 +-----------+---------------------------------------------------------------------+
 | Command   | Description                                                         |
@@ -280,16 +287,16 @@ Following commands were implemented in this version of AD7091R reference project
 | register? | Initiates a conversion and displays the raw data in decimal format. |
 +-----------+---------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART1 peripheral of dsPIC33FJ128MC706A.
+Commands can be executed using a serial terminal connected to the UART1
+peripheral of dsPIC33FJ128MC706A.
 
-The following image shows a list of commands in a serial terminal connected to processor’s UART peripheral.
-
+The following image shows a list of commands in a serial terminal connected to
+processor’s UART peripheral.
 
 |image3|
 
 Software Project Setup
 ----------------------
-
 
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -320,7 +327,8 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
    :align: center
 
--  After the project is created, the source files have to be copied in the project folder and included in the project.
+-  After the project is created, the source files have to be copied in the
+   project folder and included in the project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
    :align: center
@@ -330,12 +338,11 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
    :align: center
 
-
-
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
 ==========================================================
 
-This section contains a description of the steps required to run the AD7091R chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
+This section contains a description of the steps required to run the AD7091R
+chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
 
 Required Hardware
 -----------------
@@ -351,7 +358,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodAD6 has to be connected to the JE connector of Cerebot MX3cK development board.
+A PmodAD6 has to be connected to the JE connector of Cerebot MX3cK development
+board.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad6_pic32_arduino.jpg
    :align: center
@@ -359,7 +367,8 @@ A PmodAD6 has to be connected to the JE connector of Cerebot MX3cK development b
 Reference Project Overview
 --------------------------
 
-Following commands were implemented in this version of AD7091R chipKIT reference project for Cerebot MX3cK board.
+Following commands were implemented in this version of AD7091R chipKIT reference
+project for Cerebot MX3cK board.
 
 +-----------+---------------------------------------------------------------------+
 | Command   | Description                                                         |
@@ -387,7 +396,6 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
@@ -411,19 +419,14 @@ This section presents the steps for developing a chipKIT application that will r
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_3.png
    :align: center
 
-
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad6_pic32.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

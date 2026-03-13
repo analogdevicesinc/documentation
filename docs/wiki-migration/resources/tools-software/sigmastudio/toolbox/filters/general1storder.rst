@@ -9,14 +9,23 @@ General (1st-Order)
 
 Drag the block into the workspace and it's ready to use. As with other blocks, there's the option to :doc:`Grow </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithms>` or :doc:`Add </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithms>` to this algorithm. Observe, however, that with this block **growing** the algorithm will add another frequency band to the block, which is equivalent to having two filters in series. Adding an algorithm adds another input/output pair to the block, which is equivalent to **adding** a filter in parallel.
 
-To switch among highpass, lowpass, and flat, click the blue frequency response icon. This can be done in real time, without needing to recompile the project. Enter your desired values in the text fields to set the cutoff frequency and overall gain (sometimes called scale gain) of the filter. Or click the arrows to increment values for these parameters. To increment them very quickly, click and hold, dragging a little.
+To switch among highpass, lowpass, and flat, click the blue frequency response
+icon. This can be done in real time, without needing to recompile the project.
+Enter your desired values in the text fields to set the cutoff frequency and
+overall gain (sometimes called scale gain) of the filter. Or click the arrows to
+increment values for these parameters. To increment them very quickly, click and
+hold, dragging a little.
 
-To view your work, drag a filter block into the workspace, a Simulation Stimulus block as input, a Simulation Probe to come after the filter, set some test parameters, and click Probe, then Stimulus. To see some results, take a look at the filter examples.
+To view your work, drag a filter block into the workspace, a Simulation Stimulus
+block as input, a Simulation Probe to come after the filter, set some test
+parameters, and click Probe, then Stimulus. To see some results, take a look at
+the filter examples.
 
 Calculating Filter Coefficients
 -------------------------------
 
-Use the following formulas to calculate the coefficients for first order filters.
+Use the following formulas to calculate the coefficients for first order
+filters.
 
 Variables:
 

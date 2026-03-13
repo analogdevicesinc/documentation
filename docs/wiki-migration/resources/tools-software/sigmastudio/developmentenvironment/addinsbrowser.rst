@@ -34,5 +34,7 @@ Added blocks are immediately available for use, you do not need to restart Sigma
 
 .. tip::
 
-   Note: Add-In information is saved in the "AddIns.xml" file located in the application's installation directory. You may want to back-up this file when installing SigmaStudio updates. Also, you can view/edit this file a text editor if you prefer.
-
+   Note: Add-In information is saved in the "AddIns.xml" file located in the
+   application's installation directory. You may want to back-up this file when
+   installing SigmaStudio updates. Also, you can view/edit this file a text
+   editor if you prefer.

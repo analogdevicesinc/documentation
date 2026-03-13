@@ -4,8 +4,9 @@ Modifying Signal Generator
 Overview
 --------
 
-This article gives a brief overview of how to modify the signal generator feature to add custom signal generators to the signal command, how to increase the number of indices in the table, and how to increase the number of channels.
-
+This article gives a brief overview of how to modify the signal generator
+feature to add custom signal generators to the signal command, how to increase
+the number of indices in the table, and how to increase the number of channels.
 
 |custom-signal-example.jpg|
 
@@ -13,11 +14,9 @@ This article gives a brief overview of how to modify the signal generator featur
 
    For more details on the *signal* command refer to the :doc:`Audio Commands </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/audio-commands>` page.
 
-
 .. note::
 
    For *signal* command usage examples refer to the :doc:`Signal Generator Example </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/examples-signal-generator>` page.
-
 
 Details
 -------
@@ -68,7 +67,8 @@ Follow these steps to add a custom signal generator:
 Increasing Signal Generator Count
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow these steps to increase the number of indices in the signal generator table:
+Follow these steps to increase the number of indices in the signal generator
+table:
 
 +------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Step**                                                                                                               | **Example**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -85,7 +85,8 @@ Follow these steps to increase the number of indices in the signal generator tab
 Increasing Signal Generator Channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow these steps to increase the number of channels each signal generator will output:
+Follow these steps to increase the number of channels each signal generator will
+output:
 
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Step**                                                                                                                              | **Example**                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -102,4 +103,4 @@ Follow these steps to increase the number of channels each signal generator will
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. |custom-signal-example.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/custom-signal-example.jpg
-   :width: 600px
+   :width: 600

@@ -15,7 +15,9 @@ The :adi:`ADXL345` is a small, thin, ultralow power, 3-axis accelerometer with h
 Quick Start Guide
 -----------------
 
-The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided in the project \*.zip file combines the FPGA bit file and
+the SDK elf files. It may be used for a quick check on the system. All you need
+is the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -29,12 +31,11 @@ Required Software
 ~~~~~~~~~~~~~~~~~
 
 -  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
--  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet
+   LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
@@ -44,46 +45,60 @@ Running Demo (SDK) Program
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
-
 Avnet LX9 MicroBoard Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (ADXL345\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (ADXL345\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodACL to J5 connector of LX9 board (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+To begin, connect the PmodACL to J5 connector of LX9 board (see image below).
+You can use an extension cable for ease of use. Connect the USB cable from the
+PC to the USB-UART female connector of the board for the UART terminal. The
+board will be programmed through its USB male connector.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl.jpg
    :alt: PmodACL and LX-9
-   :width: 200px
+   :width: 200
 
 Digilent Nexys™3 Spartan-6 FPGA Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (ADXL345\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (ADXL345\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodACL to JA connector of NEXYS3 board (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodACL to JA connector of NEXYS3 board (see image below).
+You can use an extension cable for ease of use. Connect the USB cables from the
+PC to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_nexys3.jpg
    :alt: PmodACL and Nexys™3
-   :width: 200px
+   :width: 200
 
 Avnet ZedBoard
 ~~~~~~~~~~~~~~
 
-To begin, connect the PmodACL to JA1 connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodACL to JA1 connector of ZedBoard (see image below).
+You can use an extension cable for ease of use. Connect the USB cables from the
+PC to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_zed.jpg
    :alt: PmodACL and ZedBoard
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for Nexys3 and LX-9 MicroBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../adxl345/sw/ADXL345.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to appropiate baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../adxl345/sw/ADXL345.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodaclimpact.jpg
    :alt: Programming FPGA in IMPACT
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for ZedBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,56 +107,56 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
-
+   If the download script fails to run, modify the Xilinx Tools path in
+   download.bat to match your Xilinx Installation path.
 
 If programming was successful, the **Main Menu** will apear in your UART terminal, as seen in the picture below. There are 7 options. Pressing [e], [d], [a], [s], [r], [t] or [q] key will allow you to select the desired option. After the end of every option, all the possible options (the Menu) will be shown again, allowing the user to make a new choice.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu1.jpg
    :alt: Main Menu
-   :width: 600px
+   :width: 600
 
 **Enable Measurement** sets the ADXL345 into measurement mode. Any measurement that takes place from that moment on will be valid data.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu2.jpg
    :alt: Enable Measurement
-   :width: 600px
+   :width: 600
 
 **Disable Measurement** sets the ADXL345 into standby mode. Any measurement that takes place from that moment will not be valid data (usually 0).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu3.jpg
    :alt: Disable Measurement
-   :width: 600px
+   :width: 600
 
 **Display Acceleration** displays acceleration data on all 3 Axes.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu4.jpg
    :alt: Acceleration on all 3 Axes
-   :width: 600px
+   :width: 600
 
 **Select Measurement Range** allows choosing between 4 options: ±2g, ±4g, ±8g and ±16g. Desired measurement range is selected by pressing [1] to [4].
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu5.jpg
    :alt: Selecting Measurement Range
-   :width: 600px
+   :width: 600
 
 **Change Acquisition Rate** allows choosing different Acquisition rates for the ADXL345. Desired option is selected by pressing [1] to [9].
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu6.jpg
    :alt: Acquisition Rate
-   :width: 600px
+   :width: 600
 
 **Select Tap Interrupts** allows enabling or disabling tap interrupts. Desired option is selected by pressing [1] to [4]. If the tap option selected is [1] or [3], after a single tap, D2 (LX9) / LD0 (Nexys3 and ZedBoard) will be ON. If the tap option selected is [2] or [3], after two consecutive taps, D3 and D2 (LX9) / LD1 and LD0 (Nexys3 and ZedBoard) will both be on at the same time. If the tap option selected is [4], no LEDs will be ON after a single or double tap.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu7.jpg
    :alt: Select Tap Interrupts
-   :width: 600px
+   :width: 600
 
 **Stop any ongoing action** will stop any display of measurements and afterwards display the Main Menu.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl_menu1.jpg
    :alt: Stop actions
-   :width: 600px
+   :width: 600
 
 Using the reference design
 --------------------------
@@ -149,19 +164,25 @@ Using the reference design
 Functional Description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design is a SPI interface used to communicate with the device. The software programs the ADXL345 internal registers, and afterwards reads desired data from the device and prints it via UART. Three Interrupt signals are used in the design: one coming from the ADXL345, one from the UART and a timer interrupt (used for single and double tap LED signaling).
+The reference design is a SPI interface used to communicate with the device. The
+software programs the ADXL345 internal registers, and afterwards reads desired
+data from the device and prints it via UART. Three Interrupt signals are used in
+the design: one coming from the ADXL345, one from the UART and a timer interrupt
+(used for single and double tap LED signaling).
 
 .. important::
 
    
    -  Connecting the PmodACL to the boards using an extension cable provides ease of use.
-   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and
+      ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-
 
 .. important::
 
-   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+   When using the ZedBoard reference design in order to develop your own
+   software, please make sure that the following options are set in
+   "system_config.h":
 
    
    .. code:: c
@@ -179,7 +200,6 @@ The reference design is a SPI interface used to communicate with the device. The
       // GPIO used in the design
       #define USE_GPIO         1
    
-
 
 Downloads
 ---------
@@ -204,7 +224,6 @@ Downloads
    -  :git-no-OS:`Programming Script <Pmods/PmodACL/bin>`
    
 
-
 Linux Device Driver
 ===================
 
@@ -217,11 +236,15 @@ In order to prepare the SD Card for booting Linux on the ZedBoard:
 
 -  Download the device tree: :git-no-OS:`PmodACL Linux devicetree <Pmods/PmodACL/dts>`
 -  Configure the kernel to include the driver for the ADXL345: :doc:`Compiling the ADXL345 driver into the kernel </wiki-migration/resources/tools-software/linux-drivers/input-misc/adxl345>`
--  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step and the kernel configuration above
+-  Follow the instructions on the following wiki page, but use the device tree
+   downloaded on the previous step and the kernel configuration above
 
    -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`. When following those instructions make sure to copy the devicetree file that was downloaded in step 1) to arch/arm/boot/dts/zynq-zed-adv7511-pmod-acl.dts before trying to build the zynq-zed-adv7511-pmod-acl.dtb file.
 
-Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD
+Card and power on the board. If everything is correct, the system should boot
+up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate
+115200.
 
 There are 2 ways to test the driver.
 
@@ -233,7 +256,8 @@ Using the terminal window
 
 Open a new terminal window by pressing **Ctrl+Alt+T**.
 
-Navigate to the location of the device and identify it using the following commands:
+Navigate to the location of the device and identify it using the following
+commands:
 
 ::
 
@@ -277,13 +301,15 @@ To read the position, type:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl345_linaro_terminal.jpg
    :alt: ADXL345 Set Voltage from Terminal
-   :width: 600px
+   :width: 600
 
-The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+The commands written above can also be used if not using an HDMI monitor and a
+wireless keyboard, by using a serial terminal, and typing the commands after the
+system boot-up is complete.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxl345_linux_serial.jpg
    :alt: ADXL345 Read Voltage from Serial Terminal
-   :width: 600px
+   :width: 600
 
 More information
 ----------------

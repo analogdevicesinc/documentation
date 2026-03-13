@@ -1,31 +1,39 @@
 Hardware Guide
 ==============
 
-This section of the user guide will go through the hardware on the Eval-AD7124-xASDZ board and will provide an explanation of the AD7124 itself, the hardware link options available on the board, how to power the part etc., with Schematics and a Bill of Materials available at the end of the chapter.
+This section of the user guide will go through the hardware on the
+Eval-AD7124-xASDZ board and will provide an explanation of the AD7124 itself,
+the hardware link options available on the board, how to power the part etc.,
+with Schematics and a Bill of Materials available at the end of the chapter.
 
 Set-up Procedures
 -----------------
 
-After following the instructions in the Software Installation Procedures section, set up the evaluation and SDP boards as detailed in this section.
+After following the instructions in the Software Installation Procedures
+section, set up the evaluation and SDP boards as detailed in this section.
 
 .. warning::
 
-   The evaluation software and drivers must be installed before connecting the EVAL-AD7124-xASDZ evaluation board and EVAL-SDP-CB1Z board to the USB port of the PC to ensure the PC correctly recognizes the evaluation system.
-
+   The evaluation software and drivers must be installed before connecting the
+   EVAL-AD7124-xASDZ evaluation board and EVAL-SDP-CB1Z board to the USB port of
+   the PC to ensure the PC correctly recognizes the evaluation system.
 
 Follow the below 2 steps to configure the Evaluation and SDP Boards:
 
--   Connect the SDP-B board to Connector A or Connector B on the EVAL-AD7124-xASDZ evaluation board. Screw the two boards together using the plastic screw and washer set included in the evaluation board kit to connect the boards firmly together.
+-   Connect the SDP-B board to Connector A or Connector B on the
+    EVAL-AD7124-xASDZ evaluation board. Screw the two boards together using the
+    plastic screw and washer set included in the evaluation board kit to connect
+    the boards firmly together.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/quick_start.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 -   Connect the SDP-B board to the PC using the supplied USB cable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/img_0569_rot.jpeg
    :align: center
-   :width: 300px
+   :width: 300
 
 Block Diagram
 -------------
@@ -117,7 +125,7 @@ Connector J3: SPD-120 pin connector
 -----------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/ad4170_sdp_connection.png
-   :width: 400px
+   :width: 400
 
 Connector J4: AIN8-AIN15 connection
 -----------------------------------
@@ -163,26 +171,30 @@ Connector Function
 Connector J8 SMB:
 -----------------
 
-Straight PCB mount SMB/SMA jack for master clock (not inserted). The EVAL board has the footprint to include an SMA/SMB connector, if using an external clock source to provide the master clock to the ADC.
+Straight PCB mount SMB/SMA jack for master clock (not inserted). The EVAL board
+has the footprint to include an SMA/SMB connector, if using an external clock
+source to provide the master clock to the ADC.
 
 Connector J11 PMOD (DNI):
 -------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/ad7124_pmod_connection.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/ad7124_silk_connectors.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Power Supplies
 ==============
 
-The evaluation board receives power through the EVAL-SDP board when connected to the PC via USB.
+The evaluation board receives power through the EVAL-SDP board when connected to
+the PC via USB.
 
 -  Linear regulators generate the required power supply levels from the applied VIN rail.
--  Each supply is decoupled at the point where it enters the board and again at the point where it connects to each device.
+-  Each supply is decoupled at the point where it enters the board and again at
+   the point where it connects to each device.
 
 AVDD
 ----
@@ -226,12 +238,20 @@ For an introduction to the Serial Peripheral Interface (SPI), click :adi:`here <
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/spi_pic.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Reference Options
 =================
 
-The Eval-AD7124-xASDZ includes an external 2.5 V reference (the ADR4525) and an internal 2.5 V reference. The default operation is to use the external reference input, which is set to accept the 2.5 V ADR4525 on the evaluation board. The reference used for a conversion is selected by choosing the reference in the Config registers associated with Setup 0 to Setup 7. Switch between using the internal reference and external reference by accessing the AD7124-X registers through the pop-ups via the evaluation software. Figure 1 (below) shows how to select the reference source for Setup 0 to Setup 7. Figure 2 shows the ADC_Control register setting that enables the internal reference.
+The Eval-AD7124-xASDZ includes an external 2.5 V reference (the ADR4525) and an
+internal 2.5 V reference. The default operation is to use the external reference
+input, which is set to accept the 2.5 V ADR4525 on the evaluation board. The
+reference used for a conversion is selected by choosing the reference in the
+Config registers associated with Setup 0 to Setup 7. Switch between using the
+internal reference and external reference by accessing the AD7124-X registers
+through the pop-ups via the evaluation software. Figure 1 (below) shows how to
+select the reference source for Setup 0 to Setup 7. Figure 2 shows the
+ADC_Control register setting that enables the internal reference.
 
 |Figure 1: Reference Menu from Eval+ Software| Figure 1: Reference Menu from Eval+ Software.
 
@@ -245,7 +265,6 @@ Schematics
 
    `AD7124 Schematic available here <https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/7124_schematic.pdf>`_
 
-
 Bill of Materials
 =================
 
@@ -254,10 +273,9 @@ Bill of Materials
 
    `AD7124 Bill of materials available here <https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/ad7124_bom.pdf>`_
 
-
 :doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/ad7124-x/software>` :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad7124-x>`
 
 .. |Figure 1: Reference Menu from Eval+ Software| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/ref_source_pop_ups.png
-   :width: 600px
+   :width: 600
 .. |Figure 2: Enabling the 2.5V Reference through pop-ups.| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/int_red.png
-   :width: 200px
+   :width: 200

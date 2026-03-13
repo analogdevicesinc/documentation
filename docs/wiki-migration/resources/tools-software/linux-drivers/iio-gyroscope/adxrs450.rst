@@ -34,14 +34,15 @@ ADXRS453: ±300°/sec High Vibration Immunity Digital Gyro
 Adding ADXRS450 to the Kernel
 =============================
 
-To add support for the ADXRS450 to the kernel build system, a few things must be enabled properly for things to work.The configuration is as following:
+To add support for the ADXRS450 to the kernel build system, a few things must be
+enabled properly for things to work.The configuration is as following:
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADXRS450 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -76,12 +77,19 @@ Example platform device initialization
 
 Below is an example which is used on Blackfin board file.
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
-
 
 .. code:: c
 
@@ -118,12 +126,12 @@ Hardware configuration
 .. image:: https://wiki.analog.com/_media/software/driver/linux/adxrs450_eval_lr.jpg
    :alt: EVAL-ADXRS450
    :align: left
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/pmodgyro2_lr.jpg
    :alt: PmodGYRO2
    :align: left
-   :width: 600px
+   :width: 600
 
 Driver testing
 ==============
@@ -143,9 +151,15 @@ Module loading
       adxrs450 spi0.18: The Serial Number is 0xbaf2
    
 
-
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -173,7 +187,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r--    1 root     root          4096 Jan  3 16:24 uevent
    
 
-
 Show device name
 ----------------
 
@@ -187,7 +200,6 @@ Show device name
       root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat name
       adxrs450
    
-
 
 Show angular rate scale
 -----------------------
@@ -203,11 +215,11 @@ Show angular rate scale
       0.000218166
    
 
-
 Show angular rate
 -----------------
 
-Rotate the device and read angular rate sampling values from sysfs nodes like this:
+Rotate the device and read angular rate sampling values from sysfs nodes like
+this:
 
 Rotate in positive direction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -225,7 +237,6 @@ Rotate in positive direction
       1456
    
 
-
 Rotate in negative direction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -242,11 +253,11 @@ Rotate in negative direction
       -17215
    
 
-
 Show quadrature correction
 --------------------------
 
-This attribute is used to read the amount of quadrature error present in the device at a given time.
+This attribute is used to read the amount of quadrature error present in the
+device at a given time.
 
 .. container:: box bggreen
 
@@ -259,11 +270,12 @@ This attribute is used to read the amount of quadrature error present in the dev
       9
    
 
-
 Set dynamic null correction
 ---------------------------
 
-This attribute is used to make small adjustments to the rateout of the device. This 10-bit value allows the user to adjust the static rateout of the device by up to ±6.4°/sec.
+This attribute is used to make small adjustments to the rateout of the device.
+This 10-bit value allows the user to adjust the static rateout of the device by
+up to ±6.4°/sec.
 
 .. container:: box bggreen
 
@@ -281,7 +293,6 @@ This attribute is used to make small adjustments to the rateout of the device. T
       1
    
 
-
 Show temperature
 ----------------
 
@@ -297,7 +308,6 @@ Show temperature
       root:/sys/devices/platform/bfin-spi.0/spi0.18/iio:device0> cat in_temp0_raw
       105
    
-
 
 **T** = *in_temp0_raw* \* *in_temp0_scale* = 105 \* 200 = 21000 milli degree Celsius
 
@@ -322,6 +332,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/youtube>p_vntewue24
-

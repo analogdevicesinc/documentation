@@ -3,10 +3,16 @@
 FFT with Windowing
 ==================
 
-This Module performs N-point FFT on PCM samples with Windowing. The FFT Output is given in the form of PCMx samples, the Blocksize of which is 3 \* Schematic BlockSize.The first Schematic Block Size number of samples in a PCMx output contains the header information to be carried on to the next Module (say in this case IFFT). The header information contains fields such as PCMx type (to indicate Windowing), N.Since memory size depends on the value of N, downloading the Schematic (Link-Compile-Download) is necessary when N value is changed.
+This Module performs N-point FFT on PCM samples with Windowing. The FFT Output
+is given in the form of PCMx samples, the Blocksize of which is 3 \* Schematic
+BlockSize.The first Schematic Block Size number of samples in a PCMx output
+contains the header information to be carried on to the next Module (say in this
+case IFFT). The header information contains fields such as PCMx type (to
+indicate Windowing), N.Since memory size depends on the value of N, downloading
+the Schematic (Link-Compile-Download) is necessary when N value is changed.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/fftwindow.jpg
-   :width: 200px
+   :width: 200
 
 Input Pins
 ----------
@@ -17,7 +23,6 @@ Name         Format [int/dec] - [control/audio] Function Description
 Pin 0: Input decimal - Audio                    Real Audio Input
 Pin 1: Input decimal - Audio                    Imaginary Audio Input
 ============ ================================== =====================
-
 
 | ====Output Pins====
 
@@ -36,7 +41,7 @@ Configuration
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/fftwindowconfig.jpg
-   :width: 100px
+   :width: 100
 
 +------------------+---------------+------------+---------------------------------------------------------------------+
 | GUI Control Name | Default Value | Range      | Function Description                                                |
@@ -71,7 +76,10 @@ Configuration
 Algorithm Description
 ---------------------
 
-The input samples to the module are windowed first using a Raised cosine Window. IFFT is computed after the windowing for 2N samples where N corresponds to the Size set in the GUI. The twiddle coefficients are calculated within the code and output is given as PCMx samples.
+The input samples to the module are windowed first using a Raised cosine Window.
+IFFT is computed after the windowing for 2N samples where N corresponds to the
+Size set in the GUI. The twiddle coefficients are calculated within the code and
+output is given as PCMx samples.
 
 Supported ICs
 -------------

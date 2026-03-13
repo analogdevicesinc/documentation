@@ -33,7 +33,10 @@ Applications:
 HDL reference design
 --------------------
 
-The HDL project is only needed if the used carrier board is an FPGA board. The project uses a Zedboard and its hardware interfaces. There isn't any custom logic in the programmable side of the Zynq 7000 SoC. To clone or download the HDL repository, go the Download section of this wiki page.
+The HDL project is only needed if the used carrier board is an FPGA board. The
+project uses a Zedboard and its hardware interfaces. There isn't any custom
+logic in the programmable side of the Zynq 7000 SoC. To clone or download the
+HDL repository, go the Download section of this wiki page.
 
 To find more information about how to create and build the project please visit the :doc:`HDL build guide </wiki-migration/resources/fpga/docs/build>`.
 
@@ -265,7 +268,6 @@ HDL Downloads
    -  :git-hdl:`HDL Reference Design <projects/ad5758_sdz>`
    
 
-
 No-OS Downloads
 ---------------
 
@@ -276,4 +278,3 @@ No-OS Downloads
    -  :git-no-OS:`No-OS Reference Design <projects/ad5758-sdz>`
    -  :git-no-OS:`No-OS Drivers <drivers/dac/ad5758>`
    
-

@@ -4,7 +4,8 @@ AD-FMCJESDADC1-EBZ Bare Metal Quick Start Guide
 Xilinx Platform
 ---------------
 
-This guide provides some quick instructions on how to setup the AD-FMCJESDADC1-EBZ on either:
+This guide provides some quick instructions on how to setup the
+AD-FMCJESDADC1-EBZ on either:
 
 -  `KC705 <https://www.xilinx.com/KC705>`_
 -  `VC707 <https://www.xilinx.com/VC707>`_
@@ -23,7 +24,6 @@ Downloads
    -  XCVR Driver - :git-no-OS:`common_drivers/xcvr_core`
    -  JESD204B Driver - :git-no-OS:`common_drivers/jesd_core`
    
-
 
 Required Software
 ~~~~~~~~~~~~~~~~~

@@ -6,7 +6,7 @@ Exp2
 This module computes the 2 Power of the incoming data
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/2powerx.jpg
-   :width: 200px
+   :width: 200
 
 Input Pins
 ----------
@@ -32,7 +32,7 @@ Configuration
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/2powerx_config.jpg
-   :width: 100px
+   :width: 100
 
 Grow Algorithm
 --------------
@@ -52,7 +52,8 @@ None
 Algorithm Description
 ---------------------
 
-2 Power x is equivalent to e^(x ln 2). Taylor series expansion of e^x is used to compute the value of 2 Power x.
+2 Power x is equivalent to e^(x ln 2). Taylor series expansion of e^x is used to
+compute the value of 2 Power x.
 
 Supported IC's
 --------------

@@ -3,12 +3,20 @@ ADALM1000 Calibration Procedure
 
 .. important::
 
-   Note that Revision F of the M1k is calibrated in the Factory and does not need the user to perform any calibration. The purpose of this Document is codify the steps required if the factory settings need to be changed or updated and for the legacy Revision D of the M1k hardware.
+   Note that Revision F of the M1k is calibrated in the Factory and does not
+   need the user to perform any calibration. The purpose of this Document is
+   codify the steps required if the factory settings need to be changed or
+   updated and for the legacy Revision D of the M1k hardware.
 
+The ADALM1000 device can be calibrated by the user to achieve more accurate
+measurements and signal generation. The calibration procedure requires a Digital
+Multimeter (DMM) and a resistor with a value anywhere between 2.5Ω and 25Ω.
 
-The ADALM1000 device can be calibrated by the user to achieve more accurate measurements and signal generation. The calibration procedure requires a Digital Multimeter (DMM) and a resistor with a value anywhere between 2.5Ω and 25Ω.
-
-The device is calibrated by taking a set of measurements according to the procedures described in the sections below. The measurement results must be hand written into a calibration file that will be afterwards used by the calibration software to compute all the calibration parameters and write them into the device.
+The device is calibrated by taking a set of measurements according to the
+procedures described in the sections below. The measurement results must be hand
+written into a calibration file that will be afterwards used by the calibration
+software to compute all the calibration parameters and write them into the
+device.
 
 .. important::
 
@@ -17,11 +25,12 @@ The device is calibrated by taking a set of measurements according to the proced
    
    Make sure to `update the firmware <https://wiki.analog.com/firmware-upgrade>`_ on your device and Pixelpulse before starting the calibration procedure.
 
-
 Calibration file
 ----------------
 
-The calibration files contains *<reference, value>* data pairs for all the measurement and source channels. Below is an example of how a default calibration file looks like.
+The calibration files contains *<reference, value>* data pairs for all the
+measurement and source channels. Below is an example of how a default
+calibration file looks like.
 
 ::
 
@@ -77,25 +86,35 @@ The calibration files contains *<reference, value>* data pairs for all the measu
    <-0.1000, -0.1000>
    <\>
 
-The calibration file must contain for each channel at least the data points shown in the example above. It is possible to add as many data points as desired, the only constraint is that the measurement for offset calibration (0V or 0A reference) has to be the first data pair in the data set. A data set for a channel is delimited by the </> and <\\> tags. The order of the data sets in the calibration file must be as in the example and the calibration file must contain all the shown data sets otherwise it is not valid.
+The calibration file must contain for each channel at least the data points
+shown in the example above. It is possible to add as many data points as
+desired, the only constraint is that the measurement for offset calibration (0V
+or 0A reference) has to be the first data pair in the data set. A data set for a
+channel is delimited by the </> and <\\> tags. The order of the data sets in the
+calibration file must be as in the example and the calibration file must contain
+all the shown data sets otherwise it is not valid.
 
-The example calibration file can be downloaded from the link below. This file assumes perfect device operation - no offset or gain errors, and can be used to reset your device calibration in case an inaccurate calibration file was loaded into the device.
+The example calibration file can be downloaded from the link below. This file
+assumes perfect device operation - no offset or gain errors, and can be used to
+reset your device calibration in case an inaccurate calibration file was loaded
+into the device.
 
 .. admonition:: Download
    :class: download
 
    :git-libsmu:`ADALM1000 default calibration file <contrib/calib.txt>`
 
+.. important::
+
+   If an inaccurate calibration file was loaded into the device this can be
+   erased by writing into the device the default calibration file.
 
 .. important::
 
-   If an inaccurate calibration file was loaded into the device this can be erased by writing into the device the default calibration file.
-
-
-.. important::
-
-   When you want to re-calibrate your device, before starting the calibration process write into the device the default calibration file and power cycle the device. This will erase the previous calibration and will ensure correct re-calibration.
-
+   When you want to re-calibrate your device, before starting the calibration
+   process write into the device the default calibration file and power cycle
+   the device. This will erase the previous calibration and will ensure correct
+   re-calibration.
 
 Storing the calibration data into the device
 --------------------------------------------
@@ -104,7 +123,8 @@ To store the calibration data into the device:
 
 -  Use the *smu* binary by typing in a terminal *smu --write-calibration /path/to/cal/file* (or as *smu -w /path/to/cal/file*)
 
-The smu binary also supports displaying and resetting calibration for all supported, attached devices via the following:
+The smu binary also supports displaying and resetting calibration for all
+supported, attached devices via the following:
 
 -  reset: *smu --reset-calibration* (also as *smu -r*)
 -  display: *smu --display-calibration* (also as *smu -d*)
@@ -112,7 +132,6 @@ The smu binary also supports displaying and resetting calibration for all suppor
 .. important::
 
    Make sure that Pixelpulse is closed when running the *smu* binary.
-
 
 To acquire the smu binary, use the libsmu installer below in addition to installing the correct architecture support for Microsoft's `Visual C++ Redistributable for Visual Studio 2015 <https://www.microsoft.com/en-us/download/details.aspx?id=48145>`_.
 
@@ -123,21 +142,24 @@ Instructions on how to build, install and use libsmu can be found :doc:`here </w
 
    libsmu installer: `libsmu-setup.exe <https://github.com/analogdevicesinc/libsmu/releases/latest>`_
 
-
 .. important::
 
-   If you have multiple ADALM1000 devices make sure that just one device is plugged in when trying to store the calibration data.
-
+   If you have multiple ADALM1000 devices make sure that just one device is
+   plugged in when trying to store the calibration data.
 
 Calibration procedures
 ----------------------
 
-The procedures below describe all the required steps to perform and record the calibration measurements. The Voltage Source of the ADALM1000 is very precise and normally does not require calibration so it can be left to the default values in the calibration file.
+The procedures below describe all the required steps to perform and record the
+calibration measurements. The Voltage Source of the ADALM1000 is very precise
+and normally does not require calibration so it can be left to the default
+values in the calibration file.
 
 Voltage measurement calibration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Voltage measurement calibration requires at least 2 data points - 0V and 2.5V. The steps below describe the calibration procedure:
+Voltage measurement calibration requires at least 2 data points - 0V and 2.5V.
+The steps below describe the calibration procedure:
 
 -  On the ADALM1000 device connect the CH A and CH B inputs to GND
 -  In Pixelpulse set the mode for both channels to *Measure Voltage*
@@ -151,7 +173,8 @@ Voltage measurement calibration requires at least 2 data points - 0V and 2.5V. T
 Voltage source calibration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Voltage source calibration requires at least 2 data points - 0V and 2.5V. The steps below describe the calibration procedure:
+Voltage source calibration requires at least 2 data points - 0V and 2.5V. The
+steps below describe the calibration procedure:
 
 -  In Pixelpulse set the mode for both channels to *Source Voltage Measure Current*
 -  In Pixelpulse make sure that the *Repeated Sweep* mode is not active
@@ -165,7 +188,9 @@ Voltage source calibration requires at least 2 data points - 0V and 2.5V. The st
 Current measurement calibration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Current measurement calibration requires at least 3 data points - 0A, 100mA and -100mA. Channels A and B must be calibrated sequentially. The steps below describe the calibration procedure:
+Current measurement calibration requires at least 3 data points - 0A, 100mA and
+-100mA. Channels A and B must be calibrated sequentially. The steps below
+describe the calibration procedure:
 
 -  On the ADALM1000 leave both CH A and CH B open
 -  In Pixelpulse set the mode of the channel to be calibrated to *Source Voltage Measure Current*
@@ -186,7 +211,9 @@ Current measurement calibration requires at least 3 data points - 0A, 100mA and 
 Current source calibration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Current source calibration requires at least 3 data points - 0A, 100mA and -100mA. Channels A and B must be calibrated sequentially. The steps below describe the calibration procedure:
+Current source calibration requires at least 3 data points - 0A, 100mA and
+-100mA. Channels A and B must be calibrated sequentially. The steps below
+describe the calibration procedure:
 
 -  On the ADALM1000 device connect the CH A or CH B to one end of the resistor
 -  Connect the other end of the resistor to the current input of a DMM

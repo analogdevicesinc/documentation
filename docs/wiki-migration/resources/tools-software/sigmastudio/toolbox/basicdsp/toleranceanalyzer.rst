@@ -9,11 +9,14 @@ Tolerance Analyzer
 
 **Values in the controls are integer (32.0 or 28.0) format. Audio data is not directly compatible with these inputs; please refer to** :doc:`Numeric Formats </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/numericformats>` **for more information.**
 
-The operation of the Tolerance Analyzer can be readily understood from this graph:
+The operation of the Tolerance Analyzer can be readily understood from this
+graph:
 
 |tolerancepic2.png| The graph shows the instantaneous values at input and output pins of the Tolerance analyzer whose tolerance limits are 1-3.
 
-As long as the input remains within the limit (1 - 3, designated by green lines), the block outputs 1. When the signal is out of (above or below) the limit, the block outputs 0.
+As long as the input remains within the limit (1 - 3, designated by green
+lines), the block outputs 1. When the signal is out of (above or below) the
+limit, the block outputs 0.
 
 .. |tolerancepic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/tolerancepic1.png
 .. |tolerancepic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/tolerancepic2.png

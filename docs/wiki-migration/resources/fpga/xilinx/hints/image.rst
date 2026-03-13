@@ -1,7 +1,10 @@
 Creating Graphics for inclusion in FPGA Projects
 ================================================
 
-There are many times creating a graphics image, and including it into an FPGA project is necessary. The goal of this tutorial is to show you the various methods of doing this. The various methods will differ, depending on the size or depth of the image.
+There are many times creating a graphics image, and including it into an FPGA
+project is necessary. The goal of this tutorial is to show you the various
+methods of doing this. The various methods will differ, depending on the size or
+depth of the image.
 
 Using the Linux Boot Logo Tools
 -------------------------------
@@ -13,14 +16,16 @@ The Linux kernel uses a "compressed" image format, which creates a header file f
 -  `pnmtologo <http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=blob;f=scripts/pnmtologo.c;hb=HEAD>`_ which is a c source file, which you must download and build.
 
 -  the first step is actually to get the create an svg. Since this was already done, I'm just going to download one from Wikipedia to use an an example.\ :literal:`rgetz@curly:~/logos$ \**wget http://upload.wikimedia.org/wikipedia/commons/8/86/Analog_Devices_Logo.svg*\*
-   --2011-12-20 13:41:47--  http:%%//%%upload.wikimedia.org/wikipedia/commons/8/86/Analog_Devices_Logo.svg
+   --2011-12-20 13:41:47--
+   http:%%//%%upload.wikimedia.org/wikipedia/commons/8/86/Analog_Devices_Logo.svg
    Resolving upload.wikimedia.org... 208.80.152.211
    Connecting to upload.wikimedia.org|208.80.152.211\|:80... connected.
    HTTP request sent, awaiting response... 200 OK
    Length: 4525 (4.4K) [image/svg+xml]
    Saving to: \`Analog_Devices_Logo.svg'
 
-   100%[=============================================================>] 4,525       21.4K/s   in 0.2s
+   100%[=============================================================>] 4,525
+   21.4K/s   in 0.2s
 
    2011-12-20 13:41:48 (21.4 KB/s) - \`Analog_Devices_Logo.svg' saved [4525/4525]`
 -  the next step is to size it (I create a 349x100), and save it as an ascii .ppm file ``rgetz@curly:~/logos$ **gimp Analog_Devices_Logo.svg**``\ Here I "save as" a ``.ppm`` file.
@@ -33,7 +38,8 @@ The Linux kernel uses a "compressed" image format, which creates a header file f
    rgetz@curly:~/logos$ **sed -i '/^`space <https://wiki.analog.com/space>`_*\.type/d' Analog_Devices_Logo_clut224.h**
    rgetz@curly:~/logos$ **sed -i 's:linux_logo:logo:' Analog_Devices_Logo_clut224.h**``
 
-And that's it - it's just a matter of including the image data into your application.
+And that's it - it's just a matter of including the image data into your
+application.
 
 .. code:: tcl
 
@@ -73,7 +79,9 @@ Once this is done, you can have a quick look, to see how big things are.
        42: 0000000000601040 34900 OBJECT  LOCAL  DEFAULT   24 Analog_Devices_logo_data
        43: 00000000006098a0   672 OBJECT  LOCAL  DEFAULT   24 Analog_Devices_logo_clut
 
-The data and colour lookup table are 35,572 bytes (~35k) to represent a 349 pixel x 100 pixel (RGB) image (uncompressed, this would be 104,700 bytes) - the clut data is 1/3 of the size, and minimal overhead.
+The data and colour lookup table are 35,572 bytes (~35k) to represent a 349
+pixel x 100 pixel (RGB) image (uncompressed, this would be 104,700 bytes) - the
+clut data is 1/3 of the size, and minimal overhead.
 
 Using U-Boot's Logo Tools
 -------------------------
@@ -84,7 +92,8 @@ Using U-Boot's Logo Tools
 
    rgetz@curly:~/u-boot$ make tools-all HOST_TOOLS_ALL=y
 
-This will provide you with multple tools which you can used to create the header files.
+This will provide you with multple tools which you can used to create the header
+files.
 
 bmp_logo
 ~~~~~~~~
@@ -111,7 +120,8 @@ easylogo
    Compressing with gzip
    Doing 'Analog_Devices_Logo_tga_zip.h' (Analog_Logo) from 'Analog_Devices_Logo.tga'...LSS
 
-Using the gzip version, does require a little more processing on the target (to decompress things), but offers substational saving in space.
+Using the gzip version, does require a little more processing on the target (to
+decompress things), but offers substational saving in space.
 
 ::
 

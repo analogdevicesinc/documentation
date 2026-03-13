@@ -39,12 +39,19 @@ Files
 | Documentation | `Documentation/ABI/testing/sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/testing/sysfs-bus-iio>`_  |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
-
 
 properties
 ~~~~~~~~~~
@@ -199,12 +206,12 @@ Example
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADMV1014 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -218,8 +225,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Hardware configuration
 ======================
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -246,7 +260,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r-- 1 root root 4096 May  6 12:20 uevent
    
 
-
 Show device name
 ----------------
 
@@ -261,7 +274,6 @@ Show device name
       root:/> cat name
       admv1014
    
-
 
 Set ChannelY Gain
 -----------------
@@ -286,7 +298,6 @@ Gain factor. If shared across all channels, <type>_hardwaregain is used.
       1 1
    
 
-
 Set ChannelY Offset value
 -------------------------
 
@@ -308,7 +319,6 @@ Offset value. If shared across all channels, <type>_offset is used.
       root:/> cat out_altvoltage0_offset
       1
    
-
 
 Set ChannelY Phase value
 ------------------------
@@ -332,7 +342,6 @@ Phase value. If shared across all channels, <type>_phase is used.
       1
    
 
-
 More Information
 ================
 
@@ -354,6 +363,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/youtube>p_vntewue24
-

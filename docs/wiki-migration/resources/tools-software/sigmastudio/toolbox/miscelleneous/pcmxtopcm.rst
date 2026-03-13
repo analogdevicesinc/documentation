@@ -3,7 +3,14 @@
 PCMx to PCM
 ===========
 
-PCMx to PCM conversion will have PCMx format which will have 3 \* Schematic Block Size number of samples. The output is a control signal, which will carry the header information passed by the PCMx signal, and 2 Data (PCM) pins, each carrying a Schematic Block Size Linear PCM data (since PCMx signal contains Schematic Block Size of header information and 2 \* Schematic Block Size of valid sample information). The output pins can be grown and should be in such a way that the no. of output pins (or the growth count) is always a power of 2. By default the growth count is 2 and the no. of output pins is also 2.
+PCMx to PCM conversion will have PCMx format which will have 3 \* Schematic
+Block Size number of samples. The output is a control signal, which will carry
+the header information passed by the PCMx signal, and 2 Data (PCM) pins, each
+carrying a Schematic Block Size Linear PCM data (since PCMx signal contains
+Schematic Block Size of header information and 2 \* Schematic Block Size of
+valid sample information). The output pins can be grown and should be in such a
+way that the no. of output pins (or the growth count) is always a power of 2. By
+default the growth count is 2 and the no. of output pins is also 2.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/miscelleneous/pcmxtopcm-tbx.jpg
 
@@ -43,7 +50,6 @@ GUI Control Name Default Value Range Function Description
 -                -             -     -
 ================ ============= ===== ====================
 
-
 | ====DSP Parameter Information====
 
 ================ ============= ====================
@@ -51,7 +57,6 @@ GUI Control Name Compiler Name Function Description
 ================ ============= ====================
 -                -             -
 ================ ============= ====================
-
 
 | ==== Algorithm Description ==== PCMx to PCM conversion will have PCMx format which will have 3 \* Schematic Block Size number of samples. The output is a control signal, which will carry the header information passed by the PCMx signal, and 2 Data (PCM) pins, each carrying a Schematic Block Size Linear PCM data (since PCMx signal contains Schematic Block Size of header information and 2 \* Schematic Block Size of valid sample information). The output pins can be grown and should be in such a way that the no. of output pins (or the growth count) is always a power of 2. By default the growth count is 2 and the no. of output pins is also 2.
 

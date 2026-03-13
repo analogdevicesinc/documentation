@@ -9,7 +9,11 @@ State Machine
 Description
 -----------
 
-This block outputs the input signal from the input pin, if and only if the control signal falls within the range specified in the numerical controls (>) and (<). If the control signal is out of range, the input is disabled and a zero value is output. The control pin can be sourced by a DC Input Entry, Counter, or an Index Lookup Table block.
+This block outputs the input signal from the input pin, if and only if the
+control signal falls within the range specified in the numerical controls (>)
+and (<). If the control signal is out of range, the input is disabled and a zero
+value is output. The control pin can be sourced by a DC Input Entry, Counter, or
+an Index Lookup Table block.
 
 Targets Supported
 -----------------
@@ -19,7 +23,6 @@ Name          ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ============= ========== ================ ============= ================
 State Machine S/B        S/B              S             B
 ============= ========== ================ ============= ================
-
 
 | ===== Pins =====
 

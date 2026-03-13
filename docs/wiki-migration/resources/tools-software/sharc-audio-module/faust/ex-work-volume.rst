@@ -1,14 +1,15 @@
 MIDI Controlled Volume on Core 1
 ================================
 
-A first example to demonstrate the workflow is a simple MIDI controlled stereo volume control that runs on Core 1.
+A first example to demonstrate the workflow is a simple MIDI controlled stereo
+volume control that runs on Core 1.
 
 The Faust Code for the MIDI Controlled Volume
 ---------------------------------------------
 
-Here is the Faust code for the MIDI controlled stereo volume. Note that the metadata string “[midi:ctrl 2]” is used to map MIDI continuous controller 2 (CC-2) to control the gain slider.
-
-
+Here is the Faust code for the MIDI controlled stereo volume. Note that the
+metadata string “[midi:ctrl 2]” is used to map MIDI continuous controller 2
+(CC-2) to control the gain slider.
 
 .. code:: c
 
@@ -31,7 +32,7 @@ Building a Test GUI for the MIDI Controlled Volume
 -  Compile and run the Faust program using the |image1| button
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/volume1.gif
-   :width: 600px
+   :width: 600
 
 Looking at the Block Diagram for the MIDI Controlled Volume
 -----------------------------------------------------------
@@ -42,38 +43,37 @@ The block diagram button |image2| can be used to generate a hierarchical block d
 
    You may need to allow pop-ups in your browser to view the block diagram
 
-
 This block diagram is hierarchical. Here are a few of the hierarchical levels:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module//faust8.png
    :alt: /faust8.png
-   :width: 312px
+   :width: 312
    :height: 254px
 
 Creating Files for use with the Baremetal Framework
 ---------------------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/volume2.gif
-   :width: 600px
+   :width: 600
 
 -  Click the ``Export/compile to a specific platform`` button
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
-   :width: 50px
+   :width: 50
 
 -  In the first dropdown box, choose ``sam``
 -  In the second dropdown box, choose ``sam-source-midi`` and then ``Export``:
 
 .. note::
 
-   \ faust2sam will generate the following three C++ source files, which is the algorithm.
+   \ faust2sam will generate the following three C++ source files, which is the
+   algorithm.
 
    
    -  ``fast_pow2.h``
    -  ``samFaustDSP.cpp``
    -  ``samFaustDSP.h``
    
-
 
 -  Click on the QR code that shows to download the files
 -  These 3 source files can be copied to the Faust directory in the CCES framework. The framework can then be compiled and downloaded to the SHARC Audio Module.
@@ -87,6 +87,6 @@ When you run the project through the debugger, you will be able to control the v
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png
-   :width: 50px
+   :width: 50
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/diagram_button.png
-   :width: 50px
+   :width: 50

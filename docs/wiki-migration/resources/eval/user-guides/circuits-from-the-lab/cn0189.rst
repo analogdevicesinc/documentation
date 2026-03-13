@@ -78,7 +78,8 @@ Opening and Enabling the Evaluation Software
 Step by Step Instruction to Using the Evaluation Software
 ---------------------------------------------------------
 
--  The following is a list of all available software controls, grouped according to their location in the software:
+-  The following is a list of all available software controls, grouped according
+   to their location in the software:
 
    -  **System Controls**
 
@@ -91,7 +92,8 @@ Step by Step Instruction to Using the Evaluation Software
       -  **Continuous Conversion Mode**
 
          -  This control brings the user to the Demonstration Tab and locks out unnecessary tabs.
-         -  This control displays/hides the necessary controls in the Data Acquisition Controls Tab.
+         -  This control displays/hides the necessary controls in the Data
+            Acquisition Controls Tab.
 
             -  **Data Acquisition Controls**
 
@@ -100,7 +102,8 @@ Step by Step Instruction to Using the Evaluation Software
       -  **Single Sample**
 
          -  This control brings the user to the Sample Data tab and locks out unnecessary tabs.
-         -  This control displays/hides the necessary controls in the Data Acquisition Controls tab.
+         -  This control displays/hides the necessary controls in the Data
+            Acquisition Controls tab.
 
             -  **Data Acquisition Controls**
 
@@ -126,28 +129,28 @@ Step by Step Instruction to Calibrate the Accelerometer
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_1gx_.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 -  Press **Sample Data** while rotating the PCB to find the largest output voltage for the X-axis. This voltage corresponds to the +1g value for the X-axis.
 -  Orient the PCB as displayed in the image below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_-1gx_.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 -  Press **Sample Data** while rotating the PCB to find the smallest output voltage for the X-axis. This voltage corresponds to the -1g value for the X-axis.
 -  Orient the PCB as displayed in the image below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_1gy_.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 -  Press **Sample Data** while rotating the PCB to find the largest output voltage for the Y-axis. This voltage corresponds to the +1g value for the Y-axis.
 -  Orient the PCB as displayed in the image below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_-1gy_.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 -  Press **Sample Data** while rotating the PCB to find the smallest output voltage for the Y-axis. This voltage corresponds to the -1g value for the Y-axis.
 -  Press **Calibrate** to calculate the offset and sensitivity values for each axis.
@@ -160,16 +163,15 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0189-SDPZ?&v=Rev B>`_ to receive all these great benefits and more!
 
-
 *End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189-setupdiagram.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-sdpdrivers-setup_wizard.jpg
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-displaying_connectors.jpg
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-connected-sdps-cn0189.jpg
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-connected-sdps-power-cn0189.jpg
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-connected-usb-sdps-cn0189.jpg
-   :width: 200px
+   :width: 200

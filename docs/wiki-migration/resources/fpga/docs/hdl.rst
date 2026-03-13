@@ -1,7 +1,9 @@
 ADI™ Reference Designs HDL User Guide
 =====================================
 
-Analog Devices provides FPGA reference designs for selected hardware featuring some of our products interfacing to publicly available FPGA evaluation boards. This wiki page details the HDL resources of these reference designs.
+Analog Devices provides FPGA reference designs for selected hardware featuring
+some of our products interfacing to publicly available FPGA evaluation boards.
+This wiki page details the HDL resources of these reference designs.
 
 A list of supported hardware can be found here:
 

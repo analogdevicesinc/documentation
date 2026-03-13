@@ -4,7 +4,8 @@ Loading file from USB storage in u-boot
 Overview
 --------
 
-This document talks about how we can load files on USB memory stick, into system RAM from u-boot. Here we take ADSP-SC573 board as example.
+This document talks about how we can load files on USB memory stick, into system
+RAM from u-boot. Here we take ADSP-SC573 board as example.
 
 Hardware Setup
 --------------
@@ -20,10 +21,11 @@ Hardware Setup
 -  A USB memory stick
 -  A USB adapter cable (provided in the ezkit box)
 
-Connect USB stick to the USB OTG port, via the USB adapter cable, as following, and reset the board
+Connect USB stick to the USB OTG port, via the USB adapter cable, as following,
+and reset the board
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/das-u-boot/dasu-loading_file-hw_setup.jpg
-   :width: 600px
+   :width: 600
 
 Test method
 -----------
@@ -31,7 +33,8 @@ Test method
 Formatting the USB stick
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Insert the USB memory stick into a Linux PC, you will see new items show up in /dev/sd\*, as following:
+Insert the USB memory stick into a Linux PC, you will see new items show up in
+/dev/sd\*, as following:
 
 ::
 
@@ -42,8 +45,8 @@ In this case the /dev/sdb is for the USB stick we just plugged in.
 
 .. important::
 
-   Caution : Please double check the device node newly created for your memory stick, otherwise serious damage like system permanent crash down happens!
-
+   Caution : Please double check the device node newly created for your memory
+   stick, otherwise serious damage like system permanent crash down happens!
 
 The format a vfat partiton on it:
 
@@ -64,7 +67,8 @@ Copy files in it
    $ sudo cp build/tmp/deploy/images/<MACHINE>/zImage /mnt/boot/
    $ sudo umount /mnt
 
-Then plug the USB stick to the USB OTG port in board, via the USB adapter cable, and reset the board
+Then plug the USB stick to the USB OTG port in board, via the USB adapter cable,
+and reset the board
 
 Start the USB
 ~~~~~~~~~~~~~
@@ -88,17 +92,20 @@ Run "fatls usb 0:1" In the u-boot console:
     12225998   ramdisk.cpio.xz.u-boot
    3 file(s), 0 dir(s)
 
-This shows the FAT files information in USB device 0 partition 1, with files we copied.
+This shows the FAT files information in USB device 0 partition 1, with files we
+copied.
 
 Load file into RAM
 ~~~~~~~~~~~~~~~~~~
 
- As example we load both the dtb, zImage and the ramdisk file into proper location.
+ As example we load both the dtb, zImage and the ramdisk file into proper
+ location.
 
 .. important::
 
-   Don't forget to change the file/dtb name and load address according to your board type (i.e. SC589-ezkit or SC584-ezkit or SC573-ezkit), otherwise it may not boot properly.
-
+   Don't forget to change the file/dtb name and load address according to your
+   board type (i.e. SC589-ezkit or SC584-ezkit or SC573-ezkit), otherwise it may
+   not boot properly.
 
 ::
 
@@ -115,7 +122,6 @@ Load file into RAM
  Verify the read operation:
 
 ::
-
 
    sc # bootz ${loadaddr} ${initramaddr} ${dtbaddr}
    Kernel image @ 0xc2000000 [ 0x000000 - 0x3ea770 ]
@@ -401,4 +407,3 @@ Appendix: Macro Definition
       **Next: *\*\ :doc:`Mobile Storage Interface (MSI) </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot/mobile_storage_interface>`
 
    
-

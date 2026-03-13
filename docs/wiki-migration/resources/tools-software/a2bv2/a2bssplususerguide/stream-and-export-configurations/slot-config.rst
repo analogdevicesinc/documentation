@@ -3,12 +3,18 @@
 Slot Configuration
 ==================
 
-With sub-node-to-sub-node communication possible with AD242x/3x parts, the way upstream and downstream slots are computed in the A2B schematic varies depending on the A2B transceiver type used. This section describes the slot configuration for AD242x & AD243x types.
+With sub-node-to-sub-node communication possible with AD242x/3x parts, the way
+upstream and downstream slots are computed in the A2B schematic varies depending
+on the A2B transceiver type used. This section describes the slot configuration
+for AD242x & AD243x types.
 
 AD242x
 ------
 
-In A242x, with the ability for a sub-node to directly receive/transmit data from/to other sub-nodes without having to move the data all the way up to the main, the Rx and Tx channels configured for the peripherals does not directly translate to the Upstream and Downstream slots.
+In A242x, with the ability for a sub-node to directly receive/transmit data
+from/to other sub-nodes without having to move the data all the way up to the
+main, the Rx and Tx channels configured for the peripherals does not directly
+translate to the Upstream and Downstream slots.
 
 One can configure slots for AD242x sub-nodes using
 
@@ -49,15 +55,15 @@ Downstream
 
    \ |image1|\
 
-
 .. container:: centeralign
 
    \ **Figure:** Slot Config – Sub-node Properties Window
 
-
 AD243x
 ------
 
-Like AD242x, AD243x can be either configured via ‘stream configuration’ or manual slot configuration in General/Register view. Additionally, stream-based auto-slot calculation is extended to SPI Data tunnels along with audio streams.
+Like AD242x, AD243x can be either configured via ‘stream configuration’ or
+manual slot configuration in General/Register view. Additionally, stream-based
+auto-slot calculation is extended to SPI Data tunnels along with audio streams.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/slotconfig1_subnode.png

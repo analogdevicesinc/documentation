@@ -10,14 +10,12 @@ You can return to the ACE Application User Guide Homepage here:
 
    Tip: Click on any picture in this guide to open an enlarged version.
 
-
 Tool Views
 ----------
 
 .. container:: centeralign
 
    \ |image1| *Figure 1. Tool Views*\
-
 
 The **Tool Views** are a collection of views that add functionality to the main views. The Tool Views is found in the Tools drop-down on the side bar of the main window, as seen in Figure 1. Tool Views that were open when the application is closed will reopen when the application starts up again. The following are the available tools in :doc:`ACE Software </wiki-migration/resources/tools-software/ace>`:
 
@@ -39,20 +37,17 @@ Macro Tool
 
    \ |image2|\ *Figure 2. Macro Tool View*\
 
-
 The **Macro Tool View**, as seen in Figure 2, allows commands to be recorded and played back.  Macros can be created to configure a chip, to share a series of steps with other users, or to perform common tasks multiple times.
 
 .. container:: centeralign
 
    \ |image3|\ *Figure 3. Macro Toolbar*\
 
-
 The **Macro Toolbar**, as seen in Figure 3, can be used to open, record, save, close, or delete Macros. While recording, the **Commands List** will automatically be populated when any interaction with the device is performed. By default, the Commands List is populated with top level commands, and it can be extended to show sub-commands by checking the **Record Sub-Commands** box prior to recording.
 
 .. tip::
 
    \ ``Sub-commands are denoted by a “>” symbol for each level of the tree.``\
-
 
 +---------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | Tool          | Description                                                                                                                         |
@@ -88,7 +83,6 @@ The **Macro Toolbar**, as seen in Figure 3, can be used to open, record, save, c
 
    \ |image4|\ *Figure 4. Record Macro button*\
 
-
 -  Start performing device interaction such as changing parameters, inputting values to registers on the memory map, capturing data, etc. The Commands List window will fill up as the GUI is navigated and interacted with.
 -  Once all parameters to be entered are recorded, click the **Stop** button (Stop recording macro Commands).
 -  Once a macro file has been recorded, it can then be saved and stored into a macro file **(.acemacro)** using the **Save** button, or be played again to repeat the previously performed steps using **Play** button.
@@ -98,15 +92,18 @@ The **Macro Toolbar**, as seen in Figure 3, can be used to open, record, save, c
 
    \ |image5|\ *Figure 5. Generate Code Button*\
 
-
 -  Select the desired language among C#, MATLAB or Python
 
 .. container:: centeralign
 
    \ |image6|\ *Figure 6. Generated Matlab Code*\
 
-
-This code can then be imported into an IDE for execution, as seen in Figure 6. Using this code as the base, additional features such as instrument control can be added in order to have an automated set of measurements. Apart from supported languages, the remote API can also be used by IDEs that support DLLs like LabVIEW. The DLL is located in the ACE installation directory within the subfolder "Clients".
+This code can then be imported into an IDE for execution, as seen in Figure 6.
+Using this code as the base, additional features such as instrument control can
+be added in order to have an automated set of measurements. Apart from supported
+languages, the remote API can also be used by IDEs that support DLLs like
+LabVIEW. The DLL is located in the ACE installation directory within the
+subfolder "Clients".
 
 *Reference:* :doc:`Recording a macro and generating scripts by Luis Beltran </wiki-migration/software-tools/ace/recording-macros>`
 
@@ -123,10 +120,6 @@ XHIDDENSTART See More Details...
    The **Context** column allows the subsystem which the commands are being executed on to be set based on the list of compatible subsystems in the drop-down menu. This step may need to be carried out if the current session differs from the session when the Macro was recorded.
 
    The **Comment** column allows the user to record non-executable comments about the operation performed.
-
-
-
-
 
 .. collapsible:: Macro Command Format and Supported Transactions
 
@@ -174,10 +167,6 @@ XHIDDENSTART See More Details...
    | Read Settings      | @ReadSettings()                     | -                                         | Reads values from the part.                                              |
    +--------------------+-------------------------------------+-------------------------------------------+--------------------------------------------------------------------------+
 
-
-
-
-
 .. collapsible:: Creating and Loading Macro File to ACE Macro Tool
 
    **CREATE AND LOAD MACRO FILE**
@@ -185,7 +174,6 @@ XHIDDENSTART See More Details...
    .. container:: centeralign
 
       \ |image7|\ *Figure 7. Open Macro File*\
-
 
    -  Open any text editor, such as Notepad, to create a macro file.
    -  Create a macro command sequence following the previous subsection (**Macro Command Format and Supported Transactions**)
@@ -226,8 +214,6 @@ XHIDDENSTART See More Details...
       @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.WriteRegister(0x111, 0xA0);  //Enabling Digital Gain and Inverse Sinc
       @Subsystem_1.AD9136-FMC-EBZ.AD9136: Evaluation.Control.ReadRegisterMap();  //Reading all registers data
 
-
-
 System Explorer
 ~~~~~~~~~~~~~~~
 
@@ -238,7 +224,6 @@ Subsystem details include **boards**, **chips** (or components), **chip memory m
 .. container:: centeralign
 
    \ |image8|\ *Figure 8. System Explorer View*\
-
 
 Register Debugger
 ~~~~~~~~~~~~~~~~~
@@ -259,7 +244,6 @@ Events
 .. container:: centeralign
 
    \ |Events.png|\ *Figure 10. Event Logs*\
-
 
 The **Events Tool View**, as seen in Figure 10, contains a list of event logs including error and warnings generated within the application software. Messages are divided into the following sections:
 
@@ -296,25 +280,24 @@ To use the SDP-K1 Recovery Tool, refer to Figure 11 and follow the steps below:
 
    \ |image10|\ *Figure 11. SDP-K1 Recovery Tool View*\
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/ace_toolviews.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/macro_tool_view.png
-   :width: 900px
+   :width: 900
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/macro_tool_toolbar.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/software-tools/ace/ace-record_icon.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/software-tools/ace/ace-generate_icon.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/software-tools/ace/ace-generated-code-editor.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/macro_tool_openmacro.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/system_explorer_view.png
-   :width: 900px
+   :width: 900
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/registerdebugger.png
-   :width: 180px
+   :width: 180
 .. |Events.png| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/events.png
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/sdp-k1_recovery_tool.png
-   :width: 900px
+   :width: 900

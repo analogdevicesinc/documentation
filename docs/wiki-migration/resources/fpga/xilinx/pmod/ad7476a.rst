@@ -18,8 +18,6 @@ Two reference designs are available for this part:
 
             -  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`_
 
-
-
 - A design which demonstrates how to acquire a signal and reproduce it using Digilent PmodAD1 and PmodDA1. Four types of waveforms (Square, Sine, Sawtooth and Triangle) are generated using the **AD7303 DAC** present on the PmodDA1 board. Each waveform has a period of 25 ms, and lasts for 25 s (1000 periods). A loopback cable is connected between the output of the **AD7303 DAC** (A1 Output) and the input of the **AD7476 ADC** (A0 input) present on the PmodAD1 board. The Xilinx ChipScope Analyzer tool is used to verify the digitized waveforms.
   - **HW Platform(s):**
     - `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`_
@@ -30,7 +28,9 @@ AD7476A Pmod Reference Design
 Quick Start Guide
 -----------------
 
-The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided in the project \*.zip file combines the FPGA bit file and
+the SDK elf files. It may be used for a quick check on the system. All you need
+is the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -45,12 +45,11 @@ Required Software
 
 -  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
 -  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
--  Linux Distribution for compiling the kernel (only required for Linux Device Drivers)
+-  Linux Distribution for compiling the kernel (only required for Linux Device
+   Drivers)
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
@@ -60,48 +59,66 @@ Running Demo (SDK) Program
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
-
 Avnet LX9 MicroBoard Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD7476A\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD7476A\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodAD1 to J5 connector of LX9 board (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+To begin, connect the PmodAD1 to J5 connector of LX9 board (see image below).
+You can use an extension cable for ease of use. Connect the USB cable from the
+PC to the USB-UART female connector of the board for the UART terminal. The
+board will be programmed through its USB male connector.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad1.jpg
    :alt: PmodAD1 and LX-9
-   :width: 200px
+   :width: 200
 
 Digilent Nexys™3 Spartan-6 FPGA Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD7476A\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD7476A\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodAD1 to JA connector of NEXYS3 board (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodAD1 to JA connector of NEXYS3 board (see image below).
+You can use an extension cable for ease of use. Connect the USB cables from the
+PC to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad1_nexys3.jpg
    :alt: PmodAD1 and Nexys™3
-   :width: 200px
+   :width: 200
 
 Avnet ZedBoard
 ~~~~~~~~~~~~~~
 
-To begin, connect the PmodAD1 to JD connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodAD1 to JD connector of ZedBoard (see image below). You
+can use an extension cable for ease of use. Connect the USB cables from the PC
+to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad1_zed.jpg
    :alt: PmodAD1 and ZedBoard
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for Nexys3 and LX-9 MicroBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad7476a/sw/AD7476A.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to appropiate baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../ad7476a/sw/AD7476A.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad1impact.jpg
    :alt: Programming FPGA in IMPACT
-   :width: 200px
+   :width: 200
 
-If programming was successful, you should be seeing messages appear on the terminal window as shown in the figure below. After programming the AD7476A device, the program will automatically read the values of the analog voltage inputs, Vin1 and Vin2, and print them via UART. Pressing any key will initialize another conversion.
+If programming was successful, you should be seeing messages appear on the
+terminal window as shown in the figure below. After programming the AD7476A
+device, the program will automatically read the values of the analog voltage
+inputs, Vin1 and Vin2, and print them via UART. Pressing any key will initialize
+another conversion.
 
 |UART messeges| |image1|
 
@@ -112,10 +129,13 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in
+   download.bat to match your Xilinx Installation path.
 
-
-If programming was successful, you should be seeing messages appear on the terminal window. After programming the AD7476A device, the program will automatically read the values of the analog voltage inputs, Vin1 and Vin2, and print the raw values via UART.
+If programming was successful, you should be seeing messages appear on the
+terminal window. After programming the AD7476A device, the program will
+automatically read the values of the analog voltage inputs, Vin1 and Vin2, and
+print the raw values via UART.
 
 Using the reference design
 --------------------------
@@ -126,12 +146,20 @@ Functional Description
 Avnet LX-9 MicroBoard and Digilent Nexys3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The reference design is a custom SPI interface, with 2 MISO pins for the AD7476A ICs found on the PmodAD1 (PmodAD1 contains two AD7476A Integrated Circuits, which share the same CS and SCLK pins, but have separate MISO pins). The software programs the device, and afterwards reads the input voltage on both channels and prints them via UART.
+The reference design is a custom SPI interface, with 2 MISO pins for the AD7476A
+ICs found on the PmodAD1 (PmodAD1 contains two AD7476A Integrated Circuits,
+which share the same CS and SCLK pins, but have separate MISO pins). The
+software programs the device, and afterwards reads the input voltage on both
+channels and prints them via UART.
 
 Avnet ZedBoard
 ^^^^^^^^^^^^^^
 
-The reference design is a custom SPI interface, with 2 MISO pins for the AD7476A ICs found on the PmodAD1 (PmodAD1 contains two AD7476A Integrated Circuits, which share the same CS and SCLK pins, but have separate MISO pins). The software programs the device, and afterwards, using DMA, transfers 8192 samples (4096 for Channel 1 and 4096 for Channel 2) and prints them on the UART.
+The reference design is a custom SPI interface, with 2 MISO pins for the AD7476A
+ICs found on the PmodAD1 (PmodAD1 contains two AD7476A Integrated Circuits,
+which share the same CS and SCLK pins, but have separate MISO pins). The
+software programs the device, and afterwards, using DMA, transfers 8192 samples
+(4096 for Channel 1 and 4096 for Channel 2) and prints them on the UART.
 
 .. important::
 
@@ -140,7 +168,6 @@ The reference design is a custom SPI interface, with 2 MISO pins for the AD7476A
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    -  The reference voltage for the AD7476A is 3.3V.
    
-
 
 Downloads
 ---------
@@ -166,7 +193,6 @@ Downloads
    -  :git-no-OS:`Programming Script <Pmods/PmodAD1/bin>`
    
 
-
 Linux Device Driver - Xilinx SPI Core
 =====================================
 
@@ -178,11 +204,15 @@ Preparing the SD Card
 In order to prepare the SD Card for booting Linux on the ZedBoard:
 
 -  Download the device tree: :git-no-OS:`PmodAD1 Linux devicetree <Pmods/PmodAD1/dts/zynq-zed-adv7511-pmod-ad1.dts>`
--  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
+-  Follow the instructions on the following wiki page, but use the device tree
+   downloaded on the previous step
 
    -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
 
-Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD
+Card and power on the board. If everything is correct, the system should boot
+up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate
+115200.
 
 There are 2 ways to test the driver.
 
@@ -194,7 +224,8 @@ Using the terminal window
 
 Open a new terminal window by pressing **Ctrl+Alt+T**.
 
-Navigate to the location of the device and identify it using the following commands:
+Navigate to the location of the device and identify it using the following
+commands:
 
 ::
 
@@ -237,18 +268,21 @@ To read the scaled input voltage, type:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7476a_linaro_terminal.jpg
    :alt: AD7476A Read Voltage from Terminal
-   :width: 600px
+   :width: 600
 
-The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+The commands written above can also be used if not using an HDMI monitor and a
+wireless keyboard, by using a serial terminal, and typing the commands after the
+system boot-up is complete.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7476a_linux_serial.jpg
    :alt: AD7476A Read Voltage from Serial Terminal
-   :width: 600px
+   :width: 600
 
 Using the ADI IIO Oscilloscope
 ------------------------------
 
-Install the ADI IIO Oscilloscope using the instructions from the following wiki page:
+Install the ADI IIO Oscilloscope using the instructions from the following wiki
+page:
 
 -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
@@ -258,13 +292,13 @@ Open the **Settings** menu and select **Impulse generator** submenu. A popup win
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7476a_hrtimer.jpg
    :alt: AD7476A IIO Oscilloscope Impulse Timer Select
-   :width: 600px
+   :width: 600
 
 Select **ad7476a** from the **Device** drop-down menu. Click on **in_voltage0 Active channels**, and press the **Green Play Button**. Data will no be dislayed in the main plot window.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7476a_iio_plot.jpg
    :alt: AD7476A IIO Oscilloscope Plot
-   :width: 600px
+   :width: 600
 
 Linux Device Driver - Custom HDL PCore
 ======================================
@@ -280,11 +314,15 @@ In order to prepare the SD Card for booting Linux on the ZedBoard:
 -  Download the Xilinx XPS project: :git-no-OS:`PmodAD1 Linux XPS Project <Pmods/PmodAD1/cf_ad7476_zed>`
 -  Download the AD7476A IPcore: :git-no-OS:`AD7476A IPCore <Pmods/PmodAD1/cf_lib/edk/pcores/axi_ad7476_v1_00_a>`
 -  Download the project libraries: :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
--  Follow the instructions on the following wiki page, but use the device tree and project downloaded on the previous step
+-  Follow the instructions on the following wiki page, but use the device tree
+   and project downloaded on the previous step
 
    -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
 
-Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD
+Card and power on the board. If everything is correct, the system should boot
+up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate
+115200.
 
 There are 2 ways to test the driver.
 
@@ -296,7 +334,8 @@ Using the terminal window
 
 Open a new terminal window by pressing **Ctrl+Alt+T**.
 
-Navigate to the location of the device and identify it using the following commands:
+Navigate to the location of the device and identify it using the following
+commands:
 
 ::
 
@@ -340,18 +379,21 @@ To read the raw input voltage, type:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7476a_custom_linaro_terminal.jpg
    :alt: AD7476A Read Voltage from Terminal
-   :width: 600px
+   :width: 600
 
-The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+The commands written above can also be used if not using an HDMI monitor and a
+wireless keyboard, by using a serial terminal, and typing the commands after the
+system boot-up is complete.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7476a_custom_linux_serial.jpg
    :alt: AD7476A Read Voltage from Serial Terminal
-   :width: 600px
+   :width: 600
 
 Using the ADI IIO Oscilloscope
 ------------------------------
 
-Install the ADI IIO Oscilloscope using the instructions from the following wiki page:
+Install the ADI IIO Oscilloscope using the instructions from the following wiki
+page:
 
 -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
@@ -361,16 +403,14 @@ Select **AD7476A** from the **Device** drop-down menu. Set the desired number of
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7476a_custom_iio_plot.jpg
    :alt: AD7476A IIO Oscilloscope Plot
-   :width: 600px
+   :width: 600
 
 AD7476A Pmod and AD7303 Pmod Reference Design
 =============================================
 
-
 .. note::
 
    See `ad7476a_ad7303_nexys3 <https://wiki.analog.com/ad7476a_ad7303_nexys3>`_
-
 
 More information
 ================
@@ -382,6 +422,6 @@ More information
    :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |UART messeges| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad1hyper.jpg
-   :width: 200px
+   :width: 200
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad1hyper2.jpg
-   :width: 200px
+   :width: 200

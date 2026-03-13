@@ -9,17 +9,18 @@ SPDIF Output
 Description
 -----------
 
-The SPDIF Output blocks route signals between the schematic design and the hardware's SPDIF pins.
+The SPDIF Output blocks route signals between the schematic design and the
+hardware's SPDIF pins.
 
 Usage
 -----
 
-Use the output block's drop-down list control to select from the available SPDIF outputs.
+Use the output block's drop-down list control to select from the available SPDIF
+outputs.
 
 .. note::
 
    Note: These blocks are only available for use with DSPs that have SPDIF I/O.
-
 
 Targets Supported
 -----------------
@@ -41,7 +42,6 @@ Name   Type  Description
 ====== ===== =============================
 Output Audio Interface read output channel
 ====== ===== =============================
-
 
 | ===== Configurable Parameters =====
 

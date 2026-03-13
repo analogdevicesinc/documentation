@@ -5,7 +5,7 @@ The :adi:`EVAL-ADICUP3029` is an Arduino Uno form factor compatible platform bas
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/adicup3029_ecosystem_collage.png
    :align: right
-   :width: 500px
+   :width: 500
 
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/eval-adicup3029/introduction>`
 -  :doc:`Tools and Driver Details </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools>`

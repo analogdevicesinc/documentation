@@ -1,4 +1,3 @@
-
 ADGS1408/ADGS1409 - No-OS Driver
 ================================
 
@@ -25,7 +24,8 @@ The :adi:`ADGS1408`/:adi:`ADGS1409` contains an 8:1/dual 4:1 Multiplexers respec
 
 It is possible to daisy-chain multiple :adi:`ADGS1408`/:adi:`ADGS1409` devices together. Daisy-chain mode enables the configuration of multiple devices with a minimal amount of digital lines. The :adi:`ADGS1408`/:adi:`ADGS1409` can also operate in burst mode to decrease the time between SPI commands.
 
-Each switch conducts equally well in both directions when on, and each switch has an input signal range that extends to the supplies.
+Each switch conducts equally well in both directions when on, and each switch
+has an input signal range that extends to the supplies.
 
 Product highlights
 ------------------
@@ -141,6 +141,3 @@ No-OS Downloads
    
    -  :git-no-OS:`adgs1408 source and header files <drivers/mux/adgs1408>`
    
-
-
-

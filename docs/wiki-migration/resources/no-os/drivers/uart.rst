@@ -9,7 +9,8 @@ The no-OS framework provides a common application programming interface to initi
 Interface documentation
 -----------------------
 
-The UART interface documentation is generated using the Doxygen tool and it is available at:
+The UART interface documentation is generated using the Doxygen tool and it is
+available at:
 
 -  `No-OS UART API <http://analogdevicesinc.github.io/no-OS/no__os__uart_8h.html>`_
 
@@ -35,7 +36,8 @@ The no-OS framework provides a way to create a UART device driver starting from 
        .extra = &xuip,
    };
 
-Creating/removing a UART device descriptor with the above parameters can be achieved with:
+Creating/removing a UART device descriptor with the above parameters can be
+achieved with:
 
 .. code:: C
 
@@ -47,7 +49,9 @@ Creating/removing a UART device descriptor with the above parameters can be achi
    // ...
    ret = no_os_uart_remove(ud);
 
-The above code calls platform specific initialization routines that configure the physical UART instance (in this example UART1) with the provided settings (in this example 115200 baudrate, 8 data bits, no parity bit, 1 stop bit).
+The above code calls platform specific initialization routines that configure
+the physical UART instance (in this example UART1) with the provided settings
+(in this example 115200 baudrate, 8 data bits, no parity bit, 1 stop bit).
 
 Transmitting and receiving
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,7 +76,10 @@ Blocking
 Nonblocking
 ^^^^^^^^^^^
 
-Some applications require listening on the UART Rx continuously for incoming characters. The characters may come at an arbitrary time and the number of characters may also be arbitrary. For this scenario, no_os_uart_read can be configured in nonblocking mode by the use of the following init params:
+Some applications require listening on the UART Rx continuously for incoming
+characters. The characters may come at an arbitrary time and the number of
+characters may also be arbitrary. For this scenario, no_os_uart_read can be
+configured in nonblocking mode by the use of the following init params:
 
 .. code:: C
 
@@ -82,4 +89,9 @@ Some applications require listening on the UART Rx continuously for incoming cha
        .irq_id = 2,
    };
 
-If asynchronous_rx is enabled, it is mandatory to fill the irq_id field as well. The UART is configured in such a way that after each received character, the provided interrupt (irq_id) is triggered, and the received character is copied into a software buffer. Therefore, the no_os_uart_read function simply reads characters from this software buffer instead of reading characters from the UART peripheral.
+If asynchronous_rx is enabled, it is mandatory to fill the irq_id field as well.
+The UART is configured in such a way that after each received character, the
+provided interrupt (irq_id) is triggered, and the received character is copied
+into a software buffer. Therefore, the no_os_uart_read function simply reads
+characters from this software buffer instead of reading characters from the UART
+peripheral.

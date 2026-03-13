@@ -5,7 +5,13 @@ For many Broadband Wireless Access (BWA) systems, Multi Input – Multi Output (
 
 Some systems may require more complex configurations that combine multiple devices. Operating multiple devices while trying to coordinate data for each channel of each device is not practical for devices that operate independently without any mechanism for aligning data timing. Data synchronization into and out of multiple devices is required to implement such configurations. The :adi:`AD-FMComms5-EBZ` is a FMC board for the :adi:`AD9361`, a highly integrated RF Agile Transceiver™, which demonstrates how to design a platform based on multiple devices.
 
-For MIMO systems requiring more than two input or two output channels, multiple AD9361 devices and a common reference oscillator are required. The AD9361 provides the capability to accept an external reference clock and synchronize operation with other devices using simple control logic. Each AD9361 includes its own baseband PLL that generates sampling and data clocks from the reference clock input, so an additional control mechanism is required to synchronize multiple devices.
+For MIMO systems requiring more than two input or two output channels, multiple
+AD9361 devices and a common reference oscillator are required. The AD9361
+provides the capability to accept an external reference clock and synchronize
+operation with other devices using simple control logic. Each AD9361 includes
+its own baseband PLL that generates sampling and data clocks from the reference
+clock input, so an additional control mechanism is required to synchronize
+multiple devices.
 
 The complete chip level design package can be found on the :adi:`the ADI web site <ad9361_design_files>`. Information on the card, and how to use it, the design package that surrounds it, and the software which can make it work, can be found below in the Table of Contents.
 
@@ -18,7 +24,9 @@ To creating your own with something like `Phased Array System Toolbox <https://w
 
 If you are just starting a design, or investigating the AD9361 for the first time, it's suggested to get familiar with the single AD9361 based platforms (:doc:`ad-fmcomms2-ebz </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz>` or :doc:`ad-fmcomms3-ebz </wiki-migration/resources/eval/user-guides/ad-fmcomms3-ebz>`) first.
 
-Note that the AD-FMCOMMS5-EBZ uses a dual FMC connector. This means the base board requires two adjacent FMC connectors. Suitable base boards for example are ZC702 and ZC706.
+Note that the AD-FMCOMMS5-EBZ uses a dual FMC connector. This means the base
+board requires two adjacent FMC connectors. Suitable base boards for example are
+ZC702 and ZC706.
 
 Table of Contents
 =================
@@ -115,11 +123,9 @@ Table of Contents
 Videos
 ======
 
-
 .. note::
 
    See `ad-fmcomms2-ebz <https://wiki.analog.com/ad-fmcomms2-ebz#videos>`_
-
 
 Presentations
 =============
@@ -129,6 +135,4 @@ Presentations
 Warning
 -------
 
-
 .. esd-warning::
-

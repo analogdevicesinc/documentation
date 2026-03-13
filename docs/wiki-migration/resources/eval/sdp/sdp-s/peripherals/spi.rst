@@ -1,7 +1,11 @@
 SPI: Serial Port Interface
 ==========================
 
-The SPI interface on the SDP is a full duplex, synchronous serial interface. The SDP is the Master for all SPI transfers. When an SPI transfer occurs, data is simultaneously transmitted as new data is received. The SPI_CLK signal synchronises the shifting of data out and the sampling of data in on the two serial data pins (MOSI and MISO).
+The SPI interface on the SDP is a full duplex, synchronous serial interface. The
+SDP is the Master for all SPI transfers. When an SPI transfer occurs, data is
+simultaneously transmitted as new data is received. The SPI_CLK signal
+synchronises the shifting of data out and the sampling of data in on the two
+serial data pins (MOSI and MISO).
 
 ===== ============================== =======================
 Pin # Pin SDP 120 Pin Connector Name Description
@@ -16,7 +20,8 @@ Pin # Pin SDP 120 Pin Connector Name Description
 
 Table 1: SPI Pin Assignments
 
-The SPI protocol supports four different combinations of serial clock and polarity modes, SPI Modes 0, 1, 2 & 3.
+The SPI protocol supports four different combinations of serial clock and
+polarity modes, SPI Modes 0, 1, 2 & 3.
 
 ==== ==================== =================
 Mode CPOL, Clock Polarity CPHA, Clock Phase
@@ -32,7 +37,8 @@ Table 2 : SPI Modes
 | |image1|
 | Figure 1 : SPI Modes Explained
 
-The maximum clock frequency for SDP-S SPI transfers is 10MHz. The maximum frame frequency for SDP-S SPI transfers is shown below...
+The maximum clock frequency for SDP-S SPI transfers is 10MHz. The maximum frame
+frequency for SDP-S SPI transfers is shown below...
 
 ============= ==================== ======== ======== ========
 Transfer size Frame Freq Max                         
@@ -50,7 +56,9 @@ Table 3: SPI Frame Frequency Limits
 SPI Timing Examples
 -------------------
 
-These timing examples are estimated and not guaranteed to be an exact reflection of the interface timing. These examples were generated for a 10MHz SCLK and the delays listed are the estimated maximum times.
+These timing examples are estimated and not guaranteed to be an exact reflection
+of the interface timing. These examples were generated for a 10MHz SCLK and the
+delays listed are the estimated maximum times.
 
 | |image2|
 | Figure 2 : SPI transfer protocol, CPHA = 0, 8 bit data
@@ -73,7 +81,15 @@ These timing examples are estimated and not guaranteed to be an exact reflection
 SPI Extended Interfaces for converters
 --------------------------------------
 
-This section introduces timing diagrams for interfacing to ADI parts that requires Busy or Ready signals combined to CS to decode the part. The singularity of these modes is that the MISO line provides double functionality, data and ready signal. The serial interface can operate in 3-wire mode by tying CS low. The end of conversion can be monitored using RDY and/or Busy. The DOUT/RDY pin functions as a data ready signal also, with the line going low when a new data-word is available in the output register. Given the complexity of the implementation, the description below provides an additional explanation of how these interfaces are programmed to be used within the SDP.
+This section introduces timing diagrams for interfacing to ADI parts that
+requires Busy or Ready signals combined to CS to decode the part. The
+singularity of these modes is that the MISO line provides double functionality,
+data and ready signal. The serial interface can operate in 3-wire mode by tying
+CS low. The end of conversion can be monitored using RDY and/or Busy. The
+DOUT/RDY pin functions as a data ready signal also, with the line going low when
+a new data-word is available in the output register. Given the complexity of the
+implementation, the description below provides an additional explanation of how
+these interfaces are programmed to be used within the SDP.
 
 | |image8|
 | Figure 8 : Single Read more with RDY
@@ -130,24 +146,24 @@ SPI Write Buffer U8       0x5C
 ========================= ====================
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl7.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-s/peripherals/cpha0-u8.jpg
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-s/peripherals/cpha1-u8.jpg
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-s/peripherals/cpha0-u16.jpg
-   :width: 750px
+   :width: 750
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-s/peripherals/cpha1-u16.jpg
-   :width: 750px
+   :width: 750
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-s/peripherals/cpha0-u16plus.jpg
-   :width: 750px
+   :width: 750
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-s/peripherals/cpha1-u16plus.jpg
-   :width: 750px
+   :width: 750
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl14.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl15.png
-   :width: 700px
+   :width: 700
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl16.png
-   :width: 700px
+   :width: 700
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl17.png
-   :width: 700px
+   :width: 700

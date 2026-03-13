@@ -29,19 +29,24 @@ FMC Pin Connection Configuration Change
 
 .. important::
 
-   To be compatible with the AD-FMCDAQ2-EBZ the Arria10 SoC Development Kit requires a minor rework.
+   To be compatible with the AD-FMCDAQ2-EBZ the Arria10 SoC Development Kit
+   requires a minor rework.
 
+In the default configuration of the Arria10 SoC Development Kit some of the FMC
+header pins are connected to a dedicated clock chip. To be compatible with the
+AD-FMCDAQ2-EBZ these pins need to be connected directly to the FPGA.
 
-In the default configuration of the Arria10 SoC Development Kit some of the FMC header pins are connected to a dedicated clock chip. To be compatible with the AD-FMCDAQ2-EBZ these pins need to be connected directly to the FPGA.
-
-The connection of those pins can be changed by moving the position of four zero Ohm resistors:
+The connection of those pins can be changed by moving the position of four zero
+Ohm resistors:
 
 -  R612 to R610
 -  R613 to R611
 -  R621 to R620
 -  R633 to R632
 
-These resistors can be found on the backside of the Arria10 SoC Development Kit underneath the FMC A connector (J29). The following picture shows the required configuration to be compatible with the AD-FMCDAQ2-EBZ.
+These resistors can be found on the backside of the Arria10 SoC Development Kit
+underneath the FMC A connector (J29). The following picture shows the required
+configuration to be compatible with the AD-FMCDAQ2-EBZ.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/a10soc_fmc_rework.jpg
    :align: center
@@ -63,7 +68,8 @@ All jumpers and switches on the Arria10 SoC Development Kit should be in the `de
 Booting the System
 ------------------
 
-After turning on the power switch the following messages should appear on the serial console.
+After turning on the power switch the following messages should appear on the
+serial console.
 
 ::
 
@@ -78,7 +84,8 @@ After turning on the power switch the following messages should appear on the se
    FPGA: writing socfpga.rbf ...
    </nowiki>
 
-Configuring the FPGA will take a few seconds. Once the FPGA has been configured the green D18 LED will turn on and the boot process will continue.
+Configuring the FPGA will take a few seconds. Once the FPGA has been configured
+the green D18 LED will turn on and the boot process will continue.
 
 ::
 
@@ -117,8 +124,6 @@ Configuring the FPGA will take a few seconds. Once the FPGA has been configured 
    [    0.000000] Machine model: Altera SOCFPGA Arria 10
    ...
    </nowiki>
-
-
 
 .. collapsible:: Complete kernel boot log (Click to expand)
 
@@ -340,8 +345,6 @@ Configuring the FPGA will take a few seconds. Once the FPGA has been configured 
 
       root@analog:~#
       </nowiki>
-
-
 
 Once the boot process has completed you'll be greeted with command prompt. As a quick check if the AD-FMCDAQ2-EBZ was correctly recognized run the \`iio_info\` command and filter for the registered devices.
 

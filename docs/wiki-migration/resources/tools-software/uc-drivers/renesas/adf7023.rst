@@ -1,7 +1,6 @@
 ADF7023 - No-OS Driver for Renesas Microcontroller Platforms
 ============================================================
 
-
 Supported Devices
 =================
 
@@ -15,14 +14,33 @@ Evaluation Boards
 Overview
 ========
 
-
 The :adi:`ADF7023` is a very low power, high performance, highly integrated 2FSK/GFSK/OOK/MSK/GMSK transceiver designed for operation in the 862 MHz to 928 MHz and 431 MHz to 464 MHz frequency bands, which cover the worldwide license-free ISM bands at 433 MHz, 868 MHz, and 915 MHz. It is suitable for circuit applications that operate under the European ETSI EN300-220, the North American FCC (Part 15), the Chinese short-range wireless regulatory standards, or other similar regional standards. Data rates from 1 kbps to 300 kbps are supported.
 
-The transmit RF synthesizer contains a VCO and a low noise fractional-N PLL with an output channel frequency resolution of 400 Hz. The VCO operates at 2× or 4×, the fundamental frequency to reduce spurious emissions. The receive and transmit synthesizer bandwidths are automatically, and independently, configured to achieve optimum phase noise, modulation quality, and settling time. The transmitter output power is programmable from −20 dBm to +13.5 dBm, with automatic PA ramping to meet transient spurious specifications. The part possesses both single-ended and differential PAs, which allows for Tx antenna diversity.
+The transmit RF synthesizer contains a VCO and a low noise fractional-N PLL with
+an output channel frequency resolution of 400 Hz. The VCO operates at 2× or 4×,
+the fundamental frequency to reduce spurious emissions. The receive and transmit
+synthesizer bandwidths are automatically, and independently, configured to
+achieve optimum phase noise, modulation quality, and settling time. The
+transmitter output power is programmable from −20 dBm to +13.5 dBm, with
+automatic PA ramping to meet transient spurious specifications. The part
+possesses both single-ended and differential PAs, which allows for Tx antenna
+diversity.
 
-The receiver is exceptionally linear, achieving an IP3 specification of −12.2 dBm and −11.5 dBm at maximum gain and minimum gain, respectively, and an IP2 specification of 18.5 dBm and 27 dBm at maximum gain and minimum gain, respectively. The receiver achieves an interference blocking specification of 66 dB at ±2 MHz offset and 74 dB at ±10 MHz offset. Thus, the part is extremely resilient to the presence of interferers in spectrally noisy environments. The receiver features a novel, high speed, automatic frequency control (AFC) loop, allowing the PLL to find and correct any RF frequency errors in the recovered packet.
+The receiver is exceptionally linear, achieving an IP3 specification of −12.2
+dBm and −11.5 dBm at maximum gain and minimum gain, respectively, and an IP2
+specification of 18.5 dBm and 27 dBm at maximum gain and minimum gain,
+respectively. The receiver achieves an interference blocking specification of 66
+dB at ±2 MHz offset and 74 dB at ±10 MHz offset. Thus, the part is extremely
+resilient to the presence of interferers in spectrally noisy environments. The
+receiver features a novel, high speed, automatic frequency control (AFC) loop,
+allowing the PLL to find and correct any RF frequency errors in the recovered
+packet.
 
-A patent pending, image rejection calibration scheme is available through a program download. The algorithm does not require the use of an external RF source nor does it require any user intervention once initiated. The results of the calibration can be stored in nonvolatile memory for use on subsequent power-ups of the transceiver.
+A patent pending, image rejection calibration scheme is available through a
+program download. The algorithm does not require the use of an external RF
+source nor does it require any user intervention once initiated. The results of
+the calibration can be stored in nonvolatile memory for use on subsequent
+power-ups of the transceiver.
 
 Applications
 ------------
@@ -38,9 +56,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/adf7023_pmod_rf3.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -48,9 +69,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the ADF7023 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the ADF7023 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the ADF7023 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the ADF7023 driver:
 
@@ -64,7 +89,6 @@ There are three functions which are called by the ADF7023 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of ADF7023 driver:
 
@@ -94,8 +118,6 @@ The following functions are implemented in this version of ADF7023 driver:
 | void ADF7023_SetFrequencyDeviation(unsigned long freqDev)                              | Sets the frequency deviation.                                    |
 +----------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-
-
 **HW Platform(s):**
 
 -  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`_
@@ -112,11 +134,11 @@ Downloads
    -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
-
 Renesas RL78G14 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the ADF7023 demonstration project on a Renesas RL78G14 platform using the PmodRF3.
+This section contains a description of the steps required to run the ADF7023
+demonstration project on a Renesas RL78G14 platform using the PmodRF3.
 
 Required Hardware
 -----------------
@@ -132,11 +154,12 @@ Required Software
 
 .. note::
 
-   The ADF7023 demonstration project for the Renesas RL78G14 platform consists of three parts: the ADF7023 Driver, the PmodRF3 Demo for RL78G14 and the RL78G14 Common Drivers.
+   The ADF7023 demonstration project for the Renesas RL78G14 platform consists
+   of three parts: the ADF7023 Driver, the PmodRF3 Demo for RL78G14 and the
+   RL78G14 Common Drivers.
 
    
    All three parts have to be downloaded.
-
 
 Hardware Setup
 --------------
@@ -149,8 +172,6 @@ A PmodAD6 has to be connected to the PMOD1 connector (see image below).
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`_
-

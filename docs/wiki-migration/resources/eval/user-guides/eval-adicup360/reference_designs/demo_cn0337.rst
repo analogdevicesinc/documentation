@@ -12,7 +12,7 @@ The **ADuCM360_demo_cn0337** project uses the :adi:`EVAL-CN0337-PMDZ pmod <en/de
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_1.png
    :align: left
-   :width: 550px
+   :width: 550
 
 The CN0337 circuit translates the **RTD** input **resistance** range (**100 Ω** - **212.05 Ω** for a **0°C** - **300°C** temperature) into **voltage** levels compatible with the input range of the ADC (**0 V** - **2.5 V**). The 12-bits ADC value is received via SPI interface of the EVAL-ADICUP360 board.
 
@@ -22,10 +22,9 @@ The **EVAL-CN0337-PMDZ** comes with an evaluation software which can help you to
 
    Please visit :doc:`CN0337 Software User Guide page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0337>` to find out how to get and how to use the CN0337 evaluation software.
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_2.png
    :align: right
-   :width: 550px
+   :width: 550
 
 The **ADuCM360_demo_cn0337** application processes ADC output value and make all necessary conversions in order to provide RTD measure results. A UART interface (9600 baud rate and 8-bits data length) is used to send the results to terminal window: RTD **temperature** and **resistance** values, **voltage** calculation and **ADC code**. If the resistance and temperature values are out of range you get an error message which means that you need to check your settings.
 
@@ -50,16 +49,22 @@ Because the transfer function of the RTD (resistance vs. temperature) is nonline
 Piecewise Linear Approximation Method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This method characterized by taking linear approximation one step further, one can conceptualize any number of linear segments strung together to better approximate the nonlinear RTD transfer function. Generating this series of linear segments so that each segment’s endpoints meet those of neighboring segments results in what can be viewed as a number of points connected by straight lines.
+This method characterized by taking linear approximation one step further, one
+can conceptualize any number of linear segments strung together to better
+approximate the nonlinear RTD transfer function. Generating this series of
+linear segments so that each segment’s endpoints meet those of neighboring
+segments results in what can be viewed as a number of points connected by
+straight lines.
 
 These coefficients is calculated once to best match the RTD’s nonlinear transfer function and then stored permanently in a look-up table (see *C_rtd[]* table). From this table of coefficients, the software can perform simple linear interpolation to determine temperature based on measured RTD resistance.
 
-The look-up table can have how many coefficients you needed depending how accurate you want to be. For this project the RTD resistance range is separated into 100 linearization segments.
+The look-up table can have how many coefficients you needed depending how
+accurate you want to be. For this project the RTD resistance range is separated
+into 100 linearization segments.
 
 .. note::
 
    This method is also used in the :adi:`AN-709 application note <media/en/technical-documentation/application-notes/AN709_0.pdf>` which provide also an :adi:`RTD coefficient generator tool <media/en/technical-documentation/application-notes/AN-709_files.zip>` that you also can use.
-
 
 Demo Requirements
 -----------------
@@ -87,26 +92,33 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
+-  To program the base board, set the jumpers/switches as shown in the next
+   figure. The important jumpers/switches are highlighted in red.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_3.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Plug the EVAL-CN0337-PMDZ PMOD in the EVAL-ADICUP360 base board, via the PMOD_SPI port (P4).
--  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
+-  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
+   Debug USB.(P14)
 
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the CN0337.
+There are two basic ways to program the ADICUP360 with the software for the
+CN0337.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_cn0337** demo can be found here:
 
@@ -123,11 +135,9 @@ The software for the **ADuCM360_demo_cn0337** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0337 Source Code <projects/ADuCM360_demo_cn0337>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -194,7 +204,7 @@ Following is the UART configuration.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_2.png
    :align: center
-   :width: 550px
+   :width: 550
 
 How to use the Tools
 --------------------
@@ -216,13 +226,16 @@ Project structure
 
 The **ADuCM360_demo_cn0337** project use ADuCM36x C/C++ Project structure.
 
-This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI0, UART via P0.1/P0.2; SPI, UART read/write functions; AD7091R control and RTD conversions.
+This project contains: system initialization part - disabling watchdog, setting
+system clock, enabling clock for peripherals; port configuration for SPI0, UART
+via P0.1/P0.2; SPI, UART read/write functions; AD7091R control and RTD
+conversions.
 
 In the **src** and **include** folders you will find the source and header files related to CN0337 software application. The *Communication.c/h* files contain SPI and UART specific data, meanwhile the *AD7091R.c/h* files contain the ADC control data and the *CN0337.c/h* files contain the RTD measurements management.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_5.png
    :align: left
-   :width: 340px
+   :width: 340
 
 The **RTE** folder contains device and system related files:
 

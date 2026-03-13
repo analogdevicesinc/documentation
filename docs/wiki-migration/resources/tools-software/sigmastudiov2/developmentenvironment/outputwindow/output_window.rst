@@ -5,7 +5,11 @@ Output Window
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/developmentenvironment/outputwindow/outputwindow.png
 
-All the output log messages, including error messages, generated upon project linking, compiling, and other actions performed on the project are displayed on the Output Window. By default, this window is docked at the bottom of the application. SigmaStudio+ navigates and highlights the source of error when user clicks on any error message displayed on the output window.
+All the output log messages, including error messages, generated upon project
+linking, compiling, and other actions performed on the project are displayed on
+the Output Window. By default, this window is docked at the bottom of the
+application. SigmaStudio+ navigates and highlights the source of error when user
+clicks on any error message displayed on the output window.
 
 Following additional features are provided on the Output Window:
 

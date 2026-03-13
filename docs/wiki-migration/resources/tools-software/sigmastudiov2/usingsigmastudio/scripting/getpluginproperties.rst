@@ -3,7 +3,9 @@
 Get Plugin Properties
 =====================
 
-This action allows the user to get all the available properties of a given plugin. The function call takes in 1 argument. Function will return the plugin property name, type, and it's value.
+This action allows the user to get all the available properties of a given
+plugin. The function call takes in 1 argument. Function will return the plugin
+property name, type, and it's value.
 
 API
 ---
@@ -20,4 +22,5 @@ Arguments
 Result
 ------
 
-The collection of result contains the collection of property name in the form of string, (Param) value and it's type of the property.
+The collection of result contains the collection of property name in the form of
+string, (Param) value and it's type of the property.

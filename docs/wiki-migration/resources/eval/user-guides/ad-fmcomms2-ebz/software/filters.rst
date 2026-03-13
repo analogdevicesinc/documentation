@@ -7,7 +7,8 @@ With this wizard, users can perform the following tasks:
 
 -  Choose correct digital filters to use for receive and transmit.
 -  Design the programmable FIR filters, get the filter coefficients and save them in a .ftr file, which can be directly loaded into the hardware.
--  Examine the independent response of each filter, and the composite response of all the filters, including both digital and analog filters.
+-  Examine the independent response of each filter, and the composite response
+   of all the filters, including both digital and analog filters.
 
 For information about the transmit and receive paths consult :doc:`AD9361, AD9363, AD9364 transceiver outline </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`. This also includes information on alternative solutions for programming the transceiver's filters.
 
@@ -35,24 +36,27 @@ Here is a brief introduction on why everyone needs to, and how to use this tool.
    -  Fixed-Point Designer
    
 
-
-In order to get the wizard, please go to Analog Devices GitHub. Different releases of AD9361 Filter Design Wizard and their source files can be found here:
+In order to get the wizard, please go to Analog Devices GitHub. Different
+releases of AD9361 Filter Design Wizard and their source files can be found
+here:
 
 .. admonition:: Download
    :class: download
 
    
    -  https://github.com/analogdevicesinc/ad936x-filter-wizard/releases
-   -  For each release, the wizard is available as a MATLAB App installer (mlappinstall) or in archive form (zip or tarball).
+   -  For each release, the wizard is available as a MATLAB App installer
+      (mlappinstall) or in archive form (zip or tarball).
    
-
 
 For more information about install and running MATLAB apps, please refer to: http://www.mathworks.com/help/matlab/creating_guis/install-and-run-app.html
 
-If using a checkout or unpacked archive, the application can be run in one of two ways:
+If using a checkout or unpacked archive, the application can be run in one of
+two ways:
 
 -  Right click "AD9361_Filter_Wizard.fig" and select "Open in GUIDE" to open the figure. Then type "Ctrl+T" to run the figure.
--  Within the application directory run the command "AD9361_Filter_Wizard" from the MATLAB command line.
+-  Within the application directory run the command "AD9361_Filter_Wizard" from
+   the MATLAB command line.
 
 The Filter Design Wizard has been applied in the RF Blockset (formerly SimRF) models of AD9361, provided by MathWorks as a hardware support package. **Download this version if to be used with the AD9361 RF Blockset (formerly SimRF) model:**
 
@@ -63,8 +67,8 @@ The Filter Design Wizard has been applied in the RF Blockset (formerly SimRF) mo
    -  `AD9361 Filter Design Wizard for RF Blockset (formerly SimRF) Model <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/ad9361_filter_design_wizard_v2.mlappinstall>`_
    
 
-
-To learn more about AD9361 modeling and to download the Tx and Rx models, the hardware support package can be found here:
+To learn more about AD9361 modeling and to download the Tx and Rx models, the
+hardware support package can be found here:
 
 .. note::
 
@@ -72,22 +76,26 @@ To learn more about AD9361 modeling and to download the Tx and Rx models, the ha
    -  http://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html
    
 
-
-
 Use MATLAB App
 ==============
 
 Generally speaking, there are two ways you can use the design wizard:
 
 -  MATLAB App: A graphical user interface is created to facilitate the process of filter design. Users can easily define the input, observe the design performance, and specify the way they want to save the results. This is a more straightforward method to use the wizard.
--  MATLAB function: The link to design functions can be found in the Download section. They are MATLAB functions, which users can launch from the MATLAB command window by properly defining the input parameters. Using this way, users have more control of the internal design process.
+-  MATLAB function: The link to design functions can be found in the Download
+   section. They are MATLAB functions, which users can launch from the MATLAB
+   command window by properly defining the input parameters. Using this way,
+   users have more control of the internal design process.
 
 In this section, we are going to elaborate on the first option - MATLAB App.
 
 Basic Functions
 ---------------
 
-After you launch the MATLAB App, there shows a drop-down list in "Device Settings", which includes the default parameter profiles for several widely used LTE applications. You can move the highlight bar to the one you would like to start with.
+After you launch the MATLAB App, there shows a drop-down list in "Device
+Settings", which includes the default parameter profiles for several widely used
+LTE applications. You can move the highlight bar to the one you would like to
+start with.
 
 This table is stored in :git-ad936x-filter-wizard:`github <ad9361_settings.mat>`.
 
@@ -107,7 +115,6 @@ This table is stored in :git-ad936x-filter-wizard:`github <ad9361_settings.mat>`
    20                      18                    30.72
    ======================= ===================== ===========
    
-
 
 .. container:: column
 
@@ -133,170 +140,245 @@ This table is stored in :git-ad936x-filter-wizard:`github <ad9361_settings.mat>`
    +-----------------+----------------+----------------+----------------+----------------+
    
 
+The LTE Release-8 physical layer specification actually supports 105 different
+bandwidth options (not just the 6 shown above). Occupied RF Bandwidth from
+between 1.08MHz to 19.8MHz with 180kHz steps complies with the spec, and while
+these filters can be designed (manually) they are not included as defaults.
 
-
-The LTE Release-8 physical layer specification actually supports 105 different bandwidth options (not just the 6 shown above). Occupied RF Bandwidth from between 1.08MHz to 19.8MHz with 180kHz steps complies with the spec, and while these filters can be designed (manually) they are not included as defaults.
-
-In addition, you can also save your favorite parameter settings in this list, such as "foobar (Rx & Tx)" shown in the figure.
+In addition, you can also save your favorite parameter settings in this list,
+such as "foobar (Rx & Tx)" shown in the figure.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/1start.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
-Assume that you choose the "LTE10 (Rx & Tx)" profile, after you click it, all the parameters are filled in automatically for you, as shown in the figure below. There are three categories of input parameters: magnitude specifications, frequency specifications, and AD936x clock settings. If you are satisfied with all the parameters, you can go ahead and click "Design Filter" to start the design.
+Assume that you choose the "LTE10 (Rx & Tx)" profile, after you click it, all
+the parameters are filled in automatically for you, as shown in the figure
+below. There are three categories of input parameters: magnitude specifications,
+frequency specifications, and AD936x clock settings. If you are satisfied with
+all the parameters, you can go ahead and click "Design Filter" to start the
+design.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/2basic.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
-As soon as the design process completes, you will see a magnitude plot displayed on the top half of the GUI, where the specified Fpass, Fstop, Apass and Astop are highlighted in the plot. The x-axis is from 0 to half of the data rate. Below it, on the right, you will see a "Filter Results" portion, where the actual Apass, Astop, the number of FIR taps and the pass band group delay variance are shown. From these numbers, you will get an idea whether the design meets the requirements quantitatively.
+As soon as the design process completes, you will see a magnitude plot displayed
+on the top half of the GUI, where the specified Fpass, Fstop, Apass and Astop
+are highlighted in the plot. The x-axis is from 0 to half of the data rate.
+Below it, on the right, you will see a "Filter Results" portion, where the
+actual Apass, Astop, the number of FIR taps and the pass band group delay
+variance are shown. From these numbers, you will get an idea whether the design
+meets the requirements quantitatively.
 
 If you are interested in more details of the design performance, you can click the "FVTool" buttons left to "Filter Results" to launch the `Filter Visualization Tool (fvtool) <https://www.mathworks.com/help/signal/ref/fvtool.html>`_ provided by The MathWorks. For your convenience, we provide this tool on two different frequency scales. One is from 0 Hz to half of the data rate, the other is from 0 Hz up to half of the converter rate.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/3basicdesign.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
-If you are mainly interested in pass band, click the top button, it will open the following three figures:
+If you are mainly interested in pass band, click the top button, it will open
+the following three figures:
 
 -  Magnitude response of half band filters and HB + designed FIR filter.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/fvtooldatarate.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
--  Magnitude Response of the designed FIR only. Besides the magnitude response, you can use the toolbar on the upper left corner (as highlighted in square) to navigate to the other responses, including phase response, group delay response, impulse response, poles/zeros and etc. It will enable you to have a better understanding of the designed FIR.
+-  Magnitude Response of the designed FIR only. Besides the magnitude response,
+   you can use the toolbar on the upper left corner (as highlighted in square)
+   to navigate to the other responses, including phase response, group delay
+   response, impulse response, poles/zeros and etc. It will enable you to have a
+   better understanding of the designed FIR.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/6fironly.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
--  Overall group delay on pass band. For your convenience, the group delay variance has been calculated and indicated on the figure.
+-  Overall group delay on pass band. For your convenience, the group delay
+   variance has been calculated and indicated on the figure.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/5fvt2.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
-If you are interested in the whole frequency band, click the bottom button, it will open the following figure:
+If you are interested in the whole frequency band, click the bottom button, it
+will open the following figure:
 
--  Magnitude response of half band filters and HB + designed FIR filter. You can easily have a closer observation on certain portion of the magnitude response by using the "Zoom In/Out" functions on the toolbar (as highlighted in square).
+-  Magnitude response of half band filters and HB + designed FIR filter. You can
+   easily have a closer observation on certain portion of the magnitude response
+   by using the "Zoom In/Out" functions on the toolbar (as highlighted in
+   square).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/4fvt1.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 .. note::
 
    For more information about the FVTool, please refer to: http://www.mathworks.com/help/signal/ref/fvtool.html
 
+After the deeper analysis, if you are satisfied with the results and would like
+to save the designed FIR filter, there are several options you can choose from.
+These options are in the "Controls" portion on the upper left corner of the GUI.
 
-After the deeper analysis, if you are satisfied with the results and would like to save the designed FIR filter, there are several options you can choose from. These options are in the "Controls" portion on the upper left corner of the GUI.
-
--  Save object and data to workspace: If you will use the designed filter chain with some other MATLAB functions or Simulink models, you can simply leave it in the workspace by clicking "Save to Workspace" button, as shown in the figure below. After click this button and exit the App, you will find a mfilt.cascade object named "AD9361_Tx_Filter_object" or "AD9361_Rx_Filter_object" depending on whether it is on Tx or Rx.
+-  Save object and data to workspace: If you will use the designed filter chain
+   with some other MATLAB functions or Simulink models, you can simply leave it
+   in the workspace by clicking "Save to Workspace" button, as shown in the
+   figure below. After click this button and exit the App, you will find a
+   mfilt.cascade object named "AD9361_Tx_Filter_object" or
+   "AD9361_Rx_Filter_object" depending on whether it is on Tx or Rx.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/7save2ws.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 .. note::
 
-   When you click "Save to Workspace", besides the filter object, there is also a data structure saved to workspace, which will initialize the SimRF model of FMCOMMS2. The data structure is named "FMCOMMS2_TX_Model_init" or "FMCOMMS2_RX_Model_init".
+   When you click "Save to Workspace", besides the filter object, there is also
+   a data structure saved to workspace, which will initialize the SimRF model of
+   FMCOMMS2. The data structure is named "FMCOMMS2_TX_Model_init" or
+   "FMCOMMS2_RX_Model_init".
 
    
    For more information about the SimRF model of FMCOMMS2, please refer to: http://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html
 
-
--  Save coefficients to a ftr file: If you will use the designed FIR filter with the IIO Oscilloscope application  [2]_, you can save the FIR coefficients by clicking “Coefficients to ftr File” button, as shown in the figure below.
+-  Save coefficients to a ftr file: If you will use the designed FIR filter with
+   the IIO Oscilloscope application  [2]_, you can save the FIR coefficients by
+   clicking “Coefficients to ftr File” button, as shown in the figure below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/fig7.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 .. note::
 
-   You need to have designed both the Transmit and Receive filters before you can use the “Coefficients to ftr File” button. Otherwise, this button is grayed out.
+   You need to have designed both the Transmit and Receive filters before you
+   can use the “Coefficients to ftr File” button. Otherwise, this button is
+   grayed out.
 
-
-After that, a window will pop up, asking you to specify the name and the location of the ftr file, as shown in the figure below.
+After that, a window will pop up, asking you to specify the name and the
+location of the ftr file, as shown in the figure below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/8savecoeff.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
-If you plan to use the Filter Design Wizard with a zyqn-based platform, there are several options available that will facilitate this process. These options are in the “Target (Zynq Board)” portion of the GUI.
+If you plan to use the Filter Design Wizard with a zyqn-based platform, there
+are several options available that will facilitate this process. These options
+are in the “Target (Zynq Board)” portion of the GUI.
 
--  Connect to the target: In the IP box, you should input the IP address of the target. In Linux system, it can be easily found by the "ifconfig" command. Then, click the "Connect to Target" button.
+-  Connect to the target: In the IP box, you should input the IP address of the
+   target. In Linux system, it can be easily found by the "ifconfig" command.
+   Then, click the "Connect to Target" button.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/13connecttozynq.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
--  Read clock settings: If a target is detected at the specified IP address, the "Read Clock Settings" button will show up, as shown in the picture below. If you want to overwrite the current clock settings with the ones belong to the target, you can click this button.
+-  Read clock settings: If a target is detected at the specified IP address, the
+   "Read Clock Settings" button will show up, as shown in the picture below. If
+   you want to overwrite the current clock settings with the ones belong to the
+   target, you can click this button.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/14readclock.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
--  Save FIR coefficients to the target: If an FIR filter is designed for the target, the FIR coefficients can be saved directly to the target by clicking the "Coefficients to Target" button, as shown in the picture below.
+-  Save FIR coefficients to the target: If an FIR filter is designed for the
+   target, the FIR coefficients can be saved directly to the target by clicking
+   the "Coefficients to Target" button, as shown in the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/15tozynq.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 Advanced Functions
 ------------------
 
-The functions introduced so far provide a basic infrastructure to design and observe the FIR filter. If you would like to have more control and functionality, you can turn on the "Advanced" option, as shown in the figure below, which provides you with several more advanced options.
+The functions introduced so far provide a basic infrastructure to design and
+observe the FIR filter. If you would like to have more control and
+functionality, you can turn on the "Advanced" option, as shown in the figure
+below, which provides you with several more advanced options.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/9advanced.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 -  Phase Equalization: If you would like to have the FIR filter do phase equalization, you can turn on the "Phase Equalization" option, as shown in the figure below. The main purpose of the phase equalization is to reduce the pass band group delay \*variance\* brought by analog filters, digital filters and FIR filter, so that for signals at different frequencies, they will be delayed by an almost identical amount when going through the filter chain.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/10targetdelay.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
-After you click "Design Filter", the phase equalization part of the FIR design file is executed, and you will get an updated FIR filter design. Comparing the group delay variance in the Results portion, it is decreased from 16.6 ns to 1.52 ns with phase equalization. Also note that when the design process completes, there is an updated target delay number (this number is 0 before phase equalization) shown in the "Filter Options" portion.
+After you click "Design Filter", the phase equalization part of the FIR design
+file is executed, and you will get an updated FIR filter design. Comparing the
+group delay variance in the Results portion, it is decreased from 16.6 ns to
+1.52 ns with phase equalization. Also note that when the design process
+completes, there is an updated target delay number (this number is 0 before
+phase equalization) shown in the "Filter Options" portion.
 
-Please note the phase equalization process may take a few minutes, depending on the performance of your PC, since it tries to find a best target delay which yields the minimum group delay variance.
+Please note the phase equalization process may take a few minutes, depending on
+the performance of your PC, since it tries to find a best target delay which
+yields the minimum group delay variance.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/10pheq.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
--  Astop (FIR): This is a new parameter in magnitude specifications. It specifies the attenuation of FIR (not the composite response), which corresponds to the "dBstop_FIR" input in the design file. This parameter is not needed most of the time, so you can leave it as 0. However, if you do want to play around with it, you can enter a number there. For more information about "dBstop_FIR", please refer to "Some Notes About dBstop_FIR" at the end of this page.
+-  Astop (FIR): This is a new parameter in magnitude specifications. It
+   specifies the attenuation of FIR (not the composite response), which
+   corresponds to the "dBstop_FIR" input in the design file. This parameter is
+   not needed most of the time, so you can leave it as 0. However, if you do
+   want to play around with it, you can enter a number there. For more
+   information about "dBstop_FIR", please refer to "Some Notes About dBstop_FIR"
+   at the end of this page.
 
--  Fcutoff (Analog): This is a new parameter in frequency specifications. It specifies the cutoff frequency of the analog Butterworth filters. By default, this parameter is calculated for you by the App according to the Fpass and Fstop you entered, so you can leave it as it is. However, if you do want to play around with it, you can enter a number there.
+-  Fcutoff (Analog): This is a new parameter in frequency specifications. It
+   specifies the cutoff frequency of the analog Butterworth filters. By default,
+   this parameter is calculated for you by the App according to the Fpass and
+   Fstop you entered, so you can leave it as it is. However, if you do want to
+   play around with it, you can enter a number there.
 
--  Use Internal FIR: Due to the constraint on power consumption, some users may not want to use the FIR filter on AD936x. Instead, they want to move the FIR filter implementation on FPGA or some other processors. The Filter Design Wizard can also accommodate this requirement. If you decide not to use the AD936x FIR, you can turn off the "Use Internal FIR" option, as shown in the figure below, and click "Design Filter". In this case, there is no longer any constraint on the number of the FIR taps, so the design file conducts a minimum order design. Comparing the FIR Taps in the Results portion, it is decreased from 128 to 105 if the AD936x FIR is not used.
+-  Use Internal FIR: Due to the constraint on power consumption, some users may
+   not want to use the FIR filter on AD936x. Instead, they want to move the FIR
+   filter implementation on FPGA or some other processors. The Filter Design
+   Wizard can also accommodate this requirement. If you decide not to use the
+   AD936x FIR, you can turn off the "Use Internal FIR" option, as shown in the
+   figure below, and click "Design Filter". In this case, there is no longer any
+   constraint on the number of the FIR taps, so the design file conducts a
+   minimum order design. Comparing the FIR Taps in the Results portion, it is
+   decreased from 128 to 105 if the AD936x FIR is not used.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/11usefir.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 -  Generate HDL: Following the previous step, if you decide to have the FIR filter implemented on FPGA, the design wizard can help you generate the HDL code. By clicking "Generate HDL", the 'fdhdltool' function (http://www.mathworks.com/help/hdlfilter/fdhdltool.html) is called and the Generate HDL dialog box will pop up, as shown in the figure below. There are quite a few options you can choose concerning how you would like the HDL to be generated. In the end, by clicking "Generate", the HDL will be generated for you.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/12createhdl.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 Toolbar
 -------
 
-The icons shown on the toolbar below provide a shortcut to some frequently used functions.
+The icons shown on the toolbar below provide a shortcut to some frequently used
+functions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/13toolbar.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
-From left to right, the first four icons are related to filter parameter settings:
+From left to right, the first four icons are related to filter parameter
+settings:
 
 -  New Filter: It will open the drop-down list for you.
 -  Open Filter Design Parameters: It will open a saved parameter setting and load it for you.
 -  Save Parameters to File: It has the similar function as "Coefficients to ftr File" button.
--  Save Parameters to Workspace: It has the similar function as "Object to Workspace" button.
+-  Save Parameters to Workspace: It has the similar function as "Object to
+   Workspace" button.
 
 The next four icons work on the magnitude response plot shown in the GUI:
 
@@ -308,7 +390,10 @@ The next four icons work on the magnitude response plot shown in the GUI:
 Use MATLAB Functions
 ====================
 
-In addition to MATLAB App, users can also employ the MATLAB functions to complete the filter design. What they need to do is to launch the MATLAB functions from the MATLAB command window by properly defining the input parameters in a MATLAB structure.
+In addition to MATLAB App, users can also employ the MATLAB functions to
+complete the filter design. What they need to do is to launch the MATLAB
+functions from the MATLAB command window by properly defining the input
+parameters in a MATLAB structure.
 
 In MATLAB command window, the command is:
 
@@ -319,20 +404,24 @@ In MATLAB command window, the command is:
 .. admonition:: Download
    :class: download
 
-   In order to use this method, you need to download the whole ad936x-filter-wizard repository from GitHub. The following are the two most important functions for this method:
+   In order to use this method, you need to download the whole
+   ad936x-filter-wizard repository from GitHub. The following are the two most
+   important functions for this method:
 
    
    -  Main function: :git-ad936x-filter-wizard:`design_filter.m`
    -  Design file: :git-ad936x-filter-wizard:`internal_design_filter.m`
    
 
-
-Please note this method is suitable for those users who have a clear idea about the parameter settings. For those who are not sure about the parameters, the MATLAB App is a better way to start with.
+Please note this method is suitable for those users who have a clear idea about
+the parameter settings. For those who are not sure about the parameters, the
+MATLAB App is a better way to start with.
 
 Inputs and Outputs
 ------------------
 
-According to the design requirements, the inputs and outputs of the MATLAB function are as following:
+According to the design requirements, the inputs and outputs of the MATLAB
+function are as following:
 
 Inputs
 ~~~~~~
@@ -368,7 +457,12 @@ According to AD9361 Filter Guide, the TX signal path is as following:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/txfilter.png
    :alt: Block diagram
 
-The digital and analog paths are separated by DAC. Before DAC, there are four digital filters. The first one (PROG TX FIR) is a programmable poly-phase FIR filter, which can interpolate by a factor of 1, 2, or 4, or it can be bypassed if not needed. The others (HB1, HB2, HB3 and INT3) are all digital filters with fixed coefficients, and they can be turned on or turned off. After DAC, there are two low-pass analog filters.
+The digital and analog paths are separated by DAC. Before DAC, there are four
+digital filters. The first one (PROG TX FIR) is a programmable poly-phase FIR
+filter, which can interpolate by a factor of 1, 2, or 4, or it can be bypassed
+if not needed. The others (HB1, HB2, HB3 and INT3) are all digital filters with
+fixed coefficients, and they can be turned on or turned off. After DAC, there
+are two low-pass analog filters.
 
 Receive
 -------
@@ -378,12 +472,18 @@ According to AD9361 Filter Guide, the RX signal path is as following:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/rxfilter.png
    :alt: Block diagram
 
-The analog and digital paths are separated by ADC. Before ADC, there are two low-pass analog filters. After ADC, there are three digital filters with fixed coefficients (HB3/DEC3, HB2, HB1) followed by a programmable poly-phase FIR filter (PROG RX FIR). The FIR filter can be decimated by a factor of 1, 2, or 4, or it can be bypassed if not needed.
+The analog and digital paths are separated by ADC. Before ADC, there are two
+low-pass analog filters. After ADC, there are three digital filters with fixed
+coefficients (HB3/DEC3, HB2, HB1) followed by a programmable poly-phase FIR
+filter (PROG RX FIR). The FIR filter can be decimated by a factor of 1, 2, or 4,
+or it can be bypassed if not needed.
 
 Example: Tx LTE-5
 -----------------
 
-In this section, we present the results for LTE-5 transmit signal path by using the MATLAB function. The input parameters are defined in ad9361_settings.mat included in the repository.
+In this section, we present the results for LTE-5 transmit signal path by using
+the MATLAB function. The input parameters are defined in ad9361_settings.mat
+included in the repository.
 
 Therefore, in MATLAB command window, the command is:
 
@@ -392,14 +492,17 @@ Therefore, in MATLAB command window, the command is:
    >> input = ad9361_settings.tx.LTE5;
    >> output = design_filter(input);
 
-After this command is executed, in MATLAB, you will see the output structure saved in workspace. We can now observe the independent filter, as well as the composite response by specifying the stage of the object. For example,
+After this command is executed, in MATLAB, you will see the output structure
+saved in workspace. We can now observe the independent filter, as well as the
+composite response by specifying the stage of the object. For example,
 
 .. code:: matlab
 
    TFIR = output.Hmd;
    Hm1 = output.Hm1;
 
-If you are interested in the filter response of HB1, you can proceed to apply the fvtool on HB1,
+If you are interested in the filter response of HB1, you can proceed to apply
+the fvtool on HB1,
 
 .. code:: matlab
 
@@ -415,12 +518,15 @@ and you will get:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/hb1.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 Key Steps in Design
 ===================
 
-In this section, we will talk about the key steps in AD9361 filter design. Referring to this section, you will have a better understanding of the MATLAB design files. Later on, if you would like to implement your own design algorithm, you can edit the design files to incorporate your changes.
+In this section, we will talk about the key steps in AD9361 filter design.
+Referring to this section, you will have a better understanding of the MATLAB
+design files. Later on, if you would like to implement your own design
+algorithm, you can edit the design files to incorporate your changes.
 
 The AD9361 filter design file can be found here:
 
@@ -431,8 +537,12 @@ The AD9361 filter design file can be found here:
    -  :git-ad936x-filter-wizard:`internal_design_filter.m`
    
 
-
-Based on the structure of Tx and Rx filters, in the design process, we first need to determine which half band digital filters should be included. We then design the programmable FIR filter and get its coefficients. In the end, we complete the design and return the whole filter chain in an object. Since both Tx and Rx designs follow a similar workflow, the following steps take the Tx side for example.
+Based on the structure of Tx and Rx filters, in the design process, we first
+need to determine which half band digital filters should be included. We then
+design the programmable FIR filter and get its coefficients. In the end, we
+complete the design and return the whole filter chain in an object. Since both
+Tx and Rx designs follow a similar workflow, the following steps take the Tx
+side for example.
 
 Define Filters
 --------------
@@ -450,9 +560,13 @@ For the analog part, there is a third-order Butterworth low-pass filter and a si
 Define Half Band Filters
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The digital filters with fixed coefficients can be easily defined by referring to the AD9361 filter guide. Since they are interpolation filters on transmit path, the coefficients declaration is followed by the mfilt.firinterp  [4]_ function.
+The digital filters with fixed coefficients can be easily defined by referring
+to the AD9361 filter guide. Since they are interpolation filters on transmit
+path, the coefficients declaration is followed by the mfilt.firinterp  [4]_
+function.
 
-Take HB1 for example, the full-scale range for this filter is 2^13, and it has an interpolation factor of 2, so its coefficients are scaled by 2^(-14).
+Take HB1 for example, the full-scale range for this filter is 2^13, and it has
+an interpolation factor of 2, so its coefficients are scaled by 2^(-14).
 
 .. code:: matlab
 
@@ -460,7 +574,9 @@ Take HB1 for example, the full-scale range for this filter is 2^13, and it has a
    hb1 = 2^(-14)*[-53 0 313 0 -1155 0 4989 8192 4989 0 -1155 0 313 0 -53];
    Hm1 = mfilt.firinterp(2,hb1);
 
-If your MATLAB license includes Fixed-Point Designer, the Hm1 object can be further defined in a fixed point format, which is a better representation of the real hardware:
+If your MATLAB license includes Fixed-Point Designer, the Hm1 object can be
+further defined in a fixed point format, which is a better representation of the
+real hardware:
 
 .. code:: matlab
 
@@ -475,7 +591,10 @@ If your MATLAB license includes Fixed-Point Designer, the Hm1 object can be furt
 Determine Half-band Filters
 ---------------------------
 
-Since there are 4 digital half-band filters on the TX signal path, there are a finite number of interpolations they can provide. Therefore, the digital half-band filters are picked up according to the overall interpolation factor required by the user.
+Since there are 4 digital half-band filters on the TX signal path, there are a
+finite number of interpolations they can provide. Therefore, the digital
+half-band filters are picked up according to the overall interpolation factor
+required by the user.
 
 Design TFIR
 -----------
@@ -499,7 +618,6 @@ On passband, the required response *rg* and the weight *w* is:
 
    
    :git-ad936x-filter-wizard:`analogresp.m`
-
 
 On stopband, the required response *rg* = 0 and the weight *w* is:
 
@@ -542,7 +660,10 @@ The design of the TFIR is saved in the system object *Hmd*. In order to get the 
 Visualization
 -------------
 
-fvtool opens FVTool and displays the magnitude response of the digital filter defined with the system object. Using FVTool you can display the phase response, group delay, impulse response, step response, pole-zero plot, and coefficients of the filter.
+fvtool opens FVTool and displays the magnitude response of the digital filter
+defined with the system object. Using FVTool you can display the phase response,
+group delay, impulse response, step response, pole-zero plot, and coefficients
+of the filter.
 
 For example, the following piece of code use fvtool to display the TFIR filter we just designed in the previous step. *Hmd* is the corresponding system object:
 
@@ -558,11 +679,27 @@ For example, the following piece of code use fvtool to display the TFIR filter w
 Some Notes About dBstop_FIR
 ---------------------------
 
-The “dBstop_FIR” variable insures a ceiling where no matter how much rejection comes from external filters, the FIR filter is required to have a minimum rejection. To understand the reason for this, imagine that at some frequency we need 60dB of rejection and we have an external filter that gives us 75dB of rejection. If the FIR filter gave us 15dB of gain at that frequency, we would be meet the frequency response. However having gain in a stop band would cause the filter to resonate strongly at that frequency which would result in time domain problems such as very large coefficients and over-ranging of signals at that frequency. “dBstop_FIR” limits this concern.
+The “dBstop_FIR” variable insures a ceiling where no matter how much rejection
+comes from external filters, the FIR filter is required to have a minimum
+rejection. To understand the reason for this, imagine that at some frequency we
+need 60dB of rejection and we have an external filter that gives us 75dB of
+rejection. If the FIR filter gave us 15dB of gain at that frequency, we would be
+meet the frequency response. However having gain in a stop band would cause the
+filter to resonate strongly at that frequency which would result in time domain
+problems such as very large coefficients and over-ranging of signals at that
+frequency. “dBstop_FIR” limits this concern.
 
-Picking up a proper dBstop_FIR value is a very important step in designing the filter. Since it determines the weight values on stopband, different dBstop_FIR will result in very different filter responses. It is suggested to try different dBstop_FIR values and observe the time-domain coefficients (it is desired to have smooth coefficients) and frequency-domain responses (passband ripple & stopband attenuation) until you pick up a the one which shows the best combination of everything.
+Picking up a proper dBstop_FIR value is a very important step in designing the
+filter. Since it determines the weight values on stopband, different dBstop_FIR
+will result in very different filter responses. It is suggested to try different
+dBstop_FIR values and observe the time-domain coefficients (it is desired to
+have smooth coefficients) and frequency-domain responses (passband ripple &
+stopband attenuation) until you pick up a the one which shows the best
+combination of everything.
 
-Generally speaking, dBstop_FIR plays a more important role in narrow bandwidth filter design than in wide bandwidth filter design. It can even be omitted when designing a filter with wide bandwidth.
+Generally speaking, dBstop_FIR plays a more important role in narrow bandwidth
+filter design than in wide bandwidth filter design. It can even be omitted when
+designing a filter with wide bandwidth.
 
 C/C++ Source For Internal Designer
 ==================================
@@ -586,15 +723,18 @@ The MATLAB source with code generation support is provided in the codegen-suppor
 
    \ https://github.com/analogdevicesinc/ad936x-filter-wizard/archive/codegen-support.zip
 
-
-To make sure the code is functional and your local compilers are set up correctly, automated testing has been added to this repository. To run these tests first make sure you are in the root of the downloaded codegen-support branch and run:
+To make sure the code is functional and your local compilers are set up
+correctly, automated testing has been added to this repository. To run these
+tests first make sure you are in the root of the downloaded codegen-support
+branch and run:
 
 .. code:: matlab
 
    addpath(genpath('test'));
    runTests
 
-If you have MATLAB configured correctly you should observe the following output after the tests complete:
+If you have MATLAB configured correctly you should observe the following output
+after the tests complete:
 
 ::
 
@@ -612,7 +752,11 @@ If you have MATLAB configured correctly you should observe the following output 
        'FilterDesignerTests/testTXDLL'                  true      false     false         8.2624      [1x1 struct]
        'FilterDesignerTests/testTXNonStandardFIRDLL'    true      false     false         26.961      [1x1 struct]
 
-These tests evaluate the numerical output of the generated designer with respect to the original designer. Usage of these tests can be helpful if modification of the MATLAB source is required. Note that it is possible to generate C/C++ source without the necessary compilers, but the generate code cannot be tested with the provided infrastructure.
+These tests evaluate the numerical output of the generated designer with respect
+to the original designer. Usage of these tests can be helpful if modification of
+the MATLAB source is required. Note that it is possible to generate C/C++ source
+without the necessary compilers, but the generate code cannot be tested with the
+provided infrastructure.
 
 Generating C/C++ Source Code From MATLAB
 ----------------------------------------

@@ -1,8 +1,6 @@
 QDESYS Motor Control IP
 =======================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,8 +17,6 @@ QDESYS Motor Control IP
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 A FOC implementation targeted for the **AD-FMCMOTCON1-EBZ** is available from `QDESYS <http://www.qdesys.com/>`_. The control algorithm is provided as a highly optimized IP that can be integrated in the FPGA project. Below you can find a few screenshots from the user application provided with the IP taken while running with the **AD-FMCMOTCON1-EBZ**.
 
 |Main panel| |PWM control panel| |Current settings panel| |RPFM control panel|
@@ -28,14 +24,14 @@ A FOC implementation targeted for the **AD-FMCMOTCON1-EBZ** is available from `Q
 |Phase currents| |Stator Currents vs Space|
 
 .. |Main panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_main_panel.png
-   :width: 400px
+   :width: 400
 .. |PWM control panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_pwm_panel.png
-   :width: 400px
+   :width: 400
 .. |Current settings panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_current_settings.png
-   :width: 400px
+   :width: 400
 .. |RPFM control panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_rpfm_panel.png
-   :width: 400px
+   :width: 400
 .. |Phase currents| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_currents.png
-   :width: 400px
+   :width: 400
 .. |Stator Currents vs Space| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_currents_xy.png
-   :width: 400px
+   :width: 400

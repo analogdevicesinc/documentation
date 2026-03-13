@@ -1,7 +1,10 @@
 Application Example Reference Designs
 =====================================
 
-This chapter contains various reference designs available for the base board and the various add on modules. Each sub-section describes the demo program, how to setup the hardware, how to obtain the source code, and finally, how to import the project in the Eclipse workspace and to run it.
+This chapter contains various reference designs available for the base board and
+the various add on modules. Each sub-section describes the demo program, how to
+setup the hardware, how to obtain the source code, and finally, how to import
+the project in the Eclipse workspace and to run it.
 
 The following projects are currently available:
 

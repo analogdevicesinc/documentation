@@ -5,8 +5,8 @@ Troubleshooting JESD204B Tx links
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/jesd204/troubleshoot/troubleshoot_jesd204_tx.html\
 
-
-Running one of the below commands on a Linux based system will return the status of the JESD link. This is one of the firsts steps to diagnose the link.
+Running one of the below commands on a Linux based system will return the status
+of the JESD link. This is one of the firsts steps to diagnose the link.
 
 ::
 
@@ -27,7 +27,8 @@ Running one of the below commands on a Linux based system will return the status
 Common symptoms
 ---------------
 
-Below table describes the most commonly occurred problems during link bring-up and solutions to overcome these in a Linux environment.
+Below table describes the most commonly occurred problems during link bring-up
+and solutions to overcome these in a Linux environment.
 
 Missing JESD link layer peripheral, \*.axi-jesd*/status\*: No such file or directory
 ------------------------------------------------------------------------------------
@@ -40,7 +41,6 @@ Missing JESD link layer peripheral, \*.axi-jesd*/status\*: No such file or direc
    **Identify:** Check address allocation in the block design or system_bd.tcl against the corresponding device tree physical and link layer nodes.
    
    **Fix:** Adjust addresses. For ZCU102 add 0x20000000 offset to the address used in HDL.
-
 
 --------------
 
@@ -57,7 +57,6 @@ Link is DISABLED, In Linux boot log following appears: axi-adxcvr-tx: TX Error: 
    **Fix:** Adjust location constraints.
    
 
-
 .. container:: center round box
 
    **Cause:** QPLL or CLL does not lock due incorrect synthesis parameters.
@@ -67,7 +66,6 @@ Link is DISABLED, In Linux boot log following appears: axi-adxcvr-tx: TX Error: 
    
    **Fix:** Adjust synthesis parameters of the util_adxcvr component.
 
-
 .. container:: center round box
 
    **Cause:** QPLL or CLL does not lock due frequency mismatch of reference clock. Reference clock frequency is not the one the CPLL or QPLL was set to handle forcing the VCO go out of range.
@@ -76,7 +74,6 @@ Link is DISABLED, In Linux boot log following appears: axi-adxcvr-tx: TX Error: 
    **Identify:** Check reference clock generation settings.
    
    **Fix:** Adjust setting of the clock chip to generate the correct frequency.
-
 
 --------------
 
@@ -92,7 +89,6 @@ Link is DISABLED, In Linux boot log following appears: axi-jesd204-tx 44b90000.a
    
    **Fix:** Configure the clock chip for different reference clock or switch to CPLL or QPLL0/1.
 
-
 --------------
 
 Link is DISABLED, In Linux boot log following appears: axi-adxcvr-tx: QPLL: failed to find setting for lane rate ...
@@ -106,7 +102,6 @@ Link is DISABLED, In Linux boot log following appears: axi-adxcvr-tx: QPLL: fail
    **Identify:** Check boot log. Check the required lane rate ref clock combination against the constraints defined in the transceiver manual.
    
    **Fix:** Configure the clock chip for different reference clock or switch to CPLL.
-
 
 --------------
 
@@ -122,7 +117,6 @@ Link status stays in CGS and SYNC~ stays asserted
    
    **Fix:** Adjust location constraints to match the schematic
 
-
 .. container:: center round box
 
    **Cause:** SYNC~ signal polarity reversed
@@ -131,7 +125,6 @@ Link status stays in CGS and SYNC~ stays asserted
    **Identify:** Check constraints and schematic, look for any polarity inversion
    
    **Fix:** Adjust location constraints to match the schematic
-
 
 .. container:: center round box
 
@@ -143,7 +136,8 @@ Link status stays in CGS and SYNC~ stays asserted
    -  Check if “Measured Link Clock” matches “Reported Link Clock” and “Lane Rate / 40”
    -  Check is lane rate is as expected
    -  If OUTDIV_CLK is used for link clock adjust out-clk-select to match Lane Rate/ 40
-   -  If dedicated link clock is used adjust the external clock chip from device tree to output a clock of Lane Rate / 40
+   -  If dedicated link clock is used adjust the external clock chip from device
+      tree to output a clock of Lane Rate / 40
    
    **Fix:** Some general rules that always should hold:
    
@@ -164,7 +158,6 @@ Link status stays in CGS and SYNC~ stays asserted
    -  OutClkSel - *adi,out-clk-select* device tree property from xcvr node
    
 
-
 --------------
 
 Link status stays in CGS and SYNC~ is deasserted
@@ -182,8 +175,8 @@ Link status stays in CGS and SYNC~ is deasserted
       Link status: CGS
       SYNC~: deasserted
    
-   Fix: Make sure SYNC~ is connected to the Link Transmit peripheral and is properly driven.
-
+   Fix: Make sure SYNC~ is connected to the Link Transmit peripheral and is
+   properly driven.
 
 .. container:: center round box
 
@@ -197,8 +190,8 @@ Link status stays in CGS and SYNC~ is deasserted
       Link status: CGS
       SYNC~: deasserted
    
-   Fix: Make sure software communicates correctly with the DAC, bring-up sequence was executed and JESD RX blocks configured and enabled.
-
+   Fix: Make sure software communicates correctly with the DAC, bring-up
+   sequence was executed and JESD RX blocks configured and enabled.
 
 .. container:: center round box
 
@@ -213,8 +206,8 @@ Link status stays in CGS and SYNC~ is deasserted
       SYNC~: deasserted
       SYSREF captured         No
    
-   Fix: Make sure SYSREF is connected to the Link Transmit peripheral and is properly driven.
-
+   Fix: Make sure SYSREF is connected to the Link Transmit peripheral and is
+   properly driven.
 
 --------------
 
@@ -230,14 +223,13 @@ Link status stays in DATA but output tone not as expected, raised noise floor
    
    **Fix:** For each in use lane adjust the corresponding bit in the TX_LANE_INVERT parameter of the util_adxcvr component to match any polarity inversion from the schematic
 
-
 --------------
 
 Link status stays in DATA but output not as expected
 ----------------------------------------------------
 
-E.g.: For a Link Clock: 184.320 MHz; Nothing is transmitted from the transport layer but spectrum looks like below:
-
+E.g.: For a Link Clock: 184.320 MHz; Nothing is transmitted from the transport
+layer but spectrum looks like below:
 
 |image1|
 
@@ -250,7 +242,6 @@ E.g.: For a Link Clock: 184.320 MHz; Nothing is transmitted from the transport l
    
    **Fix:** Adjust the above bits to match configuration.
    
-
 
 --------------
 
@@ -266,7 +257,6 @@ Link status stays in DATA but output tone not as expected
    
    **Fix:** Adjust link layer to physical layer connections in the FPGA block design through ad_xcvrcon procedure lane_map parameter; or \\\\Adjust crossbar from the DAC through the device tree nodes
 
-
 --------------
 
 Link status stays in DATA but output tone not as expected, signal and its spectrum presents randomness
@@ -280,7 +270,6 @@ Link status stays in DATA but output tone not as expected, signal and its spectr
    **Identify:** Report clocks of the transport layer, link layer component
    
    **Fix:** In the constraints file define/create clocks with period that match desired lane rate / 40
-
 
 --------------
 
@@ -296,7 +285,6 @@ SYSREF alignment error: Yes
    
    **Fix:** Set the frequency of SYSREF to be integer multiple of the reported local multiframe clock (LMFC)
 
-
 .. container:: center round box
 
    **Cause:** SYSREF signal sampling does not meet setup/hold requirements.
@@ -305,7 +293,6 @@ SYSREF alignment error: Yes
    **Identify:** Check if SYSREF path is constrained.
    
    **Fix:** Define timing constraints for SYSREF in edge aligned source synchronous interface mode and adjust device clock and SYSREF phase from the clock chip accordingly.
-
 
 --------------
 
@@ -320,7 +307,6 @@ Template
    **Identify:** template
    
    **Fix:** template
-
 
 --------------
 

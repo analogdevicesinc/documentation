@@ -31,7 +31,10 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the :adi:`ADPD188BI` part, which may be used, without modifications, with any microcontroller.
--  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Drivers, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
 The Communication Driver has a standard interface, so the :adi:`ADPD188BI` driver can be used exactly as it is provided.
 
@@ -311,7 +314,8 @@ Types Declarations
 Initialization example
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This is an initialization example. After doing this the user must put the device in GO mode and read data as described in the datasheet.
+This is an initialization example. After doing this the user must put the device
+in GO mode and read data as described in the datasheet.
 
 .. code-block:: c
 
@@ -395,4 +399,3 @@ Downloads
    -  :git-no-OS:`Implementation of ADPD188 Driver. <drivers/photo-electronic/adpd188/adpd188.c>`
    -  :git-no-OS:`Header file of ADPD188 Driver. <drivers/photo-electronic/adpd188/adpd188.h>`
    
-

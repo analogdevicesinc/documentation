@@ -8,8 +8,8 @@ Gadget Ethernet allows `Ethernet emulation over USB <https://en.wikipedia.org/wi
 Hardware Configuration
 ----------------------
 
-Connect the USB micro-B plug cable into the USB HS/OTG Device port, as showing below:
-
+Connect the USB micro-B plug cable into the USB HS/OTG Device port, as
+showing below:
 
 |image1|
 
@@ -18,7 +18,8 @@ Connect the USB micro-B plug cable into the USB HS/OTG Device port, as showing
 Software Configuration
 ----------------------
 
-On the Yocto, Configure the linux-kernel as below to set the USB controller in Gadget only mode, and enable the USB Ethernet Gadget relevant options.
+On the Yocto, Configure the linux-kernel as below to set the USB controller in
+Gadget only mode, and enable the USB Ethernet Gadget relevant options.
 
 .. code:: console
 
@@ -101,7 +102,8 @@ Enable the **usb0** and config the ``IP address`` via the "ifconfig"command:
 
 **On the Linux-Host PC**
 
-With following command you should be able to see the USB Ethernet device is there on your HOST:
+With following command you should be able to see the USB Ethernet device is
+there on your HOST:
 
 .. code:: console
 
@@ -185,4 +187,4 @@ Ping the target board:
 **Go TO** :doc:`USB Interface </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/start>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/gadget-mode/002_usb_interface-device_application.jpg
-   :width: 600px
+   :width: 600

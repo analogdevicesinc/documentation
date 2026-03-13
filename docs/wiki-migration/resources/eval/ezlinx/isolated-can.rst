@@ -1,5 +1,3 @@
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -16,8 +14,6 @@
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 :doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
 
 ezLINX™ Isolated CAN Implementation
@@ -28,7 +24,7 @@ The Isolated CAN port on the *ez*LINX Development Environment is implemented usi
 .. image:: https://wiki.analog.com/_media/ezlinx/isolatedcan.png
    :alt: Figure 1.
    :align: center
-   :width: 700px
+   :width: 700
 
 The CAN Node can be configured using jumpers JP17 and JP18. When both jumpers JP17 and JP18 are fitted, the CAN node is split terminated with 120Ω and a common mode capacitor of 47nF. If termination is not required, remove JP17 and JP18. A list of jumper configurations for all the interfaces on *ez*\ LINX can be found :doc:`here </wiki-migration/resources/eval/ezlinx/config>`.
 

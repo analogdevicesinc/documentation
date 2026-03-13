@@ -1,8 +1,6 @@
 ADXL362 Datalogger & Development Board: Rev 0
 =============================================
 
-
-
 .. important::
 
    Thanks for visiting!
@@ -10,19 +8,20 @@ ADXL362 Datalogger & Development Board: Rev 0
    | This page has has instructions that apply to the Rev 0 Datalogger Board.
    | If your board is labeled REV 2 (on the back), please visit :doc:`this page </wiki-migration/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/eval-adxl362z-db>` instead.
 
-
 Resources
 ---------
 
 Kit Contents
 ~~~~~~~~~~~~
 
-1 x ADXL362 Datalogger / Development Board 1 x MicroSD card with USB reader 1 x USB cable 1 x E-Ink electronic paper display 1 x Piece of double-sided foam tape
+1 x ADXL362 Datalogger / Development Board 1 x MicroSD card with USB reader 1 x
+USB cable 1 x E-Ink electronic paper display 1 x Piece of double-sided foam tape
 
 Not Included
 ~~~~~~~~~~~~
 
-1 x CR2450 coin cell battery, required only if stand-alone operation is desired. Full functionality of the board is availabe using USB power.
+1 x CR2450 coin cell battery, required only if stand-alone operation is desired.
+Full functionality of the board is availabe using USB power.
 
 Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -36,7 +35,9 @@ Design and Integration Files
 Programming Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The firmware for the EVAL-ADXL362Z-DB was developed for the Renesas RL78/G13 microcontroller using the Renesas Electronics CubeSuite+ environment. The links below offer downloads and installation instructions for these tools:
+The firmware for the EVAL-ADXL362Z-DB was developed for the Renesas RL78/G13
+microcontroller using the Renesas Electronics CubeSuite+ environment. The links
+below offer downloads and installation instructions for these tools:
 
 http://www.renesas.eu/products/tools/evaluation_software/downloads.jsp (Global site) https://www.renesas.com/us/en/design-support/software-and-tool (US site)
 
@@ -49,7 +50,8 @@ Using the Board
 Firmware Options
 ~~~~~~~~~~~~~~~~
 
-Analog Devices has developed firmware for implementing the following functions via the EVAL-ADXL362Z-DB:
+Analog Devices has developed firmware for implementing the following functions
+via the EVAL-ADXL362Z-DB:
 
 -  **Datalogger and GUI (includes real-time data viewer and tilt sensor)**: logs data onto (supplied) microSD card. `ZIP <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/adxl362db_datalogger_and_gui.zip>`_ *(includes .hex firmware and .exe GUI)*
 -  **Tilt Sensor**: shows tilt measurement on E-Ink display. `HEX <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/adxl362db_inclinometer.zip>`_ \| `Source Code <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/adxl362db_inclinometer_proj.zip>`_
@@ -62,7 +64,9 @@ Reconfiguring the Board
 The EVAL-ADXL362Z-DB firmware can be rewritten using the Renesas Flash Programmer (click `here <https://wiki.analog.com/>`_ for download links). Instructions for rewriting the firmware are as follows:
 
 -  Download the desired firmware .hex file from `here <https://wiki.analog.com/>`_. Save it in a known location.
--  Set jumpers: J6, J7, J8, and J9 (between the USB connector and the switch) to the 1-2 position. Set jumper J2 (near the display connector) to the 2-3 position for USB power.
+-  Set jumpers: J6, J7, J8, and J9 (between the USB connector and the switch) to
+   the 1-2 position. Set jumper J2 (near the display connector) to the 2-3
+   position for USB power.
    :!: *We know the jumpers are a pain and we apologize in advance.*
 
 ========== ============ = = ========
@@ -77,8 +81,6 @@ J8         1            2 3
 J9         1            2 3 
 ========== ============ = = ========
 
-
-
 -  Plug the USB cable in to the computer and to the USB port on the board.
 -  Launch the **Renesas Flash Programmer V1.03** (download `here <https://wiki.analog.com/>`_)
 -  Choose "Create new workspace"
@@ -89,7 +91,9 @@ J9         1            2 3
 -  The "Information Settings" screen shows a summary of inputted settings. Click Complete.
 -  The Workspace is now set up. Next to "User/Data area", browse to the desired .hex file (that you downloaded and saved in step **1.**)
 -  Click “Start”.
--  When flashing is complete, disconnect the USB cable (to power the board off) and set jumpers J6 - J9 back to the 2-3 position. Leave J2 where it is to USB power, or move it to the 1-2 position to power the board from the coin cell. 
+-  When flashing is complete, disconnect the USB cable (to power the board off)
+   and set jumpers J6 - J9 back to the 2-3 position. Leave J2 where it is to USB
+   power, or move it to the 1-2 position to power the board from the coin cell.
 
 ========== ============ = = ========
 **Jumper** **Position**
@@ -103,11 +107,10 @@ J8         1            2 3
 J9         1            2 3 
 ========== ============ = = ========
 
-
-
--  Reconnect the USB cable OR plug in the battery and turn on the switch to begin using the board.
+-  Reconnect the USB cable OR plug in the battery and turn on the switch to
+   begin using the board.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/board_front_jumpers_labeled.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/board_front_jumpers_labeled.png
-   :width: 400px
+   :width: 400

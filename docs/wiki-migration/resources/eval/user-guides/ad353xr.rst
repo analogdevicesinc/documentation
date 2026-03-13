@@ -4,7 +4,15 @@
 Overview
 --------
 
-AD353XR is a high-density low voltage supply DAC targeted but not limited to optical communications applications to perform biasing and control of PICs and power management block inside an optical modem and optical module. The two main specifications are the output headroom and the package size. - With an ultra low headroom, power dissipation on the part is reduced thus achieving improved system efficiency. In an optical module, customers will be able to achieve their biasing requirements by powering Blackwater directly from a typical 3.3V system supply. - WLCSP ensures lower board footprint utilization which is very important for smaller optical modules such as QSFP-DD and OSFP.
+AD353XR is a high-density low voltage supply DAC targeted but not limited to
+optical communications applications to perform biasing and control of PICs and
+power management block inside an optical modem and optical module. The two main
+specifications are the output headroom and the package size. - With an ultra low
+headroom, power dissipation on the part is reduced thus achieving improved
+system efficiency. In an optical module, customers will be able to achieve their
+biasing requirements by powering Blackwater directly from a typical 3.3V system
+supply. - WLCSP ensures lower board footprint utilization which is very
+important for smaller optical modules such as QSFP-DD and OSFP.
 
 Supported devices
 -----------------
@@ -40,7 +48,7 @@ Block diagram
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/ad353xr_hdl_bd.svg
    :alt: ad353xr_hdl_bd.svg
-   :width: 800px
+   :width: 800
 
 SPI connections
 ~~~~~~~~~~~~~~~
@@ -85,23 +93,24 @@ Connections
 
 -  How the jumpers/switches should be set on the board/carrier
 
-   -  Coraz7s: Place a jumper on JP2, shorting the two pins together. Select JP3 connection depending on power supply source (USB or external).
+   -  Coraz7s: Place a jumper on JP2, shorting the two pins together. Select JP3
+      connection depending on power supply source (USB or external).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cora_hw_config.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 -  • DE10 nano: Adjust switch to FPGA configuration Mode.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/de10-nano_fpga_switch_matrix.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Zedboard: Set the Jumpers MIO[6:2] as 01100.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/zedboard_jumpers.svg
    :align: center
-   :width: 600px
+   :width: 600
 
 -  The Zedboard FMC is low pin count.
 
@@ -125,4 +134,5 @@ Support
 
 Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
 
-It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.
+It should be noted, that the older the tools' versions and release branches are,
+the lower the chances to receive support from ADI engineers.

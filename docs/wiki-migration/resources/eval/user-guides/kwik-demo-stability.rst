@@ -6,17 +6,28 @@ Objective
 
 KWIK (Know-how with Integrated Knowledge)
 
-The Stability KWIK Lecture and Lab is an all-in-one training module on the topic of amplifier stability.
+The Stability KWIK Lecture and Lab is an all-in-one training module on the topic
+of amplifier stability.
 
-The Stability KWIK Lecture and Lab combines a traditional classroom lecture with LTSpice simulations and also includes a hands-on KWIK demo showcasing the techniques learned using the ADALM2000 Active Learning Module.
+The Stability KWIK Lecture and Lab combines a traditional classroom lecture with
+LTSpice simulations and also includes a hands-on KWIK demo showcasing the
+techniques learned using the ADALM2000 Active Learning Module.
 
-The Stability KWIK Demo augments the training materials for the stability analysis of a transimpedance amplifier and driving capacitive loads for a unity gain follower.
+The Stability KWIK Demo augments the training materials for the stability
+analysis of a transimpedance amplifier and driving capacitive loads for a unity
+gain follower.
 
-The Transimpedance Stability KWIK Demo provides a hands-on platform allowing the user to select from three compensation options: a marginally stable design, a design with 45° phase margin and a design with >70° of phase margin using the ADA4510 precision CMOS amplifier.
+The Transimpedance Stability KWIK Demo provides a hands-on platform allowing the
+user to select from three compensation options: a marginally stable design, a
+design with 45° phase margin and a design with >70° of phase margin using the
+ADA4510 precision CMOS amplifier.
 
-The Capacitive Load Stability KWIK Demo provides a hands-on platform showing how to stabilize a precision, 10 MHz opamp driving a 1nF capacitive load.
+The Capacitive Load Stability KWIK Demo provides a hands-on platform showing how
+to stabilize a precision, 10 MHz opamp driving a 1nF capacitive load.
 
-Both the Transimpedance Demo and Capacitive Load Demo are combined into a single, easy to use evaluation board (EVAL-KW4503Z) that plugs directly into the ADALM2000.
+Both the Transimpedance Demo and Capacitive Load Demo are combined into a
+single, easy to use evaluation board (EVAL-KW4503Z) that plugs directly into the
+ADALM2000.
 
 Lecture Materials
 -----------------
@@ -31,7 +42,6 @@ LTspice Circuits used in the lecture material are available at `KWIK Stability L
 .. tip::
 
    *Keep all files in the zip folder in the same folder on your local PC.*
-
 
 --------------
 
@@ -96,6 +106,6 @@ Additional Reading
 :ez:`KWIK Circuits Main Page <precision-technology-signal-chains/w/kwik-circuits>`
 
 .. |Image EVAL-KW4503Z| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stability_demo_oblique_full_size_transparent_72_dpi.png
-   :width: 600px
+   :width: 600
 .. |Image ADALM2000 + EVAL-KW4503Z| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stability_demo_adalm2000_transparent.png
-   :width: 600px
+   :width: 600

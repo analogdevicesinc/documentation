@@ -9,7 +9,9 @@ Balance Fader
 Description
 -----------
 
-The Balance fader blocks is used to adjust the strength of the audio level between the left and right channels and fade out of the audio level between the front and rear channels.
+The Balance fader blocks is used to adjust the strength of the audio level
+between the left and right channels and fade out of the audio level between the
+front and rear channels.
 
 Targets Supported
 -----------------
@@ -19,7 +21,6 @@ Name          ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ============= ========== ================ ============= ================
 Balance Fader NA         B                NA            B
 ============= ========== ================ ============= ================
-
 
 | ===== Pins =====
 

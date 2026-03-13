@@ -1,8 +1,6 @@
 Outputting Data
 ===============
 
-
-
 Serial Terminal Setup
 ---------------------
 
@@ -78,8 +76,6 @@ preferences.
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
 
-
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/example_serial_output.png
    :align: center
-   :width: 600px
+   :width: 600

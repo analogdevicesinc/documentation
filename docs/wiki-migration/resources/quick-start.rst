@@ -1,7 +1,8 @@
 Quick Start Guides
 ==================
 
-These guides are designed to quickly give you the information you will need to begin using Analog Devices products.
+These guides are designed to quickly give you the information you will need to
+begin using Analog Devices products.
 
 LTspice Model User guide for DAC + Power Op Amp:
 

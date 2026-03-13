@@ -22,9 +22,13 @@ Evaluation boards
 Overview
 --------
 
-The MAX310x devices are advanced UART with 128 words each of receive and transmit FIFO that can be controlled through I²C or high-speed SPI™. Baud rates up to 24Mbps make them suitable for today’s high data rate applications.
+The MAX310x devices are advanced UART with 128 words each of receive and
+transmit FIFO that can be controlled through I²C or high-speed SPI™. Baud rates
+up to 24Mbps make them suitable for today’s high data rate applications.
 
-A PLL, predivider, and fractional baud-rate generator allow high-resolution baud-rate programming and minimize the dependency of baud rate on reference clock frequency.
+A PLL, predivider, and fractional baud-rate generator allow high-resolution
+baud-rate programming and minimize the dependency of baud rate on reference
+clock frequency.
 
 The `MAX3109 <https://www.maximintegrated.com/en/products/interface/controllers-expanders/MAX3109.html>`_ is a dual-channel device, while the `MAX14830 <https://www.maximintegrated.com/en/products/interface/controllers-expanders/MAX14830.html>`_ is quad-channel.
 
@@ -66,9 +70,11 @@ Driver testing
 
 The driver exposes character devices starting with the ttyMAX name.
 
-To connect to these devices, use a Serial Terminal Emulaor (like GTKTerm, Picocom, Minicom, Tera Term).
+To connect to these devices, use a Serial Terminal Emulaor (like GTKTerm,
+Picocom, Minicom, Tera Term).
 
-For example, to use Picocom to connect to UART port 0 of a MAX14830 device using a 9600 baud-rate, use the following command.
+For example, to use Picocom to connect to UART port 0 of a MAX14830 device using
+a 9600 baud-rate, use the following command.
 
 .. container:: box bggreen
 
@@ -79,4 +85,3 @@ For example, to use Picocom to connect to UART port 0 of a MAX14830 device using
    
       picocom -b 9600 /dev/ttyMAX0
    
-

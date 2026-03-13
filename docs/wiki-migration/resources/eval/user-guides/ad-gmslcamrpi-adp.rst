@@ -1,19 +1,17 @@
 AD-GMSLCAMRPI-ADP# User Guide
 =============================
 
-
-
 .. note::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
    | This user guide is now available at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-gmslcamrpi-adp/index.html
 
-
-Seamlessly insert GMSL into the signal chain and create a full GMSL Camera System with off-the-shelf parts.
+Seamlessly insert GMSL into the signal chain and create a full GMSL Camera
+System with off-the-shelf parts.
 
 .. image:: https://wiki.analog.com/_media/playground/_signal_chain.png
-   :width: 600px
+   :width: 600
 
 Overview
 --------
@@ -26,10 +24,10 @@ The :adi:`AD-GMSLCAMRPI-ADP# <design-center/evaluation-hardware-and-software/eva
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-3dsmartcam1-prz/block_diagram.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/playground/wikigmsladptop.png
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -38,8 +36,8 @@ Specifications
 
 .. warning::
 
-   Do not use the 15-pin ribbon cable included with the Raspberry Pi camera since that is an opposite sided cable.
-
+   Do not use the 15-pin ribbon cable included with the Raspberry Pi camera
+   since that is an opposite sided cable.
 
 +-------------------------------+------------------------------------------------------------------------------------------+
 | Ribbon cable adapter          |                                                                                          |
@@ -82,13 +80,13 @@ Specifications
    -  `High level BOM <https://wiki.analog.com/_media/resources/eval/user-guides/05-075922-01-a.zip>`_
    
 
-
 --------------
 
 GMSL EV Kit Compatibility
 -------------------------
 
-The MIPI-CSI2 signals, I2C communication, and power pins align on the EV kits but the MFP connections can vary.
+The MIPI-CSI2 signals, I2C communication, and power pins align on the EV kits
+but the MFP connections can vary.
 
 Refer to the `Serializer and Deserializer EV Kit Compatibility Guide <https://wiki.analog.com/resources/eval/user-guides/ad-gmslcamrpi-adp/comp_guide>`_ to see the connections across EV kits.
 
@@ -97,7 +95,8 @@ Refer to the `Serializer and Deserializer EV Kit Compatibility Guide <https://wi
 Camera Connections
 ------------------
 
-Connect RPi 15-pin cameras to GMSL Serializer EVKIT's with the 15-22 pin adapter.
+Connect RPi 15-pin cameras to GMSL Serializer EVKIT's with the 15-22 pin
+adapter.
 
 |image1| |image2|
 
@@ -108,7 +107,9 @@ Or use a 15-pin to 22-Pin Adapter Cable
 SoC Connections
 ---------------
 
-The same configuration is used for the SoC side where the 22-pin adapter can be directly connect to a Jetson Orin Development kit or use the 22-15 pin adapter to connect to an Raspberry Pi.
+The same configuration is used for the SoC side where the 22-pin adapter can be
+directly connect to a Jetson Orin Development kit or use the 22-15 pin adapter
+to connect to an Raspberry Pi.
 
 |image3| -OR - |image4|
 
@@ -117,7 +118,10 @@ The same configuration is used for the SoC side where the 22-pin adapter can be 
 Example Configurations
 ----------------------
 
-The adapter can be used to connect the GMSL Deserializer EV kits to a number of processing platforms for GMSL evaluation and application development. The user guides below provide instructions on how to get the systems up and running by configuring the hardware and running the associated software.
+The adapter can be used to connect the GMSL Deserializer EV kits to a number of
+processing platforms for GMSL evaluation and application development. The user
+guides below provide instructions on how to get the systems up and running by
+configuring the hardware and running the associated software.
 
 .. note::
 
@@ -126,7 +130,6 @@ The adapter can be used to connect the GMSL Deserializer EV kits to a number of 
    -  :doc:`Raspberry Pi User Guide </wiki-migration/resources/eval/user-guides/ad-gmslcamrpi-adp/ug_rpi>`
    -  :doc:`AMD Kria User Guide </wiki-migration/resources/eval/user-guides/ad-gmslcamrpi-adp/ug_amd_kria>`
    
-
 
 --------------
 
@@ -146,10 +149,10 @@ For questions and more information please contact us on the **Analog Devices Eng
 -  :ez:`EngineerZone FPGA Reference Designs <community/fpga>`
 
 .. |image1| image:: https://wiki.analog.com/_media/playground/wikigmslcamadpser.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/wikigmsl15adp22ser.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/playground/wikigmsladpdesjeto.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/playground/wikigmsladpdesrpi4.png
-   :width: 400px
+   :width: 400

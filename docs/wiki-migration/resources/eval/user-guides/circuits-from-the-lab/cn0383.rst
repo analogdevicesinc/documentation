@@ -12,7 +12,6 @@ The device also has a power down option. In power-down mode, the complete ADC al
 
 This user guide will discuss how to operate the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` (CN-0383 Evaluation Hardware), the :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>` (SDP-B)/:adi:`EVAL-SDP-CK1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-k1.html>` (SDP-K1) and the `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/ad7124>`_. A complete design support package for the CN-0383 evaluation material containing schematics, layouts (native and Gerber), and bill-of-materials can be found at: :adi:`CN0383-DesignSupport`.
 
-
 |image1|
 
 Required Equipment
@@ -37,28 +36,30 @@ Do not connect power to the hardware until both the EVAL-AD7124-4SDZ/EVAL-AD7124
 
 -  2-wire/3-wire/4-wire Pt100 RTD, Class B
 -  5.11 kΩ precision resistor
--  250 Ω resistor for buffer headroom (not needed for 3-wire RTD configuration, but included for completeness because it may be required if a Pt1000 RTD is used with a gain of 1)
+-  250 Ω resistor for buffer headroom (not needed for 3-wire RTD configuration,
+   but included for completeness because it may be required if a Pt1000 RTD is
+   used with a gain of 1)
 
 2-wire RTD
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0383/2_wire_functional_diagram.png
    :align: center
-   :width: 400px
+   :width: 400
 
 3-wire RTD
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/3_wire_functional_diagram.png
    :align: center
-   :width: 400px
+   :width: 400
 
 4-wire RTD
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/4_wire_functional.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Hardware Setup
 --------------
@@ -71,7 +72,8 @@ To configure the hardware, take the following steps:
 
    -  LK3 - Jumper from REFIN- to AVss, this jumper should be removed.
    -  LK4 - This jumper is used to apply external 2.5V or internal 2.5V to REFIN+, this jumper should be removed.
-   -  LK5 - This is the jumper used for the noise test, the function of this jumper is to short AIN0 to AIN1, this jumper should be removed.
+   -  LK5 - This is the jumper used for the noise test, the function of this
+      jumper is to short AIN0 to AIN1, this jumper should be removed.
 
 -  Connect the SDP board to the PC via the USB cable.
 
@@ -80,21 +82,21 @@ Evaluation Board Connector for 2-Wire RTD Measurement
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0383/2-wire_connector.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Evaluation Board Connector for 3-Wire RTD Measurement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/3-wire_circuit.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Evaluation Board Connector for 4-Wire RTD Measurement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/4_wire_circuit.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Using the Evaluation Software
 -----------------------------
@@ -105,10 +107,9 @@ Run the `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/e
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/drop_down.png
    :align: center
-   :width: 400px
+   :width: 400
 
 After selecting the Evaluation board, the window shown in Figure below appears.
-
 
 |image2|
 
@@ -241,14 +242,14 @@ Waveform Tab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/waveform.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Histogram Tab
 ^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/histogram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 More Information and Useful Links
 ---------------------------------
@@ -272,7 +273,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Software
 --------
 
@@ -281,6 +281,6 @@ Software
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/cn0383/figure1.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/main_window.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/qq.png
-   :width: 30px
+   :width: 30
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/register_map.png
-   :width: 600px
+   :width: 600

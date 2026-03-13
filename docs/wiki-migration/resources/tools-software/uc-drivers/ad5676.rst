@@ -206,4 +206,3 @@ Downloads
    -  :git-no-OS:`Implementation of AD5686 Driver. <drivers/dac/ad5686/ad5686.c>`
    -  :git-no-OS:`Header file of AD5686 Driver. <drivers/dac/ad5686/ad5686.h>`
    
-

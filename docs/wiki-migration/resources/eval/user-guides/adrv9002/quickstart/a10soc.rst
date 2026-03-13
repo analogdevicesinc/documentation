@@ -3,13 +3,14 @@ ADRV9002 Arria10 SoC Quick Start Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_a10soc_quickstart.png
    :align: center
-   :width: 600px
+   :width: 600
 
 This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` and :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` on:
 
 -  `Arria10 SoC Development Kit <https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html>`_ Rev. C or later
 
-Instructions on how to build the Zynq Linux kernel and devicetrees from source can be found here:
+Instructions on how to build the Zynq Linux kernel and devicetrees from source
+can be found here:
 
 -  :doc:`AD-FMC-SDCARD for Zynq & Altera SoC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 -  :doc:`Altera SOC - Build Preloader and Bootloader Image </wiki-migration/resources/tools-software/linux-software/altera_soc_images>`
@@ -51,9 +52,7 @@ Required Hardware
 -  Ethernet cable
 -  Optionally USB keyboard, mouse and a Display Port compatible monitor
 
-
 .. esd-warning::
-
 
 FMC Pin Connection Configuration Change
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,19 +64,21 @@ FMC Pin Connection Configuration Change
    
    In the default configuration of the Arria10 SoC Development Kit some of the FMC header pins are connected to a dedicated clock chip. To be compatible with the :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` these pins need to be connected directly to the FPGA.
 
-
-The connection of those pins can be changed by moving the position of four zero Ohm resistors:
+The connection of those pins can be changed by moving the position of four zero
+Ohm resistors:
 
 -  R612 to R610
 -  R613 to R611
 -  R621 to R620
 -  R633 to R632
 
-These resistors can be found on the backside of the Arria10 SoC Development Kit underneath the FMC A connector (J29). The following picture shows the required configuration to be compatible with the AD-FMCDAQ2-EBZ.
+These resistors can be found on the backside of the Arria10 SoC Development Kit
+underneath the FMC A connector (J29). The following picture shows the required
+configuration to be compatible with the AD-FMCDAQ2-EBZ.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/a10soc_fmc_rework.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Testing
 =======
@@ -89,8 +90,12 @@ Testing
    
    This can be done by changing VADJ FMCA Voltage using J42 (see below picture).
    
-   On an ADRV9002 Card, there is a red LED close to the FMC connector. The role of this LED is to indicate if VADJ voltage exceeded 2.0V level. If that was the case this LED will be ON. If this LED does not turn off after few seconds after boot, then there is an issue and while the board might still operate this is exceeding the recommended level for VADJ, decreasing board lifetime and can lead to permanent damage of the IC in the worst case.
-
+   On an ADRV9002 Card, there is a red LED close to the FMC connector. The role
+   of this LED is to indicate if VADJ voltage exceeded 2.0V level. If that was
+   the case this LED will be ON. If this LED does not turn off after few seconds
+   after boot, then there is an issue and while the board might still operate
+   this is exceeding the recommended level for VADJ, decreasing board lifetime
+   and can lead to permanent damage of the IC in the worst case.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_a10soc_vadj_jumper.png
    :align: center
@@ -100,7 +105,7 @@ Testing
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_vadj_led.png
    :align: right
-   :width: 200px
+   :width: 200
 
 ::
 
@@ -115,14 +120,11 @@ Testing
 Messages
 --------
 
-
-
 .. collapsible:: Complete kernel boot log (Click to expand)
 
    .. container:: box bggreen
 
       This specifies any shell prompt running on the target
-
 
       ::
 
@@ -540,8 +542,6 @@ Messages
          permitted by applicable law.
          root@analog:~#
 
-
-
 These devices should be present:
 
 .. container:: box bggreen
@@ -557,7 +557,6 @@ These devices should be present:
           iio:device2: axi-adrv9002-tx-lpc (buffer capable)
    
 
-
 For more on device modes, check :doc:`device modes. </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
 Pyadi-iio Example
@@ -570,16 +569,17 @@ IIO Oscilloscope Remote
 
 Please see also here::doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The IIO Oscilloscope application can be used to connect to another platform that has a connected device in order to configure the device and read data from it.
+The IIO Oscilloscope application can be used to connect to another platform that
+has a connected device in order to configure the device and read data from it.
 
 Build and start osc on a network enabled Linux host.
 
-Once the application is launched goto Settings -> Connect and enter the IP address of the target in the popup window.
+Once the application is launched goto Settings -> Connect and enter the IP
+address of the target in the popup window.
 
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
-
 
    |image1|
 
@@ -612,7 +612,6 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 More Information
 ----------------
 
@@ -642,6 +641,5 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

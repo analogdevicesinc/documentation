@@ -3,7 +3,8 @@
 CreateNewProject
 ================
 
-This takes in one argument(project name) and allows the user to create a new SigmaStudio+ project with the given name. This API returns the SSPResult.
+This takes in one argument(project name) and allows the user to create a new
+SigmaStudio+ project with the given name. This API returns the SSPResult.
 
 API
 ---
@@ -15,12 +16,14 @@ API
 Arguments
 ---------
 
--  projectName - The projectName should contain name of the new project along with the file path.
+-  projectName - The projectName should contain name of the new project along
+   with the file path.
 
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of CreateNewProject action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of
+CreateNewProject action.
 
 ::
 

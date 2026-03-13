@@ -4,7 +4,10 @@ DMA Operations
 Introduction
 ------------
 
-The Direct Memory Access (DMA) controller in the ADSP-SC5xx processor allows automated data transfers with minimal overhead for the core. DMA transfers can occur between any of the DMA capable peripherals (such as the SPORT or PPI) and the memory in L2 SRAM or external DDR.
+The Direct Memory Access (DMA) controller in the ADSP-SC5xx processor allows
+automated data transfers with minimal overhead for the core. DMA transfers can
+occur between any of the DMA capable peripherals (such as the SPORT or PPI) and
+the memory in L2 SRAM or external DDR.
 
 Linux DMA Framework
 -------------------
@@ -17,13 +20,31 @@ There are two aspects of the Linux DMA framework.
 Linux DMA Mapping API
 ~~~~~~~~~~~~~~~~~~~~~
 
-Document: linux-kernel/Documentation/DMA-API-HOWTO.txt, Linux Device Driver (3rd) - chapter 15. API definition: linux-kernel/include/linux/dma-mapping.h, linux-kernel/arch/arm/include/asm/dma-mapping.h DMA operations allocate a buffer and pass bus addresses to your device. A DMA mapping is a combination of allocating a DMA buffer and generating an address for that buffer that is accessible by the device.
+Document: linux-kernel/Documentation/DMA-API-HOWTO.txt, Linux Device Driver
+(3rd) - chapter 15. API definition: linux-kernel/include/linux/dma-mapping.h,
+linux-kernel/arch/arm/include/asm/dma-mapping.h DMA operations allocate a buffer
+and pass bus addresses to your device. A DMA mapping is a combination of
+allocating a DMA buffer and generating an address for that buffer that is
+accessible by the device.
 
-DMA mappings must also address the issue of cache coherency. Modern processors keep copies of recently accessed memory areas in a fast, local cache. Without this cache, reasonable performance is not possible. If your device changes an area of main memory it is imperative that any processor caches covering that area be invalidated. Otherwise the processor may work with an incorrect image of main memory and data corruption may result. Similarly, when your device uses DMA to read data from main memory any changes to that memory residing in processor caches must be flushed out first.
+DMA mappings must also address the issue of cache coherency. Modern processors
+keep copies of recently accessed memory areas in a fast, local cache. Without
+this cache, reasonable performance is not possible. If your device changes an
+area of main memory it is imperative that any processor caches covering that
+area be invalidated. Otherwise the processor may work with an incorrect image of
+main memory and data corruption may result. Similarly, when your device uses DMA
+to read data from main memory any changes to that memory residing in processor
+caches must be flushed out first.
 
-On SC5xx, DMA mapping is done in the same way as other ARM processors. dma_alloc_coherent() can be called to allocate a DMA buffer in the drivers. A block of 256k bytes DDR pool is reserved for DMA atomic, coherent usage while the normal coherent DMA memory is reserved from DDR without a size limit. New VM areas and page table entries of the allocated page structures are created with the uncacheable page attribute before the area address pointer is returned.
+On SC5xx, DMA mapping is done in the same way as other ARM processors.
+dma_alloc_coherent() can be called to allocate a DMA buffer in the drivers. A
+block of 256k bytes DDR pool is reserved for DMA atomic, coherent usage while
+the normal coherent DMA memory is reserved from DDR without a size limit. New VM
+areas and page table entries of the allocated page structures are created with
+the uncacheable page attribute before the area address pointer is returned.
 
-If you are writing a portable device driver, make sure to use the generic DMA APIs (for a full list please refer to the documentation):
+If you are writing a portable device driver, make sure to use the generic DMA
+APIs (for a full list please refer to the documentation):
 
 ::
 
@@ -40,11 +61,15 @@ If you are writing a portable device driver, make sure to use the generic DMA AP
 What is a bus address
 ~~~~~~~~~~~~~~~~~~~~~
 
-When the CPU (say with the MMU turned off) wants to access physical memory it puts that address on its output pins. This a physical Address.
+When the CPU (say with the MMU turned off) wants to access physical memory it
+puts that address on its output pins. This a physical Address.
 
-When a peripheral device wants to access the same physical memory (as in a DMA function) it may have to use a different address to get to the same physical location. This is a bus address.
+When a peripheral device wants to access the same physical memory (as in a DMA
+function) it may have to use a different address to get to the same physical
+location. This is a bus address.
 
-So a bus address is the address used by a peripheral to access a certain physical address.
+So a bus address is the address used by a peripheral to access a certain
+physical address.
 
 Generic DMA mapping guide
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,25 +94,36 @@ The SC5xx processor offers a wide array of DMA capabilities.
 Flow Types and Descriptor
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are 6 different ways the DMA controller can be set up. These are called Flow types
+There are 6 different ways the DMA controller can be set up. These are called
+Flow types
 
 -  FLOW_STOP - Stop after the current job
 -  FLOW_AUTO - Autobuffer, Repeat the current transfer until stopped
 -  FLOW_LIST - Use a linked list of descriptors
 -  FLOW_ARRAY - Use a sequential list of descriptors
 -  FLOW_LIST_DEMAND - Use a linked list of descriptors and fetch the next only after the DMA channel detects an incoming trigger event
--  FLOW_ARRAY_DEMAND - Use a sequential list of descriptors and fetch next only after the DMA channel detects an incoming trigger event
+-  FLOW_ARRAY_DEMAND - Use a sequential list of descriptors and fetch next only
+   after the DMA channel detects an incoming trigger event
 
-The flow type can be defined in a CONFIG word in a descriptor so the modes can be mixed and the operation quite complex.
+The flow type can be defined in a CONFIG word in a descriptor so the modes can
+be mixed and the operation quite complex.
 
-Descriptors are used to control the DMA channel and allow a complex stream of data packets to be assembled if required.
+Descriptors are used to control the DMA channel and allow a complex stream of
+data packets to be assembled if required.
 
 -  Array Descriptor - Simple Sequential array of descriptors in memory
 -  List Descriptor - Descriptors chained via address word in memory
 
-For descriptor list mode, at a minimum the DMA_DSCPTR_NXT register must be written prior to write to the DMA_CFG register, which is the special action required to start the DMA channel. For descriptor array mode, at a minimum the DMA_DSCPTR_CUR register must be written prior to writing to the DMA_CFG register, which is the special action required to start the DMA channel.
+For descriptor list mode, at a minimum the DMA_DSCPTR_NXT register must be
+written prior to write to the DMA_CFG register, which is the special action
+required to start the DMA channel. For descriptor array mode, at a minimum the
+DMA_DSCPTR_CUR register must be written prior to writing to the DMA_CFG
+register, which is the special action required to start the DMA channel.
 
-One other slight complexity in the descriptor is the fact the DMA controller does not have to read ALL of the words in the descriptor array. The NDSIZE part of the CONFIG Register contains the number of elements to read into the DMA controller for this operation.
+One other slight complexity in the descriptor is the fact the DMA controller
+does not have to read ALL of the words in the descriptor array. The NDSIZE part
+of the CONFIG Register contains the number of elements to read into the DMA
+controller for this operation.
 
 Descriptor Memory Layout
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +168,9 @@ In some video application, 2-D DMA is more convenient to use than 1-D DMA.
 MDMA Copy Wrapper for Linux Drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As an altrenative to setting up MDMA by yourself there exist APIs to use MDMA. See API implementation in arch/arm/mach-sc58x/dma.c or arch/arm/mach-sc57x/dma.c .
+As an altrenative to setting up MDMA by yourself there exist APIs to use MDMA.
+See API implementation in arch/arm/mach-sc58x/dma.c or arch/arm/mach-sc57x/dma.c
+.
 
 ::
 
@@ -142,7 +180,9 @@ As an altrenative to setting up MDMA by yourself there exist APIs to use MDMA. S
 DMA Operation for Linux Drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please refer to: arch/arm/mach-sc58x/include/mach/dma.h, and arch/arm/mach-sc58x/dma.c or arch/arm/mach-sc57x/include/mach/dma.h, and arch/arm/mach-sc57x/dma.c.
+Please refer to: arch/arm/mach-sc58x/include/mach/dma.h, and
+arch/arm/mach-sc58x/dma.c or arch/arm/mach-sc57x/include/mach/dma.h, and
+arch/arm/mach-sc57x/dma.c.
 
 The DMA channel management API:
 
@@ -180,7 +220,8 @@ The extended DMA manipulation API allows for increased flexibility in SC5xx:
 DMA Example
 -----------
 
-This is a simple DMA example taken from the adsp-spidac.c driver. This is getting 8-bit data from the SPI device int mybuffer.
+This is a simple DMA example taken from the adsp-spidac.c driver. This is
+getting 8-bit data from the SPI device int mybuffer.
 
 ::
 

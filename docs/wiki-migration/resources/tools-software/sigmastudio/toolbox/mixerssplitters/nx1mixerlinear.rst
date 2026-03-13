@@ -12,8 +12,11 @@ There are three versions of 'NX1 Mixer' algorithm.
 2x1 (No Slew)
 =============
 
-The 2x1 Mixer has 2 input channels and 1 output channel. 2x1 mixers mixes two input channels to one output channel. Each input mix level can be independently adjusted. There are two combo boxes for setting the gain, one combo box for one input pin. To set the gain, click on the combo box and enter the value in the range of -128.0 to 127.999.
-
+The 2x1 Mixer has 2 input channels and 1 output channel. 2x1 mixers mixes two
+input channels to one output channel. Each input mix level can be independently
+adjusted. There are two combo boxes for setting the gain, one combo box for one
+input pin. To set the gain, click on the combo box and enter the value in the
+range of -128.0 to 127.999.
 
 |image1|
 
@@ -29,7 +32,6 @@ Pin 1\*: Decimal -                          audio
 
 +-----------------------------------------------------------------+
 
-
 | Note : \*Indicated for 2x1 Mixer. Input pins will increase by N |
 
 +-----------------------------------------------------------------+
@@ -44,8 +46,6 @@ Name   Format [int/dec] - [control/audio] Function Description
 ====== ================================== ====================
 Pin 2: Decimal -                          audio
 ====== ================================== ====================
-
-
 
 GUI Controls
 ============
@@ -83,7 +83,12 @@ ADAU145x
 3x1 (HW Slew)
 =============
 
-The 3x1 Mixer has 3 input channels and 1 output channel. 3x1 mixers,mixes three input channels to one output channel. Each input mix level can be independently adjusted. There are three combo boxes for setting the gain, one combo box for one input pin. To set the gain, click on the combo box and enter the value in the range of -128.0 to 127.999. The gain values are slewed to reduce audio clicks. Slewing options can be selected from the context menu.
+The 3x1 Mixer has 3 input channels and 1 output channel. 3x1 mixers,mixes three
+input channels to one output channel. Each input mix level can be independently
+adjusted. There are three combo boxes for setting the gain, one combo box for
+one input pin. To set the gain, click on the combo box and enter the value in
+the range of -128.0 to 127.999. The gain values are slewed to reduce audio
+clicks. Slewing options can be selected from the context menu.
 
 |image2| |image3|
 
@@ -100,7 +105,6 @@ Pin 2\*: Decimal -                          audio
 
 +-----------------------------------------------------------------+
 
-
 | Note : \*Indicated for 3x1 Mixer. Input pins will increase by N |
 
 +-----------------------------------------------------------------+
@@ -115,8 +119,6 @@ Name   Format [int/dec] - [control/audio] Function Description
 ====== ================================== ====================
 Pin 3: Decimal -                          audio
 ====== ================================== ====================
-
-
 
 GUI Controls
 ============
@@ -154,8 +156,11 @@ ADAU145x
 4x1 (No Slew)
 =============
 
-The 4x1 Mixer has 4 input channels and 1 output channel. 4x1 mixers mixes four input channels to one output channel. Each input mix level can be independently adjusted. There are four combo boxes for setting the gain, one combo box for each input pin. To set the gain, click on the combo box and enter the value in the range of -128.0 to 127.999.
-
+The 4x1 Mixer has 4 input channels and 1 output channel. 4x1 mixers mixes four
+input channels to one output channel. Each input mix level can be independently
+adjusted. There are four combo boxes for setting the gain, one combo box for
+each input pin. To set the gain, click on the combo box and enter the value in
+the range of -128.0 to 127.999.
 
 |image4|
 
@@ -173,7 +178,6 @@ Pin 3\*: Decimal -                          audio
 
 +-----------------------------------------------------------------+
 
-
 | Note : \*Indicated for 4x1 Mixer. Input pins will increase by N |
 
 +-----------------------------------------------------------------+
@@ -188,8 +192,6 @@ Name   Format [int/dec] - [control/audio] Function Description
 ====== ================================== ====================
 Pin 4: Decimal -                          audio
 ====== ================================== ====================
-
-
 
 GUI Controls
 ============
@@ -226,8 +228,8 @@ ADAU145x
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/2x1mixer.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/3x1.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/3x1_slew_.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/4x1.png
-   :width: 400px
+   :width: 400

@@ -5,15 +5,18 @@ FMCOMMS11 HDL Reference Design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/fmcomms11/index.html\
 
-
 Functional Overview
 -------------------
 
 The HDL reference design is an embedded system built around a processor core either ARM, NIOS-II or Microblaze. A functional block diagram of the system is shown below. The high speed digital interface of the converters is handled by the :doc:`JESD204B framework </wiki-migration/resources/fpga/peripherals/jesd204>`. Due to the system's memory interface bandwidth limitation, there are intermediary buffers in the both TX and RX data paths, in order to save and push data using high data rates. In case of the ZC706 carrier board, the RX buffer depth is 1Gbyte, and TX buffer depth is 1Mbyte. This depths can be swapped if required.
 
-By default the AD9162 is configured in complex mode with 8 lanes (see Table 16. in data sheet), and the AD9625 is configured in generic operation mode with 8 lanes (see Table 16. in data sheet). Both JESD204 interfaces run in Subclass 0.
+By default the AD9162 is configured in complex mode with 8 lanes (see Table 16.
+in data sheet), and the AD9625 is configured in generic operation mode with 8
+lanes (see Table 16. in data sheet). Both JESD204 interfaces run in Subclass 0.
 
-Other configurations can be used too, but the user needs to make sure that all the parties (clock chip, converters and FPGA JESD204 IPs) of the interface are reconfigured accordingly.
+Other configurations can be used too, but the user needs to make sure that all
+the parties (clock chip, converters and FPGA JESD204 IPs) of the interface are
+reconfigured accordingly.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/fmcomms11_bd.svg
    :alt: fmcomms11_bd.svg
@@ -22,15 +25,24 @@ Other configurations can be used too, but the user needs to make sure that all t
 Reference design for Xilinx carriers
 ------------------------------------
 
-The reference design is a processor based embedded system. The sources are split into three different folders:
+The reference design is a processor based embedded system. The sources are split
+into three different folders:
 
 -  Base design for the carrier board (e.g. :git-hdl:`/projects/common/zc706 <projects/common/zc706>`) where all generic peripherals are instantiated. Here we do most of the PS configuration, add SPI, I2C and GPIOs. In some cases, we have scripts to instantiate also the PL DDR as ADC offload memory or DAC offload memory.
 -  Base design for the evaluation board (:git-hdl:`/projects/fmcomms11/common <projects/fmcomms11/common>`), where all the IPs to control the FMCOMMS11 evaluation board and to capture or send data are instantiated. The data paths defined in this block design are common across multiple carrier platforms.
 -   Specific design for the project, in our case for ZC706 (:git-hdl:`/projects/fmcomms11/zc706 <projects/fmcomms11/common>`). Here, we source the carrier board configuration, then the evaluation board configuration and then we do some specific parameter modification, if required. In this folder, the constraints and system_top.v are also defined.
 
-The reference design is a processor based (ARM or Microblaze) embedded system. A functional block diagram of the system is given above. The data path consist of the shared transceivers, then are followed by the individual JESD204B link and transport layer IP cores. The cores are programmable through an AXI-lite interface.
+The reference design is a processor based (ARM or Microblaze) embedded system. A
+functional block diagram of the system is given above. The data path consist of
+the shared transceivers, then are followed by the individual JESD204B link and
+transport layer IP cores. The cores are programmable through an AXI-lite
+interface.
 
-The digital interface consists of 8 transmit and 8 receive lanes running at 9.8304Gbps and 4.9152 respectively, by default. The transceivers interface the DAC/ADC cores at 256bits@245.76MHz and 256bit@122.88MHz respectively. The data is sent or received based on the configuration of separate transmit and receive chains.
+The digital interface consists of 8 transmit and 8 receive lanes running at
+9.8304Gbps and 4.9152 respectively, by default. The transceivers interface the
+DAC/ADC cores at 256bits@245.76MHz and 256bit@122.88MHz respectively. The data
+is sent or received based on the configuration of separate transmit and receive
+chains.
 
 Project Flow
 ------------
@@ -71,14 +83,18 @@ In order to use the ADC/DAC FIFOs, the corresponding tcl files must be sourced.
    source $ad_hdl_dir/projects/common/zc706/zc706_plddr3_adcfifo_bd.tcl
    source $ad_hdl_dir/projects/common/xilinx/dacfifo_bd.tcl
 
-If the user wants to swap the resources allocated to the FIFO, the following scripts should be sourced instead:
+If the user wants to swap the resources allocated to the FIFO, the following
+scripts should be sourced instead:
 
 .. code:: tcl
 
    source $ad_hdl_dir/projects/common/zc706/zc706_plddr3_dacfifo_bd.tcl
    source $ad_hdl_dir/projects/common/xilinx/adcfifo_bd.tcl
 
-The following parameters will define the FIFO's depth. Note, if the FIFO is using the PL side DDR interface, the address width parameter can be ignored, and the FIFO will have an equal depth with the DDR memory. (e.g. in case of the ZC706 board is 1Gbyte)
+The following parameters will define the FIFO's depth. Note, if the FIFO is
+using the PL side DDR interface, the address width parameter can be ignored, and
+the FIFO will have an equal depth with the DDR memory. (e.g. in case of the
+ZC706 board is 1Gbyte)
 
 .. code:: tcl
 
@@ -97,13 +113,16 @@ The next step is to source the FMCOMMS11 specific design.
 FMCOMMS11 Design
 ----------------
 
-When using the JESD204 Framework we need to source the JESD204 support script. In this script several procedures which simplify the design are defined:
+When using the JESD204 Framework we need to source the JESD204 support script.
+In this script several procedures which simplify the design are defined:
 
 .. code:: tcl
 
    source $ad_hdl_dir/library/jesd204/scripts/jesd204.tcl
 
-The main JESD204 configuration parameters are defined. These parameters are essential and need to respect the device side configuration in order to have a successful link bring up.
+The main JESD204 configuration parameters are defined. These parameters are
+essential and need to respect the device side configuration in order to have a
+successful link bring up.
 
 .. code:: tcl
 
@@ -125,7 +144,15 @@ The main JESD204 configuration parameters are defined. These parameters are esse
 Physical Layer
 ~~~~~~~~~~~~~~
 
-The physical layer is responsible for instantiating and configuring the high speed serial transceivers in the FPGA. The physical layer is implemented with the use of two modules: AXI_ADXCVR and UTIL_ADXCVR. AXI_ADXCVR provides an AXI interface for performing DRP reads and writes to the transceivers, allowing for dynamic reconfiguration. Given that the hardware implements 8 data lines, that's how we'll configure the NUM_OF_LANES parameter. QPLL_ENABLE parameter gives control to this IP of the QPLL reconfiguration for the Transceiver QUAD. If the QUAD is shared with other RX IPs (as it is in this design), the second ADXCVR IP will need to have QPLL_ENABLE set to 0.
+The physical layer is responsible for instantiating and configuring the high
+speed serial transceivers in the FPGA. The physical layer is implemented with
+the use of two modules: AXI_ADXCVR and UTIL_ADXCVR. AXI_ADXCVR provides an AXI
+interface for performing DRP reads and writes to the transceivers, allowing for
+dynamic reconfiguration. Given that the hardware implements 8 data lines, that's
+how we'll configure the NUM_OF_LANES parameter. QPLL_ENABLE parameter gives
+control to this IP of the QPLL reconfiguration for the Transceiver QUAD. If the
+QUAD is shared with other RX IPs (as it is in this design), the second ADXCVR IP
+will need to have QPLL_ENABLE set to 0.
 
 .. code:: tcl
 
@@ -135,7 +162,8 @@ The physical layer is responsible for instantiating and configuring the high spe
      TX_OR_RX_N 1 \
    ]
 
-Instantiation of the ADC transceiver controller. For this IP, QPLL_ENABLE is set to 0.
+Instantiation of the ADC transceiver controller. For this IP, QPLL_ENABLE is set
+to 0.
 
 .. code:: tcl
 
@@ -145,7 +173,9 @@ Instantiation of the ADC transceiver controller. For this IP, QPLL_ENABLE is set
      TX_OR_RX_N 0 \
    ]
 
-Given that the IP uses the same QUAD as the DAC, performing channel reconfiguration may affect the DAC and vice versa. When using the JESD204B framework, this is taken into consideration by software.
+Given that the IP uses the same QUAD as the DAC, performing channel
+reconfiguration may affect the DAC and vice versa. When using the JESD204B
+framework, this is taken into consideration by software.
 
 The actual transceiver blocks are instantiated in UTIL_ADXCVR.
 
@@ -162,12 +192,18 @@ The actual transceiver blocks are instantiated in UTIL_ADXCVR.
      RX_CDR_CFG 0x03000023ff10400020 \
    ]
 
-Xilinx JESD204-PHY IP can be used as an alternative to implementing the physical layer, as it's part of Vivado without additional licensing. We don't currently provide software support for the Xilinx IP. The drawback when using the Xilinx IP is that it doesn't provide Eyescan functionality.
+Xilinx JESD204-PHY IP can be used as an alternative to implementing the physical
+layer, as it's part of Vivado without additional licensing. We don't currently
+provide software support for the Xilinx IP. The drawback when using the Xilinx
+IP is that it doesn't provide Eyescan functionality.
 
 Clocking
 ^^^^^^^^
 
-Reference clocks are needed to be feed to the QPLL/CPLL. In this design, we are using a shared reference clock for both receive and transmit channels. What is important to note is that the reference clocks for the transceiver QUAD must be connected to the MGTREFCLK pins either for the QUAD or an adjacent QUAD.
+Reference clocks are needed to be feed to the QPLL/CPLL. In this design, we are
+using a shared reference clock for both receive and transmit channels. What is
+important to note is that the reference clocks for the transceiver QUAD must be
+connected to the MGTREFCLK pins either for the QUAD or an adjacent QUAD.
 
 .. code:: tcl
 
@@ -181,7 +217,10 @@ Reference clocks are needed to be feed to the QPLL/CPLL. In this design, we are 
 Data Link Layer
 ~~~~~~~~~~~~~~~
 
-The JESD204 data link layer is instantiated in the next lines, for both TX and RX type of peripheral paths. The ADI AD-IP-JESD204 implements the data link layer, supporting subclass 0 and run time reconfiguration through an AXI memory mapped interface.
+The JESD204 data link layer is instantiated in the next lines, for both TX and
+RX type of peripheral paths. The ADI AD-IP-JESD204 implements the data link
+layer, supporting subclass 0 and run time reconfiguration through an AXI memory
+mapped interface.
 
 .. code:: tcl
 
@@ -191,7 +230,12 @@ The JESD204 data link layer is instantiated in the next lines, for both TX and R
 
 The IP is equivalent with the Xilinx licensed JESD204 IP.
 
-To relax the constraints for PCB design, the n-th physical lane it's not connected to the n-th logical lane, therefor there is a remapping scheme between the physical and link layer to reorder the data streams. In case of the FMCOMMS11 board, both ADC and DAC side using the same remapping scheme. With the following remapping scheme: {0 1 2 3 7 4 6 5}, where the n-th logical lane is mapped to the "list[n]" physical lane.
+To relax the constraints for PCB design, the n-th physical lane it's not
+connected to the n-th logical lane, therefor there is a remapping scheme between
+the physical and link layer to reorder the data streams. In case of the
+FMCOMMS11 board, both ADC and DAC side using the same remapping scheme. With the
+following remapping scheme: {0 1 2 3 7 4 6 5}, where the n-th logical lane is
+mapped to the "list[n]" physical lane.
 
 .. code:: tcl
 
@@ -201,7 +245,9 @@ To relax the constraints for PCB design, the n-th physical lane it's not connect
 Transport Layer
 ~~~~~~~~~~~~~~~
 
-The transport layer peripherals are responsible for converter specific data framing and de-framing and provide a generic FIFO interface to the rest of the system.
+The transport layer peripherals are responsible for converter specific data
+framing and de-framing and provide a generic FIFO interface to the rest of the
+system.
 
 .. code:: tcl
 
@@ -218,7 +264,10 @@ The transport layer peripherals are responsible for converter specific data fram
 JESD204 Connections
 ~~~~~~~~~~~~~~~~~~~
 
-When UTIL_ADXCVR is instantiated, the channel inside of the IP may be different than the hardware pin connection to lessen the layout burden. Because of this, the UTIL_ADXCVR IP will rearrange the inside channels so that they correspond to the outside pin connection for the RX path, keeping a common transport layer.
+When UTIL_ADXCVR is instantiated, the channel inside of the IP may be different
+than the hardware pin connection to lessen the layout burden. Because of this,
+the UTIL_ADXCVR IP will rearrange the inside channels so that they correspond to
+the outside pin connection for the RX path, keeping a common transport layer.
 
 .. code:: tcl
 
@@ -228,7 +277,13 @@ When UTIL_ADXCVR is instantiated, the channel inside of the IP may be different 
 Additional IPs
 ~~~~~~~~~~~~~~
 
-For a complete system, we use additional modules to transfer data. The transport layer transfers data continuously from/to the ADC/DAC. In the TX data path UPACK will only send the enabled channels to the DMA which in turn will transfer it to the system memory. Depending on system specifics, data offload FIFOs may be inserted between upack/cpack and the DMA. When a FIFO is used, the DMA connection to the DDR can run at a lower speed, as data capture cannot be done continuously.
+For a complete system, we use additional modules to transfer data. The transport
+layer transfers data continuously from/to the ADC/DAC. In the TX data path UPACK
+will only send the enabled channels to the DMA which in turn will transfer it to
+the system memory. Depending on system specifics, data offload FIFOs may be
+inserted between upack/cpack and the DMA. When a FIFO is used, the DMA
+connection to the DDR can run at a lower speed, as data capture cannot be done
+continuously.
 
 .. code:: tcl
 
@@ -319,7 +374,8 @@ Misc Connections
 CPU Address Allocation
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The below instructions assign addresses to all AXI modules in the design. These will be used when generating the device tree in linux.
+The below instructions assign addresses to all AXI modules in the design. These
+will be used when generating the device tree in linux.
 
 .. code:: tcl
 
@@ -335,7 +391,10 @@ The below instructions assign addresses to all AXI modules in the design. These 
 High Performance Port Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The below instructions assign an HP port to all AXI masters, through an interconnect. If there is a single master per interconnect, it will be bypassed in the interconnect. The HP3 connections allow the physical layer to transmit eyescan data to memory, without software interference.
+The below instructions assign an HP port to all AXI masters, through an
+interconnect. If there is a single master per interconnect, it will be bypassed
+in the interconnect. The HP3 connections allow the physical layer to transmit
+eyescan data to memory, without software interference.
 
 .. code:: tcl
 
@@ -384,7 +443,6 @@ As shown below, the transceiver channels are connected to the appropriate high s
 
 .. code:: tcl
 
-
    set_property  -dict {PACKAGE_PIN  AH10} [get_ports rx_data_p[0]]  ; ## C06  FMC_HPC_DP0_M2C_P
    set_property  -dict {PACKAGE_PIN  AH9 } [get_ports rx_data_n[0]]  ; ## C07  FMC_HPC_DP0_M2C_N
    set_property  -dict {PACKAGE_PIN  AJ8 } [get_ports rx_data_p[1]]  ; ## A02  FMC_HPC_DP1_M2C_P
@@ -419,7 +477,10 @@ As shown below, the transceiver channels are connected to the appropriate high s
    set_property  -dict {PACKAGE_PIN  AD2 } [get_ports tx_data_p[7]]  ; ## B32  FMC_HPC_DP7_C2M_P
    set_property  -dict {PACKAGE_PIN  AD1 } [get_ports tx_data_n[7]]  ; ## B33  FMC_HPC_DP7_C2M_N
 
-In default configuration the reference clocks run at 122.88 MHz, the RX core clock at 122.88MHz and TX core clock at 245.76MHz. See the block diagram above for detailed clock tree. The clock are slightly over constraint to 125 MHz and 250 MHz.
+In default configuration the reference clocks run at 122.88 MHz, the RX core
+clock at 122.88MHz and TX core clock at 245.76MHz. See the block diagram above
+for detailed clock tree. The clock are slightly over constraint to 125 MHz and
+250 MHz.
 
 .. code:: tcl
 
@@ -452,7 +513,6 @@ HDL Downloads
    -  :git-hdl:`FMCOMMS11 HDL project <projects/fmcomms11>`
    
 
-
 Support
 -------
 
@@ -463,7 +523,6 @@ Support
    
    -  :ez:`FPGA Reference Design <community/fpga>`
    
-
 
 References
 ----------
@@ -476,4 +535,3 @@ References
    -  :doc:`Using and modifying the HDL designs </wiki-migration/resources/fpga/docs/tips>`
    -  :doc:`Generic JESD204 block design </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`
    
-

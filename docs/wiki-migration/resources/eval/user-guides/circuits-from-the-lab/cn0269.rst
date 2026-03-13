@@ -6,10 +6,16 @@ Overview
 
 :adi:`CN-0269 <CN0287>` is a high performance industrial signal level multi-channel data acquisition circuit that can process 16-channels of single-ended inputs or 8-channels of differential inputs with up to 18-bit resolution.
 
-A single channel can be sampled at up to 1.33 MSPS with 18-bit resolution. A channel-to-channel switching rate of 250 kHz between all input channels provides 16-bit performance.
+A single channel can be sampled at up to 1.33 MSPS with 18-bit resolution. A
+channel-to-channel switching rate of 250 kHz between all input channels provides
+16-bit performance.
 
-The signal processing circuit combined with a simple 4-bit up-down binary counter provides a simple and cost effective way to realize channel-to-channel switching without an FPGA, CPLD or high speed processor. The counter can be programmed to count up or count down for sequentially sampling multiple channels, or can be loaded with a fixed binary word for sampling a single channel.
-
+The signal processing circuit combined with a simple 4-bit up-down binary
+counter provides a simple and cost effective way to realize channel-to-channel
+switching without an FPGA, CPLD or high speed processor. The counter can be
+programmed to count up or count down for sequentially sampling multiple
+channels, or can be loaded with a fixed binary word for sampling a single
+channel.
 
 | |image1|
 
@@ -51,7 +57,6 @@ Installing the Software
 
    \ NOTE: It is recommended that you install the `CN0269 SDP Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0269>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0269\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
    |image3|
 
 -  Click **Next** to view the installation review page.
@@ -66,8 +71,9 @@ Installing the Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image6|
 
@@ -78,7 +84,6 @@ Installing the Software
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image7|
 
@@ -112,11 +117,13 @@ Software Overview
 ^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269_sw_fp_label.png
-   :width: 700px
+   :width: 700
 
 -  **Connect Button**
 
-   -  When this button is pressed, the SDP-B Board makes a USB connection to the CN0272 Board. A connection to the SDP-B Board must be made to use the software.
+   -  When this button is pressed, the SDP-B Board makes a USB connection to the
+      CN0272 Board. A connection to the SDP-B Board must be made to use the
+      software.
 
 -  **Start Acquisition Button**
 
@@ -124,12 +131,14 @@ Software Overview
 
 -  **Save Data Button**
 
-   -  When this button is pressed, the SDP-B Board save the data into the same directory where the application is installed.
+   -  When this button is pressed, the SDP-B Board save the data into the same
+      directory where the application is installed.
 
 .. important::
 
-   \ NOTE: If the CN0269 SDP Evaluation Software is installed in the default directory, the data files could be found in C:\\Program files\\Analog Devices\\CN0269\\.
-
+   \ NOTE: If the CN0269 SDP Evaluation Software is installed in the default
+   directory, the data files could be found in C:\\Program files\\Analog
+   Devices\\CN0269\\.
 
 - **Control Tabs**
    -  *Configuration Tab*: All the configuration items through :adi:`EVAL-SDP-CB1Z <en/system-demonstration-platform/controller-boards/evaluation/SDP-B/eb.html>` Board to :adi:`EVAL-CN0269-SDPZ <CN0269>` board are organized on this tab. More details about **Configuration Tab** will be introduced in the following Section.
@@ -146,15 +155,19 @@ Software Overview
 
 -  **Hardware Configuration Diagram**
 
-   -  This picture block shows the way of hardware configuration in terms of jumper setting and signal connection according to the current configuration.
+   -  This picture block shows the way of hardware configuration in terms of
+      jumper setting and signal connection according to the current
+      configuration.
 
 -  **System Status String Indicator**
 
-   -  This indicator displays a message to the user detailing the current state of the software.
+   -  This indicator displays a message to the user detailing the current state
+      of the software.
 
 -  **System Status LED Indicator**
 
-   -  This indicator displays the current state of the software in the form of an LED. There are four status LED colors.
+   -  This indicator displays the current state of the software in the form of
+      an LED. There are four status LED colors.
       |image12| busy.
       |image13| error.
       |image14| inactive.
@@ -192,17 +205,20 @@ Configuration Tab
    -  *Scan Sequence Dropdown Menu*
 
       -  This control is shown on the **configuration tab** only when the **Acquisition Mode** is "All Channel Scan".
-      -  Customer could select the sequence of scan between "CH0~CH15"("CH0~CH7") or "CH15~CH0"("CH7~CH0").
+      -  Customer could select the sequence of scan between
+         "CH0~CH15"("CH0~CH7") or "CH15~CH0"("CH7~CH0").
 
    -  *Sample Rate/CH(Hz)*
 
       -  This control allows customer to configuration the sampling rate per channel.
-      -  The total sample rate is the [Sample Rate/CH(Hz)] X [active channel]. The total sampling rate can't exceed the 1MHz SPS.
+      -  The total sample rate is the [Sample Rate/CH(Hz)] X [active channel].
+         The total sampling rate can't exceed the 1MHz SPS.
 
    -  *Samples/CH*
 
       -  This control allows customer to set number of samples for each channel.
-      -  The total samples is the [Samples/CH] X [active channel]. The total samples can't exceed 1M.
+      -  The total samples is the [Samples/CH] X [active channel]. The total
+         samples can't exceed 1M.
 
    -  *Capture Mode Dropdown Menu*
 
@@ -219,7 +235,7 @@ Multi-Channel Tab
 ^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269_sw_mulch_label.png
-   :width: 700px
+   :width: 700
 
 -  **Multi-Channel Graph**
 
@@ -231,7 +247,8 @@ Multi-Channel Tab
 
 -  **Graph Controls**
 
-   -  These controls allow the user to zoom-in, zoom-out, and pan through the Snapshot displayed.
+   -  These controls allow the user to zoom-in, zoom-out, and pan through the
+      Snapshot displayed.
 
 -  **X,Y Scale Fit Setting**
 
@@ -248,7 +265,7 @@ Single Channel Tab
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269_sw_singlech_label.png
-   :width: 700px
+   :width: 700
 
 -  **Time Domain Sub Tab**
 
@@ -256,11 +273,13 @@ Single Channel Tab
 
 -  **Frequency Domain**
 
-   -  This Sub Tab shows the FFT plot of the signal from selected channel in frequency domain.
+   -  This Sub Tab shows the FFT plot of the signal from selected channel in
+      frequency domain.
 
 -  **Histogram**
 
-   -  This Sub Tab shows the distribution status in time domain for the selected channel.
+   -  This Sub Tab shows the distribution status in time domain for the selected
+      channel.
 
 -  **Dynamic Performance Analysis**
 
@@ -279,10 +298,10 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ NOTE: If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be
+   found at
 
    C:\\Program Files\\Analog Devices\\CN0269\\CN0269.exe\
-
 
 - Select the connector to use from the **SDP Connector Dropdown Menu**.
 -  Click the **Connect to SDP-B Board Button**. A window with a progress bar will load.
@@ -316,29 +335,28 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0269-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-symlified-schematic.png
-   :width: 900px
+   :width: 900
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0287_test_setup.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_setup_1.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_setup_2.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_setup_3.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_setup_4.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_setup_5.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_setup_6.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/signal_connection_1.png
-   :width: 800px
+   :width: 800
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/hardware_connection.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_info.png
-   :width: 300px
+   :width: 300
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-busy.png
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-error.png
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/cn0269-software-inactive.png

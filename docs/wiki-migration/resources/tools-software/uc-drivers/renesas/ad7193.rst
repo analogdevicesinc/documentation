@@ -1,7 +1,6 @@
 AD7193 - No-OS Driver for Renesas Microcontroller Platforms
 ===========================================================
 
-
 Supported devices
 =================
 
@@ -23,11 +22,21 @@ Evaluation Boards
 Overview
 ========
 
-The AD719X family is composed of a low noise, complete analog front end for high precision measurement applications. It contains a low noise, 24-bit sigma-delta (Σ-Δ) analog-to-digital converter (ADC). The on-chip low noise gain stage means that signals of small amplitude can interface directly to the ADC.
+The AD719X family is composed of a low noise, complete analog front end for high
+precision measurement applications. It contains a low noise, 24-bit sigma-delta
+(Σ-Δ) analog-to-digital converter (ADC). The on-chip low noise gain stage means
+that signals of small amplitude can interface directly to the ADC.
 
-The on-chip channel sequencer allows several channels to be enabled simultaneously, and the AD719X sequentially converts on each enabled channel, simplifying communication with the part. The on-chip 4.92 MHz clock can be used as the clock source to the ADC or, alternatively, an external clock or crystal can be used. The output data rate from the part can be varied from 4.7 Hz to 4.8 kHz.
+The on-chip channel sequencer allows several channels to be enabled
+simultaneously, and the AD719X sequentially converts on each enabled channel,
+simplifying communication with the part. The on-chip 4.92 MHz clock can be used
+as the clock source to the ADC or, alternatively, an external clock or crystal
+can be used. The output data rate from the part can be varied from 4.7 Hz to 4.8
+kHz.
 
-The device has a very flexible digital filter, including a fast settling option. Variables such as output data rate and settling time are dependent on the option selected. The AD7193 also includes a zero latency option.
+The device has a very flexible digital filter, including a fast settling option.
+Variables such as output data rate and settling time are dependent on the option
+selected. The AD7193 also includes a zero latency option.
 
 :adi:`AD7190` operates with 5 V analog power supply and a digital power supply from 2.7 V to 5.25 V. It consumes a current of 6 mA. It is housed in a 24-lead TSSOP package.
 
@@ -54,7 +63,7 @@ Applications
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7192-fbl.png
    :align: center
-   :width: 400px
+   :width: 400
 
 ADI No-OS
 =========
@@ -76,8 +85,9 @@ The source code for AD719X driver can be found here:
    -  :git-no-OS:`Implementation of AD719X Driver <drivers/adc/ad719x/ad719x.c>`
    
 
-
-The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
+The driver also uses the ADI util library, so make sure you also add the
+necessary files in your project. The source code for the util library can be
+found here:
 
 .. admonition:: Download
    :class: download
@@ -87,16 +97,19 @@ The driver also uses the ADI util library, so make sure you also add the necessa
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
-
 The driver contains three parts:
 
 -  The driver for the AD719X part, which may be used, without modifications, with any microcontroller.
 -  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
--  The GPIO Driver, where the specific GPIO functions for the desired type of processor have to be implemented. This driver lets the device know when the conversions are ready, hiding the actual details of the GPIO ADI driver.
+-  The GPIO Driver, where the specific GPIO functions for the desired type of
+   processor have to be implemented. This driver lets the device know when the
+   conversions are ready, hiding the actual details of the GPIO ADI driver.
 
-The Communication and GPIO drivers have a standard interface, so the AD719X driver can be used exactly as it is provided.
+The Communication and GPIO drivers have a standard interface, so the AD719X
+driver can be used exactly as it is provided.
 
-For SPI Communication there are three functions which are called by the AD719X driver:
+For SPI Communication there are three functions which are called by the AD719X
+driver:
 
 -  no_os_spi_init() – Initializes the communication peripheral.
 -  no_os_spi_write_and_read() - Reads and writes data from/to device.
@@ -104,14 +117,14 @@ For SPI Communication there are three functions which are called by the AD719X d
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/no_os_spi_architecture.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    SPI driver architecture
 
-
-For GPIO control there are seven functions which are called by the AD719X driver:
+For GPIO control there are seven functions which are called by the AD719X
+driver:
 
 -  no_os_gpio_get() – Initializes GPIO peripheral.
 -  no_os_gpio_get_optional() - Initializes optional GPIO peripheral.
@@ -126,12 +139,14 @@ For SPI and GPIO usage there are four data types that have to be defined:
 -  no_os_spi_desc - structure holding the SPI descriptor
 -  no_os_spi_init_param - structure holding the parameters for SPI initialization
 -  no_os_gpio_desc - structure holding the GPIO descriptor
--  no_os_gpio_init_param - structure holding the parameters for GPIO initialization
+-  no_os_gpio_init_param - structure holding the parameters for GPIO
+   initialization
 
 AD719X Driver Code Documentation
 --------------------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available below:
 
 -  `AD719X Header file <http://analogdevicesinc.github.io/no-OS/ad719x_8h.html>`_
 -  `AD719X Source file <http://analogdevicesinc.github.io/no-OS/ad719x_8c.html>`_
@@ -174,7 +189,8 @@ By calling **ad719x_clock_select**, driver sets the clock source for the ADC. Ac
 -  AD719X_EXT_CRYSTAL_MCLK1_MCLK2 - External crystal. The external crystal is connected from MCLK1 to MCLK2.
 -  AD719X_EXT_CRYSTAL_MCLK2 - External Clock applied to MCLK2.
 -  AD719X_INT_CLK_4_92_MHZ_TRIST - Internal 4.92 MHz clock. Pin MCLK2 is tristated.
--  AD719X_INT_CLK_4_92_MHZ - Internal 4.92 MHz clock. The internal clock is available on MCLK2.
+-  AD719X_INT_CLK_4_92_MHZ - Internal 4.92 MHz clock. The internal clock is
+   available on MCLK2.
 
 Bridge Switch Configuration
 ---------------------------
@@ -282,8 +298,6 @@ AD719X Driver Initialization Example on Xilinx Platform
    if(ret)
        return FAILURE;
 
-
-
 **HW Platform(s):**
 
 -  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
@@ -304,11 +318,11 @@ Downloads
    -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
-
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD7193 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD7193
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -324,17 +338,17 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodAD5 has to be connected to the PMOD1 connector, pins 1 to 6 (see image below).
-
+A PmodAD5 has to be connected to the PMOD1 connector, pins 1 to 6 (see image
+below).
 
 |image1|
 
 .. important::
 
    
-   -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD5 must be removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.25V
+   -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD5 must be removed. The range
+      for AVDD is 3.0V ≤ AVDD ≤ 5.25V
    
-
 
 Reference Project Overview
 --------------------------
@@ -345,25 +359,25 @@ The reference project:
 -  configures the AD7193 part for differential input on CH0(AIN1-AIN2);
 -  first reads data from a single conversion and displays it;
 -  then reads data from multiple conversions, calculates the average value and displays it;
--  in the end reads data from the temperature sensor and displays it in degrees Celsius.
+-  in the end reads data from the temperature sensor and displays it in degrees
+   Celsius.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad5_rl78g13_screen.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 Software Project Setup
 ----------------------
-
 
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 Renesas RL78G14 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD7193 demonstration project on a Renesas RL78G14 platform using the PmodAD5.
+This section contains a description of the steps required to run the AD7193
+demonstration project on a Renesas RL78G14 platform using the PmodAD5.
 
 Required Hardware
 -----------------
@@ -379,26 +393,27 @@ Required Software
 
 .. note::
 
-   The AD7193 demonstration project for the Renesas RL78G14 platform consists of three parts: the AD7193 Driver, the PmodAD5 Demo for RL78G14 and the RL78G14 Common Drivers.
+   The AD7193 demonstration project for the Renesas RL78G14 platform consists of
+   three parts: the AD7193 Driver, the PmodAD5 Demo for RL78G14 and the RL78G14
+   Common Drivers.
 
    
    All three parts have to be downloaded.
 
-
 Hardware Setup
 --------------
 
-A PmodAD5 has to be connected to the PMOD1 connector, pins 1 to 6 (see image below).
-
+A PmodAD5 has to be connected to the PMOD1 connector, pins 1 to 6 (see image
+below).
 
 |image2|
 
 .. important::
 
    
-   -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD5 must be removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.25V
+   -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD5 must be removed. The range
+      for AVDD is 3.0V ≤ AVDD ≤ 5.25V
    
-
 
 Reference Project Overview
 --------------------------
@@ -409,7 +424,8 @@ The reference project:
 -  configures the AD7193 part for differential input on CH0(AIN1-AIN2);
 -  first reads data from a single conversion and displays it;
 -  then reads data from multiple conversions, calculates the average value and displays it;
--  in the end reads data from the temperature sensor and displays it in degrees Celsius.
+-  in the end reads data from the temperature sensor and displays it in degrees
+   Celsius.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad5_rl78g14_screen.jpg
    :align: center
@@ -417,16 +433,15 @@ The reference project:
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`_
 
-
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the AD7193 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the AD7193
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -443,7 +458,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodAD5 has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+A PmodAD5 has to be interfaced with the Renesas Demonstration Kit (RDK) for
+RX62N:
 
 ::
 
@@ -473,15 +489,12 @@ The reference project:
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
@@ -489,8 +502,6 @@ More information
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad5_rl78g13.jpg
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad5_rl78g14.jpg

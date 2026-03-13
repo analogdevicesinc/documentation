@@ -11,14 +11,12 @@ libIIO and the new mainline module gr-iio
 
 `Abstract <https://events.gnuradio.org/event/8/contributions/62/>`_
 
-
 |youtube>Qx8uFhumgGM|
 
 gr-genalyzer, a new OOT module to characterize data converter performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Abstract <https://events.gnuradio.org/event/8/contributions/30/>`_
-
 
 |youtube>ef30VPIx-LM|
 
@@ -27,14 +25,12 @@ A new Linux kernel subsystem for JESD204 RF Transceiver Systems
 
 `Abstract <https://events.gnuradio.org/event/8/contributions/63/>`_
 
-
 |youtube>2s940fttDco|
 
 Implementing OFDM Radar & DOA on DirectRF Platforms using IIO and GNURadio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Abstract <https://events.gnuradio.org/event/8/contributions/130/>`_
-
 
 |youtube>BaRgx5ehdOw|
 
@@ -43,13 +39,15 @@ pyadi-jif: JESD204 tools for mere mortals
 
 `Abstract <https://events.gnuradio.org/event/8/contributions/61/>`_
 
-
 |youtube>BaRgx5ehdOw|
 
 Workshop
 ~~~~~~~~
 
-For those attending the PlutoSDR workshop at GRCon 2021, hosted by ADI, thanks. In order to make your experience better (less installing software while others are using the hardware) please have the following software installed on your machine:
+For those attending the PlutoSDR workshop at GRCon 2021, hosted by ADI, thanks.
+In order to make your experience better (less installing software while others
+are using the hardware) please have the following software installed on your
+machine:
 
 -  **libIIO library:**
 

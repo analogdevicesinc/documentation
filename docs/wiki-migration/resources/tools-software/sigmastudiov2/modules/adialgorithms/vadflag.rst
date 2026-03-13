@@ -9,7 +9,9 @@ Voice Activity Detector Flag
 Description
 -----------
 
-VAD Flag takes the Modulation Index and compares it to a threshold value. If the threshold value is met for the designated amount of time, the output flag is set high, otherwise it is low.
+VAD Flag takes the Modulation Index and compares it to a threshold value. If the
+threshold value is met for the designated amount of time, the output flag is set
+high, otherwise it is low.
 
 Targets Supported
 -----------------
@@ -19,7 +21,6 @@ Name     ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ======== ========== ================ ============= ================
 VAD Flag NA         NA               S             NA
 ======== ========== ================ ============= ================
-
 
 | ===== Pins =====
 

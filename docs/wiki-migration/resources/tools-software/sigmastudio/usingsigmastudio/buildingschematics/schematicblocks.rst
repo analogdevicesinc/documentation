@@ -3,14 +3,18 @@ Schematic Blocks
 
 :doc:`Click here to return to the Building Schematics page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics>`
 
-Schematic Blocks are used to build a SigmaStudio design. The blocks available for each processor are displayed in the ToolBox and Tree ToolBox windows and can be dragged and dropped into the schematic.
+Schematic Blocks are used to build a SigmaStudio design. The blocks available
+for each processor are displayed in the ToolBox and Tree ToolBox windows and can
+be dragged and dropped into the schematic.
 
 --------------
 
 Pins:
 -----
 
-Each schematic block can contains one or more pins used to connect the blocks together. Pins are used to route audio and control data in the schematic flow. There are 3 different types of pins:
+Each schematic block can contains one or more pins used to connect the blocks
+together. Pins are used to route audio and control data in the schematic flow.
+There are 3 different types of pins:
 
 -  Input Pin (Green)
 -  Output Pin (Blue)
@@ -22,10 +26,13 @@ Each schematic block can contains one or more pins used to connect the blocks to
 
 .. hint::
 
-   Note: Input pins can only connect to Output pins and Output pins can only connect to Input pins. Typically, control data pins are only connected to other control data pins, but it is possible to connect an audio data pin to a control data pin and a control data pin to an audio data pin when necessary.
+   Note: Input pins can only connect to Output pins and Output pins can only
+   connect to Input pins. Typically, control data pins are only connected to
+   other control data pins, but it is possible to connect an audio data pin to a
+   control data pin and a control data pin to an audio data pin when necessary.
 
-
-Hover over a block's pin with the cursor to display the pin's tool-tip which includes the pin number, unique name, and signal data type.
+Hover over a block's pin with the cursor to display the pin's tool-tip which
+includes the pin number, unique name, and signal data type.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/schemblockpic2.png
    :alt: schemblockpic2.png
@@ -43,7 +50,10 @@ Each block represents one or more algorithms. You can add algorithms to blocks o
 Naming:
 -------
 
-To change the name of a block, double click on the block label and type a new name. Note that within each hierarchy board all block names must be unique. You will see an error dialog if you attempt to use a name that is already present in the current window.
+To change the name of a block, double click on the block label and type a new
+name. Note that within each hierarchy board all block names must be unique. You
+will see an error dialog if you attempt to use a name that is already present in
+the current window.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/schemblockpic3.png
    :alt: schemblockpic3.png
@@ -99,7 +109,12 @@ Blocks can contain a variety of controls for editing algorithm parameters.
 Spin Controls:
 ~~~~~~~~~~~~~~
 
-Spin controls allow you to change values either by entering the value directly in the edit-box or by clicking the left/right or up/down arrows. You can left-click and hold an arrow to make large adjustments or click-hold-drag to increase the rate of change. A grey control (for example the top control show below) means the control is disabled and the value cannot be changed for the current algorithm.
+Spin controls allow you to change values either by entering the value directly
+in the edit-box or by clicking the left/right or up/down arrows. You can
+left-click and hold an arrow to make large adjustments or click-hold-drag to
+increase the rate of change. A grey control (for example the top control show
+below) means the control is disabled and the value cannot be changed for the
+current algorithm.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/schemblockpic7.png
    :alt: schemblockpic7.png
@@ -108,7 +123,11 @@ Spin controls allow you to change values either by entering the value directly i
 Knobs & Sliders:
 ~~~~~~~~~~~~~~~~
 
-To change the value of knobs or slider control, click and hold the left mouse button on the control and drag to adjust the value. You can also change the knob or slider control's value, range, and step size. To modify the knob or slider settings, right-click on the control which displays the control pop-up window (shown below).
+To change the value of knobs or slider control, click and hold the left mouse
+button on the control and drag to adjust the value. You can also change the knob
+or slider control's value, range, and step size. To modify the knob or slider
+settings, right-click on the control which displays the control pop-up window
+(shown below).
 
 -  **Value** Set the control's value.
 -  **Min/Max** Adjust the control's value range (within the limits of the block's algorithm).

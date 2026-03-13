@@ -11,25 +11,40 @@ Example projects can be downloaded from :doc:`Tutorials and Examples </wiki-migr
 Load and Execute Target Application (ADSP-214xx / ADSP-215xx / ADSP-SC5xx)
 --------------------------------------------------------------------------
 
-Target application must be loaded on to the evaluation platform before executing the example applications on ADSP-214xx, ADSP-215xx and ADSP-SC5xx platforms. There are two options to load the application on the target platform.
+Target application must be loaded on to the evaluation platform before executing
+the example applications on ADSP-214xx, ADSP-215xx and ADSP-SC5xx platforms.
+There are two options to load the application on the target platform.
 
 `flash_the_loader_file <https://wiki.analog.com/flash_the_loader_file>`_
 
-The first option is to program the flash on the target platform with the application loader(.ldr) file. Once flashed, application will be booted from the flash every time the target platform is reset.
+The first option is to program the flash on the target platform with the
+application loader(.ldr) file. Once flashed, application will be booted from the
+flash every time the target platform is reset.
 
 .. note::
 
-   Target framework and application don't support redownload of schematic once downloaded on to the running target application in case if there are any changes to FW configuration, block size change, FS change and mem map changes in the schematic or when adding or deleting modules that affect memory mapping during compilation. The target application should rerun by resetting the target platform to download the schematic again.
-
+   Target framework and application don't support redownload of schematic once
+   downloaded on to the running target application in case if there are any
+   changes to FW configuration, block size change, FS change and mem map changes
+   in the schematic or when adding or deleting modules that affect memory
+   mapping during compilation. The target application should rerun by resetting
+   the target platform to download the schematic again.
 
 `load_executable_using_cces <https://wiki.analog.com/load_executable_using_cces>`_
 
-Second option is to use CrossCore Embedded Studio and load the application DXEs for each of the cores through a debug session using debug agent (ICE-1000/ICE-2000). This process should be repeated after every target reset for running the target application.
+Second option is to use CrossCore Embedded Studio and load the application DXEs
+for each of the cores through a debug session using debug agent
+(ICE-1000/ICE-2000). This process should be repeated after every target reset
+for running the target application.
 
 .. note::
 
-   Target framework and application don't support redownload of schematic once downloaded on to the running target application in case if there are any changes to FW configuration, block size change, FS change and mem map changes in the schematic or when adding or deleting modules that affect memory mapping during compilation. The target application should rerun by resetting the target platform to download the schematic again.
-
+   Target framework and application don't support redownload of schematic once
+   downloaded on to the running target application in case if there are any
+   changes to FW configuration, block size change, FS change and mem map changes
+   in the schematic or when adding or deleting modules that affect memory
+   mapping during compilation. The target application should rerun by resetting
+   the target platform to download the schematic again.
 
 Download and Tune using SigmaStudio+
 ------------------------------------
@@ -48,4 +63,3 @@ Refer to :doc:`Target Integration </wiki-migration/resources/tools-software/sigm
 .. note::
 
    Target framework and application is for ADSP-214xx, ADSP-215xx and ADSP-SC5xx
-

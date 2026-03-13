@@ -37,7 +37,8 @@ The labs are generally written to be performed using just the components provide
 General Lab materials
 ~~~~~~~~~~~~~~~~~~~~~
 
-Many of the power electronics labs require some additional equipment beyond the M1K, M2K, and parts kit.
+Many of the power electronics labs require some additional equipment beyond the
+M1K, M2K, and parts kit.
 
 -  An adjustable bench top power supply with constant voltage / constant current / current limit operation.
 -  An adjustable electronic load and / or various power resistors mounted to heat sinks.
@@ -84,7 +85,6 @@ Many of the power electronics labs require some additional equipment beyond the 
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | Electronic Circuit Breakers        | :doc:`Electronic Circuit Breakers </wiki-migration/university/courses/alm1k/alm-circuit-breaker>`                     |                                                                                                                              |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-
 
 General background Information.
 ===============================

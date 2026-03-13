@@ -1,24 +1,35 @@
 Self Reception on the ADALM-PLUTO
 =================================
 
-Everyone has sung to a song on the radio, and it sounds great, as long as the radio is loud enough to drown out your terrible voice (or is that just me?). This is a phenomenon known as self reception - when the signal you want to receive is being overloaded by something else.
+Everyone has sung to a song on the radio, and it sounds great, as long as the
+radio is loud enough to drown out your terrible voice (or is that just me?).
+This is a phenomenon known as self reception - when the signal you want to
+receive is being overloaded by something else.
 
-The ADALM-PLUTO can do this too if you are not careful. The device will have Tx LO Leakage, and the receiver will pick that up and may swamp out the signal you desire to actually receive.
+The ADALM-PLUTO can do this too if you are not careful. The device will have Tx
+LO Leakage, and the receiver will pick that up and may swamp out the signal you
+desire to actually receive.
 
 Tx On, and sending a signal
 ---------------------------
 
-It's easy to see this with offset tuning. Here is the ADALM-PLUTO with the Rx set to 2400 MHZ, and the Tx set to 2402 MHz, with the internal DDS, set to 3 MHz, and -30dB down (which would put things at 2405 MHz), with the default antennas connected, and the LTE20 Filters loaded.
+It's easy to see this with offset tuning. Here is the ADALM-PLUTO with the Rx
+set to 2400 MHZ, and the Tx set to 2402 MHz, with the internal DDS, set to 3
+MHz, and -30dB down (which would put things at 2405 MHz), with the default
+antennas connected, and the LTE20 Filters loaded.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/tx_lo_dds.png
    :align: center
-   :width: 600px
+   :width: 600
 
-This shows the peak at the signal (at 2405 MHz, where we expect it), and a LO leakage at 2402 MHz. It's difficult to see what this really means in terms of signal power, so we can look at the actual gain is set to by the Automatic Gain Control (AGC), and the Receive Signal Strength Indicator (RSSI).
+This shows the peak at the signal (at 2405 MHz, where we expect it), and a LO
+leakage at 2402 MHz. It's difficult to see what this really means in terms of
+signal power, so we can look at the actual gain is set to by the Automatic Gain
+Control (AGC), and the Receive Signal Strength Indicator (RSSI).
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/tx_lo_dds_rx1.png
    :align: center
-   :width: 200px
+   :width: 200
 
 We can see the RSSI is 66.25 dB, and the Hardware Gain is set to 43 dB.
 
@@ -29,13 +40,15 @@ If we simply disable the DSS, this is what we see:
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/tx_lo_leakage.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/tx_lo_leakage_rx1.png
    :align: center
-   :width: 200px
+   :width: 200
 
-Now our RSSI has gone to 90.5 dB and the hardware gain is set to 68 dB (which is still not at the max gain of the device), we are listening to our own LO leakage, not the actual RF signal.
+Now our RSSI has gone to 90.5 dB and the hardware gain is set to 68 dB (which is
+still not at the max gain of the device), we are listening to our own LO
+leakage, not the actual RF signal.
 
 Tx Off
 ------
@@ -72,11 +85,14 @@ Then we get:
 Tx On, but offset more than your channel
 ----------------------------------------
 
-If we shift things around a bit - if we configure things for an LTE10 signal, (LTE10 filter, with an LTE10 signal going out the DAC at full scale), and set the Tx and Rx to the same (2400 MHz), we can see this:
+If we shift things around a bit - if we configure things for an LTE10 signal,
+(LTE10 filter, with an LTE10 signal going out the DAC at full scale), and set
+the Tx and Rx to the same (2400 MHz), we can see this:
 
 |image3| |image4|
 
-By offsetting things in 10 MHz steps, how far do things need to be away, so that it stops affecting the receiver:
+By offsetting things in 10 MHz steps, how far do things need to be away, so that
+it stops affecting the receiver:
 
 +----------+----------+----------+-----------+-----------+-----------+-----------+----------+
 | offset   | 0 MHz    | 10 MHz   | 20 MHz    | 30 MHz    | 40 MHz    | 50 MHz    | 60 MHz   |
@@ -86,12 +102,16 @@ By offsetting things in 10 MHz steps, how far do things need to be away, so that
 | ACG Gain | 25 dB    | 32 dB    | 59 dB     | 62 dB     | 67 dB     | 69 dB     | 71 dB    |
 +----------+----------+----------+-----------+-----------+-----------+-----------+----------+
 
-This doesn't mean that you can't transmit/receive on adjacent channels, it just means that the receiver noise floor will not be higher and therefore the receiver will not appear as sensitive when you are doing this.
+This doesn't mean that you can't transmit/receive on adjacent channels, it just
+means that the receiver noise floor will not be higher and therefore the
+receiver will not appear as sensitive when you are doing this.
 
 Conclusion
 ----------
 
-If you aren't using the transmitter - turn it off, your receiver noise floor will decrease, increasing your receive sensitivity, allowing you to pick up smaller signals from the air.
+If you aren't using the transmitter - turn it off, your receiver noise floor
+will decrease, increasing your receive sensitivity, allowing you to pick up
+smaller signals from the air.
 
 ===================== ========= ===========
 Test Case             RSSI      AGC Setting
@@ -102,10 +122,10 @@ Tx Off                113.75 dB 71 dB
 ===================== ========= ===========
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/tx_lo_off.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/tx_lo_off_rx1.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/tx_lo_lte10.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/tx_lo_lte10_rx1.png
-   :width: 200px
+   :width: 200

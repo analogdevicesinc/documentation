@@ -28,7 +28,13 @@ Overview
 
 The :adi:`MAX5380`/MAX5381/MAX5382 are low-cost, 8-bit digital-to-analog converters (DACs) in miniature 5-pin SOT23 packages, with a simple 2-wire serial interface that allows communication with multiple devices. The MAX5380 has an internal +2V reference and operates from a +2.7V to +3.6V supply. The MAX5381 has an internal +4V reference and operates from a +4.5V to +5.5V supply. The MAX5382 operates over the full +2.7V to +5.5V supply range and has an internal reference equal to 0.9 x VDD.
 
-The fast-mode I2C\*-compatible serial interface allows communication at data rates up to 400kbps, minimizing board space and reducing interconnect complexity in many applications. Each device is available with one of four factory-preset addresses. These DACs also include an output buffer, a low-power shutdown mode, and a power-on reset that ensures the DAC outputs are at zero when power is initially applied. In shutdown mode, supply current is reduced to less than 1µA and the output is pulled down to GND with a 10kΩ resistor.
+The fast-mode I2C\*-compatible serial interface allows communication at data
+rates up to 400kbps, minimizing board space and reducing interconnect complexity
+in many applications. Each device is available with one of four factory-preset
+addresses. These DACs also include an output buffer, a low-power shutdown mode,
+and a power-on reset that ensures the DAC outputs are at zero when power is
+initially applied. In shutdown mode, supply current is reduced to less than 1µA
+and the output is pulled down to GND with a 10kΩ resistor.
 
 Applications
 ------------
@@ -65,8 +71,9 @@ The source code for MAX5380 driver can be found here:
    -  :git-no-OS:`Implementation of MAX5380 Driver <drivers/dac/max538x/max538x.c>`
    
 
-
-This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the util library can be found here:
+This driver also uses the ADI utility library, so make sure you also add the
+necessary files to your project. The source code for the util library can be
+found here:
 
 .. admonition:: Download
    :class: download
@@ -76,16 +83,19 @@ This driver also uses the ADI utility library, so make sure you also add the nec
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
-
 Driver Description
 ------------------
 
 The driver contains two parts:
 
 -  The driver for the MAX5380 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the MAX5380 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the MAX5380 driver can be
+used exactly as it is provided.
 
 .. container:: center box
 
@@ -97,8 +107,9 @@ The Communication Driver has a standard interface, so the MAX5380 driver can be 
    ===================== ===========================================
    
 
-
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using, can
+be found below:
 
 .. admonition:: Download
    :class: download
@@ -107,11 +118,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
 
-
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and can be accessed in these links:
 
 .. admonition:: Download
    :class: download
@@ -121,14 +132,14 @@ Source code documentation for the driver is automatically generated using the Do
    -  `MAX5380 Source file <http://analogdevicesinc.github.io/no-OS/max538x_8c.html>`_
    
 
-
 Device Configuration
 --------------------
 
 Driver Initialization
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use the device, you need to provide the support for the communication protocol (I2C) as mentioned above.
+To use the device, you need to provide the support for the communication
+protocol (I2C) as mentioned above.
 
 Make sure that **max538x_init** returns 0. This indicates a successful driver initialization.
 
@@ -192,4 +203,4 @@ Example Initialization Using Maxim SDK as Platform
        }// end while
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max9611pmb1.jpg
-   :width: 400px
+   :width: 400

@@ -3,7 +3,7 @@ ADRV9364-Z7020 System on Module (SOM) SDR
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed-sdr-1x1som/aes-z7pz-sdr1-g-front.jpg
    :align: right
-   :width: 400px
+   :width: 400
 
 The :adi:`ADRV9364 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/wideband-transceivers-ic/adrv9364.html#product-samplebuy>` is built on a portfolio of highly integrated System-On-Module (SOMs) based on the Xilinx Zynq®-7000 All Programmable (AP)SoC. Built on the AD9364, it is schematically & HDL similar to the `ad-fmcomms4-ebz <https://wiki.analog.com/ad-fmcomms4-ebz>`_.
 
@@ -98,6 +98,4 @@ Table of Contents
 Warning
 -------
 
-
 .. esd-warning::
-

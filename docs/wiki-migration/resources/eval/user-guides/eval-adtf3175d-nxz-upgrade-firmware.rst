@@ -3,8 +3,8 @@ EVAL-ADTF3175D-NXZ NVM upgrade guide
 
 .. important::
 
-   From Version 5.0.0 the IP address has change to 10.43.0.1. Pre-5.0.0 releases the IP address is 10.42.0.1.
-
+   From Version 5.0.0 the IP address has change to 10.43.0.1. Pre-5.0.0 releases
+   the IP address is 10.42.0.1.
 
 The ADSD3500 self boots from the NVM on the ADTF3175 module, and the host (IMX8M Plus) has no access. Therefore the host must communicate through the ADSD3500 to modify the contents of the NVM, which is typically required for upgrades. The :doc:`DataCollect CLI </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>` allows the user to achieve this.
 
@@ -39,12 +39,14 @@ For example, with release 6.0.1 on Windows:
 
 -  If the flash sequence finishes, **wait 60s**
 -  power cycle the module
--  Run the GUI and check if the the ADSD3500 FW version has updated - 'Current adsd3500 firmware version is: X.X.X.X'
+-  Run the GUI and check if the the ADSD3500 FW version has updated - 'Current
+   adsd3500 firmware version is: X.X.X.X'
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175d-nxz/adi-tof-firmware-update-3.png
    :align: center
 
--  If the version number has not updated please check the NXP based option to update the firmware. There is a possibility that your PC's network security
+-  If the version number has not updated please check the NXP based option to
+   update the firmware. There is a possibility that your PC's network security
 
 -  **Wait 60 seconds**
 -  Power cycle camera

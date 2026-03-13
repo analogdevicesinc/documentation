@@ -56,7 +56,13 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The running average block takes the envelope of the input signal based on a running average. The absolute value of the input signal is taken and then filtered to get an averaged level. The RMS TC, hold, and decay time constants affect how the averaging is computed. RMS TC mainly affects the attack rise of the signal and decay affects the release of the signal. The hold time holds the previous envelope value for the amount of time before reacting to a new input signal level change.
+The running average block takes the envelope of the input signal based on a
+running average. The absolute value of the input signal is taken and then
+filtered to get an averaged level. The RMS TC, hold, and decay time constants
+affect how the averaging is computed. RMS TC mainly affects the attack rise of
+the signal and decay affects the release of the signal. The hold time holds the
+previous envelope value for the amount of time before reacting to a new input
+signal level change.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/runningpic2.png
    :alt: runningpic2.png

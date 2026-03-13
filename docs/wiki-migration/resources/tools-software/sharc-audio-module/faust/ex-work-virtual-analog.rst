@@ -1,7 +1,8 @@
 MIDI Virtual Analog Synth (Core1) /Effects (Core 2)
 ===================================================
 
-For this final example the full virtual analog synth is run on Core1 and the effects chain is run on Core 2.
+For this final example the full virtual analog synth is run on Core1 and the
+effects chain is run on Core 2.
 
 .. important::
 
@@ -13,7 +14,6 @@ For this final example the full virtual analog synth is run on Core1 and the eff
       #define USE_FAUST_ALGORITHM_CORE2 TRUE
    
 
-
 The Faust Code
 --------------
 
@@ -22,17 +22,19 @@ Virtual Analog Synth (Core 1)
 
 Multiple `examples <https://github.com/moforte/sam-faust/tree/master/faust-examples>`_ for the SHARC audio module have been put together and hosted on github. In order to successfully run this example, please clone this repository.
 
-For this particular example workflow, we will be looking at the virtualAnalog example from the git repository.
-
+For this particular example workflow, we will be looking at the virtualAnalog
+example from the git repository.
 
 |image1|
 
 -  Open the Faust `online editor <https://faust.grame.fr/editor>`_.
 -  You can copy the contents into the editor 2 different ways
 
-   -  Name the \*.dsp file virtualAnalogForBrowser.dsp. and copy the contents of virtualAnalogForBrowser.dsp into the online editor.
+   -  Name the \*.dsp file virtualAnalogForBrowser.dsp. and copy the contents of
+      virtualAnalogForBrowser.dsp into the online editor.
 
-      -  Drag the virtualAnalogForBrowser.dsp file into the tile bar of the editor
+      -  Drag the virtualAnalogForBrowser.dsp file into the tile bar of the
+         editor
 
 -  Compile and run the Faust program using the |image2| button
 
@@ -40,30 +42,30 @@ For this particular example workflow, we will be looking at the virtualAnalog ex
 
    Note this may take about a minute to compile and run
 
-
 Effects Chain (Core 2)
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Multiple `examples <https://github.com/moforte/sam-faust/tree/master/faust-examples>`_ for the SHARC audio module have been put together and hosted on github. In order to successfully run this example, please clone this repository.
 
-For this particular example workflow, we will be looking at the virtualAnalog example from the git repository.
-
+For this particular example workflow, we will be looking at the virtualAnalog
+example from the git repository.
 
 |image3|
 
 -  Open the Faust `online editor <https://faust.grame.fr/editor>`_.
 -  You can copy the contents into the editor 2 different ways
 
-   -  Name the \*.dsp file virtualAnalogWithEffectsForBrowser.dsp. and copy the contents of virtualAnalogWithEffectsForBrowser.dsp into the online editor.
+   -  Name the \*.dsp file virtualAnalogWithEffectsForBrowser.dsp. and copy the
+      contents of virtualAnalogWithEffectsForBrowser.dsp into the online editor.
 
-      -  Drag the virtualAnalogWithEffectsForBrowser.dsp file into the tile bar of the editor
+      -  Drag the virtualAnalogWithEffectsForBrowser.dsp file into the tile bar
+         of the editor
 
 -  Compile and run the Faust program using the |image4| button
 
 .. note::
 
    Note this may take about a minute to compile and run
-
 
 Looking at the Block Diagram
 ----------------------------
@@ -75,22 +77,22 @@ The block diagram button |image5| can be used to generate a hierarchical block d
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust//faust19.png
    :alt: /faust19.png
-   :width: 576px
+   :width: 576
    :height: 189px
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust//faust20.png
    :alt: /faust20.png
-   :width: 312px
+   :width: 312
    :height: 166px
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust//faust21.png
    :alt: /faust21.png
-   :width: 576px
+   :width: 576
    :height: 112px
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust//faust22.png
    :alt: /faust22.png
-   :width: 572px
+   :width: 572
    :height: 173px
 
 Effects Chain
@@ -100,36 +102,37 @@ The block diagram button |image6| can be used to generate a hierarchical block d
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust//faust26.png
    :alt: /faust26.png
-   :width: 574px
+   :width: 574
    :height: 124px
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust//faust27.png
    :alt: /faust27.png
-   :width: 574px
+   :width: 574
    :height: 208px
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust//faust28.png
    :alt: /faust28.png
-   :width: 576px
+   :width: 576
    :height: 206px
 
 Creating Files for use with the Baremetal Framework
 ---------------------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/effects2.gif
-   :width: 600px
+   :width: 600
 
 -  Click the ``Export/compile to a specific platform`` button
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
-   :width: 50px
+   :width: 50
 
 -  In the first dropdown box, choose ``sam``
 -  In the second dropdown box, choose ``sam-source-poly-1``\ (core 1) or ``sam-source-midi``\ (core 2) and then Export:
 
 .. note::
 
-   \ faust2sam will generate the following three C++ source files, which is the algorithm.
+   \ faust2sam will generate the following three C++ source files, which is the
+   algorithm.
 
    
    -  ``fast_pow2.h``
@@ -137,14 +140,16 @@ Creating Files for use with the Baremetal Framework
    -  ``samFaustDSP.h``
    
 
-
 -  Click on the QR code that shows to download the files
--  These 3 source files can be copied to the Faust directory in the CCES framework. The framework can then be compiled and downloaded to the SHARC Audio Module.
+-  These 3 source files can be copied to the Faust directory in the CCES
+   framework. The framework can then be compiled and downloaded to the SHARC
+   Audio Module.
 
 .. important::
 
-   The files created from the Virtual Analog Synth project should be placed in the faust folder for Core1 and the ones from the Effects Chain should be placed in the faust folder for Core2\
-
+   The files created from the Virtual Analog Synth project should be placed in
+   the faust folder for Core1 and the ones from the Effects Chain should be
+   placed in the faust folder for Core2\
 
 -  See :doc:`Faust with the CCES Bare Metal Framework </wiki-migration/resources/tools-software/sharc-audio-module/faust>` for more information
 
@@ -289,33 +294,36 @@ Wet Dry          79          Reverb     knob
 The Virtual Analog/Effects Chain TouchOSC UI
 --------------------------------------------
 
-TouchOSC is a mobile app that can be used to create arbitrary GUIs that send MIDI values. TouchOSC is available for both iOS and Android. A TouchOSC configuration is provided for the Virtual Analog and Effects chain algorithms (virtualAnalog.touchOSC)
+TouchOSC is a mobile app that can be used to create arbitrary GUIs that send
+MIDI values. TouchOSC is available for both iOS and Android. A TouchOSC
+configuration is provided for the Virtual Analog and Effects chain algorithms
+(virtualAnalog.touchOSC)
 
 The Virtual Analog Page:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust//faust29.png
    :alt: /faust29.png
-   :width: 574px
+   :width: 574
    :height: 430px
 
 The Effects Chain Page:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust//faust30.png
    :alt: /faust30.png
-   :width: 574px
+   :width: 574
    :height: 430px
 
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/virtualanalog1.gif
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png
-   :width: 50px
+   :width: 50
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/effects1.gif
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png
-   :width: 50px
+   :width: 50
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/diagram_button.png
-   :width: 50px
+   :width: 50
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/diagram_button.png
-   :width: 50px
+   :width: 50

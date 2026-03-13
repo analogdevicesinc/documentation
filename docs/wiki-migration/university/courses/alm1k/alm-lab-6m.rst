@@ -4,32 +4,39 @@ Activity: NMOS as a Current Mirror - ADALM1000
 Objective:
 ----------
 
-The purpose of this activity is to investigate the operation of the enhancement mode NMOS transistor as a current mirror.
+The purpose of this activity is to investigate the operation of the enhancement
+mode NMOS transistor as a current mirror.
 
 Notes:
 ------
 
-As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.
+As in all the ALM labs we use the following terminology when referring to the
+connections to the M1000 connector and configuring the hardware. The green
+shaded rectangles indicate connections to the M1000 analog I/O connector. The
+analog I/O channel pins are referred to as CA and CB. When configured to force
+voltage / measure current -V is added as in CA-V or when configured to force
+current / measure voltage -I is added as in CA-I. When a channel is configured
+in the high impedance mode to only measure voltage -H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I, CB-I for the current waveforms.
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V , CB-V for the voltage waveforms and CA-I, CB-I for the current waveforms.
 
 Materials:
 ~~~~~~~~~~
 
-ADALM1000 hardware module Solder-less breadboard Jumper wires 2 - small signal NMOS transistors (ZVN2110A or CD4007 NMOS array)
+ADALM1000 hardware module Solder-less breadboard Jumper wires 2 - small signal
+NMOS transistors (ZVN2110A or CD4007 NMOS array)
 
 Directions:
 ~~~~~~~~~~~
 
 The good way to measure the characteristics of the current mirror is to reuse the same basic configuration that was used in the common source FET curve tracer experiments. Diode connected transistor M\ :sub:`1` is connected across the gate and source terminals of M\ :sub:`2`. I\ :sub:`in` will be equal to the Channel A output current. Iout will be the current measured by channel B.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 NMOS Current mirror test circuit
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -43,7 +50,7 @@ Two identical transistors with the same gate to source voltage will have the sam
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6m_e1.png
    :align: center
-   :width: 300px
+   :width: 300
 
 where K =Mu\ :sub:`n`\ C\ :sub:`ox`/2<sub></sub>and Lamda can be taken as process technology constants.
 
@@ -57,7 +64,9 @@ You are to measure I\ :sub:`in`, Rout seen into the drain of M\ :sub:`2`, the cu
 Extra Credit activity
 ~~~~~~~~~~~~~~~~~~~~~
 
-Try building a PMOS version of the current mirror from the PMOS devices in the CD4007 array or the ZVP2110A discrete transistors from the Parts Kit. How would you have to modify the circuit figure 1 to measure PMOS transistor?
+Try building a PMOS version of the current mirror from the PMOS devices in the
+CD4007 array or the ZVP2110A discrete transistors from the Parts Kit. How would
+you have to modify the circuit figure 1 to measure PMOS transistor?
 
 **For Further Reading:**
 
@@ -66,4 +75,4 @@ Try building a PMOS version of the current mirror from the PMOS devices in the C
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6m_f1.png
-   :width: 600px
+   :width: 600

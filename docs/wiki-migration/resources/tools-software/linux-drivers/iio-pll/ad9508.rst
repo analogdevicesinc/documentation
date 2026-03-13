@@ -9,7 +9,18 @@ Supported Devices
 Description
 -----------
 
-The AD9508 provides clock fanout capability in a design that emphasizes low jitter to maximize system performance. This device benefits applications like clocking data converters with demanding phase noise and low jitter requirements. There are four independent differential clock outputs, each with various types of logic levels available. Available logic types include LVDS (1.65 GHz), HSTL (1.65 GHz), and 1.8 V CMOS (250 MHz). In 1.8 V CMOS output mode, the differential output becomes two CMOS single-ended signals. The CMOS outputs are 1.8 V logic levels, regardless of the operating supply voltage. Each output has a programmable divider that can be bypassed or be set to divide by any integer up to 1024. In addition, the AD9508 supports a coarse output phase adjustment between the outputs. The device can also be pin programmed for various fixed configurations at power-up without the need for SPI or I2C programming.
+The AD9508 provides clock fanout capability in a design that emphasizes low
+jitter to maximize system performance. This device benefits applications like
+clocking data converters with demanding phase noise and low jitter requirements.
+There are four independent differential clock outputs, each with various types
+of logic levels available. Available logic types include LVDS (1.65 GHz), HSTL
+(1.65 GHz), and 1.8 V CMOS (250 MHz). In 1.8 V CMOS output mode, the
+differential output becomes two CMOS single-ended signals. The CMOS outputs are
+1.8 V logic levels, regardless of the operating supply voltage. Each output has
+a programmable divider that can be bypassed or be set to divide by any integer
+up to 1024. In addition, the AD9508 supports a coarse output phase adjustment
+between the outputs. The device can also be pin programmed for various fixed
+configurations at power-up without the need for SPI or I2C programming.
 
 Source Code
 ===========
@@ -39,12 +50,12 @@ Files
 Enabling the driver
 ===================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ad9508 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -61,7 +72,8 @@ Adding a device tree entry
 Device tree example
 ~~~~~~~~~~~~~~~~~~~
 
-The following example instanciates the ad9508 driver for a ad9508-3 device connected on the SPI bus to the chip-select line 1.
+The following example instanciates the ad9508 driver for a ad9508-3 device
+connected on the SPI bus to the chip-select line 1.
 
 ::
 

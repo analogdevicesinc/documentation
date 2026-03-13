@@ -3,7 +3,10 @@
 Link Compile Connect
 ====================
 
-This action allows the user to perform linking, compiling and connect on the current project. The function call takes in no arguments. Return type is a SSPResult which contains a IsSuccess flag for success/failure and Message in the form of list of strings.
+This action allows the user to perform linking, compiling and connect on the
+current project. The function call takes in no arguments. Return type is a
+SSPResult which contains a IsSuccess flag for success/failure and Message in the
+form of list of strings.
 
 API
 ---
@@ -15,7 +18,8 @@ API
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the LinkCompileConnect action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+LinkCompileConnect action.
 
 ::
 

@@ -4,7 +4,9 @@ The device can be configured to have four differential inputs or eight pseudo di
 
 The device has a very flexible digital filter, including a fast settling option. Variables such as output data rate and settling time are dependent on the option selected. The :adi:`AD7193` also includes a zero latency option.
 
-The part operates with a power supply from 3 V to 5.25 V. It consumes a current of 4.65 mA, and it is available in a 28-lead TSSOP package and a 32-lead LFCSP package.
+The part operates with a power supply from 3 V to 5.25 V. It consumes a current
+of 4.65 mA, and it is available in a 28-lead TSSOP package and a 32-lead LFCSP
+package.
 
 Applications
 ============

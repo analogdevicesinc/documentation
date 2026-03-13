@@ -4,13 +4,19 @@ Partial Reconfiguration with FMCOMMS2
 Introduction
 ------------
 
-Partial reconfiguration is a unique feature of Xilinx FPGAs, which offer the possibility to reprogram a well specified portion of the FPGA on the fly, without affecting the functionality of the remaining logic.
+Partial reconfiguration is a unique feature of Xilinx FPGAs, which offer the
+possibility to reprogram a well specified portion of the FPGA on the fly,
+without affecting the functionality of the remaining logic.
 
 The purpose of this design is to showcase this feature and to present a framework of the design flow, without trying to deliver a fully optimized solution. The design is built upon the latest version of :doc:`FMCOMMS2 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz>` reference design.
 
 .. note::
 
-   The following wiki page does not want to replace Xilinx documentations and application notes, which contains more detailed descriptions, suggestions and recommendations. It is highly recommended to examine all the docs provided by Xilinx. During the design process, the following documentations and application notes were used:
+   The following wiki page does not want to replace Xilinx documentations and
+   application notes, which contains more detailed descriptions, suggestions and
+   recommendations. It is highly recommended to examine all the docs provided by
+   Xilinx. During the design process, the following documentations and
+   application notes were used:
 
    
    -  `Design Flows Overview <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2013_4/ug892-vivado-design-flows-overview.pdf>`_
@@ -18,7 +24,6 @@ The purpose of this design is to showcase this feature and to present a framewor
    -  `Partial Reconfiguration Tutorial <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2013_4/ug947-vivado-partial-reconfiguration-tutorial.pdf>`_
    -  `Partial Reconfiguration of a Hardware Accelerator <https://www.xilinx.com/support/documentation/application_notes/xapp1159-partial-reconfig-hw-accelerator-zynq-7000.pdf>`_
    
-
 
 Supported carriers
 ------------------
@@ -29,7 +34,6 @@ Supported carriers
 .. note::
 
    Mini-ITX board definition file can be found at http://zedboard.org/support/documentation/2056 .
-
 
 Design Flow
 -----------
@@ -42,14 +46,15 @@ Design Flow
    -  `Vivado 2014.2 <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2014-2.html>`_
    
 
-
-The design flow that was used is the Tcl-based non-project flow. All the design phases are created and executed in the memory, and the user is responsible to generate reports, log files or save checkpoints, for later investigations.
+The design flow that was used is the Tcl-based non-project flow. All the design
+phases are created and executed in the memory, and the user is responsible to
+generate reports, log files or save checkpoints, for later investigations.
 
 All the important Tcl processes, which define the necessary design phases can be found in `adi_prcfg_project.tcl <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/projects/scripts/adi_prcfg_project.tcl>`_ script. In the picture below can be seen the flow chart of the used design flow.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/pr_design_flow.png
    :alt: pr_design_flow.png
-   :width: 300px
+   :width: 300
 
 The design consists of the following base stages:
 
@@ -60,7 +65,8 @@ The design consists of the following base stages:
 -  Repeat the previous step with every re-configurable logic
 -  Verify the compatibility of the bitstreams
 
-After every step, the script makes a checkpoint and generates and saves additional reports.
+After every step, the script makes a checkpoint and generates and saves
+additional reports.
 
 To build the HDL project, the user must follow the :doc:`same instructions </wiki-migration/resources/fpga/docs/build>` as with any other reference designs. The design does not require any additional library compilations, it should run with the same cores as the :doc:`FMCOMMS2 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz>` reference design.
 
@@ -68,16 +74,9 @@ After the **source ./system_project.tcl** script is executed, the workspace will
 
 <code tcl> ./prcfg_static # files related to the static design
 
-
-
-
-
-
     |       /checkpoints               # synthesis and route checkpoints
     |       +logs                      # log file after synthesis
     +prcfg_default                     # by-pass logic
-
-
 
     |        /bit                      # partial and overall bitstreams (*.bit and *.bin)
     |        +checkpoints              # synthesis and route checkpoints
@@ -85,15 +84,11 @@ After the **source ./system_project.tcl** script is executed, the workspace will
     |        +results                  # top_routed checkpoint, timing and utilization reports
     +prcfg_bist                        # BIST logic
 
-
-
     |        /bit                      # partial and overall bitstreams (*.bit and *.bin)
     |        +checkpoints              # synthesis and route checkpoints
     |        +logs                     # log files after synthesis, place, route and optimization
     |        +results                  # top_routed checkpoint, timing and utilization reports
     +prcfg_qpsk                        # QPSK modulation/demodulation logic
-
-
 
     |       /bit                       # partial and overall bitstreams (*.bit and *.bin)
     |       +checkpoints               # synthesis and route checkpoints
@@ -105,7 +100,11 @@ After the **source ./system_project.tcl** script is executed, the workspace will
 
 </code>
 
-The script is saving a design checkpoint after every critical step in the design flow, giving the possibility to revert or jump back, if something goes wrong. For example, if the user wants to go back and examine the synthesis of the static design, he/she simply needs to write the following command into the tcl console:
+The script is saving a design checkpoint after every critical step in the design
+flow, giving the possibility to revert or jump back, if something goes wrong.
+For example, if the user wants to go back and examine the synthesis of the
+static design, he/she simply needs to write the following command into the tcl
+console:
 
 ::
 
@@ -126,15 +125,17 @@ By default, the script runs all the necessary design flow stages (synthesis, imp
 
    But need to keep in mind, each stage is depending on the prior stages.
 
-
 Partial Reconfiguration Logic
 -----------------------------
 
-In the HDL design of the FMCOMMS2, the re-configurable portion is defined in the RX/TX data path, between the AD9361 IP core and TX/RX DMAs, given the possibility to implement different types of modulation schemes, and to change these modulations, while the system is running.
+In the HDL design of the FMCOMMS2, the re-configurable portion is defined in the
+RX/TX data path, between the AD9361 IP core and TX/RX DMAs, given the
+possibility to implement different types of modulation schemes, and to change
+these modulations, while the system is running.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/fmcomms2_hdl_prcfg.png
    :alt: fmcomms2_hdl_prcfg.png
-   :width: 800px
+   :width: 800
 
 Initially, the top of the PR module is instantiated on the top of the design as a black box. The `prcfg_setup.tcl <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/projects/fmcomms2/common/prcfg_bd.tcl>`_ script makes sure that the FIFO interfaces between the DMAs and device core are brought up to the top. The top of the PR is a generic `hdl wrapper <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/library/prcfg/common/prcfg_top.v>`_, where the `TX <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/library/prcfg/default/prcfg_dac.v>`_ and `RX <https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/library/prcfg/default/prcfg_adc.v>`_ modules are instantiated.
 
@@ -145,20 +146,23 @@ When a new PR logic is defined, the user needs to make sure that the top modules
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/pr_generichdl.png
    :alt: pr_generichdl.png
-   :width: 350px
+   :width: 350
 
 More information about the used FIFO interface can be found in the :doc:`ADI Reference Design HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
 
 Predefined PR Logic
 ~~~~~~~~~~~~~~~~~~~
 
-Currently, the reference project supports three different PR logic, which can be implemented and loaded into the PR portion:
+Currently, the reference project supports three different PR logic, which can be
+implemented and loaded into the PR portion:
 
 -  **Default logic**, which leaves the data intact, so the design will function the same way as a regular FMCOMMS2 design.
 -  **BIST logic**, which contains several internal tone generators for testing purposes. The user can select between three different options by setting a register, on the register map.
 -  **QPSK logic**, which contains a QPSK modulator and demodulator. The modulation and demodulation logic were generated using **MatLab HDL Coder 3.3**.
 
-The user can interact with PR logic, using a control and a status registers. The table bellow presents the definitions of these two registers, in case of each logic.
+The user can interact with PR logic, using a control and a status registers. The
+table bellow presents the definitions of these two registers, in case of each
+logic.
 
 +--------------------------------------------+-----------------+-------------+---------------------+-------------------+
 | Control Register [DEVICE_BASEADDR + 0x02E] |                 |             |                     |                   |
@@ -195,7 +199,9 @@ The available configurations:
 -  0x2 – Internal PRBS generator
 -  0x3 – Internal pattern generator (alternating 0x5555 and 0xAAAA)
 
-In the receiver side, a PRBS monitor checks the received signal, and saves the values into the PN_ERR and PN_OOS of the Status register. Note that if the PRBS generator/monitor is used, the device should be in Digital Loopback mode.
+In the receiver side, a PRBS monitor checks the received signal, and saves the
+values into the PN_ERR and PN_OOS of the Status register. Note that if the PRBS
+generator/monitor is used, the device should be in Digital Loopback mode.
 
 QPSK Logic
 ~~~~~~~~~~
@@ -205,11 +211,13 @@ The QPSK modulator and demodulator used in this logic, were generated by the Mat
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/pqsk_simulink_model.png
    :alt: pqsk_simulink_model.png
 
-In the block diagram below, it can be seen how these modules were integrated into the QPSK logic. The red blocks represent the Verilog modules, which were generated by the HDL Coder.
+In the block diagram below, it can be seen how these modules were integrated
+into the QPSK logic. The red blocks represent the Verilog modules, which were
+generated by the HDL Coder.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/pr_hdl_qpsk.png
    :alt: pr_hdl_qpsk.png
-   :width: 600px
+   :width: 600
 
 The available configurations:
 
@@ -217,7 +225,9 @@ The available configurations:
 -  0x1 – Internal PRBS generator, the sequence is modulated and sent to the device in the transmitter side, and demodulated on the receive side.
 -  0x2 – Data from the DMA, user can send data from the memory.
 
-In the receiver side, a PRBS monitor checks the received signal, when the actual configuration is 0x1, and save the values into the PN_ERR and PN_OOS of the Status register. In PRBS mode Digital Loopback should be used.
+In the receiver side, a PRBS monitor checks the received signal, when the actual
+configuration is 0x1, and save the values into the PN_ERR and PN_OOS of the
+Status register. In PRBS mode Digital Loopback should be used.
 
 Downloads
 ---------
@@ -232,11 +242,11 @@ Downloads
    -  **QPSK simulink model** https://github.com/analogdevicesinc/hdl/blob/legacy_fmcomms2_pr/library/prcfg/qpsk/qpsk.slx
    
 
-
 Test the design using a Linux image
 -----------------------------------
 
-To create or update an SD card in order to test the reference design, the user should follow these steps below:
+To create or update an SD card in order to test the reference design, the user
+should follow these steps below:
 
 -  Create and SD card from source by following the instructions from :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq>`, or update an existent SD card by following the instructions from :doc:`here </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 -  Make sure that the BOOT partition of the SD card contains the correct BOOT.bin, device tree and uImage (to create the BOOT.bin the user should use **config_default.bit** bit file)
@@ -250,7 +260,8 @@ Reconfigure the FPGA from Linux
 The user can update the re-configurable portion of the FPGA, by using the :doc:`Partial Reconfiguration plugin </wiki-migration/resources/tools-software/linux-software/partial_reconfiguration_plugin>` of the oscilloscope. The plugin does the following two steps, after the user specifies the partial bitstream:
 
 -  set the device attribute called **is_partial_bitstream** to 1
--  write the generated partial bin file to the PCAP configuration interface (/dev/xdevcfg).
+-  write the generated partial bin file to the PCAP configuration interface
+   (/dev/xdevcfg).
 
 The functions, which do the update of the PR portion can be found :git-iio-oscilloscope:`here <plugins/pr_config.c#L89#L134>`.
 
@@ -265,14 +276,13 @@ The functions, which do the update of the PR portion can be found :git-iio-oscil
    -  Use a higher sample count for the constellation plot
    
 
-
 |fmcomms2_setup_pr.png| |pr_setup.png| |default_const.png| |qpsk_const.png|
 
 .. |fmcomms2_setup_pr.png| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/fmcomms2_setup_pr.png
-   :width: 350px
+   :width: 350
 .. |pr_setup.png| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/pr_setup.png
-   :width: 350px
+   :width: 350
 .. |default_const.png| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/default_const.png
-   :width: 350px
+   :width: 350
 .. |qpsk_const.png| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/qpsk_const.png
-   :width: 350px
+   :width: 350

@@ -39,13 +39,15 @@ Step by Step Instruction for Connecting the Hardware
 ----------------------------------------------------
 
 -  Connect the EVAL-CN0300-EB1Z board to the USB-SWD/UART board.
--  Connect a 12V power supply to J3. Make sure to connect a Current Meter in series with the 12V terminal. Short the inputs to J2 together
+-  Connect a 12V power supply to J3. Make sure to connect a Current Meter in
+   series with the 12V terminal. Short the inputs to J2 together
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-hardware-test-setup.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
--  Connect the USB-SWD/UART board to your PC via a USB cable. (Ensure the driver is installed correctly)
+-  Connect the USB-SWD/UART board to your PC via a USB cable. (Ensure the driver
+   is installed correctly)
 
 Opening and Enabling the Evaluation Software
 --------------------------------------------
@@ -56,7 +58,9 @@ Opening and Enabling the Evaluation Software
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-pc-device-manager.jpg
    :align: center
 
--  Press the reset button on the EVAL-CN0300-EB1Z board and the following should appear on the HyperTerminal window: the current reading on the current meter should match the value “Expected DAC Current” on your screen.
+-  Press the reset button on the EVAL-CN0300-EB1Z board and the following should
+   appear on the HyperTerminal window: the current reading on the current meter
+   should match the value “Expected DAC Current” on your screen.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-hyperterminal4.jpg
    :align: center
@@ -75,7 +79,8 @@ Calibrating the DAC (Only needed if a Recalibration is desired)
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-wsd1.jpg
    :align: center
 
--  Select “Comms” tab. Select the appropriate COM port as determined in step 5. A baud rate of 9600 is fine.
+-  Select “Comms” tab. Select the appropriate COM port as determined in step 5.
+   A baud rate of 9600 is fine.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-wsd2.jpg
    :align: center
@@ -111,17 +116,21 @@ Calibrating the DAC (Only needed if a Recalibration is desired)
    :align: center
 
 -  The Final temperature reported should be within a few degrees C of the expected ambient temperature. +/-5C is fine since the ADC is not fully calibrated.
--  Temporarily disconnect the COM port from HyperTerminal by pressing the phone tab.
+-  Temporarily disconnect the COM port from HyperTerminal by pressing the phone
+   tab.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-hyperterminal3.jpg
    :align: center
 
--  Repeat Steps 3 to 9 except this time, select the file CN0300_Final.hex. This file is very similar to the test program except it does not call the DAC calibration function.
+-  Repeat Steps 3 to 9 except this time, select the file CN0300_Final.hex. This
+   file is very similar to the test program except it does not call the DAC
+   calibration function.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-wsd5.jpg
    :align: center
 
--  Close CM3WSD. Return to HyperTerminal and select “Connect” by pressing the phone icon.
+-  Close CM3WSD. Return to HyperTerminal and select “Connect” by pressing the
+   phone icon.
 
 Registration
 ------------
@@ -129,4 +138,3 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0300-EB1Z?&v=RevB>`_ to receive all these great benefits and more!
-

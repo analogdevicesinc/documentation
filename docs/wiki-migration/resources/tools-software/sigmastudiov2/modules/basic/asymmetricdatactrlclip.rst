@@ -9,4 +9,5 @@ Asymmetric Soft Clipper - Data Controlled
 Description
 -----------
 
-The Asymmetric Data Controlled Clipper is a soft-clipper that clips the input data signal according to threshold values set by data control input pins.
+The Asymmetric Data Controlled Clipper is a soft-clipper that clips the input
+data signal according to threshold values set by data control input pins.

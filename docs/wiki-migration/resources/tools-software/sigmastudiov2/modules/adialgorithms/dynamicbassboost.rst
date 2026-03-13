@@ -9,9 +9,14 @@ Dynamic Bass Boost
 Description
 -----------
 
-The Dynamic Bass Boost block provides a boost that varies with input signal level. A lower level of signals requires and receives more bass than a higher level of signals. By using a variable Q filter this block dynamically adjusts the amount of boost required for an input signal.
+The Dynamic Bass Boost block provides a boost that varies with input signal
+level. A lower level of signals requires and receives more bass than a higher
+level of signals. By using a variable Q filter this block dynamically adjusts
+the amount of boost required for an input signal.
 
-The filter calculates its bass boost between the Threshold and minimum Gain settings. A fixed maximum bass is applied to inputs above the minimum gain and below the Threshold level.
+The filter calculates its bass boost between the Threshold and minimum Gain
+settings. A fixed maximum bass is applied to inputs above the minimum gain and
+below the Threshold level.
 
 Variants
 --------
@@ -52,7 +57,6 @@ Name    Type  Description
 Output0 Audio Output channel0
 Output1 Audio Output channel1 (only for stereo)
 ======= ===== =================================
-
 
 | ===== Configurable Parameters =====
 

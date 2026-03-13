@@ -10,7 +10,7 @@ The design also features the :adi:`MAX32650`, which is a part of a new breed of 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/main_components_3.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -19,15 +19,23 @@ Front-end
 
 |image1| The :adi:`AD-PQMON-SL` uses all seven second order Σ-Δ ADCs of the :adi:`ADE9430`. There are 4 current inputs and 3 voltage ones that can be seen in the following image. The fourth voltage input is used for NULL if it is the case or it is connected to the reference phase see :doc:`ADE9430 user guide </wiki-migration/resources/eval/user-guides/ade9430>`.
 
-Current transformers (CT) for all four channels are provided with the kit. To connect the current transformers provided with the kit, the connectors of the current transformers must be replaced with the ones included in the box. The center tapped burden resistors are calculated for the provided CTs.
+Current transformers (CT) for all four channels are provided with the kit. To
+connect the current transformers provided with the kit, the connectors of the
+current transformers must be replaced with the ones included in the box. The
+center tapped burden resistors are calculated for the provided CTs.
 
-If one decides to change the CTs these resistances need to be recalculated and replaced with the new values. The board is populated with 5.1 Ω resistances, resulting a current transfer function for a 3000:1 current transformer ratio equal with:
+If one decides to change the CTs these resistances need to be recalculated and
+replaced with the new values. The board is populated with 5.1 Ω resistances,
+resulting a current transfer function for a 3000:1 current transformer ratio
+equal with:
 
 *10.2 / 3000 = 0.0034 V rms/ A rms*
 
 The current gain in this case will be *3000 / 10.2 = 294.11* (the default value in the firmware). If the burden resistances are changed the value of the current gain has to be updated from the Scopy interface.
 
-For the voltage input the voltage gain is computed considering the upper resistance from the divider approximately 1 MΩ and the lower resistance equal with 1 kΩ resulting a value of 1001. The voltage transfer function is:
+For the voltage input the voltage gain is computed considering the upper
+resistance from the divider approximately 1 MΩ and the lower resistance equal
+with 1 kΩ resulting a value of 1001. The voltage transfer function is:
 
 *(1 / (1000 + 1)) = 0.001 V rms*.
 
@@ -49,7 +57,8 @@ Isolation
 
 |image4| The solution has an on-board :adi:`ADuM6424A` Quad-Channel Isolator with Integrated DC-to-DC Converter. This DC-DC converter is used to supply all the components on the high voltage side. The :adi:`ADUM6424A` and the :adi:`ADUM4152`, which is a 5 kV, 7-Channel, SPIsolator™ Digital Isolator for SPI (with 1/2 Aux channel directionality), are used to isolate the connection between the :adi:`ADE9430` and `MAX32650 <https://www.analog.com/>`_.
 
-In case the AC input is used to supply the board, the AC-DC flyback converter isolates the two sides.
+In case the AC input is used to supply the board, the AC-DC flyback converter
+isolates the two sides.
 
 --------------
 
@@ -57,7 +66,6 @@ LED Indicators
 --------------
 
 There are 8 LEDs on the :adi:`PQMON <AD-PQMON-SL>` motherboard. Five of them are on the ADE side and three on the isolated side.
-
 
 |image5|
 
@@ -99,29 +107,32 @@ System Setup
 Single phase setup example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For single phase testing an example on how to connect the evaluation board can be seen in the following images:
+For single phase testing an example on how to connect the evaluation board can
+be seen in the following images:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/board.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 A block schematic of the setup is provided in the following image.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/single_phase_block_schematic.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
-An example of a cable assembly that replicates the block schematic connections is presented in the following image. With this cable, tests can be made using different loads.
+An example of a cable assembly that replicates the block schematic connections
+is presented in the following image. With this cable, tests can be made using
+different loads.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/cable_single_phase.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 The cable is connected to the board as shown in the following image.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/single_phase_board_connection.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 Setup for testing all the channels using a single-phase input
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,9 +141,11 @@ For testing all the channels provided by the :adi:`ADE9430` the following setup 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/single_phase_all_inputs.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
-The mains voltage can also be connected to the load if a switch with more poles is used. With this setup one can observe the influence of the input power supply and of different types of loads on the power quality.
+The mains voltage can also be connected to the load if a switch with more poles
+is used. With this setup one can observe the influence of the input power supply
+and of different types of loads on the power quality.
 
 For 3-phase setups the :adi:`ADE9430` technical reference manual can be consulted :doc:`here </wiki-migration/resources/eval/user-guides/ade9430>`
 
@@ -140,18 +153,17 @@ For 3-phase setups the :adi:`ADE9430` technical reference manual can be consulte
 
    If you want to go to the Software Page, click here: `AD-PQMON-SL Getting the system up and running <https://wiki.analog.com/[[/resources/eval/user-guides/ad-pqmon-sl/software>`_
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/input_stage.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/burden_resistors.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/current_transformer.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/isolation_barrier.jpg
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/ade-leds.jpg
-   :width: 300px
+   :width: 300
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/mcu_leds.jpg
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pqmon-sl/daughter_board.jpg
-   :width: 500px
+   :width: 500

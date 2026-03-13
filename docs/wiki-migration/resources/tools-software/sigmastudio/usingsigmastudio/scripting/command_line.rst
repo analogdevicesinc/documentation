@@ -3,15 +3,20 @@
 Command line Execution
 ======================
 
-Analog.SStudioScripting.IScripted is contained in a .NET assembly, BaseLib.dll, installed in the SigmaStudio folder.
+Analog.SStudioScripting.IScripted is contained in a .NET assembly, BaseLib.dll,
+installed in the SigmaStudio folder.
 
-The SigmaStudio application has the capability to run a script from command line. A step-by-step procedure is given below.
+The SigmaStudio application has the capability to run a script from command
+line. A step-by-step procedure is given below.
 
-1. Open a windows command prompt and change the directory to location of SigmaStudio application “SStudio.exe”.
+1. Open a windows command prompt and change the directory to location of
+   SigmaStudio application “SStudio.exe”.
 
-2. Ensure that there is no other active SigmaStudio application running in the PC.
+2. Ensure that there is no other active SigmaStudio application running in the
+   PC.
 
-3. Execute the command “SStudio.exe \\script-file Script-file-Name-With-Full-Path”.
+3. Execute the command “SStudio.exe \\script-file
+   Script-file-Name-With-Full-Path”.
 
 **SStudio.exe** - Command for opening the SigmaStudio application
 

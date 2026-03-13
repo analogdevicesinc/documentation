@@ -9,7 +9,9 @@ Signal Invert
 Description
 -----------
 
-The SignalInvert block inverts the polarity of the incoming signal.Signal invert entails a 180-degree phase shift, making the positive components of waveform to negative and negative components of waveform to positive.
+The SignalInvert block inverts the polarity of the incoming signal.Signal invert
+entails a 180-degree phase shift, making the positive components of waveform to
+negative and negative components of waveform to positive.
 
 Usage
 -----

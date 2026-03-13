@@ -21,7 +21,17 @@ We will begin with BJTs in this lab and move on to FETs in later labs.
 Objective
 ---------
 
-To study the basic operational principles of BJTs. To observe the collector current versus collector-to-emitter voltage characteristics of a NPN transistor for various base currents. To calculate the approximate current gain, β, of the NPN transistor using the observed characteristics. Following completion of this lab you should be able to explain the basic operation of BJTs, explain what the saturation and forward active regions of operation are for BJTs, give a typical base-emitter voltage for a BJT operating in its forward active region, describe what the collector current versus collector-to-emitter voltage characteristics look like for BJTs, calculate the approximate current gain of a BJT, and give a basic description of what the Early effect does to the collector current versus collector-to-emitter voltage characteristics of a BJT.
+To study the basic operational principles of BJTs. To observe the collector
+current versus collector-to-emitter voltage characteristics of a NPN transistor
+for various base currents. To calculate the approximate current gain, β, of the
+NPN transistor using the observed characteristics. Following completion of this
+lab you should be able to explain the basic operation of BJTs, explain what the
+saturation and forward active regions of operation are for BJTs, give a typical
+base-emitter voltage for a BJT operating in its forward active region, describe
+what the collector current versus collector-to-emitter voltage characteristics
+look like for BJTs, calculate the approximate current gain of a BJT, and give a
+basic description of what the Early effect does to the collector current versus
+collector-to-emitter voltage characteristics of a BJT.
 
 Materials and Apparatus
 -----------------------
@@ -41,14 +51,14 @@ Procedure
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_9_image_1.png
    :alt: lab_9_image_1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Refer to the illustration below for one way to install the components in the solderless breadboard. Note that the R\ :sub:`B` jumper wires are added to facilitate adding resistors in parallel with the 200 KΩ resistor
 
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_9_assembly_image_1.png
    :alt: lab_9_assembly_image_1.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 -  Run PixelPulse and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -67,12 +77,13 @@ Procedure
 -  Add a 200 KΩ resistor in parallel with the existing base resistor and repeat the previous six steps
 -  Add two more 200 KΩ resistors, one at a time, repeating the above procedure
 -  Observe that as the base current increases the slope of the i\ :sub:`C` versus v\ :sub:`CE` characteristic increases as a manifestation of the Early effect.
--  If the breadboard was constructed as shown above, when completed it should appear as shown below
+-  If the breadboard was constructed as shown above, when completed it should
+   appear as shown below
 
 .. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_9_assembly_image_2.png
    :alt: lab_9_assembly_image_2.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Theory
 ------
@@ -87,6 +98,7 @@ Observations and Conclusions
 -  A BJT operating in its forward active region has a forward-biased base-emitter voltage, reverse-biased collector-base junction, and relatively constant collector current over variations in collector-to-emitter voltage
 -  When a BJT is operating in its forward active region the base-emitter voltage can be approximated as 0.7 V
 -  When a BJT is operating in its saturation region its collector-to-emitter voltage is very small and its collector-base junction becomes forward-biased
--  There is a slight variation in collector current versus collector-to-emitter voltage in the forward active region due to the Early effect
+-  There is a slight variation in collector current versus collector-to-emitter
+   voltage in the forward active region due to the Early effect
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`

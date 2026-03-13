@@ -3,12 +3,16 @@
 Alias Pins
 ==========
 
-To organize your project visually, it often helps to create an alias to provide a clear connective reference (a "jump") in the signal flow in the schematic. An Alias consists of a pair of alias input and alias output blocks. Using alias blocks can reduce the visual clutter in the schematic window created by long wire connections.
+To organize your project visually, it often helps to create an alias to provide
+a clear connective reference (a "jump") in the signal flow in the schematic. An
+Alias consists of a pair of alias input and alias output blocks. Using alias
+blocks can reduce the visual clutter in the schematic window created by long
+wire connections.
 
 .. tip::
 
-   \ Ctrl + Right-click on the pin is the shortcut for creating an Alias for that given pin
-
+   \ Ctrl + Right-click on the pin is the shortcut for creating an Alias for
+   that given pin
 
 An alias can be created in two ways:
 
@@ -17,15 +21,16 @@ An alias can be created in two ways:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/alias_2.png
 
-It is possible to have multiple output alias pins created from the same Alias Input pin.
-
+It is possible to have multiple output alias pins created from the same Alias
+Input pin.
 
 |image1|
 
 .. note::
 
-   Note: Using an alias is functionally equivalent to connecting two pins with a wire. The signal flow in the example below is identical to the alias example above
-
+   Note: Using an alias is functionally equivalent to connecting two pins with a
+   wire. The signal flow in the example below is identical to the alias example
+   above
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/alias_7.png
 
@@ -39,7 +44,8 @@ Right clicking on Input Alias will display the context menu. Use the option '**A
 Highlighting All Alias
 ----------------------
 
-Clicking on any Input/Output Alias will highlight all aliases. All Aliases will be highlighted in “Aqua” color.
+Clicking on any Input/Output Alias will highlight all aliases. All Aliases will
+be highlighted in “Aqua” color.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/alias_8.png
 

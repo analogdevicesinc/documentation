@@ -1,7 +1,10 @@
 Software-Defined Radio Workshops
 ================================
 
-For those attending the PlutoSDR workshop, hosted by ADI, MathWorks and RichardsonRFPD. In order to make your experience better (less installing software while others are using the hardware) please have the following software installed on your machine:
+For those attending the PlutoSDR workshop, hosted by ADI, MathWorks and
+RichardsonRFPD. In order to make your experience better (less installing
+software while others are using the hardware) please have the following software
+installed on your machine:
 
 All attendees should have received instructions to install `MATLAB <https://www.mathworks.com/campaigns/products/trials.html?prodcode=CM>`_. If not, please use this `this link <https://www.mathworks.com/campaigns/products/trials.html?prodcode=CM>`_ and then install the `support package <https://www.mathworks.com/hardware-support/adalm-pluto-radio.html>`_. You will also need some additional software from ADI. Please install libIIO, libad9361, and IIO-Scope based on your operating system:
 
@@ -33,8 +36,10 @@ All attendees should have received instructions to install `MATLAB <https://www.
 
 .. important::
 
-   For macOS you must use libiio v0.17 since the binaries for libad9361 was built against that release. If you have already built IIO-Scope with a newer release, the libraries must be downgraded first then IIO-Scope should be built again
-
+   For macOS you must use libiio v0.17 since the binaries for libad9361 was
+   built against that release. If you have already built IIO-Scope with a newer
+   release, the libraries must be downgraded first then IIO-Scope should be
+   built again
 
 Additionally, the instructions for installing RF Blockset Models for Analog Devices RF Transceivers can be found `here <https://wiki.analog.com/university/tools/rfblkset_mdls_install>`_.
 
@@ -43,7 +48,8 @@ Additionally, the instructions for installing RF Blockset Models for Analog Devi
 -  :doc:`What is libiio? </wiki-migration/resources/tools-software/linux-software/libiio>`
 -  Documentation: :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-If you would like to come by the earlier in the morning before 9am, and check out things with your hardware, it would be appreciated.
+If you would like to come by the earlier in the morning before 9am, and check
+out things with your hardware, it would be appreciated.
 
 If you run into any questions while downloading, or building, please ask on the Pluto Support Forum here: :ez:`ez>adieducation/university-program/f/q-a <adieducation/university-program/f/q-a>` .
 

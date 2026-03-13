@@ -8,7 +8,8 @@ Mono to Interleaved
 Description
 -----------
 
-"Mono to Interleaved" is used to interleave two mono channels into one output pin.
+"Mono to Interleaved" is used to interleave two mono channels into one output
+pin.
 
 Input Pins
 ----------

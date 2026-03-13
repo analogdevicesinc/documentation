@@ -1,12 +1,17 @@
 .. important::
 
-   This is a legacy page for a product that is no longer supported within the no-OS framework.
-
+   This is a legacy page for a product that is no longer supported within the
+   no-OS framework.
 
 ARRadio No-OS Quick Start Guide
 ===============================
 
-This quick start guide shows you how to run the No-OS (baremetal) application on the ARRadio/C5SoC Kit. This guide may appear very simple, and it is if you have the right platform which is a Linux machine. This guide does NOT use 'armcc' the ARM compiler nor the ARM-DS5 (paid license). It uses the GNU variant 'gcc' to compile the no-OS application. It builds the bsp image with u-boot and then programs the fpga and runs the application using u-boot script.
+This quick start guide shows you how to run the No-OS (baremetal) application on
+the ARRadio/C5SoC Kit. This guide may appear very simple, and it is if you have
+the right platform which is a Linux machine. This guide does NOT use 'armcc' the
+ARM compiler nor the ARM-DS5 (paid license). It uses the GNU variant 'gcc' to
+compile the no-OS application. It builds the bsp image with u-boot and then
+programs the fpga and runs the application using u-boot script.
 
 Requirements
 ------------
@@ -18,8 +23,13 @@ Requirements
 
 .. note::
 
-   It is absolutely vital that you have an environment that is capable of supporting this flow. We exclusively use Linux platforms (Ubuntu and Red Hat specifically). Our understanding of operating systems and tools are limited. So while it may be possible to run these things on a Windows machine, we do not know for sure it will. It is up to you to choose and setup your platform to run these tools. If a tool returns an error, try to google that error, most likely you will find an answer (may not be a solution) very quickly.
-
+   It is absolutely vital that you have an environment that is capable of
+   supporting this flow. We exclusively use Linux platforms (Ubuntu and Red Hat
+   specifically). Our understanding of operating systems and tools are limited.
+   So while it may be possible to run these things on a Windows machine, we do
+   not know for sure it will. It is up to you to choose and setup your platform
+   to run these tools. If a tool returns an error, try to google that error,
+   most likely you will find an answer (may not be a solution) very quickly.
 
 Download/Clone Repositories
 ---------------------------
@@ -58,14 +68,22 @@ Prepare a Micro SD Card for first time
 
 .. note::
 
-   The following procedure is one among many methods in achieving its goal. You may skip this section, combine multiple sections in a single flow or do something entirely different. It is all up to you to decide and follow a method. The only and important thing is that you must be comfortable in your chosen method. Do not mindlessly copy and execute these commands. If a command is missing "Google It" first, understand its function and either install it or find an alternative in your system.
+   The following procedure is one among many methods in achieving its goal. You
+   may skip this section, combine multiple sections in a single flow or do
+   something entirely different. It is all up to you to decide and follow a
+   method. The only and important thing is that you must be comfortable in your
+   chosen method. Do not mindlessly copy and execute these commands. If a
+   command is missing "Google It" first, understand its function and either
+   install it or find an alternative in your system.
 
+In this part, you are going to overwrite a drive (if you aren't careful you will
+overwrite your machine's drive and loose any OS or files on it).
 
-In this part, you are going to overwrite a drive (if you aren't careful you will overwrite your machine's drive and loose any OS or files on it).
+You need to find out your SD card device (here, mine is sdb). Also you may need
+to unmount it first.
 
-You need to find out your SD card device (here, mine is sdb). Also you may need to unmount it first.
-
-The card must be partitioned in certain way (need raw and fat). The commands to do this are below, I have also included my terminal log as a reference.
+The card must be partitioned in certain way (need raw and fat). The commands to
+do this are below, I have also included my terminal log as a reference.
 
 ::
 
@@ -118,7 +136,9 @@ We may need to format the newly created partition.
    [~/github/no-OS/arradio/c5soc]> sudo mkfs -t vfat /dev/sdb1
    mkfs.fat 3.0.28 (2015-05-16)
 
-Unmount and eject the sd-card. It is only formatted now. You don't need to format the same SD card again, simply copy the files if you have one already formatted.
+Unmount and eject the sd-card. It is only formatted now. You don't need to
+format the same SD card again, simply copy the files if you have one already
+formatted.
 
 ::
 
@@ -134,7 +154,9 @@ Unmount and eject the sd-card. It is only formatted now. You don't need to forma
 Copy system image (U-boot & Initialization) to SD Card
 ------------------------------------------------------
 
-Insert the formatted SD card in your PC. The u-boot binary goes into the raw partition. These steps needs to be repeated ONLY if you have modified the HPS core in HDL and/or BSP sources.
+Insert the formatted SD card in your PC. The u-boot binary goes into the raw
+partition. These steps needs to be repeated ONLY if you have modified the HPS
+core in HDL and/or BSP sources.
 
 ::
 
@@ -165,7 +187,10 @@ Unmount and eject the sd-card.
 Copy FPGA, Application image, and U-boot script to SD Card
 ----------------------------------------------------------
 
-Insert the formatted SD card in your PC. The OS should mount the FAT partition automatically. The bit, elf, and script files goes to this fat partition. These steps needs to be repeated ONLY if you have modified the QSYS (or FPAG) design in HDL and/or the no-OS sources.
+Insert the formatted SD card in your PC. The OS should mount the FAT partition
+automatically. The bit, elf, and script files goes to this fat partition. These
+steps needs to be repeated ONLY if you have modified the QSYS (or FPAG) design
+in HDL and/or the no-OS sources.
 
 ::
 
@@ -201,7 +226,9 @@ Unmount and eject the sd-card.
 Running the no-OS software
 --------------------------
 
-Insert the sd-card into the Cyclone V SoC kit and power cycle the board. You should also connect the UART. The UART log indicates u-boot loading the FPGA bit files, enabling the HPS-FPGA bridges and running the no-OS application.
+Insert the sd-card into the Cyclone V SoC kit and power cycle the board. You
+should also connect the UART. The UART log indicates u-boot loading the FPGA bit
+files, enabling the HPS-FPGA bridges and running the no-OS application.
 
 ::
 
@@ -223,7 +250,6 @@ Insert the sd-card into the Cyclone V SoC kit and power cycle the board. You sho
    SEQ.C: CALIBRATION PASSED
    SDRAM: 1024 MiB
    ALTERA DWMMC: 0
-
 
    U-Boot 2013.01.01 (Sep 05 2017 - 13:23:18)
 
@@ -257,13 +283,14 @@ Insert the sd-card into the Cyclone V SoC kit and power cycle the board. You sho
 
 .. note::
 
-   The design supports both 2R2T mode (AD9361 only) and 1R1T mode (AD9361 and AD9364). The rest of the UART log will be different accordingly.
-
+   The design supports both 2R2T mode (AD9361 only) and 1R1T mode (AD9361 and
+   AD9364). The rest of the UART log will be different accordingly.
 
 Running the no-OS software (2R2T)
 ---------------------------------
 
-The default make builds the software in 2R2T mode. You may make sure such is the case by looking at these two variables.
+The default make builds the software in 2R2T mode. You may make sure such is the
+case by looking at these two variables.
 
 ::
 
@@ -363,7 +390,10 @@ The UART log:
 Switching between 2R2T & 1R1T mode(s)
 -------------------------------------
 
-After the first run, the build remembers (until you do a clean) your mode of choice and subsequent builds (in case you modify the sources) assume this mode as default. As a precaution, always cross check the compiler flags mentioned above with your desired mode.
+After the first run, the build remembers (until you do a clean) your mode of
+choice and subsequent builds (in case you modify the sources) assume this mode
+as default. As a precaution, always cross check the compiler flags mentioned
+above with your desired mode.
 
 ::
 

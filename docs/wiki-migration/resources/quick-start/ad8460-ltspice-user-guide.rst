@@ -20,7 +20,6 @@ All LTspice Circuits used are available at `LTspice Schematics <https://wiki.ana
 
    \ *Keep all files in the zip folder in the same folder on your local PC. Run any “.asc” file out of that folder to have all the respective plot windows prepopulated, with the relevant waveforms at simulation time.*\
 
-
 --------------
 
 AD8460 Block Diagram
@@ -29,4 +28,4 @@ AD8460 Block Diagram
 .. image:: https://wiki.analog.com/_media/resources/quick-start/ad8460_reva.png
    :alt: AD8460 Block Diagram
    :align: center
-   :width: 600px
+   :width: 600

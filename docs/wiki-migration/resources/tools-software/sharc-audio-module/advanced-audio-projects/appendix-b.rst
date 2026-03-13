@@ -22,7 +22,6 @@ SC5xx Communications Port Does Not Show Up
 | **Planned fix status** - N/A                                                                                                                                                                                                                                                                |          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 
-
 SAM Flasher - Invalid serial port!
 ----------------------------------
 
@@ -41,7 +40,6 @@ SAM Flasher - Invalid serial port!
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 | **Planned fix status** - N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                 |          |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
-
 
 "make -j<N>" hangs in Git Bash
 ------------------------------
@@ -63,7 +61,6 @@ SAM Flasher - Invalid serial port!
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | **Planned fix status** - No Plan (3rd Party SW Issue)                                                                                                                                                                                                                                                               |           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-
 
 Known Issues
 ============
@@ -89,7 +86,6 @@ Fault LEDs when using EV-SOMCRR-EZKIT Rev D.
 | **Planned fix status** - No Plan (Hardware Issue)                                                                                                         |           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
-
 Can't use the 2433MINI on J11 of Carrier Board at the Same Time as the SD Card
 ------------------------------------------------------------------------------
 
@@ -112,7 +108,6 @@ Can't use the 2433MINI on J11 of Carrier Board at the Same Time as the SD Card
 | **Planned fix status** - No Plan (Hardware Issue)                                                                                                                                                                                                                                                                      |           |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
-
 Slow Enumeration on USB PHY
 ---------------------------
 
@@ -134,7 +129,6 @@ Slow Enumeration on USB PHY
 | **Planned fix status** - Backlogged                                                                                                                                              |   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+
 
-
 A2B XML files exported from SS+ may not discover
 ------------------------------------------------
 
@@ -155,7 +149,6 @@ A2B XML files exported from SS+ may not discover
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | **Planned fix status** - Backlogged                                                                                                                                                                                                                                                     |           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-
 
 VU Meters Don't Display in TeraTerm v5.0 and Greater
 ----------------------------------------------------
@@ -184,7 +177,6 @@ VU Meters Don't Display in TeraTerm v5.0 and Greater
 | **Other variants:** Pending                                                                                  |              |
 +--------------------------------------------------------------------------------------------------------------+--------------+
 
-
 WAV Audio Distortion with higher channel count or bit-rate
 ----------------------------------------------------------
 
@@ -205,7 +197,6 @@ WAV Audio Distortion with higher channel count or bit-rate
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+
 | **Planned fix status** - In Progress                                                                                                                                       |   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+
-
 
 SC5xx Communications Port Does Not Show Up/Shows up as A2B Bus Analyzer
 -----------------------------------------------------------------------
@@ -232,7 +223,6 @@ SC5xx Communications Port Does Not Show Up/Shows up as A2B Bus Analyzer
 | **Planned fix status** - No plan                                                                                                                                                                                                                                                                       |           |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
-
 Failed to open 'pushbtn.cmd' when entering bootloader
 -----------------------------------------------------
 
@@ -253,7 +243,6 @@ Failed to open 'pushbtn.cmd' when entering bootloader
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | **Planned fix status** - Fixed (message moved to syslog)                                                                                                                                                    |           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-
 
 No sound on USB Audio when changing code versions
 -------------------------------------------------
@@ -280,7 +269,6 @@ No sound on USB Audio when changing code versions
 | **Planned fix status** - NA - It is a Windows issue                                                                                                                               |           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
-
 High CPU and audio distortion with high channel count on USB/A2B
 ----------------------------------------------------------------
 
@@ -303,7 +291,6 @@ High CPU and audio distortion with high channel count on USB/A2B
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | **Planned fix status** - Fixed                                                                                                                                                                          |           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-
 
 Error: Failed erasing affected sectors
 --------------------------------------
@@ -331,7 +318,6 @@ Error: Failed erasing affected sectors
 | **Planned fix status** - Fixed                                                                                                                                                                                                                |           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
-
 Application doesn't boot
 ------------------------
 
@@ -358,7 +344,6 @@ Application doesn't boot
 | **Planned fix status** - Fixed                                                                                                                                                                                                                                                                                           |                     |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 
-
 Application doesn't run in debug session
 ----------------------------------------
 
@@ -379,7 +364,6 @@ Application doesn't run in debug session
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | **Planned fix status** - No plan                                                                                                                                                                                                                            |           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-
 
 Error: could not write file, load will not complete (When using verify option)
 ------------------------------------------------------------------------------
@@ -402,7 +386,6 @@ Error: could not write file, load will not complete (When using verify option)
 | **Planned fix status** - No plan                                                                                                                                                                                                                                                                                                                                   |           |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
-
 Application doesn't boot on fresh SAM boards when flashing full LDR via CrossCore Serial Flash Programmer
 ---------------------------------------------------------------------------------------------------------
 
@@ -423,7 +406,6 @@ Application doesn't boot on fresh SAM boards when flashing full LDR via CrossCor
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | **Planned fix status** - TBD                                                                                                                                                                                                                                                                                                                                            |           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-
 
 Application doesn't boot when USBi is connected
 -----------------------------------------------
@@ -446,7 +428,6 @@ Application doesn't boot when USBi is connected
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+
 | **Planned fix status** - No plan                                                                                                                                        |   |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+
-
 
 Voicemeter detects no incoming stream from SAM
 ----------------------------------------------
@@ -472,12 +453,9 @@ Voicemeter detects no incoming stream from SAM
 | **Planned fix status** - No plan                                                                                       |           |
 +------------------------------------------------------------------------------------------------------------------------+-----------+
 
-
-
 .. important::
 
    Don't see your issue or still having issues? Check out :ez:`EngineerZone <dsp/software-and-development-tools/sharcaudiomodule>` and/or shoot us a message!
-
 
 --------------
 
@@ -492,58 +470,58 @@ Voicemeter detects no incoming stream from SAM
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/parallel-make-hangs-in-git-bash.jpg
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/parallel-make-hangs-in-git-bash.jpg
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knownissues4.jpg
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knownissues4.jpg
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knownissues1.jpg
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knownissues2.jpg
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knownissues1.jpg
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knownissues2.jpg
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/xml_issues.jpg
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/xml_issues.jpg
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vuissues.jpg
-   :width: 400px
+   :width: 400
 .. |image20| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/font_5_0.jpg
-   :width: 400px
+   :width: 400
 .. |image21| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/font_5_4.jpg
-   :width: 400px
+   :width: 400
 .. |image22| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vuissues.jpg
-   :width: 400px
+   :width: 400
 .. |image23| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/font_5_0.jpg
-   :width: 400px
+   :width: 400
 .. |image24| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/font_5_4.jpg
-   :width: 400px
+   :width: 400
 .. |image25| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues13.png
-   :width: 600px
+   :width: 600
 .. |image26| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues14.png
-   :width: 600px
+   :width: 600
 .. |image27| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues13.png
-   :width: 600px
+   :width: 600
 .. |image28| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues14.png
-   :width: 600px
+   :width: 600
 .. |image29| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues12.png
-   :width: 600px
+   :width: 600
 .. |image30| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues12.png
-   :width: 600px
+   :width: 600
 .. |image31| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knownissues.jpg
-   :width: 400px
+   :width: 400
 .. |image32| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knownissues.jpg
-   :width: 400px
+   :width: 400
 .. |image33| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knownissue.png
 .. |image34| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/workaroundcpu.png
 .. |image35| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knownissue.png
 .. |image36| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/workaroundcpu.png
 .. |image37| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues0.png
-   :width: 600px
+   :width: 600
 .. |image38| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues1.png
 .. |image39| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues0.png
-   :width: 600px
+   :width: 600
 .. |image40| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues1.png
 .. |image41| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues6.png
 .. |image42| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues7.png

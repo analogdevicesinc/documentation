@@ -10,7 +10,7 @@ This reference design is a collaboration between ADI Alliance members VORAGO Tec
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/high-temp/ev-ht-200cdaq1dangle.jpg
    :align: right
-   :width: 400px
+   :width: 400
 
 -  :doc:`Reference Design Overview </wiki-migration/resources/eval/user-guides/high-temp/ev-ht-200cdaq1/overview>`
 -  :doc:`Reference Design User's Guide </wiki-migration/resources/eval/user-guides/high-temp/ev-ht-200cdaq1/usersguide>`

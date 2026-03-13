@@ -8,7 +8,10 @@ Index Selectable Multiplexer
 Description
 -----------
 
-The Index Selectable Multiplexer block route one of the inputs to the output pins. The input is selected based on a control signal value from an Index Lookup Table, RMS Table, or DC Input block. The slew variant of Index Selectable Mux allows smooth transition when switching inputs.
+The Index Selectable Multiplexer block route one of the inputs to the output
+pins. The input is selected based on a control signal value from an Index Lookup
+Table, RMS Table, or DC Input block. The slew variant of Index Selectable Mux
+allows smooth transition when switching inputs.
 
 Variants
 --------

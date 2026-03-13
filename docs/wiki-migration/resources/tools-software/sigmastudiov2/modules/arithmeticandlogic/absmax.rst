@@ -9,7 +9,8 @@ Absolute Maximum
 Description
 -----------
 
-The Absolute Maximum block compares the two (or more) inputs and outputs the absolute of the highest value.
+The Absolute Maximum block compares the two (or more) inputs and outputs the
+absolute of the highest value.
 
 Targets Supported
 -----------------

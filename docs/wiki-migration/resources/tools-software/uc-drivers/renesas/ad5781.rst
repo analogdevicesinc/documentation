@@ -1,7 +1,6 @@
 AD5781 - No-OS Driver for Renesas Microcontroller Platforms
 ===========================================================
 
-
 Supported Devices
 =================
 
@@ -15,10 +14,15 @@ Evaluation Boards
 Overview
 ========
 
-
 The :adi:`AD5781` is a single 18-bit, unbuffered voltage-output DAC that operates from a bipolar supply of up to 33 V. The :adi:`AD5781` accepts a positive reference input in the range 5V to VDD – 2.5 V and a negative reference input in the range VSS + 2.5 V to 0 V. The :adi:`AD5781` offers a relative accuracy specification of ±0.5 LSB max, and operation is guaranteed monotonic with a ±0.5 LSB DNL max specification.
 
-The part uses a versatile 3-wire serial interface that operates at clock rates up to 35 MHz and that is compatible with standard SPI®, QSPI™, MICROWIRE™, and DSP interface standards. The part incorporates a power-on reset circuit that ensures the DAC output powers up to 0 V and in a known output impedance state and remains in this state until a valid write to the device takes place. The part provides an output clamp feature that places the output in a defined load state.
+The part uses a versatile 3-wire serial interface that operates at clock rates
+up to 35 MHz and that is compatible with standard SPI®, QSPI™, MICROWIRE™, and
+DSP interface standards. The part incorporates a power-on reset circuit that
+ensures the DAC output powers up to 0 V and in a known output impedance state
+and remains in this state until a valid write to the device takes place. The
+part provides an output clamp feature that places the output in a defined load
+state.
 
 Applications
 ------------
@@ -34,9 +38,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/ad5781_pmod_da5.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -44,9 +51,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD5781 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD5781 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD5781 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD5781 driver:
 
@@ -60,7 +71,6 @@ There are three functions which are called by the AD5781 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of AD5781 driver:
 
@@ -82,8 +92,6 @@ The following functions are implemented in this version of AD5781 driver:
 | long AD5781_Setup(unsigned long setupWord)                                               | Configures the output amplifier, DAC coding, SDO state and the linearity error compensation. Receives as parameter a 24-bit value that sets or clears the Control Register bits(RBUF, BIN/2sC, SDODIS, LINCOMP). Returns negative error code or 0 in case of success. |
 +------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 **HW Platform(s):**
 
 -  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`_
@@ -102,11 +110,11 @@ Downloads
    -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
-
 Renesas RL78G14 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD5781 demonstration project on a Renesas RL78G14 platform using the PmodDA5.
+This section contains a description of the steps required to run the AD5781
+demonstration project on a Renesas RL78G14 platform using the PmodDA5.
 
 Required Hardware
 -----------------
@@ -122,11 +130,12 @@ Required Software
 
 .. note::
 
-   The AD5781 demonstration project for the Renesas RL78G14 platform consists of three parts: the AD5781 Driver, the PmodDA5 Demo for RL78G14 and the RL78G14 Common Drivers.
+   The AD5781 demonstration project for the Renesas RL78G14 platform consists of
+   three parts: the AD5781 Driver, the PmodDA5 Demo for RL78G14 and the RL78G14
+   Common Drivers.
 
    
    All three parts have to be downloaded.
-
 
 Hardware Setup
 --------------
@@ -151,20 +160,15 @@ The reference project:
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`_
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-

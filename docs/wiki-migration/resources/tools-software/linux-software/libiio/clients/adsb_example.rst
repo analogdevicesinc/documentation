@@ -9,7 +9,9 @@ Automatic dependent surveillance – broadcast (ADS–B) is a cooperative survei
 -  Message Length: 56 μsec or 112 μsec
 -  24-bit CRC checksum
 
-The tuning frequency and bandwidth are well within the capabilities of the AD9361 RF transceiver, and the received IQ samples can be detected and decoded with a variety of software or embedded platform options.
+The tuning frequency and bandwidth are well within the capabilities of the
+AD9361 RF transceiver, and the received IQ samples can be detected and decoded
+with a variety of software or embedded platform options.
 
 In this section, we will show an airplane tracking example, where the ADS-B signal is captured by FMCOMMS3 and then streamed from target to Simulink or MATLAB via the libiio interface. Consequently, the captured signal is demodulate by the receiver algorithm based upon an existing MATLAB example `Tracking Airplanes Using RTL-SDR Radio with MATLAB <https://www.mathworks.com/help/supportpkg/rtlsdrradio/examples/airplane-tracking-using-ads-b-signals.html>`_, and all the airplane information is displayed in a table.
 
@@ -25,7 +27,8 @@ Requirements
    -  `DSP System Toolbox <https://www.mathworks.com/products/dsp-system/>`_
    -  `Signal Processing Toolbox <https://www.mathworks.com/products/signal/>`_
    
-   In order to run the Simulink version of this example, your license needs to include the following component:
+   In order to run the Simulink version of this example, your license needs to
+   include the following component:
    
    -  `Simulink <https://www.mathworks.com/products/simulink/>`_
    -  `Stateflow <https://www.mathworks.com/products/stateflow/>`_
@@ -44,7 +47,6 @@ Requirements
    -  A good understanding of how the :adi:`AD9361` works. At a minimum, you should read over a basic intro for the :doc:`AD9361 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`.
    
 
-
 MATLAB
 ------
 
@@ -57,7 +59,6 @@ The MATLAB example can be found here:
    -  :git-MathWorks_tools:`ADS-B Airplane Tracking Example <hil_models/ADSB_MATLAB>`
    
 
-
 In this MATLAB example, we combine the data capture process and receiver algorithm, so you only need to run one script::git-MathWorks_tools:`hil_models/ADSB_MATLAB/ad9361_ModeS.m`.
 
 This function mainly consists of three parts:
@@ -66,36 +67,51 @@ This function mainly consists of three parts:
 -  Calculate the earth zone according to user input
 -  Receive using MATLAB libiio and decode the received signals
 
-Detailed comments have been provided in the function to describe the purpose of each part.
+Detailed comments have been provided in the function to describe the purpose of
+each part.
 
-Depending on how you set up the Tx and Rx LO frequency, there are two ways of using this model: using pre-captured data and using live data.
+Depending on how you set up the Tx and Rx LO frequency, there are two ways of
+using this model: using pre-captured data and using live data.
 
 Use Pre-captured Data
 ~~~~~~~~~~~~~~~~~~~~~
 
 In this case, we are transmitting and receiving some pre-captured ADS-B signals using FMCOMMS3. These signals are saved in a variable called "newModeS". The requirement for this case is to make **TX_LO_FREQ = RX_LO_FREQ**, and it can be any LO frequency value that FMCOMMS3 supports.
 
-The AD9361 attribute setting of this example is intended to work with real-world signal (gain mode = fast attack). Sometimes the pre-captured data is much higher in amplitude that the real-world signal. In this case, on the IIO Oscilloscope application, "Tx Attenuation" should be set to maximum so that the received signal matches real-world signals.
+The AD9361 attribute setting of this example is intended to work with real-world
+signal (gain mode = fast attack). Sometimes the pre-captured data is much higher
+in amplitude that the real-world signal. In this case, on the IIO Oscilloscope
+application, "Tx Attenuation" should be set to maximum so that the received
+signal matches real-world signals.
 
-For each data frame being transmitted and received, you will get a result table as shown below. Due to the nature of pre-captured data, there is plenty of information there, so it is a good way to verify whether your setup is appropriate.
-
+For each data frame being transmitted and received, you will get a result table
+as shown below. Due to the nature of pre-captured data, there is plenty of
+information there, so it is a good way to verify whether your setup is
+appropriate.
 
 |Block diagram|
 
 Use Live Data
 ~~~~~~~~~~~~~
 
-In this case, we are receiving the real-world ADS-B signals over the air, instead of the signals transmitted by FMCOMMS3. According to ADS-B specification, it is transmitted at the center frequency of 1090 MHz, so the requirements for this case is:
+In this case, we are receiving the real-world ADS-B signals over the air,
+instead of the signals transmitted by FMCOMMS3. According to ADS-B
+specification, it is transmitted at the center frequency of 1090 MHz, so the
+requirements for this case is:
 
 -  RX_LO_FREQ=1090 MHz, TX_LO_FREQ far away from 1090 MHz in order to avoid interference
 -  Use a proper antenna on the Rx side, which is capable of covering the 1090 MHz band, such as an `ADS-B Double 1/2 Wave Mobile Antenna <http://www.dpdproductions.com/page_vhf_air.html#adsmobilehalf>`_; using a poorly tuned or poorly made antenna will result in a lack of range for your air radar.
 
-Besides, if you are in a location with sparse aircraft traffic, it is recommended to run the model for longer time in order to capture some useful data. You can tell whether there is any useful data by looking at the spectrum analyzer. A typical ADS-B spectrum looks like this:
+Besides, if you are in a location with sparse aircraft traffic, it is
+recommended to run the model for longer time in order to capture some useful
+data. You can tell whether there is any useful data by looking at the spectrum
+analyzer. A typical ADS-B spectrum looks like this:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/adsb_spec.png
    :alt: Block diagram
 
-With everything set up properly, in order to run the MATLAB model, simply use the following command:
+With everything set up properly, in order to run the MATLAB model, simply use
+the following command:
 
 .. code:: matlab
 
@@ -109,14 +125,18 @@ For example, the following command receives the pre-captured date on Channel 2:
 
    [rssi1,rssi2]=ad9361_ModeS('192.168.10.2','pre-captured',2);
 
-At the end of the simulation, you will get the RSSI values on both channels, as well as the result tables shown in the previous case.
+At the end of the simulation, you will get the RSSI values on both channels, as
+well as the result tables shown in the previous case.
 
 The following is an example result we got from the real-world ADS-B signal. Besides all the airplane information shown in previous case, we are also able to get the *Flight ID* as highlighted below.
 
-
 |image1|
 
-This result table shows the information of aircrafts appearing during the simulation. With a proper antenna, this model is able to capture and decode the aircraft signals in an 80 miles range with FMCOMMS3. Since there are two types of Mode S messages (56 usec or 112 usec), some messages contain more information than the other.
+This result table shows the information of aircrafts appearing during the
+simulation. With a proper antenna, this model is able to capture and decode the
+aircraft signals in an 80 miles range with FMCOMMS3. Since there are two types
+of Mode S messages (56 usec or 112 usec), some messages contain more information
+than the other.
 
 Simulink
 --------
@@ -130,8 +150,8 @@ The model using Simulink libiio can be found here:
    -  :git-MathWorks_tools:`ADS-B Airplane Tracking Example <hil_models/ADSB_Simulink_libiio>`
    
 
-
-This Simulink model is based upon an existing Simulink example provided by MathWorks:
+This Simulink model is based upon an existing Simulink example provided by
+MathWorks:
 
 .. admonition:: Download
    :class: download
@@ -140,27 +160,37 @@ This Simulink model is based upon an existing Simulink example provided by MathW
    -  :git-MathWorks_tools:`Original MathWorks Example <hil_models/ADSB_Simulink>`
    
 
+The detector and decoding piece comes directly from that model, and we add the
+Simulink IIO System object to conduct the signal reception and hardware in the
+loop simulation.
 
-The detector and decoding piece comes directly from that model, and we add the Simulink IIO System object to conduct the signal reception and hardware in the loop simulation.
-
-The original model works with sample time = 1 and frame size = 1. However, the Simulink IIO System object works in a buffer mode - it accumulates a number of samples and then processes them. In order to make the original model works with the System object, we added two blocks between them: unbuffer to make frame size = 1 and rate transition to make sample time = 1. By doing this, we can keep the original model intact.
+The original model works with sample time = 1 and frame size = 1. However, the
+Simulink IIO System object works in a buffer mode - it accumulates a number of
+samples and then processes them. In order to make the original model works with
+the System object, we added two blocks between them: unbuffer to make frame size
+= 1 and rate transition to make sample time = 1. By doing this, we can keep the
+original model intact.
 
 The Simulink model **ModeS_Simulink_libiio.slx** is shown in the figure below. We set up the target using *iio_sys_obj* block, and the received ADS-B signal is post processed by the detector and decoding subsystem.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/adsb_model.png
    :alt: Block diagram
 
-Depending on how you set up the TX_LO_FREQ and RX_LO_FREQ, this Simulink model can be run in two modes: using pre-captured data “DataIn” and using live data. Taking the pre-captured data for example, at the end of the simulation, we can see the following results in command window:
-
+Depending on how you set up the TX_LO_FREQ and RX_LO_FREQ, this Simulink model
+can be run in two modes: using pre-captured data “DataIn” and using live data.
+Taking the pre-captured data for example, at the end of the simulation, we can
+see the following results in command window:
 
 |image2|
 
-Instead of the result table shown in the MATLAB model, the results here are displayed in the text format.
+Instead of the result table shown in the MATLAB model, the results here are
+displayed in the text format.
 
 Reference
 ---------
 
-“Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio.”
+“Four Quick Steps to Production: Using Model-Based Design for Software-Defined
+Radio.”
 
 -  Di Pu, Andrei Cozma, and Tom Hill. "Part 1 - the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools". :adi:`Analog Dialogue, Volume 49, Number 3 <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`.
 -  Mike Donovan, Andrei Cozma, and Di Pu. "Part 2 - Mode-S Detection and Decoding Using MATLAB and Simulink". :adi:`Analog Dialogue, Volume 49, Number 4 <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`.

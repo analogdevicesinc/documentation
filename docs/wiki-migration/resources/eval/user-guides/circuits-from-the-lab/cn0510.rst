@@ -6,13 +6,20 @@ Overview
 
 The :adi:`CN0510` circuit is an electrochemical impedance spectroscopy (EIS) measurements system for characterizing Lithium Ion and other types of secondary batteries. EIS is a non-destructive perturbation technique used to examine processes occurring inside electrochemical systems. The system measures the impedance of the battery cell over a range of frequencies. The data can determine the state of health (SOH) and State of Charge (SOC) of a battery. This system is designed to excite and measure a battery’s internal impedance with frequencies from hertz to kilo-hertz utilizing an ultralow power analog front end (AFE) system.
 
-Ageing leads to performance degradation and irreversible changes in the battery’s chemistry. Impedance increases linearly with the decline in capacity. Monitoring the increase in impedance of a battery using EIS can determine the SOH and if the battery needs replacing, resulting in reduced system downtime and lower maintenance costs.
+Ageing leads to performance degradation and irreversible changes in the
+battery’s chemistry. Impedance increases linearly with the decline in capacity.
+Monitoring the increase in impedance of a battery using EIS can determine the
+SOH and if the battery needs replacing, resulting in reduced system downtime and
+lower maintenance costs.
 
-Batteries require a current excitation, not voltage, and the impedance values are small, in the milliohm range. This system includes the necessary circuitry to inject a current into the battery and allows for calibration and sensing of the small impedances found in batteries.
+Batteries require a current excitation, not voltage, and the impedance values
+are small, in the milliohm range. This system includes the necessary circuitry
+to inject a current into the battery and allows for calibration and sensing of
+the small impedances found in batteries.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/ref-board.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Required Equipment
 ------------------
@@ -48,12 +55,12 @@ General Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/connected-ref-board.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. warning::
 
-   Ensure the boards are powered before connecting the battery to avoid a short circuit.
-
+   Ensure the boards are powered before connecting the battery to avoid a short
+   circuit.
 
 Hardware
 ~~~~~~~~
@@ -66,12 +73,21 @@ Hardware
    -  Connect F+ and S+ leads to the positive terminal of the battery.
 
       -  Connect S- and F- to the negative terminal of the battery.
-      -  Connect red BNC wires of J1 and J2 to the positive terminal of the battery.
+      -  Connect red BNC wires of J1 and J2 to the positive terminal of the
+         battery.
 
 Software
 ~~~~~~~~
 
-There are two options for running battery impedance measurements on the EVAl-AD5941BATZ. The first is using SensorPal GUI tool. SensorPal provides an intuitive interface that allows the user to configure and update parameters such as frequency range and view measurement results in Nyquist form without needing to downlaod or use an IDE such as Keil. This option is best for rapid prototyping and measurement verification. The second option is to run the example projects in an IDE such as Keil to modify the low level embedded firmware. This options offers more control over the low level operation of the hardware but requires some knowledge of embedded C development
+There are two options for running battery impedance measurements on the
+EVAl-AD5941BATZ. The first is using SensorPal GUI tool. SensorPal provides an
+intuitive interface that allows the user to configure and update parameters such
+as frequency range and view measurement results in Nyquist form without needing
+to downlaod or use an IDE such as Keil. This option is best for rapid
+prototyping and measurement verification. The second option is to run the
+example projects in an IDE such as Keil to modify the low level embedded
+firmware. This options offers more control over the low level operation of the
+hardware but requires some knowledge of embedded C development
 
 SensorPal
 ^^^^^^^^^
@@ -83,7 +99,7 @@ SensorPal
 -  The measurement may take some time to start as the hardware is initialized.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sensorpal_batz.jpg
-   :width: 600px
+   :width: 600
 
 Embedded Firmware Development
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -105,7 +121,7 @@ Embedded Firmware Development
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/serial-terminal.png
    :align: center
-   :width: 300px
+   :width: 300
 
 ::
 
@@ -126,8 +142,6 @@ The measurement results are sent to the PC via UART. To establish connection ove
      Parity: none
      Stop: 1 bit
      Flow Control: none
-
-
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
@@ -204,13 +218,11 @@ preferences.
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
 
-
-
 Battery Test and Results
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Below is an example of the Nyquist plot obtained for a Lithium Ion battery measured using the EVAL-AD5941BATZ.
-
+Below is an example of the Nyquist plot obtained for a Lithium Ion battery
+measured using the EVAL-AD5941BATZ.
 
 |image2|
 
@@ -229,7 +241,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro project
    
 
-
 Registration
 ------------
 
@@ -237,10 +248,9 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD5941BATZ?&v=RevE>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/terminal-output.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/nyquist-plot.png
-   :width: 400px
+   :width: 400

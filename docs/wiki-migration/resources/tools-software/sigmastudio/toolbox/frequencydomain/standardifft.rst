@@ -3,10 +3,14 @@
 IFFT
 ====
 
-This Module performs N-point IFFT on input samples which are in the PCMx format, the BlockSize of which is 3 \* Schematic Block Size. The first Schematic Block Size number of samples in a PCMx input contains the header information carried from the previous Module (say in this case FFT). Only when the PCMx type matches, IFFT is performed and output is given as Linear PCM samples
+This Module performs N-point IFFT on input samples which are in the PCMx format,
+the BlockSize of which is 3 \* Schematic Block Size. The first Schematic Block
+Size number of samples in a PCMx input contains the header information carried
+from the previous Module (say in this case FFT). Only when the PCMx type
+matches, IFFT is performed and output is given as Linear PCM samples
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifftstandard.jpg
-   :width: 200px
+   :width: 200
 
 Input Pins
 ----------
@@ -37,14 +41,13 @@ Configuration
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifftstandardconfig.jpg
-   :width: 100px
+   :width: 100
 
 ================ ============= ========== ====================
 GUI Control Name Default Value Range      Function Description
 ================ ============= ========== ====================
 FFT Size         64            16 to 1024 Size of the IFFT
 ================ ============= ========== ====================
-
 
 | ====DSP Parameter Information====
 
@@ -64,7 +67,10 @@ FFT Size         64            16 to 1024 Size of the IFFT
 Algorithm Description
 ---------------------
 
-This module performs Complex IFFT on the input samples received in PCMx format. The twiddle coefficients are calculated within the code. IFFT Size should be a power of 2 and greater than or equal to the FFTSize. Link/Compile/Download is necessary whenever the IFFT Size is changed.
+This module performs Complex IFFT on the input samples received in PCMx format.
+The twiddle coefficients are calculated within the code. IFFT Size should be a
+power of 2 and greater than or equal to the FFTSize. Link/Compile/Download is
+necessary whenever the IFFT Size is changed.
 
 Supported ICs
 -------------

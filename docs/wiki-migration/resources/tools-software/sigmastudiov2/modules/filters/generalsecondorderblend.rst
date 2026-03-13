@@ -5,7 +5,7 @@ General Eq Blend
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/generaleqblend.png
    :alt: generaleqblend.png
-   :width: 200px
+   :width: 200
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/genfiltsettings.png
    :alt: genfiltsettings.png
@@ -13,7 +13,8 @@ General Eq Blend
 Description
 -----------
 
-The General (2nd-Order) block gives access to a wide variety of 2nd-order (biquad)filter algorithms.
+The General (2nd-Order) block gives access to a wide variety of 2nd-order
+(biquad)filter algorithms.
 
 The available filter types are:
 
@@ -36,7 +37,9 @@ The available filter types are:
 Usage
 -----
 
-To open the filter control window, click on the icon button. Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+To open the filter control window, click on the icon button. Select the desired
+filter type from the drop-down combo-box list. The filter controls and the icon
+button image will change to reflect the selected filter type.
 
 Targets Supported
 -----------------
@@ -68,7 +71,6 @@ Name    Type  Description
 Output0 Audio Output channel 0
 ======= ===== ================
 
-
 | ===== Configurable Parameters =====
 
 ================== ============= ============= ======================
@@ -79,12 +81,9 @@ Gain               0 dB          -10 to +10 dB Filter Gain
 Q                  1.41          1 to 15       Q factor of the filter
 ================== ============= ============= ======================
 
-
 | ===== DSP Parameters =====
 
 ============== =========== ======================
 Parameter Name Description ADSP-214xx/SC5xx/215xx
 ============== =========== ======================
 ============== =========== ======================
-
-

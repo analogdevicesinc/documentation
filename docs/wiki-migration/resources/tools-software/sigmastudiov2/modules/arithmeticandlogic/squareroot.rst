@@ -9,7 +9,8 @@ Square Root
 Description
 -----------
 
-The Square Root block computes the square root of the input value and outputs the result.
+The Square Root block computes the square root of the input value and outputs
+the result.
 
 Targets Supported
 -----------------
@@ -19,7 +20,6 @@ Name        ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 =========== ========== ================ ============= ================
 Square Root B/S        B/S              S             B
 =========== ========== ================ ============= ================
-
 
 | ===== Pins =====
 

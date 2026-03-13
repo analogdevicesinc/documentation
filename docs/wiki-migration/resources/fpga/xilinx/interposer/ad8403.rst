@@ -20,18 +20,16 @@ This document presents the steps to setup an environment for using the :adi:`EVA
    :alt: img_ad8403.jpg
    :align: center
 
-
 .. note::
 
    See `common_sdp <https://wiki.analog.com/common_sdp>`_
-
 
 Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD8403SDZ** Evaluation Board.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad8403_-_sdp1z.png
    :alt: ad8403\_-\_sdp1z.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The :adi:`AD8403` is a quad-channel, 256-position, digitally controlled variable resistor device. This device performs the same electronic adjustment function as a mechanical potentiometer or variable resistor. The AD8403 contains four independent variable resistors. Each variable resistor offers a completely programmable value of resistance between the A terminal and the wiper or the B terminal and the wiper. The fixed A-to-B terminal resistance of 1 kO, 10 kO, 50 kO, or 100 kO has a ±1% channel-to-channel matching tolerance with a nominal temperature coefficient of 500 ppm/°C.
 
@@ -47,7 +45,9 @@ More information
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Required Hardware
 -----------------
@@ -75,15 +75,15 @@ Downloads
    -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
    
 
-
 Hardware setup
 --------------
 
 .. important::
 
    
-   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
-
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that
+   the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to
+   change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
@@ -91,7 +91,8 @@ Hardware setup
 Reference Project Overview
 --------------------------
 
-The following commands were implemented in this version of EVAL-AD8403 reference project for Xilinx KC705 FPGA board.
+The following commands were implemented in this version of EVAL-AD8403 reference
+project for Xilinx KC705 FPGA board.
 
 +---------------+------------------------------------------------------------------------------------------+
 | Command       | Description                                                                              |
@@ -131,31 +132,28 @@ The following commands were implemented in this version of EVAL-AD8403 reference
 |               | 3 - select RDAC 4 wiper register.                                                        |
 +---------------+------------------------------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+Commands can be executed using a serial terminal connected to the UART
+peripheral of Xilinx KC705 FPGA.
 
-The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
-
+The following image shows a generic list of commands in a serial terminal
+connected to Xilinx KC705 FPGA's UART peripheral.
 
 |Terminal_KC705.jpg|
 
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `import_workspace <https://wiki.analog.com/import_workspace>`_
-
 
 More information
 ================
 
 -  :doc:`AD8403 Digital Potentiometer Linux Driver </wiki-migration/resources/tools-software/linux-drivers/misc/dpot>`
 
-
 .. note::
 
    See `ez_common <https://wiki.analog.com/ez_common>`_
-
 
 .. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/terminal_kc705.jpg

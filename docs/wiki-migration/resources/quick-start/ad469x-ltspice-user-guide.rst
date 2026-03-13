@@ -4,12 +4,19 @@ LTspice User Guide - AD469x Model
 Overview
 --------
 
-AD469x is a family of 16-Bit, Easy Drive Mux SAR ADCs. The LTspice component library includes the AD469x family to enable hardware-free prototyping of multichannel precision measurement signal chains using the AD469x. This user guide provides an overview of the AD469x LTspice model features and functionality, plus links to other detailed user guides for setting up the models for different types of simulations (transient, noise analysis, etc.).
+AD469x is a family of 16-Bit, Easy Drive Mux SAR ADCs. The LTspice component
+library includes the AD469x family to enable hardware-free prototyping of
+multichannel precision measurement signal chains using the AD469x. This user
+guide provides an overview of the AD469x LTspice model features and
+functionality, plus links to other detailed user guides for setting up the
+models for different types of simulations (transient, noise analysis, etc.).
 
 Models Supported
 ~~~~~~~~~~~~~~~~
 
-There are four generics in the AD469X family, ranging from 8 - 16 Channels, and 500 kSPS to 1 MSPS. Please note that the LTspice models for the 16-channel generics (AD4695 and AD4696) only include 8 analog input channels.
+There are four generics in the AD469X family, ranging from 8 - 16 Channels, and
+500 kSPS to 1 MSPS. Please note that the LTspice models for the 16-channel
+generics (AD4695 and AD4696) only include 8 analog input channels.
 
 ======= ================= =========== ================
 Generic Channels (Device) Sample Rate Channels (Model)
@@ -38,24 +45,31 @@ Transient Simulations
 -  Magnitude of the transient glitches on the Easy Drive ADC inputs
 -  Timing of the transient glitches relative to each CNV rising edge
 -  Acquisition time of ADC relative to the desired sampling rate
--  Behaviors of input transients of each channel for a given channel sequencer configuration
+-  Behaviors of input transients of each channel for a given channel sequencer
+   configuration
 
 Symbol and Pin Functions
 ------------------------
 
-This section provides step-by-step instructions on how to access the AD469x family symbol in LTspice.
+This section provides step-by-step instructions on how to access the AD469x
+family symbol in LTspice.
 
 -  Open a New Schematic in LTspice:
 
-To begin, open LTspice and create a new schematic by selecting the appropriate option from the file menu.
+To begin, open LTspice and create a new schematic by selecting the appropriate
+option from the file menu.
 
 -  Access the Components Library:
 
-Locate the components library in LTspice taskbar. Click on the symbol library icon twice to open the window.
+Locate the components library in LTspice taskbar. Click on the symbol library
+icon twice to open the window.
 
 -  Navigating the Component Library:
 
-Once the component library window pops up, you will see a variety of categories and subcategories. Look for the ADC list and click on it to access the available ADC models in the LTspice directory. Within the ADC list, locate and select the AD4696 model to proceed with your design.
+Once the component library window pops up, you will see a variety of categories
+and subcategories. Look for the ADC list and click on it to access the available
+ADC models in the LTspice directory. Within the ADC list, locate and select the
+AD4696 model to proceed with your design.
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/symbol_ad469x.gif
    :align: center
@@ -68,12 +82,15 @@ The symbol for the model is shown in Fig. 1.
 .. image:: https://wiki.analog.com/_media/resources/quick-start/ad469x-symbol.png
    :alt: LTspice Symbol for AD469x family
    :align: center
-   :width: 200px
+   :width: 200
 
 Pin Functions
 ~~~~~~~~~~~~~
 
-The following table lists the names and brief descriptions of the pins on the AD469x LTspice models. The functionality of each pin varies slightly depending on the type of simulation. Detailed descriptions for each pin are included in their respective simulation overview guide.
+The following table lists the names and brief descriptions of the pins on the
+AD469x LTspice models. The functionality of each pin varies slightly depending
+on the type of simulation. Detailed descriptions for each pin are included in
+their respective simulation overview guide.
 
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Pin               | Function                                                                                                                                                                                                             |
@@ -102,17 +119,21 @@ The following table lists the names and brief descriptions of the pins on the AD
 Parameters
 ----------
 
-The AD469x LTspice models include a set of parameters for configuring various aspects of the models. The parameters are accessed by right clicking on the parameters statements on the symbol.
+The AD469x LTspice models include a set of parameters for configuring various
+aspects of the models. The parameters are accessed by right clicking on the
+parameters statements on the symbol.
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/param-u1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/param-u2.png
    :align: center
-   :width: 400px
+   :width: 400
 
-The following table lists the names and brief descriptions of the parameters available in the AD469x LTspice models. Detailed descriptions for each parameter are included in their respective simulation overview guide.
+The following table lists the names and brief descriptions of the parameters
+available in the AD469x LTspice models. Detailed descriptions for each parameter
+are included in their respective simulation overview guide.
 
 +----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+
 |                |                                                                                                                                                                                                                                                        | Default Value |
@@ -131,7 +152,8 @@ The following table lists the names and brief descriptions of the parameters ava
 Limitations / Disclaimer
 ------------------------
 
-The model has not undergone validation for the remaining simulation types, including.
+The model has not undergone validation for the remaining simulation types,
+including.
 
 -  DC sweeps
 -  AC analysis

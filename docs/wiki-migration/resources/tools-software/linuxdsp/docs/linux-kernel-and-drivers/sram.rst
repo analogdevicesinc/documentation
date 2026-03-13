@@ -4,7 +4,10 @@ SRAM driver
 Introduction
 ------------
 
-This page introduces the SRAM driver in ADI linux kernel for sc5xx ezkit boards. Users could allocate memory from specified sram pool defined in dts. sram_mmap driver in this page is an example for this. For how to enable the sram_mmap, please see the below sections.
+This page introduces the SRAM driver in ADI linux kernel for sc5xx ezkit boards.
+Users could allocate memory from specified sram pool defined in dts. sram_mmap
+driver in this page is an example for this. For how to enable the sram_mmap,
+please see the below sections.
 
 Package Configuration
 ---------------------
@@ -72,7 +75,8 @@ There are two main c files under the driver/sram/adi directory.
 Reserved SRAM pools in dts file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These 2 dts part will generate 2 memory pools from sram using "mmio-sram" driver.
+These 2 dts part will generate 2 memory pools from sram using "mmio-sram"
+driver.
 
 ::
 
@@ -95,7 +99,8 @@ These 2 dts part will generate 2 memory pools from sram using "mmio-sram" driver
 How to add another device to use the memory in sram
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If users want to allocate their own sram memory from sram pool in linux kernel, they should first
+If users want to allocate their own sram memory from sram pool in linux kernel,
+they should first
 
 -  add below line dts in your own device
 

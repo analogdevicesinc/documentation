@@ -12,23 +12,38 @@ Overview
 
 -  Drag the block into the workspace.
 -  Click Table.
--  Enter the coefficients as calculated by your chosen software (see below). (Max is 800.)
+-  Enter the coefficients as calculated by your chosen software (see below).
+   (Max is 800.)
 
-Frequency response can be shaped by specifying the appropriate filter coefficients, as shown here:
+Frequency response can be shaped by specifying the appropriate filter
+coefficients, as shown here:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/firpic2.png
    :alt: firpic2.png
 
-You can use this popup window to input as many more coefficients as you desire, resulting in your own custom FIR filter. (Remember, the more numbers the closer to an ideal IIR filter, but at the cost of memory.)
+You can use this popup window to input as many more coefficients as you desire,
+resulting in your own custom FIR filter. (Remember, the more numbers the closer
+to an ideal IIR filter, but at the cost of memory.)
 
-CAD programs are available which simplify the design of lowpass, highpass, bandpass, or bandstop FIR filters. A popular one was developed by Parks and McClellan and uses the Remez exchange algorithm. The design begins by specifying such parameters as passband ripple, stopband [attenuation] ripple, and the transition region. One such CAD program is QED1000 from Momentum Data Systems; a free version is downloadable from www.mds.com.
+CAD programs are available which simplify the design of lowpass, highpass,
+bandpass, or bandstop FIR filters. A popular one was developed by Parks and
+McClellan and uses the Remez exchange algorithm. The design begins by specifying
+such parameters as passband ripple, stopband [attenuation] ripple, and the
+transition region. One such CAD program is QED1000 from Momentum Data Systems; a
+free version is downloadable from www.mds.com.
 
-The frequency response of the filter coefficients in the RMS Table editor figure shown above is pictured below:
+The frequency response of the filter coefficients in the RMS Table editor figure
+shown above is pictured below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/firpic3.png
    :alt: firpic3.png
 
-To add input / output sets, right-click and Add Algorithm, IC1, FIR. After the default algorithm is established, this block can have algorithms added to it. (If you're using more than one DSP board, you will need to add the initial default algorithm for the desired board.) Right-click the block and select Add Algorithm > IC N > Pink Noise Filter. This adds another set of input/output pins for connection.
+To add input / output sets, right-click and Add Algorithm, IC1, FIR. After the
+default algorithm is established, this block can have algorithms added to it.
+(If you're using more than one DSP board, you will need to add the initial
+default algorithm for the desired board.) Right-click the block and select Add
+Algorithm > IC N > Pink Noise Filter. This adds another set of input/output pins
+for connection.
 
 For background detail and theory, see `FIR Filter Algorithm <https://wiki.analog.com/resources/tools-software/sigmastudio/algorithminformation/firfilter>`_.
 
@@ -37,9 +52,11 @@ Scripting the FIR Filter from Python
 
 First, establish a connection between Python and SigmaStudio as described on the page :doc:`SigmaStudio Scripting from Python </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/scripting/python>`.
 
-After a connection between Python and SigmaStudio has been established, the FIR Filter can be updated with new coefficients using the following code.
+After a connection between Python and SigmaStudio has been established, the FIR
+Filter can be updated with new coefficients using the following code.
 
-Here, fir_filter_coeffs is a list containing the coefficients and 'FIR1' is the name of the FIR block in SigmaStudio.
+Here, fir_filter_coeffs is a list containing the coefficients and 'FIR1' is the
+name of the FIR block in SigmaStudio.
 
 .. code:: python
 

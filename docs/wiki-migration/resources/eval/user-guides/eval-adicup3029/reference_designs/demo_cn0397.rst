@@ -14,7 +14,7 @@ The **ADICUP3029_CN0397** application perform ADC readings for all 3 channels, p
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/board.png
    :align: left
-   :width: 440px
+   :width: 440
 
 The 16-bits ADC data are received using **SPI interface** of the EVAL-ADICUP3029 board. The **UART interface** (**9600** baud rate and **8-bits** data length) is used to send(and to receive) data to (from) a terminal window.
 
@@ -34,7 +34,7 @@ Beside **light intensity** and **light concentration** values, for each channel 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/table.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Demo Requirements
 -----------------
@@ -69,7 +69,7 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_usb_revc.png
    :align: center
-   :width: 200px
+   :width: 200
 
 -  Connect a jumper on **P1** between position **1-2** on EVAL-CN0397-ARDZ.
 -  Plug the **EVAL-CN0397-ARDZ** shield into the **EVAL-ADICUP3029** board, using (P3), (P4), (P5), (P6), and (P7).
@@ -88,9 +88,12 @@ Calibration procedure
 
 The **CN0397** needs to be calibrated first before using it in order to achieve best performance. A system zero offset calibration needs to be run to cancel the offset for all of the channels.
 
-Calibration, which is enabled by default, can be done by covering and not allowing any light to reach the photodiodes within the first 5 second of the program start.
+Calibration, which is enabled by default, can be done by covering and not
+allowing any light to reach the photodiodes within the first 5 second of the
+program start.
 
-Once all the channels have been calibrated, the circuit is now ready for use. The output data will be available for each LED on android device if enabled.
+Once all the channels have been calibrated, the circuit is now ready for use.
+The output data will be available for each LED on android device if enabled.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/calibration_1.png
    :align: center
@@ -98,7 +101,9 @@ Once all the channels have been calibrated, the circuit is now ready for use. Th
 Outputting Data
 ---------------
 
-Once the hardware setupand software is configured, user needs to select how they want to view the data coming from Visible Light Detection\\Measurement demo.(CN0397)
+Once the hardware setupand software is configured, user needs to select how they
+want to view the data coming from Visible Light Detection\\Measurement
+demo.(CN0397)
 
 There are **three** different ways to visualize the data:
 
@@ -107,7 +112,6 @@ There are **three** different ways to visualize the data:
 -  IoTNode Smart Device App
 
 Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard.
-
 
 |image1|
 
@@ -133,18 +137,20 @@ Debug Launch Mode
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/debug_mode_ble.png
    :align: center
 
-Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to the smart app. If you have the app installed on your phone, these figure shows the output on android device.
+Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to the
+smart app. If you have the app installed on your phone, these figure shows the
+output on android device.
 
 .. important::
 
-   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your phone.
+   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your
+   phone.
 
    
    -  Simply open up the IoTNode application on your phone.
    -  "Scan" for nearby demos.
    -  Once you find your demo, click on it to open it up.
    
-
 
 |image2| |image3|
 
@@ -171,14 +177,14 @@ If *ADI_APP_USE_BLUETOOTH* is set to 1, BLE will advertise and UART terminal wil
 
 .. important::
 
-   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your phone.
+   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your
+   phone.
 
    
    -  Simply open up the IoTNode application on your phone.
    -  "Scan" for nearby demos.
    -  Once you find your demo, click on it to open it up.
    
-
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/release_mode_ble.png
    :align: center
@@ -189,18 +195,22 @@ If *ADI_APP_USE_BLUETOOTH* is set to 1, BLE will advertise and UART terminal wil
 
    Visible Light Detection Demo (ADICUP3029_CN0397) only works with Android App.
 
-
 Obtaining the Sotware
 ---------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0397.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0397.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cn0397** can be found here:
 
@@ -216,7 +226,6 @@ The software for the **ADuCM3029_demo_cn0397** can be found here:
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0397 Source Code <projects/ADuCM3029_demo_cn0397>`
    
-
 
 How to use the Tools
 --------------------
@@ -236,14 +245,18 @@ For more detailed instructions on importing this application/demo example into t
 -  Make sure the target board is connected to workstation (via **USB** at P10) and using the tool bar, navigate to the small Debug icon\ |image6| and select the debugging session you created. The application will programmed and the program execution will stop at the beginning of the main() function.
 -  Use step-by-step execution or directly run the program.
 
-After completion of the steps above the program will be loaded onto the system FLASH and it will run by default every time the board is powered up.
+After completion of the steps above the program will be loaded onto the system
+FLASH and it will run by default every time the board is powered up.
 
 Project Structure
 ~~~~~~~~~~~~~~~~~
 
 The **ADICUP3029_CN0397** is a C project that uses ADuCM3029 C/C++ Project structure.
 
-This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for ADC, SPI read/write; configuring and reading from AD7798, UART read/write functions; calibration and calculation of light information.
+This project contains: system initialization part - disabling watchdog, setting
+system clock, enabling clock for peripherals; port configuration for ADC, SPI
+read/write; configuring and reading from AD7798, UART read/write functions;
+calibration and calculation of light information.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/c_1.png
    :align: left
@@ -255,14 +268,14 @@ cn0397_app.cpp and cn0397.h are the main source and header files related to **AD
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-134458.png
-   :width: 450px
+   :width: 450
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-140134.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-134458.png
-   :width: 450px
+   :width: 450
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-140134.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png
-   :width: 30px
+   :width: 30

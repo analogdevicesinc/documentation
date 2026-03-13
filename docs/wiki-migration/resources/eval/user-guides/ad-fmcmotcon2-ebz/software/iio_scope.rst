@@ -9,7 +9,9 @@ ADI IIO oscilloscope is used for monitoring and controlling the AD-FMCMOTCON2-EB
 Signals monitoring
 ~~~~~~~~~~~~~~~~~~
 
-The IIO Oscilloscope allows to monitor current, voltage, speed and control signals from the system. Below is presented a description of the different monitoring channels exposed by the IIO Oscilloscope.
+The IIO Oscilloscope allows to monitor current, voltage, speed and control
+signals from the system. Below is presented a description of the different
+monitoring channels exposed by the IIO Oscilloscope.
 
 +--------------------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Group              | Channel  | Description                                                                                                                                                                                            |
@@ -41,17 +43,19 @@ The IIO Oscilloscope allows to monitor current, voltage, speed and control signa
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/software/mc_iio_signals.png
    :alt: IIO Oscilloscope signals monitoring
-   :width: 600px
+   :width: 600
 
 Control
 ~~~~~~~
 
-This dialog allows the control of the two motors in manual mode by directly specifying the fill factor of the PWM signals applied used to control the 3 phase inverters. The motors are driven using a 6 step comutation algorithm.
+This dialog allows the control of the two motors in manual mode by directly
+specifying the fill factor of the PWM signals applied used to control the 3
+phase inverters. The motors are driven using a 6 step comutation algorithm.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/software/mc_manual_ctrl.png
    :alt: Manual Control
    :align: left
-   :width: 400px
+   :width: 400
 
 +-----------+--------------------------------------------------------------------------------+
 | Control   | Description                                                                    |

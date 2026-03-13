@@ -6,9 +6,13 @@ Overview
 
 The **AD-BMSE2E3W-SL** is a BMS reference design for light electric vehicles (LEVs). With a voltage range of 72 V to 96 V, this solution is suitable for electric 2-wheeler and 3-wheeler vehicles with high current capacity ranging up to 100 A.
 
-It is designed to perform either in embedded mode or using a graphical user interface (GUI), where it calculates the battery's State of Charge (SoC) and State of Health (SoH) through enhanced coulomb counting technique.
+It is designed to perform either in embedded mode or using a graphical user
+interface (GUI), where it calculates the battery's State of Charge (SoC) and
+State of Health (SoH) through enhanced coulomb counting technique.
 
-To demonstrate its capabilities, this application user guide will explain how to build a 72V-96V battery pack and highlight the use of the AD-BMSE2E3-W-SL for evaluating and monitoring the battery using the Light EV BMS GUI.
+To demonstrate its capabilities, this application user guide will explain how to
+build a 72V-96V battery pack and highlight the use of the AD-BMSE2E3-W-SL for
+evaluating and monitoring the battery using the Light EV BMS GUI.
 
 Demo Requirements
 -----------------
@@ -24,12 +28,14 @@ Demo Requirements
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/diy_battery_demo_requirements.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 Battery Pack Assembly
 ---------------------
 
-In this demo, two 48V battery packs will be combined to create a 92V battery pack. Note that these steps can also be applied to achieve a single battery pack with a voltage range between 72V and 96V.
+In this demo, two 48V battery packs will be combined to create a 92V battery
+pack. Note that these steps can also be applied to achieve a single battery pack
+with a voltage range between 72V and 96V.
 
 -  **Determine the Number of Batteries**
 
@@ -40,13 +46,13 @@ In this demo, two 48V battery packs will be combined to create a 92V battery pac
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_arrangement.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  **Connecting the Batteries**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/series-parallel_connection.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 ::
 
@@ -59,8 +65,8 @@ In this demo, two 48V battery packs will be combined to create a 92V battery pac
 
 .. note::
 
-   Refer to the diagram above and make sure to connect the bottom part of the pack.
-
+   Refer to the diagram above and make sure to connect the bottom part of the
+   pack.
 
 Demo Setup
 ----------
@@ -70,35 +76,40 @@ Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/hardware_setup.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 Hardware Setup
 ~~~~~~~~~~~~~~
 
--  Using the single wire cables connect each battery cell to the cell connector block. Refer to the diagram to short any unused ports in the block.
+-  Using the single wire cables connect each battery cell to the cell connector
+   block. Refer to the diagram to short any unused ports in the block.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery-cell_connector_block-connection.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
--  Attach the two cell connector blocks to the AD-BMSE2E3W-SL through P1 and P4 ports.
+-  Attach the two cell connector blocks to the AD-BMSE2E3W-SL through P1 and P4
+   ports.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/cell_connector_block-to-adbmse2e3w.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  (Using the red stackable banana plug to alligator clip) Connect the VBAT+ terminal of the battery pack to the V+ input.
--  (Using the black stackable banana plug to alligator clip) Connect the VBAT- terminal of the battery pack to the V- input on the AD-BMSE2E3W-SL.
+-  (Using the black stackable banana plug to alligator clip) Connect the VBAT-
+   terminal of the battery pack to the V- input on the AD-BMSE2E3W-SL.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/vbat_vbat-.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
--  Attach the MAX32625PICO programmer to the AD-BMSE2E3W-SL board using the 10-pin SWD ribbon cable. Then, power the MAX32625PICO by connecting it to the Host PC using a micro-USB to USB cable.
+-  Attach the MAX32625PICO programmer to the AD-BMSE2E3W-SL board using the
+   10-pin SWD ribbon cable. Then, power the MAX32625PICO by connecting it to the
+   Host PC using a micro-USB to USB cable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/pico_connection.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 .. container:: center round box
 
@@ -118,35 +129,39 @@ Hardware Setup
 
       .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
          :align: center
-         :width: 400px
+         :width: 400
 
       -   Release the button once the MAINTENANCE drive is mounted.
       -   Drag and drop (to the MAINTENANCE drive) the firmware image.
-      -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the AD-BMSE2E3W-SL Board.
-
+      -   After a few seconds, the MAINTENANCE drive will disappear and be
+          replaced by a drive named DAPLINK. This indicates that the process is
+          complete, and the MAX32625PICO can now be used to flash the firmware
+          of the AD-BMSE2E3W-SL Board.
 
    
 
-
--  (Using the red stackable banana plug to alligator clip cable) Connect the alligator clip to V+ and insert the other end of the cable (banana plug) to TP16 (VBAT+ terminal) of the AD-BMSE2E3W-SL board.
+-  (Using the red stackable banana plug to alligator clip cable) Connect the
+   alligator clip to V+ and insert the other end of the cable (banana plug) to
+   TP16 (VBAT+ terminal) of the AD-BMSE2E3W-SL board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/vbat_.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  (Using the black stackable banana plug to alligator clip cable) Connect the alligator clip to V- and connect the other end of the cable to the **VBAT-** (Rsense - top side) of the AD-BMSE2E3W-SL.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/vbat-.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  Connect a load to the **Link+_Out** pin and connect the other end of the load to **Shunt-**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/load_connection.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
--  Once all steps are completed, you are now ready to use this reference design and run GUI.
+-  Once all steps are completed, you are now ready to use this reference design
+   and run GUI.
 
 Software Setup
 ~~~~~~~~~~~~~~
@@ -156,25 +171,29 @@ Software Setup
 
 .. tip::
 
-   The AD-BMSE2E3W-SL comes complete with firmware examples and easy-to-use application GUI.
+   The AD-BMSE2E3W-SL comes complete with firmware examples and easy-to-use
+   application GUI.
 
    
    Access the software resources and see the setup procedure in the :doc:`AD-BMSE2E3W-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-bmse2e3w-sl/software>` .
    
 
-
 Running the Demo
 ----------------
 
-1. Follow the instructions provided above to set up the hardware components. Ensure all connections are secure and aligned with the diagram and specifications.
+1. Follow the instructions provided above to set up the hardware components.
+   Ensure all connections are secure and aligned with the diagram and
+   specifications.
 
-2. Download and install the necessary software and dependencies from the link provided above. Follow the installation guide if available to configure the software correctly.
+2. Download and install the necessary software and dependencies from the link
+   provided above. Follow the installation guide if available to configure the
+   software correctly.
 
 3. Open the **Light_EV_BMS_GUI.exe** file to open the GUI. You should see a script running in the background separately and the landing page running in the browser.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/home_landing_details.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 +-------------------------------------------+------------------------------+-------------------------------------------------------------------------------------------------+
 | **Details Available on the Landing Page** |                              |                                                                                                 |
@@ -201,21 +220,17 @@ Running the Demo
 
 5. On the GUI landing page, hover to the Communication Mode dropdown menu. Select **UART COM** followed by the specific **port number** if using UART, or CAN if using CAN.
 
-
 |image2|
 
 6. Press the **RESET** button (S1) every time the hardware set up is changed.
-
 
 |image3|
 
 7. Click the **Load Defaults** button to set the initial entry values for the different parameters needed for the State of Charge (SoC) and State of Health (SoH) calculations.
 
-
 |image4|
 
 8. Click the **Start** button to begin the measurements.
-
 
 |image5|
 
@@ -227,7 +242,7 @@ Overview Tab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/update_overview_page.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 Graph
 ~~~~~
@@ -251,11 +266,11 @@ Diagnostic
 
    Refer to the Tabs section of the :doc:`AD-BMSE2E3W-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-bmse2e3w-sl/software>` for a comprehensive overview of each tab's functions and descriptions.
 
-
 Help and Support
 ----------------
 
-For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer
+Zone.
 
 .. hint::
 
@@ -265,11 +280,10 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    For external users, please post your questions under the :ez:`Reference Designs <reference-designs>` forum in EngineerZone to get assistance from the community and experts.
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/communication_jumper_selection.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/communication_mode.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/reset_button_hardware.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/setting_defaults.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/start_button.png

@@ -1,10 +1,14 @@
 AD-FMCOMMS4-EBZ Functional Overview
 ===================================
 
-A functional block diagram of the system is given below. The system consists of four functional partitions - receive path, transmit path, clocking and power supply. As mentioned earlier, the data path is fully integrated into AD9364. The key features of receive and transmit paths are listed below. Please refer to the device data sheet for more details.
+A functional block diagram of the system is given below. The system consists of
+four functional partitions - receive path, transmit path, clocking and power
+supply. As mentioned earlier, the data path is fully integrated into AD9364. The
+key features of receive and transmit paths are listed below. Please refer to the
+device data sheet for more details.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/cf_ad9361_zc706_bd.jpg
-   :width: 500px
+   :width: 500
 
 AD9364
 ------
@@ -35,7 +39,9 @@ Transmit
 Clocking
 ~~~~~~~~
 
-The clocks are managed by the device and are software programmable. Please refer to the device data sheet for the various clocks within the device. The board provides a 40MHz crystal for the AD9364.
+The clocks are managed by the device and are software programmable. Please refer
+to the device data sheet for the various clocks within the device. The board
+provides a 40MHz crystal for the AD9364.
 
 SPI
 ~~~
@@ -45,9 +51,15 @@ The SPI signals are directly passed to the FMC connector.
 Control/Monitor
 ~~~~~~~~~~~~~~~
 
-The device allows real-time control via dedicated pins. These signals are passed to the FMC connector. The functionality of these pins are programmable and includes gain, synchronization, state machine control etc. Please refer to the data sheet for more details.
+The device allows real-time control via dedicated pins. These signals are passed
+to the FMC connector. The functionality of these pins are programmable and
+includes gain, synchronization, state machine control etc. Please refer to the
+data sheet for more details.
 
-The device also allows real-time monitoring of internal signals via another set of dedicated pins. Again, these signals are passed to the FMC connector. The internal signals are multiplexed into these pins- and details of which are best described in the data sheet.
+The device also allows real-time monitoring of internal signals via another set
+of dedicated pins. Again, these signals are passed to the FMC connector. The
+internal signals are multiplexed into these pins- and details of which are best
+described in the data sheet.
 
 Power
 -----

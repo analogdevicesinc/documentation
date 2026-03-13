@@ -20,7 +20,9 @@ Supported Carriers
 Quick Start Guide
 -----------------
 
-The reference design zip file contains a bit file and a SDK elf file for a quick demonstration of the programming and data capture. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The reference design zip file contains a bit file and a SDK elf file for a quick
+demonstration of the programming and data capture. All you need is the hardware
+and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -69,13 +71,17 @@ To begin make the following connections (see image below):
 -  Connect an external clock source 250MHz (5dBm) to AD9683-EBZ board's CLK+ SMA connector
 -  Connect signal generators to the AIN SMA connector
 
-The quick start bit file configures the AD9683 for all test modes and verifies the captured data accordingly. After the hardware setup, turn the power on to the ZC706 and the AD9683-EBZ boards.
+The quick start bit file configures the AD9683 for all test modes and verifies
+the captured data accordingly. After the hardware setup, turn the power on to
+the ZC706 and the AD9683-EBZ boards.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_setup.jpg
    :alt: Hardware setup
-   :width: 200px
+   :width: 200
 
-Start a UART terminal (set to 115200 baud rate), and program the device and run the elf file. The easiest thing to do would be to run the tcl script in the sw directory from a Xilinx command prompt (see below).
+Start a UART terminal (set to 115200 baud rate), and program the device and run
+the elf file. The easiest thing to do would be to run the tcl script in the sw
+directory from a Xilinx command prompt (see below).
 
 .. container:: box bggreen
 
@@ -138,23 +144,34 @@ Start a UART terminal (set to 115200 baud rate), and program the device and run 
    
    Processor started. Type "stop" to stop processor``\
 
-
-If programming was successful, you should be seeing messages appear on the terminal as shown in figure below. After programming the AD9683, the program checks data capture on various test modes.
+If programming was successful, you should be seeing messages appear on the
+terminal as shown in figure below. After programming the AD9683, the program
+checks data capture on various test modes.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_uart.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
-After patterns and prbs sequences are verified, if no errors are present, you may use the chipscope busplot to see the captured signal (see below). The ADC data is available on pins [15:0] of UNIT:1 of chipscope.
+After patterns and prbs sequences are verified, if no errors are present, you
+may use the chipscope busplot to see the captured signal (see below). The ADC
+data is available on pins [15:0] of UNIT:1 of chipscope.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_busplot.jpg
    :alt: Chipscope Busplot
-   :width: 200px
+   :width: 200
 
 Using the reference design
 --------------------------
 
-The reference design is built on a microblaze based system parameterized for linux. The reference design consists of two pcores. The JESD204B core consists of the GTX units and the Xilinx JESD204B IP core. The AD9683 core consists of three functional modules, the ADC interface, a PN9/PN23 monitor and a DMA interface. The ADC interface captures and buffers data from the JESD204B core. The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software. The JESD204B core and AD9683 core has an AXI lite interface that allows control and monitoring of the capture process.
+The reference design is built on a microblaze based system parameterized for
+linux. The reference design consists of two pcores. The JESD204B core consists
+of the GTX units and the Xilinx JESD204B IP core. The AD9683 core consists of
+three functional modules, the ADC interface, a PN9/PN23 monitor and a DMA
+interface. The ADC interface captures and buffers data from the JESD204B core.
+The DMA interface then transfers the samples to the external DDR-DRAM. The
+capture is initiated by the software. The status of capture (overflow, over the
+range) are reported back to the software. The JESD204B core and AD9683 core has
+an AXI lite interface that allows control and monitoring of the capture process.
 
 Registers
 ~~~~~~~~~
@@ -164,7 +181,8 @@ Please refer to the regmap.txt file in the pcores directory.
 Good To Know
 ~~~~~~~~~~~~
 
-The PN9/PN23 sequences are not compatible with O.150. Please use the equations given in the reference design.
+The PN9/PN23 sequences are not compatible with O.150. Please use the equations
+given in the reference design.
 
 Downloads
 ---------
@@ -179,7 +197,6 @@ FPGA Referece Designs:
    -  **ZC706 (Software files)** `cf_ad9683_ebz_zc706_sw_14_4_2013_05_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_zc706_sw_14_4_2013_05_08.tar.gz>`_
    
 
-
 Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
 
 .. hint::
@@ -187,7 +204,6 @@ Only Xilinx coregen xco files are provided with the reference design. You must r
    
    -  Questions? :ez:`Ask Help & Support <fpga>`.
    
-
 
 Tar file contents
 -----------------

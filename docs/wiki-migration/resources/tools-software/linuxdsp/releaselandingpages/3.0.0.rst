@@ -2,11 +2,12 @@
 
    These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
-
 Linux for ADSP-SC5xx Processors 3.0.0
 =====================================
 
-Welcome to version 3.0.0 of Linux for ADSP-SC5xx. This collection of pages contains all you need to know in order to download, build, develop and install Linux, running on the ARM core of the ADSP-SC5xx family of processors.
+Welcome to version 3.0.0 of Linux for ADSP-SC5xx. This collection of pages
+contains all you need to know in order to download, build, develop and install
+Linux, running on the ARM core of the ADSP-SC5xx family of processors.
 
 Release Status
 --------------

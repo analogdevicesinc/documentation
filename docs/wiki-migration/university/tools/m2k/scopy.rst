@@ -10,7 +10,6 @@ Scopy is a multi-functional software toolset with strong capabilities for signal
 
    This documentation is regarding Scopy version 1 (v1.4.1, v1.5.0). For documentation regarding Scopy v2.0.0 and onwards refer to the github docs https://analogdevicesinc.github.io/scopy/.
 
-
 Download
 --------
 
@@ -40,7 +39,6 @@ Download
    -  Download: `Installer for latest (nightly) build <https://github.com/analogdevicesinc/scopy/releases/tag/continous>`_
    
 
-
 .. important::
 
    In order to have Scopy working with :adi:`ADALM2000` please make sure that the Device Drivers are installed. A guide on this topic can be found in the section:
@@ -49,14 +47,14 @@ Download
    -  :doc:`ADALM2000 for End Users </wiki-migration/university/tools/m2k/users>`.
    
 
-
 Installation
 ------------
 
 Scopy for Windows
 ~~~~~~~~~~~~~~~~~
 
-Once you downloaded the installer, run it and follow all the required steps. After completion, system reboot is required.
+Once you downloaded the installer, run it and follow all the required steps.
+After completion, system reboot is required.
 
 Video
 ~~~~~
@@ -93,7 +91,10 @@ Video
 Scopy for OSX
 ~~~~~~~~~~~~~
 
-Double click the downloaded .dmg to make its content available. "Scopy" will show up in the Finder sidebar and a window showing the content should open up. Drag the application from the .dmg window into Applications to install and wait for the process to finish.
+Double click the downloaded .dmg to make its content available. "Scopy" will
+show up in the Finder sidebar and a window showing the content should open up.
+Drag the application from the .dmg window into Applications to install and wait
+for the process to finish.
 
 Video
 ~~~~~
@@ -109,7 +110,6 @@ Tap on the downloaded .apk file to start the installation process and proceed by
 .. container:: centeralign
 
    \ |Scopy Android setup|\
-
 
 Launching
 ---------
@@ -139,7 +139,6 @@ The Home view is divided into four sections:
 
    \
 
-
    |Scopy Home View|
 
 Connecting to a USB device
@@ -155,7 +154,6 @@ If the connection was established, the device will have a green status line unde
 
    \
 
-
    |image1|
 
 Connecting to a remote device
@@ -167,11 +165,9 @@ To connect to a remote device click on the **Plus** icon. Enter the IP of the re
 
    \
 
-
    |image2|
 
 .. container:: centeralign
-
 
    ..
 
@@ -186,15 +182,15 @@ General Settings Menu
 
    \
 
-
    |image4|
 
-The save/load buttons can be used to save the current session or load another session. The preferences button will open the preferences for Scopy where different options for different tools can be modified.
+The save/load buttons can be used to save the current session or load another
+session. The preferences button will open the preferences for Scopy where
+different options for different tools can be modified.
 
 .. container:: centeralign
 
    \
-
 
    |image5|
 
@@ -206,13 +202,17 @@ Checking the **user notes preference** will enable a tool where the user can add
 
    \
 
-
    |image6|
 
 User Guides
 -----------
 
-Scopy interacts with only one hardware device at a time. Once a device is selected to be used with the application, a list of instruments that are available for that device will be enabled. Each instrument can be opened from the left menu. The icon on the right of the instrument name specifies that the instrument is enabled and provides a shortcut that allows an instrument to be turned on or off.
+Scopy interacts with only one hardware device at a time. Once a device is
+selected to be used with the application, a list of instruments that are
+available for that device will be enabled. Each instrument can be opened from
+the left menu. The icon on the right of the instrument name specifies that the
+instrument is enabled and provides a shortcut that allows an instrument to be
+turned on or off.
 
 The instruments menu can be minimized by clicking on the **Scopy** button near the top-left window.
 
@@ -220,13 +220,13 @@ The instruments menu can be minimized by clicking on the **Scopy** button near t
 
    \
 
-
    |Scopy Minimized Menu View|
 
 Detaching Instruments
 ~~~~~~~~~~~~~~~~~~~~~
 
-Scopy provides the detaching into multiple windows feature for each instrument available, providing a better view/manipulation.
+Scopy provides the detaching into multiple windows feature for each instrument
+available, providing a better view/manipulation.
 
 There are 2 ways to do this:
 
@@ -236,7 +236,6 @@ There are 2 ways to do this:
 
    \
 
-
    |Scopy Drag and Drop|
 
 -  *Double Click* - first make sure that the **Double click to detach a tool** option is enabled in the **Preferences** menu; double-click on the desired instrument to detach it.
@@ -244,7 +243,6 @@ There are 2 ways to do this:
 .. container:: centeralign
 
    \
-
 
    |Scopy Double Click Detach|
 
@@ -254,7 +252,6 @@ Instruments Overview
 .. container:: centeralign
 
    \
-
 
    |image7|
 

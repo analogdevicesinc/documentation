@@ -6,9 +6,18 @@ This product is obsolete, and this page is only for documentation and support.
 Overview
 --------
 
-CN0332 is a single-supply low cost, high-speed magnetoresistive (MR) signal conditioner with a minimum PCB footprint. The complete signal conditioning solution amplifies the small output voltage of the magnetoresistive sensor and converts it into a digital output signal with a rise and fall time of less than 5 ns and an rms jitter of approximately 100 ps. The circuit provides a compact and cost effective robust solution for high speed rotational sensing in industrial and automotive applications and is an excellent alternative to Hall effect sensors.
+CN0332 is a single-supply low cost, high-speed magnetoresistive (MR) signal
+conditioner with a minimum PCB footprint. The complete signal conditioning
+solution amplifies the small output voltage of the magnetoresistive sensor and
+converts it into a digital output signal with a rise and fall time of less than
+5 ns and an rms jitter of approximately 100 ps. The circuit provides a compact
+and cost effective robust solution for high speed rotational sensing in
+industrial and automotive applications and is an excellent alternative to Hall
+effect sensors.
 
-The AA747 Sensitec MR Sensor has a typical bridge output voltage of 30 mV p-p to 100 mV p-p at a common-mode voltage that is equal to one-half the supply voltage. The bridge output impedance is approximately 3 kΩ
+The AA747 Sensitec MR Sensor has a typical bridge output voltage of 30 mV p-p to
+100 mV p-p at a common-mode voltage that is equal to one-half the supply
+voltage. The bridge output impedance is approximately 3 kΩ
 
 The :adi:`ADA4897-2` dual op amp has a high bandwidth (230 MHz for G = +1) and a rail-to-rail input and output making it an ideal buffer for the sensor signal. Voltage noise is only 1 nV/√Hz.
 
@@ -18,11 +27,12 @@ The :adi:`ADCMP601`, a very fast single supply rail-to-rail TTL/CMOS comparator 
 
 The :adi:`ADP1720` low dropout linear regulator is used to isolate the circuit from noise that can occur in harsh environments.
 
-The CN0332 needs a single +5.5 V up to +28 V power supply input and has a PMOD interface.
+The CN0332 needs a single +5.5 V up to +28 V power supply input and has a PMOD
+interface.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0332/cn0332-05-1024.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -42,7 +52,7 @@ Block Assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0332/cn0332-05-1024_-_edited.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  The EVAL-CN0332-PMDZ is powered by a 5.5 V power supply input (up to 28 V) that connects to pin 6 and pin 12 of the PMOD interface
 -  The digital output signal from the ADCMP601 is connected to pin 4 of the PMOD interface
@@ -72,6 +82,5 @@ Schematic, PCB Layout, Bill of Materials
    -  Bill of Materials
    -  PADS project
    
-
 
 *End of Document*

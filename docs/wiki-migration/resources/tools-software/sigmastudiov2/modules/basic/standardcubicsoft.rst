@@ -9,7 +9,9 @@ Soft Clipper - Standard Cubic
 Description
 -----------
 
-The Standard Cubic block is a soft clipper that uses a cubic function to clip the level of the input signal. As the input signal reaches the clip threshold, the algorithm rounds the edges for a smoother clipped output.
+The Standard Cubic block is a soft clipper that uses a cubic function to clip
+the level of the input signal. As the input signal reaches the clip threshold,
+the algorithm rounds the edges for a smoother clipped output.
 
 Targets Supported
 -----------------

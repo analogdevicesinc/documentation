@@ -33,14 +33,17 @@ The available filter types are:
 
 **To open the filter control window, click on the icon button:**
 
-Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+Select the desired filter type from the drop-down combo-box list. The filter
+controls and the icon button image will change to reflect the selected filter
+type.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic2.png
    :alt: general2ndpic2.png
 
 --------------
 
-This block's algorithms use biquad filter designs(DF1) based on Robert Bristow-Johnson's work in this field.
+This block's algorithms use biquad filter designs(DF1) based on Robert
+Bristow-Johnson's work in this field.
 
 :math:`\displaystyle H(z)=b_0 + b_1 z^-1 + b_2 z^-\frac{2}{1} + a_1 z^-1 + a_2 z^-2`
 
@@ -55,7 +58,10 @@ common variables:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/generalsecondorderfiltercoeffimage2.png
    :alt: generalsecondorderfiltercoeffimage2.png
 
-Note that the b0 and b2 coefficients for the high pass filter below are inverted from what is stored in RAM. The correct equations for b0, b1, and b2 for a high pass filter are as follows: b0 = -(1 + cos(ω0)) \* gainLinear / 2 b1 = -(1 + cos(ω0)) \* gainLinear b2 = -(1 + cos(ω0)) \* gainLinear / 2
+Note that the b0 and b2 coefficients for the high pass filter below are inverted
+from what is stored in RAM. The correct equations for b0, b1, and b2 for a high
+pass filter are as follows: b0 = -(1 + cos(ω0)) \* gainLinear / 2 b1 = -(1 +
+cos(ω0)) \* gainLinear b2 = -(1 + cos(ω0)) \* gainLinear / 2
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic5edited.png
 
@@ -64,14 +70,20 @@ Note that the b0 and b2 coefficients for the high pass filter below are inverted
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic6.png
    :alt: general2ndpic6.png
 
-For all of the above filters, the coefficients are divided by a0, normalizing them and making a0 = 1 so that only 5 coefficients must be stored. In the actual implementation on the DSP, when the coefficients are stored in parameter RAM, a1 and a2 need to be inverted. SigmaStudio performs this operation automatically, in software, before the parameters are written to DSP memory. Microcontrollers must invert a1 and a2 before writing new coefficients to DSP memory.
+For all of the above filters, the coefficients are divided by a0, normalizing
+them and making a0 = 1 so that only 5 coefficients must be stored. In the actual
+implementation on the DSP, when the coefficients are stored in parameter RAM, a1
+and a2 need to be inverted. SigmaStudio performs this operation automatically,
+in software, before the parameters are written to DSP memory. Microcontrollers
+must invert a1 and a2 before writing new coefficients to DSP memory.
 
 By default, the Q is shown with the value adjusted (from the classical EE definition) so that a boost of N dB followed by a cut of N dB for identical Q and f0/Fs results in a precisely flat unity gain filter or "wire". This is equal to A\*Q, where A = 10^(dBgain/40).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/classicqcontrol.jpg
    :alt: classicqcontrol.jpg
 
-The "Classic EQ" version of Q can optionally be shown by clicking the small circular button next to the Q control.
+The "Classic EQ" version of Q can optionally be shown by clicking the small
+circular button next to the Q control.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/classicqdisplay.jpg
    :alt: classicqdisplay.jpg
@@ -79,7 +91,8 @@ The "Classic EQ" version of Q can optionally be shown by clicking the small circ
 2.Coefficient Calculations on DSP
 ---------------------------------
 
-The General (2nd-Order) block gives access to a wide variety of 2nd-order (biquad)filter algorithms.The coefficient calculations happen in the controller.
+The General (2nd-Order) block gives access to a wide variety of 2nd-order
+(biquad)filter algorithms.The coefficient calculations happen in the controller.
 
 The available filter types are:
 
@@ -98,7 +111,9 @@ The available filter types are:
 
 **To open the filter control window, click on the icon button:**
 
-Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+Select the desired filter type from the drop-down combo-box list. The filter
+controls and the icon button image will change to reflect the selected filter
+type.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic2.png
    :alt: general2ndpic2.png
@@ -145,7 +160,9 @@ DSP parameter Information
 | NA               | MEM_SELECTION_DSP_CALC0\_ \_ | Memory section the filter coefficients are located (DM0/DM1) |
 +------------------+------------------------------+--------------------------------------------------------------+
 
-It is possible to selectively disable filters which are not going to be used.To select only those filters to be used, right click on the module and select Configure Supported Filters and select only those filters which might be used.
+It is possible to selectively disable filters which are not going to be used.To
+select only those filters to be used, right click on the module and select
+Configure Supported Filters and select only those filters which might be used.
 
 |filterconfigure.png|\ |filterconfiguretab.png|
 

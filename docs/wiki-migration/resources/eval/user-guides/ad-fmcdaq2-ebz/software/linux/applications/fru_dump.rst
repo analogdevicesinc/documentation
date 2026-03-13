@@ -1,17 +1,28 @@
 FRU EEPROM Utility
 ==================
 
-
 FMC FRU EEPROM Utility
 ======================
 
 The `FMC specification <http://www.vita.com/fmc>`_ includes a methodology where FMC mezzanine modules must provide hardware definition information that can be read by an external controller on the FMC Carrier platform (most of the time the FPGA on the carrier). This hardware definition is defined by FRU (Field Replaceable Unit) Information storage recorders, as defined in the `Intel Platform Management FRU Information Storage Definition V1.1 <https://www.intel.com/content/www/us/en/servers/ipmi/information-storage-definition.html>`_
 
-The FRU Information is used to primarily to provide ‘inventory’ information about the boards that the FRU information device is located on. All FMC mezzanine modules include an EEPROM where this FRU Information, including the part number, version number, serial number can be read through software.
+The FRU Information is used to primarily to provide ‘inventory’ information
+about the boards that the FRU information device is located on. All FMC
+mezzanine modules include an EEPROM where this FRU Information, including the
+part number, version number, serial number can be read through software.
 
-There are some extensions, or FMC-specific MultiRecords, that the FMC specification includes to help define connector requirements, power requirements, and other I2C devices which may be on the FMC mezzanine module to help the carrier platform ensure it is compatible with the mezzanine modules before it applies power. This means that if this EEPROM is blank, or has corrupt data in it, it could be that the carrier platform will not power the FMC slot at all.
+There are some extensions, or FMC-specific MultiRecords, that the FMC
+specification includes to help define connector requirements, power
+requirements, and other I2C devices which may be on the FMC mezzanine module to
+help the carrier platform ensure it is compatible with the mezzanine modules
+before it applies power. This means that if this EEPROM is blank, or has corrupt
+data in it, it could be that the carrier platform will not power the FMC slot at
+all.
 
-In order to better use this data, Analog Devices has written a small utility which dumps the FRU file which can be found on many systems. It also can change the serial number and date (since we use this for production test of ADI's FMC cards).
+In order to better use this data, Analog Devices has written a small utility
+which dumps the FRU file which can be found on many systems. It also can change
+the serial number and date (since we use this for production test of ADI's FMC
+cards).
 
 ::
 
@@ -51,7 +62,8 @@ Finding the eeprom
 
 .. container:: box bggreen fgblack
 
-   This specifies a root shell prompt running on the target, where the FMC module is attached
+   This specifies a root shell prompt running on the target, where the FMC
+   module is attached
 
    
    ::
@@ -60,7 +72,6 @@ Finding the eeprom
       /sys/bus/i2c/devices/0-0051/eeprom
       #
    
-
 
 The FRU EEPROM responds to I2C Slave address 0x51.
 
@@ -83,7 +94,6 @@ Dump FRU Board Information
       Part Number  : AD-FMCOMMS1-EBZ
       Board Rev    : B
    
-
 
 Dump FRU Power Information
 --------------------------
@@ -147,7 +157,6 @@ Dump FRU Power Information
         Maximum current draw:       0 (mA)
    
 
-
 Dump FRU Connector Information
 ------------------------------
 
@@ -168,11 +177,13 @@ Dump FRU Connector Information
       Max JTAG Clock 0
    
 
-
 Set tuning parameters
 ---------------------
 
-A tuning (or calibration) parameter for the related board can be written to the EEPROM as seen below. Usually this is integer or floating point values encoded as a raw hex string that is then decoded where it's used such as in IIO Oscilloscope or wherever the parameter needs to be set.
+A tuning (or calibration) parameter for the related board can be written to the
+EEPROM as seen below. Usually this is integer or floating point values encoded
+as a raw hex string that is then decoded where it's used such as in IIO
+Oscilloscope or wherever the parameter needs to be set.
 
 .. container:: box bggreen fgblack
 
@@ -186,10 +197,7 @@ A tuning (or calibration) parameter for the related board can be written to the 
       changing tuning parameter to 0b10db
    
 
-
 For Help
 --------
 
 For help and assistance with the tool, check out :ez:`the EngineerZone <community/linux-device-drivers/linux-software-drivers>`.
-
-

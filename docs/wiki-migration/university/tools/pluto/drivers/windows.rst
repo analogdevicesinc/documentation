@@ -4,14 +4,17 @@ Windows Drivers
 There are different aspects of the software for the ADALM-PLUTO and ADALM2000:
 
 -  device drivers, which allows your PC to properly set up communication between your PC and the actual device, and
--  application code, like MATLAB, Simulink, GNU Radio, iio-oscilloscope (aka osc), or scopy.
+-  application code, like MATLAB, Simulink, GNU Radio, iio-oscilloscope (aka
+   osc), or scopy.
 
-To install the drivers, it's a simple matter of downloading and executing the driver installer.
+To install the drivers, it's a simple matter of downloading and executing the
+driver installer.
 
 .. important::
 
-   Before running the installer, please ensure that the hardware supported by the drivers is not already connected. If the hardware is connected when the installer is run, the installation of the driver files may fail.
-
+   Before running the installer, please ensure that the hardware supported by
+   the drivers is not already connected. If the hardware is connected when the
+   installer is run, the installation of the driver files may fail.
 
 .. admonition:: Download
    :class: download
@@ -21,7 +24,6 @@ To install the drivers, it's a simple matter of downloading and executing the dr
    
    -  `Windows USB drivers for PlutoSDR and M2k (Windows 32-bit / 64-bit) <https://github.com/analogdevicesinc/plutosdr-drivers-win/releases>`_
    
-
 
 At the end, you should see a picture like (either for Pluto or M2k):
 
@@ -33,35 +35,42 @@ DFU Mode
 If you don't see the above, and see something like this instead, this means the device is in :doc:`firmware#dfu_update </wiki-migration/university/tools/pluto/users/firmware>` mode. It's likely in this mode since a bad firmware is in the device; or a firmware update failed for some reason. To recover from this, ensure the latest firmware is installed on the device.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/drivers/dfu.png
-   :width: 300px
+   :width: 300
 
 --------------
 
 Drivers uninstall
 -----------------
 
-From the control panel navigate to Programs and Features. Double click or right click and select Uninstall. Uninstalling the PlutoSDR-M2k-USB-Win-Drivers package will automatically remove the Windows Driver Packages (USBser, WinUSB and Net) shown below as well.
+From the control panel navigate to Programs and Features. Double click or right
+click and select Uninstall. Uninstalling the PlutoSDR-M2k-USB-Win-Drivers
+package will automatically remove the Windows Driver Packages (USBser, WinUSB
+and Net) shown below as well.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/drivers/drivers-uninst.png
    :align: center
-   :width: 800px
+   :width: 800
 
 USB Devices
 -----------
 
-Once the drivers are installed, and the device (Pluto or M2k) is plugged in, the following subsystems should be ready to use:
+Once the drivers are installed, and the device (Pluto or M2k) is plugged in, the
+following subsystems should be ready to use:
 
 -  USB Composite Device (The device is a single USB gadget that has the ability to perform more than one function, and needs to be exposed to the operating system as multiple devices)
 -  USB Ethernet/RNDIS Gadget (Remote Network Driver Interface Specification (`RNDIS <https://en.wikipedia.org/wiki/RNDIS>`_) is a Microsoft proprietary protocol used mostly on top of USB. It provides a virtual Ethernet link to most versions of the Windows, Linux and OS X operating systems. To the host, the usb device acts as an external Ethernet card)
 -  USB Mass Storage (`USB Mass Storage <https://en.wikipedia.org/wiki/USB_mass_storage_device_class>`_ is a set of protocols defined by the USB Implementers Forum that makes a USB device accessible to any host computing device and enables file transfers between the host and the USB device. To a host, the USB device acts as an external hard drive.)
 -  Serial Console (115200-8N1), in this case COM15, but it will be different on your PC.
 -  IIO USBD
--  Linux File-Stor Gadget USB Device (which allows the USB mass storage to work properly).
+-  Linux File-Stor Gadget USB Device (which allows the USB mass storage to work
+   properly).
 
 Serial
 ------
 
-You need to have find your favorite Terminal program, here are a few of the ones we use (but don't support - if you have questions, please check with the internet/google).
+You need to have find your favorite Terminal program, here are a few of the ones
+we use (but don't support - if you have questions, please check with the
+internet/google).
 
 -  `Putty <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_
 -  `Tera Term <https://en.osdn.jp/projects/ttssh2/releases/>`_
@@ -69,12 +78,14 @@ You need to have find your favorite Terminal program, here are a few of the ones
 
 The terminal settings are 115200 baud, 8 bits, no parity, 1 stop bit. This is referred to as 115200-8N1. The default username is ``root``, and the default root password is ``analog``.
 
-Finding the serial port (which constantly changes, every time you plug a device in), is just matter of checking device manager (see above).
+Finding the serial port (which constantly changes, every time you plug a device
+in), is just matter of checking device manager (see above).
 
 Mass Storage
 ~~~~~~~~~~~~
 
-It should be a simple matter of opening the drive, in this case, double click on "D", to get at the info.html page.
+It should be a simple matter of opening the drive, in this case, double click on
+"D", to get at the info.html page.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/drivers/pluto_drive.png
    :align: center
@@ -87,15 +98,18 @@ Ethernet Warning
 
 .. warning::
 
-   Like most of the network settings on Pluto or the M2k - things are meant to be easy to use. This also means things are inherently insecure.
+   Like most of the network settings on Pluto or the M2k - things are meant to
+   be easy to use. This also means things are inherently insecure.
 
    
    For example - the root password of Pluto is ``analog``. We post it on the Internet. Think about that for a moment. This could allow anyone with an IP connection to take over the device and use it for malicious purposes.
    
-   Never set up a bridge between the Internet and a network connected Pluto with the default images.
+   Never set up a bridge between the Internet and a network connected Pluto with
+   the default images.
 
-
-Unfortunately - nothing on your host understands the what the IP address of the usb device is. You, the human behind the keyboard need to understand this before any sort of networking will work. There are two main ways to do this:
+Unfortunately - nothing on your host understands the what the IP address of the
+usb device is. You, the human behind the keyboard need to understand this before
+any sort of networking will work. There are two main ways to do this:
 
 Determine the IP address
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,11 +162,11 @@ Open your favorite serial application:
                 RX bytes:66132 (64.5 KiB)  TX bytes:2420 (2.3 KiB)
    
 
-
 IIO devices
 ~~~~~~~~~~~
 
-The IIO device shows up in device manager, and allows you to make native IIO connections to the device.
+The IIO device shows up in device manager, and allows you to make native IIO
+connections to the device.
 
 Bringing up a Windows Console should show you something like this:
 
@@ -177,8 +191,8 @@ Bringing up a Windows Console should show you something like this:
    usb,libusb: 1.0.22.11312
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/drivers/win_your_device_is_ready_to_use.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/pluto/drivers/device_manager_installed.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/pluto/drivers/device_manager_m2k_installed.png
-   :width: 300px
+   :width: 300

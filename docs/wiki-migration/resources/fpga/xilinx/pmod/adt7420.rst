@@ -15,7 +15,9 @@ The :adi:`ADT7420` is a high accuracy digital temperature sensor offering breakt
 Quick Start Guide
 -----------------
 
-The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided in the project \*.zip file combines the FPGA bit file and
+the SDK elf files. It may be used for a quick check on the system. All you need
+is the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -29,12 +31,11 @@ Required Software
 ~~~~~~~~~~~~~~~~~
 
 -  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
--  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet
+   LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
@@ -44,46 +45,60 @@ Running Demo (SDK) Program
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
-
 Avnet LX9 MicroBoard Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (ADT7420\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (ADT7420\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodTMP2 to J5 connector of LX9 board, pins 3 to 6 (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+To begin, connect the PmodTMP2 to J5 connector of LX9 board, pins 3 to 6 (see
+image below). You can use an extension cable for ease of use. Connect the USB
+cable from the PC to the USB-UART female connector of the board for the UART
+terminal. The board will be programmed through its USB male connector.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2.jpg
    :alt: PmodTMP2 and LX-9
-   :width: 200px
+   :width: 200
 
 Digilent Nexys™3 Spartan-6 FPGA Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (ADT7420\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (ADT7420\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodTMP2 to JA connector of NEXYS3 board, pins 3 to 6 (see image below). You can use an extension cable for ease of use. . Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodTMP2 to JA connector of NEXYS3 board, pins 3 to 6 (see
+image below). You can use an extension cable for ease of use. . Connect the USB
+cables from the PC to the board, one for programming (Digilent USB device) and
+one for the UART terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_nexys3.jpg
    :alt: PmodTMP2 and Nexys™3
-   :width: 200px
+   :width: 200
 
 Avnet ZedBoard
 ~~~~~~~~~~~~~~
 
-To begin, connect the PmodTMP2 to JC1 connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodTMP2 to JC1 connector of ZedBoard (see image below).
+You can use an extension cable for ease of use. Connect the USB cables from the
+PC to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_zed.jpg
    :alt: PmodTMP2 and ZedBoard
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for Nexys3 and LX-9 MicroBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../adt7420/sw/ADT7420.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to appropiate baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../adt7420/sw/ADT7420.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2impact.jpg
    :alt: Programming FPGA in IMPACT
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for ZedBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,62 +107,62 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
-
+   If the download script fails to run, modify the Xilinx Tools path in
+   download.bat to match your Xilinx Installation path.
 
 If programming was successful, the **Main Menu** will apear in your UART terminal, as seen in the picture below. There are 10 options. Pressing [t], [r], [h], [l], [c], [y], [f], [s], [m] or [q] key will allow you to select the desired option.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu1.jpg
    :alt: Main Menu
-   :width: 600px
+   :width: 600
 
 **Read Temperature** will start printing temperatures read from the ADT7420. Pressing [m] at any time will stop the process and return to the Main Menu.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu2.jpg
    :alt: Read Temperature
-   :width: 600px
+   :width: 600
 
 **Set Resolution** allows choosing between 16 bit or 13 bit accuracy. The desired resolution is selected by pressing [1] or [2].
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu3.jpg
    :alt: Set Resolution
-   :width: 600px
+   :width: 600
 
 **Set THigh** is used to set the upper temperature limit (for internal comparison purposes - when used as thermostat). The value entered is between 0x0000 and 0x1FFF for 13 bit resolution or between 0x0000 and 0xFFFF for 16 bit resolution. If entering less than 4 characters, you must press [Enter] in order to validate the result. If entering 4 characters, the result is automatically validated.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu4.jpg
    :alt: Set T High
-   :width: 600px
+   :width: 600
 
 **Set TLow** is used to set the lower temperature limit (for internal comparison purposes - when used as thermostat). The value entered is between 0x0000 and 0x1FFF for 13 bit resolution or between 0x0000 and 0xFFFF for 16 bit resolution. If entering less than 4 characters, you must press [Enter] in order to validate the result. If entering 4 characters, the result is automatically validated.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu5.jpg
    :alt: Set T Low
-   :width: 600px
+   :width: 600
 
 **Set TCrit** is used to set the critical temperature limit. The value entered is between 0x0000 and 0x1FFF for 13 bit resolution or between 0x0000 and 0xFFFF for 16 bit resolution. If entering less than 4 characters, you must press [Enter] in order to validate the result. If entering 4 characters, the result is automatically validated.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu6.jpg
    :alt: Set T Crit
-   :width: 600px
+   :width: 600
 
 **Set THyst** is used to set the hysteresis. The value entered is between 0x0000 and 0x000F. If entering less than 4 characters, you must press [Enter] in order to validate the result. If entering 4 characters, the result is automatically validated.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu7.jpg
    :alt: Set T Hyst
-   :width: 600px
+   :width: 600
 
 **Set Fault Queue** allow setting the number of fault events that have to take place before issuing an interrupt signal. Choosing the number of faults is done by pressing [1] to [4].
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu8.jpg
    :alt: Set fault queue
-   :width: 600px
+   :width: 600
 
 **Display Settings** will display the current settings for the device (Resolution, THigh, TLow, TCrit, THyst, Number of faults, Alert Mode, CT pin and INT pin active values).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu9.jpg
    :alt: Display current settings
-   :width: 600px
+   :width: 600
 
 Pressing **[m]** will display the available options (main menu).
 
@@ -159,19 +174,23 @@ Using the reference design
 Functional Description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design is a SPI interface used to communicate with the device. The software programs the ADT7420s internal registers, and afterwards reads desired data from the device and prints it via UART.
+The reference design is a SPI interface used to communicate with the device. The
+software programs the ADT7420s internal registers, and afterwards reads desired
+data from the device and prints it via UART.
 
 .. important::
 
    
    -  Connecting the PmodTMP2 to the boards using an extension cable provides ease of use.
-   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and
+      ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-
 
 .. important::
 
-   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+   When using the ZedBoard reference design in order to develop your own
+   software, please make sure that the following options are set in
+   "system_config.h":
 
    
    .. code:: c
@@ -189,7 +208,6 @@ The reference design is a SPI interface used to communicate with the device. The
       // GPIO used in the design
       #define USE_GPIO         0
    
-
 
 Downloads
 ---------
@@ -213,7 +231,6 @@ Downloads
    -  :git-no-OS:`ZYNQ SoC Peripherals Driver Files <legacy/Pmods/Common/sw>`
    -  :git-no-OS:`Programming Script <legacy/Pmods/PmodTMP2/bin>`
    
-
 
 More information
 ----------------

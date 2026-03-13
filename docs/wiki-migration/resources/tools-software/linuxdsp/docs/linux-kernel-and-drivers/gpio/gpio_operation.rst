@@ -4,7 +4,13 @@ GPIO operation
 Introduction
 ------------
 
-A General Purpose Input/Output (GPIO) is a flexible software-controlled digital signal. They are provided from many kinds of chip, and are familiar to Linux developers working with embedded and custom hardware. Each GPIO represents a bit connected to a particular pin, or “ball” on Ball Grid Array (BGA) packages. Board schematics show which external hardware connects to which GPIOs. Drivers can be written generically, so that board setup code passes such pin configuration data to drivers.
+A General Purpose Input/Output (GPIO) is a flexible software-controlled digital
+signal. They are provided from many kinds of chip, and are familiar to Linux
+developers working with embedded and custom hardware. Each GPIO represents a bit
+connected to a particular pin, or “ball” on Ball Grid Array (BGA) packages.
+Board schematics show which external hardware connects to which GPIOs. Drivers
+can be written generically, so that board setup code passes such pin
+configuration data to drivers.
 
 Often different aspects of the GPIO need to be controlled, such as:
 
@@ -24,12 +30,17 @@ Hardware
       -  ADSP-SC589 MINI board, or,
       -  ADSP-SC573 Ezkit v1.2 (BOM 1.8) and above
 
-In the ADSP-SC58x processors there are 7 gpio blocks, called PORTA..PORTG. Each PORTx interface has 16 GPIO pins. PORT(A-G) pins are brought out on the 110 pins of SC589-EZKIT(PA0-PG13) and 80 pins of SC584-EZKIT(PA0-PD16). While in the ADSP-SC573 processors there are only 6 gpio blocks, called PORTA..PORTF.
+In the ADSP-SC58x processors there are 7 gpio blocks, called PORTA..PORTG. Each
+PORTx interface has 16 GPIO pins. PORT(A-G) pins are brought out on the 110 pins
+of SC589-EZKIT(PA0-PG13) and 80 pins of SC584-EZKIT(PA0-PD16). While in the
+ADSP-SC573 processors there are only 6 gpio blocks, called PORTA..PORTF.
 
 Application space GPIO support
 ------------------------------
 
-Standard Linux kernel have inside a special interface allow to access to GPIO pins. You can use kernel menuconfig (linux-menuconfig) to verify that these interfaces are active in your kernel and, if necessary, enable them.
+Standard Linux kernel have inside a special interface allow to access to GPIO
+pins. You can use kernel menuconfig (linux-menuconfig) to verify that these
+interfaces are active in your kernel and, if necessary, enable them.
 
 The kernel tree path is the following:
 

@@ -5,8 +5,9 @@ UTIL_EXTRACT
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/util_extract/index.html\
 
-
-The UTIL_EXTRACT IP allows the extraction of the trigger signal and restoration of the data signal that was embedded in the data stream by the AXI_ADC_TRIGGER IP.
+The UTIL_EXTRACT IP allows the extraction of the trigger signal and restoration
+of the data signal that was embedded in the data stream by the AXI_ADC_TRIGGER
+IP.
 
 Configuration Parameters
 ------------------------

@@ -8,7 +8,10 @@ The **FreeRTOS Add-In** for CrossCore Embedded Studio (**CCES**) has been develo
 Release Dependencies
 ====================
 
-FreeRTOS Add-In requires CrossCore® Embedded Studio version 2.10.0 or greater. Support for ADSP-BF70x is not available in CrossCore® Embedded Studio version 3.0.0 or greater. Support for ADSP-2183x/ADSP-SC83x is only available in CrossCore® Embedded Studio version 3.0.0 or greater.
+FreeRTOS Add-In requires CrossCore® Embedded Studio version 2.10.0 or greater.
+Support for ADSP-BF70x is not available in CrossCore® Embedded Studio version
+3.0.0 or greater. Support for ADSP-2183x/ADSP-SC83x is only available in
+CrossCore® Embedded Studio version 3.0.0 or greater.
 
 --------------
 
@@ -24,7 +27,8 @@ If you want to use UART/ CCES System Services and Device Drivers with the FreeRT
 Get Started
 ===========
 
-To get started using the FreeRTOS Add-In, please follow in order the sections below.
+To get started using the FreeRTOS Add-In, please follow in order the sections
+below.
 
 -  Follow instruction at the section "Installing the Add-In"
 -  Create a new Project in CCES
@@ -69,7 +73,8 @@ The **FreeRTOS Add-In** can be uninstalled in **CCES**. you must follow the step
 Adding The FreeRTOS Add-In
 ==========================
 
-Adding ADI's implementation of FreeRTOS to a CrossCore project adds the following:
+Adding ADI's implementation of FreeRTOS to a CrossCore project adds the
+following:
 
 -  Required includes
 -  Any tool chain options required
@@ -92,19 +97,21 @@ To add the FreeRTOS Add-In to the project:
 
 .. note::
 
-   If there are issues, you can highlight the affected add-in on the Selected Add-Ins tab and click Remove or Quickfix.
-
+   If there are issues, you can highlight the affected add-in on the Selected
+   Add-Ins tab and click Remove or Quickfix.
 
 --------------
 
 Upgrading The FreeRTOS Add-In
 =============================
 
-In order for the user to upgrade the version of the addin they are using, they will have to use the CCES Feature "Check For Updates"
+In order for the user to upgrade the version of the addin they are using, they
+will have to use the CCES Feature "Check For Updates"
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/freertos/image2019-9-30_14-20-11.png
 
-if there is any updates to the addin then these will appear to the user so that they can accept the license agreement.
+if there is any updates to the addin then these will appear to the user so that
+they can accept the license agreement.
 
 as shown below, there is no upgrade button available
 
@@ -129,12 +136,14 @@ To remove the FreeRTOS add-in from the project:
 -  Do the following: (a) Verify the add-in(s) to be removed. (b) In **Warnings**, observe whether it is safe to proceed.
 -  Click **Remove**. The progress bar starts indicating completion of the requested actions.
 -  Generated files that have been added to the system directory of your project will be removed, but the files in src/CustomizableFreeRTOSSources/ will remain in your project. See the :doc:`Generated Files </wiki-migration/resources/tools-software/freertos/freertos-addin/generated-files>` section for full details.
--  A pop up will appear notifying the user that functions related to the FreeRTOS add-in will be removed from the main file. This can be rejected if the user wants to keep the code.
+-  A pop up will appear notifying the user that functions related to the
+   FreeRTOS add-in will be removed from the main file. This can be rejected if
+   the user wants to keep the code.
 
 .. note::
 
-   Completion of some actions may require your clicking Yes in response to a message about removing files from the project.
-
+   Completion of some actions may require your clicking Yes in response to a
+   message about removing files from the project.
 
 --------------
 
@@ -179,7 +188,8 @@ The following pages provide the migration guide for users to conveniently use.
 Command Line Build Support
 ==========================
 
-we also provide an approach of using the FreeRTOS Add-In with command line for users who prefer to create, build, run the FreeRTOS applications via CCES tools from the command line or use a Makefile and call the compiler directly.
+we also provide an approach of using the FreeRTOS Add-In with command line for
+users who prefer to create, build, run the FreeRTOS applications via CCES tools
+from the command line or use a Makefile and call the compiler directly.
 
 -  `FreeRTOS Add-In From the Command Line <https://wiki.analog.com/resources/tools-software/freertos/freertos-addin/tools/freertos-add-in-from-the-command-line>`_
-

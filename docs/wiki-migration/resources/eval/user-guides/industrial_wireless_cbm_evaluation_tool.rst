@@ -4,9 +4,19 @@ Wireless Vibration Monitoring Platform
 Overview
 --------
 
-This document details the function and setup of an Analog Devices wireless Condition Based Monitoring (CBM) evaluation platform. The platform provides a wireless signal chain for MEMS-accelerometer based vibration monitoring. Visualisation of this data for up to three motes (device package containing accelerometer, microcontroller and RF board) is available through a PC-based Graphical User Interface (GUI).
+This document details the function and setup of an Analog Devices wireless
+Condition Based Monitoring (CBM) evaluation platform. The platform provides a
+wireless signal chain for MEMS-accelerometer based vibration monitoring.
+Visualisation of this data for up to three motes (device package containing
+accelerometer, microcontroller and RF board) is available through a PC-based
+Graphical User Interface (GUI).
 
-The CBM hardware signal chain consists of a single-axis ADXL1002 accelerometer mounted to the base of the module. The output of the ADXL1002 is read into the ADuCM4050 low power microcontroller where it is buffered, transformed to frequency domain and streamed to the SmartMESH IP mote. From the SmartMESH chip it is wirelessly streamed to the SmartMESH IP Manager. The manager connects to a PC and visualization and saving of the data can take place.
+The CBM hardware signal chain consists of a single-axis ADXL1002 accelerometer
+mounted to the base of the module. The output of the ADXL1002 is read into the
+ADuCM4050 low power microcontroller where it is buffered, transformed to
+frequency domain and streamed to the SmartMESH IP mote. From the SmartMESH chip
+it is wirelessly streamed to the SmartMESH IP Manager. The manager connects to a
+PC and visualization and saving of the data can take place.
 
 |image1| **Figure 1. CBM Wireless Evaluation Kit**
 
@@ -56,7 +66,8 @@ The following hardware is required to use the evaluation tool.
 
 |image2| **Figure 2. Mote and Manager**
 
-The software required to see the data collected can be accessed by direct download from this wiki. See "Software Installation"
+The software required to see the data collected can be accessed by direct
+download from this wiki. See "Software Installation"
 
 Quickstart
 ~~~~~~~~~~
@@ -75,9 +86,13 @@ Quickstart
 Guides
 ~~~~~~
 
-A setup guide has been created for the Wireless CBM tool which is available on this wiki. This may be used if the quickstart provided here does not result in successful operation of the program, or for more information about this program and its setup.
+A setup guide has been created for the Wireless CBM tool which is available on
+this wiki. This may be used if the quickstart provided here does not result in
+successful operation of the program, or for more information about this program
+and its setup.
 
-In addition, a firmware guide with greater detail on the inner workings of the program can be downloaded here.
+In addition, a firmware guide with greater detail on the inner workings of the
+program can be downloaded here.
 
 .. admonition:: Download
    :class: download
@@ -87,7 +102,6 @@ In addition, a firmware guide with greater detail on the inner workings of the p
    -  `wcbm-01_firmware_guide.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/wcbm-01_firmware_guide.pdf>`_
    
 
-
 --------------
 
 Software
@@ -96,14 +110,16 @@ Software
 Software Installation
 ~~~~~~~~~~~~~~~~~~~~~
 
-The installer for this software can be downloaded from the web page linked to below.
+The installer for this software can be downloaded from the web page linked to
+below.
 
 ::
 
    *Click the link "Software Download Directory" to open a web page that contains a number of software downloads.
    *Click the link under the title "Industrial Wireless CbM (Condition-based Monitoring) Evaluation Software for ADXL1002 Accelerometers"
 
-Note, this web page will be downloaded as a ".htm" file if you are using Google Chrome. Simply open this file after it downloads to access the directory.
+Note, this web page will be downloaded as a ".htm" file if you are using Google
+Chrome. Simply open this file after it downloads to access the directory.
 
 .. admonition:: Download
    :class: download
@@ -112,15 +128,20 @@ Note, this web page will be downloaded as a ".htm" file if you are using Google 
    -  `Software Download Directory <https://wiki.analog.com/ftp/ftp.analog.com/pub/imu/imu_ftp_directory.htm>`_
    
 
-
 Typical Measurements
 ~~~~~~~~~~~~~~~~~~~~
 
-If you have the program running, with a mote connected, simply shaking the mote in the direction of the axis (indicated on the mote by a small notch near the base) should update the plots with some meaningful vibration data.
+If you have the program running, with a mote connected, simply shaking the mote
+in the direction of the axis (indicated on the mote by a small notch near the
+base) should update the plots with some meaningful vibration data.
 
-This demo can be improved by using the mote in conjunction with a small motorized device (e.g. electric fan). Simply place the mote as close to the vibration source as possible and observe the results in the GUI.
+This demo can be improved by using the mote in conjunction with a small
+motorized device (e.g. electric fan). Simply place the mote as close to the
+vibration source as possible and observe the results in the GUI.
 
-Below is a typical example of DFT (Discrete Fourier Transform) data for an unbalanced motor rotating at 2000 RPM. Additionally provided is an explanation of where motor and bearing information should appear through the use of DFT.
+Below is a typical example of DFT (Discrete Fourier Transform) data for an
+unbalanced motor rotating at 2000 RPM. Additionally provided is an explanation
+of where motor and bearing information should appear through the use of DFT.
 
 |image4| **Figure 4. Typical GUI Output**
 
@@ -132,12 +153,12 @@ Further Information
 -------------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/smartmesh_layout.png
-   :width: 1000px
+   :width: 1000
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mote_and_manager.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cbm_app_output.png
-   :width: 800px
+   :width: 800
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/gui.png
-   :width: 800px
+   :width: 800
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fft_markers.png
-   :width: 600px
+   :width: 600

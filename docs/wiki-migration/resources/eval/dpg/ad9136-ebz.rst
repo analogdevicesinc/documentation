@@ -32,7 +32,13 @@ The AD9136/AD9135 Evaluation Board software has a legacy easy-to-use graphical u
 Hardware Setup
 --------------
 
-Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source should be connected to the SMA connector, J1. This is the DACCLK input. The spectrum analyzer should be connected to the SMA connector, J17. This is the DAC0 output. The evaluation board connects to the DPG3 through the connector P4. The PC should be connected to the EVB using the mini-USB connector XP2 after installation of the Evaluation Board software. Figure 1 shows the block diagram of the set-up.
+Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source
+should be connected to the SMA connector, J1. This is the DACCLK input. The
+spectrum analyzer should be connected to the SMA connector, J17. This is the
+DAC0 output. The evaluation board connects to the DPG3 through the connector P4.
+The PC should be connected to the EVB using the mini-USB connector XP2 after
+installation of the Evaluation Board software. Figure 1 shows the block diagram
+of the set-up.
 
 .. container:: center
 
@@ -43,7 +49,6 @@ Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source sh
    | Figure 1. Block diagram of the AD9136/AD9135 lab bench set-up | Figure 2. Top view of AD9136-EBZ |
    +---------------------------------------------------------------+----------------------------------+
    
-
 
 Getting Started
 ---------------
@@ -62,7 +67,6 @@ Initial Set-Up
 | 3. Click on “Add Generated Waveform”, and then “Wireless Infrastructure”. A WIFR panel will be added to the vector list. Enter the Data Rate, in this case 1.6GHz and the desired frequency, 100MHz. Enter the digital amplitude. In this case we use 0dBFS. Select "2's Complement" from the Number Format drop-down list. Input the center frequency of "100MHz" at the bottom of the panel, choose "WCDMA" from the Standard drop-down menu and increase the No. of Carriers to "4" - then hit the "Add Carriers" button.
 | 4. Select the WIFR vector (I) in the “DAC0” drop down menu and the WIFR vector (Q) in the “DAC1”. At this point, the DPG Downloader panel should look like Figure 3.
 
-
 .. container:: center
 
    
@@ -75,13 +79,11 @@ Initial Set-Up
    +--------------------------------+
    
 
-
 Configuring SPI using ACE
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 1. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1.6GHz, and the output level to 3dBm. The spectrum analyzer can be configured with Start Frequency = 1 MHz, Stop Frequency = 800 MHz, and Resolution Bandwidth of 30 kHz, and Trace Detector to Average (Log/RMS/V). Choose Input Attenuation to be 8dB. This can be adjusted later if indications are that the analyzer is causing degradations.
 | 2. Open ACE (Start > All Programs > Analog Devices > ACE > ACE). The |ace_icon_small.png| icon indicates the ACE software. If the board is connected properly, the screen should look similar to Figure 4. Double click on this board.
-
 
 .. container:: center
 
@@ -97,7 +99,6 @@ Configuring SPI using ACE
 
    +----------------------------------+
    
-
 
 Ensure that the |connection_icon.png| button is green in the subsystem image under the “System” tab, as shown in Figure 5. If not, click it, select the AD9136/5, and click *Acquire*. Double click on the subsystem image to reach the board block diagram.
 
@@ -116,8 +117,8 @@ Ensure that the |connection_icon.png| button is green in the subsystem image und
    +-------------------------+
    
 
-
-Next to the board block diagram, click "Modify" under "Initial Configuration Summary."
+Next to the board block diagram, click "Modify" under "Initial Configuration
+Summary."
 
 .. container:: center
 
@@ -134,8 +135,9 @@ Next to the board block diagram, click "Modify" under "Initial Configuration Sum
    +-----------------------------------------------------------------------------+
    
 
-
-Select "Dual Link" from the pull-down menu next to Links, and set the JESD Mode to 8. Check the Subclass box and set interpolation to 1. The FDAC frequency should be set to 1.6 GHz. The settings should match Figure 6. Select "Apply."
+Select "Dual Link" from the pull-down menu next to Links, and set the JESD Mode
+to 8. Check the Subclass box and set interpolation to 1. The FDAC frequency
+should be set to 1.6 GHz. The settings should match Figure 6. Select "Apply."
 
 .. container:: center
 
@@ -152,8 +154,12 @@ Select "Dual Link" from the pull-down menu next to Links, and set the JESD Mode 
    +---------------------------------------------------------+
    
 
-
-Double click on the dark blue AD9135 chip block in the board block diagram. The chip block diagram should appear, as shown in Figure 8. The JESD PLL should now be locked on both the board and chip block diagrams. Other parameters can be changed on both block diagrams, but do not need to be for this test. For more information about changing parameters in ACE, see the ACE Software Features section.
+Double click on the dark blue AD9135 chip block in the board block diagram. The
+chip block diagram should appear, as shown in Figure 8. The JESD PLL should now
+be locked on both the board and chip block diagrams. Other parameters can be
+changed on both block diagrams, but do not need to be for this test. For more
+information about changing parameters in ACE, see the ACE Software Features
+section.
 
 .. container:: center
 
@@ -169,7 +175,6 @@ Double click on the dark blue AD9135 chip block in the board block diagram. The 
 
    +-------------------------------------+
    
-
 
 | 3. On the DPGDownloader panel, seen in Figure 3, the Serial Line Rate in the should read 8Gbps.
 | Click Download (|image11|) and Play (|image12|) in the DPG Downloader screen.
@@ -188,12 +193,10 @@ Double click on the dark blue AD9135 chip block in the board block diagram. The 
    +------------------------------------------------------------+
    
 
-
 Configuring SPI using the legacy SPI Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | 1. Open the AD9136/AD9135 SPI application (Start > All Programs > Analog Devices > AD9136/AD9135 > AD9136/AD9135 SPI). The screen should look similar to Figure 10.
-
 
 .. container:: center
 
@@ -210,12 +213,10 @@ Configuring SPI using the legacy SPI Application
    +-----------------------------------------------------------+
    
 
-
 | 2. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1.6GHz, and the output level to 3dBm. The spectrum analyzer can be configured with Start Frequency = 1 MHz, Stop Frequency = 800 MHz, and Resolution Bandwidth of 30 kHz, and Trace Detector to Average (Log/RMS/V). Choose Input Attenuation to be 8dB. This can be adjusted later if indications are that the analyzer is causing degradations.
 | 3. Follow the sequence below to configure the AD9136/AD9135 SPI registers.
 | a. The Links should be set to dual link. The JESD Mode is set to 8, Subclass 1 box checked, Interpolation set to 1, and FDAC set to 1.6GHz. Click “Commit” button to initialize the AD9136/AD9135. The JESD204B PLL should be locked indicated with bright green JESD204B PLL readback LED.
 | b. At this point the Serial Line Rate in the DPG3 software panel should read 8Gbps.
-
 
 .. container:: center
 
@@ -228,7 +229,6 @@ Configuring SPI using the legacy SPI Application
 
    +---------------------------------------------------------------+
    
-
 
 | d. Click Download (|image16|) and Play (|image17|) in the DPG Downloader screen.
 | e. The current on the 5V supply should read about 1430mA. If you do not see the output, gently push the board toward the DPG3. This ensures that the board is firmly connected to the DPG3. The four registers codeGrpSync, FrameSync, GoodCheckSum and Initial LaneSync should all read 0F indicating the lanes are working correctly.
@@ -246,12 +246,17 @@ Configuring SPI using the legacy SPI Application
    +-------------------------------------------------------------+
    
 
-
 ACE Software Features
 ---------------------
 
-The ACE software is organized to allow the user to evaluate and control the AD9122A evaluation board. The “Initial Configuration” wizard, which is only available for certain boards, controls the DAC and PLL setups. Block diagram views of the board and chip contain elements that can be used to vary parameters like ref current and data format. These parameters can be changed using check boxes, drop down menus, and input boxes. Some parameters do not have settings shown in the diagram. Double click on the parameter to view the available settings, seen with the NCO settings below.
-
+The ACE software is organized to allow the user to evaluate and control the
+AD9122A evaluation board. The “Initial Configuration” wizard, which is only
+available for certain boards, controls the DAC and PLL setups. Block diagram
+views of the board and chip contain elements that can be used to vary parameters
+like ref current and data format. These parameters can be changed using check
+boxes, drop down menus, and input boxes. Some parameters do not have settings
+shown in the diagram. Double click on the parameter to view the available
+settings, seen with the NCO settings below.
 
 |ad9122_nco.png|
 
@@ -259,18 +264,18 @@ The ACE software is organized to allow the user to evaluate and control the AD91
 
    NCO settings for the AD9122
 
-
-In addition, some parameters can be enabled or disabled. This feature is evident by the color of the block parameter. For example, if the block parameter is dark blue, the parameter is enabled. If it is light grey, it is disabled. To enable or disable a parameter, click on it.
+In addition, some parameters can be enabled or disabled. This feature is evident
+by the color of the block parameter. For example, if the block parameter is dark
+blue, the parameter is enabled. If it is light grey, it is disabled. To enable
+or disable a parameter, click on it.
 
 .. container:: column
-
 
    ..
 
 |ad9739a_on.png|
 
 .. container:: column
-
 
    ..
 
@@ -285,7 +290,6 @@ In addition, some parameters can be enabled or disabled. This feature is evident
 
    
 
-
 .. container:: column
 
    
@@ -295,14 +299,12 @@ In addition, some parameters can be enabled or disabled. This feature is evident
 
    
 
-
-
-More direct changes to registers and bit fields can be made in the memory map, which is linked from the chip block diagram through the “Proceed to Memory Map” button. In this view, names, addresses, and data can be manually altered by the user.
-
+More direct changes to registers and bit fields can be made in the memory map,
+which is linked from the chip block diagram through the “Proceed to Memory Map”
+button. In this view, names, addresses, and data can be manually altered by the
+user.
 
    
-
-
 
 |ad9122_memmap.png|
 
@@ -310,10 +312,16 @@ More direct changes to registers and bit fields can be made in the memory map, w
 
    Bench Set-Up
 
-
-ACE also contains the Macro Tool, which can be used to record register reads and writes. This is executed in the memory map view or with the initialization wizard. To use, check the “Record Sub-Commands” checkbox and press the record button. Changes in the memory map, which are bolded until they are applied to the part, are recorded as UI commands by the macro tool once the changes are made. Changed register write commands for the controls are also recorded. Hit “Apply Changes” to execute the commands and make changes in the memory map. To stop recording, click the “Stop Recording” button. A macro tool page with the command steps will be created. The macro can be saved using the “Save Macro” button so that it may be loaded for future use.
-
-
+ACE also contains the Macro Tool, which can be used to record register reads and
+writes. This is executed in the memory map view or with the initialization
+wizard. To use, check the “Record Sub-Commands” checkbox and press the record
+button. Changes in the memory map, which are bolded until they are applied to
+the part, are recorded as UI commands by the macro tool once the changes are
+made. Changed register write commands for the controls are also recorded. Hit
+“Apply Changes” to execute the commands and make changes in the memory map. To
+stop recording, click the “Stop Recording” button. A macro tool page with the
+command steps will be created. The macro can be saved using the “Save Macro”
+button so that it may be loaded for future use.
 
 |ad9122_macrocommands.png|
 
@@ -321,18 +329,22 @@ ACE also contains the Macro Tool, which can be used to record register reads and
 
    Macro tool in ACE. The *Stop Recording*, *Record*, and *Save Macro* commands are located at the top of the macro tool.
 
-
-The raw macro file will be saved using ACE syntax, which is not easily readable. To remedy this, the ACE software download includes the Macro to Hex Conversion Tool. The user can choose to include or exclude register write, reads, and/or comments in the conversion. The file pathways for the source and save paths should be the same, except that one should be an .acemacro file and the other should be a .txt file. The “Convert” button converts and opens the converted text file, which is easier to read. The conversion tool can also convert back to an .acemacro file if desired.
+The raw macro file will be saved using ACE syntax, which is not easily readable.
+To remedy this, the ACE software download includes the Macro to Hex Conversion
+Tool. The user can choose to include or exclude register write, reads, and/or
+comments in the conversion. The file pathways for the source and save paths
+should be the same, except that one should be an .acemacro file and the other
+should be a .txt file. The “Convert” button converts and opens the converted
+text file, which is easier to read. The conversion tool can also convert back to
+an .acemacro file if desired.
 
 .. container:: column
-
 
    ..
 
 |ad9122_m2hconvert_5.png|
 
 .. container:: column
-
 
    ..
 
@@ -347,7 +359,6 @@ The raw macro file will be saved using ACE syntax, which is not easily readable.
 
    
 
-
 .. container:: column
 
    
@@ -357,20 +368,18 @@ The raw macro file will be saved using ACE syntax, which is not easily readable.
 
    
 
-
-
 For more information about ACE and its features, visit https://wiki.analog.com/resources/tools-software/ace.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9136/figure_1.png
-   :width: 440px
+   :width: 440
    :height: 260px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9136/figure_2.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9136/figure_1.png
-   :width: 440px
+   :width: 440
    :height: 260px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9136/figure_2.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9135_dpgd_new.png
 .. |ace_icon_small.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_icon_small.png
 .. |image6| image:: https://wiki.analog.com/_media/{{_/resources/eval/user-guides/ad9135_detected.png
@@ -382,15 +391,15 @@ For more information about ACE and its features, visit https://wiki.analog.com/r
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/image009.png
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/image010.png
 .. |image13| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136_1.6ghzdac_1x_4xwcdma_fout100m_plloff.png
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136-ebz_spipro_initialview.png
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136-ebz_spipro_finalview.png
-   :width: 600px
+   :width: 600
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/dpg/image009.png
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/dpg/image010.png
 .. |image18| image:: https://wiki.analog.com/_media/{{_/resources/eval/dpg/ad9136/ad9136_1.6ghzdac_1x_4xwcdma_fout100m_plloff.png
-   :width: 600px
+   :width: 600
 .. |ad9122_nco.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_nco.png
 .. |ad9739a_on.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9739a_on.png
 .. |ad9739a_off.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9739a_off.png

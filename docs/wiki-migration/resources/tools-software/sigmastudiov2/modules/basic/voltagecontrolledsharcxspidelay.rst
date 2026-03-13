@@ -11,9 +11,17 @@ xSPI Voltage Controlled Delay
 Description
 -----------
 
-The xSPI Voltage Controlled Delay block outputs a delayed version of the input signal using external RAM connected with xSPI. The input is delayed by the number of samples given in the control input. The Max numeric text box represents the largest amount of delay that could be applied to the input signal. If you select a new Max value in the drop-down menu, you will be forced to recompile.
+The xSPI Voltage Controlled Delay block outputs a delayed version of the input
+signal using external RAM connected with xSPI. The input is delayed by the
+number of samples given in the control input. The Max numeric text box
+represents the largest amount of delay that could be applied to the input
+signal. If you select a new Max value in the drop-down menu, you will be forced
+to recompile.
 
-The maximum delay available for a particular voltage controlled delay block depends on the total available external RAM memory, which is specified in external RAM datasheet. Setting the Max control's value, allocates memory on the external RAM, reserving that memory for use by this particular block.
+The maximum delay available for a particular voltage controlled delay block
+depends on the total available external RAM memory, which is specified in
+external RAM datasheet. Setting the Max control's value, allocates memory on the
+external RAM, reserving that memory for use by this particular block.
 
 Pins
 ----
@@ -62,13 +70,10 @@ Delay          Current Delay value in Words. (Cur \* 4) Integer32
 MaxDelay       Maximum number of Delay value            Integer32
 ============== ======================================== ==========
 
-
-
-
 .. note::
 
-   The current delay control input will be capped at the maximum allowable delay value.
-
+   The current delay control input will be capped at the maximum allowable delay
+   value.
 
 Memory
 ------
@@ -79,7 +84,6 @@ Code (Bytes) Coeff(Bytes)      Data32(Bytes)
 2202         4 + 94(Framework) 296 + 256(internal state)
 ============ ================= =========================
 
-
 | ===== MIPS (Delay = Block size )=====
 
 ============= ============== ================
@@ -88,16 +92,16 @@ Default(1 Ch) 2 Growth(2 Ch) 32 Growth(32 Ch)
 7.3           7.9            25.3
 ============= ============== ================
 
-
-
-
 .. note::
 
-   To enhance performance, the Max or Current (Cur) delay values can be increased in steps of 8 samples. Optimal performance is typically achieved when these values are divisible by the schematic block size.
+   To enhance performance, the Max or Current (Cur) delay values can be
+   increased in steps of 8 samples. Optimal performance is typically achieved
+   when these values are divisible by the schematic block size.
 
    
-   If additional delay is required in the range of 1 to 7 samples, we can insert internal delay modules, as the main delay module only supports increments of 8 samples.
-
+   If additional delay is required in the range of 1 to 7 samples, we can insert
+   internal delay modules, as the main delay module only supports increments of
+   8 samples.
 
 Example Schematic
 =================

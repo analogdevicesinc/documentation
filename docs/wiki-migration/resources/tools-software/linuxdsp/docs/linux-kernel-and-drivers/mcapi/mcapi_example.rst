@@ -47,7 +47,8 @@ The MCAPI example for ARM core (Running Linux) is included in the YOCTO, and you
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  sources/meta-adi/meta-adi-adsp-sc5xx/recipes-icc/libmcapi/libmcapi.bb
--  sources/meta-adi/meta-adi-adsp-sc5xx/recipes-icc/sc5xx-corecontrol/sc5xx-corecontrol.bb
+-
+   sources/meta-adi/meta-adi-adsp-sc5xx/recipes-icc/sc5xx-corecontrol/sc5xx-corecontrol.bb
 
 - CCES
 ~~~~~~
@@ -62,7 +63,9 @@ Software Configuration
 Configure Device Tree
 ~~~~~~~~~~~~~~~~~~~~~
 
-Make sure the icc has been enabled by from the device tree file sc589-ezkit.dts/sc584-ezkit.dts/sc573-ezkit.dts/sc589-mini.dts under arch/arm/boot/dts.
+Make sure the icc has been enabled by from the device tree file
+sc589-ezkit.dts/sc584-ezkit.dts/sc573-ezkit.dts/sc589-mini.dts under
+arch/arm/boot/dts.
 
 ::
 
@@ -73,7 +76,8 @@ Make sure the icc has been enabled by from the device tree file sc589-ezkit.dts/
 Kernel Configuration
 ~~~~~~~~~~~~~~~~~~~~
 
-MCAPI lib is built on top of the ICC (Inter-Core Communications) device driver. Enable the ICC driver relevant operations in Linux kernel:
+MCAPI lib is built on top of the ICC (Inter-Core Communications) device driver.
+Enable the ICC driver relevant operations in Linux kernel:
 
 .. code:: shell
 
@@ -93,7 +97,8 @@ Then run **bitbake linux-adi -C compile** to generate kernel image zImage and dt
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-Add the mcapi package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
+Add the mcapi package in the filesystem, it's enabled in adsp-sc5xx-full image
+by default.
 
 .. code:: shell
 
@@ -116,7 +121,8 @@ A **brief step** to run multicore on the EZ-Kit board is showing as follows:
    -  Remove the program of Device 0[Core 0];
    -  Uncheck automaticlly setted breakpoints and disable semihosting in "Automatic Breakpoints" view of debug configuration;
    -  Uncheck "Halt core after connecting to target" for ARM core in debug configuration and start debug;
-   -  Click the debug button, it will load the dxe file then waiting for linux to start Core 1 & 2;
+   -  Click the debug button, it will load the dxe file then waiting for linux
+      to start Core 1 & 2;
 
 -  Enable SHARC cores in Linux
 -  Resume Core 1 & 2 Application running in CCES
@@ -127,7 +133,6 @@ Step 1: Boot into Linux console
 Please refer to the :doc:`Installing Linux On The Hardware </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing>` to load the built Linux into the target board:
 
 .. code:: none
-
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -156,7 +161,9 @@ Please refer to the :doc:`Installing Linux On The Hardware </wiki-migration/reso
 Step2: Build MCAPI Example in CCES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before running the mcapi example in CrossCore Embedded Studio, please follow the steps below to import and build it, now we take ADSP-SC589-EzKit as the example to demonstrate.
+Before running the mcapi example in CrossCore Embedded Studio, please follow the
+steps below to import and build it, now we take ADSP-SC589-EzKit as the example
+to demonstrate.
 
 Import the mcapi example into CCES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -182,19 +189,17 @@ Import the mcapi example into CCES
 
    **Diagram 1** Import the MCAPI Example
 
-
 Build Mode Selection
 ~~~~~~~~~~~~~~~~~~~~
 
-Select the "Build Tool" to choose Debug/Release mode for building the target projects:
-
+Select the "Build Tool" to choose Debug/Release mode for building the target
+projects:
 
 |image1|
 
 .. container:: centeralign
 
    **Diagram 2** Build Action - Build Mode Selection
-
 
 Build the projects
 ~~~~~~~~~~~~~~~~~~
@@ -208,11 +213,11 @@ Build the projects
 
    **Diagram 3** Build Action - Build Projects
 
-
 Step3: Load MCAPI Example for SHARC Cores
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please follow the steps below to do debug configuration, download and run the built binary for SHARC Cores.
+Please follow the steps below to do debug configuration, download and run the
+built binary for SHARC Cores.
 
 1. Connect ICE-1000/2000 JTAG emulator between the SC589-EZKIT and your PC
 
@@ -224,11 +229,13 @@ Please follow the steps below to do debug configuration, download and run the bu
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/debug_remove_core0.png
 
-5. Uncheck automaticlly setted breakpoints and disable semihosting in "Automatic Breakpoints" view of debug configuration.
+5. Uncheck automaticlly setted breakpoints and disable semihosting in "Automatic
+   Breakpoints" view of debug configuration.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/debug_config_uncheck1.jpg
 
-6. Uncheck the debug target option "Halt core after connecting to target" for ARM core.
+6. Uncheck the debug target option "Halt core after connecting to target" for
+   ARM core.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/debug_config_uncheck2.jpg
 
@@ -245,14 +252,15 @@ In u-boot, enable SHARC core then boot linux
 
    sc # icc enable 1
 
-Or boot Linux, and then in Linux use the corecontrol utility to start the SHARC core:
+Or boot Linux, and then in Linux use the corecontrol utility to start the SHARC
+core:
 
 ::
 
    # corecontrol --start 1
 
-After running SHARC core, CCES halts in the first line of the application code on SHARC core 1.
-
+After running SHARC core, CCES halts in the first line of the application code
+on SHARC core 1.
 
 |image2|
 
@@ -263,12 +271,14 @@ Resume(F5) core 1 and continue running the application in CCES.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/debug_config_resume_success.jpg
 
-Now Linux is running on ARM core 0 while SHARC baremetal application is running on core 1.
+Now Linux is running on ARM core 0 while SHARC baremetal application is running
+on core 1.
 
 Step6: Run Linux MCAPI MSG Demo Test
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Run 'arm_sharc_msg_demo' and 'arm_sharc_msg_test' command in Linux and the passed log in linux is showing as below.
+Run 'arm_sharc_msg_demo' and 'arm_sharc_msg_test' command in Linux and the
+passed log in linux is showing as below.
 
 .. code:: console
 

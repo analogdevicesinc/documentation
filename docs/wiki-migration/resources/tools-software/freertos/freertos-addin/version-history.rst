@@ -7,11 +7,14 @@ Version history for the FreeRTOS Add-In. Trivial changes have been omitted.
 
    -  ADSP-SC83x (SHARC-FX and Cortex-M33 cores)
 
--  Configuration options that are not available for a processor are hidden rather than disabled.
+-  Configuration options that are not available for a processor are hidden
+   rather than disabled.
 
 Known Issues
 
--  'Generate Run-Time Statistics' doesn't have the prerequisite portGET_RUN_TIME_COUNTER_VALUE or portCONFIGURE_TIMER_FOR_RUN_TIME_STATS functionality.
+-  'Generate Run-Time Statistics' doesn't have the prerequisite
+   portGET_RUN_TIME_COUNTER_VALUE or portCONFIGURE_TIMER_FOR_RUN_TIME_STATS
+   functionality.
 
 1.0.1
 =====

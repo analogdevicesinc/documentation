@@ -3,7 +3,9 @@ Wav Player
 
 :doc:`Click here to return to the Sources section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources>`
 
-This module can be used to read PCM/WAV files from internal memory of ADAU145x. This module also provides playback controls as Play/Pause, Stop and Loopback.This module also can perform pitch shifting while playing the file.
+This module can be used to read PCM/WAV files from internal memory of ADAU145x.
+This module also provides playback controls as Play/Pause, Stop and
+Loopback.This module also can perform pitch shifting while playing the file.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/wavplayercell.jpg
    :align: center

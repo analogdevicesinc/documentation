@@ -3,11 +3,12 @@ Vector Generation
 
 ACE includes a vector generation tool accessible from the left side menu.
 
-This wiki page aims to show how to use it to create vectors. Refer to your device plug-in manual on how to download them to the device under test.
+This wiki page aims to show how to use it to create vectors. Refer to your
+device plug-in manual on how to download them to the device under test.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-side-menu.png
    :align: center
-   :width: 100px
+   :width: 100
 
 Available vector types
 ----------------------
@@ -18,49 +19,50 @@ By default, ACE enables users to generate:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-dc-waveform.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Single Tone Vectors : output a sine wave
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-single-tone-waveform.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Square Vectors : output a square wave
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-square-waveform.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Triangle Vectors : output a triangle wave
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-triangle-waveform.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Sawtooth Vectors : output a sawtooth wave
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-sawtooth-waveform.png
    :align: center
-   :width: 400px
+   :width: 400
 
--  Chirp Vectors : output a sine wave whose fundamental frequency changes over time
+-  Chirp Vectors : output a sine wave whose fundamental frequency changes over
+   time
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-chirp-waveform.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Noise Vectors : output Gaussian or uniform noise signal
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-noise-waveform.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Multi Tone Vectors : output a waveform composed of multiple sine waves
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-multi-tone-waveform.png
    :align: center
-   :width: 400px
+   :width: 400
 
 ACE also enables users to load custom vectors through different format of files:
 
@@ -79,7 +81,7 @@ The vector generator tool is composed of three panes:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-start-window.png
    :align: center
-   :width: 800px
+   :width: 800
 
 ADD
 ~~~
@@ -91,26 +93,32 @@ Vector types are organized into groups. The two default groups are:
 
 Groups can be expanded/collapsed using the arrow on the right of the group name.
 
-Each vector type and file format available is on single line in their group. The (i) icon, when hovered over, provides information about the vector type or file format. The (+) icon, when clicked, adds the vector type or file format to the list of vectors to generate.
+Each vector type and file format available is on single line in their group. The
+(i) icon, when hovered over, provides information about the vector type or file
+format. The (+) icon, when clicked, adds the vector type or file format to the
+list of vectors to generate.
 
-Users can search for vector types or file formats using the search box at the top of the groups.
+Users can search for vector types or file formats using the search box at the
+top of the groups.
 
-The ADD pane can be expanded/collapse using the arrow at the right of the "ADD" title.
+The ADD pane can be expanded/collapse using the arrow at the right of the "ADD"
+title.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-add-pane.png
    :align: center
-   :width: 400px
+   :width: 400
 
 GENERATE
 ~~~~~~~~
 
-After clicking the (+) icon on a vector type or file format, a vector's configuration group will be added to the GENERATE pane.
+After clicking the (+) icon on a vector type or file format, a vector's
+configuration group will be added to the GENERATE pane.
 
 Here is an example for a single tone vector added:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-generate-pane.png
    :align: center
-   :width: 400px
+   :width: 400
 
 All vectors have common features:
 
@@ -118,34 +126,42 @@ All vectors have common features:
 -  Trash can icon : when clicked, the vector will be deleted from the generated vectors list and won't be usable in device plug-ins.
 -  Preview button : when clicked, the vector data will be drawn in the PREVIEW pane.
 -  Copy button : when clicked, an exact copy of the vector will be created.
--  Export button : when clicked, the vector data can be saved as a txt file with one sample value per line. Complex vectors' sample values are interleaved.
+-  Export button : when clicked, the vector data can be saved as a txt file with
+   one sample value per line. Complex vectors' sample values are interleaved.
 
-Vectors' configuration groups can be expanded/collapsed using the arrow at the right of the vectors' names.
+Vectors' configuration groups can be expanded/collapsed using the arrow at the
+right of the vectors' names.
 
-The GENERATE pane can be expanded/collapsed by clicking the arrow at the right of the "GENERATE" title.
+The GENERATE pane can be expanded/collapsed by clicking the arrow at the right
+of the "GENERATE" title.
 
-All the generated vectors can be deleted at once by clicking the "Clear All Vectors" button at the bottom right of the GENERATE pane.
+All the generated vectors can be deleted at once by clicking the "Clear All
+Vectors" button at the bottom right of the GENERATE pane.
 
 PREVIEW
 ~~~~~~~
 
 The PREVIEW pane display a single vector's data in time and frequency domains.
 
-After clicking the preview button on a generated vector, the title of each graph will change to indicate which vector is currently previewed:
+After clicking the preview button on a generated vector, the title of each graph
+will change to indicate which vector is currently previewed:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-preview-pane.png
    :align: center
-   :width: 400px
+   :width: 400
 
-In the time domain, the vector data will be zoomed by default to try to match one period of data if possible, otherwise the whole data is displayed by default.
+In the time domain, the vector data will be zoomed by default to try to match
+one period of data if possible, otherwise the whole data is displayed by
+default.
 
-In the frequency domain, the FFT of the vector data will be zoomed by default from 0Hz to half the sampling frequency value.
+In the frequency domain, the FFT of the vector data will be zoomed by default
+from 0Hz to half the sampling frequency value.
 
 Both graph has a set of control buttons:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-preview-control-buttons.png
    :align: center
-   :width: 400px
+   :width: 400
 
 From left to right:
 
@@ -160,23 +176,25 @@ From left to right:
 Vector configuration
 --------------------
 
-All the vectors can be renamed to easily identify them. By default, the name is set to Vector#x where x is the current number of vectors generated.
+All the vectors can be renamed to easily identify them. By default, the name is
+set to Vector#x where x is the current number of vectors generated.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-vector-configuration-name.png
    :align: center
-   :width: 400px
+   :width: 400
 
 DC Vector
 ~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-vector-configuration-dc.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The configuration elements are:
 
 -  DC Value : constant value over time that represents the DC waveform.
--  Number of samples : number of times the constant value will be repeated in the output.
+-  Number of samples : number of times the constant value will be repeated in
+   the output.
 
 Single Tone, Square, Triangle, and Sawtooth Vectors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,7 +203,7 @@ These 4 types of vector share the same configuration elements:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-vector-configuration-single-tone.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Data Rate : sampling frequency of the generated waveform.
 -  Desired Frequency : fundamental frequency of the generated waveform. Note that the frequency will be adjusted to the closest frequency that allows the generation of a coherent signal - i.e. continuous from the last sample to the first sample.
@@ -199,14 +217,15 @@ These 4 types of vector share the same configuration elements:
 -  Relative Phase : Phase in degrees to apply to the waveform.
 -  Unsigned Data : If checked, the data generated will only contain positive values.
 -  Allow even cycle count: If checked, the data generated may contain an even number of periods.
--  Generate Complex Data : If checked, the data generated will contain two waveforms, the In-phase and the Quadrature waveforms.
+-  Generate Complex Data : If checked, the data generated will contain two
+   waveforms, the In-phase and the Quadrature waveforms.
 
 Chirp Vector
 ~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-vector-configuration-chirp.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The configuration elements are:
 
@@ -222,14 +241,15 @@ The configuration elements are:
 -  Peak To Peak Amplitude : When the amplitude control is set to V, the amplitude of the waveform is set through this value.
 -  Relative Phase : Phase in degrees to apply to the waveform.
 -  Unsigned Data : If checked, the data generated will only contain positive values.
--  Generate Complex Data : If checked, the data generated will contain two waveforms, the In-phase and the Quadrature waveforms.
+-  Generate Complex Data : If checked, the data generated will contain two
+   waveforms, the In-phase and the Quadrature waveforms.
 
 Noise Vector
 ~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-vector-configuration-noise.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The configuration elements are:
 
@@ -242,14 +262,15 @@ The configuration elements are:
 -  Peak To Peak Amplitude : When the amplitude control is set to V, the amplitude of the waveform is set through this value.
 -  Generate Complex Data : If checked, the data generated will contain two waveforms, the In-phase and the Quadrature waveforms.
 -  Unsigned Data : If checked, the data generated will only contain positive values.
--  Noise Type : Determines the type of noise to generate, either Gaussian or uniform.
+-  Noise Type : Determines the type of noise to generate, either Gaussian or
+   uniform.
 
 Multi Tone Vector
 ~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-vector-configuration-multi-tone.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The configuration elements are:
 
@@ -271,37 +292,52 @@ The configuration elements are:
 TXT File
 ~~~~~~~~
 
-The txt file vector must have one and only one numerical sample value per line. Values are parsed as double precision floating point values (integer values are parsed correctly). Complex (In-phase/Quadrature) vectors can be contained in one file with I/Q values interleaved or into two separate files one for I values and one for Q values.
+The txt file vector must have one and only one numerical sample value per line.
+Values are parsed as double precision floating point values (integer values are
+parsed correctly). Complex (In-phase/Quadrature) vectors can be contained in one
+file with I/Q values interleaved or into two separate files one for I values and
+one for Q values.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-vector-configuration-txtfile.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The configuration elements are:
 
 -  File Format:
 
-Real Vector : One txt file containing the values for a single waveform. Complex - Interleaved : One txt file containing interleaved values for In-phase and Quadrature waveforms. Complex - Separate Files : Two txt files containing values for In-phase and Quadrature waveforms respectively.
+Real Vector : One txt file containing the values for a single waveform. Complex
+- Interleaved : One txt file containing interleaved values for In-phase and
+Quadrature waveforms. Complex - Separate Files : Two txt files containing values
+for In-phase and Quadrature waveforms respectively.
 
 -  File Path : path to the first or only txt file to retrieve the data from.
 -  Second File Path : path to the second txt file to retrieve the quadrature data from when using “Complex - Separate Files” option.
 -  Resolution : informational value that won't impact the data but that can be used by the device plug-in for verification and display purposes.
--  Data Rate : informational value that won't impact the data but that can be used by the device plug-in for verification and display purposes.
+-  Data Rate : informational value that won't impact the data but that can be
+   used by the device plug-in for verification and display purposes.
 
 Hex File
 ~~~~~~~~
 
-The hex file vector must have one and only one hexadecimal sample value per line. Values are parsed as short integer or unsigned short integer values. Complex (In-phase/Quadrature) vectors can be contained in one file with I/Q values interleaved or into two separate files one for I values and one for Q values.
+The hex file vector must have one and only one hexadecimal sample value per
+line. Values are parsed as short integer or unsigned short integer values.
+Complex (In-phase/Quadrature) vectors can be contained in one file with I/Q
+values interleaved or into two separate files one for I values and one for Q
+values.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-vector-configuration-hexfile.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The configuration elements are:
 
 -  File Format:
 
-Real Vector : One txt file containing the values for a single waveform. Complex - Interleaved : One txt file containing interleaved values for In-phase and Quadrature waveforms. Complex - Separate Files : Two txt files containing values for In-phase and Quadrature waveforms respectively.
+Real Vector : One txt file containing the values for a single waveform. Complex
+- Interleaved : One txt file containing interleaved values for In-phase and
+Quadrature waveforms. Complex - Separate Files : Two txt files containing values
+for In-phase and Quadrature waveforms respectively.
 
 -  File Path : path to the first or only hex file to retrieve the data from.
 -  Second File Path : path to the second hex file to retrieve the quadrature data from when using “Complex - Separate Files” option.
@@ -312,11 +348,13 @@ Real Vector : One txt file containing the values for a single waveform. Complex 
 ACE File
 ~~~~~~~~
 
-The ACE file format is the one used when device data captures are saved with ACE. For example, you could capture data from an ADC device and then re-play this captured data on a DAC device.
+The ACE file format is the one used when device data captures are saved with
+ACE. For example, you could capture data from an ADC device and then re-play
+this captured data on a DAC device.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ace/vector-generator-vector-configuration-acefile.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The configuration elements are:
 
@@ -325,4 +363,7 @@ The configuration elements are:
 Saving the vector generator state
 ---------------------------------
 
-Everything done in the vector generator can be saved as part of an ACE session file. The session will contain all the configuration elements and ACE will regenerate all the vectors based on this configuration when the session file is loaded.
+Everything done in the vector generator can be saved as part of an ACE session
+file. The session will contain all the configuration elements and ACE will
+regenerate all the vectors based on this configuration when the session file is
+loaded.

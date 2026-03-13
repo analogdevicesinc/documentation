@@ -9,7 +9,9 @@ Noise Gate
 Description
 -----------
 
-The NoiseGate block is used to control the volume of an audio signal. Computes the RMS Level of an Incoming Audio Signal and Reduces the Noise which is Below a User-Defined Threshold by Setting the Gain as 0
+The NoiseGate block is used to control the volume of an audio signal. Computes
+the RMS Level of an Incoming Audio Signal and Reduces the Noise which is Below a
+User-Defined Threshold by Setting the Gain as 0
 
 Targets Supported
 -----------------
@@ -19,7 +21,6 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
 ========= ========== ================ =============
 NoiseGate Block      Block            Schematic
 ========= ========== ================ =============
-
 
 | ===== Pins =====
 
@@ -40,7 +41,6 @@ Name    Type  Description
 ======= ===== ===============
 Output0 Audio Output channel0
 ======= ===== ===============
-
 
 | ===== Configurable Parameters =====
 

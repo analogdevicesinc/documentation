@@ -48,12 +48,12 @@ The :adi:`ad4030-24`, :adi:`ad4630-16`, and :adi:`ad4630-24` are 24-bit, 2 MSPS 
 Enabling the driver
 -------------------
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD4630 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -225,17 +225,24 @@ Device tree example
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
-   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses the interface can be found here:
+   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses
+   the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 Show device name
 ----------------
@@ -250,7 +257,6 @@ Show device name
       root@analog:~ $ cat /sys/bus/iio/devices/iio\:device0/name
       adaq4224
    
-
 
 Show channel scale
 ------------------
@@ -268,7 +274,6 @@ Show channel scale
       0.000196695
    
 
-
 Show channel list of available scales
 -------------------------------------
 
@@ -284,7 +289,6 @@ Show channel list of available scales
       root@analog:~ $ cat /sys/bus/iio/devices/iio\:device0/in_voltage0_scale_available
       0.000196695 0.000333786 0.001323223 0.003975629
    
-
 
 Show channel calibration offset
 -------------------------------
@@ -302,7 +306,6 @@ Show channel calibration offset
       0
    
 
-
 Show channel calibration scale
 ------------------------------
 
@@ -318,7 +321,6 @@ Show channel calibration scale
       root@analog:~ $ cat /sys/bus/iio/devices/iio\:device0/in_voltage0_calibscale
       1.000000
    
-
 
 More Information
 ================
@@ -341,6 +343,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

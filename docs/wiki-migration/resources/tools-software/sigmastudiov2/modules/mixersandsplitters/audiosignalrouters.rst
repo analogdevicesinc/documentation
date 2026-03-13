@@ -20,21 +20,32 @@ Audio Signal Router with Index Selectable
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/audiosignalrouterwindow.png
    :alt: audiosignalrouterwindow.png
-   :width: 600px
+   :width: 600
 
 Description
 -----------
 
-Audio Signal router mixes M different inputs to N different outputs with various gains. The number of input and output pins are configurable.
+Audio Signal router mixes M different inputs to N different outputs with various
+gains. The number of input and output pins are configurable.
 
 Usage
 -----
 
-Audio Signal Router module supports multiple mixer configurations. Each mixer configuration has gains for all the inputs and outputs. A separate gain is available for each of input output combination also. All the gains has a corresponding mute control to quickly mute the particular gain. The current Tab selected (Tab #) in the mixer window is downloaded to the target and used for mixing.
+Audio Signal Router module supports multiple mixer configurations. Each mixer
+configuration has gains for all the inputs and outputs. A separate gain is
+available for each of input output combination also. All the gains has a
+corresponding mute control to quickly mute the particular gain. The current Tab
+selected (Tab #) in the mixer window is downloaded to the target and used for
+mixing.
 
-Audio Signal Router ExtIndex functionality is same as audio signal router except that the current mixer (Tab #) is selected through an external input. The control pin expects the input in (32.0) format for ADAU145x processors and (28.0) format for other Sigma DSPs. The maximum number of tabs that can be added are 16.
+Audio Signal Router ExtIndex functionality is same as audio signal router except
+that the current mixer (Tab #) is selected through an external input. The
+control pin expects the input in (32.0) format for ADAU145x processors and
+(28.0) format for other Sigma DSPs. The maximum number of tabs that can be added
+are 16.
 
-Audio Signal Router with Index Selectable- The current mixer (Table Mix) can be changed during the runtime.
+Audio Signal Router with Index Selectable- The current mixer (Table Mix) can be
+changed during the runtime.
 
 Variants
 --------

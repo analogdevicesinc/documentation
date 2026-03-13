@@ -4,7 +4,11 @@ AD5821A Evaluation Kit User Guide
 GENERAL DESCRIPTION
 -------------------
 
-The EVAL-AD5821AKTZ Evaluation Kit is designed to allow the user to evaluate the performance of the AD5821A Auto Focus (AF) driver. This user guide describes how to download and use the AD5821A Evaluation Software which is available for Windows and allows the user to easily program the AD5821A and check the basic functionality of the part.
+The EVAL-AD5821AKTZ Evaluation Kit is designed to allow the user to evaluate the
+performance of the AD5821A Auto Focus (AF) driver. This user guide describes how
+to download and use the AD5821A Evaluation Software which is available for
+Windows and allows the user to easily program the AD5821A and check the basic
+functionality of the part.
 
 The EVAL-AD5821A Evaluation Kit contains the following boards:
 
@@ -15,13 +19,11 @@ The EVAL-AD5821A Evaluation Kit contains the following boards:
 
 .. container:: leftalign
 
-
    ..
 
 |image1|
 
    *\*\* Figure 1. AD5821A Evaluation Kit \*\**
-
 
 EVALUATION KIT HARDWARE
 -----------------------
@@ -42,18 +44,21 @@ Hardware Connections
 
 .. important::
 
-   Pay special attention to connect the daughterboard P1 connector to the main board P1 connector, and the daughterboard P3 to the main board P3. Opposite insertion may damage one or both boards
-
+   Pay special attention to connect the daughterboard P1 connector to the main
+   board P1 connector, and the daughterboard P3 to the main board P3. Opposite
+   insertion may damage one or both boards
 
 EVAL-AD5821A-DBZ
 ~~~~~~~~~~~~~~~~
 
-It contains the AD5821A device and the decoupling capacitors (100 nF and 10 µF) and a simulated Voice Coil Motor (VCM) load (22 µH coil and 11.5 Ω resistor). It also includes a connector for external load, a connector for external I2C and test points.
+It contains the AD5821A device and the decoupling capacitors (100 nF and 10 µF)
+and a simulated Voice Coil Motor (VCM) load (22 µH coil and 11.5 Ω resistor). It
+also includes a connector for external load, a connector for external I2C and
+test points.
 
 The main components included in the board are shown in the next figure.
 
 .. container:: leftalign
-
 
    ..
 
@@ -61,8 +66,8 @@ The main components included in the board are shown in the next figure.
 
    *\*\* Figure 2. EVAL-AD5821A-DBZ Daughterboard \*\**
 
-
-To connect the on-board VCM load, links should connect positions of JP3 and JP4 as indicated in Table 1.
+To connect the on-board VCM load, links should connect positions of JP3 and JP4
+as indicated in Table 1.
 
 Link positions are outlined in Table 1. Default positions are in bold.
 
@@ -83,24 +88,38 @@ P8   **1-2**  Load supplied by AVDD1
                  
 ==== ======== ======================
 
-P2 connector can be used to connect and external I2C host. To do that disconnect the links on JP1 and JP2.
+P2 connector can be used to connect and external I2C host. To do that disconnect
+the links on JP1 and JP2.
 
-JP3 and JP4 connectors allow the access to the typical VCM resistances and inductances. When the links are connected to the typical VCM resistances and inductances, the user also has access to test the ±VCM pins (TP1 and TP2) and the middle point between the resistor and the inductor (TP3).
+JP3 and JP4 connectors allow the access to the typical VCM resistances and
+inductances. When the links are connected to the typical VCM resistances and
+inductances, the user also has access to test the ±VCM pins (TP1 and TP2) and
+the middle point between the resistor and the inductor (TP3).
 
-To use an external VCM load, disconnect the links on JP3 and JP4 and connect the external load to P5.
+To use an external VCM load, disconnect the links on JP3 and JP4 and connect the
+external load to P5.
 
 EVAL-APOLLO-LD-MBZ
 ~~~~~~~~~~~~~~~~~~
 
-This board has been designed to connect different daughterboards that support different products. It also features a connector to the Apollo microcontroller board.
+This board has been designed to connect different daughterboards that support
+different products. It also features a connector to the Apollo microcontroller
+board.
 
-The EVAL-APOLLO-LD-MBZ also contains LDOs to generate the required voltages for AD5821A and other ICs like level shifters, current sense amplifiers and one ADC, who provides support to measure the AVDD1/AVDD2 supply voltages and currents.
+The EVAL-APOLLO-LD-MBZ also contains LDOs to generate the required voltages for
+AD5821A and other ICs like level shifters, current sense amplifiers and one ADC,
+who provides support to measure the AVDD1/AVDD2 supply voltages and currents.
 
-By using different configuration of links, the user can select either AVDD1 or AVDD2 supply to power the AD5821A and is also possible to configure the supplies as fixed or adjustable. DVDD is the IO voltage for I2C level of AD5821A and can also be configured via links.
+By using different configuration of links, the user can select either AVDD1 or
+AVDD2 supply to power the AD5821A and is also possible to configure the supplies
+as fixed or adjustable. DVDD is the IO voltage for I2C level of AD5821A and can
+also be configured via links.
 
 A more detailed explanation of AVDD1/AVDD2 and DVDD configuration is given in the *Software/Plugins/Hardware Setup* section of this document.
 
-Table 2 shows the default link positions (default positions are in bold) and Figure 3 shows the default links position in green as well as the board connectors and test points.
+Table 2 shows the default link positions (default positions are in bold) and
+Figure 3 shows the default links position in green as well as the board
+connectors and test points.
 
 Table 2: EVAL-APOLLO-LD-MBZ Link Positions and Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -144,18 +163,13 @@ P23     1-2        I2C VREFB is 5 V
         **3-4**    I2C VREFB is 3.3 V
 ======= ========== ===================================
 
-
-
-
 .. container:: leftalign
-
 
    ..
 
 |image3|
 
    *\*\* Figure 3. EVAL-APOLLO -LD_MBZ Motherboard \*\**
-
 
 AD5821A EVALUATION SOFTWARE
 ---------------------------
@@ -167,15 +181,14 @@ The software required to run the AD5821A Evaluation Kit is available in the Anal
 
 .. container:: leftalign
 
-
    ..
 
 |image4|
 
    *\*\* Figure 4. Download AD5821A Evaluation Software \*\**
 
-
-On clicking the link a zip file containing the installer is downloaded. After that, follow the steps below:
+On clicking the link a zip file containing the installer is downloaded. After
+that, follow the steps below:
 
 -  Extract the contents of the zip file to some location in a local hard drive
 -  Download and install the LabVIEW Runtime (https://www.ni.com/en-ie/support/downloads/software-products/download.labview-runtime.html#346222) needed for running the Evaluation System GUI automatically from ni.com:
@@ -192,21 +205,27 @@ On clicking the link a zip file containing the installer is downloaded. After th
    -  Version:16.0
 
 -  Run the *Setup.exe* file located in the Volume folder and read carefully and accept the AD5821A Evaluation License Agreement to proceed with the installation. Follow the steps until the application is installed.
--  Before plugging the USB cable to the Apollo board, install the Apollo driver. Go to Signed USB Driver folder and right-click on ADI-NXP_vista_7.inf and select Install. This will install the driver for the Apollo controller board.
+-  Before plugging the USB cable to the Apollo board, install the Apollo driver.
+   Go to Signed USB Driver folder and right-click on ADI-NXP_vista_7.inf and
+   select Install. This will install the driver for the Apollo controller board.
 
-Once the application is installed in your computer, the board can be powered up by plugging the USB interface. After power-up, two blue LEDs (LED1 and LED4) light up in the Apollo board. An orange LED (LED3) keeps blinking until running the application in the Apollo board.
+Once the application is installed in your computer, the board can be powered up
+by plugging the USB interface. After power-up, two blue LEDs (LED1 and LED4)
+light up in the Apollo board. An orange LED (LED3) keeps blinking until running
+the application in the Apollo board.
 
 RUNNING THE SOFTWARE
 ~~~~~~~~~~~~~~~~~~~~
 
 When the software installation is complete, run the shortcut to the application found in the start menu, under *AD5821A Eval Software*.
 
-To verify the firmware is properly downloaded, the user should see the “1 board(s) found” and “Download Successful. Reconnecting” screen shown below. Also, in the Apollo board the green LED2 blinks and the orange LED3 turns off.
+To verify the firmware is properly downloaded, the user should see the “1
+board(s) found” and “Download Successful. Reconnecting” screen shown below.
+Also, in the Apollo board the green LED2 blinks and the orange LED3 turns off.
 
 If the *No Apollo Boards Found* message is shown when the application is executed, Apollo must be reset by pressing the white switch (SW1), next to the USB connector, and then click “Retry”. Apollo will be recognized after the Plug and Play Windows function detects the new device connected.
 
 .. container:: leftalign
-
 
    ..
 
@@ -214,11 +233,9 @@ If the *No Apollo Boards Found* message is shown when the application is execute
 
    *\*\* Figure 5. Firmware download pop-up screen \*\**
 
-
 Once the firmware is properly downloaded, a screen like the one below is shown.
 
 .. container:: leftalign
-
 
    ..
 
@@ -226,10 +243,14 @@ Once the firmware is properly downloaded, a screen like the one below is shown.
 
    *\*\* Figure 6. Application view upon opening \*\**
 
+The AD5821A Evaluation Software consists of a general framework to initialize
+the system, provide access to the AD5821A input register that controls the AF
+driver sink current, show the application status and handle the hardware setup
+to adjust power supply levels or configure different options in the board.
 
-The AD5821A Evaluation Software consists of a general framework to initialize the system, provide access to the AD5821A input register that controls the AF driver sink current, show the application status and handle the hardware setup to adjust power supply levels or configure different options in the board.
-
-By clicking on each entry under List of Plugins section, the corresponding plugin will appear on the main panel. The function of each plugin will be explained in the next section.
+By clicking on each entry under List of Plugins section, the corresponding
+plugin will appear on the main panel. The function of each plugin will be
+explained in the next section.
 
 USING THE SOFTWARE
 ~~~~~~~~~~~~~~~~~~
@@ -259,13 +280,11 @@ As shown in Figure 7, the AD5821A Evaluation Software is made up of four parts:
 
 .. container:: leftalign
 
-
    ..
 
 |image7|
 
    *\*\* Figure 7. AD5821A Evaluation Software Overview \*\**
-
 
 PLUGINS
 ~~~~~~~
@@ -273,12 +292,14 @@ PLUGINS
 REGISTER MAP
 ^^^^^^^^^^^^
 
-This plugin provides access to all the registers and register fields of the part. For the AD5821A there is only one register, the input register, so it is recommended to control the device using the AF Driver plugin that will be explained later.
+This plugin provides access to all the registers and register fields of the
+part. For the AD5821A there is only one register, the input register, so it is
+recommended to control the device using the AF Driver plugin that will be
+explained later.
 
 Clicking on *RegMap1* in *Register Map Tree* the whole register map is inserted in the main subpanel as shown in Figure 8. The information shown is updated from the device and the user can expand/contract a specific register to update it and show the fields inside. When the value or enumeration column is modified, the new configuration is written to the device.
 
 .. container:: leftalign
-
 
    ..
 
@@ -286,16 +307,22 @@ Clicking on *RegMap1* in *Register Map Tree* the whole register map is inserted 
 
    *\*\* Figure 8. Register view \*\**
 
-
 HARDWARE SETUP
 ^^^^^^^^^^^^^^
 
-The Hardware Setup plugin helps the user to configure AVDD1, AVDD2 and DVDD supplies and three GPIOs, as well as selecting the appropriate links for a given configuration.
+The Hardware Setup plugin helps the user to configure AVDD1, AVDD2 and DVDD
+supplies and three GPIOs, as well as selecting the appropriate links for a given
+configuration.
 
-An image of the EVAL-APOLLO -LD_MBZ silkscreen is shown in the panel to the right (Figure 9), showing the default link positions highlighted in green. When changing the options on the left panel, the link positions also change in the board image. The user must ensure that the positions of the jumpers in the silkscreen image match the current positions of the links in the board when any of the options is changed. After moving the jumper to the indicated position click OK next to the warning message that appears on the bottom of the panel.
+An image of the EVAL-APOLLO -LD_MBZ silkscreen is shown in the panel to the
+right (Figure 9), showing the default link positions highlighted in green. When
+changing the options on the left panel, the link positions also change in the
+board image. The user must ensure that the positions of the jumpers in the
+silkscreen image match the current positions of the links in the board when any
+of the options is changed. After moving the jumper to the indicated position
+click OK next to the warning message that appears on the bottom of the panel.
 
 .. container:: leftalign
-
 
    ..
 
@@ -303,15 +330,21 @@ An image of the EVAL-APOLLO -LD_MBZ silkscreen is shown in the panel to the righ
 
    *\*\* Figure 9. Hardware Setup plugin \*\**
 
-
 AVDD1 and AVDD2
 """""""""""""""
 
-The configuration options for AVDD1 and AVDD2 are the same. The difference between these two supplies is that AVDD1 powers the AD5821A and the VCM load and the AVDD2 powers only the load. The two supplies are mutually exclusive. The VDD pin of AD5821A (see Daughterboard Schematic under Documents menu) is always connected to AVDD1.
+The configuration options for AVDD1 and AVDD2 are the same. The difference
+between these two supplies is that AVDD1 powers the AD5821A and the VCM load and
+the AVDD2 powers only the load. The two supplies are mutually exclusive. The VDD
+pin of AD5821A (see Daughterboard Schematic under Documents menu) is always
+connected to AVDD1.
 
-The first option is to choose AVDD1/AVDD2 Internal (default) or External. In case external supply is selected, the user must connect the power supply cable to P9 (AVDD1) or P22 (AVDD2). The positive is pin 1 and ground is pin 2.
+The first option is to choose AVDD1/AVDD2 Internal (default) or External. In
+case external supply is selected, the user must connect the power supply cable
+to P9 (AVDD1) or P22 (AVDD2). The positive is pin 1 and ground is pin 2.
 
-There are three possibilities under Internal Supply Options (only when Internal supply is selected):
+There are three possibilities under Internal Supply Options (only when Internal
+supply is selected):
 
 -  *Adjustable 2.7 V – 4.8 V* (default): Uses a LDO that can be adjusted by software. An external supply is required for voltages higher than 4.8 V.
 -  *3.3 V fixed*: 3.3 V from a fixed LDO
@@ -328,9 +361,12 @@ There are three possible sources for the GPIOs:
 -  *DVDD*: GPIO is at level high, voltage equal to DVDD
 -  *GND*: GPIO is at level low, voltage equal to 0 V
 
-GPIO1 is connected to AD5821A’s XSHUTDOWN pin. Setting the Level to low puts the AD5821A in power-down mode. Setting the Level to high (default) puts the part in operating mode again.
+GPIO1 is connected to AD5821A’s XSHUTDOWN pin. Setting the Level to low puts the
+AD5821A in power-down mode. Setting the Level to high (default) puts the part in
+operating mode again.
 
-GPIO2 and GPIO3 are not connected in this evaluation board so their settings have no effect on the AD5821A.
+GPIO2 and GPIO3 are not connected in this evaluation board so their settings
+have no effect on the AD5821A.
 
 DVDD
 """"
@@ -348,7 +384,8 @@ Figure 10 shows the *AF Driver* plugin. This plugin is used to control the power
 
 At start up the AD5821A is in power-down mode. The button in *Auto Focus Drive Control* shows the text POWER UP. By clicking on the button, the AD5821A goes to operating mode and the button text toggles to POWER DOWN. By clicking again, the part returns to power-down. The button works in an alternate function between POWER UP and POWER DOWN.
 
-Once in operating mode, the current sink by the AD5821A can be controlled in one of three ways:
+Once in operating mode, the current sink by the AD5821A can be controlled in one
+of three ways:
 
 -  Moving the slider
 -  Typing the current value in the *Current* box (in mA)
@@ -358,32 +395,29 @@ Below the current control section is the Input Register. Its value automatically
 
 .. container:: leftalign
 
-
    ..
 
 |image10|
 
    *\*\* Figure 10: AF Driver plugin \*\**
 
-
 AF DRIVER SWEEP
 """""""""""""""
 
 This plugin is used to sweep the AD5821A current between a minimum current and maximum current, at time intervals defined at *Time Step* control box (time intervals below 10 ms are not accurate).
 
-The value of the current is updated in the slider and monitor boxes to the right of the min/max current setting boxes, as shown in Figure 11.
+The value of the current is updated in the slider and monitor boxes to the right
+of the min/max current setting boxes, as shown in Figure 11.
 
 Click on *Start Sweep* button to start the sweep, Stop Sweep button to stop it and the Reset button to bring the AF Driver current to 0 mA.
 
 .. container:: leftalign
-
 
    ..
 
 |image11|
 
    *\*\* Figure 11: Auto Focus Driver Sweep \*\**
-
 
 DESIGN FILES
 ------------
@@ -393,24 +427,24 @@ DESIGN FILES
 **EVAL-AD5821A-DBZ** Board schematic, layout and BOM files. `eval-ad5821a-dbz_design_files.zip <https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/eval-ad5821a-dbz_design_files.zip>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/eval-ad5821a_kit_angle-web.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/figure_2_blue.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/figure_3_blue.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/figure_4.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/figure_5.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/figure_6.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/figure_7_blue.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/figure_8_blue.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/figure_9.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/figure_10_blue.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/current-dac/figure_11.png
-   :width: 400px
+   :width: 400

@@ -22,14 +22,13 @@ The **temperature** value is calculated based on the **RTD resistance**:
 
 ::
 
-
           Rrtd = (CODE* Rref) / (2^24 -1)                         Rref - Reference resistor (4.02kΩ)
                                                                   CODE - ADC output
 
 **1. RTD resistance > 100Ω**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_1.png
-   :width: 800px
+   :width: 800
 
 **2. RTD resistance ≤ 100Ω**
 
@@ -37,7 +36,10 @@ The **temperature** value is calculated based on the **RTD resistance**:
 
 In order to compute the **total dissolved solids** parameter a premeasurement procedure is run in the first place that aims to select the proper gain resistance for the measurement.
 
-The multiplexer is set to the highest gain resistance (20MΩ) and the DAC output to a value set by the user (initially set to 400mV). Then, the positive and negative input voltage are captured via ADC channel 1 and 2. If the following formula is met:
+The multiplexer is set to the highest gain resistance (20MΩ) and the DAC output
+to a value set by the user (initially set to 400mV). Then, the positive and
+negative input voltage are captured via ADC channel 1 and 2. If the following
+formula is met:
 
 ::
 
@@ -49,15 +51,14 @@ The excitation voltage used for computing **tds** is set to:
 
 ::
 
-
           Vexc = 0.4 * Vexc / (Vp + Vn)
 
-Otherwise, the gain resistor is dropped by 1 decade and the premeasurement process is repeated.
+Otherwise, the gain resistor is dropped by 1 decade and the premeasurement
+process is repeated.
 
 After the process is finished, the peak-to-peak voltage is measured again an the **peak-to-peak current** is computed:
 
 ::
-
 
                                                      Ipp = peak-to-peak current
           Ipp = (2 * Vexc - (Vp + Vn)) / Rgain       Vexc = excitation voltage computed in the premeasurement procedure
@@ -69,14 +70,12 @@ Based on the peak-to-peak current the **electrical conductance** is computed, al
 
 ::
 
-
           g = Ipp / ((Vp + Vn) - (Ipp * Roff))       Roff = offset resistance
                                                      g = electrical conductance
 
 The **electrical conductivity** is computed using the conductance and the cell constant which can be set accordingly for low conductivities, normal conductivities and high conductivities via software commands. A temperature compensation is also performed taking into account the temperature measured via RTD resistance.
 
 ::
-
 
                                                              s = electrical conductivity
           s = k * g                                          s_cal = temperature compensated electrical conductivity
@@ -87,7 +86,6 @@ The **electrical conductivity** is computed using the conductance and the cell c
 The calculation of **total dissolved solids** is the product between the temperature compensated conductivity and the **tds factor** corresponding to the solution that is used.
 
 ::
-
 
           tds = k_e * s_cal                                  k_e = tds factor
                                                              tds = total dissolved solids
@@ -124,7 +122,8 @@ Setting up the Hardware
 Obtaining the Source Code
 -------------------------
 
-We recommend not opening the project directly, but rather make a local copy in your workspace and open it using Arduino/Genuino IDE.
+We recommend not opening the project directly, but rather make a local copy in
+your workspace and open it using Arduino/Genuino IDE.
 
 The source code and include files of the **CN0411_example** can be found here:
 
@@ -134,7 +133,6 @@ The source code and include files of the **CN0411_example** can be found here:
    
    :git-arduino:`CN0411_example at Github <Arduino%20Uno%20R3/examples/CN0411_example>`
    
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -246,7 +244,10 @@ Project Structure
 
 The **CN0411_example** is a C Arduino sketch.
 
-This project contains: system initialization part - setting Digital IO pins in the right mode; port configuration for ADC, SPI read/write; for configuring and reading from AD7124, UART via Digital pin 0/Digital pin 1; UART read/write functions; for calibration and displaying the results.
+This project contains: system initialization part - setting Digital IO pins in
+the right mode; port configuration for ADC, SPI read/write; for configuring and
+reading from AD7124, UART via Digital pin 0/Digital pin 1; UART read/write
+functions; for calibration and displaying the results.
 
 All files are in the same folder as the .ino file and include the source and header files related to CN0411 software application. The *Communication.c* files contain **SPI** and **UART** specific data, meanwhile the *CN0411.c* files contain the calculation part, the *AD7124.c* files contain ADC channels handling. The default parameters are set at the run time, after initialization in the terminal window will appear information messages about the initial setup.
 

@@ -15,7 +15,6 @@ The current stable Toolbox can be downloaded from the `Transceiver Toolbox GitHu
    -  `Analog Devices Inc, Transceiver Toolbox Release Page <https://github.com/analogdevicesinc/TransceiverToolbox/releases>`_
    
 
-
 To interface and stream data with hardware will require installation of :doc:`libiio </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/libiio>` and one of two Hardware Support Packages from MathWorks. The libiio library can be obtained on the `Github <http://github.com/analogdevicesinc/libiio>`_ page of the project.
 
 Libiio Installers
@@ -28,7 +27,6 @@ Libiio Installers
    -  `Installers and source for latest stable build <https://github.com/analogdevicesinc/libiio/releases>`_
    -  `Installer for latest nighty build (Windows 32-bit / 64-bit) <https://ci.appveyor.com/project/analogdevicesinc/libiio/build/artifacts?branch=master>`_ (may be unstable / buggy)
    
-
 
 Installation of either:
 
@@ -46,13 +44,18 @@ Installation of either:
       -  `Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio <https://www.mathworks.com/help/supportpkg/plutoradio/index.html>`_
    
 
-
-is required to use the streaming system objects or blocks. These support packages provide the necessary libIIO MATLAB bindings used by ADI's system objects. Starting in R2024a, the functionality of Communications Toolbox Support Package for Xilinx Zynq-Based Radio is included in SoC Blockset Support Package for AMD Devices.
+is required to use the streaming system objects or blocks. These support
+packages provide the necessary libIIO MATLAB bindings used by ADI's system
+objects. Starting in R2024a, the functionality of Communications Toolbox Support
+Package for Xilinx Zynq-Based Radio is included in SoC Blockset Support Package
+for AMD Devices.
 
 Toolbox Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
-Depending on your needs, different toolboxes will be required. For basic data streaming into MATLAB or Simulink only the following MathWorks toolboxes are required:
+Depending on your needs, different toolboxes will be required. For basic data
+streaming into MATLAB or Simulink only the following MathWorks toolboxes are
+required:
 
 -  `Communications Toolbox <https://www.mathworks.com/products/communications/>`_
 -  `DSP System Toolbox <https://www.mathworks.com/products/dsp-system/>`_
@@ -81,11 +84,13 @@ API Documentation
 
    \ `Latest Transceiver Toolbox API doc <https://analogdevicesinc.github.io/TransceiverToolbox/master/>`_\
 
-
 Building the Toolbox Manually
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The toolbox can only be built under Linux or with Cygwin on a Windows platform. Conveniently, the entire process is automated with a Makefile located in the CI/scripts folder of the repository. The following is required on the system before the build process can be run:
+The toolbox can only be built under Linux or with Cygwin on a Windows platform.
+Conveniently, the entire process is automated with a Makefile located in the
+CI/scripts folder of the repository. The following is required on the system
+before the build process can be run:
 
 -  A supported MATLAB version installed in the default location (/usr/local/MATLAB)
 -  A supported Vivado version installed in the default location (/opt/Xilinx)
@@ -93,8 +98,8 @@ The toolbox can only be built under Linux or with Cygwin on a Windows platform. 
 
 .. warning::
 
-   You should only manually build the toolbox if you require a custom branch or no toolbox installer is available
-
+   You should only manually build the toolbox if you require a custom branch or
+   no toolbox installer is available
 
 First clone the repo and move into it:
 
@@ -139,19 +144,27 @@ Without specifying the carrier all tests will run (This takes a long time!):
 Device Control and Data Streaming
 ---------------------------------
 
-Device interfaces which provide control and data streaming are implemented with MATLAB System Objects and Simulink Blocks. These System Objects can be access under the "adi" namespace in MATLAB and are followed by their part number or board name and finally Tx or Rx:
+Device interfaces which provide control and data streaming are implemented with
+MATLAB System Objects and Simulink Blocks. These System Objects can be access
+under the "adi" namespace in MATLAB and are followed by their part number or
+board name and finally Tx or Rx:
 
 ::
 
    adi.<Part or Board Name>.<Tx or Rx>
 
-For example, to instantiate an AD9361 object to control the Tx aspects of the transceiver it can be created as follows:
+For example, to instantiate an AD9361 object to control the Tx aspects of the
+transceiver it can be created as follows:
 
 ::
 
    tx = adi.AD9361.Tx;
 
-All supported boards are derived from low level objects based on their parts. For example, the DAQ2 Evaluation board actually contains an AD9680 and AD9144. Therefore, it simply uses AD9680 and AD9144 objects under the hood. However, to interact with the more familiar DAQ2 interface naming the Rx side can be instantiated like above as:
+All supported boards are derived from low level objects based on their parts.
+For example, the DAQ2 Evaluation board actually contains an AD9680 and AD9144.
+Therefore, it simply uses AD9680 and AD9144 objects under the hood. However, to
+interact with the more familiar DAQ2 interface naming the Rx side can be
+instantiated like above as:
 
 ::
 
@@ -180,7 +193,8 @@ or
 Common Attributes
 ~~~~~~~~~~~~~~~~~
 
-There are some common attributes that need to be set for system objects and parts.
+There are some common attributes that need to be set for system objects and
+parts.
 
 -  ``uri`` Context address of IIO device. Possible options include:
 
@@ -197,10 +211,13 @@ HDL Targeting with HDL-Coder
 
 “\ *Targeting*\ ” is code generation that translates a designated MATLAB or Simulink subsystem to HDL code and creates a custom bitstream for the FPGA fabric. This custom bitstream is then downloaded to the FPGA on the development board. By moving part or all of your algorithm to the hardware, you speed up signal processing.
 
-The Analog Devices Toolbox for MathWorks HDL Workflow Advisor is a collection of board definitions and reference designs that provide to the MathWorks HDL Workflow Advisor support to:
+The Analog Devices Toolbox for MathWorks HDL Workflow Advisor is a collection of
+board definitions and reference designs that provide to the MathWorks HDL
+Workflow Advisor support to:
 
 -  Generate IP blocks compatible with Analog Devices HDL reference designs for various Analog Devices platforms
--  Automatically insert the generated IPs into the Analog Devices Vivado HDL reference designs
+-  Automatically insert the generated IPs into the Analog Devices Vivado HDL
+   reference designs
 
 This Analog Devices Toolbox is based on the `MathWorks Board and Reference Design Registration System <https://www.mathworks.com/help/hdlcoder/ug/board-and-reference-design-system.html>`_.
 
@@ -211,19 +228,21 @@ The `MathWorks HDL Workflow Advisor <https://www.mathworks.com/help/hdlcoder/exa
 
 The Analog Devices BSP for HDL Workflow Advisor extends the set of Target Workflows for IP Core Generation with the Analog Devices boards listed in the *Supported Platforms* section. The BSP consists of a set of board definitions that specify all the characteristics needed by the HDL Workflow Advisor to be able to incorporate a board in the code generation flow, as well as a set of Xilinx Vivado reference designs that are used by the Workflow Advisor to automatically insert the generated IPs into the Vivado designs. All the Analog Devices Vivado HDL reference designs have inside a ‘donut hole’ to accommodate custom IPs. Each design exposes a set of interface signals to which the IP can connect to. All these signals are specified in the board definition and are available in the Workflow Advisor GUI to connect to the generated IP’s ports.
 
-When running the Workflow Advisor the first step if to select the Target Platform. The figure below shows some of the available Analog Devices target platforms.
+When running the Workflow Advisor the first step if to select the Target
+Platform. The figure below shows some of the available Analog Devices target
+platforms.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/adi_bsps.png
    :alt: Analog Devices Target Platforms
    :align: center
-   :width: 600px
+   :width: 600
 
 The next step is to configure the interfaces between the IP and the reference design. Each target platform has a set of interface signals that are accessible in the *Target Platform Interfaces* drop down boxes form step 1.2 (Set Target Interface) of the HDL Workflow Advisor. The figure below shows an example of how to configure the target interface for a specific model.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/board_interface.png
    :alt: Target Interface Signals
    :align: center
-   :width: 600px
+   :width: 600
 
 All the Analog Devices AD9361 based SDR platforms have the same interface signals and they are dependent on the type of flow that is selected – receive (Rx) or transmit (Tx). The table below describes the interface signals for the AD9361 based SDR platforms.
 
@@ -277,7 +296,8 @@ Transmit flow (Tx)
 | AD9361 DAC Data Q1    | 16    | AD9361 DAC I0 channel data. To be used as input into the custom IP.                                                                   |
 +-----------------------+-------+---------------------------------------------------------------------------------------------------------------------------------------+
 
-The custom IP always runs at the sample clock and must be able to process / generate a sample every clock cycle.
+The custom IP always runs at the sample clock and must be able to process /
+generate a sample every clock cycle.
 
 Once the target interface has been defined, make sure to select the "Target Language" as Verilog (defaults to VHDL) in Step 3.1.1 of the HDL Workflow Advisor. All the other settings of steps 2 and 3 of the HDL Workflow Advisor can be left in their default state and the project generation process can be started by running step 4.1 (Create Project). The result of this step is a Vivado project which has the custom IP core integrated into the Analog Devices HDL reference design. The bistream for the design can be generated either by running step 4.4 (Create bistream) or by compiling the generated Vivado Project directly in Vivado. The project can be found in the *hdl_prj/vivado_ip_prj* folder.
 
@@ -289,7 +309,9 @@ Further Reading
 Creating a BOOT.BIN from HDL Workflow Advisor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Unlike the support package provided by MathWorks, the update process for the bitstreams requires creation of a BOOT.BIN file which will be compatible with the ADI SD card.
+Unlike the support package provided by MathWorks, the update process for the
+bitstreams requires creation of a BOOT.BIN file which will be compatible with
+the ADI SD card.
 
 First make sure you have a valid SD card for your platform with the necessary devicetree and kernel image selected. :doc:`Follow this process here </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
@@ -297,22 +319,31 @@ Once your SD card is ready, in step 4.3 "Build FPGA Bitstream" of HDL Workflow A
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/hwa_custom.png
    :align: center
-   :width: 600px
+   :width: 600
 
-Once the bitstream is built it will generate the BOOT.BIN necessary for booting your system. Place the generated BOOT.BIN in the root of your ADI SD card's BOOT partition.
+Once the bitstream is built it will generate the BOOT.BIN necessary for booting
+your system. Place the generated BOOT.BIN in the root of your ADI SD card's BOOT
+partition.
 
 Simulation Models of Hardware
 -----------------------------
 
-“Models” are typically used primarily in simulation only types of environments (they don't include any connection to hardware at all). Models can include many different aspects of devices:
+“Models” are typically used primarily in simulation only types of environments
+(they don't include any connection to hardware at all). Models can include many
+different aspects of devices:
 
 -  analog impairments (internal PLLs, mixers, LNA, gain stages, etc),
 -  baseband impairments (ADC/DAC noise shaping, quantization, noise)
--  Digital Signal Processing impairments (the fixed and programmable DSP in the parts, quantization, overflow, latency, filtering, etc).
+-  Digital Signal Processing impairments (the fixed and programmable DSP in the
+   parts, quantization, overflow, latency, filtering, etc).
 
-Some models may include all three aspects, some may only include one. It's very common that as the model is of higher fidelity (includes more impairments, more details to be modeled) it runs slower. The fidelity vs simulation speed is always traded off by the model developer.
+Some models may include all three aspects, some may only include one. It's very
+common that as the model is of higher fidelity (includes more impairments, more
+details to be modeled) it runs slower. The fidelity vs simulation speed is
+always traded off by the model developer.
 
-Some models are "complete" models, were developed and maintained by MathWorks, outside of ADI's transceiver toolbox:
+Some models are "complete" models, were developed and maintained by MathWorks,
+outside of ADI's transceiver toolbox:
 
 -  `help/simrf/ug/ad9361-models.html <https://www.mathworks.com/help/simrf/ug/ad9361-models.html>`_
 -  `help/simrf/ug/ad9371-models.html <https://www.mathworks.com/help/simrf/ug/ad9371-models.html>`_
@@ -320,7 +351,9 @@ Some models are "complete" models, were developed and maintained by MathWorks, o
 Supported Boards
 ----------------
 
-The following have device-specific implementations in MATLAB and Simulink. If a device has an IIO driver, MATLAB support is possible, but a device-specific MATLAB or Simulink interface may not exist yet.
+The following have device-specific implementations in MATLAB and Simulink. If a
+device has an IIO driver, MATLAB support is possible, but a device-specific
+MATLAB or Simulink interface may not exist yet.
 
 +-----------------+--------------+-------------------+-----------+----------------------------------------+
 | Evaluation Card | FPGA Board   | Streaming Support | Targeting | Variants and Minimum Supported Release |
@@ -367,7 +400,8 @@ The following have device-specific implementations in MATLAB and Simulink. If a 
 Examples
 --------
 
-Examples for streaming data and targeting FPGAs are listed within the Toolbox documentation itself. To view run the following with MATLAB:
+Examples for streaming data and targeting FPGAs are listed within the Toolbox
+documentation itself. To view run the following with MATLAB:
 
 ::
 
@@ -393,7 +427,6 @@ Help & Support
    -  Questions? :doc:`Ask Help & Support </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`.
    
 
-
 Common Issues
 -------------
 
@@ -414,7 +447,8 @@ libad9361-iio pathing error:
    Error in adi.common.RxTx/setupImpl (line 124)
                setupImpl@matlabshared.libiio.base(obj);
 
-This error occurs when libad9361-iio is not on the MATLAB path. To fix it run the following within MATLAB:
+This error occurs when libad9361-iio is not on the MATLAB path. To fix it run
+the following within MATLAB:
 
 ::
 

@@ -43,14 +43,24 @@ Files
 | driver   | `drivers/iio/imu/adis16480.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/imu/adis16480.c>`_  |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------+
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
-
-Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+Depending on the converter IC used, you may need to set the modalias
+accordingly, matching your part name. It may also required to adjust
+max_speed_hz. Please consult the datasheet, for maximum spi clock supported by
+the device in question.
 
 .. code:: c
 
@@ -128,7 +138,8 @@ Optional properties
    * DIO3
    * DIO4
 
--  reset-gpios: must be the device tree identifier of the RESET pin. As the line is active low, it should be marked GPIO_ACTIVE_LOW.
+-  reset-gpios: must be the device tree identifier of the RESET pin. As the line
+   is active low, it should be marked GPIO_ACTIVE_LOW.
 
 -  clocks: phandle to the external clock. Should be set according to "clock-names". If this field is left empty, the internal clock is used.
 -  clock-names: The name of the external clock to be used. Valid values are:
@@ -138,7 +149,10 @@ Optional properties
 
       -  700 to 2400 Hz for adis1648x devices.
 
--  pps: In Pulse Per Second (PPS) Mode, the rate of data collection and production is equal to the product of the external clock frequency and the scale factor in the SYNC_SCALE register, see Table 154 in the datasheet. The clock-frequency must be:
+-  pps: In Pulse Per Second (PPS) Mode, the rate of data collection and
+   production is equal to the product of the external clock frequency and the
+   scale factor in the SYNC_SCALE register, see Table 154 in the datasheet. The
+   clock-frequency must be:
 
    -  1 to 128 Hz for adis1649x devices.
 
@@ -148,14 +162,19 @@ Optional properties
 
          If this field is left empty, the internal clock is used.
 
--  adi,ext-clk-pin: The DIOx line to be used as an external clock input. Valid values are:
+-  adi,ext-clk-pin: The DIOx line to be used as an external clock input. Valid
+   values are:
 
    -  DIO1
    -  DIO2
    -  DIO3
    -  DIO4
 
-Each DIOx pin supports only one function at a time (data ready line selection or external clock input). When a single pin has two assignments, the enable bit for the lower priority function automatically resets to zero (disabling the lower priority function). Data ready has highest priority. If this field is left empty, DIO2 is assigned as default external clock input pin.
+Each DIOx pin supports only one function at a time (data ready line selection or
+external clock input). When a single pin has two assignments, the enable bit for
+the lower priority function automatically resets to zero (disabling the lower
+priority function). Data ready has highest priority. If this field is left
+empty, DIO2 is assigned as default external clock input pin.
 
 Example
 ~~~~~~~
@@ -179,12 +198,12 @@ Example
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The adis16480 driver depends on CONFIG_SPI_MASTER
-
 
 ::
 
@@ -220,8 +239,15 @@ Note: IRQ GPIO can be connected to any DIOx pin. See the Devicetree section.
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
@@ -230,7 +256,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 .. container:: box bggreen
 
@@ -280,7 +305,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r--    1 root     root          4096 Jan  4 00:03 uevent
       root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0>
    
-
 
 ADIS16480 device attributes
 ---------------------------
@@ -371,7 +395,6 @@ Show device name
       adis16480
    
 
-
 Set sampling frequency
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -393,7 +416,6 @@ The sampling frequency of the device can be set by writing the desired value to 
       root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> cat sampling_frequency
       2125.000000
    
-
 
 Show channel value
 ~~~~~~~~~~~~~~~~~~
@@ -425,7 +447,6 @@ The units by the IIO framework are:
       0.002451731
    
 
-
 ``Z-axis acceleration = in_accel_z_raw * in_accel_scale = 265126938 * 0.002451731 m/s^2 = 650019.932 m/s^2``
 
 Set channel bandwidth
@@ -433,7 +454,10 @@ Set channel bandwidth
 
 The channels bandwidth can be set by writing the desired value to the channels ``_filter_low_pass_3db_frequency`` attribute. The driver will automatically round up to the nearest supported bandwidth.
 
-Note that the low pass filter frequency depends on the sampling frequency, so changing the sampling frequency will scale the low pass filter frequency accordingly. E.g. reducing the sampling frequency by a factor of two will also reduce the bandwidth by a factor of two.
+Note that the low pass filter frequency depends on the sampling frequency, so
+changing the sampling frequency will scale the low pass filter frequency
+accordingly. E.g. reducing the sampling frequency by a factor of two will also
+reduce the bandwidth by a factor of two.
 
 **Example:**
 
@@ -451,14 +475,12 @@ Note that the low pass filter frequency depends on the sampling frequency, so ch
       TBD
    
 
-
 Trigger management
 ------------------
 
 .. hint::
 
    This driver only supports it's own default trigger source adis16480-dev0
-
 
 .. container:: box bggreen
 
@@ -471,7 +493,6 @@ Trigger management
       adis16480-dev0
    
 
-
 .. tip::
 
    In case there is no trigger specified, run the following command:
@@ -481,7 +502,6 @@ Trigger management
    
       root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0> echo adis16480-dev0 > trigger/current_trigger
    
-
 
 Buffer management
 -----------------
@@ -497,8 +517,13 @@ Buffer management
       enable           length
    
 
-
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -520,7 +545,6 @@ Every buffer implementation features a set of files:
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -533,7 +557,6 @@ Every buffer implementation features a set of files:
       root:/sys/devices/platform/bfin-spi.0/spi0.1/iio:device0/scan_elements>
    
 
-
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
 
@@ -542,7 +565,6 @@ Every buffer implementation features a set of files:
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 More Information
 ================
@@ -565,9 +587,7 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-inertial-measurement-units/youtube>p_vntewue24
-
 
 IMU Evaluation Board User Guides
 --------------------------------

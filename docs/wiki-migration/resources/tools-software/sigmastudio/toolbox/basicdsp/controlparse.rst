@@ -3,14 +3,14 @@ ControlParse
 
 :doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-
 | 
 | |image1|
 
 Description
 -----------
 
-This module parse specific sample value back from a block of samples and pass to outputs
+This module parse specific sample value back from a block of samples and pass to
+outputs
 
 Targets Supported
 -----------------
@@ -20,7 +20,6 @@ Name         ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
 ============ ========== ================ =============
 ControlParse Block      Block            NA
 ============ ========== ================ =============
-
 
 | ===== Pins =====
 
@@ -41,7 +40,6 @@ Name    Type    Description
 ======= ======= ================
 OutputX Control Output channel X
 ======= ======= ================
-
 
 | ===== Configurable Parameters =====
 

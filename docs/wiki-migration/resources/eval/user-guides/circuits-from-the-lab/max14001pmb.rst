@@ -5,9 +5,13 @@ The :adi:`MAX14001PMB` peripheral module provides the hardware to evaluate the M
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max14001pmb/max14001_board.png
    :align: center
-   :width: 400px
+   :width: 400
 
-The module has two MAX14001 devices (U11 and U51). One channel is configured to measure the line voltage with the maximum voltage range selected by a resistor chain. The other channel is configured to measure the voltage across a shunt resistor to provide load current. Both AC and DC signals can be measured. Connector X2 provides the connection of the input signal to the MAX14001 device.
+The module has two MAX14001 devices (U11 and U51). One channel is configured to
+measure the line voltage with the maximum voltage range selected by a resistor
+chain. The other channel is configured to measure the voltage across a shunt
+resistor to provide load current. Both AC and DC signals can be measured.
+Connector X2 provides the connection of the input signal to the MAX14001 device.
 
 Hardware
 --------
@@ -22,11 +26,13 @@ Digital Interface (PMOD)
 
 The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
-Connector X1 provides a connection of the module to the Pmod host. It has a 12-pin Pmod™-compatible connector for SPI communication. The pin assignments and functions adhere to the Pmod standard recommended by Digilent.
+Connector X1 provides a connection of the module to the Pmod host. It has a
+12-pin Pmod™-compatible connector for SPI communication. The pin assignments and
+functions adhere to the Pmod standard recommended by Digilent.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max14001pmb/max14001_spi.png
    :align: center
-   :width: 300px
+   :width: 300
 
 Device Driver Support
 ---------------------
@@ -55,7 +61,6 @@ Schematics, PCB Layout, Bill of Materials
    -  :adi:`MAX14001PMB Datasheet <media/en/technical-documentation/data-sheets/MAX14001PMB.pdf>`
    
 
-
 Additional Information
 ----------------------
 
@@ -70,4 +75,3 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/MAX14001PMB?&v=Rev A>`_ to receive all these great benefits and more!
-

@@ -1,7 +1,9 @@
 Setup a UART
 ============
 
-A UART terminal (serial console) can be used to capture the output of the example application. The number of used UART port depends on the computer's configuration. The following settings must be used in the UART terminal:
+A UART terminal (serial console) can be used to capture the output of the
+example application. The number of used UART port depends on the computer's
+configuration. The following settings must be used in the UART terminal:
 
 -  **Baud Rate:** 115200bps
 -  **Data:** 8 bit

@@ -4,11 +4,15 @@ CN0187 Crest Factor, Peak, and RMS RF Power Measurement Circuit Optimized for Hi
 Overview
 --------
 
-The circuit measures peak and rms power at any RF frequency from 450 MHz to 6 GHz over a range of approximately 45 dB. The measurement results are converted to differential signals in order to eliminate noise and are provided as digital codes at the output of a 12-bit SAR ADC with serial interface and integrated reference. A simple twopoint calibration is performed in the digital domain.
+The circuit measures peak and rms power at any RF frequency from 450 MHz to 6
+GHz over a range of approximately 45 dB. The measurement results are converted
+to differential signals in order to eliminate noise and are provided as digital
+codes at the output of a 12-bit SAR ADC with serial interface and integrated
+reference. A simple twopoint calibration is performed in the digital domain.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/cn0187-hw-1024.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
 --------------
 
@@ -49,7 +53,6 @@ How to Install the Evaluation Software
 
    \ NOTE: It is recommended that you install the `CN0187 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0187>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0187\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step1.png
    :align: center
 
@@ -67,8 +70,9 @@ How to Install the Evaluation Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image1|
 
@@ -81,17 +85,13 @@ How to Install the Evaluation Software
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
-
 {{ :resources:eval:user-guides:circuits-from-the-lab:cn0326:fig5.jpg?direct \|\
-
-
 
 |fig5.jpg|
 
 -  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
 
 {{ :resources:eval:user-guides:circuits-from-the-lab:cn0326:fig7.jpg?direct \|\
-
 
 |image2|
 
@@ -113,8 +113,12 @@ Connecting the Hardware
 Using the Evaluation Software
 -----------------------------
 
-The following software section will help describe the steps you will need to go through when using the hardware and software together. There are some nationalizations and calibrations which must be done, and then some commands and instructions on how to use the software. Please read carefully to completely understand how to use the demo. Below are the list of available software controls grouped according to their location in the software GUI:
-
+The following software section will help describe the steps you will need to go
+through when using the hardware and software together. There are some
+nationalizations and calibrations which must be done, and then some commands and
+instructions on how to use the software. Please read carefully to completely
+understand how to use the demo. Below are the list of available software
+controls grouped according to their location in the software GUI:
 
 |image3|
 
@@ -127,7 +131,6 @@ Calibration
 .. important::
 
    Calibration procedure needs to be done for every change in frequency.
-
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/main_cal.png
    :align: center
@@ -168,7 +171,6 @@ Measure Input Power
 .. important::
 
    The board must be calibrated before Input Power can be measured
-
 
 -  List of Input Buttons
 
@@ -224,7 +226,6 @@ Advanced
 
    Note: Do not modify these values unless you need to
 
-
 -  Sclk (Hz)
 
    -  set the SPI clock reference
@@ -249,13 +250,12 @@ Graphical Output
    -  Vrms- output displayed in Vrms
    
 
-
 |image6| |image7|
 
 .. note::
 
-   Crest factor is the peak amplitude of the waveform divided by the RMS value of the waveform
-
+   Crest factor is the peak amplitude of the waveform divided by the RMS value
+   of the waveform
 
 Schematics, PCB Layout, Bill of Materials
 -----------------------------------------
@@ -270,14 +270,12 @@ Schematics, PCB Layout, Bill of Materials
    -  `Assembly Drawing <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/eval-cn0187-sdpz-assemblydrawing-revb.pdf>`_\ (PDF)
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0187-SDPZ?&v=Rev B>`_ to receive all these great benefits and more!
-
 
 *End of Document*
 
@@ -286,10 +284,10 @@ Registration
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig7.jpg
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/calibrate.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_vrms.png
-   :width: 410px
+   :width: 410
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_peak.png
-   :width: 410px
+   :width: 410
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_crest.png
-   :width: 450px
+   :width: 450
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/crest_factor_sample_output.png
-   :width: 380px
+   :width: 380

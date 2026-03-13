@@ -9,7 +9,9 @@ RMS Hold
 Description
 -----------
 
-The RMS Hold block computes the RMS of the input signals with time constant specified in the text field and holds the maximum value. Hold/Reset the maximum rms value is controlled by the external input pin.
+The RMS Hold block computes the RMS of the input signals with time constant
+specified in the text field and holds the maximum value. Hold/Reset the maximum
+rms value is controlled by the external input pin.
 
 Targets Supported
 -----------------
@@ -19,7 +21,6 @@ Name     ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ======== ========== ================ ============= ================
 RMS Hold B/S        B/S              NA            NA
 ======== ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -32,7 +33,6 @@ Name    Type    Description
 Reset   Control Reset/Hold the maximum rms value
 Input X Audio   Input channel X
 ======= ======= ================================
-
 
 | ==== Output ====
 

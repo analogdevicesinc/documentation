@@ -1,7 +1,8 @@
 Android Drivers
 ===============
 
-Android drivers are available for various Analog Devices products. Select a product from the list below to view the driver and documentation.
+Android drivers are available for various Analog Devices products. Select a
+product from the list below to view the driver and documentation.
 
 Sensors - Acceleration
 ----------------------

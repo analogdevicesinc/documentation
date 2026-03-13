@@ -3,7 +3,9 @@ Filter response
 
 The following transmitter and receiver FIR filters were designed using the AD9361 Filter Design Wizard (for more information, consult the MATLAB Filter Design Wizard for AD9361 wiki page :doc:`/wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/filters`).
 
-The response was measured on an AD-FMCOMMS3-EBZ using the bare-metal AD9361 software running in Linux user space, a spectrum analyzer and the ADI VisualAnalog software.
+The response was measured on an AD-FMCOMMS3-EBZ using the bare-metal AD9361
+software running in Linux user space, a spectrum analyzer and the ADI
+VisualAnalog software.
 
 Updated on October 20, 2015
 
@@ -32,66 +34,66 @@ Updated on October 20, 2015
 \*Note: The DDS for a channel consists of two tones.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_232748_lo_70e6.png
-   :width: 220px
+   :width: 220
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_232748_lo_70e6.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_245760_lo_2415e6.png
-   :width: 220px
+   :width: 220
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_245760_lo_2415e6.png
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_256e3_lo_460e6.png
-   :width: 220px
+   :width: 220
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_256e3_lo_460e6.png
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_15.36e6_lo_806e6.png
-   :width: 220px
+   :width: 220
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_15.36e6_lo_806e6.png
-   :width: 200px
+   :width: 200
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_15.36e6_lo_2450e6.png
-   :width: 220px
+   :width: 220
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_15.36e6_lo_2450e6.png
-   :width: 200px
+   :width: 200
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_22e6_lo_2427e6.png
-   :width: 220px
+   :width: 220
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_22e6_lo_2427e6.png
-   :width: 200px
+   :width: 200
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_50e6_lo_1000e6.png
-   :width: 220px
+   :width: 220
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_50e6_lo_1000e6.png
-   :width: 200px
+   :width: 200
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_60e6_lo_4000e6.png
-   :width: 200px
+   :width: 200
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_61.44e6_lo_6000e6.png
-   :width: 200px
+   :width: 200
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_232748_lo_70e6.png
-   :width: 220px
+   :width: 220
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_232748_lo_70e6.png
-   :width: 200px
+   :width: 200
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_245760_lo_2415e6.png
-   :width: 220px
+   :width: 220
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_245760_lo_2415e6.png
-   :width: 200px
+   :width: 200
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_256e3_lo_460e6.png
-   :width: 220px
+   :width: 220
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_256e3_lo_460e6.png
-   :width: 200px
+   :width: 200
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_15.36e6_lo_806e6.png
-   :width: 220px
+   :width: 220
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_15.36e6_lo_806e6.png
-   :width: 200px
+   :width: 200
 .. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_15.36e6_lo_2450e6.png
-   :width: 220px
+   :width: 220
 .. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_15.36e6_lo_2450e6.png
-   :width: 200px
+   :width: 200
 .. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_22e6_lo_2427e6.png
-   :width: 220px
+   :width: 220
 .. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_22e6_lo_2427e6.png
-   :width: 200px
+   :width: 200
 .. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/tx_50e6_lo_1000e6.png
-   :width: 220px
+   :width: 220
 .. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_50e6_lo_1000e6.png
-   :width: 200px
+   :width: 200
 .. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_60e6_lo_4000e6.png
-   :width: 200px
+   :width: 200
 .. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/filter/trx_61.44e6_lo_6000e6.png
-   :width: 200px
+   :width: 200

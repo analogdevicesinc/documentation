@@ -11,7 +11,9 @@ General Eq Blend
 Description
 -----------
 
-The General (2nd-Order) block gives access to a wide variety of 2nd-order (biquad)filter algorithms along with equalization. Blend factor and slew rate modifications are allowed on the module for each stage.
+The General (2nd-Order) block gives access to a wide variety of 2nd-order
+(biquad)filter algorithms along with equalization. Blend factor and slew rate
+modifications are allowed on the module for each stage.
 
 The available filter types are:
 
@@ -34,12 +36,15 @@ The available filter types are:
 Usage
 -----
 
-To open the filter control window, click on the icon button. Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+To open the filter control window, click on the icon button. Select the desired
+filter type from the drop-down combo-box list. The filter controls and the icon
+button image will change to reflect the selected filter type.
 
 Variants
 --------
 
-General Equalizer module with External blend factor(General Eq Ext Blend). The number of Blend pins varies with the number of stages opted for.
+General Equalizer module with External blend factor(General Eq Ext Blend). The
+number of Blend pins varies with the number of stages opted for.
 
 Targets Supported
 -----------------
@@ -73,7 +78,6 @@ Name    Type  Description
 ======= ===== ================
 Output0 Audio Output channel 0
 ======= ===== ================
-
 
 | ===== Configurable Parameters =====
 

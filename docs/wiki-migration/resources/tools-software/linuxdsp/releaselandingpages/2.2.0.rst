@@ -1,7 +1,10 @@
 Linux for ADSP-SC5xx Processors 2.2.0 (develop)
 ===============================================
 
-Welcome to version 2.2.0 of Linux for ADSP-SC5xx (Currently under development). This collection of pages contains all you need to know in order to download, build, develop and install Linux, running on the ARM core of the ADSP-SC5xx family of processors.
+Welcome to version 2.2.0 of Linux for ADSP-SC5xx (Currently under development).
+This collection of pages contains all you need to know in order to download,
+build, develop and install Linux, running on the ARM core of the ADSP-SC5xx
+family of processors.
 
 Release Status
 --------------

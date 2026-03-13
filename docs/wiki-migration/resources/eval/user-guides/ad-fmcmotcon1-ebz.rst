@@ -1,8 +1,6 @@
 AD-FMCMOTCON1-EBZ User Guide
 ============================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,19 +17,22 @@ AD-FMCMOTCON1-EBZ User Guide
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 The :adi:`AD-FMCMOTCON1-EBZ` is a complete motor drive system on an FMC board. Information on the card, and how to use it, the design package that surrounds it, and the software which can make it work, can be found here.
 
 The purpose of the **AD-FMCMOTCON1-EBZ** is to provide a complete motor drive system demonstrating efficient control of Brushed DC, BLDC, PMSM and Stepper motors. It consists of 2 boards: a controller board and a drive board. The system incorporates high quality power sources; reliable power, control, and feedback signals isolation; accurate measurement of motor current & voltage signals; high speed interfaces for control signals to allow fast controller response; industrial Ethernet high speed interfaces; flexible control with FPGA/SoC interface.
 
 The **AD-DYNO1-EBZ** dynamometer is provided as an extension of the drive system. This is a dynamically adjustable load that can be used to test real-time motor control performance. It consists of two BLDC motors directly coupled through a rigid connection. One of the BLDC motors acts as a load and is controlled by the DYNO’s embedded control system while then second motor is driven by the **AD-FMCMOTCON1-EBZ**.
 
-This platform is intended to be used as a prototyping system to verify the hardware and the control algorithms before moving to the production stage. It helps reduce the time needed to move a motor control system from concept to production. Example reference designs showing how to use the control solution with Xilinx FPGAs or SoCs and Simulink from Mathworks are provided together with the hardware.
+This platform is intended to be used as a prototyping system to verify the
+hardware and the control algorithms before moving to the production stage. It
+helps reduce the time needed to move a motor control system from concept to
+production. Example reference designs showing how to use the control solution
+with Xilinx FPGAs or SoCs and Simulink from Mathworks are provided together with
+the hardware.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mc_system.jpg
    :align: right
-   :width: 600px
+   :width: 600
 
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction>`
 
@@ -75,7 +76,6 @@ ADI/Avnet/MathWorks/Xilinx design seminar
    :alt: analogTV>3540825244001
 
 From ADI's 2013 Design Conference
-
 
 |youtube>-7CscB5sUIw|
 

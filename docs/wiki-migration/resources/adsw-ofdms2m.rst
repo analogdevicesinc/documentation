@@ -6,24 +6,35 @@ Overview
 
 The **ADSW-OFDMS2M** is an HDL reference modem showcasing ADI’s best-in-class RF transceivers in wireless communications applications. The design is implemented using the :doc:`ADRV9361-Z7035 System-on-Module (SoM) </wiki-migration/resources/eval/user-guides/adrv936x_rfsom>`, which is based on the :adi:`AD9361` RF Transceiver and the Xilinx Zynq®-7000 All Programmable (AP) System-on-Chip (SoC).
 
-This reference design integrates an HDL PHY layer with a demo application for video streaming. The HDL PHY layer originally supports orthogonal frequency domain multiplexing 1T1R single-input single-output (OFDM-SISO) mode. This is further extended to support multiple input multiple output (OFDM-MIMO) spatial diversity mode. The wireless standard is based on a modified IEEE 802.11n protocol.
+This reference design integrates an HDL PHY layer with a demo application for
+video streaming. The HDL PHY layer originally supports orthogonal frequency
+domain multiplexing 1T1R single-input single-output (OFDM-SISO) mode. This is
+further extended to support multiple input multiple output (OFDM-MIMO) spatial
+diversity mode. The wireless standard is based on a modified IEEE 802.11n
+protocol.
 
-Despite the ubiquity of IEEE 802.11, there are few available reference projects that fully implement a customizable, full-stack communication system, from application layer down to the physical layer, on a system-on-chip. The purpose of this software reference design is to show customers how they may use the AD936x transceivers as a communication link for unmanned aerial vehicles (UAVs) and drones.
+Despite the ubiquity of IEEE 802.11, there are few available reference projects
+that fully implement a customizable, full-stack communication system, from
+application layer down to the physical layer, on a system-on-chip. The purpose
+of this software reference design is to show customers how they may use the
+AD936x transceivers as a communication link for unmanned aerial vehicles (UAVs)
+and drones.
 
 System Architecture
 -------------------
 
-Figure 1 illustrates the high-level ADSW-OFDM2M architecture. The communication stack is focused mainly on the FPGA where the signal processing for the PHY layer is implemented. The signal processing includes the TX and RX chains, as well as a lower MAC layer.
+Figure 1 illustrates the high-level ADSW-OFDM2M architecture. The communication
+stack is focused mainly on the FPGA where the signal processing for the PHY
+layer is implemented. The signal processing includes the TX and RX chains, as
+well as a lower MAC layer.
 
 A demonstration GUI application runs on :doc:`ADI Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. For the PHY layer to communicate with user space applications, it reuses existing upper-level protocols such as TCP/IP stack and loadable drivers.
-
 
 |image1|
 
 .. container:: center
 
    *Figure 1. High-level Architecture Block Diagram*
-
 
 Features
 --------
@@ -56,10 +67,10 @@ Features
    +------------------------------+-----------------------------------------------------------+
    
 
-
 .. container:: center
 
-   Moreover, the following signal processing blocks are implemented in the reference HDL modem:
+   Moreover, the following signal processing blocks are implemented in the
+   reference HDL modem:
 
    
    -  Constellation mapper/demapper
@@ -71,7 +82,6 @@ Features
    -  Measurement modules: latency, packet loss
    
 
-
 Applications
 ------------
 
@@ -80,7 +90,8 @@ Possible applications of the ADSW-OFDMS2M reference modem include the following:
 -  UAV communications
 -  Wireless video transmission
 
-▶️Recorded demonstration of a wireless video transmission using the ADSW-OFDMS2M HDL reference modem
+▶️Recorded demonstration of a wireless video transmission using the ADSW-OFDMS2M
+HDL reference modem
 
 .. image:: https://wiki.analog.com/_media/resources/youtube>qh53fxqbzei
    :alt: youtube>QH53fXQbzeI
@@ -88,7 +99,8 @@ Possible applications of the ADSW-OFDMS2M reference modem include the following:
 Use Cases
 ---------
 
-The ADSW-OFDMS2M evaluation platform can be operated using the following use cases, depending on the loaded software in the SD card.
+The ADSW-OFDMS2M evaluation platform can be operated using the following use
+cases, depending on the loaded software in the SD card.
 
 +----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **SISO** | The SISO build follows the use case of a typical IEEE 802.11 Basic Service Set where a wireless station/client connects to an access point.                                                          |
@@ -100,17 +112,20 @@ The ADSW-OFDMS2M evaluation platform can be operated using the following use cas
 | 
 | ===== Demo Application ===== |image2|
 
-The ADSW-OFDMS2M demo application has two operating modes which emulate functions for the drone and controller side. The drone mode is expected to start the video streaming and receive the telemetry commands. The controller mode will be sending the telemetry commands while receiving and performing video playback.
+The ADSW-OFDMS2M demo application has two operating modes which emulate
+functions for the drone and controller side. The drone mode is expected to start
+the video streaming and receive the telemetry commands. The controller mode will
+be sending the telemetry commands while receiving and performing video playback.
 
 Help and Support
 ----------------
 
-For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer
+Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
-
 
 Additional Resources
 --------------------
@@ -119,6 +134,6 @@ Additional Resources
 -  :doc:`Analog Devices Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dronetrx/high-level_architecture_block_diagram.png
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dronetrx/dronetrx_demo_application_as_run_in_kuiper_linux.png
-   :width: 800px
+   :width: 800

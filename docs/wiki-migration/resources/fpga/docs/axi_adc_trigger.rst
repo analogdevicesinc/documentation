@@ -1,7 +1,8 @@
 AXI_ADC_TRIGGER
 ===============
 
-The AXI_ADC_TRIGGER IP implements triggering for the ADC path and also controls two I/O triggering pins.
+The AXI_ADC_TRIGGER IP implements triggering for the ADC path and also controls
+two I/O triggering pins.
 
 More about the generic framework interfacing ADCs can be read here: :doc:`axi_adc_ip </wiki-migration/resources/fpga/docs/axi_adc_ip>`.
 
@@ -32,7 +33,7 @@ Block Diagram
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/axi_adc_trigger_diagram.png
-   :width: 600px
+   :width: 600
 
 AXI ADC Tigger submodules
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,13 +45,15 @@ AXI ADC Tigger submodules
 
       -  Amplitude limit - REG_LIMIT_A(0x0014) - Defines the treashold level for the ADC trigger
       -  Function - TRIGGER_FUNCTION_A(0x0018) - Lower, higher than limit; pass through limit
-      -  Hysteresis - TRIGGER_FUNCTION_A (0x001c) - "+-" value. Used for the passthrough functions
+      -  Hysteresis - TRIGGER_FUNCTION_A (0x001c) - "+-" value. Used for the
+         passthrough functions
 
    -  Channel B
 
       -  Amplitude limit - REG_LIMIT_A(0x0024) - Defines the treashold level for the ADC trigger
       -  Function - TRIGGER_FUNCTION_A(0x0028) - Lower, higher than limit; pass through limit
-      -  Hysteresis - TRIGGER_FUNCTION_A (0x002c) - "+-" value. Used for the passthrough functions
+      -  Hysteresis - TRIGGER_FUNCTION_A (0x002c) - "+-" value. Used for the
+         passthrough functions
 
 -  **External trigger**
 
@@ -74,8 +77,10 @@ AXI ADC Tigger submodules
 
 .. important::
 
-   In the case of M2k, the trigger pins(Ti and To) are chosen one for input and one for output. This is for the ease of configuring a daisy-chain of M2k's. The hardware and software support both pins to be configured as input or output in REG_IO_SELECTION(0x000c)
-
+   In the case of M2k, the trigger pins(Ti and To) are chosen one for input and
+   one for output. This is for the ease of configuring a daisy-chain of M2k's.
+   The hardware and software support both pins to be configured as input or
+   output in REG_IO_SELECTION(0x000c)
 
 -  **Channel A MUX** - REG_TRIGGER_MUX_A(0x0020) - Selects between a combination of ADC trigger and the external trigger
 -  **Channel B MUX** - REG_TRIGGER_MUX_B(0x0030) - Selects between a combination of ADC trigger and the external trigger
@@ -86,9 +91,11 @@ AXI ADC Tigger submodules
 
 -  **External trigger control**
 
-   -  REG_IO_SELECTION(0x000c) - Controls the direction of the external trigger pins, and the source(for each pin configured as output)
+   -  REG_IO_SELECTION(0x000c) - Controls the direction of the external trigger
+      pins, and the source(for each pin configured as output)
 
-      -  REG_TRIGGER_OUT_HOLD_PINS(0x004c) - Controls the hold period after a transition to a new logic level.
+      -  REG_TRIGGER_OUT_HOLD_PINS(0x004c) - Controls the hold period after a
+         transition to a new logic level.
 
 Interface
 ---------
@@ -144,11 +151,20 @@ Interface
 Detailed Description
 --------------------
 
-The AXI_ADC_TRIGGER IP implements triggering for the ADC path. The trigger is generated based on two external trigger pins, a triggering signal from the logic analyzer and the ADC channels.
+The AXI_ADC_TRIGGER IP implements triggering for the ADC path. The trigger is
+generated based on two external trigger pins, a triggering signal from the logic
+analyzer and the ADC channels.
 
-The external trigger pins are controlled by the core and can be both input or output. For external triggering, they must be set to inputs(independently).
+The external trigger pins are controlled by the core and can be both input or
+output. For external triggering, they must be set to inputs(independently).
 
-The analog triggering is based on comparison with a limit. The data format must be 2's complement and the maximum number of bits of the analog channel is 15. The trigger can be transmitted independent or embedded in the output word, at bit 15. When embedded, the triggers must be extracted and data must be reconstructed, before forwarding the data to the DMA. The UTIL_EXTRACT IP can be used for this purpose. Embedding the trigger in the data allows for additional IPs with unknown pipeline length to be introduced in the path.
+The analog triggering is based on comparison with a limit. The data format must
+be 2's complement and the maximum number of bits of the analog channel is 15.
+The trigger can be transmitted independent or embedded in the output word, at
+bit 15. When embedded, the triggers must be extracted and data must be
+reconstructed, before forwarding the data to the DMA. The UTIL_EXTRACT IP can be
+used for this purpose. Embedding the trigger in the data allows for additional
+IPs with unknown pipeline length to be introduced in the path.
 
 If a history for data before the trigger is needed, a :doc:`variable FIFO IP </wiki-migration/resources/fpga/docs/util_var_fifo>` should be used. The FIFO depth is controlled using the trigger_offset bus of this IP.
 
@@ -314,7 +330,6 @@ Aditional notes
 .. important::
 
    Instrument triggering in only available from major version 3.
-
 
 References
 ----------

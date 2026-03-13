@@ -1,7 +1,9 @@
 Helpful Links and Tips for Installing All Things IIO Based
 ==========================================================
 
-Sometimes it can be difficult to navigate all of the documentation to install the IIO based library or device that you want. This site is a compilation of various tips and links to help you with that installation.
+Sometimes it can be difficult to navigate all of the documentation to install
+the IIO based library or device that you want. This site is a compilation of
+various tips and links to help you with that installation.
 
 --------------
 
@@ -17,7 +19,8 @@ Sometimes it can be difficult to navigate all of the documentation to install th
 
       -  Delete Radioconda's "adi" folder in radioconda/lib/site-packages
       -  Git clone `pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`_ (using a program like "Tortoise GIT")
-      -  Copy the "adi" folder in that cloned PYADI-IIO repo to radioconda/lib/site-packages
+      -  Copy the "adi" folder in that cloned PYADI-IIO repo to
+         radioconda/lib/site-packages
 
    -  Test the GNU Radio Installation
 
@@ -27,7 +30,8 @@ Sometimes it can be difficult to navigate all of the documentation to install th
 
       |image1|
 
-         -  Sometimes it is necessary to included the path to the cloned pyadi-iio directory (as shown in the image above)
+         -  Sometimes it is necessary to included the path to the cloned
+            pyadi-iio directory (as shown in the image above)
 
 --------------
 
@@ -43,7 +47,8 @@ Sometimes it can be difficult to navigate all of the documentation to install th
 
          -  git clone `libiio <https://github.com/analogdevicesinc/libiio>`_ --branch libiio-v0
          -  libiio-v0 is always the latest, stable, branch. This command as of (Sept 2024) will install libiio v0.25
-         -  If you run into any errors with install, try repeating that command with sudo
+         -  If you run into any errors with install, try repeating that command
+            with sudo
 
 -  **Install PYADI-IIO** (from source is recommended but not always necessary)
 
@@ -63,7 +68,9 @@ Sometimes it can be difficult to navigate all of the documentation to install th
 -  **Download ADI-Kuiper Linux** here: :doc:`kuiper-linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
    -  Write ADI-Kuiper-full.img to an SD card
-   -  Windows users can use Win32 Disk Imager. Writing img files to an SD card will work even on computers with bitlocker or where normally writing to an SD card is encrypted.
+   -  Windows users can use Win32 Disk Imager. Writing img files to an SD card
+      will work even on computers with bitlocker or where normally writing to an
+      SD card is encrypted.
 
 -  **Install SD Card** into Raspberry Pi, and boot up. First boot may take a few minutes extra
 -  **If you are using the Phaser (CN0566)**, or if you just want to enable some extra features, follow this Phaser :doc:`quickstart </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/quickstart>`
@@ -83,4 +90,4 @@ Sometimes it can be difficult to navigate all of the documentation to install th
 If you run into any questions, please ask on this Support Forum: :ez:`ez>adieducation/university-program/f/q-a <adieducation/university-program/f/q-a>` .
 
 .. |image1| image:: https://wiki.analog.com/_media/grc_windows_test.png
-   :width: 400px
+   :width: 400

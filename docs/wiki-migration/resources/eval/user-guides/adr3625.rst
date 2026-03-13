@@ -30,7 +30,14 @@ Additional Documents Required
 General Description
 -------------------
 
-The EVAL-ADR3625EBZ evaluation board is for evaluating ADR3625 unit that is included in the board. Figure 1 shows the EVAL-ADR3625EBZ evaluation board. VIN, GND Force and OUT Force are installed with binding post for easy connection with the most common bench setup connector. PCB traces are also provided for Sense pins, passives and SMB for more sophisticated setup/usage. Full specifications of the device under test (DUT) are available in the product data sheet, which should be consulted in conjunction with this user guide when using the evaluation board.
+The EVAL-ADR3625EBZ evaluation board is for evaluating ADR3625 unit that is
+included in the board. Figure 1 shows the EVAL-ADR3625EBZ evaluation board. VIN,
+GND Force and OUT Force are installed with binding post for easy connection with
+the most common bench setup connector. PCB traces are also provided for Sense
+pins, passives and SMB for more sophisticated setup/usage. Full specifications
+of the device under test (DUT) are available in the product data sheet, which
+should be consulted in conjunction with this user guide when using the
+evaluation board.
 
 Evaluation Board Photograph
 ---------------------------
@@ -39,21 +46,25 @@ Evaluation Board Photograph
 
    |image1| *Figure 1. EVAL-ADR3625EBZ*
 
-
 Evaluation Board Hardware
 -------------------------
 
-Use the EVAL-ADR3625EBZ to evaluate the ADR3625 devices in the board. Figure 1 shows the evaluation board.
+Use the EVAL-ADR3625EBZ to evaluate the ADR3625 devices in the board. Figure 1
+shows the evaluation board.
 
 VIN, VOUT AND GND BINDING POST
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Binding post P1, P2, P10, P11, and P12 provides the ability to easily connect the supply, ground and the load to equipment with just banana jack or clamping cable.
+Binding post P1, P2, P10, P11, and P12 provides the ability to easily connect
+the supply, ground and the load to equipment with just banana jack or clamping
+cable.
 
 LINK HEADERS
 ~~~~~~~~~~~~
 
-The link header P3 provides the ability to simply connect the EN pin to the VIN pin to eliminate additional external supply. P4 and P5 can also be shorted in application where line resistances are negligible.
+The link header P3 provides the ability to simply connect the EN pin to the VIN
+pin to eliminate additional external supply. P4 and P5 can also be shorted in
+application where line resistances are negligible.
 
 .. container:: column
 
@@ -69,7 +80,6 @@ The link header P3 provides the ability to simply connect the EN pin to the VIN 
    ===== ======== ========================
    
 
-
 Evaluation Board Schematic and Artwork
 --------------------------------------
 
@@ -84,7 +94,6 @@ Evaluation Board Schematic and Artwork
    
    |image5| *Figure 5. EVAL-ADR3625EBZ Bottom Layer*
    
-
 
 Ordering Information
 --------------------
@@ -118,14 +127,13 @@ Bill of Materials
    +----------------------+--------------------------------------+--------------------------+-------------------------+
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adr3625ebztop-web.gif
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_adr3625ebz_schem_111621_.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/08_065031a_silk_prm_1_.jpg
-   :width: 800px
+   :width: 800
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/08_065031a_l1_primary_1_.jpg
-   :width: 800px
+   :width: 800
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/08_065031a_l2_secondary_1_.jpg
-   :width: 800px
+   :width: 800

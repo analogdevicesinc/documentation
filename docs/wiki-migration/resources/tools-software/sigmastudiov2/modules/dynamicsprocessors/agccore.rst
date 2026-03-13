@@ -9,7 +9,11 @@ AGC Core
 Description
 -----------
 
-This Module is the gain computation part of a compressor. Compression happens by taking the RMS of i/p samples i.e. by passing the input samples through a low-pass filter, converting this to dB scale and then looking up the corresponding gain value. There is a threshold set as a parameter in the Module, below which compression occurs.
+This Module is the gain computation part of a compressor. Compression happens by
+taking the RMS of i/p samples i.e. by passing the input samples through a
+low-pass filter, converting this to dB scale and then looking up the
+corresponding gain value. There is a threshold set as a parameter in the Module,
+below which compression occurs.
 
 Targets Supported
 -----------------
@@ -19,7 +23,6 @@ Name     ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ======== ========== ================ ============= ================
 AGC Core B          B                NA            NA
 ======== ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -40,7 +43,6 @@ Name   Type    Description
 ====== ======= ===============
 Output Control Compressor Gain
 ====== ======= ===============
-
 
 | ===== Configurable Parameters =====
 

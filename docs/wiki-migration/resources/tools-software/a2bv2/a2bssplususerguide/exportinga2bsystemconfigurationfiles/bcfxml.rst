@@ -1,14 +1,18 @@
 A2B Bus Configuration XML Specification
 =======================================
 
-XML uses tags that are not predefined or standard, which means that they are created by the person who is writing the XML file. Usually, the first tag begins by specifying the XML version and the encoding being used. This is standard tag and is called prolog.
+XML uses tags that are not predefined or standard, which means that they are
+created by the person who is writing the XML file. Usually, the first tag begins
+by specifying the XML version and the encoding being used. This is standard tag
+and is called prolog.
 
 Bus config XML contains the configuration of A2B Bus
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/image1.png
    :align: center
 
-Under Bus configuration, there are multiple sections as shown in the below image.
+Under Bus configuration, there are multiple sections as shown in the below
+image.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/image2.png
    :align: center

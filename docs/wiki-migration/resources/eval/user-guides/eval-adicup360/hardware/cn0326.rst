@@ -5,12 +5,13 @@ The :adi:`CN0326` is a completely isolated low power pH sensor signal conditione
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0326/cn0326-hw-1024.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 Hardware Setup
 --------------
 
-The PMOD board is small in size with dimensions approximately 1.4 inch in width by 2.4 inches in length. The following are the instructions in using the board.
+The PMOD board is small in size with dimensions approximately 1.4 inch in width
+by 2.4 inches in length. The following are the instructions in using the board.
 
 Power Supply Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,7 +31,10 @@ Digital Interface (PMOD)
 
 The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
-The specific interface used for the EVAL-CN0326-PMDZ boards is the extended SPI. In general ADI has adopted the extended SPI connector for all PMOD devices which have an SPI interface. It provides flexibility to add interrupts, general purpose I/O, resets, and other important digitally controlled functions.
+The specific interface used for the EVAL-CN0326-PMDZ boards is the extended SPI.
+In general ADI has adopted the extended SPI connector for all PMOD devices which
+have an SPI interface. It provides flexibility to add interrupts, general
+purpose I/O, resets, and other important digitally controlled functions.
 
 ============= =================== ========
 P1 Pin Number Pin Function        Mnemonic
@@ -49,13 +53,9 @@ Pin 11        Digital Ground      DGND
 Pin 12        Digital Power       VDD
 ============= =================== ========
 
-
-
-
 .. important::
 
    The EVAL-CN0326-PMDZ has RCout pins. This pin is connected to the RCIN pin of a slave isoPower device to allow the ADuM5401 to control the regulation of the slave device. This allows ADUM5401 to provide its PWM signal to another device acting as a master to regulate its self and slave devices. This pins is accesible through the SPI PMOD header. For complete details, please consult the datasheet at :adi:`ADUM5401`.
-
 
 Software examples
 -----------------
@@ -75,6 +75,5 @@ Schematics, PCB Layout, Bill of Materials
    -  `Layout Gerbers <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0326/eval-cn0326-pmdz-gbr-reva.zip>`_ (ZIP)
    -  `Assembly Drawing <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0326/eval-cn0326-pmdz-assemblydrawing.pdf>`_ (PDF)
    
-
 
 *End of Document*

@@ -3,7 +3,9 @@ Basic DSP
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-The Basic DSP library of the ToolBox lets you access basic building blocks to give you fundamental control of DSP algorithms. Following is a list of the blocks available.
+The Basic DSP library of the ToolBox lets you access basic building blocks to
+give you fundamental control of DSP algorithms. Following is a list of the
+blocks available.
 
 DSP Functions
 -------------

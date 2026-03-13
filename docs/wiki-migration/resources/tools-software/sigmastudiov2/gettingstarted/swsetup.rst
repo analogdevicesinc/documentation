@@ -14,8 +14,10 @@ Install the following software/tools in the listed order:
 
 .. tip::
 
-   If multiple versions of the CrossCore Embedded Studio are installed, one of the tool-chain versions can be selected in the processor settings page of “ADSP-214xx/ADSP-215xx/ADSP-SC5xx”. “ADSP-214xx/ADSP-215xx/ADSP-SC5xx” processor settings page can be launched from the Project Window.
-
+   If multiple versions of the CrossCore Embedded Studio are installed, one of
+   the tool-chain versions can be selected in the processor settings page of
+   “ADSP-214xx/ADSP-215xx/ADSP-SC5xx”. “ADSP-214xx/ADSP-215xx/ADSP-SC5xx”
+   processor settings page can be launched from the Project Window.
 
 ADAU145x/ADAU146x
 -----------------

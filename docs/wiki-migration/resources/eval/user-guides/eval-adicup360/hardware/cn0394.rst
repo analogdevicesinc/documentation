@@ -33,14 +33,22 @@ Connectors and Configurations
 Thermocouple Connectors
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Each of the four(4) channels uses an Omega style connector for the thermocouples, which makes it easier to plug in and out different thermocouple types. Type U was selected so that all the channels on the board (P1 - P4) would be universal and interchangeable.
+Each of the four(4) channels uses an Omega style connector for the
+thermocouples, which makes it easier to plug in and out different thermocouple
+types. Type U was selected so that all the channels on the board (P1 - P4) would
+be universal and interchangeable.
 
-There is an RTD beneath the copper tabs of each connector which is used to measure the cold junction temperature. So no external cold junction measurement is needed with this board.
+There is an RTD beneath the copper tabs of each connector which is used to
+measure the cold junction temperature. So no external cold junction measurement
+is needed with this board.
 
 Analog Sensor Inputs
 ~~~~~~~~~~~~~~~~~~~~
 
-The analog outputs of each thermocouple channel and each RTD channel are connected directly to connector P6. Each of these analog voltages is passed directly to the ADuCM360 on the EVAL-ADICUP360 board. And is processed using the 24-bit sigma-deltas which are integrated into that IC.
+The analog outputs of each thermocouple channel and each RTD channel are
+connected directly to connector P6. Each of these analog voltages is passed
+directly to the ADuCM360 on the EVAL-ADICUP360 board. And is processed using the
+24-bit sigma-deltas which are integrated into that IC.
 
 ================== ==================
 P6 Pin Connections Sensor/Channel
@@ -78,7 +86,6 @@ Schematic, PCB Layout, Bill of Materials
    -  `Allegro Project <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0394/20-042719-01a.zip>`_
    
 
-
 Software
 --------
 
@@ -93,6 +100,5 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0394-ARDZ?&v=RevA>`_ to receive all these great benefits and more!
-
 
 *End of Document*

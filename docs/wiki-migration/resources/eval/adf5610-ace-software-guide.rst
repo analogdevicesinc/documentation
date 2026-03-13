@@ -62,11 +62,13 @@ Sweep
 Autocalibration Subbands Table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are three buttons on the top righthand corner of the Autocalibration subband table used to control the data contained in the table.
+There are three buttons on the top righthand corner of the Autocalibration
+subband table used to control the data contained in the table.
 
 -  The first button is used to import subband data saved in csv file stored in the local directory.
 -  The second button icon is used to export a copy of the subband data in csv format in a local directory.
--  The third button is used to add a single sweep step to the table using the current VCO start frequency.
+-  The third button is used to add a single sweep step to the table using the
+   current VCO start frequency.
 
 The **Autocalibration subbands** table can be cleared using the **clear table** button under the table. Finally, a subband sweep can be performed at random by using the delete icon on each column to delete a sweep step or define a VCO start frequency and use the add button to add the sweep step to the table.
 
@@ -83,7 +85,9 @@ Similar to the Sweep, you can hop between two frequencies.
 EVALUATION AND TEST
 -------------------
 
-To evaluate and test the performance of the EV-ADF5610SD1Z use the following procedure. To ensure the software is able to program the device correctly, follow these few steps as they appear anytime the board is powered up.
+To evaluate and test the performance of the EV-ADF5610SD1Z use the following
+procedure. To ensure the software is able to program the device correctly,
+follow these few steps as they appear anytime the board is powered up.
 
 -  Connect the USB cable from the :adi:`SDP-S` board.
 -  Connect the 6V power supply to the VCC 6.1V SMA (J7) connector, but ensure power supply is turned off.

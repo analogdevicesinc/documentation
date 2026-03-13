@@ -12,7 +12,14 @@ How to find the firmware version?
 Boot message
 ~~~~~~~~~~~~
 
-When a board is powered up or reset with the RESET button, the firmware starts executing and prints some messages over the serial port. You may access the serial port by connecting a MAXDAP to the JTAG SWD header and to the PC. To view the boot messages, open up a serial terminal application of your choice and configure it to listen to the serial port that appears in your system when you connect the MAXDAP to the PC (COMx on Windows, /dev/ttyACMx on Linux). The serial port settings must be 115200 baud, 8 databits, no parity bits, 1 stopbit, no flow control signals.
+When a board is powered up or reset with the RESET button, the firmware starts
+executing and prints some messages over the serial port. You may access the
+serial port by connecting a MAXDAP to the JTAG SWD header and to the PC. To view
+the boot messages, open up a serial terminal application of your choice and
+configure it to listen to the serial port that appears in your system when you
+connect the MAXDAP to the PC (COMx on Windows, /dev/ttyACMx on Linux). The
+serial port settings must be 115200 baud, 8 databits, no parity bits, 1 stopbit,
+no flow control signals.
 
 A typical boot message looks like this:
 
@@ -54,8 +61,8 @@ We can conclude that the on-board firmware is ``v1.0.0`` built using git commit 
 Using Wethlink GUI
 ~~~~~~~~~~~~~~~~~~
 
-Simply connect to the serial port of the device with the Wethlink GUI app and observe the Context tab content.
-
+Simply connect to the serial port of the device with the Wethlink GUI app and
+observe the Context tab content.
 
 |300|
 
@@ -73,19 +80,17 @@ If however, there is a FAIL.TXT file, if might be that the programmer isn't conn
 
 `fw-update-bad.webm <https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/fw-update-bad.webm>`_
 
-
-
 .. collapsible:: Is the MAXDAP firmware correct?
 
-   The MAXDAP itself needs to run a specific firmware version to be able to program the MAX32650 with Drag and Drop. The DETAILS.TXT file on the DAPLINK drive specifies the Git SHA of the running firmware:
+   The MAXDAP itself needs to run a specific firmware version to be able to
+   program the MAX32650 with Drag and Drop. The DETAILS.TXT file on the DAPLINK
+   drive specifies the Git SHA of the running firmware:
 
    ::
 
       Git SHA: 649f2a1524190c5f0ea32c97bb8682ad6fd772a0
 
    If what you see on your device is not the one indicated above, please follow the `instructions on this page <https://github.com/analogdevicesinc/max32625pico-firmware-images>`_ to update the MAXDAP firmware first.
-
-
 
 mcufla.sh
 ~~~~~~~~~
@@ -135,7 +140,6 @@ This method involves installing the toolchain for building the ``projects/wethli
 
 Hardware revision must be specified when building the wethlink project, otherwise the build errors out. ``make HW_VERSION=0`` builds for rev A hardware, and ``make HW_VERSION=1`` builds for rev B hardware.
 
-
 No-OS Build Guide
 =================
 
@@ -154,16 +158,18 @@ If however you've already cloned NO-OS without the ``--recursive`` flag, you may
 Build Prerequisites
 -------------------
 
-Prior to building a no-OS project, it is required to set up some environment variables so that the build process may find the necessary tools (compiler, linker, SDK etc.).
+Prior to building a no-OS project, it is required to set up some environment
+variables so that the build process may find the necessary tools (compiler,
+linker, SDK etc.).
 
-Use the following commands to prepare your environment for building no-OS projects: 
+Use the following commands to prepare your environment for building no-OS
+projects:
 
 .. collapsible:: Linux (Click to expand)
 
    .. important::
 
       Make sure the GNU Make version you are using is >= 4.2.
-
 
    
 
@@ -183,10 +189,6 @@ Use the following commands to prepare your environment for building no-OS projec
 
          $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-
-
-
-
    .. collapsible:: Xilinx (Click to expand)
 
       Assuming the Vitis 2022.2 is installed at this path:
@@ -205,19 +207,11 @@ Use the following commands to prepare your environment for building no-OS projec
 
          $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
 
-
-
-
-
    .. collapsible:: STM32 (Click to expand)
 
       -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
       -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
       -  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
-
-
-
-
 
    .. collapsible:: Maxim (Click to expand)
 
@@ -225,18 +219,14 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
       -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-
-
-
-
    .. collapsible:: Mbed (Click to expand)
 
       -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
-      -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
-
-
-
-
+      -  Configure the compiler location with Mbed CLI. This can be carried out
+         by
+         running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler""
+         in
+         Command Prompt.
 
    .. collapsible:: Pico (Click to expand)
 
@@ -246,29 +236,23 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
       -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-
-
-
-
    .. collapsible:: ADuCM3029 (Click to expand)
 
       -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
       -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
-      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM
+         CMSIS
+         packs installed.
 
       .. important::
 
-         Please install all the necessary packs locally and then manually import them in CrossCore
-
+         Please install all the necessary packs locally and then manually import
+         them in CrossCore
 
       Common Issues with environment setup:
 
       -  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
-
-
-
-
 
 .. collapsible:: Windows (Click to expand)
 
@@ -276,16 +260,13 @@ Use the following commands to prepare your environment for building no-OS projec
 
       Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
-
    .. important::
 
       Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
-
    .. important::
 
       Use Git Bash (unelevated) for the rest of your development.
-
 
    
 
@@ -313,19 +294,11 @@ Use the following commands to prepare your environment for building no-OS projec
 
          $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-
-
-
-
    .. collapsible:: Maxim (Click to expand)
 
       -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
       -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
       -  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
-
-
-
-
 
    .. collapsible:: Mbed (Click to expand)
 
@@ -339,11 +312,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
       -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
-      -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
-
-
-
-
+      -  Configure the compiler location with Mbed CLI. This can be carried out
+         by
+         running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH
+         <path_to_your_gcc_compiler</code>
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
@@ -353,24 +325,16 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
-
-
-
-
    .. collapsible:: STM32 (Click to expand)
 
       -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
       -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
       -  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
 
-
-
 Building a project
 ------------------
 
 Go in the project directory that should be built.
-
-
 
 .. collapsible:: Linux (Click to expand)
 
@@ -399,10 +363,6 @@ Go in the project directory that should be built.
          # Alternatively you may select a .sopcinfo file explicitly by:
          $ make HARDWARE=path/to/system_bd.sopcinfo
 
-
-
-
-
    .. collapsible:: Xilinx (Click to expand)
 
       Copy the .xsa in the project folder.
@@ -416,10 +376,6 @@ Go in the project directory that should be built.
          # Alternatively you may select an .xsa file explicitly by:
          $ make HARDWARE=path/to/file.xsa
 
-
-
-
-
    .. collapsible:: Maxim (Click to expand)
 
       To build a project, type:
@@ -429,10 +385,6 @@ Go in the project directory that should be built.
          make PLATFORM=maxim TARGET=...
 
       The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
-
-
-
-
 
    .. collapsible:: Mbed (Click to expand)
 
@@ -444,10 +396,6 @@ Go in the project directory that should be built.
 
       The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-
-
-
-
    .. collapsible:: Pico (Click to expand)
 
       To build a project, type:
@@ -455,10 +403,6 @@ Go in the project directory that should be built.
       ::
 
          make PLATFORM=pico
-
-
-
-
 
    .. collapsible:: STM32 (Click to expand)
 
@@ -472,10 +416,6 @@ Go in the project directory that should be built.
 
       If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-
-
-
-
    .. collapsible:: ADuCM3029 (Click to expand)
 
       The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
@@ -488,16 +428,11 @@ Go in the project directory that should be built.
          # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
          $ make PLATFORM=aducm3029
 
-
-
-
-
 .. collapsible:: Windows (Click to expand)
 
    .. important::
 
       Use Git Bash to run these commands.
-
 
    ::
 
@@ -530,10 +465,6 @@ Go in the project directory that should be built.
 
          $ make
 
-
-
-
-
    .. collapsible:: Maxim (Click to expand)
 
       To build a project, type:
@@ -544,16 +475,14 @@ Go in the project directory that should be built.
 
       The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-
-
-
-
    .. collapsible:: Mbed (Click to expand)
 
       .. important::
 
-         Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
-
+         Make sure that the virtual environment is activated (environment name
+         enclosed in parenthesis appears in the git terminal) and that the
+         packages
+         from prerequisites were installed.
 
       To build a project, type:
 
@@ -563,10 +492,6 @@ Go in the project directory that should be built.
 
       The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-
-
-
-
    .. collapsible:: ADuCM3029 (Click to expand)
 
       ::
@@ -574,13 +499,12 @@ Go in the project directory that should be built.
          $ export PLATFORM=aducm3029
          $ make
 
-
-
-
-
    .. collapsible:: STM32 (Click to expand)
 
-      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
+      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE
+      to
+      C:\\stm32cubeide, run these commands prior to building to let the build
+      system know where they are installed:
 
       ::
 
@@ -596,8 +520,6 @@ Go in the project directory that should be built.
       If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
       If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
-
-
 
 The build process creates a **build** directory in the project folder:
 
@@ -621,13 +543,12 @@ Uploading the binary to target is achieved with:
 
    $ make run
 
-This feature is not implemented for some platform-OS combinations. Instead, use the following command to launch the IDE to handle flashing and debugging:
+This feature is not implemented for some platform-OS combinations. Instead, use
+the following command to launch the IDE to handle flashing and debugging:
 
 ::
 
    $ make sdkopen
-
-
 
 .. collapsible:: Maxim (Click to expand)
 
@@ -639,15 +560,14 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
    The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-
-
-
-
 .. collapsible:: Xilinx (Click to expand)
 
    **Booting from SD Card**
 
-   You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
+   You may also boot a Xilinx project from an SD card, copy the generated
+   build/BOOT.BIN file onto the first partition of the card, ensuring it is
+   formatted as FAT32. Insert the card, set the jumpers for SD boot, and power
+   on the system.
 
    **Remote host**
 
@@ -661,9 +581,8 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
    By default the \`hw_server\` port should be 3121.
 
-
-
-Use the following command to launch the SDK associated to the used platform in order to be able to debug graphically by clicking the debug button:
+Use the following command to launch the SDK associated to the used platform in
+order to be able to debug graphically by clicking the debug button:
 
 ::
 
@@ -679,8 +598,9 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
    no targets found with "name =~ "APU\*" && jtag_cable_name =~ "\*\ :math:`::jtagtarget*"". available targets: none while executing "error "no targets found with \"`\ params(filter)\\". available targets:$target_list""...
 
-
-If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
+If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to
+switch the USB device from Windows to WSL. To do this, the following steps must
+be followed:
 
 -  It is recommended to have a version of Windows 10 or 11.
 -  You must have all updates installed in WSL.
@@ -694,10 +614,12 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
    :~$ uname -a
    Linux 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 
-WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
+WSL should have a kernel version of 5.10.60.1 or later. You also need to run
+WSL2.Testing was done on version 22.4 of Ubuntu.
 
 -  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
--  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
+-  You need to install from WSL, the user space tools for USB/IP and a database
+   of USB hardware identifiers:
 
 ::
 
@@ -712,12 +634,14 @@ If the last command does not work, try:
 
    :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip
 
-
    | tail -n1` 20
 
-If there is a device connected to the USB port, it can be checked from the Device Manager. When connecting via JTAG, in Device Manager, the device will appear in the Universal serial Bus controllers section as USB Serial Converter.
+If there is a device connected to the USB port, it can be checked from the
+Device Manager. When connecting via JTAG, in Device Manager, the device will
+appear in the Universal serial Bus controllers section as USB Serial Converter.
 
-To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
+To attach the JTAG (or any USB device) from Windows to WSL we must do the
+following:
 
 -  Open Command Prompt in Administrator mode and enter the command:
 
@@ -737,7 +661,10 @@ To attach the JTAG (or any USB device) from Windows to WSL we must do the follow
    10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
    10-5   413c:b06f  USB Input Device                                              Not attached
 
-For this command, a list of all connected USB devices will be displayed in Windows, a brief description of them and their status: If they are/are not attached to the WSL instance. The JTAG appears in the cmd list but is not attached to a WSL instance.
+For this command, a list of all connected USB devices will be displayed in
+Windows, a brief description of them and their status: If they are/are not
+attached to the WSL instance. The JTAG appears in the cmd list but is not
+attached to a WSL instance.
 
 In WSL enter the following command:
 
@@ -747,7 +674,8 @@ In WSL enter the following command:
    Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
+A list of all attached USB devices will be displayed here. At this moment we
+will only see roots hubs.
 
 -  To attach a USB device to WSL enter the following command in Command Prompt:
 
@@ -755,7 +683,8 @@ A list of all attached USB devices will be displayed here. At this moment we wil
 
    > usbipd wsl attach -b <BUSID>
 
-BUSID represents the ID for the USB device for which we want to attach it in WSL.
+BUSID represents the ID for the USB device for which we want to attach it in
+WSL.
 
 ::
 
@@ -775,7 +704,8 @@ BUSID represents the ID for the USB device for which we want to attach it in WSL
    10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
    10-5   413c:b06f  USB Input Device                                              Not attached
 
-After running usbipd wsl list, it can be seen that the JTAG is now attached in WSL.
+After running usbipd wsl list, it can be seen that the JTAG is now attached in
+WSL.
 
 In WSL if you run: **lsusb** we have:
 
@@ -785,9 +715,12 @@ In WSL if you run: **lsusb** we have:
    Bus 001 Device 005: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub\
 
-If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
+If Device Manager checks the USB device attached in WSL, it will no longer
+appear in the list of devices.
 
--  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+-  If you want to return to the initial settings (the USB device must be
+   attached to Windows): The USB device must be disconnected and connected to
+   the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -799,15 +732,14 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. important::
 
-   This guide is to run built no-OS projects "as native as possible" under Windows.
-
-
-
+   This guide is to run built no-OS projects "as native as possible" under
+   Windows.
 
 .. collapsible:: STM32 (Click to expand)
 
    -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
-   -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
+   -  In PowerShell, set the variables below, correcting with the absolute paths
+      of your stm32cubeide install:
 
    ::
 
@@ -815,7 +747,8 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd,
+      project.elf) in a folder.
 
       -  The .openocd will be the same regardless of the Makefile configuration.
 
@@ -837,8 +770,6 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
    ::
 
         &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
-
-
 
 ++++
 
@@ -860,16 +791,18 @@ If however you've already cloned NO-OS without the ``--recursive`` flag, you may
 Build Prerequisites
 -------------------
 
-Prior to building a no-OS project, it is required to set up some environment variables so that the build process may find the necessary tools (compiler, linker, SDK etc.).
+Prior to building a no-OS project, it is required to set up some environment
+variables so that the build process may find the necessary tools (compiler,
+linker, SDK etc.).
 
-Use the following commands to prepare your environment for building no-OS projects: 
+Use the following commands to prepare your environment for building no-OS
+projects:
 
 .. collapsible:: Linux (Click to expand)
 
    .. important::
 
       Make sure the GNU Make version you are using is >= 4.2.
-
 
    
 
@@ -889,10 +822,6 @@ Use the following commands to prepare your environment for building no-OS projec
 
          $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-
-
-
-
    .. collapsible:: Xilinx (Click to expand)
 
       Assuming the Vitis 2022.2 is installed at this path:
@@ -911,19 +840,11 @@ Use the following commands to prepare your environment for building no-OS projec
 
          $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
 
-
-
-
-
    .. collapsible:: STM32 (Click to expand)
 
       -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
       -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
       -  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
-
-
-
-
 
    .. collapsible:: Maxim (Click to expand)
 
@@ -931,18 +852,14 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
       -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-
-
-
-
    .. collapsible:: Mbed (Click to expand)
 
       -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
-      -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
-
-
-
-
+      -  Configure the compiler location with Mbed CLI. This can be carried out
+         by
+         running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler""
+         in
+         Command Prompt.
 
    .. collapsible:: Pico (Click to expand)
 
@@ -952,29 +869,23 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
       -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-
-
-
-
    .. collapsible:: ADuCM3029 (Click to expand)
 
       -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
       -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
-      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM
+         CMSIS
+         packs installed.
 
       .. important::
 
-         Please install all the necessary packs locally and then manually import them in CrossCore
-
+         Please install all the necessary packs locally and then manually import
+         them in CrossCore
 
       Common Issues with environment setup:
 
       -  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
-
-
-
-
 
 .. collapsible:: Windows (Click to expand)
 
@@ -982,16 +893,13 @@ Use the following commands to prepare your environment for building no-OS projec
 
       Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
-
    .. important::
 
       Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
-
    .. important::
 
       Use Git Bash (unelevated) for the rest of your development.
-
 
    
 
@@ -1019,19 +927,11 @@ Use the following commands to prepare your environment for building no-OS projec
 
          $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-
-
-
-
    .. collapsible:: Maxim (Click to expand)
 
       -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
       -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
       -  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
-
-
-
-
 
    .. collapsible:: Mbed (Click to expand)
 
@@ -1045,11 +945,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
       -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
-      -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
-
-
-
-
+      -  Configure the compiler location with Mbed CLI. This can be carried out
+         by
+         running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH
+         <path_to_your_gcc_compiler</code>
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
@@ -1059,24 +958,16 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
-
-
-
-
    .. collapsible:: STM32 (Click to expand)
 
       -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
       -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
       -  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
 
-
-
 Building a project
 ------------------
 
 Go in the project directory that should be built.
-
-
 
 .. collapsible:: Linux (Click to expand)
 
@@ -1105,10 +996,6 @@ Go in the project directory that should be built.
          # Alternatively you may select a .sopcinfo file explicitly by:
          $ make HARDWARE=path/to/system_bd.sopcinfo
 
-
-
-
-
    .. collapsible:: Xilinx (Click to expand)
 
       Copy the .xsa in the project folder.
@@ -1122,10 +1009,6 @@ Go in the project directory that should be built.
          # Alternatively you may select an .xsa file explicitly by:
          $ make HARDWARE=path/to/file.xsa
 
-
-
-
-
    .. collapsible:: Maxim (Click to expand)
 
       To build a project, type:
@@ -1135,10 +1018,6 @@ Go in the project directory that should be built.
          make PLATFORM=maxim TARGET=...
 
       The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
-
-
-
-
 
    .. collapsible:: Mbed (Click to expand)
 
@@ -1150,10 +1029,6 @@ Go in the project directory that should be built.
 
       The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-
-
-
-
    .. collapsible:: Pico (Click to expand)
 
       To build a project, type:
@@ -1161,10 +1036,6 @@ Go in the project directory that should be built.
       ::
 
          make PLATFORM=pico
-
-
-
-
 
    .. collapsible:: STM32 (Click to expand)
 
@@ -1178,10 +1049,6 @@ Go in the project directory that should be built.
 
       If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-
-
-
-
    .. collapsible:: ADuCM3029 (Click to expand)
 
       The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
@@ -1194,16 +1061,11 @@ Go in the project directory that should be built.
          # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
          $ make PLATFORM=aducm3029
 
-
-
-
-
 .. collapsible:: Windows (Click to expand)
 
    .. important::
 
       Use Git Bash to run these commands.
-
 
    ::
 
@@ -1236,10 +1098,6 @@ Go in the project directory that should be built.
 
          $ make
 
-
-
-
-
    .. collapsible:: Maxim (Click to expand)
 
       To build a project, type:
@@ -1250,16 +1108,14 @@ Go in the project directory that should be built.
 
       The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-
-
-
-
    .. collapsible:: Mbed (Click to expand)
 
       .. important::
 
-         Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
-
+         Make sure that the virtual environment is activated (environment name
+         enclosed in parenthesis appears in the git terminal) and that the
+         packages
+         from prerequisites were installed.
 
       To build a project, type:
 
@@ -1269,10 +1125,6 @@ Go in the project directory that should be built.
 
       The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-
-
-
-
    .. collapsible:: ADuCM3029 (Click to expand)
 
       ::
@@ -1280,13 +1132,12 @@ Go in the project directory that should be built.
          $ export PLATFORM=aducm3029
          $ make
 
-
-
-
-
    .. collapsible:: STM32 (Click to expand)
 
-      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
+      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE
+      to
+      C:\\stm32cubeide, run these commands prior to building to let the build
+      system know where they are installed:
 
       ::
 
@@ -1302,8 +1153,6 @@ Go in the project directory that should be built.
       If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
       If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
-
-
 
 The build process creates a **build** directory in the project folder:
 
@@ -1327,13 +1176,12 @@ Uploading the binary to target is achieved with:
 
    $ make run
 
-This feature is not implemented for some platform-OS combinations. Instead, use the following command to launch the IDE to handle flashing and debugging:
+This feature is not implemented for some platform-OS combinations. Instead, use
+the following command to launch the IDE to handle flashing and debugging:
 
 ::
 
    $ make sdkopen
-
-
 
 .. collapsible:: Maxim (Click to expand)
 
@@ -1345,15 +1193,14 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
    The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-
-
-
-
 .. collapsible:: Xilinx (Click to expand)
 
    **Booting from SD Card**
 
-   You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
+   You may also boot a Xilinx project from an SD card, copy the generated
+   build/BOOT.BIN file onto the first partition of the card, ensuring it is
+   formatted as FAT32. Insert the card, set the jumpers for SD boot, and power
+   on the system.
 
    **Remote host**
 
@@ -1367,9 +1214,8 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
    By default the \`hw_server\` port should be 3121.
 
-
-
-Use the following command to launch the SDK associated to the used platform in order to be able to debug graphically by clicking the debug button:
+Use the following command to launch the SDK associated to the used platform in
+order to be able to debug graphically by clicking the debug button:
 
 ::
 
@@ -1385,8 +1231,9 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
    no targets found with "name =~ "APU\*" && jtag_cable_name =~ "\*\ :math:`::jtagtarget*"". available targets: none while executing "error "no targets found with \"`\ params(filter)\\". available targets:$target_list""...
 
-
-If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
+If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to
+switch the USB device from Windows to WSL. To do this, the following steps must
+be followed:
 
 -  It is recommended to have a version of Windows 10 or 11.
 -  You must have all updates installed in WSL.
@@ -1400,10 +1247,12 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
    :~$ uname -a
    Linux 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 
-WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
+WSL should have a kernel version of 5.10.60.1 or later. You also need to run
+WSL2.Testing was done on version 22.4 of Ubuntu.
 
 -  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
--  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
+-  You need to install from WSL, the user space tools for USB/IP and a database
+   of USB hardware identifiers:
 
 ::
 
@@ -1418,12 +1267,14 @@ If the last command does not work, try:
 
    :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip
 
-
    | tail -n1` 20
 
-If there is a device connected to the USB port, it can be checked from the Device Manager. When connecting via JTAG, in Device Manager, the device will appear in the Universal serial Bus controllers section as USB Serial Converter.
+If there is a device connected to the USB port, it can be checked from the
+Device Manager. When connecting via JTAG, in Device Manager, the device will
+appear in the Universal serial Bus controllers section as USB Serial Converter.
 
-To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
+To attach the JTAG (or any USB device) from Windows to WSL we must do the
+following:
 
 -  Open Command Prompt in Administrator mode and enter the command:
 
@@ -1443,7 +1294,10 @@ To attach the JTAG (or any USB device) from Windows to WSL we must do the follow
    10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
    10-5   413c:b06f  USB Input Device                                              Not attached
 
-For this command, a list of all connected USB devices will be displayed in Windows, a brief description of them and their status: If they are/are not attached to the WSL instance. The JTAG appears in the cmd list but is not attached to a WSL instance.
+For this command, a list of all connected USB devices will be displayed in
+Windows, a brief description of them and their status: If they are/are not
+attached to the WSL instance. The JTAG appears in the cmd list but is not
+attached to a WSL instance.
 
 In WSL enter the following command:
 
@@ -1453,7 +1307,8 @@ In WSL enter the following command:
    Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
+A list of all attached USB devices will be displayed here. At this moment we
+will only see roots hubs.
 
 -  To attach a USB device to WSL enter the following command in Command Prompt:
 
@@ -1461,7 +1316,8 @@ A list of all attached USB devices will be displayed here. At this moment we wil
 
    > usbipd wsl attach -b <BUSID>
 
-BUSID represents the ID for the USB device for which we want to attach it in WSL.
+BUSID represents the ID for the USB device for which we want to attach it in
+WSL.
 
 ::
 
@@ -1481,7 +1337,8 @@ BUSID represents the ID for the USB device for which we want to attach it in WSL
    10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
    10-5   413c:b06f  USB Input Device                                              Not attached
 
-After running usbipd wsl list, it can be seen that the JTAG is now attached in WSL.
+After running usbipd wsl list, it can be seen that the JTAG is now attached in
+WSL.
 
 In WSL if you run: **lsusb** we have:
 
@@ -1491,9 +1348,12 @@ In WSL if you run: **lsusb** we have:
    Bus 001 Device 005: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub\
 
-If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
+If Device Manager checks the USB device attached in WSL, it will no longer
+appear in the list of devices.
 
--  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+-  If you want to return to the initial settings (the USB device must be
+   attached to Windows): The USB device must be disconnected and connected to
+   the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -1505,15 +1365,14 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. important::
 
-   This guide is to run built no-OS projects "as native as possible" under Windows.
-
-
-
+   This guide is to run built no-OS projects "as native as possible" under
+   Windows.
 
 .. collapsible:: STM32 (Click to expand)
 
    -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
-   -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
+   -  In PowerShell, set the variables below, correcting with the absolute paths
+      of your stm32cubeide install:
 
    ::
 
@@ -1521,7 +1380,8 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd,
+      project.elf) in a folder.
 
       -  The .openocd will be the same regardless of the Makefile configuration.
 
@@ -1543,8 +1403,6 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
    ::
 
         &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
-
-
 
 ++++
 
@@ -1566,16 +1424,18 @@ If however you've already cloned NO-OS without the ``--recursive`` flag, you may
 Build Prerequisites
 -------------------
 
-Prior to building a no-OS project, it is required to set up some environment variables so that the build process may find the necessary tools (compiler, linker, SDK etc.).
+Prior to building a no-OS project, it is required to set up some environment
+variables so that the build process may find the necessary tools (compiler,
+linker, SDK etc.).
 
-Use the following commands to prepare your environment for building no-OS projects: 
+Use the following commands to prepare your environment for building no-OS
+projects:
 
 .. collapsible:: Linux (Click to expand)
 
    .. important::
 
       Make sure the GNU Make version you are using is >= 4.2.
-
 
    
 
@@ -1595,10 +1455,6 @@ Use the following commands to prepare your environment for building no-OS projec
 
          $ source no-OS/tools/scripts/platform/intel/environment.sh /path/to/intel/intelFPGA 18.1
 
-
-
-
-
    .. collapsible:: Xilinx (Click to expand)
 
       Assuming the Vitis 2022.2 is installed at this path:
@@ -1617,19 +1473,11 @@ Use the following commands to prepare your environment for building no-OS projec
 
          $ source /path/to/xilinx/Vitis/2022.2/settings64.sh
 
-
-
-
-
    .. collapsible:: STM32 (Click to expand)
 
       -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to default location ``/opt/stm32cubeide``. If you'd rather install it at a different location, run ``export STM32CUBEIDE=/path/to/your/stm32cubeide`` in the terminal used for building.
       -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to default location ``/opt/stm32cubemx``. If you'd rather install it at a different location, run ``export STM32CUBEMX=/path/to/your/stm32cubemx`` in the terminal used for building.
       -  Install python (if not already present) and make sure python command executes Python3 (not Python2). This can be easily achieved by running the following command ``sudo apt install python-is-python3``.
-
-
-
-
 
    .. collapsible:: Maxim (Click to expand)
 
@@ -1637,18 +1485,14 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Set the MAXIM_LIBRARIES environment variable to the MaximSDK/Libraries path (the default should be ~/MaximSDK/Libraries).
       -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-
-
-
-
    .. collapsible:: Mbed (Click to expand)
 
       -  Install Mbed CLI 1 as per guide here: https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-and-set-up.html .Usually the following steps should be sufficient: ``sudo apt install python3 python3-pip git mercurial gcc-arm-none-eabi`` and ``sudo python3 -m pip install mbed-cli pyelftools==0.29``.
-      -  Configure the compiler location with Mbed CLI. This can be carried out by running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler"" in Command Prompt.
-
-
-
-
+      -  Configure the compiler location with Mbed CLI. This can be carried out
+         by
+         running the "mbed config -G GCC_ARM_PATH "path-to-your-gcc-compiler""
+         in
+         Command Prompt.
 
    .. collapsible:: Pico (Click to expand)
 
@@ -1658,29 +1502,23 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Set the JLINK_SERVER_PATH environment variable to the JLinkGDBServerCLExe path (the default path should be /opt/SEGGER/JLink/JLinkGDBServerCLExe).
       -  For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
 
-
-
-
-
    .. collapsible:: ADuCM3029 (Click to expand)
 
       -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
       -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
-      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
+      -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM
+         CMSIS
+         packs installed.
 
       .. important::
 
-         Please install all the necessary packs locally and then manually import them in CrossCore
-
+         Please install all the necessary packs locally and then manually import
+         them in CrossCore
 
       Common Issues with environment setup:
 
       -  Makefiles searches for the CCES_HOME in its default installation directory. It may happen that multiple version are installed and may not work. To select a ``CCES_HOME`` run ``export CCES_HOME=/opt/analog/cces/2.10.0``
-
-
-
-
 
 .. collapsible:: Windows (Click to expand)
 
@@ -1688,16 +1526,13 @@ Use the following commands to prepare your environment for building no-OS projec
 
       Open up a Git Bash as Administrator once and run the ``tools/scripts/git-bash.sh`` script. Close the window. You only need to do this once per Git Bash installation.
 
-
    .. important::
 
       Activate `Windows Developer Mode <https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development#activate-developer-mode>`_.
 
-
    .. important::
 
       Use Git Bash (unelevated) for the rest of your development.
-
 
    
 
@@ -1725,19 +1560,11 @@ Use the following commands to prepare your environment for building no-OS projec
 
          $ export PATH=/c/Xilinx/Vitis/2022.2/bin:/c/Xilinx/Vitis/2022.2/gnu/aarch64/nt/aarch64-none/bin/:$PATH
 
-
-
-
-
    .. collapsible:: Maxim (Click to expand)
 
       -  Install the `Maxim Micros SDK <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_ to a path without whitespaces like ``C:\MaximSDK``.
       -  Set the MAXIM_LIBRARIES environment variable by running: ``export MAXIM_LIBRARIES=/c/MaximSDK/Libraries``.
       -  (Optional) For visual debugging and building, install ``Visual Studio Code``, and the ``Cortex-Debug`` extension.
-
-
-
-
 
    .. collapsible:: Mbed (Click to expand)
 
@@ -1751,11 +1578,10 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Install the requirements by running ``$ <location_and_name_of_virtual_environment>/Scripts/pip install -r requirements.txt`` Doing this will run the pip command using the python script inside our virtual environment.
       -  Install the previously removed line from requirements.txt by running <code> $ <location_and_name_of_virtual_environment>/Scripts/pip install "cython<3.0.0" && <location_and_name_of_virtual_environment>/Scripts/pip install "hidapi>=0.7.99,<0.8.0;platform_system!='Linux'" </code>
       -  Install mbed cli using ``$ <location_and_name_of_virtual_environment>/Scripts/pip install mbed-cli``
-      -  Configure the compiler location with Mbed CLI. This can be carried out by running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH <path_to_your_gcc_compiler</code>
-
-
-
-
+      -  Configure the compiler location with Mbed CLI. This can be carried out
+         by
+         running in Git Terminal: <code> $ mbed config -G GCC_ARM_PATH
+         <path_to_your_gcc_compiler</code>
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
@@ -1765,24 +1591,16 @@ Use the following commands to prepare your environment for building no-OS projec
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
-
-
-
-
    .. collapsible:: STM32 (Click to expand)
 
       -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_ (latest version) to your desired location like ``C:\stm32cubeide``.
       -  Install `stm32cubemx <https://www.st.com/en/development-tools/stm32cubemx.html>`_ version 6.5.0 to your desired location like ``C:\stm32cubemx``.
       -  Install `python <https://www.python.org/downloads/>`_ and make sure it's available in Git Bash by adding it to the Windows Path, if needed.
 
-
-
 Building a project
 ------------------
 
 Go in the project directory that should be built.
-
-
 
 .. collapsible:: Linux (Click to expand)
 
@@ -1811,10 +1629,6 @@ Go in the project directory that should be built.
          # Alternatively you may select a .sopcinfo file explicitly by:
          $ make HARDWARE=path/to/system_bd.sopcinfo
 
-
-
-
-
    .. collapsible:: Xilinx (Click to expand)
 
       Copy the .xsa in the project folder.
@@ -1828,10 +1642,6 @@ Go in the project directory that should be built.
          # Alternatively you may select an .xsa file explicitly by:
          $ make HARDWARE=path/to/file.xsa
 
-
-
-
-
    .. collapsible:: Maxim (Click to expand)
 
       To build a project, type:
@@ -1841,10 +1651,6 @@ Go in the project directory that should be built.
          make PLATFORM=maxim TARGET=...
 
       The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
-
-
-
-
 
    .. collapsible:: Mbed (Click to expand)
 
@@ -1856,10 +1662,6 @@ Go in the project directory that should be built.
 
       The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-
-
-
-
    .. collapsible:: Pico (Click to expand)
 
       To build a project, type:
@@ -1867,10 +1669,6 @@ Go in the project directory that should be built.
       ::
 
          make PLATFORM=pico
-
-
-
-
 
    .. collapsible:: STM32 (Click to expand)
 
@@ -1884,10 +1682,6 @@ Go in the project directory that should be built.
 
       If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
 
-
-
-
-
    .. collapsible:: ADuCM3029 (Click to expand)
 
       The ADuCM3029 projects also contain a ``pinmux_config.c`` file which contains pin configuration instructions.
@@ -1900,16 +1694,11 @@ Go in the project directory that should be built.
          # if the platform autodetection picks the wrong platform, explicitly specify the PLATFORM
          $ make PLATFORM=aducm3029
 
-
-
-
-
 .. collapsible:: Windows (Click to expand)
 
    .. important::
 
       Use Git Bash to run these commands.
-
 
    ::
 
@@ -1942,10 +1731,6 @@ Go in the project directory that should be built.
 
          $ make
 
-
-
-
-
    .. collapsible:: Maxim (Click to expand)
 
       To build a project, type:
@@ -1956,16 +1741,14 @@ Go in the project directory that should be built.
 
       The ``TARGET`` specifies the chip for which the project is built. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-
-
-
-
    .. collapsible:: Mbed (Click to expand)
 
       .. important::
 
-         Make sure that the virtual environment is activated (environment name enclosed in parenthesis appears in the git terminal) and that the packages from prerequisites were installed.
-
+         Make sure that the virtual environment is activated (environment name
+         enclosed in parenthesis appears in the git terminal) and that the
+         packages
+         from prerequisites were installed.
 
       To build a project, type:
 
@@ -1975,10 +1758,6 @@ Go in the project directory that should be built.
 
       The ``TARGET_BOARD`` specifies the board for which the project is built. If not specified, it defaults to ``SDP-K1``.
 
-
-
-
-
    .. collapsible:: ADuCM3029 (Click to expand)
 
       ::
@@ -1986,13 +1765,12 @@ Go in the project directory that should be built.
          $ export PLATFORM=aducm3029
          $ make
 
-
-
-
-
    .. collapsible:: STM32 (Click to expand)
 
-      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE to C:\\stm32cubeide, run these commands prior to building to let the build system know where they are installed:
+      Assuming you've installed STM32CubeMX at C:\\stm32cubemx and STM32CubeIDE
+      to
+      C:\\stm32cubeide, run these commands prior to building to let the build
+      system know where they are installed:
 
       ::
 
@@ -2008,8 +1786,6 @@ Go in the project directory that should be built.
       If during the project generation you get a dialog saying that you are using an .ioc file generated with an old CubeMX version, click ``Continue``. ``Migrate`` is also a valid option but only if you know what you are doing.
 
       If you're trying to use an .ioc file generated with a newer CubeMX than the one installed on your machine, you will get a prompt that asks you to upgrade your installation to the new version, there is no other choice than to click ``OK`` and then manually upgrade.
-
-
 
 The build process creates a **build** directory in the project folder:
 
@@ -2033,13 +1809,12 @@ Uploading the binary to target is achieved with:
 
    $ make run
 
-This feature is not implemented for some platform-OS combinations. Instead, use the following command to launch the IDE to handle flashing and debugging:
+This feature is not implemented for some platform-OS combinations. Instead, use
+the following command to launch the IDE to handle flashing and debugging:
 
 ::
 
    $ make sdkopen
-
-
 
 .. collapsible:: Maxim (Click to expand)
 
@@ -2051,15 +1826,14 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
    The ``TARGET`` specifies the chip for which the project is built and run. If it is missing, ``max32660`` will be used. At the moment, the available targets are: ``max32650``, ``max32655``, ``max32660``, ``max32665``, ``max32670``, ``max32690`` and ``max78000``.
 
-
-
-
-
 .. collapsible:: Xilinx (Click to expand)
 
    **Booting from SD Card**
 
-   You may also boot a Xilinx project from an SD card, copy the generated build/BOOT.BIN file onto the first partition of the card, ensuring it is formatted as FAT32. Insert the card, set the jumpers for SD boot, and power on the system.
+   You may also boot a Xilinx project from an SD card, copy the generated
+   build/BOOT.BIN file onto the first partition of the card, ensuring it is
+   formatted as FAT32. Insert the card, set the jumpers for SD boot, and power
+   on the system.
 
    **Remote host**
 
@@ -2073,9 +1847,8 @@ This feature is not implemented for some platform-OS combinations. Instead, use 
 
    By default the \`hw_server\` port should be 3121.
 
-
-
-Use the following command to launch the SDK associated to the used platform in order to be able to debug graphically by clicking the debug button:
+Use the following command to launch the SDK associated to the used platform in
+order to be able to debug graphically by clicking the debug button:
 
 ::
 
@@ -2091,8 +1864,9 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
    no targets found with "name =~ "APU\*" && jtag_cable_name =~ "\*\ :math:`::jtagtarget*"". available targets: none while executing "error "no targets found with \"`\ params(filter)\\". available targets:$target_list""...
 
-
-If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
+If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to
+switch the USB device from Windows to WSL. To do this, the following steps must
+be followed:
 
 -  It is recommended to have a version of Windows 10 or 11.
 -  You must have all updates installed in WSL.
@@ -2106,10 +1880,12 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
    :~$ uname -a
    Linux 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 
-WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
+WSL should have a kernel version of 5.10.60.1 or later. You also need to run
+WSL2.Testing was done on version 22.4 of Ubuntu.
 
 -  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
--  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
+-  You need to install from WSL, the user space tools for USB/IP and a database
+   of USB hardware identifiers:
 
 ::
 
@@ -2124,12 +1900,14 @@ If the last command does not work, try:
 
    :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip
 
-
    | tail -n1` 20
 
-If there is a device connected to the USB port, it can be checked from the Device Manager. When connecting via JTAG, in Device Manager, the device will appear in the Universal serial Bus controllers section as USB Serial Converter.
+If there is a device connected to the USB port, it can be checked from the
+Device Manager. When connecting via JTAG, in Device Manager, the device will
+appear in the Universal serial Bus controllers section as USB Serial Converter.
 
-To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
+To attach the JTAG (or any USB device) from Windows to WSL we must do the
+following:
 
 -  Open Command Prompt in Administrator mode and enter the command:
 
@@ -2149,7 +1927,10 @@ To attach the JTAG (or any USB device) from Windows to WSL we must do the follow
    10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
    10-5   413c:b06f  USB Input Device                                              Not attached
 
-For this command, a list of all connected USB devices will be displayed in Windows, a brief description of them and their status: If they are/are not attached to the WSL instance. The JTAG appears in the cmd list but is not attached to a WSL instance.
+For this command, a list of all connected USB devices will be displayed in
+Windows, a brief description of them and their status: If they are/are not
+attached to the WSL instance. The JTAG appears in the cmd list but is not
+attached to a WSL instance.
 
 In WSL enter the following command:
 
@@ -2159,7 +1940,8 @@ In WSL enter the following command:
    Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
+A list of all attached USB devices will be displayed here. At this moment we
+will only see roots hubs.
 
 -  To attach a USB device to WSL enter the following command in Command Prompt:
 
@@ -2167,7 +1949,8 @@ A list of all attached USB devices will be displayed here. At this moment we wil
 
    > usbipd wsl attach -b <BUSID>
 
-BUSID represents the ID for the USB device for which we want to attach it in WSL.
+BUSID represents the ID for the USB device for which we want to attach it in
+WSL.
 
 ::
 
@@ -2187,7 +1970,8 @@ BUSID represents the ID for the USB device for which we want to attach it in WSL
    10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
    10-5   413c:b06f  USB Input Device                                              Not attached
 
-After running usbipd wsl list, it can be seen that the JTAG is now attached in WSL.
+After running usbipd wsl list, it can be seen that the JTAG is now attached in
+WSL.
 
 In WSL if you run: **lsusb** we have:
 
@@ -2197,9 +1981,12 @@ In WSL if you run: **lsusb** we have:
    Bus 001 Device 005: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub\
 
-If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
+If Device Manager checks the USB device attached in WSL, it will no longer
+appear in the list of devices.
 
--  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+-  If you want to return to the initial settings (the USB device must be
+   attached to Windows): The USB device must be disconnected and connected to
+   the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -2211,15 +1998,14 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. important::
 
-   This guide is to run built no-OS projects "as native as possible" under Windows.
-
-
-
+   This guide is to run built no-OS projects "as native as possible" under
+   Windows.
 
 .. collapsible:: STM32 (Click to expand)
 
    -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
-   -  In PowerShell, set the variables below, correcting with the absolute paths of your stm32cubeide install:
+   -  In PowerShell, set the variables below, correcting with the absolute paths
+      of your stm32cubeide install:
 
    ::
 
@@ -2227,7 +2013,8 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
       $openocd_bin="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248\tools\bin\openocd.exe"
         $openocd_scripts="$stm32cubeide\plugins\com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243\resources\openocd\st_scripts"
 
-   -  Extract the pair of deliverables (e.g., some_project.elf.openocd, project.elf) in a folder.
+   -  Extract the pair of deliverables (e.g., some_project.elf.openocd,
+      project.elf) in a folder.
 
       -  The .openocd will be the same regardless of the Makefile configuration.
 
@@ -2249,8 +2036,6 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
    ::
 
         &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
-
-
 
 ++++
 
@@ -2258,8 +2043,9 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
 .. important::
 
-   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE architecture. Vitis 2025.1 now features automatic debug configuration - no manual setup required!
-
+   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE
+   architecture. Vitis 2025.1 now features automatic debug configuration - no
+   manual setup required!
 
 **Key Changes in Vitis 2025.1:**
 
@@ -2280,8 +2066,8 @@ WSL2 Users: One-Time xsdb Fix
 
 .. important::
 
-   On WSL2, xsdb crashes with "Segmentation fault" due to rlwrap incompatibility. Apply this fix once per machine.
-
+   On WSL2, xsdb crashes with "Segmentation fault" due to rlwrap
+   incompatibility. Apply this fix once per machine.
 
 **If you've already applied this fix previously, skip this step.**
 
@@ -2317,7 +2103,6 @@ Step 1: Build Project
 
    For optimal debugging, always build with ``DEBUG=1``. This enables proper debug symbols and correct source path mapping.
 
-
 ::
 
    source /xilinx/2025.1/Vitis/settings64.sh
@@ -2342,7 +2127,6 @@ Step 1: Build Project
    -  Variables optimized out and not visible
    -  Breakpoints may not hit expected lines
    
-
 
 Step 2: Open Vitis IDE
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -2374,8 +2158,8 @@ Step 2: Open Vitis IDE
 
 .. note::
 
-   No manual configuration needed! The debug configuration is ready to use immediately.
-
+   No manual configuration needed! The debug configuration is ready to use
+   immediately.
 
 Step 3: Verify Configuration (Optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2409,8 +2193,8 @@ Start Debugging
 
 .. warning::
 
-   The Start Debugging (F5) button in the Debug panel does not currently work for Vitis 2025.1. Always use FLOW → Debug button.
-
+   The Start Debugging (F5) button in the Debug panel does not currently work
+   for Vitis 2025.1. Always use FLOW → Debug button.
 
 **What happens:**
 
@@ -2449,11 +2233,11 @@ After initial setup:
 
    For production builds (no debugging), use ``make`` without ``DEBUG=1`` to get optimized code.
 
-
 Architecture-Specific Notes
 ---------------------------
 
-The build system automatically detects your hardware architecture and configures debug settings appropriately.
+The build system automatically detects your hardware architecture and configures
+debug settings appropriately.
 
 **ZynqMP (Cortex-A53/R5):**
 
@@ -2508,16 +2292,16 @@ Troubleshooting
 
    The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the Classic Eclipse IDE (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
 
-
 .. warning::
 
-   Manual debug configuration required for Classic Eclipse mode. For automatic configuration, upgrade to Vitis 2025.1+.
-
+   Manual debug configuration required for Classic Eclipse mode. For automatic
+   configuration, upgrade to Vitis 2025.1+.
 
 **Why Classic Mode for Vitis 2023.2-2024.x?**
 
 -  Vitis 2023.2 introduced the Unified IDE, but the User Managed Mode (required for makefile-based projects) has incomplete debug configuration support
--  The classic Eclipse mode provides a mature, fully-functional debugging experience
+-  The classic Eclipse mode provides a mature, fully-functional debugging
+   experience
 
 Prerequisites
 -------------
@@ -2531,8 +2315,8 @@ WSL2 Users: One-Time xsdb Fix
 
 .. important::
 
-   On WSL2, xsdb crashes with "Segmentation fault" due to rlwrap incompatibility. Apply this fix once per machine.
-
+   On WSL2, xsdb crashes with "Segmentation fault" due to rlwrap
+   incompatibility. Apply this fix once per machine.
 
 **If you've already applied this fix previously, skip this step.**
 
@@ -2577,7 +2361,6 @@ Step 1: Build Project
 
    For optimal debugging, always build with ``DEBUG=1``. This enables proper debug symbols and correct source path mapping.
 
-
 ::
 
    source /path/to/xilinx/Vitis/2023.2/settings64.sh
@@ -2612,8 +2395,8 @@ Step 3: Create and Configure Debug (Manual)
 
 .. warning::
 
-   Classic Eclipse requires manual debug configuration. This is a one-time setup per project.
-
+   Classic Eclipse requires manual debug configuration. This is a one-time setup
+   per project.
 
 **A. Open Debug Configurations Dialog:**
 
@@ -2677,8 +2460,8 @@ Browse to or enter the FSBL path:
 
 .. note::
 
-   For MicroBlaze: Uncheck "Use FSBL flow for initialization" - MicroBlaze doesn't use FSBL
-
+   For MicroBlaze: Uncheck "Use FSBL flow for initialization" - MicroBlaze
+   doesn't use FSBL
 
 **Summary Panel:**
 
@@ -2695,7 +2478,8 @@ Click the **"Application"** tab at the top.
 
 **Processor Selection:**
 
-The IDE shows a table with available processors. Check the box next to your target processor:
+The IDE shows a table with available processors. Check the box next to your
+target processor:
 
 -  **ZynqMP**: ``psu_cortexa53_0`` (or ``psu_cortexr5_0`` for R5)
 -  **Zynq-7000**: ``ps7_cortexa9_0``
@@ -2712,7 +2496,6 @@ The IDE typically auto-populates these fields:
 .. tip::
 
    If the Application field is empty, click "Search..." and browse to ``build/your_project.elf``\
-
 
 **Stop at 'main':**
 
@@ -2824,22 +2607,19 @@ Troubleshooting
 
 **For complete documentation, see:** :git-no-OS:`Xilinx Vitis Debugging Guide <doc/sphinx/source/build_guides/build_xilinx_vitis2025.rst>`
 
-
-
-
 Theory of Operation
 -------------------
 
 The firmware uses many no-OS modules for accessing the various peripherals it needs for this project. The diagram below shows how these modules interact with the hardware and with each other. Of particular interest is the feedback loop from the embedded ADC that is periodically used to sample TX_DET and RX_DET at 1 Hz (provided by the embedded RTC) to the ``no_os_pid`` P.I.D. controller which computes a new set of gain values that are written back into the transceiver. This feedback loop is the core functionality of this system and it ensures that the wireless link operates with optimum gains at any distance that the ADMV9615 and ADMV9625 are set apart.
 
-
 |image1|
 
-A detailed view of this feedback loop is represented below, showing exactly what gains the feedback loop controls:
+A detailed view of this feedback loop is represented below, showing exactly what
+gains the feedback loop controls:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/algo.png
    :align: center
-   :width: 800px
+   :width: 800
 
 The firmware can also interact with a PC application over the serial line (UART). Upon boot, it prints boot messages at 115200 baudrate, then launches an ``iiod`` application that can be accessed from a PC using ``libiio`` over a serial backend at 345600 baudrate. The following existing PC applications may be used to interact with the firmware:
 
@@ -2967,7 +2747,11 @@ You can see all the iio devices and their channels and attributes below, as obta
                    attr  1: scale value: 1.033593750
            No trigger on this device
 
-The context contains information that is provisioned at manufacturing such as serial number, hardware revision etc. or information produced during the build process such as the firmware version. The ADMV9615 or ADMV9625 DIP switch state is also exposed as a context attribute and the firmware makes certain decisions based on it.
+The context contains information that is provisioned at manufacturing such as
+serial number, hardware revision etc. or information produced during the build
+process such as the firmware version. The ADMV9615 or ADMV9625 DIP switch state
+is also exposed as a context attribute and the firmware makes certain decisions
+based on it.
 
 There are 6 exposed devices:
 
@@ -2981,7 +2765,8 @@ There are 6 exposed devices:
 LED
 ~~~
 
-Each ADMV96S-WGBE-EK reference design board has a few LED's to convey information from the firmware to the user.
+Each ADMV96S-WGBE-EK reference design board has a few LED's to convey
+information from the firmware to the user.
 
 The blue LED is a *power good* LED and it only lights up if the input power is a clean 12V.
 
@@ -2995,19 +2780,35 @@ The 4 LED series at the top of the board convey the following information:
 | Lit (green or red) when RX autotuning is on, otherwise not lit. Green when RX_DET is within tolerance of the target. Red when RX_DET is not within tolerance of the target. | Lit when RX VCO has locked. | Lit (green or red) when TX autotuning is on, otherwise not lit. Green when TX_DET is within tolerance of the target. Red when TX_DET is not within tolerance of the target. | Lit when TX VCO has locked. |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 
-The following examples shows a board that has TX and RX VCO's locked, TX and RX autotuning on, TX_DET within tolerance of target but the firmware can't keep RX_DET within tolerance of target. To force this error, one of the boards facing each other was unplugged so the photographed board was trying to maximize the RX gains to receive something meaningful. But if there is no incoming signal, gain changes cannot possibly affect RX_DET so the firmware lights up the LED in red.
-
+The following examples shows a board that has TX and RX VCO's locked, TX and RX
+autotuning on, TX_DET within tolerance of target but the firmware can't keep
+RX_DET within tolerance of target. To force this error, one of the boards facing
+each other was unplugged so the photographed board was trying to maximize the RX
+gains to receive something meaningful. But if there is no incoming signal, gain
+changes cannot possibly affect RX_DET so the firmware lights up the LED in red.
 
 |image2|
 
-The RJ-45 connector also has embedded LED's. The top left one lights up green when the ADIN1300 has connected to another PHY over the Ethernet cable. This LED is briefly turned off when there is activity on the Ethernet cable essentially blinking it. So a blinking top left LED means both the Ethernet link is up and there is ongoing activity. The top right LED conveys link speed information and is turned off when link speed is 10 Mbps, lit green for 100 Mbps and lit amber when speed is 1000 Mbps.
+The RJ-45 connector also has embedded LED's. The top left one lights up green
+when the ADIN1300 has connected to another PHY over the Ethernet cable. This LED
+is briefly turned off when there is activity on the Ethernet cable essentially
+blinking it. So a blinking top left LED means both the Ethernet link is up and
+there is ongoing activity. The top right LED conveys link speed information and
+is turned off when link speed is 10 Mbps, lit green for 100 Mbps and lit amber
+when speed is 1000 Mbps.
 
 EEPROM
 ~~~~~~
 
-The 24LC32A EEPROM has 32Kb memory capacity (4 KB) and is connected to an I2C bus. The firmware uses the EEPROM to store non-volatile parameters to be loaded at boot.
+The 24LC32A EEPROM has 32Kb memory capacity (4 KB) and is connected to an I2C
+bus. The firmware uses the EEPROM to store non-volatile parameters to be loaded
+at boot.
 
-In order not to waste space, and to make sure future iterations of the firmware may use areas of the EEPROM that are currently unused, a design decision had to be made from the start, as to what size a non-volatile parameter set should have. A reasonable size of 256 bytes was chosen, which makes it possible to fit 16 such parameter sets into the memory.
+In order not to waste space, and to make sure future iterations of the firmware
+may use areas of the EEPROM that are currently unused, a design decision had to
+be made from the start, as to what size a non-volatile parameter set should
+have. A reasonable size of 256 bytes was chosen, which makes it possible to fit
+16 such parameter sets into the memory.
 
 ======= ================ ====
 Address Name             Size
@@ -3017,22 +2818,31 @@ Address Name             Size
 0xF00   Factory defaults 256
 ======= ================ ====
 
-Two such areas are currently used by the firmware, one is the NVMP1 area which is the active configuration loaded at boot and the other one is the factory defaults configuration which can be copied into the active configuration with a certain procedure.
+Two such areas are currently used by the firmware, one is the NVMP1 area which
+is the active configuration loaded at boot and the other one is the factory
+defaults configuration which can be copied into the active configuration with a
+certain procedure.
 
 The 0x100 to 0x3FF memory area is not used.
 
-Each NVMP area has 255 bytes of actual parameters and 1 last byte consisting of a CRC8 computed over the leading 255 bytes.
+Each NVMP area has 255 bytes of actual parameters and 1 last byte consisting of
+a CRC8 computed over the leading 255 bytes.
 
-The CRC8 checksums are checked at boot and if they have been incorrectly written or tampered with, the parameters are not used. If no suitable parameters are found in NVMP1 or in the factory defaults area, a set of in-firmware hardcoded parameters are used for the boot.
+The CRC8 checksums are checked at boot and if they have been incorrectly written
+or tampered with, the parameters are not used. If no suitable parameters are
+found in NVMP1 or in the factory defaults area, a set of in-firmware hardcoded
+parameters are used for the boot.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/eeprom-diagram.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Resetting to factory defaults
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To explicitly reset to factory defaults, click the S3 button, keep it pressed and click the S2 button briefly. The four LED's will blink 10 times for about 3 seconds to confirm the reset to factory defaults has completed.
+To explicitly reset to factory defaults, click the S3 button, keep it pressed
+and click the S2 button briefly. The four LED's will blink 10 times for about 3
+seconds to confirm the reset to factory defaults has completed.
 
 Production firmware and provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3054,39 +2864,58 @@ Autonegotiation
 
 The EVAL-ADMV96S-WGBE-EK1 is a system composed of two independent boards that connect to the *outside* world through Ethernet. The network infrastructure at the other end of the Ethernet cable is not known yet the system can detect its capabilities in terms of data bandwidth and dulplex mode due to autonegotiation signaling at physical layer (OSI model).
 
-The system may be connected at any time to devices on a network that have different capabilities. The device at one end could be able to talk 100 Mbps half-duplex, the one at the other end could be capable of 1 Gbps full-duplex. In this scenario, the system needs to adapt for the weakest link and configure the 100 Mbps half-duplex speed at all levels, it's the common denominator that allows the two devices to talk to each other.
+The system may be connected at any time to devices on a network that have
+different capabilities. The device at one end could be able to talk 100 Mbps
+half-duplex, the one at the other end could be capable of 1 Gbps full-duplex. In
+this scenario, the system needs to adapt for the weakest link and configure the
+100 Mbps half-duplex speed at all levels, it's the common denominator that
+allows the two devices to talk to each other.
 
-Having two independent devices in a system, each running its own firmware, this could only be possible if there is some mechanism through which the devices could advertise speeds to one another. The wireless link carries SGMII interface and the SGMII itself has an autonegotiation mechanism through which a frame containing speed and duplex information can be passed on from one device to the other. The firmware uses this feature to propagate an Ethernet link speed change throughout the whole system.
+Having two independent devices in a system, each running its own firmware, this
+could only be possible if there is some mechanism through which the devices
+could advertise speeds to one another. The wireless link carries SGMII interface
+and the SGMII itself has an autonegotiation mechanism through which a frame
+containing speed and duplex information can be passed on from one device to the
+other. The firmware uses this feature to propagate an Ethernet link speed change
+throughout the whole system.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/autonegotiation.png
    :align: center
 
-Steps 1-4 are executed in an interrupt service routine from the PHY when link status changes.
+Steps 1-4 are executed in an interrupt service routine from the PHY when link
+status changes.
 
-Steps 5-6 are executed in an interrupt service routine from the SERDES when new autonegotiation page was received.
+Steps 5-6 are executed in an interrupt service routine from the SERDES when new
+autonegotiation page was received.
 
 To resume this section:
 
 -   there is speed and duplex mode autonegotiation at Ethernet level
 -   there is speed and duplex mode autonegotiation at SGMII level
--   the lowest advertised speed of a device in the system is propagated and the system subsequently works at that speed
+-   the lowest advertised speed of a device in the system is propagated and the
+    system subsequently works at that speed
 
 Temperature compensated gains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Due to reasons related to the transceiver hardware, the optimum gains at which it operates are temperature dependent. Affected gains are TX IF VGA, RX IF VGA and RX RF LNA. The optimum gains found through lab characterization are provided by Analog Devices.
+Due to reasons related to the transceiver hardware, the optimum gains at which
+it operates are temperature dependent. Affected gains are TX IF VGA, RX IF VGA
+and RX RF LNA. The optimum gains found through lab characterization are provided
+by Analog Devices.
 
-The transceivers have a very coarse temperature sensor that is used by the firmware to look up gains in a lookup table. The default behavior of the firmware is to auto compensate gains for temperature using the factory default lookup tables.
+The transceivers have a very coarse temperature sensor that is used by the
+firmware to look up gains in a lookup table. The default behavior of the
+firmware is to auto compensate gains for temperature using the factory default
+lookup tables.
 
-You can disable auto compensation by unticking the checkbox, or you can keep it and adjust the tables to your liking.
+You can disable auto compensation by unticking the checkbox, or you can keep it
+and adjust the tables to your liking.
 
 TX temperature compensation table:
-
 
 |image3|
 
 RX temperature compensation table:
-
 
 |image4|
 
@@ -3103,23 +2932,45 @@ Raw Temp Range
 P.I.D. controlled gains
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-TX_DET and RX_DET analog signals of the transceivers are sampled regularly by the embedded ADC of the microcontroller. They correspond to the TX and RX signal power and need to be kept in a certain sweetspot for proper operation of the wireless link.
+TX_DET and RX_DET analog signals of the transceivers are sampled regularly by
+the embedded ADC of the microcontroller. They correspond to the TX and RX signal
+power and need to be kept in a certain sweetspot for proper operation of the
+wireless link.
 
-The remaining gains, that aren't temperature controlled, are the TX RF VGA and the RX BB (COARSE1, COARSE2 and FINE). By controlling these gains up and down, one can see a change in the RX and RX power detectors.
+The remaining gains, that aren't temperature controlled, are the TX RF VGA and
+the RX BB (COARSE1, COARSE2 and FINE). By controlling these gains up and down,
+one can see a change in the RX and RX power detectors.
 
-So we have a feedback loop and we can apply control theory on it in the form of a P.I.D. algorithm to keep the TX_DET and RX_DET in the sweetspot by having the algorithm tweak the gains. The implementation actually only uses the proportional and integral coefficients, essentially making this a P.I. control.
+So we have a feedback loop and we can apply control theory on it in the form of
+a P.I.D. algorithm to keep the TX_DET and RX_DET in the sweetspot by having the
+algorithm tweak the gains. The implementation actually only uses the
+proportional and integral coefficients, essentially making this a P.I. control.
 
-Every second the algorithm is run for several iterations until it settles on a resulting gain. There are two challenges:
+Every second the algorithm is run for several iterations until it settles on a
+resulting gain. There are two challenges:
 
 -  Make it settle fast! We don't care too much about overshoot, we care about settling fast because the algorithm is run on the main loop along with other things and we don't want to block for too long.
--  Make it settle with as little gain changes as possible! Any gain change will momentarily mess with the signals being sent in that instant across the wireless link, so by minimizing the gain changes, we minimize the bit error rate throughout the whole system.
+-  Make it settle with as little gain changes as possible! Any gain change will
+   momentarily mess with the signals being sent in that instant across the
+   wireless link, so by minimizing the gain changes, we minimize the bit error
+   rate throughout the whole system.
 
-To illustrate how the algorithm works, here's the result of a simulation with artificial perturbations at samples 100, 200, 300 and 400 in order to observe the characteristics of the control. The top part shows the output of the P.I. as an attenuation in steps between 0 and 31. The bottom part is a simulated RX_DET (mV) based on what attenuation the algorithm previously set.
+To illustrate how the algorithm works, here's the result of a simulation with
+artificial perturbations at samples 100, 200, 300 and 400 in order to observe
+the characteristics of the control. The top part shows the output of the P.I. as
+an attenuation in steps between 0 and 31. The bottom part is a simulated RX_DET
+(mV) based on what attenuation the algorithm previously set.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/pid.png
    :align: center
 
-With the factory default settings, the algorithm finds the target within 10 iterations or less and does it with few gain changes addressing both of the above points. As with any P.I.D. algorithm, it's possible that better behavior is achievable by experimentally fine tuning the coefficients but with the factory default coefficients and initial release implementation, the system achieves a bit error rate of less than 10E-10 for constant distance and across the whole -40°C to 80°C.
+With the factory default settings, the algorithm finds the target within 10
+iterations or less and does it with few gain changes addressing both of the
+above points. As with any P.I.D. algorithm, it's possible that better behavior
+is achievable by experimentally fine tuning the coefficients but with the
+factory default coefficients and initial release implementation, the system
+achieves a bit error rate of less than 10E-10 for constant distance and across
+the whole -40°C to 80°C.
 
 --------------
 
@@ -3136,10 +2987,9 @@ Resources
    -  `Wethlink Installer <https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe>`_
    
 
-
 .. |300| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/wethlink-fw-version.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/wethlink-firmware.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/led.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/tx-compensation.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/rx-compensation.png

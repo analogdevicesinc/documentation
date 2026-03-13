@@ -12,17 +12,22 @@ The `JCG401 datasheet <https://wiki.analog.com/_media/university/tools/pluto/use
 Running an S\ :sub:`21` test on the E5071C will broadcast a tone from one antenna (on port 2), and receive it on the other (port 1), and plot the results (in dB) compared to a wire that was used during the calibration on the instrument. It's interesting note that we are measuring both Rx and Tx capabilities. It is possible that the Rx at sub 600MHz could be fine, and it is just a Tx problem (unlikely, but I just wanted to point it out).
 
 .. image:: https://wiki.analog.com/_media/jcg401_full_range.png
-   :width: 800px
+   :width: 800
 
-You can see thing over 625 MHz, the antenna has pretty good performance, with the exception of a tight notch at 1.12 GHz. This means unless you are really close to an FM broadcast station, you will not be able to receive FM with this antenna. (it has been done, and it does work - it just limits the distance between you and the antenna. Remember that most terrestrial FM broadcast stations are 10,000 to 20,000 watts).
+You can see thing over 625 MHz, the antenna has pretty good performance, with
+the exception of a tight notch at 1.12 GHz. This means unless you are really
+close to an FM broadcast station, you will not be able to receive FM with this
+antenna. (it has been done, and it does work - it just limits the distance
+between you and the antenna. Remember that most terrestrial FM broadcast
+stations are 10,000 to 20,000 watts).
 
 At the popular `ISM bands <https://en.wikipedia.org/wiki/ISM_band>`_ of 900 MHz, 2400 MHz, and 5725 MHz, performance is quite good. (click on the image to make it larger).
 
 |902 - 928 MHz ISM Band| |2.4 -2.5 GHz ISM Band| |5.725 - 5.875 GHz ISM Band|
 
 .. |902 - 928 MHz ISM Band| image:: https://wiki.analog.com/_media/jcg401_900ism.png
-   :width: 400px
+   :width: 400
 .. |2.4 -2.5 GHz ISM Band| image:: https://wiki.analog.com/_media/jcg401_2400ism.png
-   :width: 400px
+   :width: 400
 .. |5.725 - 5.875 GHz ISM Band| image:: https://wiki.analog.com/_media/jcg401_5725ism.png
-   :width: 400px
+   :width: 400

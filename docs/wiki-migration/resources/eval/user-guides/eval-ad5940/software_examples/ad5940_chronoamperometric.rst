@@ -6,7 +6,18 @@ This example will use **EVAL-ADICUP3029** and **EVAL_AD5940ELCZ** to carry put C
 Overview
 --------
 
-Chrono-amperometric, or pulse test, is a test in which the voltage across the counter electrode and sense electrode is pulsed, disturbing the normal bias for the electrochemical cell. The current response is measured on the sense electrode through the LPTIA. The measurement technique can have a number of applications. In the case of an electrochemical gas sensor this test checks that the passage of charge between electrodes through the internal electrolyte during oxidation and reduction is operating properly In normal operation, the AD5940 sets the voltage on the counter electrode via VBIAS and the voltage on the sense electrode is set via VZERO. These are typically set to 1.1 V for a zero bias sensor. Then a pulse is applied on VBIAS for a defined duration. The response current is measured using the low power TIA or the high speed TIA, depending on the speed of the response required. In this application the LPTIA is used.
+Chrono-amperometric, or pulse test, is a test in which the voltage across the
+counter electrode and sense electrode is pulsed, disturbing the normal bias for
+the electrochemical cell. The current response is measured on the sense
+electrode through the LPTIA. The measurement technique can have a number of
+applications. In the case of an electrochemical gas sensor this test checks that
+the passage of charge between electrodes through the internal electrolyte during
+oxidation and reduction is operating properly In normal operation, the AD5940
+sets the voltage on the counter electrode via VBIAS and the voltage on the sense
+electrode is set via VZERO. These are typically set to 1.1 V for a zero bias
+sensor. Then a pulse is applied on VBIAS for a defined duration. The response
+current is measured using the low power TIA or the high speed TIA, depending on
+the speed of the response required. In this application the LPTIA is used.
 
 Measurement Requirements
 ------------------------
@@ -35,16 +46,17 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Place the **EVAL-AD5940ELCZ** on top of the **EVAL-ADICUP3029**.
 -  Ensure jumper on JP10 and JP11 is on PIN2 and PIN4
 -  Place jumper in position A on JP6 to connect 6.8K resistor in series with a 10uF capacitor between RE0 and SE0
--  Plug in the micro USB cable into the (P10) USB port on the EVAL-ADICUP3029, and the other end into the PC or laptop.
+-  Plug in the micro USB cable into the (P10) USB port on the EVAL-ADICUP3029,
+   and the other end into the PC or laptop.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/ad5940elcz.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Obtaining the Source Code
 -------------------------
@@ -58,20 +70,24 @@ The source code and include files for the project can be found on Git
    `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
    
 
-
 Configuring the Software
 ------------------------
 
-To compile and run the example open the project in either Keil or IAR. The AD5940AMPStructInit() function is used to configure application parameters including, pulseAmplitude and pulseLength.
+To compile and run the example open the project in either Keil or IAR. The
+AD5940AMPStructInit() function is used to configure application parameters
+including, pulseAmplitude and pulseLength.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/keil_amperometric.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Outputting Data
 ---------------
 
-The measurement results are sent to the PC via UART. To establish connection over UART, connect the Micro-USB cable to the PC and to the EVAL-ADICUP3029 board. A terminal program such as RealTerm or Putty is required to display the results
+The measurement results are sent to the PC via UART. To establish connection
+over UART, connect the Micro-USB cable to the PC and to the EVAL-ADICUP3029
+board. A terminal program such as RealTerm or Putty is required to display the
+results
 
 Following is the UART configuration.
 
@@ -84,10 +100,11 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
-The data on the terminal consists of the Frequency of the excitation signal, the magnitude of the impedance and the phase of the impedance in degrees as in below screenshot.
-
+The data on the terminal consists of the Frequency of the excitation signal, the
+magnitude of the impedance and the phase of the impedance in degrees as in below
+screenshot.
 
 |image1|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/realterm_amperometric.png
-   :width: 600px
+   :width: 600

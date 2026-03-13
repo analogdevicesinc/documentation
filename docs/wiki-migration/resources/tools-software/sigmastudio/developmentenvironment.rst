@@ -5,7 +5,10 @@ Development Environment
 
 --------------
 
-The SigmaStudio development environment provides a graphical user interface to help you build and deploy signal processing systems quickly and efficiently. Refer to the following sections if you have any problems or questions while working with the application.
+The SigmaStudio development environment provides a graphical user interface to
+help you build and deploy signal processing systems quickly and efficiently.
+Refer to the following sections if you have any problems or questions while
+working with the application.
 
 +------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 | :doc:`Program Window </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/programwindow>`                        | Summary of the Main Screen and its tools.                   |
@@ -27,9 +30,10 @@ The SigmaStudio development environment provides a graphical user interface to h
 
 .. tip::
 
-   Note: The first time you start SigmaStudio, it displays the Program Window with the default layout. You can change the desktop arrangement to meet your needs and preferences, including resizing, moving, and hiding windows and toolbars.
-
+   Note: The first time you start SigmaStudio, it displays the Program Window
+   with the default layout. You can change the desktop arrangement to meet your
+   needs and preferences, including resizing, moving, and hiding windows and
+   toolbars.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/devpic1.png
    :alt: devpic1.png
-

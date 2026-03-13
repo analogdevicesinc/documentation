@@ -1,8 +1,6 @@
 FMComms1 Plugin Description
 ===========================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -18,8 +16,6 @@ FMComms1 Plugin Description
    which means it is no longer maintained or actively updated, even though the
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
-
-
 
 | The FMComms1 view is divided in two sections:
 | **FMComms1 Receive Chain** and **FMComms1 Transmit Chain**. |image1|
@@ -61,12 +57,14 @@ FMComms1 Plugin Description
       -  **Frequency(MHz):** Selects the output frequency of the TX local oscillator. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-pll/adf4350>`
       -  **Spacing(Hz):** Selects the frequency spacing. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-pll/adf4350>`
 
-Clicking the "Save Settings" button will write changes which have been made to the FMComms1 settings to the hardware.
+Clicking the "Save Settings" button will write changes which have been made to
+the FMComms1 settings to the hardware.
 
 .. hint::
 
-   Upon saving values will be rounded to the nearest value supported by the hardware. After the "Save Settings" button has been clicked these values will be displayed.
-
+   Upon saving values will be rounded to the nearest value supported by the
+   hardware. After the "Save Settings" button has been clicked these values will
+   be displayed.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/fmcomms1_plugin.png
-   :width: 400px
+   :width: 400

@@ -47,7 +47,8 @@ Setting up the Hardware
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0503_arduino.jpg
    :align: center
 
--  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
+-  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect
+   it to a computer. The final setup should look similar to the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0503_system_pc.jpg
    :align: center
@@ -59,8 +60,6 @@ The **ADuCM3029_demo_cn0503** does not need any software configuration. It can b
 
 Outputting Data
 ---------------
-
-
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
@@ -136,8 +135,6 @@ preferences.
 
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
-
-
 
 Available commands
 ~~~~~~~~~~~~~~~~~~
@@ -265,14 +262,19 @@ Typing **help** after the application has started will display the list of comma
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0503.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0503.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cn0503** can be found here:
 
@@ -288,7 +290,6 @@ The software for the **ADuCM3029_demo_cn0503** can be found here:
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0503 Source Code <projects/ADuCM3029_demo_cn0503>`
    
-
 
 How to use the Tools
 --------------------

@@ -47,7 +47,6 @@ The Fully Isolated PMOD-to-FMC interposer board was designed using a Low Noise, 
 
    |image1| *Figure 1. Signal Chain Kit*
 
-
 Getting Started
 ---------------
 
@@ -66,8 +65,9 @@ Warning
 
 .. warning::
 
-   To ensure that the evaluation system is correctly recognized when it is connected to the PC, install the evaluation software and drivers first before connecting the ADSKPMB10-EV-FMCZ and SDP-H1 board to the USB port of the PC.
-
+   To ensure that the evaluation system is correctly recognized when it is
+   connected to the PC, install the evaluation software and drivers first before
+   connecting the ADSKPMB10-EV-FMCZ and SDP-H1 board to the USB port of the PC.
 
 Installing the ADSKPMB10-EV-FMCZ Evaluation Software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -81,13 +81,11 @@ Installing the ADSKPMB10-EV-FMCZ Evaluation Software
 
    |image2|\ *Figure 2. Unzip the ADSKPMB10-EV-FMCZ Evaluation Software Installer*
 
-
 -  Double-click the **setup.exe** file to begin the evaluation board software installation (see Figure 3).
 
 .. container:: centeralign
 
    |image3| *Figure 3. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Begins*
-
 
 -  Select a location to install the software and click **Next**. The default location is **C:\\Program Files (x86)\\Analog Devices**. This location also contains the executable software and example files.
 
@@ -95,13 +93,11 @@ Installing the ADSKPMB10-EV-FMCZ Evaluation Software
 
    |image4|\ *Figure 4. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Selecting the Location for Software Installation (Default Location Shown)*
 
-
 -  A license agreement appears. Read the agreement, and then select **I accept the License Agreement**, and click **Next**.
 
 .. container:: centeralign
 
    |image5| *Figure 5. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Accept the License Agreement*
-
 
 -  An installation summary displays. Click **Next** to continue.
 
@@ -109,13 +105,11 @@ Installing the ADSKPMB10-EV-FMCZ Evaluation Software
 
    |image6|\ *Figure 6. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Summary*
 
-
 -  A dialog box shows the installation progress.
 
 .. container:: centeralign
 
    |image7| *Figure 7. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Progress*
-
 
 -  The dialog box informs the user when the installation is complete. Click **Finish**.
 
@@ -123,8 +117,8 @@ Installing the ADSKPMB10-EV-FMCZ Evaluation Software
 
    |image8|\ *Figure 8. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Complete*
 
-
--  The setup for the installation of the SDP-H1 board drivers automatically loads.
+-  The setup for the installation of the SDP-H1 board drivers automatically
+   loads.
 
 ++++
 
@@ -139,13 +133,11 @@ Installing the SDP-H1 Board Drivers
 
    |image9| *Figure 9. SDP-H1 Drivers Setup — Beginning the Drivers Installation*
 
-
 -  A license agreement appears. Read the agreement, and then click **I Agree**.
 
 .. container:: centeralign
 
    |image10| |image11| *Figure 10. SDP-H1 Drivers Setup — License Agreement*
-
 
 -  Make sure to select the **Pre-Requisites** checkbox, then click **Next**\
 
@@ -153,13 +145,11 @@ Installing the SDP-H1 Board Drivers
 
    |image12|\ *Figure 11. SDP-H1 Drivers Setup — Pre-Requisites Checkbox*
 
-
 -  Select a location to install the drivers and click **Install**.
 
 .. container:: centeralign
 
    |image13| *Figure 12. SDP-H1 Drivers Setup — Selecting the Location for Drivers Installation*
-
 
 -  Installation of the SDP drivers begins.
 
@@ -167,13 +157,11 @@ Installing the SDP-H1 Board Drivers
 
    |image14| *Figure 13. SDP-H1 Drivers Setup — Beginning the Installation*
 
-
 -  A dialog box appears asking to install the SDP software available with the SDP-H1. Click **Install**.
 
 .. container:: centeralign
 
    |image15| *Figure 14. SDP-H1 Drivers Setup — Granting Permission to Install Drivers*
-
 
 -  To complete the drivers installation, click **Finish**, which closes the installation wizard.
 
@@ -181,13 +169,11 @@ Installing the SDP-H1 Board Drivers
 
    |image16| *Figure 15. SDP-H1 Drivers Setup — Completing the Drivers Setup Wizard*
 
-
 -  After installing the drivers, restart the PC prior to using the ADSKPMB10-EV-FMCZ Evaluation Software. A dialog box opens, giving the following options: **Restart**, **Shut Down**, and **Restart Later**. Click **Restart**.
 
 .. container:: centeralign
 
    |image17| *Figure 16. SDP-H1 Drivers Setup — Restarting the PC*
-
 
 ++++
 
@@ -201,22 +187,22 @@ Connecting ADSKPMB10-EV-FMCZ and SDP-H1 to a PC
 
 After installing the ACE software, follow these steps to set up the :adi:`ADSKPMB10-EV-FMCZ` and SDP-H1, as shown in Figure 17.
 
-
 |image18|
 
 .. container:: centeralign
 
    *Figure 17. Signal Chain Kit Connection*
 
-
 -  Ensure all configuration links are in the appropriate positions, as detailed in Table 1.
 -  Connect the :adi:`ADSKPMB10-EV-FMCZ` securely to the 160-way connector on the SDP-H1. The :adi:`ADSKPMB10-EV-FMCZ` does not require an external power supply adapter.
--  Connect the SDP-H1 to the PC through the USB cable and power it up with the 12 V wall adapter included in the SDP-H1 kit.
+-  Connect the SDP-H1 to the PC through the USB cable and power it up with the
+   12 V wall adapter included in the SDP-H1 kit.
 
 Verifying the Board Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After completing Software Installation Procedures and Evaluation Board Setup, follow these steps to verify the board connection:
+After completing Software Installation Procedures and Evaluation Board Setup,
+follow these steps to verify the board connection:
 
 -  Run the **Found New Hardware Wizard** after the SDP-H1 system demonstration platform board is plugged into the PC. If using Windows XP, search for the SDP-H1 drivers. Automatically search for the drivers of the SDP-H1 system demonstration platform board, if prompted by the operating system.
 -  Check the evaluation board is connecting to the PC correctly using the **Device Manager** of the PC. Access the **Device Manager** as follows:
@@ -230,26 +216,25 @@ After completing Software Installation Procedures and Evaluation Board Setup, fo
 
    |image19|\ *Figure 18. Checking that the* :adi:`ADSKPMB10-EV-FMCZ` *is connected to the PC correctly*
 
-
 Disconnecting ADSKPMB10-EV-FMCZ
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Disconnect the :adi:`ADSKPMB10-EV-FMCZ` from the SDP-H1 by either:
 
 -  Turning off the power from the SDP-H1 by unplugging the 12 V wall wart adapter.
--  Pressing the reset tact switch located alongside the mini-USB port on the SDP-H1.
+-  Pressing the reset tact switch located alongside the mini-USB port on the
+   SDP-H1.
 
 Hardware Description and Performance
 ------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/simplified_block_diagram.svg
    :align: center
-   :width: 545px
+   :width: 545
 
 .. container:: centeralign
 
    *Figure 19. Simplified Evaluation Board Block Diagram*
-
 
 Figure 19 shows the simplified block diagram of the :adi:`ADSKPMB10-EV-FMCZ`, which is composed of the two boards: the PMOD-to-FMC interposer board and the PGIA + ADAQ4003 Data Acquisition Board.
 
@@ -265,52 +250,75 @@ Fully Isolated PMOD-to-FMC Interposer Board
 
 The Fully Isolated PMOD-to-FMC interposer board was designed using a Low Noise, 1A, 1MHz Push-Pull DC/DC Driver with Duty Cycle Control, the :adi:`LT3999`, a Robust 3.0 kVrms Digital Isolators w/ Fail-Safe for the SPI lines and PGIA gain control pins, the :adi:`ADuM152N` and the :adi:`ADuM120N`, and a Low noise and ultra low noise LDO regulators the :adi:`ADP7105` and the :adi:`ADP150N` respectively.
 
-The interposer board was designed to cater multiple VIO voltage levels. The user has 3 options on the FMC VIO side and by default, the VIO is connected or set by FMC's VADJ pin. 3.3 V and 1.8 V is also available in case other VIO voltage level is needed as shown in Figure 20 below.
+The interposer board was designed to cater multiple VIO voltage levels. The user
+has 3 options on the FMC VIO side and by default, the VIO is connected or set by
+FMC's VADJ pin. 3.3 V and 1.8 V is also available in case other VIO voltage
+level is needed as shown in Figure 20 below.
 
 .. container:: centeralign
 
    |image20|\ *Figure 20. FMC side VIO Options*
 
-
-On the PMOD side, the user has an option to connect the VCC pin of the PMOD Data Acquisition device directly to LT3999's push-pull transformer output or to provide a regulated 3.3 V output using the ADP7105. By default, the PMOD VCC is powered directly from the LT3999's push-pull transformer output as shown in Figure 21 below.
+On the PMOD side, the user has an option to connect the VCC pin of the PMOD Data
+Acquisition device directly to LT3999's push-pull transformer output or to
+provide a regulated 3.3 V output using the ADP7105. By default, the PMOD VCC is
+powered directly from the LT3999's push-pull transformer output as shown in
+Figure 21 below.
 
 .. container:: centeralign
 
    |image21|// Figure 21. PMOD VCC Options//
 
-
 PGIA + ADAQ4003 Data Acquisition Board
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The SDP-H1 supplies 3.3 V to power the rails for the different components on the PGIA + ADAQ4003 Data Acquisition Board. The ADAQ4003 µModule use four power supply pins: the ADC driver positive supply (VS+), the ADC driver negative supply (VS−), the core ADC supply (VDD), and the digital input and output interface supply (VIO). The VIO pin allows the direct interface with any logic between 1.8 V and 5.5 V. A combination of the ADP5070 (dual, high-performance dc-to-dc switching regulator), the LT3032 (dual, low noise, positive and negative low dropout voltage linear regulator), and the LT3023 (dual, micropower, low noise, low dropout regulator) can generate independently regulated positive and negative rails for all four power supply pins, including ±15 V rails for any additional signal conditioning.
+The SDP-H1 supplies 3.3 V to power the rails for the different components on the
+PGIA + ADAQ4003 Data Acquisition Board. The ADAQ4003 µModule use four power
+supply pins: the ADC driver positive supply (VS+), the ADC driver negative
+supply (VS−), the core ADC supply (VDD), and the digital input and output
+interface supply (VIO). The VIO pin allows the direct interface with any logic
+between 1.8 V and 5.5 V. A combination of the ADP5070 (dual, high-performance
+dc-to-dc switching regulator), the LT3032 (dual, low noise, positive and
+negative low dropout voltage linear regulator), and the LT3023 (dual,
+micropower, low noise, low dropout regulator) can generate independently
+regulated positive and negative rails for all four power supply pins, including
+±15 V rails for any additional signal conditioning.
 
 .. container:: centeralign
 
    *Table 1. Default Power Supplies*
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/power_supplies.svg
    :align: center
-   :width: 600px
+   :width: 600
 
-Each supply is decoupled at the PGIA + ADAQ4003 Data Acquisition Board entrance and device connection. A single, on-board ground plane minimizes the effect of the high frequency noise interference.
+Each supply is decoupled at the PGIA + ADAQ4003 Data Acquisition Board entrance
+and device connection. A single, on-board ground plane minimizes the effect of
+the high frequency noise interference.
 
-In addition, the PGIA + ADAQ4003 Data Acquisition Board can be powered from a benchtop power supply of ±16 V. The +16 V, −16 V, and GND test points are available on board to support this function. When bench power is used, the on-board power supplies are no longer required, and the link between the output pin of the ADP5070 must be removed, that is, uninstall R65 and R66.
+In addition, the PGIA + ADAQ4003 Data Acquisition Board can be powered from a
+benchtop power supply of ±16 V. The +16 V, −16 V, and GND test points are
+available on board to support this function. When bench power is used, the
+on-board power supplies are no longer required, and the link between the output
+pin of the ADP5070 must be removed, that is, uninstall R65 and R66.
 
-Take the following steps to set up the PGIA + ADAQ4003 Data Acquisition Board when using a benchtop power supply of ±16 V:
+Take the following steps to set up the PGIA + ADAQ4003 Data Acquisition Board
+when using a benchtop power supply of ±16 V:
 
 -  Connect the PGIA + ADAQ4003 Data Acquisition Board to the Isolated PMOD-to-FMC interposer board at the P1 header (see Figure 17).
 -  Connect the Isolated PMOD-to-FMC interposer board to the SDP-H1 via the 160-pin FMC connector.
 -  Connect the USB and a 12 V power adapter to the SDP-H1. Ensure that the software and drivers are installed.
 -  Connect the +16 V and −16 V bench supplies to the +16 V and −16 V test points on the PGIA + ADAQ4003 Data Acquisition Board. Connect also the bench supply ground to the GND test point (see Figure 22).
--  Power up the benchtop supply. The +16 V supply rail draws approximately 25 mA, and the −16 V supply rail draws approximately 20 mA.
+-  Power up the benchtop supply. The +16 V supply rail draws approximately 25
+   mA, and the −16 V supply rail draws approximately 20 mA.
 
 .. container:: centeralign
 
    |image22| *Figure 22. External Supply Optional Connections*
 
-
-The evaluation kit is now ready to use. Note that by default, the PGIA + ADAQ4003 Data Acquisition Board are set up to accept a differential input with a 22 V range.
+The evaluation kit is now ready to use. Note that by default, the PGIA +
+ADAQ4003 Data Acquisition Board are set up to accept a differential input with a
+22 V range.
 
 SDP-H1 Controller Board
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -324,16 +332,22 @@ Analog Inputs
 
 The analog input signals of the board are the Subminiature Version A (SMA) connectors, J3 and J4, by default. Similarly, an option for the Subminiature Version B (SMB) connectors, J1 and J2 are also available. These analog inputs are fed to the dedicated amplifier circuitry, :adi:`ADA4627-1` (A1 and A2), and are set as unity-gain buffers at the factory.
 
-The analog inputs are fully differential by default, with both inputs floating with high impedance. Thus, ensure the signal source is properly biased to a common-mode voltage. See Table 2 for input range configuration and control.
+The analog inputs are fully differential by default, with both inputs floating
+with high impedance. Thus, ensure the signal source is properly biased to a
+common-mode voltage. See Table 2 for input range configuration and control.
 
-Measure the true dynamic range of the board by connecting the two inputs to the board’s ground reference by using SMA terminators (see Figure 23).
+Measure the true dynamic range of the board by connecting the two inputs to the
+board’s ground reference by using SMA terminators (see Figure 23).
 
 .. container:: centeralign
 
    |image23| *Figure 23. Short the inputs to ground using SMA terminators to measure the Signal Chain Dynamic Range*
 
-
-For dynamic performance, a fast Fourier transform (FFT) test can be performed by applying a low distortion AC source. For low frequency testing, the audio precision source, such as the APx500 series, can be used directly with the evaluation boards. Different precision sources can be used with additional filtering.
+For dynamic performance, a fast Fourier transform (FFT) test can be performed by
+applying a low distortion AC source. For low frequency testing, the audio
+precision source, such as the APx500 series, can be used directly with the
+evaluation boards. Different precision sources can be used with additional
+filtering.
 
 Hardware Link Options
 ~~~~~~~~~~~~~~~~~~~~~
@@ -344,20 +358,21 @@ Set the multiple link options correctly for the appropriate operating setup befo
 
    *Table 1. Jumper Details with Factory Default Setting*
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/link_config.svg
    :align: center
-   :width: 600px
+   :width: 600
 
 Precision Medium Bandwidth Data Acquisition Solution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This Data Acquisition Solution has 4 gain options, as shown in Table 2. The gain of the signal chain can be controlled by changing the logic levels of the ADG1209 A0 and A1 pins. This can be done through the software or by adjusting the jumpers JA0 and JA1.
+This Data Acquisition Solution has 4 gain options, as shown in Table 2. The gain
+of the signal chain can be controlled by changing the logic levels of the
+ADG1209 A0 and A1 pins. This can be done through the software or by adjusting
+the jumpers JA0 and JA1.
 
 .. container:: centeralign
 
    *Table 2. System Gain and Input Range*
-
 
    |image24|
 
@@ -366,17 +381,13 @@ DC Performance
 
 Figure 24 shows the DNL vs. Gain Performance of the data acquisition solution.
 
-
 |image25|
 
 .. container:: centeralign
 
    *Figure 24. DNL vs. Code vs. Gain*
 
-
 Figure 25 shows the INL vs. Gain Performance of the data acquisition solution.
-
-
 
 |image26|
 
@@ -384,12 +395,11 @@ Figure 25 shows the INL vs. Gain Performance of the data acquisition solution.
 
    *Figure 25. INL vs. Code vs. Gain*
 
-
 AC Performance
 ^^^^^^^^^^^^^^
 
-Figure 26 shows the Dynamic Range vs. Gain Performance of the data acquisition solution.
-
+Figure 26 shows the Dynamic Range vs. Gain Performance of the data acquisition
+solution.
 
 |image27|
 
@@ -397,10 +407,8 @@ Figure 26 shows the Dynamic Range vs. Gain Performance of the data acquisition s
 
    *Figure 26. Dynamic Range vs. Gain*
 
-
-Figure 27 shows the Signal-to-Noise Ratio (SNR) vs. Frequency vs. Gain Performance of the data acquisition solution.
-
-
+Figure 27 shows the Signal-to-Noise Ratio (SNR) vs. Frequency vs. Gain
+Performance of the data acquisition solution.
 
 |image28|
 
@@ -408,17 +416,14 @@ Figure 27 shows the Signal-to-Noise Ratio (SNR) vs. Frequency vs. Gain Performan
 
    *Figure 27. SNR vs. Frequency vs. Gain*
 
-
-Figure 28 shows the Total Harmonic Distortion (THD) vs. Frequency vs. Gain Performance of the data acquisition solution.
-
-
+Figure 28 shows the Total Harmonic Distortion (THD) vs. Frequency vs. Gain
+Performance of the data acquisition solution.
 
 |image29|
 
 .. container:: centeralign
 
    *Figure 28. THD vs. Frequency vs. Gain*
-
 
 Software GUI Setup
 ------------------
@@ -435,7 +440,6 @@ After installing the :adi:`ADSKPMB10-EV-FMCZ` Evaluation Software Installer (see
 
    |image30|\ *Figure 29. Launching the Software*
 
-
 Establishing Hardware Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -447,14 +451,12 @@ If the software does not detect a valid :adi:`ADSKPMB10-EV-FMCZ` evaluation boar
 
    |image31|\ *Figure 29. Connectivity Error Dialog Box*
 
-
 Navigating the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: centeralign
 
    |image32| *Figure 30. ADSKPMB10-EV-FMCZ Evaluation Software Front Panel (Configure Tab View)*
-
 
 Front Panel Overview
 ^^^^^^^^^^^^^^^^^^^^
@@ -544,7 +546,6 @@ Waveform Tab View
 
    |image33| *Figure 31. Waveform Tab View*
 
-
 Figure 31 shows the **Waveform** tab view. The **Waveform** tab view shows the time domain representation of the conversion results from the connected device, as well as several analysis items. The **Waveform** tab view contains the following controls and indicators:
 
 -  **Waveform graph** (Label 1 in Figure 31): displays the time domain plot of the most recently captured or loaded conversion results. The scale and range of the waveform graph can be set in the **Waveform Analysis** box by double clicking on the **Minimum Value** and **Maximum Value** fields and entering the desired values. The waveform graph also includes viewing tools that are described in Graph Viewing Controls section.
@@ -565,7 +566,6 @@ Histogram Tab View
 .. container:: centeralign
 
    |image34| *Figure 32. Histogram Tab View*
-
 
 Figure 32 shows the **Histogram** tab view. The **Histogram** tab is useful for performing statistical analysis of the device conversion results, especially when measuring DC signals. The histogram graph shows the distribution of the conversion results as well as various statistical analysis items. The **Histogram** tab contains the following controls and indicators:
 
@@ -589,7 +589,6 @@ FFT Tab View
 .. container:: centeralign
 
    |image35| *Figure 33. FFT Tab View*
-
 
 Figure 33 shows the **FFT** tab view. The **FFT** tab displays the calculated FFT representation of the conversions results from the connected device and common AC performance metrics. The **FFT** tab contains the following controls and indicators:
 
@@ -625,8 +624,10 @@ Summary Tab View
 
    |image36| *Figure 34. Summary Tab View*
 
-
-Figure 34 shows the Summary tab view. The Summary tab simultaneously displays the waveform, histogram, and FFT graphs and analysis for the device conversion results on the screen. The Summary tab contains the following controls and indicators:
+Figure 34 shows the Summary tab view. The Summary tab simultaneously displays
+the waveform, histogram, and FFT graphs and analysis for the device conversion
+results on the screen. The Summary tab contains the following controls and
+indicators:
 
 -  **Waveform graph** (Label 1 in Figure 34): displays the time domain plot of the most recently captured or loaded conversion results. The scale and range of the waveform graph can be set by double-clicking on the minimum and maximum axis values along the x-axis and y-axis and entering the desired values. The waveform graph also includes viewing tools that are described in Graph Viewing Controls section.
 -  **Histogram graph** (Label 2 in Figure 34): displays the histogram of the most recently captured or loaded conversion results. The scale and range of the histogram graph can be set by double-clicking on the minimum and maximum values along the x-axis and y-axis and entering the desired values. The histogram graph also includes viewing tools that are described in Graph Viewing Controls section.
@@ -651,7 +652,8 @@ Figure 34 shows the Summary tab view. The Summary tab simultaneously displays th
 Graph Viewing Controls
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The tools described below allow users to control the different chart displays within any of the chart panels in the graphical user interface (GUI) tabs.
+The tools described below allow users to control the different chart displays
+within any of the chart panels in the graphical user interface (GUI) tabs.
 
 ========= ====================================================
 Symbol    Description
@@ -672,7 +674,6 @@ The evaluation software also allows the user to export the raw data of any of th
 
    |export_to_excel.png| *Figure 35. Export Raw Data*
 
-
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 
@@ -692,7 +693,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Troubleshooting
 ---------------
 
@@ -705,7 +705,9 @@ To troubleshoot the software, take the following steps:
 -  Make sure to completely finish the installation (the software is a two-part installation, the evaluation software and the SDP-H1 drivers). A restart is recommended after installation is finished.
 -  When the user initially plugs in the SDP-H1 via the provided USB cable, allow the Found New Hardware Wizard to run, which can take several seconds. Allow this to happen first before starting the software.
 -  If the :adi:`ADSKPMB10-EV-FMCZ` or SDP-H1 board are connected to the PC via the USB port, but are not detected by the software, ensure that the board is being recognized in the Device Manager, as shown in Figure 18.
--  If connected to a slower USB port where the SDP-H1 cannot read as quickly as it needs to, a timeout error can result. In this case, it is advised not to read continuously, or alternatively, to lower the number of samples taken.
+-  If connected to a slower USB port where the SDP-H1 cannot read as quickly as
+   it needs to, a timeout error can result. In this case, it is advised not to
+   read continuously, or alternatively, to lower the number of samples taken.
 
 Hardware
 ~~~~~~~~
@@ -718,9 +720,13 @@ To troubleshoot the hardware, take the following steps:
    -  Using a voltmeter, measure the voltage present at each of the test points: P15V, N15V, N1V, 1V8, and 5V5. Note that the LED1 on the SDP-H1 must be lit.
    -  Launch the software and read the data. If nothing happens, exit the software.
    -  Power down the board and relaunch the software.
-   -  If no data is read back, confirm that the evaluation board is connected to the SDP-H1, and that the SDP-H1 is being recognized in the Device Manager, as shown in Figure 18.
+   -  If no data is read back, confirm that the evaluation board is connected to
+      the SDP-H1, and that the SDP-H1 is being recognized in the Device Manager,
+      as shown in Figure 18.
 
--  When the user is working with the software in standalone/offline mode (no hardware connected) and later chooses to connect hardware, close and relaunch the software.
+-  When the user is working with the software in standalone/offline mode (no
+   hardware connected) and later chooses to connect hardware, close and relaunch
+   the software.
 
 Additional Information and Useful Links
 ---------------------------------------
@@ -748,7 +754,6 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/ADSKPMB10-EV-FMCZ?&v=RevB>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/adskpmb10-ev-fmcz_kit_top.jpg
@@ -775,17 +780,17 @@ Registration
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/external_supply.png
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/terminator.png
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/input_range.svg
-   :width: 600px
+   :width: 600
 .. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/05_dnl_across_gains.svg
-   :width: 600px
+   :width: 600
 .. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/06_inl_across_gains.svg
-   :width: 600px
+   :width: 600
 .. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/dynamic_range_last.svg
-   :width: 600px
+   :width: 600
 .. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/snr_vs_frequency_vs_gain.svg
-   :width: 600px
+   :width: 600
 .. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/thd_vs_frequency_vs_gain.svg
-   :width: 600px
+   :width: 600
 .. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/launching_the_software.png
 .. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/connectivity_error.png
 .. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/configure_tab_view.png

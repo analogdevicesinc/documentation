@@ -18,7 +18,6 @@ Main Features
 
    LFXTAL feature on ADuCM4050 is not supported currently
 
-
 Board
 -----
 
@@ -37,7 +36,9 @@ Back-Side
 Power
 -----
 
-The MCU Cog board offers flexibility in terms of power supply and power muxing options. This is achieved with the use of jumpers on the board. The Cog board also offers multiple test points for monitoring current consumption.
+The MCU Cog board offers flexibility in terms of power supply and power muxing
+options. This is achieved with the use of jumpers on the board. The Cog board
+also offers multiple test points for monitoring current consumption.
 
 Power Supply Options
 ~~~~~~~~~~~~~~~~~~~~
@@ -56,31 +57,31 @@ Power Muxing Options
 
 For details of the power muxing scheme, refer to the figure below.
 
-
 |image1|
 
 .. danger::
 
-   Do not insert shunt b/w positions 5 & 6 of JH4 when using USB supply. Doing so can permanently damage this board.
-
+   Do not insert shunt b/w positions 5 & 6 of JH4 when using USB supply. Doing
+   so can permanently damage this board.
 
 .. tip::
 
    Refer to the *Jumper Settings* section further below for details on power related jumpers on the board
-
 
 Power Regulator
 ~~~~~~~~~~~~~~~
 
 The MCU Cog board uses an on-board switching regulator - the :adi:`ADP5300 <en/products/power-management/switching-power-converters/switching-regulators/adp5300.html>`, which is a high efficiency, ultra-low power step down regulator. The MCU has complete control over the switching modes of the regulator via GPIO. The pin-mapping is shown in the table below.
 
-
 |direct|
 
 Current Measurement Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The MCU Cog enables IOT developers to measure and profile current consumption at different places on the board to enable isolation of current consumption hotspots. The current measure test points shown in the table below can be used along with a digital multimeter to profile current consumption.
+The MCU Cog enables IOT developers to measure and profile current consumption at
+different places on the board to enable isolation of current consumption
+hotspots. The current measure test points shown in the table below can be used
+along with a digital multimeter to profile current consumption.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/24072017-tile-revb-current-test-points.png
    :alt: 24072017-tile-revb-current-test-points.png
@@ -98,8 +99,8 @@ The MCU Cog offers the following debug options:
 
 .. tip::
 
-   It is possible to route UART over USB through the on-board CMSIS-DAP debugger. The maximum baud rate that can be achieved in this case is 230400
-
+   It is possible to route UART over USB through the on-board CMSIS-DAP
+   debugger. The maximum baud rate that can be achieved in this case is 230400
 
 Wireless Connectivity Options
 -----------------------------
@@ -109,7 +110,8 @@ The MCU Cog board offers support for ADI RF daughter-cards such as the EV-ADF703
 Buttons/LED(s)
 --------------
 
-The MCU Cog offers 2 buttons and 2 LED(s) that can be used by the Application. The default GPIO connections are shown in the tables below.
+The MCU Cog offers 2 buttons and 2 LED(s) that can be used by the Application.
+The default GPIO connections are shown in the tables below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/24072017-tile-revb-buttons-leds2.png
    :alt: 24072017-tile-revb-buttons-leds2.png
@@ -117,7 +119,12 @@ The MCU Cog offers 2 buttons and 2 LED(s) that can be used by the Application. T
 Expansion Connectors
 --------------------
 
-One of the USP of the MCU Cog is access to ALL GPIO via Expansion Connectors ("C1" and "C2") for an Add-on card to utilize in its Application. This enables developers to confidently build final form factor hardware without having to worry about porting their firmware. The figures below capture the pin-mapping and jumpers that need to be changed to get external access (via the expansion connectors) to GPIO (as well as power/reset, etc).
+One of the USP of the MCU Cog is access to ALL GPIO via Expansion Connectors
+("C1" and "C2") for an Add-on card to utilize in its Application. This enables
+developers to confidently build final form factor hardware without having to
+worry about porting their firmware. The figures below capture the pin-mapping
+and jumpers that need to be changed to get external access (via the expansion
+connectors) to GPIO (as well as power/reset, etc).
 
 |image2|\ |image3|
 
@@ -125,7 +132,6 @@ Jumper Settings
 ---------------
 
 The MCU Cog offers flexibility in terms of power muxing options and the facility to route any GPIO externally via the expansion connectors "C1" and "C2". This is achieved with the use of jumpers. The MCU Cog has two types of jumpers - those labelled "JHx" and which are 2x2 1.27mm pitch headers and those labelled "JPx" and which are solder jumpers. The "JHx" jumpers are expected to be used more frequently than the "JPx" jumpers. The figures below capture the jumper settings. |power-jumpers.png| |image4|
-
 
 |image5|
 
@@ -143,7 +149,9 @@ MCU Cog Design and Integration Files
 Add-on (Gear) Template
 ~~~~~~~~~~~~~~~~~~~~~~
 
-For developers designing a Cog add-on board, the template schematic/board files below might be a useful starting point. The board file has the placement of the expansion connectors as well as place-bound rules embedded.
+For developers designing a Cog add-on board, the template schematic/board files
+below might be a useful starting point. The board file has the placement of the
+expansion connectors as well as place-bound rules embedded.
 
 `Template Design Files (Cadence Allegro v16.6) <https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/20-047257-01a.zip>`_
 

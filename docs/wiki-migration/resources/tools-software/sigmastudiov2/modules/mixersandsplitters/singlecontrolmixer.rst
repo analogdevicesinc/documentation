@@ -9,12 +9,16 @@ Single Control Mixer
 Description
 -----------
 
-The Single Control Mixer lets you mix multiple inputs down to one output, with a single knob to set the gain of all inputs.
+The Single Control Mixer lets you mix multiple inputs down to one output, with a
+single knob to set the gain of all inputs.
 
 Usage
 -----
 
-To set the output gain, click the knob with the left mouse button and drag while holding down the button. The knob's range, value, and step size can be customized in the control pop-up window. To change the knob's settings, right-click on the knob control.
+To set the output gain, click the knob with the left mouse button and drag while
+holding down the button. The knob's range, value, and step size can be
+customized in the control pop-up window. To change the knob's settings,
+right-click on the knob control.
 
 Varaints
 --------
@@ -65,7 +69,6 @@ Name   Type                                   Description
 ====== ====================================== ================
 Output Control(ComplexPin for complex module) Output channel 0
 ====== ====================================== ================
-
 
 | ===== Configurable Parameters =====
 

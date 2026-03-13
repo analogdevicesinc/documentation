@@ -5,8 +5,13 @@ Data Offload Engine HDL IP Core
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/data_offload/index.html\
 
-
-The data offload engine is, in essence, a clock-domain crossing store-and-forward buffer (or FIFO) with some extra features useful in bursty RF applications. More specifically, it was designed to sit between a DMA and DAC for the TX and ADC and DAC for the RX path of a digital RF chain. This is reflected in the synthesis settings of the device, that also enable or disable certain other settings of features where appropriate. For example in the receive path cyclic operation isn't supported.
+The data offload engine is, in essence, a clock-domain crossing
+store-and-forward buffer (or FIFO) with some extra features useful in bursty RF
+applications. More specifically, it was designed to sit between a DMA and DAC
+for the TX and ADC and DAC for the RX path of a digital RF chain. This is
+reflected in the synthesis settings of the device, that also enable or disable
+certain other settings of features where appropriate. For example in the receive
+path cyclic operation isn't supported.
 
 Features
 --------
@@ -20,13 +25,16 @@ Features
 
 .. note::
 
-   The data offload does NOT support, in its current state, continuous streaming except when in bypass mode (Thus disabling all other functionality).
-
+   The data offload does NOT support, in its current state, continuous streaming
+   except when in bypass mode (Thus disabling all other functionality).
 
 Utilization
 -----------
 
-Utilization is estimated without a storage unit. The size and complexity of your storage unit depends completely on the kind of storage in use. For Block-RAM the complexity will be dependent on the amount of storage, while with external DRAM a fixed cost can be assumed.
+Utilization is estimated without a storage unit. The size and complexity of your
+storage unit depends completely on the kind of storage in use. For Block-RAM the
+complexity will be dependent on the amount of storage, while with external DRAM
+a fixed cost can be assumed.
 
 ======================= ==== ====
 Device Family           LUTs FFs
@@ -50,11 +58,19 @@ Files
 Architecture and Theory of Operation
 ------------------------------------
 
-The main role of our data paths, is to stream data from point A to point B in a particular system. There are always a SOURCE and a DESTINATION point, which can be a device (ADC or DAC), a DMA (for system memory) or any other data processing IP.
+The main role of our data paths, is to stream data from point A to point B in a
+particular system. There are always a SOURCE and a DESTINATION point, which can
+be a device (ADC or DAC), a DMA (for system memory) or any other data processing
+IP.
 
-In the context of Data Offload IP, we don't need to know who is the source and who is the destination. Both interface is a AXI4 Stream interface, which can be supported in both Xilinx's an Intel's architecture, and can be connected to any device core or DMA.
+In the context of Data Offload IP, we don't need to know who is the source and
+who is the destination. Both interface is a AXI4 Stream interface, which can be
+supported in both Xilinx's an Intel's architecture, and can be connected to any
+device core or DMA.
 
-The storage unit is connected to the Data Offload controller via two FIFO interface. This way the same controller can be used for various storage solutions. (BRAM, URAM, external memory etc.)
+The storage unit is connected to the Data Offload controller via two FIFO
+interface. This way the same controller can be used for various storage
+solutions. (BRAM, URAM, external memory etc.)
 
 Block Diagram
 -------------
@@ -134,8 +150,6 @@ Signal and Interface Pins
 Register Map
 ------------
 
-
-
 .. collapsible:: Click to expand
 
    +---------+--------+------------------+-----------------+------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -212,8 +226,6 @@ Register Map
    | 0x0081  | 0x0204 | SAMPLE_COUNT_LSB |                 |      |            |                                                                                                                                                                                                                                               |
    +---------+--------+------------------+-----------------+------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 +-------------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Access Type | Name             | Description                                                                                                                                                                                                                         |
 +=============+==================+=====================================================================================================================================================================================================================================+
@@ -234,9 +246,11 @@ Linux Driver
 The linux driver has two responsibilities:
 
 -  Initialize the data offload on startup.
--  Integrate with cf_axi_dds to allow IIO to utilize the data offload for cyclic operation.
+-  Integrate with cf_axi_dds to allow IIO to utilize the data offload for cyclic
+   operation.
 
-The former of those two is covered by the device tree, which implements five options:
+The former of those two is covered by the device tree, which implements five
+options:
 
 ::
 

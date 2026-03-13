@@ -1,4 +1,8 @@
-The lab is delivered together with a set of design files that are used to evaluate the ADI part. The FPGA image that must be loaded into the BeMicroSDK FPGA is included in the design files. This section presents the components included in the FPGA image and also the procedure to load the image into the FPGA.
+The lab is delivered together with a set of design files that are used to
+evaluate the ADI part. The FPGA image that must be loaded into the BeMicroSDK
+FPGA is included in the design files. This section presents the components
+included in the FPGA image and also the procedure to load the image into the
+FPGA.
 
 FPGA Components
 ===============
@@ -40,6 +44,7 @@ To load the FPGA image the following steps must be performed:
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image020.jpg
    :alt: image020.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
-After finishing, the image is permanently loaded to the configuration Flash and the system will start with a blinking LED after reset or power up.
+After finishing, the image is permanently loaded to the configuration Flash and
+the system will start with a blinking LED after reset or power up.

@@ -4,13 +4,13 @@ ADIN1110 10BASE-T1L MAC-PHY Linux Driver Quick Start
 Description
 -----------
 
-This is a Quick Start Guide on how to properly connect and use the EVAL-ADIN1110EBZ on multiple platforms in a Linux environment.
+This is a Quick Start Guide on how to properly connect and use the
+EVAL-ADIN1110EBZ on multiple platforms in a Linux environment.
 
 RPI 3
 ~~~~~
 
 Wiring/software needed is the same also for RPI 4.
-
 
 |image1|
 
@@ -30,13 +30,15 @@ GPIO 27 (Pin 13)            T1L_RESET_N
 
 .. note::
 
-   Connect both grounds (ideally) to the most accessible ground to you on the RPI 3.
-
+   Connect both grounds (ideally) to the most accessible ground to you on the
+   RPI 3.
 
 Board settings
 ^^^^^^^^^^^^^^
 
-ADIN1110 needs to operate in Generic SPI mode (see Datasheet) and with CRC protection enabled. In order to do this find S201 and set every switch to the following table:
+ADIN1110 needs to operate in Generic SPI mode (see Datasheet) and with CRC
+protection enabled. In order to do this find S201 and set every switch to the
+following table:
 
 ========= ========
 SWITCH    POSITION
@@ -59,9 +61,11 @@ Download an SD Card Image: :doc:`ADI Kuiper </wiki-migration/resources/tools-sof
 Preparing the SD card
 """""""""""""""""""""
 
-Write the image to the sd card: <code> sudo dd status=progress if=2022-05-29-ADI-Kuiper-full.img of=/dev/mmcblk0 bs=4M conv=fsync </code>
+Write the image to the sd card: <code> sudo dd status=progress
+if=2022-05-29-ADI-Kuiper-full.img of=/dev/mmcblk0 bs=4M conv=fsync </code>
 
-Setup RPI to use the ADIN1110 overlay. To do this go to the boot partition of the SD card and write in the config.txt file:
+Setup RPI to use the ADIN1110 overlay. To do this go to the boot partition of
+the SD card and write in the config.txt file:
 
 ::
 
@@ -72,7 +76,7 @@ NXP 8MMINI-BB
 ~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/8mmini-bb-eval-adin1110ebz.jpg
-   :width: 400px
+   :width: 400
 
 Wiring
 ^^^^^^
@@ -89,13 +93,15 @@ GPIO 25 (Pin 37)     T1L_INT_N
 
 .. note::
 
-   Connect both grounds (idealy) to the most accessible ground to you on the 8MMINI-BB.
-
+   Connect both grounds (idealy) to the most accessible ground to you on the
+   8MMINI-BB.
 
 Board settings
 ^^^^^^^^^^^^^^
 
-ADIN1110 needs to operate in Generic SPI mode (see Datasheet) and with CRC protection enabled. In order to do this find S201 and set every switch to the following table:
+ADIN1110 needs to operate in Generic SPI mode (see Datasheet) and with CRC
+protection enabled. In order to do this find S201 and set every switch to the
+following table:
 
 ========= ========
 SWITCH    POSITION
@@ -121,13 +127,15 @@ You need a SD Card with a NXP Linux image on it, more details `here <https://www
 
    6,8G imx-image-full-imx8mmevk.wic
 
-This you can directly write to an SD Card in order to get a functional 8MMINI-BB system:
+This you can directly write to an SD Card in order to get a functional 8MMINI-BB
+system:
 
 ::
 
    sudo dd status=progress if=imx-image-full-imx8mmevk.wic of=/dev/mmcblk0 bs=4M conv=fsync
 
-At this point you can insert the card in the 8MMINI-BB, power it, connect the UART and you should be able to login.
+At this point you can insert the card in the 8MMINI-BB, power it, connect the
+UART and you should be able to login.
 
 ::
 
@@ -166,7 +174,8 @@ Enable ADIN1100 and ADIN1110 from the make menuconfig.
    cp arch/arm64/boot/Image /media/<user>/boot/Image
    cp arch/arm64/boot/dts/freescale/imx8mm-evk.dtb /media/<user>/BOOT
 
-You also need to add ADIN1110 to the device tree. You can add the following line at the end of arch/arm64/boot/dts/freescale/imx8mm-evk.dts.
+You also need to add ADIN1110 to the device tree. You can add the following line
+at the end of arch/arm64/boot/dts/freescale/imx8mm-evk.dts.
 
 ::
 
@@ -258,7 +267,7 @@ NVIDIA Jetson Nano
 ~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/jetson_nano_adin1110_ebz.jpg
-   :width: 400px
+   :width: 400
 
 Wiring
 ^^^^^^
@@ -275,8 +284,11 @@ GPIO 13 (Pin 22)             T1L_INT_N
 
 .. note::
 
-   Connect both grounds (AGND) (idealy) to the most accessible ground to you on the Jetson Nano. Also, avoid powering the EVAL-ADIN1110EBZ from the USB of Jetson Nano, driver won't probe correctly because on power-up (not reboot), power to the USB is given too late in boot stage. (Try powering from 5V pins or externally if possible).
-
+   Connect both grounds (AGND) (idealy) to the most accessible ground to you on
+   the Jetson Nano. Also, avoid powering the EVAL-ADIN1110EBZ from the USB of
+   Jetson Nano, driver won't probe correctly because on power-up (not reboot),
+   power to the USB is given too late in boot stage. (Try powering from 5V pins
+   or externally if possible).
 
 Board settings
 ^^^^^^^^^^^^^^
@@ -298,16 +310,19 @@ MS_SEL    OFF
 Getting your Jetson Nano flashed with the SDK Manager
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Here we are flashing the Jetson Nano P3448. In this case we have the production kit that boots from an eMMC and not the one with the SD Card reader.
+Here we are flashing the Jetson Nano P3448. In this case we have the production
+kit that boots from an eMMC and not the one with the SD Card reader.
 
 .. note::
 
-   Skip this step if you have already flashed the Jetson Nano and have the 4.9 Kernel installed. Go to Changing the Kernel and DT step.
-
+   Skip this step if you have already flashed the Jetson Nano and have the 4.9
+   Kernel installed. Go to Changing the Kernel and DT step.
 
 Setup for NVIDIA Jetson Nano and ADIN1110 (8 Nov 2022)
 
-Download and load the Docker version of SDK Manager from NVIDIA. Power NVIDIA Jetson Nano board in recovery mode. (By connecting pin 9 and 10). Connect the UART.
+Download and load the Docker version of SDK Manager from NVIDIA. Power NVIDIA
+Jetson Nano board in recovery mode. (By connecting pin 9 and 10). Connect the
+UART.
 
 Launch the SDK Manager Docker:
 
@@ -320,12 +335,15 @@ Where 77ae6063b39c is the id of the docker loaded previously.
 
 Follow the instructions provided in the GUI of the SDK Manager.
 
-At the end of this process you should now have an NVIDIA Jetson Nano flashed with the 4.9 Linux Kernel Version. Make sure you can access the board via ssh, you will need it later.
+At the end of this process you should now have an NVIDIA Jetson Nano flashed
+with the 4.9 Linux Kernel Version. Make sure you can access the board via ssh,
+you will need it later.
 
 Changing the Kernel and DT
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to build the 4.9 Kernel and DTs from NVIDIA you need to setup the environment.
+In order to build the 4.9 Kernel and DTs from NVIDIA you need to setup the
+environment.
 
 1. Install the Linaro 7.3.1 2018.05 toolchain:
 
@@ -356,7 +374,8 @@ After following the guide above, you should have the following directories:
    drwxrwxr-x  3 <user> <user>      4096 nov 15 21:06 hardware
    drwxrwxr-x  5 <user> <user>      4096 nov 18 19:23 kernel
 
-By default the 4.9 Kernel does not have the ADIN1100 driver nor the ADIN1110. You will need to download the kernel sources, add the adin1100/adin1110 drivers.
+By default the 4.9 Kernel does not have the ADIN1100 driver nor the ADIN1110.
+You will need to download the kernel sources, add the adin1100/adin1110 drivers.
 
 Extract this archive `4.9.253-adin1110_tegra_files.zip <https://wiki.analog.com/_media/resources/quick-start/4.9.253-adin1110_tegra_files.zip>`_ and copy the contents of adi_tegra_files in Linux_for_Tegra/source/public path. This archive contains:
 
@@ -401,7 +420,8 @@ On ADI repo there is a branch with both :git-linux:`ADIN1100 and ADIN1110 backpo
 Building the Kernel and DT
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Run the commands bellow in order to build the kernel and the dtbs. No need to also build/install the modules at this point.
+Run the commands bellow in order to build the kernel and the dtbs. No need to
+also build/install the modules at this point.
 
 ::
 
@@ -422,7 +442,8 @@ After running the commands above you should have the following resources:
 
 .. note::
 
-   If using a make newer than 4.3, there is a BUG, workaround is to: To make it working you must edit the file: scripts/Kbuild.include Then change lines:
+   If using a make newer than 4.3, there is a BUG, workaround is to: To make it
+   working you must edit the file: scripts/Kbuild.include Then change lines:
 
    
    ::
@@ -438,7 +459,6 @@ After running the commands above you should have the following resources:
       the-space = $E $E
    
 
-
 Installing the Kernel and DT
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -449,7 +469,8 @@ Copy the binaries to the board:
    scp build/arch/arm64/boot/Image <user>@<jetson-nano-ip>:.
    scp ./build/arch/arm64/boot/dts/tegra210-p3448-0002-p3449-0000-b00-adin1110.dtb <user>@<jetson-nano-ip>:.
 
-Login on the board and copy these files to the /boot folder. Boot partion should be mounted there:
+Login on the board and copy these files to the /boot folder. Boot partion should
+be mounted there:
 
 ::
 
@@ -525,4 +546,4 @@ Details about the :doc:`ADIN1100 Linux Driver </wiki-migration/resources/tools-s
 Details about the :doc:`ADIN1110 Linux Driver </wiki-migration/resources/tools-software/linux-drivers/net-mac-phy/adin1110>`.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/rpi3_adin1110-ebz.jpg
-   :width: 400px
+   :width: 400

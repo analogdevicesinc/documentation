@@ -17,7 +17,9 @@ The SS+ target library for ADSP-215xx processors is
    • libadi_sigma_sharc_215xx.dlb: SHARC Target Library generated with Short Word Code (VISA) and byte-addressing
      mode for ADSP-215xx processors.
 
-Note: The Framework Source files, which are available in Target/Framework/Source and Target/Sys/Source can be used along with the libraries, to create a whole Application.
+Note: The Framework Source files, which are available in Target/Framework/Source
+and Target/Sys/Source can be used along with the libraries, to create a whole
+Application.
 
 Include Files
 

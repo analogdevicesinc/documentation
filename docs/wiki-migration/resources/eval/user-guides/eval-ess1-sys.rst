@@ -3,16 +3,19 @@ EVAL-ESS1-SYS Getting Started Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-ess1-sys/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Introduction
 ------------
@@ -68,7 +71,6 @@ Equipment Needed
    -  2x wall plugs to plug USB cable from DC2472A to provide power
    
 
-
 Documentation Needed
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -83,11 +85,11 @@ Software Needed
 
    BMS Browser/Windows®-based graphical user interface program can be downloaded through :adi:`BMS Browser GUI Broad Market <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
-
 .. note::
 
-   When software updates or new versions of the software are available an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.
-
+   When software updates or new versions of the software are available an email
+   notification will be sent to the email address associated with the MyAnalog
+   account used to download the original software package.
 
 --------------
 
@@ -99,14 +101,15 @@ Evaluation Software
 
 .. container:: indent
 
-   The BMS Browser is a PC browser based Graphical User Interface (GUI) tool designed to work in conjunction with the hardware in the EVAL-ESS1-SYS kit. MyAnalog.com account will be required to download the BMS Browser GUI from below link:
-
+   The BMS Browser is a PC browser based Graphical User Interface (GUI) tool
+   designed to work in conjunction with the hardware in the EVAL-ESS1-SYS kit.
+   MyAnalog.com account will be required to download the BMS Browser GUI from
+   below link:
 
 .. admonition:: Download
    :class: download
 
    :adi:`BMS Broad Market/ESS GUI <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
-
 
 BMS Browser GUI Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,27 +119,28 @@ BMS Browser GUI Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_install.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Accept the license terms and click next to proceed with the installation.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_license.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Default installation directory will be in **C:\\Analog Devices\\**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_destination.png
    :align: center
-   :width: 500px
+   :width: 500
 
 MCU Configuration & Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
 
-   The MCU should be programmed with the correct firmware when received as part of the EVAL-ESS1-SYS kit. Only use this section if the firmware on the MCU board has been updated for other evaluation purposes.
-
+   The MCU should be programmed with the correct firmware when received as part
+   of the EVAL-ESS1-SYS kit. Only use this section if the firmware on the MCU
+   board has been updated for other evaluation purposes.
 
 .. container:: indent
 
@@ -148,19 +152,23 @@ MCU Configuration & Setup
    -  a. Download the firmware file `max32625_max32690evkit_if_crc_swd_v1.0.7.bin <https://confluence.analog.com/download/attachments/984201370/max32625_max32690evkit_if_crc_swd_v1.0.7.bin?version=1&modificationDate=1709666334248&api=v2>`_ for the MAX32625PICO board.
    -  b. Consult the `MSDK User Guide <https://analogdevicesinc.github.io/msdk/USERGUIDE/#updating-the-max32625pico-pico-debug-adapter-firmware>`_ for detailed instructions on updating the MAX32625PICO Debug Adapter Firmware.
    
-      -  Plug in the MAX32625PICO board while holding the on-board button. A red LED should blink, then hold steady, and a MAINTENANCE drive should appear on your PC.
+      -  Plug in the MAX32625PICO board while holding the on-board button. A red
+         LED should blink, then hold steady, and a MAINTENANCE drive should
+         appear on your PC.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/max32625pico_maxdap.png
       :align: center
-      :width: 200px
+      :width: 200
    
    -  “Drag-n-drop” the .hex file onto the MAINTENANCE drive. The file transfer should be complete in about 30 seconds.
    -  Unplug and replug the device.
-   -  After completion, a “DAPLINK” drive should appear. You can drag and drop the firmware (.hex files separate from the above) onto it to program the AD-APARD32690-SL when the probe is properly connected.
+   -  After completion, a “DAPLINK” drive should appear. You can drag and drop
+      the firmware (.hex files separate from the above) onto it to program the
+      AD-APARD32690-SL when the probe is properly connected.
    
 
-
--  Connect the MAX32625PICO to the AD-APARD32690-SL at P9, ensuring the correct 10-pin ribbon cable orientation.
+-  Connect the MAX32625PICO to the AD-APARD32690-SL at P9, ensuring the correct
+   10-pin ribbon cable orientation.
    **NOTE:** Not all PICO Debuggers have a key lock on the ribbon cable connector.
 -  Connect a USB cable from the AD-APARD32690-SL (via P10) to the PC.
 -  Connect another USB cable from the MAX32625PICO to the PC.
@@ -169,7 +177,10 @@ MCU Configuration & Setup
 -  Drag the “\ **usb-to-spi-max32690.hex**\ ” file to the DAPLINK drive to flash the firmware needed by the BMS Browser GUI.
 -  A normal copy progress dialog will appear. Once the progress bar is completed, the dialog window will close, and the DAPLINK drive will reconnect. The LED D5 of AD-APARD32690-SL should also be green at this moment.
 -  You may disconnect both boards and remove the MAX32625PICO.
--  The AD-APARD32690-SL is now ready to be used with the other boards in the evaluation kit. If you are using this MCU board for other purposes, different firmware loads will be required, as this firmware version is only intended for use with the BMS Browser.
+-  The AD-APARD32690-SL is now ready to be used with the other boards in the
+   evaluation kit. If you are using this MCU board for other purposes, different
+   firmware loads will be required, as this firmware version is only intended
+   for use with the BMS Browser.
 
 Launching the BMS Browser GUI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -193,13 +204,19 @@ EV-ADES1830CCSZ Quick Test
 
 .. important::
 
-   Do not attempt to discharge the cells using the EV-ADES1830 attached to the cell simulator. This will draw in too much current and will damage the ADES1830's internal FETs. Instead, if balancing the board is the intention, connect power supply outputs to each cell input and discharge the switches that way.
+   Do not attempt to discharge the cells using the EV-ADES1830 attached to the
+   cell simulator. This will draw in too much current and will damage the
+   ADES1830's internal FETs. Instead, if balancing the board is the intention,
+   connect power supply outputs to each cell input and discharge the switches
+   that way.
 
-
-Before setting up the entire signal chain, it is advisable to test and evaluate each board individually. The following instructions outline how to start taking measurements with the EV-ADES1830CCSZ.
+Before setting up the entire signal chain, it is advisable to test and evaluate
+each board individually. The following instructions outline how to start taking
+measurements with the EV-ADES1830CCSZ.
 
 -  Attach the EVAL-ADBMS6822 board to the AD-APARD32690-SL Arduino headers.
--  Use the DuraClik-to-RJ45 cable to connect the MAIN isoSPI port on the EVAL-ADBMS6822 to PORT A on the EV-ADES1830CCSZ.
+-  Use the DuraClik-to-RJ45 cable to connect the MAIN isoSPI port on the
+   EVAL-ADBMS6822 to PORT A on the EV-ADES1830CCSZ.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/single_chain.png
    :align: center
@@ -220,11 +237,14 @@ Before setting up the entire signal chain, it is advisable to test and evaluate 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/1.10.png
    :align: center
 
--  Check the Total PEC Status on the 3rd row under the Memory Map. This indicates the status of the isoSPI link between the EVAL-ADBMS6822 and the EV-ADES1830CCSZ.
+-  Check the Total PEC Status on the 3rd row under the Memory Map. This
+   indicates the status of the isoSPI link between the EVAL-ADBMS6822 and the
+   EV-ADES1830CCSZ.
 
    -  Ensure the EV-ADES1830FCCZ board is powered correctly, indicated by the Blue LED on the DC2472A being illuminated.
    -  Verify the connection of the twisted cable between the EVAL-ADBMS6822 and the EV-ADES1830CCSZ.
-   -  Double-check the jumper settings on the EVAL-ADBMS6822 and its connection to the Arduino header on the AD-APARD3269-SL.
+   -  Double-check the jumper settings on the EVAL-ADBMS6822 and its connection
+      to the Arduino header on the AD-APARD3269-SL.
 
 -  Check the voltage readings by adjusting the potentiometer (POT1) on the DC2472A to modify the emulated cell voltages. Monitor the voltage channels on the **Quick Measure Utility graph**. Select which signals to display on the graph under the **Plot All Devices** column.
 
@@ -234,16 +254,22 @@ Before setting up the entire signal chain, it is advisable to test and evaluate 
 EVAL-ADBMS2950-BASIC Quick Test
 -------------------------------
 
-The next part of this guide explains how to perform basic measurements with the EVAL-ADBMS2950-BASIC. You'll need a benchtop power supply to create a current through the shunt resistor on the EVAL-ADBMS2950-BASIC.
+The next part of this guide explains how to perform basic measurements with the
+EVAL-ADBMS2950-BASIC. You'll need a benchtop power supply to create a current
+through the shunt resistor on the EVAL-ADBMS2950-BASIC.
 
--  Connect the isoA of EVAL-ADBMS2950-BASIC to J1 of the EVAL-ADBMS6822 using the provided DuraClik-to-DuraClik cable. Ensure the EVAL-ADBMS6822 is connected to the AD-APARD32690-SL as done previously and linked to the PC.
+-  Connect the isoA of EVAL-ADBMS2950-BASIC to J1 of the EVAL-ADBMS6822 using
+   the provided DuraClik-to-DuraClik cable. Ensure the EVAL-ADBMS6822 is
+   connected to the AD-APARD32690-SL as done previously and linked to the PC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/2950_to_apard.png
    :align: center
 
 -  Choose between two options for powering the EVAL-ADBMS2950-BASIC:
 
-   -   Supply 5V to J1 and set the current limit to 200 mA. The EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode and ~100 mA in active mode.
+   -   Supply 5V to J1 and set the current limit to 200 mA. The
+       EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode and ~100 mA in active
+       mode.
 
       -  Alternatively, power it via a micro-USB cable connected to J10.
 
@@ -261,7 +287,10 @@ The next part of this guide explains how to perform basic measurements with the 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/2.8.png
    :align: center
 
--  Check the current through the shunt by selecting I1 ADC result in the Memory Map. With a 50 μΩ shunt resistor and a 5A current, the expected I1 ADC voltage is 0.00025. Adjust the current to 4.5A, resulting in an expected I1 ADC Result of 0.000225.
+-  Check the current through the shunt by selecting I1 ADC result in the Memory
+   Map. With a 50 μΩ shunt resistor and a 5A current, the expected I1 ADC
+   voltage is 0.00025. Adjust the current to 4.5A, resulting in an expected I1
+   ADC Result of 0.000225.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/2.9.png
    :align: center
@@ -269,15 +298,23 @@ The next part of this guide explains how to perform basic measurements with the 
 Complete Daisy Chain Test
 -------------------------
 
-Once familiar with the setup for each of the individual boards the entire signal chain can be verified.
+Once familiar with the setup for each of the individual boards the entire signal
+chain can be verified.
 
--  Connect the hardware using the provided isoSPI cables. Power DC2472A boards using the USB cable connected to a wall plug. Power the EVAL-ADBMS2950-BASIC through either J1 or the USB connector, as explained earlier.
+-  Connect the hardware using the provided isoSPI cables. Power DC2472A boards
+   using the USB cable connected to a wall plug. Power the EVAL-ADBMS2950-BASIC
+   through either J1 or the USB connector, as explained earlier.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/ess_hardware_setup.png
    :align: center
 
 -  Launch the **BMS Browser** following the previous instructions and choose the appropriate COM port.
--  Set up the Daisy Chain according to the diagram provided. The EVAL-ADBMS2950-BASIC is positioned at the top, indicating it is the initial device on the chain, connected to the EVAL-ADBMS6822. The first EV-ADES1830CCSZ connects to the EVAL-ADBMS2950-BASIC using the DuraClik-to-RJ45 cable, while the second EV-ADES1830CCSZ is linked to the first one via the RJ45-to-RJ45 cable.
+-  Set up the Daisy Chain according to the diagram provided. The
+   EVAL-ADBMS2950-BASIC is positioned at the top, indicating it is the initial
+   device on the chain, connected to the EVAL-ADBMS6822. The first
+   EV-ADES1830CCSZ connects to the EVAL-ADBMS2950-BASIC using the
+   DuraClik-to-RJ45 cable, while the second EV-ADES1830CCSZ is linked to the
+   first one via the RJ45-to-RJ45 cable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/3.2.png
    :align: center
@@ -309,14 +346,16 @@ Once familiar with the setup for each of the individual boards the entire signal
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/dc_9c.png
    :align: center
 
--  Plot settings can be saved to the PC to be reloaded for future session to save time.
+-  Plot settings can be saved to the PC to be reloaded for future session to
+   save time.
 
 --------------
 
 Help and Support
 ----------------
 
-For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer
+Zone.
 
 .. hint::
 
@@ -325,7 +364,6 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    
    For external users, please post your questions under the :ez:`Reference Designs <reference-designs>` forum in EngineerZone to get assistance from the community and experts.
    
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/dc_9a.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/dc_9b.png

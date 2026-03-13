@@ -30,7 +30,7 @@ Each specific command has a set of inputs (with ranges) for the command. These i
 For example, the command *a2b*, takes an input: *cmd*, where the range for *cmd* is a *string* type taking either *main* or *sub*:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/help_a2b.png
-   :width: 400px
+   :width: 400
 
 As seen displayed by the shell by typing *help a2b* as seen above, for example. An exhaustive list of shell commands can be found below.
 
@@ -55,6 +55,5 @@ Command List
 | :doc:`Development and Debug Commands </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/development-commands>` | Shell commands used for development and debug purposes                                                             | edit, test, run, dump, fdump, delay, i2c, i2c_probe, syslog, stacks, cpu, usb, update, meminfo, resize, syslog, ver, shell, echo |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/help-cmd.png
-   :width: 400px
+   :width: 400

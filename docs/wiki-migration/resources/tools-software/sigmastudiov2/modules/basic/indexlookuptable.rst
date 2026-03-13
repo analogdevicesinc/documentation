@@ -11,9 +11,15 @@ Index LookUp Table
 Description
 -----------
 
-The Index Lookup Table block lets you access values stored in a lookup table (LUT). They're accessible through a table index input pin.
+The Index Lookup Table block lets you access values stored in a lookup table
+(LUT). They're accessible through a table index input pin.
 
-For this algorithm, the input is the index value into the LUT. By default the module expect the index to be in integer format (32.0 or 28.0 depends on the SigmaDSP). The input format can be changed to fractional (8.24 depends on the SigmaDSP) by clicking the Green color circle in the module. Zero (0) will index the first value in the table. Recompiling is required when the input format is changed.
+For this algorithm, the input is the index value into the LUT. By default the
+module expect the index to be in integer format (32.0 or 28.0 depends on the
+SigmaDSP). The input format can be changed to fractional (8.24 depends on the
+SigmaDSP) by clicking the Green color circle in the module. Zero (0) will index
+the first value in the table. Recompiling is required when the input format is
+changed.
 
 Usage
 -----
@@ -65,7 +71,6 @@ Name    Type    Description
 ======= ======= =============================
 Output0 Control LUT value for the Table index
 ======= ======= =============================
-
 
 | ===== Configurable Parameters =====
 

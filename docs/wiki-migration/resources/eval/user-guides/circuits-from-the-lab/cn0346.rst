@@ -4,12 +4,15 @@ Relative Humidity Measurement System (CN0346)
 Overview
 --------
 
-This circuit provides a contactless, capacitive based, relative humidity (RH) measurement solution with 2% relative humidity accuracy from 0% RH to 100% RH and replaces bulky hygrometer based methods. This circuit is ideal for applications where accurate, temperature controlled, noncontact humidity measurements are critical, such as HVAC, telecommunication cabinets, infant incubators, and other industrial or medical applications.
+This circuit provides a contactless, capacitive based, relative humidity (RH)
+measurement solution with 2% relative humidity accuracy from 0% RH to 100% RH
+and replaces bulky hygrometer based methods. This circuit is ideal for
+applications where accurate, temperature controlled, noncontact humidity
+measurements are critical, such as HVAC, telecommunication cabinets, infant
+incubators, and other industrial or medical applications.
 
 General Setup
 -------------
-
-
 
 - One :adi:`EVAL-CN0346-SDPZ <CN0346>` Evaluation Board
 - One :adi:`EVAL-SDP-CB1Z` Evaluation board
@@ -86,10 +89,9 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0346-PMDZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_2.1.1153.6.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_location.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0346/software.jpg
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0346/software-calibration_tab.jpg
-   :width: 600px
+   :width: 600

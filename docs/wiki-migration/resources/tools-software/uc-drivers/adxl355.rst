@@ -29,7 +29,7 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/adi/eval-adxl355-pmdz.png
    :alt: eval-adxl355-pmdz.png
    :align: center
-   :width: 275px
+   :width: 275
    :height: 250px
 
 ADI No-OS
@@ -55,8 +55,9 @@ The source code for ADXL355 driver can be found here:
    -   :git-no-OS:`Implementation of ADXL355 Driver <drivers/accel/adxl355/adxl355.c>`
    
 
-
-The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
+The driver also uses the ADI util library, so make sure you also add the
+necessary files in your project. The source code for the util library can be
+found here:
 
 .. admonition:: Download
    :class: download
@@ -66,8 +67,10 @@ The driver also uses the ADI util library, so make sure you also add the necessa
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
-
-In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the ADXL355 driver and have to be implemented:
+In order to be able to use this driver you will have to provide the specific
+implementation for the communication APIs and the specific types they use. If
+the SPI communication is chosen, there are three functions which are called by
+the ADXL355 driver and have to be implemented:
 
 -  no_os_spi_init() – initializes the communication peripheral.
 -  no_os_spi_write_and_read() – writes and reads data to/from the device.
@@ -76,9 +79,11 @@ In order to be able to use this driver you will have to provide the specific imp
 And there are two data types that have to be defined:
 
 -  no_os_spi_desc - structure holding the SPI descriptor
--  no_os_spi_init_param - structure holding the parameters for SPI initialization
+-  no_os_spi_init_param - structure holding the parameters for SPI
+   initialization
 
-If the I2C communication is chosen, there are four functions which are called by the ADXL355 driver:
+If the I2C communication is chosen, there are four functions which are called by
+the ADXL355 driver:
 
 -  i2c_init() – initializes the communication peripheral.
 -  i2c_write() – writes data to the device.
@@ -88,9 +93,12 @@ If the I2C communication is chosen, there are four functions which are called by
 And there are two data types that have to be defined:
 
 -  no_os_i2c_desc - structure holding the I2C descriptor
--  no_os_i2c_init_param - structure holding the parameters for SPI initialization
+-  no_os_i2c_init_param - structure holding the parameters for SPI
+   initialization
 
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using can be
+found below:
 
 .. admonition:: Download
    :class: download
@@ -100,11 +108,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
 
-
 ADXL355 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available below:
 
 -  `ADXL355 Header file <http://analogdevicesinc.github.io/no-OS/doxygen/adxl355_8h.html>`_
 -  `ADXL355 Source file <http://analogdevicesinc.github.io/no-OS/doxygen/adxl355_8c.html>`_
@@ -167,7 +175,8 @@ After the specific configuration was performed as mentioned above, you can set t
 -  ADXL355_MEASUREMENT_TEMP_ON_DRDY_ON - measurement mode, with temperature measurement enabled and data ready pin functionality enabled
 -  ADXL355_MEASUREMENT_TEMP_OFF_DRDY_ON - measurement mode, with temperature measurement disabled and data ready pin functionality enabled
 -  ADXL355_MEASUREMENT_TEMP_ON_DRDY_OFF - measurement mode, with temperature measurement enabled and data ready pin functionality disabled
--  ADXL355_MEASUREMENT_TEMP_OFF_DRDY_OFF - measurement mode, with temperature measurement disabled and data ready pin functionality disabled
+-  ADXL355_MEASUREMENT_TEMP_OFF_DRDY_OFF - measurement mode, with temperature
+   measurement disabled and data ready pin functionality disabled
 
 Temperature Data
 ~~~~~~~~~~~~~~~~
@@ -257,7 +266,8 @@ ADI IIO No-OS
 ADXL355 IIO No-OS driver
 ------------------------
 
-The ADXL355 IIO driver comes on top of ADXL355 driver and offers support for interfacing IIO clients through IIO lib.
+The ADXL355 IIO driver comes on top of ADXL355 driver and offers support for
+interfacing IIO clients through IIO lib.
 
 ADXL355 IIO Driver Source Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -272,11 +282,11 @@ The source code for ADXL355 driver can be found here:
    -   :git-no-OS:`Implementation of ADXL355 IIO Driver <drivers/accel/adxl355/iio_adxl355.c>`
    
 
-
 ADXL355 IIO Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the IIO driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the IIO driver is automatically generated using
+the Doxygen tool and it is available below:
 
 -  `ADXL355 IIO Header file <http://analogdevicesinc.github.io/no-OS/doxygen/iio__adxl355_8h.html>`_
 -  `ADXL355 IIO Source file <http://analogdevicesinc.github.io/no-OS/doxygen/iio__adxl355_8c.html>`_
@@ -292,7 +302,8 @@ ADXL355 IIO device does not have any device specific attributes.
 Device Channels
 ~~~~~~~~~~~~~~~
 
-ADXL355 IIO device has 0 output channels and 4 input channels: 3 acceleration channels and 1 temperature channel.
+ADXL355 IIO device has 0 output channels and 4 input channels: 3 acceleration
+channels and 1 temperature channel.
 
 Acceleration channels
 ^^^^^^^^^^^^^^^^^^^^^
@@ -303,7 +314,9 @@ The acceleration channels are:
 -  Channel 1: accel_y
 -  Channel 2: accel_z
 
-Each acceleration channel has 7 attributes. 5 of these attributes are shared in value with the other acceleration channels and 2 of these attributes can have different values for each channel.
+Each acceleration channel has 7 attributes. 5 of these attributes are shared in
+value with the other acceleration channels and 2 of these attributes can have
+different values for each channel.
 
 The attributes are:
 
@@ -367,7 +380,8 @@ The channel has 3 attributes, as follows:
 Device buffers
 ~~~~~~~~~~~~~~
 
-The ADXL355 IIO devices driver supports the usage of a data buffer for reading purposes.
+The ADXL355 IIO devices driver supports the usage of a data buffer for reading
+purposes.
 
 ADXL355 IIO Driver Initialization Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

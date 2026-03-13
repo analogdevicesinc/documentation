@@ -8,7 +8,12 @@ IIO Oscilloscope
 About
 -----
 
-The ADI IIO Oscilloscope is a cross platform GUI application, which demonstrates how to interface different evaluation boards from within a Linux system. The application supports plotting of the captured data in four different modes (time domain, frequency domain, constellation and cross-correlation). The application also allows to view and modify several settings of the evaluation board's devices.
+The ADI IIO Oscilloscope is a cross platform GUI application, which demonstrates
+how to interface different evaluation boards from within a Linux system. The
+application supports plotting of the captured data in four different modes (time
+domain, frequency domain, constellation and cross-correlation). The application
+also allows to view and modify several settings of the evaluation board's
+devices.
 
 Installation
 ------------
@@ -25,8 +30,6 @@ Windows
    -  https://github.com/analogdevicesinc/iio-oscilloscope/releases
    
 
-
-
 Linux
 ~~~~~
 
@@ -41,7 +44,6 @@ To build on a development host (e.g. x86 laptop or desktop) do the following:
 
    Users building libiio from source, please use the following branch : :git-libiio:`libiio/tree/libiio-v0 <tree/libiio-v0>`\
 
-
 -  Optionally build and install the libad9166-iio and libad9361-iio libraries, by following :doc:`these instructions </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
 -  Download the source using git: ``$ git clone `iio-oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope>`_
    $ cd iio-oscilloscope
@@ -54,7 +56,8 @@ To build on a development host (e.g. x86 laptop or desktop) do the following:
    $ sudo make install``
 -  If you did not do a ``make install`` of the libiio, the libiio install location needs to be set in your path (i.e. ``PATH=/usr/lib:$PATH"`` or else an error ``"Package libiio not found.."`` will occur.
 -  If you don't want to do a ``make install``, you will need to make sure that the most recently built shared libraries can be found, by setting the `LD_LIBRARY_PATH <http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html#AEN77>`_ environmental variable. ``export LD_LIBRARY_PATH=./`` otherwise you may get an error like: ``$ ./osc
-   ./osc: error while loading shared libraries: libosc.so: cannot open shared object file:
+   ./osc: error while loading shared libraries: libosc.so: cannot open shared
+   object file:
    No such file or directory`` Or, worst case, when you are debugging things, you will see your modified source code, but it will be running/executing the older shared shared object which was loaded (since it didn't find things in the library path).
 
 Ubuntu 20 and Older
@@ -68,7 +71,10 @@ While compiling the IIO Scope for Ubuntu 20 and other older Linux distributions,
    make
    make install
 
-Please not that in case some other gtkdatabox version is present in the system remove it using sudo apt remove. This action can solve error message GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported Trace/breakpoint trap (core dumped)
+Please not that in case some other gtkdatabox version is present in the system
+remove it using sudo apt remove. This action can solve error message GTK+ 2.x
+symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported
+Trace/breakpoint trap (core dumped)
 
 GTK2 Based IIO-Oscilloscope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -103,25 +109,32 @@ Launching the application
 Running Local
 ~~~~~~~~~~~~~
 
-The application can run locally which means it runs on the same platform where your device is connected.
+The application can run locally which means it runs on the same platform where
+your device is connected.
 
-To start the IIO Oscilloscope open up the start menu of your system and search for “IIO Oscilloscope”. E.g. if you are using a Ubuntu Linux system move your mouse cursor to the left side of your screen and “Dash home” button and type “IIO Oscilloscope” into the search box.
+To start the IIO Oscilloscope open up the start menu of your system and search
+for “IIO Oscilloscope”. E.g. if you are using a Ubuntu Linux system move your
+mouse cursor to the left side of your screen and “Dash home” button and type
+“IIO Oscilloscope” into the search box.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/osc_launch.png
    :alt: Select the IIO Oscilloscope from the launch menu
    :align: center
-   :width: 400px
+   :width: 400
 
 Running Remote
 ~~~~~~~~~~~~~~
 
-The application can be used to connect to another platform that has a connected device in order to configure the device and read data from it. You can connect in 3 different ways:
+The application can be used to connect to another platform that has a connected
+device in order to configure the device and read data from it. You can connect
+in 3 different ways:
 
 -  Manually:
 
 .. container:: box bggreen
 
-   This specifies any shell prompt running on the host or target - Run IIO Oscilloscope in remote mode
+   This specifies any shell prompt running on the host or target - Run IIO
+   Oscilloscope in remote mode
 
    
    ::
@@ -131,11 +144,10 @@ The application can be used to connect to another platform that has a connected 
       > osc
    
 
-
 -  Settings -> Connect and enter "**ip:**" and then the IP address in the popup window, and click "OK" or "Refresh".
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iio_connect_tab.jpg
-   :width: 300px
+   :width: 300
 
 -  Settings -> Connect and click "Refresh" with a blank IP number. If your network supports `zeroconf <http://avahi.org/>`_\  [1]_, you will be connected to the device on the network.
 
@@ -149,7 +161,9 @@ Main Window
 
 |IIO Oscilloscope disconnect plugins| Each plugin (or tab) can be detached from the main window simply by clicking on the button placed on the right side of the name of the plugin. Close the detached window to attach the plugin back to the main window.
 
-The Main Window is designed to display a configuration panel (plugin) for each device recognized by the system. Additional plugins will be loaded for device debugging and monitoring purposes such as:
+The Main Window is designed to display a configuration panel (plugin) for each
+device recognized by the system. Additional plugins will be loaded for device
+debugging and monitoring purposes such as:
 
 DMM Tab/Plugin
 ^^^^^^^^^^^^^^
@@ -157,7 +171,7 @@ DMM Tab/Plugin
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/dmm_plugin.png
    :alt: IIO Oscilloscope DMM plugin
    :align: right
-   :width: 400px
+   :width: 400
 
 The **DMM** Plugin: The Digital Multimeter continuously displays device specific data once the start button is activated.
 
@@ -165,15 +179,13 @@ The **DMM** Plugin: The Digital Multimeter continuously displays device specific
 -  **Active channels** tab:Displays the list of channels that belong to the enabled devices. All channels can be enabled simultaneously by using the *All Channels* button.
 -  **Right side** tab: Displays data readings of the enabled channels in Active channels tab.
 
-
-
 Debug Tab/Plugin
 ^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/debug_plugin.png
    :alt: IIO Oscilloscope Debug plugin
    :align: right
-   :width: 400px
+   :width: 400
 
 **Debug** Plugin: Is a tool for device debugging. Since "normal" users should not be doing this, features on this tab may not work unless you have started the ``osc`` application as root (try ``sudo osc`` in a terminal).
 
@@ -185,8 +197,6 @@ Debug Tab/Plugin
    -  **Enable AutoRead:** When enabled it allows the register to be read automatically as the register address changes.
    -  **Address:** The address of the register.
    -  **Value:** The value of the register at the given address.
-
-
 
 | === Hardware Specific Tab/Plugins === There may be hardware specific plugins/tabs, specific to the platform you are running on. Here are a few:
 
@@ -268,17 +278,26 @@ Activating Markers
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/markers_menu.png
    :alt: IIO Oscilloscope markers menu
    :align: right
-   :width: 250px
+   :width: 250
 
-Markers are used for plot data measurement in when looking in the frequency domain or cross correlations. To activate the markers right click on the plot and select from the marker menu the type of marker you want to enable. Make sure the capture process is running and the appropriate domain is selected in order to enable the markers properly. The following types of markers are available:
+Markers are used for plot data measurement in when looking in the frequency
+domain or cross correlations. To activate the markers right click on the plot
+and select from the marker menu the type of marker you want to enable. Make sure
+the capture process is running and the appropriate domain is selected in order
+to enable the markers properly. The following types of markers are available:
 
 -  FFT domain (1 channel enabled): Peak, Fixed and Single Tone markers.
 -  FFT domain (2 channels enabled): Peak, Fixed, Single Tone and Image markers.
 -  Constellation: Peak marker.
 
-The enabling of a marker will display a set of 5 markers by default. You can add more markers by selecting Add Marker from the marker menu and remove some by selection Remove Maker.
+The enabling of a marker will display a set of 5 markers by default. You can add
+more markers by selecting Add Marker from the marker menu and remove some by
+selection Remove Maker.
 
-Fixed markers are designed to have their position moved by the user. Once the fixed markers are visible on the plot right click on the marker symbol and while holding the right button pressed move the mouse to the desired location on the plot and release the right button.
+Fixed markers are designed to have their position moved by the user. Once the
+fixed markers are visible on the plot right click on the marker symbol and while
+holding the right button pressed move the mouse to the desired location on the
+plot and release the right button.
 
 To disable the markers select Markers Off from the marker menu.
 
@@ -288,8 +307,7 @@ Saving Captured Data
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/osc_saveas_window.png
    :alt: IIO Oscilloscope saveas window
    :align: right
-   :width: 400px
-
+   :width: 400
 
 | Once the data is captured, it can be saved using one of the following formats:
 
@@ -300,18 +318,18 @@ Saving Captured Data
 
 Click on File→Save As to open the dialog needed to save the data.
 
-
-
 Channel Settings
 ^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/channel_settings_menu.png
    :alt: IIO Oscilloscope channel settings
    :align: right
-   :width: 250px
+   :width: 250
 
 -  Simple math operation can be applied to the channel data. Right click on the name of a channel listed in the Device list and select Math Settings to open the menu with the math operations.
--  The graph color associated with the channel can be modified. Right click on the name of the channel and select Color Settings to open a color selection panel that will allow you to pick the desired color.
+-  The graph color associated with the channel can be modified. Right click on
+   the name of the channel and select Color Settings to open a color selection
+   panel that will allow you to pick the desired color.
 
 The settings can be applied only in Time domain.
 
@@ -320,7 +338,7 @@ Trigger settings
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/trigger_settings.png
    :align: right
-   :width: 250px
+   :width: 250
 
 In time domain, it is possible to select a capture channel as the trigger source of the oscilloscope. To do so, right-click on the name of the device used for capture, and select **Trigger settings**. The pop-up window that will open will allow you to configure the channel used for the trigger, as well as the trigger level and edge.
 
@@ -353,11 +371,10 @@ More information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. [1]
    also referred to as multicast DNS/DNS-SD service discovery
 
 .. |IIO Oscilloscope disconnect plugins| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/plugin_disconnect_button.png
-   :width: 400px
+   :width: 400
 .. |IIO Oscilloscope plot window| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/osc_plot_window.png
-   :width: 500px
+   :width: 500

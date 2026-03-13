@@ -9,7 +9,8 @@ The AD-FMComms4-EBZ board is very similar to the `ad-fmcomms2-ebz <https://wiki.
 
 `ad-fmcomms4.ashx <http://www.analog.com/-/media/analog/en/evaluation-board-images/images/ad-fmcomms4.ashx>`_
 
-Since much of the FMCOMMS2/3/4 share a common device/infrastructure, much of the documentation is the same.
+Since much of the FMCOMMS2/3/4 share a common device/infrastructure, much of the
+documentation is the same.
 
 -  :adi:`Purchase <ad-fmcomms4-ebz#eb-buy>`
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/introduction>`
@@ -100,6 +101,4 @@ Since much of the FMCOMMS2/3/4 share a common device/infrastructure, much of the
 Warning
 -------
 
-
 .. esd-warning::
-

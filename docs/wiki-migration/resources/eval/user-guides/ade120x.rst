@@ -1,11 +1,16 @@
 ADE120x Supplemental User Guide
 ===============================
 
-The ADE120x is an isolated binary input monitor. It performs an isolated measurement of a binary input voltage and communicates the status of this input to low voltage processors or logic circuits. The ADE120x application circuit can accept a wide range of binary input voltages from 10 V to 300 V scaled using a resistor divider before applying the voltage to the pins. This content applies to both ADE1201 and ADE1202.
+The ADE120x is an isolated binary input monitor. It performs an isolated
+measurement of a binary input voltage and communicates the status of this input
+to low voltage processors or logic circuits. The ADE120x application circuit can
+accept a wide range of binary input voltages from 10 V to 300 V scaled using a
+resistor divider before applying the voltage to the pins. This content applies
+to both ADE1201 and ADE1202.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ade1202.png
    :align: right
-   :width: 400px
+   :width: 400
 
 -  :doc:`Tools and Driver Details </wiki-migration/resources/eval/user-guides/eval-ade120x/tools>`
 

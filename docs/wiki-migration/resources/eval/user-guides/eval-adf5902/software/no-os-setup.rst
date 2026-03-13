@@ -31,7 +31,8 @@ Source files for the application can be found in the :doc:`Downloads </wiki-migr
 Run Application
 ---------------
 
-Start a UART terminal (set to 115200 baud rate), and program the device and run the elf file. An output example of the application is provided below:
+Start a UART terminal (set to 115200 baud rate), and program the device and run
+the elf file. An output example of the application is provided below:
 
 ::
 
@@ -48,4 +49,3 @@ Downloads
    
    -  :git-no-OS:`ADF5902 Application <projects/adf5902_sdz>`
    
-

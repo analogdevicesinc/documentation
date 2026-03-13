@@ -9,19 +9,32 @@ Hardware Setup
 Sensor Connections
 ~~~~~~~~~~~~~~~~~~
 
-The EVAL-CN0532-EBZ is very straightforward to setup. A cable, and an ICP signal conditioner (or an IEPE compatible DAQ, or a current source) are needed. For electrical setup:
+The EVAL-CN0532-EBZ is very straightforward to setup. A cable, and an ICP signal
+conditioner (or an IEPE compatible DAQ, or a current source) are needed. For
+electrical setup:
 
--  Solder a twin twisted wire, coaxial or shielded cable to the EVAL-CN0532-EBZ printed circuit board (PCB). Ground line to GND and supply/signal to ACC as shown in the figure below. Note: the output voltage increases if there is a positive acceleration in positive sensitivity axis direction.
+-  Solder a twin twisted wire, coaxial or shielded cable to the EVAL-CN0532-EBZ
+   printed circuit board (PCB). Ground line to GND and supply/signal to ACC as
+   shown in the figure below. Note: the output voltage increases if there is a
+   positive acceleration in positive sensitivity axis direction.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0532_pic.png
    :align: center
-   :width: 250px
+   :width: 250
 
--  Connect the other end of the cable to an ICP Signal Conditioner (e.g. PCB 482C64), or an IEPE-compatible vibration measurement equipment such as the LMS SCADAS from Siemens or the CompactDAQ from National Instruments (note: in most IEPE compatible DAQ systems, the DC level of the output is eliminated through an AC coupling circuitry). Alternatively, one can use a current source, e.g. Keithley 6220, set the output current to 4 mA, and max voltage to 16 V. The voltage of the current source is the output, as shown in the picture below. Without an external acceleration, the IEPE output should be around 12 V. In this setup the DC level is not removed.
+-  Connect the other end of the cable to an ICP Signal Conditioner (e.g. PCB
+   482C64), or an IEPE-compatible vibration measurement equipment such as the
+   LMS SCADAS from Siemens or the CompactDAQ from National Instruments (note: in
+   most IEPE compatible DAQ systems, the DC level of the output is eliminated
+   through an AC coupling circuitry). Alternatively, one can use a current
+   source, e.g. Keithley 6220, set the output current to 4 mA, and max voltage
+   to 16 V. The voltage of the current source is the output, as shown in the
+   picture below. Without an external acceleration, the IEPE output should be
+   around 12 V. In this setup the DC level is not removed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0532_currentsource.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Set the acceleration sensitivity (40 mV/G) on the vibration measurement equipment from Step 4 to taking data with the accelerometer sensors. The sensitivity scale of the ADXL1002, therefore EVAL-CN0532-EBZ, may slightly vary from part to part. The ADXL1002 can be simply calibrated with gravity field or other reference sensors.
 -  The EVAL-CN0532-EBZ is ready for experiment.
@@ -53,13 +66,11 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0532-EBZ?&v=RevC>`_ to receive all these great benefits and more!
-
 
 *End of Document*

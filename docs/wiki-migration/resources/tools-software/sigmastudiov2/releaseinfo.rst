@@ -17,7 +17,9 @@ Features
    -  Introduces first set of interleaved DSP modules designed to enhance optimization for larger channel counts.
    -  Introduces simultaneous execution of sample and block processing for control and audio data respectively.
    -  Supports external MCU host packetization APIs for parameter write and read.
-   -  Improves SS+ MIPS profiling experience by providing a .csv export option and supporting easy navigation from profiling table to schematic modules through double-click.
+   -  Improves SS+ MIPS profiling experience by providing a .csv export option
+      and supporting easy navigation from profiling table to schematic modules
+      through double-click.
 
 -  Misc. Features:
 
@@ -155,7 +157,8 @@ Features
    -  Context menu enhancements for ease of access of canvas and settings window
    -  Support for multiple communication protocol between communication device and platform
    -  Auto scroll while expanding in project window and toolbox entries
-   -  Double click on a SigmaStudio+ project file to launch SigmaStudio+ and load the project
+   -  Double click on a SigmaStudio+ project file to launch SigmaStudio+ and
+      load the project
 
 Bug Fixes
 ~~~~~~~~~
@@ -306,7 +309,8 @@ Features
 -  A/B Preset Testing
 -  Instant Transfer Function Display
 -  Support for ADSP-215xx SOM platform
--  Support for the following new block processing modules has been added in this release
+-  Support for the following new block processing modules has been added in this
+   release
 
    -  Automatic Speaker Equalization
    -  2 Power x
@@ -319,7 +323,8 @@ Features
    -  Tracking Filter
    -  Pooled Delay
 
--  Evaluation restriction has been removed for the following modules and features.
+-  Evaluation restriction has been removed for the following modules and
+   features.
 
    -  Algorithm Designer
    -  Scripting
@@ -349,7 +354,8 @@ Features
 -  Design systems having one or more platforms belonging to ADSP-214xx, ADSP-SC5xx and ADSP-215xx family of SHARC processors
 -  Realtime parameter tuning using graphical controls
 -  Modern UI and controls with zoom, rotate, resize, undo-redo. Customizable application layout with one click layout restore.
--  Comprehensive algorithm toolbox, with 140+ optimized algorithms from the following category:
+-  Comprehensive algorithm toolbox, with 140+ optimized algorithms from the
+   following category:
 
    -  Filters
    -  Dynamic Processors
@@ -375,7 +381,8 @@ Features
 -  Scripting support for automation
 -  Search and object highlighting for ease of navigation through toolbox and schematic.
 -  Tuning features like algorithm bypass, tuning presets etc.
--  Schematic design features like hierarchy boards (with password lock), algorithm version control etc.
+-  Schematic design features like hierarchy boards (with password lock),
+   algorithm version control etc.
 
 Bug Fixes
 ~~~~~~~~~

@@ -12,7 +12,6 @@ Download the pre-build image for you device in question.
    
    HDL branch: hdl_2023_r2 HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
-
 +--------------+------------+----------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card   | Download                                                                                                       |
 +==============+============+================================================================================================================+
@@ -90,7 +89,6 @@ Download the pre-build image for you device in question.
    
    HDL branch: hdl_2022_r2 HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
-
 +--------------+------------+-----------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card   | Download                                                                                                        |
 +==============+============+=================================================================================================================+
@@ -164,7 +162,6 @@ Download the pre-build image for you device in question.
    
    HDL branch: hdl_2021_r2 HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
-
 +--------------+------------+-----------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card   | Download                                                                                                        |
 +==============+============+=================================================================================================================+
@@ -226,7 +223,6 @@ Download the pre-build image for you device in question.
    
    HDL branch: hdl_2021_r1 HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
 
-
 +--------------+------------+-----------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card   | Download                                                                                                        |
 +==============+============+=================================================================================================================+
@@ -257,7 +253,6 @@ Download the pre-build image for you device in question.
    Linux branch: 2019_R2 Linux repository: `linux <https://github.com/analogdevicesinc/linux>`_
    
    HDL branch: hdl_2019_r2 HDL repository: `hdl <https://github.com/analogdevicesinc/hdl>`_
-
 
 +--------------+--------------+---------------------------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card     | Download                                                                                                                        |
@@ -308,7 +303,6 @@ Download the pre-build image for you device in question.
    
    Vivado branch:hdl_2018_r1 Vivado repository:`hdl <https://github.com/analogdevicesinc/hdl>`_
 
-
 +--------------+-------------+------------------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier | FMC Card    | Download                                                                                                               |
 +==============+=============+========================================================================================================================+
@@ -350,7 +344,8 @@ Download the pre-build image for you device in question.
 .. image:: https://wiki.analog.com/_media/section>/resources/tools-software/linux-software/adi-kuiper_images/master#master_microblaze_images&
    :alt: master#master_microblaze_images&
 
-There are two ways of loading the design. One is using the XMD command line. Open a xmd command window/shell and enter the commands manually.
+There are two ways of loading the design. One is using the XMD command line.
+Open a xmd command window/shell and enter the commands manually.
 
 Below is just a example and the file-names may vary.
 
@@ -368,7 +363,6 @@ Below is just a example and the file-names may vary.
          * XMD v2014.2 (64-bit)
            *** SW Build 932637 on Wed Jun 11 13:12:06 MDT 2014
              ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
-
 
          XMD% fpga -f download.bit
          Configuring Device 1 (xcku040) with Bitstream -- download.bit
@@ -446,9 +440,9 @@ Below is just a example and the file-names may vary.
 
          RUNNING> XMD%
 
-
-
-XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows, you can run the XSCT terminal from start menu -> Xilinx Design Tools -> Xilinx Software Command Line Tool...
+XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows,
+you can run the XSCT terminal from start menu -> Xilinx Design Tools -> Xilinx
+Software Command Line Tool...
 
 .. container:: box bgblue
 
@@ -514,8 +508,10 @@ XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows, yo
       xsdb%
    
 
-
-The second method is to run the tcl script which takes care of loading the bit file and the linux image. Run Vivado TCL Shell from Windows start menu -> Xilinx Design Suite -> Vivado -> Vivado TCL Shell. (In Linux, source the settings.sh file first)
+The second method is to run the tcl script which takes care of loading the bit
+file and the linux image. Run Vivado TCL Shell from Windows start menu -> Xilinx
+Design Suite -> Vivado -> Vivado TCL Shell. (In Linux, source the settings.sh
+file first)
 
 Then run the tcl script:
 
@@ -575,11 +571,11 @@ Then run the tcl script:
       xsdb%
    
 
-
 Messages
 ========
 
-If you are interested in the Linux console messages and command line interface, connect a USB cable to the USB UART port. Terminal settings are 115200,8N1.
+If you are interested in the Linux console messages and command line interface,
+connect a USB cable to the USB UART port. Terminal settings are 115200,8N1.
 
 There are two users:
 
@@ -592,10 +588,13 @@ analog analog
 
 If you FPGA carrier board (`KC705 <https://www.xilinx.com/KC705>`_, `vc707 <https://www.xilinx.com/vc707>`_, `ml605 <https://www.xilinx.com/ml605>`_) features a LCD display and the board is connected to a DHCP enabled network. You should also see it's IP address printed on the display. This allows you to connect remote to the board as well. (ssh, libiio remote)
 
-Unlike shown in the picture below you won't see the second line. In case the IP address is 192.168.2.2, this indicates that DHCP failed and it's now using it's default address. This address may not be within your subnet, and things therefore may fail.
+Unlike shown in the picture below you won't see the second line. In case the IP
+address is 192.168.2.2, this indicates that DHCP failed and it's now using it's
+default address. This address may not be within your subnet, and things
+therefore may fail.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/ml605-lcd.png
    :alt: LCD image
-   :width: 200px
+   :width: 200
 
 You should see the kernel start-up messages as follows:

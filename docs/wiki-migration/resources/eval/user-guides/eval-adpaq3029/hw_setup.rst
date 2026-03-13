@@ -5,7 +5,7 @@ The **EVAL-ADPAQ3029** evaluation kit mainly consists of below 2 parts.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/hw1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 1. ADPAQ Development module
 ---------------------------
@@ -36,11 +36,13 @@ The ADPAQ module is as shown in the figure below. It mainly consists of 3 evalua
 -  The Mini-dev board communicates with the module via SPI and it communicates with the mobile application via BLE (Bluetooth Low Energy).
 -  The Mini-Dev Board is powered on by connecting one end of the USB cable to the Power USB slot on the Mini-dev Board and the other end to the computer.
 -  The Mini-Dev Board is based on MSP-430 (Micro Controller) and has a BLE IC.
--  The Mini-dev Board has a Moduware connector slot where the module has to be inserted. The SPI communication between the module and the Mini-Dev Board takes place through these pins.
+-  The Mini-dev Board has a Moduware connector slot where the module has to be
+   inserted. The SPI communication between the module and the Mini-Dev Board
+   takes place through these pins.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/hw4.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Setup
 -----
@@ -48,17 +50,20 @@ Setup
 -  The ADPAQ module is inserted onto the gateway with the pins facing inward as shown in the image.
 -  Power the gateway by connecting the USB cable to the Power USB slot.
 -  Once the hardware setup is complete, setting up software toolchain is explained :doc:`here </wiki-migration/resources/eval/user-guides/eval-adpaq3029/sw_tools_setup>`.
--  In addition to above setup, in order to debug/flash the firmware, debugger (EVAL-ADPAQ3029EBZ-DBG) must be connected between PC and ADPAQ Dev module.
+-  In addition to above setup, in order to debug/flash the firmware, debugger
+   (EVAL-ADPAQ3029EBZ-DBG) must be connected between PC and ADPAQ Dev module.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb1.png
    :align: center
-   :width: 400px
+   :width: 400
 
--  The ADPAQ module is connected to the debugger via a 10 pin arm debugger cable and the debugger is then powered on through the Power USB port as shown in the figure below.
+-  The ADPAQ module is connected to the debugger via a 10 pin arm debugger cable
+   and the debugger is then powered on through the Power USB port as shown in
+   the figure below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb2.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Once the hardware is set up as described above, the device appears as ``DAPLINK``.
 
@@ -66,8 +71,7 @@ Setup
 
    Make sure that the gateway is powered first with the ADPAQ module already inserted on it and then connect it to the debugger. Otherwise the device manager shows ``MAINTENANCE`` instead of ``DAPLINK``.
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/hw2.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/hw3.png
-   :width: 600px
+   :width: 600

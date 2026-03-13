@@ -68,12 +68,19 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
-
-The reference voltage may vary between boards and models. The platform_data for the device's "struct device" holds this information.
+The reference voltage may vary between boards and models. The platform_data for
+the device's "struct device" holds this information.
 
 .. code:: c
 
@@ -187,14 +194,24 @@ The reference voltage may vary between boards and models. The platform_data for 
        .refsel = AD7793_REFSEL_INTERNAL,
    };
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
-
-Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+Depending on the converter IC used, you may need to set the modalias
+accordingly, matching your part name. It may also required to adjust
+max_speed_hz. Please consult the datasheet, for maximum spi clock supported by
+the device in question.
 
 .. code:: c
 
@@ -230,12 +247,12 @@ Depending on the converter IC used, you may need to set the modalias accordingly
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD7793 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -256,13 +273,20 @@ Hardware configuration
 ======================
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7793_eval_lr.jpg
-   :width: 600px
+   :width: 600
 
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -300,7 +324,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0>
    
 
-
 Show device name
 ----------------
 
@@ -315,7 +338,6 @@ Show device name
       ad7793
    
 
-
 Show available sampling frequencies / update rates
 --------------------------------------------------
 
@@ -329,7 +351,6 @@ Show available sampling frequencies / update rates
       root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat sampling_frequency_available
       470 242 123 62 50 39 33 19 17 16 12 10 8 6 4
    
-
 
 Set sampling frequency / update rate
 ------------------------------------
@@ -349,7 +370,6 @@ Set sampling frequency / update rate
       root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0>
    
 
-
 Show supply voltage
 -------------------
 
@@ -368,7 +388,6 @@ Show supply voltage
       0.000418420
    
 
-
 **U** = *in_voltage4_supply_raw \* in_voltage4_supply_scale* = 7817399 \* 0.000418420 = **3270.95608958 mV**
 
 Show available scales for differential input channels
@@ -385,7 +404,8 @@ AIN3(+) - AIN3(-) in_voltage1-in_voltage1_raw
 AIN1(-) - AIN1(-) in_voltage0-in_voltage0_shorted_raw
 ================= ===================================
 
-Setting these directly influences the ADC input range, by altering the GAIN amplifier.
+Setting these directly influences the ADC input range, by altering the GAIN
+amplifier.
 
 .. container:: box bggreen
 
@@ -398,11 +418,14 @@ Setting these directly influences the ADC input range, by altering the GAIN ampl
        0.000149010 0.000074500 0.000037250 0.000018620 0.000009310 0.000004650 0.000002320 0.000001160
    
 
-
 Set scale for differential input channels
 -----------------------------------------
 
-Scale to be applied to in_voltage0-in_voltage0_raw, in_voltage1-in_voltage1_raw, in_voltage2-in_voltage2_raw in order to obtain the measured voltage in millivolts. Allows the user to select one scale out of the available scales. If the written scale differs from the current scale. The driver performs full and zero offset calibration on all differential input channels.
+Scale to be applied to in_voltage0-in_voltage0_raw, in_voltage1-in_voltage1_raw,
+in_voltage2-in_voltage2_raw in order to obtain the measured voltage in
+millivolts. Allows the user to select one scale out of the available scales. If
+the written scale differs from the current scale. The driver performs full and
+zero offset calibration on all differential input channels.
 
 .. container:: box bggreen
 
@@ -417,7 +440,6 @@ Scale to be applied to in_voltage0-in_voltage0_raw, in_voltage1-in_voltage1_raw,
       root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat in_voltage-in_voltage_scale
       0.000074500
    
-
 
 Show channel in_voltage0-in_voltage0 measurement
 ------------------------------------------------
@@ -447,7 +469,6 @@ AIN1(-) - AIN1(-) in_voltage0-in_voltage0_shorted_raw
       6710665
    
 
-
 **U** = *in_voltage0-in_voltage0_raw \* in_voltage-in_voltage_scale* = 6710665 \* 0.000149010 = **999.95619165 mV**
 
 Trigger management
@@ -456,7 +477,6 @@ Trigger management
 .. hint::
 
    This driver only supports it's own default trigger source ad7793-dev0
-
 
 .. container:: box bggreen
 
@@ -468,7 +488,6 @@ Trigger management
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> cat trigger/current_trigger
       ad7793-dev0
    
-
 
 Buffer management
 -----------------
@@ -485,8 +504,13 @@ Buffer management
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0/buffer>
    
 
-
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -508,7 +532,6 @@ Every buffer implementation features a set of files:
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -527,7 +550,6 @@ Every buffer implementation features a set of files:
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0/scan_elements>
    
 
-
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
 
@@ -536,7 +558,6 @@ Every buffer implementation features a set of files:
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 More Information
 ================
@@ -559,6 +580,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

@@ -23,11 +23,11 @@ Time Domain View
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9001/adrv9001_osc_capture_time.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Frequency Domain View
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9001/adrv9001_osc_capture_freq.png
    :align: center
-   :width: 600px
+   :width: 600

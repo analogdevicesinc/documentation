@@ -6,13 +6,12 @@ Top Board Picture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/pcie.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 Feature List
 ------------
 
 +--------------------------------+
-
 
 | 4X PCIe lanes                  |
 

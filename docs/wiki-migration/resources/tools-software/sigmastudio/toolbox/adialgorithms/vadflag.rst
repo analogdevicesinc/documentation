@@ -13,7 +13,8 @@ Input:
 
 Output
 
--  Unordered List ItemConditionFlag: 0 or 1 output determining if speech is present or not
+-  Unordered List ItemConditionFlag: 0 or 1 output determining if speech is
+   present or not
 
 Parameter Control:
 

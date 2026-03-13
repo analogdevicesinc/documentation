@@ -23,7 +23,8 @@ General Setup
 
 -  Connect the +6V power supply to the CN0185 power terminal J4
 -  Connect DC source or Function generator to VIN+ and VIN-
--  Connect digital multimeter / spectrum analyzer or oscilloscope to output terminal
+-  Connect digital multimeter / spectrum analyzer or oscilloscope to output
+   terminal
 
 Test Setup Functional Block Diagram
 -----------------------------------
@@ -38,8 +39,6 @@ Frequency Response Measurements
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/freqres.png
 
-
-
 .. note::
 
    Signal Generator Settings:
@@ -48,18 +47,25 @@ Frequency Response Measurements
    | Amplitude: ±20mV (40mVp-p)
    | DC Offset: 0
 
-
 Connectors and Jumper Configurations
 ------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0185connectors.png
 
-1 - Connect the +6V power supply to this screw terminal (J4) 2 - Connect the GND terminal of the +6V power supply to this screw terminal (J4) 3 - Connect the positive analog input signal to this SMB connector (J1) 4 - Connect the negative analog input signal to this SMB connector (J2) 5 - LK2 jumper Pins 1 and 2 provides the connection of the positive analog input signal to the AD7400 and pins 2 and 3 puts the input to ground 6 - LK1 jumper Pins 1 and 2 provides the connection of the negative analog input signal to the AD7400 and pins 2 and 3 puts the input to ground 7 - Connect the Digital multimeter if measuring dc input and Spectrum analyzer/oscilloscope if measuring frequency response to this SMB connector (J3)
+1 - Connect the +6V power supply to this screw terminal (J4) 2 - Connect the GND
+terminal of the +6V power supply to this screw terminal (J4) 3 - Connect the
+positive analog input signal to this SMB connector (J1) 4 - Connect the negative
+analog input signal to this SMB connector (J2) 5 - LK2 jumper Pins 1 and 2
+provides the connection of the positive analog input signal to the AD7400 and
+pins 2 and 3 puts the input to ground 6 - LK1 jumper Pins 1 and 2 provides the
+connection of the negative analog input signal to the AD7400 and pins 2 and 3
+puts the input to ground 7 - Connect the Digital multimeter if measuring dc
+input and Spectrum analyzer/oscilloscope if measuring frequency response to this
+SMB connector (J3)
 
 .. note::
 
    The output is available through the J3 SMB connector or test point OUT
-
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -76,13 +82,11 @@ Schematic, PCB Layout, Bill of Materials
    -  PADS project
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0185-EB1Z?&v=Rev B>`_ to receive all these great benefits and more!
-
 
 *End of document*

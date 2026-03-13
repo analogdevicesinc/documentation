@@ -24,8 +24,6 @@ Use cases
 IO operation
 ~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click to expand
 
    1. Run instrument
@@ -36,18 +34,18 @@ IO operation
 
    4. Monitor channel 0 using voltmeter/scope/logic analyzer
 
-   5. Set channel 0 as output by clicking the direction button Channel 7 input state is the same as channel 0 output state Voltmeter shows the same state (5V/0V) as channel 0 output state
+   5. Set channel 0 as output by clicking the direction button Channel 7 input
+      state is the same as channel 0 output state Voltmeter shows the same state
+      (5V/0V) as channel 0 output state
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_16-51-11.png
 
-   6. Change channel 0 output state by clicking it (multiple times) Channel 7 input state is the same as channel 0 output state Voltmeter shows the same state (5V/0V) as channel 0 output state
-
-
+   6. Change channel 0 output state by clicking it (multiple times) Channel 7
+      input state is the same as channel 0 output state Voltmeter shows the same
+      state (5V/0V) as channel 0 output state
 
 Grouped operation
 ~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -64,7 +62,8 @@ Grouped operation
 
    2. Start digital IO instrument
 
-   3. Also monitor these connections with a logic analyzer (use breadboard to split the connection)
+   3. Also monitor these connections with a logic analyzer (use breadboard to
+      split the connection)
 
    4. Set DIO 0-7 to Grouped interface
 
@@ -90,12 +89,8 @@ Grouped operation
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_17-11-24.png
 
-
-
 Interaction with pattern generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -103,9 +98,11 @@ Interaction with pattern generator
 
    2. Generate clock signals on channels 0 and 8
 
-   In the digitalIO the group as well as channel 8 should have a red highlight indicating that the pattern generator has ownership of the channels.
+   In the digitalIO the group as well as channel 8 should have a red highlight
+   indicating that the pattern generator has ownership of the channels.
 
-   The user cannot interact with those channels. Logic analyzer shows clock signal correctly generated at channels 0 and 8
+   The user cannot interact with those channels. Logic analyzer shows clock
+   signal correctly generated at channels 0 and 8
 
    3. Connect channel 10 to channel 11
 
@@ -115,18 +112,21 @@ Interaction with pattern generator
 
    Channel 11 input state follows channel 10 output state
 
-   Rest of the channels work properly. The user can set direction and output state and can read input state
+   Rest of the channels work properly. The user can set direction and output
+   state and can read input state
 
-   6. While running, set a clock signal on channel 10 in the pattern generator Channel 10 has a red highlight, the user cannot interact with it anymore. Channel 11 input state might flicker indicating that a signal can be read from channel 11.
+   6. While running, set a clock signal on channel 10 in the pattern generator
+      Channel 10 has a red highlight, the user cannot interact with it anymore.
+      Channel 11 input state might flicker indicating that a signal can be read
+      from channel 11.
 
-   Logic analyzer shows a new clock signal generated at channel 10 which can also be read on channel 11
+   Logic analyzer shows a new clock signal generated at channel 10 which can
+   also be read on channel 11
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-15_17-13-47.png
 
    7. Stop the pattern generator
 
    Red highlight is removed from the digitalIO, the channels now work properly.
-
-
 
 **Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`

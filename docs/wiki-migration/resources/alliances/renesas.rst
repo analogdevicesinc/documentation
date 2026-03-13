@@ -9,11 +9,9 @@ Renesas
    -  `main Page <http://www.renesas.com/>`_
    
 
-
 .. container:: column
 
    
-
 
    ..
 
@@ -33,16 +31,12 @@ Renesas
    
    More information can be found by looking at the :adi:`all ADI products <en/allProducts.html>` or :adi:`application specific solutions <en/allApplications.html>` section of `the main web site <https://www.analog.com/>`_.
 
-
-
 Hardware
 ========
-
 
 .. note::
 
    See `thirdparty <https://wiki.analog.com/thirdparty>`_
-
 
 +------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Part/Order Location    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | ADI Parts                                                                                                                                                                                                                          |
@@ -53,15 +47,15 @@ Hardware
 +------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. |http---japan.renesas.com-media-common-logo.jpg| image:: http://japan.renesas.com/media/common/logo.jpg
-   :width: 100px
+   :width: 100
    :target: http://www.renesas.com
 .. |http---www.analog.com-static-homepage-images-analog_devices_logo.gif| image:: http://www.analog.com/static/homepage/images/analog_devices_logo.gif
-   :width: 100px
+   :width: 100
    :target: http://www.analog.com
 .. |http---am.renesas.com-media-products-tools-introductory_evaluation_tools-renesas_demo_kits-yrdkrx62n-rx62n_board.jpg| image:: http://am.renesas.com/media/products/tools/introductory_evaluation_tools/renesas_demo_kits/yrdkrx62n/rx62n_board.jpg
-   :width: 100px
+   :width: 100
 .. |http---am.renesas.com-media-products-tools-introductory_evaluation_tools-renesas_demo_kits-yrdkrx62n-support-audio_solution_kit.jpg| image:: http://am.renesas.com/media/products/tools/introductory_evaluation_tools/renesas_demo_kits/yrdkrx62n/support/audio_solution_kit.jpg
-   :width: 100px
+   :width: 100
 
 .. |http---am.renesas.com-media-products-tools-introductory_evaluation_tools-renesas_demo_kits-yrdkrx62n-rx62n_board.jpg| image:: https://wiki.analog.com/_media/http///am.renesas.com/media/products/tools/introductory_evaluation_tools/renesas_demo_kits/yrdkrx62n/rx62n_board.jpg
 .. |http---am.renesas.com-media-products-tools-introductory_evaluation_tools-renesas_demo_kits-yrdkrx62n-support-audio_solution_kit.jpg| image:: https://wiki.analog.com/_media/http///am.renesas.com/media/products/tools/introductory_evaluation_tools/renesas_demo_kits/yrdkrx62n/support/audio_solution_kit.jpg

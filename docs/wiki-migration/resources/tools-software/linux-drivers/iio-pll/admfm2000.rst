@@ -1,7 +1,13 @@
 ADMFM2000 0.5 GHz to 32 GHz Microwave Downconverter Linux Driver
 ================================================================
 
-The ADMFM2000 is a dual-channel microwave downconverter, system-in-package (SiP) module, with input RF and local oscillator (LO) frequency ranges covering 5 GHz to 32 GHz, with an output intermediate frequency (IF) frequency range from 0.5 GHz to 8 GHz. A common LO input signal is split to feed two separate buffer amplifiers to drive the mixer in each channel. Each down conversion path consists of an LNA, a mixer, an IF filter, a digital step attenuator (DSA), and an IF amplifier.
+The ADMFM2000 is a dual-channel microwave downconverter, system-in-package (SiP)
+module, with input RF and local oscillator (LO) frequency ranges covering 5 GHz
+to 32 GHz, with an output intermediate frequency (IF) frequency range from 0.5
+GHz to 8 GHz. A common LO input signal is split to feed two separate buffer
+amplifiers to drive the mixer in each channel. Each down conversion path
+consists of an LNA, a mixer, an IF filter, a digital step attenuator (DSA), and
+an IF amplifier.
 
 Supported Devices
 -----------------
@@ -44,7 +50,8 @@ Function File
 Example Linux Device-Tree Initialization
 ========================================
 
-The ADMFM2000 driver is a platform driver and can currently only be instantiated via device tree.
+The ADMFM2000 driver is a platform driver and can currently only be instantiated
+via device tree.
 
 **Required properties:**
 
@@ -99,12 +106,12 @@ The ADMFM2000 driver is a platform driver and can currently only be instantiated
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADMFM2000 driver depends on GPIOLIB
-
 
 ::
 
@@ -118,8 +125,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing / API
 ====================
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 This device can be found under **/sys/bus/iio/devices/**
 
@@ -157,13 +171,13 @@ Show device name
       admfm2000
    
 
-
 Set ChannelY Gain
 -----------------
 
 /sys/bus/iio/devices/iio:deviceX/out_voltageY_hardwaregain
 
-Hardware applied gain factor. If shared across all channels, <type>_hardwaregain is used.
+Hardware applied gain factor. If shared across all channels, <type>_hardwaregain
+is used.
 
 .. container:: box bggreen
 
@@ -179,7 +193,6 @@ Hardware applied gain factor. If shared across all channels, <type>_hardwaregain
       root@analog:/sys/bus/iio/devices/iio:device0#cat out_voltage0_hardwaregain
       -10.000000 dB
    
-
 
 More Information
 ================
@@ -202,6 +215,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/youtube>p_vntewue24
-

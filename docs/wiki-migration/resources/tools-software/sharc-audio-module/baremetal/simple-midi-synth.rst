@@ -7,14 +7,16 @@ Bare Metal Project Wizard Setup
 Using the :doc:`bare metal project wizard </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/project-wizard>`:
 
 -  Give the project a meaningful name, click Next
--  Choose the Audio Project Fin on the Expansion Fin Selection Page because it is required for part of the tutorial, click Finish
+-  Choose the Audio Project Fin on the Expansion Fin Selection Page because it
+   is required for part of the tutorial, click Finish
 
 **No other options need to be changed.**
 
 Tutorial Overview
 -----------------
 
-In this tutorial, we will develop a basic MIDI synthesizer using the SHARC Audio Module and the Audio Project Fin.
+In this tutorial, we will develop a basic MIDI synthesizer using the SHARC Audio
+Module and the Audio Project Fin.
 
 The synthesizer will support a handful of oscillators (sine, square, triangle, etc.) as well as ADSR (Attack-Decay-Sustain-Release) envelope control. Here's a nice `tutorial on ADSR <https://www.wikiaudio.org/adsr-envelope/>`_. In this tutorial, we'll trigger the synthesizer from the MIDI interface.
 
@@ -120,7 +122,8 @@ Open up ``Callback_MIDI_Message.cpp``\ in SHARC Core 1 and at the top, we'll bot
    #include "audio_processing/audio_elements/simple_synth.h"
    extern SIMPLE_SYNTH synth_voices[];
 
-Now we're going to update the MIDI callback which is called each time we have a new byte from the MIDI interface that's ready to parse.
+Now we're going to update the MIDI callback which is called each time we have a
+new byte from the MIDI interface that's ready to parse.
 
 Replace the contents of ``midi_rx_callback_sharc1()`` with the code below. This code is implements a very primitive MIDI parser that will look for *MIDI note on* and *MIDI note off* events. When a *note on* event is detected, this code will iterate through our 16 structs (each corresponding to a voice of our synthesizer). As soon as it finds one that is not playing, it will play the MIDI note on this voice via the ``synth_start_note()`` function. Similarly, when a *note off* event is detected, the code will iterate through the 16 voices and look for one that has the same note value as the note that should be turned off. Once this is found, the ``synth_stop_note()`` function is called on this voice.
 
@@ -202,4 +205,3 @@ Replace the contents of ``midi_rx_callback_sharc1()`` with the code below. This 
           }
        }
    }
-

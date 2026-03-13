@@ -4,17 +4,27 @@
 Overview
 --------
 
-You can never have too many power supplies. Well, that's a bit of an exaggeration - if you have so many power supplies that they displace so much oxygen in your lab that you can't breathe, you have too many. But you get the idea. Even though power supplies seem simple at first glance, they vary widely in their capabilities and intended applications. A well-equipped lab bench will have several commercial power supplies with several adjustable outputs, ideally with "lots of" current capability AND adjustable current limit. And while most of the time it does not make sense to try to make your own test equipment - like oscilloscopes, spectrum analyzers, network analyzers, etc., power supplies are an exception.
+You can never have too many power supplies. Well, that's a bit of an
+exaggeration - if you have so many power supplies that they displace so much
+oxygen in your lab that you can't breathe, you have too many. But you get the
+idea. Even though power supplies seem simple at first glance, they vary widely
+in their capabilities and intended applications. A well-equipped lab bench will
+have several commercial power supplies with several adjustable outputs, ideally
+with "lots of" current capability AND adjustable current limit. And while most
+of the time it does not make sense to try to make your own test equipment - like
+oscilloscopes, spectrum analyzers, network analyzers, etc., power supplies are
+an exception.
 
-In this tutorial, we will build a highly capable 45W power supply with an output voltage range of 1 to 16V, adjustable current limit from 0 to 3 amps. The topology is an LDO (linear) output stage with a buck preregulator, limiting the maximum power dissipation to about 7W.
-
+In this tutorial, we will build a highly capable 45W power supply with an output
+voltage range of 1 to 16V, adjustable current limit from 0 to 3 amps. The
+topology is an LDO (linear) output stage with a buck preregulator, limiting the
+maximum power dissipation to about 7W.
 
 |image1|
 
 .. container:: centeralign
 
    Figure 1. Finished Supply with Heat Sink and USB-C power input
-
 
 Materials
 ---------
@@ -45,4 +55,4 @@ Conclusion
 ----------
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/lab_hw/u_build_45w_power_supply/u_build_45w_power_supply_top.jpg
-   :width: 500px
+   :width: 500

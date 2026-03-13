@@ -1,29 +1,39 @@
 ADRV936x RF SOM Hardware
 ========================
 
-Whether you want to understand the changes between revisions, or just understand how to probe the PCB, this is where all the information should be.
+Whether you want to understand the changes between revisions, or just understand
+how to probe the PCB, this is where all the information should be.
 
 ADRV936x - Mechanical
 ---------------------
 
-The ADRV9361-Z7035 SDR 2X2 SOM uses a 20 layer PCB that measures 2.440” x 3.937” (62 mm x 100 mm). The 62mm x 100mm form factor is compatible with the DP10062 “Sick of Beige v1.0” specification from dangerousprototypes.com.
+The ADRV9361-Z7035 SDR 2X2 SOM uses a 20 layer PCB that measures 2.440” x 3.937”
+(62 mm x 100 mm). The 62mm x 100mm form factor is compatible with the DP10062
+“Sick of Beige v1.0” specification from dangerousprototypes.com.
 
 Connectors
 ~~~~~~~~~~
 
-The MicroHeaders used on ADRV9361-Z7035 are FCI 0.8mm BergStak®100-position Dual Row, BTB Vertical Receptacles (61082-101400LF). These receptacles mate with any of the FCI 0.8mm BergStak® 100-position Dual Row BTB Vertical Plugs (61083-10x400LF) to provide variable stack heights of 5mm, 6mm, 7mm or 8mm. The SOM uses the FCI “receptacle” while carrier cards use the “plug”. Both receptacle and plug include a PCB locator peg that can be used to design precisely mated SOM and carrier layouts.
+The MicroHeaders used on ADRV9361-Z7035 are FCI 0.8mm BergStak®100-position Dual
+Row, BTB Vertical Receptacles (61082-101400LF). These receptacles mate with any
+of the FCI 0.8mm BergStak® 100-position Dual Row BTB Vertical Plugs
+(61083-10x400LF) to provide variable stack heights of 5mm, 6mm, 7mm or 8mm. The
+SOM uses the FCI “receptacle” while carrier cards use the “plug”. Both
+receptacle and plug include a PCB locator peg that can be used to design
+precisely mated SOM and carrier layouts.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/locator.png
    :alt: FCI BergStak receptacle locator peg
    :align: center
-   :width: 600px
+   :width: 600
 
 More information about these connectors can be found `here <http://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/61082.pdf>`_.
 
 Dimensions
 ~~~~~~~~~~
 
-The physical dimensions of the connectors, mounting holes and PCB is common between the ADRV9361-Z7035 and the ADRV9364-Z7020.
+The physical dimensions of the connectors, mounting holes and PCB is common
+between the ADRV9361-Z7035 and the ADRV9364-Z7020.
 
 .. admonition:: Download
    :class: download
@@ -42,7 +52,6 @@ The physical dimensions of the connectors, mounting holes and PCB is common betw
       * ADRV9361-Z7035 Step file: `adrv9361-z7035.step.zip <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/adrv9361-z7035.step.zip>`_ A STEP-File is a widely used data exchange form of ISO 10303 which can represent 3D objects in Computer-aided design (CAD) and related information.
    
 
-
 Pinout
 ~~~~~~
 
@@ -55,7 +64,6 @@ Pinout
    -  `ADRV9361-Z7035 Connector Pinout <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/adrv9361-z7035_pinout_jx_1-4_.pdf>`_
    -  `ADRV9364-Z7020 Connector Pinout <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/adrv9364-z7020_pinout_jx_1-4_.pdf>`_
    
-
 
 ADRV9361-Z7035 Hardware
 -----------------------
@@ -73,11 +81,11 @@ This is the current shipping version.
    -  `BOM (7 zipped) <https://wiki.analog.com/_media/resources/eval/user-guides/adrv9361-z7035/05-038702-01-f2.7z>`_
    
 
-
 -  Changes from Rev E to Rev F:
 
    -  The schematic did not change. We only made an adjustment to the layout.
-   -  The RF traces were modified to improve the insertion loss and the return loss as well as the EVM.
+   -  The RF traces were modified to improve the insertion loss and the return
+      loss as well as the EVM.
 
       -  This resulted in some layout changes for discrete capacitors
 
@@ -95,7 +103,6 @@ Revision E
    -  `Rev E BOM <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/05_038702-e.xlsx>`_
    
 
-
 Revision C (First publicly available revision)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -107,7 +114,6 @@ This is the first publicly available revision.
    
    -  `Rev C Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/adrv9361-z7035.pdf>`_
    
-
 
 Why do a Rev D?
 ^^^^^^^^^^^^^^^
@@ -141,7 +147,6 @@ This is the current shipping version.
    -  `Rev D BOM <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/05-041351-01-d3.xlsx>`_
    
 
-
 Revision C
 ~~~~~~~~~~
 
@@ -153,7 +158,6 @@ This is the first publicly available revision.
    
    -  `Rev C Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/adrv9364-z7020_revc.pdf>`_
    
-
 
 Why do a Rev D?
 ^^^^^^^^^^^^^^^

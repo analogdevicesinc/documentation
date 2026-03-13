@@ -3,7 +3,6 @@ External SPI Delay
 
 :doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-
 This module can be used to implement off-chip delay using the SPI interface.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/spidelay.jpg
@@ -84,7 +83,9 @@ Any change in these SPI configuration parameters requires a recompilation.
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-There is some inconsistency between register control and the 'Default chip/Device Address' in the module. The following table shows the mapping between module's parameter and the register control window.
+There is some inconsistency between register control and the 'Default
+chip/Device Address' in the module. The following table shows the mapping
+between module's parameter and the register control window.
 
 +--------------------------------+------------------------------------------------+
 | ' Default chip/Device Address' | 'Slave Select Channel' in the Register control |

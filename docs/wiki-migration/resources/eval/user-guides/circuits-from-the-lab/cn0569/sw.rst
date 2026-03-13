@@ -48,7 +48,11 @@ Setting up the Hardware
    :alt: System Overview
    :align: center
 
--  Use a mother-to-father breadboard wire to connect pin 1 from the CN0569 to pin 5 on the ADICUP3029 P7 header. The connection should look like in the below picture. What this does is connecting the GPIO0 of the APDP1080 to one of the interrupt GPIOs from the ADuCM3029. We will use theis to calibrate the system clocks.
+-  Use a mother-to-father breadboard wire to connect pin 1 from the CN0569 to
+   pin 5 on the ADICUP3029 P7 header. The connection should look like in the
+   below picture. What this does is connecting the GPIO0 of the APDP1080 to one
+   of the interrupt GPIOs from the ADuCM3029. We will use theis to calibrate the
+   system clocks.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/cn0569_gpio_connection_picture.jpg
    :alt: GPIO connection
@@ -59,8 +63,10 @@ Setting up the Hardware
 Building the software
 ---------------------
 
-After installing CrossCore Embedded Studio and necessary support pack the user can open a command line terminal (with admin privileges on Windows) and navigate to the project folder in the cloned no-OS repository. There the following list of commands can be used:
-
+After installing CrossCore Embedded Studio and necessary support pack the user
+can open a command line terminal (with admin privileges on Windows) and navigate
+to the project folder in the cloned no-OS repository. There the following list
+of commands can be used:
 
 No-OS Build System
 ==================
@@ -69,7 +75,8 @@ No-OS Build System
 
    make
 
-This is the complete compilation process. It is made up of three rules, that can be used separately: project, update, build
+This is the complete compilation process. It is made up of three rules, that can
+be used separately: project, update, build
 
 <code> make project </code> - creates the ``build`` directory and the required directory structure
 
@@ -99,14 +106,13 @@ Compilation Using Platform-Specific Tools
 .. image:: https://wiki.analog.com/_media/resources/no-os/workflowsdk.drawio_1_.svg
    :align: center
 
-
-
 Running the example
 -------------------
 
 After the controller has been programmed and the firmware is running on the ADICUP3029 the IIO server is up and a connection to it can be established. This can be done either by using `IIO-Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope>`_ or the :git-pyadi-iio:`pyadi-iio code <examples/cn0569>`.
 
-To use the gesture sensor and theremin examples, the python library must be installed first using pip:
+To use the gesture sensor and theremin examples, the python library must be
+installed first using pip:
 
 ::
 
@@ -123,14 +129,19 @@ The example can then be run using:
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0569.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0569.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building and debugging using CCES and the command line
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cn0569** can be found here:
 
@@ -160,7 +171,6 @@ The software for the **ADuCM3029_demo_cn0569** can be found here:
    
    -  :git-pyadi-iio:`pyadi-iio/tree/master/examples/cn0569 <examples/cn0569>`
    
-
 
 How to use the Tools
 --------------------

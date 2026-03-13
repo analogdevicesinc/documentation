@@ -5,11 +5,9 @@ EVAL-ADIS2 Evaluation Software User Guide
 
    The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
-
 .. warning::
 
    This guide assumes that you've connected your vibration sensor to the :adi:`EVAL-ADIS2`, drivers were successfully installed on your PC, and you've downloaded the correct software for your sensor. We recommend reviewing the :doc:`Hardware User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2-hardware-guide>` before continuing.
-
 
 Software Downloads
 ------------------
@@ -22,12 +20,15 @@ Click :adi:`here <media/en/evaluation-boards-kits/evaluation-software/SDPDrivers
 
    This application requires Microsoft .NET 3.5 to be installed and enabled on the host PCs running Windows 10. Additional information on enabling .NET 3.5 can be found `here <https://answers.microsoft.com/en-us/windows/forum/windows_10-windows_install-winpc/installingenabling-net-35-on-windows-10/fe7b4699-c096-4369-b06f-e1063da42e18>`_.
 
-
 EVAL-ADIS2 IMU Evaluation Software Overview
 -------------------------------------------
 
-The IMU Evaluation Software is a Microsoft Windows (.NET) application that works in conjunction with the EVAL-ADIS2, in order to provide users with a PC-Based interface to most ADIS16xxx products. This platform enables observation of basic sensor functions, read/write access to all user-accessible registers, and full-rate data acquisition, which is synchronous with data production of each ADIS16xxx.
-
+The IMU Evaluation Software is a Microsoft Windows (.NET) application that works
+in conjunction with the EVAL-ADIS2, in order to provide users with a PC-Based
+interface to most ADIS16xxx products. This platform enables observation of basic
+sensor functions, read/write access to all user-accessible registers, and
+full-rate data acquisition, which is synchronous with data production of each
+ADIS16xxx.
 
 |image1|
 
@@ -35,24 +36,27 @@ The IMU Evaluation Software is a Microsoft Windows (.NET) application that works
 
    This guide builds upon the :doc:`EVAL-ADIS2 Hardware User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2-hardware-guide>` and assumes that you've installed the necessary drivers and software.
 
-
 Using the EVAL-ADIS2 IMU Evaluation Software
 --------------------------------------------
 
 Main Window
 ~~~~~~~~~~~
 
-Once the IMU Evaluation software loads, you should be presented with a window similar to the image shown below.
+Once the IMU Evaluation software loads, you should be presented with a window
+similar to the image shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/448-imueval-softguide-01.png
-   :width: 800px
+   :width: 800
 
-The image below has been color-coded to illustrate the different parts of the IMU Evaluation Software. These colored sections will be referred to in the following sections.
+The image below has been color-coded to illustrate the different parts of the
+IMU Evaluation Software. These colored sections will be referred to in the
+following sections.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/448-imueval-softguide-02.png
-   :width: 800px
+   :width: 800
 
-The drop-down menus highlighted in orange list additional features and utilities that make up the core functionality of the evaluation software.
+The drop-down menus highlighted in orange list additional features and utilities
+that make up the core functionality of the evaluation software.
 
 - The **Devices** menu provides a list of supported products. Selecting a product from this list will configure the IMU evaluation software register map. Each device has a unique register map that must be selected to ensure proper sensor operation. The green box shows the active device. In this example, the :adi:`ADIS16448` is selected.
 
@@ -68,7 +72,12 @@ The drop-down menus highlighted in orange list additional features and utilities
 
 The purple box shows the primary, inertial output registers for the selected device. These values are updated in real-time after pressing the **Read** button (identified by a red box).
 
-The yellow box shows three waveform recorder windows. Each window allows for plotting the three primary sensor types (gyroscopes, accelerometers, and magnetometers [if supported]). The top subplot displays gyroscope data, the middle plot displays accelerometer data and the bottom plot displays magnetometer data. Each plot color corresponds to the colors displayed in the "Output Registers" window (highlighted in purple).
+The yellow box shows three waveform recorder windows. Each window allows for
+plotting the three primary sensor types (gyroscopes, accelerometers, and
+magnetometers [if supported]). The top subplot displays gyroscope data, the
+middle plot displays accelerometer data and the bottom plot displays
+magnetometer data. Each plot color corresponds to the colors displayed in the
+"Output Registers" window (highlighted in purple).
 
 Register Access
 ~~~~~~~~~~~~~~~
@@ -76,14 +85,15 @@ Register Access
 The **Register Access** window provides read and write access to all user-accessible registers listed in the selected device's datasheet. The image below shows a screenshot of the window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis1648x-imu-eval-registeraccess-01.png
-   :width: 800px
+   :width: 800
 
 The color-coded image below is referenced in the following section.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis1648x-imu-eval-registeraccess-02.png
-   :width: 800px
+   :width: 800
 
-The purple box sorts each set of registers into a standard category. The available categories are:
+The purple box sorts each set of registers into a standard category. The
+available categories are:
 
 - **Control/Status** - General sensor configuration, alarm, and metadata registers
 
@@ -93,28 +103,33 @@ The purple box sorts each set of registers into a standard category. The availab
 
 .. important::
 
-   The calibration register section mentioned above is separate from the factory calibration registers and procedures!\
+   The calibration register section mentioned above is separate from the factory
+   calibration registers and procedures!\
 
+The section highlighted by the red box lists all of the registers in the
+selected category. Click on the register name to select a register for
+individual read/write access.
 
-The section highlighted by the red box lists all of the registers in the selected category. Click on the register name to select a register for individual read/write access.
-
-The green box identifies the read/write control options for the current register selection.
+The green box identifies the read/write control options for the current register
+selection.
 
 .. important::
 
    Registers must be written in hexadecimal format!
 
-
 The **Update Registers in Category** button (shown in an orange box above) automatically reads all of the registers shown in the selected category (red box) and updates their contents in the GUI.
 
-The section highlighted in yellow identifies provides a means of easily calling subroutines within the connected sensor. Clicking on a button is equivalent to writing a single-bit command to the respective register.
+The section highlighted in yellow identifies provides a means of easily calling
+subroutines within the connected sensor. Clicking on a button is equivalent to
+writing a single-bit command to the respective register.
 
 The **Save Reg Settings to File** programmatically reads and saves the contents of all of the registers in the current category into a \*.csv (common-delimited) file. The **Load Reg Settings from File** button reads a target .csv file and attempts to write the saved values back into the sensor.
 
 .. important::
 
-   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
-
+   The Register Access form always writes to both the upper and lower bytes of a
+   given register. When writing to a register, make sure to include the desired
+   16-bit value in hexadecimal format before clicking the Write Register button.
 
 Data Capture
 ~~~~~~~~~~~~
@@ -122,18 +137,22 @@ Data Capture
 The **Data Capture** window **only** supports synchronous data acquisition and logging to a file on the host PC. Data samples are only read from the sensor when the data ready pin toggles, indicating that data is valid.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis1648x-imu-eval-datacapture-01.png
-   :width: 500px
+   :width: 500
 
 The color-coded image below is referenced in the following section.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis1648x-imu-eval-datacapture-02.png
-   :width: 500px
+   :width: 500
 
-The section highlighted in red lists all of the registers that are eligible for data capture. Checking the box next to each register indicates that the specified register values should be recorded once the data stream begins.
+The section highlighted in red lists all of the registers that are eligible for
+data capture. Checking the box next to each register indicates that the
+specified register values should be recorded once the data stream begins.
 
-The section highlighted in green allows for customizing the file name and location of the resultant .csv files.
+The section highlighted in green allows for customizing the file name and
+location of the resultant .csv files.
 
-The section highlighted in yellow identifies the data stream configuration options.
+The section highlighted in yellow identifies the data stream configuration
+options.
 
 - **Record Length** - The total number of samples to be captured. A sample is defined as a single "data valid" period as signaled by the data ready pin on the sensor
 
@@ -147,8 +166,6 @@ The section highlighted in yellow identifies the data stream configuration optio
 
 Software Revision History
 -------------------------
-
-
 
 .. collapsible:: Click to expand
 
@@ -240,7 +257,5 @@ Software Revision History
    | v1.0.0   | 3/24/2012    | Initial Release                                                                                                             |
    +----------+--------------+-----------------------------------------------------------------------------------------------------------------------------+
 
-
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imues_mainwindow_04_yaccel_pos_2_neg.png
-   :width: 800px
+   :width: 800

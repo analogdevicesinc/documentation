@@ -9,13 +9,27 @@ Features
 GENERAL DESCRIPTION
 -------------------
 
-This user guide describes the evaluation board, which allows users to test dual-channel, low bias current amplifiers that come in an 8 lead standard small outline package (SOIC_N). The design of this evaluation board emphasizes simplicity and ease of use. Provisions are available on the board to interface easily to test equipment.
+This user guide describes the evaluation board, which allows users to test
+dual-channel, low bias current amplifiers that come in an 8 lead standard small
+outline package (SOIC_N). The design of this evaluation board emphasizes
+simplicity and ease of use. Provisions are available on the board to interface
+easily to test equipment.
 
-The evaluation board uses a combination of surface-mount technology (SMT) in Case Size 0603, with the exception of bypass capacitors and termination resistors. It also features a variety of unpopulated resistor and capacitor pads that provide the user with multiple choices and extensive flexibility for different application circuits.
+The evaluation board uses a combination of surface-mount technology (SMT) in
+Case Size 0603, with the exception of bypass capacitors and termination
+resistors. It also features a variety of unpopulated resistor and capacitor pads
+that provide the user with multiple choices and extensive flexibility for
+different application circuits.
 
-The evaluation board also has a provision for photodiode sensors, allowing easy configuration of a transimpedance amplifier (TIA). The layout is optimized with provisions for guarding to ensure low leakage and low parasitic capacitance for TIA applications.
+The evaluation board also has a provision for photodiode sensors, allowing easy
+configuration of a transimpedance amplifier (TIA). The layout is optimized with
+provisions for guarding to ensure low leakage and low parasitic capacitance for
+TIA applications.
 
-The device specifications and operation, along with application circuit configurations and guidance are covered in the datasheets of the devices covered by this user guide. These datasheets should be consulted in conjunction with the user guide for a better understanding of the device operation.
+The device specifications and operation, along with application circuit
+configurations and guidance are covered in the datasheets of the devices covered
+by this user guide. These datasheets should be consulted in conjunction with the
+user guide for a better understanding of the device operation.
 
 Table 1. Compatible Low Bias Current Amplifiers
 
@@ -30,7 +44,7 @@ EVALUATION BOARD PHOTOGRAPH
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dual_soic_low_ib_evb_photo.png
    :align: center
-   :width: 400px
+   :width: 400
 
 EVALUATION BOARD QUICK START OPERATION
 --------------------------------------
@@ -38,46 +52,70 @@ EVALUATION BOARD QUICK START OPERATION
 OVERVIEW
 ~~~~~~~~
 
-This section outlines the basic configuration of the evaluation board to test basic functionality of the device. Provisions are included on the board so that it is highly configurable for any application. The connectors available on the board provide an easy interface to various bench equipment.
+This section outlines the basic configuration of the evaluation board to test
+basic functionality of the device. Provisions are included on the board so that
+it is highly configurable for any application. The connectors available on the
+board provide an easy interface to various bench equipment.
 
 Power Supply
 ~~~~~~~~~~~~
 
-The evaluation board uses turret connectors for the power supply connections. The board comes installed with 0.1 µF and 10 µF decoupling capacitors on both supplies. Apply the positive supply to the VS+ connector and the negative supply to the VS− connector.
+The evaluation board uses turret connectors for the power supply connections.
+The board comes installed with 0.1 µF and 10 µF decoupling capacitors on both
+supplies. Apply the positive supply to the VS+ connector and the negative supply
+to the VS− connector.
 
 Amplifier Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Both channels on the evaluation board are configured in a noninverting configuration with a gain of 1 by default. Preinstalled resistors accommodate this configuration. Figure 2 shows the default connections on the board.
-
+Both channels on the evaluation board are configured in a noninverting
+configuration with a gain of 1 by default. Preinstalled resistors accommodate
+this configuration. Figure 2 shows the default connections on the board.
 
 |image1|
 
 POWER-UP PROCEDURE
 ~~~~~~~~~~~~~~~~~~
 
-To begin using the evaluation board, use the following procedure. 1. Set the power supplies to 15 V, −15 V, and ground, and connect to the VS+, VS−, and GND turrets, respectively. 2. Connect an oscilloscope to the OUTA and OUTB Subminiature Version A (SMA) connectors. 3. Connect an input signal source to INA+ and INB+. Set the signal source to the preferred amplitude and frequency. Keep the amplitude within the input voltage range of the device to ensure proper operation. 4. Turn on the power supplies, then turn on the input signal source.
+To begin using the evaluation board, use the following procedure. 1. Set the
+power supplies to 15 V, −15 V, and ground, and connect to the VS+, VS−, and GND
+turrets, respectively. 2. Connect an oscilloscope to the OUTA and OUTB
+Subminiature Version A (SMA) connectors. 3. Connect an input signal source to
+INA+ and INB+. Set the signal source to the preferred amplitude and frequency.
+Keep the amplitude within the input voltage range of the device to ensure proper
+operation. 4. Turn on the power supplies, then turn on the input signal source.
 
 The oscilloscope now reads the same amplitude and frequency as the input signal
 
 TRANSIMPEDANCE AMPLIFIER (TIA) CONFIGURATION
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The low input bias current and low input capacitance of these amplifiers make this device a good choice for transimpedance configurations. The evaluation board has an on-board provision for a photodiode (radial package) on both channels of the amplifier. The evaluation board is fabricated with a guard trace around the −IN x pin to ensure minimal leakage when evaluating in a transimpedance configuration. R1 for Channel A and R2 for Channel B provide quick connections of the guard trace to the noninverting pin of the amplifier in an inverting TIA configuration.
+The low input bias current and low input capacitance of these amplifiers make
+this device a good choice for transimpedance configurations. The evaluation
+board has an on-board provision for a photodiode (radial package) on both
+channels of the amplifier. The evaluation board is fabricated with a guard trace
+around the −IN x pin to ensure minimal leakage when evaluating in a
+transimpedance configuration. R1 for Channel A and R2 for Channel B provide
+quick connections of the guard trace to the noninverting pin of the amplifier in
+an inverting TIA configuration.
 
-When operating in a TIA configuration, a bias voltage can be applied to VPDA or VPDB. If no bias voltage needs to be applied, install a 0 Ω resistor at RPDA or RPDB to connect the anode of the photodiode to ground. For this TIA configuration, install the photodiode at either PDA or PDB, along with the feedback resistor at RFA and RFB, for Channel A and Channel B, respectively. A capacitor at C5 and C12 can be added for stability of the circuit.
+When operating in a TIA configuration, a bias voltage can be applied to VPDA or
+VPDB. If no bias voltage needs to be applied, install a 0 Ω resistor at RPDA or
+RPDB to connect the anode of the photodiode to ground. For this TIA
+configuration, install the photodiode at either PDA or PDB, along with the
+feedback resistor at RFA and RFB, for Channel A and Channel B, respectively. A
+capacitor at C5 and C12 can be added for stability of the circuit.
 
 EVALUATION BOARD SCHEMATICS AND ARTWORK
 ---------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/figure_3._channel_a_circuit_connections.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 3. Channel A Circuit Connections*\
-
 
    |image2|
 
@@ -85,13 +123,11 @@ EVALUATION BOARD SCHEMATICS AND ARTWORK
 
    \ *Figure 4. Channel B Circuit Connections*\
 
-
    |image3|
 
 .. container:: centeralign
 
    \ *Figure 5. Power and Ground Connections*\
-
 
    |image4|
 
@@ -99,20 +135,17 @@ EVALUATION BOARD SCHEMATICS AND ARTWORK
 
    \ *Figure 6. Assembly Drawing, Primary Side*\
 
-
    |image5|
 
 .. container:: centeralign
 
    \ *Figure 7. Layout Pattern, Primary Side*\
 
-
    |image6|
 
 .. container:: centeralign
 
    \ *Figure 8. Layout Pattern, Secondary Side*\
-
 
 ORDERING INFORMATION
 --------------------
@@ -151,14 +184,14 @@ BILL OF MATERIALS
 +----------+------------------------------------------------------------------------------------------------------------------+--------------------------------------------+------------------------------+-------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/figure_2._default_connection.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/figure_4._channel_b_circuit_connections.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/figure_5._power_and_ground_connections.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/figure_6._assembly_drawing_primary_side.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/figure_7._layout_pattern_primary_side.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/figure_8._layout_pattern_secondary_side.png
-   :width: 400px
+   :width: 400

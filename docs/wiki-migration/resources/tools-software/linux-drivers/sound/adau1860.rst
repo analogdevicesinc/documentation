@@ -50,7 +50,8 @@ YAML example Placeholder
 I2C
 ---
 
-The I2C device id depends on the ADDR0 and ADDR1 pin settings and needs to be set according to your board setup.
+The I2C device id depends on the ADDR0 and ADDR1 pin settings and needs to be
+set according to your board setup.
 
 ===== ===== =============
 ADDR1 ADDR0 I2C device id

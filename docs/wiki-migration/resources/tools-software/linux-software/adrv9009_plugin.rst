@@ -7,7 +7,9 @@ If you want to go play with ``/sys/bus/iio/devices/....`` and manipulate the dev
 
 .. tip::
 
-   This plugin supports multiple device instantiations. Typically used in a multichip design, where all devices and links are being synchronized. In order to support this mode, all IIO devices need unique names. Such as:
+   This plugin supports multiple device instantiations. Typically used in a
+   multichip design, where all devices and links are being synchronized. In
+   order to support this mode, all IIO devices need unique names. Such as:
 
    
    ::
@@ -26,8 +28,9 @@ If you want to go play with ``/sys/bus/iio/devices/....`` and manipulate the dev
       adrv9009-phy-1
       adrv9009-phy-0 [JESD204 FSM Top Device]
    
-   When used with the JESD204 finite state machine framework. The Top Device needs to be suffixed with a letter or numeral smaller than the slave devices. (a < b < c … or 0 < 1 < 2 …)
-
+   When used with the JESD204 finite state machine framework. The Top Device
+   needs to be suffixed with a letter or numeral smaller than the slave devices.
+   (a < b < c … or 0 < 1 < 2 …)
 
 If you think the device has a setting that isn't managed by this tab, check out the `ADRV9009 Advanced Plugin <https://wiki.analog.com/adrv9009_advanced_plugin>`_ for the IIO Oscilloscope.
 
@@ -41,7 +44,7 @@ The ADRV9009 view is divided in four sections:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_main_plugin_1.png
    :align: right
-   :width: 400px
+   :width: 400
 
 Device Global Settings
 ----------------------
@@ -94,7 +97,7 @@ Observation Chain
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_main_plugin_2.png
    :align: right
-   :width: 400px
+   :width: 400
 
 -  **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
 -  **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
@@ -117,7 +120,7 @@ Transmit/DDS
 ~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_main_plugin_3.png
-   :width: 400px
+   :width: 400
 
 The plugin provides several options on how the transmitted data is generated.I
 
@@ -133,7 +136,6 @@ One CW Tone
 
 In **One CW Tone** mode one continuous wave (CW) tone will be outputted. The plugin displays the controls to set the Frequency, Amplitude and Phase for just one tone and makes sure that the amplitude of the other tone is set to 0. The resulting signal will be outputted on the Channel I of the DAC and the exact same signal but with a difference in phase of 90 degrees will be outputted on the Channel Q of the DAC.
 
-
 Two CW Tone
 ~~~~~~~~~~~
 
@@ -141,7 +143,6 @@ Two CW Tone
    :align: right
 
 In **Two CW Tone** mode two continuous wave (CW) tones will be outputted. The plugin displays the controls to set the frequencies F1 and F2, amplitudes A1 and A2, phases P1 and P2 for the two tones. The resulting signal will be outputted on the Channel I of the DAC and the exact same signal but with a difference in phase of 90 degrees will be outputted on the Channel Q of the DAC.
-
 
 Independent I/Q Control
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,9 +154,9 @@ In **Independent I/Q Control** the plugin displays the controls to set the frequ
 
 .. note::
 
-   Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) = A1 \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2), where A-amplitude, F-frequency, P-phase of a tone.
-
-
+   Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) = A1
+   \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2), where
+   A-amplitude, F-frequency, P-phase of a tone.
 
 DAC Buffer Output
 ~~~~~~~~~~~~~~~~~
@@ -165,22 +166,27 @@ DAC Buffer Output
 **Restrictions:**
 
 -  There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
--  Due to hardware limitation only specific combinations of enabled channels are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is enabled then it can be any of them. If two channels are enabled then channels 0, 1 or channels 2, 3 can be enabled and so on.
-
+-  Due to hardware limitation only specific combinations of enabled channels are
+   possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is
+   enabled then it can be any of them. If two channels are enabled then channels
+   0, 1 or channels 2, 3 can be enabled and so on.
 
 Disable
 ~~~~~~~
 
-In this mode both DDS and DMA are disabled causing the DAC channels to stop transmitting any data.
+In this mode both DDS and DMA are disabled causing the DAC channels to stop
+transmitting any data.
 
 .. note::
 
-   Upon pressing Reload Settings button the values will be reloaded with the corresponding driver values. Useful in scenarios where the diver values get changed outside this plugin (e.g with the use of Debug plugin) and a refresh on plugin's values is needed.
-
+   Upon pressing Reload Settings button the values will be reloaded with the
+   corresponding driver values. Useful in scenarios where the diver values get
+   changed outside this plugin (e.g with the use of Debug plugin) and a refresh
+   on plugin's values is needed.
 
 .. hint::
 
-   Some plugin values will be rounded to the nearest value supported by the hardware.
-
+   Some plugin values will be rounded to the nearest value supported by the
+   hardware.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/dac_output_buffer_panel.png

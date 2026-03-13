@@ -5,7 +5,6 @@ JESD204B/C Link Transmit Peripheral
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/jesd204/axi_jesd204_tx/index.html\
 
-
 The Analog Devices JESD204B/C Link Transmit Peripheral implements the link layer handling of a JESD204 transmit logic device. Implements the 8B/10B based link layer defined in JESD204C standard that is similar to the link layer defined in JESD204B. This includes handling of the SYSREF and SYNC~ and controlling the `link state machine <https://wiki.analog.com/>`_ accordingly as well as performing per lane scrambling and character replacement. It has been designed for interoperability with `Analog Devices JESD204B DAC converter products <https://wiki.analog.com/>`_. Implements the 64B/66B based link layer defined in the JESD204C standard. This includes handling of the SYSREF, per lane encoding of sync header, scrambling as per data multi-block CRC generation.
 
 The type of link layer is selectable during implementation phase through the ``LINK_MODE`` synthesis parameter.
@@ -30,8 +29,6 @@ Features
 Utilization
 -----------
 
-
-
 .. collapsible:: Detailed Utilization (Click to expand)
 
    =============== ========= ==== ===
@@ -54,8 +51,6 @@ Utilization
                    4         TBD  TBD
                    8         TBD  TBD
    =============== ========= ==== ===
-
-
 
 Files
 -----
@@ -197,7 +192,6 @@ Base (common to all cores)
 | Tue Mar 14 10:17:59 2023 |        |                  |                       |      |            |                                                                                                                                                                                                                                                                                     |
 +--------------------------+--------+------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Common (axi_ad\*)
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -249,7 +243,6 @@ ADC Common (axi_ad\*)
 |         |        | [7:0]       | CUSTOM_CONTROL      | RW   | 0x00    |                                                                                                                                                                                                                                                                                                |
 +---------+--------+-------------+---------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADAQ8092
 ========
 
@@ -280,8 +273,6 @@ AD7606X_PI
 -  1 = CRC_ENABLED
 -  2 = STATUS_HEADER
 -  3 = CRC_STATUS
-
-
 
 \|
 
@@ -399,7 +390,6 @@ AD7606X_PI
 | Fri Aug 11 18:29:53 2023 |        |                     |                        |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+---------------------+------------------------+------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Channel (axi_ad\*)
 ----------------------
 
@@ -504,7 +494,6 @@ ADC Channel (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                      |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +--------------------------+--------+----------------------+------------------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 IO Delay Control (axi_ad\*)
 ---------------------------
 
@@ -533,7 +522,6 @@ IO Delay Control (axi_ad\*)
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                     |                    |      |         |                                                                                                                                                                                                                                                    |
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 DAC Common (axi_ad)
 -------------------
@@ -670,7 +658,6 @@ DAC Common (axi_ad)
 | Tue Mar 14 10:17:59 2023 |        |                     |                       |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+---------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DAC Channel (axi_ad\*)
 ----------------------
 
@@ -783,7 +770,6 @@ DAC Channel (axi_ad\*)
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Fri Sep 8 16:01:53 2023 |        |                   |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Generic TDD Control (axi_tdd)
 -----------------------------
@@ -1138,7 +1124,6 @@ Generic TDD Control (axi_tdd)
 | Tue Mar 14 10:17:59 2023 |        |                       |                     |      |                       |                                                                                                                                                                                                    |
 +--------------------------+--------+-----------------------+---------------------+------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Transceiver TDD Control (axi_ad\*)
 ----------------------------------
 
@@ -1284,7 +1269,6 @@ Transceiver TDD Control (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                            |                        |      |          |                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+----------------------------+------------------------+------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD TPL (up_tpl_common)
 ------------------------
 
@@ -1325,7 +1309,6 @@ JESD TPL (up_tpl_common)
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                      |             |      |         |                                                                                                            |
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
-
 
 JESD204 RX (axi_jesd204_rx)
 ---------------------------
@@ -1612,7 +1595,6 @@ JESD204 RX (axi_jesd204_rx)
 | Tue Mar 14 10:17:59 2023  |                 |                                |                              |        |             |                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD204 TX (axi_jesd204_tx)
 ---------------------------
 
@@ -1849,7 +1831,6 @@ JESD204 TX (axi_jesd204_tx)
 | Tue Mar 14 10:17:59 2023  |                 |                       |                          |        |             |                                                                                                                                                                                                                     |
 +---------------------------+-----------------+-----------------------+--------------------------+--------+-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DMA Controller (axi_dmac)
 -------------------------
 
@@ -2032,7 +2013,6 @@ DMA Controller (axi_dmac)
 | Thu Feb 1 12:18:03 2024 |        |                           |                           |      |                                 |                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+---------------------------+---------------------------+------+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Fan Controller (axi_fan_control)
 --------------------------------
 
@@ -2200,7 +2180,6 @@ Fan Controller (axi_fan_control)
 | Tue Mar 14 10:17:59 2023 |        |                   |                       |      |                        |                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +--------------------------+--------+-------------------+-----------------------+------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 System ID (axi_system_id)
 -------------------------
 
@@ -2241,7 +2220,6 @@ System ID (axi_system_id)
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                |                |      |            |                                                                                          |
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
-
 
 Clock Generator (axi_clkgen)
 ----------------------------
@@ -2289,7 +2267,6 @@ Clock Generator (axi_clkgen)
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                  |                   |      |         |                                                                                                                                                         |
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Clock Monitor (axi_clock_monitor)
 ---------------------------------
@@ -2383,7 +2360,6 @@ Clock Monitor (axi_clock_monitor)
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |               |               |      |            |                                |
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
-
 
 HDMI Transmit (axi_hdmi_tx)
 ---------------------------
@@ -2490,7 +2466,6 @@ HDMI Transmit (axi_hdmi_tx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                      |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 HDMI Receive (axi_hdmi_rx)
 --------------------------
 
@@ -2558,7 +2533,6 @@ HDMI Receive (axi_hdmi_rx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                 |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+-----------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 General Purpose Registers (axi_gpreg)
 -------------------------------------
 
@@ -2603,7 +2577,6 @@ General Purpose Registers (axi_gpreg)
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |              |              |      |            |                                                                                                                                                                                                                                        |
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 SPI Engine (axi_spi_engine)
 ---------------------------
@@ -2711,7 +2684,6 @@ SPI Engine (axi_spi_engine)
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                    |                    |      |             |                                                                                                                                                                                                                                                                                      |
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Xilinx XCVR (axi_xcvr) Regmap
 -----------------------------
@@ -2894,7 +2866,6 @@ Xilinx XCVR (axi_xcvr) Regmap
 | Tue Mar 14 10:17:59 2023 |        |               |                  |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 PWM Generator (axi_pwm_gen)
 ---------------------------
 
@@ -2903,7 +2874,6 @@ PWM Generator (axi_pwm_gen)
 .. important::
 
    This register map was moved at https://analogdevicesinc.github.io/hdl/library/axi_pwm_gen/index.html#register-map. The following table is NOT MAINTAINED ANYMORE.
-
 
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 | Address |        | Bits               | Name                                                                         | Type | Default    | Description                                                   |
@@ -2949,8 +2919,6 @@ PWM Generator (axi_pwm_gen)
 |         |        | [31:0]             | PULSE_X_OFFSET[31:0] - base + 'h4 for each channel -> e.g. CH3 offset - 'hCC | RW   | 0x0000     | Pulse x offset, defined in number of clock cycles.            |
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 
-
-
 +-------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Access Type | Name             | Description                                                                                                                                                                                                                     |
 +=============+==================+=================================================================================================================================================================================================================================+
@@ -2968,7 +2936,9 @@ Theory of Operation
 
 The JESD204B/C transmit peripheral consists of two main components. The register map and the link processor. Both components are fully asynchronous and are clocked by independent clocks. The register map is in the ``s_axi_aclk`` clock domain, while the link processor is in the ``clk`` and ``device_clk`` clock domain.
 
-The register map is used to configure the operational parameters of the link processor as well as to query the current state of the link processor. The link processor itself is responsible for handling the JESD204 link layer protocol.
+The register map is used to configure the operational parameters of the link
+processor as well as to query the current state of the link processor. The link
+processor itself is responsible for handling the JESD204 link layer protocol.
 
 Interfaces and Signals
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -2992,7 +2962,10 @@ Transceiver Interface (TX_PHYn)
 
 For each lane the peripheral has one corresponding ``TX_PHY`` interface. These interfaces provide the pre-processed physical layer data. The TX_PHY interfaces should be connected to the down-stream physical layer transceiver peripheral.
 
-The physical layer peripheral receiving data from these interfaces are responsible for performing the final 8b10b mapping as well as serializing the data and transmitting it on the physical CML differential high-speed serial lane.
+The physical layer peripheral receiving data from these interfaces are
+responsible for performing the final 8b10b mapping as well as serializing the
+data and transmitting it on the physical CML differential high-speed serial
+lane.
 
 User Data Interface (TX_DATA)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3012,8 +2985,8 @@ Typically the ``TX_DATA`` interface is connected to a JESD204B transport layer p
 
 This means that ``TX_DATA`` interface is ``DATA_PATH_WIDTH`` \* 8 \* ``NUM_LANES`` bits wide. With each block of consecutive ``DATA_PATH_WIDTH`` \* 8 bits corresponding to one lane. The lowest ``DATA_PATH_WIDTH`` \* 8 bits correspond to the first lane, while the highest ``DATA_PATH_WIDTH`` \* 8 bits correspond to the last lane. E.g. for 8B/10B mode where DATA_PATH_WIDTH=4. Each lane specific 32 bit block corresponds to four octets each 8 bits wide. The temporal ordering of the octets is from LSB to MSB, this means the octet placed in the lowest 8 bits is transmitted first, the octet placed in the highest 8 bits is transmitted last.
 
-Data corresponding to lanes that have been disabled are ignored and their value is don't care.
-
+Data corresponding to lanes that have been disabled are ignored and their value
+is don't care.
 
 Configuration Interface
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -3044,13 +3017,18 @@ The ``SYNTH_DATA_PATH_WIDTH`` (``0x014``) register contains the value of the int
 Interrupt Handling
 ^^^^^^^^^^^^^^^^^^
 
-Interrupt processing is handled by three closely related registers. All three registers follow the same layout, each bit in the register corresponds to one particular interrupt.
+Interrupt processing is handled by three closely related registers. All three
+registers follow the same layout, each bit in the register corresponds to one
+particular interrupt.
 
 When an interrupt event occurs it is recorded in the ``IRQ_SOURCE`` (``0x088``) register. For a recorded interrupt event the corresponding bit is set to 1. If an interrupt event occurs while the bit is already set to 1 it will stay set to 1.
 
 The ``IRQ_ENABLE`` (``0x080``) register controls how recorded interrupt events propagate. An interrupt is considered to be enabled if the corresponding bit in the ``IRQ_ENABLE`` register is set to 1, it is considered to be disabled if the bit is set to 0.
 
-Disabling an interrupt will not prevent it from being recorded, but only its propagation. This means if an interrupt event was previously recorded while the interrupt was disabled and the interrupt is being enabled the interrupt event will then propagate.
+Disabling an interrupt will not prevent it from being recorded, but only its
+propagation. This means if an interrupt event was previously recorded while the
+interrupt was disabled and the interrupt is being enabled the interrupt event
+will then propagate.
 
 An interrupt event that has been recorded and is enabled propagates to the ``IRQ_PENDING`` (``0x084``) register. The corresponding bit for such an interrupt will read as 1. Disabled or interrupts for which no events have been recorded will read as 0. Also if at least one interrupt has been recorded and is enabled the external ``irq`` signal will be asserted to signal the IRQ event to the upstream IRQ controller.
 
@@ -3072,14 +3050,21 @@ The ``EXTERNAL_RESET`` (``[1]``) bit in the ``LINK_STATE`` register indicates wh
 Multi-link Control
 ^^^^^^^^^^^^^^^^^^
 
-A multi-link is a link where multiple converter devices are connected to a single logic device (FPGA). All links involved in a multi-link are synchronous and established at the same time. For an 8B/10B TX link, this means that the FPGA receives multiple SYNC signals, one for each link.
+A multi-link is a link where multiple converter devices are connected to a
+single logic device (FPGA). All links involved in a multi-link are synchronous
+and established at the same time. For an 8B/10B TX link, this means that the
+FPGA receives multiple SYNC signals, one for each link.
 
 For a 8B/10B link the ``MULTI_LINK_DISABLE`` register allows activating or deactivating each ``SYNC~`` lines independently. This is useful when depending on the use case profile some converter devices are supposed to be disabled.
 
 Link Configuration
 ^^^^^^^^^^^^^^^^^^
 
-The link configuration registers control certain aspects of the runtime behavior of the peripheral. Since the JESD204 standard does now allow changes to link configuration while the link is active the link configuration registers can only be modified while the link is disabled. As soon as it is enabled the configuration registers turn read-only and any writes to them will be ignored.
+The link configuration registers control certain aspects of the runtime behavior
+of the peripheral. Since the JESD204 standard does now allow changes to link
+configuration while the link is active the link configuration registers can only
+be modified while the link is disabled. As soon as it is enabled the
+configuration registers turn read-only and any writes to them will be ignored.
 
 The ``LANES_DISABLE`` (``0x200``) register allows to disable individual lanes. Each bit in the register corresponds to a particular lane and indicates whether that lane is enabled or disabled. Bit 0 corresponds to the first lane, bit 1 to the second lane and so on. A value of 0 for a specific bit means the corresponding lane is enabled, a value of 1 means the lane is disabled. A disabled lane will not transmit any data when the link is otherwise active. By default, all lanes are enabled.
 
@@ -3087,11 +3072,16 @@ The ``LINK_CONF0`` register configures the octets-per-frame and frames-per-multi
 
 The ``LINK_CONF1`` register controls the optional link level processing stages. The ``SCRAMBLER_DISABLE`` (``[0]``) bit controls whether scrambling of the transmitted user data is enabled or disabled. A value of 0 enables scrambling and a value of 1 disables it. In 64B/66B mode scrambling must be always enabled. The ``CHAR_REPLACEMENT_DISABLE`` (``[1]``) bit controls whether alignment character replacement is performed or not. A value of 0 enables character replacement and a value of 1 disables it.
 
-Both the transmitter as well as receiver device on the JESD204 link need to be configured with the same settings for scrambling/descrambling and character replacement for correct operation.
+Both the transmitter as well as receiver device on the JESD204 link need to be
+configured with the same settings for scrambling/descrambling and character
+replacement for correct operation.
 
-It is recommended to leave both scrambling as well as alignment character replacement enabled during normal operation and only disable it for debugging or testing purposes.
+It is recommended to leave both scrambling as well as alignment character
+replacement enabled during normal operation and only disable it for debugging or
+testing purposes.
 
-Character replacement is used only in 8B/10B links and completely disregarded in 64B/66B mode.
+Character replacement is used only in 8B/10B links and completely disregarded in
+64B/66B mode.
 
 The ``LINK_CONF2`` (``0x240``) register contains configuration data that affects the transitions of the `link state machine <https://wiki.analog.com/>`_. If the ``CONTINUOUS_CGS`` (``[0]``) bit is set the state machine will remain in the CGS phase indefinitely and send repeated :doc:`/K/ characters </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>`. If the ``CONTINUOUS_ILAS`` (``[1]``) bit is set the state machine will remain in the ILAS phase indefinitely and send repeated ILAS sequences. If the ``SKIP_ILAS`` (``[2]``) bit is set the state machine will directly transition to the DATA phase from the CGS phase without going through the ILAS phase. The ``LINK_CONFIG2`` register is used only in 8B/10B links and completely disregarded in 64B/66B mode.
 
@@ -3100,20 +3090,25 @@ The ``LINK_CONF3`` (``0x244``) register configures the duration of the ILAS sequ
 ILAS Configuration Data
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-For 8B/10B link layer the ILAS configuration data registers contain the configuration data that is sent during the ILAS phase. Similar to the link configuration registers, the ILAS configuration data registers can only be modified while the link is disabled and turn read-only as soon as it is enabled.
+For 8B/10B link layer the ILAS configuration data registers contain the
+configuration data that is sent during the ILAS phase. Similar to the link
+configuration registers, the ILAS configuration data registers can only be
+modified while the link is disabled and turn read-only as soon as it is enabled.
 
 For each lane there is a set of four registers (``LANEn_ILAS0``, ``LANEn_ILAS1``, ``LANEn_ILAS2``, ``LANEn_ILAS3``) that allow access to the 14 configuration data octets. Aside from the ``LID`` and ``FCHK`` fields all fields for each of the lanes map to the same internal storage. This means only the ``LID`` and ``FCHK`` fields can be configured with per-lane configuration data, all other fields must be set to the same value for all lanes.
 
 SYSREF Handling
 ^^^^^^^^^^^^^^^
 
-The external SYSREF signal is used to align the internal local multiframe clocks (LMFC)/ local-multiblock-clock (LEMC) between multiple devices on the same link.
+The external SYSREF signal is used to align the internal local multiframe clocks
+(LMFC)/ local-multiblock-clock (LEMC) between multiple devices on the same link.
 
 The ``SYSREF_CONF`` (``0x100``) register controls the behavior of the SYSREF capture circuitry. Setting the ``SYSREF_DISABLE`` (``[0]``) bit to 1 disables the SYSREF handling. All external SYSREF events are ignored and the LMFC/LEMC is generated internally. For Subclass 1 operation SYSREF handling should be enabled and for Subclass 0 operation it should be disabled.
 
 The ``SYSREF_LMFC_OFFSET`` (``0x104``) register allows modifying the offset between the SYSREF rising edge and the rising edge of the LMFC/LEMC. Must be a multiple of ``DATA_PATH_WIDTH``.
 
-For optimal operation, it is recommended that all device on a JESD204 link should be configured in a way so that the total offset between
+For optimal operation, it is recommended that all device on a JESD204 link
+should be configured in a way so that the total offset between
 
 The value of the ``SYSREF_LMFC_OFFSET`` register must be set to a value smaller than the configured number of octets-per-multiframe (``OCTETS_PER_MULTIFRAME``), otherwise undefined behavior might occur.
 
@@ -3126,7 +3121,9 @@ Note that the ``SYSREF_STATUS`` register will not record any events if SYSREF op
 Link Status
 ^^^^^^^^^^^
 
-All link status registers are read-only. While the link is disabled some of the link status registers might contain bogus values. Their content should be ignored until the link is fully enabled.
+All link status registers are read-only. While the link is disabled some of the
+link status registers might contain bogus values. Their content should be
+ignored until the link is fully enabled.
 
 The ``STATUS_STATE`` (``[1:0]``) field of the ``LINK_STATUS`` (``0x280``) register indicates the state of the `8B/10B link state machine <https://wiki.analog.com/>`_ or `64B/66B link state machine <https://wiki.analog.com/>`_ depending on the selected encoder. Possible values are:
 
@@ -3149,7 +3146,10 @@ Manual Synchronization Request
 
 For 8B/10B links the ``MANUAL_SYNC_REQUEST`` (``0x248``) register can be used to transition the link state from the WAIT phase to the CGS phase in the absence of an external synchronization request. This is can be useful during testing when the peripheral is not connected to a JESD204B receiver device, but for example to a signal analyzer.
 
-Writing a 1 to this register will trigger a manual synchronization request. Writing the register while the link is disabled or writing a 0 to the register has no effect. The register is self-clearing and reading it will always return 0.
+Writing a 1 to this register will trigger a manual synchronization request.
+Writing the register while the link is disabled or writing a 0 to the register
+has no effect. The register is self-clearing and reading it will always return
+0.
 
 This feature is useful if the ``SYNC~`` is stuck high from some reason. Setting the ``MANUAL_SYNC_REQUEST`` bit will bring out the Tx link peripheral from ``CGS`` and will continue with sending ``ILAS`` and ``DATA`` information. After this, the ``SYNC_STATUS`` bit would read high, and ``LINK_STATE`` would be ``DATA``.
 
@@ -3162,7 +3162,9 @@ The ``LINK_CLK_FREQ`` (``0x0c8``) register allows to determine the clock rate of
 
 The ``DEVICE_CLK_FREQ`` (``0x0cc``) register allows to determine the clock rate of the device clock (``device_clk``) relative to the AXI interface clock (``s_axi_aclk``). This can be used to verify that the device clock is running at the expected rate.
 
-The number is represented as unsigned 16.16 format. Assuming a 100MHz processor clock this corresponds to a resolution of 1.523kHz per LSB. A raw value of 0 indicates that the link clock is currently not active.
+The number is represented as unsigned 16.16 format. Assuming a 100MHz processor
+clock this corresponds to a resolution of 1.523kHz per LSB. A raw value of 0
+indicates that the link clock is currently not active.
 
 Interrupts
 ~~~~~~~~~~
@@ -3181,36 +3183,49 @@ The core does not generates interrupts.
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/jesd204_tx_state_machine.png
    :align: right
 
-The peripheral can be in one of four main operating phases: WAIT, CGS, ILAS or DATA. Upon reset the peripheral starts in the WAIT phase. The CGS and ILAS phases are used during the initialization of the JESD204B link. The DATA phase is used during normal operation when user data is transmitted across the JESD204B link.
+The peripheral can be in one of four main operating phases: WAIT, CGS, ILAS or
+DATA. Upon reset the peripheral starts in the WAIT phase. The CGS and ILAS
+phases are used during the initialization of the JESD204B link. The DATA phase
+is used during normal operation when user data is transmitted across the
+JESD204B link.
 
 Wait Phase (WAIT)
 ^^^^^^^^^^^^^^^^^
 
-The WAIT phase is the default state entered during reset. While disabled the peripheral will stay in the WAIT phase. When enabled the peripheral will stay in the WAIT phase until a synchronization request is received.
+The WAIT phase is the default state entered during reset. While disabled the
+peripheral will stay in the WAIT phase. When enabled the peripheral will stay in
+the WAIT phase until a synchronization request is received.
 
 A synchronization request can either be generated manually through the register map configuration interface or by one of the JESD204B receivers by asserting the ``SYNC~`` signal. Once a synchronization request is received the peripheral transitions to the CGS phase.
 
 During the WAIT phase the peripheral will continuously transmit :doc:`/K/ control character </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>` on each of the ``TX_PHYn`` interfaces.
 
-If at any point the peripheral is disabled it will automatically transition back to the WAIT state.
+If at any point the peripheral is disabled it will automatically transition back
+to the WAIT state.
 
-Lanes that have been disabled in the register map configuration interface will behave as if the link was in the WAIT state regardless of the actual state.
+Lanes that have been disabled in the register map configuration interface will
+behave as if the link was in the WAIT state regardless of the actual state.
 
 Code Group Synchronization Phase (CGS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 During the CGS phase the peripheral will continuously transmit :doc:`/K/ control character </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>` on each of the ``TX_PHYn`` interfaces.
 
-The peripheral will stay in the CGS phase until all of following conditions are satisfied:
+The peripheral will stay in the CGS phase until all of following conditions are
+satisfied:
 
 -  The synchronization request is de-asserted
 -  The CGS phase has lasted for at least the configured minimum CGS duration (1 frame + 9 octets by default).
 -  The end of a multi-frame is reached (This means the next phase will start at the beginning of a multi-frame).
 -  The SYSREF signal has been captured and the LMFC is properly aligned.
 
-If the peripheral is configured for continuous CGS operation it will stay in the CGS phase indefinitely regardless of whether the above conditions are met or not.
+If the peripheral is configured for continuous CGS operation it will stay in the
+CGS phase indefinitely regardless of whether the above conditions are met or
+not.
 
-By default the peripheral will transition to the ILAS phase at the end of the CGS phase. If the core is configured to skip the ILAS phase it will instead directly transition to the DATA phase.
+By default the peripheral will transition to the ILAS phase at the end of the
+CGS phase. If the core is configured to skip the ILAS phase it will instead
+directly transition to the DATA phase.
 
 Initial Lane Alignment Sequence Phase (ILAS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3219,29 +3234,42 @@ During the ILAS phase the peripheral transmits the initial lane alignment sequen
 
 During the second multi-frame the link configuration data is transmitted from the 3rd to 16th octet. The second octet of the second multi-frame is the :doc:`/Q/ character </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>` to indicate that this multi-frame carries configuration data. The ILAS configuration data sequence can be programmed through the register map configuration interface.
 
-All other octets of the ILAS sequence will contain the numerical value corresponding to the position of the octet in the ILAS sequence (E.g. the fifth octet of the first multi-frame contains the value 4).
+All other octets of the ILAS sequence will contain the numerical value
+corresponding to the position of the octet in the ILAS sequence (E.g. the fifth
+octet of the first multi-frame contains the value 4).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/jesd204_ilas_sequence.png
    :align: center
 
-By default the ILAS is transmitted for a duration of 4 multi-frames. After the last ILAS multi-frame the peripheral switches to the DATA phase.
+By default the ILAS is transmitted for a duration of 4 multi-frames. After the
+last ILAS multi-frame the peripheral switches to the DATA phase.
 
-If the peripheral is configured for continuous ILAS operation it will instead remain in the ILAS phase indefinitely. In continuous ILAS mode the peripheral will transition back to the first multi-frame of the ILAS sequence after the last multi-frame has been transmitted.
+If the peripheral is configured for continuous ILAS operation it will instead
+remain in the ILAS phase indefinitely. In continuous ILAS mode the peripheral
+will transition back to the first multi-frame of the ILAS sequence after the
+last multi-frame has been transmitted.
 
-In accordance with the JESD204B standard the data transmitted during the ILAS phase is not scrambled regardless of whether scrambling is enabled or not.
+In accordance with the JESD204B standard the data transmitted during the ILAS
+phase is not scrambled regardless of whether scrambling is enabled or not.
 
 User Data Phase (DATA)
 ^^^^^^^^^^^^^^^^^^^^^^
 
 The DATA phase is the main operating mode of the peripheral. In this phase it will receive transport layer data at the ``TX_DATA`` port, split it onto the corresponding lanes and perform per-lane processing of the data according to the peripherals configuration. When the peripheral enters the DATA phase the ``ready`` signal of the ``TX_DATA`` will be asserted to indicate that transport layer data is now accepted.
 
-By default the data transmitted on each lane will be scrambled. Scrambling can optionally be disabled via the register map configuration interface. Scrambling is enabled or disabled for all lanes equally.
+By default the data transmitted on each lane will be scrambled. Scrambling can
+optionally be disabled via the register map configuration interface. Scrambling
+is enabled or disabled for all lanes equally.
 
-Scrambling reduces data-dependent effects, which can affect both the analog performance of the data converter as well as the bit-error rate of JESD204B serial link, therefore it is highly recommended to enable scrambling.
+Scrambling reduces data-dependent effects, which can affect both the analog
+performance of the data converter as well as the bit-error rate of JESD204B
+serial link, therefore it is highly recommended to enable scrambling.
 
 The peripheral also performs per-lane alignment character replacement. Alignment character replacement will replace under certain predictable conditions (i.e. the receiver can recover the replaced character) the last octet in a frame or multi-frame. Replaced characters at the end of a frame, that is also the end of a multi-frame, are replaced by the :doc:`/A/ character </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>`. Replaced characters at the end of a frame, that is not the end of a multi-frame, are replaced by the :doc:`/F/ character </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>`. Alignment characters can be used by the receiver to ensure proper frame and lane alignment.
 
-Alignment character replacement can optionally be disabled via the register map configuration interface. Alignment character replacement is enabled or disabled for all lanes equally.
+Alignment character replacement can optionally be disabled via the register map
+configuration interface. Alignment character replacement is enabled or disabled
+for all lanes equally.
 
 Data on the ``TX_DATA`` port corresponding to a disabled lane is ignored.
 
@@ -3271,11 +3299,18 @@ Diagnostics
 
 The 64 bit wide datapath of the link layer is fairly simple, the only mandatory part of the 64B66B link layer datapath is the scrambler. This must be active during the operation of the link, however for debug purposes can be bypasses with a control register ``SCRAMBLER_DISABLE``.
 
-The data is accepted from the upstream transport layer core once the local extended multiblock clock (LEMC) is adjusted to the captured SYSREF signal. Once this happened the data will be accepted without interruption until the link is disabled since there is no back-pressure from the physical layer.
+The data is accepted from the upstream transport layer core once the local
+extended multiblock clock (LEMC) is adjusted to the captured SYSREF signal. Once
+this happened the data will be accepted without interruption until the link is
+disabled since there is no back-pressure from the physical layer.
 
-If the core does not receives at least one SYSREF pulse it will not pass any data from transport layer to physical layer.
+If the core does not receives at least one SYSREF pulse it will not pass any
+data from transport layer to physical layer.
 
-For each multiblock sent on the data interface a CRC is calculated which is sent on the 2 bit sync header stream during the next multiblock period. Beside the CRC the sync header stream contains synchronization information to mark the boundary of the multiblock and extended multiblocks. ]
+For each multiblock sent on the data interface a CRC is calculated which is sent
+on the 2 bit sync header stream during the next multiblock period. Beside the
+CRC the sync header stream contains synchronization information to mark the
+boundary of the multiblock and extended multiblocks. ]
 
 ======= =======
 
@@ -3285,7 +3320,6 @@ JESD204B/C Link Receive Peripheral
 .. important::
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/jesd204/axi_jesd204_rx/index.html\
-
 
 The Analog Devices JESD204B/C Link Receive Peripheral implements the link layer handling of a JESD204 receive logic device. Implements the 8B/10B based link layer defined in JESD204C standard that is similar to the link layer defined in JESD204B. This includes handling of the SYSREF and SYNC~ and controlling the `link state machine <https://wiki.analog.com/>`_ accordingly as well as performing per lane descrambling and character replacement. Implements the 64B/66B based link layer defined in the JESD204C standard. This includes handling of the SYSREF, per lane decoding of sync header, descrambling, CRC checking of data blocks and error monitoring.
 
@@ -3311,8 +3345,6 @@ Features
 Utilization
 -----------
 
-
-
 .. collapsible:: Detailed Utilization (Click to expand)
 
    =============== ========= ==== ===
@@ -3335,8 +3367,6 @@ Utilization
                    4         TBD  TBD
                    8         TBD  TBD
    =============== ========= ==== ===
-
-
 
 Files
 -----
@@ -3482,7 +3512,6 @@ Base (common to all cores)
 | Tue Mar 14 10:17:59 2023 |        |                  |                       |      |            |                                                                                                                                                                                                                                                                                     |
 +--------------------------+--------+------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Common (axi_ad\*)
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -3534,7 +3563,6 @@ ADC Common (axi_ad\*)
 |         |        | [7:0]       | CUSTOM_CONTROL      | RW   | 0x00    |                                                                                                                                                                                                                                                                                                |
 +---------+--------+-------------+---------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADAQ8092
 ========
 
@@ -3565,8 +3593,6 @@ AD7606X_PI
 -  1 = CRC_ENABLED
 -  2 = STATUS_HEADER
 -  3 = CRC_STATUS
-
-
 
 \|
 
@@ -3684,7 +3710,6 @@ AD7606X_PI
 | Fri Aug 11 18:29:53 2023 |        |                     |                        |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+---------------------+------------------------+------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Channel (axi_ad\*)
 ----------------------
 
@@ -3789,7 +3814,6 @@ ADC Channel (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                      |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +--------------------------+--------+----------------------+------------------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 IO Delay Control (axi_ad\*)
 ---------------------------
 
@@ -3818,7 +3842,6 @@ IO Delay Control (axi_ad\*)
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                     |                    |      |         |                                                                                                                                                                                                                                                    |
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 DAC Common (axi_ad)
 -------------------
@@ -3955,7 +3978,6 @@ DAC Common (axi_ad)
 | Tue Mar 14 10:17:59 2023 |        |                     |                       |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+---------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DAC Channel (axi_ad\*)
 ----------------------
 
@@ -4068,7 +4090,6 @@ DAC Channel (axi_ad\*)
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Fri Sep 8 16:01:53 2023 |        |                   |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Generic TDD Control (axi_tdd)
 -----------------------------
@@ -4423,7 +4444,6 @@ Generic TDD Control (axi_tdd)
 | Tue Mar 14 10:17:59 2023 |        |                       |                     |      |                       |                                                                                                                                                                                                    |
 +--------------------------+--------+-----------------------+---------------------+------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Transceiver TDD Control (axi_ad\*)
 ----------------------------------
 
@@ -4569,7 +4589,6 @@ Transceiver TDD Control (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                            |                        |      |          |                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+----------------------------+------------------------+------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD TPL (up_tpl_common)
 ------------------------
 
@@ -4610,7 +4629,6 @@ JESD TPL (up_tpl_common)
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                      |             |      |         |                                                                                                            |
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
-
 
 JESD204 RX (axi_jesd204_rx)
 ---------------------------
@@ -4897,7 +4915,6 @@ JESD204 RX (axi_jesd204_rx)
 | Tue Mar 14 10:17:59 2023  |                 |                                |                              |        |             |                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD204 TX (axi_jesd204_tx)
 ---------------------------
 
@@ -5134,7 +5151,6 @@ JESD204 TX (axi_jesd204_tx)
 | Tue Mar 14 10:17:59 2023  |                 |                       |                          |        |             |                                                                                                                                                                                                                     |
 +---------------------------+-----------------+-----------------------+--------------------------+--------+-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DMA Controller (axi_dmac)
 -------------------------
 
@@ -5317,7 +5333,6 @@ DMA Controller (axi_dmac)
 | Thu Feb 1 12:18:03 2024 |        |                           |                           |      |                                 |                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+---------------------------+---------------------------+------+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Fan Controller (axi_fan_control)
 --------------------------------
 
@@ -5485,7 +5500,6 @@ Fan Controller (axi_fan_control)
 | Tue Mar 14 10:17:59 2023 |        |                   |                       |      |                        |                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +--------------------------+--------+-------------------+-----------------------+------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 System ID (axi_system_id)
 -------------------------
 
@@ -5526,7 +5540,6 @@ System ID (axi_system_id)
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                |                |      |            |                                                                                          |
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
-
 
 Clock Generator (axi_clkgen)
 ----------------------------
@@ -5574,7 +5587,6 @@ Clock Generator (axi_clkgen)
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                  |                   |      |         |                                                                                                                                                         |
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Clock Monitor (axi_clock_monitor)
 ---------------------------------
@@ -5668,7 +5680,6 @@ Clock Monitor (axi_clock_monitor)
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |               |               |      |            |                                |
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
-
 
 HDMI Transmit (axi_hdmi_tx)
 ---------------------------
@@ -5775,7 +5786,6 @@ HDMI Transmit (axi_hdmi_tx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                      |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 HDMI Receive (axi_hdmi_rx)
 --------------------------
 
@@ -5843,7 +5853,6 @@ HDMI Receive (axi_hdmi_rx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                 |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+-----------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 General Purpose Registers (axi_gpreg)
 -------------------------------------
 
@@ -5888,7 +5897,6 @@ General Purpose Registers (axi_gpreg)
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |              |              |      |            |                                                                                                                                                                                                                                        |
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 SPI Engine (axi_spi_engine)
 ---------------------------
@@ -5996,7 +6004,6 @@ SPI Engine (axi_spi_engine)
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                    |                    |      |             |                                                                                                                                                                                                                                                                                      |
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Xilinx XCVR (axi_xcvr) Regmap
 -----------------------------
@@ -6179,7 +6186,6 @@ Xilinx XCVR (axi_xcvr) Regmap
 | Tue Mar 14 10:17:59 2023 |        |               |                  |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 PWM Generator (axi_pwm_gen)
 ---------------------------
 
@@ -6188,7 +6194,6 @@ PWM Generator (axi_pwm_gen)
 .. important::
 
    This register map was moved at https://analogdevicesinc.github.io/hdl/library/axi_pwm_gen/index.html#register-map. The following table is NOT MAINTAINED ANYMORE.
-
 
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 | Address |        | Bits               | Name                                                                         | Type | Default    | Description                                                   |
@@ -6234,8 +6239,6 @@ PWM Generator (axi_pwm_gen)
 |         |        | [31:0]             | PULSE_X_OFFSET[31:0] - base + 'h4 for each channel -> e.g. CH3 offset - 'hCC | RW   | 0x0000     | Pulse x offset, defined in number of clock cycles.            |
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 
-
-
 +-------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Access Type | Name             | Description                                                                                                                                                                                                      |
 +=============+==================+==================================================================================================================================================================================================================+
@@ -6253,7 +6256,9 @@ Theory of Operation
 
 The JESD204B/C receive peripheral consists of two main components. The register map and the link processor. Both components are fully asynchronous and are clocked by independent clocks. The register map is in the ``s_axi_aclk`` clock domain, while the link processor is in the ``clk`` and ``device_clk`` clock domain.
 
-The register map is used to configure the operational parameters of the link processor as well as to query the current state of the link processor. The link processor itself is responsible for handling the JESD204 link layer protocol.
+The register map is used to configure the operational parameters of the link
+processor as well as to query the current state of the link processor. The link
+processor itself is responsible for handling the JESD204 link layer protocol.
 
 Interfaces and Signals
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -6277,9 +6282,12 @@ When the ``sysref`` signal is used, in order to ensure correct operation, it is 
 Transceiver Interface (RX_PHYn)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For each lane, the peripheral has one corresponding RX_PHY interface. These interfaces accept the physical layer data from the downstream physical layer transceiver peripheral.
+For each lane, the peripheral has one corresponding RX_PHY interface. These
+interfaces accept the physical layer data from the downstream physical layer
+transceiver peripheral.
 
-The physical layer is responsible for clock recovery, character alignment, de-serialization as well an 8b10b decoding.
+The physical layer is responsible for clock recovery, character alignment,
+de-serialization as well an 8b10b decoding.
 
 User Data Interface (RX_DATA)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6300,8 +6308,8 @@ This means that ``RX_DATA`` interface is ``DATA_PATH_WIDTH`` \* 8 \* ``NUM_LANES
 
 E.g. for 8B/10B mode where ``DATA_PATH_WIDTH``\ =4. Each lane specific 32-bit block corresponds to four octets each 8 bits wide. The temporal ordering of the octets is from LSB to MSB, this means the octet placed in the lowest 8 bits was received first, the octet placed in the highest 8 bits was received last.
 
-Data corresponding to lanes that have been disabled should be ignored and their value is undefined.
-
+Data corresponding to lanes that have been disabled should be ignored and their
+value is undefined.
 
 Configuration Interface
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -6334,13 +6342,18 @@ The ``SYNTH_ELASTIC_BUFFER_SIZE`` (``0x040``) register describes the maximum amo
 Interrupt Handling
 ^^^^^^^^^^^^^^^^^^
 
-Interrupt processing is handled by three closely related registers. All three registers follow the same layout, each bit in the register corresponds to one particular interrupt.
+Interrupt processing is handled by three closely related registers. All three
+registers follow the same layout, each bit in the register corresponds to one
+particular interrupt.
 
 When an interrupt event occurs it is recorded in the ``IRQ_SOURCE`` (``0x088``) register. For a recorded interrupt event the corresponding bit is set to 1. If an interrupt event occurs while the bit is already set to 1 it will stay set to 1.
 
 The ``IRQ_ENABLE`` (``0x080``) register controls how recorded interrupt events propagate. An interrupt is considered to be enabled if the corresponding bit in the ``IRQ_ENABLE`` register is set to 1, it is considered to be disabled if the bit is set to 0.
 
-Disabling an interrupt will not prevent it from being recorded, but only its propagation. This means if an interrupt event was previously recorded while the interrupt was disabled and the interrupt is being enabled the interrupt event will then propagate.
+Disabling an interrupt will not prevent it from being recorded, but only its
+propagation. This means if an interrupt event was previously recorded while the
+interrupt was disabled and the interrupt is being enabled the interrupt event
+will then propagate.
 
 An interrupt event that has been recorded and is enabled propagates to the ``IRQ_PENDING`` (``0x084``) register. The corresponding bit for such an interrupt will read as 1. Disabled or interrupts for which no events have been recorded will read as 0. Also if at least one interrupt has been recorded and is enabled the external ``irq`` signal will be asserted to signal the IRQ event to the upstream IRQ controller.
 
@@ -6369,7 +6382,11 @@ For an 8B/10B link the ``MULTI_LINK_DISABLE`` register allows activating or deac
 Link Configuration
 ^^^^^^^^^^^^^^^^^^
 
-The link configuration registers control certain aspects of the runtime behavior of the peripheral. Since the JESD204 standard does now allow changes to link configuration while the link is active the link configuration registers can only be modified while the link is disabled. As soon as it is enabled the configuration registers turn read-only and any writes to them will be ignored.
+The link configuration registers control certain aspects of the runtime behavior
+of the peripheral. Since the JESD204 standard does now allow changes to link
+configuration while the link is active the link configuration registers can only
+be modified while the link is disabled. As soon as it is enabled the
+configuration registers turn read-only and any writes to them will be ignored.
 
 The ``LANES_DISABLE`` (``0x200``) register allows to disable individual lanes. Each bit in the register corresponds to a particular lane and indicates whether that lane is enabled or disabled. Bit 0 corresponds to the first lane, bit 1 to the second lane and so on. A value of 0 for a specific bit means the corresponding lane is enabled, a value of 1 means the lane is disabled. A disabled lane will not receive any data when the link is otherwise active. By default, all lanes are enabled.
 
@@ -6377,9 +6394,12 @@ The ``LINK_CONF0`` register configures the octets-per-frame and frames-per-multi
 
 The ``LINK_CONF1`` register allows disabling optional link level processing stages. The ``DESCRAMBLER_DISABLE`` (``[0]``) bit controls whether descrambling of the received user data is enabled or disabled. A value of 0 enables descrambling and a value of 1 disables it. In 64B/66B mode descrambling must be always enabled. The ``CHAR_REPLACEMENT_DISABLE`` (``[1]``) bit controls whether alignment character replacement is performed or not. A value of 0 enables character replacement and a value of 1 disables it. If character replacement is disabled and an alignment character is received (:doc:`/F/ </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>` or :doc:`/A/ </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>`) a unexpected K-character error is raised.
 
-Both the transmitter as well as receiver device on the JESD204 link need to be configured with the same settings for scrambling/descrambling and character replacement for correct operation.
+Both the transmitter as well as receiver device on the JESD204 link need to be
+configured with the same settings for scrambling/descrambling and character
+replacement for correct operation.
 
-Character replacement is used only in 8B/10B links and completely disregarded in 64B/66B mode.
+Character replacement is used only in 8B/10B links and completely disregarded in
+64B/66B mode.
 
 The ``LINK_CONF2`` register controls the behavior of elastic buffer. The ``BUFFER_EARLY_RELEASE`` (``[16]``) bit configures when the data is released from the elastic buffer to the RX_DATA port. If the bit is set to 0 the data will be released at the earliest configured release point after all lanes are ready. When the bit is set to 1 the data will be released as soon as all lanes are ready. The former gives deterministic latency and is required for subclass 1 operation, the later gives minimum latency.
 
@@ -6391,18 +6411,22 @@ The ``BUFFER_DELAY`` (``[11:0]``) field allows to configure the buffer release o
 
 The ``BUFFER_DELAY`` field must be set to a multiple of 4. Writing a value that is not a multiple of 4 will be rounded down to the next multiple of 4. For correct operation, the ``BUFFER_DELAY`` field must also be set to a value smaller than the number of octets per multi-frame (``F``\ x\ ``K``).
 
-This mechanism can be used to reduce overall latency while still maintaining deterministic latency if the maximum link latency (overall valid PVT settings) is known.
+This mechanism can be used to reduce overall latency while still maintaining
+deterministic latency if the maximum link latency (overall valid PVT settings)
+is known.
 
 SYSREF Handling
 ^^^^^^^^^^^^^^^
 
-The external SYSREF signal is used to align the internal local multiframe clocks (LMFC)/ local-multiblock-clock (LEMC) between multiple devices on the same link.
+The external SYSREF signal is used to align the internal local multiframe clocks
+(LMFC)/ local-multiblock-clock (LEMC) between multiple devices on the same link.
 
 The ``SYSREF_CONF`` (``0x100``) register allows to configure the behavior of the SYSREF capture circuitry. Setting the ``SYSREF_DISABLE`` (``[0]``) bit to 1 disables the SYSREF handling. All external SYSREF events are ignored and the LMFC/LEMC is generated internally. For Subclass 1 operation SYSREF handling should be enabled and for Subclass 0 operation it should be disabled.
 
 The ``SYSREF_LMFC_OFFSET`` (``0x104``) register allows to modify the offset between the SYSREF rising edge and the rising edge of the LMFC/LEMC.
 
-For optimal operation it is recommended that all device on a JESD204 link should be configured in a way so that the total offset between
+For optimal operation it is recommended that all device on a JESD204 link should
+be configured in a way so that the total offset between
 
 The value of the ``SYSREF_LMFC_OFFSET`` register must be set to a value smaller than the configured number of octets-per-multiframe (``OCTETS_PER_MULTIFRAME``), otherwise undefined behavior might occur.
 
@@ -6415,7 +6439,9 @@ Note that the ``SYSREF_STATUS`` register will not record any events if SYSREF op
 Link Status
 ^^^^^^^^^^^
 
-All link status registers are read-only. While the link is disabled some of the link status registers might contain bogus values. Their content should be ignored until the link is fully enabled.
+All link status registers are read-only. While the link is disabled some of the
+link status registers might contain bogus values. Their content should be
+ignored until the link is fully enabled.
 
 The ``STATUS_STATE`` (``[1:0]``) field of the ``LINK_STATUS`` (``0x280``) register indicates the state of the `8B/10B link state machine <https://wiki.analog.com/>`_ or `64B/66B link state machine <https://wiki.analog.com/>`_ depending on the selected decoder.
 
@@ -6424,14 +6450,16 @@ Possible values for a 8B/10B link are:
 -  RESET (0x0): The link is currently disabled
 -  WAIT FOR PHY (0x1): The controller waits for the PHY level component to be ready
 -  CGS (0x2): The controller is waiting for one or more lanes to complete the CGS phase
--  DATA (0x3): All lanes are in the data phase and the link is properly established
+-  DATA (0x3): All lanes are in the data phase and the link is properly
+   established
 
 Possible values for a 64B/66B link are:
 
 -  RESET (0x0): The link is currently disabled
 -  WAIT BLOCK SYNC (0x1): The controller waits for all enabled lanes to reach sync header alignment.
 -  BLOCK SYNC (0x2): All enabled lanes from the PHY reached sync header alignment phase.
--  DATA (0x3): All enabled lanes reached the multi-block synchronization phase, elastic buffer released the data and the link is properly established
+-  DATA (0x3): All enabled lanes reached the multi-block synchronization phase,
+   elastic buffer released the data and the link is properly established
 
 The state of each individual lane can be queried from the `lane status <https://wiki.analog.com/>`_ registers.
 
@@ -6460,14 +6488,17 @@ The ``EMB_STATE`` (``[10:8]``) indicates the current state of the Extended Multi
 
 -  EMB_INIT (3'b001): Wait for sync header alignment and for an end of extended multiblock (EoEMB) indicator.
 -  EMB_HUNT (3'b010): Keep track and monitor consecutive EoEMBs until a threshold is reached.
--  EMB_LOCK (3'b100): Asserted by receiver to indicate that extended multiblock alignment has been achieved
+-  EMB_LOCK (3'b100): Asserted by receiver to indicate that extended multiblock
+   alignment has been achieved
 
 8B/10B Link ILAS Configuration Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the JESD204 transmitter emits an initial lane alignment sequence (ILAS) the configuration data embedded in the second multi-frame of the ILA sequence is captured by the peripheral and stored in a set of four per-lane registers (``LANEn_ILAS0``, ``LANEn_ILAS1``, ``LANEn_ILAS2`` and ``LANEn_ILAS3``). ``ILAS_READY`` (``[5]``) bit in the corresponding ``LANEn_STATUS`` register indicates whether the ILAS configuration data has been captured for a specific lane. The data in the ``LANEn_ILASx`` registers is only valid when that bit is asserted.
 
-The received ILAS configuration data can be used to verify that the transmitter device is using the expected configuration and that the lane and device mapping is correct.
+The received ILAS configuration data can be used to verify that the transmitter
+device is using the expected configuration and that the lane and device mapping
+is correct.
 
 Clock Monitor
 ^^^^^^^^^^^^^
@@ -6476,7 +6507,9 @@ The ``LINK_CLK_FREQ`` (``0x0c8``) register allows to determine the clock rate of
 
 The ``DEVICE_CLK_FREQ`` (``0x0cc``) register allows to determine the clock rate of the device clock (``device_clk``) relative to the AXI interface clock (``s_axi_aclk``). This can be used to verify that the device clock is running at the expected rate.
 
-The number is represented as unsigned 16.16 format. Assuming a 100MHz processor clock this corresponds to a resolution of 1.523kHz per LSB. A raw value of 0 indicates that the link clock is currently not active.
+The number is represented as unsigned 16.16 format. Assuming a 100MHz processor
+clock this corresponds to a resolution of 1.523kHz per LSB. A raw value of 0
+indicates that the link clock is currently not active.
 
 Interrupts
 ~~~~~~~~~~
@@ -6489,7 +6522,7 @@ The core does not generates interrupts.
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/axi_jesd204_rx_204c_8b10b.png
    :alt: 8b10b link layer block diagram
    :align: center
-   :width: 600px
+   :width: 600
 
 8B/10B Link State Machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6497,46 +6530,76 @@ The core does not generates interrupts.
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/jesd204_rx_state_machine.png
    :align: right
 
-The peripheral can be in one of four main operating phases: RESET, WAIT FOR PHY, CGS, or DATA. Upon reset the peripheral starts in the RESET phase. The WAIT FOR PHY and CGS phases are used during the initialization of the JESD204 link. The DATA phase is used during normal operation when user data is received across the JESD204 link.
+The peripheral can be in one of four main operating phases: RESET, WAIT FOR PHY,
+CGS, or DATA. Upon reset the peripheral starts in the RESET phase. The WAIT FOR
+PHY and CGS phases are used during the initialization of the JESD204 link. The
+DATA phase is used during normal operation when user data is received across the
+JESD204 link.
 
 RESET phase
 ^^^^^^^^^^^
 
-The RESET phase is the default state entered during reset. While disabled the peripheral will stay in the RESET phase. When enabled the peripheral will transition from the RESET phase to the WAIT FOR PHY phase.
+The RESET phase is the default state entered during reset. While disabled the
+peripheral will stay in the RESET phase. When enabled the peripheral will
+transition from the RESET phase to the WAIT FOR PHY phase.
 
-If at any point the peripheral is disabled it will automatically transition back to the RESET state.
+If at any point the peripheral is disabled it will automatically transition back
+to the RESET state.
 
-Lanes that have been disabled in the register map configuration interface will behave as if the link was in the RESET state regardless of the actual state.
+Lanes that have been disabled in the register map configuration interface will
+behave as if the link was in the RESET state regardless of the actual state.
 
 WAIT FOR PHY phase
 ^^^^^^^^^^^^^^^^^^
 
-During the WAIT FOR PHY phase the peripheral will wait for all PHY controllers for all enabled lanes to be ready for operation. Once this condition is satisfied the controlled will transition to the CGS phase.
+During the WAIT FOR PHY phase the peripheral will wait for all PHY controllers
+for all enabled lanes to be ready for operation. Once this condition is
+satisfied the controlled will transition to the CGS phase.
 
 CGS phase
 ^^^^^^^^^
 
-During the CGS phase the peripheral will assert the external ~SYNC signal and expects the connected JESD204 transmitter to send /K/ characters.
+During the CGS phase the peripheral will assert the external ~SYNC signal and
+expects the connected JESD204 transmitter to send /K/ characters.
 
-Each lane will independently the incoming data stream for /K/ characters and adjust its state machine according to the received characters.
+Each lane will independently the incoming data stream for /K/ characters and
+adjust its state machine according to the received characters.
 
-Once all enabled lanes have entered the DATA state the link state will transition from the CGS phase to the DATA phase.
+Once all enabled lanes have entered the DATA state the link state will
+transition from the CGS phase to the DATA phase.
 
 DATA phase
 ^^^^^^^^^^
 
 The DATA phase is the main operating mode of the peripheral. In this phase it will transmit transport layer data at the RX_DATA port. When the peripheral enters the DATA phase the ``valid`` signal of the ``RX_DATA`` interface will be asserted to indicate that transport layer data is now available.
 
-By default the data received on each lane will is descrambled. Descrambling can optionally be disabled via the register map configuration interface. Descrambling is enabled or disabled for all lanes equally.
+By default the data received on each lane will is descrambled. Descrambling can
+optionally be disabled via the register map configuration interface.
+Descrambling is enabled or disabled for all lanes equally.
 
-Scrambling reduces data-dependent effects, which can affect both the analog performance of the data converter as well as the bit-error rate of JESD204 serial link, therefore it is highly recommended to enable scrambling for the link.
+Scrambling reduces data-dependent effects, which can affect both the analog
+performance of the data converter as well as the bit-error rate of JESD204
+serial link, therefore it is highly recommended to enable scrambling for the
+link.
 
-The peripheral also performs per-lane alignment character monitoring. When alignment character replacement is enabled the JESD204 transmitter replaces under certain predictable conditions (i.e. the receiver can recover the replaced character) the last octet in a frame or multi-frame. Replaced characters at the end of a frame, that is also the end of a multi-frame, are replaced by the /A/ character. Replaced characters at the end of a frame, that is not the end of a multi-frame, are replaced by the /F/ character. If a alignment character is received the peripheral checks that the it is in the expected position, either the end of a frame or the end of a multi-frame, and reports an error if a lane has become misaligned. This allows to detect alignment errors and allows the application to re-initialize the link.
+The peripheral also performs per-lane alignment character monitoring. When
+alignment character replacement is enabled the JESD204 transmitter replaces
+under certain predictable conditions (i.e. the receiver can recover the replaced
+character) the last octet in a frame or multi-frame. Replaced characters at the
+end of a frame, that is also the end of a multi-frame, are replaced by the /A/
+character. Replaced characters at the end of a frame, that is not the end of a
+multi-frame, are replaced by the /F/ character. If a alignment character is
+received the peripheral checks that the it is in the expected position, either
+the end of a frame or the end of a multi-frame, and reports an error if a lane
+has become misaligned. This allows to detect alignment errors and allows the
+application to re-initialize the link.
 
-Alignment character monitoring can optionally be disabled via the register map configuration interface. Alignment character monitoring is enabled or disabled for all lanes equally. If alignment character monitoring is disabled no errors are reported when a misaligned alignment character is received.
+Alignment character monitoring can optionally be disabled via the register map
+configuration interface. Alignment character monitoring is enabled or disabled
+for all lanes equally. If alignment character monitoring is disabled no errors
+are reported when a misaligned alignment character is received.
 
 Data on the ``RX_DATA`` port corresponding to a disabled lanes are undefined and should be ignored.
-
 
 8B/10B Multi-endpoint RX link establishment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6555,21 +6618,33 @@ Data on the ``RX_DATA`` port corresponding to a disabled lanes are undefined and
 64B/66B Link
 ------------
 
-The 64 bit wide datapath of the link layer is fairly simple, the data received from the PHY is sent through a mandatory descrambler block to an elastic buffer that serves as an aligner cross lanes. Each beat of the datapath contains a block of data of 8 octets.
+The 64 bit wide datapath of the link layer is fairly simple, the data received
+from the PHY is sent through a mandatory descrambler block to an elastic buffer
+that serves as an aligner cross lanes. Each beat of the datapath contains a
+block of data of 8 octets.
 
-For each lane the control path starts from the 2 bit sync header connected to the header decoder that tracks and monitors multiblock and extended multiblock markers from the stream, reconstructs the 32 bits sync word corresponding to every multiblock and extracts the received CRC from it. The CRC is calculated for every multiblock and is compared against the received CRC. The mismatches are recorded by the error monitor block.
+For each lane the control path starts from the 2 bit sync header connected to
+the header decoder that tracks and monitors multiblock and extended multiblock
+markers from the stream, reconstructs the 32 bits sync word corresponding to
+every multiblock and extracts the received CRC from it. The CRC is calculated
+for every multiblock and is compared against the received CRC. The mismatches
+are recorded by the error monitor block.
 
 Beside the CRC errors the error monitor records invalid end of multiblock, end of extended multiblock and invalid sync header errors. The source of every error can be masked from the corresponding bit of the ``LINK_CONF3`` register.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/axi_jesd204_rx_204c_64b66b.png
    :alt: 64b66b link layer block diagram
    :align: center
-   :width: 600px
+   :width: 600
 
 64B/66B Link State Machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The peripheral can be in one of four main operating phases: RESET, WAIT BS, BLOCK SYNC, or DATA. Upon reset the peripheral starts in the RESET phase. The WAIT BS and BLOCK SYNC phases are used during the initialization of the JESD204 link. The DATA phase is used during normal operation when user data is received across the JESD204 link.
+The peripheral can be in one of four main operating phases: RESET, WAIT BS,
+BLOCK SYNC, or DATA. Upon reset the peripheral starts in the RESET phase. The
+WAIT BS and BLOCK SYNC phases are used during the initialization of the JESD204
+link. The DATA phase is used during normal operation when user data is received
+across the JESD204 link.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/jesd204c_rx_state_machine.png
    :align: right
@@ -6577,16 +6652,23 @@ The peripheral can be in one of four main operating phases: RESET, WAIT BS, BLOC
 RESET phase
 ^^^^^^^^^^^
 
-The RESET phase is the default state entered during reset. While disabled the peripheral will stay in the RESET phase. When enabled the peripheral will transition from the RESET phase to the WAIT FOR PHY phase.
+The RESET phase is the default state entered during reset. While disabled the
+peripheral will stay in the RESET phase. When enabled the peripheral will
+transition from the RESET phase to the WAIT FOR PHY phase.
 
-If at any point the peripheral is disabled it will automatically transition back to the RESET state.
+If at any point the peripheral is disabled it will automatically transition back
+to the RESET state.
 
 WAIT BS phase
 ^^^^^^^^^^^^^
 
-During the WAIT BS phase the peripheral will wait for all PHY controllers for all enabled lanes to reach sync header alignment state ensuring the sync header stream separation from the data blocks. Once this condition is satisfied the controlled will transition to the BLOCK SYNC phase.
+During the WAIT BS phase the peripheral will wait for all PHY controllers for
+all enabled lanes to reach sync header alignment state ensuring the sync header
+stream separation from the data blocks. Once this condition is satisfied the
+controlled will transition to the BLOCK SYNC phase.
 
-If one of the enabled lanes loses the the sync header alignment the link will fall back to WAIT BS state.
+If one of the enabled lanes loses the the sync header alignment the link will
+fall back to WAIT BS state.
 
 BLOCK SYNC phase
 ^^^^^^^^^^^^^^^^
@@ -6601,7 +6683,10 @@ The DATA phase is the main operating mode of the peripheral. In this phase it wi
 64B/66B Link Extended MultiBlock Alignment State Machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For each lane a state machine is used to detect the boundary of the extended multiblocks by tracking well defined markers in the sync header stream. Once the boundary is detected for each lane the corresponding data stream can be aligned across all enabled lanes. This is done through the elastic buffer.
+For each lane a state machine is used to detect the boundary of the extended
+multiblocks by tracking well defined markers in the sync header stream. Once the
+boundary is detected for each lane the corresponding data stream can be aligned
+across all enabled lanes. This is done through the elastic buffer.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/jesd204c_rx_emb_state_machine.png
    :align: right
@@ -6609,20 +6694,32 @@ For each lane a state machine is used to detect the boundary of the extended mul
 EMB INIT State
 ^^^^^^^^^^^^^^
 
-The EMB INIT is the default state of the state machine, all disabled lanes stay in this state. The state is left only when the lane is enabled, the PHY controller of the corresponding lane is sync header aligned and a valid end of extended multiblock marker is detected in the sync header stream.
+The EMB INIT is the default state of the state machine, all disabled lanes stay
+in this state. The state is left only when the lane is enabled, the PHY
+controller of the corresponding lane is sync header aligned and a valid end of
+extended multiblock marker is detected in the sync header stream.
 
-At any moment the PHY loses sync header alignment the state machine will fall back to the EMB INIT state.
+At any moment the PHY loses sync header alignment the state machine will fall
+back to the EMB INIT state.
 
 EMB HUNT State
 ^^^^^^^^^^^^^^
 
-In the EMB HUNT state the state machine will look after four consecutive correct extended multiblock indicators, once this is achieved the state machine enters the EMB LOCK state. In case invalid end of multiblock or end of extended multiblock markers are detected the state machine falls back to the EMB INIT state.
+In the EMB HUNT state the state machine will look after four consecutive correct
+extended multiblock indicators, once this is achieved the state machine enters
+the EMB LOCK state. In case invalid end of multiblock or end of extended
+multiblock markers are detected the state machine falls back to the EMB INIT
+state.
 
 EMB LOCK State
 ^^^^^^^^^^^^^^
 
-In the EMB LOCK state the monitoring of multiblock and extended multiblock indicators is continued. In case of eight consecutive indicators are incorrect the state machine will return in the EMB INIT state. This state ensures the validity of the 32 bit sync words constructed from the sync header stream. For each multiblock the calculated CRC of the previous multiblock is extracted from the current sync word.
-
+In the EMB LOCK state the monitoring of multiblock and extended multiblock
+indicators is continued. In case of eight consecutive indicators are incorrect
+the state machine will return in the EMB INIT state. This state ensures the
+validity of the 32 bit sync words constructed from the sync header stream. For
+each multiblock the calculated CRC of the previous multiblock is extracted from
+the current sync word.
 
 Dual clock operation
 --------------------
@@ -6632,18 +6729,27 @@ In case ``ASYNC_CLK`` parameter is set, a gearbox with 4:N (204B) or 8:N (204C) 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/gearbox.png
    :align: center
 
-The gearbox ratio corresponds with the ratio of the link layer interface data width towards physical layer and transport layer in octets. The interface width towards the physical layer in 8B/10B (204B) mode depends on the DATA_PATH_WIDTH synthesis parameter, and can be either 4 octets (default) or 8 octets. In 204B mode the util_adxcvr supports only data width of 4 octets. In 64b66b (aka 204C) mode the data width towards the physical interface is always 8 octets.
+The gearbox ratio corresponds with the ratio of the link layer interface data
+width towards physical layer and transport layer in octets. The interface width
+towards the physical layer in 8B/10B (204B) mode depends on the DATA_PATH_WIDTH
+synthesis parameter, and can be either 4 octets (default) or 8 octets. In 204B
+mode the util_adxcvr supports only data width of 4 octets. In 64b66b (aka 204C)
+mode the data width towards the physical interface is always 8 octets.
 
-The data path width towards the transport layer is defined by the TPL_DATA_PATH_WIDTH synthesis parameter.
+The data path width towards the transport layer is defined by the
+TPL_DATA_PATH_WIDTH synthesis parameter.
 
 The following rules apply:
 
 -  TPL_DATA_PATH_WIDTH > = DATA_PATH_WIDTH
 -  TPL_DATA_PATH_WIDTH = m x F; where m is a positive integer, power of 2
 
-The link clock and device clock ratio should be the inverse of the DATA_PATH_WIDTH : TPL_DATA_PATH_WIDTH ratio.
+The link clock and device clock ratio should be the inverse of the
+DATA_PATH_WIDTH : TPL_DATA_PATH_WIDTH ratio.
 
-In this context the link clock will be lane rate/40 or lane rate/80 for 204B depending on DATA_PATH_WIDTH and lane rate / 66 for 204C 64B/66B, however the device clock could vary based in the F parameter.
+In this context the link clock will be lane rate/40 or lane rate/80 for 204B
+depending on DATA_PATH_WIDTH and lane rate / 66 for 204C 64B/66B, however the
+device clock could vary based in the F parameter.
 
 64b/66b Link latency reduction
 ------------------------------
@@ -6663,24 +6769,38 @@ Where:
 -  ‘latency regs’ - is the measured latency of each lane observed during consecutive link bring-ups measured for all Rx links, see regs (0x304 + n\*0x20) where n = 0..L-1 ; L is number of lanes
 -  TPLDW - TPL datapath width in octets. Can be read from the ``SYNTH_DATA_PATH_WIDTH`` (0x14) reg ``TPL_DATA_PATH_WIDTH`` field.
 
-\*\* This value it the absolute minimum. It is recommended to increase it slightly to have a better margin against power-up to power-up latency variations.*\*
+\*\* This value it the absolute minimum. It is recommended to increase it
+slightly to have a better margin against power-up to power-up latency
+variations.*\*
 
 Software Support
 ----------------
 
 .. important::
 
-   To ensure correct operation it is highly recommended to use the Analog Devices provided JESD204 software packages for interfacing the peripheral. Analog Devices is not able to provide support in case issues arise from using custom low-level software for interfacing the peripheral.
-
+   To ensure correct operation it is highly recommended to use the Analog
+   Devices provided JESD204 software packages for interfacing the peripheral.
+   Analog Devices is not able to provide support in case issues arise from using
+   custom low-level software for interfacing the peripheral.
 
 -  :doc:`JESD204 Receive Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
 
 Restrictions
 ------------
 
-During the design of the peripheral the deliberate decision was made to support only a subset of the features mandated by the JESD204 standard for receiver logic devices. The reasoning here is that the peripheral has been designed to interface to Analog Devices JESD204 ADC converter devices and features that are either not required or not supported by those converter devices would otherwise lie dormant in peripheral and never be used. Instead the decision was made to not implement those unneeded features even when the JESD204 standard requires them for general purpose JESD204 receiver logic devices. As Analog Devices ADC converter devices with new requirements are released the peripheral will be adjusted accordingly.
+During the design of the peripheral the deliberate decision was made to support
+only a subset of the features mandated by the JESD204 standard for receiver
+logic devices. The reasoning here is that the peripheral has been designed to
+interface to Analog Devices JESD204 ADC converter devices and features that are
+either not required or not supported by those converter devices would otherwise
+lie dormant in peripheral and never be used. Instead the decision was made to
+not implement those unneeded features even when the JESD204 standard requires
+them for general purpose JESD204 receiver logic devices. As Analog Devices ADC
+converter devices with new requirements are released the peripheral will be
+adjusted accordingly.
 
-This approach allows for a leaner design using less resources, allowing for lower pipeline latency and a higher maximum device clock frequency.
+This approach allows for a leaner design using less resources, allowing for
+lower pipeline latency and a higher maximum device clock frequency.
 
 The following lists where the peripheral deviates from the standard:
 
@@ -6688,7 +6808,8 @@ The following lists where the peripheral deviates from the standard:
 -  Reduced number of octets-per-frame settings. The JESD204 standard allows for any value between 1 and 256 to be used for the number of octets-per-frame.
 -  The following octets-per-frame are supported by the peripheral: 1, 2, 4 and 8. (No longer applies starting from 1.07.a)
 -  Reduced number of frames-per-multi-frame settings. The following values are supported by the peripheral: 1-32, with the additional requirement that F\*K is a multiple of 4. In addition F\*K needs to be in the range of 4-256.
--  Alignment character replacement when scrambling is disabled supported starting from 1.07.a
+-  Alignment character replacement when scrambling is disabled supported
+   starting from 1.07.a
 
 Additional Information
 ----------------------
@@ -6705,10 +6826,24 @@ JESD204 Interface Framework
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/jesd204/index.html\
 
+The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface
+standard was created through the JEDEC committee to standardize and reduce the
+number of data inputs/outputs between high-speed data converters and other
+devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects
+simplifies layout and allows smaller form factor realization without impacting
+overall system performance. These attributes are important to address the system
+size and cost constraints of a range of high speed ADC applications, including
+wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA)
+transceiver architectures, software-defined radios, portable instrumentation,
+medical ultrasound equipment, and Mil/Aero applications such as radar and secure
+communications. Analog Devices is an original participating member of the JEDEC
+JESD204 standards committee and we have concurrently developed compliant data
+converter technology and tools, and a comprehensive product roadmap to fully
+enable our customers to take advantage of this significant interfacing
+breakthrough.
 
-The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface standard was created through the JEDEC committee to standardize and reduce the number of data inputs/outputs between high-speed data converters and other devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects simplifies layout and allows smaller form factor realization without impacting overall system performance. These attributes are important to address the system size and cost constraints of a range of high speed ADC applications, including wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA) transceiver architectures, software-defined radios, portable instrumentation, medical ultrasound equipment, and Mil/Aero applications such as radar and secure communications. Analog Devices is an original participating member of the JEDEC JESD204 standards committee and we have concurrently developed compliant data converter technology and tools, and a comprehensive product roadmap to fully enable our customers to take advantage of this significant interfacing breakthrough.
-
-Analog Devices supplies a full-stack supporting JESD204B/C which provides a fully integrated system level experience. This solution includes
+Analog Devices supplies a full-stack supporting JESD204B/C which provides a
+fully integrated system level experience. This solution includes
 
 .. admonition:: Download
    :class: download
@@ -6718,7 +6853,6 @@ Analog Devices supplies a full-stack supporting JESD204B/C which provides a full
    -  `FPGA HDL <https://wiki.analog.com/>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
    -  `Software <https://wiki.analog.com/>`_ to configure the converter devices and FPGA HDL peripherals
    
-
 
 How to Obtain a License
 -----------------------
@@ -6737,15 +6871,25 @@ FPGA HDL Support
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_layers2.png
    :align: right
-   :width: 100px
+   :width: 100
 
-The JESD204B/C standard defines multiple layers, each layer being responsible for a particular function. The Analog Devices JESD204B/C HDL solution follows the standard here and defines 4 layers. Physical layer, link layer, transport layer and application layer. For the first three layers Analog Devices provides standard components that can be linked up to provide a full JESD204B/C protocol processing chain.
+The JESD204B/C standard defines multiple layers, each layer being responsible
+for a particular function. The Analog Devices JESD204B/C HDL solution follows
+the standard here and defines 4 layers. Physical layer, link layer, transport
+layer and application layer. For the first three layers Analog Devices provides
+standard components that can be linked up to provide a full JESD204B/C protocol
+processing chain.
 
-Depending on the FPGA and converter combinations that are being interfaced different components can be chosen for the physical and transport layer. The FPGA defines which physical layer component should be used and the interfaced converter defines which transport layer component should be used.
+Depending on the FPGA and converter combinations that are being interfaced
+different components can be chosen for the physical and transport layer. The
+FPGA defines which physical layer component should be used and the interfaced
+converter defines which transport layer component should be used.
 
-The link layer component is selected based on the direction of the JESD204B/C link.
+The link layer component is selected based on the direction of the JESD204B/C
+link.
 
-The application layer is user defined and can be used to implement application specific signal processing.
+The application layer is user defined and can be used to implement application
+specific signal processing.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_chain.png
    :align: center
@@ -6753,7 +6897,9 @@ The application layer is user defined and can be used to implement application s
 Physical Layer
 ~~~~~~~~~~~~~~
 
-Physical layer peripherals are responsible for interfacing and configuring the high-speed serial transceivers. Currently we have support for GTXE2, GTHE3, GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
+Physical layer peripherals are responsible for interfacing and configuring the
+high-speed serial transceivers. Currently we have support for GTXE2, GTHE3,
+GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
 
 -  `AXI_ADXCVR <https://wiki.analog.com/../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
 -  `UTIL_ADXCVR <https://wiki.analog.com/../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
@@ -6761,7 +6907,9 @@ Physical layer peripherals are responsible for interfacing and configuring the h
 Link Layer
 ~~~~~~~~~~
 
-Link layer peripherals are responsible for JESD204B/C protocol handling, including scrambling/descrambling, lane alignment, character replacement and alignment monitoring.
+Link layer peripherals are responsible for JESD204B/C protocol handling,
+including scrambling/descrambling, lane alignment, character replacement and
+alignment monitoring.
 
 -  :doc:`JESD204B/C Transmit Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_tx>`: JESD204B/C Link Layer Transmit Peripheral
 -  :doc:`JESD204B/C Receive Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_rx>`: JESD204B/C Link Layer Receive Peripheral
@@ -6769,7 +6917,8 @@ Link layer peripherals are responsible for JESD204B/C protocol handling, includi
 Transport Layer
 ~~~~~~~~~~~~~~~
 
-Transport layer peripherals are responsible for converter specific data framing and de-framing.
+Transport layer peripherals are responsible for converter specific data framing
+and de-framing.
 
 -  :doc:`ADC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_adc>` : JESD204B/C Transport Layer Receive Peripheral
 -  :doc:`DAC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_dac>` : JESD204B/C Transport Layer Transmit Peripheral
@@ -6777,7 +6926,9 @@ Transport layer peripherals are responsible for converter specific data framing 
 Interfaces
 ~~~~~~~~~~
 
-Interfaces are a well-defined collection of wires that are used to communicate between components. The following interfaces are used to connect components of the HDL JESD204B/C processing stack.
+Interfaces are a well-defined collection of wires that are used to communicate
+between components. The following interfaces are used to connect components of
+the HDL JESD204B/C processing stack.
 
 Software Support
 ----------------
@@ -6983,7 +7134,6 @@ JESD204B Clocking Solutions
 -  :adi:`HMC7043`: High Performance, 3.2 GHz, 14-Output Fanout Buffer
 -  :adi:`HMC7044`: High Performance, 3.2 GHz, 14-Output Jitter Attenuator with JESD204B
 -  :adi:`LTC6952`: Ultralow Jitter, 4.5GHz PLL, JESD204B/JESD204C
-
 
 JESD204 Interface Framework
 ===========================
@@ -6992,10 +7142,24 @@ JESD204 Interface Framework
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/jesd204/index.html\
 
+The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface
+standard was created through the JEDEC committee to standardize and reduce the
+number of data inputs/outputs between high-speed data converters and other
+devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects
+simplifies layout and allows smaller form factor realization without impacting
+overall system performance. These attributes are important to address the system
+size and cost constraints of a range of high speed ADC applications, including
+wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA)
+transceiver architectures, software-defined radios, portable instrumentation,
+medical ultrasound equipment, and Mil/Aero applications such as radar and secure
+communications. Analog Devices is an original participating member of the JEDEC
+JESD204 standards committee and we have concurrently developed compliant data
+converter technology and tools, and a comprehensive product roadmap to fully
+enable our customers to take advantage of this significant interfacing
+breakthrough.
 
-The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface standard was created through the JEDEC committee to standardize and reduce the number of data inputs/outputs between high-speed data converters and other devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects simplifies layout and allows smaller form factor realization without impacting overall system performance. These attributes are important to address the system size and cost constraints of a range of high speed ADC applications, including wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA) transceiver architectures, software-defined radios, portable instrumentation, medical ultrasound equipment, and Mil/Aero applications such as radar and secure communications. Analog Devices is an original participating member of the JEDEC JESD204 standards committee and we have concurrently developed compliant data converter technology and tools, and a comprehensive product roadmap to fully enable our customers to take advantage of this significant interfacing breakthrough.
-
-Analog Devices supplies a full-stack supporting JESD204B/C which provides a fully integrated system level experience. This solution includes
+Analog Devices supplies a full-stack supporting JESD204B/C which provides a
+fully integrated system level experience. This solution includes
 
 .. admonition:: Download
    :class: download
@@ -7005,7 +7169,6 @@ Analog Devices supplies a full-stack supporting JESD204B/C which provides a full
    -  `FPGA HDL <https://wiki.analog.com/>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
    -  `Software <https://wiki.analog.com/>`_ to configure the converter devices and FPGA HDL peripherals
    
-
 
 How to Obtain a License
 -----------------------
@@ -7024,15 +7187,25 @@ FPGA HDL Support
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_layers2.png
    :align: right
-   :width: 100px
+   :width: 100
 
-The JESD204B/C standard defines multiple layers, each layer being responsible for a particular function. The Analog Devices JESD204B/C HDL solution follows the standard here and defines 4 layers. Physical layer, link layer, transport layer and application layer. For the first three layers Analog Devices provides standard components that can be linked up to provide a full JESD204B/C protocol processing chain.
+The JESD204B/C standard defines multiple layers, each layer being responsible
+for a particular function. The Analog Devices JESD204B/C HDL solution follows
+the standard here and defines 4 layers. Physical layer, link layer, transport
+layer and application layer. For the first three layers Analog Devices provides
+standard components that can be linked up to provide a full JESD204B/C protocol
+processing chain.
 
-Depending on the FPGA and converter combinations that are being interfaced different components can be chosen for the physical and transport layer. The FPGA defines which physical layer component should be used and the interfaced converter defines which transport layer component should be used.
+Depending on the FPGA and converter combinations that are being interfaced
+different components can be chosen for the physical and transport layer. The
+FPGA defines which physical layer component should be used and the interfaced
+converter defines which transport layer component should be used.
 
-The link layer component is selected based on the direction of the JESD204B/C link.
+The link layer component is selected based on the direction of the JESD204B/C
+link.
 
-The application layer is user defined and can be used to implement application specific signal processing.
+The application layer is user defined and can be used to implement application
+specific signal processing.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_chain.png
    :align: center
@@ -7040,7 +7213,9 @@ The application layer is user defined and can be used to implement application s
 Physical Layer
 ~~~~~~~~~~~~~~
 
-Physical layer peripherals are responsible for interfacing and configuring the high-speed serial transceivers. Currently we have support for GTXE2, GTHE3, GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
+Physical layer peripherals are responsible for interfacing and configuring the
+high-speed serial transceivers. Currently we have support for GTXE2, GTHE3,
+GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
 
 -  `AXI_ADXCVR <https://wiki.analog.com/../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
 -  `UTIL_ADXCVR <https://wiki.analog.com/../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
@@ -7048,7 +7223,9 @@ Physical layer peripherals are responsible for interfacing and configuring the h
 Link Layer
 ~~~~~~~~~~
 
-Link layer peripherals are responsible for JESD204B/C protocol handling, including scrambling/descrambling, lane alignment, character replacement and alignment monitoring.
+Link layer peripherals are responsible for JESD204B/C protocol handling,
+including scrambling/descrambling, lane alignment, character replacement and
+alignment monitoring.
 
 -  :doc:`JESD204B/C Transmit Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_tx>`: JESD204B/C Link Layer Transmit Peripheral
 -  :doc:`JESD204B/C Receive Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_rx>`: JESD204B/C Link Layer Receive Peripheral
@@ -7056,7 +7233,8 @@ Link layer peripherals are responsible for JESD204B/C protocol handling, includi
 Transport Layer
 ~~~~~~~~~~~~~~~
 
-Transport layer peripherals are responsible for converter specific data framing and de-framing.
+Transport layer peripherals are responsible for converter specific data framing
+and de-framing.
 
 -  :doc:`ADC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_adc>` : JESD204B/C Transport Layer Receive Peripheral
 -  :doc:`DAC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_dac>` : JESD204B/C Transport Layer Transmit Peripheral
@@ -7064,7 +7242,9 @@ Transport layer peripherals are responsible for converter specific data framing 
 Interfaces
 ~~~~~~~~~~
 
-Interfaces are a well-defined collection of wires that are used to communicate between components. The following interfaces are used to connect components of the HDL JESD204B/C processing stack.
+Interfaces are a well-defined collection of wires that are used to communicate
+between components. The following interfaces are used to connect components of
+the HDL JESD204B/C processing stack.
 
 Software Support
 ----------------
@@ -7270,7 +7450,6 @@ JESD204B Clocking Solutions
 -  :adi:`HMC7043`: High Performance, 3.2 GHz, 14-Output Fanout Buffer
 -  :adi:`HMC7044`: High Performance, 3.2 GHz, 14-Output Jitter Attenuator with JESD204B
 -  :adi:`LTC6952`: Ultralow Jitter, 4.5GHz PLL, JESD204B/JESD204C
-
 
 JESD204 Interface Framework
 ===========================
@@ -7279,10 +7458,24 @@ JESD204 Interface Framework
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/jesd204/index.html\
 
+The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface
+standard was created through the JEDEC committee to standardize and reduce the
+number of data inputs/outputs between high-speed data converters and other
+devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects
+simplifies layout and allows smaller form factor realization without impacting
+overall system performance. These attributes are important to address the system
+size and cost constraints of a range of high speed ADC applications, including
+wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA)
+transceiver architectures, software-defined radios, portable instrumentation,
+medical ultrasound equipment, and Mil/Aero applications such as radar and secure
+communications. Analog Devices is an original participating member of the JEDEC
+JESD204 standards committee and we have concurrently developed compliant data
+converter technology and tools, and a comprehensive product roadmap to fully
+enable our customers to take advantage of this significant interfacing
+breakthrough.
 
-The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface standard was created through the JEDEC committee to standardize and reduce the number of data inputs/outputs between high-speed data converters and other devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects simplifies layout and allows smaller form factor realization without impacting overall system performance. These attributes are important to address the system size and cost constraints of a range of high speed ADC applications, including wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA) transceiver architectures, software-defined radios, portable instrumentation, medical ultrasound equipment, and Mil/Aero applications such as radar and secure communications. Analog Devices is an original participating member of the JEDEC JESD204 standards committee and we have concurrently developed compliant data converter technology and tools, and a comprehensive product roadmap to fully enable our customers to take advantage of this significant interfacing breakthrough.
-
-Analog Devices supplies a full-stack supporting JESD204B/C which provides a fully integrated system level experience. This solution includes
+Analog Devices supplies a full-stack supporting JESD204B/C which provides a
+fully integrated system level experience. This solution includes
 
 .. admonition:: Download
    :class: download
@@ -7292,7 +7485,6 @@ Analog Devices supplies a full-stack supporting JESD204B/C which provides a full
    -  `FPGA HDL <https://wiki.analog.com/>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
    -  `Software <https://wiki.analog.com/>`_ to configure the converter devices and FPGA HDL peripherals
    
-
 
 How to Obtain a License
 -----------------------
@@ -7311,15 +7503,25 @@ FPGA HDL Support
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_layers2.png
    :align: right
-   :width: 100px
+   :width: 100
 
-The JESD204B/C standard defines multiple layers, each layer being responsible for a particular function. The Analog Devices JESD204B/C HDL solution follows the standard here and defines 4 layers. Physical layer, link layer, transport layer and application layer. For the first three layers Analog Devices provides standard components that can be linked up to provide a full JESD204B/C protocol processing chain.
+The JESD204B/C standard defines multiple layers, each layer being responsible
+for a particular function. The Analog Devices JESD204B/C HDL solution follows
+the standard here and defines 4 layers. Physical layer, link layer, transport
+layer and application layer. For the first three layers Analog Devices provides
+standard components that can be linked up to provide a full JESD204B/C protocol
+processing chain.
 
-Depending on the FPGA and converter combinations that are being interfaced different components can be chosen for the physical and transport layer. The FPGA defines which physical layer component should be used and the interfaced converter defines which transport layer component should be used.
+Depending on the FPGA and converter combinations that are being interfaced
+different components can be chosen for the physical and transport layer. The
+FPGA defines which physical layer component should be used and the interfaced
+converter defines which transport layer component should be used.
 
-The link layer component is selected based on the direction of the JESD204B/C link.
+The link layer component is selected based on the direction of the JESD204B/C
+link.
 
-The application layer is user defined and can be used to implement application specific signal processing.
+The application layer is user defined and can be used to implement application
+specific signal processing.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_chain.png
    :align: center
@@ -7327,7 +7529,9 @@ The application layer is user defined and can be used to implement application s
 Physical Layer
 ~~~~~~~~~~~~~~
 
-Physical layer peripherals are responsible for interfacing and configuring the high-speed serial transceivers. Currently we have support for GTXE2, GTHE3, GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
+Physical layer peripherals are responsible for interfacing and configuring the
+high-speed serial transceivers. Currently we have support for GTXE2, GTHE3,
+GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
 
 -  `AXI_ADXCVR <https://wiki.analog.com/../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
 -  `UTIL_ADXCVR <https://wiki.analog.com/../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
@@ -7335,7 +7539,9 @@ Physical layer peripherals are responsible for interfacing and configuring the h
 Link Layer
 ~~~~~~~~~~
 
-Link layer peripherals are responsible for JESD204B/C protocol handling, including scrambling/descrambling, lane alignment, character replacement and alignment monitoring.
+Link layer peripherals are responsible for JESD204B/C protocol handling,
+including scrambling/descrambling, lane alignment, character replacement and
+alignment monitoring.
 
 -  :doc:`JESD204B/C Transmit Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_tx>`: JESD204B/C Link Layer Transmit Peripheral
 -  :doc:`JESD204B/C Receive Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_rx>`: JESD204B/C Link Layer Receive Peripheral
@@ -7343,7 +7549,8 @@ Link layer peripherals are responsible for JESD204B/C protocol handling, includi
 Transport Layer
 ~~~~~~~~~~~~~~~
 
-Transport layer peripherals are responsible for converter specific data framing and de-framing.
+Transport layer peripherals are responsible for converter specific data framing
+and de-framing.
 
 -  :doc:`ADC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_adc>` : JESD204B/C Transport Layer Receive Peripheral
 -  :doc:`DAC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_dac>` : JESD204B/C Transport Layer Transmit Peripheral
@@ -7351,7 +7558,9 @@ Transport layer peripherals are responsible for converter specific data framing 
 Interfaces
 ~~~~~~~~~~
 
-Interfaces are a well-defined collection of wires that are used to communicate between components. The following interfaces are used to connect components of the HDL JESD204B/C processing stack.
+Interfaces are a well-defined collection of wires that are used to communicate
+between components. The following interfaces are used to connect components of
+the HDL JESD204B/C processing stack.
 
 Software Support
 ----------------
@@ -7557,7 +7766,6 @@ JESD204B Clocking Solutions
 -  :adi:`HMC7043`: High Performance, 3.2 GHz, 14-Output Fanout Buffer
 -  :adi:`HMC7044`: High Performance, 3.2 GHz, 14-Output Jitter Attenuator with JESD204B
 -  :adi:`LTC6952`: Ultralow Jitter, 4.5GHz PLL, JESD204B/JESD204C
-
 
 Technical Support
 -----------------
@@ -7571,23 +7779,34 @@ More Information
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/quadmxfe_linkbringup_204b_adc.png
 
-
 Software Support
 ----------------
 
 .. important::
 
-   To ensure correct operation it is highly recommended to use the Analog Devices provided JESD204B software packages for interfacing the peripheral. Analog Devices is not able to provide support in case issues arise from using custom low-level software for interfacing the peripheral.
-
+   To ensure correct operation it is highly recommended to use the Analog
+   Devices provided JESD204B software packages for interfacing the peripheral.
+   Analog Devices is not able to provide support in case issues arise from using
+   custom low-level software for interfacing the peripheral.
 
 -  :doc:`JESD204B Transmit Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
 
 Restrictions
 ------------
 
-During the design of the peripheral the deliberate decision was made to support only a subset of the features mandated by the JESD204B standard for transmitter logic devices. The reasoning here is that the peripheral has been designed to interface to Analog Devices JESD204B DAC converter devices and features that are either not required or not supported by those converter devices would otherwise lie dormant in peripheral and never be used. Instead the decision was made to not implement those unneeded features even when the JESD204B standard requires them for general purpose JESD204B transmitter logic devices. As Analog Devices DAC converter devices with new requirements are released the peripheral will be adjusted accordingly.
+During the design of the peripheral the deliberate decision was made to support
+only a subset of the features mandated by the JESD204B standard for transmitter
+logic devices. The reasoning here is that the peripheral has been designed to
+interface to Analog Devices JESD204B DAC converter devices and features that are
+either not required or not supported by those converter devices would otherwise
+lie dormant in peripheral and never be used. Instead the decision was made to
+not implement those unneeded features even when the JESD204B standard requires
+them for general purpose JESD204B transmitter logic devices. As Analog Devices
+DAC converter devices with new requirements are released the peripheral will be
+adjusted accordingly.
 
-This approach allows for a leaner design using less resources, allowing for lower pipeline latency and a higher maximum device clock frequency.
+This approach allows for a leaner design using less resources, allowing for
+lower pipeline latency and a higher maximum device clock frequency.
 
 The following lists where the peripheral deviates from the standard:
 
@@ -7595,7 +7814,8 @@ The following lists where the peripheral deviates from the standard:
 -  Reduced number of octets-per-frame settings. The JESD204B standard allows for any value between 1 and 256 to be used for the number of octets-per-frame.
 -  The following octets-per-frame values are supported by the peripheral: 1, 2, 4 and 8.(No longer applies starting from 1.06.a)
 -  Reduced number of frames-per-multi-frame settings. The following values are supported by the peripheral: 1-32, with the additional requirement that F\*K is a multiple of 4. In addition F\*K needs to be in the range of 4-256.
--  Alignment character replacement when scrambling is disabled supported starting from 1.06.a
+-  Alignment character replacement when scrambling is disabled supported
+   starting from 1.06.a
 
 Supported Devices
 -----------------
@@ -7607,10 +7827,24 @@ JESD204 Interface Framework
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/jesd204/index.html\
 
+The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface
+standard was created through the JEDEC committee to standardize and reduce the
+number of data inputs/outputs between high-speed data converters and other
+devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects
+simplifies layout and allows smaller form factor realization without impacting
+overall system performance. These attributes are important to address the system
+size and cost constraints of a range of high speed ADC applications, including
+wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA)
+transceiver architectures, software-defined radios, portable instrumentation,
+medical ultrasound equipment, and Mil/Aero applications such as radar and secure
+communications. Analog Devices is an original participating member of the JEDEC
+JESD204 standards committee and we have concurrently developed compliant data
+converter technology and tools, and a comprehensive product roadmap to fully
+enable our customers to take advantage of this significant interfacing
+breakthrough.
 
-The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface standard was created through the JEDEC committee to standardize and reduce the number of data inputs/outputs between high-speed data converters and other devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects simplifies layout and allows smaller form factor realization without impacting overall system performance. These attributes are important to address the system size and cost constraints of a range of high speed ADC applications, including wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA) transceiver architectures, software-defined radios, portable instrumentation, medical ultrasound equipment, and Mil/Aero applications such as radar and secure communications. Analog Devices is an original participating member of the JEDEC JESD204 standards committee and we have concurrently developed compliant data converter technology and tools, and a comprehensive product roadmap to fully enable our customers to take advantage of this significant interfacing breakthrough.
-
-Analog Devices supplies a full-stack supporting JESD204B/C which provides a fully integrated system level experience. This solution includes
+Analog Devices supplies a full-stack supporting JESD204B/C which provides a
+fully integrated system level experience. This solution includes
 
 .. admonition:: Download
    :class: download
@@ -7620,7 +7854,6 @@ Analog Devices supplies a full-stack supporting JESD204B/C which provides a full
    -  `FPGA HDL <https://wiki.analog.com/>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
    -  `Software <https://wiki.analog.com/>`_ to configure the converter devices and FPGA HDL peripherals
    
-
 
 How to Obtain a License
 -----------------------
@@ -7639,15 +7872,25 @@ FPGA HDL Support
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_layers2.png
    :align: right
-   :width: 100px
+   :width: 100
 
-The JESD204B/C standard defines multiple layers, each layer being responsible for a particular function. The Analog Devices JESD204B/C HDL solution follows the standard here and defines 4 layers. Physical layer, link layer, transport layer and application layer. For the first three layers Analog Devices provides standard components that can be linked up to provide a full JESD204B/C protocol processing chain.
+The JESD204B/C standard defines multiple layers, each layer being responsible
+for a particular function. The Analog Devices JESD204B/C HDL solution follows
+the standard here and defines 4 layers. Physical layer, link layer, transport
+layer and application layer. For the first three layers Analog Devices provides
+standard components that can be linked up to provide a full JESD204B/C protocol
+processing chain.
 
-Depending on the FPGA and converter combinations that are being interfaced different components can be chosen for the physical and transport layer. The FPGA defines which physical layer component should be used and the interfaced converter defines which transport layer component should be used.
+Depending on the FPGA and converter combinations that are being interfaced
+different components can be chosen for the physical and transport layer. The
+FPGA defines which physical layer component should be used and the interfaced
+converter defines which transport layer component should be used.
 
-The link layer component is selected based on the direction of the JESD204B/C link.
+The link layer component is selected based on the direction of the JESD204B/C
+link.
 
-The application layer is user defined and can be used to implement application specific signal processing.
+The application layer is user defined and can be used to implement application
+specific signal processing.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_chain.png
    :align: center
@@ -7655,7 +7898,9 @@ The application layer is user defined and can be used to implement application s
 Physical Layer
 ~~~~~~~~~~~~~~
 
-Physical layer peripherals are responsible for interfacing and configuring the high-speed serial transceivers. Currently we have support for GTXE2, GTHE3, GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
+Physical layer peripherals are responsible for interfacing and configuring the
+high-speed serial transceivers. Currently we have support for GTXE2, GTHE3,
+GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
 
 -  `AXI_ADXCVR <https://wiki.analog.com/../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
 -  `UTIL_ADXCVR <https://wiki.analog.com/../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
@@ -7663,7 +7908,9 @@ Physical layer peripherals are responsible for interfacing and configuring the h
 Link Layer
 ~~~~~~~~~~
 
-Link layer peripherals are responsible for JESD204B/C protocol handling, including scrambling/descrambling, lane alignment, character replacement and alignment monitoring.
+Link layer peripherals are responsible for JESD204B/C protocol handling,
+including scrambling/descrambling, lane alignment, character replacement and
+alignment monitoring.
 
 -  :doc:`JESD204B/C Transmit Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_tx>`: JESD204B/C Link Layer Transmit Peripheral
 -  :doc:`JESD204B/C Receive Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_rx>`: JESD204B/C Link Layer Receive Peripheral
@@ -7671,7 +7918,8 @@ Link layer peripherals are responsible for JESD204B/C protocol handling, includi
 Transport Layer
 ~~~~~~~~~~~~~~~
 
-Transport layer peripherals are responsible for converter specific data framing and de-framing.
+Transport layer peripherals are responsible for converter specific data framing
+and de-framing.
 
 -  :doc:`ADC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_adc>` : JESD204B/C Transport Layer Receive Peripheral
 -  :doc:`DAC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_dac>` : JESD204B/C Transport Layer Transmit Peripheral
@@ -7679,7 +7927,9 @@ Transport layer peripherals are responsible for converter specific data framing 
 Interfaces
 ~~~~~~~~~~
 
-Interfaces are a well-defined collection of wires that are used to communicate between components. The following interfaces are used to connect components of the HDL JESD204B/C processing stack.
+Interfaces are a well-defined collection of wires that are used to communicate
+between components. The following interfaces are used to connect components of
+the HDL JESD204B/C processing stack.
 
 Software Support
 ----------------
@@ -7885,7 +8135,6 @@ JESD204B Clocking Solutions
 -  :adi:`HMC7043`: High Performance, 3.2 GHz, 14-Output Fanout Buffer
 -  :adi:`HMC7044`: High Performance, 3.2 GHz, 14-Output Jitter Attenuator with JESD204B
 -  :adi:`LTC6952`: Ultralow Jitter, 4.5GHz PLL, JESD204B/JESD204C
-
 
 JESD204 Interface Framework
 ===========================
@@ -7894,10 +8143,24 @@ JESD204 Interface Framework
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/jesd204/index.html\
 
+The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface
+standard was created through the JEDEC committee to standardize and reduce the
+number of data inputs/outputs between high-speed data converters and other
+devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects
+simplifies layout and allows smaller form factor realization without impacting
+overall system performance. These attributes are important to address the system
+size and cost constraints of a range of high speed ADC applications, including
+wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA)
+transceiver architectures, software-defined radios, portable instrumentation,
+medical ultrasound equipment, and Mil/Aero applications such as radar and secure
+communications. Analog Devices is an original participating member of the JEDEC
+JESD204 standards committee and we have concurrently developed compliant data
+converter technology and tools, and a comprehensive product roadmap to fully
+enable our customers to take advantage of this significant interfacing
+breakthrough.
 
-The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface standard was created through the JEDEC committee to standardize and reduce the number of data inputs/outputs between high-speed data converters and other devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects simplifies layout and allows smaller form factor realization without impacting overall system performance. These attributes are important to address the system size and cost constraints of a range of high speed ADC applications, including wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA) transceiver architectures, software-defined radios, portable instrumentation, medical ultrasound equipment, and Mil/Aero applications such as radar and secure communications. Analog Devices is an original participating member of the JEDEC JESD204 standards committee and we have concurrently developed compliant data converter technology and tools, and a comprehensive product roadmap to fully enable our customers to take advantage of this significant interfacing breakthrough.
-
-Analog Devices supplies a full-stack supporting JESD204B/C which provides a fully integrated system level experience. This solution includes
+Analog Devices supplies a full-stack supporting JESD204B/C which provides a
+fully integrated system level experience. This solution includes
 
 .. admonition:: Download
    :class: download
@@ -7907,7 +8170,6 @@ Analog Devices supplies a full-stack supporting JESD204B/C which provides a full
    -  `FPGA HDL <https://wiki.analog.com/>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
    -  `Software <https://wiki.analog.com/>`_ to configure the converter devices and FPGA HDL peripherals
    
-
 
 How to Obtain a License
 -----------------------
@@ -7926,15 +8188,25 @@ FPGA HDL Support
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_layers2.png
    :align: right
-   :width: 100px
+   :width: 100
 
-The JESD204B/C standard defines multiple layers, each layer being responsible for a particular function. The Analog Devices JESD204B/C HDL solution follows the standard here and defines 4 layers. Physical layer, link layer, transport layer and application layer. For the first three layers Analog Devices provides standard components that can be linked up to provide a full JESD204B/C protocol processing chain.
+The JESD204B/C standard defines multiple layers, each layer being responsible
+for a particular function. The Analog Devices JESD204B/C HDL solution follows
+the standard here and defines 4 layers. Physical layer, link layer, transport
+layer and application layer. For the first three layers Analog Devices provides
+standard components that can be linked up to provide a full JESD204B/C protocol
+processing chain.
 
-Depending on the FPGA and converter combinations that are being interfaced different components can be chosen for the physical and transport layer. The FPGA defines which physical layer component should be used and the interfaced converter defines which transport layer component should be used.
+Depending on the FPGA and converter combinations that are being interfaced
+different components can be chosen for the physical and transport layer. The
+FPGA defines which physical layer component should be used and the interfaced
+converter defines which transport layer component should be used.
 
-The link layer component is selected based on the direction of the JESD204B/C link.
+The link layer component is selected based on the direction of the JESD204B/C
+link.
 
-The application layer is user defined and can be used to implement application specific signal processing.
+The application layer is user defined and can be used to implement application
+specific signal processing.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_chain.png
    :align: center
@@ -7942,7 +8214,9 @@ The application layer is user defined and can be used to implement application s
 Physical Layer
 ~~~~~~~~~~~~~~
 
-Physical layer peripherals are responsible for interfacing and configuring the high-speed serial transceivers. Currently we have support for GTXE2, GTHE3, GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
+Physical layer peripherals are responsible for interfacing and configuring the
+high-speed serial transceivers. Currently we have support for GTXE2, GTHE3,
+GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
 
 -  `AXI_ADXCVR <https://wiki.analog.com/../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
 -  `UTIL_ADXCVR <https://wiki.analog.com/../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
@@ -7950,7 +8224,9 @@ Physical layer peripherals are responsible for interfacing and configuring the h
 Link Layer
 ~~~~~~~~~~
 
-Link layer peripherals are responsible for JESD204B/C protocol handling, including scrambling/descrambling, lane alignment, character replacement and alignment monitoring.
+Link layer peripherals are responsible for JESD204B/C protocol handling,
+including scrambling/descrambling, lane alignment, character replacement and
+alignment monitoring.
 
 -  :doc:`JESD204B/C Transmit Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_tx>`: JESD204B/C Link Layer Transmit Peripheral
 -  :doc:`JESD204B/C Receive Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_rx>`: JESD204B/C Link Layer Receive Peripheral
@@ -7958,7 +8234,8 @@ Link layer peripherals are responsible for JESD204B/C protocol handling, includi
 Transport Layer
 ~~~~~~~~~~~~~~~
 
-Transport layer peripherals are responsible for converter specific data framing and de-framing.
+Transport layer peripherals are responsible for converter specific data framing
+and de-framing.
 
 -  :doc:`ADC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_adc>` : JESD204B/C Transport Layer Receive Peripheral
 -  :doc:`DAC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_dac>` : JESD204B/C Transport Layer Transmit Peripheral
@@ -7966,7 +8243,9 @@ Transport layer peripherals are responsible for converter specific data framing 
 Interfaces
 ~~~~~~~~~~
 
-Interfaces are a well-defined collection of wires that are used to communicate between components. The following interfaces are used to connect components of the HDL JESD204B/C processing stack.
+Interfaces are a well-defined collection of wires that are used to communicate
+between components. The following interfaces are used to connect components of
+the HDL JESD204B/C processing stack.
 
 Software Support
 ----------------
@@ -8172,7 +8451,6 @@ JESD204B Clocking Solutions
 -  :adi:`HMC7043`: High Performance, 3.2 GHz, 14-Output Fanout Buffer
 -  :adi:`HMC7044`: High Performance, 3.2 GHz, 14-Output Jitter Attenuator with JESD204B
 -  :adi:`LTC6952`: Ultralow Jitter, 4.5GHz PLL, JESD204B/JESD204C
-
 
 JESD204 Interface Framework
 ===========================
@@ -8181,10 +8459,24 @@ JESD204 Interface Framework
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/jesd204/index.html\
 
+The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface
+standard was created through the JEDEC committee to standardize and reduce the
+number of data inputs/outputs between high-speed data converters and other
+devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects
+simplifies layout and allows smaller form factor realization without impacting
+overall system performance. These attributes are important to address the system
+size and cost constraints of a range of high speed ADC applications, including
+wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA)
+transceiver architectures, software-defined radios, portable instrumentation,
+medical ultrasound equipment, and Mil/Aero applications such as radar and secure
+communications. Analog Devices is an original participating member of the JEDEC
+JESD204 standards committee and we have concurrently developed compliant data
+converter technology and tools, and a comprehensive product roadmap to fully
+enable our customers to take advantage of this significant interfacing
+breakthrough.
 
-The JESD204, JESD204A, JESD204B and the JESD204C data converter serial interface standard was created through the JEDEC committee to standardize and reduce the number of data inputs/outputs between high-speed data converters and other devices, such as FPGAs (field-programmable gate arrays). Fewer interconnects simplifies layout and allows smaller form factor realization without impacting overall system performance. These attributes are important to address the system size and cost constraints of a range of high speed ADC applications, including wireless infrastructure (GSM, EDGE, W-CDMA, LTE, CDMA2000, WiMAX, TD-SCDMA) transceiver architectures, software-defined radios, portable instrumentation, medical ultrasound equipment, and Mil/Aero applications such as radar and secure communications. Analog Devices is an original participating member of the JEDEC JESD204 standards committee and we have concurrently developed compliant data converter technology and tools, and a comprehensive product roadmap to fully enable our customers to take advantage of this significant interfacing breakthrough.
-
-Analog Devices supplies a full-stack supporting JESD204B/C which provides a fully integrated system level experience. This solution includes
+Analog Devices supplies a full-stack supporting JESD204B/C which provides a
+fully integrated system level experience. This solution includes
 
 .. admonition:: Download
    :class: download
@@ -8194,7 +8486,6 @@ Analog Devices supplies a full-stack supporting JESD204B/C which provides a full
    -  `FPGA HDL <https://wiki.analog.com/>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
    -  `Software <https://wiki.analog.com/>`_ to configure the converter devices and FPGA HDL peripherals
    
-
 
 How to Obtain a License
 -----------------------
@@ -8213,15 +8504,25 @@ FPGA HDL Support
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_layers2.png
    :align: right
-   :width: 100px
+   :width: 100
 
-The JESD204B/C standard defines multiple layers, each layer being responsible for a particular function. The Analog Devices JESD204B/C HDL solution follows the standard here and defines 4 layers. Physical layer, link layer, transport layer and application layer. For the first three layers Analog Devices provides standard components that can be linked up to provide a full JESD204B/C protocol processing chain.
+The JESD204B/C standard defines multiple layers, each layer being responsible
+for a particular function. The Analog Devices JESD204B/C HDL solution follows
+the standard here and defines 4 layers. Physical layer, link layer, transport
+layer and application layer. For the first three layers Analog Devices provides
+standard components that can be linked up to provide a full JESD204B/C protocol
+processing chain.
 
-Depending on the FPGA and converter combinations that are being interfaced different components can be chosen for the physical and transport layer. The FPGA defines which physical layer component should be used and the interfaced converter defines which transport layer component should be used.
+Depending on the FPGA and converter combinations that are being interfaced
+different components can be chosen for the physical and transport layer. The
+FPGA defines which physical layer component should be used and the interfaced
+converter defines which transport layer component should be used.
 
-The link layer component is selected based on the direction of the JESD204B/C link.
+The link layer component is selected based on the direction of the JESD204B/C
+link.
 
-The application layer is user defined and can be used to implement application specific signal processing.
+The application layer is user defined and can be used to implement application
+specific signal processing.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204_chain.png
    :align: center
@@ -8229,7 +8530,9 @@ The application layer is user defined and can be used to implement application s
 Physical Layer
 ~~~~~~~~~~~~~~
 
-Physical layer peripherals are responsible for interfacing and configuring the high-speed serial transceivers. Currently we have support for GTXE2, GTHE3, GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
+Physical layer peripherals are responsible for interfacing and configuring the
+high-speed serial transceivers. Currently we have support for GTXE2, GTHE3,
+GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
 
 -  `AXI_ADXCVR <https://wiki.analog.com/../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
 -  `UTIL_ADXCVR <https://wiki.analog.com/../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
@@ -8237,7 +8540,9 @@ Physical layer peripherals are responsible for interfacing and configuring the h
 Link Layer
 ~~~~~~~~~~
 
-Link layer peripherals are responsible for JESD204B/C protocol handling, including scrambling/descrambling, lane alignment, character replacement and alignment monitoring.
+Link layer peripherals are responsible for JESD204B/C protocol handling,
+including scrambling/descrambling, lane alignment, character replacement and
+alignment monitoring.
 
 -  :doc:`JESD204B/C Transmit Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_tx>`: JESD204B/C Link Layer Transmit Peripheral
 -  :doc:`JESD204B/C Receive Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_rx>`: JESD204B/C Link Layer Receive Peripheral
@@ -8245,7 +8550,8 @@ Link layer peripherals are responsible for JESD204B/C protocol handling, includi
 Transport Layer
 ~~~~~~~~~~~~~~~
 
-Transport layer peripherals are responsible for converter specific data framing and de-framing.
+Transport layer peripherals are responsible for converter specific data framing
+and de-framing.
 
 -  :doc:`ADC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_adc>` : JESD204B/C Transport Layer Receive Peripheral
 -  :doc:`DAC JESD204B/C Transport Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_tpl_dac>` : JESD204B/C Transport Layer Transmit Peripheral
@@ -8253,7 +8559,9 @@ Transport layer peripherals are responsible for converter specific data framing 
 Interfaces
 ~~~~~~~~~~
 
-Interfaces are a well-defined collection of wires that are used to communicate between components. The following interfaces are used to connect components of the HDL JESD204B/C processing stack.
+Interfaces are a well-defined collection of wires that are used to communicate
+between components. The following interfaces are used to connect components of
+the HDL JESD204B/C processing stack.
 
 Software Support
 ----------------
@@ -8459,7 +8767,6 @@ JESD204B Clocking Solutions
 -  :adi:`HMC7043`: High Performance, 3.2 GHz, 14-Output Fanout Buffer
 -  :adi:`HMC7044`: High Performance, 3.2 GHz, 14-Output Jitter Attenuator with JESD204B
 -  :adi:`LTC6952`: Ultralow Jitter, 4.5GHz PLL, JESD204B/JESD204C
-
 
 Technical Support
 -----------------

@@ -6,7 +6,8 @@ The Reference design is based on the `ZedBoard <http://zedboard.org/product/zedb
 Reference Design
 ----------------
 
-The reference design contains HDL blocks for interfacing with the various components of the motor control hardware:
+The reference design contains HDL blocks for interfacing with the various
+components of the motor control hardware:
 
 -  **Current Monitor** - Implements the communication with the AD7401 sigma delta modulators present on the AD-FMCMOTCON2-EBZ and also the SINC3 filters for demodulating the 1-bit digital stream provided by these parts. This HDL block exposes a set of registers that can be accessed through the AXI Lite interface. A FIFO interface connected to a DMA controller allows the block to stream real time data to the application layer. An ADC PACK IP is used so that 1, 2 or all channels can stream data at a time.
 -  **Controller** - Implements the interface to the IP control blocks in the system. A FIFO interface connected to a DMA controller allows the block to stream real time data to the application layer. It implements a basic six point drive of the motor. An ADC PACK block is used so that 1, 2, 4 or all channels can stream data at a time.
@@ -15,7 +16,7 @@ The reference design contains HDL blocks for interfacing with the various compon
 -  **I2C** - There are two I2C interfaces connected to the FMC board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/motorcontrolrev2.jpg
-   :width: 800px
+   :width: 800
 
 Vivado Design Generation
 ------------------------
@@ -35,14 +36,12 @@ Downloads
    :
    
 
-
 Setting up Linux
 ----------------
 
 .. note::
 
    For instructions on how to setup linux on the ZED board, please follow instructions at: :doc:`Linux on Zynq Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/quickstart/zynq>`
-
 
 Support
 -------
@@ -52,4 +51,3 @@ Support
    
    -  Questions? :ez:`Ask Help & Support <community/fpga>`.
    
-

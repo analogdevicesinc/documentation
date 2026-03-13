@@ -1,30 +1,50 @@
 ADALM-PLUTO Phase Noise and Frequency Accuracy
 ==============================================
 
-In any transmitter (or receiver) design, frequency stability is of critical importance. Many are interested in both long-term and short-term stability. Long-term frequency stability is concerned with how the output signal varies over a long period of time (minutes, hours, days, or months). It is usually specified as the ratio, Δf/f for a given period of time, expressed as a percentage or in dB. These changes can be the results of thermal, aging, or voltage variations.
+In any transmitter (or receiver) design, frequency stability is of critical
+importance. Many are interested in both long-term and short-term stability.
+Long-term frequency stability is concerned with how the output signal varies
+over a long period of time (minutes, hours, days, or months). It is usually
+specified as the ratio, Δf/f for a given period of time, expressed as a
+percentage or in dB. These changes can be the results of thermal, aging, or
+voltage variations.
 
-Short-term stability, on the other hand, is concerned with variations that occur over a period of seconds or less. These variations can be random or periodic and are normally referred to as phase noise, measured in dBc/Hz.
+Short-term stability, on the other hand, is concerned with variations that occur
+over a period of seconds or less. These variations can be random or periodic and
+are normally referred to as phase noise, measured in dBc/Hz.
 
 Frequency Stability
 -------------------
 
 Frequency stability is a measure of how well a device is able to produce its a specific frequency over time without drifting from that frequency. Due to the noise characteristics of oscillators, standard variance is not the traditional specification, neither is phase noise since the time periods are longer. Instead `Allan variance <https://en.wikipedia.org/wiki/Allan_variance>`_ is the tool of choice for these statistical evaluations. Like the standard deviation, the Allan variance shows how much the frequency of the device deviates from its specified (or average) value.
 
-The point of interest in the Allan Variance plot is the minimum of the curve. Normally in plots like this, the deviation is high, because of noise. Over longer observations times, the noise averages out until the minimum is reached. The minimum thus corresponds to the point in time when the deviation from the specified frequency is at its lowest. After that, the stability deteriorates due to drift, temperature effects, and aging. In this case, we can see that the time that the Pluto SDR is most stable is over 10ms (100Hz) to 1 second (1Hz). Over this, there can be a slow drift that will affect the "average" output.
+The point of interest in the Allan Variance plot is the minimum of the curve.
+Normally in plots like this, the deviation is high, because of noise. Over
+longer observations times, the noise averages out until the minimum is reached.
+The minimum thus corresponds to the point in time when the deviation from the
+specified frequency is at its lowest. After that, the stability deteriorates due
+to drift, temperature effects, and aging. In this case, we can see that the time
+that the Pluto SDR is most stable is over 10ms (100Hz) to 1 second (1Hz). Over
+this, there can be a slow drift that will affect the "average" output.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/pluto_allen_variance.png
    :alt: Pluto LO Allen Variance
    :align: center
-   :width: 800px
+   :width: 800
 
-The logarithmic x-axis corresponds to the observation time ("Tau"). Note that Tau is not the measurement time, but the evaluated time - the measurement lasts longer than Tau. Since the Rohde & Schwarz FSWP Phase Noise instrument calculates the Allan variance based on the measurement range of the phase noise measurement (offset frequency), the observation time corresponds to the measurement range and vice versa.
+The logarithmic x-axis corresponds to the observation time ("Tau"). Note that
+Tau is not the measurement time, but the evaluated time - the measurement lasts
+longer than Tau. Since the Rohde & Schwarz FSWP Phase Noise instrument
+calculates the Allan variance based on the measurement range of the phase noise
+measurement (offset frequency), the observation time corresponds to the
+measurement range and vice versa.
 
 An alternative view of this is to look at stability over time with a `Spectrogram <https://en.wikipedia.org/wiki/Spectrogram>`_. A spectrogram is a visual representation of the spectrum of frequencies of a signal as it varies with time. This is a very intuitive way to look at things, but it is not numerically precise and is only a qualitative way to investigate things. For example, in the spectrogram below, a 502.001 MHz signal was output in the Pluto, we can see the signal drift over time. This drift is a measurement of the difference between the instrument (Tektronix `RSA5126B <https://www.tek.com/spectrum-analyzer/rsa5126b>`_ Real Time Signal Analyzer, which has ±1ppm initial accuracy) and the Pluto (which is ±25ppm initial accuracy). The Pluto could be drifting, or the instrument could be drifting. The width of the drift is ~ 100 Hz over 60 minutes. For 500,000,000 Hz carrier, a 100 Hz drift is under 0.2 ppm. It should be noted that this is while the ADALM-PLUTO was allowed to warm up (via self-heating) for 20 min before this measurement was recorded. This was approximately 1 hour of measurement.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/pluto_drift.png
    :alt: Pluto LO drift from RTS
    :align: center
-   :width: 800px
+   :width: 800
 
 Phase Noise
 -----------
@@ -35,24 +55,35 @@ Note the curve is approximated by a number of regions, each having a slope of 1/
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/phase_noise_vs_offset.png
    :align: center
-   :width: 500px
+   :width: 500
 
-In modern communications algorithms, the phase noise is much more important than frequency stability, as carrier offset and timing correction algorithms will eliminate most frequency accuracy/stability issues. This is why most people look at phase noise from 10kHz to 10 MHz. In the below tests, we can see things from 100 Hz to 100 MHz, which covers more than what most people are interested in.
+In modern communications algorithms, the phase noise is much more important than
+frequency stability, as carrier offset and timing correction algorithms will
+eliminate most frequency accuracy/stability issues. This is why most people look
+at phase noise from 10kHz to 10 MHz. In the below tests, we can see things from
+100 Hz to 100 MHz, which covers more than what most people are interested in.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/pluto_phase_noise_100hz2100mhz.png
    :align: center
-   :width: 800px
+   :width: 800
 
-However, at lower frequencies (100 mHz, or over 10 seconds) to 100 kHz, we can see that the noise, or in this case drift, can vary quite a bit. This sub 100 kHz offset/noise/drift can normally be resolved by signal processing algorithms where carrier offset correction algorithms have specifically been designed to reduce this drift.
+However, at lower frequencies (100 mHz, or over 10 seconds) to 100 kHz, we can
+see that the noise, or in this case drift, can vary quite a bit. This sub 100
+kHz offset/noise/drift can normally be resolved by signal processing algorithms
+where carrier offset correction algorithms have specifically been designed to
+reduce this drift.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/pluto_phase_noise_100mhz2100khz.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Summary
 -------
 
-Phase noise and drift are key parameters for many oscillators and signal sources as it governs many aspects of the overall performance. In modern communication systems, many drift issues can be overcome with various signal processing algorithms.
+Phase noise and drift are key parameters for many oscillators and signal sources
+as it governs many aspects of the overall performance. In modern communication
+systems, many drift issues can be overcome with various signal processing
+algorithms.
 
 More information
 ----------------

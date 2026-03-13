@@ -9,7 +9,9 @@ Non-Bare Filter
 Description
 -----------
 
-NonBare filters are second order filters which take the parameters directly. The filter parameters are converted to filter coefficients by the Module itself. Regalia-Mitra algorithm is used for this implementation.
+NonBare filters are second order filters which take the parameters directly. The
+filter parameters are converted to filter coefficients by the Module itself.
+Regalia-Mitra algorithm is used for this implementation.
 
 Targets Supported
 -----------------
@@ -40,7 +42,6 @@ Name   Type  Description
 ====== ===== ==============
 Output Audio Output channel
 ====== ===== ==============
-
 
 | ===== Configurable Parameters =====
 

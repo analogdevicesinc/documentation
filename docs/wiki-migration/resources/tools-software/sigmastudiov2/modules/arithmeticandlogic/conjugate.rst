@@ -9,7 +9,9 @@ Conjugate
 Description
 -----------
 
-Conjugate Complex takes the Complex Signal(x + j y) of input signal and Conjugate the input signal to complex conjugate output signal. This is a block based module.
+Conjugate Complex takes the Complex Signal(x + j y) of input signal and
+Conjugate the input signal to complex conjugate output signal. This is a block
+based module.
 
 Targets Supported
 -----------------
@@ -19,7 +21,6 @@ Name      ADAU145x/146x ADSP-214xx ADSP-SC5xx/215xx ADSP-218xx/SC8xx
 ========= ============= ========== ================ ================
 Conjugate B             NA         NA               NA
 ========= ============= ========== ================ ================
-
 
 | ===== Pins =====
 

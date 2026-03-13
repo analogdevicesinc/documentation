@@ -13,7 +13,8 @@ Prototype
 
 Description
 
-This function calls the library parse function to parse a single word from the host.
+This function calls the library parse function to parse a single word from the
+host.
 
 Parameters
 

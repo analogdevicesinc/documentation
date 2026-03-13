@@ -9,15 +9,24 @@ Hardware Setup
 Sensor Connections
 ~~~~~~~~~~~~~~~~~~
 
-The EVAL-CN0533-EBZ is very straightforward to setup. A cable, power supply (12-24 V), and a 4-20mA receiver are needed. For electrical setup:
+The EVAL-CN0533-EBZ is very straightforward to setup. A cable, power supply
+(12-24 V), and a 4-20mA receiver are needed. For electrical setup:
 
--  Solder a triple twisted wire or shielded cable to the EVAL-CN0533-EBZ printed circuit board (PCB). Ground line to GND, 4-20mA output current to IOUT, and 12V supply to VCC as shown in the figure below.
+-  Solder a triple twisted wire or shielded cable to the EVAL-CN0533-EBZ printed
+   circuit board (PCB). Ground line to GND, 4-20mA output current to IOUT, and
+   12V supply to VCC as shown in the figure below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0533_pic.jpg
    :align: center
-   :width: 250px
+   :width: 250
 
--  Supply the EVAL-CN0533-EBZ with 12V, and connect the other end of the IOUT and GND cables to a 4-20 mA receiver such as National Instruments NI-9203. (Note: some 4-20 mA receivers have integrated voltage supply that can be used instead of an external 12V needed to power up EVAL-CN0533-EBZ). Alternatively, an accurate and temperature stable resistor along with a voltage DAQ system may also be used instead of a current DAQ. The resistance value should be according to the input voltage range of the DAQ.
+-  Supply the EVAL-CN0533-EBZ with 12V, and connect the other end of the IOUT
+   and GND cables to a 4-20 mA receiver such as National Instruments NI-9203.
+   (Note: some 4-20 mA receivers have integrated voltage supply that can be used
+   instead of an external 12V needed to power up EVAL-CN0533-EBZ).
+   Alternatively, an accurate and temperature stable resistor along with a
+   voltage DAQ system may also be used instead of a current DAQ. The resistance
+   value should be according to the input voltage range of the DAQ.
 
 -  Set the acceleration sensitivity to 128 µA/g on the DAQ or vibration measurement equipment (the sensitivity scale of the ADXL1002 may slightly vary from part to part, and the ADXL1002 can be simply calibrated with gravity field or other reference sensors).
 -  The EVAL-CN0533-EBZ is ready for experiment.
@@ -46,7 +55,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Additional Information and Useful Links
 ---------------------------------------
 
@@ -60,6 +68,5 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0533-EBZ?&v=RevC>`_ to receive all these great benefits and more!
-
 
 *End of Document*

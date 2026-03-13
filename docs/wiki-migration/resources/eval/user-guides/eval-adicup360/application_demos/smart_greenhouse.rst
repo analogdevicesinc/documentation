@@ -49,26 +49,21 @@ How to setup Hardware
 
 Functional Block Diagram
 
-
 |image2|
 
 ADICUP360 Hardware Setup
-
 
 |image3|
 
 CN0398 Hardware Setup
 
-
 |image4|
 
 CN0397 Hardware Setup
 
-
 |image5|
 
 CN0370 Hardware Setup |image6| Chip select Assignment for each CN0370 boards are as follows: {{ :resources:eval:user-guides:eval-adicup360:application_demos:connect2.png \|\
-
 
 |image7|
 
@@ -89,7 +84,6 @@ VDD            7                  DVDD
 
    The demo used three CN0370 hardware routed on the same SPI bus with different chip selects and each hardware controls specific external LEDs which includes `BLUE LED <https://www.digikey.com/LXML-PB01-0040>`_, `GREEN LED <https://www.digikey.com/LXML-PM01-0100>`_ and `RED LED <https://www.digikey.com/LXM2-PD01-0050>`_
 
-
 Complete setup |image8| Hardware Connections as follows
 
 -  Connect P3, P4, P6 and P7 connectors of EVAL-CN0398-ARDZ board on top of connectors P2, P5, P7 and P8 of the ADICUP360 board.
@@ -104,21 +98,31 @@ Complete setup |image8| Hardware Connections as follows
 Software Description
 ====================
 
-The demo software is an integrated software of all the three reference designs which allows measurements of soil pH and moisture measurements with temperature compensation, as well as light detection and control.
+The demo software is an integrated software of all the three reference designs
+which allows measurements of soil pH and moisture measurements with temperature
+compensation, as well as light detection and control.
 
-The software allows calibration of the pH sensors and the photodiodes on the board for more accurate measurements. The LED's can be controlled manually using the software and automatically by setting the desired intensity of each wavelength and using proportional control.
+The software allows calibration of the pH sensors and the photodiodes on the
+board for more accurate measurements. The LED's can be controlled manually using
+the software and automatically by setting the desired intensity of each
+wavelength and using proportional control.
 
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the Smart Greenhouse Demo.
+There are two basic ways to program the ADICUP360 with the software for the
+Smart Greenhouse Demo.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_Smart_Greenhouse** demo can be found here:
 
@@ -135,11 +139,9 @@ The software for the **ADuCM360_demo_Smart_Greenhouse** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_Smart_Greenhouse Source Code <projects/ADuCM360_demo_Smart_Greenhouse>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 How to use the Tools
 --------------------
@@ -162,14 +164,22 @@ Software Flow Diagram
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/application_demos/smartagrisw.jpg
    :align: center
 
-Upon start of the software, it will initialize all of the boards attached to the ADICUP360. CN0398 initialization will write all the settings to the IC's on board, while CN0397 initialization will write the settings to the DAC registers. The CN0370 will be written with code zero to turn off all of the LED's.
+Upon start of the software, it will initialize all of the boards attached to the
+ADICUP360. CN0398 initialization will write all the settings to the IC's on
+board, while CN0397 initialization will write the settings to the DAC registers.
+The CN0370 will be written with code zero to turn off all of the LED's.
 
-Once the initialization is complete, the program will now wait for a user command to execute the corresponding tasks.
+Once the initialization is complete, the program will now wait for a user
+command to execute the corresponding tasks.
 
 Software Menu/Interaction
 -------------------------
 
-The following software section will help describe the steps you will need to go through when using the hardware and software together. There are some nationalizations and calibrations which must be done, and then some commands and instructions on how to use the software. Please read carefully to completely understand how to use the demo.
+The following software section will help describe the steps you will need to go
+through when using the hardware and software together. There are some
+nationalizations and calibrations which must be done, and then some commands and
+instructions on how to use the software. Please read carefully to completely
+understand how to use the demo.
 
 -  :doc:`Initialization </wiki-migration/resources/eval/user-guides/eval-adicup360/application_demos/smart_greenhouse>` - Initialization will set up the hardware and sensors so that they can communication with the EVAL-ADICUP360 and all the setting and modes of the sensor boards are properly configured.
 -  :doc:`Calibrations </wiki-migration/resources/eval/user-guides/eval-adicup360/application_demos/smart_greenhouse>` - The light levels of the CN0397 need to be properly calibrated so that the value that is read by the system is accurate. The pH levels of the CN0398 have the option to be calibrated using known buffer solutions or can be skipped, and an ideal equation is used to determine the pH of the soil. The calibrated method will yeild more accurate results, but using the idea equation is faster.
@@ -195,7 +205,8 @@ Calibration
 -  Calibrate the light sensors of the CN0397 by typing in "cal_pd"
 
    -  This will prompt you to calibrate each of the sensors by covering the 3 photodiodes ensuring no light will pass through
-   -  Pressing enter will get you from one sensor to another until all of them are done
+   -  Pressing enter will get you from one sensor to another until all of them
+      are done
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/application_demos/cal_pd.jpg
    :align: center
@@ -251,7 +262,8 @@ Loop Setup
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/application_demos/loop_settings.jpg
    :align: center
 
-The demo should be running automatically displaying all the values and running its control automatically.
+The demo should be running automatically displaying all the values and running
+its control automatically.
 
 -  To exit the loop control
 
@@ -303,7 +315,7 @@ Serial Terminal/Output
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/application_demos/greenhouse.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/blobk_diagram.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/application_demos/adicup.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_setup.png

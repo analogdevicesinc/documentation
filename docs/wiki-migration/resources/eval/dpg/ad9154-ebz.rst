@@ -23,7 +23,12 @@ Recommended Equipment List
 Introduction
 ------------
 
-The AD9154-EBZ connects to a DPG3. The AD9154 is a quad JESD204B signal processing RF Digital to Analog Converter. The DPG3 automatically formats the data and sends it to the AD9154-EBZ via its JESD204B lanes. The Evaluation Board (EVB) runs from a single +5V lab supply. A clock distribution chip AD9516 is included on this EVB as a clock fan-out and frequency divider for the DACCLK, JESD204B SYSREF signals, and a CFRAME clock used by the DPG3.
+The AD9154-EBZ connects to a DPG3. The AD9154 is a quad JESD204B signal
+processing RF Digital to Analog Converter. The DPG3 automatically formats the
+data and sends it to the AD9154-EBZ via its JESD204B lanes. The Evaluation Board
+(EVB) runs from a single +5V lab supply. A clock distribution chip AD9516 is
+included on this EVB as a clock fan-out and frequency divider for the DACCLK,
+JESD204B SYSREF signals, and a CFRAME clock used by the DPG3.
 
 AD9154 Evaluation Software
 --------------------------
@@ -50,7 +55,6 @@ Figure 1 shows the block diagram of the set-up.
    +----------------------------------------+
    
 
-
 .. container:: center
 
    
@@ -66,35 +70,49 @@ Figure 1 shows the block diagram of the set-up.
    +----------------------------------+
    
 
-
-Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source should be connected to the SMA connector J1 (CLK_IN). A spectrum analyzer should be connected to the SMA connector J17. Connect J4, J5, and J7 to an oscilloscope. The evaluation board connects to the DPG3 through the connector P4. The PC should be connected to the EVB using the mini-USB connector XP2. Figure 1 shows a block diagram of the set-up.
+Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source
+should be connected to the SMA connector J1 (CLK_IN). A spectrum analyzer should
+be connected to the SMA connector J17. Connect J4, J5, and J7 to an
+oscilloscope. The evaluation board connects to the DPG3 through the connector
+P4. The PC should be connected to the EVB using the mini-USB connector XP2.
+Figure 1 shows a block diagram of the set-up.
 
 Getting Started
 ---------------
 
-The PC software is included in the CD shipped with the EVB. The installation includes the DPG Downloader software as well as all the necessary AD9154 files including schematic, board layout, datasheet, and other files. The AD9154 Evaluation Software section details the necessary evaluation software.
+The PC software is included in the CD shipped with the EVB. The installation
+includes the DPG Downloader software as well as all the necessary AD9154 files
+including schematic, board layout, datasheet, and other files. The AD9154
+Evaluation Software section details the necessary evaluation software.
 
 Initial Set-Up
 ~~~~~~~~~~~~~~
 
-1. Install the DPG Downloader and ACE (or the SPIPro software) and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
+1. Install the DPG Downloader and ACE (or the SPIPro software) and support files
+   on your PC. Follow the instructions in the installation wizard and use the
+   default (recommended) installation settings.
 
-2. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB.
+2. Use a USB cable to connect the EVB to your PC and connect the lab equipment
+   to the EVB.
 
 3. Connect the DPG3 unit to your PC and turn on the unit.
 
 Single Tone Demonstration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These settings configure the AD9154 to output a 112Mhz -1dbFS sine wave using the DPG3 on all four AD9154 DACs.
+These settings configure the AD9154 to output a 112Mhz -1dbFS sine wave using
+the DPG3 on all four AD9154 DACs.
 
 Using ACE
 ^^^^^^^^^
 
-1. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1.5 GHz, and the output level to 3dBm. The spectrum analyzer can be configured as shown in Figure 9 with a resolution bandwidth of 100kHz. Choose an Input Attenuation of 24dB.
+1. Configure the hardware according to the hardware set-up instructions given in
+   the Hardware Setup section above. Set the frequency of the DAC clock signal
+   generator to 1.5 GHz, and the output level to 3dBm. The spectrum analyzer can
+   be configured as shown in Figure 9 with a resolution bandwidth of 100kHz.
+   Choose an Input Attenuation of 24dB.
 
 | 2. Open ACE (Start > All Programs > Analog Devices > ACE > ACE). The |ace_icon_small.png| icon indicates the ACE software. If the board is connected properly, the screen should look similar to Figure 3. Double click on this board.
-
 
 .. container:: center
 
@@ -110,7 +128,6 @@ Using ACE
 
    +----------------------------------+
    
-
 
 Ensure that the |connection_icon.png| button is green in the subsystem image under the “System” tab, as shown in Figure 4. If not, click it, select the AD9154, and click "Acquire." Double click on the subsystem image to reach the board block diagram.
 
@@ -129,8 +146,8 @@ Ensure that the |connection_icon.png| button is green in the subsystem image und
    +-------------------------+
    
 
-
-Next to the board block diagram, click "Modify" under "Initial Configuration Summary."
+Next to the board block diagram, click "Modify" under "Initial Configuration
+Summary."
 
 .. container:: center
 
@@ -147,8 +164,10 @@ Next to the board block diagram, click "Modify" under "Initial Configuration Sum
    +-----------------------------------------------------------------------------+
    
 
-
-Select "Single Link" from the pull-down menu next to Links, and set the JESD Mode to 0. Ensure that the Subclass box is unchecked, and set interpolation to 2. The FDAC frequency should be set to 1.5 GHz. The settings should match Figure 6. Select "Apply."
+Select "Single Link" from the pull-down menu next to Links, and set the JESD
+Mode to 0. Ensure that the Subclass box is unchecked, and set interpolation to
+2. The FDAC frequency should be set to 1.5 GHz. The settings should match Figure
+6. Select "Apply."
 
 .. container:: center
 
@@ -165,8 +184,12 @@ Select "Single Link" from the pull-down menu next to Links, and set the JESD Mod
    +---------------------------------------------------------+
    
 
-
-Double click on the dark blue AD9154 chip block in the board block diagram. The chip block diagram should appear, as shown in Figure 7. The JESD PLL should now be locked on both the board and chip block diagrams. Other parameters can be changed on both block diagrams, but do not need to be for this test. For more information about changing parameters in ACE, see the ACE Software Features section.
+Double click on the dark blue AD9154 chip block in the board block diagram. The
+chip block diagram should appear, as shown in Figure 7. The JESD PLL should now
+be locked on both the board and chip block diagrams. Other parameters can be
+changed on both block diagrams, but do not need to be for this test. For more
+information about changing parameters in ACE, see the ACE Software Features
+section.
 
 .. container:: center
 
@@ -183,8 +206,15 @@ Double click on the dark blue AD9154 chip block in the board block diagram. The 
    +-------------------------------------+
    
 
-
-3. Open DPGDownloader. (Start > All Programs > Analog Devices > DPG > DPGDownloader). DPGDownloader GUI will come up. Select the Port configuration QBF 1X8 85G 425M. The configuration progress bar will then show a moving green indication. Once port configuration is complete, select “Add Generated Waveform” and “Single Tone." Set Data Rate to 750 MHz, Desired Frequency to 112 MHz, Amplitude to -1.0 dBFS, uncheck unsigned, check Generate Complex Data (I&Q). Under Data Playback, select I data for DAC 0 and DAC2, and Q data for DAC 1 and DAC3. These settings should match those in the DPGDownloader panel in Figure 8.
+3. Open DPGDownloader. (Start > All Programs > Analog Devices > DPG >
+   DPGDownloader). DPGDownloader GUI will come up. Select the Port configuration
+   QBF 1X8 85G 425M. The configuration progress bar will then show a moving
+   green indication. Once port configuration is complete, select “Add Generated
+   Waveform” and “Single Tone." Set Data Rate to 750 MHz, Desired Frequency to
+   112 MHz, Amplitude to -1.0 dBFS, uncheck unsigned, check Generate Complex
+   Data (I&Q). Under Data Playback, select I data for DAC 0 and DAC2, and Q data
+   for DAC 1 and DAC3. These settings should match those in the DPGDownloader
+   panel in Figure 8.
 
 .. container:: center
 
@@ -201,14 +231,11 @@ Double click on the dark blue AD9154 chip block in the board block diagram. The 
    +----------------------------------+
    
 
-
 4. Click Download (|image9|) and Play (|image10|) in the DPG Downloader screen. The spectrum in Figure 9 will appear on all 4 DAC outputs (J17, J4, J5, and J7), Serial Line Rate will be 7.5 Gbps. The current on the 5V supply should read around 1800mA - 1950mA. Figure 10 is a scope capture of the DAC output signal taken on three of the channels.
 
    
 
-
 | 5. Here is what you will see at the output of DAC0 on the Spectrum Analyzer.
-
 
 .. container:: center
 
@@ -224,7 +251,6 @@ Double click on the dark blue AD9154 chip block in the board block diagram. The 
 
    +------------------------------------------------+
    
-
 
 6. Here’s what you will see on DAC1, DAC2, and DAC3 on the scope.
 
@@ -243,13 +269,18 @@ Double click on the dark blue AD9154 chip block in the board block diagram. The 
    +--------------------------------------+
    
 
-
 Using the SPIPro software
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1.5 GHz, and the output level to 3dBm. The spectrum analyzer can be configured as shown in Figure 15 with a resolution bandwidth of 100kHz. Choose an Input Attenuation of 24dB.
+1. Configure the hardware according to the hardware set-up instructions given in
+   the Hardware Setup section above. Set the frequency of the DAC clock signal
+   generator to 1.5 GHz, and the output level to 3dBm. The spectrum analyzer can
+   be configured as shown in Figure 15 with a resolution bandwidth of 100kHz.
+   Choose an Input Attenuation of 24dB.
 
-2. On your lab computer, open the AD9154 SPIPro application (Start > All Programs > Analog Devices > AD9154 > AD9154 SPI). You will see the GUI shown in Figure 11 come up.
+2. On your lab computer, open the AD9154 SPIPro application (Start > All
+   Programs > Analog Devices > AD9154 > AD9154 SPI). You will see the GUI shown
+   in Figure 11 come up.
 
 .. container:: center
 
@@ -266,7 +297,6 @@ Using the SPIPro software
    +--------------------------------------+
    
 
-
 3. SPIPro Start Up Sequence.
 
 a. Select “Single” for Links.
@@ -279,23 +309,33 @@ d. Select “2” for Interpolation.
 
 e. Press the “Configure DAC and Clock” Button
 
-f. The JESD204B PLL Lock Readback light should turn green and register bit settings will be populated. The GUI will look like Figure 12, except that values in “CodeGrpSync”, “FrameSync”, “GoodCheckSum”, and “InitialLaneSync” may be different because the link JESD204B Transmitter has not yet been set up.
+f. The JESD204B PLL Lock Readback light should turn green and register bit
+   settings will be populated. The GUI will look like Figure 12, except that
+   values in “CodeGrpSync”, “FrameSync”, “GoodCheckSum”, and “InitialLaneSync”
+   may be different because the link JESD204B Transmitter has not yet been set
+   up.
 
 4. DPGDownloader Start Up Sequence
 
-a. Open DPGDownloader. (Start > All Programs > Analog Devices > DPG > DPGDownloader). DPGDownloader GUI will come up as shown Figure 13.
+a. Open DPGDownloader. (Start > All Programs > Analog Devices > DPG >
+   DPGDownloader). DPGDownloader GUI will come up as shown Figure 13.
 
-b. Select the Port configuration QBF 1X8 85G 425M. The configuration progress bar will then show a moving green indication.
+b. Select the Port configuration QBF 1X8 85G 425M. The configuration progress
+   bar will then show a moving green indication.
 
-c. Once port configuration is complete, select “Add Generated Waveform” and “Single Tone”.
+c. Once port configuration is complete, select “Add Generated Waveform” and
+   “Single Tone”.
 
-d. Set Data Rate to 750 MHz, Desired Frequency to 112 MHz, Amplitude to -1.0 dBFS, uncheck unsigned, check Generate Complex Data (I&Q).
+d. Set Data Rate to 750 MHz, Desired Frequency to 112 MHz, Amplitude to -1.0
+   dBFS, uncheck unsigned, check Generate Complex Data (I&Q).
 
-e. Under Data Playback, select I data for DAC 0 and DAC2, and Q data for DAC 1 and DAC3. The DPGDownloader settings should resemble Figure 14.
+e. Under Data Playback, select I data for DAC 0 and DAC2, and Q data for DAC 1
+   and DAC3. The DPGDownloader settings should resemble Figure 14.
 
 f. Click Download (|image14|) and Play (|image15|) in the DPG Downloader screen. The spectrum in Figure 15 will appear on all 4 DAC outputs (J17, J4, J5, and J7), Serial Line Rate will be 7.5Gbps. Figure 16 is a scope capture of the DAC output signal taken on three of the channels.
 
-5. On SPIPro Quick Start Tab, click “Read All Registers” and confirm the GUI looks the same as Figure 12.
+5. On SPIPro Quick Start Tab, click “Read All Registers” and confirm the GUI
+   looks the same as Figure 12.
 
 6. The current on the 5V supply should read around 1800mA - 1950mA.
 
@@ -314,7 +354,6 @@ f. Click Download (|image14|) and Play (|image15|) in the DPG Downloader screen.
    +-------------------------------------------+
    
 
-
 .. container:: center
 
    
@@ -329,7 +368,6 @@ f. Click Download (|image14|) and Play (|image15|) in the DPG Downloader screen.
 
    +---------------------------------------------+
    
-
 
 .. container:: center
 
@@ -347,7 +385,6 @@ f. Click Download (|image14|) and Play (|image15|) in the DPG Downloader screen.
 
    | 7. Here is what you will see at the output of DAC0 on the Spectrum Analyzer.
 
-
 .. container:: center
 
    
@@ -362,7 +399,6 @@ f. Click Download (|image14|) and Play (|image15|) in the DPG Downloader screen.
 
    +-------------------------------------------------+
    
-
 
 8. Here’s what you will see on DAC1, DAC2, and DAC3 on the scope.
 
@@ -381,12 +417,17 @@ f. Click Download (|image14|) and Play (|image15|) in the DPG Downloader screen.
    +--------------------------------------+
    
 
-
 ACE Software Features
 ---------------------
 
-The ACE software is organized to allow the user to evaluate and control the AD9122A evaluation board. The “Initial Configuration” wizard, which is only available for certain boards, controls the DAC and PLL setups. Block diagram views of the board and chip contain elements that can be used to vary parameters like ref current and data format. These parameters can be changed using check boxes, drop down menus, and input boxes. Some parameters do not have settings shown in the diagram. Double click on the parameter to view the available settings, seen with the NCO settings below.
-
+The ACE software is organized to allow the user to evaluate and control the
+AD9122A evaluation board. The “Initial Configuration” wizard, which is only
+available for certain boards, controls the DAC and PLL setups. Block diagram
+views of the board and chip contain elements that can be used to vary parameters
+like ref current and data format. These parameters can be changed using check
+boxes, drop down menus, and input boxes. Some parameters do not have settings
+shown in the diagram. Double click on the parameter to view the available
+settings, seen with the NCO settings below.
 
 |ad9122_nco.png|
 
@@ -394,18 +435,18 @@ The ACE software is organized to allow the user to evaluate and control the AD91
 
    NCO settings for the AD9122
 
-
-In addition, some parameters can be enabled or disabled. This feature is evident by the color of the block parameter. For example, if the block parameter is dark blue, the parameter is enabled. If it is light grey, it is disabled. To enable or disable a parameter, click on it.
+In addition, some parameters can be enabled or disabled. This feature is evident
+by the color of the block parameter. For example, if the block parameter is dark
+blue, the parameter is enabled. If it is light grey, it is disabled. To enable
+or disable a parameter, click on it.
 
 .. container:: column
-
 
    ..
 
 |ad9739a_on.png|
 
 .. container:: column
-
 
    ..
 
@@ -420,7 +461,6 @@ In addition, some parameters can be enabled or disabled. This feature is evident
 
    
 
-
 .. container:: column
 
    
@@ -430,14 +470,12 @@ In addition, some parameters can be enabled or disabled. This feature is evident
 
    
 
-
-
-More direct changes to registers and bit fields can be made in the memory map, which is linked from the chip block diagram through the “Proceed to Memory Map” button. In this view, names, addresses, and data can be manually altered by the user.
-
+More direct changes to registers and bit fields can be made in the memory map,
+which is linked from the chip block diagram through the “Proceed to Memory Map”
+button. In this view, names, addresses, and data can be manually altered by the
+user.
 
    
-
-
 
 |ad9122_memmap.png|
 
@@ -445,10 +483,16 @@ More direct changes to registers and bit fields can be made in the memory map, w
 
    Bench Set-Up
 
-
-ACE also contains the Macro Tool, which can be used to record register reads and writes. This is executed in the memory map view or with the initialization wizard. To use, check the “Record Sub-Commands” checkbox and press the record button. Changes in the memory map, which are bolded until they are applied to the part, are recorded as UI commands by the macro tool once the changes are made. Changed register write commands for the controls are also recorded. Hit “Apply Changes” to execute the commands and make changes in the memory map. To stop recording, click the “Stop Recording” button. A macro tool page with the command steps will be created. The macro can be saved using the “Save Macro” button so that it may be loaded for future use.
-
-
+ACE also contains the Macro Tool, which can be used to record register reads and
+writes. This is executed in the memory map view or with the initialization
+wizard. To use, check the “Record Sub-Commands” checkbox and press the record
+button. Changes in the memory map, which are bolded until they are applied to
+the part, are recorded as UI commands by the macro tool once the changes are
+made. Changed register write commands for the controls are also recorded. Hit
+“Apply Changes” to execute the commands and make changes in the memory map. To
+stop recording, click the “Stop Recording” button. A macro tool page with the
+command steps will be created. The macro can be saved using the “Save Macro”
+button so that it may be loaded for future use.
 
 |ad9122_macrocommands.png|
 
@@ -456,18 +500,22 @@ ACE also contains the Macro Tool, which can be used to record register reads and
 
    Macro tool in ACE. The *Stop Recording*, *Record*, and *Save Macro* commands are located at the top of the macro tool.
 
-
-The raw macro file will be saved using ACE syntax, which is not easily readable. To remedy this, the ACE software download includes the Macro to Hex Conversion Tool. The user can choose to include or exclude register write, reads, and/or comments in the conversion. The file pathways for the source and save paths should be the same, except that one should be an .acemacro file and the other should be a .txt file. The “Convert” button converts and opens the converted text file, which is easier to read. The conversion tool can also convert back to an .acemacro file if desired.
+The raw macro file will be saved using ACE syntax, which is not easily readable.
+To remedy this, the ACE software download includes the Macro to Hex Conversion
+Tool. The user can choose to include or exclude register write, reads, and/or
+comments in the conversion. The file pathways for the source and save paths
+should be the same, except that one should be an .acemacro file and the other
+should be a .txt file. The “Convert” button converts and opens the converted
+text file, which is easier to read. The conversion tool can also convert back to
+an .acemacro file if desired.
 
 .. container:: column
-
 
    ..
 
 |ad9122_m2hconvert_5.png|
 
 .. container:: column
-
 
    ..
 
@@ -482,7 +530,6 @@ The raw macro file will be saved using ACE syntax, which is not easily readable.
 
    
 
-
 .. container:: column
 
    
@@ -491,8 +538,6 @@ The raw macro file will be saved using ACE syntax, which is not easily readable.
       Converted text file
 
    
-
-
 
 For more information about ACE and its features, visit https://wiki.analog.com/resources/tools-software/ace.
 

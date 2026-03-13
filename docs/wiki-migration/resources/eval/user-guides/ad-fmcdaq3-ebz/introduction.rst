@@ -9,7 +9,8 @@ Features
 -  Includes schematics, layout, BOM, Gerber files, HDL, Linux® drivers, IIO Oscilloscope, VisualANALOG,...
 -  FMC-compatible form factor
 -  Powered from single FMC connector
--  Provides two channels of ADC and two channels of DAC with full synchronization capabilities
+-  Provides two channels of ADC and two channels of DAC with full
+   synchronization capabilities
 
 AD9680-1250 ADC
 ===============

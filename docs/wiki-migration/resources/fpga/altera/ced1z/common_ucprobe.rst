@@ -13,7 +13,7 @@ Select **uC-Probe** options.
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucprobeoptionsbtn.png
    :alt: ucprobeoptionsbtn.png
    :align: center
-   :width: 300px
+   :width: 300
 
 Set target board communication protocol as **JTAG UART**
 
@@ -23,7 +23,7 @@ Set target board communication protocol as **JTAG UART**
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image067.png
    :alt: image067.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Setup **JTAG UART** communication settings
 
@@ -35,13 +35,13 @@ Setup **JTAG UART** communication settings
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucprobeoptionsjtag.png
    :alt: ucprobeoptionsjtag.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Select **uCProbe_uart(0)** from the **Instance Id** pulldown menu.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucprobeinstanceid.png
    :alt: ucprobeinstanceid.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Press **Apply** and **OK** to exit the options menu. The embedded target has two UARTs. **uC-Probe** will be communicating with the **uCProbe_uart**.

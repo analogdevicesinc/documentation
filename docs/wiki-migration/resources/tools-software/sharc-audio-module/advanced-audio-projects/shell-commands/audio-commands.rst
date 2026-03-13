@@ -1,7 +1,9 @@
 Audio Commands
 ==============
 
-The purpose of the audio shell commands are to allow the users to interact with the audio specific features of the Audio Starter. The sections below describe these commands in more detail.
+The purpose of the audio shell commands are to allow the users to interact with
+the audio specific features of the Audio Starter. The sections below describe
+these commands in more detail.
 
 --------------
 
@@ -38,7 +40,6 @@ Audio Routing (route)
 |                   | *Note that typing **route** without any parameters simply displays the contents of the table and typing **route clear**\ *, clears the contents of the table.*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Wave Source/Sink Configuration (wav)
 ------------------------------------
 
@@ -53,7 +54,6 @@ Wave Source/Sink Configuration (wav)
    -  EV-SC598-SOM - TBD
    
    For other variants and versions check if feature is supported in :doc:`Appendix A </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>`.
-
 
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Description**   | This command allows the user to configure the wav source or sink file that is going to be used. Wav sources and sinks are not enabled by default as the user must tell the Audio Starter which file to read from or write to, along with the proper settings of the file, number of channels and bits per channel, for example. Users must interact with this command prior to using wav files as a source or a sink in a route.                                                                                                                               |
@@ -117,7 +117,6 @@ Wave Source/Sink Configuration (wav)
 |                   | This will generate thre files: file.wav, file_1.wav, file_2.wav.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 VBAN Source/Sink Configuration (vban)
 -------------------------------------
 
@@ -151,7 +150,6 @@ VBAN Source/Sink Configuration (vban)
 |                   | *Refer to* :doc:`Ethernet Audio Examples </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/examples-ethernet-audio>` *for more examples of VBAN usage!*                                                                                                                                                                                                                                                                                        |
 +-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 RTP Source/Sink Configuration (rtp)
 -----------------------------------
 
@@ -184,7 +182,6 @@ RTP Source/Sink Configuration (rtp)
 |                   | |image30|                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Volume Unit Meters Display (vu) - DEPRECATED
 --------------------------------------------
 
@@ -215,7 +212,6 @@ Volume Unit Meters Display (vu) - DEPRECATED
 |                   | |image38|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Volume Unit Meters Display (vu)
 -------------------------------
 
@@ -230,7 +226,6 @@ Volume Unit Meters Display (vu)
    -  EV-SC598-SOM - TBD
    
    For other variants and version check if feature is supported in :doc:`Appendix A </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-a>`. If it is supported, refer to the deprecated command on this page.
-
 
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Description**   | This command displays a relative audio signal level for any source audio that it is routed to. This command MUST be used in conjunction with a route command for a signal level to be present. Although this command cannot show audio distortion or clipping necessarily, it is a very useful command for being able to visualize audio on up to 64 channels, where audio may be limited otherwise due to hardware availability. For example, a codec may only support 2 physical channels, but a source with more than 2 channels may be visualized using the VU Meters. |
@@ -271,7 +266,6 @@ Volume Unit Meters Display (vu)
 |                   | For more information about Unicode refer to `Unicode Technical Site <https://www.unicode.org/main.html>`_                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DAC Output Channel Extension (adc)
 ----------------------------------
 
@@ -298,7 +292,6 @@ DAC Output Channel Extension (adc)
 |                   | |image62|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Signal generator (signal)
 -------------------------
 
@@ -312,7 +305,6 @@ Signal generator (signal)
    -  EV-SC594-SOM - TBD
    -  EV-SC598-SOM - TBD
    
-
 
 +-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Description**   | The purpose of this shell command is to use the SAM software capabilities to generate some of the most-commonly-used audio signals as sources that can be routed to any sink.                                         |
@@ -369,7 +361,6 @@ Signal generator (signal)
 |                   | See :doc:`Signal Generator Example </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/examples-signal-generator>` for a more thorough example on how to generate and route signals. |
 +-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Asynchrnous Sample Rate Converter (asrc)
 ----------------------------------------
 
@@ -383,7 +374,6 @@ Asynchrnous Sample Rate Converter (asrc)
    -  EV-SC594-SOM - TBD
    -  EV-SC598-SOM - TBD
    
-
 
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Description**   | This command allows the user to configure the Asynchronous Sample Rate Converter in the SAM. Users may then route other audio signal to the ASRC sink and from the ASRC source. ASRC may be used to indirectly route a sink to a source working on different clock domains (e.g. A2B to CODEC). |
@@ -421,140 +411,139 @@ Asynchrnous Sample Rate Converter (asrc)
 |                   | This enables the first instance of the ASRC to convert two channels coming from the A2B clock domain into the System clock domain while auto-sizing the buffer sizes.                                                                                                                           |
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/route_help.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellindex.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/route.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/route_help.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellindex.jpg
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/route.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/help_wav_increment.jpg
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/wav.jpg
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/wav2.jpg
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/wav3.jpg
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/wav4.jpg
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/wav5.jpg
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/help_wav_increment.jpg
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/wav.jpg
-   :width: 400px
+   :width: 400
 .. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/wav2.jpg
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/wav3.jpg
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/wav4.jpg
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/wav5.jpg
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vban.jpg
-   :width: 400px
+   :width: 400
 .. |image20| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vban2.jpg
-   :width: 400px
+   :width: 400
 .. |image21| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vbannew.jpg
-   :width: 400px
+   :width: 400
 .. |image22| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vban.jpg
-   :width: 400px
+   :width: 400
 .. |image23| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vban2.jpg
-   :width: 400px
+   :width: 400
 .. |image24| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/vbannew.jpg
-   :width: 400px
+   :width: 400
 .. |image25| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/rtp.jpg
-   :width: 400px
+   :width: 400
 .. |image26| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/rtp2.jpg
-   :width: 400px
+   :width: 400
 .. |image27| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/rtp3.jpg
-   :width: 400px
+   :width: 400
 .. |image28| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/rtp.jpg
-   :width: 400px
+   :width: 400
 .. |image29| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/rtp2.jpg
-   :width: 400px
+   :width: 400
 .. |image30| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/rtp3.jpg
-   :width: 400px
+   :width: 400
 .. |image31| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/vu_help.png
-   :width: 400px
+   :width: 400
 .. |image32| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vu5.jpg
-   :width: 400px
+   :width: 400
 .. |image33| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vu3.jpg
-   :width: 400px
+   :width: 400
 .. |image34| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vu4.jpg
-   :width: 400px
+   :width: 400
 .. |image35| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/vu_help.png
-   :width: 400px
+   :width: 400
 .. |image36| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vu5.jpg
-   :width: 400px
+   :width: 400
 .. |image37| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vu3.jpg
-   :width: 400px
+   :width: 400
 .. |image38| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vu4.jpg
-   :width: 400px
+   :width: 400
 .. |image39| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/new-vu-help.jpg
-   :width: 400px
+   :width: 400
 .. |image40| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vu5.jpg
-   :width: 400px
+   :width: 400
 .. |image41| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/new-vu-default.jpg
-   :width: 400px
+   :width: 400
 .. |image42| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/new-vu-c-8.jpg
-   :width: 400px
+   :width: 400
 .. |image43| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/new-vu-s-t.jpg
-   :width: 400px
+   :width: 400
 .. |image44| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/unicode-square.jpg
-   :width: 400px
+   :width: 400
 .. |image45| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/new-vu-s-25a0.jpg
-   :width: 400px
+   :width: 400
 .. |image46| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/new-vu-help.jpg
-   :width: 400px
+   :width: 400
 .. |image47| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/vu5.jpg
-   :width: 400px
+   :width: 400
 .. |image48| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/new-vu-default.jpg
-   :width: 400px
+   :width: 400
 .. |image49| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/new-vu-c-8.jpg
-   :width: 400px
+   :width: 400
 .. |image50| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/new-vu-s-t.jpg
-   :width: 400px
+   :width: 400
 .. |image51| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/unicode-square.jpg
-   :width: 400px
+   :width: 400
 .. |image52| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/new-vu-s-25a0.jpg
-   :width: 400px
+   :width: 400
 .. |image53| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/adc.jpg
-   :width: 400px
+   :width: 400
 .. |image54| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/adc_help.png
-   :width: 400px
+   :width: 400
 .. |image55| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/adc1.jpg
-   :width: 400px
+   :width: 400
 .. |image56| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/adc2.jpg
-   :width: 400px
+   :width: 400
 .. |image57| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/adc.png
-   :width: 400px
+   :width: 400
 .. |image58| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/adc.jpg
-   :width: 400px
+   :width: 400
 .. |image59| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/adc_help.png
-   :width: 400px
+   :width: 400
 .. |image60| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/adc1.jpg
-   :width: 400px
+   :width: 400
 .. |image61| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/adc2.jpg
-   :width: 400px
+   :width: 400
 .. |image62| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/adc.png
-   :width: 400px
+   :width: 400
 .. |image63| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/help-signal.jpg
-   :width: 400px
+   :width: 400
 .. |image64| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/signal-status.jpg
-   :width: 400px
+   :width: 400
 .. |image65| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/help-signal.jpg
-   :width: 400px
+   :width: 400
 .. |image66| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/signal-status.jpg
-   :width: 400px
+   :width: 400
 .. |image67| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/asrc-output.jpg
-   :width: 400px
+   :width: 400
 .. |image68| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/asrc-output.jpg
-   :width: 400px
+   :width: 400

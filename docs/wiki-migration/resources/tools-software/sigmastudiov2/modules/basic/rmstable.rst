@@ -12,12 +12,16 @@ RMS Table
 Description
 -----------
 
-The RMS Table takes an input signal and outputs the interpolated mapped value of the signal, relative to the table, depending on the calculated rms input. The block uses rms average values and maps them to the user-selectable table values, employing linear interpolation in between table values.
+The RMS Table takes an input signal and outputs the interpolated mapped value of
+the signal, relative to the table, depending on the calculated rms input. The
+block uses rms average values and maps them to the user-selectable table values,
+employing linear interpolation in between table values.
 
 Usage
 -----
 
-To edit the table values click on the showtable button and it will open the RMS Table Editor window to configure the table values.
+To edit the table values click on the showtable button and it will open the RMS
+Table Editor window to configure the table values.
 
 Targets Supported
 -----------------

@@ -10,7 +10,10 @@ This driver is independent from the physical layer. So it's being used with CMOS
 
 Sometimes there is a common HDL/FPGA transport layer core, which handles both RX/TX or ADC/DMA. This single physical core is then handled by two independent IIO drivers each for one transport data direction. It’s physical address register space is then also split or divided, typically spaced by 0x4000. A good example for this case is the :doc:`AXI_AD9361 </wiki-migration/resources/fpga/docs/axi_ad9361>` HDL core.
 
-The HDL/FPGA transport layer capture core driver portion implements a polyphase dual tone DDS core per channel together with an DMA based waveform buffer mechanism. The buffer can be filled by arbitrary data, which is then typically cyclically repeated or used in a streaming fashion.
+The HDL/FPGA transport layer capture core driver portion implements a polyphase
+dual tone DDS core per channel together with an DMA based waveform buffer
+mechanism. The buffer can be filled by arbitrary data, which is then typically
+cyclically repeated or used in a streaming fashion.
 
 Initialization example
 ======================
@@ -50,7 +53,8 @@ Initialization example
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available at:
 
 -  `AXI DAC Core Header file <http://analogdevicesinc.github.io/no-OS/doxygen/axi__dac__core_8h.html>`_
 -  `AXI DAC Core Source file <http://analogdevicesinc.github.io/no-OS/doxygen/axi__dac__core_8c.html>`_
@@ -65,4 +69,3 @@ Source Code
    -  :git-no-OS:`Implementation of AXI DAC Core Driver. <drivers/axi_core/axi_dac_core/axi_dac_core.c>`
    -  :git-no-OS:`Header of AXI DAC Core Driver. <drivers/axi_core/axi_dac_core/axi_dac_core.h>`
    
-

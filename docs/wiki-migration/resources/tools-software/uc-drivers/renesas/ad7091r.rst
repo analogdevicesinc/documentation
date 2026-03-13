@@ -1,7 +1,6 @@
 AD7091R - No-OS Driver for Renesas Microcontroller Platforms
 ============================================================
 
-
 Supported Devices
 =================
 
@@ -14,7 +13,6 @@ Evaluation Boards
 
 Overview
 ========
-
 
 The :adi:`AD7091R` is a 12-bit successive approximation analog-to-digital converter (ADC) that offers ultralow power consumption (typically 349 µA at 3 V and 1 MSPS) while achieving fast throughput rates (1 MSPS with a 50 MHz SCLK). The :adi:`AD7091R` uses advanced design and process techniques to achieve this very low power dissipation at high throughput rates. The part also features an on-chip, accurate 2.5 V reference.
 
@@ -44,9 +42,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/ad7091r_pmod_ad6.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -54,9 +55,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD7091R part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD7091R driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD7091R driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD7091R driver:
 
@@ -70,7 +75,6 @@ There are three functions which are called by the AD7091R driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of AD7091R driver:
 
@@ -89,8 +93,6 @@ The following functions are implemented in this version of AD7091R driver:
 +-----------------------------------------------------------+-----------------------------------------------------+
 | float AD7091R_ConvertToVolts(short rawSample, float vRef) | Converts a 12-bit raw sample to volts.              |
 +-----------------------------------------------------------+-----------------------------------------------------+
-
-
 
 **HW Platform(s):**
 
@@ -112,11 +114,11 @@ Downloads
    -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
-
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD7091R demonstration project on a Renesas RL78G13 platform using the PmodAD6.
+This section contains a description of the steps required to run the AD7091R
+demonstration project on a Renesas RL78G13 platform using the PmodAD6.
 
 Required Hardware
 -----------------
@@ -132,8 +134,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodAD6 has to be connected to the PMOD1 connector, pins 1 to 6 (see image below).
-
+A PmodAD6 has to be connected to the PMOD1 connector, pins 1 to 6 (see image
+below).
 
 |image1|
 
@@ -141,21 +143,24 @@ A PmodAD6 has to be connected to the PMOD1 connector, pins 1 to 6 (see image bel
 
    
    -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD6 must be removed and the external AVDD signal must be connected to J2 Pin 1. The range for AVDD is 2.7V ≤ AVDD ≤ 5.25V.
-   -  When using external VREF, connect the VREF signal to J2 Pin 3. The range for external VREF is 2.7V ≤ VREF ≤ AVDD.
+   -  When using external VREF, connect the VREF signal to J2 Pin 3. The range
+      for external VREF is 2.7V ≤ VREF ≤ AVDD.
    
-
 
 Reference Project Overview
 --------------------------
 
-The reference project samples the input voltage and displays the value on the LCD.
+The reference project samples the input voltage and displays the value on the
+LCD.
 
 .. important::
 
    
-   -  The function that converts the raw data to volts uses the 2.5 value as reference voltage. When using an external VREF, set the vRef parameter of the 'AD7091R_ConvertToVolts()' function in 'PmodAD6.c' to the used external voltage value.
+   -  The function that converts the raw data to volts uses the 2.5 value as
+      reference voltage. When using an external VREF, set the vRef parameter of
+      the 'AD7091R_ConvertToVolts()' function in 'PmodAD6.c' to the used
+      external voltage value.
    
-
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad6_rl78g13_screen.jpg
    :align: center
@@ -163,16 +168,15 @@ The reference project samples the input voltage and displays the value on the LC
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 Renesas RL78G14 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD7091R demonstration project on a Renesas RL78G14 platform using the PmodAD6.
+This section contains a description of the steps required to run the AD7091R
+demonstration project on a Renesas RL78G14 platform using the PmodAD6.
 
 Required Hardware
 -----------------
@@ -188,17 +192,18 @@ Required Software
 
 .. note::
 
-   The AD7091R demonstration project for the Renesas RL78G14 platform consists of three parts: the AD7091R Driver, the PmodAD6 Demo for RL78G14 and the RL78G14 Common Drivers.
+   The AD7091R demonstration project for the Renesas RL78G14 platform consists
+   of three parts: the AD7091R Driver, the PmodAD6 Demo for RL78G14 and the
+   RL78G14 Common Drivers.
 
    
    All three parts have to be downloaded.
 
-
 Hardware Setup
 --------------
 
-A PmodAD6 has to be connected to the PMOD1 connector, pins 1 to 6 (see image below).
-
+A PmodAD6 has to be connected to the PMOD1 connector, pins 1 to 6 (see image
+below).
 
 |image2|
 
@@ -206,21 +211,24 @@ A PmodAD6 has to be connected to the PMOD1 connector, pins 1 to 6 (see image bel
 
    
    -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD6 must be removed and the external AVDD signal must be connected to J2 Pin 1. The range for AVDD is 2.7V ≤ AVDD ≤ 5.25V.
-   -  When using external VREF, connect the VREF signal to J2 Pin 3. The range for external VREF is 2.7V ≤ VREF ≤ AVDD.
+   -  When using external VREF, connect the VREF signal to J2 Pin 3. The range
+      for external VREF is 2.7V ≤ VREF ≤ AVDD.
    
-
 
 Reference Project Overview
 --------------------------
 
-The reference project samples the input voltage and displays the value on the LCD.
+The reference project samples the input voltage and displays the value on the
+LCD.
 
 .. important::
 
    
-   -  The function that converts the raw data to volts uses the 2.5 value as reference voltage. When using an external VREF, set the vRef parameter of the 'AD7091R_ConvertToVolts()' function in 'PmodAD6.c' to the used external voltage value.
+   -  The function that converts the raw data to volts uses the 2.5 value as
+      reference voltage. When using an external VREF, set the vRef parameter of
+      the 'AD7091R_ConvertToVolts()' function in 'PmodAD6.c' to the used
+      external voltage value.
    
-
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad6_rl78g14_screen.jpg
    :align: center
@@ -228,16 +236,15 @@ The reference project samples the input voltage and displays the value on the LC
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`_
 
-
 Renesas RX63N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the AD7091R demonstration project on a Renesas RX63N platform.
+This section contains a description of the steps required to run the AD7091R
+demonstration project on a Renesas RX63N platform.
 
 Required Hardware
 -----------------
@@ -262,7 +269,8 @@ A PmodAD6 has to be connected to the PMOD1 connector.
 Reference Project Overview
 --------------------------
 
-The reference project samples the input voltage and displays the value on the LCD.
+The reference project samples the input voltage and displays the value on the
+LCD.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad6_rx63n_screen.jpg
    :align: center
@@ -270,23 +278,18 @@ The reference project samples the input voltage and displays the value on the LC
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx63n_software_design <https://wiki.analog.com/rx63n_software_design>`_
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad6_rl78g13.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad6_rl78g14.jpg

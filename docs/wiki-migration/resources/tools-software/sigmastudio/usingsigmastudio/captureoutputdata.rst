@@ -7,7 +7,9 @@ The :doc:`Capture Window </wiki-migration/resources/tools-software/sigmastudio/d
 
 **Output Capture Example :**
 
-This example uses the AD1940 DSP and the sample schematic shown below: utilizing a White-Noise Source, Medium Size EQ Filter (single precision), and Output block.
+This example uses the AD1940 DSP and the sample schematic shown below: utilizing
+a White-Noise Source, Medium Size EQ Filter (single precision), and Output
+block.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/capturepic1.png
    :alt: capturepic1.png
@@ -15,37 +17,47 @@ This example uses the AD1940 DSP and the sample schematic shown below: utilizing
 
 Display the Capture Window by selecting **View - Capture Window** in the application's main menu or by clicking the button on the :doc:`Standard Toolbar </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/toolbars>`.
 
-Select the Schematic tab and compile/link/download the project. The compiled program data is downloaded to the hardware and displayed in the Capture Window.
+Select the Schematic tab and compile/link/download the project. The compiled
+program data is downloaded to the hardware and displayed in the Capture Window.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/capturepic2.png
    :alt: capturepic2.png
 
--  For the AD1940, the first data sent is to mute the board. You can see that the parameter address for muting is 2642 and the values are 0x00 0x00.
+-  For the AD1940, the first data sent is to mute the board. You can see that
+   the parameter address for muting is 2642 and the values are 0x00 0x00.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/capturepic3.png
    :alt: capturepic3.png
 
--  Next is the program code block, starting at address 1024, and utilizing 165 of the available 7680 byte program memory. Click the plus button in the left-hand column to expand this row and see all the data values.
+-  Next is the program code block, starting at address 1024, and utilizing 165
+   of the available 7680 byte program memory. Click the plus button in the
+   left-hand column to expand this row and see all the data values.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/capturepic4.png
    :alt: capturepic4.png
 
--  The following row is the parameter data, address 0, which is updated in real time as you can see once you make changes to sliders, control knobs, etc. on a compiled schematic.
+-  The following row is the parameter data, address 0, which is updated in real
+   time as you can see once you make changes to sliders, control knobs, etc. on
+   a compiled schematic.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/capturepic5.png
    :alt: capturepic5.png
 
--  The next write message is across 5 registers, addresses 2642-2646 (8 total bytes), configuring the RAM, serial output, and Serial Inputs.
+-  The next write message is across 5 registers, addresses 2642-2646 (8 total
+   bytes), configuring the RAM, serial output, and Serial Inputs.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/capturepic6.png
    :alt: capturepic6.png
 
--  This block of code is to configure the AD1940's slew ram, at address 2560. Note that this is shown if green because it is a Safeload write.
+-  This block of code is to configure the AD1940's slew ram, at address 2560.
+   Note that this is shown if green because it is a Safeload write.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/capturepic7.png
    :alt: capturepic7.png
 
--  The final row is the un-mute message. Observe that the address is again 2642, as with the mute command, but now the data values have changed to un-mute the hardware.
+-  The final row is the un-mute message. Observe that the address is again 2642,
+   as with the mute command, but now the data values have changed to un-mute the
+   hardware.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/capturepic8.png
    :alt: capturepic8.png

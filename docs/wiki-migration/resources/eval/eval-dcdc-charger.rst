@@ -3,7 +3,7 @@
 
 .. image:: https://wiki.analog.com/_media/resources/eval/30kw_charger_overview.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: column
 
@@ -19,7 +19,6 @@
    -  Synchronous and Asynchronous Switching
    
 
-
 .. container:: center
 
    **Products**
@@ -31,7 +30,6 @@
    -  :adi:`ADuM4190 <en/products/amplifiers/isolation-amplifiers/adum4190.html>`
    
 
-
 .. container:: center
 
    **Documentation**
@@ -40,7 +38,6 @@
    -  `Gate Driver Schematic <https://wiki.analog.com/_media/resources/eval/schematic_gatedriver.pdf>`_
    -  `Controller Board Schematic <https://wiki.analog.com/_media/resources/eval/sc18016_1_sch_180511.pdf>`_
    
-
 
 --------------
 
@@ -54,11 +51,15 @@ Block Diagram
 Product Details
 ===============
 
-The DC-DC Charger is a bidirectional charger for industrial applications. it can chage to 30KW typical power levels, with a 1000V Dc Link voltage to a battery voltage of 750V. Charging current can be up to 100A typically or 150A maximum. An efficiency of 98% can be expected with SiC power switch's, with a minimum efficiency at full load (35ºC) of 97%.
+The DC-DC Charger is a bidirectional charger for industrial applications. it can
+chage to 30KW typical power levels, with a 1000V Dc Link voltage to a battery
+voltage of 750V. Charging current can be up to 100A typically or 150A maximum.
+An efficiency of 98% can be expected with SiC power switch's, with a minimum
+efficiency at full load (35ºC) of 97%.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/wiki_table_spec.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -67,10 +68,10 @@ Safety Notice
 
 .. danger::
 
-   SAFETY NOTICE - This is a high Voltage Board 1000V. Only qualified person to test this device in a suitable Lab environment.
-
+   SAFETY NOTICE - This is a high Voltage Board 1000V. Only qualified person to
+   test this device in a suitable Lab environment.
 
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/30kw_dcdc_charger.jpg
-   :width: 1200px
+   :width: 1200

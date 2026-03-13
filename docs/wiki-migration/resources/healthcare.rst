@@ -3,8 +3,10 @@ HEALTHCARE
 
 .. container:: justify
 
-   Innovative technology and system expertise from Analog Devices is helping shape the future of healthcare. Our domain expertise combined with our comprehensive technology portfolio enables our customers to create solutions that positively impact people’s lives.
-
+   Innovative technology and system expertise from Analog Devices is helping
+   shape the future of healthcare. Our domain expertise combined with our
+   comprehensive technology portfolio enables our customers to create solutions
+   that positively impact people’s lives.
 
 Vital Signs Monitoring (VSM) Watch
 ----------------------------------

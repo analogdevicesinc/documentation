@@ -3,18 +3,28 @@ ADRV9002 Device Driver Customization
 
 .. hint::
 
-   There are configuration options that must be set properly. Some others allow you to set defaults, but can be changed anytime later using the driver API. But most of these options don't need to be changed at all.
+   There are configuration options that must be set properly. Some others allow
+   you to set defaults, but can be changed anytime later using the driver API.
+   But most of these options don't need to be changed at all.
 
    
    If unsure please see the manual or don't change!
 
-
 RX and TX Channels
 ==================
 
-ADRV9002 can operate different RX and TX channels at different rates due to the flexibility of the hardware. Making it possible to run four channels (TX1,TX2,RX1,RX2) all at different rates. However, this will require a specific configuration in devicetree to make this possible.
+ADRV9002 can operate different RX and TX channels at different rates due to the
+flexibility of the hardware. Making it possible to run four channels
+(TX1,TX2,RX1,RX2) all at different rates. However, this will require a specific
+configuration in devicetree to make this possible.
 
-The two main categories are combined DMA mode, which we refer to as MIMO mode, and a split DMA mode. In the first case, a single DMA driver is instantiated with up to four channels (two complex) per data direction. This allows for synchronous capture between RX1 and RX2 or transmission with TX1 and TX2. Alternatively, in split mode two drivers per direction will be instantiated. This is typically used when different rates are needed between channels and data transfers between channels are not required to by synchronous.
+The two main categories are combined DMA mode, which we refer to as MIMO mode,
+and a split DMA mode. In the first case, a single DMA driver is instantiated
+with up to four channels (two complex) per data direction. This allows for
+synchronous capture between RX1 and RX2 or transmission with TX1 and TX2.
+Alternatively, in split mode two drivers per direction will be instantiated.
+This is typically used when different rates are needed between channels and data
+transfers between channels are not required to by synchronous.
 
 For examples of these arrangements, look at the following devicetrees:
 
@@ -24,7 +34,9 @@ For examples of these arrangements, look at the following devicetrees:
 RX
 ==
 
-The following attributes are valid for both RX1 and RX2. The user needs to define a valid devicetree node for each RX to apply changes separately to each one. Both RXs must be under adi,channels node as can be seen in the example:
+The following attributes are valid for both RX1 and RX2. The user needs to
+define a valid devicetree node for each RX to apply changes separately to each
+one. Both RXs must be under adi,channels node as can be seen in the example:
 
 ::
 
@@ -197,7 +209,9 @@ Gain PIN Control Settings
 TX
 --
 
-The following attributes are valid for both TX1 and TX2. The user needs to define a valid devicetree node for each TX to apply changes separately to each one. Both TXs must be under adi,channels node as can be seen in the example:
+The following attributes are valid for both TX1 and TX2. The user needs to
+define a valid devicetree node for each TX to apply changes separately to each
+one. Both TXs must be under adi,channels node as can be seen in the example:
 
 ::
 
@@ -251,7 +265,8 @@ Attenuation PIN Control Settings
 GPIO Settings
 -------------
 
-All the gpios configurations should be done under adi,gpios node as shown in the next example:
+All the gpios configurations should be done under adi,gpios node as shown in the
+next example:
 
 ::
 
@@ -281,5 +296,6 @@ All the gpios configurations should be done under adi,gpios node as shown in the
 
 .. warning::
 
-   When configuring GPIOs manually, make sure to not collide to any pin selected in another node configuration as adi,increment-pin, adi,decrement-pin, adi,agc-power-feedback-high-thres-exceeded, etc...
-
+   When configuring GPIOs manually, make sure to not collide to any pin selected
+   in another node configuration as adi,increment-pin, adi,decrement-pin,
+   adi,agc-power-feedback-high-thres-exceeded, etc...

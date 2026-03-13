@@ -4,8 +4,8 @@ USB Gadget serial
 Hardware Configuration
 ----------------------
 
-Connect the USB micro-B plug cable into the USB HS Device port, as showing below:
-
+Connect the USB micro-B plug cable into the USB HS Device port, as
+showing below:
 
 |image1|
 
@@ -14,14 +14,18 @@ Connect the USB micro-B plug cable into the USB HS Device port, as showing be
 Software Configuration
 ----------------------
 
-On the Yocto, Configure the linux-kernel as below to set the USB controller in Gadget only mode, and enable the USB Mass Storage support. check the directory of "yocto/build" and Clean up and setup the linux-kernel configuration with commands:
+On the Yocto, Configure the linux-kernel as below to set the USB controller in
+Gadget only mode, and enable the USB Mass Storage support. check the directory
+of "yocto/build" and Clean up and setup the linux-kernel configuration with
+commands:
 
 .. code:: console
 
    $ bitbake linux-adi -c cleansstate
    $ bitbake linux-adi -c menuconfig
 
-And In the pop-up window of linux-kenel configuration, configure as follows Configure the USB drivers to host mode
+And In the pop-up window of linux-kenel configuration, configure as follows
+Configure the USB drivers to host mode
 
 .. code:: shell
 
@@ -93,7 +97,8 @@ Open a new Minicom terminal and configure as below:
    A - Serial Device : /dev/ttyACM0
    E -bPS/Par/Bits   : 9600 8N1
 
-And you will get into the kernel of the target board via the USB Serial protocol:
+And you will get into the kernel of the target board via the USB Serial
+protocol:
 
 .. code:: console
 
@@ -133,4 +138,4 @@ And you will get into the kernel of the target board via the USB Serial protocol
 **Go TO** :doc:`USB Interface </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/start>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/gadget-mode/002_usb_interface-device_application.jpg
-   :width: 600px
+   :width: 600

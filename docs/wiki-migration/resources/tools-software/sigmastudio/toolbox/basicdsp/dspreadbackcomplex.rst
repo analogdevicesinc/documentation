@@ -3,12 +3,19 @@ DSP Readback (Complex)
 
 :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-The DSP Readback(complex) block lets you read complex values back from the DSP at any point in your schematic design.
+The DSP Readback(complex) block lets you read complex values back from the DSP
+at any point in your schematic design.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/dspc.jpg
    :align: center
 
-The number displayed onscreen is the data value sent back from the DSP considering all the blocks to the left of the Readback block. Every time you click Read, this value will be updated with the latest from the DSP. By displaying the output value from any block, in any format desired, Readback is used chiefly for debugging, and probably will prove very handy.Values can be read back in either hex or decimal. For the latter, you must specify what format you want the number to be displayed in.
+The number displayed onscreen is the data value sent back from the DSP
+considering all the blocks to the left of the Readback block. Every time you
+click Read, this value will be updated with the latest from the DSP. By
+displaying the output value from any block, in any format desired, Readback is
+used chiefly for debugging, and probably will prove very handy.Values can be
+read back in either hex or decimal. For the latter, you must specify what format
+you want the number to be displayed in.
 
 Input Pins
 ==========

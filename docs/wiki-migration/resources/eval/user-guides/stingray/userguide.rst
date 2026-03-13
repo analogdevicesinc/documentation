@@ -8,13 +8,11 @@ The ADAR1000-EVAL1Z evaluation board is an analog beamforming front-end designed
 
 The ADAR1000-EVAL1Z board consists of 8 RF cells. Each cell contains a core :adi:`adar1000` surrounded by four :adi:`ADTR1107s <adtr1107>`. All RF input/outputs on the evaluation board are brought out to SMPM coaxial connectors. There is a 12V power input and all required voltage rails for the board are generated on-board. Digital control of the board as well as the beamformers is enabled using either an :adi:`System Demonstration Platform (SDP-S) <SDP-S>` connector or a dual PMOD interface. Control signals for the board are expected to be 3.3V logic with on-board level translators converting this to the on-chip logic level of 1.8V.
 
-
 |image1|
 
 .. container:: centeralign
 
    \ **Figure 1A: ADAR1000EVAL1Z Front**\
-
 
    |image2|
 
@@ -22,20 +20,17 @@ The ADAR1000-EVAL1Z board consists of 8 RF cells. Each cell contains a core :adi
 
    \ **Figure 1B: ADAR1000EVAL1Z Back**\
 
-
    |image3|
 
 .. container:: centeralign
 
    \ **Figure 1C: ADAR1000EVAL1Z with Heatsink**\
 
-
    |image4|
 
 .. container:: centeralign
 
    \ **Figure 1D: ADAR1000EVAL1Z with Antenna Tiles**\
-
 
 --------------
 
@@ -112,14 +107,11 @@ Hardware
 -  SMPM-SMA cabling to interface with the RF ports
 -  Digital controller and any associated hardware (:adi:`SDP-S` or PMOD)
 
-
-
 .. warning::
 
    The SDP-S is the only SDP controller which will work with Stingray.
 
    | All other SDP controllers (SDP-B, SDP-H1, SDP-K1) are NOT compatible with the Stingray platform.
-
 
 Suggested Test Equipment
 ------------------------
@@ -155,8 +147,9 @@ SDP Control
 
 .. note::
 
-   SDP Control is fine for initial characterization. Recommended to use the linux drivers for end system control for easier software control and software scalability.
-
+   SDP Control is fine for initial characterization. Recommended to use the
+   linux drivers for end system control for easier software control and software
+   scalability.
 
 Software
 ~~~~~~~~
@@ -177,14 +170,23 @@ Software
 BOARD DESIGN
 ============
 
-The ADAR1000-EVAL1Z evaluation board has 8 SMPM RFIO connectors for the 8 cells on the component side of the board. There are 33 SMPM connectors on the opposite side of the board. 32 of these correspond to the 32 RF channels while the last connector goes to the RF detector and ADC combo on the bottom of the board which is intended to be used for calibration.
+The ADAR1000-EVAL1Z evaluation board has 8 SMPM RFIO connectors for the 8 cells
+on the component side of the board. There are 33 SMPM connectors on the opposite
+side of the board. 32 of these correspond to the 32 RF channels while the last
+connector goes to the RF detector and ADC combo on the bottom of the board which
+is intended to be used for calibration.
 
-Two 6-pin Molex "Mini-Fit Jr." connectors are provided to apply the required 12V power supply. One is for the power supply input, and the other can be used to daisy-chain a second board to power both boards using one power supply. Note that the included power supply can only support two ADAR1000-EVAL1Z boards.
+Two 6-pin Molex "Mini-Fit Jr." connectors are provided to apply the required 12V
+power supply. One is for the power supply input, and the other can be used to
+daisy-chain a second board to power both boards using one power supply. Note
+that the included power supply can only support two ADAR1000-EVAL1Z boards.
 
 Power Supply
 ------------
 
-The ADAR1000-EVAL1Z board must be powered from the included power supply with a voltage level of 12V. There is an on-board power management tree which generates the required voltage rails for all of the associated parts.
+The ADAR1000-EVAL1Z board must be powered from the included power supply with a
+voltage level of 12V. There is an on-board power management tree which generates
+the required voltage rails for all of the associated parts.
 
 RF Input and Output Signals
 ---------------------------
@@ -194,8 +196,6 @@ The ADAR1000-EVAL1Z board has 41 surface-mounted SMPM connectors which are descr
 .. container:: center
 
    Table 1: RF Connectors
-
-
 
 +----------------------------------------------------+---+--------------------------------------------------------------------+---+-----------------------------+
 | Connector(s)                                       |   | Name(s)                                                            |   | Description                 |
@@ -213,15 +213,11 @@ The ADAR1000-EVAL1Z board has 41 surface-mounted SMPM connectors which are descr
 
    Figure 2: ADAR1000-EVAL1Z Component Side Overview
 
-
-
 |ADAR1000-EVAL1Z Antenna Side Overview| **
 
 .. container:: centeralign
 
    Figure 3: ADAR1000-EVAL1Z Antenna Side Overview
-
-
 
 Digital Signals
 ---------------
@@ -237,8 +233,6 @@ PMOD Pinout
 
    Figure 4: ADAR1000-EVAL1Z PMOD Pinout
 
-
-
 SPI Control
 ~~~~~~~~~~~
 
@@ -252,9 +246,11 @@ Each :adi:`adar1000` has two ADDRx pins which can be used to control 4 separate 
 
    Figure 5: CSB Selector Switches
 
-
-
-The ADAR1000-EVAL1Z alone demonstrates a small beamformer array, but multiple boards can also be stacked and combined to create larger arrays. In order to simplify the digital interface, two boards can be controlled using one digital controller if the two boards use all four of the available CSB lines without worrying about talking to the wrong IC.
+The ADAR1000-EVAL1Z alone demonstrates a small beamformer array, but multiple
+boards can also be stacked and combined to create larger arrays. In order to
+simplify the digital interface, two boards can be controlled using one digital
+controller if the two boards use all four of the available CSB lines without
+worrying about talking to the wrong IC.
 
 --------------
 
@@ -284,7 +280,8 @@ Test Setup Assembly
 -  Follow the `Mechanical Assembly <https://wiki.analog.com/>`_ instructions.
 -  Plug the included power supply into an outlet before connecting the power supply to P1 in the lower left-hand side of the board. Once finished, a red LED (D3) should be lit in the bottom-left corner of the board.
 -  Connect your digital controller of choice to the appropriate connector (P3/P4 for PMOD control, P5 for :adi:`SDP-S` control).
--  Disable any test equipment of interest, and connect it to the ADAR1000-EVAL1Z board.
+-  Disable any test equipment of interest, and connect it to the ADAR1000-EVAL1Z
+   board.
 
 Board Power Control
 -------------------
@@ -332,7 +329,6 @@ Powerup Procedure
    
    GPIO PINS ARE HI-Z! SEE `CONFIGURING THE LTC2992 <https://wiki.analog.com/>`_\ \*\*
 
-
 Powerdown Procedure
 ~~~~~~~~~~~~~~~~~~~
 
@@ -341,8 +337,11 @@ Powerdown Procedure
 
 .. note::
 
-   It is possible to only pulse PWR_UP_DOWN to turn off the board as disabling the power sequencer will also bring down the +5V rail. This is not recommended as it's safer to intentionally bring down +5V first, and will guarantee that any software controlling the board will not lose the current state.
-
+   It is possible to only pulse PWR_UP_DOWN to turn off the board as disabling
+   the power sequencer will also bring down the +5V rail. This is not
+   recommended as it's safer to intentionally bring down +5V first, and will
+   guarantee that any software controlling the board will not lose the current
+   state.
 
 Software Control
 ----------------
@@ -353,7 +352,9 @@ Software Control
 RF Detector and ADC Combination
 -------------------------------
 
-There is an on-board RF detector/ADC combo which can be used to help calibrate the ADAR1000-EVAL1Z or measure test signals. The circuit is located on the antenna side of the board near the bottom.
+There is an on-board RF detector/ADC combo which can be used to help calibrate
+the ADAR1000-EVAL1Z or measure test signals. The circuit is located on the
+antenna side of the board near the bottom.
 
 The RF detector is the :adi:`hmc948` which feeds an :adi:`ada4807-1` unity gain buffer. The :adi:`ada4807-1` output then goes to the :adi:`LTC2314-14`. See the :adi:`LTC2314-14 Datasheet <media/en/technical-documentation/data-sheets/231414fa.pdf>` for information on retrieving data from the ADC.
 
@@ -368,16 +369,15 @@ Recommended ADAR1000 Initialization Sequences
 
    The below sequences don't take into account the different hardware addresses of the various ADAR1000s. Consult the :adi:`ADAR1000 Datasheet <media/en/technical-documentation/data-sheets/ADAR1000.pdf>` for more information on the hardware addressing.
 
-
 .. note::
 
    The below sequences don't take into account the issues described in the :doc:`ADAR1000 Silicon & Datasheet Errata </wiki-migration/resources/errata/adar1000>`. Consult these documents for more information about how to properly communicate with all parts on the board.
 
-
 .. note::
 
-   The below sequences don't account for the fact that the Stingray uses two CSB lines to address all of the ADAR1000s on the board. In order to configure all chips, the sequences must be run on each required CSB line individually.
-
+   The below sequences don't account for the fact that the Stingray uses two CSB
+   lines to address all of the ADAR1000s on the board. In order to configure all
+   chips, the sequences must be run on each required CSB line individually.
 
 Initial Powerup
 ---------------
@@ -550,11 +550,9 @@ Configuring the LTC2992
 
    | Looking at the schematic for the board, it would seem that the address pins are pulled down (resulting in the address being 0x6F according to Table 3 of the :adi:`LTC2992 datasheet <media/en/technical-documentation/data-sheets/ltc2992.pdf>`), but the 100kΩ resistors are too weak to overcome the internal circuitry of the LTC2992, so the actual address is 0x6A.
 
-
 .. note::
 
    The LTC2992 requires repeated START conditions for readback.
-
 
 .. code:: python
 
@@ -583,7 +581,6 @@ Cell Map
 
    \ **Figure 6: ADAR1000-EVAL1Z Cell Mapping**\
 
-
 Channel Map
 -----------
 
@@ -594,7 +591,6 @@ Channel Map
 .. container:: centeralign
 
    \ **Figure 7: ADAR1000-EVAL1Z Channel Mapping**\
-
 
 Channel Map (Back of Board)
 ---------------------------
@@ -607,7 +603,6 @@ Channel Map (Back of Board)
 
    \ **Figure 8: ADAR1000-EVAL1Z Channel Mapping (Back of Board)**\
 
-
 Support
 -------
 
@@ -618,17 +613,17 @@ For additional questions or support, please visit the Engineering Zone forum at 
 :doc:`X Band Development Platform </wiki-migration/resources/eval/user-guides/x-band-platform>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/adar1000eval1z_bottom-web.gif
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/adar1000eval1z_top-web.gif
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/adar1000eval1z_top_kit.jpg
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/adar1000eval1z_bottom_kit-web.jpg
-   :width: 200px
+   :width: 200
 .. |ADAR1000-EVAL1Z Component Side Overview| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/component_side_overview.png
-   :width: 1300px
+   :width: 1300
 .. |ADAR1000-EVAL1Z Antenna Side Overview| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/antenna_side_overview.png
-   :width: 800px
+   :width: 800
 .. |PMOD Pinout| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/pmod_pinout.png
-   :width: 600px
+   :width: 600
 .. |CSB Selector Switches| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/csb_selectors.jpg

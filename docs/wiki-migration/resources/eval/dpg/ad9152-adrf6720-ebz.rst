@@ -32,7 +32,14 @@ The AD9152-ADRF6720 Evaluation Board software has an easy-to-use graphical user 
 Hardware Setup
 --------------
 
-Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source should be connected to the SMA connector, J1. This is the DACCLK input. The spectrum analyzer should be connected to the SMA connector, J17/J4 They are the DAC0 output. The External LO should be connected to the SMA connector of J18. The evaluation board connects to the DPG3 through the connector P4. The PC should be connected to the EVB using the mini-USB connector XP2 after installation of the Evaluation Board software. Figure 1 shows the block diagram of the set-up.
+Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source
+should be connected to the SMA connector, J1. This is the DACCLK input. The
+spectrum analyzer should be connected to the SMA connector, J17/J4 They are the
+DAC0 output. The External LO should be connected to the SMA connector of J18.
+The evaluation board connects to the DPG3 through the connector P4. The PC
+should be connected to the EVB using the mini-USB connector XP2 after
+installation of the Evaluation Board software. Figure 1 shows the block diagram
+of the set-up.
 
 .. container:: center
 
@@ -43,7 +50,6 @@ Connect +5.0V to P5, GND to P6. A low phase noise high frequency clock source sh
    | Figure 1. Block diagram of the AD9152-ADRF6720 lab bench set-up | Figure 2. Top view of AD9152-ADRF6720-EBZ |
    +-----------------------------------------------------------------+-------------------------------------------+
    
-
 
 Getting Started
 ---------------
@@ -63,15 +69,21 @@ Configure DPG Vector Software
 
 1. To begin, turn on the external +5V supply.
 
-2. Open DPG Downloader if you have not done so. (Start > All Programs > Analog Devices > DPG > DPGDownloader). Ensure that the program detects the AD9152-ADRF6720, as indicated in the “Evaluation Board” drop-down list, and select it.
+2. Open DPG Downloader if you have not done so. (Start > All Programs > Analog
+   Devices > DPG > DPGDownloader). Ensure that the program detects the
+   AD9152-ADRF6720, as indicated in the “Evaluation Board” drop-down list, and
+   select it.
 
-3. Set “Port configuration” to “2X4 37G 187M ” in the DPG Downloader panel and select Mode 4 in the JESD Mode drop-down box.
+3. Set “Port configuration” to “2X4 37G 187M ” in the DPG Downloader panel and
+   select Mode 4 in the JESD Mode drop-down box.
 
-4. Click on “Add Generated Waveform”, and then “Single Tone”. A Single Tone panel will be added to the vector list. Enter the Data Rate, in this case 350MHz and the desired frequency, 100MHz. Enter the digital amplitude. In this case we use -10dBFS. Uncheck the “Unsigned Data” box, check the “Generate complex data (I & Q)”, as in Figure 3.
-
+4. Click on “Add Generated Waveform”, and then “Single Tone”. A Single Tone
+   panel will be added to the vector list. Enter the Data Rate, in this case
+   350MHz and the desired frequency, 100MHz. Enter the digital amplitude. In
+   this case we use -10dBFS. Uncheck the “Unsigned Data” box, check the
+   “Generate complex data (I & Q)”, as in Figure 3.
 
 | 5. Select the data vector of 100MHz desired frequency ’in-phase’ data in the “DAC0” drop down menu and the ‘Quadrature’ data in the “DAC1”. At this point, the DPG Downloader panel should look like Figure 3.
-
 
 .. container:: center
 
@@ -85,12 +97,10 @@ Configure DPG Vector Software
    +--------------------------------+
    
 
-
 Configuring SPI
 ^^^^^^^^^^^^^^^
 
 | 1. Open the AD9152 SPI application (Start > All Programs > Analog Devices > AD9152 > AD9152 SPI). The screen should look similar to Figure 4.
-
 
 .. container:: center
 
@@ -107,13 +117,11 @@ Configuring SPI
    +---------------------------------------------------+
    
 
-
 | 2. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1.5GHz, and the output level to +3dBm. The spectrum analyzer can be configured with Start Frequency = 10 MHz, Stop Frequency = 1.5GHz, and Resolution Bandwidth of 30 kHz. Choose Input Attenuation to be 10dB. This can be adjusted later if indications are that the analyzer is causing degradations.
 | 3. Follow the sequence below to configure the AD9152 SPI registers.
 | a. The Links should be set to single link. The JESD Mode is set to 4, Interpolation set to 4, and FDAC set to 1.5GHz. Click “Commit” button to initialize the AD9152. The JESD204B PLL should be locked indicated with bright green JESD204B PLL readback LED.
 | b. . At this point the data clock frequency on the LED panel of the DPG3 should read 187MHz and the Serial Line Rate in the DPG3 software panel should read 3.75Gbps.
 | c. Click “Read All Registers” in the top menu bar. You should see “JESD204B PLL Lock Readback” LED readback is bright green indicating that the SERDES PLL is locked.
-
 
 .. container:: center
 
@@ -130,10 +138,11 @@ Configuring SPI
    +---------------------------------------------------+
    
 
-
 | d. Click Download (|image8|) and Play (|image9|) in the DPG Downloader screen.
 
-e. Configure the ADRF6720 by a startup sequence, Select “ Restore Registers from File” in the “File” menu, then Select the file called ADRF6720_PLLoff_for_AD9152_6720_evb.csv. See Figure6.
+e. Configure the ADRF6720 by a startup sequence, Select “ Restore Registers from
+   File” in the “File” menu, then Select the file called
+   ADRF6720_PLLoff_for_AD9152_6720_evb.csv. See Figure6.
 
 .. container:: center
 
@@ -147,8 +156,11 @@ e. Configure the ADRF6720 by a startup sequence, Select “ Restore Registers fr
    +-------------------------------------------------+
    
 
-
-f. The current on the 5V supply should read about 1479mA. If you do not see the output, gently push the board toward the DPG3. This ensures that the board is firmly connected to the DPG3. The four registers codeGrpSync, FrameSync, GoodCheckSum and Initial LaneSync should all read 0F indicating the lanes are working correctly. The output should appear as Figure 7.
+f. The current on the 5V supply should read about 1479mA. If you do not see the
+   output, gently push the board toward the DPG3. This ensures that the board is
+   firmly connected to the DPG3. The four registers codeGrpSync, FrameSync,
+   GoodCheckSum and Initial LaneSync should all read 0F indicating the lanes are
+   working correctly. The output should appear as Figure 7.
 
 .. container:: center
 
@@ -162,7 +174,6 @@ f. The current on the 5V supply should read about 1479mA. If you do not see the 
    +----------------------------------------------------------+
    
 
-
 Note
 ~~~~
 
@@ -170,22 +181,22 @@ Note
 | write(0x308,0x08) write(0x309,0x1A)
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-6720-ebz_system1.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-6720-ebz_photo.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-6720-ebz_system1.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-6720-ebz_photo.png
-   :width: 300px
+   :width: 300
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/dpg_downloader_pane1.png
-   :width: 800px
+   :width: 800
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152_spipro0.png
-   :width: 800px
+   :width: 800
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152_spirpro1.png
-   :width: 800px
+   :width: 800
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/image009.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/image010.png
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-6720_6720_cfg_download.png
-   :width: 800px
+   :width: 800
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9152/ad9152-6720-ebz_rf_output.png
-   :width: 600px
+   :width: 600

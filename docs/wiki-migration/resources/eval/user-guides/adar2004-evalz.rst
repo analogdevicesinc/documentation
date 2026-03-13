@@ -22,14 +22,11 @@ The :adi:`adar2004` has two integrated state machines, one for the LO Multiplier
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/1_adar2004_board.png
    :align: center
-   :width: 500px
-
-
+   :width: 500
 
 .. container:: centeralign
 
    \ **Figure 1: ADAR2004-EVALZ Board**\
-
 
 | ----
 
@@ -92,7 +89,9 @@ EVALUATION BOARD HARDWARE
 Power Supply Requirements
 -------------------------
 
-The ADAR2004-EVALZ board must be powered from an external power supply with a voltage level of 2.5V. This power supply must have a current capability of at least 1A.
+The ADAR2004-EVALZ board must be powered from an external power supply with a
+voltage level of 2.5V. This power supply must have a current capability of at
+least 1A.
 
 There is an on-board LDO (U105) which generates the 1.8V required to safely drive the digital pins of the :adi:`adar2004`. This supply has an associated jumper, JP1, which can be used to enable and disable the 1.8V supply.
 
@@ -137,8 +136,6 @@ The ADAR2004-EVALZ board has 21 edge-mounted and 2 vertical RF connectors which 
 
    Figure 2: ADAR2004-EVALZ Connections
 
-
-
 Digital Signals
 ---------------
 
@@ -173,8 +170,6 @@ Hardware Setup
 
    Figure 3: Typical ADAR2004-EVALZ setup for RF measurements
 
-
-
 `Figure 3 <https://wiki.analog.com/>`_ shows a typical test setup for RF measurements using a spectrum analyzer. Note that any loss in the test setup needs to be calibrated out for the most accurate measurements. The procedure for building this test setup is outlined below:
 
 -  Connect the power supply to J18. Leave the supply disabled.
@@ -190,9 +185,15 @@ Hardware Setup
 Test Setup Loss Calibration
 ---------------------------
 
-The loss of the test setup must be removed for accurate data to be taken. The included thru-cals have a trace that is twice the length of the RF input traces as well as a trace that is twice the length of the IF output traces. Both test coupons include two connectors, therefore, the approximate loss of the evaluation board’s RF input traces or IF output traces can be removed from the system by measuring the thru-cals and dividing the loss by two.
+The loss of the test setup must be removed for accurate data to be taken. The
+included thru-cals have a trace that is twice the length of the RF input traces
+as well as a trace that is twice the length of the IF output traces. Both test
+coupons include two connectors, therefore, the approximate loss of the
+evaluation board’s RF input traces or IF output traces can be removed from the
+system by measuring the thru-cals and dividing the loss by two.
 
-Any extra external components (balun, combiner, RF cabling, attenuator pads, etc.) should also be calibrated out of the system.
+Any extra external components (balun, combiner, RF cabling, attenuator pads,
+etc.) should also be calibrated out of the system.
 
 Software Initialization
 -----------------------
@@ -203,8 +204,6 @@ Software Initialization
 
    Figure 4: Access the** :adi:`adar2004` **Plugin from ACE
 
-
-
 -  Download and install :adi:`ace` by following the instructions in the `ACE user manual <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_.
 -  Connect the :adi:`sdp` controller board to both the PC and the ADAR2004-EVALZ.
 -  Open :adi:`ace` and connect to the board by double-clicking on the ":adi:`adar2004` Board" plugin in the "Attached Hardware" section of the Start page. See `Figure 4 <https://wiki.analog.com/>`_.
@@ -214,8 +213,6 @@ Software Initialization
 .. container:: centeralign
 
    Figure 5:** :adi:`adar2004` **Main GUI Overview
-
-
 
 Mutliplier Block Setup
 ----------------------
@@ -239,19 +236,30 @@ Mutliplier Block Setup
 | 8.00 to 10.10  | 32 to 40.4        | High Band Active *(Low and Mid Bands Ready)*   | HIGH | 0x6B                     |
 +----------------+-------------------+------------------------------------------------+------+--------------------------+
 
-Follow the below steps to configure the Multiplier block for an LO signal of 4.75GHz (mixer LO signal of 19GHz):
+Follow the below steps to configure the Multiplier block for an LO signal of
+4.75GHz (mixer LO signal of 19GHz):
 
 -  If the recommended bias conditions aren't sufficient, choose bias points from the dropdowns for the LO input buffer stages. Click on the amplifier itself to enable the buffer. The buffer will change from grey to blue.
 -  If the recommended bias condition isn't sufficient, choose a bias point from the dropdown for the Mid-Band multiplier/amplifier. Check the “Active” box next to the multiplier/amplifier. This will enable the circuit and change the input/output switches to the middle setting. The “Ready” checkbox should automatically be checked as well. The Mid-Band amplifier will change from grey to blue.
 -  Be sure that the box setting the bandpass filters to their low corners is **not** checked.
--  Click “Apply Changes” at the top-left of the page to write all the new settings to the part.
+-  Click “Apply Changes” at the top-left of the page to write all the new
+   settings to the part.
 
 Receiver Block Setup
 --------------------
 
-The Receiver block is designed to take a received signal from the 4 external antennae as well as an LO signal from the Multiplier block, amplify and convert the received signal to an IF using all four LNA/Mixer channels, and scale the output signal using four independently controlled IF amplifiers. To accomplish this, the Receiver block contains four Low Noise Amplifiers (LNAs), four active mixers, two stages of active LO splitters and four Variable Gain Amplifiers (VGAs). It should be noted that all four channels are intended to be operated together, but any combination of channels can be enabled at once.
+The Receiver block is designed to take a received signal from the 4 external
+antennae as well as an LO signal from the Multiplier block, amplify and convert
+the received signal to an IF using all four LNA/Mixer channels, and scale the
+output signal using four independently controlled IF amplifiers. To accomplish
+this, the Receiver block contains four Low Noise Amplifiers (LNAs), four active
+mixers, two stages of active LO splitters and four Variable Gain Amplifiers
+(VGAs). It should be noted that all four channels are intended to be operated
+together, but any combination of channels can be enabled at once.
 
-Follow the below steps to configure the Receiver block to receive a signal at 19.1GHz and use the 19GHz signal from the Multiplier block to output an IF signal at 100MHz on all channels:
+Follow the below steps to configure the Receiver block to receive a signal at
+19.1GHz and use the 19GHz signal from the Multiplier block to output an IF
+signal at 100MHz on all channels:
 
 -  Enable all channels by clicking all the enable checkboxes to the left of the LNAs.
 -  If the recommended bias condition isn't sufficient, choose a bias point for the LNAs from the dropdown.
@@ -264,7 +272,8 @@ Follow the below steps to configure the Receiver block to receive a signal at 19
 -  Enable all the Mixers by clicking the "Enable Mixers" checkbox. The Mixers will turn from grey to blue.
 -  Enable all the VGAs by clicking the "Enable VGAs" checkbox. The VGAs will turn from grey to blue.
 -  Set the gain of the IF amps using the pulldowns. Note that 0x7 corresponds to maximum gain.
--  Click “Apply Changes” at the top-left of the page to send the new settings to the chip.
+-  Click “Apply Changes” at the top-left of the page to send the new settings to
+   the chip.
 
 Sequencer Programming
 ---------------------
@@ -286,40 +295,38 @@ Multiplier/Filter Mode Settings
 
    Figure 6: Multiplier/Filter sequencer configuration page
 
-
-
-To change any of the pre-programmed Multiplier/Filter Sequencer modes, follow the below steps:
+To change any of the pre-programmed Multiplier/Filter Sequencer modes, follow
+the below steps:
 
 -  Switch the view to the tab named "Multiplier Block."
 -  Change the various settings in the block diagram to configure the mode as desired. This block operates in the same manner as the settings on the main page. The only difference is that there aren’t any available settings for the bias points of the various parts of the chip. The bias settings are globally set on the main page and cannot be changed using the state machine.
 -  Once the configuration is satisfactory, choose which mode to apply the settings to using the left-hand dropdown, and click “Apply Visible Settings to Mode”. See “RECONFIGURE MODE” in `Figure 6 <https://wiki.analog.com/>`_.
 -  Repeat this process to configure all the modes of interest.
--  Click “Apply Changes” at the top-left of the page to send the new settings to the chip.
+-  Click “Apply Changes” at the top-left of the page to send the new settings to
+   the chip.
 
 Multiplier/Filter State Order
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the modes have been configured, they must be linked to the states for the sequencer to cycle through.
+Once the modes have been configured, they must be linked to the states for the
+sequencer to cycle through.
 
 To change the order and/or depth of the state machine, follow the below steps:
 
 -  Change the depth of the state machine by using the labelled dropdown. See "STATE MACHINE DEPTH" in `Figure 6 <https://wiki.analog.com/>`_. Note that this number indicates the total number of states in use, n. The reset state isn't included, which is why Mode 0 is always linked to the reset state. `Figure 7 <https://wiki.analog.com/>`_ shows how the state machine pointer moves with Advance and Reset pulses.
 
-
 |num_mult_states.png|
 
    |image6|
-
 
 .. container:: centeralign
 
    Figure 7: Multiplier/Filter State machine pointer diagram
 
-
-
 -  To set the order of the states, choose a mode from the middle Mode dropdown to apply to a state. Choose a state from the middle State dropdown. The current setting of that state will appear in the text on the right. Click the button labelled “Apply Selected Mode to State”, and the readout will update to reflect the change. See “RECONFIGURE STATE” in `Figure 6 <https://wiki.analog.com/>`_.
 -  Repeat the process until all the desired states are set.
--  Click “Apply Changes” at the top-left of the page to send the new settings to the chip.
+-  Click “Apply Changes” at the top-left of the page to send the new settings to
+   the chip.
 
 Receiver Mode Settings
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -330,55 +337,64 @@ Receiver Mode Settings
 
    Figure 8: Receiver sequencer configuration page
 
-
-
-To change any of the pre-programmed Receiver Sequencer modes, follow the below steps:
+To change any of the pre-programmed Receiver Sequencer modes, follow the below
+steps:
 
 -  Switch the view to the tab names "Rx Block."
 -  Change the various settings in the block diagram to configure the mode as desired. This block operates in the same manner as the settings on the main page. The only difference is that there aren’t any available settings for the bias points of the various parts of the chip. The bias settings are globally set on the main page and cannot be changed using the state machine.
 -  Once the configuration is satisfactory, choose which mode to apply the settings to using the left-hand dropdown, and click “Apply Visible Settings to Mode”. See “RECONFIGURE MODE” in `Figure 8 <https://wiki.analog.com/>`_.
 -  Repeat this process to configure all the modes of interest.
--  Click “Apply Changes” at the top-left of the page to send the new settings to the chip.
+-  Click “Apply Changes” at the top-left of the page to send the new settings to
+   the chip.
 
 Receiver State Order
 ~~~~~~~~~~~~~~~~~~~~
 
-Once the modes have been configured, they must be linked to the states for the sequencer to cycle through.
+Once the modes have been configured, they must be linked to the states for the
+sequencer to cycle through.
 
 To change the order and/or depth of the state machine, follow the below steps:
 
 -  Change the depth of the state machine by using the labelled dropdown. See “STATE MACHINE DEPTH” in `Figure 8 <https://wiki.analog.com/>`_. Note that this number indicates the total number of states in use, n, not including the reset state which is always linked to Mode 0. See `Figure 9 <https://wiki.analog.com/>`_ for a diagram of the state machine indexing.
 
-
 |num_Rx_states.png|
 
    |image8|
-
 
 .. container:: centeralign
 
    Figure 9: Receiver State machine pointer diagram
 
-
-
 -  To set the order of the states, choose a mode from the middle Mode dropdown to apply to a state. Choose a state from the middle State dropdown. The current setting of that state will appear in the text on the right. Click the button labelled “Apply Selected Mode to State”, and the readout will update to reflect the change. See “RECONFIGURE STATE” in `Figure 8 <https://wiki.analog.com/>`_.
 -  Repeat the process until all the desired states are set.
--  Click “Apply Changes” at the top-left of the page to send the new settings to the chip.
+-  Click “Apply Changes” at the top-left of the page to send the new settings to
+   the chip.
 
 Sequencer Control
 ~~~~~~~~~~~~~~~~~
 
 The Multiplier/Filter and Receiver sequencers must be enabled before they can control the configuration of the associated :adi:`adar2004` blocks. To enable the state machines, the checkboxes in the “STATE MACHINE CONTROL” section of the main page must be checked. See `Figure 5 <https://wiki.analog.com/>`_. These checkboxes are also available in the "STATE MACHINE CONTROL" sections of the individual sequencer tabs. See `Figure 6 <https://wiki.analog.com/>`_ and `Figure 8 <https://wiki.analog.com/>`_.
 
-When the state machines are enabled, the lights at the top of the control box will show in green. Also, the top-left section of each sequencer block on the main page will change to show that the state machine is controlling the block, rather than the SPI.
+When the state machines are enabled, the lights at the top of the control box
+will show in green. Also, the top-left section of each sequencer block on the
+main page will change to show that the state machine is controlling the block,
+rather than the SPI.
 
-Once the state machines are enabled, the latching style must be selected. By default, when a pin is pulsed, the upcoming state is loaded into memory on the rising edge of the pulse and is latched out to the individual blocks as quickly as possible. This is necessary to allow direct SPI control of the blocks, but may require special consideration for timing. See the datasheet for details. If latching is enabled, the commands aren't sent out to the blocks until the falling edge of the pulse. This helps to align all the chip changes so that they happen at once.
+Once the state machines are enabled, the latching style must be selected. By
+default, when a pin is pulsed, the upcoming state is loaded into memory on the
+rising edge of the pulse and is latched out to the individual blocks as quickly
+as possible. This is necessary to allow direct SPI control of the blocks, but
+may require special consideration for timing. See the datasheet for details. If
+latching is enabled, the commands aren't sent out to the blocks until the
+falling edge of the pulse. This helps to align all the chip changes so that they
+happen at once.
 
 Because the latch is the last check before the data is sent to the various internal blocks, when using the :adi:`adar2004` in “manual” or SPI mode, the latching must be disabled for both sequencers. If this isn’t done, the blocks will never receive the new instructions unless the external sequencer pins are pulsed. This would be uncommon since the sequencers are disabled in this mode of operation.
 
 When the sequencers are enabled, the state machine pointers can be moved using the buttons at the bottom of the State Machine Control section. The labelled MADV, MRST, RxADV, RxRST will directly pulse the associated pin on the :adi:`adar2004`. If necessary, it’s possible to advance or reset both sequencers simultaneously by using the respectively labelled buttons.
 
-When enabled, the State Machine Control section will also reflect the current State and Mode for each sequencer.
+When enabled, the State Machine Control section will also reflect the current
+State and Mode for each sequencer.
 
 ADC Block
 ---------
@@ -389,7 +405,8 @@ The :adi:`adar2004` has an 8 bit on-chip ADC which can be used to measure intern
 -  Turn on the ADC’s power bit by clicking it. The ADC will change color from grey to blue.
 -  Enable the internal ADC clock by clicking it. The clock will change from grey to blue.
 -  Choose a clock frequency from the dropdown menu.
--  Click “Apply Changes” at the top-left of the page to send the new settings to the chip.
+-  Click “Apply Changes” at the top-left of the page to send the new settings to
+   the chip.
 
 Temperature Sensor
 ~~~~~~~~~~~~~~~~~~
@@ -402,11 +419,11 @@ Once the ADC section has been enabled and configured, the on-chip temperature se
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/5_adar2004_main_gui_overview.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/6_multiplier_sequencer_configuration.png
 .. |num_mult_states.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/num_mult_states.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/7_state_machine_loop.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/8_receiver_sequencer_configuration.png
 .. |num_Rx_states.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/num_rx_states.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/7_state_machine_loop.png
-   :width: 400px
+   :width: 400

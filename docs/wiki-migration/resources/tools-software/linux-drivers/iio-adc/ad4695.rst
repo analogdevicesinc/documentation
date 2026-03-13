@@ -67,7 +67,9 @@ The ADC is represented by a child node of the SPI controller that the ADC is att
            };
        };
 
-If the specific application has wiring that can't handle the max SPI SCLK rate for the ADC chip, a lower max rate can be specified, otherwise use the max rate from the datasheet (which may be different for some chips).
+If the specific application has wiring that can't handle the max SPI SCLK rate
+for the ADC chip, a lower max rate can be specified, otherwise use the max rate
+from the datasheet (which may be different for some chips).
 
 The ``spi-cpha`` and ``spi-cpol`` flags also need to be set to ensure the correct settings for the data and clock lines.
 
@@ -77,9 +79,13 @@ The ``spi-cpha`` and ``spi-cpol`` flags also need to be set to ensure the correc
                spi-cpha;
                spi-cpol;
 
-There are multiple ways that the chip can be wired to the SPI bus. The Linux driver supports one wiring configuration when using a typical SPI controller and a different wiring when using the AXI SPI Engine for SPI offloading support to achieve the maximum sample rate.
+There are multiple ways that the chip can be wired to the SPI bus. The Linux
+driver supports one wiring configuration when using a typical SPI controller and
+a different wiring when using the AXI SPI Engine for SPI offloading support to
+achieve the maximum sample rate.
 
-Currently, using more than one SDO line of the chip is not supported by the driver.
+Currently, using more than one SDO line of the chip is not supported by the
+driver.
 
 Standard SPI wiring
 ~~~~~~~~~~~~~~~~~~~
@@ -113,9 +119,12 @@ Power supplies should be described. Typically these will link to a ``compatible 
 Reference supplies
 ------------------
 
-There are 2 ways to supply a reference voltage. The default of the evaluation boards is to use a 5V external reference.
+There are 2 ways to supply a reference voltage. The default of the evaluation
+boards is to use a 5V external reference.
 
-If ref-supply is present, then the external reference voltage is used and the internal buffer is disabled. If refin-supply is present, then the internal buffered reference voltage is used.
+If ref-supply is present, then the external reference voltage is used and the
+internal buffer is disabled. If refin-supply is present, then the internal
+buffered reference voltage is used.
 
 External reference
 ~~~~~~~~~~~~~~~~~~
@@ -146,7 +155,9 @@ When using the internal reference buffer, provide the ``refin-supply`` property 
 Common mode supplies
 --------------------
 
-If any of the inputs are being used as pseudo-differential inputs with the negative input being anything other than the REFGND pin, supplies indicating the voltage need to be provided.
+If any of the inputs are being used as pseudo-differential inputs with the
+negative input being anything other than the REFGND pin, supplies indicating the
+voltage need to be provided.
 
 For the COM pin, use the ``com-supply`` property.
 
@@ -214,13 +225,15 @@ If the application requires the High-Z Mode feature to be disabled for any chann
 Reset
 -----
 
-If the RESET pin is wired up, the line will be toggled on driver probe to reset the chip.
+If the RESET pin is wired up, the line will be toggled on driver probe to reset
+the chip.
 
 ::
 
                reset-gpios = <&gpio0 86 GPIO_ACTIVE_LOW>;
 
-If the pin isn't wired up, omit the property. The driver will still attempt to do a software reset on driver probe instead.
+If the pin isn't wired up, omit the property. The driver will still attempt to
+do a software reset on driver probe instead.
 
 Additional properties
 ---------------------
@@ -262,7 +275,8 @@ In this case the driver for the AD4695 chip is at ``/sys/bus/iio/devices/iio:dev
 Sysfs attributes
 ~~~~~~~~~~~~~~~~
 
-The sysfs attributes are used to get information about the device and also configure the device.
+The sysfs attributes are used to get information about the device and also
+configure the device.
 
 Informational
 ^^^^^^^^^^^^^
@@ -312,12 +326,15 @@ The ``in_voltage0_calibbias_available`` and ``in_voltage0_calibscale_available``
    root@analog:~# cat /sys/bus/iio/devices/iio\:device1/in_voltage0_calibscale_available
    [0.000000000 0.000030517 1.999969482]
 
-This shows that the offset can be in the range [-8192, 8192) with a step size of 0.25 raw units. The gain can be in the range [0, 2) with a step size of approx 0.000030517.
+This shows that the offset can be in the range [-8192, 8192) with a step size of
+0.25 raw units. The gain can be in the range [0, 2) with a step size of approx
+0.000030517.
 
 .. note::
 
-   The returned values may change when other attributes change, for example when oversampling is enabled. So it is not safe to assume the available values will always be the same.
-
+   The returned values may change when other attributes change, for example when
+   oversampling is enabled. So it is not safe to assume the available values
+   will always be the same.
 
 Also see the example in the `#voltage_input_calibration <https://wiki.analog.com/>`_ section.
 
@@ -343,8 +360,8 @@ To efficiently read multiple samples, a buffer interface is provided. The contro
 
    General information on these attributes can be found in the `Linux kernel documentation <https://www.kernel.org/doc/html/latest/iio/iio_devbuf.html>`_.
 
-
-Using the buffer will be slightly different depending on if using a SPI offload or not.
+Using the buffer will be slightly different depending on if using a SPI offload
+or not.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | With SPI offload                                                                                                                                                                                                                                                                          | Without SPI offload                                                                                                                                       |
@@ -358,7 +375,8 @@ Using the buffer will be slightly different depending on if using a SPI offload 
 | There must always be at least 2 voltages channels enabled in the buffered read or enabling it will return ``EINVAL``. The temperature channel doesn't count as a voltage channel, so if you want to read temperature, you have to enable 2 voltage channels plus the temperature channel. | No restrictions on which channels have to be enabled.                                                                                                     |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Here is an example of how to read a few values at a low sample rate for testing using a Linux host with SPI offload support:
+Here is an example of how to read a few values at a low sample rate for testing
+using a Linux host with SPI offload support:
 
 ::
 
@@ -412,7 +430,8 @@ ADI provides a :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linu
 Typical test application software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ADI provides several open source tools to make it easy to get started with using Linux IIO drivers.
+ADI provides several open source tools to make it easy to get started with using
+Linux IIO drivers.
 
 IIO Oscilloscope
 ^^^^^^^^^^^^^^^^
@@ -431,24 +450,29 @@ Here are a couple of examples of how to use these tools together to test an ADC 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/eval-ad4696fmcz-zedboard-m2k.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/scopy-2.5v-common-mode.png
    :alt: Scopy set up to generate constant 2.5 V signal for common mode supply
    :align: center
-   :width: 800px
+   :width: 800
 
 Measure constant voltage
 """"""""""""""""""""""""
 
-A quick way check if the ADC is working correctly is to generate a constant voltage on the input and measure it using the DMM feature of the IIO Oscilloscope. For example, if you generate a constant 3.5 V DC signal, you should see something like this:
+A quick way check if the ADC is working correctly is to generate a constant
+voltage on the input and measure it using the DMM feature of the IIO
+Oscilloscope. For example, if you generate a constant 3.5 V DC signal, you
+should see something like this:
 
 |Scopy configured to generate constant 3.5 V signal with 2.5 V common mode signal| |image1|
 
 .. tip::
 
-   The DMM feature of IIO Oscilloscope takes into account the scale and offset attributes to provide the measured value in Volts. The actual raw value without the offset will be 1 V since the ADC is measuring the difference between IN0 and IN1.
-
+   The DMM feature of IIO Oscilloscope takes into account the scale and offset
+   attributes to provide the measured value in Volts. The actual raw value
+   without the offset will be 1 V since the ADC is measuring the difference
+   between IN0 and IN1.
 
 Capture many samples for analysis
 """""""""""""""""""""""""""""""""
@@ -461,35 +485,38 @@ If you are using a setup with SPI offload support, first select the sample rate 
 
    If you are using a setup without SPI offload support, a trigger source must be set up manually and can't be controlled via the *IIO Oscilloscope* app. See :doc:`example </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad738x>`.
 
-
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/osc-debug-ad4696-voltage0-sampling-frequency-1mhz.png
    :alt: Setting sample rate to 1 MHz
    :align: center
-   :width: 600px
+   :width: 600
 
 Then you will need to set up a signal generator to generate an appropriate signal. As previously mentioned, in this example, we are using IN0 and IN1 as a pseduo-differential input where IN1 has a constant 2.5 V as the common mode supply. To make a more interesting signal we are generating a 1 kHz sine wave with 4 V p-p and offset of 2.5 V. The signal needs to be withing the 0 to V\ :sub:`REF` range (5V in this case) and the offset needs to match the common mode voltage supply.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/scopy-wave-4v-p-p-2.5v-common-mode.png
    :alt: Scopy generating 4 V p-p signal with 2.5 V common mode
    :align: center
-   :width: 800px
+   :width: 800
 
 Once the trigger and signal generator are configured correctly, open a new *Plot* window, enable all channels, enter the number of samples required and perform a capture. Save the data to a ``.csv`` file if you need to perform additional analysis.
 
 .. note::
 
-   When using SPI offloading for high-speed data capture, there must always be at least 2 voltage channels enabled, even if you only want to measure one signal. This is due to a technical limitation of how the Advanced Sequencer on the ADC works.
+   When using SPI offloading for high-speed data capture, there must always be
+   at least 2 voltage channels enabled, even if you only want to measure one
+   signal. This is due to a technical limitation of how the Advanced Sequencer
+   on the ADC works.
 
    
-   If only one voltage channel is enabled, the capture will fail to start. And to capture the temperature channel, 2 voltage channels plus the temperature channel have to be enabled.
+   If only one voltage channel is enabled, the capture will fail to start. And
+   to capture the temperature channel, 2 voltage channels plus the temperature
+   channel have to be enabled.
    
    This restriction does not apply when not using SPI offloading support.
-
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/osc-capture-ad4696.png
    :alt: Capturing 4 channels on AD4696
    :align: center
-   :width: 800px
+   :width: 800
 
 Voltage input calibration
 """""""""""""""""""""""""
@@ -501,21 +528,21 @@ First, to calibrate the offset, generate a 0 V signal and use the *Plot* window 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/osc-plot-calibration-before.png
    :alt: Capturing voltage3 for calibration (plus one extra channel because of minimum of 2 channels need to be enabled)
    :align: center
-   :width: 800px
+   :width: 800
 
 As seen in the screenshot, the white line at the bottom is not quite at 0 (the dashed yellow line). We can save the plot as a \`.csv\` (*File > Save as...*) and open it in your favorite spreadsheet program to calculate the average of the samples.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/calc-calibbias-before.png
    :alt: Averaging samples
    :align: center
-   :width: 400px
+   :width: 400
 
 We need to apply a calibration offset to correct for this error since we should be reading an average of close to 0. So we can enter this number in the ``calibbias`` attribute to apply the correction.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/osc-debug-voltage3-calibbias.png
    :alt: Entering calibbias attribute value
    :align: center
-   :width: 600px
+   :width: 600
 
 After writing, this value will be rounded to the nearest 0.25 V since that is the step reported by the ``in_voltage3_calibbias_available`` attribute.
 
@@ -524,20 +551,20 @@ Now we can perform the measurement and calculate the average again.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/osc-plot-calibration-after.png
    :alt: Capturing voltage3 for calibration verification
    :align: center
-   :width: 800px
+   :width: 800
 
 This time, we can see that the white line exactly lines up with 0.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/calc-calbbias-after.png
    :alt: Averaging samples
    :align: center
-   :width: 400px
+   :width: 400
 
 And the result of the average is very close to 0 now.
 
 After calibrating the offset, a similar procedure can be done to calibrate the scale using the ``in_voltage3_calibgain`` attribute.
 
 .. |Scopy configured to generate constant 3.5 V signal with 2.5 V common mode signal| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/scopy-3.5v-const-2.5v-common-mode.png
-   :width: 800px
+   :width: 800
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/osc-dmm-ad4696-voltage0-3.5v.png
-   :width: 600px
+   :width: 600

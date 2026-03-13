@@ -26,9 +26,14 @@ The Newton-Raphson iteration is performed according to the equation:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/divisionpic2.png
    :alt: divisionpic2.png
 
-This block lets you select the precision of the algorithm, whether to compute 3 or 4 iterations. There's a tradeoff between number of instructions and accuracy of computation for divisors (values of pin 2) less than 0.1. This means simply that fewer iterations are not as precise as more, but the more iterations the more instructions are entailed, with less room for programming the current DSP.
+This block lets you select the precision of the algorithm, whether to compute 3
+or 4 iterations. There's a tradeoff between number of instructions and accuracy
+of computation for divisors (values of pin 2) less than 0.1. This means simply
+that fewer iterations are not as precise as more, but the more iterations the
+more instructions are entailed, with less room for programming the current DSP.
 
-Below are error graphs for the 3- (below top) and 4-iteration (below bottom) algorithms, showing a difference of approximately two orders of magnitude:
+Below are error graphs for the 3- (below top) and 4-iteration (below bottom)
+algorithms, showing a difference of approximately two orders of magnitude:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/divisionpic3.png
    :alt: divisionpic3.png

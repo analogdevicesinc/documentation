@@ -1,4 +1,5 @@
-This page captures the capabilities of ADRV904x compared with the previous generation integrated DFE transceiver AD9029.
+This page captures the capabilities of ADRV904x compared with the previous
+generation integrated DFE transceiver AD9029.
 
 +---------------------------------+-----------------------------------------------------+--------------------------------------------------------------+
 | **Specification**               | **ADRV9029**                                        | **ADRV904x**                                                 |

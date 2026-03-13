@@ -5,19 +5,34 @@ AD9081-FMCA-EBZ / AD9082-FMCA-EBZ (Single MxFE) HDL Reference Design
 
    We are in the process of migrating our documentation to GitHub IO. Please check the following link for updated information regarding the HDL project: https://analogdevicesinc.github.io/hdl/projects/ad9081_fmca_ebz/index.html.
 
-
 Functional Overview
 -------------------
 
-The AD9081-FMCA-EBZ / AD9082-FMCA-EBZ reference design is a processor based (e.g. Microblaze) embedded system. The design consists from a receive and a transmit chain.
+The AD9081-FMCA-EBZ / AD9082-FMCA-EBZ reference design is a processor based
+(e.g. Microblaze) embedded system. The design consists from a receive and a
+transmit chain.
 
-The receive chain transports the captured samples from ADC to the system memory (DDR). Before transferring the data to DDR the samples are stored in a buffer implemented on block rams from the FPGA fabric (util_adc_fifo). The space allocated in the buffer for each channel depends on the number of currently active channels. It goes up to M x 64k samples if a single channel is selected or 64k samples per channel if all channels are selected.
+The receive chain transports the captured samples from ADC to the system memory
+(DDR). Before transferring the data to DDR the samples are stored in a buffer
+implemented on block rams from the FPGA fabric (util_adc_fifo). The space
+allocated in the buffer for each channel depends on the number of currently
+active channels. It goes up to M x 64k samples if a single channel is selected
+or 64k samples per channel if all channels are selected.
 
-The transmit chain transports samples from the system memory to the DAC devices. Before streaming out the data to the DAC through the JESD link the samples first are loaded into a buffer (util_dac_fifo) which will cyclically stream the samples at the tx_device_clk data rate. The space allocated in the transmit buffer for each channel depends on the number of currently active channels. It goes up to M x 64k samples if a single channel is selected or 64k samples per channel if all channels are selected.
+The transmit chain transports samples from the system memory to the DAC devices.
+Before streaming out the data to the DAC through the JESD link the samples first
+are loaded into a buffer (util_dac_fifo) which will cyclically stream the
+samples at the tx_device_clk data rate. The space allocated in the transmit
+buffer for each channel depends on the number of currently active channels. It
+goes up to M x 64k samples if a single channel is selected or 64k samples per
+channel if all channels are selected.
 
-All cores from the receive and transmit chains are programmable through an AXI-Lite interface.
+All cores from the receive and transmit chains are programmable through an
+AXI-Lite interface.
 
-The transmit and receive chains can operate at different data rates having separate rx_device_clk/tx_device_clk and corresponding lane rates but must share the same reference clock.
+The transmit and receive chains can operate at different data rates having
+separate rx_device_clk/tx_device_clk and corresponding lane rates but must share
+the same reference clock.
 
 Board setup
 -----------
@@ -28,9 +43,9 @@ Board setup
 
    
    -  In order to avoid using an external clock source and fully rely on the HMC7044 clock chip,*\* rotate the C6D/C4D caps in C5D/C3D position*\* (Please note: In the latest version of the board, this is now the default configuration, so this configuration step might not be needed anymore)
-   -  If LEDS V1P0_LED and VINT_LED are not on please \*\* depopulate R22M and populate R2M*\*
+   -  If LEDS V1P0_LED and VINT_LED are not on please \*\* depopulate R22M and
+      populate R2M*\*
    
-
 
 HDL source code
 ---------------
@@ -43,7 +58,6 @@ HDL source code
    
    -  :git-hdl:`projects/ad9081_fmca_ebz`
    
-
 
 Supported Carriers
 ~~~~~~~~~~~~~~~~~~
@@ -62,7 +76,8 @@ Useful links
 Block design
 ------------
 
-The block design supports parameters and scales based on it as shown on the below two examples.
+The block design supports parameters and scales based on it as shown on the
+below two examples.
 
 The parameters for Rx or Tx links can be changed from the system_project.tcl :
 
@@ -160,7 +175,8 @@ Example block design for Single Link; M=4; L=8;
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_204b_m4l8.svg
    :align: center
 
-The Rx links are set for full bandwidth mode and operate with the following parameters:
+The Rx links are set for full bandwidth mode and operate with the following
+parameters:
 
 -  Rx Deframer parameters: L=8, M=4, F=1, S=1, N’=16, N = 16 (Quick Config 0x12)
 -  Sample Rate : 1550 MSPS
@@ -170,7 +186,8 @@ The Rx links are set for full bandwidth mode and operate with the following para
 -  JESD204B Lane Rate – 15.5Gbps
 -  QPLL0
 
-The Tx links are set for full bandwidth mode and operate with the following parameters:
+The Tx links are set for full bandwidth mode and operate with the following
+parameters:
 
 -  Tx Framer parameters: L=8, M=4, F=1, S=1, N’=16, N = 16 (Quick Config 0x11)
 -  Sample Rate : 1550 MSPS
@@ -183,8 +200,8 @@ The Tx links are set for full bandwidth mode and operate with the following para
 Example block design for Single Link; M=2; L=8; JESD204C
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Observation: In 2019_R2 release the Xilinx JESD Physical layer IP Core is used, however in newer versions it is replaced with ADI's util_adxcvr IP core.
-
+Observation: In 2019_R2 release the Xilinx JESD Physical layer IP Core is used,
+however in newer versions it is replaced with ADI's util_adxcvr IP core.
 
 |image1|
 
@@ -210,7 +227,6 @@ Observation: In 2019_R2 release the Xilinx JESD Physical layer IP Core is used, 
            TX_JESD_NP=8
    
 
-
 The Rx link is operating with the following parameters:
 
 -  Rx Deframer parameters: L=8, M=2, F=1, S=2, N’=16, N=16 (Quick Config 0x13)
@@ -234,7 +250,8 @@ The Tx link is operating with the following parameters:
 Clock sources
 -------------
 
-The clock sources depend on the in use carrier and are depicted on the below diagrams:
+The clock sources depend on the in use carrier and are depicted on the below
+diagrams:
 
 ZCU102
 ~~~~~~
@@ -254,7 +271,9 @@ Software considerations
 ADC - crossbar config
 ~~~~~~~~~~~~~~~~~~~~~
 
-Due physical constraints Rx lanes are reordered as described in the following table. e.g physical lane 2 from ADC connects to logical lane 7 from the FPGA. Therefore the crossbar from the device must be set accordingly.
+Due physical constraints Rx lanes are reordered as described in the following
+table. e.g physical lane 2 from ADC connects to logical lane 7 from the FPGA.
+Therefore the crossbar from the device must be set accordingly.
 
 ============ ===========================
 ADC phy Lane FPGA Rx lane / Logical Lane
@@ -272,7 +291,9 @@ ADC phy Lane FPGA Rx lane / Logical Lane
 DAC - crossbar config
 ~~~~~~~~~~~~~~~~~~~~~
 
-Due physical constraints Tx lanes are reordered as described in the following table: e.g physical lane 2 from DAC connects to logical lane 7 from the FPGA. Therefore the crossbar from the device must be set accordingly.
+Due physical constraints Tx lanes are reordered as described in the following
+table: e.g physical lane 2 from DAC connects to logical lane 7 from the FPGA.
+Therefore the crossbar from the device must be set accordingly.
 
 ============ ===========================
 DAC phy Lane FPGA Tx lane / Logical Lane
@@ -343,7 +364,6 @@ Software support
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
-
 Useful links
 ------------
 
@@ -399,6 +419,5 @@ Software support
 ----------------
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_204c_m2l8.svg

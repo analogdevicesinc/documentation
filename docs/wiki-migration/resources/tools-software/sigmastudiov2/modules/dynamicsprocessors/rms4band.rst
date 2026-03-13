@@ -12,7 +12,12 @@ RMS 4 Band Compressor
 Description
 ===========
 
-The Standard Independent RMS Compressor is a stereo compressor that allows direct control over threshold and ratio. In the pop-up GUI, graphical controls are given for crossover filter settings, compressor curve table settings, threshold, ratio, and time constants. Also there are visual indicators showing input, output, and compression levels. The detection signal used for this RMS compressor is based on the sum of Left and Right channels.
+The Standard Independent RMS Compressor is a stereo compressor that allows
+direct control over threshold and ratio. In the pop-up GUI, graphical controls
+are given for crossover filter settings, compressor curve table settings,
+threshold, ratio, and time constants. Also there are visual indicators showing
+input, output, and compression levels. The detection signal used for this RMS
+compressor is based on the sum of Left and Right channels.
 
 Targets Supported
 =================
@@ -43,7 +48,6 @@ Name   Type  Description
 ====== ===== =================
 Output Audio Compressor Output
 ====== ===== =================
-
 
 | ===== Configurable Parameters =====
 

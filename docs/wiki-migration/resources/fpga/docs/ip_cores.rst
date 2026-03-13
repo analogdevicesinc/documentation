@@ -5,7 +5,6 @@ ADI IP cores
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest guide at https://analogdevicesinc.github.io/hdl/user_guide/ip_cores.html\
 
-
 Here can be found documentations of all the available ADI IP cores.
 
 Frameworks

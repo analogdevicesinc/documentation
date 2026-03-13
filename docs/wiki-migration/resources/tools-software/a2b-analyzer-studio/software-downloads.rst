@@ -45,20 +45,20 @@ Released: July 2025
 For A\ :sup:`2`\ B Bus Analyzer downloads see :doc:`A2B Bus Analyzer Software Downloads </wiki-migration/resources/tools-software/a2b-bus-analyzer/software-downloads>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20

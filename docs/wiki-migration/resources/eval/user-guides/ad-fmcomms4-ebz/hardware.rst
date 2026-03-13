@@ -26,7 +26,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 I/O Voltage
 -----------
 
@@ -36,7 +35,7 @@ Picture and Main components
 ---------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/fmcomms2_locations.png
-   :width: 600px
+   :width: 600
 
 Layers
 ------
@@ -92,4 +91,4 @@ Design Cross Section
 +---------------+------------+----------+-----------------+-----------------------+---------------------+--------------+--------+-------------+
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/fmcomms2c_layers.png
-   :width: 600px
+   :width: 600

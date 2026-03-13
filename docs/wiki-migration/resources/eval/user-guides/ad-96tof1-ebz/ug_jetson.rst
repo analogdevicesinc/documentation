@@ -37,17 +37,17 @@ Power on sequence
 -  Connect the camera cable between the Jetson Nano and the P1 connector of the ToF board
 -  Connect a USB mouse and keyboard to the Jetson
 -  connect the 5V power supply to the camera board and set the camera power switch S2 to on. Once the camera board is powered up the DS1 LED will turn on
--  connect the 5V power supply to the Jetson Nano. Once power is connected to the Jetson the system will boot the Linux OS from the SD card.
+-  connect the 5V power supply to the Jetson Nano. Once power is connected to
+   the Jetson the system will boot the Linux OS from the SD card.
 
 .. important::
 
    Password for "analog" user is "analog". This user has sudo rights
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/jetson_tof.jpg
    :alt: Jetson Nano connections rev. C
    :align: center
-   :width: 400px
+   :width: 400
 
 Power off sequence
 ~~~~~~~~~~~~~~~~~~
@@ -61,13 +61,23 @@ Running the evaluation application
 
 :git-aditof_sdk:`This example <examples/aditof-demo>` demonstrates how to capture data from the TOF system on the Nvidia jetson and display it using OpenCV.
 
-Once Linux boots you'll see on the HDMI monitor the Linux desktop and on the top left corner a shortcut to the evaluation application. Double clicking on the icon will start the evaluation application. A console window will open to show the application's status and, after a few seconds, the evaluation application GUI will be displayed.
+Once Linux boots you'll see on the HDMI monitor the Linux desktop and on the top
+left corner a shortcut to the evaluation application. Double clicking on the
+icon will start the evaluation application. A console window will open to show
+the application's status and, after a few seconds, the evaluation application
+GUI will be displayed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/aditof_demo.png
 
-When starting the application, a terminal window will open to display status messages (also warning and error messages, in case there are any issues). Shorty the main window will show up.
+When starting the application, a terminal window will open to display status
+messages (also warning and error messages, in case there are any issues). Shorty
+the main window will show up.
 
-The evaluation application allows to do live streaming of depth and IR data as well as recording the depth and IR data and playing back from a file. The depth data is displayed as a color map ranging from warm to cold colors as the distance from the camera increases. A point in the middle of the depth image shows the distance in mm to the target.
+The evaluation application allows to do live streaming of depth and IR data as
+well as recording the depth and IR data and playing back from a file. The depth
+data is displayed as a color map ranging from warm to cold colors as the
+distance from the camera increases. A point in the middle of the depth image
+shows the distance in mm to the target.
 
 There are 3 operating modes that determine the range of the system:
 
@@ -75,33 +85,46 @@ There are 3 operating modes that determine the range of the system:
 -  Medium - 30cm to 4.5m
 -  Far - 3m to 6m
 
-When in a certain operating mode the system will measure distances outside of the mode's range but those will not be accurate.
+When in a certain operating mode the system will measure distances outside of
+the mode's range but those will not be accurate.
 
-The evaluation application also displays the temperature in deg C of the camera (AFE) and laser boards as read from the temperature sensors installed on each board.
+The evaluation application also displays the temperature in deg C of the camera
+(AFE) and laser boards as read from the temperature sensors installed on each
+board.
 
-The framerate at which data is acquired from the system is constantly updated on the GUI. The camera board outputs data at 30 frames per second (fps), but due to USB connection limitations, the host PC acquires the frames at a lower rate.
+The framerate at which data is acquired from the system is constantly updated on
+the GUI. The camera board outputs data at 30 frames per second (fps), but due to
+USB connection limitations, the host PC acquires the frames at a lower rate.
 
 Enabling the point cloud display in aditof-demo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  The demo application has the capability to display a point cloud image if it detects an OpenCV module called viz.
+-  The demo application has the capability to display a point cloud image if it
+   detects an OpenCV module called viz.
 
 Unfortunately OpenCV does not provide binaries for this module so a manual build is needed. The steps required to install OpenCV and include it in the project are presented here: :git-aditof_sdk:`Enable Point Cloud Aditof-Demo <doc/linux/build_instructions.md#enabling-the-point-cloud-display-in-aditof-demo>`
 
--  If aditof-demo finds all the OpenCV required modules a button in the interface will allow you to display the point cloud. By toggling the button a separate window will appear.
+-  If aditof-demo finds all the OpenCV required modules a button in the
+   interface will allow you to display the point cloud. By toggling the button a
+   separate window will appear.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/aditof_demo_pointcloud.png
    :alt: aditof-demo
    :align: center
-   :width: 800px
+   :width: 800
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
 -  Linux does not boot
 
-   -  The SD card is corrupted and this prevents the system from booting. Reflash the SD card or check generated devicetree or kernel image
+   -  The SD card is corrupted and this prevents the system from booting.
+      Reflash the SD card or check generated devicetree or kernel image
 
 -  The demo application hangs after closing the main window
 
-   -  Due to some limitations the application always hangs if it is closed using the regular X button from the window top bar (title bar). To avoid this unpleasant hang, we've made available a second X button in the top right corner right above the title bar that can be used to safely close the demo application. We hope this to be a temporary workaround.
+   -  Due to some limitations the application always hangs if it is closed using
+      the regular X button from the window top bar (title bar). To avoid this
+      unpleasant hang, we've made available a second X button in the top right
+      corner right above the title bar that can be used to safely close the demo
+      application. We hope this to be a temporary workaround.

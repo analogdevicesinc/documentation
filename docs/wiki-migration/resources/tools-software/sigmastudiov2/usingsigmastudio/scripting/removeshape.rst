@@ -3,7 +3,9 @@
 Remove Shape
 ============
 
-This action allows the user to remove/delete a given element or plugin from the parent canvas or schematic page specified. The function call takes in 2 arguments. This API returns the SSPResult type.
+This action allows the user to remove/delete a given element or plugin from the
+parent canvas or schematic page specified. The function call takes in 2
+arguments. This API returns the SSPResult type.
 
 API
 ---
@@ -21,7 +23,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the RemoveShape action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the RemoveShape
+action.
 
 ::
 

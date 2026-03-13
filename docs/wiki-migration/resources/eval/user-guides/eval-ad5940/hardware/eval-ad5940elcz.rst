@@ -4,7 +4,8 @@ AD5940 Electrochemical Shield User Guide
 Introduction
 ------------
 
-The EVAL-AD5940ELCZ shield was designed specifically for carrying out electrochemical measurements. These include:
+The EVAL-AD5940ELCZ shield was designed specifically for carrying out
+electrochemical measurements. These include:
 
 -  Measurements on a dummy RC sensor
 -  Electrochemical Gas Sensing
@@ -16,19 +17,21 @@ The EVAL-AD5940ELCZ shield was designed specifically for carrying out electroche
 
 -  General electrochemical measurements through cables provided
 
-The platform is an Arduino form factor that can be used with any Arduino form-factor base board. This section describes the features of the evaluation board and how to use it.
-
+The platform is an Arduino form factor that can be used with any Arduino
+form-factor base board. This section describes the features of the evaluation
+board and how to use it.
 
 |image1|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/hardware/elcz_block_diagram.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Connectors and Jumpers
 ----------------------
 
-All the connectors and their default configurations are described in the table below.
+All the connectors and their default configurations are described in the table
+below.
 
 +------------------------+------------------------------------------+------------------------------------------------------+
 | Connector              | Jmpr Position.                           | Description                                          |
@@ -97,7 +100,10 @@ All the connectors and their default configurations are described in the table b
 USB Connector and Cable
 -----------------------
 
-The USB connector provides an interface to connected the provided USB to Crocodile cable to the AD5940. This USB connector is only intended to be used in conjunction with the provided USB to crocodile cable. No other USB cable should be ever be connected.
+The USB connector provides an interface to connected the provided USB to
+Crocodile cable to the AD5940. This USB connector is only intended to be used in
+conjunction with the provided USB to crocodile cable. No other USB cable should
+be ever be connected.
 
 The following table shows which color lead corresponds to which input:
 
@@ -110,22 +116,31 @@ Green       Working Electrode      USB_3
 Black       Connected to DE0 input USB_4
 =========== ====================== ===================
 
-The image below shows the crocodile connected to the EVAL-AD5940ELCZ. A dummy sensor consisting of a Resistor in parallel with a capacitor is connected. The counter and reference connectors are connected to one end and the working electrode is connected to the other end.
-
+The image below shows the crocodile connected to the EVAL-AD5940ELCZ. A dummy
+sensor consisting of a Resistor in parallel with a capacitor is connected. The
+counter and reference connectors are connected to one end and the working
+electrode is connected to the other end.
 
 |image2|
 
-Note, the USB to crocodile cable is intended for rapid prototyping. There is a parasitic resistance and capacitance associated with it which may effect measurement accuracy. This is especially through for high frequency impedance measurements.
+Note, the USB to crocodile cable is intended for rapid prototyping. There is a
+parasitic resistance and capacitance associated with it which may effect
+measurement accuracy. This is especially through for high frequency impedance
+measurements.
 
 EC Gas Connector
 ----------------
 
-M1 is an Electrochemical gas sensor socket. Standard EC gas sensors can be connected to perform gas sensor measurements. When measuring a Gas sensor ensure JP9, JP10 and JP11 are switched to position A.
+M1 is an Electrochemical gas sensor socket. Standard EC gas sensors can be
+connected to perform gas sensor measurements. When measuring a Gas sensor ensure
+JP9, JP10 and JP11 are switched to position A.
 
 BNC Connector
 -------------
 
-The BNC connector is connected to the AD5940 via LTC6078 amplifier. This amplifier can be used with high impedance sensor's such as pH sensors and for water conductivity measurements.
+The BNC connector is connected to the AD5940 via LTC6078 amplifier. This
+amplifier can be used with high impedance sensor's such as pH sensors and for
+water conductivity measurements.
 
 Schematics, PCB Layout, Bill of Materials
 -----------------------------------------
@@ -142,8 +157,7 @@ Schematics, PCB Layout, Bill of Materials
    -  `Fabrication Files (zip) <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/hardware/eval-ad5940elcz_fabriaction.zip>`_
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/hardware/eval-ad5940elcz.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/hardware/ad5940_crocodile.jpg
-   :width: 600px
+   :width: 600

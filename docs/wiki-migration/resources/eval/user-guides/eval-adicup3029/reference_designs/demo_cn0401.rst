@@ -10,15 +10,20 @@ The **ADuCM3029_demo_cn0401** project uses the **EVAL-ADM3055E-ARDZ** to provide
 
 The node is at first in low power mode by putting the CAN controller and transceiver to standby mode. The user can then issue a command to transmit an ASCII message on the bus. the message is repeated for 5 seconds or until it is acknowledged by another node, then the transmitting node goes to standby. If the system receives a message, particularly the slower baud rate arbitration phase, it wakes up, receives the message and displays it on the CLI terminal, then goes back to standby. A node not connected to a CAN bus can also run a self-test routine on the command of the user, in which it transmits and receives a message in loopback mode and displays a PASS of FAIL message. The initial baud rate is 500KHz for the arbitration phase and 2MHz for the data phase and the application acknowledges messages with the **Standard ID (SID)** of 0x300. The **SID** can be changed by user commands.
 
-The application is controlled by the user with a CLI implemented using the serial UART core in the ADuCM3029 controller. The CLI is displayed on a connected PC using a serial terminal connection.
+The application is controlled by the user with a CLI implemented using the
+serial UART core in the ADuCM3029 controller. The CLI is displayed on a
+connected PC using a serial terminal connection.
 
-The program is divided in 2 parts: the setup part in which the present module is discovered and the main process.
-
+The program is divided in 2 parts: the setup part in which the present module is
+discovered and the main process.
 
 |Main flow chart|
 
-To replicate the CAN FD bus described in the example both boards need to be connected to each other via the P1 or P4 connectors on the board and each in turn connected to the Arduino form factor headers of the ADICUP3029. Then each ADICUP3029 needs to be connected to the PC via USB to provide serial terminal CLI interface for each node.
-
+To replicate the CAN FD bus described in the example both boards need to be
+connected to each other via the P1 or P4 connectors on the board and each in
+turn connected to the Arduino form factor headers of the ADICUP3029. Then each
+ADICUP3029 needs to be connected to the PC via USB to provide serial terminal
+CLI interface for each node.
 
 |image1|
 
@@ -37,8 +42,8 @@ The following is a list of items needed in order to replicate this demo.
 
 .. note::
 
-   The circuit might need an external power supply of 5V to run in some circumstances.
-
+   The circuit might need an external power supply of 5V to run in some
+   circumstances.
 
 -  Software
 
@@ -63,12 +68,16 @@ Setting up the Hardware
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_bus_connection.jpg
    :align: center
 
--  Connect a micro-USB cable to P10 connector of each of the the EVAL-ADICUP3029 boards and connect them to a computer.
+-  Connect a micro-USB cable to P10 connector of each of the the EVAL-ADICUP3029
+   boards and connect them to a computer.
 
 Configuring the Software
 ------------------------
 
-Most of the configuration parameters can be found in the CAN controller API module. The CAN controller API will instantiate a handler that will determine the initial configuration of the node. The handler is instantiated by the initialization structure with the following form:
+Most of the configuration parameters can be found in the CAN controller API
+module. The CAN controller API will instantiate a handler that will determine
+the initial configuration of the node. The handler is instantiated by the
+initialization structure with the following form:
 
 ::
 
@@ -101,7 +110,8 @@ Most of the configuration parameters can be found in the CAN controller API modu
        enum can_ctrl_ssp_mode ssp_mode;
    };
 
-The following is a non-exhaustive list that contains the most important parameters and their values:
+The following is a non-exhaustive list that contains the most important
+parameters and their values:
 
 -  **can_dbt** - Data bit rate; values are contained into the following enum:
 
@@ -150,8 +160,6 @@ These parameters can be changed in the **can_ctrl_get_config** function from the
 
 Outputting Data
 ---------------
-
-
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
@@ -228,8 +236,6 @@ preferences.
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
 
-
-
 Available commands
 ~~~~~~~~~~~~~~~~~~
 
@@ -256,7 +262,9 @@ Typing **help** or **h** after initial calibration sequence will display the lis
 +------------------------+-----------------+----------------------------------------------------------------+
 
 -  For the "h", "cg" and "test" commands press Enter without inserting any space afterwards.
--  For the "ct" and "css" commands, to invoke in application instructions, write just the command without parameters, insert a space afterwards and press Enter.
+-  For the "ct" and "css" commands, to invoke in application instructions, write
+   just the command without parameters, insert a space afterwards and press
+   Enter.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_terminal_example.png
    :align: center
@@ -264,14 +272,19 @@ Typing **help** or **h** after initial calibration sequence will display the lis
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0401.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0401.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cn0401** can be found here:
 
@@ -287,7 +300,6 @@ The software for the **ADuCM3029_demo_cn0401** can be found here:
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0401 Source Code <projects/ADuCM3029_demo_cn0401>`
    
-
 
 How to use the Tools
 --------------------

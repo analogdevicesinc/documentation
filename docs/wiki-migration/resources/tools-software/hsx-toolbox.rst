@@ -15,7 +15,6 @@ The current stable Toolbox can be downloaded from the `High Speed Converter Tool
    -  `Analog Devices Inc, High Speed Converter Toolbox Release Page <https://github.com/analogdevicesinc/HighSpeedConverterToolbox/releases>`_
    
 
-
 To interface and stream data with hardware will require installation of :doc:`libiio </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/libiio>` and one of two Hardware Support Packages from MathWorks. The libiio library can be obtained on the `Github <http://github.com/analogdevicesinc/libiio>`_ page of the project.
 
 Libiio Installers
@@ -29,7 +28,6 @@ Libiio Installers
    -  `Installer for latest nighty build (Windows 32-bit / 64-bit) <https://ci.appveyor.com/project/analogdevicesinc/libiio/build/artifacts?branch=master>`_ (may be unstable / buggy)
    
 
-
 Installation of either:
 
 .. admonition:: Download
@@ -40,13 +38,13 @@ Installation of either:
    -  `Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio <https://www.mathworks.com/help/supportpkg/plutoradio/index.html>`_
    
 
-
 .. important::
 
    Skip the Zynq SDR or ADALM-PLUTO post-installation steps. They are not used. The FPGA carrier board SD card images are available on the :doc:`AD-FMC-SDCARD for Zynq & Altera SoC Quick Start Guide page </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 
-
-is required to use the streaming system objects or blocks. These support packages provide the necessary libIIO MATLAB bindings used by ADI's system objects.
+is required to use the streaming system objects or blocks. These support
+packages provide the necessary libIIO MATLAB bindings used by ADI's system
+objects.
 
 Useful Articles
 ---------------
@@ -61,7 +59,10 @@ Useful Articles
 Building the Toolbox Manually
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The toolbox can only be built under Linux or with Cygwin on a Windows platform. Conveniently, the entire process is automated with a Makefile located in the CI/scripts folder of the repository. The following is required on the system before the build process can be run:
+The toolbox can only be built under Linux or with Cygwin on a Windows platform.
+Conveniently, the entire process is automated with a Makefile located in the
+CI/scripts folder of the repository. The following is required on the system
+before the build process can be run:
 
 -  A supported MATLAB version installed in the default location (/usr/local/MATLAB)
 -  A supported Vivado version installed in the default location (/opt/Xilinx)
@@ -69,8 +70,8 @@ The toolbox can only be built under Linux or with Cygwin on a Windows platform. 
 
 .. warning::
 
-   You should only manually build the toolbox if you require a custom branch or no toolbox installer is available
-
+   You should only manually build the toolbox if you require a custom branch or
+   no toolbox installer is available
 
 First clone the repo and move into it:
 
@@ -104,4 +105,3 @@ Help & Support
    
    -  Questions? :ez:`Ask Help & Support <linux-device-drivers/linux-software-drivers>`.
    
-

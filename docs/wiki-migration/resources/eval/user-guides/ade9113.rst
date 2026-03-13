@@ -4,14 +4,28 @@ Layout Guidelines ADE9113 ADE9112 ADE9103
 Overview
 --------
 
-These layout guidelines are written as a comprehensive guide to all the considerations that must be taken when creating a PCB (Printed Circuit Board) layout with the ADE9112/ADE9113. The guidelines use standard PCB practices but if not followed, could lead to poor performance in certain EMC (Electromagnetic Compatibility) tests. The EMC testing results will be discussed along with the layout guidelines.
+These layout guidelines are written as a comprehensive guide to all the
+considerations that must be taken when creating a PCB (Printed Circuit Board)
+layout with the ADE9112/ADE9113. The guidelines use standard PCB practices but
+if not followed, could lead to poor performance in certain EMC (Electromagnetic
+Compatibility) tests. The EMC testing results will be discussed along with the
+layout guidelines.
 
-Testing was done on a board with four ADE9113s, meant to replicate a 3-phase system with isolated Neutral current measurement. Note that the EVAL-ADE9113KTZ does not have all of these layout recommendations implemented because there were constant improvements being made and updating the guidelines is the fastest way to communicate those changes. The test board also included an ADE9178 to perform the metrology calculations, specifically to get the energy pulse output for accuracy testing.
+Testing was done on a board with four ADE9113s, meant to replicate a 3-phase
+system with isolated Neutral current measurement. Note that the EVAL-ADE9113KTZ
+does not have all of these layout recommendations implemented because there were
+constant improvements being made and updating the guidelines is the fastest way
+to communicate those changes. The test board also included an ADE9178 to perform
+the metrology calculations, specifically to get the energy pulse output for
+accuracy testing.
 
 **Key Highlights:**
 
 -  A 4-layer PCB is required to pass CISPR 32 Class B emissions, and the guidelines will show the most area effective way to implement it.
--  An external oscillator (or clock from external source like a microcontroller) must be used in most cases to pass IEC 61000-4-4 EFT testing at ±4800 V, both 5 kHz and 100 kHz. In certain cases a crystal can be used and that is described in the guidelines.
+-  An external oscillator (or clock from external source like a microcontroller)
+   must be used in most cases to pass IEC 61000-4-4 EFT testing at ±4800 V, both
+   5 kHz and 100 kHz. In certain cases a crystal can be used and that is
+   described in the guidelines.
 
 **Testing Referenced in these Guidelines:**
 
@@ -34,41 +48,37 @@ The ADE9113/9112 SPI are connected is a Daisy Chain configuration. In this confi
 
    \ |image1|\
 
-
 .. container:: centeralign
 
    \ **Figure 1: Application Circuit Diagram for a 3 Phase meter with isolated neutral**\
 
-
 Emissions Plots Cispr32 3 Meter Chamber
 ---------------------------------------
 
-The emission plots were captured with a 2 layer PCB without internal PCB cap. This is the worst case emissions and over the class B limit. These emissions are tested with the ferrites in isopower on each channel as in Figure 1.
+The emission plots were captured with a 2 layer PCB without internal PCB cap.
+This is the worst case emissions and over the class B limit. These emissions are
+tested with the ferrites in isopower on each channel as in Figure 1.
 
 .. important::
 
-   \ It is not recommended to use a 2 Layer PCB. 4 layer PCB with an internal PCB cap is recommended.\
-
+   \ It is not recommended to use a 2 Layer PCB. 4 layer PCB with an internal
+   PCB cap is recommended.\
 
 .. container:: centeralign
 
    |image2|\
 
-
 .. container:: centeralign
 
    \ **Figure 2a: Horizontal emissions of isolated 4 ADE9113 without PCB capacitor with ferrites on VDD\ ISO and AGND\ ISO**\
-
 
 .. container:: centeralign
 
    |image3|\
 
-
 .. container:: centeralign
 
    \ **Figure 2b: Vertical emissions of isolated 4 ADE9113 without PCB capacitor with ferrites on VDD\ ISO and AGND\ ISO**\
-
 
 Layout Stackup for PCB Stitch CAP
 ---------------------------------
@@ -79,11 +89,9 @@ To improve the emissions an internal PCB cap is created using inner layers of th
 
    \ |stackup.jpg|\
 
-
 .. container:: centeralign
 
    \ **Figure 3: 4 Layer Stackup to construct PCB capacitor**\
-
 
 For more information see :adi:`AN-0971: Recommendations for Control of Radiated Emissions with isoPower Devices <en/resources/app-notes/an-0971.html>`
 
@@ -94,17 +102,17 @@ The ADE9178 Eval board has been modified to pass EFT with + pulses on PE(Protect
 
 If PE (Protective Earth) is not used: Changing the Isopower connections, removing the ferrites and connecting GND\ :sub:`ISO` to AGND and VDD\ :sub:`ISO` to VDD see Figure 4. Change the power and ground connection allow for a larger PCB cap area.
 
-Changes if PE(Protective Earth) is used: Replacing the Crystal with an oscillator or clock from the MCU in addition to if PE(Protective Earth) is not used.
+Changes if PE(Protective Earth) is used: Replacing the Crystal with an
+oscillator or clock from the MCU in addition to if PE(Protective Earth) is not
+used.
 
 .. container:: centeralign
 
    \ |rev_f_channel_a.jpg|\
 
-
 .. container:: centeralign
 
    \ **Figure 4: Schematic with oscillator connected to ADE9113\ A XTALIN**\
-
 
 Calculate the PCB cap area needed for layout see Figure 6, 15.2mm \* 28.7mm = 437.3 sqmm Cap area. Using FR4 dielectric K of 4.2 and thickness of 0.5mm = 32.5pf of PCB capacitance. This is the minimum and larger is better. The recommended PCB capacitance is approx. 50% of the cap recommended in the ADE7913/33 :adi:`AN-1332: Architecting a Direct, 3-Phase Energy Meter with Shunts Using the ADE7912/ADE7913 <en/resources/app-notes/an-1332.html>`
 
@@ -130,13 +138,11 @@ https://www.daycounter.com/Calculators/Plate-Capacitor-Calculator.phtml
 
 **Layer 4** No copper under isolated side
 
-
 |layer_1_and_2.png|
 
 .. container:: centeralign
 
    \ **Figure 5: Layer 2 (AGND_1) Shields layer 1(Signal) from layer 3 (Dgnd)**\
-
 
    |cap_area_optimized_layer_1_2_3.jpg|
 
@@ -144,43 +150,37 @@ https://www.daycounter.com/Calculators/Plate-Capacitor-Calculator.phtml
 
    \ **Figure 6: Capacitor is made up of the overlap of Layer 2 (AGND_1) and Layer 3(Dgnd)**\
 
-
    |cap_area_optimized_layer_2.jpg|
 
 .. container:: centeralign
 
    \ **Figure 7: Layer 2 Minimize Vias**\
 
-
 .. container:: centeralign
 
-   The VIAS at the GND pins are critical and should be close as possible to the ADE9113 pins shown in Figure 8.
-
+   The VIAS at the GND pins are critical and should be close as possible to the
+   ADE9113 pins shown in Figure 8.
 
 .. container:: centeralign
 
    |image4|\
 
-
 .. container:: centeralign
 
    \ **Figure 8: Critical VIA Placement**\
 
-
 .. container:: centeralign
 
-   Through VIAS should be limited. The through VIA keep out on layer 3 (Dgnd) around the via takes away for the PCB cap See Figure 9.
-
+   Through VIAS should be limited. The through VIA keep out on layer 3 (Dgnd)
+   around the via takes away for the PCB cap See Figure 9.
 
 .. container:: centeralign
 
    |image5|\
 
-
 .. container:: centeralign
 
    \ **Figure 9: Layer 3 keep out around vias reduces cap area**\
-
 
 Emissions with Recommended PCB Cap
 ----------------------------------
@@ -189,31 +189,25 @@ Emissions with Recommended PCB Cap
 
    \ **CISPR32 3 meter chamber emissions ADE9178 32.5pf of PCB cap per channel**\
 
-
 .. container:: centeralign
 
    |vertical_ets_3143b_cispr32_ed2.png|\
-
 
 .. container:: centeralign
 
    \ **Figure 10: Vertical Emissions Recommended Layout**\
 
-
 .. container:: centeralign
 
    |horizontal_ets_3143b_cispr32_ed2.png|\
-
 
 .. container:: centeralign
 
    \ **Figure 11: Horizontal Emissions Recommended Layout**\
 
-
 .. container:: centeralign
 
    \ **Table 2. Radiated Emissions, 32.5pF stitch cap, Vertical and Horizontal, 30MHz to 1GHz**\
-
 
 .. container:: center
 
@@ -281,7 +275,6 @@ Emissions with Recommended PCB Cap
    
    **
 
-
    
    | **Degrees** |
 
@@ -328,28 +321,27 @@ Emissions with Recommended PCB Cap
    +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/schematic.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cspr32_horizontal_no_cap.png
-   :width: 700px
+   :width: 700
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cspr32_vertical_no_cap.png
-   :width: 700px
+   :width: 700
 .. |stackup.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/stackup.jpg
-   :width: 800px
+   :width: 800
 .. |rev_f_channel_a.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rev_f_channel_a.jpg
-   :width: 800px
+   :width: 800
 .. |layer_1_and_2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/layer_1_and_2.png
-   :width: 400px
+   :width: 400
 .. |cap_area_optimized_layer_1_2_3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_1_2_3.jpg
-   :width: 400px
+   :width: 400
 .. |cap_area_optimized_layer_2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_2.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/critical_vias.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_3.jpg
-   :width: 400px
+   :width: 400
 .. |vertical_ets_3143b_cispr32_ed2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/vertical_ets_3143b_cispr32_ed2.png
-   :width: 700px
+   :width: 700
 .. |horizontal_ets_3143b_cispr32_ed2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/horizontal_ets_3143b_cispr32_ed2.png
-   :width: 700px
+   :width: 700

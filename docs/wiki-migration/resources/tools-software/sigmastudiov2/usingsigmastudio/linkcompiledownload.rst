@@ -3,7 +3,10 @@
 Compile, Download and Tune
 ==========================
 
-Before a complete design can be evaluated, it must be linked, compiled, and downloaded to the hardware. Once the design is downloaded to the target and is executing, it can be further tuned or controlled from SigmaStudio+. SigmaStudio+ allows the user to perform the following actions:
+Before a complete design can be evaluated, it must be linked, compiled, and
+downloaded to the hardware. Once the design is downloaded to the target and is
+executing, it can be further tuned or controlled from SigmaStudio+. SigmaStudio+
+allows the user to perform the following actions:
 
 -  **Link**
 -  **Link + Compile**
@@ -58,5 +61,9 @@ Application States
 
 .. tip::
 
-   Note: When working with evaluation hardware, any time you make edits in the schematic (e.g. add/remove blocks, add/remove wires, add/remove algorithms) you must recompile and download the project before these changes will take effect in the hardware program. If the application status bar does not indicate “ACTIVE”, the downloaded program and schematic design are out of sync
-
+   Note: When working with evaluation hardware, any time you make edits in the
+   schematic (e.g. add/remove blocks, add/remove wires, add/remove algorithms)
+   you must recompile and download the project before these changes will take
+   effect in the hardware program. If the application status bar does not
+   indicate “ACTIVE”, the downloaded program and schematic design are out of
+   sync

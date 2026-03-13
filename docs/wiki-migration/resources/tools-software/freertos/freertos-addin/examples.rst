@@ -1,16 +1,23 @@
 FreeRTOS Add-In Examples
 ========================
 
-The FreeRTOS Add-In has several examples that have been created so that the user can easily get a feel for how FreeRTOS works, and how the Add-In is used to control the configuration parameters through the use of the User Interface.
+The FreeRTOS Add-In has several examples that have been created so that the user
+can easily get a feel for how FreeRTOS works, and how the Add-In is used to
+control the configuration parameters through the use of the User Interface.
 
-These examples are shipped separately from the FreeRTOS Add-In for now, with plans to fully integrate the examples with future releases.
+These examples are shipped separately from the FreeRTOS Add-In for now, with
+plans to fully integrate the examples with future releases.
 
 --------------
 
 Get the Hardware Ready
 ----------------------
 
-The Analog Devices FreeRTOS product supports a couple of reference development board from Analog Devices, including ADSP-SC589/ADSP-SC584/ADSP-SC573 EZ-Kit board, BF707 EZ-Kit board and ADZS-21569 EZ-Kit board. Depending on which software development tool you are using, different JTAG debug board are required.
+The Analog Devices FreeRTOS product supports a couple of reference development
+board from Analog Devices, including ADSP-SC589/ADSP-SC584/ADSP-SC573 EZ-Kit
+board, BF707 EZ-Kit board and ADZS-21569 EZ-Kit board. Depending on which
+software development tool you are using, different JTAG debug board are
+required.
 
 Below is a list of the hardware involved.
 
@@ -20,7 +27,8 @@ Below is a list of the hardware involved.
 
 \*\* Host PC: \*\*
 
-A mainstream configuration of Windows PC is required. Verify that your PC has these minimum requirements:
+A mainstream configuration of Windows PC is required. Verify that your PC has
+these minimum requirements:
 
 -  2 GHz single core processor; 3.3GHz dual core or better recommended
 -  4 GB RAM; 8GB or more recommended
@@ -38,8 +46,6 @@ You can get examples for FreeRTOS (with and without the Add-In) from `freertos-e
 
 References & External Links
 ---------------------------
-
-
 
 ; ** Processor Hardware Reference **
 : :adi:`ADSP-BF707 Hardware Reference Manual <en/products/adsp-bf707.html#product-documentation>`

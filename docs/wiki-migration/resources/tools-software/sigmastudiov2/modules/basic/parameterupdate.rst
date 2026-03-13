@@ -11,12 +11,21 @@ Param Update
 Description
 -----------
 
-The parameter update block allows user to update the module's parameter value dynamically. The selected parameters are updated with the value coming from the input pins
+The parameter update block allows user to update the module's parameter value
+dynamically. The selected parameters are updated with the value coming from the
+input pins
 
 Configuration
 -------------
 
-The selection of the parameter will be enabled only when the schematic compilation is completed successfully. The user can select the module for which the parameter needs to be updated. After selecting the module, the parameter within the module should be selected for which value should be updated. The value of the selected parameter will be updated with the given input value for each sample once the schematic is downloaded. User can also change the parameter selection when the schematic is downloaded. It will start updating the newly selected parameter once the parameter selection window is closed.
+The selection of the parameter will be enabled only when the schematic
+compilation is completed successfully. The user can select the module for which
+the parameter needs to be updated. After selecting the module, the parameter
+within the module should be selected for which value should be updated. The
+value of the selected parameter will be updated with the given input value for
+each sample once the schematic is downloaded. User can also change the parameter
+selection when the schematic is downloaded. It will start updating the newly
+selected parameter once the parameter selection window is closed.
 
 Targets Supported
 -----------------
@@ -26,7 +35,6 @@ Name         ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ============ ========== ================ ============= ================
 Param Update NA         NA               S             NA
 ============ ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -38,7 +46,6 @@ Name  Type    Description
 ===== ======= =============
 Input Control Input Channel
 ===== ======= =============
-
 
 | ===== Configurable Parameters =====
 

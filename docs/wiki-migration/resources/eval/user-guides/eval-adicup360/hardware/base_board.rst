@@ -7,10 +7,12 @@ The **EVAL-ADICUP360 base board** consists of two basic blocks:
 
 -  An on-board SWD interface, based on the OpenSDA platform, which is implemented with the **Freescale's К20DX128 microcontroller**. This block allows using a free Software Development Toolchain to program and debug the ADuCM360 microcontroller part.
 
-This page describes the hardware connectors, the jumpers and switches configuration options, the USB connectors, and links to download the schematics and the layout.
+This page describes the hardware connectors, the jumpers and switches
+configuration options, the USB connectors, and links to download the schematics
+and the layout.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/hw_rev1_1_art.png
-   :width: 600px
+   :width: 600
 
 Getting Started Video
 ---------------------
@@ -24,7 +26,7 @@ Connectors
 The following connectors are populated on the base board:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/hw_rev1_1_connectors.png
-   :width: 600px
+   :width: 600
 
 ::
 
@@ -212,7 +214,7 @@ Jumper Configuration
 There are **3 jumpers groups** on the EVAL-ADICUP360 base board:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/hw_rev1_1_jumpers.png
-   :width: 600px
+   :width: 600
 
 Jumper P12
 ~~~~~~~~~~
@@ -260,7 +262,7 @@ USB/Connector Multiplexer
 There are **4 switches** on the EVAL-ADICUP360 base board, which are used to multiplex pairs of pins **(P0.1/P0.2, and P0.6/P0.7)** to various different connectors on the board. Depending on how the pins are configured you may route them to the **USB ports**, use them for **SPI communication** or for **UART communication**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/hw_rev1_1_switches.png
-   :width: 600px
+   :width: 600
 
 Switches S1, S2, S3, S4
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -290,10 +292,13 @@ Most commonly used configurations are given in the table below. For any other mo
 Switch Schematic
 ~~~~~~~~~~~~~~~~
 
-Here is the schematic of the switching network, the switches allow to route the P0.1/P0.2 and P0.6/P0.7 signals to multiple connector depending how you want to configure the pins. Above are the common configurations, but for complete details please reference the diagram.
+Here is the schematic of the switching network, the switches allow to route the
+P0.1/P0.2 and P0.6/P0.7 signals to multiple connector depending how you want to
+configure the pins. Above are the common configurations, but for complete
+details please reference the diagram.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_schematic.png
-   :width: 1000px
+   :width: 1000
 
 Buttons
 -------
@@ -301,7 +306,7 @@ Buttons
 The EVAL-ADICUP360 base board provides two buttons **RESET** and **BOOT**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/hw_rev1_1_buttons.png
-   :width: 600px
+   :width: 600
 
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Button | Function                                                                                                                                                                                                                                                                                                                                              |
@@ -326,7 +331,6 @@ Schematics, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Software examples
 -----------------
 
@@ -337,56 +341,56 @@ Software examples
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/p12_close.png
-   :width: 32px
+   :width: 32
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/p12_close.png
-   :width: 32px
+   :width: 32
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/refnsel_1-2.png
-   :width: 39px
+   :width: 39
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/refnsel_2-3.png
-   :width: 39px
+   :width: 39
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j1-2.png
-   :width: 121px
+   :width: 121
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j1-2_1.png
-   :width: 121px
+   :width: 121
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j3-4.png
-   :width: 121px
+   :width: 121
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j3-4_1.png
-   :width: 121px
+   :width: 121
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j5.png
-   :width: 121px
+   :width: 121
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j5_1.png
-   :width: 121px
+   :width: 121
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j1-2.png
-   :width: 121px
+   :width: 121
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j1-2_1.png
-   :width: 121px
+   :width: 121
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j3-4.png
-   :width: 121px
+   :width: 121
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j3-4_1.png
-   :width: 121px
+   :width: 121
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j5.png
-   :width: 121px
+   :width: 121
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/j5_1.png
-   :width: 121px
+   :width: 121
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p1_2_user.png
-   :width: 128px
+   :width: 128
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p1_2_debug.png
-   :width: 128px
+   :width: 128
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p1_2_gpio.png
-   :width: 128px
+   :width: 128
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p6_7_user.png
-   :width: 128px
+   :width: 128
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p6_7_gpio.png
-   :width: 128px
+   :width: 128
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p1_2_user.png
-   :width: 128px
+   :width: 128
 .. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p1_2_debug.png
-   :width: 128px
+   :width: 128
 .. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p1_2_gpio.png
-   :width: 128px
+   :width: 128
 .. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p6_7_user.png
-   :width: 128px
+   :width: 128
 .. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/hardware/switch_p6_7_gpio.png
-   :width: 128px
+   :width: 128

@@ -7,7 +7,10 @@ The :adi:`ADG787` is a low voltage CMOS device that contains two independently s
 
 The :adi:`ADuM7234` is an isolated, half-bridge gate driver that employs Analog Devices’ iCoupler® technology to provide independent and isolated high-side and low-side outputs making it possible to use N-channel MOSFETs exclusively in the H-bridge. There are several benefits in using N-channel MOSFETs: N-channel MOSFETs typically have one third of the on resistance of P-channel MOSFETs and higher maximum current; they switch faster, thereby reducing power dissipation; and the rise time and fall time is symmetrical.
 
-The 4 A peak drive current of the ADuM7234 ensures that the power MOSFETs can switch on and off very fast, thereby minimizing the power dissipation in the H-bridge stage. The maximum drive current of the H-bridge in this circuit can be up to 85 A, which is limited by the maximum allowable MOSFET current.
+The 4 A peak drive current of the ADuM7234 ensures that the power MOSFETs can
+switch on and off very fast, thereby minimizing the power dissipation in the
+H-bridge stage. The maximum drive current of the H-bridge in this circuit can be
+up to 85 A, which is limited by the maximum allowable MOSFET current.
 
 The :adi:`ADuC7061` is a low power, ARM7 based precision analog microcontroller with integrated pulse width modulated (PWM) controllers that have outputs that can be configured to drive an H-bridge after suitable level translation and conditioning.
 
@@ -79,8 +82,9 @@ Software and Driver Installation
 
 .. note::
 
-   It is recommended that you install the CN0196 SDP Evaluation Software to the default directory path C:\\Program Files\\Analog Devices\\CN0196\\ and all National Instruments products to C:\\Program Files\\National Instruments\\
-
+   It is recommended that you install the CN0196 SDP Evaluation Software to the
+   default directory path C:\\Program Files\\Analog Devices\\CN0196\\ and all
+   National Instruments products to C:\\Program Files\\National Instruments\\
 
 -  Follow the on screen prompts to install the software
 
@@ -89,19 +93,24 @@ Software and Driver Installation
 Downloading Firmware to EVAL-ADuC7061-MKZ
 -----------------------------------------
 
--  Connect the EVAL-ADuC7061-MKZ to the PC using USB cable, then find the COM port assigned to this board in the Device Manager.
+-  Connect the EVAL-ADuC7061-MKZ to the PC using USB cable, then find the COM
+   port assigned to this board in the Device Manager.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/port.png
 
--  Open the software ”ARMWSD.exe” located in the ARMWSD folder, or C:\\Program Files\\Analog Devices\\CN0196\\ARMWSD\\ARMWSD.exe.
+-  Open the software ”ARMWSD.exe” located in the ARMWSD folder, or C:\\Program
+   Files\\Analog Devices\\CN0196\\ARMWSD\\ARMWSD.exe.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/arm.png
 
--  Click the Configure button, Go to Parts tab and select ADuC7061, go to Comms Tab and set the serial port according to the port number indicated on PC device manager and set the baud rate to 9600 as seen in below image.
+-  Click the Configure button, Go to Parts tab and select ADuC7061, go to Comms
+   Tab and set the serial port according to the port number indicated on PC
+   device manager and set the baud rate to 9600 as seen in below image.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/arm2.png
 
--  Change tab to Commands, set the Flash and Run selection according to the image below.
+-  Change tab to Commands, set the Flash and Run selection according to the
+   image below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/amr3.png
 
@@ -134,14 +143,15 @@ Description
 
    Pulse width should be less than half of the Pulse Interval
 
-
 -  **PWM Interval**: Sets the PWM interval up to 12.8ms depending on the configured PWM pulse width
 -  **Start/Stop**: Provides continuous and discontinues pulses
 -  **High Side Shot**: When this button is pressed, the PWM waveform will display the Voltage on the high side Mosfets Q1 and Q2
 -  **Low Side Shot**: When this button is pressed, the PWM waveform will display the Voltage on the low side Mosfets Q3 and Q4
 -  **Reset**: Resets all the configuration and hardware connection
 
-3. Displays the PWM waveform (V) vs Time(s) depending on the configuration set on the PWM controls 4. Displays the current status/activity being done in the software 5. Provides control to the following:
+3. Displays the PWM waveform (V) vs Time(s) depending on the configuration set
+   on the PWM controls 4. Displays the current status/activity being done in the
+   software 5. Provides control to the following:
 
 -  **VDD**: Controls the supply voltage up to 20V
 -  **Inductor**: Controls the inductor value up to 100mH to be used as a load
@@ -163,7 +173,6 @@ Schematic, PCB Layout, Bill of Materials
    -  PADS project
    
 
-
 Registration
 ------------
 
@@ -171,18 +180,17 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0196-EB1Z?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/2.1.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install1.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install2.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install3.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install4.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sofft1.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sofft2.png

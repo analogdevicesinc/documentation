@@ -14,12 +14,34 @@ Evaluation Boards
 Overview
 --------
 
-The EVAL-ADAS1000SDZ is a fully featured evaluation kit for the ADAS1000. The evaluation kit consists of an evaluation board kitted with 2 ADAS1000 devices capable of demonstrating ECG capture up to 12 leads. Included in the kit is a medical grade +5V wall adaptor with interchangeable worldwide wall plugs and a CD with user software for data capture and display. The software allows control of all ADAS1000 registers, ability to capture and display ECG data, respiration data, pace pulse detection and store data for offline processing. This evaluation board is provided for silicon evaluation purposes and is not designed to be connected directly to animal or human. This board operates in conjunction with the System Development Platform (SDP) or alternatively may be interfaced to directly via a dedicated serial interface connector (J4). The SDP controller board connects to the PC via USB 2.0. The evaluation board connects to the SDP controller board. The ADAS1000 evaluation board cannot be connected directly to the PC. The evaluation software running on the PC will communicate with the evaluation board through the SDP Controller board. The SDP Controller board is a separate list item in the ordering guide below (EVAL-SDP-CB1Z). If you have not previously purchased an SDP Controller board, please do so to ensure a full evaluation setup.
+The EVAL-ADAS1000SDZ is a fully featured evaluation kit for the ADAS1000. The
+evaluation kit consists of an evaluation board kitted with 2 ADAS1000 devices
+capable of demonstrating ECG capture up to 12 leads. Included in the kit is a
+medical grade +5V wall adaptor with interchangeable worldwide wall plugs and a
+CD with user software for data capture and display. The software allows control
+of all ADAS1000 registers, ability to capture and display ECG data, respiration
+data, pace pulse detection and store data for offline processing. This
+evaluation board is provided for silicon evaluation purposes and is not designed
+to be connected directly to animal or human. This board operates in conjunction
+with the System Development Platform (SDP) or alternatively may be interfaced to
+directly via a dedicated serial interface connector (J4). The SDP controller
+board connects to the PC via USB 2.0. The evaluation board connects to the SDP
+controller board. The ADAS1000 evaluation board cannot be connected directly to
+the PC. The evaluation software running on the PC will communicate with the
+evaluation board through the SDP Controller board. The SDP Controller board is a
+separate list item in the ordering guide below (EVAL-SDP-CB1Z). If you have not
+previously purchased an SDP Controller board, please do so to ensure a full
+evaluation setup.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adas1000ebz.png
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -31,9 +53,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the ADAS1000 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the ADAS1000 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the ADAS1000 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the ADAS1000 driver:
 
@@ -47,7 +73,6 @@ There are three functions which are called by the ADAS1000 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of ADAS1000 driver:
 
@@ -80,7 +105,8 @@ Downloads
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the ADAS1000 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the ADAS1000
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -96,7 +122,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-ADAS1000SDZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+An EVAL-ADAS1000SDZ board has to be interfaced with the Renesas Demonstration
+Kit (RDK) for RX62N:
 
 ::
 
@@ -122,10 +149,13 @@ The following examples are implemented in the reference project:
 -  Example on how to change the number of words in a frame;
 -  Example on how to configure device and start streaming ECG data at 2kHz rate with Leads off enabled, respiration enabled;
 -  Example on how to configure device and start streaming ECG data at 16kHz rate;
--  Example on how to configure device and start streaming ECG data at 128kHz rate.
+-  Example on how to configure device and start streaming ECG data at 128kHz
+   rate.
 
-The reference project also configures the 150Hz test tone Sinewave on each ECG channel, stores 1000 frames and sends data through the SCI port. The frames do not contain the Pace, Respiration Magnitude, Respiration Phase, Leads Off Status, GPIO and CRC words.
-
+The reference project also configures the 150Hz test tone Sinewave on each ECG
+channel, stores 1000 frames and sends data through the SCI port. The frames do
+not contain the Pace, Respiration Magnitude, Respiration Phase, Leads Off
+Status, GPIO and CRC words.
 
 |image1|
 
@@ -133,23 +163,18 @@ The reference project also configures the 150Hz test tone Sinewave on each ECG c
 
    The format of the data transferred through the SCI port.
 
-
 Software Project Setup
 ----------------------
-
 
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adas1000_data_format.png

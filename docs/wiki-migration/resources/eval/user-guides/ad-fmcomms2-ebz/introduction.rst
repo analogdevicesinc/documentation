@@ -3,11 +3,12 @@ Introduction to boards based on the AD9361/AD9363/AD9364
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361_plus_zed.png
    :align: right
-   :width: 300px
+   :width: 300
 
 The AD-FMCOMMS[2345]-EBZ and ARRADIO cards are a high-speed analog modules designed to showcase the :adi:`AD9361` or :adi:`AD9364`, a high performance, highly integrated RF agile transceiver intended for use in RF applications, such as 3G and 4G base station applications and software defined radios. Its programmability and wideband capability make it ideal for a broad range of transceiver applications. The device combines an RF front end with a flexible mixed-signal baseband section and integrated frequency synthesizers, simplifying design-in by providing a configurable digital interface to a processor or FPGA. The AD9361 and AD9364 chip operates in the 70MHz to 6GHz range, covering most licensed and unlicensed bands. The boards, due to discrete external components may have less performance on some of the RF input/output connectors (for example - the FMCOMMS2 and specific connectors on the FMCOMMS5 are specifically tuned to 2.4GHz). The AD9361 and AD9364 both supports channel bandwidths from less than 200kHz to 56MHz by both changing sample rate, and by changing digital filters, and decimation inside the device itself.
 
-The difference between the AD9361 (2 Rx, 2 Tx) and AD9364 (1 Rx, 1 Tx) is the number of channels. Software, HDL, pinout, etc - is all exactly the same.
+The difference between the AD9361 (2 Rx, 2 Tx) and AD9364 (1 Rx, 1 Tx) is the
+number of channels. Software, HDL, pinout, etc - is all exactly the same.
 
 Available Hardware
 ------------------
@@ -37,13 +38,20 @@ Available Hardware
 
 .. important::
 
-   While the AD9361 digital interface supports both LVDS and CMOS mode, all the FMCOMMS boards have been verified in LVDS mode only. Configuring the digital interface in CMOS mode is not tested nor supported on these platforms. This is due to the purposefully weak CMOS drivers (To keep the noise off the part as much as possible) that are part of the digital interface and the large capacitance of the FMC connector.
+   While the AD9361 digital interface supports both LVDS and CMOS mode, all the
+   FMCOMMS boards have been verified in LVDS mode only. Configuring the digital
+   interface in CMOS mode is not tested nor supported on these platforms. This
+   is due to the purposefully weak CMOS drivers (To keep the noise off the part
+   as much as possible) that are part of the digital interface and the large
+   capacitance of the FMC connector.
 
    
-   If you configure any board to work in CMOS mode, and it does not, this is expected. If it does work, it just means the combination of AD9361 board, AD9361, connectors, carrier layout and FPGA are barely working.
+   If you configure any board to work in CMOS mode, and it does not, this is
+   expected. If it does work, it just means the combination of AD9361 board,
+   AD9361, connectors, carrier layout and FPGA are barely working.
    
-   CMOS mode is known to work on platforms without connectors between the AD936x and the Digital BaseBande device (like PicoZed SDR).
-
+   CMOS mode is known to work on platforms without connectors between the AD936x
+   and the Digital BaseBande device (like PicoZed SDR).
 
 The `ARRADIO <https://wiki.analog.com/../arradio>`_ board, in simple terms, is just the AD9361 in a 2 x 2 RF configuration. Hence the features and capabilities of the device extends to the board. The board includes a narrow tuning range balun, which is performance optimized for 2.4GHz, and provides datasheet specifications. If you want a different range, you can change baluns (footprint compatible options are available). This board has an HSMC connector.
 
@@ -140,7 +148,8 @@ Once you have a working platform, you may be interested in investigating
 -  Review a real world example using the part (ADS-B) :adi:`Part 1 <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`, :adi:`Part 2 <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`, :adi:`Part 3 <library/analogDialogue/archives/49-11/four-step-sdr-03.html>` and :adi:`Part 4 <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
 -  Look at `FMCOMMS2 <https://wiki.analog.com/../ad-fmcomms2-ebz/hardware>`_, `FMCOMMS3 <https://wiki.analog.com/../ad-fmcomms3-ebz/hardware>`_, `FMCOMMS4 <https://wiki.analog.com/../ad-fmcomms4-ebz/hardware>`_, `FMCOMMS5 <https://wiki.analog.com/../ad-fmcomms5-ebz/hardware>`_ schematics and layout to see how to get the best performance in your hardware design.
 
-A detailed list of things that can be done with these boards, can be found in each board page:
+A detailed list of things that can be done with these boards, can be found in
+each board page:
 
 -  `ARRADIO <https://wiki.analog.com/../arradio>`_
 -  :doc:`ADALM-PLUTO </wiki-migration/university/tools/pluto>`

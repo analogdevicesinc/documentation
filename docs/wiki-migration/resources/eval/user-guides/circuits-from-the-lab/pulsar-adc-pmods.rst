@@ -5,9 +5,10 @@ These low power ADCs offer very high performance from 14-bits up to 18-bits with
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/pulsar_pmod.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
-The products which have PMOD boards associated with them can be found in the table below.
+The products which have PMOD boards associated with them can be found in the
+table below.
 
 +------------------------------------------------+------------+------------------+------------------------------+----------------------------------------------+--------------------------------------------------------------------+
 | Products                                       | Resolution | ADC Throughput\* | Input Stage                  | Driver Amplifier                             | PMOD Part Number                                                   |
@@ -45,55 +46,85 @@ The products which have PMOD boards associated with them can be found in the tab
 
 .. note::
 
-   \* The throughput of your PulSAR ADC will be limited to the SPI bus speed of your platform. For example, if you are using the SDP platform the max bus rate on the SPI is 30 MHz.
-
+   \* The throughput of your PulSAR ADC will be limited to the SPI bus speed of
+   your platform. For example, if you are using the SDP platform the max bus
+   rate on the SPI is 30 MHz.
 
 Hardware Setup
 --------------
 
-The PMOD board is small in size with dimensions approximately 1 inch in width by 3 inches in length. There are a few areas of the hardware I'd like to point out for you, in order to use the board.
+The PMOD board is small in size with dimensions approximately 1 inch in width by
+3 inches in length. There are a few areas of the hardware I'd like to point out
+for you, in order to use the board.
 
 Power Supply Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Typically, when using a PMOD board the power for the module comes directly from the host board it is connected to. The power is generally capable of providing up to 100 mA at 3.3V, and for complete power specifications please `click here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
-In the case of the high precision, successive approximation ADC's architecture, it was required to provide low noise external power supplies to obtain datasheet results. The ADC's are driven by precision amplifiers which are also optimized for noise and power. In order to enable those amplifiers to provide zero and full scale inputs to the ADC, power supplies above and below the ADC input range were needed.
+In the case of the high precision, successive approximation ADC's architecture,
+it was required to provide low noise external power supplies to obtain datasheet
+results. The ADC's are driven by precision amplifiers which are also optimized
+for noise and power. In order to enable those amplifiers to provide zero and
+full scale inputs to the ADC, power supplies above and below the ADC input range
+were needed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/pmod_power_supplies.png
    :align: center
-   :width: 500px
+   :width: 500
 
-With all these factors combined, the board was designed using external power supplies of -2.5V, GND (of course), and 7.5V. These supplies provide the power for the entire PMOD board, so even though power is coming in through the PMOD connector, it's not actually powering the components on the board.
+With all these factors combined, the board was designed using external power
+supplies of -2.5V, GND (of course), and 7.5V. These supplies provide the power
+for the entire PMOD board, so even though power is coming in through the PMOD
+connector, it's not actually powering the components on the board.
 
 Input Connectors
 ~~~~~~~~~~~~~~~~
 
-For the input signals coming into the PMOD board, SMB connectors were chosen to help minimize the noise at the input. There are two (2) SMB connectors per board, and thats because there are both positive(+) and negative(-) inputs to each converter. This will provide the user with the cleanest input signal possible, and fully utilize the resolution and speed of the converters.
+For the input signals coming into the PMOD board, SMB connectors were chosen to
+help minimize the noise at the input. There are two (2) SMB connectors per
+board, and thats because there are both positive(+) and negative(-) inputs to
+each converter. This will provide the user with the cleanest input signal
+possible, and fully utilize the resolution and speed of the converters.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/vin.png
    :align: center
-   :width: 500px
+   :width: 500
 
-Each of the converters also has a combination of single-ended inputs, differential inputs, or pseudo-differential inputs. So in order to determine the input style of your converter it is imperative to look at the datasheet of the device you are using. The datasheet of any device should always be followed before using it in an application or on a board.
+Each of the converters also has a combination of single-ended inputs,
+differential inputs, or pseudo-differential inputs. So in order to determine the
+input style of your converter it is imperative to look at the datasheet of the
+device you are using. The datasheet of any device should always be followed
+before using it in an application or on a board.
 
 Digital Interface (PMOD)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
-The specific interface used for the PulSAR PMOD boards is the extended SPI. In general ADI has adopted the extended SPI connector for all PMOD devices which have an SPI interface. It provides flexibility to add interrupts, general purpose I/O, resets, and other important digitally controlled functions.
+The specific interface used for the PulSAR PMOD boards is the extended SPI. In
+general ADI has adopted the extended SPI connector for all PMOD devices which
+have an SPI interface. It provides flexibility to add interrupts, general
+purpose I/O, resets, and other important digitally controlled functions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/pmod_pinout.png
    :align: center
-   :width: 700px
+   :width: 700
 
-Above is the connection to each of the PulSAR PMOD boards to the SPI PMOD connector. Each of the PulSAR PMOD boards is hardware configured in a 3-wire mode with no busy indicator. This configuration can be better explained in the datasheet if you desire to learn more. This basically means that the only signals that go between the converter and the processor are the CNV (similar to a chip select in this mode), SCLK (serial Clock), and MISO (serial data out). There are no registers internal to the PulSAR ADC's, so there is no need for a data input line, the data just streams out using the CNVST pin.
+Above is the connection to each of the PulSAR PMOD boards to the SPI PMOD
+connector. Each of the PulSAR PMOD boards is hardware configured in a 3-wire
+mode with no busy indicator. This configuration can be better explained in the
+datasheet if you desire to learn more. This basically means that the only
+signals that go between the converter and the processor are the CNV (similar to
+a chip select in this mode), SCLK (serial Clock), and MISO (serial data out).
+There are no registers internal to the PulSAR ADC's, so there is no need for a
+data input line, the data just streams out using the CNVST pin.
 
 Getting Started
 ---------------
 
-Using any of the PulSAR ADC PMOD boards is very simple. To get started evaluating the ADCs, you are going to need the following equipment:
+Using any of the PulSAR ADC PMOD boards is very simple. To get started
+evaluating the ADCs, you are going to need the following equipment:
 
 -  :adi:`EVAL-AD7xxx-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/PulsarPMODs.html>` PMOD board (whichever version you are interested in)
 -  :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>` (If you order this from the website it also includes the Mini USB Cable)
@@ -105,38 +136,40 @@ Using any of the PulSAR ADC PMOD boards is very simple. To get started evaluatin
 Evaluation
 ~~~~~~~~~~
 
-Evaluating the PulSAR ADC PMOD boards is very simple. Using the required equipment, follow these simple steps to get the evaluation working. Please make sure you completely unplug all the boards before beginning.
+Evaluating the PulSAR ADC PMOD boards is very simple. Using the required
+equipment, follow these simple steps to get the evaluation working. Please make
+sure you completely unplug all the boards before beginning.
 
 -  Plug in the Mini USB cable from a USB port on your PC, to the **J1** of the EVAL-SDP-CB1Z.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Make sure that the computer installs the device drivers, and that you can see the *ADI Development Tools* in your computer's device manager.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Ensure that you remove the shunt which is located at **JP1** of the SDP-PMD-IB1Z
 -  Next take the EVAL-SDP-CB1Z board and connect **CON A** up to **J4** of the SDP-PMD-IB1Z interposer board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Connect the EVAL-CFTL-6V-PWRZ to **J1** barrel jack of the SDP-PMD-IB1Z, and **WAIT 10 SECONDS** before continuing
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer_power.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Take the PulSAR ADC PMOD board you are using and connect it to **J3** of the SDP-PMD-IB1Z interposer board. This should finish the hardware setup.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_evaluation_combo.jpg
    :align: center
-   :width: 700px
+   :width: 700
 
 -  With the power source turn **OFF**, connect your external power supplies (-2.5V, GND, and 7.5V) to the terminal block of your EVAL-AD7xxx-PMDZ board.
 -  Turn **ON** your external power supplies (-2.5V, GND, and 7.5V) connected in the previous step.
@@ -144,32 +177,35 @@ Evaluating the PulSAR ADC PMOD boards is very simple. Using the required equipme
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer_power_jumper.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Check again in the device manager to make sure the *ADI Development Tools* are still displaying. If yes, then you'll be able to proceed onto the evaluation software section. If you don't see ADI Development Tools, than you will have to start the hardware evaluation procedure over at step 1.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
    :align: center
-   :width: 500px
+   :width: 500
 
--  Connect your SMB cable from your signal source to the Vin+ and Vin- connectors of the EVAL-AD7xxx-PMDZ board.
+-  Connect your SMB cable from your signal source to the Vin+ and Vin-
+   connectors of the EVAL-AD7xxx-PMDZ board.
 
 Labview Software Application (GUI explained)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The PulSAR ADC PMOD boards have a special version of software needed to run the evaluation, so please install this version of the software.
+The PulSAR ADC PMOD boards have a special version of software needed to run the
+evaluation, so please install this version of the software.
 
 .. admonition:: Download
    :class: download
 
    `PulSAR ADC PMOD Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/eval-adxxxx-pmdz/1.0.0>`_
 
-
-Once you download and install the software, you'll be able to launch the application and communicate with the hardware setup. When you open up the application the front screen will look like the following:
+Once you download and install the software, you'll be able to launch the
+application and communicate with the hardware setup. When you open up the
+application the front screen will look like the following:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/software_panel_numbered.png
    :align: center
-   :width: 700px
+   :width: 700
 
 The following is the description of how to use the user panel:
 
@@ -187,11 +223,15 @@ The following is the description of how to use the user panel:
 
 -  Number of Samples
 
-   -  This drop down tells the software how many samples you want to take. Those samples will be used to make the waveform, histogram, and FFT displays and calculations.
+   -  This drop down tells the software how many samples you want to take. Those
+      samples will be used to make the waveform, histogram, and FFT displays and
+      calculations.
 
 -  Acquire Data
 
-   -  Hit this button once, and the software will gather the data, run the calculations, and display the results on the various tabs. (Waveform, Histogram, FFT)
+   -  Hit this button once, and the software will gather the data, run the
+      calculations, and display the results on the various tabs. (Waveform,
+      Histogram, FFT)
 
 -  Data Capture Displays
 
@@ -199,11 +239,13 @@ The following is the description of how to use the user panel:
    -  Histogram - Bin representation of the data
    -  FFT - Frequency domain representation of the data
 
-The following screen shot is an example of using the AD7980 ADC, and looking at the frequency domain to view a 10kHz input sine wave. This tab provided several frequency domain calculations such as SINAD, THD, SNR.
+The following screen shot is an example of using the AD7980 ADC, and looking at
+the frequency domain to view a 10kHz input sine wave. This tab provided several
+frequency domain calculations such as SINAD, THD, SNR.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/software_fft_10khz.png
    :align: center
-   :width: 700px
+   :width: 700
 
 Schematics, PCB Layout, Bill of Materials
 -----------------------------------------
@@ -245,7 +287,6 @@ Schematics, PCB Layout, Bill of Materials
    
    :adi:`EVAL-AD7988-5-PMDZ Design & Integration Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad7988-5-pmdz-designsupport.zip>`
 
-
 Change Log
 ----------
 
@@ -263,8 +304,9 @@ Registration
 
 .. tip::
 
-   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. Register below to receive all these great benefits and more!
-
+   Receive software update notifications, documentation updates, view the latest
+   videos, and more when you register your hardware. Register below to receive
+   all these great benefits and more!
 
 -  `EVAL-AD7942-PMDZ <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD7942-PMDZ?&v=RevA>`_
 -  `EVAL-AD7946-PMDZ <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD7946-PMDZ?&v=RevA>`_

@@ -3,7 +3,9 @@
 Update Numeric Property
 =======================
 
-This action allows the user to update a numeric property of a given plugin. The function call takes in 3 arguments. Return type is a SSPResult which contains a IsSuccess flag for success/failure and Message in the form of list of strings.
+This action allows the user to update a numeric property of a given plugin. The
+function call takes in 3 arguments. Return type is a SSPResult which contains a
+IsSuccess flag for success/failure and Message in the form of list of strings.
 
 API
 ---
@@ -22,7 +24,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the UpdateNumericProperty action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+UpdateNumericProperty action.
 
 ::
 

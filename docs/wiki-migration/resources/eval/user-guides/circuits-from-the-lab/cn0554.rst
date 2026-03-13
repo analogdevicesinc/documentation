@@ -3,21 +3,23 @@ EVAL-CN0554-RPIZ Hardware User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0554-rpiz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 The :adi:`EVAL-CN0554-RPIZ` is a flexible, general-purpose multichannel mixed-signal analog input/output (I/O) module. The 16 single-ended analog outputs are software configurable, with ranges of 0 V to 5 V, ±5 V, 0 V to 10 V, and ±15 V. Eight channels of fully differential analog input are provided with hardware selectable input ranges of ±2.5 V and ±25 V. The circuit is designed to mount directly on top of a Raspberry Pi, providing this popular single board computer an analog input/output interface. Software control is accessible through the Linux industrial input/output (IIO) framework.
 
    
-
 
 |image1|
 
@@ -47,7 +49,6 @@ Connectors and Jumper Configurations
 
 The :adi:`EVAL-CN0554-RPIZ` has three main connectors: the 40-pin connector which mounts the board on top of the Raspberry Pi, the 30-pin DAC connector which has the 16 analog output channels and relevant digital I/O, the 30-pin ADC connector which has the 16 analog input channels and relevant digital I/O.
 
-
 |image2|
 
 *EVAL-CN0554-RPIZ Connectors*
@@ -55,7 +56,8 @@ The :adi:`EVAL-CN0554-RPIZ` has three main connectors: the 40-pin connector whic
 ADC Header
 ~~~~~~~~~~
 
-Need details on the input connector and what to inputs go to what pin on the connector and ADC!
+Need details on the input connector and what to inputs go to what pin on the
+connector and ADC!
 
 The table below shows the different configurations for each jumper header.
 
@@ -70,7 +72,8 @@ No Connection                          2.5 V
 DAC Header
 ~~~~~~~~~~
 
-Need details on the output connector and which connections go where on the DAC channels
+Need details on the output connector and which connections go where on the DAC
+channels
 
 Dither and Toggle
 ~~~~~~~~~~~~~~~~~
@@ -78,7 +81,6 @@ Dither and Toggle
 Need details on which pins this is on for the RPI and which outputs they affect
 
 The :adi:`EVAL-CN0554-RPIZ` has nine jumper headers, eight are for selecting the attenuation of the eight pairs of analog inputs and one is for setting the write protection of onboard EEPROMs
-
 
 |image3|
 
@@ -117,7 +119,7 @@ System Block Diagram
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/cn0554_simplified_block_diagram.jpg
    :alt: cn0554_simplified_block_diagram.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 *EVAL-CN0554-RPIZ System Block Diagram*
 
@@ -139,9 +141,15 @@ To set up the complete system, follow these steps:
 Software Setup
 --------------
 
-For the device to run, the SD card should be loaded with Analog Devices Kuiper Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It incorporates Linux device drivers for ADI products as well as tools and other software products designed and created with ease of use in mind. The reasoning behind creating this distribution is to minimize the barriers to integrating ADI hardware devices into a Linux-based embedded system.
+For the device to run, the SD card should be loaded with Analog Devices Kuiper
+Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It
+incorporates Linux device drivers for ADI products as well as tools and other
+software products designed and created with ease of use in mind. The reasoning
+behind creating this distribution is to minimize the barriers to
+integrating ADI hardware devices into a Linux-based embedded system.
 
-Access to the embedded system can be through a remote PC connected either via LAN cable or Wi-Fi.
+Access to the embedded system can be through a remote PC connected either via
+LAN cable or Wi-Fi.
 
 Downloading and Flashing Kuiper Linux Image on SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,7 +158,7 @@ In order to control the **EVAL-CN0554-RPIZ** from the Raspberry Pi, you will nee
 
 .. image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/command_prompt.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Configuring the SD Card for the CN0554
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -159,7 +167,8 @@ For the Linux kernel to identify the device connected to the expansion header, u
 
 Follow the Hardware Configuration procedure under **Preparing the Image: Raspberry Pi** in the :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` page, substituting the following lines in **config.txt**:
 
-This brings up the file in the terminal. Scroll down until the line that begins with "dtoverlay" is found; then, whatever it currently is, change it to:
+This brings up the file in the terminal. Scroll down until the line that begins
+with "dtoverlay" is found; then, whatever it currently is, change it to:
 
 .. note::
 
@@ -171,8 +180,8 @@ This brings up the file in the terminal. Scroll down until the line that begins 
       dtoverlay=rpi-cn0554
    
 
-
-Save the file by Ctrl + X command. Reboot the system by typing on the command prompt:
+Save the file by Ctrl + X command. Reboot the system by typing on the command
+prompt:
 
 ::
 
@@ -209,7 +218,8 @@ Pyadi-IIO
 Running the Example
 ^^^^^^^^^^^^^^^^^^^
 
-This demo uses a PyADI-IIO example script. This script will show the single-tone frequency with calibrated output power in dBm.
+This demo uses a PyADI-IIO example script. This script will show the single-tone
+frequency with calibrated output power in dBm.
 
 -  Connect the :adi:`EVAL-CN0554-RPIZ` to the Raspberry Pi.
 -  Open command prompt or terminal and navigate through the examples folder inside the downloaded or cloned *pyadi-iio* directory.
@@ -223,7 +233,6 @@ This demo uses a PyADI-IIO example script. This script will show the single-tone
 
    Update image, file name, and location
 
-
    |image9|
 
    .. admonition:: Download
@@ -232,7 +241,6 @@ This demo uses a PyADI-IIO example script. This script will show the single-tone
       Github link for the python sample script: :git-pyadi-iio:`CN0554 Python Example <examples/cn0554_example.py>`
 
    
-
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -248,7 +256,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Bill of Materials
    -  Allegro Project
    
-
 
 Additional Information and Useful Links
 ---------------------------------------
@@ -271,28 +278,27 @@ Hardware Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0554-RPIZ?&v=RevB>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/cn0554.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/cn0554_connectors.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/cn0554_jumper_headers.jpg
-   :width: 600px
+   :width: 600
 .. |13\_-\_cn0554_attached_to_raspberry_pi.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/13_-_cn0554_attached_to_raspberry_pi.jpg
-   :width: 600px
+   :width: 600
 .. |14\_-\_cn0554_loopback_diagram.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/14_-_cn0554_loopback_diagram.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/15_-_cn0554_test_setup.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/16_-_iio_oscilloscope_dmm_and_debug_tab.png
-   :width: 300px
+   :width: 300
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/17_-_iio_oscilloscope_cn0554_dmm.png
-   :width: 500px
+   :width: 500
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/18_-_iio_oscilloscope_cn0554_debug.png
-   :width: 500px
+   :width: 500
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/19_-_loopback_measurement_of_cn0554_analog_io.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0511/cn0511_example_output.jpg
-   :width: 600px
+   :width: 600

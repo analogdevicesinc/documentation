@@ -45,18 +45,24 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
-
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
 .. note::
 
-   platform_data: Platform data specific to the ADP1650 device. Includes feature selections and default initialization.
+   platform_data: Platform data specific to the ADP1650 device. Includes feature
+   selections and default initialization.
 
    
    Please see `include/linux/i2c/adp1650.h <http://blackfin.uclinux.org/git/?p=linux-kernel;a=blob_plain;f=include/linux/i2c/adp1650.h;hb=HEAD>`_ for details.
-
 
 .. code:: c
 
@@ -65,14 +71,11 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
    static struct adp1650_leds_platform_data adp1650_pdata = {
        .timer_iocfg =  ADP1650_IOCFG_IO2_HIGH_IMP
 
-
                ADP1650_IOCFG_IO1_TORCH |
 
                ADP1650_FL_TIMER_ms(500),
 
        .current_set =  ADP1650_I_FL_mA(900)
-
-
 
                ADP1650_I_TOR_mA(100),
 
@@ -80,11 +83,9 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
 
                ADP1650_STR_LV_EDGE
 
-
                ADP1650_FREQ_FB_EN |
 
                ADP1650_OUTPUT_EN
-
 
                ADP1650_STR_MODE_HW |
 
@@ -92,19 +93,15 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
 
        .control =  ADP1650_I_TX2_mA(400)
 
-
-
                ADP1650_I_TX1_mA(400),
 
        .ad_mode =  ADP1650_DYN_OVP_EN |
 
                ADP1650_STR_POL_ACTIVE_HIGH
 
-
                ADP1650_I_ILED_2mA75 |
 
                ADP1650_IL_DC_1A50
-
 
                ADP1650_IL_DC_EN,
 
@@ -116,14 +113,23 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
        .gpio_enable = -1,
    };
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 .. code:: c
 
@@ -153,12 +159,12 @@ For more information see: `instantiating-devices.rst </git.linux.org>documentati
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. tip::
 
    The ADP1650 LED driver depends on I2C.
-
 
 ::
 
@@ -178,7 +184,9 @@ Driver testing
 LED handling under Linux
 ------------------------
 
-The LED class allows control of LEDs from userspace. LEDs appear in /sys/class/leds/. The brightness file will set the brightness of the LED (taking a value 0-255).
+The LED class allows control of LEDs from userspace. LEDs appear in
+/sys/class/leds/. The brightness file will set the brightness of the LED (taking
+a value 0-255).
 
 For more information read `linux/Documentaion/leds-class.txt <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/linux/Documentaion/leds-class.txt>`_
 
@@ -254,7 +262,6 @@ Enable TORCH/Assist Light (Intensity 100mA)
 
    A subsequent assert of STROBE will trigger the FLASH
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -265,14 +272,12 @@ Enable TORCH/Assist Light (Intensity 100mA)
       root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> echo 4 > brightness
    
 
-
 Prepare TORCH/Assist Light for an GPIO1 enable trigger (Intensity 100mA)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. hint::
 
    A subsequent assert of STROBE will trigger the FLASH
-
 
 .. container:: box bggreen
 
@@ -283,7 +288,6 @@ Prepare TORCH/Assist Light for an GPIO1 enable trigger (Intensity 100mA)
    
       root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> echo 12 > brightness
    
-
 
 Initiate FLASH (Intensity set by I_FL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -298,7 +302,6 @@ Initiate FLASH (Intensity set by I_FL)
       root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> echo 254 > brightness
    
 
-
 Prepare FLASH for an STROBE triggered enable (Intensity set by I_FL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -312,7 +315,6 @@ Prepare FLASH for an STROBE triggered enable (Intensity set by I_FL)
       root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> echo 255 > brightness
    
 
-
 Disable all LED activity
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -325,7 +327,6 @@ Disable all LED activity
    
       root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0030/leds/adp1650> echo 0 > brightness
    
-
 
 More Information
 ================

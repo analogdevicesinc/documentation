@@ -3,7 +3,8 @@
 Get Capture View Entries
 ========================
 
-This action allows the user to get the capture view entries. This API returns the capture view entries in the form of list of strings.
+This action allows the user to get the capture view entries. This API returns
+the capture view entries in the form of list of strings.
 
 API
 ---

@@ -6,7 +6,9 @@ Preface
 
 This user guide describes both the hardware and software setup needed to acquire data capture from :adi:`AD9743-DPG2-EBZ`/:adi:`AD9745-DPG2-EBZ`/:adi:`AD9746-DPG2-EBZ`/:adi:`AD9747-DPG2-EBZ` evaluation board to characterize :adi:`AD9743`/:adi:`AD9745`/:adi:`AD9746`/:adi:`AD9747` 10-/12-/14-/16-bit 250Msps high-speed digital-to-analog converter.
 
-This guide shows how AD974x-DPG2-EBZ works with SDP-H1 controller board developed by Analog Devices. Link to the old user guide document is provided for customers who still have DPG2 and DPG3 controller boards.
+This guide shows how AD974x-DPG2-EBZ works with SDP-H1 controller board
+developed by Analog Devices. Link to the old user guide document is provided for
+customers who still have DPG2 and DPG3 controller boards.
 
 Typical Setup
 -------------
@@ -15,11 +17,9 @@ Typical Setup
 
    \ |image1| *Figure 1. EVAL-AD9743/45/46/47 Evaluation Setup*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files:
 --------------
@@ -42,7 +42,6 @@ Software Needed:
 .. important::
 
    \ Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
-
 
 Hardware Needed:
 ----------------
@@ -68,39 +67,42 @@ Quick Start Guide
 -  Set clock input to 100MHz and 2dBm.
 -  Open ACE. The board will be automatically recognized by the software. Otherwise, install the plugin for AD9747.
 -  Start DPG Lite or DPG Downloader. At the SDP-H1 part of the software, the device part number and clock frequency should be displayed.
--  In ACE, apply the default values in the Initial Configuration wizard as shown in Figure 2.
+-  In ACE, apply the default values in the Initial Configuration wizard as shown
+   in Figure 2.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9747_ace_boardview.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 2. ACE Initial Configuration Wizard for EVAL-AD9747*\
 
-
--  In DPG Lite or DPG Downloader, from the Add Generator Waveforms pulldown menu select Single Tone and apply the settings as shown in Figure 3. Set the desired frequency to 17 MHz. Set DAC resolution to the DAC’s number of bits (16 for AD9747, 14 for AD9746, and so on). Check the Generate Complex Data (I & Q) box.
+-  In DPG Lite or DPG Downloader, from the Add Generator Waveforms pulldown menu
+   select Single Tone and apply the settings as shown in Figure 3. Set the
+   desired frequency to 17 MHz. Set DAC resolution to the DAC’s number of bits
+   (16 for AD9747, 14 for AD9746, and so on). Check the Generate Complex Data (I
+   & Q) box.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9747_dpg-lite_sdp-h1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 3. DPG Lite session for EVAL-AD9747*\
 
-
 -  Select the in-phase tone from the I Data Vector pulldown menu and the quadrature tone from the Q Date Vector pulldown menu.
--  Press the download arrow and then the play button. The spectrum similar to Figure 4 should appear in the signal/spectrum analyzer.
+-  Press the download arrow and then the play button. The spectrum similar to
+   Figure 4 should appear in the signal/spectrum analyzer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9747_output_sdp-h1_.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 4. EVAL-AD9747 FFT for Fdac=100MHz, Fout=17MHz*\
-
 
 Reconfiguring the Evaluation Board
 ----------------------------------
@@ -108,26 +110,33 @@ Reconfiguring the Evaluation Board
 Jumpers for Selecting DAC Output Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each pair of differential DAC outputs can be connected to a balun or both differential pairs can be connected to the ADL5373 modulator. Refer to the jumper settings below.
+Each pair of differential DAC outputs can be connected to a balun or both
+differential pairs can be connected to the ADL5373 modulator. Refer to the
+jumper settings below.
 
 .. container:: centeralign
 
    \ |image2| *Figure 5a. DAC Outputs to Baluns \| Figure 5b. DAC Outputs to ADL5373 Modulator*\
 
-
-The modulator output can be observed thru the SMA connector J6 (MODULATED OUTPUT). The modulator LO input can be sourced thru SMA connector J10 (LOCAL OSC INPUT). The clock level into the modulator should be set to about 3dBm.
+The modulator output can be observed thru the SMA connector J6 (MODULATED
+OUTPUT). The modulator LO input can be sourced thru SMA connector J10 (LOCAL OSC
+INPUT). The clock level into the modulator should be set to about 3dBm.
 
 Jumpers for Power Supplies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are 6 pin jumpers on the evaluation board corresponding to the 6 supplies on the board. They serve as ‘switches’ that determine if the on board LDOs or external supplies are used for each individual supply. They are shunted by default, which means on board LDOs are used. When an external supply is necessary, pull off the shunt from the corresponding supply and connect the external supply to the SMA test points close to the jumper.
-
+There are 6 pin jumpers on the evaluation board corresponding to the 6 supplies
+on the board. They serve as ‘switches’ that determine if the on board LDOs or
+external supplies are used for each individual supply. They are shunted by
+default, which means on board LDOs are used. When an external supply is
+necessary, pull off the shunt from the corresponding supply and connect the
+external supply to the SMA test points close to the jumper.
 
 |image3|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9747_sdp-h1_hardware_set-up.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9747-10.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9747-11.png
-   :width: 600px
+   :width: 600

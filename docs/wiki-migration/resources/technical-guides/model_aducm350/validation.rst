@@ -1,14 +1,27 @@
 ADuCM350 Matlab Model Validation
 ================================
 
-This page details the work completed to date in evaluating and validating the Matlab/Simulink model of the ADuCM350. Validation work comprises of testing the performance and accuracy of the Matlab model’s measurement results against both the ideal/expected results, and against results from measurements taken directly on an ADuCM350 evaluation board.
+This page details the work completed to date in evaluating and validating the
+Matlab/Simulink model of the ADuCM350. Validation work comprises of testing the
+performance and accuracy of the Matlab model’s measurement results against both
+the ideal/expected results, and against results from measurements taken directly
+on an ADuCM350 evaluation board.
 
-The ADuCM350 Matlab model simulates the AFE of the ADuCM350 at a functional block level, allowing voltammetric, amperometric, and impedimetric measurements to be modelled accurately. On both the hardware evaluation board for the ADuCM350 and the Matlab model, the sensor takes the form of an RC impedance network which is separate from the AFE, and can be configured to take the form of an arbitrary RC network. The AFE is connected to the sensor through a programmable switch matrix, which allows changing between 2-Wire and 4-Wire measurements.
+The ADuCM350 Matlab model simulates the AFE of the ADuCM350 at a functional
+block level, allowing voltammetric, amperometric, and impedimetric measurements
+to be modelled accurately. On both the hardware evaluation board for the
+ADuCM350 and the Matlab model, the sensor takes the form of an RC impedance
+network which is separate from the AFE, and can be configured to take the form
+of an arbitrary RC network. The AFE is connected to the sensor through a
+programmable switch matrix, which allows changing between 2-Wire and 4-Wire
+measurements.
 
 RC Impedance Measurement Validation
 -----------------------------------
 
-A primary use case of the ADuCM350 is the measurement of RC impedance networks in a range of frequencies. Numerous experiments are detailed below which were run to validate the Matlab model’s performance in taking these measurements.
+A primary use case of the ADuCM350 is the measurement of RC impedance networks
+in a range of frequencies. Numerous experiments are detailed below which were
+run to validate the Matlab model’s performance in taking these measurements.
 
 Current Level Tests
 ~~~~~~~~~~~~~~~~~~~
@@ -122,12 +135,21 @@ Configuration:
 Summary
 ^^^^^^^
 
-For most current ranges tested, the Matlab model marginally outperformed the ADuCM350 hardware measurements. However in nearly every case, the difference between the accuracy of the model and the hardware is small (<1% accuracy difference), indicating that the Matlab model of the ADuCM350 closely replicates the performance of the ADuCM350 in 4-Wire impedance measurements. Also note that for both the hardware and the model, measurement accuracy increases with larger current levels, as the ADuCM350 was designed for measurements involving currents in the hundred-microampere range.
+For most current ranges tested, the Matlab model marginally outperformed the
+ADuCM350 hardware measurements. However in nearly every case, the difference
+between the accuracy of the model and the hardware is small (<1% accuracy
+difference), indicating that the Matlab model of the ADuCM350 closely replicates
+the performance of the ADuCM350 in 4-Wire impedance measurements. Also note that
+for both the hardware and the model, measurement accuracy increases with larger
+current levels, as the ADuCM350 was designed for measurements involving currents
+in the hundred-microampere range.
 
 R_ACCESS Tests
 ~~~~~~~~~~~~~~
 
-Tests were run with varying R_ACCESS in order to validate the operation of the 4-Wire measurements, in which the magnitude of R_ACCESS should have no effect on the measured impedance.
+Tests were run with varying R_ACCESS in order to validate the operation of the
+4-Wire measurements, in which the magnitude of R_ACCESS should have no effect on
+the measured impedance.
 
 |image9| |image10|
 
@@ -165,12 +187,16 @@ Configuration:
                               Measured on M350: 0.838
                               Simulated on Model: 1.232
 
-These results indicate that the Matlab model very accurately reproduces the ADuCM350’s 4-Wire measurement capabilities, as the difference in accuracy between the model and the hardware is in all cases ≤ 1%.
+These results indicate that the Matlab model very accurately reproduces the
+ADuCM350’s 4-Wire measurement capabilities, as the difference in accuracy
+between the model and the hardware is in all cases ≤ 1%.
 
 2-Wire Tests
 ~~~~~~~~~~~~
 
-The 2-Wire impedance measurement capabilities of the Matlab model are verified against the hardware in the plots below. The sensor impedance for this section is a series resistor and capacitor.
+The 2-Wire impedance measurement capabilities of the Matlab model are verified
+against the hardware in the plots below. The sensor impedance for this section
+is a series resistor and capacitor.
 
 |image11| |image12|
 
@@ -194,12 +220,16 @@ Configuration:
                               Measured on M350: 7.669
                               Simulated on Model: 2.964
 
-The model achieves better accuracy than the hardware in terms of impedance phase measurement error, and performs very similarly to the hardware in terms of impedance magnitude measurement error.
+The model achieves better accuracy than the hardware in terms of impedance phase
+measurement error, and performs very similarly to the hardware in terms of
+impedance magnitude measurement error.
 
 Noise and Accuracy Validation
 -----------------------------
 
-Tests were carried out to determine the ideal noise variance level to accurately model the noise levels and measurement accuracy of the ADuCM350 hardware. These tests were carried out both with the attenuator enabled and disabled.
+Tests were carried out to determine the ideal noise variance level to accurately
+model the noise levels and measurement accuracy of the ADuCM350 hardware. These
+tests were carried out both with the attenuator enabled and disabled.
 
 Attenuator On
 ~~~~~~~~~~~~~
@@ -256,7 +286,11 @@ Configuration:
 Amperometric Measurement Validation
 -----------------------------------
 
-The amperometric capabilities of the ADuCM350 are available in either Amperometry, Chronoamperomtry, or User Defined modes. The performance of these measurements were validated for both a purely resistive sensor, and an RC sensor. Tests were also conducted with the Sinc2lf filter both disabled and enabled.
+The amperometric capabilities of the ADuCM350 are available in either
+Amperometry, Chronoamperomtry, or User Defined modes. The performance of these
+measurements were validated for both a purely resistive sensor, and an RC
+sensor. Tests were also conducted with the Sinc2lf filter both disabled and
+enabled.
 
 Sinc2hf + Sinc2lf Filters Enabled
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -274,7 +308,10 @@ Configuration:
    R_Series: 8.8 kΩ
    Measurement Type: 2-Wire
 
-The model and the hardware track very closely for this measurement. The slow rise time is due to the low pass effect of the Sinc2lf filter. Both measurements settle at ~34uA after the voltage step, which is the expected value for the given impedance and step voltage.
+The model and the hardware track very closely for this measurement. The slow
+rise time is due to the low pass effect of the Sinc2lf filter. Both measurements
+settle at ~34uA after the voltage step, which is the expected value for the
+given impedance and step voltage.
 
 Sinc2hf Filter Enabled, Sinc2lf Filter Disabled
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -292,7 +329,9 @@ Configuration:
    R_Series: 8.8 kΩ
    Measurement Type: 2-Wire
 
-Again the hardware and the model produce a very similar output for the given input, with both step responses having an identical rise time, settling to their final value after 2 samples.
+Again the hardware and the model produce a very similar output for the given
+input, with both step responses having an identical rise time, settling to their
+final value after 2 samples.
 
 RC Impedance
 ~~~~~~~~~~~~
@@ -316,7 +355,11 @@ These plots show visually that the current measurement capabilities of the Matla
 Amperometric Consistency
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-All three simulation modes capable of Current Vs. Time measurements should produce the same output, given the same input parameters (The differences between these modes is in the excitation waveforms that are possible with each). The plot below shows the performance of each measurement mode given the same sensor configuration and excitation waveform.
+All three simulation modes capable of Current Vs. Time measurements should
+produce the same output, given the same input parameters (The differences
+between these modes is in the excitation waveforms that are possible with each).
+The plot below shows the performance of each measurement mode given the same
+sensor configuration and excitation waveform.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/model_aducm350/model_aducm350/validation/current_measurements.jpg
 
@@ -335,7 +378,10 @@ Configuration:
 Footnote
 ========
 
-All tests were carried out with high-accuracy passive components where possible, however some discrepancies between ideal, measured, and modelled results may be partly due to inaccuracies in the components used in measurements taken on the ADuCM350 evaluation board hardware.
+All tests were carried out with high-accuracy passive components where possible,
+however some discrepancies between ideal, measured, and modelled results may be
+partly due to inaccuracies in the components used in measurements taken on the
+ADuCM350 evaluation board hardware.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/technical-guides/model_aducm350/model_aducm350/validation/120na_mag.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/technical-guides/model_aducm350/model_aducm350/validation/120na_ph.jpg

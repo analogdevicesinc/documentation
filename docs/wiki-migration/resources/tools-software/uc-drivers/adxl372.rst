@@ -32,7 +32,7 @@ Applications
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/eval-adxl372z.png
    :align: center
-   :width: 300px
+   :width: 300
 
 No-OS Driver Description
 ------------------------
@@ -288,4 +288,3 @@ No-OS Downloads
    
    -  :git-no-OS:`adxl372 source and header files. <drivers/accel/adxl372>`
    
-

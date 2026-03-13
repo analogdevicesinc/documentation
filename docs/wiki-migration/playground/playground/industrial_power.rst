@@ -3,7 +3,8 @@ Industrial Power Systems Engineering
 
 The Industrial Power Systems Engineering group is responsible for...
 
-Below you will find information related to various industrial markets and end applications.
+Below you will find information related to various industrial markets and end
+applications.
 
 Market Based
 ------------

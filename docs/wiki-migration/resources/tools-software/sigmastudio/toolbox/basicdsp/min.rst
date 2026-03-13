@@ -12,7 +12,6 @@ Min and Hold
 
 +-------------------------------------------------------------------------------------------------------------+
 
-
 | The Min and Hold is a algorithm compares the input sample with held min value and outputs the lowest value. |
 
 +-------------------------------------------------------------------------------------------------------------+
@@ -43,7 +42,8 @@ Output Pins
 Grow Algorithm
 --------------
 
-The module supports growth of Input channels up to 16 and one reset pin. Add Algorithm is not supported.
+The module supports growth of Input channels up to 16 and one reset pin. Add
+Algorithm is not supported.
 
 GUI Controls
 ------------
@@ -58,13 +58,14 @@ No DSP parameters
 Algorithm Description
 ---------------------
 
-This module compares the each channel input samples with held_min value and outputs lowest value when reset is Off. Compares the each channel input samples and outputs the lowest value when reset pin is high.
+This module compares the each channel input samples with held_min value and
+outputs lowest value when reset is Off. Compares the each channel input samples
+and outputs the lowest value when reset pin is high.
 
 Supported IC's
 --------------
 
 +----------+
-
 
 | ADAU145x |
 

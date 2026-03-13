@@ -8,21 +8,24 @@ ObjectGetProperties() and ObjectSetProperties() in :doc:`SigmaStudio scripting i
 Usage
 =====
 
-To view/hide control parameter names for any schematic, the "View Control Parameters Names"/ "Hide Control Parameter Names" option in the Action menu has to selected as shown below.
-
+To view/hide control parameter names for any schematic, the "View Control
+Parameters Names"/ "Hide Control Parameter Names" option in the Action menu has
+to selected as shown below.
 
 |image1|
 
-When "View Control Parameters Names" option is selected Parameters names for SigmaStudio modules can be viewed in one of the three ways mentioned below
+When "View Control Parameters Names" option is selected Parameters names for
+SigmaStudio modules can be viewed in one of the three ways mentioned below
 
--   As a Cell tooltip on hovering the mouse over the corners of the cell as shown below
+-   As a Cell tooltip on hovering the mouse over the corners of the cell as
+    shown below
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vol_tootip.png
    :align: center
-   :width: 800px
+   :width: 800
 
--  As Control tooltip on hovering the mouse over the respective control as shown below.
-
+-  As Control tooltip on hovering the mouse over the respective control as shown
+   below.
 
 |image2|
 
@@ -32,6 +35,6 @@ When "View Control Parameters Names" option is selected Parameters names for Sig
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/viewhide.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/control_tooltip2.jpg
-   :width: 1000px
+   :width: 1000
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/combined_tootip.png
-   :width: 500px
+   :width: 500

@@ -4,13 +4,14 @@
 
 .. note::
 
-   In this page we will refer to A2B Bus Analyzer Software as A2BA and A2B Analyzer Studio as A2BAS to make the tables more readable
-
+   In this page we will refer to A2B Bus Analyzer Software as A2BA and A2B
+   Analyzer Studio as A2BAS to make the tables more readable
 
 Functional Limitations
 ======================
 
-The following are the functional limitations of the Analyzer Bus Analyzer or A2B Analyzer HP hardware.
+The following are the functional limitations of the Analyzer Bus Analyzer or A2B
+Analyzer HP hardware.
 
 +--------+------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+--------------------------+
 | Number | Hardware         | Summary                                                                                                                     | Description                                                                                                                                                 | Affects (HW ver)                   | Fixed (HW ver)           |

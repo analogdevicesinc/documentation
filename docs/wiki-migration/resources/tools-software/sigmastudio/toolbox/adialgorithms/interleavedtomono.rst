@@ -5,7 +5,8 @@ Interleaved to Mono
 
 |int_mono.png|\ \|
 
-"Interleaved to Mono" is used to de-interleave two channels from an interleaved input into two separate mono channels.
+"Interleaved to Mono" is used to de-interleave two channels from an interleaved
+input into two separate mono channels.
 
 Input Pins
 ----------

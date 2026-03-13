@@ -5,7 +5,6 @@ AD9739 Evaluation Board
 
    \ NOTE: Support for the eval-ad9739 is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases.
 
-
 Documentation and software updates for using the :adi:`AD9739` Evaluation Boards are included in self-extracting update files. Documentation can also be downloaded individually below.
 
 Files included in the AD9739 Update:

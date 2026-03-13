@@ -10,11 +10,9 @@ Digilent Inc.
    -  `Pmods <https://store.digilentinc.com/boards-and-components/expansion-modules/pmods/>`_
    
 
-
 .. container:: column
 
    
-
 
    ..
 
@@ -34,16 +32,12 @@ Digilent Inc.
    
    More information can be found by looking at the :adi:`all ADI products <en/allProducts.html>` or :adi:`application specific solutions <en/allApplications.html>` section of `the main web site <https://www.analog.com/>`_.
 
-
-
 Hardware
 ========
-
 
 .. note::
 
    See `thirdparty <https://wiki.analog.com/thirdparty>`_
-
 
 Pmods
 -----
@@ -223,134 +217,134 @@ FMC
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. |digilent.png| image:: https://wiki.analog.com/_media/resources/digilent.png
-   :width: 100px
+   :width: 100
    :target: http://www.digilentinc.com
 .. |http---www.analog.com-static-homepage-images-analog_devices_logo.gif| image:: http://www.analog.com/static/homepage/images/analog_devices_logo.gif
-   :width: 100px
+   :width: 100
    :target: http://www.analog.com
 .. |http---www.digilentinc.com-Data-Products-PMOD-ACL-TILE_PmodACL_150.jpg| image:: http://www.digilentinc.com/Data/Products/PMOD-ACL/TILE_PmodACL_150.jpg
    :target: http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-ACL
 .. |pmodacl2icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodacl2icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |http---www.digilentinc.com-Data-Products-PMOD-AD1-TILE_PmodAD1_150.jpg| image:: http://www.digilentinc.com/Data/Products/PMOD-AD1/TILE_PmodAD1_150.jpg
    :target: http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1
 .. |http---www.digilentinc.com-Data-Products-PMOD-AD2-TILE_PmodAD2_150.jpg| image:: http://www.digilentinc.com/Data/Products/PMOD-AD2/TILE_PmodAD2_150.jpg
    :target: http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD2
 .. |pmodad3_icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodad3_icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |pmodad4icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodad4icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |pmodad5icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodad5icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |pmodad6icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodad6icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |pmodamp3_icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodamp3_icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |pmodcdc1icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodcdc1icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |http---www.digilentinc.com-Data-Products-PMOD-DA1-TILE_PmodDA1_150.jpg| image:: http://www.digilentinc.com/Data/Products/PMOD-DA1/TILE_PmodDA1_150.jpg
    :target: http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DA1
 .. |pmodda3icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodda3icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |pmodda4icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodda4icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |pmodda5icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodda5icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |pmoddpoticon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmoddpoticon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |http---www.digilentinc.com-Data-Products-PMOD-GYRO2-TILE_PmodGYRO2_150.jpg| image:: http://www.digilentinc.com/Data/Products/PMOD-GYRO2/TILE_PmodGYRO2_150.jpg
    :target: http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-GYRO2
 .. |pmod_ia.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmod_ia.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |http---www.digilentinc.com-Data-Products-PMOD-IOXP-TILE_PmodIOXP_150.jpg| image:: http://www.digilentinc.com/Data/Products/PMOD-IOXP/TILE_PmodIOXP_150.jpg
    :target: http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,960&Prod=PMOD-IOXP
 .. |pmodmic2icon.jpg| image:: https://wiki.analog.com/_media/resources/alliances/pmodmic2icon.jpg
-   :width: 148px
+   :width: 148
    :target: /
 .. |http---www.digilentinc.com-Data-Products-PMOD-RS232-TILE_PmodRS232_150.jpg| image:: http://www.digilentinc.com/Data/Products/PMOD-RS232/TILE_PmodRS232_150.jpg
    :target: http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,463&Prod=PMOD-RS232
 .. |http---www.digilentinc.com-Data-Products-PMOD-TMP2-TILE_PmodTMP2_150.jpg| image:: http://www.digilentinc.com/Data/Products/PMOD-TMP2/TILE_PmodTMP2_150.jpg
    :target: http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,960&Prod=PMOD-TMP2
 .. |image1| image:: https://wiki.analog.com/_media/resources/alliances/cn0179_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/alliances/cn0216_pmod_375.jpg
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/alliances/cn0326_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/alliances/cn0332_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/alliances/cn0335_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/resources/alliances/cn0336_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/resources/alliances/cn0337_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image8| image:: https://wiki.analog.com/_media/resources/alliances/cn0346_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image9| image:: https://wiki.analog.com/_media/resources/alliances/cn0179_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image10| image:: https://wiki.analog.com/_media/resources/alliances/cn0216_pmod_375.jpg
-   :width: 200px
+   :width: 200
 .. |image11| image:: https://wiki.analog.com/_media/resources/alliances/cn0326_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image12| image:: https://wiki.analog.com/_media/resources/alliances/cn0332_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image13| image:: https://wiki.analog.com/_media/resources/alliances/cn0335_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image14| image:: https://wiki.analog.com/_media/resources/alliances/cn0336_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image15| image:: https://wiki.analog.com/_media/resources/alliances/cn0337_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image16| image:: https://wiki.analog.com/_media/resources/alliances/cn0346_hw_375.jpg
-   :width: 200px
+   :width: 200
 .. |image17| image:: https://wiki.analog.com/_media/resources/alliances/eval_ad7960_fmc.jpg
-   :width: 150px
+   :width: 150
 .. |image18| image:: https://wiki.analog.com/_media/resources/alliances/eval_ad7960_fmc.jpg
-   :width: 150px
+   :width: 150
 .. |cf_ad9434_board.jpg| image:: https://wiki.analog.com/_media/resources/alliances/cf_ad9434_board.jpg
-   :width: 150px
+   :width: 150
 .. |http---www.digilentinc.com-Data-Products-AD9467-FMC-TILE_AD9467_150.jpg| image:: http://www.digilentinc.com/Data/Products/AD9467-FMC/TILE_AD9467_150.jpg
    :target: http://www.digilentinc.com/Products/Detail.cfm?Prod=AD9467-FMC
 .. |cf_ad9265_board.jpg| image:: https://wiki.analog.com/_media/resources/alliances/cf_ad9265_board.jpg
-   :width: 150px
+   :width: 150
 .. |http---www.digilentinc.com-Data-Products-AD9739A-FMC-TILE_AD9739A_150.jpg| image:: http://www.digilentinc.com/Data/Products/AD9739A-FMC/TILE_AD9739A_150.jpg
    :target: https://reference.digilentinc.com/ad9739a_fmc/ad9739a_fmc
 .. |cf_xcomm_board.jpg| image:: https://wiki.analog.com/_media/resources/alliances/cf_xcomm_board.jpg
-   :width: 150px
+   :width: 150
 .. |ad_fmcomms2_ebz.jpg| image:: https://wiki.analog.com/_media/resources/alliances/ad_fmcomms2_ebz.jpg
-   :width: 150px
+   :width: 150
 .. |ad_fmcomms3_ebz.jpg| image:: https://wiki.analog.com/_media/resources/alliances/ad_fmcomms3_ebz.jpg
-   :width: 150px
+   :width: 150
 .. |ad_fmcomms4_ebz.jpg| image:: https://wiki.analog.com/_media/resources/alliances/ad_fmcomms4_ebz.jpg
-   :width: 150px
+   :width: 150
 .. |ad_fmcomms5_ebz.jpg| image:: https://wiki.analog.com/_media/resources/alliances/ad_fmcomms5_ebz.jpg
-   :width: 150px
+   :width: 150
 .. |top_view_main_page.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmcomms6/top_view_main_page.png
-   :width: 150px
+   :width: 150
 .. |ad_fmcadc2_ebz.jpg| image:: https://wiki.analog.com/_media/resources/alliances/ad_fmcadc2_ebz.jpg
-   :width: 150px
+   :width: 150
 .. |ad_fmcdaq2_ebz.jpg| image:: https://wiki.analog.com/_media/resources/alliances/ad_fmcdaq2_ebz.jpg
-   :width: 150px
+   :width: 150
 .. |ad_fmcjesdadc1_ebz.jpg| image:: https://wiki.analog.com/_media/resources/alliances/ad_fmcjesdadc1_ebz.jpg
-   :width: 150px
+   :width: 150
 .. |eval-fmcmotcon2-system.jpg| image:: https://wiki.analog.com/_media/resources/alliances/eval-fmcmotcon2-system.jpg
-   :width: 200px
+   :width: 200
 .. |image19| image:: https://wiki.analog.com/_media/resources/alliances/eval_ad7960_fmc.jpg
-   :width: 150px
+   :width: 150
 .. |image20| image:: https://wiki.analog.com/_media/resources/alliances/eval_ad7960_fmc.jpg
-   :width: 150px
+   :width: 150
 
 .. |http---www.analog.com-static-homepage-images-analog_devices_logo.gif| image:: https://wiki.analog.com/_media/http///www.analog.com/static/homepage/images/analog_devices_logo.gif
 .. |http---www.digilentinc.com-Data-Products-AD9467-FMC-TILE_AD9467_150.jpg| image:: https://wiki.analog.com/_media/http///www.digilentinc.com/Data/Products/AD9467-FMC/TILE_AD9467_150.jpg

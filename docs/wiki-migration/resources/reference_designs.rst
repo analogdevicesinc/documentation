@@ -14,17 +14,22 @@ Applications
 General Description
 -------------------
 
-The eighth (1/8) brick power module is designed based on the standardized 1/8 brick format defined by the Distributed-power Open Systems Alliance (DOSA). This reference design implements the ADP1051, a digital controller for isolated power supply with PMBus Interface, to control the energy conversion from input to output. Because of the excellent performance of the ADP1051, this 1/8 brick power module achieves high reliability, efficiency, and integration.
+The eighth (1/8) brick power module is designed based on the standardized 1/8
+brick format defined by the Distributed-power Open Systems Alliance (DOSA). This
+reference design implements the ADP1051, a digital controller for isolated power
+supply with PMBus Interface, to control the energy conversion from input to
+output. Because of the excellent performance of the ADP1051, this 1/8 brick
+power module achieves high reliability, efficiency, and integration.
 
-This 1/8 brick power module offers a series of housekeeping functions, such as IOUT_OC, VOUT_OV, OT, VOUT_UV defined by PMBus, input UVLO, reverse current protection, short-circuit protection, and so forth.
-
+This 1/8 brick power module offers a series of housekeeping functions, such as
+IOUT_OC, VOUT_OV, OT, VOUT_UV defined by PMBus, input UVLO, reverse current
+protection, short-circuit protection, and so forth.
 
 |Figure 1.|
 
 .. container:: centeralign
 
    \ *Figure 1. Eighth Brick Power Module*\
-
 
 Power Module Specifications
 ---------------------------
@@ -68,7 +73,7 @@ List of Terminals
 
 .. image:: https://wiki.analog.com/_media/resources/af2andaf3sidebyside.png
    :align: center
-   :width: 500px
+   :width: 500
 
 **Table 2.**
 
@@ -126,12 +131,11 @@ Recommended Test Setup
 .. image:: https://wiki.analog.com/_media/resources/a4_ug656_brickmodulesetup.png
    :alt: Figure 4.\|
    :align: center
-   :width: 850px
+   :width: 850
 
 .. container:: centeralign
 
    \ *Figure 4. Eighth Brick Power Module Recommended Setup*\
-
 
 |Figure 5. \||
 
@@ -139,13 +143,11 @@ Recommended Test Setup
 
    \ *Figure 5. Outlook of the Eighth Brick Power Module (Top View, Not to Size)*\
 
-
 |Figure 6. \||
 
 .. container:: centeralign
 
    \ *Figure 6. Outlook of the Eighth Brick Power Module (Bottom View, Not to Size)*\
-
 
 Test Procedure
 ~~~~~~~~~~~~~~
@@ -160,7 +162,8 @@ Use the following steps to conduct the test procedure:
    -  (Optional) Connect the SDA pin (JP10.11), SCL pin (JP10.13), and the AGND pin (JP10.10) to the PMBus interface if communication from the PMBus interface to other PMBus devices is necessary.
    -  Place an external aluminum capacitor of 330 μF (or greater) between the output terminals (JP4, JP8).
    -  Connect the ON/OFF pin (JP7) to ground for input power (JP3).
-   -  Apply a dc voltage source (36 V dc ~ 75 V dc) between the input terminals (JP1, JP3).
+   -  Apply a dc voltage source (36 V dc ~ 75 V dc) between the input terminals
+      (JP1, JP3).
 
 -  Shut down the brick.
 
@@ -172,12 +175,11 @@ Schematic, Bill of Materials, and PCB Layout
 
 .. image:: https://wiki.analog.com/_media/resources/a7_ug656_adp1051_eighthbrick_reva_sch.png
    :align: right
-   :width: 950px
+   :width: 950
 
 .. container:: centeralign
 
    \ *Figure 7. Schematic*\
-
 
 Bill of Materials
 ~~~~~~~~~~~~~~~~~
@@ -357,13 +359,11 @@ Bill of Materials
 
    \ *Figure 8. Top Layer*\
 
-
    |image2|
 
 .. container:: centeralign
 
    \ *Figure 9. Layer 2*\
-
 
    |image3|
 
@@ -371,13 +371,11 @@ Bill of Materials
 
    \ *Figure 10. Layer 3*\
 
-
    |image4|
 
 .. container:: centeralign
 
    \ *Figure 11. Layer 4*\
-
 
    |image5|
 
@@ -385,13 +383,11 @@ Bill of Materials
 
    \ *Figure 12. Layer 5*\
 
-
    |image6|
 
 .. container:: centeralign
 
    \ *Figure 13. Layer 6*\
-
 
    |image7|
 
@@ -399,13 +395,11 @@ Bill of Materials
 
    \ *Figure 14. Layer 7*\
 
-
    |image8|
 
 .. container:: centeralign
 
    \ *Figure 15. Layer 8*\
-
 
    |image9|
 
@@ -413,13 +407,11 @@ Bill of Materials
 
    \ *Figure 16. Layer 9*\
 
-
    |image10|
 
 .. container:: centeralign
 
    \ *Figure 17. Layer 10*\
-
 
    |image11|
 
@@ -427,13 +419,11 @@ Bill of Materials
 
    \ *Figure 18. Layer 11*\
 
-
    |image12|
 
 .. container:: centeralign
 
    \ *Figure 19. Layer 12*\
-
 
    |image13|
 
@@ -441,13 +431,11 @@ Bill of Materials
 
    \ *Figure 20. Layer 13*\
 
-
    |image14|
 
 .. container:: centeralign
 
    \ *Figure 21. Layer 14*\
-
 
    |image15|
 
@@ -455,13 +443,11 @@ Bill of Materials
 
    \ *Figure 22. Layer 15*\
 
-
    |image16|
 
 .. container:: centeralign
 
    \ *Figure 23. Bottom Layer*\
-
 
 Standard DC-to-DC Test Report
 -----------------------------
@@ -469,7 +455,9 @@ Standard DC-to-DC Test Report
 Test Items Summary Tables
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The specification in the test form is defined under 25°C and pass/fail is according to the specification. The characterizations derived using the following equipment:
+The specification in the test form is defined under 25°C and pass/fail is
+according to the specification. The characterizations derived using the
+following equipment:
 
 -  Programmable power supply: Chroma 62012P-100-50
 -  DC electronic load: Chroma 6314A and Chroma 63016A
@@ -576,7 +564,8 @@ Efficiency
 Test Conditions
 ^^^^^^^^^^^^^^^
 
-The unit operates under full input voltage and load range. Efficiency was measured or computed after warming up for a minimum of 10 minutes.
+The unit operates under full input voltage and load range. Efficiency was
+measured or computed after warming up for a minimum of 10 minutes.
 
 Pass/Fail Criteria
 ^^^^^^^^^^^^^^^^^^
@@ -594,14 +583,9 @@ Test result: Pass
 
    Specification (%)
 
-
-
-
 .. container:: centeralign
 
    Test Results (%)
-
-
 
 +============+==================+==========+============================================+=======+=======+===========================================+========+=======+
 | Item       | V\ :sub:`IN` (V) | Load (A) | -40°C                                      | +25°C | +85°C | -40°C                                     | +25°C  | +85°C |
@@ -611,12 +595,11 @@ Test result: Pass
 
 .. image:: https://wiki.analog.com/_media/resources/a10_-ug656_brick_efficiency.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ *Figure 24. Eighth Brick Efficiency, ADP5051*\
-
 
 **Table 9.**
 
@@ -718,7 +701,8 @@ Maximum Input Current
 Test Conditions
 ^^^^^^^^^^^^^^^
 
-The unit was set at maximum load and the input voltage was set to the minimum value.
+The unit was set at maximum load and the input voltage was set to the minimum
+value.
 
 Pass/Fail Criteria
 ^^^^^^^^^^^^^^^^^^
@@ -736,14 +720,9 @@ Test result: Pass
 
    Specification (A)
 
-
-
-
 .. container:: centeralign
 
    Test Results (A)
-
-
 
 +==============+==================+==========+============================================+=======+=======+===========================================+=======+=======+
 | Item         | V\ :sub:`IN` (V) | Load (A) | -40°C                                      | +25°C | +85°C | -40°C                                     | +25°C | +85°C |
@@ -775,14 +754,9 @@ Test result:
 
    Specification (W)
 
-
-
-
 .. container:: centeralign
 
    Test Results (W)
-
-
 
 +=============+==================+==========+============================================+=======+=======+===========================================+=======+=======+
 | Item        | V\ :sub:`IN` (V) | Load (A) | -40°C                                      | +25°C | +85°C | -40°C                                     | +25°C | +85°C |
@@ -801,7 +775,8 @@ Test result:
 Output Characterization
 -----------------------
 
-The test items summary for Output Characterization specifications is available in Table 4.
+The test items summary for Output Characterization specifications is available
+in Table 4.
 
 Output Voltage Setpoint
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -827,14 +802,9 @@ Test result: Pass
 
    Specification (V)
 
-
-
-
 .. container:: centeralign
 
    Test Results (V)
-
-
 
 +=============+==================+==========+============================================+=======+=======+===========================================+========+=======+
 | Item        | V\ :sub:`IN` (V) | Load (A) | -40°C                                      | +25°C | +85°C | -40°C                                     | +25°C  | +85°C |
@@ -866,14 +836,9 @@ Test result: Pass
 
    Specification (V)
 
-
-
-
 .. container:: centeralign
 
    Test Results (V)
-
-
 
 +=============+==================+==========+============================================+=======+=======+===========================================+========+=======+
 | Item        | V\ :sub:`IN` (V) | Load (A) | -40°C                                      | +25°C | +85°C | -40°C                                     | +25°C  | +85°C |
@@ -919,14 +884,9 @@ Test result: Pass
 
    Specification (V)
 
-
-
-
 .. container:: centeralign
 
    Test Results (V)
-
-
 
 +=============+==================+==========+============================================+=======+=======+===========================================+========+=======+
 | Item        | V\ :sub:`IN` (V) | Load (A) | -40°C                                      | +25°C | +85°C | -40°C                                     | +25°C  | +85°C |
@@ -942,12 +902,11 @@ Test result: Pass
 
 .. image:: https://wiki.analog.com/_media/resources/af9_linereg.png
    :align: center
-   :width: 450px
+   :width: 450
 
 .. container:: centeralign
 
    \ *Figure 25. Eighth Brick Line Regulation*\
-
 
 Load Regulation
 ~~~~~~~~~~~~~~~
@@ -973,14 +932,9 @@ Test result: Pass
 
    Specification (V)
 
-
-
-
 .. container:: centeralign
 
    Test Results (V)
-
-
 
 +=============+==================+==========+============================================+=======+=======+===========================================+========+=======+
 | Item        | V\ :sub:`IN` (V) | Load (A) | -40°C                                      | +25°C | +85°C | -40°C                                     | +25°C  | +85°C |
@@ -1076,12 +1030,11 @@ Test result: Pass
 
 .. image:: https://wiki.analog.com/_media/resources/af10_loadreg.png
    :align: center
-   :width: 450px
+   :width: 450
 
 .. container:: centeralign
 
    \ *Figure 26. Eighth Brick Load Regulation*\
-
 
 Constant Current
 ~~~~~~~~~~~~~~~~
@@ -1096,13 +1049,11 @@ Pass/Fail Criteria
 
 Load current should limit under the IOUT_OC_LIMIT.
 
-
 |image17|
 
 .. container:: centeralign
 
    \ *Figure 27. Eighth Brick Constant Current Mode*\
-
 
 Output Ripple and Noise
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1110,15 +1061,15 @@ Output Ripple and Noise
 Test Condition
 ^^^^^^^^^^^^^^
 
-Ripple voltage and noise were measured at the pins of the mating connector of which each output was decoupled by a ceramic (X7R) capacitor and an aluminum capacitor, as shown in following figure.
-
+Ripple voltage and noise were measured at the pins of the mating connector of
+which each output was decoupled by a ceramic (X7R) capacitor and an aluminum
+capacitor, as shown in following figure.
 
 |image18|
 
 .. container:: centeralign
 
    \ *Figure 28. Decoupled Eighth Brick Power Module*\
-
 
 Pass/Fail Criteria
 ^^^^^^^^^^^^^^^^^^
@@ -1136,14 +1087,9 @@ Test result: Pass
 
    Specification (V)
 
-
-
-
 .. container:: centeralign
 
    Test Results (V)
-
-
 
 +========================================+==================+==========+============================================+=======+=======+===========================================+=======+=======+
 | Item                                   | V\ :sub:`IN` (V) | Load (A) | -40°C                                      | +25°C | +85°C | -40°C                                     | +25°C | +85°C |
@@ -1173,13 +1119,13 @@ Test result: Pass
 
 .. image:: https://wiki.analog.com/_media/resources/af29toaf36new.png
    :align: center
-   :width: 700px
+   :width: 700
 
 **500 MHz Signal Bandwidth when V\ IN = 48 V**
 
 .. image:: https://wiki.analog.com/_media/resources/af37to38new.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Dynamic Load Response
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1205,14 +1151,9 @@ Test result: Pass
 
    Specification (mV/µs)
 
-
-
-
 .. container:: centeralign
 
    Test Results (mV/µs)
-
-
 
 +============================+==================+=============+================================================+=======+=======+===============================================+=========+=======+
 | Item                       | V\ :sub:`IN` (V) | Load (%)    | -40°C                                          | +25°C | +85°C | -40°C                                         | +25°C   | +85°C |
@@ -1244,14 +1185,9 @@ Test result: Pass
 
    Specification (mV/µs)
 
-
-
-
 .. container:: centeralign
 
    Test Results (mV/µs)
-
-
 
 +============================+==================+=============+================================================+=======+=======+===============================================+=========+=======+
 | Item                       | V\ :sub:`IN` (V) | Load (%)    | -40°C                                          | +25°C | +85°C | -40°C                                         | +25°C   | +85°C |
@@ -1283,14 +1219,9 @@ Test result: Pass
 
    Specification (mV/µs)
 
-
-
-
 .. container:: centeralign
 
    Test Results (mV/µs)
-
-
 
 +============================+==================+==============+================================================+=======+=======+===============================================+===================+=======+
 | Item                       | V\ :sub:`IN` (V) | Load (%)     | -40°C                                          | +25°C | +85°C | -40°C                                         | +25°C             | +85°C |
@@ -1319,14 +1250,14 @@ Test result: Pass
 
 .. image:: https://wiki.analog.com/_media/resources/af47toaf54_tdstart.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Load Step: 2 A, 20 A, 2 A with a Slew Rate of 1 A/µs
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. image:: https://wiki.analog.com/_media/resources/af55toaf62.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Turn-On Transient
 ~~~~~~~~~~~~~~~~~
@@ -1352,14 +1283,9 @@ Test result: Pass
 
    Specification (ms)
 
-
-
-
 .. container:: centeralign
 
    Test Results (ms)
-
-
 
 +==================+==================+==========+=============================================+=======+=======+============================================+=======+=======+
 | Item             | V\ :sub:`IN` (V) | Load (A) | -40°C                                       | +25°C | +85°C | -40°C                                      | +25°C | +85°C |
@@ -1386,7 +1312,7 @@ Test result: Pass
 
 .. image:: https://wiki.analog.com/_media/resources/af63toaf70_tdstartnew.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Table 21. Turn-On Transient, T\ START**
 
@@ -1397,14 +1323,9 @@ Test result: Pass
 
    Specification (ms)
 
-
-
-
 .. container:: centeralign
 
    Test Results (ms)
-
-
 
 +=================+==================+==========+=============================================+=======+=======+============================================+=======+=======+
 | Item            | V\ :sub:`IN` (V) | Load (A) | -40°C                                       | +25°C | +85°C | -40°C                                      | +25°C | +85°C |
@@ -1448,7 +1369,7 @@ Test result: Pass
 
 .. image:: https://wiki.analog.com/_media/resources/af79tof82new.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Turn-Off Transient
 ~~~~~~~~~~~~~~~~~~
@@ -1474,12 +1395,11 @@ Load (A) Specification at -40°C, +25°C, and +85°C Pass or Fail at 25°C
 20       Monotonic drop and no negative current   Pass
 ======== ======================================== ====================
 
-
 | **Channel 1 (Blue): V\ O, Channel 2 (Cyan): V\ IN, Channel 4 (Green): I\ O**
 
 .. image:: https://wiki.analog.com/_media/resources/af83tof90new.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Protection
 ----------
@@ -1519,7 +1439,9 @@ Test result: Pass
 | Hysteresis             | 20       | >1                |       |       |                  | 2     |       |
 +------------------------+----------+-------------------+-------+-------+------------------+-------+-------+
 
-Note that for auxiliary power turn-on input voltage, auxiliary power turn-off input voltage, and hysteresis, all specifications are not specified and test results are to be determined.
+Note that for auxiliary power turn-on input voltage, auxiliary power turn-off
+input voltage, and hysteresis, all specifications are not specified and test
+results are to be determined.
 
 Output Overvoltage Protection (Output OVP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1552,7 +1474,7 @@ Test result: Pass
 
 .. image:: https://wiki.analog.com/_media/resources/af91andf92ovpnew.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Output Overcurrent Protection (Output OCP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1565,7 +1487,8 @@ Apply a 23 A CC load at the output terminals.
 Pass/Fail Criteria
 ^^^^^^^^^^^^^^^^^^
 
-The unit should be able to shut down the power conversion and restart after a certain time.
+The unit should be able to shut down the power conversion and restart after a
+certain time.
 
 Test result: Pass
 
@@ -1573,7 +1496,7 @@ Test result: Pass
 
 .. image:: https://wiki.analog.com/_media/resources/af93toaf96ocpnew.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Output Short-Circuit Protection (Output SCP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1581,7 +1504,8 @@ Output Short-Circuit Protection (Output SCP)
 Test Condition
 ^^^^^^^^^^^^^^
 
-A shorted load whose load current is up to 50 A is applied at the output terminals.
+A shorted load whose load current is up to 50 A is applied at the output
+terminals.
 
 Pass/Fail Criteria
 ^^^^^^^^^^^^^^^^^^
@@ -1594,7 +1518,7 @@ Test result: Pass
 
 .. image:: https://wiki.analog.com/_media/resources/af97tof100_scpnew.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Monitoring
 ----------
@@ -1616,13 +1540,11 @@ EV\ :sub:`IN` (error of V\ :sub:`IN`) < ±2 V when V\ :sub:`IN` = 36 V to 75 V a
 
 Test result: Pass
 
-
 |image21|
 
 .. container:: centeralign
 
    \ *Figure 101. Input Voltage Reading Error*\
-
 
 Input Current Detected Precision
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1639,13 +1561,11 @@ EI\ :sub:`IN` (error of I\ :sub:`IN`) < ±0.5 A when V\ :sub:`IN` = 36 V to 75 V
 
 Test result: Pass
 
-
 |image22|
 
 .. container:: centeralign
 
    \ *Figure 102. Input Current Reading Error*\
-
 
 Input Power Detected Precision
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1662,13 +1582,11 @@ EP\ :sub:`IN` (error of P\ :sub:`IN`) < ±12 W when V\ :sub:`IN` = 36 V to 75 V 
 
 Test result:
 
-
 |image23|
 
 .. container:: centeralign
 
    \ *Figure 103. Input Power Reading Error*\
-
 
 Output Voltage Detected Precision
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1685,13 +1603,11 @@ EV\ :sub:`O` (error of V\ :sub:`O`) < ±0.2 V when V\ :sub:`IN` = 36 V to 75 V a
 
 Test result: Pass
 
-
 |image24|
 
 .. container:: centeralign
 
    \ *Figure 104. Output Voltage Reading Error*\
-
 
 Output Current Detected Precision
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1708,13 +1624,11 @@ EI\ :sub:`O` (error of I\ :sub:`O`) < ±1 A when V\ :sub:`IN` = 36 V to 75 V and
 
 Test result: Pass
 
-
 |image25|
 
 .. container:: centeralign
 
    \ *Figure 105. Output Current Reading Error*\
-
 
 Output Power Detected Precision
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1731,81 +1645,78 @@ EP\ :sub:`O` (error of P\ :sub:`O`) < ±6 W when V\ :sub:`IN` = 36 V to 75 V and
 
 Test result: Pass
 
-
 |image26|
 
 .. container:: centeralign
 
    \ *Figure 106. Output Power Reading Error*\
 
-
 Board Thermal
 ~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/f91thermal.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 .. container:: centeralign
 
    \ *Figure 107. Board Thermal, Ambient Temperature = 25°C*\
 
-
 .. |Figure 1.| image:: https://wiki.analog.com/_media/resources/a1_ug656.png
-   :width: 500px
+   :width: 500
 .. |Figure 5. \|| image:: /resources/a5_ug656_top.jpg
-   :width: 500px
+   :width: 500
 .. |Figure 6. \|| image:: /resources/a6_ug656_bottom.jpg
-   :width: 500px
+   :width: 500
 .. |image1| image:: https://wiki.analog.com/_media/resources/af91toplayer.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/af92layer11.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/af93layer3.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/resources/af94layer4.png
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/resources/af95layer5.png
-   :width: 500px
+   :width: 500
 .. |image6| image:: https://wiki.analog.com/_media/resources/af96layer6.png
-   :width: 500px
+   :width: 500
 .. |image7| image:: https://wiki.analog.com/_media/resources/af97layer7.png
-   :width: 500px
+   :width: 500
 .. |image8| image:: https://wiki.analog.com/_media/resources/af98layer8.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/resources/af99layer9.png
-   :width: 500px
+   :width: 500
 .. |image10| image:: https://wiki.analog.com/_media/resources/af100layer10.png
-   :width: 500px
+   :width: 500
 .. |image11| image:: https://wiki.analog.com/_media/resources/af101layer11.png
-   :width: 500px
+   :width: 500
 .. |image12| image:: https://wiki.analog.com/_media/resources/af102layer12.png
-   :width: 500px
+   :width: 500
 .. |image13| image:: https://wiki.analog.com/_media/resources/af103layer13.png
-   :width: 500px
+   :width: 500
 .. |image14| image:: https://wiki.analog.com/_media/resources/af104layer14.png
-   :width: 500px
+   :width: 500
 .. |image15| image:: https://wiki.analog.com/_media/resources/af105layer15.png
-   :width: 500px
+   :width: 500
 .. |image16| image:: https://wiki.analog.com/_media/resources/af106bottomlayer.png
-   :width: 500px
+   :width: 500
 .. |image17| image:: https://wiki.analog.com/_media/resources/af11_constcurr.png
-   :width: 500px
+   :width: 500
 .. |image18| image:: https://wiki.analog.com/_media/resources/af12_rip_noise.png
-   :width: 500px
+   :width: 500
 .. |image19| image:: https://wiki.analog.com/_media/resources/af39toaf46new.png
-   :width: 600px
+   :width: 600
 .. |image20| image:: https://wiki.analog.com/_media/resources/af71tof78_tstartnew2.png
-   :width: 600px
+   :width: 600
 .. |image21| image:: https://wiki.analog.com/_media/resources/f85_evin.png
-   :width: 500px
+   :width: 500
 .. |image22| image:: https://wiki.analog.com/_media/resources/f86eiin.png
-   :width: 500px
+   :width: 500
 .. |image23| image:: https://wiki.analog.com/_media/resources/af87epin.png
-   :width: 500px
+   :width: 500
 .. |image24| image:: https://wiki.analog.com/_media/resources/af88evo.png
-   :width: 500px
+   :width: 500
 .. |image25| image:: https://wiki.analog.com/_media/resources/af89eio.png
-   :width: 500px
+   :width: 500
 .. |image26| image:: https://wiki.analog.com/_media/resources/af90epo.png
-   :width: 500px
+   :width: 500

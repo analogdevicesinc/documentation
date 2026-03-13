@@ -18,7 +18,8 @@ Structure
 
 Description
 
-Properties structure which provides information about the Communication component.
+Properties structure which provides information about the Communication
+component.
 
 Fields
 

@@ -3,7 +3,8 @@
 Save Project
 ============
 
-This action takes in one argument(filePath) and allows the user to save a SigmaStudio+ project in the given filepath. This API returns the SSPResult type.
+This action takes in one argument(filePath) and allows the user to save a
+SigmaStudio+ project in the given filepath. This API returns the SSPResult type.
 
 API
 ---
@@ -15,12 +16,14 @@ API
 Arguments
 ---------
 
--  filePath - The path along with the file name of the project where the given SigmaStudio+ project must be saved
+-  filePath - The path along with the file name of the project where the given
+   SigmaStudio+ project must be saved
 
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the SaveProject action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the SaveProject
+action.
 
 ::
 

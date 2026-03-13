@@ -9,12 +9,17 @@ Master Control Port Write IO
 Description
 -----------
 
-The Interface Write module writes the value of the parameter setting to the EEPROM when required, so that the parameter setting can be used after the power down(via selfboot).The module can write the value to EEPROM when the parameter value is changed or periodically or an external trigger(rising edge). The module supports writes through SPI or I2C protocols.
+The Interface Write module writes the value of the parameter setting to the
+EEPROM when required, so that the parameter setting can be used after the power
+down(via selfboot).The module can write the value to EEPROM when the parameter
+value is changed or periodically or an external trigger(rising edge). The module
+supports writes through SPI or I2C protocols.
 
 Usage
 -----
 
-The Interface Write module has the following properties which can be set by the user in the form to configure the I2C or SPI modes
+The Interface Write module has the following properties which can be set by the
+user in the form to configure the I2C or SPI modes
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/inputoutput/mc_interfacewrite_wnd_ssp.jpg
    :alt: mc_interfacewrite_wnd_ssp.jpg
@@ -39,7 +44,6 @@ Name           Type  Description
 ============== ===== ===========
 InterfaceWrite Logic Input
 ============== ===== ===========
-
 
 | ===== Configurable Parameters =====
 

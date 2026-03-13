@@ -1,7 +1,8 @@
 Pre-release SD Card Creation
 ============================
 
-The project will be release as part of 2019_r1 release.Before then, the SD image for 2018_r2 can be used.
+The project will be release as part of 2019_r1 release.Before then, the SD image
+for 2018_r2 can be used.
 
 Writing the SD Card
 -------------------

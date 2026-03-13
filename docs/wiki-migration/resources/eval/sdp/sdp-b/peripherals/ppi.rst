@@ -1,7 +1,13 @@
 PPI: Parallel Peripheral Interface
 ==================================
 
-PPI is a half-duplex, bi-directional port accommodating up to 16 bits of data. It has a dedicated clock pin and three multiplexed frame sync pins. PPI supports up to 16 bits of data with programmable clock and frame sync polarities. PPI requires an externally generated free running clock. The maximum PPI Clock Frequency achievable on the SDP for a single frame transfer is 50MHz. The maximum transfer rate on SDP for streaming data over the PPI is achievable by using a 20-25 MHz PPI clock.
+PPI is a half-duplex, bi-directional port accommodating up to 16 bits of data.
+It has a dedicated clock pin and three multiplexed frame sync pins. PPI supports
+up to 16 bits of data with programmable clock and frame sync polarities. PPI
+requires an externally generated free running clock. The maximum PPI Clock
+Frequency achievable on the SDP for a single frame transfer is 50MHz. The
+maximum transfer rate on SDP for streaming data over the PPI is achievable by
+using a 20-25 MHz PPI clock.
 
 =================== ================================ ================
 Pin - Blackfin Name Pin - SDP 120 Pin Connector Name Description
@@ -33,7 +39,13 @@ Table 1 : Pin Assignments
 | The maximum transfer rate is entirely dependent on the PC performance, so can vary depending on the other software tasks running at teh same time. The USB transfer rate can also vary as a result of the CPU workload so the frame sync length across the PPI interface can vary accordingly. The PPI interface requires an external source to generate a free running clock and implement some flow control. |image1|
 | Figure 1 : PPI Interface connection to receive data
 
-A maximum of 32k words of 16 bits per frame (PPI_FS1) can be sent in each PPI transfer. The SDP board controls the transfer through the implementation of a second frame called Master Ready (PPI_FS2-MR). This enables, or stops, the data transfer from the FPGA or external source. If the SDP internal buffer structure is full or the USB connection is very slow, the MR signal goes low and will pause the data transfer. Otherwise, MR is active and a new PPI_FS1 signal is generated.
+A maximum of 32k words of 16 bits per frame (PPI_FS1) can be sent in each PPI
+transfer. The SDP board controls the transfer through the implementation of a
+second frame called Master Ready (PPI_FS2-MR). This enables, or stops, the data
+transfer from the FPGA or external source. If the SDP internal buffer structure
+is full or the USB connection is very slow, the MR signal goes low and will
+pause the data transfer. Otherwise, MR is active and a new PPI_FS1 signal is
+generated.
 
 | |image2|
 | Figure 2 : PPI Transfer Protocol
@@ -41,7 +53,10 @@ A maximum of 32k words of 16 bits per frame (PPI_FS1) can be sent in each PPI tr
 Asynchronous Parallel
 ---------------------
 
-The Asynchronous memory interface is available through the External Bus Interface Unit (EBIU). The Asynchronous Memory Bank made available is from 0x20000000 to 0x200FFFFF. The EBIU is clocked by the System Clock, SCLK, which runs at 120MHz.
+The Asynchronous memory interface is available through the External Bus
+Interface Unit (EBIU). The Asynchronous Memory Bank made available is from
+0x20000000 to 0x200FFFFF. The EBIU is clocked by the System Clock, SCLK, which
+runs at 120MHz.
 
 +---------------------+----------------------------------+---------------------------------+
 | Pin - Blackfin Name | Pin - SDP 120 Pin Connector Name | Description                     |
@@ -102,8 +117,8 @@ The Asynchronous memory interface is available through the External Bus Interfac
 | Figure 3 : Asynchronous Write Followed by a Read
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl18.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl19.png
-   :width: 800px
+   :width: 800
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-b_periphexpl20.png
-   :width: 800px
+   :width: 800

@@ -3,19 +3,32 @@ AD-FMCOMMS6-EBZ User Guide
 
 The :adi:`AD-FMCOMMS6-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD-FMCOMMS6-EBZ.html>` eval board is a 400MHz to 4.4GHz receiver based on the :adi:`AD9652` dual 16bit analog to digital converter, the :adi:`ADL5566` High Dynamic Range RF/IF Dual Differential Amplifier and the :adi:`ADL5380` quadrature demodulator.
 
-This is an I and Q demodulation approach to direct convert (also known as a homodyne or zero IF) receiver architecture. Direct conversion radios perform just one frequency translation compared to a super-heterodyne receiver that can perform several frequency translations. One frequency translation is advantageous because it:
+This is an I and Q demodulation approach to direct convert (also known as a
+homodyne or zero IF) receiver architecture. Direct conversion radios perform
+just one frequency translation compared to a super-heterodyne receiver that can
+perform several frequency translations. One frequency translation is
+advantageous because it:
 
 -  Reduces receiver complexity and the number of stages needed, increasing performance and reducing power consumption
 -  Avoids image rejection issues and unwanted mixing
 
-This topology will provide image rejection and early implementation of the differential signal environment. There is an amplification stage to maintain the full-scale input to the ACD. The local oscillator and ADC clock are on board and share the same reference signal prevent smearing. The form factor is VITA57 compliant and all of the DC power is routed from the data capture board through an FMC connector. This evaluation board demonstrates a high performance receiver signal chain aimed at military and commercial radar using “commercial off the shelf” (COTS) components. The overall circuit has a bandwidth of 220MHz with a pass band flatness of +/- 1.0 dB. The SNR and SFDR measured at an IF of 145MHz are 64dB and 75dBc, respectively.
+This topology will provide image rejection and early implementation of the
+differential signal environment. There is an amplification stage to maintain the
+full-scale input to the ACD. The local oscillator and ADC clock are on board and
+share the same reference signal prevent smearing. The form factor is VITA57
+compliant and all of the DC power is routed from the data capture board through
+an FMC connector. This evaluation board demonstrates a high performance receiver
+signal chain aimed at military and commercial radar using “commercial off the
+shelf” (COTS) components. The overall circuit has a bandwidth of 220MHz with a
+pass band flatness of +/- 1.0 dB. The SNR and SFDR measured at an IF of 145MHz
+are 64dB and 75dBc, respectively.
 
 Contains
 --------
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmcomms6/top_view_main_page.png
    :align: right
-   :width: 400px
+   :width: 400
 
 The card contains:
 

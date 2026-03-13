@@ -1,8 +1,9 @@
 CN-0507: A Complete 2-Port Network Analyzer on an Arduino Shield
 ================================================================
 
-This reference design implements a complete 2-Port radio frequency (RF) Network Analyzer using a low-cost zero intermediate frequency (ZIF) architecture in an Arduino form factor, which is designed to plug into EVAL-ADICUP3029.
-
+This reference design implements a complete 2-Port radio frequency (RF) Network
+Analyzer using a low-cost zero intermediate frequency (ZIF) architecture in an
+Arduino form factor, which is designed to plug into EVAL-ADICUP3029.
 
 |image1|
 
@@ -23,7 +24,8 @@ Software GUI Setup
 Firmware
 ~~~~~~~~
 
-To use the software GUI, the firmware must first be loaded onto the EVAL-ADICUP3029.
+To use the software GUI, the firmware must first be loaded onto the
+EVAL-ADICUP3029.
 
 -  Download the hex file from the CN-0507 product page.
 -  If running an operating system older than Windows 10, install serial driver as in :doc:`1. Install mBed windows serial driver... </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/keil_iar_support>`
@@ -32,29 +34,33 @@ To use the software GUI, the firmware must first be loaded onto the EVAL-ADICUP3
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sw_setup/daplink.png
    :alt: daplink.png
    :align: center
-   :width: 500px
+   :width: 500
 
--  Copy the hex file to the DAPLINK drive to load the firmware to the EVAL-ADICUP3029. Note that the DAPLINK drive will disappear for a moment, then reappear after loading the firmware.
+-  Copy the hex file to the DAPLINK drive to load the firmware to the
+   EVAL-ADICUP3029. Note that the DAPLINK drive will disappear for a moment,
+   then reappear after loading the firmware.
 
 GUI
 ~~~
 
 -  Download the GUI zip archive from the CN-0507 product page.
 -  Extract the zip file to your PC.
--  Look inside the extracted files and launch the \*\* adi-vna-app.exe \*\* executable.
+-  Look inside the extracted files and launch the \*\* adi-vna-app.exe \*\*
+   executable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sw_setup/exe.png
    :alt: exe.png
    :align: center
-   :width: 500px
+   :width: 500
 
 --------------
 
 The Software GUI
 ----------------
 
-The included software GUI can be used for performing S-parameter measurements using the CN-0507 shield. The important parts of software GUI is shown in this figure.
-
+The included software GUI can be used for performing S-parameter measurements
+using the CN-0507 shield. The important parts of software GUI is shown in this
+figure.
 
 |palantir_gui_overview.png|
 
@@ -64,16 +70,21 @@ How to use the GUI
 Connection
 ^^^^^^^^^^
 
-After launching the software GUI. The connection window will be first shown. It lists all the available serial ports. To start using the GUI, choose the COM port of the EVAL-ADICUP3029 used. Have the baud rate set to the default, 115200, then click \*\* Connect \*\*. The connection window will automatically close after a successful connection.
-
+After launching the software GUI. The connection window will be first shown. It
+lists all the available serial ports. To start using the GUI, choose the COM
+port of the EVAL-ADICUP3029 used. Have the baud rate set to the default, 115200,
+then click \*\* Connect \*\*. The connection window will automatically close
+after a successful connection.
 
 |connection_screen.png|
 
 Performing a Sweep
 ^^^^^^^^^^^^^^^^^^
 
-First, make sure that port 1 and port 2 of the CN-0507 shield is already connected to the DUT. To perform a sweep, just click the \*\* Start Sweep \*\* button. This figure shows the magnitude plot from an open sweep with the default sweep setting values.
-
+First, make sure that port 1 and port 2 of the CN-0507 shield is already
+connected to the DUT. To perform a sweep, just click the \*\* Start Sweep \*\*
+button. This figure shows the magnitude plot from an open sweep with the default
+sweep setting values.
 
 |sweep_open_default_settings.png|
 
@@ -95,14 +106,14 @@ The first tab, **Calibration Constants**, contains calibration kit constants and
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/calibration_1st_tab.png
    :alt: calibration_1st_tab.png
    :align: center
-   :width: 500px
+   :width: 500
 
 The second tab, **DC Offsets** is used for the IQ demodulator DC offset correction. Click the **Measure** button to measure the DC offset voltages of the IQ demodulators. Wait for it to finish. After it is performed, go to the next tab.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/calibration_2nd_tab.png
    :alt: calibration_2nd_tab.png
    :align: center
-   :width: 500px
+   :width: 500
 
 The third tab, **Calibrate Port 1** is for calibrating port 1. Follow the instructions shown in that tab. For reflection measurements, connect an open terminator to port 1 then click the corresponding **Calibrate** button. Do this again for short and 50-ohm load terminators. For the isolation measurement, connect a 50-ohm load terminator on each port then click the corresponding **Calibrate** button. For the through measurement, connect port 1 and port using a thru then click the corresponding **Calibrate** button. Do this again for port 2 on the fourth tab, **Calibrate Port 2**. After all of these are performed, go to the fifth tab.
 
@@ -113,12 +124,14 @@ The fifth tab, **Save** is for saving all the performed calibration measurements
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/calibration_5th_tab.png
    :alt: calibration_5th_tab.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Creating A new PC Applications
 ------------------------------
 
-This would discuss on how the customers can make their own PC application that could communicate with the existing firmware using UART communication. This also includes the UART settings and communication protocols
+This would discuss on how the customers can make their own PC application that
+could communicate with the existing firmware using UART communication. This also
+includes the UART settings and communication protocols
 
 UART Configuration
 ~~~~~~~~~~~~~~~~~~
@@ -132,7 +145,9 @@ UART Configuration
 UART Communication Protocol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The microcontroller waits for commands. The command list are listed on the table below. Once the microcontroller receives a command, it will perform what the command is supposed to do. After that, it will send back an output.
+The microcontroller waits for commands. The command list are listed on the table
+below. Once the microcontroller receives a command, it will perform what the
+command is supposed to do. After that, it will send back an output.
 
 UART Input Packet
 ^^^^^^^^^^^^^^^^^
@@ -145,7 +160,9 @@ The microcontroller expects an input packet as follows: The **header** contains 
 UART Output Packet
 ^^^^^^^^^^^^^^^^^^
 
-The general output packet of the microcontroller has the 2 bytes header, 2 byte command, command output (size depends on the command) and the 2 bytes delimeter (0xAAAA). For more details please see the image below.
+The general output packet of the microcontroller has the 2 bytes header, 2 byte
+command, command output (size depends on the command) and the 2 bytes delimeter
+(0xAAAA). For more details please see the image below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/uart_output_packet.png
    :alt: uart_output_packet.png
@@ -153,8 +170,8 @@ The general output packet of the microcontroller has the 2 bytes header, 2 byte 
 Command List
 ^^^^^^^^^^^^
 
-The table below will show all the available commands with their respective hex code, input values and the return values.
-
+The table below will show all the available commands with their respective hex
+code, input values and the return values.
 
 |uart_command_list.png|
 
@@ -165,17 +182,16 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0507-ARDZ?&v=RevB>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0507-topview.jpg
 .. |palantir_gui_overview.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/palantir_gui_overview.png
 .. |connection_screen.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/connection_screen.png
-   :width: 500px
+   :width: 500
 .. |sweep_open_default_settings.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sweep_open_default_settings.png
-   :width: 500px
+   :width: 500
 .. |calibration_3rd_tab.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/calibration_3rd_tab.png
-   :width: 500px
+   :width: 500
 .. |calibration_4th_tab.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/calibration_4th_tab.png
-   :width: 500px
+   :width: 500
 .. |uart_command_list.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/uart_command_list.png

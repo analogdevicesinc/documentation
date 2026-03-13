@@ -8,12 +8,14 @@ RMS w/Ext Detector
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rmscompextgraph.png
    :alt: rmscompextgraph.png
-   :width: 450px
+   :width: 450
 
 Description
 -----------
 
-The RMS w/Ext Detector Compressor block computes the RMS level of the control signal and applies the compressor gain to the input signal based on the RMS value.
+The RMS w/Ext Detector Compressor block computes the RMS level of the control
+signal and applies the compressor gain to the input signal based on the RMS
+value.
 
 Variants
 --------
@@ -55,7 +57,6 @@ Name    Type  Description
 Output1 Audio Output channel1
 ======= ===== ===============
 
-
 | ===== Configurable Parameters =====
 
 +--------------------+------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,9 +97,11 @@ Output1 Audio Output channel1
 | 
 | ===== DSP Parameter Computation =====
 
-TimeConstant = Abs(1 - 10^(TimeConstant/(10 \* (FS + 0.0000001)))), Where TimeConstant is 20000/TimeConstant in dBps
+TimeConstant = Abs(1 - 10^(TimeConstant/(10 \* (FS + 0.0000001)))), Where
+TimeConstant is 20000/TimeConstant in dBps
 
-Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear)
+Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS +
+0.0000001) (When Decay is in linear)
 
 Hold = FS \* Hold/1000
 

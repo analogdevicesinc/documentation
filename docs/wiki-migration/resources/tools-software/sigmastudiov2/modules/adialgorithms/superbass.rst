@@ -18,7 +18,9 @@ Super Bass Stereo
 Description
 ~~~~~~~~~~~
 
-The Super Bass block is a bass enhancement algorithm specifically designed to compensate for the poor low end response of small speakers by using psychoacoustic principles to improve the perceived bass response.
+The Super Bass block is a bass enhancement algorithm specifically designed to
+compensate for the poor low end response of small speakers by using
+psychoacoustic principles to improve the perceived bass response.
 
 Variants
 ~~~~~~~~

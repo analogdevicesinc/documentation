@@ -3,7 +3,8 @@ NLMS Adaptive Filter
 
 :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
-The Normalized Least Mean Squares (NLMS) adaptive filter is an FIR based adaptive filter. The filter update equation is given by
+The Normalized Least Mean Squares (NLMS) adaptive filter is an FIR based
+adaptive filter. The filter update equation is given by
 
 ::
 
@@ -23,10 +24,10 @@ Where:
         Eng = Average energy over the duration of the filter = (1/M)*Σx(m) <sup>2</sup>
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/nlms.jpg
-   :width: 200px
+   :width: 200
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/nlms_cell.png
-   :width: 100px
+   :width: 100
 
 Input Pins
 ----------
@@ -84,7 +85,9 @@ Here,
 Algorithm Description
 ---------------------
 
-This implementation of NLMS is a block based implementation. The weight update happens at the end of every processing block. The weight update equation is given below:
+This implementation of NLMS is a block based implementation. The weight update
+happens at the end of every processing block. The weight update equation is
+given below:
 
 w(m+1) = w(m) + μ \* Err \* x(m) / Eng Where:
 

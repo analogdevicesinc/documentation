@@ -3,7 +3,8 @@ AD9081/AD9082 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide
 
 |image1| This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the :adi:`AD9081-FMCA-EBZ`/:adi:`AD9082-FMCA-EBZ` on ZCU102
 
-Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees from source can be found here:
+Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees
+from source can be found here:
 
 -  :doc:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
 -  :doc:`How to build the ZynqMP boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynqmp-boot-image>`
@@ -30,19 +31,34 @@ AD9081-FMCA-EBZ / AD9082-FMCA-EBZ (Single MxFE) HDL Reference Design
 
    We are in the process of migrating our documentation to GitHub IO. Please check the following link for updated information regarding the HDL project: https://analogdevicesinc.github.io/hdl/projects/ad9081_fmca_ebz/index.html.
 
-
 Functional Overview
 -------------------
 
-The AD9081-FMCA-EBZ / AD9082-FMCA-EBZ reference design is a processor based (e.g. Microblaze) embedded system. The design consists from a receive and a transmit chain.
+The AD9081-FMCA-EBZ / AD9082-FMCA-EBZ reference design is a processor based
+(e.g. Microblaze) embedded system. The design consists from a receive and a
+transmit chain.
 
-The receive chain transports the captured samples from ADC to the system memory (DDR). Before transferring the data to DDR the samples are stored in a buffer implemented on block rams from the FPGA fabric (util_adc_fifo). The space allocated in the buffer for each channel depends on the number of currently active channels. It goes up to M x 64k samples if a single channel is selected or 64k samples per channel if all channels are selected.
+The receive chain transports the captured samples from ADC to the system memory
+(DDR). Before transferring the data to DDR the samples are stored in a buffer
+implemented on block rams from the FPGA fabric (util_adc_fifo). The space
+allocated in the buffer for each channel depends on the number of currently
+active channels. It goes up to M x 64k samples if a single channel is selected
+or 64k samples per channel if all channels are selected.
 
-The transmit chain transports samples from the system memory to the DAC devices. Before streaming out the data to the DAC through the JESD link the samples first are loaded into a buffer (util_dac_fifo) which will cyclically stream the samples at the tx_device_clk data rate. The space allocated in the transmit buffer for each channel depends on the number of currently active channels. It goes up to M x 64k samples if a single channel is selected or 64k samples per channel if all channels are selected.
+The transmit chain transports samples from the system memory to the DAC devices.
+Before streaming out the data to the DAC through the JESD link the samples first
+are loaded into a buffer (util_dac_fifo) which will cyclically stream the
+samples at the tx_device_clk data rate. The space allocated in the transmit
+buffer for each channel depends on the number of currently active channels. It
+goes up to M x 64k samples if a single channel is selected or 64k samples per
+channel if all channels are selected.
 
-All cores from the receive and transmit chains are programmable through an AXI-Lite interface.
+All cores from the receive and transmit chains are programmable through an
+AXI-Lite interface.
 
-The transmit and receive chains can operate at different data rates having separate rx_device_clk/tx_device_clk and corresponding lane rates but must share the same reference clock.
+The transmit and receive chains can operate at different data rates having
+separate rx_device_clk/tx_device_clk and corresponding lane rates but must share
+the same reference clock.
 
 Board setup
 -----------
@@ -53,9 +69,9 @@ Board setup
 
    
    -  In order to avoid using an external clock source and fully rely on the HMC7044 clock chip,*\* rotate the C6D/C4D caps in C5D/C3D position*\* (Please note: In the latest version of the board, this is now the default configuration, so this configuration step might not be needed anymore)
-   -  If LEDS V1P0_LED and VINT_LED are not on please \*\* depopulate R22M and populate R2M*\*
+   -  If LEDS V1P0_LED and VINT_LED are not on please \*\* depopulate R22M and
+      populate R2M*\*
    
-
 
 HDL source code
 ---------------
@@ -68,7 +84,6 @@ HDL source code
    
    -  :git-hdl:`projects/ad9081_fmca_ebz`
    
-
 
 Supported Carriers
 ~~~~~~~~~~~~~~~~~~
@@ -87,7 +102,8 @@ Useful links
 Block design
 ------------
 
-The block design supports parameters and scales based on it as shown on the below two examples.
+The block design supports parameters and scales based on it as shown on the
+below two examples.
 
 The parameters for Rx or Tx links can be changed from the system_project.tcl :
 
@@ -184,7 +200,8 @@ Example block design for Single Link; M=4; L=8;
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_204b_m4l8.svg
    :align: center
 
-The Rx links are set for full bandwidth mode and operate with the following parameters:
+The Rx links are set for full bandwidth mode and operate with the following
+parameters:
 
 -  Rx Deframer parameters: L=8, M=4, F=1, S=1, N’=16, N = 16 (Quick Config 0x12)
 -  Sample Rate : 1550 MSPS
@@ -194,7 +211,8 @@ The Rx links are set for full bandwidth mode and operate with the following para
 -  JESD204B Lane Rate – 15.5Gbps
 -  QPLL0
 
-The Tx links are set for full bandwidth mode and operate with the following parameters:
+The Tx links are set for full bandwidth mode and operate with the following
+parameters:
 
 -  Tx Framer parameters: L=8, M=4, F=1, S=1, N’=16, N = 16 (Quick Config 0x11)
 -  Sample Rate : 1550 MSPS
@@ -207,7 +225,8 @@ The Tx links are set for full bandwidth mode and operate with the following para
 Example block design for Single Link; M=2; L=8; JESD204C
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Observation: In 2019_R2 release the Xilinx JESD Physical layer IP Core is used, however in newer versions it is replaced with ADI's util_adxcvr IP core.
+Observation: In 2019_R2 release the Xilinx JESD Physical layer IP Core is used,
+however in newer versions it is replaced with ADI's util_adxcvr IP core.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_204c_m2l8.svg
    :align: center
@@ -234,7 +253,6 @@ Observation: In 2019_R2 release the Xilinx JESD Physical layer IP Core is used, 
            TX_JESD_NP=8
    
 
-
 The Rx link is operating with the following parameters:
 
 -  Rx Deframer parameters: L=8, M=2, F=1, S=2, N’=16, N=16 (Quick Config 0x13)
@@ -258,7 +276,8 @@ The Tx link is operating with the following parameters:
 Clock sources
 -------------
 
-The clock sources depend on the in use carrier and are depicted on the below diagrams:
+The clock sources depend on the in use carrier and are depicted on the below
+diagrams:
 
 ZCU102
 ~~~~~~
@@ -278,7 +297,9 @@ Software considerations
 ADC - crossbar config
 ~~~~~~~~~~~~~~~~~~~~~
 
-Due physical constraints Rx lanes are reordered as described in the following table. e.g physical lane 2 from ADC connects to logical lane 7 from the FPGA. Therefore the crossbar from the device must be set accordingly.
+Due physical constraints Rx lanes are reordered as described in the following
+table. e.g physical lane 2 from ADC connects to logical lane 7 from the FPGA.
+Therefore the crossbar from the device must be set accordingly.
 
 ============ ===========================
 ADC phy Lane FPGA Rx lane / Logical Lane
@@ -296,7 +317,9 @@ ADC phy Lane FPGA Rx lane / Logical Lane
 DAC - crossbar config
 ~~~~~~~~~~~~~~~~~~~~~
 
-Due physical constraints Tx lanes are reordered as described in the following table: e.g physical lane 2 from DAC connects to logical lane 7 from the FPGA. Therefore the crossbar from the device must be set accordingly.
+Due physical constraints Tx lanes are reordered as described in the following
+table: e.g physical lane 2 from DAC connects to logical lane 7 from the FPGA.
+Therefore the crossbar from the device must be set accordingly.
 
 ============ ===========================
 DAC phy Lane FPGA Tx lane / Logical Lane
@@ -367,7 +390,6 @@ Software support
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
-
 Useful links
 ------------
 
@@ -424,8 +446,6 @@ Software support
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
-
-
 Example Device Trees
 --------------------
 
@@ -461,22 +481,21 @@ Testing
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009/quickstart/zcu102.jpg
    :align: center
-   :width: 900px
+   :width: 900
 
 -  Connect the :adi:`AD9082-FMCA-EBZ` FMC board to the FPGA carrier **HPC0** FMC0 socket.
 -  Connect USB UART J83 (Micro USB) to your host PC.
 -  Insert SD card into socket.
 -  Configure ZCU102 for SD BOOT (mode SW6[4:1] switch in the position **OFF,OFF,OFF,ON** as seen in the below picture).
 -  Turn on the power switch on the FPGA board.
--  Observe kernel and serial console messages on your terminal. (use the first ttyUSB or COM port registered)
+-  Observe kernel and serial console messages on your terminal. (use the first
+   ttyUSB or COM port registered)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009/quickstart/zcu102_1p0_bootmode.jpg
    :align: center
-   :width: 400px
-
+   :width: 400
 
 .. esd-warning::
-
 
 SDcard boot files
 -----------------
@@ -493,7 +512,6 @@ Copy the ``BOOT.BIN`` and ``system.dtb`` from the ``zynqmp-zcu102-rev10-ad9081-m
 
    On windows machines make sure the copy process did not encrypted the files.
 
-
 Setting up UART
 ---------------
 
@@ -501,14 +519,12 @@ When setting up the UART make sure you connect to the Interface 0
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zcu102_uart.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Boot messages
 -------------
 
 The **2019_R2** Image based boot messages looks like the followings :
-
-
 
 .. collapsible:: Complete kernel boot log (Click to expand)
 
@@ -516,9 +532,7 @@ The **2019_R2** Image based boot messages looks like the followings :
 
       This specifies any shell prompt running on the target
 
-
       ::
-
 
          Xilinx Zynq MP First Stage Boot Loader
          Release 2019.1   Feb 19 2021  -  15:58:23
@@ -528,7 +542,6 @@ The **2019_R2** Image based boot messages looks like the followings :
          NOTICE:  BL31: v2.0(release):xilinx-v2019.2
          NOTICE:  BL31: Built : 10:19:24, Jan 13 2020
          PMUFW:  v1.1
-
 
          U-Boot 2018.01-21436-gbba91bc203 (Jan 13 2020 - 10:50:58 +0200) Xilinx ZynqMP ZCU102 rev1.0, Build: jenkins-development-build_uboot-1
 
@@ -1235,8 +1248,6 @@ The **2019_R2** Image based boot messages looks like the followings :
          permitted by applicable law.
          root@analog:~#
 
-
-
 Login Information
 
 -  user: analog
@@ -1257,7 +1268,6 @@ The following devices should be present:
               iio:device2: axi-ad9081-rx-hpc (buffer capable)
               iio:device3: axi-ad9081-tx-hpc (buffer capable)
    
-
 
 AD9988-FMCB-EBZ Testing
 -----------------------
@@ -1284,7 +1294,6 @@ Checking clocking and lock status
       Lock Status:    PLL1 & PLL2 Locked
       root@analog:~#
    
-
 
 Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` make sure all links are in DATA without SYSREF allignment errors.
 
@@ -1325,7 +1334,6 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
         Initial Lane Alignment Sequence   Yes    Yes    Yes    Yes
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -1354,7 +1362,6 @@ Using the :doc:`JESD204B Status Utility </wiki-migration/resources/tools-softwar
         SYNC~                        deasserted
    
 
-
 Read status information from the MxFE
 
 .. container:: box bggreen
@@ -1370,7 +1377,6 @@ Read status information from the MxFE
       JESD RX (JTX) Link1 in DATA, SYNC deasserted, PLL locked, PHASE established, MODE valid
       root@analog:~#
    
-
 
 These are the relevant kernel messages which should be present
 
@@ -1450,19 +1456,22 @@ These are the relevant kernel messages which should be present
             [    6.848096] jesd204: /axi/spi@ff040000/ad9988@0,jesd204:0,parent=spi1.0: JESD204[0] transition link_running -> opt_post_running_stage
    
 
-
-
 IIO Oscilloscope Remote
 -----------------------
 
 Please see also here::doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The IIO Oscilloscope application can be used locally on FPGA platforms featuring a graphical desktop environment such as ZCU102 or ZC706 or remote using a network connection.
+The IIO Oscilloscope application can be used locally on FPGA platforms featuring
+a graphical desktop environment such as ZCU102 or ZC706 or remote using a
+network connection.
 
-When using the remote option, once you logged in to the Linux terminal you need to check the IP address of the using the ifconfig command to see if there was any address assigned by a DHCP server. If not, you need to manually set an address with ifconfig in the same address space your PC is using.
+When using the remote option, once you logged in to the Linux terminal you need
+to check the IP address of the using the ifconfig command to see if there was
+any address assigned by a DHCP server. If not, you need to manually set an
+address with ifconfig in the same address space your PC is using.
 
-Once the IIO Osc application is launched goto Settings -> Connect and enter the IP address of the target in the popup window.
-
+Once the IIO Osc application is launched goto Settings -> Connect and enter the
+IP address of the target in the popup window.
 
 |image2|
 
@@ -1472,7 +1481,9 @@ IIO OSC AD9081 Capture Window
 Introduction
 ------------
 
-Main receivers are handled by the axi-ad9081-rx-hpc IIO device, The number of channels depend on the JESD mode (M) parameter and can vary from case to case. When using complex IQ, two channels index by \_i and \_q from a receiver.
+Main receivers are handled by the axi-ad9081-rx-hpc IIO device, The number of
+channels depend on the JESD mode (M) parameter and can vary from case to case.
+When using complex IQ, two channels index by \_i and \_q from a receiver.
 
 Screenshots
 -----------
@@ -1482,7 +1493,7 @@ Time Domain View
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_osc_time.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Frequency Domain View
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1490,12 +1501,9 @@ Frequency Domain View
 |image1| |image2|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_osc_fft.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_osc_tone_fft.png
-   :width: 400px
-
-
-
+   :width: 400
 
 AD9081 Plugin Description
 =========================
@@ -1506,7 +1514,7 @@ If you want to go play with ``/sys/bus/iio/devices/....`` and manipulate the dev
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin.png
    :align: right
-   :width: 400px
+   :width: 400
 
 The AD9081 view is divided in three sections:
 
@@ -1521,7 +1529,7 @@ Receive Chain
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_rx.png
    :align: right
-   :width: 300px
+   :width: 300
 
 -  **ADC Rate(MHz):** Displays the ADC Sample Rate. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 -  **ADC Nyquist Zone Control:** Selects the Nyquist Zone. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
@@ -1537,7 +1545,7 @@ Transmit Chain
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_tx.png
    :align: right
-   :width: 300px
+   :width: 300
 
 -  **DAC Rate(MHz):** Displays the DAC Sample Rate. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 -  **TX Main NCO Frequency Control:** Controls the Main NCO Frequency.\ :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
@@ -1557,7 +1565,7 @@ Transmit/DDS
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_fpga.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The plugin provides several options on how the transmitted data is generated.
 
@@ -1573,7 +1581,6 @@ One CW Tone
 
 In **One CW Tone** mode one continuous wave (CW) tone will be outputted. The plugin displays the controls to set the Frequency, Amplitude and Phase for just one tone and makes sure that the amplitude of the other tone is set to 0. The resulting signal will be outputted on the Channel I of the DAC and the exact same signal but with a difference in phase of 90 degrees will be outputted on the Channel Q of the DAC.
 
-
 Two CW Tone
 ~~~~~~~~~~~
 
@@ -1581,7 +1588,6 @@ Two CW Tone
    :align: right
 
 In **Two CW Tone** mode two continuous wave (CW) tones will be outputted. The plugin displays the controls to set the frequencies F1 and F2, amplitudes A1 and A2, phases P1 and P2 for the two tones. The resulting signal will be outputted on the Channel I of the DAC and the exact same signal but with a difference in phase of 90 degrees will be outputted on the Channel Q of the DAC.
-
 
 Independent I/Q Control
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1593,9 +1599,9 @@ In **Independent I/Q Control** the plugin displays the controls to set the frequ
 
 .. note::
 
-   Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) = A1 \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2), where A-amplitude, F-frequency, P-phase of a tone.
-
-
+   Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) = A1
+   \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2), where
+   A-amplitude, F-frequency, P-phase of a tone.
 
 DAC Buffer Output
 ~~~~~~~~~~~~~~~~~
@@ -1605,27 +1611,29 @@ DAC Buffer Output
 **Restrictions:**
 
 -  There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
--  Due to hardware limitation only specific combinations of enabled channels are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is enabled then it can be any of them. If two channels are enabled then channels 0, 1 or channels 2, 3 can be enabled and so on.
-
+-  Due to hardware limitation only specific combinations of enabled channels are
+   possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is
+   enabled then it can be any of them. If two channels are enabled then channels
+   0, 1 or channels 2, 3 can be enabled and so on.
 
 Disable
 ~~~~~~~
 
-In this mode both DDS and DMA are disabled causing the DAC channels to stop transmitting any data.
+In this mode both DDS and DMA are disabled causing the DAC channels to stop
+transmitting any data.
 
 .. note::
 
-   Upon pressing Reload Settings button the values will be reloaded with the corresponding driver values. Useful in scenarios where the diver values get changed outside this plugin and a refresh on plugin's values is needed.
-
+   Upon pressing Reload Settings button the values will be reloaded with the
+   corresponding driver values. Useful in scenarios where the diver values get
+   changed outside this plugin and a refresh on plugin's values is needed.
 
 .. hint::
 
-   Some plugin values will be rounded to the nearest value supported by the hardware.
-
+   Some plugin values will be rounded to the nearest value supported by the
+   hardware.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/dac_output_buffer_panel.png
-
-
 
 Shut down
 ---------
@@ -1633,7 +1641,6 @@ Shut down
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
-
 
    |image3|
 
@@ -1693,7 +1700,6 @@ Software support
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
-
 Useful links
 ------------
 
@@ -1750,9 +1756,8 @@ Software support
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/hwsetup_zcu102_ad9081.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/osc.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

@@ -21,13 +21,13 @@ A\ :sup:`2`\ B Analyzer <--> Opto A\ :sup:`2`\ B Sub<--> Opto A\ :sup:`2`\ B Mai
 
    Please contact A\ :sup:`2`\ B SW and A\ :sup:`2`\ B Analyzer support teams for latest updates
 
-
 Example Project
 ---------------
 
 A\ :sup:`2`\ B Analyzer <--> Opto A\ :sup:`2`\ B Sub <--> Opto A\ :sup:`2`\ B Main <--> A\ :sup:`2`\ B Sub node DUT
 
-Project file: <Installation Path>\\ADI_A2B-SSPlus_Software-Relx.y.z\\Schematics\\A2BBusAnalyzer\\adi_a2bbusanalyzer_243xStdPwrMain_242xOptoA2B.ssproj
+Project file: <Installation
+Path>\\ADI_A2B-SSPlus_Software-Relx.y.z\\Schematics\\A2BBusAnalyzer\\adi_a2bbusanalyzer_243xStdPwrMain_242xOptoA2B.ssproj
 
 Hardware Requirements
 ---------------------
@@ -62,7 +62,6 @@ System Block Diagram
 
    AD2428WD1BZ boards are used to emulate optoA\ :sup:`2`\ B sub and branch-main in the above figure.
 
-
 OptoA2B Setup
 -------------
 
@@ -81,14 +80,15 @@ Procedure
 
 Procedure to run a Branch Network (Opto A2B) from ADI A\ :sup:`2`\ B Analyzer:
 
--  In SigmaStudio+, create a schematic with the A2BBusAnalyzer platform as the main node Emulator and the OptoA2B platform as a sub node, and connect a Device under test as a sub node for the optoA2B branching chain. Schematic should be designed to have upstream audio from branch to A2B analyzer main.
+-  In SigmaStudio+, create a schematic with the A2BBusAnalyzer platform as the
+   main node Emulator and the OptoA2B platform as a sub node, and connect a
+   Device under test as a sub node for the optoA2B branching chain. Schematic
+   should be designed to have upstream audio from branch to A2B analyzer main.
 
    -  Drag an analyzer platform from the toolbox and change into main node.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/analyzer_platform.png
    :align: center
-
-
 
 - Drag a OptoA2B platform from Toolbox.
 -
@@ -100,22 +100,26 @@ Procedure to run a Branch Network (Opto A2B) from ADI A\ :sup:`2`\ B Analyzer:
 
 |resources-tools-software-a2b-bus-analyzer-a2b_platform.png|
 
-   * One-click procedure: Press Link-Compile-Download button in SigmaStudio+. SigmaStudio+ will launch the A2B Bus Analyzer automatically and discover the primary chain via .Dat file and secondary chain via command list.
+   * One-click procedure: Press Link-Compile-Download button in SigmaStudio+.
+     SigmaStudio+ will launch the A2B Bus Analyzer automatically and discover
+     the primary chain via .Dat file and secondary chain via command list.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/optoa2b_schematic_lcd.png
    :align: center
 
--  The audio streams from the DUT are now available on the main emulator for analysis and logging.
+-  The audio streams from the DUT are now available on the main emulator for
+   analysis and logging.
 
 .. note::
 
-   Post Discovery Branching chain register/peripheral read/write is not supported.
-
+   Post Discovery Branching chain register/peripheral read/write is not
+   supported.
 
 .. note::
 
-   Once the primary chain is discovered, each secondary chain commands are taken as individual branch transactions with its own CHIP, NODEADR and PERI transactions as show below.
-
+   Once the primary chain is discovered, each secondary chain commands are taken
+   as individual branch transactions with its own CHIP, NODEADR and PERI
+   transactions as show below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/optoa2b_transaction.png
    :align: center
@@ -126,7 +130,8 @@ APPENDIX
 Jumper Settings
 ~~~~~~~~~~~~~~~
 
-Opto A2B Sub to Opto A2B main (in the current example AD2428WD1BZ is used for Opto Sub and Opto main)
+Opto A2B Sub to Opto A2B main (in the current example AD2428WD1BZ is used for
+Opto Sub and Opto main)
 
 =========== =====================
 Jumper      Opto Sub to Opto Main

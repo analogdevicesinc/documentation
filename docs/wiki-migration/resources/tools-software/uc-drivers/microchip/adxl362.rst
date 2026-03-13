@@ -1,7 +1,6 @@
 ADXL362 - No-OS Driver for Microchip Microcontroller Platforms
 ==============================================================
 
-
 Supported Devices
 =================
 
@@ -14,7 +13,6 @@ Evaluation Boards
 
 Overview
 ========
-
 
 The :adi:`ADXL362` is an ultralow power, 3-axis MEMS accelerometer that consumes less than 2 μA at a 100 Hz output data rate and 270 nA when in motion triggered wake-up mode. Unlike accelerometers that use power duty cycling to achieve low power consumption, the :adi:`ADXL362` does not alias input signals by undersampling; it samples the full bandwidth of the sensor at all data rates.
 
@@ -36,9 +34,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/adxl362_pmod_acl2.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -46,9 +47,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the ADXL362 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the ADXL362 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the ADXL362 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the ADXL362 driver:
 
@@ -62,7 +67,6 @@ There are three functions which are called by the ADXL362 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of ADXL362 driver:
 
@@ -98,8 +102,6 @@ The following functions are implemented in this version of ADXL362 driver:
 | void ADXL362_SetupInactivityDetection(unsigned char refOrAbs, unsigned short threshold, unsigned short time)          | Configures inactivity detection.                                       |
 +-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-
-
 **HW Platform(s):**
 
 -  `Digilent Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
@@ -119,11 +121,11 @@ Downloads
    -  **PIC32MX320F128H Common Drivers:** :git-no-OS:`Microchip/PIC32MX320F128H/Common`
    
 
-
 Digilent Cerebot MX3cK Quick Start Guide
 ========================================
 
-This section contains a description of the steps required to run the ADXL362 demonstration project on a Digilent Cerebot MX3cK platform.
+This section contains a description of the steps required to run the ADXL362
+demonstration project on a Digilent Cerebot MX3cK platform.
 
 Required Hardware
 -----------------
@@ -140,16 +142,18 @@ Required Software
 
 .. note::
 
-   The ADXL362 demonstration project for PIC32MX320F128H consists of three parts: the ADXL362 Driver, the PmodACL2 Demo for PIC32MX320F128H and the PIC32MX320F128H Common Drivers.
+   The ADXL362 demonstration project for PIC32MX320F128H consists of three
+   parts: the ADXL362 Driver, the PmodACL2 Demo for PIC32MX320F128H and the
+   PIC32MX320F128H Common Drivers.
 
    
    All three parts have to be downloaded.
 
-
 Hardware Setup
 --------------
 
-A PmodACL2 has to be connected to the JE connector of Cerebot MX3cK development board.
+A PmodACL2 has to be connected to the JE connector of Cerebot MX3cK development
+board.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_acl2_pic32.jpg
    :align: center
@@ -157,7 +161,8 @@ A PmodACL2 has to be connected to the JE connector of Cerebot MX3cK development 
 Reference Project Overview
 --------------------------
 
-The following commands were implemented in this version of ADXL362 reference project for Cerebot MX3cK board.
+The following commands were implemented in this version of ADXL362 reference
+project for Cerebot MX3cK board.
 
 +----------------+------------------------------------------------------------------------------+
 | Command        | Description                                                                  |
@@ -185,16 +190,16 @@ The following commands were implemented in this version of ADXL362 reference pro
 | activity?      | Displays the activity status of the device. It runs for 5 motion detections. |
 +----------------+------------------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART1 peripheral of PIC32MX320F128H.
+Commands can be executed using a serial terminal connected to the UART1
+peripheral of PIC32MX320F128H.
 
-The following image shows a generic list of commands in a serial terminal connected to processor’s UART peripheral.
-
+The following image shows a generic list of commands in a serial terminal
+connected to processor’s UART peripheral.
 
 |image1|
 
 Software Project Setup
 ----------------------
-
 
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -225,7 +230,8 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
    :align: center
 
--  After the project is created, all the downloaded source files have to be copied in the project folder and included in the project.
+-  After the project is created, all the downloaded source files have to be
+   copied in the project folder and included in the project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
    :align: center
@@ -235,12 +241,11 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
 
-
-
 Digilent Cerebot MC7 Quick Start Guide
 ======================================
 
-This section contains a description of the steps required to run the ADXL362 demonstration project on a Digilent Cerebot MC7 platform.
+This section contains a description of the steps required to run the ADXL362
+demonstration project on a Digilent Cerebot MC7 platform.
 
 Required Hardware
 -----------------
@@ -257,7 +262,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodACL2 can be connected to the JB connector of Cerebot MC7 development board for SPI operation,
+A PmodACL2 can be connected to the JB connector of Cerebot MC7 development board
+for SPI operation,
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_acl2_dspic33.jpg
    :align: center
@@ -265,7 +271,8 @@ A PmodACL2 can be connected to the JB connector of Cerebot MC7 development board
 Reference Project Overview
 --------------------------
 
-Following commands were implemented in this version of ADXL362 reference project for Cerebot MC7 board.
+Following commands were implemented in this version of ADXL362 reference project
+for Cerebot MC7 board.
 
 +---------------+------------------------------------------------------------------------------+
 | Command       | Description                                                                  |
@@ -285,16 +292,16 @@ Following commands were implemented in this version of ADXL362 reference project
 | activity?     | Displays the activity status of the device. It runs for 5 motion detections. |
 +---------------+------------------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART1 peripheral of dsPIC33FJ128MC706A.
+Commands can be executed using a serial terminal connected to the UART1
+peripheral of dsPIC33FJ128MC706A.
 
-The following image shows a list of commands in a serial terminal connected to processor’s UART peripheral.
-
+The following image shows a list of commands in a serial terminal connected to
+processor’s UART peripheral.
 
 |image2|
 
 Software Project Setup
 ----------------------
-
 
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
 
@@ -325,7 +332,8 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
    :align: center
 
--  After the project is created, the source files have to be copied in the project folder and included in the project.
+-  After the project is created, the source files have to be copied in the
+   project folder and included in the project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
    :align: center
@@ -335,12 +343,11 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
    :align: center
 
-
-
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
 ==========================================================
 
-This section contains a description of the steps required to run the ADXL362 chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
+This section contains a description of the steps required to run the ADXL362
+chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
 
 Required Hardware
 -----------------
@@ -356,7 +363,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodACL2 has to be connected to the JE connector of Cerebot MX3cK development board.
+A PmodACL2 has to be connected to the JE connector of Cerebot MX3cK development
+board.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_acl2_pic32_arduino.jpg
    :align: center
@@ -364,7 +372,8 @@ A PmodACL2 has to be connected to the JE connector of Cerebot MX3cK development 
 Reference Project Overview
 --------------------------
 
-Following commands were implemented in this version of ADXL362 chipKIT reference project for Cerebot MX3cK board.
+Following commands were implemented in this version of ADXL362 chipKIT reference
+project for Cerebot MX3cK board.
 
 +---------------+------------------------------------------------------------------------------+
 | Command       | Description                                                                  |
@@ -396,7 +405,6 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
@@ -420,19 +428,14 @@ This section presents the steps for developing a chipKIT application that will r
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_3.png
    :align: center
 
-
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_dspic33.png

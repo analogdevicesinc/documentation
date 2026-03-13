@@ -3,7 +3,10 @@
 Block Min/Max(ADAU145x)
 =======================
 
-Min/Max is a Block Processing module which compares the each input samples of one channel with other channels in block of input samples. By default it will check the minimum Algorithm. Option to select Minimum or Maximum Algorithm by clicking on bit map icon.
+Min/Max is a Block Processing module which compares the each input samples of
+one channel with other channels in block of input samples. By default it will
+check the minimum Algorithm. Option to select Minimum or Maximum Algorithm by
+clicking on bit map icon.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/maxormin.png
    :align: center
@@ -31,7 +34,8 @@ Output Pins
 Grow Algorithm
 --------------
 
-The module supports growth of input channels up to 16 channels. Add Algorithm is not supported.
+The module supports growth of input channels up to 16 channels. Add Algorithm is
+not supported.
 
 GUI Controls
 ------------
@@ -50,13 +54,14 @@ No DSP Parameters.
 Algorithm Description
 ---------------------
 
-This module compares the one channel input block of samples with other channel input block samples and outputs min/max block of samples based on Min or Max Algorithm chosen.
+This module compares the one channel input block of samples with other channel
+input block samples and outputs min/max block of samples based on Min or Max
+Algorithm chosen.
 
 Supported IC's
 --------------
 
 +----------+
-
 
 | ADAU145x |
 

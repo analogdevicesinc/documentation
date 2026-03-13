@@ -10,7 +10,9 @@ The :adi:`EVAL-ADBMS6822` evaluation board can communicate to PC by connecting t
 
 The :adi:`EVAL-ADBMS6822` evaluation board can also be used to evaluate the ADBMS6821. Note that for the ADBMS6821, there is only one SPI port; therefore, ignore the second SPI port and auxiliary isoSPI when using the ADBMS6821.
 
-Full specifications on the ADBMS6822 dual isoSPI adapter are available in the ADBMS6821/ADBMS6822 data sheet available from Analog Devices, Inc. and must be consulted with this user guide when using the EVAL-ADBMS6822 evaluation board.
+Full specifications on the ADBMS6822 dual isoSPI adapter are available in the
+ADBMS6821/ADBMS6822 data sheet available from Analog Devices, Inc. and must be
+consulted with this user guide when using the EVAL-ADBMS6822 evaluation board.
 
 Features
 ~~~~~~~~
@@ -20,7 +22,8 @@ Features
 -  Includes two isoSPi ports for reversible isoSPI support
 -  Configurable powering options for LPCM support isoSPI connections through simple DuraClik connectors
 -  Compatible with the EVAL-ADBMS68xx boards, battery monitor boards, EVAL-SDP-CK1Z controller board
--  With PC-based software for control and data analysis using Broad Market Browser BMS GUI
+-  With PC-based software for control and data analysis using Broad Market
+   Browser BMS GUI
 
 Applications
 ~~~~~~~~~~~~
@@ -41,11 +44,11 @@ System Architecture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6822_block_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6822_system_setup.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Specifications
 --------------
@@ -64,7 +67,6 @@ Specifications
    ============================ ================= =================
    
 
-
 --------------
 
 Hardware Connections
@@ -76,14 +78,22 @@ Hardware Connections
    **Shield-Mount Board Connection**
 
    
-   The primary connection for the EVAL-ADBMS6822 is by plugging it into a microcontroller board (for example, the SDP-K1 or the AD-APARD32690-SL). The pins on the backside of the EVAL-ADBMS6822 connect directly with the sockets of the MCU board. The shield connections provide all the default data and power connections.
+   The primary connection for the EVAL-ADBMS6822 is by plugging it into a
+   microcontroller board (for example, the SDP-K1 or the AD-APARD32690-SL). The
+   pins on the backside of the EVAL-ADBMS6822 connect directly with the sockets
+   of the MCU board. The shield connections provide all the default data and
+   power connections.
    
-   Note that the microcontroller board's interface voltage must be set to 3.3 V through Pin P4.
+   Note that the microcontroller board's interface voltage must be set to 3.3 V
+   through Pin P4.
    
    **isoSPI Connections**
 
    
-   J1 is the main isoSPI port. The applications that only use one port use this connection to make daisy-chain connections to peripheral isoSPI devices. J2 is an auxiliary port that is used as a redundant controller in a reversible isoSPI daisy-chain network, and as another indpendent isoSPI interface.
+   J1 is the main isoSPI port. The applications that only use one port use this
+   connection to make daisy-chain connections to peripheral isoSPI devices. J2
+   is an auxiliary port that is used as a redundant controller in a reversible
+   isoSPI daisy-chain network, and as another indpendent isoSPI interface.
    
    **Optional Connections**
 
@@ -91,7 +101,9 @@ Hardware Connections
    **SPI AUX Optional Header (J7)**
 
    
-   This double row of through-holes (hole field) can be used to connect a fully independent AUX SPI channel. A connector or discrete wires can be soldered to this array.
+   This double row of through-holes (hole field) can be used to connect a fully
+   independent AUX SPI channel. A connector or discrete wires can be soldered to
+   this array.
    
    +----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | **JP1 to JP4** | These are set as a group to either configure the AUX SPI traffic as being common (COM) with the MAIN SPI, or the POCI, PICO, SCK from the SDP-K1 controller, along with dedicated CSB lines to provide multiplexing. The separate setting (SEP) connects the AUX SPI signals to J7 exclusively. |
@@ -115,7 +127,6 @@ Hardware Connections
 
    | 
 
-
    .. container:: center
 
          
@@ -133,17 +144,16 @@ Hardware Connections
 
    
 
-
 --------------
 
 Help and Support
 ----------------
 
-For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer
+Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
-
 
 *End of Document*

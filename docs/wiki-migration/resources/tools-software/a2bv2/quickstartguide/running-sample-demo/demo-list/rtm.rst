@@ -7,7 +7,11 @@
 Running Remote Tuner Module Sample Demo
 =======================================
 
-This section briefs the procedure to run the advanced demo using remote tuner module. BF527 acts as host processor. In this case the host processor controls the discovery and programming of A2B nodes in the system. The remote tuner module is connected to A2B slave node. The system block diagram for this is as shown in Figure
+This section briefs the procedure to run the advanced demo using remote tuner
+module. BF527 acts as host processor. In this case the host processor controls
+the discovery and programming of A2B nodes in the system. The remote tuner
+module is connected to A2B slave node. The system block diagram for this is as
+shown in Figure
 
 Additional requirement
 ----------------------
@@ -63,23 +67,24 @@ Jumper setting
 A2B Cross-Over Cable
 ^^^^^^^^^^^^^^^^^^^^
 
-This demo requires a connection to made between EVAL-AD2433WA1BZ board (which has DuraClick connector) to EVAL-AD2435WA3LZ board (which has H-DAC connector). For this purpose, users are required to have an A2B cross-over cable as in below figure. Please contact your ADI or your local FAE’s for the cross-over cable.
+This demo requires a connection to made between EVAL-AD2433WA1BZ board (which
+has DuraClick connector) to EVAL-AD2435WA3LZ board (which has H-DAC connector).
+For this purpose, users are required to have an A2B cross-over cable as in below
+figure. Please contact your ADI or your local FAE’s for the cross-over cable.
 
 .. container:: centeralign
 
    \ |image1|\
 
-
 .. container:: centeralign
 
    \ **Figure:** A2B Cross-Over Cable
 
-
 A2B Demo system Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After completing all the connections, the A2B system should look as shown in Figure
-
+After completing all the connections, the A2B system should look as shown in
+Figure
 
 |image2|
 
@@ -87,18 +92,19 @@ After completing all the connections, the A2B system should look as shown in Fig
 
    \ **Figure:** RTM demo system in PC as Host
 
-
    |image3|
 
 .. container:: centeralign
 
    \ **Figure:** RTM demo system: Tuner connection close up
 
-
 Running sample demo: PC as host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The SigmaStudio+ schematic for this demo can be found at .\\Schematics\\PC\\A2BSchematics\\adi_a2b_3NodeRTMDemoConfig.dspproj. Refer the figure RTM demo system in PC as Host for connection and this project can be run as such.
+-  The SigmaStudio+ schematic for this demo can be found at
+   .\\Schematics\\PC\\A2BSchematics\\adi_a2b_3NodeRTMDemoConfig.dspproj. Refer
+   the figure RTM demo system in PC as Host for connection and this project can
+   be run as such.
 
 Running sample demo: BF as host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,16 +116,15 @@ Running sample demo: BF as host
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/rtm_bf.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure:** RTM demo system in target as host
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/a2b_crossover_cable.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/rtm_ss.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/rtm_module_setup.png
-   :width: 600px
+   :width: 600

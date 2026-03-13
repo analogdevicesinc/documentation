@@ -4,7 +4,9 @@ High-Speed DMA Controller Peripheral
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/migrated>hdl/library/axi_dmac/index.html
    :alt: migrated>hdl/library/axi_dmac/index.html
 
-The AXI DMAC is a high-speed, high-throughput, general purpose DMA controller intended to be used to transfer data between system memory and other peripherals like high-speed converters.
+The AXI DMAC is a high-speed, high-throughput, general purpose DMA controller
+intended to be used to transfer data between system memory and other peripherals
+like high-speed converters.
 
 Features
 --------
@@ -26,8 +28,6 @@ Features
 Utilization
 -----------
 
-
-
 .. collapsible:: Detailed Utilization (Click to expand)
 
    =============== ==== ===
@@ -38,8 +38,6 @@ Utilization
    Xilinx Kintex 7 TBD  TBD
    Xilinx Virtex 7 TBD  TBD
    =============== ==== ===
-
-
 
 Files
 -----
@@ -253,7 +251,6 @@ Base (common to all cores)
 | Tue Mar 14 10:17:59 2023 |        |                  |                       |      |            |                                                                                                                                                                                                                                                                                     |
 +--------------------------+--------+------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Common (axi_ad\*)
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -305,7 +302,6 @@ ADC Common (axi_ad\*)
 |         |        | [7:0]       | CUSTOM_CONTROL      | RW   | 0x00    |                                                                                                                                                                                                                                                                                                |
 +---------+--------+-------------+---------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADAQ8092
 ========
 
@@ -336,8 +332,6 @@ AD7606X_PI
 -  1 = CRC_ENABLED
 -  2 = STATUS_HEADER
 -  3 = CRC_STATUS
-
-
 
 \|
 
@@ -455,7 +449,6 @@ AD7606X_PI
 | Fri Aug 11 18:29:53 2023 |        |                     |                        |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+---------------------+------------------------+------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 ADC Channel (axi_ad\*)
 ----------------------
 
@@ -560,7 +553,6 @@ ADC Channel (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                      |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +--------------------------+--------+----------------------+------------------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 IO Delay Control (axi_ad\*)
 ---------------------------
 
@@ -589,7 +581,6 @@ IO Delay Control (axi_ad\*)
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                     |                    |      |         |                                                                                                                                                                                                                                                    |
 +--------------------------+--------+---------------------+--------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 DAC Common (axi_ad)
 -------------------
@@ -726,7 +717,6 @@ DAC Common (axi_ad)
 | Tue Mar 14 10:17:59 2023 |        |                     |                       |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+---------------------+-----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DAC Channel (axi_ad\*)
 ----------------------
 
@@ -839,7 +829,6 @@ DAC Channel (axi_ad\*)
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Fri Sep 8 16:01:53 2023 |        |                   |                              |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+-------------------+------------------------------+------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Generic TDD Control (axi_tdd)
 -----------------------------
@@ -1194,7 +1183,6 @@ Generic TDD Control (axi_tdd)
 | Tue Mar 14 10:17:59 2023 |        |                       |                     |      |                       |                                                                                                                                                                                                    |
 +--------------------------+--------+-----------------------+---------------------+------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Transceiver TDD Control (axi_ad\*)
 ----------------------------------
 
@@ -1340,7 +1328,6 @@ Transceiver TDD Control (axi_ad\*)
 | Tue Mar 14 10:17:59 2023 |        |                            |                        |      |          |                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +--------------------------+--------+----------------------------+------------------------+------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD TPL (up_tpl_common)
 ------------------------
 
@@ -1381,7 +1368,6 @@ JESD TPL (up_tpl_common)
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                      |             |      |         |                                                                                                            |
 +--------------------------+--------+----------------------+-------------+------+---------+------------------------------------------------------------------------------------------------------------+
-
 
 JESD204 RX (axi_jesd204_rx)
 ---------------------------
@@ -1668,7 +1654,6 @@ JESD204 RX (axi_jesd204_rx)
 | Tue Mar 14 10:17:59 2023  |                 |                                |                              |        |             |                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 JESD204 TX (axi_jesd204_tx)
 ---------------------------
 
@@ -1905,7 +1890,6 @@ JESD204 TX (axi_jesd204_tx)
 | Tue Mar 14 10:17:59 2023  |                 |                       |                          |        |             |                                                                                                                                                                                                                     |
 +---------------------------+-----------------+-----------------------+--------------------------+--------+-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 DMA Controller (axi_dmac)
 -------------------------
 
@@ -2088,7 +2072,6 @@ DMA Controller (axi_dmac)
 | Thu Feb 1 12:18:03 2024 |        |                           |                           |      |                                 |                                                                                                                                                                                                                                                                                                                     |
 +-------------------------+--------+---------------------------+---------------------------+------+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Fan Controller (axi_fan_control)
 --------------------------------
 
@@ -2256,7 +2239,6 @@ Fan Controller (axi_fan_control)
 | Tue Mar 14 10:17:59 2023 |        |                   |                       |      |                        |                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +--------------------------+--------+-------------------+-----------------------+------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 System ID (axi_system_id)
 -------------------------
 
@@ -2297,7 +2279,6 @@ System ID (axi_system_id)
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                |                |      |            |                                                                                          |
 +--------------------------+--------+----------------+----------------+------+------------+------------------------------------------------------------------------------------------+
-
 
 Clock Generator (axi_clkgen)
 ----------------------------
@@ -2345,7 +2326,6 @@ Clock Generator (axi_clkgen)
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                  |                   |      |         |                                                                                                                                                         |
 +--------------------------+--------+------------------+-------------------+------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Clock Monitor (axi_clock_monitor)
 ---------------------------------
@@ -2439,7 +2419,6 @@ Clock Monitor (axi_clock_monitor)
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |               |               |      |            |                                |
 +--------------------------+--------+---------------+---------------+------+------------+--------------------------------+
-
 
 HDMI Transmit (axi_hdmi_tx)
 ---------------------------
@@ -2546,7 +2525,6 @@ HDMI Transmit (axi_hdmi_tx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                      |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+----------------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 HDMI Receive (axi_hdmi_rx)
 --------------------------
 
@@ -2614,7 +2592,6 @@ HDMI Receive (axi_hdmi_rx)
 | Tue Mar 14 10:17:59 2023 |        |                 |                 |      |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------+--------+-----------------+-----------------+------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 General Purpose Registers (axi_gpreg)
 -------------------------------------
 
@@ -2659,7 +2636,6 @@ General Purpose Registers (axi_gpreg)
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |              |              |      |            |                                                                                                                                                                                                                                        |
 +--------------------------+--------+--------------+--------------+------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 SPI Engine (axi_spi_engine)
 ---------------------------
@@ -2767,7 +2743,6 @@ SPI Engine (axi_spi_engine)
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tue Mar 14 10:17:59 2023 |        |                    |                    |      |             |                                                                                                                                                                                                                                                                                      |
 +--------------------------+--------+--------------------+--------------------+------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Xilinx XCVR (axi_xcvr) Regmap
 -----------------------------
@@ -2950,7 +2925,6 @@ Xilinx XCVR (axi_xcvr) Regmap
 | Tue Mar 14 10:17:59 2023 |        |               |                  |      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 PWM Generator (axi_pwm_gen)
 ---------------------------
 
@@ -2959,7 +2933,6 @@ PWM Generator (axi_pwm_gen)
 .. important::
 
    This register map was moved at https://analogdevicesinc.github.io/hdl/library/axi_pwm_gen/index.html#register-map. The following table is NOT MAINTAINED ANYMORE.
-
 
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 | Address |        | Bits               | Name                                                                         | Type | Default    | Description                                                   |
@@ -3005,8 +2978,6 @@ PWM Generator (axi_pwm_gen)
 |         |        | [31:0]             | PULSE_X_OFFSET[31:0] - base + 'h4 for each channel -> e.g. CH3 offset - 'hCC | RW   | 0x0000     | Pulse x offset, defined in number of clock cycles.            |
 +---------+--------+--------------------+------------------------------------------------------------------------------+------+------------+---------------------------------------------------------------+
 
-
-
 +-------------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Access Type | Name             | Description                                                                                                                                                                                                                         |
 +=============+==================+=====================================================================================================================================================================================================================================+
@@ -3030,20 +3001,26 @@ HDL Synthesis Settings
 Sizing of the internal store-and-forward data buffer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An internal buffer is used to store data from the source interface before it is forwarded to the destination once that can accept it. The purpose of the buffer is to even out the rate mismatches between the source and destination. e.g if the destination is a FIFO interface with a fixed data rate and the source is a MM interface, the intent is to keep the buffer as full as possible so in case of the MM interface is not ready data can be still provided to the destination without risking an underflow. Similarly in case the destination is a MM interface and the source a FIFO interface with a fixed data rate, the intent is to keep the buffer as empty as possible so in case the MM interface is not ready data can be still accepted from the source without risking an overflow.
+An internal buffer is used to store data from the source interface before it is
+forwarded to the destination once that can accept it. The purpose of the buffer
+is to even out the rate mismatches between the source and destination. e.g if
+the destination is a FIFO interface with a fixed data rate and the source is a
+MM interface, the intent is to keep the buffer as full as possible so in case of
+the MM interface is not ready data can be still provided to the destination
+without risking an underflow. Similarly in case the destination is a MM
+interface and the source a FIFO interface with a fixed data rate, the intent is
+to keep the buffer as empty as possible so in case the MM interface is not ready
+data can be still accepted from the source without risking an overflow.
 
 The size of the buffer in bytes is determined by the synthesis parameters of the module and it is equal to ``FIFO_SIZE`` \* ``MAX_BYTES_PER_BURST``
 
-
-
 .. collapsible:: Buffer dimensions
 
-   The width of the buffer is sized to be the largest width from the source and destination interfaces.
+   The width of the buffer is sized to be the largest width from the source and
+   destination interfaces.
 
    -  BUFFER_WIDTH_IN_BYTES = MAX(``DMA_DATA_WIDTH_SRC``,\ ``DMA_DATA_WIDTH_DEST``)/8
    -  BUFFER_DEPTH = ``FIFO_SIZE``\ \*\ ``MAX_BYTES_PER_BURST`` / BUFFER_WIDTH_IN_BYTES
-
-
 
 Interfaces and Signals
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -3084,13 +3061,18 @@ The ``IDENTIFICATION`` (``0x00c``) register contains the value of ``"DMAC"``. Th
 Interrupt Handling
 ^^^^^^^^^^^^^^^^^^
 
-Interrupt processing is handled by three closely related registers. All three registers follow the same layout, each bit in the register corresponds to one particular interrupt.
+Interrupt processing is handled by three closely related registers. All three
+registers follow the same layout, each bit in the register corresponds to one
+particular interrupt.
 
 When an interrupt event occurs it is recorded in the ``IRQ_SOURCE`` (``0x088``) register. For a recorded interrupt event the corresponding bit is set to 1. If an interrupt event occurs while the bit is already set to 1 it will stay set to 1.
 
 The ``IRQ_MASK`` (``0x080``) register controls how recorded interrupt events propagate. An interrupt is considered to be enabled if the corresponding bit in the ``IRQ_MASK`` register is set to 0, it is considered to be disabled if the bit is set to 1.
 
-Disabling an interrupt will not prevent it from being recorded, but only its propagation. This means if an interrupt event was previously recorded while the interrupt was disabled and the interrupt is being enabled the interrupt event will then propagate.
+Disabling an interrupt will not prevent it from being recorded, but only its
+propagation. This means if an interrupt event was previously recorded while the
+interrupt was disabled and the interrupt is being enabled the interrupt event
+will then propagate.
 
 An interrupt event that has been recorded and is enabled propagates to the ``IRQ_PENDING`` (``0x084``) register. The corresponding bit for such an interrupt will read as 1. Disabled or interrupts for which no events have been recorded will read as 0. Also if at least one interrupt has been recorded and is enabled the external ``irq`` signal will be asserted to signal the IRQ event to the upstream IRQ controller.
 
@@ -3155,50 +3137,69 @@ Destination side: For MM interface the DMAC will complete all pending requests t
 Interrupts
 ~~~~~~~~~~
 
-The DMA controller supports interrupts to allow asynchronous notification of certain events to the CPU. This can be used as an alternative to busy-polling the status registers. Two types of interrupt events are implemented by the DMA controller.
+The DMA controller supports interrupts to allow asynchronous notification of
+certain events to the CPU. This can be used as an alternative to busy-polling
+the status registers. Two types of interrupt events are implemented by the DMA
+controller.
 
 The ``TRANSFER_QUEUED`` interrupt is asserted when a transfer is moved from the register map to the internal transfer queue. This is equivalent to the ``TRANSFER_SUBMIT`` register transitioning from 1 to 0. Software can use this interrupt as an indication that the next transfer can be submitted.
 
-Note that a transfer being queued does not mean that it has been started yet. If other transfers are already queued those will be processed first.
+Note that a transfer being queued does not mean that it has been started yet. If
+other transfers are already queued those will be processed first.
 
 The ``TRANSFER_COMPLETED`` interrupt is asserted when a previously submitted transfer has been completed. To find out which transfer has been completed the ``TRANSFER_DONE`` register should be checked.
 
-Note that depending on the transfer size and interrupt latency it is possible for multiple transfers to complete before the interrupt handler runs. In that case the interrupt handler will only run once. Software should always check all submitted transfers for completion.
+Note that depending on the transfer size and interrupt latency it is possible
+for multiple transfers to complete before the interrupt handler runs. In that
+case the interrupt handler will only run once. Software should always check all
+submitted transfers for completion.
 
 2D Transfers
 ~~~~~~~~~~~~
 
 If the ``DMA_2D_TRANSFER`` HDL synthesis configuration parameter is set the DMA controller has support for 2D transfers.
 
-A 2D transfer is composed of a number of rows with each row containing a certain number of bytes. Between each row there might be a certain amount of padding bytes that are skipped by the DMA.
+A 2D transfer is composed of a number of rows with each row containing a certain
+number of bytes. Between each row there might be a certain amount of padding
+bytes that are skipped by the DMA.
 
 For 2D transfers the ``X_LENGTH`` register configures the number of bytes per row and the ``Y_LENGTH`` register configures the number of rows. The ``SRC_STRIDE`` and ``DEST_STRIDE`` registers configure the number of bytes in between start of two rows.
 
-E.g. the first row will start at the configured source or destination address, the second row will start at the configured source or destination address plus the stride and so on.
+E.g. the first row will start at the configured source or destination address,
+the second row will start at the configured source or destination address plus
+the stride and so on.
 
-ROW_SRC_ADDRESS = SRC_ADDRESS + SRC_STRIDE \* N ROW_DEST_ADDRESS = DEST_ADDRESS + DEST_STRIDE \* N
+ROW_SRC_ADDRESS = SRC_ADDRESS + SRC_STRIDE \* N ROW_DEST_ADDRESS = DEST_ADDRESS
++ DEST_STRIDE \* N
 
-If support for 2D transfers is disabled only the X_LENGTH register is considered and the number of rows per transfer is fixed to 1.
+If support for 2D transfers is disabled only the X_LENGTH register is considered
+and the number of rows per transfer is fixed to 1.
 
 Cyclic Transfers
 ~~~~~~~~~~~~~~~~
 
 If the ``CYCLIC`` HDL synthesis configuration parameter is set the DMA controller has support for cyclic transfers.
 
-A cyclic transfer once completed will restart automatically with the same configuration. The behavior of cyclic transfer is equivalent to submitting the same transfer over and over again, but generates less software management overhead.
+A cyclic transfer once completed will restart automatically with the same
+configuration. The behavior of cyclic transfer is equivalent to submitting the
+same transfer over and over again, but generates less software management
+overhead.
 
 A transfer is cyclic if the ``CYCLIC`` (``[0]``) bit of the ``FLAGS`` (``0x40C``) is set to 1 during transfer submission.
 
-For cyclic transfers no end-of-transfer interrupts will be generated. To stop a cyclic transfer the DMA channel must be disabled.
+For cyclic transfers no end-of-transfer interrupts will be generated. To stop a
+cyclic transfer the DMA channel must be disabled.
 
-Any additional transfers that are submitted after the submission of a cyclic transfer (and before stopping the cyclic transfer) will never be executed.
+Any additional transfers that are submitted after the submission of a cyclic
+transfer (and before stopping the cyclic transfer) will never be executed.
 
 Scatter-Gather Transfers
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the ``DMA_SG_TRANSFER`` HDL synthesis configuration parameter is set the DMA controller has support for scatter-gather transfers.
 
-The scatter-gather optional feature allows the DMA to access noncontiguous areas of memory within a single transfer.
+The scatter-gather optional feature allows the DMA to access noncontiguous areas
+of memory within a single transfer.
 
 The DMA can read from or write to different memory addresses in one transaction by using a list of vectors called *descriptors*. Each descriptor provides the starting address and the length of the current memory block to be accessed, as well as the next address of the following descriptor to be processed. By chaining these descriptors, the DMA can *gather* the data into a contiguous transfer from the *scattered* memory data from multiple addresses.
 
@@ -3207,7 +3208,8 @@ The scatter-gather has its own dedicated AXI3/4 memory mapped interface ``m_sg_a
 Descriptor Structure
 ^^^^^^^^^^^^^^^^^^^^
 
-The scatter-gather interface fetches the descriptor information from memory in the following order:
+The scatter-gather interface fetches the descriptor information from memory in
+the following order:
 
 +--------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Size   | Name         | Description                                                                                                                                                                                                          |
@@ -3246,14 +3248,23 @@ To end a scatter-gather transfer, the last descriptor of the transfer must have 
 
 The scatter-gather transfer is queued in a similar way to the simple transfers, through the ``TRANSFER_SUBMIT``. Software should always poll this bit to be 0 before setting it, otherwise the scatter-gather transfer will not be queued.
 
-The scatter-gather transfers support the generation of the same two types of interrupt events as the simple transfers. However, the scatter-gather transfers have the distinct advantage of generating fewer interrupts by treating the chained descriptor transfers as a single transfer, thus improving the performance of the application.
+The scatter-gather transfers support the generation of the same two types of
+interrupt events as the simple transfers. However, the scatter-gather transfers
+have the distinct advantage of generating fewer interrupts by treating the
+chained descriptor transfers as a single transfer, thus improving the
+performance of the application.
 
 Transfer Start Synchronization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the transfer start synchronization feature of the DMA controller is enabled the start of a transfer is synchronized to a flag in the data stream. This is primarily useful if the data stream does not have any back-pressure and one unit of data spans multiple beats (e.g. packetized data). This ensures that the data is properly aligned to the beginning of the memory buffer.
+If the transfer start synchronization feature of the DMA controller is enabled
+the start of a transfer is synchronized to a flag in the data stream. This is
+primarily useful if the data stream does not have any back-pressure and one unit
+of data spans multiple beats (e.g. packetized data). This ensures that the data
+is properly aligned to the beginning of the memory buffer.
 
-Data that is received before the synchronization flag is asserted will be ignored by the DMA controller.
+Data that is received before the synchronization flag is asserted will be
+ignored by the DMA controller.
 
 For the FIFO write interface the ``fifo_wr_sync`` signal is the synchronization flag signal. For the AXI-Streaming interface the synchronization flag is carried in ``s_axis_user[0]``. In both cases the synchronization flag is qualified by the same control signal as the data.
 
@@ -3290,14 +3301,20 @@ Software must program the ``X_LENGTH`` register to be multiple of the widest dat
 
 -  (``X_LENGTH``\ +1) MOD MAX(``DMA_DATA_WIDTH_SRC``, ``DMA_DATA_WIDTH_DEST``)/8 == 0
 
-This restriction can be relaxed for the memory mapped interfaces. This is done by partially ignoring data of a beat from/to the MM interface:
+This restriction can be relaxed for the memory mapped interfaces. This is done
+by partially ignoring data of a beat from/to the MM interface:
 
 -  For write access the strobe bits are used to mask out bytes that do not contain valid data.
--  For read access a full beat is read but part of the data is discarded. This works fine as long as the read access is side effect free. I.e. this method should not be used to access data from memory mapped peripherals like a FIFO.
+-  For read access a full beat is read but part of the data is discarded. This
+   works fine as long as the read access is side effect free. I.e. this method
+   should not be used to access data from memory mapped peripherals like a FIFO.
 
-E.g. the length alignment requirement of a DMA configured for a 64-bit memory mapped interface and a 16-bit streaming interface is only 2 bytes instead of 8 bytes.
+E.g. the length alignment requirement of a DMA configured for a 64-bit memory
+mapped interface and a 16-bit streaming interface is only 2 bytes instead of 8
+bytes.
 
-Note that the address alignment requirement is not affected by this. The address still needs to be aligned to the width of the MM interface that it belongs to.
+Note that the address alignment requirement is not affected by this. The address
+still needs to be aligned to the width of the MM interface that it belongs to.
 
 Scatter-Gather Datapath Width
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3314,7 +3331,9 @@ Analog Devices recommends to use the provided software drivers.
 Known Issues
 ------------
 
-1. When max bytes per burst matches the data width of destination interface an erroneous extra beat is inserted after every valid beat on the destination side. Example configuration:
+1. When max bytes per burst matches the data width of destination interface an
+   erroneous extra beat is inserted after every valid beat on the destination
+   side. Example configuration:
 
 -  axi mm -> axi stream
 

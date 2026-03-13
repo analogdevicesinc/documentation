@@ -6,7 +6,10 @@ Overview
 
 :adi:`CN-0216 <CN0216>` is a precision weigh scale signal conditioning system. It uses the :adi:`AD7791`, a low power buffered 24-bit sigma-delta ADC along with two external :adi:`ADA4528-1` zero-drift amplifiers. This solution allows for high dc gain with a single supply.
 
-Ultralow noise, low offset voltage, and low drift amplifiers are used at the front end for amplification of the low-level signal from the load cell. The circuit yields 15.3 bit noise-free code resolution for a load cell with a full-scale output of 10 mV.
+Ultralow noise, low offset voltage, and low drift amplifiers are used at the
+front end for amplification of the low-level signal from the load cell. The
+circuit yields 15.3 bit noise-free code resolution for a load cell with a
+full-scale output of 10 mV.
 
 This circuit allows great flexibility in designing a custom low-level signal conditioning front end that gives the user the ability to easily optimize the overall transfer function of the combined sensor-amplifier-converter circuit. The :adi:`AD7791` maintains good performance over the complete output data range, from 9.5 Hz to 120 Hz, which allows it to be used in weigh scale applications that operate at various low speeds.
 
@@ -32,13 +35,10 @@ Required Equipment
 -  USB type A to USB type mini-B cable
 -  Tedeah Huntleigh Model 1042 Load Cell
 
-
-
 .. note::
 
    | NOTE - Any 4 or 6 wire load cells can be used with the CN-0216 Board.
    | This guide was written with the Tedeah Huntleigh Model 1042 in mind.
-
 
 General Setup
 -------------
@@ -61,11 +61,9 @@ Installing the Software
 
    \ NOTE: It is recommended that you install the `CN0216 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0216>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0216\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-install1.png
 
 -  Click **Next** to view the installation review page
-
 
 |image2|
 
@@ -77,8 +75,9 @@ Installing the Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image4|
 
@@ -89,7 +88,6 @@ Installing the Software
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image5|
 
@@ -110,7 +108,6 @@ Connecting the Hardware
 
    Tedeah-Huntleigh Model 1042, the wiring schematic will be different!
 
-
    |image7|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-wiring_schematic.png
@@ -125,8 +122,6 @@ Software Control and Indicator Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |image8| |image9|
-
-
 
 - **Connect/Reconnect Button**
 - When this button is pressed, the SDP-B Board makes a USB connection to the CN-0216 Board.  A connection to the SDP-B Board must be made to use the software.
@@ -148,7 +143,8 @@ Software Control and Indicator Descriptions
 - **System Status String Indicator**
 - This indicator displays a message to the user detailing the current state of the software.
 - **System Status LED Indicator**
-- This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.
+- This indicator displays the current state of the software in the form of an
+  LED.  There are three status LED colors.
 
 |resources-eval-user-guides-circuits-from-the-lab-cn0216-cn0216-software-inactive.png| Inactive
 
@@ -183,14 +179,12 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ NOTE: If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be
+   found at
 
    C:\\Program Files\\Analog Devices\\CN0216\\CN0216.exe\
 
-
 - Click the **Connect/Reconnect Button**. A window with a progress bar will load.
-
-
 
 |image10|
 
@@ -243,14 +237,12 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro/PADS Board File
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0216-SDPZ?&v=Rev A>`_ to receive all these great benefits and more!
-
 
 *End of document*
 

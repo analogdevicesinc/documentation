@@ -1,7 +1,9 @@
 ADIN1320 PHY Linux Quick Start Guide
 ====================================
 
-In this guide, we'll provide the steps you need to follow in order to connect the ADIN1320EBZ-U1 to a development board running Linux, and use the ADIN1320 as a PHY for one of the network interfaces.
+In this guide, we'll provide the steps you need to follow in order to connect
+the ADIN1320EBZ-U1 to a development board running Linux, and use the ADIN1320 as
+a PHY for one of the network interfaces.
 
 Hardware requirements
 ---------------------
@@ -19,7 +21,8 @@ For this setup you will need the following boards or hardware accessories:
 Eval board setup
 ----------------
 
-The following jumpers and switches will need to be configured on the ADIN1320EBZ-U1 board:
+The following jumpers and switches will need to be configured on the
+ADIN1320EBZ-U1 board:
 
 ====== ========
 Jumper Position
@@ -28,7 +31,8 @@ P21    On
 P18    On
 ====== ========
 
-This will power off the MAX32670 microcontroller on the board, and keep the ADIN1300 in the reset state.
+This will power off the MAX32670 microcontroller on the board, and keep the
+ADIN1300 in the reset state.
 
 =========== ========
 S11 switch  Position
@@ -53,12 +57,14 @@ S4            3
 S6            1
 ============= ========
 
-This will result in the host interface being configured as MII and the advertised speed as 100BASE-TX/FX full duplex. Check out tables 15-18 in the ADIN1320 datasheet for a complete list of configuration options.
+This will result in the host interface being configured as MII and the
+advertised speed as 100BASE-TX/FX full duplex. Check out tables 15-18 in the
+ADIN1320 datasheet for a complete list of configuration options.
 
 .. important::
 
-   If you want to use an SFP module (inserted into M1) instead of the RJ45 connector, you will need to bridge the P9 header
-
+   If you want to use an SFP module (inserted into M1) instead of the RJ45
+   connector, you will need to bridge the P9 header
 
 ======= ========
 S8      Position
@@ -69,12 +75,17 @@ PHY_AD2 Off
 PHY_AD3 Off
 ======= ========
 
-The S8 switch is used to configure the PHY address of the ADIN1320. For this setup we are assigning the address 1. It is arbitrary and you can change it in case you have multiple PHYs on the same MDIO interface. Please note that ADIN1300 has the address 0 assigned to it, so if you're getting it out of reset (P18 - Off), the ADIN1320 should have a PHY_ADDR other than 0.
+The S8 switch is used to configure the PHY address of the ADIN1320. For this
+setup we are assigning the address 1. It is arbitrary and you can change it in
+case you have multiple PHYs on the same MDIO interface. Please note that
+ADIN1300 has the address 0 assigned to it, so if you're getting it out of reset
+(P18 - Off), the ADIN1320 should have a PHY_ADDR other than 0.
 
-There are some other headers which should be left in the default state. You can cross check their position with the following setup:
+There are some other headers which should be left in the default state. You can
+cross check their position with the following setup:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/net-phy/image_3_.jpg
-   :width: 400px
+   :width: 400
 
 SD card setup
 -------------
@@ -97,7 +108,9 @@ If you're using a Linux host PC, this can be done as following:
    cp adin1320_dt/devicetree.dtb /media/$USER/BOOT/
    cp /media/$USER/BOOT/zynq-common/uImage /media/$USER/BOOT/
 
-You can now insert the SD card in the Zedboard and try to boot. The board has a UART to USB converter (J14), through which we can see the boot log and interact with the userspace terminal.
+You can now insert the SD card in the Zedboard and try to boot. The board has a
+UART to USB converter (J14), through which we can see the boot log and interact
+with the userspace terminal.
 
 The steps are the following:
 
@@ -106,14 +119,17 @@ The steps are the following:
 -  Connect the power adapter.
 -  Power on the board using the SW8 switch.
 -  Connect using a serial terminal emulator (e.g **tio** for Linux or **Putty** for Windows). The UART settings are 115200/8N1. You may need to manually set the "CR after every LF" option.
--  You should see a boot log or terminal window through the emulator. If not, press enter, since the board may have already booted.
+-  You should see a boot log or terminal window through the emulator. If not,
+   press enter, since the board may have already booted.
 
 You may now switch off the board.
 
 Testing the ADIN1320EBZ-U1
 --------------------------
 
-At this point we can connect the ADIN1320EBZ-U1 to the development board and start testing. The pinout between the ADIN1320 board and the FMC extender should be the following:
+At this point we can connect the ADIN1320EBZ-U1 to the development board and
+start testing. The pinout between the ADIN1320 board and the FMC extender should
+be the following:
 
 ======================== =========
 ADIN1320EBZ pin(P4, P19) FMC pin
@@ -136,20 +152,21 @@ TXD3                     LA06_N
 GND                      GND
 ======================== =========
 
-In order to work around an issue with the ADIN1320, you will have to use the following steps when testing the setup:
+In order to work around an issue with the ADIN1320, you will have to use the
+following steps when testing the setup:
 
 -  Connect the FMC extender to the Zedboard.
 -  Only connect the MDIO and MDC (and GND) signals to the FMC extender.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/net-phy/image_4_.jpg
-   :width: 400px
+   :width: 400
 
 -  Power cycle the ADIN1320EBZ-U1 board.
 -  Boot Linux on the Zedboard.
 -  Connect the other MII signals.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/net-phy/image_5_.jpg
-   :width: 400px
+   :width: 400
 
 -  Connect an Ethernet cable to P11 (or a SFP module to M1).
 -  Check if the link is up by running "ip a" in Zedboard terminal.
@@ -174,9 +191,11 @@ At this point, we're only using the generic Ethernet PHY driver for Linux. And u
 Compiling the Linux driver for ADIN1320
 ---------------------------------------
 
-For this step you will need a PC running a Linux distribution. We'll use the ADI Linux kernel fork.
+For this step you will need a PC running a Linux distribution. We'll use the ADI
+Linux kernel fork.
 
-Before compiling the custom kernel, you'll need to install the following dependencies:
+Before compiling the custom kernel, you'll need to install the following
+dependencies:
 
 ::
 
@@ -200,7 +219,8 @@ Compile the kernel for the Zedboard:
    make -j4 UIMAGE_LOADADDR=0x8000 uImage
    sudo make modules_install INSTALL_MOD_PATH=/media/$USER/rootfs
 
-After the build is done, insert the SD card in your PC and copy the kernel image to the BOOT partition:
+After the build is done, insert the SD card in your PC and copy the kernel image
+to the BOOT partition:
 
 ::
 

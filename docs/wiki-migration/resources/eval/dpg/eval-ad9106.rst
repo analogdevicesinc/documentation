@@ -8,9 +8,16 @@ This page contains resources and documentation for evaluating the :adi:`AD9106`/
 
 The :adi:`AD9106-ARDZ-EBZ <eval-ad9106>` and :adi:`AD9102-ARDZ-EBZ <eval-ad9102>` evaluation boards share the same PCB design, are compatible with ARM-based Mbed-enabled boards like SDP-K1 and are designed to connect to Arduino Uno headers. Both boards can be operated using either the `Example Mbed Program <https://os.mbed.com/teams/AnalogDevices/code/EVAL-AD910x/>`_ or the :doc:`Analysis Control Evaluation (ACE) Software </wiki-migration/resources/tools-software/ace>`. Links to the user guides are provided.
 
-The AD910x-ARDZ-EBZ evaluation setup can be powered by USB only and does not require a high-frequency waveform generator for clock input. The evaluation board has an on-board 156.25 MHz crystal oscillator. To fit the evaluation system in a small form factor and manage power consumption within USB specifications, AD9106 and AD9102 supply voltages AVDD, DVDD and CLKVDD are limited to 3.3V only.
+The AD910x-ARDZ-EBZ evaluation setup can be powered by USB only and does not
+require a high-frequency waveform generator for clock input. The evaluation
+board has an on-board 156.25 MHz crystal oscillator. To fit the evaluation
+system in a small form factor and manage power consumption within USB
+specifications, AD9106 and AD9102 supply voltages AVDD, DVDD and CLKVDD are
+limited to 3.3V only.
 
-Included also in this page are resources and documentation for the obsolete AD9106-EBZ and AD9102-EBZ boards. These are standalone boards with the same PCB design and are controlled using a Labview-based GUI.
+Included also in this page are resources and documentation for the obsolete
+AD9106-EBZ and AD9102-EBZ boards. These are standalone boards with the same PCB
+design and are controlled using a Labview-based GUI.
 
 Typical Setup
 -------------
@@ -19,16 +26,13 @@ Typical Setup
 
    \ |eval-ad9106_setup.jpg|\ *Figure 1a. AD9106-ARDZ-EBZ Typical Evaluation Setup*\
 
-
 .. container:: centeralign
 
    |eval-ad9102_setup1.jpg|\ *Figure 1b. AD9102-ARDZ-EBZ Typical Evaluation Setup*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files & Links
 ---------------------
@@ -59,7 +63,8 @@ Additional:
 ~~~~~~~~~~~
 
 -  7V to 12V 30W Wall Wart (if on-board amplifiers will be used)
--  High-frequency Continuous Wave Generator (for clock input frequency other than 156.25 MHz)
+-  High-frequency Continuous Wave Generator (for clock input frequency other
+   than 156.25 MHz)
 
 Quick Start Guide
 -----------------
@@ -70,36 +75,40 @@ Quick Start Guide
 Reconfiguring the Evaluation Board
 ----------------------------------
 
-On-board jumpers and other hardware provisions are listed, and their functions described in Table 1. Meanwhile, the test points are enumerated and described in Table 2.
-
+On-board jumpers and other hardware provisions are listed, and their functions
+described in Table 1. Meanwhile, the test points are enumerated and described in
+Table 2.
 
 |ad910x_table1.png|
-
 
 | ==== Clock Configuration ==== The evaluation board has a provision for on-board or external clocking configuration.
 
 -  The on-board clocking configuration is implemented by default. DAC CLKP and CLKN are connected to the differential outputs of the on-board crystal oscillator as shown in Figure 2a. The onboard oscillator has a frequency of 156.25 MHz. If a different clock frequency is desired, Use external clocking configuration.
--  For external clocking configuration, change JP1 and JP2 connections first as shown in Figure 2b. Connect a High-frequency Continuous Wave Generator set to the desired frequency with 0dBm level to J10. The user will be prompted to enter the DAC Clock Input frequency in the ACE Board configuration wizard.
+-  For external clocking configuration, change JP1 and JP2 connections first as
+   shown in Figure 2b. Connect a High-frequency Continuous Wave Generator set to
+   the desired frequency with 0dBm level to J10. The user will be prompted to
+   enter the DAC Clock Input frequency in the ACE Board configuration wizard.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_jumpers_set1.png
    :alt: ad910x_jumpers_set1.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    \ *Figure 2a. DAC clock is connected to on-board oscillator (default) \| Figure 2b. DAC clock is connected to J10*\
 
-
 Output Configuration
 ~~~~~~~~~~~~~~~~~~~~
 
-The evaluation board has a provision to connect the DAC Outputs to the RF Balun Transformer or an 0n-board ADA4817-2 Amplifiers.
+The evaluation board has a provision to connect the DAC Outputs to the RF Balun
+Transformer or an 0n-board ADA4817-2 Amplifiers.
 
 .. important::
 
-   When tapping to the evaluation board outputs, users are not limited to the SMA jacks. P14 headers are provided as alternative connectors but performance is not as good as when using SMA connectors.
-
+   When tapping to the evaluation board outputs, users are not limited to the
+   SMA jacks. P14 headers are provided as alternative connectors but performance
+   is not as good as when using SMA connectors.
 
 -  The DAC outputs are connected to the RF Balun Transformer by default as shown in figure 3.
 -  To use On-board ADA4817-2 Amplifiers, change JP1 and JP2 connections as shown in Figure 4. Ensure that a 7V to 12V 30W Wall Wart is connected to P15. The user should also select the **On-Board amplifier** DAC Output setting in the ACE Board Configuration wizard.
@@ -107,12 +116,11 @@ The evaluation board has a provision to connect the DAC Outputs to the RF Balun 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_jumpers_set3_default.png
    :alt: ad910x_jumpers_set3_default.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 3a. SMA output connectors are connected to RF transformers (default)*\
-
 
    |ad910x_jumpers_set3_2.png|
 
@@ -120,24 +128,28 @@ The evaluation board has a provision to connect the DAC Outputs to the RF Balun 
 
    \ *Figure 3b. SMA output connectors are connected to ADA4817-2 amplifier outputs*\
 
-
    |ad910x_jumpers_set2.png|
 
 .. container:: centeralign
 
    \ *Figure 4a. DAC outputs are connected to RF transformers (default) \| Figure 4b. DAC ouputs are connected to ADA4817-2 amplifiers*\
 
+To properly observe the other patterns out of the amplifiers, replace C25, C26,
+C54, and C55 with 0Ω resistors or remove the capacitors then solder each pair of
+pads together. Waveforms are shown in Figures 17a to 18c.
 
-To properly observe the other patterns out of the amplifiers, replace C25, C26, C54, and C55 with 0Ω resistors or remove the capacitors then solder each pair of pads together. Waveforms are shown in Figures 17a to 18c.
-
-The common-mode voltage of the amplifier outputs can also be changed by installing resistors for DC offset correction of amplifier inputs. Refer to Table 1. Keep C25, C26, C54, and C55 pads shorted.
+The common-mode voltage of the amplifier outputs can also be changed by
+installing resistors for DC offset correction of amplifier inputs. Refer to
+Table 1. Keep C25, C26, C54, and C55 pads shorted.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_table2.png
    :alt: ad910x_table2.png
    :align: center
-   :width: 600px
+   :width: 600
 
-The on-board amplifiers can be characterized using off-board power supplies by removing E1 and E2 then connecting 5.2V 0.2A across TP5 and ground and -5.2V 0.2A across TP4 and ground. Refer to Table 2.
+The on-board amplifiers can be characterized using off-board power supplies by
+removing E1 and E2 then connecting 5.2V 0.2A across TP5 and ground and -5.2V
+0.2A across TP4 and ground. Refer to Table 2.
 
 Sample Waveforms out of RF transformer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,8 +168,8 @@ Sample Waveforms out of RF transformer
 
 .. important::
 
-   To properly observe waveforms below, connect the DAC outputs to on-board amplifiers.
-
+   To properly observe waveforms below, connect the DAC outputs to on-board
+   amplifiers.
 
 +---------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | |ad9106_sample_1.jpg|                                                                                                           | |ad9102_sample_1.jpg|                                                   |
@@ -180,13 +192,21 @@ Sample Waveforms out of RF transformer
 Troubleshooting
 ---------------
 
-This section lists items to check and practices to use when debugging any unexpected performance of a board. If unexpected results occur
+This section lists items to check and practices to use when debugging any
+unexpected performance of a board. If unexpected results occur
 
 -  Restart the program by stopping pattern generation and pressing “Disconnect” from the terminal window. Press “Connect” again then follow the application menu.
 -  Power down the whole system by disconnecting the wall wart, if using, and the USB cable from SDP-K1, then power up the system again following the steps in the Quick Start Guide.
 -  Measure voltages on the evaluation board. Refer to Table 2. If the voltages are off by 10% or more from the rated values, check if there are problems on component assembly or look for damaged ICs. Re-solder or replace components if necessary.
 -  If signal amplitude is lower than expected, compare oscilloscope settings to the recommended setup in the Quick Start Guide. Check for loose cable connections or try changing SMA-to-BNC cables. Loose connections and cable damage cause impedance mismatch.
--  If there is no output at all, check if clock input to AD9106 / AD9102 is stable by measuring clock leakage. Connect one of the evaluation board outputs to a spectrum analyzer. Boards and the clock source should be powered up but the DAC should not be generating a pattern. A low-power tone should be detected at the clock frequency. Otherwise, the clock source is not properly driving the clock input pins. Try using an off-board continuous waveform generator as clock source or if already using, try increasing waveform generator output signal level to 3 dBm.
+-  If there is no output at all, check if clock input to AD9106 / AD9102 is
+   stable by measuring clock leakage. Connect one of the evaluation board
+   outputs to a spectrum analyzer. Boards and the clock source should be powered
+   up but the DAC should not be generating a pattern. A low-power tone should be
+   detected at the clock frequency. Otherwise, the clock source is not properly
+   driving the clock input pins. Try using an off-board continuous waveform
+   generator as clock source or if already using, try increasing waveform
+   generator output signal level to 3 dBm.
 
 AD910x-EBZ (Obsolete) Documentation
 -----------------------------------
@@ -199,17 +219,17 @@ AD910x-EBZ (Obsolete) Documentation
 -  Quick Start Guide: `AD9106-EBZ <https://wiki.analog.com/_media/resources/eval/dpg/ad9106_evaluation_board_quick_start_guide.pdf>`_ `AD9102-EBZ <https://wiki.analog.com/_media/resources/eval/dpg/ad9102_evaluation_board_quick_start_guide.pdf>`_
 
 .. |eval-ad9106_setup.jpg| image:: https://wiki.analog.com/_media/resources/eval/dpg/eval-ad9106_setup.jpg
-   :width: 400px
+   :width: 400
    :height: 400px
 .. |eval-ad9102_setup1.jpg| image:: https://wiki.analog.com/_media/resources/eval/dpg/eval-ad9102_setup1.jpg
-   :width: 400px
+   :width: 400
    :height: 400px
 .. |ad910x_table1.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_table1.png
-   :width: 600px
+   :width: 600
 .. |ad910x_jumpers_set3_2.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_jumpers_set3_2.png
-   :width: 600px
+   :width: 600
 .. |ad910x_jumpers_set2.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_jumpers_set2.png
-   :width: 280px
+   :width: 280
 .. |ad9106_sample_3.jpg| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9106_sample_3.jpg
 .. |ad9102_sample_3.jpg| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9102_sample_3.jpg
 .. |ad9106_sample_5_2.jpg| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9106_sample_5_2.jpg

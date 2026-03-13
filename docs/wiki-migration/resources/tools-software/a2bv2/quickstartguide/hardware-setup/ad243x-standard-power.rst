@@ -6,7 +6,8 @@ AD243x standard Power
 Evaluation boards
 -----------------
 
-The AD243x standard power evaluation boards used in the demos are explained in the following subsections.
+The AD243x standard power evaluation boards used in the demos are explained in
+the following subsections.
 
 EVAL-AD2433WA1BZ
 ~~~~~~~~~~~~~~~~
@@ -20,12 +21,11 @@ EVAL-AD2433WA1BZ
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2433wa1bz.png
    :align: center
-   :width: 1080px
+   :width: 1080
 
 .. container:: centeralign
 
    \ **Figure:** EVAL-AD2433WA1BZ board
-
 
 EVAL-AD2433WB1BZ
 ~~~~~~~~~~~~~~~~
@@ -38,12 +38,11 @@ EVAL-AD2433WB1BZ
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-2433wb1bz_new.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ **Figure:** EVAL-AD2433WB1BZ board
-
 
 Connections
 -----------
@@ -53,12 +52,12 @@ To run the sample demo, the following setup connections are to be made.
 Jumper setting
 ~~~~~~~~~~~~~~
 
-Jumper settings (default) for EVAL-AD2433WA1BZ (Main) and EVAL-AD2433WB1BZ (Sub 0 and Sub 1) are as shown in Table.
+Jumper settings (default) for EVAL-AD2433WA1BZ (Main) and EVAL-AD2433WB1BZ (Sub
+0 and Sub 1) are as shown in Table.
 
 .. container:: centeralign
 
    \ **Table:** Jumper Settings: Standard Power
-
 
 +------------+---------------------------------+--------------+---+------------+---------------------------------+-----------+-----------+
 | **Jumper** | **Purpose in EVAL-AD2433WA1BZ** | **Main**     |   | **Jumper** | **Purpose in EVAL-AD2433WB1BZ** | **Sub 0** | **Sub 1** |
@@ -104,8 +103,8 @@ A2B Evaluation boards shall be connected in the following order
 
 .. note::
 
-   This connection is recommended for running the standard power sample demo using PC as host.
-
+   This connection is recommended for running the standard power sample demo
+   using PC as host.
 
    |image1|
 
@@ -113,12 +112,12 @@ A2B Evaluation boards shall be connected in the following order
 
    \ **Figure:** A2B Eval board connections: Standard Power
 
-
 Audio In/out
 ~~~~~~~~~~~~
 
 -  Connect separate audio sources (e.g., output from an iPod) to ‘Audio Line- in’ ports, on A2B subordinate boards.
--  Connect separate audio sinks (e.g., headphones and speakers) to ‘Audio Line-out’ on A2B main and subordinate boards.
+-  Connect separate audio sinks (e.g., headphones and speakers) to ‘Audio
+   Line-out’ on A2B main and subordinate boards.
 
 Sample configuration
 ^^^^^^^^^^^^^^^^^^^^
@@ -126,7 +125,7 @@ Sample configuration
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_a2b_demo_configuration_1.png
    :alt: Figure: Sample demo configuration
    :align: center
-   :width: 400px
+   :width: 400
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2433_setup.png
-   :width: 1000px
+   :width: 1000

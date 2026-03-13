@@ -23,8 +23,9 @@ Output Pins
 
 .. warning::
 
-   As of SigmaStudio 4.7, Pin 2 is labeled "Limter ratio" but is actually the limiter active flag, while Pin 3 is labeled Limiter Active Flag but is actually the limiter ratio.
-
+   As of SigmaStudio 4.7, Pin 2 is labeled "Limter ratio" but is actually the
+   limiter active flag, while Pin 3 is labeled Limiter Active Flag but is
+   actually the limiter ratio.
 
 +----------------------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Name                       | Format [int/dec] - [control/audio] | Function Description                                                                                                                                                                                      |
@@ -89,11 +90,15 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The Limiter block is an extreme compressor, completely preventing signals from exceeding the threshold. Whenever the level signal starts to go above it, the limiter immediately stops it and keeps it at threshold.
+The Limiter block is an extreme compressor, completely preventing signals from
+exceeding the threshold. Whenever the level signal starts to go above it, the
+limiter immediately stops it and keeps it at threshold.
 
-This block can control the detected rms value and attack-time constant (TC), as well as the processor's decay.
+This block can control the detected rms value and attack-time constant (TC), as
+well as the processor's decay.
 
-The following graph shows the input/output relationship for a 1kHz tone with 6dB-increments thresholds.
+The following graph shows the input/output relationship for a 1kHz tone with
+6dB-increments thresholds.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/limiterpic2.png
    :alt: limiterpic2.png
@@ -103,11 +108,19 @@ Signal output is computed according to the following formula:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/limiterpic3.png
    :alt: limiterpic3.png
 
-Signals below threshold remain unaffected; those above it are attenuated by the firm ratio shown above.
+Signals below threshold remain unaffected; those above it are attenuated by the
+firm ratio shown above.
 
-In the block figure, top right, the blue pin outputs the dynamically limited input signal. The second red pin (bottom of three pins) outputs ZERO (a flag) when the rms value of the input is below threshold. If the rms value exceeds the threshold, it will output ONE, giving you the option to read whether the limiter is active.
+In the block figure, top right, the blue pin outputs the dynamically limited
+input signal. The second red pin (bottom of three pins) outputs ZERO (a flag)
+when the rms value of the input is below threshold. If the rms value exceeds the
+threshold, it will output ONE, giving you the option to read whether the limiter
+is active.
 
-The first red pin (middle of the three pins) outputs the instantaneous-limiting ratio, and you can use this value to derive the compressed signal by employing a multiplier block to measure the signal envelope and the input. Compressed-signal displays are widely used in professional audio equipment.
+The first red pin (middle of the three pins) outputs the instantaneous-limiting
+ratio, and you can use this value to derive the compressed signal by employing a
+multiplier block to measure the signal envelope and the input. Compressed-signal
+displays are widely used in professional audio equipment.
 
 Calculating Parameter Values
 ----------------------------
@@ -120,7 +133,8 @@ The equations for the limiter parameters are:
 
 **Decay complement value store in RAM** = 1.0 - 2^(-1.0*(23 + DecayRAM)), where "DecayRAM" is the value calculated in the previous formula.
 
-The decay complement is only used to determine the flag output of the limiter and is not used in the limiting processing.
+The decay complement is only used to determine the flag output of the limiter
+and is not used in the limiting processing.
 
 **Note:** For Griffin/Sharc processors, decay = Math.Pow(10, (double)decay / (fs + 0.000001) / 10), where "Decay" is the value entered in the block and "fs" is the sample rate in Hz.
 
@@ -131,11 +145,9 @@ For a sample design using this block, see the :doc:`Dynamics Processor Example <
 
 Here is a screenshot showing the use of the cell:
 
-
 |image1|
 
 Here is a screenshot of its location in the Tree Toolbox:
-
 
 |image2|
 
@@ -169,4 +181,4 @@ Algorithm Details
 .. |limiterpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/limiterpic1.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/screenhunter_711_dec._01_09.18.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/screenhunter_712_dec._01_09.19.jpg
-   :width: 200px
+   :width: 200

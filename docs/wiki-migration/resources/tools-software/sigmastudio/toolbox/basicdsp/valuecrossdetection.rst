@@ -48,7 +48,10 @@ DSP parameter Information
 Algorithm Description
 ---------------------
 
-The Input signal is compared to the Value Threshold. Each time the input signal crosses this value (whether rising or falling) the output of the cell goes high. Otherwise the output of the cell is low. Below is a sample of the algorithm doing zero-cross detection, which is the default state of the block.
+The Input signal is compared to the Value Threshold. Each time the input signal
+crosses this value (whether rising or falling) the output of the cell goes high.
+Otherwise the output of the cell is low. Below is a sample of the algorithm
+doing zero-cross detection, which is the default state of the block.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/valuepic2.png
    :alt: valuepic2.png

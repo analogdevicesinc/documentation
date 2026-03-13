@@ -1,8 +1,6 @@
 AD-FMCOMMS1-EBZ User Guide
 ==========================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -25,14 +23,14 @@ AD-FMCOMMS1-EBZ User Guide
 
    Latest release that was supported was 2016_R1
 
-
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/introduction>`
 
    -  :doc:`The math behind the RF </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/math>`
    -  :doc:`I/Q Correction </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/iq_correction>`
 
 -  :doc:`Quick Start Guides </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart>`
-   Although we do support KC705, and non-Linux designs, our recommended platform is a Zynq based platform to get familiar with the design.
+   Although we do support KC705, and non-Linux designs, our recommended platform
+   is a Zynq based platform to get familiar with the design.
 
    -  :doc:`Linux on ZC702, ZC706, ZED </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart/zynq>`
    -  :doc:`Linux on KC705, VC707 </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart/microblaze_kc705>`
@@ -71,4 +69,4 @@ AD-FMCOMMS1-EBZ User Guide
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/help_and_support>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fmcomms1_top_v.jpg
-   :width: 250px
+   :width: 250

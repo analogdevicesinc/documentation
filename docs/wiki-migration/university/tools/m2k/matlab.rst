@@ -12,10 +12,13 @@ After installation of the driver and the MLTBX file, you will have access to the
 
 .. important::
 
-   Note that not every libm2k method is supported due to MATLAB limitations but these methods are usually uncommon.
+   Note that not every libm2k method is supported due to MATLAB limitations but
+   these methods are usually uncommon.
 
-
-This is a common API styling MATLAB uses for external languages or even internal components that are Java-like or class-like. Below is a simple example of how to call into the library and construct an M2K object, then call into the API from that object.
+This is a common API styling MATLAB uses for external languages or even internal
+components that are Java-like or class-like. Below is a simple example of how to
+call into the library and construct an M2K object, then call into the API from
+that object.
 
 .. code:: matlab
 
@@ -93,12 +96,14 @@ This can be done through the class definitions or even created objects:
 Manual Build
 ============
 
-You require two main dependencies which have build/install instructions (make sure you are using compatible versions):
+You require two main dependencies which have build/install instructions (make
+sure you are using compatible versions):
 
 -  :doc:`libiio </wiki-migration/resources/tools-software/linux-software/libiio>`
 -  :doc:`libm2k </wiki-migration/university/tools/m2k/libm2k/libm2k>`
 
-Once these are built and installed the MATLAB bindings can be built. To do this follow these steps:
+Once these are built and installed the MATLAB bindings can be built. To do this
+follow these steps:
 
 Inside libm2k repo go to /bindings/matlab
 
@@ -133,14 +138,15 @@ Make sure "definelibm2k.m" does not exist. If exists remove it.
 
 Run "build_library_linux64.m" (on Linux) or "build_library_win64.m" (on Windows)
 
-Inside "definelibm2k.m" you will get an error for a "inputoutput" value replace it with "input"
+Inside "definelibm2k.m" you will get an error for a "inputoutput" value replace
+it with "input"
 
-Inside "definelibm2k.m" uncomment all functions that you need and replace "<SHAPE>" with the right value Before :
+Inside "definelibm2k.m" uncomment all functions that you need and replace
+"<SHAPE>" with the right value Before :
 
 ::
 
    %% C++ class method |m2kOpen| for C++ class
-
 
    |libm2k::context::ContextBuilder|
 
@@ -161,7 +167,6 @@ After:
 
    %% C++ class method |m2kOpen| for C++ class
 
-
    |libm2k::context::ContextBuilder|
 
    % C++ Signature: static libm2k::context::M2k * libm2k::context::ContextBuilder::m2kOpen()
@@ -175,7 +180,8 @@ After:
    defineOutput(m2kOpenDefinition, "RetVal", "clib.libm2k.libm2k.context.M2k", 1);
    validate(m2kOpenDefinition);
 
-Replace the content from "definelibm2k_linux64.m" (on Linux) or the content from "definelibm2k_win64.m" (on Windows) with the content from "definelibm2k.m"
+Replace the content from "definelibm2k_linux64.m" (on Linux) or the content from
+"definelibm2k_win64.m" (on Windows) with the content from "definelibm2k.m"
 
 Comment the following code section:
 
@@ -203,7 +209,8 @@ If on Windows uncomment:
         pkg = definelibm2k_linux64;
         build(pkg);
 
-Run "build_library_linux64.m" ( on Linux ) or "build_library_win64.m" ( on Windows )
+Run "build_library_linux64.m" ( on Linux ) or "build_library_win64.m" ( on
+Windows )
 
 ::
 
@@ -218,7 +225,8 @@ Run "build_library_linux64.m" ( on Linux ) or "build_library_win64.m" ( on Windo
    Interface file 'libm2kInterface.so' built in folder '/tmp/libm2k-matlab/libm2k'.
    To use the library, add the interface file folder to the MATLAB path.
 
-This will create a library named libm2kInterface.so in the libm2k folder. Simply adding that folder to path will allow you to use the bindings.
+This will create a library named libm2kInterface.so in the libm2k folder. Simply
+adding that folder to path will allow you to use the bindings.
 
 Support
 =======

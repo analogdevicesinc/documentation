@@ -1,7 +1,14 @@
 AD74115H ESD Test Results
 =========================
 
-The electrostatic discharge (ESD) immunity test emulates the discharges of tens of nanoseconds duration directly on the electronic components. Two discharge methods are used: Contact Discharge and Air Discharge. Contact discharge includes discharge to the conductive surfaces of the DUT (Device under test). (An ESD test generator is used with a “sharp point” to make direct connection to the DUT (pin) for Contact ESD testing. A “round tip” is added to the generator and is brought close to the DUT (pin) to trigger a spark for Air-Gap ESD testing. The IEC 61000-4-2 test levels are listed in Table 1.
+The electrostatic discharge (ESD) immunity test emulates the discharges of tens
+of nanoseconds duration directly on the electronic components. Two discharge
+methods are used: Contact Discharge and Air Discharge. Contact discharge
+includes discharge to the conductive surfaces of the DUT (Device under test).
+(An ESD test generator is used with a “sharp point” to make direct connection to
+the DUT (pin) for Contact ESD testing. A “round tip” is added to the generator
+and is brought close to the DUT (pin) to trigger a spark for Air-Gap ESD
+testing. The IEC 61000-4-2 test levels are listed in Table 1.
 
 Table 1 IEC 61000-4-2 Test Levels
 ---------------------------------
@@ -15,20 +22,40 @@ Level Contact Discharge (kV) Air Discharge (kV)
 4     8                      15
 ===== ====================== ==================
 
-There are two methods of applying the discharges, direct and indirect. Direct application involves direct contact to the conductive surfaces and coupling planes. Indirect application involves air discharge at insulating surfaces. The DUT is exposed to at least 20 discharges at each rating for each type of discharge, 10 each at negative and positive polarity. The discharges are repeated at a rate of one discharge per second.
+There are two methods of applying the discharges, direct and indirect. Direct
+application involves direct contact to the conductive surfaces and coupling
+planes. Indirect application involves air discharge at insulating surfaces. The
+DUT is exposed to at least 20 discharges at each rating for each type of
+discharge, 10 each at negative and positive polarity. The discharges are
+repeated at a rate of one discharge per second.
 
-The test setup consists of a nonconductive table with a height of 0.8 m, standing on the ground reference plane. A 1.6 m × 0.8 m horizontal coupling plane (HCP) is placed on the table. The DUT and its cable are isolated from the coupling plane by an insulating mat that is 0.5 mm thick.
+The test setup consists of a nonconductive table with a height of 0.8 m,
+standing on the ground reference plane. A 1.6 m × 0.8 m horizontal coupling
+plane (HCP) is placed on the table. The DUT and its cable are isolated from the
+coupling plane by an insulating mat that is 0.5 mm thick.
 
-The contact discharges are applied to the IO_P and IO_N terminal screws of the AD74115H output terminal block P21. The AD74115H also has two uncommitted high voltage sense pins (SENSE_EXT1 and SENSE_EXT2) that can be measured with the ADC. The contact discharges were also applied to the terminal screws of the AD74115H terminal block P8.
+The contact discharges are applied to the IO_P and IO_N terminal screws of the
+AD74115H output terminal block P21. The AD74115H also has two uncommitted high
+voltage sense pins (SENSE_EXT1 and SENSE_EXT2) that can be measured with the
+ADC. The contact discharges were also applied to the terminal screws of the
+AD74115H terminal block P8.
 
-The air discharges are applied to both AD74115H output (P21) and sense (P8) terminal blocks.
+The air discharges are applied to both AD74115H output (P21) and sense (P8)
+terminal blocks.
 
-The coupling discharge are applied to the horizontal coupling plane (HCP) and vertical coupling plane (VCP). The coupling plane has two 470 kΩ bleeding resistors to the ground reference plane (GRP) which is connected to earth ground.
+The coupling discharge are applied to the horizontal coupling plane (HCP) and
+vertical coupling plane (VCP). The coupling plane has two 470 kΩ bleeding
+resistors to the ground reference plane (GRP) which is connected to earth
+ground.
 
 Hardware Configuration
 ----------------------
 
-There was a digital multi meter (DMM) connected to the output load to ensure there was no loss of output during testing and also to ensure the integrity of the internal ADC measurement. To protect the DMM a low pass filter was placed between the load and DMM. The measurements were streamed back to the laptop throughout the testing.
+There was a digital multi meter (DMM) connected to the output load to ensure
+there was no loss of output during testing and also to ensure the integrity of
+the internal ADC measurement. To protect the DMM a low pass filter was placed
+between the load and DMM. The measurements were streamed back to the laptop
+throughout the testing.
 
 The AD74115H was tested using 3 use cases to exercise all terminal blocks.
 
@@ -37,7 +64,8 @@ The AD74115H was tested using 3 use cases to exercise all terminal blocks.
    -  Used to check the integrity of IO_P and IO_N.
    -  Shielded cable was connected to IO_P and IO_N and a 500 Ω load while the output was set to 12.5 mA.
    -  DMM used to measure the current at the load.
-   -  Also covers Voltage Input use case since the measurement path is identical (SENSELF to AGND_SENSE).
+   -  Also covers Voltage Input use case since the measurement path is identical
+      (SENSELF to AGND_SENSE).
 
 -  3 and 4 Wire RTD Use Case:
 
@@ -51,12 +79,11 @@ The AD74115H was tested using 3 use cases to exercise all terminal blocks.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/img_20211012_142910.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 1 ADP1034 and AD74115H Current Output ESD Setup*
-
 
    |image1|
 
@@ -64,18 +91,21 @@ The AD74115H was tested using 3 use cases to exercise all terminal blocks.
 
    *Figure 1 ADP1034 and AD74115H 4 wire RTD ESD Setup*
 
-
    |image2|
 
 .. container:: centeralign
 
    *Figure 3 ADP1034 and AD74115H Test Setup*
 
-
 Software Configuration
 ----------------------
 
-The software was written in python to facilitate interaction with DMM and DUT simultaneously. At the beginning of each test the pre test configuration was performed. Before the discharges were applied the pre measurement flow of 1000 samples were taken. After discharges the post measurement of 1000 samples were taken. Each sample (ADC and DMM) was taken approximately every 25 ms. Pre test configuration
+The software was written in python to facilitate interaction with DMM and DUT
+simultaneously. At the beginning of each test the pre test configuration was
+performed. Before the discharges were applied the pre measurement flow of 1000
+samples were taken. After discharges the post measurement of 1000 samples were
+taken. Each sample (ADC and DMM) was taken approximately every 25 ms. Pre test
+configuration
 
 ::
 
@@ -99,7 +129,12 @@ Pre and Post Measurement Flow
 Performance Summary
 -------------------
 
-Table 2 gives a summary of the ESD test results. The AD74115H was tested to level 3 according to IEC 61000-4-2 and achieved class B. There were no alert status bits activated throughout the testing. The current output use case is measured with the DMM and the RTD results are measured using the internal ADC. The ADC result is converted according to the transfer function available in the AD74115H datasheet.
+Table 2 gives a summary of the ESD test results. The AD74115H was tested to
+level 3 according to IEC 61000-4-2 and achieved class B. There were no alert
+status bits activated throughout the testing. The current output use case is
+measured with the DMM and the RTD results are measured using the internal ADC.
+The ADC result is converted according to the transfer function available in the
+AD74115H datasheet.
 
 Table 2 Contact Discharge Results
 ---------------------------------
@@ -170,6 +205,6 @@ Table 4 Air Discharge Results
 | :doc:`Return to AD74115H Immunity Performance </wiki-migration/resources/technical-guides/ad74115_immunity_performance>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/technical-guides/4rtd.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/technical-guides/esd_block_diagram_2.png
-   :width: 800px
+   :width: 800

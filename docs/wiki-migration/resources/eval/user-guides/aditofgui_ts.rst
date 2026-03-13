@@ -7,7 +7,8 @@ EVAL-ADTF3175D-NXZ
 Known Issues
 ~~~~~~~~~~~~
 
--  AB Shift - As the user switches from MP to QMP the AB image shifts alongside the x axis to the right
+-  AB Shift - As the user switches from MP to QMP the AB image shifts alongside
+   the x axis to the right
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
@@ -28,7 +29,8 @@ Troubleshooting
 
          -  Yes:
 
-            -  Ensure that the NXP SD card image is the one downloaded from the GUI installer
+            -  Ensure that the NXP SD card image is the one downloaded from the
+               GUI installer
 
                -  :doc:`eval-adsd3100-nxz-software-installation </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-software-installation>`
 
@@ -61,11 +63,13 @@ Known Issues
 
    -  Reconnect the kit to the pc, this can take multiple tries (3-5 times)
 
--  GUI crashes, last line on log (stored in 'log' folder) says: "successfully requested frame!"
+-  GUI crashes, last line on log (stored in 'log' folder) says: "successfully
+   requested frame!"
 
    -  Restart GUI without reconnecting the camera, stream should start
 
--  Some PCs/Laptops might fail PD negotiation. User can connect to camera, however GUI is fails to get frames
+-  Some PCs/Laptops might fail PD negotiation. User can connect to camera,
+   however GUI is fails to get frames
 
    -  Known laptops that fail
 
@@ -108,7 +112,9 @@ Troubleshooting
    -  Use `ToF/releases/tag/v3.2.0 <https://github.com/analogdevicesinc/ToF/releases/tag/v3.2.0>`_ or newer
    -  If above step doesn't work, install OpenCL GPU binaries : :doc:`Instructions </wiki-migration/resources/eval/user-guides/eval-adtf3175d-depth-compute-libs>`
 
-      -  Copy the contents from TOF_DepthComputeEngine_Windows-Rel3.0.0\\prebuilt_binary\\ to TOF_Evaluation_ADTF3175D-Rel3.2.0.1\\bin\\ folder
+      -  Copy the contents from
+         TOF_DepthComputeEngine_Windows-Rel3.0.0\\prebuilt_binary\\ to
+         TOF_Evaluation_ADTF3175D-Rel3.2.0.1\\bin\\ folder
 
 -  Data_collect failed to capture frames
 
@@ -120,7 +126,9 @@ Troubleshooting
          -  inputFormat should be **"mipiRaw12_8"**
          -  bitsInAB should be **"16"**
 
-   -  Check if the config.json and RawToDepthAdsd3500.ini files are in proper format for respective operating systems. If not convert the file to specific operating system format and re-run the command.
+   -  Check if the config.json and RawToDepthAdsd3500.ini files are in proper
+      format for respective operating systems. If not convert the file to
+      specific operating system format and re-run the command.
 
 -  Unexpectedly low frame rate:
 
@@ -128,7 +136,9 @@ Troubleshooting
 
       -  A USB 2.0 cable - USB 3.0 Type C to Type C is strongly recommended.
       -  A USB port that is being used by other devices
-      -  Inappropriate MTU size on the host - An MTU size of 10,000 is recommended.
+      -  Inappropriate MTU size on the host - An MTU size of 10,000 is
+         recommended.
 
    -  The tool iPerf3 can be used to measure network bandwdith over USB. iPerf3 can be installed on Linux and Windows. An appropriate bandwidth is above 1Gbps.
-   -  On some Linux system it may be necessary to increase the MTU size to 10000.
+   -  On some Linux system it may be necessary to increase the MTU size to
+      10000.

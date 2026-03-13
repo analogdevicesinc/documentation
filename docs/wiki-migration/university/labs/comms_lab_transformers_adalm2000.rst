@@ -4,7 +4,8 @@ Activity: Transformers - ADALM2000
 Objective:
 ----------
 
-The objective of this Lab Activity is to investigate transformer characteristics in various configurations.
+The objective of this Lab Activity is to investigate transformer characteristics
+in various configurations.
 
 Background:
 -----------
@@ -12,17 +13,32 @@ Background:
 AC Transformer:
 ~~~~~~~~~~~~~~~
 
-Transformers only work with alternating current, AC. For example transformers reduce the 120V wall power by stepping the voltage down to more convenient levels for most consumer electronic applications (only a few volts) or for other low power applications (typically 12V). Transformers also step the voltage up for long distance transmission, and down for safe distribution. Without transformers, the waste of electric power in distribution networks, already significant, would be enormous. It is possible to step up or down DC voltages, but the techniques are more complicated than with AC transformers and actually involve turning the DC voltage into some form of AC signal in the process. Further, such conversions are often inefficient and/or expensive. AC has the further advantage that it can be used to drive AC motors, which are usually preferable to DC motors for high power applications. While transformers are most visible in power applications, they serve important roles in many other communications related signal paths at audio and RF frequencies.
+Transformers only work with alternating current, AC. For example transformers
+reduce the 120V wall power by stepping the voltage down to more convenient
+levels for most consumer electronic applications (only a few volts) or for other
+low power applications (typically 12V). Transformers also step the voltage up
+for long distance transmission, and down for safe distribution. Without
+transformers, the waste of electric power in distribution networks, already
+significant, would be enormous. It is possible to step up or down DC voltages,
+but the techniques are more complicated than with AC transformers and actually
+involve turning the DC voltage into some form of AC signal in the process.
+Further, such conversions are often inefficient and/or expensive. AC has the
+further advantage that it can be used to drive AC motors, which are usually
+preferable to DC motors for high power applications. While transformers are most
+visible in power applications, they serve important roles in many other
+communications related signal paths at audio and RF frequencies.
 
-The transformer core has high magnetic permeability, i.e. a material that forms a magnetic field much more easily than in free space, due to the orientation of atomic dipoles. In figure 1, the core is made of laminated soft iron but at higher frequencies ferrite is more common. The result is that the magnetic field is concentrated inside the core, and almost no field lines leave the core.
-
+The transformer core has high magnetic permeability, i.e. a material that forms
+a magnetic field much more easily than in free space, due to the orientation of
+atomic dipoles. In figure 1, the core is made of laminated soft iron but at
+higher frequencies ferrite is more common. The result is that the magnetic field
+is concentrated inside the core, and almost no field lines leave the core.
 
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Simple Transformer
-
 
 It follows that the magnetic flux φ through the primary and secondary are approximately equal, as shown. From Faraday's law, the emf in each turn, whether in the primary or secondary coil, is the negative of the derivative of the magnetic flux with respect to time or, -dφ/dt. Neglecting the winding resistance and other losses in the transformer, the terminal voltage equals the emf. For the N\ :sub:`p` turns of the primary, this gives:
 
@@ -38,7 +54,10 @@ Dividing these equations gives the transformer equation:
 
 Where r is the turns ratio.
 
-What about the current? Again, neglecting losses in the transformer, and if assuming that the voltage and current have similar phase relationships in the primary and secondary, then from conservation of energy we can write, in steady state:
+What about the current? Again, neglecting losses in the transformer, and if
+assuming that the voltage and current have similar phase relationships in the
+primary and secondary, then from conservation of energy we can write, in steady
+state:
 
 Power in = power out,
 
@@ -48,14 +67,24 @@ so:
 
 :math:`I_s / I_p = N_p / N_s = 1/r`
 
-You never get something for nothing. For a step up transformer, if you increase the voltage, you decrease the current by (at least) the same factor or turns ratio. Note that, in the figure, the coil with more turns has thinner wire, because it is designed to carry less current than that with fewer turns.
+You never get something for nothing. For a step up transformer, if you increase
+the voltage, you decrease the current by (at least) the same factor or turns
+ratio. Note that, in the figure, the coil with more turns has thinner wire,
+because it is designed to carry less current than that with fewer turns.
 
 http://en.wikipedia.org/wiki/Transformer
 
 Impedance matching:
 ~~~~~~~~~~~~~~~~~~~
 
-In communications related applications, transformers are most often used between sections of the circuits to match impedances. As we just saw a transformer converts alternating current at one voltage amplitude seen at the primary to another voltage amplitude at the secondary. The total power input to the primary and output from the secondary is the same ( except for internal losses ). The side with the lower voltage is at lower impedance (because this has the lower number of turns), and the side with the higher voltage is at a higher impedance (as it has more turns in its coil).
+In communications related applications, transformers are most often used between
+sections of the circuits to match impedances. As we just saw a transformer
+converts alternating current at one voltage amplitude seen at the primary to
+another voltage amplitude at the secondary. The total power input to the primary
+and output from the secondary is the same ( except for internal losses ). The
+side with the lower voltage is at lower impedance (because this has the lower
+number of turns), and the side with the higher voltage is at a higher impedance
+(as it has more turns in its coil).
 
 One example of this impedance matching is a television balun (short for balanced-unbalanced) transformer. This transformer converts a balanced signal from the antenna (via 300 Ω twin-lead) into an unbalanced signal (75 Ω coaxial cable such as RG-6). To match the antenna's 300 Ω source resistance, R\ :sub:`S`, to the 75 Ω coax load resistance, R\ :sub:`L`, a ratio of 4:1, a matching transformer with a turns ratio of 2 is used. The formula for calculating the transformer turns ratio for this example is:
 
@@ -66,7 +95,17 @@ http://en.wikipedia.org/wiki/Maximum_power_transfer_theorem http://en.wikipedia.
 Frequency range:
 ~~~~~~~~~~~~~~~~
 
-The lower limit on the usable frequency range of a transformer is generally set by the impedance level of the circuit in question and the inductance of the transformer windings. If we assume the common 50 Ω standard as our starting point we can calculate the lower frequency bound based on the published winding inductance from the manufacturer's datasheets. The upper limit on the usable frequency range of a transformer is generally set by the parasitic inter-winding capacitance and the self resonance. In some cases the datasheets will specify the usable frequency range. In general it is common practice to pick the reactive component, in this case the inductance, at the lowest frequency of interest, to be at least 4 times the resistive component, in this case the 50 Ω source resistance.
+The lower limit on the usable frequency range of a transformer is generally set
+by the impedance level of the circuit in question and the inductance of the
+transformer windings. If we assume the common 50 Ω standard as our starting
+point we can calculate the lower frequency bound based on the published winding
+inductance from the manufacturer's datasheets. The upper limit on the usable
+frequency range of a transformer is generally set by the parasitic inter-winding
+capacitance and the self resonance. In some cases the datasheets will specify
+the usable frequency range. In general it is common practice to pick the
+reactive component, in this case the inductance, at the lowest frequency of
+interest, to be at least 4 times the resistive component, in this case the 50 Ω
+source resistance.
 
 Formulas used to calculate electrical characteristics of multi-winding transformers:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,25 +133,38 @@ Inductance = Inductance\ :sub:`table` DCR = 1 ÷ [W\ :sub:`N` × (1 ÷ DCR\ :sub
 Pre Lab Simulaations
 ~~~~~~~~~~~~~~~~~~~~
 
-Before measuring the frequency response of the transformers supplied in your parts kit, create a simulation schematic similar to figure 2 and perform an AC sweep from 10 KHz to 10 MHz. Use the manufacturer's datasheet to set the values for the winding inductance ( mutual inductance for an ideal transformer ) and resistance. Assume that the coupling factor is 1. For this analysis we will assume that the parasitic turn to turn capacitance is small enough to ignore.
+Before measuring the frequency response of the transformers supplied in your
+parts kit, create a simulation schematic similar to figure 2 and perform an AC
+sweep from 10 KHz to 10 MHz. Use the manufacturer's datasheet to set the values
+for the winding inductance ( mutual inductance for an ideal transformer ) and
+resistance. Assume that the coupling factor is 1. For this analysis we will
+assume that the parasitic turn to turn capacitance is small enough to ignore.
 
 Materials:
 ----------
 
-ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 HPH1-1400L 6 winding transformer 1 HPH1-0190L 6 winding transformer 2 100 Ω resistors
+ADALM2000 Active Learning Module Solder-less breadboard, and jumper wire kit 1
+HPH1-1400L 6 winding transformer 1 HPH1-0190L 6 winding transformer 2 100 Ω
+resistors
 
 Directions:
 -----------
 
-Build the circuit shown in figure 2 on your solder-less breadboard. You will be using this setup to measure the frequency response of each of the two transformer model numbers in three different configuration with 1:1 primary to secondary turns ratios. The two red arrows indicate where to connect the source and load resistors for the configuration where one coil is used for the primary and secondary. The blue arrows are for the configuration where two coils in series are used for the primary and secondary. The green arrows are for the configuration where three coils in series are used for the primary and secondary.
-
+Build the circuit shown in figure 2 on your solder-less breadboard. You will be
+using this setup to measure the frequency response of each of the two
+transformer model numbers in three different configuration with 1:1 primary to
+secondary turns ratios. The two red arrows indicate where to connect the source
+and load resistors for the configuration where one coil is used for the primary
+and secondary. The blue arrows are for the configuration where two coils in
+series are used for the primary and secondary. The green arrows are for the
+configuration where three coils in series are used for the primary and
+secondary.
 
 |image2|
 
 .. container:: centeralign
 
    Figure 2, transformer test circuit
-
 
 Hardware Setup:
 ---------------
@@ -124,40 +176,45 @@ Hardware Setup:
 
    Figure 3, transformer test circuit breadboard connection
 
-
-Open the Network Analyzer Instrument and set the sweep to start at 10 KHz and stop at 10 MHz. The Max gain should be set to 1X. Set the Amplitude to 1V and the Offset to zero volts. Under the Bode scale set the magnitude top to 10 dB and range to 80 dB. Set the phase top to 180º and range to 360º. Under scope channels click on use channel 1 as reference. Set the number of steps to 200.
+Open the Network Analyzer Instrument and set the sweep to start at 10 KHz and
+stop at 10 MHz. The Max gain should be set to 1X. Set the Amplitude to 1V and
+the Offset to zero volts. Under the Bode scale set the magnitude top to 10 dB
+and range to 80 dB. Set the phase top to 180º and range to 360º. Under scope
+channels click on use channel 1 as reference. Set the number of steps to 200.
 
 Procedure:
 ----------
 
 .. image:: https://wiki.analog.com/_media/university/labs/atrans_nf4.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    Figure 4, Three coils in series configuration (green arrow), Scopy plot
 
-
-Run a single sweep for each 1:1 winding configuration for the two transformers in your kit of parts. You should see amplitude and phase vs frequency plots that look very similar to your simulation results. Be sure to export the data to a .csv file for further analysis in either Excel or Matlab.
+Run a single sweep for each 1:1 winding configuration for the two transformers
+in your kit of parts. You should see amplitude and phase vs frequency plots that
+look very similar to your simulation results. Be sure to export the data to a
+.csv file for further analysis in either Excel or Matlab.
 
 Questions:
 ----------
 
-How do your measurements compare to the winding inductance specified in the manufacturer's datasheet?
+How do your measurements compare to the winding inductance specified in the
+manufacturer's datasheet?
 
 Step Up and Step Down Configurations
 ------------------------------------
 
-Connect to the transformer for a 1:2 step up configuration (red arrows) and a 2:1 step down configuration as shown in figure 3.
-
+Connect to the transformer for a 1:2 step up configuration (red arrows) and a
+2:1 step down configuration as shown in figure 3.
 
 |image3|
 
 .. container:: centeralign
 
    Figure 5 Step Up (red) and Step Down (blue) connections
-
 
 Use the impedance matching formula to calculate the appropriate value for R\ :sub:`L` in both cases. Repeat the same frequency sweeps using the Network Analyzer tool. Be sure to export the data to a .csv file for further analysis in either Excel or Matlab. Compare the measured low frequency roll off points with those measures in the 1:1 configurations from figure 2.
 
@@ -171,18 +228,16 @@ Hardware Setup:
 
    Figure 6, Step up (red) breadboard connection
 
-
 Procedure:
 ----------
 
 .. image:: https://wiki.analog.com/_media/university/labs/atrans_nf7.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    Figure 7, Step up (red), Scopy plot
-
 
 For additional credit calculate the correct R\ :sub:`L` for other possible step up and step down ratios possible with these 6 winding transformers such as 1:3, 2:3, 3:1, 3:2 etc. Measure and report the data for as many different configurations as you have time for.
 
@@ -196,7 +251,6 @@ For additional credit calculate the correct R\ :sub:`L` for other possible step 
    -  LTspice files: :git-education_tools:`m2k/ltspice/transformers_ltspice`
    
 
-
 **For Further Reading:**
 
 http://en.wikipedia.org/wiki/Electromagnetic_coil http://www.coilcraft.com/pdfs/doc157_SigXfrmApp.pdf `Simulating Non-linear Transformers in LTspice <https://www.allaboutcircuits.com/technical-articles/simulating-non-linear-transformers-in-ltspice/>`_
@@ -204,8 +258,8 @@ http://en.wikipedia.org/wiki/Electromagnetic_coil http://www.coilcraft.com/pdfs/
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/atrans_f1.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/university/labs/atrans_f2.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/university/labs/atrans_f3.png
-   :width: 500px
+   :width: 500

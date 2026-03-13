@@ -5,18 +5,23 @@ adding
 
    `Download the latest software package from here <https://github.com/analogdevicesinc/ToF/releases>`_
 
-
 EVAL-ADTF3175-NXZ
 =================
 
-Analog Devices 3D time of flight (ToF) camera products capture depth information, enabling advanced machine vision applications and allowing people and devices to sense, capture and interact with their spatial environments.
+Analog Devices 3D time of flight (ToF) camera products capture depth
+information, enabling advanced machine vision applications and allowing people
+and devices to sense, capture and interact with their spatial environments.
 
 For more information see: :adi:`Time of Flight Camera – System Overview <en/analog-dialogue/articles/time-of-flight-system-design-part-1-system-overview.html>`
 
 Introduction
 ------------
 
-The EVAL-ADTF3175-NXZ time of flight (ToF) evaluation kit is showcasing the ADTF3175 module. The kit supports USB connectivity to a PC for real-time visualization, capture and post processing of depth data. The kit includes host PC software (Windows/Linux) and an open source multi-platform SDK for custom application development.
+The EVAL-ADTF3175-NXZ time of flight (ToF) evaluation kit is showcasing the
+ADTF3175 module. The kit supports USB connectivity to a PC for real-time
+visualization, capture and post processing of depth data. The kit includes host
+PC software (Windows/Linux) and an open source multi-platform SDK for custom
+application development.
 
 Key Features
 ~~~~~~~~~~~~
@@ -34,7 +39,6 @@ Key Features
    ================ ====================================
    
 
-
 Modes of Operation
 ~~~~~~~~~~~~~~~~~~
 
@@ -48,7 +52,6 @@ Modes of Operation
    ========== ======================= ========== =====
    
    \*FPS is currently limited by CPU processing speed
-
 
 What is included in the kit?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +69,7 @@ What is included in the kit?
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/crosby2.jpg
    :alt: crosby2.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 --------------
 
@@ -142,7 +145,6 @@ Index of Pages
    
    \* :doc:`Depth Compute Parameters </wiki-migration/resources/eval/user-guides/depthcompute/params>`
    
-
 
 --------------
 

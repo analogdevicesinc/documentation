@@ -8,16 +8,20 @@ Parametric EQ
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/parametriceq.png
    :alt: parametriceq.png
-   :width: 850px
+   :width: 850
 
 Description
 ===========
 
-The Parametric EQ block extends the functionality of the General (2nd-Order) filter with an enhanced graphical filter design tool. In addition, multiple 2-nd order filter stages can be cascaded to create complex filter responses.
+The Parametric EQ block extends the functionality of the General (2nd-Order)
+filter with an enhanced graphical filter design tool. In addition, multiple 2-nd
+order filter stages can be cascaded to create complex filter responses.
 
 This filter provides:
 
-Graphical design of filter response curves. High order filtering, via cascaded 2nd order filters (maximum of 15) Independent filter type and settings for each filter stage.
+Graphical design of filter response curves. High order filtering, via cascaded
+2nd order filters (maximum of 15) Independent filter type and settings for each
+filter stage.
 
 The Filter Types Supported :
 
@@ -43,7 +47,9 @@ Usage
 
 To open the graphical window, click on the icon button. This filter provides:
 
-Graphical design of filter response curves. Independent filter type and settings for each response curve. Loading of filter coefficients from a text file containing the same.
+Graphical design of filter response curves. Independent filter type and settings
+for each response curve. Loading of filter coefficients from a text file
+containing the same.
 
 Targets Supported
 =================
@@ -74,7 +80,6 @@ Name    Type  Description
 ======= ===== ===================
 Output0 Audio The filtered output
 ======= ===== ===================
-
 
 | ===== Configurable Parameters =====
 

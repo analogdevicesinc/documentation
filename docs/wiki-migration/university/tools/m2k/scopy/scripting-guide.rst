@@ -3,13 +3,15 @@ Scopy - Scripting Guide
 
 .. important::
 
-   Important! The following guide is in experimental phase, therefore no guarantee is offered regarding its functionality.
-
+   Important! The following guide is in experimental phase, therefore no
+   guarantee is offered regarding its functionality.
 
 How to Use
 ----------
 
-Scopy tool supports scripting via javascript files, offering the possibility of automating instrument tasks for different types of applications (i.e control loops).
+Scopy tool supports scripting via javascript files, offering the possibility of
+automating instrument tasks for different types of applications (i.e control
+loops).
 
 The scripts can be run in two different ways:
 
@@ -29,7 +31,6 @@ To open the Debugger in Scopy tool, its visibility must be enbled in the Instrum
 
    \
 
-
    |image1|
 
 Now open Scopy:
@@ -38,21 +39,21 @@ Now open Scopy:
 
    \
 
-
    |image2|
 
 Connect to ADALM2000 device and open the Debugger Instrument.
 
-To load a script press "Load Script" button and select the folder path of the file.
+To load a script press "Load Script" button and select the folder path of the
+file.
 
 .. container:: centeralign
 
    \
 
-
    |image3|
 
-After the location is set, to run the script press the "Run" button placed on the left side of the "Load Script" button.
+After the location is set, to run the script press the "Run" button placed on
+the left side of the "Load Script" button.
 
 Available Commands
 ------------------
@@ -383,6 +384,6 @@ Resources
 **Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/debugger_true.png
-   :width: 250px
+   :width: 250
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/debugger_instrlist.png
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/debugger_load.png

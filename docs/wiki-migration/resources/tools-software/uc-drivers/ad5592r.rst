@@ -4,7 +4,8 @@ AD5592R/AD5593R No-OS Software
 Introduction
 ------------
 
-This document describes the No-OS software used to control the AD5592R and AD5593R parts.
+This document describes the No-OS software used to control the AD5592R and
+AD5593R parts.
 
 Overview
 --------
@@ -102,13 +103,18 @@ Downloads
    -  **Generic Platform Drivers** :git-no-OS:`drivers/platform/generic`
    
 
-
 Using the API
 -------------
 
-The driver can only work together with a structure that holds the state of a device, where state means all information about the device. This structure will henceforth be referred as an instance of a driver. All driver functions take a handler of a driver instance as the first argument. This allows the driver to be used with multiple devices simultaneously, without the need to replicate the .c and .h files.
+The driver can only work together with a structure that holds the state of a
+device, where state means all information about the device. This structure will
+henceforth be referred as an instance of a driver. All driver functions take a
+handler of a driver instance as the first argument. This allows the driver to be
+used with multiple devices simultaneously, without the need to replicate the .c
+and .h files.
 
-Before using any API call, an instance of the driver must first be created and then initialized using the ad5592r_init() which has the following parameters:
+Before using any API call, an instance of the driver must first be created and
+then initialized using the ad5592r_init() which has the following parameters:
 
 -  **device**: the reference of the new driver instance. A new instance can be obtained by simply declaring one: <code c> struct ad5592r_dev my_ad5592; </code>
 
@@ -117,8 +123,6 @@ A ad5592r_init() call will also reset the part.
 More information
 ================
 
-
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

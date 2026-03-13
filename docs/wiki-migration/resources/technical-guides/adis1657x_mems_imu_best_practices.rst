@@ -4,12 +4,22 @@ ADIS16575/ADIS16576/ADIS16577 MEMS IMU Best Practices
 ADIS1657x Introduction
 ----------------------
 
-The ADIS16575/ADIS16576/ADIS16577 series is a family of precision MEMS Inertial Measurement Units (IMUs) designed for high-performance industrial applications. Each IMU integrates triaxial gyroscopes and accelerometers, offering robust sensing capabilities with factory-calibrated sensitivity, bias, and alignment. These modules simplify integration by eliminating the need for extensive in-house calibration, making them ideal for applications like autonomous vehicles, industrial robotics, and navigation systems.
+The ADIS16575/ADIS16576/ADIS16577 series is a family of precision MEMS Inertial
+Measurement Units (IMUs) designed for high-performance industrial applications.
+Each IMU integrates triaxial gyroscopes and accelerometers, offering robust
+sensing capabilities with factory-calibrated sensitivity, bias, and alignment.
+These modules simplify integration by eliminating the need for extensive
+in-house calibration, making them ideal for applications like autonomous
+vehicles, industrial robotics, and navigation systems.
 
 Comparison with ADIS16465
 -------------------------
 
-The ADIS16575/ADIS16576/ADIS16577 series shares several key features with the ADIS16465, making it a compatible and familiar choice for users accustomed to the ADIS16465 series. Both IMUs offer SPI-compatible communication, triaxial gyroscopes and accelerometers, factory calibration, and robust performance across a wide operating temperature range.
+The ADIS16575/ADIS16576/ADIS16577 series shares several key features with the
+ADIS16465, making it a compatible and familiar choice for users accustomed to
+the ADIS16465 series. Both IMUs offer SPI-compatible communication, triaxial
+gyroscopes and accelerometers, factory calibration, and robust performance
+across a wide operating temperature range.
 
 Key Improvements in ADIS16575/ADIS16576/ADIS16577
 -------------------------------------------------
@@ -32,12 +42,18 @@ Maintained Features for Compatibility
 -  **Factory Calibration**: Both series include calibration for sensitivity, bias, and alignment across a broad temperature range.
 -  **Flexible Data Output Options**: Output formats, including delta angles and velocities, remain consistent, ensuring compatibility with legacy systems.
 
-The additional diagnostic features and performance improvements make the ADIS16575/ADIS16576/ADIS16577 series a compelling upgrade, retaining backward compatibility with the ADIS16465 while offering enhanced functionality and reliability.
+The additional diagnostic features and performance improvements make the
+ADIS16575/ADIS16576/ADIS16577 series a compelling upgrade, retaining backward
+compatibility with the ADIS16465 while offering enhanced functionality and
+reliability.
 
 ADIS16575/ADIS16576/ADIS16577 Basic Operation
 ---------------------------------------------
 
-The ADIS1657x series is designed for seamless integration and straightforward operation. Upon power-up or reset, the IMU begins sampling and processing data automatically using factory-calibrated settings. The following steps outline its basic operation:
+The ADIS1657x series is designed for seamless integration and straightforward
+operation. Upon power-up or reset, the IMU begins sampling and processing data
+automatically using factory-calibrated settings. The following steps outline its
+basic operation:
 
 1. Power-Up and Initialization
 ------------------------------
@@ -47,7 +63,8 @@ The ADIS1657x series is designed for seamless integration and straightforward op
    -  **Sensor-Level Self-Tests**: Verifies the health of gyroscopes and accelerometers.
    -  **Memory Integrity Checks**: Ensures firmware and calibration data are intact via cyclic redundancy checks (CRC).
 
--  Once diagnostics are complete, the device enters normal operation mode and starts providing output data.
+-  Once diagnostics are complete, the device enters normal operation mode and
+   starts providing output data.
 
 2. Data Sampling and Processing
 -------------------------------
@@ -67,7 +84,8 @@ The ADIS1657x series is designed for seamless integration and straightforward op
 4. Data Configuration and Synchronization
 -----------------------------------------
 
--  The IMU offers various options for configuring data output and synchronization:
+-  The IMU offers various options for configuring data output and
+   synchronization:
 
    -  **Decimation**: Configure the output data rate (ODR) using the DEC_RATE register.
    -  **FIFO and Watermark**: Utilize the FIFO buffer for efficient data handling with interrupt-based watermark levels.
@@ -96,7 +114,9 @@ Key Registers for Basic Operation
 -  **FIFO_CTRL**: Manages FIFO operation and watermark settings.
 -  **DIAG_STAT**: Reports system status and fault flags.
 
-The ADIS1657x series simplifies integration by automating much of its operation while providing flexibility through programmable features, making it suitable for a wide range of industrial applications.
+The ADIS1657x series simplifies integration by automating much of its operation
+while providing flexibility through programmable features, making it suitable
+for a wide range of industrial applications.
 
 Advanced Features and Specifications
 ====================================
@@ -140,7 +160,10 @@ Advanced Features and Specifications
 Data Communication and Synchronization
 ======================================
 
-The ADIS1657x series uses an SPI-compatible interface to enable seamless communication with host processors. The interface allows for efficient data collection, device configuration, and diagnostic monitoring. Key communication features include:
+The ADIS1657x series uses an SPI-compatible interface to enable seamless
+communication with host processors. The interface allows for efficient data
+collection, device configuration, and diagnostic monitoring. Key communication
+features include:
 
 SPI Interface
 -------------
@@ -183,7 +206,10 @@ Register Structure
 Data Communication and Synchronization
 ======================================
 
-The following scope captures validate the timing performance and operational characteristics of the ADIS16575 series. These figures provide a detailed view of various timing parameters critical to reliable communication and synchronization:
+The following scope captures validate the timing performance and operational
+characteristics of the ADIS16575 series. These figures provide a detailed view
+of various timing parameters critical to reliable communication and
+synchronization:
 
 Timing Scope Capture Validation
 -------------------------------
@@ -191,10 +217,11 @@ Timing Scope Capture Validation
 1. **Data Ready Frequency**
 
 -  Validates the data-ready signal frequency under default and configured settings.
--  The scope capture below shows consistent pulse intervals matching the configured ODR.
+-  The scope capture below shows consistent pulse intervals matching the
+   configured ODR.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/data_ready_frequency.png
-   :width: 600px
+   :width: 600
 
 2. **Software Reset Recovery Time**
 
@@ -202,147 +229,151 @@ Timing Scope Capture Validation
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/software_reset_recovery_time2.png
    :alt: Software Reset Recovery Time
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/software_reset_recovery_time1.png
-   :width: 200px
+   :width: 200
 
 3. **Hardware Reset Recovery Time**
 
--  Demonstrates the recovery time after triggering a hardware reset via the RST pin.
+-  Demonstrates the recovery time after triggering a hardware reset via the RST
+   pin.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/hardware_reset_recovery_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/flash_memory_test_time1.png
-   :width: 200px
+   :width: 200
 
 4. **Power-On Startup Time**
 
 -  Shows the time required for the device to initialize and begin data sampling.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/power_on_startup_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/power_on_startup_time1.png
-   :width: 200px
+   :width: 200
 
 5. **Flash Memory Backup Time**
 
 -  Validates the duration of the flash memory backup operation.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/flash_memory_backup_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/flash_memory_backup_time1.png
-   :width: 200px
+   :width: 200
 
 6. **Flash Memory Test Time**
 
--  Scope capture of the flash memory test duration initiated via the global command register.
+-  Scope capture of the flash memory test duration initiated via the global
+   command register.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/flash_memory_test_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/flash_memory_test_time1.png
-   :width: 200px
+   :width: 200
 
 7. **Self-Test Time**
 
 -  Illustrates the duration of the on-demand self-test sequence.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/self_test_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/self_test_time1.png
-   :width: 200px
+   :width: 200
 
 8. **FIFO Flush Time**
 
 -  Captures the time required to clear the FIFO buffer completely.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/fifo_flush_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/fifo_flush_time1.png
-   :width: 200px
+   :width: 200
 
 9. **Factory Calibration Restore Time**
 
--  Shows the time needed to restore factory calibration settings from flash memory.
+-  Shows the time needed to restore factory calibration settings from flash
+   memory.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/factory_calibration_restore_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/factory_calibration_restore_time1.png
-   :width: 200px
+   :width: 200
 
 10. **Bias Correction Time**
 
 -  Demonstrates the time required for automatic bias correction.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/bias_correction_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/bias_correction_time1.png
-   :width: 200px
+   :width: 200
 
 11. **SPI Read Stall Time (Fast SCLK)**
 
 -  Scope capture of SPI read operations at a fast SCLK (e.g., 15 MHz).
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/spi_read_stall_time_fast_sclk_2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/spi_read_stall_time_fast_sclk_1.png
-   :width: 200px
+   :width: 200
 
 12. **SPI Read Stall Time (Slow SCLK)**
 
 -  Captures SPI read timing at a slower SCLK frequency.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/spi_read_stall_time_slow_sclk_2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/spi_read_stall_time_slow_sclk_1.png
-   :width: 200px
+   :width: 200
 
 13. **SPI Write Stall Time**
 
 -  Demonstrates the timing for SPI write operations.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/spi_write_stall_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/spi_write_stall_time1.png
-   :width: 200px
+   :width: 200
 
 14. **Burst Read Stall Time**
 
 -  Illustrates the timing overhead for burst read operations.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/burst_read_stall_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/burst_read_stall_time1.png
-   :width: 200px
+   :width: 200
 
 15. **Data Ready Invalid Time**
 
 -  Scope capture showing transient behavior during data-ready invalid periods.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/data_ready_invalid_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/data_ready_invalid_time1.png
-   :width: 200px
+   :width: 200
 
 16. **Input Sync to Data Ready Time**
 
--  Demonstrates the timing relationship between input sync and the subsequent data-ready signal.
+-  Demonstrates the timing relationship between input sync and the subsequent
+   data-ready signal.
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/input_sync_to_data_ready_time2.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/technical-guides/input_sync_to_data_ready_time1.png
-   :width: 200px
+   :width: 200

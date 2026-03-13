@@ -8,7 +8,9 @@ Envelope Peak
 Description
 -----------
 
-The Envelope Peak block measures the absolute peak value of the input signal and holds the peak level of the incoming signal for the specified time before starts decaying the ramp, when signal level falls.
+The Envelope Peak block measures the absolute peak value of the input signal and
+holds the peak level of the incoming signal for the specified time before starts
+decaying the ramp, when signal level falls.
 
 Variants
 --------
@@ -49,7 +51,6 @@ Name   Type  Description
 ====== ===== ==============
 Output Audio Output channel
 ====== ===== ==============
-
 
 | ===== Configurable Parameters =====
 

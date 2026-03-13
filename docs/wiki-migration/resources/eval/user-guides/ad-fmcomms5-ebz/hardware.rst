@@ -19,7 +19,6 @@ Rev. C
    -  Allegro Project (get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_; you need 17.2 or higher)
    
 
-
 Rev. B
 ~~~~~~
 
@@ -37,8 +36,10 @@ Rev. B
       ERRATA:
 
          
-         The FMCOMMS5, REV B has a bug in it, that doesn't allow the ADF5355 to function properly. (Pin 5, AVDD is a floating node). It's a simple fix - short pin 5 (AVDD) with pin 4 (CE) to make a connection to VDD_EXT_LO_3P3.
-
+         The FMCOMMS5, REV B has a bug in it, that doesn't allow the ADF5355 to
+         function properly. (Pin 5, AVDD is a floating node). It's a simple fix
+         - short pin 5 (AVDD) with pin 4 (CE) to make a connection to
+         VDD_EXT_LO_3P3.
 
          
          |AD-FMCOMMS5-EBZ Rev B ADF5355 rework|
@@ -51,9 +52,14 @@ The :adi:`AD-FMCOMMS5-EBZ` (AD9361) assumes a VDD_INTERFACE voltage between 1.71
 Phase Synchronization
 ---------------------
 
-Traces between baluns and SMAs are not phase-matched on REV-A and REV-B which can cause phase misalignment with the libad9361-iio ad9361_fmcomms5_phase_sync solution. This is corrected on REV-C. Therefore, phase alignment performance can vary over frequency. The RF switches on REV-A/B are also not designed to work above 900 MHz. Higher frequency switches are available on REV-C.
+Traces between baluns and SMAs are not phase-matched on REV-A and REV-B which
+can cause phase misalignment with the libad9361-iio ad9361_fmcomms5_phase_sync
+solution. This is corrected on REV-C. Therefore, phase alignment performance can
+vary over frequency. The RF switches on REV-A/B are also not designed to work
+above 900 MHz. Higher frequency switches are available on REV-C.
 
-Below are some preliminary results using Release 2018-R1 with equal length but unmatched cables
+Below are some preliminary results using Release 2018-R1 with equal length but
+unmatched cables
 
 Rev B
 ~~~~~
@@ -70,4 +76,4 @@ Rev C
    :align: center
 
 .. |AD-FMCOMMS5-EBZ Rev B ADF5355 rework| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms5-ebz/fmcomms5_rework.png
-   :width: 200px
+   :width: 200

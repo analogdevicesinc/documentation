@@ -32,7 +32,6 @@ Creating the Micro-SD Card
 
    \ :doc:`Create SD Image for Terasic C5 SoCkit board. (it is a single image for all boards). </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`\
 
-
 Required files
 ~~~~~~~~~~~~~~
 
@@ -101,12 +100,7 @@ Setting up the hardware (Terasic C5 SoCkit)
 
 You will need to:
 
-
-
 - Get the ` Terasic C5 SoCkit <https://www.arrow.com/en/products/sockit/arrow-development-tools >`_
-
-
-
 
 |resources-eval-user-guides-arradio-quickstart-terasic_c5_sockit.jpg|
 
@@ -125,7 +119,6 @@ You will need to:
 
 +--------------+
 
-
 | JP2          |
 
 +==============+
@@ -140,9 +133,7 @@ SW6     MSEL0 MSEL1 MSEL2 MSEL3 MSEL4 CODEC_SEL
 **POS** 0     1     0     1     0     0
 ======= ===== ===== ===== ===== ===== =========
 
-
 .. esd-warning::
-
 
 Booting the Micro-SD Card
 -------------------------
@@ -158,7 +149,7 @@ Local IIO Oscilloscope
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arradio/quickstart/print_iio_linux_arradio_c5soc.png
    :alt: print_iio_linux_arradio_c5soc.png
    :align: center
-   :width: 700px
+   :width: 700
 
 Remote IIO Oscilloscope
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,12 +181,11 @@ Remote IIO Oscilloscope
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arradio/quickstart/iio_remote_c5soc_arradio.png
    :alt: iio_remote_c5soc_arradio.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
-
 
    |image2|
 
@@ -260,10 +250,9 @@ Software support
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/arradio/quickstart/terasic_c5_sockit_arradio.jpg
-   :width: 550px
+   :width: 550
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300
 
 .. |resources-eval-user-guides-arradio-quickstart-terasic_c5_sockit.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/arradio/quickstart/terasic_c5_sockit.jpg

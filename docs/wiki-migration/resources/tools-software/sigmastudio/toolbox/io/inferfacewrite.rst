@@ -5,17 +5,21 @@ Interface Write
 
 |image1| |image2|
 
-The Interface Write module writes the value of the parameter setting to the EEPROM when required, so that the parameter setting can be used after the power down(via selfboot).The module can write the value to EEPROM when the parameter value is changed or periodically or an external trigger(rising edge). The module supports writes through SPI or I2C protocols.
+The Interface Write module writes the value of the parameter setting to the
+EEPROM when required, so that the parameter setting can be used after the power
+down(via selfboot).The module can write the value to EEPROM when the parameter
+value is changed or periodically or an external trigger(rising edge). The module
+supports writes through SPI or I2C protocols.
 
-The Interface Write module has the following properties which can be set by the user in the form to configure the I2C or SPI modes.
-
+The Interface Write module has the following properties which can be set by the
+user in the form to configure the I2C or SPI modes.
 
 |image3|
 
 .. hint::
 
-   NOTE: Make sure that the interface read and interface write modules that are interacting with each other have the same Interface number paramter.
-
+   NOTE: Make sure that the interface read and interface write modules that are
+   interacting with each other have the same Interface number paramter.
 
 Input Pins
 ----------
@@ -91,11 +95,14 @@ GUI Control Name Compiler Name Function Description
 
    NOTE: The Periodic mode of operation of interface write for SPI requires some delay to be inserted after the write, the default value of which is set to 1ms. Every successive instance of the module will have an increment in the delay given by (interface number\*delay). This is available as a DSP parameter whose value can be set by writting the value to the particular memory location of the dsp parameter -InterfaceWrite300_delayLoopCount.
 
-
 Algorithm Description
 ---------------------
 
-Interface write module allows the user to write data to a device(self-boot eeprom) over I2C or SPI. The cell has a form which allows the user to configure the modes and choose among the three write modes -write on 1.Value change 2.Periodic 3.GPIO trigger. The user can configure the I2C and SPI registers using the Interface Write properties form.
+Interface write module allows the user to write data to a device(self-boot
+eeprom) over I2C or SPI. The cell has a form which allows the user to configure
+the modes and choose among the three write modes -write on 1.Value change
+2.Periodic 3.GPIO trigger. The user can configure the I2C and SPI registers
+using the Interface Write properties form.
 
 Example
 -------
@@ -111,7 +118,11 @@ Use Case 2
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/usecase2.png
    :align: center
 
-The Interface write module can be used to store any the parameter setting to the EEPROM and read it back during the selfboot using the corresponding Interface read module. When the GPIO trigger is a rising edge signal, the Interface write module will write to the EEPROM. During the powerdown, a rising edge signal can be provided in the GPIO to store the interface value to EEPROM.
+The Interface write module can be used to store any the parameter setting to the
+EEPROM and read it back during the selfboot using the corresponding Interface
+read module. When the GPIO trigger is a rising edge signal, the Interface write
+module will write to the EEPROM. During the powerdown, a rising edge signal can
+be provided in the GPIO to store the interface value to EEPROM.
 
 Supported IC's
 --------------

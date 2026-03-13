@@ -49,8 +49,6 @@ External
 
 External links are recognized automagically: http://www.google.com or simply www.google.com - You can set the link text as well: `This Link points to google <http://www.google.com>`_. Email addresses like this one: andi@splitbrain.org are recognized, too.
 
-
-
 DokuWiki supports multiple ways of creating links. External links are recognized
 automagically: http://www.google.com or simply www.google.com - You can set
 link text as well: `This Link points to google <http://www.google.com>`_. Email
@@ -61,8 +59,6 @@ Internal
 
 Internal links are created by using square brackets. You can either just give a `pagename <https://wiki.analog.com/pagename>`_ or use an additional `link text <https://wiki.analog.com/pagename>`_.
 
-
-
 Internal links are created by using square brackets. You can either just give
 a `pagename <https://wiki.analog.com/pagename>`_ or use an additional `link text <https://wiki.analog.com/pagename>`_.
 
@@ -70,15 +66,11 @@ a `pagename <https://wiki.analog.com/pagename>`_ or use an additional `link text
 
 You can use `namespaces <https://wiki.analog.com/some/namespaces>`_ by using a colon in the pagename.
 
-
-
 You can use `namespaces <https://wiki.analog.com/some/namespaces>`_ by using a colon in the pagename.
 
 For details about namespaces see `namespaces <https://www.dokuwiki.org/namespaces>`_.
 
 Linking to a specific section is possible, too. Just add the section name behind a hash character as known from HTML. This links to `this Section <https://wiki.analog.com/syntax>`_.
-
-
 
 This links to `this Section <https://wiki.analog.com/syntax>`_.
 
@@ -86,26 +78,28 @@ Notes:
 
 -  Links to `existing pages <https://wiki.analog.com/syntax>`_ are shown in a different style from `nonexisting <https://wiki.analog.com/nonexisting>`_ ones.
 -  DokuWiki does not use `CamelCase <https://en.wikipedia.org/wiki/CamelCase>`_ to automatically create links by default, but this behavior can be enabled in the `config <https://www.dokuwiki.org/config>`_ file. Hint: If DokuWiki is a link, then it's enabled.
--  When a section's heading is changed, its bookmark changes, too. So don't rely on section linking too much.
+-  When a section's heading is changed, its bookmark changes, too. So don't rely
+   on section linking too much.
 
 Interwiki
 ~~~~~~~~~
 
 DokuWiki supports `Interwiki <https://www.dokuwiki.org/Interwiki>`_ links. These are quick links to other Wikis. For example this is a link to Wikipedia's page about Wikis: `Wiki <https://en.wikipedia.org/wiki/Wiki>`_.
 
-
-
 DokuWiki supports `doku>Interwiki <doku>Interwiki>`__ links. These are quick links to other Wikis.
 For example this is a link to Wikipedia's page about Wikis: `Wiki <https://en.wikipedia.org/wiki/Wiki>`_.
 
-The icons are used beside the wiki links to help quickly visually identify the destination site of the link. This saves the reader a mouseover to understand where they are going to go.
+The icons are used beside the wiki links to help quickly visually identify the
+destination site of the link. This saves the reader a mouseover to understand
+where they are going to go.
 
 -  `Op Amp Applications Handbook <amazon>0750678445>`__ (a link to amazon)
 -  `Interwiki <https://www.dokuwiki.org/Interwiki>`_ (a link to Dokuwiki)
 -  `strlen <https://secure.php.net/strlen>`_ (php manual)
 -  `Analog Devices <https://en.wikipedia.org/wiki/Analog Devices>`_ (wikipedia)
 
-Additionally to the default dokuwiki interwiki links the following are available in this wiki:
+Additionally to the default dokuwiki interwiki links the following are available
+in this wiki:
 
 Specific to the ADI website
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -134,8 +128,8 @@ Specific to the ADI website
 
 .. tip::
 
-   Some of the above (like footprint, and IBIS models) need a package suffix to function properly
-
+   Some of the above (like footprint, and IBIS models) need a package suffix to
+   function properly
 
 Distributors
 ^^^^^^^^^^^^
@@ -152,8 +146,9 @@ Distributors
 
 .. tip::
 
-   The above links to search, if you give an unambiguous, exact part number, it will take you to the product page, if it is not specific, it will drop you in search.
-
+   The above links to search, if you give an unambiguous, exact part number, it
+   will take you to the product page, if it is not specific, it will drop you in
+   search.
 
 Others
 ^^^^^^
@@ -187,16 +182,12 @@ Image Links
 
 You can also use an image to link to another internal or external page by combining the syntax for links and `images <https://wiki.analog.com/>`_ (see below) like this:
 
-
-
 `|wiki-dokuwiki-128.png| <http://www.php.net>`_
-
-
-
 
 |dokuwiki-128.png|
 
-Please note: The image formatting is the only formatting syntax accepted in link names.
+Please note: The image formatting is the only formatting syntax accepted in link
+names.
 
 The whole `image <https://wiki.analog.com/>`_ and `link <https://wiki.analog.com/>`_ syntax is supported (including image resizing, internal and external images and URLs and interwiki links).
 
@@ -211,7 +202,6 @@ You can add footnotes  [1]_ by using double parentheses.
 
 Sectioning
 ----------
-
 
 Headline Level 3
 ~~~~~~~~~~~~~~~~
@@ -239,26 +229,21 @@ You can include external and internal `images <https://www.dokuwiki.org/images>`
 
 Real size:
 
-
 |image1|
 
 Resize to given width:
-
 
 |image2|
 
 Resize to given width and height [2]_:
 
-
 |image3|
 
 Resized external image:
 
-
 |http---de3.php.net-images-php.gif|
 
 Real size:
-
 
 |wiki-dokuwiki-128.png|
 
@@ -288,7 +273,6 @@ By using left or right whitespaces you can choose the alignment.
    :alt: dokuwiki-128.png
    :align: center
 
-
 |wiki-dokuwiki-128.png|
 
 |wiki-dokuwiki-128.png|
@@ -299,7 +283,6 @@ Of course, you can add a title (displayed as a tooltip by most browsers), too.
 .. image:: https://wiki.analog.com/_media/wiki/dokuwiki-128.png
    :alt: This is the caption
    :align: center
-
 
 |This is the caption|
 
@@ -343,9 +326,12 @@ Also take a look at the `FAQ on list items <https://www.dokuwiki.org/faq:lists>`
 Text Conversions
 ----------------
 
-DokuWiki can convert certain pre-defined characters or strings into images or other text or HTML.
+DokuWiki can convert certain pre-defined characters or strings into images or
+other text or HTML.
 
-The text to image conversion is mainly done for smileys. And the text to HTML conversion is used for typography replacements, but can be configured to use other HTML as well.
+The text to image conversion is mainly done for smileys. And the text to HTML
+conversion is used for typography replacements, but can be configured to use
+other HTML as well.
 
 Text to Image Conversions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -378,7 +364,8 @@ Text to HTML Conversions
 
 Typography: `dokuwiki <https://wiki.analog.com/dokuwiki>`_ can convert simple text characters to their typographically correct entities. Here is an example of recognized characters.
 
--> <- <-> => <= <=> >> << -- --- 640x480 (c) (tm) (r) "He thought 'It's a man's world'..."
+-> <- <-> => <= <=> >> << -- --- 640x480 (c) (tm) (r) "He thought 'It's a man's
+world'..."
 
 ::
 
@@ -392,7 +379,8 @@ There are three exceptions which do not come from that pattern file: multiplicat
 Quoting
 -------
 
-Some times you want to mark some text to show it's a reply or comment. You can use the following syntax:
+Some times you want to mark some text to show it's a reply or comment. You can
+use the following syntax:
 
 ::
 
@@ -456,7 +444,8 @@ Table rows have to start and end with a ``|`` for normal rows or a ``^`` for hea
    | Row 2 Col 1    | some colspan (note the double pipe) ||
    | Row 3 Col 1    | Row 3 Col 2     | Row 3 Col 3        |
 
-To connect cells horizontally, just make the next cell completely empty as shown above. Be sure to have always the same amount of cell separators!
+To connect cells horizontally, just make the next cell completely empty as shown
+above. Be sure to have always the same amount of cell separators!
 
 Vertical tableheaders are possible, too.
 
@@ -467,7 +456,8 @@ Heading 4 no colspan this time
 Heading 5 Row 2 Col 2          Row 2 Col 3
 ========= ==================== ===========
 
-As you can see, it's the cell separator before a cell which decides about the formatting:
+As you can see, it's the cell separator before a cell which decides about the
+formatting:
 
 ::
 
@@ -477,8 +467,6 @@ As you can see, it's the cell separator before a cell which decides about the fo
    | Row 1 Col 3        |
 
    ^ Heading 4    | no colspan this time
-
-
 
    ^ Heading 5    | Row 2 Col 2
 
@@ -503,7 +491,10 @@ Apart from the rowspan syntax those cells should not contain anything else.
    | Row 2 Col 1    |                            | Row 2 Col 3        |
    | Row 3 Col 1    |                            | Row 2 Col 3        |
 
-You can align the table contents, too. Just add at least two whitespaces at the opposite end of your text: Add two spaces on the left to align right, two spaces on the right to align left and two spaces at least at both ends for centered text.
+You can align the table contents, too. Just add at least two whitespaces at the
+opposite end of your text: Add two spaces on the left to align right, two spaces
+on the right to align left and two spaces at least at both ends for centered
+text.
 
 ==================== ============ ============
 Table with alignment              
@@ -551,7 +542,8 @@ You can include code blocks into your documents by either indenting them by at l
 
    This is preformatted code all spaces are preserved: like              <-this
 
-<file> This is pretty much the same, but you could use it to show that you quoted a file. </code>
+<file> This is pretty much the same, but you could use it to show that you
+quoted a file. </code>
 
 Those blocks were created by this source:
 
@@ -638,9 +630,7 @@ The refresh period defaults to 4 hours. Any value below 10 minutes will be treat
 
 ::
 
-
    .. image:: https://wiki.analog.com/_media/rss>http///slashdot.org/index.rss 5 author date 1h
-
 
 .. image:: https://wiki.analog.com/_media/rss>http///slashdot.org/index.rss_5_author_date_1h
    :alt: //slashdot.org/index.rss 5 author date 1h
@@ -649,7 +639,8 @@ The refresh period defaults to 4 hours. Any value below 10 minutes will be treat
 Control Macros
 --------------
 
-Some syntax influences how DokuWiki renders a page without creating any output it self. The following control macros are availble:
+Some syntax influences how DokuWiki renders a page without creating any output
+it self. The following control macros are availble:
 
 +-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Macro       | Description                                                                                                                                                                                 |
@@ -668,18 +659,19 @@ DokuWiki's syntax can be extended by `Plugins <https://www.dokuwiki.org/plugins>
    This is a footnote
 
 .. [2]
-   when the aspect ratio of the given width and height doesn't match that of the image, it will be cropped to the new ratio before resizing
+   when the aspect ratio of the given width and height doesn't match that of the
+   image, it will be cropped to the new ratio before resizing
 
 .. |dokuwiki-128.png| image:: https://wiki.analog.com/_media/wiki/dokuwiki-128.png
    :target: http://www.php.net
 .. |image1| image:: https://wiki.analog.com/_media/wiki/dokuwiki-128.png
 .. |image2| image:: https://wiki.analog.com/_media/wiki/dokuwiki-128.png
-   :width: 50px
+   :width: 50
 .. |image3| image:: https://wiki.analog.com/_media/wiki/dokuwiki-128.png
-   :width: 200px
+   :width: 200
    :height: 50px
 .. |http---de3.php.net-images-php.gif| image:: http://de3.php.net/images/php.gif
-   :width: 200px
+   :width: 200
    :height: 50px
 
 .. |http---de3.php.net-images-php.gif| image:: https://wiki.analog.com/_media/http///de3.php.net/images/php.gif

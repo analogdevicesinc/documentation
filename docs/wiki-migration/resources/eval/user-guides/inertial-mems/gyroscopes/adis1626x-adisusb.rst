@@ -7,7 +7,7 @@ OVERVIEW
 The :adi:`ADIS16260` iSensor® is a product family of high performance, digital gyro-scope sensing systems that operate autonomously and requires no user configuration to produce accurate rate sensing data. It provides performance advantages with low noise density, wide bandwidth, and excellent in-run bias stability, which are enabling for applications such as platform control, navigation, robotics, and medical instrumentation. All :adi:`ADIS16260` product sensors use a serial peripheral interface for data communications. This interface enables direct connection with a large variety of embedded processor products. This electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-spi-connection.png
-   :width: 400px
+   :width: 400
 
 ADIS16260/5/6/PCB BREAKOUT BOARD
 --------------------------------
@@ -35,7 +35,8 @@ SYSTEM REQUIREMENTS
 
 Windows XP, Vista, 7 (32-bit systems only)
 
-NOTE: All the required files are contained in the .Cab file and deployed during software package install.
+NOTE: All the required files are contained in the .Cab file and deployed during
+software package install.
 
 PHYSICAL SETUP
 --------------
@@ -52,9 +53,10 @@ Step #1
 The :adi:`ADIS16260` uses the 12 pin cable included with the :adi:`ADISUSB` connecting J1 on the :adi:`ADISUSB` to J1 on the :adi:`ADIS16260/PCBZ <en/mems-sensors/mems-inertial-sensors/adis16260/products/EVAL-ADIS16260/eb.html>`. The following pictures provide a visual reference for correct connection. Mounting to the system frame is accomplished by using 4 M2 pre-drilled holes in the :adi:`ADISUSB`, marked in the picture below.]]
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-all-parts.png
-   :width: 600px
+   :width: 600
 
-WARNING: Make sure that the connector is in proper alignment before pressing it in. Misalignment can cause pin damage and exposure to harmful conditions.
+WARNING: Make sure that the connector is in proper alignment before pressing it
+in. Misalignment can cause pin damage and exposure to harmful conditions.
 
 Step #2
 ~~~~~~~
@@ -62,7 +64,7 @@ Step #2
 Secure the :adi:`ADIS16260/5 <ADIS16260>` using 4 M2x.4x4mm machine screws. J1 is a dual-row, 2 mm (pitch) connector that mates to a number of ribbon cable systems, including 3M Part Number 152212-0100-GB (ribbon crimp connector) and 3M Part Number 3625/12 (ribbon cable).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-adisusb-pcbz.png
-   :width: 600px
+   :width: 600
 
 Step #3
 ~~~~~~~
@@ -74,7 +76,7 @@ The following picture (left side) shows JP1 in the **+3.3V** position (factory-d
 NOTE: If JP1 is left on **+3.3V**, the gyroscope outputs will not respond and will appear to be saturated in one direction or the other. See the following picture for an example of this behavior.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-adisusb-main-screen-voltage-error.png
-   :width: 800px
+   :width: 800
 
 ADIS16260/5 Evaluation SOFTWARE
 -------------------------------
@@ -82,17 +84,19 @@ ADIS16260/5 Evaluation SOFTWARE
 :adi:`Click here to download the ADIS16260/5 Evaluation Software <static/imported-files/eval_boards/265ES(2).zip>` to a personal computer, which enables PC-based evaluation of the :adi:`ADIS16260` on an :adi:`ADISUSB` evaluation system. The download file will contain three separate files: The CAB file (ADIS16265_Rev_2.cab), the setup file (setup.exe), and the setup list. Copy these files to a convenient folder for running the application from.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-zipfile.png
-   :width: 600px
+   :width: 600
 
 Navigate to the folder where the files were saved and double click the setup.exe file. The following pictures are a guide for the :adi:`ADIS16260` Evaluation Software install. The **Welcome** screen will appear click **OK** to continue.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-welcome.png
-   :width: 600px
+   :width: 600
 
-Please choose a directory for the software application or use the default settings (recommended) and click the computer icon button to go to the next step.
+Please choose a directory for the software application or use the default
+settings (recommended) and click the computer icon button to go to the next
+step.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-install.png
-   :width: 600px
+   :width: 600
 
 Choose a program group or use the default settings (recommended) and click **Continue**. The last picture confirms completion click **OK** to finish.
 
@@ -131,7 +135,8 @@ The **Datalog** option provides the core data collection function.
 
 The purple box identifies the output registers, which update, real-time, after pressing the **Read** button (see the red box for the location of the **Read** button).
 
-The yellow box identifies the waveform recorder window. The window contains the gyroscope output.
+The yellow box identifies the waveform recorder window. The window contains the
+gyroscope output.
 
 Register Access
 ~~~~~~~~~~~~~~~
@@ -139,18 +144,23 @@ Register Access
 The purpose of the **Register Access** window is to provide both read and write access to the user registers in the :adi:`ADIS16265 <ADIS16260>`. The following picture shows the appearance of this window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-adisusb-registers.png
-   :width: 600px
+   :width: 600
 
-The color coded boxes illustrate the different functions that this window provides.
+The color coded boxes illustrate the different functions that this window
+provides.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-adisusb-registers-defined.png
-   :width: 600px
+   :width: 600
 
 The purple box identifies the register category. In addition to the Control/Status, this drop-down control offers access to **Output** and **Calibration** registers.
 
-The red box identifies all of the registers that are in the current category. Click on the register name to select a register for individual read/write access.
+The red box identifies all of the registers that are in the current category.
+Click on the register name to select a register for individual read/write
+access.
 
-The green box identifies the read/write control options for the current register selection. Use the hexadecimal format when writing commands to a particular register.
+The green box identifies the read/write control options for the current register
+selection. Use the hexadecimal format when writing commands to a particular
+register.
 
 The yellow box updates all the registers in the current category.
 
@@ -165,11 +175,24 @@ The Data Capture function supports synchronous data acquisition, based on the da
 
 |image13| |image14|
 
-The red box identifies all of the registers that are eligible for inclusion in the next acquisition process. Click on each box to include a register in the next data acquisition sequence. The box will have a check mark when it has been selected.
+The red box identifies all of the registers that are eligible for inclusion in
+the next acquisition process. Click on each box to include a register in the
+next data acquisition sequence. The box will have a check mark when it has been
+selected.
 
-The green box identifies the configuration box for the name and location of the data storage file.
+The green box identifies the configuration box for the name and location of the
+data storage file.
 
-The yellow boxes identify a number of configuration options for the data acquisition process. The Samples per File is a user input for the total number of samples in a data record. Note that all selected registers will have this number of samples in the data record file, after the acquisition process completes. After each update to the Record Length box, the software calculates then displays the total Capture Time. The Numeric Data Only…No File Header option allows the user to add or remove the header in the data storage file. The Record as LSB's...No Scaling causes the software to convert the decimal, twos complement number into its representative value. For example, when enabling No Scale LSB's Only, the gyroscope output will be in units of degrees/second.
+The yellow boxes identify a number of configuration options for the data
+acquisition process. The Samples per File is a user input for the total number
+of samples in a data record. Note that all selected registers will have this
+number of samples in the data record file, after the acquisition process
+completes. After each update to the Record Length box, the software calculates
+then displays the total Capture Time. The Numeric Data Only…No File Header
+option allows the user to add or remove the header in the data storage file. The
+Record as LSB's...No Scaling causes the software to convert the decimal, twos
+complement number into its representative value. For example, when enabling No
+Scale LSB's Only, the gyroscope output will be in units of degrees/second.
 
 EXAMPLE EXERCISES
 ~~~~~~~~~~~~~~~~~
@@ -177,30 +200,30 @@ EXAMPLE EXERCISES
 This section currently has no :adi:`ADIS16260/5 <ADIS16260>`-specific content, but the :doc:`ADIS16448 Evaluation on the EVAL-ADIS Wiki Site </wiki-migration/resources/eval/user-guides/inertial-mems/imu/adis16448>` has some good examples to start with.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-pinout.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-pcbz-dimensions.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-3.3v-setting.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-5v-markedsetting.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-prgrm-group.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-finished.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-foundnewhardware.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-install.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-wizard.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-complete-wizard.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-adisusb-main-screen.png
-   :width: 800px
+   :width: 800
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-adisusb-main-screen-defined.png
-   :width: 800px
+   :width: 800
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-adisusb-data-capture.png
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/26x-adisusb-data-capture-defined.png
-   :width: 400px
+   :width: 400

@@ -4,21 +4,40 @@ ADV7511 Transmitter API
 Introduction
 ------------
 
-The ADV7511 is a 225 MHz High-Definition Multimedia Interface (HDMI®) transmitter, which is ideal for home entertainment products including DVD players/recorders, digital set top boxes, A/V receivers, gaming consoles, and PCs.
+The ADV7511 is a 225 MHz High-Definition Multimedia Interface (HDMI®)
+transmitter, which is ideal for home entertainment products including DVD
+players/recorders, digital set top boxes, A/V receivers, gaming consoles, and
+PCs.
 
-The digital video interface contains an HDMI 1.4- and a DVI 1.0-compatible transmitter, and supports all HDTV formats (including 1080p with 12-bit Deep Color). The ADV7511 supports the HDMI 1.4-specific features, HEAC (ARC), and 3D video. In addition to these features, the ADV7511 supports x.v.Color™, high bit rate audio, and programmable AVI InfoFrames. With the inclusion of HDCP, the ADV7511 allows the secure transmission of protected content as specified by the HDCP 1.4 protocol.
+The digital video interface contains an HDMI 1.4- and a DVI 1.0-compatible
+transmitter, and supports all HDTV formats (including 1080p with 12-bit Deep
+Color). The ADV7511 supports the HDMI 1.4-specific features, HEAC (ARC), and 3D
+video. In addition to these features, the ADV7511 supports x.v.Color™, high bit
+rate audio, and programmable AVI InfoFrames. With the inclusion of HDCP, the
+ADV7511 allows the secure transmission of protected content as specified by the
+HDCP 1.4 protocol.
 
-The ADV7511 supports both S/PDIF and 8-channel I2S audio. Its high fidelity 8-channel I2S can transmit either stereo or 7.1 surround audio up to 768 kHz. The S/PDIF can carry compressed audio including Dolby® Digital, DTS®, and THX®. Fabricated in an advanced CMOS process, the ADV7511 is provided in a 100-lead LQFP surface-mount plastic package and is specified over the 0°C to +70°C temperature range.
+The ADV7511 supports both S/PDIF and 8-channel I2S audio. Its high fidelity
+8-channel I2S can transmit either stereo or 7.1 surround audio up to 768 kHz.
+The S/PDIF can carry compressed audio including Dolby® Digital, DTS®, and THX®.
+Fabricated in an advanced CMOS process, the ADV7511 is provided in a 100-lead
+LQFP surface-mount plastic package and is specified over the 0°C to +70°C
+temperature range.
 
-The transmitter library is a collection of APIs that provide a consistent interface to ADV7511. The library is a software layer that sits between the application and the TX hardware. The library is intended to serve two purposes:
+The transmitter library is a collection of APIs that provide a consistent
+interface to ADV7511. The library is a software layer that sits between the
+application and the TX hardware. The library is intended to serve two purposes:
 
 -  Provide the application with a set of APIs that can be used to configure HDMI TX hardware without the need for low-level register access. This makes the application portable across different revisions of the hardware and even across different hardware modules.
--  Provide basic services to aid the application in controlling the TX module, such as interrupt service routine, HDCP high-level control and status information.
+-  Provide basic services to aid the application in controlling the TX module,
+   such as interrupt service routine, HDCP high-level control and status
+   information.
 
 Functions description
 ---------------------
 
-The Transmitter library provides a comprehensive set of APIs to control, configure and provide status on all aspects of the HDMI TX module.
+The Transmitter library provides a comprehensive set of APIs to control,
+configure and provide status on all aspects of the HDMI TX module.
 
 Below is the list of all functions implemented in this library:
 
@@ -29,7 +48,14 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Power-up and initialize HDMI TX hardware and software module. This function will perform a complete TX module reset and brings the chip into a known state. The default behavior of the HDMI TX chip is to automatically power down if HPD is low. To change this default behavior, the API ADIAPI_TxOverrideHpdPD can be used. The TMDS clock and data lines will be disabled following a call to this API (or whenever the system is initialized) unless the configuration flag TX_ENABLE_TMDS_ON_INIT is set as described in the ADIAPI_TxSetConfig API.
+   -  Power-up and initialize HDMI TX hardware and software module. This
+      function will perform a complete TX module reset and brings the chip into
+      a known state. The default behavior of the HDMI TX chip is to
+      automatically power down if HPD is low. To change this default behavior,
+      the API ADIAPI_TxOverrideHpdPD can be used. The TMDS clock and data lines
+      will be disabled following a call to this API (or whenever the system is
+      initialized) unless the configuration flag TX_ENABLE_TMDS_ON_INIT is set
+      as described in the ADIAPI_TxSetConfig API.
    
    **Parameters**
    
@@ -44,7 +70,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FAILED** - The chip is powered down.
    
 
-
 **ATV_ERR ADIAPI_TxShutdown (TX_PD_MODE PdMode)**
 
 .. container:: box center
@@ -52,7 +77,9 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Power down HDMI TX hardware. The chip power-down will be set to high and all TMDS lines will be disabled. This API can also be used to enter stand-by mode.
+   -  Power down HDMI TX hardware. The chip power-down will be set to high and
+      all TMDS lines will be disabled. This API can also be used to enter
+      stand-by mode.
    
    **Parameters**
    
@@ -67,7 +94,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxSetConfig (TX_CONFIG UserConfig, BOOL Set)**
 
 .. container:: box center
@@ -75,7 +101,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Configure how TX ISR responds to various events and set other generals operational parameters.
+   -  Configure how TX ISR responds to various events and set other generals
+      operational parameters.
    
    **Parameters**
    
@@ -98,7 +125,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxIsr (void)**
 
 .. container:: box center
@@ -109,7 +135,9 @@ Below is the list of all functions implemented in this library:
    -  Process the TX device interrupts. This function should be called by the application as soon as a TX device interrupt is detected. If the application uses polling and the interrupt line from the HDMI TX to the MCU is not connected, this function can be called periodically to poll and process any outstanding interrupts.
    -  It should be noted that some of the TX interrupts can take relatively long time to process. For example, an EDID interrupt will consume at least the amount of time needed to read all 256 bytes of EDID via I2C. It is thus advisable for interrupt-driven real-time applications to disable the transmitter interrupt to the MCU before calling this function and re-enable it after this function returns.
    -  The application will be notified on any change of the operating conditions if the notification events are enabled using the ADIAPI_TxSetEnabledEvents API.
-   -  The various interrupts, the action taken in the ISR and the associated notification event are listed in the table below. The details of the notification events can be found in the Notification events section.
+   -  The various interrupts, the action taken in the ISR and the associated
+      notification event are listed in the table below. The details of the
+      notification events can be found in the Notification events section.
    
    .. container:: box center
 
@@ -158,7 +186,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FAILED** - No pending interrupts detected.
    
 
-
 **ATV_ERR ADIAPI_TxIntPending (void)**
 
 .. container:: box center
@@ -178,7 +205,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FALSE** - No pending interrupt detected.
    
 
-
 **ATV_ERR ADIAPI_TxSetEnabledEvents (TX_EVENT Events, BOOL Enable)**
 
 .. container:: box center
@@ -186,7 +212,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  This API enables or disables user notification on certain events as described in the Notification events section.
+   -  This API enables or disables user notification on certain events as
+      described in the Notification events section.
    
    **Parameters**
    
@@ -220,7 +247,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxGetChipRevision (UINT16 \*TxRev)**
 
 .. container:: box center
@@ -239,7 +265,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxOverrideHpdPd (BOOL Override)**
 
 .. container:: box center
@@ -247,7 +272,11 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Maintain the current power state regardless of the state of the sink HPD signal. By default, HDMI TX chip will automatically power-down if the sink‟s HPD signal changes state from HIGH to LOW. This API can be used to change this default behaviour so that the chip will remain powered-up regardless of the state of the sink HPD.
+   -  Maintain the current power state regardless of the state of the sink HPD
+      signal. By default, HDMI TX chip will automatically power-down if the
+      sink‟s HPD signal changes state from HIGH to LOW. This API can be used to
+      change this default behaviour so that the chip will remain powered-up
+      regardless of the state of the sink HPD.
    
    **Parameters**
    
@@ -260,7 +289,6 @@ Below is the list of all functions implemented in this library:
    
    -  **ATVERR_OK**
    
-
 
 **ATV_ERR ADIAPI_TxEnableTmds (BOOL Enable, BOOL SoftOn)**
 
@@ -288,7 +316,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxSetInputPixelFormat (UCHAR BitsPerColor, TX_IN_FORMAT Format, UCHAR Style, TX_CHAN_ALIGN Align, BOOL RisingEdge, BOOL BitSwap)**
 
 .. container:: box center
@@ -296,7 +323,15 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Set HDMI TX input pixel data format. The HDMI TX can accept video data from 8 to 36 pins, with various configurations to accommodate 4:4:4 or 4:2:2 format, embedded or separate sync, single or double data rate, repeated pixels and different pin assignments to interface with video data sources. For most applications, the input pixel format needs to be set only once, unless the video source can change its output pixel format on the fly, in which case the HDMI TX input format must also be changed to match. For detailed information regarding HDMI TX input video pin assignments, please refer to the ADV7510 programming guide.
+   -  Set HDMI TX input pixel data format. The HDMI TX can accept video data
+      from 8 to 36 pins, with various configurations to accommodate 4:4:4 or
+      4:2:2 format, embedded or separate sync, single or double data rate,
+      repeated pixels and different pin assignments to interface with video data
+      sources. For most applications, the input pixel format needs to be set
+      only once, unless the video source can change its output pixel format on
+      the fly, in which case the HDMI TX input format must also be changed to
+      match. For detailed information regarding HDMI TX input video pin
+      assignments, please refer to the ADV7510 programming guide.
    
    **Parameters**
    
@@ -311,11 +346,13 @@ Below is the list of all functions implemented in this library:
       -  **DDR_444_SEP_SYNC**
       -  **DDR_422_SEP_SYNC**
       -  **DDR_422_EMB_SYNC**
-      -  For more information about input pin assignment for each case, please refer to the ADV7510 programming guide.
+      -  For more information about input pin assignment for each case, please
+         refer to the ADV7510 programming guide.
    
    -  **Style** - Three input styles are available: 1, 2 or 3.
    
-      -  For more information about input pin assignment for each style, please refer to the ADV7510 programming guide.
+      -  For more information about input pin assignment for each style, please
+         refer to the ADV7510 programming guide.
    
    -  **Align** - This value specifies the bit alignment of each channel in 4:2:2 modes. Three alignment types are available:
    
@@ -323,7 +360,8 @@ Below is the list of all functions implemented in this library:
       -  **ALIGN_RIGHT**
       -  **ALIGN_EVEN**
    
-   For more information about input pin assignment for each type, please refer to the ADV7510 programming guide.
+   For more information about input pin assignment for each type, please refer
+   to the ADV7510 programming guide.
    
    -  **RisingEdge** - This value specifies the clocking edge for DDR modes.
    
@@ -338,7 +376,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM** - Indicate that one or more of the input parameters are invalid or the selected combination of the input parameters is invalid.
    
 
-
 **ATV_ERR ADIAPI_TxSetInputVideoClock (UCHAR ClkDivide)**
 
 .. container:: box center
@@ -346,7 +383,12 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Divide HDMI TX input video clock to generate the correct pixel clock. The input video clock to HDMI TX must be equal to the pixel clock. In cases where the input clock is NOT equal to the pixel clock, this function should be used to divide the input clock to generate the correct pixel clock. This function is designed to be used for compatibility with some older source devices.
+   -  Divide HDMI TX input video clock to generate the correct pixel clock. The
+      input video clock to HDMI TX must be equal to the pixel clock. In cases
+      where the input clock is NOT equal to the pixel clock, this function
+      should be used to divide the input clock to generate the correct pixel
+      clock. This function is designed to be used for compatibility with some
+      older source devices.
    
    **Parameters**
    
@@ -358,7 +400,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM**
    
 
-
 **ATV_ERR ADIAPI_TxSetOutputPixelFormat (TX_OUT_ENCODING OutEnc, BOOL Interpolate)**
 
 .. container:: box center
@@ -366,7 +407,9 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Sets HDMI TX output pixel format. This API defines the up-conversion from 4:2:2 to 4:4:4 encoding or the down-conversion from 4:4:4 to 4:2:2 encoding along with the method to be used for up-conversion.
+   -  Sets HDMI TX output pixel format. This API defines the up-conversion from
+      4:2:2 to 4:4:4 encoding or the down-conversion from 4:4:4 to 4:2:2
+      encoding along with the method to be used for up-conversion.
    
    **Parameters**
    
@@ -387,7 +430,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    -  **ATVERR_INV_PARM**
    
-
 
 **ATV_ERR ADIAPI_TxSetManualPixelRepeat (UCHAR Vic, UCHAR Factor, UCHAR PrValue)**
 
@@ -410,7 +452,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM**
    
 
-
 **ATV_ERR ADIAPI_TxSetAutoPixelRepeat (UCHAR Mode, UCHAR Vic, TX_REFR_RATE RefRate, UCHAR AspectRatio)**
 
 .. container:: box center
@@ -418,7 +459,11 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Set HDMI TX to automatically calculate and output the correct pixel repetition rate based on detected video format and audio sampling frequency. The audio sampling frequency is either extracted from the stream or defined by the user. See ADIAPI_TxSetAudChStatSampFreq for more details.
+   -  Set HDMI TX to automatically calculate and output the correct pixel
+      repetition rate based on detected video format and audio sampling
+      frequency. The audio sampling frequency is either extracted from the
+      stream or defined by the user. See ADIAPI_TxSetAudChStatSampFreq for more
+      details.
    
    **Parameters**
    
@@ -446,7 +491,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM**
    
 
-
 **ATV_ERR ADIAPI_TxSetOutputColorDepth (UCHAR Depth, TX_DC_METHOD DcMethod)**
 
 .. container:: box center
@@ -454,7 +498,12 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Set output colour depth and the method used to handle deep colour down-conversion. When the input colour depth to the HDMI TX is less than the colour depth of the output, the remaining least-significant bits of the output will be filled with 0s. When the input colour depth is larger than the output, truncation or active dithering can be used to reduce the colour depth.
+   -  Set output colour depth and the method used to handle deep colour
+      down-conversion. When the input colour depth to the HDMI TX is less than
+      the colour depth of the output, the remaining least-significant bits of
+      the output will be filled with 0s. When the input colour depth is larger
+      than the output, truncation or active dithering can be used to reduce the
+      colour depth.
    
    **Parameters**
    
@@ -469,7 +518,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    -  **ATVERR_INV_PARM**
    
-
 
 **ATV_ERR ADIAPI_TxSetCSC (TX_CS_MODE InColorSpace, TX_CS_MODE OutColorSpace)**
 
@@ -505,7 +553,8 @@ Below is the list of all functions implemented in this library:
    
         * The TX_CS_AUTO setting will disable Colour Space Conversion.
    
-   -  OutColorSpace - Colour space output from TX device. This can be one of the following values:
+   -  OutColorSpace - Colour space output from TX device. This can be one of the
+      following values:
    
    .. container:: box center
 
@@ -531,7 +580,6 @@ Below is the list of all functions implemented in this library:
    -  ATVERR_OK
    -  ATVERR_INV_PARM
    
-
 
 **ATV_ERR ADIAPI_TxSetAudioInterface (TX_AUD_FORMAT InputFormat, TX_AUD_PKT_TYPE OutType, UCHAR HbrStrmCount)**
 
@@ -559,7 +607,8 @@ Below is the list of all functions implemented in this library:
    -  The mapping between I2S input and the data sent in the audio sample packet is configurable (For example, I2S3 input left channel can be sent in the audio sample packet sub-frame 0 instead of the default sub-frame 6) See ADIAPI_TxSetAudChanMapping for details.
    -  The SPDIF interface can accept 2 channel L-PCM audio or AES3 (IEC 60958-3) audio at sampling rates of up to 192 KHz. The sampling frequency extracted from the stream will be sent in the Audio Sample Packet channel status bits. The sampling frequency used for pixel repeat can be either the one extracted from the stream or a user-defined value.
    -  As with I2S, the TX device can output either Audio Sample Packet or Hight Bit Rate packet when the input is SPDIF.
-   -  The DSD interface can be used to input DSD or DST audio. The output audio packets will be either one- bit audio for DSD or DST audio packet for DST.
+   -  The DSD interface can be used to input DSD or DST audio. The output audio
+      packets will be either one- bit audio for DSD or DST audio packet for DST.
    
    **Parameters**
    
@@ -623,7 +672,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM** - Invalid input parameter value.
    
 
-
 **ATV_ERR ADIAPI_TxSetAudChanMapping (TX_AUD_CHAN InChan, TX_AUD_CHAN OutSample)**
 
 .. container:: box center
@@ -631,7 +679,9 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Set the mapping between I2S input channels and the output audio samples. The default setting is one- to-one according to the following table. The default setting can be changed using this API.
+   -  Set the mapping between I2S input channels and the output audio samples.
+      The default setting is one- to-one according to the following table. The
+      default setting can be changed using this API.
    
    .. container:: box center
 
@@ -681,7 +731,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM** - Invalid input parameter value.
    
 
-
 **ATV_ERR ADIAPI_TxSetAudNValue (UINT32 NValue)**
 
 .. container:: box center
@@ -690,7 +739,8 @@ Below is the list of all functions implemented in this library:
 
    
    -  Set „N‟ value that will be used by the HDMI TX to calculate the audio sampling frequency. CTS (Cycle Time Stamp) can be set using the API ADIAPI_TxSetAudCTS.
-   -  HDMI TX uses both N and CTS to calculate the audio sampling frequency according to the formula: 128 fS = fTMDS_CLK N / CTS
+   -  HDMI TX uses both N and CTS to calculate the audio sampling frequency
+      according to the formula: 128 fS = fTMDS_CLK N / CTS
    
    **Parameters**
    
@@ -702,7 +752,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM** - Invalid N value.
    
 
-
 **ATV_ERR ADIAPI_TxSetAudCTS (UINT32 CTS)**
 
 .. container:: box center
@@ -711,7 +760,8 @@ Below is the list of all functions implemented in this library:
 
    
    -  Set CTS (Cycle Time Stamp) value that will be used by the HDMI TX to calculate the audio sampling frequency. The „N‟ value can be set using the API ADIAPI_TxSetAudNValue.
-   -  HDMI TX uses both N and CTS to calculate the audio sampling frequency according to the formula: 128 fS = fTMDS_CLK N / CTS
+   -  HDMI TX uses both N and CTS to calculate the audio sampling frequency
+      according to the formula: 128 fS = fTMDS_CLK N / CTS
    
    **Parameters**
    
@@ -723,7 +773,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM** - Invalid CTS value.
    
 
-
 **ATV_ERR ADIAPI_TxSetAudMCLK (TX_MCLK_FREQ MClk)**
 
 .. container:: box center
@@ -731,7 +780,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Set HDMI TX input audio master clock (MCLK) frequency. The MCLK can be externally supplied or internally generated using SCLK.
+   -  Set HDMI TX input audio master clock (MCLK) frequency. The MCLK can be
+      externally supplied or internally generated using SCLK.
    
    **Parameters**
    
@@ -749,7 +799,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK** - Function completed OK.
    -  **ATVERR_INV_PARM** - Invalid MCLK value.
    
-
 
 **ATV_ERR ADIAPI_TxSetAudClkPolarity (BOOL RisingEdge)**
 
@@ -772,7 +821,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxSetAudChStatSampFreq (TX_AUD_FS SampFreq)**
 
 .. container:: box center
@@ -782,7 +830,9 @@ Below is the list of all functions implemented in this library:
    
    -  Set the sampling frequency to be sent in the Audio Sample Packet‟s channel status bits. The source of the sampling frequency (Extracted from input stream or defined by user) can be set independently from the rest of the channel status fields defined in the ADIAPI_Tx SetAudChanStatus API.
    -  The TX device can use the sampling frequency extracted from the input stream or the sampling frequency defined by user (in the channel status bits) for automatic pixel repeat calculation. See ADIAPI_TxSetAutoPixelRepeat for more details.
-   -  The source of channel status bits and/or sampling frequency sent in the sample packet can be user- defined, extracted from input stream, or both, depending on the input audio format as described in the following table:
+   -  The source of channel status bits and/or sampling frequency sent in the
+      sample packet can be user- defined, extracted from input stream, or both,
+      depending on the input audio format as described in the following table:
    
    .. container:: box center
 
@@ -799,7 +849,12 @@ Below is the list of all functions implemented in this library:
          
 
    
-   -  This API only defines the source and value of the channel status sampling frequency. Incorrect settings of the sampling frequency source will be ignored by the TX device (e.g., if input audio is I2S and the user selects the sampling frequency source to be from stream, the TX device will ignore the setting and use the latest programmed sampling frequency. The default sampling frequency is 44.1 KHz).
+   -  This API only defines the source and value of the channel status sampling
+      frequency. Incorrect settings of the sampling frequency source will be
+      ignored by the TX device (e.g., if input audio is I2S and the user selects
+      the sampling frequency source to be from stream, the TX device will ignore
+      the setting and use the latest programmed sampling frequency. The default
+      sampling frequency is 44.1 KHz).
    
    **Parameters**
    
@@ -814,14 +869,17 @@ Below is the list of all functions implemented in this library:
       -  **TX_FS_192KHZ** - 192 KHz.
       -  **TX_FS_HBR** - Setting for HBR audio (768 KHz).
       -  **TX_FS_FROM_STRM** - Use sampling freq extracted from audio stream.
-      -  Note that for HBR (High Bit Rate) audio, the sampling frequency must be set to TX_FS_HBR. This is done implicitly by the ADIAPI_TxSetAudioInterface API. Setting the sampling frequency to TX_FS_FROM_STRM will only change the source of the sampling frequency; the sampling frequency value programmed into the chip will not change.
+      -  Note that for HBR (High Bit Rate) audio, the sampling frequency must be
+         set to TX_FS_HBR. This is done implicitly by the
+         ADIAPI_TxSetAudioInterface API. Setting the sampling frequency to
+         TX_FS_FROM_STRM will only change the source of the sampling frequency;
+         the sampling frequency value programmed into the chip will not change.
    
    **Return value**
    
    -  **ATVERR_OK** - Function completed OK.
    -  **ATVERR_INV_PARM** - Invalid SampFreq value.
    
-
 
 **ATV_ERR ADIAPI_TxSetAudChanStatus (BOOL FromStream, TX_CHAN_STATUS \*ChanStat)**
 
@@ -831,7 +889,11 @@ Below is the list of all functions implemented in this library:
 
    
    -  Set HDMI TX audio channel status parameters. This function should be called when new audio channel status is received. This function will automatically set the size of the right-justified I2S word size, either from audio info-frame (if the audio info-frame sample size is not 0) or from the CsWordLen field of the supplied channel status.
-   -  Depending on the input audio format, this API also defines the source of the channel status bits that will be sent in the audio sample packet (either user-defined or extracted from the input stream) as defined in the table below. The sampling frequency field of the channel status can also be independently set by the ADIAPI_TxSetAudChStatSampFreq API.
+   -  Depending on the input audio format, this API also defines the source of
+      the channel status bits that will be sent in the audio sample packet
+      (either user-defined or extracted from the input stream) as defined in the
+      table below. The sampling frequency field of the channel status can also
+      be independently set by the ADIAPI_TxSetAudChStatSampFreq API.
    
    .. container:: box center
 
@@ -861,7 +923,6 @@ Below is the list of all functions implemented in this library:
    
    -  **ATVERR_OK**
    
-
 
 **ATV_ERR ADIAPI_TxAudInputEnable (TX_AUD_INTERFACE Interface, BOOL Enable)**
 
@@ -904,7 +965,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM** - Invalid Interface value.
    
 
-
 **ATV_ERR ADIAPI_TxSetI2sInput (UCHAR ChanCount, UCHAR ChanAlloc, TX_AUD_PKT_TYPE AudType)**
 
 .. container:: box center
@@ -912,7 +972,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Enable I2S audio input 0-3 based on audio info-frame channel allocation and if the input stream is HBR.
+   -  Enable I2S audio input 0-3 based on audio info-frame channel allocation
+      and if the input stream is HBR.
    
    **Parameters**
    
@@ -942,7 +1003,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK** - Function completed OK.
    
 
-
 **ATV_ERR ADIAPI_TxSetOutputMode (TX_OUTPUT_MODE OutMode)**
 
 .. container:: box center
@@ -964,7 +1024,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK** - Function completed OK.
    -  **ATVERR_INV_PARM** - Invalid OutMode value.
    
-
 
 **ATV_ERR ADIAPI_TxHdcpEnable (BOOL EncEnable, BOOL FrameEncEnable)**
 
@@ -992,7 +1051,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxGetBksvList (UCHAR \*BksvList, UCHAR \*NumOfBksvs)**
 
 .. container:: box center
@@ -1013,7 +1071,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FAILED** - HDCP is disabled or authentication is not complete or HDCP errors encountered.
    
 
-
 **ATV_ERR ADIAPI_TxGetBstatus (UINT16 \*Bstatus, UCHAR \*Bcaps)**
 
 .. container:: box center
@@ -1021,7 +1078,10 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Read downstream device Bstatus and Bcaps registers. Bstatus and Bcaps are available only if the state of the HDCP engine is HDCP_BSTATUS_READY, HDCP_BKSV_LIST_READY or HDCP_AUTHENTICATED. The HDCP state can be obtained by calling the ADIAPI_TxGetHdcpState API.
+   -  Read downstream device Bstatus and Bcaps registers. Bstatus and Bcaps are
+      available only if the state of the HDCP engine is HDCP_BSTATUS_READY,
+      HDCP_BKSV_LIST_READY or HDCP_AUTHENTICATED. The HDCP state can be obtained
+      by calling the ADIAPI_TxGetHdcpState API.
    
    **Parameters**
    
@@ -1033,7 +1093,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK** - Function completed OK.
    -  **ATVERR_FAILED** - HDCP is disabled or downstream device is not available.
    
-
 
 **ATV_ERR ADIAPI_TxGetHdcpState (TX_HDCP_STATE \*HdcpState)**
 
@@ -1059,7 +1118,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK** - Function completed OK.
    
 
-
 **ATV_ERR ADIAPI_TxGetLastHdcpError (TX_HDCP_ERR \*Error)**
 
 .. container:: box center
@@ -1067,7 +1125,9 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Return the last error status of HDCP engine. This API returns the last encountered HDCP error(s) since the previous read using this API. All returned error bits will be cleared following a call to this API.
+   -  Return the last error status of HDCP engine. This API returns the last
+      encountered HDCP error(s) since the previous read using this API. All
+      returned error bits will be cleared following a call to this API.
    
    **Parameters**
    
@@ -1082,13 +1142,13 @@ Below is the list of all functions implemented in this library:
       -  **TX_HDCP_ERR_V_DASH_CHECK_FAILED**
       -  **TX_HDCP_ERR_MAX_DEVICE_EXCEEDED**
    
-   All error bits will be cleared upon calling this function. HDMI TX automatically re-starts the authentication process on any HDCP error.
+   All error bits will be cleared upon calling this function. HDMI TX
+   automatically re-starts the authentication process on any HDCP error.
    
    **Return value**
    
    -  **ATVERR_OK**
    
-
 
 **ATV_ERR ADIAPI_TxGetEdidSegment (UCHAR SegNum, UCHAR \*SegBuf)**
 
@@ -1110,7 +1170,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FAILED** - Requested EDID segment is not available.
    
 
-
 **ATV_ERR ADIAPI_TxGetHpdMsenState (BOOL \*Hpd, BOOL \*Msen)**
 
 .. container:: box center
@@ -1129,7 +1188,6 @@ Below is the list of all functions implemented in this library:
    
    -  **ATVERR_OK**
    
-
 
 **ATV_ERR ADIAPI_TxGetEdidControllerState (TX_EDID_CTRL_STATE \*State)**
 
@@ -1155,7 +1213,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK** - Function completed OK.
    
 
-
 **ATV_ERR ADIAPI_TxOutputModeHdmi (BOOL \*IsHdmi)**
 
 .. container:: box center
@@ -1174,7 +1231,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_TRUE** - Output mode is HDMI.
    -  **ATVERR_FALSE** - Output mode is DVI.
    
-
 
 **ATV_ERR ADIAPI_TxHdcpEnabled (BOOL \*HdcpOn)**
 
@@ -1198,7 +1254,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FALSE** - If HDCP is disabled.
    
 
-
 **ATV_ERR ADIAPI_TxOutputEncrypted (BOOL \*Encrypted)**
 
 .. container:: box center
@@ -1217,7 +1272,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_TRUE** - Output is encrypted.
    -  **ATVERR_FALSE** - Output is not encrypted.
    
-
 
 **ATV_ERR ADIAPI_TxPllLocked (BOOL \*Locked)**
 
@@ -1241,7 +1295,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FALSE** - PLL is not locked.
    
 
-
 **ATV_ERR ADIAPI_TxGetStatus (TX_STATUS \*TxStat)**
 
 .. container:: box center
@@ -1249,7 +1302,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  This API provides the status of HDMI TX module. It can be used by the application to get some information regarding HDMI TX current state.
+   -  This API provides the status of HDMI TX module. It can be used by the
+      application to get some information regarding HDMI TX current state.
    
    **Parameters**
    
@@ -1313,7 +1367,8 @@ Below is the list of all functions implemented in this library:
       -  **I2SEnable**
    
          -  Bits 0-3 will be set according to I2S channel 0-3 enable state.
-         -  If a channel is enabled, the corresponding bit will be set to 1, otherwise it will be 0.
+         -  If a channel is enabled, the corresponding bit will be set to 1,
+            otherwise it will be 0.
    
       -  **DetectedVic**
    
@@ -1328,7 +1383,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxMuteAudio (BOOL Mute)**
 
 .. container:: box center
@@ -1336,7 +1390,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  This API can be used to Mute or un-mute HDMI TX audio output. The audio will be muted by disabling audio sample packets output from HDMI TX.
+   -  This API can be used to Mute or un-mute HDMI TX audio output. The audio
+      will be muted by disabling audio sample packets output from HDMI TX.
    
    **Parameters**
    
@@ -1350,7 +1405,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxMuteVideo (BOOL Mute)**
 
 .. container:: box center
@@ -1358,7 +1412,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  This API can be used to Mute or un-mute HDMI TX video output. The video will be muted by sending black level on all TMDS lines.
+   -  This API can be used to Mute or un-mute HDMI TX video output. The video
+      will be muted by sending black level on all TMDS lines.
    
    **Parameters**
    
@@ -1371,7 +1426,6 @@ Below is the list of all functions implemented in this library:
    
    -  **ATVERR_OK**
    
-
 
 **ATV_ERR ADIAPI_TxSetAvmute (TX_AVMUTE State)**
 
@@ -1396,7 +1450,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxGetAvmute (TX_AVMUTE \*State)**
 
 .. container:: box center
@@ -1420,7 +1473,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxEnablePackets (UINT16 Packets, BOOL Enable)**
 
 .. container:: box center
@@ -1428,7 +1480,9 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Enable or disable HDMI TX sending of selected packets and info frames. Once a packet send is enabled, HDMI TX will continue to send the packet periodically on intervals as specified in HDMI specification.
+   -  Enable or disable HDMI TX sending of selected packets and info frames.
+      Once a packet send is enabled, HDMI TX will continue to send the packet
+      periodically on intervals as specified in HDMI specification.
    
    **Parameters**
    
@@ -1459,7 +1513,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxGetEnabledPackets (UINT16 \*Packets)**
 
 .. container:: box center
@@ -1489,7 +1542,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 **ATV_ERR ADIAPI_TxSendAVInfoFrame (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
@@ -1497,7 +1549,9 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Send AV info-frame to the sink device. The AV info-frame packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
+   -  Send AV info-frame to the sink device. The AV info-frame packet repeat
+      must be enabled using ADIAPI_TxEnablePackets to be able to send this
+      packet.
    
    **Parameters**
    
@@ -1510,7 +1564,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM**
    
 
-
 **ATV_ERR ADIAPI_TxSendAudioInfoFrame (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
@@ -1520,7 +1573,9 @@ Below is the list of all functions implemented in this library:
    
    -  Send Audio info-frame to the sink device. The Audio info-frame packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
    -  This function will automatically set the size of the right-justified I2S word size if the supplied audio info- frame sample size is not 0.
-   -  For HBR audio, the CA and CC fields of the audio info-frame must be set to 0x1F and 0x07 respectively, unless the ADIAPI_TxSetAudioInterface API is called afterward to adjust those two fields.
+   -  For HBR audio, the CA and CC fields of the audio info-frame must be set to
+      0x1F and 0x07 respectively, unless the ADIAPI_TxSetAudioInterface API is
+      called afterward to adjust those two fields.
    
    **Parameters**
    
@@ -1533,7 +1588,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM**
    
 
-
 **ATV_ERR ADIAPI_TxSendACPPacket (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
@@ -1541,7 +1595,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Send ACP packet to the sink device. The ACP packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
+   -  Send ACP packet to the sink device. The ACP packet repeat must be enabled
+      using ADIAPI_TxEnablePackets to be able to send this packet.
    
    **Parameters**
    
@@ -1553,7 +1608,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    -  **ATVERR_INV_PARM**
    
-
 
 **ATV_ERR ADIAPI_TxSendSPDPacket (UCHAR \*Packet, UCHAR Size)**
 
@@ -1562,7 +1616,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Send SPD packet to the sink device. The SPD packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
+   -  Send SPD packet to the sink device. The SPD packet repeat must be enabled
+      using ADIAPI_TxEnablePackets to be able to send this packet.
    
    **Parameters**
    
@@ -1575,7 +1630,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM**
    
 
-
 **ATV_ERR ADIAPI_TxSendISRC1Packet (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
@@ -1583,7 +1637,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Send ISRC1 packet to the sink device. The ISRC1 packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
+   -  Send ISRC1 packet to the sink device. The ISRC1 packet repeat must be
+      enabled using ADIAPI_TxEnablePackets to be able to send this packet.
    
    **Parameters**
    
@@ -1596,7 +1651,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM**
    
 
-
 **ATV_ERR ADIAPI_TxSendISRC2Packet (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
@@ -1604,7 +1658,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Send ISRC2 packet to the sink device. The ISRC2 packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
+   -  Send ISRC2 packet to the sink device. The ISRC2 packet repeat must be
+      enabled using ADIAPI_TxEnablePackets to be able to send this packet.
    
    **Parameters**
    
@@ -1617,7 +1672,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM**
    
 
-
 **ATV_ERR ADIAPI_TxSendGMDPacket (UCHAR \*Packet, UCHAR Size)**
 
 .. container:: box center
@@ -1625,7 +1679,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Send Gamut Metadata packet to the sink device. The GMD packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
+   -  Send Gamut Metadata packet to the sink device. The GMD packet repeat must
+      be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
    
    **Parameters**
    
@@ -1637,7 +1692,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    -  **ATVERR_INV_PARM**
    
-
 
 **ATV_ERR ADIAPI_TxSendMpegPacket (UCHAR \*Packet, UCHAR Size)**
 
@@ -1646,7 +1700,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Send MPEG packet to the sink device. The MPEG packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
+   -  Send MPEG packet to the sink device. The MPEG packet repeat must be
+      enabled using ADIAPI_TxEnablePackets to be able to send this packet.
    
    **Parameters**
    
@@ -1658,7 +1713,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    -  **ATVERR_INV_PARM**
    
-
 
 **ATV_ERR ADIAPI_TxSendSpare1Packet (UCHAR \*Packet, UCHAR Size)**
 
@@ -1667,7 +1721,11 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Send any user-defined packet to the sink device. The TX Device has a general-purpose packet memory that can be filled with any data to be sent to the sink. One use of such packets is to send vendor-specific info-frame. The VS (Vendor-specific) packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
+   -  Send any user-defined packet to the sink device. The TX Device has a
+      general-purpose packet memory that can be filled with any data to be sent
+      to the sink. One use of such packets is to send vendor-specific
+      info-frame. The VS (Vendor-specific) packet repeat must be enabled using
+      ADIAPI_TxEnablePackets to be able to send this packet.
    
    **Parameters**
    
@@ -1679,7 +1737,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    -  **ATVERR_INV_PARM**
    
-
 
 **ATV_ERR ADIAPI_TxSendSpare2Packet (UCHAR \*Packet, UCHAR Size)**
 
@@ -1688,7 +1745,11 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Send any user-defined packet to the sink device. The TX Device has a general-purpose packet memory that can be filled with any data to be sent to the sink. One use of such packets is to send vendor-specific info-frame. The VS (Vendor-specific) packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.
+   -  Send any user-defined packet to the sink device. The TX Device has a
+      general-purpose packet memory that can be filled with any data to be sent
+      to the sink. One use of such packets is to send vendor-specific
+      info-frame. The VS (Vendor-specific) packet repeat must be enabled using
+      ADIAPI_TxEnablePackets to be able to send this packet.
    
    **Parameters**
    
@@ -1701,7 +1762,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM**
    
 
-
 **ATV_ERR ADIAPI_TxCecEnable (BOOL Enable)**
 
 .. container:: box center
@@ -1709,7 +1769,9 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  This API enables or disables the CEC controller engine. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.
+   -  This API enables or disables the CEC controller engine. This API is
+      available only if CEC support is included by setting the Configuration
+      switch „TX_INCLUDE_CEC‟.
    
    **Parameters**
    
@@ -1723,7 +1785,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK** - Operation completed OK.
    
 
-
 **ATV_ERR ADIAPI_TxCecReset (void)**
 
 .. container:: box center
@@ -1731,7 +1792,9 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  This API resets the CEC controller engine. It is called as part of the ADIAPI_TxCecEnable API. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.
+   -  This API resets the CEC controller engine. It is called as part of the
+      ADIAPI_TxCecEnable API. This API is available only if CEC support is
+      included by setting the Configuration switch „TX_INCLUDE_CEC‟.
    
    **Parameters**
    
@@ -1742,7 +1805,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK** - Operation completed OK.
    
 
-
 **ATV_ERR ADIAPI_TxCecSendMessage (UCHAR \*MsgPtr, UCHAR MsgLen)**
 
 .. container:: box center
@@ -1750,7 +1812,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Send a CEC message. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.
+   -  Send a CEC message. This API is available only if CEC support is included
+      by setting the Configuration switch „TX_INCLUDE_CEC‟.
    
    **Parameters**
    
@@ -1761,12 +1824,12 @@ Below is the list of all functions implemented in this library:
    
    -  **ATVERR_OK**
    
-   Message is queued to be sent. The application must poll ADIAPI_TxCecGetStatus API to determine when send is completed before calling any further APIs.
+   Message is queued to be sent. The application must poll ADIAPI_TxCecGetStatus
+   API to determine when send is completed before calling any further APIs.
    
    -  **ATVERR_FAILED** - If CEC controller is busy. The message will not be sent.
    -  **ATVERR_INV_PARM** - If MsgLen is larger than maximum message size (16 bytes).
    
-
 
 **ATV_ERR ADIAPI_TxCecSendMessageOut (void)**
 
@@ -1787,7 +1850,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FAILED** - If CEC controller is busy.
    
 
-
 **ATV_ERR ADIAPI_TxCecResendLastMessage (void)**
 
 .. container:: box center
@@ -1795,7 +1857,9 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  This API sends the last CEC massage again. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.
+   -  This API sends the last CEC massage again. This API is available only if
+      CEC support is included by setting the Configuration switch
+      „TX_INCLUDE_CEC‟.
    
    **Parameters**
    
@@ -1807,7 +1871,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FAILED** - If CEC controller is busy. The message will not be sent.
    
 
-
 **ATV_ERR ADIAPI_TxCecReadMessage (UCHAR \*MsgPtr, UCHAR \*MsgLen)**
 
 .. container:: box center
@@ -1815,7 +1878,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Read a CEC message if available. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.
+   -  Read a CEC message if available. This API is available only if CEC support
+      is included by setting the Configuration switch „TX_INCLUDE_CEC‟.
    
    **Parameters**
    
@@ -1828,7 +1892,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FAILED** - If no message is available.
    
 
-
 **ATV_ERR ADIAPI_TxCecSetLogicalAddr (UCHAR LogAddr, UCHAR DevId, BOOL Enable)**
 
 .. container:: box center
@@ -1836,7 +1899,11 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  This API sets the device logical address. Up to 3 different logical addresses can be set for the device. To inquire about logical addresses available for use (not allocated) the application can use the ADIAPI_TxCecAllocateLogAddr API. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.
+   -  This API sets the device logical address. Up to 3 different logical
+      addresses can be set for the device. To inquire about logical addresses
+      available for use (not allocated) the application can use the
+      ADIAPI_TxCecAllocateLogAddr API. This API is available only if CEC support
+      is included by setting the Configuration switch „TX_INCLUDE_CEC‟.
    
    **Parameters**
    
@@ -1850,7 +1917,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_INV_PARM** - If DevID is larger than 2.
    
 
-
 **ATV_ERR ADIAPI_TxCecAllocateLogAddr (UCHAR \*LogAddrList)**
 
 .. container:: box center
@@ -1858,7 +1924,9 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  This API checks the availability of logical addresses. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.
+   -  This API checks the availability of logical addresses. This API is
+      available only if CEC support is included by setting the Configuration
+      switch „TX_INCLUDE_CEC‟.
    
    **Parameters**
    
@@ -1870,7 +1938,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_FAILED** - If CEC controller is busy. The operation will not be completed.
    
 
-
 **ATV_ERR ADIAPI_TxCecGetStatus (UCHAR \*Status)**
 
 .. container:: box center
@@ -1878,14 +1945,17 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  This API returns the status of the last performed CEC operation. Some CEC APIs return immediately and the application is required to poll CEC state to determine if the operation was successful.
+   -  This API returns the status of the last performed CEC operation. Some CEC
+      APIs return immediately and the application is required to poll CEC state
+      to determine if the operation was successful.
    
    **Parameters**
    
    -  **Status** - Pointer to receive status on CEC engine last operation. The value returned in the Status parameter depends on the return value of this API.
    
       -  If the return value is ATVERR_FAILED, the Status parameter will be set to the error code indicating the cause of failure.
-      -  If the return value is ATVERR_OK, the Status parameter will be set according to the last requested operation as follows:
+      -  If the return value is ATVERR_OK, the Status parameter will be set
+         according to the last requested operation as follows:
    
    .. container:: box center
 
@@ -1916,7 +1986,6 @@ Below is the list of all functions implemented in this library:
       -  **CEC_ERR_ARB_LOST**
    
 
-
 **ATV_ERR ADIAPI_TxArcSetMode (TX_ARC_MODE Mode)**
 
 .. container:: box center
@@ -1924,7 +1993,8 @@ Below is the list of all functions implemented in this library:
    **Description**
 
    
-   -  Enable/Disable Audio Return Channel (ARC) operation. This API is valid only on TX or transceiver-type devices that support ARC feature.
+   -  Enable/Disable Audio Return Channel (ARC) operation. This API is valid
+      only on TX or transceiver-type devices that support ARC feature.
    
    **Parameters**
    
@@ -1939,7 +2009,6 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    -  **ATVERR_NOT_AVAILABLE**
    
-
 
 **ATV_ERR ADIAPI_TxSetVideoClkDelay (TX_VIDEO_CLK_DELAY Delay)**
 
@@ -1968,11 +2037,14 @@ Below is the list of all functions implemented in this library:
    -  **ATVERR_OK**
    
 
-
 Notification events
 -------------------
 
-The Transmitter library provide the option to notify the application of any changes in operating condition, thus relieving the application from polling the library for status changes. The application must define a function that will be called from the library (from inside ADIAPI_TxIsr) upon any change in operating conditions. The prototype for this function is as follows:
+The Transmitter library provide the option to notify the application of any
+changes in operating condition, thus relieving the application from polling the
+library for status changes. The application must define a function that will be
+called from the library (from inside ADIAPI_TxIsr) upon any change in operating
+conditions. The prototype for this function is as follows:
 
 UINT16 TRANSMITTER_Notification (TX_EVENT EventID, UINT16 EventSize, void \*EventData)
 
@@ -1980,9 +2052,13 @@ Where:
 
 -  EventID - This is a unique value that identifies the operating condition that has changed.
 -  EventSize - This parameter either specifies the size of the data pointed to by the EventData parameter or carries some other information related to the event. This value is event dependant as listed in the table below.
--  EventData - This is a pointer to a buffer that contains event-specific information. If the event does not have an associated data, this value will be undefined. The table below lists all events and their associated data.
+-  EventData - This is a pointer to a buffer that contains event-specific
+   information. If the event does not have an associated data, this value will
+   be undefined. The table below lists all events and their associated data.
 
-Depending on the enabled events (See ADIAPI_TxSetEnabledEvents,) the application will be notified via the above function of the events listed in the following table:
+Depending on the enabled events (See ADIAPI_TxSetEnabledEvents,) the application
+will be notified via the above function of the events listed in the following
+table:
 
 +------------------------------+-----------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------+
 | Interrupt                    | EventID                                                   | EventSize                                                 | EventData                                                                            |
@@ -2012,4 +2088,5 @@ Depending on the enabled events (See ADIAPI_TxSetEnabledEvents,) the application
 | CEC RX Ready                 | TX_EVENT_CEC_RX_READY                                     | CEC message size                                          | CEC message                                                                          |
 +------------------------------+-----------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------+
 
-The return value of the notification event function is not currently used and should always be set to 0.
+The return value of the notification event function is not currently used and
+should always be set to 0.

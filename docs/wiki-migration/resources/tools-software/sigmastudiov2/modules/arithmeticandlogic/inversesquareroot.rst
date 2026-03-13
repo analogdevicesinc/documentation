@@ -9,7 +9,8 @@ Inverse Square Root
 Description
 -----------
 
-The Inverse Square Root block computes the reciprocal of square root of the input signal.
+The Inverse Square Root block computes the reciprocal of square root of the
+input signal.
 
 Targets Supported
 -----------------

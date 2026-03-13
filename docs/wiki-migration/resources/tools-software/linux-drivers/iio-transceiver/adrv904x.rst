@@ -16,27 +16,71 @@ Evaluation Boards
 Overview
 --------
 
-The ADRV9040 is a highly integrated, system on chip (SoC) radio frequency (RF) agile transceiver with integrated digital front end (DFE). The SoC contains eight transmitters, two observation receivers for monitoring transmitter channels, eight receivers, integrated LO and clock synthesizers, and digital signal processing functions. The SoC meets the high radio performance and low power consumption demanded by cellular infrastructure applications including small cell basestation radios, macro 3G/4G/5G systems, and massive MIMO base stations.
+The ADRV9040 is a highly integrated, system on chip (SoC) radio frequency (RF)
+agile transceiver with integrated digital front end (DFE). The SoC contains
+eight transmitters, two observation receivers for monitoring transmitter
+channels, eight receivers, integrated LO and clock synthesizers, and digital
+signal processing functions. The SoC meets the high radio performance and low
+power consumption demanded by cellular infrastructure applications including
+small cell basestation radios, macro 3G/4G/5G systems, and massive MIMO base
+stations.
 
-The Rx and Tx signal paths use a zero-IF (ZIF) architecture that provides wide bandwidth with dynamic range suitable for contiguous and noncontiguous multicarrier base station applications. The ZIF architecture has the benefits of low power plus RF frequency and bandwidth agility. The lack of aliases and out-of-band images eliminates anti-aliasing and image filters. This reduces both system size and cost, also making band independent solutions possible.
+The Rx and Tx signal paths use a zero-IF (ZIF) architecture that provides wide
+bandwidth with dynamic range suitable for contiguous and noncontiguous
+multicarrier base station applications. The ZIF architecture has the benefits of
+low power plus RF frequency and bandwidth agility. The lack of aliases and
+out-of-band images eliminates anti-aliasing and image filters. This reduces both
+system size and cost, also making band independent solutions possible.
 
-The device also includes two wide-bandwidth observation path receiver sub-systems for monitoring transmitter outputs. This SoC subsystem includes automatic and manual attenuation control, dc offset correction, quadrature error correction (QEC), and digital filtering. GPIOs that provide an array of digital control options are also integrated.
+The device also includes two wide-bandwidth observation path receiver
+sub-systems for monitoring transmitter outputs. This SoC subsystem includes
+automatic and manual attenuation control, dc offset correction, quadrature error
+correction (QEC), and digital filtering. GPIOs that provide an array of digital
+control options are also integrated.
 
-Multi-band capability is enabled by dual LO functionality, additional LO dividers and wideband operation. This allows 4 individual band profiles1 within the tuneable range, thereby maximizing use case flexibility.
+Multi-band capability is enabled by dual LO functionality, additional LO
+dividers and wideband operation. This allows 4 individual band profiles1 within
+the tuneable range, thereby maximizing use case flexibility.
 
-The SoC has fully integrated digital front end (DFE) functionality which includes carrier digital up/down conversion (CDUC and CDDC), crest factor reduction (CFR), digital pre-distortion (DPD), closed loop gain control (CLGC) and voltage standing wave ratio (VSWR) monitor.
+The SoC has fully integrated digital front end (DFE) functionality which
+includes carrier digital up/down conversion (CDUC and CDDC), crest factor
+reduction (CFR), digital pre-distortion (DPD), closed loop gain control (CLGC)
+and voltage standing wave ratio (VSWR) monitor.
 
-The CDUC feature of the ADRV9040 filters and places individual component carriers within the band of interest. The CDDC feature, with its 8 parallel paths, processes each carrier individually before sending over the serial data interface.
+The CDUC feature of the ADRV9040 filters and places individual component
+carriers within the band of interest. The CDDC feature, with its 8 parallel
+paths, processes each carrier individually before sending over the serial data
+interface.
 
-The CDUC and CDDC reduce SERDES interface data rates in non-contiguous carrier configurations. This integration also reduces power compared to an equivalent FPGA based implementation.
+The CDUC and CDDC reduce SERDES interface data rates in non-contiguous carrier
+configurations. This integration also reduces power compared to an equivalent
+FPGA based implementation.
 
-The CFR engine of the ADRV9040 reduces the peak-to-average ratio of the input signal, enabling higher efficiency transmit line ups while reducing the processing load on baseband processors.
+The CFR engine of the ADRV9040 reduces the peak-to-average ratio of the input
+signal, enabling higher efficiency transmit line ups while reducing the
+processing load on baseband processors.
 
-The SoC also contains a fully integrated DPD engine for use in power amplifier (PA) linearization. DPD enables high efficiency PAs, reducing the power consumption of base station radios and the number of SERDES lanes interfacing with baseband processors. The DPD engine incorporates a dedicated long-term DPD (LT-DPD) block which provides support for GaN PAs. The ADRV9040 tackles the charge trapping property of GaN PAs with its LT-DPD block; therefore, improving emissions and EVM. The SoC includes an ARM Cortex-A55 quad core processor to independently serve DPD, CLGC, and VSWR monitor features. The dedicated processor, together with the DPD engine, provides industry leading DPD performance.
+The SoC also contains a fully integrated DPD engine for use in power amplifier
+(PA) linearization. DPD enables high efficiency PAs, reducing the power
+consumption of base station radios and the number of SERDES lanes interfacing
+with baseband processors. The DPD engine incorporates a dedicated long-term DPD
+(LT-DPD) block which provides support for GaN PAs. The ADRV9040 tackles the
+charge trapping property of GaN PAs with its LT-DPD block; therefore, improving
+emissions and EVM. The SoC includes an ARM Cortex-A55 quad core processor to
+independently serve DPD, CLGC, and VSWR monitor features. The dedicated
+processor, together with the DPD engine, provides industry leading DPD
+performance.
 
-The serial data interface consists of eight serializer lanes and eight deserializer lanes. The interface supports both the JESD204B and JESD204C standards and both fixed and floating-point data formats are supported. The floating-point format allows internal automatic gain control (AGC) to be transparent to the baseband processor.
+The serial data interface consists of eight serializer lanes and eight
+deserializer lanes. The interface supports both the JESD204B and JESD204C
+standards and both fixed and floating-point data formats are supported. The
+floating-point format allows internal automatic gain control (AGC) to be
+transparent to the baseband processor.
 
-The ADRV9040 is powered directly from 0.8 V, 1.0 V, and 1.8 V regulators and is controlled via a standard SPI serial port. Comprehensive power-down modes are included to minimize power consumption in normal use. The device is packaged in a 27 mm × 20 mm, 736-ball grid array.
+The ADRV9040 is powered directly from 0.8 V, 1.0 V, and 1.8 V regulators and is
+controlled via a standard SPI serial port. Comprehensive power-down modes are
+included to minimize power consumption in normal use. The device is packaged in
+a 27 mm × 20 mm, 736-ball grid array.
 
 Applications
 ~~~~~~~~~~~~
@@ -135,16 +179,31 @@ Please follow the link here for detailed options and examples:
 Processors
 ==========
 
-The ADRV904x contains dedicated signal processing blocks, ADCs, DACs, two ARM processor cores and a co-processor called the stream processor. The firmware for the ARM cores is a pre-compiled binary. The stream co-processor binary is user generated.
+The ADRV904x contains dedicated signal processing blocks, ADCs, DACs, two ARM
+processor cores and a co-processor called the stream processor. The firmware for
+the ARM cores is a pre-compiled binary. The stream co-processor binary is user
+generated.
 
 Stream Processor
 ----------------
 
-A stream processor is a processor within the transceiver tasked with performing a series of configuration tasks based on some event. After a request from the user, the stream processor performs a series of predefined actions that are loaded into the stream processor during device initialization. This processor takes full advantage of the speed of the internal register buses for efficient execution of commands.
+A stream processor is a processor within the transceiver tasked with performing
+a series of configuration tasks based on some event. After a request from the
+user, the stream processor performs a series of predefined actions that are
+loaded into the stream processor during device initialization. This processor
+takes full advantage of the speed of the internal register buses for efficient
+execution of commands.
 
-The stream processor can access and modify registers independently, avoiding the need for ARM interaction.
+The stream processor can access and modify registers independently, avoiding the
+need for ARM interaction.
 
-The stream processor is a processor within the ADRV904x which performs a series of configuration tasks based on an event. When requested the stream processor performs a series of pre-defined actions which are loaded into the stream processor during initialization. This processor takes advantage of the internal register bus speed for efficient execution of commands. The stream processor accesses and modifies registers independently, avoiding the need for ARM interaction.
+The stream processor is a processor within the ADRV904x which performs a series
+of configuration tasks based on an event. When requested the stream processor
+performs a series of pre-defined actions which are loaded into the stream
+processor during initialization. This processor takes advantage of the internal
+register bus speed for efficient execution of commands. The stream processor
+accesses and modifies registers independently, avoiding the need for ARM
+interaction.
 
 The stream processor executes “streams” or series of tasks for:
 
@@ -152,24 +211,46 @@ The stream processor executes “streams” or series of tasks for:
 -  Rx datapath Enable/Disable
 -  ORx datapath Enable/Disable
 
-The stream processor image changes with different configurations. For example, the stream that enables the receivers are different depending on the JESD configuration. It is therefore necessary to save a stream image for each configuration. When the user saves the configuration files (.bin) using the configurator, a stream binary image is generated automatically (a separate .bin file). This stream image file should then be used when initializing the device with the configuration in question. It is also necessary to save a stream image file every time the firmware version is updated as stream image files can be specific to versions of ARM and API.
+The stream processor image changes with different configurations. For example,
+the stream that enables the receivers are different depending on the JESD
+configuration. It is therefore necessary to save a stream image for each
+configuration. When the user saves the configuration files (.bin) using the
+configurator, a stream binary image is generated automatically (a separate .bin
+file). This stream image file should then be used when initializing the device
+with the configuration in question. It is also necessary to save a stream image
+file every time the firmware version is updated as stream image files can be
+specific to versions of ARM and API.
 
 The following are examples of how the stream files can differ:
 
 -  The framer choices for observation receiver and receiver
 -  For link sharing purposes
--  If floating point formatting is being used on receiver and observation receiver paths, the stream image can change
+-  If floating point formatting is being used on receiver and observation
+   receiver paths, the stream image can change
 
-Nineteen separate stream processors exist in the device, each of which is responsible for the execution of some dedicated functionality within the device. These can be divided into two broad categories: slice stream processors and the core stream processor.
+Nineteen separate stream processors exist in the device, each of which is
+responsible for the execution of some dedicated functionality within the device.
+These can be divided into two broad categories: slice stream processors and the
+core stream processor.
 
 Slice and Core Stream Processors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are eighteen slice stream processors, one each for the eight Tx, Rx datapaths, and two for the ORx datapaths. These ORx datapaths are not shared with the internal Tx channel loopback paths that facilitate data collection during the various Tx calibrations however for external LO leakage calibrations the ORx path is used. The existence of individual slice stream processors for each datapath enables true real-time parallel operation of all individual Tx, Rx, and ORx datapaths.
+There are eighteen slice stream processors, one each for the eight Tx, Rx
+datapaths, and two for the ORx datapaths. These ORx datapaths are not shared
+with the internal Tx channel loopback paths that facilitate data collection
+during the various Tx calibrations however for external LO leakage calibrations
+the ORx path is used. The existence of individual slice stream processors for
+each datapath enables true real-time parallel operation of all individual Tx,
+Rx, and ORx datapaths.
 
-Each slice stream processor may only access the digital register sub maps corresponding to its specific functionality. For example, the Tx slice stream processors can only access the Tx digital sub-maps.
+Each slice stream processor may only access the digital register sub maps
+corresponding to its specific functionality. For example, the Tx slice stream
+processors can only access the Tx digital sub-maps.
 
-The core stream processor has access to the entire device. The core stream processor services GPIO pin-based streams and any custom streams that are cross domain.
+The core stream processor has access to the entire device. The core stream
+processor services GPIO pin-based streams and any custom streams that are cross
+domain.
 
 Platform File
 ~~~~~~~~~~~~~
@@ -189,16 +270,28 @@ Note that this is user generated with ADI evaluation software.
 ARM Processor
 -------------
 
-The transceiver is equipped with two ARM M4 processors, CPU0 and CPU1, for Radio functionality. There is a separate A55 processor dedicated DFE features, like DPD, CLGC, VSWR. This section outlines ARM processor used for Radio features. The firmware for these ARM processors is loaded during the initialization process. CPU0 is loaded first, followed by CPU1 then CPU0 is started which will then start CPU1. The firmware memory size is 641 kB. The ARMs are tasked with configuring the transceiver for the selected use case, performing initial calibrations of the signal paths and maintaining device performance over time through tracking calibrations.
+The transceiver is equipped with two ARM M4 processors, CPU0 and CPU1, for Radio
+functionality. There is a separate A55 processor dedicated DFE features, like
+DPD, CLGC, VSWR. This section outlines ARM processor used for Radio features.
+The firmware for these ARM processors is loaded during the initialization
+process. CPU0 is loaded first, followed by CPU1 then CPU0 is started which will
+then start CPU1. The firmware memory size is 641 kB. The ARMs are tasked with
+configuring the transceiver for the selected use case, performing initial
+calibrations of the signal paths and maintaining device performance over time
+through tracking calibrations.
 
 Platform File
 ~~~~~~~~~~~~~
 
-The fimware loaded during driver probe are specified using following device tree property:
+The fimware loaded during driver probe are specified using following device tree
+property:
 
 adi,arm-firmware-name = "ADRV9040_FW.bin";
 
-This is the pre-compiled firmware binary for the embedded dual core ARM processors in the ADRV904x transceiver, which mainly consists of ADI proprietary algorithms used to calibrate the transceiver. It is delivered as part of ADRV904x software package.
+This is the pre-compiled firmware binary for the embedded dual core ARM
+processors in the ADRV904x transceiver, which mainly consists of ADI proprietary
+algorithms used to calibrate the transceiver. It is delivered as part of
+ADRV904x software package.
 
 +------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | Function               | File                                                                                                                     |
@@ -209,16 +302,22 @@ This is the pre-compiled firmware binary for the embedded dual core ARM processo
 DFE Processor
 -------------
 
-The DFE processor is an ARM A55 quad-core processor for implementing DFE application software such as DPD, CLGC and VSWR algorithms.
+The DFE processor is an ARM A55 quad-core processor for implementing DFE
+application software such as DPD, CLGC and VSWR algorithms.
 
 Platform File
 ~~~~~~~~~~~~~
 
-The firmware files for these processors must be stored in the /lib/firmware folder, or compiled into the kernel using the CONFIG_FIRMWARE_IN_KERNEL, CONFIG_EXTRA_FIRMWARE config options. The fimware loaded during driver probe is specified using following device tree property:
+The firmware files for these processors must be stored in the /lib/firmware
+folder, or compiled into the kernel using the CONFIG_FIRMWARE_IN_KERNEL,
+CONFIG_EXTRA_FIRMWARE config options. The fimware loaded during driver probe is
+specified using following device tree property:
 
 adi,arm-dfe-firmware-name = "ADRV9040_DFE_CALS_FW.bin";
 
-This is the pre-compiled firmware binary for the embedded quad core A55 DFE processors in the ADRV904x transceiver, which mainly consists of ADI proprietary DFE algorithms such as DPD, CLGC and VSWR.
+This is the pre-compiled firmware binary for the embedded quad core A55 DFE
+processors in the ADRV904x transceiver, which mainly consists of ADI proprietary
+DFE algorithms such as DPD, CLGC and VSWR.
 
 +------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | Function               | File                                                                                                                               |
@@ -229,9 +328,12 @@ This is the pre-compiled firmware binary for the embedded quad core A55 DFE proc
 Gain Tables
 -----------
 
-The Gain table for the RX path must also be loaded during boot/setup phase. This is also loaded using the firmware framework.
+The Gain table for the RX path must also be loaded during boot/setup phase. This
+is also loaded using the firmware framework.
 
-This is the front end gain look up tables for the ADRV904x receiver. It is a default table delivered as part of ADRV904x software package. User can also generate custom gain tables.
+This is the front end gain look up tables for the ADRV904x receiver. It is a
+default table delivered as part of ADRV904x software package. User can also
+generate custom gain tables.
 
 adi,rx-gaintable-names = "ADRV9040_RxGainTable.csv";
 
@@ -244,9 +346,12 @@ adi,rx-gaintable-names = "ADRV9040_RxGainTable.csv";
 Profile Binary
 --------------
 
-The ADRV904x’s configuration for a particular use case is programmed through the profile binary. The profile consists of the filter coefficients, clock rates, signal blocks, DFE resources to enable/disable for a particular use case.
+The ADRV904x’s configuration for a particular use case is programmed through the
+profile binary. The profile consists of the filter coefficients, clock rates,
+signal blocks, DFE resources to enable/disable for a particular use case.
 
-This is a user generated with ADI evaluation software. Please refer to ADRV904x Evaluation System User Guide for steps to generate the profile binary.
+This is a user generated with ADI evaluation software. Please refer to ADRV904x
+Evaluation System User Guide for steps to generate the profile binary.
 
 adi,device-config-name = "DeviceProfileTest.bin";
 
@@ -259,17 +364,18 @@ adi,device-config-name = "DeviceProfileTest.bin";
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig").
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig").
 
 .. hint::
 
    The ADRV904x driver depends on CONFIG_SPI
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -296,7 +402,6 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
            [--snip--]
 
-
        Frequency Synthesizers DDS/PLL  --->
                Direct Digital Synthesis  --->
                <*> Analog Devices CoreFPGA AXI DDS driver
@@ -318,8 +423,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing / API
 ====================
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
@@ -328,7 +440,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 *General attribute naming convention:*
 
@@ -482,7 +593,6 @@ out_voltage7\_[…]                 TX8
       root@analog:/sys/bus/iio/devices/iio:device2#
    
 
-
 Show device name
 ----------------
 
@@ -496,7 +606,6 @@ Show device name
       root@analog:/sys/bus/iio/devices/iio:device2# cat name
       adrv904x-phy
    
-
 
 Show device temperature
 -----------------------
@@ -512,11 +621,12 @@ Show device temperature
       72000
    
 
-
 Channel Enable/Powerdown Controls
 ---------------------------------
 
-For use cases where pin control mode is not used or required, these attributes can be used to enable/disable the Rx/Tx signal paths while in the ENSM radio_on state.
+For use cases where pin control mode is not used or required, these attributes
+can be used to enable/disable the Rx/Tx signal paths while in the ENSM radio_on
+state.
 
 -  in_voltage0_en
 -  in_voltage1_en
@@ -541,16 +651,25 @@ For use cases where pin control mode is not used or required, these attributes c
       0
    
 
-
 Local Oscillator Control (LO)
 -----------------------------
 
-The device contains two RF PLLs. Each RF PLL uses the PLL block common to all synthesizers in the device and employs a high performance VCO for best phase noise performance. The reference for RF PLL 0 and 1 are sourced from the reference generation block of the device. The RF PLLs are fractional-N architectures. A default modulus value is programmed automatically by firmware to provide an exact frequency on at least a 1 kHz raster using reference clocks that are integer multiples of 122.88 MHz. The ORx NCO will also operate on an exact 1 kHz raster providing 0 Hz error between the Tx LO and the ORx NCO.
+The device contains two RF PLLs. Each RF PLL uses the PLL block common to all
+synthesizers in the device and employs a high performance VCO for best phase
+noise performance. The reference for RF PLL 0 and 1 are sourced from the
+reference generation block of the device. The RF PLLs are fractional-N
+architectures. A default modulus value is programmed automatically by firmware
+to provide an exact frequency on at least a 1 kHz raster using reference clocks
+that are integer multiples of 122.88 MHz. The ORx NCO will also operate on an
+exact 1 kHz raster providing 0 Hz error between the Tx LO and the ORx NCO.
 
-The RF LO frequency is derived by dividing down the VCO output in the LOGEN block. The tunable range of the RF LO is 450-7100 MHz. It is recommended to re-run the init cals when crossing a divide-by-2 boundary specified in the ADRV904x System Development User Guide (Table 46) or when changing the LO Freq by ±100 MHz or more from the frequency at which the init cals were performed.
+The RF LO frequency is derived by dividing down the VCO output in the LOGEN
+block. The tunable range of the RF LO is 450-7100 MHz. It is recommended to
+re-run the init cals when crossing a divide-by-2 boundary specified in the
+ADRV904x System Development User Guide (Table 46) or when changing the LO Freq
+by ±100 MHz or more from the frequency at which the init cals were performed.
 
 +-------------------------------+
-
 
 | Attribute                     |
 
@@ -578,16 +697,25 @@ The RF LO frequency is derived by dividing down the VCO output in the LOGEN bloc
       3764000000
    
 
-
 Signal Path Configuration
 -------------------------
 
 TX Signal Path
 ~~~~~~~~~~~~~~
 
-The ADRV904x family of devices' transmitters consists of a tuning baseband low pass filter, up-convert quadrature mixers and a RF variable gain amplifier. The baseband filter has a tunable bandwidth of 300MHz to 840MHz. The bandwidth is tuned at initialization via the loopback path and implemented in the ARM firmware. The up converter has fixed gain which reduces quadrature errors that would be associated with attenuation changes in the mixer stages. A unique architecture of up converters was chosen to reduce 3rd and 5th harmonics. By lowering these harmonics reduces the linearity requirements of the RF VGA as well as reducing the risk of aliasing these harmonics in the TX loopback path.
+The ADRV904x family of devices' transmitters consists of a tuning baseband low
+pass filter, up-convert quadrature mixers and a RF variable gain amplifier. The
+baseband filter has a tunable bandwidth of 300MHz to 840MHz. The bandwidth is
+tuned at initialization via the loopback path and implemented in the ARM
+firmware. The up converter has fixed gain which reduces quadrature errors that
+would be associated with attenuation changes in the mixer stages. A unique
+architecture of up converters was chosen to reduce 3rd and 5th harmonics. By
+lowering these harmonics reduces the linearity requirements of the RF VGA as
+well as reducing the risk of aliasing these harmonics in the TX loopback path.
 
-The RF VGA has 32dB of attenuation range and higher gain resolution is achieved by use of digital gain adjustments. Transmit power control is implemented to minimize the interaction with the baseband processor.
+The RF VGA has 32dB of attenuation range and higher gain resolution is achieved
+by use of digital gain adjustments. Transmit power control is implemented to
+minimize the interaction with the baseband processor.
 
 Properties
 ^^^^^^^^^^
@@ -609,7 +737,6 @@ The following settings are available for each TX channel:
       -rw-r--r-- 1 root root 4096 May 14 12:41 out_voltage0_rf_bandwidth
    
 
-
 Primary Signal Bandwidth
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -625,7 +752,6 @@ To query TX Primary Signal Bandwidth:
       root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_rf_bandwidth
       400000000
    
-
 
 Hardware Gain
 ^^^^^^^^^^^^^
@@ -646,13 +772,20 @@ To query and modify TX Hardware Gain:
       -12.000000 dB
    
 
-
 RX Signal Path
 ~~~~~~~~~~~~~~
 
-The ADRV904x RX path consists of an RF attenuator followed by a current mode passive mixer. The output current of the mixer is passed through a transimpedance amplifier (TIA) filter then digitized with continuous time pipeline ADC. The digital baseband provides most of the filtering and decimation required. Analog power detectors are not in the signal chain but are built into the ADC of each RX channel.
+The ADRV904x RX path consists of an RF attenuator followed by a current mode
+passive mixer. The output current of the mixer is passed through a
+transimpedance amplifier (TIA) filter then digitized with continuous time
+pipeline ADC. The digital baseband provides most of the filtering and decimation
+required. Analog power detectors are not in the signal chain but are built into
+the ADC of each RX channel.
 
-RF input is 100 ohms differential. Single ended 50-ohm sources would drive into a 1:2 balun. The RF attenuator is a pi resistive network with 256 gain settings but only 0-32dB range is used. The RX AGC indexes the digital gain look up table to control the attenuation of the Rx front-end.
+RF input is 100 ohms differential. Single ended 50-ohm sources would drive into
+a 1:2 balun. The RF attenuator is a pi resistive network with 256 gain settings
+but only 0-32dB range is used. The RX AGC indexes the digital gain look up table
+to control the attenuation of the Rx front-end.
 
 Properties
 ^^^^^^^^^^
@@ -674,7 +807,6 @@ The following settings are available for each RX channel:
       -rw-r--r-- 1 root root 4096 May 14 12:41 in_voltage1_rf_bandwidth
    
 
-
 Advanced Debug Facilities
 -------------------------
 
@@ -683,7 +815,9 @@ The ADRV904x driver supports advanced debug controls via the kernel `debugfs <ht
 Runtime Device Driver Customization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Through these controls, the user can run and configure BIST tests. In order to identify if the IIO device in question (adrv904x-phy) you first need to identify the IIO device number. Therefore read the name attribute of each IIO device
+Through these controls, the user can run and configure BIST tests. In order to
+identify if the IIO device in question (adrv904x-phy) you first need to identify
+the IIO device number. Therefore read the name attribute of each IIO device
 
 .. container:: box bggreen
 
@@ -699,7 +833,6 @@ Through these controls, the user can run and configure BIST tests. In order to i
       /sys/bus/iio/devices/iio:device3/name:axi-adrv904x-rx-hpc
       /sys/bus/iio/devices/iio:device4/name:axi-adrv904x-tx-hpc
    
-
 
 Change directory to **/sys/kernel/debug**/iio/ iio:deviceX.
 
@@ -721,7 +854,6 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX.
       -rw-r--r-- 1 root root 0 May 14 12:40 direct_reg_access
    
 
-
 Build-In Self-Test (BIST)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -737,7 +869,6 @@ SYNTAX:
 **bist_framer_0_prbs** *<Data Source>*
 
 +-------------+
-
 
 | Data Source |
 
@@ -803,7 +934,6 @@ SYNTAX:
       root@analog:/sys/kernel/debug/iio/iio:device2# echo 8 > bist_framer_0_prbs
    
 
-
 BIST Loopback
 ^^^^^^^^^^^^^
 
@@ -832,18 +962,17 @@ Value Mode
       root@analog:/sys/kernel/debug/iio/iio:device2# echo 1 > bist_framer_loopback
    
 
-
 BIST Tone
 ^^^^^^^^^
 
-User selectable tone (with frequency and gain selection), that can be injected into the TX path. Tx7 channel is selected.
+User selectable tone (with frequency and gain selection), that can be injected
+into the TX path. Tx7 channel is selected.
 
 SYNTAX:
 
 **bist_tone** *<Enable> <Tone Frequency> <Tone Gain>*
 
 +--------+
-
 
 | Enable |
 
@@ -863,7 +992,6 @@ SYNTAX:
 
 +-----------------------------------------------+
 
-
 | Tone Frequency                                |
 
 +===============================================+
@@ -873,7 +1001,6 @@ SYNTAX:
 +-----------------------------------------------+
 
 +----------------------+
-
 
 | Tone Gain (Optional) |
 
@@ -931,7 +1058,6 @@ SYNTAX:
       root@analog:/sys/kernel/debug/iio/iio:device2# echo 1 30000 2 > bist_tone
    
 
-
 Low level register access via debugfs (direct_reg_access)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -940,21 +1066,33 @@ This page contains a few lose documentation snippets used in various spots.
 IIO device files
 ================
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 IIO devices with trigger consumer interface
 ===========================================
 
-If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
-
-
+If deviceX supports triggered sampling, it’s a so called trigger consumer and
+there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In
+this folder there is a file called current_trigger, allowing controlling and
+viewing the current trigger source connected to deviceX. Available trigger
+sources can be identified by reading the name file
+/sys/bus/iio/devices/triggerY/name. The same trigger source can connect to
+multiple devices, so a single trigger may initialize data capture or reading
+from a number of sensors, converters, etc.
 
 .. hint::
 
    Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
-
 
 **Description:** Read name of triggerY
 
@@ -972,7 +1110,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
       irqtrig56
    
 
-
 **Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ), to current trigger of deviceX
 
 .. container:: box bggreen
@@ -987,7 +1124,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
       root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
-
 
 **Description:** Read current trigger source of deviceX
 
@@ -1004,7 +1140,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
       root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
-
 
 Standalone trigger drivers
 ==========================
@@ -1024,7 +1159,13 @@ Standalone trigger drivers
 Buffer management
 =================
 
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -1061,11 +1202,19 @@ Typical ADC scan elements
 Event Management
 ================
 
-The Industrial I/O subsystem provides support for passing hardware generated events up to userspace.
+The Industrial I/O subsystem provides support for passing hardware generated
+events up to userspace.
 
-In IIO events are not used for passing normal readings from the sensing devices to userspace, but rather for out of band information. Normal data reaches userspace through a low overhead character device - typically via either software or hardware buffer. The stream format is pseudo fixed, so is described and controlled via sysfs rather than adding headers to the data describing what is in it.
+In IIO events are not used for passing normal readings from the sensing devices
+to userspace, but rather for out of band information. Normal data reaches
+userspace through a low overhead character device - typically via either
+software or hardware buffer. The stream format is pseudo fixed, so is described
+and controlled via sysfs rather than adding headers to the data describing what
+is in it.
 
-Pretty much all IIO events correspond to thresholds on some value derived from one or more raw readings from the sensor. They are provided by the underlying hardware.
+Pretty much all IIO events correspond to thresholds on some value derived from
+one or more raw readings from the sensor. They are provided by the underlying
+hardware.
 
 **Examples include:**
 
@@ -1082,7 +1231,9 @@ Events have timestamps.
 
 -  Single user at a time.
 
--  Simple chrdev per device (aggregation across devices doesn't really make sense for IIO as you tend to really care which sensor caused the event rather than just that it happened.)
+-  Simple chrdev per device (aggregation across devices doesn't really make
+   sense for IIO as you tend to really care which sensor caused the event rather
+   than just that it happened.)
 
 **The format is:**
 
@@ -1137,16 +1288,18 @@ Typical event attributes
 Low level register access via debugfs (direct_reg_access)
 =========================================================
 
-Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver.
+Some IIO drivers feature an optional debug facility, allowing users to read or
+write registers directly. Special care needs to be taken when using this
+feature, since you can modify registers on the back of the driver.
 
 .. tip::
 
    To simplify direct register access you may want to use the libiio :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command line utility.
 
-
 Accessing debugfs requires root privileges.
 
-In order to identify if the IIO device in question feature this option you first need to identify the IIO device number.
+In order to identify if the IIO device in question feature this option you first
+need to identify the IIO device number.
 
 Therefore read the name attribute of each IIO device
 
@@ -1171,7 +1324,6 @@ Therefore read the name attribute of each IIO device
       root@analog:~# 
    
 
-
 Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the direct_reg_access file exists.
 
 .. container:: box bggreen
@@ -1189,7 +1341,6 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the dire
       direct_reg_access
    
 
-
 **Reading**
 
 .. container:: box bggreen
@@ -1206,7 +1357,6 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the dire
       root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
       0x40
    
-
 
 **Writing**
 
@@ -1226,7 +1376,6 @@ Write ADDRESS VALUE
       root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
       0x50
    
-
 
 **Accessing HDL CORE registers**
 
@@ -1254,7 +1403,6 @@ The register map for typical ADI HDL cores can be found here: :doc:`Register Map
       0x80062
    
 
-
 IIO pointers
 ============
 
@@ -1276,6 +1424,4 @@ IIO pointers
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/youtube>p_vntewue24
-

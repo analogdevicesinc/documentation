@@ -19,12 +19,10 @@ Hardware requirements
    -  4x SMA cables for of same length and type for > 6GHz (synchrona to jupiter)
    -  1x SMA cable (Jupiter_sdr Tx to splitter input)
 
-
-
 .. tip::
 
-   We chose to use Synchrona for clock and MCS requests. If you have a different sync setup the constraints are:
-
+   We chose to use Synchrona for clock and MCS requests. If you have a different
+   sync setup the constraints are:
 
    | 1. Clocks, MCS 6 pulse train or MCS requests should be generated from the same source for both systems
    
@@ -34,9 +32,7 @@ Hardware requirements
       2x MCS pulse, at request (LVPECL)
    
 
-
    | 2. The trace length should be equal for all mcs and clock paths, from reference to the systems inputs. This is if you can afford to delay the MCS in regard to the clock, otherwise the MCS cables should be longer than the clock ones.
-
 
 MCS prebuild files
 ------------------
@@ -51,8 +47,9 @@ MCS prebuild files
 
 .. important::
 
-   There is an known issue with this Image version that the IP of the board will change from boot to boot because the MAC addr is not read from the flash memory on the Jupiter
-
+   There is an known issue with this Image version that the IP of the board will
+   change from boot to boot because the MAC addr is not read from the flash
+   memory on the Jupiter
 
 Setup
 -----
@@ -66,7 +63,8 @@ Setup
 -  You need all 4 machines(Main, jupiter_sdr, Synchrona) in the same LAN network, even if a DHCP server is not present
 -  Using a UART terminal, read the IP addresses of the Jupiter_SDRs and Synchrona. By entering "ifconfig" in their UART console
 -  On the main Linux machine, make sure you have installed python3, libiio and pyadi-iio more info in :doc:`mcs#prepare_and_run_python_tests </wiki-migration/resources/eval/user-guides/jupiter_sdr/mcs>` section.
--  Enter in the folder examples/adrv9002_mcs_sync and run "python3 jupiter_sync.py".
+-  Enter in the folder examples/adrv9002_mcs_sync and run "python3
+   jupiter_sync.py".
 
 Setting Synchrona for MCS setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +73,9 @@ Setting Synchrona for MCS setup
 -  Using a UART terminal, read the IP address of the Pi(synchrona). Enter ifconfig
 -  Copy the device-tree rpi-ad9545-hmc7044.dtbo on the synchrona SD card via scp (or locally on a different machine) on the boot partition in /boot/overlays. Loading the devicetree object in the GUI might get the desired frequency but it will not wait for a synq request.
 -  Reboot Synchrona
--  To check if the configuration was set, after reboot, you can enter in a browser enter the IP address. In the GUI that will open in browser, log in with User ”admin”, pass: “analog”
+-  To check if the configuration was set, after reboot, you can enter in a
+   browser enter the IP address. In the GUI that will open in browser, log in
+   with User ”admin”, pass: “analog”
 
 If your Synchrona does not boot or you need a fresh SD card for synchrona, you should re-image the SD card with the image from the bottom of this section, or check if there is a newer version on :doc:`testing </wiki-migration/resources/eval/user-guides/ad-synchrona14-ebz/testing>`
 
@@ -83,13 +83,15 @@ If your Synchrona does not boot or you need a fresh SD card for synchrona, you s
 -  Insert the freshly written SD card into the Synchrona’s raspberry Pi and power up the system
 -  After boot, configure the following in the serial terminal:
 
-   -   Make sure in the /boot/config.txt there the below line pointing to the Synchrona devicetree overlay.
+   -   Make sure in the /boot/config.txt there the below line pointing to the
+       Synchrona devicetree overlay.
 
 ::
 
    dtoverlay=rpi-ad9545-hmc7044.dtbo
 
--   By default, the IP is static. 192.168… . So, if needed you can enable the dhcp by running the enable_dhcp.sh script:
+-   By default, the IP is static. 192.168… . So, if needed you can enable the
+    dhcp by running the enable_dhcp.sh script:
 
 ::
 
@@ -103,7 +105,6 @@ More info on :doc:`ad-synchrona14-ebz </wiki-migration/resources/eval/user-guide
 
 None of the jumpers should be connected on Synchrona's ADD-ON board
 
-
 |image1|
 
 .. admonition:: Download
@@ -113,7 +114,6 @@ None of the jumpers should be connected on Synchrona's ADD-ON board
    -  **22 June 2022 release**
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/synchrona_test/synchrona_production_small.zip>`_
    
-
 
 Connecting Jupiter SDR with Synchrona
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,9 +133,8 @@ ch8_p         MCS         MCS    640 KHz   CMOS
 
    ch9_n and ch10_n must have 50 ohm SMA terminations.
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter_sdr/sma-termination.jpg
-   :width: 200px
+   :width: 200
 
 Configuring Synchrona in a 4 Jupiter SDR syncronization setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -161,11 +160,11 @@ ch10_p        Ref Clk     Clock  30.72 MHz LVPECL
 
    Each negative pair of a clock must have 50 ohm SMA termination mounted.
 
-
 Prepare and run Python tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We recommend that you have git installed on your machine. Because we need a specific branch of the development repo.
+We recommend that you have git installed on your machine. Because we need a
+specific branch of the development repo.
 
 ::
 
@@ -201,7 +200,8 @@ Clone libiio, use v0.25.
    sudo make install
    cd ../..
 
-Clone and install pyadi-iio, use tfcollins/jupiter-sync brnach. The below example was runed on Ubuntu 22.4, which requires a virtual environment.
+Clone and install pyadi-iio, use tfcollins/jupiter-sync brnach. The below
+example was runed on Ubuntu 22.4, which requires a virtual environment.
 
 ::
 
@@ -213,14 +213,16 @@ Clone and install pyadi-iio, use tfcollins/jupiter-sync brnach. The below exampl
    source venv/bin/activate
    pip install -e .
 
-Go to the example jupiter scripts folder and edit, using your desired editor, jupiter_sync.py. Add the ip addr of the Synchrona and of the Jupiters to sync.
+Go to the example jupiter scripts folder and edit, using your desired editor,
+jupiter_sync.py. Add the ip addr of the Synchrona and of the Jupiters to sync.
 
 ::
 
    cd examples/adrv9002_mcs_sync
    vim jupiter_sync.py
 
-The script can synchronize from 1 up to 4 Jupiters. At this moment, the limit comes from Synchrona's available outputs.
+The script can synchronize from 1 up to 4 Jupiters. At this moment, the limit
+comes from Synchrona's available outputs.
 
 ::
 
@@ -236,12 +238,9 @@ Call the script
 Expected results
 ~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click to expand
 
    .. code:: shell
-
 
       DEBUG:adi.adrv9002_multi:Creating primary device: ip:192.168.0.2
       DEBUG:adi.adrv9002_multi:Creating secondary device: ip:192.168.0.3
@@ -265,13 +264,11 @@ Expected results
       Issue Sync pulse
       Capture data
 
-
-
 A window with a python plot will appear.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter_sdr/mcs_result.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Description of key aspects
 --------------------------
@@ -280,7 +277,7 @@ MCS process
 ~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter_sdr/adrv9002_mcs_flow.png
-   :width: 600px
+   :width: 600
 
 jupiter_sdr signal chain description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -288,13 +285,22 @@ jupiter_sdr signal chain description
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter_sdr/pluto_ng_mcs.svg
    :align: center
 
-The clock and MCS requests, generated by Synchrona, are driving the Jupiter_SDRs. The 6 MCS pulses required by adrv9002, are generated in HDL and have characteristics defined in software by the user.
+The clock and MCS requests, generated by Synchrona, are driving the
+Jupiter_SDRs. The 6 MCS pulses required by adrv9002, are generated in HDL and
+have characteristics defined in software by the user.
 
 The MCS procedure is not enough to synchronize the systems.
 
-After MCS we will have synchronized clocks and LOs. Each Rx channel has in independent SSI reference clock driving the data path up to a DMA. Meaning, for this e.g. to synchronize a reception, we have to synchronize 4 DMAs across 2 systems. This is done with a sync_req from Synchrona. The sync_request will generate a trigger pulse in the HDL MCS sync logic, dedicated for the transmission steps. Which will release the armed Rx DMAS on the start_sync DMA feature/signal.
+After MCS we will have synchronized clocks and LOs. Each Rx channel has in
+independent SSI reference clock driving the data path up to a DMA. Meaning, for
+this e.g. to synchronize a reception, we have to synchronize 4 DMAs across 2
+systems. This is done with a sync_req from Synchrona. The sync_request will
+generate a trigger pulse in the HDL MCS sync logic, dedicated for the
+transmission steps. Which will release the armed Rx DMAS on the start_sync DMA
+feature/signal.
 
-The Tx receives the same trigger signal, which releases the cores from the armed state.
+The Tx receives the same trigger signal, which releases the cores from the armed
+state.
 
 Notes
 -----
@@ -305,7 +311,8 @@ Notes
 Tips
 ----
 
-If you can connect the systems to a LAN which has DHCP server, it is recommended to do so. Otherwise, you can use a switch and set static IPs.
+If you can connect the systems to a LAN which has DHCP server, it is recommended
+to do so. Otherwise, you can use a switch and set static IPs.
 
 If you get a static IP and are expecting one from your network, call script:
 
@@ -315,7 +322,8 @@ If you get a static IP and are expecting one from your network, call script:
 
 Same for Jupiter and Synchrona, see Synchrona setup above.
 
-If you need a static IP, you can set the system for a desired IP by calling: <code> enable_static_ip.sh 192.168.1.100 eth0 </code>
+If you need a static IP, you can set the system for a desired IP by calling:
+<code> enable_static_ip.sh 192.168.1.100 eth0 </code>
 
 Resources
 ---------
@@ -335,8 +343,8 @@ Resources
 `synchrona_jupiter_mcs_setup_05_08.zip <https://wiki.analog.com/_media/resources/eval/user-guides/jupiter_sdr/synchrona_jupiter_mcs_setup_05_08.zip>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/ad-synchrona14-ebz2_top-1000.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter-sdr/jupitersdr_front1.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/synchrona_front.jpg
-   :width: 600px
+   :width: 600

@@ -9,13 +9,16 @@ Special T Connection
 Description
 -----------
 
-The Special T Connection splits a signal into multiple times, depending on the type specified.
+The Special T Connection splits a signal into multiple times, depending on the
+type specified.
 
 There are two types which can be selected by right clicking the module
 
-PCMx - Only PCMX input and output modules can be connected using this type of t connection.
+PCMx - Only PCMX input and output modules can be connected using this type of t
+connection.
 
-BS24 - Only compressed audio input and output modules can be connected using this type of t connection
+BS24 - Only compressed audio input and output modules can be connected using
+this type of t connection
 
 Targets Supported
 -----------------

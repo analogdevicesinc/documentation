@@ -14,7 +14,7 @@ A complete design support package for the :adi:`EVAL-CN0364-SDPZ <CN0364>` evalu
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/cn0364.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 --------------
 
@@ -43,7 +43,7 @@ General Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/setup-1.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  The :adi:`EVAL-CN0364-SDPZ <CN0364>` **(CN-0364 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
@@ -54,7 +54,6 @@ General Setup
 -  Terminal blocks **P5**,\ **P6**,\ **P7** and **P8** provide the quad channel HART-compatible, 4 mA to 20 mA current inputs
 
 See image for terminal block assignments:
-
 
 |image1|
 
@@ -68,7 +67,8 @@ See image for terminal block assignments:
 -  Jumper **JP2**
 
    -  VIO - digital logic level is set +3.3V coming from the SDP board
-   -  VCC_PMOD - digital logic level is set by PMOD input (recommended is +3.3V or +5V)
+   -  VCC_PMOD - digital logic level is set by PMOD input (recommended is +3.3V
+      or +5V)
 
 --------------
 
@@ -80,7 +80,6 @@ Installing the Software
 .. tip::
 
    \ NOTE: It is recommended that you install the `CN-0364 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0364>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0364\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
-
 
    |image2|
 
@@ -96,8 +95,9 @@ Installing the Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image5|
 
@@ -108,7 +108,6 @@ Installing the Software
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image6|
 
@@ -128,7 +127,7 @@ Main Tab
 ^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/gui-1.png
-   :width: 600px
+   :width: 600
 
 -  **Run/Stop**
 
@@ -144,7 +143,8 @@ Main Tab
 
 -  **Reset**
 
-   -  Reset the evaluation board and software to the defualt startup configuration
+   -  Reset the evaluation board and software to the defualt startup
+      configuration
 
 -  **Voltage/Current Numerical Display**
 
@@ -152,12 +152,14 @@ Main Tab
 
 -  **Chart**
 
-   -  Data plot for the data acquisition (may be displayed as voltage/current value or ADC code)
+   -  Data plot for the data acquisition (may be displayed as voltage/current
+      value or ADC code)
 
 -  **Sampling Mode**
 
    -  Real-Time - continuously capture a single sample per channel, and updates the display and chart
-   -  Single Run - captures the specified number of samples and plots the data on the chart
+   -  Single Run - captures the specified number of samples and plots the data
+      on the chart
 
 -  **Display Units**
 
@@ -166,7 +168,8 @@ Main Tab
 
 -  **Status Bar**
 
-   -  Displays a message to the user detailing the current state of the software There are three status LED colors:
+   -  Displays a message to the user detailing the current state of the software
+      There are three status LED colors:
       |image8|\ Inactive
       |image9|\ Busy
       |image10|\ Error
@@ -175,13 +178,11 @@ Histogram Tab
 ^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/gui-2.png
-   :width: 600px
-
+   :width: 600
 
 .. important::
 
    User needs to sample data first using Run to get histogram data on this page.
-
 
 -  **Select Channel**
 
@@ -189,7 +190,8 @@ Histogram Tab
 
 -  **Get Histogram**
 
-   -  Analyzes the data from the selected channel and displays the histogram data
+   -  Analyzes the data from the selected channel and displays the histogram
+      data
 
 -  **Maximum Code**
 
@@ -201,7 +203,8 @@ Histogram Tab
 
 -  **Code Spread**
 
-   -  Display for the difference between the highest and lowest code from the sampled data of the selected channel
+   -  Display for the difference between the highest and lowest code from the
+      sampled data of the selected channel
 
 -  **Peak-to-Peak Resolution**
 
@@ -215,11 +218,12 @@ HART Query Tab
 ^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/gui-3.png
-   :width: 600px
+   :width: 600
 
 -  **HART Channel**
 
-   -  Selection for the current input channel the HART enabled device is connected to
+   -  Selection for the current input channel the HART enabled device is
+      connected to
 
 -  **Query Address CMD 0**
 
@@ -231,11 +235,13 @@ HART Query Tab
 
 -  **Address Variable**
 
-   -  Display for the address variables received from the HART-enabled device via CMD 0
+   -  Display for the address variables received from the HART-enabled device
+      via CMD 0
 
 -  **Device Variables**
 
-   -  Display for the device variables received from the HART-enabled device via CMD 3
+   -  Display for the device variables received from the HART-enabled device via
+      CMD 3
 
 -  **Device Status**
 
@@ -243,13 +249,16 @@ HART Query Tab
 
 -  **Leave HART Transmit Switch Open**
 
-   -  By checking this both the Tx switch will not close between HART transmit messages. Due to the implementation of the HART output circuitry, this will not significantly affect the measurement accuracy as long at the loop bandwidth is <25Hz per the HART specification.
+   -  By checking this both the Tx switch will not close between HART transmit
+      messages. Due to the implementation of the HART output circuitry, this
+      will not significantly affect the measurement accuracy as long at the loop
+      bandwidth is <25Hz per the HART specification.
 
 Configure System Tab
 ^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/gui-4.png
-   :width: 600px
+   :width: 600
 
 -  **Channel Control**
 
@@ -275,15 +284,17 @@ HART Terminal Tab
 ^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/gui-5.png
-   :width: 600px
+   :width: 600
 
 -  **HART Channel**
 
-   -  Selection for the current input channel the HART enabled device is connected to
+   -  Selection for the current input channel the HART enabled device is
+      connected to
 
 -  **Command**
 
-   -  The full user specified command that should be transmitted including checksum as space delimitated text
+   -  The full user specified command that should be transmitted including
+      checksum as space delimitated text
 
 -  **Write/Read** and **Write/Read continuously**
 
@@ -321,12 +332,9 @@ Saving Data to a Spreadsheet File
 -  Name the file.
 -  Click the **OK Button**.
 
-
-
 .. note::
 
    | The software saves the spreadsheet file as ASCII text with columns separated by tabs
-
 
 --------------
 
@@ -344,7 +352,7 @@ More Information and Useful Links
 -  :adi:`ADG704Product Page <ADG704>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/board_connections.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/install2.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/install4.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/install6.png

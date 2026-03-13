@@ -24,4 +24,4 @@ Some of the default Target Framework parameters are as below:
 SigmaStudio+ for SHARC (ADSP-SC5xx/ADSP-215xx) inputs/outputs
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/io.png
-   :width: 700px
+   :width: 700

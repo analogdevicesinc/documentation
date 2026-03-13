@@ -1,9 +1,12 @@
 Introduction
 ============
 
-The AD-FREQCVT1-EBZ module is comprised of the AD8342 mixer, the ADL5530 LNA, the ADF4351 synthesizer and power management components. It is controlled via Pmod port on the FPGA board.
+The AD-FREQCVT1-EBZ module is comprised of the AD8342 mixer, the ADL5530 LNA,
+the ADF4351 synthesizer and power management components. It is controlled via
+Pmod port on the FPGA board.
 
-For additional information or to purchase the AD-FREQCVT1-EBZ, visit: www.analog.com/AD-FREQCVT1-EBZ
+For additional information or to purchase the AD-FREQCVT1-EBZ, visit:
+www.analog.com/AD-FREQCVT1-EBZ
 
 Features
 ========
@@ -11,7 +14,8 @@ Features
 -  Includes schematics, layout, BOM, Gerber files, HDL, Linux® drivers, IIO Oscilloscope...
 -  Add on to the FMCOMMS3/4/5 family
 -  Powered from FMCOMMSx board
--  Provides one channel down conversion transmit and one channel up conversion receive.
+-  Provides one channel down conversion transmit and one channel up conversion
+   receive.
 
 Applications
 ============

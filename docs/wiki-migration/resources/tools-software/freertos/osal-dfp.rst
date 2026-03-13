@@ -1,7 +1,12 @@
 OSAL DFP for FreeRTOS
 =====================
 
-For the Cortex-M33 core in the ADSP-SC83x family, an additional DFP is required to provide OSAL for FreeRTOS. OSAL is the O/S Abstraction Layer and is used in ADI library and driver code to support different O/S options via a consistent API to avoid having to rebuild libraries. Currently support is available for bare metal ("No-OS") and FreeRTOS. No-OS is installed by default, and FreeRTOS needs an additional pack file to be installed.
+For the Cortex-M33 core in the ADSP-SC83x family, an additional DFP is required
+to provide OSAL for FreeRTOS. OSAL is the O/S Abstraction Layer and is used in
+ADI library and driver code to support different O/S options via a consistent
+API to avoid having to rebuild libraries. Currently support is available for
+bare metal ("No-OS") and FreeRTOS. No-OS is installed by default, and FreeRTOS
+needs an additional pack file to be installed.
 
 To install via the CMSIS index
 ------------------------------
@@ -11,12 +16,12 @@ Open the **CMSIS Pack Manager** via **Window** > **Perspective** > **Open Perspe
 Click on the **Check for Updates on the Web** icon, which is the blue arrows:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/freertos/cmsis_web_update.jpg
-   :width: 400px
+   :width: 400
 
 Find the **AnalogDevices.ADSP-SC83x_FreeRTOS-OSAL** pack and click install:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/freertos/cmsis_m33_pack_install.jpg
-   :width: 400px
+   :width: 400
 
 Finally, agree to the license and click **OK**.
 
@@ -41,6 +46,6 @@ Selecting the FreeRTOS OSAL
 In your **system.rteconfig**, you need to select **Device** > **OSAL** > **FreeRTOS**.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/freertos/freertos_osal_rteconfig.jpg
-   :width: 400px
+   :width: 400
 
 You will also need need **Device** > **Runtime** > **OSAL API**, though this will be added by clicking on **Resolve** at the top if not selected manually.

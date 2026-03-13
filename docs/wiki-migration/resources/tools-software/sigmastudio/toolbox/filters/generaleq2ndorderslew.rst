@@ -16,7 +16,7 @@ The above slewing function implements RC slewing. The parameter :math:`\lambda` 
 **To open the filter control window, click on the icon button:** Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
 
 .. image:: https://wiki.analog.com/_media/{{/resources/tools-software/sigmastudio/toolbox/filters/generaleqslew2-form.png
-   :width: 300px
+   :width: 300
 
 Configuration
 =============
@@ -94,7 +94,6 @@ General
 | Q                | 1.41            | 0-16                                 | Q Factor for filter calculations   |
 +------------------+-----------------+--------------------------------------+------------------------------------+
 
-
 Butterworth/Bessel
 ------------------
 
@@ -110,7 +109,6 @@ Butterworth/Bessel
 +------------------+-----------------+-----------------------------------------------------------------------------+------------------------------------+
 | Gain             | 0dB             | -15 - 15 dB                                                                 | dB gain of the filter coefficients |
 +------------------+-----------------+-----------------------------------------------------------------------------+------------------------------------+
-
 
 Tone Control
 ------------
@@ -129,7 +127,6 @@ Tone Control
 +------------------+---------------+-------------+-------------------------------------------+
 | Bass Gain        | 0dB           | -15 - 15 dB | Bass dB gain of the filter coefficients   |
 +------------------+---------------+-------------+-------------------------------------------+
-
 
 IIR Coefficient
 ---------------
@@ -169,7 +166,6 @@ First Order Filters
 | Q                | 1.41                                        | 0-16              | Q Factor for filter calculations       |
 +------------------+---------------------------------------------+-------------------+----------------------------------------+
 
-
 All Pass,Peaking,Notch
 ----------------------
 
@@ -186,7 +182,6 @@ All Pass,Peaking,Notch
 | Q                | 1.41          | 0-16        | Q Factor for filter calculations   |
 +------------------+---------------+-------------+------------------------------------+
 
-
 Chebyshev
 ---------
 
@@ -202,7 +197,6 @@ Chebyshev
 +------------------+---------------+-------------+---------------------------------------+
 | Ripple           | 0.1           | 0-10        | Ripple Factor for filter calculations |
 +------------------+---------------+-------------+---------------------------------------+
-
 
 DSP Parameter Information
 =========================
@@ -239,4 +233,4 @@ Supported ICs
 **NOTE: Due to fixed point operations, the filter coefficients do not slew exactly in the set slew time.**
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/generaleqslew1.png
-   :width: 100px
+   :width: 100

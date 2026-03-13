@@ -9,7 +9,9 @@ Seven Band Level Detector
 Description
 -----------
 
-The Seven-Band Level Detector block calculates the input signal level, reading directly from the hardware in real-time, and displays the level graphically in seven frequency band meter displays:
+The Seven-Band Level Detector block calculates the input signal level, reading
+directly from the hardware in real-time, and displays the level graphically in
+seven frequency band meter displays:
 
 -  <100Hz
 -  250Hz
@@ -19,9 +21,12 @@ The Seven-Band Level Detector block calculates the input signal level, reading d
 -  5kHz
 -  >10kHz
 
-The level detector performs the analysis only and does not modify the input signal. The signal at the output pin is identical to the input.
+The level detector performs the analysis only and does not modify the input
+signal. The signal at the output pin is identical to the input.
 
-Use the On / Off button to enable or disable the display. The level detector will not function until the schematic design has been compiled and downloaded to the hardware and a USB communication channel is properly configured.
+Use the On / Off button to enable or disable the display. The level detector
+will not function until the schematic design has been compiled and downloaded to
+the hardware and a USB communication channel is properly configured.
 
 Targets Supported
 -----------------
@@ -53,7 +58,6 @@ Name    Type  Description
 Output0 Audio Output channel 0
 ======= ===== ================
 
-
 | ===== Configurable Parameters =====
 
 ============= ============= ====== ====================================
@@ -61,6 +65,5 @@ GUI Parameter Default Value Range  Function Description
 ============= ============= ====== ====================================
 On/Off Switch OFF           ON/OFF Enable or Disable the Level Detector
 ============= ============= ====== ====================================
-
 
 | ===== DSP Parameters ===== No DSP Parameters

@@ -15,7 +15,9 @@ The :adi:`AD5160` provides a compact 2.9 mm × 3 mm packaged solution for 256-po
 Quick Start Guide
 -----------------
 
-The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided in the project \*.zip file combines the FPGA bit file and
+the SDK elf files. It may be used for a quick check on the system. All you need
+is the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -29,12 +31,11 @@ Required Software
 ~~~~~~~~~~~~~~~~~
 
 -  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
--  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet
+   LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
@@ -44,46 +45,60 @@ Running Demo (SDK) Program
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
-
 Avnet LX9 MicroBoard Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD5160\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD5160\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodDPOT to J4 connector of LX9 board, pins 1 to 6 (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+To begin, connect the PmodDPOT to J4 connector of LX9 board, pins 1 to 6 (see
+image below). You can use an extension cable for ease of use. Connect the USB
+cable from the PC to the USB-UART female connector of the board for the UART
+terminal. The board will be programmed through its USB male connector.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmoddpot.jpg
    :alt: PmodDPOT and LX-9
-   :width: 200px
+   :width: 200
 
 Digilent Nexys™3 Spartan-6 FPGA Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD5160\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD5160\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodDPOT to JB connector of Nexys™3 board, pins JB1 to JB6 (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodDPOT to JB connector of Nexys™3 board, pins JB1 to JB6
+(see image below). You can use an extension cable for ease of use. Connect the
+USB cables from the PC to the board, one for programming (Digilent USB device)
+and one for the UART terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmoddpot_nexys3.jpg
    :alt: PmodDPOT and Nexys™3
-   :width: 200px
+   :width: 200
 
 Avnet ZedBoard
 ~~~~~~~~~~~~~~
 
-To begin, connect the PmodDPOT to JA1 connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodDPOT to JA1 connector of ZedBoard (see image below).
+You can use an extension cable for ease of use. Connect the USB cables from the
+PC to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmoddpot_zed.jpg
    :alt: PmodDPOT and ZedBoard
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for Nexys3 and LX-9 MicroBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set the appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad5160/sw/AD5160.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set the appropiate baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../ad5160/sw/AD5160.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmoddpotimpact.jpg
    :alt: Programming FPGA in IMPACT
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for ZedBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,8 +107,8 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
-
+   If the download script fails to run, modify the Xilinx Tools path in
+   download.bat to match your Xilinx Installation path.
 
 If programming was successful, the **Main Menu** will appear in the UART terminal, as seen in the picture below. There are 2 options:
 
@@ -102,25 +117,25 @@ If programming was successful, the **Main Menu** will appear in the UART termina
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmoddpot_menu1.jpg
    :alt: Main Menu
-   :width: 600px
+   :width: 600
 
 **Set PmodDPOT Division Factor** Mode allows entering a value between 0x00 and 0xFF, representing the division factor desired. If the number of input characters is less than 2 (e.g. 9 or f), the **[Enter]** key must be pressed in order to validate the input. If 2 characters are input, the value is automatically validated (in order to prevent entering more than 2 characters).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmoddpot_menu2.jpg
    :alt: Setting division factor
-   :width: 600px
+   :width: 600
 
 Pressing the **[q]** key at any time exits the Set PmodDPOT Division Factor Mode and displays the **Main Menu** again.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmoddpot_menu3.jpg
    :alt: Returning to Main Menu
-   :width: 600px
+   :width: 600
 
 **Calibration** Mode allows setting measured values for your own PmodDPOT (default values are displayed when launching application). These values are different due to external factors, such as ambient temperature. First you are prompted to enter the resistance value measured between A and B on the PmodDPOT measured in ohms. If the number of input characters is less than 5, the **[Enter]** key must be pressed in order to validate the input. After entering the value for Rab, you must enter the value measured between W and B. If the number of input characters is less than 3, the **[Enter]** key must be pressed in order to validate the input.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmoddpot_menu4.jpg
    :alt: Calibrating the software application
-   :width: 600px
+   :width: 600
 
 Using the reference design
 --------------------------
@@ -128,21 +143,26 @@ Using the reference design
 Functional Description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design is a simple SPI interface with CS, SCLK and MOSI pins. The information is displayed on UART.
+The reference design is a simple SPI interface with CS, SCLK and MOSI pins. The
+information is displayed on UART.
 
-The hardware SPI access allows sending data to the AD5160, programming its internal register with the required ratio between Rwb and Rwa according to Rab and Rwp.
+The hardware SPI access allows sending data to the AD5160, programming its
+internal register with the required ratio between Rwb and Rwa according to Rab
+and Rwp.
 
 .. important::
 
    
    -  Connecting the PmodDPOT to the boards using an extension cable provides ease of use.
-   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and
+      ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-
 
 .. important::
 
-   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+   When using the ZedBoard reference design in order to develop your own
+   software, please make sure that the following options are set in
+   "system_config.h":
 
    
    .. code:: c
@@ -160,7 +180,6 @@ The hardware SPI access allows sending data to the AD5160, programming its inter
       // GPIO used in the design
       #define USE_GPIO         0
    
-
 
 Downloads
 ---------
@@ -185,7 +204,6 @@ Downloads
    -  :git-no-OS:`Programming Script <Pmods/PmodDPOT/bin>`
    
 
-
 Linux Device Driver
 ===================
 
@@ -197,11 +215,15 @@ Preparing the SD Card
 In order to prepare the SD Card for booting Linux on the ZedBoard:
 
 -  Download the device tree: :git-no-OS:`PmodDPOT Linux devicetree <Pmods/PmodDPOT/dts>`
--  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
+-  Follow the instructions on the following wiki page, but use the device tree
+   downloaded on the previous step
 
    -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
 
-Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD
+Card and power on the board. If everything is correct, the system should boot
+up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate
+115200.
 
 There are 2 ways to test the driver.
 
@@ -213,7 +235,8 @@ Using the terminal window
 
 Open a new terminal window by pressing **Ctrl+Alt+T**.
 
-Navigate to the location of the device and identify it using the following commands:
+Navigate to the location of the device and identify it using the following
+commands:
 
 ::
 
@@ -256,13 +279,15 @@ To read the set rdac value, type:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5160_linaro_terminal.jpg
    :alt: AD5628 Set Voltage from Terminal
-   :width: 600px
+   :width: 600
 
-The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+The commands written above can also be used if not using an HDMI monitor and a
+wireless keyboard, by using a serial terminal, and typing the commands after the
+system boot-up is complete.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5160_linux_serial.jpg
    :alt: AD5628 Read Voltage from Serial Terminal
-   :width: 600px
+   :width: 600
 
 More information
 ----------------

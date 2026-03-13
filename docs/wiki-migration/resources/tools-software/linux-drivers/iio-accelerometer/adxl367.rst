@@ -139,7 +139,6 @@ Driver testing
       -rw-r--r-- 1 root root 4096 May  3 16:17 uevent
    
 
-
 Show device name
 ----------------
 
@@ -153,7 +152,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:device0> cat name
       adxl367
    
-
 
 Show scale
 ----------
@@ -171,7 +169,6 @@ Show scale
       0.002394347
    
 
-
 Show axis x measurement
 -----------------------
 
@@ -187,7 +184,6 @@ Show axis x measurement
       root:/sys/bus/iio/devices/iio:device0> cat in_accel_x_raw
       -5
    
-
 
 Set sampling frequency
 ----------------------
@@ -207,7 +203,6 @@ Set sampling frequency
       root:/sys/bus/iio/devices/iio:device0> cat sampling_frequency
       400.000000
    
-
 
 Using the FIFO Buffer
 ---------------------
@@ -250,10 +245,10 @@ Buffer management
       -r--r--r-- 1 root root 4096 May  3 16:17 in_voltage_type
    
 
-
 Before enabling the buffer, a few steps need to be completed.
 
--  For example, if we want the FIFO to store sample sets of concurrent 3-channel data, we need to enable the scan elements:
+-  For example, if we want the FIFO to store sample sets of concurrent 3-channel
+   data, we need to enable the scan elements:
 
 .. container:: box bggreen
 
@@ -266,7 +261,6 @@ Before enabling the buffer, a few steps need to be completed.
       root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_accel_y_en
       root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_accel_z_en
    
-
 
 .. container:: box bggreen
 
@@ -287,7 +281,6 @@ Before enabling the buffer, a few steps need to be completed.
       -rw-r--r-- 1 root root 4096 May  3 16:17 watermark
    
 
-
 -  Set the buffer length:
 
 .. container:: box bggreen
@@ -299,7 +292,6 @@ Before enabling the buffer, a few steps need to be completed.
    
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 1024 > length
    
-
 
 -  Set the watermak:
 
@@ -313,7 +305,6 @@ Before enabling the buffer, a few steps need to be completed.
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 512 > watermark
    
 
-
 -  Enable the buffer:
 
 .. container:: box bggreen
@@ -325,7 +316,6 @@ Before enabling the buffer, a few steps need to be completed.
    
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 1 > enable
    
-
 
 -  Read the samples:
 
@@ -339,11 +329,13 @@ Before enabling the buffer, a few steps need to be completed.
       root:/sys/bus/iio/devices/iio:device0/buffer> cat /dev/iio:device0
    
 
-
 Low level register access via debugfs (direct_reg_access)
 =========================================================
 
-Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver. Accessing debugfs requires root privileges.
+Some IIO drivers feature an optional debug facility, allowing users to read or
+write registers directly. Special care needs to be taken when using this
+feature, since you can modify registers on the back of the driver. Accessing
+debugfs requires root privileges.
 
 .. container:: box bggreen
 
@@ -356,7 +348,6 @@ Some IIO drivers feature an optional debug facility, allowing users to read or w
       root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access
       direct_reg_access
    
-
 
 Reading
 
@@ -371,7 +362,6 @@ Reading
       root:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access
       0xAD
    
-
 
 Writing
 
@@ -388,7 +378,6 @@ Write ADDRESS VALUE
       root@analog:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access
       0x80
    
-
 
 More Information
 ================
@@ -411,6 +400,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-accelerometer/youtube>p_vntewue24
-

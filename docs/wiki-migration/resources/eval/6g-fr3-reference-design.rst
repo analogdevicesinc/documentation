@@ -1,15 +1,35 @@
 6G FR3 Reference Design for Wireless Test
 =========================================
 
-The need for ubiquitous connectivity, high speed data, wide bandwidth streaming is driving newer wireless technologies like 6G, Wi-Fi 7 & 8 and UWB. As these newer standards emerge, the testing complexity is also increasing such as wider bandwidths, higher frequencies, complex modulations, higher dynamic range. Instrumentation customers are seeking solutions that tame their measurement challenges, shorten their development times, and provide the highest performance.
+The need for ubiquitous connectivity, high speed data, wide bandwidth streaming
+is driving newer wireless technologies like 6G, Wi-Fi 7 & 8 and UWB. As these
+newer standards emerge, the testing complexity is also increasing such as wider
+bandwidths, higher frequencies, complex modulations, higher dynamic range.
+Instrumentation customers are seeking solutions that tame their measurement
+challenges, shorten their development times, and provide the highest
+performance.
 
-ADI’s 6G FR3 Radio Front End (RFFE) reference design aims to address these challenges for Test and Measurement customers. It supports frequencies from 6-18GHz and instantaneous bandwidths up to 4GHz. The FR3 RFFE includes TX and RX modes for signal generation and spectrum analysis applications respectively. Each TX & RX path have a dedicated LO inputs to support TDD and FDD operation.
+ADI’s 6G FR3 Radio Front End (RFFE) reference design aims to address these
+challenges for Test and Measurement customers. It supports frequencies from
+6-18GHz and instantaneous bandwidths up to 4GHz. The FR3 RFFE includes TX and RX
+modes for signal generation and spectrum analysis applications respectively.
+Each TX & RX path have a dedicated LO inputs to support TDD and FDD operation.
 
-The FR3 reference design uses ADI’s latest RF signal conditioning solutions such as the HMC8191 IQ Mixer, ADMV8818 Tunable Filter, wideband distributed driver amplifiers along with RF switching and attenuation. The design also includes other critical functions of clocking and power management to simply customer implementation.
+The FR3 reference design uses ADI’s latest RF signal conditioning solutions such
+as the HMC8191 IQ Mixer, ADMV8818 Tunable Filter, wideband distributed driver
+amplifiers along with RF switching and attenuation. The design also includes
+other critical functions of clocking and power management to simply customer
+implementation.
 
-The RFFE is agnostic to the data converter used; however, it is recommended to use ADI’s MxFE data converter solutions. The measurements shown in the ensuing section uses the Apollo MxFE ADC and DAC.
+The RFFE is agnostic to the data converter used; however, it is recommended to
+use ADI’s MxFE data converter solutions. The measurements shown in the ensuing
+section uses the Apollo MxFE ADC and DAC.
 
-6-18 GHz RF Front-End Design includes complete TX and RX signal chains with 4 GHz of iBW. The design supports both 5G/6G signal generation and spectrum analyzer/demodulator. I/Q IF ports are provided for TX inputs and RX outputs, there's a common RF input/output interface connector. both TX and RX each have dedicated LO inputs to support FDD or TDD operation.
+6-18 GHz RF Front-End Design includes complete TX and RX signal chains with 4
+GHz of iBW. The design supports both 5G/6G signal generation and spectrum
+analyzer/demodulator. I/Q IF ports are provided for TX inputs and RX outputs,
+there's a common RF input/output interface connector. both TX and RX each have
+dedicated LO inputs to support FDD or TDD operation.
 
 Evaluation Kit
 --------------
@@ -95,7 +115,7 @@ TX EVM Data
    -EVM: < -50dB
 
 .. image:: https://wiki.analog.com/_media/resources/eval/fr3_tx_evm.jpg
-   :width: 800px
+   :width: 800
 
 RX EVM Data
 -----------
@@ -104,30 +124,30 @@ RX EVM Data
 -  EVM: < -49dB
 
 .. image:: https://wiki.analog.com/_media/resources/eval/fr3_rx_evm.jpg
-   :width: 800px
+   :width: 800
 
 //
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/fr3_block_diagram.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/tx_gain.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/tx_op1db-1.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/tx_oip3-1.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/tx_gain_vs_attn.jpg
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/rx_gain_with_lna.jpg
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/rx_ip1db_with_lna.jpg
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/rx_nf_with_lna_enabled.jpg
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/rx_attn_with_lna.jpg
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/rx_gain_with_lna_bypassed.jpg
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/rx_ip1db_with_lna.jpg
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/rx_attn_with_lna_bypassed.jpg
-   :width: 400px
+   :width: 400

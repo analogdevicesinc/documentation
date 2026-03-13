@@ -2,7 +2,7 @@ System Demonstration Platform Blackfin (SDP-B)
 ==============================================
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/img_6087.jpg
-   :width: 500px
+   :width: 500
 
 Preface
 -------

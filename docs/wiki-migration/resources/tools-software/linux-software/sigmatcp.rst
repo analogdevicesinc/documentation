@@ -1,12 +1,16 @@
 SigmaStudio Network Utility for Linux
 =====================================
 
-The SigmaStudio Network Utility for Linux is a tool for the Linux operating system, which allows SigmaStudio to connect to a audio CODEC/DSP via a TCP connection. This allows to use SigmaStudio for in-system testing or rapid prototyping.
+The SigmaStudio Network Utility for Linux is a tool for the Linux operating
+system, which allows SigmaStudio to connect to a audio CODEC/DSP via a TCP
+connection. This allows to use SigmaStudio for in-system testing or rapid
+prototyping.
 
 Download the SigmaStudio Network Utility
 ----------------------------------------
 
-The source code for the SigmaStudio Network Utility can be downloaded from the wiki.
+The source code for the SigmaStudio Network Utility can be downloaded from the
+wiki.
 
 `SigmaStudio Network Utility Download <https://wiki.analog.com/_media/resources/tools-software/linux-software/sigma_tcp.tar.bz2>`_
 
@@ -31,7 +35,6 @@ Download the SigmaStudio Network Utility and extract the tar archive. To build t
       > make
    
 
-
 Run
 ~~~
 
@@ -53,18 +56,26 @@ Example:
       eth0: 192.168.0.123
    
 
-
-After sigma_tcp has been started it will print "Waiting for connections..." and the list of IP addresses it is listening on. You will need the IP address when opening up a connection from SigmaStudio. After a new connection has been established sigma_tcp will print "New connection from <ip>", where <ip> is the IP of the client system. When the client disconnects sigma_tcp will print "Connection closed.".
+After sigma_tcp has been started it will print "Waiting for connections..." and
+the list of IP addresses it is listening on. You will need the IP address when
+opening up a connection from SigmaStudio. After a new connection has been
+established sigma_tcp will print "New connection from <ip>", where <ip> is the
+IP of the client system. When the client disconnects sigma_tcp will print
+"Connection closed.".
 
 .. hint::
 
-   sigma_tcp only allows one client connection at a time. It is not possible to connect multiple SigmaStudio instances at the same time.
-
+   sigma_tcp only allows one client connection at a time. It is not possible to
+   connect multiple SigmaStudio instances at the same time.
 
 Debug mode
 ^^^^^^^^^^
 
-In debug mode all register writes go to an internal cache and all register reads will return the values from this cache. So no actual hardware access is done in this case. This mode is useful to test the basic functionality of sigma_tcp. In debug mode each read and each write performed by SigmaStudio will be logged on the console.
+In debug mode all register writes go to an internal cache and all register reads
+will return the values from this cache. So no actual hardware access is done in
+this case. This mode is useful to test the basic functionality of sigma_tcp. In
+debug mode each read and each write performed by SigmaStudio will be logged on
+the console.
 
 .. container:: box bggreen
 
@@ -80,11 +91,13 @@ In debug mode all register writes go to an internal cache and all register reads
       eth0: 192.168.0.123
    
 
-
 Regmap mode
 ^^^^^^^^^^^
 
-In regmap mode sigma_tcp expects the path to a regmap debugfs file, which will be used to read the registers. In this mode it is only possible to read the devices core registers. It is not possible to read any other registers or to write any registers.
+In regmap mode sigma_tcp expects the path to a regmap debugfs file, which will
+be used to read the registers. In this mode it is only possible to read the
+devices core registers. It is not possible to read any other registers or to
+write any registers.
 
 .. container:: box bggreen
 
@@ -99,7 +112,6 @@ In regmap mode sigma_tcp expects the path to a regmap debugfs file, which will b
       IP addresses:
       eth0: 192.168.0.123
    
-
 
 Regmap mode required debugfs support to be built into the kernel.
 
@@ -121,9 +133,13 @@ In .config:
 I2C mode
 ^^^^^^^^
 
-The third mode is the "i2c" mode. In I2C mode sigma_tcp uses raw access to the I2C bus. In this mode it is possible to read and write all register and it is possible to download and configure a DSP firmware.
+The third mode is the "i2c" mode. In I2C mode sigma_tcp uses raw access to the
+I2C bus. In this mode it is possible to read and write all register and it is
+possible to download and configure a DSP firmware.
 
-The I2C mode takes two parameters, the first parameter is the I2C adapter character device (e.g. "/dev/i2c-0"). The second parameter is the address of the I2C device (e.g. "0x3b").
+The I2C mode takes two parameters, the first parameter is the I2C adapter
+character device (e.g. "/dev/i2c-0"). The second parameter is the address of the
+I2C device (e.g. "0x3b").
 
 .. container:: box bggreen
 
@@ -134,11 +150,10 @@ The I2C mode takes two parameters, the first parameter is the I2C adapter charac
    IP addresses:
    eth0: 192.168.0.123``\
 
-
 .. warning::
 
-   Writing core CODEC registers in this mode may confuse the Linux driver since its internal and the external state do not necessarily match anymore.
-
+   Writing core CODEC registers in this mode may confuse the Linux driver since
+   its internal and the external state do not necessarily match anymore.
 
 I2C mode requires support for the I2C device interface built into the kernel.
 
@@ -161,25 +176,31 @@ In .config:
 On the host system
 ------------------
 
-Lunch SigmaStudio. Add the TCPIPADAU1761 and the ADAU176x modules to the "Hardware Configuration" window and connect both modules.
+Lunch SigmaStudio. Add the TCPIPADAU1761 and the ADAU176x modules to the
+"Hardware Configuration" window and connect both modules.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/sigmatcp_sigmastudio_1.png
    :align: center
-   :width: 400px
+   :width: 400
 
-Now right click on the TCPIPADAU1761 module and select "Show TCPIP Settings" from the popup menu.
+Now right click on the TCPIPADAU1761 module and select "Show TCPIP Settings"
+from the popup menu.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/sigmatcp_sigmastudio_2.png
    :align: center
-   :width: 400px
+   :width: 400
 
-This brings up the configuration dialog. Enter the target IP address in the dialog and click "Open Connection".
+This brings up the configuration dialog. Enter the target IP address in the
+dialog and click "Open Connection".
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/sigmatcp_sigmastudio_3.png
    :align: center
-   :width: 400px
+   :width: 400
 
-You can now switch to the ADAU1761 configuration window and read and write (depending on the sigma_tcp mode) register settings from the device. If the sigma_tcp is running in I2C mode it is also possible to download a firmware by clicking the "Link Compile Download" button.
+You can now switch to the ADAU1761 configuration window and read and write
+(depending on the sigma_tcp mode) register settings from the device. If the
+sigma_tcp is running in I2C mode it is also possible to download a firmware by
+clicking the "Link Compile Download" button.
 
 More information
 ----------------
@@ -190,4 +211,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

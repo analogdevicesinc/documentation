@@ -85,9 +85,9 @@ Full Duplex or Half Duplex Operation
 
    
    -  When S4 and S5 are in switch position 1, S2 MUST be placed in switch position 1 or 4, depending on the part you are using.
-   -  When S4 and S5 are in switch position 2, S2 MUST be placed in switch position 2 or 3, depending on the part you are using.
+   -  When S4 and S5 are in switch position 2, S2 MUST be placed in switch
+      position 2 or 3, depending on the part you are using.
    
-
 
 Cable Length and Termination Selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,9 +95,14 @@ Cable Length and Termination Selection
 | The data rate of RS-485 communications varies with the cable length. Below is a figure showing the relationship of data rate and cable length.
 | |image3|
 
-The type of termination also depends on the cable length as well as the cable characteristic impedance. The ordinary CAT5/CAT5E cable has a characteristic impedance of 100 ohms while the RS-485 standard cable has 120 ohms.
+The type of termination also depends on the cable length as well as the cable
+characteristic impedance. The ordinary CAT5/CAT5E cable has a characteristic
+impedance of 100 ohms while the RS-485 standard cable has 120 ohms.
 
-By default, the parallel termination resistance is 100 ohms which supports CAT5/CATE cables. But, this can be reconfigured to 120 ohms by disconnecting solder jumpers JP4, JP6, JP8 and, JP10 and shorting solder jumpers JP3, JP5, JP7, JP9.
+By default, the parallel termination resistance is 100 ohms which supports
+CAT5/CATE cables. But, this can be reconfigured to 120 ohms by disconnecting
+solder jumpers JP4, JP6, JP8 and, JP10 and shorting solder jumpers JP3, JP5,
+JP7, JP9.
 
 |image4|\ |image5|
 
@@ -115,9 +120,10 @@ Non-Isolated S6 = Position 1 (OPEN) No Line Termination
 
    
    -  When S6 and S7 are in switch position 1, there is no RS-485 termination. This is suitable for low-power, short transmissions over a total distance less than 0.78 m.
-   -  When S6 and S7 are in switch position 2, a parallel resistance termination is inserted. This is suitable for long distance, high power transmissions not exceeding a total distance of 4000 ft.
+   -  When S6 and S7 are in switch position 2, a parallel resistance termination
+      is inserted. This is suitable for long distance, high power transmissions
+      not exceeding a total distance of 4000 ft.
    
-
 
 Hex Switch Addressing
 ~~~~~~~~~~~~~~~~~~~~~
@@ -153,13 +159,15 @@ The :adi:`CN0416` has four RJ-45 ports, P4 and P5 for isolated communications an
 
 .. important::
 
-   With a straight-through connection, the CAT5 cable should connect two boards using the same port, e.g. (P4 of a master node is connected to P4 of a slave node in isolated communications).
-
+   With a straight-through connection, the CAT5 cable should connect two boards
+   using the same port, e.g. (P4 of a master node is connected to P4 of a slave
+   node in isolated communications).
 
 .. important::
 
-   With a crossover connection, the CAT5 cable should connect two boards using opposite ports, e.g. (P6 of a master node is connected to P24 of a slave node in non-isolated communications).
-
+   With a crossover connection, the CAT5 cable should connect two boards using
+   opposite ports, e.g. (P6 of a master node is connected to P24 of a slave node
+   in non-isolated communications).
 
 | Below shows illustrations of connecting multiple nodes using either a straight-through or a crossover cable for both isolated and non-isolated communications.
 | For Isolated Communications: |image6|
@@ -176,7 +184,6 @@ The :adi:`CN0416` has a 10 pin 5x2 connector to interface with an :adi:`ADALM-UA
 
    For half duplex set-ups, the :adi:`ADALM-UARTJTAG` needs to be setup for RS485 communications.
 
-
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 
@@ -192,7 +199,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Registration
 ------------
 
@@ -200,22 +206,21 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0416-ARDZ?&v=RevD>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cn0416/cn0416.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cn0416/board_silkscreen_with_edits.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cn0416/cable_length.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cn0416/board_silkscreen_for_jumpers.png
-   :width: 100px
+   :width: 100
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cn0416/board_silkscreen_with_jumpers_2.png
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cn0416/connection_isolated.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cn0416/connection_non-isolated.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/cn0416/uartjtag_connector.jpg
-   :width: 200px
+   :width: 200

@@ -9,7 +9,7 @@ The AD-FMComms3-EBZ board is very similar to the `ad-fmcomms2-ebz <https://wiki.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9361_top_layer.png
    :align: right
-   :width: 400px
+   :width: 400
 
 -  :adi:`Purchase <ad-fmcomms3-ebz#eb-buy>`
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/introduction>`
@@ -113,6 +113,4 @@ The AD-FMComms3-EBZ board is very similar to the `ad-fmcomms2-ebz <https://wiki.
 Warning
 -------
 
-
 .. esd-warning::
-

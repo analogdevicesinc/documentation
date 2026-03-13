@@ -4,7 +4,12 @@ Link Port driver
 Introduction
 ------------
 
-Link ports allow the processor to connect to other processors or peripheral link ports using a simple communication protocol for high-speed parallel data transfer. This peripheral allows a variety of I/O peripheral interconnection schemes to I/O peripheral devices as well as co-processing and multiprocessing schemes.This document describes how to do a data transaction test via link ports on SC5xx EZ-Board.
+Link ports allow the processor to connect to other processors or peripheral link
+ports using a simple communication protocol for high-speed parallel data
+transfer. This peripheral allows a variety of I/O peripheral interconnection
+schemes to I/O peripheral devices as well as co-processing and multiprocessing
+schemes.This document describes how to do a data transaction test via link
+ports on SC5xx EZ-Board.
 
 Hardware Setup
 --------------
@@ -18,20 +23,24 @@ Hardware Setup
 
 -  A linkport cable
 
- Connect the LINK PORT 0 and LINK PORT 1 with the matched cable in the target board.
+ Connect the LINK PORT 0 and LINK PORT 1 with the matched cable in the target
+ board.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/linkport/lkad-link_port_driver-hw_setup.jpg
-   :width: 400px
+   :width: 400
 
 Software configuration
 ----------------------
 
-The following configuration should be done on top of the SC589-ezkit/SC584-ezkit/SC573-ezkit default configuration.
+The following configuration should be done on top of the
+SC589-ezkit/SC584-ezkit/SC573-ezkit default configuration.
 
 Configure Packages
 ~~~~~~~~~~~~~~~~~~
 
-You should also enable the linkport-test program to assist with testing. Add the linkport-test program in the filesystem images, it's enabled in adsp-sc5xx-full image by default.
+You should also enable the linkport-test program to assist with testing. Add the
+linkport-test program in the filesystem images, it's enabled in adsp-sc5xx-full
+image by default.
 
 ::
 
@@ -65,14 +74,16 @@ Linux kernel configuration
        [N] SPI support ----
        [N] Network device support ----
 
-Then run bitbake linux-adi -C compile to generate kernel image zImage and dtb file.
+Then run bitbake linux-adi -C compile to generate kernel image zImage and dtb
+file.
 
 **Note: nfsboot can't work without the network support**
 
 Test Example
 ------------
 
-linkport_test will send data to linkport1, and receive data from linkport0, then verify the data.
+linkport_test will send data to linkport1, and receive data from linkport0, then
+verify the data.
 
 ::
 

@@ -7,7 +7,9 @@ On/Off Switch
 | The On/Off Switch outputs a constant value of either 0.0 (OFF) or 1.0 (ON). Click the switch control with the mouse to toggle it on or off. | |image2| |
 +---------------------------------------------------------------------------------------------------------------------------------------------+----------+
 
-There are two available algorithms: OnOff 5_23 Output and OnOff 28_0 Output. The outputs numerical format will either be 5.23 or 28.0 depending on which algorithm is selected.
+There are two available algorithms: OnOff 5_23 Output and OnOff 28_0 Output. The
+outputs numerical format will either be 5.23 or 28.0 depending on which
+algorithm is selected.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/onoffswitch018.jpg
    :alt: onoffswitch018.jpg

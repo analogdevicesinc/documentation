@@ -1,17 +1,19 @@
 Software Packs & Board Support Package
 ======================================
 
-A modular software framework is provided for quick application prototyping. Based on the application use case, developers need to download the respective software packs.
+A modular software framework is provided for quick application prototyping.
+Based on the application use case, developers need to download the respective
+software packs.
 
 .. important::
 
-   Please make sure you install either of the below toolchain before installing any of the below packs
+   Please make sure you install either of the below toolchain before installing
+   any of the below packs
 
    
    -  IAR Embedded Workbench for ARM 8.20.1 or higher
    -  CrossCore Embedded Studio 2.7.0 ® or higher
    
-
 
 The Cog software development kit consists of the following packs:-
 
@@ -26,7 +28,6 @@ The Cog software development kit consists of the following packs:-
    -  *Version History*
 
       -  **Version 3.1.0** - Extended support for IAR Embedded Workbench.\ **[Latest]**
-
 
 | End Document
 

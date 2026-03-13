@@ -14,7 +14,6 @@ Common elements for all kernel builds:
 
    If you would like a pre-compiled kernel with complete user space, check out ADI's :doc:`Kuiper Linux Distribution </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
-
 Target specific details:
 
 -  :doc:`Building the Zynq Linux kernel and devicetrees from source </wiki-migration/resources/tools-software/linux-build/generic/zynq>`
@@ -25,7 +24,11 @@ Target specific details:
 -  :doc:`Building with Petalinux </wiki-migration/resources/tools-software/linux-build/generic/petalinux>`
 -  :doc:`Building for Raspberry PI </wiki-migration/resources/tools-software/linux-build/generic/raspberrypi>`
 
-The rapid increase in use of free and open-source software (FOSS), in particular Linux, represents the most significant, all-encompassing, and long-term trend that the embedded industry has seen since the early 1980s. [1]_ Like many, Analog Devices creates and maintains Linux Drivers for various Analog Devices products.
+The rapid increase in use of free and open-source software (FOSS), in particular
+Linux, represents the most significant, all-encompassing, and long-term trend
+that the embedded industry has seen since the early 1980s. [1]_ Like many,
+Analog Devices creates and maintains Linux Drivers for various Analog Devices
+products.
 
 Life Cycle
 ~~~~~~~~~~
@@ -1504,4 +1507,5 @@ Video
 -  `DS28E04-100: 4096-Bit Addressable 1-Wire EEPROM with PIO <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/w1/slaves/w1_ds28e04.c>`_ `DS28E04-100 <https://www.maximintegrated.com/DS28E04-100>`_
 
 .. [1]
-   IDC study/survey from over 5000 developers in 116 countries. Open Source in Global Software: Market Impact, Disruption, and Business Models. 2006.
+   IDC study/survey from over 5000 developers in 116 countries. Open Source in
+   Global Software: Market Impact, Disruption, and Business Models. 2006.

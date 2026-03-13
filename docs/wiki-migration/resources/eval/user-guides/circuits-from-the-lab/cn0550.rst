@@ -3,16 +3,19 @@ EVAL-CN0550-EBZ User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0550-ebz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 General Description
 -------------------
@@ -27,13 +30,13 @@ Evaluation Board Hardware
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0550/cn0550-top.jpg
    :alt: Figure 1. Top View of EVAL-CN0550-EBZ
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0550/cn0550-p1-bus1.jpg
    :align: right
-   :width: 160px
+   :width: 160
 
 USB Host Plug and LED Indicator (P1, BUS1)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,7 +49,7 @@ The USB host controller must be connected to the male USB-A connector (P1).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0550/cn0550-p2-bus2.jpg
    :align: right
-   :width: 140px
+   :width: 140
 
 USB Peripheral Port and LED Indicator (P2, BUS2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +69,7 @@ Host Side Power Connector and LED Indicator (P3, EXT1)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0550/cn0550-p3-connections.jpg
    :align: right
-   :width: 80px
+   :width: 80
 
 ============ ==========================================
 JP1 Position Power Source for the Onboard Regulator
@@ -75,30 +78,29 @@ A            VCC pin of USB host (Default).
 B            External power supply connected across P3.
 ============ ==========================================
 
-
-
-
 .. note::
 
-   The maximum voltage that can be safely applied at P3 is 32 V. Connect the (+) and (-) pins of the external power supply respectively to pins 1 and 2 of P3.
-
+   The maximum voltage that can be safely applied at P3 is 32 V. Connect the (+)
+   and (-) pins of the external power supply respectively to pins 1 and 2 of P3.
 
 --------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0550/cn0550-p4-ext2.jpg
    :align: right
-   :width: 100px
+   :width: 100
 
 Peripheral Side Power Connector and LED Indicator (P4, EXT2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For applications where 5 V power is already available on the peripheral side, the onboard regulator can be bypassed by moving the J2 solder jumper to the 'B' position, and connecting the external 5 V peripheral power across the P3 header.
+For applications where 5 V power is already available on the peripheral side,
+the onboard regulator can be bypassed by moving the J2 solder jumper to the 'B'
+position, and connecting the external 5 V peripheral power across the P3 header.
 
 *The red LED (EXT2) lights up to indicate the presence of an external DC power supply.*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0550/cn0550-p4-connections.jpg
    :align: right
-   :width: 100px
+   :width: 100
 
 ============ ==========================================
 JP2 Position 5 V Power Source for the Peripheral Side
@@ -107,13 +109,11 @@ A            Onboard regulator circuit (Default).
 B            External power supply connected across P4.
 ============ ==========================================
 
-
-
-
 .. note::
 
-   The voltage applied at P3 should be limited to the normal operating VCC range for USB (4.75 V to 5.25 V). Connect the (+) and (-) pins of the external power supply respectively to pins 1 and 2 of P4.
-
+   The voltage applied at P3 should be limited to the normal operating VCC range
+   for USB (4.75 V to 5.25 V). Connect the (+) and (-) pins of the external
+   power supply respectively to pins 1 and 2 of P4.
 
 --------------
 
@@ -133,7 +133,6 @@ Schematic, Layout and Bill of Materials
    -  Assembly Drawing
    
 
-
 More Information and Useful Links
 ---------------------------------
 
@@ -142,4 +141,4 @@ More Information and Useful Links
 -  :adi:`LT8301 Product Page <LT8301>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0550/cn0550-p3-ext1.jpg
-   :width: 120px
+   :width: 120

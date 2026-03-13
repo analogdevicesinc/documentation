@@ -14,7 +14,7 @@ A serial connection of a PC to the EVAL-ADICUP360 board using the user USB conne
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/terminal_cli_26_08_2015.png
    :align: left
-   :width: 450px
+   :width: 450
 
 Available commands
 ~~~~~~~~~~~~~~~~~~
@@ -62,9 +62,10 @@ Setting up the hardware
 In order to program the EVAL-ADICUP360 you need to use the **DEBUG USB**. The jumper set up is shown in the next figure. The important jumpers are highlighted in red.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/hw_rev1_1_setup.png
-   :width: 500px
+   :width: 500
 
-The ADuCM360_cli_demo can connect to the serial port of a PC through two different USB ports on the board:
+The ADuCM360_cli_demo can connect to the serial port of a PC through two
+different USB ports on the board:
 
 -  **USER USB** (using P0.1, P0.2 or P0.6, P0.7 of the ADuCM360)
 -  **DEBUG USB** (only P0.1, P0.2 of the ADuCM360)
@@ -74,39 +75,44 @@ A bank of jumpers provided near the PMOD ports of the EVAL-ADICUP360, makes this
 **Using UART via USER USB (P0.1, P0.2)**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/cli_hw_p01_2_user.png
-   :width: 500px
+   :width: 500
 
 **Using UART via USER USB (P0.6, P0.7)**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/cli_hw_p06_7_user.png
-   :width: 500px
+   :width: 500
 
 **Using UART via DEBUG USB (P0.1, P0.2)**
-
 
 |image1|
 
 .. note::
 
-   If using UART in USER USB configuration, you first need to program the board using DEBUG USB
-
+   If using UART in USER USB configuration, you first need to program the board
+   using DEBUG USB
 
 .. note::
 
-   If using UART in DEBUG USB configuration you first need to program the board using DEBUG USB and after the program runs on target, you need to change jumper (J1 and J2) positions
-
+   If using UART in DEBUG USB configuration you first need to program the board
+   using DEBUG USB and after the program runs on target, you need to change
+   jumper (J1 and J2) positions
 
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the CLI Demo.
+There are two basic ways to program the ADICUP360 with the software for the CLI
+Demo.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_cli** demo can be found here:
 
@@ -123,11 +129,9 @@ The software for the **ADuCM360_demo_cli** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_cli Source Code <projects/ADuCM360_demo_cli>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -141,7 +145,6 @@ UART Configuration Settings can be found in the *Communications.h* file.
    #define UART_PINS_67            2  /* Connected to P0.6, P0.7 */
 
    #define UART_PINS    UART_PINS_12  /* Select UART pin destination */
-
 
    /* The serial port may be used in polling or interrupt mode */
    #define UART_MODE UART_INT_MODE
@@ -188,7 +191,7 @@ The user must type the word **<help>** in order to bring up the CLI menu shown b
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/terminal_cli_26_08_2015.png
    :align: center
-   :width: 450px
+   :width: 450
 
 How to use the Tools
 --------------------
@@ -212,9 +215,11 @@ The **ADuCM360_demo_cli** project Project structure is shown below:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/structure_cli_26_08_2105.png
    :align: left
-   :width: 350px
+   :width: 350
 
-This project contains: initialization part - disabling watchdog, setting system clock, enabling clock for peripheral; UART interrupt service; port configuration for UART use; UART read/write management; command line interpreter application.
+This project contains: initialization part - disabling watchdog, setting system
+clock, enabling clock for peripheral; UART interrupt service; port configuration
+for UART use; UART read/write management; command line interpreter application.
 
 In the **src** and **include** folders you will find the source and header files related to CLI application. You can modify as you wanted those files. The *Communication.c/h* files contain UART specific data, meanwhile the *cli.c/h* files contain the command interpreter data.
 
@@ -226,4 +231,4 @@ The **RTE** folder contains device and system related files:
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/cli_hw_p01_2_debug.png
-   :width: 500px
+   :width: 500

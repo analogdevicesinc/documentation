@@ -15,8 +15,9 @@ AD-FMCMOTCON2-EBZ   AD-DRVLV2-EBZ   AD-DYNO2-EBZ
 
 .. note::
 
-   The Controller and the Drive boards are provided as a kit and cannot be purchased separately. They are both distributed under the AD-FMCMOTCON2-EBZ part number.
-
+   The Controller and the Drive boards are provided as a kit and cannot be
+   purchased separately. They are both distributed under the AD-FMCMOTCON2-EBZ
+   part number.
 
 **Purpose**
 
@@ -38,7 +39,8 @@ AD-FMCMOTCON2-EBZ   AD-DRVLV2-EBZ   AD-DYNO2-EBZ
 
 -  Increased control flexibility due to FPGA interfacing capabilities
 -  Increased versatility to be able to control different types of motors
--  Example reference designs showing how to use the control solution with Xilinx FPGAs
+-  Example reference designs showing how to use the control solution with Xilinx
+   FPGAs
 
 Where to Buy
 ------------
@@ -47,10 +49,9 @@ Where to Buy
 
    :adi:`FMCMOTCON2 Evaluation Kit <design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-FMCMOTCON2.html>`
 
-
 .. |AD-FMCMOTCON2-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_ctrl_single.jpg
-   :width: 300px
+   :width: 300
 .. |AD-DRVLV2-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_lv_single.jpg
-   :width: 400px
+   :width: 400
 .. |AD-DYNO1-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_dyno_single.jpg
-   :width: 300px
+   :width: 300

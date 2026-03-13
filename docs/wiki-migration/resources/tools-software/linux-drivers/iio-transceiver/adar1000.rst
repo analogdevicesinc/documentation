@@ -1,7 +1,14 @@
 ADAR1000 8 GHz to 16 GHz, 4-Channel, X Band and KuBand Beamformer Linux device driver
 =====================================================================================
 
-The ADAR1000 is a 4-channel, X and Ku frequency band, beamforming core chip for phased arrays. This device operates in half-duplex between receive and transmit modes. In receive mode, input signals pass through four receive channels and are combined in a common RF_IO pin. In transmit mode, the RF_IO input signal is split and passes through the four transmit channels. In both modes, the ADAR1000 provides a ≥31 dB gain adjustment range and a full 360° phase adjustment range in the radio frequency (RF) path, with 6-bit resolution (less than ≤0.5 dB and 2.8°, respectively).
+The ADAR1000 is a 4-channel, X and Ku frequency band, beamforming core chip for
+phased arrays. This device operates in half-duplex between receive and transmit
+modes. In receive mode, input signals pass through four receive channels and are
+combined in a common RF_IO pin. In transmit mode, the RF_IO input signal is
+split and passes through the four transmit channels. In both modes, the ADAR1000
+provides a ≥31 dB gain adjustment range and a full 360° phase adjustment range
+in the radio frequency (RF) path, with 6-bit resolution (less than ≤0.5 dB and
+2.8°, respectively).
 
 Supported Devices
 -----------------
@@ -44,7 +51,8 @@ Files
 Example Linux Device-Tree Initialization
 ========================================
 
-The ADAR1000 driver is a spi-bus driver and can currently only be instantiated via device tree.
+The ADAR1000 driver is a spi-bus driver and can currently only be instantiated
+via device tree.
 
 Required devicetree properties:
 
@@ -60,17 +68,18 @@ Required devicetree properties:
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADAR1000 driver depends on CONFIG_SPI
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -94,11 +103,19 @@ Driver testing / API
 
 .. important::
 
-   SPI writes and reads for certain attributes are delayed because of how the hardware behaves. So, updates to certain properties take a couple of seconds to be reflected in a read-back from hardware.
+   SPI writes and reads for certain attributes are delayed because of how the
+   hardware behaves. So, updates to certain properties take a couple of seconds
+   to be reflected in a read-back from hardware.
 
-
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 *General attribute naming convention:* in_voltage0\_[…]: targets RX1 in_voltage1\_[…]: targets RX2
 
@@ -210,7 +227,6 @@ out_voltage0\_[…]: targets TX1 out_voltage1\_[…]: targets TX2
       root:/sys/bus/iio/devices/iio:device0#
    
 
-
 Show device name
 ----------------
 
@@ -225,7 +241,6 @@ Show device name
       adar1000
    
 
-
 RX/TX Phase Control
 -------------------
 
@@ -239,11 +254,17 @@ Phase (Degrees) I Reg (Hex) Q Reg (Hex)
 0 ... 360       0x3F        0x20
 =============== =========== ===========
 
-Custom phase tables can be loaded automatically during driver probe or anytime later via the phase_table_config sysfs attribute. Tables must be stored in the /firmware folder, or compiled into the kernel using the CONFIG_FIRMWARE_IN_KERNEL, CONFIG_EXTRA_FIRMWARE config options. The table loaded during driver probe can be specified using following device tree property:
+Custom phase tables can be loaded automatically during driver probe or anytime
+later via the phase_table_config sysfs attribute. Tables must be stored in the
+/firmware folder, or compiled into the kernel using the
+CONFIG_FIRMWARE_IN_KERNEL, CONFIG_EXTRA_FIRMWARE config options. The table
+loaded during driver probe can be specified using following device tree
+property:
 
 **adi,phasetable-name** = "adar1000_std_phasetable";
 
-In case no table is specified or loaded, the driver will continue to use the provided standard phase table.
+In case no table is specified or loaded, the driver will continue to use the
+provided standard phase table.
 
 Phase table is stored in a human readable file, with the format specified below.
 
@@ -278,11 +299,12 @@ Loading a gain table
       root@analog:/sys/bus/iio/devices/iio:device0# cat /firmware/adar1000_std_phasetable > phase_table_config
    
 
-
 Reading a gain table
 ~~~~~~~~~~~~~~~~~~~~
 
-Reading the phase_table_config attribute returns the current phase table that is loaded into the IC. The printed format matches the format used in the phasetable file.
+Reading the phase_table_config attribute returns the current phase table that is
+loaded into the IC. The printed format matches the format used in the phasetable
+file.
 
 .. container:: box bggreen
 
@@ -314,16 +336,17 @@ Reading the phase_table_config attribute returns the current phase table that is
       </phasetable>
    
 
-
 RAM memory access
 -----------------
 
-On-chip RAM is provided for storing phase and amplitude settings for up to 121 beam positions and seven bias settings for both transmit and receive modes.
+On-chip RAM is provided for storing phase and amplitude settings for up to 121
+beam positions and seven bias settings for both transmit and receive modes.
 
 Save/Load beam position
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-A beam position can be written to ram and loaded afterwards from that memory location (index).
+A beam position can be written to ram and loaded afterwards from that memory
+location (index).
 
 Save beam position command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -338,7 +361,6 @@ This command can be decoded using this enumeration:
 
    beam_position, gain_value, phase_value
 
-
 Values for **gain_value** and **phase_value** must be in integer and fractional part. **beam_position** can take values from 0 to 120.
 
 Load beam position command
@@ -348,12 +370,14 @@ Load beam position command
 
    echo 10 > in_voltage1_RX_beam_pos_load
 
-To load a position just write the position number in the load attribute for the required channel.
+To load a position just write the position number in the load attribute for the
+required channel.
 
 Save/Load bias settings
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Seven memory locations are also provided for storing bias settings for all the transmit and receive channel subcircuits.
+Seven memory locations are also provided for storing bias settings for all the
+transmit and receive channel subcircuits.
 
 Save RX bias settings
 ^^^^^^^^^^^^^^^^^^^^^
@@ -366,8 +390,8 @@ The values written here correspond the the following diagram:
 
 .. tip::
 
-   bias_setting_index, LNA_BIAS_OFF, LNA_BIAS_ON, BIAS_CURRENT_RX, BIAS_CURRENT_RX_LNA
-
+   bias_setting_index, LNA_BIAS_OFF, LNA_BIAS_ON, BIAS_CURRENT_RX,
+   BIAS_CURRENT_RX_LNA
 
 Save TX bias settings
 ^^^^^^^^^^^^^^^^^^^^^
@@ -380,8 +404,9 @@ The values written here correspond the the following diagram:
 
 .. tip::
 
-   bias_setting_index, CH1_PA_BIAS_OFF, CH2_PA_BIAS_OFF, CH3_PA_BIAS_OFF, CH1_PA_BIAS_ON, CH2_PA_BIAS_ON, CH3_PA_BIAS_ON, CH4_PA_BIAS_OFF, CH4_PA_BIAS_ON, BIAS_CURRENT_TX, BIAS_CURRENT_TX_DRV
-
+   bias_setting_index, CH1_PA_BIAS_OFF, CH2_PA_BIAS_OFF, CH3_PA_BIAS_OFF,
+   CH1_PA_BIAS_ON, CH2_PA_BIAS_ON, CH3_PA_BIAS_ON, CH4_PA_BIAS_OFF,
+   CH4_PA_BIAS_ON, BIAS_CURRENT_TX, BIAS_CURRENT_TX_DRV
 
 Load bias settings
 ^^^^^^^^^^^^^^^^^^
@@ -391,12 +416,14 @@ Load bias settings
    echo 5 > out_voltage_bias_set_load
    echo  > in_voltage_bias_set_load
 
-For loading a different bias setting the operations is the same for RX and TX channels.
+For loading a different bias setting the operations is the same for RX and TX
+channels.
 
 Memory sequencer
 ~~~~~~~~~~~~~~~~
 
-The beam can be stepped sequentially through the positions stored in memory. To use this feature the following steps must be executed:
+The beam can be stepped sequentially through the positions stored in memory. To
+use this feature the following steps must be executed:
 
 -  load sequence start
 -  load sequence end
@@ -419,21 +446,33 @@ This page contains a few lose documentation snippets used in various spots.
 IIO device files
 ================
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 IIO devices with trigger consumer interface
 ===========================================
 
-If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
-
-
+If deviceX supports triggered sampling, it’s a so called trigger consumer and
+there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In
+this folder there is a file called current_trigger, allowing controlling and
+viewing the current trigger source connected to deviceX. Available trigger
+sources can be identified by reading the name file
+/sys/bus/iio/devices/triggerY/name. The same trigger source can connect to
+multiple devices, so a single trigger may initialize data capture or reading
+from a number of sensors, converters, etc.
 
 .. hint::
 
    Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
-
 
 **Description:** Read name of triggerY
 
@@ -451,7 +490,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
       irqtrig56
    
 
-
 **Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ), to current trigger of deviceX
 
 .. container:: box bggreen
@@ -466,7 +504,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
       root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
-
 
 **Description:** Read current trigger source of deviceX
 
@@ -483,7 +520,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
       root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
-
 
 Standalone trigger drivers
 ==========================
@@ -503,7 +539,13 @@ Standalone trigger drivers
 Buffer management
 =================
 
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -540,11 +582,19 @@ Typical ADC scan elements
 Event Management
 ================
 
-The Industrial I/O subsystem provides support for passing hardware generated events up to userspace.
+The Industrial I/O subsystem provides support for passing hardware generated
+events up to userspace.
 
-In IIO events are not used for passing normal readings from the sensing devices to userspace, but rather for out of band information. Normal data reaches userspace through a low overhead character device - typically via either software or hardware buffer. The stream format is pseudo fixed, so is described and controlled via sysfs rather than adding headers to the data describing what is in it.
+In IIO events are not used for passing normal readings from the sensing devices
+to userspace, but rather for out of band information. Normal data reaches
+userspace through a low overhead character device - typically via either
+software or hardware buffer. The stream format is pseudo fixed, so is described
+and controlled via sysfs rather than adding headers to the data describing what
+is in it.
 
-Pretty much all IIO events correspond to thresholds on some value derived from one or more raw readings from the sensor. They are provided by the underlying hardware.
+Pretty much all IIO events correspond to thresholds on some value derived from
+one or more raw readings from the sensor. They are provided by the underlying
+hardware.
 
 **Examples include:**
 
@@ -561,7 +611,9 @@ Events have timestamps.
 
 -  Single user at a time.
 
--  Simple chrdev per device (aggregation across devices doesn't really make sense for IIO as you tend to really care which sensor caused the event rather than just that it happened.)
+-  Simple chrdev per device (aggregation across devices doesn't really make
+   sense for IIO as you tend to really care which sensor caused the event rather
+   than just that it happened.)
 
 **The format is:**
 
@@ -616,16 +668,18 @@ Typical event attributes
 Low level register access via debugfs (direct_reg_access)
 =========================================================
 
-Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver.
+Some IIO drivers feature an optional debug facility, allowing users to read or
+write registers directly. Special care needs to be taken when using this
+feature, since you can modify registers on the back of the driver.
 
 .. tip::
 
    To simplify direct register access you may want to use the libiio :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command line utility.
 
-
 Accessing debugfs requires root privileges.
 
-In order to identify if the IIO device in question feature this option you first need to identify the IIO device number.
+In order to identify if the IIO device in question feature this option you first
+need to identify the IIO device number.
 
 Therefore read the name attribute of each IIO device
 
@@ -650,7 +704,6 @@ Therefore read the name attribute of each IIO device
       root@analog:~# 
    
 
-
 Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the direct_reg_access file exists.
 
 .. container:: box bggreen
@@ -668,7 +721,6 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the dire
       direct_reg_access
    
 
-
 **Reading**
 
 .. container:: box bggreen
@@ -685,7 +737,6 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the dire
       root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
       0x40
    
-
 
 **Writing**
 
@@ -705,7 +756,6 @@ Write ADDRESS VALUE
       root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
       0x50
    
-
 
 **Accessing HDL CORE registers**
 
@@ -733,7 +783,6 @@ The register map for typical ADI HDL cores can be found here: :doc:`Register Map
       0x80062
    
 
-
 IIO pointers
 ============
 
@@ -755,9 +804,7 @@ IIO pointers
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/youtube>p_vntewue24
-
 
 More Information
 ================
@@ -780,6 +827,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/youtube>p_vntewue24
-

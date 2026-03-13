@@ -19,7 +19,12 @@ The :adi:`AD5415` is a CMOS, 12-bit, dual channel, current output digital-to-ana
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5415_sdz.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -31,9 +36,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD5415 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD5415 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD5415 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD5415 driver:
 
@@ -47,7 +56,6 @@ There are three functions which are called by the AD5415 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of AD5415 driver:
 
@@ -72,7 +80,8 @@ Downloads
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD5415 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD5415
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -89,7 +98,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD5415SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+An EVAL-AD5415SDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
+for RL78G13:
 
 ::
 
@@ -111,7 +121,8 @@ With the **Applilet3 for RL78G13** tool the following peripherals have to be con
 CSI10 (Clocked Serial Interface 10) – For the AD5415 part and the ST7579 LCD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+Choose to generate the Transmit/receive function for the CSI10 and configure the
+interface with the following settings:
 
 -  Transfer mode setting: **Single transfer mode**
 -  Data length setting : **8 bits**
@@ -129,7 +140,8 @@ Configure TM00 as an interval timer:
 
 -  Interval timer setting - Interval value(16 bits): **1** ms
 -  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
--  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an
+   interrupt (INTM00)//
 
 Watchdog Timer
 ~~~~~~~~~~~~~~
@@ -141,27 +153,23 @@ Disable the watchdog timer:
 Reference Project Overview
 --------------------------
 
-The reference project initializes the device, sets the DAC output to middle scale, writes a value to DAC register and then reads it back.
-
+The reference project initializes the device, sets the DAC output to middle
+scale, writes a value to DAC register and then reads it back.
 
 |image1|
 
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5415_rl78g13_screen.jpg

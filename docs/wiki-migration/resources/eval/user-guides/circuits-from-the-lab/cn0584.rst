@@ -1,23 +1,26 @@
 CN0584 User Guide
 =================
 
-
-
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
    | The latest version of this document can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0584-ebz/index.html
 
-
 Overview
 --------
 
 CN0584 (Low Latency Development Kit) is a development platform consisting of two boards the :adi:`EVAL-CN0585-FMCZ <CN0585>` and the :adi:`EVAL-CN0584-EBZ <CN0584>`. :adi:`EVAL-CN0585-FMCZ <CN0585>` consists of 4 x 16-bit ADC channels and 4 x 16-bit DAC channels that are interfaced with an FPGA through the FMC Low Pin Count (LPC) Connector. Current revision of :adi:`EVAL-CN0585-FMCZ <CN0585>` is Rev B. :adi:`EVAL-CN0584-EBZ <CN0584>` is the application specific analog front end (AFE) board.CN0584 is connected to a Zedboard to build a development system setup like shown in Figure 7.
 
-The Low Latency Development Kit (LLDK) provides a complete data acquisition and signal generation platform with on-board power rails, voltage monitoring, logic level translation, general purpose I/O, I2C, SPI, and a personality interface connector.
+The Low Latency Development Kit (LLDK) provides a complete data acquisition and
+signal generation platform with on-board power rails, voltage monitoring, logic
+level translation, general purpose I/O, I2C, SPI, and a personality interface
+connector.
 
-The key performance benefit of the LLDK system is the ability to perform a complete capture and conversion of precision analog input data in <70ns with the ADC module and generate a settled full-scale analog output in <200ns from initial data written to the DAC.
+The key performance benefit of the LLDK system is the ability to perform a
+complete capture and conversion of precision analog input data in <70ns with the
+ADC module and generate a settled full-scale analog output in <200ns from
+initial data written to the DAC.
 
 |image1| *Figure 1. Low Latency Development Kit*
 
@@ -28,7 +31,7 @@ Connections and Configurations
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/cn0584.png
    :align: center
-   :width: 400px
+   :width: 400
 
 *Figure 3.Simplified Block Diagram of LLDK*
 
@@ -266,7 +269,7 @@ You will need to:
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad777x-ardz/zedboard.png
    :alt: zedboard.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Insert the SD CARD into the SD Card Interface Connector (J12).
 -  Connect the :adi:`EVAL-CN0585-FMCZ <CN0585>` board into the ZedBoard FMC connector.
@@ -278,25 +281,25 @@ You will need to:
 -  Set the jumpers as seen in Figure 6 |zed_jumpers.jpg|\ *Figure 6. ZedBoard Jumper Settings*
 -  Connect the DAC output connectors to the negative ADC input connectors as shown in Figure 7 using coax cables (i.e. DAC0 to ADC0-neg, DAC1 to ADC1-neg, etc.). Terminate the positive ADC connectors with 50ohms SMA terminators |cn0584_loopback_connection.png| *Figure 7. EVAL-CN0584-EBZ Loopback Connection on AFE *\* Turn the ZedBoard on. \* Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.The hardware set up is now complete. setup_cn0585_diagram.png*\ Figure 8. Example System Setup*
 
-
 .. esd-warning::
-
 
 Application Software (both locally and remotely on the FPGA)
 ------------------------------------------------------------
 
-The CN0584 can be interfaced with using IIO Oscilloscope, Python, or MATLAB to enable device configuration, capture of incoming samples from the ADCs, and generation of waveforms to be transmitted by the DACs.
+The CN0584 can be interfaced with using IIO Oscilloscope, Python, or MATLAB to
+enable device configuration, capture of incoming samples from the ADCs, and
+generation of waveforms to be transmitted by the DACs.
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
-Libiio is a library used for interfacing with IIO devices and must be installed on your computer to interface with the hardware.
+Libiio is a library used for interfacing with IIO devices and must be installed
+on your computer to interface with the hardware.
 
 .. admonition:: Download
    :class: download
 
    Download and Install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
-
 
 To connect to your device, the IIO Osciloscope software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the :adi:`EVAL-CN0585-FMCZ <CN0585>` is attached. The ZedBoard running ADI Kuiper Linux is currently the only platform supported for the CN0585.
 
@@ -322,8 +325,8 @@ Example:
 
 .. note::
 
-   Do note that the Windows machine and the FPGA board should be connected to the same network for the machine to detect the device.
-
+   Do note that the Windows machine and the FPGA board should be connected to
+   the same network for the machine to detect the device.
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
@@ -334,13 +337,18 @@ IIO Oscilloscope
 
    Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
-1. Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope. If there's only one platform is connected, the IIO Oscilloscope will find URI automatically; If more than one platforms are connected, the user needs to supply the specific URI. The instructions to obtain the URI can be found in the previous section. Note: the "Serial Context" connection method is not enabled.
+1. Once done with the installation or an update of the latest IIO-Oscilloscope,
+   open the application. The user needs to supply a URI which will be used in
+   the context creation of the IIO Oscilloscope. If there's only one platform is
+   connected, the IIO Oscilloscope will find URI automatically; If more than one
+   platforms are connected, the user needs to supply the specific URI. The
+   instructions to obtain the URI can be found in the previous section. Note:
+   the "Serial Context" connection method is not enabled.
 
 2. Press refresh to display available IIO Devices and press connect.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/cn0585_remote_login.jpg
-   :width: 700px
+   :width: 700
 
 *Figure 9. IIO Oscilloscope Connection*
 
@@ -365,39 +373,43 @@ Voltage9                               PAD_ADC3
 
 *Table 7. Voltage Configuration for GPIO Pins*
 
-4. Input sources for AD3552R devices axi-ad3552r-0 and axi-ad3552r-1 can be configured as dma_input, ramp_input or adc_input.
+4. Input sources for AD3552R devices axi-ad3552r-0 and axi-ad3552r-1 can be
+   configured as dma_input, ramp_input or adc_input.
 
 -  dma_input: DAC input is driven by signals generated by Matlab stored in DMA.
 -  ramp_input: DAC input is driven by ramp signal generated by Matlab stored in DMA.
--  adc_input: For passthrough models, DAC input is driven by ADC output. For models with integrated HDL_DUT, DAC input is driven by HDL_DUT outputs.
+-  adc_input: For passthrough models, DAC input is driven by ADC output. For
+   models with integrated HDL_DUT, DAC input is driven by HDL_DUT outputs.
 
 Select the desired input source for both AD3552R devices axi-ad3552r-0 and axi-ad3552r-1 as dma_input. |input_source_dac0_cn0585.png|\ *Figure 11. AD3552R Input Source Selection in IIO Oscilloscope*
 
 .. important::
 
-   Even if the input source is set to adc_input or ramp_input the steps regarding the DAC Data Manager tab have to be followed.
-
+   Even if the input source is set to adc_input or ramp_input the steps
+   regarding the DAC Data Manager tab have to be followed.
 
 5. Select the desired output range for both AD3552R devices. |output_range_cn0585.png|\ *Figure 12. AD3552R Output Range Selection in IIO Oscilloscope*
 
 .. warning::
 
-   Make sure you don't try to read/write the output_range attribute when the stream_status is in start_stream or start_stream_synced.
-
+   Make sure you don't try to read/write the output_range attribute when the
+   stream_status is in start_stream or start_stream_synced.
 
 .. important::
 
-   After changing the output range, the board should be power cycled to ensure the DACs operate properly.
+   After changing the output range, the board should be power cycled to ensure
+   the DACs operate properly.
 
-
-6. From the DAC Data Manager Window select the output channels of the DAC and enable the cyclic buffer for each DAC.
+6. From the DAC Data Manager Window select the output channels of the DAC and
+   enable the cyclic buffer for each DAC.
 
 7. Load an example file (.mat, .txt, etc) from the IIO Oscilloscope installation directory, under **Program Files/IIO Oscilloscope/lib/osc/waveforms** folder.
 
 .. important::
 
-   If the source is set as dma_input and the data from all 4 channels needs to be synchronized make sure that you press the load button for the axi-ad3552r-1 device first then for axi-ad3552r-0.
-
+   If the source is set as dma_input and the data from all 4 channels needs to
+   be synchronized make sure that you press the load button for the
+   axi-ad3552r-1 device first then for axi-ad3552r-0.
 
 |DAC_DATA_MANAGEMENT_cn0585.jpg| *Figure 13. DAC Data Manager with Example Waves on 4 Channels*
 
@@ -405,15 +417,17 @@ Select the desired input source for both AD3552R devices axi-ad3552r-0 and axi-a
 
 .. important::
 
-   If the source is set as dma_input and the data from all 4 channels needs to be synchronized make sure that you write the start_stream_synced for the axi-ad3552r-1 device first then for axi-ad3552r-0.
-
+   If the source is set as dma_input and the data from all 4 channels needs to
+   be synchronized make sure that you write the start_stream_synced for the
+   axi-ad3552r-1 device first then for axi-ad3552r-0.
 
 9. From the Debug window, select the stream_status IIO Attribute and start the stream (start_stream_synced means that all 4 channels are updated at the same time and the data streaming process waits for both DACs to be started). |stream_status_iio.jpg|\ *Figure 14. DAC Stream Status Selection*
 
 .. important::
 
-   If the source is set as dma_input and the data from all 4 channels needs to be synchronized make sure that you write the start_stream_synced for the axi-ad3552r-1 device first then for axi-ad3552r-0.
-
+   If the source is set as dma_input and the data from all 4 channels needs to
+   be synchronized make sure that you write the start_stream_synced for the
+   axi-ad3552r-1 device first then for axi-ad3552r-0.
 
 10. After the stream_status has been written and 4 channels are enabled, hit play button. Then data capture window can be seen like in Figure 15. |captured_loopback_signal_cn0585.jpg|\ *Figure 15. Captured Loopback Signal*
 
@@ -421,11 +435,11 @@ Select the desired input source for both AD3552R devices axi-ad3552r-0 and axi-a
 
    Note that there is a phase delay between voltage0/voltage2 and voltage1/voltage3 because the DAC device channels are updated consecutively See the DAC UPDATE MODES section in :adi:`AD3552R`
 
-
 .. warning::
 
-   If you intend to stop the stream transmission and start it again synchronized set the stream_status IIO Attribute to stop_stream for axi-ad3552r-1 device first then for the axi-ad3552r-0 device.
-
+   If you intend to stop the stream transmission and start it again synchronized
+   set the stream_status IIO Attribute to stop_stream for axi-ad3552r-1 device
+   first then for the axi-ad3552r-0 device.
 
 PyADI-IIO
 ~~~~~~~~~
@@ -441,7 +455,6 @@ Running the example
    :class: download
 
    Github link for the Python sample script: `CN0585 Python Example <https://github.com/analogdevicesinc/pyadi-iio/blob/cn0585_v1/examples/cn0585_fmcz_example.py>`_
-
 
 1. Download or git clone `pyadi-iio repository <https://github.com/analogdevicesinc/pyadi-iio>`_ to your local drive.
 
@@ -500,14 +513,16 @@ Press enter and lines below will be observed:
    input_source:dac0: dma_input
    input_source:dac1: dma_input
 
-The DAC outputs should be looped back into the ADCs as shown in figure 7 in the System Setup Using a ZedBoard section. After running the script with the board in this configuration, the following window will pop up:
+The DAC outputs should be looped back into the ADCs as shown in figure 7 in the
+System Setup Using a ZedBoard section. After running the script with the board
+in this configuration, the following window will pop up:
 
 |image6|\ *Figure 16: ADC Captured Data Python Plot*
 
 .. important::
 
-   If you plan to transmit multiple cycles of synchronous stream, make sure the script starts/stops axi-ad3552r-1 first, then axi-ad3552r-0.
-
+   If you plan to transmit multiple cycles of synchronous stream, make sure the
+   script starts/stops axi-ad3552r-1 first, then axi-ad3552r-0.
 
 MATLAB and Simulink
 ~~~~~~~~~~~~~~~~~~~
@@ -524,12 +539,10 @@ MATLAB and Simulink
    -  `SoC Blockset <https://www.mathworks.com/products/soc.html>`_
    
 
-
 .. admonition:: Download
    :class: download
 
    Github link for the Matlab sample script: `CN0585StreamingTest.m <https://github.com/analogdevicesinc/HighSpeedConverterToolbox/blob/cn0585_v1/test/CN0585StreamingTest.m>`_
-
 
 The steps described in the :doc:`Analog Devices Transceiver Toolbox For MATLAB and Simulink </wiki-migration/resources/tools-software/transceiver-toolbox>` page have to be followed to configure the Matlab/Simulink project using the `MathWorks HDL Workflow Advisor <https://www.mathworks.com/help/hdlcoder/examples/getting-started-with-hardware-software-codesign-workflow-for-xilinx-zynq-platform.html>`_.
 
@@ -538,9 +551,11 @@ Device Control and Data Streaming
 
 Remote data streaming to and from hardware is made available through system object interfaces, which are unique for each component or platform. The hardware interfacing system objects provide a class to both configure a given platform and move data back and forth from the device. To run the `CN0585StreamingTest.m <https://github.com/analogdevicesinc/HighSpeedConverterToolbox/blob/cn0585_v1/test/CN0585StreamingTest.m>`_ example, the following steps must be completed first.
 
-1. Ensure MATLAB package “Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio” is installed from Matlab Add-Ons.
+1. Ensure MATLAB package “Communications Toolbox Support Package for Analog
+   Devices ADALM-Pluto Radio” is installed from Matlab Add-Ons.
 
-2. Execute the following commands on the computer terminal (Cygwin is recommended for Windows) to set up a local git repository.
+2. Execute the following commands on the computer terminal (Cygwin is
+   recommended for Windows) to set up a local git repository.
 
 ::
 
@@ -551,9 +566,12 @@ Remote data streaming to and from hardware is made available through system obje
 
 3. Open Matlab from the HighSpeedConverterToolbox directory.
 
-4. Open CN0585StreamingTest.m from the test subdirectory, update the board_ip variable to match the Zedboard IP address, and finally run the script.
+4. Open CN0585StreamingTest.m from the test subdirectory, update the board_ip
+   variable to match the Zedboard IP address, and finally run the script.
 
-The DAC outputs should be looped back into the ADCs as shown in figure 6 in the System Setup Using a ZedBoard section. After running the script with the board in this configuration, the window in Figure 17 will pop up. :
+The DAC outputs should be looped back into the ADCs as shown in figure 6 in the
+System Setup Using a ZedBoard section. After running the script with the board
+in this configuration, the window in Figure 17 will pop up. :
 
 |matlab_plot.jpg|\ *Figure 17. ADC Captured Data Matlab Plot*
 
@@ -561,29 +579,31 @@ Note the y-axis is plotted in units of ADC codes, and can be converted to voltag
 
 .. important::
 
-   If you plan to transmit multiple cycles of synchronous stream, make sure to start/stop axi-ad3552r-1 first, then axi-ad3552r-0.
-
+   If you plan to transmit multiple cycles of synchronous stream, make sure to
+   start/stop axi-ad3552r-1 first, then axi-ad3552r-0.
 
 Configuring Custom HDL Models Using Simulink
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ZedBoard that drives CN0585 is configured with a HDL reference design which is an embedded system built around a processor core either ARM, NIOS-II, or Microblaze.
+The ZedBoard that drives CN0585 is configured with a HDL reference design which
+is an embedded system built around a processor core either ARM, NIOS-II, or
+Microblaze.
 
 .. image:: https://wiki.analog.com/_media/playground/rx.png
    :align: center
-   :width: 600px
+   :width: 600
 
 *Figure 18. HDL Block Design with Simulink HDL_DUT in Rx Configuration*
 
 .. image:: https://wiki.analog.com/_media/playground/tx.png
    :align: center
-   :width: 600px
+   :width: 600
 
 *Figure 19. HDL Block Design with Simulink HDL_DUT in Tx Configuration*
 
 .. image:: https://wiki.analog.com/_media/playground/rxtx.png
    :align: center
-   :width: 600px
+   :width: 600
 
 *Figure 20. HDL Block Design with Simulink HDL_DUT in Rx-Tx Configuration*
 
@@ -609,7 +629,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Additional Information and Useful Links
 ---------------------------------------
 
@@ -631,28 +650,28 @@ Reference Demos & Software
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/eval-cn0585-fmcz_kit_angle.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/hil_cn0584_personalityboard_top-web.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/eval-cn0585-fmcz_kit_top.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/eval-cn0585-fmcz_angle-web.jpg
-   :width: 400px
+   :width: 400
 .. |zed_jumpers.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/adaq8092/zed_jumpers.jpg
-   :width: 400px
+   :width: 400
 .. |cn0584_loopback_connection.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/cn0584_loopback_connection.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/max7301atl_output_channels_configuration.png
-   :width: 400px
+   :width: 400
 .. |input_source_dac0_cn0585.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/input_source_dac0_cn0585.png
-   :width: 700px
+   :width: 700
 .. |output_range_cn0585.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/output_range_cn0585.png
-   :width: 700px
+   :width: 700
 .. |DAC_DATA_MANAGEMENT_cn0585.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/dac_data_management_cn0585.jpg
-   :width: 500px
+   :width: 500
 .. |stream_status_iio.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/stream_status_iio.jpg
 .. |captured_loopback_signal_cn0585.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/captured_loopback_signal_cn0585.jpg
-   :width: 700px
+   :width: 700
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/figure15_adc_cap_data_python_plot.png
-   :width: 700px
+   :width: 700
 .. |matlab_plot.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/matlab_plot.jpg
-   :width: 800px
+   :width: 800

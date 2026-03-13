@@ -1,7 +1,11 @@
 DPG3
 ====
 
-The DPG3, or Data Pattern Generator 3, is a device designed to support the evaluation of Analog Devices' High-Speed Digital-to-Analog Converters (DAC). The device is connected to a PC over USB, and allows a user to download a data vector into the DPG3, which is then played out to an attached DAC evaluation board at full speed.
+The DPG3, or Data Pattern Generator 3, is a device designed to support the
+evaluation of Analog Devices' High-Speed Digital-to-Analog Converters (DAC). The
+device is connected to a PC over USB, and allows a user to download a data
+vector into the DPG3, which is then played out to an attached DAC evaluation
+board at full speed.
 
 **Please note:** Analog Devices' pattern generators and high-speed DAC evaluation boards are designed and sold solely to support an efficient and thorough means by which to evaluate Analog Devices high speed DACs in a lab environment for a wide range of end applications. Any application or use of the pattern generators and/or high-speed DAC evaluation boards, other than specified above, will not be supported.*
 
@@ -11,7 +15,7 @@ For information on the DPG2, the predecessor to the DPG3, please see the :doc:`D
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/dpg3-016.png
    :align: center
-   :width: 200px
+   :width: 200
 
 Ordering Code
 =============
@@ -56,7 +60,8 @@ Hardware Specifications
 -  Clocking
 
    -  On-connector clock input for all interfaces
-   -  Optional external clock input via front-panel SMA jack for CMOS and LVDS interfaces
+   -  Optional external clock input via front-panel SMA jack for CMOS and LVDS
+      interfaces
 
 -  Trigger
 
@@ -68,30 +73,37 @@ Hardware Specifications
 
    Some PCs with USB 3.0 *SuperSpeed* ports have been unable to communicate reliably with the DPG3. On these PCs, the standard USB 2.0 ports (without the |image1| logo) should be used with the DPG3.
 
-
 |image2| |image3|
 
 Output Data
 ===========
 
-The vector length must be at least 64 points per channel, and the vector length must be divisible by 64 for proper operation.
+The vector length must be at least 64 points per channel, and the vector length
+must be divisible by 64 for proper operation.
 
 Clocking
 ========
 
-The clocking system varies between the traditional CMOS/LVDS interfaces and the newer high-speed serial interface. In all cases, the DPG needs to be provided with a clock. It cannot generate a data clock internally.
+The clocking system varies between the traditional CMOS/LVDS interfaces and the
+newer high-speed serial interface. In all cases, the DPG needs to be provided
+with a clock. It cannot generate a data clock internally.
 
 CMOS/LVDS
 ---------
 
-Most evaluation boards will supply a clock to the DPG over the CMOS/LVDS connector. In all cases, this clock is LVDS, even if the rest of the interface is CMOS. A clock will be provided with the data that is synchronous to the data (source synchronous), which will match the format of the data.
+Most evaluation boards will supply a clock to the DPG over the CMOS/LVDS
+connector. In all cases, this clock is LVDS, even if the rest of the interface
+is CMOS. A clock will be provided with the data that is synchronous to the data
+(source synchronous), which will match the format of the data.
 
 Alternatively, a clock can be provided externally via the SMA jack on the front of the unit. In this case, the clock's amplitude must be +4dBm. This method is not recommended for general use. To enable the external clock operation, click the *Advanced/Debug* button in DPGDownloader, and select *Front panel SMA jack* as the Clock Source in the Clock section.
 
 High-Speed Serial
 -----------------
 
-The high-speed serial transceivers inside the DPG3 require a reference clock in order to be able to lock on to the embedded clock inside the serial data stream. This clock must be provided over the connector to the evaluation board.
+The high-speed serial transceivers inside the DPG3 require a reference clock in
+order to be able to lock on to the embedded clock inside the serial data stream.
+This clock must be provided over the connector to the evaluation board.
 
 External Trigger
 ================
@@ -101,14 +113,18 @@ The SMA jack on the front of the unit for the trigger can be used either as an i
 Input Trigger
 -------------
 
-When set as an input, the unit will start playback when the trigger is asserted (raised from low to high).
+When set as an input, the unit will start playback when the trigger is asserted
+(raised from low to high).
 
-The input high threshold is 2.0V, and the input low threshold is 0.8V, allowing it to be directly interfaced with 3.3V logic signals.
+The input high threshold is 2.0V, and the input low threshold is 0.8V, allowing
+it to be directly interfaced with 3.3V logic signals.
 
 Output Trigger
 --------------
 
-When set as an output, the trigger will pulse when the playback is running at the beginning of the vector. Therefore, it will pulse every time the vector is looped when in Loop mode, or only once if the unit is in Count mode.
+When set as an output, the trigger will pulse when the playback is running at
+the beginning of the vector. Therefore, it will pulse every time the vector is
+looped when in Loop mode, or only once if the unit is in Count mode.
 
 Connector Pinouts
 =================
@@ -121,7 +137,9 @@ The DGP3 has two separate connector systems for interfacing with evaluation boar
 High-Speed Serial Connector
 ---------------------------
 
-The second connector system on the DPG3 uses an FCi AirMax connector, part number 10057041-101LF. The mating connector used on the evaluation board is part number 10037324-101LF.
+The second connector system on the DPG3 uses an FCi AirMax connector, part
+number 10057041-101LF. The mating connector used on the evaluation board is part
+number 10037324-101LF.
 
 +-----+------------+-----------------------------------------------------------------------------------------------+
 | Pin | Name       | Description                                                                                   |
@@ -429,7 +447,9 @@ The second connector system on the DPG3 uses an FCi AirMax connector, part numbe
 
 *\* The RX SERDES lines are not enabled, and can not be used with JESD204 ADCs*
 
-*† The SPI lines are not enabled. Communication with parts on the evaluation board is performed over the I2C link, and converted into SPI on the evaluation board*
+*† The SPI lines are not enabled. Communication with parts on the evaluation
+board is performed over the I2C link, and converted into SPI on the evaluation
+board*
 
 Firmware Update
 ===============
@@ -447,10 +467,10 @@ Support
 Please contact `DPG Support <https://wiki.analog.com/mailto/dpg.support@analog.com>`_ with any additional questions regarding the DPG or DAC Software Suite.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/500px-usb_3.0_icon.png
-   :width: 50px
+   :width: 50
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpg3-front.png
-   :width: 800px
+   :width: 800
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpg3-back.png
-   :width: 800px
+   :width: 800
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloaderadvanceddebug.png
-   :width: 300px
+   :width: 300

@@ -1,8 +1,6 @@
 AD-FMCOMMS1-EBZ Register Access
 ===============================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,11 +17,10 @@ AD-FMCOMMS1-EBZ Register Access
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 The majority of the parts are accessible via SPI. To keep inside the LPC form factor, the board uses a micro-controller as an I\ :sup:`2`\ C to SPI bridge (SPI chip selects would have pushed things over the LPC pin count).
 
-The reference design SDK sample program provides general spi read and write access. It is possible to expand the access for burst mode.
+The reference design SDK sample program provides general spi read and write
+access. It is possible to expand the access for burst mode.
 
 ============= =================
 FMC connector I2C Slave Address
@@ -49,7 +46,8 @@ Transaction settings
 
 This must be done before a read or write:
 
-I2C Address (Write) \| 0x03 \| spi_settings[15:8] \| spi_settings[7:0] \| chip_select[15:8] \| chip_select[7:0] \|
+I2C Address (Write) \| 0x03 \| spi_settings[15:8] \| spi_settings[7:0] \|
+chip_select[15:8] \| chip_select[7:0] \|
 
 Write data
 ----------
@@ -66,7 +64,8 @@ Read firmware version
 
 I2C Address (Write) \| 0x01
 
-After sending this command the PIC firmware version can be read by issuing an I2C read command for 32 bytes of data.
+After sending this command the PIC firmware version can be read by issuing an
+I2C read command for 32 bytes of data.
 
 SPI settings
 ------------
@@ -154,14 +153,18 @@ The microcontroller on the board is a `Microchip PIC18F24J50-I/ML <http://www.mi
 
 .. important::
 
-   Do not update the PIC without saving the calibration and FRU information (so you can restore it). Updating the PIC code will erase this information. It's a simple matter to do (This assumes you are using the Linux design - there isn't way to do this for the no-OS infrastructure):
+   Do not update the PIC without saving the calibration and FRU information (so
+   you can restore it). Updating the PIC code will erase this information. It's
+   a simple matter to do (This assumes you are using the Linux design - there
+   isn't way to do this for the no-OS infrastructure):
 
    
    ::
    
       root@linaro-ubuntu-desktop:~# for eeprom in $(find /sys -name eeprom); do cat $eeprom > $(echo $eeprom | sed 's:/:_:g') ; done
    
-   Check to make sure the files are there properly (they should be 256 bytes each):
+   Check to make sure the files are there properly (they should be 256 bytes
+   each):
    
    ::
    
@@ -243,10 +246,9 @@ The microcontroller on the board is a `Microchip PIC18F24J50-I/ML <http://www.mi
       00000100
    
 
-
 |FMComms1 programming header|\ |ADI DAC boards programming header|\ The FMComms1 board (left) uses a non-standard pinout for the PIC programming. It is on a 0.1 inch header with the configuration shown. This is almost the same as the program header found on the ADI DAC boards, shown on the right (if you have one of those cables, it's pretty easy to snip pin 4 out, and make it work). It's up to you to make sure the part is properly connected and programmed properly.
 
 .. |FMComms1 programming header| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/software/programming_header.png
-   :width: 300px
+   :width: 300
 .. |ADI DAC boards programming header| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/software/dac_programmer.png
-   :width: 300px
+   :width: 300

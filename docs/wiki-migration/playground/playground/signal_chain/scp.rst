@@ -3,7 +3,10 @@
 SCP Hardware Evaluation Platform
 ================================
 
-The Signal Chain Power (SCP) hardware platform enables signal chain designers to quickly develop, prototype, and evaluate complete power solutions for instrumentation, test & measurement, and industrial automation precision signal chains.
+The Signal Chain Power (SCP) hardware platform enables signal chain designers to
+quickly develop, prototype, and evaluate complete power solutions for
+instrumentation, test & measurement, and industrial automation precision signal
+chains.
 
 :adi:`Hardware Overview <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/signal-chain-power-hardware-evaluation-platform.html>`
 

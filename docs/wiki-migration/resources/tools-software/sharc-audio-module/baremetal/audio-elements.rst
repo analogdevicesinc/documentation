@@ -39,10 +39,13 @@ Installing the Audio Elements and Audio Effects
 
 .. important::
 
-   This section can be skipped if you have installed the SHARC Audio Module Bare Metal SDK version 2.1.0 or greater.
+   This section can be skipped if you have installed the SHARC Audio Module Bare
+   Metal SDK version 2.1.0 or greater.
 
-
-Prior to the SHARC Audio Module Bare Metal SDK 2.1.0, the audio elements and audio effects are not part of the standard baremetal framework install. After you've created a new project with the New Project Wizard, follow the steps below to install and use these libraries:
+Prior to the SHARC Audio Module Bare Metal SDK 2.1.0, the audio elements and
+audio effects are not part of the standard baremetal framework install. After
+you've created a new project with the New Project Wizard, follow the steps below
+to install and use these libraries:
 
 -  Download the `audio_processing.zip <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/audio_processing.zip>`_ and extract it into the project you just created with the New Project Wizard. You should now have a folder called ``audio_processing/`` in your project.
 
@@ -55,8 +58,9 @@ Prior to the SHARC Audio Module Bare Metal SDK 2.1.0, the audio elements and aud
 
 .. important::
 
-   If you have copied all files over from the zip file attached then you do not need to do the rest of this section. If you would rather hand edit the files then the steps below detail how to do that.
-
+   If you have copied all files over from the zip file attached then you do not
+   need to do the rest of this section. If you would rather hand edit the files
+   then the steps below detail how to do that.
 
 -  Open up ``callback_audio_processing.cpp`` in each SHARC project and make the following modifications.
 
@@ -145,7 +149,10 @@ Selecting Effects
 
 Once installed, the push buttons on the AUDIO PROJECT fin can be used to increment and decrement the audio effect running on core 1 and the reverb preset running on core 2. The pots on the AUDIO PROJECT fin control parameters for each effect. See ``src/audio_processing/audio_effects_selector.cpp`` for information on which pot control which parameter.
 
-The first preset is bypass so when you run the code, initially, you will hear just clean, unprocessed audio. Press the switches to toggle between the various effects. Below is the list of effects implemented on core 1 that the push buttons will cycle through:
+The first preset is bypass so when you run the code, initially, you will hear
+just clean, unprocessed audio. Press the switches to toggle between the various
+effects. Below is the list of effects implemented on core 1 that the push
+buttons will cycle through:
 
 +------------------------+---------------------------------------------------------+
 | PB Index (SW3 and SW4) | Effect                                                  |
@@ -174,7 +181,10 @@ The first preset is bypass so when you run the code, initially, you will hear ju
 Programming with the Audio Elements and Audio Effects
 =====================================================
 
-The audio elements and audio effects are each implemented in a .c/.h file pair that can be called from C or C++. State information is stored in a C struct so you can instantiate as many instances as memory and processing power can support.
+The audio elements and audio effects are each implemented in a .c/.h file pair
+that can be called from C or C++. State information is stored in a C struct so
+you can instantiate as many instances as memory and processing power can
+support.
 
 Each .c/.h file contains the following routines:
 
@@ -182,7 +192,9 @@ Each .c/.h file contains the following routines:
 -  One or more **modify** routines to change parameters of the audio effect or audio element
 -  A **read** routine to process a block of data for the audio effect or audio element
 
-A C struct holds the configuration and state information for each instance of the audio effect or audio element. Thus if you want to run the effect on two channels, you'd declare two instances of the struct.
+A C struct holds the configuration and state information for each instance of
+the audio effect or audio element. Thus if you want to run the effect on two
+channels, you'd declare two instances of the struct.
 
-See the tutorials that follow for examples of building and chaining various audio elements and audio effects.
-
+See the tutorials that follow for examples of building and chaining various
+audio elements and audio effects.

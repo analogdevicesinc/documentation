@@ -43,7 +43,8 @@ Initialization example
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available at:
 
 -  `AXI_ADXCVR Highspeed Transceivers Header file <http://analogdevicesinc.github.io/no-OS/doxygen/axi__adxcvr_8h.html>`_
 -  `AXI_ADXCVR Highspeed Transceivers Source file <http://analogdevicesinc.github.io/no-OS/doxygen/axi__adxcvr_8c.html>`_
@@ -58,4 +59,3 @@ Source Code
    -  :git-no-OS:`Implementation of AXI_ADXCVR Highspeed Transceivers Driver. <drivers/axi_core/jesd204/axi_adxcvr.c>`
    -  :git-no-OS:`Header of AXI_ADXCVR Highspeed Transceivers Driver. <drivers/axi_core/jesd204/axi_adxcvr.h>`
    
-

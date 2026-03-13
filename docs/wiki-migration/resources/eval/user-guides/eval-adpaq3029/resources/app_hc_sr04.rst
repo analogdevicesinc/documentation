@@ -11,19 +11,19 @@ EVAL-ADPAQ3029 - HC-SR04 demo
    
    `Tile GUI application <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/moduware.tile.example-hcsr04.zip>`_\
 
-
 -  Follow the same steps as given `here <https://wiki.analog.com/../first_app>`_
 -  In this project, an Ultrasonic Sensor – HC-SR04 has been used.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app5.png
    :align: center
-   :width: 300px
+   :width: 300
 
--  The connections between the Ultrasonic Sensor and ADPAQ module are made as described in the table below.
+-  The connections between the Ultrasonic Sensor and ADPAQ module are made as
+   described in the table below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app6.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: round box
 
@@ -38,10 +38,9 @@ EVAL-ADPAQ3029 - HC-SR04 demo
    ============ ============== =================
    
 
-
 -  Build and run the project
 -  The Ultrasonic Sensor measurement is displayed on tile in “cm”.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile10.png
    :align: center
-   :width: 400px
+   :width: 400

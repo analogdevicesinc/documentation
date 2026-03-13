@@ -27,26 +27,36 @@ Hands-on activity
 ~~~~~~~~~~~~~~~~~
 
 -  breadboard Low-Pass filter implementation, two stages, with Bode plot visualisation, usage of power supplies and scope inputs
--  SPI communication with ADALP2000 AD5626 part, DAC converter, usage of Pattern Generator SPI interface and Scope channels for analog signals
+-  SPI communication with ADALP2000 AD5626 part, DAC converter, usage of Pattern
+   Generator SPI interface and Scope channels for analog signals
 
 What is Software Defined Instrumentation?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A single device encapsulating more instruments used for measurements, signal generation, signal acquisition, etc., powered by a PC open-source software that allows the user to customize the measurements, since the software is residing more on the host PC/mobile device instead of on the instrument.
+A single device encapsulating more instruments used for measurements, signal
+generation, signal acquisition, etc., powered by a PC open-source software that
+allows the user to customize the measurements, since the software is residing
+more on the host PC/mobile device instead of on the instrument.
 
 Bonus: it has a pocket size!
 
 .. image:: https://wiki.analog.com/_media/university/slide1.png
-   :width: 600px
+   :width: 600
 
 ADALM2000
 ~~~~~~~~~
 
-The ADALM2000 (M2K) Advanced Active Learning Module is an affordable USB-powered data acquisition module, that can be used to introduce fundamentals of electrical engineering in a self or instructor lead setting.
+The ADALM2000 (M2K) Advanced Active Learning Module is an affordable USB-powered
+data acquisition module, that can be used to introduce fundamentals of
+electrical engineering in a self or instructor lead setting.
 
-With 12-bit ADCs and DACs running at 100 MSPS, brings the power of high-performance lab equipment to the palm of your hand, enabling electrical engineering students and hobbyists to explore signals and systems into the tens of MHz without the cost and bulk associated with traditional lab gear.
+With 12-bit ADCs and DACs running at 100 MSPS, brings the power of
+high-performance lab equipment to the palm of your hand, enabling electrical
+engineering students and hobbyists to explore signals and systems into the tens
+of MHz without the cost and bulk associated with traditional lab gear.
 
-When coupled with Analog Devices' Scopy™ graphical application software running on a computer, provides the user with high performance instrumentation.
+When coupled with Analog Devices' Scopy™ graphical application software running
+on a computer, provides the user with high performance instrumentation.
 
 |image1| |image2|
 
@@ -57,7 +67,8 @@ By the end of this lab, you will learn:
 
 -  How to use a desktop Oscilloscope and Signal generator channels by operating a Network Analyzer, as well as Digital Pattern generator
 -  How to interface an analog front end simple circuit with M2K channels
--  How to generate and display signals with the lab tools Analog Devices provides
+-  How to generate and display signals with the lab tools Analog Devices
+   provides
 
 Pre-requisites
 --------------
@@ -92,7 +103,7 @@ Steps:
 
 .. image:: https://wiki.analog.com/_media/university/demo1waves.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Second stage filter
 ~~~~~~~~~~~~~~~~~~~
@@ -104,11 +115,12 @@ Steps:
 
 -  Connect the Scope Channel 2 after the first RC group and do a single sweep
 -  Take a signal snapshot to preserve the result as a reference
--  Connect the Scope Channel 2 after the second RC stage and perform another sweep
+-  Connect the Scope Channel 2 after the second RC stage and perform another
+   sweep
 
 .. image:: https://wiki.analog.com/_media/university/demo1waves1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Demo 2 - Digital Pattern Generator and Scope – AD5626 component – SPI controlled and analog signal visualized using Scope
 -------------------------------------------------------------------------------------------------------------------------
@@ -130,12 +142,11 @@ Theory of operation
 
 SPI Transfer:
 
-
 |image7|
 
 .. image:: https://wiki.analog.com/_media/university/demo2spi1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Hardware Setup
 ~~~~~~~~~~~~~~
@@ -149,7 +160,8 @@ Steps
 -  Connect the GND pin to the GND of the M2K
 -  Beware not to connect the supply pins of the chip to the positive power of ADALM2000 and GND in a reversed order!
 -  Connect the digital pins to the corresponding chip pins as shown in the schematic.
--  Configure the SPI interface in pattern generator to match the timing diagram of the AD5626 datasheet.
+-  Configure the SPI interface in pattern generator to match the timing diagram
+   of the AD5626 datasheet.
 
 Pattern generator signals:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,11 +182,13 @@ SPI Setup
 -  According to the AD5626 datasheet, the shift register contents are updated on the rising edge of /LDAC if /CLR is high.
 -  Set the pattern of DIO4 (/CLR) as “Number” and enter the value 1.
 -  /LDAC signal(DIO3) should have a rising edge before /CS falling edge and should be high as long as bits are transmitted serially.
--  With respect to the stated conditions, the DIO3 signal needs to be set as pulse type 100kHz frequency, Low number of samples equal to 5, High 75, for the set frequency of the SPI 1MHz.
+-  With respect to the stated conditions, the DIO3 signal needs to be set as
+   pulse type 100kHz frequency, Low number of samples equal to 5, High 75, for
+   the set frequency of the SPI 1MHz.
 
 .. image:: https://wiki.analog.com/_media/university/demo2scopy.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Open Scope instrument and connect Scope channel 1 to output pin of the AD5626 (pin 8 of the IC)
 -  Enable the positive 5V Power supply
@@ -184,7 +198,7 @@ SPI Setup
 
 .. image:: https://wiki.analog.com/_media/university/demo2scopy1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 References:
 ===========
@@ -202,20 +216,20 @@ References:
 :ez:`community/university-program`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/slide2.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/university/scopy.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/university/demo1hw.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/university/demo1bb.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/university/demo1hw1.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/university/demo1bb1.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/university/demo2spi.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/university/demo2hw.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/university/demo2bb.png
-   :width: 400px
+   :width: 400

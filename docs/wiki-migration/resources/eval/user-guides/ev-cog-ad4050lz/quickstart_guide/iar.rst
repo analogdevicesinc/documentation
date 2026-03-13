@@ -27,28 +27,31 @@ Software Packs and Driver Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_1.png
    :align: center
-   :width: 750px
+   :width: 750
 
 -  In **'CMSIS Pack Manager'** window, click 'Install local pack file'.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_2.png
    :align: center
-   :width: 700px
+   :width: 700
 
--  In 'Pack file to install' window navigate to the downloaded pack (as already done in step 1 of this section), select all the packs to install and click Open.
+-  In 'Pack file to install' window navigate to the downloaded pack (as already
+   done in step 1 of this section), select all the packs to install and click
+   Open.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_3.png
    :align: center
-   :width: 700px
+   :width: 700
 
 Running an Example Project
 --------------------------
 
--  Power the MCU Cog using a USB (micro-B) Cable. You should see a red LED and a yellow LED turn on by default.
+-  Power the MCU Cog using a USB (micro-B) Cable. You should see a red LED and a
+   yellow LED turn on by default.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/img_20171030_180904.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 -  In IAR IDE, go to Project-> Create New Project...
 
@@ -64,13 +67,13 @@ Running an Example Project
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/example_run_2.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Select **button_press** example and click 'Finish'.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/example_run_3.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Save the project to the desired location.
 -  Click on 'Debug and Download' icon |image1|\ on the menu bar. This will compile, build and download the project on EV-COG-AD4050LZ using CMSIS-DAP.
@@ -80,7 +83,6 @@ Running an Example Project
 You are all set!
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad4050lz/quickstart>`
-
 
 | End Document
 

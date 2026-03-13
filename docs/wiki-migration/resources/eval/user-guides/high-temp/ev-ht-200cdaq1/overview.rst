@@ -6,7 +6,22 @@ EV-HT-200CDAQ1 Overview
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/high-temp/ev-ht-200cdaq1dtop.jpg
    :align: center
 
-The EV-HT-200CDAQ1 is a complete system reference platform enabling precision data acquisition and control in extreme temperatures up to 200°C. Based upon the AD7981 analog-to-digital SAR converter, this reference design demonstrates a full featured system with two high speed simultaneously sampled channels along with 8 additional multiplexed channels suitable for covering the acquisition requirements for many high temperature, harsh environment application such as downhole oil and gas instrumentation. The data acquisition front end is connected to the VORAGO Technologies VA10800 ARM® Cortex®-M0 based microcontroller via multiple SPI ports. Once acquired, the data can be processed locally or transmitted via a UART or optional RS485 communications interface. In addition to the hardware, open source firmware uses FreeRTOS with optimized drivers and a data acquisition protocol with multiple modes of operation. Open source host software allows the users to connect to the board via UART to control acquisition modes, view data, log data and perform signal analysis. This platform is suitable as reference design, for rapid prototyping and lab testing of high temperature instrumentation systems.
+The EV-HT-200CDAQ1 is a complete system reference platform enabling precision
+data acquisition and control in extreme temperatures up to 200°C. Based upon the
+AD7981 analog-to-digital SAR converter, this reference design demonstrates a
+full featured system with two high speed simultaneously sampled channels along
+with 8 additional multiplexed channels suitable for covering the acquisition
+requirements for many high temperature, harsh environment application such as
+downhole oil and gas instrumentation. The data acquisition front end is
+connected to the VORAGO Technologies VA10800 ARM® Cortex®-M0 based
+microcontroller via multiple SPI ports. Once acquired, the data can be processed
+locally or transmitted via a UART or optional RS485 communications interface. In
+addition to the hardware, open source firmware uses FreeRTOS with optimized
+drivers and a data acquisition protocol with multiple modes of operation. Open
+source host software allows the users to connect to the board via UART to
+control acquisition modes, view data, log data and perform signal analysis. This
+platform is suitable as reference design, for rapid prototyping and lab testing
+of high temperature instrumentation systems.
 
 --------------
 
@@ -69,7 +84,8 @@ Open Source Firmware and Software Optimized for Data Acquisition
 
 ==== FreeRTOS Firmware Integration ====
 
--  Optimized drivers and data acquisition controls functions partitioned into tasks allows end user to focus on application coding right away
+-  Optimized drivers and data acquisition controls functions partitioned into
+   tasks allows end user to focus on application coding right away
 
 PC Host Data Viewer
 ~~~~~~~~~~~~~~~~~~~

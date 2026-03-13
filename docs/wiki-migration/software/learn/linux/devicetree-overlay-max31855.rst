@@ -3,7 +3,11 @@
 Device Tree Overlay From Scratch - MAX31855
 ===========================================
 
-This walks through the process of creating an overlay for the RaspberryPI from scratch.  In this example, we'll be adding a brand new device to the system. The target hardware is the MAX31855 Thermocouple to Digital converter, via the MAX31855PMB1 PMOD board. This part was chosen due to an existing Linux driver, but lack of overlay to enable it within the Kuiper Linux system.
+This walks through the process of creating an overlay for the RaspberryPI from
+scratch.  In this example, we'll be adding a brand new device to the system. The
+target hardware is the MAX31855 Thermocouple to Digital converter, via the
+MAX31855PMB1 PMOD board. This part was chosen due to an existing Linux driver,
+but lack of overlay to enable it within the Kuiper Linux system.
 
 Step-by-Step
 ============
@@ -43,7 +47,10 @@ In the case of the MAX31855 there is not a fully written Wiki page, but rather a
 Step 3 - Starting the Overlay
 -----------------------------
 
-The next step is to start the actual overlay file.  We will be performing the work on the actual target RaspberryPI.  Once the RaspberryPI is booted, open your favorite text editor and start a new overlay file by including the necessary header and fragment blocks as a boiler plate:
+The next step is to start the actual overlay file.  We will be performing the
+work on the actual target RaspberryPI.  Once the RaspberryPI is booted, open
+your favorite text editor and start a new overlay file by including the
+necessary header and fragment blocks as a boiler plate:
 
 ::
 
@@ -84,7 +91,9 @@ You'll note the only content so far is setting the status to okay. This essentia
 Step 5 - Adding the Device
 --------------------------
 
-With the target defined, the device can be added.  The documentation provided a complete device tree entry for the MAX31855, which can be copied directly into the overlay.
+With the target defined, the device can be added.  The documentation provided a
+complete device tree entry for the MAX31855, which can be copied directly into
+the overlay.
 
 ::
 
@@ -109,12 +118,20 @@ With the target defined, the device can be added.  The documentation provided a
        };
    };
 
-Note: In the case of SPI devices the reg property indicates which Chip Select line of the bus to use. In this case, the PMOD is connected to CS0.  For I2C devices, the reg property is the bus address.
+Note: In the case of SPI devices the reg property indicates which Chip Select
+line of the bus to use. In this case, the PMOD is connected to CS0.  For I2C
+devices, the reg property is the bus address.
 
 Step 6 - Deconflicting the Tree
 -------------------------------
 
-Prior to building the overlay, we need to ensure there is no conflict with existing entries. This takes some knowledge of what is currently running in the hardware system, and when possible it is best to replicate work done on other overlays which may use the same hardware bus.  In the case of the RaspberryPI, we need to ensure the userspace SPI bus access is not available.  To do this the spidev0 device will be set to disabled.    It is not guaranteed that spidev0 was enabled in the baseline device tree, but this is a precautionary measure.
+Prior to building the overlay, we need to ensure there is no conflict with
+existing entries. This takes some knowledge of what is currently running in the
+hardware system, and when possible it is best to replicate work done on other
+overlays which may use the same hardware bus.  In the case of the RaspberryPI,
+we need to ensure the userspace SPI bus access is not available.  To do this the
+spidev0 device will be set to disabled.    It is not guaranteed that spidev0 was
+enabled in the baseline device tree, but this is a precautionary measure.
 
 ::
 
@@ -162,7 +179,10 @@ Copy the output file from the ``%%dtc ''command, in this case ''rpi-max31855.dtb
 
    analog@rpi1:~ $ sudo cp rpi-max31855.dtbo /boot/overlays/
 
-Edit the /boot/config.txt file to include the new overlay.  You will also need to be sudo to perform this action.  Recall, the line is dtoverlay=<overlay>, with the file extension omitted.  Be sure to comment out (#) or delete any other overlays which may conflict on the SPI bus with this part.
+Edit the /boot/config.txt file to include the new overlay.  You will also need
+to be sudo to perform this action.  Recall, the line is dtoverlay=<overlay>,
+with the file extension omitted.  Be sure to comment out (#) or delete any other
+overlays which may conflict on the SPI bus with this part.
 
 ::
 

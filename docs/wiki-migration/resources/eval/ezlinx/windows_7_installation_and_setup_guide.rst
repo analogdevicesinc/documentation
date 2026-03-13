@@ -25,10 +25,8 @@ ezLINX Sample PC Application Installation
 
    :adi:`Download Sample PC Application Installation files <static/imported-files/eval_boards/ezLINXPCApp.zip>`
 
-
-Run the setup by double clicking on the setup.exe file. This should start the installation process and when completed the window below will open:
-
-
+Run the setup by double clicking on the setup.exe file. This should start the
+installation process and when completed the window below will open:
 
 |image2|
 
@@ -39,7 +37,8 @@ Connecting the ezLINX Board to the PC
 
 -  Connect the ezLINX board to the power supply using the supplied AC adapter
 -  Connect the ezLINX board to the PC using the supplied USB A to USB mini B cable.
--  Ignore the found new hardware prompt that pops up in the bottom right corner of the screen
+-  Ignore the found new hardware prompt that pops up in the bottom right corner
+   of the screen
 
 Installing the USB Drivers
 --------------------------
@@ -48,7 +47,6 @@ Installing the USB Drivers
    :class: download
 
    :adi:`Download the Windows 32-bit driver <static/imported-files/eval_boards/ezLINXGadgetEthernetUSBDriver.zip>`
-
 
 | There are two different drivers for the 32-bit and 64-bit versions of Windows 7 so if you are unsure which version of the OS the PC is running then check in the system settings before attempting to install the driver.
 | Navigate to the device manager by searching for it in the start menu like so: |image3|
@@ -69,32 +67,35 @@ Installing the USB Drivers
 
 | Open the ezLINX application window and click on the board icon in the bottom left corner of the window (or click on Configure button). In the IP address settings enter the following: |image12|
 
-Now click the “use changes” button then the “connect” button and the status light will turn from red to green. The board and the PC application are now connected.
+Now click the “use changes” button then the “connect” button and the status
+light will turn from red to green. The board and the PC application are now
+connected.
 
 Verify Connection
 -----------------
 
-To verify the connection perform a simple GPIO test. Click on the GPIO button on the left hand side of the window:
+To verify the connection perform a simple GPIO test. Click on the GPIO button on
+the left hand side of the window:
 
 |image13| Tick the box next to GPIO 1 and set the direction to 1 and the value to 0 and click the “use changes” button. The orange LED, LED1 that was previously on on the board will now switch off. To switch it back on again set the value to 1 and click the “use changes” button.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/dotnetframeworkv4installationwindow.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/ezlinxopenwindow.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/devicemanagerwindow.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/updatedriversoftwarewindow.jpg
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/browsethecomputerfordriversoftware.jpg
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/browseforthedriversoftwarewindow.jpg
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/updatedriversoftwareendwindow.jpg
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/networkandsharingcenterwindow.jpg
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/localareaconnectionwindow.jpg
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/localareaconnectionpropertieswindow.jpg
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/internetprotocolproperties.jpg
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/boardconfigurationwindow.jpg
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/win7/gpiointerface.jpg
-   :width: 600px
+   :width: 600

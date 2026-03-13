@@ -5,13 +5,14 @@ Store kernel image and RootFS on the eMMC
 
    The following instructions are for the ADSP-SC598-EZKIT development board (the EV-SC598-SOM System-on-Module (SOM) board attached to the EV-SOMCRR-EZKIT carrier board). Furthermore, this is supported on :doc:`version 3.0.0 of Linux for ADSP-SC5xx </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>`\
 
-
 Introduction
 ------------
 
-This example will guide you through some changes that are needed in order to store the kernel and rootfs on the eMMC, with U-Boot still booting out of QSPI.
+This example will guide you through some changes that are needed in order to
+store the kernel and rootfs on the eMMC, with U-Boot still booting out of QSPI.
 
-This allows for storing larger images without having to plug in an external device, as the SC598-SOM comes with eMMC present on the SOM.
+This allows for storing larger images without having to plug in an external
+device, as the SC598-SOM comes with eMMC present on the SOM.
 
 Prepare the build
 -----------------
@@ -173,7 +174,8 @@ Return to the ``build`` directory of your project, i.e. ``$PROJECTDIR/build/`` a
 
 When that's done, Boot U-Boot from JTAG on the target board and flash SPI. This is described in detail in :doc:`Yocto Linux 3.0.0 Quickstart Guide for ADSP-SC598 </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc598_3_0_0>` during the '**Running U-Boot on the Board for the first time**' section.
 
-Now that you have U-Boot flashed on the target board, you can boot the eMMC provisioning ramdisk like so:
+Now that you have U-Boot flashed on the target board, you can boot the eMMC
+provisioning ramdisk like so:
 
 ::
 
@@ -211,9 +213,12 @@ On your build machine, you need to flash the image to the target board via SSH:
 
 $ cd $PROJECTDIR/build/tmp/deploy/images/adsp-sc598-som-ezkit
 
-$ dd if=adsp-sc5xx-minimal-mmc-adsp-sc598-som-ezkit.wic.gz \| ssh root@<your board's ip> 'adi-flash-emmc.sh'
+$ dd if=adsp-sc5xx-minimal-mmc-adsp-sc598-som-ezkit.wic.gz \| ssh root@<your
+board's ip> 'adi-flash-emmc.sh'
 
-Flashing image... 75396+1 records in 75396+1 records out 38602977 bytes (39 MB, 37 MiB) copied, 23.0113 s, 1.7 MB/s Image flashed... Resizing partition to fill empty space... Resized! Complete! </code>
+Flashing image... 75396+1 records in 75396+1 records out 38602977 bytes (39 MB,
+37 MiB) copied, 23.0113 s, 1.7 MB/s Image flashed... Resizing partition to fill
+empty space... Resized! Complete! </code>
 
 Finally, reboot your target board:
 

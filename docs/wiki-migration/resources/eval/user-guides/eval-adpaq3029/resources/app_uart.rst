@@ -13,16 +13,16 @@ EVAL-ADPAQ3029 - UART(Arduino) demo
    
    `Arduino code <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/Uart.ino.zip>`_\
 
-
 -  Follow the same steps as given `here <https://wiki.analog.com/../first_app>`_
 -  In this project, an Arduino board has been used.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app11.png
    :align: center
-   :width: 200px
+   :width: 200
 
 -  Upload the ``Arduino code`` into ``Arduino Uno`` board using Arduino IDE.
--  The connections between the Arduino and ADPAQ Board are made as described below.
+-  The connections between the Arduino and ADPAQ Board are made as described
+   below.
 
 .. container:: round box
 
@@ -36,19 +36,19 @@ EVAL-ADPAQ3029 - UART(Arduino) demo
    =================== ============== =================
    
 
-
--  Apart from these connections, an led along with a 10k resistor has to be connected between the Digital pin 12 of Arduino and Ground.
+-  Apart from these connections, an led along with a 10k resistor has to be
+   connected between the Digital pin 12 of Arduino and Ground.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app12.png
-   :width: 400px
+   :width: 400
 
 -  Build and run the project
--  The tile has 2 buttons “On” and “Off” buttons. By clicking on those buttons, we can control the led that is connected to the pin 12 of Arduino.
+-  The tile has 2 buttons “On” and “Off” buttons. By clicking on those buttons,
+   we can control the led that is connected to the pin 12 of Arduino.
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile15.png>`_
-
 
 |image1|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile16.png
-   :width: 400px
+   :width: 400

@@ -11,20 +11,22 @@ Limiter (ADAU1772)
 
 | 
 
+.. important::
+
+   An external detect version of the limiter also exists in the Toolbox library.
+   This cell has a separate input to be compared against the threshold giving
+   the ability to 'sidechain' or use a separate 'key input' to the compressor.
 
 .. important::
 
-   An external detect version of the limiter also exists in the Toolbox library. This cell has a separate input to be compared against the threshold giving the ability to 'sidechain' or use a separate 'key input' to the compressor.
-
-
-.. important::
-
-   In order to use the limiter on the ADAU1772 the 'Limiter Enable' bit must set high.
+   In order to use the limiter on the ADAU1772 the 'Limiter Enable' bit must set
+   high.
 
    
    Core Enable register; address 0x000B; bit [1].
    
-   In SigmaStudio this switch can be found in the Chip Control tab of the Hardware Configuration section of the project.
+   In SigmaStudio this switch can be found in the Chip Control tab of the
+   Hardware Configuration section of the project.
 
    
    |limiteren.png|
@@ -66,4 +68,4 @@ GUI Controls
 
 .. |limiter1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/limiter1.png
 .. |limiteren.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/limiteren.png
-   :width: 500px
+   :width: 500

@@ -5,7 +5,7 @@ The :adi:`EVAL-ADICUP360` is an Arduino-like platform based on the :adi:`ADuCM36
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ecosystem_collage.png
    :align: right
-   :width: 500px
+   :width: 500
 
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/eval-adicup360/introduction>`
 -  :doc:`Tools and Driver Details </wiki-migration/resources/eval/user-guides/eval-adicup360/tools>`

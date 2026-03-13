@@ -1,7 +1,9 @@
 ADRV9361-Z7035 User Guide - Software
 ====================================
 
-The Zynq SoC onboard the ADRV9361-Z7035 SDR 2X2 contains Dual ARM® Cortex™-A9 MPCore™ processors capable of running a variety of operating systems and is supported by an ecosystem of development tools.
+The Zynq SoC onboard the ADRV9361-Z7035 SDR 2X2 contains Dual ARM® Cortex™-A9
+MPCore™ processors capable of running a variety of operating systems and is
+supported by an ecosystem of development tools.
 
 Getting Started
 ---------------
@@ -22,7 +24,12 @@ To quickly explore the reference design, here are some resources:
    -  The TCL scripts to build the Vivado project for this carrier are located in /projects/pzsdr/ccfmc
    -  The :doc:`ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>` explains how to rebuild the FPGA project.
 
-NOTE: The reference design is based on the HDL code maintained by Analog Devices. To manage dependencies in the build process for Vivado projects, Analog Devices provides Linux-based makefiles. We recommend that Windows users build Vivado projects using ‘make’ under CYGWIN. Instructions to install a minimal version of CYGWIN that will provide a Linux-like environment under Windows are available here.
+NOTE: The reference design is based on the HDL code maintained by Analog
+Devices. To manage dependencies in the build process for Vivado projects, Analog
+Devices provides Linux-based makefiles. We recommend that Windows users build
+Vivado projects using ‘make’ under CYGWIN. Instructions to install a minimal
+version of CYGWIN that will provide a Linux-like environment under Windows are
+available here.
 
 Operating Systems
 -----------------
@@ -73,7 +80,8 @@ Some useful links for more information are provided as follows:
 
 -  MATLAB Filter Design Wizard for AD9361
 
-   -  wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/filters
+   -
+      wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/filters
 
 -  SimRF Models of the AD9361 Agile RF Transceiver
 
@@ -86,11 +94,15 @@ Some useful links for more information are provided as follows:
 MathWorks Support by Analog Devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Analog Devices works closely with MathWorks to develop custom capabilities for the ADRV9361-Z7035 SDR. For example, MathWorks HDL Workflow Advisor support plus MATLAB and Simulink data exchange over Ethernet with IIO System Object. Some useful links for more information are provided as follows:
+Analog Devices works closely with MathWorks to develop custom capabilities for
+the ADRV9361-Z7035 SDR. For example, MathWorks HDL Workflow Advisor support plus
+MATLAB and Simulink data exchange over Ethernet with IIO System Object. Some
+useful links for more information are provided as follows:
 
 -  Analog Devices BSP for MathWorks HDL Workflow Advisor
 
-   -  wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/matlab_bsp
+   -
+      wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/matlab_bsp
 
 -  MATLAB and Simulink data exchange over Ethernet with IIO System Object
 
@@ -104,7 +116,9 @@ Analog Devices provides a comprehensive set of drivers, source code, reference d
 Analog Devices AD9361 RF Agile Transceiver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Analog Devices provides complete drivers for the AD9361 for both bare metal/No-OS and operating systems (Linux). The AD9361 and AD9364 share the same API. The AD9361 and AD9364 drivers can be found at:
+Analog Devices provides complete drivers for the AD9361 for both bare
+metal/No-OS and operating systems (Linux). The AD9361 and AD9364 share the same
+API. The AD9361 and AD9364 drivers can be found at:
 
 -  :doc:`Linux </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>` wiki page
 -  :doc:`No-OS </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/baremetal>` wiki page
@@ -119,7 +133,8 @@ In addition, Analog Devices provides FPGA :doc:`HDL source code </wiki-migration
 Xilinx Zynq-7000 AP SoC
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Analog Devices provides complete drivers for the Zynq SoC ARM peripherals, including those implemented on the ADRV9361-Z7035 SDR 2X2 module.
+Analog Devices provides complete drivers for the Zynq SoC ARM peripherals,
+including those implemented on the ADRV9361-Z7035 SDR 2X2 module.
 
 -  Ethernet Linux MDIO driver
 -  USB Linux driver
@@ -130,7 +145,9 @@ These are included in the Linux kernel images provided at the :doc:`Zynq Images 
 MATLAB and Simulink Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These designs demonstrate high bandwidth data transfer between ADRV9361-Z7035 SDR and MATLAB or Simulink running on a host PC. They also provide examples of designing custom baseband functions in the Zynq SoC.
+These designs demonstrate high bandwidth data transfer between ADRV9361-Z7035
+SDR and MATLAB or Simulink running on a host PC. They also provide examples of
+designing custom baseband functions in the Zynq SoC.
 
 -  :doc:`Stream data into/out of MATLAB </wiki-migration/resources/tools-software/linux-software/libiio/clients/fmcomms2_3_simulink>`
 -  :doc:`Beacon Frame Receiver Example </wiki-migration/resources/tools-software/linux-software/libiio/clients/beacon_frame_receiver_simulink>`
@@ -139,4 +156,4 @@ These designs demonstrate high bandwidth data transfer between ADRV9361-Z7035 SD
 -  :doc:`ADS-B Airplane Tracking Example </wiki-migration/resources/tools-software/linux-software/libiio/clients/adsb_example>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/adigit_hub_hdl_repository.png
-   :width: 600px
+   :width: 600

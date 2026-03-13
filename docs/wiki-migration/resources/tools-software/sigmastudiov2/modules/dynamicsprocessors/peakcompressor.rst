@@ -8,12 +8,15 @@ Peak Compressor
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcompgraph.png
    :alt: peakcompgraph.png
-   :width: 450px
+   :width: 450
 
 Description
 -----------
 
-The Peak Compressor block computes the peak level of the input signal, if peak of the signal is more than the threshold level, signal level immediately changes to new peak level and if the peak level is below the threshold level, it slowly reaches the new peak level by accounting to the hold and decay time.
+The Peak Compressor block computes the peak level of the input signal, if peak
+of the signal is more than the threshold level, signal level immediately changes
+to new peak level and if the peak level is below the threshold level, it slowly
+reaches the new peak level by accounting to the hold and decay time.
 
 Variants
 --------
@@ -53,7 +56,6 @@ Name    Type  Description
 Output1 Audio Output channel1
 ======= ===== ===============
 
-
 | ===== Configurable Parameters =====
 
 +--------------------+-----------------------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -82,7 +84,6 @@ Hold           Hold value   Float                  8.24 format
 Decay          Decay value  Float                  8.24 format
 Table          Table values Float                  8.24 format
 ============== ============ ====================== =============
-
 
 | ===== DSP Parameter Computation ===== Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear) Hold = FS \* Hold/1000
 

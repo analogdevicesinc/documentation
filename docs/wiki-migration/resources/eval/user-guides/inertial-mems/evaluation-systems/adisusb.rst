@@ -5,10 +5,9 @@ ADISUSB Landing Page
 
    The :adi:`ADISUSB` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported. The :adi:`ADISUSB` has been obsoleted and is no longer available for purchase.
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/adisusb.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Overview
 --------

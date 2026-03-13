@@ -3,11 +3,12 @@ EVAL-CN0509-EBZ Overview
 
 :adi:`CN0509` is a wide input range (5V to 100V) USB charger capable of providing up to 2A at 5V from a wide range of DC sources including solar panels, fully charged or half-discharged car batteries, -48V telecom backup supplies, random stacks of alkaline cells, treadmill motors hacked to run as generators, wind turbines, etc. using the combination of wide input :adi:`LTC7103` buck converter and an isolated flyback converter :adi:`LT8302`. The circuit accepts DC voltage from 5V to 100V and produce an isolated 5V supply via a standard USB connector. The outer case of many cell phones and other portable electronics are often electrically connected to USB ground. As such, isolation is necessary in situations in which the power source’s relationship to Earth ground is unknown.
 
-The circuit will survive up to 100V reverse connection to a power source with a green LED indicating correct input polarity and red led otherwise.
+The circuit will survive up to 100V reverse connection to a power source with a
+green LED indicating correct input polarity and red led otherwise.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/picture1.png
    :align: center
-   :width: 500px
+   :width: 500
 
 --------------
 
@@ -30,11 +31,14 @@ Equipment Required
 -  EVAL-CN0509-EBZ Circuit Evaluation Board
 -  DC power supply (any voltage, 5 V to 100 V)
 
-   -  Solar panels, fully charged or half-discharged car batteries, -48V telecom backup supplies, random stacks of alkaline cells, treadmill motors hacked to run as generators, wind turbines
+   -  Solar panels, fully charged or half-discharged car batteries, -48V telecom
+      backup supplies, random stacks of alkaline cells, treadmill motors hacked
+      to run as generators, wind turbines
 
 -  USB multimeter tester (or equivalent)
 -  USB Type A to Micro-USB/Type C/Lightning cable
--  A device with USB charging capability (cell phone, tablet, or portable power pack) and a USB charging cable for the device
+-  A device with USB charging capability (cell phone, tablet, or portable power
+   pack) and a USB charging cable for the device
 
 --------------
 
@@ -43,7 +47,7 @@ Block Assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/block_dia.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connector **P1** is the screw terminal block for input supply
 -  Connector **P2** is the USB output connectors for the load
@@ -65,7 +69,7 @@ USB Output Connectors
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/usb_stack.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Bottom receptacle (1) includes a USB Dedicated Charging Port (DCP) controller that enables up to 2A charging on devices from various manufacturers
 -  Top receptacle (2) is for general-purpose charging rated up to 500mA
@@ -77,7 +81,7 @@ Test setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/setup_2.png
    :align: center
-   :width: 850px
+   :width: 850
 
 -  Connect the input DC supply to P1 on :adi:`EVAL-CN0509-EBZ <CN0509>`. Ensure safe connection because it may deal with input voltages up to 100 V.
 
@@ -85,22 +89,30 @@ Running the System
 ~~~~~~~~~~~~~~~~~~
 
 -  Turn on DC supply.
--  The circuit will determine if input connection is in correct polarity through lighting DS1 or DS2.
+-  The circuit will determine if input connection is in correct polarity through
+   lighting DS1 or DS2.
 
-   -   If DS1 (green LED) turns on, this means correct polarity on the input and circuit delivers up to 10W on P2 USB output ports.
+   -   If DS1 (green LED) turns on, this means correct polarity on the input and
+       circuit delivers up to 10W on P2 USB output ports.
 
-      -  If DS2 (red LED) illuminates, turn off the input supply, disconnect the power inputs, swap the power leads, and reconnect the supply outputs to P1.
+      -  If DS2 (red LED) illuminates, turn off the input supply, disconnect the
+         power inputs, swap the power leads, and reconnect the supply outputs to
+         P1.
 
 -  Connect the USB multimeter tester to the lower USB port on the EVAL-CN0509-EBZ.
 -  Connect a fast charge capable device to the USB multimeter tester using the charging cable of the device.
 -  You can check the USB multimeter tester and see if the device is pulling more than 500 mA but less than 2 A.
 -  Connect the USB multimeter tester to the upper USB port on the EVAL-CN0509-EBZ.
 -  You can check the USB multimeter tester and see if the device is pulling approximately 500 mA.
--  Take note that each device has its own "charge controller circuitry" that might limit the charging current if the voltage on the load goes below a certain level. Shown below is the maximum charging current on P2 lower port that CN0509 can provide given that the output voltage to the load is greater than 5V.
+-  Take note that each device has its own "charge controller circuitry" that
+   might limit the charging current if the voltage on the load goes below a
+   certain level. Shown below is the maximum charging current on P2 lower port
+   that CN0509 can provide given that the output voltage to the load is greater
+   than 5V.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/max_curr.png
    :align: center
-   :width: 200px
+   :width: 200
 
 --------------
 
@@ -126,6 +138,5 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro project
    -  LTSpice Simulations
    
-
 
 *End of Document*

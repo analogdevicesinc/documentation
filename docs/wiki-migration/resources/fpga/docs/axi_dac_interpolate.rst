@@ -1,7 +1,8 @@
 AXI_DAC_INTERPOLATE
 ===================
 
-The AXI_DAC_INTERPOLATE IP allows interpolation of the input data by 10/100/1000/10000/100000, with filtering and arbitrary zero-hold interpolation.
+The AXI_DAC_INTERPOLATE IP allows interpolation of the input data by
+10/100/1000/10000/100000, with filtering and arbitrary zero-hold interpolation.
 
 More about the generic framework interfacing DACs can be read here: :doc:`axi_dac_ip </wiki-migration/resources/fpga/docs/axi_dac_ip>`.
 
@@ -80,13 +81,21 @@ Interface
 Detailed Description
 --------------------
 
-For some applications, the maximum sampling rate of the DAC is too high and leads to a bad utilization of the memory or USB bandwidth. In order to avoid that, the interpolation IP can be used.
+For some applications, the maximum sampling rate of the DAC is too high and
+leads to a bad utilization of the memory or USB bandwidth. In order to avoid
+that, the interpolation IP can be used.
 
-The interpolation block allows interpolation by 10, 100, 1000, 10000,100000 with filtering. The filtering is implemented using an FIR compensation filter (interpolation by 2) for the CIC and a 6 stage CIC interpolation filter allowing interpolation by 5/50/500/5000/50000.
+The interpolation block allows interpolation by 10, 100, 1000, 10000,100000 with
+filtering. The filtering is implemented using an FIR compensation filter
+(interpolation by 2) for the CIC and a 6 stage CIC interpolation filter allowing
+interpolation by 5/50/500/5000/50000.
 
-At the end of the filter blocks, there is an arbitrary interpolation zero-order hold block which holds the value for a configurable number of samples.
+At the end of the filter blocks, there is an arbitrary interpolation zero-order
+hold block which holds the value for a configurable number of samples.
 
-The axi_dac_interpolate also controls the data flow, being the middle man between axi_ad9963 as the main data flow controller(consumer) and the DMA a subordinate in the path. This control is done through registers:
+The axi_dac_interpolate also controls the data flow, being the middle man
+between axi_ad9963 as the main data flow controller(consumer) and the DMA a
+subordinate in the path. This control is done through registers:
 
 -  0x50 REG_FLAGS - Control flags
 -  0x60 REG_TRIGGER_CONFIG - Trigger configuration
@@ -96,15 +105,29 @@ The actual control consists in fetching data from the DMA:
 
 -  at a desired rate
 -  at a new transfer, waiting until the other channel DMA has valid DATA or waiting for an external trigger
--  pausing/stopping the transfer at user request through remap or external trigger
+-  pausing/stopping the transfer at user request through remap or external
+   trigger
 
-If the DMA is stopped through the axi_dac_interpolate (dma_transfer_suspend or external trigger) and not by disabling the DMA from it's register map, the DAC data path will keep a few residual samples in the DMA's pipes. This samples will be the first samples to be transferred when a new buffer is pushed. To avoid this one can use the DMA flush feature which clears the DMA when stopped by the consumer.
+If the DMA is stopped through the axi_dac_interpolate (dma_transfer_suspend or
+external trigger) and not by disabling the DMA from it's register map, the DAC
+data path will keep a few residual samples in the DMA's pipes. This samples will
+be the first samples to be transferred when a new buffer is pushed. To avoid
+this one can use the DMA flush feature which clears the DMA when stopped by the
+consumer.
 
-By default the flush flag is active. It should be disabled only if the user wants a "pause" functionality. Meaning, the transfer is stopped on a event and then, on another event, the transfer will continue from the same point without having to create a new buffer. The event can be the set/clearing of dma_transfer_suspend or an external trigger.
+By default the flush flag is active. It should be disabled only if the user
+wants a "pause" functionality. Meaning, the transfer is stopped on a event and
+then, on another event, the transfer will continue from the same point without
+having to create a new buffer. The event can be the set/clearing of
+dma_transfer_suspend or an external trigger.
 
-Another feature is the stop_sync. There is only one usecase for it. Stopping the other channel(configured at a different rate and/or in cyclic mode) when the first channel(DMA) finishes the transfer of a non-cyclic buffer.
+Another feature is the stop_sync. There is only one usecase for it. Stopping the
+other channel(configured at a different rate and/or in cyclic mode) when the
+first channel(DMA) finishes the transfer of a non-cyclic buffer.
 
-The RAW transfer feature enables the user to transfer data(written into a register inside the axi_dac_interpolate)without needing DMA(buffer) config(delays).
+The RAW transfer feature enables the user to transfer data(written into a
+register inside the axi_dac_interpolate)without needing DMA(buffer)
+config(delays).
 
 For more info check the state machine below.
 

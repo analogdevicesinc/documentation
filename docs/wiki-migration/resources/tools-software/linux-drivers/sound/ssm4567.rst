@@ -37,19 +37,34 @@ Files
 Example device initialization
 =============================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
-
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 The I2C address of the SSM4567 depends on the setting of the ADDR pin.
 
@@ -185,9 +200,11 @@ Supported DAI formats
 TDM configuration
 ~~~~~~~~~~~~~~~~~
 
-If you want to use the SSM4567 in TDM mode you can configure it using snd_soc_dai_set_tdm_slot() from you ASoC board driver.
+If you want to use the SSM4567 in TDM mode you can configure it using
+snd_soc_dai_set_tdm_slot() from you ASoC board driver.
 
-The following restrictions apply to the parameters of snd_soc_dai_set_tdm_slot().
+The following restrictions apply to the parameters of
+snd_soc_dai_set_tdm_slot().
 
 -  **tx_mask** specifies the output channel mapping for the serial port. This must either be 0, or the same as rx_mask.
 -  **rx_mask** specifies the input channel mapping for the serial port. There must be exactly one bit set in this mask which selects the slot that is used.
@@ -233,7 +250,6 @@ Example DAI configuration
        .codec_dai_name = "ssm4567-hifi",
        .dai_fmt = SND_SOC_DAIFMT_DSP_A
 
-
                SND_SOC_DAIFMT_NB_NF |
 
                SND_SOC_DAIFMT_CBS_CFS,
@@ -255,9 +271,13 @@ Example DAI configuration
 Multi SSM4567 Example configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This example shows how to setup a ASoC board driver for a system with two SSM4567, one driving the left speaker and the other driving the right speaker. In this example the left SSM4567 is at I2C address 0x34 (ADDR=0) and the right SSM4567 is at I2S address 0x35 (ADDR=1).
+This example shows how to setup a ASoC board driver for a system with two
+SSM4567, one driving the left speaker and the other driving the right speaker.
+In this example the left SSM4567 is at I2C address 0x34 (ADDR=0) and the right
+SSM4567 is at I2S address 0x35 (ADDR=1).
 
-Note support for multiple CODECs on a single DAI link requires Linux v3.17 or higher.
+Note support for multiple CODECs on a single DAI link requires Linux v3.17 or
+higher.
 
 .. code:: c
 
@@ -323,8 +343,6 @@ Note support for multiple CODECs on a single DAI link requires Linux v3.17 or hi
 
        .dai_fmt = SND_SOC_DAIFMT_DSP_A
 
-
-
            SND_SOC_DAIFMT_NB_NF |
 
            SND_SOC_DAIFMT_CBS_CFS,
@@ -352,4 +370,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

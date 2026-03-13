@@ -7,7 +7,6 @@ The 7 Series and Ultrascale FPGAs Transceivers Wizard can be used to configure t
 
    To learn more about the 7 Series FPGAs transceivers and the Wizard, please read the `UG476 <https://www.xilinx.com/support/documentation/user_guides/ug476_7Series_Transceivers.pdf>`_ and `PG168 <https://www.xilinx.com/support/documentation/ip_documentation/gtwizard/v3_6/pg168-gtwizard.pdf>`_. To learn more about the Ultrascale and Ultrascale+ FPGAs transceivers and the Wizard, please read the `UG476 <https://www.xilinx.com/support/documentation/user_guides/ug576_7Series_Transceivers.pdf>`_, `UG576 <https://www.xilinx.com/support/documentation/user_guides/ug576-ultrascale-gth-transceivers.pdf>`_, `UG578 <https://www.xilinx.com/support/documentation/user_guides/ug578-ultrascale-gty-transceivers.pdf>`_ and `PG168 <https://www.xilinx.com/support/documentation/ip_documentation/gtwizard/v3_6/pg168-gtwizard.pdf>`_.
 
-
 Required features by the JESD204B
 ---------------------------------
 
@@ -45,7 +44,15 @@ You can define a custom name for your component and leave it on default. The too
 Line Rate and RefClk Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, you need to select JESD204 as targeted protocol and specify your line rate and reference clock. A valid reference clock depends on your line rate. Make sure that you're using a valid reference clock form the drop-down list. Also you should set the used PLLs for TX and RX. If your line rate is equal for both directions, you can use the same PLL. Be aware that each PLL's VCO has a different frequency range where the circuit can function correctly. If your targeted line rate is too high or too low, you may be restricted to use just one of the two PLLs. All other settings can be left on their default value in this tab.
+First, you need to select JESD204 as targeted protocol and specify your line
+rate and reference clock. A valid reference clock depends on your line rate.
+Make sure that you're using a valid reference clock form the drop-down list.
+Also you should set the used PLLs for TX and RX. If your line rate is equal for
+both directions, you can use the same PLL. Be aware that each PLL's VCO has a
+different frequency range where the circuit can function correctly. If your
+targeted line rate is too high or too low, you may be restricted to use just one
+of the two PLLs. All other settings can be left on their default value in this
+tab.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/7s_wizard_linerate.jpg
    :alt: Line Rate and RefClk Selection
@@ -68,7 +75,10 @@ The setting from the tabs **PCIe, SATA, PRBS** and **CB and CC Sequence** can be
 Generated files
 ^^^^^^^^^^^^^^^
 
-Location of the COMMON instance: <project_name>/<project_name>.gen/sources_1/ip/<component_name>/<component_name>_common.v Location of the CHANNEL instance: <project_name>/<project_name>.gen/sources_1/ip/<component_name>/<component_name>_gt.v
+Location of the COMMON instance:
+<project_name>/<project_name>.gen/sources_1/ip/<component_name>/<component_name>_common.v
+Location of the CHANNEL instance:
+<project_name>/<project_name>.gen/sources_1/ip/<component_name>/<component_name>_gt.v
 
 ::
 
@@ -95,7 +105,9 @@ To have both COMMON and CHANNEL instances inside the generated core, in the **St
 Generated files
 ^^^^^^^^^^^^^^^
 
-To find the actual instance attributes, two different files should be examined. A generic one, which contains the actual software macro instance, and a wrapper, which instanciates the previous file and sets the required attributes.
+To find the actual instance attributes, two different files should be examined.
+A generic one, which contains the actual software macro instance, and a wrapper,
+which instanciates the previous file and sets the required attributes.
 
 Location of the **COMMON** instance: <project_name>/<project_name>.gen/sources_1/ip/<component_name>/synth/gtwizard_ultrascale_v1_7_gthe4_common.v
 
@@ -114,8 +126,8 @@ Location of the **CHANNEL** instance: <project_name>/<project_name>.gen/sources_
 
 .. note::
 
-   The example above is for the project DAQ2 with ZCU102 and with a component name of gth_jesd204.
-
+   The example above is for the project DAQ2 with ZCU102 and with a component
+   name of gth_jesd204.
 
 This generated attributes values should be compared with the values used with the COMMON and CHANNEL instances in :git-hdl:`util_adxcvr_cm.v <library/xilinx/util_adxcvr/util_adxcvr_xcm.v>` and :git-hdl:`util_adxcvr_ch.v <library/xilinx/util_adxcvr/util_adxcvr_xch.v>`.
 
@@ -124,10 +136,12 @@ Using the generator script
 
 .. important::
 
-   If you are using Windows, please use the ad_gth_generator command followed by the parsing script call, since the get_diff_params only works for linux systems
+   If you are using Windows, please use the ad_gth_generator command followed by
+   the parsing script call, since the get_diff_params only works for linux
+   systems
 
-
-Open the TCL console inside your Vivado project. Source gtwizard_generator.tcl <code> source ../../scripts/gtwizard_generator.tcl </code>
+Open the TCL console inside your Vivado project. Source gtwizard_generator.tcl
+<code> source ../../scripts/gtwizard_generator.tcl </code>
 
 Here you have 2 options
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,47 +164,82 @@ This function generates the IP and calls the parsing script.
 
 .. note::
 
-   This method works only with configurations where TX and RX have the same lane rate
+   This method works only with configurations where TX and RX have the same lane
+   rate
 
+Call the get_diff_params method with the desired parameters. <code>
+get_diff_params 15.4 QPLL0 385 </code> The first parameter represents the lane
+rate that will be set to both RX and TX. The second one can be CPLL, QPLL0,
+QPLL1. The third one is the reference clock. If left empty, then it will be
+filled with all the viable values for the lane rate given. <code>
+get_diff_params {9.8304} QPLL0 {} false </code> The fourth parameter is
+optional. If you set it to false, the script will remove from the project and
+delete from disk the generated IPs after the list of parameters is done, so you
+don't have to do that manually.
 
-Call the get_diff_params method with the desired parameters. <code> get_diff_params 15.4 QPLL0 385 </code> The first parameter represents the lane rate that will be set to both RX and TX. The second one can be CPLL, QPLL0, QPLL1. The third one is the reference clock. If left empty, then it will be filled with all the viable values for the lane rate given. <code> get_diff_params {9.8304} QPLL0 {} false </code> The fourth parameter is optional. If you set it to false, the script will remove from the project and delete from disk the generated IPs after the list of parameters is done, so you don't have to do that manually.
-
-Both the first and the third parameters are actually lists, so you can use that to generate multiple configurations. Keep in mind that the script will generate IPs with all the combinations between the lane rate and reference clock. <code> get_diff_params {9.8304 4.9152} QPLL0 {245.76 122.88} false </code> This call makes 4 instances of transceivers, and also deletes them after generating the list because of the 4th parameter is set to false.
+Both the first and the third parameters are actually lists, so you can use that
+to generate multiple configurations. Keep in mind that the script will generate
+IPs with all the combinations between the lane rate and reference clock. <code>
+get_diff_params {9.8304 4.9152} QPLL0 {245.76 122.88} false </code> This call
+makes 4 instances of transceivers, and also deletes them after generating the
+list because of the 4th parameter is set to false.
 
 Parsing script
 ~~~~~~~~~~~~~~
 
-If you used the get_diff_params method from the script to generate the IP, there is no need to call it again.
+If you used the get_diff_params method from the script to generate the IP, there
+is no need to call it again.
 
-If you used the ad_gth_generator method from the script, you will have to call the parsing script from the shell, as explained below.
+If you used the ad_gth_generator method from the script, you will have to call
+the parsing script from the shell, as explained below.
 
-If you edited the IP in any way after generating it, make sure to generate output products for the transceiver before going forward.
+If you edited the IP in any way after generating it, make sure to generate
+output products for the transceiver before going forward.
 
-Navigate to <project_name>.gen/sources_1/ip in the terminal. From there, call the gtwiz_parser.pl script, specifying the GT type as in the example. <code> ../../../../../scripts/gtwiz_parser.pl GTHE4</code> If you run the script wile having multiple configurations, it will include the unique parameters for each IP, plus the gt_global list that contains the common parameters within generated configurations that are different from the default values. Now, you should find the files at <project_name>.gen/sources_1/ip Make sure to overwrite the list from system_bd with the one in <GT_Type>_cfng.txt.
+Navigate to <project_name>.gen/sources_1/ip in the terminal. From there, call
+the gtwiz_parser.pl script, specifying the GT type as in the example. <code>
+../../../../../scripts/gtwiz_parser.pl GTHE4</code> If you run the script wile
+having multiple configurations, it will include the unique parameters for each
+IP, plus the gt_global list that contains the common parameters within generated
+configurations that are different from the default values. Now, you should find
+the files at <project_name>.gen/sources_1/ip Make sure to overwrite the list
+from system_bd with the one in <GT_Type>_cfng.txt.
 
 .. important::
 
-   Please note that if you used the GUI method to instantiate the wizard, the paring script will not work
-
+   Please note that if you used the GUI method to instantiate the wizard, the
+   paring script will not work
 
 Output products
 ~~~~~~~~~~~~~~~
 
 Output products can be found at this location: <project_name>.gen/sources_1/ip
 
-Most of the output files make sense in the context of parsing multiple configurations at once. If this is not the case, and you just used it to generate a single configuration, then the only file you need is <GT_Type>_cfng.txt.
+Most of the output files make sense in the context of parsing multiple
+configurations at once. If this is not the case, and you just used it to
+generate a single configuration, then the only file you need is
+<GT_Type>_cfng.txt.
 
-If you had multiple configurations, all the output files should give you some valuable information.
+If you had multiple configurations, all the output files should give you some
+valuable information.
 
 GT_Type_cfng.txt
 ^^^^^^^^^^^^^^^^
 
-This file contains 2 lists. The first one is a list of parameters that are unique for the desired configuration/configurations, different from the default values, and these parameters should be written into the system_bd file for your project. The next list called "gt_global" is a list of parameters that are common between the multiple generated configurations. These are also only the ones different from the default ones. This list should be empty if you have only one configuration generated.
+This file contains 2 lists. The first one is a list of parameters that are
+unique for the desired configuration/configurations, different from the default
+values, and these parameters should be written into the system_bd file for your
+project. The next list called "gt_global" is a list of parameters that are
+common between the multiple generated configurations. These are also only the
+ones different from the default ones. This list should be empty if you have only
+one configuration generated.
 
 GT_Type_var_dist.txt
 ^^^^^^^^^^^^^^^^^^^^
 
-Here you will find a list with the distribution of each DRP attribute in relation to the lane rates of your instances. <code> $VAR1 = 'RX_CLK25_DIV'; $VAR2 = {
+Here you will find a list with the distribution of each DRP attribute in
+relation to the lane rates of your instances. <code> $VAR1 = 'RX_CLK25_DIV';
+$VAR2 = {
 
 ::
 
@@ -229,19 +278,33 @@ $VAR5 = 'TX_CLK25_DIV'; $VAR6 = {
 GT_Type_vco_dist.txt
 ^^^^^^^^^^^^^^^^^^^^
 
-Here you will find a list with the distribution of each DRP attribute in relation to the VCO frequency of your instances. If this list is empty, that means that the attributes are the same for the used VCOs (Probably all the instances have the same VCO) This should look similar to "GT_Type_var_dist.txt"
+Here you will find a list with the distribution of each DRP attribute in
+relation to the VCO frequency of your instances. If this list is empty, that
+means that the attributes are the same for the used VCOs (Probably all the
+instances have the same VCO) This should look similar to "GT_Type_var_dist.txt"
 
 table_common.csv
 ^^^^^^^^^^^^^^^^
 
-This is a table containing 3 columns: The first one is the name of the parameter. The second one is the default value for that parameter, and it is that value found in the util_adxcvr file. The third column is called gt_global, and it contains the value that all the configurations have in common, but is different from the default. If there is an empty cell in this column, it means that there is used the default value.
+This is a table containing 3 columns: The first one is the name of the
+parameter. The second one is the default value for that parameter, and it is
+that value found in the util_adxcvr file. The third column is called gt_global,
+and it contains the value that all the configurations have in common, but is
+different from the default. If there is an empty cell in this column, it means
+that there is used the default value.
 
 table_unique.csv
 ^^^^^^^^^^^^^^^^
 
-This table contains the unique parameters for each individual configurations. The values found here are the ones that differ among your generated configurations.
+This table contains the unique parameters for each individual configurations.
+The values found here are the ones that differ among your generated
+configurations.
 
 .. note::
 
-   If you encounter errors using the script, please make sure that you have the <project_name>.gen/sources_1/ip and <project_name>.srcs/sources_1/ip folders clear from other previous gtwizard IP instances. Also, the script uses git to update the default util_adxcvr files, and it will probably not work if you are in detached HEAD state, or any state that could generate git conflicts with it.
-
+   If you encounter errors using the script, please make sure that you have the
+   <project_name>.gen/sources_1/ip and <project_name>.srcs/sources_1/ip folders
+   clear from other previous gtwizard IP instances. Also, the script uses git to
+   update the default util_adxcvr files, and it will probably not work if you
+   are in detached HEAD state, or any state that could generate git conflicts
+   with it.

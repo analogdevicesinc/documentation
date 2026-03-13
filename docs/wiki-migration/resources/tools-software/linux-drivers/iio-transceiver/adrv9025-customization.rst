@@ -3,11 +3,12 @@ ADRV9025 Device Driver Customization
 
 .. hint::
 
-   There are configuration options that must be set properly. Some others allow you to set defaults, but can be changed anytime later using the driver API. But most of these options don't need to be changed at all.
+   There are configuration options that must be set properly. Some others allow
+   you to set defaults, but can be changed anytime later using the driver API.
+   But most of these options don't need to be changed at all.
 
    
    If unsure please see the manual or don't change!
-
 
 Clock Settings
 ==============
@@ -321,7 +322,8 @@ AXI FPGA
 GPIO Settings
 =============
 
-The GPIO configurations can be done by changing a node's properties, as the following example shows:
+The GPIO configurations can be done by changing a node's properties, as the
+following example shows:
 
 ::
 
@@ -332,5 +334,6 @@ The GPIO configurations can be done by changing a node's properties, as the foll
 
 .. warning::
 
-   When configuring GPIOs manually, make sure to not collide to any pin selected in another node configuration as adi,increment-pin, adi,decrement-pin, adi,agc-power-feedback-high-thres-exceeded, etc...
-
+   When configuring GPIOs manually, make sure to not collide to any pin selected
+   in another node configuration as adi,increment-pin, adi,decrement-pin,
+   adi,agc-power-feedback-high-thres-exceeded, etc...

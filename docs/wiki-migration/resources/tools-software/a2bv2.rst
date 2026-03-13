@@ -3,7 +3,11 @@ A2B Plugin for SigmaStudio+
 
 The Automotive Audio Bus :adi:`(A2B) <en/solutions/a2b-audio-bus>` is a proprietary bidirectional audio bus from Analog Devices that provides physical connectivity to devices like microphones, speakers, and processing ECUs in a car. The A2B topology is cost effective because of its twisted pair connectivity and its ability to provide single point connection to the head unit or the ECU. It is also capable of transferring multichannel audio across devices like microphones and speakers.
 
-The A2B Software package consists of A2B Plugin for SigmaStudio+ and A2B Software Stack. A2B plugin enables the graphical design of A2B Network for the user to create, configure and evaluate A2B networks using SigmaStudio+. A2B Stack is a highly portable and flexible framework for developing and deploying A2B networks in automotive environments.
+The A2B Software package consists of A2B Plugin for SigmaStudio+ and A2B
+Software Stack. A2B plugin enables the graphical design of A2B Network for the
+user to create, configure and evaluate A2B networks using SigmaStudio+. A2B
+Stack is a highly portable and flexible framework for developing and deploying
+A2B networks in automotive environments.
 
 A2B Software References
 =======================
@@ -23,14 +27,11 @@ A2B Software References
 
    \ :doc:`A2B Analyzer </wiki-migration/resources/tools-software/a2b-bus-analyzer>`\
 
-
 .. note::
 
    :doc:`SigmaStudio+ </wiki-migration/resources/tools-software/sigmastudiov2>`
-
 
 .. admonition:: Download
    :class: download
 
    :adi:`Latest A2B Software <en/resources/evaluation-hardware-and-software/software/a2b-software.html#software-overview>`
-

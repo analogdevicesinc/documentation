@@ -1,14 +1,11 @@
 AD-CELLPACKBM-SL User Guide
 ===========================
 
-
-
 .. important::
 
    We are in the process of migrating our documentation to GitHub.io.
 
    | The latest version of this page can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-cellpackbm-sl/index.html
-
 
 .. admonition:: Download
    :class: download
@@ -17,18 +14,23 @@ AD-CELLPACKBM-SL User Guide
 
    
 
-
 Overview
 --------
 
 The **AD-CELLPACKBM-SL** is a complete BMS kit consisting of the EVAL-ADBMS6830BMSW 16-channel cell monitoring module, the EVAL-ADBMS2950-BASIC pack monitoring module, EVAL-ADBMS6822 isoSPI adapter, and the SDP-K1 microcontroller board.
 
-This solution is based on high-performance BMS devices that are specifically designed for broad market applications and is suitable for determining the battery's state of charge (SoC) and state of health (SoH), as well as performing important BMS diagnostics.
+This solution is based on high-performance BMS devices that are specifically
+designed for broad market applications and is suitable for determining the
+battery's state of charge (SoC) and state of health (SoH), as well as performing
+important BMS diagnostics.
 
-The AD-CELLPACKBM-SL can operate either in embedded mode or through a PC-based graphical user interface. Complete with working software and hardware, as well as software examples, this kit makes it easier for customers to prototype and create connected systems and solutions for BMS applications.
+The AD-CELLPACKBM-SL can operate either in embedded mode or through a PC-based
+graphical user interface. Complete with working software and hardware, as well
+as software examples, this kit makes it easier for customers to prototype and
+create connected systems and solutions for BMS applications.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/ad-cellpackbm-sl_angle.jpg
-   :width: 600px
+   :width: 600
 
 Features
 --------
@@ -57,12 +59,13 @@ System Architecture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/ad-cellpackbm-sl_01.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Specifications
 --------------
 
-Below are the absolute maximum ratings of voltages relative to GND unless noted otherwise.
+Below are the absolute maximum ratings of voltages relative to GND unless noted
+otherwise.
 
 .. container:: center
 
@@ -92,7 +95,6 @@ Below are the absolute maximum ratings of voltages relative to GND unless noted 
    ======================================= ======= ======= ======= ====
    
 
-
 What's Inside the Box?
 ----------------------
 
@@ -100,7 +102,7 @@ The AD-CELLPACKBM-SL package comes with the following boards and accessories:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/ad-cellpackbm-sl_package_contents.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 --------------
 
@@ -113,7 +115,14 @@ Key Components
    **EVAL-ADBMS6830BMSW 16-Channel Battery Cell Monitor**
 
    
-   The EVAL-ADBMS6830BMSW is a full-featured evaluation board for the ADBMS6830B, a 16-channel battery stack monitor for broad market applications. This board allows multiple boards to be linked through a single twisted pair wire interface (isoSPI) to monitor a long series of cells in a stack. It provides access to full channel monitoring to all cells going to battery pack either in the supply line or in the V+ to V- line. The evaluation board also features reversible isoSPI that can access either path to do measurement functions and serve as a redundant communication path.
+   The EVAL-ADBMS6830BMSW is a full-featured evaluation board for the
+   ADBMS6830B, a 16-channel battery stack monitor for broad market applications.
+   This board allows multiple boards to be linked through a single twisted pair
+   wire interface (isoSPI) to monitor a long series of cells in a stack. It
+   provides access to full channel monitoring to all cells going to battery pack
+   either in the supply line or in the V+ to V- line. The evaluation board also
+   features reversible isoSPI that can access either path to do measurement
+   functions and serve as a redundant communication path.
    
    .. container:: center
 
@@ -123,9 +132,14 @@ Key Components
    **EVAL-ADBMS2950-BASIC Battery Pack Monitor**
 
    
-   The EVAL-ADBMS2950-BASIC battery pack monitoring evaluation board features the ADBMS2950B, a bidirectional current monitor, with 12 buffered high impedance voltage sense inputs, linked through a 2-wire isolated serial interface (isoSPI). This board also features reversible isoSPI, enabling a redundant communication path.
+   The EVAL-ADBMS2950-BASIC battery pack monitoring evaluation board features
+   the ADBMS2950B, a bidirectional current monitor, with 12 buffered high
+   impedance voltage sense inputs, linked through a 2-wire isolated serial
+   interface (isoSPI). This board also features reversible isoSPI, enabling a
+   redundant communication path.
    
-   The EVAL-ADBMS2950-BASIC board can be operated on the same isoSPI daisy-chain with other ADBMS2950B and ADBMS6830B devices.
+   The EVAL-ADBMS2950-BASIC board can be operated on the same isoSPI daisy-chain
+   with other ADBMS2950B and ADBMS6830B devices.
    
    .. container:: center
 
@@ -145,14 +159,19 @@ Key Components
    **EVAL-SDP-CK1Z (SDP-K1) Controller Board**
 
    
-   The EVAL-SDP-CK1Z Controller Board provides a means of communicating with the PC from the other BMS boards in the Cellpack BMS System. The SDP-K1 provides USB connectivity through a USB 2.0 high speed connection to the computer, allowing users to evaluate components on this platform from a PC application. The SDP-K1 is based on an STM32F469NIH6 Arm® Cortex®-M4 microcontroller with the peripheral communication lines available to the daughter board(s) through a 120-pin small footprint connector and Arduino® Uno-compatible headers.
+   The EVAL-SDP-CK1Z Controller Board provides a means of communicating with the
+   PC from the other BMS boards in the Cellpack BMS System. The SDP-K1 provides
+   USB connectivity through a USB 2.0 high speed connection to the computer,
+   allowing users to evaluate components on this platform from a PC application.
+   The SDP-K1 is based on an STM32F469NIH6 Arm® Cortex®-M4 microcontroller with
+   the peripheral communication lines available to the daughter board(s) through
+   a 120-pin small footprint connector and Arduino® Uno-compatible headers.
    
    .. container:: center
 
       :adi:`Click here to see the SDP-K1 User Guide <media/en/technical-documentation/user-guides/EVAL-SDP-CK1Z-UG-1539.pdf>`
 
    
-
 
 --------------
 
@@ -161,13 +180,13 @@ Getting Started
 
 .. tip::
 
-   Please refer to the following pages for detailed instructions on how to set up the AD-CELLPACKBM-SL system for evaluation.
+   Please refer to the following pages for detailed instructions on how to set
+   up the AD-CELLPACKBM-SL system for evaluation.
 
    
    -  :doc:`AD-CELLPACKBM-SL Hardware User Guide </wiki-migration/resources/eval/user-guides/ad-cellpackbm-sl/hardware>`
    -  :doc:`AD-CELLPACKBM-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-cellpackbm-sl/software>`
    
-
 
 --------------
 
@@ -194,13 +213,12 @@ Design & Integration Files
    -  Allegro Project
    
 
-
 Help and Support
 ----------------
 
-For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer
+Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
-

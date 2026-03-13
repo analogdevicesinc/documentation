@@ -8,7 +8,8 @@ AD242x standard power
 Evaluation boards
 -----------------
 
-The Evaluation boards used in the AD242x demos are explained in the following subsections.
+The Evaluation boards used in the AD242x demos are explained in the following
+subsections.
 
 EVAL-AD2428WD1BZ
 ~~~~~~~~~~~~~~~~
@@ -23,12 +24,11 @@ EVAL-AD2428WD1BZ
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2428wd1bz.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 .. container:: centeralign
 
    \ **Figure:** EVAL-AD2428WD1BZ board
-
 
 Jumper Settings
 ~~~~~~~~~~~~~~~
@@ -116,7 +116,6 @@ EVAL-AD2428WD1BZ without 1452 DSP Bypass
 .. container:: centeralign
 
    \ **Figure :** Three way jumper connection
-
 
 EVAL-AD2428WD1BZ with 1452 Bypass
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -213,7 +212,6 @@ The :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide
 
    \ **Figure:** EVAL-AD2428WB1BZ board
 
-
 EVAL-AD2428WC1BZ
 ~~~~~~~~~~~~~~~~
 
@@ -228,7 +226,6 @@ The :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide
 .. container:: centeralign
 
    \ **Figure:** EVAL-AD2428WC1BZ board
-
 
 Connections
 -----------
@@ -252,19 +249,19 @@ A2B Evaluation boards shall be connected in the following order
 
    This connection is recommended for running the sample demo using PC as host. Refer :doc:`running sample demo </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/target>` for more details on using BF,ADSP-SC594 as host processor.
 
-
    |image1|
 
 .. container:: centeralign
 
    \ **Figure:** A2B Eval board connections
 
-
 USBi
 ^^^^
 
 -  Attach an USBi cable to the main board connector P1 as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>`. Other end of the cable should be connected to the PC.
--  This connection is required to override the schematic for the main node SigmaDSP ADAU1452. The connection is also used to directly control A2B system when PC is used as the target processor (no SDP-B board connected).
+-  This connection is required to override the schematic for the main node
+   SigmaDSP ADAU1452. The connection is also used to directly control A2B system
+   when PC is used as the target processor (no SDP-B board connected).
 
 Audio In/out
 ^^^^^^^^^^^^
@@ -274,8 +271,9 @@ Audio In/out
 
 .. note::
 
-   Do not connect the audio source directly from PC toWB1BZ board as they can cause ground loop issues. If connected discovery will fail for WB1BZ and subsequent nodes.
-
+   Do not connect the audio source directly from PC toWB1BZ board as they can
+   cause ground loop issues. If connected discovery will fail for WB1BZ and
+   subsequent nodes.
 
 Local powered sub-nodes
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -287,10 +285,7 @@ Local powered sub-nodes
 
    \ **Figure:** Two local powered AD2428WD1BZ boards (One of the audio stream is shown here)
 
-
 As per the above :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>` two local powered nodes can be connected to each other to form an A2B network. One of them is a main node and the other is a sub node. This :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>` represents one of the two audio stream configurations. The below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>` represent the audio configurations with and without bypassing the 1452 DSP respectively. Connect audio sources and sinks as per these two figures.
-
-
 
 |image2|
 
@@ -298,28 +293,25 @@ As per the above :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/qu
 
    \ **Figure:** Audio routing without 1452 DSP bypass
 
-
    |image3|
 
 .. container:: centeralign
 
    \ **Figure:** Audio routing with 1452 DSP bypass
 
-
 Audio Configuration
 ^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_a2b_demo_configuration_1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure:** Sample Audio configuration for 3 node setup
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval_ad2428_setup.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/audiorouting_with_1452.png
-   :width: 480px
+   :width: 480
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/audiorouting_without_dsp.png
-   :width: 480px
+   :width: 480

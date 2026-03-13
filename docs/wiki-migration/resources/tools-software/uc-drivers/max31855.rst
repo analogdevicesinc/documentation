@@ -40,8 +40,9 @@ The source code for the MAX31855 driver can be found here:
    -   :git-no-OS:`Implementation of MAX31855 Driver <drivers/temperature/max31855/max31855.c>`
    
 
-
-The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
+The driver also uses the ADI util library, so make sure you also add the
+necessary files in your project. The source code for the util library can be
+found here:
 
 .. admonition:: Download
    :class: download
@@ -51,8 +52,10 @@ The driver also uses the ADI util library, so make sure you also add the necessa
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
-
-In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the MAX31855 driver and have to be implemented:
+In order to be able to use this driver you will have to provide the specific
+implementation for the communication APIs and the specific types they use. If
+the SPI communication is chosen, there are three functions which are called by
+the MAX31855 driver and have to be implemented:
 
 -  no_os_spi_init() – initializes the communication peripheral.
 -  no_os_spi_write_and_read() – writes and reads data to/from the device.
@@ -61,9 +64,12 @@ In order to be able to use this driver you will have to provide the specific imp
 And there are two data types that have to be defined:
 
 -  no_os_spi_desc - structure holding the SPI descriptor
--  no_os_spi_init_param - structure holding the parameters for SPI initialization
+-  no_os_spi_init_param - structure holding the parameters for SPI
+   initialization
 
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using can be
+found below:
 
 .. admonition:: Download
    :class: download
@@ -72,11 +78,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
 
-
 MAX31855 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available below:
 
 -  `MAX31855 Header file <http://analogdevicesinc.github.io/no-OS/max31855_8h.html>`_
 -  `MAX31855 Source file <http://analogdevicesinc.github.io/no-OS/max31855_8c.html>`_
@@ -89,7 +95,8 @@ Driver initialization
 
 The first step before using the driver is to call the **max31855_init** function, which, in this case, will only initialize the SPI interface. After that (if the init function returns 0), the driver is fully configured, and you will be able to read samples from the device.
 
-The MAX31855 doesn't support any additional configuration. The device only has 1 read-only register.
+The MAX31855 doesn't support any additional configuration. The device only has 1
+read-only register.
 
 MAX31855 Device Measurements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,7 +104,9 @@ MAX31855 Device Measurements
 Temperature reading
 ^^^^^^^^^^^^^^^^^^^
 
-The MAX31855 continuously performs temperature readings as long as it's powered on. To read a temperature sample, the CS pin must be pulled low, which will result in a register update and read.
+The MAX31855 continuously performs temperature readings as long as it's powered
+on. To read a temperature sample, the CS pin must be pulled low, which will
+result in a register update and read.
 
 The API function used for reading a temperature sample is **max31855_read_temp**, which will provide a value for both cold (the chip's temperature) and hot (the probe's temperature) junctions. These are represented in a integer/decimal form. The unit for the integer part is degrees Celsius. The decimal part will have to be divided by either **MAX31855_THERMOCOUPLE_TEMP_DEC_DIV** or **MAX31855_INTERNAL_TEMP_DEC_DIV** to obtain the value in degrees Celsius. The cold junction compensation is already applied.
 
@@ -132,7 +141,8 @@ ADI IIO No-OS
 MAX31855 IIO No-OS driver
 -------------------------
 
-The MAX31855 IIO driver comes on top of MAX31855 driver and offers support for interfacing IIO clients through IIO lib.
+The MAX31855 IIO driver comes on top of MAX31855 driver and offers support for
+interfacing IIO clients through IIO lib.
 
 MAX31855 IIO Driver Source Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -146,7 +156,6 @@ The source code for MAX31855 driver can be found here:
    -  :git-no-OS:`Header file of MAX31855 IIO Driver <drivers/temperature/max31855/iio_max31855.h>`
    -   :git-no-OS:`Implementation of MAX31855 IIO Driver <drivers/temperature/max31855/iio_max31855.c>`
    
-
 
 MAX31855 IIO Device Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

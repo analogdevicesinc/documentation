@@ -13,7 +13,8 @@ General Description
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_1.png
    :align: center
 
-The pattern generator instrument can be used to generate output from the M2K with user configurable parameters. It consists of 3 parts:
+The pattern generator instrument can be used to generate output from the M2K
+with user configurable parameters. It consists of 3 parts:
 
 ::
 
@@ -28,8 +29,12 @@ The pattern generator instrument can be used to generate output from the M2K wit
 -  The gearwheel button activates the general settings menu in the control panel.
 -  The sliders button activates the pattern settings menu in the control panel.
 
-The plot shows a preview of the generated signals by the pattern generator. For the enabled channels, the generated waveform is shown. For channel groups (groups of one or more channels) a “decoder” is displayed and has the purpose to graphically represent the binary value of the channel group. The channel enumerator panel lists all available channels on the device, and allows the user to enable them.
-
+The plot shows a preview of the generated signals by the pattern generator. For
+the enabled channels, the generated waveform is shown. For channel groups
+(groups of one or more channels) a “decoder” is displayed and has the purpose to
+graphically represent the binary value of the channel group. The channel
+enumerator panel lists all available channels on the device, and allows the user
+to enable them.
 
 |image2|
 
@@ -54,8 +59,6 @@ Use cases
 
 Enable & run one channel
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand XHIDDENSTARTSTOP 1. Enable channel 0 - select it and enable the clock pattern
 
@@ -84,7 +87,9 @@ Create a 4 channel binary counter
 
 XHIDDENSTART Click to expand
 
-   3.1 Select multiple channels (Selecting a channel is done by double clicking the handle of the channel on the left side of the plot). Enable multiple channels from the channel enumerator
+   3.1 Select multiple channels (Selecting a channel is done by double clicking
+   the handle of the channel on the left side of the plot). Enable multiple
+   channels from the channel enumerator
 
    3.2 Create group Group this 4 channels together
 
@@ -101,28 +106,24 @@ XHIDDENSTART Click to expand
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pg-uc/2017-06-12_14_43_46-ubuntu_running_-_oracle_vm_virtualbox_1.png
 
-   3.8 Using the Scopy's logic analyzer (or an external tool) verify channels 0,1,2,3
+   3.8 Using the Scopy's logic analyzer (or an external tool) verify channels
+   0,1,2,3
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_7.png
       :align: center
 
-
-
 Change settings while running
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. collapsible:: Click to expand
 
-   1. Channels can be modified/enabled/disabled while running. The pattern generator will reconfigure and resume running the patterns. While reconfiguring, all pins of the M2K will be taken high impedance in the meantime.
-
-
+   1. Channels can be modified/enabled/disabled while running. The pattern
+      generator will reconfigure and resume running the patterns. While
+      reconfiguring, all pins of the M2K will be taken high impedance in the
+      meantime.
 
 Single-shot generation
 ~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -130,14 +131,11 @@ Single-shot generation
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pg-uc/image23.png
 
-   Clicking single shot will generate a single buffer and then switch all pins to high impedance.
-
-
+   Clicking single shot will generate a single buffer and then switch all pins
+   to high impedance.
 
 Special patterns
 ~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -145,14 +143,18 @@ Special patterns
 
    2. Set parameters 9600, 8 bits, 1 stop bit, no parity, text “HELLO”
 
-   3. Select channel 15 only and group with selected ( this will create a one-channel group with decoder) The UART decoder should pop up over channel 15
+   3. Select channel 15 only and group with selected ( this will create a
+      one-channel group with decoder) The UART decoder should pop up over
+      channel 15
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_8.png
       :align: center
 
-   4. Monitor the channel in the logic analyzer. Use UART decoder. Alternatively use a serial terminal connected to the channel.
+   4. Monitor the channel in the logic analyzer. Use UART decoder. Alternatively
+      use a serial terminal connected to the channel.
 
-   5. Create a 3-channel group and select SPI pattern. Set SPI parameters at will, but make sure you send some data.
+   5. Create a 3-channel group and select SPI pattern. Set SPI parameters at
+      will, but make sure you send some data.
 
    6. Monitor the channels and use a SPI decoder
 
@@ -160,8 +162,6 @@ Special patterns
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_9.png
       :align: center
-
-
 
 **Return to** :doc:`Scopy Main Page </wiki-migration/university/tools/m2k/scopy>`
 

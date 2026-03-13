@@ -6,7 +6,8 @@ Various references found throughout this document are collected in this section.
 Main Line Projects
 ------------------
 
-The home pages of the mainline projects related to the related Linux projects are given below:
+The home pages of the mainline projects related to the related Linux projects
+are given below:
 
 -  `Buildroot distribution <http://buildroot.uclibc.org/>`_
 -  `Das U-Boot <http://www.denx.de/wiki/U-Boot>`_
@@ -25,9 +26,13 @@ Good Books
 O'Reilly
 ~~~~~~~~
 
-O'Reilly publishers offer several excellent books on Linux systems. Many of their books can also be read online. For more information check out the following links:
+O'Reilly publishers offer several excellent books on Linux systems. Many of
+their books can also be read online. For more information check out the
+following links:
 
--  O'Reilly Publisher of the iconic "animal books" for software developers, O'Reilly is the information source of choice for technologists, now also delivering the knowledge of expert early adopters to everyday computer users.
+-  O'Reilly Publisher of the iconic "animal books" for software developers,
+   O'Reilly is the information source of choice for technologists, now also
+   delivering the knowledge of expert early adopters to everyday computer users.
 
 -  `Building Embedded Linux Systems, Second Edition <oreilly>9780596529680>`__
 
@@ -97,7 +102,9 @@ The Free Software Foundation (GNU) has a large selection of documentation. Here 
 Others
 ~~~~~~
 
-There are many other publishers/authors who have some excellent books on Linux and embedded Linux. Here are a few which we have found useful, and a good addition to anyone's desk reference.
+There are many other publishers/authors who have some excellent books on Linux
+and embedded Linux. Here are a few which we have found useful, and a good
+addition to anyone's desk reference.
 
 -  `Essential Linux Device Drivers <http://elinuxdd.com/>`_
 
@@ -131,7 +138,10 @@ The Linux Documentation Project
 
 The `Linux Documentation Project <http://tldp.org>`_ (LDP) create and distribute the canonical set of free GNU/Linux documentation. While GNU/Linux applications and utilities may come with their own documentation, LDP documentation fills in the numerous gaps.
 
-The hundreds of existing LDP documents present both overviews and details of: the GNU/Linux Operating System, System Administration, Hardware, Networks, Servers, GUIs, Programming, Language Support, etc. Not every important topic is currently covered so LDP is always seeking new authors to fill in the gaps.
+The hundreds of existing LDP documents present both overviews and details of:
+the GNU/Linux Operating System, System Administration, Hardware, Networks,
+Servers, GUIs, Programming, Language Support, etc. Not every important topic is
+currently covered so LDP is always seeking new authors to fill in the gaps.
 
 The LDP publishes various types of documentation:
 
@@ -144,7 +154,12 @@ The LDP publishes various types of documentation:
 Man Pages
 ---------
 
-Another important source of information is the man (for manual) page system which is an online documentation system that comes with the typical Linux distribution. For example, let's say you want to find out about shell scripting with the bash shell. Then you merely enter at the command line: man bash and you'll get a a document about bash displayed on the console. The typical Linux distribution also comes with documentation in other directories such as:
+Another important source of information is the man (for manual) page system
+which is an online documentation system that comes with the typical Linux
+distribution. For example, let's say you want to find out about shell scripting
+with the bash shell. Then you merely enter at the command line: man bash and
+you'll get a a document about bash displayed on the console. The typical Linux
+distribution also comes with documentation in other directories such as:
 
 ::
 
@@ -152,12 +167,15 @@ Another important source of information is the man (for manual) page system whic
    *''/usr/src/linux/Documentation''
    *''/usr/X11R6/lib/X11/doc''
 
-An embedded Linux system must save space so some or all of this documentation may be unavailable on the embedded system itself, but some may be available elsewhere e.g. On a CD that came with the embedded version.
+An embedded Linux system must save space so some or all of this documentation
+may be unavailable on the embedded system itself, but some may be available
+elsewhere e.g. On a CD that came with the embedded version.
 
 Journals and Magazines
 ----------------------
 
-There are also paper-based and web-based journals. Here we mention two that come in both media and are very good:
+There are also paper-based and web-based journals. Here we mention two that come
+in both media and are very good:
 
 -  `The Linux Journal <http://www.linuxjournal.com/>`_
 -  `Linux Magazine <http://www.linux-mag.com/>`_

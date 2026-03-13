@@ -11,7 +11,8 @@ This document enables the user to evaluate A2B network from SigmaStudio+ tool.
 Scope
 -----
 
-This guide details the steps for setting up and running the sample demo. Prior knowledge of using the SigmaStudio+ tool is recommended.
+This guide details the steps for setting up and running the sample demo. Prior
+knowledge of using the SigmaStudio+ tool is recommended.
 
 Organization of the document
 ----------------------------

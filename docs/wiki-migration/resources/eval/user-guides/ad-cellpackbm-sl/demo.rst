@@ -4,7 +4,10 @@ DIY 48V Battery Pack for Electronic Vehicles
 Overview
 --------
 
-Building a 48V lithium-ion battery pack is an innovative and cost-effective way to power an electric vehicle (EV), e-bike, or solar storage system. By assembling individual cells into a well-balanced pack, you can achieve a high-performance, rechargeable power source tailored to your specific needs.
+Building a 48V lithium-ion battery pack is an innovative and cost-effective way
+to power an electric vehicle (EV), e-bike, or solar storage system. By
+assembling individual cells into a well-balanced pack, you can achieve a
+high-performance, rechargeable power source tailored to your specific needs.
 
 This guide will walk you through the design, assembly, and safety considerations involved in creating a reliable and efficient 48V battery pack using 18650 – 3.7V lithium-ion cells. This will show you the hardware and software setup on how to monitor cell voltages and battery pack current and voltage using the EVAL-ADBMS6830BMSW and EVAL-ADBMS2950-BASIC.
 
@@ -29,14 +32,15 @@ Scope of Target End-Application
 
    This guide focuses on building a DIY 48V lithium-ion battery pack intended for demo use to mimi c the batteries in electric vehicles (EVs), e-bikes, or other similar applications that require a reliable and efficient power source. The battery pack will be constructed using 18650 – 3.7V lithium-ion cells and monitored using the EVAL-ADBMS6830BMSW, a 16-channel battery cell monitor. The demo provides basic cell voltage and current monitoring, offering accurate measurements to ensure the battery pack operates within safe parameters.
 
-
 Limitations
 ~~~~~~~~~~~
 
 -  This demo design is not intended for direct deployment or integration into final commercial products. It is solely intended as a demo application for educational and prototyping purposes.
 -  The battery pack's actual performance may vary depending on the quality of the lithium-ion cells used, the assembly quality, and the accuracy of the BMS calibration.
 -  The design assumes that users have a certain level of technical expertise, including knowledge of battery construction and soldering skills. Adequate care and experience should be applied when working with lithium-ion cells due to their sensitive nature and potential safety risks.
--  The software provided with the EVAL-ADBMS6830BMSW and associated boards is intended for use with specific hardware and may not work with different or custom hardware configurations without modification.
+-  The software provided with the EVAL-ADBMS6830BMSW and associated boards is
+   intended for use with specific hardware and may not work with different or
+   custom hardware configurations without modification.
 
 Reference Design and Solution
 -----------------------------
@@ -49,7 +53,15 @@ Reference Design and Solution
    
    .. container:: indent
 
-      The EVAL-ADBMS6830BMSW is a full-featured evaluation board for the ADBMS6830B, a 16-channel battery stack monitor for broad market applications. This board allows multiple boards to be linked through a single twisted pair wire interface (isoSPI) to monitor a long series of cells in a stack. It provides access to full channel monitoring to all cells going to battery pack either in the supply line or in the V+ to V- line. The evaluation board also features reversible isoSPI that can access either path to do measurement functions and serve as a redundant communication path.
+      The EVAL-ADBMS6830BMSW is a full-featured evaluation board for the
+      ADBMS6830B, a 16-channel battery stack monitor for broad market
+      applications. This board allows multiple boards to be linked through a
+      single twisted pair wire interface (isoSPI) to monitor a long series of
+      cells in a stack. It provides access to full channel monitoring to all
+      cells going to battery pack either in the supply line or in the V+ to V-
+      line. The evaluation board also features reversible isoSPI that can access
+      either path to do measurement functions and serve as a redundant
+      communication path.
 
          
          .. container:: center
@@ -64,10 +76,15 @@ Reference Design and Solution
    
    .. container:: indent
 
-      The EVAL-ADBMS2950-BASIC battery pack monitoring evaluation board features the ADBMS2950B, a bidirectional current monitor, with 12 buffered high impedance voltage sense inputs, linked through a 2-wire isolated serial interface (isoSPI). This board also features reversible isoSPI, enabling a redundant communication path.
+      The EVAL-ADBMS2950-BASIC battery pack monitoring evaluation board features
+      the ADBMS2950B, a bidirectional current monitor, with 12 buffered high
+      impedance voltage sense inputs, linked through a 2-wire isolated serial
+      interface (isoSPI). This board also features reversible isoSPI, enabling a
+      redundant communication path.
 
          
-         The EVAL-ADBMS2950-BASIC board can be operated on the same isoSPI daisy-chain with other ADBMS2950B and ADBMS6830B devices.
+         The EVAL-ADBMS2950-BASIC board can be operated on the same isoSPI
+         daisy-chain with other ADBMS2950B and ADBMS6830B devices.
          
          .. container:: center
 
@@ -96,7 +113,14 @@ Reference Design and Solution
    
    .. container:: indent
 
-      The EVAL-SDP-CK1Z Controller Board provides a means of communicating with the PC from the other BMS boards in the Cellpack BMS System. The SDP-K1 provides USB connectivity through a USB 2.0 high speed connection to the computer, allowing users to evaluate components on this platform from a PC application. The SDP-K1 is based on an STM32F469NIH6 Arm® Cortex®-M4 microcontroller with the peripheral communication lines available to the daughter board(s) through a 120-pin small footprint connector and Arduino® Uno-compatible headers.
+      The EVAL-SDP-CK1Z Controller Board provides a means of communicating with
+      the PC from the other BMS boards in the Cellpack BMS System. The SDP-K1
+      provides USB connectivity through a USB 2.0 high speed connection to the
+      computer, allowing users to evaluate components on this platform from a PC
+      application. The SDP-K1 is based on an STM32F469NIH6 Arm® Cortex®-M4
+      microcontroller with the peripheral communication lines available to the
+      daughter board(s) through a 120-pin small footprint connector and Arduino®
+      Uno-compatible headers.
 
          
          .. container:: center
@@ -106,7 +130,6 @@ Reference Design and Solution
          
 
    
-
 
 Material Requirements
 ---------------------
@@ -147,19 +170,19 @@ Material Requirements
    +--------+----------------------------------------------------------------------------------------------------------+
    
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/48v_demo_requirements.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 Setup Guide
 -----------
 
-This section details the entire setup procedure broken down into hardware and software steps.
+This section details the entire setup procedure broken down into hardware and
+software steps.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/hardware-setup.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 Hardware Setup
 ~~~~~~~~~~~~~~
@@ -181,13 +204,13 @@ Battery Pack Assembly
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_arrangement.png
       :align: center
-      :width: 2000px
+      :width: 2000
    
    -  **Connecting the Batteries**
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/series-parallel_connection.png
       :align: center
-      :width: 2000px
+      :width: 2000
    
    ::
    
@@ -200,14 +223,16 @@ Battery Pack Assembly
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_terminal_strips.png
       :align: center
-      :width: 2000px
+      :width: 2000
    
    -  Insulation and Final Assembly
    
-      -  Ensure all connections are secure and properly insulated to prevent short circuits.
+      -  Ensure all connections are secure and properly insulated to prevent
+         short circuits.
    
          -  Use heat shrink tubing or electrical tape to cover exposed connections.
-         -  Place the battery pack in a suitable enclosure for protection and ease of handling.
+         -  Place the battery pack in a suitable enclosure for protection and
+            ease of handling.
    
    +--------------------------------------------------+-------------+-------+---------+---------+--------+--------------+
    | Thickness of Nickel Strip / Type of Nickel Strip | ---         | 0.1mm | 0.12 mm | 0.15 mm | 0.2 mm | 0.3 mm       |
@@ -223,13 +248,17 @@ Battery Pack Assembly
    
    .. warning::
 
-      Refer to the diagram above and make sure to connect the bottom part of the pack.
+      Refer to the diagram above and make sure to connect the bottom part of the
+      pack.
 
          
-      Important: Before connecting lithium-ion cells in parallel, ensure that all cells have the same or very close voltage levels (within ±0.05V). Connecting cells with different charge levels can result in large inrush currents, potentially causing: sparks or overheating, permanent cell damage, fire or thermal runaway, reduced battery life.
+      Important: Before connecting lithium-ion cells in parallel, ensure that
+      all cells have the same or very close voltage levels (within ±0.05V).
+      Connecting cells with different charge levels can result in large inrush
+      currents, potentially causing: sparks or overheating, permanent cell
+      damage, fire or thermal runaway, reduced battery life.
 
    
-
 
 Connection Setup
 ^^^^^^^^^^^^^^^^
@@ -239,11 +268,13 @@ Connection Setup
 -  Connect the SDP-K1 (P2) to the Host PC using a USB cable.
 -  Connect the EVAL-ADBMS6822 (J1) to the EVAL-ADBMS2950-BASIC (isoA) using the 2-wire twisted-pair patch cable from the main DuraClik connector to isoSPI A DuraClik connector.
 -  Connect the EVAL-ADBMS2950-BASIC (isoB) to the EVAL-ADBMS6830BMSW (J3) using the 2-wire twisted-pair patch cable from the main DuraClik connector to isoSPI A DuraClik connector.
--  Using the single wire cables attached to each cell terminals, connect each battery cell to the cell connector block. Refer to the diagram to short any unused ports in the block.
+-  Using the single wire cables attached to each cell terminals, connect each
+   battery cell to the cell connector block. Refer to the diagram to short any
+   unused ports in the block.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_to_j1.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 -  Using the test leads alligator double-ended crocodile clips, connect the **Shunt-** of the EVAL-ADBMS2950-BASIC to one end of the resistor load.
 -  Using another crocodile clip, connect the **Bat-** of EVAL-ADBMS2950-BASIC by clipping the other end of the crocodile clip to **Vbat-** of the battery pack.
@@ -251,35 +282,35 @@ Connection Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/hardware-setup.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 .. warning::
 
-   Make sure to complete all hardware and software dependencies first before connecting the battery to the EVAL-ADBMS6830BMSW and the load for safety.
-
+   Make sure to complete all hardware and software dependencies first before
+   connecting the battery to the EVAL-ADBMS6830BMSW and the load for safety.
 
 Software Setup
 ~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/broadmarket_gui_home_page.png
    :align: center
-   :width: 2000px
+   :width: 2000
 
 .. note::
 
-   The AD-CELLPACKBM-SL comes complete with firmware examples and easy-to-use application GUI.
+   The AD-CELLPACKBM-SL comes complete with firmware examples and easy-to-use
+   application GUI.
 
    
    Access the software resources and see the setup procedure in the :doc:`AD-CELLPACKBM-SL Software User Guide </wiki-migration/resources/eval/user-guides/ad-cellpackbm-sl/software>` .
    
-
 
 Software Stack
 ^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/software_stack.png
    :align: center
-   :width: 700px
+   :width: 700
 
 Demo Results
 ------------
@@ -303,31 +334,35 @@ Running the Setup
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_launch.png
       :align: center
-      :width: 2000px
+      :width: 2000
    
-   -  Upon launching, the Quick Measure tab will open. Note: this utility only supports a single BMS product in a Daisy Chain. Click Start Quick Measure to begin measurements.
+   -  Upon launching, the Quick Measure tab will open. Note: this utility only
+      supports a single BMS product in a Daisy Chain. Click Start Quick Measure
+      to begin measurements.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/start-quick-measure.png
       :align: center
-      :width: 2000px
+      :width: 2000
    
-   -  Check the Total PEC Status under the Memory Map. This indicates the status of the isoSPI link between the EVAL-ADBMS6822 and the EVAL-ADBMS6830BMSW and EVAL-ADBMS2950-BASIC.
+   -  Check the Total PEC Status under the Memory Map. This indicates the status
+      of the isoSPI link between the EVAL-ADBMS6822 and the EVAL-ADBMS6830BMSW
+      and EVAL-ADBMS2950-BASIC.
    
       -  Verify the connection of the twisted cable between the EVAL-ADBMS6822 and the EVAL-ADBMS6830BMSW.
-      -  Ensure that the EVAL-ADBMS6830BMSW and EVAL-ADBMS2950-BASIC are powered up properly.
+      -  Ensure that the EVAL-ADBMS6830BMSW and EVAL-ADBMS2950-BASIC are powered
+         up properly.
    
    -  Check the cell voltage readings. Monitor the voltage channels on the Quick Measure Utility graph. Select which signals to display on the graph under the **Plot All Devices** column.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/plot-all-devices.png
       :align: center
-      :width: 2000px
+      :width: 2000
    
    .. note::
 
       For Step 9: If cell voltage measurement is the focus of the demo, place ADBMS6830 as the second device in the daisy chain—both in hardware wiring and software configuration. If battery pack current and voltage monitoring is the priority, place ADBMS2950 as the second device in the daisy chain. This is important because the BMS Browser GUI primarily recognizes and interacts with the second device in the daisy chain during operation
 
    
-
 
 Results and Discussion
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -337,15 +372,15 @@ Quick Measure Tab
 
 .. container:: indent
 
-   The Quick Measure tab simplifies metric measurement with a preloaded command sequence. Note that it supports a single device in the daisy chain, and key features enhance configuration and visualization.
-
+   The Quick Measure tab simplifies metric measurement with a preloaded command
+   sequence. Note that it supports a single device in the daisy chain, and key
+   features enhance configuration and visualization.
 
    |image1|
 
    .. container:: centeralign
 
       **Battery Cell Voltage Monitoring**
-
 
       |image2|
 
@@ -354,7 +389,9 @@ Quick Measure Tab
       **Battery Pack Current Monitoring**
 
    
-   Using a 50 μΩ shunt resistor, the total battery pack current can be calculated by dividing the I1ADC voltage by the shunt resistance. For instance, with an I1ADC voltage of 0.000088 V, the current is determined as:
+   Using a 50 μΩ shunt resistor, the total battery pack current can be
+   calculated by dividing the I1ADC voltage by the shunt resistance. For
+   instance, with an I1ADC voltage of 0.000088 V, the current is determined as:
    
    .. math::
    
@@ -371,7 +408,8 @@ Quick Measure Tab
    
       Battery Pack Current = 1.76 A
    
-   This calculation provides the actual current flowing through the battery pack based on the measured voltage across the shunt resistor.
+   This calculation provides the actual current flowing through the battery pack
+   based on the measured voltage across the shunt resistor.
 
    
    |image3|
@@ -381,7 +419,9 @@ Quick Measure Tab
       Battery Pack Voltage Monitoring
 
    
-   ADBMS2950B features two dedicated battery-stack voltage measurements path that connect to one or two external resistor dividers via the VBAT1 and VBAT2. In this example, the battery-stack voltage is determined as:
+   ADBMS2950B features two dedicated battery-stack voltage measurements path
+   that connect to one or two external resistor dividers via the VBAT1 and
+   VBAT2. In this example, the battery-stack voltage is determined as:
    
    .. math::
    
@@ -391,23 +431,25 @@ Quick Measure Tab
    .. math::
    
    
-      Battery-Stack Voltage = \frac{0.088300 V}{ {9.1 Ω}} (9.1 Ω + 3 \times 1200 Ω)
+      Battery-Stack Voltage = \frac{0.088300 V}{ {9.1 Ω}} (9.1 Ω + 3 \times 1200
+      Ω)
    
    .. math::
    
    
       Battery-Stack Voltage = 35.02 V
    
-   The voltage at these pins is first buffered to provide a high input resistance and then applied to two 16-bit ADCs.
-
+   The voltage at these pins is first buffered to provide a high input
+   resistance and then applied to two 16-bit ADCs.
 
 Memory Map Tab
 ^^^^^^^^^^^^^^
 
 .. container:: indent
 
-   The Memory Map tab provides a numerical output for the active command loop, organized into tables for user convenience. It offers customization and error highlighting for effective data analysis.
-
+   The Memory Map tab provides a numerical output for the active command loop,
+   organized into tables for user convenience. It offers customization and error
+   highlighting for effective data analysis.
 
    |image4|
 
@@ -416,15 +458,15 @@ Plots Tab
 
 .. container:: indent
 
-   The Plots tab provides a graphical representation of data collected through the running command loop. It offers customization options for focused analysis and allows for the export of captured data for further analysis.
-
+   The Plots tab provides a graphical representation of data collected through
+   the running command loop. It offers customization options for focused
+   analysis and allows for the export of captured data for further analysis.
 
    |image5|
 
 .. note::
 
    Refer to the GUI Tabs section of the :doc:`AD-CELLPACKBM-SL Software Guide </wiki-migration/resources/eval/user-guides/ad-cellpackbm-sl/software>` for a comprehensive overview of each tab's functions and descriptions.
-
 
 Notes
 -----
@@ -445,7 +487,9 @@ Electrical Hazards
 Intellectual Property and Commercial Use
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  The design and setup detailed in this guide are intended for educational, demo, and prototyping purposes only. They are not intended for use in commercial or mass production applications.
+-  The design and setup detailed in this guide are intended for educational,
+   demo, and prototyping purposes only. They are not intended for use in
+   commercial or mass production applications.
 
 Environmental Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -456,7 +500,8 @@ Environmental Considerations
 Help and Support
 ----------------
 
-For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer
+Zone.
 
 .. hint::
 
@@ -466,14 +511,13 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    For external users, please post your questions under the :ez:`Reference Designs <reference-designs>` forum in EngineerZone to get assistance from the community and experts.
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/quick-meausre-tab.png
-   :width: 2000px
+   :width: 2000
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_pack_current.png
-   :width: 2000px
+   :width: 2000
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_pack_voltage.png
-   :width: 2000px
+   :width: 2000
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/memory-map-tab.png
-   :width: 2000px
+   :width: 2000
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/plots-tab.png
-   :width: 2000px
+   :width: 2000

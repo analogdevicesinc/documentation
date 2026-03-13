@@ -36,7 +36,8 @@ The :adi:`ADRV904x-HB/PCBZ <en/design-center/evaluation-hardware-and-software/ev
 
 .. tip::
 
-   NOTE: Three jumpers must be mounted on the board on the following headers with the following settings:
+   NOTE: Three jumpers must be mounted on the board on the following headers
+   with the following settings:
 
    
    -  P209 - GPIO4_FMC
@@ -44,17 +45,17 @@ The :adi:`ADRV904x-HB/PCBZ <en/design-center/evaluation-hardware-and-software/ev
    -  P2021 - TEST connected to GND
    
 
-
 ZCU102 + EVAL
 ~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/adrv904x-zcu102-quickstart.jpeg
    :align: center
-   :width: 600px
+   :width: 600
 
 Unboxing guide
 ~~~~~~~~~~~~~~
 
-Detailed description of the setup procedure for ADRV9009 (similar procedure for ADRV904x):
+Detailed description of the setup procedure for ADRV9009 (similar procedure for
+ADRV904x):
 
 :ez:`Detailed unboxing guide <cfs-file/__key/communityserver-discussions-components-files/703/AD9371-and-ADRV9009-setup-with-ZCU102-or-ZC706-April2019.pdf>`

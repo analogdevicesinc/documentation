@@ -10,9 +10,14 @@ Supported Devices
 Description
 -----------
 
-HMC7044 is a high performance, dual-loop, integer-N jitter attenuator capable of performing reference selection and generation of ultralow phase noise frequencies for high speed data converters with either parallel or serial (JESD204B type) interfaces.
+HMC7044 is a high performance, dual-loop, integer-N jitter attenuator capable of
+performing reference selection and generation of ultralow phase noise
+frequencies for high speed data converters with either parallel or serial
+(JESD204B type) interfaces.
 
-The HMC7043 is a high performance clock buffer for the distribution of ultralow phase noise references for high speed data converters with either parallel or serial (JESD204B type) interfaces.
+The HMC7043 is a high performance clock buffer for the distribution of ultralow
+phase noise references for high speed data converters with either parallel or
+serial (JESD204B type) interfaces.
 
 This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting serial interface PLL Synthesizers. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
 
@@ -42,12 +47,12 @@ Files
 Enabling the driver
 ===================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The HMC7044 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -92,7 +97,8 @@ Optional properties:
 Adding channels
 ~~~~~~~~~~~~~~~
 
-Channels can be specified using child nodes. The following properties are applicable to them:
+Channels can be specified using child nodes. The following properties are
+applicable to them:
 
 -  **reg**: The identifier of the channel.
 -  **adi,extended-name**: Descriptive channel name.
@@ -119,10 +125,10 @@ Channels can be specified using child nodes. The following properties are applic
 Device tree example
 ~~~~~~~~~~~~~~~~~~~
 
-The following example instanciates the hmc7044 driver for a HMC7044 device connected on the SPI bus to the chip-select line 0.
+The following example instanciates the hmc7044 driver for a HMC7044 device
+connected on the SPI bus to the chip-select line 0.
 
 ::
-
 
        hmc7044: hmc7044@0 {
            compatible = "adi,hmc7044";

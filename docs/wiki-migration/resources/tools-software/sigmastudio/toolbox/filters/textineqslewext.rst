@@ -4,7 +4,7 @@ Text-In Eq Slew Ext-(ADAU145x)
 :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/txt-ineqslewext.png
-   :width: 100px
+   :width: 100
 
 An alternative to the :doc:`General (2nd Order)Slew Ext </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/generaleq2ndorderslewext>` filter, the Text-In block lets you set parameters using text fields, without having to open another window. The algorithms are the same, giving access to the wide variety of 2nd-order-filter behaviors, although not all the algorithms are offered with Text-In.
 
@@ -32,7 +32,8 @@ To use this block:
    -  Single-Precision
 
 -  Click the blue icon to choose your filter: Peak, Lowpass, Highpass, Low-Shelf, High-Shelf.
--  Enter values in the param tab for Boost (Peak and Shelf EQ), Freq, Q/Slope. Click the right arrow and the gain tab and enter the filter gain.
+-  Enter values in the param tab for Boost (Peak and Shelf EQ), Freq, Q/Slope.
+   Click the right arrow and the gain tab and enter the filter gain.
 
    -  Boost is the amount of boost / cut applied to the designated frequency range
    -  Freq is the center frequency

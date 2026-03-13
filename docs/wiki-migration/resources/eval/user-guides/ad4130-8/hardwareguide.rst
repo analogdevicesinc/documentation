@@ -12,7 +12,7 @@ After following the instructions in the :doc:`Software Procedures </wiki-migrati
    -  Using the Arduino Connectors
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/20220308_110921.jpg
-   :width: 400px
+   :width: 400
 
 Block Diagram
 =============
@@ -153,13 +153,13 @@ On Board Connections
 -  **ECG**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_ecg.png
-   :width: 600px
+   :width: 600
 
 Thermocouple Connector A2
 -------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_thermocouple.png
-   :width: 600px
+   :width: 600
 
 Connector J8: DC (Analog Input)
 -------------------------------
@@ -267,25 +267,29 @@ Connection Function  Connection Function
 ========== ========= ========== ========
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_arduino.png
-   :width: 600px
+   :width: 600
 
 SMA/SMB Connections
 -------------------
 
-There is 1 SMA/SMB connections on the board. To allow clock signals into the board.
+There is 1 SMA/SMB connections on the board. To allow clock signals into the
+board.
 
 -  SMB J2 Brings external MCLK to the AD4130-8
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_mclk.png
-   :width: 600px
+   :width: 600
 
 Power Supplies
 ==============
 
-The evaluation board receives power through the controller board when connected to the PC via USB. Linear regulators generate the required power supply levels from the applied USB voltage.
+The evaluation board receives power through the controller board when connected
+to the PC via USB. Linear regulators generate the required power supply levels
+from the applied USB voltage.
 
 -  Location of AVDD, AVSS and IOVDD control links are highlighted in Red in the diagram below
--  Each regulators can be shut down using their shut down links highlighted in orange below
+-  Each regulators can be shut down using their shut down links highlighted in
+   orange below
 
 AVDD (S1) and AVSS (LK12) selection
 -----------------------------------
@@ -370,12 +374,13 @@ IOVDD (S2) selection
 +----------------+------------------------------------------------------------------------+-------------------------+
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_power_links.png
-   :width: 600px
+   :width: 600
 
 Serial Interface
 ================
 
-There are four primary signals: CS, SCLK, MOSI/DIN, and MISO/DOUT (all are inputs, except for MISO/DOUT, which is an output).
+There are four primary signals: CS, SCLK, MOSI/DIN, and MISO/DOUT (all are
+inputs, except for MISO/DOUT, which is an output).
 
 Serial communication options
 ----------------------------
@@ -384,13 +389,15 @@ Serial communication options
 -  PMOD connector
 -  Standalone mode
 
-   -  Removing the links LK17, 18, 19, 20 and using the pins from these links can then be used to fly-wire the signals to an alternative digital capture setup
+   -  Removing the links LK17, 18, 19, 20 and using the pins from these links
+      can then be used to fly-wire the signals to an alternative digital capture
+      setup
 
 For an introduction to the Serial Peripheral Interface (SPI), click :adi:`here <en/analog-dialogue/articles/introduction-to-spi-interface.html>`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/spi_pic.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Reference Options
 =================
@@ -399,9 +406,11 @@ Reference Options
 -  **DEFAULT** :adi:`ADR391 <en/products/adr391.html>` On Board external reference
 -  External Reference Connector J8
 
-   -  Option to use 5.11k ohm precision resistor (R91) insert LK35 (Used for RTD Demo mode)
+   -  Option to use 5.11k ohm precision resistor (R91) insert LK35 (Used for RTD
+      Demo mode)
 
-      -  Option to use 10k ohm precision resistor (R91) insert LK37 (Used for Thermistor Demo mode)
+      -  Option to use 10k ohm precision resistor (R91) insert LK37 (Used for
+         Thermistor Demo mode)
 
 -  External Reference Connector J10
 
@@ -411,12 +420,14 @@ Selecting the reference source:
 Software
 ~~~~~~~~
 
-Example shows setting reference for Channel 0, for channel n, go to register CONFIG[n]
+Example shows setting reference for Channel 0, for channel n, go to register
+CONFIG[n]
 
 -  Board should be correctly connected to ACE
 -  Open AD4130-8 memory map
 -  Search for the CONFIG[0] register
--  Set the REF_SEL_N[0] to the desired reference source or the Data(hex) to the relevant bits
+-  Set the REF_SEL_N[0] to the desired reference source or the Data(hex) to the
+   relevant bits
 
    -  **Dedicated reference pins** REFIN1 +/- (Hex value 00, Binary Value 00).
 
@@ -425,7 +436,7 @@ Example shows setting reference for Channel 0, for channel n, go to register CON
       -  **AVDD to AVSS** (Hex Value 02, Binary Value 11).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ad4130_ref_sel_ace.png
-   :width: 600px
+   :width: 600
 
 Hardware
 ~~~~~~~~
@@ -439,7 +450,8 @@ Hardware
 |              |        |                  | Pos C: REFOUT and AVSS (Internal Reference needs to be enabled in the ADC Control register) |                      |
 +--------------+--------+------------------+---------------------------------------------------------------------------------------------+----------------------+
 
-If REFIN1+/- or REFIN2+/- is selected the options below are available using links shown in the diagram below
+If REFIN1+/- or REFIN2+/- is selected the options below are available using
+links shown in the diagram below
 
 -  :adi:`ADR391 <en/products/adr391.html>`, REFIN - shorted to AVSS (LK6)
 -  External Reference Connector J8
@@ -469,6 +481,6 @@ Bill of Materials
 :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad4130-8>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_refs.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_refin_links.png
-   :width: 400px
+   :width: 400

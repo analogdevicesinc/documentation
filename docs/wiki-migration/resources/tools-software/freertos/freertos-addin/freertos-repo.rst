@@ -1,14 +1,18 @@
 FreeRTOS Add-In GIT Sources
 ===========================
 
-The following sections will describe how the add-in clones the sources from the Analog Devices FreeRTOS Add-In Repository.
+The following sections will describe how the add-in clones the sources from the
+Analog Devices FreeRTOS Add-In Repository.
 
 --------------
 
 Repository
 ----------
 
-The FreeRTOS Add-In will automatically download the latest version of the sources into your project, when you add the FreeRTOS Add-In to your project, so you would normally have no need to look at the GitHub repository the files come from.
+The FreeRTOS Add-In will automatically download the latest version of the
+sources into your project, when you add the FreeRTOS Add-In to your project, so
+you would normally have no need to look at the GitHub repository the files come
+from.
 
 The repository is available at `freertos-addin-rtos <https://github.com/analogdevicesinc/freertos-addin-rtos>`_.
 
@@ -35,4 +39,8 @@ Restoring Source
 
 If for some reason the **Source** directory is missing in the project structure, the add-in will automatically attempt to re-clone the sources into this directory. This will only be done when CCES is restarted, or the project is re-opened.
 
-It is important to note that the commit-id of the repo source is stored in the system.svc, meaning that the correct version of source will be cloned, assuming that the add-in is still installed in the project. If you have manually changed the tag being used, this will be ignored and replaced with the original version installed.
+It is important to note that the commit-id of the repo source is stored in the
+system.svc, meaning that the correct version of source will be cloned, assuming
+that the add-in is still installed in the project. If you have manually changed
+the tag being used, this will be ignored and replaced with the original version
+installed.

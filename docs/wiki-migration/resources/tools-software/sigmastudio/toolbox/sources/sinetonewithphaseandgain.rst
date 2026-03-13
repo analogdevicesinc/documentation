@@ -3,10 +3,11 @@
 Sine Tone with Phase and Gain(ADSP-SC5xx/215xx)
 ===============================================
 
-This module can be used to generate a Sine Tone at different frequencies. The gain and phase of the algorithm can be configured
+This module can be used to generate a Sine Tone at different frequencies. The
+gain and phase of the algorithm can be configured
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sinetonephasegain.jpg
-   :width: 300px
+   :width: 300
 
 Output Pins
 -----------
@@ -24,7 +25,7 @@ Configuration
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sinetonephasegain_config.jpg
-   :width: 150px
+   :width: 150
 
 +------------------+---------------+--------------------------+-------------------------------------------------------------------------------------------------------------------+
 | GUI Control Name | Default Value | Range                    | Function Description                                                                                              |
@@ -66,7 +67,9 @@ Configuration
 Algorithm Description
 ---------------------
 
-This modules generates Sine tone based on the Frequency and the Phase set in the GUI. Gain of the sine tone can be adjusted from the GUI. Sine Tone can be switched On/Off using the On/Off checkbox in the GUI.
+This modules generates Sine tone based on the Frequency and the Phase set in the
+GUI. Gain of the sine tone can be adjusted from the GUI. Sine Tone can be
+switched On/Off using the On/Off checkbox in the GUI.
 
 Supported ICs
 -------------
@@ -77,13 +80,16 @@ Supported ICs
 Sine Tone With Phase and Gain(ADAU145x)
 =======================================
 
-The Tone (Lookup/Sine) block generates a tone from a lookup table. The gain and the initial phase of the algorithm can be configured. Set the tone frequency in text field or use the arrows; the checkbox turns the tone on and off.
+The Tone (Lookup/Sine) block generates a tone from a lookup table. The gain and
+the initial phase of the algorithm can be configured. Set the tone frequency in
+text field or use the arrows; the checkbox turns the tone on and off.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sourcewithgain.jpg
    :align: center
-   :width: 100px
+   :width: 100
 
-To change the source's Sampling Rate, Right-click in the block and select Set Sampling Rate, which will open the Sampling Rate window (default is 44.1 kHz).
+To change the source's Sampling Rate, Right-click in the block and select Set
+Sampling Rate, which will open the Sampling Rate window (default is 44.1 kHz).
 
 Output Pins
 -----------

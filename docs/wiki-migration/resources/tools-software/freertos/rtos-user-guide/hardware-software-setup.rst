@@ -1,14 +1,17 @@
 Hardware and software set up
 ============================
 
-To run the FreeRTOS examples, this section would guide users how to get the hardware and software ready, including get the FreeRTOS source code and set up running environment.
+To run the FreeRTOS examples, this section would guide users how to get the
+hardware and software ready, including get the FreeRTOS source code and set up
+running environment.
 
 --------------
 
 Get the hardware ready
 ----------------------
 
-The Analog Devices FreeRTOS product supports reference development board from Analog Devices for the SHARC+ and Blackfin BF70x processor families.
+The Analog Devices FreeRTOS product supports reference development board from
+Analog Devices for the SHARC+ and Blackfin BF70x processor families.
 
 Below is a list of the hardware involved.
 
@@ -38,7 +41,8 @@ Below is a list of the hardware involved.
 
 \*\* PC: \*\*
 
-A Windows 8.1 or 10 PC is required. Verify that your PC has these minimum requirements:
+A Windows 8.1 or 10 PC is required. Verify that your PC has these minimum
+requirements:
 
 -  2 GHz single core processor; 3.3GHz dual core or better recommended
 -  4 GB RAM; 8GB or more recommended
@@ -70,7 +74,8 @@ CrossCore Embedded Studio
 
 CrossCore Embedded Studio is available from :adi:`en/design-center/evaluation-hardware-and-software/software/adswt-cces.html`
 
-FreeRTOS is supported from CrossCore Embedded Studio version 2.8.0. The FreeRTOS Add-In is supported from CrossCore Embedded Studio version 2.10.1.
+FreeRTOS is supported from CrossCore Embedded Studio version 2.8.0. The FreeRTOS
+Add-In is supported from CrossCore Embedded Studio version 2.10.1.
 
 System Resources Used By FreeRTOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

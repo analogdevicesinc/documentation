@@ -3,7 +3,9 @@
 Get Properties
 ==============
 
-This action allows the user to get all the available properties of a given plugin. The function call takes in 1 argument. Returns the shape properties in the form of list of strings.
+This action allows the user to get all the available properties of a given
+plugin. The function call takes in 1 argument. Returns the shape properties in
+the form of list of strings.
 
 API
 ---

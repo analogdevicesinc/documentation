@@ -5,8 +5,8 @@ Switch back to glibc from musl
 
    This is relevant to :doc:`Linux for ADSP-SC5xx Processors 3.0.0 </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>` only. Earlier version do not feature this choice, and on later versions this has been simplified a lot
 
-
-This page provides instructions for reverting a toolchain change introduced in version 3.0.0 of Linux for ADSP-SC5xx Processors.
+This page provides instructions for reverting a toolchain change introduced in
+version 3.0.0 of Linux for ADSP-SC5xx Processors.
 
 Why was that changed?
 ---------------------
@@ -70,5 +70,6 @@ You can now proceed with the rest of the Quickstart guide instructions.
 
 .. important::
 
-   Doing this will increase the FIT+RFS sizes such that the SPI boot paths no longer work because of insufficient space on the smaller board flashes (16MB or 32MB). TFTP/NFS/MMC/SD should still work.
-
+   Doing this will increase the FIT+RFS sizes such that the SPI boot paths no
+   longer work because of insufficient space on the smaller board flashes (16MB
+   or 32MB). TFTP/NFS/MMC/SD should still work.

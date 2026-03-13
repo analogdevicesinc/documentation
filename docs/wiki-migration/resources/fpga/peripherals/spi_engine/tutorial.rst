@@ -5,7 +5,6 @@ SPI Engine Tutorial - PulSAR-ADC
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/spi_engine/tutorial.html\
 
-
 The goal of this tutorial is to present the process of adding :doc:`SPI Engine </wiki-migration/resources/fpga/peripherals/spi_engine>` support for an ADI precision converter or family of converters using a few simple steps. The target carrier is the Digilent Cora-z7s board using a Pmod connector.
 
 Evaluating the target device
@@ -47,14 +46,20 @@ The aim of this project is to provide support for a family of ADCs which come in
 | AD7984      | 18         | 1333 | 12                  | 500             | 750            | 250            |
 +-------------+------------+------+---------------------+-----------------+----------------+----------------+
 
-The device with the most demanding timing specifications is the AD7984. It requires the highest amount of data (18 bit) to be read in the least amount of time (T_ACQ 250ns). The other devices will work with the same HDL by just using different “downgraded” configurations.
+The device with the most demanding timing specifications is the AD7984. It
+requires the highest amount of data (18 bit) to be read in the least amount of
+time (T_ACQ 250ns). The other devices will work with the same HDL by just using
+different “downgraded” configurations.
 
 SPI Engine hierarchy instantiation
 ----------------------------------
 
 The SPI Engine can be implemented in two ways, either by placing and connecting each IP individually or by using the function provided by the spi_engine.tcl script :git-hdl:`library/spi_engine/scripts/spi_engine.tcl`
 
-Using the script ensures that the correct connections are being made and that the IP cores will receive the correct parameter configuration since certain parameters need to be set to the same value. The function takes the following argumets
+Using the script ensures that the correct connections are being made and that
+the IP cores will receive the correct parameter configuration since certain
+parameters need to be set to the same value. The function takes the following
+argumets
 
 ::
 
@@ -91,13 +96,18 @@ Configuration tcl code and result below:
 SPI Engine reference clock
 --------------------------
 
-There are 3 categories of devices depending on the SPI interface clock (SCLK): 80 MHz, 50MHz (one device) and 40MHz. SCLK will be derived from the spi_clk reference signal using an internal prescaler with this formula
+There are 3 categories of devices depending on the SPI interface clock (SCLK):
+80 MHz, 50MHz (one device) and 40MHz. SCLK will be derived from the spi_clk
+reference signal using an internal prescaler with this formula
 
 ::
 
    f_sclk = f_clk / ((div + 1) * 2)
 
-Therefore a 160MHz reference clock will be needed for the 40 and 80MHz variants and 100MHz for the 50MHz SCLK. The axi_clkgen IP core will be used to obtain the 160MHz which will be the default value to ensure that the design bitstream meets timing. This IP can also be configured from software to output 100MHz.
+Therefore a 160MHz reference clock will be needed for the 40 and 80MHz variants
+and 100MHz for the 50MHz SCLK. The axi_clkgen IP core will be used to obtain the
+160MHz which will be the default value to ensure that the design bitstream meets
+timing. This IP can also be configured from software to output 100MHz.
 
 ::
 
@@ -121,7 +131,8 @@ AD7984 Timing diagram
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/ad7984_timing.png
    :align: right
 
-The above image shows the wave forms for a particular operating mode supported by the device which will be implemented using the SPI Engine in offload mode.
+The above image shows the wave forms for a particular operating mode supported
+by the device which will be implemented using the SPI Engine in offload mode.
 
 Key timing characteristics
 
@@ -136,7 +147,11 @@ Key timing characteristics
 Sample rate control
 ~~~~~~~~~~~~~~~~~~~
 
-The T_CYC parameter is the what sets the maximum sample rate (1/750 => 1333 KSPS). To achieve precise control over the the sample rate we will use a PWM generator (AXI PWM GEN) using the spi_clk as reference. The spi_clock is used to avoid clock domain crossing mechanisms which will introduce latency, decreasing the overall performance of the system.
+The T_CYC parameter is the what sets the maximum sample rate (1/750 => 1333
+KSPS). To achieve precise control over the the sample rate we will use a PWM
+generator (AXI PWM GEN) using the spi_clk as reference. The spi_clock is used to
+avoid clock domain crossing mechanisms which will introduce latency, decreasing
+the overall performance of the system.
 
 ::
 
@@ -151,13 +166,17 @@ The T_CYC parameter is the what sets the maximum sample rate (1/750 => 1333 KSPS
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/pwm_trigger_1.png
    :align: right
-   :width: 500px
+   :width: 500
 
-Since the AXI PWM IP core is connected to the system with AXI4 Lite, the software will be able to change the frequency of its output at any time. The resolution of the PWM period is the reference clock period (spi_clk) providing a wide range of options.
+Since the AXI PWM IP core is connected to the system with AXI4 Lite, the
+software will be able to change the frequency of its output at any time. The
+resolution of the PWM period is the reference clock period (spi_clk) providing a
+wide range of options.
 
 The PWM output will be used as a trigger signal for the offload IP core.
 
-The CS signal will be used to drive CNV and will have the same frequency as the PWM-trgger signal.
+The CS signal will be used to drive CNV and will have the same frequency as the
+PWM-trgger signal.
 
 DMA setup
 ---------
@@ -177,7 +196,8 @@ DMA destination bus (connection to Zynq – DDR memory) shall always be 64 bit w
    ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH_SRC $data_width //32
    ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH_DEST 64
 
-The system clock is used as destination clock and the spi_clk is used as source clock
+The system clock is used as destination clock and the spi_clk is used as source
+clock
 
 ::
 
@@ -187,12 +207,21 @@ The system clock is used as destination clock and the spi_clk is used as source 
 System Top
 ----------
 
-This is a layer on top of the system_wrapper generated by Vivado used to instantiate IO buffers, I/ODDRs or to create some custom connections which would be harder to do in the block design. It also alows for more consistency across projects. In this particular case we use it to place an IO buffer for the ADC power down signal (pulsar_adc_spi_pd).
+This is a layer on top of the system_wrapper generated by Vivado used to
+instantiate IO buffers, I/ODDRs or to create some custom connections which would
+be harder to do in the block design. It also alows for more consistency across
+projects. In this particular case we use it to place an IO buffer for the ADC
+power down signal (pulsar_adc_spi_pd).
 
 System Constraints
 ------------------
 
-The system_constr.xdc file inside the carrier folder (/coraz7s/system_constr.xdc) is used for defining the physical FPGA pins used by this particular project (in this case the AD7984 ADC), excluding the "common" design for the carrier board which has a separate constraints file (i.e. DDR pins, Ethernet, UART etc). It also contains some timing constraints specific to the SPI Engine.
+The system_constr.xdc file inside the carrier folder
+(/coraz7s/system_constr.xdc) is used for defining the physical FPGA pins used by
+this particular project (in this case the AD7984 ADC), excluding the "common"
+design for the carrier board which has a separate constraints file (i.e. DDR
+pins, Ethernet, UART etc). It also contains some timing constraints specific to
+the SPI Engine.
 
 create_generated_clock -name spi_clk -source [get_pins -filter name=~*CLKIN1 -of [get_cells -hier -filter name=~*spi_clkgen\*i_mmcm]] -master_clock clk_fpga_0 [get_pins -filter name=~*CLKOUT0 -of [get_cells -hier -filter name=~*spi_clkgen\*i_mmcm]]
 
@@ -218,24 +247,26 @@ The setup assumes the testbenches repo is cloned inside the hdl repo. To build t
 Evaluating the result
 ---------------------
 
-Due to the limits of the SPI Engine cores, T_CYC needs to be increased slightly over the minimum value, to ensure that the design meets the T_CONV minimum. This will slightly lower the maximum sample rate of the design from 1.333 MSPS to 1.322 MSPS.
+Due to the limits of the SPI Engine cores, T_CYC needs to be increased slightly
+over the minimum value, to ensure that the design meets the T_CONV minimum. This
+will slightly lower the maximum sample rate of the design from 1.333 MSPS to
+1.322 MSPS.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/pulsar_hdl_timing_2.png
    :alt: pulsar_hdl_timing_2.png
    :align: right
-   :width: 1000px
+   :width: 1000
 
 Holding CS high for 500ns ensures that we always meet T_CONV minimum.
-
 
 |pulsar_hdl_timing_3.png|
 
 The 250ns minimum T_ACQ is alse met with a slightly higher value of 256.25ns.
 
-
 |pulsar_hdl_timing_4.png|
 
-Overall the project appears to be functional and ready for the next step in development, using software.
+Overall the project appears to be functional and ready for the next step in
+development, using software.
 
 Software section
 ~~~~~~~~~~~~~~~~
@@ -243,7 +274,6 @@ Software section
 .. important::
 
    The section is still under development.
-
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
@@ -253,6 +283,6 @@ Additional Resources
 -  :doc:`SPI Engine Instruction Format </wiki-migration/resources/fpga/peripherals/spi_engine/instruction_format>`
 
 .. |pulsar_hdl_timing_3.png| image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/pulsar_hdl_timing_3.png
-   :width: 1000px
+   :width: 1000
 .. |pulsar_hdl_timing_4.png| image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/pulsar_hdl_timing_4.png
-   :width: 1000px
+   :width: 1000

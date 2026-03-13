@@ -1,9 +1,13 @@
 MCAPI Supported Functions
 =========================
 
-The Yocoto Linux Product supports a subset of the APIs stated in the MCAPI specification, version 2.0.15.
+The Yocoto Linux Product supports a subset of the APIs stated in the MCAPI
+specification, version 2.0.15.
 
-Inter-core communication is only supported using messaging mode. Communication using packet and scalar types is not supported. Communication can be performed using blocking and non-blocking methods. The following table summarizes the APIs supported in this release of the Yocto Linux.
+Inter-core communication is only supported using messaging mode. Communication
+using packet and scalar types is not supported. Communication can be performed
+using blocking and non-blocking methods. The following table summarizes the APIs
+supported in this release of the Yocto Linux.
 
 +-------------------------------------------------------------------------+----------------------------+------------------------------+
 | *Function*                                                              | *Supported APIs*           | *Un-supported APIs*          |

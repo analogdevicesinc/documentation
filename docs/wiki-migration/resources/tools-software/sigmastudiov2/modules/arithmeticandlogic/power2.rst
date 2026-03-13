@@ -20,7 +20,6 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 2 Power x B          B                S             B
 ========= ========== ================ ============= ================
 
-
 | ===== Pins =====
 
 Input

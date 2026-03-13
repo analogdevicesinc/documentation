@@ -10,7 +10,7 @@ This user guide gives a detailed explanation about **CN0357_example** toxic gas 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_154523.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 The :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield circuit provides a potentiostatic circuit for biasing the electrochemical sensor and 16-bit Sigma-Delta ADC. The small currents passing in the sensor is being converted to a voltage that can be read by the ADC. The 16-bit ADC value is received via SPI interface of the EVAL-ADICUP3029 board, where the gas concentration is computed.
 
@@ -40,23 +40,26 @@ Setting up the Hardware
 
 -  Plug the **EVAL-CN0357-ARDZ** shield on top of the **Arduino Uno** development board by matching up the **POWER, ANALOG, DIGI0, DIGI1** connectors.
 
-   -  Note, the boards should only plug together one way, preventing reverse connections.
+   -  Note, the boards should only plug together one way, preventing reverse
+      connections.
 
 -  Connect your carbon monoxide(CO) sensor to the EVAL-CN0357-ARDZ via (**P1**).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_154407.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
--   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the other end into the PC or laptop.
+-   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the
+    other end into the PC or laptop.
 
 .. important::
 
-   Rev B EVAL-CN0357-ARDZ boards REQUIRE an external power supply, plugged into the DC barrel jack of the Arduino Uno. If not supplied, the board WILL NOT WORK PROPERLY.
+   Rev B EVAL-CN0357-ARDZ boards REQUIRE an external power supply, plugged into
+   the DC barrel jack of the Arduino Uno. If not supplied, the board WILL NOT
+   WORK PROPERLY.
 
    
    Rev C Eval-CN0357-ARDZ boards do not require this extra power supply.
-
 
 Obtaining the Source Code
 -------------------------
@@ -70,15 +73,15 @@ The source code and include files of the **CN0357_example** can be found here:
    :git-arduino:`CN0357_example at Github <Arduino%20Uno%20R3/examples/CN0357_example>`
    
 
-
 Project Structure
 -----------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/drawing2.png
    :align: center
-   :width: 700px
+   :width: 700
 
-The Arduino Sketch is used to load the example into Arduino IDE. The project is composed of three main parts:
+The Arduino Sketch is used to load the example into Arduino IDE. The project is
+composed of three main parts:
 
 -  the main program (arduino sketch)
 -  application layer (IC drivers and sensor data)
@@ -86,7 +89,10 @@ The Arduino Sketch is used to load the example into Arduino IDE. The project is 
 Configuring the Software Parameters
 -----------------------------------
 
-The CN0357 comes with a carbon monoxide sensor, and those default settings are programmed into the software.(No configuration required) If you decide to use a different type of sensor, you will need to change the sensor sensitivity and range within the software.
+The CN0357 comes with a carbon monoxide sensor, and those default settings are
+programmed into the software.(No configuration required) If you decide to use a
+different type of sensor, you will need to change the sensor sensitivity and
+range within the software.
 
 In *CN0357_example.ino* file the user can configure parameters:
 
@@ -108,25 +114,30 @@ Compiling, Verifying, and Programming
 -  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
 -  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
 
-These two steps can also be done using the quick buttons on the Arduino sketch. Check out the image below for locations of the quick buttons.
+These two steps can also be done using the quick buttons on the Arduino sketch.
+Check out the image below for locations of the quick buttons.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino_ide_verify_upload_buttons.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Outputting Data
 ---------------
 
-Data is output using the USB cable from the Arduino to the PC. The USB port acts as a serial terminal to display the data being transmitted via UART. Opening the serial terminal window from the Arduino IDE is very easy, simply click on the button shown in the picture below.
+Data is output using the USB cable from the Arduino to the PC. The USB port acts
+as a serial terminal to display the data being transmitted via UART. Opening the
+serial terminal window from the Arduino IDE is very easy, simply click on the
+button shown in the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino_ide_serial_terminal_button.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Serial Terminal Output
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You may need to configure the serial terminal depending on the current settings of the Arduino IDE. Make sure the settings are as follows:
+You may need to configure the serial terminal depending on the current settings
+of the Arduino IDE. Make sure the settings are as follows:
 
 ::
 
@@ -140,7 +151,8 @@ You may need to configure the serial terminal depending on the current settings 
 Tools Download and Help
 -----------------------
 
-The Arduino tools are easy to use, and there are many tutorials and users guides to help learn how to use the Arduino IDE.
+The Arduino tools are easy to use, and there are many tutorials and users guides
+to help learn how to use the Arduino IDE.
 
 For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
@@ -148,6 +160,5 @@ For more information on how to use the tool basics, please check out the `Arduin
    :class: download
 
    To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
-
 
 *End of Document*

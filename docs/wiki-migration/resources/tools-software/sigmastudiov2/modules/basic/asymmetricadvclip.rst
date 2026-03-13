@@ -9,4 +9,5 @@ Asymmetric Soft Clipper - Advanced
 Description
 -----------
 
-The Asymmetric Soft Clipper Advanced is a soft-clipper that clips the input data signal according to clip up/down values set by data control input pins.
+The Asymmetric Soft Clipper Advanced is a soft-clipper that clips the input data
+signal according to clip up/down values set by data control input pins.

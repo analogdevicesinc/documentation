@@ -23,7 +23,6 @@ Status
 
 +--------------------------------------------------------------------------------------------+
 
-
 | Source                                                                                     |
 
 +============================================================================================+
@@ -44,8 +43,15 @@ Files
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
@@ -54,7 +60,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 This specifies any shell prompt running on the target
 
@@ -155,7 +160,8 @@ Show channel scale_available and sampling_frequency_available
 This specifies any shell prompt running on the target
    <code>
    root:/sys/bus/iio/devices/iio:device0> **cat in_voltage29-voltage24_scale_available**
-   0.000149011 0.000074505 0.000037252 0.000018626 0.000009313 0.000004656 0.000002328 0.000001164 0.000298023 0.000149011
+   0.000149011 0.000074505 0.000037252 0.000018626 0.000009313 0.000004656
+   0.000002328 0.000001164 0.000298023 0.000149011
    root:/sys/bus/iio/devices/iio:device0>** cat in_voltage29-voltage24_sampling_frequency_available **
    [7.629860220 15.259720441 125000.000000000]
 
@@ -171,7 +177,6 @@ Device Tree
 -----------
 
 ::
-
 
    ad4170@0 {
                compatible = "adi,ad4170";
@@ -244,6 +249,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

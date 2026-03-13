@@ -3,11 +3,15 @@ Chime Generator
 
 `Click here to return to the Source page <https://wiki.analog.com/resources/tools-software/sigmastudio/toolbox/source>`_
 
-The Chime Generator module used to a chime sound with programmable, wave type, frequency, attack, decay, On time, Off time, number of pulse repetitions and time delay between the pulse. There are two control inputs pins one for On/Off and one for selecting the current GUI control. There are two output pins one for chime running status and one for chime output.
+The Chime Generator module used to a chime sound with programmable, wave type,
+frequency, attack, decay, On time, Off time, number of pulse repetitions and
+time delay between the pulse. There are two control inputs pins one for On/Off
+and one for selecting the current GUI control. There are two output pins one for
+chime running status and one for chime output.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/chimegenerator_215xx.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 **Input Pins:**
 

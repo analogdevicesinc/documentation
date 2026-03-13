@@ -1,12 +1,14 @@
 Appendix A: FreeRTOS Performance
 ================================
 
-The following appendix contains code size and performance data for Analog Devices specific ports of FreeRTOS.
+The following appendix contains code size and performance data for Analog
+Devices specific ports of FreeRTOS.
 
 Timer Cycles
 ------------
 
-The following benchmarks report time and cycle count measurements for post and pending operations using varying methods of communication.
+The following benchmarks report time and cycle count measurements for post and
+pending operations using varying methods of communication.
 
 Benchmark data is available for the following EZ-Kits:
 
@@ -27,7 +29,8 @@ The following projects are executed to gather the benchmark data:
 Spaces
 ------
 
-The following benchmarks report code size for several common RTOS operations within FreeRTOS:
+The following benchmarks report code size for several common RTOS operations
+within FreeRTOS:
 
 -  **NONE**: Basic project
 -  **Message** Queues: Basic project using 1 static object / Basic project using 2 static objects

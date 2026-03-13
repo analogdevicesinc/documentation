@@ -10,15 +10,19 @@ In the No-OS driver the values directly correspond to members of the (taliseInit
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/taliseinit_t.png
    :alt: taliseInit_t structure
    :align: center
-   :width: 500px
+   :width: 500
 
 See more details about :doc:`ADRV9009/ADRV9008 Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`.
 
-In order for the settings made on these plugin to take affect, the Save Settings button must be pressed. It should be noted that the driver then reinitialized the ADRV9009 from reset, which will rerun all calibrations and this may take several seconds to complete.
+In order for the settings made on these plugin to take affect, the Save Settings
+button must be pressed. It should be noted that the driver then reinitialized
+the ADRV9009 from reset, which will rerun all calibrations and this may take
+several seconds to complete.
 
 .. tip::
 
-   \ TIP: After you customized the driver for your application needs you can read back all values from the Linux debugfs:
+   \ TIP: After you customized the driver for your application needs you can
+   read back all values from the Linux debugfs:
 
    
    .. container:: box bggreen
@@ -58,7 +62,6 @@ In order for the settings made on these plugin to take affect, the Save Settings
    For the No-OS driver the mapping can be found here: :doc:`ADRV9009 Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`
    
 
-
 Screenshots / Descriptions
 --------------------------
 
@@ -68,7 +71,7 @@ Clock Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_1.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 Calibrations
 ~~~~~~~~~~~~
@@ -76,7 +79,7 @@ Calibrations
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_2.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 TX Settings
 ~~~~~~~~~~~
@@ -84,7 +87,7 @@ TX Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_3.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 RX Settings
 ~~~~~~~~~~~
@@ -92,7 +95,7 @@ RX Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_4.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 Observation RX Settings
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +103,7 @@ Observation RX Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_5.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 Frequency Hopping Mode Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -108,7 +111,7 @@ Frequency Hopping Mode Setup
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_6.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 PA Protection Settings
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -116,7 +119,7 @@ PA Protection Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_7.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 Gain Settings
 ~~~~~~~~~~~~~
@@ -124,7 +127,7 @@ Gain Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_8.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 AGC Settings
 ~~~~~~~~~~~~
@@ -132,7 +135,7 @@ AGC Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_9.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 ARM GPIO Settings
 ~~~~~~~~~~~~~~~~~
@@ -140,7 +143,7 @@ ARM GPIO Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_10.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 AUX DAC Settings
 ~~~~~~~~~~~~~~~~
@@ -148,7 +151,7 @@ AUX DAC Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_11.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 JESD204B Settings
 ~~~~~~~~~~~~~~~~~
@@ -156,7 +159,7 @@ JESD204B Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_12.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 JESD204B Framer Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -164,7 +167,7 @@ JESD204B Framer Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_13.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 JESD204B Deframer Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,7 +175,7 @@ JESD204B Deframer Settings
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_14.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
 BIST
 ~~~~
@@ -180,18 +183,23 @@ BIST
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_adv_plugin_15.png
    :alt: BIST
    :align: center
-   :width: 600px
+   :width: 600
 
-BIST stands for Build-In Self-Test. Selections on this Tab take immediately effect and therefore don’t require the Save Settings Button. Functionality exposed here is only meant to inject test patterns/data than can be used to validate the Digital Interface or functionality of the device.
+BIST stands for Build-In Self-Test. Selections on this Tab take immediately
+effect and therefore don’t require the Save Settings Button. Functionality
+exposed here is only meant to inject test patterns/data than can be used to
+validate the Digital Interface or functionality of the device.
 
 There are three major facilities.
 
 BIST TX NCO Tone
 ^^^^^^^^^^^^^^^^
 
-User selectable tone with frequency in kHz, that can be injected into the TX path.
+User selectable tone with frequency in kHz, that can be injected into the TX
+path.
 
 BIST PRBS
 ^^^^^^^^^
 
-Patterns and Pseudorandom Binary Sequence (PRBS) that can be injected into the RX path.
+Patterns and Pseudorandom Binary Sequence (PRBS) that can be injected into the
+RX path.

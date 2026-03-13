@@ -3,7 +3,6 @@ Asymmetric soft clipper
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 | The Asymmetric soft clipper block is a soft clipper that clips the level of the input signal asymmetrically according to the set clipping thresholds. As the input signal reaches the clip threshold at either ends, the algorithm rounds the edges for a smoother clipped output. |
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -11,7 +10,7 @@ Asymmetric soft clipper
 The module supports two algorithms: 1.Standard Cubic Clip 2.Advanced Clip
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocessors/asymm0.png
-   :width: 100px
+   :width: 100
 
 Input Pins
 ----------
@@ -72,7 +71,8 @@ DSP Parameter Information
 |                  | SoftClipAlg1alpha2m1 |                                                                                                                                                                                                         |
 +------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Note: There are other fixed parameters used for this algorithm, but they do not need to be updated when the alpha value is changed.
+Note: There are other fixed parameters used for this algorithm, but they do not
+need to be updated when the alpha value is changed.
 
 2.Advance Clip
 ~~~~~~~~~~~~~~
@@ -95,7 +95,12 @@ Algorithm Description
 1.Standard Cubic
 ~~~~~~~~~~~~~~~~
 
-The Standard Cubic block asymmetrically clips portions of signal voltages according to a cubic asymmetric soft clip function. The pre/post scalar alpha1 and alpha2 make the soft clip more or less severe. alpha1 sets the clipping threshold for the positive part of the input signal, whereas alpha2, sets the clipping threshold for the lower part of the input signal.This block limits the range of the output signal according to the following formulas:
+The Standard Cubic block asymmetrically clips portions of signal voltages
+according to a cubic asymmetric soft clip function. The pre/post scalar alpha1
+and alpha2 make the soft clip more or less severe. alpha1 sets the clipping
+threshold for the positive part of the input signal, whereas alpha2, sets the
+clipping threshold for the lower part of the input signal.This block limits the
+range of the output signal according to the following formulas:
 
 :math:`Output = Alpha1 \times f(x), if x>0`
 
@@ -111,17 +116,25 @@ x-x^\\frac{3}{3}, -1<x<1;
 
 \\frac{2}{3}, x>=1 $$
 
-Thus for the default value of Alpha1 = 1, Alpha2=1, the signal range will be from [-2/3, 2/3]. Changing the value of Alphas will affect the output range of the signal. The following graphs show the relationship between changing values of Alphas and obtaining different signal ranges.
+Thus for the default value of Alpha1 = 1, Alpha2=1, the signal range will be
+from [-2/3, 2/3]. Changing the value of Alphas will affect the output range of
+the signal. The following graphs show the relationship between changing values
+of Alphas and obtaining different signal ranges.
 
 Example
 ^^^^^^^
 
-The following image shows the Soft Clipper, being compared to a Hard Clipper and also the direct signal coming from the Inputs.
+The following image shows the Soft Clipper, being compared to a Hard Clipper and
+also the direct signal coming from the Inputs.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocessors/asymmschema0.png
-   :width: 450px
+   :width: 450
 
-The Hard Clipper and Soft Clipper are set with corresponding Alpha and threshold values so that their clip behavior occurs at the same time. However, you will notice in the following output comparison graph, the Soft Clipper has rounded smoother edges on the output where clipping begins to occur which has a more pleasing auditory effect.
+The Hard Clipper and Soft Clipper are set with corresponding Alpha and threshold
+values so that their clip behavior occurs at the same time. However, you will
+notice in the following output comparison graph, the Soft Clipper has rounded
+smoother edges on the output where clipping begins to occur which has a more
+pleasing auditory effect.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocessors/asymmclip3.png
 
@@ -150,7 +163,12 @@ Algorithm Growth Information
 | 
 | ==== 2.Advanced Clip ====
 
-The Advanced clip block asymmetrically clips portions of signal voltages according to a TanH asymmetric soft clip function. The pre/post scalar alpha1 and alpha2 make the soft clip more or less severe. alpha1 sets the clipping threshold for the positive part of the input signal, whereas alpha2, sets the clipping threshold for the lower part of the input signal.This block limits the range of the output signal according to the following formulas:
+The Advanced clip block asymmetrically clips portions of signal voltages
+according to a TanH asymmetric soft clip function. The pre/post scalar alpha1
+and alpha2 make the soft clip more or less severe. alpha1 sets the clipping
+threshold for the positive part of the input signal, whereas alpha2, sets the
+clipping threshold for the lower part of the input signal.This block limits the
+range of the output signal according to the following formulas:
 
 :math:`Output = Input, if |Input|<tau1 for Input>0, |Input|<tau2 for Input<0`
 
@@ -158,12 +176,14 @@ The Advanced clip block asymmetrically clips portions of signal voltages accordi
 
 :math:`\displaystyle Output = -tau2 -(1 - tau2) \times tanh(\frac{abs(Input) - tau2}{1 - tau2}), if|Input|>=tau2 and Input<0`
 
-Thus for the default value of tau1 = 0.5, tau2=0.5. Changing the value of taus will affect the output range of the signal.
+Thus for the default value of tau1 = 0.5, tau2=0.5. Changing the value of taus
+will affect the output range of the signal.
 
 Example
 ^^^^^^^
 
-The graph below shows an input sine tone and the resulting clipped output with threshold values at: Clip Up: 0.8 Clip Down: 0.2
+The graph below shows an input sine tone and the resulting clipped output with
+threshold values at: Clip Up: 0.8 Clip Down: 0.2
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/nonlinearprocessors/datagraph.png
 

@@ -11,17 +11,16 @@ The **ADuCM360_demo_cn0411** project uses the :adi:`EVAL-CN0411-ARDZ shield <en/
 The circuit is divided into three independent measurement front ends: TDS, conductivity and temperature. After signal conditioning, the three channels share an :adi:`ad7124-8`, 24-bit sigma-delta (Σ-Δ) ADC. The :adi:`ad7124-8`, is a low power, low noise, completely integrated analog front end for high precision measurement applications.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0411_demo_4.jpg
-   :width: 600px
+   :width: 600
 
 For temperature compensation can be used an RTD PT100 sensor, 2-wire. The ADuCM360_demo_cn0411 application processes ADC outputs for all 5 channels (RTD, Vpeak+ and Vpeak-, VDAC, VR20S, VR200S), calculates conductivity and TDS values using as input RTD temperature value and the peak-to-peak voltage. Those data are sent to serial interface, using **UART** communication (**115200** baud rate and **8-bits** data length). The **24-bits** ADC data are received using **SPI** interface of the EVAL-ADICUP360 board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0411_demo_1.png
-   :width: 400px
+   :width: 400
 
 The **temperature** value is calculated based on the **RTD resistance**:
 
 ::
-
 
           Rrtd = (CODE* Rref) / (2^24 -1)                         Rref - Reference resistor (4.02kΩ)
                                                                   CODE - ADC output
@@ -29,7 +28,7 @@ The **temperature** value is calculated based on the **RTD resistance**:
 **1. RTD resistance > 100Ω**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_1.png
-   :width: 800px
+   :width: 800
 
 **2. RTD resistance ≤ 100Ω**
 
@@ -37,7 +36,10 @@ The **temperature** value is calculated based on the **RTD resistance**:
 
 In order to compute the **total dissolved solids** parameter a premeasurement procedure is run in the first place that aims to select the proper gain resistance for the measurement.
 
-The multiplexer is set to the highest gain resistance (20MΩ) and the DAC output to a value set by the user (initially set to 400mV). Then, the positive and negative input voltage are captured via ADC channel 1 and 2. If the following formula is met:
+The multiplexer is set to the highest gain resistance (20MΩ) and the DAC output
+to a value set by the user (initially set to 400mV). Then, the positive and
+negative input voltage are captured via ADC channel 1 and 2. If the following
+formula is met:
 
 ::
 
@@ -49,15 +51,14 @@ The excitation voltage used for computing **tds** is set to:
 
 ::
 
-
           Vexc = 0.4 * Vexc / (Vp + Vn)
 
-Otherwise, the gain resistor is dropped by 1 decade and the premeasurement process is repeated.
+Otherwise, the gain resistor is dropped by 1 decade and the premeasurement
+process is repeated.
 
 After the process is finished, the peak-to-peak voltage is measured again an the **peak-to-peak current** is computed:
 
 ::
-
 
                                                      Ipp = peak-to-peak current
           Ipp = (2 * Vexc - (Vp + Vn)) / Rgain       Vexc = excitation voltage computed in the premeasurement procedure
@@ -69,14 +70,12 @@ Based on the peak-to-peak current the **electrical conductance** is computed, al
 
 ::
 
-
           g = Ipp / ((Vp + Vn) - (Ipp * Roff))       Roff = offset resistance
                                                      g = electrical conductance
 
 The **electrical conductivity** is computed using the conductance and the cell constant which can be set accordingly for low conductivities, normal conductivities and high conductivities via software commands. A temperature compensation is also performed taking into account the temperature measured via RTD resistance.
 
 ::
-
 
                                                              s = electrical conductivity
           s = k * g                                          s_cal = temperature compensated electrical conductivity
@@ -87,7 +86,6 @@ The **electrical conductivity** is computed using the conductance and the cell c
 The calculation of **total dissolved solids** is the product between the temperature compensated conductivity and the **tds factor** corresponding to the solution that is used.
 
 ::
-
 
           tds = k_e * s_cal                                  k_e = tds factor
                                                              tds = total dissolved solids
@@ -119,29 +117,36 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
+-  To program the base board, set the jumpers/switches as shown in the next
+   figure. The important jumpers/switches are highlighted in red.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/adicup360_hardware.jpg
    :align: center
-   :width: 650px
+   :width: 650
 
 -  Connect the **EVAL-CN0411-ARDZ Shield** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Connect the conductivity cell to the **J1** connector of the EVAL-CN0411-ARDZ.
 -  Connect the RTD sensor to the **P3** connector of the EVAL-CN0411-ARDZ.
 -  Connect **PIN1** and **PIN2** on **P5** connector and **PIN1** and **PIN2** on **P6** connector to read data from the conductivity cell.
--  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
+-  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
+   Debug USB.(P14)
 
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the CN0411.
+There are two basic ways to program the ADICUP360 with the software for the
+CN0411.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_cn0411** demo can be found here:
 
@@ -158,11 +163,9 @@ The software for the **ADuCM360_demo_cn0411** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0411 Source Code <projects/ADuCM360_demo_cn0411>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -294,13 +297,16 @@ Project Structure
 
 The **ADuCM360_demo_cn0411** is a C++ project that uses ADuCM36x C/C++ Project structure.
 
-This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for ADC, SPI read/write; for configuring and reading from AD7124, UART via P0.6/P0.7; UART read/write functions; for calibration and displaying the results.
+This project contains: system initialization part - disabling watchdog, setting
+system clock, enabling clock for peripherals; port configuration for ADC, SPI
+read/write; for configuring and reading from AD7124, UART via P0.6/P0.7; UART
+read/write functions; for calibration and displaying the results.
 
 In the **src** and **include** folders you will find the source and header files related to CN0411 software application. The *Communication.c* files contain **SPI** and **UART** specific data, meanwhile the *CN0411.c* files contain the calculation part, the *AD7124.c* files contain ADC channels handling. The default parameters are set at the run time, after initialization in the terminal window will appear information messages about the initial setup.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0411_demo_3.png
    :align: left
-   :width: 240px
+   :width: 240
 
 The **RTE** folder contains device and system related files:
 

@@ -3,20 +3,29 @@ Register Control Window
 
 :doc:`Click here to return to the Hardware Windows page. </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows>`
 
-The Register Control windows provides access to the internal registers and core settings for the DSP and IC blocks inserted in the Hardware configuration window.
+The Register Control windows provides access to the internal registers and core
+settings for the DSP and IC blocks inserted in the Hardware configuration
+window.
 
 To access the Register Control window:
 
 -  Click the Hardware Configuration tab at the top of the workspace.
--  Click the Register Control tab (1) at the bottom of the Hardware Configuration window or Right-click on the DSP processor block and select Register Window (2) from the menu.
+-  Click the Register Control tab (1) at the bottom of the Hardware
+   Configuration window or Right-click on the DSP processor block and select
+   Register Window (2) from the menu.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/regpic1.png
    :alt: regpic1.png
    :align: center
 
-The controls and settings available in the Register Control window are different for each Processor (IC/DSP) block, depending on the hardware's capability. Any changes made in the register control window are immediately sent to the hardware when there is an active USB communication channel.
+The controls and settings available in the Register Control window are different
+for each Processor (IC/DSP) block, depending on the hardware's capability. Any
+changes made in the register control window are immediately sent to the hardware
+when there is an active USB communication channel.
 
-Following is a description of the AD1940 Register Control window. For information about these or other IC register settings, please see the refer to your part's datasheet: www.analog.com/sigmadsp
+Following is a description of the AD1940 Register Control window. For
+information about these or other IC register settings, please see the refer to
+your part's datasheet: www.analog.com/sigmadsp
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/regpic2.png
    :alt: regpic2.png
@@ -40,7 +49,13 @@ Following is a description of the AD1940 Register Control window. For informatio
 
 **3. Ram Modulo** - *affects the ram-configuration register (address 2643)*
 
-The AD1940/1941 uses a modulo RAM-addressing scheme to allow filters and other blocks to be coded easily without requiring filter data to be explicitly moved during the filtering operation. The default value is 12 where the entire 6144 (6k) RAM is treated as modulo memory with auto-incrementing address-offset registers. Each LSB of this register corresponds to 512 RAM locations. A modulo value of 11 would give you 5632 datawords of modulo memory and 512 in a non-modulo portion.
+The AD1940/1941 uses a modulo RAM-addressing scheme to allow filters and other
+blocks to be coded easily without requiring filter data to be explicitly moved
+during the filtering operation. The default value is 12 where the entire 6144
+(6k) RAM is treated as modulo memory with auto-incrementing address-offset
+registers. Each LSB of this register corresponds to 512 RAM locations. A modulo
+value of 11 would give you 5632 datawords of modulo memory and 512 in a
+non-modulo portion.
 
 **4. DSP Core** - affects DSP core control register (address 2642)
 

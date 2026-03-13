@@ -11,9 +11,17 @@ xSPI Index Selectable Delay
 Description
 -----------
 
-The xSPI Index Selectable Delay block outputs a delayed version of the input signal using external RAM connected via xSPI. The delay is determined by the number of samples specified in a set of numeric text boxes, with the active value selected through a control input. The 'Max' numeric text box defines the maximum delay that can be applied to the input signal. Changing the 'Max' value via the drop-down menu requires recompilation.
+The xSPI Index Selectable Delay block outputs a delayed version of the input
+signal using external RAM connected via xSPI. The delay is determined by the
+number of samples specified in a set of numeric text boxes, with the active
+value selected through a control input. The 'Max' numeric text box defines the
+maximum delay that can be applied to the input signal. Changing the 'Max' value
+via the drop-down menu requires recompilation.
 
-The maximum delay supported by a voltage-controlled delay block depends on the total available external RAM, as specified in the RAM's datasheet. Setting the 'Max' control value allocates a portion of this memory, reserving it exclusively for the block's use.
+The maximum delay supported by a voltage-controlled delay block depends on the
+total available external RAM, as specified in the RAM's datasheet. Setting the
+'Max' control value allocates a portion of this memory, reserving it exclusively
+for the block's use.
 
 Pins
 ----
@@ -36,7 +44,6 @@ Name     Type  Description
 ======== ===== ================
 Output 0 Audio Output channel 0
 ======== ===== ================
-
 
 | ===== Configurable Parameters =====
 
@@ -63,11 +70,10 @@ DSP Parameters
 
 | 
 
-
 .. note::
 
-   The delays control value will be capped at the maximum allowable Max delay value.
-
+   The delays control value will be capped at the maximum allowable Max delay
+   value.
 
 Memory
 ------
@@ -78,7 +84,6 @@ Code (Bytes) Coeff(Bytes)                      Data32(Bytes)
 1998         4 + 4\*DelayCount + 132(Framework) 296 + 256(internal state)
 ============ ================================= =========================
 
-
 | ===== MIPS (Delay = Block size )=====
 
 ===================== ============ =============
@@ -87,16 +92,16 @@ Default(2 DelayCount) 3 DelayCount 32 DelayCount
 6.2                   7.3          7.3
 ===================== ============ =============
 
-
-
-
 .. note::
 
-   To enhance performance, the Max or delay values can be increased in steps of 8 samples. Optimal performance is typically achieved when these values are divisible by the schematic block size.
+   To enhance performance, the Max or delay values can be increased in steps of
+   8 samples. Optimal performance is typically achieved when these values are
+   divisible by the schematic block size.
 
    
-   If additional delay is required in the range of 1 to 7 samples, we can insert internal delay modules, as the main delay module only supports increments of 8 samples.
-
+   If additional delay is required in the range of 1 to 7 samples, we can insert
+   internal delay modules, as the main delay module only supports increments of
+   8 samples.
 
 Example Schematic
 =================

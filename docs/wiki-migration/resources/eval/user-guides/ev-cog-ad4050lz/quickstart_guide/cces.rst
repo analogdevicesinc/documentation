@@ -33,11 +33,12 @@ Software Packs and Driver Setup
 Running an Example Project
 --------------------------
 
--  Power the MCU Cog using a USB (micro-B) Cable. You should see a red LED and a yellow LED turn on by default.
+-  Power the MCU Cog using a USB (micro-B) Cable. You should see a red LED and a
+   yellow LED turn on by default.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/img_20171030_180904.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 -  In CCES IDE, click CMSIS Pack Manager icon |image2|.
 -  Select EV-COG-AD4050LZ from the Boards tab on the Left panel. (see below image)
@@ -55,16 +56,15 @@ Running an Example Project
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/debug.jpg
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Click "ok" on Perspective Switch and Semihosting Enabled window.
-
 
 |image5|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/perspective_switch.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Click run |image6| on the Debug perspective.
 -  Now press BTN1 or BTN2 on EV-COG-AD4050LZ and inspect corresponding LED.
@@ -73,7 +73,6 @@ You are all set!
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad4050lz/quickstart>`
 
-
 | End Document
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/import_existing_packs_icon.jpg
@@ -81,5 +80,5 @@ You are all set!
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/build_icon.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/debug_icon.jpg
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/semihosting.jpg
-   :width: 500px
+   :width: 500
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/run_icon.jpg

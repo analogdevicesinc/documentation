@@ -13,12 +13,11 @@ Typical Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736-sdph1.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 1a. EVAL-AD9736 Setup with SDP-H1*\
-
 
    |image1|
 
@@ -26,11 +25,9 @@ Typical Setup
 
    \ *Figure 1b. EVAL-AD9736 Setup with ADS7-V2*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files:
 --------------
@@ -53,7 +50,6 @@ Software Needed:
 .. important::
 
    \ Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
-
 
 Hardware Needed:
 ----------------
@@ -86,12 +82,13 @@ Quick Start Guide
    -  If using **SDP-H1**, Connect to PC via USB and to a 12Vdc wall wart.
    -  If using **ADS7-V2**, Connect to PC via USB and to a 12V 60W AC/DC power supply. Switch the board ON using S1 beside the connector for 12V supply.
 
--  Open ACE. The board will automatically be recognized by the software. Otherwise, install the plugin for AD9736 evaluation board. Apply the configuration wizard settings shown in Figure 2.
+-  Open ACE. The board will automatically be recognized by the software.
+   Otherwise, install the plugin for AD9736 evaluation board. Apply the
+   configuration wizard settings shown in Figure 2.
 
 .. container:: centeralign
 
    \ |image2|\ *Figure 2. ACE Chip View Initial Configuration Wizard*\
-
 
 -  Start DPG Lite or DPG Downloader. At the SDP-H1 or ADS7-V2 settings, ensure that **Evaluation board** is equal to AD9736 and DCO frequency of around 250 MHz should be displayed.
 -  In DPG Lite or DPG Downloader, from the **Add Generator Waveforms** pulldown menu, select **Single Tone** and apply the settings as shown in Figures 3a and 3b.Set **Data Rate** to 500 MHz and **Desired Frequency** to 50 MHz.
@@ -101,39 +98,39 @@ Quick Start Guide
 
    \ |image3|\ *Figure 3a. DPG Lite session for SDP-H1*\
 
-
 .. container:: centeralign
 
    |image4|\ *Figure 3b. DPG Lite session for ADS7-V2*\
 
-
 -  Select the Single tone from the **Data Vector** pulldown menu
--  Press the download arrow and then the play button. The FFT plots similar to Figures 4 should appear in the signal/spectrum analyzer.
+-  Press the download arrow and then the play button. The FFT plots similar to
+   Figures 4 should appear in the signal/spectrum analyzer.
 
 .. container:: centeralign
 
    \ |image5|\ *Figure 4. EVAL-AD9736 FFT for Data Rate = 500 MHz, Fout = 50 MHz*\
 
-
 Troubleshooting
 ---------------
 
-This section lists items to check and practices to use when debugging any unexpected performance of a board. If unexpected results occur:
+This section lists items to check and practices to use when debugging any
+unexpected performance of a board. If unexpected results occur:
 
 -  Check the supply voltage of the evaluation board. Voltage rail should be 3.3V.
 -  Check if all (3) blue LEDs on the AD-DAC-FMC-ADP board is lit up. Reconnect the board to the FMC connector of SDP-H1 if not lit up.
 -  Check if the SDP-H1 is being supplied properly by 12Vdc adaptor. Some LEDs on the SDP-H1 should lit up.
 -  Power cycle both the SDP-H1/ADS7-V2 and the AD9736 evaluation board.
 -  Check on the Spectrum Analyzer if the DAC clock inputs are properly driven. For 500MHz clock, the spectrum analyzer should detect a weak signal at 500MHz. If not detected, check properly the clock source and connections.
--  Disconnect and reconnect the SDP-H1 /ADS7-V2 and AD9736 evaluation board. Reopen DPG Lite software.
+-  Disconnect and reconnect the SDP-H1 /ADS7-V2 and AD9736 evaluation board.
+   Reopen DPG Lite software.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_ads7.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_ace_chip_view.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_dpglite_sdp-h1.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_dpglite_ads7.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_output_fft.png
-   :width: 600px
+   :width: 600

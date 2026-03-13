@@ -5,7 +5,7 @@ This Quad-MxFE Software Quick Start Guide should be used in conjunction with the
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quad_mxfe.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Hardware
 --------
@@ -79,16 +79,12 @@ Downloads
 
 -   `Quad_MxFE_for_VCU118_2022-06-27.zip <http://swdownloads.analog.com/cse/mxfe/Quad_MxFE_for_VCU118_2022-06-27.zip>`_
 
-
-
 .. collapsible:: Older releases (Click to expand)
 
    -   `Quad_MxFE_for_VCU118_2021-08-10.zip <http://swdownloads.analog.com/cse/mxfe/Quad_MxFE_for_VCU118_2021-08-10.zip>`_
    -   `Quad_MxFE_for_VCU118_2021-04-28.zip <http://swdownloads.analog.com/cse/mxfe/Quad_MxFE_for_VCU118_2021-04-28.zip>`_
    -   `Quad_MxFE_for_VCU118_2021-03-05.zip <http://swdownloads.analog.com/cse/mxfe/Quad_MxFE_for_VCU118_2021-03-05.zip>`_
    -   `Quad MxFE for VCU118 2020-12-22.zip <http://swdownloads.analog.com/cse/mxfe/Quad MxFE for VCU118 2020-12-22.zip>`_
-
-
 
 -  use: run.vcu118_quad_ad9081_204c_txmode_29_rxmode_24.tcl
 
@@ -211,7 +207,6 @@ ADQUADMXFE3EBZ Rev.C using onchip-PLL on VCU118 (Xilinx Virtex UltraScale+)
 | dts      | :git-linux:`arch/microblaze/boot/dts/vcu118_quad_ad9082_204c_txmode_3_rxmode_2_onchip_pll.dts`                                                                                                             |
 +----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 HDL Reference Design And Instructions To Build HDL Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -286,14 +281,15 @@ In windows, you can run the ``XSCT`` or ``XSDB`` terminal from start menu → Xi
       xsct%
    
 
-
 Kernel startup
 ~~~~~~~~~~~~~~
 
 -  Open terminal (Putty, etc.)
 -  Configure your serial terminal for 115200-8N1
 
-When connecting the VCU118 USB UART to PC, it typically registers two USB COMx/ttyUSBx ports. The first one is the connected to the system controller, while the second one is connected to the FPGA and features the serial terminal.
+When connecting the VCU118 USB UART to PC, it typically registers two USB
+COMx/ttyUSBx ports. The first one is the connected to the system controller,
+while the second one is connected to the FPGA and features the serial terminal.
 
 **Observe following startup messages:**
 
@@ -535,18 +531,16 @@ When the system starts it tries to acquire an IP using the DHCP protocol. In cas
       #
    
 
-
 Check JESD204 Link Status
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/image2019-12-4_10-32-57.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. important::
 
    Both Links must be in ``DATA``\
-
 
 The link status can be checked either from the
 
@@ -563,7 +557,6 @@ Serial terminal
       #resize
       #jesd_status -s
    
-
 
 SSH Terminal
 ^^^^^^^^^^^^
@@ -586,14 +579,12 @@ SSH Terminal
       #jesd_status
    
 
-
 Useful IIO commands
 ~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/image2019-12-4_12-23-20.png
    :align: center
-   :width: 400px
-
+   :width: 400
 
 IIO Command Line Tools
 ======================
@@ -606,12 +597,9 @@ There are a few command line tools that are included with the libIIO.
 -  :doc:`iio_writedev </wiki-migration/resources/tools-software/linux-software/libiio/iio_writedev>` : write an IIO buffer device
 -  :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` : read or write SPI or I2C registers in an IIO device (useful to debug drivers)
 
-
-
 .. important::
 
    All of these commands can be used local or remote
-
 
 When using remote backend please install libiio for your platform.
 
@@ -627,12 +615,11 @@ Windows Example
 
    unlike ``iio_info`` and ``iio_attr``, ``iio_reg`` requires an environmental variable ``IIOD_REMOTE`` to be set with the target IP address.
 
-
 The names of the iio devices can be obtained using ``iio_attr`` command.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/image2019-12-4_10-58-4.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **Example**: Change main NCO frequency
 
@@ -654,7 +641,6 @@ The names of the iio devices can be obtained using ``iio_attr`` command.
       C:\Users\dave>
    
 
-
 Further information
 -------------------
 
@@ -671,12 +657,12 @@ Software architecture overview
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quad_sw_bd.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. tip::
 
-   All programmable devices on the Quad MxFE platform are abstracted by IIO devices.
-
+   All programmable devices on the Quad MxFE platform are abstracted by IIO
+   devices.
 
 +--------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | IIO Device   | Device Name     | Driver Documentation                                                                                                                       |
@@ -736,13 +722,19 @@ It's expected that JRX, JTX status information may contain error status until th
 IIO Oscilloscope
 ----------------
 
-The ADI IIO Oscilloscope is a cross platform GUI application, which demonstrates how to interface different evaluation boards from within a Linux system. The application supports plotting of the captured data in four different modes (time domain, frequency domain, constellation and cross-correlation). The application also allows to view and modify several settings of the development platform's devices.
+The ADI IIO Oscilloscope is a cross platform GUI application, which demonstrates
+how to interface different evaluation boards from within a Linux system. The
+application supports plotting of the captured data in four different modes (time
+domain, frequency domain, constellation and cross-correlation). The application
+also allows to view and modify several settings of the development platform's
+devices.
 
 Documentation can be found here:
 
 -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The MxFE AD9081 plugin is included in the official OSC release, which can be downloaded from here:
+The MxFE AD9081 plugin is included in the official OSC release, which can be
+downloaded from here:
 
 -  `adi-osc-setup.exe <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
@@ -754,15 +746,17 @@ Instructions and Overview
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/microsoftteams-image_3_.png
    :align: center
-   :width: 450px
+   :width: 450
 
 -  The main capture window will appear
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/image2019-12-4_13-1-15.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  Use the scroll bar in the Plot Channel box to select the channels to display. The first eight channels correspond to the first device, second eight to the second device, etc.
+-  Use the scroll bar in the Plot Channel box to select the channels to display.
+   The first eight channels correspond to the first device, second eight to the
+   second device, etc.
 
 **Device To Channel Mapping (Rev. B/C Platforms):**
 
@@ -818,18 +812,16 @@ Instructions and Overview
    
    However multiple (independent) plot windows can be opened.
 
-
 The plugin window
 ^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/image2019-12-4_13-14-41.png
    :align: center
-   :width: 600px
+   :width: 600
 
 OSC will instantiate multiple notebook plugin tabs on the main window. One for each device ``AD9081-X`` with an additional Debug plugin.
 
 ``AD9081-3`` again is special since it also has the controls for the TX transport layer core (``axi-ad9081-tx-3``), and the ``HMC425`` Digital Step Attenuator.
-
 
 |image1|
 
@@ -838,7 +830,7 @@ Loading custom waveform
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/image2019-12-4_13-24-46.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Set DDS mode to ``DAC Buffer Output``, select a file hit ``Load`` button.
 
@@ -846,15 +838,15 @@ Optionally set a scale, and select the channels.
 
 .. tip::
 
-   Please be aware that due to DDR3 memory bandwidth limitations only 2 or 4 can be enabled simultaneously.
-
+   Please be aware that due to DDR3 memory bandwidth limitations only 2 or 4 can
+   be enabled simultaneously.
 
 The Debug Plugin
 ^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/image2019-12-4_13-29-56.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Under ``Device Selection``, select the IIO device which should be debugged/controlled.
 
@@ -876,7 +868,8 @@ To install the toolbox perform the follow:
 -  Download and install the `Zynq SDR support package <https://mathworks.com/hardware-support/zynq-sdr.html>`_
 -  Download the `master build artifact <https://gitlab.com/tfcollins/HighSpeedConverterToolbox/-/jobs/artifacts/master/download?job=deploy>`_ containing the installer for the High Speed Converter Toolbox. Once downloaded inside the zip will be the mltbx installer which will install the toolbox.
 
-More information on controlling the Quad-MxFE Platform with MATLAB can be found at:
+More information on controlling the Quad-MxFE Platform with MATLAB can be found
+at:
 
 -  :doc:`Quad-MxFE MATLAB Control Overview </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>`
 
@@ -892,15 +885,14 @@ Linux on the Xilinx FPGA development Board
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/linux/kernel/microblaze.html
 
-
 .. note::
 
    This content is purely informational, and the best place for questions about this content is normally `Xilinx <https://forums.xilinx.com/t5/Embedded-Linux/bd-p/ELINUX>`_, or a friendly consultant (who you will pay), or `trainer <https://training.linuxfoundation.org/training/embedded-linux-development/>`_. These instructions work for us. That does not mean they are complete, accurate, or supported.
 
-
 20
 
-This guide provides some step-by-step instructions on how to build a Microblaze Linux Kernel image for the FMC board connected to an
+This guide provides some step-by-step instructions on how to build a Microblaze
+Linux Kernel image for the FMC board connected to an
 
 -  `KC705 <https://www.xilinx.com/KC705>`_
 -  `KCU105 <https://www.xilinx.com/KCU105>`_
@@ -916,7 +908,8 @@ Required Software
 -  `Xilinx Vivado Design Suite (Microblaze GNU Tools) <https://www.xilinx.com/products/design-tools/vivado.html>`_
 -  `Microblaze GNU Toolchain <http://xilinx.wikidot.com/mb-gnu-tools>`_ (See note below)
 
-Microblaze gnu toolchain from Xilinx is no longer available on git. Please use gnu tools from Vitis installation as below:
+Microblaze gnu toolchain from Xilinx is no longer available on git. Please use
+gnu tools from Vitis installation as below:
 
 | ~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/::math:`PATH\\ ~/linux` export ARCH=microblaze
 | ~/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
@@ -924,7 +917,6 @@ Microblaze gnu toolchain from Xilinx is no longer available on git. Please use g
 .. tip::
 
    Latest released files can be downloaded from :doc:`here </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`
-
 
 Build Linux - Step by Step instructions
 ---------------------------------------
@@ -958,7 +950,6 @@ Get Linux kernel source
       Resolving deltas: 100% (2296596/2296596), done.
    
 
-
 Checkout main branch
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -979,7 +970,6 @@ Checkout main branch
       Switched to a new branch 'main'
    
 
-
 Set Environmental Variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -998,15 +988,12 @@ Set Environmental Variables
       ~/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
    
 
-
-
-
 .. tip::
 
-   Instead of sourcing the Vivado settings64.sh script you can alternatively add your microblaze gcc toolchain directly to your PATH variable:
+   Instead of sourcing the Vivado settings64.sh script you can alternatively add
+   your microblaze gcc toolchain directly to your PATH variable:
 
    | ``~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/:$PATH``
-
 
 Configure Kernel
 ~~~~~~~~~~~~~~~~
@@ -1027,7 +1014,6 @@ Configure Kernel
       #
    
 
-
 Get Root File-System
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -1037,8 +1023,8 @@ The root file system or rootfs contains everything (besides the Linux kernel its
 
 .. tip::
 
-   rootfs.cpio.gz must be placed in the root of your kernel tree. (~/linux/rootfs.cpio.gz)
-
+   rootfs.cpio.gz must be placed in the root of your kernel tree.
+   (~/linux/rootfs.cpio.gz)
 
 .. container:: box bgblue
 
@@ -1063,21 +1049,25 @@ The root file system or rootfs contains everything (besides the Linux kernel its
       2022-01-18 09:52:12 (3,32 MB/s) - ‘rootfs.cpio.gz’ saved [6772207/6772207]
    
 
-
 Build kernel
 ~~~~~~~~~~~~
 
-The result of building the kernel is an elf file in arch/microblaze/boot named simpleImage.<dts file name> based on the dts specified.
+The result of building the kernel is an elf file in arch/microblaze/boot named
+simpleImage.<dts file name> based on the dts specified.
 
-The build process for the kernel searches in the arch/microblaze/boot/dts directory for a specified device tree file and then builds the device tree into the kernel image.
+The build process for the kernel searches in the arch/microblaze/boot/dts
+directory for a specified device tree file and then builds the device tree into
+the kernel image.
 
-The following command shows the general format for the build target name. Note that the <dts file name> does not include the file extension ".dts".
+The following command shows the general format for the build target name. Note
+that the <dts file name> does not include the file extension ".dts".
 
 ::
 
    ~/linux$ make simpleImage.<dts file name>
 
-To see what device-trees for the different FPGA carrier and FMC module combination exist type:
+To see what device-trees for the different FPGA carrier and FMC module
+combination exist type:
 
 ::
 
@@ -1131,21 +1121,22 @@ To see what device-trees for the different FPGA carrier and FMC module combinati
       Kernel: arch/microblaze/boot/simpleImage.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1 is ready  (#3678)
    
 
-
 .. tip::
 
-   The STRIP image found under arch/microblaze/boot/ is the ELF image which can be loaded via the debugger
-
+   The STRIP image found under arch/microblaze/boot/ is the ELF image which can
+   be loaded via the debugger
 
 Boot Kernel on FPGA Microblaze
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Then one method to load the kernel onto the already built and running FPGA which has the Microblaze processor is to launch XMD or XSDB from the Xilinx Vivado toolset from within .../linux/arch/microblaze/boot and run from the XMD or XSDB shell:
+Then one method to load the kernel onto the already built and running FPGA which
+has the Microblaze processor is to launch XMD or XSDB from the Xilinx Vivado
+toolset from within .../linux/arch/microblaze/boot and run from the XMD or XSDB
+shell:
 
 .. important::
 
    XMD has been deprecated and will be removed in the future. XSDB/XSCT replaces XMD and provides additional functionality. Xilinx recommends you switch to XSDB for command line debugging. You can find more information about these tools in the `Embedded System Tools Reference Manual <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2017_4/ug1043-embedded-system-tools.pdf>`_ (UG1043)
-
 
 For XMD:
 
@@ -1193,12 +1184,12 @@ From XSDB or XSCT:
 
    xsdb> source run.tcl
 
-(more details, methods of how to get bit file and kernel on flash and/or boot off SD Card is appreciated)
-
+(more details, methods of how to get bit file and kernel on flash and/or boot
+off SD Card is appreciated)
 
 --------------
 
 :doc:`Back To Quad-MxFE Main Page </wiki-migration/resources/eval/user-guides/quadmxfe/quick-start>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/image2019-12-4_13-20-29.png
-   :width: 600px
+   :width: 600

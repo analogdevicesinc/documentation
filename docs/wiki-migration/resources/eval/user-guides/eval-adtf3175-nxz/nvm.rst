@@ -1,12 +1,14 @@
 ADTF3175 NVM Contents
 =====================
 
-The module NVM follows the Serial Flash Discoverable Parameters (SFDP) standard. The flash consists of a linked list.
+The module NVM follows the Serial Flash Discoverable Parameters (SFDP) standard.
+The flash consists of a linked list.
 
 NVM ChunkType
 -------------
 
-The table below shows the structures that will come with a calibrated ADTF3175 module.
+The table below shows the structures that will come with a calibrated ADTF3175
+module.
 
 +----------------+---------------------------+----------------------------------------------+
 | **Chunk Type** | **Component**             | **Descriptions**                             |
@@ -37,7 +39,8 @@ The table below shows the structures that will come with a calibrated ADTF3175 m
 Chunk Type Details
 ~~~~~~~~~~~~~~~~~~
 
-Each chunk type has a header with the following details. The header is typically followed by chunk data + a 4 byte CRC.
+Each chunk type has a header with the following details. The header is typically
+followed by chunk data + a 4 byte CRC.
 
 =============== ===========================================
 chunkID         Signature for each header type, always 0xAD

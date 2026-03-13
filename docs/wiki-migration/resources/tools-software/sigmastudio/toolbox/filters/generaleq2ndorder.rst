@@ -33,7 +33,9 @@ General Filters
 
 **To open the filter control window, click on the icon button:**
 
-Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+Select the desired filter type from the drop-down combo-box list. The filter
+controls and the icon button image will change to reflect the selected filter
+type.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic2.png
    :alt: general2ndpic2.png
@@ -52,7 +54,10 @@ common variables:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic4.png
    :alt: general2ndpic4.png
 
-Note that the b0 and b2 coefficients for the high pass filter below are inverted from what is stored in RAM. The correct equations for b0, b1, and b2 for a high pass filter are as follows: b0 = -(1 + cos(ω0)) \* gainLinear / 2 b1 = -(1 + cos(ω0)) \* gainLinear b2 = -(1 + cos(ω0)) \* gainLinear / 2
+Note that the b0 and b2 coefficients for the high pass filter below are inverted
+from what is stored in RAM. The correct equations for b0, b1, and b2 for a high
+pass filter are as follows: b0 = -(1 + cos(ω0)) \* gainLinear / 2 b1 = -(1 +
+cos(ω0)) \* gainLinear b2 = -(1 + cos(ω0)) \* gainLinear / 2
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic5.png
    :alt: general2ndpic5.png
@@ -62,14 +67,19 @@ Note that the b0 and b2 coefficients for the high pass filter below are inverted
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic6.png
    :alt: general2ndpic6.png
 
-For all of the above filters, the coefficients are divided by a0, normalizing them and making a0 = 1 so that only 5 coefficients must be stored. In the actual implementation on the DSP, when the coefficients are stored in parameter RAM, a1 and a2 need to be inverted. This is done automatically, in software, before the parameters are written to memory.
+For all of the above filters, the coefficients are divided by a0, normalizing
+them and making a0 = 1 so that only 5 coefficients must be stored. In the actual
+implementation on the DSP, when the coefficients are stored in parameter RAM, a1
+and a2 need to be inverted. This is done automatically, in software, before the
+parameters are written to memory.
 
 By default, the Q is shown with the value adjusted (from the classical EE definition) so that a boost of N dB followed by a cut of N dB for identical Q and f0/Fs results in a precisely flat unity gain filter or "wire". This is equal to A\*Q, where A = 10^(dBgain/40).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/classicqcontrol.jpg
    :alt: classicqcontrol.jpg
 
-The "Classic EQ" version of Q can optionally be shown by clicking the small circular button next to the Q control.
+The "Classic EQ" version of Q can optionally be shown by clicking the small
+circular button next to the Q control.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/classicqdisplay.jpg
    :alt: classicqdisplay.jpg
@@ -79,13 +89,12 @@ The "Classic EQ" version of Q can optionally be shown by clicking the small circ
 
 |general2ndpic1.png| The General (2nd-Order) filter is a variant of a second order bi-quad filter which enables a smooth transition of the filter parameters when filter parameters are changed, this is done by slewing from the current filter parameters(coefficients) to the one being set.
 
-The slew type and slew time can be set by the user in GUI as shown below. Right click on the General 2nd Order filter module
-
+The slew type and slew time can be set by the user in GUI as shown below. Right
+click on the General 2nd Order filter module
 
 |image1|
 
 On click on the Custom, the "Set Slew Mode" form will open as shown below
-
 
 |image2|
 
@@ -97,7 +106,8 @@ The algorithm supports three slew types
     2. RC Slew
     3. Exponential Slew
 
-This block gives access to a wide variety of 2nd-order (biquad)filter algorithms. he available filter types are:
+This block gives access to a wide variety of 2nd-order (biquad)filter
+algorithms. he available filter types are:
 
 -  Parametric
 -  Shelving
@@ -157,7 +167,6 @@ General
 | Q                | 1.41            | 0-16                                 | Q Factor for filter calculations   |
 +------------------+-----------------+--------------------------------------+------------------------------------+
 
-
 Butterworth/Bessel
 ~~~~~~~~~~~~~~~~~~
 
@@ -173,7 +182,6 @@ Butterworth/Bessel
 +------------------+-----------------+-----------------------------------------------------------------------------+------------------------------------+
 | Gain             | 0dB             | -15 to +15 dB                                                               | dB gain of the filter coefficients |
 +------------------+-----------------+-----------------------------------------------------------------------------+------------------------------------+
-
 
 Tone Control
 ~~~~~~~~~~~~
@@ -192,7 +200,6 @@ Tone Control
 +------------------+---------------+---------------+-------------------------------------------+
 | Bass Gain        | 0dB           | -15 to +15 dB | Bass dB gain of the filter coefficients   |
 +------------------+---------------+---------------+-------------------------------------------+
-
 
 IIR Coefficient
 ~~~~~~~~~~~~~~~
@@ -232,7 +239,6 @@ First Order Filters
 | Q                | 1.41                                        | 0-16              | Q Factor for filter calculations       |
 +------------------+---------------------------------------------+-------------------+----------------------------------------+
 
-
 All Pass,Peaking,Notch
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -249,7 +255,6 @@ All Pass,Peaking,Notch
 | Q                | 1.41          | 0-16          | Q Factor for filter calculations   |
 +------------------+---------------+---------------+------------------------------------+
 
-
 Chebyshev
 ~~~~~~~~~
 
@@ -265,7 +270,6 @@ Chebyshev
 +------------------+---------------+---------------+---------------------------------------+
 | Ripple           | 0.1           | 0-10          | Ripple Factor for filter calculations |
 +------------------+---------------+---------------+---------------------------------------+
-
 
 DSP Parameter Information
 -------------------------
@@ -303,7 +307,8 @@ Supported ICs
 3.Coefficient Calculations on DSP
 ---------------------------------
 
-The General (2nd-Order) block gives access to a wide variety of 2nd-order (biquad)filter algorithms.The coefficient calculations happen in the controller.
+The General (2nd-Order) block gives access to a wide variety of 2nd-order
+(biquad)filter algorithms.The coefficient calculations happen in the controller.
 
 -  The available filter types are:
 -  Parametric
@@ -321,7 +326,9 @@ The General (2nd-Order) block gives access to a wide variety of 2nd-order (biqua
 
 **To open the filter control window, click on the icon button:**
 
-Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
+Select the desired filter type from the drop-down combo-box list. The filter
+controls and the icon button image will change to reflect the selected filter
+type.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic2.png
    :alt: general2ndpic2.png
@@ -368,7 +375,9 @@ DSP parameter Information
 | NA               | MEM_SELECTION_DSP_CALC0\_ \_ | Memory section the filter coefficients are located (DM0/DM1) |
 +------------------+------------------------------+--------------------------------------------------------------+
 
-It is possible to selectively disable filters which are not going to be used.To select only those filters to be used, right click on the module and select Configure Supported Filters and select only those filters which might be used.
+It is possible to selectively disable filters which are not going to be used.To
+select only those filters to be used, right click on the module and select
+Configure Supported Filters and select only those filters which might be used.
 
 |filterconfigure.png|\ |filterconfiguretab.png|
 

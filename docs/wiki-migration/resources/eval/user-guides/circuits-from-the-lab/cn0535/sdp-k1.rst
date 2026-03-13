@@ -39,7 +39,6 @@ The EVAL-CN0535-FMCZ was designed :adi:`to be evaluated <en/design-center/refere
 
 Shown on below Figures the board setup for SDP-K1. |image1|
 
-
 |image2|
 
 SDP-K1
@@ -63,16 +62,27 @@ Importing the EVAL-CN0535-FMCZ MBED Example program
 Connecting to a serial terminal application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to communicate with the board using the SDP-K1 the user needs to install a serial terminal software on their PC. It is recommended to use PuTTY which is available for free download on the internet. The following steps were written with PuTTY in mind however any other serial terminal application should follow a similar procedure. Following are the steps required to interface with the board.
+In order to communicate with the board using the SDP-K1 the user needs to
+install a serial terminal software on their PC. It is recommended to use PuTTY
+which is available for free download on the internet. The following steps were
+written with PuTTY in mind however any other serial terminal application should
+follow a similar procedure. Following are the steps required to interface with
+the board.
 
--  Open Device Manager through the Windows control panel and plug the micro-controller board into the PC, when the board is detected it will appear in device manager, displaying as USB Serial Device. This also displays which port the board is connected to. (COM4 in this case)
+-  Open Device Manager through the Windows control panel and plug the
+   micro-controller board into the PC, when the board is detected it will appear
+   in device manager, displaying as USB Serial Device. This also displays which
+   port the board is connected to. (COM4 in this case)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/device_manager.png
    :align: center
-   :width: 450px
+   :width: 450
 
--  Open the serial terminal application and enter the correct values to configure it to connect to the board. The serial line should be the COM port noted earlier and the speed should be set to 115200 to ensure data transfer works correctly. Also note the changes in the Terminal tab, this is required for the menu to display properly.\
-
+-  Open the serial terminal application and enter the correct values to
+   configure it to connect to the board. The serial line should be the COM port
+   noted earlier and the speed should be set to 115200 to ensure data transfer
+   works correctly. Also note the changes in the Terminal tab, this is required
+   for the menu to display properly.\
 
 |image7|
 
@@ -84,12 +94,16 @@ In order to communicate with the board using the SDP-K1 the user needs to instal
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/putty_terminal.png
    :align: center
 
--  From here, the user should type the number corresponding to their desired choice and press 'Enter'. Note that many choices will create sub-menus, prompting the user to make another choice.
+-  From here, the user should type the number corresponding to their desired
+   choice and press 'Enter'. Note that many choices will create sub-menus,
+   prompting the user to make another choice.
 
 Command Summary
 ~~~~~~~~~~~~~~~
 
-The following table shows every command along with a brief description. Some commands have recommended settings to apply for optimal results for narrow bandwidth measurements of 32 kHz.
+The following table shows every command along with a brief description. Some
+commands have recommended settings to apply for optimal results for narrow
+bandwidth measurements of 32 kHz.
 
 == ======= ===========
 \  Command Description

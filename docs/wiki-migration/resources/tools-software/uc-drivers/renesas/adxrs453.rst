@@ -1,7 +1,6 @@
 ADXRS453 - No-OS Driver for Renesas Microcontroller Platforms
 =============================================================
 
-
 Supported Devices
 =================
 
@@ -14,7 +13,6 @@ Evaluation Boards
 
 Overview
 ========
-
 
 The :adi:`ADXRS453` is an angular rate sensor (gyroscope) intended for industrial, instrumentation, and stabilization applications in high vibration environments. An advanced, differential, quad sensor design rejects the influence of linear acceleration, enabling the :adi:`ADXRS453` to offer high accuracy rate sensing in harsh environments where shock and vibration are present.
 
@@ -34,9 +32,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/adxrs453_pmod_gyro2.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -44,9 +45,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the ADXRS453 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the ADXRS453 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the ADXRS453 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the ADXRS453 driver:
 
@@ -60,7 +65,6 @@ There are three functions which are called by the ADXRS453 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of ADXRS453 driver:
 
@@ -79,8 +83,6 @@ The following functions are implemented in this version of ADXRS453 driver:
 +----------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | float ADXRS453_GetTemperature(void)                                              | Reads temperature from ADXRS453 and converts it to degrees Celsius. |
 +----------------------------------------------------------------------------------+---------------------------------------------------------------------+
-
-
 
 **HW Platform(s):**
 
@@ -102,11 +104,11 @@ Downloads
    -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
-
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the ADXRS453 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the ADXRS453
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -122,7 +124,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodGYRO2 has to be connected to the PMOD1 connector, pins 1 to 6 (see image below).
+A PmodGYRO2 has to be connected to the PMOD1 connector, pins 1 to 6 (see image
+below).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_gyro2_rl78g13.jpg
    :align: center
@@ -133,7 +136,8 @@ Reference Project Overview
 The reference project:
 
 -  reads the 10-Bit Temperature Data and the 16-Bit Rate Data;
--  displays the values on the LCD as degrees Celsius and degrees/sec respectively.
+-  displays the values on the LCD as degrees Celsius and degrees/sec
+   respectively.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_gyro2_rl78g13_screen.jpg
    :align: center
@@ -141,16 +145,15 @@ The reference project:
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 Renesas RL78G14 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the ADXRS453 demonstration project on a Renesas RL78G14 platform using the PmodGYRO2.
+This section contains a description of the steps required to run the ADXRS453
+demonstration project on a Renesas RL78G14 platform using the PmodGYRO2.
 
 Required Hardware
 -----------------
@@ -166,16 +169,18 @@ Required Software
 
 .. note::
 
-   The ADXRS453 demonstration project for the Renesas RL78G14 platform consists of three parts: the ADXRS453 Driver, the PmodGYRO2 Demo for RL78G14 and the RL78G14 Common Drivers.
+   The ADXRS453 demonstration project for the Renesas RL78G14 platform consists
+   of three parts: the ADXRS453 Driver, the PmodGYRO2 Demo for RL78G14 and the
+   RL78G14 Common Drivers.
 
    
    All three parts have to be downloaded.
 
-
 Hardware Setup
 --------------
 
-A PmodGYRO2 has to be connected to the PMOD1 connector, pins 1 to 6 (see image below).
+A PmodGYRO2 has to be connected to the PMOD1 connector, pins 1 to 6 (see image
+below).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_gyro2_rl78g14.jpg
    :align: center
@@ -186,14 +191,18 @@ Reference Project Overview
 The reference project:
 
 -  reads the 10-Bit Temperature Data and the 16-Bit Rate Data;
--  displays the values on the LCD as degrees Celsius and degrees/sec respectively.
+-  displays the values on the LCD as degrees Celsius and degrees/sec
+   respectively.
 
 .. important::
 
    
-   -  If you rotate the Pmod slowly, you will see a smaller value (e.g. 30 Degrees/Second), while rotating the Pmod at a higher speed will result in a higher value (e.g. 300 degrees/second). Afterwards the device will auto calibrate according to its new position, thus displaying a value close to 0 degrees/second.
+   -  If you rotate the Pmod slowly, you will see a smaller value (e.g. 30
+      Degrees/Second), while rotating the Pmod at a higher speed will result in
+      a higher value (e.g. 300 degrees/second). Afterwards the device will auto
+      calibrate according to its new position, thus displaying a value close to
+      0 degrees/second.
    
-
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_gyro2_rl78g14_screen.jpg
    :align: center
@@ -201,16 +210,15 @@ The reference project:
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`_
 
-
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the ADXRS453 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the ADXRS453
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -227,7 +235,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodGYRO2 has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+A PmodGYRO2 has to be interfaced with the Renesas Demonstration Kit (RDK) for
+RX62N:
 
 ::
 
@@ -244,7 +253,9 @@ A PmodGYRO2 has to be interfaced with the Renesas Demonstration Kit (RDK) for RX
 Reference Project Overview
 --------------------------
 
-The reference project reads the 10-Bit Temperature Data and the 16-Bit Rate Data. The values are displayed on the LCD as degrees Celsius and degrees/sec respectively.
+The reference project reads the 10-Bit Temperature Data and the 16-Bit Rate
+Data. The values are displayed on the LCD as degrees Celsius and degrees/sec
+respectively.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_gyro2_rx62n_screen.jpg
    :align: center
@@ -252,20 +263,15 @@ The reference project reads the 10-Bit Temperature Data and the 16-Bit Rate Data
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-

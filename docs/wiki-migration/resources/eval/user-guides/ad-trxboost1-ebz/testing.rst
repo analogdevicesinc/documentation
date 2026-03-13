@@ -4,7 +4,11 @@ AD-TRXBOOST1-EBZ Production Testing
 Overview
 --------
 
-The production testing is quite simple, since each board has been completely characterized and we know the layout is good, we can just look for gross errors. First the noise floor is checked when no input is supplied to make sure it is within a certain threshold, then a couple tones are input and the response is checked to be within certain bounds.
+The production testing is quite simple, since each board has been completely
+characterized and we know the layout is good, we can just look for gross errors.
+First the noise floor is checked when no input is supplied to make sure it is
+within a certain threshold, then a couple tones are input and the response is
+checked to be within certain bounds.
 
 Creating an SD test card
 ------------------------
@@ -13,7 +17,8 @@ First, write the latest available SD card image found at :doc:`/wiki-migration/r
 
 Then the card needs to be modified to run the tests automatically on boot. Test scripts are provided in `linux_image_ADI-scripts <https://github.com/analogdevicesinc/linux_image_ADI-scripts>`_ that automate initializing osc with the correct profile and environment.
 
-See the following example diff for required changes to the launcher to run the tests on boot:
+See the following example diff for required changes to the launcher to run the
+tests on boot:
 
 .. code:: diff
 
@@ -47,19 +52,25 @@ Test process
 The TRXBOOST1 testing should be done using the following steps:
 
 -  Make sure the ZC706 is plugged in with the testing SD card inserted and the HDMI monitor and keyboard/mouse are properly attached to the system and powered on.
--  The TRXBOOST1 board should be mounted on the TX2A/RX2A jacks of the AD-FMCOMMS3-EBZ board and the power cable connected as seen in the following image.
+-  The TRXBOOST1 board should be mounted on the TX2A/RX2A jacks of the
+   AD-FMCOMMS3-EBZ board and the power cable connected as seen in the following
+   image.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/trxboost1_-_close_crop_-_copy.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Connect the RX_IN and TX_OUT jacks on the TRXBOOST1 board with the SMA loopback cable.
 -  Power on the ZC706 board.
 -  The board should boot into the ADI Linux environment and begin the tests automatically.
--  When tests pass, the following window should be shown as seen in the image below. If tests fail, a error dialog will be shown instead. In either case, hit the confirmation button to halt Linux and after several seconds power off the carrier board via the physical switch on the ZC706.
+-  When tests pass, the following window should be shown as seen in the image
+   below. If tests fail, a error dialog will be shown instead. In either case,
+   hit the confirmation button to halt Linux and after several seconds power off
+   the carrier board via the physical switch on the ZC706.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-freqcvt1-ebz/freqcvt1-tests-passed.png
    :align: center
-   :width: 800px
+   :width: 800
 
--  Remove the TRXBOOST1 card and return to step 1 to continue with the next board.
+-  Remove the TRXBOOST1 card and return to step 1 to continue with the next
+   board.

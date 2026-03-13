@@ -34,8 +34,8 @@ ADS9-V2EBZ Features
 
 5. Simple USB 3.0 port interface.
 
-6. Two (2) Micro SD cards are included: "TRX" for ADRV9026 evaluation boards and "HSX" for MxFE(tm) evaluation boards.
-
+6. Two (2) Micro SD cards are included: "TRX" for ADRV9026 evaluation boards and
+   "HSX" for MxFE(tm) evaluation boards.
 
 |image1|
 
@@ -43,13 +43,11 @@ ADS9-V2EBZ Features
 
    *Figure 1. ADS9-V2EBZ High Speed Carrier Card (Top)*
 
-
    |image2|
 
 .. container:: centeralign
 
    *Figure 2. ADS9-V2EBZ High Speed Carrier Card (Bottom)*
-
 
 Using the ADS9-V2EBZ to evaluate High Speed Converters
 ======================================================
@@ -57,15 +55,16 @@ Using the ADS9-V2EBZ to evaluate High Speed Converters
 Overview
 --------
 
-When connected to a specified Analog Devices high speed converter evaluation board, the ADS9-V2EBZ works as a data generation and acquisition board. Designed to support the highest speed JESD204B/C converters, the FPGA on the ADS9-V2EBZ acts as the data and control interface. A typical test setup is shown below.
-
+When connected to a specified Analog Devices high speed converter evaluation
+board, the ADS9-V2EBZ works as a data generation and acquisition board. Designed
+to support the highest speed JESD204B/C converters, the FPGA on the ADS9-V2EBZ
+acts as the data and control interface. A typical test setup is shown below.
 
 |image3|
 
 .. container:: centeralign
 
    *Figure 3. ADS9-V2EBZ connected to High Speed Converter Evaluation Board*
-
 
 Helpful Documents
 -----------------
@@ -95,8 +94,8 @@ ADS9-V2EBZ Supported Evaluation Boards
 Refer to the Analog Devices High Speed Converter evaluation board product page at :adi:`High Speed Converter Eval Boards <hsadcevalboard>` for a table of ADS9-V2EBZ compatible evaluation boards.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/ads9-v2ebztop-web.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/ads9-v2ebzbottom-web.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/system.png
-   :width: 600px
+   :width: 600

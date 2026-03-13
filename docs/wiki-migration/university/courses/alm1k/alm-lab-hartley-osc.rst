@@ -4,7 +4,8 @@ Activity: The Hartley Oscillator
 Objective:
 ----------
 
-Oscillators come in many forms. In this lab activity we will explore the Hartley configuration which uses a taped inductor divider to provide the feedback path.
+Oscillators come in many forms. In this lab activity we will explore the Hartley
+configuration which uses a taped inductor divider to provide the feedback path.
 
 Background:
 -----------
@@ -17,13 +18,11 @@ Where L = total inductance of L\ :sub:`1` and L\ :sub:`2`
 
 Figure 1 shows a typical Hartley oscillator. The frequency determining parallel resonant tuned circuit is formed by L\ :sub:`1`, L\ :sub:`2` and C\ :sub:`1` and is used as the collector load impedance of the common base amplifier Q\ :sub:`1`. This gives the amplifier a high gain only at the resonant frequency. This configuration of the Hartley oscillator uses a common base amplifier, the base of Q\ :sub:`1`\ is biased to an appropriate DC level by resistor divider R\ :sub:`1` and R\ :sub:`2` but is connected directly to an AC ground by C\ :sub:`3`. In the common base mode the output voltage waveform at the collector, and the input signal at the emitter are in phase. This ensures that the fraction of the output signal from the node between L\ :sub:`1` and L\ :sub:`2`, fed back from the tuned collector load to the emitter via the coupling capacitor C\ :sub:`2` provides the required positive feedback.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1, Basic Hartley Oscillator
-
 
 C\ :sub:`2` also forms a low frequency time constant with the emitter resistor R\ :sub:`3` to provide an average DC voltage level proportional to the amplitude of the feedback signal at the emitter of Q\ :sub:`1`. This provides automatic control of the gain of the amplifier to give the closed loop gain of 1 required by the oscillator. The emitter resistor R\ :sub:`3` is not decoupled because the emitter node is used as the common base amplifier input. The base is connected to AC ground by C\ :sub:`3`, which will provide a very low reactance at the oscillator frequency.
 
@@ -44,18 +43,18 @@ Build The Hartley Oscillator shown in figure 2 using your solder-less breadboard
 
 After experimenting with various values for C\ :sub:`1` change tap position and total number of windings used on the HPH1-1400L for the feedback.
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Hartley Oscillator
 
-
 Hardware Setup:
 ---------------
 
-The green squares indicate where to connect the ADALM1000 module, scope channels and power supplies. Be sure to only connect on the power supplies after you double check your wiring.
+The green squares indicate where to connect the ADALM1000 module, scope channels
+and power supplies. Be sure to only connect on the power supplies after you
+double check your wiring.
 
 Procedure:
 ----------
@@ -92,6 +91,6 @@ http://en.wikipedia.org/wiki/Hartley_oscillator
 **Return to Lab Activity Table of Contents.**
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/ahosc_f1.png
-   :width: 550px
+   :width: 550
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-hartley-osc-fig2.png
-   :width: 500px
+   :width: 500

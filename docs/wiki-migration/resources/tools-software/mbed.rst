@@ -44,7 +44,8 @@ Quick Start Guide
 Each product with Mbed support comes with:
 
 -  Library files or drivers for the product and,
--  A top level example program that provides a text based menu driven interface that demonstrates the library functions.
+-  A top level example program that provides a text based menu driven interface
+   that demonstrates the library functions.
 
 | All the code files will be shared on the code tab of Analog Devices Mbed web page https://os.mbed.com/teams/AnalogDevices/code/. Each project comes with a README.txt that explains how to use the code. This document is a user guide on how to use the code to evaluate products supported with Mbed code. It explains in more detail, the Mbed setup instructions written in the README.txt. The hardware setup instructions depends on the product and evaluation board used and will be explained in the README.txt.
 
@@ -52,7 +53,6 @@ Mbed Setup
 ~~~~~~~~~~
 
 -  Go to Mbed web page https://www.mbed.com and click Log in/sign Up button on top right. Create an Mbed account or log in. Please note the username you are using. Open the online compiler by clicking the yellow button on the top right. This is what the compiler will look like:
-
 
 |image3|
 
@@ -63,8 +63,9 @@ Mbed Setup
 Running Code on Mbed
 ~~~~~~~~~~~~~~~~~~~~
 
--  On the product web page, find the link to Mbed example code, say EVAL-AD1234. Click Import Into Compiler. This should import the entire project, along with libraries.
-
+-  On the product web page, find the link to Mbed example code, say EVAL-AD1234.
+   Click Import Into Compiler. This should import the entire project, along with
+   libraries.
 
 |image5|
 
@@ -72,14 +73,16 @@ Running Code on Mbed
 -  To program the SDP-K1 board, connect the SDP-K1 board to your computer using the USB cable provided. You should see the board as a new drive on your computer. Copy the binary file into the Mbed enabled board drive. You can also drag and drop the file, like a USB stick.
 -  Connect the evaluation board and follow the demo manual for the evaluation board to set up the board as required.
 -  To communicate with the board, use your favorite Terminal program, like `Putty <https://putty.org>`_, `Tera Term <http://ttssh2.osdn.jp/>`_ etc. To use Putty, download and install Putty from `here <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_. Here are some `installation instructions <https://www.ssh.com/ssh/putty/windows/install>`_. Open Putty and select Serial connection type. Enter the serial port number and baud rate. Click Open.
-   NOTE: You can find the serial port (which constantly changes, every time you plug a device in), by checking device manager.
+   NOTE: You can find the serial port (which constantly changes, every time you
+   plug a device in), by checking device manager.
 
    |image6|
 
 Useful Links
 ------------
 
-For further information on Mbed, developing and running code, and the SDP-K1 controller board, consult the following:
+For further information on Mbed, developing and running code, and the SDP-K1
+controller board, consult the following:
 
 Mbed documentation: https://os.mbed.com/docs/mbed-os/v6.5/introduction/index.html
 
@@ -90,14 +93,14 @@ Mbed supported ADI parts: :doc:`/wiki-migration/resources/tools-software/mbed-li
 Purchase SDP-K1: http://www.analog.com/SDP-K1
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sdpk1-e-top.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/mbed/board_components_sdp_6.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/mbed/mbed_compiler.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/mbed/add_to_compiler.png
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/mbed/import_to_compiler.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/mbed/putty.png
-   :width: 400px
+   :width: 400

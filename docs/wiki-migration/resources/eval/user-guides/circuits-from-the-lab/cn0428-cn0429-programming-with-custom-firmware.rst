@@ -6,17 +6,18 @@ Programming EVAL-CN0428-EBZ or EVAL-CN0429-EBZ with Custom Firmware
    \ Important note: This page applies to both :doc:`EVAL-CN0428-EBZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0428>` and :doc:`EVAL-CN0429-EBZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0429>`\ . From here on, these will be referred to generically as "Sensor Board". Any differences are called out specifically.
 
    
-   Some of the example setup images are of EVAL-CN0428-EBZ, but still apply to both projects.
+   Some of the example setup images are of EVAL-CN0428-EBZ, but still apply to
+   both projects.
 
-
-Although the Sensor Board ships programmed with tested firmware out of the box, it is often important to be able to modify the firmware and reprogram the board with new functionality. The following procedure gives some options for how to do this.
+Although the Sensor Board ships programmed with tested firmware out of the box,
+it is often important to be able to modify the firmware and reprogram the board
+with new functionality. The following procedure gives some options for how to do
+this.
 
 Additional Wiki Resources
 -------------------------
 
 This guide focuses on programming and debugging the Sensor Board. General information about the Sensor Board can be found at :doc:`EVAL-CN0428-EBZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0428>` and :doc:`EVAL-CN0429-EBZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0429>`, depending on which Sensor Board is used.
-
-
 
 - For additional info on configuring the switches and using the debug connector on the :adi:`EVAL-M355-ARDZ-INT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html>` arduino interposer shield, consult the :doc:`EVAL-M355-ARDZ-INT wiki page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/aducm355_arduino_interposer>`.
 - For additional info about the switches and connectors on the :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>`, consult the :doc:`EVAL-ADICUP3029 Base Board Hardware wiki page </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>`.
@@ -37,17 +38,22 @@ Alternately, if a stand-alone debugger is not available, the on-board debugger o
 
 After this rework is done, it is simple to program or debug ADuCM3029 by connecting P12 to P14, or to program or debug the ADuCM355 on a Sensor Board by connecting P12 on the :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>` to the P10 on the :adi:`EVAL-M355-ARDZ-INT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html>`.
 
-USB power and communications are not affected by these reworks, only the SWD signals are affected.
+USB power and communications are not affected by these reworks, only the SWD
+signals are affected.
 
 Board Modifications for Using the on-board Debugger for Programming the Sensor Board
 ------------------------------------------------------------------------------------
 
-In order to make the debugger available to either the ADuCM3029 or the ADuCM355, the SWD signals must be cut so they are not connected directly to the ADuCM3029 SWD pins. This requires 3 traces to be cut with an X-Acto or similar hobby knife or utility knife. 2 of the SWD traces to be cut are on the primary side and 1 trace is on the secondary side.
+In order to make the debugger available to either the ADuCM3029 or the ADuCM355,
+the SWD signals must be cut so they are not connected directly to the ADuCM3029
+SWD pins. This requires 3 traces to be cut with an X-Acto or similar hobby knife
+or utility knife. 2 of the SWD traces to be cut are on the primary side and 1
+trace is on the secondary side.
 
 .. note::
 
-   Use caution when reworking boards. Protective eyewear should be worn and knife safety should be observed carefully. ESD straps are recommended.
-
+   Use caution when reworking boards. Protective eyewear should be worn and
+   knife safety should be observed carefully. ESD straps are recommended.
 
 The traces are cut after the P12 connector on the debugger side of the :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>` so that the SWD signals are available at P12 and the ribbon cable that is included with :adi:`EVAL-M355-ARDZ-INT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html>` can be used to connect those signals to the device to be programmed or debugged.
 
@@ -56,7 +62,6 @@ The traces are cut after the P12 connector on the debugger side of the :adi:`EVA
    :align: center
 
 As shown in this magnification, the upper trace is SWD_CLK_3029 and the lower trace is 3029_RESET. These traces should both be cut completely. Both signals still go to P12, this just removes them from P14. |Magnification showing signal names of the traces on the primary side of the board|
-
 
 |image1|
 
@@ -67,7 +72,6 @@ The trace that needs to be cut on the secondary side of the board is SWD_DIO_302
    :align: center
 
 This magnified version of the 3 traces that cross the island shows that the other two traces that cross the island are MBED_TX (shown bottom in picture) and MBED_RX (shown middle in picture). These two lower traces must not be cut or USB communication to the board would no longer work. |Traces that cross the island on secondary side. ONLY CUT THE TOP-MOST TRACE.|
-
 
 |image2|
 
@@ -88,10 +92,10 @@ Once the modifications are in place and the cable is connected between P12 on th
    Both programming options require the following conditions to be met:
    
    -  IAR Embedded Workbench for ARM (version 8.30.2 or above) has been installed and set up.
-   -  The ADuCM355 installer has been run to install the project source code and drivers locally.
+   -  The ADuCM355 installer has been run to install the project source code and
+      drivers locally.
    
    If either of the above conditions are not met, go to the `Software <https://wiki.analog.com/>`_ section to set up the software first.
-
 
 Option 1: mbed Programming (simplest programming method)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -174,24 +178,33 @@ Downloading and Setting up IAR
 
 -   License Installation
 
-   -   Once downloaded, the IAR window pops up as shown below. To activate the IAR workbench, click on the help tab.
+   -   Once downloaded, the IAR window pops up as shown below. To activate the
+       IAR workbench, click on the help tab.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/help.jpg
    :align: center
 
--  Then select the License Manager option. This will open a tab asking the user to register for a license key.
+-  Then select the License Manager option. This will open a tab asking the user
+   to register for a license key.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/register_for_license_iar.jpg
    :align: center
 
--  When the user clicks on register, they are redirected to IAR website wherein they need to fill out their details to get access to a license number. After filling in the details, the user will receive a license number which has to be entered back in the tab above then hit Next. This completes the IAR setup and the user can validate their IAR license by looking at this window that pops up in the License Manager option now.
+-  When the user clicks on register, they are redirected to IAR website wherein
+   they need to fill out their details to get access to a license number. After
+   filling in the details, the user will receive a license number which has to
+   be entered back in the tab above then hit Next. This completes the IAR setup
+   and the user can validate their IAR license by looking at this window that
+   pops up in the License Manager option now.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/license_window.jpg
    :align: center
 
--  The user can load the CN0428 or CN0429 project as-desired in IAR by opening the .eww workspace file in the iar subfolder of the source code.
+-  The user can load the CN0428 or CN0429 project as-desired in IAR by opening
+   the .eww workspace file in the iar subfolder of the source code.
 
-   -  Note: this source code is downloaded by the ADuCM355 installer (see below).
+   -  Note: this source code is downloaded by the ADuCM355 installer (see
+      below).
 
 -  The project code can now be modified and the Sensor Board can be programmed or debugged according to one of the programming options above.
 -  Further details of using IAR can be found :doc:`here </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/tools/iar_guide>`.
@@ -207,9 +220,9 @@ Downloading and Running the ADuCM355 Installer
 
 .. |Magnification showing signal names of the traces on the primary side of the board| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/on_board_debug_traces_to_cut_primaryside_magnified.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/primary_board_cut_mbed_with_p12.jpg
-   :width: 600px
+   :width: 600
 .. |Traces that cross the island on secondary side. ONLY CUT THE TOP-MOST TRACE.| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/on_board_debug_traces_to_cut_secondaryside_magnified.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/secondary_board_cut_mbed.jpg
-   :width: 600px
+   :width: 600
 .. |Ribbon Cable Connection to EVAL-M355-ARDZ-INT| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/mbed_ribbon_cable_to_shield_connection.jpg
-   :width: 600px
+   :width: 600

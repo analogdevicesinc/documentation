@@ -9,7 +9,8 @@ Solo
 Description
 -----------
 
-If module is enabled, the selected input signal is passed to the selected output channel and rest are muted. In disable state signals get bypassed.
+If module is enabled, the selected input signal is passed to the selected output
+channel and rest are muted. In disable state signals get bypassed.
 
 Usage
 -----
@@ -24,7 +25,6 @@ Name ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ==== ========== ================ ============= ================
 Solo B          B                NA            B
 ==== ========== ================ ============= ================
-
 
 | ===== Pins =====
 

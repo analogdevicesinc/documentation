@@ -4,14 +4,18 @@ Magneto Resistive Angle Measrement (CN0323)
 Overview
 --------
 
-This circuit provides a contactless, AMR (Anisotropic Magneto Resistive) based angle measurement solution providing 1° angular accuracy over a 180° range.
+This circuit provides a contactless, AMR (Anisotropic Magneto Resistive) based
+angle measurement solution providing 1° angular accuracy over a 180° range.
 
-The circuit is ideal for applications where high speed, accurate, non-contact angle measurements are critical. A rotating magnetic field stimulates the sensor, creating an output voltage of ±70mV. The circuit provides an industry leading angle measurement solution suitable for machine tool speed control, crane angle control, motor speed measurement, and other industrial or automotive applications.
+The circuit is ideal for applications where high speed, accurate, non-contact
+angle measurements are critical. A rotating magnetic field stimulates the
+sensor, creating an output voltage of ±70mV. The circuit provides an industry
+leading angle measurement solution suitable for machine tool speed control,
+crane angle control, motor speed measurement, and other industrial or automotive
+applications.
 
 General Setup
 -------------
-
-
 
 - One EVAL-CN0323-SDPZ Evaluation Board
 - :adi:`EVAL-SDP-CB1Z` Evaluation board
@@ -39,19 +43,19 @@ How to Install the Evaluation Software
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Press **“Next”**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Press **“Next”**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_5.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Press **“Next”**.
 -  Upon completion of the installation of the **CN0323 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
@@ -78,7 +82,8 @@ Opening and Enabling the Evaluation Software
 Step by Step Instruction for Calibrating the System
 ---------------------------------------------------
 
--  The following is a step by step guide for manual or automatic calibration of the calibrating the EVAL-CN0323-SDPZ.
+-  The following is a step by step guide for manual or automatic calibration of
+   the calibrating the EVAL-CN0323-SDPZ.
 
    -  A manual calibration requires the user to input the maximum and minimum ADC code for each channel of the ADC.
    -  An automatic calibration allows the software to identify the maximum and minimum ADC code for each channel of the ADC. This method is easier to use than the manual method, however, it may introduce errors if the magnet is spinning with an un-smooth or non-periodic nature.
@@ -89,10 +94,14 @@ Step by Step Instruction for Calibrating the System
 -  Step 1: Begin by selecting manual or automatic calibration.
 -  Step 2: Press the 'Click to Sample' button to begin data conversion.
 -  Step 3: Rotate the magnet and observe the changing ADC codes.
--  Step 4: If manual calibration was selected, you must input the maximum and minimum codes (seen in step 3) in the boxes provided. If automatic calibration was selected, you must simply spin the magnet through several complete revolutions to allow the software to identify the necessary codes.
+-  Step 4: If manual calibration was selected, you must input the maximum and
+   minimum codes (seen in step 3) in the boxes provided. If automatic
+   calibration was selected, you must simply spin the magnet through several
+   complete revolutions to allow the software to identify the necessary codes.
 
    -  The calibration coefficients can be modified to produce a better end result. For example, if one of the maximum ADC codes is mis-represented on the high side, the output angle will never reach +90 degrees or -90 degrees depending on the channel.
-   -  Once the calibration is complete, proceed to the second tab 'Final Angle(Needle)' to observe the angle information.
+   -  Once the calibration is complete, proceed to the second tab 'Final
+      Angle(Needle)' to observe the angle information.
 
 Registration
 ------------
@@ -101,12 +110,11 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0323-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_6.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_7.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_front_panel_2.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_front_panel_1.png
-   :width: 600px
+   :width: 600

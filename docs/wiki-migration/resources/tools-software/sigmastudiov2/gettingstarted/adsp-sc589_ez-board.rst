@@ -7,19 +7,20 @@ Connections
 -----------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc589_usbi.png
-   :width: 600px
+   :width: 600
 
 ADSP-SC589 Board Connections with USBi
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/sc589_aardvark.png
-   :width: 600px
+   :width: 600
 
 ADSP-SC589 Board Connections with AARDVARK
 
 Settings
 --------
 
-The board settings for running SigmaStudio on ADSP-SC589 EZ-BOARD, using the Default Application is given in the below tables.
+The board settings for running SigmaStudio on ADSP-SC589 EZ-BOARD, using the
+Default Application is given in the below tables.
 
 ====== ==========================
 Switch Setting

@@ -9,14 +9,16 @@ List of API for Register Access for A2B
 Register Read
 -------------
 
-This API used for reading transceiver register value. It takes elementUid and register address list as argument and returns List of Register addresses.
+This API used for reading transceiver register value. It takes elementUid and
+register address list as argument and returns List of Register addresses.
 
 **API:** List<AnalogDevices.SigmaStudio.Scripting.RegAddrValPair> ReadRegValue(string elementUid, List<int> regaddrlist);
 
 **Arguments:**
 
 -  “elementUid” = Name of the action property
--  “regaddrlist” = Register Address List object for collecting register info from the the API
+-  “regaddrlist” = Register Address List object for collecting register info
+   from the the API
 
 **Result:** This API returns List of register addresses for the selected node.
 
@@ -41,7 +43,10 @@ This API used for reading transceiver register value. It takes elementUid and re
 Set Register Value
 ------------------
 
-This API used for updating register value for main node and sub nodes. We can update Control register, I2S/PDM register, Interrupt and error register, IO register value, Control register, GPIOD register values for main node and sub nodes. It takes elementUid and register info as argument and returns SSPResult.
+This API used for updating register value for main node and sub nodes. We can
+update Control register, I2S/PDM register, Interrupt and error register, IO
+register value, Control register, GPIOD register values for main node and sub
+nodes. It takes elementUid and register info as argument and returns SSPResult.
 
 **API:** SSPResult SetRegValue(string elementUid, AnalogDevices.SigmaStudio.Scripting.RegAddrValPair regvalpair);
 
@@ -57,7 +62,8 @@ This API used for updating register value for main node and sub nodes. We can up
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of SetRegValue action.
 
 -  IsSuccess is set to 'True' if the SetRegValue was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -81,4 +87,3 @@ This API used for updating register value for main node and sub nodes. We can up
 .. tip::
 
    For additional details on Transceiver Register configuration, you may refer the :doc:`A2B Plugin for SigmaStudio+ User Guide </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/schematics-components>`.
-

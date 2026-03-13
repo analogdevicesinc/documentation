@@ -4,12 +4,11 @@ ADRV9009 Arria 10 GX Quick Start Guide
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009/quickstart/arria10-fpga_adrv9009.jpg
    :alt: arria10-fpga_adrv9009.jpg
    :align: center
-   :width: 330px
+   :width: 330
 
 .. warning::
 
    \ NOTE: Support for the A10GX carrier is discontinued and will not be supported in future releases. Last pre-build images can be found at :doc:`Nios2 Linux on the Altera FPGA Development Boards </wiki-migration/resources/tools-software/linux-drivers/platforms/nios2>` page.
-
 
 This guide provides some quick instructions on how to setup the ADRV9009 on `A10GX <https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx>`_
 
@@ -36,12 +35,10 @@ Required Software
 
    \ :doc:`Pre-build Images for Intel Arria 10 GX. </wiki-migration/resources/tools-software/linux-drivers/platforms/nios2>`\
 
-
 Setting up the hardware (A10GX)
 -------------------------------
 
 You will need to:
-
 
 |arria10-fpga-kit.jpg|
 
@@ -52,16 +49,18 @@ You will need to:
 - Plug the Power Supply into 12V Power input connector (DC Input).
 - Turn it on.
 
-
 .. esd-warning::
-
 
 Programming the FPGA
 --------------------
 
-Nios II Command Shell is used to program the FPGA. To run Nios II Command Shell navigate to C:\\intelFPGA_pro\\21.2\\nios2eds and start Nios II Command Shell.bat. Windows Subsystem for Linux (WSL) needs to be installed in order to run Nios II Command Shell.
+Nios II Command Shell is used to program the FPGA. To run Nios II Command Shell
+navigate to C:\\intelFPGA_pro\\21.2\\nios2eds and start Nios II Command
+Shell.bat. Windows Subsystem for Linux (WSL) needs to be installed in order to
+run Nios II Command Shell.
 
-After starting the Command Shell, navigate to the path where the pre-build images are saved. For example:
+After starting the Command Shell, navigate to the path where the pre-build
+images are saved. For example:
 
 ::
 
@@ -120,7 +119,6 @@ To start the Nios II Terminal use the following **nios2-terminal.exe** command. 
 .. collapsible:: Complete kernel boot log (Click to expand)
 
    .. container:: box bggreen
-
 
       ::
 
@@ -245,8 +243,6 @@ To start the Nios II Terminal use the following **nios2-terminal.exe** command. 
          Welcome to Buildroot
          buildroot login:
 
-
-
 IIO Oscilloscope
 ----------------
 
@@ -346,6 +342,5 @@ Software support
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
-
 .. |arria10-fpga-kit.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/arria10-fpga-kit.jpg
-   :width: 330px
+   :width: 330

@@ -4,7 +4,14 @@ Android SDK
 Description
 -----------
 
-The ADI Study Watch provides an object-oriented interface for interacting with ADI's VSM study watch platform. User application can use the SDK to receive complete bytes packets over a physical interface (USB or BLE) and decode it. The functionality is organized into applications, manages the sensors, system-level functionality (i.e. file system), and algorithms. The hierarchy of objects within the SDK mirrors the applications present on the device. Each application has its own object within the SDK hierarchy, which is used to interact with that application.
+The ADI Study Watch provides an object-oriented interface for interacting with
+ADI's VSM study watch platform. User application can use the SDK to receive
+complete bytes packets over a physical interface (USB or BLE) and decode it. The
+functionality is organized into applications, manages the sensors, system-level
+functionality (i.e. file system), and algorithms. The hierarchy of objects
+within the SDK mirrors the applications present on the device. Each application
+has its own object within the SDK hierarchy, which is used to interact with that
+application.
 
 Brief guide on using the SDK
 ----------------------------

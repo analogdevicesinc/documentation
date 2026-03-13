@@ -22,16 +22,21 @@ This block is implemented by a :ez:`double-precision <message/73876>` biquad fil
 
 Click the icon button:|general2ndlookpic2.png|. The curve is defined using the Tone Control window (shown below).
 
-Enter the number of curves desired in the # Curves field. Enter Boosts, (overall) Gain, and Q in their fields. Enter the desired cutoff or center (peaking filters) frequency in the Frequency fields. Other parameters to enter will vary with filter type.
+Enter the number of curves desired in the # Curves field. Enter Boosts,
+(overall) Gain, and Q in their fields. Enter the desired cutoff or center
+(peaking filters) frequency in the Frequency fields. Other parameters to enter
+will vary with filter type.
 
-The variety and range of filters are remarkable, as can be seen from the following examples:
+The variety and range of filters are remarkable, as can be seen from the
+following examples:
 
 |general2ndlookpic3.png| |general2ndlookpic4.png| |general2ndlookpic5.png| |general2ndlookpic6.png| |general2ndlookpic7.png|
 
 .. hint::
 
-   Note: For n curves, the selected index should not exceed n - 1, i.e., the index range is 0 to n - 1. If you select an n th curve, misbehavior or errors may result.
-
+   Note: For n curves, the selected index should not exceed n - 1, i.e., the
+   index range is 0 to n - 1. If you select an n th curve, misbehavior or errors
+   may result.
 
 .. |general2ndlookpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndlookpic1.png
 .. |general2ndlookpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndlookpic2.png

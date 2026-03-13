@@ -1,7 +1,9 @@
 Depth Compute Libraries
 =======================
 
-The ADTF3175D kits requires depth compute binaries to convert raw data to depth data. For the sdk to function correctly these binaries will be required for the build process.
+The ADTF3175D kits requires depth compute binaries to convert raw data to depth
+data. For the sdk to function correctly these binaries will be required for the
+build process.
 
 Depth Compute Libraries Download
 --------------------------------
@@ -12,10 +14,12 @@ Windows Binaries
 ~~~~~~~~~~~~~~~~
 
 -  TOF_DepthComputeEngine_Windows-RelX.X.0.exe - installer for Depth Compute OpenCL GPU
--  TOF_DepthComputeEngine_Windows-RelX.X.1.exe - installer for Depth Compute OpenCL CPU (default in Github Installer 3.2.0)
+-  TOF_DepthComputeEngine_Windows-RelX.X.1.exe - installer for Depth Compute
+   OpenCL CPU (default in Github Installer 3.2.0)
 
 Linux Binaries
 ~~~~~~~~~~~~~~
 
 -  TOF_DepthComputeEngine_Linux-RelX.X.0 - installer for Depth Compute OpenCL GPU
--  TOF_DepthComputeEngine_Linux-RelX.X.1 - installer for Depth Compute OpenCL CPU
+-  TOF_DepthComputeEngine_Linux-RelX.X.1 - installer for Depth Compute OpenCL
+   CPU

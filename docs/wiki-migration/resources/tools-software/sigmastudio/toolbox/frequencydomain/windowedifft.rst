@@ -3,8 +3,12 @@
 IFFT Window
 ===========
 
-This Module performs N-point IFFT on input samples in PCMx format. The FFT Output is given in the form of PCMx samples, the Blocksize of which is 3 \* Schematic BlockSize.The first Schematic Block Size number of samples in a PCMx input contains the header information carried from the previous Module (say in this case FFT). Only when the PCMx type matches, IFFT is performed and output is given as PCM samples.
-
+This Module performs N-point IFFT on input samples in PCMx format. The FFT
+Output is given in the form of PCMx samples, the Blocksize of which is 3 \*
+Schematic BlockSize.The first Schematic Block Size number of samples in a PCMx
+input contains the header information carried from the previous Module (say in
+this case FFT). Only when the PCMx type matches, IFFT is performed and output is
+given as PCM samples.
 
 |image1|
 
@@ -37,7 +41,7 @@ Configuration
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifftwindowconfig.jpg
-   :width: 100px
+   :width: 100
 
 +------------------+---------------+------------+------------------------------------------------------------------------------------+
 | GUI Control Name | Default Value | Range      | Function Description                                                               |
@@ -64,7 +68,10 @@ Configuration
 Algorithm Description
 ---------------------
 
-This module performs a Complex IFFT on the input samples received in PCMx format. The twiddle coefficients are computed within the code. Since Windowing is done in the FFT module for 2N samples, overlap and add for N samples are done at the IFFT end.
+This module performs a Complex IFFT on the input samples received in PCMx
+format. The twiddle coefficients are computed within the code. Since Windowing
+is done in the FFT module for 2N samples, overlap and add for N samples are done
+at the IFFT end.
 
 Supported ICs
 -------------
@@ -73,4 +80,4 @@ Supported ICs
 -  ADSPSC5xx
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifftwindow.jpg
-   :width: 200px
+   :width: 200

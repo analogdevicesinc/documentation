@@ -37,16 +37,20 @@ Files
 Overview
 --------
 
-The MAX14001/MAX14002 are isolated, single-channel analog-to-digital converters (ADCs) with programmable voltage comparators and inrush current control optimized for configurable binary input applications.
+The MAX14001/MAX14002 are isolated, single-channel analog-to-digital converters
+(ADCs) with programmable voltage comparators and inrush current control
+optimized for configurable binary input applications.
 
 Hardware configuration
 ======================
 
-Use the test points for interfacing the MAX14001PMB with a machine running Linux.
+Use the test points for interfacing the MAX14001PMB with a machine running
+Linux.
 
 The instructions below describe how to set up :adi:`MAX14001PMB <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max14001pmb.html>` with `RPI-5 <https://www.raspberrypi.com/products/raspberry-pi-5/>`_.
 
-There are a number of connections to make between the ADC evaluation board and the Linux machine.
+There are a number of connections to make between the ADC evaluation board and
+the Linux machine.
 
 +-----------------+------------------------------+------------------------------------------------+
 | MAX14001PMB pin | Pin Function                 | `RPI-5 <https://www.raspberrypi.com/products ^ |
@@ -93,7 +97,7 @@ RPI SPI1 setup:
 On rpi SPI1 bus, the MAX14001PMB setup should look like the following.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/max14001/max14001_rpi_spi1_setup.jpg
-   :width: 200px
+   :width: 200
 
 To enable SPI1 bus on rpi, add \`dtoverlay=spi1-2cs\` to config.txt and copy the overlay .dtbo file to the overlays directory.
 
@@ -103,12 +107,12 @@ Adding Linux driver support
 Enabling the driver
 -------------------
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The MAX14001 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -259,17 +263,24 @@ Device tree overlay example (rpi SPI1)
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
-   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses the interface can be found here:
+   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses
+   the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 Show device name
 ----------------
@@ -284,7 +295,6 @@ Show device name
       marcelo@rpi5:~ $ cat /sys/bus/iio/devices/iio\:device0/name
       max14001
    
-
 
 Show channel scale
 ------------------
@@ -301,7 +311,6 @@ Show channel scale
       marcelo@rpi5:~ $ cat /sys/bus/iio/devices/iio\:device0/in_voltage0_scale
       1.220703125
    
-
 
 Example test single-shot readings through IIO device sysfs interface.
 
@@ -329,7 +338,6 @@ Example test single-shot readings through IIO device sysfs interface.
       517
    
 
-
 More Information
 ================
 
@@ -351,6 +359,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

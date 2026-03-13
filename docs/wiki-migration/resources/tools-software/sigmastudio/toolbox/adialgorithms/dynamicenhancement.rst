@@ -3,15 +3,20 @@ Dynamic Enhancement
 
 :doc:`Click here to return to the ADI Algorithms page </wiki-migration/resources/tools-software/sigmastudio/toolbox/adialgorithms>`
 
-The Dynamic Enhancement block provides variable bass enhancement as a function of input-signal level. Lower volume (input-signal) levels require more bass than higher levels. The filter dynamically adjusts the amount of bass enhancement depending on the volume of the input signal, by using a variable-Q filter.
+The Dynamic Enhancement block provides variable bass enhancement as a function
+of input-signal level. Lower volume (input-signal) levels require more bass than
+higher levels. The filter dynamically adjusts the amount of bass enhancement
+depending on the volume of the input signal, by using a variable-Q filter.
 
-A fixed enhancement is applied to input levels below the threshold while a dynamic gain is applied to input levels above the threshold.
+A fixed enhancement is applied to input levels below the threshold while a
+dynamic gain is applied to input levels above the threshold.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/dynamicenhancepic1.png
    :alt: dynamicenhancepic1.png
    :align: center
 
-There are four parameters available for control on the block, which are described below:
+There are four parameters available for control on the block, which are
+described below:
 
 **Time Constant** – Enter a value for the Time Constant in the edit box, or use the updown arrows to change the value. The time constant can vary from 0 to 500 milliseconds. It controls the RMS time constant of the detector. Attack and release time will be longer as this parameter becomes larger.
 
@@ -23,5 +28,5 @@ There are four parameters available for control on the block, which are describe
 
 .. hint::
 
-   Note: When the Boost is set to 0dB, signal still goes through the logic. So remember to remove the block if no dynamic enhancement is desired.
-
+   Note: When the Boost is set to 0dB, signal still goes through the logic. So
+   remember to remove the block if no dynamic enhancement is desired.

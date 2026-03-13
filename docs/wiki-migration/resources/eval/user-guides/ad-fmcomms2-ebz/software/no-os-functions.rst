@@ -9,7 +9,8 @@ This document describes the No-OS software used to control the AD9361 part.
 AD9361 No-OS API
 ~~~~~~~~~~~~~~~~
 
-An API is available to be used on systems without OS to interact with the AD9361 and provides all the necessary functions to control it.
+An API is available to be used on systems without OS to interact with the AD9361
+and provides all the necessary functions to control it.
 
 Below is presented a short description of all the functions provided in the API:
 
@@ -369,7 +370,8 @@ For more details on each of the struct members please see here: :doc:`AD9361 Dev
            int32_t     gpio_cal_sw2;   /* cal-sw2-gpios */
        }AD9361_InitParam;
 
-2. Below is defined the rf_rssi structure used by the ad9361_get_rx_rssi() function:
+2. Below is defined the rf_rssi structure used by the ad9361_get_rx_rssi()
+   function:
 
 .. code:: C
 
@@ -381,7 +383,8 @@ For more details on each of the struct members please see here: :doc:`AD9361 Dev
            u8 duration;    // Duration to be considered for measuring
        };
 
-3. Below is defined the AD9361_RXFIRConfig structure used by the ad9361_set_rx_fir_config() function:
+3. Below is defined the AD9361_RXFIRConfig structure used by the
+   ad9361_set_rx_fir_config() function:
 
 .. code:: C
 
@@ -393,7 +396,8 @@ For more details on each of the struct members please see here: :doc:`AD9361 Dev
            int16_t rx_coef[64];
        }AD9361_RXFIRConfig;
 
-4. Below is defined the AD9361_TXFIRConfig structure used by the ad9361_set_tx_fir_config() function:
+4. Below is defined the AD9361_TXFIRConfig structure used by the
+   ad9361_set_tx_fir_config() function:
 
 .. code:: C
 

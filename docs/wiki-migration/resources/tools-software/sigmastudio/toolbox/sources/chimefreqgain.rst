@@ -96,28 +96,40 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The chime algorithm has fully programmable frequency and gain envelopes. The envelopes are accessible by clicking the cell’s icon.
+The chime algorithm has fully programmable frequency and gain envelopes. The
+envelopes are accessible by clicking the cell’s icon.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/chimefreqgain025.jpg
    :align: center
 
-The length of the chime is controlled by the Maximum Time control, which is set in milliseconds.
+The length of the chime is controlled by the Maximum Time control, which is set
+in milliseconds.
 
-The envelope control window has two tabs: Frequency and Gain. The Frequency envelope is displayed in blue, and the Gain envelope is displayed in red. Points on the curve can be moved by click-dragging. New points can be added by double-clicking. Points can be removed by right-clicking and selecting “remove point.” In this case, the point closest to the mouse cursor will be removed. Each envelope must have at least 3 points. Point values can be fine-tuned using the text input boxes on the right side of the envelope control window.
+The envelope control window has two tabs: Frequency and Gain. The Frequency
+envelope is displayed in blue, and the Gain envelope is displayed in red. Points
+on the curve can be moved by click-dragging. New points can be added by
+double-clicking. Points can be removed by right-clicking and selecting “remove
+point.” In this case, the point closest to the mouse cursor will be removed.
+Each envelope must have at least 3 points. Point values can be fine-tuned using
+the text input boxes on the right side of the envelope control window.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/chimefreqgain027.jpg
    :align: center
 
-When the control input goes to 1, the chime begins. When the control input goes to 0, the chime output stops, regardless of whether the envelope has completed or not.
+When the control input goes to 1, the chime begins. When the control input goes
+to 0, the chime output stops, regardless of whether the envelope has completed
+or not.
 
 In the case of the Chime Freq – Gain Continuous Play algorithm, the envelope will loop continuously until the control input goes to 0.
 
-The example below shows the chime algorithm’s input and output signals using the gain envelope shown above.
+The example below shows the chime algorithm’s input and output signals using the
+gain envelope shown above.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/chimefreqgain028.jpg
    :align: center
 
-The example below has the input going to zero before the envelope has completed. The output will immediately go to zero.
+The example below has the input going to zero before the envelope has completed.
+The output will immediately go to zero.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/chimefreqgain029.jpg
    :align: center
@@ -125,7 +137,9 @@ The example below has the input going to zero before the envelope has completed.
 Example
 -------
 
-The following schematic image shows the Chime Freq-Gain cell being used with a 28.0 switch and being output to a DAC. The schematic below uses the Switch, Chime Freq-Gain, and Output cells.
+The following schematic image shows the Chime Freq-Gain cell being used with a
+28.0 switch and being output to a DAC. The schematic below uses the Switch,
+Chime Freq-Gain, and Output cells.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/chimefreqgain030.jpg
    :align: center

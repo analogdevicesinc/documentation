@@ -9,7 +9,11 @@ Fractional Delay
 Description
 -----------
 
-The Fractional Delay cell provides a variable delay to a single audio input. The input is delayed by the amount reflected in the percentage text box and allows for fractional delays (fractions of a sample period via linear interpolation). The top drop-down menu labeled Max represents the largest amount of delay that could be applied to the input signal and sets the data delay buffer size.
+The Fractional Delay cell provides a variable delay to a single audio input. The
+input is delayed by the amount reflected in the percentage text box and allows
+for fractional delays (fractions of a sample period via linear interpolation).
+The top drop-down menu labeled Max represents the largest amount of delay that
+could be applied to the input signal and sets the data delay buffer size.
 
 Targets Supported
 -----------------
@@ -31,7 +35,6 @@ Name    Type  Description
 ======= ===== ===============
 Input X Audio Input Channel X
 ======= ===== ===============
-
 
 | ==== Output ====
 

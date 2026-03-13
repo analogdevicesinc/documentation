@@ -58,7 +58,6 @@ Name    Type  Description
 Output0 Audio Output audio
 ======= ===== ============
 
-
 | ===== Configurable Parameters =====
 
 +----------------+---------------+----------+----------------------------------------------+

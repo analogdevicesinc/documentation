@@ -3,7 +3,7 @@ Faust Integration with the SHARC Audio Module
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/logo_faust_complet_bleu.png
    :align: left
-   :width: 300px
+   :width: 300
 
 Overview
 --------
@@ -16,7 +16,8 @@ Not only can Faust generate efficient inner loops in C++, it also:
 
 -  Can generate test GUIs for prototyping algorithms
 -  Can generate easy-to-read hierarchical block diagrams directly from the Faust source, which graphically illustrate signal flow and processing.
--  Provide a runtime system that supports MIDI for both voice allocation and parameter control.
+-  Provide a runtime system that supports MIDI for both voice allocation and
+   parameter control.
 
 Useful Faust References
 -----------------------
@@ -44,7 +45,6 @@ The new `Faust Online Editor <https://fausteditor.grame.fr/>`_ can be used to ed
    -  *Firefox* (Note: MIDI is not currently supported)
    
 
-
 faust2sam
 ---------
 
@@ -54,11 +54,11 @@ Faust programs may be targeted for many different platforms via what is known as
 
    Note: While it's possible to install and run faust2sam locally on your Linux or macOS machine we generally recommend the use of the `Faust Online Editor <http://faust.grame.fr/editor-page>`_ since it runs in your web browser and is available on all platforms including Microsoft Windows.
 
-
 Hardware Setup for Faust
 ------------------------
 
-In order to have a successful experience using Faust, certain hardware will be needed.
+In order to have a successful experience using Faust, certain hardware will be
+needed.
 
 Hardware Needed
 ~~~~~~~~~~~~~~~
@@ -97,7 +97,8 @@ The CCES Baremetal Framework has a subproject directory for each processor core:
 -  ``<PROJECT_NAME>_Core1``
 -  ``<PROJECT_NAME>_Core2``
 
-For each project directory there is a directory where the three source files created from the Faust online editor should be placed.
+For each project directory there is a directory where the three source files
+created from the Faust online editor should be placed.
 
 -  ``<PROJECT_NAME>_Core1/src/faust``
 -  ``<PROJECT_NAME>_Core2/src/faust``
@@ -105,7 +106,6 @@ For each project directory there is a directory where the three source files cre
 .. note::
 
    Each core can be running a different Faust algorithm.
-
 
 Typical Faust Bare Metal Configuration Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,7 +120,8 @@ The following options should be selected when using the wizard:
 -  Give the project a meaningful name, click Next.
 -  Choose the Audio Project Fin on the Expansion Fin Selection page because it is used in all tutorials, click Next.
 -  Click Next on the A2B Module Selection page without making any changes.
--  On the Faust Support page choose which cores will be running Faust, click Finish.
+-  On the Faust Support page choose which cores will be running Faust, click
+   Finish.
 
 **No other options need to be changed.**
 
@@ -130,7 +131,6 @@ Configuration File Setup
 .. tip::
 
    This section is only needed if the :doc:`bare metal project wizard </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/project-wizard>` is not used or to update the configuration file if there was a mistake when using the wizard.
-
 
 In addition there is a header file that is common across all cores called ``audio_system_config.h``. In this file the following pre-processor macros should be set. The example below indicates that a Faust algorithm will only be running on Core1 and that Core2 will be simply passing audio to the codec.
 
@@ -166,7 +166,11 @@ MIDI in Faust
 Mapping MIDI messages to Faust Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Faust has a number of meta data conventions for mapping MIDI messages into Faust control. Below is the simple MIDI controlled sawtooth synth, which illustrates how this control mapping is done. In the example below nentry() is a numerical entry object that can be mapped to receive specific MIDI values. A number of metadata values are reserved to have specific mapping functions.
+Faust has a number of meta data conventions for mapping MIDI messages into Faust
+control. Below is the simple MIDI controlled sawtooth synth, which illustrates
+how this control mapping is done. In the example below nentry() is a numerical
+entry object that can be mapped to receive specific MIDI values. A number of
+metadata values are reserved to have specific mapping functions.
 
 -  ``freq`` – If a MIDI noteOn event is received it’s MIDI keyNumber is mapped to a frequency.
 -  ``bend`` – if a MIDI pitchBend message is received it is mapped to a bend value.
@@ -176,13 +180,15 @@ Faust has a number of meta data conventions for mapping MIDI messages into Faust
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module//faust3.png
    :alt: /faust3.png
-   :width: 576px
+   :width: 576
    :height: 289px
 
 MIDI Conventions for Audio Project Fin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The pots and push buttons on the Audio Project Fin can be used to control key algorithm parameters. The pots and push button switches are mapped to default continuous controllers.
+The pots and push buttons on the Audio Project Fin can be used to control key
+algorithm parameters. The pots and push button switches are mapped to default
+continuous controllers.
 
 Pot Mapping
 ^^^^^^^^^^^
@@ -207,16 +213,21 @@ PB      CC
 ``SW4`` ``CC-105``
 ======= ==========
 
-The algorithm examples that are provided use these conventions. For example, the effects algorithm is “echo : flange : chorus : reverb”. For this algorithm each of the four push buttons turns on a different effects unit. The first pot is the echo feedback, the second pot is the reverb room size and the third pot is the reverb damping.
+The algorithm examples that are provided use these conventions. For example, the
+effects algorithm is “echo : flange : chorus : reverb”. For this algorithm each
+of the four push buttons turns on a different effects unit. The first pot is the
+echo feedback, the second pot is the reverb room size and the third pot is the
+reverb damping.
 
 Typical Workflow
 ----------------
 
-The typical workflow using faust to design algorithms for the SHARC Audio Module is:
+The typical workflow using faust to design algorithms for the SHARC Audio Module
+is:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module//faust4.png
    :alt: /faust4.png
-   :width: 1000px
+   :width: 1000
    :height: 503px
 
 -  Open the Faust `online editor <https://faust.grame.fr/editor>`_.
@@ -226,24 +237,25 @@ The typical workflow using faust to design algorithms for the SHARC Audio Module
 
 .. important::
 
-   Compiling within CCES can take a while so it is recommended to iterate through changes using the Faust editor until comfortable with the algorithm
-
+   Compiling within CCES can take a while so it is recommended to iterate
+   through changes using the Faust editor until comfortable with the algorithm
 
 -  Once the developer is satisfied with the algorithm **faust2sam** (run in the background) can be used to generate a set of C++ files for the algorithm that are intended to be used with a CCES framework.
 -  Click the ``Export/compile to a specific platform`` button
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
-   :width: 50px
+   :width: 50
 
 -  In the second dropdown box, choose ``sam`` and then ``Export``
 -  Click on the QR code that shows to download the files
 -  These 3 source files can be copied to the ``faust`` directory in the CCES framework. The framework can then be compiled and downloaded to the SHARC Audio Module.
 
-Here is a block diagram of how the code for the virtual analog synthesizer demo and the effects chain is organized.
+Here is a block diagram of how the code for the virtual analog synthesizer demo
+and the effects chain is organized.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module//faust5.png
    :alt: /faust5.png
-   :width: 976px
+   :width: 976
    :height: 625px
 
 Example Workflows
@@ -257,4 +269,4 @@ Example Workflows
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png
-   :width: 50px
+   :width: 50

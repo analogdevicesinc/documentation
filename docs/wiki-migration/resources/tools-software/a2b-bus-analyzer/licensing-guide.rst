@@ -3,7 +3,9 @@
 A2B Bus Analyzer Licensing Guide
 ================================
 
-A2B Bus Analyzer application provides two ways of activating the Analyzer product depending on the availability of a reliable Internet connection. The two options are described below.
+A2B Bus Analyzer application provides two ways of activating the Analyzer
+product depending on the availability of a reliable Internet connection. The two
+options are described below.
 
 Activate online
 ---------------
@@ -13,7 +15,10 @@ If you have Internet connection and want to activate using one-step 'Activate on
 Activate offline
 ----------------
 
-If you DO NOT have Internet connection then activate using 'Activate offline' process. This multi-step process will allow obtaining a new validation code or manually install an already obtained validation code, received via email, in order to activate your product.
+If you DO NOT have Internet connection then activate using 'Activate offline'
+process. This multi-step process will allow obtaining a new validation code or
+manually install an already obtained validation code, received via email, in
+order to activate your product.
 
 -  Launch the A\ :sup:`2`\ B Bus Analyzer software
 -  Connect to your A\ :sup:`2`\ B Bus Analyzer hardware
@@ -27,14 +32,14 @@ If you DO NOT have Internet connection then activate using 'Activate offline' pr
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/license_activation.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Choose "Enable existing validation code"
 -  Enter the "Validation Code" in the entry box provided
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/activate3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Click Activate
 

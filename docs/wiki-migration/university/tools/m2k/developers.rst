@@ -1,9 +1,18 @@
 ADALM2000 for Developers
 ========================
 
-The people who typical read these pages are those who write custom software or HDL (for the FPGA) that run directly on the M2K device. This may put the M2K in different modes, and support different external USB devices (including USB/LAB, or USB/WiFi), extending the capabilities of the device, or completely changing the data that is transferred to the host. Since the goal of the project is to keep things as open as possible, the details on how to compile kernels, create bit files, assemble FIT files and load them into the device, should be found here.
+The people who typical read these pages are those who write custom software or
+HDL (for the FPGA) that run directly on the M2K device. This may put the M2K in
+different modes, and support different external USB devices (including USB/LAB,
+or USB/WiFi), extending the capabilities of the device, or completely changing
+the data that is transferred to the host. Since the goal of the project is to
+keep things as open as possible, the details on how to compile kernels, create
+bit files, assemble FIT files and load them into the device, should be found
+here.
 
-While we do have a few examples, and show how to re-create the default software loads, since this the hardware can be nearly a blank slate for your project, you can do anything you want.
+While we do have a few examples, and show how to re-create the default software
+loads, since this the hardware can be nearly a blank slate for your project, you
+can do anything you want.
 
 Content
 -------

@@ -5,22 +5,34 @@ ADS-B Airplane Tracking Tutorial
 
    This model is considered deprecated. See updated model here `HW/SW Co-Design Implementation of ADS-B Receiver Using Analog Devices AD9361/AD9364 <https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/ug/hw-sw-co-design-implementation-of-ads-b-transmitter-receiver-using-analog-devices-ad9361-ad9364.html>`_\
 
-
 Overview
 ========
 
-Due to the complexity of the SDR systems nowadays, there is a significant gap between the concept of a SDR system and the realization of that working design. Bridging this gap typically involves teams of engineers with a variety of different skill sets (RF, DSP, FPGA, software, system integration and etc.), and in many cases projects get de-railed early in the development stage because of difficulty in coordinating the efforts of these varied design entities.
+Due to the complexity of the SDR systems nowadays, there is a significant gap
+between the concept of a SDR system and the realization of that working design.
+Bridging this gap typically involves teams of engineers with a variety of
+different skill sets (RF, DSP, FPGA, software, system integration and etc.), and
+in many cases projects get de-railed early in the development stage because of
+difficulty in coordinating the efforts of these varied design entities.
 
 In this tutorial, we will present how model based design provides a collaborative solution for SDR, which allows developers of different backgrounds (RF, DSP, FPGA, software, system integration and etc.) to work together in a single environment, and quickly build and prototype SDR systems while establishing and maintaining a deployable path to production. As a real-world and interesting example of the process, we will actually build a wireless SDR platform that receives and decodes `Automatic Dependent Surveillance-Broadcast (ADS-B) <https://en.wikipedia.org/wiki/Automatic_dependent_surveillance_–_broadcast>`_ signals to allow us to detect and report the position, altitude, and velocity of the commercial aircraft flying in our vicinity.
 
-The signal processing requirements of ADS-B are quite trivial, and most would agree that this type of development methodology is overkill for something of this scope. However, the focus of this tutorial is the model based design flow, not the algorithmic complexity of what is actually being implemented. Rather than show a complex signal processing example at the same time as introducing modern development methodology, we will focus on the development tools used, and showcase things, while still using a real world example.
+The signal processing requirements of ADS-B are quite trivial, and most would
+agree that this type of development methodology is overkill for something of
+this scope. However, the focus of this tutorial is the model based design flow,
+not the algorithmic complexity of what is actually being implemented. Rather
+than show a complex signal processing example at the same time as introducing
+modern development methodology, we will focus on the development tools used, and
+showcase things, while still using a real world example.
 
-From simulation to production, the following tasks will be performed in this tutorial:
+From simulation to production, the following tasks will be performed in this
+tutorial:
 
 -  Design of signal processing algorithms used to decode ADS-B messages
 -  Simulation of the RF transceiver receiving ADS-B signals
 -  Generation of C and HDL code
--  Verification of the HDL code with recorded and live data on the target transceiver and FPGA
+-  Verification of the HDL code with recorded and live data on the target
+   transceiver and FPGA
 
 Software and Hardware Requirements
 ==================================
@@ -66,7 +78,7 @@ The following sections will follow the workflow shown in the figure below:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/flow.png
    :alt: Block diagram
-   :width: 700px
+   :width: 700
 
 -  The first step of **component evaluation** is to understand if the AD9361 will meet your requirements (the component evaluation stage). Since the AD9361 can tune to 1090MHz (the broadcast frequency for ADS-B), and receive a 2MHz bandwidth signal (the channel bandwidth of ADS-B), the AD9361 is suitable.
 -  The next step of **behavioral simulation** is to model and simulate the SDR system in Simulink. At this stage the communication algorithm is partitioned into blocks that will be implemented in software and blocks that will be implemented into the programmable logic or embedded software.
@@ -78,9 +90,22 @@ The following sections will follow the workflow shown in the figure below:
 Component Evaluation
 --------------------
 
-Wireless signals that can be detected and decoded are everywhere, and they are easily accessible with today’s Software Defined Radio (SDR) hardware like the Analog Devices AD9361 integrated RF agile transceivers. The Automatic Dependent Surveillance Broadcast (ADS-B) transmissions from commercial aircraft provide a readily available wireless signal that can be used to demonstrate the Zynq and AD9361 rapid prototyping flow. Commercial aircraft use ADS-B transmitters to report their position, velocity, altitude and aircraft ID to air traffic controllers. The flight data format is defined in the International Civil Aviation Organization’s (ICAO) Mode S Extended Squitter specification. ADS-B is being introduced throughout the world to modernize air traffic control and collision avoidance systems. It has already been adopted in Europe and is being gradually introduced in the United States.
+Wireless signals that can be detected and decoded are everywhere, and they are
+easily accessible with today’s Software Defined Radio (SDR) hardware like the
+Analog Devices AD9361 integrated RF agile transceivers. The Automatic Dependent
+Surveillance Broadcast (ADS-B) transmissions from commercial aircraft provide a
+readily available wireless signal that can be used to demonstrate the Zynq and
+AD9361 rapid prototyping flow. Commercial aircraft use ADS-B transmitters to
+report their position, velocity, altitude and aircraft ID to air traffic
+controllers. The flight data format is defined in the International Civil
+Aviation Organization’s (ICAO) Mode S Extended Squitter specification. ADS-B is
+being introduced throughout the world to modernize air traffic control and
+collision avoidance systems. It has already been adopted in Europe and is being
+gradually introduced in the United States.
 
-The Mode S Extended Squitter standard provides details of the RF transmission format and encoded data fields. The transponder transmission has the following properties:
+The Mode S Extended Squitter standard provides details of the RF transmission
+format and encoded data fields. The transponder transmission has the following
+properties:
 
 -  Transmit Frequency: 1090 MHz
 -  Modulation: Pulse Position Modulation (PPM)
@@ -88,9 +113,11 @@ The Mode S Extended Squitter standard provides details of the RF transmission fo
 -  Message Length: 56 μsec or 112 μsec
 -  24-bit CRC checksum
 
-The tuning frequency and bandwidth are well within the capabilities of the AD9361 RF transceiver, such as the PicoZed SDR board.
+The tuning frequency and bandwidth are well within the capabilities of the
+AD9361 RF transceiver, such as the PicoZed SDR board.
 
-The Mode S waveform is fairly simple, as shown below, but there are still several challenges involved in receiving and decoding the transmitted messages.
+The Mode S waveform is fairly simple, as shown below, but there are still
+several challenges involved in receiving and decoding the transmitted messages.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/fig1.png
    :alt: fig1.png
@@ -98,9 +125,18 @@ The Mode S waveform is fairly simple, as shown below, but there are still severa
 -  The receive environment typically contains very short messages interspersed with long idle periods. The signals being received can be very weak when the transmitting aircraft is a long distance from the receiver. Legacy waveforms are also transmitted at 1090 MHz. The receiver needs to use the preamble to identify both high and low amplitude Mode S transmissions in a congested frequency band.
 -  Bits have one of two possible patterns within the 1 usec bit interval. A logical 1 is ON for the first ½ usec and OFF for the second ½ usec. A logical 0 is OFF for the first ½ usec and ON for the second ½ usec. Since the bit decisions are made based on time-based patterns, the receiver needs to use the preamble to accurately find the IQ sample where the message bits start.
 -  The Mode S message is composed of 88 information bits and 24 checksum bits. The receiver needs to be able to clear registers, make bit decisions, compute the checksum and read the checksum registers at the correct times. Timing control is required for the receiver to function properly.
--  For an embedded design, the decoding process has to work on a sample by sample basis. Storing large amounts of data for batch processing is not a realistic receiver design for an embedded system.
+-  For an embedded design, the decoding process has to work on a sample by
+   sample basis. Storing large amounts of data for batch processing is not a
+   realistic receiver design for an embedded system.
 
-The combination of a powerful RF front end like the AD9361 and a technical computing language like MATLAB greatly simplifies the problems associated with detecting and decoding these transmissions. Functions for the math and signal processing libraries can be used to identify the sync pattern, calculate the noise floor, make bit decisions and calculate the checksum. The conditional and execution control functions in MATLAB simplify the control logic. Accessing test data is easy, both from binary or text files or streamed directly into MATLAB using the AD9361 SDR platforms.
+The combination of a powerful RF front end like the AD9361 and a technical
+computing language like MATLAB greatly simplifies the problems associated with
+detecting and decoding these transmissions. Functions for the math and signal
+processing libraries can be used to identify the sync pattern, calculate the
+noise floor, make bit decisions and calculate the checksum. The conditional and
+execution control functions in MATLAB simplify the control logic. Accessing test
+data is easy, both from binary or text files or streamed directly into MATLAB
+using the AD9361 SDR platforms.
 
 Behavioral Simulation
 ---------------------
@@ -108,7 +144,9 @@ Behavioral Simulation
 Transmit Model
 ~~~~~~~~~~~~~~
 
-In order to verify the receiver model works properly, especially the detect and decoding algorithm, we construct a tranmist model from some known ADS-B message as a test suite.
+In order to verify the receiver model works properly, especially the detect and
+decoding algorithm, we construct a tranmist model from some known ADS-B message
+as a test suite.
 
 The transmit model **adsbTxGen.m** can be found on the Analog Devices GitHub repository:
 
@@ -117,8 +155,9 @@ The transmit model **adsbTxGen.m** can be found on the Analog Devices GitHub rep
 
    :git-MathWorks_tools:`Transmit Model <hil_models/legacy/ADSB_transmitter/adsbTxGen.m>`
 
-
-The input to this function is the known ADS-B message you would like to transmit, and the output is the baseband ADS-B waveform that the receiver can handle. In the MATLAB command window, run the following line:
+The input to this function is the known ADS-B message you would like to
+transmit, and the output is the baseband ADS-B waveform that the receiver can
+handle. In the MATLAB command window, run the following line:
 
 .. code:: matlab
 
@@ -136,17 +175,19 @@ The receiver model **ModeS_Simulink_Decode.mdl** and its associated files can be
 
    :git-MathWorks_tools:`Receive Model <hil_models/legacy/ADSB_Simulink>`
 
-
 The model itself is quite straightforward. It takes the pre-recorded ADS-B data, saved in *data_Yb.mat* as input, and then decode the message. The subsystem of decoding algorithm is shown in the figure below:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/fig9.png
    :alt: Block diagram
-   :width: 700px
+   :width: 700
 
 The first step in the decoding is to calculate the noise floor and the correlation to the preamble. Digital filter blocks are used for these calculations. The *TimingControl* is implemented using `Stateflow <https://www.mathworks.com/products/stateflow/>`_, which is a state machine tool that is used to generate the timing, reset and control signals for the rest of the decoding algorithm. Stateflow is very useful for models where you want to separate the control logic from the data flow. Once the timing and triggers are activated the block named *Bit Process* takes the input IQ samples and calculates the data bits, and the *CRC_Check* block computes the checksum. The message parsing takes place in a MATLAB script named *DecodeBits.m* driven by this Simulink model.
 
-After you run the model, the figure below from the MATLAB command window shows the two messages that were successfully decoded from the one million sample data set. The hex characters that make up the 88-bit message and 24-bit checksum are displayed, and the results of the decoding process show the aircraft ID, message type, and aircraft velocity, altitude, and position.
-
+After you run the model, the figure below from the MATLAB command window shows
+the two messages that were successfully decoded from the one million sample data
+set. The hex characters that make up the 88-bit message and 24-bit checksum are
+displayed, and the results of the decoding process show the aircraft ID, message
+type, and aircraft velocity, altitude, and position.
 
 |Block diagram|
 
@@ -155,7 +196,8 @@ In order to verify the detect and decoding algorithm works properly, double clic
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/txdata.png
    :alt: txdata.png
 
-Click play button to run the model. In the command window, you will see the following results:
+Click play button to run the model. In the command window, you will see the
+following results:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/txresult.png
    :alt: txresult.png
@@ -165,14 +207,30 @@ Since we select the cyclic repetition mode for *txData*, the decoded result will
 Radio I/O
 ---------
 
-After implementing any signal processing algorithm in MATLAB or Simulink, the next natural step is to verify the algorithm’s functionality using real data acquired from the actual SDR hardware system that it is going to run on. In the previous step, the verification of the algorithm is done using different sets of input data captured from the system. This helps validate the algorithm’s functionality, but does not guarantee that the algorithm will perform as expected in environmental conditions other than the ones used to make the data captures, or what the behavior and performance will be for different settings of the analog frontend and digital blocks of the SDR system. In order to verify all of these aspects, it is very beneficial if the algorithm can be run online, receiving live data as input, and tuning the settings of the SDR system for optimal performance.
+After implementing any signal processing algorithm in MATLAB or Simulink, the
+next natural step is to verify the algorithm’s functionality using real data
+acquired from the actual SDR hardware system that it is going to run on. In the
+previous step, the verification of the algorithm is done using different sets of
+input data captured from the system. This helps validate the algorithm’s
+functionality, but does not guarantee that the algorithm will perform as
+expected in environmental conditions other than the ones used to make the data
+captures, or what the behavior and performance will be for different settings of
+the analog frontend and digital blocks of the SDR system. In order to verify all
+of these aspects, it is very beneficial if the algorithm can be run online,
+receiving live data as input, and tuning the settings of the SDR system for
+optimal performance.
 
-In this section, we will describe and showcase how to use IIO System Object to capture signals with the target transceiver, but still do the signal processing on the host in MATLAB and Simulink to decode the messages, as shown below:
+In this section, we will describe and showcase how to use IIO System Object to
+capture signals with the target transceiver, but still do the signal processing
+on the host in MATLAB and Simulink to decode the messages, as shown below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/sys_obj.png
    :alt: System architecture
 
-The algorithm will be designed with the ultimate goal of deploying the solution onto a Zynq SoC platform, such as PicoZed SDR board. Readers who are interested in following along with the radio I/O models can find the files on the Analog Devices GitHub repository:
+The algorithm will be designed with the ultimate goal of deploying the solution
+onto a Zynq SoC platform, such as PicoZed SDR board. Readers who are interested
+in following along with the radio I/O models can find the files on the Analog
+Devices GitHub repository:
 
 .. admonition:: Download
    :class: download
@@ -181,7 +239,6 @@ The algorithm will be designed with the ultimate goal of deploying the solution 
    -  :git-MathWorks_tools:`Radio I/O in MATLAB <hil_models/legacy/ADSB_MATLAB>`
    -  :git-MathWorks_tools:`Radio I/O in Simulink <hil_models/legacy/ADSB_Simulink_libiio>`
    
-
 
 To better understand these models, an introduction to IIO System Object provided by ADI can be found :doc:`here </wiki-migration/resources/tools-software/linux-software/libiio/clients/fmcomms2_3_simulink>`.
 
@@ -197,7 +254,10 @@ To validate the MATLAB ADS-B decoding algorithm operation with real time data ac
 -  Detect and decode the ADS-B data
 -  Display the decoded ADS-B information
 
-After an IIO System object is constructed, it must be configured with the IP address of the SDR system, the target device name and input/output channels sizes and numbers. The following piece of code presents an example on how to create and configure the MATLAB IIO System object.
+After an IIO System object is constructed, it must be configured with the IP
+address of the SDR system, the target device name and input/output channels
+sizes and numbers. The following piece of code presents an example on how to
+create and configure the MATLAB IIO System object.
 
 .. code:: matlab
 
@@ -210,7 +270,8 @@ After an IIO System object is constructed, it must be configured with the IP add
    s.in_ch_size = n;
    s.out_ch_size = n;
 
-The IIO System object is then used to set the attributes of AD9361, and to receive the ADS-B signals.
+The IIO System object is then used to set the attributes of AD9361, and to
+receive the ADS-B signals.
 
 .. code:: matlab
 
@@ -234,11 +295,29 @@ The IIO System object is then used to set the attributes of AD9361, and to recei
 
 The attributes of AD9361 is set up based upon the following considerations:
 
-Sampling rate is quite straightforward with the AD9361 based platforms. Transmit date rate normally equals Rx date rate, and ultimately depends on the baseband algorithm. In this example, since the decoding algorithm is designed to work with the sampling rate of 2.5 MSPS, the date rate of AD9361 is set accordingly. By doing this, the received samples can be applied directly to the decoding algorithm, without any additional decimation or interpolation operations.
+Sampling rate is quite straightforward with the AD9361 based platforms. Transmit
+date rate normally equals Rx date rate, and ultimately depends on the baseband
+algorithm. In this example, since the decoding algorithm is designed to work
+with the sampling rate of 2.5 MSPS, the date rate of AD9361 is set accordingly.
+By doing this, the received samples can be applied directly to the decoding
+algorithm, without any additional decimation or interpolation operations.
 
-The RF bandwidth control sets the AD9361’s Rx analog baseband low pass filters’ bandwidth to provide anti-aliasing and out-of-band signal rejection. In order to correctly demodulate the received signals, the system must maximize signal-to-noise ratio (SNR). In order to do this, RF bandwidth needs to be set as narrow as possible while meeting flatness and out-of-band rejection specification to minimize in band noise and spurious signal levels. Therefore, setting the RF bandwidth at an optimal value is critical to receive desired in-band signals and reject out-of-band signals. By observing the spectrum of received signals, we find 10 MHz is a proper value for the RF bandwidth.
+The RF bandwidth control sets the AD9361’s Rx analog baseband low pass filters’
+bandwidth to provide anti-aliasing and out-of-band signal rejection. In order to
+correctly demodulate the received signals, the system must maximize
+signal-to-noise ratio (SNR). In order to do this, RF bandwidth needs to be set
+as narrow as possible while meeting flatness and out-of-band rejection
+specification to minimize in band noise and spurious signal levels. Therefore,
+setting the RF bandwidth at an optimal value is critical to receive desired
+in-band signals and reject out-of-band signals. By observing the spectrum of
+received signals, we find 10 MHz is a proper value for the RF bandwidth.
 
-Besides setting up the analog filters of AD9361 via RF bandwidth attribute, we can also improve the decoding performance by enabling the digital FIR filters on AD9361 via the IIO System object. According to the spectrum characteristics of the ADS-B signal, we design an FIR filter with data rate of 2.5 MSPS, pass band frequency of 3.25 MHz and stop band frequency of 4 MHz. In this way, we can further focus on the bandwidth of interest.
+Besides setting up the analog filters of AD9361 via RF bandwidth attribute, we
+can also improve the decoding performance by enabling the digital FIR filters on
+AD9361 via the IIO System object. According to the spectrum characteristics of
+the ADS-B signal, we design an FIR filter with data rate of 2.5 MSPS, pass band
+frequency of 3.25 MHz and stop band frequency of 4 MHz. In this way, we can
+further focus on the bandwidth of interest.
 
 .. code:: matlab
 
@@ -246,7 +325,13 @@ Besides setting up the analog filters of AD9361 via RF bandwidth attribute, we c
 
 *adsb.ftr* is a file containing the coefficients of an FIR filter designed using the :doc:`Analog Devices AD9361 Filter Design Wizard </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/filters>`. This tool provides not only a general purpose low pass filter designer, but also magnitude and phase equalization for other stages in the signal path.
 
-The versatile and highly configurable AD9361 transceiver has several gain control modes that enable its use in a variety of applications. The Gain Mode parameter of the IIO System object selects one of the available modes: manual, slow_attack, hybrid and fast_attack. In the case of ADS-B, the fast attack gain mode provides the best results due to the bursty nature of these signals. In addition, fast attack mode is required for this waveform since there is preamble, the AGC needs to react fast enough so that the first bit is captured.
+The versatile and highly configurable AD9361 transceiver has several gain
+control modes that enable its use in a variety of applications. The Gain Mode
+parameter of the IIO System object selects one of the available modes: manual,
+slow_attack, hybrid and fast_attack. In the case of ADS-B, the fast attack gain
+mode provides the best results due to the bursty nature of these signals. In
+addition, fast attack mode is required for this waveform since there is
+preamble, the AGC needs to react fast enough so that the first bit is captured.
 
 In the end, depending on how you set up the *TX_LO_FREQ* and *RX_LO_FREQ*, there are two ways of using this model: using pre-captured data (RF loopback) and using live data off the air.
 
@@ -267,16 +352,22 @@ The requirement for this case is to make *TX_LO_FREQ* = *RX_LO_FREQ*, and it can
 Live Data
 ^^^^^^^^^
 
-In this case, we are receiving the real-time ADS-B signals over the air, instead of the signals transmitted by PicoZed. According to ADS-B specification, it is transmitted at the center frequency of 1090 MHz, so the requirements for this case is:
+In this case, we are receiving the real-time ADS-B signals over the air, instead
+of the signals transmitted by PicoZed. According to ADS-B specification, it is
+transmitted at the center frequency of 1090 MHz, so the requirements for this
+case is:
 
 -  *RX_LO_FREQ*=1090 MHz,*TX_LO_FREQ* far away from 1090 MHz in order to avoid interference
--  Use a proper antenna on the Rx side, which is capable of covering the 1090 MHz band. Using a poorly tuned or poorly made antenna will result in a lack of range for your air radar.
+-  Use a proper antenna on the Rx side, which is capable of covering the 1090
+   MHz band. Using a poorly tuned or poorly made antenna will result in a lack
+   of range for your air radar.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/setup.jpg
    :alt: Block diagram
-   :width: 700px
+   :width: 700
 
-With everything set up properly, in order to run the MATLAB model, simply use the following command:
+With everything set up properly, in order to run the MATLAB model, simply use
+the following command:
 
 .. code:: matlab
 
@@ -290,32 +381,60 @@ For example, the following command receives the pre-captured data on Channel 2:
 
    [rssi1,rssi2]=ad9361_ModeS('192.168.10.2','pre-captured',2);
 
-At the end of the simulation, you will get the RSSI values on both channels in your command window, as well as the result tables shown below:
-
+At the end of the simulation, you will get the RSSI values on both channels in
+your command window, as well as the result tables shown below:
 
 |image1|
 
-This result table shows the information of aircrafts appearing during the simulation. With a proper antenna, this model is able to capture and decode the aircraft signals in an 80 miles range with PicoZed. Since there are two types of Mode S messages (56 usec or 112 usec), some messages contain more information than the other.
+This result table shows the information of aircrafts appearing during the
+simulation. With a proper antenna, this model is able to capture and decode the
+aircraft signals in an 80 miles range with PicoZed. Since there are two types of
+Mode S messages (56 usec or 112 usec), some messages contain more information
+than the other.
 
-When trying out this model with the real-world ADS-B signals, the signal strength is very important for successful decoding, so make sure to put the antenna in a good line of sight location with the aircraft. The received signal strength can be seen by looking at the RSSI values on both channels. For example, if receiving the signals on channel 2, the RSSI of channel 2 should be significantly higher than that of channel 1. You can tell whether there is any useful data by looking at the spectrum analyzer.
+When trying out this model with the real-world ADS-B signals, the signal
+strength is very important for successful decoding, so make sure to put the
+antenna in a good line of sight location with the aircraft. The received signal
+strength can be seen by looking at the RSSI values on both channels. For
+example, if receiving the signals on channel 2, the RSSI of channel 2 should be
+significantly higher than that of channel 1. You can tell whether there is any
+useful data by looking at the spectrum analyzer.
 
 Simulink
 ~~~~~~~~
 
-The Simulink model shown below is based upon the model introduced in the behavioral simulation section. The detector and decoding piece comes directly from that model, and we add the Simulink IIO System object to conduct the signal reception and radio I/O simulation.
+The Simulink model shown below is based upon the model introduced in the
+behavioral simulation section. The detector and decoding piece comes directly
+from that model, and we add the Simulink IIO System object to conduct the signal
+reception and radio I/O simulation.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/fig11.png
    :alt: Block diagram
-   :width: 700px
+   :width: 700
 
 The original model works with sample time = 1 and frame size = 1. However, the Simulink IIO System object works in a buffer mode - it accumulates a number of samples and then processes them. In order to make the original model works with the System object, we added two blocks between them: *unbuffer* to make frame size = 1 and *rate transition* to make sample time = 1. By doing this, we can keep the original model intact.
 
-The Simulink IIO System object is set up as below. Similar to the MATLAB one, it creates a System object, and then defines the IP address, device name, and input/output channels number and sizes related to this System object.
+The Simulink IIO System object is set up as below. Similar to the MATLAB one, it
+creates a System object, and then defines the IP address, device name, and
+input/output channels number and sizes related to this System object.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/fig12.png
    :alt: Block diagram
 
-The input and output ports of this Simulink block corresponding to an IIO System object are defined through the properties dialog of the object's block as well as through a configuration file that is specific to the targeted ADI SDR platform. The input and output ports are categorized as data and control ports. The data ports are used to receive/transmit buffers of continuous data from/to the target system in a frame based processing mode, while the control ports are used to configure and monitor different target system parameters. The number and size of the data ports are configured from the block's configuration dialog while the control ports are defined in the configuration file. The attributes of AD9361 is set up according to the same factors as introduced in MATLAB model. The only difference is the Tx/Rx sampling frequency. We use 12.5 MSPS in the Simulink model, instead of 2.5 MSPS used in the MATLAB model, since here, we do not up sample by 5 on the receiver side, as we did in the MATLAB example. All the other theories and methods employed in the MATLAB model can be applied here.
+The input and output ports of this Simulink block corresponding to an IIO System
+object are defined through the properties dialog of the object's block as well
+as through a configuration file that is specific to the targeted ADI SDR
+platform. The input and output ports are categorized as data and control ports.
+The data ports are used to receive/transmit buffers of continuous data from/to
+the target system in a frame based processing mode, while the control ports are
+used to configure and monitor different target system parameters. The number and
+size of the data ports are configured from the block's configuration dialog
+while the control ports are defined in the configuration file. The attributes of
+AD9361 is set up according to the same factors as introduced in MATLAB model.
+The only difference is the Tx/Rx sampling frequency. We use 12.5 MSPS in the
+Simulink model, instead of 2.5 MSPS used in the MATLAB model, since here, we do
+not up sample by 5 on the receiver side, as we did in the MATLAB example. All
+the other theories and methods employed in the MATLAB model can be applied here.
 
 Depending on how you set up the *TX_LO_FREQ* and *RX_LO_FREQ*, this Simulink model can be run in two modes: using pre-captured data and using live data.
 
@@ -324,23 +443,29 @@ In order to verify this model works properly, we run it in pre-captured mode, an
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/simulinklibiio.png
    :alt: Block diagram
 
-In the command window, we get the same decoded message as the one we transmit, which means the Simulink model using libiio also works properly.
+In the command window, we get the same decoded message as the one we transmit,
+which means the Simulink model using libiio also works properly.
 
 Prototype and Production
 ------------------------
 
-In this section, we will show how to take the algorithm developed in behavioral simulation, verified in pure simulation and radio I/O, and use HDL Coder and Embedded Coder from MathWorks to generate code and deploy it in the production hardware. It enables rapid design iteration cycles and helps to detect and correct design and specification errors early.
+In this section, we will show how to take the algorithm developed in behavioral
+simulation, verified in pure simulation and radio I/O, and use HDL Coder and
+Embedded Coder from MathWorks to generate code and deploy it in the production
+hardware. It enables rapid design iteration cycles and helps to detect and
+correct design and specification errors early.
 
 Intermediate Model
 ~~~~~~~~~~~~~~~~~~
 
-The following guide outlines recommended practices for creating a design that can be implemented in hardware efficiently, and for optimizing the generated HDL for your targeted device.
+The following guide outlines recommended practices for creating a design that
+can be implemented in hardware efficiently, and for optimizing the generated HDL
+for your targeted device.
 
 .. admonition:: Download
    :class: download
 
    `HDL Coder Evaluation Reference Guide <https://www.mathworks.com/matlabcentral/fileexchange/58941-hdl-coder-evaluation-reference-guide>`_
-
 
 According to the guidelines presented in the reference guide, the intermediate model **ModeS_FixPt_Pipelined_ADI.slx** and its associated files can be found on the Analog Devices GitHub repository:
 
@@ -349,8 +474,10 @@ According to the guidelines presented in the reference guide, the intermediate m
 
    :git-MathWorks_tools:`Intermediate Model <hil_models/legacy/ADSB_Simulink>`
 
-
-In this model, we converted the data type from floating point to fixed point, and we added some pipeline registers as the first step for setting this model up for HDL code generation. It uses the same data set as the behavioral model, so you will get the same decoded messages.
+In this model, we converted the data type from floating point to fixed point,
+and we added some pipeline registers as the first step for setting this model up
+for HDL code generation. It uses the same data set as the behavioral model, so
+you will get the same decoded messages.
 
 Following this, there are two workflows to follow, one is **HW/SW Co-Design** provided by MathWorks, and the other is the MathWorks **HDL Workflow Advisor** flow using the **HDL Workflow Advisor Board Support Package** provided by ADI. It is recommended to use the HW/SW Co-Design whenever the hardware platform of interest is supported by this workflow.
 
@@ -361,25 +488,35 @@ Hardware-Software Co-Design is a standard workflow provided by `MathWorks Commun
 
 The `HW/SW Co-Design Implementation of ADS-B Transmitter/Receiver Using Analog Devices AD9361/AD9364 <https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/examples/hw-sw-co-design-implementation-of-ads-b-transmitter-receiver-using-analog-devices-ad9361-ad9364.html>`_ is a shipped example in MATLAB from **R2016b**. In this example, the stateflow block is removed and replaced with a MATLAB state machine, which means users without a stateflow license can use the model.
 
-Since MathWorks example comes with detailed documentation, we are not going to elaborate here. However, just a reminder - do not forget to set up SDK tools:
+Since MathWorks example comes with detailed documentation, we are not going to
+elaborate here. However, just a reminder - do not forget to set up SDK tools:
 
 .. tip::
 
    \ SDK Tools Set Up
 
    
-   1. Within MATLAB®, use Add-Ons > Get Hardware Support Packages to download Embedded Coder Support Package for Xilinx Zynq-7000 Platform.
+   1. Within MATLAB®, use Add-Ons > Get Hardware Support Packages to download
+      Embedded Coder Support Package for Xilinx Zynq-7000 Platform.
    
-   2. Follow the installer instructions for installing the support package software.
+   2. Follow the installer instructions for installing the support package
+      software.
    
-   3. You must then setup the SDK tools using the setup wizard. This will run automatically following installation. On the first pane, select Configure the Xilinx Design Tools. Click Next.
+   3. You must then setup the SDK tools using the setup wizard. This will run
+      automatically following installation. On the first pane, select Configure
+      the Xilinx Design Tools. Click Next.
    
-   4. On the next pane, provide a valid path to the Xilinx SDK development tools. The default install path fills in automatically. Update the path if you installed the SDK in a nondefault location.
+   4. On the next pane, provide a valid path to the Xilinx SDK development
+      tools. The default install path fills in automatically. Update the path if
+      you installed the SDK in a nondefault location.
    
    5. To complete the configuration, click Next.
    
-   If you already have the Embedded Coder Support Package for Xilinx Zynq-7000 Platform installed, you can start the setup wizard manually. On the MATLAB Home tab, in the Environment section of the Toolstrip, click Add-Ons > Manage Add-Ons. Locate Embedded Coder Support Package for Xilinx Zynq-7000 Platform and click Setup. Then follow the steps above.
-
+   If you already have the Embedded Coder Support Package for Xilinx Zynq-7000
+   Platform installed, you can start the setup wizard manually. On the MATLAB
+   Home tab, in the Environment section of the Toolstrip, click Add-Ons > Manage
+   Add-Ons. Locate Embedded Coder Support Package for Xilinx Zynq-7000 Platform
+   and click Setup. Then follow the steps above.
 
 Steps to Follow
 ^^^^^^^^^^^^^^^
@@ -395,13 +532,17 @@ Steps to Follow
 
 3. Right click *HDL_ADSB* subsystem and launch HDL workflow advisor from there. Please note if you install both MathWorks HW/SW Co-Design and ADI Board Support Package, there might be some issues in Step 4.2 of HDL Workflow Advisor when using the HW/SW Co-Design flow. The solution is to uninstall the ADI Board Support Package.
 
-4. Go through all the steps in HDL workflow advisor. In the end, program the Zynq hardware.
+4. Go through all the steps in HDL workflow advisor. In the end, program the
+   Zynq hardware.
 
-5. Open the software interface model, run simulation in external mode and deploy to hardware.
+5. Open the software interface model, run simulation in external mode and deploy
+   to hardware.
 
 .. tip::
 
-   In HDL workflow advisor Step 4.4, you can download the completed bitstream to the target and restart the board. You can also download the bitstream at the command line:
+   In HDL workflow advisor Step 4.4, you can download the completed bitstream to
+   the target and restart the board. You can also download the bitstream at the
+   command line:
 
    
    .. code:: matlab
@@ -424,18 +565,17 @@ Steps to Follow
    This call renames the generated *system_wrapper.bit* file to *system.bin* and downloads the file over an Ethernet connection to the radio hardware.
    
 
-
 .. tip::
 
    
    -  This example also works for receiving signals off the air, just comment out the transmitter block and adjust the receiver centre frequency.
-   -  For accurate position calculations, you will need to edit lines 8 and 9 of the position calculation script to give your current location.
+   -  For accurate position calculations, you will need to edit lines 8 and 9 of
+      the position calculation script to give your current location.
    
    .. code:: matlab
    
       >> edit zynqRadioHWSWADSBPositionCalcSingle
    
-
 
 `Target an ADS-B Airplane Tracker Using HW/SW Co-Design Workflow <https://www.mathworks.com/help/supportpkg/usrpembeddedseriesradio/examples/target-an-ads-b-airplane-tracker-using-usrp-r-e310-and-hw-sw-co-design-workflow.html>`_ is also available on the Ettus E310 SDR platform.
 
@@ -445,7 +585,8 @@ ADI Board Support Package for the HDL Workflow Advisor
 The ADI Board Support Package (BSP) for the HDL Workflow Advisor, based upon the `MathWorks Board and Reference Design Registration System <https://www.mathworks.com/help/hdlcoder/ug/board-and-reference-design-system.html>`_, is a collection of board definitions and reference designs that provide to the MathWorks HDL Workflow Advisor, which is capable of:
 
 -  Generate IP blocks compatible with Analog Devices HDL reference designs for various Analog Devices platforms,
--  Automatically insert the generated IPs into the Analog Devices Vivado HDL reference designs.
+-  Automatically insert the generated IPs into the Analog Devices Vivado HDL
+   reference designs.
 
 A general introduction to the ADI Board Support Package can be found :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/matlab_bsp>`. In this section, we will go through the steps to apply board support package towards ADS-B model.
 
@@ -460,15 +601,15 @@ The board support package can be found at Analog Devices GitHub:
    -  :git-MathWorks_tools:`Analog Devices Board Support Package <hdl_wa_bsp>`
    
 
-
-To install the Analog Devices BSP, set the MATLAB current folder to the */vendor/AnalogDevices* folder found in the location where the BSP was downloaded and run
+To install the Analog Devices BSP, set the MATLAB current folder to the
+*/vendor/AnalogDevices* folder found in the location where the BSP was
+downloaded and run
 
 .. code:: matlab
 
    >> AnalogDevices.install
 
 in the MATLAB command window. After the installation process is complete, run *ver* in the MATLAB command window to list all the installed packages. If the installation was successful, the *HDL Coder BSP Tools* and *HDL Coder BSP: Analog Devices Inc* should appear in the list, as shown below:
-
 
 |image2|
 
@@ -481,7 +622,6 @@ in the MATLAB command window. After the installation process is complete, run *v
    
       >> AnalogDevices.uninstall
    
-
 
 **Step 2: Setup Xilinx tools**
 
@@ -504,7 +644,6 @@ The ADS-B hardware targeting model can be found at Analog Devices GitHub:
    -  :git-MathWorks_tools:`ADS-B Hardware Targeting Model <targeting_models/ADSB>`
    
 
-
 Open model *ModeS_ADI_Codegen.slx* in MATLAB.
 
 **Step 4: Go through HDL Workflow Advisor**
@@ -519,7 +658,8 @@ In step 1.1, select *IP Core Generation* for Target Workflow:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/step1.1.png
    :alt: Block diagram
 
-In step 1.2, set target interface as below, where all the signals we want to observe are set as AXI4-Lite:
+In step 1.2, set target interface as below, where all the signals we want to
+observe are set as AXI4-Lite:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/external.png
    :alt: Block diagram
@@ -529,13 +669,14 @@ In step 3.1.2, set reset asserted level to *Active-high*:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/step3.1.png
    :alt: Block diagram
 
-Then, run each task including Step 4.2. In the end of Step 4.2, you will see a software interface model generated. The external mode runs in this model, which will be introduced later.
+Then, run each task including Step 4.2. In the end of Step 4.2, you will see a
+software interface model generated. The external mode runs in this model, which
+will be introduced later.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/step4.2gm.png
    :alt: Block diagram
 
 In Step 4.3, select **Custom** for Tcl file for synthesis build, and use *adi_build.tcl* from *\\ADSB\\hdl_prj\\vivado_ip_prj\\projects\\scripts\\* folder:
-
 
 |image3|
 
@@ -543,8 +684,8 @@ In Step 4.3, select **Custom** for Tcl file for synthesis build, and use *adi_bu
 
    *adi_build.tcl* is a generic file used to automate the build process for BOOT.BIN. You can use it in other ADI BSP projects.
 
-
-For the other steps not mentioned above, use default settings from HDL Workflow Advisor.
+For the other steps not mentioned above, use default settings from HDL Workflow
+Advisor.
 
 After Step 4.3 finishes running, you will find the newly generated *BOOT.BIN* inside *\\ADSB\\hdl_prj\\vivado_ip_prj\\boot\\* folder:
 
@@ -573,7 +714,6 @@ The generated C code contains the implementation of the ADS-B data decoding algo
 
 To transfer the files to your Linux system. You can use tools such as `WinSCP <https://winscp.net/eng/docs/guide_install>`_:
 
-
 |image4|
 
 .. tip::
@@ -586,7 +726,6 @@ To transfer the files to your Linux system. You can use tools such as `WinSCP <h
       chmod +x adsb_decode
    
 
-
 **Step 8: Observe the results**
 
 Use pre-captured data to verify
@@ -598,7 +737,7 @@ In IIO scope, set the Receive Chain and Transmit Chain according to the specific
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/oscverify.png
    :alt: Block diagram
-   :width: 700px
+   :width: 700
 
 On Linux side, open a terminal and run the following command:
 
@@ -606,8 +745,8 @@ On Linux side, open a terminal and run the following command:
 
    sudo ./adsb_decode 42.36 -71.06
 
-You will see the following results almost immediately after you execute the command:
-
+You will see the following results almost immediately after you execute the
+command:
 
 |image5|
 
@@ -615,11 +754,12 @@ You will see the following results almost immediately after you execute the comm
 
    Use *Ctrl + c* to end the program.
 
-
 Observe live data
 ^^^^^^^^^^^^^^^^^
 
-As soon as everything is verified by pre-captured data, we can move on to the live data. Connect the antenna to RX1A of the PicoZed. On Linux side, open a terminal and run the following command:
+As soon as everything is verified by pre-captured data, we can move on to the
+live data. Connect the antenna to RX1A of the PicoZed. On Linux side, open a
+terminal and run the following command:
 
 .. code:: matlab
 
@@ -627,30 +767,38 @@ As soon as everything is verified by pre-captured data, we can move on to the li
 
 Note: lat and lon are latitude and longitude of your current location.
 
-Wait a few seconds to a few minutes, depending on your local air traffic, and you will observe the decoded ADSB messages in the terminal, such as following:
-
+Wait a few seconds to a few minutes, depending on your local air traffic, and
+you will observe the decoded ADSB messages in the terminal, such as following:
 
 |image6|
 
 .. tip::
 
-   For the actual field test, compare the ADS-B information decoded by the system with the data provided by airplane live tracking websites (such as flightradar24.com), and see whether the decoding algorithm displays the correct aircraft ID, altitude, speed, and latitude/longitude coordinates.
-
+   For the actual field test, compare the ADS-B information decoded by the
+   system with the data provided by airplane live tracking websites (such as
+   flightradar24.com), and see whether the decoding algorithm displays the
+   correct aircraft ID, altitude, speed, and latitude/longitude coordinates.
 
 Use External Mode
 ^^^^^^^^^^^^^^^^^
 
 With `external mode <https://www.mathworks.com/help/supportpkg/xilinxzynq7000ec/ug/parameter-tuning-with-external-mode-simulation.html>`_, you can log signals and tune parameters while the model is running on the target hardware in real-time. When you change parameter values from within Simulink, the modified parameter values are communicated to the target hardware immediately.
 
-The Analog Devices BSP also allows external mode for the supported Analog Devices boards. This enables the Simulink models used for IP core generation to be run in external mode and talk to the target hardware running the Analog Devices Linux distribution.
+The Analog Devices BSP also allows external mode for the supported Analog
+Devices boards. This enables the Simulink models used for IP core generation to
+be run in external mode and talk to the target hardware running the Analog
+Devices Linux distribution.
 
-Before you run external mode, first set up the environment variable *'ADI_ZYNQ_SDR_IPADDRESS'* to the IP address of your board. For example, run the following line in the MATLAB command window:
+Before you run external mode, first set up the environment variable
+*'ADI_ZYNQ_SDR_IPADDRESS'* to the IP address of your board. For example, run the
+following line in the MATLAB command window:
 
 .. code:: matlab
 
    >> setenv('ADI_ZYNQ_SDR_IPADDRESS', '192.168.3.2');
 
-Open the software interface model generated in Step 4.2 of the HDL Workflow Advisor, as shown below:
+Open the software interface model generated in Step 4.2 of the HDL Workflow
+Advisor, as shown below:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/softwareinterfacemdl.png
    :alt: Block diagram
@@ -675,7 +823,8 @@ You will see a new terminal open up and show the results on hardware:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/externalresult.png
    :alt: Block diagram
 
-Besides, you can open each scope in the interface model and see how the signals behave on hardware. The following is a capture of the Correlators scope:
+Besides, you can open each scope in the interface model and see how the signals
+behave on hardware. The following is a capture of the Correlators scope:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/extresult.png
    :alt: Block diagram
@@ -698,9 +847,9 @@ If you have any questions about PicoZed / AD9361 or ADI BSP workflow, please ask
 If you have any questions about ADS-B receiver algorithm or HW/SW Co-Design workflow, please contact MathWorks. `MathWorks Support <https://www.mathworks.com/support/>`_
 
 .. |Block diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/fig8.png
-   :width: 700px
+   :width: 700
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/table.png
-   :width: 700px
+   :width: 700
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/install.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/step4.3.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/winscp.png

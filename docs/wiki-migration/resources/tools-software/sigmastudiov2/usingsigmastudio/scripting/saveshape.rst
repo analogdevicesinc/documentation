@@ -3,7 +3,9 @@
 Save Shape
 ==========
 
-This action allows the user to save a shape as a .Shape file into their desired path. The function call takes in 2 arguments. This API returns the SSPResult type.
+This action allows the user to save a shape as a .Shape file into their desired
+path. The function call takes in 2 arguments. This API returns the SSPResult
+type.
 
 API
 ---
@@ -21,7 +23,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information for the SaveShape action.
+SSPResult contains 'IsSuccess' flag and 'Message' information for the SaveShape
+action.
 
 ::
 

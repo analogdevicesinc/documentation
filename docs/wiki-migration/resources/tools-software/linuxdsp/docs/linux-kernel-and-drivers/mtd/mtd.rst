@@ -4,7 +4,9 @@ Linux MTD Driver
 Introduction
 ------------
 
-This section describes the steps required to build and use MTD(Memory Technology Device) subsystem on Linux using an ADSP-SC5xx board. The MTD software stack looks like below:
+This section describes the steps required to build and use MTD(Memory Technology
+Device) subsystem on Linux using an ADSP-SC5xx board. The MTD software stack
+looks like below:
 
 ::
 
@@ -32,7 +34,10 @@ Software Configuration
 Configure Linux Kernel
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The following configuration should be done on top of the SC589-ezkit/SC584-ezkit/SC573-ezkit/SC589-mini default configuration. Run bitbake linux-adi -c menuconfig and configure the kernel as follows: Enable MTD and SPI NOR flash w25x driver.
+The following configuration should be done on top of the
+SC589-ezkit/SC584-ezkit/SC573-ezkit/SC589-mini default configuration. Run
+bitbake linux-adi -c menuconfig and configure the kernel as follows: Enable MTD
+and SPI NOR flash w25x driver.
 
 ::
 
@@ -56,7 +61,8 @@ Enable JFFS2 filesystem support.
 Enable Packages
 ~~~~~~~~~~~~~~~
 
-Enable the mtd-utils and mtd-utils-ubifs support, it's enabled in adsp-sc5xx-full image by default.
+Enable the mtd-utils and mtd-utils-ubifs support, it's enabled in
+adsp-sc5xx-full image by default.
 
 ::
 

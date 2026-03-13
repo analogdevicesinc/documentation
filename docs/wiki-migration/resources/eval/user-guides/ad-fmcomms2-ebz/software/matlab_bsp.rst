@@ -5,11 +5,13 @@ Analog Devices BSP for MathWorks HDL Workflow Advisor
 
    MATLAB and Simulink support have been migrated to the new ADI Toolboxes. This page is kept for legacy reasons. Please migrate to the new :doc:`Transceiver Toolbox </wiki-migration/resources/tools-software/transceiver-toolbox>`\
 
-
-The Analog Devices BSP for MathWorks HDL Workflow Advisor is a collection of board definitions and reference designs that provide to the MathWorks HDL Workflow Advisor support to:
+The Analog Devices BSP for MathWorks HDL Workflow Advisor is a collection of
+board definitions and reference designs that provide to the MathWorks HDL
+Workflow Advisor support to:
 
 -  Generate IP blocks compatible with Analog Devices HDL reference designs for various Analog Devices platforms
--  Automatically insert the generated IPs into the Analog Devices Vivado HDL reference designs
+-  Automatically insert the generated IPs into the Analog Devices Vivado HDL
+   reference designs
 
 The Analog Devices BSP is based on the `MathWorks Board and Reference Design Registration System <https://www.mathworks.com/help/hdlcoder/ug/board-and-reference-design-system.html>`_.
 
@@ -28,19 +30,21 @@ The `MathWorks HDL Workflow Advisor <https://www.mathworks.com/help/hdlcoder/exa
 
 The Analog Devices BSP for HDL Workflow Advisor extends the set of Target Workflows for IP Core Generation with the Analog Devices boards listed in the *Supported Platforms* section. The BSP consists of a set of board definitions that specify all the characteristics needed by the HDL Workflow Advisor to be able to incorporate a board in the code generation flow, as well as a set of Xilinx Vivado reference designs that are used by the Workflow Advisor to automatically insert the generated IPs into the Vivado designs. All the Analog Devices Vivado HDL reference designs have inside a ‘donut hole’ to accommodate custom IPs. Each design exposes a set of interface signals to which the IP can connect to. All these signals are specified in the board definition and are available in the Workflow Advisor GUI to connect to the generated IP’s ports.
 
-When running the Workflow Advisor the first step if to select the Target Platform. The figure below shows some of the available Analog Devices target platforms.
+When running the Workflow Advisor the first step if to select the Target
+Platform. The figure below shows some of the available Analog Devices target
+platforms.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/adi_bsps.png
    :alt: Analog Devices Target Platforms
    :align: center
-   :width: 600px
+   :width: 600
 
 The next step is to configure the interfaces between the IP and the reference design. Each target platform has a set of interface signals that are accessible in the *Target Platform Interfaces* drop down boxes form step 1.2 (Set Target Interface) of the HDL Workflow Advisor. The figure below shows an example of how to configure the target interface for a specific model.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/board_interface.png
    :alt: Target Interface Signals
    :align: center
-   :width: 600px
+   :width: 600
 
 All the Analog Devices AD9361 based SDR platforms have the same interface signals and they are dependent on the type of flow that is selected – receive (Rx) or transmit (Tx). The table below describes the interface signals for the AD9361 based SDR platforms.
 
@@ -94,23 +98,28 @@ Transmit flow (Tx)
 | AD9361 DAC Data Q1    | 16    | AD9361 DAC I0 channel data. To be used as input into the custom IP.                                                                   |
 +-----------------------+-------+---------------------------------------------------------------------------------------------------------------------------------------+
 
-The custom IP always runs at the sample clock and must be able to process / generate a sample every clock cycle.
+The custom IP always runs at the sample clock and must be able to process /
+generate a sample every clock cycle.
 
 Once the target interface has been defined, make sure to select the "Target Language" as Verilog (defaults to VHDL) in Step 3.1.1 of the HDL Workflow Advisor. All the other settings of steps 2 and 3 of the HDL Workflow Advisor can be left in their default state and the project generation process can be started by running step 4.1 (Create Project). The result of this step is a Vivado project which has the custom IP core integrated into the Analog Devices HDL reference design. The bistream for the design can be generated either by running step 4.4 (Create bistream) or by compiling the generated Vivado Project directly in Vivado. The project can be found in the *hdl_prj/vivado_ip_project* folder.
 
 MATLAB External mode support
 ----------------------------
 
-The BSP also enables external mode support for the supported Analog Devices boards. This enables the Simulink models used for IP core generation to be ran in External mode and talk to the target hardware running the Analog Devices Linux distribution.
+The BSP also enables external mode support for the supported Analog Devices
+boards. This enables the Simulink models used for IP core generation to be ran
+in External mode and talk to the target hardware running the Analog Devices
+Linux distribution.
 
-These are the steps to configure external mode support for Analog Devices platforms:
+These are the steps to configure external mode support for Analog Devices
+platforms:
 
 -  Use the **AnalogDevices.util.SDUpdater** tool to write to an SD card containing the latest ADI Linux image the device tree and uImage files for external mode support. To write the new files select the drive which corresponds to the SD card, select the appropriate board and just click on the *Write SD* button.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/sdupdater.png
    :alt: SD Updater
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Open the model's **Configuration Parameters** window by pressing *CTRL-E* in the external mode model window.
 -  In the **Hardware implementation** settings set the *Hardware Board* to *ZYNQ SDR* and the *IP address* to the IP address of the target hardware. The Analog Devices platforms are configured by default to get dynamic IP addresses. To find the address of your board just type *ifconfig* in a Linux terminal on your board.
@@ -118,26 +127,27 @@ These are the steps to configure external mode support for Analog Devices platfo
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/zynq_sdr_option.png
    :alt: Hardware implementation
    :align: center
-   :width: 600px
+   :width: 600
 
 -  In the **Code Generation** settings set the toolchain to *Linaro Toolchain 4.8*.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/code_generation.png
    :alt: Code generation
    :align: center
-   :width: 600px
+   :width: 600
 
 Once all these steps are done the model can be ran in external mode by selecting the ‘External’ option in the model’s toolbar menu and pressing the **Play** button.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/external_mode.png
    :alt: External mode
    :align: center
-   :width: 600px
+   :width: 600
 
 Download & Installation
 -----------------------
 
-The Analog Devices BSP requires the following dependencies that must be installed beforehand.
+The Analog Devices BSP requires the following dependencies that must be
+installed beforehand.
 
 .. admonition:: Download
    :class: download
@@ -147,19 +157,18 @@ The Analog Devices BSP requires the following dependencies that must be installe
    
    `Embedded Coder Support Package for Xilinx Zynq-7000 Platform <https://www.mathworks.com/matlabcentral/fileexchange/40448-embedded-coder-support-package-for-xilinx-zynq-7000-platform>`_
 
-
-The Analog Devices BSP can be downloaded from the Analog Devices github using the link below.
+The Analog Devices BSP can be downloaded from the Analog Devices github using
+the link below.
 
 .. admonition:: Download
    :class: download
 
    `Analog Devices BSP for MathWorks HDL Workflow Advisor <https://github.com/analogdevicesinc/MathWorks_tools/tree/2017b/hdl_wa_bsp>`_
 
-
 .. important::
 
-   Be sure to use the 2017b branch. ADI is moving towards a new installation standard which is used by the master branch.
-
+   Be sure to use the 2017b branch. ADI is moving towards a new installation
+   standard which is used by the master branch.
 
 To install the Analog Devices BSP set the Matlab current folder to the */vendor/AnalogDevices* folder found in the location where the BSP was downloaded and run **AnalogDevices.install** in the MATLAB command window. After the installation process is complete run **ver** in the MATLAB command window to list all the installed packages. If the installation was succesfull the *HDL Coder BSP: Analog Devices Inc, Version 1.01, (R2015b)* should appear in the packages list.
 
@@ -178,4 +187,3 @@ Help & Support
    
    -  Questions? :doc:`Ask Help & Support </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`.
    
-

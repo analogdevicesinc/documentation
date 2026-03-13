@@ -25,7 +25,11 @@ Supported Carriers
 Quick Start Guide
 -----------------
 
-The reference design zip file contains a bit file and a SDK elf file for a quick demonstration of the programming and data capture. The reference design has been tested with KC705, VC707 and ZC706. The notes below refer to KC705, the procedure is same for the other boards. Please make sure you are using the correct reference design for the board(s) that you have.
+The reference design zip file contains a bit file and a SDK elf file for a quick
+demonstration of the programming and data capture. The reference design has been
+tested with KC705, VC707 and ZC706. The notes below refer to KC705, the
+procedure is same for the other boards. Please make sure you are using the
+correct reference design for the board(s) that you have.
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -45,7 +49,8 @@ Required Software
 Board Modifications
 ~~~~~~~~~~~~~~~~~~~
 
-The reference design contains UCF files for the Rev. B board, CVT-ADC-FMC-INTPZB.
+The reference design contains UCF files for the Rev. B board,
+CVT-ADC-FMC-INTPZB.
 
 -  NET rxdata_p[1] LOC = "B6";
 -  NET rxdata_n[1] LOC = "B5";
@@ -74,7 +79,8 @@ Please do the following modifications on the AD6673 evaluation board.
 -  **Populate R549**\ \*
 -  **Populate R550**\ \*
 
-- The reference design uses REFCLK2 as the reference clock source. If the board defaults to REFCLK1, follow these instructions to switch to REFCLK2.
+- The reference design uses REFCLK2 as the reference clock source. If the board
+  defaults to REFCLK1, follow these instructions to switch to REFCLK2.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,8 +90,8 @@ To begin make the following connections (see image below):
 .. tip::
 
    
-   For proper operation, it is important that the steps must be done in this exact order
-
+   For proper operation, it is important that the steps must be done in this
+   exact order
 
 -  Connect the AD6673-EBZ board to the FMC Interposer board.
 -  Connect the interposer board to the **FMC-HPC** connector of KC705/(**FMC1-HPC** if VC707)/ZC706 board.
@@ -95,21 +101,25 @@ To begin make the following connections (see image below):
 -  Connect signal generators to the AIN-A and/or AIN-B, J301/J303 SMA connectors.
 -  Load the FPGA image/SDK with your favorite Xilinx Tool.
 
-The quick start bit file configures the AD6673 for all test modes and verifies the captured data accordingly. After the hardware setup, turn the power on to the KC705/VC707/ZC706 and the AD6673-EBZ boards.
+The quick start bit file configures the AD6673 for all test modes and verifies
+the captured data accordingly. After the hardware setup, turn the power on to
+the KC705/VC707/ZC706 and the AD6673-EBZ boards.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_setup.jpg
    :alt: Hardware setup
-   :width: 200px
+   :width: 200
 
 Run the **download.bat** script located in the "*SDK/SDK_Workspace/bin*" folder provided within the HDL Reference Design. This script uses XMD to program the FPGA with the HDL Reference Design and download the Software Reference Design into the DDR.
 
 **Note:** The *download.bat* script assumes that the *Xilinx ISE Design Suite 14.4* is installed at this path: *C:/Xilinx/14.4*. If the installation path on your computer is different please modify the script accordingly.
 
-If programming was successful, you should be seeing messages appear on the terminal as shown in figure below. After programming the AD6673, the program checks data capture on various test modes.
+If programming was successful, you should be seeing messages appear on the
+terminal as shown in figure below. After programming the AD6673, the program
+checks data capture on various test modes.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/ad6673_test.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
 After the ADC test patterns are verified, if no errors are present, the reference design continuously reads data from the ADC. The ADC data can be viewed using the Chipscope project located in the "*Chipscope*" folder provided in the HDL Reference Design. These are the steps than need to be followed to view the ADC data in Chipscope:
 
@@ -121,7 +131,7 @@ This is how the output of the ADC looks like.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_chipscope.jpg
    :alt: Chipscope Busplot
-   :width: 200px
+   :width: 200
 
 Using the HDL reference design
 ------------------------------
@@ -129,17 +139,24 @@ Using the HDL reference design
 Functional description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design is built on a microblaze based system parameterized for linux. A functional block diagram of the design is given below.
+The reference design is built on a microblaze based system parameterized for
+linux. A functional block diagram of the design is given below.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_bd.jpg
    :alt: block diagram
-   :width: 500px
+   :width: 500
 
-The reference design consists of two pcores. The JESD204B core consists of the GTX units and the Xilinx JESD204B IP core. The AD6673 core consists of three functional modules, the ADC interface, a PN9/PN23 monitor and a DMA interface.
+The reference design consists of two pcores. The JESD204B core consists of the
+GTX units and the Xilinx JESD204B IP core. The AD6673 core consists of three
+functional modules, the ADC interface, a PN9/PN23 monitor and a DMA interface.
 
-The ADC interface captures and buffers data from the JESD204B core. The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software.
+The ADC interface captures and buffers data from the JESD204B core. The DMA
+interface then transfers the samples to the external DDR-DRAM. The capture is
+initiated by the software. The status of capture (overflow, over the range) are
+reported back to the software.
 
-The JESD204B core and AD6673 core has an AXI lite interface that allows control and monitoring of the capture process.
+The JESD204B core and AD6673 core has an AXI lite interface that allows control
+and monitoring of the capture process.
 
 Registers
 ~~~~~~~~~
@@ -149,7 +166,8 @@ Please refer to the **regmap.txt** file in the pcores directory.
 Good To Know
 ~~~~~~~~~~~~
 
-The PN9/PN23 sequences are not compatible with O.150. Please use the equations given in the reference design.
+The PN9/PN23 sequences are not compatible with O.150. Please use the equations
+given in the reference design.
 
 Using the Software Reference Design
 -----------------------------------
@@ -166,7 +184,8 @@ The software project contains 2 components: the AD6673-EBZ reference design file
 AD6673 Software Driver
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Below is presented a short description of all the functions provided in the driver.
+Below is presented a short description of all the functions provided in the
+driver.
 
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function                                                                                      | Description                                                                                                                                                                                                                                                                                                             |
@@ -240,49 +259,52 @@ The **HDL Reference Design** for each supported Xilinx FPGA board contains a fol
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/src_files.png
    :alt: no-OS driver Source Files
-   :width: 200px
+   :width: 200
 
 -  Open the Xilinx SDK. When the SDK starts it asks you to provide a folder where to store the workspace. Any folder can be provided.
 -  In the SDK select the **File->Import** menu option to import the software projects into the workspace.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/file_import.png
    :alt: Import Projects
-   :width: 200px
+   :width: 200
 
 -  In the *Import* window select the **General->Existing Projects into Workspace** option.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/existing_project_import.png
    :alt: Existing Projects Import
-   :width: 200px
+   :width: 200
 
 -  In the *Import Projects* window select the **SDK_Workspace** folder as root directory. After the root directory is chosen the projects that reside in that directory will appear in the *Projects* list. Press *Finish* to finalize the import process.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/projects_import.png
    :alt: Projects Import
-   :width: 200px
+   :width: 200
 
 -  The *Project Explorer* window now shows the projects that exist in the workspace and the files for each project. The SDK should automatically build the projects and the *Console* window will display the result of the build. If the build is not done automatically select the **Project->Build Automatically** menu option.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/project_explorer.png
    :alt: Project Explorer
-   :width: 200px
+   :width: 200
 
--  At this point the software project setup is complete, the FPGA can be programmed and the software can be downloaded into the system.
+-  At this point the software project setup is complete, the FPGA can be
+   programmed and the software can be downloaded into the system.
 
 The example code is located in the ”\ *main.c*\ ” file and the implementations of the test routines can be found in the "*cf_ad6673.c*" file.
 
 Downloads
 ---------
 
-The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices github.
+The HDL Reference Designs and the no-OS Software can be downloaded from the
+Analog Devices github.
 
 .. important::
 
    Only Xilinx coregen xco files are provided with the HDL Reference Design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
 
    
-   The software project contains 2 components: the AD6673-EBZ reference design files and the AD6673 driver. All the components have to be downloaded from the links below.
-
+   The software project contains 2 components: the AD6673-EBZ reference design
+   files and the AD6673 driver. All the components have to be downloaded from
+   the links below.
 
 **HDL Reference Designs:**
 
@@ -295,7 +317,6 @@ The HDL Reference Designs and the no-OS Software can be downloaded from the Anal
    -  **ZC706 HDL Reference Design:** `cf_ad6673_ebz_zc706_edk_14_4_2013_02_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_zc706_edk_14_4_2013_02_04.tar.gz>`_
    
 
-
 **no-OS Software:**
 
 .. admonition:: Download
@@ -305,7 +326,6 @@ The HDL Reference Designs and the no-OS Software can be downloaded from the Anal
    -  **AD6673 Driver:** :git-no-OS:`drivers/adc/ad6673`
    -  **AD6673-EBZ Reference Design:** :git-no-OS:`AD6673-EBZ`
    
-
 
 **Board Files:**
 
@@ -317,13 +337,11 @@ The HDL Reference Designs and the no-OS Software can be downloaded from the Anal
    -  `AD6673-250EBZ Gerber/Layout Fabrication Files <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/ad6673_gerber_20_012008b.zip>`_
    
 
-
 .. hint::
 
    
    -  Questions? :ez:`Ask Help & Support <fpga>`.
    
-
 
 Reference Design Contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -375,4 +393,3 @@ More information
    -  `VITA's FMC info <http://www.vita.com/fmc>`_
    -  :ez:`Ask questions about the FPGA reference design <community/fpga>`
    
-

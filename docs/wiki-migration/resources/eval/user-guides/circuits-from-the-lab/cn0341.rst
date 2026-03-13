@@ -3,20 +3,26 @@ CN0341 -- Magneto Resistive Linear Position Measurement User Guide (DEPRECATED)
 
 .. important::
 
-   This reference design has been RETIRED or DEPRECATED, which means it is no longer supported nor being sold by Analog Devices. This page is here for historical/reference purposes only.
+   This reference design has been RETIRED or DEPRECATED, which means it is no
+   longer supported nor being sold by Analog Devices. This page is here for
+   historical/reference purposes only.
 
    
-
 
 Overview
 --------
 
-This circuit provides a contactless, AMR (Anisotropic Magneto Resistive) linear position measurement solution with an accuracy of 2mil over a 0.5 inch range. The circuit is ideal for applications where high speed, accurate, non-contact length and position measurements are critical. A rotating magnetic field stimulates the sensor, creating an output voltage of ±70mV. The circuit provides an industry leading angle measurement solution suitable valve and flow measuremetns, machine tool speed control, motor speed measurement and other industrial or automotive applications.
+This circuit provides a contactless, AMR (Anisotropic Magneto Resistive) linear
+position measurement solution with an accuracy of 2mil over a 0.5 inch range.
+The circuit is ideal for applications where high speed, accurate, non-contact
+length and position measurements are critical. A rotating magnetic field
+stimulates the sensor, creating an output voltage of ±70mV. The circuit provides
+an industry leading angle measurement solution suitable valve and flow
+measuremetns, machine tool speed control, motor speed measurement and other
+industrial or automotive applications.
 
 General Setup
 -------------
-
-
 
 - One EVAL-CN0341-SDPZ Evaluation Board
 - :adi:`EVAL-SDP-CB1Z` Evaluation board
@@ -88,20 +94,25 @@ Step by Step Instruction for Calibrating the System
 
       -
 
-
       |image5|
 
 -  Step 1: Press the 'Click to Sample' button to begin data conversion.
 -  Step 2: Slide the magnet past the sensor and observe the changing ADC codes.
--  Step 3: Input the maximum and minimum codes (seen in step 2) in the boxes provided.
+-  Step 3: Input the maximum and minimum codes (seen in step 2) in the boxes
+   provided.
 
    -  The calibration coefficients can be modified to produce a better end result. For example, if one of the maximum ADC codes is mis-represented on the high side, the output position will never reach full scale or minimum scale depending on the channel.
-   -  Once the calibration is complete, proceed to the second tab 'Linear Position' to observe the linear position information.
+   -  Once the calibration is complete, proceed to the second tab 'Linear
+      Position' to observe the linear position information.
 
 Error Sources, Common Pitfalls and Things to be Weary of
 --------------------------------------------------------
 
--  There a several things to be weary of when setting up and testing a magneto-resistive based linear position measurement system. Each one of the following items can drastically increase the output error of the system and the linearity to a point where accurate calculations of position become quite challenging.
+-  There a several things to be weary of when setting up and testing a
+   magneto-resistive based linear position measurement system. Each one of the
+   following items can drastically increase the output error of the system and
+   the linearity to a point where accurate calculations of position become quite
+   challenging.
 
    -  Vertical Mis-alignment:
 
@@ -117,10 +128,12 @@ Error Sources, Common Pitfalls and Things to be Weary of
 
       |image7|
 
-   -  The image below displays one last common error source, sensor-to-magnet distance. The ideal distance between the sensor and magnet is half of the magnet length. Increasing or decreasing this distance introduces errors into the measurement.
+   -  The image below displays one last common error source, sensor-to-magnet
+      distance. The ideal distance between the sensor and magnet is half of the
+      magnet length. Increasing or decreasing this distance introduces errors
+      into the measurement.
 
       -
-
 
       |image8|
 
@@ -131,16 +144,15 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0341-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_2.1.1153.6.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_location.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/cn0341_-_front_panel.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0343.jpg
-   :width: 800px
+   :width: 800
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/software.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0345.jpg
-   :width: 800px
+   :width: 800
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0347.jpg
-   :width: 800px
+   :width: 800
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0350.jpg
-   :width: 800px
+   :width: 800

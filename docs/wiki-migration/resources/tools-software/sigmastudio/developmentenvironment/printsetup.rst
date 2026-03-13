@@ -3,7 +3,10 @@ Print/Print Setup
 
 :doc:`Click here to return to the Dialogs page </wiki-migration/resources/tools-software/sigmastudio/developmentenvironment/dialogs>`
 
-Printing and Print preview are provided for SigmaStudio projects (Schematic window only). These functions are accessed from File - Print... on the main application menu or by pressing CTRL + P. Also, the printer settings can be configured in the print setup dialog (File - Print Setup...).
+Printing and Print preview are provided for SigmaStudio projects (Schematic
+window only). These functions are accessed from File - Print... on the main
+application menu or by pressing CTRL + P. Also, the printer settings can be
+configured in the print setup dialog (File - Print Setup...).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/printpic1.png
    :alt: printpic1.png

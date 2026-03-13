@@ -73,7 +73,6 @@ Resources
    \*It is recommended to update the firmware to the latest firmware release.
    
 
-
 --------------
 
 Flashing and debugging the firmware for the AD-ACEVSECRDSET-SL using the max32625pico
@@ -82,7 +81,9 @@ Flashing and debugging the firmware for the AD-ACEVSECRDSET-SL using the max3262
 What is needed:
 ~~~~~~~~~~~~~~~
 
-max32625pico AD-ACEVSECRDSET-SL.hex AD-ACEVSECRDSET-SL board usb to micro usb cable 10 pin Cortex Debug Cable 3 wire cable with mains plug attached Serial terminal
+max32625pico AD-ACEVSECRDSET-SL.hex AD-ACEVSECRDSET-SL board usb to micro usb
+cable 10 pin Cortex Debug Cable 3 wire cable with mains plug attached Serial
+terminal
 
 Obs: The binary can be obtained following the steps presented at :doc:`no-OS build guide </wiki-migration/resources/no-os/build>`
 
@@ -96,23 +97,23 @@ STEP 2 Connect the max32625pico to the board
 
 Connect the Cortex Debug Cable to the :adi:`max32625pico` with the connector key directed towards the outside of the board and to the :adi:`AD-ACEVSECRDSET-SL` board directed downwards.
 
-
 |image1|
 
 Step 3 Connect the board to mains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Connect the NULL, PHASE and Earth as indicated on the enclosure. Power up the board from 230V AC through the just attached cable.
+Connect the NULL, PHASE and Earth as indicated on the enclosure. Power up the
+board from 230V AC through the just attached cable.
 
 Step 4 Flashing the firmware to the board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the :adi:`max32625pico` is not connected to the PC USB port connect it. The DAPLINK should appear as a storage device on the PC. Open the DAPLINK. Two files should already be present as seen in the following image.
 
-
 |image2|
 
-Drag and drop the AD-ACEVSECRDSET-SL.hex into DAPLINK. The firmware will be written on the target MCU.
+Drag and drop the AD-ACEVSECRDSET-SL.hex into DAPLINK. The firmware will be
+written on the target MCU.
 
 Step 5 Verify that the firmware was written correctly.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +125,7 @@ Revision A
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/04_ad_bct2ade9113.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Revision D
 ----------
@@ -137,12 +138,11 @@ Revision D
 
    If you want to go back to the HARDWARE SETUP, click here: :doc:`AD-ACEVSECRDSET-SL Hardware User Guide </wiki-migration/resources/eval/user-guides/ad-acevsecrdset-sl/hardware>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/ad-acevsecrdset-sl_soft1.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/ad-acevsecrdset-sl_soft2.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-acevsecrdset-sl/rev_d_debug_1.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bct2ade9113-sl/ad-acevsecrdset-sl_soft3.jpg
-   :width: 200px
+   :width: 200

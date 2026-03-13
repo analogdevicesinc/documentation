@@ -2,7 +2,9 @@ The :adi:`AD7156` delivers a complete signal processing solution for capacitive 
 
 The :adi:`AD7156` uses an Analog Devices, Inc., capacitance-to-digital converter (CDC) technology, which combines features important for interfacing to real sensors, such as high input sensitivity and high tolerance of both input parasitic ground capacitance and leakage current.
 
-The integrated adaptive threshold algorithm compensates for any variations in the sensor capacitance due to environmental factors like humidity and temperature or due to changes in the dielectric material over time.
+The integrated adaptive threshold algorithm compensates for any variations in
+the sensor capacitance due to environmental factors like humidity and
+temperature or due to changes in the dielectric material over time.
 
 By default, the :adi:`AD7156` operates in standalone mode using the fixed power-up settings and indicates detection on two digital outputs. Alternatively, the :adi:`AD7156` can be interfaced to a micro-controller via the serial interface, the internal registers can be programmed with user-defined settings, and the data and status can be read from the part.
 

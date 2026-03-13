@@ -4,11 +4,14 @@ Configuring the Framework
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>w7md5m9zq_o
    :alt: youtube>W7md5m9Zq_o
 
-The framework options are configured via a single .h file that is shared between the three projects:
+The framework options are configured via a single .h file that is shared between
+the three projects:
 
 ``src/common/audio_system_config.h``
 
-This file is broken up into a number of short sections which describe how the framework will operate. Here are some examples of the types of things you can configure:
+This file is broken up into a number of short sections which describe how the
+framework will operate. Here are some examples of the types of things you can
+configure:
 
 -  Presence of either the Audio Project or automotive Fin boards
 -  The audio block size
@@ -20,7 +23,8 @@ This file is broken up into a number of short sections which describe how the fr
    -  The role of the SHARC Audio Module board - A2B master or A2B slave
    -  The A2B network topology (if SHARC Audio Module is an A2B master)
 
--  Whether or not to use the Faust audio engine for synthesis and audio effects (more on this below)
+-  Whether or not to use the Faust audio engine for synthesis and audio effects
+   (more on this below)
 
 The ``audio_system_config.h`` file includes several checks within the pre-processor logic at the bottom of the file to ensure that the combination of configurations is valid. If an invalid configuration is detected, the compiler will generate a pre-processor error when compiling this file.
 
@@ -28,14 +32,15 @@ The ``audio_system_config.h`` file includes several checks within the pre-proces
 
    Once you have made edits to ``audio_system_config.h``, it is recommended that you do a clean build across all three project folders.
 
-
 1. Selecting a daughter board (aka "Fin")
 -----------------------------------------
 
-If either the Audio Project Fin or the Automotive Fin are connected to the SHARC Audio Module, set the corresponding line below to TRUE. Only one Fin can be attached at a time so if both are set to TRUE, the compiler will generate an error.
+If either the Audio Project Fin or the Automotive Fin are connected to the SHARC
+Audio Module, set the corresponding line below to TRUE. Only one Fin can be
+attached at a time so if both are set to TRUE, the compiler will generate an
+error.
 
 .. code:: c
-
 
    //****************
    // 1. Select which (if any) daughter boards are connected to the SHARC Audio Module
@@ -77,16 +82,19 @@ The ``AUDIO_SAMPLE_RATE`` is the desired system sample rate in Hz. The audio sam
 
 The ``USE_BOTH_CORES_TO_PROCESS_AUDIO`` variable determines if one SHARC core or both SHARC cores will be used to process audio.
 
-If this value is set to FALSE, audio will not be sent to core 2 after it has been processed by core 1. When the framework is configured for single-core processing, the processing flow works as such:
+If this value is set to FALSE, audio will not be sent to core 2 after it has
+been processed by core 1. When the framework is configured for single-core
+processing, the processing flow works as such:
 
 ``ADC`` -> ``SHARC Core 1`` -> ``DACs``
 
-If this value is set to TRUE, audio will be sent to core 2 after it has been processed by core 1. When the framework is configure for dual-core processing, SHARC Core 1 still manages the flow of audio data to and from the ADCs and DACs.
+If this value is set to TRUE, audio will be sent to core 2 after it has been
+processed by core 1. When the framework is configure for dual-core processing,
+SHARC Core 1 still manages the flow of audio data to and from the ADCs and DACs.
 
 ``ADC`` -> ``SHARC Core 1 [processing]`` -> ``SHARC Core 2 [processing]`` -> ``SHARC Core 1 [final data transfer]`` -> ``DACs``
 
 .. code:: c
-
 
    //****************
    // 2. Set audio processing parameters
@@ -104,7 +112,8 @@ If this value is set to TRUE, audio will be sent to core 2 after it has been pro
 3. Selecting an Audio Processing Framework
 ------------------------------------------
 
-The audio frameworks provide platform-specific code for different hardware configurations.
+The audio frameworks provide platform-specific code for different hardware
+configurations.
 
 The ``FRAMEWORK_8CH_SINGLE_OR_DUAL_CORE_A2B`` framework provides support for the audio components (audio codec and A2B) on the SHARC Audio Module and the Audio Project Fin.
 
@@ -121,10 +130,11 @@ The ``FRAMEWORK_16CH_SINGLE_OR_DUAL_CORE_AUTOMOTIVE`` framework provides support
 
 The ``FRAMEWORK_BYPASS_SC589_A2B`` framework directly connects the ADAU1761 audio codec to the AD2425W controller and is used to bypass the ADSP-SC589 processor all together. This configuration allows the SHARC Audio Module to behave as a simple CODEC slave node on an A2B bus where the ADAU1761 codec is directly connected to the AD2425W A2B controller. The flexible signal routing unit (SRU) on the ADSP-SC589 makes this possible as it enables us to dynamically route/re-route the I2S/TDM audio signals on the SHARC audio module.
 
-If you'd like to use this framework on your own hardware configurations, you can create your own additional pre-processor variables here and select between the target hardware platform by simply setting one of these values to TRUE.
+If you'd like to use this framework on your own hardware configurations, you can
+create your own additional pre-processor variables here and select between the
+target hardware platform by simply setting one of these values to TRUE.
 
 .. code:: c
-
 
    //****************
    // 3. Select an audio processing framework to use (only select one)
@@ -144,12 +154,14 @@ If you'd like to use this framework on your own hardware configurations, you can
 
 If you'd like the SHARC Audio Module to participate in an A2B bus, either as a master node or a slave node, set the ``ENABLE_A2B`` variable to ``TRUE``. If the SHARC Audio Module will be the A2B bus master (typical), ensure ``A2B_ROLE_MASTER`` is set to ``TRUE``. If the SHARC Audio Module will act as a slave node, set this variable to ``FALSE``.
 
-If the SHARC Audio Module is the A2B bus master, there are a number of fixed network topologies that can be used. These network topologies are essentially A2B initialization sequences that will initialize the various I2C components on the slave nodes on the A2B bus. Only one A2B topology can be selected at a time.
+If the SHARC Audio Module is the A2B bus master, there are a number of fixed
+network topologies that can be used. These network topologies are essentially
+A2B initialization sequences that will initialize the various I2C components on
+the slave nodes on the A2B bus. Only one A2B topology can be selected at a time.
 
 If you'd like to create your own A2B topologies, see the :doc:`tutorial </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/driver-creation-tutorial>` on this topic.
 
 .. code:: c
-
 
    //****************
    // 4. Select whether or not to enable A2B in the framework
@@ -175,8 +187,6 @@ If you'd like to create your own A2B topologies, see the :doc:`tutorial </wiki-m
 
            // Add your own pre-processor variables for custom A2B topologies here
 
-
-
        #endif  // A2B_ROLE_MASTER
 
    #endif  // ENABLE_A2B
@@ -184,12 +194,18 @@ If you'd like to create your own A2B topologies, see the :doc:`tutorial </wiki-m
 5. Enabling the Enhanced ADAU1761 Driver
 ----------------------------------------
 
-The ADAU1761 contains a stereo codec but it also contains a SigmaDSP processor, a light weight DSP engine. The ADSP-SC589 connects to the ADAU1761 via an 8 channel I2S/TDM interface. The first two of the eight TDM channels are used to move raw audio between the stereo ADCs and DACs on the ADAU1761. The remaining 6 channels are normally unused. The "enhanced" driver provides additional pre-processing and post-processing on the SigmaDSP core to using the remaining 6 channels.
+The ADAU1761 contains a stereo codec but it also contains a SigmaDSP processor,
+a light weight DSP engine. The ADSP-SC589 connects to the ADAU1761 via an 8
+channel I2S/TDM interface. The first two of the eight TDM channels are used to
+move raw audio between the stereo ADCs and DACs on the ADAU1761. The remaining 6
+channels are normally unused. The "enhanced" driver provides additional
+pre-processing and post-processing on the SigmaDSP core to using the remaining 6
+channels.
 
-The functionality implemented in the SigmaDSP is described in the comments below.
+The functionality implemented in the SigmaDSP is described in the comments
+below.
 
 .. code:: c
-
 
    //****************
    // 5. Use enhanced ADAU1761 driver
@@ -274,4 +290,3 @@ The ``audio_system_config.h`` file can also be used to configure the system cloc
 
    #define CORE_CLOCK_FREQ_HZ    (450000000)
    #define EXT_OSCILLATOR_FREQ_HZ  (25000000)
-

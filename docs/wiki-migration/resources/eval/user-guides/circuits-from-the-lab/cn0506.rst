@@ -3,7 +3,10 @@ EVAL-CN0506-FMCZ Hardware User Guide
 
 The :adi:`CN0506` shown in Figure 1 is a dual channel, low latency, low power Ethernet Phy card supporting speeds of 10/100/1000 Mbps for Industrial Ethernet applications.
 
-The circuit consists of two indivudual, independent 10/100/1000Mb PHYs, each with an energy efficient Ethernet (EEE) physical layer device (PHY) core with all associated common analog circuitry, input and output clock buffering, management interface, subsystem registers, MAC interface and control logic.
+The circuit consists of two indivudual, independent 10/100/1000Mb PHYs, each
+with an energy efficient Ethernet (EEE) physical layer device (PHY) core with
+all associated common analog circuitry, input and output clock buffering,
+management interface, subsystem registers, MAC interface and control logic.
 
 Unboxing Video
 --------------
@@ -24,7 +27,9 @@ The FMC connector connects to the LPC connector of the carrier board.
 RJ45 Connectors
 ~~~~~~~~~~~~~~~
 
-The RJ45 connectors M1 for Channel A and M2 for Channel B has built in magnetics that help reduce the size of the the board. Each are dedicated to a phy interface ADIN1300 allowing each channel to be independent.
+The RJ45 connectors M1 for Channel A and M2 for Channel B has built in magnetics
+that help reduce the size of the the board. Each are dedicated to a phy
+interface ADIN1300 allowing each channel to be independent.
 
 Configuration Resistors
 -----------------------
@@ -32,7 +37,11 @@ Configuration Resistors
 Mac Interface
 ~~~~~~~~~~~~~
 
-The pins for the selecting the MAC interface is shared with the RX_CTL/RX_DV/ CRS_DV pin and RXC/RX_CLK pin which has weak internal pull-down resistors and is configure to RGMII mode with 2ns delay. The ADIN1300 has The MAC interface selection be done via software but can be hardware configured upon the power up of the device using the table below.
+The pins for the selecting the MAC interface is shared with the RX_CTL/RX_DV/
+CRS_DV pin and RXC/RX_CLK pin which has weak internal pull-down resistors and is
+configure to RGMII mode with 2ns delay. The ADIN1300 has The MAC interface
+selection be done via software but can be hardware configured upon the power up
+of the device using the table below.
 
 +-----------------------------+-----------------------------+-----------------------------+
 | **MAC Interface Selection** | **MACIF_SEL1(Phy A/Phy B)** | **MACIF_SEL0(Phy A/Phy B)** |
@@ -49,7 +58,8 @@ The pins for the selecting the MAC interface is shared with the RX_CTL/RX_DV/ CR
 Configuration Modes
 ~~~~~~~~~~~~~~~~~~~
 
-These configuration modes are used to set the configurations for Auto MDIX and Phy Speed Configurations for both Phy channels A and B
+These configuration modes are used to set the configurations for Auto MDIX and
+Phy Speed Configurations for both Phy channels A and B
 
 ======== ======== ========
 **Mode** **R_LO** **R_HI**
@@ -62,7 +72,8 @@ Mode_4   Open     10k
 Phy Interface
 ~~~~~~~~~~~~~
 
-The board has both of the channels configured for 10 Half Duplex/Full Duplex, 100 Half Duplex/Full Duplex and 1000 Full Duplex slave mode upon power up.
+The board has both of the channels configured for 10 Half Duplex/Full Duplex,
+100 Half Duplex/Full Duplex and 1000 Full Duplex slave mode upon power up.
 
 Auto MDIX
 ~~~~~~~~~
@@ -78,7 +89,9 @@ Auto MDIX - Prefer MDI  MODE_4
 LED Indicators
 ^^^^^^^^^^^^^^
 
-These LED's indicate when a link is established and is blinking when there is activity. LED on Phy channel A is labelled DS4 and the LED on Phy channel B is labelled DS2.
+These LED's indicate when a link is established and is blinking when there is
+activity. LED on Phy channel A is labelled DS4 and the LED on Phy channel B is
+labelled DS2.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0506/cn0506-silkscreen.jpg
 
@@ -97,7 +110,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Layout Files
    -  Assembly Files
    
-
 
 Additional Information and Useful Links
 ---------------------------------------
@@ -125,6 +137,5 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0506-FMCZ?&v=RevB>`_ to receive all these great benefits and more!
-
 
 *End of Document*

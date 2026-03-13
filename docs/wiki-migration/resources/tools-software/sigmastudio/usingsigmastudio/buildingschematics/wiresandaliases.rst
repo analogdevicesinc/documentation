@@ -3,7 +3,8 @@ Wires and Aliases
 
 :doc:`Click here to return to the Building Schematics page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics>`
 
-SigmaStudio schematic design are built from blocks which are connected together with "wires". Wires define the systems's signal flow.
+SigmaStudio schematic design are built from blocks which are connected together
+with "wires". Wires define the systems's signal flow.
 
 **To create a schematic wire:** Move the mouse cursor over a block's :doc:`pin </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/schematicblocks>` so the wire icon,\ |icon.png| ,is displayed. Next, Left-click on a block pin, and while holding the mouse button, drag the cursor to another blocks's corresponding pin. Input pins can only connect to Output pins and Output pins can only connect to Input pins.
 
@@ -13,7 +14,8 @@ SigmaStudio schematic design are built from blocks which are connected together 
 
 **Selecting:**
 
-To select a wire, click on it with the left mouse button. Selected wires are indicated by green squares (points) as shown below.
+To select a wire, click on it with the left mouse button. Selected wires are
+indicated by green squares (points) as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/wirespic2.png
    :alt: wirespic2.png
@@ -29,7 +31,8 @@ To change the position of a wire, place the mouse cursor over a point. Next, **L
 
 **Menu:**
 
-Right-click on a wire to bring up the wire menu. This menu includes following commands:
+Right-click on a wire to bring up the wire menu. This menu includes following
+commands:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/wirespic4.png
    :alt: wirespic4.png
@@ -37,7 +40,10 @@ Right-click on a wire to bring up the wire menu. This menu includes following co
 
 **Wire colors:**
 
-Wires are colored according to their associated DSP processor. The input and output pins of the wire must be associated with the same DSP or you will not be able to create a wire between the pins. Projects with more than one processor IC will have distinct colors for each IC.
+Wires are colored according to their associated DSP processor. The input and
+output pins of the wire must be associated with the same DSP or you will not be
+able to create a wire between the pins. Projects with more than one processor IC
+will have distinct colors for each IC.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/wirespic5.png
    :alt: wirespic5.png
@@ -57,13 +63,13 @@ To create an alias, **Right-Click** on a block's output pin (blue pin) and selec
 
 When you click **Alias**, two blocks appear, input and output. The alias input is automatically connected to source block's output pin. Next, create a wire from the alias output block (Alias 2 in the example below) to the signal destination.
 
-
 |wirespic7.png|
 
 .. hint::
 
-   Note: Using an alias is functionally equivalent to connecting two pins with a wire. The signal flow in the example below is identical to the alias example above.
-
+   Note: Using an alias is functionally equivalent to connecting two pins with a
+   wire. The signal flow in the example below is identical to the alias example
+   above.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/wirespic8.png
    :alt: wirespic8.png

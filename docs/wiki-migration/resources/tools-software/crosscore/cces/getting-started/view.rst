@@ -4,11 +4,12 @@ Perspectives & Views in CCES
 A *Perspective* is an instantiation of the CCES IDE dedicated to a specific collection of tasks. It consists of a unique set of windows/panes called *Views*. The primary perspectives in CCES are the **C/C++**, **Debug** and **Graphical Editor** perspectives.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/open_perspectives.png
-   :width: 800px
+   :width: 800
 
 *Figure 1. Available Perspectives*
 
-Information and documentation on these perspectives & views, and others, is located in the CCES Online Help.
+Information and documentation on these perspectives & views, and others, is
+located in the CCES Online Help.
 
 C/C++ Perspective
 -----------------
@@ -16,7 +17,7 @@ C/C++ Perspective
 The **C/C++** perspective is where you actually develop the code for your application (Figure 2). In this perspective, you create your source and header files, and then edit, save and compile them into executable files (DXE), static libraries (DLB), or loader images (LDR).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/c_c_perspective.png
-   :width: 600px
+   :width: 600
 
 *Figure 2. C/C++ Perspective*
 
@@ -38,7 +39,7 @@ Debug Perspective
 The **Debug** perspective (Figure 3) is available when you are ready to run your code on a hardware target or in the simulator (if there is simulator support for the processor you are targeting). In this perspective, you can set breakpoints, step through code, and access different views that assist greatly during development efforts, like memory and register browsers.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/cces-gsg/debug_perspective.png
-   :width: 600px
+   :width: 600
 
 *Figure 3. Debug Perspective*
 
@@ -60,7 +61,8 @@ The open space to the upper right is a tabbed-area view where numerous low-level
 
 -  If you are working with image processing, the **Image Viewer** view allows you to view images stored on your PC and images stored in memory on your target processor while connected to an Emulator session. This tool is extremely useful when using ADI’s Image Processing Tool Kits and when working with the Pipeline Vision Processor (PVP) on the ADSP-BF60x processors.
 
-Further information about these views and the others available is located in CCES Online Help.
+Further information about these views and the others available is located in
+CCES Online Help.
 
 Graphical Editor Perspective
 ----------------------------
@@ -71,5 +73,5 @@ The **Graphical Editor** perspective was designed for use with GUI Add-ins, such
 
 -  The **Profiling View** is used to observe where a program spends most of its time executing code. You can analyze the profiling data and optimize your code to eliminate the bottlenecks.
 
-Further information about these views and the others available is located in CCES Online Help.
-
+Further information about these views and the others available is located in
+CCES Online Help.

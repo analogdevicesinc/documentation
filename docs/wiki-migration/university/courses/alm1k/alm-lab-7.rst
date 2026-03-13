@@ -4,34 +4,55 @@ Activity: Zero gain amplifier (BJT) - ADALM1000
 Objective:
 ----------
 
-In the design of a circuit it is important to take into account the wide variation in certain device values from one to another. A central objective of the designer is to desensitize the circuit to these variations to produce a circuit which meets the specifications across all possible conditions. One aspect of design which is common to nearly all circuits is the establishment of stable bias or operating point levels. This seemingly minor portion of the design can provide the most challenging and interesting circuit problems. Many bias generators are centered around the generation of currents to operate the core of the circuit. Current generated from simple resistors and diodes or diode connected transistors connected across the power supply will vary approximately proportional to the variation of the supply voltage. This variation in the resulting bias current is frequently undesirable.
+In the design of a circuit it is important to take into account the wide
+variation in certain device values from one to another. A central objective of
+the designer is to desensitize the circuit to these variations to produce a
+circuit which meets the specifications across all possible conditions. One
+aspect of design which is common to nearly all circuits is the establishment of
+stable bias or operating point levels. This seemingly minor portion of the
+design can provide the most challenging and interesting circuit problems. Many
+bias generators are centered around the generation of currents to operate the
+core of the circuit. Current generated from simple resistors and diodes or diode
+connected transistors connected across the power supply will vary approximately
+proportional to the variation of the supply voltage. This variation in the
+resulting bias current is frequently undesirable.
 
-This activity is to proceed a current source in Activity 8 which has an output current which had been desensitized to variation in input current. To understand this circuit, it is helpful to examine the behavior of a "zero-gain amplifier" first.
+This activity is to proceed a current source in Activity 8 which has an output
+current which had been desensitized to variation in input current. To understand
+this circuit, it is helpful to examine the behavior of a "zero-gain amplifier"
+first.
 
 Notes:
 ------
 
-As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.
+As in all the ALM labs we use the following terminology when referring to the
+connections to the M1000 connector and configuring the hardware. The green
+shaded rectangles indicate connections to the M1000 analog I/O connector. The
+analog I/O channel pins are referred to as CA and CB. When configured to force
+voltage / measure current -V is added as in CA-V or when configured to force
+current / measure voltage -I is added as in CA-I. When a channel is configured
+in the high impedance mode to only measure voltage -H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
 
 Materials:
 ~~~~~~~~~~
 
-Analog Discovery Lab hardware Solder-less breadboard 1 - 2.2 KΩ Resistor (or any similar value) 1 - 47 Ω Resistor 1 - small signal NPN transistor (2N3904 or SSM2212)
+Analog Discovery Lab hardware Solder-less breadboard 1 - 2.2 KΩ Resistor (or any
+similar value) 1 - 47 Ω Resistor 1 - small signal NPN transistor (2N3904 or
+SSM2212)
 
 Directions:
 ~~~~~~~~~~~
 
 The breadboard connections are as shown in figure 1. The channel A generator CA-V output drives one end of resistor R\ :sub:`1`. Resistor R\ :sub:`2` is connected between the base and collector of transistor Q\ :sub:`1` with the other end of resistor R\ :sub:`1` connected to the base as well. The emitter of Q\ :sub:`1`\ is grounded.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Zero Gain Amplifier
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -46,7 +67,8 @@ Remembering back to the common emitter amplifier in the previous section, if R\ 
 Questions:
 ~~~~~~~~~~
 
-What are the relative gains of the two paths when the collector current is less than and greater than the "ideal" zero gain value?
+What are the relative gains of the two paths when the collector current is less
+than and greater than the "ideal" zero gain value?
 
 Improved V_BE Multiplier, Applying the Zero Gain Concept
 --------------------------------------------------------
@@ -56,7 +78,8 @@ As we explored in Activity 3, there are often circuits which require that a volt
 V_BE times 2 version 1:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The obviously simple thing to do would be to just use two diode connected transistors in series.
+The obviously simple thing to do would be to just use two diode connected
+transistors in series.
 
 Materials:
 ~~~~~~~~~~
@@ -68,18 +91,18 @@ Directions:
 
 The breadboard connections are as shown in figure 2. The output of the channel A generator drives one end of resistor R\ :sub:`1`. The emitter of Q\ :sub:`1` is connected to ground. The base and collector of Q\ :sub:`1` are connected to the emitter of Q\ :sub:`2`. The base and collector of Q\ :sub:`2`\ are connected to the other end of R\ :sub:`1` and to the scope channel B, CB-H.
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 2 2 V\ :sub:`BE` circuit
 
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
-The channel A generator should be configured for a 100 Hz triangle wave with 3.0 volt Max and 0V Min. Both channels vertical range can be set to 0.2 V per division.
+The channel A generator should be configured for a 100 Hz triangle wave with 3.0
+volt Max and 0V Min. Both channels vertical range can be set to 0.2 V per
+division.
 
 Procedure:
 ~~~~~~~~~~
@@ -94,13 +117,13 @@ A second option would be to use two resistors as a voltage divider. This could p
 Materials:
 ~~~~~~~~~~
 
-1 - 1KΩ Resistor 2 - 10KΩ Resistors 1 - 5KΩ Variable resistor ( a 500Ω pot would be preferable if available ) 1 - small signal NPN transistor (2N3904 or SSM2212)
+1 - 1KΩ Resistor 2 - 10KΩ Resistors 1 - 5KΩ Variable resistor ( a 500Ω pot would
+be preferable if available ) 1 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 ~~~~~~~~~~~
 
 The breadboard connections are as shown in figure 3. The output of the channel A generator drives one end of resistor R\ :sub:`1`. The emitter of Q\ :sub:`1` is connected to ground. Resistor R\ :sub:`3` is connected between the base of Q\ :sub:`1` and ground. One end of resistor R\ :sub:`2` connected to the other end of R\ :sub:`1` and to the 2- input of scope channel 2 and one end and the wiper of potentiometer R\ :sub:`4`. The opposite end of R\ :sub:`2` is connected to the base of Q\ :sub:`1`. The collector of Q\ :sub:`2` is connected to the remaining end of R\ :sub:`4`.
-
 
 |image3|
 
@@ -108,11 +131,11 @@ The breadboard connections are as shown in figure 3. The output of the channel A
 
    Figure 3 V\ :sub:`BE` Multiplier circuit
 
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
-The channel A generator should be configured for a 100 Hz triangle wave with 3 volt Max and 0V Min. Both vertical ranges can be set to 0.2 V per division.
+The channel A generator should be configured for a 100 Hz triangle wave with 3
+volt Max and 0V Min. Both vertical ranges can be set to 0.2 V per division.
 
 Procedure:
 ~~~~~~~~~~
@@ -129,13 +152,13 @@ A minor variation on Version 2.
 Materials:
 ~~~~~~~~~~
 
-1 - 1KΩ Resistor 1 - 10KΩ Resistor 1 - 5KΩ Variable resistor ( 500Ω pot would be preferable if available ) 2 - small signal NPN transistor (2N3904 or SSM2212)
+1 - 1KΩ Resistor 1 - 10KΩ Resistor 1 - 5KΩ Variable resistor ( 500Ω pot would be
+preferable if available ) 2 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 ~~~~~~~~~~~
 
 The breadboard connections are as shown in figure 4. Version 3 is made from version 2 by removing 10 KΩ resistor R\ :sub:`2` and replacing it with diode connected NPN Q\ :sub:`2` as shown.
-
 
 |image4|
 
@@ -143,11 +166,11 @@ The breadboard connections are as shown in figure 4. Version 3 is made from vers
 
    Figure 4 Version 3 of V\ :sub:`BE` multiplier
 
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
-The channel A generator should be configured for a 100 Hz triangle wave with 3.0 volt Max and 0V Min. Both vertical ranges can be set to 0.2 V per division.
+The channel A generator should be configured for a 100 Hz triangle wave with 3.0
+volt Max and 0V Min. Both vertical ranges can be set to 0.2 V per division.
 
 Procedure:
 ~~~~~~~~~~
@@ -166,10 +189,10 @@ How would you modify the values of R\ :sub:`2` and R\ :sub:`4` in version 2 ( fi
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f2.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f3.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f4.png
-   :width: 600px
+   :width: 600

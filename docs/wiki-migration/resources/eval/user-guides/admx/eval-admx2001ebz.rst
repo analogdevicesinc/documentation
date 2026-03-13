@@ -5,8 +5,8 @@ EVAL-ADMX2001 LCR Meter Demo/Evaluation Setup
 
    This page applies to hardware revision B and C, and firmware versions 1.3.1, 1.3.2, and 1.3.3. It may not apply to past or future versions. For firmware update instructions, see `Firmware Updates. <https://wiki.analog.com/eval-admx2001ebz>`_
 
-
-The EVAL-ADMX2001 LCR Meter Demo is an evaluation system that is comprised of both the ADMX2001B and the EVAL-ADMX2001EBZ boards.
+The EVAL-ADMX2001 LCR Meter Demo is an evaluation system that is comprised of
+both the ADMX2001B and the EVAL-ADMX2001EBZ boards.
 
 The **ADMX2001B** is a high-performance, precision impedance analyzer module.
 
@@ -23,7 +23,8 @@ The **EVAL-ADMX2001EBZ** is an easy-to-use evaluation and development breakout b
 -  UART interface can be used with USB-to-UART cables to interface to host PC
 -  Trigger and clock synchronization signals are available through SMA connectors that simplify the connection to standard test equipment
 -  Arduino-style headers allow the user to develop embedded code with boards like the SDP-K1
--  Power jack accepts various input voltages from ac/dc power adapters that can supply +5V to +12V
+-  Power jack accepts various input voltages from ac/dc power adapters that can
+   supply +5V to +12V
 
 EVAL-ADMX2001EBZ Evaluation Kit Contents
 ----------------------------------------
@@ -40,13 +41,15 @@ Additional Equipment Required
 
 .. important::
 
-   It is critical to purchase both the ADMX2001B High-Performance Precision Impedance Analyzer Measurement Module and the EVAL-ADMX2001EBZ LCR Meter Demonstration Board. These are sold separately.
-
+   It is critical to purchase both the ADMX2001B High-Performance Precision
+   Impedance Analyzer Measurement Module and the EVAL-ADMX2001EBZ LCR Meter
+   Demonstration Board. These are sold separately.
 
 Optional Equipment
 ------------------
 
--  LCR meter accessories. Available from various test and measurement manufacturers, for example:
+-  LCR meter accessories. Available from various test and measurement
+   manufacturers, for example:
 
    -  `Keysight's Impedance Measurement Accessories <https://www.keysight.com/en/pc-1000002552%3Aepsg%3Apgr/lcr-meter-impedance-measurement-product-accessories>`_
    -  `B+K Precision TL89S1 SMD Test Fixture <https://www.digikey.com/en/products/detail/b-k-precision/TL89S1/7915183>`_
@@ -87,7 +90,6 @@ These steps are explained in detail in the following sections.
 
    The default communication interface to the EVAL-ADMX2001EBZ is via its UART port. When using the UART to USB cable included with the evaluation board (TTL-232R-RPI), FTDI's Virtual COM Port (VCP) drivers must be downloaded from their website located at https://www.ftdichip.com/Drivers/VCP.htm
 
-
 **Installation steps:**
 
 -  Download the driver **setup executable** for the host OS version from https://www.ftdichip.com/Drivers/VCP.htm
@@ -97,28 +99,35 @@ These steps are explained in detail in the following sections.
 -  Unzip the file and run the setup executable
 -  **Connect the USB to UART cable to the PC**
 -  Open the Device Manager
--  In the Device Manager window, verify that the USB Serial Port is displayed under “Ports (COM & LPT)” and that a serial port identifier has been assigned as shown below:
+-  In the Device Manager window, verify that the USB Serial Port is displayed
+   under “Ports (COM & LPT)” and that a serial port identifier has been assigned
+   as shown below:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/dev_mgr_vcp_installed.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
 2. Terminal Emulator Installation
 ---------------------------------
 
-To communicate with ADMX2001B via its command-line interface and UART, a terminal emulator like TeraTerm is recommended. Download TeraTerm from the official Github Releases page:
+To communicate with ADMX2001B via its command-line interface and UART, a
+terminal emulator like TeraTerm is recommended. Download TeraTerm from the
+official Github Releases page:
 
 .. admonition:: Download
    :class: download
 
    \ https://github.com/TeraTermProject/teraterm/releases\
 
-
 Download and run the latest stable release. Follow the on-screen instructions.
 
-Alternatives like PuTTY can also be used, but some users have had issues with PuTTY where the terminal window does not open. Additionally, some terminals do not support the ANSI Escape Codes which manipulate the cursor position and text color. If the ANSI Escape Codes are not supported, the terminal will render them as boxes. TeraTerm supports these characters.
+Alternatives like PuTTY can also be used, but some users have had issues with
+PuTTY where the terminal window does not open. Additionally, some terminals do
+not support the ANSI Escape Codes which manipulate the cursor position and text
+color. If the ANSI Escape Codes are not supported, the terminal will render them
+as boxes. TeraTerm supports these characters.
 
 --------------
 
@@ -141,12 +150,16 @@ The following figure shows the basic connections required for evaluating the EVA
 
 \ |image5|\ 
 
-The two BNC connectors from the red leads go to the HCUR/HPOT ports, the two BNC connectors from the black leads go to the LPOT/LCUR ports.
+The two BNC connectors from the red leads go to the HCUR/HPOT ports, the two BNC
+connectors from the black leads go to the LPOT/LCUR ports.
 
 .. important::
 
-   Inspect the BNC connectors on the test clips. The housing can become partially unscrewed, allowing the conductor to be pushed back inside and preventing it from making good contact. Additionally, when using the clips in the "open" configuration, each clip should clamp on its own small wire scrap to ensure both sides of the clip are electrically connected.
-
+   Inspect the BNC connectors on the test clips. The housing can become
+   partially unscrewed, allowing the conductor to be pushed back inside and
+   preventing it from making good contact. Additionally, when using the clips in
+   the "open" configuration, each clip should clamp on its own small wire scrap
+   to ensure both sides of the clip are electrically connected.
 
 An example of an unscrewed housing of a test clip: \ |image6|\ 
 
@@ -155,7 +168,16 @@ An example of how to use the wire scrap in each of the test clips, when using th
 Self-Test Functionality
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-When the ADMX2001B powers on, it automatically performs a self-test. The bi-color LED on the underside of the board will turn green if the board boots and passes the self-test, or half-green half-red if the self-test fails. It will turn red if there is a major issue preventing it from booting such as a power issue, missing encryption key, missing firmware or something else. In order to pass the analog component of the self-test, the switches S1 and S2 must be set to OPEN and GND. Alternatively, if S1 and S2 are in the DUT and GND position, the test leads must be connected in the 'open' configuration to pass the self-test. The board will still attempt to function without passing the self-test.
+When the ADMX2001B powers on, it automatically performs a self-test. The
+bi-color LED on the underside of the board will turn green if the board boots
+and passes the self-test, or half-green half-red if the self-test fails. It will
+turn red if there is a major issue preventing it from booting such as a power
+issue, missing encryption key, missing firmware or something else. In order to
+pass the analog component of the self-test, the switches S1 and S2 must be set
+to OPEN and GND. Alternatively, if S1 and S2 are in the DUT and GND position,
+the test leads must be connected in the 'open' configuration to pass the
+self-test. The board will still attempt to function without passing the
+self-test.
 
 The status of the last self-test can be seen by running the command ``selftest``. Using ``selftest run`` will rerun the self-test. By default, the self-test only runs on boot.
 
@@ -164,31 +186,43 @@ The status of the last self-test can be seen by running the command ``selftest``
 4. Opening a Session via TeraTerm
 ---------------------------------
 
-After installing TeraTerm, open the program and choose Serial connection. Select the COM port identified earlier in Device Manager. Click OK. Then choose the dropdown labeled Setup, click Serial port, and ensure that the COM port is set, Speed=115200, Data=8 bits, Parity=none, Stop bits=1 bits, Flow control=none. Click New setting. Optionally, choose Setup->Save setup. Save the file to the default directory. Now, when launching TeraTerm, it will automatically try to connect with the saved settings.
+After installing TeraTerm, open the program and choose Serial connection. Select
+the COM port identified earlier in Device Manager. Click OK. Then choose the
+dropdown labeled Setup, click Serial port, and ensure that the COM port is set,
+Speed=115200, Data=8 bits, Parity=none, Stop bits=1 bits, Flow control=none.
+Click New setting. Optionally, choose Setup->Save setup. Save the file to the
+default directory. Now, when launching TeraTerm, it will automatically try to
+connect with the saved settings.
 
-Make sure the hardware is properly installed and that power is available to the board via the 12V power adapter. TeraTerm should now be connected to the board. To check:
+Make sure the hardware is properly installed and that power is available to the
+board via the 12V power adapter. TeraTerm should now be connected to the board.
+To check:
 
 -  Press ENTER to display the ADMX2001> prompt
 -  Type ``*idn`` and press ENTER to display the firmware version
 -  Type ``help`` and press ENTER to see a list of commands supported by ADMX2001B.
 
-Please note that closing the TeraTerm window does not reset the ADMX2001B settings from the last session.
+Please note that closing the TeraTerm window does not reset the ADMX2001B
+settings from the last session.
 
 --------------
 
 5. Performing Basic Measurements
 --------------------------------
 
-Upon opening a session with TeraTerm, the ADMX2001B is ready to perform impedance measurements.
+Upon opening a session with TeraTerm, the ADMX2001B is ready to perform
+impedance measurements.
 
 .. important::
 
    The measurements reported by the module will not be accurate unless it has been calibrated. For detailed instructions on how to calibrate the module, please refer to the `Calibration Procedure <https://wiki.analog.com/eval-admx2001ebz>`_ section in this user guide.
 
-
 By default, the module is set to perform single-point impedance measurements in rectangular coordinates with a 1V pk signal (magnitude = 1) at 1kHz, and no DC offset. To initiate a measurement type the ``z`` command at the prompt and press ENTER.
 
-Measurement settings are not always in their base SI form. Frequency is in kHz, delays are in milliseconds. The signal magnitude sets the Vpk value. The peak-to-peak value is twice the signal magnitude, centered around the offset voltage. The DC offset is in volts.
+Measurement settings are not always in their base SI form. Frequency is in kHz,
+delays are in milliseconds. The signal magnitude sets the Vpk value. The
+peak-to-peak value is twice the signal magnitude, centered around the offset
+voltage. The DC offset is in volts.
 
 The AC magnitude can be configured anywhere between 0.15V pk and 2.25V pk, but the actual magnitude across the DUT will be be dependent on the DUT impedance, due to the 100Ω source resistance; see `Selecting a Measurement Range <https://wiki.analog.com/eval-admx2001ebz>`_ for details.
 
@@ -196,11 +230,12 @@ The AC magnitude can be configured anywhere between 0.15V pk and 2.25V pk, but t
 
    The order in which the settings commands are entered is not important.
 
-
 Example
 ~~~~~~~
 
-Perform a capacitance measurement in parallel with an equivalent resistor (Cp-Rp) at 100kHz with a 1V amplitude (2V pk-pk) sine. Return 5 readings, where each is an average of 10 samples.
+Perform a capacitance measurement in parallel with an equivalent resistor
+(Cp-Rp) at 100kHz with a 1V amplitude (2V pk-pk) sine. Return 5 readings, where
+each is an average of 10 samples.
 
 ::
 
@@ -226,7 +261,6 @@ Perform a capacitance measurement in parallel with an equivalent resistor (Cp-Rp
 
    By default, auto-range is selected. To disable the auto-ranging function, use the ``setgain <ch> <setting>`` command to select a specific measurement range for the voltage (ch0) or current (ch1) measurement channels.
 
-
 --------------
 
 Using the Help Functionality in the Command-Line Interface
@@ -238,14 +272,14 @@ The ``help`` command will display all the commands available to the user from th
 
    ADMX2001>help <command>
 
-For example, to get help with how to select different measurement display formats, type
+For example, to get help with how to select different measurement display
+formats, type
 
 ::
 
    ADMX2001>help display
 
 Which should show a similar screen to the picture shown below
-
 
 |image9|
 
@@ -304,19 +338,31 @@ The ADMX2001B returns a result in one of 18 different display modes, shown below
 Selecting a Measurement Range
 -----------------------------
 
-By default, the ADMX2001B is in auto-ranging mode, which will optimize the measurement gain of the voltage and current measurement channels, depending on the frequency and magnitude of the test signal.
+By default, the ADMX2001B is in auto-ranging mode, which will optimize the
+measurement gain of the voltage and current measurement channels, depending on
+the frequency and magnitude of the test signal.
 
 .. note::
 
-   The auto-ranging algorithm will only be applied to the conditions of the first measurement. When performing frequency sweeps, the impedance of the device under test will change and could fall outside of the measurement range selected by the initial measurement conditions.
+   The auto-ranging algorithm will only be applied to the conditions of the
+   first measurement. When performing frequency sweeps, the impedance of the
+   device under test will change and could fall outside of the measurement range
+   selected by the initial measurement conditions.
 
    
-   Additionally, the DC offset control is disabled when using the autorange. Manual gain setting must be employed when using the DC offset. The DC offset will be automatically set to -0.25V to allow the saturation detection to perform as expected when autoranging.
+   Additionally, the DC offset control is disabled when using the autorange.
+   Manual gain setting must be employed when using the DC offset. The DC offset
+   will be automatically set to -0.25V to allow the saturation detection to
+   perform as expected when autoranging.
 
+In some cases, the user may want to select a specific measurement range. The
+measurement range is mostly affected by the transimpedance of channel 1 and the
+test signal magnitude. It is recommended to select the transimpedance value that
+is smaller than the expected value of the impedance under test, but larger than
+the next transimpedance selection.
 
-In some cases, the user may want to select a specific measurement range. The measurement range is mostly affected by the transimpedance of channel 1 and the test signal magnitude. It is recommended to select the transimpedance value that is smaller than the expected value of the impedance under test, but larger than the next transimpedance selection.
-
-For example, if the DUT's expected impedance value is 2kΩ, enter the following in the command line prompt:
+For example, if the DUT's expected impedance value is 2kΩ, enter the following
+in the command line prompt:
 
 ::
 
@@ -329,10 +375,10 @@ The command ``setgain ch1`` modifies the current measurement range of L_CUR (cha
 
 The ADMX2001B uses a balancing bridge architecture. A 100 ohm series resistor Rs protects the source channel. When calculating the current through a DUT or the actual AC magnitude across that DUT, this resistor must be factored in. A transimpedance amplifier is used in measuring the current, and has a 10 ohm input protection resistor R\ :sub:`IN`. A simplified diagram is shown below. In the diagram, Z\ :sub:`X` is the DUT (unknown impedance). The transimpedance amplifier holds the connection point to R\ :sub:`IN` (inverting terminal of the TIA) at 0V. Since R\ :sub:`S`, Z\ :sub:`X` and R\ :sub:`IN` are in series, the DUT current is equal to (magnitude setting Vpk)/(\|Z\ :sub:`X`\ \| + 100Ω + 10Ω).
 
-
 |image10|
 
-Available current gain settings and the transimpedance values associated with them are listed below.
+Available current gain settings and the transimpedance values associated with
+them are listed below.
 
 ======== ================= ==============
 Ch1 Gain Max Input Current Transimpedance
@@ -343,7 +389,10 @@ Ch1 Gain Max Input Current Transimpedance
 3        25uA              49.9kΩ
 ======== ================= ==============
 
-Continuing from the previous example, when the DUT is 2kΩ and the magnitude is set to the maximum setting of 2.25Vpk, the current through the DUT (and into the TIA) is 2.25Vpk/(2kΩ + 110Ω) = 1.06mA. Then selecting ch1 gain to be 1 makes the measurement fit well within the max input current range of 2.5mA.
+Continuing from the previous example, when the DUT is 2kΩ and the magnitude is
+set to the maximum setting of 2.25Vpk, the current through the DUT (and into the
+TIA) is 2.25Vpk/(2kΩ + 110Ω) = 1.06mA. Then selecting ch1 gain to be 1 makes the
+measurement fit well within the max input current range of 2.5mA.
 
 The command ``setgain ch0`` modifies the input voltage range of channel 0 (between terminals H_POT and L_POT). This is less common, but it can be used to improve measurement sensitivity if the impedance under test is smaller than the lead impedance or less than 100Ω. It can also be used if the magnitude of the test signal is small. This can be the case with sensitive loads, or when the test frequency is high.
 
@@ -360,7 +409,9 @@ Ch0 Gain Max Input Voltage Range Gain Factor
 
 The DUT voltage is determined by the set magnitude and the two series protection resistors. The DUT voltage is equal to (magnitude setting Vpk)*(\|Z\ :sub:`X`\ \|)/(\|Z\ :sub:`X`\ \| + 110Ω). For example, to measure a 25Ω DUT with the magnitude set to the maximum setting of 2.25Vpk, the DUT voltage is 2.25Vpk*(25Ω)/(25Ω + 110Ω) = 416.7mVpk, a little under the 625mVpk limit. To utilize the full range, set the ch0 gain = 2.
 
-Voltages across and currents through the DUT that exceed these maximum values for each gain range may result in the ADC saturating, causing the measurement to fail.
+Voltages across and currents through the DUT that exceed these maximum values
+for each gain range may result in the ADC saturating, causing the measurement to
+fail.
 
 Typing the command ``setgain`` will display the gain of both input channels and whether or not autoranging is enabled.
 
@@ -374,7 +425,8 @@ Typing the command ``setgain`` will display the gain of both input channels and 
 
 To turn autoranging back on after setting a manual range type ``setgain auto``
 
-Even though 16 gain combinations are possible, most measurements can be performed with the 7 combinations shown in the table below.
+Even though 16 gain combinations are possible, most measurements can be
+performed with the 7 combinations shown in the table below.
 
 ======== ======== ===========================
 Ch0 Gain Ch1 Gain Impedance Measurement Range
@@ -390,28 +442,45 @@ Ch0 Gain Ch1 Gain Impedance Measurement Range
 
 These are the same ranges that the autoranging algorithm uses. The previously mentioned procedures can be used to calculate the DUT current and voltage. The following section shows how to estimate the impedance value of the DUT to determine the measurement range. Note that these measurement ranges apply for ``magnitude = 1`` and ``offset = 0``. They may not apply for other settings. To calculate whether the ADC will saturate, use the balancing bridge diagram above. Using the sum of the signal magnitude and offset, calculate what the current through the 110Ω resistors + DUT will be, and choose a gain from the Ch1 gain table. Then, calculate the voltage across the DUT due to this current through it, and choose a voltage gain from the Ch0 gain table.
 
-For a 2kΩ DUT where the sum of the magnitude and offset is 1Vpk, using the two equations we find:
+For a 2kΩ DUT where the sum of the magnitude and offset is 1Vpk, using the two
+equations we find:
 
 -  DUT current = 1Vpk/(2kΩ + 110Ω) = 0.47mA, select Ch1 Gain = 1.
 -  DUT voltage = 1Vpk\*2kΩ/(2kΩ + 110Ω) = 948mV, select Ch0 Gain = 0 or 1.
--  The above selection matches the suggested gain combination (0,1) with a given impedance measurement range from 1kΩ to 10kΩ.
+-  The above selection matches the suggested gain combination (0,1) with a given
+   impedance measurement range from 1kΩ to 10kΩ.
 
 Estimating the Impedance and Admittance of Capacitive and Inductive Devices
 ---------------------------------------------------------------------------
 
-Impedance is defined as the opposition to the flow of alternating current. Admittance is the reciprocal of impedance, or how easy is for alternating current to flow. Electrical components such as resistors, capacitors and inductors have a direct relationship between their value and the expected impedance (Z):
+Impedance is defined as the opposition to the flow of alternating current.
+Admittance is the reciprocal of impedance, or how easy is for alternating
+current to flow. Electrical components such as resistors, capacitors and
+inductors have a direct relationship between their value and the expected
+impedance (Z):
 
 Z = X = -1/(2πfC) for capacitors Z = X = 2πfL for inductors Z = R for resistors
 
-Where f is the frequency of the signal; C, L, and R are the component values in Farads, Henries and Ohms respectively. R represents resistance and X reactance.
+Where f is the frequency of the signal; C, L, and R are the component values in
+Farads, Henries and Ohms respectively. R represents resistance and X reactance.
 
 For admittance (Y):
 
-Y = B = 2πfC for capacitors Y = B = -1/(2πfL) for inductors Y = G = 1/R for resistors
+Y = B = 2πfC for capacitors Y = B = -1/(2πfL) for inductors Y = G = 1/R for
+resistors
 
-Where f is the frequency of the signal; C, L, and R are the component values in Farads, Henries and Ohms respectively. G represents conductivity and B susceptance.
+Where f is the frequency of the signal; C, L, and R are the component values in
+Farads, Henries and Ohms respectively. G represents conductivity and B
+susceptance.
 
-All components, regardless of their construction, will show a combination of resistive (conductive) and reactive (susceptive) properties. These properties can be expressed in the form of ideal electrical components combined either in series or parallel. At any given frequency, impedance/admittance can be expressed as a combination of the reactive element (capacitor or inductor) and a resistive element. The total impedance or admittance magnitude can be obtained by calculating the square-root of the sum of squares (RSS) of the two components or
+All components, regardless of their construction, will show a combination of
+resistive (conductive) and reactive (susceptive) properties. These properties
+can be expressed in the form of ideal electrical components combined either in
+series or parallel. At any given frequency, impedance/admittance can be
+expressed as a combination of the reactive element (capacitor or inductor) and a
+resistive element. The total impedance or admittance magnitude can be obtained
+by calculating the square-root of the sum of squares (RSS) of the two components
+or
 
 %%
 
@@ -425,12 +494,11 @@ Z = sqrt(R\*R + X\*X)%%
 Y = sqrt(G\*G + B\*B)%%
 = ===================
 
-
 | To determine the best measurement range for measurement, it is necessary to estimate the impedance or admittance of the device under test at the frequency of measurement using the equations above. A simpler method to obtain an approximate value based on the expected capacitance or inductance value is through the reactance chart shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/reactance_chart_labeled.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 To find the approximate impedance or admittance value for a capacitor or inductor, find the closest expected value assigned to the diagonal lines and find its equivalent impedance/admittance value on the vertical axis at the frequency of interest (on the horizontal axis). For example, the impedance of a 159fF capacitor, which is represented by the red solid diagonal line in the reactance chart, exhibits \|Z|=1MΩ at 1MHz, indicated by the "1M" tick on the vertical axis. This matches the estimated value using equation Z = X = -1/(2πfC). Similarly, for a 15.9nF capacitor, which is shown as blue solid diagonal line in the chart, \|Z|=10KΩ at 1kHz.
 
@@ -441,25 +509,31 @@ The ``average`` command determines how many samples are averaged for each readin
 
 .. tip::
 
-   Averaging increases the time required to return a reading. Values greater than 256 have been observed to have little effect in reducing measurement noise and have a significant impact on measurement speed.
-
+   Averaging increases the time required to return a reading. Values greater
+   than 256 have been observed to have little effect in reducing measurement
+   noise and have a significant impact on measurement speed.
 
 Improving Measurement Precision
 -------------------------------
 
-To ensure precise and accurate measurements, impedance measurements should be performed with appropriate test fixtures. Measurement leads can introduce additional errors due to parasitic impedances that will vary depending on mechanical configuration.
+To ensure precise and accurate measurements, impedance measurements should be
+performed with appropriate test fixtures. Measurement leads can introduce
+additional errors due to parasitic impedances that will vary depending on
+mechanical configuration.
 
 .. tip::
 
-   The test leads included with the EVAL-ADMX2001EBZ kit can introduce fluctuations of a few picofarads depending on their position. This effect becomes more noticeable with test frequencies higher than 100kHz.
-
+   The test leads included with the EVAL-ADMX2001EBZ kit can introduce
+   fluctuations of a few picofarads depending on their position. This effect
+   becomes more noticeable with test frequencies higher than 100kHz.
 
 To ensure repeatable and stable measurements, custom-made fixtures that minimize impedance fluctuations due to mechanical configuration are recommended. For example, to test surface-mount components, fixtures like the `B+K Precision TL89S1 <https://www.digikey.com/en/products/detail/b-k-precision/TL89S1/7915183>`_ or the `Keysight 16034G <https://www.keysight.com/en/pd-1000000474%3Aepsg%3Apro-pn-16034G/smd-test-fixture>`_ are recommended. For a full list of recommended accessories, please refer to the Recommended Accessories Section at the beginning of this user guide.
 
 Performing Parametric Sweeps
 ----------------------------
 
-The ADMX2001B can automatically perform measurements that sweep different measurement parameters such as
+The ADMX2001B can automatically perform measurements that sweep different
+measurement parameters such as
 
 -  Frequency, common in EIS applications (Electrical Impedance Spectroscopy). The frequency increments can be linear or logarithmic.
 -  DC bias, common in C-V measurements for semiconductor devices
@@ -498,13 +572,18 @@ Perform an 11-point logarithmic frequency sweep from 100kHz to 1MHz.
 
 .. note::
 
-   When sweeping parameters, the first value printed will be the swept parameter, followed by the measurement in the display format selected.
-
+   When sweeping parameters, the first value printed will be the swept
+   parameter, followed by the measurement in the display format selected.
 
 Performing DC Resistance Measurements
 -------------------------------------
 
-The DC resistance measurement function can be easily selected by setting the test frequency to zero. In DC mode, since the AC test signal is disabled, the DC offset must be used to generate the test signal. Due to the hardware design, saturation may not be detected if the DC offset is positive; set the DC offset to a negative value to prevent this. DC resistance mode only works in display mode 6, so the display mode must be configured as such.
+The DC resistance measurement function can be easily selected by setting the
+test frequency to zero. In DC mode, since the AC test signal is disabled, the DC
+offset must be used to generate the test signal. Due to the hardware design,
+saturation may not be detected if the DC offset is positive; set the DC offset
+to a negative value to prevent this. DC resistance mode only works in display
+mode 6, so the display mode must be configured as such.
 
 ::
 
@@ -523,7 +602,12 @@ In the DC resistance mode, only the DC resistance value is returned.
 Plotting Measurement Data
 -------------------------
 
-When acquiring multiple measurements or performing sweeps, it is useful to plot the results to observe trends or characteristics of the device under test. TeraTerm allows the user to save a log by going to File->Log, which can then be copy and pasted into a \*.csv file that can be opened by spreadsheet applications such as Microsoft Excel®. The log file must be saved BEFORE taking any measurements.
+When acquiring multiple measurements or performing sweeps, it is useful to plot
+the results to observe trends or characteristics of the device under test.
+TeraTerm allows the user to save a log by going to File->Log, which can then be
+copy and pasted into a \*.csv file that can be opened by spreadsheet
+applications such as Microsoft Excel®. The log file must be saved BEFORE taking
+any measurements.
 
 To plot the acquired data in Microsoft Excel, follow the steps below:
 
@@ -536,7 +620,13 @@ To plot the acquired data in Microsoft Excel, follow the steps below:
 Optimizing Measurement Timing
 -----------------------------
 
-This section describes what settings impact the measurement time and how. It also discusses ways to reduce the measurement time down to ~10-12 ms for single measurements (firmware version 1.3.2 only). The measurement time is dependent on a number of factors. Command transmission time, configured delays, source setup time, ADC acquisition time, count setting, averages, etc. Some factors, like the ADC acquisition time, are dependent on the frequency since the ADC needs to capture a minimum of three cycles of the waveform.
+This section describes what settings impact the measurement time and how. It
+also discusses ways to reduce the measurement time down to ~10-12 ms for single
+measurements (firmware version 1.3.2 only). The measurement time is dependent on
+a number of factors. Command transmission time, configured delays, source setup
+time, ADC acquisition time, count setting, averages, etc. Some factors, like the
+ADC acquisition time, are dependent on the frequency since the ADC needs to
+capture a minimum of three cycles of the waveform.
 
 Delay Usage and Measurement Sequencing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -549,11 +639,15 @@ The commands ``mdelay`` (measurement delay) and ``tdelay`` (trigger delay) can b
 
 To setup ``mdelay`` and ``tdelay``, simply enter the command followed by a value in milliseconds.
 
-Below is a demonstration on how each measurement time parameter fits in the measurement sequence. Note that the sinusoidal excitation is turned on during periods marked with blocks in light/dark green. If enabled, the DC offset will turn on during the tdelay blocks. The example measurement uses a 15.8 Ohm resistor as the DUT.
+Below is a demonstration on how each measurement time parameter fits in the
+measurement sequence. Note that the sinusoidal excitation is turned on during
+periods marked with blocks in light/dark green. If enabled, the DC offset will
+turn on during the tdelay blocks. The example measurement uses a 15.8 Ohm
+resistor as the DUT.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/command_timing_diagram.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 1. Single sample measurement. When measuring one count sample, an ``mdelay`` is observed before each measurement where the single sample is captured.
 
@@ -621,25 +715,37 @@ Optimizing Single Point Measurements
 In version 1.3.2, many optimizations were added to reduce the measurement time.
 
 -  The ``initiate`` and ``trigger`` mode (trigger mode), previously used only for external triggers, is now optimized for faster measurements. See `Trigger Input/Output Ports <https://wiki.analog.com/eval-admx2001ebz>`_ for details on how to use trigger mode (also referred to as the WAIT_FOR_TRIGGER state).
--  When in trigger mode, most commands are disabled. This is because measurement attributes like frequency, gain, magnitude, offset, delays, and others are locked. Locking them means that for each measurement, setup and initialization tasks for those attributes can be skipped because they will always be unchanged. This saves a significant amount of time on each measurement, especially reducing the time between a trigger being received and the measurement acquisition starting.
+-  When in trigger mode, most commands are disabled. This is because measurement
+   attributes like frequency, gain, magnitude, offset, delays, and others are
+   locked. Locking them means that for each measurement, setup and
+   initialization tasks for those attributes can be skipped because they will
+   always be unchanged. This saves a significant amount of time on each
+   measurement, especially reducing the time between a trigger being received
+   and the measurement acquisition starting.
 
    -  Sweeps do not benefit from this optimization, because the sweep attribute cannot be updated in trigger mode.
-   -  If enabled, the DC offset is always on in trigger mode. The autorange must be off to enable the DC offset. Keeping the DC offset enabled constantly can be useful when testing with DUTs that need a long DC settling time, as that delay does not need to be repeated for every measurement.
+   -  If enabled, the DC offset is always on in trigger mode. The autorange must
+      be off to enable the DC offset. Keeping the DC offset enabled constantly
+      can be useful when testing with DUTs that need a long DC settling time, as
+      that delay does not need to be repeated for every measurement.
 
 -  The measurement is only reported over the active interface (UART commmand line interface or SPI). The active interface is set based on the most recently sent command. For instance, if the command ``initiate`` is sent over UART, and then the command TRIGGER (0x18) is sent over SPI, the result will be readable in the SPI FIFO and not accessible on UART. If INITIATE (0x17) is sent over SPI, and then ``trigger`` is sent over UART, the result will print immediately to UART and not be accessible in the SPI FIFO. See :doc:`ADMX2001B SPI Interface </wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz/spi-interface>` for details on how to operate the SPI interface.
 
-   -  The SPI interface is the fastest and can save multiple milliseconds over using the UART (command line) interface.
+   -  The SPI interface is the fastest and can save multiple milliseconds over
+      using the UART (command line) interface.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/trigger_mode.png
    :align: center
-   :width: 800px
+   :width: 800
 
 --------------
 
-To achieve the fastest single-point measurement time, there are a few points to consider.
+To achieve the fastest single-point measurement time, there are a few points to
+consider.
 
 -  Interface: The SPI interface should be used to receive the measurement data. Either interface can be used to configure measurement settings, this will not impact the speed of each measurement. The active interface is updated every time a command is sent, to whichever interface sent that command.
--  Trigger source: In trigger mode, there are three options for the trigger source.
+-  Trigger source: In trigger mode, there are three options for the trigger
+   source.
 
    -  The ``trigger`` command can be sent over the UART (CLI). This is the slowest method, and since ``trigger`` will be the most recent command, it will always report the result over the UART (CLI).
    -  The TRIGGER (0x18) command can be sent over SPI. This is the preferred method as it is fast, and easy to set up. It also guarantees that the active interface will be set to SPI.
@@ -649,17 +755,23 @@ To achieve the fastest single-point measurement time, there are a few points to 
 
    -  There is also support for an "infinite" trigger mode. Run ``tcount 65536`` to enter this mode; the only way to exit trigger mode in this case is with the ``abort`` command. Normal ``z`` measurements are disabled when ``tcount`` is set to 65536.
 
--  Autorange: The autorange should be disabled for the fastest measurements. The autorange tests the ideal gain by taking multiple measurements with different gain settings, and checking for ADC saturation. Therefore, it can significantly increase the measurement time.
+-  Autorange: The autorange should be disabled for the fastest measurements. The
+   autorange tests the ideal gain by taking multiple measurements with different
+   gain settings, and checking for ADC saturation. Therefore, it can
+   significantly increase the measurement time.
 
    -  When using the autorange with trigger mode, the autorange test is performed when the ``initiate`` command runs. See the flow chart above. Leaving and re-entering trigger mode will update the selected gain.
 
 -  Delays: The trigger delay (tdelay) and measurement delay (mdelay) directly impact the measurement time. In trigger mode, the tdelay is applied once per supplied trigger, and the mdelay is supplied once per count (not tcount). Therefore, a typical single measurement will have tdelay+mdelay added on. The default tdelay is 4 ms; this can typically be set to 0 ms with no negative impacts; this is recommended to optimize the measurement time. The default mdelay is 1 ms; at frequencies above 10 kHz, setting this to 0 ms will cause the ADC to capture some data before the AC source has fully turned on. This typically has no impact on the measurement result, allowing 1 ms to be saved per measurement, but it should be tested with each setup.
 -  Frequency: the measurement time is highly dependent on the test frequency below ~3 kHz. This is because the system tries to capture a minimum of 3 cycles of the excitation waveform. See the log plot below for the measurement time across frequency.
--  Display mode: the measurement time is also dependent on the display mode. Rectangular formats like display mode 6 (R, X) and 15 (G, B) are the fastest, as they require the least processing. Modes with angle in degrees or radians (polar form) can take 2-3 extra milliseconds; see the chart below.
+-  Display mode: the measurement time is also dependent on the display mode.
+   Rectangular formats like display mode 6 (R, X) and 15 (G, B) are the fastest,
+   as they require the least processing. Modes with angle in degrees or radians
+   (polar form) can take 2-3 extra milliseconds; see the chart below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/measurement_time.png
    :align: center
-   :width: 1200px
+   :width: 1200
 
 \*Typical measurement times above are based on the following settings:
 
@@ -680,39 +792,62 @@ Calibration Procedure
 
 A few milliseconds after power up, the ADMX2001B is ready to perform measurements. However, any readings and their units are scaled and assigned using nominal circuit parameters. Measurement accuracy can only be evaluated after performing calibration on the module with an external calibration source with certified traceability. For example, the `Keysight E4980A <https://www.keysight.com/us/en/product/E4980A/precision-lcr-meter-20-hz-2-mhz.html>`_ can be used.
 
-There are three basic calibration steps involved in calibrating the module: open calibration, short calibration, and load calibration. The first two correct the module and test lead parasitics. The latter provides traceability to an external source. The calibration steps must be performed in the order open->short->load. Open and load calibration are the most important. Short calibration may need to be skipped in certain gain ranges where the current ADC would saturate. Open calibration may need to be skipped in gain ranges that the voltage ADC would saturate.
+There are three basic calibration steps involved in calibrating the module: open
+calibration, short calibration, and load calibration. The first two correct the
+module and test lead parasitics. The latter provides traceability to an external
+source. The calibration steps must be performed in the order open->short->load.
+Open and load calibration are the most important. Short calibration may need to
+be skipped in certain gain ranges where the current ADC would saturate. Open
+calibration may need to be skipped in gain ranges that the voltage ADC would
+saturate.
 
 |image11| |image12|
 
 .. tip::
 
-   When performing load calibration for a given gain setting and frequency, the optimal load device (usually a resistor) is one with an impedance magnitude close to that of the eventual DUT. The best accuracy at a certain gain and frequency will be with DUTs of a similar impedance to the one used in calibration.
+   When performing load calibration for a given gain setting and frequency, the
+   optimal load device (usually a resistor) is one with an impedance magnitude
+   close to that of the eventual DUT. The best accuracy at a certain gain and
+   frequency will be with DUTs of a similar impedance to the one used in
+   calibration.
 
    
-   Resistors, capacitors or inductors can be used for calibration. High-quality resistors (e.g. thin film or metal film), air capacitors, and gas-filled capacitors tend to provide the best results. Alternatively, C0G/NP0 type ceramic capacitors can be used as well. The true value of these components must be determined with traceable measurements from another meter, such as the Keysight E4980A.
+   Resistors, capacitors or inductors can be used for calibration. High-quality
+   resistors (e.g. thin film or metal film), air capacitors, and gas-filled
+   capacitors tend to provide the best results. Alternatively, C0G/NP0 type
+   ceramic capacitors can be used as well. The true value of these components
+   must be determined with traceable measurements from another meter, such as
+   the Keysight E4980A.
 
-
-Each measurement front-end configuration (ch0 and ch1 gain combination) needs to be calibrated separately. If calibration is performed for only one gain combination, calibration needs to be carried out again if the front-end configuration changes. There are a total of 16 possible gain combinations based on the 4 gain and transimpedance ranges for channel 0 and channel 1 respectively.
+Each measurement front-end configuration (ch0 and ch1 gain combination) needs to
+be calibrated separately. If calibration is performed for only one gain
+combination, calibration needs to be carried out again if the front-end
+configuration changes. There are a total of 16 possible gain combinations based
+on the 4 gain and transimpedance ranges for channel 0 and channel 1
+respectively.
 
 The autorange will only choose between the 7 gain combinations that have a zero in at least one position. These are shown in the impedance measurement range table within the section `Selecting a Measurement Range <https://wiki.analog.com/eval-admx2001ebz>`_. If all measurements will be done with the autorange or with these gains, then the other gain settings do not need to be calibrated. In versions 1.2.0 and older, if the user calibrates at a specific gain and frequency, then changes the frequency and calibrates again, the user will overwrite the result of the first calibration. In version 1.2.2, support for calibration over frequency was added. See `Calibration Over Frequency <https://wiki.analog.com/eval-admx2001ebz>`_ for more details.
 
 .. important::
 
-   Each calibration point is for a specific frequency. Measurements taken at a different frequency may be out of tolerance. Always calibrate as near as possible to the intended test frequency.
-
+   Each calibration point is for a specific frequency. Measurements taken at a
+   different frequency may be out of tolerance. Always calibrate as near as
+   possible to the intended test frequency.
 
 Calibration Steps
 -----------------
 
 To calibrate the module in a specific gain combination, follow the steps below:
 
--  Select the desired measurement configuration (gain, frequency, magnitude and offset)
+-  Select the desired measurement configuration (gain, frequency, magnitude and
+   offset)
 
    -  Autorange must be disabled during calibration.
 
 -  Set the averaging to at least 200 samples.
 -  Ensure the load select switches are in the DUT and GND positions, described in `Basic Hardware Setup <https://wiki.analog.com/eval-admx2001ebz>`_
--  Connect the H_POT and H_CUR terminal together and the L_POT and L_CUR terminals together to form two separate connection pairs
+-  Connect the H_POT and H_CUR terminal together and the L_POT and L_CUR
+   terminals together to form two separate connection pairs
 
    -  If using the test clips, place them so the alligator clips are separated by the same distance as they will be when the DUT is connected. Each clip should be clipped to a very short scrap of uninsulated wire, which serves to improve the connection between each half of the clip
    -  An alternative is to use BNC cables to connect the H_POT/H_CUR pairs and the L_POT/L_CUR pairs.
@@ -740,17 +875,19 @@ After completing the steps above, calibration coefficients are generated and sto
 
    ADMX2001>calibrate commit 1689959855
 
-This will store the calibration coefficients in the RAM to the flash, and set the date and time stamp of the calibration to 07/21/23 at 05:17 UTC.
+This will store the calibration coefficients in the RAM to the flash, and set
+the date and time stamp of the calibration to 07/21/23 at 05:17 UTC.
 
 .. note::
 
    To help ensure calibration integrity, the calibration coefficients stored in flash are password protected. The default password is ``Analog123`` and must be entered after running ``calibrate commit`` to save the coefficients. The password can be changed with the ``calibrate password`` command. Maximum password length is 12 characters.
 
-
 Calibration Example
 -------------------
 
-Calibrate the gain setting (0, 1) at 100kHz with a resistor of value 1k Ohms. The true resistance Rt from the E4980A at 100kHz was measured as 1000.019 Ohms, and the true reactance Xt was 0.822 Ohms.
+Calibrate the gain setting (0, 1) at 100kHz with a resistor of value 1k Ohms.
+The true resistance Rt from the E4980A at 100kHz was measured as 1000.019 Ohms,
+and the true reactance Xt was 0.822 Ohms.
 
 ::
 
@@ -851,7 +988,10 @@ The commands for reading and writing calibration coefficients detailed in `Readi
 Preloaded Calibration Sets
 --------------------------
 
-Version 1.2.2 also adds support for ADMX2001B modules to ship with a set of calibration coefficients intended to help with evaluating the board. Although the firmware supports it, boards that are currently shipping will not have calibration coefficients preloaded. This will be a future development.
+Version 1.2.2 also adds support for ADMX2001B modules to ship with a set of
+calibration coefficients intended to help with evaluating the board. Although
+the firmware supports it, boards that are currently shipping will not have
+calibration coefficients preloaded. This will be a future development.
 
 Preloaded coefficients may not apply to a given test setup and their accuracy is not guaranteed. If the board came with them pre-loaded, then the below new commands apply: ``calibrate switch <evalkit/default>`` choosing evalkit will apply the preloaded coefficients. Choosing default will apply user generated coefficients. Generating calibration coefficients will automatically change the active set to default. ``calibrate`` with no arguments will report the active set. The evalkit set cannot be modified or erased. Only the default (user) set should be modified or erased.
 
@@ -864,7 +1004,7 @@ Compensation is an additional measurement adjustment function designed to accoun
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/calibration_compensation_boundary_2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -873,7 +1013,7 @@ EVAL-ADMX2001EBZ Terminal Description
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz_diagram_3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 +-----------------------+---------------------------------------------------------------------------------------------------------------------------+
 | Terminal Name         | Description                                                                                                               |
@@ -921,7 +1061,9 @@ Trigger Input / Output Ports
 
 The EVAL-ADMX2001EBZ has SMA terminals for the trigger input and output ports. These can be used to synchronize multiple modules or control measurement timing with an external instrument. To use the trigger input, the module must be configured to external ``trig_mode`` using the command ``trig_mode <internal/external>``. By default, the board is in internal ``trig_mode``, and ignores pulses on the TRIG_IN port. Next, set the trigger count with ``tcount <count>``. This controls how many external triggers the module will respond to before exiting the WAIT_FOR_TRIGGER state. There is also an "infinite" trigger setting; if the tcount is set to 65536, then it will respond to unlimited triggers and never exit the WAIT_FOR_TRIGGER state automatically. Now, type the command ``initiate``. The module will enter the WAIT_FOR_TRIGGER state. Most commands are disabled in this state. The module will automatically return to the IDLE state after receiving ``tcount`` triggers, or immediately if it receives the ``abort`` command. While in the WAIT_FOR_TRIGGER state, a software trigger can be provided with the command ``trigger``, in both internal or external ``trig_mode``. If the ``trig_mode`` is external, then a 3.3V 15μs pulse (min) to the TRIG_IN port will be registered as a trigger.
 
-When a measurement is initiated from the WAIT_FOR_TRIGGER state, either by an external trigger or software trigger, it will generate a 3.3V 15μs pulse on the TRIG_OUT port.
+When a measurement is initiated from the WAIT_FOR_TRIGGER state, either by an
+external trigger or software trigger, it will generate a 3.3V 15μs pulse on the
+TRIG_OUT port.
 
 Immediately after running ``initiate``, the autorange algorithm will run (if the autorange is enabled). The gain chosen by this instance of the autorange will be locked in for subsequent measurements in trigger mode. If the DC offset is enabled, then the DC offset will be applied as soon as the ``initiate`` command runs. The DC offset and autorange cannot be used at the same time.
 
@@ -930,7 +1072,8 @@ Warning: when the ``initiate`` command is run, the board will reload the calibra
 PMOD Headers
 ------------
 
-The EVAL-ADMX2001EBZ features PMOD_IN and PMOD_OUT headers for interfacing with a host over SPI.
+The EVAL-ADMX2001EBZ features PMOD_IN and PMOD_OUT headers for interfacing with
+a host over SPI.
 
 ========== ========== ============================================
 Pin Number Pinout     Note
@@ -949,7 +1092,8 @@ Pin Number Pinout     Note
 12         VCC        3.3V, PMOD_OUT only. VCC current not limited
 ========== ========== ============================================
 
-Pins 6 and 12 are No Connect on PMOD_IN (P12). On PMOD_OUT (P11), they connect to the 3.3V supply, and there is no current limiting on the board.
+Pins 6 and 12 are No Connect on PMOD_IN (P12). On PMOD_OUT (P11), they connect
+to the 3.3V supply, and there is no current limiting on the board.
 
 Digital Output Pins
 -------------------
@@ -976,7 +1120,7 @@ ADMX2001B Pin Configuration and Function Descriptions
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx2001b_pinout_top.png
    :align: center
-   :width: 600px
+   :width: 600
 
 +-------------------------------------------+-------------+-----------------------------------------------------------------------------------------------+
 | Pin Number                                | Mnemonic    | Description                                                                                   |
@@ -1048,7 +1192,8 @@ Firmware Updates
 
 The ADMX2001B module firmware is user-updatable. Programming files must be requested by contacting admx-support@analog.com. Make a myAnalog account on :adi:`(analog.com) <en/index.html>`, by clicking in the top right. Then, email admx-support@analog.com, and mention the email associated with the myAnalog account.
 
-Warning: updating between certain firmware versions can cause saved calibration coefficients to be lost.
+Warning: updating between certain firmware versions can cause saved calibration
+coefficients to be lost.
 
 **Equipment List:**
 
@@ -1062,10 +1207,14 @@ Warning: updating between certain firmware versions can cause saved calibration 
 -  Python 3.7 or greater
 -  Latest Intel Quartus Prime Programmer And Tools
 
-   -  Navigate to the downloads page for the latest Quartus Prime Lite Edition, and click the "Additional Software" tab. Alternatively, the full Quartus Prime Lite Edition can be used. Both are free, but the programmer is a smaller download
+   -  Navigate to the downloads page for the latest Quartus Prime Lite Edition,
+      and click the "Additional Software" tab. Alternatively, the full Quartus
+      Prime Lite Edition can be used. Both are free, but the programmer is a
+      smaller download
 
 -  Drivers installed for the Altera USB Blaster
--  Firmware programming folder containing \*.pof file (downloaded from Analog.com, request from admx-support@analog.com)
+-  Firmware programming folder containing \*.pof file (downloaded from
+   Analog.com, request from admx-support@analog.com)
 
 **Board Programming Setup**
 
@@ -1077,7 +1226,8 @@ Warning: updating between certain firmware versions can cause saved calibration 
 Update Using Installation Script
 --------------------------------
 
-Versions 1.2.4+ comes bundled with an installation script to simplify the firmware installation process.
+Versions 1.2.4+ comes bundled with an installation script to simplify the
+firmware installation process.
 
 This script is the preferred installation method.
 
@@ -1090,22 +1240,33 @@ This script is the preferred installation method.
 
 -  Run the following command: ``python admx2001_flash_pof.py --pof "C:\Analog Devices\Admx2001Firmware-Relx.y.z\Firmware\admx_lcr_encrypted.pof"``
 
-   -  Ensure that x.y.z is replaced with the appropriate release number (1.2.4 for example)
+   -  Ensure that x.y.z is replaced with the appropriate release number (1.2.4
+      for example)
 
--  Wait until the message "Programming POF completed successfully" is displayed in the terminal. It may take around 20 to 30 seconds for the process to complete.
+-  Wait until the message "Programming POF completed successfully" is displayed
+   in the terminal. It may take around 20 to 30 seconds for the process to
+   complete.
 
    -   Do not unplug the board or otherwise interrupt the programming process.
 
--  When the programming is completed (message displayed and prompt appears) close the terminal and unplug the USB blaster. The firmware update is complete.
+-  When the programming is completed (message displayed and prompt appears)
+   close the terminal and unplug the USB blaster. The firmware update is
+   complete.
 
 --------------
 
 Update Using Manual Programmer
 ------------------------------
 
-Versions 1.2.2 and older do not come bundled with an installation script. The Quartus Prime Programmer interface can be used to perform the update. The installation script is the preferred method, as selecting the wrong settings in the manual programming tool can cause the board to no longer boot. It will need to be returned/swapped.
+Versions 1.2.2 and older do not come bundled with an installation script. The
+Quartus Prime Programmer interface can be used to perform the update. The
+installation script is the preferred method, as selecting the wrong settings in
+the manual programming tool can cause the board to no longer boot. It will need
+to be returned/swapped.
 
-If there are issues preventing the installation script from working to program the board, the manual programmer method can be used. In this case, contact admx-support@analog.com for assistance using the manual programmer.
+If there are issues preventing the installation script from working to program
+the board, the manual programmer method can be used. In this case, contact
+admx-support@analog.com for assistance using the manual programmer.
 
 --------------
 
@@ -1143,11 +1304,20 @@ The full release notes are included with each firmware download.
 Python Scripting
 ~~~~~~~~~~~~~~~~
 
-To facilitate easier measurement optimization on a PC, there is a library of Python functions which make it easy to operate the command-line interface from a Python script. Instead of typing commands over TeraTerm, the library accesses the Serial port directly, and calling the library functions will execute the same commands that are normally typed into the terminal emulator.
+To facilitate easier measurement optimization on a PC, there is a library of
+Python functions which make it easy to operate the command-line interface from a
+Python script. Instead of typing commands over TeraTerm, the library accesses
+the Serial port directly, and calling the library functions will execute the
+same commands that are normally typed into the terminal emulator.
 
 These Python libraries are currently accessible by request. First, make a myAnalog account on :adi:`(analog.com) <en/index.html>` by clicking in the top right. Then, email admx-support@analog.com, and mention the email associated with the myAnalog account.
 
-The Python script download includes an example measurement sweep script, which shows how to set up the Serial port, configure measurements and begin collecting data. More example scripts are coming in the future. Nearly all functions found in the command-line interface have corresponding Python functions in the library. These functions also perform a certain degree of error checking. This library is for evaluation purposes only.
+The Python script download includes an example measurement sweep script, which
+shows how to set up the Serial port, configure measurements and begin collecting
+data. More example scripts are coming in the future. Nearly all functions found
+in the command-line interface have corresponding Python functions in the
+library. These functions also perform a certain degree of error checking. This
+library is for evaluation purposes only.
 
 Version 1.1.0 includes a graphical user interface.
 
@@ -1156,9 +1326,16 @@ Version 1.1.0 includes a graphical user interface.
 Python Graphical User Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since Python Evaluation Script version 1.1.0, the download package includes a Python based graphical user interface (GUI). The GUI does not yet support all features of the ADMX2001B, but it provides an quicker start and easier experimentation compared to using the UART command-line interface (CLI). The GUI communicates with the board over the UART CLI in the background, so any open terminals connected to the board need to be closed prior to using the GUI.
+Since Python Evaluation Script version 1.1.0, the download package includes a
+Python based graphical user interface (GUI). The GUI does not yet support all
+features of the ADMX2001B, but it provides an quicker start and easier
+experimentation compared to using the UART command-line interface (CLI). The GUI
+communicates with the board over the UART CLI in the background, so any open
+terminals connected to the board need to be closed prior to using the GUI.
 
-The GUI requires some 3rd-party Python libraries. The download includes a README.txt file (in the /GUI/ folder) with instructions on how to download these libraries and run the GUI.
+The GUI requires some 3rd-party Python libraries. The download includes a
+README.txt file (in the /GUI/ folder) with instructions on how to download these
+libraries and run the GUI.
 
 Currently, the GUI supports:
 
@@ -1173,7 +1350,7 @@ Currently, the GUI supports:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/updated_admx2001b_python_gui_example.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The Python GUI is bundled with the latest firmware downloads and available by request. First, make a myAnalog account on :adi:`(analog.com) <en/index.html>` by clicking in the top right. Then, email admx-support@analog.com, and mention the email associated with the myAnalog account.
 
@@ -1185,26 +1362,26 @@ Support
 For support, general questions, or firmware update help, reach out to admx-support@analog.com. `External Link <http://example.com>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz_basic_connections_labeled.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_load.png
-   :width: 450px
+   :width: 450
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/img_0937.jpg
-   :width: 450px
+   :width: 450
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/bnc_load.png
-   :width: 450px
+   :width: 450
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/photo_setup_labeled.jpg
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/cal_connections_5.jpg
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_config_test_clips_2.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/help_command_printout_teraterm.png
-   :width: 1000px
+   :width: 1000
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/help_display_teraterm.png
-   :width: 1000px
+   :width: 1000
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/source_and_measurement_channels_v3_renumbered.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_short_load_config.png
-   :width: 800px
+   :width: 800
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_short_load_config_photo.png
-   :width: 800px
+   :width: 800

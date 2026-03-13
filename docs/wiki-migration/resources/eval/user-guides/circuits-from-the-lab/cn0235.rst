@@ -48,7 +48,6 @@ General Setup
 
    Figure 1: CN0235 general setup
 
-
 -   **SDP USB connection** – Connect to PC through USB Type A to mini-USB.
 -   **Jumper Configuration** – Sets AD8280 and AD7280A configuration. Jumper configuration setting is explained further on the next section.
 -   **VIN0 to VIN6** – Lithium Ion battery stacks input. This connector is used when only one device is required.
@@ -57,13 +56,11 @@ General Setup
 
    \ NOTE: Please see `AD7280A Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf>`_ page 17 and page 22 for proper battery connection for different number of cells.
 
-
 -   **VIN7 to VIN12** – Lithium Ion battery stacks input. This connector is used when two devices are required for the application.
 
 .. note::
 
    \ NOTE: Please see `AD7280A Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf>`_ page 18 for proper battery cell connection using two devices.
-
 
 -   **Power Supply** – The board may be powered up using a +6V wall-wart connected to the barrel jack or using an external power supply configured to +6V.
 -   **SPI breakout pins** – These are the breakout pins of the digital lines coming from the SDP board to AD7280A devices.
@@ -103,7 +100,6 @@ Jumper Configuration
 | J30 and J12 | AD7280A’s Vreg and ground male headers                                                                                      | leave it open                                                                                                                                                                                                    |
 +-------------+-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 HOW TO INSTALL THE EVALUATION SOFTWARE
 --------------------------------------
 
@@ -113,11 +109,9 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
    \ NOTE: It is recommended that you install the `CN0235 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0235>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0235\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235-software-1.png
 
 -  Click **Next** to view the installation review page
-
 
 |image3|
 
@@ -129,8 +123,9 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image5|
 
@@ -141,7 +136,6 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image6|
 
@@ -154,10 +148,7 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 Connecting the Hardware
 -----------------------
 
-
 | |image8|
-
-
 
 - **Step 1**. Connect the :adi:`EVAL-CN0235-SDPZ` to :adi:`EVAL-SDP-CB1Z <en/system-demonstration-platform/evaluation/index.html>`(SDP Board) through the 120-pin SMD connector. Nylon hardware should be used to firmly secure the two boards, using the holes provided at the ends of the 120-pin connectors.
 - **Step 2**. Do the jumper setting correctly based on desired setting for evaluation based on the jumper configuration provided on :doc:`Jumper Configuration section </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0179>`.
@@ -174,7 +165,6 @@ USING THE EVALUATION SOFTWARE
 Software Front Panel
 ~~~~~~~~~~~~~~~~~~~~
 
-
 | |image9|
 
 -  **Connect to SDP-B Board Button**
@@ -187,15 +177,18 @@ Software Front Panel
 
 -  **Enable Real Time ADC Reads**
 
-   -  When this button is checked, continuous data acquisition by the ADC will start.
+   -  When this button is checked, continuous data acquisition by the ADC will
+      start.
 
 -  **Read ADC**
 
-   -  When this button is clicked, a single capture read will be performed by the ADC.
+   -  When this button is clicked, a single capture read will be performed by
+      the ADC.
 
 -  **Software Reset**
 
-   -  When this button is clicked, all the configuration changes on the evaluation software will be revert back to its default state.
+   -  When this button is clicked, all the configuration changes on the
+      evaluation software will be revert back to its default state.
 
 -  **Hardware PD**
 
@@ -206,8 +199,6 @@ Software Front Panel
    -  . Clicking this button will put :adi:`ad7280A` in to Software Power-Down mode which requires only 3.8 mA maximum current. This button will also disable :adi:`AD8280`.
 
 -  **Software/Hardware PU**
-
-
 
 - Clicking this button will power up the :adi:`ad7280A` when it’s coming from a software power down or hardware power down mode. This button will not enable the :adi:`AD8280`.
    **Enable/Disable AD8280**
@@ -233,25 +224,32 @@ Software Front Panel
 Voltage(codes) tab
 ~~~~~~~~~~~~~~~~~~
 
-The voltage (code format) tab features two types of display namely the tanks and graph display:
+The voltage (code format) tab features two types of display namely the tanks and
+graph display:
 
 | **Tank Display**
 | |image10|
 
-The tank display provides the ADC code equivalent of the reading in bar-like comparison for each channel. This type of display provides the latest reading of the Lithium ion battery cells.
+The tank display provides the ADC code equivalent of the reading in bar-like
+comparison for each channel. This type of display provides the latest reading of
+the Lithium ion battery cells.
 
 | **Graph Display**
 | |image11|
 
-The graphical display tab provides the user with more features or options for the reading analysis.
+The graphical display tab provides the user with more features or options for
+the reading analysis.
 
 -  **Codes vs Sample graph**
 
-   -  This plot provides the user with the behavior of each cells in a form of a line chart. This will enable the user to picture out the current behavior of the each lithium ion’s cell with time.
+   -  This plot provides the user with the behavior of each cells in a form of a
+      line chart. This will enable the user to picture out the current behavior
+      of the each lithium ion’s cell with time.
 
 -  **Latest channel code value**
 
-   -  Similar with the tank display, this is the latest reading of the Lithium ion battery cells by the AD7280A.
+   -  Similar with the tank display, this is the latest reading of the Lithium
+      ion battery cells by the AD7280A.
 
 -  **Plot navigator**
 
@@ -259,9 +257,11 @@ The graphical display tab provides the user with more features or options for th
 
 -  **Additional graph functions**
 
-   -  The three additional acts as a pointer, plot view modifier and manual plot navigator respectively.
+   -  The three additional acts as a pointer, plot view modifier and manual plot
+      navigator respectively.
 
-A right-click on the graph will give the user additional plot and data control features.
+A right-click on the graph will give the user additional plot and data control
+features.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235_graph_display_rightclick.png
 
@@ -270,25 +270,32 @@ A right-click on the graph will give the user additional plot and data control f
 Voltage(Volts) tab
 ~~~~~~~~~~~~~~~~~~
 
-The voltage (volts format) tab features two types of display namely the tanks and graph display:
+The voltage (volts format) tab features two types of display namely the tanks
+and graph display:
 
 | **Tank Display**
 | |image12|
 
-The tank display provides the ADC voltage equivalent of the reading in bar-like comparison for each channel. This type of display provides the latest reading of the Lithium ion battery cells.
+The tank display provides the ADC voltage equivalent of the reading in bar-like
+comparison for each channel. This type of display provides the latest reading of
+the Lithium ion battery cells.
 
 | **Graph Display**
 | |image13|
 
-The graphical display tab provides the user with more features or options for the measurement analysis.
+The graphical display tab provides the user with more features or options for
+the measurement analysis.
 
 -  **Codes vs Sample graph**
 
-   -  This plot provides the user with the behavior of each cells in a form of a line chart. This will enable the user to picture out the current behavior of the each lithium ion’s cell with time.
+   -  This plot provides the user with the behavior of each cells in a form of a
+      line chart. This will enable the user to picture out the current behavior
+      of the each lithium ion’s cell with time.
 
 -  **Latest channel code value**
 
-   -  Similar with the tank display, this is the latest reading of the Lithium ion battery cells by the AD7280A.
+   -  Similar with the tank display, this is the latest reading of the Lithium
+      ion battery cells by the AD7280A.
 
 -  **Plot navigator**
 
@@ -296,9 +303,11 @@ The graphical display tab provides the user with more features or options for th
 
 -  **Additional graph functions**
 
-   -  The three additional acts as a pointer, plot view modifier and manual plot navigator respectively.
+   -  The three additional acts as a pointer, plot view modifier and manual plot
+      navigator respectively.
 
-A right-click on the graph will give the user additional plot and data control features.
+A right-click on the graph will give the user additional plot and data control
+features.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235_graph_display_rightclick.png
 
@@ -307,25 +316,32 @@ A right-click on the graph will give the user additional plot and data control f
 Temperature(codes) tab
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Temperature (codes format) tab features two types of display namely the tanks and graph display:
+The Temperature (codes format) tab features two types of display namely the
+tanks and graph display:
 
 | **Tank Display**
 | |image14|
 
-The tank display provides the ADC code temperature reading of the thermistor in bar-like comparison for each channel. This type of display provides the latest reading of the Lithium ion battery cells.
+The tank display provides the ADC code temperature reading of the thermistor in
+bar-like comparison for each channel. This type of display provides the latest
+reading of the Lithium ion battery cells.
 
 | **Graph Display**
 | |image15|
 
-The graphical display tab provides the user with more features or options for the reading analysis.
+The graphical display tab provides the user with more features or options for
+the reading analysis.
 
 -  **Codes vs Sample graph**
 
-   -  This plot provides the user with the behavior of each cells in a form of a line chart. This will enable the user to picture out the current behavior of the each lithium ion’s cell with time.
+   -  This plot provides the user with the behavior of each cells in a form of a
+      line chart. This will enable the user to picture out the current behavior
+      of the each lithium ion’s cell with time.
 
 -  **Latest channel code value**
 
-   -  Similar with the tank display, this is the latest reading of the Lithium ion battery cells by the AD7280A.
+   -  Similar with the tank display, this is the latest reading of the Lithium
+      ion battery cells by the AD7280A.
 
 -  **Plot navigator**
 
@@ -333,9 +349,11 @@ The graphical display tab provides the user with more features or options for th
 
 -  **Additional graph functions**
 
-   -  The three additional functions act as a pointer, plot view modifier and manual plot navigator respectively.
+   -  The three additional functions act as a pointer, plot view modifier and
+      manual plot navigator respectively.
 
-A right-click on the graph will give the user additional plot and data control features.
+A right-click on the graph will give the user additional plot and data control
+features.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235_graph_display_rightclick.png
 
@@ -344,25 +362,32 @@ A right-click on the graph will give the user additional plot and data control f
 Temperature(Volts) tab
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The temperature (volts format) tab features two types of display namely the tanks and graph display:
+The temperature (volts format) tab features two types of display namely the
+tanks and graph display:
 
 | **Tank Display**
 | |image16|
 
-The tank display provides the ADC voltage equivalent of the thermistor reading in bar-like comparison for each channel. This type of display provides the latest reading of the Lithium ion battery cells.
+The tank display provides the ADC voltage equivalent of the thermistor reading
+in bar-like comparison for each channel. This type of display provides the
+latest reading of the Lithium ion battery cells.
 
 | **Graph Display**
 | |image17|
 
-The graphical display tab provides the user with more features or options for the measurement analysis.
+The graphical display tab provides the user with more features or options for
+the measurement analysis.
 
 -  **Codes vs Sample graph**
 
-   -  This plot provides the user with the behavior of each cells in a form of a line chart. This will enable the user to picture out the current behavior of the each lithium ion’s cell with time.
+   -  This plot provides the user with the behavior of each cells in a form of a
+      line chart. This will enable the user to picture out the current behavior
+      of the each lithium ion’s cell with time.
 
 -  **Latest channel code value**
 
-   -  Similar with the tank display, this is the latest reading of the Lithium ion battery cells by the AD7280A.
+   -  Similar with the tank display, this is the latest reading of the Lithium
+      ion battery cells by the AD7280A.
 
 -  **Plot navigator**
 
@@ -370,9 +395,11 @@ The graphical display tab provides the user with more features or options for th
 
 -  **Additional graph functions**
 
-   -  The three additional acts as a pointer, plot view modifier and manual plot navigator respectively.
+   -  The three additional acts as a pointer, plot view modifier and manual plot
+      navigator respectively.
 
-A right-click on the graph will give the user additional plot and data control features.
+A right-click on the graph will give the user additional plot and data control
+features.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235_graph_display_rightclick.png
 
@@ -390,11 +417,14 @@ Configure AD7280A tab
 
 -  **Voltage and Temperature Thresholds**
 
-   -  Sets the desired ceiling and floor value for voltage and temperature, these values will determine when the warning indicators will turn on.
+   -  Sets the desired ceiling and floor value for voltage and temperature,
+      these values will determine when the warning indicators will turn on.
 
 -  **Conversion Averaging**
 
-   -  Sets the AD7280’s conversion averaging feature where the acquisition and conversion of each cell input is repeated before the results are read back through SPI interface.
+   -  Sets the AD7280’s conversion averaging feature where the acquisition and
+      conversion of each cell input is repeated before the results are read back
+      through SPI interface.
 
 -  **Acquisition Time**
 
@@ -406,7 +436,8 @@ Configure AD7280A tab
 
 -  **Self-Test AD7280A**
 
-   -  This button initiates the self-test conversion of AD7280A, this feature allows the ADC and reference buffer’s operation to be verified.
+   -  This button initiates the self-test conversion of AD7280A, this feature
+      allows the ADC and reference buffer’s operation to be verified.
 
 .. tip::
 
@@ -414,9 +445,11 @@ Configure AD7280A tab
 
    *Code 970* and *Code 990*.
 
-
 - **Cell Balance Outputs**
-   -  Sets the cell balance output of AD7280A to drive the gate of external transistors providing 0V or 5V output with respect to the absolute amplitude of the negative terminal of the battery cell that is being balanced.
+   -  Sets the cell balance output of AD7280A to drive the gate of external
+      transistors providing 0V or 5V output with respect to the absolute
+      amplitude of the negative terminal of the battery cell that is being
+      balanced.
 
 -  **Cell Balance Timers**
 
@@ -430,7 +463,6 @@ Configure AD7280A tab
 
    \ NOTE: Due to settling time requirements, the thermistor termination resistor option should only be used when the acquisition time of :adi:`ad7280A` is set to the highest value which is 1.6us
 
-
 --------------
 
 Advanced tab
@@ -441,16 +473,11 @@ Advanced tab
 
 The advanced tab allows the user to read/write to the :adi:`ad7280A`\ ’s registers.
 
-
-
 .. tip::
 
    \ NOTE: It is recommended to read `AD7280A Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf>`_, `AD8280 datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD8280.pdf>`_ and :adi:`CN0235` and clearly understand the meaning and effect of the configuration before writing a new value in the AD7280A’s register.
 
-
 | \**Dev0 and Dev1 Register Address**
-
-
 
 - This the list of the register address of :adi:`ad7280A` and its current content or configuration.
    **Read Register**
@@ -485,7 +512,6 @@ Schematic, PCB Layout, Bill of Materials
    -  PADS project
    
 
-
 Registration
 ------------
 
@@ -493,13 +519,12 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0235-SDPZ?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 // End of document
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235_jumper_config.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235_jumper_config.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235-software-2.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235-software-3.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235-software-4.png

@@ -8,7 +8,10 @@ Min or Max (Block)
 Description
 -----------
 
-Min/Max is a Block Processing module which compares the each input samples of one channel with other channels in block of input samples. By default it will check the minimum Algorithm. Option to select Minimum or Maximum Algorithm by clicking on bit map icon.
+Min/Max is a Block Processing module which compares the each input samples of
+one channel with other channels in block of input samples. By default it will
+check the minimum Algorithm. Option to select Minimum or Maximum Algorithm by
+clicking on bit map icon.
 
 Targets Supported
 -----------------
@@ -18,7 +21,6 @@ Name       ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ========== ========== ================ ============= ================
 Min or Max NA         NA               B             NA
 ========== ========== ================ ============= ================
-
 
 | ===== Pins =====
 

@@ -3,7 +3,8 @@ Level Detectors / Lookup Tables
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-The Level Detectors / Lookup Tables library of the ToolBox gives you access to blocks which provide graphical representations of signal level.
+The Level Detectors / Lookup Tables library of the ToolBox gives you access to
+blocks which provide graphical representations of signal level.
 
 The following are available:
 

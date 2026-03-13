@@ -9,7 +9,9 @@ Value Hold
 Description
 -----------
 
-The ValueHold block holds the incoming input while the control input is zero and allows the incoming input route to output while the control input is other than zero.
+The ValueHold block holds the incoming input while the control input is zero and
+allows the incoming input route to output while the control input is other than
+zero.
 
 Targets Supported
 -----------------

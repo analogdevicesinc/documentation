@@ -13,41 +13,57 @@ Communication
 
 **Q: Why does the readback from target fails even though the download is successful and there is audio playback?**
 
-A: When USBi is used as the communication device, the "FirmwareVersion" property of the USBi in SigmaStudio+ project should be set based on the version of the hardware. "FirmwareVersion" should be set as "v1.5" when the version of the USBi board is 1.5 or later and "Pre v1.5" should be used for 1.4 or earlier versions. This property can be updated using the SigmaStudio+ Property Window. Failure to set the proper version number can affect the readback operation.
+A: When USBi is used as the communication device, the "FirmwareVersion" property
+of the USBi in SigmaStudio+ project should be set based on the version of the
+hardware. "FirmwareVersion" should be set as "v1.5" when the version of the USBi
+board is 1.5 or later and "Pre v1.5" should be used for 1.4 or earlier versions.
+This property can be updated using the SigmaStudio+ Property Window. Failure to
+set the proper version number can affect the readback operation.
 
 Download
 ~~~~~~~~
 
 **Q: Why does SigmaStudio+ throw "Target execution could not be verified" error while downloading a project, even though my target is active?**
 
-A: "Target execution could not be verified" indicates that SigmaStudio+ could not verify that the code has been downloaded on to the target and the target is running. This can happen primarily due to below reasons:
+A: "Target execution could not be verified" indicates that SigmaStudio+ could
+not verify that the code has been downloaded on to the target and the target is
+running. This can happen primarily due to below reasons:
 
 -  Target application is not loaded properly.
--  Target is executing properly. However, SigmaStudio+ is not able to read the status of the target.
+-  Target is executing properly. However, SigmaStudio+ is not able to read the
+   status of the target.
 
-When USBi is used as the communication device, the "FirmwareVersion" property of the USBi in SigmaStudio+ project should be set based on the version of the hardware. "FirmwareVersion" should be set as "v1.5" when the version of the USBi board is 1.5 or later and "Pre v1.5" should be used for 1.4 or earlier versions. This property can be updated using the SigmaStudio+ Property Window. Failure to set the proper version number can affect the readback operation and target verification.
+When USBi is used as the communication device, the "FirmwareVersion" property of
+the USBi in SigmaStudio+ project should be set based on the version of the
+hardware. "FirmwareVersion" should be set as "v1.5" when the version of the USBi
+board is 1.5 or later and "Pre v1.5" should be used for 1.4 or earlier versions.
+This property can be updated using the SigmaStudio+ Property Window. Failure to
+set the proper version number can affect the readback operation and target
+verification.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usbifirmwareversionsettings.jpg
-   :width: 400px
+   :width: 400
 
 If we are using SOM-Carrier board, below settings should be configured properly.
 
--  Please check whether the USBi connection is as per the below image which is connected to carrier board (brown
+-  Please check whether the USBi connection is as per the below image which is
+   connected to carrier board (brown
 
 color wire should be connected near the Starting letter of SigmaStudio “S”).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usbiconnection.png
-   :width: 400px
+   :width: 400
 
--  “SW1” switches should be in off condition on carrier board as shown in the below image.
+-  “SW1” switches should be in off condition on carrier board as shown in the
+   below image.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/carrierboardswitchsettings.jpg
-   :width: 400px
+   :width: 400
 
 For custom applications, please uncheck the target verification option in the Settings window of SigmaStudioPlus (**Tools** menu => **Settings** button => **Processor** Group => uncheck **Target Verification** checkbox) as shown in the below image
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/custom_app_host_settings.jpg
-   :width: 400px
+   :width: 400
 
 **Note:** Even after confirming the above-mentioned configuration, If we are still facing an issue, please select the arm core and suspend all the cores in CrossCore Embededd Studio and check the status if any target exception is showing in the console window.
 
@@ -56,12 +72,15 @@ Platform
 
 **Q: Project download on to ADSP-21489 fails when the target application is loaded from serial (SPI) flash. What is the reason?**
 
-A: On ADSP-21489, SPI Flash and USBi shares the same SPI lines. As a result, the SPI boot fails when USBi is connected.
+A: On ADSP-21489, SPI Flash and USBi shares the same SPI lines. As a result, the
+SPI boot fails when USBi is connected.
 
 -  When SPI boot fails, LED 1-8 will be ON
 -  When SPI boot succeeds, LED 1 will be ON. LED 2-8 will be OFF.
 
-Workaround is to disconnect the USBi, reset the board (then successful boot happens and LED1 will be ON). Now connect the USBi and download the project from SigmaStudio+. Upon successful download, you will find LED 1-4 ON.
+Workaround is to disconnect the USBi, reset the board (then successful boot
+happens and LED1 will be ON). Now connect the USBi and download the project from
+SigmaStudio+. Upon successful download, you will find LED 1-4 ON.
 
 --------------
 
@@ -163,9 +182,9 @@ Workaround is to disconnect the USBi, reset the board (then successful boot happ
    -  The BCLK and LRCLK routing for SPORT will be automatically configured in the Demo/DemoUc framework based on the SPORT selection made in the SigmaStudio+ schematic configuration.
    -  The user must assign the DATA pin for the SPORT in the SigmaStudio+ schematic configuration. The DATA pin routing will then be automatically handled by the Demo/DemoUc framework.
    -  The user must route BCLK and LRCLK to the external audio peripheral using the system.svc – SRU Routing and adi_ss_fw_sport.c option.
-   -  Any modification to the DAI pin or PCG clock requires corresponding pin assignment and signal routing within the default framework.
+   -  Any modification to the DAI pin or PCG clock requires corresponding pin
+      assignment and signal routing within the default framework.
    
-
 
 --------------
 
@@ -223,17 +242,20 @@ Using the SigmaStudio+ schematic shown in the images here as a reference:
 
 .. note::
 
-   A) The above-mentioned changes for supporting additional source and sink SPORTs apply only to the Demo and DemoUc applications with TDM8 or I2S formats.
+   A) The above-mentioned changes for supporting additional source and sink
+      SPORTs apply only to the Demo and DemoUc applications with TDM8 or I2S
+      formats.
 
    
-   B) If a clocking change is required to support formats other than TDM8 and I2S, the PCG configuration in the framework must be updated.
+   B) If a clocking change is required to support formats other than TDM8 and
+      I2S, the PCG configuration in the framework must be updated.
    
-   C) If the existing ADC and DAC need to support other formats (such as TDM4, TDM16, etc.), then the following changes are required:
+   C) If the existing ADC and DAC need to support other formats (such as TDM4,
+      TDM16, etc.), then the following changes are required:
    
    -  SRU routing changes to receive the BCLK and FS from the generated PCG.
    -  Updating the ADC and DAC configuration registers for the required format.
    
-
 
 --------------
 
@@ -248,7 +270,7 @@ Using the SigmaStudio+ schematic shown in the images here as a reference:
 **A:** When it comes to the ADSP-SC573 DemoUc example, the application, by default, is designed for audio module tuning using the EZLITE on-board push buttons (for Mute Enable/Disable and Filter Enable/Disable). However, if you want to perform tuning from the SigmaStudio+ UI, you need to disable the push buttons, since the push buttons and SPI1 (used for SigmaStudio+ schematic download and tuning) share the same pins. The push buttons can be disabled in the target application by navigating to **SS_Uc_App_Core0-> Source -> Framework -> adi_ss_uc_app_softconfig_SC573.c** file, as shown below.
 
 .. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/adsp_sc573_demouc_ui_tune.png
-   :width: 600px
+   :width: 600
 
 Afterwards, use the **Link-Compile-Connect** option in SigmaStudio+ for runtime tuning from the UI.
 
@@ -256,5 +278,5 @@ Afterwards, use the **Link-Compile-Connect** option in SigmaStudio+ for runtime 
 
 **Q: What is the maximum number of words that can be read back from the SHARC target using a read request command?**
 
-A: The maximum number of words that can be requested to be read in a single read request is seven.
-
+A: The maximum number of words that can be requested to be read in a single read
+request is seven.

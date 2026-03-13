@@ -1,12 +1,14 @@
 ACE Remote Control
 ==================
 
-This is a landing page for up-to-date information and examples pertaining to the ACE remote control feature. This feature allows a user to control ACE and evaluation hardware from other languages/applications.
+This is a landing page for up-to-date information and examples pertaining to the
+ACE remote control feature. This feature allows a user to control ACE and
+evaluation hardware from other languages/applications.
 
 .. tip::
 
-   For documentation on the remote control interface and methods, please look under the Help menu in ACE.
-
+   For documentation on the remote control interface and methods, please look
+   under the Help menu in ACE.
 
 Examples
 --------
@@ -19,14 +21,17 @@ In order to use Python with the remote control library, you will need to install
 Large Data Capture With AD9208
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Currently 1GB of data can be captured with the ADS8V1 and 2GB of data can be captured with the ADS7V2 using the AsyncRawCaptureToFile transaction. The following example shows how this transaction can be used from a Python script with the AD9208 evaluation platform.
+Currently 1GB of data can be captured with the ADS8V1 and 2GB of data can be
+captured with the ADS7V2 using the AsyncRawCaptureToFile transaction. The
+following example shows how this transaction can be used from a Python script
+with the AD9208 evaluation platform.
 
-Setup: AD9208 board connected to ADS7V2 or ADS8V1 motherboard. ADC clock = 3GHz, REFCLK = 375 MHz
+Setup: AD9208 board connected to ADS7V2 or ADS8V1 motherboard. ADC clock = 3GHz,
+REFCLK = 375 MHz
 
 Python Code:
 
 ::
-
 
    # Copyright (c) 2019 Analog Devices, Inc.  All Rights Reserved. This software is proprietary to Analog Devices, Inc. and its licensors.
 

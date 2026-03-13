@@ -47,16 +47,26 @@ Files
 | include  | `drivers/staging/iio/cdc/ad7746.h <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/cdc/ad7746.h>`_  |
 +----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
 
-
-Depending on the converter IC used, you may need to set the I2C_BOARD_INFO name accordingly, matching your part name.
+Depending on the converter IC used, you may need to set the I2C_BOARD_INFO name
+accordingly, matching your part name.
 
 =============== ===================
 ADI part number I2C_BOARD_INFO Name
@@ -93,12 +103,12 @@ AD7747          ad7747
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The driver depends on CONFIG_I2C
-
 
 ::
 
@@ -123,13 +133,20 @@ Hardware configuration
 ======================
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-cdc/ad7746_eval_lr.jpg
-   :width: 600px
+   :width: 600
 
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -182,7 +199,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r--    1 root     root          4096 Jan  1 11:17 uevent
    
 
-
 Show device name
 ----------------
 
@@ -196,7 +212,6 @@ Show device name
       root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0048/iio:device0> cat name
       ad7746
    
-
 
 Show available sampling frequencies / update rates
 --------------------------------------------------
@@ -216,7 +231,6 @@ Show available sampling frequencies / update rates
       root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0048/iio:device0>
    
 
-
 Set sampling frequency / update rate
 ------------------------------------
 
@@ -234,7 +248,6 @@ Set sampling frequency / update rate
       50
       root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0048/iio:device0>
    
-
 
 Show scales for single and differential input channels
 ------------------------------------------------------
@@ -263,7 +276,6 @@ VIN_VDD_MON       in_voltage_supply_scale
       0.000000488
    
 
-
 Show channel CIN1(+) measurement
 --------------------------------
 
@@ -291,7 +303,6 @@ VIN_VDD_MON       in_voltage1_supply_raw
       14914
    
 
-
 **U** = *in_capacitance0_raw \* in_capacitance_scale* = 14914 \* 0.000000488 = **0.007278032 pF**
 
 Show internal temperature measurement
@@ -317,7 +328,6 @@ TEMP (external sensor diode) in_temp1_input
       28756
    
 
-
 **T** = *in_temp0_input* = 28756 = **28.756 °C**
 
 Set channel common mode offset (CAPDAC)
@@ -336,8 +346,10 @@ CIN2(-) CAPDAC(-) in_capacitance0-capacitance2_offset
 
 .. hint::
 
-   The AD7745/AD7746 CDC full-scale input range is ±4.096 pF. The part can accept a higher capacitance on the input and the common-mode or offset (not-changing component) capacitance can be balanced by programmable on-chip CAPDACs.
-
+   The AD7745/AD7746 CDC full-scale input range is ±4.096 pF. The part can
+   accept a higher capacitance on the input and the common-mode or offset
+   (not-changing component) capacitance can be balanced by programmable on-chip
+   CAPDACs.
 
 **Example 4pF Offset:** **in_capacitance0_offset** = *Offset / in_capacitance_scale* = 4pF / 0.000000488 = **8196721**
 
@@ -352,7 +364,6 @@ CIN2(-) CAPDAC(-) in_capacitance0-capacitance2_offset
       root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0048/iio:device0> cat in_capacitance0_offset
       8127504
    
-
 
 Perform channel gain calibration
 --------------------------------
@@ -371,7 +382,6 @@ Perform channel gain calibration
       1.000000
    
 
-
 Set channel gain coefficient
 ----------------------------
 
@@ -389,7 +399,6 @@ Set channel gain coefficient
       1.500000
    
 
-
 Perform channel offset calibration
 ----------------------------------
 
@@ -406,7 +415,6 @@ Perform channel offset calibration
       root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-0048/iio:device0> cat in_capacitance_calibbias
       0
    
-
 
 More Information
 ================
@@ -429,6 +437,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-cdc/youtube>p_vntewue24
-

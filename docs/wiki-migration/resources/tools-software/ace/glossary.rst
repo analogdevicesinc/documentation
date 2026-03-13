@@ -1,7 +1,9 @@
 ACE - Glossary of Terms used in ACE
 ===================================
 
-This WIKI site will collect a list of terms used to describe various aspects of ACE and ACE plug-ins to help new and existing users get used to the language used when describing ACE plug-ins and the main application.
+This WIKI site will collect a list of terms used to describe various aspects of
+ACE and ACE plug-ins to help new and existing users get used to the language
+used when describing ACE plug-ins and the main application.
 
 You can return to the ACE WIKI Homepage here: :doc:`ACE Homepage </wiki-migration/resources/tools-software/ace>`
 

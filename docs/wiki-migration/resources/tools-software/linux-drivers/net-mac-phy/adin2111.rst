@@ -12,11 +12,18 @@ Supported Boards
 Description
 -----------
 
-The ADIN2111 is a low complexity, 2-Port Ethernet Switch with Integrated 10BASE-T1L PHYs designed for industrial Ethernet applications. It integrates an 2 Ethernet PHY cores with a MAC and all the associated analog circuitry, input and output clock buffering.
+The ADIN2111 is a low complexity, 2-Port Ethernet Switch with Integrated
+10BASE-T1L PHYs designed for industrial Ethernet applications. It integrates an
+2 Ethernet PHY cores with a MAC and all the associated analog circuitry, input
+and output clock buffering.
 
-Programmable transmit levels, external termination resistors and independent Rx/Tx pins make the ADIN2111 suited to intrinsic safety applications. The ADIN2111 has an integrated voltage supply monitoring and power on reset circuitry to improve system level robustness.
+Programmable transmit levels, external termination resistors and independent
+Rx/Tx pins make the ADIN2111 suited to intrinsic safety applications. The
+ADIN2111 has an integrated voltage supply monitoring and power on reset
+circuitry to improve system level robustness.
 
-The device has a 4-wire SPI interface for communication between the MAC and host processor.
+The device has a 4-wire SPI interface for communication between the MAC and host
+processor.
 
 Source Code
 ===========
@@ -42,7 +49,8 @@ Files
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 -  Hit the search button (typically the slash "/" key)
 -  Type ADIN1110, then hit Enter; if nothing shows up, the driver is not available in your kernel tree, please use `the ADI linux tree <https://github.com/analogdevicesinc/linux/>`_
@@ -67,11 +75,18 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-This requires that another 10BASE-T1L PHY be connected to the other end of the network cable, or that a media converter be used to convert to normal twisted-pair ethernet that standard ethernet cables use.
+This requires that another 10BASE-T1L PHY be connected to the other end of the
+network cable, or that a media converter be used to convert to normal
+twisted-pair ethernet that standard ethernet cables use.
 
-ADIN2111 communicates with the host via SPI. For 10 Mbps bandwidth, SPI frequency needs to be around 23 MHz. Lower SPI frequencies are supported but will result in a lower bandwidth. At 1 MHz the MAC will provide aprox. 0.4 Mbps of bandwidth.
+ADIN2111 communicates with the host via SPI. For 10 Mbps bandwidth, SPI
+frequency needs to be around 23 MHz. Lower SPI frequencies are supported but
+will result in a lower bandwidth. At 1 MHz the MAC will provide aprox. 0.4 Mbps
+of bandwidth.
 
-Connect to host the SCLK, CS_N, SDI, SDO and INT_N. (The INT_N is mandatory, see DT bindings). RX frames and sent TX frames are signaled to the host by INT_N IRQ pin.
+Connect to host the SCLK, CS_N, SDI, SDO and INT_N. (The INT_N is mandatory, see
+DT bindings). RX frames and sent TX frames are signaled to the host by INT_N IRQ
+pin.
 
 Device Tree
 -----------
@@ -116,7 +131,9 @@ ADIN2111 probes via devicetree.
 Renaming ethernet interfaces
 ----------------------------
 
-After ADIN2111 has probed, without any udev rule, the two interfaces will be probably named eth1 and eth2. To rename them you need to create a udev rule under:
+After ADIN2111 has probed, without any udev rule, the two interfaces will be
+probably named eth1 and eth2. To rename them you need to create a udev rule
+under:
 
 ::
 
@@ -125,7 +142,8 @@ After ADIN2111 has probed, without any udev rule, the two interfaces will be pro
 
 .. important::
 
-   You need to change the phys_switch_id to match your own system. This can be found under:
+   You need to change the phys_switch_id to match your own system. This can be
+   found under:
 
    
    ::
@@ -134,11 +152,13 @@ After ADIN2111 has probed, without any udev rule, the two interfaces will be pro
       6164696e323131312d31
    
 
-
 Bridging the two ports
 ----------------------
 
-Linux driver will allocated and register two port netdevs. In this way each port is exposed to the userspace. Sometimes the user may not care on which port he wants to talk to another host on the same subnet, for this the two ports can be bridged:
+Linux driver will allocated and register two port netdevs. In this way each port
+is exposed to the userspace. Sometimes the user may not care on which port he
+wants to talk to another host on the same subnet, for this the two ports can be
+bridged:
 
 ::
 
@@ -153,8 +173,10 @@ Linux driver will allocated and register two port netdevs. In this way each port
 
 .. important::
 
-   Default behavior of ADIN2111 will be to forward to the host only frames with the destination MAC address of the interface and broadcast address (Multicast only if enabled). Other frames are not seen by the SPI host and will be forwarded to the other port.
-
+   Default behavior of ADIN2111 will be to forward to the host only frames with
+   the destination MAC address of the interface and broadcast address (Multicast
+   only if enabled). Other frames are not seen by the SPI host and will be
+   forwarded to the other port.
 
 Printing the forwarding database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -175,9 +197,14 @@ Printing the forwarding database
 ifconfig
 --------
 
-This tool will display the general status of the available network interfaces. If they’ve obtained an IP address, RX packets/errors/dropped/etc, TX packets/errors/dropped/etc, MAC address, etc.
+This tool will display the general status of the available network interfaces.
+If they’ve obtained an IP address, RX packets/errors/dropped/etc, TX
+packets/errors/dropped/etc, MAC address, etc.
 
-Typically, if both TX & RX values are incremented, it means that it is working. Also note that there are error counters; if only the TX/RX counters increment, something may be wrong with the network connection. Check error/dropped counters too.
+Typically, if both TX & RX values are incremented, it means that it is working.
+Also note that there are error counters; if only the TX/RX counters increment,
+something may be wrong with the network connection. Check error/dropped counters
+too.
 
 ::
 
@@ -203,7 +230,9 @@ Typically, if both TX & RX values are incremented, it means that it is working. 
 ethtool
 -------
 
-This tool queries the MAC & PHY via the MAC driver. The MAC driver also allows access to the PHY registers. ethtool can be used to show & override link settings and other parameters for the MAC & PHY.
+This tool queries the MAC & PHY via the MAC driver. The MAC driver also allows
+access to the PHY registers. ethtool can be used to show & override link
+settings and other parameters for the MAC & PHY.
 
 Links for the tool:
 
@@ -212,8 +241,9 @@ Links for the tool:
 
 .. tip::
 
-   Some features of ethtool described here are available in newer versions of ethtool. If some of them don't work, consider upgrading or getting a newer version
-
+   Some features of ethtool described here are available in newer versions of
+   ethtool. If some of them don't work, consider upgrading or getting a newer
+   version
 
 Example: Seeing MAC & PHY info
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -266,7 +296,8 @@ Example: Seeing MAC & PHY info
 Example: changing link autonegotiation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since the PHY can only do 10 Mbps full-duplex, the only operation possible here is to disable auto-negotiation and set preferred/forced master/slave
+Since the PHY can only do 10 Mbps full-duplex, the only operation possible here
+is to disable auto-negotiation and set preferred/forced master/slave
 
 ::
 
@@ -316,8 +347,9 @@ This is a more system-general test but it also validates the PHY.
 
 .. tip::
 
-   More tools are available for this sort of testing (iperf3, netperf, etc), but iperf is one of the more basic/simple ones to do this validation. If this one achieves expected results, others should too
-
+   More tools are available for this sort of testing (iperf3, netperf, etc), but
+   iperf is one of the more basic/simple ones to do this validation. If this one
+   achieves expected results, others should too
 
 On one of the endpoints with the ADIN1100, run:
 
@@ -369,4 +401,3 @@ Ethernet pointers
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

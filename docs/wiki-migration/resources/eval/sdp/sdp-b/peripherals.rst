@@ -1,12 +1,16 @@
 SDP-B Peripheral Interfaces
 ===========================
 
-The SDP’s peripherals are a subset of the Blackfin BF527's available peripherals. This document aims to outline these peripherals and their implementation on the SDP board. For further details on any of these peripheral interfaces, consult the Blackfin Hardware Reference Manual.
+The SDP’s peripherals are a subset of the Blackfin BF527's available
+peripherals. This document aims to outline these peripherals and their
+implementation on the SDP board. For further details on any of these peripheral
+interfaces, consult the Blackfin Hardware Reference Manual.
 
 SPORT: Synchronous Serial Peripheral Port
 -----------------------------------------
 
-Sport interface supports a variety of serial data communication protocols. Key features and capability of SPORT interface are
+Sport interface supports a variety of serial data communication protocols. Key
+features and capability of SPORT interface are
 
 -  Continuously running clock
 -  Serial data words from 3 to 32 bits in lengths, either MSB or LSB first
@@ -26,13 +30,23 @@ For more details on TWI/I\ :sup:`2`\ C, click :doc:`here </wiki-migration/resour
 SPI: Serial Port Interface
 --------------------------
 
-The SPI interface on the SDP is a full duplex, synchronous serial interface. The SDP is the Master for all SPI transfers. When an SPI transfer occurs, data is simultaneously transmitted as new data is received. The SPI_CLK signal synchronises the shifting of data out and the sampling of data in on the two serial data pins (MOSI and MISO).
+The SPI interface on the SDP is a full duplex, synchronous serial interface. The
+SDP is the Master for all SPI transfers. When an SPI transfer occurs, data is
+simultaneously transmitted as new data is received. The SPI_CLK signal
+synchronises the shifting of data out and the sampling of data in on the two
+serial data pins (MOSI and MISO).
 
 For more details on SPI, click :doc:`here </wiki-migration/resources/eval/sdp/sdp-b/peripherals/spi>`!
 
 PPI: Parallel Peripheral Interface
 ----------------------------------
 
-PPI is a half-duplex, bi-directional port accommodating up to 16 bits of data. It has a dedicated clock pin and three multiplexed frame sync pins. PPI supports up to 16 bits of data with programmable clock and frame sync polarities. PPI requires an externally generated free running clock. The maximum PPI Clock Frequency achievable on the SDP for a single frame transfer is 50MHz. The maximum transfer rate on SDP for streaming data over the PPI is achievable by using a 20-25 MHz PPI clock.
+PPI is a half-duplex, bi-directional port accommodating up to 16 bits of data.
+It has a dedicated clock pin and three multiplexed frame sync pins. PPI supports
+up to 16 bits of data with programmable clock and frame sync polarities. PPI
+requires an externally generated free running clock. The maximum PPI Clock
+Frequency achievable on the SDP for a single frame transfer is 50MHz. The
+maximum transfer rate on SDP for streaming data over the PPI is achievable by
+using a 20-25 MHz PPI clock.
 
 For more details on PPI, click :doc:`here </wiki-migration/resources/eval/sdp/sdp-b/peripherals/ppi>`!

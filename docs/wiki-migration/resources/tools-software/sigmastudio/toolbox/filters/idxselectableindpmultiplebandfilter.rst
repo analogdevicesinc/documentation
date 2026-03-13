@@ -91,7 +91,12 @@ IdxSelectable Indp. Multiple Band Filter (No Slew)
 | 
 | ===Algorithm Description=== The filter algorithm used is a 2nd Order General Filter (Double Precision) based on a Direct Form I structure. Growth of the algorithm allows for multiple rows or EQ banks. The index input pin to the algorithm allows a data control signal to choose which row of filters is used for processing the input signal. The data index must be within the range of 0 to number of filter rows - 1. Independent control is given to each filter row, being able to have different number of biquads per row, and different filter settings. The number of biquads per row is determined by the numeric text box. The image below shows the Top Level Control and corresponding Filter Editor Window: |idxpic2.png|
 
-The IdxSelectable Indp. Multiple Band Filter makes use of the GEN3 SigamDSP core features in order to save program and parameter RAM. The filter structure code is part of a subroutine and is called multiple times for the number of biquads in the selected row. A loop structure also repeats the subroutine code for multiple biquads. This leads to a great savings in program RAM compared to the traditional filters in the library.
+The IdxSelectable Indp. Multiple Band Filter makes use of the GEN3 SigamDSP core
+features in order to save program and parameter RAM. The filter structure code
+is part of a subroutine and is called multiple times for the number of biquads
+in the selected row. A loop structure also repeats the subroutine code for
+multiple biquads. This leads to a great savings in program RAM compared to the
+traditional filters in the library.
 
 Example
 ~~~~~~~
@@ -144,12 +149,13 @@ IdxSelectable Indp. Multiple Band Filter (Slew)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/isib1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Configurations
 ~~~~~~~~~~~~~~
 
-Outputs of the current and previously selected filter indexes are slewed to prevent audio pops/clicks during the transition.
+Outputs of the current and previously selected filter indexes are slewed to
+prevent audio pops/clicks during the transition.
 
 DSP Parameter Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -168,9 +174,11 @@ DSP Parameter Information
 
 Note :
 
--  The IdxSelectable Indp. Multiple Band Filter is also supported in SHARC processors (ADSP-SC5xx/215xx)
+-  The IdxSelectable Indp. Multiple Band Filter is also supported in SHARC
+   processors (ADSP-SC5xx/215xx)
 
--  The filter algorithm used is a 2nd Order General Filter (Double Precision) based on a Direct Form II structure
+-  The filter algorithm used is a 2nd Order General Filter (Double Precision)
+   based on a Direct Form II structure
 
 .. |idxpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/idxpic1.png
 .. |idxpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/idxpic2.png

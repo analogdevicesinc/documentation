@@ -17,8 +17,6 @@ Required toolboxes
 -  Signal Processing
 -  DSP
 
-
 .. note::
 
    See `mathworks_licenses <https://wiki.analog.com/mathworks_licenses>`_
-

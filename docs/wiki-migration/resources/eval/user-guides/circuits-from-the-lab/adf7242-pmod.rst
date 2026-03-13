@@ -8,7 +8,11 @@ Overview
 
 The low cost and small profile RF solution 2.4 GHz, 802.15.4/Proprietary Wireless Transceiver PMOD board (:adi:`EVAL-ADF7242-PMDZ`) is designed to support RF to FPGA or processor applications system that utilizes PMOD-compatible expansion ports configurable for SPI communication (PACKET MODE). For applications that require data streaming, a synchronous bidirectional serial port (SPORT) interface is also available. The Wireless Transceiver PMOD board can be selectively configured to operate on the 2400 MHz to 2483.5 MHz ISM band. This uses single chip :adi:`ADF7242` 2.4Ghz transceiver, with most of the system blocks embedded on chip, and minimizing eternal RF components.
 
-This wireless transceiver PMOD board uses mini 2.4 GHz chip antennas. In conjunction with the impedance-matched (complex differential impedance value) filter balun, reduces the RF front end count. This PMOD board supports polarization diversity that uses two chip antennas which can greatly improve performance under multipath fading conditions.
+This wireless transceiver PMOD board uses mini 2.4 GHz chip antennas. In
+conjunction with the impedance-matched (complex differential impedance value)
+filter balun, reduces the RF front end count. This PMOD board supports
+polarization diversity that uses two chip antennas which can greatly improve
+performance under multipath fading conditions.
 
 Refer to the :adi:`ADF7242` data sheet for detailed information regarding operation of the device.
 
@@ -28,7 +32,7 @@ Specifications
 --------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_2_n.png
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -36,7 +40,7 @@ Interface Connector Signal Description
 --------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_1.png
-   :width: 400px
+   :width: 400
 
 --------------
 
@@ -44,7 +48,7 @@ Interface Connector Signal Description
 --------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_3.png
-   :width: 400px
+   :width: 400
 
 --------------
 
@@ -52,7 +56,7 @@ Functional Block Diagram
 ------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/block.png
-   :width: 900px
+   :width: 900
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -69,7 +73,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Additional Information and Useful Links
 ---------------------------------------
 
@@ -84,6 +87,5 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-ADF7242-PMDZ?&v=RevA>`_ to receive all these great benefits and more!
-
 
 // End of Document

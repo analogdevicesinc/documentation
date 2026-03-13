@@ -1,7 +1,8 @@
 Complex Splitter
 ================
 
-Complex Splitter takes the complex input signal and splits real and imaginary parts separately. This is a block based module.
+Complex Splitter takes the complex input signal and splits real and imaginary
+parts separately. This is a block based module.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/complexsplitter.png
    :align: center
@@ -37,7 +38,8 @@ ADAU145x (Block Schematic only)
 Example Usage
 -------------
 
-FFT output can be split as real and imaginary using this module in the block processing.
+FFT output can be split as real and imaginary using this module in the block
+processing.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/csplit.jpg
    :align: center

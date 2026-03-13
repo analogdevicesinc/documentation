@@ -15,11 +15,9 @@ Typical Setup
 
    \ |image1| *Figure 1. HMCAD15xx-EBZ (left) and EVAL-SDP-CH1Z (right) Setup*
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files
 -------------
@@ -103,11 +101,13 @@ The supply rails for other components on the board (crystal, amplifier, etc) are
 Quick Start Guide
 -----------------
 
-The following procedure below shows how to setup the evaluation board to capture 70MHz input signal at 1GSPS sampling rate:
+The following procedure below shows how to setup the evaluation board to capture
+70MHz input signal at 1GSPS sampling rate:
 
 -  Attach the :adi:`HMCAD1520-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HMCAD1520.html>`/:adi:`HMCAD1511-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HMCAD1511.html>` evaluation board to the SDP-H1 FMC connector thru the P2 port. Refer to Figure 1.
 -  Connect the SDP-H1 to PC via USB and to a 12V 1A power supply.
--  Open ACE, the evaluation board will automatically be recognized by the software. Otherwise, install the plugin for HMCAD1511/20 evaluation board.
+-  Open ACE, the evaluation board will automatically be recognized by the
+   software. Otherwise, install the plugin for HMCAD1511/20 evaluation board.
 
    -  In ACE, go to Plug-in Manager.
    -  Under **Available Packages**, search **HMCAD1520** then click install.
@@ -118,11 +118,10 @@ The following procedure below shows how to setup the evaluation board to capture
 
    \ |image2|\ |image3|\ *Figure 2. HMCAD1511/20-EBZ ACE Board View Window*\
 
-
 .. tip::
 
-   Make sure that the state of the board is good (State=Good), check on the bottom-left corner.
-
+   Make sure that the state of the board is good (State=Good), check on the
+   bottom-left corner.
 
 -  Configure the initialization wizard settings shown in Figure 3. For :adi:`HMCAD1511-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HMCAD1511.html>`, select **External Clock** as clock source and input **1GHz** on the CLKIN.
 
@@ -130,22 +129,20 @@ The following procedure below shows how to setup the evaluation board to capture
 
    \ |image4|\ *Figure 3. HMCAD1511-EBZ Initialization Wizard Settings*\
 
-
 -  Connect a continuous wave generator as an input signal on SMA **J7** with a frequency of **70MHz**.
 
 .. important::
 
    Use a bandpass filter in between the signal source and the SMA connector.
 
-
 -  For :adi:`HMCAD1511-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HMCAD1511.html>`, connect another continuous wave generator as the ADC clock. Set the clock frequency to **1GHz** and **10dBm** output level.
 -  Going back to ACE Software, click **Proceed to Analysis** button and click on the **FFT** tab. Click **Run Once** button under **Capture** wizard to capture an FFT plot.
--  Observe the fundamental frequency and power. Adjust the signal source until fundamental power obtains approximately -1dBFS at 70MHz.
+-  Observe the fundamental frequency and power. Adjust the signal source until
+   fundamental power obtains approximately -1dBFS at 70MHz.
 
 .. container:: centeralign
 
    \ |image5|\ *Figure 4. HMCAD1511-EBZ Fundamental Frequency and Power*\
-
 
 -  If fundamental power achieved, click **Zoom to Fit** (|hmcad1511_zoomtofit.jpg|) to show graph at Fs/2, then click **Show Annotations** (|hmcad1511_annotations.jpg|) to show all the spurs' annotation within the plot. Refer to Figure 5.
 
@@ -153,26 +150,23 @@ The following procedure below shows how to setup the evaluation board to capture
 
    \ |image6|\ *Figure 5. HMCAD1511-EBZ (8-bit, single channel, Fs=1GHz, Fin=70MHz) FFT Analysis Results*\
 
-
 -  To save the **Data Set**, click **Export** button on the **Results** wizard. Also, you click **Import** button to review the saved data set with a file format of "*.acesamples*".
 
 .. container:: centeralign
 
    \ |image7|\ *Table 3. HMCAD1511-EBZ (8-bit, single channel, Fs=1GHz, Fin=70MHz) Results Comparison.*\
 
-
 .. note::
 
    Note: SDP-H1 is limited to operate Fin<375MHz.
-
 
 .. tip::
 
    
    -  If Spur_x is equal to Harm_x, then harmonic spectral power is removed and is set to -300dBc.
-   -  If the result is a little bit poor due to calculation rounding-off, increase at least 2 bins at harmonic bins settings.
+   -  If the result is a little bit poor due to calculation rounding-off,
+      increase at least 2 bins at harmonic bins settings.
    
-
 
 Interleaving Spurs Calculation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -183,21 +177,21 @@ Interleaving Spurs Calculation
 
    \ |image8|\ *Figure 6. HMCAD1511-EBZ ACE vs Interleaving Spurs Calculator*\
 
-
 Optional Amplifier Configuration Results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section is intended to provide evaluation board characterization results on Differential-to-Differential configuration in Channel 1 using the LTC6419 amplifier as shown in Figure 7, and on Single-to-Differential configuration in Channel 2 using the said amplifier as shown in Figure 8.
+This section is intended to provide evaluation board characterization results on
+Differential-to-Differential configuration in Channel 1 using the LTC6419
+amplifier as shown in Figure 7, and on Single-to-Differential configuration in
+Channel 2 using the said amplifier as shown in Figure 8.
 
 .. container:: centeralign
 
    \ |image9|\ *Figure 7. Amplifier Path for Differential-to-Differential Configuration in CH1*\
 
-
 .. container:: centeralign
 
    |image10|\ *Figure 8. Amplifier Path for Single-to-Differential Configuration in CH2*\
-
 
 Troubleshooting Tips
 --------------------
@@ -216,24 +210,29 @@ If the FFT plot appears abnormal, do the following:
 -  Make sure that the correct encoding is set in ACE. The default setting is Twos complement.
 -  Check for any loose connections between the input SMA and the signal source. Same with the clock source if using an external clock.
 -  If using the LTC6419 as the ADC driver, check the 5V supply rail and the 0.9V common mode voltage.
--  Make sure the correct resolution and channel configuration are set correctly on ACE.
+-  Make sure the correct resolution and channel configuration are set correctly
+   on ACE.
 
-If the FFT plot still appears distorted or does not produce a capture after following the steps above, do the following steps below:
+If the FFT plot still appears distorted or does not produce a capture after
+following the steps above, do the following steps below:
 
 -  Check the path **C:\\ProgramData\\Analog Devices\\ACE\\Plugins\\Board.HMCAD1520.1.2022...\\content\\FpgaImages** if this exists.
 -  If yes, check if there is hmcad_sdph1.bit file inside the FPGA Images folder and if so, exclude the bit file inside.
 -  Look for an appropriate FPGA image **hmcad_sdph1_xxxdeg** folder in the :doc:`Helpful Files </wiki-migration/resources/eval/hmcad15xx>`, copy it into the FPGA Images folder in the path, and rename it to **hmcad_sdph1.bit**.
 -  Run the ACE software and proceed with the analysis. If running the FPGA image and still will not produce a good data capture, repeat the steps above until selected FPGA image will produce a good data capture. You may refer to the **HMCAD15xx SDP-H1 Phase DDR** pptx slides in the :doc:`Helpful Files </wiki-migration/resources/eval/hmcad15xx>`.
--  If after running all the FPGA images and still not produce a good data capture, contact the responsible applications engineer.
+-  If after running all the FPGA images and still not produce a good data
+   capture, contact the responsible applications engineer.
 
 If the FFT plot appears normal but performance is poor, do the following:
 
 -  Make sure that an appropriate analog filter is used on the input signal.
 -  Make sure that the fundamental frequency is set to -1dBFS.
 -  Make sure that the signal generators for the clock and the analog input are clean (low phase noise).
--  Make sure the correct resolution and channel configuration are set correctly on ACE.
+-  Make sure the correct resolution and channel configuration are set correctly
+   on ACE.
 
-If the ACE cannot detect the board or prompts an error message during data capture, do the following:
+If the ACE cannot detect the board or prompts an error message during data
+capture, do the following:
 
 -  Make sure the SDP-H1 is powered correctly and connected to the PC via USB.
 -  Make sure that the :adi:`HMCAD1520-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HMCAD1520.html>` /:adi:`HMCAD1511-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HMCAD1511.html>` is attached properly on the P1 port of the SDP-H1.
@@ -241,24 +240,24 @@ If the ACE cannot detect the board or prompts an error message during data captu
 -  Power cycle both the :adi:`HMCAD1520-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HMCAD1520.html>` /:adi:`HMCAD1511-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HMCAD1511.html>` and the SDP-H1, and restart the ACE software.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/hmcad1520_sdp_top.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/hmcad1511_boardview.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/hmcad1520_boardview.jpg
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/hmcad-8bit-1g-70m-single-config.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/hmcad1511_fundpower_-1dbfs.jpg
-   :width: 400px
+   :width: 400
 .. |hmcad1511_zoomtofit.jpg| image:: https://wiki.analog.com/_media/resources/eval/hmcad1511_zoomtofit.jpg
 .. |hmcad1511_annotations.jpg| image:: https://wiki.analog.com/_media/resources/eval/hmcad1511_annotations.jpg
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/hmcad-8bit-1g-70m-single-fft.jpg
-   :width: 900px
+   :width: 900
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/hmcad-result-table.jpg
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/hmcad1511_interleavingspurs.jpg
-   :width: 900px
+   :width: 900
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/hmcad1511-8bit-quad-250mhz-70mhz-opamp-channel_1-12.61dbm.jpg
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/hmcad1520-8bit-quad-250mhz-70mhz-opamp-channel_2-10.53dbm.jpg
-   :width: 600px
+   :width: 600

@@ -12,7 +12,6 @@ This example uses three types of boards:
 
 .. container:: centeralign
 
-
    ..
 
 |image1|
@@ -25,14 +24,18 @@ This example uses three types of boards:
 -  The **EVAL-M355-ARDZ-INT** Arduino Shield Board
 -  The **Arduino Uno** Board
 
-This setup is capable to measure any electrochemical gas sensor in a suitable package and up to 4 sensor boards can be connected and measured simultaneously. The gas sensor daughter boards includes temperature and humidity sensor for calibration and the system includes electrochemical impedance spectroscopy and bias voltage pulse test capabilities.
+This setup is capable to measure any electrochemical gas sensor in a suitable
+package and up to 4 sensor boards can be connected and measured simultaneously.
+The gas sensor daughter boards includes temperature and humidity sensor for
+calibration and the system includes electrochemical impedance spectroscopy and
+bias voltage pulse test capabilities.
 
 General Setup
 ~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_blockdiagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Demo Requirements
 -----------------
@@ -58,21 +61,24 @@ Setting up the Hardware
 -----------------------
 
 -  Plug in the **EVAL-CN0429-EBZ** (:adi:`CN0429 <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/CN0429.html>` Shield board) to the :adi:`EVAL-M355-ARDZ-INT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html>` interposer board
--  Connect the system to the Arduino connectors DIGITAL (PWM~), POWER, ANALOG IN and ICSP of the Arduino Uno board.
+-  Connect the system to the Arduino connectors DIGITAL (PWM~), POWER, ANALOG IN
+   and ICSP of the Arduino Uno board.
 
-   -  Note, the boards should only plug together one way, preventing reverse connections.
+   -  Note, the boards should only plug together one way, preventing reverse
+      connections.
 
 -  Connect the system to the PC using USB cable
 -  Connect the sensors to the dedicated connectors on the **EVAL-CN0429-EBZ**. The :adi:`CN0429 <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/CN0429.html>` is compatible with electrochemical gas sensors in “4-series” form factor. 2-, 3- and 4-electrode sensors are supported. See the drawing below for form factor dimensions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn0429_gas_sensor_dimensions.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Obtaining the Source Code
 -------------------------
 
-We recommend not opening the project directly, but rather make a local copy in your workspace and open it using Arduino/Genuino IDE.
+We recommend not opening the project directly, but rather make a local copy in
+your workspace and open it using Arduino/Genuino IDE.
 
 The source code and include files of the **CN0429_example** can be found here:
 
@@ -83,11 +89,11 @@ The source code and include files of the **CN0429_example** can be found here:
    `CN0429_example at Github <https://github.com/analogdevicesinc/arduino/tree/cn0429/Arduino%20Uno%20R3/examples/CN0429_example>`_
    
 
-
 Project Structure
 -----------------
 
-The CN0411_example is a C Arduino sketch. All files are in the same folder as the .ino file and include the source and header files.
+The CN0411_example is a C Arduino sketch. All files are in the same folder as
+the .ino file and include the source and header files.
 
 Compiling, Verifying, and Programming
 -------------------------------------
@@ -95,25 +101,30 @@ Compiling, Verifying, and Programming
 -  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
 -  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
 
-These two steps can also be done using the quick buttons on the Arduino sketch. Check out the image below for locations of the quick buttons.
+These two steps can also be done using the quick buttons on the Arduino sketch.
+Check out the image below for locations of the quick buttons.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino_ide_verify_upload_buttons.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Outputting Data
 ---------------
 
-Data is output using the USB cable from the Arduino to the PC. The USB port acts as a serial terminal to display the data being transmitted via UART. Opening the serial terminal window from the Arduino IDE is very easy, simply click on the button shown in the picture below.
+Data is output using the USB cable from the Arduino to the PC. The USB port acts
+as a serial terminal to display the data being transmitted via UART. Opening the
+serial terminal window from the Arduino IDE is very easy, simply click on the
+button shown in the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino_ide_serial_terminal_button.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Serial Terminal Output
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You may need to configure the serial terminal depending on the current settings of the Arduino IDE. Make sure the settings are as follows:
+You may need to configure the serial terminal depending on the current settings
+of the Arduino IDE. Make sure the settings are as follows:
 
 ::
 
@@ -127,7 +138,8 @@ You may need to configure the serial terminal depending on the current settings 
 Tools Download and Help
 -----------------------
 
-The Arduino tools are easy to use, and there are many tutorials and users guides to help learn how to use the Arduino IDE.
+The Arduino tools are easy to use, and there are many tutorials and users guides
+to help learn how to use the Arduino IDE.
 
 For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
@@ -136,8 +148,7 @@ For more information on how to use the tool basics, please check out the `Arduin
 
    To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0429/cn-0429_daughterboard.jpg
-   :width: 200px
+   :width: 200

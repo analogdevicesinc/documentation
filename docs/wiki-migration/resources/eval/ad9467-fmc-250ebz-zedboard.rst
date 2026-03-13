@@ -15,7 +15,6 @@ Typical Setup
 
    \ |image1| *Figure 1. AD9467-FMC-250EBZ (Right) + Zedboard (Left) Setup*\
 
-
 Features
 --------
 
@@ -101,7 +100,6 @@ Ensure that the :doc:`ADI Kuiper Linux Image </wiki-migration/resources/tools-so
    
    |image2| *Figure 2. Verifying ADI Kuiper Linux Image File using WinMD5*\
 
-
 -  If SD Card format is unknown or needs to be reconfigured/reformatted. Download and install `SD Card Formatter <https://www.sdcardformatter.com/>`_ if no formatter software installed on your computer.
 
    -  Open **SD Card Formatter**, select SD card you want to reformat and make sure that it is the **correct** one.
@@ -115,7 +113,6 @@ Ensure that the :doc:`ADI Kuiper Linux Image </wiki-migration/resources/tools-so
    
    |image3| *Figure 3. Formatting the Selected SD Card*\
 
-
 -  Download and install `Win32DiskImager <https://sourceforge.net/projects/win32diskimager/files/latest/download?source=navbar>`_ (Image Flasher), to write the ADI Kuiper Linux Image to SD Card.
 
    -  Open **Win32DiskImager** then browse the ADI Kuiper Linux Image using the **small folder button**.
@@ -128,7 +125,6 @@ Ensure that the :doc:`ADI Kuiper Linux Image </wiki-migration/resources/tools-so
    
    |image4| *Figure 4. Flashing Image to SD Card using Win32DiskImager*\
 
-
 .. tip::
 
    \ *For additional details on how to format, and write SD Card with ADI Kuiper Linux Image, you can check the links below:*
@@ -137,7 +133,6 @@ Ensure that the :doc:`ADI Kuiper Linux Image </wiki-migration/resources/tools-so
    -  :doc:`Using Linux </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
    -  :doc:`Using Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
    
-
 
 -  After flashing the image to SD Card, it contains several folders in the root directory of the SD Card (BOOT FAT32 Partition) that supports many different ADI hardware boards. See :doc:`Complete Project List </wiki-migration/resources/tools-software/linux-software/kuiper-linux/project-list>`, to check the directories of files needed for ADI Hardware :adi:`(EVAL-AD9467/AD9467-FMC-250EBZ) <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9467.html#eb-overview>` and Development Platform `(ZedBoard/AES-Z7EV-7Z020-G) <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`_. Copy the following files onto the root directory of SD Card (BOOT FAT32 Partition):
 
@@ -150,7 +145,6 @@ Ensure that the :doc:`ADI Kuiper Linux Image </wiki-migration/resources/tools-so
    
    |image5| *Figure 5. Copying BOOT.BIN, devicetree.dtb, and uImage to Root Directory of SD Card*\
 
-
 -  Now, the SD card is **ready**. Always ensure to **safely remove before ejecting** the SD Card.
 
 Hardware Setup
@@ -162,18 +156,15 @@ This section will discuss on how to setup and configure the `ZedBoard (AES-Z7EV-
 
    \ |image6| *Figure 6. ZedBoard Board Configurations*\
 
-
 -  On the **ZedBoard**, set the Jumper Pins accordingly shown in Figure 6 and Table 1.
 
 .. container:: leftalign
 
    \ *Table 1. ZedBoard Jumper Configuration for EVAL-AD9467/AD9467-FMC-250EBZ*\
 
-
 .. container:: centeralign
 
    |image7|\
-
 
 -  Insert the SD Card into ZedBoard SD Card Interface Connector **(J12)**.
 -  Refer to Figure 1, plug-in AD9467-FMC-250EBZ to ZedBoard FMC Connector **(J1)**.
@@ -182,7 +173,8 @@ This section will discuss on how to setup and configure the `ZedBoard (AES-Z7EV-
 -  On the **AD9467-FMC-250EBZ** board, provide a clean, low jitter clock source to connector **J100**. Use a shielded, RG-58, 50Ohm, coaxial cable to connect the signal generator output to the Analog Input of AD9467-FMC-250EBZ board. For best results, use a narrow-band, pass filter with 50Ohm terminations and appropriate center frequency.
 -  To access its terminal, connect USB-A to Micro-USB-B cable from PC to Zedboard USB-UART port **(J14)**.
 -  On the **Zedboard**, turn on power switch **(SW8)** and the Green Power LED **(LD13)** should illuminate. After several seconds booting up, the blue Done LED **(LD12)** should illuminate.
--  Choose from either from the options below to access connected devices in ZedBoard:
+-  Choose from either from the options below to access connected devices in
+   ZedBoard:
 
    -  Connect another USB-A to Micro-USB-B cable from PC to USB-OTG port **(J13)**; **or**
    -  Connect Gigabit ethernet cable from PC to Zedboard Gigabit Ethernet port **(J11)** and **skip Step 10 to Step 12**
@@ -200,7 +192,6 @@ This section will discuss on how to setup and configure the `ZedBoard (AES-Z7EV-
 
    \ |image8|\ *Figure 7. PuTTY Serial Connection Configuration*\
 
-
 -  Enter the following commands into the terminal to **enable** USB-OTG port, see Figure 8:
 
    -  ``usb_otg.sh enable``
@@ -211,13 +202,11 @@ This section will discuss on how to setup and configure the `ZedBoard (AES-Z7EV-
 
    \ |image9|\ *Figure 8. ZedBoard terminal - Configuring USB-OTG Port*\
 
-
 -  Check device manager under **Port** section, the device must be detected as **ADI USB Serial Port** using USB-OTG connection.
 
 .. container:: centeralign
 
    \ |image10|\ *Figure 9. Device Manager - ADI USB Serial Port*\
-
 
 Software Setup
 ~~~~~~~~~~~~~~
@@ -232,13 +221,11 @@ Software Setup
 
    \ |image11|\ *Figure 10. ACE - Hardware Detected*\
 
-
 -  Click the **hardware detected** to be redirected to system tab pane. In the **System**, **uncheck** Operate without Hardware*, and click **Acquire**. See Figure 11.
 
 .. container:: centeralign
 
    \ |image12|\ *Figure 11. ACE System - Acquiring Hardware Detected*\
-
 
 -  Go back to **Home** again and click the **hardware detected**.
 -  In Figure 12, notice in the tab-pane, **xadc** is connected (greed led). Click **Find devices**, select device **cf-ad9467-core-lpc**, click **Get IIO Info** and click **Go to Detected Chip**.
@@ -246,7 +233,6 @@ Software Setup
 .. container:: centeralign
 
    \ |image13|\ *Figure 12. ACE - Generic IIO Board*\
-
 
 -  Setup the following signal source:
 
@@ -259,7 +245,6 @@ Software Setup
 
    \ |image14|\ *Figure 13. ACE - Initial Configuration*\
 
-
 -  Go to **Direct Register Access** and read **0x00** and to check if it reads the default register values, **0x18**. It is to verify the SPI communication with AD9467-FMC-250EBZ board.
 -  Click **Proceed to Analysis** and set the Sample Freq to **250MHz**.
 -  Click **FFT** and click **Run Once** to perform single capture. Make sure to adjust the analog input signal level until the fundamental power reaches **-1dBFS**. See Figure 14 to check the sample FFT capture in the analysis.
@@ -268,38 +253,37 @@ Software Setup
 
    \ |image15|\ *Figure 14. ACE - AD9467-FMC-250EBZ Sample FFT Capture*\
 
-
 -  To save the capture results, click on **Export** button at **Results** tab and save it to a location of choice.
 
 //End of Document.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9467_evaluation_board_connection.png
-   :width: 900px
+   :width: 900
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9467_verifying_adi_kuiper_linux_image_file_using_winmd5.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9467_formatting_the_selected_sd_card..png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9467_flashing_image_to_sd_card_using_win32diskimager.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9467_copying_boot_devicetree_and_uimage_to_root_directory_of_sd_card.jpg
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zed_sw.png
-   :width: 900px
+   :width: 900
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9467_table1.png
-   :width: 900px
+   :width: 900
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9467_putty_serial_connection_configuration.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad9467_zedboard_terminal.png
-   :width: 900px
+   :width: 900
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad9467_device_manager.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad9467_hardware_detected.jpg
-   :width: 200px
+   :width: 200
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad9467_acquire.jpg
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/ad9467_find_devices.jpg
-   :width: 900px
+   :width: 900
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/ad9467_init.jpg
-   :width: 900px
+   :width: 900
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/ad9467_fft.png
-   :width: 900px
+   :width: 900

@@ -14,7 +14,10 @@ Evaluation Boards
 Description
 -----------
 
-This is a Common Clock Framework subsystem driver. There are two drivers (sharing the same core implementation) for the AD9545 since the device supports both SPI and I2C interfaces. The underlying bus is abstracted in the core implementation by using regmap.
+This is a Common Clock Framework subsystem driver. There are two drivers
+(sharing the same core implementation) for the AD9545 since the device supports
+both SPI and I2C interfaces. The underlying bus is abstracted in the core
+implementation by using regmap.
 
 Source Code
 ===========
@@ -52,7 +55,9 @@ Files
 Example I2C & SPI device initialization
 =======================================
 
-The AD9545 supports both I2C and SPI interfaces, so one of the drivers can be used depending on which kind of device is instantiated. Currently, the devices can only be instantiated via device tree.
+The AD9545 supports both I2C and SPI interfaces, so one of the drivers can be
+used depending on which kind of device is instantiated. Currently, the devices
+can only be instantiated via device tree.
 
 Required devicetree properties:
 
@@ -96,17 +101,19 @@ For more supported devicetree properties take a look to :git-linux:`dt-bindings 
 Enabling Linux driver support
 =============================
 
-Configure kernel with “make menuconfig” (alternatively use “make xconfig” or “make qconfig”).
+Configure kernel with “make menuconfig” (alternatively use “make xconfig” or
+“make qconfig”).
 
 .. hint::
 
-   The AD9545 SPI driver depends CONFIG_SPI and the AD9545 I2C driver depends on CONFIG_I2C.
-
+   The AD9545 SPI driver depends CONFIG_SPI and the AD9545 I2C driver depends on
+   CONFIG_I2C.
 
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -133,7 +140,8 @@ Common Clock Framework provides debugfs files for each clock registered:
    HMC-REF_CLKIN0  HMC7044_OUT10   HMC7044_OUT4   PLL0      Ref-M1 cam1      dpi             emmc2   gp1          otg   plla_core   pllc_per    pwm    tsens
    HMC-REF_CLKIN1  HMC7044_OUT11   HMC7044_OUT5   Q0A-div       aux_spi1   clk_dump  dsi0e           fw-clk-arm  gp2          otp   plla_dsi0   plld        sdram  uart
 
-For each clock multiple debugfs files are generated that read the clk parameters such as rate, phase, parent etc. :
+For each clock multiple debugfs files are generated that read the clk parameters
+such as rate, phase, parent etc. :
 
 ::
 
@@ -244,4 +252,3 @@ CLOCK pointers
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

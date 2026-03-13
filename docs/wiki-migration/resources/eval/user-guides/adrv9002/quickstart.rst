@@ -54,7 +54,10 @@ In most carriers, the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` and :adi:`ADRV90
 Identify your hardware
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Evaluation boards were equipped with different silicon revisions. All boards built since the middle of December 2020 have C0 silicon, older ones use B0 silicon these are no longer shipped. You can identify the board you have based on its label.
+Evaluation boards were equipped with different silicon revisions. All boards
+built since the middle of December 2020 have C0 silicon, older ones use B0
+silicon these are no longer shipped. You can identify the board you have based
+on its label.
 
 ======== ================
 Label    Silicon Revision
@@ -67,8 +70,8 @@ Label    Silicon Revision
 
 .. tip::
 
-   Each revision of silicon requires its corresponding software support files in the later steps.
-
+   Each revision of silicon requires its corresponding software support files in
+   the later steps.
 
 ZCU102 + ADRV9002NP
 -------------------
@@ -116,7 +119,6 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 More Information
 ================
 
@@ -145,7 +147,6 @@ Software resources
 
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w1.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w2.png

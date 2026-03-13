@@ -5,7 +5,11 @@ The baremetal audio framework is architected such that each time a new block of 
 
 Within the ``processaudio_callback()`` function, we can either process individual samples of audio that are available in the various input buffers or we can call functions that operate on the entire block of audio.
 
-For example, say we wanted to change the gain / volume by a factor of 0.5 on the incoming audio from the 1/8" audio in jack on the SHARC Audio Module, and send the output back to the 1/8" audio out jack. We'd do this by multiplying each of our input samples by 0.5, and then sending the result to our output buffer like so.
+For example, say we wanted to change the gain / volume by a factor of 0.5 on the
+incoming audio from the 1/8" audio in jack on the SHARC Audio Module, and send
+the output back to the 1/8" audio out jack. We'd do this by multiplying each of
+our input samples by 0.5, and then sending the result to our output buffer like
+so.
 
 .. code:: c
 
@@ -28,4 +32,3 @@ Or say we had written a function call ``volume_half( float * in, float * out, in
    }
 
 As noted in the :doc:`Processing Audio </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/processing-audio>` section, we have callbacks on both SHARC cores. If both SHARC cores are configured to process audio (set in common/audio_system_config.h), the output buffers from core 1 are passed to core 2 and become input buffers. So the processing flow is input->core 1->core 2->output.
-

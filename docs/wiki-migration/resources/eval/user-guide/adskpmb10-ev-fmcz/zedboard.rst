@@ -40,7 +40,6 @@ The **PowerhouseApp** is a Python-based software that enables control and evalua
 
    |image1| *Figure 1. ADSKPMB10-EV-FMCZ Evaluation Kit*
 
-
 Getting Started
 ---------------
 
@@ -58,7 +57,6 @@ Warning
 
    To ensure that the evaluation system is correctly recognized when it is connected to the PC, install the evaluation software and drivers first before connecting the :adi:`ADSKPMB10-EV-FMCZ` and ZedBoard™ to the PC.
 
-
 Installing the PowerhouseApp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -71,14 +69,12 @@ Installing the PowerhouseApp
 
    \ |image2|\ *Figure 3. Command Prompt: Go into the directory of the installer (.whl file)*
 
-
 -  Install **PowerhouseApp** by typing in ``pip install powerhouse-1.15.0-py3-none-any.whl``.
    *Note: The wheel (.whl) file will find the installation path of the Python directory defined in the Windows environment variable path.*
 
 .. container:: centeralign
 
    |image3| *Figure 4. Command Prompt: Installing the .whl file*
-
 
 -  If the installation is successful, the user may now close the Command Prompt.
 
@@ -96,7 +92,6 @@ Setting up the SD Card of the ZedBoard™
 
    |image4| *Figure 5. Boot Files*
 
-
 -  Eject the SD card and connect it to the Zedboard™.
 
 ++++
@@ -113,7 +108,6 @@ Configuring the IP Address of the Zedboard™
 
    |image5| *Figure 6. Determining the COM Port*
 
-
 -  Open Putty, Tera Term, or other serial terminal program.
 -  Setup the terminal between the COM port the Zedboard™ by typing in the **Speed** or **Baud rate** to **115200**. The serial terminal connection will default to auto login and will automatically go the root directory of the SD card.
 
@@ -123,7 +117,6 @@ Configuring the IP Address of the Zedboard™
 .. container:: centeralign
 
    *Figure 7. Setting up the serial terminal connection*
-
 
 -  From here, it is a good idea to check if the connected device can be found using the command ``iio_info`` into the terminal, and hitting **Enter**. This should provide a list of devices along with their channels and attributes.
 -  Type ``ifconfig`` into the terminal, then hit **Enter**. That should echo back some information where user can pull out the IP address of the Zedboard™. Take note of this information.
@@ -135,20 +128,17 @@ Configuring the IP Address of the Zedboard™
 
    *Figure 8. Zedboard™ IP Address*
 
-
 -  In the **Control Panel**, open **Network Connections**. Right Click on the Ethernet connected and select **Properties**.
 
 .. container:: centeralign
 
    |image6| *Figure 9. Network Connections*
 
-
 -  Select the first driver and click **Configure**.
 
 .. container:: centeralign
 
    |image7| *Figure 10. Ethernet Properties*
-
 
 -  Click **Use the following IP Address** and type in the following details:
    **IP Address:** change from ``192.168.1.101`` to ``192.168.1.254`` (except ``192.168.1.109``)
@@ -159,13 +149,11 @@ Configuring the IP Address of the Zedboard™
 
    |image8| *Figure 11. Configuring the Static IP Address*
 
-
 -  See if the configuration is successful by entering ``ipconfig`` in the **Command Prompt**. Verify also the connection by doing a ping test. You may enter ``ping <IP Address of the Zedboard™>`` or in this case, ``ping 192.168.1.109``.
 
 .. container:: centeralign
 
    |image9| *Figure 12. Ping Test with Zedboard™*
-
 
 ++++
 
@@ -178,14 +166,13 @@ The :adi:`ADSKPMB10-EV-FMCZ` connects to the ZedBoard™. The ZedBoard™ board 
 
    |image10| *Figure 13. Signal Chain Kit Connection using ZedBoard™*
 
-
 -  Connect the :adi:`ADSKPMB10-EV-FMCZ` securely to the 160-way connector on the ZedBoard™. The :adi:`ADSKPMB10-EV-FMCZ` does not require an external power supply adapter.
--  Connect the ZedBoard™ to the PC through the Ethernet port. Power it up with the 12 V wall adapter included in the kit.
+-  Connect the ZedBoard™ to the PC through the Ethernet port. Power it up with
+   the 12 V wall adapter included in the kit.
 
 .. warning::
 
    Connecting through USB cable is for debug purposes only.
-
 
 Software GUI Setup
 ------------------
@@ -202,7 +189,6 @@ After installing the **PowerhouseApp** (see the Software Installation Procedures
 
    |image11| *Figure 14. Launching the PowerhouseApp*
 
-
 Establishing Hardware Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -214,14 +200,12 @@ In case there is no hardware connected, a prompt will pop out display indicating
 
    |image12| *Figure 15. Connectivity Check*
 
-
 Navigating the PowerhouseApp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: centeralign
 
    |image13| *Figure 16. PowerhouseApp: ADSKPMB10-EV-FMCZ GUI Software Front Panel (Configure Tab View)*
-
 
 Front Panel Overview
 ^^^^^^^^^^^^^^^^^^^^
@@ -234,8 +218,8 @@ Click **Graph** (Label 1 in Figure 16) to show the measured data and its corresp
 
 .. note::
 
-   User may opt to hide the other displays by clicking on Analysis and/or the yellow arrow located on the lower left of the panel.
-
+   User may opt to hide the other displays by clicking on Analysis and/or the
+   yellow arrow located on the lower left of the panel.
 
 *\*\* Configuration \*\**
 
@@ -298,7 +282,6 @@ Waveform Tab View
 
    |image14| *Figure 17. Waveform Tab View*
 
-
 Figure 17 shows the **Waveform** tab view. The **Waveform** tab view shows the time domain representation of the conversion results from the connected device, as well as several analysis items. The **Waveform** tab view contains the following controls and indicators:
 
 -  **Waveform graph** (Label 1 in Figure 17): displays the time domain plot of the most recently captured or loaded conversion results. The scale and range of the waveform graph can be set in the **Waveform Analysis** box by double clicking on the **Minimum Value** and **Maximum Value** fields and entering the desired values. The waveform graph also includes viewing tools that are described in Graph Viewing Controls section.
@@ -319,7 +302,6 @@ FFT Tab View
 .. container:: centeralign
 
    |image15| *Figure 18. FFT Tab View*
-
 
 Figure 18 shows the **FFT** tab view. The **FFT** tab displays the calculated FFT representation of the conversions results from the connected device and common AC performance metrics. The **FFT** tab contains the following controls and indicators:
 
@@ -350,7 +332,6 @@ Histogram Tab View
 
    |image16| *Figure 19. Histogram Tab View*
 
-
 Figure 19 shows the **Histogram** tab view. The **Histogram** tab is useful for performing statistical analysis of the device conversion results, especially when measuring DC signals. The histogram graph shows the distribution of the conversion results as well as various statistical analysis items. The **Histogram** tab contains the following controls and indicators:
 
 -  **Histogram graph** (Label 1 in Figure 19): displays histogram of the most recently captured or loaded conversion results. The scale and range of the histogram graph can be set by double-clicking on the minimum and maximum axis values and entering the desired values. The histogram graph also includes viewing tools, described in Table 5.
@@ -374,8 +355,10 @@ Summary Tab View
 
    |image17| *Figure 20. Summary Tab View*
 
-
-Figure 20 shows the Summary tab view. The Summary tab simultaneously displays the waveform, histogram, and FFT graphs and analysis for the device conversion results on the screen. The Summary tab contains the following controls and indicators:
+Figure 20 shows the Summary tab view. The Summary tab simultaneously displays
+the waveform, histogram, and FFT graphs and analysis for the device conversion
+results on the screen. The Summary tab contains the following controls and
+indicators:
 
 -  **Waveform graph** (Label 1 in Figure 20): displays the time domain plot of the most recently captured or loaded conversion results. The scale and range of the waveform graph can be set by double-clicking on the minimum and maximum axis values along the x-axis and y-axis and entering the desired values. The waveform graph also includes viewing tools that are described in Graph Viewing Controls section.
 -  **FFT graph** (Label 2 in Figure 20): displays an FFT of the most recently captured or loaded conversion results. The scale and range of the FFT graph can be set by double clicking on the minimum and maximum axis values and entering the desired values. The FFT graph also includes viewing tools that are described in Graph Viewing Controls section.

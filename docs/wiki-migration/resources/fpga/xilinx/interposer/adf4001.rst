@@ -30,7 +30,15 @@ The **EVAL-SDP-CS1Z** controller board is Serial Interfaces Only, low cost, redu
 
 The **EVAL-ADF4001SD1Z** is designed to allow the user to evaluate the perfor-mance of the ADF4001 frequency synthesizer for phase-locked loops (PLLs). Figure 1 shows the board, which contains the ADF4001 synthesizer, an SMA connector for the reference input, power supplies, and an RF output. There is also a footprint for a loop filter and a VCO on board.
 
-The ADF4001 frequency synthesizer can be used to implement clock sources for PLLs that require very low noise, stable reference signals. It consists of a low-noise digital PFD (Phase Frequency Detector), a precision charge pump, a programmable reference divider, and a programmable 13-bit N counter. In addition, the 14-bit reference counter (R Counter), allows selectable REFIN frequencies at the PFD input. A complete PLL (Phase-Locked Loop) can be implemented if the synthesizer is used with an external loop filter and VCO (Voltage Controlled Oscillator) or VCXO (Voltage Controlled Crystal Oscillator). The N min value of 1 allows flexibility in clock generation.
+The ADF4001 frequency synthesizer can be used to implement clock sources for
+PLLs that require very low noise, stable reference signals. It consists of a
+low-noise digital PFD (Phase Frequency Detector), a precision charge pump, a
+programmable reference divider, and a programmable 13-bit N counter. In
+addition, the 14-bit reference counter (R Counter), allows selectable REFIN
+frequencies at the PFD input. A complete PLL (Phase-Locked Loop) can be
+implemented if the synthesizer is used with an external loop filter and VCO
+(Voltage Controlled Oscillator) or VCXO (Voltage Controlled Crystal Oscillator).
+The N min value of 1 allows flexibility in clock generation.
 
 More information
 ----------------
@@ -42,7 +50,9 @@ More information
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Required Hardware
 -----------------
@@ -70,15 +80,15 @@ Downloads
    -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
    
 
-
 Hardware setup
 --------------
 
 .. important::
 
    
-   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
-
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that
+   the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to
+   change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
@@ -86,7 +96,8 @@ Hardware setup
 Reference Project Overview
 --------------------------
 
-The following commands were implemented in this version of EVAL-ADF4001SD1Z reference project for Xilinx KC705 FPGA board.
+The following commands were implemented in this version of EVAL-ADF4001SD1Z
+reference project for Xilinx KC705 FPGA board.
 
 +-------------------+------------------------------------------------------------------------------------+
 | Command           | Description                                                                        |
@@ -115,29 +126,26 @@ The following commands were implemented in this version of EVAL-ADF4001SD1Z refe
 | **getfrequency?** | Print the actual VCO frequency.                                                    |
 +-------------------+------------------------------------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+Commands can be executed using a serial terminal connected to the UART
+peripheral of Xilinx KC705 FPGA.
 
-The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
-
+The following image shows a generic list of commands in a serial terminal
+connected to Xilinx KC705 FPGA's UART peripheral.
 
 |Terminal_KC705.jpg|
 
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `import_workspace <https://wiki.analog.com/import_workspace>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `ez_common <https://wiki.analog.com/ez_common>`_
-
 
 .. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/terminal_kc705.jpg

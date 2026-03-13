@@ -35,7 +35,8 @@ This section presents the steps for developing a software application that will 
 
 -  At this moment, all the files are included into the project.
 -  The project is ready to be compiled and downloaded on the board. Press the F7 key to compile it. Press CTRL + D to download and debug the project.
--  A window will appear asking to configure the emulator. Keep the default settings and press OK.
+-  A window will appear asking to configure the emulator. Keep the default
+   settings and press OK.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/rl78g14_software_tutorial_07.png
    :align: center

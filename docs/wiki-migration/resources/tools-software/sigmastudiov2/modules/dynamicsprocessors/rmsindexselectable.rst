@@ -8,16 +8,22 @@ RMS Index Selectable
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/peakcompgraph.png
    :alt: peakcompgraph.png
-   :width: 450px
+   :width: 450
 
 Description
 ===========
 
-This block uses an rms dynamics processor that lets you control the rms TC (time constant) and Soft Knee behavior, and opens the compression curve graph for your curve drawing.
+This block uses an rms dynamics processor that lets you control the rms TC (time
+constant) and Soft Knee behavior, and opens the compression curve graph for your
+curve drawing.
 
-RMS works on a longer average than peak processors, thus allowing some fast loud transients to pass without compression, but operating more on longer segments that exceed the threshold.
+RMS works on a longer average than peak processors, thus allowing some fast loud
+transients to pass without compression, but operating more on longer segments
+that exceed the threshold.
 
-This module has stage growth and each stage can have its own compression ratio set using the compressor plot individually. The index selection pin selects the desired stage to be used on the target.
+This module has stage growth and each stage can have its own compression ratio
+set using the compressor plot individually. The index selection pin selects the
+desired stage to be used on the target.
 
 Targets Supported
 =================
@@ -50,7 +56,6 @@ Name    Type  Description
 ======= ===== ===============
 Output0 Audio Output channel1
 ======= ===== ===============
-
 
 | ===== Configurable Parameters =====
 
@@ -87,12 +92,12 @@ Table_StageX        Table values  Float                  8.24 format
 TimeConstant_StageX Time Constant Float                  8.24 format
 =================== ============= ====================== =============
 
-
 | Note : \_StageX indicates the dsp parameters associated with a particular stage. X represents the stage index
 
 DSP Parameter Computation
 =========================
 
-Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS + 0.0000001) (When Decay is in linear) Hold = FS \* Hold/1000
+Decay = (20000/Decay)/(FS + 0.0000001) (When Decay is in dBps) or Decay/(FS +
+0.0000001) (When Decay is in linear) Hold = FS \* Hold/1000
 
 Where FS is the sampling rate

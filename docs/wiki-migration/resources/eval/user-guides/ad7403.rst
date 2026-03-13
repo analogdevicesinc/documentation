@@ -7,7 +7,6 @@ The :adi:`AD7403 <AD7403?doc=AD7403.pdf>` is a high performance, second-order, �
 
 The analog input is continuously sampled by a high performanceanalog modulator, and converted to a ones density digital output stream with a data rate of up to 20 MHz. The original information can be reconstructed with an appropriate digital filter to achieve 88 dB signal to noise ratio (SNR) at 78.1 kSPS.The serial input/output can use a 5 V or a 3 V supply (VDD2).The serial interface is digitally isolated. High speed complementarymetal oxide semiconductor (CMOS) technology, combined with monolithic transformer technology, means the on-chip isolation provides outstanding performance characteristics, superior to alternatives such as optocoupler devices. The :adi:`AD7403 <AD7403?doc=AD7403.pdf>` device is offered in a 16-lead, wide-body SOIC package and has an operating temperature range of −40°C to +125°C.
 
-
 |image1|
 
 .. note::
@@ -18,7 +17,6 @@ The analog input is continuously sampled by a high performanceanalog modulator, 
    -  MATLAB (R2014a and beyond)
    -  Simulink
    
-
 
 Downloads
 =========
@@ -31,49 +29,56 @@ Downloads
    -  This link provides a download of the .zip file. Simply extract the .zip, run InstallMe.m, and launch AD7403.slx (more detail below). This will launch `MATLAB <https://www.mathworks.com/products/matlab/>`_ and Simulink.
    
 
-
 User Notes
 ==========
 
 To use the AD7403 model, ensure all the above packages are installed and download the zip file `here <http://download.analog.com/behavioral-models/mathworks/ad7403_mathworks.zip>`_. Extract the files to a convenient location.
 
-In order to set up the paths, first navigate to the extracted directory and run <file>InstallMe.m</code>.
+In order to set up the paths, first navigate to the extracted directory and run
+<file>InstallMe.m</code>.
 
 This is necessary for every new session of MATLAB.
 
-Next, navigate to the AD7403 directory and double click on <file>AD7403.slx</code>.
+Next, navigate to the AD7403 directory and double click on
+<file>AD7403.slx</code>.
 
 On opening Simulink, the following block diagram will appear.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/simulink_bd.png
-   :width: 300px
+   :width: 300
 
 If it is the first time running MATLAB, then it will need to be configured to use a compiler. To do this type the command ``mex -setup`` This brings up the following window where a compiler can be selected.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mex.png
-   :width: 300px
+   :width: 300
 
-Various sources can be used as inputs to the model. Here, a Sine Wave source is used. A ramp or constant input can also be employed.
+Various sources can be used as inputs to the model. Here, a Sine Wave source is
+used. A ramp or constant input can also be employed.
 
-The parameters of the sinc filter can be edited by double clicking on the relevant block. This launches the following window.
+The parameters of the sinc filter can be edited by double clicking on the
+relevant block. This launches the following window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/sinc_variables.png
-   :width: 300px
+   :width: 300
 
 The order of the filter and the decimation rate can be adjusted here.
 
-Running the model using the default conditions will result in the following output from the modulator and sinc filter.
+Running the model using the default conditions will result in the following
+output from the modulator and sinc filter.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/scope.png
-   :width: 300px
+   :width: 300
 
-It is possible to change the FCLKIN frequency of the model. It is a global variable within the model as both the AD7403 and the SINC filter utilise it. To edit the variable, select Model Properties -> Callbacks -> InitFcn\* See below images.
+It is possible to change the FCLKIN frequency of the model. It is a global
+variable within the model as both the AD7403 and the SINC filter utilise it. To
+edit the variable, select Model Properties -> Callbacks -> InitFcn\* See below
+images.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/model_properties.png
-   :width: 300px
+   :width: 300
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/model_properties_2.png
-   :width: 300px
+   :width: 300
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7403_fbs_1_.png
    :target: :adi:`AD7403?doc=AD7403.pdf`

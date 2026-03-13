@@ -1,7 +1,8 @@
 USB Gadget Audio
 ================
 
-This page provides how to use the USB Gadget Audio on ADSP-SC5XX board which makes the the Board as an audio card, and it will include the below test:
+This page provides how to use the USB Gadget Audio on ADSP-SC5XX board which
+makes the the Board as an audio card, and it will include the below test:
 
 -  USB gadget Audio Class 1.0
 -  USB Gadget Audio Class 2.0
@@ -11,8 +12,8 @@ This page provides how to use the USB Gadget Audio on ADSP-SC5XX board which mak
 Hardware Configuration
 ----------------------
 
-Connect the USB micro-B plug cable into the USB HS/OTG Device port, as showing below:
-
+Connect the USB micro-B plug cable into the USB HS/OTG Device port, as
+showing below:
 
 |image1|
 
@@ -21,12 +22,14 @@ Connect the USB micro-B plug cable into the USB HS/OTG Device port, as showing
 Software Configuration
 ----------------------
 
-On the Yocto, Configure the linux-kernel as below to set the USB controller in Gadget only mode, and enable the USB Gadget Audio relevant options.
+On the Yocto, Configure the linux-kernel as below to set the USB controller in
+Gadget only mode, and enable the USB Gadget Audio relevant options.
 
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-Add the alsa-utils and alsa-lib packages in the filesystem, they're enabled in adsp-sc5xx-full image by default.
+Add the alsa-utils and alsa-lib packages in the filesystem, they're enabled in
+adsp-sc5xx-full image by default.
 
 Enable alsa-lib and alsa-utils support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -36,7 +39,8 @@ Enable alsa-lib and alsa-utils support
    vim build/conf/local.conf
    IMAGE_INSTALL_append = "alsa-utils alsa-lib"
 
-Then run “bitbake adsp-sc5xx-minimal -C compile” or “bitbake adsp-sc5xx-full -C compile” to generate the filesystem.
+Then run “bitbake adsp-sc5xx-minimal -C compile” or “bitbake adsp-sc5xx-full -C
+compile” to generate the filesystem.
 
 Kernel Configuration
 ~~~~~~~~~~~~~~~~~~~~
@@ -125,14 +129,16 @@ Ez-Kit target board
 On the Linux-Host PC
 ^^^^^^^^^^^^^^^^^^^^
 
-With following command you should be able to see the USB Gadget Audio device is there on your HOST:
+With following command you should be able to see the USB Gadget Audio device is
+there on your HOST:
 
 .. code:: console
 
    test@madara:~$ lsusb
    Bus 002 Device 033: ID 1d6b:0101 Linux Foundation Audio Gadget
 
-Then we list the available sound card on host PC, to decide which sound card is associated with EZKIT board
+Then we list the available sound card on host PC, to decide which sound card is
+associated with EZKIT board
 
 .. code:: console
 
@@ -182,7 +188,8 @@ Ez-Kit target board
    g_audio gadget: g_audio ready
    g_audio gadget: high-speed config #1: Linux USB Audio Gadget
 
-New Sound Card UAC2Gadget(card 1) is generated both for playback and capture on ezkit board:
+New Sound Card UAC2Gadget(card 1) is generated both for playback and capture on
+ezkit board:
 
 .. code:: console
 
@@ -222,14 +229,16 @@ Just play music on your Iphone, you will hear the sound output from ezkit board.
 On the Linux-Host PC
 """"""""""""""""""""
 
-With following command you should be able to see the USB Gadget Audio device is there on your HOST:
+With following command you should be able to see the USB Gadget Audio device is
+there on your HOST:
 
 .. code:: console
 
    test@madara:~$ lsusb
    Bus 002 Device 033: ID 1d6b:0101 Linux Foundation Audio Gadget
 
-Then we list the available sound card on host PC, to decide which sound card is associated with EZKIT board
+Then we list the available sound card on host PC, to decide which sound card is
+associated with EZKIT board
 
 .. code:: console
 
@@ -278,4 +287,4 @@ Now, from the headset we can hear music is playing out.
 **Go TO** :doc:`USB Interface </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/start>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/gadget-mode/002_usb_interface-device_application.jpg
-   :width: 600px
+   :width: 600

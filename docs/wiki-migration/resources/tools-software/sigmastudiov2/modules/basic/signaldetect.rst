@@ -9,7 +9,12 @@ Signal Detection
 Description
 -----------
 
-The Signal Detection algorithm is a cell that will output a flag once no signal has been present at the input for a given amount of time. The “Threshold” setting will determine the value the input is compared to in order to determine whether or not a signal is present. The “Trig Time” setting will determine how long, in seconds, the cell will wait to output the flag. The peak of the signal is detected, not the RMS value.
+The Signal Detection algorithm is a cell that will output a flag once no signal
+has been present at the input for a given amount of time. The “Threshold”
+setting will determine the value the input is compared to in order to determine
+whether or not a signal is present. The “Trig Time” setting will determine how
+long, in seconds, the cell will wait to output the flag. The peak of the signal
+is detected, not the RMS value.
 
 Targets Supported
 -----------------
@@ -44,7 +49,6 @@ Name    Type  Description
 ======= ===== ===============
 Output0 Audio Output channel0
 ======= ===== ===============
-
 
 | ===== Configurable Parameters =====
 

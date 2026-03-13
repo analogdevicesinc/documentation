@@ -67,26 +67,47 @@ Algorithm Description
 
 The linear interpolation cell performs interpolation of a data set.
 
-The input of the linear interpolation cell must lie between a set minimum and maximum value. The input values between the min and max input values are mapped linearly to an index number between 0 and n, with n representing the maximum index.
+The input of the linear interpolation cell must lie between a set minimum and
+maximum value. The input values between the min and max input values are mapped
+linearly to an index number between 0 and n, with n representing the maximum
+index.
 
-For example, if input = min, then index 0 is selected. If input = max, then index n is selected. If the input lies halfway between two indices, then the output will be the average of the two corresponding points in the data set.
+For example, if input = min, then index 0 is selected. If input = max, then
+index n is selected. If the input lies halfway between two indices, then the
+output will be the average of the two corresponding points in the data set.
 
 The process of mapping an input to an index is shown graphically below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/linearinterpolatorpic2.png
    :alt: linearinterpolatorpic2.png
 
-The actual output of the cell depends on the values of the data set stored in the index table. The example below shows a table with 6 points. If index = min, then the output will be the value of the point stored in index 0. If index = 5, then the output will be the value of the point stored in index 5. If, for example, the input is one third of the way between indices 2 and 3, then the output will be (index_2 \* 2/3) + (index_3 \* 1/3). This is illustrated by the orange point in the graphic below - the cell's output would be the value of the orange point's displacement on the vertical axis. The blue points represent values stored in the index table. The lines connecting the blue points represent the "interpolants." The output value of the cell will always lie on an interpolant.
+The actual output of the cell depends on the values of the data set stored in
+the index table. The example below shows a table with 6 points. If index = min,
+then the output will be the value of the point stored in index 0. If index = 5,
+then the output will be the value of the point stored in index 5. If, for
+example, the input is one third of the way between indices 2 and 3, then the
+output will be (index_2 \* 2/3) + (index_3 \* 1/3). This is illustrated by the
+orange point in the graphic below - the cell's output would be the value of the
+orange point's displacement on the vertical axis. The blue points represent
+values stored in the index table. The lines connecting the blue points represent
+the "interpolants." The output value of the cell will always lie on an
+interpolant.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/linearinterpolatorpic3.png
    :alt: linearinterpolatorpic3.png
 
-If the input is below the defined minimum or above the defined maximum, the output of the cell will be unpredictable. Care should be taken to limit the input signal accordingly.
+If the input is below the defined minimum or above the defined maximum, the
+output of the cell will be unpredictable. Care should be taken to limit the
+input signal accordingly.
 
 Example
 -------
 
-The example below shows a linear interpolator cell that is set up to interpolate for inputs between 10 and 11. The input, supplied by a DC Input cell, is 10.5. Since 10.5 is exactly the midpoint between 10 and 11, the midpoint of the table, 3, is output. A DSP Readback cell is used to confirm the output of the Linear Interpolator cell.
+The example below shows a linear interpolator cell that is set up to interpolate
+for inputs between 10 and 11. The input, supplied by a DC Input cell, is 10.5.
+Since 10.5 is exactly the midpoint between 10 and 11, the midpoint of the table,
+3, is output. A DSP Readback cell is used to confirm the output of the Linear
+Interpolator cell.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/linearinterpolatorpic4.png
    :alt: linearinterpolatorpic4.png

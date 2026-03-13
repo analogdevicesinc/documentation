@@ -3,7 +3,9 @@
 Add Connection
 ==============
 
-This action allows the user to add connection between two elements specified on the parent canvas or schematic page. The function call takes in 8 arguments. Return type is a SSPResult.
+This action allows the user to add connection between two elements specified on
+the parent canvas or schematic page. The function call takes in 8 arguments.
+Return type is a SSPResult.
 
 API
 ---
@@ -27,7 +29,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the AddConnection action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+AddConnection action.
 
 ::
 

@@ -3,7 +3,9 @@
 Get Pin Collections
 ===================
 
-This action allows the user to get input and output pins details of a specified module which is present in the canvas. The function call takes in 1 arguments. This API returns the SSPResult type.
+This action allows the user to get input and output pins details of a specified
+module which is present in the canvas. The function call takes in 1 arguments.
+This API returns the SSPResult type.
 
 API
 ---
@@ -20,7 +22,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the GetPinCollections action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+GetPinCollections action.
 
 ::
 

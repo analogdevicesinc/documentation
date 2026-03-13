@@ -9,7 +9,6 @@ Installation and User Guide can be downloaded here: `Evaluation Kit Installation
 | |image1|
 | Picture of ADCMXL Evaluation System: FX3 Board + ADCMXL_BRKOUT/PCBZ + ADcmXL3021 (or ADcmXL1021-1) Module. The picture above shows how to connect the evaluation kit.
 
-
 | === EVALUATION OPTION PART NUMBERS TO ORDER===
 
 | The following options are available to be used to evaluate the ADcmXL family and can be ordered by contacting an ADI distributor to place the order.
@@ -18,7 +17,6 @@ Installation and User Guide can be downloaded here: `Evaluation Kit Installation
 
 | **EVAL-ADCM** Evaluation kit for ADcmXL3021, which includes ADCMXL_BRKOUT/PCBZ, the module and additional hardware to use ADI's ADCMXL Evaluation Software.
 | **EVAL-ADCM-1** Evaluation kit for ADcmXL1021-1, which includes ADCMXL_BRKOUT/PCBZ, the module and additional hardware to use ADI's ADCMXL Evaluation Software.
-
 
 | === EVALUATION OPTIONS DESCRIPTION===
 
@@ -36,7 +34,6 @@ The *ADCMXL_BRKOUT/PCBZ* is a breakout board that has a Hirose DF12(3.0)-14DP-05
 
 NOTE: Both ADcmXL1021-1 and ADcmXL3021 use the following Hirose connector and would require the following mating plug: DF12(3.0)–14DS–0.5V(86) – Hirose Receptacle – will be used on flex tail of product DF12(3.0)–14DP–0.5V(86) – Hirose Plug – to be used on customer boards, test, eval boards, etc.
 
-
 | === SOFTWARE TO DOWNLOAD===
 
 ADCMXL Evaluation Software installation requires two downloads:
@@ -44,9 +41,8 @@ ADCMXL Evaluation Software installation requires two downloads:
 | 1. Download and unzip the file called FX3Driver.zip (click here to see the download link) `(click here to download fx3driver.zip) <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/fx3_driver.zip>`_ 2. Run DriverSetup.exe 3. Download and unzip the file called “ADCMXL_Evaluation_revision.zip”, where revision is currently identified as “2192”. This version supports both ADcmXL1021-1 and ADcmXL3021 modules. `(click here to download adcmxl_evaluation_rev_2192.zip) <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adcmxl_evaluation_rev_2192.zip>`_
 | (NOTE: ADCMXL Evaluation Software revisions 2.1.8.6 and higher, need the most recent `FX3Driver <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/fx3_driver.zip>`_ to operate.) 4. Connect the evaluation setup to the computer
 
-
 | === PC SYSTEM REQUIREMENTS=== - Windows XP, Vista, 7, 10 - .NET Framework 3.5
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adcmxl3021bmlzx-kit.gif
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/adcmxl_brkout_p1pinout.gif
-   :width: 200px
+   :width: 200

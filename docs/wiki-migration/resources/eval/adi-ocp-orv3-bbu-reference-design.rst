@@ -4,7 +4,12 @@ ADI OCP ORV3 BBU Reference Design
 Overview
 --------
 
-This reference design shares an overview about the Analog Devices' proprietary solution for the OCP ORV3 Battery Back-up Unit reference design, leveraging the company's array of resources, including power converters, controllers, power and battery management products, microcontrollers, high-performance supervisors, and more. The webpage will offer a brief summary and explanation of a battery backup unit, outlining its application in data center scenarios.
+This reference design shares an overview about the Analog Devices' proprietary
+solution for the OCP ORV3 Battery Back-up Unit reference design, leveraging the
+company's array of resources, including power converters, controllers, power and
+battery management products, microcontrollers, high-performance supervisors, and
+more. The webpage will offer a brief summary and explanation of a battery backup
+unit, outlining its application in data center scenarios.
 
 What is OCP?
 ------------
@@ -21,7 +26,8 @@ What is a Battery Back-up Unit?
 
 As an illustration, a key requirement for an individual BBU module is its ability to deliver a **backup power of 3kW** for a duration of 4 minutes and a **charging power of 250W** over a period ranging from three to six hours.
 
-To see additional details regarding the established BBU standard specifications, please refer to the following link:
+To see additional details regarding the established BBU standard specifications,
+please refer to the following link:
 
 -  `Open Rack/SpecsAndDesigns <https://www.opencompute.org/wiki/Open_Rack/SpecsAndDesigns>`_
 
@@ -30,7 +36,7 @@ Single BBU module
 
 .. image:: https://wiki.analog.com/_media/resources/eval/bbu_module.png
    :align: right
-   :width: 200px
+   :width: 200
 
 -  3kW for 4 minutes
 -  250W charging power
@@ -42,7 +48,7 @@ Single BBU module
 
 .. image:: https://wiki.analog.com/_media/resources/eval/bbu_module_1.jpg
    :align: right
-   :width: 200px
+   :width: 200
 
 Battery Back-up Unit (BBU Shelf)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -66,9 +72,15 @@ With regards to power system and fault monitoring, the power management IC, :adi
 Graphical User Interface
 ------------------------
 
-A graphical user interface has been created to offer a visual logical sequence of operations for the device, ensuring a meticulously planned execution of housekeeping and protection tasks. The GUI also plays a pivotal role in facilitating well-organized and object-oriented monitoring, reading, and providing easy access for customers.
+A graphical user interface has been created to offer a visual logical sequence
+of operations for the device, ensuring a meticulously planned execution of
+housekeeping and protection tasks. The GUI also plays a pivotal role in
+facilitating well-organized and object-oriented monitoring, reading, and
+providing easy access for customers.
 
-The graphical user interface (GUI) for the BBU module is divided into various sections, each offering crucial information to the user. The following details the functions of each section:
+The graphical user interface (GUI) for the BBU module is divided into various
+sections, each offering crucial information to the user. The following details
+the functions of each section:
 
 -   Module operation status indicator
 -   Module internal temperature readings
@@ -77,7 +89,9 @@ The graphical user interface (GUI) for the BBU module is divided into various se
 -   Power Converter metrics information
 -   Cells information (voltage and temperature)
 
-The GUI only allows the display of one module at a time, and users have the flexibility to select which specific module's data they want to view on the interface.
+The GUI only allows the display of one module at a time, and users have the
+flexibility to select which specific module's data they want to view on the
+interface.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/bbu_gui.jpg
    :align: center
@@ -88,7 +102,10 @@ More Information
 Technical Articles
 ~~~~~~~~~~~~~~~~~~
 
-A comprehensive five-part technical article series about the BBU reference design will be published on Analog Dialogue, commencing in December 2023. Stay tuned for the release of the articles, and links to each installment will be provided.
+A comprehensive five-part technical article series about the BBU reference
+design will be published on Analog Dialogue, commencing in December 2023. Stay
+tuned for the release of the articles, and links to each installment will be
+provided.
 
 -  :adi:`Smart Battery Backup for Uninterrupted Energy Part 1: Electrical and Mechanical Design - December 2023 <en/analog-dialogue/articles/smart-battery-backup-for-uninterrupted-energy-part1.html#>`
 -  :adi:`Smart Battery Backup for Uninterrupted Energy Part 2: BBU Microcontroller Functions and Operations - February 2024 <en/analog-dialogue/articles/smart-battery-backup-for-uninterrupted-energy-part-2.html>`
@@ -107,4 +124,4 @@ Support
 Analog Devices can provide online support for anyone using any components used on the reference design through posting a question on the :ez:`EngineerZone <power>`. Feel free to click on this :ez:`link <power/f/q-a/p/addpost>` to redirect you to the "Ask a question" page.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/bbu_orv3_architecture.jpg
-   :width: 350px
+   :width: 350

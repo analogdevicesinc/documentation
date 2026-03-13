@@ -1,7 +1,17 @@
 LTC2358 16-/18-bit, Buffered Octal, IIO SAR ADC Linux Driver
 ============================================================
 
-The LTC2358/LTC2357/LTC2353 are low noise, high speed, 16-/18-bit successive approximation register (SAR) ADCs with integrated front end buffers. These ADCs accept a wide common mode range. Pico-amp inputs and high CMRR enable these ADCs to connect directly to a wide range of sensors without compromising measurement accuracy. The demo manual refers to the LTC2358-18 but applies to all parts in the family, the only differences being the number of bits, number of channels and the maximum sample rate. The LTC2358-18 has a flexible SoftSpan™ interface that allows conversion-by-conversion control of the input voltage span on a per-channel basis. An internal 2.048V reference and 2X buffer simplify basic operation while an external reference can be used to increase the input range and the SNR of the ADC.
+The LTC2358/LTC2357/LTC2353 are low noise, high speed, 16-/18-bit successive
+approximation register (SAR) ADCs with integrated front end buffers. These ADCs
+accept a wide common mode range. Pico-amp inputs and high CMRR enable these ADCs
+to connect directly to a wide range of sensors without compromising measurement
+accuracy. The demo manual refers to the LTC2358-18 but applies to all parts in
+the family, the only differences being the number of bits, number of channels
+and the maximum sample rate. The LTC2358-18 has a flexible SoftSpan™ interface
+that allows conversion-by-conversion control of the input voltage span on a
+per-channel basis. An internal 2.048V reference and 2X buffer simplify basic
+operation while an external reference can be used to increase the input range
+and the SNR of the ADC.
 
 Supported Devices
 -----------------
@@ -64,7 +74,8 @@ Related Device Drivers
 Example Linux Device-Tree Initialization
 ========================================
 
-The LTC2358 driver is a spi-bus driver and can currently only be instantiated via device tree.
+The LTC2358 driver is a spi-bus driver and can currently only be instantiated
+via device tree.
 
 **Required properties:**
 
@@ -162,12 +173,12 @@ The LTC2358 driver is a spi-bus driver and can currently only be instantiated vi
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The LTC2358 driver depends on PWM and SPI
-
 
 ::
 
@@ -193,8 +204,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing / API
 ====================
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 This device can be found under **/sys/bus/iio/devices/**
 
@@ -248,7 +266,8 @@ Show device name
 Show channel scale
 ------------------
 
-Scale to be applied to in_voltagex_raw in order to obtain the measured voltage in millivolts.
+Scale to be applied to in_voltagex_raw in order to obtain the measured voltage
+in millivolts.
 
 ::
 
@@ -270,7 +289,8 @@ Raw unscaled voltage measurement on the channel
 Sampling frequency
 ------------------
 
-The LTC2358 ADC driver supports a variable sampling rate, that can be configured dependent on the number of channels.
+The LTC2358 ADC driver supports a variable sampling rate, that can be configured
+dependent on the number of channels.
 
 See current sampling rate:
 
@@ -376,7 +396,8 @@ Enable and read 400 samples from both channels:
 Debug mode
 ----------
 
-You can write and read the ADC registers using debugfs. Here we will read the configuration number for softspan code set in channel 0.
+You can write and read the ADC registers using debugfs. Here we will read the
+configuration number for softspan code set in channel 0.
 
 First go to the device debug folder:
 
@@ -413,6 +434,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

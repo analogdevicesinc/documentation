@@ -1,8 +1,6 @@
 AD-FMCOMMS1-EBZ ML605 Quick Start Guide
 =======================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,14 +17,13 @@ AD-FMCOMMS1-EBZ ML605 Quick Start Guide
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 .. important::
 
-   Building Linux on ML605 Virtex6 board remains on this website only for legacy purposes. The Linux support for this carrier has been discontinued.
+   Building Linux on ML605 Virtex6 board remains on this website only for legacy
+   purposes. The Linux support for this carrier has been discontinued.
 
-
-This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCOMMS1-EBZ on either:
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the AD-FMCOMMS1-EBZ on either:
 
 -  `ML605 <https://www.xilinx.com/ML605>`_
 
@@ -66,9 +63,11 @@ Software Installs
       -  **MAKE SURE YOU HAVE SAVED ANY DATA FROM THE CF CARD!**
       -  You will need to know the drive letter of your CF reader
       -  Type mkdosfs –s 64 –F 16 –R 1 f:
-      -  Notice that f: should be replaced by the drive letter of your CF reader followed by a colon.
+      -  Notice that f: should be replaced by the drive letter of your CF reader
+         followed by a colon.
 
-   -  Now unzip ml605_restoring_CF_flash_contents_AD-FMCOMMS1-EBZ.zip onto your freshly formatted CF Card.
+   -  Now unzip ml605_restoring_CF_flash_contents_AD-FMCOMMS1-EBZ.zip onto your
+      freshly formatted CF Card.
 
 Hardware Setup
 ~~~~~~~~~~~~~~
@@ -84,15 +83,16 @@ Hardware Setup
 Testing
 =======
 
-Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should be familiar with a few of the connectors as switches on the board:
-
+Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should
+be familiar with a few of the connectors as switches on the board:
 
 |ML605 Diagram|
 
 -  Connect the AD-FMCOMMS1-EBZ FMC board to the ML605, on the LPC FMC connector (20).
 -  Turn on the power switch on the ML605 board (18A)
 
-   -  Wait ~11 seconds. The DS1 System ACE Status LED should be blinking. This indicates that the ACE file in the CF card is being loaded.
+   -  Wait ~11 seconds. The DS1 System ACE Status LED should be blinking. This
+      indicates that the ACE file in the CF card is being loaded.
 
       -  Wait ~10 seconds more. The blue light on the AD-FMComms1-EBZ should start blinking, indicating that the card is being initialized.
       -  Wait ~10 seconds more. The LCD should display the IP number of the board, and the line "XCOMM LPC", this indicates that the Linux kernel booted on the Microblaze is properly configured, and found all the devices on the card.
@@ -100,20 +100,19 @@ Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should b
 
 -  Observe LCD Display (17f).
 
-
 |LCD image|
 
    -  Line 1: Target IP Address
    -  Line2: XCOMM LPC if device is present
 
--  Open up your favourite Web Browser and enter the XCOMM target IP address into the URL/Address bar.\
-
+-  Open up your favourite Web Browser and enter the XCOMM target IP address into
+   the URL/Address bar.\
 
 |image1|
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/quickstart/fmcomms1_netscope_fd.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  If you are interested in the Linux console messages and command line interface, connect a USB cable to the ML605 port USB UART (12). Terminal settings are 57600,8N1. You should see the kernel startup messages as follows. (password is **root**)
 
@@ -250,10 +249,9 @@ Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should b
       #
    
 
-
 .. |ML605 Diagram| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/ml605.png
-   :width: 500px
+   :width: 500
 .. |LCD image| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/ml605-lcd.png
-   :width: 200px
+   :width: 200
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/quickstart/fmcomms1_netscope_td.png
-   :width: 600px
+   :width: 600

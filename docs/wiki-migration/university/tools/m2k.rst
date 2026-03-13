@@ -18,12 +18,18 @@ The :adi:`ADALM2000` (M2K) Active Learning Module is an affordable USB-powered d
 Introduction
 ============
 
-ADALM2000 is a portable lab. It's more than the combinations of a few parts, but to understand the capabilities of the unit, you must understand the fundamental operation of each part inside the unit. Depending on who you are, and what you want to do, you may have different needs, and different wants. It's expected that many people will stop when they solve their immediate problem and don't want to go any deeper into the stack. There are 3 main categories of users:
+ADALM2000 is a portable lab. It's more than the combinations of a few parts, but
+to understand the capabilities of the unit, you must understand the fundamental
+operation of each part inside the unit. Depending on who you are, and what you
+want to do, you may have different needs, and different wants. It's expected
+that many people will stop when they solve their immediate problem and don't
+want to go any deeper into the stack. There are 3 main categories of users:
 
 -  :doc:`ADALM2000 Users & Students </wiki-migration/university/tools/m2k/users>`:
 
    -  ADALM2000 users normally interact with real world analog signals using :doc:`Scopy </wiki-migration/university/tools/m2k/scopy>` or :doc:`Alice </wiki-migration/university/tools/m2k/alice/users-guide-m2k>`
-   -  Everyone should read this section, as it describes the device, and describes how to get the drivers and host software installed properly.
+   -  Everyone should read this section, as it describes the device, and
+      describes how to get the drivers and host software installed properly.
 
 -  ADALM2000 Application Developers:
 
@@ -33,10 +39,13 @@ ADALM2000 is a portable lab. It's more than the combinations of a few parts, but
 
 -  :doc:`ADALM2000 Firmware Developers </wiki-migration/university/tools/m2k/developers>`:
 
-   -  normally write custom software or HDL (for the FPGA) that run directly on the ADALM2000 device. This may put the ADALM2000 in different modes, and support different external USB devices (including LAN (via USB), or WiFi (vs USB)), extending the capabilities of the device. This includes all the information to compile HDL projects, compile kernels, change to custom USB PID/VID and/or run custom user space applications.
+   -  normally write custom software or HDL (for the FPGA) that run directly on
+      the ADALM2000 device. This may put the ADALM2000 in different modes, and
+      support different external USB devices (including LAN (via USB), or WiFi
+      (vs USB)), extending the capabilities of the device. This includes all the
+      information to compile HDL projects, compile kernels, change to custom USB
+      PID/VID and/or run custom user space applications.
 
 It's expected that most people will work their way down through each section, reading and skimming most of the content. The content is in a constant state of improvement, so if you do have a question, please ask at :ez:`EngineerZone <community/university-program>`, or check the :doc:`help and support </wiki-migration/university/tools/m2k/help_support>` page.
 
-
 .. esd-warning::
-

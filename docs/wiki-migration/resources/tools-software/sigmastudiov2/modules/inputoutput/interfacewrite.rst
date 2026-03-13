@@ -9,19 +9,21 @@ Interface Write
 Description
 -----------
 
-The Interface Write block sends signals from the schematic to an interface output register.
+The Interface Write block sends signals from the schematic to an interface
+output register.
 
 Usage
 -----
 
-Each block is associated with only one interface register; select the appropriate one from the drop-down menu.
+Each block is associated with only one interface register; select the
+appropriate one from the drop-down menu.
 
-Observe that as you drag more blocks to your schematic, your number of interfaces available decreases.
+Observe that as you drag more blocks to your schematic, your number of
+interfaces available decreases.
 
 .. note::
 
    Note: This block is only available for DSPs with GPIOs or auxiliary ADC.
-
 
 Targets Supported
 -----------------
@@ -43,7 +45,6 @@ Name  Type  Description
 ===== ===== =============================
 Input Logic Interface write input channel
 ===== ===== =============================
-
 
 | ===== Configurable Parameters =====
 

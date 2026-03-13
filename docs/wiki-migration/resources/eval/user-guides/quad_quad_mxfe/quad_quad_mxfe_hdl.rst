@@ -18,7 +18,6 @@ HDL source code
    -  https://github.com/analogdevicesinc/hdl/tree/dev_vcu128_2020_1/projects/quad_quad_mxfe
    
 
-
 HDL testbench
 -------------
 
@@ -30,7 +29,6 @@ HDL testbench
    
    -  https://github.com/analogdevicesinc/hdl/tree/dev_vcu128/testbenches/quad_quad_mxfe
    
-
 
 Supported Carriers
 ------------------
@@ -52,9 +50,12 @@ Block design
 
 The block design consists of four 'quad jesd subsystem' block components, where each quad block services four Rx/Tx link pairs. Each link pair connects to an :adi:`AD9081` MxFE chip, where each MxFE chip has 8 ADC and 8 DAC channels. In turn a quad block services a total of 32 ADC and 32 DAC channels.
 
-Having four quad MxFE blocks in parallel gives us 128 ADC and 128 DAC real channels at the transport layer, or 64 complex ADC channels and 64 complex DAC channels.
+Having four quad MxFE blocks in parallel gives us 128 ADC and 128 DAC real
+channels at the transport layer, or 64 complex ADC channels and 64 complex DAC
+channels.
 
-All quad blocks share a common device clock and SYSREF signal to ensure that samples are aligned at application layer across all channel.
+All quad blocks share a common device clock and SYSREF signal to ensure that
+samples are aligned at application layer across all channel.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quad_quad_mxfe/quad_quad_mxfe.png
    :align: center
@@ -62,9 +63,14 @@ All quad blocks share a common device clock and SYSREF signal to ensure that sam
 Quad JESD Subsystem
 ~~~~~~~~~~~~~~~~~~~
 
-Each quad block contains all components required to handle the JESD link from physical layer to transport layer. The block exposes at its interface raw sample channel streams the user logic can be connected to. The format of the channels is one sample per channel per clock cycle.
+Each quad block contains all components required to handle the JESD link from
+physical layer to transport layer. The block exposes at its interface raw sample
+channel streams the user logic can be connected to. The format of the channels
+is one sample per channel per clock cycle.
 
-A smart interconnect block is added to distribute the control interface to all JESD peripherals. This would lead to better partitioning of the overall design helping the routability and timing closure.
+A smart interconnect block is added to distribute the control interface to all
+JESD peripherals. This would lead to better partitioning of the overall design
+helping the routability and timing closure.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quad_quad_mxfe/quad_jesd_core.png
    :align: center
@@ -72,7 +78,8 @@ A smart interconnect block is added to distribute the control interface to all J
 JESD Link settings
 ~~~~~~~~~~~~~~~~~~
 
-For each quad jesd subsystem the Rx link (ADC Path) operate with the following parameters:
+For each quad jesd subsystem the Rx link (ADC Path) operate with the following
+parameters:
 
 -  JESD204 8b/10b link layer ('204B' mode)
 -  Rx Deframer parameters: L=4, M=8, F=4, S=1, N’=16, N = 16 (equivalent to Quick Config 0x0A)
@@ -83,7 +90,8 @@ For each quad jesd subsystem the Rx link (ADC Path) operate with the following p
 -  Lane Rate – 10 Gbps
 -  QPLL0 or CPLL
 
-For each quad jesd subsystem the Tx link (DAC Path) operate with the following parameters:
+For each quad jesd subsystem the Tx link (DAC Path) operate with the following
+parameters:
 
 -  JESD204 8b/10b link layer ('204B' mode)
 -  Tx Framer parameters: L=4, M=8, F=4, S=1, N’=16, N = 16 (equivalent to Quick Config 0x09)
@@ -97,7 +105,10 @@ For each quad jesd subsystem the Tx link (DAC Path) operate with the following p
 Resource utilization per quad subsystem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The transport layer cores have optional features (e.g DDS) which can be disabled through synthesis parameter that can impact significantly the resource utilization of the subsystem. Below you can observe the impact of the DDS cores on the utilization.
+The transport layer cores have optional features (e.g DDS) which can be disabled
+through synthesis parameter that can impact significantly the resource
+utilization of the subsystem. Below you can observe the impact of the DDS cores
+on the utilization.
 
 ================= === ======== ============= ==========
 Device Family     DDS CLB LUTs CLB Registers XCVR Lanes
@@ -109,24 +120,40 @@ Xilinx Virtex US+ Yes 68535    86163         16
 Addressing timing closure issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Additional pipeline stages can be enabled in the link layer NUM_INPUT_PIPELINE parameter for the link receive peripheral or NUM_OUTPUT_PIPELINE parameter on the link transmit peripheral. This will break the timing arc between the link layer and physical layer and allow a more relaxed placement of the cores.
+Additional pipeline stages can be enabled in the link layer NUM_INPUT_PIPELINE
+parameter for the link receive peripheral or NUM_OUTPUT_PIPELINE parameter on
+the link transmit peripheral. This will break the timing arc between the link
+layer and physical layer and allow a more relaxed placement of the cores.
 
 Clocking
 --------
 
-The reference clock for each transceiver quad is exposed in the top level file. The reference clocks should be connected to all ports. If there is no reference clock connected to a specific quad, the reference clock for the quad above or below should be used. If that’s not available also, the reference clock for the quad +2 (above the one above) or quad -2 (below the one below) should be used. The overall clock tree for the system (single FPGA or multi FPGA) should ensure all reference clocks are derived from the same crystal. Phase is not important for the reference clocks.
+The reference clock for each transceiver quad is exposed in the top level file.
+The reference clocks should be connected to all ports. If there is no reference
+clock connected to a specific quad, the reference clock for the quad above or
+below should be used. If that’s not available also, the reference clock for the
+quad +2 (above the one above) or quad -2 (below the one below) should be used.
+The overall clock tree for the system (single FPGA or multi FPGA) should ensure
+all reference clocks are derived from the same crystal. Phase is not important
+for the reference clocks.
 
 Requirements
 ------------
 
-Below are quoted few of the most important guidelines from the JESD standard. For more details consult the standard.
+Below are quoted few of the most important guidelines from the JESD standard.
+For more details consult the standard.
 
 -  "All device clocks in the system shall be phase locked to a common source."
 -  "The device clock and SYSREF signal to each device should be routed close to each other", or length matched.
 -  "It is strongly recommended to use the same type of signal type for SYSREF and the device clock, to maintain an accurate timing relationship."
--  "Transmission skew: The skew contribution due to the different propagation delays in the transmission medium for different lanes. Maximum of 4 ns propagation delay difference between lanes which corresponds e.g., to a lane length difference of 56 cm for stripline on an FR-4 board with ER=4.5. Larger lane length differences will not be likely in a JESD204 system."
+-  "Transmission skew: The skew contribution due to the different propagation
+   delays in the transmission medium for different lanes. Maximum of 4 ns
+   propagation delay difference between lanes which corresponds e.g., to a lane
+   length difference of 56 cm for stripline on an FR-4 board with ER=4.5. Larger
+   lane length differences will not be likely in a JESD204 system."
 
-Restriction/requirement particular to the current implementation using the JESD framework:
+Restriction/requirement particular to the current implementation using the JESD
+framework:
 
 -  All four lanes within a link must be mapped in a way so they connect to a single transceiver quad, order within the transceiver quad is not relevant.
 -  All transceiver quads must have access to a reference clock, connected to the MGTREFCLK pin of the same quad or to adjacent quads. The reference clock frequency should match across all transceiver quads but it does not have to be phase aligned.

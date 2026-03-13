@@ -1,14 +1,22 @@
 Building for Raspberry PI
 =========================
 
-The Analog Devices kernel can be built to run on the Raspberry PI boards. Unfortunately, these changes are not in master, because they diverge too much (at this point in time) from the changes in both Xilinx & ADI kernel.
+The Analog Devices kernel can be built to run on the Raspberry PI boards.
+Unfortunately, these changes are not in master, because they diverge too much
+(at this point in time) from the changes in both Xilinx & ADI kernel.
 
-Because of this, there are special branches in the repository that should be built to run on the Raspberry PI. They contain several drivers that are not upstreamed yet. These are mostly used for internal testing, and they also contain device-tree overlays for some of these drivers.
+Because of this, there are special branches in the repository that should be
+built to run on the Raspberry PI. They contain several drivers that are not
+upstreamed yet. These are mostly used for internal testing, and they also
+contain device-tree overlays for some of these drivers.
 
 .. note::
 
-   The Raspberry PI branches do not contain all of the changes in master. They contain only a set of them, typically for simple ADCs & DACs. The more complex drivers are in master and are typically tested/running on Xilinx & Intel boards using FPGA parts. These FPGA parts are needed for some reference designs/boards supported by Analog Devices.
-
+   The Raspberry PI branches do not contain all of the changes in master. They
+   contain only a set of them, typically for simple ADCs & DACs. The more
+   complex drivers are in master and are typically tested/running on Xilinx &
+   Intel boards using FPGA parts. These FPGA parts are needed for some reference
+   designs/boards supported by Analog Devices.
 
 The Raspberry PI branches are:
 
@@ -76,8 +84,8 @@ Run it:
 
 .. note::
 
-   The linux directory in the above example is optional. If unspecified, a linux-adi directory will be cloned
-
+   The linux directory in the above example is optional. If unspecified, a
+   linux-adi directory will be cloned
 
 Adding the generated file on the SD-card
 ----------------------------------------
@@ -94,8 +102,8 @@ Any drivers built as modules must be installed onto the rootfs:
 
 .. important::
 
-   Always remember to run sudo sync or un-mount the SD-card safely so that whatever is copied on it, actually gets flushed to it.
-
+   Always remember to run sudo sync or un-mount the SD-card safely so that
+   whatever is copied on it, actually gets flushed to it.
 
 Customizing the kernel/adding-drivers
 -------------------------------------
@@ -111,7 +119,8 @@ Device-tree overlays are covered in these docs:
 
 Some examples of DT overlays for drivers written for ADI parts can be found at this link: :git-linux:`commits/rpi-4.14.y/arch/arm/boot/dts/overlays`
 
-Copy built overlays (usually name <def config name>.dtbo) to the overlays folder onto the boot partition and reference the overlay in config.txt. For example:
+Copy built overlays (usually name <def config name>.dtbo) to the overlays folder
+onto the boot partition and reference the overlay in config.txt. For example:
 
 ::
 

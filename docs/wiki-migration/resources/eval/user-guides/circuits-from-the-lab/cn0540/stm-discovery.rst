@@ -30,7 +30,6 @@ The following sections describe the process of setting up the hardware for the `
 
 Shown below is the **CN0540 board** mounted on the **32F746GDISCOVERY board** via the Arduino headers. The 32F746GDISCOVERY board only requires a Standard-A to Mini-B USB cable to connect to the PC. If properly connected the large red LED LD7 should light as well as the red LED LD2.
 
-
 |image1|
 
 Software Setup
@@ -66,7 +65,8 @@ Porting the EVAL-CN0540-ARDZ MBED Example program to DISCO-F746NG Board
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm5.png
    :align: center
 
--  The extracted binary can be loaded to the DISCO-F746NG board by dragging and dropping the binary file to the DISCO-F746NG directory.
+-  The extracted binary can be loaded to the DISCO-F746NG board by dragging and
+   dropping the binary file to the DISCO-F746NG directory.
 
 Note: Refer to this video for the example on how to load a program: https://youtu.be/3xbzuPLcmCk?t=233
 
@@ -96,20 +96,19 @@ Designing User Interface using the 32F746NG Discovery board
 
 One of the major features of the 32F746G Discovery board is the on-board touchscreen, which can be used by the CN0540 board. User can design their own User Interface (UI) by by adding the `DISCOF746NG Board Support Package (BSP) <https://os.mbed.com/teams/ST/code/BSP_DISCO_F746NG/#85dbcff443aa>`_. Using the DISCOF746NG BSP custom UI can be done as shown in the images below.
 
-
 |image2|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_gui_data.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_gui_fft.png
    :align: center
-   :width: 600px
+   :width: 600
 
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_f746gdisco.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_gui_menu.png
-   :width: 600px
+   :width: 600

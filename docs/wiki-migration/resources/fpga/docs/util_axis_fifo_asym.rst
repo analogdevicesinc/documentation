@@ -5,8 +5,11 @@ Asymmetric AXI Stream FIFO Core
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/util_axis_fifo_asym/index.html\
 
-
-The util_axis_fifo_asym IP core is a simple FIFO (First Input First Output) with AXI streaming interfaces, supporting synchronous and asynchronous operation modes with an asymmetric data width on its salve and master interface. It can be used to mitigate data width differences or transfer an AXI stream to a different clock domain.
+The util_axis_fifo_asym IP core is a simple FIFO (First Input First Output) with
+AXI streaming interfaces, supporting synchronous and asynchronous operation
+modes with an asymmetric data width on its salve and master interface. It can be
+used to mitigate data width differences or transfer an AXI stream to a different
+clock domain.
 
 Features
 --------
@@ -45,25 +48,36 @@ Status signal delays
 
 .. important::
 
-   In case of asynchronous mode, because of the delays introduced by the clock domain crossing logic, the ROOM and LEVEL indicators can not reflect the actual state of the FIFO in real time. Source and destination logic should take this into account when controlling the data stream into and from the FIFO. Carefully adjusting the ALMOST_EMPTY/ALMOST_FULL indicators can provide a save operating margin.
+   In case of asynchronous mode, because of the delays introduced by the clock
+   domain crossing logic, the ROOM and LEVEL indicators can not reflect the
+   actual state of the FIFO in real time. Source and destination logic should
+   take this into account when controlling the data stream into and from the
+   FIFO. Carefully adjusting the ALMOST_EMPTY/ALMOST_FULL indicators can provide
+   a save operating margin.
 
-
-The FIFO has three different status indicator ports on both side, which provides information about the state of the FIFO for both the source and destination logic:
+The FIFO has three different status indicator ports on both side, which provides
+information about the state of the FIFO for both the source and destination
+logic:
 
 -  FULL or EMPTY - If these outputs are asserted the FIFO is full or empty. In case of a full FIFO all the write operations are suspended. In case of an empty FIFO all the read operations are suspended.
 -  ALMOST_EMPTY/ALMOST_FULL - It can be used to foresee a potential FULL or EMPTY state, asserting before the EMPTY/FULL before a predefined number of word. The offset between ALMOST_EMPTY and EMPTY, and between ALMOST_FULL and FULL can be set by using the parameters ALMOST_EMPTY_THRESHOLD and ALMOST_FULL_THRESHOLD. The offset values are automatically adjusted according to M_DATA_WIDTH and S_DATA_WIDTH ratio.
 -  S_AXIS_ROOM - Indicate how many word can be written in the FIFO at the current moment, until the FIFO become FULL.
--  M_AXIS_LEVEL - Indicate how many word can be read from the FIFO at the current moment, until the FIFO become EMPTY.
+-  M_AXIS_LEVEL - Indicate how many word can be read from the FIFO at the
+   current moment, until the FIFO become EMPTY.
 
 FIFO Depth Calculation
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The FIFO Depth is calculated based on parameters M_DATA_WIDTH, S_DATA_WIDTH, ADDRESS_WIDTH, FIFO_LIMITED and ADDRESS_WIDTH_PERSPECTIVE:
+The FIFO Depth is calculated based on parameters M_DATA_WIDTH, S_DATA_WIDTH,
+ADDRESS_WIDTH, FIFO_LIMITED and ADDRESS_WIDTH_PERSPECTIVE:
 
 -  ADDRESS_WIDTH_PERSPECTIVE is 1 and FIFO_LIMITED is 1 - This means that the address specified is from the perspective of the Master interface. Since the limit is enabled the FIFO size will be reduced if the S_DATA_WIDTH is > M_DATA_WIDTH, leading to a smaller FIFO implementation.
 -  ADDRESS_WIDTH_PERSPECTIVE is 1 and FIFO_LIMITED is 0 - This means that the address specified is from the perspective of the Master interface. Since the limit is disable the FIFO size will remain the same if the S_DATA_WIDTH is > M_DATA_WIDTH, leading to a bigger FIFO implementation.
 -  ADDRESS_WIDTH_PERSPECTIVE is 0 and FIFO_LIMITED is 1 - This means that the address specified is from the perspective of the Slave interface. Since the limit is enabled the FIFO size will be reduced if the S_DATA_WIDTH is < M_DATA_WIDTH, leading to a smaller FIFO implementation.
--  ADDRESS_WIDTH_PERSPECTIVE is 0 and FIFO_LIMITED is 0 - This means that the address specified is from the perspective of the Slave interface. Since the limit is disable the FIFO size will remain the same if the S_DATA_WIDTH is < M_DATA_WIDTH, leading to a bigger FIFO implementation.
+-  ADDRESS_WIDTH_PERSPECTIVE is 0 and FIFO_LIMITED is 0 - This means that the
+   address specified is from the perspective of the Slave interface. Since the
+   limit is disable the FIFO size will remain the same if the S_DATA_WIDTH is <
+   M_DATA_WIDTH, leading to a bigger FIFO implementation.
 
 Parameters
 ----------

@@ -1,12 +1,13 @@
 AD9371 Basic IQ Datafiles
 =========================
 
-DDS Mode - DAC Buffer Output allows loading of Matlab MAT, Binary and ASCII TEXT sample files.
+DDS Mode - DAC Buffer Output allows loading of Matlab MAT, Binary and ASCII TEXT
+sample files.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/software/smatko_k.png
    :alt: DAC Buffer Output
    :align: center
-   :width: 600px
+   :width: 600
 
 Example files
 -------------
@@ -45,7 +46,6 @@ Example files
 
    The modulated waveforms (QPSK, MSK, etc) are designed to go through a receiver design. (this would include root raised cosine decimator, equalization, frequency compenstation, retiming, etc. and is best looked at by a MathWorks example `here <https://www.mathworks.com/help/comm/examples/hdl-optimized-qpsk-receiver-with-captured-data.html>`_. Since there is no default receiver in the default HDL design that ADI provides - looking at things with the osc application - you will not see good results. This is expected, and normal.
 
-
 MATLAB format
 -------------
 
@@ -54,12 +54,14 @@ The ``./osc`` application uses the `MAT File I/O Library <http://sourceforge.net
 There are two ways to scale the data:
 
 -  less than ±1.0 : ±1.0 will be assumed as full scale, so something that is ±0.5 will come out as half scale.
--  more than ±1.0 : The max point in the data will be found, and this will be assumed to be full scale.
+-  more than ±1.0 : The max point in the data will be found, and this will be
+   assumed to be full scale.
 
 There are two ways to arrange the data:
 
 -  vectors of complex data
--  vectors of real data. The first vector is Q (real) and second is I (imaginary)
+-  vectors of real data. The first vector is Q (real) and second is I
+   (imaginary)
 
 Basic examples are checked into the waveforms directory, which can be loaded up in `MATLAB <https://www.mathworks.com/products/matlab/>`_ for further explanation.
 
@@ -76,7 +78,9 @@ AD9371 Bit 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
 
 An I and Q word together make up one complex symbol for one output channel.
 
-The AD9371 features two outputs, In the 2TX output configuration a complete sample consists of two complex IQ symbols, one for each transmitter. It's therefore 64-bit wide.
+The AD9371 features two outputs, In the 2TX output configuration a complete
+sample consists of two complex IQ symbols, one for each transmitter. It's
+therefore 64-bit wide.
 
 ==== == ==== ==
 TX 0    TX 1 
@@ -87,11 +91,13 @@ I0   Q0 I1   Q1
 ASCII Format
 ------------
 
-A valid ASCII file is prefixed with a 'TEXT' magic string. Values are delimited by either comma, spaces or tabs.
+A valid ASCII file is prefixed with a 'TEXT' magic string. Values are delimited
+by either comma, spaces or tabs.
 
 Samples are separated by rows.
 
-In a 2TX configuration, with only one symbol given per line - it will be repeated for the second TX.
+In a 2TX configuration, with only one symbol given per line - it will be
+repeated for the second TX.
 
 ::
 
@@ -118,7 +124,8 @@ Two Symbols per line - one for TX1 and TX2
    The file is being analyzed and automatically scaled to full scale!
 
    
-   The latest version of the fmcomms IIO scope plug-in supports the TEXTU option valid range with the 'TEXTU' option is:
+   The latest version of the fmcomms IIO scope plug-in supports the TEXTU option
+   valid range with the 'TEXTU' option is:
    
    ====== ===========
    Board  Range
@@ -126,7 +133,6 @@ Two Symbols per line - one for TX1 and TX2
    AD9371 +/- 32767.0
    ====== ===========
    
-
 
 Sample C code Application
 -------------------------
@@ -220,7 +226,6 @@ Compiling the Sample Application
       root@linaro-ubuntu-desktop:/opt# gcc do_iq.c -o do_iq -lm
    
 
-
 Usage Examples
 --------------
 
@@ -255,7 +260,6 @@ Usage Examples
       0xD87379BB : -10125 : 31163
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -288,4 +292,3 @@ Usage Examples
       0xEC3A3CDD : -5062 : 15581
       root@linaro-ubuntu-desktop:/opt#
    
-

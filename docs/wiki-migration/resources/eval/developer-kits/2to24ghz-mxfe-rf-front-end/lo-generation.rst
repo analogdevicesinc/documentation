@@ -3,7 +3,13 @@
 LO Generation Options
 =====================
 
-The 2-24GHz RF Front End has two different sets of LO specifications and requirements- one for the fixed LO sources and a second for the wideband, tunable LOs. Additionally, LO performance requirements vary widely across the instrumentation, communications, and aerospace & defense application space, so while a one-size-fits-all solution for the LO generation circuitry may not be practical, Analog Devices offers numerous, flexible options for wideband frequency synthesizers.
+The 2-24GHz RF Front End has two different sets of LO specifications and
+requirements- one for the fixed LO sources and a second for the wideband,
+tunable LOs. Additionally, LO performance requirements vary widely across the
+instrumentation, communications, and aerospace & defense application space, so
+while a one-size-fits-all solution for the LO generation circuitry may not be
+practical, Analog Devices offers numerous, flexible options for wideband
+frequency synthesizers.
 
 Fixed LO Source
 ---------------
@@ -12,26 +18,27 @@ The 18GHz, fixed LO source can be supplied by any integrated PLL/VCO such as the
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/cn0568synthesizerdiagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 More information on the CN0568 frequency synthesizer can be found here: :adi:`en/design-center/reference-designs/circuits-from-the-lab/cn0568.html#rd-overview`
 
-This circuit was adapted to provide a cleaner output tone (reduced spurs) and a higher output power with the following block diagram:
-
+This circuit was adapted to provide a cleaner output tone (reduced spurs) and a
+higher output power with the following block diagram:
 
 |image1|
 
-For this design, we selected a discrete LO implementation using the ADF41513 and the HMC8362 to achieve lower phase noise and power consumption. The following plot shows the simulated phase noise performance in ADI SimPLL:
-
+For this design, we selected a discrete LO implementation using the ADF41513 and
+the HMC8362 to achieve lower phase noise and power consumption. The following
+plot shows the simulated phase noise performance in ADI SimPLL:
 
 |image2|
 
 The following table summarizes the data in the plot above:
 
-
 |image3|
 
-The full simulation file created in ADI SimPLL can be requested with the instructions provided at the bottom of this page.
+The full simulation file created in ADI SimPLL can be requested with the
+instructions provided at the bottom of this page.
 
 Tunable LO Source
 -----------------
@@ -42,21 +49,17 @@ The tunable LO synthesizer has a more complex set of requirements, many of which
 
 The following plot shows the simulated phase noise performance of the tunable LO circuit for the 11.5-16 GHz output of the :adi:`ADF4371` in ADI SimPLL:
 
-
 |image4|
 
 The following table summarizes the data in the plot above:
-
 
 |image5|
 
 The following plot shows the simulated phase noise performance of the tunable LO circuit for the 16-28 GHz output of the :adi:`ADF4371` in ADI SimPLL:
 
-
 |image6|
 
 The following table summarizes the data in the plot above:
-
 
 |image7|
 
@@ -74,7 +77,6 @@ Simulation files have been created for these circuits in ADI SimPLL. Two files c
    -  Company Location
    -  Application/Use Case
    
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/fixed_lo_block_diagram.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/18g.png

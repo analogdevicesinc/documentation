@@ -8,17 +8,18 @@ Overview
 
 In addition to the :doc:`Baremetal Framework </wiki-migration/resources/tools-software/sharc-audio-module/baremetal>` as a software resource for experimenting with the SC589, a more advanced software project exists that allows users to quickly connect various audio inputs and outputs during run-time, giving them the capability to not only experiment with different audio-related technologies, but to also modify and add their own custom settings that may aid in rapid prototyping of their own systems. This is a basic framework that is supported on several different hardware platforms.
 
-This framework supports an application which supports multiple audio sources and shell support, which allows interaction with the application to change various configurations and parameters during run-time.
+This framework supports an application which supports multiple audio sources and
+shell support, which allows interaction with the application to change various
+configurations and parameters during run-time.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/sam-audio-starter-terminal2.png
-   :width: 400px
+   :width: 400
 
 **Example interface for shell support**
 
 .. important::
 
    This is an advanced project which requires users to compile software and navigate serial terminal programs and to use `Unix <https://mally.stanford.edu/~sr/computing/basic-unix.html>`_ based shell utilities for the command line.
-
 
 --------------
 
@@ -49,5 +50,3 @@ The goal of this tutorial is to help users with the following:
 .. note::
 
    This is a Windows-based tutorial only!
-
-

@@ -7,25 +7,28 @@ Picture and Main components
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmcomms6/main_components.jpg
    :alt: main_components.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Outline
 -------
 
-For those that don't want to load up the Allegro viewer, here is a basic outline/component placements of the board.
+For those that don't want to load up the Allegro viewer, here is a basic
+outline/component placements of the board.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmcomms6/fmcomms6_top.jpg
    :align: left
-   :width: 400px
+   :width: 400
 
 Size
 ----
 
-The size of the board (not including the SMA connectors, which project beyond the edge of the board) is 3.42 inches by 2.72 inches (or about 89mm x 69mm). This exceeds the FMC specifications of 84mm x 69mm).
+The size of the board (not including the SMA connectors, which project beyond
+the edge of the board) is 3.42 inches by 2.72 inches (or about 89mm x 69mm).
+This exceeds the FMC specifications of 84mm x 69mm).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmcomms6/fmcomms6_dim.jpg
    :align: left
-   :width: 400px
+   :width: 400
 
 Downloads
 ---------
@@ -56,4 +59,3 @@ Downloads
    
    -  Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).
    
-

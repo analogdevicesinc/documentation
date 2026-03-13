@@ -77,7 +77,8 @@ Install Kuiper Linux to the SD card. Step by step guides for imaging :doc:`Kuipe
 Configuring the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the boot files below or follow the next subsections to get BOOT.BIN, uImage, and devicetree.dtb files.
+Use the boot files below or follow the next subsections to get BOOT.BIN, uImage,
+and devicetree.dtb files.
 
 +----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 | Eval Board                                                                                               | ADC                                        | ADC data packet | FPGA bitstream                                                                                                                             | device tree                                                                                                                                                            | Linux Image                                                                                                      |
@@ -127,12 +128,12 @@ Adding Linux driver support
 Enabling the driver
 -------------------
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD4134 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -152,17 +153,24 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
-   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses the interface can be found here:
+   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses
+   the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 Show device name
 ----------------
@@ -177,7 +185,6 @@ Show device name
       root@analog:~# cat /sys/bus/iio/devices/iio:device0/name
       adc
    
-
 
 Show channel scale
 ------------------
@@ -194,7 +201,6 @@ Show channel scale
       root@analog:~# cat /sys/bus/iio/devices/iio:device0/in_voltage_scale
       0.000488281
    
-
 
 Inspect IIO device sysfs interface.
 
@@ -226,7 +232,6 @@ Inspect IIO device sysfs interface.
       -r--r--r-- 1 root root 4096 Feb 27 11:39 waiting_for_supplier
    
 
-
 More Information
 ================
 
@@ -248,6 +253,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

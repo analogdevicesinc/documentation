@@ -1,7 +1,8 @@
 Breakout Board Schematics
 =========================
 
-This page provides schematics for the SDP breakout board, and other useful hardware related documents.
+This page provides schematics for the SDP breakout board, and other useful
+hardware related documents.
 
 SDP Breakout Board Schematics
 -----------------------------

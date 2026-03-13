@@ -7,14 +7,15 @@ Connections
 -----------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21569-som.png
-   :width: 600px
+   :width: 600
 
 EV-21569-SOM with EV-SOM-CRR EZ-Kit Connections
 
 Settings
 --------
 
-The board settings for running SigmaStudio+ EV-21569-SOM with EV-SOM-CRR EZ-Kit, using the Default Application is given in the below tables.
+The board settings for running SigmaStudio+ EV-21569-SOM with EV-SOM-CRR EZ-Kit,
+using the Default Application is given in the below tables.
 
 ====== ===================================
 Switch Setting

@@ -9,9 +9,17 @@ The zero gain amplifier (Q\ :sub:`1`, R\ :sub:`2`) and stabilized current source
 Notes:
 ------
 
-As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.
+As in all the ALM labs we use the following terminology when referring to the
+connections to the M1000 connector and configuring the hardware. The green
+shaded rectangles indicate connections to the M1000 analog I/O connector. The
+analog I/O channel pins are referred to as CA and CB. When configured to force
+voltage / measure current -V is added as in CA-V or when configured to force
+current / measure voltage -I is added as in CA-I. When a channel is configured
+in the high impedance mode to only measure voltage -H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.*\* \*\*
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current
+waveforms.*\* \*\*
 
 Version 1
 ---------
@@ -19,20 +27,20 @@ Version 1
 Materials:
 ~~~~~~~~~~
 
-ADALM1000 hardware module Solder-less breadboard Jumper wires 1 - 2.2 KΩ Resistor ( or any similar value ) 1 - 100 Ω resistor 3 - small signal NPN transistors (2N3904) 3 - small signal PNP transistors (2N3906)
+ADALM1000 hardware module Solder-less breadboard Jumper wires 1 - 2.2 KΩ
+Resistor ( or any similar value ) 1 - 100 Ω resistor 3 - small signal NPN
+transistors (2N3904) 3 - small signal PNP transistors (2N3906)
 
 Directions:
 ~~~~~~~~~~~
 
 The breadboard connections are as shown in figure 1. The output of the channel A voltage generator, CA-V, drives the emitters of both PNP transistors Q\ :sub:`3` and Q\ :sub:`4`. Q\ :sub:`3` and Q\ :sub:`4` are wired as a current mirror with their bases connected together with the collector of Q\ :sub:`3`. The collector of Q\ :sub:`4` connects to resistor R\ :sub:`1`. Resistors R\ :sub:`1`, R\ :sub:`2` and transistor Q\ :sub:`1` are connected as in the previous zero gain amplifier section. Since the V\ :sub:`BE` of Q\ :sub:`2` is always smaller than the V\ :sub:`BE` of Q\ :sub:`1`, You should select Q\ :sub:`1` and Q\ :sub:`2` from your inventory of devices such that (at the same collector current) Q\ :sub:`2`'s V\ :sub:`BE` is less than Q\ :sub:`1`'s V\ :sub:`BE`. The base of transistor Q\ :sub:`2` is connected to the zero gain output at the collector of Q\ :sub:`1`. The collector of Q\ :sub:`2` connects to the input side of the PNP current mirror at the base - collector of Q\ :sub:`3`. The CB-H scope input is used to measure the output voltage at the collector of Q\ :sub:`4`.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Regulator Version 1
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -55,20 +63,21 @@ The problem with the circuit in regulator version 1 is that the current availabl
 Materials:
 ~~~~~~~~~~
 
-1 - 2.2 KΩ Resistor 1 - 100 Ω resistor 1 - 10 KΩ variable resistor (potentiometer) 1 - 4.7 KΩ resistor (resistors can be any similar value selected for desired circuit operation) 4 - small signal NPN transistors (2N3904 and SSM2212)
+1 - 2.2 KΩ Resistor 1 - 100 Ω resistor 1 - 10 KΩ variable resistor
+(potentiometer) 1 - 4.7 KΩ resistor (resistors can be any similar value selected
+for desired circuit operation) 4 - small signal NPN transistors (2N3904 and
+SSM2212)
 
 Directions:
 ~~~~~~~~~~~
 
 The breadboard connections are as shown in figure 2. As before transistor Q\ :sub:`1` and resistors R\ :sub:`1` and R\ :sub:`2` are configured as a zero gain amplifier. Transistor Q\ :sub:`2` and variable resistor R\ :sub:`3`\ form a stabilized current source. If the SSM2212 matched NPN pair is used it is best that it be used for devices Q\ :sub:`1` and Q\ :sub:`2`. Common emitter stage Q\ :sub:`3` along with its collector load R\ :sub:`4` provide gain. Emitter follower Q\ :sub:`4` drives the output node and closes the negative feedback loop.
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Regulator Version 2
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -78,16 +87,18 @@ The Channel A voltage generator, CA-V, should be configured for a 100 Hz triangl
 Procedure:
 ~~~~~~~~~~
 
-Repeat the drop out voltage, line and load regulation measurements for this circuit. How are they different than the first regulator circuit?
+Repeat the drop out voltage, line and load regulation measurements for this
+circuit. How are they different than the first regulator circuit?
 
 Using an NPN transistor array:
 ------------------------------
 
-The CA3045,46 ( LM3045, 46 ) NPN transistor array is a good alternate choice for building this example circuit. See pinout below.
+The CA3045,46 ( LM3045, 46 ) NPN transistor array is a good alternate choice for
+building this example circuit. See pinout below.
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab9_f3.png
    :align: center
-   :width: 350px
+   :width: 350
 
 All the emitters can be tired to ground ( pins 3,7,10,13 ). Devices Q\ :sub:`1`, Q\ :sub:`2` and Q\ :sub:`3` can be connected in parallel and serve as Q\ :sub:`2` in figure 2. Q\ :sub:`4` and Q\ :sub:`5`\ can be used for Q\ :sub:`1` and Q\ :sub:`3`\ in figure 2. An individual device such as a 2N3904 etc. can be used for Q\ :sub:`4` in figure 2. The 3 to 1 emitter area ratio will result in an output voltage very nearly 1.2 volts if R\ :sub:`1` and R\ :sub:`3` are both equal to 2 K? (when R\ :sub:`2` is 100?).
 
@@ -96,6 +107,6 @@ All the emitters can be tired to ground ( pins 3,7,10,13 ). Devices Q\ :sub:`1`,
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab9_f1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab9_f2.png
-   :width: 600px
+   :width: 600

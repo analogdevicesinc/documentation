@@ -6,6 +6,6 @@ ADZS-21569-EZ KIT
 Evaluation Hardware for ADSP-2156x SHARC Audio Processor family
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/adzs-21569-ezkit.png
-   :width: 600px
+   :width: 600
 
 Find more details online - :adi:`ADZS-21569-EZKIT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADZS-21569-EZKIT.html>`

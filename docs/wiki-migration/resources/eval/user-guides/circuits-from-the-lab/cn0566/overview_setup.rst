@@ -7,15 +7,16 @@ The RF input signal is received from an onboard 8-element patch antenna that ope
 
 The ADAR1000's RFIO output passes through a low pass filter before entering the :adi:`LTC5548` mixer. The low pass filter removes the high side image of the mixer as well as any re-radiation of the high side LO. :adi:`LTC5548` outputs an IF of approximately 2.2 GHz which passes through a low pass filter (LPF) to remove mixer spurs and attenuate any RF or LO leakage. The LPF's output, at Rx1 and Rx2, can then be mixed down and sampled by an external 2-channel SDR receiver, such as the ADALM-Pluto.
 
-The system consists of the EVAL-CN0566-RPIZ, Raspberry Pi 3 or 4 running ADI Kuiper Linux, an ADALM-Pluto Rev. C, 5V power source, and either keyboard/mouse/monitor OR separate host connected via VNC. The Raspberry Pi 4 provides all SPI, I2C, and discrete digital I/O control signals.
-
+The system consists of the EVAL-CN0566-RPIZ, Raspberry Pi 3 or 4 running ADI
+Kuiper Linux, an ADALM-Pluto Rev. C, 5V power source, and either
+keyboard/mouse/monitor OR separate host connected via VNC. The Raspberry Pi 4
+provides all SPI, I2C, and discrete digital I/O control signals.
 
 |image1|
 
 .. container:: centeralign
 
    <fc>Figure 1. EVAL-CN0566-RPIZ Hardware
-
 
 --------------
 
@@ -30,7 +31,6 @@ Videos
 ------
 
 .. container:: centeralign
-
 
    ..
 
@@ -69,7 +69,7 @@ Block Assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-08-38_pm.png
    :align: center
-   :width: 500px
+   :width: 500
 
 *<fc>Figure 2. EVAL-CN0566-RPIZ Circuit Evaluation Block assignment*
 
@@ -91,7 +91,7 @@ Running the System
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-37-00_pm.png
    :align: center
-   :width: 800px
+   :width: 800
 
 *Figure 3. Test Setup Functional Block Diagram*
 
@@ -149,7 +149,6 @@ Schematic, PCB Layout, Bill of Materials, Casing
    -  Allegro Project
    
 
-
 Additional Information
 ----------------------
 
@@ -161,13 +160,13 @@ Additional Information
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-26-39_pm.png
-   :width: 600px
+   :width: 600
 .. |youtube>0hnWfTvETcU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/youtube>0hnwftvetcu
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex1.png
-   :width: 750px
+   :width: 750
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex2.png
-   :width: 750px
+   :width: 750
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex3.png
-   :width: 750px
+   :width: 750
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/ex4.png
-   :width: 700px
+   :width: 700

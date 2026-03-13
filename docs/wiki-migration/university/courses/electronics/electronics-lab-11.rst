@@ -4,7 +4,8 @@ Activity: The Emitter follower (BJT)
 Objective:
 ----------
 
-To investigate the simple NPN emitter follower amplifier also sometimes referred to as the common collector configuration.
+To investigate the simple NPN emitter follower amplifier also sometimes referred
+to as the common collector configuration.
 
 Materials:
 ----------
@@ -16,26 +17,27 @@ Directions:
 
 The breadboard connections are shown in the diagram below. The output of the arbitrary waveform generator, W1, is connected to the base terminal of Q\ :sub:`1`. Scope input 1+ (Single Ended) is also connected to W1 output. The collector terminal is connected to the positive (Vp) supply. The emitter terminal is connected to both the 2.2 KΩ load resistor and Scope input 2+ (Single Ended). The other end of the load resistor is connected to the negative (Vn) supply. To measure the input to output error, channel 2 of the scope can be used differentially by connecting 2+ to the base of Q\ :sub:`1` and 2- to the emitter.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Emitter Follower
 
-
 Hardware Setup:
 ---------------
 
-The waveform generator should be configured for a 1 KHz Sine wave with 4 volt amplitude peak-to-peak and 0 offset. The Single ended input of scope channel 2 (2+) is used to measure the voltage at the emitter. The Scope configured with channel 1+ connected to display the AWG generator output. When measuring the input to output error, channel 2 of the scope should be connected to display 2+ and 2- differential.
-
+The waveform generator should be configured for a 1 KHz Sine wave with 4 volt
+amplitude peak-to-peak and 0 offset. The Single ended input of scope channel 2
+(2+) is used to measure the voltage at the emitter. The Scope configured with
+channel 1+ connected to display the AWG generator output. When measuring the
+input to output error, channel 2 of the scope should be connected to display 2+
+and 2- differential.
 
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Emitter Follower Breadboard Circuit
-
 
 Procedure:
 ----------
@@ -46,12 +48,13 @@ Procedure:
 
    Figure 3 Emitter Follower Waveforms
 
-
-The incremental Gain (Vout / Vin) of the emitter follower should ideally be 1 but will always be slightly less than 1. The gain is generally given by the following equation:
+The incremental Gain (Vout / Vin) of the emitter follower should ideally be 1
+but will always be slightly less than 1. The gain is generally given by the
+following equation:
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_e1.png
    :align: center
-   :width: 100px
+   :width: 100
 
 From the equation we can see that in order to obtain a gain close to one we can either increase R\ :sub:`L` or decrease r\ :sub:`e`. We also know that r\ :sub:`e` is a function of I\ :sub:`E` and that as I\ :sub:`E` increases r\ :sub:`e` decreases. Also from the circuit we can see that I\ :sub:`E` is related to R\ :sub:`L` and that as R\ :sub:`L` increases I\ :sub:`E` decreases. These two effects work counter to each other in the simple resistive loaded emitter follower. Thus to optimize the gain of the follower we need to explore ways to either decrease r\ :sub:`e` or increase R\ :sub:`L` without effecting the other. Looking at the follower in another way, because of the inherent DC shift due to the transistor’s V\ :sub:`BE`, the difference between input and output should be constant over the intended swing. Due to the simple resistive load R\ :sub:`L`, the emitter current I\ :sub:`E` increases and decreases as the output swings up and down. We know that V\ :sub:`BE` is a (exponential) function of I\ :sub:`E` and will change approximately 18 mV (at room temperature) for a factor of 2 change in I\ :sub:`E`. In this +2V to -2V swing example the minimum I\ :sub:`E` = 2V/ 2.2KΩ or 0.91 mA to a maximum I\ :sub:`E` = 6V / 2.2KΩ or 2.7mA. This results in a 28 mV change in V\ :sub:`BE`. This observation leads us to the first possible improvement in the emitter follower. The current mirror from activity 5 is now substituted for the emitter load resistor to fix the amplifier transistor emitter current. A current mirror will sink a more or less constant current over a wide range of voltages. This more or less constant current flowing in the transistor will result in a more or less constant V\ :sub:`BE`. Viewed another way, the very high output resistance of the current source has effectively increased R\ :sub:`L` while r\ :sub:`e` remains at a low value set by the current.
 
@@ -60,13 +63,11 @@ Additional Materials:
 
 1 – 3.2KΩ Resistor ( use a 1KΩ in series with a 2.2KΩ ) 1 – small signal NPN transistor ( Q\ :sub:`1` 2N3904) 2 – small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3` SSM2212) selected for best Vbe matching
 
-
 |image3|
 
 .. container:: centeralign
 
    Figure 4 Improved Emitter Follower
-
 
 Hardware Setup:
 ---------------
@@ -77,7 +78,6 @@ Hardware Setup:
 
    Figure 5 Improved Emitter Follower Breadboard Circuit
 
-
 Procedure:
 ----------
 
@@ -87,13 +87,11 @@ Procedure:
 
    Figure 6 Improved Emitter Follower Waveforms
 
-
    |image4|
 
 .. container:: centeralign
 
    Figure 7 Input vs output error for resistor and current source load
-
 
 Emitter follower output impedance
 =================================
@@ -101,7 +99,10 @@ Emitter follower output impedance
 Objective:
 ----------
 
-An important aspect of the emitter follower is to provide power or current gain. That is to say drive a lower resistance (impedance) load from a higher resistance (impedance) source. Thus it is instructive to measure the emitter follower output impedance.
+An important aspect of the emitter follower is to provide power or current gain.
+That is to say drive a lower resistance (impedance) load from a higher
+resistance (impedance) source. Thus it is instructive to measure the emitter
+follower output impedance.
 
 Materials:
 ----------
@@ -113,26 +114,22 @@ Directions:
 
 The circuit configuration below adds a resistor R\ :sub:`2` to inject a test signal from AWG1 into the emitter (output) of Q\ :sub:`1`. The input, base of Q\ :sub:`1`, is grounded.
 
-
 |image5|
 
 .. container:: centeralign
 
    Figure 8 Output impedance test
 
-
 Hardware Setup:
 ---------------
 
 The waveform generator should be configured for a 1 KHz Sine wave with 2 volt amplitude peak-to-peak with the offset set equal to minus the V\ :sub:`BE` of Q\ :sub:`1` ( approximately -0.65V ). This injects a +/- 0.1mA (1V/10KΩ) current into Q\ :sub:`1`\ ‘s emitter. Scope input 2+ measures the change in voltage seen at the emitter.
-
 
 |image6|
 
 .. container:: centeralign
 
    Figure 9 Output impedance test Breadboard Circuit
-
 
 Procedure:
 ----------
@@ -142,7 +139,6 @@ Procedure:
 .. container:: centeralign
 
    Figure 10 Output impedance test Waveforms
-
 
 Plot the change in voltage measured at the emitter. The nominal emitter current in Q\ :sub:`1` is (5V – 0.65) / 4.7KΩ or 925uA. We can calculate r\ :sub:`e`\ from this current as 26mV/925uA or 28Ω. How does this r\ :sub:`e` compare to the value measured from the test data? Change the value of R\ :sub:`1` from 4.7 KΩ to 2.2 KΩ and re-measure the output impedance of the circuit. How has it changed and why??
 
@@ -161,13 +157,11 @@ Directions:
 
 The breadboard connections are shown in the diagram below. The output of the function generator is connected to the base terminal of PNP transistor Q\ :sub:`1`. The collector terminal of Q\ :sub:`1` is connected to diode connected NPN Q\ :sub:`3` which is the input of a current mirror. The emitter terminal is connected to both resistor R\ :sub:`1`\ and the base terminal of NPN transistor Q\ :sub:`2`. Scope input 2+ is connected to both the emitter of Q\ :sub:`2` and the Collector of Q\ :sub:`4`. The emitters of both Q\ :sub:`3` and Q\ :sub:`4` are connected to the negative ( Vn ) supply. For best matching use the SSM2212 matched NPN pair for Q\ :sub:`3` and Q\ :sub:`4`.
 
-
 |image7|
 
 .. container:: centeralign
 
    Figure 11 Low offset follower
-
 
 Hardware Setup:
 ---------------
@@ -178,8 +172,9 @@ Hardware Setup:
 
    Figure 12 Low offset follower Breadboard Circuit
 
-
-The waveform generator should be configured for a 1 KHz Sine wave with 2 volt amplitude peak-to-peak with the offset set equal to 0. Scope input channel 2 is set to 500mV / Div.
+The waveform generator should be configured for a 1 KHz Sine wave with 2 volt
+amplitude peak-to-peak with the offset set equal to 0. Scope input channel 2 is
+set to 500mV / Div.
 
 Procedure:
 ----------
@@ -190,13 +185,11 @@ Procedure:
 
    Figure 13 Low offset follower Waveforms
 
-
    |image8|
 
 .. container:: centeralign
 
    Figure 14
-
 
    |image9|
 
@@ -204,11 +197,14 @@ Procedure:
 
    Figure 15
 
-
 Driving a Capacitor
 ~~~~~~~~~~~~~~~~~~~
 
-A problem suffered by the simple emitter follower can be seen when it drives a capacitive load. The rise time of the output can be relative fast as the emitter current is limited only by beta times the base current that can be supplied by the signal source driving the base. The fall time can be much slower and is limited by either the emitter resistor or current source.
+A problem suffered by the simple emitter follower can be seen when it drives a
+capacitive load. The rise time of the output can be relative fast as the emitter
+current is limited only by beta times the base current that can be supplied by
+the signal source driving the base. The fall time can be much slower and is
+limited by either the emitter resistor or current source.
 
 Materials:
 ----------
@@ -217,13 +213,11 @@ Materials:
 
 The circuit shown here in figure 10 uses feedback to adjust the current in the emitter follower as the current in the load changes. The current to pull the output negative can be as much as N times (the gain of the NPN mirror) the current in PNP Q\ :sub:`3`. For best matching use the SSM2220 matched PNP pair for Q\ :sub:`3` and Q\ :sub:`4`\ and the SSM2212 matched NPN pair for Q\ :sub:`5` and Q\ :sub:`6`\ (NPN mirror gain will be 1, add a second SSM2212 in parallel with Q\ :sub:`5` to increase the mirror gain).
 
-
 |image10|
 
 .. container:: centeralign
 
    Figure 16 Balanced slew rate follower
-
 
 Hardware Setup:
 ---------------
@@ -234,7 +228,6 @@ Hardware Setup:
 
    Figure 17 Balanced slew rate follower Breadboard Circuit
 
-
 Procedure:
 ----------
 
@@ -244,13 +237,11 @@ Procedure:
 
    Figure 18 Balanced slew rate follower Waveforms
 
-
    |image11|
 
 .. container:: centeralign
 
    Figure 19 Balanced slew rate follower Waveforms
-
 
    |image12|
 
@@ -258,20 +249,17 @@ Procedure:
 
    Figure 20
 
-
    |image13|
 
 .. container:: centeralign
 
    Figure 21
 
-
    |image14|
 
 .. container:: centeralign
 
    Figure 22
-
 
 An alternate approach to improving the emitter follower is to reduce the effective r\ :sub:`e` through negative feedback. Reducing r\ :sub:`e` can be addressed by adding a second transistor to increase the negative feedback factor by increasing the open-loop-gain. The single transistor is replaced by a pair with 100% voltage feedback to the emitter of the first transistor. This is often referred to as a complementary feedback pair. The value of R\ :sub:`2` is crucial to good linearity, as it sets the I\ :sub:`C` of transistor Q\ :sub:`1`, and also determines its collector loading.
 
@@ -280,13 +268,11 @@ Materials:
 
 1 – 2.2KΩ Resistor 1 – 10KΩ Resistor 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` ) 1 – small signal PNP transistor ( 2N3906 Q\ :sub:`2` )
 
-
 |image15|
 
 .. container:: centeralign
 
    Figure 23 Complementary Feedback Pair Emitter Follower
-
 
 Hardware Setup:
 ---------------
@@ -297,7 +283,6 @@ Hardware Setup:
 
    Figure 24 Complementary Feedback Pair Emitter Follower Breadboard Circuit
 
-
 Procedure:
 ----------
 
@@ -307,7 +292,6 @@ Procedure:
 
    Figure 25 Complementary Feedback Pair Emitter Follower Waveforms
 
-
 A minor addition to the complementary feedback pair emitter follower can provide a gain greater than 1. Resistor R\ :sub:`3` is added between the collector of PNP Q\ :sub:`2` and the emitter of NPN Q\ :sub:`1`. The output is now taken at the collector of Q\ :sub:`2`. The gain is approximated by the ratio of R\ :sub:`3` to R\ :sub:`1`, Gain = (R\ :sub:`1`\ +R\ :sub:`3`)/R\ :sub:`1`. In this example it is about 3.2.
 
 Materials:
@@ -315,13 +299,11 @@ Materials:
 
 2 – 1KΩ Resistors 1 – 2,2KΩ Resistor 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` ) 1 – small signal PNP transistor ( 2N3906 Q\ :sub:`2` )
 
-
 |image16|
 
 .. container:: centeralign
 
    Figure 26 Follower with gain greater than 1
-
 
 Hardware Setup:
 ---------------
@@ -332,7 +314,6 @@ Hardware Setup:
 
    Figure 27 Follower with gain greater than 1 Breadboard Circuit
 
-
 Procedure:
 ----------
 
@@ -342,17 +323,16 @@ Procedure:
 
    Figure 28 Follower with gain greater than 1 Waveforms
 
-
    |image17|
 
 .. container:: centeralign
 
    Figure 29
 
-
-In addition to the gain (or as a result of it) the DC level of the output is shifted positive as compared to the gain of 1 version. This limits the range of input voltage where the circuit can operate as shown by the negative shift in the input DC level. The next plot normalizes out the DC offset.
-
-
+In addition to the gain (or as a result of it) the DC level of the output is
+shifted positive as compared to the gain of 1 version. This limits the range of
+input voltage where the circuit can operate as shown by the negative shift in
+the input DC level. The next plot normalizes out the DC offset.
 
 |image18|
 
@@ -360,10 +340,9 @@ In addition to the gain (or as a result of it) the DC level of the output is shi
 
    Figure 30
 
-
-To confirm that the gain is indeed about 3.2 the next plot divides the output by the gain and compares that to the input. In this example the actual gain is 3.16, most likely due to the resistor values not being exact.
-
-
+To confirm that the gain is indeed about 3.2 the next plot divides the output by
+the gain and compares that to the input. In this example the actual gain is
+3.16, most likely due to the resistor values not being exact.
 
 |image19|
 
@@ -371,28 +350,28 @@ To confirm that the gain is indeed about 3.2 the next plot divides the output by
 
    Figure 31
 
-
 Questions:
 ----------
 
 What limits the amount of gain greater than one that this circuit can produce?
 
-What could be added to the circuit to remove / restore the DC levels at the input and output of this circuit?
+What could be added to the circuit to remove / restore the DC levels at the
+input and output of this circuit?
 
 What would happen if a diode connected NPN transistor were substituted for resistor R\ :sub:`2` (2.2KΩ)?
 
 Current Limit or Constant Current (Transistor Based)
 ====================================================
 
-This is a modification of the emitter follower to limit the current output. If the output stage of an amplifier is an emitter follower it may be necessary to limit the maximum current that can be supplied to the output load. Circuit:
-
+This is a modification of the emitter follower to limit the current output. If
+the output stage of an amplifier is an emitter follower it may be necessary to
+limit the maximum current that can be supplied to the output load. Circuit:
 
 |image20|
 
 .. container:: centeralign
 
    Figure 32 Emitter Current Limit
-
 
 Hardware Setup:
 ---------------
@@ -403,7 +382,6 @@ Hardware Setup:
 
    Figure 33 Emitter Current Limit Breadboard Circuit
 
-
 Procedure:
 ----------
 
@@ -412,7 +390,6 @@ Procedure:
 .. container:: centeralign
 
    Figure 34 Emitter Current Limit Waveforms
-
 
 Where:
 
@@ -437,43 +414,42 @@ The concept in this circuit is that R\ :sub:`2` acts as current sense resistor. 
    -  LTspice files: :git-education_tools:`m2k/ltspice/bjt_emitter_ff_ltspice`
    
 
-
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f1.png
-   :width: 350px
+   :width: 350
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/emit_flw-bb.png
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f3.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f4.png
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f5.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/out_imp_test-bb.png
 .. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f7.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f8.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f9.png
-   :width: 500px
+   :width: 500
 .. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f10.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/balanced_sr_flw-wav2.png
 .. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f11.png
-   :width: 500px
+   :width: 500
 .. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f12.png
-   :width: 500px
+   :width: 500
 .. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f13.png
-   :width: 500px
+   :width: 500
 .. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f14.png
-   :width: 400px
+   :width: 400
 .. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f15.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f16.png
-   :width: 500px
+   :width: 500
 .. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f17.png
-   :width: 500px
+   :width: 500
 .. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f18.png
-   :width: 500px
+   :width: 500
 .. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f19.png
-   :width: 400px
+   :width: 400

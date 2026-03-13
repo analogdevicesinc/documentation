@@ -1,15 +1,17 @@
 EVAL-CN0536-ARDZ Shield Overview
 ================================
 
-Geiger counters are one of the most commonly used tools to measure radiation levels. This is a popular sensor in other countries like Japan where power is mainly generated from nuclear plants. This type of sensor is generally deployed in numbers across different areas and are linked together to a cloud server for easy monitoring.
-
+Geiger counters are one of the most commonly used tools to measure radiation
+levels. This is a popular sensor in other countries like Japan where power is
+mainly generated from nuclear plants. This type of sensor is generally deployed
+in numbers across different areas and are linked together to a cloud server for
+easy monitoring.
 
 |image1|
 
 .. note::
 
    GM tube is not included in the board upon purchase
-
 
 The :adi:`EVAL-CN0536-ARDZ <CN0536>` is designed for use with Geiger counter radiation detectors **(GM tube not included)** is in an Arduino shield form factor compatible with 3 V and 5 V platform boards. The bias power supply is adjustable from 280 V to 500 V, allowing use with a wide range of Geiger-Mueller tubes; an *SI-29BG tube* is used as an example.
 
@@ -23,8 +25,12 @@ Simplified Block Diagram
 Board Pinout
 ------------
 
-The figure below shows the pins used as well as their corresponding functions. It can be seen that the output pin for the Geiger pulse can be set in four different locations. This allows flexibility in case other shields are used together with the CN0536. By default, JP1 is shorted and the Geiger pulse is read from GPIO33. Noting that some pins have specific alternate functions, all other unlabeled pins are free to be used.
-
+The figure below shows the pins used as well as their corresponding functions.
+It can be seen that the output pin for the Geiger pulse can be set in four
+different locations. This allows flexibility in case other shields are used
+together with the CN0536. By default, JP1 is shorted and the Geiger pulse is
+read from GPIO33. Noting that some pins have specific alternate functions, all
+other unlabeled pins are free to be used.
 
 |image3|
 
@@ -44,14 +50,15 @@ This :doc:`user guide </wiki-migration/resources/eval/user-guides/eval-adicup302
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/cn0536_mounted.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
 Circuit Evaluation and Test
 ---------------------------
 
-The following section outlines the procedure for bringing up the EVAL-CN0536-ARDZ.
+The following section outlines the procedure for bringing up the
+EVAL-CN0536-ARDZ.
 
 Equipment Needed
 ----------------
@@ -69,8 +76,8 @@ The following equipment is needed:
 Getting Started
 ---------------
 
-This outlines how to configure the EVAL-CN0536-ARDZ to accommodate different types of GM tubes.
-
+This outlines how to configure the EVAL-CN0536-ARDZ to accommodate different
+types of GM tubes.
 
 |image4|
 
@@ -78,10 +85,8 @@ This outlines how to configure the EVAL-CN0536-ARDZ to accommodate different typ
 
    **EVAL-CN0536-ARDZ**
 
-
-1. Check the GM tube pin configurations. Refer to the product datasheet and note the operating voltage of the GM tube to be used.
-
-
+1. Check the GM tube pin configurations. Refer to the product datasheet and note
+   the operating voltage of the GM tube to be used.
 
 |image5|
 
@@ -89,10 +94,8 @@ This outlines how to configure the EVAL-CN0536-ARDZ to accommodate different typ
 
    **GM Polarities**
 
-
-2. Measure the set resistance at pins 2 and 3 of the potentiometer R9 and adjust it to achieve the desired value. Refer to below figure for pin location.
-
-
+2. Measure the set resistance at pins 2 and 3 of the potentiometer R9 and adjust
+   it to achieve the desired value. Refer to below figure for pin location.
 
 |image6|
 
@@ -100,10 +103,8 @@ This outlines how to configure the EVAL-CN0536-ARDZ to accommodate different typ
 
    **Adjusting the Potentiometer (R9)**
 
-
-3. Solder the GM tube to the EVAL-CN0536-ARDZ and ensure proper grounding. For stability and safety, secure the sensor to the board using a cable tie.
-
-
+3. Solder the GM tube to the EVAL-CN0536-ARDZ and ensure proper grounding. For
+   stability and safety, secure the sensor to the board using a cable tie.
 
 |image7|
 
@@ -111,23 +112,21 @@ This outlines how to configure the EVAL-CN0536-ARDZ to accommodate different typ
 
    **CN0536 with GM tube: (a) Unsoldered (b) Soldered**
 
-
 Setup and Test
 --------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/eval-cn0536-ardz_with_gm_tube_combined_with_the_eval-adicup3029.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: center
 
    **EVAL-CN0536-ARDZ with GM Tube Combined with the EVAL-ADICUP3029**
 
-
-Follow these steps to evaluate the EVAL-CN0536-ARDZ (with installed GM tubes) and the associated software:
+Follow these steps to evaluate the EVAL-CN0536-ARDZ (with installed GM tubes)
+and the associated software:
 
 1. Connect the EVAL-CN0536-ARDZ on top of the EVAL-ADICUP3029 platform board.
-
 
 |image8|
 
@@ -135,15 +134,15 @@ Follow these steps to evaluate the EVAL-CN0536-ARDZ (with installed GM tubes) an
 
    **CN0536 with GM Tube and EVAL-ADICUP3029 Connection**
 
-
 2. Connect the EVAL-ADICUP3029 to the PC using the microUSB cable provided.
 
-3. From the PC, drag and drop the prebuilt ADuCM3029_demo_cn0536_uart.hex file onto the DAPLink drive.
+3. From the PC, drag and drop the prebuilt ADuCM3029_demo_cn0536_uart.hex file
+   onto the DAPLink drive.
 
 4. Open the serial terminal program (for example, Tera Term or Putty).
 
-5. Connect the EVAL-ADICUP3029 by using the COM port it was assigned to set the baud rate to 115200.
-
+5. Connect the EVAL-ADICUP3029 by using the COM port it was assigned to set the
+   baud rate to 115200.
 
 |image9|
 
@@ -151,10 +150,8 @@ Follow these steps to evaluate the EVAL-CN0536-ARDZ (with installed GM tubes) an
 
    **Using Tera Term as Serial Monitor with Baud Rate Set to 115200**
 
-
-6. Place the radioactive source near the Geiger-Mueller tube and observe the terminal.
-
-
+6. Place the radioactive source near the Geiger-Mueller tube and observe the
+   terminal.
 
 |image10|
 
@@ -162,13 +159,13 @@ Follow these steps to evaluate the EVAL-CN0536-ARDZ (with installed GM tubes) an
 
    **EVAL-CN0536-ARDZ Connected to the EVAL-ADICUP3029 Next to the Uranium Ore Sample**
 
-
 --------------
 
 Radiation Detection Using Different GM Tubes
 ============================================
 
-The CN0536 was tested with four different GM tubes. Below table presents the sensors’ sensitivity levels and materials used, and operating range.
+The CN0536 was tested with four different GM tubes. Below table presents the
+sensors’ sensitivity levels and materials used, and operating range.
 
 |image11| |image12|
 
@@ -176,10 +173,7 @@ The CN0536 was tested with four different GM tubes. Below table presents the sen
 
    **Geiger Muller Tubes Specifications**
 
-
 Adjusting the **R\ pot** configurations ensures that each GM tube operate correctly and efficiently.
-
-
 
 |image13|
 
@@ -187,13 +181,11 @@ Adjusting the **R\ pot** configurations ensures that each GM tube operate correc
 
    **GM Tube 713: (a) Serial Display (b) CN0536 with GM Tube and EVAL-ADICUP3029**
 
-
    |image14|
 
 .. container:: center
 
    **GM Tube 7121: (a) Serial Display (b) CN0536 with GM Tube and EVAL-ADICUP3029**
-
 
    |image15|
 
@@ -201,13 +193,11 @@ Adjusting the **R\ pot** configurations ensures that each GM tube operate correc
 
    **GM Tube 7124: (a) Serial Display (b) CN0536 with GM Tube and EVAL-ADICUP3029**
 
-
    |image16|
 
 .. container:: center
 
    **GM Tube 7129: (a) Serial Display (b) CN0536 with GM Tube and EVAL-ADICUP3029**
-
 
 --------------
 
@@ -226,7 +216,6 @@ Schematic, Layout, Bill of Materials
    -  Bill of Materials
    
 
-
 More Information and Useful Links
 =================================
 
@@ -242,38 +231,37 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0536-ARDZ?&v=Rev D>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/eval-cn0536-ardz_iso.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/cn0536_block_diagram_latest.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/pinout.png
-   :width: 800px
+   :width: 800
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/eval-cn0536-ardz.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_polarities.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/adjusting_the_potentiometer_r9_.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/cn0536_with_gm_tube.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/cn0536_with_gm_tube_and_eval-adicup3029_connection.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/using_tera_term_as_serial_monitor_with_baud_rate_set_to_115200.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/thumbnail_1_.jpg
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_sensor_tubes.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/geiger_muller_tubes_specifications.png
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7129_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
-   :width: 800px
+   :width: 800
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7121_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
-   :width: 800px
+   :width: 800
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7124_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
-   :width: 800px
+   :width: 800
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7129_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
-   :width: 800px
+   :width: 800

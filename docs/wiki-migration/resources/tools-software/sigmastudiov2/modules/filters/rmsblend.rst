@@ -3,13 +3,16 @@
 RMS Blend EQ
 ============
 
-The 'RMS Blend EQ ' block blends the filter coefficients of two second order filters according to the RMS value of the detect signal specified and performs filtering operation. The detect signal will be obtained via the control input pin.
+The 'RMS Blend EQ ' block blends the filter coefficients of two second order
+filters according to the RMS value of the detect signal specified and performs
+filtering operation. The detect signal will be obtained via the control input
+pin.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/module.png
    :alt: module.png
 
-The blend factor calculation is based on the RMS value of the detect signal, as shown in the figure below:
-
+The blend factor calculation is based on the RMS value of the detect signal, as
+shown in the figure below:
 
 |image1|
 
@@ -17,16 +20,18 @@ The blend factor calculation is based on the RMS value of the detect signal, as 
 
    \ **Figure:** Blend Factor Calculation
 
-
 -  The blend factor(0-1) is obtained as input through the control pin.
--  The Slew time can be entered in GUI in seconds (0-1) to slew from the initial blend factor to the target value.
+-  The Slew time can be entered in GUI in seconds (0-1) to slew from the initial
+   blend factor to the target value.
 
 Blend factor and slew rate modifications are common for all the stages.
 
 Description
 -----------
 
-The RMS Blend Equalizer module along with General (2nd-Order) block gives access to a wide variety of 2nd-order (biquad)filter algorithms along with equalization.
+The RMS Blend Equalizer module along with General (2nd-Order) block gives access
+to a wide variety of 2nd-order (biquad)filter algorithms along with
+equalization.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/rmsblendeqfiltsettings.png
    :alt: rmsblendeqfiltsettings.png
@@ -52,7 +57,11 @@ The available filter types are:
 Usage
 -----
 
-To open the filter control window, click on the icon button. Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type. Also varying the threshold values and RMS time constant values would change the output values accordingly
+To open the filter control window, click on the icon button. Select the desired
+filter type from the drop-down combo-box list. The filter controls and the icon
+button image will change to reflect the selected filter type. Also varying the
+threshold values and RMS time constant values would change the output values
+accordingly
 
 Targets Supported
 -----------------
@@ -62,7 +71,6 @@ Name       ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ========== ========== ================ ============= ================
 RMSEqBlend B/S        B/S              S             NA
 ========== ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -84,7 +92,6 @@ Name    Type  Description
 ======= ===== ================
 Output0 Audio Output channel 0
 ======= ===== ================
-
 
 | ===== Configurable Parameters =====
 
@@ -151,4 +158,4 @@ DSP Parameters
 -   Y - Filter A/B for each stage X
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/blendfactorcalculation.png
-   :width: 600px
+   :width: 600

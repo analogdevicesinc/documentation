@@ -7,9 +7,11 @@ The release package contains folder structure as shown in below Figure.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/qnx_package_details.png
    :align: center
-   :width: 400px
+   :width: 400
 
-The files specific to the demo application on QNX are located in the ADI_A2B_Software-QNX- RelX.Y.Z/Target/examples/demo/a2b-qnx folder. The various folders in the a2b-qnx folder are explained in below table.
+The files specific to the demo application on QNX are located in the
+ADI_A2B_Software-QNX- RelX.Y.Z/Target/examples/demo/a2b-qnx folder. The various
+folders in the a2b-qnx folder are explained in below table.
 
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Folder Name**                       | **Purpose**                                                                                                                                                                                                                                                                                                                           |

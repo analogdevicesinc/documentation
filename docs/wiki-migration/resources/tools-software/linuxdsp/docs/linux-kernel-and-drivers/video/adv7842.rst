@@ -14,22 +14,25 @@ The following formats are supported:
 -  NTSC (480i60)
 -  PAL (576i50)
 
-When using 720p60, connect an HDMI cable from your source (e.g. a video player) to the HDMI A port and ensure the video source's resolution is set to 720p.
+When using 720p60, connect an HDMI cable from your source (e.g. a video player)
+to the HDMI A port and ensure the video source's resolution is set to 720p.
 
 For SD video, connect video cables to CVBS, S-Video or Component port.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/decoder.jpg
-   :width: 600px
+   :width: 600
 
 Software Configuration
 ----------------------
 
-The following configuration should be done on top of the sc589-ezkit/sc573-ezkit default configuration.
+The following configuration should be done on top of the sc589-ezkit/sc573-ezkit
+default configuration.
 
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-Add the v4l2-video-test package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
+Add the v4l2-video-test package in the filesystem, it's enabled in
+adsp-sc5xx-full image by default.
 
 ::
 
@@ -66,7 +69,8 @@ Run "**bitbake linux-adi -c menuconfig**" to configure the linux kernel. Due to 
        - *- Pin controllers  --->
             <*> Microchip MCP23xxx I/O expander
 
--  \*\* Enable V4L2 capture platform driver and ADV7842 video decoder driver \*\*
+-  \*\* Enable V4L2 capture platform driver and ADV7842 video decoder driver
+   \*\*
 
 ::
 
@@ -99,7 +103,9 @@ Run "**bitbake linux-adi -c devshell**" to enter into the kernel source code and
 
 -  \*\* Device node for soft switch on Video Decoder EI3 Extender Board \*\*
 
-Please add following child node ssw2 to i2c0 master node in the device tree(sc589-ezkit.dts/sc573-ezkit.dts). We need to setup soft switch before we start capture streaming.
+Please add following child node ssw2 to i2c0 master node in the device
+tree(sc589-ezkit.dts/sc573-ezkit.dts). We need to setup soft switch before we
+start capture streaming.
 
 ::
 
@@ -153,13 +159,17 @@ Setup Soft Switch
 Capture Video Stream
 ~~~~~~~~~~~~~~~~~~~~
 
-You can use "v4l2_video_capture" provided by Buildroot to test video capture function for ADV7842, it shows the decoding of HD signal input and YCbCr pixel output in this example:
+You can use "v4l2_video_capture" provided by Buildroot to test video capture
+function for ADV7842, it shows the decoding of HD signal input and YCbCr pixel
+output in this example:
 
 ::
 
    # v4l2_video_capture -I 4 -F adv7842.yuv
 
-The 720p yuv file can be played by a raw video sequence player, for example pYUV. Or it can be saved as the input of the ADV7511. PYUV must be configured as below:
+The 720p yuv file can be played by a raw video sequence player, for example
+pYUV. Or it can be saved as the input of the ADV7511. PYUV must be configured as
+below:
 
 ::
 
@@ -171,7 +181,7 @@ The 720p yuv file can be played by a raw video sequence player, for example pYUV
 And select Interleaved option.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/lkad-linux_video_driver-capture_video_stream.jpg
-   :width: 600px
+   :width: 600
 
 --------------
 

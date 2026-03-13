@@ -3,7 +3,8 @@ Advanced DSP
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-The ToolBox's library of Advanced DSP lets you access unique signal processing tools for specific audio applications.
+The ToolBox's library of Advanced DSP lets you access unique signal processing
+tools for specific audio applications.
 
 Following is a list of the cells available in this release:
 

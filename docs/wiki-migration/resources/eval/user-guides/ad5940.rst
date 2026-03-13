@@ -1,11 +1,17 @@
 AD594x User Guide
 =================
 
-The AD594x is a high precision, low power analog front end (AFE) designed for applications requiring high precision, electrochemical-based measurement techniques, such as amperometric, voltametric, or impedance measurements. It is targeted at a number of industries including Healthcare, Industrial and Instrumentation. The AD594x evaluation eco-system is designed to be a versatile development and prototyping vehicle to help customers configure and use the AD594x in their target application.
+The AD594x is a high precision, low power analog front end (AFE) designed for
+applications requiring high precision, electrochemical-based measurement
+techniques, such as amperometric, voltametric, or impedance measurements. It is
+targeted at a number of industries including Healthcare, Industrial and
+Instrumentation. The AD594x evaluation eco-system is designed to be a versatile
+development and prototyping vehicle to help customers configure and use the
+AD594x in their target application.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5940_wiki_collage.png
    :align: right
-   :width: 500px
+   :width: 500
 
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/eval-ad5940/introduction>`
 -  :doc:`Tools and Driver Details </wiki-migration/resources/eval/user-guides/eval-ad5940/tools>`

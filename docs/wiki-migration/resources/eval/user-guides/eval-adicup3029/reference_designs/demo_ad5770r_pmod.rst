@@ -48,15 +48,14 @@ Setting up the Hardware
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5770r_connect.jpg
    :align: center
 
--  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
+-  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect
+   it to a computer. The final setup should look similar to the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5770r_pc.jpg
    :align: center
 
 Outputting Data
 ---------------
-
-
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
@@ -133,8 +132,6 @@ preferences.
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
 
-
-
 Available commands
 ~~~~~~~~~~~~~~~~~~
 
@@ -171,14 +168,19 @@ Typing **help** or **h** after initial calibration sequence will display the lis
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the AD5770 PMOD.
+There are two basic ways to program the ADICUP3029 with the software for the
+AD5770 PMOD.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_ad5770** can be found here:
 
@@ -194,7 +196,6 @@ The software for the **ADuCM3029_demo_ad5770** can be found here:
    
    -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_ad5770rpmdz Source Code <projects/ADuCM3029_demo_ad5770rpmdz>`
    
-
 
 How to use the Tools
 --------------------
@@ -214,7 +215,8 @@ For more detailed instructions on importing this application/demo example into t
 Project Structure
 ~~~~~~~~~~~~~~~~~
 
-Beside the IDE generated sources the project structure is divided into high level software modules and low level software modules.
+Beside the IDE generated sources the project structure is divided into high
+level software modules and low level software modules.
 
 The high level modules are in the **src** folder and are:
 

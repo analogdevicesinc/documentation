@@ -3,12 +3,12 @@ AXI JESD204B GT HDL Linux Driver
 
 .. warning::
 
-   \ NOTE: This driver is RETIRED, DEPRECATED and not used anymore in any of the recent projects!
+   \ NOTE: This driver is RETIRED, DEPRECATED and not used anymore in any of the
+   recent projects!
 
    
    Please see here instead: :doc:`ADI JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
    
-
 
 Supported Devices
 -----------------
@@ -52,7 +52,9 @@ Example platform device initialization
 
 The AXI JESD204B driver is a platform driver and can currently only be instantiated via device tree. Depending on which HDL Version (PCORE_VERSION) the HDL supports two links, one receive and one transmit, depending on [rx|tx]-[sys|out]-clk-select is given both or not.
 
-Starting with PCORE_VERSION > 7.0.0, the HDL and driver supports multiple links. And the setup is done per lane basis. The device tree entry then features multiple per link child nodes.
+Starting with PCORE_VERSION > 7.0.0, the HDL and driver supports multiple links.
+And the setup is done per lane basis. The device tree entry then features
+multiple per link child nodes.
 
 Required devicetree properties (legacy (flat) mode & PCORE_VERSION < 7.0.0):
 
@@ -148,12 +150,14 @@ Required devicetree properties (PCORE_VERSION > 7.0.0):
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -193,7 +197,6 @@ Driver Testing
    -rw-------    1 root     root          4096 Jan  1 00:24 reg_access
    lrwxrwxrwx    1 root     root             0 Jan  1 00:24 subsystem -> ../../../bus/platform
    -rw-r--r--    1 root     root          4096 Jan  1 00:24 uevent
-
 
    # cat info
    x65,y255 CDRDW: 40

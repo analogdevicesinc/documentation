@@ -6,7 +6,8 @@ Evaluating the ADXL367
 ADXL367 Quick Start:
 --------------------
 
-The following wiki page goal is to help new users and ADXL362 users to have an easy start testing and prototyping the ADXL367.
+The following wiki page goal is to help new users and ADXL362 users to have an
+easy start testing and prototyping the ADXL367.
 
 -  :doc:`ADXL367 Quick Start User Guide wiki </wiki-migration/resources/quick-start/adxl367_quick_start_guide>`
 
@@ -18,14 +19,12 @@ EVAL-ADXL367Z:
 
 This is a small footprint PCB that consist of the ADXL367 and pin headers.
 
-
 |image1|
 
 EVAL-ADXL367-SDP:
 ^^^^^^^^^^^^^^^^^
 
 ADXL367 evaluation system based on ADI's `SDP-B evaluation board <adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B]>`__. This a plug and play solution that allows testing of all ADXL367 features. Drivers to install the LabView based GUI are provided.
-
 
 |image2|
 
@@ -34,5 +33,5 @@ ADXL367 evaluation system based on ADI's `SDP-B evaluation board <adi>en/design-
 -  The EVAL-ADXL367-SDP User Guide: ::doc:`EVAL-ADXL367-SDP wiki </wiki-migration/resources/eval/user-guides/inertial-mems/accelerometers/adxl367/eval-adxl367-sdp>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/eval-adxl367z_photo.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/eval-adxl367-sdp_photo.jpg

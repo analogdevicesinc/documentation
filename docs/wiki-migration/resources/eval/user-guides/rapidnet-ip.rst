@@ -3,14 +3,17 @@ RapidNet IP Wireless Networking Protocol Solution
 
 :adi:`RapidNet-IP` protocol is a long range sub-GHz wireless networking solution that addresses industrial and commercial applications where reliability, robustness, scalability, and battery life are critical. Applications such as electronic shelf label (ESL), smart lock, and smart infrastructure can be realized by RapidNet IP.
 
-RapidNet IP is a complete point-to-multipoint wireless networking solution operating in sub-GHz worldwide regional bands. RapidNet IP protocol uses star-repeater network topology, enables longer range communication with faster message transmit times.
+RapidNet IP is a complete point-to-multipoint wireless networking solution
+operating in sub-GHz worldwide regional bands. RapidNet IP protocol uses
+star-repeater network topology, enables longer range communication with faster
+message transmit times.
 
 RapidNet IP leverages the market proven :adi:`ADF7023` radio transceiver and lowest power ULP processors (:adi:`ADuCM3029` or :adi:`ADuCM4050`).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/1.png
    :alt: RapidNet IP Network Topology.
    :align: center
-   :width: 600px
+   :width: 600
 
 Features and Specification
 --------------------------
@@ -19,7 +22,8 @@ Features and Specification
 
    -   Low power IEEE802.15.4g/e wireless network with time synchronized channel hopping (TSCH)—no collisions and no lengthy receive waits
 
-      -  Lowest power consumption per node with star and extended star network topology configuration.
+      -  Lowest power consumption per node with star and extended star network
+         topology configuration.
 
          -  Reliable end-to-end communications with acknowledgements
 
@@ -89,33 +93,36 @@ Source Installer
 RapidNet IP Module
 ------------------
 
-User can buy RapidNet IP modules from third party vendors. Contact ADI for more information about this.
+User can buy RapidNet IP modules from third party vendors. Contact ADI for more
+information about this.
 
 Module Connection diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/rf_module_block_doagram.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Castellation leads pinout
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/castellations-1.png
    :align: center
-   :width: 500px
+   :width: 500
 
 RapidNet IP Development Kits
 ----------------------------
 
-Below are the different kits available for evaluating RapidNet IP Network Protocol.
+Below are the different kits available for evaluating RapidNet IP Network
+Protocol.
 
 -  **EV-RAPID-ESL-900JZ** - RapidNet IP ESL Evaluation kit with TELEC Certification specific for Japan.
 -  **EV-RAPID-ESL-900Z** - RapidNet IP ESL Evaluation Kit for all the regions except Japan.
 -  **EV-RAPID-NODE-900Z** - Electronic Shelf Labelling (ESL) node which should be ordered only if more nodes are required during the evaluation of EV-RAPID-ESL-900JZ/EV-RAPID-ESL-900Z.
 -  **EV-RAPID-KIT-900Z** - RapidNet IP Sensor Application Kit
 
-Below are the kit contents. Please click on the individual link to know more about the particular board.
+Below are the kit contents. Please click on the individual link to know more
+about the particular board.
 
 -  **EV-RAPID-ESL-900JZ/EV-RAPID-ESL-900Z** - RapidNet IP Electronic Shelf Labelling (ESL) Kit
 

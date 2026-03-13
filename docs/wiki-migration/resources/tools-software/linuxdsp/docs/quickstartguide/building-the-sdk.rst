@@ -2,7 +2,6 @@
 
    These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
-
 Building The SDK
 ================
 
@@ -10,11 +9,12 @@ Building The SDK
 
    In order to build the SDK it is necessary to follow the relevant Quickstart Guide (:doc:`SC589-EZKIT and SC589-MINI </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc589>`, :doc:`SC594-EZKIT </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc594>`, :doc:`SC598-EZKIT </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc598>`) for Setting Up Your Host PC.
 
-
 Preparing the buildtool
 -----------------------
 
-Yocto requires the environment to be configured before building is possible.  A setup-environment script in the griffin, gxp or gxp2 folder contains all the required environment settings.
+Yocto requires the environment to be configured before building is possible.  A
+setup-environment script in the griffin, gxp or gxp2 folder contains all the
+required environment settings.
 
 ::
 
@@ -38,17 +38,25 @@ or
 
    $ source setup-environment -m adsp-sc598-som-ezkit
 
-Sourcing the script will configure your build environment and create a build folder along with a local build configuration file.  See the Yocto Manual for further details.
+Sourcing the script will configure your build environment and create a build
+folder along with a local build configuration file.  See the Yocto Manual for
+further details.
 
 .. important::
 
-   Note that the build environment needs to be sourced once only before building.  If later working in a different terminal the setup-environment script should be sourced again.  If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
-
+   Note that the build environment needs to be sourced once only before
+   building.  If later working in a different terminal the setup-environment
+   script should be sourced again.  If sourcing the setup-environment script is
+   done without specifying the machine Yocto will reuse the previous
+   configuration settings and retain any changes made to the files in the conf
+   folder.
 
 Building the SDK
 ----------------
 
-The SDK can be built for the adsp-sc5xx-minimal image or the adsp-sc5xx-full image. To build the SDK for the adsp-sc5xx-minimal image invoke bitbake from within the build directory created previously.
+The SDK can be built for the adsp-sc5xx-minimal image or the adsp-sc5xx-full
+image. To build the SDK for the adsp-sc5xx-minimal image invoke bitbake from
+within the build directory created previously.
 
 ::
 
@@ -60,7 +68,8 @@ or for the adsp-sc5xx-full image
 
    $ bitbake adsp-sc5xx-full -c populate_sdk
 
-When the build has completed you will find a set of files in the <BUILD_DIR>/tmp/deploy/sdk directory. For the minimal image on SC594:
+When the build has completed you will find a set of files in the
+<BUILD_DIR>/tmp/deploy/sdk directory. For the minimal image on SC594:
 
 ::
 
@@ -80,12 +89,18 @@ or the full image on SC598:
    poky-glibc-x86_64-adsp-sc5xx-full-aarch64-adsp-sc598-som-ezkit-toolchain-3.1.8.target.manifest
    poky-glibc-x86_64-adsp-sc5xx-full-aarch64-adsp-sc598-som-ezkit-toolchain-3.1.8.testdata.json
 
-The poky-glibc-x86_64-adsp-sc5xx-minimal-armv7at2hf-neon-adsp-sc594-som-ezkit-toolchain-3.1.8.sh and the poky-glibc-x86_64-adsp-sc5xx-full-aarch64-adsp-sc598-som-ezkit-toolchain-3.1.8.sh are self-extracting archives containing the SDK.
+The
+poky-glibc-x86_64-adsp-sc5xx-minimal-armv7at2hf-neon-adsp-sc594-som-ezkit-toolchain-3.1.8.sh
+and the
+poky-glibc-x86_64-adsp-sc5xx-full-aarch64-adsp-sc598-som-ezkit-toolchain-3.1.8.sh
+are self-extracting archives containing the SDK.
 
 Installing the SDK
 ------------------
 
-Invoke the self-extracting archive. It will default to installing to /opt/poky/3.1.8 but gives you the option to select your own install folder during the installation. For the minimal image on SC594
+Invoke the self-extracting archive. It will default to installing to
+/opt/poky/3.1.8 but gives you the option to select your own install folder
+during the installation. For the minimal image on SC594
 
 ::
 

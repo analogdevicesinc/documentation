@@ -7,9 +7,15 @@ For questions regarding the AD-9213-DUAL-EBZ hardware or the HDL reference desig
 
 For questions regarding the :adi:`AD9213 <en/products/ad9213.html>` ADC please state them in the :ez:`Data Converters <community/data_converters>` sub-community. For questions regarding the :adi:`ADF4377 <en/products/adf4377.html>` Clock please use the :ez:`Clock and Timing <community/clock_and_timing>` sub-community.
 
-When asking a question please take the time to give a detailed description of your problem. Always include on which platform you are currently using the AD-9213-DUAL-EBZ. If you are experiencing a problem please state the steps you have executed, the result you expected you would get and the result you actually got. By doing so you enable us to provide you precise and detailed answers in a timely manner.
+When asking a question please take the time to give a detailed description of
+your problem. Always include on which platform you are currently using the
+AD-9213-DUAL-EBZ. If you are experiencing a problem please state the steps you
+have executed, the result you expected you would get and the result you actually
+got. By doing so you enable us to provide you precise and detailed answers in a
+timely manner.
 
-Before asking questions please also take the time to check if somebody else already asked the same question and already got an answer.
+Before asking questions please also take the time to check if somebody else
+already asked the same question and already got an answer.
 
 For more information also check:
 

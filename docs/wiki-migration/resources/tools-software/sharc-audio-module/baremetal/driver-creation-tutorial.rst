@@ -1,9 +1,14 @@
 Tutorial: Creating drivers for audio components using SigmaStudio
 =================================================================
 
-The bare metal framework is very extensible. In this tutorial, we’re going to explore adding new audio components (e.g. a codec, a MEMS microphone, etc.) to our system. Most audio components have both an I2S interface for audio and either an SPI or I2C interface for control.
+The bare metal framework is very extensible. In this tutorial, we’re going to
+explore adding new audio components (e.g. a codec, a MEMS microphone, etc.) to
+our system. Most audio components have both an I2S interface for audio and
+either an SPI or I2C interface for control.
 
-This tutorial will cover how to configure a new audio component, with SigmaStudio, and then use this configuration in the bare metal framework to initialize it.
+This tutorial will cover how to configure a new audio component, with
+SigmaStudio, and then use this configuration in the bare metal framework to
+initialize it.
 
 Creating Drivers for Audio Components
 =====================================
@@ -11,29 +16,39 @@ Creating Drivers for Audio Components
 Part 1: Creating and initializing the audio component over TWI/I2C
 ------------------------------------------------------------------
 
-If you are using an audio component from Analog Devices, SigmaStudio can very likely be used to generate a set of configuration parameters with which the bare metal framework can initialize the component.
+If you are using an audio component from Analog Devices, SigmaStudio can very
+likely be used to generate a set of configuration parameters with which the bare
+metal framework can initialize the component.
 
 First, if you don’t already have SigmaStudio installed, get the latest version from http://www.analog.com/sigmastudio.
 
 .. important::
 
    
-   It's important to download and install SigmaStudio and not SigmaStudio for SHARC.
+   It's important to download and install SigmaStudio and not SigmaStudio for
+   SHARC.
    
 
-
-In this example, we will show how to configure and connect the ADI SSM3582 (a Class D amplifier) to our system over I2C.
+In this example, we will show how to configure and connect the ADI SSM3582 (a
+Class D amplifier) to our system over I2C.
 
 Step 1: Create and configure the component in SigmaStudio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open up SigmaStudo. It will default to a blank project. If not, create a new project with File->New Project. We’re going to save our project within the framework so we can easily access the files that we export. Save your project into the following path:
+Open up SigmaStudo. It will default to a blank project. If not, create a new
+project with File->New Project. We’re going to save our project within the
+framework so we can easily access the files that we export. Save your project
+into the following path:
 
 ``C:\Analog Devices\SAM_BareMetal_SDK-Rel1.0.0\framework\drivers\bm_adau_driver\configurations\ss_schematics``
 
 Let's call our project ``SSM3582_basic.dspproj``. You will see other projects in that directory, they correspond to preexisting drivers in the framework (more on this later).
 
-Look for the component we’re interested in within the table on the left hand side and drag an instance of that component into our hardware configuration tab. Once we’ve dragged it in, click on the grey text within the box (IC initially), and give the component a more descriptive name. Our exported files will use this stub so it will make it easier to keep track of things.
+Look for the component we’re interested in within the table on the left hand
+side and drag an instance of that component into our hardware configuration tab.
+Once we’ve dragged it in, click on the grey text within the box (IC initially),
+and give the component a more descriptive name. Our exported files will use this
+stub so it will make it easier to keep track of things.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/sigmastudio-1.png
    :alt: Adding a component
@@ -43,7 +58,8 @@ Click on the configuration tab for this component at the bottom of the **Hardwar
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/sigmastudio-2.png
    :alt: Configuring the component
 
-In our case, the default options are what is needed. So, without changing these settings, carry on reading through Step 2 to export the configuration files.
+In our case, the default options are what is needed. So, without changing these
+settings, carry on reading through Step 2 to export the configuration files.
 
 Step 2: Export the configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,9 +69,9 @@ In the Action menu, select **Link Compile Download**.
 .. important::
 
    
-   It will appear that nothing has happened but SigmaStudio has indeed compiled the configuration options for this project.
+   It will appear that nothing has happened but SigmaStudio has indeed compiled
+   the configuration options for this project.
    
-
 
 After this, select **Export System Files** (immediately below Link Compile Download).
 
@@ -78,7 +94,8 @@ A set of intermediate files provide a C ``struct`` to access information held in
 
 Import the bare metal framework projects in CCES (instructions :doc:`here </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/downloading-and-installing>`) and navigate to ``${Core_0_Project}\src\drivers\bm_adau_driver\configurations``. You will find a number of ``.c`` files in this directory, each corresponding to a particular device. Notice that there is already a file for the ``ssm3582_configuration.c``. Open it.
 
-Copy the “2ch_i2s_slave” configuration variables (shown below) and paste them again into the same file.
+Copy the “2ch_i2s_slave” configuration variables (shown below) and paste them
+again into the same file.
 
 .. code:: c
 
@@ -97,7 +114,8 @@ Copy the “2ch_i2s_slave” configuration variables (shown below) and paste the
 
 Give new unique names to the copied configuration variables, and change the file paths to point to the ``.dat`` files generated at Step 2.
 
-The code snippet below shows an example of the copied configuration code, with new variable names:
+The code snippet below shows an example of the copied configuration code, with
+new variable names:
 
 .. code:: c
 
@@ -173,4 +191,3 @@ And we can use the same approach to read control registers:
    uint16_t leftGain = adau_read_ctrl_reg( &ssm3582_basic, 0x7 );  // Read left channel gain
 
 If the audio component has a SigmaDSP core, this same driver can also be used to read and write parameter memory for the SigmaDSP. Use the ``adau_read_parameter_ram()`` and ``adau_write_parameter_ram()`` functions to access parameter RAM.
-

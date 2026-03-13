@@ -5,7 +5,8 @@ No-OS Build System
 
    make
 
-This is the complete compilation process. It is made up of three rules, that can be used separately: project, update, build
+This is the complete compilation process. It is made up of three rules, that can
+be used separately: project, update, build
 
 <code> make project </code> - creates the ``build`` directory and the required directory structure
 

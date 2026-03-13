@@ -3,8 +3,6 @@
 Xilinx Zynq UltraScale+ MPSoC ZU11EG Power Solutions
 ====================================================
 
-
-
 ====== ==========================
 Type   |image1| Application Board
 ====== ==========================
@@ -37,14 +35,12 @@ ADI Parts Used
 +----------------------+---------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/app.png
-   :width: 32px
+   :width: 32
 .. |image2| image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/adrv9009-zu11egbottom-web.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/adrv9009-zu11eg-1.png
-   :width: 0px
+   :width: 0
    :height: 200px
 .. |image4| image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/adrv9009-zu11eg-2.png
-   :width: 0px
+   :width: 0
    :height: 200px
-
-

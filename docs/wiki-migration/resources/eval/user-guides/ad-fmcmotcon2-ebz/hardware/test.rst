@@ -18,10 +18,12 @@ NOTE: Following instructions are valid if a Windows host is used. Instructions r
 -  Download the SD card image: `motcon2_2015_05_06.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/motcon2_2015_05_06.zip>`_
 -  Extract motcon2.img from motcon2_2015_05_06.zip archive.
 -  Download and install Win32DiskImager: http://sourceforge.net/projects/win32diskimager/files/latest/download?source=navbar
--  Open Win32DiskImager, select the extracted image file (motcon2.img), select the SD card device ([K:\\] in our example) and press the "Write" button to write the image to the device:
+-  Open Win32DiskImager, select the extracted image file (motcon2.img), select
+   the SD card device ([K:\\] in our example) and press the "Write" button to
+   write the image to the device:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/win32diskimager.png
-   :width: 300px
+   :width: 300
 
 -  Use Windows "safely remove" to eject the disk.
 
@@ -30,31 +32,38 @@ Program the FRU EEPROM
 
 -  Connect the controller board to the ZED board
 -  Ensure that the SD card is up to date (run ADI Update Tools)
--  To program the FRU EEPROM, start ADI IIO Oscilloscope, select Settings -> Connect; if the EEPROM memory was not already programmed, a window should pop-up:
+-  To program the FRU EEPROM, start ADI IIO Oscilloscope, select Settings ->
+   Connect; if the EEPROM memory was not already programmed, a window should
+   pop-up:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/fru_memory.png
-   :width: 300px
+   :width: 300
 
--  Select the AD-FMCMOTCON2-EBZ-FRU.bin master file, type the board's Serial Number (which is written on the sticker on the controller board bottom) and the Date and click OK to program the EEPROM.
+-  Select the AD-FMCMOTCON2-EBZ-FRU.bin master file, type the board's Serial
+   Number (which is written on the sticker on the controller board bottom) and
+   the Date and click OK to program the EEPROM.
 
 Test ETHERCAT EEPROM
 --------------------
 
 -  Open a Terminal Emulator and test the EEPROM memory running "sudo ./verify_eeprom"
--  If everything works OK, the following messages should appear: "Write OK." "Read OK."
+-  If everything works OK, the following messages should appear: "Write OK."
+   "Read OK."
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/test_ee2_eeprom.png
-   :width: 300px
+   :width: 300
 
 Test AD2S1210
 -------------
 
 -  Ensure that the SD card is up to date (run ADI Update Tools and "sudo adi_update_boot.sh 10.50.1.128")
 -  Connect a jumper on P6.2 - P6.3
--  From the Resolver tab set the Excitation Frequency to 2000 Hz and 20000 Hz. The Sine frequency can be measured on P9.5 using an oscilloscope. Make sure that the oscilloscope ground is connected to the DGND_ISO testpoint.
+-  From the Resolver tab set the Excitation Frequency to 2000 Hz and 20000 Hz.
+   The Sine frequency can be measured on P9.5 using an oscilloscope. Make sure
+   that the oscilloscope ground is connected to the DGND_ISO testpoint.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/dgnd_iso.jpg
-   :width: 300px
+   :width: 300
 
 |image1| |image2|
 
@@ -67,13 +76,13 @@ Test Procedure
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/eth_jumpers.jpg
    :alt: Eth Jumpers
-   :width: 600px
+   :width: 600
 
 -  Connect the hardware as shown in the picture below
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/connections.jpg
    :alt: connections
-   :width: 600px
+   :width: 600
 
 -  Insert the Dyno sensor wire in P3 connector on the controller board with the black wire towards the FPGA
 -  Insert the Dyno motor wire in the P2 connector on the Drive Board
@@ -85,7 +94,8 @@ Test Procedure
    -  DS1, DS2, DS3 and DS4 on the Controller Board
    -  DS1 and DS2 on the Drive Board
 
--  In the Linux ADI IIO Oscilloscope go to the// Motor Control// tab and select the following configuration:
+-  In the Linux ADI IIO Oscilloscope go to the// Motor Control// tab and select
+   the following configuration:
 
    -  **Motor 1**
 
@@ -103,9 +113,10 @@ Test Procedure
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/scr_1.png
    :alt: Motor Control Tab
-   :width: 400px
+   :width: 400
 
--  In the Linux ADI IIO Oscilloscope-Capture1 go to the// Plot Channels// pane and select the following configuration:
+-  In the Linux ADI IIO Oscilloscope-Capture1 go to the// Plot Channels// pane
+   and select the following configuration:
 
    -  **ad-mc-adc**
 
@@ -123,7 +134,7 @@ Test Procedure
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/scr_2.png
    :alt: Motor Control Tab
-   :width: 400px
+   :width: 400
 
 ADC
 ~~~
@@ -137,7 +148,7 @@ ADC
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/scr_mot1.png
    :alt: Motor Control Tab
-   :width: 600px
+   :width: 600
 
 -  Insert the Dyno sensor wire in P2 connector on the controller board with the black wire towards the FPGA
 -  Insert the Dyno motor wire in the P4 connector on the Drive Board
@@ -150,7 +161,7 @@ ADC
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/scr_mot2.png
    :alt: Motor Control Tab
-   :width: 600px
+   :width: 600
 
 Ethernet
 ~~~~~~~~
@@ -161,13 +172,16 @@ Ethernet
 -  Run Iperf server on the Zedboard by typing the following command in the terminal ``iperf -s``
 -  Run Iperf client on the Windows PC by typing the following command in the command promt. Replace x with the Zedboard IP
 -  ``iperf -c x.x.x.x``
--  After a few seconds a similar message to the one below should appear in the windows console. Please make sure that for a Gigabit Ethernet connection, the speed is greater than 150 Mbits/sec
+-  After a few seconds a similar message to the one below should appear in the
+   windows console. Please make sure that for a Gigabit Ethernet connection, the
+   speed is greater than 150 Mbits/sec
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/iperf_pc.jpg
    :alt: Iperf PC
-   :width: 500px
+   :width: 500
 
--  Insert the ethernet cable in the P11 connector on the controller board and repeat the steps above
+-  Insert the ethernet cable in the P11 connector on the controller board and
+   repeat the steps above
 
 Dyno
 ~~~~
@@ -179,22 +193,22 @@ Dyno
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/scr_dyno1.png
    :alt: Motor Control Tab
-   :width: 200px
+   :width: 200
 
 -  Set the load to 100%
 -  Check the speed & current displayed under *Measurements* on the DYNO LCD to see if it reads 2100rpm +/- 250rpm for speed and 2.4A +/- 0.1A for current
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/scr_dyno2.png
    :alt: Motor Control Tab
-   :width: 200px
+   :width: 200
 
 -  Press the **Emergency Stop** switch -- the motor should stop spinning
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/2khz_iio_scope.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/2khz_scope.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/20khz_iio_scope.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/test/20khz_scope.png
-   :width: 300px
+   :width: 300

@@ -4,7 +4,8 @@ Activity: The Band-Gap Voltage Reference
 Objective:
 ----------
 
-The objective of this Lab activity is to investigate the band-gap voltage reference.
+The objective of this Lab activity is to investigate the band-gap voltage
+reference.
 
 Background:
 -----------
@@ -16,20 +17,20 @@ In the first version shown in figure 1, A PTAT current source (Q\ :sub:`1`, Q\ :
 Materials:
 ----------
 
-Analog Discovery Lab hardware Solder-less breadboard 1 - 2.2 KΩ Resistor ( or any similar value ) 1 - 100 Ω resistor 3 - small signal NPN transistors (2N3904 or SSM2212) 3 - small signal PNP transistors (2N3906 or SSM2220)
+Analog Discovery Lab hardware Solder-less breadboard 1 - 2.2 KΩ Resistor ( or
+any similar value ) 1 - 100 Ω resistor 3 - small signal NPN transistors (2N3904
+or SSM2212) 3 - small signal PNP transistors (2N3906 or SSM2220)
 
 Directions:
 -----------
 
 The breadboard connections are as shown in the diagram below. The output of the AWG1 serves as the positive power supply and drives the emitters of both PNP transistors Q\ :sub:`3` and Q\ :sub:`4A,B`. Q\ :sub:`3` and Q\ :sub:`4A,B` are wired as a gain of two current mirror with their bases connected together with the collector of Q\ :sub:`3`. The collector of Q\ :sub:`4A,B` connects to resistor R\ :sub:`1`. Resistors R\ :sub:`1`, R\ :sub:`2` and transistor Q\ :sub:`1` are connected as a zero gain amplifier section. The V\ :sub:`BE` of the two parallel connected transistors Q\ :sub:`2,A,B` is smaller than the V\ :sub:`BE` of Q\ :sub:`1` by the voltage drop across R\ :sub:`2`. The base of transistor Q\ :sub:`2A,B` is connected to the zero gain output at the collector of Q\ :sub:`1`. The collector of Q\ :sub:`2` connects to the input side of the PNP current mirror at the base - collector of Q\ :sub:`3`. The channel 2+ (Single Ended) scope input is used to measure the output voltage at the collector of Q\ :sub:`4`.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Voltage reference, Version 1
-
 
 Hardware Setup:
 ---------------
@@ -52,20 +53,21 @@ Looking at the circuit in figure 2 we see many of the same basic components from
 Materials:
 ----------
 
-1 - 2.2 KΩ Resistor 1 - 100 Ω resistor 1 - 10 KΩ variable resistor (potentiometer) 1 - 4.7 KΩ resistor 1 - 1.0 nF capacitor (102) (resistors can be any similar value selected for desired circuit operation) 4 - small signal NPN transistors (2N3904, SSM2212, CA3045)
+1 - 2.2 KΩ Resistor 1 - 100 Ω resistor 1 - 10 KΩ variable resistor
+(potentiometer) 1 - 4.7 KΩ resistor 1 - 1.0 nF capacitor (102) (resistors can be
+any similar value selected for desired circuit operation) 4 - small signal NPN
+transistors (2N3904, SSM2212, CA3045)
 
 Directions:
 -----------
 
 The breadboard connections are as shown in figure 2. As before transistor Q\ :sub:`1` and resistors R\ :sub:`1` and R\ :sub:`2` are configured as a zero gain amplifier. Transistor Q\ :sub:`2` and variable resistor R\ :sub:`3`\ form a stabilized PTAT current source. If the SSM2212 matched NPN pair is used it is best that it be used for devices Q\ :sub:`1` and Q\ :sub:`2`. Common emitter stage Q\ :sub:`3` along with its collector load R\ :sub:`4` provide gain. Emitter follower Q\ :sub:`4` drives the output node and closes the negative feedback loop.
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Regulator Version 2
-
 
 Hardware Setup:
 ---------------
@@ -75,7 +77,8 @@ Waveform generator W1 should be configured for a 1 KHz triangle wave with 2 volt
 Procedure:
 ----------
 
-Repeat the drop out voltage, line and load regulation measurements for this circuit. How are they different than the Version 1 regulator circuit?
+Repeat the drop out voltage, line and load regulation measurements for this
+circuit. How are they different than the Version 1 regulator circuit?
 
 Questions:
 ----------
@@ -91,15 +94,16 @@ http://en.wikipedia.org/wiki/Bandgap_voltage_reference http://en.wikipedia.org/w
 Using an NPN transistor array:
 ------------------------------
 
-The CA3045,46 ( LM3045, 46 ) NPN transistor array is a good alternate choice for building this example circuit. See pinout below.
+The CA3045,46 ( LM3045, 46 ) NPN transistor array is a good alternate choice for
+building this example circuit. See pinout below.
 
 .. image:: https://wiki.analog.com/_media/university/courses/eps/ca3046.png
    :align: center
-   :width: 400px
+   :width: 400
 
 All the emitters can be tired to ground ( pins 3,7,10,13 ). Devices Q\ :sub:`1`, Q\ :sub:`2` and Q\ :sub:`3` can be connected in parallel and serve as Q\ :sub:`2` in figure 2. Q\ :sub:`4` and Q\ :sub:`5`\ can be used for Q\ :sub:`1` and Q\ :sub:`3`\ in figure 2. An individual device such as a 2N3904 etc. can be used for Q\ :sub:`4` in figure 2. The 3 to 1 emitter area ratio will result in an output voltage very nearly 1.2 volts if R\ :sub:`1` and R\ :sub:`3` are both equal to 2K? (when R\ :sub:`2` is 100?).
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/eps/eps_band-gap-f1.png
-   :width: 550px
+   :width: 550
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/eps/eps_band-gap-f2.png
-   :width: 550px
+   :width: 550

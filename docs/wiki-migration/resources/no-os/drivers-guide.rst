@@ -1,17 +1,21 @@
 no-OS drivers guide
 ===================
 
-This page represents a quick guide on how to create a no-OS driver and at the same time a generic documentation of the already available drivers.
+This page represents a quick guide on how to create a no-OS driver and at the
+same time a generic documentation of the already available drivers.
 
 C code C++ compatible
 ---------------------
 
-The code must be written in C, but be compatible with C + + environments too since some platforms of this type (e.g., Mbed OS) are already capable of using the no-OS drivers.
+The code must be written in C, but be compatible with C + + environments too
+since some platforms of this type (e.g., Mbed OS) are already capable of using
+the no-OS drivers.
 
 Conversion from void\*
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Implicit conversion from void\* is forbidden in C + +, so, explicit cast is required.
+Implicit conversion from void\* is forbidden in C + +, so, explicit cast is
+required.
 
 .. code:: c
 
@@ -27,7 +31,8 @@ While the preferred no-OS coding style is mainly the Linux kernel one (https://w
 License Header
 ~~~~~~~~~~~~~~
 
-Each source or header file should include a license header - this will allow customers to quickly determine if the module can be used in their system.
+Each source or header file should include a license header - this will allow
+customers to quickly determine if the module can be used in their system.
 
 .. code:: c
 
@@ -73,7 +78,8 @@ Each source or header file should include a license header - this will allow cus
 Include Guards
 ~~~~~~~~~~~~~~
 
-To prevent the inclusion of the header file content more than once, include guards must be used in all .h files.
+To prevent the inclusion of the header file content more than once, include
+guards must be used in all .h files.
 
 .. code:: c
 
@@ -87,12 +93,15 @@ To prevent the inclusion of the header file content more than once, include guar
 Indentation
 ~~~~~~~~~~~
 
-Tabs should have a size of 8 characters and should be used instead of spaces for indentation (don't use 8 spaces instead of a tab).
+Tabs should have a size of 8 characters and should be used instead of spaces for
+indentation (don't use 8 spaces instead of a tab).
 
 Naming
 ~~~~~~
 
-The name of the functions should be prefixed with the part number the driver is created for. If the driver will support multiple parts, the prefix can be the name of one of the parts.
+The name of the functions should be prefixed with the part number the driver is
+created for. If the driver will support multiple parts, the prefix can be the
+name of one of the parts.
 
 Documenting the Code
 ~~~~~~~~~~~~~~~~~~~~
@@ -103,7 +112,8 @@ Documenting the Code
 Variables
 ~~~~~~~~~
 
-In order to make the drivers support multiple instances, don't use global variables; use the device handler instead.
+In order to make the drivers support multiple instances, don't use global
+variables; use the device handler instead.
 
 Structures
 ~~~~~~~~~~
@@ -113,7 +123,9 @@ At least 2 structures need to be defined.
 1) Initialization structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The initialization structure contains all the information required to initialize the device: the interface parameters (e.g., SPI, I2C, GPIOs) or device specific settings.
+The initialization structure contains all the information required to initialize
+the device: the interface parameters (e.g., SPI, I2C, GPIOs) or device specific
+settings.
 
 .. code:: c
 
@@ -128,7 +140,9 @@ More details about the no-OS API: :doc:`api </wiki-migration/resources/no-os/api
 2) Device handler structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The device handler structure contains all the information that must be passed between the driver's functions: the interface descriptors (e.g., SPI, I2C, GPIOs) or device specific settings.
+The device handler structure contains all the information that must be passed
+between the driver's functions: the interface descriptors (e.g., SPI, I2C,
+GPIOs) or device specific settings.
 
 .. code:: c
 
@@ -143,23 +157,29 @@ More details about the no-OS API: :doc:`api </wiki-migration/resources/no-os/api
 Functions
 ~~~~~~~~~
 
-Usually, all functions should return an integer error code (a negative number meaning an error).
+Usually, all functions should return an integer error code (a negative number
+meaning an error).
 
 At least 2 functions need to be defined.
 
 1) Initialization function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is mandatory to have this function; its name will be composed by a prefix (usually, the part number) and "\_init" (e.g., ad1234_init()).
+It is mandatory to have this function; its name will be composed by a prefix
+(usually, the part number) and "\_init" (e.g., ad1234_init()).
 
-It should take 2 arguments: a pointer to a pointer (it allocates memory for a structure that will be used outside) of a device handler structure and a pointer to an initialization structure.
+It should take 2 arguments: a pointer to a pointer (it allocates memory for a
+structure that will be used outside) of a device handler structure and a pointer
+to an initialization structure.
 
 .. code:: c
 
       int ad1234_init(struct ad1234_dev **device,
                       struct ad1234_init_param *init_param)
 
-It creates the device handler, initializes the communication peripherals, requests the GPIOs and set up the device according to the parameters specified in the dedicated structure.
+It creates the device handler, initializes the communication peripherals,
+requests the GPIOs and set up the device according to the parameters specified
+in the dedicated structure.
 
 .. code:: c
 
@@ -203,7 +223,8 @@ More details about the no-OS API: :doc:`api </wiki-migration/resources/no-os/api
 2) Remove function
 ^^^^^^^^^^^^^^^^^^
 
-It is mandatory to have this function; its name will be composed by a prefix (usually, the part number) and "\_remove" (e.g., ad1234_remove()).
+It is mandatory to have this function; its name will be composed by a prefix
+(usually, the part number) and "\_remove" (e.g., ad1234_remove()).
 
 .. code:: c
 
@@ -232,32 +253,45 @@ Important Considerations
 Avoiding Race Conditions
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The no-OS software doesn't offer support for Locks, Mutexes or Semaphores. If in the final application there is a risk of having multiple threads accessing the same resource at the same time, the user must deal with this threat so race conditions are avoided.
+The no-OS software doesn't offer support for Locks, Mutexes or Semaphores. If in
+the final application there is a risk of having multiple threads accessing the
+same resource at the same time, the user must deal with this threat so race
+conditions are avoided.
 
 Avoiding Heap Fragmentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since the driver's \_init() function is allocating memory on heap and the \_remove() one is clearing it, the user must pay attention to how many times and when these two are called in his or her final application so the heap fragmentation won't cause any harmful effect.
+Since the driver's \_init() function is allocating memory on heap and the
+\_remove() one is clearing it, the user must pay attention to how many times and
+when these two are called in his or her final application so the heap
+fragmentation won't cause any harmful effect.
 
 Submission Checklist
 --------------------
 
-Before being reviewed by the no-OS maintainers and then accepted to the GitHub repository, each commit should respect a few rules:
+Before being reviewed by the no-OS maintainers and then accepted to the GitHub
+repository, each commit should respect a few rules:
 
 -  The commit contains a "Signed-off-by" trailer by the committer at the end of the commit log message - it certifies that the committer has the rights to submit the work under the project’s license.
 -  If built using gcc, options such as -Wall and -Wextra don't detect any issues with the commit. When the pull request is created, drivers and project build are automatically triggered.
 -  *astyle --style=linux --indent=force-tab=8 --max-code-length=80* doesn't detect any issue with the commit.
--  It is advised to provide a detailed description of how the new changes were tested. This information can be written in the pull request description. If the driver was tested on one of the supported No-OS platforms, it is recommended to also add a project example which uses the newly added driver.
+-  It is advised to provide a detailed description of how the new changes were
+   tested. This information can be written in the pull request description. If
+   the driver was tested on one of the supported No-OS platforms, it is
+   recommended to also add a project example which uses the newly added driver.
 
 Beautifying code
 ----------------
 
-Once a new driver or an update is ready to be merged on the master branch, tools that check the coding style compliance can be used. Some examples are given below.
+Once a new driver or an update is ready to be merged on the master branch, tools
+that check the coding style compliance can be used. Some examples are given
+below.
 
 Artistic Style
 ~~~~~~~~~~~~~~
 
-Artistic Style is a source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages.
+Artistic Style is a source code indenter, formatter, and beautifier for the C,
+C++, C++/CLI, Objective‑C, C# and Java programming languages.
 
 Example:
 
@@ -268,7 +302,9 @@ Example:
 ClangFormat
 ~~~~~~~~~~~
 
-Clang-Format is a tool to format C/C++/Java/JavaScript/Objective-C/Objective-C++/Protobuf code. It can be configured with a config file within the working folder or a parent folder.
+Clang-Format is a tool to format
+C/C++/Java/JavaScript/Objective-C/Objective-C++/Protobuf code. It can be
+configured with a config file within the working folder or a parent folder.
 
 Example:
 
@@ -278,7 +314,8 @@ Dump default configuration options to .clang-format.
 
    analog@debian:~$ clang-format -dump-config > .clang-format
 
-Modify .clang-format according to the project's specifications. Use -style=file command line option to use the customized style (.clang-format file).
+Modify .clang-format according to the project's specifications. Use -style=file
+command line option to use the customized style (.clang-format file).
 
 ::
 

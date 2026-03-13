@@ -4,12 +4,15 @@ ADRV9361-Z7035 User Guide - Additional Information
 Power Specs
 -----------
 
-Designers may find the following additional information valuable when considering a power scheme for the ADRV9361-Z7035 SDR 2X2.
+Designers may find the following additional information valuable when
+considering a power scheme for the ADRV9361-Z7035 SDR 2X2.
 
 SOM Voltage Regulators and Rails
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In addition to the voltages supplied to the SOM on the micro headers, the module uses the 5.0V VIN input to regulate a variety of other voltages required by the system, summarized in the following table.
+In addition to the voltages supplied to the SOM on the micro headers, the module
+uses the 5.0V VIN input to regulate a variety of other voltages required by the
+system, summarized in the following table.
 
 Regulated Voltage Rails
 
@@ -88,15 +91,19 @@ An in depth analysis for :doc:`calculating ADM1166 thresholds </wiki-migration/r
 
 Designers are strongly encouraged to start with the latest ADM166.txt file (on `Github <https://github.com/analogdevicesinc/PicoZed-SDR>`_) and make changes using the Analog Devices Super `Sequencer Configuration Tool <https://github.com/analogdevicesinc/PicoZed-SDR>`_. Consult the `Xilinx Zynq datasheet <https://www.xilinx.com/support/documentation/data_sheets/ds191-XC7Z030-XC7Z045-data-sheet.pdf>`_ before making any changes.
 
-Important! Consult the Zynq AP SoC and AD9361 datasheets before updating threshold windows for SOM voltage rails. Sequencing changes are strongly discouraged.
+Important! Consult the Zynq AP SoC and AD9361 datasheets before updating
+threshold windows for SOM voltage rails. Sequencing changes are strongly
+discouraged.
 
-Download the latest ADM1166 firmware repository from the GitHub link below. It’s important to either clone or download the zip archive.
+Download the latest ADM1166 firmware repository from the GitHub link below. It’s
+important to either clone or download the zip archive.
 
 ::
 
    `PicoZed-SDR <https://github.com/analogdevicesinc/PicoZed-SDR>`_.
 
-Once you have made updates to the ADM1166 firmware file using the configuration tool, there are two methods for programming the device.
+Once you have made updates to the ADM1166 firmware file using the configuration
+tool, there are two methods for programming the device.
 
 -  Program the ADM1166 using the Zynq SoC to execute a Linux command line script (See the automated and manual update descriptions starting in section 7.2.1)
 -  Purchase a :adi:`USB-SDP-CABLEZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval_usb-sdp-cablez.html>` Serial I/O Interface cable to program the SOM directly.
@@ -104,7 +111,8 @@ Once you have made updates to the ADM1166 firmware file using the configuration 
 Automated Update Procedure
 --------------------------
 
-A simple Linux script executed on Zynq will download the latest ADM1166 firmware and program the ADRV9361.
+A simple Linux script executed on Zynq will download the latest ADM1166 firmware
+and program the ADRV9361.
 
 You will need a networked router with DHCP capability. Follow the instructions at :doc:`power-and-sequencing </wiki-migration/resources/eval/user-guides/pzsdr/power-and-sequencing>`. Look for the section “Programming the ADM1166 Power Sequencer – Using Linux or HyperTerminal Program”.
 
@@ -115,22 +123,34 @@ Alternatively, you may use the Manual Update Procedure.
 Manual Update Procedure
 -----------------------
 
-This is an optional “manual” method to update the ADM1166 firmware, provided if you are unable to connect your development kit to a DHCP networked router.
+This is an optional “manual” method to update the ADM1166 firmware, provided if
+you are unable to connect your development kit to a DHCP networked router.
 
-This method can also be used to program your own custom ADM1166 firmware, however consider whether your custom thresholds will be compatible with the carrier you are using during this process. Upon completion the board may shutdown. The only way to recover from this situation is to use the USB adapter to program the SOM standalone.
+This method can also be used to program your own custom ADM1166 firmware,
+however consider whether your custom thresholds will be compatible with the
+carrier you are using during this process. Upon completion the board may
+shutdown. The only way to recover from this situation is to use the USB adapter
+to program the SOM standalone.
 
 Standalone Programming with USB Adapter
 ---------------------------------------
 
-The ADM1166 Super Sequencer non-volatile memory can be programmed by connecting an Analog Devices USB-SDP-CABLEZ I2C/SMBus programmer to the SOM 5-pin P1 connector. Supplying 5.0V to VBUS pin P1-1 allows the device to be powered and programmed without mating the SOM to a carrier. Software support for the programmer can be found on the ADM1166 product page.
+The ADM1166 Super Sequencer non-volatile memory can be programmed by connecting
+an Analog Devices USB-SDP-CABLEZ I2C/SMBus programmer to the SOM 5-pin P1
+connector. Supplying 5.0V to VBUS pin P1-1 allows the device to be powered and
+programmed without mating the SOM to a carrier. Software support for the
+programmer can be found on the ADM1166 product page.
 
 |USB-SDP-CABLEZ| USB-SDP-CABLEZ
 
-Important! Damage may occur to the SOM if the ADM1166 sequencing state machine is reprogrammed without regard for the required sequencing of the system. Consult the Zynq-7000 SoC and Analog Devices AD9361 datasheets before modifying the sequencing scheme.
+Important! Damage may occur to the SOM if the ADM1166 sequencing state machine
+is reprogrammed without regard for the required sequencing of the system.
+Consult the Zynq-7000 SoC and Analog Devices AD9361 datasheets before modifying
+the sequencing scheme.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/programming_header.png
    :align: center
-   :width: 400px
+   :width: 400
 
 ADM1166 Programming Port (P1)
 
@@ -139,14 +159,21 @@ Instructions for programming: :doc:`/wiki-migration/resources/eval/user-guides/p
 USB Power
 =========
 
-The ADRV9361 2X2 SOM cannot supply USB power. The USB PHY (U15) on the SOM includes a CPEN signal which is brought to a micro header pin for use as an enable for a USB t5V power supply on the carrier card. 7.4 XADC Power Configuration The Zynq SoC’s XADC component is powered from the filtered 1.8V VCCaux supply (VCCPCOM-1P8V) utilizing the on-chip reference as shown below:
+The ADRV9361 2X2 SOM cannot supply USB power. The USB PHY (U15) on the SOM
+includes a CPEN signal which is brought to a micro header pin for use as an
+enable for a USB t5V power supply on the carrier card. 7.4 XADC Power
+Configuration The Zynq SoC’s XADC component is powered from the filtered 1.8V
+VCCaux supply (VCCPCOM-1P8V) utilizing the on-chip reference as shown below:
 
 |image1| XADC Power Configuration
 
 Restoring the Analog Devices SD Card Image
 ------------------------------------------
 
-During the course of development with the Analog Devices Linux reference design, should your 8 GB SD card become corrupted or otherwise need to be updated, the directions below will restore the system to the latest version. Instructions are provided for both Linux and Windows hosts.
+During the course of development with the Analog Devices Linux reference design,
+should your 8 GB SD card become corrupted or otherwise need to be updated, the
+directions below will restore the system to the latest version. Instructions are
+provided for both Linux and Windows hosts.
 
 -  If you wish to completely overwrite the SD card, you may download the latest image :doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux`
 
@@ -154,16 +181,19 @@ During the course of development with the Analog Devices Linux reference design,
 
    Important!
 
-
-These steps will overwrite the contents of the SD card, so be certain there is no existing data that needs to be retrieved from the SD card prior to following these steps.
+These steps will overwrite the contents of the SD card, so be certain there is
+no existing data that needs to be retrieved from the SD card prior to following
+these steps.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/requirements.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Otherwise, you may simply run the update scripts at the command line: :doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux`
 
-As a final step, make sure to copy the contents of the ‘zynq-picozed-sdr2’ folder to the BOOT partition of the SD card. PicoZed SDR is now fully updated and ready to re-boot.
+As a final step, make sure to copy the contents of the ‘zynq-picozed-sdr2’
+folder to the BOOT partition of the SD card. PicoZed SDR is now fully updated
+and ready to re-boot.
 
 Board Revisions
 ===============
@@ -201,21 +231,29 @@ Changes from Rev C to Rev D
 
 -  Moved all (4) GTX ports from Bank 111 to Bank 112 on the Zynq SoC in order to be in compliance with Xilinx recommended PCIe design rules. The GTX signal assignments at the JX micro headers were unchanged in order to maintain compatibility with existing carrier boards.
 -   Added revision and part number to the silkscreen and copper.
--  The LED (D3), used to illuminate when PG_MODULE is asserted, now has its anode connected to the 3V3_I2C supply (formerly connected to 3.3V supply). This was done to allow the LED to be used as a visual state indicator during SOM power up, reflecting different states of the ADM1166 sequencer. In addition, the ADM1166 firmware was updated to include LED toggling (slow/fast), corresponding to specific power up states.
+-  The LED (D3), used to illuminate when PG_MODULE is asserted, now has its
+   anode connected to the 3V3_I2C supply (formerly connected to 3.3V supply).
+   This was done to allow the LED to be used as a visual state indicator during
+   SOM power up, reflecting different states of the ADM1166 sequencer. In
+   addition, the ADM1166 firmware was updated to include LED toggling
+   (slow/fast), corresponding to specific power up states.
 
 DDR3L Trace Length
 ==================
 
-The Xilinx Vivado tools allow entry of the DDR3L trace lengths in order to optimize timing and performance of the PS-based memory controller. The trace lengths for PicoZed SDR 2X2 are listed below. These are also found in the reference design TCL build scripts available on the Analog Devices GitHub repository.
-
+The Xilinx Vivado tools allow entry of the DDR3L trace lengths in order to
+optimize timing and performance of the PS-based memory controller. The trace
+lengths for PicoZed SDR 2X2 are listed below. These are also found in the
+reference design TCL build scripts available on the Analog Devices GitHub
+repository.
 
 |image2|
 
 DDR3L Trace Lengths
 
 .. |USB-SDP-CABLEZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/usb-sdp-cablez-b.png
-   :width: 400px
+   :width: 400
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/xadc_power_configuration.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/trace_lenghts.png
-   :width: 400px
+   :width: 400

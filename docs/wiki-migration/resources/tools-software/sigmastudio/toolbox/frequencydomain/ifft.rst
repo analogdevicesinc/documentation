@@ -5,7 +5,7 @@ Real IFFT(ADAU145x)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifft.png
    :align: center
-   :width: 300px
+   :width: 300
 
 Real IFFT is a block processing module which computes the IFFT of real signals
 
@@ -46,16 +46,19 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-This module computes the IFFT for Real input signals. IFFT is computed from the first half of the FFT output, using the complex conjugate symmetry properties of the FFT output, of real signals.
+This module computes the IFFT for Real input signals. IFFT is computed from the
+first half of the FFT output, using the complex conjugate symmetry properties of
+the FFT output, of real signals.
 
 Example
 -------
 
-In the example shown below, IFFT of the FFT output of a real signal is computed, to retrieve the original signal back in time domain.
+In the example shown below, IFFT of the FFT output of a real signal is computed,
+to retrieve the original signal back in time domain.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifftexample.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Supported IC's
 --------------

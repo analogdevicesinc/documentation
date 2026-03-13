@@ -1,13 +1,23 @@
 Power Electronics
 =================
 
-The objective of this course material is to give Electrical Engineering students early in their academic career an understanding of the fundamentals of power electronics, and of the critical role that power electronics plays in all electronic and electromechanical systems. Power Electronics is becoming increasingly important in many disciplines:
+The objective of this course material is to give Electrical Engineering students
+early in their academic career an understanding of the fundamentals of power
+electronics, and of the critical role that power electronics plays in all
+electronic and electromechanical systems. Power Electronics is becoming
+increasingly important in many disciplines:
 
 -  Portable electronics are expected to charge in minutes, wirelessly, and last for days
 -  Electric vehicle ranges are increasing, placing new needs on batteries and power conversion and motor control circuitry
--  Data centers' thirst for power is insatiable, requiring new and novel power delivery architectures to feed kilowatts of power to delicate processors, often at less than one volt and at thousands of amps.
+-  Data centers' thirst for power is insatiable, requiring new and novel power
+   delivery architectures to feed kilowatts of power to delicate processors,
+   often at less than one volt and at thousands of amps.
 
-But despite its important role, power is often not the first thing that comes to mind when considering these applications. The course material and associated lab exercises aim to give students a theoretical (but practical ) understanding of DC-DC converters (Buck, Boost, Buck-Boost) Flyback converters, Sepic converters, AC-DC conversion, transformers, switched-capacitor circuits, and more.
+But despite its important role, power is often not the first thing that comes to
+mind when considering these applications. The course material and associated lab
+exercises aim to give students a theoretical (but practical ) understanding of
+DC-DC converters (Buck, Boost, Buck-Boost) Flyback converters, Sepic converters,
+AC-DC conversion, transformers, switched-capacitor circuits, and more.
 
 The textbooks and teaching materials provided on this wiki are considered open source and available for free use in non-commercial educational and academic settings. **The only requirement is that they continue to retain the attribution to Analog Devices Inc.** Supplying them on the ADI wiki allows registered users to contribute to the materials posted here improving the content and keeping them up to date.
 

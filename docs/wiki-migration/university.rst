@@ -4,22 +4,59 @@ Engineering University Program
 Mission
 -------
 
-Analog Devices is as passionate about educating the next generation of young circuit design engineers as it is about pioneering the next technological breakthroughs. The University Program is a platform where Analog Devices, working with leading educational institutions has created and deployed new hands on learning tools for the next generation of design engineers. We feel that hands on, experiential learning is a key success factor, we don’t only think with our heads; we also think with our hands.
+Analog Devices is as passionate about educating the next generation of young
+circuit design engineers as it is about pioneering the next technological
+breakthroughs. The University Program is a platform where Analog Devices,
+working with leading educational institutions has created and deployed new hands
+on learning tools for the next generation of design engineers. We feel that
+hands on, experiential learning is a key success factor, we don’t only think
+with our heads; we also think with our hands.
 
-The University Program brings the technology the company has developed to the academic community in a way that is open and accessible to faculty and students in the form of analog design kits and analog components, online and downloadable software and teaching materials, online support, textbooks, reference designs and lab projects to enrich students’ education about analog, digital, and power circuits and their application to core engineering and physical science.
+The University Program brings the technology the company has developed to the
+academic community in a way that is open and accessible to faculty and students
+in the form of analog design kits and analog components, online and downloadable
+software and teaching materials, online support, textbooks, reference designs
+and lab projects to enrich students’ education about analog, digital, and power
+circuits and their application to core engineering and physical science.
 
 Teaching Materials & Lab Exercises
 ----------------------------------
 
-Surveying the ECE curriculum landscape for circuits and electronics courses with some hands-on lab content it becomes apparent that every school teaches more or less the same basic core concepts. How they differ is in the way the curriculum committee has decided to divide up the material across multiple classes and semesters and what they name the courses. Depending on the background and skill level of their incoming freshman students and how fast the committee feels they can cover the material some schools divide the material differently. Many schools are now including an introductory or remedial course in the Freshman year. Starting Sophomore year often two courses usually called something like Circuits and Introduction to Electronics are core required courses. Others spread material into something like Circuits I and II where part of Circuits II covers material often in the first half of an introductory Electronics course with the rest in an Electronics I course. There is often a certain amount of review material covered in each course to reinforce concepts taught in earlier classes.
+Surveying the ECE curriculum landscape for circuits and electronics courses with
+some hands-on lab content it becomes apparent that every school teaches more or
+less the same basic core concepts. How they differ is in the way the curriculum
+committee has decided to divide up the material across multiple classes and
+semesters and what they name the courses. Depending on the background and skill
+level of their incoming freshman students and how fast the committee feels they
+can cover the material some schools divide the material differently. Many
+schools are now including an introductory or remedial course in the Freshman
+year. Starting Sophomore year often two courses usually called something like
+Circuits and Introduction to Electronics are core required courses. Others
+spread material into something like Circuits I and II where part of Circuits II
+covers material often in the first half of an introductory Electronics course
+with the rest in an Electronics I course. There is often a certain amount of
+review material covered in each course to reinforce concepts taught in earlier
+classes.
 
-It is generally all the same core concepts just that the faculty at each school approaches teaching it differently. With these variations in approach to circuits and electronics courses with hands on experiment-centric content it is difficult for ADI to provide a neatly bundled set of one size fits all lab activities written specifically around the Personal instrumentation Active Learning Modules, ADALM1000, ADALM2000 and ADALM-Pluto.
+It is generally all the same core concepts just that the faculty at each school
+approaches teaching it differently. With these variations in approach to
+circuits and electronics courses with hands on experiment-centric content it is
+difficult for ADI to provide a neatly bundled set of one size fits all lab
+activities written specifically around the Personal instrumentation Active
+Learning Modules, ADALM1000, ADALM2000 and ADALM-Pluto.
 
-The offered lab activities are intended to an extent to teach the teacher as it were how to use the Active Learning Modules as much as to provide ready-made labs faculty can use in their classes. The idea is to provide a selection of lab activity write-ups that instructors can choose from to mix and match and/or customize with their own content to best fit their specific teaching approach.
+The offered lab activities are intended to an extent to teach the teacher as it
+were how to use the Active Learning Modules as much as to provide ready-made
+labs faculty can use in their classes. The idea is to provide a selection of lab
+activity write-ups that instructors can choose from to mix and match and/or
+customize with their own content to best fit their specific teaching approach.
 
 We have ADALM1000 and ADALM2000 specific example lab activities and accompanying software tools covering topics typically covered in freshman Introductory courses through Circuits and Electronics and in some cases even more advanced topics. These labs can be performed using the :doc:`ADALM1000 </wiki-migration/university/tools/m1k>` (M1K) entry level Active Learning Module or the :doc:`ADALM2000 </wiki-migration/university/tools/m2k>` (M2K) more advanced level Active Learning Module. :doc:`This document </wiki-migration/university/courses/alm1k/m2k-convert-labs>` **outlines how labs might be adapted for use with either M1K or M2K hardware / software.** The labs are generally written to be performed using just the components provided in the Analog Parts Kit, :doc:`ADALP2000 </wiki-migration/university/tools/adalp2000/parts-index>`, supplied through ADI and our authorized distribution channels, however additional components are sometimes used.
 
-The course descriptions and accompanying tables of potential example Labs are simply our take on how the core concepts in EE might be grouped. Often the same Lab may be listed in more than one course as a review or based on the extent of material to be covered in a given course.
+The course descriptions and accompanying tables of potential example Labs are
+simply our take on how the core concepts in EE might be grouped. Often the same
+Lab may be listed in more than one course as a review or based on the extent of
+material to be covered in a given course.
 
 -  :doc:`Introduction to Electrical Engineering - Teaching Material </wiki-migration/university/courses/intro_ee>`
 

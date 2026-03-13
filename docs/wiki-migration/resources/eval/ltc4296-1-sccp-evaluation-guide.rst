@@ -4,9 +4,16 @@ Serial Communication Classification Protocol (SCCP) with the LTC4296-1
 Introduction
 ------------
 
-Serial Communication Classification Protocol (SCCP) allows for an IEEE 802.3cg, Single-pair Power over Ethernet (SPoE) compliant Power Sourcing Equipment (PSE) to classify a compliant Powered Device (PD) before power is applied to a cable. Through SCCP, information on device class, type, pd_faulted, and Cable resistance measurements enabled/disabled can be obtained.
+Serial Communication Classification Protocol (SCCP) allows for an IEEE 802.3cg,
+Single-pair Power over Ethernet (SPoE) compliant Power Sourcing Equipment (PSE)
+to classify a compliant Powered Device (PD) before power is applied to a cable.
+Through SCCP, information on device class, type, pd_faulted, and Cable
+resistance measurements enabled/disabled can be obtained.
 
-This Wiki provides an application circuitry overview, SCCP transactions overview, sample C code SCCP implementation, evaluation guidance and reference material for class and type. The sample C code may be used as a starting point for integrating SPoE power management into a system host microcontroller.
+This Wiki provides an application circuitry overview, SCCP transactions
+overview, sample C code SCCP implementation, evaluation guidance and reference
+material for class and type. The sample C code may be used as a starting point
+for integrating SPoE power management into a system host microcontroller.
 
 Useful References
 ~~~~~~~~~~~~~~~~~
@@ -18,9 +25,21 @@ Useful References
 SCCP APPLICATION CIRCUITRY
 --------------------------
 
-The SCCP was derived from the 1-Wire® protocol and utilizes a half-duplex, bi-directional open-drain bus where the PSE or PD can pull-down. Figure 1 illustrates an SPoE system featuring the LTC4296-1 PSE, the LTC9111 PD, an application host microcontroller, and ADIN1100 10BASE-T1L PHYs. Only one of five LTC4296-1 ports is shown, and the "x" suffix denotes pin names as a function of port number.
+The SCCP was derived from the 1-Wire® protocol and utilizes a half-duplex,
+bi-directional open-drain bus where the PSE or PD can pull-down. Figure 1
+illustrates an SPoE system featuring the LTC4296-1 PSE, the LTC9111 PD, an
+application host microcontroller, and ADIN1100 10BASE-T1L PHYs. Only one of five
+LTC4296-1 ports is shown, and the "x" suffix denotes pin names as a function of
+port number.
 
-The LTC4296-1 SCCP related components include pulldown MOSFET M3, line sense NPN BJT transistor Q1, snubber disconnect MOSFET M2, the LTC4296-1 SWx pin, and the host microcontroller GPOx and GPIx pins. The microcontroller's GPOx pin drives M3 to pulldown the line voltage while Q1 limits the maximum voltage sensed at the GPIx pin. Snubber R3/C4 is provided for loop stability during inrush and current limit of high-side MOSFET M1 and is disconnected during PD detection and SCCP. Secondary snubber R5/C5 prevents excess ringing at the OUTPx pin when snubber R3/C4 is disconnected.
+The LTC4296-1 SCCP related components include pulldown MOSFET M3, line sense NPN
+BJT transistor Q1, snubber disconnect MOSFET M2, the LTC4296-1 SWx pin, and the
+host microcontroller GPOx and GPIx pins. The microcontroller's GPOx pin drives
+M3 to pulldown the line voltage while Q1 limits the maximum voltage sensed at
+the GPIx pin. Snubber R3/C4 is provided for loop stability during inrush and
+current limit of high-side MOSFET M1 and is disconnected during PD detection and
+SCCP. Secondary snubber R5/C5 prevents excess ringing at the OUTPx pin when
+snubber R3/C4 is disconnected.
 
 Microcontroller requirements for implementing SCCP are:
 
@@ -30,8 +49,11 @@ Microcontroller requirements for implementing SCCP are:
 
 At the PSE, the LTC4296-1 is set up for the classification state by the microcontroller. Classification is configured by setting the software PSE ready bit (PxCFG0, Bit6, SW_PSE_READY) and the classification mode bit (PXCFG0, Bit 13, SET_CLASSIFICATION_MODE) before entering the detection state. If the microcontroller determines a valid PD with a compatible class is present, the port can proceed to the power-up state by setting the port software power available bit (Register PxCFG0, Bit 5, SW_POWER_AVAILABLE) and the end classification bit (Register PxCFG0, Bit 14, END_CLASSIFICATION). Further description of port states can be found in the :adi:`LTC4296-1 Datasheet <media/en/technical-documentation/data-sheets/ltc4296-1.pdf>`.
 
-On the PD side, the LTC9111 detects the SCCP logic states on the lines through SNS1 and SNS2 and uses external MOSFETs (M13/M14) to pull-down the port voltage during classification in order to transmit a logic low. The use of two external MOSFETs allows successful classification regardless of input connector polarity configuration.
-
+On the PD side, the LTC9111 detects the SCCP logic states on the lines through
+SNS1 and SNS2 and uses external MOSFETs (M13/M14) to pull-down the port voltage
+during classification in order to transmit a logic low. The use of two external
+MOSFETs allows successful classification regardless of input connector polarity
+configuration.
 
 |image1|
 
@@ -39,11 +61,15 @@ On the PD side, the LTC9111 detects the SCCP logic states on the lines through S
 
    *Figure 1. SPoE System*
 
-
 SCCP Transactions Overview
 --------------------------
 
-SCCP transactions are comprised of initialization, write slot, and read slot protocols. The PSE initiates all protocols by pulling down the bus. The PSE also provides a voltage limited pull-up current to restore the bus voltage to a logic high. The PD uses the rectified voltage from the PSE pull-up to retain state during pull-down events. Table 1 summarizes the basic SCCP protocols, and Figure 2-4 illustrates the corresponding waveforms.
+SCCP transactions are comprised of initialization, write slot, and read slot
+protocols. The PSE initiates all protocols by pulling down the bus. The PSE also
+provides a voltage limited pull-up current to restore the bus voltage to a logic
+high. The PD uses the rectified voltage from the PSE pull-up to retain state
+during pull-down events. Table 1 summarizes the basic SCCP protocols, and Figure
+2-4 illustrates the corresponding waveforms.
 
 +----------------+-----------------------------------+-----------------------------------------------------------------------------------------------------------+
 | Operation      | Description                       | Implementation                                                                                            |
@@ -61,7 +87,6 @@ SCCP transactions are comprised of initialization, write slot, and read slot pro
 
    \ *Table 1. SCCP Protocols*\
 
-
 Initialization
 ~~~~~~~~~~~~~~
 
@@ -69,19 +94,16 @@ The PSE initiates the SCCP transaction by pulling down on the bus during the res
 
 Once the PSE releases the bus, the PD detects the rising edge cross the input logic high voltage V\ :sub:`TH` (3V) and waits the presence-detect high time, t\ :sub:`PDH` (0.7ms-1.3ms), before transmitting a presence pulse. The PSE samples for the PD presence pulse by t\ :sub:`MSP` (1.8ms-2.2ms). The PD holds the presence pulse for the presence-detect low time, t\ :sub:`PDL` (2.8ms-5.2ms).
 
-
 |image2|
 
 .. container:: centeralign
 
    *Figure 2. SCCP Initialization*
 
-
 Write Time Slot
 ~~~~~~~~~~~~~~~
 
 The duration of the write time slot for either a '0' or '1' should last for a maximum of t\ :sub:`WRITESLOT` (2.78ms). When the PSE writes a '0' to the PD, first the PSE pulls down the bus voltage below the V\ :sub:`TL`, then the PSE releases within the write 0 low time, t\ :sub:`W0L` (1.8ms-2.2ms), as seen in Figure 3. In the case where the PSE aims to write a '1', the PSE pulls down on the bus voltage, and then it releases the line within the write 1 low time, t\ :sub:`W1L` (0.09ms-0.61ms), as illustrated in Figure 3. See Figures 26-29 for example waveforms.
-
 
 |image3|
 
@@ -89,19 +111,16 @@ The duration of the write time slot for either a '0' or '1' should last for a ma
 
    *Figure 3. SCCP Write Time Slot*
 
-
 Read Time Slot
 ~~~~~~~~~~~~~~
 
 The PSE initiates the read time slot by pulling low on the bus. Subsequently, the PSE releases the bus within t\ :sub:`W1L`, at which point the PD responds by pulling the bus low for the read 0 low time, t\ :sub:`R0L` (1.75ms-3.25ms), in order to transmit a '0' (Figure 4). Alternatively, if the intention is to transmit a '1', the PD refrains from pulling the bus low after the read 1 low time, t\ :sub:`W1L`. This read time slot is repeated for each PD bit, see Figure 30-34 for example waveforms. The PD sends data LSB first. Each of these read time slots has a maximum duration of t\ :sub:`READSLOT` (3.83ms).
-
 
 |image4|
 
 .. container:: centeralign
 
    *Figure 4. SCCP Read Time Slot*
-
 
 Additional Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,25 +137,36 @@ Figure 5 illustrates a basic example SCCP transaction. The two waveforms are:
 
 Note SCCP data is read/written LSB first, low byte first.
 
-The basic SCCP transaction is comprised of: i. Initialization ii. Write Broadcast Address (0xCC)
+The basic SCCP transaction is comprised of: i. Initialization ii. Write
+Broadcast Address (0xCC)
 
--  Following the Initialization Sequence, the PSE proceeds with a Broadcast Address write operation. During this operation, the PSE transmits 0xCC to the PD. This is used to address a PD on the bus without sending out a unique address code information.
+-  Following the Initialization Sequence, the PSE proceeds with a Broadcast
+   Address write operation. During this operation, the PSE transmits 0xCC to the
+   PD. This is used to address a PD on the bus without sending out a unique
+   address code information.
 
 iii. Write Read_Scratchpad Command (0xAA)
 
--  Subsequent to the Broadcast Address write operation, the PSE sends a Read-Scratchpad Command (0xAA). This command configures the PD for subsequent two-byte CLASS_TYPE_INFO read plus CRC byte read operation.
+-  Subsequent to the Broadcast Address write operation, the PSE sends a
+   Read-Scratchpad Command (0xAA). This command configures the PD for subsequent
+   two-byte CLASS_TYPE_INFO read plus CRC byte read operation.
 
 iv. Read PD CLASS_TYPE_INFO Low Byte
 
--  Following the Read_Scratchpad Command, the PD sends the Low Byte of its CLASS_TYPE_INFO to the PSE.
+-  Following the Read_Scratchpad Command, the PD sends the Low Byte of its
+   CLASS_TYPE_INFO to the PSE.
 
 v. Read PD CLASS_TYPE_INFO High Byte
 
--  After the Low Byte of the CLASS_TYPE_INFO is transmitted the PD sends the High Byte of the ClASS_TYPE_INFO to the PSE. Interpretation of CLASS_TYPE_INFO is located in Table 7 & 9 located in the Appendix section of this Wiki.
+-  After the Low Byte of the CLASS_TYPE_INFO is transmitted the PD sends the
+   High Byte of the ClASS_TYPE_INFO to the PSE. Interpretation of
+   CLASS_TYPE_INFO is located in Table 7 & 9 located in the Appendix section of
+   this Wiki.
 
 vi. Read PD CRC Byte
 
--  In the final step, the PSE reads the cyclic redundancy check (CRC) value of the PD. This value is derived from the received scratchpad class info word.
+-  In the final step, the PSE reads the cyclic redundancy check (CRC) value of
+   the PD. This value is derived from the received scratchpad class info word.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_basic_sccp_transaction.png
    :align: center
@@ -145,19 +175,17 @@ vi. Read PD CRC Byte
 
    *Figure 5. SCCP Transaction*
 
-
 CLASS_TYPE_INFO Registers
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Table 2 shows the bit information from the CLASS_TYPE_INFO register bytes. Refer to the Appendix for Class and Type listing tables.
-
+Table 2 shows the bit information from the CLASS_TYPE_INFO register bytes. Refer
+to the Appendix for Class and Type listing tables.
 
 |image5|
 
 .. container:: centeralign
 
    *Table 2. CLASS_TYPE_INFO Register Bytes Table*
-
 
 Example C Code Implementation of SCCP
 -------------------------------------
@@ -212,7 +240,6 @@ Example C code for send_reset_pulse() is shown in Figure 6. The send_reset_pulse
 
    \ *Figure 6. Initialization Example C Code*\
 
-
 Write Bit
 ~~~~~~~~~
 
@@ -261,7 +288,6 @@ Example C code for write_bit() is shown in Figure 7. Unlike the initialization s
 .. container:: centeralign
 
    \ *Figure 7. Write Bit Example C Code*\
-
 
 Read Bit
 ~~~~~~~~
@@ -339,11 +365,11 @@ Example C code for the read_bit() function is shown in Figure 8. The read_bit() 
 
    \ *Figure 8. Read Bit Example C Code*\
 
-
 Interpreting CLASS_TYPE_INFO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The example code in Figure 9 defines Class and Type codes as well as the PSE/PD class compatibility matrix for interpreting the CLASS_TYPE_INFO word.
+The example code in Figure 9 defines Class and Type codes as well as the PSE/PD
+class compatibility matrix for interpreting the CLASS_TYPE_INFO word.
 
 ::
 
@@ -442,14 +468,15 @@ The example code in Figure 9 defines Class and Type codes as well as the PSE/PD 
 
    \ *Figure 9. Example Code for Class, Type, and PSE/PD Compatibility Matrix Definition*\
 
-
 SCCP Byte Level Functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Transmit Byte
 ^^^^^^^^^^^^^
 
-Figure 10 shows example code for transmit_byte(). The transmit_byte() function accepts a byte and uses the write_bit() protocol function to transmit the passed tx_byte to the PD.
+Figure 10 shows example code for transmit_byte(). The transmit_byte() function
+accepts a byte and uses the write_bit() protocol function to transmit the passed
+tx_byte to the PD.
 
 ::
 
@@ -481,7 +508,6 @@ Figure 10 shows example code for transmit_byte(). The transmit_byte() function a
 
    \ *Figure 10. Example Code for transmit_byte()*\
 
-
 Receive Response
 ^^^^^^^^^^^^^^^^
 
@@ -496,7 +522,8 @@ Figure 11 shows example code for receive_response(). The receive_response() func
    License (https://spdx.org/licenses/BSD-3-Clause-Clear.html).
 
 -  Function: void receive_response(uint8_t\* buf)
--  Utilizes 'uint8_t read_bit()' to receive 2 bytes of data plus CRC byte from the PD
+-  Utilizes 'uint8_t read_bit()' to receive 2 bytes of data plus CRC byte from
+   the PD
 
 ::
 
@@ -529,7 +556,6 @@ Figure 11 shows example code for receive_response(). The receive_response() func
 
    \ *Figure 11. Example Code for receive_response()*\
 
-
 SCCP Read Registers
 ^^^^^^^^^^^^^^^^^^^
 
@@ -544,7 +570,8 @@ Figure 12 shows example code for sccp_read_register(). The sccp_read_register() 
    License (https://spdx.org/licenses/BSD-3-Clause-Clear.html).
 
 -  Function: uint8_t sccp_read_register(uint8_t cmd, uint8_t\* buf)
--  This function sends the required bytes of SCCP to the PD and receives the response
+-  This function sends the required bytes of SCCP to the PD and receives the
+   response
 
 ::
 
@@ -569,7 +596,6 @@ Figure 12 shows example code for sccp_read_register(). The sccp_read_register() 
 .. container:: centeralign
 
    \ *Figure 12. Example Code for sccp_read_register()*\
-
 
 Get CRC
 ^^^^^^^
@@ -627,11 +653,12 @@ Figure 13 shows example code for get_crc(). The get_crc() function returns the e
 
    \ *Figure 13. Example Code for Calculating CRC Byte from 16 Bit PD Data*\
 
-
 Example Detection, Classification, and Power-up Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Figure 14 provides example code sccp_do_class() for implementing detection, SCCP, and then power-up one or more ports when the PSE and PD and PSE classes are compatible. The code assumes intialization of the following peripherals:
+Figure 14 provides example code sccp_do_class() for implementing detection,
+SCCP, and then power-up one or more ports when the PSE and PD and PSE classes
+are compatible. The code assumes intialization of the following peripherals:
 
 -  Timer Initialization
 -  SPI peripheral for communicating with LTC4296-1
@@ -643,12 +670,15 @@ Outline of sccp_do_class():
 
    -  Check if port_supports_class[x] is True
 
-      -  Confirm LTC4296-1 port has not already powered-up with read of port status {pxst.pse_status != (PSE_STATUS_DELIVERING or PSE_STATUS_SLEEPING or PSE_STATUS_UNKNOWN)}
+      -  Confirm LTC4296-1 port has not already powered-up with read of port
+         status {pxst.pse_status != (PSE_STATUS_DELIVERING or
+         PSE_STATUS_SLEEPING or PSE_STATUS_UNKNOWN)}
 
          -  Go to next port if either a or b are false, otherwise go to 2.
 
 -  2. Read LTC4296-1 port configuration register 0 (pxcfg0) and save into 'pxcfg0_old' variable
--  3. Disable LTC4296-1 write protection, and write the following bits to the pxcfg0 register:
+-  3. Disable LTC4296-1 write protection, and write the following bits to the
+   pxcfg0 register:
 
    -  pxcfg0.sw_en = 1
 
@@ -658,23 +688,31 @@ Outline of sccp_do_class():
          -  pxcfg0.tdet_disable = 1
 
 -  4. If pxst.pse_status fails to go to searching (011b) after 4ms, restore pxcfg0 register contents and go to next port, else proceed to 5.
--  5. Check PD detection signature (required by IEEE 802.3bu/cg before going to SCCP):
+-  5. Check PD detection signature (required by IEEE 802.3bu/cg before going to
+   SCCP):
 
    -  initialize t_det_start from timer
 
       -  While time elapsed since t_det_start is less than 3.1ms:
 
-         -  If pxst.det_vlow = 0 & pxst.det_vhi = 0 (valid PD signature voltage), increment t_hold timer, else reset t_hold
+         -  If pxst.det_vlow = 0 & pxst.det_vhi = 0 (valid PD signature
+            voltage), increment t_hold timer, else reset t_hold
 
-            -  If elapsed time since t_det_start > 3.1ms and t_hold < 1ms set valid_signature = 0, elseif t_hold > 1ms set valid_signature = 1
+            -  If elapsed time since t_det_start > 3.1ms and t_hold < 1ms set
+               valid_signature = 0, elseif t_hold > 1ms set valid_signature = 1
 
--  6. Do SCCP (note IEEE 802.3bu/cg allows a PSE to power up w/out SCCP if valid_signature == 1):
+-  6. Do SCCP (note IEEE 802.3bu/cg allows a PSE to power up w/out SCCP if
+   valid_signature == 1):
 
    -  Call sccp_read_register() function and pass Read_Scratchpad command byte
 
-      -  If no PD presence pulse was detected, restore pxcfg0 register contents with pxcfg0.sw_power_available=0 and go to next port.
+      -  If no PD presence pulse was detected, restore pxcfg0 register contents
+         with pxcfg0.sw_power_available=0 and go to next port.
 
-         -  If PSE class and PD class are compatible (class_compatibility matrix), power up port by restoring old pxcfg0 register with pxcfg0.sw_power_available = 1, pxcfg0.sw_pse_ready = 1, and pxcfg0.sw_en = 1.
+         -  If PSE class and PD class are compatible (class_compatibility
+            matrix), power up port by restoring old pxcfg0 register with
+            pxcfg0.sw_power_available = 1, pxcfg0.sw_pse_ready = 1, and
+            pxcfg0.sw_en = 1.
 
             -  If PSE class and PD class are incompatible, set pxcfg0.sw_en = 0
 
@@ -862,7 +900,6 @@ Outline of sccp_do_class():
 
    \ *Figure 14. Example Implementation of Detection, SCCP, and Port Power-up*\
 
-
 SCCP Evaluation with EVAL-SPoE-KIT-AZ
 -------------------------------------
 
@@ -874,10 +911,14 @@ Equipment for Evaluation
 -  EVAL-10BT1L-SMC-AZ: Media Converters for PSE and PD motherboards
 -  EVAL-LTC9111-AZ: PD controller LTC9111 motherboard
 
-SCCP transaction can be evaluated with the EVAL-SPoE-KIT-AZ and the LTC4296-1 GUI. In the drop down menu, boxed in Figure 15, select the maximum PSE class and select Type E. Select classify if classification without power is desired or select power up for classification and subsequent powering up of the PD if it is equal to or less than the maximum PSE class. Once successful power up of the PD has occurred Power Good indicator should light up green as shown in Figure 16.
+SCCP transaction can be evaluated with the EVAL-SPoE-KIT-AZ and the LTC4296-1
+GUI. In the drop down menu, boxed in Figure 15, select the maximum PSE class and
+select Type E. Select classify if classification without power is desired or
+select power up for classification and subsequent powering up of the PD if it is
+equal to or less than the maximum PSE class. Once successful power up of the PD
+has occurred Power Good indicator should light up green as shown in Figure 16.
 
 Refer to :doc:`EVAL-SPoE-KIT-AZ Evaluation Kit User Guide </wiki-migration/resources/eval/user-guides/eval-spoe-kit-az-wiki-user-guide>` for EVAL-kit setup.
-
 
 |image6|
 
@@ -885,19 +926,17 @@ Refer to :doc:`EVAL-SPoE-KIT-AZ Evaluation Kit User Guide </wiki-migration/resou
 
    *Figure 15. SCCP Enable Configurations through evaluation GUI*
 
-
    |image7|
 
 .. container:: centeralign
 
    *Figure 16. Successful Port Turn On GUI Port Status*
 
-
 SCCP Example Waveforms
 ----------------------
 
-Below are detailed descriptions of the SCCP transactions, parts i-vi. With waveforms captured using the setup in Figure 17.
-
+Below are detailed descriptions of the SCCP transactions, parts i-vi. With
+waveforms captured using the setup in Figure 17.
 
 |image8|
 
@@ -905,90 +944,82 @@ Below are detailed descriptions of the SCCP transactions, parts i-vi. With wavef
 
    *Figure 17. Proceeding Waveform Probe Location*
 
-
 (i) Initialization
 ~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_initialization_sequence3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 18. Initialization Sequence*
-
 
 Reset Pulse
 ^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_reset_pulse3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 19. Initialization Sequence Reset Pulse*
-
 
 Presence-Detect High Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_presence_detect_high3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 20. Initialization Sequence Presence-Detect High Time*
-
 
 Presence-Detect Low Time
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_presence_detect_low3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 21. Initialization Sequence Presence Detect Low Time*
-
 
 Recovery Time
 ^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_recovery_time_initializtion3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 22. Initialization Sequence Recovery Time*
-
 
 PD Reservoir Capacitor Recharge Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_chrg_initialization.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 23. Initialization Sequence PD Reservoir Capacitor Recharge Time*
-
 
 Rise/Fall Time
 ^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_rise_time2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 24. Initialization Sequence Rise Time*
-
 
    |image9|
 
@@ -996,18 +1027,16 @@ Rise/Fall Time
 
    *Figure 25. Initialization Sequence Fall Time*
 
-
 Write Time Slot
 ~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_write_time_slot_03.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 26. PSE Writes 0 Time Slot*
-
 
    |image10|
 
@@ -1015,30 +1044,27 @@ Write Time Slot
 
    *Figure 27. PSE Writes 1 Time Slot*
 
-
 (ii) Broadcast Address
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_broadcast_address3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 28. PSE Broadcast (0xCC)*
-
 
 (iii) Read_Scratchpad Command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_scratchpad3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 29. PSE Read-Scratchpad Command (0xAA)*
-
 
 Alternative Commands
 ^^^^^^^^^^^^^^^^^^^^
@@ -1055,7 +1081,6 @@ Alternative Commands
 
    *Table 3. Read_VOLT_INFO Command (0xBB)*
 
-
 +----------+-------------------------------------+---------------------------------------+---------------+
 | Bit(s)   | Name                                | Description                           | R/W\ :sup:`a` |
 +==========+=====================================+=======================================+===============+
@@ -1067,7 +1092,6 @@ Alternative Commands
 .. container:: centeralign
 
    *Table 4. Read_POWER_INFO Command (0x77)*
-
 
 +----------+---------------------------------------+-----------------------------------+---------------+
 | Bit(s)   | Name                                  | Description                       | R/W\ :sup:`a` |
@@ -1081,7 +1105,6 @@ Alternative Commands
 
    *Table 5. Write_POWER_ASSIGN Command (0x99)*
 
-
 +----------+---------------------------------------+-----------------------------------+---------------+
 | Bit(s)   | Name                                  | Description                       | R/W\ :sup:`a` |
 +==========+=======================================+===================================+===============+
@@ -1094,18 +1117,16 @@ Alternative Commands
 
    *Table 6. Read_POWER_ASSIGN Command (0x81)*
 
-
 Read Time Slot
 ~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_time_slot_03.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 30. PSE Read 0 Time Slot*
-
 
    |image11|
 
@@ -1113,42 +1134,38 @@ Read Time Slot
 
    *Figure 31. PSE Read 1 Time Slot*
 
-
 (iv) Read CLASS_TYPE_INFO low byte
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_class_type_info_low_byte_updated.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 32. Read CLASS_TYPE_INFO low byte*
-
 
 (v) Read CLASS_TYPE_INFO high byte
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_class_type_info_high_byte_updated.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 33. Read CLASS_TYPE_INFO high byte*
-
 
 (vi) Read CRC byte
 ~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_pd_crc_updated.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 34. PD CRC*
-
 
 Appendix
 ========
@@ -1156,7 +1173,9 @@ Appendix
 Device Class
 ------------
 
-IEEE 802.3bu defines Class 0-9 and 802.3cg extends these power classes to Class 10-15. The LTC4296-1 is intended to be used in Class 10-15 systems. Table 7 lists the corresponding Class data for CLASS_TYPE_INFO b[9:0].
+IEEE 802.3bu defines Class 0-9 and 802.3cg extends these power classes to Class
+10-15. The LTC4296-1 is intended to be used in Class 10-15 systems. Table 7
+lists the corresponding Class data for CLASS_TYPE_INFO b[9:0].
 
 ====== ===========
 b[9:0] Description
@@ -1183,7 +1202,6 @@ b[9:0] Description
 
    \ *Table 7. CLASS_TYPE_INFO b[9:0] to Corresponding PD Class*\
 
-
 Class Power Requirements
 ------------------------
 
@@ -1209,11 +1227,12 @@ Table 8 shows the PSE, PD and cable requirements for Class 10-15.
 
    \ *Table 8. IEEE 802.3cg Class Power Requirements Matrix for PSE and PDs*\
 
-
 Device Type
 -----------
 
-IEEE 802.3cg describes Types A-E device types. For 10Base-T1L both PSE and PD must be Type E. Table 9 lists the corresponding Type data for CLASS_TYPE_INFO b[15:12].
+IEEE 802.3cg describes Types A-E device types. For 10Base-T1L both PSE and PD
+must be Type E. Table 9 lists the corresponding Type data for CLASS_TYPE_INFO
+b[15:12].
 
 ======== ===========
 b[15:12] Description
@@ -1229,21 +1248,20 @@ b[15:12] Description
 
    *Table 9. CLASS_TYPE_INFO b[15:12] to Corresponding PD Type*
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/spoe_system.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_ideal_initialization5.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_ideal_write_slot4.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_time_slot4.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_class_type_info_table.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_gui_part_1.png
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_gui_part_2.png
-   :width: 200px
+   :width: 200
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_waveform_key4.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_fall_time2.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_writeslot_1_2.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_time_slot_13.png
-   :width: 600px
+   :width: 600

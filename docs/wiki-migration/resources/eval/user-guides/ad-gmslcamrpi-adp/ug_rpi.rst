@@ -17,8 +17,8 @@ Required hardware
 
 .. warning::
 
-   Do not use the 15-pin ribbon cable included with the Raspberry Pi camera since that is an opposite sided cable.
-
+   Do not use the 15-pin ribbon cable included with the Raspberry Pi camera
+   since that is an opposite sided cable.
 
 -  15 Pin Type A (**same side**) Flexible Ribbon Cable, P/N: MP-FFCA10152003A or `Similar <https://www.amazon.com/dp/B07RVD2MZV>`_
 -  22 Pin Type B (**opposite side**) Flexible Ribbon Cable, P/N: MP-FFCA05222002B or `Similar <https://www.amazon.com/dp/B07S1BSPYD>`_
@@ -26,7 +26,7 @@ Required hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/adaptor_block_diagram.png
    :align: center
-   :width: 800px
+   :width: 800
 
 --------------
 
@@ -53,26 +53,26 @@ For more information about the default CFG configuration of each evaluation boar
 -  Make sure the **J3** is set as default **2-3** position to enable POC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/gmsl_deserializer_sw5.jpg
-   :width: 300px
+   :width: 300
 
 -  Bridge **R88** - provides VDDIO to the adapter
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/deserializer_resistors.jpg
-   :width: 300px
+   :width: 300
 
 **GMSL Serializer Evaluation Kit**
 
 -  Place a jumper on the **J10** connector - enables power over the coaxial cable
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/serializer_mods_j10.png
-   :width: 400px
+   :width: 400
 
 -  Bridge **R70** - provides 12V to the adapter
 -  Bridge **R80** - connects MFP2 to the adapter for IMX219
 -  Bridge **R66** - provides VDDIO to the adapter
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/serializer_mods_samtec_res.png
-   :width: 400px
+   :width: 400
 
 **AD-GMSLCAMRPI-ADP# Adapter**
 
@@ -92,76 +92,80 @@ System setup
 MAX96717 Serializer EV kit Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For the following setup, please ensure ribbon cables and boards are oriented to match the diagrams.
+For the following setup, please ensure ribbon cables and boards are oriented to
+match the diagrams.
 
 Connect the 15 pin ribbon cable to the camera board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/step0.png
    :align: center
-   :width: 200px
+   :width: 200
 
-Connect the other end of the 15 pin ribbon cable into the 15-to-22 pin adaptor board.
+Connect the other end of the 15 pin ribbon cable into the 15-to-22 pin adaptor
+board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/step1.png
    :align: center
-   :width: 300px
+   :width: 300
 
 On the other side of the 15-to-22 pin adaptor board, connect the 22-pin ribbon cable. **Note:** This is an opposite sided flex cable, please ensure it matches the orientation in the picture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/step2.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Connect the other end of the 22 pin ribbon cable into the EV kit adaptor board **P9** connector.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/step3.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Lastly, connect the EV kit adaptor board to the MAX96717 EV kit.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/step4.png
    :align: center
-   :width: 700px
+   :width: 700
 
 MAX96724 Deserializer EV kit Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Starting with the Raspberry Pi 4 B, connect the 15 pin ribbon cable to the CSI input connector.
+Starting with the Raspberry Pi 4 B, connect the 15 pin ribbon cable to the CSI
+input connector.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/step5.png
    :align: center
-   :width: 400px
+   :width: 400
 
-Connect the other end of the 15 pin ribbon cable into the 15-to-22 pin adaptor board.
+Connect the other end of the 15 pin ribbon cable into the 15-to-22 pin adaptor
+board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/step6.png
    :align: center
-   :width: 400px
+   :width: 400
 
 On the other side of the 15-to-22 pin adaptor board, connect the 22-pin ribbon cable. **Note:** This is an opposite sided flex cable, please ensure it matches the orientation in the picture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/step7.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Connect the other end of the 22 pin ribbon cable into the EV kit adaptor board **P8** connector.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/step8.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Lastly, connect the EV kit adaptor board to the MAX96724 EV kit.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/step9.png
    :align: center
-   :width: 700px
+   :width: 700
 
 With both sides of the SerDes devices connected up, the last step it to connect the two sides together with the coax cable. The MAX96717 serializer only has one connection. The MAX96724 deserializer has 4 inputs so connect the coax cable to link A (INA) on **J7**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/gmsl_full_system_config.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Connect power to the 12V barrel jack **J1** of the MAX96724 deserializer. If utilizing the GMSL GUI, also connect the micro USB cable to **J6** of the MAX96724 deserializer EV kit.
 
@@ -172,7 +176,8 @@ Raspberry Pi 4 Configuration
 -  Connect the HDMI cable from the monitor to the Raspberry Pi micro HDMI connector.
 -  Write the `Raspberry Pi latest SD card image <https://github.com/analogdevicesinc/gmsl>`_ on a 8GB (or more) SD card.
 -  Plug the SD card into the Raspberry Pi 4 SD card slot.
--  Connect a USB mouse and keyboard to the Raspberry Pi 4. It's possible to use either a mouse & keyboard combo or a separate mouse and keyboard.
+-  Connect a USB mouse and keyboard to the Raspberry Pi 4. It's possible to use
+   either a mouse & keyboard combo or a separate mouse and keyboard.
 
 --------------
 
@@ -183,13 +188,15 @@ Once Linux boots you'll see on the HDMI monitor the Linux desktop and on the top
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/rpi_video_cfg.png
    :align: center
-   :width: 600px
+   :width: 600
 
-After the script runs, double-click on the Qt V4L2 test Utility icon to start the video capture application. A window will open then press the green play button to start video capturing.
+After the script runs, double-click on the Qt V4L2 test Utility icon to start
+the video capture application. A window will open then press the green play
+button to start video capturing.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/rpi_qv4l2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The capture window will look like below.
 
@@ -214,7 +221,8 @@ The GMSL Linux kernel drivers, the complete Linux distributions for the supporte
 Tips for Troubleshooting
 ------------------------
 
-There are a few key commands in the Linux environment that can help identify if the expected connections and communications have been made.
+There are a few key commands in the Linux environment that can help identify if
+the expected connections and communications have been made.
 
 -  In the Linux environment, you can check to see if the Rpi I2C is detecting the GMSL boards by sending a I2C detect command  [1]_ as follows: ``$ sudo i2cdetect -y 10``\ The Result should look as follows in the terminal:``analog@kuiper-gmsl:~$ sudo i2cdetect -y 10
    [sudo] password for analog:
@@ -263,8 +271,8 @@ There are a few key commands in the Linux environment that can help identify if 
    More information about these commands found here `i2c-tools - i2cdetect <https://www.mankier.com/8/i2cdetect>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/serializer_interposer_cfg.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/deserializer_interposer_cfg.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/rpi_running_qv4l2.png
-   :width: 600px
+   :width: 600

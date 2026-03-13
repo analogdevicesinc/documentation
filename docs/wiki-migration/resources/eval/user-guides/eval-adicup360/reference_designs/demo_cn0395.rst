@@ -48,26 +48,33 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
+-  To program the base board, set the jumpers/switches as shown in the next
+   figure. The important jumpers/switches are highlighted in red.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect the **EVAL-CN0395-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
--  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
+-  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
+   Debug USB.(P14)
 
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the CN0395.
+There are two basic ways to program the ADICUP360 with the software for the
+CN0395.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_cn0395** demo can be found here:
 
@@ -84,11 +91,9 @@ The software for the **ADuCM360_demo_cn0395** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0395 Source Code <projects/ADuCM360_demo_cn0395>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -124,8 +129,8 @@ The application allows the user to select between the two modes of operation:
 Heater Mode (RH)
 ~~~~~~~~~~~~~~~~
 
-The user can further choose the subroutine which determines the heater current (IH):
-
+The user can further choose the subroutine which determines the heater current
+(IH):
 
 |image1|
 
@@ -144,17 +149,25 @@ The user can further choose the subroutine which determines the heater current (
    -  ALPHA is the constant 0.003074
 
 -  The resulted RH is used to calculate IH and VH with constant resistance routine.
--  The resulted VH is further adjusted by using the constant heater voltage routine.
+-  The resulted VH is further adjusted by using the constant heater voltage
+   routine.
 
 **current** simply sets the IDAC to the desired current.
 
-After the completion of the routine, the application displays the measured values: RH_A (Ambient Heater Res ), VH (heater voltage), IH (heater current), RH (heater resistance), T_A (ambient temperature), HUM (ambient humidity), PH (heater power consumption), TH (heater temperature), ADC data (raw data read from ADC in hex), Ro ( sensor resistance measured in clean air).
-
+After the completion of the routine, the application displays the measured
+values: RH_A (Ambient Heater Res ), VH (heater voltage), IH (heater current), RH
+(heater resistance), T_A (ambient temperature), HUM (ambient humidity), PH
+(heater power consumption), TH (heater temperature), ADC data (raw data read
+from ADC in hex), Ro ( sensor resistance measured in clean air).
 
 |image2|
 
-At power up, the application starts in constant current mode and sets the default current to 8mA. Furthermore, it is assumed that the measurement circuit is placed in clean air, therefore we measure and store the sensor resistance in clean air (Ro). After each heater measurement mode change, it is assumed that the board is placed in clean air, and the Ro value is updated. This is required, because Ro is a function of the heater temperature.
-
+At power up, the application starts in constant current mode and sets the
+default current to 8mA. Furthermore, it is assumed that the measurement circuit
+is placed in clean air, therefore we measure and store the sensor resistance in
+clean air (Ro). After each heater measurement mode change, it is assumed that
+the board is placed in clean air, and the Ro value is updated. This is required,
+because Ro is a function of the heater temperature.
 
 |image3|
 
@@ -163,12 +176,13 @@ Sensor Resistance mode (RS)
 
 Sensor measurement is performed. The application can switch at any time to this mode by pressing the <ENTER> key. The :adi:`AD7988-1` ADC receives the voltage from the sense circuit (VRS). The switching is done by using :adi:`ADG884`.
 
-In background every time the application runs the gain-ranging algorithm and determines RS and the gas concentration (C) measured in PPM (parts per million):
-
+In background every time the application runs the gain-ranging algorithm and
+determines RS and the gas concentration (C) measured in PPM (parts per million):
 
 |image4|
 
-RS reading can also be performed by typing <operation RS>, but it does the same thing as pressing the <ENTER> key.
+RS reading can also be performed by typing <operation RS>, but it does the same
+thing as pressing the <ENTER> key.
 
 **Factory Calibration** The IDAC current from the ADN8810 is 1% accurate, therefore a factory calibration must be performed. The routine loads code 4095 into ADN8810 and reads the ADC, which ideally should be 9.94mA × 71.5Ω = 0.71V, or code [0.71/4.096] x 65,535 = 11,360. The gain correction factor k1 = 11,360/CODEFS. It is recommended that this is done only once. Follow the procedure:
 
@@ -179,17 +193,17 @@ RS reading can also be performed by typing <operation RS>, but it does the same 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/calibrate_w.jpg
    :align: center
-   :width: 850px
+   :width: 850
 
-From this point on, K1 is stored in permanent memory and applied to currents that are input. To read the gain correction factor from memory, type <calibrate r>.
-
+From this point on, K1 is stored in permanent memory and applied to currents
+that are input. To read the gain correction factor from memory, type <calibrate
+r>.
 
 |image5|
 
 **Help**
 
 Type <help> to see the available commands:
-
 
 |image6|
 
@@ -213,13 +227,17 @@ Project structure
 
 The **ADuCM360_demo_cn0395** project use ADuCM36x C/C++ Project structure.
 
-This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI1, UART via P0.6/P0.7, I2C via P2.0/P2.1; SPI, UART, I2C read/write functions; Flash read/write functions, AD7988 control, ADN8810 control, SHT30 control and VOC concentration computation.
+This project contains: system initialization part - disabling watchdog, setting
+system clock, enabling clock for peripherals; port configuration for SPI1, UART
+via P0.6/P0.7, I2C via P2.0/P2.1; SPI, UART, I2C read/write functions; Flash
+read/write functions, AD7988 control, ADN8810 control, SHT30 control and VOC
+concentration computation.
 
 In the **src** and **include** folders you will find the source and header files related to CN0395 software application. The *Communication.c/h* files contain SPI, UART and I2C specific data, the *AD7988.c/h* files contain the ADC control, the *ADN8810.c/h* files contain the IDAC control, the *SHT30.c/h* files contain the temperature/humidity sensor control, the *Flash.c/h* files contain helper functions to read/write to the permanent memory, and the *CN0395.c/h* files contain commands, configurations and computations specific to the VOC detector application.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/proj_struct.jpg
    :align: left
-   :width: 340px
+   :width: 340
 
 The **RTE** folder contains device and system related files:
 
@@ -229,14 +247,14 @@ The **RTE** folder contains device and system related files:
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rh_mode.jpg
-   :width: 850px
+   :width: 850
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/constant_voltage.jpg
-   :width: 850px
+   :width: 850
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/power_up.jpg
-   :width: 850px
+   :width: 850
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rs_mode_new.png
-   :width: 850px
+   :width: 850
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/calibrate_read.jpg
-   :width: 850px
+   :width: 850
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/help.jpg
-   :width: 850px
+   :width: 850

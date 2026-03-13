@@ -5,13 +5,19 @@ AD9695 FMC Card Reference Design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad9695_fmc/index.html\
 
-
 Overview
 --------
 
-The AD9695 is a dual 14-bit, 1300/625MSPS analog-to-digital converter (ADC) featuring an on-chip buffer and a sample-and-hold circuit designed for low power, small size, and ease of use. The dual ADC cores feature a multistage, differential pipelined architecture with integrated output error correction logic. Each ADC features wide bandwidth inputs supporting a variety of user-selectable input ranges.
+The AD9695 is a dual 14-bit, 1300/625MSPS analog-to-digital converter (ADC)
+featuring an on-chip buffer and a sample-and-hold circuit designed for low
+power, small size, and ease of use. The dual ADC cores feature a multistage,
+differential pipelined architecture with integrated output error correction
+logic. Each ADC features wide bandwidth inputs supporting a variety of
+user-selectable input ranges.
 
-The AD9695-FMC reference design is a processor based (e.g. Microblaze) embedded system. The design consists of a receive chain that transports the captured samples from the ADC to the system memory (DDR).
+The AD9695-FMC reference design is a processor based (e.g. Microblaze) embedded
+system. The design consists of a receive chain that transports the captured
+samples from the ADC to the system memory (DDR).
 
 All cores from the receive chain are programmable through an AXI-Lite interface.
 
@@ -47,7 +53,9 @@ Clock Selection
 Synchrona Output Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Only the channels presented in the clocking selection are relevant. For the rest, you can either disable them or just put a divided frequency of the source clock.
+Only the channels presented in the clocking selection are relevant. For the
+rest, you can either disable them or just put a divided frequency of the source
+clock.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/synchronasettings1.png
    :alt: synchronasettings1.png
@@ -60,15 +68,21 @@ The data path and clock domains are depicted on the below diagram:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695_fmc_02.svg
    :alt: ad9695_fmc_02.svg
 
-The design has one JESD receive chain with 4 lanes at rate of 13Gbps. The JESD receive chain consists of a physical layer represented by an XCVR module, a link layer represented by an RX JESD LINK module and transport layer represented by a RX JESD TPL module. The link operates in Subclass 1.
+The design has one JESD receive chain with 4 lanes at rate of 13Gbps. The JESD
+receive chain consists of a physical layer represented by an XCVR module, a link
+layer represented by an RX JESD LINK module and transport layer represented by a
+RX JESD TPL module. The link operates in Subclass 1.
 
-The link is set for full bandwidth mode and operate with the following parameters:
+The link is set for full bandwidth mode and operate with the following
+parameters:
 
 Deframer paramaters: L=4, M=2, F=1, S=1, N’=16
 
 SYSREF - 5.078125 MHZ REFCLK – 325MHz (Lane Rate/40) DEVICECLK -325 MHz ADCCLK – 1300MHz JESD204B Lane Rate – 13Gbps
 
-The transport layer component presents on its output 128 bits at once on every clock cycle, representing 4 samples per converter. The two receive chains are merged together and transferred to the DDR with a single DMA.
+The transport layer component presents on its output 128 bits at once on every
+clock cycle, representing 4 samples per converter. The two receive chains are
+merged together and transferred to the DDR with a single DMA.
 
 Building the HDL project
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,14 +127,11 @@ P202         CH9_P
 Messages
 ^^^^^^^^
 
-
-
 .. collapsible:: Complete kernel boot log (Click to expand)
 
    .. container:: box bggreen
 
       This specifies any shell prompt running on the target
-
 
       ::
 
@@ -620,8 +631,6 @@ Messages
          [    9.165974] systemd-journald[174]: Received client request to flush runtime journal.
          [   10.668817] random: crng init done
 
-
-
 Make sure all devices are present
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -657,7 +666,6 @@ Make sure all devices are present
           hwmon8: ina226
           hwmon9: ina226
    
-
 
 More Information
 ~~~~~~~~~~~~~~~~

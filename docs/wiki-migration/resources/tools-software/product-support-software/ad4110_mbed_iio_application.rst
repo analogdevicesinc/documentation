@@ -4,19 +4,33 @@ AD4110 IIO Application
 Introduction
 ------------
 
-This page gives an overview of using the ARM Mbed platform supported firmware example with Analog Devices AD4110 Evaluation board(s) and SDP-K1 controller board. This example code leverage the ADI developed IIO (Industrial Input Output) ecosystem to evaluate the AD4110 family devices by providing a device debug and data capture support.
+This page gives an overview of using the ARM Mbed platform supported firmware
+example with Analog Devices AD4110 Evaluation board(s) and SDP-K1 controller
+board. This example code leverage the ADI developed IIO (Industrial Input
+Output) ecosystem to evaluate the AD4110 family devices by providing a device
+debug and data capture support.
 
 The overview of an entire system is shown below:
 
-
 |image1|
 
-IIO oscilloscope is used as client application running on windows-os, which is ADI developed GUI for ADC data visualization and device debug. The interface used for communicating client application with firmware application (IIO device) is UART (Note: SDP-K1 can also support high speed VirtualCOM port @1Mbps or higher speed for faster data transmission). The firmware application communicates with IIO device (AD4110) using ADI No-OS drivers and platform drivers low level software layers. SDP-K1 is used as controller board, on which IIO firmware application runs and using above software libraries, the IIO firmware communicates with AD4110 IIO device. The AD4110-1 Eval board is used for development and testing of this application.
+IIO oscilloscope is used as client application running on windows-os, which is
+ADI developed GUI for ADC data visualization and device debug. The interface
+used for communicating client application with firmware application (IIO device)
+is UART (Note: SDP-K1 can also support high speed VirtualCOM port @1Mbps or
+higher speed for faster data transmission). The firmware application
+communicates with IIO device (AD4110) using ADI No-OS drivers and platform
+drivers low level software layers. SDP-K1 is used as controller board, on which
+IIO firmware application runs and using above software libraries, the IIO
+firmware communicates with AD4110 IIO device. The AD4110-1 Eval board is used
+for development and testing of this application.
 
 .. note::
 
-   This code has been developed and tested on SDP-K1 Controller Board using the on-board Arduino Headers. However, same code can be used without or with little modifications on any Mbed enabled board which has Arduino Header Support on it, such as STM32-Discovery, STM32-Nucleo, etc.
-
+   This code has been developed and tested on SDP-K1 Controller Board using the
+   on-board Arduino Headers. However, same code can be used without or with
+   little modifications on any Mbed enabled board which has Arduino Header
+   Support on it, such as STM32-Discovery, STM32-Nucleo, etc.
 
 --------------
 
@@ -36,7 +50,8 @@ Hardware Connections
 SDP-K1:
 ~~~~~~~
 
--  Connect the VIO_ADJUST jumper on the SDP-K1 board to 3.3V position to drive SDP-K1 GPIOs at 3.3V
+-  Connect the VIO_ADJUST jumper on the SDP-K1 board to 3.3V position to drive
+   SDP-K1 GPIOs at 3.3V
 
 EVAL-AD4110-1SDZ:
 ~~~~~~~~~~~~~~~~~
@@ -44,7 +59,6 @@ EVAL-AD4110-1SDZ:
 Please refer to the :adi:`EVAL-AD4110-SDZ user guide <media/en/technical-documentation/user-guides/eval-ad4110-1sdz-ug-1203.pdf>`. to know the jumper connections to the EVAL board
 
 SDP-K1 is powered through USB connection from the computer. SDP-K1 acts as a Serial device when connected to PC, which creates a COM Port to connect to IIO Oscilloscope GUI running on windows-os. The COM port assigned to a device can be seen through the device manager for windows based OS. |image2| SDP-K1 can also support high speed VirtualCOM port UART interface if “USE_VIRTUAL_COM_PORT” macro is defined in the firmware (in app_config.h file).
-
 
 |image3|
 
@@ -60,11 +74,11 @@ Mbed Firmware
    -  `AD4110 IIO Firmware Application <https://os.mbed.com/teams/AnalogDevices/code/EVAL-AD4110/>`_
    
 
-
 Quick Start to use Mbed IIO Firmware
 """"""""""""""""""""""""""""""""""""
 
-If you have some familiarity with the Mbed platform, the following is a basic list of steps required to start running the code, see below for more detail:
+If you have some familiarity with the Mbed platform, the following is a basic
+list of steps required to start running the code, see below for more detail:
 
 -  Connect the AD4110 EVAL-board to the SDP-K1 controller board as specified in hardware connections section.
 -  Connect the SDP-K1 controller board to your computer over USB provided along with SDP-K1 board.
@@ -73,7 +87,7 @@ If you have some familiarity with the Mbed platform, the following is a basic li
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/sdp_k1_target_keil.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Set the imported project folder as active project (Right click on the ad717x_mbed_iio-application→ Set Active Project).
 -  Make sure that all the dependent libraries are imported. This happens automatically when the active project has been configured.
@@ -95,7 +109,6 @@ This library provides an abstracted library interface to communicate IIO device 
    -  `libiio windows installer (.exe) <https://github.com/analogdevicesinc/libiio/releases>`_
    
 
-
 IIO Oscilloscope (Client)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -110,7 +123,6 @@ This is a GUI (Graphical User Interface) based IIO client application for data v
    -  `IIO Oscilloscope windows installer (.exe) <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
    
 
-
 --------------
 
 Evaluating AD4110 Using IIO Ecosystem
@@ -118,45 +130,55 @@ Evaluating AD4110 Using IIO Ecosystem
 
 .. note::
 
-   Ensure that hardware connection has been made properly in between Mbed Controller Board (SDP-K1) and AD4110 Eval board. Also ensure all software's (IIO firmware, Libiio windows installer and IIO Oscilloscope windows installer) are downloaded and installed in your computer before trying to communicate with AD4110 device.
-
+   Ensure that hardware connection has been made properly in between Mbed
+   Controller Board (SDP-K1) and AD4110 Eval board. Also ensure all software's
+   (IIO firmware, Libiio windows installer and IIO Oscilloscope windows
+   installer) are downloaded and installed in your computer before trying to
+   communicate with AD4110 device.
 
 Running IIO Oscilloscope (Client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open the IIO Oscilloscope application from start menu and configure the serial (UART) settings as shown below. Click on 'Refresh' button and AD4110 device should pop-up in IIO devices list. Click 'Connect'.
-
+Open the IIO Oscilloscope application from start menu and configure the serial
+(UART) settings as shown below. Click on 'Refresh' button and AD4110 device
+should pop-up in IIO devices list. Click 'Connect'.
 
 |image4|
 
 Configure/Access Device Attributes (Parameters)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The IIO Oscilloscope allows user to access and configure different device parameters, called as 'Device Attributes". There are 2 types of attributes:
+The IIO Oscilloscope allows user to access and configure different device
+parameters, called as 'Device Attributes". There are 2 types of attributes:
 
 -  Device Attributes (Global): Access/Configure common device parameters e.g. oversampling rate, operating mode
--  Channel Attributes (Specific to channels): Access/Configure channel specific device parameters e.g. Scale, Raw, Offset.
+-  Channel Attributes (Specific to channels): Access/Configure channel specific
+   device parameters e.g. Scale, Raw, Offset.
 
 How to read and write attribute:
 
 -  To 'Read' an attribute, simply select the attribute from a list or press 'Read' button on left side.
--  To 'Write' an attribute, write a attribute value in the 'Value' field and press 'Write' button. The value to be written corresponds to expected bit-field for that parameter, specified in the datasheet.
+-  To 'Write' an attribute, write a attribute value in the 'Value' field and
+   press 'Write' button. The value to be written corresponds to expected
+   bit-field for that parameter, specified in the datasheet.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_oscilloscope_step-1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Using DMM Tab to Read DC Voltage on Input Channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-DMM tab can be used read the instantaneous voltage applied on analog input channels. Simply select the device and channels to read and press start button.
+DMM tab can be used read the instantaneous voltage applied on analog input
+channels. Simply select the device and channels to read and press start button.
 
 *\*Note: The voltage is just instantaneous, so it is not possible to get RMS AC voltage or averaged DC voltage. Also, when using DMM tab, it is not encouraged to use Data Capture or Debug tab as this could impact data capturing.*
 
-
 |image5|
 
-There firmware supports various demo modes- Voltage, Current, RTD, Field Power Supply and Thermocouple modes. The expected output quantity for each mode is as follows:
+There firmware supports various demo modes- Voltage, Current, RTD, Field Power
+Supply and Thermocouple modes. The expected output quantity for each mode is as
+follows:
 
 -  Voltage Mode - Voltage in V
 -  Current Mode - Current in mA
@@ -169,7 +191,11 @@ The demo modes shall be invoked by re-defining the *ACTIVE_DEMO_MODE_CONFIG* mac
 Data Capture from IIO Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To capture the data from AD4110 IIO device, simply select the device and channels to read/capture data. The data is plotted as "ADC Raw Value" Vs "Number of Samples" and is just used for Visualization. The data is read as is from device without any processing. If user wants to process the data, it must be done externally by capturing data from the Serial link on controller board.
+To capture the data from AD4110 IIO device, simply select the device and
+channels to read/capture data. The data is plotted as "ADC Raw Value" Vs "Number
+of Samples" and is just used for Visualization. The data is read as is from
+device without any processing. If user wants to process the data, it must be
+done externally by capturing data from the Serial link on controller board.
 
 *\*Note: The DMM or Debug tab should not be accessed when capturing data as this would impact data capturing.*
 
@@ -177,17 +203,19 @@ More info here: :doc:`/wiki-migration/resources/tools-software/product-support-s
 
 Time Domain: |image6| Frequency Domain:
 
-
 |image7|
 
 Accessing the Register Map of the Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This tab is used to access the device registers in byte mode. Enter the register address in the 'Address' field and click on the 'Read' button to read the contents of the register, or 'Write' button in case of write to the chosen register.
+This tab is used to access the device registers in byte mode. Enter the register
+address in the 'Address' field and click on the 'Read' button to read the
+contents of the register, or 'Write' button in case of write to the chosen
+register.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/reg_map.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -200,7 +228,10 @@ Setting-up Python Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Please install python into your local machine. The python scripts are developed and executed using python 3.9.0 version, so recommend using version 3.9.0 or beyond. `Download python <https://www.python.org/downloads/>`_
--  Once python is installed, make sure the environment path (on windows machine) is set properly. You can verify if python is installed properly by typing “python --version” command on command line tool such as gitbash, command prompt, power shell, etc.
+-  Once python is installed, make sure the environment path (on windows machine)
+   is set properly. You can verify if python is installed properly by typing
+   “python --version” command on command line tool such as gitbash, command
+   prompt, power shell, etc.
 
 |image8| |image9|
 
@@ -211,17 +242,20 @@ Setting-up Python Environment
 Modifying/running Python Scripts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  All python scripts specific to ad4110 IIO firmware are stored into “scripts” folder present in the project directory. So, any script must be executed from this folder.
+-  All python scripts specific to ad4110 IIO firmware are stored into “scripts”
+   folder present in the project directory. So, any script must be executed from
+   this folder.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/requirements_capture.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  Update the ‘uri’ interface in script according to COM port assigned to your device (sdp-k1). Default COM port is set to COM16 in all scripts.
+-  Update the ‘uri’ interface in script according to COM port assigned to your
+   device (sdp-k1). Default COM port is set to COM16 in all scripts.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad4110_uri_update.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Output Obtained from the Python Script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -230,7 +264,7 @@ While executing the *ad4110_data_capture.py*, the command prompt requests for th
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad4110_num_samples.png
    :align: center
-   :width: 600px
+   :width: 600
 
 On Entering the number of samples *n*, on successful completion of capturing *n* samples, the data points are stored in a csv as *adc_data_capture.csv* in the folder where the script is present.
 
@@ -241,11 +275,13 @@ On Entering the number of samples *n*, on successful completion of capturing *n*
 Modifying Firmware
 ------------------
 
-The below block diagram shows the AD4110 IIO firmware layer. The firmware and the device together supports five different modes of operations - Voltage, Current, Field Power Supply, RTD and the Thermocouple mode.
+The below block diagram shows the AD4110 IIO firmware layer. The firmware and
+the device together supports five different modes of operations - Voltage,
+Current, Field Power Supply, RTD and the Thermocouple mode.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/firmware_file_structure.png
    :align: center
-   :width: 600px
+   :width: 600
 
 app_config.h
 ~~~~~~~~~~~~
@@ -260,12 +296,16 @@ This file can be used to:
 app_config_mbed.h
 ~~~~~~~~~~~~~~~~~
 
-This file defines the pin mappings for the peripherals for any mbed based board. The 'Arduino' connector has been enabled as the default. The macro definition 'ARDUINO' in the file header needs to be commented out in case the SDP-120 header on the SDP-K1 is to be used.
+This file defines the pin mappings for the peripherals for any mbed based board.
+The 'Arduino' connector has been enabled as the default. The macro definition
+'ARDUINO' in the file header needs to be commented out in case the SDP-120
+header on the SDP-K1 is to be used.
 
 ad4110_user_config.h
 ~~~~~~~~~~~~~~~~~~~~
 
-This file is included on selecting the Voltage Mode, which has been defined as the default mode.
+This file is included on selecting the Voltage Mode, which has been defined as
+the default mode.
 
 ad4110_current_mode_config.h
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -290,17 +330,23 @@ This file is included on selecting the RTD Mode configuration.
 ad4110_iio.c
 ~~~~~~~~~~~~
 
-This file defines getter/setter functions for all the device and channel specific attributes (related to AD4110 devices) to read/write the device parameters. The majority of device specific functionality is present in this module.
+This file defines getter/setter functions for all the device and channel
+specific attributes (related to AD4110 devices) to read/write the device
+parameters. The majority of device specific functionality is present in this
+module.
 
 ad4110_data_capture.h
 ~~~~~~~~~~~~~~~~~~~~~
 
-This file defines the data capture implementation of AD4110 for visualizing ADC raw data on IIO oscilloscope.
+This file defines the data capture implementation of AD4110 for visualizing ADC
+raw data on IIO oscilloscope.
 
 No-OS Drivers for AD4110
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The no-os drivers provide the high level abstracted layer for digital interface of AD4110 devices. The complete digital interface (to access memory map and perform data read) is done in integration with platform drivers.
+The no-os drivers provide the high level abstracted layer for digital interface
+of AD4110 devices. The complete digital interface (to access memory map and
+perform data read) is done in integration with platform drivers.
 
 The functionality related with no-os drivers is covered in below 2 files:
 
@@ -311,26 +357,25 @@ The functionality related with no-os drivers is covered in below 2 files:
 
    It is hoped that the most common functions of the AD4110 family are coded, but it's likely that some special functionality is not implemented. Feel free to consult Analog Devices :adi:`Engineer-Zone <engineerzone>` for feature requests, feedback, bug-reports etc.
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/application_interfaces.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/phy_com_port.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/virtual_com_port.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/step_1_step_2.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/dmm_tab_working.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/data_capturing.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/fft_plot.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad717x_py_env_variable.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad717x_py_version_check.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad4110_data_capture_finishd.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad4110_python_output.png
-   :width: 600px
+   :width: 600

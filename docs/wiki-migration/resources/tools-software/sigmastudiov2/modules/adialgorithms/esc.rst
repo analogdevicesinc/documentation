@@ -9,19 +9,31 @@ Enhanced Stereo Capture
 Description
 -----------
 
-The Enhanced Stereo Capture (ESC) algorithm takes a stereo record-signal and creates a wider stereo image. The ESC is meant as a record algorithm in order to capture an enhanced stereo image from two closely spaced microphones.
+The Enhanced Stereo Capture (ESC) algorithm takes a stereo record-signal and
+creates a wider stereo image. The ESC is meant as a record algorithm in order to
+capture an enhanced stereo image from two closely spaced microphones.
 
 Usage
 -----
 
-The ESC algorithm accepts two input signals obtained from two closely spaced microphones. The algorithm separates these two signals and widens the stereo image. The end perceptual result is a widened stereo image as if the audio had been captured by microphones with greater L/R separation. The algorithm is based on proprietary filtering and a Stereo Balance Gain that adjusts how much stereo effect is archived in the algorithm.
+The ESC algorithm accepts two input signals obtained from two closely spaced
+microphones. The algorithm separates these two signals and widens the stereo
+image. The end perceptual result is a widened stereo image as if the audio had
+been captured by microphones with greater L/R separation. The algorithm is based
+on proprietary filtering and a Stereo Balance Gain that adjusts how much stereo
+effect is archived in the algorithm.
 
-Depending on the spacing of the microphones in the record environment, a different Stereo Balance Gain should be selected. There are two recommended methods to do this required algorithm tuning (shown in the Example section).
+Depending on the spacing of the microphones in the record environment, a
+different Stereo Balance Gain should be selected. There are two recommended
+methods to do this required algorithm tuning (shown in the Example section).
 
 -  Simulated delay between the microphones to maximize the L/R separation
 -  Listening tests while adjusting the gain knob
 
-The tuning required for method 1) can be done within SigmaStudio. The schematic image in example section shows how this is accomplished. The goal is to adjust the Stereo Balance Gain until the greatest visual difference in level is achieved between the left and right output signals..
+The tuning required for method 1) can be done within SigmaStudio. The schematic
+image in example section shows how this is accomplished. The goal is to adjust
+the Stereo Balance Gain until the greatest visual difference in level is
+achieved between the left and right output signals..
 
 Targets Supported
 -----------------
@@ -55,7 +67,6 @@ LeftOut  Audio First output channel
 RightOut Audio Second output channel
 ======== ===== =====================
 
-
 | ===== Configurable Parameters =====
 
 +---------------+---------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -74,5 +85,3 @@ gain           Linear gain value             8.24 Format
 a1hpf          High pass filter coefficients 8.24 Format Array
 a1lpf          Low pass filter coefficients  8.24 Format Array
 ============== ============================= =================
-
-

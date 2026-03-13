@@ -4,7 +4,9 @@ Connectivity Pack
 General Description/Overview
 ----------------------------
 
-Connectivity pack includes Bluetooth Low Energy (BLE) drivers for EV-COG-AD3029LZ. Following are the requirements to use BLE drives available in the pack.
+Connectivity pack includes Bluetooth Low Energy (BLE) drivers for
+EV-COG-AD3029LZ. Following are the requirements to use BLE drives available in
+the pack.
 
 -  :doc:`EV-COG-AD3029LZ MCU Cog </wiki-migration/resources/eval/user-guides/eval-cog-ad3029lz/cog_hw_userguide>`
 -  :doc:`EV-COG-BLEINTP1Z Connectivity Cog </wiki-migration/resources/eval/user-guides/ev-cog-bleintp1z>`
@@ -32,4 +34,3 @@ The software pack can be downloaded in following way.
    
    `ADI-BLESoftware pack 1.0.0 <http://download.analog.com/tools/BLE_Software/Releases/>`_
    
-

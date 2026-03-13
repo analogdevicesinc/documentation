@@ -1,7 +1,6 @@
 ADXL362 - No-OS Driver for Renesas Microcontroller Platforms
 ============================================================
 
-
 Supported Devices
 =================
 
@@ -14,7 +13,6 @@ Evaluation Boards
 
 Overview
 ========
-
 
 The :adi:`ADXL362` is an ultralow power, 3-axis MEMS accelerometer that consumes less than 2 μA at a 100 Hz output data rate and 270 nA when in motion triggered wake-up mode. Unlike accelerometers that use power duty cycling to achieve low power consumption, the :adi:`ADXL362` does not alias input signals by undersampling; it samples the full bandwidth of the sensor at all data rates.
 
@@ -36,9 +34,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/adxl362_pmod_acl2.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -46,9 +47,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the ADXL362 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the ADXL362 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the ADXL362 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the ADXL362 driver:
 
@@ -62,7 +67,6 @@ There are three functions which are called by the ADXL362 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of ADXL362 driver:
 
@@ -98,8 +102,6 @@ The following functions are implemented in this version of ADXL362 driver:
 | void ADXL362_SetupInactivityDetection(unsigned char refOrAbs, unsigned short threshold, unsigned short time)          | Configures inactivity detection.                                       |
 +-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-
-
 **HW Platform(s):**
 
 -  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
@@ -120,11 +122,11 @@ Downloads
    -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
-
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the ADXL362 demonstration project on a Renesas RL78G13 platform using the PmodACL2.
+This section contains a description of the steps required to run the ADXL362
+demonstration project on a Renesas RL78G13 platform using the PmodACL2.
 
 Required Hardware
 -----------------
@@ -148,7 +150,9 @@ A PmodACL2 has to be connected to the PMOD1 connector.
 Reference Project Overview
 --------------------------
 
-The reference project continuously displays on the LCD the accelerations on x-axis, y-axis and x-axis and simultaneously detects any activity or inactivity detected by the device.
+The reference project continuously displays on the LCD the accelerations on
+x-axis, y-axis and x-axis and simultaneously detects any activity or inactivity
+detected by the device.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_acl2_rl78g13_screen.jpg
    :align: center
@@ -156,16 +160,15 @@ The reference project continuously displays on the LCD the accelerations on x-ax
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 Renesas RL78G14 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the ADXL362 demonstration project on a Renesas RL78G14 platform using the PmodACL2.
+This section contains a description of the steps required to run the ADXL362
+demonstration project on a Renesas RL78G14 platform using the PmodACL2.
 
 Required Hardware
 -----------------
@@ -181,11 +184,12 @@ Required Software
 
 .. note::
 
-   The ADXL362 demonstration project for the Renesas RL78G14 platform consists of three parts: the ADXL362 Driver, the PmodACL2 Demo for RL78G14 and the RL78G14 Common Drivers.
+   The ADXL362 demonstration project for the Renesas RL78G14 platform consists
+   of three parts: the ADXL362 Driver, the PmodACL2 Demo for RL78G14 and the
+   RL78G14 Common Drivers.
 
    
    All three parts have to be downloaded.
-
 
 Hardware Setup
 --------------
@@ -210,16 +214,15 @@ The reference project:
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`_
 
-
 Renesas RX63N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the ADXL362 demonstration project on a Renesas RX63N platform.
+This section contains a description of the steps required to run the ADXL362
+demonstration project on a Renesas RX63N platform.
 
 Required Hardware
 -----------------
@@ -244,7 +247,9 @@ A PmodACL2 has to be connected to the PMOD1 connector.
 Reference Project Overview
 --------------------------
 
-The reference project continuously displays on the LCD the accelerations on x-axis, y-axis and x-axis and simultaneously detects any activity or inactivity detected by the device.
+The reference project continuously displays on the LCD the accelerations on
+x-axis, y-axis and x-axis and simultaneously detects any activity or inactivity
+detected by the device.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_acl2_rx63n_screen.jpg
    :align: center
@@ -252,20 +257,15 @@ The reference project continuously displays on the LCD the accelerations on x-ax
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx63n_software_design <https://wiki.analog.com/rx63n_software_design>`_
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-

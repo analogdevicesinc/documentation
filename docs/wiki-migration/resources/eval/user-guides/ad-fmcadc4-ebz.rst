@@ -8,17 +8,23 @@ Introduction
 
    The :adi:`EVAL-AD-FMCADC4-EBZ` board has been retired, and is no longer available for sale. It has been removed from the HDL and software repository, but is still available in the history.
 
-
 The :adi:`EVAL-AD-FMCADC4-EBZ` is a high speed four channel data acquisition board featuring two :adi:`AD9680` dual channel ADC at 1000 MSPS (1240 MSPS) and four ADA4961 :adi:`ADA4961` low distortion, 3.2 GHz, RF DGA driving each converter. The FMC form factor supports the JESD204B high speed serial interface. All clocking and channel synchronization is provisioned on-board using the AD9528 :adi:`AD9528` clock generator. This board meets most of the FMC specifications in terms of mechanical size, mounting hole locations etc., for further details, please refer to the FMC specification.
 
 Although this board does meet most of the FMC specifications, it is not meant as a `commercial off the shelf <https://en.wikipedia.org/wiki/Commercial_off-the-shelf>`_ (COTS) board. If a commercial, ready to go integrate product is required, please refer to one of the many FMC manufacturers.
 
-ADI also provides reference designs (HDL and software) for this board to work with commonly available Altera and Xilinx development boards.
+ADI also provides reference designs (HDL and software) for this board to work
+with commonly available Altera and Xilinx development boards.
 
 Hardware
 --------
 
-The AD-FMCADC4-EBZ board's primary purpose is to demonstrate the capabilities of the devices on board quickly and easily by providing a seamless interface to an FMC carrier platform and running the reference design on the carrier FPGA. The board is designed to self power and self clock when connected to the FMC carrier. The analog signals (up to four) are connected to J301A, J301B, J301C and J301D. This rapid prototyping board can also be synchronized across channels.
+The AD-FMCADC4-EBZ board's primary purpose is to demonstrate the capabilities of
+the devices on board quickly and easily by providing a seamless interface to an
+FMC carrier platform and running the reference design on the carrier FPGA. The
+board is designed to self power and self clock when connected to the FMC
+carrier. The analog signals (up to four) are connected to J301A, J301B, J301C
+and J301D. This rapid prototyping board can also be synchronized across
+channels.
 
 Devices
 ~~~~~~~
@@ -36,7 +42,7 @@ The FMC board includes the following products by Analog Devices:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/20150331_135648-final.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 ::
 
@@ -44,7 +50,7 @@ The FMC board includes the following products by Analog Devices:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/20150402_100228-finalbot.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 ::
 
@@ -53,26 +59,43 @@ The FMC board includes the following products by Analog Devices:
 Clocking
 ~~~~~~~~
 
-The AD-FMCADC4-EBZ includes an on-board 80MHz reference oscillator from Crystek. This feature can be disconnected and an external reference can be applied through J901. When referencing the schematic make sure the proper component changes are made in order to directly route the input into the AD9528.
+The AD-FMCADC4-EBZ includes an on-board 80MHz reference oscillator from Crystek.
+This feature can be disconnected and an external reference can be applied
+through J901. When referencing the schematic make sure the proper component
+changes are made in order to directly route the input into the AD9528.
 
 Analog Front End
 ~~~~~~~~~~~~~~~~
 
-The AD-FMCADC4-EBZ uses a passive front end designed for very wide bandwidth. A single ended input needs to be provided to the analog inputs mentioned earlier. A 1:2 impedance ratio broadband balun then converts the input signal differentially to the ADA4961 inputs and has a 1.6GHz bandwidth at -3dB. Each channel amplifier can be adjusted independently in terms of gain.
+The AD-FMCADC4-EBZ uses a passive front end designed for very wide bandwidth. A
+single ended input needs to be provided to the analog inputs mentioned earlier.
+A 1:2 impedance ratio broadband balun then converts the input signal
+differentially to the ADA4961 inputs and has a 1.6GHz bandwidth at -3dB. Each
+channel amplifier can be adjusted independently in terms of gain.
 
 Revision A
 ~~~~~~~~~~
 
-The revision A board supports amplifier gain control via spi. After power-up, the gain of the amplifier defaults to an attenuated state. Use a low jitter, low noise signal source with a level at -20dBm to the analog inputs (J301-A/B/C/D). Apply a signal source no greater than -10dBm to achieve full-scale of the converter when maximum gain of the amplifier is applied.
+The revision A board supports amplifier gain control via spi. After power-up,
+the gain of the amplifier defaults to an attenuated state. Use a low jitter, low
+noise signal source with a level at -20dBm to the analog inputs (J301-A/B/C/D).
+Apply a signal source no greater than -10dBm to achieve full-scale of the
+converter when maximum gain of the amplifier is applied.
 
 Running No-OS Application & Changing Sampling Rate to 1.24GHz
 -------------------------------------------------------------
 
-The HDL reference design is built around a processor as in an embedded system. You may use either Linux or No-OS software to demonstrate the design (details in the downloads section). In order to run the HDL with the No-OS application, first we need to build the HDL bit file and software elf file.
+The HDL reference design is built around a processor as in an embedded system.
+You may use either Linux or No-OS software to demonstrate the design (details in
+the downloads section). In order to run the HDL with the No-OS application,
+first we need to build the HDL bit file and software elf file.
 
 At the time of this writing, we are using the 'dev' branch for both. The :doc:`HDL user guide </wiki-migration/resources/fpga/docs/hdl>` contains the instructions to build the bit file. **Please make sure you use the 'dev' branch (checkout dev right after cloning).**
 
-Once the bit file is ready, follow these instructions to build the elf file. This assumes you are following our directory structures. If you are not, just get the idea from here and port it to your environment. However you have to figure out things on your own.
+Once the bit file is ready, follow these instructions to build the elf file.
+This assumes you are following our directory structures. If you are not, just
+get the idea from here and port it to your environment. However you have to
+figure out things on your own.
 
 -  Clone `No-OS <https://github.com/analogdevicesinc/no-OS>`_ repository
 -  Checkout the latest release branch (git checkout branch)\ `hdl release notes <https://github.com/analogdevicesinc/hdl/releases>`_
@@ -81,7 +104,8 @@ Once the bit file is ready, follow these instructions to build the elf file. Thi
 -  \`make run\` to download trough JTAG the hdl bitstream and software elf, this will also start the processor
 -  \`make capture\` read through the memory debugger the captured samples in RAM. Tha data will be saved in .csv files
 
-If you are more comfortable with the GUI, import all the files (or folders) that the make uses.
+If you are more comfortable with the GUI, import all the files (or folders) that
+the make uses.
 
 A typical run looks like this:
 
@@ -158,7 +182,8 @@ The following messages should appear on the terminal.
    adc_setup adc core initialized (1000 MHz).
    RX capture done.
 
-A brief background information on what is happening. Let's look at the No-OS main function. First, it configures and sets the GPIO based on the board.
+A brief background information on what is happening. Let's look at the No-OS
+main function. First, it configures and sets the GPIO based on the board.
 
 .. code:: c
 
@@ -166,13 +191,15 @@ A brief background information on what is happening. Let's look at the No-OS mai
         ad_gpio_set(GPIO_AD9528_RSTN, 0x0); // reset
         ad_gpio_set(GPIO_AD9528_RSTN, 0x1); // bring out of reset
 
-The clock chip is programmed to output the desired clocks and sys-ref signals. The default setting is 1GHz for the AD9680 and 500MHz for the FPGA.
+The clock chip is programmed to output the desired clocks and sys-ref signals.
+The default setting is 1GHz for the AD9680 and 500MHz for the FPGA.
 
 ::
 
         ad9528_setup(&ad9528_spi_device, &ad9528_param);
 
-The transceiver cores are initialized. Here only DRP access is possible. If you are planning to change the transceivers, this is where they should be.
+The transceiver cores are initialized. Here only DRP access is possible. If you
+are planning to change the transceivers, this is where they should be.
 
 ::
 
@@ -185,13 +212,15 @@ The AD9680 devices are initialized (checking the PLL status)
         ad9680_setup(&ad9680_0_spi_device, ad9680_0_param);
         ad9680_setup(&ad9680_1_spi_device, ad9680_1_param);
 
-The design uses ADI's JESD IP- it needs to be programmed to match the device settings (frame count, byte count, scrambling and such).
+The design uses ADI's JESD IP- it needs to be programmed to match the device
+settings (frame count, byte count, scrambling and such).
 
 ::
 
         jesd_setup(ad9680_jesd);
 
-After the above setup, bring the transceivers up, here we check for everything on the link, starting from the PLL locked to SYNC deasserted.
+After the above setup, bring the transceivers up, here we check for everything
+on the link, starting from the PLL locked to SYNC deasserted.
 
 ::
 
@@ -203,7 +232,9 @@ The individual AD9680 cores are brought out of reset.
 
         adc_setup(ad9680_0_core);
 
-The ADC has a PRBS generator at the sample level that can be monitored in the FPGA. This is a robust way to confirming the link status. The software monitors this and reports any errors.
+The ADC has a PRBS generator at the sample level that can be monitored in the
+FPGA. This is a robust way to confirming the link status. The software monitors
+this and reports any errors.
 
 This is setting the PRBS generator in the device.
 
@@ -217,18 +248,19 @@ This is setting the PRBS monitors in the FPGA.
 
        adc_pn_mon(ad9680_0_core, ADC_PN9)
 
-If you don't see any other messages in the UART other than the ones mentioned above- all is well.
+If you don't see any other messages in the UART other than the ones mentioned
+above- all is well.
 
 Here is the ILA plot screen capture
 
 .. note::
 
-   We are not supporting the ILA in the reference designs since the hdl_2016_r1 release
-
+   We are not supporting the ILA in the reference designs since the hdl_2016_r1
+   release
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fmcadc4_ila.png
    :alt: FMCADC4-ILA
-   :width: 500px
+   :width: 500
 
 Downloads (Hardware)
 --------------------
@@ -244,7 +276,6 @@ Downloads (Hardware)
    -  `PCBoard Fab Drawing <https://wiki.analog.com/_media/resources/eval/user-guides/ska_eval_fab.pdf>`_
    -  `PCBoard Gerber files <https://wiki.analog.com/_media/resources/eval/user-guides/ska_eval_cam2.zip>`_
    
-
 
 Downloads (HDL)
 ---------------
@@ -280,7 +311,6 @@ AD3552REVB
    +----------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 AD40XXFMC
 ~~~~~~~~~
 
@@ -317,7 +347,6 @@ AD40XXFMC
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD4110
 ~~~~~~
 
@@ -343,7 +372,6 @@ AD4110
    |                                                     |                                                                               |                                                                                |                                                                                               | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
-
 
 AD4134FMC
 ~~~~~~~~~
@@ -380,7 +408,6 @@ AD4134FMC
    |                                                 |                                                                                       |                                                                                    |                                                                                                       | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_                                         |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
-
 
 AD4630FMC
 ~~~~~~~~~
@@ -422,7 +449,6 @@ AD4630FMC
    +--------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD469XFMC
 ~~~~~~~~~
 
@@ -459,7 +485,6 @@ AD469XFMC
    +--------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD4858FMCZ
 ~~~~~~~~~~
 
@@ -492,7 +517,6 @@ AD4858FMCZ
    +----------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
 
-
 AD5758SDZ
 ~~~~~~~~~
 
@@ -518,7 +542,6 @@ AD5758SDZ
    |                                                    |                                                                                       |                                                                                    |                                                                                                       | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_        |
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
-
 
 AD5766SDZ
 ~~~~~~~~~
@@ -554,7 +577,6 @@ AD5766SDZ
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD6676EVB
 ~~~~~~~~~
 
@@ -586,7 +608,6 @@ AD6676EVB
    |                                                    |                                                                                     |                                                                                       |                                                                                                         | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +----------------------------------------------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 AD7134FMC
 ~~~~~~~~~
@@ -624,7 +645,6 @@ AD7134FMC
    +--------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD719XASDZ
 ~~~~~~~~~~
 
@@ -638,7 +658,6 @@ AD719XASDZ
    | :adi:`AD79XASDZ <eval-ad7190>`                     | `ad719x_asdz <http://github.com/analogdevicesinc/hdl/tree/main/projects/ad719x_asdz>`_  | `coraz7s <http://github.com/analogdevicesinc/hdl/tree/main/projects/ad719x_asdz/coraz7s>`_  | `ad719x_asdz_coraz7s <https://wiki.analog.com/resources/fpga/docs/hdl/utilization_main?#ad719x_asdz_coraz7s>`_  | `axi_sysid <http://github.com/analogdevicesinc/hdl/tree/main/library/axi_sysid>`_  |
    +----------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
    
-
 
 AD738xFMC
 ~~~~~~~~~
@@ -676,7 +695,6 @@ AD738xFMC
    +--------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD7405FMC
 ~~~~~~~~~
 
@@ -704,7 +722,6 @@ AD7405FMC
    |                                                    |                                                                                       |                                                                                    |                                                                                                       | `util_dec256sinc24b <http://github.com/analogdevicesinc/hdl/tree/main/library/util_dec256sinc24b>`_  |
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 AD7606XFMC
 ~~~~~~~~~~
@@ -737,7 +754,6 @@ AD7606XFMC
    |                                                 |                                                                                         |                                                                                     |                                                                                                         | `util_cpack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_cpack2>`_  |
    +-------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 AD7616SDZ
 ~~~~~~~~~
@@ -777,7 +793,6 @@ AD7616SDZ
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD77681EVB
 ~~~~~~~~~~
 
@@ -812,7 +827,6 @@ AD77681EVB
    +-------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD7768EVB
 ~~~~~~~~~
 
@@ -843,7 +857,6 @@ AD7768EVB
    +----------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
 
-
 AD777XARDZ
 ~~~~~~~~~~
 
@@ -873,7 +886,6 @@ AD777XARDZ
    |                                                     |                                                                                         |                                                                                               |                                                                                                         | `util_cpack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_cpack2>`_  |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 AD9081FMCAEBZ
 ~~~~~~~~~~~~~
@@ -937,7 +949,6 @@ AD9081FMCAEBZ
    +--------------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD9081FMCAEBZXBAND
 ~~~~~~~~~~~~~~~~~~
 
@@ -989,7 +1000,6 @@ AD9081FMCAEBZXBAND
    |                                                               |                                                                                                               |                                                                                                      |                                                                                                                                     | `util_hbm <http://github.com/analogdevicesinc/hdl/tree/main/library/util_hbm>`_                                                  |
    +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    
-
 
 AD9082FMCAEBZ
 ~~~~~~~~~~~~~
@@ -1049,7 +1059,6 @@ AD9082FMCAEBZ
    +--------------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD9083EVB
 ~~~~~~~~~
 
@@ -1080,7 +1089,6 @@ AD9083EVB
    +---------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD9083VNA
 ~~~~~~~~~
 
@@ -1106,7 +1114,6 @@ AD9083VNA
    |                                                    |                                                                                       |                                                                                          |                                                                                                             | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 AD9208DUALEBZ
 ~~~~~~~~~~~~~
@@ -1135,7 +1142,6 @@ AD9208DUALEBZ
    |                                                     |                                                                                                 |                                                                                               |                                                                                                                       | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 AD9209
 ~~~~~~
@@ -1189,7 +1195,6 @@ AD9209
    +-------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD9213DUALEBZ
 ~~~~~~~~~~~~~
 
@@ -1209,7 +1214,6 @@ AD9213DUALEBZ
    |                                                     |                                                                                                 |                                                                                               |                      | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------+--------------------------------------------------------------------------------------------------------------------+
    
-
 
 AD9213EVB
 ~~~~~~~~~
@@ -1237,7 +1241,6 @@ AD9213EVB
    +--------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 AD9265FMC
 ~~~~~~~~~
 
@@ -1261,7 +1264,6 @@ AD9265FMC
    |                                                            |                                                                                       |                                                                                        |                                                                                                           | `axi_sysid <http://github.com/analogdevicesinc/hdl/tree/main/library/axi_sysid>`_        |
    +------------------------------------------------------------+---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
-
 
 AD9434FMC
 ~~~~~~~~~
@@ -1291,7 +1293,6 @@ AD9434FMC
    +------------------------------------------------------------+---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 AD9467FMC
 ~~~~~~~~~
 
@@ -1320,7 +1321,6 @@ AD9467FMC
    +------------------------------------------------------------+---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 AD9656FMC
 ~~~~~~~~~
 
@@ -1346,7 +1346,6 @@ AD9656FMC
    |                                                    |                                                                                       |                                                                                          |                                                                                                             | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 AD9695FMC
 ~~~~~~~~~
@@ -1374,7 +1373,6 @@ AD9695FMC
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 AD9739AFMC
 ~~~~~~~~~~
 
@@ -1399,7 +1397,6 @@ AD9739AFMC
    +-----------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 AD9783EBZ
 ~~~~~~~~~
 
@@ -1419,7 +1416,6 @@ AD9783EBZ
    |                                                         |                                                                                       |                                                                                          |                                                                                                             | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_    |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
    
-
 
 ADFMCLIDAR1EBZ
 ~~~~~~~~~~~~~~
@@ -1456,7 +1452,6 @@ ADFMCLIDAR1EBZ
    |                                                              |                                                                                                   |                                                                                                |                                                                                                                         | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_                       |
    +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
-
 
 ADQUADMXFE1EBZ
 ~~~~~~~~~~~~~~
@@ -1496,7 +1491,6 @@ ADQUADMXFE1EBZ
    +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 ADAQ7980SDZ
 ~~~~~~~~~~~
 
@@ -1533,7 +1527,6 @@ ADAQ7980SDZ
    +---------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 ADAQ8092FMC
 ~~~~~~~~~~~
 
@@ -1563,7 +1556,6 @@ ADAQ8092FMC
    |                                                             |                                                                                           |                                                                                      |                                                                                                           | `util_cpack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_cpack2>`_  |
    +-------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 ADRV9001
 ~~~~~~~~
@@ -1600,7 +1592,6 @@ ADRV9001
    |                                                        |                                                                                   |                                                                                        |                                                                                                         | `util_upack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_upack2>`_  |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 ADRV9008/9
 ~~~~~~~~~~
@@ -1648,7 +1639,6 @@ ADRV9008/9
    +---------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 ADRV9026
 ~~~~~~~~
 
@@ -1688,7 +1678,6 @@ ADRV9026
    |                                                        |                                                                                   |                                                                                        |                                                                                                         | `util_upack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_upack2>`_                    |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
-
 
 ADRV9371
 ~~~~~~~~
@@ -1736,7 +1725,6 @@ ADRV9371
    +-----------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 ADV7511OnBoard
 ~~~~~~~~~~~~~~
 
@@ -1763,7 +1751,6 @@ ADV7511OnBoard
    +----------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 ADV7513OnBoard
 ~~~~~~~~~~~~~~
 
@@ -1781,7 +1768,6 @@ ADV7513OnBoard
    |                                              |                                                                                 |                                                                                           |                      | `axi_sysid <http://github.com/analogdevicesinc/hdl/tree/main/library/axi_sysid>`_      |
    +----------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+----------------------+----------------------------------------------------------------------------------------+
    
-
 
 ARRadio
 ~~~~~~~
@@ -1810,7 +1796,6 @@ ARRadio
    |                                                                              |                                                                                 |                                                                                     |                      | `util_upack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_upack2>`_  |
    +------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 CN0363
 ~~~~~~
@@ -1858,7 +1843,6 @@ CN0363
    +--------------------------------------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 CN0506
 ~~~~~~
 
@@ -1887,7 +1871,6 @@ CN0506
    +--------------------------------------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
    
 
-
 CN0540
 ~~~~~~
 
@@ -1915,7 +1898,6 @@ CN0540
    |                                            |                                                                               |                                                                                          |                                                                                                       | `spi_engine_offload <http://github.com/analogdevicesinc/hdl/tree/main/library/spi_engine/spi_engine_offload>`_            |
    +--------------------------------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
-
 
 CN0561
 ~~~~~~
@@ -1953,7 +1935,6 @@ CN0561
    +--------------------------------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 CN0577
 ~~~~~~
 
@@ -1984,7 +1965,6 @@ CN0577
    +--------------------------------------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 CN0579
 ~~~~~~
 
@@ -2006,7 +1986,6 @@ CN0579
    |                                            |                                                                               |                                                                                          |                                                                                                       | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_      |
    +--------------------------------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
    
-
 
 DACFMCEBZ
 ~~~~~~~~~
@@ -2044,7 +2023,6 @@ DACFMCEBZ
    +------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 DC2677A
 ~~~~~~~
 
@@ -2066,7 +2044,6 @@ DC2677A
    |                                              |                                                                                 |                                                                                     |                      | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_      |
    +----------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------+----------------------------------------------------------------------------------------+
    
-
 
 FMCADC2/FMCADC3
 ~~~~~~~~~~~~~~~
@@ -2102,7 +2079,6 @@ FMCADC2/FMCADC3
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 FMCADC5
 ~~~~~~~
 
@@ -2134,7 +2110,6 @@ FMCADC5
    |                                                            |                                                                                 |                                                                                     |                                                                                                     | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 FMCDAQ2
 ~~~~~~~
@@ -2190,7 +2165,6 @@ FMCDAQ2
    +------------------------------------------------------------+---------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 FMCDAQ3
 ~~~~~~~
 
@@ -2235,7 +2209,6 @@ FMCDAQ3
    +--------------------------------------------------------------+---------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 FMCJESDADC1
 ~~~~~~~~~~~
 
@@ -2267,7 +2240,6 @@ FMCJESDADC1
    |                                                                    |                                                                                         |                                                                                         |                                                                                                             | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +--------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 FMCOMMS11
 ~~~~~~~~~
@@ -2309,7 +2281,6 @@ FMCOMMS11
    +----------------------------------------------------------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 FMCOMMS2/FMCOMMS3/FMCOMMS4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2350,7 +2321,6 @@ FMCOMMS2/FMCOMMS3/FMCOMMS4
    +--------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
 
-
 FMCOMMS5
 ~~~~~~~~
 
@@ -2384,7 +2354,6 @@ FMCOMMS5
    |                                                              |                                                                                   |                                                                                        |                                                                                                         | `util_upack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_upack2>`_  |
    +--------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 FMCOMMS8
 ~~~~~~~~
@@ -2424,7 +2393,6 @@ FMCOMMS8
    +--------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 FMCIMAGEONG
 ~~~~~~~~~~~
 
@@ -2455,7 +2423,6 @@ FMCIMAGEONG
    +-------------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 JUPITERSDR
 ~~~~~~~~~~
 
@@ -2477,7 +2444,6 @@ JUPITERSDR
    |                                                      |                                                                                         |                                                                                         |                                                                                                                         | `util_cpack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_cpack2>`_  |
    +------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 PULSAR_ADC_PMDZ
 ~~~~~~~~~~~~~~~
@@ -2507,7 +2473,6 @@ PULSAR_ADC_PMDZ
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 Help & Support
 ~~~~~~~~~~~~~~
 
@@ -2519,8 +2484,6 @@ Help & Support
    -  The following quick links allows you to browse the github repository for a list of current `branches <http://github.com/analogdevicesinc/hdl/branches/active>`_, `library components <http://github.com/analogdevicesinc/hdl/tree/main/library>`_, and `projects <http://github.com/analogdevicesinc/hdl/tree/main/projects>`_.
    -  Questions? We can help with :ez:`FPGA questions <community/fpga>`, :ez:`Linux driver questions <community/linux-device-drivers/linux-software-drivers>`, :ez:`No-OS Drivers questions <community/linux-device-drivers/microcontroller-no-os-drivers>`.
    
-
-
 
 Projects list and dependencies for main
 ---------------------------------------
@@ -2553,7 +2516,6 @@ AD3552REVB
    +----------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 AD40XXFMC
 ~~~~~~~~~
 
@@ -2590,7 +2552,6 @@ AD40XXFMC
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD4110
 ~~~~~~
 
@@ -2616,7 +2577,6 @@ AD4110
    |                                                     |                                                                               |                                                                                |                                                                                               | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
-
 
 AD4134FMC
 ~~~~~~~~~
@@ -2653,7 +2613,6 @@ AD4134FMC
    |                                                 |                                                                                       |                                                                                    |                                                                                                       | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_                                         |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
-
 
 AD4630FMC
 ~~~~~~~~~
@@ -2695,7 +2654,6 @@ AD4630FMC
    +--------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD469XFMC
 ~~~~~~~~~
 
@@ -2732,7 +2690,6 @@ AD469XFMC
    +--------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD4858FMCZ
 ~~~~~~~~~~
 
@@ -2765,7 +2722,6 @@ AD4858FMCZ
    +----------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
 
-
 AD5758SDZ
 ~~~~~~~~~
 
@@ -2791,7 +2747,6 @@ AD5758SDZ
    |                                                    |                                                                                       |                                                                                    |                                                                                                       | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_        |
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
-
 
 AD5766SDZ
 ~~~~~~~~~
@@ -2827,7 +2782,6 @@ AD5766SDZ
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD6676EVB
 ~~~~~~~~~
 
@@ -2859,7 +2813,6 @@ AD6676EVB
    |                                                    |                                                                                     |                                                                                       |                                                                                                         | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +----------------------------------------------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 AD7134FMC
 ~~~~~~~~~
@@ -2897,7 +2850,6 @@ AD7134FMC
    +--------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD719XASDZ
 ~~~~~~~~~~
 
@@ -2911,7 +2863,6 @@ AD719XASDZ
    | :adi:`AD79XASDZ <eval-ad7190>`                     | `ad719x_asdz <http://github.com/analogdevicesinc/hdl/tree/main/projects/ad719x_asdz>`_  | `coraz7s <http://github.com/analogdevicesinc/hdl/tree/main/projects/ad719x_asdz/coraz7s>`_  | `ad719x_asdz_coraz7s <https://wiki.analog.com/resources/fpga/docs/hdl/utilization_main?#ad719x_asdz_coraz7s>`_  | `axi_sysid <http://github.com/analogdevicesinc/hdl/tree/main/library/axi_sysid>`_  |
    +----------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
    
-
 
 AD738xFMC
 ~~~~~~~~~
@@ -2949,7 +2900,6 @@ AD738xFMC
    +--------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD7405FMC
 ~~~~~~~~~
 
@@ -2977,7 +2927,6 @@ AD7405FMC
    |                                                    |                                                                                       |                                                                                    |                                                                                                       | `util_dec256sinc24b <http://github.com/analogdevicesinc/hdl/tree/main/library/util_dec256sinc24b>`_  |
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 AD7606XFMC
 ~~~~~~~~~~
@@ -3010,7 +2959,6 @@ AD7606XFMC
    |                                                 |                                                                                         |                                                                                     |                                                                                                         | `util_cpack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_cpack2>`_  |
    +-------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 AD7616SDZ
 ~~~~~~~~~
@@ -3050,7 +2998,6 @@ AD7616SDZ
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD77681EVB
 ~~~~~~~~~~
 
@@ -3085,7 +3032,6 @@ AD77681EVB
    +-------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD7768EVB
 ~~~~~~~~~
 
@@ -3116,7 +3062,6 @@ AD7768EVB
    +----------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
 
-
 AD777XARDZ
 ~~~~~~~~~~
 
@@ -3146,7 +3091,6 @@ AD777XARDZ
    |                                                     |                                                                                         |                                                                                               |                                                                                                         | `util_cpack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_cpack2>`_  |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 AD9081FMCAEBZ
 ~~~~~~~~~~~~~
@@ -3210,7 +3154,6 @@ AD9081FMCAEBZ
    +--------------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD9081FMCAEBZXBAND
 ~~~~~~~~~~~~~~~~~~
 
@@ -3262,7 +3205,6 @@ AD9081FMCAEBZXBAND
    |                                                               |                                                                                                               |                                                                                                      |                                                                                                                                     | `util_hbm <http://github.com/analogdevicesinc/hdl/tree/main/library/util_hbm>`_                                                  |
    +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    
-
 
 AD9082FMCAEBZ
 ~~~~~~~~~~~~~
@@ -3322,7 +3264,6 @@ AD9082FMCAEBZ
    +--------------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD9083EVB
 ~~~~~~~~~
 
@@ -3353,7 +3294,6 @@ AD9083EVB
    +---------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD9083VNA
 ~~~~~~~~~
 
@@ -3379,7 +3319,6 @@ AD9083VNA
    |                                                    |                                                                                       |                                                                                          |                                                                                                             | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 AD9208DUALEBZ
 ~~~~~~~~~~~~~
@@ -3408,7 +3347,6 @@ AD9208DUALEBZ
    |                                                     |                                                                                                 |                                                                                               |                                                                                                                       | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 AD9209
 ~~~~~~
@@ -3462,7 +3400,6 @@ AD9209
    +-------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    
 
-
 AD9213DUALEBZ
 ~~~~~~~~~~~~~
 
@@ -3482,7 +3419,6 @@ AD9213DUALEBZ
    |                                                     |                                                                                                 |                                                                                               |                      | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------+--------------------------------------------------------------------------------------------------------------------+
    
-
 
 AD9213EVB
 ~~~~~~~~~
@@ -3510,7 +3446,6 @@ AD9213EVB
    +--------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 AD9265FMC
 ~~~~~~~~~
 
@@ -3534,7 +3469,6 @@ AD9265FMC
    |                                                            |                                                                                       |                                                                                        |                                                                                                           | `axi_sysid <http://github.com/analogdevicesinc/hdl/tree/main/library/axi_sysid>`_        |
    +------------------------------------------------------------+---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
-
 
 AD9434FMC
 ~~~~~~~~~
@@ -3564,7 +3498,6 @@ AD9434FMC
    +------------------------------------------------------------+---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 AD9467FMC
 ~~~~~~~~~
 
@@ -3593,7 +3526,6 @@ AD9467FMC
    +------------------------------------------------------------+---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 AD9656FMC
 ~~~~~~~~~
 
@@ -3619,7 +3551,6 @@ AD9656FMC
    |                                                    |                                                                                       |                                                                                          |                                                                                                             | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 AD9695FMC
 ~~~~~~~~~
@@ -3647,7 +3578,6 @@ AD9695FMC
    +----------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 AD9739AFMC
 ~~~~~~~~~~
 
@@ -3672,7 +3602,6 @@ AD9739AFMC
    +-----------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 AD9783EBZ
 ~~~~~~~~~
 
@@ -3692,7 +3621,6 @@ AD9783EBZ
    |                                                         |                                                                                       |                                                                                          |                                                                                                             | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_    |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
    
-
 
 ADFMCLIDAR1EBZ
 ~~~~~~~~~~~~~~
@@ -3729,7 +3657,6 @@ ADFMCLIDAR1EBZ
    |                                                              |                                                                                                   |                                                                                                |                                                                                                                         | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_                       |
    +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
-
 
 ADQUADMXFE1EBZ
 ~~~~~~~~~~~~~~
@@ -3769,7 +3696,6 @@ ADQUADMXFE1EBZ
    +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 ADAQ7980SDZ
 ~~~~~~~~~~~
 
@@ -3806,7 +3732,6 @@ ADAQ7980SDZ
    +---------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 ADAQ8092FMC
 ~~~~~~~~~~~
 
@@ -3836,7 +3761,6 @@ ADAQ8092FMC
    |                                                             |                                                                                           |                                                                                      |                                                                                                           | `util_cpack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_cpack2>`_  |
    +-------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 ADRV9001
 ~~~~~~~~
@@ -3873,7 +3797,6 @@ ADRV9001
    |                                                        |                                                                                   |                                                                                        |                                                                                                         | `util_upack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_upack2>`_  |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 ADRV9008/9
 ~~~~~~~~~~
@@ -3921,7 +3844,6 @@ ADRV9008/9
    +---------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 ADRV9026
 ~~~~~~~~
 
@@ -3961,7 +3883,6 @@ ADRV9026
    |                                                        |                                                                                   |                                                                                        |                                                                                                         | `util_upack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_upack2>`_                    |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
-
 
 ADRV9371
 ~~~~~~~~
@@ -4009,7 +3930,6 @@ ADRV9371
    +-----------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 ADV7511OnBoard
 ~~~~~~~~~~~~~~
 
@@ -4036,7 +3956,6 @@ ADV7511OnBoard
    +----------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 ADV7513OnBoard
 ~~~~~~~~~~~~~~
 
@@ -4054,7 +3973,6 @@ ADV7513OnBoard
    |                                              |                                                                                 |                                                                                           |                      | `axi_sysid <http://github.com/analogdevicesinc/hdl/tree/main/library/axi_sysid>`_      |
    +----------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+----------------------+----------------------------------------------------------------------------------------+
    
-
 
 ARRadio
 ~~~~~~~
@@ -4083,7 +4001,6 @@ ARRadio
    |                                                                              |                                                                                 |                                                                                     |                      | `util_upack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_upack2>`_  |
    +------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 CN0363
 ~~~~~~
@@ -4131,7 +4048,6 @@ CN0363
    +--------------------------------------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 CN0506
 ~~~~~~
 
@@ -4160,7 +4076,6 @@ CN0506
    +--------------------------------------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
    
 
-
 CN0540
 ~~~~~~
 
@@ -4188,7 +4103,6 @@ CN0540
    |                                            |                                                                               |                                                                                          |                                                                                                       | `spi_engine_offload <http://github.com/analogdevicesinc/hdl/tree/main/library/spi_engine/spi_engine_offload>`_            |
    +--------------------------------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
-
 
 CN0561
 ~~~~~~
@@ -4226,7 +4140,6 @@ CN0561
    +--------------------------------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 CN0577
 ~~~~~~
 
@@ -4257,7 +4170,6 @@ CN0577
    +--------------------------------------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 CN0579
 ~~~~~~
 
@@ -4279,7 +4191,6 @@ CN0579
    |                                            |                                                                               |                                                                                          |                                                                                                       | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_      |
    +--------------------------------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
    
-
 
 DACFMCEBZ
 ~~~~~~~~~
@@ -4317,7 +4228,6 @@ DACFMCEBZ
    +------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 DC2677A
 ~~~~~~~
 
@@ -4339,7 +4249,6 @@ DC2677A
    |                                              |                                                                                 |                                                                                     |                      | `sysid_rom <http://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom>`_      |
    +----------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------+----------------------------------------------------------------------------------------+
    
-
 
 FMCADC2/FMCADC3
 ~~~~~~~~~~~~~~~
@@ -4375,7 +4284,6 @@ FMCADC2/FMCADC3
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 FMCADC5
 ~~~~~~~
 
@@ -4407,7 +4315,6 @@ FMCADC5
    |                                                            |                                                                                 |                                                                                     |                                                                                                     | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 FMCDAQ2
 ~~~~~~~
@@ -4463,7 +4370,6 @@ FMCDAQ2
    +------------------------------------------------------------+---------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 FMCDAQ3
 ~~~~~~~
 
@@ -4508,7 +4414,6 @@ FMCDAQ3
    +--------------------------------------------------------------+---------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 FMCJESDADC1
 ~~~~~~~~~~~
 
@@ -4540,7 +4445,6 @@ FMCJESDADC1
    |                                                                    |                                                                                         |                                                                                         |                                                                                                             | `util_adxcvr <http://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr>`_         |
    +--------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
-
 
 FMCOMMS11
 ~~~~~~~~~
@@ -4582,7 +4486,6 @@ FMCOMMS11
    +----------------------------------------------------------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
    
 
-
 FMCOMMS2/FMCOMMS3/FMCOMMS4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -4623,7 +4526,6 @@ FMCOMMS2/FMCOMMS3/FMCOMMS4
    +--------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
 
-
 FMCOMMS5
 ~~~~~~~~
 
@@ -4657,7 +4559,6 @@ FMCOMMS5
    |                                                              |                                                                                   |                                                                                        |                                                                                                         | `util_upack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_upack2>`_  |
    +--------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 FMCOMMS8
 ~~~~~~~~
@@ -4697,7 +4598,6 @@ FMCOMMS8
    +--------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    
 
-
 FMCIMAGEONG
 ~~~~~~~~~~~
 
@@ -4728,7 +4628,6 @@ FMCIMAGEONG
    +-------------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    
 
-
 JUPITERSDR
 ~~~~~~~~~~
 
@@ -4750,7 +4649,6 @@ JUPITERSDR
    |                                                      |                                                                                         |                                                                                         |                                                                                                                         | `util_cpack2 <http://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_cpack2>`_  |
    +------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    
-
 
 PULSAR_ADC_PMDZ
 ~~~~~~~~~~~~~~~
@@ -4780,7 +4678,6 @@ PULSAR_ADC_PMDZ
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 Help & Support
 ~~~~~~~~~~~~~~
 
@@ -4792,8 +4689,6 @@ Help & Support
    -  The following quick links allows you to browse the github repository for a list of current `branches <http://github.com/analogdevicesinc/hdl/branches/active>`_, `library components <http://github.com/analogdevicesinc/hdl/tree/main/library>`_, and `projects <http://github.com/analogdevicesinc/hdl/tree/main/projects>`_.
    -  Questions? We can help with :ez:`FPGA questions <community/fpga>`, :ez:`Linux driver questions <community/linux-device-drivers/linux-software-drivers>`, :ez:`No-OS Drivers questions <community/linux-device-drivers/microcontroller-no-os-drivers>`.
    
-
-
 
 Downloads (Linux)
 -----------------

@@ -9,7 +9,17 @@ ADI Surround
 Description
 -----------
 
-ADI Surround uses matrix-surround decoding techniques: deriving five channels of output from a two-channel input. This process entails using a sum channel (the combination of the left and right channels, L+R), which contains frontal information, and a difference channel (the difference between the left and right channels, L-R / R-L), which contains ambiance information. Depending on the blending and distribution of the difference channel with the sum channel, we can derive the left, right, center, and side or rear surround channels. The L and R front speakers carry music, frontal sound effects, and directional dialog; the center speaker carries the rest (meaning most) of the dialog, and the surround speakers (ideally placed to the side of and slightly above the listeners) provide ambiance and surround effects
+ADI Surround uses matrix-surround decoding techniques: deriving five channels of
+output from a two-channel input. This process entails using a sum channel (the
+combination of the left and right channels, L+R), which contains frontal
+information, and a difference channel (the difference between the left and right
+channels, L-R / R-L), which contains ambiance information. Depending on the
+blending and distribution of the difference channel with the sum channel, we can
+derive the left, right, center, and side or rear surround channels. The L and R
+front speakers carry music, frontal sound effects, and directional dialog; the
+center speaker carries the rest (meaning most) of the dialog, and the surround
+speakers (ideally placed to the side of and slightly above the listeners)
+provide ambiance and surround effects
 
 Usage
 -----
@@ -36,7 +46,9 @@ It also features two room sizes:
    *Small
    *Large
 
-These Large and Small settings are to make it sound like a small or large room. This is a setting that can be experimented with to adjust for the room the system is in and personal preference. So there is no “correct” setting for this
+These Large and Small settings are to make it sound like a small or large room.
+This is a setting that can be experimented with to adjust for the room the
+system is in and personal preference. So there is no “correct” setting for this
 
 Targets Supported
 -----------------
@@ -72,7 +84,6 @@ Output2 Audio Output channel for Right side
 Output3 Audio Output channel for Left surround
 Output4 Audio Output channel for Right surround
 ======= ===== =================================
-
 
 | ===== Configurable Parameters =====
 

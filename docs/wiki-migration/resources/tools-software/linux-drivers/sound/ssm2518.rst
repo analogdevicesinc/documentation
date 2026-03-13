@@ -43,19 +43,34 @@ Files
 Example device initialization
 =============================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
-
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 The I2C address of the SSM2518 depends on the setting of the ADDR pin
 
@@ -223,9 +238,11 @@ Supported DAI formats
 Supported SYSCLK rates
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The CODECs system clock can be configured for various input rates. When configuring the codec system clock use SSM2518_SYSCLK for the clock id.
+The CODECs system clock can be configured for various input rates. When
+configuring the codec system clock use SSM2518_SYSCLK for the clock id.
 
-The following list contains the supported system clock rates and their resulting sample-rates.
+The following list contains the supported system clock rates and their resulting
+sample-rates.
 
 +--------------------------------------------------------------------------------------+------------------------------------------------+
 | SYSCLK                                                                               | Supported sample-rates                         |
@@ -257,13 +274,14 @@ To configure the devices sysclk the ``snd_soc_codec_set_sysclk()`` function can 
 
    Starting with Kernel v4.18 ``snd_soc_codec_set_sysclk`` interface was removed. Instead ``snd_soc_component_set_sysclk`` should be used
 
-
 TDM configuration
 ~~~~~~~~~~~~~~~~~
 
-If you want to use the SSM2518 in TDM mode you can configure it using snd_soc_dai_set_tdm_slot() from you ASoC board driver.
+If you want to use the SSM2518 in TDM mode you can configure it using
+snd_soc_dai_set_tdm_slot() from you ASoC board driver.
 
-The following restrictions apply to the parameters of snd_soc_dai_set_tdm_slot().
+The following restrictions apply to the parameters of
+snd_soc_dai_set_tdm_slot().
 
 -  **tx_mask** must have exactly two bits set. The most upper bit will be the slot of right channel, the most lower bit will be the slot left channel. E.g. 0x3 means the left channel will be at slot 0 and the right channel will be at slot 1 in the TDM stream.
 -  **rx_mask** must be 0.
@@ -318,7 +336,6 @@ Example DAI configuration
        .codec_dai_name = "ssm2518-hifi",
        .dai_fmt = SND_SOC_DAIFMT_I2S
 
-
                SND_SOC_DAIFMT_NB_NF |
 
                SND_SOC_DAIFMT_CBS_CFS,
@@ -344,4 +361,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

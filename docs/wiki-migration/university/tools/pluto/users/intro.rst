@@ -3,7 +3,7 @@ Introduction to the ADALM-PLUTO
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/pluto_on_desk.png
    :align: right
-   :width: 300px
+   :width: 300
 
 To use the :adi:`ADALM-PLUTO` Active Learning Module, you have:
 
@@ -29,13 +29,15 @@ To use the :adi:`ADALM-PLUTO` Active Learning Module, you have:
 
    -  Mass storage device
 
-      -  this will appear to the host as a disk, where you can find links for software uploads, and the serial number of the device.
+      -  this will appear to the host as a disk, where you can find links for
+         software uploads, and the serial number of the device.
 
 -  External power
 
    -  It was a possibility during the design of Pluto that the design could have consumed more than 5 unit loads for `USB 2 <https://en.wikipedia.org/wiki/USB#Power>`_ (500mA), and a "backup" power connector was added to mitigate this. This should not be necessary for nominal use, (we haven't needed it yet) but if you find the device is power cycling, or your host reports problems, please let us know, we have not seen this.
    -  An external adapter (like `this one from Adafruit <https://www.adafruit.com/products/1995?gclid=CjwKEAjwjqO_BRDribyJpc_mzHgSJABdnsFWlRs2FrqbAVZt9erVQDN6LakvKxmYjiLjTHKe_7ZqVxoCPu3w_wcB>`_).
-   -  We know the "Power" icon is the "on/off" icon, if you think that is confusing - please let us know.
+   -  We know the "Power" icon is the "on/off" icon, if you think that is
+      confusing - please let us know.
 
 .. [1]
    SubMiniature version A

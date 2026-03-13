@@ -11,12 +11,14 @@ Balance Fader Generic
 Description
 -----------
 
-Reposition the image in front of the listener by adjusting gain levels of speakers. User can configure all the front and rear channel coefficients values.
+Reposition the image in front of the listener by adjusting gain levels of
+speakers. User can configure all the front and rear channel coefficients values.
 
 Usage
 -----
 
-Click on the config button to open the balance fader coefficient window to configure the gain for respective input channels for respective outputs.
+Click on the config button to open the balance fader coefficient window to
+configure the gain for respective input channels for respective outputs.
 
 Targets Supported
 -----------------
@@ -118,6 +120,6 @@ Output
 | 
 
 .. |balanceconfig.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/balanceconfig.png
-   :width: 300px
+   :width: 300
 .. |faderconfig.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mixersandsplitters/faderconfig.png
-   :width: 300px
+   :width: 300

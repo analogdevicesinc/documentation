@@ -8,13 +8,11 @@ Capture Window
 
 :doc:`Capture window </wiki-migration/resources/tools-software/sigmastudiov2/developmentenvironment/capturewinow/capture_window>` will captures all the commands that exchanges between PC to the A2B network. For example, please refer the below snapshot.
 
-
 |image1|
 
 .. container:: centeralign
 
    **Figure:** Capture Window
-
 
 It also has features as mentioned below:
 
@@ -38,10 +36,8 @@ Sequence Window
 
    **Figure:** Sequence Window
 
-
 .. note::
 
    Refer :doc:`xml specification </wiki-migration/resources/tools-software/sigmastudiov2/specifications/sequence>` for more details
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/capture_window_view.png

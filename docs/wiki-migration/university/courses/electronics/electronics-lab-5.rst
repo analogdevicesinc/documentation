@@ -4,18 +4,19 @@ Activity: Common Emitter Amplifier
 Objective:
 ----------
 
-The purpose of this activity is to investigate the common emitter configuration of the BJT.
+The purpose of this activity is to investigate the common emitter configuration
+of the BJT.
 
 Materials:
 ----------
 
-ADALM2000 Active Learning Module Solder-less breadboard 4 - Resistors 1 - 50KΩ Variable resistor, potentiometer 1 - small signal NPN transistor (2N3904)
+ADALM2000 Active Learning Module Solder-less breadboard 4 - Resistors 1 - 50KΩ
+Variable resistor, potentiometer 1 - small signal NPN transistor (2N3904)
 
 Directions:
 -----------
 
 The configuration, shown in figure 1, demonstrates the NPN transistor used as the common emitter amplifier. Output load resistor R\ :sub:`L` is chosen such that for the desired nominal collector current I\ :sub:`C`, approximately one half of the Vp voltage (2.5V) appears at V\ :sub:`CE`. Adjustable resistor Rpot along with Rb sets the nominal bias operating point for the transistor (I\ :sub:`B`) to set the required I\ :sub:`C`. Voltage divider R\ :sub:`1`/R\ :sub:`2` is chosen to provide a sufficiently large attenuation of the input stimulus from waveform generator 1. This is done to more easily view the generator W1 signal, given the rather small signal that will appear at the base of the transistor, V\ :sub:`BE`. The attenuated waveform generator W1 signal is AC coupled into the base of the transistor by the 4.7 uF capacitor so as not to disturb the DC bias condition.
-
 
 |image1|
 
@@ -23,21 +24,17 @@ The configuration, shown in figure 1, demonstrates the NPN transistor used as th
 
    Figure 1 Common emitter amplifier test configuration
 
-
 Hardware Setup:
 ---------------
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/ce_amp_test_config-bb_bb.png
-   :width: 900px
+   :width: 900
 
 .. container:: centeralign
 
    Figure 2 Common emitter amplifier test configuration breadboard connection
 
-
 The waveform generator output W1 should be configured for a 1 KHz sine wave with 3 volt amplitude peak-to-peak and 0 volt offset. The setup should be configured with scope channel 1+ connected to display the output W1. Scope channel 2 (2+) is used to measure alternately the waveform at the base and collector of Q\ :sub:`1`.
-
-
 
 |image2|
 
@@ -45,13 +42,11 @@ The waveform generator output W1 should be configured for a 1 KHz sine wave with
 
    Figure 3 Common emitter amplifier test configuration, V\ :sub:`in` and V\ :sub:`BE`\
 
-
    |image3|
 
 .. container:: centeralign
 
    Figure 4 Common emitter amplifier test configuration, V\ :sub:`in` and V\ :sub:`BE`\
-
 
 Procedure:
 ----------
@@ -60,16 +55,15 @@ The voltage gain, A, of the common emitter amplifier can be expressed as the rat
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a5_e1.png
    :align: center
-   :width: 200px
+   :width: 200
 
 The small signal emitter resistance is 1/g\ :sub:`m` and can be viewed as being in series with the emitter. Now with a signal applied to the base the same current (neglecting base current) flows in r\ :sub:`e` and the collector load R\ :sub:`L`. Thus the gain A is given by the ratio of R\ :sub:`L` to r\ :sub:`e`.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a5_e2.png
    :align: center
-   :width: 200px
+   :width: 200
 
 Alternately, the curve tracer circuit from activity 7 can be modified slightly, (might be simplest way since it was already constructed in the earlier section) to produce a common emitter amplifier test circuit shown below. All the attributes are basically the same with two slight advantages. One is the base current bias is no longer dependent on the exponential base voltage (V\ :sub:`BE`). The second is the summation of the small AC signal from the attenuated AWG 1 output is independent of the base bias circuit and does not need to be AC coupled. The small signal AC input is applied to the non-inverting terminal of the op-amp and thus due to the negative feedback also appears at the base of the transistor (inverting op-amp input).
-
 
 |image4|
 
@@ -77,13 +71,12 @@ Alternately, the curve tracer circuit from activity 7 can be modified slightly, 
 
    Figure 5 Alternate Common emitter amplifier test configuration
 
-
    |image5|
 
 .. container:: centeralign
 
-   Figure 6 Alternate Common emitter amplifier test configuration breadboard connection
-
+   Figure 6 Alternate Common emitter amplifier test configuration breadboard
+   connection
 
    |image6|
 
@@ -91,13 +84,11 @@ Alternately, the curve tracer circuit from activity 7 can be modified slightly, 
 
    Figure 7 Alternate Common emitter amplifier test configuration, Vin and VBE
 
-
    |image7|
 
 .. container:: centeralign
 
    Figure 8 Alternate Common emitter amplifier test configuration VBE zoom
-
 
 Self-biased configuration with negative feedback
 ================================================
@@ -105,8 +96,8 @@ Self-biased configuration with negative feedback
 Objective:
 ----------
 
-The purpose of this section is to investigate effect of adding negative feedback to stabilize the DC operating point.
-
+The purpose of this section is to investigate effect of adding negative feedback
+to stabilize the DC operating point.
 
 |image8|
 
@@ -114,13 +105,11 @@ The purpose of this section is to investigate effect of adding negative feedback
 
    Figure 9 Self Biased configuration
 
-
    |image9|
 
 .. container:: centeralign
 
    Figure 10 Self Biased configuration breadboard connection
-
 
    |image10|
 
@@ -128,13 +117,11 @@ The purpose of this section is to investigate effect of adding negative feedback
 
    Figure 11 Self Biased configuration, V\ :sub:`in` and V\ :sub:`CE`
 
-
    |image11|
 
 .. container:: centeralign
 
    Figure 12 Self Biased configuration, V\ :sub:`in` and V\ :sub:`BE`\
-
 
 Questions:
 ----------
@@ -147,7 +134,8 @@ Adding emitter degeneration
 Objective:
 ----------
 
-The purpose of this activity is to investigate effect of the addition of emitter degeneration.
+The purpose of this activity is to investigate effect of the addition of emitter
+degeneration.
 
 Additional Materials:
 ---------------------
@@ -159,13 +147,11 @@ Directions:
 
 Disconnect the emitter of Q\ :sub:`1` from ground and insert R\ :sub:`E`, a 5KΩ potentiometer, as shown in the following diagram. Adjust R\ :sub:`E` while noting the output signal seen at the collector of the transistor.
 
-
 |image12|
 
 .. container:: centeralign
 
    Figure 13 Emitter degeneration added
-
 
    |image13|
 
@@ -173,20 +159,17 @@ Disconnect the emitter of Q\ :sub:`1` from ground and insert R\ :sub:`E`, a 5KΩ
 
    Figure 14 Emitter degeneration added breadboard connection
 
-
    |image14|
 
 .. container:: centeralign
 
    Figure 15 Emitter degeneration added, V\ :sub:`in` and V\ :sub:`CE`\
 
-
    |image15|
 
 .. container:: centeralign
 
    Figure 16 Emitter degeneration added, V\ :sub:`in` and V\ :sub:`BE`
-
 
 Questions:
 ----------
@@ -200,13 +183,11 @@ Increasing AC gain of emitter degenerated amplifier
 
 Adding the emitter degeneration resistor has improved the stability of the DC operating point at the cost decreased amplifier gain. A higher gain for AC signals can be restored to some extent by adding capacitor C\ :sub:`2`\ across the degeneration resistor R\ :sub:`E` as shown in figure 9.
 
-
 |image16|
 
 .. container:: centeralign
 
    Figure 17 C\ :sub:`2` added to increase AC gain
-
 
    |image17|
 
@@ -214,20 +195,17 @@ Adding the emitter degeneration resistor has improved the stability of the DC op
 
    Figure 18 C\ :sub:`2` added to increase AC gain
 
-
    |image18|
 
 .. container:: centeralign
 
    Figure 19 C\ :sub:`2` added to increase AC gain, V\ :sub:`in` and V\ :sub:`CE`
 
-
    |image19|
 
 .. container:: centeralign
 
    Figure 20 C\ :sub:`2` added to increase AC gain, V\ :sub:`in` and V\ :sub:`BE`
-
 
 .. admonition:: Download
    :class: download
@@ -239,7 +217,6 @@ Adding the emitter degeneration resistor has improved the stability of the DC op
    -  LTspice files: :git-education_tools:`m2k/ltspice/comm_emit_amp_ltspice`
    
 
-
 References for further reading:
 -------------------------------
 
@@ -248,36 +225,36 @@ http://en.wikipedia.org/wiki/Common_emitter_amplifier
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a5_f1.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/1vce-gnd.png
-   :width: 900px
+   :width: 900
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/1vbe-gnd.png
-   :width: 900px
+   :width: 900
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a5_f2.png
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a5_nf2.png
 .. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/alt_ce_vb.png
-   :width: 900px
+   :width: 900
 .. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/alt_ce_vb_zoom.png
-   :width: 900px
+   :width: 900
 .. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a5_f3.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a5_nf3.png
 .. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/self_b_vc.png
-   :width: 900px
+   :width: 900
 .. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/self_b_vb.png
-   :width: 900px
+   :width: 900
 .. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a5_f4.png
-   :width: 500px
+   :width: 500
 .. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/a5_nf4.png
 .. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/emit_deg_vc-gnd.png
-   :width: 900px
+   :width: 900
 .. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/emit_deg_vb-gnd.png
-   :width: 900px
+   :width: 900
 .. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/a5_f5.png
-   :width: 500px
+   :width: 500
 .. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/a5_nf5.png
 .. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/inc_gain_vc.png
-   :width: 900px
+   :width: 900
 .. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/inc_gain_vb.png
-   :width: 900px
+   :width: 900

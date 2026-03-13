@@ -3,7 +3,8 @@
 Matlab Connection
 =================
 
-This example script designs an FIR filter with Matlab using following Matlab function:
+This example script designs an FIR filter with Matlab using following Matlab
+function:
 
 h = firpm(N, a\*2, b);
 
@@ -15,7 +16,10 @@ H = firpm(30, [0 .1 .2 .5]*2, [1 1 0 0]);
 
 Type help firpm in Matlab command line for more information on this function.
 
-This scrip can take a Schematic as an input argument along with the FIR address and FirOrder. If the arguments are valid the script will run the filter on SHARC target through SigmaStudio. It is expected that the target is booted with an appropriate script. \\
+This scrip can take a Schematic as an input argument along with the FIR address
+and FirOrder. If the arguments are valid the script will run the filter on SHARC
+target through SigmaStudio. It is expected that the target is booted with an
+appropriate script. \\
 
 Hardware and Software Requirement
 ---------------------------------

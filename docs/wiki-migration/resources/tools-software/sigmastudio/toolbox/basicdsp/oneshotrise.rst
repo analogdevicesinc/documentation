@@ -48,14 +48,20 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The following graph shows the output response based on a given input signal through the One Shot Rise block. There are two different case scenarios: Case1: The input signal starts high Case2: The input signal starts low
+The following graph shows the output response based on a given input signal
+through the One Shot Rise block. There are two different case scenarios: Case1:
+The input signal starts high Case2: The input signal starts low
 
-In the graphs the input signal is only toggling between "1" and "0" however this algorithm will respond to any changes in level of the input signal, thus the first rising edge of the input signal will trigger the output to go high.
+In the graphs the input signal is only toggling between "1" and "0" however this
+algorithm will respond to any changes in level of the input signal, thus the
+first rising edge of the input signal will trigger the output to go high.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/oneshotrisepic2.png
    :alt: oneshotrisepic2.png
 
-The format of the "1" output value of the is designated by the drop-down menu. The following table shows the "1" Output that corresponds to the drop-down menu selection.
+The format of the "1" output value of the is designated by the drop-down menu.
+The following table shows the "1" Output that corresponds to the drop-down menu
+selection.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/oneshotfallpic3.png
    :alt: oneshotfallpic3.png

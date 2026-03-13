@@ -3,7 +3,8 @@ ASRC Input With Gain
 
 :doc:`Click here to return to the Input/Output section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/io>`
 
-This module can be used to read data from ASRC and apply gain before passing to other modules in the schematic
+This module can be used to read data from ASRC and apply gain before passing to
+other modules in the schematic
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/asrcinwithgain.jpg
    :align: center
@@ -22,12 +23,11 @@ Name           Format [int/dec] - [control/audio] Function Description
 Pin 0: ASRC In decimal - audio                    From ASRC with Gain
 ============== ================================== ====================
 
-
-
 Grow Algorithm
 --------------
 
-The module can be grown upto 16 channels to support 16 ASRC In pins. When grown each input has a gain control corresponding to it.
+The module can be grown upto 16 channels to support 16 ASRC In pins. When grown
+each input has a gain control corresponding to it.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/asrcinwithgain2.jpg
    :align: center
@@ -48,7 +48,8 @@ Gain can be configured for each channels.
 | 
 | |image1|
 
-Click on the TinyCircle next to gain to enable/disable sharing of gain between channels.
+Click on the TinyCircle next to gain to enable/disable sharing of gain between
+channels.
 
 In the example shown above.
 
@@ -66,7 +67,6 @@ GUI Control Name Compiler Name           Function Description
 ================ ======================= ===========================
 Gain             ASRCInwithGainAlg1gain0 Gain Value for each channel
 ================ ======================= ===========================
-
 
 | Here,
 

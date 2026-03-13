@@ -53,12 +53,12 @@ Files
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -81,7 +81,8 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver Usage
 ============
 
-To configure the chip, use the attributes according to the device register to IIO ABI mapping below:
+To configure the chip, use the attributes according to the device register to
+IIO ABI mapping below:
 
 +-----------------------------+------+--------------------------------------------+---------+-------------------------------------------------------------------------------+
 | Register                    | Addr | IIO ABI (sysfs)                            | Units   | Notes                                                                         |
@@ -139,7 +140,6 @@ Accessing a list of channels:
       dev 'ad2s1210', channel 'altvoltage1' (input), found 1 channel-specific attributes
    
 
-
 For example, to get position channel **angl0**:
 
 .. container:: box bggreen
@@ -157,7 +157,6 @@ For example, to get position channel **angl0**:
       dev 'ad2s1210', channel 'angl0' (input), attr 'scale', value '0.000095874'
    
 
-
 Or velocity channel **anglvel0**:
 
 .. container:: box bggreen
@@ -173,11 +172,11 @@ Or velocity channel **anglvel0**:
       dev 'ad2s1210', channel 'anglvel0' (input), attr 'scale', value '0.023968449'
    
 
-
 Interfacing With the AD2S1210 via /sys/bus
 ------------------------------------------
 
-Alternatively, you can read and write data directly from the device path in /sys/bus:
+Alternatively, you can read and write data directly from the device path in
+/sys/bus:
 
 .. container:: box bggreen
 
@@ -285,8 +284,8 @@ Alternatively, you can read and write data directly from the device path in /sys
       34115
    
 
-
-Hysteresis can be enabled or disabled this way. To do so, first check the output of in_angl0_hysteresis_available:
+Hysteresis can be enabled or disabled this way. To do so, first check the output
+of in_angl0_hysteresis_available:
 
 .. container:: box bggreen
 
@@ -299,8 +298,8 @@ Hysteresis can be enabled or disabled this way. To do so, first check the output
       0 1
    
 
-
-To turn hysteresis off, write the first value from the output to in_angl0_hysteresis:
+To turn hysteresis off, write the first value from the output to
+in_angl0_hysteresis:
 
 .. container:: box bggreen
 
@@ -312,8 +311,8 @@ To turn hysteresis off, write the first value from the output to in_angl0_hyster
       root@setup-2-zed:/sys/bus/iio/devices/iio:device1# echo 0 > in_angl0_hysteresis
    
 
-
-To turn it on, write the second value (which is dependent on the assigned bits for resolution and may not always be 1):
+To turn it on, write the second value (which is dependent on the assigned bits
+for resolution and may not always be 1):
 
 .. container:: box bggreen
 
@@ -325,11 +324,11 @@ To turn it on, write the second value (which is dependent on the assigned bits f
       root@setup-2-zed:/sys/bus/iio/devices/iio:device1# echo 1 > in_angl0_hysteresis
    
 
-
 Triggered buffer
 ----------------
 
-To generate samples using the triggered buffer, you will need a trigger. You can create an hrtimer trigger and test it by retrieving samples like this:
+To generate samples using the triggered buffer, you will need a trigger. You can
+create an hrtimer trigger and test it by retrieving samples like this:
 
 .. container:: box bggreen
 
@@ -405,13 +404,13 @@ To generate samples using the triggered buffer, you will need a trigger. You can
       ...
    
 
-
 .. important::
 
-   using the -t option to specify the trigger with iio_readdev resets the sampling rate of the hrtimer trigger back to 100Hz!
+   using the -t option to specify the trigger with iio_readdev resets the
+   sampling rate of the hrtimer trigger back to 100Hz!
 
-
-For other apps, we probably want a high sample rate. You can change the rate like this:
+For other apps, we probably want a high sample rate. You can change the rate
+like this:
 
 .. container:: box bggreen
 
@@ -423,7 +422,6 @@ For other apps, we probably want a high sample rate. You can change the rate lik
       root@setup-2-zed:~# iio_attr -d test sampling_frequency 10000
       10000.000000
    
-
 
 Reading IIO Events
 ------------------
@@ -529,18 +527,18 @@ Sample Images
 Eval board connections:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-resolver/img_20231206_135017785_hdr.jpg
-   :width: 400px
+   :width: 400
 
 Raspberry Pi connections:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-resolver/img_20231206_135039086.jpg
-   :width: 400px
+   :width: 400
 
 Zedboard
 --------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-resolver/img_20231207_080341.jpg
-   :width: 400px
+   :width: 400
 
 See :doc:`ad2s1210_sdz </wiki-migration/resources/eval/user-guides/ad2s1210_sdz>` for a detailed setup guide
 
@@ -565,6 +563,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-resolver/youtube>p_vntewue24
-

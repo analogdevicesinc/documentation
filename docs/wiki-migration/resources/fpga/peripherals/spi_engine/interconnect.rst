@@ -5,13 +5,14 @@ SPI Engine Interconnect FPGA Peripheral
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/spi_engine/spi_engine_interconnect.html\
 
-
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/spi_engine_interconnect.png
    :align: right
 
 The SPI Engine Interconnect module allows connecting multiple `spi_engine_control_interface <https://wiki.analog.com/spi_engine_control_interface>`_ masters to a single `spi_engine_control_interface <https://wiki.analog.com/spi_engine_control_interface>`_ slave. This enables multiple command stream generators to connect to a single `SPI Engine Execution module <https://wiki.analog.com/engine>`_ and consequential give them access to the same SPI bus. The interconnect modules take care of properly arbitrating between the different command streams.
 
-Combining multiple command stream generators in a design and connecting them to a single execution module allows for the creation of flexible and efficient designs using standard components.
+Combining multiple command stream generators in a design and connecting them to
+a single execution module allows for the creation of flexible and efficient
+designs using standard components.
 
 Files
 -----

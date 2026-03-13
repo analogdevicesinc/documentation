@@ -4,14 +4,22 @@ Activity: The Source follower (NMOS) - ADALM1000
 Objective:
 ----------
 
-To investigate the simple NMOS source follower amplifier also sometimes referred to as the common drain configuration.
+To investigate the simple NMOS source follower amplifier also sometimes referred
+to as the common drain configuration.
 
 Notes:
 ------
 
-As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.
+As in all the ALM labs we use the following terminology when referring to the
+connections to the M1000 connector and configuring the hardware. The green
+shaded rectangles indicate connections to the M1000 analog I/O connector. The
+analog I/O channel pins are referred to as CA and CB. When configured to force
+voltage / measure current -V is added as in CA-V or when configured to force
+current / measure voltage -I is added as in CA-I. When a channel is configured
+in the high impedance mode to only measure voltage -H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
 
 NMOS Source Follower:
 ---------------------
@@ -26,33 +34,37 @@ Directions:
 
 The breadboard connections are shown in figure 1. The output of the channel A generator, is connected to the gate terminal of M\ :sub:`1`. The drain terminal is connected to the positive (+5V) supply. The source terminal is connected to both the 1.5 KΩ load resistor and Scope channel CB-H. The other end of the load resistor is connected to dround.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Source Follower
 
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
-The channel A voltage generator should be configured for a 100 Hz Sine wave with 3 volt Max and 2 V Min. The channel B scope in Hi-Z mode CB-H is used to measure the voltage at the source. To measure the input to output error or offset, the CA-V - CB-V Math waveform can be displayed. To measure the input to output gain, the CB-V / CA-V Math waveform can be displayed.
+The channel A voltage generator should be configured for a 100 Hz Sine wave with
+3 volt Max and 2 V Min. The channel B scope in Hi-Z mode CB-H is used to measure
+the voltage at the source. To measure the input to output error or offset, the
+CA-V - CB-V Math waveform can be displayed. To measure the input to output gain,
+the CB-V / CA-V Math waveform can be displayed.
 
 Procedure:
 ~~~~~~~~~~
 
-The incremental Gain (Vout /Vin) of the source follower should ideally be 1 but will always be slightly less than 1. The gain is generally given by the following equation:
+The incremental Gain (Vout /Vin) of the source follower should ideally be 1 but
+will always be slightly less than 1. The gain is generally given by the
+following equation:
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_e1.png
    :align: center
-   :width: 150px
+   :width: 150
 
 From the equation we can see that in order to obtain a gain close to one we can either increase R\ :sub:`L` or decrease r\ :sub:`s`. We also know that r\ :sub:`s` is a function of I\ :sub:`D` and that as I\ :sub:`D` increases r\ :sub:`s` decreases. Also from the circuit we can see that I\ :sub:`D` is related to R\ :sub:`L` and that as R\ :sub:`L` increases I\ :sub:`D` decreases. These two effects work counter to each other in the simple resistive loaded source follower. Thus to optimize the gain of the follower we need to explore ways to either decrease r\ :sub:`s` or increase R\ :sub:`L` without effecting the other. It is important to remember that in MOS transistors I\ :sub:`D` = I\ :sub:`S` ( I\ :sub:`G` = 0 ).
 
 .. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_e2.png
    :align: center
-   :width: 400px
+   :width: 400
 
 where K =μ\ :sub:`n`\ C\ :sub:`ox`/2<sub></sub>and λ can be taken as process technology constants.
 
@@ -65,13 +77,11 @@ Additional Materials:
 
 1 - 1 KΩ Resistor 1 - small signal NMOS transistor (M\ :sub:`1`\ ZVN2110A) 2 - small signal NMOS transistors (M\ :sub:`2`, M\ :sub:`3`\ CD4007)
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 2 Improved Source Follower
-
 
 Source follower output impedance
 --------------------------------
@@ -79,7 +89,10 @@ Source follower output impedance
 Objective:
 ~~~~~~~~~~
 
-An important aspect of the source follower is to provide power or current gain. That is to say drive a lower resistance (impedance) load from a higher resistance (impedance) stage. Thus it is instructive to measure the source follower output impedance.
+An important aspect of the source follower is to provide power or current gain.
+That is to say drive a lower resistance (impedance) load from a higher
+resistance (impedance) stage. Thus it is instructive to measure the source
+follower output impedance.
 
 Materials:
 ~~~~~~~~~~
@@ -91,13 +104,11 @@ Directions:
 
 The circuit configuration in figure 3 adds a resistor R\ :sub:`2` to inject a test signal from AWG1 into the source (output) of M\ :sub:`1`. The input, gate of M\ :sub:`1`, is grounded.
 
-
 |image3|
 
 .. container:: centeralign
 
    Figure 3 Output impedance test
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -116,8 +127,8 @@ http://en.wikipedia.org/wiki/Common_drain
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_f1.png
-   :width: 450px
+   :width: 450
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_f2.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_f3.png
-   :width: 550px
+   :width: 550

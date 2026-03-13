@@ -20,20 +20,18 @@ This document presents the steps to setup an environment for using the :adi:`EVA
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0203.jpg
    :alt: cn0203.jpg
    :align: center
-   :width: 600px
-
+   :width: 600
 
 .. note::
 
    See `common_sdp <https://wiki.analog.com/common_sdp>`_
-
 
 Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0203-SDPZ** Evaluation Board.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0203_sdp1z.jpg
    :alt: cn0203_sdp1z.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 The **EVAL-CN0203-SDPZ** board provides a full function, high voltage (up to 44 V), flexible, programmable analog output solution that meets most requirements for programmable logic controller (PLC) and distributed control system (DCS) applications. When using this evaluation board with the SDP board or BeMicro SDK board, apply +6 V and GND to Connector CN2, 12-50 V and GND to Connector CN3.
 
@@ -53,7 +51,9 @@ More information
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Required Hardware
 -----------------
@@ -83,7 +83,6 @@ Downloads
    -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
    
 
-
 Run the Demonstration Project
 =============================
 
@@ -93,8 +92,9 @@ Hardware setup
 .. important::
 
    
-   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
-
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that
+   the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to
+   change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
@@ -102,7 +102,8 @@ Hardware setup
 Reference Project Overview
 --------------------------
 
-The following commands were implemented in this version of EVAL-CN0203 reference project for Xilinx KC705 FPGA board.
+The following commands were implemented in this version of EVAL-CN0203 reference
+project for Xilinx KC705 FPGA board.
 
 +-------------------+---------------------------------------------------------+
 | Command           | Description                                             |
@@ -155,31 +156,28 @@ The following commands were implemented in this version of EVAL-CN0203 reference
 | **fault?**        | Displays the list of possible faults.                   |
 +-------------------+---------------------------------------------------------+
 
-Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+Commands can be executed using a serial terminal connected to the UART
+peripheral of Xilinx KC705 FPGA.
 
-The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
-
+The following image shows a generic list of commands in a serial terminal
+connected to Xilinx KC705 FPGA's UART peripheral.
 
 |Terminal_KC705.jpg|
 
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `import_workspace <https://wiki.analog.com/import_workspace>`_
-
 
 More information
 ================
 
 -  :doc:`AD5660-1 IIO DAC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dac/ad5446>`
 
-
 .. note::
 
    See `ez_common <https://wiki.analog.com/ez_common>`_
-
 
 .. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/terminal_kc705.jpg

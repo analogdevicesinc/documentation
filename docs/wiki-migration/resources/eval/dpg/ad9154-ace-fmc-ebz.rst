@@ -15,11 +15,9 @@ Typical Setup
 
    |image1|\ *Figure 1. AD9154-FMC-EBZ Setup with ADS7-V2EBZ*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files/Links
 -------------------
@@ -53,7 +51,6 @@ Software Needed
    -  Known Issue: ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
    
 
-
 Hardware Needed
 ---------------
 
@@ -82,13 +79,11 @@ Quick Start Guide
 
    \ |image2|\ *Figure 2. ADS7-V2 and AD9154 detected in DPG Software*\
 
-
 -  Start DPG Lite or DPG Downloader. A panel named after the detected controller board should appear at the bottom of the DPG window. The device on the evaluation board and the data interface should also be automatically detected by the software and shown at **Evaluation Board** and **Port Configuration**, respectively. See Figure 2.
 
 .. container:: centeralign
 
    \ |image3|\ *Figure 3. AD9154-FMC-EBZ detected in ACE*\
-
 
 -  Open ACE. The board will automatically be recognized by the software as shown in Figure 3. Otherwise, install the plugin for AD9154 evaluation board by following the steps in this page: :doc:`Quickstart - ACE Quickstart and Plug-in Installation </wiki-migration/resources/tools-software/ace/userguide/quickstart>`.
 
@@ -96,13 +91,12 @@ Quick Start Guide
 
    \ |image4|\ *Figure 4. ACE Initial Configuration Wizard*\
 
-
 .. container:: centeralign
 
    |image5|\ *Figure 5. ACE AD9154 Chipview Tab*\
 
-
--  In ACE, apply the configuration wizard settings enumerated below and shown in Figure 4. JESD204B PLL should lock and the indicator should turn green.
+-  In ACE, apply the configuration wizard settings enumerated below and shown in
+   Figure 4. JESD204B PLL should lock and the indicator should turn green.
 
    -  **Links:** Single Link
    -  **JESD Mode:** 0
@@ -114,7 +108,6 @@ Quick Start Guide
 .. container:: centeralign
 
    \ |image6|\ *Figure 6. Single Tone and ADS7-V2 Configuration Panels in DPG*\
-
 
 -  In DPG Lite or DPG Downloader, configure single tone waveform generation. From the **Add Generator Waveforms** pulldown menu, select **Single Tone**. Apply the following settings:
 
@@ -131,29 +124,27 @@ Quick Start Guide
 
    \ |image7|\ *Figure 7. AD9154 DAC Output FFT for Data Rate = 750 MHz, FOUT = 180 MHz*\
 
-
 .. container:: centeralign
 
    |image8|\ *Figure 8. Oscilloscope Capture of Other DAC Outputs*\
 
-
 -  Press the download arrow (|9154_down_arrow.png|) then the play button (|9154_right_green_arrow.png|). As in Figure 6, **Serial Line Rate** should appear as 7.5 Gbps and **Sync Status** should have a check mark. FFT plot of one of the DAC outputs is shown in Figure 7 while the oscilloscope capture of the other outputs is Figure 8.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9154-fmc-ebz_setup_with_labels.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9154-fmc-ebz_dpg_board_detect_ads7.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9154-fmc-ebz_ace_board_detect_ads7.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9154-fmc-ebz_ace_configuration_wizard_ads7.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9154-fmc-ebz_ace_chipview_ads7.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9154-fmc-ebz_dpg_generate_output.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ace_ad9154_fmc_180msa.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_fmcfigure_8_scope.png
-   :width: 600px
+   :width: 600
 .. |9154_down_arrow.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_down_arrow.png
 .. |9154_right_green_arrow.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/9154_right_green_arrow.png

@@ -26,11 +26,12 @@ Master Boot partition files
    .. tip::
 
          
-         -  Inside downloaded archive is a ReadMe.txt file describing what files you need to copy on boot partition root depending on your hardware setup, and VERSION.txt file containing build dates and git commits.
+         -  Inside downloaded archive is a ReadMe.txt file describing what files
+            you need to copy on boot partition root depending on your hardware
+            setup, and VERSION.txt file containing build dates and git commits.
          
 
    
-
 
 Master Microblaze images
 ========================
@@ -56,11 +57,11 @@ Master Microblaze images
    .. tip::
 
          
-         -  Inside every archive there is system_top.bit, simpleImage.<project name>.strip and a script to program it.
+         -  Inside every archive there is system_top.bit, simpleImage.<project
+            name>.strip and a script to program it.
          
 
    
-
 
 Master Nios2 images
 ===================
@@ -86,11 +87,11 @@ Master Nios2 images
    .. tip::
 
          
-         -  Inside every archive, there is zimage, <project name>.sof and a script to program it.
+         -  Inside every archive, there is zimage, <project name>.sof and a
+            script to program it.
          
 
    
-
 
 Master NO-OS files
 ==================
@@ -114,4 +115,3 @@ Master NO-OS files
          
 
    
-

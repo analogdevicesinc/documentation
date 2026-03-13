@@ -9,7 +9,9 @@ Nth Order Filter
 Description
 -----------
 
-The Nth Order Filter is a combination of bi-quad filters to form Nth order filter.The Filter has 3 selectable filter types to perform LowPass/HighPass filtering.
+The Nth Order Filter is a combination of bi-quad filters to form Nth order
+filter.The Filter has 3 selectable filter types to perform LowPass/HighPass
+filtering.
 
 The available filter types are:
 
@@ -49,7 +51,6 @@ Name    Type  Description
 ======= ===== ================
 Output0 Audio Output channel 0
 ======= ===== ================
-
 
 | ===== Configurable Parameters =====
 

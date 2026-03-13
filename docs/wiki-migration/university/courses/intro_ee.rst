@@ -1,7 +1,15 @@
 Introduction to Electrical Engineering
 ======================================
 
-The overall goal of this introductory level course is to help Electrical and Computer Engineering students early in their academic career build a broad analysis skill set that enable engineered solutions addressing a broad array of societal needs. An experiment-centric development of the basic analysis tools emphasizing the concepts and mathematics of analog and digital circuits and electronics, programming, data generation and analysis, and system model development using paper and pencil analysis, simulation, and experiment. Problems, applications, and projects are chosen to lay a solid foundation for later core ECE courses.
+The overall goal of this introductory level course is to help Electrical and
+Computer Engineering students early in their academic career build a broad
+analysis skill set that enable engineered solutions addressing a broad array of
+societal needs. An experiment-centric development of the basic analysis tools
+emphasizing the concepts and mathematics of analog and digital circuits and
+electronics, programming, data generation and analysis, and system model
+development using paper and pencil analysis, simulation, and experiment.
+Problems, applications, and projects are chosen to lay a solid foundation for
+later core ECE courses.
 
 Note that this course is a subset of :doc:`Electronics I and II </wiki-migration/university/courses/electronics>`.
 

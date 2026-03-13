@@ -1,8 +1,8 @@
 Where to find the example Code used in CN-0425
 ==============================================
 
-After you have installed the evaluation software, the example firmware project used in CN-0425 is in the folder \\examples\\M355_RadiatedImmunity_Demo.
-
+After you have installed the evaluation software, the example firmware project
+used in CN-0425 is in the folder \\examples\\M355_RadiatedImmunity_Demo.
 
 |image1|
 
@@ -14,7 +14,8 @@ Build, download and debug the example project to IAR via the Midas-Link:
 What the M355_RadiatedImmunity_Demo project code does
 =====================================================
 
-The Project assumes a 3-lead EC sensor is connected to channel 0 of the LP Potentiostat loop - 0V bias between RE/WE with 1.1V common mode voltage.
+The Project assumes a 3-lead EC sensor is connected to channel 0 of the LP
+Potentiostat loop - 0V bias between RE/WE with 1.1V common mode voltage.
 
 The code has 2x modes of operation:
 -----------------------------------
@@ -46,14 +47,14 @@ The code has 2x modes of operation:
 Mode 1 - output to UART debug terminal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In mode 1, debug text is sent periodically to the UART. When viewed in a terminal window like Realterm, it looks like this:
-
+In mode 1, debug text is sent periodically to the UART. When viewed in a
+terminal window like Realterm, it looks like this:
 
 |image3|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_aducm355emcz/example_pathw.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_aducm355emcz/iar_debug1.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_aducm355emcz/capturemode.png
-   :width: 600px
+   :width: 600

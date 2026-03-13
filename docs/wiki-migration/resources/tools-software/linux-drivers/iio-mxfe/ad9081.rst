@@ -35,9 +35,25 @@ Supported HDL Cores
 Description
 -----------
 
-The mixed signal front end (MxFE®) is a high integration devicewith a 16-bit, 12 GSPS maximum sample rate radio frequency (RF) digital-to-analog converter (DAC) core and a 12-bit, 4 GSPS rate RF analog-to-digital converter (ADC) core. The AD9081 features a 16-lane, 24.75 Gbps JESD204C or 15.5 Gbps JESD204B data transceiver port, an on-chip clock multiplier, and digital signal processing capability targeted at single-and dual-band direct-to-RF radio applications.
+The mixed signal front end (MxFE®) is a high integration devicewith a 16-bit, 12
+GSPS maximum sample rate radio frequency (RF) digital-to-analog converter (DAC)
+core and a 12-bit, 4 GSPS rate RF analog-to-digital converter (ADC) core. The
+AD9081 features a 16-lane, 24.75 Gbps JESD204C or 15.5 Gbps JESD204B data
+transceiver port, an on-chip clock multiplier, and digital signal processing
+capability targeted at single-and dual-band direct-to-RF radio applications.
 
-The AD9081 supports four transmitter channels and four receiver channels with a 4D4A configuration. The receiver ADC channels can be shared with observation channels in time division duplex(TDD) operating mode. The AD9081 directly addresses the emerging base station applications with high integration and common platform requirements. The device has flexible inter-polation/decimation configurations that enable direct-to-RF multiband radio applications. AD9081 supports a complex transmit input data rate up to 6 GSPS and a receive output data rate in single-channel mode up to 4 GSPS. The maximum radio band spacing supported in multichannel modes is 1.2 GHz. AD9081 features a bypassable interpolator and decimator for achieving ultra wideband capability with low latency loop back and frequency hopping modes targeted at phase array radar system and electronic warfare jammer applications.
+The AD9081 supports four transmitter channels and four receiver channels with a
+4D4A configuration. The receiver ADC channels can be shared with observation
+channels in time division duplex(TDD) operating mode. The AD9081 directly
+addresses the emerging base station applications with high integration and
+common platform requirements. The device has flexible inter-polation/decimation
+configurations that enable direct-to-RF multiband radio applications. AD9081
+supports a complex transmit input data rate up to 6 GSPS and a receive output
+data rate in single-channel mode up to 4 GSPS. The maximum radio band spacing
+supported in multichannel modes is 1.2 GHz. AD9081 features a bypassable
+interpolator and decimator for achieving ultra wideband capability with low
+latency loop back and frequency hopping modes targeted at phase array radar
+system and electronic warfare jammer applications.
 
 For more information about the AD9081 or AD9082, contact Analog Devices, Inc., at: `mxfesupport@analog.com <https://wiki.analog.com/mxfesupport@analog.com>`_.
 
@@ -81,7 +97,6 @@ Example device trees
 | dts      | `zynq-zc706-adv7511-ad9081.dts </linux.github>master?arch/arm/boot/dts/zynq-zc706-adv7511-ad9081.dts>`__                 |
 +----------+--------------------------------------------------------------------------------------------------------------------------+
 
-
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                                                |
 +==========+=====================================================================================================================================================================+
@@ -105,7 +120,6 @@ Example device trees
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | dts      | `vcu118_ad9082_204c_txmode_18_rxmode_19_lr_24_75Gbps.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9082_204c_txmode_18_rxmode_19_lr_24_75gbps.dts>`__ |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Interrelated Device Drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,17 +187,18 @@ PHY Layer AXI JESD204B GT (Gigabit Tranceiver) HDL driver (XILINX/ALTERA-INTEL)
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADRV9009 driver depends on CONFIG_SPI
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -209,7 +224,6 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            < > Analog Devices AD9467, AD9680, etc. high speed ADCs
 
            [--snip--]
-
 
        Frequency Synthesizers DDS/PLL  --->
                Direct Digital Synthesis  --->
@@ -254,7 +268,12 @@ The AD9081 Linux IIO device driver is configured and customized using device tre
        };
    };
 
-Each of these child nodes handle certain aspects of either the digital-to-analog converter core side or the analog-to-digital converter side of the Mixed Signal Frontend (MxFE®) These child-nodes again contain ADC or DAC side common attributes. Such as the ADC/DAC frequency. But also, three child-nodes to customize the main data paths, the channelizers and the serial JESD204 interfaces.
+Each of these child nodes handle certain aspects of either the digital-to-analog
+converter core side or the analog-to-digital converter side of the Mixed Signal
+Frontend (MxFE®) These child-nodes again contain ADC or DAC side common
+attributes. Such as the ADC/DAC frequency. But also, three child-nodes to
+customize the main data paths, the channelizers and the serial JESD204
+interfaces.
 
 .. code:: c
 
@@ -302,7 +321,6 @@ Each of these child nodes handle certain aspects of either the digital-to-analog
        };
        ad9081_tx_fddc_chan1: channel@1 {
 
-
        };
    };
 
@@ -319,7 +337,8 @@ AD9081 Mixed-Signal Front End (MxFE) Device Tree Bindings
 Overview
 --------
 
-The AD9081 is a high-performance, single-chip, mixed-signal front end (MxFE) integrating:
+The AD9081 is a high-performance, single-chip, mixed-signal front end (MxFE)
+integrating:
 
 -  **Four 16-bit, 12 GSPS RF DAC cores**
 -  **Four 12-bit, 4 GSPS RF ADC cores**
@@ -433,7 +452,8 @@ Loopback and GPIO
 TX DAC Configuration (adi,tx-dacs)
 ----------------------------------
 
-The TX DAC configuration is specified in a sub-node with the following structure:
+The TX DAC configuration is specified in a sub-node with the following
+structure:
 
 DAC Global Properties
 ~~~~~~~~~~~~~~~~~~~~~
@@ -760,7 +780,6 @@ Device Tree Example
 
 .. code:: dts
 
-
    #include <dt-bindings/iio/adc/adi,ad9081.h>
    #include <dt-bindings/gpio/gpio.h>
 
@@ -926,7 +945,6 @@ Device Tree Example
                                    <&ad9081_rx_fddc_chan1 0>, <&ad9081_rx_fddc_chan1 1>;
                        adi,logical-lane-mapping = /bits/ 8 <0 1 2 3 4 5 6 7>;
 
-
                        adi,link-mode = <18>;           /* JESD Quick Configuration Mode */
                        adi,subclass = <1>;         /* JESD SUBCLASS 0,1,2 */
                        adi,version = <1>;          /* JESD VERSION 0=204A,1=204B,2=204C */
@@ -959,7 +977,8 @@ Controlling the MxFE is done via the IIO sysfs interface. For convenience users 
 -  IIO channels ``[in|out]_voltageX``\ apply to the channelizer data paths (Fine DDC/DUC).
 
    -  Each IIO channel has some ``[in|out]_voltageX_[i|q]_channel_[attributes]``
-   -  In case the channelizer data paths (Fine DDC/DUC) are bypassed (decimation=1 or interpolation=1), the X still applies to a data path.
+   -  In case the channelizer data paths (Fine DDC/DUC) are bypassed
+      (decimation=1 or interpolation=1), the X still applies to a data path.
 
       -  On the RX side: The **adi,converter-select** property is used to connect **adi,channelizer-paths**, where the **reg = <X>** property value defines the X in the IIO channel name.
       -  On the TX side: The **adi,maindp-dac-1x-non1x-crossbar-select = <X>** property within adi,main-data-paths dac@Y takes the data path number (DC_DP_X) as argument (x). So setting it to 0 on the DAC node for DAC1 will instruct the XBAR to route the very first data path to the CDUC1 which by default routes to DAC1. In case this property is not present, the default mapping CDUC0->DAC0, CDUC1->DAC1, … will be used.
@@ -967,7 +986,8 @@ Controlling the MxFE is done via the IIO sysfs interface. For convenience users 
 -  Each channelizer data path (FDDC, FDUC) connects at least to one Coarse DDC/DUC (CDDC/CDUC), which maps then to one or more ADCs/DACs depending on configuration. These are called main data paths and are controlled via the ``[in|out]_voltageX_[i|q]_main_[attributes]`` attributes.
 
    -  Be aware, since multiple channels can map to the same main data path (CDDC/CDUC), changing a main attribute of one channel will also update same attribute of any other channel that maps to the same main data path (CDDC/CDUC).
-   -  The crossbar mapping between Fine and Coarse Digital Up/Down Converters, ADCs/DACs is defined in the device tree.
+   -  The crossbar mapping between Fine and Coarse Digital Up/Down Converters,
+      ADCs/DACs is defined in the device tree.
 
 -  Device attributes (without ``in_voltageX``\ or ``out_voltageX`` prefix) apply to the entire device.
 
@@ -1250,7 +1270,6 @@ Controlling the MxFE is done via the IIO sysfs interface. For convenience users 
       -rw-r--r-- 1 root root 4096 Mar 28 12:44 uevent
    
 
-
 Show device name
 ----------------
 
@@ -1264,7 +1283,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:device2> cat name
       axi-ad9081-rx-hpc
    
-
 
 ADC Rate
 --------
@@ -1284,15 +1302,18 @@ Read only attribute which returns the RX ADC rate Hz.
       4000000000
    
 
-
 RX Sample Rate
 --------------
 
 **What:** ``in_voltage_sampling_frequency``
 
-Read only attribute which returns the RX digital IQ base-band rate in Hz. This must not be confused with the ADC rate, which is (MAIN_decimation \* CHANNEL_decimation) time higher. MAIN_decimation, CHANNEL_decimation are defined in the device tree.
+Read only attribute which returns the RX digital IQ base-band rate in Hz. This
+must not be confused with the ADC rate, which is (MAIN_decimation \*
+CHANNEL_decimation) time higher. MAIN_decimation, CHANNEL_decimation are defined
+in the device tree.
 
-in_voltage_sampling_frequency = in_voltage_adc_frequency / (MAIN_decimation \* CHANNEL_decimation)
+in_voltage_sampling_frequency = in_voltage_adc_frequency / (MAIN_decimation \*
+CHANNEL_decimation)
 
 .. container:: box bggreen
 
@@ -1304,7 +1325,6 @@ in_voltage_sampling_frequency = in_voltage_adc_frequency / (MAIN_decimation \* C
       root:/sys/bus/iio/devices/iio:device2> cat in_voltage_sampling_frequency
       250000000
    
-
 
 DAC Rate
 --------
@@ -1324,15 +1344,18 @@ Read only attribute which returns the TX DAC rate Hz.
       12000000000
    
 
-
 TX Sample Rate
 --------------
 
 **What:** ``out_voltage_sampling_frequency``
 
-Read only attribute which returns the TX digital IQ base-band rate in Hz. This must not be confused with the DAC rate, which is (MAIN_interpolation \* CHANNEL_interpolation) time higher. MAIN_interpolation, CHANNEL_interpolation are defined in the device tree.
+Read only attribute which returns the TX digital IQ base-band rate in Hz. This
+must not be confused with the DAC rate, which is (MAIN_interpolation \*
+CHANNEL_interpolation) time higher. MAIN_interpolation, CHANNEL_interpolation
+are defined in the device tree.
 
-out_voltage_sampling_frequency = fDAC / (MAIN_interpolation \* CHANNEL_interpolation)
+out_voltage_sampling_frequency = fDAC / (MAIN_interpolation \*
+CHANNEL_interpolation)
 
 .. container:: box bggreen
 
@@ -1345,21 +1368,28 @@ out_voltage_sampling_frequency = fDAC / (MAIN_interpolation \* CHANNEL_interpola
       250000000
    
 
-
 ADC Nyquist Zone Control
 ------------------------
 
 **What:** ``in_voltageX_nyquist_zone`` **What:** ``in_voltage_nyquist_zone_available``
 
-Calibration is used to reduce residual spurious artifacts that are common among interleaving ADC architectures because of sub ADC timing, gain, and offsets mismatches. The ADCs are initially factory calibrated, and background calibration is also employed to further improve and maintain the performance across device operating conditions.
+Calibration is used to reduce residual spurious artifacts that are common among
+interleaving ADC architectures because of sub ADC timing, gain, and offsets
+mismatches. The ADCs are initially factory calibrated, and background
+calibration is also employed to further improve and maintain the performance
+across device operating conditions.
 
-One background calibration algorithm employed adjusts the interleaving timing mismatches and depends on the knowledge of the Nyquist zone being odd or even, which depends on the ADC input frequency (fIN), and sample rate (fADC), as defined in the following equation:
+One background calibration algorithm employed adjusts the interleaving timing
+mismatches and depends on the knowledge of the Nyquist zone being odd or even,
+which depends on the ADC input frequency (fIN), and sample rate (fADC), as
+defined in the following equation:
 
-Nyquist Zone = ROUNDDOWN × (fIN/(fADC/2)) + 1 (Please see: Calibration and Specifying Nyquist Zone in UG-1578)
+Nyquist Zone = ROUNDDOWN × (fIN/(fADC/2)) + 1 (Please see: Calibration and
+Specifying Nyquist Zone in UG-1578)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-mxfe/ad908x_nyquist_zones.png
    :align: center
-   :width: 400px
+   :width: 400
 
 The current Nyquist Zone can be queried and controlled via the ``in_voltage_nyquist_zone`` attribute.
 
@@ -1376,7 +1406,6 @@ The current Nyquist Zone can be queried and controlled via the ``in_voltage_nyqu
       root:/sys/bus/iio/devices/iio:device2> cat cat in_voltage0_i_nyquist_zone
       even
    
-
 
 NCO Frequency Control
 ---------------------
@@ -1406,7 +1435,6 @@ Sets the main data path (CDDC/CDUC) NCO frequency (fCARRIER) in Hz
       300000000
    
 
-
 Channel Data Path
 ~~~~~~~~~~~~~~~~~
 
@@ -1431,7 +1459,6 @@ Sets the channel data path (FDDC/FDUC) NCO frequency (fCARRIER) in Hz
       root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_channel_nco_frequency
       300000000
    
-
 
 NCO Phase Control
 -----------------
@@ -1461,7 +1488,6 @@ Sets the main data path (CDDC/CDUC) NCO phase offset in milli degrees
       -42000
    
 
-
 Channel Data Path
 ~~~~~~~~~~~~~~~~~
 
@@ -1487,7 +1513,6 @@ Sets the channel data path (FDDC/FDUC) NCO phase offset in milli degrees
       13123
    
 
-
 TX NCO Channel Digital Gain
 ---------------------------
 
@@ -1506,7 +1531,6 @@ The input data into each channelizer stage can be rescaled prior to additional p
    
       root@analog:/sys/bus/iio/devices/iio:device2# echo 0.707 > out_voltage0_i_channel_nco_gain_scale
    
-
 
 TX NCO Test Tone Modes
 ----------------------
@@ -1532,11 +1556,16 @@ The ``out_voltageX_[i|q]_channel_nco_test_tone_en`` mode is most useful for appl
       root@analog:/sys/bus/iio/devices/iio:device2# echo 1 > out_voltage0_i_channel_nco_test_tone_en
    
 
-
 Fast Frequency Hopping Control
 ------------------------------
 
-The complex NCOs used in both the transmit and receive datapaths support FFH mode. In the transmit datapath, each main datapath NCO consists of a bank of 31 NCOs. In the receive main and channelizer datapaths, each NCO consists of a bank of 16 NCOs. The transmit and receive hop sequence can be independently controlled via GPIOx pins or the SPI register (IIO sysfs attributes). Asynchronous trigger hop mode is an additional mode only supported on the receive path.
+The complex NCOs used in both the transmit and receive datapaths support FFH
+mode. In the transmit datapath, each main datapath NCO consists of a bank of 31
+NCOs. In the receive main and channelizer datapaths, each NCO consists of a bank
+of 16 NCOs. The transmit and receive hop sequence can be independently
+controlled via GPIOx pins or the SPI register (IIO sysfs attributes).
+Asynchronous trigger hop mode is an additional mode only supported on the
+receive path.
 
 Transmit Main Path FFH NCO Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1559,7 +1588,9 @@ Programmable FIR Filter
 
 What: ``filter_fir_config``
 
-Both the AD9081 and AD9082 provide a hardware FIR filter that can be programmed with up to 192 taps, and runs at the full converter rate of 4 or 6 GS/s respectively. Typical usecases of this filter include, but are not limited to:
+Both the AD9081 and AD9082 provide a hardware FIR filter that can be programmed
+with up to 192 taps, and runs at the full converter rate of 4 or 6 GS/s
+respectively. Typical usecases of this filter include, but are not limited to:
 
 -  Equalization of analog impairments
 -  Channel-to-channel crosstalk correction
@@ -1580,11 +1611,11 @@ Filter configurations can be written as follows:
       root@analog:/sys/bus/iio/devices/iio:device2# cat /root/pfilt.cfg > filter_fir_config
    
 
-
 Configuration File Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A filter configuration file is an ASCII textfile with LF line-endings, and supports the following directives:
+A filter configuration file is an ASCII textfile with LF line-endings, and
+supports the following directives:
 
 -  All lines starting with a ``#`` symbol are skipped / treated as comments. Note, the ``#`` has to be the **first** character of a line.
 -  Filter mode
@@ -1624,7 +1655,8 @@ The parser can be found here: `ad9081_parse_fir <https://github.com/analogdevice
 Examples
 ^^^^^^^^
 
-The iio-oscilloscope project provides some samples which can be used as a reference:
+The iio-oscilloscope project provides some samples which can be used as a
+reference:
 
 -  :git-iio-oscilloscope:`filters/ad9081/ad9081_pfir_OFF.cfg`
 -  :git-iio-oscilloscope:`filters/ad9081/ad9081_pfir_DualReal.cfg`
@@ -1635,7 +1667,8 @@ The iio-oscilloscope project provides some samples which can be used as a refere
 Loopback Modes
 --------------
 
-The AD9081/AD9082 supports two methods to loopback the samples from the receive (ADC) path to the transmit (DAC) path.
+The AD9081/AD9082 supports two methods to loopback the samples from the receive
+(ADC) path to the transmit (DAC) path.
 
 JESD Loopback RX->TX
 ~~~~~~~~~~~~~~~~~~~~
@@ -1668,7 +1701,6 @@ The **direct loopback** path loops the ADC output data directly back into a spec
       root@analog:/sys/bus/iio/devices/iio:device2# echo 1 > loopback_mode
    
 
-
 On-Die Temperature Reading
 --------------------------
 
@@ -1686,7 +1718,6 @@ The device contains a Temperature Monitoring Unit (TMU) that functions as a digi
       root@analog:/sys/bus/iio/devices/iio:device2# cat in_temp0_input
       86120
    
-
 
 Low level debug functions via debugfs
 =====================================
@@ -1728,7 +1759,6 @@ Reading ``status`` returns a status string.
       root@analog:/sys/kernel/debug/iio/iio:device2#
    
 
-
 dac-full-scale-current-ua
 -------------------------
 
@@ -1747,7 +1777,6 @@ Writing ``dac-full-scale-current-ua`` controls the DAC full scale current in uA.
       root@analog:/sys/kernel/debug/iio/iio:device2#
    
 
-
 bist_prbs_select_jrx
 --------------------
 
@@ -1756,7 +1785,6 @@ Writing ``bist_prbs_select_jrx`` selects the `PRBS <https://en.wikipedia.org/wik
 .. tip::
 
    When testing this feature make sure :doc:`axi_adxcvr-tx prbs_select </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>` is configured with a matching PRBS.
-
 
 ===== ============
 Value Comment
@@ -1788,7 +1816,6 @@ Value Comment
       0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1
    
 
-
 bist_prbs_error_counters_jrx
 ----------------------------
 
@@ -1816,7 +1843,6 @@ Format is: <errors>/<pass>
       root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_prbs_error_counters_jrx
       0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1
    
-
 
 bist_prbs_select_jtx
 --------------------
@@ -1846,7 +1872,6 @@ Value Comment
       31
    
 
-
 bist_spo_sweep_jrx
 ------------------
 
@@ -1855,7 +1880,6 @@ Writing following 3 values to ``bist_spo_sweep_jrx`` performs a horizontal sweep
 .. tip::
 
    When testing this feature make sure :doc:`axi_adxcvr-tx prbs_select </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>` is configured with a matching PRBS.
-
 
 ===== ============
 Value PRBS type
@@ -1883,7 +1907,6 @@ Value PRBS type
       l:18 r:20
    
 
-
 bist_spo_set_jrx
 ----------------
 
@@ -1910,11 +1933,12 @@ QUART_RATE        > 16 Gbps   +/- 16
       2
    
 
-
 bist_2d_eyescan_jrx
 -------------------
 
-The device has built in comparator circuits that enables the ability to reproduce an eye diagram estimate at the output of the CTLE circuit inside the JESD204B/C receiver core.
+The device has built in comparator circuits that enables the ability to
+reproduce an eye diagram estimate at the output of the CTLE circuit inside the
+JESD204B/C receiver core.
 
 Writing ``bist_2d_eyescan_jrx`` selects the physical lane (0..7). In HALF_RATE mode two additional arguments are requires. (PRBS type and duration) Reading returns either error (-22) in case the Lane is not mapped, or CSV for SPO offset, good upper and lower voltages in mV.
 
@@ -1929,7 +1953,6 @@ Writing ``bist_2d_eyescan_jrx`` selects the physical lane (0..7). In HALF_RATE m
 .. tip::
 
    When using HALF_RATE mode make sure :doc:`axi_adxcvr-tx prbs_select </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>` is configured with a matching PRBS.
-
 
 ===== ============
 Value PRBS type
@@ -1971,7 +1994,6 @@ Value PRBS type
       [-snip-]
    
 
-
 Example Eye Diagram Created from Half Rate Eye Scan Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1979,7 +2001,7 @@ Example from: `pyadi-iio <https://github.com/pyadi-iio>`_
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-mxfe/screenshot_from_2024-01-19_14-15-55.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Low level register access via debugfs (direct_reg_access)
 =========================================================
@@ -1989,21 +2011,33 @@ This page contains a few lose documentation snippets used in various spots.
 IIO device files
 ================
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 IIO devices with trigger consumer interface
 ===========================================
 
-If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
-
-
+If deviceX supports triggered sampling, it’s a so called trigger consumer and
+there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In
+this folder there is a file called current_trigger, allowing controlling and
+viewing the current trigger source connected to deviceX. Available trigger
+sources can be identified by reading the name file
+/sys/bus/iio/devices/triggerY/name. The same trigger source can connect to
+multiple devices, so a single trigger may initialize data capture or reading
+from a number of sensors, converters, etc.
 
 .. hint::
 
    Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
-
 
 **Description:** Read name of triggerY
 
@@ -2021,7 +2055,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
       irqtrig56
    
 
-
 **Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ), to current trigger of deviceX
 
 .. container:: box bggreen
@@ -2036,7 +2069,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
       root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
-
 
 **Description:** Read current trigger source of deviceX
 
@@ -2053,7 +2085,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
       root:/sys/bus/iio/devices/iio:deviceX/trigger> cat current_trigger
       irqtrig56
    
-
 
 Standalone trigger drivers
 ==========================
@@ -2073,7 +2104,13 @@ Standalone trigger drivers
 Buffer management
 =================
 
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -2110,11 +2147,19 @@ Typical ADC scan elements
 Event Management
 ================
 
-The Industrial I/O subsystem provides support for passing hardware generated events up to userspace.
+The Industrial I/O subsystem provides support for passing hardware generated
+events up to userspace.
 
-In IIO events are not used for passing normal readings from the sensing devices to userspace, but rather for out of band information. Normal data reaches userspace through a low overhead character device - typically via either software or hardware buffer. The stream format is pseudo fixed, so is described and controlled via sysfs rather than adding headers to the data describing what is in it.
+In IIO events are not used for passing normal readings from the sensing devices
+to userspace, but rather for out of band information. Normal data reaches
+userspace through a low overhead character device - typically via either
+software or hardware buffer. The stream format is pseudo fixed, so is described
+and controlled via sysfs rather than adding headers to the data describing what
+is in it.
 
-Pretty much all IIO events correspond to thresholds on some value derived from one or more raw readings from the sensor. They are provided by the underlying hardware.
+Pretty much all IIO events correspond to thresholds on some value derived from
+one or more raw readings from the sensor. They are provided by the underlying
+hardware.
 
 **Examples include:**
 
@@ -2131,7 +2176,9 @@ Events have timestamps.
 
 -  Single user at a time.
 
--  Simple chrdev per device (aggregation across devices doesn't really make sense for IIO as you tend to really care which sensor caused the event rather than just that it happened.)
+-  Simple chrdev per device (aggregation across devices doesn't really make
+   sense for IIO as you tend to really care which sensor caused the event rather
+   than just that it happened.)
 
 **The format is:**
 
@@ -2186,16 +2233,18 @@ Typical event attributes
 Low level register access via debugfs (direct_reg_access)
 =========================================================
 
-Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver.
+Some IIO drivers feature an optional debug facility, allowing users to read or
+write registers directly. Special care needs to be taken when using this
+feature, since you can modify registers on the back of the driver.
 
 .. tip::
 
    To simplify direct register access you may want to use the libiio :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command line utility.
 
-
 Accessing debugfs requires root privileges.
 
-In order to identify if the IIO device in question feature this option you first need to identify the IIO device number.
+In order to identify if the IIO device in question feature this option you first
+need to identify the IIO device number.
 
 Therefore read the name attribute of each IIO device
 
@@ -2220,7 +2269,6 @@ Therefore read the name attribute of each IIO device
       root@analog:~# 
    
 
-
 Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the direct_reg_access file exists.
 
 .. container:: box bggreen
@@ -2238,7 +2286,6 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the dire
       direct_reg_access
    
 
-
 **Reading**
 
 .. container:: box bggreen
@@ -2255,7 +2302,6 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the dire
       root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
       0x40
    
-
 
 **Writing**
 
@@ -2275,7 +2321,6 @@ Write ADDRESS VALUE
       root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
       0x50
    
-
 
 **Accessing HDL CORE registers**
 
@@ -2303,7 +2348,6 @@ The register map for typical ADI HDL cores can be found here: :doc:`Register Map
       0x80062
    
 
-
 IIO pointers
 ============
 
@@ -2325,9 +2369,7 @@ IIO pointers
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-mxfe/youtube>p_vntewue24
-
 
 Special Access Modes
 --------------------
@@ -2356,7 +2398,8 @@ Special Access Modes
 | Register Address   | [13:0]  | ``0x3FFF`` | 14-bit target register address                    |
 +--------------------+---------+------------+---------------------------------------------------+
 
-The function first writes the page mask value to the page mask register, then performs the read/write on the target register.
+The function first writes the page mask value to the page mask register, then
+performs the read/write on the target register.
 
 **Usage Examples:**
 

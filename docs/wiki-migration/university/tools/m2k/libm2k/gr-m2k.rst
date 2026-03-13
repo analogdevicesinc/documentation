@@ -1,9 +1,11 @@
 gr-m2k
 ======
 
-gr-m2k contains blocks that represent all major components of ADAML-2000. These GNU Radio blocks are build around ADI's libm2k library.
+gr-m2k contains blocks that represent all major components of ADAML-2000. These
+GNU Radio blocks are build around ADI's libm2k library.
 
-gr-m2k offers the possibility of interfacing with a variety of peripherals, in order to use the ADALM2000 as a master to configure/use them.
+gr-m2k offers the possibility of interfacing with a variety of peripherals, in
+order to use the ADALM2000 as a master to configure/use them.
 
 How to build it?
 ----------------
@@ -53,7 +55,6 @@ M2k Analog In Source
 
 Controls the analogical input component of ADALM2000.
 
-
 |image1|
 
 -  **Buffer size**: Size of the internal buffer in samples.
@@ -80,7 +81,6 @@ M2k Analog Out Sink
 
 Controls the analogical output component of ADALM2000.
 
-
 |image2|
 
 -  **Buffer size**: Size of the internal buffer in samples for both channels.
@@ -101,7 +101,7 @@ M2k Analog In Converter
 Converts raw ADC samples into voltage values
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/libm2k/m2k_analog_in_conv.png
-   :width: 400px
+   :width: 400
 
 M2k Analog Out Converter
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,7 +113,8 @@ Examples
 
 **Loopback**
 
-In this example we are going to generate two signal(sine and square) using ADALM2000. These signal will be read back and plotted.
+In this example we are going to generate two signal(sine and square) using
+ADALM2000. These signal will be read back and plotted.
 
 -  Hardware setup:
 
@@ -131,6 +132,6 @@ In this example we are going to generate two signal(sine and square) using ADALM
 Process radio signals with ADALM2000 and GNU Radio Companion as front-end. Please check this :doc:`link </wiki-migration/university/tools/m2k/tutorials/buildingaradiowithm2k>`.
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/libm2k/m2k_analog_in_source.png
-   :width: 350px
+   :width: 350
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/libm2k/m2k_analog_out_source.png
-   :width: 350px
+   :width: 350

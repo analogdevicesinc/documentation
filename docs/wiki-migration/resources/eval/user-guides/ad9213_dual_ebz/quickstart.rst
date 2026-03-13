@@ -11,16 +11,16 @@ TYPICAL SETUP
 
    \ *Figure 1. AD9213-DUAL-EVB and Intel Stratix 10 SX Board*\
 
-
 SCOPE
 -----
 
-This QuickStart Guide provides the information to bring up the AD9213-DUAL-EVB in a Synchronized 10G Mode or an Interleaved 20G mode to enable data capture and visualization in IIO Oscilloscope and VisualAnalog. The AD9213 Manual Calibration and Interleaving Guide provides additional detail.
+This QuickStart Guide provides the information to bring up the AD9213-DUAL-EVB
+in a Synchronized 10G Mode or an Interleaved 20G mode to enable data capture and
+visualization in IIO Oscilloscope and VisualAnalog. The AD9213 Manual
+Calibration and Interleaving Guide provides additional detail.
 
 EQUIPMENT AND HARDWARE NEEDED
 -----------------------------
-
-
 
 - Signal Generators
   - Analog signal source: The frequency and power requirements depend on the tests to be performed. A bandpass filter is often used for single tone tests.
@@ -54,8 +54,6 @@ SOFTWARE NEEDED
 -  `PuTTY SSH and telnet client <https://www.putty.org>`_
 -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  `VisualAnalog <http://www.analog.com/en/design-center/interactive-design-tools/visualanalog.html>`_
-
-
 
 - VisualAnalog Canvas for AD9213-DUAL-EBZ (supplied by ADI)
 - `libiio (required for using iio Client block in provided VisualAnalog Canvas) <https://github.com/analogdevicesinc/libiio/releases>`_
@@ -120,10 +118,7 @@ ON           OFF               OFF              ON
 **I2C FLAG** **DC_POWER CTRL** **FACTORY LOAD** **SECURITY MODE**
 ============ ================= ================ =================
 
-
 | \*Download the ADI Linux Image (image_2021-07-28-ADI-Kuiper-full.zip) available under Old Releases Section from :doc:`ADI SD Card Images </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
-
-
 
 - Program a blank SD card (at least 16 GB) with the downloaded image using the instructions in :doc:`Formatting and Flashing SD Cards using Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
 
@@ -144,11 +139,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig2_COM_port_setup.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 2. Setting up the COM port connection from the Stratix10 SX SoC board to the PC*\
-
 
 ::
 
@@ -159,11 +152,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig3_config_COM_port_settings.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 3. Configuring the COM port settings*\
-
 
 **NOTE:** This procedure needs to be performed every time the Stratix 10 board’s USB to mini-USB COM connection cable is physically disconnected and re-connected to the PC.*
 
@@ -180,11 +171,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig4_Open_COM_using_PuTTY.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 4. Opening the COM port connection using PuTTY*\
-
 
 ::
 
@@ -197,13 +186,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig5_Quartus_setup.png
 
-
-
-
 .. container:: centeralign
 
    \ *Figure 5. Setting up the Quartus Programmer to program the FPGA Image*\
-
 
 ::
 
@@ -224,11 +209,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig6_Using_Quartus_Programmer.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 6. Using the Quartus Programmer to program the FPGA Image*\
-
 
 ::
 
@@ -238,11 +221,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig7_COM_console_process \_initialization.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 7. COM console once the boot process and initialization are complete*\
-
 
 ::
 
@@ -252,11 +233,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig8_Using_ifconfig_for_Stratix10_IP_address.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 8. Using ifconfig to obtain the IP address of the Stratix10 SX SoC board ethernet connection*\
-
 
 ::
 
@@ -276,11 +255,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig9_Opening_SSH_connection.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 9. Opening an SSH connection to the Stratix10 SX SoC board using PuTTY*\
-
 
 ::
 
@@ -291,11 +268,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig10_SSH_login_successful.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 10. SSH connection after login ready to access the components on the board via SPI*\
-
 
 **NOTE:** An example script for when you are looking to use this scripting environment for SPI reads and writes can be provided.*
 
@@ -308,11 +283,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig11_Setup_IIO_Scope.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 11. Setting up a connection to IIO Scope*\
-
 
 ::
 
@@ -322,7 +295,6 @@ ON           OFF               OFF              ON
 .. container:: centeralign
 
    \ |ad9213dual_quickstart_fig12_IIO_Ready_to_Connect.png|\
-
 
 .. container:: centeralign
 
@@ -340,11 +312,9 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig13_Read_Write_SPI_Registers.png|\
 
-
 .. container:: centeralign
 
    *Figure 13. Using the IIO Scope Controller View to Read and Write SPI*
-
 
 ::
 
@@ -357,17 +327,14 @@ ON           OFF               OFF              ON
 
    \ |ad9213dual_quickstart_fig14_Plot_separate_domain_outputs.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 14. Using the IIO Scope Plotting View to plot separate time domain outputs from each AD9213 (Ain = 136 MHz @5dBm)*\
 
-
 **NOTE:** Frequency domain plotting with more detailed analysis can be performed using a Visual Analog Canvas, the following are the steps to use VA*
 
-
-
-- One-Time IIO Installations Before Running VisualAnalog (only needed if VisualAnalog Canvas provided by ADI will be used)
+- One-Time IIO Installations Before Running VisualAnalog (only needed if
+  VisualAnalog Canvas provided by ADI will be used)
   - a. Install `libiio <https://wiki.analog.com/github.com/analogdevicesinc/libiio/releases>`_ (required for using iio Client block in VisualAnalog)
   - b. Install `IIO Plugin for VisualAnalog <https://wiki.analog.com/_media/wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`_
 
@@ -381,11 +348,9 @@ Run Visual Analog For Synchronized 10G Mode
 
    \ |ad9213dual_quickstart_fig15_Open_VisualAnalog_Canvas.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 15. Opening the Visual Analog Canvas to plot FFTs for the dual AD9213s [Synchronized 10G Mode]*\
-
 
 ::
 
@@ -396,11 +361,9 @@ Run Visual Analog For Synchronized 10G Mode
 
    \ |ad9213dual_quickstart_fig16_Setup_VA_for_dualAD9213.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 16. Setting up the VA Canvas for capture for the dual AD9213s [Synchronized 10G Mode]*\
-
 
 ::
 
@@ -411,11 +374,9 @@ Run Visual Analog For Synchronized 10G Mode
 
    \ |ad9213dual_quickstart_fig17_VA_FFT_capture_data_analysis.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 17. VA canvas FFT capture, analysis and sample data for AD9213_0 (150.3MHz @14.90dBm)*\
-
 
 For Interleaved 20G Mode
 
@@ -434,35 +395,35 @@ For Interleaved 20G Mode
     *f.  In addition to the FFT plot and its analysis the canvas also displays sample data
 
 .. |ad9213dual_quickstart_fig2_COM_port_setup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig2_com_port_setup.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig3_config_COM_port_settings.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig3_config_com_port_settings.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig4_Open_COM_using_PuTTY.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig4_open_com_using_putty.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig5_Quartus_setup.png
 | image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig5_quartus_setup.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig6_Using_Quartus_Programmer.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig6_using_quartus_programmer.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig7_COM_console_process \_initialization.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig7_com_console_process__initialization.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig8_Using_ifconfig_for_Stratix10_IP_address.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig8_using_ifconfig_for_stratix10_ip_address.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig9_Opening_SSH_connection.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig9_opening_ssh_connection.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig10_SSH_login_successful.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig10_ssh_login_successful.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig11_Setup_IIO_Scope.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig11_setup_iio_scope.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig12_IIO_Ready_to_Connect.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig12_iio_ready_to_connect.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig13_Read_Write_SPI_Registers.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig13_read_write_spi_registers.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig14_Plot_separate_domain_outputs.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig14_plot_separate_domain_outputs.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig15_Open_VisualAnalog_Canvas.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig15_open_visualanalog_canvas.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig16_Setup_VA_for_dualAD9213.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig16_setup_va_for_dualad9213.png
-   :width: 600px
+   :width: 600
 .. |ad9213dual_quickstart_fig17_VA_FFT_capture_data_analysis.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig17_va_fft_capture_data_analysis.png
-   :width: 600px
+   :width: 600

@@ -4,7 +4,9 @@ Ethernet Driver in U-Boot on SC5xx-EZKIT
 Overview
 --------
 
-Ethernet driver provides driver for the MAC controller present in ADI processors. The ethernet driver package also has code to interface with the PHYs on the ADI released boards.
+Ethernet driver provides driver for the MAC controller present in ADI
+processors. The ethernet driver package also has code to interface with the PHYs
+on the ADI released boards.
 
 There are 2 network interfaces on ADSP-SC5xx : EMAC0 and EMAC1
 
@@ -21,7 +23,9 @@ Hardware Setup
 Build U-Boot with emac0 or emac1
 --------------------------------
 
-U-Boot only supports one network port.  You have to select one emac port in include/configs/sc589-ezkit.h at build time.(For SC584/SC573 EZ-Board , we should do it in file sc584-ezkit.h or sc573-ezkit.h)
+U-Boot only supports one network port.  You have to select one emac port in
+include/configs/sc589-ezkit.h at build time.(For SC584/SC573 EZ-Board , we
+should do it in file sc584-ezkit.h or sc573-ezkit.h)
 
 ::
 
@@ -94,4 +98,3 @@ For example:
       **Next: *\*\ :doc:`Loading file from USB storage in u-boot </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot/loading_file_from_usb_storage_in_uboot>`
 
    
-

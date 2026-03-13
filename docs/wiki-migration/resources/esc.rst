@@ -22,6 +22,6 @@ Energy Storage & Conversion Solutions
 | BMS development is being driven by the emergence of lithium ion based batteries, which unlike other batteries do not tolerate overvoltage and may require secondary functions to operate safely. Functions such as "Over-Voltage protection" which is a functional Safety action, relates directly to battery protection. other Functions such as "Active or Dynamic Cell Balancing" , which are performance functions related to battery lifetime which may be required to enhance the battery lifetime, cannot interfere with the safe operation of the BMS system. Other Safety Hazards solutions are also discussed here. \|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/adi_industry_0005_energy.jpg
-   :width: 1200px
+   :width: 1200
 .. |enrgy_storage_solutions.png| image:: https://wiki.analog.com/_media/resources/enrgy_storage_solutions.png
-   :width: 300px
+   :width: 300

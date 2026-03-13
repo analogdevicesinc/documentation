@@ -9,7 +9,6 @@ X-Band Developer Platform Hardware Connections
 
    \ **X-Band Developer's Kit Block Diagram**\
 
-
 --------------
 
 Required Peripherals
@@ -24,9 +23,12 @@ Digital
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/combined_pmod_cables.jpg
    :alt: Combined PMOD Cables
    :align: center
-   :width: 500px
+   :width: 500
 
--  12-pin male-male adapters to connect PMOD cables to each other and to the ZCU102/Stingray. Quantity depends on the gender of the cables used. Both Stingray connectors are female, while on the ZCU102, one PMOD connector is male and the other female. Note that the Stingray board includes 4x of these.
+-  12-pin male-male adapters to connect PMOD cables to each other and to the
+   ZCU102/Stingray. Quantity depends on the gender of the cables used. Both
+   Stingray connectors are female, while on the ZCU102, one PMOD connector is
+   male and the other female. Note that the Stingray board includes 4x of these.
    One example part number: `TSW-106-08-G-D <https://www.mouser.com/TSW-106-08-G-D>`_.
 -  `FMC riser <https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-fmc-ext-g-3074457345635221630/>`_ to raise the MxFE board and allow access to the HPC1 connector for XUD1a control.
 -  `FMC extension <https://www.digikey.com/HDR-169468-01>`_ used to extend access to the HPC1 connector for XUD1a control.
@@ -34,7 +36,10 @@ Digital
 RF Connectors
 ~~~~~~~~~~~~~
 
--  The Stingray board uses SMPM connectors on both sides of the board, so depending on how the board is used, adapters to mate with test equipment cabling may be required. Note that the Stingray board includes 1x 12" SMPM-SMA cable.
+-  The Stingray board uses SMPM connectors on both sides of the board, so
+   depending on how the board is used, adapters to mate with test equipment
+   cabling may be required. Note that the Stingray board includes 1x 12"
+   SMPM-SMA cable.
    One example adapter cable: `SMPM to SMA Adapter Cable <https://www.centricrf.com/cable-assemblies/mini-smp-cable-assemblies/27-ghz-047-mini-smp-to-sma>`_
 -  The XUD1a board uses SMA connectors on the RF side of the board and SMPM connectors on the IF side of the board. Note that the XUD1A board includes 1x 12" SMPM-SMA cable.
 -  The MxFE board uses SMA connectors for both the ADCs and DACs.
@@ -47,14 +52,21 @@ Board Connections to the ZCU102
 Stingray: ADAR1000-EVAL1Z
 -------------------------
 
-Connect the Stingray board to the PMOD connectors on the ZCU102 as described below:
+Connect the Stingray board to the PMOD connectors on the ZCU102 as described
+below:
 
--  J55 from the ZCU102 should connect to P3 on the Stingray board using a ribbon cable and any required adapters. Note that pin 1 should connect to pin 1. This will require two PMOD cables to vertically flip the pinout from the ZCU102 to match that of the Stingray board.
-   \* J87 from the ZCU102 should connect to P4 on the Stingray board using a ribbon cable and any required adapters. Note that pin 1 should connect to pin 1. This will require two PMOD cables to vertically flip the pinout from the ZCU102 to match that of the Stingray board.
+-  J55 from the ZCU102 should connect to P3 on the Stingray board using a ribbon
+   cable and any required adapters. Note that pin 1 should connect to pin 1.
+   This will require two PMOD cables to vertically flip the pinout from the
+   ZCU102 to match that of the Stingray board.
+   \* J87 from the ZCU102 should connect to P4 on the Stingray board using a
+   ribbon cable and any required adapters. Note that pin 1 should connect to pin
+   1. This will require two PMOD cables to vertically flip the pinout from the
+   ZCU102 to match that of the Stingray board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/stingray_zcu102_pmod.png
    :align: center
-   :width: 600px
+   :width: 600
 
 XUD1a: ADXUD1AEBZ
 -----------------
@@ -63,7 +75,7 @@ Connect the XUD1a evaluation board to the ZCU102's HPC1 port. The `FMC extension
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/xud1a_fmc_v2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 MxFE: AD9081-FMCA-EBZ
 ---------------------
@@ -74,11 +86,10 @@ Connect the MxFE evaluation board to the ZCU102's HPC0 port as shown below.
 
    Don't forget to use the use the `FMC riser <https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-fmc-ext-g-3074457345635221630/>`_ to raise the AD9081 up!
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/mxfe_connection.jpg
    :alt: MxFE Connection
    :align: center
-   :width: 1000px
+   :width: 1000
 
 --------------
 
@@ -102,7 +113,6 @@ Connection # MxFE Connector XUD1a Connector
 7            ADC0 (SMA)     J6 (SMPM)
 8            ADC2 (SMA)     J2 (SMPM)
 ============ ============== ===============
-
 
 | ===== XUD1a to Stingray ===== The XUD1a has 4 RFIO ports whereas the Stingray board has 8. For this system, the Stingray's 8 channels will be paired using external splitter/combiners (`Recommended Splitter/Combiner <https://www.minicircuits.com/WebStore/dashboard.html?model=ZX10-2-183-S%2B>`_) to create 4 digital channels which can interface with the XUD1a and MxFE. The below tables show how these connections are to be made.
 

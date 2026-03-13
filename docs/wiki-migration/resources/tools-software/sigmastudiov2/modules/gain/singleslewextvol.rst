@@ -9,12 +9,18 @@ Single Slew External Volume
 Description
 -----------
 
-The Single Slew Ext Vol block controls level of the signal through external pin. Such capability would be appropriate for an application like external control communication to ab 8-10 bit ADC.
+The Single Slew Ext Vol block controls level of the signal through external pin.
+Such capability would be appropriate for an application like external control
+communication to ab 8-10 bit ADC.
 
 Usage
 -----
 
-This block has text filed to specify the slew rate for smooth transition from one level of the signal to another level.slew rate is configurable from 1 to 23. Signal transition from one level to another level is faster when slew rate value is low and Signal transition from one level to another level is slower when slew rate value is high.
+This block has text filed to specify the slew rate for smooth transition from
+one level of the signal to another level.slew rate is configurable from 1 to 23.
+Signal transition from one level to another level is faster when slew rate value
+is low and Signal transition from one level to another level is slower when slew
+rate value is high.
 
 Targets Supported
 -----------------

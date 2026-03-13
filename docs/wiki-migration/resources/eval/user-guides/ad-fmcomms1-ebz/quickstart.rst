@@ -1,8 +1,6 @@
 AD-FMCOMMS1-EBZ Quick Start Guides
 ==================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,8 +17,6 @@ AD-FMCOMMS1-EBZ Quick Start Guides
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` on various FPGA development boards. They will discuss how to install the bitstream and how to boot a Linux distribution and give an basic introduction to the tools available.
 
 Quick Start Guides are available for
@@ -31,6 +27,6 @@ Quick Start Guides are available for
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/xcomm_zed_linux.jpg
    :alt: FMCOMMS1 on Zed board running linux
-   :width: 800px
+   :width: 800
 
 If you are looking for a quick check on the hardware, you may use the :doc:`No-OS software </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/baremetal>`. You will need to build the bit file then use the no-os sources to generate the elf file.

@@ -29,24 +29,24 @@ Power Conversion Solutions for Energy Storage
 \|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/adi_industry_0005_energy.jpg
-   :width: 1200px
+   :width: 1200
 .. |image2| image:: https://wiki.analog.com/_media/resources/img_0153.jpg
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/img_0153.jpg
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/generic_adum4135.png
-   :width: 150px
+   :width: 150
 .. |image5| image:: https://wiki.analog.com/_media/resources/adi_microsemi.png
-   :width: 150px
+   :width: 150
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/igbt.png
-   :width: 150px
+   :width: 150
 .. |image7| image:: https://wiki.analog.com/_media/resources/dc-dc_wiki.png
-   :width: 150px
+   :width: 150
 .. |image8| image:: https://wiki.analog.com/_media/resources/generic_adum4135.png
-   :width: 150px
+   :width: 150
 .. |image9| image:: https://wiki.analog.com/_media/resources/adi_microsemi.png
-   :width: 150px
+   :width: 150
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/igbt.png
-   :width: 150px
+   :width: 150
 .. |image11| image:: https://wiki.analog.com/_media/resources/dc-dc_wiki.png
-   :width: 150px
+   :width: 150

@@ -14,7 +14,10 @@ Description
 
 This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting single channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
 
-The AD762x and AD796x are charge redistribution successive approximation register (SAR) based architecture analog-to-digital converters (ADCs). All converted results are available on a single LVDS self-clocked or echoed-clock serial interface, reducing external hardware connections.
+The AD762x and AD796x are charge redistribution successive approximation
+register (SAR) based architecture analog-to-digital converters (ADCs). All
+converted results are available on a single LVDS self-clocked or echoed-clock
+serial interface, reducing external hardware connections.
 
 Status
 ------
@@ -57,7 +60,9 @@ By default, if only ``enX-gpios`` is specified in the devicetree for all GPIOs, 
 AD7625/AD7626 Options
 ~~~~~~~~~~~~~~~~~~~~~
 
-The AD762x parts have multiple methods for generating the 4.096V reference voltage required for conversion, controlled by the EN1 and EN0 pins. These are indicated in the devicetree as follows:
+The AD762x parts have multiple methods for generating the 4.096V reference
+voltage required for conversion, controlled by the EN1 and EN0 pins. These are
+indicated in the devicetree as follows:
 
 +--------+-----+-----+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | Option | EN1 | EN0 | Description                                                                                                                                 | Devicetree Instruction                                                                                                          |
@@ -74,7 +79,10 @@ The AD762x parts have multiple methods for generating the 4.096V reference volta
 AD7960/AD7961 Options
 ~~~~~~~~~~~~~~~~~~~~~
 
-The AD796x requires one and only one of REF and REFIN to be connected, as the device either operates using only an external reference input to REF (options B, D below), or it generates a voltage on REF using REFIN (option C). By default, the driver will set the bandwidth to wide mode (EN2 == 0) if possible.
+The AD796x requires one and only one of REF and REFIN to be connected, as the
+device either operates using only an external reference input to REF (options B,
+D below), or it generates a voltage on REF using REFIN (option C). By default,
+the driver will set the bandwidth to wide mode (EN2 == 0) if possible.
 
 +--------+-----+-----+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 | Option | EN1 | EN0 | REFIN  | Description                                                                                                                                                                                                                                | Devicetree Instruction                                                                             |
@@ -93,7 +101,6 @@ The AD796x requires one and only one of REF and REFIN to be connected, as the de
 .. note::
 
    An X indicates that the pin configuration doesn't matter.
-
 
 Additionally, EN2 and EN3 provide the following functionality:
 
@@ -163,7 +170,8 @@ The AD7960 :git-linux:`example <arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7960
                    en3-gpios = <&gpio0 89 GPIO_ACTIVE_HIGH>;
            };
 
-Note that both examples are using the same three lines for identifying the connected clock and PWMs:
+Note that both examples are using the same three lines for identifying the
+connected clock and PWMs:
 
 ::
 
@@ -202,7 +210,9 @@ This section explains how to use the ``ad7625`` driver in Linux.
 Enabling the Driver
 ~~~~~~~~~~~~~~~~~~~
 
-Precompiled kernels from ADI should have this driver already enabled. If building your own kernel, enable it using the CONFIG_AD7625 option. When using make menuconfig (or xconfig, etc.), the option can be found as follows:
+Precompiled kernels from ADI should have this driver already enabled. If
+building your own kernel, enable it using the CONFIG_AD7625 option. When using
+make menuconfig (or xconfig, etc.), the option can be found as follows:
 
 ::
 
@@ -304,7 +314,7 @@ A :adi:`ADALM2000` (also known as M2K) or a signal generator of your choice can 
 The example image below shows an :adi:`EVAL-AD7960` board attached to a Zedboard, with a signal generator producing 100kHz, 4Vpp, 2.5V DC offset antiphase waveforms connected to the inputs, and a USB cable (attached to a hub) connected to the J14 console port.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/20241122_164534.jpg
-   :width: 800px
+   :width: 800
 
 Typical ZedBoard software setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -322,7 +332,8 @@ Copy the ``uImage``, ``devicetree.dtb`` and ``BOOT.BIN`` from the appropriate zi
 Typical test application software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ADI provides several open source tools to make it easy to get started with using Linux IIO drivers.
+ADI provides several open source tools to make it easy to get started with using
+Linux IIO drivers.
 
 Scopy
 ^^^^^
@@ -339,15 +350,24 @@ Example: Capture many samples for analysis
 
 The *Plot* feature of the *IIO Oscilloscope* app is used to perform a buffered read to capture many samples. This data can be saved as a ``.csv`` file for analysis in other applications.
 
-Then you will need to set up a signal generator to generate an appropriate signal. This family of chips has differential inputs and uses a signal offset (varying with the board model and GPIO configuration) which will need to be configured in the signal generator. The maximum allowable voltage is the same as the reference voltage. Typically, the offset will be configured to 1/2 of the reference voltage. A 100 kHz sine wave with peak-to-peak voltage of something a bit smaller (e.g. 4Vp-p) than the full measurable range is a reasonable place to start. For proper operation, both channels will need the same offset and must be antiphase (180 degrees phase difference). Below are two example images showing how to set up a SDG1032X signal generator:
+Then you will need to set up a signal generator to generate an appropriate
+signal. This family of chips has differential inputs and uses a signal offset
+(varying with the board model and GPIO configuration) which will need to be
+configured in the signal generator. The maximum allowable voltage is the same as
+the reference voltage. Typically, the offset will be configured to 1/2 of the
+reference voltage. A 100 kHz sine wave with peak-to-peak voltage of something a
+bit smaller (e.g. 4Vp-p) than the full measurable range is a reasonable place to
+start. For proper operation, both channels will need the same offset and must be
+antiphase (180 degrees phase difference). Below are two example images showing
+how to set up a SDG1032X signal generator:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/20241126_151626.jpg
-   :width: 800px
+   :width: 800
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/20241126_151615.jpg
-   :width: 800px
+   :width: 800
 
 Once the signal generator is configured correctly, open a new *Plot* window, enable the differential channel, enter the number of samples required and perform a capture. Save the data to a ``.csv`` file if you need to perform additional analysis. You should see something like this:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/iio_osc_example_ad7960.png
-   :width: 800px
+   :width: 800

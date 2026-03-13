@@ -9,7 +9,8 @@ Setting up EV-COG-AD3029WZ is a three step process.
 -  Software Packs & Drivers Setup
 -  Running an Example Project
 
-EV-COG-AD4050LZ can be used with following Toolchains. Please see below links for the quickstart guide with respect to different IDEs.
+EV-COG-AD4050LZ can be used with following Toolchains. Please see below links
+for the quickstart guide with respect to different IDEs.
 
 CrossCore Embedded Studio
 -------------------------
@@ -33,6 +34,5 @@ Click below link to go to Keil uVision IDE userguide.
 :doc:`EV-COG-AD3029WZ Keil uVision IDE </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz/tools/other_ide>`
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz>`
-
 
 | End Document

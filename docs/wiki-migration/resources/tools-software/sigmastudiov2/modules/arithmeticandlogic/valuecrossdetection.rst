@@ -9,7 +9,9 @@ Value Cross Detection
 Description
 -----------
 
-The Value Cross Detection outputs a pulse every time the input signal has crossed the value specified in the cell. As a default this cell acts as a zero-cross detector, but it can compare the signal to any threshold value.
+The Value Cross Detection outputs a pulse every time the input signal has
+crossed the value specified in the cell. As a default this cell acts as a
+zero-cross detector, but it can compare the signal to any threshold value.
 
 Targets Supported
 -----------------
@@ -64,4 +66,6 @@ DSP parameter Information
 Algorithm Description
 ~~~~~~~~~~~~~~~~~~~~~
 
-The Input signal is compared to the Value Threshold. Each time the input signal crosses this value (whether rising or falling) the output of the cell goes high. Otherwise the output of the cell is low.
+The Input signal is compared to the Value Threshold. Each time the input signal
+crosses this value (whether rising or falling) the output of the cell goes high.
+Otherwise the output of the cell is low.

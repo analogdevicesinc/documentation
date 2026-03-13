@@ -1,7 +1,10 @@
 .. important::
 
-   After 2020, we will begin to phase out the ADIS16448 IMU in favor of the newer ADIS16470 with updated features. We strongly encourage teams that have not obtained one of the newer IMUs to consider getting one from FIRST Choice this year. The ADIS16448 IMU is still supported, but stock will be limited and library updates/releases for this device will be slower.
-
+   After 2020, we will begin to phase out the ADIS16448 IMU in favor of the
+   newer ADIS16470 with updated features. We strongly encourage teams that have
+   not obtained one of the newer IMUs to consider getting one from FIRST Choice
+   this year. The ADIS16448 IMU is still supported, but stock will be limited
+   and library updates/releases for this device will be slower.
 
 Using the ADIS16448 IMU Board for FRC in C++
 ============================================
@@ -13,7 +16,10 @@ If you need help getting started with the basics of programming your robot in C+
 Installing the Library
 ----------------------
 
-In order to use the IMU, you will need to download and install the appropriate library from GitHub. There are two options for installing these libraries. The instructions below assume you are using VS Code, the official supported development environment for FRC.
+In order to use the IMU, you will need to download and install the appropriate
+library from GitHub. There are two options for installing these libraries. The
+instructions below assume you are using VS Code, the official supported
+development environment for FRC.
 
 Online Install
 ~~~~~~~~~~~~~~
@@ -39,9 +45,20 @@ Offline Install
 Instance Definition and Instantiation
 -------------------------------------
 
-Before you can use the gyro in your code, you must first define an instance. Where exactly it needs to be defined will depend heavily on how your team organizes its robot code, but it needs to be accessible by the Robot class in order to work properly and give you no build errors. If your team is using an Iterative Robot with a RobotMap structure for example, you would put it inside of the RobotMap class.
+Before you can use the gyro in your code, you must first define an instance.
+Where exactly it needs to be defined will depend heavily on how your team
+organizes its robot code, but it needs to be accessible by the Robot class in
+order to work properly and give you no build errors. If your team is using an
+Iterative Robot with a RobotMap structure for example, you would put it inside
+of the RobotMap class.
 
-Because the IMU plugs directly into the MXP port, the library will pre-define your SPI port for you. The IMU is a 3-axis sensor, so you will need to tell it which axis is the yaw axis. By default, this will be the Z axis if you don't define anything (with the RoboRIO and the sensor sitting flat on or in the robot, facing up). Don't worry about defining an algorithm argument, the library will take care of this for you. A typical definition and instantiation will look like this:
+Because the IMU plugs directly into the MXP port, the library will pre-define
+your SPI port for you. The IMU is a 3-axis sensor, so you will need to tell it
+which axis is the yaw axis. By default, this will be the Z axis if you don't
+define anything (with the RoboRIO and the sensor sitting flat on or in the
+robot, facing up). Don't worry about defining an algorithm argument, the library
+will take care of this for you. A typical definition and instantiation will look
+like this:
 
 ::
 
@@ -55,12 +72,23 @@ The IMU library will perform a calibration for you in its constructor, since thi
 Using GetAngle() and GetRate()
 ------------------------------
 
-Now that your gyro is calibrated when the robot turns on, you can access data from the robot in your code. You can do this using the GetAngle() method to obtain the robot's current yaw heading, or more rarely by using the GetRate() method to obtain the current rotation rate being measured should you happen to need it. The most common places to use these functions are inside of the AutonomousPeriodic() and TeleopPeriodic() methods. If you want a specific angle, you can also call that angle directly using GetAngleX(), GetAngleY(), or GetAngleZ(). You can do the same for rotation rates, using GetRateX(), GetRateY(), and GetRateZ().
+Now that your gyro is calibrated when the robot turns on, you can access data
+from the robot in your code. You can do this using the GetAngle() method to
+obtain the robot's current yaw heading, or more rarely by using the GetRate()
+method to obtain the current rotation rate being measured should you happen to
+need it. The most common places to use these functions are inside of the
+AutonomousPeriodic() and TeleopPeriodic() methods. If you want a specific angle,
+you can also call that angle directly using GetAngleX(), GetAngleY(), or
+GetAngleZ(). You can do the same for rotation rates, using GetRateX(),
+GetRateY(), and GetRateZ().
 
 .. tip::
 
-   As a general note, the GetAngle() functions will count continuously, meaning when they reach 360 degrees, they will continue to 361, not zero. This is to make any functionality in your code using the IMU angle easier to implement without having to keep track of where in the 0-360 range your robot is or how many rotations have happened.
-
+   As a general note, the GetAngle() functions will count continuously, meaning
+   when they reach 360 degrees, they will continue to 361, not zero. This is to
+   make any functionality in your code using the IMU angle easier to implement
+   without having to keep track of where in the 0-360 range your robot is or how
+   many rotations have happened.
 
 Re-Zeroing the Sensor with Reset()
 ----------------------------------
@@ -70,7 +98,8 @@ Sometimes it may be necessary to reset the IMU gyro's “zero degrees” positio
 Drive Straight Example
 ----------------------
 
-The code block shown below is a modification of the WPI Library gyro drive straight example to use the ADIS16448 IMU instead.
+The code block shown below is a modification of the WPI Library gyro drive
+straight example to use the ADIS16448 IMU instead.
 
 ::
 

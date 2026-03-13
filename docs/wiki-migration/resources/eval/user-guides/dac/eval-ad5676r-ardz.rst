@@ -33,13 +33,30 @@ Software Required
 General Description
 -------------------
 
-This user guide details the operation of the EVAL-AD5676RARDZ for the AD5676R WLCSP 16-bit, octal, voltage output, digital-to-analog converter (DAC).
+This user guide details the operation of the EVAL-AD5676RARDZ for the AD5676R
+WLCSP 16-bit, octal, voltage output, digital-to-analog converter (DAC).
 
-The EVAL-AD5676RARDZ allows users to quickly prototype AD5676R circuits and reduce design time. The AD5676R operates from a single 2.7 V to 5.5 V supply. The AD5676R incorporates an internal 2.5 V reference to give a full-scale output voltage of 2.5 V or 5 V. An ADR4525 is also provided on-board as a 2.5V reference source. A different external reference voltage can be applied via the EXT_REF SMB connector or test pin if needed.
+The EVAL-AD5676RARDZ allows users to quickly prototype AD5676R circuits and
+reduce design time. The AD5676R operates from a single 2.7 V to 5.5 V supply.
+The AD5676R incorporates an internal 2.5 V reference to give a full-scale output
+voltage of 2.5 V or 5 V. An ADR4525 is also provided on-board as a 2.5V
+reference source. A different external reference voltage can be applied via the
+EXT_REF SMB connector or test pin if needed.
 
-The EVAL-AD5676RARDZ interfaces to the USB port of a PC via a system demonstration platform board (SDP-K1 ). The Analysis \| Control \| Evaluation (ACE) software is available for download from the EVAL-AD5676RARDZ product page to use with the evaluation board to allow the user to program the AD5676R. A peripheral module interface (PMOD) connection is also available to allow the connection of microcontrollers to the evaluation board without the SDP-K1 board. When a microcontroller is used through the PMOD connection, the SDP-K1 board must be disconnected, and the user is unable to operate the ACE software.
+The EVAL-AD5676RARDZ interfaces to the USB port of a PC via a system
+demonstration platform board (SDP-K1 ). The Analysis \| Control \| Evaluation
+(ACE) software is available for download from the EVAL-AD5676RARDZ product page
+to use with the evaluation board to allow the user to program the AD5676R. A
+peripheral module interface (PMOD) connection is also available to allow the
+connection of microcontrollers to the evaluation board without the SDP-K1 board.
+When a microcontroller is used through the PMOD connection, the SDP-K1 board
+must be disconnected, and the user is unable to operate the ACE software.
 
-The EVAL-AD5676RARDZ is compatible with the EVAL-SDP-CK1Z (SDP-K1), which should be purchased separately. A typical connection between the EVAL-AD5676RARDZ and the SDP-B controller board is shown below. For full details, see the AD5676R data sheet, which must be used in conjunction with this user guide when using the EVAL-AD5676RARDZ.
+The EVAL-AD5676RARDZ is compatible with the EVAL-SDP-CK1Z (SDP-K1), which should
+be purchased separately. A typical connection between the EVAL-AD5676RARDZ and
+the SDP-B controller board is shown below. For full details, see the AD5676R
+data sheet, which must be used in conjunction with this user guide when using
+the EVAL-AD5676RARDZ.
 
 Evaluation Board Photograph
 ---------------------------
@@ -52,11 +69,13 @@ Evaluation Board Software Quick Start Procedure
 Installing the Software
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The EVAL-AD5676RARDZ uses the ACE evaluation software, which allows the evaluation and control of multiple evaluation systems.
+The EVAL-AD5676RARDZ uses the ACE evaluation software, which allows the
+evaluation and control of multiple evaluation systems.
 
 The ACE installer installs the necessary SDP-K1 drivers and the Microsoft® .NET Framework 4 by default. The ACE software must be installed before connecting the SDP-K1 board to the USB port of the PC to ensure that the SDP-K1 board is recognized properly. For full instructions on how to install and use this software, see the :adi:`ACE` software page on the Analog Devices website.
 
-After the installation is finished, the EVAL-AD5676RARDZ plug-in appears when the ACE software is opened.
+After the installation is finished, the EVAL-AD5676RARDZ plug-in appears when
+the ACE software is opened.
 
 Initial Setup
 ~~~~~~~~~~~~~
@@ -66,38 +85,44 @@ To set up the evaluation board, take the following steps:
 -  Connect the evaluation board to the SDP-K1 board, and then connect the USB cable between the SDP-K1 board and the PC.
 -  Run the ACE application. The EVAL-AD5676RARDZ plug-ins appear in the attached hardware section of the Start tab.
 -  Double-click the board plug-in to open the board view.
--  Double-click the AD5676R chip to access the chip block diagram. This view provides a basic representation of the functionality of the board.
+-  Double-click the AD5676R chip to access the chip block diagram. This view
+   provides a basic representation of the functionality of the board.
 
 **EVAL-AD5676RARDZ and SDP-K1 Board Connection**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad5676r-ardz/eval-ad5676rardz_and_sdp-k1_connection.png
    :alt: EVAL-AD5676RARDZ and SDP-K1 Board Connection
-   :width: 400px
+   :width: 400
 
 **EVAL-AD5676RARDZ Plugin - Board View**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad5676r-ardz/plugin_board_view.png
    :alt: ACE Plugin - Board View
-   :width: 400px
+   :width: 400
 
 **EVAL-AD5676RARDZ Plugin - Chip View**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad5676r-ardz/plugin_chip_view.png
    :alt: ACE Plugin - Chip View
-   :width: 400px
+   :width: 400
 
 Functional Block Diagram and Description
 ----------------------------------------
 
-The EVAL-AD5676RARDZ software is organized to appear similar to the functional block diagram shown in the AD5676R datasheet, which simplifies correlating the functions on the EVAL-AD5676RARDZ with the description in the AD5676R datasheet.
+The EVAL-AD5676RARDZ software is organized to appear similar to the functional
+block diagram shown in the AD5676R datasheet, which simplifies correlating the
+functions on the EVAL-AD5676RARDZ with the description in the AD5676R datasheet.
 
-For a full description of each block, register, and its settings, see the AD5676R datasheet.
+For a full description of each block, register, and its settings, see the
+AD5676R datasheet.
 
-Some of the blocks and their functions are described in this section as they pertain to the evaluation board. The full-screen block diagram UI is shown below.
+Some of the blocks and their functions are described in this section as they
+pertain to the evaluation board. The full-screen block diagram UI is shown
+below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad5676r-ardz/plugin_bd_with_labels.png
    :alt: Plugin - Block Diagram with Labels
-   :width: 600px
+   :width: 600
 
 **Block Diagram Functions**
 
@@ -142,13 +167,13 @@ All registers are fully accessible from the **AD5676R Memory Map** tab as shown 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad5676r-ardz/plugin_memory_map.png
    :alt: Plugin - Memory Map
-   :width: 800px
+   :width: 800
 
 All changes made in the memory map tab correspond to the block diagram. For example, if the internal register bit is enabled, it displays as enabled on the block diagram. Any bits or registers that are shown in bold in the memory map tab are modified values that have not been transferred to the evaluation board. Click **Apply Changes** to transfer the data to the evaluation board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad5676r-ardz/plugin_memory_map_unsaved.png
    :alt: Plugin - Memory Map with Unsaved Changes
-   :width: 800px
+   :width: 800
 
 Evaluation Board Hardware
 -------------------------
@@ -156,9 +181,14 @@ Evaluation Board Hardware
 Power Supplies
 ~~~~~~~~~~~~~~
 
-The EVAL-AD5676RARDZ provides an onboard 3.3 V regulator powered through the USB supply for the AD5676R main supply. If a different supply is required or if the evaluation board is controlled through the PMOD connector, an external supply must be provided by the external supply voltage (P8) connector. See the below table for more details.
+The EVAL-AD5676RARDZ provides an onboard 3.3 V regulator powered through the USB
+supply for the AD5676R main supply. If a different supply is required or if the
+evaluation board is controlled through the PMOD connector, an external supply
+must be provided by the external supply voltage (P8) connector. See the below
+table for more details.
 
-An onboard 2.5V reference (ADR4525) is also provided. Every supply is decoupled to the ground with 10 µF tantalum and 0.1 µF ceramic capacitors.
+An onboard 2.5V reference (ADR4525) is also provided. Every supply is decoupled
+to the ground with 10 µF tantalum and 0.1 µF ceramic capacitors.
 
 **PowerSupply Connectors**
 
@@ -173,7 +203,9 @@ EXT_REF         External voltage reference.
 Link Options
 ~~~~~~~~~~~~
 
-Several link options are incorporated on the EVAL-AD5676RARDZ and must be set for the required operating conditions before using the board. The functions of these link options are described in the table below.
+Several link options are incorporated on the EVAL-AD5676RARDZ and must be set
+for the required operating conditions before using the board. The functions of
+these link options are described in the table below.
 
 **Link Functions**
 
@@ -234,12 +266,11 @@ On-Board Connectors
    -  ` </resources/eval/user-guides/dac/eval-ad5676r-ardz/eval-ad5676rardz_kit_board_photograph_top.png>`__
    
 
-
 *End of Document*
 
 .. |Evaluation Board Photograph| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad5676r-ardz/eval-ad5676rardz_board_photograph.png
-   :width: 400px
+   :width: 400
 .. |Evaluation Board Photograph with SDP-K1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad5676r-ardz/eval-ad5676rardz_kit_board_photograph.png
-   :width: 600px
+   :width: 600
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/eval-ad5676r-ardz/eval-ad5676rardz_connectors.png
-   :width: 600px
+   :width: 600

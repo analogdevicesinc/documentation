@@ -4,7 +4,13 @@ ADRV9009-ZU11EG Production Testing
 Overview
 --------
 
-Production tests for ADRV9009-ZU11EG are composed of a series of Bash scripts that run both on Raspberry Pi and DUT (Device Under Test). The test procedure requires a Raspberry Pi 4 board (host) connected via Ethernet cable to the DUT. The Raspberry Pi board requires to have a HDMI monitor and USB keyboard connected. All test sequences are selected and started from the GUI interface displayed by Raspberry Pi on the monitor. Please find the required equipment list below:
+Production tests for ADRV9009-ZU11EG are composed of a series of Bash scripts
+that run both on Raspberry Pi and DUT (Device Under Test). The test procedure
+requires a Raspberry Pi 4 board (host) connected via Ethernet cable to the DUT.
+The Raspberry Pi board requires to have a HDMI monitor and USB keyboard
+connected. All test sequences are selected and started from the GUI interface
+displayed by Raspberry Pi on the monitor. Please find the required equipment
+list below:
 
 Required Hardware
 -----------------
@@ -37,7 +43,7 @@ The complete test jig should look like:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/zu11eg-prod-test-setup.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Required Software
 ~~~~~~~~~~~~~~~~~
@@ -45,7 +51,8 @@ Required Software
 ADRV9009-ZU11EG SD card
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The SD card image used for production testing is based on official release of Zynq images and can be downloaded from :
+The SD card image used for production testing is based on official release of
+Zynq images and can be downloaded from :
 
 .. admonition:: Download
    :class: download
@@ -56,7 +63,6 @@ The SD card image used for production testing is based on official release of Zy
    -  Checksum ``b056120a53e13b197b5b366742d9f5c7``
    
 
-
 .. admonition:: Download
    :class: download
 
@@ -65,7 +71,6 @@ The SD card image used for production testing is based on official release of Zy
    -   `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_fmcomms8_test_card_28_05.img.tar.xz>`_
    -  Checksum ``9d3455a071f4151b9c320282abcb2f04``
    
-
 
 .. admonition:: Download
    :class: download
@@ -76,16 +81,16 @@ The SD card image used for production testing is based on official release of Zy
    -  Checksum ``4efbaa39928f2f36b7b462156e6d00f6``
    
 
-
 .. note::
 
    To write it on SD card can follow the instructions for: :doc:`linux hosts </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>` or :doc:`windows hosts </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
 
-
 Raspberry PI SD card
 ^^^^^^^^^^^^^^^^^^^^
 
-The SD image used is based on Raspbian with desktop. On top of that are installed the testing scripts. The image can be created starting from vanilla Raspbian or downloaded from:
+The SD image used is based on Raspbian with desktop. On top of that are
+installed the testing scripts. The image can be created starting from vanilla
+Raspbian or downloaded from:
 
 .. admonition:: Download
    :class: download
@@ -96,7 +101,6 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    -  Checksum ``0d8759784c1cebbcd908fe8a01083272``
    
 
-
 .. admonition:: Download
    :class: download
 
@@ -105,7 +109,6 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    -  `Actual file <https://swdownloads.analog.com/cse/prod_test_rel/talise_test/adrv9009_pi_test_card_02_11.tar.xz>`_
    -  Checksum ``080fb8771e12195eba7196f9de05ec1c``
    
-
 
 .. admonition:: Download
    :class: download
@@ -116,11 +119,9 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    -  Checksum ``cf5b55f2a874ef43e47f269b4c534c9d``
    
 
-
 .. note::
 
    To write it on SD card can follow the instructions: `Installing PI images <https://www.raspberrypi.org/documentation/installation/installing-images/>`_
-
 
 Required setup steps
 ~~~~~~~~~~~~~~~~~~~~
@@ -133,7 +134,7 @@ Required setup steps
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/ufl-loopback.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Connect Ethernet cable between Raspberry Pi and DUT
 -  Connect USB cables between Raspberry Pi and DUT
@@ -141,7 +142,7 @@ Required setup steps
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/i2c-rpi-adrv9009-conn.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Insert SD card in DUT
 -  Connect DisplayPort cable to DUT
@@ -150,21 +151,22 @@ Required setup steps
 Test process
 ~~~~~~~~~~~~
 
-First make sure all the required setup explained above is completed. Once the test setup is ready, SOM testing should be done using the following steps:
+First make sure all the required setup explained above is completed. Once the
+test setup is ready, SOM testing should be done using the following steps:
 
 -  Power on both DUT and Raspberry Pi
 -  The following screen should be visible after Raspberry Pi booted:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/boot-pi-screen.png
    :align: center
-   :width: 800px
+   :width: 800
 
--  Before starting the test place the labels containing the serial number and MAC address on the RF shielding top cover.
+-  Before starting the test place the labels containing the serial number and
+   MAC address on the RF shielding top cover.
 
 .. warning::
 
    After this step, DO NOT SWAP the RF shielding top cover between boards.
-
 
 .. important::
 
@@ -178,62 +180,72 @@ First make sure all the required setup explained above is completed. Once the te
    -  Test 6
    
 
-
--  Testing sequence can be started by selecting one of the menu items. In order to start testing an Ethernet cable should be connected between Raspberry Pi and DUT. At the beginning of every test the correct connection with DUT is checked. If the connection cannot be established the following error message will be printed:
+-  Testing sequence can be started by selecting one of the menu items. In order
+   to start testing an Ethernet cable should be connected between Raspberry Pi
+   and DUT. At the beginning of every test the correct connection with DUT is
+   checked. If the connection cannot be established the following error message
+   will be printed:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/boot-pi-eth-conn.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. tip::
 
-   Make sure that Ethernet cable is connected, DUT is powered up, DUT SD card is inserted and boot mode switches (S13-S16) are configured for SD boot.
+   Make sure that Ethernet cable is connected, DUT is powered up, DUT SD card is
+   inserted and boot mode switches (S13-S16) are configured for SD boot.
 
-
--  If connection is OK the test will start. Below is an example of test 1 and 2 running:
+-  If connection is OK the test will start. Below is an example of test 1 and 2
+   running:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/adrv9009-seq-pll.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Test 1 - Wait for 30 seconds after PS_DONE LED lights up.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/talise_t1_led_on.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Test 2 - Power cycling needed after PS_DONE LED is OFF.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/talise_t1_led_off.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Test 5 – insert the last 4 digits of the MAC address from the RF shielding top cover.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/adrv9009-rf-shielding.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Test 4 & Test 5 & Test 6 - Follow on-screen instructions to complete the tests.
 -  Heatsink needs to be installed and **Test 6** should be run again.
--  If test completed successfully the PASSED message will be printed in green like in the screen bellow. This means that DUT passed all the assigned tests.
+-  If test completed successfully the PASSED message will be printed in green
+   like in the screen bellow. This means that DUT passed all the assigned tests.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/test_passed_screen.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
--  If one of the tests failed, the FAIL message will be printed like in the screen capture bellow:
+-  If one of the tests failed, the FAIL message will be printed like in the
+   screen capture bellow:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/test_failed_screen.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 -  In case of a failed test the program will ask if the tester wants to repeat that test immediately. The test can be repeated by an undefined number of times.
--  If the problem is persistent and the test failing continuously the test engineer can decide to not repeat it anymore.
+-  If the problem is persistent and the test failing continuously the test
+   engineer can decide to not repeat it anymore.
 
 .. tip::
 
-   In this situation it will be asked if user wants to close the test sequence and declare the DUT tested failed or can respond NO(n) to question “Do you want to close the test?” and in this way mark the test as passed and bypass it.
+   In this situation it will be asked if user wants to close the test sequence
+   and declare the DUT tested failed or can respond NO(n) to question “Do you
+   want to close the test?” and in this way mark the test as passed and bypass
+   it.
 
    
    .. warning::
@@ -242,8 +254,10 @@ First make sure all the required setup explained above is completed. Once the te
 
    
 
-
 .. important::
 
-   When testing is finished ADRV and Raspberry PI should always be powered off before power is unplugged otherwise the SD cards can be corrupted. First should be selected item 9 to power off ADRV. The test engineer should wait until LEDs DS6 and DS7 are off. Now the power can be disconnected from ADRV. After ADRV is off the Raspberry PI can be turned off by selecting item 8.
-
+   When testing is finished ADRV and Raspberry PI should always be powered off
+   before power is unplugged otherwise the SD cards can be corrupted. First
+   should be selected item 9 to power off ADRV. The test engineer should wait
+   until LEDs DS6 and DS7 are off. Now the power can be disconnected from ADRV.
+   After ADRV is off the Raspberry PI can be turned off by selecting item 8.

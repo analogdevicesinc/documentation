@@ -41,12 +41,22 @@ The :adi:`AD5790` is a single 20-bit, voltage out Dac that operates from a bipol
 
 The :adi:`AD5791` is a single 20-bit, unbuffered voltage-output DAC that operates from a bipolar supply of up to 33 V. The AD5791 accepts a positive reference input in the range 5 V to VDD – 2.5V and a negative reference input in the range VSS + 2.5 V to 0 V. The AD5791 offers a relative accuracy specification of ±1 LSB max, and operation is guaranteed monotonic with a ±1 LSB DNL max specification.
 
-These parts use a versatile 3-wire serial interface that operates at clock rates of up to 35 MHz and that is compatible with standard SPI, QSPI™, MICROWIRE™, and DSP interface standards. The parts incorporate a power-on reset circuit that ensures the DAC output powers up to 0V in a known output impedance state and remains in this state until a valid write to the device takes place. The parts provide an output clamp feature that places the output in a defined load state.
+These parts use a versatile 3-wire serial interface that operates at clock rates
+of up to 35 MHz and that is compatible with standard SPI, QSPI™, MICROWIRE™, and
+DSP interface standards. The parts incorporate a power-on reset circuit that
+ensures the DAC output powers up to 0V in a known output impedance state and
+remains in this state until a valid write to the device takes place. The parts
+provide an output clamp feature that places the output in a defined load state.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5780_sdz.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -58,9 +68,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD5780 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD5780 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD5780 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD5780 driver:
 
@@ -74,7 +88,6 @@ There are three functions which are called by the AD5780 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of AD5780 driver:
 
@@ -110,11 +123,11 @@ Downloads
    -  `AD5780 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5780_rx62n.zip>`_
    
 
-
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD5780 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD5780
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -130,7 +143,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD5780SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+An EVAL-AD5780SDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
+for RL78G13:
 
 ::
 
@@ -149,7 +163,8 @@ An EVAL-AD5780SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) 
 Reference Project Overview
 --------------------------
 
-The reference project initializes the device, reads the parts internal registers displays them and then generates a triangle signal.
+The reference project initializes the device, reads the parts internal registers
+displays them and then generates a triangle signal.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5780_rl78g13_screen.jpg
    :align: center
@@ -157,16 +172,15 @@ The reference project initializes the device, reads the parts internal registers
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the AD5780 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the AD5780
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -182,7 +196,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD5780EBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+An EVAL-AD5780EBZ board has to be interfaced with the Renesas Demonstration Kit
+(RDK) for RX62N:
 
 ::
 
@@ -201,7 +216,8 @@ An EVAL-AD5780EBZ board has to be interfaced with the Renesas Demonstration Kit 
 Reference Project Overview
 --------------------------
 
-The reference project: The reference project initializes the device, reads the parts internal registers displays them and then generates a triangle signal.
+The reference project: The reference project initializes the device, reads the
+parts internal registers displays them and then generates a triangle signal.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5780_rx62n_screen.jpg
    :align: center
@@ -209,17 +225,13 @@ The reference project: The reference project initializes the device, reads the p
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

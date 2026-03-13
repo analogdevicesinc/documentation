@@ -15,7 +15,8 @@ The ADXBAND16EBZ System Development Platform highlights a complete system soluti
 
 In addition to the ADXBAND16EBZ Digitizing Card, the kit also contains a 16Tx/16Rx Calibration Board that is used to develop system-level calibration algorithms, or otherwise more easily demonstrate power-up phase determinism in situations pertinent to their own use case. The Calibration Board also allows the user to demonstrate combined-channel dynamic range, spurious, and phase noise improvements and can also be controlled via MATLAB add-on when connected to the PMOD interface of the `VCU118 <https://www.xilinx.com/VCU118>`_.
 
-The system can be used to enable quick time-to-market development programs for applications like:
+The system can be used to enable quick time-to-market development programs for
+applications like:
 
 -  ADEF (Phased-Array, RADAR, EW, SATCOM)
 -  Communications Infrastructure (Multiband 5G and mmWave 5G)
@@ -45,7 +46,8 @@ Features
 -  16x RF Transmit (Tx) Channels (32x Digital Tx Channels)
 
    -  Total 16x 4GSPS to 28GSPS DAC
-   -  48x Digital Up Converters (DUCs), Each Including Complex Numerically-Controlled Oscillators (NCOs)
+   -  48x Digital Up Converters (DUCs), Each Including Complex
+      Numerically-Controlled Oscillators (NCOs)
 
 -  Flexible Rx & Tx RF Front-Ends
 
@@ -95,13 +97,13 @@ High-Level Block Diagram
 System Integration
 ~~~~~~~~~~~~~~~~~~
 
-Below is the full integrated system including the VCU118, ADXBAND16EBZ, and ADXBAND16EBZ-CAL in full operation.
+Below is the full integrated system including the VCU118, ADXBAND16EBZ, and
+ADXBAND16EBZ-CAL in full operation.
 
 Key Components Locations
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Key components highlighted within the Triton system
-
 
 |image1|
 
@@ -115,7 +117,7 @@ ADXBAND16EBZ-CAL Digitizing Card Key Features:
 • Combined Tx and Rx channels output via SMPM connectors
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/triton_calibration_board.jpg
-   :width: 600px
+   :width: 600
 
 Triton Signal Chain
 ~~~~~~~~~~~~~~~~~~~
@@ -127,7 +129,8 @@ Triton Signal Chain
 Multi-Chip Synchronization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A 4-step process allows single clock synchronization across dozens of channels using a tree fan-out architecture for bi-directional SYSREF
+A 4-step process allows single clock synchronization across dozens of channels
+using a tree fan-out architecture for bi-directional SYSREF
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/triton_clocktree_revb1-scrubbed_revb.png
    :align: center
@@ -137,9 +140,11 @@ A 4-step process allows single clock synchronization across dozens of channels u
 Combined Channel Performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Combining 16 Tx channels after phase alignment improves Power Magnitude ~23dBm with SFDR improving by ~18dB
+Combining 16 Tx channels after phase alignment improves Power Magnitude ~23dBm
+with SFDR improving by ~18dB
 
-Combining 16 Rx channels after phase alignment improves NSD performance ~12dB with SFDR improving by >11dB
+Combining 16 Rx channels after phase alignment improves NSD performance ~12dB
+with SFDR improving by >11dB
 
 |image4| |image5|
 
@@ -233,10 +238,10 @@ For additional questions or support, please visit the Engineering Zone forum at 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/triton_revb_populated_top_partition.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/triton_bd_generic_adc.png
-   :width: 1000px
+   :width: 1000
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/triton_bd_generic_dac.png
-   :width: 1000px
+   :width: 1000
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/triton_sig_tx_performance.png
-   :width: 1000px
+   :width: 1000
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/triton_rx_sig_performance.png
-   :width: 1000px
+   :width: 1000

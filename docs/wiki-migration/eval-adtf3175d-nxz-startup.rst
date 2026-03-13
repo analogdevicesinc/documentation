@@ -17,7 +17,7 @@ Kit Contents
 
 .. image:: https://wiki.analog.com/_media/adtf_eval_whatsinthebox.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Software Download
 -----------------
@@ -32,13 +32,13 @@ Startup
 
 .. image:: https://wiki.analog.com/_media/img_01812.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Connect USB-C cable to module
 
 .. image:: https://wiki.analog.com/_media/capture33.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Connect USB-C to laptop (for additional connection options please check "Connectivity" section)
 -  The following leds must turn on before moving to next steps:
@@ -47,7 +47,8 @@ Startup
    -  Blinking led on NXP SOM
    -  Blue led on ADSD3500 interposer board
 
--  Look at available network connections, an 'Unidentified Network' with no internet access must show up, as shown in the image below
+-  Look at available network connections, an 'Unidentified Network' with no
+   internet access must show up, as shown in the image below
 
 .. image:: https://wiki.analog.com/_media/blurrednetworks.png
    :align: center
@@ -56,12 +57,13 @@ Startup
 
 .. image:: https://wiki.analog.com/_media/img_0186.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Using the wall adaptor to power up camera
 -----------------------------------------
 
-It is possible to power up the camera by using an external wall adaptor. As long as the cable has USB-C on one side and the wall adaptor can support at least 5W.
+It is possible to power up the camera by using an external wall adaptor. As long
+as the cable has USB-C on one side and the wall adaptor can support at least 5W.
 
 In this case the USB-C cable cannot be used to transfer data over to the PC. The user will have to communicate through an IX ethernet cable as the one shown below: - https://www.digikey.com/en/products/detail/harting/33480147826020/14556483
 
@@ -72,11 +74,12 @@ Setup as follows:
 
 .. image:: https://wiki.analog.com/_media/wiki-adtf3175d-side-connectors.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Ensure your laptop is connected to router (WIFI or Ethernet is okay)
 
-   -  Please note there will be frame drops by using WIFI or Ethernet in comparison to USB-C
+   -  Please note there will be frame drops by using WIFI or Ethernet in
+      comparison to USB-C
 
 -  Find IP address of camera (Multiple options)
 
@@ -84,17 +87,20 @@ Setup as follows:
    -  Connect to NXP via micro-USB cable and get ip address
 
       -  For instructions please check :doc:`Connecting to adtf-3175x </wiki-migration/resources/eval/user-guides/eval-adtf3175x-access>`
-      -  Once logged in run 'ip addr' command and find IP address as shown in red below. In this case the IP address is 192.168.0.101
+      -  Once logged in run 'ip addr' command and find IP address as shown in
+         red below. In this case the IP address is 192.168.0.101
 
 .. image:: https://wiki.analog.com/_media/get_ip_from_nxp.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  To run the GUI change 'camera_ip' parameter to IP found above in the tof-tools.config file in "TOF_Evaluation_ADTF3175D-RelX.X.X\\bin" folder (Open with notepad)
+-  To run the GUI change 'camera_ip' parameter to IP found above in the
+   tof-tools.config file in "TOF_Evaluation_ADTF3175D-RelX.X.X\\bin" folder
+   (Open with notepad)
 
 .. image:: https://wiki.analog.com/_media/tof_tools_modification.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Run GUI
 

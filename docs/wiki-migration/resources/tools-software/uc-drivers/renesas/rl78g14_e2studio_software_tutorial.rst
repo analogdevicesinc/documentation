@@ -24,7 +24,7 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/rl78g14_e2studio_4.jpg
    :align: center
-   :width: 850px
+   :width: 850
 
 -  Before building the project there is one more step that needs to be done. Communication and TIME drivers use interrupts that have the service routines defined in the **interrupt_handlers.c** file. Open the file, declare **IICA0_Flag** as a char type and **overflowCounter** as a short type.
 

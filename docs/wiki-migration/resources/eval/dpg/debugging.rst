@@ -12,7 +12,11 @@ Ensure that the DPG2 and the eval board are detected in the Device Manager:|imag
 Verify DLL File is Present
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Verify that the appropriate DLL for your evaluation board is present in: C:\\Program Files (x86)\\Analog Devices\\DPG\\ the file is named: AnalogDevices.DPG.EvalBoard.ADXXXX.dll where XXXX is the part number of your evaluation board. If the file is not present install the DAC update file for your evaluation board.
+Verify that the appropriate DLL for your evaluation board is present in:
+C:\\Program Files (x86)\\Analog Devices\\DPG\\ the file is named:
+AnalogDevices.DPG.EvalBoard.ADXXXX.dll where XXXX is the part number of your
+evaluation board. If the file is not present install the DAC update file for
+your evaluation board.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/devicemanager.png
-   :width: 200px
+   :width: 200

@@ -4,9 +4,15 @@ RMS 4 Band Compressor- Single Precision(ADAU145x)
 =================================================
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/multibandcompressor_treetoolbox.png
-   :width: 200px
+   :width: 200
 
-RMS 4 band compressor is a multi-band compressor with 4 unique filter bands each with a unique compression curve and setting. The filter bands are configurable allowing the user to adjust the frequencies fed to each compression curve. Each compressor curve is individually configurable by means of a Graph and settings - attack, release hold and knee. The compression is applied by detecting the RMS value of the input signal and multiplying it with corresponding gain as set in the graph.
+RMS 4 band compressor is a multi-band compressor with 4 unique filter bands each
+with a unique compression curve and setting. The filter bands are configurable
+allowing the user to adjust the frequencies fed to each compression curve. Each
+compressor curve is individually configurable by means of a Graph and settings -
+attack, release hold and knee. The compression is applied by detecting the RMS
+value of the input signal and multiplying it with corresponding gain as set in
+the graph.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/multiband_compressor_gui.png
    :align: center
@@ -101,12 +107,19 @@ GUI Controls
 Algorithm Description
 ---------------------
 
-The Algorithm implements a multiple band compressor, with the input being separated into various filter bands depending on the set corner frequencies. These filter inputs are fed into individual compressors with unique curves and settings for attack, release and hold times.The detected gain is multiplied with the individual filter outputs and summed to a single output.
+The Algorithm implements a multiple band compressor, with the input being
+separated into various filter bands depending on the set corner frequencies.
+These filter inputs are fed into individual compressors with unique curves and
+settings for attack, release and hold times.The detected gain is multiplied with
+the individual filter outputs and summed to a single output.
 
 Example
 -------
 
-The example shows The module configured to a single input, single output configuration. The input is a sine sweep, sweeping linearly from 50Hz to 20kHz. The multiband compressor bands are configured to provide compression of 12db,0db,5dB and 30dB at an input level of 0dB.
+The example shows The module configured to a single input, single output
+configuration. The input is a sine sweep, sweeping linearly from 50Hz to 20kHz.
+The multiband compressor bands are configured to provide compression of
+12db,0db,5dB and 30dB at an input level of 0dB.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/example_multiband_comp1.png
    :align: center
@@ -124,5 +137,5 @@ Supported IC's
 
 .. hint::
 
-   Note: The module uses single precision filters due to which the accuracy of the module is limited at low amplitude levels of input data
-
+   Note: The module uses single precision filters due to which the accuracy of
+   the module is limited at low amplitude levels of input data

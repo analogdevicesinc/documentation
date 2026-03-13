@@ -14,7 +14,7 @@ The :adi:`CN0203` needs +15 V, -15 V and +6 V power supply inputs and thus, need
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/cn0203-hw-1024.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -40,7 +40,7 @@ Block Assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/cn0203-hw-1024_-_edited.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 -  The :adi:`EVAL-CN0203-SDPZ <CN0203>` **(CN0203 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin Connector **(SDP-B CONN)**
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable
@@ -54,8 +54,9 @@ Block Assignments
 
 .. important::
 
-   Power on the (EVAL-CN0203-SDPZ) through the triple output power supply and the (SDP-B Board) through the PC SEPARATELY before connecting the two boards together.
-
+   Power on the (EVAL-CN0203-SDPZ) through the triple output power supply and
+   the (SDP-B Board) through the PC SEPARATELY before connecting the two boards
+   together.
 
 Jumper Settings
 ~~~~~~~~~~~~~~~
@@ -64,7 +65,7 @@ See the table in the image below for the jumper settings. Values in red are the 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/cn0203_table2_4.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -76,7 +77,6 @@ Installing the Evaluation Software
 .. tip::
 
    \ NOTE: It is recommended that you install the `CN0203 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0203/cn0203%20sdp%20eval%20software.zip>`_ to the default directory path C:\\Program Files (x86)\\Analog Devices\\CN0203\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
-
 
    |image1|
 
@@ -96,8 +96,9 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image5|
 
@@ -108,7 +109,6 @@ Installing the Evaluation Software
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image6|
 
@@ -130,7 +130,7 @@ Main Window
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/7-27-2017_10-29-07_am.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  **Title Bar** (Highlighted Violet)
 
@@ -161,7 +161,8 @@ Main Window
 
       -  **Toggle CLEAR**
 
-         -  Sets the outputs to the zero/midscale voltage value or the minimum value of the selected current range
+         -  Sets the outputs to the zero/midscale voltage value or the minimum
+            value of the selected current range
 
 -  **AD5750-1 Error Indicator** (Highlighted Yellow)
 
@@ -230,7 +231,6 @@ Schematic, PCB Layout, Bill of Materials
    -  PADS project
    
 
-
 Registration
 ------------
 
@@ -238,22 +238,21 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0203-SDPZ?&v=Rev B>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/7-27-2017_10-18-25_am.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/7-27-2017_10-18-49_am.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/7-27-2017_10-19-16_am.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/7-27-2017_10-20-21_am.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/7-27-2017_10-21-00_am.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/7-27-2017_10-21-13_am.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/7-27-2017_10-22-01_am.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0203/7-27-2017_10-22-23_am.png
-   :width: 600px
+   :width: 600

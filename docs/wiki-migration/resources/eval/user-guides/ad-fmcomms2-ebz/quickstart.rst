@@ -4,12 +4,16 @@ AD936X Quick Start Guides
 AD-FMCOMMS2/3/4/5-EBZ
 ---------------------
 
-The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the AD-FMCOMMS2/3/4/5-EBZ boards on various FPGA development boards. They will discuss how to program the bitstream, run a no-OS program or boot a Linux distribution.
+The Quick Start Guides provide a simple step by step instruction on how to do an
+initial system setup for the AD-FMCOMMS2/3/4/5-EBZ boards on various FPGA
+development boards. They will discuss how to program the bitstream, run a no-OS
+program or boot a Linux distribution.
 
 Supported Carriers
 ~~~~~~~~~~~~~~~~~~
 
-The AD-FMCOMMS2/3/4/5-EBZ is, by definition a "FPGA mezzanine card" (FMC), that means it needs a carrier to plug into. The carriers we support are:
+The AD-FMCOMMS2/3/4/5-EBZ is, by definition a "FPGA mezzanine card" (FMC), that
+means it needs a carrier to plug into. The carriers we support are:
 
 +-------------------------------------------------------------------------------+----------+--------------+---------+
 | Board                                                                         | FMCOMMS5 | FMCOMMS2/3/4 | Arradio |
@@ -65,7 +69,11 @@ The supported OS are:
 Hardware Setup
 ~~~~~~~~~~~~~~
 
-In most carriers, the AD-FMCOMMS2/3/4-EBZ board connects to the LPC connector (unless otherwise noted). The AD-FMCOMMS5-EBZ board is a dual FMC connector, and requires either FMC connectors (which can be either LPC + LPC). The carrier setup requires power, UART (115200), ethernet (Linux), HDMI (if available) and/or JTAG (no-OS) connections. A few typical setups are shown below.
+In most carriers, the AD-FMCOMMS2/3/4-EBZ board connects to the LPC connector
+(unless otherwise noted). The AD-FMCOMMS5-EBZ board is a dual FMC connector, and
+requires either FMC connectors (which can be either LPC + LPC). The carrier
+setup requires power, UART (115200), ethernet (Linux), HDMI (if available)
+and/or JTAG (no-OS) connections. A few typical setups are shown below.
 
 ZC702 + FMCOMMS2
 ^^^^^^^^^^^^^^^^
@@ -76,13 +84,13 @@ ZC706 + FMCOMMS2
 ^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/cf_ad9361_setup.jpg
-   :width: 800px
+   :width: 800
 
 SoCkit + ARRADIO
 ~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/sockit_arradio.jpg
-   :width: 800px
+   :width: 800
 
 Jumper Configuration
 ^^^^^^^^^^^^^^^^^^^^
@@ -94,10 +102,9 @@ Jumper Configuration
 ======= ========= ========= ======== ======== ========
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/sockit_clksel_bootsel.jpg
-   :width: 350px
+   :width: 350
 
 +--------------+
-
 
 | JP2          |
 
@@ -108,7 +115,7 @@ Jumper Configuration
 +--------------+
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/sockit_jp2.jpg
-   :width: 200px
+   :width: 200
 
 ======= ===== ===== ===== ===== ===== =========
 \       MSEL0 MSEL1 MSEL2 MSEL3 MSEL4 CODEC_SEL
@@ -117,12 +124,14 @@ Jumper Configuration
 ======= ===== ===== ===== ===== ===== =========
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/sockit_sw6.jpg
-   :width: 200px
+   :width: 200
 
 ADRV936X System-On-Module
 -------------------------
 
-The ADRV936X SOMs have three selectable switches. Two are used for selecting the boot source, and one for selecting the SD card source. The selection will be based on your carrier and how you want to boot the device.
+The ADRV936X SOMs have three selectable switches. Two are used for selecting the
+boot source, and one for selecting the SD card source. The selection will be
+based on your carrier and how you want to boot the device.
 
 For switch S3 and S4
 
@@ -150,12 +159,15 @@ Networking
 
 By default, all SD cards for the prototyping platform (not TES) are configured for DHCP networking over their Ethernet interfaces. If you want to change the networking interfaces to use static addresses, which is required for directly connected Ethernet cables without DHCP servers in the loop, a :git-linux_image_ADI-scripts:`helper script <enable_static_ip.sh>` is provided.
 
-To update the IP address of the board you must be logged into the board over UART or JTAG or Ethernet.
+To update the IP address of the board you must be logged into the board over
+UART or JTAG or Ethernet.
 
-From the development board or SOM itself run the following with the desired IP address:
+From the development board or SOM itself run the following with the desired IP
+address:
 
 ::
 
    enable_static_ip.sh <ip address> eth0
 
-This will fix the IP address of the desired Ethernet adapter and prevent the onboard network manager from changing it.
+This will fix the IP address of the desired Ethernet adapter and prevent the
+onboard network manager from changing it.

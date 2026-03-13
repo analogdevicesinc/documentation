@@ -3,7 +3,8 @@ Appendix B: Messages
 
 :doc:`Click here to return to the A2B SSPLUS STACK USER GUIDE </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide>`
 
-Messages are shared between the Stack, Plugins and the Application to request or notify specific events.
+Messages are shared between the Stack, Plugins and the Application to request or
+notify specific events.
 
 Request Message
 ---------------
@@ -17,7 +18,6 @@ Request Message Example:-
 .. container:: centeralign
 
    \ **Figure: Request Message Example**
-
 
 The list of Request message commands is listed below.
 
@@ -50,7 +50,6 @@ Request Message Commands
 
    \ **Table: Request Message Commands**
 
-
 Notify Messages
 ---------------
 
@@ -63,7 +62,6 @@ Notify Message Examples:-
 .. container:: centeralign
 
    \ **Figure: Notify Message Example**\
-
 
 The list of Notify Message Commands is listed below
 
@@ -87,11 +85,12 @@ The list of Notify Message Commands is listed below
 
    \ **Table: Notify Message Commands**\
 
-
 Sending custom messages and notifications
 -----------------------------------------
 
-To send a custom message, one must allocate the message, find the payload area, deposit the message contents, send the message, and optionally release the reference to the message. Sending a typical message looks like this:
+To send a custom message, one must allocate the message, find the payload area,
+deposit the message contents, send the message, and optionally release the
+reference to the message. Sending a typical message looks like this:
 
 Code Snippet: Sending Custom Message Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,15 +102,25 @@ Code Snippet: Sending Custom Message Example
 
    \ **Code Snippet: ending Custom Message Example**\
 
+As illustrated in the example code above, the caller unreferences the message
+following the call to a2b_msgRtrSendRequest(). This is because the Stack adds
+its own reference to the message following the send request. In the event that
+caller requires that the message live longer, i.e. because it is carrying
+pointers to data, then one should register a complete callback with the
+a2b_msgRtrSendRequest() and unreference the message there.
 
-As illustrated in the example code above, the caller unreferences the message following the call to a2b_msgRtrSendRequest(). This is because the Stack adds its own reference to the message following the send request. In the event that caller requires that the message live longer, i.e. because it is carrying pointers to data, then one should register a complete callback with the a2b_msgRtrSendRequest() and unreference the message there.
-
-The callee of the message is free to modify the contents of the message within the callee’s message handler. A callback optionally registered by the caller can be called when the callee completes processing of the message. This callback can be used by the caller to process return values from the callee.
+The callee of the message is free to modify the contents of the message within
+the callee’s message handler. A callback optionally registered by the caller can
+be called when the callee completes processing of the message. This callback can
+be used by the caller to process return values from the callee.
 
 Receiving custom messages and notifications
 -------------------------------------------
 
-Messages are handled exclusively through the Execute method of a plugin. A plugin simply has to have defined entries for custom message within the switch/case statement. The message payload can be extracted from the message using ‘a2b_msgGetPayload()’
+Messages are handled exclusively through the Execute method of a plugin. A
+plugin simply has to have defined entries for custom message within the
+switch/case statement. The message payload can be extracted from the message
+using ‘a2b_msgGetPayload()’
 
 Code snippet: Receiving Custom Message Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,4 +131,3 @@ Code snippet: Receiving Custom Message Example
 .. container:: centeralign
 
    \ **Code Snippet: Receiving Custom Message Example**\
-

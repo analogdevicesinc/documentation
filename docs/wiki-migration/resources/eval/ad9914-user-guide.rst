@@ -4,8 +4,6 @@ AD9914/AD9915 Evaluation Board User Guide
 Features
 --------
 
-
-
 - PC evaluation software for control and measurement
 
 of the :adi:`AD9914` and :adi:`AD9915`
@@ -32,13 +30,11 @@ This user guide describes how to set up and use the :adi:`AD9914` and :adi:`AD99
 
 .. container:: centeralign
 
-
    ..
 
 |image1|
 
    *Figure 1. AD9914/PCBZ*
-
 
 Evaluation Board Software
 -------------------------
@@ -58,9 +54,8 @@ Do not connect the evaluation board until the software installation is complete.
 Installing the Device Driver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After the installation of the evaluation software is complete, follow these steps to install the device driver:
-
-
+After the installation of the evaluation software is complete, follow these
+steps to install the device driver:
 
 - Power up the evaluation board and apply the REF CLK source. See the :doc:`Evaluation Board Hardware </wiki-migration/resources/eval/ad9914-user-guide>` section for properly powering the evaluation board.
 - Connect the evaluation board to the computer via the USB port using the USB cable included in the evaluation board kit. When the USB connection is recognized, a green LED light (D200) illuminates and the **Found New Hardware Wizard** dialog box appears.
@@ -72,7 +67,8 @@ After the installation of the evaluation software is complete, follow these step
 Confirming the Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A successful connection of the software to the board is indicated by a green USB icon, which can be found at the bottom right corner of the main GUI window.
+A successful connection of the software to the board is indicated by a green USB
+icon, which can be found at the bottom right corner of the main GUI window.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
@@ -88,7 +84,6 @@ An unsuccessful connection is indicated by a flashing red USB icon located at th
    
    *Figure 2. New Found Hardware Window*
 
-
 -  Choose **Don’t search. I will choose the driver to install**, and then click **Next**.
 
 .. container:: centeralign
@@ -98,7 +93,6 @@ An unsuccessful connection is indicated by a flashing red USB icon located at th
    
    *Figure 3. Search and Installation Options Window*
 
-
 -  Select the **AD9914 Firmware Loader**, and then click **Next**. Note that on occasion the operating system may load the wrong driver because the operating system detects multiple drivers, such as the evaluation board, that can be used by the hardware. In such a case, multiple drivers might be listed in this window. Select only the **AD9914 Firmware Loader**, and then click **Next**. A **Hardware Installation** box then appears. Click **Continue Anyway**, and then close the wizard by clicking **Finish**.
 
 .. container:: centeralign
@@ -107,7 +101,6 @@ An unsuccessful connection is indicated by a flashing red USB icon located at th
    .. image:: https://wiki.analog.com/_media/{{/resources/eval/user-guides/ad9914/figure4_found_new_hardware_wiz3.png
    
    *Figure 4. Select Device Driver Window*
-
 
 Evaluation Board Hardware
 -------------------------
@@ -135,7 +128,8 @@ Input Reference Clock Signal
 The :adi:`AD9914`/:adi:`AD9915` architecture provides the user with two options when providing an input clock signal to the part:
 
 -  Connect a high frequency input clock signal up to 3.5/2.5 GHz to J104.
--  Connect a lower input reference frequency to J104 and enable the internal clock multiplier (PLL).
+-  Connect a lower input reference frequency to J104 and enable the internal
+   clock multiplier (PLL).
 
 The maximum frequency rate of the PFD of the internal PLL is 125 MHz. The input clock to the DDS is called the REF CLK. The internal system clock runs at the REF CLK rate if the internal REF CLK multiplier (PLL) is disabled. Otherwise, the internal system clock runs at the output frequency rate of the PLL. Note that the input clock path on the evaluation board uses an :adi:`ADCLK925` clock buffer to drive the :adi:`AD9914`/:adi:`AD9915` differentially. Therefore, if the input signal into the :adi:`ADCLK925` has a slow slew rate, the in-close phase noise performance of the :adi:`AD9914`/:adi:`AD9915` may be dramatically limited by the :adi:`ADCLK925`.
 
@@ -144,12 +138,18 @@ Refer to the :adi:`ADCLK925` data sheet for details on the maximum input speeds 
 DAC Output Signal
 ~~~~~~~~~~~~~~~~~
 
-The main output signal of the DDS is the DAC output. Note that the output of the DDS may or may not have a DAC reconstruction filter after the balun on the evaluation board depending on the revision of the board.
+The main output signal of the DDS is the DAC output. Note that the output of the
+DDS may or may not have a DAC reconstruction filter after the balun on the
+evaluation board depending on the revision of the board.
 
 Jumper Settings
 ~~~~~~~~~~~~~~~
 
-The jumpers on the evaluation board are factory set so that the board is ready to use with PC control. The software GUI operates the evaluation board in a serial interface only; however, you can also opt to use an alternative external control. Note that this user guide does not cover all aspects of externally controlling the evaluation board.
+The jumpers on the evaluation board are factory set so that the board is ready
+to use with PC control. The software GUI operates the evaluation board in a
+serial interface only; however, you can also opt to use an alternative external
+control. Note that this user guide does not cover all aspects of externally
+controlling the evaluation board.
 
 If you tri-state the USB circuitry to drive the board externally, you must control all tri-stated inputs to the :adi:`AD9914`/:adi:`AD9915`. Otherwise, the device may not response to the external stimulus. For example, if the master reset input or the EXT_PWR_DWN input are floating, any external programming will have intermittent issues. All digital inputs are accessible via the provided header connectors.
 
@@ -175,7 +175,9 @@ The external I/O control headers provide a parallel or serial communication inte
 Disabling Software GUI Control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Disabling the ICs on the evaluation board allows operation of the board with an external serial or parallel control by configuring each buffer in its high impedance state by its nearby jumper.
+Disabling the ICs on the evaluation board allows operation of the board with an
+external serial or parallel control by configuring each buffer in its high
+impedance state by its nearby jumper.
 
 USB Port
 ~~~~~~~~
@@ -188,11 +190,16 @@ Modes of Operation
 Profile Mode
 ~~~~~~~~~~~~
 
-In profile mode, the three DDS signal control parameters (frequency, phase offset, and amplitude scaling) are supplied directly from 1 of 8 internal profile registers. A profile is an independent register that contains all three control parameters. You can use a profile register to output a single tone frequency or use multiple preprogram profile registers and the profile pins to hop between frequencies, phase offsets and/or different amplitude settings. The following example are the steps to program a single profile to output a single tone frequency using the software GUI.
+In profile mode, the three DDS signal control parameters (frequency, phase
+offset, and amplitude scaling) are supplied directly from 1 of 8 internal
+profile registers. A profile is an independent register that contains all three
+control parameters. You can use a profile register to output a single tone
+frequency or use multiple preprogram profile registers and the profile pins to
+hop between frequencies, phase offsets and/or different amplitude settings. The
+following example are the steps to program a single profile to output a single
+tone frequency using the software GUI.
 
 ===Single Tone Operation===
-
-
 
 - Power up the evaluation board and apply the REF CLK source to clock the :adi:`AD9914`/:adi:`AD9915`.
 - Launch the evaluation software. After the software recongnizes the evaluation board, click the master reset icon in the main tool bar of the software GUI (labeled 1 in Figure 7). The master reset clears all memory elements and sets the registers to default values.
@@ -201,25 +208,21 @@ In profile mode, the three DDS signal control parameters (frequency, phase offse
 - Click the **Profiles** tab to access the Profiles window and enable profile mode via the check box.
 - Enter the desired output frequency in Profile 0. See Figure 5 for a view of an individual profile.
 - Click the flashing **Load** button (labeled 5 in Figure 7) near the top of the GUI.
-- View the DAC output single tone frequency performance via an oscilloscope or spectrum analyzer.
+- View the DAC output single tone frequency performance via an oscilloscope or
+  spectrum analyzer.
 
 To select a profile other than Profile 0, use the **Selected Profile** drop-down menu. Note that, unfortunately, the profile pin signals are sent asynchronously from the buffer ICs on the evaluation board to the profile pins. Thus, it is possible that the profile found may not be the profile you selected because the profile signals are not synchronous to the SYNC_CLK. If the selected profile setting does not point to the correct profile settings chosen, send an IO_UPDATE or click **Load** tocorrect the issue. This would not be an issue if the profile signals were sychrnonously transmitted to the :adi:`AD9914`/:adi:`AD9915`.
 
 Profile Data Entry
 ^^^^^^^^^^^^^^^^^^
 
-
-
-
 .. container:: centeralign
-
 
    ..
 
 |image2|
 
    *Figure 5. Single Profile Window*
-
 
 The **Frequency** box is used to set the frequency generated by the DDS. The input values are in megahertz. Refer to the data sheet for the acceptable range of output frequencies.
 
@@ -234,18 +237,13 @@ Sweep Mode
 
 The Digital Ramp Generator (DRG) window is accessible via the **Sweep** Tab directly below the GUI tool bar. The DRG can sweep frequency, phase, or amplitude. The DRG allows independent control of the slope of a rising sweep and the falling sweep along with other features (see Figure 5).
 
-
-
-
-
 .. container:: centeralign
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/sweep.png
-      :width: 500px
+      :width: 500
    
    *Figure 6. Digital Ramp Generator Window*
-
 
 To enable the DRG for configuration,
 
@@ -262,7 +260,8 @@ Keep the following points in mind:
 
 -  The rising and falling ramp rate windows in the present version of software are reversed. This will be addressed in a software revision. For now, make the appropriate changes.
 -  If the DRG is used to sweep amplitude, the OSK enable bit must be selected in the **Control** tab window.
--  After the desired configuration is completed, saving the setup is preformed using the save settings feature.
+-  After the desired configuration is completed, saving the setup is preformed
+   using the save settings feature.
 
 Programmable Modulus Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -271,7 +270,9 @@ Programmable Modulus Window
 
 The chip is in programmable modulus mode when the **Enable Programmable Modulus** check box is selected. Note that the digital ramp generator mode is automatically disabled.
 
-The Programmable Modulus window is used to alter the frequency equation of the DDS core, making it possible to implement fractions that are not restricted to a power of 2 in the denominator.
+The Programmable Modulus window is used to alter the frequency equation of the
+DDS core, making it possible to implement fractions that are not restricted to a
+power of 2 in the denominator.
 
 When you enter the desired output frequency (in megahertz) in the **FOUT** box, the values in the **Register Values** boxes and the **Divide Ratio** boxes are automatically updated. You can also directly input a divide ratio, which in turn automatically updates the **Register Values** boxes and the **Output Frequency** box.
 
@@ -283,9 +284,7 @@ Toolbar
 
 | The toolbar near the top of the evaluation software main window includes several buttons, each labeled with an icon, that allow you to easily initiate various actions (refer to Figure 6 for a detailed description of the requirements of each toolbar element).
 
-
 .. container:: centeralign
-
 
    ..
 
@@ -293,15 +292,10 @@ Toolbar
 
    *Figure 7. Toolbar Description*
 
-
 Tabs
 ~~~~
 
 | There are five tabs available in the main window of the evaluation software: **Control**, **Profiles**, **Sweep**, **Modulus**, and **Debug**. The following tab descriptions provide a brief overview of each tab; more detailed information can be found in the Evaluation and Test section.
-
-
-
-
 
 |image4|
 
@@ -317,7 +311,10 @@ Profiles Tab
 
 The **Profiles** tab allows enabling of profile mode, in which the DDS signal control parameters are supplied directly from the profile programming registers. A profile is an independent register that contains the DDS signal control parameters.
 
-Note that, unfortunately, it is not guaranteed that selecting a profile will switch to the correct profile setting. This is because the profile signals are sent asynchronously via the GUI hardware. The reality is that the profile signals need to meet setup and hold times to the SYNC_CLK.
+Note that, unfortunately, it is not guaranteed that selecting a profile will
+switch to the correct profile setting. This is because the profile signals are
+sent asynchronously via the GUI hardware. The reality is that the profile
+signals need to meet setup and hold times to the SYNC_CLK.
 
 Sweep Tab
 ^^^^^^^^^
@@ -327,7 +324,10 @@ Digital ramp generator (DRG) is synonymous with linear sweep. The ramp generatio
 Modulus Tab
 ^^^^^^^^^^^
 
-The Modulus tab allows you to enable programmable modulus mode and to alter the frequency equation of the DDS core, making it possible to implement fractions that are not restricted to a power of 2 in the denominator. See the data sheet for more details.
+The Modulus tab allows you to enable programmable modulus mode and to alter the
+frequency equation of the DDS core, making it possible to implement fractions
+that are not restricted to a power of 2 in the denominator. See the data sheet
+for more details.
 
 Debug Tab
 ^^^^^^^^^
@@ -335,10 +335,10 @@ Debug Tab
 The Debug tab provides complete direct access to the register map as well as control of many external pins. The Debug tab is intended for debugging issues with the :adi:`AD9914`/:adi:`AD9915`. Although this tab can be used for all programming, it is not user friendly for programming purposes and, therefore, using the **Debug** tab for purposes other than debugging may result in improper programming of reserved bits.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/figure1_ad9914_evb.png
-   :width: 700px
+   :width: 700
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/drawing1.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/tool_bar.png
-   :width: 900px
+   :width: 900
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9914/tabs.png
-   :width: 300px
+   :width: 300

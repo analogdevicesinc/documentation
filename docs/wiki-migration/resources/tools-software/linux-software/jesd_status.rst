@@ -3,7 +3,7 @@ JESD204B Status Utility
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/jesd_status.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The jesd_status utility is in some sense similar to the :doc:`JESD204B Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>` application. It currently doesn't support EYE SCAN, but can show all the link and lane status information, similar to the :doc:`JESD204B Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`, while being much more lightweight and doesn't require a graphical desktop environment. It can be started from a serial root console or from a SSH terminal.
 
@@ -13,20 +13,22 @@ It interfaces with the :doc:`JESD204 Interface Framework </wiki-migration/resour
 -  :doc:`JESD204B Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
 -  :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
 
-And reads the status information of all devices from SYSFS, aggregates and processes them and finally pretty prints it to the terminal in a continuous fashion. A single key event will terminate the application.
+And reads the status information of all devices from SYSFS, aggregates and
+processes them and finally pretty prints it to the terminal in a continuous
+fashion. A single key event will terminate the application.
 
 -  :doc:`JESD204 Status Registers </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/linux>`
 
 .. tip::
 
-   In case this utility is not available on your platform you may run following command below to extract similar information:
+   In case this utility is not available on your platform you may run following
+   command below to extract similar information:
 
    
    ::
    
       root@analog:/# grep "" /sys/bus/platform/drivers/axi-jesd204*/*/status /sys/bus/platform/drivers/axi-jesd204*/*/lane* /sys/bus/platform/drivers/axi-jesd204*/*/encoder
    
-
 
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | What                                               | Comment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -93,13 +95,12 @@ Running local
       root@analog:~# jesd_status
    
 
-
 Running local via a simple terminal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/jesd_status_simple.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Depending on the terminal used colors might be unsupported and boxes, frames might not be properly displayed. The ``-s`` option allows to disable boxes, while setting the ``TERM`` variable will fix the display.
 
@@ -112,4 +113,3 @@ Depending on the terminal used colors might be unsupported and boxes, frames mig
    
       root@analog:~# TERM=vt100 jesd_status -s
    
-

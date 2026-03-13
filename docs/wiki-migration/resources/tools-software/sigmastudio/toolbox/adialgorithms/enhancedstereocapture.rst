@@ -52,38 +52,61 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The ESC algorithm accepts two input signals obtained from two closely spaced microphones. The algorithm separates these two signals and widens the stereo image. The end perceptual result is a widened stereo image as if the audio had been captured by microphones with greater L/R separation. The algorithm is based on proprietary filtering and a Stereo Balance Gain that adjusts how much stereo effect is archived in the algorithm.
+The ESC algorithm accepts two input signals obtained from two closely spaced
+microphones. The algorithm separates these two signals and widens the stereo
+image. The end perceptual result is a widened stereo image as if the audio had
+been captured by microphones with greater L/R separation. The algorithm is based
+on proprietary filtering and a Stereo Balance Gain that adjusts how much stereo
+effect is archived in the algorithm.
 
-Depending on the spacing of the microphones in the record environment, a different Stereo Balance Gain should be selected. There are two recommended methods to do this required algorithm tuning.
+Depending on the spacing of the microphones in the record environment, a
+different Stereo Balance Gain should be selected. There are two recommended
+methods to do this required algorithm tuning.
 
-1) Simulated delay between the microphones to maximize the L/R separation (described below)
+1) Simulated delay between the microphones to maximize the L/R separation
+   (described below)
 
 2) Listening tests while adjusting the gain knob (shown in the Example section)
 
-The tuning required for method 1) can be done within SigmaStudio. The following schematic image shows how this is accomplished. The goal is to adjust the Stereo Balance Gain until the greatest visual difference in level is achieved between the left and right output signals.
-
+The tuning required for method 1) can be done within SigmaStudio. The following
+schematic image shows how this is accomplished. The goal is to adjust the Stereo
+Balance Gain until the greatest visual difference in level is achieved between
+the left and right output signals.
 
 |ESCpic2.png|
 
-The Tone block represents the signal being captured by the microphones. The tone frequency should be selected to maximize the L/R separation for a target frequency range. The Linear Gain block only serves to bring down the end level of the signal so that it is viewable on the visual Level Detectors. The Delay block works to simulate the delay difference between the microphones. Thus the left signal passes though with no delay. The right signal however, goes through 4 samples of delay to simulate a spacing difference of ~2.8cm between the left and right microphones. Change this delay value to match the corresponding distance between the microphones based on this formula:
-
+The Tone block represents the signal being captured by the microphones. The tone
+frequency should be selected to maximize the L/R separation for a target
+frequency range. The Linear Gain block only serves to bring down the end level
+of the signal so that it is viewable on the visual Level Detectors. The Delay
+block works to simulate the delay difference between the microphones. Thus the
+left signal passes though with no delay. The right signal however, goes through
+4 samples of delay to simulate a spacing difference of ~2.8cm between the left
+and right microphones. Change this delay value to match the corresponding
+distance between the microphones based on this formula:
 
 |ESCpic3.png|
 
-Finally, adjust the Stereo Balance Gain to maximize the level difference between L and R on the Level Detectors. This will maximize the separation between the left and right capture signals.
+Finally, adjust the Stereo Balance Gain to maximize the level difference between
+L and R on the Level Detectors. This will maximize the separation between the
+left and right capture signals.
 
 Example
 -------
 
-The following schematic image shows the ESC being used to get a wider stereo capture image from an input. The stereo selection Mux allows selection for comparison between the direct input signal, versus the enhanced signal to archive better L/R separation between the mic inputs.
-
+The following schematic image shows the ESC being used to get a wider stereo
+capture image from an input. The stereo selection Mux allows selection for
+comparison between the direct input signal, versus the enhanced signal to
+archive better L/R separation between the mic inputs.
 
 |ESCpic4.png|
 
 .. hint::
 
-   Note: In a full system level design the ESC block should be as close to the inputs as possible in the signal chain. This will ensure the optimal captured separation between the microphones and all resulting processing will be done in stereo.
-
+   Note: In a full system level design the ESC block should be as close to the
+   inputs as possible in the signal chain. This will ensure the optimal captured
+   separation between the microphones and all resulting processing will be done
+   in stereo.
 
 Algorithm Details
 -----------------

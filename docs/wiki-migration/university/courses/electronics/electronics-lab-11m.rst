@@ -4,7 +4,8 @@ Activity: The Source follower (NMOS) - ADALM2000
 Objective:
 ----------
 
-To investigate the simple NMOS source follower amplifier also sometimes referred to as the common drain configuration.
+To investigate the simple NMOS source follower amplifier also sometimes referred
+to as the common drain configuration.
 
 Materials:
 ----------
@@ -16,13 +17,11 @@ Directions:
 
 The breadboard connections are shown in the diagram below. The output of the waveform generator, W1, is connected to the gate terminal of M\ :sub:`1`. Scope input 1+ (Single Ended) is also connected to W1 output. The drain terminal is connected to the positive (Vp) supply. The source terminal is connected to both the 2.2KΩ load resistor and Scope input 2+ (Single Ended). The other end of the load resistor is connected to the negative (Vn) supply. To measure the input to output error, channel 2 of the scope can be used differentially by connecting 2+ to the gate of M\ :sub:`1` and 2- to the source.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 Source Follower
-
 
 Hardware Setup:
 ---------------
@@ -33,8 +32,12 @@ Hardware Setup:
 
    Figure 2 Source Follower Breadboard Circuit
 
-
-The waveform generator should be configured for a 1 KHz Sine wave with 4 volt amplitude peak-to-peak and 0 offset. The Single ended input of scope channel 2 (2+) is used to measure the voltage at the source. The Scope configured with channel 1+ connected to display the AWG generator output. When measuring the input to output error, channel 2 of the scope should be connected to display 2+ and 2- differential.
+The waveform generator should be configured for a 1 KHz Sine wave with 4 volt
+amplitude peak-to-peak and 0 offset. The Single ended input of scope channel 2
+(2+) is used to measure the voltage at the source. The Scope configured with
+channel 1+ connected to display the AWG generator output. When measuring the
+input to output error, channel 2 of the scope should be connected to display 2+
+and 2- differential.
 
 Procedure:
 ----------
@@ -45,18 +48,19 @@ Procedure:
 
    Figure 3 Input, output waveforms
 
-
-The incremental Gain (Vout /Vin) of the source follower should ideally be 1 but will always be slightly less than 1. The gain is generally given by the following equation:
+The incremental Gain (Vout /Vin) of the source follower should ideally be 1 but
+will always be slightly less than 1. The gain is generally given by the
+following equation:
 
 From the equation we can see that in order to obtain a gain close to one we can either increase R\ :sub:`L` or decrease r\ :sub:`s`. We also know that r\ :sub:`s` is a function of I\ :sub:`D` and that as I\ :sub:`D` increases r\ :sub:`s` decreases. Also from the circuit we can see that I\ :sub:`D` is related to R\ :sub:`L` and that as R\ :sub:`L` increases I\ :sub:`D` decreases. These two effects work counter to each other in the simple resistive loaded source follower. Thus to optimize the gain of the follower we need to explore ways to either decrease r\ :sub:`s` or increase R\ :sub:`L` without effecting the other. It is important to remember that in MOS transistors I\ :sub:`D` = I\ :sub:`S` ( I\ :sub:`G` = 0 ).
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_e1.png
    :align: center
-   :width: 100px
+   :width: 100
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_e2.png
    :align: center
-   :width: 250px
+   :width: 250
 
 where K = μ\ :sub:`n`\ C\ :sub:`ox`/2<sub></sub> and λ can be taken as process technology constants.
 
@@ -69,13 +73,11 @@ Additional Materials:
 
 1 - 3.2KΩ Resistor (use a 1KΩ in series with a 2.2KΩ) 1 - small signal NMOS transistor (M\ :sub:`1`\ ZVN2110A) 2 - small signal NMOS transistors (M\ :sub:`2`, M\ :sub:`3`\ CD4007)
 
-
 |image2|
 
 .. container:: centeralign
 
    Figure 4 Improved Source Follower
-
 
 Hardware Setup:
 ---------------
@@ -86,7 +88,6 @@ Hardware Setup:
 
    Figure 5 Improved Source Follower Breadboard Circuit
 
-
 Procedure:
 ----------
 
@@ -96,14 +97,16 @@ Procedure:
 
    Figure 6 Improved Source Follower Waveform
 
-
 Source follower output impedance
 ================================
 
 Objective:
 ----------
 
-An important aspect of the source follower is to provide power or current gain. That is to say drive a lower resistance (impedance) load from a higher resistance (impedance) stage. Thus it is instructive to measure the source follower output impedance.
+An important aspect of the source follower is to provide power or current gain.
+That is to say drive a lower resistance (impedance) load from a higher
+resistance (impedance) stage. Thus it is instructive to measure the source
+follower output impedance.
 
 Materials:
 ----------
@@ -115,13 +118,11 @@ Directions:
 
 The circuit configuration below adds a resistor R\ :sub:`2` to inject a test signal from AWG1 into the emitter (output) of M\ :sub:`1`. The input, base of M\ :sub:`1`, is grounded.
 
-
 |image3|
 
 .. container:: centeralign
 
    Figure 7 Output impedance test
-
 
 Hardware Setup:
 ---------------
@@ -131,7 +132,6 @@ Hardware Setup:
 .. container:: centeralign
 
    Figure 8 Output Impedance Test Breadboard Circuit
-
 
 The waveform generator should be configured for a 1 KHz Sine wave with 2 volt amplitude peak-to-peak with the offset set equal to minus the V\ :sub:`GS` of M\ :sub:`1` ( approximately -V ). This injects a +/- 0.1mA (1V/10KΩ) current into M\ :sub:`1`'s source. Scope input 2+ measures the change in voltage seen at the source.
 
@@ -143,7 +143,6 @@ Procedure:
 .. container:: centeralign
 
    Figure 9 Output Impedance Test Waveform
-
 
 Plot the measured voltage amplitude seen at the source. The nominal source current in M\ :sub:`1` is (Vn - V\ :sub:`GS`) / 4.7KΩ or 720uA. We can calculate r\ :sub:`s`\ from this current as ohms. How does this r\ :sub:`s` compare to the from the test data? Change the value of R\ :sub:`1` from 4.7 KΩ to 2.2 KΩ and re-measure the output impedance of the circuit. How has it changed and why?
 
@@ -157,12 +156,11 @@ Plot the measured voltage amplitude seen at the source. The nominal source curre
    -  LTSpice files: `mos_source_follower_ltspice <https://minhaskamal.github.io/DownGit/#/home?url=:git-education_tools:`m2k/ltspice/mos_source_follower_ltspice>`_`
    
 
-
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_f1.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_f2.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_f3.png
-   :width: 500px
+   :width: 500

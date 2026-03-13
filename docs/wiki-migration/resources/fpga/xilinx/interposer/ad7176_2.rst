@@ -21,13 +21,11 @@ This document presents the steps to setup an environment for using the :adi:`EVA
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7176_2.jpg
    :alt: EVAL-AD7176-2SDZ and Xilinx KC705 board
    :align: center
-   :width: 400px
-
+   :width: 400
 
 .. note::
 
    See `common_sdp <https://wiki.analog.com/common_sdp>`_
-
 
 The **EVAL-AD7176-2SDZ** evaluation board is a member of a growing number of boards available for the **SDP**. It was designed to help customers evaluate performance or quickly prototype new **AD7176-2** circuits and reduce design time.
 
@@ -43,7 +41,9 @@ More information
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Required Hardware
 -----------------
@@ -66,8 +66,8 @@ Downloads
 
    `Reference Design Files <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7176_2_evalboard.zip>`_
 
-
-The following table presents a short description the reference design archive contents.
+The following table presents a short description the reference design archive
+contents.
 
 +-------------+-------------------------------------------------------------------------------------------------------+
 | **Folder**  | **Description**                                                                                       |
@@ -91,8 +91,9 @@ Hardware Setup
 
 .. important::
 
-   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
-
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that
+   the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to
+   change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
@@ -101,7 +102,7 @@ Hardware Setup
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/impact_config.png
    :alt: impact_config.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Program the KC705 FPGA using the "*Bit/download.bit*" file provided in the reference design archive.
 -  Power the ADI evaluation board.
@@ -112,20 +113,21 @@ At this point everything is set up and it is possible to start the evaluation of
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/teraterm_adc.png
    :alt: teraterm_adc.png
    :align: center
-   :width: 400px
+   :width: 400
 
-If the resulting csv file is opened with Microsoft Excel, the data will be displayed on a different number of columns, each column corresponding to a channel.
+If the resulting csv file is opened with Microsoft Excel, the data will be
+displayed on a different number of columns, each column corresponding to a
+channel.
 
 .. tip::
 
-   The first time the data capture script is run it is possible that an error will occur while the script is trying to connect to the system. Just run the script again and the error shouldn't appear anymore.
-
+   The first time the data capture script is run it is possible that an error
+   will occur while the script is trying to connect to the system. Just run the
+   script again and the error shouldn't appear anymore.
 
 More information
 ================
 
-
 .. note::
 
    See `ez_common <https://wiki.analog.com/ez_common>`_
-

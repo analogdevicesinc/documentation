@@ -14,7 +14,6 @@ The :adi:`AD7171` is a very low power, 16-bit, analog-to-digital converter (ADC)
 
 The :adi:`EVAL-CN0218-SDPZ Board <EVAL-CN0218-SDPZ>` connects to ADI’s System Demonstration Platform (SDP) and is powered by a +6 V supply or +6 V “wall wart”.
 
-
 |image1|
 
 --------------
@@ -48,7 +47,7 @@ Block assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/8.png
    :align: center
-   :width: 550px
+   :width: 550
 
 -  The :adi:`EVAL-CN0150-SDPZ` **(CN-0150 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
@@ -59,19 +58,23 @@ Block assignments
 
 .. warning::
 
-   \ High voltage! This circuit may contain lethal voltages. Do not operate, evaluate, or test this circuit, or board assembly, unless you are a trained professional, who is qualified to handle high voltage circuitry. Before applying power, you must be familiar with the circuitry and all required precautions for working with high voltage circuits.
-
+   \ High voltage! This circuit may contain lethal voltages. Do not operate,
+   evaluate, or test this circuit, or board assembly, unless you are a trained
+   professional, who is qualified to handle high voltage circuitry. Before
+   applying power, you must be familiar with the circuitry and all required
+   precautions for working with high voltage circuits.
 
 Test setup
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/9.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect the 120-pin connector on the :adi:`EVAL-CN0218-SDPZ Evaluation Board <EVAL-CN0218-SDPZ>` to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board
 -  Connect a shunt resistor across the input terminals with a load to ground as indicated in figure above
--  With power to the supply off, connect a +6 V power supply to the pins marked “+6V” and “GND” on the board
+-  With power to the supply off, connect a +6 V power supply to the pins marked
+   “+6V” and “GND” on the board
 
 ::
 
@@ -83,8 +86,9 @@ Test setup
 
 .. important::
 
-   Connect the system ground and the PCB isolated ground to guarantee correct voltage levels and operation. Test point 31 and test point 32 give access to the GND_ISO required to properly make this connection.
-
+   Connect the system ground and the PCB isolated ground to guarantee correct
+   voltage levels and operation. Test point 31 and test point 32 give access to
+   the GND_ISO required to properly make this connection.
 
 --------------
 
@@ -97,12 +101,10 @@ Installing the Evaluation Software
 
    \ NOTE: It is recommended that you install the `CN0218 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0218>`_ to the default directory path C:\\Program Files (x86)\\Analog Devices\\CN0218\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/1.png
-   :width: 500px
+   :width: 500
 
 -  Click **Next** to view the installation review page
-
 
 |image2|
 
@@ -114,8 +116,9 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image4|
 
@@ -127,10 +130,10 @@ Installing the Evaluation Software
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
-
    |image5|
 
-   \* Press “Install” to install the SDP Drivers and complete the installation of all software. Click "Finish" when done.
+   \* Press “Install” to install the SDP Drivers and complete the installation
+   of all software. Click "Finish" when done.
 
    |image6|
 
@@ -144,7 +147,7 @@ Main Window
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/17.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  **Connect** Button - Starts the connection between the :adi:`CN0218 Evaluation Board <CN0218>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`.
 -  **Reset and Disconnect** - Resets the board and ends the connection between the :adi:`CN0218 Evaluation Board <CN0218>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`
@@ -161,7 +164,6 @@ Main Window
 
 -  **Configure** Tab
 
-
 |image8|
 
    -  **Flash LED** - Flashes the LED on the SDP controller board
@@ -169,7 +171,6 @@ Main Window
       -  **Read Firmware** - Reads the firmware of CN0218 Evaluation Board
 
 -  **Plot** Options - Edit plot display and options like interpolation and color of output waveform
-
 
 |image9|
 
@@ -214,7 +215,6 @@ Schematic, PCB Layout, Bill of Materials
    -  PADS project
    
 
-
 Registration
 ------------
 
@@ -222,24 +222,23 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0218-SDPZ?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/cn0218-hw-1024.jpg
-   :width: 550px
+   :width: 550
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/2.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/3.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/4.png
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/5.png
-   :width: 500px
+   :width: 500
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/6.png
-   :width: 500px
+   :width: 500
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/14.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/15.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0218/18.png
-   :width: 600px
+   :width: 600

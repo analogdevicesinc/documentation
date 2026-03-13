@@ -10,7 +10,8 @@ Firmware image components (Submodules):
 -  `Buildroot User Space <https://github.com/analogdevicesinc/buildroot>`_
 -  :git-u-boot-xlnx:`u-boot Bootloader <tree/pluto>`
 
-Submodules allow you to keep a Git repository as a subdirectory of another, the main Git repository.
+Submodules allow you to keep a Git repository as a subdirectory of another, the
+main Git repository.
 
 The main repositories can be found here:
 
@@ -22,8 +23,9 @@ Cloning the repository
 
 .. important::
 
-   The --recursive flag here is important otherwise the submodules are not included. The sources and all the build objects require approx 6 GByte of free disk space.
-
+   The --recursive flag here is important otherwise the submodules are not
+   included. The sources and all the build objects require approx 6 GByte of
+   free disk space.
 
 PlutoSDR-fw
 ~~~~~~~~~~~
@@ -38,7 +40,6 @@ PlutoSDR-fw
       michael@HAL9000:~/devel$ git clone --recursive https:<nowiki>//</nowiki>github.com/analogdevicesinc/plutosdr-fw.git
    
 
-
 M2k-fw
 ~~~~~~
 
@@ -52,7 +53,6 @@ M2k-fw
       michael@HAL9000:~/devel$ git clone --recursive https:<nowiki>//</nowiki>github.com/analogdevicesinc/m2k-fw.git
    
 
-
 Updating your repository
 ------------------------
 
@@ -65,4 +65,3 @@ Updating your repository
    
       michael@HAL9000:~/devel/plutosdr-fw$ git pull --recurse-submodules
    
-

@@ -3,21 +3,28 @@ EVAL-CN0579-ARDZ User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0579-ardz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Overview
 ========
 
-Condition-based monitoring (CbM) enables early detection and diagnosis of machine and system abnormalities. Identifying and isolating these issues creates opportunities for optimizing replacement part inventories, scheduling downtime for planned maintenance, and making run-time process adjustments that can extend the life of equipment.
+Condition-based monitoring (CbM) enables early detection and diagnosis of
+machine and system abnormalities. Identifying and isolating these issues creates
+opportunities for optimizing replacement part inventories, scheduling downtime
+for planned maintenance, and making run-time process adjustments that can extend
+the life of equipment.
 
 The :adi:`EVAL-CN0579-ARDZ <CN0579>` is a 4-channel, high resolution, wide bandwidth, high dynamic range, IEPE-compatible interface data acquisition (DAQ) system that interfaces with IC piezoelectric (ICP®)/IEPE sensors. While most solutions that interface with piezoelectric sensors in the market are AC-coupled and lack DC and subhertz measurement capabilities, this solution is DC-coupled. By looking at the complete data set from an IEPE vibration sensor in the frequency domain (DC to 50 kHz), the type and source of a machine fault can be better predicted using the position, amplitude, and number of harmonics found in the fast Fourier transform (FFT) spectrum.
 
@@ -26,7 +33,7 @@ Simplified Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/cn0579_simplified_block_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -38,7 +45,7 @@ Primary Side
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/eval-cn0579-ardz_top-web.gif
    :align: center
-   :width: 600px
+   :width: 600
 
 Sensor Input
 ------------
@@ -112,11 +119,12 @@ Arduino Power (P11)  1       NC              NC
 
    To achieve reasonable noise measurements, the piezo vibration sensor must be stabilized using either an active shaker table, which cancels environmental vibrations; or anchored to a massive object, which makes sensor still. For noise measurements done on :adi:`EVAL-CN0579-ARDZ <CN0579>`, the piezo vibration sensor was anchored to a massive object, where it is also connected directly to the input of the signal chain.
 
-
 Test Points
 -----------
 
-The board also has many test points, most of which are labeled and are fairly self-explanatory. The table below describes some of the most significant test points and their connections.
+The board also has many test points, most of which are labeled and are fairly
+self-explanatory. The table below describes some of the most significant test
+points and their connections.
 
 +---------------------------+----------------------------------------------------------------------------+
 | Test Point                | Description                                                                |
@@ -191,18 +199,19 @@ Hardware Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_de10_setup.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Mount the EVAL-CN0579-ARDZ on the DE10-Nano.
 -  Connect the monitor to the DE10-Nano using HDMI cable.
 -  Connect a OTG to USB connector to- USB OTG of DE10-Nano. If necessary, connect the USB hub to the USB-OTG connector.
 -  Connect the keyboard and mouse USB dongle to the USB OTG adapter/USB hub.
 -  Plug the power cable of the DE10 Nano.
--  Wait for the system to boot up. Upon boot up, screen like image below will appear.
+-  Wait for the system to boot up. Upon boot up, screen like image below will
+   appear.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/kuiper.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Software Setup
 --------------
@@ -223,7 +232,9 @@ Download and Install IIO Oscilloscope
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Download the latest `IIO-Oscilloscope release <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_ from GitHub and install it on your PC. (You may need to right-click the installer and run as "Elevated" in order to get it to install.)
--  Once microSD card has been imaged, safely remove the hardware from the SD card writer, and insert the card directly into the microSD card slot on the DE10-Nano.
+-  Once microSD card has been imaged, safely remove the hardware from the SD
+   card writer, and insert the card directly into the microSD card slot on the
+   DE10-Nano.
 
 --------------
 
@@ -256,7 +267,7 @@ Hardware Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_coraz7_setup.png
    :align: center
-   :width: 600px
+   :width: 600
 
 ::
 
@@ -284,7 +295,9 @@ Download and Install IIO Oscilloscope
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Down the latest `IIO-Oscilloscope release <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_ from Github, and install it on your PC. (You may need to right-click the installer, and run as "Elevated" in order to get it to install.)
--  Once the microSD card has been imaged, safely remove the hardware from the SD card writer, and insert the card directly into the microSD card slot on the DE10-Nano.
+-  Once the microSD card has been imaged, safely remove the hardware from the SD
+   card writer, and insert the card directly into the microSD card slot on the
+   DE10-Nano.
 
 --------------
 
@@ -306,10 +319,10 @@ To be able to connect your device, the software must be able to create a context
 
    Install the `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
-
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to
+access it.
 
 For Windows machine connected to ZedBoard via Ethernet cable:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -317,7 +330,9 @@ For Windows machine connected to ZedBoard via Ethernet cable:
 Using SSH Terminal Software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Open SSH Terminal Software (PuTTY, TeraTerm, or similar). The user should now start the PuTTY application and enter certain values in the configuration window. In the terminal, run:
+Open SSH Terminal Software (PuTTY, TeraTerm, or similar). The user should now
+start the PuTTY application and enter certain values in the configuration
+window. In the terminal, run:
 
 ::
 
@@ -330,7 +345,8 @@ Using Command Terminal
 
    iio_info -s
 
-Prompting this on the command terminal in your Windows PC will give you the IP address to access the EVAL-CN0579-ARDZ.
+Prompting this on the command terminal in your Windows PC will give you the IP
+address to access the EVAL-CN0579-ARDZ.
 
 ::
 
@@ -368,20 +384,19 @@ IIO Oscilloscope
    
    https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
 -  Press refresh to display available IIO Devices, once cn0579 appeared, press **connect**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_osc.png
    :alt: osc.exe
    :align: center
-   :width: 600px
+   :width: 600
 
 Debug Panel
 ~~~~~~~~~~~
 
-Below is the Debug panel wherein you can directly access the attributes of the device.
-
+Below is the Debug panel wherein you can directly access the attributes of the
+device.
 
 |Debug Panel|
 
@@ -389,7 +404,6 @@ DMM Panel
 ~~~~~~~~~
 
 Access the DMM panel to see the instantaneous reading of the ADC voltages.
-
 
 |DMM Panel|
 
@@ -417,10 +431,9 @@ Without input signal:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_ex_no_input.png
    :align: center
-   :width: 600px
+   :width: 600
 
 With input from :adi:`ADALM2000` (1 Vp-p, 1 kHz) on Channel 0:
-
 
 |image2|
 
@@ -428,7 +441,6 @@ With input from :adi:`ADALM2000` (1 Vp-p, 1 kHz) on Channel 0:
    :class: download
 
    GitHub link for the Python sample script: :git-pyadi-iio:`CN0579 Python Example <examples/cn0579/cn0579_example.py>`
-
 
 --------------
 
@@ -473,7 +485,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Registration
 ~~~~~~~~~~~~
 
@@ -481,14 +492,13 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0579-ARDZ?&v=RevC>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/eval-cn0579-ardz_bottom-web.gif
-   :width: 600px
+   :width: 600
 .. |Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_debug0.png
-   :width: 600px
+   :width: 600
 .. |DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_dmm.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_ex_ch0_input.png
-   :width: 600px
+   :width: 600

@@ -1,36 +1,43 @@
 EVAL-CN0577-FMCZ User Guide
 ===========================
 
-
-
 .. note::
 
    We are in the process of migrating our documentation to GitHub Pages.
 
    | This user guide is now also available at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0577-fmcz/index.html
 
-
 Overview
 --------
 
-Instrumentation applications such as flow cytometry, optical pulse measurement, fast control loops, fast digital distortion correction, and image sensor digitization present unique data acquisition challenges. These applications often require a combination of high sample rate, high linearity, low drift, low noise, and low latency.
+Instrumentation applications such as flow cytometry, optical pulse measurement,
+fast control loops, fast digital distortion correction, and image sensor
+digitization present unique data acquisition challenges. These applications
+often require a combination of high sample rate, high linearity, low drift, low
+noise, and low latency.
 
 The :adi:`EVAL-CN0577-FMCZ <cn0577>` is an 18-bit, 15 MSPS, 2 ppm linear data acquisition system with an easy to drive input impedance of 1.1 kΩ. The analog input range is 8.096 V peak-to-peak and can be driven in either single-ended or differential mode, providing flexibility for many different applications.
 
-The circuit is in field programmable gate array (FPGA) mezzanine card (FMC) form factor, powered with 12 V either from the FMC connector or an external supply. The digital interface uses serial low voltage differential signaling (LVDS), minimizing the input/output requirements and enabling easy integration with other FPGA designs
+The circuit is in field programmable gate array (FPGA) mezzanine card (FMC) form
+factor, powered with 12 V either from the FMC connector or an external supply.
+The digital interface uses serial low voltage differential signaling (LVDS),
+minimizing the input/output requirements and enabling easy integration with
+other FPGA designs
 
-A separate data clock eases the timing requirements of the host FPGA. An on-board 120 MHz clock is forwarded to the FPGA and a CONVERT retiming flip-flop reduces jitter from the convert signal of the FPGA.
+A separate data clock eases the timing requirements of the host FPGA. An
+on-board 120 MHz clock is forwarded to the FPGA and a CONVERT retiming flip-flop
+reduces jitter from the convert signal of the FPGA.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/cn0577_1.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Simplified functional block diagram
 -----------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/cn0577_block_diag.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Features
 --------
@@ -53,7 +60,7 @@ Block Assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/cn0577_block_terminal.png
    :align: center
-   :width: 600px
+   :width: 600
 
 +----------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 | Connector Name | Operation              | Description                                                                                                                                                                                                                       | Settings/Ranges                                            |
@@ -81,7 +88,6 @@ Power Supply
 
 Power to the :adi:`EVAL-CN0577-FMCZ` comes directly from the +12 V supply provided through the FMC connector.
 
-
 |image1|
 
 Analog Inputs
@@ -96,7 +102,6 @@ The :adi:`EVAL-CN0577-FMCZ` clock diagram is shown in Figure 19. An on-board 120
 
 The clock is fanned out to the retiming flip-flop and the FPGA. An :adi:`ADG3241` level shifter converts the clock's 3.3 V logic level to the 2.5 V level required by the retiming flip-flop. An :adi:`ADN4661` converts the 3.3 V clock to LVDS signaling, which is then forwarded to a global clock connection on the FMC connector.
 
-
 |cn0577_clock.png|
 
 External Clock Reference Option
@@ -104,10 +109,12 @@ External Clock Reference Option
 
 If the :adi:`EVAL-CN0577-FMCZ` is to be synchronized to other circuits, or if tighter frequency accuracy or drift frequency drift is required, an external clock can be applied to the external clock connector (J3). Along with connecting it, you will also need to update the solder jumper (JP14) to change from the onboard crystal oscillator. If the external clock frequency is significantly higher or lower than the on-board 120 MHz clock, reanalyze the entire circuit including the FPGA timing constraints.
 
-
 |JP14 solder jumper|
 
-The external clock circuitry also includes a high speed single inverter that provides AC coupling and balances the rise and fall times. This device has a typical time propagation delay of 2.4 ns and achieves a high output drive, while maintaining low static power dissipation over a broad VCC operating range.
+The external clock circuitry also includes a high speed single inverter that
+provides AC coupling and balances the rise and fall times. This device has a
+typical time propagation delay of 2.4 ns and achieves a high output drive, while
+maintaining low static power dissipation over a broad VCC operating range.
 
 System Setup
 ------------
@@ -128,7 +135,8 @@ Hardware
 -  LAN cable
 -  SMA cables
 -  XLR to SMA adapter cable
--  Audio analyzer (Audio Precision© APX525) or other input source (e.g. ADALM2000)
+-  Audio analyzer (Audio Precision© APX525) or other input source (e.g.
+   ADALM2000)
 
 If using :adi:`ADALM2000` as input source:
 
@@ -140,9 +148,15 @@ Software
 
 -  :doc:`Analog Devices Kuiper Linux image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
-For the device to run, the SD card should be loaded with Analog Devices Kuiper Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It incorporates Linux device drivers for ADI products as well as tools and other software products designed and created with ease of use in mind. The reasoning behind creating this distribution is to minimize the barriers to integrating ADI hardware devices into a Linux-based embedded system.
+For the device to run, the SD card should be loaded with Analog Devices Kuiper
+Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It
+incorporates Linux device drivers for ADI products as well as tools and other
+software products designed and created with ease of use in mind. The reasoning
+behind creating this distribution is to minimize the barriers to
+integrating ADI hardware devices into a Linux-based embedded system.
 
-Access to the embedded system can be through a remote PC connected either via LAN cable or Wi-Fi.
+Access to the embedded system can be through a remote PC connected either via
+LAN cable or Wi-Fi.
 
 Loading Image on SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,7 +186,7 @@ System Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/sys_block_diag.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
@@ -194,7 +208,7 @@ To set up the complete system using **Audio Precision audio analyzer** as input 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/demo_with_ap.png
    :alt: Demo with AP as input source
    :align: center
-   :width: 600px
+   :width: 600
 
 Using :adi:`ADALM2000` as input source:
 
@@ -213,7 +227,7 @@ Using :adi:`ADALM2000` as input source:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/demo_with_m2k.png
    :alt: Demo with M2K as input source
    :align: center
-   :width: 600px
+   :width: 600
 
 Software
 --------
@@ -226,17 +240,22 @@ The :adi:`EVAL-CN0577-FMCZ` is supported with the Libiio library. This library i
 Connection
 ~~~~~~~~~~
 
-To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-CN0577-FMCZ is attached. The platform currently supported for the CN0557: ZedBoard using the ADI Kuiper Linux. The user needs to supply a URI which will be used in the context creation. The Libiio is a library for interfacing with IIO devices.
+To be able to connect your device, the software must be able to create a
+context. The context creation in the software depends on the backend used to
+connect to the device as well as the platform where the EVAL-CN0577-FMCZ is
+attached. The platform currently supported for the CN0557: ZedBoard using the
+ADI Kuiper Linux. The user needs to supply a URI which will be used in the
+context creation. The Libiio is a library for interfacing with IIO devices.
 
 .. admonition:: Download
    :class: download
 
    Install the `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
-
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to
+access it.
 
 For Windows machine connected to ZedBoard via Ethernet cable:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -244,7 +263,9 @@ For Windows machine connected to ZedBoard via Ethernet cable:
 Using SSH Terminal Software:
 """"""""""""""""""""""""""""
 
-Open SSH Terminal Software (PuTTY, TeraTerm or similar). User should now start the PuTTY application and enter certain values in the configuration window. In the terminal, run:
+Open SSH Terminal Software (PuTTY, TeraTerm or similar). User should now start
+the PuTTY application and enter certain values in the configuration window. In
+the terminal, run:
 
 ::
 
@@ -257,7 +278,8 @@ Using command terminal:
 
    iio_info -s
 
-Prompting this on the command terminal in your windows PC will give you the ip address to access the EVAL-CN0577-FMCZ.
+Prompting this on the command terminal in your windows PC will give you the ip
+address to access the EVAL-CN0577-FMCZ.
 
 ::
 
@@ -295,27 +317,27 @@ IIO Oscilloscope
    
    https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
--  Press refresh to display available IIO Devices, once ltc2387 appeared, press connect.
+-  Press refresh to display available IIO Devices, once ltc2387 appeared, press
+   connect.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/577_osc.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Debug Panel
 ^^^^^^^^^^^
 
-Below is the Debug panel of ltc2387 wherein you can directly access the attributes of the device.
-
+Below is the Debug panel of ltc2387 wherein you can directly access the
+attributes of the device.
 
 |image2|
 
 DMM Panel
 ^^^^^^^^^
 
-Access the DMM panel to see the instantaneous reading of the ADC voltages and the device temperature.
-
+Access the DMM panel to see the instantaneous reading of the ADC voltages and
+the device temperature.
 
 |image3|
 
@@ -327,7 +349,9 @@ Pyadi-IIO
 Running the Example
 ^^^^^^^^^^^^^^^^^^^
 
-After installing and configuring PYADI-IIO in your machine, you are now ready to run python script examples. In our case, run the ltc2387_example.py found in the examples folder.
+After installing and configuring PYADI-IIO in your machine, you are now ready to
+run python script examples. In our case, run the ltc2387_example.py found in the
+examples folder.
 
 -  Connect the :adi:`EVAL-CN0577-FMCZ` to the ZedBoard.
 -  Open command prompt or terminal and navigate through the examples folder inside the downloaded or cloned *pyadi-iio* directory.
@@ -339,11 +363,9 @@ After installing and configuring PYADI-IIO in your machine, you are now ready to
 
 Running example with ADALM2000 with the setting below:
 
-
 |image4|
 
 The expected output should look like this:
-
 
 |image5|
 
@@ -351,7 +373,6 @@ The expected output should look like this:
    :class: download
 
    Github link for the python sample script: :git-pyadi-iio:`CN0577 Python Example <examples/ltc2387_example.py>`
-
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -368,7 +389,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    -  LTspice Simulation File
    
-
 
 Reference Demos & Software
 ==========================
@@ -400,20 +420,19 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0577-FMCZ?&v=RevB>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/power_supply_1.png
-   :width: 600px
+   :width: 600
 .. |cn0577_clock.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/cn0577_clock.png
-   :width: 600px
+   :width: 600
 .. |JP14 solder jumper| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/jp14.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/577_debug_panel.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/577_dmm_panel.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/scopy_diff_input.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0577/output_time_domain.png
-   :width: 600px
+   :width: 600

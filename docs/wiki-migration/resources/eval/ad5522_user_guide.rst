@@ -21,12 +21,15 @@ Quick Start Guide
    -  The software should self install after CD-ROM is inserted.
    -  If software installation does not launch, then run “setup.exe” from CR-ROM. This will install the relevant USB drivers and software to your pc.
    -  Software should be installed prior to connection of the eval board to the PC’s USB port to ensure the evaluation board is correctly recognized by the PC.
-   -  All software, documentation and config files will be copied to C:\\Program Files\\Analog Devices\\AD5522 by default.
+   -  All software, documentation and config files will be copied to C:\\Program
+      Files\\Analog Devices\\AD5522 by default.
 
 -  Plug in the hardware
 
    -  Using the USB cable, connect the EVAL-AD5522 to the computer.
-   -  You will be prompted to install the USB drivers. The software should find these drivers automatically. You may be required to re-start your pc after the install, but only if prompted.
+   -  You will be prompted to install the USB drivers. The software should find
+      these drivers automatically. You may be required to re-start your pc after
+      the install, but only if prompted.
 
 -  UnPlug the hardware and Apply power supplies.
 
@@ -44,14 +47,17 @@ Quick Start Guide
 
 -  Running the Chip Programming Software.
 
-   -  Browse to the Analog Devices folder in your Start menu. Go to the AD5522 folder and select the Evaluation software to launch the programming tool.
+   -  Browse to the Analog Devices folder in your Start menu. Go to the AD5522
+      folder and select the Evaluation software to launch the programming tool.
 
 -  Verifying you are communicating with the Hardware
 
    -  When the software launches, the main window will open.
    -  Individual Register Access
    -  By default, when the software launches, it writes two commands to the AD5522 to put it into a standard operating mode. These commands are 0x3FE4A0 to System Control register and 0xF21B300 to PMU Register.
-   -  This will initialize the device and if you read the voltages at gold pin connections TP 5, 6, 7, and 8 on each channel, you should read 0V (as the FIN DAC is at default setting, 0x8000)
+   -  This will initialize the device and if you read the voltages at gold pin
+      connections TP 5, 6, 7, and 8 on each channel, you should read 0V (as the
+      FIN DAC is at default setting, 0x8000)
 
 -  Proper sequence of USB/Power Supplies/Software:
 
@@ -97,21 +103,30 @@ The following external supplies must be provided.
 
 -  5V/3V between DVCC and DGND inputs for the digital supply of the AD5522 circuitry and other digital circuitry.
 -  Supply the AVDD, AVSS and AGND inputs for the positive supply of the AD5522, such that AVDD >=10V, AVSS <=-5V, \|AVDD – AVSS\| >= 20V and <= 33V,
--  +5V for +5V power supply input on power block, this is the power supply for the ADC and for accurate conversions should be a clean supply.
+-  +5V for +5V power supply input on power block, this is the power supply for
+   the ADC and for accurate conversions should be a clean supply.
 
-Both AGND and DGND inputs are provided on the board. The AGND and DGND planes are connected at one location close to the AD5522. It is recommended not to connect the AGND and DGND elsewhere in the system to avoid ground loop problems.
+Both AGND and DGND inputs are provided on the board. The AGND and DGND planes
+are connected at one location close to the AD5522. It is recommended not to
+connect the AGND and DGND elsewhere in the system to avoid ground loop problems.
 
-Each supply is decoupled to the relevant ground plane with 10μF and 0.1μF capacitors. Each device supply pin is again decoupled with a 0.1μF capacitor to the relevant ground plane.
+Each supply is decoupled to the relevant ground plane with 10μF and 0.1μF
+capacitors. Each device supply pin is again decoupled with a 0.1μF capacitor to
+the relevant ground plane.
 
 Link Options
 ------------
 
-The default configuration for interfacing to the AD5522 device is via the USB interface. Access is provided to all input and output nodes via J3 header in the event a user wants to drive the device by other means. In this case, remove LK9 to disconnect the on board USB circuitry.
+The default configuration for interfacing to the AD5522 device is via the USB
+interface. Access is provided to all input and output nodes via J3 header in the
+event a user wants to drive the device by other means. In this case, remove LK9
+to disconnect the on board USB circuitry.
 
 Default Link Option Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The default setup is for control by the PC via the USB port. The default link options are listed in Table 1.
+The default setup is for control by the PC via the USB port. The default link
+options are listed in Table 1.
 
 Table 1. Default link conditions
 
@@ -163,13 +178,13 @@ Software Installation
 The :adi:`AD5522` evaluation kit includes self-installing software on CR-ROM. The software is compatible with Windows 2000/NT/XP. If the setup file does not run automatically, setup.exe can be run from the CD-ROM. The evaluation software should be installed before connecting the evaluation board to the PC’s USB port to ensure that the evaluation board is correctly recognized when connected to the PC.
 
 -  After the installation from the CD-ROM is complete, power up the :adi:`AD5522`\ evaluation board as described in the Power Supplies section, then connect it to the USB port of your PC using the supplied code.
--  When the evaluation board is detected, proceed through any dialog boxes that appear. This finishes the installation.
+-  When the evaluation board is detected, proceed through any dialog boxes that
+   appear. This finishes the installation.
 
 Software Operation
 ------------------
 
 To launch the software, select the :adi:`AD5522`\ submenu from the Analog Devices menu. Next, click :adi:`AD5522` Evaluation Software. The main window of the :adi:`AD5522`\ software looks as follows : |image2| This allows control of all the main functions of the :adi:`AD5522`\ and access to the DAC registers as required. When the software is launched, there are two patterns loaded to the device. These commands are 0x3FE4A0 to System Control register and 0xF21B300 to PMU Register. These initialize the PMU into operation mode, where Measout Gain = 0.2, the Clamps & comparators are enabled, each PMU register is enabled and placed in Force Voltage mode, 2mA Irange and Measure Voltage mode for measuring. For access to all the individual registers within the device, open the “individual register access” window which launches the following window.
-
 
 |image3|
 
@@ -180,46 +195,52 @@ System Control Register
 
 The System control register allows the user to set up different functions within the device – refer to the AD5522 datasheet for full details.
 
-
 |image4|
 
 PMU Register
 ~~~~~~~~~~~~
 
-The PMU Register allows the user to set up the different force/measure/compare functions. Simply select the channel you wish to write to, select the enable check box and the required ranges. Also, ensure that the FIN to FORCE DAC check box is checked.
-
+The PMU Register allows the user to set up the different force/measure/compare
+functions. Simply select the channel you wish to write to, select the enable
+check box and the required ranges. Also, ensure that the FIN to FORCE DAC check
+box is checked.
 
 |image5|
 
 DAC Register
 ~~~~~~~~~~~~
 
-The DAC register give access to all of the 21 DACs contained in this device. Simply select the PMU channel to be addressed, load the new DAC code value (x1) or gain (m) or offset (c) code in HEX and press enter/return on the keyboard. DAC updates require use of the AD5522 internal calibration engine and updates will only occur when a new x1 value is loaded. M or C values will not cause an update of the dac, until the x1 value is again loaded.
-
+The DAC register give access to all of the 21 DACs contained in this device.
+Simply select the PMU channel to be addressed, load the new DAC code value (x1)
+or gain (m) or offset (c) code in HEX and press enter/return on the keyboard.
+DAC updates require use of the AD5522 internal calibration engine and updates
+will only occur when a new x1 value is loaded. M or C values will not cause an
+update of the dac, until the x1 value is again loaded.
 
 |image6|
 
 Compensation Selection
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The compensation selection Tab allows for selection of compensation and feedforward capacitors on CH1 and CH3. The appropriate capacitor values may be selected depending on the load capacitance at the DUT.
-
+The compensation selection Tab allows for selection of compensation and
+feedforward capacitors on CH1 and CH3. The appropriate capacitor values may be
+selected depending on the load capacitance at the DUT.
 
 |image7|
 
 ALARM Status Register
 ~~~~~~~~~~~~~~~~~~~~~
 
-The Status register shows the status of the Alarm functions and reports the output of the comparators.
-
+The Status register shows the status of the Alarm functions and reports the
+output of the comparators.
 
 |image8|
 
 Little Routines
 ~~~~~~~~~~~~~~~
 
-This option allows the user to analyse the performance of the AD5522 under different settling time conditions and range change conditions.
-
+This option allows the user to analyse the performance of the AD5522 under
+different settling time conditions and range change conditions.
 
 |image9|
 
@@ -227,7 +248,6 @@ Sweep Voltage, Measure versus time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The File->Sweep Voltage and Time Routine launches another window which allows the user to create voltage sweeps and time measurement sweeps while measuring voltage or current. The on board ADC allows for digital capture of the measured parameter and displays it in plot format. For number crunching, the data is also available to copy to the clipboard and port into other formats (such as Excel or Word). For these operations to function correctly, ensure you select the correct reference value. Note that LK 4 on the evaluation board selects the reference, when in position B = 2.5V, Position A = 5V. The “No Handles” function allows you to zoom in on particular parts of the plot – simply click to turn the handles on and then pull the tabs at the corners of the x or y axis.
-
 
 |image10|
 
@@ -256,7 +276,8 @@ Procedure
 -  Measure VREF voltages, 5V and 2.5V voltages. tat LK4A and LK4B.
 -  Place the 5.6k resistors at the RDUT0/1/2/3
 -  In the main control panel window, set the FV = 5V, measure corresponding voltage at each RDUT points, should also read 5V. Check corresponding Measout voltages, noting that the MEASOUT GAIN = 0.2 setting is programmed by the software, therefore the output range will be scaled accordingly.
--  Repeat using FI mode of operation and verify channel voltages/currents for known load.
+-  Repeat using FI mode of operation and verify channel voltages/currents for
+   known load.
 
 Schematics, Gerbers, BOM, Software
 ==================================
@@ -282,22 +303,22 @@ Software
 -  :adi:`AD5522 Evaluation software - Version 1.6 <static/imported-files/eval_boards/AD5522_evaluation_software.zip>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad5522_pu.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/software_front.jpg
-   :width: 800px
+   :width: 800
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/reg_detail.jpg
-   :width: 800px
+   :width: 800
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/sys_control_reg.jpg
-   :width: 800px
+   :width: 800
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/write_pmu_reg.jpg
-   :width: 800px
+   :width: 800
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/write_dac_reg.jpg
-   :width: 800px
+   :width: 800
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/write_comp_reg.jpg
-   :width: 800px
+   :width: 800
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/write_alarm_status.jpg
-   :width: 800px
+   :width: 800
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/little_routines.jpg
-   :width: 800px
+   :width: 800
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/voltage_sweep.jpg
-   :width: 800px
+   :width: 800

@@ -4,14 +4,25 @@ Integrated Noise KWIK Lecture + Lab
 General Description
 -------------------
 
-The Integrated Noise Know-how with Integrated Knowledge (KWIK) Lecture and Lab is a training module comprised of a descriptive lesson and a hands-on activity using the ADALM2000 with the goal of understanding the integrated noise of an amplifier.
+The Integrated Noise Know-how with Integrated Knowledge (KWIK) Lecture and Lab
+is a training module comprised of a descriptive lesson and a hands-on activity
+using the ADALM2000 with the goal of understanding the integrated noise of an
+amplifier.
 
-The Integrated Noise KWIK Lecture and Lab training module syncs well with its companion board, the EVAL-KW4501Z, an easy-to-use plug-and-play evaluation board that contains an ADA4510-2, a dual-channel, high precision, low offset voltage, low-noise, and rail-to-rail input and output operational amplifier, and can directly be fastened into the ADALM2000, ADI's portable, USB-powered, software-defined test and measurement instrument.
+The Integrated Noise KWIK Lecture and Lab training module syncs well with its
+companion board, the EVAL-KW4501Z, an easy-to-use plug-and-play evaluation board
+that contains an ADA4510-2, a dual-channel, high precision, low offset voltage,
+low-noise, and rail-to-rail input and output operational amplifier, and can
+directly be fastened into the ADALM2000, ADI's portable, USB-powered,
+software-defined test and measurement instrument.
 
 Objective
 ---------
 
-The Integrated Noise KWIK Lecture and Lab aims to inform of and demonstrate the effects of integrated noise in a system. The module focuses on defining and measuring integrated noise, as well as discussing ways on how to handle, mitigate, and work around them.
+The Integrated Noise KWIK Lecture and Lab aims to inform of and demonstrate the
+effects of integrated noise in a system. The module focuses on defining and
+measuring integrated noise, as well as discussing ways on how to handle,
+mitigate, and work around them.
 
 Lecture Materials
 -----------------
@@ -48,7 +59,6 @@ LTspice Circuits used in the lecture material are available at `Integrated Noise
 
    *Keep all files in the zip folder in the same folder on your local PC.*
 
-
 --------------
 
 EVAL-KW4501Z Images
@@ -67,8 +77,8 @@ Additional Reading
 :ez:`KWIK Circuits Main Page <precision-technology-signal-chains/w/kwik-circuits>`
 
 .. |Integrated Noise Top View| image:: https://wiki.analog.com/_media/resources/eval/user-guides/integrated-noise-kwik-demo-board_top-evaluation-board.jpg
-   :width: 200px
+   :width: 200
 .. |Integrated Noise Bottom View| image:: https://wiki.analog.com/_media/resources/eval/user-guides/integrated-noise-kwik-demo-board_bottom-evaluation-board.jpg
-   :width: 200px
+   :width: 200
 .. |Integrated Noise Angle View| image:: https://wiki.analog.com/_media/resources/eval/user-guides/integrated-noise-kwik-demo-board_angle-evaluation-board.jpg
-   :width: 400px
+   :width: 400

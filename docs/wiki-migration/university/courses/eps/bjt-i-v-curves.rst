@@ -11,30 +11,52 @@ Background:
 
 The variable analog outputs supplied by the Discovery hardware are voltages. The BJT collector current is controlled by the base current. The AWG output voltage must be converted into a suitable current to drive the base terminal of the device under investigation. A simple resistor can be used to convert a voltage into a current, as shown in figure 1. However, only if the voltage across the resistor is known or controlled in some way. In this simple circuit, the base current I\ :sub:`B` = (V\ :sub:`AWG2` - V\ :sub:`BE`)/100KΩ. We can set V\ :sub:`AWG2` to known values but we don't know the exact value of V\ :sub:`BE`. We can of course remove an estimate of the V\ :sub:`BE` mathematically. This is still only an estimate.
 
-
 |image1|
 
 .. container:: centeralign
 
    Figure 1 NPN I\ :sub:`C` vs. V\ :sub:`CE` characteristic curve measurements
 
-
 Materials:
 ----------
 
-Analog Discovery Lab Instrument Hardware Solder-less Breadboard 1 - 100KΩ Resistor 1 - 100Ω Resistor 1 - small signal NPN transistor (2N3904)
+Analog Discovery Lab Instrument Hardware Solder-less Breadboard 1 - 100KΩ
+Resistor 1 - 100Ω Resistor 1 - small signal NPN transistor (2N3904)
 
 NPN device Directions:
 ----------------------
 
-Build the simple characteristic curve measurement circuit shown in figure 1. The green boxes indicate where to connect the Discovery Board.
+Build the simple characteristic curve measurement circuit shown in figure 1. The
+green boxes indicate where to connect the Discovery Board.
 
 Hardware Setup:
 ---------------
 
-Using the custom waveform editor in the Waveforms AWG tool, construct a stair-step waveform with 5 levels for AWG2. Be sure to reset so that you are starting with flat line at 0%. First set the type to constant. Then with start set to 0%, length set to 20% and offset set to -100% click on generate function. There should now be a line at -100% from 0 to 20%. Next change the start to 20% and the offset to -50% and then click on generate function again. There should now be a line at -50% from 20% to 40%. Next set the offset to +50% and the start to 60% and then click on generate function again. There should now be a line at 0% from 40% to 60% and a line at 50% from 60% to 80%. Finally set the offset to 100% and start to 80% and click on generate function one last time. There should now be a final line at 100% from 80% to 100%. Click on save and your new waveform should be in channel 2. Now at this point set the frequency to 40Hz, the amplitude to 2 V and the offset to 2.6 V. The waveform in the display should start at 0.6V and increase in 1 V increments to 4.6 V (0.6, 1.6, 2.6, 3.6, 4.6) Each step should be 5 mSec long for a total of 25 mSec. In AWG channel 1 configure a triangle wave with an amplitude of 2.5 V and an offset of 2.5V (wave should swing from 0 to 5V). Set the frequency to 200 Hz ( 5 times the 40 Hz of channel 2). Comparing the waveforms in channel 1 and channel 2, the triangle wave in channel 1 should go through one cycle from 0 to 5 V and back to zero during the time of one step in the waveform in channel 2. It will probably be necessary to set the phase of channel 1 to 270 degrees to make them line up in this way.
+Using the custom waveform editor in the Waveforms AWG tool, construct a
+stair-step waveform with 5 levels for AWG2. Be sure to reset so that you are
+starting with flat line at 0%. First set the type to constant. Then with start
+set to 0%, length set to 20% and offset set to -100% click on generate function.
+There should now be a line at -100% from 0 to 20%. Next change the start to 20%
+and the offset to -50% and then click on generate function again. There should
+now be a line at -50% from 20% to 40%. Next set the offset to +50% and the start
+to 60% and then click on generate function again. There should now be a line at
+0% from 40% to 60% and a line at 50% from 60% to 80%. Finally set the offset to
+100% and start to 80% and click on generate function one last time. There should
+now be a final line at 100% from 80% to 100%. Click on save and your new
+waveform should be in channel 2. Now at this point set the frequency to 40Hz,
+the amplitude to 2 V and the offset to 2.6 V. The waveform in the display should
+start at 0.6V and increase in 1 V increments to 4.6 V (0.6, 1.6, 2.6, 3.6, 4.6)
+Each step should be 5 mSec long for a total of 25 mSec. In AWG channel 1
+configure a triangle wave with an amplitude of 2.5 V and an offset of 2.5V (wave
+should swing from 0 to 5V). Set the frequency to 200 Hz ( 5 times the 40 Hz of
+channel 2). Comparing the waveforms in channel 1 and channel 2, the triangle
+wave in channel 1 should go through one cycle from 0 to 5 V and back to zero
+during the time of one step in the waveform in channel 2. It will probably be
+necessary to set the phase of channel 1 to 270 degrees to make them line up in
+this way.
 
-You may wish to export your newly created stair-step waveform to a .csv file for future use.
+You may wish to export your newly created stair-step waveform to a .csv file for
+future use.
 
 Procedure:
 ----------
@@ -49,17 +71,27 @@ Questions:
 PNP device Directions:
 ----------------------
 
-To measure the PNP device, alter the characteristic curve measurement circuit as shown in figure 2. The connections are not very different but the polarity of the voltage waveforms generated by AWG1 and AWG2 must now be negative with respect to ground.
+To measure the PNP device, alter the characteristic curve measurement circuit as
+shown in figure 2. The connections are not very different but the polarity of
+the voltage waveforms generated by AWG1 and AWG2 must now be negative with
+respect to ground.
 
-You can use the same 5 step staircase waveform you generated for the NPN device to drive the base current for the PNP device. You will need to set the amplitude to 2 V again but set the offset to -2.6 V. The waveform in the display should now start at -0.6 V and decrease in 1 V increments to -4.6 V (-0.6, -1.6, -2.6, -3.6, -4.6) Each step should be 5 mSec long for a total of 25 mSec. In AWG channel 1 change the triangle wave with an amplitude of 2.5 V to an offset of -2.5V (wave should swing from 0 to -5V). Check to make sure that the triangle wave in channel 1 goes through one cycle from 0 to -5 V and back to zero during the time of one step in the waveform in channel 2. Change the phase of channel 1 if necessary.
-
+You can use the same 5 step staircase waveform you generated for the NPN device
+to drive the base current for the PNP device. You will need to set the amplitude
+to 2 V again but set the offset to -2.6 V. The waveform in the display should
+now start at -0.6 V and decrease in 1 V increments to -4.6 V (-0.6, -1.6, -2.6,
+-3.6, -4.6) Each step should be 5 mSec long for a total of 25 mSec. In AWG
+channel 1 change the triangle wave with an amplitude of 2.5 V to an offset of
+-2.5V (wave should swing from 0 to -5V). Check to make sure that the triangle
+wave in channel 1 goes through one cycle from 0 to -5 V and back to zero during
+the time of one step in the waveform in channel 2. Change the phase of channel 1
+if necessary.
 
 |image2|
 
 .. container:: centeralign
 
    Figure 2 PNP I\ :sub:`C` vs. V\ :sub:`CE` characteristic curve measurements
-
 
 **For Further Reading:**
 
@@ -68,6 +100,6 @@ Waveform file: `5_steps.csv <https://wiki.analog.com/_media/university/courses/e
 **Return to EPS Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/eps/eps_bjt-curves-f1.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/eps/eps_bjt-curves-f2.png
-   :width: 500px
+   :width: 500

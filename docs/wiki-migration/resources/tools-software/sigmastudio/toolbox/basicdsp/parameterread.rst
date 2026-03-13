@@ -3,8 +3,8 @@ Parameter Read
 
 :doc:`Click here to return to the Basic DSP. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-
-This module can be used to read any parameter in the schematic and get the value in the output pin.
+This module can be used to read any parameter in the schematic and get the value
+in the output pin.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/paramread.png
    :align: center
@@ -33,7 +33,9 @@ Not supported
 Configurations
 --------------
 
-After adding the module. Press 'Link compile connect' once to ensure all the addresses are proper. Then click on the select button to open the following window.
+After adding the module. Press 'Link compile connect' once to ensure all the
+addresses are proper. Then click on the select button to open the following
+window.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/paramreadwnd.jpg
    :align: center
@@ -62,7 +64,6 @@ Address          ParamReadAlg1Address Address of the parameter
 offset           ParamReadAlg1Offset  Offeset from address
 type             ParamReadAlg1Type    0 - float, 1- int
 ================ ==================== ========================
-
 
 | Here,
 

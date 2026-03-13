@@ -4,48 +4,63 @@ ADF7030 INTERFACE WITH EV-COG-AD3029LZ
 Introduction
 ------------
 
-This document explains about the hardware and software setup, which is required to interface a ADF7030 radio transceiver with the EV-COG-AD3029LZ using SPI protocol. The entire setup is made simple with the use of AD-GEAR-DISPLAY1Z, which contains the slots for the ADF7030 Daughter Card.
+This document explains about the hardware and software setup, which is required
+to interface a ADF7030 radio transceiver with the EV-COG-AD3029LZ using SPI
+protocol. The entire setup is made simple with the use of AD-GEAR-DISPLAY1Z,
+which contains the slots for the ADF7030 Daughter Card.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/radio_gear.png
-   :width: 600px
+   :width: 600
 
-The hardware details cover the COG jumper settings and also the pin mapping between the ADF7030-1 Daughter card and the EV-COG-AD3029LZ. The software details cover the software development kit required and the software architecture of the code base written to interface the ADF7030 Daughter card with the EV-COG-AD3029LZ.
+The hardware details cover the COG jumper settings and also the pin mapping
+between the ADF7030-1 Daughter card and the EV-COG-AD3029LZ. The software
+details cover the software development kit required and the software
+architecture of the code base written to interface the ADF7030 Daughter card
+with the EV-COG-AD3029LZ.
 
 Boards and Accessories required
 -------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_gear_radio.png
-   :width: 800px
+   :width: 800
 
-a.) EV-COG-AD3029LZ (left) b.) AD-GEAR-DISPLAY1Z (middle) c.) ADF7030 Daughter card (Right)
+a.) EV-COG-AD3029LZ (left) b.) AD-GEAR-DISPLAY1Z (middle) c.) ADF7030 Daughter
+card (Right)
 
-- Two of each is required. One for the Transmitter setup and the other for the Receiver setup.
+- Two of each is required. One for the Transmitter setup and the other for the
+  Receiver setup.
 
 Hardware interface
 ------------------
 
-This section contains hardware related information about AD-GEAR-DISPLAY1Z, EV-COG-AD3029-LZ and the ADF7030-1 Daughter card. Links are provided to the WiKi page of the target COG-AD3029-LZ, the Schematics, BOMs and technical documentations at the end of this page.
+This section contains hardware related information about AD-GEAR-DISPLAY1Z,
+EV-COG-AD3029-LZ and the ADF7030-1 Daughter card. Links are provided to the WiKi
+page of the target COG-AD3029-LZ, the Schematics, BOMs and technical
+documentations at the end of this page.
 
 Connection Diagram
 ~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_adf7030_connection.png
-   :width: 700px
+   :width: 700
 
-- The AD-GEAR-DISPLAY1Z board is required as it acts as the interface between EV-COG-AD3029LZ and ADF7030-1 Daughter Card.
+- The AD-GEAR-DISPLAY1Z board is required as it acts as the interface between
+  EV-COG-AD3029LZ and ADF7030-1 Daughter Card.
 
 Board Interface
 ~~~~~~~~~~~~~~~
 
--  Connect the AD-GEAR-DISPLAY1Z via it’s Cog connectors to the EV-COG-AD3029LZ’s expansion connectors.
+-  Connect the AD-GEAR-DISPLAY1Z via it’s Cog connectors to the
+   EV-COG-AD3029LZ’s expansion connectors.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_gear_connection.png
-   :width: 600px
+   :width: 600
 
--  Connect the ADF7030-1 Daughter card to the AD-GEAR-DISPLAY1Z via the expansion's radio connectors.
+-  Connect the ADF7030-1 Daughter card to the AD-GEAR-DISPLAY1Z via the
+   expansion's radio connectors.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/gear_radio_connection.png
-   :width: 600px
+   :width: 600
 
 Pin Connection
 ~~~~~~~~~~~~~~
@@ -67,12 +82,15 @@ GPIO03 / RST_PIN     RST
 Software Details
 ----------------
 
-This section contains software related information about AD-GEAR-DISPLAY1Z and the EV-COG-AD3029-LZ and the application. Links are provided to the user guides, BSPs, software tool chains and the example project at the end of this page.
+This section contains software related information about AD-GEAR-DISPLAY1Z and
+the EV-COG-AD3029-LZ and the application. Links are provided to the user guides,
+BSPs, software tool chains and the example project at the end of this page.
 
 Application files
 ~~~~~~~~~~~~~~~~~
 
-A library consisting of ADF7030-1 specific drivers are provided for interfacing the radio module with the host controller.
+A library consisting of ADF7030-1 specific drivers are provided for interfacing
+the radio module with the host controller.
 
 The example software provided consists of the following,
 
@@ -85,26 +103,31 @@ The example software provided consists of the following,
 
 -  ADF7030-1 specific driver source files.
 
-- The example application requires ADuCM302x-Rel2.0.0 BSP for IAR to be installed.
+- The example application requires ADuCM302x-Rel2.0.0 BSP for IAR to be
+  installed.
 
 Software Architecture
 ~~~~~~~~~~~~~~~~~~~~~
 
 The software architecture for the ADF7030-1 applications is depicted below
 
-
 |image1|
 
-- The system specific APIs like SPI, UART, GPIO etc and present in the ADuCM302x-Rel2.0.0 BSP .
+- The system specific APIs like SPI, UART, GPIO etc and present in the
+  ADuCM302x-Rel2.0.0 BSP .
 
-- The Radio control APIs are found in the Driver files provided within the project application folder.
+- The Radio control APIs are found in the Driver files provided within the
+  project application folder.
 
-- The 3 different projects (OfflineCalibration, RX_packet and TX_packet) share the same workspace but only one of them can be set as active at a time.
+- The 3 different projects (OfflineCalibration, RX_packet and TX_packet) share
+  the same workspace but only one of them can be set as active at a time.
 
 IDE Setup and example application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section covers the various steps involved in getting the RX_packet and TX_packet application code to run on EV-COG-AD3029LZ after the hardware setup is done.
+This section covers the various steps involved in getting the RX_packet and
+TX_packet application code to run on EV-COG-AD3029LZ after the hardware setup is
+done.
 
 Following are the steps involved,
 
@@ -114,7 +137,9 @@ Following are the steps involved,
 -  Import the source into IAR workspace .
 -  Set TX_packet as active project, build and flash it into the transmitter setup.
 -  Now, set RX_packet as active project, build and flash it into the receiver setup.
--  open two instances of TeraTerm(Terminal emulator program) each for transmitter and Receiver, press reset on both setups and see RSSI and data being printed on the receiver terminal window.
+-  open two instances of TeraTerm(Terminal emulator program) each for
+   transmitter and Receiver, press reset on both setups and see RSSI and data
+   being printed on the receiver terminal window.
 
 References and Links
 --------------------
@@ -127,4 +152,4 @@ References and Links
 -  :adi:`ADF7030-1 Hardware Reference Manual <media/en/technical-documentation/user-guides/ADF7030-1-UG-957.pdf>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/adf7030_flow.png
-   :width: 800px
+   :width: 800

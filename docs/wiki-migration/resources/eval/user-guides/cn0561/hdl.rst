@@ -5,15 +5,20 @@ CN0561 HDL Reference Design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/cn0561/index.html\
 
-
 Overview
 --------
 
-The HDL reference design for the CN0561 provides all the interfaces that are necessary to interact with the device using a Xilinx FPGA development board.
+The HDL reference design for the CN0561 provides all the interfaces that are
+necessary to interact with the device using a Xilinx FPGA development board.
 
-The design has all the necessary infrastructure to acquire data from the AD4134 24-bit 4-channel precision alias free ADC device, supporting continuous data capture at maximum 1.5 MSPS data rate however, due to a hardware limitation, the Cora-Z7s variant will only support a maximum data clock of 24MHz in contrast with 48MHz supported on the Zedboard.
+The design has all the necessary infrastructure to acquire data from the AD4134
+24-bit 4-channel precision alias free ADC device, supporting continuous data
+capture at maximum 1.5 MSPS data rate however, due to a hardware limitation, the
+Cora-Z7s variant will only support a maximum data clock of 24MHz in contrast
+with 48MHz supported on the Zedboard.
 
-The design targeted to the Zedboard, which is a low cost FPGA carrier board from Digilent, using a Zynq-7000 re-programmable SoC from Xilinx.
+The design targeted to the Zedboard, which is a low cost FPGA carrier board from
+Digilent, using a Zynq-7000 re-programmable SoC from Xilinx.
 
 Used devices
 ~~~~~~~~~~~~
@@ -68,7 +73,6 @@ HDL Downloads
    -  :git-hdl:`CN0561 HDL Project. <projects/cn0561>`
    
 
-
 Software sources
 ----------------
 
@@ -78,4 +82,3 @@ Software sources
    
    -  `CN0561 software support <https://wiki.analog.com/resources/eval/user-guides/cn0561/sw>`_
    
-

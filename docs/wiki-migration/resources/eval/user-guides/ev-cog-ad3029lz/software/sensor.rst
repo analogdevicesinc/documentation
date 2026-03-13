@@ -8,14 +8,17 @@ General Description/Overview
 
 Sensor software pack contains sensor software components. Sensor components are based on the sensor classes which abstract the functionality across sensor types. The Sensors software pack provides access to all the necessary add-on module digital drivers that attach to the :adi:`EV-COG-AD3029LZ` development platform. This software layer is the highest layer of abstraction from the microprocessor, and because of this can be useful to jump start code development for your application using any microprocessor. For example, if you are using the ADXL362, the Sensor software pack contains drivers and code snippets on the application level, so that can be transported to other microprocessor, with confidence that Analog Devices provided the application framework pieces. When combined with the :adi:`ADuCM3029` and :adi:`EV-COG-AD3029LZ` software packs there are many great Internet of Things(IoT) applications.
 
-ADI Sensor Software requires CrossCore Embedded Studio 2.6.0 ® , ADuCM3029 Device Family Pack 2.0.0 and EV-COG-AD3029LZ Board Support Package 1.0.0.
+ADI Sensor Software requires CrossCore Embedded Studio 2.6.0 ® , ADuCM3029
+Device Family Pack 2.0.0 and EV-COG-AD3029LZ Board Support Package 1.0.0.
 
-The following application examples and sensor drivers are provided as part of the Sensor software pack:
+The following application examples and sensor drivers are provided as part of
+the Sensor software pack:
 
 -  Accelerometer Demo
 -  Temperature Sensor Demo
 
-For detailed information regarding the Sensor software pack, please see our complete Sensor software user guide.
+For detailed information regarding the Sensor software pack, please see our
+complete Sensor software user guide.
 
 .. hint::
 
@@ -23,13 +26,12 @@ For detailed information regarding the Sensor software pack, please see our comp
    `Sensor Software Pack Release Notes <http://download.analog.com/tools/Sensor_Software/Releases/Release_1.1.0/ADI-SensorSoftware_1.1.0_Release_Notes.pdf>`_
    
 
-
 .. important::
 
    
-   You MUST have this software package installed on your laptop or PC in order to compile, debug, and run the applications for the EC-COG-AD3029LZ platform.
+   You MUST have this software package installed on your laptop or PC in order
+   to compile, debug, and run the applications for the EC-COG-AD3029LZ platform.
    
-
 
 Downloading the Sensor Software Pack
 ------------------------------------
@@ -42,7 +44,10 @@ The software pack can be downloaded in following ways.
 
 -  Downloaded to local directory
 
-   -  However if you do decide to download the Sensor software pack to your PC/laptop directly, please use the link below, and make sure you save the software pack to the correct local directory for your applications/projects.
+   -  However if you do decide to download the Sensor software pack to your
+      PC/laptop directly, please use the link below, and make sure you save the
+      software pack to the correct local directory for your
+      applications/projects.
 
 .. admonition:: Download
    :class: download
@@ -56,7 +61,6 @@ The software pack can be downloaded in following ways.
    
    `EV-COG-AD3029LZ Github <https://github.com/analogdevicesinc/EV-COG-AD3029LZ>`_
    
-
 
 *End of Document*
 

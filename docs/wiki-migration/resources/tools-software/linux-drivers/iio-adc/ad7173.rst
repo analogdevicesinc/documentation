@@ -105,7 +105,9 @@ Channel required properties
 
    -  diff-channels: expects a two value array, will define a channel marked as differential.
    -  single-channel + common-mode-channel: each expects a single value, will define a channel marked as single-ended.
-   -  single-channel + adi,current-channel: only single-channel expects a value, will be used to define a current measuring channel on AD411x models with current inputs.
+   -  single-channel + adi,current-channel: only single-channel expects a value,
+      will be used to define a current measuring channel on AD411x models with
+      current inputs.
 
 Optional properties
 ~~~~~~~~~~~~~~~~~~~
@@ -113,7 +115,9 @@ Optional properties
 -  interrupts: maps the interrupts to a pin and a trigger level
 
    -  Ready: Multiplexed with the DOUT pin, can be used as indication of a finished conversion, should be IRQ_TYPE_EDGE_FALLING. The device tree property is optional for the bindings, the upstream version of the driver is **required** to have the interrupt defined in order to be functional.
-   -  Error: Used to detect if one of the following errors has occurred: ADC_ERROR/CRC_ERROR/REG_ERROR. At the time of writing, this feature is not implemented in the driver.
+   -  Error: Used to detect if one of the following errors has occurred:
+      ADC_ERROR/CRC_ERROR/REG_ERROR. At the time of writing, this feature is not
+      implemented in the driver.
 
 -  interrupt-names: The name of the interrupts, order should coincide with the values from the interrupts property.
 -  spi-max-frequency: Max SPI frequency to use see: Documentation/devicetree/bindings/spi/spi-bus.txt.
@@ -142,14 +146,19 @@ Channels optional properties
    -  refout-avss: will use the internal reference REFOUT/AVSS
    -  avdd: will use the AVDD/AVSS supply defined at avdd-supply
 
--  bipolar: If set, the channel will be setup in bipolar mode where the ADC accepts negative differential input voltages, and the output coding is offset binary. If the property is missing, the channel will be set in unipolar mode and the ADC accepts only positive differential voltages, and the coding is straight binary.
+-  bipolar: If set, the channel will be setup in bipolar mode where the ADC
+   accepts negative differential input voltages, and the output coding is offset
+   binary. If the property is missing, the channel will be set in unipolar mode
+   and the ADC accepts only positive differential voltages, and the coding is
+   straight binary.
 
 Configuration differences between models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Analog inputs differences:
 
-   -  Voltage inputs: Besides the different number of inputs, there are special pins that are only available on certain models:
+   -  Voltage inputs: Besides the different number of inputs, there are special
+      pins that are only available on certain models:
 
       -  (AVDD1 − AVSS)/5: Available only on :adi:`AD7172-2`, :adi:`AD7172-4`, :adi:`AD7175-2`, :adi:`AD7175-8` and :adi:`AD7177-2`
       -  VINCOM: Available on AD411x models.
@@ -166,16 +175,15 @@ Configuration differences between models
 
    For more devicetree examples and full bindings documentation, refer to :git-linux:`Documentation/devicetree/bindings/iio/adc/adi,ad7173.yaml`
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD7173 driver depends on CONFIG_IIO and CONFIG_SPI_MASTER
-
 
 ::
 
@@ -195,7 +203,9 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Hardware configuration
 ======================
 
-The evaluation kits were connected using the exposed digital I/O pins to a Raspberry pi 3B+. Here is an example of connection from the ADC evaluation board to the RPI:
+The evaluation kits were connected using the exposed digital I/O pins to a
+Raspberry pi 3B+. Here is an example of connection from the ADC evaluation board
+to the RPI:
 
 ::
 
@@ -209,8 +219,15 @@ The evaluation kits were connected using the exposed digital I/O pins to a Raspb
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
@@ -219,7 +236,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 .. container:: box bggreen
 
@@ -277,11 +293,9 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -r--r--r-- 1 root root 4096 Feb 10 11:39 waiting_for_supplier
    
 
-
 .. note::
 
    The channels above correspond to the following devicetree instance: `rpi-ad7173-overlay.dts <https://github.com/analogdevicesinc/linux/blob/rpi-6.6.y/arch/arm/boot/dts/overlays/rpi-ad7173-overlay.dts>`_
-
 
 Show device name
 ----------------
@@ -297,15 +311,18 @@ Show device name
       ad7173-8
    
 
-
 Show channel raw, scale and offset
 ----------------------------------
 
 **Description:** Scales and offsets to be applied to in_voltagex_voltagey_raw in order to obtain the measured voltage in millivolts.
 
-Compute formula is: (RAW + OFFSET) \* SCALE for channels that are configured with bipolar coding within the devicetree. For channels missing the offset property, RAW \* SCALE will be used. Example channel configured with AIN0-AIN1, internal reference and bipolar coding:
+Compute formula is: (RAW + OFFSET) \* SCALE for channels that are configured
+with bipolar coding within the devicetree. For channels missing the offset
+property, RAW \* SCALE will be used. Example channel configured with AIN0-AIN1,
+internal reference and bipolar coding:
 
-U = (in_voltage0-voltage1_raw + in_voltage0-voltage1_offset) \* cat in_voltage0-voltage1_scale = 517.683236334 mV
+U = (in_voltage0-voltage1_raw + in_voltage0-voltage1_offset) \* cat
+in_voltage0-voltage1_scale = 517.683236334 mV
 
 .. container:: box bggreen
 
@@ -322,14 +339,15 @@ U = (in_voltage0-voltage1_raw + in_voltage0-voltage1_offset) \* cat in_voltage0-
       9257137
    
 
-
 Set sampling frequency
 ----------------------
 
 **Description:** The output sampling rate cat be set to each channel individually.
 
 -  When reading channel values individually or using buffered mode with a single channel enabled, the data rate will coincide with the set value.
--  When using buffered mode with multiple channels, the effective data rate will be lower and depend on the number of enabled channels and their respective sampling frequency setting.
+-  When using buffered mode with multiple channels, the effective data rate will
+   be lower and depend on the number of enabled channels and their respective
+   sampling frequency setting.
 
 .. container:: box bggreen
 
@@ -348,17 +366,22 @@ Set sampling frequency
       100.500000
    
 
-
 Calibration
 -----------
 
-The family supports both internal and system calibrations which can be done at full or zero scale.
+The family supports both internal and system calibrations which can be done at
+full or zero scale.
 
-- Internal zero scale: removes ADC core offset errors. \* Internal full scale: removes ADC core gain errors. \* System zero scale: reduces offset error to the order of channel noise. \* System full scale: reduces gain error to the order of channel noise.
+- Internal zero scale: removes ADC core offset errors. \* Internal full scale:
+  removes ADC core gain errors. \* System zero scale: reduces offset error to
+  the order of channel noise. \* System full scale: reduces gain error to the
+  order of channel noise.
 
-All voltage channels will undergo an internal zero/full scale calibration at bootup.
+All voltage channels will undergo an internal zero/full scale calibration at
+bootup.
 
-System zero/full scale can be done after bootup using the newly created iio interface 'sys_calibration' and 'sys_calibration_mode'
+System zero/full scale can be done after bootup using the newly created iio
+interface 'sys_calibration' and 'sys_calibration_mode'
 
 .. container:: box bggreen
 
@@ -373,20 +396,28 @@ System zero/full scale can be done after bootup using the newly created iio inte
       root:/sys/bus/iio/devices/iio:device0> echo 1 > sys_calibration_mode
    
 
-
 Openwire detection for AD4111
 -----------------------------
 
-AD4111 supports openwire detection and will report a fault event through an iio_event when an openwire condition is detected when running a single conversion.
+AD4111 supports openwire detection and will report a fault event through an
+iio_event when an openwire condition is detected when running a single
+conversion.
 
-The fault is level triggered, it will keep being sent as long as the condition still exists.
+The fault is level triggered, it will keep being sent as long as the condition
+still exists.
 
 The tool **iio_event_monitor** found in your kernel sources **tools/iio/iio_event_monitor.c** can be used to read those events.
 
 Buffer management
 -----------------
 
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -408,7 +439,6 @@ Every buffer implementation features a set of files:
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -426,11 +456,9 @@ Every buffer implementation features a set of files:
       in_voltage10-voltage11_en   in_voltage14-voltage15_index  in_voltage4-voltage5_type
    
 
-
 .. note::
 
    The channels above correspond to the following devicetree instance: `rpi-ad7173-overlay.dts <https://github.com/analogdevicesinc/linux/blob/rpi-6.6.y/arch/arm/boot/dts/overlays/rpi-ad7173-overlay.dts>`_
-
 
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
@@ -440,7 +468,6 @@ Every buffer implementation features a set of files:
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 More Information
 ================
@@ -463,6 +490,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

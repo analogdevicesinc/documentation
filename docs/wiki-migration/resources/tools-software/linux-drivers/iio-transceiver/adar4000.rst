@@ -1,7 +1,13 @@
 ADAR4000/ADAR4001 2 GHz to 18 GHz, Single Beam, 4-Element Beamformer Linux Device Driver
 ========================================================================================
 
-The ADAR4000 and ADAR4001 are wideband beamformer ICs operating from 2 GHz to 18 GHz, designed for transmit and receive phased array applications, respectively. Both feature a true time delay core for beam-squint free operation, with configurable delays up to 508 ps and fine resolution down to 2 ps. Each path includes a 31.5 dB digital step attenuator with 0.5 dB steps. They support SPI control for up to 16 devices and include on-chip RAM and FIFO for storing and sequencing beamstates.
+The ADAR4000 and ADAR4001 are wideband beamformer ICs operating from 2 GHz to 18
+GHz, designed for transmit and receive phased array applications, respectively.
+Both feature a true time delay core for beam-squint free operation, with
+configurable delays up to 508 ps and fine resolution down to 2 ps. Each path
+includes a 31.5 dB digital step attenuator with 0.5 dB steps. They support SPI
+control for up to 16 devices and include on-chip RAM and FIFO for storing and
+sequencing beamstates.
 
 Supported Devices
 -----------------
@@ -46,7 +52,8 @@ Files
 Example Linux Device-Tree Initialization
 ========================================
 
-The ADAR4000 driver is a spi-bus driver and can currently only be instantiated via device tree.
+The ADAR4000 driver is a spi-bus driver and can currently only be instantiated
+via device tree.
 
 Required devicetree properties:
 
@@ -66,17 +73,18 @@ Optional properties:
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADAR4000 driver depends on CONFIG_SPI
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -100,11 +108,19 @@ Driver testing / API
 
 .. important::
 
-   SPI writes and reads for certain attributes are delayed because of how the hardware behaves. So, updates to certain properties take a couple of seconds to be reflected in a read-back from hardware.
+   SPI writes and reads for certain attributes are delayed because of how the
+   hardware behaves. So, updates to certain properties take a couple of seconds
+   to be reflected in a read-back from hardware.
 
-
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -203,7 +219,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root@analog:/sys/bus/iio/devices/iio:device0#
    
 
-
 Channel attributes
 ------------------
 
@@ -260,7 +275,6 @@ Show device name
       adar4000
    
 
-
 Read/Write Register
 ~~~~~~~~~~~~~~~~~~~
 
@@ -277,7 +291,6 @@ Read scratchpad:
       0x0
    
 
-
 Write scratchpad:
 
 .. container:: box bggreen
@@ -290,7 +303,6 @@ Write scratchpad:
       root@analog:/sys/bus/iio/devices/iio:device0# iio_reg adar4000 0x0a 0x12
    
 
-
 Beamstate Mode
 ~~~~~~~~~~~~~~
 
@@ -301,9 +313,11 @@ Beamstate Mode
 -  RAM: Data will be saved into RAM, allowing for temporary storage and faster access.
 -  FIFO: Data will be saved into a First-In-First-Out queue, ensuring that the first data entered is the first to be processed.
 -  Reset: The device will reset, clearing any stored data, and returning to its initial state.
--  Mute: The device will enter a mute state, where no data is processed or saved.
+-  Mute: The device will enter a mute state, where no data is processed or
+   saved.
 
-When configuring beam0_mode to mute or reset this will set the commanded beam to a user predefined beamstate and bias setting for the amplifiers.
+When configuring beam0_mode to mute or reset this will set the commanded beam to
+a user predefined beamstate and bias setting for the amplifiers.
 
 .. container:: box bggreen
 
@@ -315,7 +329,6 @@ When configuring beam0_mode to mute or reset this will set the commanded beam to
       root@analog:/sys/bus/iio/devices/iio:device0# cat beam0_mode_available
       direct ram fifo instant_direct mute reset
    
-
 
 Direct Mode
 -----------
@@ -330,7 +343,6 @@ Write:
       root@analog:/sys/bus/iio/devices/iio:device0# echo direct > beam0_mode
    
 
-
 Read :
 
 .. container:: box bggreen
@@ -344,8 +356,8 @@ Read :
       direct
    
 
-
-This mode means that data will be saved into registers corresponding to the “direct” mode.
+This mode means that data will be saved into registers corresponding to the
+“direct” mode.
 
 Writing beamstate in direct mode:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -368,7 +380,6 @@ Writing beamstate in direct mode:
       root@analog:/sys/bus/iio/devices/iio:device0# echo 24 > out_power3_raw
    
 
-
 Input value can be verified by reading the channel attribute.
 
 .. container:: box bggreen
@@ -382,8 +393,8 @@ Input value can be verified by reading the channel attribute.
       10
    
 
-
-To load the current beamstate in the direct control registers into the VAPs, write 1 to beam0_update.
+To load the current beamstate in the direct control registers into the VAPs,
+write 1 to beam0_update.
 
 .. container:: box bggreen
 
@@ -395,11 +406,11 @@ To load the current beamstate in the direct control registers into the VAPs, wri
       root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > beam0_update
    
 
-
 RAM
 ---
 
-Custom 64 beamstates can be loaded at any time via the beamstate_ram attribute in table format. Table must be in this format:
+Custom 64 beamstates can be loaded at any time via the beamstate_ram attribute
+in table format. Table must be in this format:
 
 ===== ======= ===== ===========
 Index Element Delay Attenuation
@@ -430,13 +441,13 @@ Example beamstate table:
       </beamstate>
    
 
-
 .. note::
 
-   Do not modify or remove the header and footer; it will be used as a mark for the driver.
+   Do not modify or remove the header and footer; it will be used as a mark for
+   the driver.
 
-
-Last row denotes beamstate index 63, element 3 with a delay value of 17 and attenuation value of 13.
+Last row denotes beamstate index 63, element 3 with a delay value of 17 and
+attenuation value of 13.
 
 The table can be applied to the attribute by setting first the beam mode to ram.
 
@@ -450,7 +461,6 @@ The table can be applied to the attribute by setting first the beam mode to ram.
       root@analog:/sys/bus/iio/devices/iio:device0# echo ram > beam0_mode
    
 
-
 Allow permission to write on the attribute.
 
 .. container:: box bggreen
@@ -462,7 +472,6 @@ Allow permission to write on the attribute.
    
       root@analog:/sys/bus/iio/devices/iio:device0# chmod 666 beamstate_ram
    
-
 
 Lastly apply the beamstate table. Look through your beamstate table.
 
@@ -476,8 +485,8 @@ Lastly apply the beamstate table. Look through your beamstate table.
       root@analog:/sys/bus/iio/devices/iio:device0# cat ram_beamstate > beamstate_ram
    
 
-
-Write 1 to beam0_update advances the active sequencer pointer and loads that beamstate data into the VAPs.
+Write 1 to beam0_update advances the active sequencer pointer and loads that
+beamstate data into the VAPs.
 
 .. container:: box bggreen
 
@@ -489,8 +498,8 @@ Write 1 to beam0_update advances the active sequencer pointer and loads that bea
       root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > beam0_update
    
 
-
-Alternatively, beamstate data can be applied directly using echo command. Example:
+Alternatively, beamstate data can be applied directly using echo command.
+Example:
 
 .. container:: box bggreen
 
@@ -501,7 +510,6 @@ Alternatively, beamstate data can be applied directly using echo command. Exampl
    
       root@analog:/sys/bus/iio/devices/iio:device0# echo 0, 1, 32, 28 > beamstate_ram
    
-
 
 FIFO
 ----
@@ -520,8 +528,8 @@ Similar process with RAM mode. Table can be modified up to 16 beamstates.
       root@analog:/sys/bus/iio/devices/iio:device0# cat fifo_beamstate > beamstate_fifo
    
 
-
-Write 1 to beam0_update to dequeue the next beamstate in the FIFO and load it into the VAPs.
+Write 1 to beam0_update to dequeue the next beamstate in the FIFO and load it
+into the VAPs.
 
 .. container:: box bggreen
 
@@ -532,7 +540,6 @@ Write 1 to beam0_update to dequeue the next beamstate in the FIFO and load it in
    
       root@analog:/sys/bus/iio/devices/iio:device0# echo 1 > beam0_update
    
-
 
 More Information
 ================
@@ -555,6 +562,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/youtube>p_vntewue24
-

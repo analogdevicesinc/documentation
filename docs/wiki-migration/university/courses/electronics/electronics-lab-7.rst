@@ -4,20 +4,34 @@ Activity: Zero gain amplifier (BJT)
 Objective:
 ----------
 
-In the design of a circuit it is important to take into account the wide variation in certain device values from one to another. A central objective of the designer is to desensitize the circuit to these variations to produce a circuit which meets the specifications across all possible conditions. One aspect of design which is common to nearly all circuits is the establishment of stable bias or operating point levels. This seemingly minor portion of the design can provide the most challenging and interesting circuit problems. Many bias generators are centered around the generation of currents to operate the core of the circuit. Current generated from simple resistors and diodes or diode connected transistors connected across the power supply will vary approximately proportional to the variation of the supply voltage. This variation in the resulting bias current is frequently undesirable.
+In the design of a circuit it is important to take into account the wide
+variation in certain device values from one to another. A central objective of
+the designer is to desensitize the circuit to these variations to produce a
+circuit which meets the specifications across all possible conditions. One
+aspect of design which is common to nearly all circuits is the establishment of
+stable bias or operating point levels. This seemingly minor portion of the
+design can provide the most challenging and interesting circuit problems. Many
+bias generators are centered around the generation of currents to operate the
+core of the circuit. Current generated from simple resistors and diodes or diode
+connected transistors connected across the power supply will vary approximately
+proportional to the variation of the supply voltage. This variation in the
+resulting bias current is frequently undesirable.
 
-This is to introduce a current “mirror” in Activity 8 which has an output which had been desensitized to variation in input current. To understand this circuit, it is helpful to examine the behavior of a “zero-gain amplifier”.
+This is to introduce a current “mirror” in Activity 8 which has an output which
+had been desensitized to variation in input current. To understand this circuit,
+it is helpful to examine the behavior of a “zero-gain amplifier”.
 
 Materials:
 ----------
 
-ADALM2000 Active Learning Module Solder-less breadboard 1 - 2.2KΩ Resistor (or any similar value) 1 - 47Ω Resistor 1 - small signal NPN transistor (2N3904 or SSM2212)
+ADALM2000 Active Learning Module Solder-less breadboard 1 - 2.2KΩ Resistor (or
+any similar value) 1 - 47Ω Resistor 1 - small signal NPN transistor (2N3904 or
+SSM2212)
 
 Directions:
 -----------
 
 The breadboard connections are as shown in the diagram below. The waveform generator W1 output drives one end of resistor R\ :sub:`1`. Resistor R\ :sub:`2` is connected between the base and collector of transistor Q\ :sub:`1` with the other end of resistor R\ :sub:`1` connected to the base as well. The emitter of Q\ :sub:`1` is grounded.
-
 
 |image1|
 
@@ -25,12 +39,10 @@ The breadboard connections are as shown in the diagram below. The waveform gener
 
    Figure 1 Zero Gain Amplifier
 
-
 Hardware Setup:
 ---------------
 
 The waveform generator 1 should be configured for a 1 KHz triangle wave with 3 volt amplitude peak-to-peak and 1.5V offset. Connect scope Channel 1 to display output W1 of the AWG generator. The Single ended input of scope channel 2 (2+) is used to measure alternately the base and collector voltage of Q\ :sub:`1`.
-
 
 |image2|
 
@@ -38,33 +50,31 @@ The waveform generator 1 should be configured for a 1 KHz triangle wave with 3 v
 
    Figure 2 Zero Gain Amplifier Breadboard Circuit
 
-
 Procedure:
 ----------
 
 Remembering back to the common emitter amplifier in the previous section, if R\ :sub:`L` is set equal to r\ :sub:`e` then the gain A will be -1. If the base is connected to the top of resistor R\ :sub:`L` then the gain from the base to the collector (bottom of R\ :sub:`L`) will be -1. Also, neglecting the collector emitter output impedance of the transistor the gain from the top of load resistor R\ :sub:`L` to the collector (bottom of R\ :sub:`L`) will be +1. Thus the net gain superimposing both paths will be 1 - 1 = 0.
 
-In the figure below we have a transistor biased into conduction with a collector voltage which is less than the base voltage by kT/q, (equal to Ic times 47Ω) and is essentially constant with input voltage changes applied from the AWG generator.
+In the figure below we have a transistor biased into conduction with a collector
+voltage which is less than the base voltage by kT/q, (equal to Ic times 47Ω) and
+is essentially constant with input voltage changes applied from the AWG
+generator.
 
 .. container:: centeralign
 
    \ |image3|\
 
-
 .. container:: centeralign
 
    Figure 3 Scopy Plot V\ :sub:`BE`
-
 
 .. container:: centeralign
 
    |image4|\
 
-
 .. container:: centeralign
 
    Figure 4 Scopy Plot V\ :sub:`CE`
-
 
    |image5|
 
@@ -72,18 +82,17 @@ In the figure below we have a transistor biased into conduction with a collector
 
    Figure 5 Excel Plot comparing V\ :sub:`BE` and V\ :sub:`CE`
 
-
    |image6|
 
 .. container:: centeralign
 
    Figure 6 Excel V\ :sub:`BE` and V\ :sub:`CE` vs. collector current
 
-
 Questions:
 ----------
 
-What are the relative gains of the two paths when the collector current is less than and greater than the “ideal” zero gain value?
+What are the relative gains of the two paths when the collector current is less
+than and greater than the “ideal” zero gain value?
 
 Improved VBE Multiplier, Applying the Zero Gain Concept
 =======================================================
@@ -93,7 +102,8 @@ As we explored in Activity 3, there are often circuits which require that a volt
 VBE times 2 version 1:
 ----------------------
 
-The obviously simple thing to do would be to just use two diode connected transistors in series.
+The obviously simple thing to do would be to just use two diode connected
+transistors in series.
 
 Materials:
 ----------
@@ -105,13 +115,11 @@ Directions:
 
 The breadboard connections are as shown in figure 7 below. The output of the AWG generator drives one end of resistor R\ :sub:`1` as well as the 2+ input of scope channel 2. The emitter of Q\ :sub:`1` is connected to ground. The base and collector of Q\ :sub:`1` are connected to the emitter of Q\ :sub:`2`. The base and collector of Q\ :sub:`2` are connected to the other end of R\ :sub:`1` and to the 2- input of scope channel 2 and the 1+ input of scope channel 1.
 
-
 |image7|
 
 .. container:: centeralign
 
    Figure 7 V\ :sub:`BE` circuit
-
 
 Hardware Setup:
 ---------------
@@ -122,8 +130,9 @@ Hardware Setup:
 
    Figure 8 V\ :sub:`BE` Breadboard circuit
 
-
-The waveform generator should be configured for a 1 KHz triangle wave with 3 volt amplitude peak-to-peak and 1.5V offset. Both scope channels can be set to 200mV per division.
+The waveform generator should be configured for a 1 KHz triangle wave with 3
+volt amplitude peak-to-peak and 1.5V offset. Both scope channels can be set to
+200mV per division.
 
 Procedure:
 ----------
@@ -132,18 +141,15 @@ Procedure:
 
    \ |image8|\
 
-
 .. container:: centeralign
 
    Figure 9 Scopy Voltage vs. current
-
 
    |image9|
 
 .. container:: centeralign
 
    Figure 10 Voltage vs. current
-
 
 You should also confirm that the voltage characteristic measured at the collector, base of transistor Q\ :sub:`1` is the same as was measured in activity 3.
 
@@ -155,20 +161,19 @@ A second option would be to use two resistors as a voltage divider. This could p
 Materials:
 ----------
 
-1 - 1KΩ Resistor 2 - 10KΩ Resistors 1 - 5KΩ Variable resistor ( a 500Ω pot would be preferable if available ) 1 - small signal NPN transistor (2N3904 or SSM2212)
+1 - 1KΩ Resistor 2 - 10KΩ Resistors 1 - 5KΩ Variable resistor ( a 500Ω pot would
+be preferable if available ) 1 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 -----------
 
 The breadboard connections are as shown in the diagram below. The output of the waveform generator drives one end of resistor R\ :sub:`1` as well as the 2+ input of scope channel 2. The emitter of Q\ :sub:`1` is connected to ground. Resistor R\ :sub:`3` is connected between the base of Q\ :sub:`1` and ground. One end of resistor R\ :sub:`2` connected to the other end of R\ :sub:`1` and to the 2- input of scope channel 2 and one end and the wiper of potentiometer R\ :sub:`4` 1+. The opposite end of R\ :sub:`2` is connected to the base of Q\ :sub:`1`. The collector of Q\ :sub:`2` is connected to the remaining end of R\ :sub:`4` and the 1+ input of scope channel 1.
 
-
 |image10|
 
 .. container:: centeralign
 
    Figure 11 V\ :sub:`BE` Multiplier circuit
-
 
 Hardware Setup:
 ---------------
@@ -179,8 +184,9 @@ Hardware Setup:
 
    Figure 12 V\ :sub:`BE` Multiplier Breadboard circuit
 
-
-The waveform generator should be configured for a 1KHz triangle wave with 3 volt amplitude peak-to-peak and 1.5V offset. Both scope channels can be set to 200mV per division.
+The waveform generator should be configured for a 1KHz triangle wave with 3 volt
+amplitude peak-to-peak and 1.5V offset. Both scope channels can be set to 200mV
+per division.
 
 Procedure:
 ----------
@@ -191,11 +197,9 @@ Start out with variable resistor R\ :sub:`4` set to its minimum value of nearly 
 
    \ |image11|\
 
-
 .. container:: centeralign
 
    Figure 13 Scopy plot - R\ :sub:`4` set to zero ohms
-
 
    |image12|
 
@@ -203,25 +207,21 @@ Start out with variable resistor R\ :sub:`4` set to its minimum value of nearly 
 
    Figure 14 Excel plot - R\ :sub:`4` set to zero ohms
 
-
 Let’s apply the concept of the zero gain amplifier. Now adjust R\ :sub:`4` and observe the slope of the curve change. At what value of R\ :sub:`4` is the curve nearly vertical? Why is that value the correct value for “zero” gain?
 
 .. container:: centeralign
 
    \ |image13|\
 
-
 .. container:: centeralign
 
    Figure 15 Scopy plot - R\ :sub:`4` set to approximately 100 ohms
-
 
    |image14|
 
 .. container:: centeralign
 
    Figure 16 Excel plot - R\ :sub:`4` set to approximately 100 ohms
-
 
 VBE times 2 version 3:
 ======================
@@ -231,20 +231,19 @@ A minor variation on Version 2.
 Materials:
 ----------
 
-1 - 1KΩ Resistor 1 - 10KΩ Resistor 1 - 5KΩ Variable resistor ( 500Ω pot would be preferable if available ) 2 - small signal NPN transistor (2N3904 or SSM2212)
+1 - 1KΩ Resistor 1 - 10KΩ Resistor 1 - 5KΩ Variable resistor ( 500Ω pot would be
+preferable if available ) 2 - small signal NPN transistor (2N3904 or SSM2212)
 
 Directions:
 -----------
 
 The breadboard connections are as shown in the diagram below in figure 17. Version 3 is made from version 2 by removing 10KΩ resistor R\ :sub:`2` and replacing it with diode connected NPN Q\ :sub:`2` as shown.
 
-
 |image15|
 
 .. container:: centeralign
 
    Figure 17 Version 3 of V\ :sub:`BE` multiplier
-
 
 Hardware Setup:
 ---------------
@@ -255,8 +254,9 @@ Hardware Setup:
 
    Figure 18 Version 3 of V\ :sub:`BE` multiplier Breadboard Circuit
 
-
-The waveform generator should be configured for a 1KHz triangle wave with 3 volt amplitude peak-to-peak and 1.5V offset. Both scope channels can be set to 200mV per division.
+The waveform generator should be configured for a 1KHz triangle wave with 3 volt
+amplitude peak-to-peak and 1.5V offset. Both scope channels can be set to 200mV
+per division.
 
 Procedure:
 ----------
@@ -267,13 +267,11 @@ Again start out with variable resistor R\ :sub:`4` set to its minimum value of n
 
    \
 
-
    |image16|
 
 .. container:: centeralign
 
    Figure 19
-
 
    |image17|
 
@@ -281,13 +279,11 @@ Again start out with variable resistor R\ :sub:`4` set to its minimum value of n
 
    Figure 20
 
-
 Again, let’s apply the concept of the zero gain amplifier. Now adjust R\ :sub:`4` and observe the slope of the curve change. At what value of R\ :sub:`4` is the curve nearly vertical? Why is that value the correct value for “zero” gain?
 
 .. container:: centeralign
 
    \
-
 
    |image18|
 
@@ -295,24 +291,19 @@ Again, let’s apply the concept of the zero gain amplifier. Now adjust R\ :sub:
 
    Figure 22
 
-
    |image19|
 
 .. container:: centeralign
 
    Figure 22
 
-
 Optional extra credit problem:
-
-
 
 |image20|
 
 .. container:: centeralign
 
    Figure 23
-
 
 How would you modify the values of R\ :sub:`2` and R\ :sub:`4` in version 2 ( figure 11 ) to produce a stabilized 1.0 volt output?
 
@@ -328,45 +319,44 @@ Answer: using a potentiometer for R\ :sub:`2` the above curve was generated with
    -  LTspice files: :git-education_tools:`m2k/ltspice/bjt_zero_gain_amp_ltspice`
    
 
-
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f1.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/zero_gain-bb.png
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/zero_gain_vbe-wav.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/zero_gain_vce-wav.png
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f2.png
-   :width: 500px
+   :width: 500
 .. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f3.png
-   :width: 500px
+   :width: 500
 .. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f4.png
-   :width: 300px
+   :width: 300
 .. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_circuit-wav.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f5.png
-   :width: 500px
+   :width: 500
 .. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f6.png
-   :width: 300px
+   :width: 300
 .. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_multiplier-wav1.png
-   :width: 500px
+   :width: 500
 .. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f7.png
-   :width: 500px
+   :width: 500
 .. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_multiplier-wav2.png
-   :width: 500px
+   :width: 500
 .. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f8.png
-   :width: 500px
+   :width: 500
 .. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f9.png
-   :width: 300px
+   :width: 300
 .. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe-multiplier3-wav1.png
-   :width: 500px
+   :width: 500
 .. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f10.png
-   :width: 500px
+   :width: 500
 .. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe-multiplier3-wav2.png
-   :width: 500px
+   :width: 500
 .. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f11.png
-   :width: 500px
+   :width: 500
 .. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f12.png
-   :width: 500px
+   :width: 500

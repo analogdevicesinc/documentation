@@ -9,9 +9,20 @@ Delay
 Description
 -----------
 
-The Delay block outputs a delayed version of the input signal. The input is delayed by the number of samples reflected in the Cur numeric text box. The top drop-down menu labeled Max represents the largest amount of delay that could be applied to the input signal. If you select a new Max value in the drop-down menu, you will be forced to recompile.
+The Delay block outputs a delayed version of the input signal. The input is
+delayed by the number of samples reflected in the Cur numeric text box. The top
+drop-down menu labeled Max represents the largest amount of delay that could be
+applied to the input signal. If you select a new Max value in the drop-down
+menu, you will be forced to recompile.
 
-The maximum delay available for a particular delay block depends on the total available system data RAM, which is specified in the DSP processor datasheet. Setting the Max control's value, allocates memory on the DSP, reserving that memory for use by this particular block only, and reducing the available memory for all other delay blocks in the design. This is a compiler directive and modifies the assembly code, so any time you change the Max setting you must recompile and download the program. The maximum delay value range is limited to the remaining unallocated memory of the RAM.
+The maximum delay available for a particular delay block depends on the total
+available system data RAM, which is specified in the DSP processor datasheet.
+Setting the Max control's value, allocates memory on the DSP, reserving that
+memory for use by this particular block only, and reducing the available memory
+for all other delay blocks in the design. This is a compiler directive and
+modifies the assembly code, so any time you change the Max setting you must
+recompile and download the program. The maximum delay value range is limited to
+the remaining unallocated memory of the RAM.
 
 Targets Supported
 -----------------

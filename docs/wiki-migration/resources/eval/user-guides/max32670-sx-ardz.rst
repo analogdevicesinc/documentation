@@ -3,28 +3,37 @@ MAX32670-SX-ARDZ: Long Range Wireless Radio Development Platform
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Overview
 --------
 
 The :adi:`MAX32670-SX-ARDZ` base board features the MAX32670 high-reliability, ultralow power microcontroller based on Arm Cortex-M4 processor, and the SX1261 long range RF transceiver module.
 
-The integrated RF transceiver supports a frequency range from 800 MHz up to 960 MHz, making it suitable for high-performance flexible platforms that wirelessly transmit encrypted data at long-range; enabling a wide range of IoT applications using ADI sensing solutions.
+The integrated RF transceiver supports a frequency range from 800 MHz up to 960
+MHz, making it suitable for high-performance flexible platforms that wirelessly
+transmit encrypted data at long-range; enabling a wide range of IoT applications
+using ADI sensing solutions.
 
-Due to its low power consumption, this module is ideal for devices running on small-sized batteries. The integrated Arm Cortex®-M4 32-bit microcontroller can run entire RF stacks and has sufficient resources available to run user applications.
+Due to its low power consumption, this module is ideal for devices running on
+small-sized batteries. The integrated Arm Cortex®-M4 32-bit microcontroller can
+run entire RF stacks and has sufficient resources available to run user
+applications.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_base_board.png
-   :width: 600px
+   :width: 600
 
 Features
 ~~~~~~~~
@@ -33,7 +42,6 @@ Features
 
    
    +-----------------------------------------------------------------------------------------------------+
-
 
    
    | MCU                                                                                                 |
@@ -105,7 +113,6 @@ Features
    +-----------------------------------------------------------------------------------------------------+
    
 
-
 Applications
 ~~~~~~~~~~~~
 
@@ -125,14 +132,18 @@ System Architecture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_block_diagram.png
    :align: center
-   :width: 800px
+   :width: 800
 
 --------------
 
 Hardware Design
 ===============
 
-In order to use this base board, all hardware settings such as the hardware peripheral connections, jumpers and UART switch configurations, power configurations, connectivity options, and the USB and programming connections are provided in this page. Links to the schematics and the layout files are also available below.
+In order to use this base board, all hardware settings such as the hardware
+peripheral connections, jumpers and UART switch configurations, power
+configurations, connectivity options, and the USB and programming connections
+are provided in this page. Links to the schematics and the layout files are also
+available below.
 
 Components and Connections
 --------------------------
@@ -142,12 +153,13 @@ Peripheral Connectors
 
 .. container:: indent
 
-   The following standard connectors are provided on the base board for customer to use with external add-on modules:
+   The following standard connectors are provided on the base board for customer
+   to use with external add-on modules:
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_hardware_peripherals_top_view.png
       :align: center
-      :width: 800px
+      :width: 800
    
    +---------------------------+-----------------------------------------------------------------------------------------------------------------------------+
    | Connector Name            | Function                                                                                                                    |
@@ -168,14 +180,12 @@ Peripheral Connectors
    +---------------------------+-----------------------------------------------------------------------------------------------------------------------------+
    
 
-
 MAX32670 MCU Pin Map
 ~~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
    The pin map for the :adi:`MAX32670` is described in the table and its schematic diagram below.
-
 
 .. container:: center round box
 
@@ -267,18 +277,17 @@ MAX32670 MCU Pin Map
    +------------------+----------+----------+------------------------------------------------+
    
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670_mcu_pin_map.png
    :align: center
-   :width: 500px
+   :width: 500
 
 ESP32 Connector Pin Map
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
-   All connector pinouts for the ESP32 Development Board are described in the table and its schematic diagram below.
-
+   All connector pinouts for the ESP32 Development Board are described in the
+   table and its schematic diagram below.
 
 .. container:: center left box
 
@@ -306,7 +315,6 @@ ESP32 Connector Pin Map
    ============ ============== ========================
    
 
-
 .. container:: center right box
 
    
@@ -333,10 +341,9 @@ ESP32 Connector Pin Map
    ============ ============== ===================
    
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670_esp32_connectors_pin_map.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Arduino Connector Pin Map
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -435,10 +442,9 @@ Arduino Connector Pin Map
    +-------------------------------------------+----------------+--------------+-----------------+
    
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670_arduino_connectors_pin_map.png
    :align: center
-   :width: 600px
+   :width: 600
 
 PMOD Connector Pin Map
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -464,7 +470,6 @@ PMOD Connector Pin Map
    ================================== ============== ============
    
 
-
 .. container:: right box
 
    
@@ -482,17 +487,17 @@ PMOD Connector Pin Map
    ================================ ============== ============
    
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670_pmod_connectors_pin_map.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Wireless Connectivity Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
-   This board has two wireless connectivity options available to use for Internet of Things (IoT) applications:
+   This board has two wireless connectivity options available to use for
+   Internet of Things (IoT) applications:
 
    
    -  On-board Chip Antenna
@@ -500,27 +505,31 @@ Wireless Connectivity Options
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_base_board_peripherals_connector.png
       :align: center
-      :width: 700px
+      :width: 700
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_wireless_antenna.png
       :align: center
-      :width: 600px
+      :width: 600
    
-   These options can be configured by populating C63 with 39 pF for the external antenna or R156 with 0 Ω for on-board RF chip antenna with the center frequency tuned at 915 MHz.
+   These options can be configured by populating C63 with 39 pF for the external
+   antenna or R156 with 0 Ω for on-board RF chip antenna with the center
+   frequency tuned at 915 MHz.
    
-
 
 Long Range Radio Connectivity Chipset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
-   The MAX32670-SX-ARDZ utilizes the SX1261 long range radio connectivity chipset from Semtech. This chipset comes complete with the full low-power, wide area networking protocol built on top of the long range radio modulation technique.
+   The MAX32670-SX-ARDZ utilizes the SX1261 long range radio connectivity
+   chipset from Semtech. This chipset comes complete with the full low-power,
+   wide area networking protocol built on top of the long range radio modulation
+   technique.
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_lora_chipset.png
       :align: center
-      :width: 600px
+      :width: 600
    
    The :adi:`MAX32670` communicates to the SX1261 using the SPI bus, so the users will need to send long range commands and data over SPI bus. Library functions calls have been specifically designed to be used with the MAX32670 and SX1261 using SPI bus.
    
@@ -555,17 +564,21 @@ Input Power Source Options
 
 .. container:: indent
 
-   There are two (2) ways of powering the eval board, and user may use any combination of power sources.
+   There are two (2) ways of powering the eval board, and user may use any
+   combination of power sources.
 
    
    -  Terminal Block - can be used when an external supply is connected to the Terminal block connector P11.
-   -  Battery Powered - can be used when batteries are connected to BT1 connector on the back of the board.
+   -  Battery Powered - can be used when batteries are connected to BT1
+      connector on the back of the board.
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/hardware/max32670_sx1261/power_source_options.png
       :align: center
-      :width: 600px
+      :width: 600
    
-   Each of the different power modes, provides a different level of control and flexibility. You can find a matrix table of the different power modes and their general function here:
+   Each of the different power modes, provides a different level of control and
+   flexibility. You can find a matrix table of the different power modes and
+   their general function here:
    
    +----------------------+------------------------+----------------------+-------------------------------------------------------+
    | Power Source         | Voltage Rails Provided | Peripherals Powered  | Function                                              |
@@ -584,13 +597,12 @@ Input Power Source Options
    +----------------------+------------------------+----------------------+-------------------------------------------------------+
    
 
-
 Reset Button
 ~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_reset.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: center round box
 
@@ -602,14 +614,12 @@ Reset Button
    ====== ======================================================
    
 
-
 LED Indicators
 ~~~~~~~~~~~~~~
 
 .. container:: indent
 
    The base board has five LEDs: **DS1**, **DS2**, **DS3**, **DS4**, and **DS5**.
-
 
    |image2|
 
@@ -630,7 +640,6 @@ LED Indicators
    | DS5    | used as a LED indicator for the 3.3 V voltage output from the MAX3130. |
    +--------+------------------------------------------------------------------------+
    
-
 
 Programming Connectors
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -663,7 +672,9 @@ Programming Connectors
          
 
    
-   The connector used are based off the 10-pin ARM Cortex standard pinout (0.05" pin spacing). That pinout is common to both JTAG and SWD debug modes and is depicted in the following image.
+   The connector used are based off the 10-pin ARM Cortex standard pinout (0.05"
+   pin spacing). That pinout is common to both JTAG and SWD debug modes and is
+   depicted in the following image.
 
          
 
@@ -672,13 +683,15 @@ Programming Connectors
 
    .. important::
 
-      The debugger board will need to be plugged in via the USB port in order to program any board.
+      The debugger board will need to be plugged in via the USB port in order to
+      program any board.
 
          
-      In order to program the MAX32670 node board, that board must be powered by one (1) CR123A battery or by an external power supply through P11. Otherwise, there will be no connection between the two boards.
+      In order to program the MAX32670 node board, that board must be powered by
+      one (1) CR123A battery or by an external power supply through P11.
+      Otherwise, there will be no connection between the two boards.
 
    
-
 
 --------------
 
@@ -694,11 +707,11 @@ Applications
    -  :adi:`EV-FLOWMETER-ARDZ` for Flow Rate Metering
    -  :adi:`EV-ADE9000SHIELDZ` for Electric Metering
    
-   Using these platforms together enables users to design solutions based on low-power, long range proprietary radio communication technique.
+   Using these platforms together enables users to design solutions based on
+   low-power, long range proprietary radio communication technique.
    
    To learn more about the Long Range Wireless Radio solution developed by Analog Devices, visit the :doc:`AD-MAX32SXWISE-SL Long Range Wireless Radio Development Kit User Guide </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl>`
    
-
 
 --------------
 
@@ -708,7 +721,10 @@ System Setup
 PHASE 1: Hardware Setup
 -----------------------
 
-Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use a different base board or microcontroller, however the firmware built for this demo application cannot be used as this is specifically designed for the MAX32670-SX-ARDZ.
+Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use
+a different base board or microcontroller, however the firmware built for this
+demo application cannot be used as this is specifically designed for the
+MAX32670-SX-ARDZ.
 
 Equipment Needed
 ~~~~~~~~~~~~~~~~
@@ -719,7 +735,8 @@ Equipment Needed
 
    -  with firmware image: `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
 
--  One (1) CR123A Battery or any equivalent external DC power supply (+3 V to +4.7 V)
+-  One (1) CR123A Battery or any equivalent external DC power supply (+3 V to
+   +4.7 V)
 
 ::
 
@@ -729,7 +746,7 @@ Equipment Needed
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/hardware_setup.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Insert one CR123A battery (3 V to 4.7 V) into the battery holder (BT1 connector) of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
@@ -738,23 +755,22 @@ Equipment Needed
    
    **Make sure to check for the battery polarity in the BT1 connector, refer to the figure below. The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.**\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/base_board_with_battery.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect one **Sensor Node** to the :adi:`MAX32670-SX-ARDZ` Base Board by aligning the corresponding Arduino headers on each board.
 
 .. tip::
 
    
-   You do not have to set up the three sensor nodes altogether, just choose one from the available sensors in the kit:
+   You do not have to set up the three sensor nodes altogether, just choose one
+   from the available sensors in the kit:
    
    -  :adi:`EV-STRUCTURAL-ARDZ` for Structural Monitoring
    -  :adi:`EV-FLOWMETER-ARDZ` for Flow Rate Metering
    -  :adi:`EV-ADE9000SHIELDZ` for Electric Metering
    
-
 
 -  Connect the :adi:`MAX32625PICO` programming adapter to the :adi:`MAX32670-SX-ARDZ` Base Board through the 10-pin ribbon cable.
 
@@ -772,28 +788,25 @@ Equipment Needed
 
       .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
          :align: center
-         :width: 400px
+         :width: 400
 
       -   Release the button once the MAINTENANCE drive is mounted.
       -   Drag and drop (to the MAINTENANCE drive) the firmware image.
       -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
-
    
-
 
 -  Connect the :adi:`MAX32625PICO` programming adapter to the Host PC using the micro USB to USB cable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_to_maxpico.png
    :align: center
-   :width: 1500px
+   :width: 1500
 
 .. note::
 
    
    Once you have completed this setup, proceed to PHASE 2 found in\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
    
-
 
 --------------
 
@@ -826,26 +839,25 @@ Design and Integration Files
    -  Fabrication Files
    
 
-
 Help and Support
 ----------------
 
-For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
+For questions and more information about this product, connect with us through
+the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
 // End of Document
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/sx1261_pins.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_led_indicator.png
-   :width: 700px
+   :width: 700
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_swd_connector.png
-   :width: 700px
+   :width: 700
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670_swd_connectors_pin_map.png
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jtag_swd_10_connector.png
-   :width: 350px
+   :width: 350

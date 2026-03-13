@@ -5,7 +5,6 @@ The :adi:`AD-FMCDAQ3-EBZ <en/design-center/evaluation-hardware-and-software/eval
 
 The purpose of the :adi:`AD-FMCDAQ3-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-FMCDAQ3-EBZ.html#eb-overview>` is a data acquisition platform that connects the analog world using FMC to the FPGA.
 
-
 |image1|
 
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/ad-fmcdaq3-ebz/introduction>`
@@ -36,9 +35,7 @@ The purpose of the :adi:`AD-FMCDAQ3-EBZ <en/design-center/evaluation-hardware-an
 -  :doc:`Production Testing Process </wiki-migration/resources/eval/user-guides/ad-fmcdaq3-ebz/testing>`
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad-fmcdaq3-ebz/help_and_support>`
 
-
 .. esd-warning::
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fmcdaq3_top_new.png
-   :width: 400px
+   :width: 400

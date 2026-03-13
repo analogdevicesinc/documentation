@@ -98,7 +98,8 @@ Files
 Example platform device initialization
 ======================================
 
-The AXI ADC driver is a platform driver and can currently only be instantiated via device tree.
+The AXI ADC driver is a platform driver and can currently only be instantiated
+via device tree.
 
 Required devicetree properties:
 
@@ -120,7 +121,8 @@ Required devicetree properties:
    -  "adi,axi-ad9684-1.0"
    -  "adi,axi-adrv9009-rx-1.0"
    -  "adi,axi-ad9208-1.0"
-   -  For a complete list see driver source: static const struct of_device_id axiadc_of_match[]
+   -  For a complete list see driver source: static const struct of_device_id
+      axiadc_of_match[]
 
 -  **reg**: Base address and register area size. This parameter expects a register range.
 -  **spibus-connected**: Phandle to the SPI device on which the AD9467/AD9643 can be found
@@ -180,17 +182,18 @@ Example:
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AXI ADC HDL driver depends on CONFIG_SPI
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -219,8 +222,15 @@ Hardware configuration
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -259,7 +269,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root:/sys/bus/iio/devices/iio:device4>
    
 
-
 Show device name
 ----------------
 
@@ -273,7 +282,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:device4> cat name
       cf-ad9643-core-lpc
    
-
 
 Show scale
 ----------
@@ -291,7 +299,6 @@ Show scale
       0.026703
    
 
-
 Show available scales
 ---------------------
 
@@ -306,13 +313,14 @@ Show available scales
       0.031738 0.031403 0.031067 0.030731 0.030396 0.030060 0.029724 0.029388 0.029053 0.028717 0.028381 0.028046 0.027710 0.027374 0.027039 0.026703 0.026367 0.026031 0.025696 0.025360 0.025024 0.024689 0.024353 0.024017 0.023682 0.023346 0.023010 0.022675 0.022339 0.022003 0.021667 0.021332
    
 
-
 Set ADC calibration gain
 ------------------------
 
 **Description:** in_voltage0_calibscale in_voltage1_calibscale
 
-Set the channel calibration gain. Writing to these files will set the calibration gain for the respective channel. Valid values are in the range of 0..1.999999
+Set the channel calibration gain. Writing to these files will set the
+calibration gain for the respective channel. Valid values are in the range of
+0..1.999999
 
 .. container:: box bggreen
 
@@ -325,13 +333,14 @@ Set the channel calibration gain. Writing to these files will set the calibratio
       1.000000
    
 
-
 Set ADC calibration bias
 ------------------------
 
 **Description:** in_voltage0_calibbias in_voltage1_calibbias
 
-Set the channel calibration bias/offset. Writing to these files will set the calibration bias for the respective channel. Valid values are in the range of +/- 16384.
+Set the channel calibration bias/offset. Writing to these files will set the
+calibration bias for the respective channel. Valid values are in the range of
++/- 16384.
 
 .. container:: box bggreen
 
@@ -344,13 +353,14 @@ Set the channel calibration bias/offset. Writing to these files will set the cal
       1.0
    
 
-
 Show available ADC test modes
 -----------------------------
 
 **Description:**
 
-Show available test modes supported by the underlying ADC. These test modes are typically used to test the high speed digital interface between the converter and interface adaptor.
+Show available test modes supported by the underlying ADC. These test modes are
+typically used to test the high speed digital interface between the converter
+and interface adaptor.
 
 .. container:: box bggreen
 
@@ -363,13 +373,14 @@ Show available test modes supported by the underlying ADC. These test modes are 
       off midscale_short pos_fullscale neg_fullscale checkerboard pn_long pn_short one_zero_toggle
    
 
-
 Set ADC test mode
 -----------------
 
 **Description:** in_voltage0_test_mode in_voltage1_test_mode
 
-Enter test modes supported by the underlying ADC. These test modes are typically used to test the high speed digital interface between the converter and interface adaptor.
+Enter test modes supported by the underlying ADC. These test modes are typically
+used to test the high speed digital interface between the converter and
+interface adaptor.
 
 .. container:: box bggreen
 
@@ -383,7 +394,6 @@ Enter test modes supported by the underlying ADC. These test modes are typically
       one_zero_toggle
       root:/sys/bus/iio/devices/iio:device4> echo off > in_voltage0_test_mode
    
-
 
 External Synchronization
 ------------------------
@@ -420,7 +430,6 @@ Example:
       disarm
    
 
-
 Buffer management
 -----------------
 
@@ -437,8 +446,13 @@ Buffer management
       root:/sys/bus/iio/devices/iio:device4/buffer>
    
 
-
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -460,7 +474,6 @@ Every buffer implementation features a set of files:
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -478,7 +491,6 @@ Every buffer implementation features a set of files:
       root:/sys/bus/iio/devices/iio:device4/scan_elements>
    
 
-
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
 
@@ -487,7 +499,6 @@ Every buffer implementation features a set of files:
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 More Information
 ================
@@ -510,6 +521,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

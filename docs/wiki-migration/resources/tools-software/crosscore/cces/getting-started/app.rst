@@ -6,14 +6,19 @@ To create a bootable application that can be loaded into the processor's connect
 Initialization File
 ===================
 
-When using an emulator-based CCES debug session, the IDE dynamically loads the application’s executable file (DXE) to the processor’s on-chip and external memory, bypassing the boot process altogether. For on-chip memory there is no difference in how the emulator communicates with the processor and how the boot stream behaves.
+When using an emulator-based CCES debug session, the IDE dynamically loads the
+application’s executable file (DXE) to the processor’s on-chip and external
+memory, bypassing the boot process altogether. For on-chip memory there is no
+difference in how the emulator communicates with the processor and how the boot
+stream behaves.
 
 However, the JTAG interface used to target the processor does not communicate directly with the board's external DDR memory. Instead, data for DDR space is sent via JTAG to the processor which then writes it out over its external bus to DDR. To support this, the emulator firmware must *first* set registers on the processor to configure the clocks and external bus *before* trying to write the application’s code and data to external memory. Not doing so would result in hardware errors and exceptions as the processor attempted to load to an unconfigured device.
 
 Initialization File for Debugging
 ---------------------------------
 
-For debugging applications on evaluation boards, registers and settings can be defined in XML files or a pre-load file.
+For debugging applications on evaluation boards, registers and settings can be
+defined in XML files or a pre-load file.
 
 Pre-load Files
 ~~~~~~~~~~~~~~
@@ -22,7 +27,11 @@ Pre-load files are similar to initcodes used in the creation of LDR files but ar
 
 The projects used to create pre-load binary files are located in **SHARC\\ldr\\init_code\\SC5xx_Init**. The main purpose of pre-load files is to set clocks and DMC settings so the debugger can load your application to external memory. If you want to change this setup you can update the source files, rebuild the pre-load executable, and place the binary in the **SHARC\\ldr** folder, overwriting the existing file.
 
-In general, the master core is the only core that needs a pre-load. Debug configurations will automatically register the pre-load file as one of the applications to be loaded. For an ADSP-SC5xx processor, the pre-load will be part of the ARM Core 0 project. For an ADSP-215xx processor the preload will be part of the first SHARC+ core project.
+In general, the master core is the only core that needs a pre-load. Debug
+configurations will automatically register the pre-load file as one of the
+applications to be loaded. For an ADSP-SC5xx processor, the pre-load will be
+part of the ARM Core 0 project. For an ADSP-215xx processor the preload will be
+part of the first SHARC+ core project.
 
 XML files
 ~~~~~~~~~
@@ -69,7 +78,8 @@ An initialization file is a small processor DXE that is prepended as an *initial
 Step 1: Create a Boot Image
 ===========================
 
-Creating a bootable image differs between processor families. Follow the correct guide for your target processor:
+Creating a bootable image differs between processor families. Follow the correct
+guide for your target processor:
 
 -  :doc:`Creating a boot image (single-core processors) </wiki-migration/resources/tools-software/crosscore/cces/getting-started/boot-app-bf70x>`
 -  :doc:`Creating a boot image (dual-core ADSP-BF60x processors) </wiki-migration/resources/tools-software/crosscore/cces/getting-started/boot-app-bf60x>`
@@ -90,15 +100,16 @@ Just as the JTAG interface does not directly access DDR memory when downloading 
 
 .. tip::
 
-   This example uses the ICE-2000 emulator so this switch is set to ICE-2000. Consult CCES On-Line Help for CLDP settings appropriate for your configuration.
-
+   This example uses the ICE-2000 emulator so this switch is set to ICE-2000.
+   Consult CCES On-Line Help for CLDP settings appropriate for your
+   configuration.
 
 **-core** the core used to run the flash memory driver.
 
 .. important::
 
-   For processors containing ARM and SHARC+ cores, core 1 must run the flash memory driver.
-
+   For processors containing ARM and SHARC+ cores, core 1 must run the flash
+   memory driver.
 
 **-driver**: flash memory device driver (included with the Board Support Package installation) the processor uses to work with the board's flash device
 
@@ -125,15 +136,16 @@ Example cldp.exe command lines
 
 .. important::
 
-   \ *<directory>* indicates the full path to these files is required based on where the BSP is installed and where the CCES project was created.
-
+   \ *<directory>* indicates the full path to these files is required based on
+   where the BSP is installed and where the CCES project was created.
 
 Method 1: Use Command-Line Device Programming Utility Directly
 --------------------------------------------------------------
 
 1. Open a Command Prompt and navigate to your CrossCore Embedded Studio root installation folder. By default, on Windows this is **C:\\Analog Devices\\CrossCore Embedded Studio 2.X\\**. cldp.exe is located in this directory
 
-2. Run the flash driver using the appropriate command line from above and tailoring as required:
+2. Run the flash driver using the appropriate command line from above and
+   tailoring as required:
 
 -  Our blink example targets the ADSP-SC589 heterogeneous processor so we must specify **-core 1**
 -  Ensure the path to the **-driver** file correctly points to the core 1 ``*.dpia`` file in your Board Support Package
@@ -154,8 +166,6 @@ CCES can be configured to automatically call **cldp.exe** at the end of the buil
 
    Do *not* copy and paste the command line from above as formatting differences will cause cldp.exe to fail.
 
-
 .. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/08_postbuild_configuration.gif
 
 *Figure 2: CLDP Command Line in Project Settings Build Steps Window*
-

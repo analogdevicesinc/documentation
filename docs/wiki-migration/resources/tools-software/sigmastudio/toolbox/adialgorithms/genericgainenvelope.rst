@@ -23,8 +23,6 @@ Pin 0: Control Output int-Control   Switch used to activate envelope
 Pin 1: Audio Input    decimal-audio Input audio signal
 ===================== ============= ================================
 
-
-
 | ===OutputPins===
 
 +----------------------+---------------+------------------------------------------------+
@@ -72,18 +70,21 @@ The Generic Gain Envelope algorithm has a fully programmable gain envelope. The 
 
 Points on the curve can be moved by click-dragging. New points can be added by double-clicking. Points can be removed by right-clicking and selecting “remove point.” In this case, the point closest to the mouse cursor will be removed. The envelope must have at least 3 points. Point values can be fine-tuned using the text input boxes on the right side of the envelope control window. |genericpic4.png| When the control input goes to 1, the gain envelope begins. When the control input goes to 0, the gain envelope stops, regardless of whether the envelope has completed or not.
 
-In the case of the Generic Gain Envelope Alg EndlessLoop algorithm, the envelope will loop continuously until the control input goes to 0.
+In the case of the Generic Gain Envelope Alg EndlessLoop algorithm, the envelope
+will loop continuously until the control input goes to 0.
 
-The example below shows the algorithm’s input and output signals using the gain envelope shown above.
-
+The example below shows the algorithm’s input and output signals using the gain
+envelope shown above.
 
 |genericpic5.png|
 
 Example
 -------
 
-The following schematic image shows the Generic Gain Envelope cell being controlled by a 28.0 On/Off Switch and applied to a Sine Tone. The processed audio is output to a DAC. The schematic below uses the Switch, Generic Gain Envelope, Sine Tone, and Output cells.
-
+The following schematic image shows the Generic Gain Envelope cell being
+controlled by a 28.0 On/Off Switch and applied to a Sine Tone. The processed
+audio is output to a DAC. The schematic below uses the Switch, Generic Gain
+Envelope, Sine Tone, and Output cells.
 
 |genericpic6.png|
 

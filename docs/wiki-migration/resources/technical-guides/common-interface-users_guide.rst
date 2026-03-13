@@ -4,37 +4,78 @@ Common Interface User's Guide
 1. Overview
 -----------
 
-The “Common Interface” is a solution that is customizable to fit the needs of an Industrial Ethernet Device. The user may modify the Peripherals and the I/O Application to match the system requirements. The User I/O Application communicates to the Network Application using the Common Interface. This document describes what is contained in the Common Interface and the needed Application Programming Interface (API) calls for an Industrial Ethernet Device.
+The “Common Interface” is a solution that is customizable to fit the needs of an
+Industrial Ethernet Device. The user may modify the Peripherals and the I/O
+Application to match the system requirements. The User I/O Application
+communicates to the Network Application using the Common Interface. This
+document describes what is contained in the Common Interface and the needed
+Application Programming Interface (API) calls for an Industrial Ethernet Device.
 
-The Common Interface provides a single Application Programming Interface (API) to adapt, and a precompiled executable that runs as the network application for a given Industrial Ethernet protocol. Because the interface is common, a single user application can be created and operate on any of the supported protocols. The user implements the Common Interface functions in their code as needed to get data to and from the network. The Network Application is treated as a black box; users do not need to worry about the Ethernet aspect of communication.
+The Common Interface provides a single Application Programming Interface (API)
+to adapt, and a precompiled executable that runs as the network application for
+a given Industrial Ethernet protocol. Because the interface is common, a single
+user application can be created and operate on any of the supported protocols.
+The user implements the Common Interface functions in their code as needed to
+get data to and from the network. The Network Application is treated as a black
+box; users do not need to worry about the Ethernet aspect of communication.
 
-The developer produces two elements to make up a working device. Configuration Data (created using the Configuration Tool) and an I/O application using other peripherals of the processor or to perform other tasks as required. The Configuration Data is used by the Network Application to map the elements of the I/O application to Industrial Ethernet protocols. The developer modifies the sample application to fit the needs of the device. On the Common Interface, an example workspace which uses sample configuration implements an application that echoes Output Data from the PLC back to the device Input Data which is then sent back to the PLC.
+The developer produces two elements to make up a working device. Configuration
+Data (created using the Configuration Tool) and an I/O application using other
+peripherals of the processor or to perform other tasks as required. The
+Configuration Data is used by the Network Application to map the elements of the
+I/O application to Industrial Ethernet protocols. The developer modifies the
+sample application to fit the needs of the device. On the Common Interface, an
+example workspace which uses sample configuration implements an application that
+echoes Output Data from the PLC back to the device Input Data which is then sent
+back to the PLC.
 
-The environment provided uses the freeRTOS in the ADSP-CM408 (CM408) or MAX32690 processor(or potentially other processors). The software in CM408(Or other processor) is open source and has been widely used in many industrial fields. A single thread is made available to the user’s own application, while the others are utilized for management of the lower-level protocols/etc. The development model is similar to writing an application for a standard operating system (e.g. Linux or Windows).
+The environment provided uses the freeRTOS in the ADSP-CM408 (CM408) or MAX32690
+processor(or potentially other processors). The software in CM408(Or other
+processor) is open source and has been widely used in many industrial fields. A
+single thread is made available to the user’s own application, while the others
+are utilized for management of the lower-level protocols/etc. The development
+model is similar to writing an application for a standard operating system (e.g.
+Linux or Windows).
 
-The Network Application uses four GPIOs of CM408, MDIO, 16-bit parallel BUS (SMC) and the System Timer to implement the network interface. This leaves the other hardware sources, like GPIOs, Timers, ADC, several external interrupt lines, PWM, UART, SPI, GPIO, I2C and Other ADSP-CM408 peripherals at the disposal of the I/O application.
+The Network Application uses four GPIOs of CM408, MDIO, 16-bit parallel BUS
+(SMC) and the System Timer to implement the network interface. This leaves the
+other hardware sources, like GPIOs, Timers, ADC, several external interrupt
+lines, PWM, UART, SPI, GPIO, I2C and Other ADSP-CM408 peripherals at the
+disposal of the I/O application.
 
 2. Common Interface Software Development Kit Contents
 -----------------------------------------------------
 
-The Common Interface Software Development Kit (SDK) is distributed as an integrated project compatible with IAR IDE (IAR ARM 8.10 or later). IAR is widely used for ARM core development. This project is the starting point for application development. The provided project is a simple example Common Interface application. Regarding this project, it includes several different components.
+The Common Interface Software Development Kit (SDK) is distributed as an
+integrated project compatible with IAR IDE (IAR ARM 8.10 or later). IAR is
+widely used for ARM core development. This project is the starting point for
+application development. The provided project is a simple example Common
+Interface application. Regarding this project, it includes several different
+components.
 
-NOTE: It is imperative that a user not modify the .icf file that is included in the zip file as it defines the memory map for the Common Interface.
+NOTE: It is imperative that a user not modify the .icf file that is included in
+the zip file as it defines the memory map for the Common Interface.
 
 2.1 Network Application(thread)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is a binary application that includes the network protocol implementation and associated protocol stack and interfaces.
+This is a binary application that includes the network protocol implementation
+and associated protocol stack and interfaces.
 
 2.2 I/O Application(thread)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is an application that includes simple data I/O implementation example and users are expected to add their own application layer in this thread. In this application example, there are also .rpc files and a .eds file for EtherNet/IP. The user is expected to modify these files as well to fit the needs of their application.
+This is an application that includes simple data I/O implementation example and
+users are expected to add their own application layer in this thread. In this
+application example, there are also .rpc files and a .eds file for EtherNet/IP.
+The user is expected to modify these files as well to fit the needs of their
+application.
 
 2.3 IAR Projects
 ~~~~~~~~~~~~~~~~
 
-This zip file also includes several IAR projects. These are not intended to be modified and should just be left as part of the build environment.
+This zip file also includes several IAR projects. These are not intended to be
+modified and should just be left as part of the build environment.
 
 ::
 
@@ -49,12 +90,15 @@ This zip file also includes several IAR projects. These are not intended to be m
 2.4 Libraries
 ~~~~~~~~~~~~~
 
-This workspace also includes several binary files with include files only so that the user can use the API and be aware of what it is but not modify the source.
+This workspace also includes several binary files with include files only so
+that the user can use the API and be aware of what it is but not modify the
+source.
 
 3. Application Development and Integration
 ------------------------------------------
 
-The Common Interface is built around a few basic element types used to model an I/O device.
+The Common Interface is built around a few basic element types used to model an
+I/O device.
 
 ::
 
@@ -68,7 +112,8 @@ The Common Interface is built around a few basic element types used to model an 
       basket will contain exactly one device and up to 32 items, so long as the maximum IO data size (1440 bytes) is
       not exceeded.
 
-The sample configuration that is pre-distributed with the Common Interface is as follows:
+The sample configuration that is pre-distributed with the Common Interface is as
+follows:
 
 • Device 400
 
@@ -117,16 +162,27 @@ The sample configuration that is pre-distributed with the Common Interface is as
 3.1 Common Interface Devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Device, in terms of the Common Interface, is a single element that defines a set of protocol- specific parameters used to identify the overall device to the industrial network. The developer assigns a number (16-bits) to each device-type that the application is intended to support (regardless of protocol). The configuration data then defines all information needed to adapt that device to a particular protocol. See Figure 2 below.
+A Device, in terms of the Common Interface, is a single element that defines a
+set of protocol- specific parameters used to identify the overall device to the
+industrial network. The developer assigns a number (16-bits) to each device-type
+that the application is intended to support (regardless of protocol). The
+configuration data then defines all information needed to adapt that device to a
+particular protocol. See Figure 2 below.
 
-The API includes routines to set the current device (set once at initialization), as well as read and write some of the “fields” of the device.
+The API includes routines to set the current device (set once at
+initialization), as well as read and write some of the “fields” of the device.
 
 INSERT FIGURE HERE Figure 2 - Common Interface Devices
 
 3.2 Common Interface Items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An item identifies something that can be read or written. This can be a block of cyclic I/O data, a parameterization value (e.g. scale factor), or any number of other purposes. I/O data items will be mapped similarly for the various network protocols, other items can behave differently depending on the protocol. The API includes functions to add items to the device, read and write the data of items, and set and read parameters related to the items.
+An item identifies something that can be read or written. This can be a block of
+cyclic I/O data, a parameterization value (e.g. scale factor), or any number of
+other purposes. I/O data items will be mapped similarly for the various network
+protocols, other items can behave differently depending on the protocol. The API
+includes functions to add items to the device, read and write the data of items,
+and set and read parameters related to the items.
 
 ::
 
@@ -137,7 +193,10 @@ Figure 3 - Common Interface Items
 3.3 Common Interface Baskets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Baskets are the simplest element of the Common Interface. They are simply a collection of a Device and one or more Items. They are also not protocol-specific. The API includes a routine to retrieve the contents of a basket. See Figure 5 below.
+Baskets are the simplest element of the Common Interface. They are simply a
+collection of a Device and one or more Items. They are also not
+protocol-specific. The API includes a routine to retrieve the contents of a
+basket. See Figure 5 below.
 
 ::
 
@@ -148,14 +207,17 @@ Figure 4 - Common Interface Baskets
 3.4 Simple I/O Example
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The user’s application is developed beginning from the thread of IO_IoApplicationThread(), which is created in main() at ..io-example-app\\src\\IO_main.c as follows:
+The user’s application is developed beginning from the thread of
+IO_IoApplicationThread(), which is created in main() at
+..io-example-app\\src\\IO_main.c as follows:
 
 ::
 
    xTaskCreate(IO_IoApplicationThread, "IO Thread",
      2\*configMINIMAL_STACK_SIZE, NULL, IO_APP_BASE_PRIORITY, NULL)
 
-This thread will then call an example of the user’s application in io-app\\src\\IO_main.c:
+This thread will then call an example of the user’s application in
+io-app\\src\\IO_main.c:
 
 ::
 
@@ -338,7 +400,9 @@ This thread will then call an example of the user’s application in io-app\\src
      return 0;
    }
 
-This is a complete Common Interface application. Real I/O processing will have to occur to make a useful device, but most applications will have this basic form:
+This is a complete Common Interface application. Real I/O processing will have
+to occur to make a useful device, but most applications will have this basic
+form:
 
 • Initialization
 
@@ -357,160 +421,275 @@ This is a complete Common Interface application. Real I/O processing will have t
     o Includes a call to CI_IoComplete(). In some protocols this function operates to update data to and from the network, in others this update occurs immediately on each call to CI_ReadItem()/CI_WriteItem().
     o Includes a blocking call (e.g. to CI_WaitIO() or to a CI timer function). This is critical - the user application runs at a higher priority than much of the network application and it must block to allow the lower priority contexts to execute.
 
-For a basic Common Interface application, the only dependencies are on the library project. This project generates static libraries that are linked into the Project executable.
+For a basic Common Interface application, the only dependencies are on the
+library project. This project generates static libraries that are linked into
+the Project executable.
 
 3.5 Debugging with a Network Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To debug a Common Interface application, the Network Application binary and a Common Interface Configuration must be present on the module being used for debug.
+To debug a Common Interface application, the Network Application binary and a
+Common Interface Configuration must be present on the module being used for
+debug.
 
-Once the Network Application and configuration data are installed on the module, you can begin developing your own application using the IAR ARM environment.
+Once the Network Application and configuration data are installed on the module,
+you can begin developing your own application using the IAR ARM environment.
 
-It is simplest to start with one of the provided the sample project (IO-example-app.eww) and its associated configuration data. As you begin to modify the application you can also modify the configuration data to match and load the updated configuration using the Configuration Tool.
+It is simplest to start with one of the provided the sample project
+(IO-example-app.eww) and its associated configuration data. As you begin to
+modify the application you can also modify the configuration data to match and
+load the updated configuration using the Configuration Tool.
 
-When using the debug version of the network application, you will notice that a number of messages are printed to the debugger console between the time that the application is loaded and when it breaks at the beginning of main(). This is the early initialization and setup of the freeRTOS. From this point on, the operating system (as opposed to your application) will only display on the console when an error is detected.
+When using the debug version of the network application, you will notice that a
+number of messages are printed to the debugger console between the time that the
+application is loaded and when it breaks at the beginning of main(). This is the
+early initialization and setup of the freeRTOS. From this point on, the
+operating system (as opposed to your application) will only display on the
+console when an error is detected.
 
-The display of these messages is a time-consuming process and the startup will take a few seconds (generally about 4-5). When executing with the release version (which prints nothing to the console), startup will only require a fraction of a second. A user application can be executed with either a debug or release version of the network binary, regardless whether debugging is enabled in the user applications.
+The display of these messages is a time-consuming process and the startup will
+take a few seconds (generally about 4-5). When executing with the release
+version (which prints nothing to the console), startup will only require a
+fraction of a second. A user application can be executed with either a debug or
+release version of the network binary, regardless whether debugging is enabled
+in the user applications.
 
 4.Common Interface Configuration Development
 --------------------------------------------
 
-This tool allows the device developer to define the device-specific parameters for each protocol (multiple devices can be defined in a single configuration). Also, items are defined to map data I/O from the application to the specific protocol.
+This tool allows the device developer to define the device-specific parameters
+for each protocol (multiple devices can be defined in a single configuration).
+Also, items are defined to map data I/O from the application to the specific
+protocol.
 
 There are three basic elements available to use for a configuration: • Devices • Items • Baskets
 
-A device represents a product from the network perspective. It contains information like the device ID, manufacturer ID, ordering information, and some default behaviors (with the specifics varying depending on the protocol for which it is defined). While many devices can be defined in a single configuration, only a single device can be set during initialization of the Common Interface. This allows the user to use a common set of software across a range of products, by detecting what the hardware configuration is and selecting the appropriate device.
+A device represents a product from the network perspective. It contains
+information like the device ID, manufacturer ID, ordering information, and some
+default behaviors (with the specifics varying depending on the protocol for
+which it is defined). While many devices can be defined in a single
+configuration, only a single device can be set during initialization of the
+Common Interface. This allows the user to use a common set of software across a
+range of products, by detecting what the hardware configuration is and selecting
+the appropriate device.
 
-With some protocols, there is a relationship between a Common Interface Device and the configuration file used by the protocol. For example, a PROFINET device would have all the information necessary to indicate to a PROFINET configuration utility or controller what GSDML file to associate with the device. Similarly, an EtherNet/IP CI Device would be associated with an EDS file. However, the developer is free to differentiate among the protocols: a PROFINET GSDML file may be associated with several different devices (or an entire product line).
+With some protocols, there is a relationship between a Common Interface Device
+and the configuration file used by the protocol. For example, a PROFINET device
+would have all the information necessary to indicate to a PROFINET configuration
+utility or controller what GSDML file to associate with the device. Similarly,
+an EtherNet/IP CI Device would be associated with an EDS file. However, the
+developer is free to differentiate among the protocols: a PROFINET GSDML file
+may be associated with several different devices (or an entire product line).
 
-An item is used to define data-flow between the user’s application and the Common Interface. The most straight-forward items define cyclic I/O data. Other items may be used to define acyclic I/O, initialization parameters, alarms, diagnostic data, etc.
+An item is used to define data-flow between the user’s application and the
+Common Interface. The most straight-forward items define cyclic I/O data. Other
+items may be used to define acyclic I/O, initialization parameters, alarms,
+diagnostic data, etc.
 
-The ways of accessing data over a network vary substantially for the various protocols. Therefore, with no difference in the user’s application code, a parameter for an I/O device (e.g. a scale factor for an analog input) can be mapped to an Acyclic read/write interface in PROFINET.
+The ways of accessing data over a network vary substantially for the various
+protocols. Therefore, with no difference in the user’s application code, a
+parameter for an I/O device (e.g. a scale factor for an analog input) can be
+mapped to an Acyclic read/write interface in PROFINET.
 
-Finally, baskets are collections of the other configuration elements. A basket typically contains a single CI Device and one or more CI items. This mechanism can be used to write a generic application that can support sets of items (e.g. I/O modules) that have not been developed at the time of application development. A configuration change will provide support.
+Finally, baskets are collections of the other configuration elements. A basket
+typically contains a single CI Device and one or more CI items. This mechanism
+can be used to write a generic application that can support sets of items (e.g.
+I/O modules) that have not been developed at the time of application
+development. A configuration change will provide support.
 
-Further examples of the usage of these elements are provided later in this document as well as in the protocol-specific chapters of the design integration guide.
+Further examples of the usage of these elements are provided later in this
+document as well as in the protocol-specific chapters of the design integration
+guide.
 
 5. API
 ------
 
-This document contains general descriptions of the Common Interface Application programming Interface (API). The more commonly used functions are discussed below. For more details on the data types, function parameters and function return values, see the header files referenced.
+This document contains general descriptions of the Common Interface Application
+programming Interface (API). The more commonly used functions are discussed
+below. For more details on the data types, function parameters and function
+return values, see the header files referenced.
 
 5.1.1 CI_basket_t \* CI_GetBasket(CI_basketID_t id);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function returns a pointer to a basket. This includes a Device ID and some number of Item IDs. Typically, it would be used to define a device and associated I/O in the configuration data, while supporting several such devices in generic code. The code will request the basket and use the device and items that are returned.
+This function returns a pointer to a basket. This includes a Device ID and some
+number of Item IDs. Typically, it would be used to define a device and
+associated I/O in the configuration data, while supporting several such devices
+in generic code. The code will request the basket and use the device and items
+that are returned.
 
 5.1.2 int CI_SetDeviceType(CI_deviceID_t deviceType);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Called once during initialization, this function indicates to the Common Interface what device definition to look up. The configured definition includes protocol-specific information necessary to establish communications on the network. This allows a single configuration database to support multiple device types (and multiple I/O applications).
+Called once during initialization, this function indicates to the Common
+Interface what device definition to look up. The configured definition includes
+protocol-specific information necessary to establish communications on the
+network. This allows a single configuration database to support multiple device
+types (and multiple I/O applications).
 
 5.1.3 CI_ItemHandle_t CI_AddItem(CI_itemID_t id, int location, int userID);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Called one or more times during initialization, this function installs an item in the network application. An item represents data transferred between the user application and the network application. The item ID matches a protocol-specific description of the item in the network application’s configuration database. The location parameter can mean various things for different types of items, but is typically used to indicate where a module/etc. is plugged into a configurable device (it also allows the installation of multiple copies of a device type).
+Called one or more times during initialization, this function installs an item
+in the network application. An item represents data transferred between the user
+application and the network application. The item ID matches a protocol-specific
+description of the item in the network application’s configuration database. The
+location parameter can mean various things for different types of items, but is
+typically used to indicate where a module/etc. is plugged into a configurable
+device (it also allows the installation of multiple copies of a device type).
 
-The last parameter, userID is for the convenience of the programmer. When an event is received for an item (e.g. a read request for an acyclic I/O item), the userID provided in this call is provided to the user’s application to ease identification of the item in question.
+The last parameter, userID is for the convenience of the programmer. When an
+event is received for an item (e.g. a read request for an acyclic I/O item), the
+userID provided in this call is provided to the user’s application to ease
+identification of the item in question.
 
-Note that for items representing cyclic or acyclic I/O, in protocols that use such information (e.g. PROFINET), the location will be directly translated to a slot/subslot number in the protocol.
+Note that for items representing cyclic or acyclic I/O, in protocols that use
+such information (e.g. PROFINET), the location will be directly translated to a
+slot/subslot number in the protocol.
 
 5.1.4 int CI_ConfigComplete(int maxPeriod);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Called once during initialization after the device has been set and all items have been added, this function indicates to the network application that it has a complete configuration and can begin network communications. The parameter (maxPeriod) is used to indicate the longest delay that the user’s application can tolerate during a subsequent call to CI_WaitIO().
+Called once during initialization after the device has been set and all items
+have been added, this function indicates to the network application that it has
+a complete configuration and can begin network communications. The parameter
+(maxPeriod) is used to indicate the longest delay that the user’s application
+can tolerate during a subsequent call to CI_WaitIO().
 
 5.1.5 int CI_RemoveItem(CI_ItemHandle_t handle);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Called during normal operation, this function indicates to the network application that an item has been removed from service (e.g. a module has been unplugged).
+Called during normal operation, this function indicates to the network
+application that an item has been removed from service (e.g. a module has been
+unplugged).
 
 5.1.6 int CI_ReturnItem(CI_ItemHandle_t handle);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If CI_RemoveItem() has been called for a particular item, the application can return it to normal operation with a call to CI_ReturnItem().
+If CI_RemoveItem() has been called for a particular item, the application can
+return it to normal operation with a call to CI_ReturnItem().
 
 5.1.7 int CI_WriteItem(CI_ItemHandle_t handle, CI_IoStatus_t status, void \*data_p);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function writes data for an item to the Network Application. The meaning of this depends on the nature of the item involved.
+This function writes data for an item to the Network Application. The meaning of
+this depends on the nature of the item involved.
 
-For an item representing cyclic input data, this function will provide the data to be output to the network. The status parameter indicates the health of the input path (bad status indicates that a problem has been detected in the hardware). For this type of I/O, CI_WriteItem() will typically be called periodically for each set of inputs (e.g. for each input module in a modular system).
+For an item representing cyclic input data, this function will provide the data
+to be output to the network. The status parameter indicates the health of the
+input path (bad status indicates that a problem has been detected in the
+hardware). For this type of I/O, CI_WriteItem() will typically be called
+periodically for each set of inputs (e.g. for each input module in a modular
+system).
 
-Another example is acyclic I/O. This type of I/O is typically only written in response to a request from the protocol master (controller or scanner). In terms of the Common interface, this would be in response to an event received by the user application.
+Another example is acyclic I/O. This type of I/O is typically only written in
+response to a request from the protocol master (controller or scanner). In terms
+of the Common interface, this would be in response to an event received by the
+user application.
 
-Item writes can also be used to set or to clear alarms or diagnostic information, if supported by the underlying protocol.
+Item writes can also be used to set or to clear alarms or diagnostic
+information, if supported by the underlying protocol.
 
 5.1.8 CI_IoStatus_t CI_ReadItem(CI_ItemHandle_t handle, CI_IoStatus_t status, void \*data_p);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function retrieves output data from the network application. In this case the status parameter indicates the health of the output circuitry. The return value indicates the quality/validity of the returned data.
+This function retrieves output data from the network application. In this case
+the status parameter indicates the health of the output circuitry. The return
+value indicates the quality/validity of the returned data.
 
-Similar to CI_WriteItem(), this routine would be called periodically for cyclic output data, and based on events received from the Common Interface for acyclic items, alarms, etc.
+Similar to CI_WriteItem(), this routine would be called periodically for cyclic
+output data, and based on events received from the Common Interface for acyclic
+items, alarms, etc.
 
 5.1.9 int CI_SetDeviceParam(CI_Device_Param_ID_e paramID, void \*paramData, int paramSize);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This interface supports the setting of several device-wide parameters. This can be used to override some settings in the configuration data or default behaviors (e.g. set MAC Address or IP address).
+This interface supports the setting of several device-wide parameters. This can
+be used to override some settings in the configuration data or default behaviors
+(e.g. set MAC Address or IP address).
 
 5.1.10 int CI_GetDeviceParam(CI_Device_Param_ID_e paramID, void \*paramData, int paramSize);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This interface provides access to device-wide parameters like MAC address or serial number, etc.
+This interface provides access to device-wide parameters like MAC address or
+serial number, etc.
 
 5.1.11 int CI_SetItemParam(CI_itemHandle_t handle, CI_Item_Param_ID_e paramID, void \*paramData, int paramSize);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This interface supports the setting of several item-specific parameters. The specific elements that can be changed depend on the type of item involved. Some parameters are protocol-specific.
+This interface supports the setting of several item-specific parameters. The
+specific elements that can be changed depend on the type of item involved. Some
+parameters are protocol-specific.
 
 5.1.12 int CI_GetItemParam(CI_itemHandle_t handle, CI_Item_Param_ID_e paramID, void \*paramData, int paramSize);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This interface provides access to item-specific parameters. The parameters available depend on the item type and protocol in use.
+This interface provides access to item-specific parameters. The parameters
+available depend on the item type and protocol in use.
 
 5.1.13 int CI_IoComplete();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This interface indicates to the network application that the current I/O cycle is complete.
+This interface indicates to the network application that the current I/O cycle
+is complete.
 
 5.1.14 int CI_GetEvent(CI_EventStruct_t \*event, short block);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function implements an event interface for the user application. It can be called in a polling fashion (if the ‘block’ parameter is zero), or, if used in a dedicated thread, it can be called with the ‘block’ parameter set to 1 and will pend until an event is available.
+This function implements an event interface for the user application. It can be
+called in a polling fashion (if the ‘block’ parameter is zero), or, if used in a
+dedicated thread, it can be called with the ‘block’ parameter set to 1 and will
+pend until an event is available.
 
-If an event is returned, it includes the handle of the item that that event concerns, the userID associated with that item, and the type of action indicated by the event. This generic interface can then be used to indicate that an acyclic write has been requested by the controller, for example.
+If an event is returned, it includes the handle of the item that that event
+concerns, the userID associated with that item, and the type of action indicated
+by the event. This generic interface can then be used to indicate that an
+acyclic write has been requested by the controller, for example.
 
 5.1.15 int CI_SetSystemStatus(CI_SystemStatus_t status);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This interface sets the overall system status for the network application. This will be reflected in LEDs and/or network communications (depending on the protocol).
+This interface sets the overall system status for the network application. This
+will be reflected in LEDs and/or network communications (depending on the
+protocol).
 
 5.1.16 CI_NetworkStatus_t CI_GetNetworkStatus();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function retrieves the status of the network application and network connection.
+This function retrieves the status of the network application and network
+connection.
 
 5.1.17 CI_task_t CI_taskCreateLowPriority(void (\*TaskEntry)(void), char \*name, int stackSize);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This interface allows the programmer to spawn additional threads. These threads will operate at a lower priority than the user’s main program. It is intended that cyclic I/O processing should operate at a high priority, so it should be done in the context of the main program. These threads are intended for such things as event handling, socket management, handling of other interfaces, etc.
+This interface allows the programmer to spawn additional threads. These threads
+will operate at a lower priority than the user’s main program. It is intended
+that cyclic I/O processing should operate at a high priority, so it should be
+done in the context of the main program. These threads are intended for such
+things as event handling, socket management, handling of other interfaces, etc.
 
-Note that these threads, while at a lower priority, still need to take some blocking action regularly so that other low priority processing can execute.
+Note that these threads, while at a lower priority, still need to take some
+blocking action regularly so that other low priority processing can execute.
 
 5.1.18 int CI_TicksPerSecond();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function returns the frequency of the system tick in the network application. It can be used in conjunction with the provided time and timer functions.
+This function returns the frequency of the system tick in the network
+application. It can be used in conjunction with the provided time and timer
+functions.
 
 5.1.19 long long CI_RunTimeInTicks();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function returns the period that the system has been operating in system ticks (typically 1 ms per tick). Note that this is a 64-bit value.
+This function returns the period that the system has been operating in system
+ticks (typically 1 ms per tick). Note that this is a 64-bit value.
 
 5.1.20 int CI_GetCyclicPeriod();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function returns the period in system ticks of the current cyclic I/O connection. This function is not supported in all protocols, if not supported it returns an error indicating that the value is unknown.
+This function returns the period in system ticks of the current cyclic I/O
+connection. This function is not supported in all protocols, if not supported it
+returns an error indicating that the value is unknown.
 
 5.1.21 CI_periodicTimer_t CI_CreateTimer(unsigned int period);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -520,17 +699,22 @@ This function creates a timer with the given period for use by the application.
 5.1.22 int CI_WaitOnTimer(CI_periodicTimer_t timer);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function blocks operation of the user application until a timer created by a call to CI_CreateTimer() triggers.
+This function blocks operation of the user application until a timer created by
+a call to CI_CreateTimer() triggers.
 
 5.1.23 int CI_WaitIO();
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-This function blocks operation of the user application until data has been exchanged with the network. A timeout on this delay is set in the call to CI_ConfigComplete() (for example; so the application will continue to execute on the loss of a connection).
+This function blocks operation of the user application until data has been
+exchanged with the network. A timeout on this delay is set in the call to
+CI_ConfigComplete() (for example; so the application will continue to execute on
+the loss of a connection).
 
 5.1.24 CI_RequestReset();
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function causes a hard reset of the microprocessor, which will in turn reset the entire device.
+This function causes a hard reset of the microprocessor, which will in turn
+reset the entire device.
 
 Common Interface Complete API
 -----------------------------
@@ -538,7 +722,8 @@ Common Interface Complete API
 6.1 CI-srv/inc/CI_Codes.h
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The CI_Codes.h are in place to support specific Common Interface codes. The codes can be defined as seen below.
+The CI_Codes.h are in place to support specific Common Interface codes. The
+codes can be defined as seen below.
 
 ::
 
@@ -643,7 +828,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      */
     CI_openCfg_t CI_OpenCfg;
 
-
     /*
      *  Close a connection. After closing the connection, the dbch can no
      *  longer be used to access the database
@@ -656,7 +840,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      */
     CI_closeCfg_t CI_CloseCfg;
 
-
     /*
      * Register a notification callback (one for each connection)
      *
@@ -668,7 +851,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      *            CI_INVALID_PARAM
      */
     CI_regConfigEvt CI_RegConfigEvt;
-
 
     /*
      * Read an object from the database. The return values are in text form.
@@ -686,7 +868,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      */
     CI_readCfg_t CI_ReadCfg;
 
-
     /*
      * Write an object to the database. The values are in text form.
      *
@@ -703,7 +884,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      *            connection got write permission
      */
     CI_writeCfg_t CI_WriteCfg;
-
 
     /*
      * Each node in the database tree can have attribute. This function is designed
@@ -725,7 +905,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      */
     CI_readAttr_t CI_ReadAttr;
 
-
     /*
      *  Initialize a enumeration. A start path defines the starting point for the
      *  enumeration within data tree.
@@ -739,7 +918,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      * return     CI_OK
      */
     CI_newEnum_t CI_NewEnum;
-
 
     /*
      * Travers the database starting at the root set by CI_NewEnum
@@ -835,7 +1013,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      */
     CI_discard_t CI_Discard;
 
-
     /* save/load files */
 
     /*
@@ -916,7 +1093,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
                                    int32_t *dbch_p);
     typedef CI_openCfg_t (*CI_openCfg_tp);
 
-
     /*
      *  Close a connection. After closing the connection, the dbch can no
      *  longer be used to access the database
@@ -927,7 +1103,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      */
     typedef int32_t (CI_closeCfg_t)(int32_t dbch);
     typedef CI_closeCfg_t (*CI_closeCfg_tp);
-
 
     /*
      * Notification Callback. A driver or stack can issue a notification, that is an
@@ -949,7 +1124,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
                                       CI_CFG_notificationCB_tp cb_p);
     typedef CI_regConfigEvt (*CI_regConfigEvtp);
 
-
     /*
      * Read an object from the database. The return values are in text form.
      */
@@ -959,7 +1133,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
                                    uint16_t size);
     typedef CI_readCfg_t (*CI_readCfg_tp);
 
-
     /*
      * Write an object to the database. The values are in text form.
      */
@@ -967,7 +1140,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
                                     char *path_p,
                                     char *value_p);
     typedef CI_writeCfg_t (*CI_writeCfg_tp);
-
 
     /*
      * Each node in the database tree can have attribute. This function is designed
@@ -981,7 +1153,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
                                     uint16_t size);
     typedef CI_readAttr_t (*CI_readAttr_tp);
 
-
     /*
      *  Initialize a enumeration. A start path defines the starting point for the
      *  enumeration within data tree.
@@ -991,7 +1162,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
                                    char *start_p,
                                    CI_nodeType_t select);
     typedef CI_newEnum_t (*CI_newEnum_tp);
-
 
     /*
      * Travers the database starting at the root set by CI_NewEnum
@@ -1004,8 +1174,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
                                      uint16_t *vsize_p,
                                      CI_nodeType_t *ntype_p);
     typedef CI_enumerate_t (*CI_enumerate_tp);
-
-
 
     /*
      * Commit a candidate to running.
@@ -1031,7 +1199,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
                                    char *path_p);
     typedef CI_discard_t (*CI_discard_tp);
 
-
     /* save/load files */
 
     /*
@@ -1047,7 +1214,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     typedef int32_t (CI_loadCfg_t)(int32_t dbch,
                                    char *file_p);
     typedef CI_loadCfg_t (*CI_loadCfg_tp);
-
 
     #endif
 
@@ -1065,7 +1231,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      */
     #ifndef H_CI_CONFIG_AND_CONTROL_API_INC
     #define H_CI_CONFIG_AND_CONTROL_API_INC
-
 
     #include <stdint.h>
     #include <limits.h>
@@ -1168,7 +1333,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
 
     CI_enableGateway_t CI_EnableGateway;
 
-
     #endif
 
 6.6 CI-srv/inc/ CI_control_types.h
@@ -1218,8 +1382,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
-
-
 
    /*
      * Copyright (c) 2019-2021 Analog Devices, Inc. All Rights Reserved.
@@ -1298,13 +1460,11 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #define CI_NAME_FIRE_NOTI         ("fireNoti")
     #define CI_NAME_ENABLE_GATEWAY    ("enGateway")
 
-
     /*
      * the control api has to deal with two data stores only:
      * - STATUS: data from the driver/stack towards the database
      * - RUNNING: current config data towards the driver/stack
      */
-
 
     /*
      * Callback function receive updates from the configuration database
@@ -1466,7 +1626,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
-
 
    /*
      * Copyright (c) 2019-2021 Analog Devices, Inc. All Rights Reserved.
@@ -1630,7 +1789,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
       CI_PnetClearDiag_t* CI_PNET_Ext_ClearDiag_Func_p;
       CI_PnetAddItem_t* CI_PNET_Ext_AddItem_Func_p;
     } CI_PnetInterfaceFunctionTable_t;
-
 
     /*---------------------------------------------------------------------------*/
     /*--------------- Place Other Protocol Extension Sections Below Here --------*/
@@ -3092,7 +3250,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      */
     #define CI_LITTLE_ENDIAN
 
-
     #ifdef CI_LITTLE_ENDIAN
       /* Little endian swapping macros */
       #define CI_NTOHS(x)    (uint16_t)( \
@@ -3310,7 +3467,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #define CI_FIONREAD                  1
     #define CI_FIONWRITE                 2
 
-
     /* AF/PF Defines */
     #ifndef AF_INET
       #define AF_INET                    1
@@ -3336,7 +3492,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     #ifndef sa_family_t
       typedef uint16_t sa_family_t;
     #endif
-
 
     #ifndef IP_SERVICE
       struct sockaddr {
@@ -3381,7 +3536,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
         uint32_t fd[(CI_FDSET_SIZE/CI_FDSET_FD_NBITS)+1];
       } fd_set;
     #endif
-
 
     /* BSD Socket structs */
     #ifndef socklen_t
@@ -3526,7 +3680,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
       CI_SOCKETS_INET_NTOA_INDEX,
       CI_SOCKETS_NUM_FUNC_INDEXES        /* this value always last */
     } CI_socketsIndex_t;
-
 
     // Global Variables (externs, globals, static globals) *******
     // ----------------------------------------------------------------------------
@@ -3730,7 +3883,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
      *         specified basket or NULL if the basket doesn't exist
     */
    CI_getBasket_t CI_GetBasket;
-
 
    /**
      * Get the protocol implemented by the underlying network application
@@ -4472,15 +4624,11 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
       /* Desc: PROFINET station name (as assigned by the PLC)
      * Type: char[] (max length: 240 characters) */
 
-
       /* EtherNet/IP-specific parameters */
-
 
       /* Modbus/TCP-specific parameters */
 
-
       /* EtherCAT-specific parameters */
-
 
       /* POWERLINK-specific parameters */
 
@@ -4790,7 +4938,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
     */
    CI_setHttpResNotFoundHandler_t CI_SetHttpResNotFoundHandler;
 
-
    /**
      * Write http response.
     *
@@ -4855,7 +5002,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
-
 
    /*
      *  Copyright (c) 2019-2021 Analog Devices, Inc. All Rights Reserved.
@@ -4973,7 +5119,6 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
       CI_httpNoPartialUpdate           /* 506 */
     } CI_httpStatus_t;
 
-
     /*CGI meta variables structure*/
     typedef struct {
       int contentLength;
@@ -5079,7 +5224,15 @@ The CI_Codes.h are in place to support specific Common Interface codes. The code
 7. Profinet Extension API
 -------------------------
 
-The RapID \_Common Interface API (CI)\_ is designed to provide a uniform interface on top of very different Industrial Ethernet Protocols, including EtherNet/IP, EtherCAT and Profinet. This allows an application on top of the Common Interface to work across protocols. While this works fine for many, maybe even most applications, there are sometimes needs that require deeper integration with a specific protocol. To enable this type of protocol specific work, the protocol Extensions API was introduced. It extents the Common Interface with functionality specific to a certain Industrial Ethernet protocol. This document focuses on the Profinet Extension available thru CI_extensions.h.
+The RapID \_Common Interface API (CI)\_ is designed to provide a uniform
+interface on top of very different Industrial Ethernet Protocols, including
+EtherNet/IP, EtherCAT and Profinet. This allows an application on top of the
+Common Interface to work across protocols. While this works fine for many, maybe
+even most applications, there are sometimes needs that require deeper
+integration with a specific protocol. To enable this type of protocol specific
+work, the protocol Extensions API was introduced. It extents the Common
+Interface with functionality specific to a certain Industrial Ethernet protocol.
+This document focuses on the Profinet Extension available thru CI_extensions.h.
 
 7.1 Extensions and Callbacks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5087,7 +5240,11 @@ The RapID \_Common Interface API (CI)\_ is designed to provide a uniform interfa
 7.1.1 Functions
 ^^^^^^^^^^^^^^^
 
-A class of functions provided by the respective protocol stacks within the NetworkApp. Functions defined in this table can be called by the application. Typical example for these kind of functions is CI_PnetAddItem_t function. It is Profinet specific and called by the application to plug a specific sub-module into a slot/subslot with a given API type.
+A class of functions provided by the respective protocol stacks within the
+NetworkApp. Functions defined in this table can be called by the application.
+Typical example for these kind of functions is CI_PnetAddItem_t function. It is
+Profinet specific and called by the application to plug a specific sub-module
+into a slot/subslot with a given API type.
 
 7.1.2 Extension Callbacks
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5097,7 +5254,8 @@ A class of function provided by the application and called by the NetworkApp. Ty
 7.1.3 When to install a function or callbacks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Extensions can be installed any time before Config Complete is reached. After that point in time, calls to CI_AddInterfaceExtension() will be refused.
+Extensions can be installed any time before Config Complete is reached. After
+that point in time, calls to CI_AddInterfaceExtension() will be refused.
 
 ::
 
@@ -5106,12 +5264,26 @@ Extensions can be installed any time before Config Complete is reached. After th
                                         void* callbackTable_p,
                                         void** ifExtensionTable_p);
 
-This function provides a pointer to a structure that holds pointers to the extension functions - \_ifExtensionTable_p\_. before using one of the functions, the user shall check \_ifExtensionTable_p\_ as well as the specific function pointer in these structures being not \_NULL\_.
+This function provides a pointer to a structure that holds pointers to the
+extension functions - \_ifExtensionTable_p\_. before using one of the functions,
+the user shall check \_ifExtensionTable_p\_ as well as the specific function
+pointer in these structures being not \_NULL\_.
 
 7.1.4 Extend Set Device
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In Ci, one of the first things that need to be set up after system start is the device type. The device type defines many data important to a industrial ethernet device, such as vendorID and deviceID values. The device type information is protocol specific. The CI_SetDevice and CI_SetDeviceCustom functions are provided to set up the device. While CI_SetDevice will take the device information from the io-config database, CI_SetDevice allows the user to pass the device type information via a protocol specif data structure. However, the default data structure to set up a Profinet device lacks specific IDs for DAP and port submodules. This can lead to a conflict with some profiles, such as the PA profile. Using the function 'CI_PNET_Ext_SetDevice_Func' from the extension interface allows to pass a DAPSubID and an individual portSubID per port:
+In Ci, one of the first things that need to be set up after system start is the
+device type. The device type defines many data important to a industrial
+ethernet device, such as vendorID and deviceID values. The device type
+information is protocol specific. The CI_SetDevice and CI_SetDeviceCustom
+functions are provided to set up the device. While CI_SetDevice will take the
+device information from the io-config database, CI_SetDevice allows the user to
+pass the device type information via a protocol specif data structure. However,
+the default data structure to set up a Profinet device lacks specific IDs for
+DAP and port submodules. This can lead to a conflict with some profiles, such as
+the PA profile. Using the function 'CI_PNET_Ext_SetDevice_Func' from the
+extension interface allows to pass a DAPSubID and an individual portSubID per
+port:
 
 ::
 
@@ -5121,7 +5293,8 @@ In Ci, one of the first things that need to be set up after system start is the 
                                             uint32_t  *portSubId_p);
        CI_PnetSetDevice_t CI_PNET_Ext_SetDevice_Func;
 
-Please note that DAPSubID and the portSubIds need to match the related values in the GSDML file.
+Please note that DAPSubID and the portSubIds need to match the related values in
+the GSDML file.
 
 7.1.5 Managing Modules
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -5143,12 +5316,30 @@ The CI_PNET_Ext_ModuleDiff_CB allows a customer to fix any deviations between th
                                                    uint32_t expectedSubmoduleID);
          CI_PnetModuleDiffFunct_t CI_PNET_Ext_ModuleDiff_CB;
 
-The functions CI_addItem() and CI_removeItem() can be used to modify the configuration from within this callback. All memory associated with a CI_addItem() call is carefully removed in CI_removeItem() as needed. Once called for each expected module, a final call to this callback, called \_finalization\_ is executed with arNum and api both being 0xffff. This convenience call allows an application to clean up its configuration. It is still allowed to remove/add items at this point. If the call is used to change an existing configuration, the first call to that function or a "PLC down event" can be used to remove all slots/subslots of the current configuration. As an alternative, a list of modules no longer needed can be recorded and all module sin that list can be removed in the \_finalization\_ callback. Note on Adding Record Indices (Acyclics) It is recommended to add acyclic items only after the related submodule has been plugged.
+The functions CI_addItem() and CI_removeItem() can be used to modify the
+configuration from within this callback. All memory associated with a
+CI_addItem() call is carefully removed in CI_removeItem() as needed. Once called
+for each expected module, a final call to this callback, called \_finalization\_
+is executed with arNum and api both being 0xffff. This convenience call allows
+an application to clean up its configuration. It is still allowed to remove/add
+items at this point. If the call is used to change an existing configuration,
+the first call to that function or a "PLC down event" can be used to remove all
+slots/subslots of the current configuration. As an alternative, a list of
+modules no longer needed can be recorded and all module sin that list can be
+removed in the \_finalization\_ callback. Note on Adding Record Indices
+(Acyclics) It is recommended to add acyclic items only after the related
+submodule has been plugged.
 
 7.1.5.2 ParamEnd
 """"""""""""""""
 
-This callback is designed to inform an application that an Application Relationship (AR) has been established and configured. No further startup parameters will be sent by the PLC. Can be used to lock certain functionality. The ARindex passed as a parameter can help to understand which AR has completed the configuration in case than more than one AR is established. Please note that adding and deleting items out of that callback will not work and will cause a deadlock of the Profinet stack.
+This callback is designed to inform an application that an Application
+Relationship (AR) has been established and configured. No further startup
+parameters will be sent by the PLC. Can be used to lock certain functionality.
+The ARindex passed as a parameter can help to understand which AR has completed
+the configuration in case than more than one AR is established. Please note that
+adding and deleting items out of that callback will not work and will cause a
+deadlock of the Profinet stack.
 
 ::
 
@@ -5158,7 +5349,12 @@ This callback is designed to inform an application that an Application Relations
 7.1.5.3 Adding Items
 """"""""""""""""""""
 
-The Profinet device model uses a module/sub-module concept. A module in the Profinet model is like an envelop or box for a set of one or more submodules. Data is provided and consumed by submodules only. While standard CI_AddItem() and CI_AddItemCustom() function allows to plug one module with one sub-module into a certain slot only. To allow more flexibility, the extension api adds the following function:
+The Profinet device model uses a module/sub-module concept. A module in the
+Profinet model is like an envelop or box for a set of one or more submodules.
+Data is provided and consumed by submodules only. While standard CI_AddItem()
+and CI_AddItemCustom() function allows to plug one module with one sub-module
+into a certain slot only. To allow more flexibility, the extension api adds the
+following function:
 
 ::
 
@@ -5175,12 +5371,28 @@ Using CI_PNET_Ext_AddItem_Func allows an item to be plugged into a certain slot/
 7.1.5.4 Diagnosis and Alarms
 """"""""""""""""""""""""""""
 
-In Profinet there are ALRAMS and DIAGNOSIS available. Whats the difference? Diagnosis provides status messages to the PLC. They are logged in the Engineering system and give the operator some inside on what's going on in the device. A diagnosis message can be activated and removed when no longer valid. Diagnosis messages are bound to a submodule and can be generated by the application and by the stack. The stack actually generates quite a few diagnosis messages. The user of the RapID platform has not to worry about maintaining those alarms and diagnosis messages. They are covered in the stack inside the NetworkApp. Alarms are disruptive events that are handled by the PLC and that may affect the plant operation. An alarm is sent upstream to the PLC and acknowledged by the PLC. Like with Diagnosis, source of an alarm may be the stack or the application. The user application shall not handle alarms that are dedicated to the stack. The details of the how alarms and diagnosis messages are formatted are documented in IEC CD 61158-5-10 "Diagnosis ASE".
+In Profinet there are ALRAMS and DIAGNOSIS available. Whats the difference?
+Diagnosis provides status messages to the PLC. They are logged in the
+Engineering system and give the operator some inside on what's going on in the
+device. A diagnosis message can be activated and removed when no longer valid.
+Diagnosis messages are bound to a submodule and can be generated by the
+application and by the stack. The stack actually generates quite a few diagnosis
+messages. The user of the RapID platform has not to worry about maintaining
+those alarms and diagnosis messages. They are covered in the stack inside the
+NetworkApp. Alarms are disruptive events that are handled by the PLC and that
+may affect the plant operation. An alarm is sent upstream to the PLC and
+acknowledged by the PLC. Like with Diagnosis, source of an alarm may be the
+stack or the application. The user application shall not handle alarms that are
+dedicated to the stack. The details of the how alarms and diagnosis messages are
+formatted are documented in IEC CD 61158-5-10 "Diagnosis ASE".
 
 7.2 Supported Diagnosis Types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please note that while QualifiedChannelDiagnosis is not supported yet, the function parameter \_severity\_ used in the diagnosis api in CI_extensions.h follows the required coding for QualifiedChannelQualifier for future compatibility.
+Please note that while QualifiedChannelDiagnosis is not supported yet, the
+function parameter \_severity\_ used in the diagnosis api in CI_extensions.h
+follows the required coding for QualifiedChannelQualifier for future
+compatibility.
 
 +--------------------+--------------------------+-----------------------------+---------------------------------------+
 | Channel Diagnosis  | Ext Channel Diagnosis    | Qualified Channel Diagnosis | Manufacturer Specific Diagnosis       |
@@ -5207,11 +5419,19 @@ Please note that while QualifiedChannelDiagnosis is not supported yet, the funct
 7.2.1 Addressing Model
 ~~~~~~~~~~~~~~~~~~~~~~
 
-A diagnosis message is bound to an address based on api, slot, subslot and channel. While \_api\_, \_slot\_ and \_subslot\_ are common entities in Profinet, the \_ChannelNumber\_ is less prominent. The idea is that a submodule has one or more channels of a certain \_ChannelType\_. Examples: a digital input submodule with four inputs got four channels, one bit wide each. A analog output submodule with 8 channels uses a array of 8 16-bit words to represent its data.
+A diagnosis message is bound to an address based on api, slot, subslot and
+channel. While \_api\_, \_slot\_ and \_subslot\_ are common entities in
+Profinet, the \_ChannelNumber\_ is less prominent. The idea is that a submodule
+has one or more channels of a certain \_ChannelType\_. Examples: a digital input
+submodule with four inputs got four channels, one bit wide each. A analog output
+submodule with 8 channels uses a array of 8 16-bit words to represent its data.
 
-Please note that ChannelType is a data width information only, not a datatype designation. A CI_pnetDiagChannelTypeDWord can be an 32-bit integer as well as an 32-bit float value.
+Please note that ChannelType is a data width information only, not a datatype
+designation. A CI_pnetDiagChannelTypeDWord can be an 32-bit integer as well as
+an 32-bit float value.
 
-The width of the channel is passed via the parameter ChannelType and defined as follows:
+The width of the channel is passed via the parameter ChannelType and defined as
+follows:
 
 +------------------------------+------------------------------+---------------------+
 | CI_pnetDiagChannelType_t     | Channel Data Width in Bits   | Example Use         |
@@ -5246,7 +5466,10 @@ CI_pnetIn_out input and output
 7.2.2 Channel Error Code
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The error code defined in \_CI_pnetDiagChannelError_t\_ can be used to signal standard error codes as defined in IEC CD 61158-5-10 "Diagnosis ASE". The definition includes frequently used, self explanatory error codes, such as (list not complete):
+The error code defined in \_CI_pnetDiagChannelError_t\_ can be used to signal
+standard error codes as defined in IEC CD 61158-5-10 "Diagnosis ASE". The
+definition includes frequently used, self explanatory error codes, such as (list
+not complete):
 
 ::
 
@@ -5264,7 +5487,10 @@ The error code defined in \_CI_pnetDiagChannelError_t\_ can be used to signal st
 7.2.3 Severity
 ~~~~~~~~~~~~~~
 
-All diagnosis calls in the extension api for Profinet support a parameter severity. The coding of this value follows the specification of QualifiedChannelQualifier. However, only 3 values can currently be used for severity:
+All diagnosis calls in the extension api for Profinet support a parameter
+severity. The coding of this value follows the specification of
+QualifiedChannelQualifier. However, only 3 values can currently be used for
+severity:
 
 +-------------------------------+--------------------------------------------+----------+
 | Severity Code                 | Comment                                    | Severity |
@@ -5279,12 +5505,25 @@ All diagnosis calls in the extension api for Profinet support a parameter severi
 7.2.4 Stack Internal Reference(diagTag)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The parameter lists of the diagnosis calls also refer to a parameter called \_diagTag\_. This tag is user supplied and shall be unique for each diagnosis sent. That said, the same value shall be used to send and to clear a diagnosis message, making diagTag an internal reference to a unique diagnosis transaction. It helps the stack to track diagnosis messages for the same api, slot, subslot and channel.
+The parameter lists of the diagnosis calls also refer to a parameter called
+\_diagTag\_. This tag is user supplied and shall be unique for each diagnosis
+sent. That said, the same value shall be used to send and to clear a diagnosis
+message, making diagTag an internal reference to a unique diagnosis transaction.
+It helps the stack to track diagnosis messages for the same api, slot, subslot
+and channel.
 
 7.2.5 Channel Diagnostics
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Channel specific process diagnosis message. Channel diagnosis is used to signal process/application errors related to individual IO channels. The channel is addressed by \_api\_, \_slot\_, \_subslot\_, \_channelNumber\_ and \_channelType\_. The \_errorNumber\_ is one of the predefined values in \_CI_pnetDiagChannelType_t\_. Please refer to the Profinet Diagnosis Guideline for the latest definitions. Channel type defines the width of the channel as per CI_pnetDiagChannelType_t. Typical examples are CI_pnetDiagChannelType1Bit for digital IO channels and CI_pnetDiagChannelTypeWord for analog input (16-Bit). The diagTag shall be unique to the message sent.
+Channel specific process diagnosis message. Channel diagnosis is used to signal
+process/application errors related to individual IO channels. The channel is
+addressed by \_api\_, \_slot\_, \_subslot\_, \_channelNumber\_ and
+\_channelType\_. The \_errorNumber\_ is one of the predefined values in
+\_CI_pnetDiagChannelType_t\_. Please refer to the Profinet Diagnosis Guideline
+for the latest definitions. Channel type defines the width of the channel as per
+CI_pnetDiagChannelType_t. Typical examples are CI_pnetDiagChannelType1Bit for
+digital IO channels and CI_pnetDiagChannelTypeWord for analog input (16-Bit).
+The diagTag shall be unique to the message sent.
 
 ::
 
@@ -5302,10 +5541,19 @@ Channel specific process diagnosis message. Channel diagnosis is used to signal 
 7.2.6 Extended Channel Diagnostics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Send an extended channel diagnosis message to the controller. Like channel diagnosis, extend channel diagnosis is used to signal process/application errors related to individual IO channels. The channel is addressed by \_api\_, \_slot\_, \_subslot\_, \_channelNumber\_ and \_channelType\_. The \_errorNumber\_ is one of the predefined values in \_CI_pnetDiagChannelType_t\_. Please refer to the Profinet Diagnosis Guideline for the latest definitions. Channel type defines the width of the channel as per CI_pnetDiagChannelType_t. Typical examples are CI_pnetDiagChannelType1Bit for digital IO channels and CI_pnetDiagChannelTypeWord for analog input (16-Bit). The extended information passed is used for specific use cases, where more error details are required. This includes nested errors, where an error is caused within an existing error.
+Send an extended channel diagnosis message to the controller. Like channel
+diagnosis, extend channel diagnosis is used to signal process/application errors
+related to individual IO channels. The channel is addressed by \_api\_,
+\_slot\_, \_subslot\_, \_channelNumber\_ and \_channelType\_. The
+\_errorNumber\_ is one of the predefined values in \_CI_pnetDiagChannelType_t\_.
+Please refer to the Profinet Diagnosis Guideline for the latest definitions.
+Channel type defines the width of the channel as per CI_pnetDiagChannelType_t.
+Typical examples are CI_pnetDiagChannelType1Bit for digital IO channels and
+CI_pnetDiagChannelTypeWord for analog input (16-Bit). The extended information
+passed is used for specific use cases, where more error details are required.
+This includes nested errors, where an error is caused within an existing error.
 
 ::
-
 
          typedef int32_t CI_PnetSendExtChanDiag_t(uint16_t api,
                                                   uint16_t slot,
@@ -5325,7 +5573,8 @@ Pls refer to Profinet Diagnosis Guideline for details.
 7.2.7 Clear Channel Diagnosis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the root cause for a channel diagnosis message or extended channel diagnosis message has vanished, use
+Once the root cause for a channel diagnosis message or extended channel
+diagnosis message has vanished, use
 
 ::
 
@@ -5338,7 +5587,11 @@ Once the root cause for a channel diagnosis message or extended channel diagnosi
                                                 uint16_t diagTag);
          CI_PnetClearChanDiag_t CI_PNET_Ext_ClearChanDiag_Func;
 
-to inactivate the diagnosis message. The same \_CI_PNET_Ext_ClearChanDiag_Func()\_ function is used to deactivate both, Channel Diagnosis and Extended Channel Diagnosis messages. Parameter diagTag must be identical to the related CI_PNET_Ext_SendChanDiag_Func or CI_PNET_Ext_SendExtChanDiag_Func call.
+to inactivate the diagnosis message. The same
+\_CI_PNET_Ext_ClearChanDiag_Func()\_ function is used to deactivate both,
+Channel Diagnosis and Extended Channel Diagnosis messages. Parameter diagTag
+must be identical to the related CI_PNET_Ext_SendChanDiag_Func or
+CI_PNET_Ext_SendExtChanDiag_Func call.
 
 7.2.8 Qualified Channel Diagnosis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5348,7 +5601,14 @@ This type is currently not supported\_.
 7.2.9 Manufacturer Specific Diagnostics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue manufacturer specific diagnosis message. Like with channel diagnosis, the error is addressed by api, slot, subslot, channelNumber and channelType. The diagTag shall be unique to the message sent. As the name suggest, this diagnosis can be use to raise non standard, customized diagnosis messages. Please note that no error code is given, the message uses a single, predefined error code (CI_pnetManufactureSpecific). The parameter usrStructureIdentifier allows to create a set of manufacturer specific messages, it's valid range is 0-0x7fff. Please refer to Profinet Diagnosis Guideline for details.
+Issue manufacturer specific diagnosis message. Like with channel diagnosis, the
+error is addressed by api, slot, subslot, channelNumber and channelType. The
+diagTag shall be unique to the message sent. As the name suggest, this diagnosis
+can be use to raise non standard, customized diagnosis messages. Please note
+that no error code is given, the message uses a single, predefined error code
+(CI_pnetManufactureSpecific). The parameter usrStructureIdentifier allows to
+create a set of manufacturer specific messages, it's valid range is 0-0x7fff.
+Please refer to Profinet Diagnosis Guideline for details.
 
 ::
 
@@ -5368,7 +5628,11 @@ Issue manufacturer specific diagnosis message. Like with channel diagnosis, the 
 7.2.10 Alarms
 ~~~~~~~~~~~~~
 
-An alarm is a message that can trigger an interrupt on the controller. The behavior on the controller may be implementation depended. The classical way to handle interrupts is using OB40..48 blocks. Please refer op your PLC vendor documentation for implementing alarm driven interrupts. If an alarm is sent while a pending alarm has not been processed yet, the function returns CI_ERROR.
+An alarm is a message that can trigger an interrupt on the controller. The
+behavior on the controller may be implementation depended. The classical way to
+handle interrupts is using OB40..48 blocks. Please refer op your PLC vendor
+documentation for implementing alarm driven interrupts. If an alarm is sent
+while a pending alarm has not been processed yet, the function returns CI_ERROR.
 
 Appendix A Alarm Specifier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5378,12 +5642,15 @@ This value is for future compatibility and shall be set to zero for now.
 Appendix B User Structure Identifier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Like with manufacturer specific diagnosis, usrStructureIdentifier shall be in range of 0..0x7FFF. This value identifies reasons for the alarm and identifies what type of data is passed via alarmData_p.
+Like with manufacturer specific diagnosis, usrStructureIdentifier shall be in
+range of 0..0x7FFF. This value identifies reasons for the alarm and identifies
+what type of data is passed via alarmData_p.
 
 Appendix C Alarm Data
 ^^^^^^^^^^^^^^^^^^^^^
 
-Data can be passed along with an alarm. AlarmData_p points to the data and alamaDataLength gives the length of the data in bytes.
+Data can be passed along with an alarm. AlarmData_p points to the data and
+alamaDataLength gives the length of the data in bytes.
 
 ::
 
@@ -5400,12 +5667,25 @@ Data can be passed along with an alarm. AlarmData_p points to the data and alama
 7.3 Validate Records
 ~~~~~~~~~~~~~~~~~~~~
 
-In CI, a event is sent to the application in case a record-item has has been read or updated. However, that is seen as too late to validate the record data and to possibly answer with a Profinet specific error code. Both validate callbacks shall not cause a context switch by calling inter process communication functions nor other CommonInterface functions. Stack usage shall be conservative.
+In CI, a event is sent to the application in case a record-item has has been
+read or updated. However, that is seen as too late to validate the record data
+and to possibly answer with a Profinet specific error code. Both validate
+callbacks shall not cause a context switch by calling inter process
+communication functions nor other CommonInterface functions. Stack usage shall
+be conservative.
 
 7.3.1 Read Record Validation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The CI_PnetReadItemValidate_t callback allows a application to inspect whether data in the addressed item is valid or not before it is actually read by the stack. It may use the callback to update an out-of-date item using CI_WriteItem(). If CI_ERROR is returned the read will be canceled and no data is read from the item. In this case, the application has to provide valid error information using the CI_PnetStatus_t structure. If the callback returns CI_OK, the data will be read from the respective item. \_Note - it is allowed to pass NULL for this callback in CI_PnetCallbackFunctionTable_t if the use of this callback is not required\_.
+The CI_PnetReadItemValidate_t callback allows a application to inspect whether
+data in the addressed item is valid or not before it is actually read by the
+stack. It may use the callback to update an out-of-date item using
+CI_WriteItem(). If CI_ERROR is returned the read will be canceled and no data is
+read from the item. In this case, the application has to provide valid error
+information using the CI_PnetStatus_t structure. If the callback returns CI_OK,
+the data will be read from the respective item. \_Note - it is allowed to pass
+NULL for this callback in CI_PnetCallbackFunctionTable_t if the use of this
+callback is not required\_.
 
 ::
 
@@ -5416,7 +5696,14 @@ The CI_PnetReadItemValidate_t callback allows a application to inspect whether d
 7.3.2 Write Record Validation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The writeItemValidate_p callback allows a application to inspect the data provided by buffer_p/wrLen for validity. If CI_ERROR is returned the write will be canceled and no data is written to the associated item. The application may capture a copy of the data using memcpy. In case of a error, the application has to provide valid error information using the CI_PnetStatus_t structure. If the callback returns CI_OK, the data will be stored in the respective item. \_Note - it is allowed to pass NULL for this callback in CI_PnetCallbackFunctionTable_t if the use of this callback is not required
+The writeItemValidate_p callback allows a application to inspect the data
+provided by buffer_p/wrLen for validity. If CI_ERROR is returned the write will
+be canceled and no data is written to the associated item. The application may
+capture a copy of the data using memcpy. In case of a error, the application has
+to provide valid error information using the CI_PnetStatus_t structure. If the
+callback returns CI_OK, the data will be stored in the respective item. \_Note -
+it is allowed to pass NULL for this callback in CI_PnetCallbackFunctionTable_t
+if the use of this callback is not required
 
 ::
 
@@ -5428,7 +5715,11 @@ The writeItemValidate_p callback allows a application to inspect the data provid
 7.3.3 finet Status – CI_PnetStatus_t
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first four parameters represent the PNIO Status according to IEC61158-6 The "addValue" values shall contain additional user information within negative responses. The value zero indicates no further information. For positive read responses, the a 1 in addValue1 shall indicate that the Record Data Object contains more data than have been read.
+The first four parameters represent the PNIO Status according to IEC61158-6 The
+"addValue" values shall contain additional user information within negative
+responses. The value zero indicates no further information. For positive read
+responses, the a 1 in addValue1 shall indicate that the Record Data Object
+contains more data than have been read.
 
 ::
 
@@ -5444,7 +5735,8 @@ The first four parameters represent the PNIO Status according to IEC61158-6 The 
 7.4 Reading and Writing I&M Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Profinet knows 5 I&M (Information and Maintenance) records. This implementation supports I&M 0 thru 4:
+Profinet knows 5 I&M (Information and Maintenance) records. This implementation
+supports I&M 0 thru 4:
 
 +------------+------------------------------------------------------------+-------------------------------------------------------------+
 | I&M Record | Content                                                    | Use                                                         |
@@ -5470,7 +5762,11 @@ Using TIA Portal [Siemens Support][https://support.industry.siemens.com/cs/mdm/4
 7.4.2 Read I&M Data Via Extension API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Read one of the 5 I&M data records from the Profinet stack. The function works pretty straight forward, using just the address information as an input (api, slot, subslot). The selectIM value can be in range 0..4 to select the desired I&M record. \_Please note that the user is not informed whether the PLC updates IM 1..4\_
+Read one of the 5 I&M data records from the Profinet stack. The function works
+pretty straight forward, using just the address information as an input (api,
+slot, subslot). The selectIM value can be in range 0..4 to select the desired
+I&M record. \_Please note that the user is not informed whether the PLC updates
+IM 1..4\_
 
 ::
 
@@ -5485,7 +5781,22 @@ Read one of the 5 I&M data records from the Profinet stack. The function works p
 7.4.3 Write I&M Data via Extension API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Write one of the writeable I&M data records to the Profinet stack. The function works pretty straight forward, using just the address information as an input (api, slot, subslot). The selectIM value can be in range 0..4 to select the desired I&M record. Also note that IM0 is read only, with two exceptions: 1. Exception: The value revCount For some profiles, it is required to update revCount. RefCount is updated for the given module at api/slot/subslot if a IM0 record is supported by the module. To write revCount via this api function, use a CI_PnetIM0Record_t struct and set revCount to the desired value. All other values in that struct are ignored. \_Note: To update the device I&M0 revCount, use api=0, slot=0 and subslot=1;\_ 2. Exception: If a sub-module does not have a I&M set already If a I&M0 record per submodule is desired, it can be attached using this function. However, once it is set future updates will not be successful - except for updating the revCount. Or more generally said, a IM0 record can not be overwritten once set. \_Note: Reset to factory or unplugging will clear the I&M0 records of any but device/DAP/PORT submodule in Slot 0!\_ \_Note: Reset to factory clears I&M records\_
+Write one of the writeable I&M data records to the Profinet stack. The function
+works pretty straight forward, using just the address information as an input
+(api, slot, subslot). The selectIM value can be in range 0..4 to select the
+desired I&M record. Also note that IM0 is read only, with two exceptions: 1.
+Exception: The value revCount For some profiles, it is required to update
+revCount. RefCount is updated for the given module at api/slot/subslot if a IM0
+record is supported by the module. To write revCount via this api function, use
+a CI_PnetIM0Record_t struct and set revCount to the desired value. All other
+values in that struct are ignored. \_Note: To update the device I&M0 revCount,
+use api=0, slot=0 and subslot=1;\_ 2. Exception: If a sub-module does not have a
+I&M set already If a I&M0 record per submodule is desired, it can be attached
+using this function. However, once it is set future updates will not be
+successful - except for updating the revCount. Or more generally said, a IM0
+record can not be overwritten once set. \_Note: Reset to factory or unplugging
+will clear the I&M0 records of any but device/DAP/PORT submodule in Slot 0!\_
+\_Note: Reset to factory clears I&M records\_
 
 ::
 

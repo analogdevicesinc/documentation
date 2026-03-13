@@ -3,7 +3,6 @@ AD-FMCOMMS2-EBZ / AD-FMCOMMS4-EBZ / AD-FMCOMMS5-EBZ Specifications
 
 +---------------------------------------------------------------------------------------------+
 
-
 | The following equipments were used to generate the following characterization data:         |
 
 +---------------------------------------------------------------------------------------------+
@@ -128,50 +127,50 @@ Bandwidth
 +-----------------------------------------------------------------+------------------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/setup2.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/tx_lo_sweep.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/imd3_tx_lo2.4ghz_1mhzspacing_-4dbattenuation_0.625scale.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/imd3_tx_lo2.4ghz_1mhzspacing_-4dbattenuation_0.125scale.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/imd3_tx_lo2.4ghz_1mhzspacing_-4dbattenuation_0.625scale.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/imd3_tx_lo2.4ghz_1mhzspacing_-4dbattenuation_0.125scale.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/imd3_tx_lo2.4ghz_1mhzspacing_-4dbattenuation_0.25scale.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/imd3_tx_lo2.4ghz_1mhzspacing_-4dbattenuation_0.5scale_0000.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/imd3_tx_lo2.4ghz_1mhzspacing_-4dbattenuation_0.25scale.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/imd3_tx_lo2.4ghz_1mhzspacing_-4dbattenuation_0.5scale_0000.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/phase_noise_tx_lo2.4ghz_1mhztone_-10dbattenuation_0.5scale_.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/phase_noise_tx_lo2.4ghz_1mhztone_-10dbattenuation_0.25scale.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/lte_10tx_0dbatten_2_45ghz_fdd.png
-   :width: 500px
+   :width: 500
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/lte_10tx_10dbatten_2_45ghz_fdd.png
-   :width: 500px
+   :width: 500
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/lte_10tx_20dbatten_2_45ghz_fdd.png
-   :width: 500px
+   :width: 500
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/lte_20tx_0dbatten_2_45ghz_fdd.png
-   :width: 500px
+   :width: 500
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/lte_20tx_10dbatten_2_45ghz_fdd.png
-   :width: 500px
+   :width: 500
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/lte_20tx_20dbatten_2_45ghz_fdd.png
-   :width: 500px
+   :width: 500
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/rx_lo_sweep.png
-   :width: 400px
+   :width: 400
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/lte_10_rx_slow_agc_2_45ghz_neg45dbm_input_tdd.png
-   :width: 500px
+   :width: 500
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/bw_sweep_rx_lo2.4ghz_slowattack_gc.png
-   :width: 400px
+   :width: 400
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/bw_sweep_rx_lo2.4ghz_manual_gc.png
-   :width: 400px
+   :width: 400
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/bw_sweep_rx_lo2.4ghz_slowattack_gc.png
-   :width: 400px
+   :width: 400
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/bw_sweep_rx_lo2.4ghz_manual_gc.png
-   :width: 400px
+   :width: 400

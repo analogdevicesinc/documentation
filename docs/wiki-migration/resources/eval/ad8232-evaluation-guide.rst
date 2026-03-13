@@ -3,7 +3,8 @@ AD8232 EVALUATION BOARD DOCUMENTATION
 
 .. tip::
 
-   The user guide (UG-514) for the latest evaluation board (08-035378 REV A) can be downloaded from the AD8232 product page
+   The user guide (UG-514) for the latest evaluation board (08-035378 REV A) can
+   be downloaded from the AD8232 product page
 
    
    http://www.analog.com/en/specialty-amplifiers/instrumentation-amplifiers/ad8232/products/product.html
@@ -16,4 +17,3 @@ AD8232 EVALUATION BOARD DOCUMENTATION
    
    :doc:`/wiki-migration/resources/eval/ad8232-evaluation-guide/a03321a`
    
-

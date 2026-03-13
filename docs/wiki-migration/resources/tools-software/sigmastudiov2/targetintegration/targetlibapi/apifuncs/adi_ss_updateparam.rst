@@ -14,7 +14,8 @@ Prototype
 
 Description
 
-This function is used to update a single or a set SS+ parameters into the SS+ parameter memory space.
+This function is used to update a single or a set SS+ parameters into the SS+
+parameter memory space.
 
 Parameters
 

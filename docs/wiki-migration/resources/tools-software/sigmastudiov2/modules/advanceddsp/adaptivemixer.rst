@@ -9,12 +9,17 @@ Adaptive Mixer Dual Graph
 Description
 -----------
 
-The Adaptive Mixer Dual (graph) is an advanced method of mixing two signals based on a third control signal.
+The Adaptive Mixer Dual (graph) is an advanced method of mixing two signals
+based on a third control signal.
 
 Usage
 -----
 
-The orange pin here indicates that the input control signal will be converted to a RMS average value, eliminating the need to use the RMS table for this application. The RMS table value is used to determine the scale factors for the signals to be mixed. Users can select and change the curves for both signals to be mixed.\|
+The orange pin here indicates that the input control signal will be converted to
+a RMS average value, eliminating the need to use the RMS table for this
+application. The RMS table value is used to determine the scale factors for the
+signals to be mixed. Users can select and change the curves for both signals to
+be mixed.\|
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/advanceddsp/mixerpopup.png
    :alt: mixerpopup.png
@@ -50,7 +55,6 @@ Name    Type  Description
 ======= ===== ============================
 Output0 Audio Compressed mono audio output
 ======= ===== ============================
-
 
 | ===== Configurable Parameters =====
 

@@ -8,7 +8,10 @@ Beam Forming Designer
 Description
 -----------
 
-Beam-former algorithm with fractional delay combines signals in a manner which increases the signal strength to/from a chosen direction. Signals to/from other directions are combined in a benign or destructive manner, resulting in degradation of the signal to/from the undesired direction.
+Beam-former algorithm with fractional delay combines signals in a manner which
+increases the signal strength to/from a chosen direction. Signals to/from other
+directions are combined in a benign or destructive manner, resulting in
+degradation of the signal to/from the undesired direction.
 
 Targets Supported
 -----------------
@@ -18,7 +21,6 @@ Name                 ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x
 ==================== ========== ================ =============
 Beamforming Designer Block      Block            Sample
 ==================== ========== ================ =============
-
 
 | ===== Pins =====
 
@@ -40,7 +42,6 @@ Name    Type  Description
 ======= ===== ===============
 Output0 Audio Output channel0
 ======= ===== ===============
-
 
 | ===== Grow & Add Algorithm ===== The module does not support both Grow and Add Algorithm.
 

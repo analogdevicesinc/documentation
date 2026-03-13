@@ -12,7 +12,7 @@ The **ADuCM360_demo_cn0326** project uses the :adi:`EVAL-CN0326-PMDZ pmod <en/de
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_hw_connected.jpg
    :align: left
-   :width: 600px
+   :width: 600
 
 The CN0326 circuit provides a complete solution for pH sensors with internal resistance between **1 MΩ** and several **GΩ**. It consist of **pH probe** buffer, **Pt1000 RTD** for temperature compensation and **24-bits ADC** with 3 differential analog inputs.
 
@@ -26,8 +26,9 @@ The **EVAL-CN0326-PMDZ** comes with an evaluation software which can help you to
 
    Please visit :doc:`CN0326 Software User Guide page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0326>` to find out how to get and how to use the CN0326 evaluation software.
 
-
-The potential changes are outputted as ADC 24-bits value which is received via SPI interface of the EVAL-ADICUP360 board. The ADC analog differential channels are:
+The potential changes are outputted as ADC 24-bits value which is received via
+SPI interface of the EVAL-ADICUP360 board. The ADC analog differential channels
+are:
 
 -  **AIN1(+)/AIN1(-)** - pH probe (voltage full range: ±414 mV at 25°C to ±490 mV at 80°C)
 -  **AIN2(+)/AIN2(-)** - Pt1000 RTD (voltage full range: 210 mV to 290 mV with 210 μA excitation current)
@@ -35,24 +36,25 @@ The potential changes are outputted as ADC 24-bits value which is received via S
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2.png
    :align: right
-   :width: 549px
+   :width: 549
 
 The **ADuCM360_demo_cn0326** application purchase ADC outputs from input channels, calculates voltage, temperature and pH values. You can choose to use internal excitation current of the ADC (IOUT2) or calculate bias current of the circuit (see *USE_IOUT2* parameter).
 
 A UART interface (9600 baud rate and 8-bits data length) is used, as a command line interpreter, to send the results to terminal window: **temperature** and **ph** values. Beside this two the interpreter process other three commands: **help**, **calibrate** channel/channels and ADC **reset**.
 
-To start the command line interpreter you need to press ENTER key (CR) from the keyboard and after that just type in <help> to see available commands. The output data are send via UART using semihosting.
+To start the command line interpreter you need to press ENTER key (CR) from the
+keyboard and after that just type in <help> to see available commands. The
+output data are send via UART using semihosting.
 
 .. note::
 
    The calibrate command perform an internal zero and full scale calibration of the selected channel/channels (:adi:`AD7793 Datasheet <media/en/technical-documentation/data-sheets/AD7792_7793.pdf>`).
 
-
 The project uses below formula to determine output **ADC code** for an input voltage on either channel:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_1.png
    :align: left
-   :width: 250px
+   :width: 250
 
 **AIN** - analog input voltage
 
@@ -64,7 +66,7 @@ The **temperature** value is calculated using RTD resistance value and it varies
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_2.png
    :align: left
-   :width: 240px
+   :width: 240
 
 **Rrtd** - RTD resistance at T°C
 
@@ -115,26 +117,33 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
+-  To program the base board, set the jumpers/switches as shown in the next
+   figure. The important jumpers/switches are highlighted in red.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0336_demo_3.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Connect the **EVAL-CN0326-PMDZ** to the SPI PMOD connector **P4** of the **EVAL-ADICUP360** board.
--  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
+-  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
+   Debug USB.(P14)
 
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the CN0326.
+There are two basic ways to program the ADICUP360 with the software for the
+CN0326.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_cn0326** demo can be found here:
 
@@ -151,11 +160,9 @@ The software for the **ADuCM360_demo_cn0326** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0326 Source Code <projects/ADuCM360_demo_cn0326>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -219,7 +226,7 @@ Command       Description
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2.png
    :align: center
-   :width: 549px
+   :width: 549
 
 How to use the Tools
 --------------------
@@ -241,13 +248,16 @@ Project structure
 
 The **ADuCM360_demo_cn0326** project use ADuCM36x C/C++ Project structure.
 
-This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI0, UART via P0.6/P0.7; SPI, UART read/write functions; AD7793 control, voltage conversion, command interpreter, temperature and pH calculations.
+This project contains: system initialization part - disabling watchdog, setting
+system clock, enabling clock for peripherals; port configuration for SPI0, UART
+via P0.6/P0.7; SPI, UART read/write functions; AD7793 control, voltage
+conversion, command interpreter, temperature and pH calculations.
 
 In the **src** and **include** folders you will find the source and header files related to CN0326 software application. The *Communication.c/h* files contain SPI and UART specific data, meanwhile the *AD7793.c/h* files contain the ADC control data and the *CN0326.c/h* files contain the pH monitor application data.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_5.png
    :align: left
-   :width: 330px
+   :width: 330
 
 The **RTE** folder contains device and system related files:
 
@@ -257,4 +267,4 @@ The **RTE** folder contains device and system related files:
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_3.png
-   :width: 361px
+   :width: 361

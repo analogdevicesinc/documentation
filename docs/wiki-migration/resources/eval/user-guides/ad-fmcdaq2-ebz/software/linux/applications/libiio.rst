@@ -1,13 +1,14 @@
 libiio
 ======
 
-
 What is libiio?
 ===============
 
 Libiio is a library that has been developed by Analog Devices to ease the development of software interfacing Linux :doc:`Industrial I/O (IIO) </wiki-migration/software/linux/docs/iio/iio>` devices.
 
-The library abstracts the low-level details of the hardware, and provides a simple yet complete programming interface that can be used for advanced projects.
+The library abstracts the low-level details of the hardware, and provides a
+simple yet complete programming interface that can be used for advanced
+projects.
 
 The library is composed by one high-level API, and several backends:
 
@@ -18,12 +19,13 @@ The IIO Daemon (IIOD) server is a good example of an application that uses *libi
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio_diagram.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Network Backends
 ================
 
-If you just want to use libiio and iiod, which may be on a pre-compiled image - there are many places you can stream data to.
+If you just want to use libiio and iiod, which may be on a pre-compiled image -
+there are many places you can stream data to.
 
 -  :doc:`MATLAB and Simulink </wiki-migration/resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
 -  :doc:`Visual Analog </wiki-migration/resources/tools-software/linux-software/libiio/clients/visual_analog>`
@@ -35,7 +37,6 @@ Where to get libiio?
 ====================
 
 The libiio library can be obtained on the `Github <http://github.com/analogdevicesinc/libiio>`_ page of the project.
-
 
 How to build it?
 ================
@@ -61,7 +62,8 @@ On a Debian-flavoured GNU/Linux distribution, like Ubuntu for instance:
 
    rgetz@pinky:~$ sudo apt-get install build-essential libxml2 libzstd-dev libxml2-dev bison flex libcdk5-dev cmake
 
-Depending on the backend (how you want to attach the IIO device), you may need at least one of:
+Depending on the backend (how you want to attach the IIO device), you may need
+at least one of:
 
 ::
 
@@ -74,7 +76,8 @@ RedHAT based distributions
 
    [liveuser@localhost-live ~]$ sudo dnf install libxml2 libzstd-dev libxml2-devel bison flex make gcc cmake rpmdevtools
 
-Depending on the backend (how you want to attach the IIO device), you may need at least one of:
+Depending on the backend (how you want to attach the IIO device), you may need
+at least one of:
 
 ::
 
@@ -87,7 +90,8 @@ FreeBSD based distributions
 
    rgetz@freebsd:~ $ sudo pkg update && sudo pkg upgrade && sudo pkg install libzstd libxml2 bison flex gcc cmake git
 
-Depending on the backend (how you want to attach the IIO device), you may need at least one of:
+Depending on the backend (how you want to attach the IIO device), you may need
+at least one of:
 
 ::
 
@@ -101,7 +105,8 @@ add these lines to ``/etc/rc.conf``:
    avahi_daemon_enable="YES"
    avahi_dnsconfd_enable="YES"
 
-FreeBSD does not automount USB drives by default, so you need to install an automounter:
+FreeBSD does not automount USB drives by default, so you need to install an
+automounter:
 
 ::
 
@@ -112,10 +117,12 @@ Remaining steps1
 
 .. warning::
 
-   At this time the main branch of libiio in under heavy development. It is recommended to use the latest release if not a developer. That would be a v0.XX release.
+   At this time the main branch of libiio in under heavy development. It is
+   recommended to use the latest release if not a developer. That would be a
+   v0.XX release.
 
-
-Now you have the prerequisite installed, you can clone a release branch from the GIT repository:
+Now you have the prerequisite installed, you can clone a release branch from the
+GIT repository:
 
 ::
 
@@ -129,7 +136,9 @@ Finally, in the ``libiio/`` directory,
 
 This will build ``libiio`` in the ``build`` subdirectory, and install it to ``/usr``. Note that it is possible to install to a different location by setting the PREFIX variable.
 
-To build iio oscilloscope you'll have to make sure libiio directories can be found, one way to do this given it installed to /usr/lib is add it to your sessions PATH:
+To build iio oscilloscope you'll have to make sure libiio directories can be
+found, one way to do this given it installed to /usr/lib is add it to your
+sessions PATH:
 
 ::
 
@@ -138,7 +147,8 @@ To build iio oscilloscope you'll have to make sure libiio directories can be fou
 Understanding which libiio is being used
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-During development, sometimes it can be a puzzle which version of libiio is being used. An easy way to tell is to do something like:
+During development, sometimes it can be a puzzle which version of libiio is
+being used. An easy way to tell is to do something like:
 
 ::
 
@@ -203,7 +213,8 @@ The instructions for building libiio with Visual Studio are available here: :doc
 Enabling IIOD USB Backend
 =========================
 
-In order to use the libIIO USB Backend - support must be built into IIOD. A simple check is shown below:
+In order to use the libIIO USB Backend - support must be built into IIOD. A
+simple check is shown below:
 
 .. container:: box bggreen
 
@@ -216,19 +227,21 @@ In order to use the libIIO USB Backend - support must be built into IIOD. A simp
       ERROR: IIOD was not compiled with USB support.
    
 
-
 In this case LibIIO / IIOD needs to be built with USBD support. (WITH_IIOD_USBD)
 
-If all the dependencies are met, the USB Backend is built automatically. However the 'WITH_IIOD_USBD' option is only available under certain conditions.
+If all the dependencies are met, the USB Backend is built automatically. However
+the 'WITH_IIOD_USBD' option is only available under certain conditions.
 
 In the log of cmake, if you see: *Check size of struct usb_functionfs_descs_head_v2 - failed*
 
-Although your kernel itself probably is recent enough, your kernel headers are too old.
+Although your kernel itself probably is recent enough, your kernel headers are
+too old.
 
 The fix:
 
 -  Download the file: https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/usb/functionfs.h
--  And place it in /usr/include/linux/usb/functionsfs.h, overwriting the old one.
+-  And place it in /usr/include/linux/usb/functionsfs.h, overwriting the old
+   one.
 
 .. container:: box bggreen
 
@@ -241,7 +254,6 @@ The fix:
       root@analog:/usr/include/linux/usb# rm functionfs.h
       root@analog:/usr/include/linux/usb# wget https:<nowiki>//</nowiki>raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/usb/functionfs.h
    
-
 
 Rebuild LibIIO
 --------------
@@ -280,13 +292,13 @@ Starting IIOD with USB Support
    -  `iiod-usb.conf <http://swdownloads.analog.com/cse/share/iiod-usb.conf>`_
    
 
-
 Copy (and replace) iiod.conf upstart script into /etc/init
 
 Testing
 -------
 
-If everything works out well the USB context should be included in the available context list.
+If everything works out well the USB context should be included in the available
+context list.
 
 ::
 
@@ -331,5 +343,3 @@ libiio - AD9361 IIO streaming example
 +=============================================================================================================+==============================================================================================+
 | :git-libiio:`examples/ad9361-iiostream.c`                                                                   | Configures the AD9361 transceiver, receives samples, processes them and sends them back out. |
 +-------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-
-

@@ -17,7 +17,9 @@ The :adi:`ADXL313` is a small, thin, low power, 3-axis accelerometer with high r
 
 The :adi:`ADXL314` is a small, thin, 3-axis accelerometer that provides low power consumption and high-resolution measurement of ±200 g. More information about the device can be found :adi:`here <en/products/adxl313.html#product-overview>`.
 
-Digital output data is formatted as 16-bit twos complement and is accessible through either a serial port interface (SPI) (3- or 4-wire) or I2C digital interface.
+Digital output data is formatted as 16-bit twos complement and is accessible
+through either a serial port interface (SPI) (3- or 4-wire) or I2C digital
+interface.
 
 Applications
 ~~~~~~~~~~~~
@@ -30,7 +32,8 @@ Applications
 Breakout Board
 ~~~~~~~~~~~~~~
 
-Each device is mounted on a simple breakout board that enables easy connection into an existing system.
+Each device is mounted on a simple breakout board that enables easy connection
+into an existing system.
 
 -  :adi:`EVAL-ADXL312Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-adxl312.html#eb-overview>`
 -  :adi:`EVAL-ADXL313Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-adxl313.html#eb-overview>`
@@ -39,7 +42,7 @@ Each device is mounted on a simple breakout board that enables easy connection i
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/adi/eval-adxl312zangle-web.png
    :alt: EVAL-ADXL312Z
    :align: center
-   :width: 200px
+   :width: 200
 
 ADI No-OS
 ---------
@@ -64,8 +67,8 @@ The source code for the ADXL313 driver:
    -   :git-no-OS:`Implementation of ADXL313 Driver <drivers/accel/adxl313/adxl313.c>`
    
 
-
-The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library:
+The driver also uses the ADI util library, so make sure you also add the
+necessary files in your project. The source code for the util library:
 
 .. admonition:: Download
    :class: download
@@ -75,8 +78,10 @@ The driver also uses the ADI util library, so make sure you also add the necessa
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
-
-In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the ADXL313 driver and have to be implemented:
+In order to be able to use this driver you will have to provide the specific
+implementation for the communication APIs and the specific types they use. If
+the SPI communication is chosen, there are three functions which are called by
+the ADXL313 driver and have to be implemented:
 
 -  no_os_spi_init() – initializes the communication peripheral,
 -  no_os_spi_write_and_read() – writes and reads data to/from the device,
@@ -85,9 +90,11 @@ In order to be able to use this driver you will have to provide the specific imp
 And there are two data types that have to be defined:
 
 -  no_os_spi_desc - structure holding the SPI descriptor,
--  no_os_spi_init_param - structure holding the parameters for SPI initialization.
+-  no_os_spi_init_param - structure holding the parameters for SPI
+   initialization.
 
-If the I2C communication is chosen, there are four functions which are called by the ADXL313 driver:
+If the I2C communication is chosen, there are four functions which are called by
+the ADXL313 driver:
 
 -  i2c_init() – initializes the communication peripheral,
 -  i2c_write() – writes data to the device,
@@ -97,9 +104,11 @@ If the I2C communication is chosen, there are four functions which are called by
 And there are two data types that have to be defined:
 
 -  no_os_i2c_desc - structure holding the I2C descriptor,
--  no_os_i2c_init_param - structure holding the parameters for SPI initialization.
+-  no_os_i2c_init_param - structure holding the parameters for SPI
+   initialization.
 
-Example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using:
+Example of a header file containing the prototypes of the functions which have
+to be implemented, along with some generic data types they are using:
 
 .. admonition:: Download
    :class: download
@@ -109,11 +118,11 @@ Example of a header file containing the prototypes of the functions which have t
    -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
 
-
 ADXL313 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available at:
 
 -  `ADXL313 Header file <http://analogdevicesinc.github.io/no-OS/adxl313_8h.html>`_,
 -  `ADXL313 Source file <http://analogdevicesinc.github.io/no-OS/adxl313_8c.html>`_.
@@ -126,8 +135,8 @@ Driver Initialization
 
 .. note::
 
-   Some of the routines described below do not apply to all supported devices. In such cases, the text specifies to which device the instruction applies.
-
+   Some of the routines described below do not apply to all supported devices.
+   In such cases, the text specifies to which device the instruction applies.
 
 In order to be able to use the device, you will have to provide the support for the communication protocol (SPI or I2C) as mentioned above. The first API to be called is **adxl313_init**. Make sure that it returns 0, which means that the driver was initialized correctly.
 
@@ -262,7 +271,8 @@ More on :doc:`no-OS IIO </wiki-migration/resources/tools-software/no-os-software
 ADXL313 IIO No-OS driver
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADXL313 IIO driver comes on top of ADXL313 driver and offers support for interfacing IIO clients through IIO lib.
+The ADXL313 IIO driver comes on top of ADXL313 driver and offers support for
+interfacing IIO clients through IIO lib.
 
 ADXL313 IIO Driver Source Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -277,11 +287,11 @@ Source code for ADXL313 driver:
    -   :git-no-OS:`Implementation of ADXL313 IIO Driver <drivers/accel/adxl313/iio_adxl313.c>`
    
 
-
 ADXL313 IIO Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the IIO driver is automatically generated using the Doxygen tool and it is available at:
+Source code documentation for the IIO driver is automatically generated using
+the Doxygen tool and it is available at:
 
 -  `ADXL313 IIO Header file <http://analogdevicesinc.github.io/no-OS/iio__adxl313_8h.html>`_
 -  `ADXL313 IIO Source file <http://analogdevicesinc.github.io/no-OS/iio__adxl313_8c.html>`_
@@ -297,7 +307,8 @@ The ADXL313 IIO device does not have any device specific attributes.
 Device Channels
 ~~~~~~~~~~~~~~~
 
-The ADXL313 IIO device has 0 input channels and 3 output channels, corresponding to the acceleration on the three axes.
+The ADXL313 IIO device has 0 input channels and 3 output channels, corresponding
+to the acceleration on the three axes.
 
 The acceleration channels are:
 
@@ -305,7 +316,9 @@ The acceleration channels are:
 -  Channel 1: accel_y,
 -  Channel 2: accel_z.
 
-Each acceleration channel has 8 attributes. 6 of these attributes are shared in value with the other acceleration channels and 2 of these attributes can have different values for each channel.
+Each acceleration channel has 8 attributes. 6 of these attributes are shared in
+value with the other acceleration channels and 2 of these attributes can have
+different values for each channel.
 
 The attributes are:
 

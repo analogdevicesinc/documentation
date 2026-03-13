@@ -11,7 +11,12 @@ PlutoSDR or M2k allows WIFI connectivity using ESSID and WPA-PSK passphrase. The
 Supported WIFI chipsets
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Linux supports a large number of USB 802.11 WIFI modules. Most of these also require a firmware file to be available on the host device. Given the constrained flash memory footprint of the device, the decision was made to support only a number of popular Ralink and Realtek based chipset modules. This includes also a few unstable drivers from the kernel staging area, so not all modules will work equally well.
+Linux supports a large number of USB 802.11 WIFI modules. Most of these also
+require a firmware file to be available on the host device. Given the
+constrained flash memory footprint of the device, the decision was made to
+support only a number of popular Ralink and Realtek based chipset modules. This
+includes also a few unstable drivers from the kernel staging area, so not all
+modules will work equally well.
 
 Supported chipsets:
 
@@ -22,7 +27,8 @@ Supported chipsets:
 -  Realtek 87xx
 -  Realtek 88xx
 
-Many cheap and widely available modules will work - If you need a recommendation. The models listed below have been tested:
+Many cheap and widely available modules will work - If you need a
+recommendation. The models listed below have been tested:
 
 -  TP-Link TL-WN725N Nano WLAN
 -  Cisco WUSB600N V2
@@ -30,7 +36,12 @@ Many cheap and widely available modules will work - If you need a recommendation
 USB Wired Ethernet Support
 --------------------------
 
-If you want to integrate the PlutoSDR or M2k into a wired Ethernet network directly, without PC in between. Use a wired USB Ethernet adapter. Even though the USB support on PlutoSDR or M2k is only USB 2.0 HIGH SPEED. It’s still beneficial to purchase a USB 3.0 Gigabit Ethernet Adapter. Using those USB 3.0 Gigabit Ethernet Adapters (in IIOD network back-end mode) the throughput can be on par of with the IIOD USB back-end.
+If you want to integrate the PlutoSDR or M2k into a wired Ethernet network
+directly, without PC in between. Use a wired USB Ethernet adapter. Even though
+the USB support on PlutoSDR or M2k is only USB 2.0 HIGH SPEED. It’s still
+beneficial to purchase a USB 3.0 Gigabit Ethernet Adapter. Using those USB 3.0
+Gigabit Ethernet Adapters (in IIOD network back-end mode) the throughput can be
+on par of with the IIOD USB back-end.
 
 Supported chipsets:
 
@@ -41,7 +52,8 @@ Supported chipsets:
 -  SMSC LAN75XX based USB 2.0 gigabit ethernet devices
 -  SMSC LAN95XX based USB 2.0 10/100 ethernet devices
 
-Many cheap and widely available modules will work - If you need a recommendation. The models listed below have been tested:
+Many cheap and widely available modules will work - If you need a
+recommendation. The models listed below have been tested:
 
 -  `Serach Amazon RTL8153 (USB 3.0 10/100/1000) <http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=RTL8153>`_
 -  `Serach Amazon AX88772 (USB 2.0 10/100) <http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=AX88772>`_

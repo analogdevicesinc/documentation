@@ -4,7 +4,9 @@ EV-GEAR-EXPANDER1Z
 Introduction
 ------------
 
-EV-GEAR-EXPANDER1Z is a "Gear" (expansion add-on board) for MCU Cogs (EV-COG-AD3029LZ & EV-COG-AD4050LZ). This gear is designed for quick prototyping and bread boarding.
+EV-GEAR-EXPANDER1Z is a "Gear" (expansion add-on board) for MCU Cogs
+(EV-COG-AD3029LZ & EV-COG-AD4050LZ). This gear is designed for quick prototyping
+and bread boarding.
 
 -  The board provides easy access to all the MCU GPIO signals by bringing the signals on a header array.
 -  It enables
@@ -29,7 +31,7 @@ Primary-side
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picture7_1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Secondary-side
 ~~~~~~~~~~~~~~
@@ -46,7 +48,10 @@ Secondary-side
 Power option
 ------------
 
-The EV-GEAR-EXPANDER1Z board is powered by means of VDD supply from MCU cog through connector C1. The VDD supply is shared between various connectors for PMOD interfaces, SD card reader, Arduino shields and gears. Alternately MCU cog can be powered from EV-GEAR-EXPANDER1Z.
+The EV-GEAR-EXPANDER1Z board is powered by means of VDD supply from MCU cog
+through connector C1. The VDD supply is shared between various connectors for
+PMOD interfaces, SD card reader, Arduino shields and gears. Alternately MCU cog
+can be powered from EV-GEAR-EXPANDER1Z.
 
 -  Power supply header P1 can be used to supply 5V
 -  Pin 10 of header P8 can be used to supply 3V
@@ -63,23 +68,23 @@ The COG connectors C1 and C2 interface the EV-GEAR-EXPANDER1Z board with MCU Cog
    
    Improper connector mating can also result in the loss of connectivity between MCU COG and EV-GEAR-EXPANDER1Z, make sure that shunts installed on COG are not obstructing the connector mating. \**
 
-
 Gear connectors
 ---------------
 
-The connectors D1 and D2 can be used to connect a Gear. Gear is an addon application board which can be a custom build to serve the required application.
+The connectors D1 and D2 can be used to connect a Gear. Gear is an addon
+application board which can be a custom build to serve the required application.
 
 .. important::
 
    The gear must have the connector (`DF17(4.0)-60DP-0.5V(57) <https://www.digikey.com/DF17(4.0)-60DP-0.5V(57)>`_) to interface with D1 and D2 connectors.
-
 
 The pinout details for D1 and D2 are same as that of COG connectors ( C1, C2 :doc:`expander connector section in EV-COG-AD3029LZ wiki </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/cog_hw_userguide>`).
 
 Arduino Uno headers
 -------------------
 
-The headers A1, A2, A3, A4 and A5 support the shields that are Arduino Uno compatible. The following table captures the signals connected to the headers
+The headers A1, A2, A3, A4 and A5 support the shields that are Arduino Uno
+compatible. The following table captures the signals connected to the headers
 
 ============== =================== ========== =================
 Connector name Connector reference Pin_number Signal_name
@@ -127,7 +132,13 @@ Arduino        A1                  1          SPI0_MISO
 PMOD interfaces
 ---------------
 
-The EV-GEAR-EXPANDER1Z board offers connectors with PMOD SPI, PMOD I2C and PMOD IO/SensorStrobe interfaces. Any PMOD peripheral module with PMOD SPI or PMOD I2C interface can be directly plugged into these connectors. The host MCU communicates to the modules by means of SPI or I2C. The Sensorstrobe connector is a custom connector which provides access to ADuCM3029/ADuCM4050 SensorStrobe signals and few other GPIOs. The pinout details of the PMOD connectors are given below.
+The EV-GEAR-EXPANDER1Z board offers connectors with PMOD SPI, PMOD I2C and PMOD
+IO/SensorStrobe interfaces. Any PMOD peripheral module with PMOD SPI or PMOD I2C
+interface can be directly plugged into these connectors. The host MCU
+communicates to the modules by means of SPI or I2C. The Sensorstrobe connector
+is a custom connector which provides access to ADuCM3029/ADuCM4050 SensorStrobe
+signals and few other GPIOs. The pinout details of the PMOD connectors are given
+below.
 
 ====================== =================== ========== ==============
 Connector name         Connector reference Pin_number Signal_name
@@ -163,7 +174,9 @@ PMOD I2C               P5                  1          I2C0_SCL
 Debug headers
 -------------
 
-The Debug headers P6, P7 and P8 can be used to probe certain MCU GPIOs. The headers consist of male and female pins. The following table captures the pinout.
+The Debug headers P6, P7 and P8 can be used to probe certain MCU GPIOs. The
+headers consist of male and female pins. The following table captures the
+pinout.
 
 ============== =================== ========== =============
 Connector name Connector reference Pin_number Signal_name
@@ -209,11 +222,9 @@ Design Files
    -  `Assembly Files <https://wiki.analog.com/_media/resources/eval/user-guides/01-046895-01b.zip>`_ (Zip)
    
 
-
-
 | End Document
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picture8.png
-   :width: 600px
+   :width: 600

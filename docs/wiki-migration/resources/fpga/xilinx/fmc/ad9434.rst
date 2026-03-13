@@ -35,7 +35,8 @@ An external clock source can be connected to J201, but this need to be done by c
 CPU/Memory interconnects
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The addresses are dependent on the architecture of the FPGA, having an offset added to the base address from HDL. Check-out the tables below:
+The addresses are dependent on the architecture of the FPGA, having an offset
+added to the base address from HDL. Check-out the tables below:
 
 CPU:
 
@@ -49,7 +50,6 @@ CPU:
    axi_ad9434_dma 0x44A3_0000
    ============== ============
    
-
 
 SPI connections
 ~~~~~~~~~~~~~~~
@@ -65,7 +65,6 @@ SPI connections
    ======== ==================== =============== ===
    
 
-
 Interrupts
 ~~~~~~~~~~
 
@@ -80,7 +79,6 @@ Below are the Programmable Logic interrupts used in this project.
    axi_ad9783_dma 13  57         89
    ============== === ========== ===========
    
-
 
 Building the HDL projects
 -------------------------
@@ -110,7 +108,6 @@ Board Files:
    -  `ad9434_fmc_gerbers_wiki.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9434_fmc_gerbers_wiki.zip>`_
    
 
-
 Setup guide
 ~~~~~~~~~~~
 
@@ -139,7 +136,9 @@ For ZEDBOARD place the VADJ Jumper on 2.5V.
 
 The ad9434_fmc should be configured this way:
 
-This is and example of configuration for the AD9434-FMC-500EBZ board. In this configuration we don't need an external source of signal generator for the CLKIN port, because it will be configured to use the internal oscillator.
+This is and example of configuration for the AD9434-FMC-500EBZ board. In this
+configuration we don't need an external source of signal generator for the CLKIN
+port, because it will be configured to use the internal oscillator.
 
 -  Jumper P100: on pins 1 and 2 (this Jumper configures the source of clock; as it this now, it uses the internal signal generator)
 -  Jumper J300: on row pins 3 and 4, or PD and AGND(see jumper schematic next to it on the board)
@@ -153,18 +152,25 @@ To begin, connect the AD9434-FMC board to the FMC-LPC connector of ZC706. Connec
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9434_zc706_setup.png
    :alt: Setup
-   :width: 500px
+   :width: 500
 
 After finding the IP address, open IIO Oscilloscope and choose manual connection. Write **ip:your_ip_address** and click on refresh or press enter. In the textboxes below should appear different information and you should see the name of the carrier and the name of the FMC. After connecting to the ZC706, you may proceed with the testing of the board. Click on **File->New plot** to get a new plot. As mentioned, you need a external signal generator. If you generate a signal with a 10MHz frequency and 100mVpp amplitude, you should get something like this:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9434_zc706_10mhz_1000samples.png
    :alt: IIO Oscilloscope capture
-   :width: 600px
+   :width: 600
 
 Functional Description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design is built on a microblaze based system parameterized for Linux. It consists of three functional modules, a LVDS interface, a PN monitor and a DMA interface. The LVDS interface captures and buffers data from the ADC. The data is captured using ISERDES primitives and is captured 4 samples wide at 1/4th of the ADC clock (125MHz at 500MHz ADC clock). The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software.
+The reference design is built on a microblaze based system parameterized for
+Linux. It consists of three functional modules, a LVDS interface, a PN monitor
+and a DMA interface. The LVDS interface captures and buffers data from the ADC.
+The data is captured using ISERDES primitives and is captured 4 samples wide at
+1/4th of the ADC clock (125MHz at 500MHz ADC clock). The DMA interface then
+transfers the samples to the external DDR-DRAM. The capture is initiated by the
+software. The status of capture (overflow, over the range) are reported back to
+the software.
 
 Registers
 ~~~~~~~~~
@@ -174,7 +180,8 @@ Refer to the regmap.txt file inside the pcores directory or from :git-hdl:`here 
 Clock Selection
 ~~~~~~~~~~~~~~~
 
-The board provides different possible clock path for clocking the AD9434(some modification may be necessary).
+The board provides different possible clock path for clocking the AD9434(some
+modification may be necessary).
 
 Resources
 ---------
@@ -187,7 +194,6 @@ Hardware related:
    -  :adi:`EVAL-AD9434`
    -  :adi:`AD9434`
    
-
 
 HDL related:
 
@@ -215,7 +221,6 @@ HDL related:
    +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    
 
-
 Software related:
 
 .. container:: box
@@ -224,4 +229,3 @@ Software related:
    -  :git-linux:`Linux device tree <arch/arm/boot/dts/zynq-zc706-adv7511-ad9434-fmc-500ebz.dts>`
    -  `AD9434 driver <https://github.com/analogdevicesinc/linux/blob/9197af5e6cfe0f804df581581348cbb81e5f0190/drivers/iio/adc/ad9467.c#L143>`_
    
-

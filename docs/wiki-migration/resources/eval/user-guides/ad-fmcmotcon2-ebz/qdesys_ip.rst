@@ -11,14 +11,14 @@ QDESYS Motor Control IP & EtherCAT Design
 |Phase currents| |Stator Currents vs Space|
 
 .. |Main panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_main_panel.png
-   :width: 400px
+   :width: 400
 .. |PWM control panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_pwm_panel.png
-   :width: 400px
+   :width: 400
 .. |Current settings panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_current_settings.png
-   :width: 400px
+   :width: 400
 .. |RPFM control panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_rpfm_panel.png
-   :width: 400px
+   :width: 400
 .. |Phase currents| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_currents.png
-   :width: 400px
+   :width: 400
 .. |Stator Currents vs Space| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_currents_xy.png
-   :width: 400px
+   :width: 400

@@ -5,22 +5,31 @@ Stopwatch w/ External Reset
 
 |stopwatchwextpic1.png| The stopwatch block allows for a stop, start, and reset counting mechanism. When one needs to know how long something takes (i.e. how many samples have passed), you signal the start and stop of an event, and a stopwatch measures the time between the signaling of the start and stop. Stopwatches also allow for the count to be reset to zero to measure additional time intervals.
 
-Note: This block differs from the Stopwatch block because it can be reset by an external input signal. The regular Stopwatch can only be reset by writing to its reset parameter coefficient.
+Note: This block differs from the Stopwatch block because it can be reset by an
+external input signal. The regular Stopwatch can only be reset by writing to its
+reset parameter coefficient.
 
-The stopwatch allows external signals to control the start and stop of the counter. The output of the stopwatch block is the total sample count, in 28.0 data format, for the active period. When active, the output value and count are incremented for every sample period.
+The stopwatch allows external signals to control the start and stop of the
+counter. The output of the stopwatch block is the total sample count, in 28.0
+data format, for the active period. When active, the output value and count are
+incremented for every sample period.
 
 **Inputs:**
-
 
 |stopwatchwextpic2.png|
 
 -  The top input pin is the START pin. While the STOP pin signal is zero (see below), an input value greater than zero triggers the counter to start, a zero value will stop the counter.
 -  The middle input pin is the STOP pin. An input value greater than zero will stop the counter (regardless of the value of the start pin).
--  The bottom (orange) pin is the RESET control pin. When the reset signal is one, it will reset the value of the counter and output to zero. If the count is active (e.g. START = 1 and STOP = 0) the count will reset to zero continue to increment from zero. If the count is inactive (e.g. START = 0 or STOP = 1) the reset signal clears the count and the output remains at 0.
+-  The bottom (orange) pin is the RESET control pin. When the reset signal is
+   one, it will reset the value of the counter and output to zero. If the count
+   is active (e.g. START = 1 and STOP = 0) the count will reset to zero continue
+   to increment from zero. If the count is inactive (e.g. START = 0 or STOP = 1)
+   the reset signal clears the count and the output remains at 0.
 
 --------------
 
-Below are graphs showing values of the START, STOP, RESET, and the resulting output values.
+Below are graphs showing values of the START, STOP, RESET, and the resulting
+output values.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/stopwatchwextpic3.png
    :alt: stopwatchwextpic3.png
@@ -37,7 +46,15 @@ In this example, the stopwatch can count up to a maximum of 93.02 minutes.
 
 **Example:**
 
-The stopwatch can be used in many different situations. Below is a sample schematic showing the basic operation of the Stopwatch w/ External Reset. The DC input blocks along with a mono switch, allow for the start, stop, and reset pins to be toggled from 0 to 1. This controls the beginning, end, and clearing of the count. The main difference between the Stopwatch and Stopwatch w/ external reset is how the clearing of the count output is handled. In this case an external data signal can be used to control the reset function of the count. With the stopwatch a coefficient parameter (controlled by a button in SigmaStudio) allows the count to be cleared.
+The stopwatch can be used in many different situations. Below is a sample
+schematic showing the basic operation of the Stopwatch w/ External Reset. The DC
+input blocks along with a mono switch, allow for the start, stop, and reset pins
+to be toggled from 0 to 1. This controls the beginning, end, and clearing of the
+count. The main difference between the Stopwatch and Stopwatch w/ external reset
+is how the clearing of the count output is handled. In this case an external
+data signal can be used to control the reset function of the count. With the
+stopwatch a coefficient parameter (controlled by a button in SigmaStudio) allows
+the count to be cleared.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/stopwatchwextpic4.png
    :alt: stopwatchwextpic4.png

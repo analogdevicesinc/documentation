@@ -8,7 +8,13 @@ Overview
 
 The :adi:`AD7124-4 <en/products/ad7124-4.html>` can be configured for 4 differential or 7 pseudo differential input channels, while the :adi:`AD7124-8 <en/products/ad7124-8.html>` can be configured for 8 differential or 15 pseudo differential channels. The on-chip programmable gain array (PGA) ensures that signals of small amplitude can be interfaced directly to the ADC. The system integrates several important system building blocks required to support thermistor measurements, including the constant current source, programmable gain amplifier (PGA), internal reference, and the analog and reference input buffers ideal for resistance measurements. This allows direct interface with the sensor, greatly simplifying the design while reducing PCB size, cost and power consumption.
 
-Several options of the on-chip digital filtering, integrated diagnostics, and three power modes provide application flexibility. The current consumed in low power mode is only 255 µA and 930 µA in full power mode. In power-down mode, the complete ADC along with its auxiliary functions are powered down so that the device consumes 1 µA typical. The power options make the device suitable for battery powered applications, loop powered application, and non-power critical applications.
+Several options of the on-chip digital filtering, integrated diagnostics,
+and three power modes provide application flexibility. The current consumed in
+low power mode is only 255 µA and 930 µA in full power mode. In power-down
+mode, the complete ADC along with its auxiliary functions are powered down so
+that the device consumes 1 µA typical. The power options make the device
+suitable for battery powered applications, loop powered application, and
+non-power critical applications.
 
 The device also has a power down option. In power-down mode, the complete ADC along with its auxiliary functions are powered down so that the device consumes 1 µA typical. The :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` also has extensive diagnostic functionality integrated as part of its comprehensive feature set.
 
@@ -45,14 +51,14 @@ Single Thermistor
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-1.1thermistor.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Multiple Thermistor
 ~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-8thermistor.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Hardware Setup
 --------------
@@ -62,11 +68,13 @@ To configure the hardware, take the following steps:
 -  Set all links on the EVAL-AD7124-4SDZ/EVAL-AD7124-8SDZ to the default board positions as outlined in the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` user guide.
 -  Power the board with a 7 V or 9 V power source connected to J5.
 -  Connect the Thermistor and precision reference resistor. See figure below.
--  For Thermistor measurements, ensure that the following jumpers and links are properly connected.
+-  For Thermistor measurements, ensure that the following jumpers and links are
+   properly connected.
 
    -  LK3 - Jumper from REFIN1- to AVSS, this jumper should be inserted.
 
-      -  LK4 - This jumper is used to apply an external 2.5V or internal 2.5V to REFIN1+, this jumper should be inserted to B.
+      -  LK4 - This jumper is used to apply an external 2.5V or internal 2.5V to
+         REFIN1+, this jumper should be inserted to B.
 
 -  Connect the SDP board to the PC via the USB cable.
 
@@ -75,7 +83,7 @@ Evaluation Board Connector for Thermistor Measurement
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/evb_1.2thermistor.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Using the Evaluation Software
 -----------------------------
@@ -86,10 +94,9 @@ Run the `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/e
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/drop_down.png
    :align: center
-   :width: 400px
+   :width: 400
 
 After selecting the Evaluation board, the window shown in Figure below appears.
-
 
 |image1|
 
@@ -133,7 +140,9 @@ Calibrations
 | 2. Select **Low Power** mode
 | 3. Internal full-scale calibration
 
--  The AD7124-4 is factory calibrated at a gain of 1, and the resulting gain coefficient is the default gain coefficient on the device. The device does not support further internal full-scale calibrations at a gain of 1.
+-  The AD7124-4 is factory calibrated at a gain of 1, and the resulting gain
+   coefficient is the default gain coefficient on the device. The device does
+   not support further internal full-scale calibrations at a gain of 1.
 
 ::
 
@@ -146,7 +155,8 @@ Calibrations
 Thermistor Measurements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-After calibrations, the board and device can now be configured for Thermistor measurements as discussed above.
+After calibrations, the board and device can now be configured for Thermistor
+measurements as discussed above.
 
 Click the corresponding Thermistor demo mode and click SAMPLE to start gathering samples from the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>`. The Waveform tab and the Histogram tab show the data gathered from the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>`.
 
@@ -155,14 +165,14 @@ Waveform Tab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/waveform.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Histogram Tab
 ^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/histogram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 More Information and Useful Links
 ---------------------------------
@@ -186,7 +196,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Software
 --------
 
@@ -194,8 +203,8 @@ Software
 -  :adi:`AD7124_EVAL+ Software <ftp://ftp.analog.com/pub/evalcd/AD7124>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/thermistor_demo_eval.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/qq.png
-   :width: 30px
+   :width: 30
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/register_map.png
-   :width: 600px
+   :width: 600

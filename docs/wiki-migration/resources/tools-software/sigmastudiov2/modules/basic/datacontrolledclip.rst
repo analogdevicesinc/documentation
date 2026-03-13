@@ -8,7 +8,13 @@ Data Controlled Clip (Hard/Soft)
 Description
 -----------
 
-The Data Controlled Clip is a hard-clipper that clips the input data signal according to threshold values set by data control input pins. The data controlled clipper strictly saturates the input signal once it crosses an upper or lower threshold boundary. The output signal will be retained at the threshold value so long as the input signal is above the upper threshold limit, or below the lower threshold limit. For values within the threshold boundaries, the output signal will equal the input signal
+The Data Controlled Clip is a hard-clipper that clips the input data signal
+according to threshold values set by data control input pins. The data
+controlled clipper strictly saturates the input signal once it crosses an upper
+or lower threshold boundary. The output signal will be retained at the threshold
+value so long as the input signal is above the upper threshold limit, or below
+the lower threshold limit. For values within the threshold boundaries, the
+output signal will equal the input signal
 
 Variants
 --------

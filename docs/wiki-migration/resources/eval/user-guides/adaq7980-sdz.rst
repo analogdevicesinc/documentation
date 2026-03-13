@@ -8,7 +8,10 @@ The :adi:`ADAQ7980`/:adi:`ADAQ7988` are 16-bit analog-to-digital converter (ADC)
 
 The :adi:`ADAQ7980`/:adi:`ADAQ7988` contain a high accuracy, low power, 16-bit SAR ADC, a low power, high bandwidth, high input impedance ADC driver, a low power, stable reference buffer, and an efficient power management block. Housed within a tiny, 5 mm × 4 mm LGA package, these systems simplify the design process for data acquisition systems. The level of system integration of the :adi:`ADAQ7980`/:adi:`ADAQ7988` solves many design challenges, while the devices still provide the flexibility of a configurable ADC driver feedback loop to allow gain and/or common-mode adjustments. A set of four device supplies provides optimal system performance; however, single-supply operation is possible with minimal impact on device operating specifications.
 
-Using the SDI input, the SPI-compatible serial interface features the ability to daisy-chain multiple devices on a single, 3-wire bus and provides an optional busy indicator. The user interface is compatible with 1.8 V, 2.5 V, 3 V, or 5 V logic. Specified operation of these devices is from −55°C to +125°C.
+Using the SDI input, the SPI-compatible serial interface features the ability to
+daisy-chain multiple devices on a single, 3-wire bus and provides an optional
+busy indicator. The user interface is compatible with 1.8 V, 2.5 V, 3 V, or 5 V
+logic. Specified operation of these devices is from −55°C to +125°C.
 
 Applications:
 
@@ -119,7 +122,6 @@ HDL Downloads
    -  :git-hdl:`adaq7980-SDZ HDL Project. <projects/adaq7980_sdz>`
    
 
-
 No-OS Downloads
 ---------------
 
@@ -129,4 +131,3 @@ No-OS Downloads
    
    -  :git-no-OS:`adaq7980-SDZ No-OS Project. <projects/adaq7980_sdz>`
    
-

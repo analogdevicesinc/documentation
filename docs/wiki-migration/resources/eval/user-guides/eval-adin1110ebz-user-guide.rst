@@ -6,15 +6,25 @@ User Guide for EVAL-ADIN1110EBZ
    
    General Description
    
-   The EVAL-ADIN1110EBZ is a flexible platform enabling quick evaluation of the ADIN1110, robust, low power 10BASE-T1L MAC-PHY. It provides 10Mbit per second Single Pair Ethernet (SPE) connections with devices across 1.7km of cable.
+   The EVAL-ADIN1110EBZ is a flexible platform enabling quick evaluation of the
+   ADIN1110, robust, low power 10BASE-T1L MAC-PHY. It provides 10Mbit per second
+   Single Pair Ethernet (SPE) connections with devices across 1.7km of cable.
    
-   The evaluation board offers two modes of operation for maximum flexibility. Connected to a PC via USB port, the full set of ADIN1110 register settings and features such as link quality monitoring and diagnostics can be accessed over the USB using serial command interface. The board also provides an Arduino interface.
+   The evaluation board offers two modes of operation for maximum flexibility.
+   Connected to a PC via USB port, the full set of ADIN1110 register settings
+   and features such as link quality monitoring and diagnostics can be accessed
+   over the USB using serial command interface. The board also provides an
+   Arduino interface.
    
-   Alternatively, the board can operate in stand-alone mode where it is configured by setting hardware configuration links and switches. On-board LEDs provide status indication.
+   Alternatively, the board can operate in stand-alone mode where it is
+   configured by setting hardware configuration links and switches. On-board
+   LEDs provide status indication.
    
    The SPI interface provides configuration and data access to the ADIN1110.
    
-   A small prototyping area and test points are provided for experimentation with alternative cable connection topologies including isolation transformers and/or power coupling inductors.
+   A small prototyping area and test points are provided for experimentation
+   with alternative cable connection topologies including isolation transformers
+   and/or power coupling inductors.
 
    
    |image1|
@@ -42,7 +52,6 @@ User Guide for EVAL-ADIN1110EBZ
    -  Optional: PC running Windows 7 and upwards with USB interface
    -  Optional: ST-LINK programmer
    
-
 
 Evaluation Kit Contents
 -----------------------
@@ -75,13 +84,11 @@ Overview
 
    \ *Figure 2. EVAL-ADIN1110EBZ Quick Start Info*\
 
-
    |image2|
 
 .. container:: centeralign
 
    *Figure 3. EVAL-ADIN1110EBZ Functional Block Diagram*
-
 
 Hardware
 ~~~~~~~~
@@ -106,27 +113,37 @@ The EVAL-ADIN1110EBZ can be powered from three different sources:
 10BASE-T1L Cable Connection
 ---------------------------
 
-The 10BASE-T1L cable can be connected via pluggable screw-terminal block to connector P101. If more of the pluggable connectors are needed, for easy connecting / changing cables, additional connectors can be purchased from the vendor or distributors:
+The 10BASE-T1L cable can be connected via pluggable screw-terminal block to
+connector P101. If more of the pluggable connectors are needed, for easy
+connecting / changing cables, additional connectors can be purchased from the
+vendor or distributors:
 
 -  Manufacturer: Phoenix Contact
 -  Manufacturer part number: 1803581
--  Description: “Pluggable Terminal Block, 3.81 mm, 3 Ways, 28AWG to 16AWG, 1.5 mm², Screw”.
+-  Description: “Pluggable Terminal Block, 3.81 mm, 3 Ways, 28AWG to 16AWG, 1.5
+   mm², Screw”.
 
 Ground Connections
 ------------------
 
 The demo board has an “Earth node”. We call it “Earth node” here – though this node may or may not be electrically connected to Earth ground. In a real device this node would be typically connected to the device metal housing / chassis. This Earth node can be connected as required in a wider demo system via “Earth” terminal of the power supply connector P1, or via exposed metal plating of 2 mounting holes in the left corners of the board. (The 3rd and 4th holes on the right do not have metal plating, and also no Earth connection.)
 
-The shield of the 10BASE-T1L cable can be disconnected from this Earth node, connected directly, or connected via 4700pF capacitor (C104). The required connection is selected using jumper J101.
+The shield of the 10BASE-T1L cable can be disconnected from this Earth node,
+connected directly, or connected via 4700pF capacitor (C104). The required
+connection is selected using jumper J101.
 
-The local circuit ground, the external power supply (except the “Earth” terminal P1), and the USB connector are connected to the Earth node via approx. 2000pF capacitance and approx. 4.7MΩ resistance.
+The local circuit ground, the external power supply (except the “Earth” terminal
+P1), and the USB connector are connected to the Earth node via approx. 2000pF
+capacitance and approx. 4.7MΩ resistance.
 
 **(!) Note: The EVAL-ADIN1110EBZ has been designed only as an Evaluation board. It has NOT been designed, and it has NOT been tested for electrical safety. Any equipment, device, wire, or cable connected to this demo must be already protected and safe to touch without danger of electric shock.**
 
 Hardware Configuration Setup
 ----------------------------
 
-The EVAL-ADIN1110EBZ board is provided with links (jumper) and DIP switches that can be used to set the ADIN1110 configuration. The Table 1,2 and 3 describe the links and switches functions.
+The EVAL-ADIN1110EBZ board is provided with links (jumper) and DIP switches that
+can be used to set the ADIN1110 configuration. The Table 1,2 and 3 describe the
+links and switches functions.
 
 **Table 1. Board Link Configuration**
 
@@ -213,9 +230,15 @@ The EVAL-ADIN1110EBZ board is provided with links (jumper) and DIP switches that
 Microcontroller Modes of operation
 ----------------------------------
 
-The EVAL-ADIN1110EBZ can be used in various modes of operations implemented in the uC firmware. Up to 16 modes of operations can be selected by setting the 4 positions of the slide switch S303. The selected configuration is latched after the board is powered up or reset.
+The EVAL-ADIN1110EBZ can be used in various modes of operations implemented in
+the uC firmware. Up to 16 modes of operations can be selected by setting the 4
+positions of the slide switch S303. The selected configuration is latched after
+the board is powered up or reset.
 
-Therefore, to change the mode of operation, the board must be reset by pressing “RESET” button S501 or by applying power cycle after changing the position of the slide switch S303. The available modes of operation are described in Table 4 below.
+Therefore, to change the mode of operation, the board must be reset by pressing
+“RESET” button S501 or by applying power cycle after changing the position of
+the slide switch S303. The available modes of operation are described in Table 4
+below.
 
 **Table 4. Firmware Modes of Operation, Schematics Ref. S303**
 
@@ -272,32 +295,46 @@ Therefore, to change the mode of operation, the board must be reset by pressing 
 Software
 ~~~~~~~~
 
-The EVAL-ADIN1110EBZ can be used as a stand-alone board, with the firmware already pre-programmed in the microcontroller flash memory. The mode of operation can be set using the S303 "uC Config" DIP switch and the link status is indicated by LEDs. There is no software required for this stand-alone use case.
+The EVAL-ADIN1110EBZ can be used as a stand-alone board, with the firmware
+already pre-programmed in the microcontroller flash memory. The mode of
+operation can be set using the S303 "uC Config" DIP switch and the link status
+is indicated by LEDs. There is no software required for this stand-alone use
+case.
 
-The EVAL-ADIN1110EBZ can also be interfaced with a host computer via the USB port. The full set of ADIN1110 PHY and MAC registers and features such as link quality monitoring can be accessed via the command line interface.
+The EVAL-ADIN1110EBZ can also be interfaced with a host computer via the USB
+port. The full set of ADIN1110 PHY and MAC registers and features such as link
+quality monitoring can be accessed via the command line interface.
 
 Driver For USB COM Port
 -----------------------
 
 The EVAL-ADIN1110EBZ has an onboard USB-UART converter (FTDI FT232R).
 
-Ensure that the appropriate Virtual Com Port driver is installed on the host platform before connecting the EVAL-ADIN1110EBZ to the host computer via the USB cable.
+Ensure that the appropriate Virtual Com Port driver is installed on the host
+platform before connecting the EVAL-ADIN1110EBZ to the host computer via the USB
+cable.
 
 The drivers are available from FTDI, at the time of writing this document at https://ftdichip.com/drivers/vcp-drivers/
 
 COM Port and Terminal Settings
 ------------------------------
 
-When the EVAL-ADIN1110EBZ is connected to the host, it will become available in the host system as a USB Com Port, and will be assigned a com port number. The number will depend on the system settings, on com port devices previously connected and assigned in the system, and on the FTDI driver settings.
+When the EVAL-ADIN1110EBZ is connected to the host, it will become available in
+the host system as a USB Com Port, and will be assigned a com port number. The
+number will depend on the system settings, on com port devices previously
+connected and assigned in the system, and on the FTDI driver settings.
 
-The EVAL-ADIN1110EBZ microcontroller communicates over a standard UART interface, with the following settings:
+The EVAL-ADIN1110EBZ microcontroller communicates over a standard UART
+interface, with the following settings:
 
 -  Baudrate: 115200
 -  Data Bits: 8
 -  Stop Bits: 1
 -  Parity: none
 
-The protocol is based on ASCII text commands and messages. Each message sent from the firmware to the host is finished by both <CR> and <LF> characters. For the commands received from host the firmware expects <CR>, <LF> or <CR> + <LF>.
+The protocol is based on ASCII text commands and messages. Each message sent
+from the firmware to the host is finished by both <CR> and <LF> characters. For
+the commands received from host the firmware expects <CR>, <LF> or <CR> + <LF>.
 
 (*For information: <CR> .. “carriage return”, ASCII code 0x0D, <LF> .. “line feed”, ASCII code 0x0A*)
 
@@ -309,11 +346,18 @@ The EVAL-ADIN1110EBZ firmware works with the common serial terminals. It has bee
 Initial Welcome Message
 -----------------------
 
-When the EVAL-ADIN1110EBZ is correctly connected via the USB Virtual COM Port using the terminal software, the firmware sends an initial welcome message as displayed below. Note that a hardware reset of the board (using S501 "RESET" button) or the 'info' command will also display the welcome message. This can be useful to check the ADIN1110 information and link status.
+When the EVAL-ADIN1110EBZ is correctly connected via the USB Virtual COM Port
+using the terminal software, the firmware sends an initial welcome message as
+displayed below. Note that a hardware reset of the board (using S501 "RESET"
+button) or the 'info' command will also display the welcome message. This can be
+useful to check the ADIN1110 information and link status.
 
 ================================================ ANALOG DEVICES 10BASE-T1L Demo Serial Interface ================================================ (c) 2021 Analog Devices Inc. All rights reserved ================================================ Firmware ver.: 1.1.0 Board Name: EVAL-ADIN1110EBZ Board revision: B Board Serial Number: AVAS146613 uC CFG3-2-1-0: OFF-OFF-OFF-OFF (Mode 15) Board Configuration:TCP/IP Stack+Web Server,DHCP,MAC Addr1 SPI Access to ADIN1110: Success
 
-MAC address: 00:e0:22:fe:da:c9 IP Address: not assigned Link status: Down Master/Slave: Not run Tx Level: Not run ================================================ Type '<?><new line>' for a list of commands ================================================
+MAC address: 00:e0:22:fe:da:c9 IP Address: not assigned Link status: Down
+Master/Slave: Not run Tx Level: Not run
+================================================ Type '<?><new line>' for a list
+of commands ================================================
 
 Terminal Commands
 -----------------
@@ -403,7 +447,13 @@ Terminal Commands
 Microcontroller Firmware Update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The microcontroller (STM32L4S5QII3P) is programmed out-of-the box with the evaluation firmware. A binary image of the production firmware is also available to download from the ADIN1110 product webpage. The default behavior of the configuration switches based on the pre-loaded firmware is listed in Table 4. The revision of the programmed firmware can be checked using the serial terminal program and pressing the RESET button (S501) which will display the welcome message.
+The microcontroller (STM32L4S5QII3P) is programmed out-of-the box with the
+evaluation firmware. A binary image of the production firmware is also available
+to download from the ADIN1110 product webpage. The default behavior of the
+configuration switches based on the pre-loaded firmware is listed in Table 4.
+The revision of the programmed firmware can be checked using the serial terminal
+program and pressing the RESET button (S501) which will display the welcome
+message.
 
 Using the Microcontroller bootloader
 ------------------------------------
@@ -421,7 +471,8 @@ Using the Microcontroller bootloader
    -  Read Unprotect (MCU): Not selected
 
 -  Open the **Erasing and programming** menu
--  Browse and select the firmware image file from your download location: eval-ADIN1110EBZ-1_1_0.hex
+-  Browse and select the firmware image file from your download location:
+   eval-ADIN1110EBZ-1_1_0.hex
 
    -  Click **Open**
 
@@ -429,11 +480,13 @@ Using the Microcontroller bootloader
 
    -  Press and hold the S301 “BOOT” and S501 “RESET” buttons simultaneously on the board
    -  Release S501 “RESET” button while holding the S301 “BOOT” button, release S301 “BOOT” after 1s.
-   -  The Board is now in programming mode, the microcontroller LEDs (uC3-uC0) should be OFF
+   -  The Board is now in programming mode, the microcontroller LEDs (uC3-uC0)
+      should be OFF
 
 -  Click **Connect**. If Connect fails, check that the Serial COM port is correct as described in **Identify the Serial COM Port** section. Also make sure no serial terminal are connected to the serial port in use.
 
-   -  Check that the target status is “CONNECTED” as marked on Figure 8 (top right corner).
+   -  Check that the target status is “CONNECTED” as marked on Figure 8 (top
+      right corner).
 
 -  Un-tick the **Run After Programming** option
 -  Click the **Start Programming** button
@@ -441,7 +494,8 @@ Using the Microcontroller bootloader
 -  A message box appears: **File download completed**, click OK
 -  Wait for ~30s. A message box pops up: **Download verified successfully**. Click OK
 -  Click the **Disconnect** button
--  Power cycle the board by unplugging and plugin the USB cable and any other power supply connected.
+-  Power cycle the board by unplugging and plugin the USB cable and any other
+   power supply connected.
 
    -  All 4 uCx LEDs (blue, orange, red and green) flash once (LED health check)
    -  **Orange LED** “uC2” is continuously blinking after (Board Heart Beat)
@@ -449,10 +503,13 @@ Using the Microcontroller bootloader
 Using the ST-LINK JTAG programmer
 ---------------------------------
 
-The ST-LINK JTAG programmer provides a robust solution for programming and debugging source code. It is also faster to program the microcontroller using the JTAG interface.
+The ST-LINK JTAG programmer provides a robust solution for programming and
+debugging source code. It is also faster to program the microcontroller using
+the JTAG interface.
 
 -  Connect the ST-LINK programmer to the EVAL-ADIN1110EBZ using the ARM-20 JTAG connector P410 "uC JTAG"
--  Select the ST-LINK interface in previous STEP 1 and follow the same instructions to program the board with the provided firmware.
+-  Select the ST-LINK interface in previous STEP 1 and follow the same
+   instructions to program the board with the provided firmware.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig4_t1l_adin1110.png
    :align: center
@@ -460,7 +517,6 @@ The ST-LINK JTAG programmer provides a robust solution for programming and debug
 .. container:: centeralign
 
    \ *Figure 4. STM32CubeProgrammer*\
-
 
 Application Quick Start
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -475,7 +531,7 @@ Demo Web Page
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/macphy_mediaconvreter.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 To run the webpage demo (fixed IP, mode 14):
 
@@ -486,14 +542,17 @@ To run the webpage demo (fixed IP, mode 14):
 -  Connect a micro-USB cable between the EVAL-ADIN1100EBZ media converter board and the host computer
 -  Connect a micro-USB cable between the EVAL-ADIN1110EBZ and the host computer
 -  Open a serial terminal connected to the EVAL-ADIN1110EBZ Virtual COM port
--  Press the reset button on the EVAL-ADIN1110EBZ terminal, confirm that the welcome message is received and link is UP:
+-  Press the reset button on the EVAL-ADIN1110EBZ terminal, confirm that the
+   welcome message is received and link is UP:
    "ADIN1100 Link Up" message received on terminal
    The LED_1 (orange/2.4V p-p mode) and LED_0 (green/link up) should also be ON.
--  Open a web browser (e.g. Mozilla Firefox) and enter the IP address of the board listed from the welcome message on the serial terminal (enter the 'info' command in terminal to display welcome message)
+-  Open a web browser (e.g. Mozilla Firefox) and enter the IP address of the
+   board listed from the welcome message on the serial terminal (enter the
+   'info' command in terminal to display welcome message)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/webserver.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 Frame Generator/Checker
 -----------------------
@@ -507,31 +566,43 @@ To run the frame generator/checker demo (mode 9 ):
 -  Connect a micro-USB cable between the EVAL-ADIN1100EBZ media converter board and the host computer
 -  Connect a micro-USB cable between the EVAL-ADIN1110EBZ and the host computer
 -  Open a serial terminal connected to the EVAL-ADIN1110EBZ Virtual COM port
--  Press the reset button on the EVAL-ADIN1110EBZ terminal, confirm that the welcome message is received and link is UP:
+-  Press the reset button on the EVAL-ADIN1110EBZ terminal, confirm that the
+   welcome message is received and link is UP:
    "ADIN1100 Link Up" message received on terminal
    The LED_1 (orange/2.4V p-p mode) and LED_0 (green/link up) should also be ON.
 -  Enter the 'start' command
 -  Enter the 'stop' command to stop the test
-   The output should be as follow, note that the test stops automatically once 10,000 frames have been received:
+   The output should be as follow, note that the test stops automatically once
+   10,000 frames have been received:
 
-start OK MSE -37.2 dB Rx 0, Diff 0, Err 0 MSE -37.2 dB Rx 500, Diff 0, Err 0 MSE -37.2 dB Rx 1000, Diff 0, Err 0 MSE -37.2 dB Rx 1500, Diff 0, Err 0 MSE -37.2 dB Rx 2000, Diff 0, Err 0 MSE -37.2 dB Rx 2500, Diff 0, Err 0 MSE -37.2 dB Rx 3000, Diff 0, Err 0 MSE -37.2 dB Rx 3500, Diff 0, Err 0 MSE -37.2 dB Rx 4000, Diff 0, Err 0 MSE -37.2 dB Rx 4500, Diff 0, Err 0 MSE -37.2 dB Rx 5000, Diff 0, Err 0 MSE -37.2 dB Rx 5500, Diff 0, Err 0 MSE -37.2 dB Rx 6000, Diff 0, Err 0 MSE -37.2 dB Rx 6500, Diff 0, Err 0 MSE -37.2 dB Rx 7000, Diff 0, Err 0 stop OK
+start OK MSE -37.2 dB Rx 0, Diff 0, Err 0 MSE -37.2 dB Rx 500, Diff 0, Err 0 MSE
+-37.2 dB Rx 1000, Diff 0, Err 0 MSE -37.2 dB Rx 1500, Diff 0, Err 0 MSE -37.2 dB
+Rx 2000, Diff 0, Err 0 MSE -37.2 dB Rx 2500, Diff 0, Err 0 MSE -37.2 dB Rx 3000,
+Diff 0, Err 0 MSE -37.2 dB Rx 3500, Diff 0, Err 0 MSE -37.2 dB Rx 4000, Diff 0,
+Err 0 MSE -37.2 dB Rx 4500, Diff 0, Err 0 MSE -37.2 dB Rx 5000, Diff 0, Err 0
+MSE -37.2 dB Rx 5500, Diff 0, Err 0 MSE -37.2 dB Rx 6000, Diff 0, Err 0 MSE
+-37.2 dB Rx 6500, Diff 0, Err 0 MSE -37.2 dB Rx 7000, Diff 0, Err 0 stop OK
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
-As a general recommendation, check the jumper configuration and make sure they are all in default state as a starting point. Exception applies to the power selection on J1 that can be configured based on the required power source.
+As a general recommendation, check the jumper configuration and make sure they
+are all in default state as a starting point. Exception applies to the power
+selection on J1 that can be configured based on the required power source.
 
 Serial Port can not be open on host
 -----------------------------------
 
 -  Make sure the FTDI drivers are installed
 -  Check which virtual COM port has been assigned to the board on the device manager (windows OS). A simple way to check it is to unplug/plug the evaluation board and check the port number listed (e.g. COM1,COM2...)
--  If no device enumeration and no virtual COM port has been assigned on the device manager check the following:
+-  If no device enumeration and no virtual COM port has been assigned on the
+   device manager check the following:
 
    -  Power is applied to the EVAL- ADIN2111EBZ
    -  The EVAL- ADIN2111EBZ USB port is connected to the host computer
 
--  If a virtual COM port is assigned, check that no other application is using it
+-  If a virtual COM port is assigned, check that no other application is using
+   it
 
 Command line interface not working
 ----------------------------------
@@ -549,27 +620,88 @@ No link established (2-boards setup)
 -  Ensure the command line interface is working as described in previous section
 -  Ensure that the EVAL-ADIN1110EBZ board and the link partner are powered properly
 -  Ensure that the EVAL-ADIN1110EBZ onboard Microcontroller power supply selection (J302) and the onboard ADIN1110 power supply selection (J204) are the same (1.8V or 3.3V)
--  Ensure the ADIN1110 communication is working (Showns in the welcome message: SPI Access to ADIN1110:Success)
+-  Ensure the ADIN1110 communication is working (Showns in the welcome message:
+   SPI Access to ADIN1110:Success)
 
    -  If the SPI access to ADIN1110 reports a fault(from terminal welcome message), check that the ADIN1110 power rails selection is matching the intended transmit level set on S201 pin 4 (TX2P4_EN_N).
-   -  Check that the SPI is configured to Open Alliance with protection on S201 pin 1 and 2
+   -  Check that the SPI is configured to Open Alliance with protection on S201
+      pin 1 and 2
 
 -  Ensure 10BASE-T1L cable is properly connected between P101 and the link partner board
--  Ensure that the hardware configuration is appropriate for the required linking arrangement.
+-  Ensure that the hardware configuration is appropriate for the required
+   linking arrangement.
 
    -  Transmit level mode are compatible between the 2 boards (using TX2P4_EN_N switch on S201)
    -  Recommendation to Disable Software Power Down after Reset, specially if using a custom firmware (SWPD_N ON on S201)
    -  Check the SPI Configuration on S201. The evaluation firmware uses Open Alliance SPI with protection enabled (SPI_CFG0 OFF, SPI_CFG1 OFF on S201)
-   -  Measure and verify the voltage at various points on the EVAL-ADIN1110EBZ using the 3V3, 1V8, 1V1 test points.
+   -  Measure and verify the voltage at various points on the EVAL-ADIN1110EBZ
+      using the 3V3, 1V8, 1V1 test points.
 
 Notes
 ~~~~~
 
 **Legal Terms and Conditions**
 
-By using the evaluation board discussed herein (together with any tools, components documentation or support materials, the “Evaluation Board”), you are agreeing to be bound by the terms and conditions set forth below (“Agreement”) unless you have purchased the Evaluation Board, in which case the Analog Devices Standard Terms and Conditions of Sale shall govern. Do not use the Evaluation Board until you have read and agreed to the Agreement. Your use of the Evaluation Board shall signify your acceptance of the Agreement. This Agreement is made by and between you (“Customer”) and Analog Devices, Inc. (“ADI”), with its principal place of business at One Technology Way, Norwood, MA 02062, USA. Subject to the terms and conditions of the Agreement, ADI hereby grants to Customer a free, limited, personal, temporary, non-exclusive, non-sublicensable, non-transferable license to use the Evaluation Board FOR EVALUATION PURPOSES ONLY. Customer understands and agrees that the Evaluation Board is provided for the sole and exclusive purpose referenced above, and agrees not to use the Evaluation Board for any other purpose. Furthermore, the license granted is expressly made subject to the following additional limitations: Customer shall not (i) rent, lease, display, sell, transfer, assign, sublicense, or distribute the Evaluation Board; and (ii) permit any Third Party to access the Evaluation Board. As used herein, the term “Third Party” includes any entity other than ADI, Customer, their employees, affiliates and in-house consultants. The Evaluation Board is NOT sold to Customer; all rights not expressly granted herein, including ownership of the Evaluation Board, are reserved by ADI. CONFIDENTIALITY. This Agreement and the Evaluation Board shall all be considered the confidential and proprietary information of ADI. Customer may not disclose or transfer any portion of the Evaluation Board to any other party for any reason. Upon discontinuation of use of the Evaluation Board or termination of this Agreement, Customer agrees to promptly return the Evaluation Board to ADI. ADDITIONAL RESTRICTIONS. Customer may not disassemble, decompile or reverse engineer chips on the Evaluation Board. Customer shall inform ADI of any occurred damages or any modifications or alterations it makes to the Evaluation Board, including but not limited to soldering or any other activity that affects the material content of the Evaluation Board. Modifications to the Evaluation Board must comply with applicable law, including but not limited to the RoHS Directive. TERMINATION. ADI may terminate this Agreement at any time upon giving written notice to Customer. Customer agrees to return to ADI the Evaluation Board at that time. LIMITATION OF LIABILITY. THE EVALUATION BOARD PROVIDED HEREUNDER IS PROVIDED “AS IS” AND ADI MAKES NO WARRANTIES OR REPRESENTATIONS OF ANY KIND WITH RESPECT TO IT. ADI SPECIFICALLY DISCLAIMS ANY REPRESENTATIONS, ENDORSEMENTS, GUARANTEES, OR WARRANTIES, EXPRESS OR IMPLIED, RELATED TO THE EVALUATION BOARD INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS. IN NO EVENT WILL ADI AND ITS LICENSORS BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES RESULTING FROM CUSTOMER’S POSSESSION OR USE OF THE EVALUATION BOARD, INCLUDING BUT NOT LIMITED TO LOST PROFITS, DELAY COSTS, LABOR COSTS OR LOSS OF GOODWILL. ADI’S TOTAL LIABILITY FROM ANY AND ALL CAUSES SHALL BE LIMITED TO THE AMOUNT OF ONE HUNDRED US DOLLARS ($100.00). EXPORT. Customer agrees that it will not directly or indirectly export the Evaluation Board to another country, and that it will comply with all applicable United States federal laws and regulations relating to exports. GOVERNING LAW. This Agreement shall be governed by and construed in accordance with the substantive laws of the Commonwealth of Massachusetts (excluding conflict of law rules). Any legal action regarding this Agreement will be heard in the state or federal courts having jurisdiction in Suffolk County, Massachusetts, and Customer hereby submits to the personal jurisdiction and venue of such courts. The United Nations Convention on Contracts for the International Sale of Goods shall not apply to this Agreement and is expressly disclaimed.
+By using the evaluation board discussed herein (together with any tools,
+components documentation or support materials, the “Evaluation Board”), you are
+agreeing to be bound by the terms and conditions set forth below (“Agreement”)
+unless you have purchased the Evaluation Board, in which case the Analog Devices
+Standard Terms and Conditions of Sale shall govern. Do not use the Evaluation
+Board until you have read and agreed to the Agreement. Your use of the
+Evaluation Board shall signify your acceptance of the Agreement. This Agreement
+is made by and between you (“Customer”) and Analog Devices, Inc. (“ADI”), with
+its principal place of business at One Technology Way, Norwood, MA 02062, USA.
+Subject to the terms and conditions of the Agreement, ADI hereby grants to
+Customer a free, limited, personal, temporary, non-exclusive, non-sublicensable,
+non-transferable license to use the Evaluation Board FOR EVALUATION PURPOSES
+ONLY. Customer understands and agrees that the Evaluation Board is provided for
+the sole and exclusive purpose referenced above, and agrees not to use the
+Evaluation Board for any other purpose. Furthermore, the license granted is
+expressly made subject to the following additional limitations: Customer shall
+not (i) rent, lease, display, sell, transfer, assign, sublicense, or distribute
+the Evaluation Board; and (ii) permit any Third Party to access the Evaluation
+Board. As used herein, the term “Third Party” includes any entity other than
+ADI, Customer, their employees, affiliates and in-house consultants. The
+Evaluation Board is NOT sold to Customer; all rights not expressly granted
+herein, including ownership of the Evaluation Board, are reserved by ADI.
+CONFIDENTIALITY. This Agreement and the Evaluation Board shall all be considered
+the confidential and proprietary information of ADI. Customer may not disclose
+or transfer any portion of the Evaluation Board to any other party for any
+reason. Upon discontinuation of use of the Evaluation Board or termination of
+this Agreement, Customer agrees to promptly return the Evaluation Board to ADI.
+ADDITIONAL RESTRICTIONS. Customer may not disassemble, decompile or reverse
+engineer chips on the Evaluation Board. Customer shall inform ADI of any
+occurred damages or any modifications or alterations it makes to the Evaluation
+Board, including but not limited to soldering or any other activity that affects
+the material content of the Evaluation Board. Modifications to the Evaluation
+Board must comply with applicable law, including but not limited to the RoHS
+Directive. TERMINATION. ADI may terminate this Agreement at any time upon giving
+written notice to Customer. Customer agrees to return to ADI the Evaluation
+Board at that time. LIMITATION OF LIABILITY. THE EVALUATION BOARD PROVIDED
+HEREUNDER IS PROVIDED “AS IS” AND ADI MAKES NO WARRANTIES OR REPRESENTATIONS OF
+ANY KIND WITH RESPECT TO IT. ADI SPECIFICALLY DISCLAIMS ANY REPRESENTATIONS,
+ENDORSEMENTS, GUARANTEES, OR WARRANTIES, EXPRESS OR IMPLIED, RELATED TO THE
+EVALUATION BOARD INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF
+MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT OF
+INTELLECTUAL PROPERTY RIGHTS. IN NO EVENT WILL ADI AND ITS LICENSORS BE LIABLE
+FOR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES RESULTING FROM
+CUSTOMER’S POSSESSION OR USE OF THE EVALUATION BOARD, INCLUDING BUT NOT LIMITED
+TO LOST PROFITS, DELAY COSTS, LABOR COSTS OR LOSS OF GOODWILL. ADI’S TOTAL
+LIABILITY FROM ANY AND ALL CAUSES SHALL BE LIMITED TO THE AMOUNT OF ONE HUNDRED
+US DOLLARS ($100.00). EXPORT. Customer agrees that it will not directly or
+indirectly export the Evaluation Board to another country, and that it will
+comply with all applicable United States federal laws and regulations relating
+to exports. GOVERNING LAW. This Agreement shall be governed by and construed in
+accordance with the substantive laws of the Commonwealth of Massachusetts
+(excluding conflict of law rules). Any legal action regarding this Agreement
+will be heard in the state or federal courts having jurisdiction in Suffolk
+County, Massachusetts, and Customer hereby submits to the personal jurisdiction
+and venue of such courts. The United Nations Convention on Contracts for the
+International Sale of Goods shall not apply to this Agreement and is expressly
+disclaimed.
 
-©2021 Analog Devices, Inc. All rights reserved. Trademarks and registered trademarks are the property of their respective owners.
+©2021 Analog Devices, Inc. All rights reserved. Trademarks and registered
+trademarks are the property of their respective owners.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig1_t1l_adin1110.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig3_t1l_adin1110.jpg

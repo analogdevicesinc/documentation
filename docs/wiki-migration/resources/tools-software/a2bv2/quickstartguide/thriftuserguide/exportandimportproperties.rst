@@ -14,14 +14,16 @@ List of API in Export and Import Properties
 Export Commandlist.xml File
 ---------------------------
 
-This API is used for Exporting Commandlist.xml file . It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for Exporting Commandlist.xml file . It takes element Uid and
+property name and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal); SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  TxtFilePathCLxml – To export Commandlist.xml
 
@@ -30,7 +32,8 @@ This API is used for Exporting Commandlist.xml file . It takes element Uid and p
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStringProperty and UpdateBooleanProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateStringProperty and UpdateBooleanProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -57,14 +60,16 @@ This API is used for Exporting Commandlist.xml file . It takes element Uid and p
 Export Commandlist.h File
 -------------------------
 
-This API is used for Exporting Commandlist.h file . It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for Exporting Commandlist.h file . It takes element Uid and
+property name and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal); SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  TxtFilePathCLh– To export Commandlist.h
 
@@ -73,7 +78,8 @@ This API is used for Exporting Commandlist.h file . It takes element Uid and pro
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStringProperty and UpdateBooleanProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateStringProperty and UpdateBooleanProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -100,14 +106,16 @@ This API is used for Exporting Commandlist.h file . It takes element Uid and pro
 Export Busconfig.c File
 -----------------------
 
-This API is used for Exporting Busconfig.c file . It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for Exporting Busconfig.c file . It takes element Uid and
+property name and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal); SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  TxtFilePathBCc– To export Busconfig.c
 
@@ -116,7 +124,8 @@ This API is used for Exporting Busconfig.c file . It takes element Uid and prope
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStringProperty and UpdateBooleanProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateStringProperty and UpdateBooleanProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -139,14 +148,16 @@ This API is used for Exporting Busconfig.c file . It takes element Uid and prope
 Export Busconfig.xml File
 -------------------------
 
-This API is used for Exporting Busconfig.xml file . It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for Exporting Busconfig.xml file . It takes element Uid and
+property name and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal); SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  TxtFilePathBCxml– To export Busconfig.xml
 
@@ -155,7 +166,8 @@ This API is used for Exporting Busconfig.xml file . It takes element Uid and pro
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStringProperty and UpdateBooleanProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateStringProperty and UpdateBooleanProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -174,14 +186,16 @@ This API is used for Exporting Busconfig.xml file . It takes element Uid and pro
 Export A2b_System_AutoConfig.xml File
 -------------------------------------
 
-This API is used for Exporting a2b_system_autoconfig.xml file. It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for Exporting a2b_system_autoconfig.xml file. It takes element
+Uid and property name and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  XMLDumpPath – Path to export a2b_system_autoconfig.xml
 
@@ -192,7 +206,8 @@ This API is used for Exporting a2b_system_autoconfig.xml file. It takes element 
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStringProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateStringProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -211,14 +226,16 @@ This API is used for Exporting a2b_system_autoconfig.xml file. It takes element 
 Export A2b_System_Autoconfig.dat File
 -------------------------------------
 
-This API is used for Exporting a2b_system_autoconfig.dat file. It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for Exporting a2b_system_autoconfig.dat file. It takes element
+Uid and property name and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  DatDumpPath– Path to export a2b_system_autoconfig.dat
 
@@ -229,7 +246,8 @@ This API is used for Exporting a2b_system_autoconfig.dat file. It takes element 
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStringProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateStringProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -250,14 +268,16 @@ This API is used for Exporting a2b_system_autoconfig.dat file. It takes element 
 Export MergedBranch.xml File
 ----------------------------
 
-This API is used for ExportingMergedBranch.xml file. It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for ExportingMergedBranch.xml file. It takes element Uid and
+property name and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal); SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  PrimaryBranchxml– Path to PrimaryBranch.xml
 
@@ -269,7 +289,8 @@ This API is used for ExportingMergedBranch.xml file. It takes element Uid and pr
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStringProperty and UpdateBooleanProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateStringProperty and UpdateBooleanProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -296,4 +317,3 @@ This API is used for ExportingMergedBranch.xml file. It takes element Uid and pr
 .. tip::
 
    For more information about exporting A2B system configuration files, you can refer to the :doc:`A2B Plugin for SigmaStudio+ User Guide </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles>`.
-

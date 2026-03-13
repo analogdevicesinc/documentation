@@ -3,7 +3,9 @@
 Update Properties
 =================
 
-This action allows the user to update a specific property of a given plugin. The function call takes in 4 arguments. Return type is a SSPResult which contains a IsSuccess flag for success/failure and Message in the form of list of strings.
+This action allows the user to update a specific property of a given plugin. The
+function call takes in 4 arguments. Return type is a SSPResult which contains a
+IsSuccess flag for success/failure and Message in the form of list of strings.
 
 API
 ---
@@ -23,7 +25,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the UpdateProperties action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+UpdateProperties action.
 
 ::
 

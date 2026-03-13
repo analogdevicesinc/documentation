@@ -1,7 +1,18 @@
 Electronics I and II:
 =====================
 
-Analog Devices is as passionate about educating the next generation of young circuit design engineers as it is about pioneering the next technological breakthrough. The University Program is a platform where Analog Devices, working with leading educational institutions has created and deployed new hands on learning tools for the next generation of analog circuit design engineers. The University Program brings the analog signal processing technology the company has developed to the academic community in a way that is open and accessible to faculty and students in the form of analog design kits and analog components, online and downloadable software and teaching materials, online support, textbooks, reference designs and lab projects to enrich students’ education about analog circuits and their application to core engineering and physical science curricula.
+Analog Devices is as passionate about educating the next generation of young
+circuit design engineers as it is about pioneering the next technological
+breakthrough. The University Program is a platform where Analog Devices, working
+with leading educational institutions has created and deployed new hands on
+learning tools for the next generation of analog circuit design engineers. The
+University Program brings the analog signal processing technology the company
+has developed to the academic community in a way that is open and accessible to
+faculty and students in the form of analog design kits and analog components,
+online and downloadable software and teaching materials, online support,
+textbooks, reference designs and lab projects to enrich students’ education
+about analog circuits and their application to core engineering and physical
+science curricula.
 
 The textbooks and teaching materials provided on this wiki are considered open source and available for free use in non-commercial educational and academic settings. **The only requirement is that they continue to retain the attribution to Analog Devices Inc.** Supplying them on the ADI wiki allows registered users to contribute to the materials posted here improving the content and keeping them up to date.
 

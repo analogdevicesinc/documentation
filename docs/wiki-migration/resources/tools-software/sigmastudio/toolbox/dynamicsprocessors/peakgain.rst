@@ -9,7 +9,9 @@ Peak Gain
 
 It also lets you control Post Gain, the signal level after processing.
 
-Peak detection operates on any signal passing above the threshold, no matter how fast a transient it is. However, this compressor has no TC (time constant) setting.
+Peak detection operates on any signal passing above the threshold, no matter how
+fast a transient it is. However, this compressor has no TC (time constant)
+setting.
 
 Because it can stop the briefest and quickest loud signals, peak compression (limiting, effectively) is useful for preventing any overdriving of inputs — for example, a transmitter. However, it sometimes sounds less natural than rms compression.
 
@@ -19,14 +21,20 @@ Because it can stop the briefest and quickest loud signals, peak compression (li
    -  **Stereo 1 Peak w/ gain**
    -  **Stereo Separate Detect w/ gain**
 
--  Set these parameters to fit your application and click Show Graph and drag, add and remove (right-click) control points to achieve your desired processing curve.
+-  Set these parameters to fit your application and click Show Graph and drag,
+   add and remove (right-click) control points to achieve your desired
+   processing curve.
 
 .. hint::
 
-   Note: For the figure above, Stereo Separate Detect w/ gain was selected. Unlike with the other Detect algorithms, for peak limiting you need two separate signals to activate stereo performance.
+   Note: For the figure above, Stereo Separate Detect w/ gain was selected.
+   Unlike with the other Detect algorithms, for peak limiting you need two
+   separate signals to activate stereo performance.
 
-
-As an application example, this block could be used at a radio station to attenuate background music according to the voice level of the announcer ("ducking"). The voice signal would be applied to the red pin, the music signal to the green one.
+As an application example, this block could be used at a radio station to
+attenuate background music according to the voice level of the announcer
+("ducking"). The voice signal would be applied to the red pin, the music signal
+to the green one.
 
 Controls
 --------

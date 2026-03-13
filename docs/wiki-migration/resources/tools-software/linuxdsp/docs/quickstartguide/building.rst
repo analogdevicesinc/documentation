@@ -6,7 +6,8 @@ Linux for SC5xx uses `Yocto <https://www.yoctoproject.org/software-overview/>`_ 
 Setting Up The Components
 -------------------------
 
-To build the components we first setup the environment for Yocto, telling it what we want to build, then we build the components.
+To build the components we first setup the environment for Yocto, telling it
+what we want to build, then we build the components.
 
 To set up the environment for your sc5xx board:
 
@@ -25,7 +26,8 @@ To set up the environment for your sc5xx board:
       ;-m <MACHINE>
       :if you setup the MACHINE, the local.conf would be automatically set to the default template,
    
-   so make sure to save your own changes in local.conf once you pass this option to the script Supported MACHINE:
+   so make sure to save your own changes in local.conf once you pass this option
+   to the script Supported MACHINE:
    
    ::
    
@@ -39,8 +41,8 @@ To set up the environment for your sc5xx board:
       ;-b <BUILDDIR> 
       :The default BUILDDIR is "build", you could pass another dir to the script
    
-   If no option passed to the script, the YOCTO would reuse the build/ dir as your default build environment.
-
+   If no option passed to the script, the YOCTO would reuse the build/ dir as
+   your default build environment.
 
 Building The Components
 -----------------------
@@ -66,8 +68,9 @@ Other build rules are summarized on the :doc:`ADI Yocto Metalayer </wiki-migrati
 
 .. tip::
 
-   Warning: Your first build will be slow. Yocto will be downloading all the required sources and building all the toolchains required for the creation of your tools. Subsequent builds will be faster.
-
+   Warning: Your first build will be slow. Yocto will be downloading all the
+   required sources and building all the toolchains required for the creation of
+   your tools. Subsequent builds will be faster.
 
 The Build Output
 ----------------

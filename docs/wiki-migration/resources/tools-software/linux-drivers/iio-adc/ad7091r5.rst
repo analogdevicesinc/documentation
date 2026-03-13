@@ -14,18 +14,19 @@ Evaluation Boards
 Description
 -----------
 
-The AD7091R-5 is a 12-bit, multichannel, ultralow power, successive approximation analog-to-digital converter (ADC).
+The AD7091R-5 is a 12-bit, multichannel, ultralow power, successive
+approximation analog-to-digital converter (ADC).
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/ad7091r5_bd.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Hardware configuration
 ======================
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/ad7091r5.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Adding Linux driver support
 ===========================
@@ -33,12 +34,12 @@ Adding Linux driver support
 Enabling the driver
 -------------------
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD7091R5 Driver depends on CONFIG_I2C
-
 
 ::
 

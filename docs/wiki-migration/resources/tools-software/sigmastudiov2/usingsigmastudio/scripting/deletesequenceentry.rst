@@ -3,7 +3,9 @@
 Delete Sequence Entry
 =====================
 
-This action allows the user to delete sequence entry from the selected sequence mode in the SS+ sequence window. The function call takes 1 argument. This API returns the SSPResult type.
+This action allows the user to delete sequence entry from the selected sequence
+mode in the SS+ sequence window. The function call takes 1 argument. This API
+returns the SSPResult type.
 
 API
 ---
@@ -20,7 +22,8 @@ Arguments
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the DeleteSequenceEntry action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the
+DeleteSequenceEntry action.
 
 ::
 

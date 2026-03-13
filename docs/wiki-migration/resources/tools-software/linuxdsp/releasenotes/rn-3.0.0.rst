@@ -4,16 +4,21 @@ Yocto Linux for ADSP-SC5xx Processors - Release 3.0.0: Release Notes
 Introduction
 ------------
 
-This release contains an upgrade of both the kernel and the build system to a recent LTS release. It also enriches and enhances the choice regarding LDR firmware loading and generally handling the audio and SHARC firmware.
+This release contains an upgrade of both the kernel and the build system to a
+recent LTS release. It also enriches and enhances the choice regarding LDR
+firmware loading and generally handling the audio and SHARC firmware.
 
-Another notable addition is the ability to boot from flash on SC573 & SC58x boards. Several more features and changes are noted in detail on the following section.
+Another notable addition is the ability to boot from flash on SC573 & SC58x
+boards. Several more features and changes are noted in detail on the following
+section.
 
 For more information on testing, see :doc:`the test report for this release </wiki-migration/resources/tools-software/linuxdsp/docs/testing/release3.0.0>`
 
 New Features And Changes
 ------------------------
 
-The following changes have been applied since the 1.0 release of Yocto Linux for ADSP-SC5xx Processors.
+The following changes have been applied since the 1.0 release of Yocto Linux for
+ADSP-SC5xx Processors.
 
 -  Linux kernel upgraded to 5.15.78 LTS release
 -  Yocto upgraded to 4.0.1 (Kirkstone) LTS release
@@ -25,7 +30,8 @@ The following changes have been applied since the 1.0 release of Yocto Linux for
    -  ``adi_hybrid_audio``: Audio playback handled through SHARC firmware, codec control (volume, etc) is still available from Linux, ramdisk includes hybrid-audio package. This installs ``icap-device-example_Core1.ldr`` to ``/lib/firmware/adi_adsp_core1_fw.ldr``
 
 -  Added new ``adsp-sc5xx-tiny`` image (<16 MB) to enable ADSP-SC573 & ADSP-SC58x boards to be able to boot from SPI Flash :doc:`to enable ADSP-SC573 & ADSP-SC58\* boards to be able to boot from SPI Flash </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/boot-flash-sc58x-573>`
--  Added new boot methods: SD Card & USB Mass Storage for some of the supported boards:
+-  Added new boot methods: SD Card & USB Mass Storage for some of the supported
+   boards:
 
    -  SD Card Boot:
 
@@ -52,12 +58,14 @@ The Yocto Linux for ADSP-SC5xx processors product is formally supported on **Ubu
 Supported Processors and EZ-KITs
 --------------------------------
 
-The following processors and silicon revisions are supported by the Yocto Linux for ADSP-SC5xx product.
+The following processors and silicon revisions are supported by the Yocto Linux
+for ADSP-SC5xx product.
 
 .. important::
 
-   Note: The supported processor silicon revision list is different from the Linux Add-In product. Earlier revisions of some EZ-KITs contained different hardware. These are not supported by the Yocto Linux product.
-
+   Note: The supported processor silicon revision list is different from the
+   Linux Add-In product. Earlier revisions of some EZ-KITs contained different
+   hardware. These are not supported by the Yocto Linux product.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------+
 | Development Board                                                                                                                             | Supported Revision |
@@ -88,7 +96,8 @@ For installation on the development board your host PC will require:
 
 -  Two open USB ports
 
-Note: The Yocto Linux product is built from source. For improved performance we recommend at least 4 cores and a SSD disk.
+Note: The Yocto Linux product is built from source. For improved performance we
+recommend at least 4 cores and a SSD disk.
 
 Frequently Asked Questions
 --------------------------
@@ -100,14 +109,16 @@ A: This is due to the jitter entropy source (software-based) that was added in r
 Known Issues
 ------------
 
-The following issues have been identified in this release but have not been assessed yet:
+The following issues have been identified in this release but have not been
+assessed yet:
 
 -  SC589-mini: When attempting to save the U-Boot environment, it fails with the following message: ``Erasing SPI flash...failed (-22)``. This means that it is not possible to make any persistent changes to the U-Boot environment, such as IP addresses.
 
 Obtaining Technical Support
 ---------------------------
 
-You can reach Analog Devices software and tools technical support in the following ways:
+You can reach Analog Devices software and tools technical support in the
+following ways:
 
 -  Post your questions in the software and development tools support community at :ez:`Analog Devices Engineer Zone <dsp/software-and-development-tools/linux-for-adsp-sc5xx-processors/f/q-a>` ®
 -  E-mail your questions about processors and processor applications to processor.support@analog.com

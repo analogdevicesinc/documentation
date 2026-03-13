@@ -1,29 +1,28 @@
 Lab 3: Phased Array Antenna Patterns
 ====================================
 
-
 Part 1: Array Factor and Beamwidth
 ----------------------------------
 
 Training Objective
 ~~~~~~~~~~~~~~~~~~
 
-In this lab, we will directly observe the array factor equation. And then observe how the beamwidth changes with steering angle.
+In this lab, we will directly observe the array factor equation. And then
+observe how the beamwidth changes with steering angle.
 
 Instructions
 ~~~~~~~~~~~~
 
 1- In the Phaser GUI, select “Lab 2: Array Factor”
 
-
 |image1|
 
-2- Slowly move the HB100 in a half-circle around the array and observe the changes
+2- Slowly move the HB100 in a half-circle around the array and observe the
+changes
 
 **3- Does the main lobe’s beamwidth remain constant as you move the RF source?**
 
 4- In the Phaser GUI, select “Polar Plot”
-
 
 |image2|
 
@@ -39,15 +38,15 @@ Part 2: Array Factor Measurements
 Training Objective
 ~~~~~~~~~~~~~~~~~~
 
-In this lab, we will make measurements on the array pattern and compare to the theoretical values.
+In this lab, we will make measurements on the array pattern and compare to the
+theoretical values.
 
-Recall that the array factor of a uniform, equally weighted (constant amplitude), linear array is given by:
-
+Recall that the array factor of a uniform, equally weighted (constant
+amplitude), linear array is given by:
 
 |image3|
 
 And plotting this for various numbers of array elements (N) gives:
-
 
 |image4|
 
@@ -62,10 +61,11 @@ From this, we can make some measurements on the array:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_5.png
    :align: center
-   :width: 600px
+   :width: 600
 
-From the array factor equation, with a frequency of 10.3GHz and element to element (d) spacing of 14mm, we can calculate the HPBW and FNBW for various numbers of elements:
-
+From the array factor equation, with a frequency of 10.3GHz and element to
+element (d) spacing of 14mm, we can calculate the HPBW and FNBW for various
+numbers of elements:
 
 |image5|
 
@@ -76,13 +76,12 @@ Instructions
 
 1- In the Phaser GUI, select “Lab 2: Array Factor”
 
-
 |image6|
 
-2- Move the HB100 to the mechanical boresight location (i.e. directly facing the array)
+2- Move the HB100 to the mechanical boresight location (i.e. directly facing the
+array)
 
 3- Record the following:
-
 
 |image7|
 
@@ -94,11 +93,9 @@ Instructions
 
 7- Do the same for Rx2, Rx7, and Rx8. We now have a 4 element array!
 
-
 |image8|
 
 **8- Repeat the beamwidth measurements and compare to the calculated values and to the N=8 values.**
-
 
 |image9|
 
@@ -108,31 +105,34 @@ Part 3: Measuring the Actual Antenna Pattern
 Training Objective
 ~~~~~~~~~~~~~~~~~~
 
-In this lab, we’ll make a simple measurement like what you would do in an antenna chamber. It certainly won’t be perfect, but you’ll experience the process and then we’ll measure the sidelobe levels and see how they compare to the electrical scan method.
+In this lab, we’ll make a simple measurement like what you would do in an
+antenna chamber. It certainly won’t be perfect, but you’ll experience the
+process and then we’ll measure the sidelobe levels and see how they compare to
+the electrical scan method.
 
 Instructions
 ~~~~~~~~~~~~
 
 1- In the Phaser GUI, select “Lab 2: Array Factor”
 
-2- In the “Config” tab, select “Signal vs Time” from “Mode Selection”. This plots the peak amplitude vs time.
-
+2- In the “Config” tab, select “Signal vs Time” from “Mode Selection”. This
+plots the peak amplitude vs time.
 
 |image10|
 
 3- Now rotate the HB100 in a radius around the Phaser board –keep the HB100 pointed at Phaser!
 
-
 |image11|
 
-4- Start at the left position (-90 deg), and move around to the right position (+90 deg)
+4- Start at the left position (-90 deg), and move around to the right position
+(+90 deg)
 
 5- Keep a smooth, consistent speed!
 
-6- Practice a few times, then try time it so that one smooth rotation covers the entire graph span
+6- Practice a few times, then try time it so that one smooth rotation covers the
+entire graph span
 
 7- With practice, it may look like this:
-
 
 |image12|
 
@@ -141,26 +141,26 @@ Instructions
 9- **Repeat the process, but change the “Steering Angle” from 0 deg to 30 deg**
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_2.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_3.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_4.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_6.png
-   :width: 300px
+   :width: 300
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_7.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_8.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_9.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_10.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_11.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_12.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/arrayantennapatterns_13.png
-   :width: 600px
+   :width: 600

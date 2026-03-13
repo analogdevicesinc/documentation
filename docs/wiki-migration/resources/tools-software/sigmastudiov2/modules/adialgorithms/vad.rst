@@ -8,9 +8,18 @@ Voice Activity Detector
 Description
 -----------
 
-Voice Activity Detector takes an input signal and tracks the signal level compared to the noise floor. The Modulation Index is then later used to determine if speech is present or not.
+Voice Activity Detector takes an input signal and tracks the signal level
+compared to the noise floor. The Modulation Index is then later used to
+determine if speech is present or not.
 
-The VAD w/ Accelerator provides extra conditions to accelerate or increase the time constants in voice detection. Either the Release time for TopTracker is affected or the Attack time for BottomTracker is affected when their corresponding conditions are met. Thus, if TopTracker has been in release mode for Top Wait time, then the Top Release time constant will be increased by a scalar of Top Factor. And if BottomTracker has been in attack mode for Bottom Wait time, then the Bottom Attack time constant will be increased by a scalar of Bottom Factor.
+The VAD w/ Accelerator provides extra conditions to accelerate or increase the
+time constants in voice detection. Either the Release time for TopTracker is
+affected or the Attack time for BottomTracker is affected when their
+corresponding conditions are met. Thus, if TopTracker has been in release mode
+for Top Wait time, then the Top Release time constant will be increased by a
+scalar of Top Factor. And if BottomTracker has been in attack mode for Bottom
+Wait time, then the Bottom Attack time constant will be increased by a scalar of
+Bottom Factor.
 
 Variants
 --------

@@ -13,9 +13,20 @@ Analog Front End
 
 Living up to the "Analog Multitool" moniker requires careful design to the "business end" of the ADALM1000, or the "Analog Front End" or *AFE*. To be useful in the widest array of contexts without degrading performance or increasing precise remains a challenge, but the final solution achieves higher precision, higher power, and lower noise than any comparable device.
 
-Analog electrical systems interact in at least one of two domains - voltage, and current. The traditional tools wielded by electrical engineers operate exclusively in the voltage domain, and trade current and power for performance to an extent which makes it challenging to interact with even the most basic of real-world systems.
+Analog electrical systems interact in at least one of two domains - voltage, and
+current. The traditional tools wielded by electrical engineers operate
+exclusively in the voltage domain, and trade current and power for performance
+to an extent which makes it challenging to interact with even the most basic of
+real-world systems.
 
-Function generators, while invaluable tools for generating test signals to stimulate systems, typically offer an output supply in series with a 50Ω resistor, and as such require external components to buffer their output signal to a point where it is of use for stimulating driving physical systems like DC motors or incandescent bulbs. Oscilloscopes, while powerful tools for working with high speed signals spanning into the gigahertz, require potentially thousands of dollars of add-ons in order to measure the current, and in turn the power into or out of an electrical system.
+Function generators, while invaluable tools for generating test signals to
+stimulate systems, typically offer an output supply in series with a 50Ω
+resistor, and as such require external components to buffer their output signal
+to a point where it is of use for stimulating driving physical systems like DC
+motors or incandescent bulbs. Oscilloscopes, while powerful tools for working
+with high speed signals spanning into the gigahertz, require potentially
+thousands of dollars of add-ons in order to measure the current, and in turn the
+power into or out of an electrical system.
 
 Introductory exercises typically require six or more electrical connections to be made perfectly before measurements can be made, and literally dozens of (useful!) knobs and buttons to be dialed in specifically for the system at hand. These same introductory engineering exercises often require significant amounts of time spent building up external supporting circuitry to afford functionality similar to that of the M1K. Exposing the voltage across \*and\* the current through a single connection at a reasonable speed allows for basic explorations to be made with two connections and zero wires. Even sophisticated explorations require at most a half-dozen connections.
 
@@ -39,4 +50,12 @@ Human senses are typically substantially slower than the devices used for electr
 Tradeoffs
 ---------
 
-The design of the M1K required making tradeoffs across voltage, current, power, and speed. With the intent of building an affordable tool for introductory exploration of complicated electrical and mixed electrical/physical systems, the tradeoffs were balanced to offer high dynamic range, the ability to source waveforms higher frequency than the human ear can hear, and enough electrical power to allow the direct interface with just about anything that runs on batteries. Offering this functionality via USB makes a wide array of exploration immediately achievable without requiring local 120VAC wall power or much in the way of site infrastructure for data collection and processing.
+The design of the M1K required making tradeoffs across voltage, current, power,
+and speed. With the intent of building an affordable tool for introductory
+exploration of complicated electrical and mixed electrical/physical systems, the
+tradeoffs were balanced to offer high dynamic range, the ability to source
+waveforms higher frequency than the human ear can hear, and enough electrical
+power to allow the direct interface with just about anything that runs on
+batteries. Offering this functionality via USB makes a wide array of exploration
+immediately achievable without requiring local 120VAC wall power or much in the
+way of site infrastructure for data collection and processing.

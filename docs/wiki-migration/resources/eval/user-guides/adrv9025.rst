@@ -5,9 +5,8 @@ ADRV9026 & ADRV9029 Prototyping Platform User Guide
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/eval/user-guide/transceiver/adrv9026/index.html\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9026-355.png
-   :width: 200px
+   :width: 200
 
 The :adi:`EVAL-ADRV9026/ADRV9029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADRV9026.html>`, are FMC radio cards for the :adi:`ADRV9026` respectively :adi:`ADRV9029`, highly integrated, radio frequency (RF) agile transceivers offering four independently controlled transmitters, dedicated observation receiver inputs for monitoring each transmitter channel, four independently controlled receivers, integrated synthesizers, and digital signal processing functions providing complete transceiver solutions. The devices provide the performance demanded by cellular infrastructure applications, such as small cell base station radios, macro 3G/4G/5G systems, and massive multiple in/multiple out (MIMO) base stations.
 
@@ -93,7 +92,8 @@ Software Defined Radio using the Linux IIO Framework
 ADI Articles
 ------------
 
--   Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio
+-   Four Quick Steps to Production: Using Model-Based Design for
+    Software-Defined Radio
 
    -  :adi:`Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
    -  :adi:`Part 2—Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
@@ -109,6 +109,4 @@ MathWorks Webinars
 Warning
 -------
 
-
 .. esd-warning::
-

@@ -9,7 +9,9 @@ List of API for Register Access for A2B and Peripheral
 Peripheral Write/Read (SPI/I2C)
 -------------------------------
 
-This API is used for performing Write/Read operations for both SPI and I2C mode based on selected peripherals and selected A2B network. It takes element Uid and ReadWritePacket info as arguments and returns int value.
+This API is used for performing Write/Read operations for both SPI and I2C mode
+based on selected peripherals and selected A2B network. It takes element Uid and
+ReadWritePacket info as arguments and returns int value.
 
 **API:** int PeripheralReadWrite(string elementUid, AnalogDevices.SigmaStudio.Scripting.ReadWritePacket rdwrpkt);
 
@@ -119,14 +121,16 @@ This API is used for performing Write/Read operations for both SPI and I2C mode 
 Add Peripheral XML file and I2C address
 ---------------------------------------
 
-This API is used for adding Peripheral . It takes element Uid and property name and property value as arguments and returns SSPResult.
+This API is used for adding Peripheral . It takes element Uid and property name
+and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateStringProperty(string elementUid, string propertyName, string propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  PeripheralFile – Peripheral File
 
@@ -137,7 +141,8 @@ This API is used for adding Peripheral . It takes element Uid and property name 
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateStringProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateStringProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -156,4 +161,3 @@ This API is used for adding Peripheral . It takes element Uid and property name 
 .. tip::
 
    For additional details on Peripheral configuration, you may refer the :doc:`A2B Plugin for SigmaStudio+ User Guide </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/schematics-components>`.
-

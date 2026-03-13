@@ -6,9 +6,13 @@ This demo will use **EVAL-ADICUP3029**, **EVAL_AD5940BIOZ** and **Impedance-Test
 Overview
 --------
 
-This example project is designed to carry out body impedance analysis (BIA) measurements. The Impedance Test board is provided with the hardware which models body impedance. It consists of a range of resistors and capacitors which can be used to model body impedance, contact impedance and electrode impedance.
+This example project is designed to carry out body impedance analysis (BIA)
+measurements. The Impedance Test board is provided with the hardware which
+models body impedance. It consists of a range of resistors and capacitors which
+can be used to model body impedance, contact impedance and electrode impedance.
 
-Alternatively, the custom cables can be connected to the body to measure actual body impedance.
+Alternatively, the custom cables can be connected to the body to measure actual
+body impedance.
 
 Measurement Requirements
 ------------------------
@@ -38,22 +42,26 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Place the **EVAL-AD5940BIOZ** on top of the **EVAL-ADICUP3029**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/eval-ad5940bioz.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Connect the AD5940 Z Test board to the EVAL-AD5940BIOZ board
 -  All jumpers should be in their default position
--  Plug in the micro USB cable into the (P10) USB port on the EVAL-ADICUP3029, and the other end into the PC or laptop.
+-  Plug in the micro USB cable into the (P10) USB port on the EVAL-ADICUP3029,
+   and the other end into the PC or laptop.
 
 AD5940 Z Test Board
 ~~~~~~~~~~~~~~~~~~~
 
-The AD5940 Z Test board is designed to model skin impedance, body impedance, electrode contact impedance and electrode impedance. There are 5 banks of switches on the board labelled S1, S2, S3, S4 and S5. The function of each bank is described in the following table:
+The AD5940 Z Test board is designed to model skin impedance, body impedance,
+electrode contact impedance and electrode impedance. There are 5 banks of
+switches on the board labelled S1, S2, S3, S4 and S5. The function of each bank
+is described in the following table:
 
 =========== ===============================================
 Switch Bank Bank Function
@@ -65,7 +73,11 @@ S4          Used to model contact impedance on F- electrode
 S5          Used to model contact impedance on S- electrode
 =========== ===============================================
 
-The following tables indicate the resistor or capacitor value associated with each switch in the bank. Moving the switch to the ON position connects the corresponding resistor or capacitor value in series on the signal path. If more than one switch is active the corresponding resistor values are connected in series.
+The following tables indicate the resistor or capacitor value associated with
+each switch in the bank. Moving the switch to the ON position connects the
+corresponding resistor or capacitor value in series on the signal path. If more
+than one switch is active the corresponding resistor values are connected in
+series.
 
 .. container:: column
 
@@ -88,7 +100,6 @@ The following tables indicate the resistor or capacitor value associated with ea
    ======= ===========================
    
 
-
 .. container:: column
 
    
@@ -109,7 +120,6 @@ The following tables indicate the resistor or capacitor value associated with ea
    S12     0.01 μF
    ======= ===========================
    
-
 
 .. container:: column
 
@@ -132,8 +142,6 @@ The following tables indicate the resistor or capacitor value associated with ea
    ======= ===========================
    
 
-
-
 .. container:: column
 
    
@@ -154,7 +162,6 @@ The following tables indicate the resistor or capacitor value associated with ea
    S12     0.01 μF
    ======= ===========================
    
-
 
 .. container:: column
 
@@ -177,8 +184,6 @@ The following tables indicate the resistor or capacitor value associated with ea
    ======= ===========================
    
 
-
-
 AD5940 Z Test Schematic and Layout
 ----------------------------------
 
@@ -189,7 +194,6 @@ AD5940 Z Test Schematic and Layout
    `Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/ad5940_z_test_.pdf>`_
    
    `Layout <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/ad5940_z_test.pdf>`_
-
 
 Obtaining the Source Code
 -------------------------
@@ -202,16 +206,21 @@ The source code and include files for the project can be found on Git
    
    `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
 
-
 Configuring the Software
 ------------------------
 
-To compile and run the example open the project in either Keil or IAR. The AD5940BIAStructInit() function configures the main application parameters. These include the sample frequency (BiaODR), and number of samples to feed to DFT block (DFT_Num). Compile the project and download to the hardware.
+To compile and run the example open the project in either Keil or IAR. The
+AD5940BIAStructInit() function configures the main application parameters. These
+include the sample frequency (BiaODR), and number of samples to feed to DFT
+block (DFT_Num). Compile the project and download to the hardware.
 
 Outputting Data
 ---------------
 
-The measurement results are sent to the PC via UART. To establish connection over UART, connect the Micro-USB cable to the PC and to the EVAL-ADICUP3029 board. A terminal program such as RealTerm or Putty is required to display the results
+The measurement results are sent to the PC via UART. To establish connection
+over UART, connect the Micro-USB cable to the PC and to the EVAL-ADICUP3029
+board. A terminal program such as RealTerm or Putty is required to display the
+results
 
 Following is the UART configuration.
 
@@ -224,8 +233,10 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
-The data on the terminal consists of the Frequency of the excitation signal, the magnitude of the impedance and the phase of the impedance in degrees as in below screenshot.
+The data on the terminal consists of the Frequency of the excitation signal, the
+magnitude of the impedance and the phase of the impedance in degrees as in below
+screenshot.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/bia_terminal.png
    :align: center
-   :width: 400px
+   :width: 400

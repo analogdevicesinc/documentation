@@ -5,13 +5,16 @@ Loader File Generation
 
 .. note::
 
-   The path of elfloader.exe and initcode .exe should be updated based on the CCES version number and path of installation. The below commands by default will have the CCES version recommended for the given release and the default installation path
-
+   The path of elfloader.exe and initcode .exe should be updated based on the
+   CCES version number and path of installation. The below commands by default
+   will have the CCES version recommended for the given release and the default
+   installation path
 
 ADSP-SC598 EV-SOM
 -----------------
 
-Use the following command to generate the loader file for ADSP-SC598 EV-SOM with Carrier board.
+Use the following command to generate the loader file for ADSP-SC598 EV-SOM with
+Carrier board.
 
 ::
 
@@ -25,7 +28,8 @@ Use the following command to generate the loader file for ADSP-SC598 EV-SOM with
 ADSP-SC594 EV-SOM
 -----------------
 
-Use the following command to generate the loader file for ADSP-SC594 EV-SOM with Carrier board.
+Use the following command to generate the loader file for ADSP-SC594 EV-SOM with
+Carrier board.
 
 ::
 
@@ -39,7 +43,8 @@ Use the following command to generate the loader file for ADSP-SC594 EV-SOM with
 ADSP-21593 EV-SOM
 -----------------
 
-Use the following command to generate the loader file for ADSP-21593 EV-SOM with Carrier board.
+Use the following command to generate the loader file for ADSP-21593 EV-SOM with
+Carrier board.
 
 ::
 
@@ -94,7 +99,8 @@ Use the following command to generate the loader file for ADSP-SC573 EZ-Board.
 ADSP-21568 SOM
 --------------
 
-Use the following command to generate the loader file for ADSP-21568 SOM with Carrier EZ-Lite board.
+Use the following command to generate the loader file for ADSP-21568 SOM with
+Carrier EZ-Lite board.
 
 ::
 
@@ -104,7 +110,6 @@ Use the following command to generate the loader file for ADSP-21568 SOM with Ca
 .. note::
 
    The ADSP-21568 processor is supported in CCES 3.0.1.
-
 
 **Note :** The default ADSP-21568 target application in CrossCore Embedded Studio includes the loader example.
 
@@ -122,15 +127,19 @@ Use the following command to generate the loader file for **ADSP-21569 EV-SOM** 
 
 .. note::
 
-   The default ADSP-21569 target application supported for EV-21569-SOM with CRR board and to make the same application to work with ADSP-21569 EZ-KIT, please remove the "ADSP_21569_SOM" macro from the CCES project compiler preprocessor properties.
-
+   The default ADSP-21569 target application supported for EV-21569-SOM with CRR
+   board and to make the same application to work with ADSP-21569 EZ-KIT, please
+   remove the "ADSP_21569_SOM" macro from the CCES project compiler preprocessor
+   properties.
 
 --------------
 
 ADSP-21489
 ----------
 
-Use the following command to generate the loader file for ADSP-21489 or the example application CCES project itself generate the SS_App_21489.ldr loader file.
+Use the following command to generate the loader file for ADSP-21489 or the
+example application CCES project itself generate the SS_App_21489.ldr loader
+file.
 
 ::
 
@@ -145,8 +154,10 @@ Batch files for programming the flash are provided under '**SigmaStudioPlus-Relx
 
 .. note::
 
-   The path of cldp.exe inside the batch files should be updated based on the CCES version number and path of installation. The batch file by default will have the CCES version recommended for the given release and the default installation path
-
+   The path of cldp.exe inside the batch files should be updated based on the
+   CCES version number and path of installation. The batch file by default will
+   have the CCES version recommended for the given release and the default
+   installation path
 
 --------------
 
@@ -226,15 +237,20 @@ Use the following command to program the flash on **ADSP-21489 EZ-Board** using 
 
 .. note::
 
-   The boot switch should be set to ‘1’ and a hard reset of the EZ-Board is required to run the application.
-
-
-.. note::
-
-   The ADSP-21568 flash boot position should be set to ‘6’ and a hard reset of the EZ-Board is required to run the application.
-
+   The boot switch should be set to ‘1’ and a hard reset of the EZ-Board is
+   required to run the application.
 
 .. note::
 
-   The evaluation board can be reset to boot application from flash. Once application booted the SigmaStudio plus schematic can be downloaded to target by selecting target processor and SHARC core DXE's in schematic project settings. The "Link Compile Download" step not required if the schematic application source files included into the application that is DemouC application. Just use "Link Compile Connect" option in "Action" tab to connect with target for tuning the schematic application.
+   The ADSP-21568 flash boot position should be set to ‘6’ and a hard reset of
+   the EZ-Board is required to run the application.
 
+.. note::
+
+   The evaluation board can be reset to boot application from flash. Once
+   application booted the SigmaStudio plus schematic can be downloaded to target
+   by selecting target processor and SHARC core DXE's in schematic project
+   settings. The "Link Compile Download" step not required if the schematic
+   application source files included into the application that is DemouC
+   application. Just use "Link Compile Connect" option in "Action" tab to
+   connect with target for tuning the schematic application.

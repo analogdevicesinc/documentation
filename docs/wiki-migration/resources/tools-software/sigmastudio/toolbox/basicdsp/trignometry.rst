@@ -3,7 +3,9 @@
 Trignometry
 ===========
 
-This Module implements the basic trigonometric functions such as sine, cosine, tan, inverse sine, inverse cosine, inverse tan. This Module can be grown. When grown, both control and input, output pins are grown.
+This Module implements the basic trigonometric functions such as sine, cosine,
+tan, inverse sine, inverse cosine, inverse tan. This Module can be grown. When
+grown, both control and input, output pins are grown.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/trignometry-tbx.jpg
 
@@ -16,7 +18,6 @@ Name         Format [int/dec] - [control/audio] Function Description
 Pin 0: Input decimal - Audio                    Audio input
 ============ ================================== ====================
 
-
 | ====Output Pins====
 
 ============= ================================== ====================
@@ -24,7 +25,6 @@ Name          Format [int/dec] - [control/audio] Function Description
 ============= ================================== ====================
 Pin 0: Output decimal - Audio                    Transformed Output
 ============= ================================== ====================
-
 
 | ==== Grow Algorithm ==== The module does not support Add and Growth.
 
@@ -77,7 +77,9 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-This Module implements the basic trigonometric functions such as sine, cosine, tan, inverse sine, inverse cosine, inverse tan. This Module can be grown. When grown, both control and input, output pins are grown.
+This Module implements the basic trigonometric functions such as sine, cosine,
+tan, inverse sine, inverse cosine, inverse tan. This Module can be grown. When
+grown, both control and input, output pins are grown.
 
 Supported ICs
 -------------

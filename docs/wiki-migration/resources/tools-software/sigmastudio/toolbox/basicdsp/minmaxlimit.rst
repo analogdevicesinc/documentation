@@ -3,7 +3,8 @@
 Block MinMaxLimit (ADAU145x)
 ============================
 
-MinMaxLimit is a block processing module which compares each input sample in block of input samples with constant values entered text box.
+MinMaxLimit is a block processing module which compares each input sample in
+block of input samples with constant values entered text box.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/minmaxlimit.png
    :align: center
@@ -29,7 +30,8 @@ Output Pins
 Grow Algorithm
 --------------
 
-The module supports growth of input and output channels up to 16 dependently. Add Algorithm is not supported.
+The module supports growth of input and output channels up to 16 dependently.
+Add Algorithm is not supported.
 
 GUI Controls
 ------------
@@ -62,13 +64,13 @@ Here,
 Algorithm Description
 ---------------------
 
-This module compares the input samples in an input block of samples with Max Limit and Min Limit values specified in the textbox.
+This module compares the input samples in an input block of samples with Max
+Limit and Min Limit values specified in the textbox.
 
 Supported IC's
 --------------
 
 +----------+
-
 
 | ADAU145x |
 

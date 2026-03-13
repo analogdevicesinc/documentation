@@ -14,8 +14,9 @@ This block is implemented as a biquad filter that has multiple sets of coefficie
 
 .. important::
 
-   As of SigmaStudio 4.5, Index Selectable Filters are not working on ADAU1701 or ADAU1401. The block is tested and working for ADAU176x, ADAU144x, ADAU145x, and ADAU146x.
-
+   As of SigmaStudio 4.5, Index Selectable Filters are not working on ADAU1701
+   or ADAU1401. The block is tested and working for ADAU176x, ADAU144x,
+   ADAU145x, and ADAU146x.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndindexpic2.jpg
    :align: center
@@ -40,7 +41,9 @@ Name          Format [int/dec] - [control/audio] Function Description
 Pin 0: Output decimal - audio                    The filtered output
 ============= ================================== ====================
 
-NOTE: The selection input should be a 28.0 format integer value between 0 and the number of curves. For example if your filter has 6 curves, the selection input value should be a 28.0 integer value from 0 to 5.
+NOTE: The selection input should be a 28.0 format integer value between 0 and
+the number of curves. For example if your filter has 6 curves, the selection
+input value should be a 28.0 integer value from 0 to 5.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndindexpic3.png
    :align: center
@@ -91,10 +94,12 @@ To open the Filter Control Window, Click the icon button:|general2ndindexpic4.pn
 
    The shelving filters' "Q factor" parameter actually controls the Slope parameter, not Q. See `Audio EQ Cookbook <https://www.w3.org/TR/audio-eq-cookbook/>`_ for the relationship between shelf slope S and Q factor. When this parameter is 1, it produces the steepest shelving filter with monotonic gain.
 
-
 You can add additional filter curves by clicking the **Add Filter** button. To remove a filter, select the filter in the graph or clicking its index in the Filter column and press the **Remove Filter** button.
 
-Coefficients can be loaded for all added filters using the load all button which opens the choose file dialogue where the file containing all coefficients can be loaded as shown in the figure. Coefficients file is expected as a text file containing the biquad coefficients in the following order.
+Coefficients can be loaded for all added filters using the load all button which
+opens the choose file dialogue where the file containing all coefficients can be
+loaded as shown in the figure. Coefficients file is expected as a text file
+containing the biquad coefficients in the following order.
 
 -  B0
 -  B1
@@ -105,7 +110,9 @@ Coefficients can be loaded for all added filters using the load all button which
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/isfloadiir2.png
    :align: center
 
-When the filter type chosen is IIR, coefficients for that particular filter can be chosen by clicking the load button which opens a choose file dialogue where the file containing all coefficients can be loaded as shown in the figure.
+When the filter type chosen is IIR, coefficients for that particular filter can
+be chosen by clicking the load button which opens a choose file dialogue where
+the file containing all coefficients can be loaded as shown in the figure.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/isfloadiir3.png
    :align: center
@@ -133,11 +140,19 @@ DSP Parameter Information
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndindexpic9.png
    :alt: general2ndindexpic9.png
 
-In this example, ISF1 and ISF2 are the names of the two consecutive blocks on Figure c. Both blocks contain four filters, and are set to the "zeroth" index filter, curve 0, selected by the DC input in "28.0" format. (Other formats cannot be used for selection). The ISF1 window is shown below. The cascaded Transfer Function is represented at the bottom. A different filter response curve can be selected by changing the value of the DC input block to corresponding filter index.
+In this example, ISF1 and ISF2 are the names of the two consecutive blocks on
+Figure c. Both blocks contain four filters, and are set to the "zeroth" index
+filter, curve 0, selected by the DC input in "28.0" format. (Other formats
+cannot be used for selection). The ISF1 window is shown below. The cascaded
+Transfer Function is represented at the bottom. A different filter response
+curve can be selected by changing the value of the DC input block to
+corresponding filter index.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndindexpic10.png
    :alt: general2ndindexpic10.png
 
-Using cascaded Index Selectable Filters (ISF) as in the above example, it is possible to simulate complex responses like the Fletcher & Manson psychoacoustic contours of loudness.
+Using cascaded Index Selectable Filters (ISF) as in the above example, it is
+possible to simulate complex responses like the Fletcher & Manson psychoacoustic
+contours of loudness.
 
 .. |general2ndindexpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndindexpic4.png

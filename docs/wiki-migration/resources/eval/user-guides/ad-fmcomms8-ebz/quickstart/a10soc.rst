@@ -3,13 +3,14 @@ AD-FMCOMMS8-EBZ Arria10 SoC Quick Start Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/quickstart/fmcomms8_a10soc.jpeg
    :align: center
-   :width: 600px
+   :width: 600
 
 This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the :adi:`AD-FMCOMMS8-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad-fmcomms8-ebz.html>` on:
 
 -  `Arria10 SoC Development Kit <https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html>`_ Rev. C or later
 
-Instructions on how to build the Zynq Linux kernel and devicetrees from source can be found here:
+Instructions on how to build the Zynq Linux kernel and devicetrees from source
+can be found here:
 
 -  :doc:`AD-FMC-SDCARD for Zynq & Altera SoC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 -  :doc:`Altera SOC - Build Preloader and Bootloader Image </wiki-migration/resources/tools-software/linux-software/altera_soc_images>`
@@ -50,22 +51,24 @@ Required Hardware
 -  Ethernet cable
 -  Optionally USB keyboard, mouse and a Display Port compatible monitor
 
-
 .. esd-warning::
-
 
 FMC Pin Connection Configuration Change
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
 
-   To be compatible with the AD-FMCOMMS8-EBZ daughterboard the Arria10 SoC Development Kit requires a minor rework.
+   To be compatible with the AD-FMCOMMS8-EBZ daughterboard the Arria10 SoC
+   Development Kit requires a minor rework.
 
    
-   In the default configuration of the Arria10 SoC Development Kit some of the FMC header pins are connected to a dedicated clock chip. To be compatible with the AD-FMCOMMS8-EBZ daughterboard, these pins need to be connected directly to the FPGA.
+   In the default configuration of the Arria10 SoC Development Kit some of the
+   FMC header pins are connected to a dedicated clock chip. To be compatible
+   with the AD-FMCOMMS8-EBZ daughterboard, these pins need to be connected
+   directly to the FPGA.
 
-
-The connection of those pins can be changed by moving the position of six zero Ohm resistors:
+The connection of those pins can be changed by moving the position of six zero
+Ohm resistors:
 
 -  R575 to R574
 -  R576 to R577
@@ -74,11 +77,13 @@ The connection of those pins can be changed by moving the position of six zero O
 -  R621 to R620
 -  R633 to R632
 
-These resistors can be found on the backside of the Arria10 SoC Development Kit underneath the FMC A connector (J29). The following picture shows the required configuration to be compatible with the AD-FMCOMMS8-EBZ.
+These resistors can be found on the backside of the Arria10 SoC Development Kit
+underneath the FMC A connector (J29). The following picture shows the required
+configuration to be compatible with the AD-FMCOMMS8-EBZ.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/quickstart/a10soc_fmc_rework_6r.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Testing
 =======
@@ -93,14 +98,11 @@ Testing
 Messages
 --------
 
-
-
 .. collapsible:: Complete kernel boot log (Click to expand)
 
    .. container:: box bggreen
 
       This specifies any shell prompt running on the target
-
 
       ::
 
@@ -688,8 +690,6 @@ Messages
          permitted by applicable law.
          root@analog:~#
 
-
-
 These devices should be present:
 
 .. container:: box bggreen
@@ -709,7 +709,6 @@ These devices should be present:
       root@analog:~#
    
 
-
 For more details, check :doc:`Getting started with ad-fmcomms8-ebz </wiki-migration/resources/eval/user-guides/ad-fmcomms8-ebz>`
 
 IIO Oscilloscope Remote
@@ -717,16 +716,17 @@ IIO Oscilloscope Remote
 
 Please see also here::doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The IIO Oscilloscope application can be used to connect to another platform that has a connected device in order to configure the device and read data from it.
+The IIO Oscilloscope application can be used to connect to another platform that
+has a connected device in order to configure the device and read data from it.
 
 Build and start osc on a network enabled Linux host.
 
-Once the application is launched goto Settings -> Connect and enter the IP address of the target in the popup window.
+Once the application is launched goto Settings -> Connect and enter the IP
+address of the target in the popup window.
 
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
-
 
    |image1|
 
@@ -764,6 +764,5 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

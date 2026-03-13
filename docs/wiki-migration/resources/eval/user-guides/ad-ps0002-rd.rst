@@ -1,15 +1,31 @@
 AD-PS0002-RD Power Supply Reference Design
 ==========================================
 
-This single-board reference design presents a fully integrated battery management system, developed using the latest power management technology from Analog Devices Inc. (ADI) for portable applications. The board consolidates a complete power solution for handheld and portable devices, utilizing the latest components from ADI’s power portfolio. It features the MAX77958 USB-C Power Delivery Controller for flexible input options, paired with the MAX77786 1S Battery Charger to manage charging from a single-cell lithium-ion battery. The MAX17300 provides advanced fuel gauging, battery protection, and authentication capabilities, ensuring safe and reliable operation.
+This single-board reference design presents a fully integrated battery
+management system, developed using the latest power management technology from
+Analog Devices Inc. (ADI) for portable applications. The board consolidates a
+complete power solution for handheld and portable devices, utilizing the latest
+components from ADI’s power portfolio. It features the MAX77958 USB-C Power
+Delivery Controller for flexible input options, paired with the MAX77786 1S
+Battery Charger to manage charging from a single-cell lithium-ion battery. The
+MAX17300 provides advanced fuel gauging, battery protection, and authentication
+capabilities, ensuring safe and reliable operation.
 
-To support diverse power requirements, the design includes the MAX77857 Buck-Boost Regulator and the MAX77542 Multi-Phase Buck Converter, enabling up to five individually configurable outputs. The design also integrates the MAX14727 for power path control. For backup power, the MAX38889 utilizes supercapacitor technology to maintain system operation during power interruptions and battery replacements. Additionally, the MAX14611 Logic-Level Translator ensures seamless communication between components operating at different voltage levels.
+To support diverse power requirements, the design includes the MAX77857
+Buck-Boost Regulator and the MAX77542 Multi-Phase Buck Converter, enabling up to
+five individually configurable outputs. The design also integrates the MAX14727
+for power path control. For backup power, the MAX38889 utilizes supercapacitor
+technology to maintain system operation during power interruptions and battery
+replacements. Additionally, the MAX14611 Logic-Level Translator ensures seamless
+communication between components operating at different voltage levels.
 
-This compact and cohesive single-board implementation offers a clear advantage in delivering a robust, space-efficient, and scalable battery management solution, ideal for modern portable electronic systems.
+This compact and cohesive single-board implementation offers a clear advantage
+in delivering a robust, space-efficient, and scalable battery management
+solution, ideal for modern portable electronic systems.
 
 .. image:: https://wiki.analog.com/_media/resources/power/ad-ps0002-rd/board_top.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Simplified Block diagram
 ------------------------
@@ -36,7 +52,8 @@ System Features
 -  System Communication:
 
    -  Utilizes MAXUSB interface
-   -  Supports I²C communication for system commands, battery state-of-charge (SoC), charging current, and more
+   -  Supports I²C communication for system commands, battery state-of-charge
+      (SoC), charging current, and more
 
 Hardware Configuration
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -264,7 +281,8 @@ Support
 
 Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`Power Management` forum.
 
-It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.
+It should be noted, that the older the tools' versions and release branches are,
+the lower the chances to receive support from ADI engineers.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/power/ad-ps0002-rd/front.svg
 .. |image2| image:: https://wiki.analog.com/_media/resources/power/ad-ps0002-rd/back.svg

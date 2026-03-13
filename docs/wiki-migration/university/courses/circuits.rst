@@ -1,7 +1,14 @@
 Circuits I & II
 ===============
 
-These course materials combine techniques for the analysis and simulation of linear electric circuits, and measurements of their properties. Topics include resistive and energy-storage circuit elements, controlled sources and operational amplifiers, systematic analysis methods, AC steady state, power systems, magnetic coupling and transformers, transients, frequency response, and Laplace transform and computer simulation methods using LTspice. Circuit analysis techniques such as Kirchhoff’s Laws, node voltages, and mesh currents. Thevenin and Norton equivalent circuits, sinusoidal steady state and phasors.
+These course materials combine techniques for the analysis and simulation of
+linear electric circuits, and measurements of their properties. Topics include
+resistive and energy-storage circuit elements, controlled sources and
+operational amplifiers, systematic analysis methods, AC steady state, power
+systems, magnetic coupling and transformers, transients, frequency response, and
+Laplace transform and computer simulation methods using LTspice. Circuit
+analysis techniques such as Kirchhoff’s Laws, node voltages, and mesh currents.
+Thevenin and Norton equivalent circuits, sinusoidal steady state and phasors.
 
 The textbooks and teaching materials provided on this wiki are considered open source and available for free use in non-commercial educational and academic settings. **The only requirement is that they continue to retain the attribution to Analog Devices Inc.** Supplying them on the ADI wiki allows registered users to contribute to the materials posted here improving the content and keeping them up to date.
 

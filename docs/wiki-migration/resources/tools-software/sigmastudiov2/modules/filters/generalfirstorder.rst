@@ -9,16 +9,26 @@ General First Order Filter
 Description
 -----------
 
-The General 1st-Order block allows you to design 1st-order lowpass and highpass filters.
+The General 1st-Order block allows you to design 1st-order lowpass and highpass
+filters.
 
-Drag the block into the workspace and it's ready to use. As with other blocks, there's the option to increase the stage count to this algorithm. Observe, however, that with this module adding another stage the algorithm will add another frequency band to the block, which is equivalent to having two filters in series.
+Drag the block into the workspace and it's ready to use. As with other blocks,
+there's the option to increase the stage count to this algorithm. Observe,
+however, that with this module adding another stage the algorithm will add
+another frequency band to the block, which is equivalent to having two filters
+in series.
 
-To switch among highpass, lowpass, and flat, click the filter type icon. This can be done in real time, without needing to recompile the project. Enter your desired values in the text fields to set the cutoff frequency and overall gain (sometimes called scale gain) of the filter. Or click the arrows to increment values for these parameters. To increment them very quickly, click and hold.
+To switch among highpass, lowpass, and flat, click the filter type icon. This
+can be done in real time, without needing to recompile the project. Enter your
+desired values in the text fields to set the cutoff frequency and overall gain
+(sometimes called scale gain) of the filter. Or click the arrows to increment
+values for these parameters. To increment them very quickly, click and hold.
 
 Calculating Filter Coefficients
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the following formulas to calculate the coefficients for first order filters.
+Use the following formulas to calculate the coefficients for first order
+filters.
 
 Variables:
 
@@ -75,7 +85,6 @@ Name   Type  Description
 Output Audio Filter Output
 ====== ===== =============
 
-
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+--------------+------------------------------------------------------------------+
@@ -94,7 +103,8 @@ Output Audio Filter Output
 | Enabled_StageX     | true          | true/false   | Filter Enabled/Bypassed for individual filter stage              |
 +--------------------+---------------+--------------+------------------------------------------------------------------+
 
-Note : \_StageX - Refers to parameters of each stage. X represents the stage index.
+Note : \_StageX - Refers to parameters of each stage. X represents the stage
+index.
 
 DSP Parameters
 --------------

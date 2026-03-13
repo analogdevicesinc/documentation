@@ -1,7 +1,9 @@
 Running software on the hardware
 ================================
 
-In almost all cases, HDL build alone will NOT let you do anything useful. You would need a software running on the processor (Microblaze, NIOS or ARM) to make the design work.
+In almost all cases, HDL build alone will NOT let you do anything useful. You
+would need a software running on the processor (Microblaze, NIOS or ARM) to make
+the design work.
 
 We provide two software solutions:
 
@@ -11,7 +13,8 @@ We provide two software solutions:
 Example Projects
 ----------------
 
-The following projects are the recommended platforms for running the HDL on hardware.
+The following projects are the recommended platforms for running the HDL on
+hardware.
 
 LVDS/SERDES/CMOS interface:
 
@@ -40,4 +43,5 @@ Standalone projects:
 
 Other than the above, we have reference designs covering a wide range of boards. The whole list of supported projects can be found :doc:`here </wiki-migration/resources/fpga/docs/hdl/downloads_insert>`
 
-You may need additional tools, that may be in separate repositories. The main documentation on how to build the software is part of the product's user guide.
+You may need additional tools, that may be in separate repositories. The main
+documentation on how to build the software is part of the product's user guide.

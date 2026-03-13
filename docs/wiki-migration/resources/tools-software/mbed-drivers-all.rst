@@ -1,4 +1,7 @@
-ARM mbed is a solution to quickly prototype and build embedded applications using ARM microcontrollers. The goal of these projects (microcontroller/mbed) is to be able to provide reference projects for the mbed platform, to help customers use ADI parts with their mbed projects.
+ARM mbed is a solution to quickly prototype and build embedded applications
+using ARM microcontrollers. The goal of these projects (microcontroller/mbed) is
+to be able to provide reference projects for the mbed platform, to help
+customers use ADI parts with their mbed projects.
 
 These examples can be run using the online compiler at https://developer.mbed.org or by setting up your computer using the following guide: :doc:`/wiki-migration/resources/tools-software/mbed-user-guide`
 
@@ -100,30 +103,30 @@ Board Parts used Description Reference project
 +---------------+---------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0357-arduino/cn0357_arduino_board.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0357-arduino/cn0357_arduino_board.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216_arduino_hw_1024.jpg
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216_arduino_hw_1024.jpg
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/eval-adxl362-ardz.jpg
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/eval-adxl362-ardz.jpg
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0391/cn0391_front.jpg
-   :width: 200px
+   :width: 200
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0391/cn0391_front.jpg
-   :width: 200px
+   :width: 200
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/cn0396_05_1024.png
-   :width: 200px
+   :width: 200
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/cn0396_05_1024.png
-   :width: 200px
+   :width: 200
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0397/cn0397_board.jpg
-   :width: 200px
+   :width: 200
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0397/cn0397_board.jpg
-   :width: 200px
+   :width: 200
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/398andaicup.png
-   :width: 200px
+   :width: 200
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/398andaicup.png
-   :width: 200px
+   :width: 200

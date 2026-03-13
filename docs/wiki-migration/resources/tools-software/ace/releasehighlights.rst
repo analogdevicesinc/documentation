@@ -15,7 +15,9 @@ Changelog:
 -  Enables improved product discovery on hardware attached, for sessions with an active internet connection, when hardware is connected ACE will attempt to identify the board and match it's appropriate plug-in software if available. On successful matches, users will now be prompted to download the plug-in directly in the attached hardware section and require no additional action.
 -  Long running hardware tasks will display a loading spinner on the attached hardware tile for IIO boards
 -  FFT analysis updated to include spectrum bound analysis options
--  Interactive device view can now be replaced with a static SVG for plug-ins that do not require interactivity on the main view or supply configuration options by alternate means
+-  Interactive device view can now be replaced with a static SVG for plug-ins
+   that do not require interactivity on the main view or supply configuration
+   options by alternate means
 
 **Release Notes:** `ACE v3323.1470 Release Notes <https://wiki.analog.com/_media/resources/tools-software/ace/release_notes_-_ace_v1.30.3323_external_.pdf>`_
 
@@ -33,7 +35,8 @@ Changelog:
 -  Fixes display issues for switch blocks in some diagrams
 -  Fixes wire routing bug seen in some plug-in diagrams that results in unexpected hidden wires
 -  Fixes issues resolving transaction parameters in scripts
--  Fixes an issue where the widget block in new diagrams would always select the default widget even when overridden
+-  Fixes an issue where the widget block in new diagrams would always select the
+   default widget even when overridden
 
 **Release Notes:** `ACE v1.30.3311.1463 Release Notes <https://wiki.analog.com/_media/resources/tools-software/ace/release_notes_-_ace_v1.30.3311_external_.pdf>`_
 
@@ -46,7 +49,10 @@ ACE 1.30.3303.1460 (Update)
 -  **Download** `ACEInstall_1.30.3303.1460_minimal.exe <https://swdownloads.analog.com/ACE/ACEInstall_1.30.3303.1460_minimal.exe>`_
 -  **Download** `ACEInstall_1.30.3303.1460_offline.exe <https://swdownloads.analog.com/ACE/ACEInstall_1.30.3303.1460_offline.exe>`_
 
-- Fixes issues displaying some legacy device views - Fixes deadlock issues in plug-in installation settings when package feed URLs are duplicated - Improves plug-in installation stability with broken broken feeds when more than one plug-in package feed is enabled
+- Fixes issues displaying some legacy device views - Fixes deadlock issues in
+  plug-in installation settings when package feed URLs are duplicated - Improves
+  plug-in installation stability with broken broken feeds when more than one
+  plug-in package feed is enabled
 
 ACE 1.30.3290.1451
 ------------------
@@ -81,7 +87,10 @@ ACE 1.29.3268.1439
 
 **Release Notes:** `ACE v1.29 Release Notes <https://wiki.analog.com/_media/resources/tools-software/ace/release_notes_-_ace_v1.29_external_.pdf>`_
 
-Major Updates - Complete overhaul of how IIO components are supported in ACE, reflected in changes to the installer options. Command line communication tool no longer included. IIO hardware support now delivered through the ACE plug-in architecture.
+Major Updates - Complete overhaul of how IIO components are supported in ACE,
+reflected in changes to the installer options. Command line communication tool
+no longer included. IIO hardware support now delivered through the ACE plug-in
+architecture.
 
 Minor Updates - Further updates in-app to support alternate plug-in installation feeds. In the event a package feed is offline user can add a custom source as outlined in this article - :doc:`Alternative Plug-in Package Sources </wiki-migration/resources/tools-software/ace/alternativepackagesources>`
 
@@ -160,7 +169,8 @@ ACE 1.23.3085.1388 (hotfix)
 **Notes:**
 
 -  Fixed typo in Memory Map "Side Effects" column
--  Fixed issue causing scripted transactions (e.g. macros) to fail with unset parameters
+-  Fixed issue causing scripted transactions (e.g. macros) to fail with unset
+   parameters
 
 ACE 1.23.3077.1383
 ------------------
@@ -177,7 +187,8 @@ ACE 1.23.3077.1383
 -  Added navigation pane to diagrams in ACE to support pan/zoom on larger diagrams
 -  Increased supported data capture size and software limits removed
 -  Added visual indicator to download button when application update is in progress
--  Removed asterisk prefix to notify users of Volatile/Side effect registers/bitfields
+-  Removed asterisk prefix to notify users of Volatile/Side effect
+   registers/bitfields
 
    -  Added a Boolean column to reflect the same information more easily
 

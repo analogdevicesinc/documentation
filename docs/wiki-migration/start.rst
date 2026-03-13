@@ -1,11 +1,15 @@
 Analog Devices Wiki
 ===================
 
-This wiki provides developers using Analog Devices products with software and documentation, including HDL interface code, software drivers, and reference project examples for FPGA connectivity. It also contains user guides for some Analog Devices evaluation boards to help developers get up and running fast.
+This wiki provides developers using Analog Devices products with software and
+documentation, including HDL interface code, software drivers, and reference
+project examples for FPGA connectivity. It also contains user guides for some
+Analog Devices evaluation boards to help developers get up and running fast.
 
 University students can find lab exercises built around the use of the Analog Devices Active Learning Modules, such as the :adi:`ADALM1000`, :adi:`ADALM2000`, :adi:`ADALM-PLUTO`.
 
-To find content on the Wiki, search for keywords or browse one of the categories below.
+To find content on the Wiki, search for keywords or browse one of the categories
+below.
 
 Browse the Wiki
 ---------------

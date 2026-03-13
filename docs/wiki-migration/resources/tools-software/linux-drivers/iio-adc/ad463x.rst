@@ -4,11 +4,19 @@ AD4630-24/AD4630-16 Dual Channel and AD4030-24 Single Channel Precision SAR ADC 
 Description
 -----------
 
-The AD4630-24 is a two-channel, low-noise, 2 MSPS successive approximation register (SAR) analog-to-digital converter (ADC). The AD4030-24 is the single channel version. Both have a guaranteed maximum ±0.9 ppm INL and no missing codes at 24-bits, and achieve unparalleled precision from −40°C to +125°C. The AD4630-16 is a 16-bit, two-channel version.
+The AD4630-24 is a two-channel, low-noise, 2 MSPS successive approximation
+register (SAR) analog-to-digital converter (ADC). The AD4030-24 is the single
+channel version. Both have a guaranteed maximum ±0.9 ppm INL and no missing
+codes at 24-bits, and achieve unparalleled precision from −40°C to +125°C. The
+AD4630-16 is a 16-bit, two-channel version.
 
 Operating from 5V and 1.8 V supplies, the AD4630-24, AD4630-16 and AD4030-24 has a ±(65/64 ·V\ :sub:`REF`) differential input range with V\ :sub:`REF` ranging from 4.096V to 5V. The input common mode is not restricted – each polarity input may be anywhere from - 1/128 ·V\ :sub:`REF` to 129/128 ·V\ :sub:`REF`, simplifying analog signal conditioning requirements and system calibration. A low drift, precision reference buffer makes it easy to share a voltage reference with other circuitry.
 
-The versatile Flexi-SPI serial interface is simple to use. A wide data window, multiple SDO lanes, and optional DDR data can reduce the serial clock to 10 MHz at 2 MSPS. Echo-clock and ADC clock-master modes relax the timing requirements and simplify the use of digital isolators. The parts are compatible with 1.2V to 1.8V logic, using the separate VIO supply.
+The versatile Flexi-SPI serial interface is simple to use. A wide data window,
+multiple SDO lanes, and optional DDR data can reduce the serial clock to 10 MHz
+at 2 MSPS. Echo-clock and ADC clock-master modes relax the timing requirements
+and simplify the use of digital isolators. The parts are compatible with 1.2V to
+1.8V logic, using the separate VIO supply.
 
 Supported Devices
 -----------------
@@ -104,7 +112,8 @@ This PWM generator is used to start the sampling procedure
 ADC node
 ~~~~~~~~
 
-The ad4630-24 is a SPI-compatible ADC so it should be under a SPI controller. The following custom attributes are available:
+The ad4630-24 is a SPI-compatible ADC so it should be under a SPI controller.
+The following custom attributes are available:
 
 +-----------------------+-------------------+-----------------------------------------------------------------+
 | Attribute name        | Values            | Description                                                     |
@@ -127,7 +136,6 @@ The ad4630-24 is a SPI-compatible ADC so it should be under a SPI controller. Th
 .. important::
 
    The ``spi-max-frequency`` must be a multiple of a 40MHz clock and the ``dmas`` handle should use a 64-bit wide data bus.
-
 
 ::
 
@@ -158,7 +166,8 @@ Usage
 Kernel configuration
 ~~~~~~~~~~~~~~~~~~~~
 
-This device depends on a PWM based trigger used to start the sampling procedure. The first step is to enable the support for AXI_PWMGEN.
+This device depends on a PWM based trigger used to start the sampling procedure.
+The first step is to enable the support for AXI_PWMGEN.
 
 <blockquote>
 
@@ -177,7 +186,8 @@ This device depends on a PWM based trigger used to start the sampling procedure.
 
 </blockquote>
 
-Another required component is the SPI controller. The AD4630 has a specific set of SPI timing requirements that are supported by the SPI_ENGINE IP.
+Another required component is the SPI controller. The AD4630 has a specific set
+of SPI timing requirements that are supported by the SPI_ENGINE IP.
 
 <blockquote>
 
@@ -224,7 +234,6 @@ One way to check if the device and driver are present is using **iio_info**:
 
 ::
 
-
    root@analog# iio_info
        iio:device0: ad4630-24 (buffer capable)
            2 channels found:
@@ -257,8 +266,9 @@ You can go to the device folder using:
 
 .. important::
 
-   As specified in the devicetree section, the device supports multiple out-data-modes. This example describes the steps for the 30-bit averaged differential output mode.
-
+   As specified in the devicetree section, the device supports multiple
+   out-data-modes. This example describes the steps for the 30-bit averaged
+   differential output mode.
 
 In the folder there are several files that can set specific device attributes:
 
@@ -288,7 +298,8 @@ In the folder there are several files that can set specific device attributes:
 Operating Mode
 ^^^^^^^^^^^^^^
 
-The device an operate in normal and low power mode. This attribute displays the following possible values:
+The device an operate in normal and low power mode. This attribute displays the
+following possible values:
 
 ::
 
@@ -313,7 +324,8 @@ Change operating mode:
 Sampling frequency
 ^^^^^^^^^^^^^^^^^^
 
-The ad4630 device driver supports a variable sampling rate, that can be configured up to 2MSPS.
+The ad4630 device driver supports a variable sampling rate, that can be
+configured up to 2MSPS.
 
 Display all available sampling rates:
 
@@ -346,7 +358,6 @@ The ad4630 device family has support for a sample averaging mode that's configur
 
    The average mode works only with the output data mode set to 30-bit average
 
-
 Display all available number(in samples) of averaging operations on the buffer:
 
 ::
@@ -371,13 +382,15 @@ Change the sample averaging count:
 
 .. important::
 
-   Please note that averaging on low sampling rates will timeout if the default buffer wait time is not modified
-
+   Please note that averaging on low sampling rates will timeout if the default
+   buffer wait time is not modified
 
 Channel hardware gain
 ^^^^^^^^^^^^^^^^^^^^^
 
-The hardware gain can be changed for each channel with a value from 0.0001 to 1.99997. This gain is applied to each sample value. Each ADC channel has an independent hardware gain attribute.
+The hardware gain can be changed for each channel with a value from 0.0001 to
+1.99997. This gain is applied to each sample value. Each ADC channel has an
+independent hardware gain attribute.
 
 ::
 
@@ -443,9 +456,11 @@ Every buffer implementation features a set of files:
 
 buffer: length Get/set the number of sample sets that may be held by the buffer.
 
-buffer: enable Enables/disables the buffer. This file should be written last, after length and selection of scan elements
+buffer: enable Enables/disables the buffer. This file should be written last,
+after length and selection of scan elements
 
-scan_elements: in_voltageX_differentialX_en Enable/disables the channel output so the data won't be buffered for that specific channel.
+scan_elements: in_voltageX_differentialX_en Enable/disables the channel output
+so the data won't be buffered for that specific channel.
 
 Enable and read 400 samples from both channels:
 
@@ -487,7 +502,8 @@ Enable and read 400 samples from both channels:
 Debug mode
 ^^^^^^^^^^
 
-You can write and read the ADC registers using debugfs. Here we will read and write the scratchpad register:
+You can write and read the ADC registers using debugfs. Here we will read and
+write the scratchpad register:
 
 First go to the device debug folder:
 
@@ -532,6 +548,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

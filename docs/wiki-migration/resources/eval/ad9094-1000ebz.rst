@@ -26,12 +26,10 @@ AD9094 Evaluation Board
 
    *:adi:`AD9094` Evaluation Board*
 
-
 Typical Measurement Setup
 -------------------------
 
 The :adi:`AD9094-1000EBZ <AD9094>` can be evaluated using the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ FPGA data capture board. The figures below show the :adi:`AD9094-1000EBZ <AD9094>` connected to the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_.
-
 
 |image1|
 
@@ -39,23 +37,21 @@ The :adi:`AD9094-1000EBZ <AD9094>` can be evaluated using the `ADS7-V2EBZ <https
 
    *:adi:`AD9094-1000EBZ <AD9094>` Jumpers Placement*
 
-
    |image2|
 
 .. container:: centeralign
 
    *Evaluation Board Connection—*\ :adi:`AD9094-1000EBZ <AD9094>`\ *(Left) and* :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>`\ *(Right)*
 
-
 .. tip::
 
    Tip: For more information on Sysref (J200), see the :adi:`JESD204B Survival Guide <media/en/technical-documentation/technical-articles/JESD204B-Survival-Guide.pdf>`.
 
-
 .. warning::
 
-   \ Warning: The AD9094-1000EBZ is electrostatic discharge (ESD) sensitive. Handle the device with care, and employ conducting wrist straps or antistatic bags when handling the board.\
-
+   \ Warning: The AD9094-1000EBZ is electrostatic discharge (ESD) sensitive.
+   Handle the device with care, and employ conducting wrist straps or antistatic
+   bags when handling the board.\
 
 Features
 --------
@@ -101,12 +97,14 @@ Equipment Needed
 Getting Started
 ---------------
 
-This section provides quick start procedures for using the evaluation board for AD9094.
+This section provides quick start procedures for using the evaluation board for
+AD9094.
 
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
 
-Before using the software for testing, configure the evaluation board as follows:
+Before using the software for testing, configure the evaluation board as
+follows:
 
 -  Connect the evaluation board to the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ data capture board, as shown in the figure for the **Evaluation Board Connection**.
 -  Make sure the jumpers are placed on the evaluation board as highlighted in green in the figure **AD9094 Evaluation Board**.
@@ -116,12 +114,11 @@ Before using the software for testing, configure the evaluation board as follows
 
 .. image:: https://wiki.analog.com/_media/resources/eval/9694_ads7v2_devmgr.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    \ *Device Manager showing* `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_\
-
 
 -  If the Device Manager does not show the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ listed, unplug all USB devices from the PC, uninstall and re-install SPIController and VisualAnalog and restart the hardware setup from step 1.
 -  On the ADC evaluation board, provide a clean, low jitter 1GHz clock source to connector J203 and set the amplitude to 14dBm. This is the ADC Sample Clock.
@@ -131,21 +128,23 @@ Before using the software for testing, configure the evaluation board as follows
 
    :math:`\displaystyle LaneLineRate=M \times Nprime \times (\frac{10}{8}) \times f_{out}/L` bps/lane, where
 
-
 .. container:: centeralign
 
    :math:`f_{out} = f_{ADC SAMPLE CLOCK}/DecimationRatio, Nprime=8 or 16` *(Default Nprime = 16)*\
-
 
 .. container:: centeralign
 
    :math:`REFCLK = LaneLineRate/20`
 
-
 -  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel A to J101. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K & L band-pass filters.) If providing an input clock with a divide-by-1 setting in the AD9094 make sure the clock source has a 50% duty cycle. For optimum SNR performance use the clock divider with a divide ratio of 2 or higher to minimize the impact of the phase noise from the input clock source.
 -  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel B to J102. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K & L band-pass filters.)
 -  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel C to J104. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K & L band-pass filters.)
--  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel D to J107. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K & L band-pass filters.)
+-  On the ADC evaluation board, use a clean signal generator with low phase
+   noise to provide an input signal for channel D to J107. Use a shielded,
+   RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC
+   Evaluation Board. For best results, use a narrow-band, band-pass filter with
+   50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen
+   Avionics, and K & L band-pass filters.)
 
 ACE Setup
 ~~~~~~~~~
@@ -157,17 +156,14 @@ ACE Setup
 
    Note: The AD9094 evaluation board shares the same plugin with AD9694.
 
-
-
-
--  Once the .acezip file has been downloaded from the Analog Devices website, right click on it and install the plug-in, or double click to install.
+-  Once the .acezip file has been downloaded from the Analog Devices website,
+   right click on it and install the plug-in, or double click to install.
 
 .. tip::
 
-   Tip: Some browsers (Such as Internet Explorer) may save the file as a .zip file instead of an .acezip file. If this happens, simply download and rename the file with an .acezip file extension.
-
-
-
+   Tip: Some browsers (Such as Internet Explorer) may save the file as a .zip
+   file instead of an .acezip file. If this happens, simply download and rename
+   the file with an .acezip file extension.
 
 -  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` ACE :math:`right` ACE
 -  Once ACE opens the AD9094 evaluation board should appear in the **Attached Hardware** section.
@@ -179,15 +175,18 @@ ACE Setup
 
    *ACE Attached Hardware: AD9094*
 
-
--  If the AD9094 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed. 
+-  If the AD9094 plug-in does not appear, or no board is detected, make sure the
+   ADS7-V2 is powered on and the evaluation board is properly connected. Make
+   sure that ACE has been updated to the most recent version and the necessary
+   plug-ins have been installed.
 
 .. warning::
 
-   \ Warning: Programming the FPGA will power the AD9094 evaluation board via the FMC connector. Removing any of the board's power jumpers while the board is on or in operation may cause damage to the board and/or chip. Removing the board while it is being powered via the FMC connector may also cause damage to the board.\
-
-
-
+   \ Warning: Programming the FPGA will power the AD9094 evaluation board via
+   the FMC connector. Removing any of the board's power jumpers while the board
+   is on or in operation may cause damage to the board and/or chip. Removing the
+   board while it is being powered via the FMC connector may also cause damage
+   to the board.\
 
 -  Double click on the **AD9094-1000EBZ** icon which will open up the Chip Configuration in Board View. The default conditions for the AD9094 are Full BW mode with a sample clock of 1 GHz and Combined AB/CD. From here both pairs of ADC channels (Pair AB and Pair CD) can be configured either identically or independently when ACE Plugin Mode is set to Independent AB/CD mode.
 
@@ -198,15 +197,9 @@ ACE Setup
 
    \ *ACE - AD9094 Chip Configuration and Board View*\
 
-
-
-
 .. note::
 
    Note: It is important to remember that the AD9094 functions as two dual ADCs.
-
-
-
 
 -  From the board view **Chip Configuration** the clock frequency, chip application mode (per pair), and the JESD204B settings can be quickly configured. The default conditions are:
 
@@ -225,7 +218,6 @@ ACE Setup
 
    \ *ACE - AD9094 Initial Configuration Wizard Showing JESD204B Parameters*\
 
-
 -  Double click the **AD9094** icon in the Board View to open the Chip View
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_chip_view.png
@@ -235,7 +227,6 @@ ACE Setup
 
    \ *ACE - AD9094 Device Chip View*\
 
-
 -  You can access the **Memory Map** for both the Chip and FPGA from either the AD9094 Board View or Chip View. The **Memory Map** can be used to individually write registers in the AD9094. **Note: When writing individual registers it is imperative to first write the Pair Index register (0x0009) before any other write so that the correct ADC channel pair (Pair AB or Pair CD) is being addressed. If writing a local register, subsequently write the ADC channel index register (0x0008) so that the desired channel within the desired pair is written (Channel A/C or Channel B/D).**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_memory_map.png
@@ -244,7 +235,6 @@ ACE Setup
 .. container:: centeralign
 
    \ *Memory Map View (click to enlarge)*\
-
 
 Obtaining an FFT - Full BW Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -258,7 +248,6 @@ Obtaining an FFT - Full BW Mode
 
    \ *Board View: Full BW Mode*\
 
-
 -  In this example, with an input clock of 1000MHz, the output lane rate is 10 Gbit/s. The default JESD204B lane configuration for the JESD204B link of each ADC Channel Pair is 2.2.2 (L.M.F). The required REFCLK frequency is 500 MHz (refer to step 8 in the \`section "Configuring the Board").
 -  Double click the **AD9094** icon in the Board View to open the Chip View, where you can adjust analog input settings such as input buffer current, input full-scale voltage, VREF, and PLL settings. Once the settings are configured click **Apply Changes** in the upper left of the chip view. This will load the setting changes to the selected ADC pair and channel(s). If the settings are desired for all four channels, then click the **Apply** button in the **Analog Inputs** window on the left of the screen. This loads the current settings to all channels in the device.
 
@@ -268,7 +257,6 @@ Obtaining an FFT - Full BW Mode
 .. container:: centeralign
 
    \ *Chip View: Full BW Mode*\
-
 
 -  (W/Issue at ACE Plugin - Need to fix) Issue a **Datapath Reset** to the AD9094 by clicking the box and clicking **Apply Changes**. The datapath reset bit will automatically self-clear.
 -  (W/Issue at ACE Plugin - Need to fix) If the **PLL Locked** lost indicator lights up, you can reset it by powering down the JESD link using the **JESD Link Power Cycle** box and clicking **Apply Changes**.
@@ -282,15 +270,11 @@ Obtaining an FFT - Full BW Mode
 
    \ *AD9094 FFT with 155 MHz Input Frequency*\
 
-
-
-
 .. tip::
 
-   The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The ADS7-V2 FPGA software supports up to 2M FFT capture (1M per channel).
-
-
-
+   The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per
+   channel. The ADS7-V2 FPGA software supports up to 2M FFT capture (1M per
+   channel).
 
 Troubleshooting Tips
 ====================
@@ -298,7 +282,10 @@ Troubleshooting Tips
 EVALUATION BOARD ISN'T FUNCTIONING PROPERLY
 -------------------------------------------
 
--  It is possible that a board component has been rendered inoperable by ESD, removing a jumper during powered operation, accidental shorting while probing, etc. Try checking the supply domain voltages of the board while it is powered. They should be as follows:
+-  It is possible that a board component has been rendered inoperable by ESD,
+   removing a jumper during powered operation, accidental shorting while
+   probing, etc. Try checking the supply domain voltages of the board while it
+   is powered. They should be as follows:
 
 ============ ====== ========== ===============
 Domain       Jumper Test Point Approx. Voltage
@@ -322,14 +309,18 @@ EVALUATION BOARD IS NOT COMMUNICATING WITH THE ADS7-V2 / NO SPI COMMUNICATION
 -  Check Test Point 307 - test point for the AVDD_1P8_SPI supply domain, jumper P312 - and make sure it is around 1.8 volts.
 -  To test SPI operation, attempt to both read and write to register 0x000A using ACE's Register Debugger (View → Register Debugger). This register is an open register available for testing memory reads and writes. If the value written to this register does not reset after writing it, SPI is operational.
 -  All registers reading back as either all ones or all zeros (i.e., 0xFF or 0x00) may indicate no SPI communication.
--  Register 0x0000 (SPI Configuration A) reading back 0x81 in ACE may indicate no SPI communication as a result of the FPGA on the ADS7-V2 not being programmed.
+-  Register 0x0000 (SPI Configuration A) reading back 0x81 in ACE may indicate
+   no SPI communication as a result of the FPGA on the ADS7-V2 not being
+   programmed.
 
 EVALUATION BOARD FAILS TO CAPTURE DATA
 --------------------------------------
 
 -  Ensure that the board is functioning properly and that SPI communication is successful - see previous troubleshooting tips.
 -  Check the Clock Detect register 0x011B to see if the inputted clock is being detected. 0x01 indicates detection, 0x00 indicates no clock detected. Check the signal generator inputting on connector J203. Try placing a differential oscilloscope probe on the clock pins to see if the clock signal is reaching the chip.
--  Check the PLL Locked indicator or register 0x056F (PLL Status). If the light is green / if the register reads back 0x80, the PLL is locked. If it is not locked:
+-  Check the PLL Locked indicator or register 0x056F (PLL Status). If the light
+   is green / if the register reads back 0x80, the PLL is locked. If it is not
+   locked:
 
    -  Check the clock being inputted to connector J203
 
@@ -339,4 +330,4 @@ EVALUATION BOARD FAILS TO CAPTURE DATA
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9694_jumpers_new_board.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9694_connection_new_board_v1.png
-   :width: 1000px
+   :width: 1000

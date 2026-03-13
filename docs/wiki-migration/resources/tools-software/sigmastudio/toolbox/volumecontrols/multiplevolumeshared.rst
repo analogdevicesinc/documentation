@@ -7,5 +7,4 @@ Multiple Volume Control Shared
 
    Under Construction
 
-
 See :doc:`Multiple Volume Control </wiki-migration/resources/tools-software/sigmastudio/toolbox/volumecontrols/multiplevolumecontrol>`.

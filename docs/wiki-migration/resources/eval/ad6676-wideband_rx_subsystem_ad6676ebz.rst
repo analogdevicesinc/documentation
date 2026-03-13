@@ -40,7 +40,8 @@ Features
 -  SPI interface for setup and control
 -  JESD204B single or dual lane outputs
 -  On-board LDO regulator powered through the FMC interface
--  MATLAB (R) User Interface provides complete AD6676 configuration based on user entries
+-  MATLAB (R) User Interface provides complete AD6676 configuration based on
+   user entries
 
 Helpful Links
 -------------
@@ -73,7 +74,8 @@ AD6676 DemoTool Software Installation Files : `AD6676 Evaluation Software <https
 AD6676 Evaluation Board HDL Libraries and Project
 -------------------------------------------------
 
-The link below is to an external website which has a project with HDL code that can be used with some FPGA development board to interface to the AD6676
+The link below is to an external website which has a project with HDL code that
+can be used with some FPGA development board to interface to the AD6676
 
 `AD6676EVB HDL project documentation <https://analogdevicesinc.github.io/hdl/projects/ad6676evb/index.html>`_ :git-hdl:`External Link to github.com AD6676 library <library/axi_ad6676>` :git-hdl:`External Link to github.com AD6676EVB project <projects/ad6676evb>` `External Link to general ADI github.com website <https://github.com/analogdevicesinc>`_
 

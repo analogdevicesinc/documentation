@@ -9,7 +9,8 @@ Cross Mux
 Description
 -----------
 
-The Cross Mux block allows route an input to one of selected output pins. The output for each input is selected based on the numeric value on the control.
+The Cross Mux block allows route an input to one of selected output pins. The
+output for each input is selected based on the numeric value on the control.
 
 Targets Supported
 -----------------
@@ -19,7 +20,6 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ========= ========== ================ ============= ================
 Cross Mux B          B                NA            B
 ========= ========== ================ ============= ================
-
 
 | ===== Pins =====
 

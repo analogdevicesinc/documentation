@@ -3,15 +3,19 @@ Depth Compute Parameters
 
 .. important::
 
-   This page has been deprecated and replaced by an App note that is available from the ADI ToF Team.
+   This page has been deprecated and replaced by an App note that is available
+   from the ADI ToF Team.
 
-
-The ADSD3100 and ADSD3030 generate raw depth data which is processed using ADI's proprietary depth compute pipeline. The user is able to modify some of the depth compute parameters to tune performance to a specific application.
+The ADSD3100 and ADSD3030 generate raw depth data which is processed using ADI's
+proprietary depth compute pipeline. The user is able to modify some of the depth
+compute parameters to tune performance to a specific application.
 
 Where can the user modify these parameters?
 -------------------------------------------
 
-While running the SDK, one of the inputs for initializing the camera is an ini file. This file contains control to depth compute parameters as well as ADSD3500 control (only enabled if used).
+While running the SDK, one of the inputs for initializing the camera is an ini
+file. This file contains control to depth compute parameters as well as ADSD3500
+control (only enabled if used).
 
 For example:
 
@@ -104,12 +108,14 @@ inputFormat
 -  raw16_bits11_shift4 - ADSD3100: When ADSD3100 is interfaced with NXP, input data will be unpacked and shifted by 4 bits.
 -  raw16_bits11_shift0 - ADSD3100: When ADSD3100 is interfaced with NXP, input data will be unpacked by NXP.
 -  raw16_bits12_shift4 - ADSD3030: When ADSD3030 is interfaced with NXP, input data will be unpacked and shifted by 4 bits.
--  raw16_bits12_shift0 - ADSD3030: When ADSD3030 is interfaced with NXP, input data will be unpacked by NXP.
+-  raw16_bits12_shift0 - ADSD3030: When ADSD3030 is interfaced with NXP, input
+   data will be unpacked by NXP.
 
 interleavingEnable
 ~~~~~~~~~~~~~~~~~~
 
-Instructs the ADSD3500 to generated interleaved data on MIPI or use virtual channels.
+Instructs the ADSD3500 to generated interleaved data on MIPI or use virtual
+channels.
 
 -  0 - use virtual channels
 -  1 - enable interleaving
@@ -128,7 +134,8 @@ Instructs the ADSD3500 how many bits to use for the phase or depth frames.
 bitsInConf
 ~~~~~~~~~~
 
-Instructs the ADSD3500 how many bits to use for Confidence data or to disable Confidence data.
+Instructs the ADSD3500 how many bits to use for Confidence data or to disable
+Confidence data.
 
 -  0 - Off;
 -  4 - 4-bits confidence;

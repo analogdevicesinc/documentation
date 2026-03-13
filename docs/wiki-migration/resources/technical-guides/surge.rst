@@ -1,11 +1,22 @@
 AD74115H Surge Test Results
 ===========================
 
-The surge immunity test indicates the capability of the device or equipment to survive surges caused by events such as lightning strikes or industrial power surges caused by switching heavy loads or short-circuit fault conditions.
+The surge immunity test indicates the capability of the device or equipment to
+survive surges caused by events such as lightning strikes or industrial power
+surges caused by switching heavy loads or short-circuit fault conditions.
 
-Per the IEC 61000-4-5 standard for industrial environments, the surge is a combination wave of 1.2 μs rising time with 50 μs pulse width open circuit voltage and 8 μs rising time with 20 μs pulse width short-circuit current. The DUT (Device under test) is subject to five positive and five negative surges at each rating. The interval between each surge is 1 min. The surge is tested to the AD74115H output cable, which is treated as unshielded asymmetrically operated interconnection lines of the DUT. The surge is applied to the I/O and sense lines through CDN 117.
+Per the IEC 61000-4-5 standard for industrial environments, the surge is a
+combination wave of 1.2 μs rising time with 50 μs pulse width open circuit
+voltage and 8 μs rising time with 20 μs pulse width short-circuit current. The
+DUT (Device under test) is subject to five positive and five negative surges at
+each rating. The interval between each surge is 1 min. The surge is tested to
+the AD74115H output cable, which is treated as unshielded asymmetrically
+operated interconnection lines of the DUT. The surge is applied to the I/O and
+sense lines through CDN 117.
 
-The CDNs (coupling decoupling network) do not influence the specified functional conditions of the DUT. The interconnection line between the DUT and the CDN is 2 m in length or shorter
+The CDNs (coupling decoupling network) do not influence the specified functional
+conditions of the DUT. The interconnection line between the DUT and the CDN is 2
+m in length or shorter
 
 Table 1 IEC 61000-4-5 Surge Test Levels
 ---------------------------------------
@@ -19,27 +30,42 @@ Level Voltage Peak (kV)
 4     4
 ===== =================
 
-
 | |image1|
 
 .. container:: centeralign
 
    *Figure 1 ADP1034 and AD74115H Surge Block Diagram*
 
-
 Hardware Configuration
 ----------------------
 
-The use cases tested during surge testing were voltage output (and voltage input by reconfiguring the ADC input nodes), internal digital output sourcing and sinking. The external sense pins SENSE_EXT1 and SENSE_EXT2 were also subject to testing. The reasoning for these particular use cases were to ensure the integrity of the I/O and sense screw terminals along with the internal fets used for the internal digital output use case. The surge was coupled to each screw terminal one at a time with respect to IO_N (AGND). Unshielded cable was used for all use cases.
+The use cases tested during surge testing were voltage output (and voltage input
+by reconfiguring the ADC input nodes), internal digital output sourcing and
+sinking. The external sense pins SENSE_EXT1 and SENSE_EXT2 were also subject to
+testing. The reasoning for these particular use cases were to ensure the
+integrity of the I/O and sense screw terminals along with the internal fets used
+for the internal digital output use case. The surge was coupled to each screw
+terminal one at a time with respect to IO_N (AGND). Unshielded cable was used
+for all use cases.
 
-For the voltage output use case, 6 V was configured as the output into a 100 kΩ load connected between IO_P and IO_N. The measurement (voltage input) was configured as IO_P to IO_N in the range 0 V to 12 V. The SENSE_EXT1 and SENSE_EXT2 nodes were selected as diagnostic nodes and configured as inputs to the ADC in the range 0 V to 12 V. Two AA batteries connected in series were used as a 3.1 V input to each of the SENSE_EXTx pins.
+For the voltage output use case, 6 V was configured as the output into a 100 kΩ
+load connected between IO_P and IO_N. The measurement (voltage input) was
+configured as IO_P to IO_N in the range 0 V to 12 V. The SENSE_EXT1 and
+SENSE_EXT2 nodes were selected as diagnostic nodes and configured as inputs to
+the ADC in the range 0 V to 12 V. Two AA batteries connected in series were used
+as a 3.1 V input to each of the SENSE_EXTx pins.
 
-For internal digital output a 1 kΩ load resistor was connected between IO_P and IO_N. The measurement was configured for the internal diagnostic of current flowing through the internal RSET.
+For internal digital output a 1 kΩ load resistor was connected between IO_P and
+IO_N. The measurement was configured for the internal diagnostic of current
+flowing through the internal RSET.
 
 Software Configuration
 ----------------------
 
-The software used was the evaluation software made available with the AD74115H evaluation board. At the beginning of each test the pre test configuration was performed. Before the discharges were applied the pre measurement flow of was taken. After discharges the post measurement was taken.
+The software used was the evaluation software made available with the AD74115H
+evaluation board. At the beginning of each test the pre test configuration was
+performed. Before the discharges were applied the pre measurement flow of was
+taken. After discharges the post measurement was taken.
 
 Pre test configuration
 
@@ -63,7 +89,12 @@ Pre and Post Measurement Flow
 Performance Summary
 -------------------
 
-Table 2 gives a summary of the surge test results. For the digital output use cases a deviation is not recorded as the accuracy is dependent on the load. The test verified that the digital output did not turn off unexpectedly. The ADC conversion error bit in the Alert Status register was set after each test. The ADC error indicates a saturation error (ADC measurement is reading full scale) indicating that > 12 V of the surge voltage was observed on the pin under test.
+Table 2 gives a summary of the surge test results. For the digital output use
+cases a deviation is not recorded as the accuracy is dependent on the load. The
+test verified that the digital output did not turn off unexpectedly. The ADC
+conversion error bit in the Alert Status register was set after each test. The
+ADC error indicates a saturation error (ADC measurement is reading full scale)
+indicating that > 12 V of the surge voltage was observed on the pin under test.
 
 Table 2 Surge Results
 ---------------------
@@ -96,4 +127,4 @@ Table 2 Surge Results
 | :doc:`Return to AD74115H Immunity Performance </wiki-migration/resources/technical-guides/ad74115_immunity_performance>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/technical-guides/surge_block_diagram.png
-   :width: 800px
+   :width: 800

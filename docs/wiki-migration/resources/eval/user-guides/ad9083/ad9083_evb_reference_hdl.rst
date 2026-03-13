@@ -5,17 +5,25 @@ AD9083 FMC Card HDL Reference Design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad9083_evb/index.html\
 
-
 Overview
 --------
 
-The AD9083 is a 16-bit, 16 channel with 125 MHz bandwidth per channel (2 GSPS total) analog-to-digital converter (ADC) featuring an on-chip programmable, single-pole antialiasing filter and termination resistor that is designed for low power, small size, and ease of use.
+The AD9083 is a 16-bit, 16 channel with 125 MHz bandwidth per channel (2 GSPS
+total) analog-to-digital converter (ADC) featuring an on-chip programmable,
+single-pole antialiasing filter and termination resistor that is designed for
+low power, small size, and ease of use.
 
-The dual ADC cores feature a multistage, differential pipelined architecture with integrated output error correction logic. Each ADC features wide bandwidth inputs supporting a variety of user-selectable input ranges.
+The dual ADC cores feature a multistage, differential pipelined architecture
+with integrated output error correction logic. Each ADC features wide bandwidth
+inputs supporting a variety of user-selectable input ranges.
 
-The AD9083_EVB reference design is a processor based (e.g. Microblaze) embedded system. The design consists of a receive chain.
+The AD9083_EVB reference design is a processor based (e.g. Microblaze) embedded
+system. The design consists of a receive chain.
 
-The receive chain transports the captured samples from ADC to the system memory (DDR). Before transferring the data to DDR the samples are stored in a 33Mbit buffer implemented on block rams from the FPGA fabric (util_adc_fifo) or 65k samples per channel.
+The receive chain transports the captured samples from ADC to the system memory
+(DDR). Before transferring the data to DDR the samples are stored in a 33Mbit
+buffer implemented on block rams from the FPGA fabric (util_adc_fifo) or 65k
+samples per channel.
 
 All cores from the receive chain are programmable through an AXI-Lite interface.
 
@@ -42,13 +50,19 @@ Required Hardware
 Block Diagram
 ~~~~~~~~~~~~~
 
-For both platforms, the link is set for full bandwidth mode and operate with the following parameters:
+For both platforms, the link is set for full bandwidth mode and operate with the
+following parameters:
 
 Deframer paramaters: L=4, M=16, F=8, S=1, N’=16
 
 GTREFCLK – 500MHz LINKCLK(Lane Rate/40) – 250MHz DEVICECLK - 125 MHz ADCCLK – 2000MHz JESD204B Lane Rate – 10Gbps
 
-Beacause of the F=8 parameter the JESD Link IP will have different input and output frequencies and bus widths. Data will enter the IP on 4 32bit wide channels (128b) at 250MHz (link clock) and will exit on a 256bit interface clocked at 125MHz (device clock). The transport layer component presents on its output 256 bits at once on every clock cycle, representing 1 sample per converter. The receive chain is then transferred to the DDR using a DMA.
+Beacause of the F=8 parameter the JESD Link IP will have different input and
+output frequencies and bus widths. Data will enter the IP on 4 32bit wide
+channels (128b) at 250MHz (link clock) and will exit on a 256bit interface
+clocked at 125MHz (device clock). The transport layer component presents on its
+output 256 bits at once on every clock cycle, representing 1 sample per
+converter. The receive chain is then transferred to the DDR using a DMA.
 
 The data path and clock domains are depicted on the below diagram:
 
@@ -56,17 +70,24 @@ Xilinx
 ^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/ad9083_evb_2.svg
-   :width: 800px
+   :width: 800
 
-The design has one JESD receive chain with 4 lanes at rate of 10Gbps. The JESD receive chain consists of a physical layer represented by an XCVR module, a link layer represented by an RX JESD LINK module and transport layer represented by a RX JESD TPL module. The links operate in Subclass 0 since it is not using the SYSREF signal.
+The design has one JESD receive chain with 4 lanes at rate of 10Gbps. The JESD
+receive chain consists of a physical layer represented by an XCVR module, a link
+layer represented by an RX JESD LINK module and transport layer represented by a
+RX JESD TPL module. The links operate in Subclass 0 since it is not using the
+SYSREF signal.
 
 Intel
 ^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9083_evb_a10soc.svg
-   :width: 800px
+   :width: 800
 
-The design has one JESD receive chain with 4 lanes at rate of 10Gbps. The JESD receive chain consists of a physical and link layer represented by AD9083_JESD204 module, and transport layer represented by a AXI_AD9083 module. The links operate in Subclass 0 since it is not using the SYSREF signal.
+The design has one JESD receive chain with 4 lanes at rate of 10Gbps. The JESD
+receive chain consists of a physical and link layer represented by
+AD9083_JESD204 module, and transport layer represented by a AXI_AD9083 module.
+The links operate in Subclass 0 since it is not using the SYSREF signal.
 
 Building the HDL project
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,7 +113,6 @@ HDL Downloads
    -  :git-hdl:`AD9083_EVB HDL Project <projects/ad9083_evb>`
    
 
-
 Software sources
 ----------------
 
@@ -103,7 +123,6 @@ Software sources
    -  `Linux Driver <https://github.com/analogdevicesinc/linux>`_
    -  :git-no-OS:`No-OS project <projects/ad9083>`
    
-
 
 More Information
 ~~~~~~~~~~~~~~~~

@@ -4,7 +4,12 @@ RPMsg-Lite
 Introduction
 ------------
 
-RPMsg is used to transfer messages between cores on ADSP devices. An implementation is available for ARM when running Linux and for bare metal applications a port of RPMsg-Lite is available for ARM and SHARC+ cores. It allows for transmitting a message to a specific endpoint on a different core via a dedicated transport link. Multiple endpoints can be registered against a single link.
+RPMsg is used to transfer messages between cores on ADSP devices. An
+implementation is available for ARM when running Linux and for bare metal
+applications a port of RPMsg-Lite is available for ARM and SHARC+ cores. It
+allows for transmitting a message to a specific endpoint on a different core via
+a dedicated transport link. Multiple endpoints can be registered against a
+single link.
 
 This page describes how to use RPMsg-Lite for bare metal applications.
 
@@ -13,7 +18,8 @@ Additional information can be found here: `rpmsg-lite <https://github.com/analog
 Resources used
 ~~~~~~~~~~~~~~
 
-In order to allow for message transmission between cores on ADSP-SC5xx devices RPMsg-Lite makes use of the following resources:
+In order to allow for message transmission between cores on ADSP-SC5xx devices
+RPMsg-Lite makes use of the following resources:
 
 -  Shared memory for storing message buffers and vring buffers containing message descriptors
 -  Interrupt on each core to indicate that a message has arrived
@@ -21,8 +27,8 @@ In order to allow for message transmission between cores on ADSP-SC5xx devices R
 
 .. note::
 
-   These resources should not be used for other purposes when using RPMsg-Lite in your application.
-
+   These resources should not be used for other purposes when using RPMsg-Lite
+   in your application.
 
 The interrupts used are:
 
@@ -65,14 +71,20 @@ For the sake of compatibility the resource table used in the `examples <https://
 
    Additional detail can be found at https://github.com/analogdevicesinc/rpmsg-lite/blob/adi/release/yocto-2.1.0/lib/include/remoteproc.h
 
-
 Using RPMsg-Lite on SC5xx
 -------------------------
 
 Allocate memory for vring buffers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The memory allocation for for the vring buffers should be done on a single core and the location of those buffers shared with the other cores via a resource table. To ensure that the cores pick up the data from the shared memory it is necessary to mark the memory as uncached on all cores using the buffers. Allocating memory and ensuring it is uncached is done differently on ARM and SHARC. If using RPMsg-Lite on the ARM it is recommended that the memory is allocated on the ARM as the SHARCs allow for simple run-time changes to caching via a set of registers.
+The memory allocation for for the vring buffers should be done on a single core
+and the location of those buffers shared with the other cores via a resource
+table. To ensure that the cores pick up the data from the shared memory it is
+necessary to mark the memory as uncached on all cores using the buffers.
+Allocating memory and ensuring it is uncached is done differently on ARM and
+SHARC. If using RPMsg-Lite on the ARM it is recommended that the memory is
+allocated on the ARM as the SHARCs allow for simple run-time changes to caching
+via a set of registers.
 
 Create an array for the vring buffers on the heap.
 
@@ -83,13 +95,15 @@ Create an array for the vring buffers on the heap.
 Disable cache on ARM
 ^^^^^^^^^^^^^^^^^^^^
 
-Disabling cache on the ARM for the vring buffers requires changes to the linker files.
+Disabling cache on the ARM for the vring buffers requires changes to the linker
+files.
 
 Example for allocating 4MB of L3 memory as uncached memory on an SC594:
 
 Modify apt.c:
 
-Add a definition for an uncached block of memory and adjust the block of memory from which it is taken from
+Add a definition for an uncached block of memory and adjust the block of memory
+from which it is taken from
 
 Change:
 
@@ -106,7 +120,8 @@ To:
 
 Modify app.ld:
 
-Add a definition for an uncached block of memory and adjust the block of memory from which it is taken from matching the changes maed to apt.c
+Add a definition for an uncached block of memory and adjust the block of memory
+from which it is taken from matching the changes maed to apt.c
 
 Change:
 
@@ -133,7 +148,8 @@ Add an entry in the SECTIONS covering L3 memory:
      *(.l3_data_uncached)
    } >MEM_L3_UNCACHED = 0
 
-To store the vring buffers previously declared in the uncached memory block use \__attribute\_\_ to specify the memory section it should be mapped to.
+To store the vring buffers previously declared in the uncached memory block use
+\__attribute\_\_ to specify the memory section it should be mapped to.
 
 ::
 
@@ -143,7 +159,9 @@ To store the vring buffers previously declared in the uncached memory block use 
 Disable cache on SHARC
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The SHARCs have a number of range registers allowing for sections of memory to be marked as uncached. We make use of these to mark the descriptor buffer range and the message buffer range as uncached like in the following example
+The SHARCs have a number of range registers allowing for sections of memory to
+be marked as uncached. We make use of these to mark the descriptor buffer range
+and the message buffer range as uncached like in the following example
 
 ::
 
@@ -153,12 +171,16 @@ The SHARCs have a number of range registers allowing for sections of memory to b
                            adi_cache_rr6,
                            adi_cache_noncacheable_range);
 
-If the SHARC is acting as an RPMsg-Lite remote the ranges to mark as uncached are retrieved from the resource table.
+If the SHARC is acting as an RPMsg-Lite remote the ranges to mark as uncached
+are retrieved from the resource table.
 
 Create Resource Table
 ~~~~~~~~~~~~~~~~~~~~~
 
-On the core on which the memory for the vring buffers was declared create the resource table used to provide information on the shared memory resources used for RPMsg-lite and instruct the linker to store it at a fixed location in L2 memory which is by default marked as uncached.
+On the core on which the memory for the vring buffers was declared create the
+resource table used to provide information on the shared memory resources used
+for RPMsg-lite and instruct the linker to store it at a fixed location in L2
+memory which is by default marked as uncached.
 
 ::
 
@@ -217,9 +239,11 @@ On the core on which the memory for the vring buffers was declared create the re
 Adding an rpmsg-lite instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Currently the rpmsg-lite port for ADSP devices only supports static context instances.
+Currently the rpmsg-lite port for ADSP devices only supports static context
+instances.
 
-Create a header file named "rpmsg_config.h" and define RL_USE_STATIC_API. RPMsg-Lite will attempt to include this header file during build.
+Create a header file named "rpmsg_config.h" and define RL_USE_STATIC_API.
+RPMsg-Lite will attempt to include this header file during build.
 
 ::
 
@@ -231,7 +255,8 @@ Create the static RPMsg-Lite instance.
 
    struct rpmsg_lite_instance rpmsg_SHARC_channel;
 
-The instance makes use of a Link ID to determine which core the instance should connect to.
+The instance makes use of a Link ID to determine which core the instance should
+connect to.
 
 ::
 
@@ -254,7 +279,9 @@ Initialize the RPMsg-Lite instance on the main core.
            RL_SHM_VDEV,
            &rpmsg_SHARC_channel);
 
-Populate the resource table with the addresses of the vrings created by rpmsg_lite_master_init and signal the remote core that the resource table has been initialised
+Populate the resource table with the addresses of the vrings created by
+rpmsg_lite_master_init and signal the remote core that the resource table has
+been initialised
 
 ::
 

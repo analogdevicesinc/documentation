@@ -3,7 +3,8 @@ GPIO Conditioning
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-GPIO stands for general-purpose input/output. The Toolbox's GPIO Conditioning library gives you access to the following blocks:
+GPIO stands for general-purpose input/output. The Toolbox's GPIO Conditioning
+library gives you access to the following blocks:
 
 -  :doc:`Push and Hold </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning/pushandhold>`
 -  :doc:`PushButton Volume </wiki-migration/resources/tools-software/sigmastudio/toolbox/gpioconditioning/pushbuttonvolume>`

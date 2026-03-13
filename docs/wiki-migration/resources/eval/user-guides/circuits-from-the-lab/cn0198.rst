@@ -3,13 +3,21 @@ CN0198 — 5V Regulator Supplies High Transient Current for Dynamic Power Contro
 
 .. important::
 
-   This particular reference design has been RETIRED or DEPRECATED, which means it is no longer supported. This page is here for historical/reference purposes only.
-
+   This particular reference design has been RETIRED or DEPRECATED, which means
+   it is no longer supported. This page is here for historical/reference
+   purposes only.
 
 Overview
 --------
 
-This circuit provides a unique power saving solution for a DAC-based 4 mA-to-20 mA output circuit. In order to provide sufficient headroom for typical resistive loads between 10 Ω and 1000 Ω, traditional 4 mA-to-20 mA output driver stages must operate on at least 20 V (plus some additional headroom) to provide a sufficient voltage to drive high value resistive loads. For low value resistive loads, however, the fixed value high voltage supply results in significant internal power dissipation that can affect DAC accuracy and require additional heat sinking.
+This circuit provides a unique power saving solution for a DAC-based 4 mA-to-20
+mA output circuit. In order to provide sufficient headroom for typical resistive
+loads between 10 Ω and 1000 Ω, traditional 4 mA-to-20 mA output driver stages
+must operate on at least 20 V (plus some additional headroom) to provide a
+sufficient voltage to drive high value resistive loads. For low value resistive
+loads, however, the fixed value high voltage supply results in significant
+internal power dissipation that can affect DAC accuracy and require additional
+heat sinking.
 
 General Setup
 -------------
@@ -88,14 +96,17 @@ Step by Step Instruction for Connecting the Hardware
 AD5755 Evaluation Board Jumper Configuration
 --------------------------------------------
 
-The following is a detailed description of how to configure jumpers LK0 - LK15 found on the AD5755 Evaluation Board.
+The following is a detailed description of how to configure jumpers LK0 - LK15
+found on the AD5755 Evaluation Board.
 
 **Reference Selection**: - Jumpers LK0, LK1, LK2 and LK3 determine the external reference voltage input for the AD5755-1. Only populate one jumper at any given time:
 
 -  LK0 selects the internal AD5755-1 reference.
--  LK1 allows the user to input an off board reference voltage using terminal block J7 as an input.
+-  LK1 allows the user to input an off board reference voltage using terminal
+   block J7 as an input.
 
-   -  The reference input must fall between 4.95V and 5.05V to achieve performance specified in the datasheet.
+   -  The reference input must fall between 4.95V and 5.05V to achieve
+      performance specified in the datasheet.
 
 -  LK2 utilizes an on board +5V reference, the :adi:`ADR02`.
 -  LK3 provides power to the :adi:`ADR02`. If using LK0 or LK1, disconnect LK3.
@@ -105,21 +116,29 @@ The following is a detailed description of how to configure jumpers LK0 - LK15 f
 
 **Boost Voltage Selection** - LK12, LK13, LK14, LK15 allow the connection of an external VBOOST supply.
 
--  Populating LK12 and removing R43 connects the VBOOST pin of channel A to an external supply.
+-  Populating LK12 and removing R43 connects the VBOOST pin of channel A to an
+   external supply.
 
-   -  If R43 is populated, the VBOOST pin for channel A is connected to the +15V supply.
+   -  If R43 is populated, the VBOOST pin for channel A is connected to the +15V
+      supply.
 
--  Populating LK13 and removing R44 connects the VBOOST pin of channel B to an external supply.
+-  Populating LK13 and removing R44 connects the VBOOST pin of channel B to an
+   external supply.
 
-   -  If R44 is populated, the VBOOST pin for channel B is connected to the +15V supply.
+   -  If R44 is populated, the VBOOST pin for channel B is connected to the +15V
+      supply.
 
--  Populating LK14 and removing R17 connects the VBOOST pin of channel C to an external supply.
+-  Populating LK14 and removing R17 connects the VBOOST pin of channel C to an
+   external supply.
 
-   -  If R17 is populated, the VBOOST pin for channel C is connected to the +15V supply.
+   -  If R17 is populated, the VBOOST pin for channel C is connected to the +15V
+      supply.
 
--  Populating LK15 and removing R20 connects the VBOOST pin of channel D to an external supply.
+-  Populating LK15 and removing R20 connects the VBOOST pin of channel D to an
+   external supply.
 
-   -  If R20 is populated, the VBOOST pin for channel D is connected to the +15V supply.
+   -  If R20 is populated, the VBOOST pin for channel D is connected to the +15V
+      supply.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/ad5755-jumper2.jpg
    :align: center
@@ -128,7 +147,9 @@ The following is a detailed description of how to configure jumpers LK0 - LK15 f
 
 -  When LK4 is populated, the +Vsense input is connected directly to VOUTA.
 
-   -  When LK4 is unpopulated, the channel A +VSense input is left floating and should be connected to the high side of the load resistance external to the board.
+   -  When LK4 is unpopulated, the channel A +VSense input is left floating and
+      should be connected to the high side of the load resistance external to
+      the board.
 
 -  When LK6 is populated, the +Vsense input is connected directly to VOUTB.
 
@@ -142,19 +163,23 @@ The following is a detailed description of how to configure jumpers LK0 - LK15 f
 
 **-VSense Connections** - LK5, LK7, LK9, LK11 connect the -Vsense input to ground for Channel A, Channel B, Channel C and Channel D respectively.
 
--  When LK5 is populated, the channel A -Vsense input is connected directly to ground.
+-  When LK5 is populated, the channel A -Vsense input is connected directly to
+   ground.
 
    -  When LK5 is unpopulated, the channel A -VSense input is left floating.
 
--  When LK7 is populated, the channel B -Vsense input is connected directly to ground.
+-  When LK7 is populated, the channel B -Vsense input is connected directly to
+   ground.
 
    -  When LK7 is unpopulated, the channel B -VSense input is left floating.
 
--  When LK9 is populated, the channel C -Vsense input is connected directly to ground.
+-  When LK9 is populated, the channel C -Vsense input is connected directly to
+   ground.
 
    -  When LK9 is unpopulated, the channel C -VSense input is left floating.
 
--  When LK11 is populated, the channel D -Vsense input is connected directly to ground.
+-  When LK11 is populated, the channel D -Vsense input is connected directly to
+   ground.
 
    -  When LK11 is unpopulated, the channel D -VSense input is left floating.
 
@@ -174,12 +199,14 @@ Opening and Enabling the Evaluation Software
 Programming Sequence and How to Enable the Output
 -------------------------------------------------
 
--  The sequence for correctly enabling the output is given in the flowchart below.
+-  The sequence for correctly enabling the output is given in the flowchart
+   below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/software-enable_output_steps.jpg
    :align: center
 
--  The individual steps for enabling the output as described in the flowchart can be found below:
+-  The individual steps for enabling the output as described in the flowchart
+   can be found below:
 
    -  In the **DC-DC Control Register** section click the **Write** button.
    -  In the **DAC Control Register** section, change the output type to **0-5V Voltage Range**.
@@ -189,17 +216,20 @@ Programming Sequence and How to Enable the Output
    -  In the **DAC Control Register** section, change the **EN Output** to **Enabled**.
    -  In the **DAC Control Register** section, click **Write**.
 
--  Now, using a multimeter, you can probe the output channel of the device and will see approximately 5.00V.
+-  Now, using a multimeter, you can probe the output channel of the device and
+   will see approximately 5.00V.
 
 Programming Sequence and How to Change the Output After Setting it to a Value
 -----------------------------------------------------------------------------
 
--  The sequence for correctly enabling the output is given in the flowchart below.
+-  The sequence for correctly enabling the output is given in the flowchart
+   below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/software-change_output_steps.jpg
    :align: center
 
--  The individual steps for changing the output as described in the flowchart can be found below:
+-  The individual steps for changing the output as described in the flowchart
+   can be found below:
 
    -  In the **DAC Control Register** section, change the **EN Output** to **Disabled**.
    -  In the **DAC Control Register** section, click **Write**.
@@ -215,12 +245,11 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0198-SDPZ?&v=Rev C>`_ to receive all these great benefits and more!
 
-
 *End of document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-setup_wizard.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-destination_directory.jpg
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/this_wiki_has_problems_with_file_loading.jpg
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-hardware-connected-usb-sdpb-ad5755-2.jpg
-   :width: 300px
+   :width: 300

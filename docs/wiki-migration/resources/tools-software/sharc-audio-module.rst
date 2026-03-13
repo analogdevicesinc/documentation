@@ -3,7 +3,7 @@ SHARC Audio Module
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/sam-logo.png
    :align: right
-   :width: 300px
+   :width: 300
 
 Welcome! The :adi:`SHARC® Audio Module Platform <design-center/evaluation-hardware-and-software/evaluation-boards-kits/sharc-audio-module.html>` is an expandable hardware/software platform enabling project prototyping, development and deployment of audio applications including effects processors, multi-channel audio systems, MIDI synthesizers, and many other DSP-based audio projects.
 
@@ -13,12 +13,11 @@ The SHARC Audio Module features two 2Gbit DDR3 memories, 512Mbit SPI flash, a UA
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/sam-main-board-top.png
    :align: left
-   :width: 300px
+   :width: 300
 
 While the SHARC Audio Module can be used as a self-contained product, it is designed for custom expansion. Analog Devices has developed expansion boards: a :doc:`Audio Project Fin </wiki-migration/resources/tools-software/sharc-audio-module/hardware/audioproj-fin>` that plugs directly onto the main SHARC Audio Module, and a :doc:`Class-D Amplifier module </wiki-migration/resources/tools-software/sharc-audio-module/hardware/class-d>` that connects over the A\ :sup:`2`\ B® bus.
 
 In addition, there are several leading developers and board designers that provide a variety of software and hardware platforms for you to expand the SHARC Audio Module platform. Since all of the major functions and GPIO of the board can be accessed via the two multi-pin connectors, you can easily design and build your own expander. Documentation for these connectors can be found in the :doc:`SHARC Audio Module Hardware Reference Manual </wiki-migration/resources/tools-software/sharc-audio-module/hardware/main-board>`.
-
 
 --------------
 
@@ -38,12 +37,10 @@ The SHARC Audio Module main board can be expanded using the A\ :sup:`2`\ B inter
 | |image4| | :doc:`Class-D Amplifier Module </wiki-migration/resources/tools-software/sharc-audio-module/hardware/class-d>` | A2B interface       | 2 SSM3582 high efficiency Class-D amplifiers |
 +----------+----------------------------------------------------------------------------------------------------------------+---------------------+----------------------------------------------+
 
-
-
 .. important::
 
-   All information contained throughout these wiki pages corresponds to version 2.x of the Bare Metal SDK release.
-
+   All information contained throughout these wiki pages corresponds to version
+   2.x of the Bare Metal SDK release.
 
 Documentation
 -------------
@@ -58,10 +55,10 @@ This guide is structured as follows:
 -  :doc:`New and Experimental things for the SHARC Audio Module </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects>` - Provides examples and tutorials about how to set up and run some new and emerging features of the SHARC Audio Module.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/sam-diy-angle.png
-   :width: 100px
+   :width: 100
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/sam-class-d-angle.png
-   :width: 100px
+   :width: 100
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/sam-diy-angle.png
-   :width: 100px
+   :width: 100
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/sam-class-d-angle.png
-   :width: 100px
+   :width: 100

@@ -1,7 +1,8 @@
 Prerequisites for RapidNet IP
 =============================
 
-This document lists the steps required for successful installation of development environment, software packs and RapidNet IP source installer.
+This document lists the steps required for successful installation of
+development environment, software packs and RapidNet IP source installer.
 
 IAR EWARM - Installation
 ------------------------
@@ -17,7 +18,8 @@ IAR EWARM - Installation
 Software Packs and Driver - Installation
 ----------------------------------------
 
--  Following packs for ADuCM3029 can be downloaded directly from ARM website using IAR tool.
+-  Following packs for ADuCM3029 can be downloaded directly from ARM website
+   using IAR tool.
 
    -  ARM CMSIS Pack
 
@@ -29,13 +31,13 @@ Software Packs and Driver - Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_1.png
    :align: center
-   :width: 750px
+   :width: 750
 
 -  In **'CMSIS Pack Manager'** window, click 'Search for updates'.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  After search is complete, expand 'ARM' and 'CMSIS' under ARM. Right click on the latest version and select install from drop down options.
 -  After successful installation of ARM CMSIS pack, expand 'AnalaogDevices', then expand 'ADuCM302x_DFP'. Right click on **'3.2.0'** and click install drop down options.
@@ -63,18 +65,19 @@ Import RapidNet IP Example Project
 -  Navigate to the RapidNet IP installation directory in Open Workspace. By default it will be installed at C:\\Analog Devices\\RapidNet-IP-Rel1.1.0.
 -  In 'Open Workspace' window go to Mote->application->esl->IAR.
 -  Select 'esl_lib.eww' and click open.
--  Once the workspace is open, make sure 'esl_app' is select in the 'Workspace' tab (left side). If not, select it from the bottom of the 'Workspace' tab.
+-  Once the workspace is open, make sure 'esl_app' is select in the 'Workspace'
+   tab (left side). If not, select it from the bottom of the 'Workspace' tab.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/3.png
    :align: center
-   :width: 200px
+   :width: 200
 
 -  Right click on 'esl_app - Debug' on Workspace Tab and select 'Options...'.
 -  Go to Debugger->Setup and under 'Driver' drop down menu select 'CMSIS DAP'.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/4.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Click on 'Debug and Download' icon |image1|\ on the menu bar. This will compile, build and download the project on EV-COG-AD3029LZ using CMSIS-DAP.
 

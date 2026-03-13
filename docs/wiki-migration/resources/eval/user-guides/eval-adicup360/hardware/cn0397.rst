@@ -15,21 +15,22 @@ Chip Select
 
 |image1| The chip select is configurable to be routed to 3 general purpose I/O pins of the board, digital pins 8, 9 and 10, allowing multiple boards using SPI communications protocol to be stacked up.\ |image2|
 
-The chip select pin of the AD7798 is routed by CS1 to GPIO pin 10, CS2 to GPIO 9, and CS3 to GPIO 8, which could be moved by placing the shunt across the corresponding CS on connector P1.
+The chip select pin of the AD7798 is routed by CS1 to GPIO pin 10, CS2 to GPIO
+9, and CS3 to GPIO 8, which could be moved by placing the shunt across the
+corresponding CS on connector P1.
 
-The shunt is placed across CS1 by default, however it can be configured to any of the 3 chip select on the software.
+The shunt is placed across CS1 by default, however it can be configured to any
+of the 3 chip select on the software.
 
 Sensor Footprint
 ~~~~~~~~~~~~~~~~
 
-
-
 .. note::
 
-   Two types of photodiodes could be used in EVAL-CN0397-ARDZ, with provisions for two different types of footprints.
+   Two types of photodiodes could be used in EVAL-CN0397-ARDZ, with provisions
+   for two different types of footprints.
 
    | Provision for S7505-01 Hamamatsu 3 Channel RGB Color Sensor is available on the board. The Everlight photodiodes are installed on the board as default and were used during testing and programming of this boards.
-
 
 **Recommended Sensors**
 
@@ -41,7 +42,8 @@ Sensor Footprint
 Spacers
 ~~~~~~~
 
-Spacers that could cater various surface mount and through hole packages are available on the board to make some modifications on the board easier.
+Spacers that could cater various surface mount and through hole packages are
+available on the board to make some modifications on the board easier.
 
 Resistor spacers RB_SPACER, RG_SPACER and RR_SPACER are the gain resistors for each of the corresponding channels Blue, Green and red.The value can be calculated using R\ :sub:`GAIN`\ =Id\ :sub:`MAX`/V\ :sub:`FS`, where Id\ :sub:`MAX` is the maximum diode current and V\ :sub:`FS` is the full scale voltage.
 
@@ -49,8 +51,9 @@ Capacitor spacers CB_SPACER, CG_SPACER and CR_SPACER are used as filtering for e
 
 .. important::
 
-   Provision for a 3 channel RGB Color Sensor from Hamamatsu is available on the board. All the Everlight photodiodes must be removed before replacing it with the Hamamatsu photodiode. Hamamatsu S7505-01 photodiode.
-
+   Provision for a 3 channel RGB Color Sensor from Hamamatsu is available on the
+   board. All the Everlight photodiodes must be removed before replacing it with
+   the Hamamatsu photodiode. Hamamatsu S7505-01 photodiode.
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -67,7 +70,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Software
 --------
 
@@ -82,7 +84,6 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0397-ARDZ?&v=RevB>`_ to receive all these great benefits and more!
-
 
 *End of Document*
 

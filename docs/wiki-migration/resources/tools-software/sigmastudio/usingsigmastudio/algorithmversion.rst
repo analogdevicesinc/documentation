@@ -8,14 +8,16 @@ When any modification is done for fixing a bug/ improving some features algorith
 Usage
 =====
 
-To see the version history of a particular algorithm. Right click on the module and select algorithm version history.
-
+To see the version history of a particular algorithm. Right click on the module
+and select algorithm version history.
 
 |image1|
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/algoversion2.jpg
    :align: center
 
-Algorithm Version History table will list the algorithms current version in Green color. User can click the 'Revert to this' button to revert to any particular version.
+Algorithm Version History table will list the algorithms current version in
+Green color. User can click the 'Revert to this' button to revert to any
+particular version.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/algoversion1.png

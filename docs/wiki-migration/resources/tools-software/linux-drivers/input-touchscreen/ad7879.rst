@@ -18,17 +18,34 @@ Evaluation Boards
 Description
 -----------
 
-The AD7879/AD7889 is a 12-bit successive approximation ADC with a synchronous serial interface and low on-resistance switches for driving 4-wire resistive touch screens. The AD7879 works with a very low power supply, a single 1.6 V to 3.6V, and features throughput rates of 105 kSPS.
+The AD7879/AD7889 is a 12-bit successive approximation ADC with a synchronous
+serial interface and low on-resistance switches for driving 4-wire resistive
+touch screens. The AD7879 works with a very low power supply, a single 1.6 V to
+3.6V, and features throughput rates of 105 kSPS.
 
-The device includes a shutdown mode, which reduces its current consumption to less than 5 uA.
+The device includes a shutdown mode, which reduces its current consumption to
+less than 5 uA.
 
-To reduce the effects of noise from LCDs and other sources, the AD7879 contains a preprocessing block. The preprocessing function consists of a median and an averaging filter. The combination of these two techniques provides a more robust solution, discarding the spurious noise in the signal and keeping only the data of interest. The size of both filters is programmable. Other user-programmable conversion controls include variable acquisition time, and first conversion delay. Up to 16 averages can be taken per conversion. The AD7879 can run in either slave or stand-alone mode, using an automatic conversion sequencer and timer.
+To reduce the effects of noise from LCDs and other sources, the AD7879 contains
+a preprocessing block. The preprocessing function consists of a median and an
+averaging filter. The combination of these two techniques provides a more robust
+solution, discarding the spurious noise in the signal and keeping only the data
+of interest. The size of both filters is programmable. Other user-programmable
+conversion controls include variable acquisition time, and first conversion
+delay. Up to 16 averages can be taken per conversion. The AD7879 can run in
+either slave or stand-alone mode, using an automatic conversion sequencer and
+timer.
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/ad7879_filter_example.png
    :alt: ad7879_filter_example.png
-   :width: 500px
+   :width: 500
 
-The AD7879 has a programmable pin that can operate as either an auxiliary input to the ADC, as a battery monitor, or as a GPIO. There is a programmable interrupt output which can operate in three modes, as a general purpose interrupt to signal when new data is available INT, as an interrupt to indicate when limits are exceeded, or as a pen down interrupt when the screen is touched, PENIRQ. The AD7879 offers temperature and touch-pressure measurement.
+The AD7879 has a programmable pin that can operate as either an auxiliary input
+to the ADC, as a battery monitor, or as a GPIO. There is a programmable
+interrupt output which can operate in three modes, as a general purpose
+interrupt to signal when new data is available INT, as an interrupt to indicate
+when limits are exceeded, or as a pen down interrupt when the screen is touched,
+PENIRQ. The AD7879 offers temperature and touch-pressure measurement.
 
 It is available in various packages. It has either an*\* SPI (AD7879)(AD7889)*\* or **I2C (AD7879-1)(AD7889-1)** interface.
 
@@ -92,24 +109,38 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
-
-Touchscreen characteristics vary between boards and models. The platform_data for the device's "struct device" holds this information.
+Touchscreen characteristics vary between boards and models. The platform_data
+for the device's "struct device" holds this information.
 
 <source trunk/include/linux/spi/ad7879.h c linux-kernel>
 
 Example Platform / Board file (SPI Interface Version)
 -----------------------------------------------------
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
-
 
 These snippets are all from the same file. ``arch/blackfin/mach-bf537/boards/stamp.c``:
 
@@ -151,14 +182,23 @@ These snippets are all from the same file. ``arch/blackfin/mach-bf537/boards/sta
 Example Platform / Board file (I2C Interface Version)
 -----------------------------------------------------
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 .. code:: C
 
@@ -193,12 +233,12 @@ For more information see: `instantiating-devices.rst </git.linux.org>documentati
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD7879 Driver depends on CONFIG_SPI or CONFIG_I2C
-
 
 ::
 
@@ -234,7 +274,7 @@ Hardware configuration
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/ad7879_example_schematic.png
    :alt: ad7879_example_schematic.png
-   :width: 800px
+   :width: 800
 
 Driver testing
 ==============
@@ -273,7 +313,8 @@ This means that the SPI communication and initialization with the AD7879 touchsc
 Checking for proper installation
 --------------------------------
 
-After the kernel boot your device folder should include at least one device node for the touchscreen
+After the kernel boot your device folder should include at least one device node
+for the touchscreen
 
 ::
 
@@ -345,13 +386,13 @@ Use the event_test utility to test proper function
 
 .. tip::
 
-   In case you touch the surface and don't receive events, it's likely that something with your /DAV Interrupt is wrong. check irq number in your platform device file
-
+   In case you touch the surface and don't receive events, it's likely that
+   something with your /DAV Interrupt is wrong. check irq number in your
+   platform device file
 
 .. tip::
 
    In case you get a message like: ``evtest: No such device``, it's likely that you have not install the necessary modules
-
 
 ::
 
@@ -369,7 +410,8 @@ Use the event_test utility to test proper function
 Find Input by name
 ------------------
 
-In case you like to find out which input/event interface is connected to your touchscreen, use the sysfs entries
+In case you like to find out which input/event interface is connected to your
+touchscreen, use the sysfs entries
 
 ::
 
@@ -406,11 +448,9 @@ Under the device folder there are auxiliary functions such as GPIO and disable c
 More Information
 ================
 
-
 .. note::
 
    See `resources/tools-software/linux-drivers/snippets <https://wiki.analog.com/resources/tools-software/linux-drivers/snippets#input_pointers>`_
-
 
 Touchscreen calibration
 -----------------------
@@ -528,6 +568,8 @@ Start Links
 Driver Source
 -------------
 
-Most people should not care about the driver source - it just works as a normal Linux input device. If you are interested, you can look at the driver source at :
+Most people should not care about the driver source - it just works as a normal
+Linux input device. If you are interested, you can look at the driver source at
+:
 
 <source trunk/drivers/input/touchscreen/ad7879.c:ad7879_report() c linux-kernel>

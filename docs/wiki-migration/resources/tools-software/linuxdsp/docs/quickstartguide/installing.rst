@@ -5,13 +5,14 @@ Linux on the ADSP-SC5xx can be configured to boot from various sources (flash, n
 
 .. important::
 
-   The steps on this page require multiple terminal windows to be active. Take care to use the correct window for each step
-
+   The steps on this page require multiple terminal windows to be active. Take
+   care to use the correct window for each step
 
 Booting into U-Boot
 -------------------
 
-First you should make sure the U-boot has been written into the flash. You should see the outputs after powering up the board
+First you should make sure the U-boot has been written into the flash. You
+should see the outputs after powering up the board
 
 ::
 
@@ -51,7 +52,8 @@ The default boot command is **run ramboot**.
 Booting Linux
 -------------
 
-Currently ADI provides some deploy methods to load linux kernel and boot into console. The default deploy method is ramboot.
+Currently ADI provides some deploy methods to load linux kernel and boot into
+console. The default deploy method is ramboot.
 
 RAM Boot
 ~~~~~~~~
@@ -66,7 +68,9 @@ In order to boot Linux, a copy of the **image file** should be copied into the *
 
 Where the macros in the above command are listed at the bottom of this page in **Appendix**.
 
-Next, reboot the board and Linux will be downloaded to the target board and boot. When boot is successful you will be presented by the ADI logo and the login prompt:
+Next, reboot the board and Linux will be downloaded to the target board and
+boot. When boot is successful you will be presented by the ADI logo and the
+login prompt:
 
 ::
 
@@ -82,7 +86,6 @@ Next, reboot the board and Linux will be downloaded to the target board and boot
    Starting syslogd/klogd: done
      * Starting Avahi mDNS/DNS-SD Daemon: avahi-daemon
       ...done.
-
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -126,14 +129,17 @@ There are two kinds of boot commands for booting Linux from SD card.
    ;''ramboot_emmc''  : Booting Linux using zImage, dtb file and ramdisk file which are stored in SD card
    ;''sdcardboot''  : Booting Linux using zImage, dtb file and file system file which are stored in SD card
 
-And please make sure there are 500 MB at least in SD card to store zImge, dtb and system file.
+And please make sure there are 500 MB at least in SD card to store zImge, dtb
+and system file.
 
 For how to boot Linux via SD card, please refer to ":doc:`How to Boot Linux From SD Card </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/installing/installing_sdcardboot>`"
 
 NOR Boot
 ~~~~~~~~
 
-Due to the limited flash size, currently we can only support NOR boot the Linux kernel image(zImage) and device tree file(dtb). Put the filesystem in local HOST or SD Card is suggested.
+Due to the limited flash size, currently we can only support NOR boot the Linux
+kernel image(zImage) and device tree file(dtb). Put the filesystem in local HOST
+or SD Card is suggested.
 
 Appendix: Macro Definition
 ==========================

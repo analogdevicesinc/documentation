@@ -72,7 +72,8 @@ Files
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -99,13 +100,15 @@ Devicetree is used to describe how the ADC chip is wired up. The driver uses thi
 
 .. note::
 
-   Not all properties described in the sections below are applicable to all chips in the family due to different pinouts.
-
+   Not all properties described in the sections below are applicable to all
+   chips in the family due to different pinouts.
 
 Communication bus
 ~~~~~~~~~~~~~~~~~
 
-This family of chips has two different ways it can communicate with the MCU, via a SPI bus or via a parallel bus. It is assumed that the PAR/SER SEL pin is hard-wired to select one bus type or the other.
+This family of chips has two different ways it can communicate with the MCU, via
+a SPI bus or via a parallel bus. It is assumed that the PAR/SER SEL pin is
+hard-wired to select one bus type or the other.
 
 SPI
 ^^^
@@ -139,7 +142,8 @@ Parallel
 
 When using the parallel bus, the ADC node is a child of a parallel bus controller. In particular, the driver currently only supports the `AXI AD7606x <https://analogdevicesinc.github.io/hdl/library/axi_ad7606x/index.html>`_ FPGA IP block for parallel bus. In addition to being the child of the parallel controller, the ADC node also needs a ``io-backends`` property to link it to the AXI AD7606X IP block.
 
-In this case the DB0 thru DB15, /CS, /RD and /WR pins are wired to the AXI AD7606X IP block. HBEN and BYTESEL are not currently used.
+In this case the DB0 thru DB15, /CS, /RD and /WR pins are wired to the AXI
+AD7606X IP block. HBEN and BYTESEL are not currently used.
 
 ::
 
@@ -229,7 +233,8 @@ Status signals
 
 When using the SPI bus, the driver requires that the BUSY pin on the ADC is connected to an interrupt on the MCU (usually a GPIO). In this case, the ``interrupts`` property is required in the devicetree.
 
-When using the parallel bus, the BUSY pin is connected to the AXI AD7606X IP block. There are no extra properties needed to describe this case.
+When using the parallel bus, the BUSY pin is connected to the AXI AD7606X IP
+block. There are no extra properties needed to describe this case.
 
 The FRSTDATA output indicates when the first channel is being read back. If this is wired up, provide the ``adi,first-data-gpios`` property. As the line is active high, it should be marked ``GPIO_ACTIVE_HIGH``.
 
@@ -247,7 +252,9 @@ Some chips can be used in a software mode where the ADC chip is configured by wr
 
 If software mode is not used, the ``adi,sw-mode`` property is omitted and properties for the configuration pins OSx and RANGE (HW_RNGSEL on AD7616) are required. These are the ``adi,oversampling-ratio-gpios`` and ``adi,range-gpios`` properties respectively. All of these should be ``GPIO_ACTIVE_HIGH``.
 
-The driver currently only supports having these pins connected to GPIOs and not hard-wired to a specific configuration. Additional confutation pins on AD7616 (BURST, SEQUEN, CHSEL, CRCEN) are not currently supported.
+The driver currently only supports having these pins connected to GPIOs and not
+hard-wired to a specific configuration. Additional confutation pins on AD7616
+(BURST, SEQUEN, CHSEL, CRCEN) are not currently supported.
 
 Example
 ~~~~~~~
@@ -271,8 +278,15 @@ Example
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -309,7 +323,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root:/sys/bus/iio/devices/iio:device0>
    
 
-
 Show device name
 ----------------
 
@@ -323,7 +336,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:device0> cat name
       ad7606
    
-
 
 Show available oversampling ratios
 ----------------------------------
@@ -339,7 +351,6 @@ Show available oversampling ratios
       0 2 4 8 16 32 64
    
 
-
 Show available input ranges
 ---------------------------
 
@@ -353,7 +364,6 @@ Show available input ranges
       root:/sys/bus/iio/devices/iio:device0> cat range_available
       5000 10000
    
-
 
 Set input range to 10Volt
 -------------------------
@@ -369,7 +379,6 @@ Set input range to 10Volt
       root:/sys/bus/iio/devices/iio:device0> cat range
       10000
    
-
 
 Show scale
 ----------
@@ -387,7 +396,6 @@ Show scale
       0.152
    
 
-
 Show channel 2 measurement
 --------------------------
 
@@ -404,22 +412,25 @@ Show channel 2 measurement
       5789
    
 
-
 **U** = *in2_raw \* in_scale* = 5789 \* 0.152 = **879,928 mV**
 
 Trigger management
 ------------------
 
-If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
-
-
+If deviceX supports triggered sampling, it’s a so called trigger consumer and
+there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In
+this folder there is a file called current_trigger, allowing controlling and
+viewing the current trigger source connected to deviceX. Available trigger
+sources can be identified by reading the name file
+/sys/bus/iio/devices/triggerY/name. The same trigger source can connect to
+multiple devices, so a single trigger may initialize data capture or reading
+from a number of sensors, converters, etc.
 
 .. hint::
 
    Trigger Consumers:
 
    | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
-
 
 **Description:** Read name of triggerY
 
@@ -437,7 +448,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
       irqtrig56
    
 
-
 **Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ), to current trigger of deviceX
 
 .. container:: box bggreen
@@ -452,7 +462,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
    
       root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
    
-
 
 **Description:** Read current trigger source of deviceX
 
@@ -470,8 +479,6 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
       irqtrig56
    
 
-
-
 Available standalone trigger drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -486,7 +493,6 @@ Available standalone trigger drivers
 +----------------------------------------------------------------------+-------------------------------------------------------------------------------+
 | `iio-trig-bfin-timer <https://wiki.analog.com/iio-trig-bfin-timer>`_ | Provides support for using a Blackfin timer as IIO triggers.                  |
 +----------------------------------------------------------------------+-------------------------------------------------------------------------------+
-
 
 Buffer management
 -----------------
@@ -504,8 +510,13 @@ Buffer management
       root:/sys/bus/iio/devices/iio:device0/buffer>
    
 
-
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -527,7 +538,6 @@ Every buffer implementation features a set of files:
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -544,7 +554,6 @@ Every buffer implementation features a set of files:
       root:/sys/bus/iio/devices/iio:device0/scan_elements>
    
 
-
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
 
@@ -553,7 +562,6 @@ Every buffer implementation features a set of files:
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 More Information
 ================
@@ -576,6 +584,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

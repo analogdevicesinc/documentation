@@ -16,7 +16,8 @@ Sub Elements of Master_Slave_Chain
 -   Chain_Num – Main-Sub Nodes daisy chain number in the A2B Network.
 -   Num_of_Slave_Nodes – Number of Slave nodes for the current daisy chain.
 
-Node elements depends on Number of A2B Sub nodes present in the current daisy chain.
+Node elements depends on Number of A2B Sub nodes present in the current daisy
+chain.
 
 Main Node Configuration in A2B Network
 ======================================
@@ -84,7 +85,9 @@ Custom_Node_Id_Settings
 Pin_Assignment_Settings:
 ========================
 
-This xml element contains below sub elements with two attributes each called Func and its corresponding IOMapping (except the last one which has GPIO_Mode) as below:
+This xml element contains below sub elements with two attributes each called
+Func and its corresponding IOMapping (except the last one which has GPIO_Mode)
+as below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/image10.png
    :align: center
@@ -95,7 +98,8 @@ This xml element contains below sub elements with two attributes each called Fun
 I2S_Settings:
 =============
 
-This xml element contains below sub elements with combination of Register field and Rate Settings with attributes as below:
+This xml element contains below sub elements with combination of Register field
+and Rate Settings with attributes as below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/exportinga2bsystemconfigurationfiles/image12.png
    :align: center
@@ -138,7 +142,6 @@ Basic_Configuration_and_Control
 
 This xml elements contains below sub elements with attributes as below.
 
-
 |image1|
 
 -   Response_cycles
@@ -155,7 +158,6 @@ GPIO_Settings
 =============
 
 This xml element contains below sub elements with attributes as below:
-
 
 |image2|
 
@@ -175,7 +177,8 @@ Each attribute is of “String” Data type.
 Interrupt_Configuration:
 ========================
 
-This xml element contains below sub elements with attributes as below and these attributes can be enabled/disabled by selecting Report/Do not Report.
+This xml element contains below sub elements with attributes as below and these
+attributes can be enabled/disabled by selecting Report/Do not Report.
 
 Each attribute is of “String” Data type.
 
@@ -184,7 +187,8 @@ Each attribute is of “String” Data type.
 GPIO_Over_Distance_Settings:
 ============================
 
-This xml element contains one sub element for each GPIO, and each contains attributes as below:
+This xml element contains one sub element for each GPIO, and each contains
+attributes as below:
 
 |image5| |image6|
 
@@ -199,7 +203,6 @@ Clock_Output_Settings
 
 This xml element contains below sub elements with attributes as below: |image7|
 
-
 |image8|
 
 -  Pre_Div_Factor1 – Clock1 pre-division
@@ -209,13 +212,13 @@ This xml element contains below sub elements with attributes as below: |image7|
 -   Post_Div_Factor2 – Clock2 post-division
 -   Clk2_Invert – Enable/Disable Clock2 inversion.
 
-Attributes are of “Byte” Data type except Clk1_Invert; Clk2_Invert attributes which are of “String” Data type.
+Attributes are of “Byte” Data type except Clk1_Invert; Clk2_Invert attributes
+which are of “String” Data type.
 
 Register Settings
 =================
 
 This xml element contains below sub elements with attributes as below:
-
 
 |image9|
 
@@ -240,7 +243,8 @@ Each attribute is of “String” Data type.
 SPI_Settings
 ============
 
-This xml element contains below sub elements with attributes as below. Each attribute is of “String” Data type.
+This xml element contains below sub elements with attributes as below. Each
+attribute is of “String” Data type.
 
 -   SPI_Mode - Master / Slave
 -   SPI_CPOL – Lead Clock Edge
@@ -274,21 +278,24 @@ This xml element contains below sub elements with attributes as below. Each attr
 TXXBAR Settings
 ===============
 
-This xml element contains below sub elements with attributes as below and each attribute is of “String” Data type.
+This xml element contains below sub elements with attributes as below and each
+attribute is of “String” Data type.
 
 -  TXXBARy - Byte (y = 0 - 31)
 
 RXXBAR Settings
 ===============
 
-This xml element contains below sub elements with attributes as below and each attribute is of “String” Data type.
+This xml element contains below sub elements with attributes as below and each
+attribute is of “String” Data type.
 
 -  RXMASKy - Byte (y = 0 - 7)
 
 VMTR Settings
 =============
 
-This xml element contains below sub elements with attributes as below and each attribute is of “String” Data type.
+This xml element contains below sub elements with attributes as below and each
+attribute is of “String” Data type.
 
 -  VMTR_VEN
 -  VMTR_IntEN = Byte
@@ -300,8 +307,8 @@ This xml element contains below sub elements with attributes as below and each a
 PWM_Settings
 ============
 
-This xml element contains below sub elements with attributes as below and each attribute is of “String” Data type.
-
+This xml element contains below sub elements with attributes as below and each
+attribute is of “String” Data type.
 
 |image12|
 
@@ -337,13 +344,15 @@ Each Attribute is of “String” Data type.
 Sub Node x Configuration in A2B Network:
 ========================================
 
-This xml element contains similar elements as Main node configuration except for additional sub elements as below:
+This xml element contains similar elements as Main node configuration except for
+additional sub elements as below:
 
 Peripheral_Config
 =================
 
-Peripheral_x_Config sub element depends on the number of peripherals connected to each A2B sub-Node in the schematic. Each Peripheral_x_Config element contains sub elements with attributes as below.
-
+Peripheral_x_Config sub element depends on the number of peripherals connected
+to each A2B sub-Node in the schematic. Each Peripheral_x_Config element contains
+sub elements with attributes as below.
 
 |image13|
 

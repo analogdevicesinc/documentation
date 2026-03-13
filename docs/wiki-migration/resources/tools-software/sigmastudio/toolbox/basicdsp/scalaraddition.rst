@@ -6,7 +6,8 @@ Block Scalar Addition(ADAU145x)
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/scalaradd.png
    :align: center
 
-Scalar Addition is a block processing module which adds a constant scalar value to each of the input samples in block of input samples
+Scalar Addition is a block processing module which adds a constant scalar value
+to each of the input samples in block of input samples
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/scalaraddcell.png
    :align: center
@@ -32,7 +33,8 @@ Output Pins
 Grow Algorithm
 --------------
 
-The module supports growth functionality, the number of channels to the module can be grown. Add is not supported.
+The module supports growth functionality, the number of channels to the module
+can be grown. Add is not supported.
 
 GUI Controls
 ------------
@@ -52,7 +54,6 @@ GUI Control Name Compiler Name               Function Description
 Scalar           ScalarAdditionBlkAlg1Scalar Scalar Value for Addition
 ================ =========================== =========================
 
-
 | Here,
 
 -   Green - Algorithm Name
@@ -62,12 +63,14 @@ Scalar           ScalarAdditionBlkAlg1Scalar Scalar Value for Addition
 Algorithm Description
 ---------------------
 
-This module adds the scalar value specified in the textbox to each of the input samples in an input block.
+This module adds the scalar value specified in the textbox to each of the input
+samples in an input block.
 
 Example
 -------
 
-In the example shown below, scalar value 110 is added to each of the DC block input samples of value 10
+In the example shown below, scalar value 110 is added to each of the DC block
+input samples of value 10
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/scalaraddexample.png
    :align: center

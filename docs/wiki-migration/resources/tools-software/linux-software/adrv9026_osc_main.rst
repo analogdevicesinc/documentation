@@ -5,11 +5,11 @@ IIO OSC ADRV9026/ADRV9029 Capture Window
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/eval/user-guide/transceiver/adrv9026/quickstart/index.html\
 
-
 Introduction
 ------------
 
-Main receivers RX1, RX2, RX3, and RX4 are handled by the axi-adrv9025-rx-hpc IIO device.
+Main receivers RX1, RX2, RX3, and RX4 are handled by the axi-adrv9025-rx-hpc IIO
+device.
 
 Channels:
 
@@ -29,11 +29,11 @@ Time Domain View
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_td_main.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Frequency Domain View
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_fd_main.png
    :align: center
-   :width: 600px
+   :width: 600

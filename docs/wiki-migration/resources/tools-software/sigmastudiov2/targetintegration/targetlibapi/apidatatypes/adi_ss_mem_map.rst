@@ -13,7 +13,8 @@ Structure
 
 Description
 
-The ADI_MEM_MAP structure passes the memory blocks that can be used by the SS+ to the adi_ss_create function.
+The ADI_MEM_MAP structure passes the memory blocks that can be used by the SS+
+to the adi_ss_create function.
 
 Fields
 

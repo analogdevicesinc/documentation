@@ -53,12 +53,20 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
-
-Digital Accelerometer characteristics are application specific and may vary between boards and models. The platform_data for the device's “struct device” holds this information.
+Digital Accelerometer characteristics are application specific and may vary
+between boards and models. The platform_data for the device's “struct device”
+holds this information.
 
 .. code:: c
 
@@ -194,14 +202,24 @@ Digital Accelerometer characteristics are application specific and may vary betw
        .ev_code_z = ABS_Z,
    };
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
-
-Depending on the DDS IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+Depending on the DDS IC used, you may need to set the modalias accordingly,
+matching your part name. It may also required to adjust max_speed_hz. Please
+consult the datasheet, for maximum spi clock supported by the device in
+question.
 
 .. code:: c
 
@@ -236,12 +254,12 @@ Depending on the DDS IC used, you may need to set the modalias accordingly, matc
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADXL34x Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -283,7 +301,7 @@ Hardware configuration
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-misc/eval-adxl362z.jpg
    :alt: eval-adxl362z
-   :width: 300px
+   :width: 300
 
 Driver testing
 ==============
@@ -320,7 +338,8 @@ This means that the SPI communication and initilaization with the ADXL362 failed
 Checking for proper installation
 --------------------------------
 
-After the kernel boot your device folder should include at least one device node for the accelerometer
+After the kernel boot your device folder should include at least one device node
+for the accelerometer
 
 ::
 
@@ -375,13 +394,13 @@ Use the event_test utility to test proper function
 
 .. tip::
 
-   In case you move the accelerometer and don't receive events, it's likely that something with your Interrupt is wrong. check irq number in your platform device file
-
+   In case you move the accelerometer and don't receive events, it's likely that
+   something with your Interrupt is wrong. check irq number in your platform
+   device file
 
 .. tip::
 
    In case you get a message like: ``evtest: No such device``, it's likely that you have not install the necessary modules
-
 
 ADXL34x Sysfs runtime controls
 ------------------------------
@@ -438,11 +457,9 @@ Writing '**1**' into autosleep - enables Autosleep Upon Inactivity Writing '**0*
 More Information
 ================
 
-
 .. note::
 
    See `resources/tools-software/linux-drivers/snippets <https://wiki.analog.com/resources/tools-software/linux-drivers/snippets#input_pointers>`_
-
 
 ADXL362/6 Android Acceleration Sensor
 -------------------------------------

@@ -1,4 +1,5 @@
-In case there is a communication problem with the board the follwing actions can be perfomed in order to try to fix the issues:
+In case there is a communication problem with the board the follwing actions can
+be perfomed in order to try to fix the issues:
 
 -  Check that the evaluation board is powered.
 -  Make sure the USB cable is not connected to the CED1Z. In case it is, disconnect it and reset the board.
@@ -12,14 +13,15 @@ In case there is a communication problem with the board the follwing actions can
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeaddsymbols.png
    :alt: ucprobeaddsymbols.png
    :align: center
-   :width: 400px
+   :width: 400
 
--  If the communication problem persists even after performing the previous steps, restart the uC-Probe application and try to run the interface again.
+-  If the communication problem persists even after performing the previous
+   steps, restart the uC-Probe application and try to run the interface again.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image081.png
    :alt: image081.png
    :align: center
-   :width: 300px
+   :width: 300
 
 More information
 ================
@@ -31,6 +33,6 @@ More information
    :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |ucproberemovesymbols.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucproberemovesymbols.png
-   :width: 400px
+   :width: 400
 .. |ucproberemovesymbolsdlg.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucproberemovesymbolsdlg.png
-   :width: 400px
+   :width: 400

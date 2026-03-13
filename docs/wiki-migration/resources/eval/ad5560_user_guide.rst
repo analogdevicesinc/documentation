@@ -19,12 +19,15 @@ Quick Start Guide
    -  The software should self install after CD-ROM is inserted.
    -  If software installation does not launch, then run “setup.exe” from CD-ROM. This will install the relevant USB drivers and software to your pc. Note that the software is currently only compatible with PCs running OS up to Windows XP.
    -  Software should be installed prior to connection of the eval board to the PC’s USB port to ensure the evaluation board is correctly recognized by the PC.
-   -  All software, documentation and config files will be copied to C:\\Program Files\\Analog Devices\\AD5560 by default.
+   -  All software, documentation and config files will be copied to C:\\Program
+      Files\\Analog Devices\\AD5560 by default.
 
 -  Plug in the hardware
 
    -  using the USB cable, connect the EVAL-AD5560 to the computer.
-   -  You will be prompted to install the USB drivers. The software should find these drivers automatically. You may be required to re-start your pc after the install, but only if prompted.
+   -  You will be prompted to install the USB drivers. The software should find
+      these drivers automatically. You may be required to re-start your pc after
+      the install, but only if prompted.
 
 -  UnPlug the hardware and apply power supplies.
 
@@ -44,13 +47,18 @@ Quick Start Guide
 
 -  Running the Chip Programming Software.
 
-   -  Browse to the Analog Devices folder in your Start menu. Go to the AD5560 folder and select the Evaluation software to launch the programming tool.
+   -  Browse to the Analog Devices folder in your Start menu. Go to the AD5560
+      folder and select the Evaluation software to launch the programming tool.
 
 -  Verifying you are communicating with the Hardware
 
    -  When the software launches, the main window will open
    -  By default, when the software launches, it writes two commands to the AD5560 to put it into a standard operating mode. These commands are 0x12200 to System Control register and 0x29950 to DPS1 Register.
-   -  This will initialize the device into powered up mode, with the Force Amplifier Enabled. It will select the 2.5mA current range, the Measout = MV and the Clamps will be enabled. The Measout Gain setting = 0.2. The Offset DAC is at default of 0x8000 as are all other DAC registers. Safe mode compensation is the power on default here.
+   -  This will initialize the device into powered up mode, with the Force
+      Amplifier Enabled. It will select the 2.5mA current range, the Measout =
+      MV and the Clamps will be enabled. The Measout Gain setting = 0.2. The
+      Offset DAC is at default of 0x8000 as are all other DAC registers. Safe
+      mode compensation is the power on default here.
 
 -  Proper sequence of USB/Power Supplies/Software:
 
@@ -62,7 +70,6 @@ Evaluation Board Description
 ============================
 
 The EVAL-AD5560EB is a full-featured evaluation board designed to allow the user to easily evaluate all features of the :adi:`AD5560` DPS The board can be controlled by two means, via the on-board connectors or via the USB port of a Windows- based PC using the :adi:`AD5560` evaluation software. The default setup is for control via the USB port. Please refer to the :adi:`AD5560` datasheet for full details on all functionality of the :adi:`AD5560` device and for full details of the each of the Registers within the :adi:`AD5560` .
-
 
 |image1|
 
@@ -82,11 +89,20 @@ The following external supplies must be provided.
 -  5V/3V between DVCC and DGND inputs for the digital supply of the :adi:`AD5560` circuitry and other digital circuitry.
 -  Supply the AVDD, AVSS and AGND inputs for the positive supply of the :adi:`AD5560`, such that AVDD >=10V, AVSS <=5V, \|AVDD – AVSS\| >= 20V and <= 33V,
 -  +5V for +5V power supply input on power block, this is the power supply for the ADC and for accurate conversions should be a clean supply.
--  Supplies for HCAVDD1, HCAVDD2, HCAVSS1, HCAVSS2 may be chosen such that minimum power dissipation will be dissipated in the device. Alternatively, they may be connected to the AVDD, AVSS supplies. (see datasheet supplies section for more details on using the HC supplies).
+-  Supplies for HCAVDD1, HCAVDD2, HCAVSS1, HCAVSS2 may be chosen such that
+   minimum power dissipation will be dissipated in the device. Alternatively,
+   they may be connected to the AVDD, AVSS supplies. (see datasheet supplies
+   section for more details on using the HC supplies).
 
-Both AGND and DGND inputs are provided on the board. The AGND and DGND planes are connected at one location close to the AD5560. It is recommended not to connect the AGND and DGND elsewhere in the system to avoid ground loop problems.
+Both AGND and DGND inputs are provided on the board. The AGND and DGND planes
+are connected at one location close to the AD5560. It is recommended not to
+connect the AGND and DGND elsewhere in the system to avoid ground loop problems.
 
-Each supply is decoupled to the relevant ground plane with 10μF and 0.1μF capacitors. Each device supply pin is again decoupled with a 0.1μF capacitor to the relevant ground plane. Exposed paddle on AD5560 is internally connected to AVSS. Addition of a DUT is required for operation; please connect to gold pins or SM connections provided.
+Each supply is decoupled to the relevant ground plane with 10μF and 0.1μF
+capacitors. Each device supply pin is again decoupled with a 0.1μF capacitor to
+the relevant ground plane. Exposed paddle on AD5560 is internally connected to
+AVSS. Addition of a DUT is required for operation; please connect to gold pins
+or SM connections provided.
 
 Link Options
 ------------
@@ -112,7 +128,9 @@ LK11     A              Reference selection
 \                       C: External Reference input
 ======== ============== =======================================
 
-The ADC is a 5V device, so gain of 0.2 (for MEASOUT) should always be selected if using ADC for measurements. If gain = 1, then LK 4 should be removed to protect the ADC (assuming that LK 4 is in position A).
+The ADC is a 5V device, so gain of 0.2 (for MEASOUT) should always be selected
+if using ADC for measurements. If gain = 1, then LK 4 should be removed to
+protect the ADC (assuming that LK 4 is in position A).
 
 Using the AD5560 board
 ----------------------
@@ -128,7 +146,8 @@ Software Installation
 The :adi:`AD5560` evaluation kit includes self-installing software on CR-ROM. The software is compatible with Windows 2000/NT/XP. If the setup file does not run automatically, setup.exe can be run from the CD-ROM. The evaluation software should be installed before connecting the evaluation board to the PC’s USB port to ensure that the evaluation board is correctly recognized when connected to the PC.
 
 -  After the installation from the CD-ROM is complete, power up the AD5560 evaluation board as described in the Power Supplies section, then connect it to the USB port of your PC using the supplied code.
--  When the evaluation board is detected, proceed through any dialog boxes that appear. This finishes the installation.
+-  When the evaluation board is detected, proceed through any dialog boxes that
+   appear. This finishes the installation.
 
 Software Operation
 ------------------
@@ -146,7 +165,12 @@ The window shows a number of Tabs that allow the user to control different regis
 Compensation Selection Window
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The compensation selection Tabs allows access to the compensation registers to set the different compensation parameters manually or automatically. The appropriate capacitor values may be automatically selected depending on the load capacitance at the DUT. By default, the power on mode of the device (and the eval s/w) is “SAFE MODE”. Please bear this in mind when making settling time measurements.
+The compensation selection Tabs allows access to the compensation registers to
+set the different compensation parameters manually or automatically. The
+appropriate capacitor values may be automatically selected depending on the load
+capacitance at the DUT. By default, the power on mode of the device (and the
+eval s/w) is “SAFE MODE”. Please bear this in mind when making settling time
+measurements.
 
 |image4| Each of these registers require that the GREEN button be hit to load the relevant register.
 
@@ -155,14 +179,12 @@ Temperature Sensor & Diagnostic Features Window
 
 This register allows access to internal nodes within the AD5560 such as the thermal array scattered across the different portions of the die. Included on the evaluation board is a temp sensor to allow conversion of the diode voltages to temperature, see ADT7461 tab for temp sampling. The `ADT7461 <http://www.onsemi.com/PowerSolutions/product.do?id=ADT7461>`_ is an ON Semiconductor product.
 
-
 |image5|
 
 Voltage Measurement Features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here sweeps of current/voltage may be performed. Also measurements with respect to time (Note: time measurements will be affected by other PC operations – so may not in fact be truly representative of time). Settling time routines and range change transients also all for analysis of the AD5560 device. The ADC is a 5V device, so gain of 0.2 (for MEASOUT) should always be selected if using ADC for measurements. |image6|
-
 
 |image7|
 
@@ -176,16 +198,16 @@ Schematics, Layout, Gerbers, BOM and Software
 -  Software Download available from: :adi:`static/imported-files/eval_boards/AD5560_Evaluation_Software.zip`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/simple_block_evb.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad5560_front_panel.jpg
-   :width: 700px
+   :width: 700
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad5560_all_regs.jpg
-   :width: 700px
+   :width: 700
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad5560_compensation.jpg
-   :width: 700px
+   :width: 700
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad5560_temp_sensor.jpg
-   :width: 700px
+   :width: 700
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad5560_votlage_measure.jpg
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad5560_votlage_measure2.jpg
-   :width: 600px
+   :width: 600

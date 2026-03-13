@@ -15,7 +15,9 @@ The :adi:`AD7156` delivers a complete signal processing solution for capacitive 
 Quick Start Guide
 -----------------
 
-The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided in the project \*.zip file combines the FPGA bit file and
+the SDK elf files. It may be used for a quick check on the system. All you need
+is the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -29,12 +31,11 @@ Required Software
 ~~~~~~~~~~~~~~~~~
 
 -  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
--  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard or 9600 for the Digilent Nexys™3 Board.
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet
+   LX-9 Microboard or 9600 for the Digilent Nexys™3 Board.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
@@ -44,46 +45,60 @@ Running Demo (SDK) Program
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
-
 Avnet LX9 MicroBoard Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD7156\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD7156\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodCDC1 to J5 connector of LX9 board (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+To begin, connect the PmodCDC1 to J5 connector of LX9 board (see image below).
+You can use an extension cable for ease of use. Connect the USB cable from the
+PC to the USB-UART female connector of the board for the UART terminal. The
+board will be programmed through its USB male connector.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_lx9.jpg
    :alt: PmodCDC1 and LX-9
-   :width: 200px
+   :width: 200
 
 Digilent Nexys™3 Spartan-6 FPGA Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD7156\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD7156\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodCDC1 to JA connector of NEXYS3 board (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodCDC1 to JA connector of NEXYS3 board (see image
+below). You can use an extension cable for ease of use. Connect the USB cables
+from the PC to the board, one for programming (Digilent USB device) and one for
+the UART terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_nexys3.jpg
    :alt: PmodCDC1 and Nexys™3
-   :width: 200px
+   :width: 200
 
 Avnet ZedBoard
 ~~~~~~~~~~~~~~
 
-To begin, connect the PmodCDC1 to JC1 and JA1 connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodCDC1 to JC1 and JA1 connector of ZedBoard (see image
+below). You can use an extension cable for ease of use. Connect the USB cables
+from the PC to the board, one for programming (Digilent USB device) and one for
+the UART terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_zed.jpg
    :alt: PmodCDC1 and ZedBoard
-   :width: 400px
+   :width: 400
 
 FPGA Configuration for Nexys3 and LX-9 MicroBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad7156/sw/AD7156.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to appropiate baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../ad7156/sw/AD7156.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdcimpact.jpg
    :alt: Programming FPGA in IMPACT
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for ZedBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,82 +107,82 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
-
+   If the download script fails to run, modify the Xilinx Tools path in
+   download.bat to match your Xilinx Installation path.
 
 If programming was successful, the **Main Menu** will apear in your UART terminal, as seen in the picture below. There are 7 options. Pressing [d], [c], [a], [t], [r], [m], [s] or [q] key will allow you to select the desired option.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu1.jpg
    :alt: Main Menu
-   :width: 600px
+   :width: 600
 
 **Select Channels for display** allows selecting which channel(s) to display and measure.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu2.jpg
    :alt: Select Channels for display
-   :width: 600px
+   :width: 600
 
 **Display Capacitance** prints the selected Channel(s) measured capacitance.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu3.jpg
    :alt: Display Capacitance
-   :width: 600px
+   :width: 600
 
 **Display Average Capacitance** prints the selected Channel(s) measured average capacitance.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu4.jpg
    :alt: Display Average Capacitance
-   :width: 600px
+   :width: 600
 
 **Set Threshold** allows setting the threshold for each channel (feature available only in fixed threshold mode).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu5.jpg
    :alt: Set Threshold
-   :width: 600px
+   :width: 600
 
 **Set Sensitivity** allows setting timeout for each channel.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu6.jpg
    :alt: Set Sensitivity
-   :width: 600px
+   :width: 600
 
 **Set Timeout** prints Threshold mode and values for each channel.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu7.jpg
    :alt: Set Timeout
-   :width: 600px
+   :width: 600
 
 **Set Input Range** allows setting the input range for each channel.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu8.jpg
    :alt: Set Input Range
-   :width: 600px
+   :width: 600
 
 **Threshold menu** allows selecting between Fixed Threshold and Adaptive Threshold.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu9.jpg
    :alt: Threshold menu
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu10.jpg
    :alt: Threshold menu
-   :width: 600px
+   :width: 600
 
 **Display current settings** prints Threshold mode, type and also the values for each channel.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu11.jpg
    :alt: Display current settings
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu12.jpg
    :alt: Display current settings
-   :width: 600px
+   :width: 600
 
 **Stop and return to menu** will stop any ongoing action and will display the menu with all the available options.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodcdc1_menu13.jpg
    :alt: Stop and return to menu
-   :width: 600px
+   :width: 600
 
 Using the reference design
 --------------------------
@@ -175,19 +190,24 @@ Using the reference design
 Functional Description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design is a SPI interface used to communicate with the device. The software programs the AD7156s internal registers, and afterwards reads desired data from the device and prints it via UART. Interrupts are used to turn on LEDs and start a timer (LEDs stay ON for 1 second).
+The reference design is a SPI interface used to communicate with the device. The
+software programs the AD7156s internal registers, and afterwards reads desired
+data from the device and prints it via UART. Interrupts are used to turn on LEDs
+and start a timer (LEDs stay ON for 1 second).
 
 .. important::
 
    
    -  Connecting the PmodCDC1 to the boards using an extension cable provides ease of use.
-   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and
+      ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-
 
 .. important::
 
-   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+   When using the ZedBoard reference design in order to develop your own
+   software, please make sure that the following options are set in
+   "system_config.h":
 
    
    .. code:: c
@@ -205,7 +225,6 @@ The reference design is a SPI interface used to communicate with the device. The
       // GPIO used in the design
       #define USE_GPIO         1
    
-
 
 Downloads
 ---------
@@ -230,7 +249,6 @@ Downloads
    -  :git-no-OS:`Programming Script <legacy/Pmods/PmodCDC1/bin>`
    
 
-
 Linux Device Driver
 ===================
 
@@ -242,11 +260,15 @@ Preparing the SD Card
 In order to prepare the SD Card for booting Linux on the ZedBoard:
 
 -  Download the device tree: :git-no-OS:`PmodCDC1 Linux devicetree <legacy/Pmods/PmodCDC1/dts>`
--  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
+-  Follow the instructions on the following wiki page, but use the device tree
+   downloaded on the previous step
 
    -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
 
-Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD
+Card and power on the board. If everything is correct, the system should boot
+up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate
+115200.
 
 There are 2 ways to test the driver.
 
@@ -258,7 +280,8 @@ Using the terminal window
 
 Open a new terminal window by pressing **Ctrl+Alt+T**.
 
-Navigate to the location of the device and identify it using the following commands:
+Navigate to the location of the device and identify it using the following
+commands:
 
 ::
 
@@ -303,13 +326,15 @@ If you want to read the capacitance for another channel, replace **in_capacitanc
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7156_linaro_terminal.jpg
    :alt: AD7156 Set Voltage from Terminal
-   :width: 600px
+   :width: 600
 
-The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+The commands written above can also be used if not using an HDMI monitor and a
+wireless keyboard, by using a serial terminal, and typing the commands after the
+system boot-up is complete.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7156_linux_serial.jpg
    :alt: AD7156 Read Voltage from Serial Terminal
-   :width: 600px
+   :width: 600
 
 More information
 ----------------

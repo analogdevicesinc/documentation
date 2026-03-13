@@ -3,14 +3,16 @@ m2kcli
 
 m2kcli is a command-line frontend for libm2k.
 
-m2kcli is composed from many commands, each representing a major functionality of the ADALM-2000:
+m2kcli is composed from many commands, each representing a major functionality
+of the ADALM-2000:
 
 -  analog-in: oscilloscope and voltmeter
 -  analog-out: signal generator
 -  digital: logic analyzer and pattern generator
 -  power-supply
 
-m2kcli offers an easy way to communicate with other devices using digital protocols such as:
+m2kcli offers an easy way to communicate with other devices using digital
+protocols such as:
 
 -  SPI
 -  I²C
@@ -91,7 +93,9 @@ synopsis
 description
 ~~~~~~~~~~~
 
-analog-in command controls the analogical input component, having two main functions: oscilloscope and voltmeter. The available channels for analog in are channel 0 and channel 1.
+analog-in command controls the analogical input component, having two main
+functions: oscilloscope and voltmeter. The available channels for analog in are
+channel 0 and channel 1.
 
 **Pinout:**
 
@@ -111,7 +115,8 @@ Calibrate the ADC.
 
 **voltage**
 
-Return the voltage of the given channels. The result is printed to standard output.
+Return the voltage of the given channels. The result is printed to standard
+output.
 
 Mandatory arguments:
 
@@ -151,7 +156,8 @@ Optional arguments:
 
 Examples:
 
--  Capture 2048 unprocessed samples from both channels using a buffer of length 1024 and save them into a binary file
+-  Capture 2048 unprocessed samples from both channels using a buffer of length
+   1024 and save them into a binary file
 
 ::
 
@@ -167,7 +173,8 @@ Examples:
 
 **get**
 
-Return the value of the global attributes. Enumerate the attributes with a space between them.
+Return the value of the global attributes. Enumerate the attributes with a space
+between them.
 
 Attributes:
 
@@ -291,7 +298,9 @@ synopsis
 description
 ~~~~~~~~~~~
 
-analog-out command controls the analogical output component, having the main functions of a signal generator. The available channels for analog out are channel 0 and channel 1.
+analog-out command controls the analogical output component, having the main
+functions of a signal generator. The available channels for analog out are
+channel 0 and channel 1.
 
 **Pinout:**
 
@@ -311,7 +320,8 @@ Calibrate both DACs.
 
 **generate**
 
-Generate signals for the specified channels. The samples are read from the standard input.
+Generate signals for the specified channels. The samples are read from the
+standard input.
 
 Mandatory arguments:
 
@@ -401,7 +411,9 @@ synopsis
 description
 ~~~~~~~~~~~
 
-digital command controls the digital input and output component, having two main functions: logic analyzer and pattern generator. The available channels for digital are between 0 and 15.
+digital command controls the digital input and output component, having two main
+functions: logic analyzer and pattern generator. The available channels for
+digital are between 0 and 15.
 
 **Pinout:**
 
@@ -444,7 +456,8 @@ Examples:
 
 **generate**
 
-Generate digital signals for the specified channels.The samples are read from the standard input.
+Generate digital signals for the specified channels.The samples are read from
+the standard input.
 
 Mandatory arguments:
 
@@ -458,7 +471,8 @@ Optional arguments:
 
 Examples:
 
--  Generate a cyclic signal for the given channels based on the samples located in file.csv
+-  Generate a cyclic signal for the given channels based on the samples located
+   in file.csv
 
 ::
 
@@ -544,7 +558,8 @@ Attributes:
 
 -  value - {0 \| 1}
 -  output_mode - {open_drain \| push_pull}
--  trigger_condition - {rising_edge \| falling_edge \| low_level \| high_level \| any_edge \| no_trigger}
+-  trigger_condition - {rising_edge \| falling_edge \| low_level \| high_level
+   \| any_edge \| no_trigger}
 
 Examples:
 
@@ -574,7 +589,8 @@ synopsis
 description
 ~~~~~~~~~~~
 
-power-supply command controls the power supply. The available channels for power supply are channel 0 and channel 1.
+power-supply command controls the power supply. The available channels for power
+supply are channel 0 and channel 1.
 
 **Pinout:**
 
@@ -594,7 +610,8 @@ Calibrate the ADC.
 
 **capture**
 
-Return the value, read by the power supply. The result is printed to standard output.
+Return the value, read by the power supply. The result is printed to standard
+output.
 
 Mandatory arguments:
 
@@ -666,13 +683,15 @@ Mandatory arguments:
 
 Optional arguments:
 
--   miso - index of any digital pin; if miso is absent, write only mode will be activated
+-   miso - index of any digital pin; if miso is absent, write only mode will be
+    activated
 
 --------------
 
 **write**
 
-Write the given data and display back the read data. Before writing, the SPI protocol must be initialized.
+Write the given data and display back the read data. Before writing, the SPI
+protocol must be initialized.
 
 Mandatory arguments:
 
@@ -724,7 +743,11 @@ Mandatory arguments:
 
 Optional arguments:
 
--   write_only - In normal mode, i2c command tries to acknowledge the message, by checking the ACK/NACK bits. In this case any other front-end cannot be used for processing the output message. So the purpose of write_only argument is to provide the possibility of combining m2kcli write mode with other front-end, for example sigrok-cli, that can decode the message.
+-   write_only - In normal mode, i2c command tries to acknowledge the message,
+    by checking the ACK/NACK bits. In this case any other front-end cannot be
+    used for processing the output message. So the purpose of write_only
+    argument is to provide the possibility of combining m2kcli write mode with
+    other front-end, for example sigrok-cli, that can decode the message.
 
    -  write_only=0: disable write only mode
    -  write_only=1: enable write only mode
@@ -739,7 +762,8 @@ Write the given data. Before writing, the I²C protocol must be initialized.
 Mandatory arguments:
 
 -  data - list of bytes, comma separated values
--  option - 3-bit number; only one addressing bit must be set; repeated start is optional
+-  option - 3-bit number; only one addressing bit must be set; repeated start is
+   optional
 
    -  bit 0 - 7-bit addressing
    -  bit 1 - repeated start
@@ -749,12 +773,14 @@ Mandatory arguments:
 
 **read**
 
-Read a given number of bytes. Before reading, the I²C protocol must be initialized.
+Read a given number of bytes. Before reading, the I²C protocol must be
+initialized.
 
 Mandatory arguments:
 
 -  bytes_number - integer
--  option - 3-bit number; only one addressing bit must be set; repeated start is optional
+-  option - 3-bit number; only one addressing bit must be set; repeated start is
+   optional
 
    -  bit 0 - 7-bit addressing
    -  bit 1 - repeated start
@@ -827,7 +853,8 @@ Mandatory arguments:
 
 **read**
 
-Read a given number of bytes. Before reading, the UART protocol must be initialized.
+Read a given number of bytes. Before reading, the UART protocol must be
+initialized.
 
 Mandatory arguments:
 
@@ -867,7 +894,8 @@ synopsis
 description
 ~~~~~~~~~~~
 
-uart-terminal command continuously communicates with an UART device, simulating a terminal.
+uart-terminal command continuously communicates with an UART device, simulating
+a terminal.
 
 **Options:**
 
@@ -903,7 +931,10 @@ USB to Serial UART adapter script
 
 It creates an UART-Terminal using an ADALM2000 board and connects it to a `PTY <https://linux.die.net/man/7/pty>`_ (pseudoterminal interfaces). This enables connection to a Serial Terminal Emulator (like GTKTerm, Picocom, Minicom, Tera Term).
 
-To use the script, run it in a terminal and keep it running, after that, from another terminal connect to the PTY using a terminal emulator and the settings displayed on screen. When you want to close the connection just press ENTER inside the terminal from where the script was ran.
+To use the script, run it in a terminal and keep it running, after that, from
+another terminal connect to the PTY using a terminal emulator and the settings
+displayed on screen. When you want to close the connection just press ENTER
+inside the terminal from where the script was ran.
 
 Example of usage, connect a Raspberry Pi to PC using a M2K board:
 
@@ -928,7 +959,8 @@ First terminal
 
    Press any key to close the connection
 
-In a second terminal connect using a terminal emulator to the previous displayed path and the corresponding UART settings.
+In a second terminal connect using a terminal emulator to the previous displayed
+path and the corresponding UART settings.
 
 Second terminal
 
@@ -955,7 +987,8 @@ Second terminal
    root@analog:~#
    root@analog:~#
 
-And the connection will stay active as long as the first terminal will stay active. To close the connection, just press a key inside the first terminal.
+And the connection will stay active as long as the first terminal will stay
+active. To close the connection, just press a key inside the first terminal.
 
 ::
 
@@ -983,7 +1016,10 @@ m2kcli and sigrok-cli
 
 Sigrok is a portable, cross-platform, free open source signal analysis software. sigrok-cli is a command-line frontend for sigrok. A a much wider documentation about sigrok-cli can be found on this wiki `page <https://sigrok.org/wiki/Sigrok-cli>`_.
 
-sigrok-cli can be used for decoding digital signals. m2kcli does not have the functionality of continuously decoding SPI or I²C signals. Using sigrok-cli for decoding the data and m2kcli for capturing the data, we can simulate this functionality.
+sigrok-cli can be used for decoding digital signals. m2kcli does not have the
+functionality of continuously decoding SPI or I²C signals. Using sigrok-cli for
+decoding the data and m2kcli for capturing the data, we can simulate this
+functionality.
 
 **How to get sigrok-cli?**
 
@@ -991,7 +1027,8 @@ Sigrok offers two main possibilities of getting the cli. Building from source or
 
 **Example:**
 
-In the following example ADALM-2000 is connected to an I²C device and we are using a Linux AppImage binary for sigrok-cli.
+In the following example ADALM-2000 is connected to an I²C device and we are
+using a Linux AppImage binary for sigrok-cli.
 
 ::
 

@@ -3,7 +3,8 @@
 ADSP-215xx
 ==========
 
-This processor can be inserted on to the custom platform and configured as one of the supported SHARC processor with a single SHARC+ core.
+This processor can be inserted on to the custom platform and configured as one
+of the supported SHARC processor with a single SHARC+ core.
 
 Configurable Targets
 --------------------

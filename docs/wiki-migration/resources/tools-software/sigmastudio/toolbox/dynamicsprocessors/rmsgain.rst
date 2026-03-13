@@ -7,7 +7,9 @@ RMS (gain)
 
 |rmsgainpic1.png| This block uses an rms dynamics processor that lets you control the rms TC (time constant), Hold, Decay, and Soft Knee behavior, and opens the compression curve graph for your curve drawing.
 
-RMS works on a longer average than peak processors, thus allowing some fast loud transients to pass without compression, but operating more on longer segments that exceed the threshold.
+RMS works on a longer average than peak processors, thus allowing some fast loud
+transients to pass without compression, but operating more on longer segments
+that exceed the threshold.
 
 -  Drag the block into the workspace
 -  Right-click it and select the algorithm for your application:
@@ -17,12 +19,15 @@ RMS works on a longer average than peak processors, thus allowing some fast loud
    -  **Stereo RMS Ext. Detect (Post Gain)**
    -  **Stereo RMS (Post Gain)**
 
--  Set these parameters to fit your application and click Show Graph and drag, add and remove (right-click) control points to achieve your desired processing curve.
+-  Set these parameters to fit your application and click Show Graph and drag,
+   add and remove (right-click) control points to achieve your desired
+   processing curve.
 
 .. hint::
 
-   Note: For the picture above, the block was chosen to include the /Detect algorithm, shown by the red pin. For this compressor to be active, signal has to be connected to it.
-
+   Note: For the picture above, the block was chosen to include the /Detect
+   algorithm, shown by the red pin. For this compressor to be active, signal has
+   to be connected to it.
 
 Controls
 --------

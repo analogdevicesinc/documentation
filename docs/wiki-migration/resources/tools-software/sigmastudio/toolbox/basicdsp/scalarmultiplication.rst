@@ -6,7 +6,8 @@ Block Scalar Multiplication(ADAU145x)
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/scalarmulttoolbox.png
    :align: center
 
-Scalar Multiplication is a block processing module which multiplies scalar values specified in a table with the input block of samples.
+Scalar Multiplication is a block processing module which multiplies scalar
+values specified in a table with the input block of samples.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/scalarmultcell.png
    :align: center
@@ -32,7 +33,8 @@ Output Pins
 Grow Algorithm
 --------------
 
-The module supports growth functionality, the number of channels to the module can be grown. Add is not supported.
+The module supports growth functionality, the number of channels to the module
+can be grown. Add is not supported.
 
 GUI Controls
 ------------
@@ -64,17 +66,23 @@ GUI Controls
 Algorithm Description
 ---------------------
 
-This module multiplies the input block of samples with scalar values specified in the table at their respective indexes. The size of the table will be equal to the block size set for the schematic. Multiplication can be enabled or bypassed using the Enable/Bypass button present on the cell.
+This module multiplies the input block of samples with scalar values specified
+in the table at their respective indexes. The size of the table will be equal to
+the block size set for the schematic. Multiplication can be enabled or bypassed
+using the Enable/Bypass button present on the cell.
 
 Example
 -------
 
-In the example shown below, block output of the DC block [1,1,1...,blocksize times] is multiplied by the scalar values in the table [1,2,3,.....,blocksize] at their respective indices.
+In the example shown below, block output of the DC block [1,1,1...,blocksize
+times] is multiplied by the scalar values in the table [1,2,3,.....,blocksize]
+at their respective indices.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/scalarmultexample.png
    :align: center
 
-On Clicking the bypass option, the scalar values are bypassed and the input signal is passed to the output as is.
+On Clicking the bypass option, the scalar values are bypassed and the input
+signal is passed to the output as is.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/scalarmultexbypass.png
    :align: center

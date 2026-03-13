@@ -1,12 +1,13 @@
 ADALM2000 (M2K) Firmware Updates
 ================================
 
-The easiest way to update the firmware is to use the mass storage device included in the default image. There are times when this might not be possible (when you aren't using the default image).
+The easiest way to update the firmware is to use the mass storage device
+included in the default image. There are times when this might not be possible
+(when you aren't using the default image).
 
 .. important::
 
    There are very legitimate `Security Risks <https://en.wikipedia.org/wiki/Firmware#BADUSB>`_ about loading random firmware images onto devices like the ADALM2000, however, we decided early on that a learning tool must be open and accessible for people to experiment on. Please only use firmware images you have received from trusted locations.
-
 
 .. admonition:: Download
    :class: download
@@ -33,7 +34,6 @@ The easiest way to update the firmware is to use the mass storage device include
    +-------------------+-------------------------------------------------------------------------------------------------------------------------+
    
 
-
 Mass Storage Update
 -------------------
 
@@ -42,7 +42,6 @@ Copy the ``m2k.frm`` file onto the mass storage device, and then eject it. LED1 
 .. warning::
 
    Don't disconnect the device until rapid blinking stops!
-
 
 Windows/OSX
 ~~~~~~~~~~~
@@ -56,7 +55,7 @@ Windows/OSX
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/common/windows-eject.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  This will cause ``LED1`` to blink rapidly. This means programming is taking place. Do not remove power (or USB) while the device is blinking rapidly. It does take approximately 4 minutes to properly program the device.
 -  Still do not unplug things. Try to be more patient.
@@ -85,7 +84,6 @@ It's exactly the same as the GUI instructions, copy it, and then eject it, then 
       analog@imhotep:~/m2k$ sudo eject /dev/sdb
    
 
-
 DFU Update
 ----------
 
@@ -97,7 +95,8 @@ Entering DFU mode
 How to manually enter DFU mode?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In general the preferred firmware upgrade is via the mass storage device. There are 3 ways to enter the DFU mode manually:
+In general the preferred firmware upgrade is via the mass storage device. There
+are 3 ways to enter the DFU mode manually:
 
 -  **Press and hold the** `device button <https://wiki.analog.com/../../pluto/hacking/hardware>`_ with a toothpick, paper-clip or similar while applying power by plugging in the USB cable.
 -  From the device linux console type **``device_reboot sf``**. There are three ways to access the linux console:
@@ -111,7 +110,9 @@ In general the preferred firmware upgrade is via the mass storage device. There 
 When does the device automatically enter DFU mode?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The device enters DFU mode in case booting the multi component FIT image (Flattened Image Tree) fails. This may happen due to checksum failure caused by a corrupted previous firmware update.
+The device enters DFU mode in case booting the multi component FIT image
+(Flattened Image Tree) fails. This may happen due to checksum failure caused by
+a corrupted previous firmware update.
 
 How can I check if the device is in DFU mode?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -121,7 +122,8 @@ When the device is in DFU mode, the **DONE LED** is **OFF**, while **LED1** is c
 Update using DFU mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-How to update the firmware using DFU mode? How to rewrite the default uboot environment?
+How to update the firmware using DFU mode? How to rewrite the default uboot
+environment?
 
 Windows
 ^^^^^^^

@@ -3,7 +3,6 @@ Impact Measurement Demo using the Arduino Uno
 
 This demo will use **EVAL-ADXL372-ARDZ** shield along with **Arduino Uno** base board to create a impact measurement application, using the Arduino IDE.
 
-
 |image1|
 
 General Description/Overview
@@ -16,7 +15,6 @@ The **ADXL372** is an ultralow power, 3-axis, **±200 g** MEMS accelerometer.
 .. important::
 
    To generate an impact event just hit the device with the palm of your hand.
-
 
 Demo Requirements
 -----------------
@@ -40,7 +38,8 @@ Setting up the Hardware
 
 -  Plug the **EVAL-ADXL372-ARDZ** shield on top of the **Arduino Uno** development board by matching up the **POWER, ANALOG, DIGI0, DIGI1** connectors.
 
-   -  Note, the boards should only plug together one way, preventing reverse connections.
+   -  Note, the boards should only plug together one way, preventing reverse
+      connections.
 
 -  Make sure the jumpers **P10, P11, P12** are configured exactly as the picture below.
 
@@ -50,9 +49,10 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_101950.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
--   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the other end into the PC or laptop.
+-   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the
+    other end into the PC or laptop.
 
 Obtaining the Source Code
 -------------------------
@@ -66,15 +66,15 @@ The source code and include files of the **ADXL372_example** can be found here:
    :git-arduino:`ADXL372_example at Github <Arduino%20Uno%20R3/examples/ADXL372_example>`
    
 
-
 Project Structure
 -----------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/drawing3.png
    :align: center
-   :width: 700px
+   :width: 700
 
-The Arduino Sketch is used to load the example into Arduino IDE. The project is composed of three main parts:
+The Arduino Sketch is used to load the example into Arduino IDE. The project is
+composed of three main parts:
 
 -  the main program (arduino sketch)
 -  application layer (IC drivers and sensor data)
@@ -107,13 +107,15 @@ Set the Accelerometer inactivity Timer in the *ADXL372.h* file.
 
    #define INACT_TIMER        1     /* Inactivity timer value in multiples of 26ms */
 
-Configure the INT1 pin. (Depending on the ADXL_INT1_SELECT jumper the pin can be pin 7 for INT1_A and pin 6 for INT1_B)
+Configure the INT1 pin. (Depending on the ADXL_INT1_SELECT jumper the pin can be
+pin 7 for INT1_A and pin 6 for INT1_B)
 
 ::
 
    #define ADXL_INT1_PIN     7
 
-Configure the INT2 pin. (Depending on the ADXL_INT2_SELECT jumper the pin can be pin 5 for INT2_A and pin 4 for INT2_B)
+Configure the INT2 pin. (Depending on the ADXL_INT2_SELECT jumper the pin can be
+pin 5 for INT2_A and pin 4 for INT2_B)
 
 ::
 
@@ -125,25 +127,30 @@ Compiling, Verifying, and Programming
 -  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
 -  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
 
-These two steps can also be done using the quick buttons on the Arduino sketch. Check out the image below for locations of the quick buttons.
+These two steps can also be done using the quick buttons on the Arduino sketch.
+Check out the image below for locations of the quick buttons.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino_ide_verify_upload_buttons.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Outputting Data
 ---------------
 
-Data is output using the USB cable from the Arduino to the PC. The USB port acts as a serial terminal to display the data being transmitted via UART. Opening the serial terminal window from the Arduino IDE is very easy, simply click on the button shown in the picture below.
+Data is output using the USB cable from the Arduino to the PC. The USB port acts
+as a serial terminal to display the data being transmitted via UART. Opening the
+serial terminal window from the Arduino IDE is very easy, simply click on the
+button shown in the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino_ide_serial_terminal_button.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Serial Terminal Output
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You may need to configure the serial terminal depending on the current settings of the Arduino IDE. Make sure the settings are as follows:
+You may need to configure the serial terminal depending on the current settings
+of the Arduino IDE. Make sure the settings are as follows:
 
 ::
 
@@ -157,7 +164,8 @@ You may need to configure the serial terminal depending on the current settings 
 Tools Download and Help
 -----------------------
 
-The Arduino tools are easy to use, and there are many tutorials and users guides to help learn how to use the Arduino IDE.
+The Arduino tools are easy to use, and there are many tutorials and users guides
+to help learn how to use the Arduino IDE.
 
 For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
@@ -166,8 +174,7 @@ For more information on how to use the tool basics, please check out the `Arduin
 
    To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_101851.jpg
-   :width: 500px
+   :width: 500

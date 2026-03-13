@@ -7,7 +7,6 @@ Software Downloads
 
    All transceivers supported by this product are supported in :doc:`A2B Analyzer Studio </wiki-migration/resources/tools-software/a2b-analyzer-studio>`. We recommend that you use that software instead
 
-
 The A\ :sup:`2`\ B Bus Analyzer installer for each supported platform is listed below and they can be downloaded by clicking on their link.
 
 For assistance with installing the A\ :sup:`2`\ B Bus Analyzer software please visit our :doc:`Quick Start Guide </wiki-migration/resources/tools-software/a2b-bus-analyzer/quick-start-guide>`.
@@ -48,20 +47,20 @@ Released: August 2023
 |image9| `a2b_bus_analyzer-3.3.60-latest-macos-x64.pkg <https://download.analog.com/A2BSW-07/3.3.0/a2b_bus_analyzer-3.3.60-latest-macos-x64.pkg>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20

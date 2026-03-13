@@ -1,18 +1,18 @@
 USB Gadget Audio
 ================
 
-This page provides how to use the USB Gadget Audio on ADSP-SC5XX board which makes the the Board as an audio card.
+This page provides how to use the USB Gadget Audio on ADSP-SC5XX board which
+makes the the Board as an audio card.
 
 .. note::
 
    The USB Gadget Audio feature can be enabled when following the Quickstarguides within :doc:`Linux for ADSP-SC5xx Processors 3.0.0 (develop) </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>`. You have to append the following line in the ``conf/local.conf`` file: ``DISTRO_FEATURES:append = " adi_usb_gadget_audio"``\
 
-
 Hardware Configuration
 ----------------------
 
-Connect the USB micro-B plug cable into the USB HS/OTG Device port, as showing below:
-
+Connect the USB micro-B plug cable into the USB HS/OTG Device port, as
+showing below:
 
 |image1|
 
@@ -70,14 +70,16 @@ Play audio over USB on Host
 On the Linux-Host PC
 """"""""""""""""""""
 
-With following command you should be able to see the USB Gadget Audio device is there on your HOST:
+With following command you should be able to see the USB Gadget Audio device is
+there on your HOST:
 
 .. code:: bash
 
    test@madara:~$ lsusb
    Bus 002 Device 033: ID 1d6b:0101 Linux Foundation Audio Gadget
 
-Then we list the available sound card on host PC, to decide which sound card is associated with mini board
+Then we list the available sound card on host PC, to decide which sound card is
+associated with mini board
 
 .. code:: bash
 
@@ -126,4 +128,4 @@ Now, from the headset we can hear music is playing out.
 **Go TO** :doc:`USB Interface </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/start>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/usb/gadget-mode/002_usb_interface-device_application.jpg
-   :width: 600px
+   :width: 600

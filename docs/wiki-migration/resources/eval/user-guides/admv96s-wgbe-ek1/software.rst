@@ -30,7 +30,7 @@ Installing the Wethlink GUI on Windows
 -  To install the GUI double click the ``wethlink_installer.exe`` file. When prompted press ``Install`` and after the setup is completed press ``Close``.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/gui_installation.png
-   :width: 400px
+   :width: 400
 
 -  After installation the app is found at the path of the Destination Folder in the previous step.
 -  You can start the app by double clicking the ``wethlink.exe`` file in the destination folder or by launching it from the Windows start menu.
@@ -38,7 +38,8 @@ Installing the Wethlink GUI on Windows
 Running the Wethlink GUI on Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There is no installer provided on Linux, you have to clone the repo, install the dependencies and run the app in python.
+There is no installer provided on Linux, you have to clone the repo, install the
+dependencies and run the app in python.
 
 ::
 
@@ -61,4 +62,3 @@ Resources
    -  :git-no-OS:`ADMV96S-WGBE-EK1 Firmware Project <projects/wethlink>`
    -  `Wethlink Installer <https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe>`_
    
-

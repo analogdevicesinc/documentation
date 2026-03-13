@@ -145,7 +145,8 @@ Reference Design Table
 |                                                |            |          | Gate Drive Winding |            |            |                                                                                                                                                                               |
 +------------------------------------------------+------------+----------+--------------------+------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-- DC-DC Efficiency is measured from the input of the DC-DC converter to its output; this measurement does not include bridge or PD losses
+- DC-DC Efficiency is measured from the input of the DC-DC converter to its
+  output; this measurement does not include bridge or PD losses
 
 DC-DC Converter Features
 ========================
@@ -188,7 +189,7 @@ Standalone PoE DC-DC Controllers
 **DC-DC Controllers** provide a regulated and optionally isolated supply for powering downstream circuitry. Standalone DC-DC controllers are paired with PD interface controllers for a Powered Device solution. ADI offers many solutions that cover a wide range of input voltages, output powers, and topologies. Featured below, the MAX5974 controller family feature-set is well-suited for PoE applications.
 
 .. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_dc-dc_only_image.png
-   :width: 500px
+   :width: 500
 
 **Recommended Standalone PoE DC-DC Controllers**
 
@@ -208,7 +209,7 @@ PoE PD Controllers
 **PD Controllers** receive power from the cable by presenting IEEE 802.3af/at/bt-compliant Detection and Classification signatures to a compliant PSE. Once powered, the PD inrushes and enables the downstream circuitry such as DC-DC controllers. ADI provides solutions for IEEE 802.3af/at/bt/LTPoE++ standards and power levels.
 
 .. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_only_image.png
-   :width: 500px
+   :width: 500
 
 **Recommended PD Controllers**
 
@@ -247,7 +248,7 @@ PoE PD + DC-DC Controllers
 **PD + DC-DC Controllers** combine the PD interface controller and DC-DC controller into an integrated solution. ADI provides solutions for IEEE 802.3af/at/bt/LTPoE++ standards, as well as a wide range of input voltages, output powers, and topologies.
 
 .. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_dc-dc_image.png
-   :width: 500px
+   :width: 500
 
 **Recommended PD + DC-DC Controllers**
 
@@ -277,22 +278,79 @@ PoE Ideal Diode Bridge Controllers
 **Input Diode Bridges** polarity correct and OR the Ethernet cable voltages as required at the PD input. This is typically done with silicon or Schottky diode bridges which exhibit low efficiency. Ideal diode bridges replace diodes with MOSFETs for near zero losses. However, discrete implementations are leaky and have high component counts. LT4321-based ideal diode bridges eliminate more than 50 components and reduce solution size by 80% as compared to discrete ideal bridges. Auxiliary supply ORing diodes or AC to DC bridges may be replaced by the LT4320 for similar benefits.
 
 .. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_image.png
-   :width: 500px
+   :width: 500
 
 .. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_power.png
-   :width: 500px
+   :width: 500
 
 .. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_comp_image.png
-   :width: 500px
+   :width: 500
 
 Notes
 =====
 
 **Legal Terms and Conditions**
 
-By using the evaluation board discussed herein (together with any tools, components documentation or support materials, the “Evaluation Board”), you are agreeing to be bound by the terms and conditions set forth below (“Agreement”) unless you have purchased the Evaluation Board, in which case the Analog Devices Standard Terms and Conditions of Sale shall govern. Do not use the Evaluation Board until you have read and agreed to the Agreement. Your use of the Evaluation Board shall signify your acceptance of the Agreement. This Agreement is made by and between you (“Customer”) and Analog Devices, Inc. (“ADI”), with its principal place of business at One Technology Way, Norwood, MA 02062, USA. Subject to the terms and conditions of the Agreement, ADI hereby grants to Customer a free, limited, personal, temporary, non-exclusive, non-sublicensable, non-transferable license to use the Evaluation Board FOR EVALUATION PURPOSES ONLY. Customer understands and agrees that the Evaluation Board is provided for the sole and exclusive purpose referenced above, and agrees not to use the Evaluation Board for any other purpose. Furthermore, the license granted is expressly made subject to the following additional limitations: Customer shall not (i) rent, lease, display, sell, transfer, assign, sublicense, or distribute the Evaluation Board; and (ii) permit any Third Party to access the Evaluation Board. As used herein, the term “Third Party” includes any entity other than ADI, Customer, their employees, affiliates and in-house consultants. The Evaluation Board is NOT sold to Customer; all rights not expressly granted herein, including ownership of the Evaluation Board, are reserved by ADI. CONFIDENTIALITY. This Agreement and the Evaluation Board shall all be considered the confidential and proprietary information of ADI. Customer may not disclose or transfer any portion of the Evaluation Board to any other party for any reason. Upon discontinuation of use of the Evaluation Board or termination of this Agreement, Customer agrees to promptly return the Evaluation Board to ADI. ADDITIONAL RESTRICTIONS. Customer may not disassemble, decompile or reverse engineer chips on the Evaluation Board. Customer shall inform ADI of any occurred damages or any modifications or alterations it makes to the Evaluation Board, including but not limited to soldering or any other activity that affects the material content of the Evaluation Board. Modifications to the Evaluation Board must comply with applicable law, including but not limited to the RoHS Directive. TERMINATION. ADI may terminate this Agreement at any time upon giving written notice to Customer. Customer agrees to return to ADI the Evaluation Board at that time. LIMITATION OF LIABILITY. THE EVALUATION BOARD PROVIDED HEREUNDER IS PROVIDED “AS IS” AND ADI MAKES NO WARRANTIES OR REPRESENTATIONS OF ANY KIND WITH RESPECT TO IT. ADI SPECIFICALLY DISCLAIMS ANY REPRESENTATIONS, ENDORSEMENTS, GUARANTEES, OR WARRANTIES, EXPRESS OR IMPLIED, RELATED TO THE EVALUATION BOARD INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS. IN NO EVENT WILL ADI AND ITS LICENSORS BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES RESULTING FROM CUSTOMER’S POSSESSION OR USE OF THE EVALUATION BOARD, INCLUDING BUT NOT LIMITED TO LOST PROFITS, DELAY COSTS, LABOR COSTS OR LOSS OF GOODWILL. ADI’S TOTAL LIABILITY FROM ANY AND ALL CAUSES SHALL BE LIMITED TO THE AMOUNT OF ONE HUNDRED US DOLLARS ($100.00). EXPORT. Customer agrees that it will not directly or indirectly export the Evaluation Board to another country, and that it will comply with all applicable United States federal laws and regulations relating to exports. GOVERNING LAW. This Agreement shall be governed by and construed in accordance with the substantive laws of the Commonwealth of Massachusetts (excluding conflict of law rules). Any legal action regarding this Agreement will be heard in the state or federal courts having jurisdiction in Suffolk County, Massachusetts, and Customer hereby submits to the personal jurisdiction and venue of such courts. The United Nations Convention on Contracts for the International Sale of Goods shall not apply to this Agreement and is expressly disclaimed.
+By using the evaluation board discussed herein (together with any tools,
+components documentation or support materials, the “Evaluation Board”), you are
+agreeing to be bound by the terms and conditions set forth below (“Agreement”)
+unless you have purchased the Evaluation Board, in which case the Analog Devices
+Standard Terms and Conditions of Sale shall govern. Do not use the Evaluation
+Board until you have read and agreed to the Agreement. Your use of the
+Evaluation Board shall signify your acceptance of the Agreement. This Agreement
+is made by and between you (“Customer”) and Analog Devices, Inc. (“ADI”), with
+its principal place of business at One Technology Way, Norwood, MA 02062, USA.
+Subject to the terms and conditions of the Agreement, ADI hereby grants to
+Customer a free, limited, personal, temporary, non-exclusive, non-sublicensable,
+non-transferable license to use the Evaluation Board FOR EVALUATION PURPOSES
+ONLY. Customer understands and agrees that the Evaluation Board is provided for
+the sole and exclusive purpose referenced above, and agrees not to use the
+Evaluation Board for any other purpose. Furthermore, the license granted is
+expressly made subject to the following additional limitations: Customer shall
+not (i) rent, lease, display, sell, transfer, assign, sublicense, or distribute
+the Evaluation Board; and (ii) permit any Third Party to access the Evaluation
+Board. As used herein, the term “Third Party” includes any entity other than
+ADI, Customer, their employees, affiliates and in-house consultants. The
+Evaluation Board is NOT sold to Customer; all rights not expressly granted
+herein, including ownership of the Evaluation Board, are reserved by ADI.
+CONFIDENTIALITY. This Agreement and the Evaluation Board shall all be considered
+the confidential and proprietary information of ADI. Customer may not disclose
+or transfer any portion of the Evaluation Board to any other party for any
+reason. Upon discontinuation of use of the Evaluation Board or termination of
+this Agreement, Customer agrees to promptly return the Evaluation Board to ADI.
+ADDITIONAL RESTRICTIONS. Customer may not disassemble, decompile or reverse
+engineer chips on the Evaluation Board. Customer shall inform ADI of any
+occurred damages or any modifications or alterations it makes to the Evaluation
+Board, including but not limited to soldering or any other activity that affects
+the material content of the Evaluation Board. Modifications to the Evaluation
+Board must comply with applicable law, including but not limited to the RoHS
+Directive. TERMINATION. ADI may terminate this Agreement at any time upon giving
+written notice to Customer. Customer agrees to return to ADI the Evaluation
+Board at that time. LIMITATION OF LIABILITY. THE EVALUATION BOARD PROVIDED
+HEREUNDER IS PROVIDED “AS IS” AND ADI MAKES NO WARRANTIES OR REPRESENTATIONS OF
+ANY KIND WITH RESPECT TO IT. ADI SPECIFICALLY DISCLAIMS ANY REPRESENTATIONS,
+ENDORSEMENTS, GUARANTEES, OR WARRANTIES, EXPRESS OR IMPLIED, RELATED TO THE
+EVALUATION BOARD INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF
+MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT OF
+INTELLECTUAL PROPERTY RIGHTS. IN NO EVENT WILL ADI AND ITS LICENSORS BE LIABLE
+FOR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES RESULTING FROM
+CUSTOMER’S POSSESSION OR USE OF THE EVALUATION BOARD, INCLUDING BUT NOT LIMITED
+TO LOST PROFITS, DELAY COSTS, LABOR COSTS OR LOSS OF GOODWILL. ADI’S TOTAL
+LIABILITY FROM ANY AND ALL CAUSES SHALL BE LIMITED TO THE AMOUNT OF ONE HUNDRED
+US DOLLARS ($100.00). EXPORT. Customer agrees that it will not directly or
+indirectly export the Evaluation Board to another country, and that it will
+comply with all applicable United States federal laws and regulations relating
+to exports. GOVERNING LAW. This Agreement shall be governed by and construed in
+accordance with the substantive laws of the Commonwealth of Massachusetts
+(excluding conflict of law rules). Any legal action regarding this Agreement
+will be heard in the state or federal courts having jurisdiction in Suffolk
+County, Massachusetts, and Customer hereby submits to the personal jurisdiction
+and venue of such courts. The United Nations Convention on Contracts for the
+International Sale of Goods shall not apply to this Agreement and is expressly
+disclaimed.
 
-©2025 Analog Devices, Inc. All rights reserved. Trademarks and registered trademarks are the property of their respective owners.
+©2025 Analog Devices, Inc. All rights reserved. Trademarks and registered
+trademarks are the property of their respective owners.
 
 .. |image1| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/pd_diagram.png
-   :width: 600px
+   :width: 600

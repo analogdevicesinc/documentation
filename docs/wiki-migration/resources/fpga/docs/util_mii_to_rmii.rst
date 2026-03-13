@@ -5,7 +5,6 @@ UTIL_MII_TO_RMII
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/util_mii_to_rmii/index.html\
 
-
 The :git-hdl:`library/util_mii_to_rmii` IP core is designed to interface the Zynq-7000/Zynq UltraScale+ MPSoC - PS Gigabit Ethernet MAC and Reduced Media Independent Interface (RMII) :adi:`ADIN1300` PHY from the :adi:`CN0506` Dual PHY Ethernet evaluation board.
 
 Features
@@ -100,25 +99,36 @@ There is no register map defined for this IP core.
 Theory of operation
 -------------------
 
-The following timing diagrams illustrate different signal protocols for MII and RMII interfaces at data rates of 100 and 10 Mbps.
+The following timing diagrams illustrate different signal protocols for MII and
+RMII interfaces at data rates of 100 and 10 Mbps.
 
 Receive Transactions
 ~~~~~~~~~~~~~~~~~~~~
 
--  RMII (PHY) receive transaction at 100 Mbps with no errors and phy_crs_dv asserted until the final packet dibit. According to the RMII Specification Rev. 1.2, after the assertion of phy_crs_dv, several 00's dibits can precede the preamble 01's dibits. The preamble is composed of 28 "01" dibits and the start of frame delimiter of 3 "01" dibits and one "11" dibit followed by the frame containing 64-1522 bytes:
+-  RMII (PHY) receive transaction at 100 Mbps with no errors and phy_crs_dv
+   asserted until the final packet dibit. According to the RMII Specification
+   Rev. 1.2, after the assertion of phy_crs_dv, several 00's dibits can precede
+   the preamble 01's dibits. The preamble is composed of 28 "01" dibits and the
+   start of frame delimiter of 3 "01" dibits and one "11" dibit followed by the
+   frame containing 64-1522 bytes:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/phy_rec_simple.svg
    :alt: PHY Receive Simple
    :align: center
 
--  RMII (PHY) receive transaction at 100 Mbps with no errors and phy_crs_dv toggling at 25 MHz starting on a nibble boundary and indicates the PHY has lost the carrier but has accumulated nibbles to transfer:
+-  RMII (PHY) receive transaction at 100 Mbps with no errors and phy_crs_dv
+   toggling at 25 MHz starting on a nibble boundary and indicates the PHY has
+   lost the carrier but has accumulated nibbles to transfer:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/d2_phy_rec_tog.svg
    :alt: PHY Receive Toggle
    :align: center
 
 -  At a data rate of 10 Mbps (ref_clk frequency divided by 10), mii_rxd will be sampled every :math:`10^th` cycle.
--  MII receive transaction converted from RMII (PHY) receive transaction at 100 Mbps. In the MII mode mii_rx_dv and mii_rxd will be sampled on the falling edge of the 25 MHz mii_rx_clk and when mii_rx_dv is de-asserted, mii_rxd will present 0b0000 to the Ethernet MAC:
+-  MII receive transaction converted from RMII (PHY) receive transaction at 100
+   Mbps. In the MII mode mii_rx_dv and mii_rxd will be sampled on the falling
+   edge of the 25 MHz mii_rx_clk and when mii_rx_dv is de-asserted, mii_rxd will
+   present 0b0000 to the Ethernet MAC:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/mii_recv.svg
    :alt: ETH MAC Receive
@@ -127,7 +137,8 @@ Receive Transactions
 Transmit Transactions
 ~~~~~~~~~~~~~~~~~~~~~
 
--  MII transmit transaction at 100 Mbps. In the MII mode mii_tx_en and mii_txd will be sampled on the rising edge of the 25 MHz mii_tx_clk:
+-  MII transmit transaction at 100 Mbps. In the MII mode mii_tx_en and mii_txd
+   will be sampled on the rising edge of the 25 MHz mii_tx_clk:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/mii_transm.svg
    :alt: ETH MAC Transmit
@@ -135,7 +146,9 @@ Transmit Transactions
 
 -  In case of errors detection, mii_tx_er will be asserted and mii_txd dibits will be "01" for the rest of transmission to RMII interface.
 -  At a data rate of 10 Mbps (ref_clk frequency divided by 10), mii_txd will be sampled every :math:`10^th` cycle.
--  RMII transmit transaction converted from MII transmit transaction at 100 Mbps. In the RMII mode rmii_tx_en and rmii_txd will be sampled on the rising edge of the 50 MHz ref_clk:
+-  RMII transmit transaction converted from MII transmit transaction at 100
+   Mbps. In the RMII mode rmii_tx_en and rmii_txd will be sampled on the rising
+   edge of the 50 MHz ref_clk:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/rmii_transm.svg
    :alt: PHY Transmit

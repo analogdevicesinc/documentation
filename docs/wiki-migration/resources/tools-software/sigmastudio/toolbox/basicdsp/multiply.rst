@@ -17,7 +17,8 @@ Multiply (Real Signals)
 
 Right-click the block to add more pins by selecting **Add Algorithm > IC N > Multiplication**.
 
-Care must be taken in using this block to avoid computational overflows, for example, putting in a value of 16 in 5.23 format, whose limit is 15.999999.
+Care must be taken in using this block to avoid computational overflows, for
+example, putting in a value of 16 in 5.23 format, whose limit is 15.999999.
 
 Multiply (Complex Signals)
 --------------------------
@@ -31,7 +32,8 @@ This module can be used to multiply two complex signals in block schematic.
 
              (x+iy) * (u+iv) = (xu - yv) + i(xv + yu)
 
-Note:- The Context Menu "Input Source" option added to this module to select the algorithm for Complex FFT and Real FFT as shown below
+Note:- The Context Menu "Input Source" option added to this module to select the
+algorithm for Complex FFT and Real FFT as shown below
 
 Input Pins
 ~~~~~~~~~~
@@ -59,7 +61,8 @@ Input Pins
 Multiply (Complex-Real Signals)
 -------------------------------
 
-This module can be used to multiply one complex-one real signal in block schematic.
+This module can be used to multiply one complex-one real signal in block
+schematic.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/complexrealmult.jpg
    :align: center
@@ -94,7 +97,8 @@ Input Pins
 Multiply(Complex-Conjugate Complex Signals)
 -------------------------------------------
 
-This module can be used to multiply one complex-one conjugate complex signal in block schematic.
+This module can be used to multiply one complex-one conjugate complex signal in
+block schematic.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/compconjcompmult.jpg
    :align: center
@@ -103,7 +107,8 @@ This module can be used to multiply one complex-one conjugate complex signal in 
 
                 (x+iy) * conj(u+iv) = (xu + yv) -i (xv - yu)
 
-Note:- The Context Menu "Input Source" option added to this module to select the algorithm for Complex FFT and Real FFT as shown below
+Note:- The Context Menu "Input Source" option added to this module to select the
+algorithm for Complex FFT and Real FFT as shown below
 
 Input Pins
 ~~~~~~~~~~
@@ -137,7 +142,6 @@ Example Usage
 ~~~~~~~~~~~~~
 
 This can be used to multiply two signals' FFT results as shown below.
-
 
 |image1|
 

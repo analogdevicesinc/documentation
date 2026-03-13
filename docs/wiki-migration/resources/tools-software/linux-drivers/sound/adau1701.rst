@@ -23,7 +23,11 @@ Evaluation Boards
 Description
 -----------
 
-ADAU1701 is a SigmaDSP with DACs and ADCs,and support both analog and digital inputs/outputs(I2S). This driver is intended to drive ADAU1701 through I2S, so we adapt it into ASoC framework and treat it as an audio codec, also it needs to include firmware loading function to download firmware blob at the initializing time.
+ADAU1701 is a SigmaDSP with DACs and ADCs,and support both analog and digital
+inputs/outputs(I2S). This driver is intended to drive ADAU1701 through I2S, so
+we adapt it into ASoC framework and treat it as an audio codec, also it needs to
+include firmware loading function to download firmware blob at the initializing
+time.
 
 Source Code
 ===========
@@ -151,7 +155,8 @@ Supported DAI formats
 Sysclk Configuration
 ~~~~~~~~~~~~~~~~~~~~
 
-The sysclk source can be either be generated using the internal oscillator and an external crystal, or can come from an external clock signal.
+The sysclk source can be either be generated using the internal oscillator and
+an external crystal, or can come from an external clock signal.
 
 .. code:: c
 
@@ -160,7 +165,8 @@ The sysclk source can be either be generated using the internal oscillator and a
        ADAU1701_CLK_SRC_MCLK,
    };
 
-The sysclk rate is configured using the PLL_MODE0 and PLL_MODE1 pins. Though for completeness it should also be passed to snd_soc_dai_set_sysclk.
+The sysclk rate is configured using the PLL_MODE0 and PLL_MODE1 pins. Though for
+completeness it should also be passed to snd_soc_dai_set_sysclk.
 
 Example DAI Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -288,7 +294,6 @@ Load the driver and make sure the sound card is properly instantiated.
       asoc: ADAU1701 <-> bf5xx-i2s mapping ok
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -305,7 +310,6 @@ Load the driver and make sure the sound card is properly instantiated.
       Playing WAVE 'stdin' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
    
 
-
 More information
 ----------------
 
@@ -316,4 +320,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

@@ -3,8 +3,9 @@ Wav Player
 
 :doc:`Click here to return to the Master Control Port section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/mastercontrolport>`
 
-
-This module can be used to read PCM/WAV files from external Flash connected to ADAU145x via SPI. This module also can perform pitch shifting while playing the file.
+This module can be used to read PCM/WAV files from external Flash connected to
+ADAU145x via SPI. This module also can perform pitch shifting while playing the
+file.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mastercontrolport/wavplayer1.png
    :align: center
@@ -116,7 +117,10 @@ Click on the image |image1| to configure the SPI interface for the module.
 Support for Different Slave Select
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the Slave Select is 0 and MP0 is used as chip select, no configuration is required in the register controls. Otherwise particular multipurpose pin should be configured to act as the slave select in the register window. (Hardware Configuration -> ICx - ADAU145x Register Controls -> MULTIPURPOSE/ AUXADC)
+If the Slave Select is 0 and MP0 is used as chip select, no configuration is
+required in the register controls. Otherwise particular multipurpose pin should
+be configured to act as the slave select in the register window. (Hardware
+Configuration -> ICx - ADAU145x Register Controls -> MULTIPURPOSE/ AUXADC)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
    :align: center
@@ -125,7 +129,8 @@ If the Slave Select is 0 and MP0 is used as chip select, no configuration is req
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-The following table shows the mapping between module's parameter and the register control window.
+The following table shows the mapping between module's parameter and the
+register control window.
 
 +----------------------------------------+------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register control |
@@ -148,18 +153,20 @@ The following table shows the mapping between module's parameter and the registe
 
 Dynamically the wav file can be selected from the external pin.
 
-
 |image3|
 
 Pitch Shifting
 ~~~~~~~~~~~~~~
 
-Pitch shifting option can be enabled to control the speed of the Wav file playback.
-
+Pitch shifting option can be enabled to control the speed of the Wav file
+playback.
 
 |image4|
 
-In the above example the pitch shifting factor/speed is set as 1.5 (Note that this should be in 8.24 fixed point format). So the file plays at the speed of 1.5. Assume the EEPROM/Flash contains the sine tone of 500 Hz. The playback will be sine tone of 750Hz (1.5 \* 500).
+In the above example the pitch shifting factor/speed is set as 1.5 (Note that
+this should be in 8.24 fixed point format). So the file plays at the speed of
+1.5. Assume the EEPROM/Flash contains the sine tone of 500 Hz. The playback will
+be sine tone of 750Hz (1.5 \* 500).
 
 DSP Parameter Information
 -------------------------

@@ -24,13 +24,11 @@ Functional Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_block_diagram.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: CENTERALIGN
 
    *Figure 1.*
-
-
 
 Pin Configuration
 -----------------
@@ -38,7 +36,6 @@ Pin Configuration
 .. container:: CENTERALIGN
 
    \ |image1|\
-
 
 .. container:: CENTERALIGN
 
@@ -132,7 +129,7 @@ Input Shift Register Contents
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_shift_register_contents.png
    :align: center
-   :width: 700px
+   :width: 700
 
 .. container:: CENTERALIGN
 
@@ -167,7 +164,7 @@ Control Register
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_control_register.png
    :align: center
-   :width: 700px
+   :width: 700
 
 .. container:: CENTERALIGN
 
@@ -269,7 +266,8 @@ Initializing the DAC
    -  Because this initialization is a write to the part, set the R/ :math:`overlineW` bit to a Logic 0.
    -  Keep the default mode for SDODIS and RBUF.
    -  To write in binary coding, select BIN/2sC = 1.
-   -  Set DACTRI = 0 and OPGND = 0 to place the DAC in normal operating mode and remove the DAC output clamp to ground, respectively.
+   -  Set DACTRI = 0 and OPGND = 0 to place the DAC in normal operating mode and
+      remove the DAC output clamp to ground, respectively.
    
    Write the following over the serial interface: 0010 0000 0000 0000 0001 0010 (R/ :math:`overlineW` bit, three register address bits, 20 data bits).
    
@@ -300,8 +298,10 @@ Initializing the DAC
       To write in binary coding, set BIN/2sC = 1.
 
          
-      The default coding is twos complement. The same 24-bit data impacts the values that the user writes to or reads from the part in a different way depending on the coding selected. The user must verify the coding used by writing to the control register or reading back from it.
-
+      The default coding is twos complement. The same 24-bit data impacts the
+      values that the user writes to or reads from the part in a different way
+      depending on the coding selected. The user must verify the coding used by
+      writing to the control register or reading back from it.
 
          
       |image3|
@@ -309,7 +309,6 @@ Initializing the DAC
 .. container:: CENTERALIGN
 
    \ *Figure 6. Initializing the Part*\
-
 
 Writing to the DAC Register
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -351,7 +350,6 @@ Writing to the DAC Register
 
    \ *Figure 7. Writing to the DAC Register*\
 
-
 Example 2: Clearing the DAC to a Defined Value
 ----------------------------------------------
 
@@ -382,13 +380,13 @@ Writing to the Clearcode Register
 
    \ *Figure 8. Writing Full-Scale Code to the Clearcode Register*\
 
-
 Writing to the Software Control Register
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
-   Set the CLR bit to a Logic 1 to set the DAC register to a user defined value and update the DAC output.
+   Set the CLR bit to a Logic 1 to set the DAC register to a user defined value
+   and update the DAC output.
 
    
    Write the following over the serial interface: 0100 0000 0000 0000 0000 0010
@@ -404,13 +402,13 @@ Writing to the Software Control Register
 
    \ *Figure 9. Clearing the Part to a User Defined Value*\
 
-
 Reading from the Clearcode Register
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
-   To confirm the clearcode value written to the part, read the data from the clearcode register (full scale for this example).
+   To confirm the clearcode value written to the part, read the data from the
+   clearcode register (full scale for this example).
 
    
    Write the following over the serial interface:
@@ -426,8 +424,8 @@ Reading from the Clearcode Register
       Note that this action is a read function. Therefore, set the R/ :math:`overlineW` bit = 1.
 
          
-      D19 to D0, the data bits, are don't care bits because the intention is to read from the part and not to write to the part.
-
+      D19 to D0, the data bits, are don't care bits because the intention is to
+      read from the part and not to write to the part.
 
          
       |image7|
@@ -436,18 +434,17 @@ Reading from the Clearcode Register
 
    \ *Figure 10. Reading from the Clearcode Register*\
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_pin_configuration.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/quick-start/software_control_register_bueno.png
-   :width: 700px
+   :width: 700
 .. |image3| image:: https://wiki.analog.com/_media/resources/quick-start/example1_step1_ad5760_80_90.png
-   :width: 700px
+   :width: 700
 .. |image4| image:: https://wiki.analog.com/_media/resources/quick-start/example1_step2_ad5760_80_90.png
-   :width: 700px
+   :width: 700
 .. |image5| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step1.png
-   :width: 700px
+   :width: 700
 .. |image6| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step2.png
-   :width: 700px
+   :width: 700
 .. |image7| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step3.png
-   :width: 700px
+   :width: 700

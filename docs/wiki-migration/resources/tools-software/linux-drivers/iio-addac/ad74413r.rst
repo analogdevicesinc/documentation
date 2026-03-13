@@ -47,7 +47,9 @@ Example device tree
 Driver testing
 ==============
 
-When configured with channel 0 as voltage output, channel 1 as current output, channel 2 as voltage input and channel 3 as current input, the following structure is created under the corresponding IIO device.
+When configured with channel 0 as voltage output, channel 1 as current output,
+channel 2 as voltage input and channel 3 as current input, the following
+structure is created under the corresponding IIO device.
 
 .. container:: box bggreen
 
@@ -98,7 +100,6 @@ When configured with channel 0 as voltage output, channel 1 as current output, c
       -rw-r--r-- 1 root root 4096 Aug 17 09:56 uevent
    
 
-
 Show device name
 ----------------
 
@@ -112,7 +113,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:device0> cat name
       ad74413r
    
-
 
 Show raw measurement
 --------------------
@@ -130,7 +130,6 @@ Show raw measurement
       4608
    
 
-
 Show scale
 ----------
 
@@ -146,7 +145,6 @@ Show scale
       root:/sys/bus/iio/devices/iio:device0> cat in_current0_scale
       0.001525902
    
-
 
 Set sampling frequency
 ----------------------
@@ -168,7 +166,6 @@ Set sampling frequency
       root:/sys/bus/iio/devices/iio:device0> cat in_current0_sampling_frequency
       4800
    
-
 
 Buffer management
 ~~~~~~~~~~~~~~~~~
@@ -198,10 +195,10 @@ Buffer management
       -r--r--r-- 1 root root 4096 Aug 17 09:56 in_voltage2_type
    
 
-
 Before enabling the buffer, a few steps need to be completed.
 
--  For example, if we want to capture all input channels, we need to enable the scan elements:
+-  For example, if we want to capture all input channels, we need to enable the
+   scan elements:
 
 .. container:: box bggreen
 
@@ -215,7 +212,6 @@ Before enabling the buffer, a few steps need to be completed.
       root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_voltage2_en
       root:/sys/bus/iio/devices/iio:device0/scan_elements> echo 1 > in_current3_en
    
-
 
 .. container:: box bggreen
 
@@ -232,7 +228,6 @@ Before enabling the buffer, a few steps need to be completed.
       -rw-r--r-- 1 root root 4096 Aug 17 09:56 watermark
    
 
-
 -  Set the buffer length:
 
 .. container:: box bggreen
@@ -244,7 +239,6 @@ Before enabling the buffer, a few steps need to be completed.
    
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 1024 > length
    
-
 
 -  Set the watermak:
 
@@ -258,7 +252,6 @@ Before enabling the buffer, a few steps need to be completed.
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 512 > watermark
    
 
-
 -  Enable the buffer:
 
 .. container:: box bggreen
@@ -270,7 +263,6 @@ Before enabling the buffer, a few steps need to be completed.
    
       root:/sys/bus/iio/devices/iio:device0/buffer> echo 1 > enable
    
-
 
 -  Read the samples:
 
@@ -284,11 +276,13 @@ Before enabling the buffer, a few steps need to be completed.
       root:/sys/bus/iio/devices/iio:device0/buffer> cat /dev/iio:device0
    
 
-
 Low level register access via debugfs (direct_reg_access)
 =========================================================
 
-Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver. Accessing debugfs requires root privileges.
+Some IIO drivers feature an optional debug facility, allowing users to read or
+write registers directly. Special care needs to be taken when using this
+feature, since you can modify registers on the back of the driver. Accessing
+debugfs requires root privileges.
 
 .. container:: box bggreen
 
@@ -301,7 +295,6 @@ Some IIO drivers feature an optional debug facility, allowing users to read or w
       root:/sys/kernel/debug/iio/iio:device0> ls direct_reg_access
       direct_reg_access
    
-
 
 Reading
 
@@ -316,7 +309,6 @@ Reading
       root:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access
       0x00
    
-
 
 Writing
 
@@ -333,7 +325,6 @@ Write ADDRESS VALUE
       root@analog:/sys/kernel/debug/iio/iio:device0> cat direct_reg_access
       0xADAD
    
-
 
 More Information
 ================
@@ -356,6 +347,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-addac/youtube>p_vntewue24
-

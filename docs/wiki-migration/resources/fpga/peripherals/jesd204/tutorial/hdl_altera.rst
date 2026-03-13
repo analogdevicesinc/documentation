@@ -3,21 +3,39 @@ DAQ2 HDL Project for Altera
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/daq2_altera.svg
    :alt: Altera HDL Block Diagram
-   :width: 800px
+   :width: 800
 
-The reference design is a processor based embedded system. The sources are split into three different folders:
+The reference design is a processor based embedded system. The sources are split
+into three different folders:
 
 -  base design for the carrier board, :git-hdl:`/projects/common <projects/common>` where all generic peripherals are instantiated. Here we do most of the PS8 configuration, add SPI, I2C and GPIOs. In some cases, we have scripts to instantiate also the PL DDR as ADC offload memory or DAC offload memory
 -  base design for the evaluation board, :git-hdl:`/projects/daq2/common <projects/daq2/common>`, where all the IPs to control the DAQ2 evaluation board are instantiated, in a way in which it can be integrated with most of the carriers that we support
 -  specific design for the project, in our case the A10SOC :git-hdl:`/projects/daq2/a10soc <projects/daq2/a10soc>`. Here, we source the carrier board configuration, then the evaluation board configuration and then we do some specific parameter modification, if required. In this folder, the constraints and ``system_top.v`` are also defined.
 
-The reference design is a processor based (ARM or Nios2) embedded system. A functional block diagram of the system is given above. The shared transceivers are followed by the individual JESD204B and ADC/DAC IP cores. The cores are programmable through an AXI-lite interface.
+The reference design is a processor based (ARM or Nios2) embedded system. A
+functional block diagram of the system is given above. The shared transceivers
+are followed by the individual JESD204B and ADC/DAC IP cores. The cores are
+programmable through an AXI-lite interface.
 
-The digital interface consists of 4 transmit and 4 receive lanes running at 10Gbps, by default. The transceivers interface the ADC/DAC cores at 128bits@250MHz. The data is sent or received based on the configuration of separate transmit and receive chains.
+The digital interface consists of 4 transmit and 4 receive lanes running at
+10Gbps, by default. The transceivers interface the ADC/DAC cores at
+128bits@250MHz. The data is sent or received based on the configuration of
+separate transmit and receive chains.
 
-When using Qsys, implementing JESD204B protocol requires several IPs. AVL_XCVR is a wrapper which instantiates all the required IPs and configures them according to the desired data rate. One AVL_XCVR must be instantiated for the transmit path and one for the receive path. It adds clock bridges, PLL and reconfiguration IP, proper reset, lane PLL for the transmit path, a JESD204B IP instantiating the JESD204B base and a JESD204B IP for each lane instantiating the PHY.
+When using Qsys, implementing JESD204B protocol requires several IPs. AVL_XCVR
+is a wrapper which instantiates all the required IPs and configures them
+according to the desired data rate. One AVL_XCVR must be instantiated for the
+transmit path and one for the receive path. It adds clock bridges, PLL and
+reconfiguration IP, proper reset, lane PLL for the transmit path, a JESD204B IP
+instantiating the JESD204B base and a JESD204B IP for each lane instantiating
+the PHY.
 
-One important aspect for AD-FMCDAQ2-EBZ is that the reference clock needed for the FPGA transceiver calibration is generated only after the AD9523-1 clock generator is configured The programming is done only after the FPGA is configured and software is running. Because of this, the software needs to perform a transceiver re-calibration after the transceiver reference clock is stable and before taking AXI_XCVR cores out of reset.
+One important aspect for AD-FMCDAQ2-EBZ is that the reference clock needed for
+the FPGA transceiver calibration is generated only after the AD9523-1 clock
+generator is configured The programming is done only after the FPGA is
+configured and software is running. Because of this, the software needs to
+perform a transceiver re-calibration after the transceiver reference clock is
+stable and before taking AXI_XCVR cores out of reset.
 
 Project Flow
 ------------
@@ -42,7 +60,8 @@ The entry point for project creation is ``system_project.tcl``. Some support scr
 
    execute_flow -compile
 
-Because transceiver sharing is used in this design, explicit assignments are needed.
+Because transceiver sharing is used in this design, explicit assignments are
+needed.
 
 .. code:: tcl
 
@@ -67,7 +86,8 @@ The next step is to instantiate the A10SOC base design:
 
    source $ad_hdl_dir/projects/common/a10soc/a10soc_system_qsys.tcl
 
-If ADC/DAC FIFOs implemented in the PL DDR will be used in the system, the corresponding tcl file must be sourced.
+If ADC/DAC FIFOs implemented in the PL DDR will be used in the system, the
+corresponding tcl file must be sourced.
 
 .. code:: tcl
 
@@ -85,7 +105,11 @@ DAQ2 Design
 Physical/Data Link Layer
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADI_JESD204 IP is a wrapper which instantiates all the submodules implementing the physical and data Link layers. It covers all internal clock and reset generation for the transceivers. For some FPGAs, the HARD PCS componend doesn't run at maximum speeds, so a SOFT_PCS implementation is available. If lane swapping is required, it can be selected as a parameter.
+The ADI_JESD204 IP is a wrapper which instantiates all the submodules
+implementing the physical and data Link layers. It covers all internal clock and
+reset generation for the transceivers. For some FPGAs, the HARD PCS componend
+doesn't run at maximum speeds, so a SOFT_PCS implementation is available. If
+lane swapping is required, it can be selected as a parameter.
 
 .. code:: tcl
 
@@ -133,7 +157,9 @@ The ADI_JESD204 IP is a wrapper which instantiates all the submodules implementi
 Transport Layer
 ~~~~~~~~~~~~~~~
 
-The transport layer peripherals are responsible for converter specific data framing and de-framing and provide a generic FIFO interface to the rest of the system.
+The transport layer peripherals are responsible for converter specific data
+framing and de-framing and provide a generic FIFO interface to the rest of the
+system.
 
 .. code:: tcl
 
@@ -156,7 +182,12 @@ The transport layer peripherals are responsible for converter specific data fram
 Additional IPs
 ~~~~~~~~~~~~~~
 
-For a complete system, we use additional modules to transfer data. The transport layer transfers data continuously from/to the ADC/DAC. CPACK/Upack will only send the enabled channels to the DMA which in turn will transfer it to the system memory. Depending on system specifics, data offload FIFOs may be inserted between upack/cpack and the DMA. When a FIFO is used, the DMA connection to the DDR can run at a lower speed, as data capture cannot be done continuously.
+For a complete system, we use additional modules to transfer data. The transport
+layer transfers data continuously from/to the ADC/DAC. CPACK/Upack will only
+send the enabled channels to the DMA which in turn will transfer it to the
+system memory. Depending on system specifics, data offload FIFOs may be inserted
+between upack/cpack and the DMA. When a FIFO is used, the DMA connection to the
+DDR can run at a lower speed, as data capture cannot be done continuously.
 
 .. code:: tcl
 
@@ -248,7 +279,8 @@ For a complete system, we use additional modules to transfer data. The transport
 Transceiver Reconfiguration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reconfiguration IP for all the transceiver channels. Channels have a TX port and an RX port, which may affect each other when reconfiguration is performed.
+Reconfiguration IP for all the transceiver channels. Channels have a TX port and
+an RX port, which may affect each other when reconfiguration is performed.
 
 .. code:: tcl
 

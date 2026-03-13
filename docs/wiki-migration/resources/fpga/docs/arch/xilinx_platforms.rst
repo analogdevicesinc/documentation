@@ -72,4 +72,6 @@ VADJ values
 | `Zedboard <http://zedboard.org/product/zedboard>`_                                   | 3.3V/2.5V/**\*1.8V** | ---                  | Zynq-7000           |
 +--------------------------------------------------------------------------------------+----------------------+----------------------+---------------------+
 
-(\* bold) = default VADJ FMC1 & FMC2 columns -> depending on the power supply of the device connected to the FMC, the custom VADJ will have the value supported by both the carrier and the device(s)
+(\* bold) = default VADJ FMC1 & FMC2 columns -> depending on the power supply of
+the device connected to the FMC, the custom VADJ will have the value supported
+by both the carrier and the device(s)

@@ -3,16 +3,24 @@ Voltage Controlled Pulse
 
 :doc:`Click here to return to the Sources section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources>`
 
-The Pulse block generates a pulse train with the values 0 and 1. There are two inputs to this cell: Frequency and Duty Cycle.
+The Pulse block generates a pulse train with the values 0 and 1. There are two
+inputs to this cell: Frequency and Duty Cycle.
 
-Frequency is an 8.24 number between 0 and 0.5. An input of 0 will create DC, and 0.5 will create Fs/2. For example, at Fs = 48 kHz, a frequency input of 0.1 will create a 4.8 kHz pulse train.
+Frequency is an 8.24 number between 0 and 0.5. An input of 0 will create DC, and
+0.5 will create Fs/2. For example, at Fs = 48 kHz, a frequency input of 0.1 will
+create a 4.8 kHz pulse train.
 
-Duty cycle is an 8.24 number between 0 and 1, corresponding to 0% and 100%. A duty cycle of 0.6 will create a pulse train which has value 1 60% of the time.
+Duty cycle is an 8.24 number between 0 and 1, corresponding to 0% and 100%. A
+duty cycle of 0.6 will create a pulse train which has value 1 60% of the time.
 
-Note that since the Pulse block runs at a discrete sampling rate, exact frequency generation is not always possible. A mechanism called "Round Coefficients" approximates the requested frequency more closely by following some short pulses with longer pulses at the closest possible frequencies.
+Note that since the Pulse block runs at a discrete sampling rate, exact
+frequency generation is not always possible. A mechanism called "Round
+Coefficients" approximates the requested frequency more closely by following
+some short pulses with longer pulses at the closest possible frequencies.
 
-The "Round Coefficients" feature is enabled/disabled with a small circle on the window. When the circle is BLUE, coefficients are rounded. When the circle is ORANGE, the rounding feature is disabled.
-
+The "Round Coefficients" feature is enabled/disabled with a small circle on the
+window. When the circle is BLUE, coefficients are rounded. When the circle is
+ORANGE, the rounding feature is disabled.
 
 |image1|
 
@@ -70,7 +78,6 @@ Example
 =======
 
 The schematic below generates a 4.8 kHz pulse with 50% duty cycle.
-
 
 |image2|
 

@@ -53,12 +53,19 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
-
-The reference frequency and GPIO numbers may vary between boards. The platform_data for the device's "struct device" holds this information.
+The reference frequency and GPIO numbers may vary between boards. The
+platform_data for the device's "struct device" holds this information.
 
 .. code:: c
 
@@ -127,12 +134,19 @@ The reference frequency and GPIO numbers may vary between boards. The platform_d
        int         gpio_lock_detect;
     };
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
-
 
 Devicetree bindings
 ===================
@@ -260,12 +274,12 @@ Devicetree bindings
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADF5355 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -289,8 +303,15 @@ Hardware configuration
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -321,7 +342,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1#
    
 
-
 Show device name
 ----------------
 
@@ -335,7 +355,6 @@ Show device name
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# cat name
       adf5355
    
-
 
 Set Output Frequency
 --------------------
@@ -356,13 +375,15 @@ Stores PLL Y frequency in Hz. Reading returns the actual frequency in Hz.
       2512345678
    
 
-
 Set reference frequency
 -----------------------
 
 /sys/bus/iio/devices/iio:deviceX/out_altvoltageY_refin_frequency
 
-Sets PLL Y REFin frequency in Hz. In some clock chained applications, the reference frequency used by the PLL may change during runtime. This attribute allows the user to adjust the reference frequency accordingly. The value written has no effect until out_altvoltageY_freq is updated.
+Sets PLL Y REFin frequency in Hz. In some clock chained applications, the
+reference frequency used by the PLL may change during runtime. This attribute
+allows the user to adjust the reference frequency accordingly. The value written
+has no effect until out_altvoltageY_freq is updated.
 
 .. container:: box bggreen
 
@@ -375,13 +396,13 @@ Sets PLL Y REFin frequency in Hz. In some clock chained applications, the refere
       122880000
    
 
-
 Enable Power-Down
 -----------------
 
 /sys/bus/iio/devices/iio:deviceX/out_altvoltageY_powerdown
 
-If available, this attribute allows the user to power down the PLL and it's RFOut buffers. This is in particular useful during REFin changes.
+If available, this attribute allows the user to power down the PLL and it's
+RFOut buffers. This is in particular useful during REFin changes.
 
 .. container:: box bggreen
 
@@ -394,7 +415,6 @@ If available, this attribute allows the user to power down the PLL and it's RFOu
       root@linaro-ubuntu-desktop:/sys/bus/iio/devices/iio:device1# cat out_altvoltage0_powerdown
       1
    
-
 
 More Information
 ================
@@ -417,6 +437,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/youtube>p_vntewue24
-

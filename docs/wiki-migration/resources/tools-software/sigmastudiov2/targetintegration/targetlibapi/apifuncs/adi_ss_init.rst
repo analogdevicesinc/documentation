@@ -11,11 +11,13 @@ Prototype
 
 Description
 
-The function adi_ss_init initializes an instance of the SS+ with the specified configuration.
+The function adi_ss_init initializes an instance of the SS+ with the specified
+configuration.
 
 This function also performs other initializations such as:
 
-- Validate the configuration parameters against the configure information in SSn block.
+- Validate the configuration parameters against the configure information in SSn
+  block.
 
 - Set the function pointer for SS+ process.
 
@@ -23,7 +25,10 @@ This function also performs other initializations such as:
 
 - Listen in communication ISR.
 
-Once the initialization is completed, the function either waits for the code and data to be received or immediately comes out depending upon the communication configuration. When data and code are received, they are placed in appropriate locations based on the memory locations specified by adi_ss_create.
+Once the initialization is completed, the function either waits for the code and
+data to be received or immediately comes out depending upon the communication
+configuration. When data and code are received, they are placed in appropriate
+locations based on the memory locations specified by adi_ss_create.
 
 Parameters
 

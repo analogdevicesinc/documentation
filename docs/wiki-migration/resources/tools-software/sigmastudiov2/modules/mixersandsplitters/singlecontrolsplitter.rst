@@ -9,12 +9,16 @@ Single Control Splitter
 Description
 -----------
 
-This Single Control Splitter block splits one input into multiple outputs, with a single knob control for all the output gains.
+This Single Control Splitter block splits one input into multiple outputs, with
+a single knob control for all the output gains.
 
 Usage
 -----
 
-To set the output gain, click the knob with the left mouse button and drag while holding down the button. The knob's range, value, and step size can be customized in the control pop-up window. To change the knob's settings, right-click on the knob control.
+To set the output gain, click the knob with the left mouse button and drag while
+holding down the button. The knob's range, value, and step size can be
+customized in the control pop-up window. To change the knob's settings,
+right-click on the knob control.
 
 Varaints
 --------

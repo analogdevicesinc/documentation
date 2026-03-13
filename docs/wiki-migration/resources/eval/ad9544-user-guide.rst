@@ -54,16 +54,13 @@ The output differential transmission line pairs use 50Ω single ended character
 
 .. container:: centeralign
 
-
    ..
 
 |image1|
 
    **Figure 1.** :adi:`AD9544` **Evaluation Board**
 
-
 EVALUATION BOARD HARDWARE
-
 
 The following instructions are for setting up the physical connections to the :adi:`AD9544/PCBZ <EVAL-AD9544>` evaluation board. The user must install the evaluation software prior to connecting the evaluation board for the first time.
 
@@ -96,24 +93,30 @@ By default, the 3.3V ADP2384A switcher output supply supplies a 1.8V Analog Devi
 PC Connections
 ~~~~~~~~~~~~~~
 
--  Install all required software, uninstall prior versions of the software before installation updates.
+-  Install all required software, uninstall prior versions of the software
+   before installation updates.
    Administrative privileges are required for installation.
 -  Connect the 6V wall power supply to the main power connector labeled P700.
 -  Connect the USB cables to the evaluation board and the computer. The red LED labeled DS301 by the USB connector should illuminate and the LED labeled 'USB_STA' should blink.
 -  If the **Found New Hardware Wizard** window automatically appears when the evaluation board is connected, select **Install the software automatically** and click **Next**.
 -  The **Found New Hardware Wizard** window may appear twice, and a system restart may be required.
 
-Refer to the Evaluation Board Software section for details on running the AD9544 evaluation board software.
+Refer to the Evaluation Board Software section for details on running the AD9544
+evaluation board software.
 
 Reference Inputs
 ~~~~~~~~~~~~~~~~
 
 The :adi:`AD9544` evaluation board has four reference inputs sources. By default, REF A/AA (Connectors J300 and J301, respectively) have a transformer so that the user can use a signal generator and use REFA in differential mode.
 
-In contrast, REF B/BB (Connectors J302 and J303, respectively) are configured for single-ended CMOS inputs by default. Each reference input logic type is configurable via the evaluation software.
+In contrast, REF B/BB (Connectors J302 and J303, respectively) are configured
+for single-ended CMOS inputs by default. Each reference input logic type is
+configurable via the evaluation software.
 
 -  REF B is intended for a DC-coupled, 1.8V/1.2V CMOS input and is terminated with only a 50Ω resistor to ground.
--  REF BB is intended for a either a DC-coupled, 5V CMOS input, and the on board voltage divider will decrease the input amplitude to 1.8V, or a 3.3V CMOS input which will be reduced to a 1.2V CMOS signal.
+-  REF BB is intended for a either a DC-coupled, 5V CMOS input, and the on board
+   voltage divider will decrease the input amplitude to 1.8V, or a 3.3V CMOS
+   input which will be reduced to a 1.2V CMOS signal.
 
 System Clock Inputs
 ~~~~~~~~~~~~~~~~~~~
@@ -130,7 +133,6 @@ TCXO               Center and Left Pins   Center and Left Pins
 OCXO               Center and Top Pins    Center and Bottom Pins
 J400 SMA Connector Center and Bottom Pins Center and Top Pins
 ================== ====================== ======================
-
 
 | ==== Serial Port Configuration Pins ==== The AD9544 serial port configuration is determined by the logic state of Multi-function pins M4, M5, and M6 upon exit from a reset state. M4 selects which protocol (SPI versus I²C), and M5 and M6 determine the I²C address. Jumper Block P605 allows the user to enable pull-up/down resistors to control the state of Pins M4, M5, and M6 on the AD9544. Refer to **Table 4** for the jumper settings to configure the serial port.
 
@@ -157,20 +159,21 @@ J400 SMA Connector Center and Bottom Pins Center and Top Pins
 
 EVALUATION BOARD SOFTWARE
 
-
 The AD9544 evaluation software allows the user to control the full functionality of the AD9544 through 3-wire SPI communication with the evaluation board. The AD9544 evaluation software is implemented as a component plug-in in ADI’s :doc:`Analysis \| Control \| Evaluation (ACE) Software </wiki-migration/resources/tools-software/ace>` desktop software. ACE allows the evaluation of control of multiple evaluation systems from across ADI’s product portfolio and is designed to educate the user in the functional operation of the component. The :doc:`ACE wiki page </wiki-migration/resources/tools-software/ace>` contains system requirement and prerequisite information as well as links to the most recent installer and user guide. The ACE user guide contains detailed information concerning all current aspects of the ACE environment. Much of that information will not be described in this document, but some main ACE operational points relevant to component level functionality will be described. It is highly recommended to review the ACE user guide to discover the myriad capabilities and offerings the ACE environment provides to the user.
 
 Software Installation
 ~~~~~~~~~~~~~~~~~~~~~
 
-Use the following instructions to set up the AD9544 evaluation board software. Do not connect the evaluation board until the software installation is complete.
+Use the following instructions to set up the AD9544 evaluation board software.
+Do not connect the evaluation board until the software installation is complete.
 
 -  Download and install ACE Software Version 1.10.2671.1118 `Analysis \| Control \| Evaluation (ACE) <http://swdownloads.analog.com/ACE/ACEInstall_1.10.2671.1118.exe>`_
 -  Follow the section 2.1, installation guide, of the ACE User Guide to completion.
 -  Launch the ACE application prior to installing ACE Plug-ins. This creates the directories used by the ACE Plug-in installers.
 -  Download and install the latest AD9544 ACE Plug-ins: `board.ad9544.1.1.8.zip <https://wiki.analog.com/_media/resources/eval/board.ad9544.1.1.8.zip>`_
 
-(Note that there are a total of four plug-ins that must be installed. Please unzip it first)
+(Note that there are a total of four plug-ins that must be installed. Please
+unzip it first)
 
 General Operation
 ~~~~~~~~~~~~~~~~~
@@ -180,7 +183,6 @@ Power up and connect the evaluation board to the PC. Open the ACE software. Afte
 .. container:: centeralign
 
    |image2| **Figure 2. ACE Start Screen (AD9545 Shown)**
-
 
 Board View
 ~~~~~~~~~~
@@ -194,7 +196,6 @@ The AD9544 board view can be seen in **Figure 3**. As the AD9544 evaluation plat
 
    |image3| **Figure 3. AD9542/43/44/45 ACE Plug-in Board View (AD9545 Shown)**
 
-
 The board view toolbar provided three board level functions and a detailed description may be found in section 3.6.3 of the ACE user guide. The AD9544 primary component link allows the user to navigate to the AD9544 chip view, shown in **Figure 4**, by double clicking this link. The chip view is the primary conduit through which the user can interface with the AD9544.
 
 Chip View
@@ -204,8 +205,13 @@ Chip View
 
    |image4| **Figure 4. AD9542/43/44/45 ACE Plug-in Chip View (AD9545 Shown)**
 
-
-The chip view is the primary interface used to configure the AD9544. It consists primarily of an interactive block diagram which shows the configuration of the device, calculates the frequency translation, implements frequency based error checking, and allows the user to intuitively configure the AD9544 parameters. It should be noted that in order to synchronize the register content of the software with that of the AD9544, the user must press the ‘Read All’ button in the chip view toolbar in the upper left hand portion of the window.
+The chip view is the primary interface used to configure the AD9544. It consists
+primarily of an interactive block diagram which shows the configuration of the
+device, calculates the frequency translation, implements frequency based error
+checking, and allows the user to intuitively configure the AD9544 parameters. It
+should be noted that in order to synchronize the register content of the
+software with that of the AD9544, the user must press the ‘Read All’ button in
+the chip view toolbar in the upper left hand portion of the window.
 
 Configuration Wizard
 ~~~~~~~~~~~~~~~~~~~~
@@ -215,14 +221,24 @@ Configuration Wizard
    
    .. container:: half column
 
-      The configuration wizard simplifies configuring the AD9544 by providing the most commonly needed configuration parameters in a simple user interface. Entered parameters are plugged into a powerful algorithm that calculates the optimal settings ensuring the best possible performance from the AD9544.
+      The configuration wizard simplifies configuring the AD9544 by providing
+      the most commonly needed configuration parameters in a simple user
+      interface. Entered parameters are plugged into a powerful algorithm that
+      calculates the optimal settings ensuring the best possible performance
+      from the AD9544.
 
          
-         The wizard is made up in multiple collapsible [1]_ steps. Each step contains parameters, which are used by the wizard algorithm to calculate an optimized configuration.
+         The wizard is made up in multiple collapsible [1]_ steps. Each step
+         contains parameters, which are used by the wizard algorithm to
+         calculate an optimized configuration.
          
-         Invalid parameters are outlined in red with an error indicator [2]_ in the upper left of the parameter, mouse-over the error indicator for an error description. Example see Figure 5 - OUT0B Expression
+         Invalid parameters are outlined in red with an error indicator [2]_ in
+         the upper left of the parameter, mouse-over the error indicator for an
+         error description. Example see Figure 5 - OUT0B Expression
          
-      Once the desired parameters have been entered and all errors [3]_ have been cleared, the Apply button may be clicked to apply the configuration to the chip.
+      Once the desired parameters have been entered and all errors [3]_ have
+      been cleared, the Apply button may be clicked to apply the configuration
+      to the chip.
 
    
    .. container:: half column
@@ -230,7 +246,6 @@ Configuration Wizard
       |image5| **Figure 5. Configuration Wizard**
 
    
-
 
 Numeric Expressions
 ~~~~~~~~~~~~~~~~~~~
@@ -297,7 +312,8 @@ Numeric Expressions
          
 
    
-   A space between the number and SI prefix applies the SI prefix to all numbers in the expression.
+   A space between the number and SI prefix applies the SI prefix to all numbers
+   in the expression.
    
    ========== ===============
    Expression Evaluated Value
@@ -320,9 +336,6 @@ Numeric Expressions
    15M/2M\*10M Hz 75 MHz          
    ============= =============== ====================================
 
-
-
-
 Block Interaction
 ~~~~~~~~~~~~~~~~~
 
@@ -332,8 +345,9 @@ A detailed explanation of the interaction with the block diagram is explained in
 
    |image6| **Figure 6. Divider Q3 Configuration Menu**
 
-
-Clicking and dragging the title bar of the menu will allow the user to relocate the menu at one’s convenience. In order to close the menu, the user may close the ‘close’ button or simply click away from the menu.
+Clicking and dragging the title bar of the menu will allow the user to relocate
+the menu at one’s convenience. In order to close the menu, the user may close
+the ‘close’ button or simply click away from the menu.
 
 Frequency Translation Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -343,7 +357,6 @@ The frequency translation of the AD9544 is calculated from reference input frequ
 .. container:: centeralign
 
    |image7| **Figure 7. Frequency Display Tool Tip.**
-
 
 Changing the configuration of a block that affects the frequency translation will produce an automatic calculation and error checking to inform the user of the impact the change has had on the operation of the AD9543. Any errors resulting from the error checking functionality will display visually as well as the Events Tool View. This view gives the user additional detail regarding the nature of the error and is explained in detail in the `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_, section 3.9.3.
 
@@ -356,7 +369,6 @@ The AD9544 ACE plug-in as contains a detailed view of the entire register map in
 
    |image8| **Figure 8. AD9542/43/44/45 ACE Plug-in Memory Map View. (AD9545 shown)**
 
-
 The memory map view is explained in detail in the `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_ section 3.8, but one of the more useful features in the functional group filter shown in the left portion of **Figure 8**. The AD9544 bit fields have been grouped by relevant functionality and the functional group filter allows the user to quickly and easily switch between viewing only bit fields or registers contained within these macro level functional groups.
 
 Sessions
@@ -368,8 +380,9 @@ The ACE application has the ability to save and recall a given configuration of 
 
    |image9| **Figure 9. ACE File Menu.**
 
-
-The left hand section of the Start View also exposes the ability to create and open sessions as well as maintaining a list of recent sessions that may be directly opened.
+The left hand section of the Start View also exposes the ability to create and
+open sessions as well as maintaining a list of recent sessions that may be
+directly opened.
 
 Known Issues
 ~~~~~~~~~~~~
@@ -379,13 +392,15 @@ Known Issues
 EVALUATION BOARD QUICK START USING A SESSION FILE
 -------------------------------------------------
 
-This quick start section covers the loading of a session file as provided by ADI.
+This quick start section covers the loading of a session file as provided by
+ADI.
 
 -  Ensure the ACE evaluation software and AD9544 ACE Plug-ins are installed and running.
 -  Click File > Open Session…, and select the appropriate .cso file.
 -  In the AD9544 Chip View Toolbar, click the Apply Changes button.
 -  Apply a 0 dBm signal to the J301 SMA connector (REF0P) at a frequency corresponding to your AD9543 setup. This may also be applied prior to the session load.
--  The APLL VCO calibration is a part of the register programming and will occur automatically after the session file is loaded.
+-  The APLL VCO calibration is a part of the register programming and will occur
+   automatically after the session file is loaded.
 
 .. [1]
    **Figure 5:** The "Outputs - Channel 1" step has been collapsed.
@@ -397,9 +412,9 @@ This quick start section covers the loading of a session file as provided by ADI
    **Figure 5:** The "Apply" button is disabled because "OUT0B Expression" is in error. The "Apply" button will remain disabled until all errors have been cleared.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9544/ad9544top.jpg
-   :width: 700px
+   :width: 700
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9545_ace_openingscreen.png
-   :width: 700px
+   :width: 700
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9545/ad9545_boardview.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9545/ad9545_chipview.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9545/ad9545_configwizard.png

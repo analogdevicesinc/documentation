@@ -19,18 +19,18 @@ The SDK comes bundled as part of the A\ :sup:`2`\ B Bus Analyzer GUI software an
 
 1. Select Help → Export User-Accessible SDK... from the application's menu bar:
 
-
 |image1|
 
-Browse for a suitable location to save the SDK (e.g. your Desktop). Press the Export button when you have selected a destination:
+Browse for a suitable location to save the SDK (e.g. your Desktop). Press the
+Export button when you have selected a destination:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/export_2.png
-   :width: 600px
+   :width: 600
 
 The SDK is saved inside a folder named 'uasdk' in your chosen location:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/export_3.png
-   :width: 600px
+   :width: 600
 
 **Note** Exporting the SDK to a folder with spaces will cause problems building the examples so it is not recommended.
 
@@ -44,7 +44,8 @@ To access the library's functionality in your your own projects, you must includ
 Example applications
 ~~~~~~~~~~~~~~~~~~~~
 
-Several example applications are included in the SDK demonstrating different capabilities of the Analyzer as a bus monitor and/or node emulator.
+Several example applications are included in the SDK demonstrating different
+capabilities of the Analyzer as a bus monitor and/or node emulator.
 
 The example projects are located in the ``uasdk/examples/C++`` directory. Also there is a README.md file which repeats these instructions and gives brief descriptions of the example applications.
 
@@ -112,7 +113,6 @@ Documentation
 
 A Doxygen-generated SDK API Reference Manual is available in HTML format in the directory ``uasdk\C\docs`` . Double-clicking the ``A2B_Analyzer_UASDK_help.html`` will display the manual in your default web browser:
 
-
 |image8|
 
 The manual gives an overview of the A\ :sup:`2`\ B technology and the A\ :sup:`2`\ B Analyzer before documenting the API functions and data structures available to your applications.
@@ -137,7 +137,10 @@ There is a wheel for each supported operating system:
 Installation
 ~~~~~~~~~~~~
 
-To use the SDK with your Python application or to run the example, you must first install the correct wheel for your platform. We recommend installing and using in a virtual environment to avoid unexpected changes to your system Python installation.
+To use the SDK with your Python application or to run the example, you must
+first install the correct wheel for your platform. We recommend installing and
+using in a virtual environment to avoid unexpected changes to your system Python
+installation.
 
 ::
 
@@ -156,7 +159,8 @@ To use the SDK with your Python application or to run the example, you must firs
    # Install SDK wheel to new virtual environment
    (env) > pip install a2ba_sdk-3.0.0-cp38-cp38m-win_amd64.whl  # WINDOWS - choose correct wheel for your platform
 
-- When you are finished using the Python SDK, exit your virtual environment by entering deactivate at the terminal/command prompt.
+- When you are finished using the Python SDK, exit your virtual environment by
+  entering deactivate at the terminal/command prompt.
 
 Examples
 ~~~~~~~~
@@ -167,12 +171,15 @@ Configuring the examples
 There are some simple command line example scripts in the directory ``uasdk/examples/python`` . To run them make sure that the python environment that you are using is the one where you installed the wheel in the previous step. For example, if you used a virtual environment, ensure that this environment has been activated. If it is active, you should see the name of your environment (e.g. 'env') in parentheses before your prompt:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/python_1.png
-   :width: 600px
+   :width: 600
 
-Set up the file config.py to match the network that you have. This is specially important if you are running the emulator example since the example can support emulating main or sub and either AD2433 or AD2435. A failure to set up the file to match your network is likely to result on failures.
+Set up the file config.py to match the network that you have. This is specially
+important if you are running the emulator example since the example can support
+emulating main or sub and either AD2433 or AD2435. A failure to set up the file
+to match your network is likely to result on failures.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/python_config.png
-   :width: 600px
+   :width: 600
 
 Running the examples
 ^^^^^^^^^^^^^^^^^^^^
@@ -186,13 +193,12 @@ Then, execute the example script with your Python interpreter:
 If successful, you should see output similar to:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/python_example.png
-   :width: 600px
+   :width: 600
 
 Documentation
 ~~~~~~~~~~~~~
 
 A Sphinx-generated API Reference is available in HTML format in the directory ``uasdk\python\docs`` . Double-clicking ``index.html`` will display the manual in your default web browser. In the interactive Python interpreter, you can also type ``help()`` with the function name inside the parentheses.
-
 
 |image12|
 
@@ -203,26 +209,26 @@ Known limitations
 -  The SDK is **not supported in multi-threaded environments.**
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/export_1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/documentation_a1.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/python_docs.png
-   :width: 600px
+   :width: 600

@@ -17,26 +17,21 @@ The following equipment were used:
 
 R&S SMA 100A signal gen (range:9kHz – 6GHz)
 
-
 |image1|
 
 R&S®FSUP Signal Source Analyzer (upto 26.5GHz)
-
 
 |image2|
 
 R&S ZND Vector Network Analyzer
 
-
 |image3|
 
 11667B Power Splitter, DC to 26.5 GHz
 
-
 |image4|
 
 K&L SPCL-00310 Microwave Tunable Filter (15 MHz to 4 GHz)
-
 
 |image5|
 
@@ -61,7 +56,9 @@ At 6GHz         -14.5dBFs
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/dsa_attenuation_test.jpg
    :align: center
 
-Another test was conducted by varying the attenuation level linearly with respect to a chosen input frequency from a signal generator. The table and image shows the following results:
+Another test was conducted by varying the attenuation level linearly with
+respect to a chosen input frequency from a signal generator. The table and image
+shows the following results:
 
 ========================= ======
 DSA Sweep Frequency (MHz) (dBFS)
@@ -81,24 +78,27 @@ DSA Sweep Frequency (MHz) (dBFS)
 Single Tone Test
 ----------------
 
-A single tone at three different power levels, -7, -13 and -19 dBm, is injected into a configurable band pass filter before going to the receiver input of the board to measure the NSD, SFDR, HD2 and HD3.
+A single tone at three different power levels, -7, -13 and -19 dBm, is injected
+into a configurable band pass filter before going to the receiver input of the
+board to measure the NSD, SFDR, HD2 and HD3.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/sfdr_block_diagram.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Noise Spectral Density (NSD) Test
 ---------------------------------
 
-The following figure shows the noise spectral density with varying input power in dBFs.
-
+The following figure shows the noise spectral density with varying input power
+in dBFs.
 
 |image6|
 
 Spurious-Free Dynamic Range (SFDR) Test
 ---------------------------------------
 
-The following figure shows the spurious-free dynamic range with varying input power in dBFs.
+The following figure shows the spurious-free dynamic range with varying input
+power in dBFs.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/sfdr.jpg
    :align: center
@@ -106,57 +106,64 @@ The following figure shows the spurious-free dynamic range with varying input po
 Single Tone 2nd Harmonic Distoriton (HD2) Test
 ----------------------------------------------
 
-The following figure shows the 2nd harmonic distoriton with varying input power in dBFs.
-
+The following figure shows the 2nd harmonic distoriton with varying input power
+in dBFs.
 
 |image7|
 
 Single Tone 3rd Harmonic Distoriton (HD3) Test
 ----------------------------------------------
 
-The following figure shows the 3rd harmonic distoriton with varying input power in dBFs.
-
+The following figure shows the 3rd harmonic distoriton with varying input power
+in dBFs.
 
 |image8|
 
 Two Tone Test
 -------------
 
-Two tones with 3 MHz in between spacing is swept across all bands at 5 MHz intervals at three different power levels -7, -13 and -19 dBm. The combined signal is the input to the K&L filter and the output of this filter will be the input to the ADC. IMD2, IMD3 and IMD5 performance is measured
+Two tones with 3 MHz in between spacing is swept across all bands at 5 MHz
+intervals at three different power levels -7, -13 and -19 dBm. The combined
+signal is the input to the K&L filter and the output of this filter will be the
+input to the ADC. IMD2, IMD3 and IMD5 performance is measured
 
-Two SMA100A was used to produce the tones with 3 MHz spacing. These two tones are the inputs to the combiner which outputs the two tone signal combination. This two tone goes through the K&L filter to clean out any unnecessary noise before the ADC input.
-
+Two SMA100A was used to produce the tones with 3 MHz spacing. These two tones
+are the inputs to the combiner which outputs the two tone signal combination.
+This two tone goes through the K&L filter to clean out any unnecessary noise
+before the ADC input.
 
 |image9|
 
 Two Tone 2nd Order Intermodulation Distortion(IMD2) Test
 --------------------------------------------------------
 
-The following figure shows the 2nd harmonic distoriton with varying input power in dBFs.
-
+The following figure shows the 2nd harmonic distoriton with varying input power
+in dBFs.
 
 |image10|
 
 Two Tone 3rd Order Intermodulation Distortion(IMD3) Test
 --------------------------------------------------------
 
-The following figure shows the 3rd harmonic distoriton with varying input power in dBFs.
-
+The following figure shows the 3rd harmonic distoriton with varying input power
+in dBFs.
 
 |image11|
 
 Two Tone 5th Order Intermodulation Distortion(IMD5) Test
 --------------------------------------------------------
 
-The following figure shows the 5th harmonic distoriton with varying input power in dBFs.
-
+The following figure shows the 5th harmonic distoriton with varying input power
+in dBFs.
 
 |image12|
 
 Return Loss (S11) Test
 ----------------------
 
-There are 4 test settings to be done and the VNA needs to be calibrated every time there is change in test settings. The settings for each test is shown in Table 1. These settings are for the VNA and DSA.
+There are 4 test settings to be done and the VNA needs to be calibrated every
+time there is change in test settings. The settings for each test is shown in
+Table 1. These settings are for the VNA and DSA.
 
 +-----------------+----------------+---------------+----------------+----------------+
 | Test Parameters | Test 1         | Test 2        | Test 3         | Test 4         |
@@ -178,15 +185,17 @@ There are 4 test settings to be done and the VNA needs to be calibrated every ti
 |                 |                |               |                |                |
 +-----------------+----------------+---------------+----------------+----------------+
 
-The following figure shows the return loss obtained using R&S ZND Vector Network Analyzer(VNA).
-
+The following figure shows the return loss obtained using R&S ZND Vector Network
+Analyzer(VNA).
 
 |image13|
 
 Transmit Channel
 ================
 
-Dual band tests were conducted as well as this architecture is thought to be conducive to multiband transmission. A set of band pairs where investigated through band flatness, SFDR and IMD/ACLR.
+Dual band tests were conducted as well as this architecture is thought to be
+conducive to multiband transmission. A set of band pairs where investigated
+through band flatness, SFDR and IMD/ACLR.
 
 The following table shows the DAC settings used during the test.
 
@@ -205,7 +214,9 @@ NCO                      Tes/band dependent
 Output Frequency Band Flatness Test
 -----------------------------------
 
-The frequency response was analyzed. A single tone at -12 dBFS is swept from 20 MHz to 4.8 GHz in 2 MHz steps. For simplicity sake, the DAC was placed in NCO mode for this test.
+The frequency response was analyzed. A single tone at -12 dBFS is swept from 20
+MHz to 4.8 GHz in 2 MHz steps. For simplicity sake, the DAC was placed in NCO
+mode for this test.
 
 ============== =============
 Case           Response
@@ -233,7 +244,10 @@ Band TX In-Band (dB) Expanded TX Band (MHz)
 Spurious-Free Dynamic Range (SFDR) Test
 ---------------------------------------
 
-SFDR was measured by stepping an integration interval over the expanded band of interest in Table 7. The integration bandwidth is 100 kHz or 5 MHz for GSM and LTE, respectively. For each sweep, the fundamental is stepped in 5 MHz increments by changing the NCO.
+SFDR was measured by stepping an integration interval over the expanded band of
+interest in Table 7. The integration bandwidth is 100 kHz or 5 MHz for GSM and
+LTE, respectively. For each sweep, the fundamental is stepped in 5 MHz
+increments by changing the NCO.
 
 +-----------------------------------------------+----------------------------------------------+
 | EDGE GSM vector properties                    | LTE vector properties                        |
@@ -257,9 +271,12 @@ Block Diagram of the Test Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/nsd_block_diagram.png
    :align: center
-   :width: 800px
+   :width: 800
 
-Noise spectral density was measured at an offset from a single tone, generated in NCO mode, at each band center. Measurement is done over an integration bandwidth of 500 kHz with a stock PXA without any special phase noise measurement module. Attenuation is set to 2-4 dB.
+Noise spectral density was measured at an offset from a single tone, generated
+in NCO mode, at each band center. Measurement is done over an integration
+bandwidth of 500 kHz with a stock PXA without any special phase noise
+measurement module. Attenuation is set to 2-4 dB.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/tx_nsd.png
    :align: center
@@ -267,7 +284,12 @@ Noise spectral density was measured at an offset from a single tone, generated i
 Inter-Modulation Distortion(IMD) Test
 -------------------------------------
 
-For IMD measurements, ACLR is used. The signals used are outlined in table below; they are the worst case IMD of each respective band. Only the band edges and the mid-band cases were measured. Graphs are shown below. Both the GSM and LTE vectors have a PAR of around 11 dB and are given one more dB of digital back-off to reach -12 dBFS. The NCO is used to place the signal to its final location.
+For IMD measurements, ACLR is used. The signals used are outlined in table
+below; they are the worst case IMD of each respective band. Only the band edges
+and the mid-band cases were measured. Graphs are shown below. Both the GSM and
+LTE vectors have a PAR of around 11 dB and are given one more dB of digital
+back-off to reach -12 dBFS. The NCO is used to place the signal to its final
+location.
 
 Carrier Settings
 ~~~~~~~~~~~~~~~~
@@ -283,24 +305,25 @@ Carrier Settings
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/tx_imd.png
    :align: center
 
-Shown below is the IMD performance with varying number of carrier for GSM band. This sweep was done at the center of band 8.
+Shown below is the IMD performance with varying number of carrier for GSM band.
+This sweep was done at the center of band 8.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/tx_gsm_imd.png
    :align: center
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/sma100a_front_stage_landscape.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/fsup_front.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/r_s_znd_vector_network_analyzer.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/11667b_power_splitter.jpg
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/k_l_spcl-00310.jpg
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/nsd.jpg
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/hd2.jpg
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/hd3.jpg
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/imd_test_setup.png
-   :width: 800px
+   :width: 800
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/imd2.jpg
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/imd3.jpg
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/imd5.jpg

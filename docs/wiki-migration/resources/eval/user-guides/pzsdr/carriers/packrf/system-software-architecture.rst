@@ -1,7 +1,12 @@
 Portable Radio Software
 =======================
 
-The software for the ADRV-PACKRF is provided by Analog Devices as an open source reference design that can be used in various applications. The system source code consists of several components, which are used together to control onboard devices and provide connectivity to external tools for development. The following components are either used to build the ADRV-PACKRF firmware or can be used remotely from a host PC through a network connection:
+The software for the ADRV-PACKRF is provided by Analog Devices as an open source
+reference design that can be used in various applications. The system source
+code consists of several components, which are used together to control onboard
+devices and provide connectivity to external tools for development. The
+following components are either used to build the ADRV-PACKRF firmware or can be
+used remotely from a host PC through a network connection:
 
 -  FPGA HDL Code :git-hdl:`Standard Reference Design <projects/adrv9361z7035/ccpackrf_lvds>`, :git-TransceiverToolbox:`Modem Enhancements <CI/projects/adrv9361z7035/ccbox_lvds_modem>`)
 -  Linux Kernel/Device Drivers (:doc:`Transceiver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`, :git-rfsom-box-gui:`Modem Controller <tun_tap>`)

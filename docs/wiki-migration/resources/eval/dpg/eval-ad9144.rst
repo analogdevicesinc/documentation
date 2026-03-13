@@ -5,7 +5,8 @@ There are currently :adi:`AD9144` evaluation boards that support either the DPG3
 
 The AD9144 DPG3 and ADS7 DAC-only evaluation boards are also compatible and supported by new SPI programming software called ACE (Analysis \| Control \| Evaluate). This software can be downloaded from the ACE Wiki site under “Resources” (:doc:`/wiki-migration/resources/tools-software/ace`) and is also included in the DVD that is shipped as part of the evaluation board kit. Please refer to the Quick Start Guide Using ACE for details on how to use the new SPI GUI software.
 
-Documentation and software updates for using High-Speed DAC Evaluation Boards are included in individual, self-extracting update files.
+Documentation and software updates for using High-Speed DAC Evaluation Boards
+are included in individual, self-extracting update files.
 
 Files included in the AD9144 Update:
 ------------------------------------

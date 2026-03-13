@@ -1,7 +1,8 @@
 EVAL-ADSD3100-NXZ Software Package
 ==================================
 
-This user guide steps through flashing an image on a microSD card using balenaEtcher on Windows.
+This user guide steps through flashing an image on a microSD card using
+balenaEtcher on Windows.
 
 Install balenaEtcher
 --------------------
@@ -26,28 +27,28 @@ Flash image onto SD card
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz/capture0.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Select provided .img file
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz/capture1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Select microSD card
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz/capture.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Hit "Flash!"
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz/capture3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Confirm flash was successful
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz/capture4.png
    :align: center
-   :width: 600px
+   :width: 600

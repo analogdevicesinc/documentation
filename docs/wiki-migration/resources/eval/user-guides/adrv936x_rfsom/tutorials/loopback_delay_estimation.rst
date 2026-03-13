@@ -1,7 +1,19 @@
 Loopback Delay Estimation Design
 ================================
 
-This article will explain an example design that estimates the RF loopback delay when a transmit and a receive port of the AD9361 transceiver are connected using a cable. This design is useful when AD9361 is used as part of a hardware-in-loop test setup with transmit and receive ports connected to the input and the output of the device under test. For instance, in a digital predistortion application where the transmit port of AD9361 is connected to the input port of a PA and the output of the PA is connected to the receive port of AD9361 (via an appropriately chosen attenuator), this design will help align the transmit and the receive streams. Since this example focuses on achieving tightly time aligned transmit and receive streams, the design will be built around logic for the FPGA fabric with software control interfaces. Users can perform algorithmic processing on the obtained aligned data streams in the host computer or extend the design in the logic depending on their requirements.
+This article will explain an example design that estimates the RF loopback delay
+when a transmit and a receive port of the AD9361 transceiver are connected using
+a cable. This design is useful when AD9361 is used as part of a hardware-in-loop
+test setup with transmit and receive ports connected to the input and the output
+of the device under test. For instance, in a digital predistortion application
+where the transmit port of AD9361 is connected to the input port of a PA and the
+output of the PA is connected to the receive port of AD9361 (via an
+appropriately chosen attenuator), this design will help align the transmit and
+the receive streams. Since this example focuses on achieving tightly time
+aligned transmit and receive streams, the design will be built around logic for
+the FPGA fabric with software control interfaces. Users can perform algorithmic
+processing on the obtained aligned data streams in the host computer or extend
+the design in the logic depending on their requirements.
 
 Requirements:
 

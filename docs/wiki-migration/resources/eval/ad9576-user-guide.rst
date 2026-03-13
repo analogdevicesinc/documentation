@@ -49,16 +49,13 @@ The :adi:`AD9576` can output up to 11 differential clock signals driven by a mix
 
 .. container:: centeralign
 
-
    ..
 
 |image1|
 
    **Figure 1. AD9576 Evaluation Board (AD9576/BCPZ)**
 
-
 EVALUATION BOARD HARDWARE
-
 
 The following instructions are for setting up the physical connections to the :adi:`AD9576/PCBZ <EVAL-AD9576>` evaluation board. The user must install the evaluation software prior to connecting the evaluation board for the first time.
 
@@ -92,7 +89,8 @@ PC Connections
 -  If the **Found New Hardware Wizard** window automatically appears when the evaluation board is connected, select **Install the software automatically** and click **Next**.
 -  The **Found New Hardware Wizard** window may appear twice, and a system restart may be required.
 
-Refer to the Evaluation Board Software section for details on running the AD9576 evaluation board software.
+Refer to the Evaluation Board Software section for details on running the AD9576
+evaluation board software.
 
 Reference Inputs
 ~~~~~~~~~~~~~~~~
@@ -156,7 +154,12 @@ The logic state of the AD9576 serial port configuration pins, SP0 and SP1, are r
 PPRx Pins
 ~~~~~~~~~
 
-The AD9576 uses pin strapping to select among a multitude of power-on ready configurations for its 11 output clocks, which require only the connection of external pull-up or pull-down resistors to the appropriate pin program reader pins (PPRx). These pins configure the internal registers for establishing the desired frequency translations, clock output functionality, and input reference functionality.
+The AD9576 uses pin strapping to select among a multitude of power-on ready
+configurations for its 11 output clocks, which require only the connection of
+external pull-up or pull-down resistors to the appropriate pin program reader
+pins (PPRx). These pins configure the internal registers for establishing the
+desired frequency translations, clock output functionality, and input reference
+functionality.
 
 Each PPR pin can be individually configured between all applicable impedance and terminus values by configuring a set of 3 jumpers specific to the individual reference. **Table 5** shows the jumper setting to configure the REF0 input connections.
 
@@ -175,7 +178,6 @@ PPR0 State Settings
 6          Removed          Position 1 (3K9) Position 1 (PU)
 7          Removed          Position 3 (8K2) Position 1 (PU)
 ========== ================ ================ ===============
-
 
 | PPR1, PPR2, and PPR3 may be configured in the same manner, but with jumper equivalencies shown in **Table 6**.
 
@@ -202,18 +204,19 @@ The blue RESETB push button, S100, is located in the lower left quadrant of the 
 
 EVALUATION BOARD SOFTWARE
 
-
 The AD9576 evaluation software allows the user to control the full functionality of the AD9576 through SPI communication with the evaluation board. The AD9576 evaluation software is implemented as a component plug-in in ADI’s :doc:`Analysis \| Control \| Evaluation (ACE) Software </wiki-migration/resources/tools-software/ace>` desktop software. ACE allows the evaluation of control of multiple evaluation systems from across ADI’s product portfolio and is designed to educate the user in the functional operation of the component. The :doc:`ACE wiki page </wiki-migration/resources/tools-software/ace>` contains system requirement and prerequisite information as well as links to the most recent installer and user guide. The ACE user guide contains detailed information concerning all current aspects of the ACE environment. Much of that information will not be described in this document, but some main ACE operational points relevant to component level functionality will be described. It is highly recommended to review the ACE user guide to discover the myriad capabilities and offerings the ACE environment provides to the user.
 
 Software Installation
 ~~~~~~~~~~~~~~~~~~~~~
 
-Use the following instructions to set up the AD9576 evaluation board software. Do not connect the evaluation board until the software installation is complete.
+Use the following instructions to set up the AD9576 evaluation board software.
+Do not connect the evaluation board until the software installation is complete.
 
 -  Download the AD9576 driver installer, **ADI_LRF_CYUSBdriver.exe**, from the AD9576 Evaluation product page.
 -  Run the installer and follow the prompts through completion.
 -  Download the :adi:`ACE software installer <ace>`. Any ACE version greater than 1.25 supports the AD9576 plugin. Older ACE version 1.10.2671.1118 also supports the plugin: `Analysis \| Control \| Evaluation (ACE) Software Version 1.10.2671.1118 <https://swdownloads.analog.com/ACE/ACEInstall_1.10.2671.1118.exe>`_
--  Follow the section 2.1, installation guide, of the ACE User Guide to completion.
+-  Follow the section 2.1, installation guide, of the ACE User Guide to
+   completion.
 
 General Operation
 ~~~~~~~~~~~~~~~~~
@@ -223,7 +226,6 @@ Power up and connect the evaluation board to the PC. Open the ACE software. Afte
 .. container:: centeralign
 
    |image2| **Figure 2. ACE Start Screen**
-
 
 Board View
 ~~~~~~~~~~
@@ -238,7 +240,6 @@ The AD9576 board view can be seen in **Figure 3**. As the AD9576 evaluation plat
 
    |image3| **Figure 3. AD9576 ACE Plug-in Board View**
 
-
 The board view toolbar provided three board level functions and a detailed description may be found in section 3.6.3 of the ACE user guide. The AD9576 primary component link allows the user to navigate to the AD9576 chip view, shown in **Figure 4**, by double clicking this link. The chip view is the primary conduit through which the user can interface with the AD9576. The PPR pin state jumper truth table shows the user the jumper configuration to place a given PPR pin into a PPR state. Used in conjunction with the PPR tables (Table 31 - Table 34) in the :adi:`AD9576 data sheet <static/imported-files/data_sheets/AD9576.pdf>`, the user can set the AD9576 to a multitude of power on ready configurations. Please note that the SP0 and SP1 jumpers must be configured to allow a PPR load.
 
 Chip View
@@ -248,8 +249,14 @@ Chip View
 
    |image4| **Figure 4. AD9576 ACE Plug-in Chip View**
 
-
-The chip view is the primary interface used to configure the AD9576. It consists primarily of an interactive block diagram which shows the configuration of the device, calculates the frequency translation, implements frequency based error checking, and allows the user to intuitively configure the AD9576 parameters. It should be noted that in order to synchronize the register content of the software with that of the AD9576 after a PPR load, the user must press the ‘Read All’ button in the chip view toolbar in the upper left hand portion of the window.
+The chip view is the primary interface used to configure the AD9576. It consists
+primarily of an interactive block diagram which shows the configuration of the
+device, calculates the frequency translation, implements frequency based error
+checking, and allows the user to intuitively configure the AD9576 parameters. It
+should be noted that in order to synchronize the register content of the
+software with that of the AD9576 after a PPR load, the user must press the ‘Read
+All’ button in the chip view toolbar in the upper left hand portion of the
+window.
 
 Block Interaction
 ~~~~~~~~~~~~~~~~~
@@ -260,8 +267,9 @@ A detailed explanation of the interaction with the block diagram is explained in
 
    |image5| **Figure 5. Divider Q3 configuration menu**
 
-
-Clicking and dragging the title bar of the menu will allow the user to relocate the menu at one’s convenience. In order to close the menu, the user may close the ‘close’ button or simply click away from the menu.
+Clicking and dragging the title bar of the menu will allow the user to relocate
+the menu at one’s convenience. In order to close the menu, the user may close
+the ‘close’ button or simply click away from the menu.
 
 Frequency Translation Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -271,7 +279,6 @@ The frequency translation of the AD9576 is calculated from reference input frequ
 .. container:: centeralign
 
    |image6| **Figure 6. Frequency display tool tip.**
-
 
 Changing the configuration of a block that affects the frequency translation will produce an automatic calculation and error checking to inform the user of the impact the change has had on the operation of the AD9576. Any errors resulting from the error checking functionality will display visually as well as the Events Tool View. This view gives the user additional detail regarding the nature of the error and is explained in detail in the `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_, section 3.9.3.
 
@@ -284,7 +291,6 @@ The AD9576 ACE plug-in as contains a detailed view of the entire register map in
 
    |image7| **Figure 7. AD9576 ACE Plug-in Memory Map View.**
 
-
 The memory map view is explained in detail in the `ACE User Guide <http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_ section 3.8, but one of the more useful features in the functional group filter shown in the left portion of **Figure 7**. The AD9576 bit fields have been grouped by relevant functionality and the functional group filter allows the user to quickly and easily switch between viewing only bit fields or registers contained within these macro level functional groups.
 
 Sessions
@@ -296,17 +302,18 @@ The ACE application has the ability to save and recall a given configuration of 
 
    |image8| **Figure 8. ACE File Menu.**
 
-
-The left hand section of the Start View also exposes the ability to create and open sessions as well as maintaining a list of recent sessions that may be directly opened.
+The left hand section of the Start View also exposes the ability to create and
+open sessions as well as maintaining a list of recent sessions that may be
+directly opened.
 
 Known Issues
 ~~~~~~~~~~~~
 
 -  Though the AD9576 supports I :sup:`2`\ C communication, currently the ACE application does not support the usage of the I :sup:`2`\ C portion of the AD9576 drivers.
--  Currently, the ACE AD9576 plug-in does not support the control or read back of the AD9576 evaluation board GPIO pins.
+-  Currently, the ACE AD9576 plug-in does not support the control or read back
+   of the AD9576 evaluation board GPIO pins.
 
 EVALUATION BOARD QUICK START
-
 
 Power-on Ready Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -328,7 +335,6 @@ This quick start section covers only configuring the AD9576 to execute a PPR loa
 
    |image9| **Figure 9. AD9576 Asynchronous Operation Configuration**
 
-
 Session Based Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -340,15 +346,16 @@ This quick start section covers only the AD9576 Typical Configuration 2 (Synchro
 -  Once downloaded, the session file can be loaded into the evaluation board by opening the ACE Evaluation Software, click File > Open Session…, and select the appropriate .cso file.
 -  In the AD9576 Chip View Toolbar, click the Apply Changes button.
 -  Apply a 100 MHz, 0 dBm signal to the J201 SMA connector (REF0P). This may also be applied prior to the session load.
--  The VCO0 calibration will trigger automatically once the reference is detected and the PLL0 locked indicator will turn green and all enabled outputs will toggle.
+-  The VCO0 calibration will trigger automatically once the reference is
+   detected and the PLL0 locked indicator will turn green and all enabled
+   outputs will toggle.
 
 .. container:: centeralign
 
    |image10| **Figure 10. AD9576 Synchronous Operation Configuration**
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9576/ad9576_evb.jpg
-   :width: 700px
+   :width: 700
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9576/ad9576_ace_start_screen.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9576/ad9576_ace_board_view.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9576/ad9576_ace_chip_view.png

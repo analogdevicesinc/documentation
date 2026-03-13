@@ -1,7 +1,9 @@
 How To Add Packages To Your Own Linux Filesystem
 ================================================
 
-This page introduces a simple way to add packages to your own Linux filesystem in Yocto Linux. Take the example that add the package "ethtool" to your own target adsp-custom-ramdisk image.
+This page introduces a simple way to add packages to your own Linux filesystem
+in Yocto Linux. Take the example that add the package "ethtool" to your own
+target adsp-custom-ramdisk image.
 
 Find the Yocto Project recipe
 -----------------------------

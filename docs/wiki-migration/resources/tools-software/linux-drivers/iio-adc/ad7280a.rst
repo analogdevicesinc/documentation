@@ -22,9 +22,15 @@ Description
 
 This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting multi channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
 
-The AD7280A contains all the functions required for general-purpose monitoring of stacked lithium ion batteries as used in hybrid electric vehicles, battery backup applications, and power tools. The part has multiplexed cell voltage and auxiliary ADC measurement channels for up to six cells of battery management. This driver supports the daisy-chain interface allowing up to eight parts to be stacked without the need for individual device isolation.
+The AD7280A contains all the functions required for general-purpose monitoring
+of stacked lithium ion batteries as used in hybrid electric vehicles, battery
+backup applications, and power tools. The part has multiplexed cell voltage and
+auxiliary ADC measurement channels for up to six cells of battery management.
+This driver supports the daisy-chain interface allowing up to eight parts to be
+stacked without the need for individual device isolation.
 
-The driver automatically detects then number of devices present and creates the iio device files accordingly.
+The driver automatically detects then number of devices present and creates the
+iio device files accordingly.
 
 Source Code
 ===========
@@ -52,12 +58,19 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
-
-Some device parameter may vary between applications and use cases. The platform_data for the device's "struct device" holds this information.
+Some device parameter may vary between applications and use cases. The
+platform_data for the device's "struct device" holds this information.
 
 .. code:: c
 
@@ -85,7 +98,8 @@ Some device parameter may vary between applications and use cases. The platform_
 
 .. tip::
 
-   In case platform_data is not present or set to NULL, the driver will use following defaults:
+   In case platform_data is not present or set to NULL, the driver will use
+   following defaults:
 
    
    .. code:: c
@@ -97,15 +111,24 @@ Some device parameter may vary between applications and use cases. The platform_
       };
    
 
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
-
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
-
-Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+Depending on the converter IC used, you may need to set the modalias
+accordingly, matching your part name. It may also required to adjust
+max_speed_hz. Please consult the datasheet, for maximum spi clock supported by
+the device in question.
 
 .. code:: c
 
@@ -140,12 +163,12 @@ Depending on the converter IC used, you may need to set the modalias accordingly
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD7280A Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -169,13 +192,20 @@ Hardware configuration
 ======================
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7280_eval_lr.jpg
-   :width: 600px
+   :width: 600
 
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -249,7 +279,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0>
    
 
-
 Show device name
 ----------------
 
@@ -263,7 +292,6 @@ Show device name
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat name
       ad7280a
    
-
 
 Show cell channel scale
 -----------------------
@@ -281,7 +309,6 @@ Show cell channel scale
       0.976000
    
 
-
 Show channel 0-1 measurement
 ----------------------------
 
@@ -297,7 +324,6 @@ Show channel 0-1 measurement
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0> cat in0-in1_raw
       2254
    
-
 
 **U** = *in0-in1_raw \* in-in_scale + offset* = 2254 \* 0.976000 + 1000 = **3199.904 mV**
 
@@ -317,7 +343,6 @@ Show voltage across all cells measurement
       27048
    
 
-
 **U** = *in0-in1_raw \* in-in_scale + (cell_num \* offset)* = 27048 \* 0.976000 + (12 \* 1000) = **38398.848 mV**
 
 Show auxiliary/temperature channel scale
@@ -336,7 +361,6 @@ Show auxiliary/temperature channel scale
       1.220000
    
 
-
 Show auxiliary/temperature channel measurement
 ----------------------------------------------
 
@@ -353,13 +377,13 @@ Show auxiliary/temperature channel measurement
       2096
    
 
-
 **U** = *temp0_raw \* temp_scale* = 2096 \* 1.220000 = **2557.12 mV**
 
 Enable cell balance output switch on channel 4-5
 ------------------------------------------------
 
-The AD7280A has cell balancing interface outputs designed to control external FET transistors to allow discharging of individual cells.
+The AD7280A has cell balancing interface outputs designed to control external
+FET transistors to allow discharging of individual cells.
 
 **Description:** Writing 1 enables the cell balance output switch corresponding to input Y. Writing 0 disables it. If the inY-inZ_balance_timer is set to a none zero value, the corresponding switch will enable for the programmed amount of time, before it automatically disables.
 
@@ -380,7 +404,6 @@ The AD7280A has cell balancing interface outputs designed to control external FE
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0>
    
 
-
 Enable cell balance timer on channel 4-5
 ----------------------------------------
 
@@ -398,7 +421,6 @@ Enable cell balance timer on channel 4-5
       143000
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0>
    
-
 
 Enabling cell and auxiliary/temperature channel threshold events
 ----------------------------------------------------------------
@@ -427,8 +449,9 @@ Enabling cell and auxiliary/temperature channel threshold events
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0>
    
 
-
-The AD7280A includes a dynamic alert function that can detect whether the cell voltages or auxiliary ADC inputs exceed an upper or lower limit defined by the user.
+The AD7280A includes a dynamic alert function that can detect whether the cell
+voltages or auxiliary ADC inputs exceed an upper or lower limit defined by the
+user.
 
 **Description:** Specifies the value of threshold (\_high|_low) that the device is comparing against.
 
@@ -447,7 +470,6 @@ The AD7280A includes a dynamic alert function that can detect whether the cell v
       root:/sys/devices/platform/bfin-spi.0/spi0.18/device0/device0:event0> cat in-in_thresh_high_value
       3994
    
-
 
 More Information
 ================
@@ -470,6 +492,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

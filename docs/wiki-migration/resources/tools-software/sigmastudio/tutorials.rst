@@ -1,14 +1,17 @@
 Tutorials, Guides, Walkthroughs, and other Information
 ======================================================
 
-This section contains tutorials and guides to help users understand and use SigmaStudio.
+This section contains tutorials and guides to help users understand and use
+SigmaStudio.
 
 :doc:`Click here to return to the SigmaStudio and SigmaDSP Documentation top page. </wiki-migration/resources/tools-software/sigmastudio>`
 
 General SigmaDSP Tutorials
 --------------------------
 
-These tutorials show signal flows for common use cases. They are not full example projects - please scroll down for those. The table of contents can help you jump to content for specific processors.
+These tutorials show signal flows for common use cases. They are not full
+example projects - please scroll down for those. The table of contents can help
+you jump to content for specific processors.
 
 -  :doc:`Basic DSP Examples </wiki-migration/resources/tools-software/sigmastudio/tutorials/basicdspexamples>`
 -  :doc:`Dynamics Processor Examples </wiki-migration/resources/tools-software/sigmastudio/tutorials/dynamicsprocessorexamples>`
@@ -244,7 +247,10 @@ Other Documentation
 SSM2529 Evaluation Board
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The SSM2529 is not a SigmaDSP, but it can be configured and controlled via SigmaStudio if the right plugin files are installed. The zip file below contains the schematics for the evaluation board, the plugin DLL for SigmaStudio, a quickstart guide, and an example SigmaStudio project.
+The SSM2529 is not a SigmaDSP, but it can be configured and controlled via
+SigmaStudio if the right plugin files are installed. The zip file below contains
+the schematics for the evaluation board, the plugin DLL for SigmaStudio, a
+quickstart guide, and an example SigmaStudio project.
 
 `ssm2529_evalboardfiles.zip <https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ssm2529_evalboardfiles.zip>`_
 
@@ -253,7 +259,9 @@ Example SigmaStudio register settings to utilize the programmable 7 band equaliz
 ADAV4601 Evaluation Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADAV4601 is still being manufactured, but the evaluation board for the ADAV4601 is no longer available. The documentation for the ADAV4601 evaluation board is posted here for legacy support purposes.
+The ADAV4601 is still being manufactured, but the evaluation board for the
+ADAV4601 is no longer available. The documentation for the ADAV4601 evaluation
+board is posted here for legacy support purposes.
 
 `Design Document <https://wiki.analog.com/_media/resources/tools-software/sigmastudio/adav4601_system_design_document.pdf>`_
 

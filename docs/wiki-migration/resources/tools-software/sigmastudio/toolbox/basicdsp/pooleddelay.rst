@@ -3,7 +3,12 @@
 Pooled Delay
 ============
 
-This Module contains a common pool of delay buffer, which can be used for introducing delay in one or more channels subject to a total maximum delay of 120 ms. The number of channels can be grown up to 14. When the sum of the individual maximum delays of channels exceed 120 ms, only the first N channels whose delays can be accommodated would be applied. The rest of the channels are bypassed without any delay.
+This Module contains a common pool of delay buffer, which can be used for
+introducing delay in one or more channels subject to a total maximum delay of
+120 ms. The number of channels can be grown up to 14. When the sum of the
+individual maximum delays of channels exceed 120 ms, only the first N channels
+whose delays can be accommodated would be applied. The rest of the channels are
+bypassed without any delay.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/pooleddelay-tbx.jpg
 
@@ -16,7 +21,6 @@ Name         Format [int/dec] - [control/audio] Function Description
 Pin 0: Input decimal - Audio                    Audio Input
 ============ ================================== ====================
 
-
 | ====Output Pins====
 
 ============= ================================== ====================
@@ -24,7 +28,6 @@ Name          Format [int/dec] - [control/audio] Function Description
 ============= ================================== ====================
 Pin 0: Output decimal - Audio                    Delayed Output
 ============= ================================== ====================
-
 
 | ==== Grow Algorithm ==== The module supports Growth. The module does not support Add.
 
@@ -63,7 +66,12 @@ Configuration
 Algorithm Description
 ---------------------
 
-This Module contains a common pool of delay buffer, which can be used for introducing delay in one or more channels subject to a total maximum delay of 120 ms. The number of channels can be grown up to 14. When the sum of the individual maximum delays of channels exceed 120 ms, only the first N channels whose delays can be accommodated would be applied. The rest of the channels are bypassed without any delay.
+This Module contains a common pool of delay buffer, which can be used for
+introducing delay in one or more channels subject to a total maximum delay of
+120 ms. The number of channels can be grown up to 14. When the sum of the
+individual maximum delays of channels exceed 120 ms, only the first N channels
+whose delays can be accommodated would be applied. The rest of the channels are
+bypassed without any delay.
 
 Supported ICs
 -------------

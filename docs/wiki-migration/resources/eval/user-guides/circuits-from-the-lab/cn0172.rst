@@ -35,31 +35,31 @@ How to Install the Evaluation Software
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_evaluation_software_driver_install.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Press **“Next”**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_evaluation_software_driver_install1.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Press **“Next”**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_evaluation_software_driver_install_complete.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Upon completion of the installation of the **CN0172 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer. It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_sdp_driver_install.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Press **“Next”**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_sdp_driver_install_complete.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Press **“Finish”** to install the Drivers and complete the installation of all software necessary to evaluate the **EVAL-CN0172-SDPZ**
 
@@ -82,16 +82,18 @@ Step by Step Instruction for Connecting the Hardware
    :align: center
 
 -  Plug the mini end of the USB cable into connector J1 of the **EVAL-SDP-CB1Z** and connect the other end of the USB cable into the Laptop or PC.
--  Wait for found new hardware wizard to appear and finish installation of SPD driver before opening the software.
+-  Wait for found new hardware wizard to appear and finish installation of SPD
+   driver before opening the software.
 
 Opening and Enabling the Evaluation Software
 --------------------------------------------
 
--  Launch the software which will be located in the analog devices folder in all programs.
+-  Launch the software which will be located in the analog devices folder in all
+   programs.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_evaluation_software_user_interface.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 -  After starting the application the user must click the **“Board Setup”** button. The user has the option to edit one or more of the following options:
 
@@ -108,7 +110,7 @@ Opening and Enabling the Evaluation Software
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_evaluation_software_user_interface1.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 Registration
 ------------
@@ -116,6 +118,5 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0172-SDPZ?&v=Rev B>`_ to receive all these great benefits and more!
-
 
 *End of document*

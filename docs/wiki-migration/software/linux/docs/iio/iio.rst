@@ -26,7 +26,8 @@ IIO Overview
 
 -  The overall aim is to fill the gap between the somewhat similar hwmon and input subsystems.
 -  Hwmon is very much directed at low sample rate sensors used in applications such as fan speed control and temperature measurement.
--  The input is⁠ (as its name suggests) focused on human interaction input devices:
+-  The input is⁠ (as its name suggests) focused on human interaction input
+   devices:
 
    -  Keyboard
    -  Mouse
@@ -37,14 +38,15 @@ IIO Overview
 
 -  A typical device falling into the IIO category would be connected via SPI or I2C.
 -  However typical DMA operated devices such as ones connected to a high speed synchronous serial (McBSP, SPORT) or high speed synchronous parallel (EPI, PPI) or FPGA peripherals are also subject to this subsystem.
--  Since latter ones unlike SPI or I2C are not generally abstracted by Linux bus drivers they are subject to processor platform dependent implementations.
+-  Since latter ones unlike SPI or I2C are not generally abstracted by Linux bus
+   drivers they are subject to processor platform dependent implementations.
 
 IIO Subsystem Overview
 ----------------------
 
 .. image:: https://wiki.analog.com/_media/software/linux/docs/iio/iio_block_view.png
    :alt: iio_block_view.png
-   :width: 600px
+   :width: 600
 
 Functionality of IIO
 ~~~~~~~~~~~~~~~~~~~~
@@ -53,12 +55,17 @@ Functionality of IIO
 -  Polled access to device channels via sysfs.
 -  Event chrdevs
 
-   -  These are similar to input in that they provide a route to user space for hardware triggered events. Such events include threshold detectors, free-fall detectors and more complex action detection. The events themselves are currently very simple with merely an event code and a timestamp. Any data associated with the event must be accessed via polling.
+   -  These are similar to input in that they provide a route to user space for
+      hardware triggered events. Such events include threshold detectors,
+      free-fall detectors and more complex action detection. The events
+      themselves are currently very simple with merely an event code and a
+      timestamp. Any data associated with the event must be accessed via
+      polling.
 
 .. hint::
 
-   A given device may have one or more event channel. These events are turned on or off (if possible) via sysfs interfaces.
-
+   A given device may have one or more event channel. These events are turned on
+   or off (if possible) via sysfs interfaces.
 
 -  Hardware ring buffer support
 -  Some recent sensors have included fifo / ring buffers on the sensor chip.
@@ -96,11 +103,12 @@ Standalone trigger drivers
 | `iio-trig-bfin-timer <https://wiki.analog.com/iio-trig-bfin-timer>`_ | Provides support for using a Blackfin timer as IIO triggers.                  |
 +----------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
-
 Industrial I/O Subsystem In-Kernel Interfaces
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The IIO subsystem can act as a layer under other elements of the kernel providing a means of obtaining ADC type readings or of driving DAC type signals. The functionality supported will grow as use cases arise.
+The IIO subsystem can act as a layer under other elements of the kernel
+providing a means of obtaining ADC type readings or of driving DAC type signals.
+The functionality supported will grow as use cases arise.
 
 IIO Ring Buffer / kfifo
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -109,7 +117,12 @@ IIO Ring Buffer / kfifo
    :alt: ringbuffer.png
 
 -  IIO uses a ring buffer also called circular buffer which is a data structure that uses a single, fixed-size buffer as if it were connected end-to-end.
--  This structure is well suited for buffering data streams. These buffers are typically used to solve the producer-consumer problem. In some applications it is desired for the producer (e.g., an ADC) to overwrite old data if the consumer (e.g., the User Space Application) is unable to momentarily keep up. But typically the buffer is sized to provide adequate space so that this circumstance should never happen.
+-  This structure is well suited for buffering data streams. These buffers are
+   typically used to solve the producer-consumer problem. In some applications
+   it is desired for the producer (e.g., an ADC) to overwrite old data if the
+   consumer (e.g., the User Space Application) is unable to momentarily keep up.
+   But typically the buffer is sized to provide adequate space so that this
+   circumstance should never happen.
 
 Pointers
 ========
@@ -132,6 +145,4 @@ Pointers
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_vntewue24
-

@@ -62,9 +62,21 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The Offline Microphone Match algorithm is meant to be a system tuning algorithm in order to match a stereo input pair to a designated target output gain. The name "Offline" is used since the calculation for gain application is not running on the DSP. The actual level detection is running on the DSP and is based on a Peak Envelope level detection. Hold and Decay times can be adjusted to fine tune the level calculation.
+The Offline Microphone Match algorithm is meant to be a system tuning algorithm
+in order to match a stereo input pair to a designated target output gain. The
+name "Offline" is used since the calculation for gain application is not running
+on the DSP. The actual level detection is running on the DSP and is based on a
+Peak Envelope level detection. Hold and Decay times can be adjusted to fine tune
+the level calculation.
 
-Upon initial run-time compilation, two signals that are mismatched will run through the algorithm as-is. Once the Calibrate button is pressed, the offline calculation will find the gains necessary to apply to L and R channels to reach a matched output equal to the target gain designated on the control. At this time, these calculated gains, will be displayed on the control, and also applied to both the L and R signals running on the DSP. The graph below shows two sine tones at different levels, and the matched output, once the Calibrate button is pressed. The target output gain was set to -4dB.
+Upon initial run-time compilation, two signals that are mismatched will run
+through the algorithm as-is. Once the Calibrate button is pressed, the offline
+calculation will find the gains necessary to apply to L and R channels to reach
+a matched output equal to the target gain designated on the control. At this
+time, these calculated gains, will be displayed on the control, and also applied
+to both the L and R signals running on the DSP. The graph below shows two sine
+tones at different levels, and the matched output, once the Calibrate button is
+pressed. The target output gain was set to -4dB.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/offlinepic2.png
    :alt: offlinepic2.png
@@ -72,7 +84,11 @@ Upon initial run-time compilation, two signals that are mismatched will run thro
 Example
 -------
 
-The schematic image seen below was used to generate the graph seen above. This image shows the result of the Offline Microphone Match algorithm AFTER the calibrate button has been pressed. Thus the gains necessary to achieve a -4dB target output are displayed in the L gain and R gain text boxes on the control for the given input signals.
+The schematic image seen below was used to generate the graph seen above. This
+image shows the result of the Offline Microphone Match algorithm AFTER the
+calibrate button has been pressed. Thus the gains necessary to achieve a -4dB
+target output are displayed in the L gain and R gain text boxes on the control
+for the given input signals.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/offlinepic3.png
    :alt: offlinepic3.png

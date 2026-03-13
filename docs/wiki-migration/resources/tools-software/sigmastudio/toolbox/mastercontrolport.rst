@@ -3,7 +3,9 @@ Master Control Port (ADAU145X)
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-The Master Control Port library in the ToolBox lists blocks that utilize the ADAU145x processor family's master control port. These devices contain a combined I2C and SPI bus port accessible from a DSP program.
+The Master Control Port library in the ToolBox lists blocks that utilize the
+ADAU145x processor family's master control port. These devices contain a
+combined I2C and SPI bus port accessible from a DSP program.
 
 The master control port can be used for several purposes, as follows:
 

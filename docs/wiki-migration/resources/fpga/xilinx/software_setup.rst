@@ -1,51 +1,53 @@
--  Open Xilinx Software Development Kit (XSDK) and provide the workspace location.
+-  Open Xilinx Software Development Kit (XSDK) and provide the workspace
+   location.
 
 -  Create a new Application Project: go to **File -> New -> Application Project**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/new_app_project.png
    :alt: Creating a new application project
    :align: center
-   :width: 650px
+   :width: 650
 
 -  Create a new Hardware Platform: click **New** from the **Target Hardware** section
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/create_new_hardware.png
    :alt: Creating a new hardware platform
    :align: center
-   :width: 450px
+   :width: 450
 
 -  Specify the already generated Hardware Platform Specification File (more details about the generation: :doc:`/wiki-migration/resources/fpga/docs/build`): in the **Target Hardware Specification** section browse the desired file
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/create_hw_project.png
    :alt: Import hardware description file
    :align: center
-   :width: 450px
+   :width: 450
 
 -  Give a name to the project and to the board support package and click **Next**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/create_app_project.png
    :alt: Application project settings
    :align: center
-   :width: 450px
+   :width: 450
 
 -  Select the **Empty Application** templeta and click **Finish**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/project_templates.png
    :alt: Choose application template
    :align: center
-   :width: 450px
+   :width: 450
 
 -  The new **Empty Application project** should look like:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/empty_project.png
    :alt: Empty application project
    :align: center
-   :width: 650px
+   :width: 650
 
 .. important::
 
-   Some applications (e.g. FMCOMMSx), when a Microblaze processor is used, requires an increased HEAP size for dynamic memory allocation. Make sure the HEAP size is at least 0x100000.
-
+   Some applications (e.g. FMCOMMSx), when a Microblaze processor is used,
+   requires an increased HEAP size for dynamic memory allocation. Make sure the
+   HEAP size is at least 0x100000.
 
    |image1|
 
@@ -70,28 +72,30 @@
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/new_run_configurations.png
    :alt: Create new run configuration
    :align: center
-   :width: 650px
+   :width: 650
 
 -  If your target carrier has a Zync SoC, make sure, that you specify the **Initialization file**, and select the **Run ps7_init** and **Run ps7_post_config** options.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/zynq_init_file.png
    :alt: Define Zynq initialization file
    :align: center
-   :width: 650px
+   :width: 650
 
 -  At the **Application** tab define your current project name and application executable. (.elf)
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/elf_app.png
    :alt: Define Zynq initialization file
    :align: center
-   :width: 650px
+   :width: 650
 
--  The output of the example program can be viewed in the SDK console by enabling the Connect STDIO Console option and setting the baud rate of the UART port to 115200.
+-  The output of the example program can be viewed in the SDK console by
+   enabling the Connect STDIO Console option and setting the baud rate of the
+   UART port to 115200.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/stdio_config.png
    :alt: Define Zynq initialization file
    :align: center
-   :width: 650px
+   :width: 650
 
 ::
 

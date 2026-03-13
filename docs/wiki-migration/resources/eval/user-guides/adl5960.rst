@@ -10,7 +10,8 @@ The ADL5960 Evaluation Board ships as a kit with a ribbon cable and a pre-progra
 
 -  Use the supplied 14-conductor ribbon cable to connect `the DC2026C "Linduino" board <http://analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/dc2026c.html>`_ with the ADL5960 evaluation board.
    The Linduino board receives power from the PC USB port, so no external power is needed to the Linduino. *Do not connect the USB cable to the PC until AFTER the software has been downloaded and installed*.
--  The ADL5960 evaluation board requires external power as noted in the ADL5960-EVALZ USER GUIDE. See link below.
+-  The ADL5960 evaluation board requires external power as noted in the
+   ADL5960-EVALZ USER GUIDE. See link below.
 
 Software Installation and Usage
 -------------------------------
@@ -18,7 +19,9 @@ Software Installation and Usage
 -  Download the GUI software from the product page at :adi:`en/products/adl5960.html`. Double-click to run the installer, then follow the simple on-screen instructions. It is recommended to use the default installation directory. The installer will also automatically install the necessary USB drivers for the Linduino board.
 -  After software installation, it's now OK to connect the USB cable from PC to Linduino. This causes the PC OS to automatically load the required USB driver for the Linduino.
 -  Software installation places shortcuts on both the PC desktop and in the Start menu. Double-clicking either will bring up the Graphical User Interface program.
--  The GUI software should automatically locate and show the ADL5960 connection as a COM port number. Click the Connect button. All ADL5960 user-configurable registers now appear and become editable.
+-  The GUI software should automatically locate and show the ADL5960 connection
+   as a COM port number. Click the Connect button. All ADL5960 user-configurable
+   registers now appear and become editable.
 
 Common Issues
 -------------
@@ -40,4 +43,4 @@ PCB Gerber Files
 -  `065841-01D_fab.zip <https://wiki.analog.com/_media/resources/eval/065841-01D_fab.zip>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5960-evalz_top_1_.jpg
-   :width: 400px
+   :width: 400

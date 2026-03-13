@@ -1,17 +1,33 @@
 Tutorial: Building a 2.1 Amplifier with the Class-D Module
 ==========================================================
 
-The Class D Fin contains two stereo class D amplifiers providing four channels of output. In this tutorial, we will use the Class D board to implement a 2.1 or 2.2 audio amplifier. This will include 2 channels of standard audio and one channel for a subwoofer (LFE).
+The Class D Fin contains two stereo class D amplifiers providing four channels
+of output. In this tutorial, we will use the Class D board to implement a 2.1 or
+2.2 audio amplifier. This will include 2 channels of standard audio and one
+channel for a subwoofer (LFE).
 
-The SSM3582 has an option to combine a two channels into a single channel with more power. This requires some modifications to the configuration file and the Class D amp board. For this tutorial, we'll use one of the stereo channels as our sub channel. However, should you need even more power, the option is there to combine two channels. Refer to the SSM3582 datasheet for more information
+The SSM3582 has an option to combine a two channels into a single channel with
+more power. This requires some modifications to the configuration file and the
+Class D amp board. For this tutorial, we'll use one of the stereo channels as
+our sub channel. However, should you need even more power, the option is there
+to combine two channels. Refer to the SSM3582 datasheet for more information
 
-We will send the incoming stereo audio from the 1/8" jacks to the first SSM3582 on the Class D board. We'll pass this audio along unaffected as our stereo channels. We'll then mix our incoming left and right channels together, run them through a low-pass filter, and send this to the second SSM3582 on the class board. This will be our sub channel.
+We will send the incoming stereo audio from the 1/8" jacks to the first SSM3582
+on the Class D board. We'll pass this audio along unaffected as our stereo
+channels. We'll then mix our incoming left and right channels together, run them
+through a low-pass filter, and send this to the second SSM3582 on the class
+board. This will be our sub channel.
 
-Connect a set of standard speakers to the speaker terminals for the first stereo pair on the Class D board, and connect a sub-woofer to either of the speaker terminals for the second stereo pair on the Class D board.
+Connect a set of standard speakers to the speaker terminals for the first stereo
+pair on the Class D board, and connect a sub-woofer to either of the speaker
+terminals for the second stereo pair on the Class D board.
 
-Connect your Class D amp board via the A2B cable to the SHARC Audio Module. The SLAVE port of the SHARC Audio Module should be connected to the MASTER port of the Class D amp board.
+Connect your Class D amp board via the A2B cable to the SHARC Audio Module. The
+SLAVE port of the SHARC Audio Module should be connected to the MASTER port of
+the Class D amp board.
 
-Configure the baremetal framework to use A2B and select the SAM->Class D tutorial.
+Configure the baremetal framework to use A2B and select the SAM->Class D
+tutorial.
 
 .. code:: c
 
@@ -23,7 +39,6 @@ Configure the baremetal framework to use A2B and select the SAM->Class D tutoria
      * will play (TRUE = master node, FALSE = slave node)
     */
        #define A2B_ROLE_MASTER                                TRUE
-
 
    /**
      * If this SHARC Audio Module board is a master, select an A2B topology
@@ -47,9 +62,12 @@ Configure the baremetal framework to use A2B and select the SAM->Class D tutoria
 Setting up our Biquad filters
 -----------------------------
 
-We'll use a fourth order low-pass IIR filter with a cutoff frequency of 100Hz to remove the higher frequencies from our sub channel. The easiest way to do this is to cascade two 2nd order identical biquad filters.
+We'll use a fourth order low-pass IIR filter with a cutoff frequency of 100Hz to
+remove the higher frequencies from our sub channel. The easiest way to do this
+is to cascade two 2nd order identical biquad filters.
 
-First, we'll to declare two instances of BIQUAD_FILTER and allocate some pm memory for our coefficients at the top of callback_audio_processing.cpp.
+First, we'll to declare two instances of BIQUAD_FILTER and allocate some pm
+memory for our coefficients at the top of callback_audio_processing.cpp.
 
 .. code:: c
 
@@ -103,4 +121,3 @@ Finally, in ``void processaudio_callback(void)``, we're going to filter our audi
        // Filtered audio to our sub speakers
        copy_buffer(filter_mixed, audiochannel_a2b_1_left_out, AUDIO_BLOCK_SIZE);
        copy_buffer(filter_mixed, audiochannel_a2b_1_right_out, AUDIO_BLOCK_SIZE);
-

@@ -3,7 +3,8 @@ Evaluation Board Quick Start Setup
 
 :doc:`Click here to return to the Tutorials section. </wiki-migration/resources/tools-software/sigmastudio/tutorials>`
 
-For detailed information regarding Evaluation Board configuration, refer to the evaluation board data sheets, available at www.analog.com/sigmadsp.
+For detailed information regarding Evaluation Board configuration, refer to the
+evaluation board data sheets, available at www.analog.com/sigmadsp.
 
 **AD1940/AD1941** The three AD 194x boards are almost identical. The EB1940 has switches; the MINIB 1940 does not. Both boards use SPI (serial-peripheral interface) communication, while the 1941 uses the I2C (also written I²C) communication protocol. Read through the first sets of steps below for global instructions, then continue past them to see differences with the mini and the 1941 boards.
 
@@ -29,11 +30,13 @@ Any setting not listed may be considered unimportant (“don’t care”).
 -  With the eval board's power connector in the upper-left corner:
 -  Input is connected to the stereo RCA connectors at the top of the board.
 -  Output is connected to any of the 4 stereo or 8 RCA connectors at the right side of the board.
--  Signal path must be designed in Sigma Studio to send output to the desired port.
+-  Signal path must be designed in Sigma Studio to send output to the desired
+   port.
 
 **AD1940 MINIB Evaluation Board Hardware Setup,** Stereo Analog Input, 6-Channel Analog Output
 
-(To operate this board in standalone mode, connect the +6V power supply to the power connector, labeled J14.)
+(To operate this board in standalone mode, connect the +6V power supply to the
+power connector, labeled J14.)
 
 -  Attach the AD1940 MINIB board to the USB adapter board (J2 on both boards) and connect a USB cable between the USB board and the computer.
 -  Connect your audio source to the 1/8” (mini) audio input jack (J1).
@@ -50,7 +53,11 @@ Any setting not listed may be considered unimportant (“don’t care”).
 -  Use the included USB cable to make a connection between the evaluation board and an available USB port on your computer. The USB jack is yellow in the next figure.
 -  Windows should recognize the device, and Found New Hardware Wizard should display.
 -  Select "Install from a list or specific location (Advanced)" and then "Search for the best driver in these locations." Ensure that "Search removable media" is unchecked and "Include this location in the search" is checked.
--  Browse to find the USB drivers folder. (By default, it should be at C:\\Program Files\\Analog Devices Inc\\Sigma Studio\\USB Drivers.) Click OK and Next to begin the installation. (Click Continue Anyway if you're prompted with "the software hasn’t passed Windows Logo testing.") Click Finish when done.
+-  Browse to find the USB drivers folder. (By default, it should be at
+   C:\\Program Files\\Analog Devices Inc\\Sigma Studio\\USB Drivers.) Click OK
+   and Next to begin the installation. (Click Continue Anyway if you're prompted
+   with "the software hasn’t passed Windows Logo testing.") Click Finish when
+   done.
 
 *Connecting the audio cables: Stereo analog inputs and outputs.*
 

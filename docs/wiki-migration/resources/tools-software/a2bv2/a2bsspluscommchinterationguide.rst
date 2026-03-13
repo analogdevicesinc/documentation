@@ -4,12 +4,16 @@ A2B CommChannel Integartion Guide
 Introduction
 ============
 
-This document describes the usage of A2B communication channel module for inter-processor communication over A2B. The module enables exchange of control and command messages between the Host and a Sub node processor using the Mailbox feature of A2B Transceivers.
+This document describes the usage of A2B communication channel module for
+inter-processor communication over A2B. The module enables exchange of control
+and command messages between the Host and a Sub node processor using the Mailbox
+feature of A2B Transceivers.
 
 Scope
 -----
 
-This document is intended to assist the application developers integrating the communication channel module to their system.
+This document is intended to assist the application developers integrating the
+communication channel module to their system.
 
 Specifications
 ==============
@@ -17,7 +21,9 @@ Specifications
 Target Platform
 ---------------
 
-A2B communication channel is developed as a generic C module and hence can be ported to any platform. It is by default intended to be run on a smart Sub consisting of a controller connected to A2B Sub transceiver.
+A2B communication channel is developed as a generic C module and hence can be
+ported to any platform. It is by default intended to be run on a smart Sub
+consisting of a controller connected to A2B Sub transceiver.
 
 Features
 --------
@@ -40,15 +46,38 @@ Communication Channel Architecture
 
 The Communication Channel (CommCh) architecture is as shown in :doc:`Figure 1 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`.
 
-
 |image1|
 
 .. container:: centeralign
 
    \ **Figure 1:** Communication Channel Architecture
 
-
-The communication channel component interfaces to the application using the API functions. The communication channel executes the platform dependant I2C communication using the PAL layer. The framework must also implement the PAL for the communication channel. It creates a communication channel instance and passes the PAL context associated for the instance. Application also requests for new transmission of messages via API. All the APIs are handled by the API interface of communication channel. The engine block of communication channel is responsible for framing/de-framing of messages from application. During transmission it segments the message received from application into segments of size 4 bytes to be transmitted over mailbox using the PAL layer. Additional protocol header information is appended for assembly and error checking at the receiver. During reception the engine processes every 4-byte chunk received from mailbox and assembles the chunks into a complete message after checking the validity of each chunk based on the protocol headers. All status information is given to the application via call-backs. It is used to inform applicable of new message received, the status of a transmission request and other error information. The communication channel works in a non-blocking mode which means that application must periodically tick the communication channel. On this tick the periodic polling of mailbox interrupts from A2B transceiver is done over the I2C bus using the PAL layer. During transmission after a 4-byte chunk is written to the local mailbox, polling is used to detect the mailbox empty interrupt which indicates that the Main has read the data. On receiving this interrupt, the next 4-byte chunk from the message is transmitted. Polling is also used to check for mailbox full interrupt which indicates that new data has been written from Main. On receiving this interrupt data from mailbox is read and passed to communication engine for further processing.
+The communication channel component interfaces to the application using the API
+functions. The communication channel executes the platform dependant I2C
+communication using the PAL layer. The framework must also implement the PAL for
+the communication channel. It creates a communication channel instance and
+passes the PAL context associated for the instance. Application also requests
+for new transmission of messages via API. All the APIs are handled by the API
+interface of communication channel. The engine block of communication channel is
+responsible for framing/de-framing of messages from application. During
+transmission it segments the message received from application into segments of
+size 4 bytes to be transmitted over mailbox using the PAL layer. Additional
+protocol header information is appended for assembly and error checking at the
+receiver. During reception the engine processes every 4-byte chunk received from
+mailbox and assembles the chunks into a complete message after checking the
+validity of each chunk based on the protocol headers. All status information is
+given to the application via call-backs. It is used to inform applicable of new
+message received, the status of a transmission request and other error
+information. The communication channel works in a non-blocking mode which means
+that application must periodically tick the communication channel. On this tick
+the periodic polling of mailbox interrupts from A2B transceiver is done over the
+I2C bus using the PAL layer. During transmission after a 4-byte chunk is written
+to the local mailbox, polling is used to detect the mailbox empty interrupt
+which indicates that the Main has read the data. On receiving this interrupt,
+the next 4-byte chunk from the message is transmitted. Polling is also used to
+check for mailbox full interrupt which indicates that new data has been written
+from Main. On receiving this interrupt data from mailbox is read and passed to
+communication engine for further processing.
 
 Programmers Reference
 =====================
@@ -56,12 +85,17 @@ Programmers Reference
 Files
 -----
 
-Communication channel consists of source and header files. The header files are available in the folder *‘ADI_A2B-SSPlus_Software-RelX.Y.Z/Target/a2bcommchannel/inc/ ’* in the release package and the source folders in *‘ADI_A2B-SSPlus_Software-RelX.Y.Z /Target/a2bcommchannel/src/’*.
+Communication channel consists of source and header files. The header files are
+available in the folder
+*‘ADI_A2B-SSPlus_Software-RelX.Y.Z/Target/a2bcommchannel/inc/ ’* in the release
+package and the source folders in *‘ADI_A2B-SSPlus_Software-RelX.Y.Z
+/Target/a2bcommchannel/src/’*.
 
 Header Files
 ~~~~~~~~~~~~
 
-The header files that need to be included by the Sub application are as explained below
+The header files that need to be included by the Sub application are as
+explained below
 
 -  *adi_a2b_commch_interface.h* - Contains the message identifiers that are reserved to be exchanged by A2B Main plugin of A2B stack on the Main node with communication channel on Sub nodes. User should not modify these macros. Macros if any required for custom messages to be exchanged between Sub and Main should be declared as part of application header files.
 -  *adi_a2b_commch.h* - Contains the structures, data types and API definitions related to the APIs.
@@ -79,7 +113,8 @@ The source files required by to be included in the Sub are as below
 API Functions
 -------------
 
-This various API functions to be used on the Sub node and their purpose are summarized in below Table.
+This various API functions to be used on the Sub node and their purpose are
+summarized in below Table.
 
 +--------------------------+---------------------------------------------------------+
 | **API Function**         | **Purpose**                                             |
@@ -103,17 +138,13 @@ This various API functions to be used on the Sub node and their purpose are summ
 
    \ **Table:** API functions summary
 
-
 The detailed description of the API functions is provided in the API reference document. Refer to “Communication Channel Sub” sub-section under “Communication Channel” section in API reference document as shown in :doc:`Figure 2 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`.
-
-
 
 |image2|
 
 .. container:: centeralign
 
    \ **Figure 2:** API reference document
-
 
 API Data Types
 --------------
@@ -135,13 +166,11 @@ Initialization
 
 The application information structure used in code snippets below is as shown in :doc:`Code Snippet 1 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`. It contains the communication channel related structures to be maintained by the application.
 
-
 |image3|
 
 .. container:: centeralign
 
    \ **Code Snippet 1:** Application Information Structure for communication Channel
-
 
 The steps to initialize a communication channel on Sub node is as follows. The :doc:`Code Snippet 2 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>` shows the same.
 
@@ -158,19 +187,16 @@ The steps to initialize a communication channel on Sub node is as follows. The :
 
    \ **Code Snippet 2:** Initialization of Communication Channel at Sub
 
-
 Handling Events
 ---------------
 
 The *a2b_app_CommChCallBk* callback registered during initialization should handle the various events as shown in below code snippet 3.
-
 
 |image4|
 
 .. container:: centeralign
 
    \ **Code Snippet 3:** Communication Channel Event handling at Sub
-
 
 Periodic Ticking
 ----------------
@@ -179,10 +205,10 @@ The communication channel instance should be periodically ticked by calling the 
 
 -  Schedules the 4-byte chunk I2C mailbox writes of any messages pending for transmission.
 -  Check for the timeout of last transmitted 4-byte chunk over mailbox.
--  Polling for mailbox interrupts and initiate mailbox read once data is received.
+-  Polling for mailbox interrupts and initiate mailbox read once data is
+   received.
 
 This should be called at a period lesser than or equal to the interrupt polling period **ADI_A2B_COMMCH_INTR_POLLING_PERIOD** which is set to 1ms by default.
-
 
 |image5|
 
@@ -190,19 +216,16 @@ This should be called at a period lesser than or equal to the interrupt polling 
 
    \ **Code Snippet 4:** Periodic Ticking at Sub
 
-
 Transmission of messages
 ------------------------
 
 Application can initiate the transmission over the communication channel using the *adi_a2b_CommChTxMsg* API as shown in :doc:`Code Snippet 5 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`. The result of the transmission is indicated via a communication channel event through a callback to the application which is registered during initialization. An event type of **A2B_COMMCH_EVENT_TX_DONE** indicates confirmation of transmission and an event type of **A2B_COMMCH_EVENT_TX_TIMEOUT** indicates a timeout. The code snippet is shown in :doc:`Handling Events </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>` section as part of handling events.
-
 
 |image6|
 
 .. container:: centeralign
 
    \ **Code Snippet 5:** Transmission over Communication Channel at Sub
-
 
 Reception of messages
 ---------------------
@@ -214,17 +237,13 @@ Enable/Disable Framing
 
 Application can enable or disable framing for a communication channel instance using the *adi_a2b_app_CommChSetFraming* API as shown in :doc:`Code Snippet 6 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`.
 
-
 |image7|
 
 .. container:: centeralign
 
    \ **Code Snippet 6:** CommCh Set Framing
 
-
 Application can get the current framing information for a communication channel instance using the *adi_a2b_app_CommChGetFraming* API as shown in :doc:`Code Snippet 7 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`.
-
-
 
 |image8|
 
@@ -232,19 +251,16 @@ Application can get the current framing information for a communication channel 
 
    \ **Code Snippet 7:** CommCh Get Framing
 
-
 Sequence Diagram
 ----------------
 
 The communication channel is intended to be run a Sub node however it can be ported to a Main node as well. See :doc:`Porting Instructions </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>` section for more details. The :doc:`Figure 3 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>` shows the sequence diagram of a communication handshake between Main and Sub nodes using communication channel.
-
 
 |image9|
 
 .. container:: centeralign
 
    \ **Figure 3:** Main Sub Message Handshake Sequence
-
 
 The sequence of events is as described below.
 
@@ -260,7 +276,8 @@ The sequence of events is as described below.
 Interrupt/Polling Mode
 ----------------------
 
-This section explains how to configure CommCh to operate in either interrupt or polling mode
+This section explains how to configure CommCh to operate in either interrupt or
+polling mode
 
 A2B Main
 ~~~~~~~~
@@ -282,13 +299,11 @@ The communication channel by default is expected to run on a Sub node controller
 
 If, however a non-ADI stack is used on the Main node controller for network discovery and configuration then the communication channel should be initialized correctly with eNodeType and nTargetNodeNum. Refer to :doc:`Code Snippet 8 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>` on how to initialize the CommCh if it’s being integrated with non-ADI stack on the Main node.
 
-
 |image10|
 
 .. container:: centeralign
 
    \ **Code Snippet 8:**\ CommCh Integration with A2B Stack on Main Node
-
 
 Running the Sample Demo
 =======================
@@ -296,20 +311,21 @@ Running the Sample Demo
 ADSP-SC594
 ----------
 
-This section describes the procedure to run the sample Communication Channel demo available at *.\\Target\\examples\\advancedapp\\mboxcommch*. This example demonstrates usage of Communication channel APIs for exchanging messages between Main and a smart Sub for the following two use cases.
+This section describes the procedure to run the sample Communication Channel
+demo available at *.\\Target\\examples\\advancedapp\\mboxcommch*. This example
+demonstrates usage of Communication channel APIs for exchanging messages between
+Main and a smart Sub for the following two use cases.
 
 -  :doc:`Sub node authentication </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`
 -  :doc:`Switching between Audio sources </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`
 
 The sample demo configuration is as shown in :doc:`Figure 4 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`. The demo uses ADSP-SC594 as host processor and smart Sub, both running an instance of Communication Channel, for exchange of messages over A2B Mailbox.
 
-
 |image11|
 
 .. container:: centeralign
 
    \ **Figure 4:**\ ADSP-SC594 as Main and Smart Sub
-
 
 The A2B schematic for the demo configuration is available in *‘ADI_A2B-SSPlus_Software-RelX.Y.Z/ Schematics/SC59x/A2BSchematics/ adi_a2b_3NodeSampleDemoConfig - SmartSub.dspproj’*. The bus configuration .c file used in the Main is generated from this schematic. Refer :doc:`A2B SigmaStudio+ user guide </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide>` for customizing A2B schematics and generating new bus/ node configuration files.
 
@@ -354,7 +370,6 @@ After completing all connections, the A2B system should look as shown in :doc:`F
 
    \ **Figure 5:**\ Demo Setup
 
-
 Running sample Demo
 ^^^^^^^^^^^^^^^^^^^
 
@@ -369,8 +384,11 @@ Running sample Demo
 
 .. note::
 
-   If Emulator is used the first time: Create a new debug configuration using Run->Debug Configurations, create new session, select the processor (ADSP-SC594) and click NEXT, select Emulator and click NEXT, choose In-Circuit Emulator platform (example: ADSP-SC594 via ICE1000) and click NEXT, then click FINISH.
-
+   If Emulator is used the first time: Create a new debug configuration using
+   Run->Debug Configurations, create new session, select the processor
+   (ADSP-SC594) and click NEXT, select Emulator and click NEXT, choose
+   In-Circuit Emulator platform (example: ADSP-SC594 via ICE1000) and click
+   NEXT, then click FINISH.
 
 Demo Use-cases
 ~~~~~~~~~~~~~~
@@ -382,14 +400,16 @@ Sub Node authentication
 
 Custom Node authentication via Mailbox option was enabled for ADSP-SC594 smart Sub in the demo A2B schematic. The A2B software stack running on the ADSP-SC594 Main node sends an authentication request message with ID **A2B_COMMCH_MSG_REQ_SLV_NODE_SIGNATURE** to the smart Sub. The Sub node then responds with its node ID using message ID **A2B_COMMCH_MSG_RSP_SLV_NODE_SIGNATURE**. The Main then verifies the received Node ID against the ID specified in the schematic.
 
-The successful discovery and playback of audio from smart Sub node indicates the successful Sub node authentication using Communication channel messages.
+The successful discovery and playback of audio from smart Sub node indicates the
+successful Sub node authentication using Communication channel messages.
 
 Switching between Audio Sources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Upon running the demo, audio from the Main node plays out at Sub ADSP-SC594 post successful discovery. The audio from the AD2435WJ3LZ Sub board is also routed to the ADSP-SC594 Sub. Based on a push button command, the Main initiates a communication channel message of ID **A2B_COMMCH_MSG_REQ_XFADE_AUDIO_SRC** wherein it specifies the audio source to be played at the output. Upon receiving the message, the Sub switches the audio source as specified in the message and responds with the message ID **A2B_COMMCH_MSG_RSP_SLV_NODE_SIGNATURE**.
 
-The successful switching of audio source upon push button press indicates the successful exchanges Communication channel messages for audio source switch.
+The successful switching of audio source upon push button press indicates the
+successful exchanges Communication channel messages for audio source switch.
 
 Terminology
 ===========
@@ -397,7 +417,6 @@ Terminology
 .. container:: centeralign
 
    \ **Table:** Terminology
-
 
 +-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Term**  | **Description**                                                                                                                                                                                                                                                                                               |

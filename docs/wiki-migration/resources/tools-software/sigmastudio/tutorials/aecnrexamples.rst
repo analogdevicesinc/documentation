@@ -32,6 +32,7 @@ SigmaStudio project for ADAU1452 evaluation board (EVAL-ADAU1452MINIZ). *This al
 
 SigmaStudio project for ADAU1467 evaluation board (EVAL-ADAU1467Z)
 
-SigmaStudio project for ADAU1467 evaluation board with microphone canvas (EVAL-ADAU1467Z & EVAL-MICCANVASZ)
+SigmaStudio project for ADAU1467 evaluation board with microphone canvas
+(EVAL-ADAU1467Z & EVAL-MICCANVASZ)
 
 .. |Algorithm overview| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/lowlatencynr

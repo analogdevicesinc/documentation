@@ -9,7 +9,7 @@ After migrating to the latest A2B stack, export the adi_a2b_busconfig.c file fro
 
 .. note::
 
-   If build errors occur, they can be resolved by making the necessary changes to the source code.
-
+   If build errors occur, they can be resolved by making the necessary changes
+   to the source code.
 
 **PREV :** :doc:`DTS Overlay </wiki-migration/resources/tools-software/a2bv2/a2braspberrypi/dtsoverlay>` **NEXT :** :doc:`SigmaStudioPlus Example Schematic for 242x </wiki-migration/resources/tools-software/a2bv2/a2braspberrypi/schematic242x>`

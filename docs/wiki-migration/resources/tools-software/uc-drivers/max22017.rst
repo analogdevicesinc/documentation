@@ -14,14 +14,14 @@ The :adi:`MAX22017` is a two-channel industrial-grade configurable analog output
 GitHub Driver Documentation
 ---------------------------
 
-Any other driver related documentation can be found on GitHub by following the next link:
+Any other driver related documentation can be found on GitHub by following the
+next link:
 
 .. container:: round
 
    
    -  :git-no-OS:`Documentation of MAX22017 Driver. <drivers/dac/max22017/README.rst>`
    
-
 
 Downloads
 ---------
@@ -33,4 +33,3 @@ Downloads
    -  :git-no-OS:`Implementation of MAX22017 Driver. <drivers/dac/max22017/max22017.c>`
    -  :git-no-OS:`Header file of MAX22017 Driver. <drivers/dac/max22017/max22017.h>`
    
-

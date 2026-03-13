@@ -77,16 +77,34 @@ DSP Parameter Information
 Algorithm Information
 ---------------------
 
-The PushButton Volume control allows two GPIO inputs from push buttons to control a custom volume curve. The volume curve can be any linear, logarithmic, or custom curve designed with any number of points. When the "Up" pushbutton is pressed the volume will increase, indexing up through table values. When the "Down" pushbutton is pressed the volume will decrease, indexing down through table values. When the limit index is reached on either end, the volume will just be held.
+The PushButton Volume control allows two GPIO inputs from push buttons to
+control a custom volume curve. The volume curve can be any linear, logarithmic,
+or custom curve designed with any number of points. When the "Up" pushbutton is
+pressed the volume will increase, indexing up through table values. When the
+"Down" pushbutton is pressed the volume will decrease, indexing down through
+table values. When the limit index is reached on either end, the volume will
+just be held.
 
-When a pushbutton is held up or down, the algorithm will scroll through the volume gain points at rates determined by the hold and repeat times. The hold time designates how long the pushbutton must be held until a new repeat pulse is triggered. The repeast pulse determines the interval between incrementing or decrementing through the volume points while the button is held.
+When a pushbutton is held up or down, the algorithm will scroll through the
+volume gain points at rates determined by the hold and repeat times. The hold
+time designates how long the pushbutton must be held until a new repeat pulse is
+triggered. The repeast pulse determines the interval between incrementing or
+decrementing through the volume points while the button is held.
 
-For the PushButton Volume with Mute, there is the additional functionality that when both push buttons are pressed simultaneously, the output will be muted. Any subsequent signal from the pushbutton will reactive the volume and it will increment or decrement from the last volume value before muting.
+For the PushButton Volume with Mute, there is the additional functionality that
+when both push buttons are pressed simultaneously, the output will be muted. Any
+subsequent signal from the pushbutton will reactive the volume and it will
+increment or decrement from the last volume value before muting.
 
 Example
 -------
 
-The following image shows how two GPIO inputs are used to control the volume algorithm in the PushButton Volume block. The PushButton Volume algorithm has been grown in order to support stereo audio. A mux switch allows comparison between the direct signal from the Inputs, and the volume adjusted signal, routed to the Outputs. The Interface Read and Write blocks allow the last volume level to be saved and recalled.
+The following image shows how two GPIO inputs are used to control the volume
+algorithm in the PushButton Volume block. The PushButton Volume algorithm has
+been grown in order to support stereo audio. A mux switch allows comparison
+between the direct signal from the Inputs, and the volume adjusted signal,
+routed to the Outputs. The Interface Read and Write blocks allow the last volume
+level to be saved and recalled.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/pushvolmutepic2.png
    :alt: pushvolmutepic2.png

@@ -2,7 +2,6 @@
 
    These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
-
 Linux for SC5xx: Frequently Asked Questions
 ===========================================
 

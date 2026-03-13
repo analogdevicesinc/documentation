@@ -7,14 +7,15 @@ Connections
 -----------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/miniboard.png
-   :width: 600px
+   :width: 600
 
 ADSP-SC589 MINI Board Connections
 
 Settings
 --------
 
-The board settings for running SigmaStudio on ADSP-SC589 MINI BOARD, using the Default Application is given in the below tables.
+The board settings for running SigmaStudio on ADSP-SC589 MINI BOARD, using the
+Default Application is given in the below tables.
 
 ====== ========
 Switch Setting

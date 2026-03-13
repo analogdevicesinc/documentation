@@ -7,9 +7,17 @@ PTP Introduction
 Precision Time Protocol(PTP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Precision Time Protocol (PTP) is a high-precision time synchronization protocol for networked measurement and control systems. It is defined in the IEEE 1588 standard, which is designed for local systems requiring very high accuracies - beyond those attainable using NTP (Network Time Protocol). PTP makes it possible to synchronize distributed clocks with sub-microsecond accuracy via Ethernet networks, with relatively low demands on the local clocks and the network and computing capacity.
+The Precision Time Protocol (PTP) is a high-precision time synchronization
+protocol for networked measurement and control systems. It is defined in the
+IEEE 1588 standard, which is designed for local systems requiring very high
+accuracies - beyond those attainable using NTP (Network Time Protocol). PTP
+makes it possible to synchronize distributed clocks with sub-microsecond
+accuracy via Ethernet networks, with relatively low demands on the local clocks
+and the network and computing capacity.
 
-ADSP-SC573, SC584 and SC589 all support PTP. But only EMAC0 (the 10/100/1000 Mbps port) supports PTP, EMAC1 (the 10/100 Mbps port) is not capable of PTP operation.
+ADSP-SC573, SC584 and SC589 all support PTP. But only EMAC0 (the 10/100/1000
+Mbps port) supports PTP, EMAC1 (the 10/100 Mbps port) is not capable of PTP
+operation.
 
 PTP Software Configuration
 --------------------------
@@ -17,7 +25,9 @@ PTP Software Configuration
 Package configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-You should also enable the linuxptp test program to assist with testing. Add the linuxptp program in the filesystem images, it's enabled in adsp-sc5xx-full image by default.
+You should also enable the linuxptp test program to assist with testing. Add the
+linuxptp program in the filesystem images, it's enabled in adsp-sc5xx-full image
+by default.
 
 ::
 
@@ -54,14 +64,18 @@ The Linux kernel can be configured using the following command:
 Device tree configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The timestamps that are the basis of PTP can be acquired with greater accuracy when they are captured by the ethernet PHY hardware. The PHY interface can support hardware timestamps, the default phy-mode is RGMII.
+The timestamps that are the basis of PTP can be acquired with greater accuracy
+when they are captured by the ethernet PHY hardware. The PHY interface can
+support hardware timestamps, the default phy-mode is RGMII.
 
-The phy-mode also can be changed to "rmii" in the device tree header in the linux kernel source arch/arm/boot/dts/sc589-ezkit.dts and other board specific sc5xx.dts files.
+The phy-mode also can be changed to "rmii" in the device tree header in the
+linux kernel source arch/arm/boot/dts/sc589-ezkit.dts and other board specific
+sc5xx.dts files.
 
 .. note::
 
-   ... : ellipsis, means other properties in EMAC0 node stay the same - : minus, means delete this property + : plus, means add this property
-
+   ... : ellipsis, means other properties in EMAC0 node stay the same - : minus,
+   means delete this property + : plus, means add this property
 
 Run "**bitbake linux-adi -c devshell**" to enter into linux kernel source code and then change the dts file.
 
@@ -87,11 +101,14 @@ Preliminary work
 
 **1) Hardware Setup**
 
-Two ADSP-SC5xx boards are required. One board act as a master, and the other act as a slave. The two boards are connected by their respective EMAC0 ports using a standard crossover network cable.
+Two ADSP-SC5xx boards are required. One board act as a master, and the other act
+as a slave. The two boards are connected by their respective EMAC0 ports using a
+standard crossover network cable.
 
 **2) Master's MAC address must be different from slave's**
 
-In order to make the master's and the slave's MAC address different, change the slave's address in U-Boot.
+In order to make the master's and the slave's MAC address different, change the
+slave's address in U-Boot.
 
 ::
 

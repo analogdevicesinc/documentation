@@ -3,7 +3,9 @@ Link/Compile/Download
 
 :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
 
-Before a complete design can be evaluated, it must be linked, compiled, and downloaded to the hardware. To perform all these steps in a single operation, use the Link Compile Download command described below.
+Before a complete design can be evaluated, it must be linked, compiled, and
+downloaded to the hardware. To perform all these steps in a single operation,
+use the Link Compile Download command described below.
 
 --------------
 
@@ -14,7 +16,8 @@ Link:
 
 The link operation analyzes the schematic's signal flow (blocks and wires), checks for any in design errors, generates the program flow, and sets algorithm sampling rates and DSP associations. To link a project, press the **Link Project** toolbar button, select **Action - Link Project** from the main menu, or press **Ctrl+I**.
 
-When linking is complete, the Link Window opens, displaying the project's algorithm and node list information.
+When linking is complete, the Link Window opens, displaying the project's
+algorithm and node list information.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/linkcompilepic2.png
    :alt: linkcompilepic2.png
@@ -65,34 +68,41 @@ If download is successful, the schematic status bar below the workspace will tur
 
 **Schematic Status Bar:**
 
-The schematic status bar and application status bars display the state of the schematic design as well as indicating USB communication status. There are five status states:
-
+The schematic status bar and application status bars display the state of the
+schematic design as well as indicating USB communication status. There are five
+status states:
 
 |linkcompilepic6.png|
 
 .. tip::
 
-   Note: When working with evaluation hardware, any time you make edits in the schematic (e.g. add/remove blocks, add/remove wires, add/remove algorithms) you must recompile and download the project before these changes will take effect in the hardware program. If the application status bar does not indicate "Active Downloaded", the downloaded program and schematic design are out of sync.
-
+   Note: When working with evaluation hardware, any time you make edits in the
+   schematic (e.g. add/remove blocks, add/remove wires, add/remove algorithms)
+   you must recompile and download the project before these changes will take
+   effect in the hardware program. If the application status bar does not
+   indicate "Active Downloaded", the downloaded program and schematic design are
+   out of sync.
 
 Download Options (ADAU145x)
 ---------------------------
 
-Link Compile Download will download Regsiters, Program and Data from the schematic.
+Link Compile Download will download Regsiters, Program and Data from the
+schematic.
 
 Register Download
 ~~~~~~~~~~~~~~~~~
 
-Download of registers can be disabled upon download in the IC Context menu as shown below.
-
+Download of registers can be disabled upon download in the IC Context menu as
+shown below.
 
 |image1|
 
 PLL Reset
 ~~~~~~~~~
 
-Sometimes user does not want the ADAU145x clock to be reset during download. This can be disabled through the IC Context menu as shown below. After disabling download will not reset the PLL.
-
+Sometimes user does not want the ADAU145x clock to be reset during download.
+This can be disabled through the IC Context menu as shown below. After disabling
+download will not reset the PLL.
 
 |image2|
 

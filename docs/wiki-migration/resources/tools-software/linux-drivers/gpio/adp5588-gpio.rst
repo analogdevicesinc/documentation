@@ -21,7 +21,7 @@ Configuration
 -------------
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/adp5588_typ_op.png
-   :width: 600px
+   :width: 600
 
 Software configurable features
 ------------------------------
@@ -52,23 +52,39 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
-
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
 <source trunk/include/linux/i2c/adp5588.h:/i2c_board_info/-EOF c linux-kernel>
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5588_gpio_data{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5588_gpio_data{} c
+linux-kernel>
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 .. code:: C
 
@@ -85,12 +101,13 @@ For more information see: `instantiating-devices.rst </git.linux.org>documentati
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
-   The ADP5588 Driver depends on CONFIG_I2C IRQ-Chip interrupt controller support is not available in case this driver is build as Module
-
+   The ADP5588 Driver depends on CONFIG_I2C IRQ-Chip interrupt controller
+   support is not available in case this driver is build as Module
 
 Device Drivers  --->
 [*] GPIO Support  --->
@@ -114,11 +131,11 @@ Device Drivers  --->
 
 ====== Hardware configuration ======
 
-
 |software-driver-linux-adp5588_demo_brd_and_stamp.jpg|
 
 There is no dedicated Blackfin STAMP evaluation board for the ADP5588.
-During test and driver development we used the ADP5588 Demo Mother/Daughter Board.
+During test and driver development we used the ADP5588 Demo Mother/Daughter
+Board.
 
 It can be easily wired to the Blackfin STAMP TWI/I2C header.
 
@@ -132,12 +149,14 @@ It can be easily wired to the Blackfin STAMP TWI/I2C header.
 
 .. tip::
 
-   On the ADP5588 Demo Mother Board replace R30 (10kOhm PULL-UP resistor on /INTB strobe) with a 1-3kOhm resistor.
-   The 10kOhm resistor is too weak - Blackfin might see an additional falling edge interrupt on the rising edge of /INTB.
-
+   On the ADP5588 Demo Mother Board replace R30 (10kOhm PULL-UP resistor on
+   /INTB strobe) with a 1-3kOhm resistor.
+   The 10kOhm resistor is too weak - Blackfin might see an additional falling
+   edge interrupt on the rising edge of /INTB.
 
 ====== Driver testing ======
-When the driver is loaded, you should see positive output that it found the ADP5588 GPIO device.
+When the driver is loaded, you should see positive output that it found the
+ADP5588 GPIO device.
 
 <code>
 root:/> **modprobe adp5588-gpio**

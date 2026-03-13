@@ -1,8 +1,16 @@
-
 Analog Devices Kuiper Linux
 ===========================
 
-Analog Devices Kuiper Linux is a distribution based on Raspbian for the Raspberry Pi. It incorporates Linux device drivers for ADI products, and is created with ease of use in mind. The reasoning behind creating this distribution is to minimize the barriers to integrating ADI hardware devices into a Linux-based system. When starting with a generic Linux distribution, the kernel typically would have to be rebuilt with the desired drivers enabled. While this is not difficult for an engineer that is familiar with the process, it can be a daunting task even when everything goes right. ADI Kuiper Linux solves this problem, and includes a host of additional applications, software libraries, and utilities including:
+Analog Devices Kuiper Linux is a distribution based on Raspbian for the
+Raspberry Pi. It incorporates Linux device drivers for ADI products, and is
+created with ease of use in mind. The reasoning behind creating this
+distribution is to minimize the barriers to integrating ADI hardware devices
+into a Linux-based system. When starting with a generic Linux distribution, the
+kernel typically would have to be rebuilt with the desired drivers enabled.
+While this is not difficult for an engineer that is familiar with the process,
+it can be a daunting task even when everything goes right. ADI Kuiper Linux
+solves this problem, and includes a host of additional applications, software
+libraries, and utilities including:
 
 -  IIO Oscilloscope (basic GUI for debugging IIO devices)
 -  IIOD (exposes IIO devices over a network connection to a remote host)
@@ -11,7 +19,8 @@ Analog Devices Kuiper Linux is a distribution based on Raspbian for the Raspberr
 -  libm2k (software API for the ADALM2000 multifunction USB instrument)
 -  GNURadio (including GR-IIO blocks, ADALM2000, ADALM-Pluto blocks)
 
-While Rasbpian targets Raspberry Pi platform boards, ADI Kuiper Linux supports several other platforms including the Xilinx and Intel FPGAs.
+While Rasbpian targets Raspberry Pi platform boards, ADI Kuiper Linux supports
+several other platforms including the Xilinx and Intel FPGAs.
 
 The `AD-FMC-SDCARD <https://www.mouser.com/584-AD-FMC-SDCARD>`_ or `AD-FMC-SDCARD <https://www.digikey.com/AD-FMC-SDCARD-ND>`_ is an `microSD Card <https://en.wikipedia.org/wiki/SD_card>`_ and SD Card adapter (to use the Micro SD Card in an SD Card Slot) comes pre-formatted with an ADI Kuiper Linux image on it. This will usually ship with many evaluation boards.
 
@@ -21,7 +30,6 @@ The `AD-FMC-SDCARD <https://www.mouser.com/584-AD-FMC-SDCARD>`_ or `AD-FMC-SDCAR
 
    
    You will also need to `update the image <https://wiki.analog.com/>`_, since the pre-formatted image will be 6 or more months old, and issues have been fixed since then.
-
 
 Requirements
 ------------
@@ -36,22 +44,25 @@ Download Linux Image
 
 The **BOLD** is what you should type. It's not too much more than `Special Agent Oso <https://en.wikipedia.org/wiki/Special Agent Oso>`_'s three special steps, and it also allows you to go for that specialty coffee you have been craving.
 
-For different platforms you'll need different images. Currently we provide a single pre-build images, that can work on all the platforms we support.
+For different platforms you'll need different images. Currently we provide a
+single pre-build images, that can work on all the platforms we support.
 
 .. important::
 
    Make sure you unzip the image using either `7-zip <https://www.7-zip.org/>`_ or on Linux it can be done via command-line xz -d <image_name>.img.xz. The actual file that needs to be dumped to the SD card has to have the \*.img extension.
 
-
 .. important::
 
-   Your SD-card needs to be at least 16 GB for releases 2019-R2 and newer. Or 8 GB for older releases.
-
+   Your SD-card needs to be at least 16 GB for releases 2019-R2 and newer. Or 8
+   GB for older releases.
 
 .. warning::
 
-   If your computer has security restrictions imposed by your company's IT department, which prevent your from writing data to SD-cards (or the data is encrypted when written on the SD-card), then consider using a computer that doesn't have such restrictions, or communicating with your IT department to find a solution.
-
+   If your computer has security restrictions imposed by your company's IT
+   department, which prevent your from writing data to SD-cards (or the data is
+   encrypted when written on the SD-card), then consider using a computer that
+   doesn't have such restrictions, or communicating with your IT department to
+   find a solution.
 
 .. admonition:: Download
    :class: download
@@ -60,8 +71,8 @@ For different platforms you'll need different images. Currently we provide a sin
    -  :doc:`Download Release Images </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
    
 
-
-Now, depending if you are using Linux or Windows, follow these instructions to write the file to your SD card.
+Now, depending if you are using Linux or Windows, follow these instructions to
+write the file to your SD card.
 
 -  :doc:`linux_hosts </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
 -  :doc:`windows_hosts </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
@@ -71,8 +82,11 @@ Preparing the image: FPGA Carrier
 
 .. warning::
 
-   If your computer has security restrictions imposed by your company's IT department, which prevent your from writing data to SD-cards (or the data is encrypted when written on the SD-card), then consider using a computer that doesn't have such restrictions, or communicating with your IT department to find a solution.
-
+   If your computer has security restrictions imposed by your company's IT
+   department, which prevent your from writing data to SD-cards (or the data is
+   encrypted when written on the SD-card), then consider using a computer that
+   doesn't have such restrictions, or communicating with your IT department to
+   find a solution.
 
 The SD card includes a few images on it's ``BOOT`` partition. One of these images needs to be selected before the system will boot properly. In order to run any of these images, just copy the images from the subdirectory into the base directory, and then boot it. For newer versions of the SD card, uImage (Image for ZynqMP) files are in subdirectories for FPGA board generation. Be sure to move the correct uImage (Image for ZynqMP) into the root of the ``BOOT`` partition as well. So the root of 'BOOT' should contain:
 
@@ -260,8 +274,10 @@ Supported images include:
 
 .. tip::
 
-   We have heard of some versions of Windows, and some specific SD readers/writers that don't like the FAT parition that we make on the SD Cards - sorry - we have no idea, and have no way to replicate things (that we have found). If it doesn't work for you - try a different windows machine.
-
+   We have heard of some versions of Windows, and some specific SD
+   readers/writers that don't like the FAT parition that we make on the SD Cards
+   - sorry - we have no idea, and have no way to replicate things (that we have
+   found). If it doesn't work for you - try a different windows machine.
 
 Boot
 ----
@@ -276,18 +292,21 @@ Boot
 
    For Intel SoC the preloader and bootloader (1M) partition must be updated, see more info on :doc:`Altera SOC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/altera_soc_images>`\
 
-
 .. tip::
 
-   the U-Boot terminals below are for, well - U-Boot. If you see a kernel booting, you aren't running in U-Boot. This means reset the board, and when the system says "Hit any key to stop autoboot" - hit any key.
+   the U-Boot terminals below are for, well - U-Boot. If you see a kernel
+   booting, you aren't running in U-Boot. This means reset the board, and when
+   the system says "Hit any key to stop autoboot" - hit any key.
 
-
-First you have to use the default environment from the SD card (otherwise the system may not boot):
+First you have to use the default environment from the SD card (otherwise the
+system may not boot):
 
 -  `U-Boot <https://u-boot.readthedocs.io>`_ ``**env default -a**
    **saveenv**``
 
-Then you need to update the MAC address of the board. For some reason, Xilinx doesn't do this on their boards, and you will not get the proper MAC address. Depending on where to do it:
+Then you need to update the MAC address of the board. For some reason, Xilinx
+doesn't do this on their boards, and you will not get the proper MAC address.
+Depending on where to do it:
 
 -  `U-Boot <https://u-boot.readthedocs.io>`_ ``**setenv ethaddr XX:XX:XX:XX:XX:XX** (whatever is on the sticker on the board
    **saveenv**
@@ -301,9 +320,6 @@ Then you need to update the MAC address of the board. For some reason, Xilinx do
    
    These boot messages may change based on your specific platform.
    
-
-
-
 
 .. collapsible:: **Complete Boot Log** (Click to expand)
 
@@ -849,24 +865,23 @@ Then you need to update the MAC address of the board. For some reason, Xilinx do
       Last login: Fri Jun 17 14:45:22 BST 2022 on ttyS0
       root@analog:~#
 
-
-
-
-
 .. important::
 
-   Even thought this is Linux, this is a persistent file systems. You have to take care not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with:
+   Even thought this is Linux, this is a persistent file systems. You have to
+   take care not to corrupt the file system -- please shut down things, don't
+   just turn off the power switch. Depending on your monitor, the standard power
+   off could be hiding. You can do this from the terminal as well with:
 
    | ``sudo shutdown -h now``
    | or
    | ``sudo poweroff``
    
 
-
 Users and Passwords
 ~~~~~~~~~~~~~~~~~~~
 
-The default user is the "analog" user, the password for this user is "analog". The password for the "root" account is "analog" as well.
+The default user is the "analog" user, the password for this user is "analog".
+The password for the "root" account is "analog" as well.
 
 ====== ========
 User   Password
@@ -884,10 +899,11 @@ Staying up to date
 
    
    -  Userspace Tools (GUI/tools, in the Linux rootfs).
-   -  ZYNQ Processing System / FPGA Boot Files & Linux kernel (the FAT32 BOOT partition).
+   -  ZYNQ Processing System / FPGA Boot Files & Linux kernel (the FAT32 BOOT
+      partition).
    
-   Upgrading one side, without upgrading the other might cause more problems than it solves. If you are upgrading, please upgrade both.
-
+   Upgrading one side, without upgrading the other might cause more problems
+   than it solves. If you are upgrading, please upgrade both.
 
 Staying up to date is a combination of:
 
@@ -903,14 +919,20 @@ If you need to use a proxy for any of these:
 User Space Tools
 ^^^^^^^^^^^^^^^^
 
-There are a number of ADI provided tools in the file system. There is an easy way to rebuild these projects from source. The only requirement is an healthy image and active Internet connection.
+There are a number of ADI provided tools in the file system. There is an easy
+way to rebuild these projects from source. The only requirement is an healthy
+image and active Internet connection.
 
 In order to update all ADI tools - simply call the update script as shown below: In case you only want to update a certain project, the script accepts a single parameter, the ADI github project name. (https://github.com/analogdevicesinc)
 
 .. tip::
 
-   If you are using an old image & old update tools script - you may need to run the update tools script twice (the first time it updates the update script, and the second time it updates everything else). This has been resolved in the most recent update script (the script updates itself, and switches over to the new one), so you only need to do this if you are using an older version.
-
+   If you are using an old image & old update tools script - you may need to run
+   the update tools script twice (the first time it updates the update script,
+   and the second time it updates everything else). This has been resolved in
+   the most recent update script (the script updates itself, and switches over
+   to the new one), so you only need to do this if you are using an older
+   version.
 
 .. container:: box bggreen
 
@@ -922,13 +944,9 @@ In order to update all ADI tools - simply call the update script as shown below:
       root@analog:~# adi_update_tools.sh
    
 
-
-
-
 .. collapsible:: **Complete Update Tools Log** (Click to expand)
 
    ::
-
 
       2022-05-06 14:35:15 URL: http://github.com/analogdevicesinc 200 OK
         Updating linux_image_ADI-scripts BRANCH origin/master 
@@ -1222,12 +1240,14 @@ In order to update all ADI tools - simply call the update script as shown below:
       xdg-icon-resource uninstall --noupdate --size 128 adi-osc
       ....
 
-
-
 ZYNQ Processing System / FPGA Boot Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The default ADI ZYNQ image supports a variety of ZYNQ boards and reference designs. In order to keep those boot files up to date. There is a another script that downloads the latest builds from the ADI Wiki page and installs them onto the FAT32 partition on the SD Card. The only requirement is a healthy image and active Internet connection.
+The default ADI ZYNQ image supports a variety of ZYNQ boards and reference
+designs. In order to keep those boot files up to date. There is a another script
+that downloads the latest builds from the ADI Wiki page and installs them onto
+the FAT32 partition on the SD Card. The only requirement is a healthy image and
+active Internet connection.
 
 In order to update all ADI tools, simply call the **adi_update_boot.sh** script as shown below:
 
@@ -1241,13 +1261,9 @@ In order to update all ADI tools, simply call the **adi_update_boot.sh** script 
       root@analog:~# adi_update_boot.sh
    
 
-
-
-
 .. collapsible:: **Complete Update Boot Log** (Click to expand)
 
    ::
-
 
       Verifying if ./adi_update_boot.sh is up to date...
       HEAD is now at 425510e adi_update_boot.sh: Replace windows carrige/return
@@ -1281,13 +1297,10 @@ In order to update all ADI tools, simply call the **adi_update_boot.sh** script 
       Saving to: ‘latest_boot_partition.tar.gz’
       ...
 
-
-
-
-
 .. note::
 
-   It may happen that you have to copy manually the boot files to complete the update.
+   It may happen that you have to copy manually the boot files to complete the
+   update.
 
    | To do so, plug the SD card into your computer, and:
    
@@ -1295,10 +1308,13 @@ In order to update all ADI tools, simply call the **adi_update_boot.sh** script 
    -  Copy ${CONFIG}/BOOT.BIN to BOOT.BIN on the root of the SD card,
    -  Copy common/uImage to uImage on the root of the SD card.
    
-   (Replace ${CONFIG} with the config name that applies in your case, e.g. "zynq-zed-adv7511-ad9361" for a FMCOMMS2/3 on a ZedBoard.)
+   (Replace ${CONFIG} with the config name that applies in your case, e.g.
+   "zynq-zed-adv7511-ad9361" for a FMCOMMS2/3 on a ZedBoard.)
 
-
-The device tree is a data structure for describing hardware. Rather than hard coding every detail of a device into an operating system, many aspect of the hardware can be described in a data structure that is passed to the operating system at boot time.
+The device tree is a data structure for describing hardware. Rather than hard
+coding every detail of a device into an operating system, many aspect of the
+hardware can be described in a data structure that is passed to the operating
+system at boot time.
 
 For your convenience – all device tree files (dtb) for our designs are included in the SD Card boot partition. Sometimes it's desired to change certain device tree properties permanently.
 
@@ -1306,9 +1322,10 @@ For example a custom board has a different reference clock.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/dts-dtb.png
    :align: center
-   :width: 800px
+   :width: 800
 
-#. Mount the FAT32 Boot partition by clicking on the 537MB Volume Icon on the desktop
+#. Mount the FAT32 Boot partition by clicking on the 537MB Volume Icon on the
+desktop
 #. Open a shell by clicking ion the Terminal Icon on the desktop (or CTRL+ALT+t)
 #. Now convert the devictree.dtb into a dts file
 #. Edit the file (mousepad or vi)
@@ -1332,8 +1349,6 @@ For example a custom board has a different reference clock.
       analog@analog:/media/analog/BOOT$ 
    
 
-
-
 Accessing Files
 ~~~~~~~~~~~~~~~
 
@@ -1347,9 +1362,13 @@ The only thing you need to do is:
 -  Plug in a network cable (network with DHCP)
 -  Open a serial remote console or on the target itself type ``ifconfig``
 -  Now you know your IP address (inet addr:XXX.XXX.XXX.XXX)
--  On Windows Internet Explorer type following URL \\\\XXX.XXX.XXX.XXX or use the Map Network Drive functionality the path is: \\\\XXX.XXX.XXX.XXX\\ADI Linux Image
+-  On Windows Internet Explorer type following URL \\\\XXX.XXX.XXX.XXX or use
+   the Map Network Drive functionality the path is: \\\\XXX.XXX.XXX.XXX\\ADI
+   Linux Image
 
-By default, only read access is possible. If you want to be able to copy files onto the image over the network share, the permissions need to be changed first. This can be done by running the following command on the board:
+By default, only read access is possible. If you want to be able to copy files
+onto the image over the network share, the permissions need to be changed first.
+This can be done by running the following command on the board:
 
 .. container:: box bggreen
 
@@ -1361,13 +1380,14 @@ By default, only read access is possible. If you want to be able to copy files o
       sudo chmod 777 /media/*
    
 
-
-Be aware that with this change anybody on your network will now be able to write to the image.
+Be aware that with this change anybody on your network will now be able to write
+to the image.
 
 From Linux host
 ^^^^^^^^^^^^^^^
 
-Use rsync, or ssh, or scp, or just plug in the SD card to your Linux machine, and mount the ext4 file system. If you really need help - ask.
+Use rsync, or ssh, or scp, or just plug in the SD card to your Linux machine,
+and mount the ext4 file system. If you really need help - ask.
 
 Preparing the Image: Raspberry Pi
 ---------------------------------
@@ -1375,14 +1395,29 @@ Preparing the Image: Raspberry Pi
 Hardware Configuration
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The system will likely need to be configured according to what devices are connected to the platform board (for example, an AD7124-8 ADC connected to a Raspberry Pi) The most straightforward way to do this for Raspberry Pi is to edit the config.txt file, which is located in the boot partition. This is a FAT partition that is accessible in Linux, Windows, or MacOS. Any text editor can be used, including the Mousepad editor that is included with Kuiper Linux. Using the Raspberry Pi itself also avoids problems with USB encryption, often present on company computers. Connect a keyboard, mouse, and monitor to the Raspberry Pi and connect power. The ADI Kuiper Linux desktop should appear. Before editing, it is a good idea to make a backup of the original file, just in case something goes wrong (which it won't, but still...) Open a terminal and enter the following command (noting that "analog@analog:~ $" is the prompt, and does not need to be typed):
+The system will likely need to be configured according to what devices are
+connected to the platform board (for example, an AD7124-8 ADC connected to a
+Raspberry Pi) The most straightforward way to do this for Raspberry Pi is to
+edit the config.txt file, which is located in the boot partition. This is a FAT
+partition that is accessible in Linux, Windows, or MacOS. Any text editor can be
+used, including the Mousepad editor that is included with Kuiper Linux. Using
+the Raspberry Pi itself also avoids problems with USB encryption, often present
+on company computers. Connect a keyboard, mouse, and monitor to the Raspberry Pi
+and connect power. The ADI Kuiper Linux desktop should appear. Before editing,
+it is a good idea to make a backup of the original file, just in case something
+goes wrong (which it won't, but still...) Open a terminal and enter the
+following command (noting that "analog@analog:~ $" is the prompt, and does not
+need to be typed):
 
 ::
 
    analog@analog:~ $ sudo cp /boot/config.txt /boot/config.backup
    analog@analog:~ $ sudo mousepad /boot/config.txt
 
-This will bring up the text editor. At this point, the appropriate device tree overlays can be included, for example, add the following line to enable the ADXL345 3-axis SPI accelerometer, noting that the lirc-rpi lines are shown for reference, and any line beginning with "#" is ignored:
+This will bring up the text editor. At this point, the appropriate device tree
+overlays can be included, for example, add the following line to enable the
+ADXL345 3-axis SPI accelerometer, noting that the lirc-rpi lines are shown for
+reference, and any line beginning with "#" is ignored:
 
 ::
 
@@ -1390,11 +1425,15 @@ This will bring up the text editor. At this point, the appropriate device tree o
    #dtoverlay=lirc-rpi
    dtoverlay=rpi-adxl345
 
-This usually represents a default overlay, with SPI port and interrupt mapping defined in the kernel source. A number of other overlays are included with Kuiper Linux, for individual devices and various reference designs. Alternative configurations can be created by cloning and editing the appropriate dts file.
+This usually represents a default overlay, with SPI port and interrupt mapping
+defined in the kernel source. A number of other overlays are included with
+Kuiper Linux, for individual devices and various reference designs. Alternative
+configurations can be created by cloning and editing the appropriate dts file.
 
 After editing config.txt, reboot for changes to take effect.
 
-If any IIO devices are attached and were enabled in config.txt, run iio_info to verify that the drivers loaded properly. Example:
+If any IIO devices are attached and were enabled in config.txt, run iio_info to
+verify that the drivers loaded properly. Example:
 
 ::
 
@@ -1424,12 +1463,27 @@ Copyright (c) 2022 Raspberry Pi (Trading) Ltd.
 
 All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
 
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
 
-3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+3. Neither the name of the copyright holder nor the names of its contributors
+   may be used to endorse or promote products derived from this software without
+   specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

@@ -4,7 +4,8 @@ AD40xx/ADAQ4001/ADAQ4003 User Guide
 Introduction
 ------------
 
-This document describes the No-OS software used to control the AD4003 part and includes an example of how to initialize a AD4003 part.
+This document describes the No-OS software used to control the AD4003 part and
+includes an example of how to initialize a AD4003 part.
 
 Overview
 --------
@@ -76,7 +77,8 @@ The reference design uses an integrated pulse generator to synchronise the captu
 Software Setup
 --------------
 
-In order to perform the software setup the user has to go through the following steps:
+In order to perform the software setup the user has to go through the following
+steps:
 
 -  Confirm that you have the right tools (the reference design requires XSDK)
 -  Clone the No-OS GitHub repository (the project is located at :git-no-OS:`projects/ad400x-fmcz` )
@@ -90,7 +92,8 @@ The driver has two modes of operation:
 -  single conversion mode
 -  offload mmode
 
-In single conversion mode a single sample is read from the ADC, while in offload mode a buffer is loaded with a user specified number.
+In single conversion mode a single sample is read from the ADC, while in offload
+mode a buffer is loaded with a user specified number.
 
 To switch between these two modes this define must be modified:
 
@@ -166,7 +169,6 @@ HDL Downloads
    -  :git-hdl:`PulSAR ADC HDL Project. <projects/pulsar_adc>`
    
 
-
 No-OS Downloads
 ---------------
 
@@ -176,4 +178,3 @@ No-OS Downloads
    
    -  :git-no-OS:`PulSAR ADC No-OS Project. <drivers/adc/pulsar_adc>`
    
-

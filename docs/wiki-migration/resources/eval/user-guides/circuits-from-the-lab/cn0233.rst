@@ -4,16 +4,31 @@ CN0233 User Guide (DEPRECATED)
 .. important::
 
    
-   This reference design has been RETIRED or DEPRECATED, which means this board is no longer supported or being sold by Analog Devices.
+   This reference design has been RETIRED or DEPRECATED, which means this board
+   is no longer supported or being sold by Analog Devices.
    
    This page is here for historical/reference purposes only.
    
 
-
 OVERVIEW
 --------
 
-Industrial and instrumentation systems, as well as programmable logic controllers (PLCs) and distributed control systems (DCS), must often control outputs, which can be both current controlled (4 mA to 20 mA), and voltage controlled (up to ±10 V). Typically, such designs also need to be isolated from the local system controller to protect against ground loops and also to ensure robustness against external events. Traditional solutions use discrete ICs for both power and digital isolation. When multichannel isolation is needed, the cost and space of providing discrete solutions becomes a big disadvantage. Solutions based on opto-isolators typically have reasonable output regulation but require additional external components, thereby increasing board area. Power modules are often bulky and may provide poor output regulation. The circuit is based on the ADuM347x family of isolators (ADuM3470, ADuM3471, ADuM3472, ADuM3473, ADuM3474) and integrates digital isolation, as well as the PWM-controlled power regulation circuitry along with associated feedback isolation. External transformers are used to transfer power across the isolation barrier. The AD5422 16-bit DAC provides the current and voltage outputs.
+Industrial and instrumentation systems, as well as programmable logic
+controllers (PLCs) and distributed control systems (DCS), must often control
+outputs, which can be both current controlled (4 mA to 20 mA), and voltage
+controlled (up to ±10 V). Typically, such designs also need to be isolated from
+the local system controller to protect against ground loops and also to ensure
+robustness against external events. Traditional solutions use discrete ICs for
+both power and digital isolation. When multichannel isolation is needed, the
+cost and space of providing discrete solutions becomes a big disadvantage.
+Solutions based on opto-isolators typically have reasonable output regulation
+but require additional external components, thereby increasing board area. Power
+modules are often bulky and may provide poor output regulation. The circuit is
+based on the ADuM347x family of isolators (ADuM3470, ADuM3471, ADuM3472,
+ADuM3473, ADuM3474) and integrates digital isolation, as well as the
+PWM-controlled power regulation circuitry along with associated feedback
+isolation. External transformers are used to transfer power across the isolation
+barrier. The AD5422 16-bit DAC provides the current and voltage outputs.
 
 --------------
 
@@ -54,11 +69,9 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
    \ NOTE: It is recommended that you install the `CN0233 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0233>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0233\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0233/cn0233-figure_1a.jpg
 
 -  Click **Next** to view the installation review page
-
 
 |image1|
 
@@ -70,8 +83,9 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image3|
 
@@ -82,7 +96,6 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image4|
 
@@ -109,14 +122,17 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 OPENING AND ENABLING THE EVALUATION SOFTWARE
 --------------------------------------------
 
--  Launch the executable found at C:\\Program Files\\Analog Devices\\CN0233 and a prompt will appear informing the user that the SDP is now ready to communicate with the evaluation board.
+-  Launch the executable found at C:\\Program Files\\Analog Devices\\CN0233 and
+   a prompt will appear informing the user that the SDP is now ready to
+   communicate with the evaluation board.
 
 --------------
 
 STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
 ------------------------------------------------------
 
-Below are the list of available software controls grouped according to their location in the software GUI:
+Below are the list of available software controls grouped according to their
+location in the software GUI:
 
 -  Main Tab – This tab contains displays for the Block Diagram, Advance Configuration and SDP Board Firmware Revision.
 

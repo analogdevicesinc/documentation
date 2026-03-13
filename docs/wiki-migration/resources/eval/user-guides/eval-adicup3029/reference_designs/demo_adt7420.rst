@@ -48,7 +48,7 @@ Setting up the Hardware
 -  Plug in the micro USB cable into the **(P10)** USB port on the EVAL-ADICUP3029, and the other end into the PC or laptop.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_adt7420.jpg
-   :width: 650px
+   :width: 650
 
 Configuring the Software
 ------------------------
@@ -61,7 +61,8 @@ In the *adt7420_app.h* header files you can configure the following parameters:
 Outputting Data
 ---------------
 
-Once the hardware is setup and software is configured, user needs to select how they want to view the data coming from the temperature sensor(ADT7420).
+Once the hardware is setup and software is configured, user needs to select how
+they want to view the data coming from the temperature sensor(ADT7420).
 
 There are **three** different ways to visualize the data:
 
@@ -70,7 +71,6 @@ There are **three** different ways to visualize the data:
 -  IoTNode Smart Device App
 
 Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard.
-
 
 |image1|
 
@@ -93,16 +93,19 @@ Debug Launch Mode
 
 **Debug launch mode** is used when connected to the debugger. In debug mode, all the outputs are directed to the console window of the CrossCore tools via semihosting. The data is also sent by default to the IoTNode smart app (ADI_APP_USE_BLUETOOTH =1), but can be turned of if desired by setting ADI_APP_USE_BLUETOOTH = 0.
 
-Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to android application.
+Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to
+android application.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7420_debug_outputble.png
-   :width: 920px
+   :width: 920
 
-If you have the app installed on your phone, these figure shows the output on android device.
+If you have the app installed on your phone, these figure shows the output on
+android device.
 
 .. important::
 
-   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your phone.
+   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your
+   phone.
 
    
    -  Simply open up the IoTNode application on your phone.
@@ -110,10 +113,10 @@ If you have the app installed on your phone, these figure shows the output on an
    -  Once you find your demo, click on it to open it up.
    
 
-
 |image2| |image3|
 
-It's important to remember that when you use the Debug.launch file that you hit the "play" button when using the tools or else your program will not run.
+It's important to remember that when you use the Debug.launch file that you hit
+the "play" button when using the tools or else your program will not run.
 
 Release Launch Mode
 ~~~~~~~~~~~~~~~~~~~
@@ -132,13 +135,15 @@ Release Launch Mode
 Figure shows when ADI_APP_USE_BLUETOOTH is set to 1
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_release_outputble.png
-   :width: 920px
+   :width: 920
 
-If you have the app installed on your phone, these figure shows the output on android device.
+If you have the app installed on your phone, these figure shows the output on
+android device.
 
 .. important::
 
-   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your phone.
+   Do not try to connect directly (or pair) to the EVAL-ADICUP3029 from your
+   phone.
 
    
    -  Simply open up the IoTNode application on your phone.
@@ -146,23 +151,28 @@ If you have the app installed on your phone, these figure shows the output on an
    -  Once you find your demo, click on it to open it up.
    
 
-
 |image4| |image5|
 
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the ADT7420.
+There are two basic ways to program the ADICUP3029 with the software for the
+ADT7420.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain. Below screen shot shows how to open project from CCES Example browser.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain. Below screen shot
+shows how to open project from CCES Example browser.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_example_selection.png
-   :width: 920px
+   :width: 920
 
 The software for the **ADuCM3029_demo_adt7420** demo can be found here:
 
@@ -178,7 +188,6 @@ The software for the **ADuCM3029_demo_adt7420** demo can be found here:
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_adt7420 Source Code <projects/ADuCM3029_demo_adt7420>`
    
-
 
 How to use the Tools
 --------------------
@@ -200,10 +209,12 @@ Project Structure
 
 The **ADICUP3029_ADT7420** is a C project that uses ADuCM3029 C/C++ Project structure.
 
-This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for I2C read/write; configuring and reading from ADT7420, UART read/write functions;
+This project contains: system initialization part - disabling watchdog, setting
+system clock, enabling clock for peripherals; port configuration for I2C
+read/write; configuring and reading from ADT7420, UART read/write functions;
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7420_project_directory.png
-   :width: 650px
+   :width: 650
 
 adt7420_app.cpp and adt7420_app.h are the main source and header files related to **ADICUP3029_ADT7420** be found under RTE/ADuCM3029 folder.ADT7420 sensor software drivers are located in RTE/Sensor folder. All ADuCM3029 related drivers can BLE related files can be seen under RTE/Board_Support folder.
 
@@ -212,21 +223,19 @@ adt7420_app.cpp and adt7420_app.h are the main source and header files related t
 More Information
 ================
 
-
 .. note::
 
    See `resources/eval/user-guides/eval-adicup3029/reference_designs/ble_packet <https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029/reference_designs/ble_packet>`_
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_adv.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/screenshot_2017-05-28-15-43-32.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_adv.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/screenshot_2017-05-28-15-43-32.png
-   :width: 300px
+   :width: 300

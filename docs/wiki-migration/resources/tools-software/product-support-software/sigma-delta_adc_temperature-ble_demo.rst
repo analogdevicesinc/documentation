@@ -8,7 +8,7 @@ This page gives an overview of using the Analog Devices Sigma Delta ADCs with Co
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/sd_adc_and_aducm3029_cog_interface_diagram.jpg
    :align: center
-   :width: 650px
+   :width: 650
 
 Interface Overview
 ------------------
@@ -16,21 +16,28 @@ Interface Overview
 1) Temperature Sensing using Sigma Delta ADCs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The below diagram shows the temperature sensing scheme using AD7124 Sigma Delta ADC. It uses T-Type thermocouple and 2-wire RTD sensors as an external analog inputs. The Thermocouple acts as a hot junction and RTD as a cold junction compensation. This combination provides a precise measurements of ambient temperature over a very wide range.
+The below diagram shows the temperature sensing scheme using AD7124 Sigma Delta
+ADC. It uses T-Type thermocouple and 2-wire RTD sensors as an external analog
+inputs. The Thermocouple acts as a hot junction and RTD as a cold junction
+compensation. This combination provides a precise measurements of ambient
+temperature over a very wide range.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7124_temp_sensing.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 :adi:`AD7124 Eval board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7124-8.html>` has default on-board KTY-81/110 RTD sensor (silicon Thermistor) connected between analog inputs AIN4 and AIN5. However, for the complete RTD measurement, the precision resistor (Rref) needs to be connectd externally along with Rhead headroom resistor. Rref needs to have 0.1% precision for complete accuracy. The choice of this reference resistor depends upon the Ref output voltage and excitation current. Use below application note for more details on the temperature sensing using RTD:
 
 :adi:`RTD Measurement System Using a Precision Sigma-Delta ADC <media/en/reference-design-documentation/reference-designs/CN0381.pdf>`
 
-Thermocouple needs to be connected externally between analog inputs AIN2 and AIN3. Use below application note for more details on the temperature sensing using Thermocouple:
+Thermocouple needs to be connected externally between analog inputs AIN2 and
+AIN3. Use below application note for more details on the temperature sensing
+using Thermocouple:
 
 :adi:`Thermocouple Measurement System Using a Precision Sigma-Delta ADC <media/en/reference-design-documentation/reference-designs/CN0384.pdf>`
 
-For temperature sensing using AD7124 Eval board and ADuCM3029 COG board please use below software and hardware configuration:
+For temperature sensing using AD7124 Eval board and ADuCM3029 COG board please
+use below software and hardware configuration:
 
 T-Type Thermocouple (Chn0):
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -57,8 +64,10 @@ Other Jumper Setting:
 
 .. important::
 
-   The above mentioned parameters are for AD7124 Eval board and associated sensing circuitry. The same parameters are configured in the firmware application as well. For other ADC Eval Boards, please use proper combination of these parameters based on your design, both in hardware and in software.
-
+   The above mentioned parameters are for AD7124 Eval board and associated
+   sensing circuitry. The same parameters are configured in the firmware
+   application as well. For other ADC Eval Boards, please use proper combination
+   of these parameters based on your design, both in hardware and in software.
 
 2) Interfacing ADuCM3029 Cog Board with Sigma Delta ADCs/Eval Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,8 +78,9 @@ The ADuCM3029 COG board is connected to Sigma Delta ADC Eval board using a :doc:
 
 .. important::
 
-   The above hardware connection is for AD7124 Eval board and ADuCM3029 COG. For other ADC Eval Boards, please refer respective Eval board manual for digital interface connection details.
-
+   The above hardware connection is for AD7124 Eval board and ADuCM3029 COG. For
+   other ADC Eval Boards, please refer respective Eval board manual for digital
+   interface connection details.
 
 3) Interfacing ADuCM3029 Cog Board with Bluetooth Eval Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,19 +92,29 @@ Primary-side
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/picture1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Secondary-side
 ^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/picture2.png
    :align: center
-   :width: 400px
+   :width: 400
 
 4) Leveraging ADuCM3029 Cog On-Board Peripherals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In addition to Sigmal Delta ADC interface and Bluetooth interface, the ADuCM3029 has number of on-board peripherals, including ADT7420 Temperature sensor, ADXL362 Accelerometer, Push buttons and LEDs, SD Card, Wi-Fi/RF interface, etc. The firmware interface with ADT7420 temperature sensor and ADXL362 accelerometer to transmit sensor data. Also, it uses Push button PB1 to come out of Hibernate mode, which is tied to External Interrupt 1 pin. The ADXL362 interrupt ativity pin is tied to external interrupt 2. Both these interrupts are used by MCU to come out of hibernate mode. The PB2 is used to select the next sensor scanning and must be pressed when MCU is awake. This can be done by pressing PB1 first and them immediately PB2, which will first take MCU out of hibernate mode and then will select next sensor for sampling.
+In addition to Sigmal Delta ADC interface and Bluetooth interface, the ADuCM3029
+has number of on-board peripherals, including ADT7420 Temperature sensor,
+ADXL362 Accelerometer, Push buttons and LEDs, SD Card, Wi-Fi/RF interface, etc.
+The firmware interface with ADT7420 temperature sensor and ADXL362 accelerometer
+to transmit sensor data. Also, it uses Push button PB1 to come out of Hibernate
+mode, which is tied to External Interrupt 1 pin. The ADXL362 interrupt ativity
+pin is tied to external interrupt 2. Both these interrupts are used by MCU to
+come out of hibernate mode. The PB2 is used to select the next sensor scanning
+and must be pressed when MCU is awake. This can be done by pressing PB1 first
+and them immediately PB2, which will first take MCU out of hibernate mode and
+then will select next sensor for sampling.
 
 Firmware Overview
 -----------------
@@ -111,7 +131,6 @@ Downloads
    -  :git-EV-COG-AD3029LZ:`Sigma Delta ADC Temperature-BLE Demo Firmware Example <sd-adc_cces_temperature-to-ble%20Example>`
    
 
-
 Development Tools
 ~~~~~~~~~~~~~~~~~
 
@@ -124,13 +143,16 @@ Code Structure
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/sd-adc_temp-ble_software_structure.jpg
    :align: center
-   :width: 700px
+   :width: 700
 
-The tempsensor project is compiled externally to BLE demo firmware project. The "libtempsensors.a" library file generated by this project is used during linking time in "sd-adc_cces_temperature-to-ble" project. So, when compiling the project, both these project must be present in same workspace.
+The tempsensor project is compiled externally to BLE demo firmware project. The
+"libtempsensors.a" library file generated by this project is used during linking
+time in "sd-adc_cces_temperature-to-ble" project. So, when compiling the
+project, both these project must be present in same workspace.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/sd-adc_ble_cces_settings.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Using the Firmware
 ~~~~~~~~~~~~~~~~~~
@@ -138,7 +160,11 @@ Using the Firmware
 Device Linker File Configuration (ADuCM3029.ld)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Because of the hibernate mode implementation, the device linker file has been modified to map the .data and .bss sections of memory to Bank0 and Bank1 of SRAM. The MCU in hibernate does not retain the contents of upper 16Kbytes of SRAM (Bank 3,4 and 5). Hence to avoid loosing data, it is necessary to map the data and bss sections to DSRAM_A in linker configuration file.
+Because of the hibernate mode implementation, the device linker file has been
+modified to map the .data and .bss sections of memory to Bank0 and Bank1 of
+SRAM. The MCU in hibernate does not retain the contents of upper 16Kbytes of
+SRAM (Bank 3,4 and 5). Hence to avoid loosing data, it is necessary to map the
+data and bss sections to DSRAM_A in linker configuration file.
 
 *\*Note: This has already been done in the distributed firmware. In case, you are not using hibernate mode, you can revert it back to DSRAM_B (the default one).*
 
@@ -159,7 +185,10 @@ Because of the hibernate mode implementation, the device linker file has been mo
 CMSIS Compatibility (startup_ADuCM3029.c)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADuCM3029 software package startup file is not yet updated to support latest changes in the ARM CMSIS drivers (CMSIS-CORE (M) Version 5.3.0 and above) and it creates conflicts in the startup_ADuCM3029.c file for duplicate identifiers. To avoid this conflict, startup file is modified as below:
+The ADuCM3029 software package startup file is not yet updated to support latest
+changes in the ARM CMSIS drivers (CMSIS-CORE (M) Version 5.3.0 and above) and it
+creates conflicts in the startup_ADuCM3029.c file for duplicate identifiers. To
+avoid this conflict, startup file is modified as below:
 
 .. code:: c
 
@@ -177,22 +206,30 @@ The ADuCM3029 software package startup file is not yet updated to support latest
 main.cpp
 ~~~~~~~~
 
-The entry point to firmware is defined in main.cpp file (a main function). This function is responsible for initializing and configuring the system peripherals. This module is also responsible for getting the sensor data from sampling engines and dispatch it over Low Energy Bluetooth Link or/and UART link.
+The entry point to firmware is defined in main.cpp file (a main function). This
+function is responsible for initializing and configuring the system peripherals.
+This module is also responsible for getting the sensor data from sampling
+engines and dispatch it over Low Energy Bluetooth Link or/and UART link.
 
-The selection b/w UART or Bluetooth dispatcher service can be done by commenting/uncommenting below macro. The UART link is also used to log the debug messages and so even with Bluetooth dispatcher service, you should be able to see all debug and sensor data messages on UART link.
+The selection b/w UART or Bluetooth dispatcher service can be done by
+commenting/uncommenting below macro. The UART link is also used to log the debug
+messages and so even with Bluetooth dispatcher service, you should be able to
+see all debug and sensor data messages on UART link.
 
 .. code:: c
 
    /* Select communication mode. Comment below to select UART as default com mode */
    //#define ADI_BLUETOOTH_COMM
 
-The following sensors are used in the firmware and data from them is dispatched over UART/Bluetooth Link:
+The following sensors are used in the firmware and data from them is dispatched
+over UART/Bluetooth Link:
 
 -  Thermocouple + RTD (Temperature Sensor interfaced with Sigma Delta ADC e.g AD7124)
 -  ADT7420 (ADuCM3029 COG On-Board Temperature Sensor)
 -  ADXL362 (ADuCM3029 COG On-Board Accelerometer Sensor)
 
-The processor is put into hibernate sleep mode after every frame transmission for 10sec timeout period. This is handled in main.cpp module as below:
+The processor is put into hibernate sleep mode after every frame transmission
+for 10sec timeout period. This is handled in main.cpp module as below:
 
 .. code:: c
 
@@ -227,7 +264,8 @@ The processor is put into hibernate sleep mode after every frame transmission fo
 app_config.h
 ~~~~~~~~~~~~
 
-This file allows user to select active Sigma Delta ADC that is used for external temperature sensing:
+This file allows user to select active Sigma Delta ADC that is used for external
+temperature sensing:
 
 .. code:: c
 
@@ -247,7 +285,9 @@ This file allows user to select active Sigma Delta ADC that is used for external
 Dispatching Data Over Bluetooth/UART Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Bluetooth sensor data can be captured using a Analog Devices IoT node smart IOS application (for IOS/apple based devices). The application can be downloaded from below link:
+The Bluetooth sensor data can be captured using a Analog Devices IoT node smart
+IOS application (for IOS/apple based devices). The application can be downloaded
+from below link:
 
 https://apps.apple.com/us/app/iotnode/id1242751625#?platform=iphone
 
@@ -257,7 +297,7 @@ The more information about the bluetooth packet format is provided below:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/iot_node.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 For observing data using UART link using serial terminal (e.g. `Tera Term <https://osdn.net/projects/ttssh2/releases/>`_), use below serial settings:
 
@@ -268,14 +308,13 @@ For observing data using UART link using serial terminal (e.g. `Tera Term <https
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/uart_sensor_data.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 .. tip::
 
    This page might not cover the all minute details of hardware/software configuration and operation. All the necessary links for the associated documents are provided above. Feel free to consult Analog Devices :adi:`Engineer-Zone <engineerzone>` for feature requests, feedback, bug-reports etc.
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/aducm3029-ad7124_eval.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/sdp_breakout_board.jpg
-   :width: 400px
+   :width: 400

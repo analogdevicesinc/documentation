@@ -7,11 +7,14 @@ The **EVAL-ADICUP3029 base board** consists of two basic blocks:
 
 -  An on-board serial wire download (SWD) interface, which is implemented with the **Freescale's MК20DX128 microcontroller**. This block allows the Freescale device to act as an on board debugger, so you don't need additional external hardware to program or debug your ADuCM3029 applications.
 
-This page describes the hardware peripheral connectors, jumpers and UART switch configurations options, , power configurations, connectivity options, the USB connectors and programming connections, and links to download the schematics and the layout.
+This page describes the hardware peripheral connectors, jumpers and UART switch
+configurations options, , power configurations, connectivity options, the USB
+connectors and programming connections, and links to download the schematics and
+the layout.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_block_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Unboxing the EVAL-ADICUP3029
 ----------------------------
@@ -22,11 +25,12 @@ Unboxing the EVAL-ADICUP3029
 Peripheral Connectors
 ---------------------
 
-The following standard connectors are provided on the base board for customer to use with external add on modules:
+The following standard connectors are provided on the base board for customer to
+use with external add on modules:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_layout_blank_revc.png
    :align: center
-   :width: 900px
+   :width: 900
 
 ::
 
@@ -183,7 +187,8 @@ All connector pin outs for the EVAL-ADICUP3029 are described in the table below.
 Wireless Connectivity Options
 -----------------------------
 
-The EVAL-ADICUP3029 has two wireless connectivity options available to use for your Internet of Things (IoT) applications:
+The EVAL-ADICUP3029 has two wireless connectivity options available to use for
+your Internet of Things (IoT) applications:
 
 -  Bluetooth Low Energy (BLE) 5.0
 -  Wifi Module
@@ -191,13 +196,20 @@ The EVAL-ADICUP3029 has two wireless connectivity options available to use for y
 Bluetooth Low Energy Chipset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADICUP3029 has a dedicated Bluetooth chipset on board from EM Mircoelectronic (the EM9304). This chipset comes complete with the full BLE software protocol and stack, allowing the ADuCM3029 to operate without occupying precious memory space for the BLE protocol.
+The ADICUP3029 has a dedicated Bluetooth chipset on board from EM
+Mircoelectronic (the EM9304). This chipset comes complete with the full BLE
+software protocol and stack, allowing the ADuCM3029 to operate without occupying
+precious memory space for the BLE protocol.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_ble_layout_revc.png
    :align: center
-   :width: 600px
+   :width: 600
 
-The ADuCM3029 communicates to the EM9304 using the SPI2 bus from the ADuCM3029. So users will need to send BLE commands and data over SPI2 bus. Library functions and API calls have been specifically designed to be used with the ADuCM3029 and EM9304 using SPI2 bus, so the user will only need to configure and send data over BLE.
+The ADuCM3029 communicates to the EM9304 using the SPI2 bus from the ADuCM3029.
+So users will need to send BLE commands and data over SPI2 bus. Library
+functions and API calls have been specifically designed to be used with the
+ADuCM3029 and EM9304 using SPI2 bus, so the user will only need to configure and
+send data over BLE.
 
 The pins that connect the ADuCM3029 and the EM9304 are as follows:
 
@@ -217,37 +229,47 @@ The pins that connect the ADuCM3029 and the EM9304 are as follows:
 | GPIO41/ADC0_VIN6/SPI0_CS3          | P2_09                 | ENABLE              | Pin 4             |
 +------------------------------------+-----------------------+---------------------+-------------------+
 
-The BLE on the ADICUP3029 has a chip antenna on board, located in the upper-righthand corner. That chip antenna has been tested in open space, and can Rx/Tx packet information up to 15m.
+The BLE on the ADICUP3029 has a chip antenna on board, located in the
+upper-righthand corner. That chip antenna has been tested in open space, and can
+Rx/Tx packet information up to 15m.
 
 .. note::
 
    Powering the BLE Chipset
 
    
-   In order to use the BLE function on the ADICUP3029, a shunt MUST be placed across P15.
+   In order to use the BLE function on the ADICUP3029, a shunt MUST be placed
+   across P15.
    
-   If you are wanting to save power and your application doesn't need BLE, you can simply remove the shunt across P15. Removing that shunt will remove power to the BLE chipset(U8).
-
+   If you are wanting to save power and your application doesn't need BLE, you
+   can simply remove the shunt across P15. Removing that shunt will remove power
+   to the BLE chipset(U8).
 
 WiFi Module
 ~~~~~~~~~~~
 
-The WiFi module is a separate hardware PCB which ships with the EVAL-ADICUP3029 kit. That WiFi module PCB is a self contained 802.15 b,n,g unit, complete with WiFi stack and protocol software. Which means that the ADuCM3029 doesn't have to be programmed with any of the WiFi protocol/stack overhead, leaving all the memory on board to be used for the sensor application.
+The WiFi module is a separate hardware PCB which ships with the EVAL-ADICUP3029
+kit. That WiFi module PCB is a self contained 802.15 b,n,g unit, complete with
+WiFi stack and protocol software. Which means that the ADuCM3029 doesn't have to
+be programmed with any of the WiFi protocol/stack overhead, leaving all the
+memory on board to be used for the sensor application.
 
 The WiFi module uses simple AT Commands over UART in order to transfer and send data. So if you want to use the WiFi capabilities of this board, you must ensure that the UART is initialized and that the UART switch is in the "WiFi" position.(See :doc:`UART Switch </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` section for complete details)
 
-This WiFi module is NOT developed by Analog Devices. For more information & support concerning the WiFi module please follow the links below:
+This WiFi module is NOT developed by Analog Devices. For more information &
+support concerning the WiFi module please follow the links below:
 
 -  `Product Page/Details <https://www.sparkfun.com/products/13678>`_
 -  `AT Command List <https://cdn.sparkfun.com/datasheets/Wireless/WiFi/Command%20Doc.pdf>`_
 -  `Hardware/Software Details <https://nurdspace.nl/ESP8266>`_
 -  `Github Details <https://github.com/esp8266/esp8266-wiki/wiki/Hardware_versions>`_
 
-The pin out for the WiFi connector(P1) on the EVAL-ADICUP3029 and how it connects to the ADuCM3029 can be found in this table:
+The pin out for the WiFi connector(P1) on the EVAL-ADICUP3029 and how it
+connects to the ADuCM3029 can be found in this table:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_wifi_connector_revc.png
    :align: center
-   :width: 600px
+   :width: 600
 
 +------------+----------------------------+---------------------------+----------------+
 | Pin Number | P1 WiFi Connector Function | ADuCM3029 Pin Name        | ADuCM3029 Port |
@@ -274,16 +296,19 @@ ADICUP3029 Power Consumption Measurement
 
 One major advantage for using the ADICUP3029, is the ultra low power operation of the ADuCM3029 microcontroller and the EM9304 low energy Bluetooth chip. We have added a jumper at **P18** which will allow users to measure the amount of current flowing to all the +3.3V rails on the ADICUP3029.
 
-The Arduino connectors, Grove connector, SPI PMOD connector, I2C PMOD connector, BLE, and WiFi connector all run off the +3.3V rail, so it makes it very convenient to measure the entire system current your solution is consuming.
+The Arduino connectors, Grove connector, SPI PMOD connector, I2C PMOD connector,
+BLE, and WiFi connector all run off the +3.3V rail, so it makes it very
+convenient to measure the entire system current your solution is consuming.
 
 .. note::
 
-   The on board debugger, level translator, USB connector, JTAG/SWD, external power connector, or power management devices are NOT INCLUDED when measuring the current from jumper P18 on the ADICUP3029 board.
-
+   The on board debugger, level translator, USB connector, JTAG/SWD, external
+   power connector, or power management devices are NOT INCLUDED when measuring
+   the current from jumper P18 on the ADICUP3029 board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_current_measure_with_meter_revc.png
    :align: center
-   :width: 600px
+   :width: 600
 
 UART Switch
 -----------
@@ -294,7 +319,7 @@ The UART originates from the ADuCM3029, and will communicate with three(3) exter
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_layout_revc.png
    :align: center
-   :width: 500px
+   :width: 500
 
 +------------------------+--------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | UART Function Selected | Switch Image | Switch Position | Description                                                                                                                                                                                                                                                                                                          |
@@ -309,13 +334,17 @@ The UART originates from the ADuCM3029, and will communicate with three(3) exter
 Power Switch
 ------------
 
-There are three(3) ways of powering the EVAL-ADICUP3029, and a user may use any combination of power sources.
+There are three(3) ways of powering the EVAL-ADICUP3029, and a user may use any
+combination of power sources.
 
 -  USB Powered - When connected to the PC
 -  DC Wall Powered - When an external supply is connected to the barrel jack connector P2
--  Battery Powered - When batteries are connected to BT1 connector on the back of the board
+-  Battery Powered - When batteries are connected to BT1 connector on the back
+   of the board
 
-Each of the different power modes, provides a different level of control and flexibility. You can find a matrix table of the different power modes and their general function here:
+Each of the different power modes, provides a different level of control and
+flexibility. You can find a matrix table of the different power modes and their
+general function here:
 
 +---------------------+------------------------+-------------------------------+-----------------------------------------------------------------------------+
 | Power Source        | Voltage Rails Provided | Functions/Peripherals Powered | Notes/Comments                                                              |
@@ -357,7 +386,7 @@ The EVAL-ADICUP3029 base board provides three buttons for use: **3029_RESET**, *
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_buttons_layout_revc.png
    :align: center
-   :width: 600px
+   :width: 600
 
 +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Button     | Function                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -372,7 +401,8 @@ The EVAL-ADICUP3029 base board provides three buttons for use: **3029_RESET**, *
 Programming Connectors on the ADICUP3029
 ----------------------------------------
 
-There are three(3) connectors on the ADICUP3029 used for programming the on board MCUs.
+There are three(3) connectors on the ADICUP3029 used for programming the on
+board MCUs.
 
 -  P11 - JTAG Interface used to program the MK20DX128VFM5
 -  P12 - SWD Interface used to program the ADuCM3029
@@ -380,22 +410,22 @@ There are three(3) connectors on the ADICUP3029 used for programming the on boar
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_jtag_swd_connectors_layout_revc.png
    :align: center
-   :width: 500px
+   :width: 500
 
-All three connectors used are based off the 10-pin ARM Cortex standard pin out(0.05" pin spacing). That pin out is common to both JTAG and SWD debug modes and is depicted in the following image.\
-
+All three connectors used are based off the 10-pin ARM Cortex standard pin
+out(0.05" pin spacing). That pin out is common to both JTAG and SWD debug modes
+and is depicted in the following image.\
 
 |image7|
 
 Many debugger tools (such as Segger J-Link) will typically only provide the 20-pin ARM connector(0.1" pin spacing) as an output. This connector has many of the same pins as the 10-pin version, but also provides other non essential functions for JTAG or SWD MCU devices. So you may have to do a translation from the 20-pin connector to the 10-pin connector using an adaptor. The following image shows the 20-pin connector pin out:|image8| And here is an example image of a 20-pin to 10-pin adapter system.
 
-
 |image9|
 
 .. note::
 
-   This is only an example of adapter hardware, there are many other 3rd party hardware setups that can be used to go from 20-pin to 10-pin format.
-
+   This is only an example of adapter hardware, there are many other 3rd party
+   hardware setups that can be used to go from 20-pin to 10-pin format.
 
 You may be asking yourself, why provide two(2) different connectors(P12 and P14) that go to the ADuCM3029 over SWD. We support a mode on the ADICUP3029 board that allows customers to break off the debugger board, so you can remotely place IoT nodes without using the debugger board. More details about this option, and how to use it, can be found by looking at the :doc:`Stand Alone Mode </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>` section.
 
@@ -417,28 +447,38 @@ Using the ADICUP3029 in stand alone mode is **OPTIONAL** and needs carefully con
 |                         | \* Should be able to use debugger board as universal CMSIS-DAP emulator board, needing only the interface file loaded into the "Maintenance" drive |                                                                                                         |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
-If you decide to operate the ADICUP3029 in stand alone mode, you will need to "snap" off the debugger board along the perforation provided.(May need to score it with a sharp knife first)
+If you decide to operate the ADICUP3029 in stand alone mode, you will need to
+"snap" off the debugger board along the perforation provided.(May need to score
+it with a sharp knife first)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_hw_whole_front_snap_point_revb.png
    :align: center
-   :width: 600px
+   :width: 600
 
-You'll be left with two separate boards, the left hand side will be the "Debugger board" and the right hand side will be the "ADICUP3029 node board"
+You'll be left with two separate boards, the left hand side will be the
+"Debugger board" and the right hand side will be the "ADICUP3029 node board"
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_hw_split_front_revb.png
    :align: center
-   :width: 600px
+   :width: 600
 
-Once apart, the user can use the debugger board, and a standard 10-pin ARM JTAG/SWD ribbon cable to connect to the ADICUP3029 node board. And using the CrossCore Embedded Studio IDE, program an updated or new application into the ADICUP3029 IoT node.
+Once apart, the user can use the debugger board, and a standard 10-pin ARM
+JTAG/SWD ribbon cable to connect to the ADICUP3029 node board. And using the
+CrossCore Embedded Studio IDE, program an updated or new application into the
+ADICUP3029 IoT node.
 
 .. important::
 
-   The debugger board will need to be plugged in via the USB port in order to program any board. And in order to program the ADICUP3029 node board, that board must be powered by (2) AAA batteries and the power switch in the BATT position. Otherwise there will be no connection between the two boards, and the mass storage device on the debugger board will come up in "Maintenance" mode.
-
+   The debugger board will need to be plugged in via the USB port in order to
+   program any board. And in order to program the ADICUP3029 node board, that
+   board must be powered by (2) AAA batteries and the power switch in the BATT
+   position. Otherwise there will be no connection between the two boards, and
+   the mass storage device on the debugger board will come up in "Maintenance"
+   mode.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_hw_split_ribboned_together_revb.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Schematics, PCB Layout, Bill of Materials
 -----------------------------------------
@@ -455,24 +495,23 @@ Schematics, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_usb_revc.png
-   :width: 100px
+   :width: 100
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_arduino_revc.png
-   :width: 100px
+   :width: 100
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_wifi_revc.png
-   :width: 100px
+   :width: 100
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_usb_revc.png
-   :width: 100px
+   :width: 100
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_arduino_revc.png
-   :width: 100px
+   :width: 100
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_wifi_revc.png
-   :width: 100px
+   :width: 100
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jtag_swd_10_connector.png
-   :width: 350px
+   :width: 350
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jtag_swd_20_connector.png
-   :width: 350px
+   :width: 350
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/jtag_swd_adaptor_hw.png
-   :width: 350px
+   :width: 350

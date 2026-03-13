@@ -5,10 +5,11 @@ How to build the ZynqMP boot image BOOT.BIN
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html\
 
+The boot image BOOT.BIN is build using the bootgen tool which requires several
+input files.
 
-The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
-
-Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be found here:
+Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be
+found here:
 
 -  `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`_ projects
 
@@ -16,7 +17,8 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 
 -  `Build u-boot <http://www.wiki.xilinx.com/Build+U-Boot>`_
 
-   -  Make sure you checkout the proper git tag matching your Vivado Version (xilinx-v2022.2, xilinx-v2021.2, ...)
+   -  Make sure you checkout the proper git tag matching your Vivado Version
+      (xilinx-v2022.2, xilinx-v2021.2, ...)
 
 -  `Build FSBL <http://www.wiki.xilinx.com/Build+FSBL>`_
 -  `Build PMU Firmware <http://www.wiki.xilinx.com/Build+PMU+Firmware>`_
@@ -26,7 +28,9 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 Use script to build BOOT.BIN
 ----------------------------
 
-For ease of use we provide a bash shell script which allows building BOOT.BIN from system_top.xsa, u-boot.elf and either bl31.elf or a path to the Arm Trusted Firmware repository
+For ease of use we provide a bash shell script which allows building BOOT.BIN
+from system_top.xsa, u-boot.elf and either bl31.elf or a path to the Arm Trusted
+Firmware repository
 
 Download
 ~~~~~~~~
@@ -44,7 +48,6 @@ The script can be downloaded from here:
    
       $ chmod +x build_zynqmp_boot_bin.sh
    
-
 
 Usage
 ~~~~~
@@ -86,6 +89,6 @@ Usage
    \ NOTE: u-boot.elf and bl31.elf For those who don't want to build u-boot or bl31 themselves. Both u-boot.elf and bl31.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz.
 
    
-   u-boot.elf may have a different name, rename that .elf file to u-boot.elf before using.
+   u-boot.elf may have a different name, rename that .elf file to u-boot.elf
+   before using.
    
-

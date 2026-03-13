@@ -12,8 +12,8 @@ The :adi:`AD8605` and :adi:`AD8608` are low cost single and quad rail-to-rail in
 
 The :adi:`ADuM3471` is a quad-channel digital isolator with an integrated PWM controller and transformer driver for an isolated dc-to-dc converter. It provides the isolated 5 V, 2 W power for the circuit as well as isolates the digital signals at the SPI interface.
 
-The EVAL-CN0254-SDPZ board connects to ADI’s System Demonstration Platform (SDP) and is powered by a 6 V power supply.
-
+The EVAL-CN0254-SDPZ board connects to ADI’s System Demonstration Platform (SDP)
+and is powered by a 6 V power supply.
 
 |image1|
 
@@ -42,7 +42,7 @@ Block assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/blockdia.png
    :align: center
-   :width: 650px
+   :width: 650
 
 -  The :adi:`EVAL-CN0254-SDPZ` **(CN-0254 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
@@ -55,17 +55,18 @@ Test setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/11-2-2017_10-50-05_am.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect the 120-pin connector on the :adi:`EVAL-CN0254-SDPZ Evaluation Board <EVAL-CN0254-SDPZ>` to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board
 -  After setting the dc output supply to 6 V output, turn the supply off
 -  With power to the supply off, connect 6 V to CN2
--  Turn on the power supply and then connect the SDP to the PC by using the USB-to-miniUSB cable
+-  Turn on the power supply and then connect the SDP to the PC by using the
+   USB-to-miniUSB cable
 
 .. important::
 
-   Do not connect the USB cable to the Mini-USB connector on the SDP board before turning on the dc power supply for the EVAL-CN0254-SDPZ
-
+   Do not connect the USB cable to the Mini-USB connector on the SDP board
+   before turning on the dc power supply for the EVAL-CN0254-SDPZ
 
 --------------
 
@@ -78,12 +79,10 @@ Installing the Evaluation Software
 
    \ NOTE: It is recommended that you install the `CN0254 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0254>`_ to the default directory path C:\\Program Files (x86)\\Analog Devices\\CN0254\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/1.png
-   :width: 500px
+   :width: 500
 
 -  Click **Next** to view the installation review page
-
 
 |image2|
 
@@ -95,8 +94,9 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image4|
 
@@ -108,10 +108,10 @@ Installing the Evaluation Software
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
-
    |image5|
 
-   \* Press “Next” to install the SDP Drivers and complete the installation of all software. Click "Finish" when done.
+   \* Press “Next” to install the SDP Drivers and complete the installation of
+   all software. Click "Finish" when done.
 
    |image6|
 
@@ -125,7 +125,7 @@ Main Window
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/13.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  **Connect** Button - Starts the connection between the :adi:`CN0254 Evaluation Board <CN0254>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`.
 -  **Disconnect** Button - ends the connection between the :adi:`CN0254 Evaluation Board <CN0254>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`
@@ -147,7 +147,6 @@ Main Window
 
 -  **Multi-Channel** Tab
 
-
 |image7|
 
    -  **Plot options per channel** - Edit plot display and options like interpolation and color of output waveform
@@ -158,7 +157,6 @@ Main Window
 
 -  **Single Channel** Tab
 
-
 |image8|
 
    -  **Time Domain** Tab - Shows the acquired measurement data in terms of ADC codes with respect to time
@@ -168,7 +166,6 @@ Main Window
       -  **Signal Parameters** - Read only. Shows parameters such as SFDR of the signal chosen through the radio buttons on the right side of user interface
 
 -  **Calibration** Tab - Contains the calibration instructions for the CN0254 Evaluation Board
-
 
 |image9|
 
@@ -181,7 +178,6 @@ Main Window
       -  **Write Factory Default** - Writes precision voltages from calibration to an array in EEPROM and sets them as the factory default values
 
 -  **S/W Version Info** Tab
-
 
 |image10|
 
@@ -235,7 +231,6 @@ Schematic, PCB Layout, Bill of Materials
    -  PADS project
    
 
-
 Registration
 ------------
 
@@ -243,26 +238,25 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0254-SDPZ?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/cn0254-hw-1024.jpg
-   :width: 650px
+   :width: 650
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/2.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/3.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/4.png
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/5.png
-   :width: 500px
+   :width: 500
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/6.png
-   :width: 500px
+   :width: 500
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/9.png
-   :width: 700px
+   :width: 700
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/10.png
-   :width: 700px
+   :width: 700
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/11.png
-   :width: 700px
+   :width: 700
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/12.png
-   :width: 700px
+   :width: 700

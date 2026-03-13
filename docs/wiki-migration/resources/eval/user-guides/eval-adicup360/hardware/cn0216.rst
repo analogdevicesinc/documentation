@@ -3,18 +3,25 @@ EVAL-CN0216-ARDZ Shield
 
 :adi:`CN-0216 <CN0216>` is a precision weigh scale signal conditioning system. It uses the :adi:`AD7791`, a low power buffered 24-bit sigma-delta ADC along with dual external :adi:`ADA4528-2` zero-drift amplifiers. This solution allows for high dc gain with a single supply.
 
-Ultralow noise, low offset voltage, and low drift amplifiers are used at the front end for amplification of the low-level signal from the load cell. The circuit yields 15.3 bit noise-free code resolution for a load cell with a full-scale output of 10 mV.
+Ultralow noise, low offset voltage, and low drift amplifiers are used at the
+front end for amplification of the low-level signal from the load cell. The
+circuit yields 15.3 bit noise-free code resolution for a load cell with a
+full-scale output of 10 mV.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216revc_-_1.png
    :align: left
-   :width: 500px
+   :width: 500
 
 This circuit allows great flexibility in designing a custom low-level signal conditioning front end that gives the user the ability to easily optimize the overall transfer function of the combined sensor-amplifier-converter circuit. The :adi:`AD7791` maintains good performance over the complete output data range, from 9.5 Hz to 120 Hz, which allows it to be used in weigh scale applications that operate at various low speeds.
 
 .. important::
 
-   Extremely important to note that the EVAL-CN0216-ARDZ is powered from the VIN connector on the Arduino Uno header. This is because the bridge drive voltage of the EVAL-CN0216-ARDZ requires more than 5V to power the bridge. Therefore it is required to supply power from the baseboard through the DC power connector in order for proper functionality. The board will not work properly if you try only to power it from the USB.
-
+   Extremely important to note that the EVAL-CN0216-ARDZ is powered from the VIN
+   connector on the Arduino Uno header. This is because the bridge drive voltage
+   of the EVAL-CN0216-ARDZ requires more than 5V to power the bridge. Therefore
+   it is required to supply power from the baseboard through the DC power
+   connector in order for proper functionality. The board will not work properly
+   if you try only to power it from the USB.
 
 --------------
 
@@ -23,14 +30,14 @@ Connectors and Jumper Configurations
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216revc_-_2.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Sensor Connector
 ~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216-arduino/wiki_sensor_connection.png
    :align: right
-   :width: 300px
+   :width: 300
 
 ========== ============
 Pin Number Pin Function
@@ -46,7 +53,7 @@ Pin 8      Not Used
 ========== ============
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216-arduino/cn0216-wiring_schematic.png
-   :width: 400px
+   :width: 400
 
 REF SEL / Bridge Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,7 +64,6 @@ REF SEL / Bridge Configuration
 
    | NOTE - Any 4 or 6 wire load cells can be used with the EVAL-CN0216-ARDZ.
    | The Tedeah Huntleigh Model 1042 load cell was used during testing.
-
 
 |image1| Place jumpers/shunts as shown above for 6-wire resistive bridge configuration
 
@@ -72,7 +78,9 @@ REF SEL / Bridge Configuration
 Chip Select
 ~~~~~~~~~~~
 
-This set of jumpers allows for changing the pin mapping of the AD7791 chip select line to different Arduino digital pins. Place jumper/shunt as shown to connect to the corresponding Digital IO pin
+This set of jumpers allows for changing the pin mapping of the AD7791 chip
+select line to different Arduino digital pins. Place jumper/shunt as shown to
+connect to the corresponding Digital IO pin
 
 |image3| CS - Arduino **Digital Pin 10**
 
@@ -82,14 +90,14 @@ This set of jumpers allows for changing the pin mapping of the AD7791 chip selec
 
 .. note::
 
-   If using an EVAL-CN0216-ARDZ board prior to Rev.C: To change the CS pin, Install a 0-ohm resistor to resistor pads R7,R8 or R9
+   If using an EVAL-CN0216-ARDZ board prior to Rev.C: To change the CS pin,
+   Install a 0-ohm resistor to resistor pads R7,R8 or R9
 
    
    -  R7 - Arduino Digital Pin 8
    -  R8 - Arduino Digital Pin 9
    -  R9 - Arduino Digital Pin 10
    
-
 
 --------------
 
@@ -117,7 +125,6 @@ Schematic, Bill of Materials, Gerber Files, Layout Files
    -  `Gerber Files <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-gbr-revb.zip>`_
    
 
-
 --------------
 
 Change Log
@@ -142,12 +149,12 @@ Software
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216_ref_sel_-_2.png
-   :width: 100px
+   :width: 100
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216_ref_sel_-_1.png
-   :width: 100px
+   :width: 100
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216_cs_sel_-_1.png
-   :width: 100px
+   :width: 100
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216_cs_sel_-_2.png
-   :width: 100px
+   :width: 100
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216_cs_sel_-_3.png
-   :width: 100px
+   :width: 100

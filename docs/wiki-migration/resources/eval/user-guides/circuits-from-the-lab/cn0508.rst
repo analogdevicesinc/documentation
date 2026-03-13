@@ -5,12 +5,15 @@ EVAL-CN0508-RPIZ Overview
 
 The output voltage can be set manually using a potentiometer or digitally via Raspberry Pi with a :adi:`AD5683R` digital to analog converter (DAC), through the “analog- AND” function circuit. Moreover, a :adi:`AD7124-4` 24-bit, sigma-delta analog to digital Converter (ADC) provides measurement reading of output voltage and output current as well as other diagnostic parameters.
 
-The circuit features low output ripple with low output capacitance, excellent transient response, remains in regulation during short-circuit and stays cool with no bulky heat sinks. It can easily be coupled with an AC/DC converter or it can be powered from a DC source.
+The circuit features low output ripple with low output capacitance, excellent
+transient response, remains in regulation during short-circuit and stays cool
+with no bulky heat sinks. It can easily be coupled with an AC/DC converter or it
+can be powered from a DC source.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/dsc04840.png
    :alt: Figure 1. EVAL-CN0508-RPIZ Circuit Evaluation Board
    :align: center
-   :width: 500px
+   :width: 500
 
 *Figure 1. EVAL-CN0508-RPIZ Circuit Evaluation Board*
 
@@ -68,14 +71,14 @@ Block Assignments
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/top1.png
    :alt: EVAL-CN0508-RPIZ Circuit Evaluation Board Top View
    :align: center
-   :width: 550px
+   :width: 550
 
 *Figure 2. EVAL-CN0508-RPIZ Circuit Evaluation Board Top View*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/side1.png
    :alt: EVAL-CN0508-RPIZ Circuit Evaluation Board Side View
    :align: center
-   :width: 450px
+   :width: 450
 
 *Figure 3. EVAL-CN0508-RPIZ Circuit Evaluation Board Side View*
 
@@ -96,7 +99,7 @@ Running the System
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/bd_1.png
    :alt: Figure 4. Test Setup Functional Block Diagram
    :align: center
-   :width: 500px
+   :width: 500
 
 *Figure 4. Test Setup Functional Block Diagram*
 
@@ -110,7 +113,8 @@ Running the System
 -  For manual control, rotate the knob of R43. The output voltage of the system follows the lower voltage between the output voltages of the potentiometer and the DAC.
 -  You may also change the current limit of the system by turning the knob of R14.
 -  The Raspberry Pi must be powered down properly in order to prevent eventual corruption of the SD card. This can be done by pressing S1 and waiting for the green heartbeat LED to stop blinking. At that point, power is safe to be removed.
--  Alternatively, click the ADI logo, scroll to the bottom, click power off, and wait for the heartbeat LED to stop blinking. Power is safe to be removed.
+-  Alternatively, click the ADI logo, scroll to the bottom, click power off, and
+   wait for the heartbeat LED to stop blinking. Power is safe to be removed.
 
 --------------
 
@@ -118,7 +122,6 @@ Solder Jumper Settings and Configuration
 ----------------------------------------
 
 The :adi:`CN0508` has six jumper headers which configure different settings as shown below. Also, the default shunt positions are highlighted.
-
 
 |EVAL-CN0508-RPIZ Evaluation Board Solder Jumper Guide|
 
@@ -187,7 +190,11 @@ ADC_INT Position ADC_INT Mapping to RPi
 VCTRL: Output Voltage Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-VCTRL enables users to choose how to control the output voltage between electronic and manual mode (chooses the lower setting between the two) versus exclusively manual mode. Output can be controlled electronically through the DAC and manually through the potentiometer knob. By default, the shunt connects pin 1 and 2 which enables both electronic and manual control.
+VCTRL enables users to choose how to control the output voltage between
+electronic and manual mode (chooses the lower setting between the two) versus
+exclusively manual mode. Output can be controlled electronically through the DAC
+and manually through the potentiometer knob. By default, the shunt connects pin
+1 and 2 which enables both electronic and manual control.
 
 ============== ===========================
 VCTRL Position VCTRL Mapping
@@ -201,13 +208,18 @@ VCTRL Position VCTRL Mapping
 
 .. note::
 
-   Even if you set the EVAL-CN0508-RPIZ in purely knob control mode, you still need to have the RPi connected to it. The 3.3V from the RPi supplies the ADC and DAC circuitry in the EVAL-CN0508-RPIZ.
-
+   Even if you set the EVAL-CN0508-RPIZ in purely knob control mode, you still
+   need to have the RPi connected to it. The 3.3V from the RPi supplies the ADC
+   and DAC circuitry in the EVAL-CN0508-RPIZ.
 
 EEPROM_ID: EEPROM Address Selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-EEPROM_ID sets the EEPROM I2C address. It consists of P4, P5, and P6 solder jumpers connected respectively to A2, A1, and A0 address selection pins of U7. The default address configuration is “111”. This EEPROM I2C address is configurable from 001 to 111. It cannot be set to "000" since U4 already uses this address for RPi HAT identification.
+EEPROM_ID sets the EEPROM I2C address. It consists of P4, P5, and P6 solder
+jumpers connected respectively to A2, A1, and A0 address selection pins of U7.
+The default address configuration is “111”. This EEPROM I2C address is
+configurable from 001 to 111. It cannot be set to "000" since U4 already uses
+this address for RPi HAT identification.
 
 == == == ===========
 A0 A1 A2 Address Set
@@ -221,7 +233,6 @@ A0 A1 A2 Address Set
 1  1  1  0x57
 == == == ===========
 
-
 | ----
 
 Hardware Setup
@@ -230,22 +241,26 @@ Hardware Setup
 Setting up and Connecting the Raspberry Pi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The output display of the system will be through an external monitor with HDMI capability. To do this, connect the mini HDMI to HDMI adapter on the Raspberry Pi Zero W mini HDMI slot. Connect the external monitor through this port.
-
+The output display of the system will be through an external monitor with HDMI
+capability. To do this, connect the mini HDMI to HDMI adapter on the Raspberry
+Pi Zero W mini HDMI slot. Connect the external monitor through this port.
 
 |Hardware connection of Raspberry Pi to Monitor Display|
 
 *Figure 6. Hardware connection of Raspberry Pi to Monitor Display*
 
-Connect a micro-USB to USB Type A female adapter on the USB port of the Raspberry Pi Zero W. This shall allow us to connect a mouse/keyboard or even a USB hub to be able to connect both for controlling the Raspberry Pi upon boot up.
-
+Connect a micro-USB to USB Type A female adapter on the USB port of the
+Raspberry Pi Zero W. This shall allow us to connect a mouse/keyboard or even a
+USB hub to be able to connect both for controlling the Raspberry Pi upon boot
+up.
 
 |Hardware connection of Input Devices to Raspberry Pi|
 
 *Figure 7. Hardware connection of Input Devices to Raspberry Pi*
 
-Raspberry Pi connects to the EVAL-CN0508-RPIZ through P3 which is a 40-pin connector. You may do this directly by connecting the RPi on the bottom side of the connector or through a 40-pin ribbon cable.
-
+Raspberry Pi connects to the EVAL-CN0508-RPIZ through P3 which is a 40-pin
+connector. You may do this directly by connecting the RPi on the bottom side of
+the connector or through a 40-pin ribbon cable.
 
 |Hardware connection of CN0508 Board and Raspberry Pi|
 
@@ -254,8 +269,10 @@ Raspberry Pi connects to the EVAL-CN0508-RPIZ through P3 which is a 40-pin conne
 Input Supply
 ~~~~~~~~~~~~
 
-Power to the EVAL-CN0508-RPIZ can be connected through P1 or P2. P1 is a two-terminal screw terminal while P2 is a 5.5mm x 2.5mm center positive barrel jack. Please choose only one input between the two. The maximum input rating to the circuit is at 40V 3A or 120W.
-
+Power to the EVAL-CN0508-RPIZ can be connected through P1 or P2. P1 is a
+two-terminal screw terminal while P2 is a 5.5mm x 2.5mm center positive barrel
+jack. Please choose only one input between the two. The maximum input rating to
+the circuit is at 40V 3A or 120W.
 
 |Hardware Connection of Input Power Supply to CN0508 Evaluation Board|
 
@@ -264,8 +281,10 @@ Power to the EVAL-CN0508-RPIZ can be connected through P1 or P2. P1 is a two-ter
 Output connections
 ~~~~~~~~~~~~~~~~~~
 
-You can connect a resistive load/test circuit, an electronic load, or multimeter at the output banana jacks P7 and P8. P7 is the positive polarity and P8 is the ground. Also, make sure you are aware of your load's power consumption to avoid overheating.
-
+You can connect a resistive load/test circuit, an electronic load, or multimeter
+at the output banana jacks P7 and P8. P7 is the positive polarity and P8 is the
+ground. Also, make sure you are aware of your load's power consumption to avoid
+overheating.
 
 |EVAL-CN0508-RPIZ Evaluation Board Output Connections|
 
@@ -274,15 +293,16 @@ You can connect a resistive load/test circuit, an electronic load, or multimeter
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/load1.png
    :alt: EVAL-CN0508-RPIZ Evaluation Board Connected to a Load
    :align: center
-   :width: 550px
+   :width: 550
 
 *Figure 11. EVAL-CN0508-RPIZ Evaluation Board Connected to a Load*
 
 Connecting a fan
 ~~~~~~~~~~~~~~~~
 
-Cooling requirements for EVAL-CN0508-RPIZ are low but it still contains a control circuit for a fan. If either of the regulators' temperature readings hit 60 Celsius and above, the 5V power for the fan on P12 turns on.
-
+Cooling requirements for EVAL-CN0508-RPIZ are low but it still contains a
+control circuit for a fan. If either of the regulators' temperature readings hit
+60 Celsius and above, the 5V power for the fan on P12 turns on.
 
 |Hardware Connection of EVAL-CN0508-RPIZ to a Fan|
 
@@ -318,17 +338,14 @@ Follow the Hardware Configuration procedure under **Preparing the Image: Raspber
 
    | The lines below the "*dtoverlay*" enable additional hardware features, including a heartbeat LED (DS3, green) and a shutdown button (S1) that allows the Raspberry Pi to be shut down properly before disconnecting power.
 
-
 .. tip::
 
    Make sure to have the latest version of IIO Oscilloscope. Complete instructions and update scripts are found at :doc:`Analog Devices IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
-
 
 Electronic Control and Diagnostics via IIO Oscilloscope Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 EVAL-CN0508-RPIZ allows electronic control of the output voltage and measurement display of other system diagnostics such as voltage, current, and temperature through the :adi:`AD7124-4` ADC. All of these are incorporated and displayed in the designated plugin for CN0508 in IIO Oscilloscope.
-
 
 |image1|
 
@@ -347,12 +364,17 @@ This shows the temperature readings of the two :adi:`LT3081`. While power dissip
 DC Supply
 ~~~~~~~~~
 
-This presents the output voltage and output current of the EVAL-CN0508-RPIZ. The output voltage is set to the lower of the output voltages between the DAC and potentiometer.
+This presents the output voltage and output current of the EVAL-CN0508-RPIZ. The
+output voltage is set to the lower of the output voltages between the DAC and
+potentiometer.
 
 Potentiometers
 ~~~~~~~~~~~~~~
 
-This shows the position of the voltage and current limit potentiometers. An indicator flag is raised if the output current reaches 95% of the current limit setpoint or if the measured output voltage falls more than 0.5V below the lower of (DAC setpoint, potentiometer setpoint).
+This shows the position of the voltage and current limit potentiometers. An
+indicator flag is raised if the output current reaches 95% of the current limit
+setpoint or if the measured output voltage falls more than 0.5V below the lower
+of (DAC setpoint, potentiometer setpoint).
 
 Input Supply
 ~~~~~~~~~~~~
@@ -387,7 +409,6 @@ Schematic, PCB Layout, Bill of Materials, Casing
    -  Front Panel Casing in *.svg* file
    
 
-
 .. admonition:: Download
    :class: download
 
@@ -401,7 +422,6 @@ Schematic, PCB Layout, Bill of Materials, Casing
    -  LTSpice Simulations
    
 
-
 Registration
 ------------
 
@@ -409,22 +429,21 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0508-RPIZ?&v=RevC>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |EVAL-CN0508-RPIZ Evaluation Board Solder Jumper Guide| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/assembly_top6.png
-   :width: 1000px
+   :width: 1000
 .. |Hardware connection of Raspberry Pi to Monitor Display| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/hdmi_2.png
-   :width: 300px
+   :width: 300
 .. |Hardware connection of Input Devices to Raspberry Pi| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/micro.png
-   :width: 300px
+   :width: 300
 .. |Hardware connection of CN0508 Board and Raspberry Pi| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/rpi3.png
-   :width: 600px
+   :width: 600
 .. |Hardware Connection of Input Power Supply to CN0508 Evaluation Board| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/supply1.png
-   :width: 700px
+   :width: 700
 .. |EVAL-CN0508-RPIZ Evaluation Board Output Connections| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/out1.png
-   :width: 400px
+   :width: 400
 .. |Hardware Connection of EVAL-CN0508-RPIZ to a Fan| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/fan1.png
-   :width: 600px
+   :width: 600
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0508/iioscope_508_032021.jpg
-   :width: 500px
+   :width: 500

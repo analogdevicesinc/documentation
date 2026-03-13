@@ -1,27 +1,32 @@
 AD-GMSL716MIPI-EVK
 ==================
 
-
-
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages
 
    | The latest version of this document can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-gmsl716mipi-evk/index.html
 
-
 Overview
 --------
 
 The :adi:`AD-GMSL716MIPI-EVK` is a compact, cost-effective GMSL2 deserializer evaluation board that bridges GMSL2 serialized video signals to MIPI CSI-2 interfaces for System-on-Chip platforms. Featuring the MAX96716A dual GMSL2 to CSI-2 deserializer, this board provides a robust solution for automotive and industrial vision applications.
 
-The board addresses the market need for affordable GMSL camera solutions covering multiple sensor types. It implements Power over Coax functionality, allowing both data transmission and power delivery through a single coaxial cable, significantly simplifying system integration and cable management. The evaluation board includes comprehensive reference software with device tree and Linux images for all supported camera types.
+The board addresses the market need for affordable GMSL camera solutions
+covering multiple sensor types. It implements Power over Coax functionality,
+allowing both data transmission and power delivery through a single coaxial
+cable, significantly simplifying system integration and cable management. The
+evaluation board includes comprehensive reference software with device tree and
+Linux images for all supported camera types.
 
-Key technical capabilities include support for up to 15-meter cable lengths, 3Gbps or 6Gbps forward link rates, and bidirectional I2C communication for camera control. The board's small form factor and mounting compatibility make it ideal for rapid prototyping and development of GMSL2 camera systems.
+Key technical capabilities include support for up to 15-meter cable lengths,
+3Gbps or 6Gbps forward link rates, and bidirectional I2C communication for
+camera control. The board's small form factor and mounting compatibility make it
+ideal for rapid prototyping and development of GMSL2 camera systems.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl716mipi-evk/board_angle.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Features
 ~~~~~~~~
@@ -52,7 +57,7 @@ System Architecture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl716mipi-evk/ad-gmsl716mipi-evk_simlified_block_diagram.png
    :align: center
-   :width: 500px
+   :width: 500
 
 **Forward Path (Camera to SoC):**
 
@@ -96,7 +101,6 @@ Specifications
    ====================== =========================================
    
 
-
 Package Contents
 ----------------
 
@@ -113,7 +117,7 @@ Hardware Components and Connections
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl716mipi-evk/ad-gmsl716mipi-evk_connectors.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 .. container:: center box
 
@@ -135,7 +139,6 @@ Hardware Components and Connections
    +-------------------+----------------------------------------------------------------------------------+
    
 
-
 Hardware Setup
 --------------
 
@@ -152,7 +155,7 @@ Equipment Needed
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl716mipi-evk/hardware_setup.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Power System Verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -215,12 +218,13 @@ Software
 
 .. tip::
 
-   The AD-GMSL716MIPI-EVK software package offers driver support and configuration tools for integrating GMSL2 cameras with popular SoCs, including device tree and kernel drivers.
+   The AD-GMSL716MIPI-EVK software package offers driver support and
+   configuration tools for integrating GMSL2 cameras with popular SoCs,
+   including device tree and kernel drivers.
 
    
    Access the resources via the `Analog Devices GMSL GitHub repository <https://github.com/analogdevicesinc/Analog Devices GMSL GitHub repository>`_.
    
-
 
 Design & Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -237,13 +241,12 @@ Design & Integration Files
    -  Allegro Project
    
 
-
 Help and Support
 ~~~~~~~~~~~~~~~~
 
-For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer
+Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
-

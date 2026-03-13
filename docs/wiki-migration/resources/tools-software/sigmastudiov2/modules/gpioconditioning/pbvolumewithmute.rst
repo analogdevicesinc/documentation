@@ -9,7 +9,11 @@ Push Button Volume With Mute
 Description
 -----------
 
-The Push Button Volume with Mute block can be used with the GPIO push buttons to control the volume of an input audio signal. This block has the functionality of the Push and Hold, Up/Down Control, Index lookup Table, and SW External Volume control all in one block. The user has the flexibility to define a custom volume curve, used for taper, that is indexed through the pushbuttons.
+The Push Button Volume with Mute block can be used with the GPIO push buttons to
+control the volume of an input audio signal. This block has the functionality of
+the Push and Hold, Up/Down Control, Index lookup Table, and SW External Volume
+control all in one block. The user has the flexibility to define a custom volume
+curve, used for taper, that is indexed through the pushbuttons.
 
 Usage
 -----

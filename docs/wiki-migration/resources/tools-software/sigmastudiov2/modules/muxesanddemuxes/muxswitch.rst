@@ -8,7 +8,8 @@ Switch Multiplexer
 Description
 -----------
 
-The Mux Switch block routes one of many possible input signals to the output. The strip of radio buttons is used to select the input signal.
+The Mux Switch block routes one of many possible input signals to the output.
+The strip of radio buttons is used to select the input signal.
 
 Variants
 --------

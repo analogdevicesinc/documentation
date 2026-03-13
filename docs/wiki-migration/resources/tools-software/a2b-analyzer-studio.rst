@@ -18,13 +18,13 @@ A2B Analyzer HP
 ~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_19.png
-   :width: 600px
+   :width: 600
 
 A2B Bus Analyzer
 ~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/20230717_074439_4_.jpg
-   :width: 600px
+   :width: 600
 
 A2B Analyzer Studio - Software
 ------------------------------
@@ -33,10 +33,10 @@ Bus Monitor
 ~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_monitor_features.png
-   :width: 600px
+   :width: 600
 
 Emulator
 ~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bas_emulator_features.png
-   :width: 600px
+   :width: 600

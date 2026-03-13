@@ -15,30 +15,39 @@ Figure HWD1: SDP-S Board LEDs
 LED 1
 ~~~~~
 
-The orange LED is an LED to be used as a diagnostic tool for evaluation application developers.
+The orange LED is an LED to be used as a diagnostic tool for evaluation
+application developers.
 
 POWER LED (PWR)
 ~~~~~~~~~~~~~~~
 
-The green power LED indicates that the SDP-S board is powered. This is not an indication of USB connectivity between the SDP-B and the PC.
+The green power LED indicates that the SDP-S board is powered. This is not an
+indication of USB connectivity between the SDP-B and the PC.
 
 Connector Details
 -----------------
 
-The SDP-S board contains one Hirose FX8-120P-SV1(91), 120-pin header connector. Through this connector, the peripheral communication interfaces of the USB-to-serial engine are exposed. The exposed peripherals are:
+The SDP-S board contains one Hirose FX8-120P-SV1(91), 120-pin header connector.
+Through this connector, the peripheral communication interfaces of the
+USB-to-serial engine are exposed. The exposed peripherals are:
 
 -  SPI
 -  I\ :sup:`2`\ C/TWI
 -  GPIO
 
-Also, included on the connector specification are input and output power pins, ground pins, and pins reserved for future use.
+Also, included on the connector specification are input and output power pins,
+ground pins, and pins reserved for future use.
 
 Connector Pin Assignments
 -------------------------
 
-The connector pin assignments have been defined independently of the any internal pin sharing, which occurs on the Blackfin processor. The table lists the connector pins and identifies the functionality assigned to each connector pin on the SDP-S board.
+The connector pin assignments have been defined independently of the any
+internal pin sharing, which occurs on the Blackfin processor. The table lists
+the connector pins and identifies the functionality assigned to each connector
+pin on the SDP-S board.
 
-The pinout of this connector is consistent with other connectors across the SDP family.
+The pinout of this connector is consistent with other connectors across the SDP
+family.
 
 120 Pin Connector Pin Assignments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -290,7 +299,9 @@ Pin No. Pin Name Description
 | 120 | NC          | No connect. Leave this pin unconnected. Do not ground.                                        |
 +-----+-------------+-----------------------------------------------------------------------------------------------+
 
-Each interface provided by the SDP-B is available on unique pins of the SDP-S’s 120 pin connector. The connector pin numbering scheme is out-line in Figure HWD2.
+Each interface provided by the SDP-B is available on unique pins of the SDP-S’s
+120 pin connector. The connector pin numbering scheme is out-line in Figure
+HWD2.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-s/connector_outline.jpg
 
@@ -299,44 +310,80 @@ Figure HWD2: 120 Pin Connector Outline
 Power
 ~~~~~
 
-The SDP-S board is powered by the USB connector. It does not require power to be supplied by the daughter board. The SDP-S board provides 3.3 V at 20 mA on Pin 116 (VIO_3.3) to connected daughter boards as the VIO voltage for the daughterboard. Pin 5 (USB_VBUS) is connected to the 5 V line of the USB connector, providing 5 V ±10% as an output of the SDP board.
+The SDP-S board is powered by the USB connector. It does not require power to be
+supplied by the daughter board. The SDP-S board provides 3.3 V at 20 mA on Pin
+116 (VIO_3.3) to connected daughter boards as the VIO voltage for the
+daughterboard. Pin 5 (USB_VBUS) is connected to the 5 V line of the USB
+connector, providing 5 V ±10% as an output of the SDP board.
 
 Daughter Board Design Guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The daughter board design guidelines specify the layout, connector positioning, keep out areas, and dimensions of potential daughter boards. This guidance is to ensure that a daughter board can connect to any controller board from the SDP family. Following these guidelines ensures that the connector on the SDP-S or any other controller board in the SDP family can have any one of the available daughter boards physically attached.
+The daughter board design guidelines specify the layout, connector positioning,
+keep out areas, and dimensions of potential daughter boards. This guidance is to
+ensure that a daughter board can connect to any controller board from the SDP
+family. Following these guidelines ensures that the connector on the SDP-S or
+any other controller board in the SDP family can have any one of the available
+daughter boards physically attached.
 
 Connector Location
 ~~~~~~~~~~~~~~~~~~
 
-The daughter board connector and securing screw holes are located in the top left hand corner. This arrangement for a daughter board is shown in Figure 5. If a daughter board exceeds these dimensions, it may not be possible to connect it to the other controller or interposer boards in the SDP family. Every effort was made to extend the 5.9 mm dimension as large as possible to allow space for vias between the connector and the edge of the board. These are absolute maximum dimensions and must not be exceeded. The full specification drawing for the connector location on the daughter board is shown in Figure 6. The mating daughter board 120-pin connector is the Hirose FX8-120S-SV(21), 120-pin receptacle, FEC 132-4660, Digi-Key H1219-ND. Consult the connector data sheet for full details on the connector. Note that Pin 1 to Pin 60 are placed on the left side of the connector and Pin 61 to Pin 120 are placed on the right side of the connector.
+The daughter board connector and securing screw holes are located in the top
+left hand corner. This arrangement for a daughter board is shown in Figure 5. If
+a daughter board exceeds these dimensions, it may not be possible to connect it
+to the other controller or interposer boards in the SDP family. Every effort was
+made to extend the 5.9 mm dimension as large as possible to allow space for vias
+between the connector and the edge of the board. These are absolute maximum
+dimensions and must not be exceeded. The full specification drawing for the
+connector location on the daughter board is shown in Figure 6. The mating
+daughter board 120-pin connector is the Hirose FX8-120S-SV(21), 120-pin
+receptacle, FEC 132-4660, Digi-Key H1219-ND. Consult the connector data sheet
+for full details on the connector. Note that Pin 1 to Pin 60 are placed on the
+left side of the connector and Pin 61 to Pin 120 are placed on the right side of
+the connector.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-s/connector_location.jpg
 
 Figure HWD3: Maximum Board Dimensions for Connector Placement
 
-The full specification drawing for the connector location on the daughter board can be seen in Figure HWD4.
+The full specification drawing for the connector location on the daughter board
+can be seen in Figure HWD4.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-s/connector_placement.jpg
 
 Figure HWD4: Connector Placement on Compatible Daughter Board
 
-The mating daughter board 120 pin connector is the Hirose FX8-120S-SV(21), 120-pin receptacle, FEC 132-4660, Digikey H1219-ND. Please consult the connector's data sheet for full details on the connector. Note pins 1 to 60 are placed on the left side of the connector and pins 61 to 120 are placed on the right side of the connector.
+The mating daughter board 120 pin connector is the Hirose FX8-120S-SV(21),
+120-pin receptacle, FEC 132-4660, Digikey H1219-ND. Please consult the
+connector's data sheet for full details on the connector. Note pins 1 to 60 are
+placed on the left side of the connector and pins 61 to 120 are placed on the
+right side of the connector.
 
 Keep Out Area
 ~~~~~~~~~~~~~
 
-To allow the greatest flexibility for future controller boards, a keep out area is established for components higher that 3 mm. The keep out area is 12.65 mm wide and extends down the entire left side of the daughter board.
+To allow the greatest flexibility for future controller boards, a keep out area
+is established for components higher that 3 mm. The keep out area is 12.65 mm
+wide and extends down the entire left side of the daughter board.
 
 Restriction on Right Angle Connectors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Due to the layout of other boards in the SDP family, and their daughter boards, right angle connectors are not allowed on the top and left edges of the daughter boards and (if required) should be placed on the right or bottom edges. A right angle connector describes any con¬nector that requires the connection to protrude over the edge of the board (for example, right angle SMB or screw terminal).
+Due to the layout of other boards in the SDP family, and their daughter boards,
+right angle connectors are not allowed on the top and left edges of the daughter
+boards and (if required) should be placed on the right or bottom edges. A right
+angle connector describes any con¬nector that requires the connection to
+protrude over the edge of the board (for example, right angle SMB or screw
+terminal).
 
 Mechanical Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TThe mechanical specifications of the SDP-S board are 2.36 inch × 0.87 inch (60 mm × 22 mm). The tallest component on the top is approximately 0.17 inch (4.3 mm), and the tallest compo¬nents on the bottoms are the 120-pin connectors at approximately 0.152 inch (3.86 mm). Refer to Figure HWD5.
+TThe mechanical specifications of the SDP-S board are 2.36 inch × 0.87 inch (60
+mm × 22 mm). The tallest component on the top is approximately 0.17 inch (4.3
+mm), and the tallest compo¬nents on the bottoms are the 120-pin connectors at
+approximately 0.152 inch (3.86 mm). Refer to Figure HWD5.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-s/connector_mechspec2.jpg
 

@@ -14,11 +14,17 @@ Overview
 ADIS1650X
 ~~~~~~~~~
 
-
-
 .. collapsible:: Click to expand
 
-   The ADIS1650X device series is a precision, miniature microelectromechanical system (MEMS) inertial measurement unit (IMU) that includes a triaxial gyroscope and a triaxial accelerometer. Each inertial sensor in the ADIS1650X device series combines with signal conditioning that optimizes dynamic performance. The factory calibration characterizes each sensor for sensitivity, bias, alignment, linear acceleration (gyroscope bias), and point of percussion (accelerometer location). As a result, each sensor has dynamic compensation formulas that provide accurate sensor measurements over a broad set of conditions.
+   The ADIS1650X device series is a precision, miniature microelectromechanical
+   system (MEMS) inertial measurement unit (IMU) that includes a triaxial
+   gyroscope and a triaxial accelerometer. Each inertial sensor in the ADIS1650X
+   device series combines with signal conditioning that optimizes dynamic
+   performance. The factory calibration characterizes each sensor for
+   sensitivity, bias, alignment, linear acceleration (gyroscope bias), and point
+   of percussion (accelerometer location). As a result, each sensor has dynamic
+   compensation formulas that provide accurate sensor measurements over a broad
+   set of conditions.
 
    Applications
 
@@ -31,8 +37,6 @@ ADIS1650X
 
    .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/adis16500_pcbzangle-web.png
       :alt: adis16500_pcbzangle-web.png
-
-
 
 ADI No-OS
 ---------
@@ -57,13 +61,11 @@ The source code for ADIS generic driver can be found here:
    -   :git-no-OS:`Implementation of ADIS Generic Driver <drivers/imu/adis.c>`
    
 
-
-The generic ADIS driver has to be used together with the chip-specific ADIS driver. The source code for the supported chips is listed below:
+The generic ADIS driver has to be used together with the chip-specific ADIS
+driver. The source code for the supported chips is listed below:
 
 ADIS1650X Driver Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -72,16 +74,11 @@ ADIS1650X Driver Source Code
    .. admonition:: Download
       :class: download
 
-
       -  :git-no-OS:`Header file of ADIS1650X Driver <drivers/imu/adis1650x.h>`
       -   :git-no-OS:`Implementation of ADIS1650X Driver <drivers/imu/adis1650x.c>`
 
-
-
 ADIS1657X Driver Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -90,13 +87,12 @@ ADIS1657X Driver Source Code
    .. admonition:: Download
       :class: download
 
-
       -  :git-no-OS:`Header file of ADIS1657X Driver <drivers/imu/adis1657x.h>`
       -   :git-no-OS:`Implementation of ADIS1657X Driver <drivers/imu/adis1657x.c>`
 
-
-
-The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
+The driver also uses the ADI util library, so make sure you also add the
+necessary files in your project. The source code for the util library can be
+found here:
 
 .. admonition:: Download
    :class: download
@@ -106,8 +102,10 @@ The driver also uses the ADI util library, so make sure you also add the necessa
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
-
-In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. For SPI communication, there are four functions which are called by the ADIS driver and have to be implemented:
+In order to be able to use this driver you will have to provide the specific
+implementation for the communication APIs and the specific types they use. For
+SPI communication, there are four functions which are called by the ADIS driver
+and have to be implemented:
 
 -  no_os_spi_init() – initializes the communication peripheral.
 -  no_os_spi_write_and_read() – writes and reads data to/from the device.
@@ -120,7 +118,9 @@ And there are three data types that have to be defined:
 -  no_os_spi_init_param - structure holding the parameters for SPI initialization
 -  no_os_spi_msg - structure holding the description for a SPI transfer
 
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using can be
+found below:
 
 .. admonition:: Download
    :class: download
@@ -129,8 +129,8 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
 
-
-You will also have to provide specific APIs for GPIO handling. There are five functions which are called by the ADIS driver and have to be implemented:
+You will also have to provide specific APIs for GPIO handling. There are five
+functions which are called by the ADIS driver and have to be implemented:
 
 -  no_os_gpio_get_optional - returns the descriptor to a specific GPIO
 -  no_os_gpio_direction_output - enables the output direction of the specified GPIO descriptor
@@ -140,9 +140,12 @@ You will also have to provide specific APIs for GPIO handling. There are five fu
 And there are two data types that have to be defined:
 
 -  no_os_gpio_desc - structure holding the GPIO descriptor
--  no_os_gpio_init_param - structure holding the parameters for GPIO initialization
+-  no_os_gpio_init_param - structure holding the parameters for GPIO
+   initialization
 
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using can be
+found below:
 
 .. admonition:: Download
    :class: download
@@ -151,11 +154,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for GPIO APIs <include/no_os_gpio.h>`
    
 
-
 ADIS Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available below:
 
 -  `ADIS Generic Driver Header file <http://analogdevicesinc.github.io/no-OS/doxygen/adis_8h.html>`_
 -  `ADIS Generic Driver Source file <http://analogdevicesinc.github.io/no-OS/doxygen/adis_8c.html>`_
@@ -163,30 +166,24 @@ Source code documentation for the driver is automatically generated using the Do
 ADIS1650X Code Driver Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-
 .. collapsible:: Click to expand
 
-   Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+   Source code documentation for the driver is automatically generated using the
+   Doxygen tool and it is available below:
 
    -  `ADIS1650X Header file <http://analogdevicesinc.github.io/no-OS/doxygen/adis1650x_8h.html>`_
    -  `ADIS1650X Source file <http://analogdevicesinc.github.io/no-OS/doxygen/adis1650x_8c.html>`_
 
-
-
 ADIS1657X Code Driver Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-
 .. collapsible:: Click to expand
 
-   Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+   Source code documentation for the driver is automatically generated using the
+   Doxygen tool and it is available below:
 
    -  `ADIS1657X Header file <http://analogdevicesinc.github.io/no-OS/doxygen/adis1657x_8h.html>`_
    -  `ADIS1657X Source file <http://analogdevicesinc.github.io/no-OS/doxygen/adis1657x_8c.html>`_
-
-
 
 ADIS Device Initialization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -242,14 +239,13 @@ The following data will be retrieved, with **burst_size_selection = 0** and** bu
       burst_data[7] = TEMP, bits[15:0]
       burst_data[8] = DATA_CNTR, bits[15:0]
 
-   In this case, the provided buffer should have a 16-byte size and function call should look like:
+   In this case, the provided buffer should have a 16-byte size and function
+   call should look like:
 
    .. code:: C
 
       uint16_t burst_data[9];
       int ret = adis_read_burst_data(adis, 18, &burst_data, 0);
-
-
 
 The following data will be retrieved, with **burst_size_selection = 0** and** burst_data_selection = 1*\*: 
 
@@ -267,14 +263,13 @@ The following data will be retrieved, with **burst_size_selection = 0** and** bu
       burst_data[7] = TEMP, bits[15:0]
       burst_data[8] = DATA_CNTR, bits[15:0]
 
-   In this case, the provided buffer should have a 16-byte size and function call should look like:
+   In this case, the provided buffer should have a 16-byte size and function
+   call should look like:
 
    .. code:: C
 
       uint16_t burst_data[9];
       int ret = adis_read_burst_data(adis, 18, &burst_data, 0);
-
-
 
 The following data will be retrieved, with **burst_size_selection = 1** and** burst_data_selection = 0*\*: 
 
@@ -298,14 +293,13 @@ The following data will be retrieved, with **burst_size_selection = 1** and** bu
       burst_data[13] = TEMP, bits[15:0]
       burst_data[14] = DATA_CNTR, bits[15:0]
 
-   In this case, the provided buffer should have a 16-byte size and function call should look like:
+   In this case, the provided buffer should have a 16-byte size and function
+   call should look like:
 
    .. code:: C
 
       uint16_t burst_data[30];
       int ret = adis_read_burst_data(adis, 30, &burst_data, 1);
-
-
 
 The following data will be retrieved, with **burst_size_selection = 1** and** burst_data_selection = 1*\*: 
 
@@ -329,14 +323,13 @@ The following data will be retrieved, with **burst_size_selection = 1** and** bu
       burst_data[13] = TEMP, bits[15:0]
       burst_data[14] = DATA_CNTR, bits[15:0]
 
-   In this case, the provided buffer should have a 30-byte size and function call should look like:
+   In this case, the provided buffer should have a 30-byte size and function
+   call should look like:
 
    .. code:: C
 
       uint16_t burst_data[15];
       int ret = adis_read_burst_data(adis, 30, &burst_data, 1);
-
-
 
 ADIS Diagnosis Data
 ~~~~~~~~~~~~~~~~~~~
@@ -345,8 +338,6 @@ If you want to obtain the diagnosis data of the device, you may use **adis_read_
 
 ADIS1650X Diagnosis Data
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -364,12 +355,8 @@ ADIS1650X Diagnosis Data
    -  **adis_read_diag_fls_mem_wr_cnt_exceed** - to obtain the flash memory write counts exceeded flag value (set to true if the flash memory write counter exceeds the endurance value
    -  **adis_read_diag_stat** - to obtain all error flags
 
-
-
 ADIS1657X Diagnosis Data
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -392,12 +379,11 @@ ADIS1657X Diagnosis Data
    -  **adis_read_diag_fls_mem_wr_cnt_exceed** - to obtain the flash memory write counts exceeded flag value (set to true if the flash memory write counter exceeds the endurance value)
    -  **adis_read_diag_stat** - to obtain all error flags
 
-
-
 ADIS Identification Data
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you want to obtain identification data specific to the device, you may use the following APIs:
+If you want to obtain identification data specific to the device, you may use
+the following APIs:
 
 -  **adis_read_prod_id** to obtain the product id
 -  **adis_read_serial_num** to obtain the product serial number
@@ -432,23 +418,19 @@ Filters configuration
 Continuous Bias Estimation Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Some devices offer continuous bias estimation configuration capabilities. See the information below to view the configuration APIs for the devices which offer continuous bias estimation capabilities.
+Some devices offer continuous bias estimation configuration capabilities. See
+the information below to view the configuration APIs for the devices which offer
+continuous bias estimation capabilities.
 
 ADIS1650X
 """""""""
-
-
 
 .. collapsible:: Click to expand
 
    This device does not offer continuous bias estimation capabilities.
 
-
-
 ADIS1657X
 """""""""
-
-
 
 .. collapsible:: Click to expand
 
@@ -460,28 +442,22 @@ ADIS1657X
    -  **adis_write_bias_corr_en_ya**, **adis_read_bias_corr_en_ya** - to write/read the Y-axis accelerometer bias correction enable bit (0 - disabled, 1 - enabled)
    -  **adis_write_bias_corr_en_za**, **adis_read_bias_corr_en_za** - to write/read the Z-axis accelerometer bias correction enable bit (0 - disabled, 1 - enabled)
 
-
-
 FIFO Configuration
 ^^^^^^^^^^^^^^^^^^
 
-Some devices offer a hardware FIFO and offer configuration capabilities for the FIFO. See the information below to view the FIFO configuration APIs for the devices which have a hardware FIFO.
+Some devices offer a hardware FIFO and offer configuration capabilities for the
+FIFO. See the information below to view the FIFO configuration APIs for the
+devices which have a hardware FIFO.
 
 ADIS1650X
 """""""""
-
-
 
 .. collapsible:: Click to expand
 
    This device does not offer a hardware FIFO.
 
-
-
 ADIS1657X
 """""""""
-
-
 
 .. collapsible:: Click to expand
 
@@ -492,12 +468,11 @@ ADIS1657X
    -  **adis_write_fifo_wm_lvl**, **adis_read_fifo_wm_lvl** - to write/read the number of samples which must be enqueued into the FIFO to trigger the watermark interrupt
    -  **adis_read_fifo_cnt** - to read the current number of samples in the FIFO
 
-
-
 Miscellaneous configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Below you may find a list of APIs for device miscellaneous configuration, which is available for all devices:
+Below you may find a list of APIs for device miscellaneous configuration, which
+is available for all devices:
 
 -  **adis_write_dr_polarity**, **adis_read_dr_polarity** - data ready polarity encoded value write/read APIs
 -  **adis_write_sync_polarity**, **adis_read_sync_polarity** - sync polarity encoded value write/read APIs
@@ -508,40 +483,33 @@ Below you may find a list of APIs for device miscellaneous configuration, which 
 -  **adis_write_burst_sel**, **adis_read_burst_sel** - write/read APIs for burst selection encoded value (0 - acceleration and angular velocity, 1 - delta velocity and delta angle)
 -  **adis_write_burst32**, **adis_read_burst32** - write/read APIs for burst32 enable bit (0 - for 16-bit burst data, 1 - for 32-bit burst data)
 
-The following list of APIs for miscellaneous configuration are available only for specific chip-versions:
+The following list of APIs for miscellaneous configuration are available only
+for specific chip-versions:
 
 ADIS1650X
 """""""""
 
-
-
 .. collapsible:: Click to expand
 
-   There are no other specific APIs for miscellaneous configuration for this chip version.
-
-
+   There are no other specific APIs for miscellaneous configuration for this
+   chip version.
 
 ADIS1657X
 """""""""
-
-
 
 .. collapsible:: Click to expand
 
    -  **adis_write_timestamp32**, **adis_read_timestamp32** - write/read APIs for timestamp32 enable bit (0 - for 16-bit timestamp, 1 - for 32-bit timestamp)
    -  **adis_write_sync_4khz**, **adis_read_sync_4khz** - write/read APIs for 4KHz internal sync enable bit (0 - for 2KHz internal sync, 1 - for 4KHz internal sync)
 
-
-
 ADIS Commands
 ~~~~~~~~~~~~~
 
-The list below shows the available APIs for triggering device commands. These commands are specific to the selected chip.
+The list below shows the available APIs for triggering device commands. These
+commands are specific to the selected chip.
 
 ADIS1650X Commands
 ^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -551,12 +519,8 @@ ADIS1650X Commands
    -  **adis_cmd_fls_mem_test** - to perform flash memory test command
    -  **adis_cmd_sw_res** - to perform software reset command
 
-
-
 ADIS1657X Commands
 ^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -568,12 +532,11 @@ ADIS1657X Commands
    -  **adis_cmd_fifo_flush** - to perform fifo flush command
    -  **adis_cmd_sw_res** - to perform software reset command
 
-
-
 ADIS read-only register
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-There are some other APIs which allow to read some other read-only registers. They are presented below.
+There are some other APIs which allow to read some other read-only registers.
+They are presented below.
 
 -  **adis_read_time_stamp** - reads the current sample time stamp
 -  **adis_read_data_cntr** - reads the current sample data counter
@@ -581,29 +544,22 @@ There are some other APIs which allow to read some other read-only registers. Th
 ADIS1650X
 ^^^^^^^^^
 
-
-
 .. collapsible:: Click to expand
 
    There are no other APIs for this chip version.
 
-
-
 ADIS1657X
 ^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
    -  **adis_read_spi_chksum** - reads current sample SPI transaction checksum
 
-
-
 ADIS scratch pad registers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to perform read/write operations for device scratch pad registers use the following APIs:
+In order to perform read/write operations for device scratch pad registers use
+the following APIs:
 
 -  **adis_write_usr_scr_1**, **adis_read_usr_scr_1** - write/read APIs for scratch pad register 1
 -  **adis_write_usr_scr_2**, **adis_read_usr_scr_2** - write/read APIs for scratch pad register 2
@@ -614,8 +570,6 @@ ADIS Driver Initialization Example
 
 ADIS1650X Initialization Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -682,12 +636,8 @@ ADIS1650X Initialization Example
           pr_info("Error!\n");
       ...
 
-
-
 ADIS1657X Initialization Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -754,8 +704,6 @@ ADIS1657X Initialization Example
           pr_info("Error!\n");
       ...
 
-
-
 ADIS Driver Application Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -764,7 +712,8 @@ Below you can fine Application Example Project for ADIS driver: `Evaluating the 
 IIO ADIS No-OS driver
 ---------------------
 
-The IIO ADIS driver comes on top of ADIS driver and offers support for interfacing IIO clients through IIO lib.
+The IIO ADIS driver comes on top of ADIS driver and offers support for
+interfacing IIO clients through IIO lib.
 
 IIO ADIS Source Code
 ~~~~~~~~~~~~~~~~~~~~
@@ -779,13 +728,11 @@ The source code for IIO ADIS generic driver can be found here:
    -   :git-no-OS:`Implementation of IIO ADIS Generic Driver <drivers/imu/iio_adis.c>`
    
 
-
-The generic IIO ADIS driver has to be used together with the chip-specific IIO ADIS driver. The source code for the supported chips is listed below:
+The generic IIO ADIS driver has to be used together with the chip-specific IIO
+ADIS driver. The source code for the supported chips is listed below:
 
 IIO ADIS1650X Driver Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -794,16 +741,11 @@ IIO ADIS1650X Driver Source Code
    .. admonition:: Download
       :class: download
 
-
       -  :git-no-OS:`Header file of IIO ADIS1650X Driver <drivers/imu/iio_adis1650x.h>`
       -   :git-no-OS:`Implementation of IIO ADIS1650X Driver <drivers/imu/iio_adis1650x.c>`
 
-
-
 IIO ADIS1657X Driver Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -812,16 +754,14 @@ IIO ADIS1657X Driver Source Code
    .. admonition:: Download
       :class: download
 
-
       -  :git-no-OS:`Header file of IIO ADIS1657X Driver <drivers/imu/iio_adis1657x.h>`
       -   :git-no-OS:`Implementation of IIO ADIS1657X Driver <drivers/imu/iio_adis1657x.c>`
-
-
 
 IIO ADIS Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Source code documentation for the IIO driver is automatically generated using the Doxygen tool and it is available below:
+Source code documentation for the IIO driver is automatically generated using
+the Doxygen tool and it is available below:
 
 -  `IIO ADIS Generic Driver Header file <http://analogdevicesinc.github.io/no-OS/doxygen/iio__adis_8h.html>`_
 -  `IIO ADIS Generic Driver Source file <http://analogdevicesinc.github.io/no-OS/doxygen/iio__adis_8c.html>`_
@@ -829,30 +769,24 @@ Source code documentation for the IIO driver is automatically generated using th
 IIO ADIS1650X Code Driver Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-
 .. collapsible:: Click to expand
 
-   Source code documentation for the IIO driver is automatically generated using the Doxygen tool and it is available below:
+   Source code documentation for the IIO driver is automatically generated using
+   the Doxygen tool and it is available below:
 
    -  `IIO ADIS1650X Header file <http://analogdevicesinc.github.io/no-OS/doxygen/iio__adis1650x_8h.html>`_
    -  `IIO ADIS1650X Source file <http://analogdevicesinc.github.io/no-OS/doxygen/iio__adis1650x_8c.html>`_
 
-
-
 IIO ADIS1657X Code Driver Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-
 .. collapsible:: Click to expand
 
-   Source code documentation for the IIO driver is automatically generated using the Doxygen tool and it is available below:
+   Source code documentation for the IIO driver is automatically generated using
+   the Doxygen tool and it is available below:
 
    -  `IIO ADIS1657X Header file <http://analogdevicesinc.github.io/no-OS/doxygen/iio__adis1657x_8h.html>`_
    -  `IIO ADIS1657X Source file <http://analogdevicesinc.github.io/no-OS/doxygen/iio__adis1657x_8c.html>`_
-
-
 
 IIO ADIS Device Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -863,17 +797,18 @@ Device Attributes
 The generic IIO ADIS device has the following device specific attributes:
 
 -  filter_low_pass_3db_frequency - which allows the configuration of the ADIS Bartlett window FIR filter
--  sampling_frequency - which allows the configuration of the ADIS sampling frequency
+-  sampling_frequency - which allows the configuration of the ADIS sampling
+   frequency
 
 Device Channels
 ^^^^^^^^^^^^^^^
 
-The generic IIO ADIS device has 0 output channels and 14 input channels: 3 angular velocity channels, 3 acceleration channels, 3 rotation channels, 3 velocity channels, 1 temperature channel and 1 counter channel.
+The generic IIO ADIS device has 0 output channels and 14 input channels: 3
+angular velocity channels, 3 acceleration channels, 3 rotation channels, 3
+velocity channels, 1 temperature channel and 1 counter channel.
 
 Angular Velocity Channels
 """""""""""""""""""""""""
-
-
 
 .. collapsible:: Click to expand
 
@@ -887,14 +822,12 @@ Angular Velocity Channels
 
    -  calibbias - calibration offset correction
    -  raw - the raw angular velocity value read from the device
-   -  scale - the scale that has to be applied to the raw value in order to obtain the converted real value in rot/s, it has a constant value which is chip-specific.
-
-
+   -  scale - the scale that has to be applied to the raw value in order to
+      obtain the converted real value in rot/s, it has a constant value which is
+      chip-specific.
 
 Acceleration Channels
 """""""""""""""""""""
-
-
 
 .. collapsible:: Click to expand
 
@@ -908,14 +841,12 @@ Acceleration Channels
 
    -  calibbias - calibration offset correction
    -  raw - the raw acceleration value read from the device
-   -  scale - the scale that has to be applied to the raw value in order to obtain the converted real value in m/s^2, it has a constant value which is chip-specific.
-
-
+   -  scale - the scale that has to be applied to the raw value in order to
+      obtain the converted real value in m/s^2, it has a constant value which is
+      chip-specific.
 
 Temperature Channel
 """""""""""""""""""
-
-
 
 .. collapsible:: Click to expand
 
@@ -926,14 +857,12 @@ Temperature Channel
    The temperature channel has 2 attributes:
 
    -  raw - the raw temperature value read from the device
-   -  scale - the scale that has to be applied to the raw value in order to obtain the converted real value in milidegrees Celsius, it has a constant value which is chip-specific.
-
-
+   -  scale - the scale that has to be applied to the raw value in order to
+      obtain the converted real value in milidegrees Celsius, it has a constant
+      value which is chip-specific.
 
 Rotation Channels
 """""""""""""""""
-
-
 
 .. collapsible:: Click to expand
 
@@ -946,14 +875,12 @@ Rotation Channels
    Each rotation channel has 2 attributes:
 
    -  raw - the raw rotation (delta angle) value read from the device
-   -  scale - the scale that has to be applied to the raw value in order to obtain the converted real value in degrees, it has a constant value which is chip-specific.
-
-
+   -  scale - the scale that has to be applied to the raw value in order to
+      obtain the converted real value in degrees, it has a constant value which
+      is chip-specific.
 
 Velocity Channels
 """""""""""""""""
-
-
 
 .. collapsible:: Click to expand
 
@@ -966,14 +893,12 @@ Velocity Channels
    Each velocity channel has 2 attributes:
 
    -  raw - the raw velocity (delta velocity) value read from the device
-   -  scale - the scale that has to be applied to the raw value in order to obtain the converted real value in m/s, it has a constant value which is chip-specific.
-
-
+   -  scale - the scale that has to be applied to the raw value in order to
+      obtain the converted real value in m/s, it has a constant value which is
+      chip-specific.
 
 Count Channel
 """""""""""""
-
-
 
 .. collapsible:: Click to expand
 
@@ -981,19 +906,19 @@ Count Channel
 
    -  Channel 13: count
 
-   The count channel does not have any attributes. It is used only in buffer mode to add the data counter value for each sample set obtained in burst mode.
-
-
+   The count channel does not have any attributes. It is used only in buffer
+   mode to add the data counter value for each sample set obtained in burst
+   mode.
 
 Device Debug Attributes
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The IIO driver offers the possibility to configure the device and to retrieve diagnosis and configuration data from the device using debug attributes. The following list of debug attributes is available:
+The IIO driver offers the possibility to configure the device and to retrieve
+diagnosis and configuration data from the device using debug attributes. The
+following list of debug attributes is available:
 
 ADIS1650X
 """""""""
-
-
 
 .. collapsible:: Click to expand
 
@@ -1081,12 +1006,8 @@ ADIS1650X
    | 39                    | Read-only   | flash_counter                                | The number of the flash writes performed on the device             | 0 - 65535                                                                                                                                   |
    +-----------------------+-------------+----------------------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 ADIS1657X
 """""""""
-
-
 
 .. collapsible:: Click to expand
 
@@ -1220,20 +1141,17 @@ ADIS1657X
    | 62                    | Read-only   | flash_counter                                | The number of the flash writes performed on the device             | 0 - 65535                                                                                                                                   |
    +-----------------------+-------------+----------------------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 Device Buffers
 ^^^^^^^^^^^^^^
 
-The IIO AIDS device driver supports the usage of a data buffer for samples reading purposes.
+The IIO AIDS device driver supports the usage of a data buffer for samples
+reading purposes.
 
 IIO ADIS Driver Initialization Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ADIS1650X
 ^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -1362,12 +1280,8 @@ ADIS1650X
           pr_info("Error!\n");
           return ret;
 
-
-
 ADIS1657X
 ^^^^^^^^^
-
-
 
 .. collapsible:: Click to expand
 
@@ -1495,8 +1409,6 @@ ADIS1657X
           adis1657x_iio_remove(adis1657x_iio_desc);
           pr_info("Error!\n");
           return ret;
-
-
 
 IIO ADIS Driver Application Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

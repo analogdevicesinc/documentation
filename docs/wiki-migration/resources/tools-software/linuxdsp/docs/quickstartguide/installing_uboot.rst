@@ -1,10 +1,13 @@
 Installing U-boot
 =================
 
-The ADSP-SC5xx development boards do not ship with U-Boot or Linux pre-installed. The following steps should be taken when install U-Boot on to the development board for the first time, or the board has become unresponsive and the U-Boot console cannot be brought up:
+The ADSP-SC5xx development boards do not ship with U-Boot or Linux
+pre-installed. The following steps should be taken when install U-Boot on to the
+development board for the first time, or the board has become unresponsive and
+the U-Boot console cannot be brought up:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/initial_uboot_install.jpg
-   :width: 600px
+   :width: 600
 
 Software Preparation
 --------------------
@@ -48,7 +51,8 @@ Flash U-Boot for the First Time
 
 Before booting Linux we need to use the **ICE-1000** or **ICE-2000** to load the U-Boot bootloader on to the EZ-Kit.
 
-Connect the ICE-1000 or ICE-2000 to DEBUG port via a USB cable as well as switch the boot mode to No boot/Custom ROM (BMODE switch set to position 0).
+Connect the ICE-1000 or ICE-2000 to DEBUG port via a USB cable as well as switch
+the boot mode to No boot/Custom ROM (BMODE switch set to position 0).
 
 ::
 
@@ -106,7 +110,9 @@ When success you should see a message similar to the console output below:
 
 Where the macros in the above command are listed at the bottom of this page in **Appendix**.
 
-At this point U-Boot will now be running in RAM on your target board. You should see U-Boot booting in the minicom console. Press a key to interrupt the boot process before the countdown terminates:
+At this point U-Boot will now be running in RAM on your target board. You should
+see U-Boot booting in the minicom console. Press a key to interrupt the boot
+process before the countdown terminates:
 
 ::
 
@@ -131,12 +137,14 @@ At this point U-Boot will now be running in RAM on your target board. You should
 Flash U-Boot to SPI Flash
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here we use the u-Boot console to TFTP a version of u-Boot into RAM, and then write this application into SPI flash.
+Here we use the u-Boot console to TFTP a version of u-Boot into RAM, and then
+write this application into SPI flash.
 
 Configuring the U-Boot Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the U-Boot console, configure the board IP address. This can either be a static address or DHCP allocated. For DHCP:
+In the U-Boot console, configure the board IP address. This can either be a
+static address or DHCP allocated. For DHCP:
 
 ::
 
@@ -190,13 +198,18 @@ You will see output similar to the following:
    SF: 347148 bytes @ 0x0 Written: OK
    sc #
 
-Note that the update operation will overwrite the flash memory storing the environment configuration, so if you wish to preserve it you need to save it again:
+Note that the update operation will overwrite the flash memory storing the
+environment configuration, so if you wish to preserve it you need to save it
+again:
 
 ::
 
    sc # save
 
-At this point the U-Boot binary is stored in flash. You can now disconnect the ICE-1000 or ICE-2000 from the development board and make sure to switch the BMODE to position 1. You will only need to reconnect this if your board fails to boot and you need to re-follow these instructions.
+At this point the U-Boot binary is stored in flash. You can now disconnect the
+ICE-1000 or ICE-2000 from the development board and make sure to switch the
+BMODE to position 1. You will only need to reconnect this if your board fails to
+boot and you need to re-follow these instructions.
 
 Appendix: Macro Definition
 --------------------------

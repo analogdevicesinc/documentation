@@ -3,9 +3,12 @@
 SigmaStudio as a MATLAB® COM server
 ===================================
 
-To use MATLAB as a SigmaStudio server client, both applications must be installed and running on the same machine.
+To use MATLAB as a SigmaStudio server client, both applications must be
+installed and running on the same machine.
 
-In this configuration, MATLAB is a COM automation client and SigmaStudio (via SigmaStudioServer) becomes a COM automation server. For COM operation, the SigmaStudioServer must first be registered as a COM object.
+In this configuration, MATLAB is a COM automation client and SigmaStudio (via
+SigmaStudioServer) becomes a COM automation server. For COM operation, the
+SigmaStudioServer must first be registered as a COM object.
 
 Registering SigmaStudioServer as a COM object
 ---------------------------------------------
@@ -22,9 +25,12 @@ SigmaStudio 3.16 and below
 -  Open the command prompt (as administrator)
 
    -  If using 32 bit MATLAB version, change the working directory to "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727"
-   -  If using 64 bit MATLAB version, change the working directory to "C:\\Windows\\Microsoft.NET\\Framework64\\v2.0.50727"
+   -  If using 64 bit MATLAB version, change the working directory to
+      "C:\\Windows\\Microsoft.NET\\Framework64\\v2.0.50727"
 
--  Execute the following command to register the assembly file: RegAsm "C:\\Program Files\\Analog Devices\\SigmaStudio 3.xx\\Analog.SigmaStudioServer.dll" /codebase
+-  Execute the following command to register the assembly file: RegAsm
+   "C:\\Program Files\\Analog Devices\\SigmaStudio
+   3.xx\\Analog.SigmaStudioServer.dll" /codebase
 
 | Note: here xx in 3.xx should be the current SigmaStudio version like 3.15.
 | You should get a "Type registered successfully" message after the assembly file has been registered.
@@ -36,9 +42,12 @@ SigmaStudio 3.17 onwards
 -  Open the command prompt (as administrator)
 
    -  If using 32 bit MATLAB version, change the working directory to "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319"
-   -  If using 64 bit MATLAB version, change the working directory to "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+   -  If using 64 bit MATLAB version, change the working directory to
+      "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
 
--  Execute the following command to register the assembly file: RegAsm "C:\\Program Files\\Analog Devices\\SigmaStudio 3.xx\\Analog.SigmaStudioServer.dll" /codebase
+-  Execute the following command to register the assembly file: RegAsm
+   "C:\\Program Files\\Analog Devices\\SigmaStudio
+   3.xx\\Analog.SigmaStudioServer.dll" /codebase
 
 | Note: here xx in 3.xx should be the current SigmaStudio version like 3.15.
 | You should get a "Type registered successfully" message after the assembly file has been registered.
@@ -73,7 +82,6 @@ Creating a SigmaStudioServer process in MATLAB
 .. note::
 
    Launch SigmaStudio before running your client [Python or LabView/Matlab].
-
 
 SigmaStudio as a MATLAB® .NET server
 ====================================

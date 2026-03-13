@@ -9,7 +9,10 @@ Automatic Speaker EQ
 Description
 -----------
 
-The Automatic Speaker EQ algorithm is aimed at reducing the design time of speaker systems by automatically tuning filters to create the desired frequency response of the speaker. The algorithm is capable of tuning one, two, and three way systems.
+The Automatic Speaker EQ algorithm is aimed at reducing the design time of
+speaker systems by automatically tuning filters to create the desired frequency
+response of the speaker. The algorithm is capable of tuning one, two, and three
+way systems.
 
 Variants
 --------
@@ -43,7 +46,6 @@ Name   Type  Description
 Input0 Audio Input
 ====== ===== ===========
 
-
 | ==== Output ====
 
 Single Band Auto EQ
@@ -55,7 +57,6 @@ Name   Type  Description
 Driver Audio Equalized output
 ====== ===== ================
 
-
 | ===Two Way Auto EQ===
 
 ======= ===== =========================
@@ -64,7 +65,6 @@ Name    Type  Description
 Woofer  Audio Equalized Woofer Channel
 Tweeter Audio Equalized Tweeter Channel
 ======= ===== =========================
-
 
 | ===Three Way Auto EQ===
 
@@ -76,17 +76,19 @@ Mid     Audio Equalized Mid Driver Channel
 Tweeter Audio Equalized Tweeter Channel
 ======= ===== ============================
 
-
 | ===== Configurable Parameters =====
 
 Source Tab
 ----------
 
-When first opening the control, the source tab will be visible. This is where the response(s) of the desired speakers are loaded. Compatible formats include Impulse Responses with one measurement per line and Frequency responses in the MLSSA file format.
+When first opening the control, the source tab will be visible. This is where
+the response(s) of the desired speakers are loaded. Compatible formats include
+Impulse Responses with one measurement per line and Frequency responses in the
+MLSSA file format.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/sourceresponse.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Controls
 ~~~~~~~~
@@ -106,11 +108,12 @@ Controls
 Target Response Tab
 -------------------
 
-The next tab provides tools to allow the user to design the desired target response for each transducer.
+The next tab provides tools to allow the user to design the desired target
+response for each transducer.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/targetresponse.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Controls
 ~~~~~~~~
@@ -132,11 +135,12 @@ Controls
 Design Settings Tab
 -------------------
 
-This tab provides controls to customize the operation of the Automatic Speaker EQ algorithm.
+This tab provides controls to customize the operation of the Automatic Speaker
+EQ algorithm.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/designsettings.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Controls
 ~~~~~~~~
@@ -154,11 +158,14 @@ Controls
 Filter Tabs
 -----------
 
-After running the Automatic Speaker EQ algorithm, the Filters tab is automatically displayed. The Filters tab shows the results of the algorithm and allows the user to change the values of the filters as desired. The control is the same as the Parametric EQ included in SigmaStudio.
+After running the Automatic Speaker EQ algorithm, the Filters tab is
+automatically displayed. The Filters tab shows the results of the algorithm and
+allows the user to change the values of the filters as desired. The control is
+the same as the Parametric EQ included in SigmaStudio.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/filter.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Controls
 ~~~~~~~~
@@ -177,11 +184,13 @@ Controls
 Crossover Tab
 -------------
 
-The crossover tab is the same as the crossover control included in Sigma Studio. The initial crossover points are set at the cutoff frequencies defined on the Target Tab. The user is then free to edit them as needed.
+The crossover tab is the same as the crossover control included in Sigma Studio.
+The initial crossover points are set at the cutoff frequencies defined on the
+Target Tab. The user is then free to edit them as needed.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/crossover.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Controls
 ~~~~~~~~
@@ -197,11 +206,14 @@ Controls
 Crossover Tab Alignment
 -----------------------
 
-Because the Automatic Speaker EQ uses IIR filters, the phase of the signal is affected. This creates a need to align the crossover filters to prevent unwanted cancellation due to phase irregularities. The alignment tab will help fix any phase-related cancellation and allow the user to fine-tune the system.
+Because the Automatic Speaker EQ uses IIR filters, the phase of the signal is
+affected. This creates a need to align the crossover filters to prevent unwanted
+cancellation due to phase irregularities. The alignment tab will help fix any
+phase-related cancellation and allow the user to fine-tune the system.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/alignment.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Controls
 ~~~~~~~~
@@ -215,11 +227,12 @@ Controls
 Filter Initialization / Target From Filters
 -------------------------------------------
 
-The dialogs for defining a target from filters and for initializing filters are the same.
+The dialogs for defining a target from filters and for initializing filters are
+the same.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/filterinitialization.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  **Load/Save** – It is possible to load and save both target filter information and initialized filters.
 -  **Graph Controls** – These control the scaling of the x and y axes.
@@ -229,17 +242,21 @@ The dialogs for defining a target from filters and for initializing filters are 
 
 .. important::
 
-   Some filters are fixed by default because they are special cases. Butterworth, Bessel, and Chebyshev filters are all special cases of high/low pass filters and cannot be modified by the algorithm. To have a high/low pass filter be optimized by the Automatic Speaker EQ, use the general high/low pass.
-
+   Some filters are fixed by default because they are special cases.
+   Butterworth, Bessel, and Chebyshev filters are all special cases of high/low
+   pass filters and cannot be modified by the algorithm. To have a high/low pass
+   filter be optimized by the Automatic Speaker EQ, use the general high/low
+   pass.
 
 Advanced Settings
 ~~~~~~~~~~~~~~~~~
 
-The advanced settings are located on the Design Settings tab. They are hidden by default, but pushing the “Show Advanced Settings” button will make them appear.
+The advanced settings are located on the Design Settings tab. They are hidden by
+default, but pushing the “Show Advanced Settings” button will make them appear.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/advancedsettings.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  **Design Settings**:
 

@@ -9,12 +9,18 @@ Synchronous SRC
 Description
 -----------
 
-Synchronous SRC is a multi-rate processing module which interpolates or decimates the input signal sampled at the input signal to the desired signal at output sample rate. The module supports fractional (FSin/FSout) ratios. Currently the module supports conversion from 48KHz sample rate to 44.1KHz and vice versa.
+Synchronous SRC is a multi-rate processing module which interpolates or
+decimates the input signal sampled at the input signal to the desired signal at
+output sample rate. The module supports fractional (FSin/FSout) ratios.
+Currently the module supports conversion from 48KHz sample rate to 44.1KHz and
+vice versa.
 
 Usage
 -----
 
-The module acts as an upsampler when the output sample rate is greater than the input sample rate. The module acts as an down sampler when the input sample rate is greater than the output sample rate.
+The module acts as an upsampler when the output sample rate is greater than the
+input sample rate. The module acts as an down sampler when the input sample rate
+is greater than the output sample rate.
 
 Targets Supported
 -----------------
@@ -45,7 +51,6 @@ Name    Type  Description
 ======= ===== =============================
 Output0 Audio Output signal from the module
 ======= ===== =============================
-
 
 | ===== Configurable Parameters =====
 

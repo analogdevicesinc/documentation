@@ -4,7 +4,12 @@ EVALUATING THE AD9139 DIGITAL-TO-ANALOG CONVERTER
 Preface
 -------
 
-This user guide describes both the hardware and software setup needed to acquire data capture from AD9139-EBZ evaluation board to characterize AD9139 16-bit, 1.6GSPS, TxDAC+® digital-to-analog converter. This guide shows how ADS7-V2EBZ / SDP-H1 controller board automatically formats the data and sends it to the AD9139-EBZ developed by Analog Devices. Link to the previous user guide document is provided for customers who still have the DPG3 controller board.
+This user guide describes both the hardware and software setup needed to acquire
+data capture from AD9139-EBZ evaluation board to characterize AD9139 16-bit,
+1.6GSPS, TxDAC+® digital-to-analog converter. This guide shows how ADS7-V2EBZ /
+SDP-H1 controller board automatically formats the data and sends it to the
+AD9139-EBZ developed by Analog Devices. Link to the previous user guide document
+is provided for customers who still have the DPG3 controller board.
 
 Typical Setup
 -------------
@@ -13,16 +18,13 @@ Typical Setup
 
    \ |image1|\ *Figure 1a. AD9139-EBZ with ADVS7-V2EBZ Setup*\
 
-
 .. container:: centeralign
 
    |image2|\ *Figure 1b. AD9139-EBZ with SDP-H1 Setup*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files:
 --------------
@@ -48,7 +50,6 @@ Software Needed:
    -  Do not install ACE on a computer with DAC Software Suite.
    -  Use ACE version 1.25 to evaluate AD9139-EBZ.
    
-
 
 Hardware Needed:
 ----------------
@@ -86,7 +87,9 @@ Quick Start Guide
    -  Connect ADS7-V2EBZ/SDP-H1 to PC via USB and to a 12Vdc power supply.
    -  Set clock input to **500MHz** and **0dBm**.
 
--  Open ACE. The board will automatically be recognized by the software. Otherwise, install the plugin for AD9139 evaluation board. Double click this board then modify the configuration, refer to figure 2.:
+-  Open ACE. The board will automatically be recognized by the software.
+   Otherwise, install the plugin for AD9139 evaluation board. Double click this
+   board then modify the configuration, refer to figure 2.:
 
    -  If ADS7-V2EBZ is used, set interpolation to **2**.
    -  If SDP-H1 is used, set interpolation to **1**.
@@ -95,8 +98,8 @@ Quick Start Guide
 
    \ |image3|\ *Figure 2. ACE Initial Configuration Wizard when using ADS7-V2EBZ or SDP-H1*\
 
-
--  Open DPGDownloaderLite. The evaluation board, controller board and DCO Frequency will be automatically recognized by DPG.
+-  Open DPGDownloaderLite. The evaluation board, controller board and DCO
+   Frequency will be automatically recognized by DPG.
 
    -  If ADS7-V2EBZ is used, a **DCO Frequency** of around **125 MHz** should be displayed.
    -  If SDPH1 is used, a **DCO Frequency** of around **250 MHz** should be displayed.
@@ -113,28 +116,26 @@ Quick Start Guide
 
    \ |image4|\ *Figure 3a. DPGDownloaderLite Waveform Configuration for AD9139-EBZ with ADS7-V2EBZ*\
 
-
 .. container:: centeralign
 
    |image5|\ *Figure 3b. DPGDownloaderLite Waveform Configuration for AD9139-EBZ with SDP-H1*\
 
-
--  Press the download arrow and then the play button. The spectrum similar to Figure 4 should appear in the signal/spectrum analyzer.
+-  Press the download arrow and then the play button. The spectrum similar to
+   Figure 4 should appear in the signal/spectrum analyzer.
 
 .. container:: centeralign
 
    \ |image6|\ *Figure 4. AD9139-EBZ FFT for Fdac=500MHz, Fout=22MHz*\
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139_ads7.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142a_sdph1_setup.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139_2_initial_config.jpg
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139_4_dpg.jpg
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139_4_dpg_sdp.jpg
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9139_5_output.png
-   :width: 600px
+   :width: 600

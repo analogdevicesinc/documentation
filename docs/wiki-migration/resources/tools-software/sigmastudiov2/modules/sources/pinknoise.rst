@@ -9,7 +9,8 @@ Pink Noise
 Description
 -----------
 
-This module generates white noise and passes it through a sixth-order IIR filter with a 1/f power response. Pink noise has a power falloff of 1/f.
+This module generates white noise and passes it through a sixth-order IIR filter
+with a 1/f power response. Pink noise has a power falloff of 1/f.
 
 Targets Supported
 -----------------
@@ -19,7 +20,6 @@ Name      ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ========= ========== ================ ============= ================
 PinkNoise B          B                S             B
 ========= ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -31,7 +31,6 @@ Name       Type  Description
 ========== ===== ================
 Pink Noise Audio Output channel 0
 ========== ===== ================
-
 
 | ===== Configurable Parameters =====
 

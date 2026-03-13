@@ -1,8 +1,6 @@
 AD-FMCOMMS1-EBZ Introduction
 ============================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,14 +17,11 @@ AD-FMCOMMS1-EBZ Introduction
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 The :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` high-speed analog module is designed to showcase the latest generation high-speed data converters. The :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` provides the analog front-end for a wide range of compute-intensive FPGA-based radio applications.
 
 The :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` is an analog front end hardware platform that addresses a broad range of research, academic, industrial and defense applications. The :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` enables RF applications from 400MHz to 4 GHz. The module is customizable to a wide range of frequencies by software without any hardware changes, providing options for GPS or IEEE 1588 Synchronization, and MIMO configurations.
 
 When combined with the Xilinx ZYNQ® Software-Defined Radio Kit, :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` enables a variety of wireless communications functions at the physical layer, from baseband to RF. With up to 4 GB of flash storage space, 512 MB of RAM, Gigabit Ethernet interface (depending on the base platform) and a Linux image built specifically for the :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>`, you can get everything you need for a easy out of the box experience. The platform offers enough flexibility for many applications, and supports streaming data, and standard web interfaces to analyze transmited RF data.
-
 
 |FMComms + Zynq Board|
 
@@ -37,8 +32,9 @@ When combined with the Xilinx ZYNQ® Software-Defined Radio Kit, :adi:`AD-FMCOMM
    
    -  does not meet the mechanical form factor (too tall, too long),
    
-   It was designed, and meets the needs of prototyping platforms, and will work with FPGA Development systems which include an FMC connector. It may not mechanically fit on other ANSI/VITA 57.1 carrier cards.
-
+   It was designed, and meets the needs of prototyping platforms, and will work
+   with FPGA Development systems which include an FMC connector. It may not
+   mechanically fit on other ANSI/VITA 57.1 carrier cards.
 
 Applications
 ------------
@@ -67,4 +63,4 @@ Specifications & Features
 -  Common I\ :sup:`2`\ C access for all device registers
 
 .. |FMComms + Zynq Board| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/dscn1188.png
-   :width: 400px
+   :width: 400

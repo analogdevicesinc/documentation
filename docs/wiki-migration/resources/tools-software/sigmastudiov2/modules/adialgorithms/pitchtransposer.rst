@@ -8,7 +8,12 @@ Pitch Transposer
 Description
 -----------
 
-Pitch Transposer algorithm shifts the frequency of an incoming signal. There are two versions of the algorithm. The first version allows the user to manually set the pitch shift amount by entering it in the GUI (or writing a value directly to RAM). In the data controlled variant, the frequency shift is “voltage-controlled”, meaning that there is an input pin that controls the pitch shift amount based on its value.
+Pitch Transposer algorithm shifts the frequency of an incoming signal. There are
+two versions of the algorithm. The first version allows the user to manually set
+the pitch shift amount by entering it in the GUI (or writing a value directly to
+RAM). In the data controlled variant, the frequency shift is
+“voltage-controlled”, meaning that there is an input pin that controls the pitch
+shift amount based on its value.
 
 Variants
 --------
@@ -50,7 +55,6 @@ Name    Type  Description
 Output0 Audio Outputs the processed signal
 ======= ===== ============================
 
-
 | ===== Configurable Parameters =====
 
 +---------------+---------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,8 +76,6 @@ Parameter Name Description         ADAU145x/146x ADSP215x/SC5xx
 freq           Change in frequency 8.24 Format   Single Precision
 scalingfactor  pitch change factor Integer       Target Defined
 ============== =================== ============= ================
-
-
 
 .. |pitch.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/pitch.png
 .. |pitchdatacontrolled.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/adialgorithms/pitchdatacontrolled.png

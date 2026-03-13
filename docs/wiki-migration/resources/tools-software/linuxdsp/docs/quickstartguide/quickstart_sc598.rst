@@ -2,7 +2,6 @@
 
    These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
-
 Yocto Linux 2.1.0 Quickstart Guide for ADSP-SC598
 =================================================
 
@@ -10,16 +9,17 @@ Yocto Linux 2.1.0 Quickstart Guide for ADSP-SC598
 
    The following instructions are for the ADSP-SC598-EZKIT development board (the EV-SC598-SOM System-on-Module (SOM) board attached to the EV-SOMCRR-EZKIT carrier board). For instructions for other processors and development boards please refer to :doc:`Linux for ADSP-SC5xx Processors 2.1.0 </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/2.1.0>`\
 
-
 Setting Up Your Host PC
 =======================
 
-The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-bit.
+The build system is currently supported on host PCs running Ubuntu 20.04 LTS
+64-bit.
 
 Installing Required Packages
 ----------------------------
 
-In order to build and deploy Linux to your ADSP-SC598-EZKIT development board you will need to install the following packages on your host PC.
+In order to build and deploy Linux to your ADSP-SC598-EZKIT development board
+you will need to install the following packages on your host PC.
 
 ::
 
@@ -29,7 +29,10 @@ In order to build and deploy Linux to your ADSP-SC598-EZKIT development board yo
 Installing CrossCore Embedded Studio
 ------------------------------------
 
-CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into RAM for the first initial boot of the device. The tools are created for 32-bit architecture and therefore requires a 32-bit libz package to run. Download and install it.
+CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into
+RAM for the first initial boot of the device. The tools are created for 32-bit
+architecture and therefore requires a 32-bit libz package to run. Download and
+install it.
 
 ::
 
@@ -40,7 +43,8 @@ CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into
 Configuring TFTP Service
 ------------------------
 
-A TFTP server on the host is used to transfer images to the development board. Install and configure.
+A TFTP server on the host is used to transfer images to the development board.
+Install and configure.
 
 ::
 
@@ -60,7 +64,10 @@ A TFTP server on the host is used to transfer images to the development board. I
 Configure Minicom
 -----------------
 
-In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
+In order to communicate with the U-Boot bootloader, a UART connection must be
+made between the host PC and the development board. It is recommended that you
+use minicom to do this. Minicom must be configured to connect to U-Boot
+correctly.
 
 On the host PC open a terminal and execute the following commands:
 
@@ -70,7 +77,6 @@ On the host PC open a terminal and execute the following commands:
    $ sudo minicom -s
 
                +-----[configuration]------+
-
 
                | Filenames and paths      |
 
@@ -84,7 +90,6 @@ On the host PC open a terminal and execute the following commands:
                | Exit from Minicom        |
                +--------------------------+
 
-
    # Select Serial port setup
         Set Serial Device to /dev/ttyUSB0
         Set Bps/Par/Bits to 115200 8N1
@@ -97,9 +102,11 @@ On the host PC open a terminal and execute the following commands:
 Installing the Sources
 ----------------------
 
-The example is fully contained in the Analog Devices Yocto Linux github repositories.
+The example is fully contained in the Analog Devices Yocto Linux github
+repositories.
 
-To install the sources: TODO: Make sure its the correct repo, branch, manifest file etc
+To install the sources: TODO: Make sure its the correct repo, branch, manifest
+file etc
 
 ::
 
@@ -120,23 +127,34 @@ Building the Image
 Preparing the buildtool
 -----------------------
 
-Yocto requires the environment to be configured before building is possible. A setup-environment script in the gxp2 folder contains all the required environment settings for your build target. Source the setup script for your board:
+Yocto requires the environment to be configured before building is possible. A
+setup-environment script in the gxp2 folder contains all the required
+environment settings for your build target. Source the setup script for your
+board:
 
 ::
 
    $ source setup-environment -m adsp-sc598-som-ezkit
 
-Sourcing the script will configure your build environment and create a build folder along with a local build configuration file. See the Yocto Manual for further details.
+Sourcing the script will configure your build environment and create a build
+folder along with a local build configuration file. See the Yocto Manual for
+further details.
 
 .. important::
 
-   Note that the build environment needs to be sourced once only before building. If later working in a different terminal the setup-environment script should be sourced again. If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
-
+   Note that the build environment needs to be sourced once only before
+   building. If later working in a different terminal the setup-environment
+   script should be sourced again. If sourcing the setup-environment script is
+   done without specifying the machine Yocto will reuse the previous
+   configuration settings and retain any changes made to the files in the conf
+   folder.
 
 Building the example
 --------------------
 
-You can build three different versions of the root filesystem; minimal, ramdisk and full. To build the example images invoke bitbake from within the build directory created previously.
+You can build three different versions of the root filesystem; minimal, ramdisk
+and full. To build the example images invoke bitbake from within the build
+directory created previously.
 
 ::
 
@@ -144,7 +162,8 @@ You can build three different versions of the root filesystem; minimal, ramdisk 
    $ bitbake adsp-sc5xx-ramdisk
    $ bitbake adsp-sc5xx-full
 
-When the build completes you will see a warning that the ELF binary has relocations in .text. It is OK to ignore this warning
+When the build completes you will see a warning that the ELF binary has
+relocations in .text. It is OK to ignore this warning
 
 Running U-Boot on the Board for the first time
 ----------------------------------------------
@@ -155,7 +174,8 @@ Copy the U-Boot Proper elf files to the tftp directory:
 
    $ cp tmp/deploy/images/adsp-sc598-som-ezkit/u-boot-proper-sc598-som-ezkit.elf /tftpboot/
 
-Before installing the software on to the development board, ensure that the following cables are connected:
+Before installing the software on to the development board, ensure that the
+following cables are connected:
 
 -  Board connected to network via ethernet cable using J13 connector.
 -  Board connected to host PC using USB micro cable, connected to USB/UART port on the development board
@@ -163,21 +183,25 @@ Before installing the software on to the development board, ensure that the foll
 -  ICE is also connected to host PC via USB mini cable
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc598-som-ezkit_overview-4.png
-   :width: 400px
+   :width: 400
 
--  On the SOMCRR-EZKIT is a set of micro switches labelled SW1. These should all be set to the OFF position before continuing.
+-  On the SOMCRR-EZKIT is a set of micro switches labelled SW1. These should all
+   be set to the OFF position before continuing.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-switches.jpg
-   :width: 400px
+   :width: 400
 
--  The Power jumper JP1 on the EV-SC598-SOM board should be fitted so that it shorts the two pins closest to the edge. This will enable the routing of power from the SOMCRR-EZKIT.
+-  The Power jumper JP1 on the EV-SC598-SOM board should be fitted so that it
+   shorts the two pins closest to the edge. This will enable the routing of
+   power from the SOMCRR-EZKIT.
 
 -  The BOOT MODE selector on the EV-SC598-SOM board should be turned to "0".
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/sc598-closeup-1.jpg
-   :width: 400px
+   :width: 400
 
-The console output from U-Boot and later on Linux will appear on the USB serial port configured in minicom earlier so open up minicom.
+The console output from U-Boot and later on Linux will appear on the USB serial
+port configured in minicom earlier so open up minicom.
 
 ::
 
@@ -221,9 +245,25 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
    ;''Terminal3: GDB''
    : <code>
 
-$ cd /tftpboot $ /opt/analog/cces/2.11.0/ARM/aarch64-none-elf/bin/aarch64-none-elf-gdb u-boot-proper-sc598-som-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x000000000000352c in ?? () (gdb) load u-boot-proper-sc598-som-ezkit.elf Loading section .text, size 0x150 lma 0x96000000 Loading section .efi_runtime, size 0xfb0 lma 0x96000150 Loading section .text_rest, size 0x5ad94 lma 0x96001800 Loading section .rodata, size 0x12f1c lma 0x9605c598 Loading section .hash, size 0x18 lma 0x9606f4b8 Loading section .dtb.init.rodata, size 0xac0 lma 0x9606f4d0 Loading section .data, size 0x47e8 lma 0x9606ff90 Loading section .got, size 0x8 lma 0x96074778 Loading section .got.plt, size 0x18 lma 0x96074780 Loading section .u_boot_list, size 0x2800 lma 0x96074798 Loading section .efi_runtime_rel, size 0x1b0 lma 0x96076f98 Loading section .rela.dyn, size 0xb700 lma 0x96077148 Start address 0x96000000, load size 532800 Transfer rate: 29 KB/sec, 12685 bytes/write. (gdb) c Continuing. </code>
+$ cd /tftpboot $
+/opt/analog/cces/2.11.0/ARM/aarch64-none-elf/bin/aarch64-none-elf-gdb
+u-boot-proper-sc598-som-ezkit.elf ... (gdb) target extended-remote :3333 Remote
+debugging using :3333 0x000000000000352c in ?? () (gdb) load
+u-boot-proper-sc598-som-ezkit.elf Loading section .text, size 0x150 lma
+0x96000000 Loading section .efi_runtime, size 0xfb0 lma 0x96000150 Loading
+section .text_rest, size 0x5ad94 lma 0x96001800 Loading section .rodata, size
+0x12f1c lma 0x9605c598 Loading section .hash, size 0x18 lma 0x9606f4b8 Loading
+section .dtb.init.rodata, size 0xac0 lma 0x9606f4d0 Loading section .data, size
+0x47e8 lma 0x9606ff90 Loading section .got, size 0x8 lma 0x96074778 Loading
+section .got.plt, size 0x18 lma 0x96074780 Loading section .u_boot_list, size
+0x2800 lma 0x96074798 Loading section .efi_runtime_rel, size 0x1b0 lma
+0x96076f98 Loading section .rela.dyn, size 0xb700 lma 0x96077148 Start address
+0x96000000, load size 532800 Transfer rate: 29 KB/sec, 12685 bytes/write. (gdb)
+c Continuing. </code>
 
-At this point U-Boot will now be running in RAM on your target board. You should see U-Boot booting in the minicom console (Terminal 1). Press a key to interrupt the boot process before the countdown terminates:
+At this point U-Boot will now be running in RAM on your target board. You should
+see U-Boot booting in the minicom console (Terminal 1). Press a key to interrupt
+the boot process before the countdown terminates:
 
 ::
 
@@ -238,12 +278,19 @@ Model: ADI sc598-som-ezkit
 
         Watchdog enabled
 
-I2C: ready DRAM: 224 MiB MMC: mmc@310C7000: 0 Loading Environment from SPIFlash... SF: Detected is25lp512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB OK In: serial@0x31003000 Out: serial@0x31003000 Err: serial@0x31003000 Net: eth0: eth@0x31040000 Hit any key to stop autoboot: 0 => </code>
+I2C: ready DRAM: 224 MiB MMC: mmc@310C7000: 0 Loading Environment from
+SPIFlash... SF: Detected is25lp512 with page size 256 Bytes, erase size 64 KiB,
+total 64 MiB OK In: serial@0x31003000 Out: serial@0x31003000 Err:
+serial@0x31003000 Net: eth0: eth@0x31040000 Hit any key to stop autoboot: 0 =>
+</code>
 
 Booting the minimal image from QSPI
 -----------------------------------
 
-The U-Boot console is used to copy U-Boot (SPL and Proper), the minimal root filesystem image and the fitImage (which contains the kernel image and dtb file) into RAM and then write them to Flash. Copy the required files from <BUILD DIR>/tmp/deploy/images to your /tftpboot directory.
+The U-Boot console is used to copy U-Boot (SPL and Proper), the minimal root
+filesystem image and the fitImage (which contains the kernel image and dtb file)
+into RAM and then write them to Flash. Copy the required files from <BUILD
+DIR>/tmp/deploy/images to your /tftpboot directory.
 
 ::
 
@@ -268,7 +315,6 @@ In the U-Boot console, set the IP address of the Host Linux PC that hosts the bi
 
    To find the IP address of your host Linux PC you can issue the ``ip addr`` command from the shell or console.
 
-
 If your network **supports** DHCP, run:
 
 ::
@@ -284,7 +330,8 @@ If your network **does NOT support** DHCP, in the U-Boot console configure the b
    => edit: <remove "run init_ethernet;" from here> sf probe ${sfdev}; sf erase 0 ${sfsize}; run update_spi_uboot; run update_spi_fit; run update_spi_rfs; sleep 3; saveenv
    => run update_qspi_sc598
 
-After removing "run init_ethernet;" from update_spi_sc598, issue the "run update_qspi_sc598" command as above.
+After removing "run init_ethernet;" from update_spi_sc598, issue the "run
+update_qspi_sc598" command as above.
 
 You should see output similar to the following.
 
@@ -401,7 +448,6 @@ The U-Boot image, root filesystem and Linux kernel are now stored in QSPI. Adjus
             Starting Update UTMP about System Runlevel Changes...
    [  OK  ] Started Update UTMP about System Runlevel Changes.
 
-
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@     @@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -443,7 +489,8 @@ In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-mi
 RAM Boot
 ~~~~~~~~
 
-For RAM boot a copy of the image containing the filesystem needs copied to the /tftpboot directory.
+For RAM boot a copy of the image containing the filesystem needs copied to the
+/tftpboot directory.
 
 ::
 
@@ -452,7 +499,9 @@ For RAM boot a copy of the image containing the filesystem needs copied to the /
 NFS Boot
 ~~~~~~~~
 
-For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
+For NFS boot we use the Network File System which is stored in local Ubuntu
+Host. This is suggested when you do application development. To setup the NFS
+server:
 
 ::
 
@@ -511,7 +560,6 @@ Next, on the target, from u-boot, run one of the following command:
    ......
             Starting Update UTMP about System Runlevel Changes...
    [  OK  ] Started Update UTMP about System Runlevel Changes.
-
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@

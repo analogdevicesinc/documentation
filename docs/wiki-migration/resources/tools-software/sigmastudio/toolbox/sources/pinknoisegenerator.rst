@@ -3,7 +3,8 @@
 Pink Noise Generator
 ====================
 
-This Module generates white noise and passes it through a sixth-order IIR filter with a 1/f power response.Pink noise has a power falloff of 1/f.
+This Module generates white noise and passes it through a sixth-order IIR filter
+with a 1/f power response.Pink noise has a power falloff of 1/f.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/pinknoisegen-tbx.jpg
 
@@ -16,7 +17,6 @@ Name      Format [int/dec] - [control/audio] Function Description
 Pin 0: NA NA                                 NA
 ========= ================================== ====================
 
-
 | ====Output Pins====
 
 ============= ================================== ====================
@@ -24,7 +24,6 @@ Name          Format [int/dec] - [control/audio] Function Description
 ============= ================================== ====================
 Pin 0: Output decimal - Audio                    Output
 ============= ================================== ====================
-
 
 | ==== Grow Algorithm ==== The module does not support Add and Growth.
 
@@ -58,7 +57,8 @@ Configuration
 Algorithm Description
 ---------------------
 
-This Module generates white noise and passes it through a sixth-order IIR filter with a 1/f power response.Pink noise has a power falloff of 1/f.
+This Module generates white noise and passes it through a sixth-order IIR filter
+with a 1/f power response.Pink noise has a power falloff of 1/f.
 
 Supported ICs
 -------------

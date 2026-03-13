@@ -4,7 +4,13 @@ EV-COG-SMARTMESH1Z
 Introduction
 ============
 
-EV-COG-SMARTMESH1Z combines reliability and ultra low-power with a native Internet Protocol (IP) layer for a robust, standards-based offering perfect for a broad range of applications. It provides robust wire-free connectivity for applications where low power, reliability, and ease of deployment matter. EV-COG-SMARTMESH1Z is configured in the slave mode and is driven by an external micro-controller.The communication between the controller and EV-COG-SMARTMESH1Z takes place via UART.
+EV-COG-SMARTMESH1Z combines reliability and ultra low-power with a native
+Internet Protocol (IP) layer for a robust, standards-based offering perfect for
+a broad range of applications. It provides robust wire-free connectivity for
+applications where low power, reliability, and ease of deployment matter.
+EV-COG-SMARTMESH1Z is configured in the slave mode and is driven by an external
+micro-controller.The communication between the controller and EV-COG-SMARTMESH1Z
+takes place via UART.
 
 The features of SmartMesh IP enabled by EV-COG-SMARTMESH1Z are as follows:-
 
@@ -15,13 +21,16 @@ The features of SmartMesh IP enabled by EV-COG-SMARTMESH1Z are as follows:-
 -  Programming and debugging via J-link
 -  Radio silence for radio free sensor data acquisition
 
-This user guide describes the connector pin out,and jumper settings available on board.
+This user guide describes the connector pin out,and jumper settings available on
+board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/tools/intro_pic.png
    :align: center
-   :width: 300px
+   :width: 300
 
-The hardware details covers the wire connections between the EV-COG-SMARTMESH1Z and EV-COG-AD3029LZ along with useful links that provides more details pertaining to EV-COG-AD3029LZ and EV-COG-SMARTMESH1Z.
+The hardware details covers the wire connections between the EV-COG-SMARTMESH1Z
+and EV-COG-AD3029LZ along with useful links that provides more details
+pertaining to EV-COG-AD3029LZ and EV-COG-SMARTMESH1Z.
 
 Hardware details
 ================
@@ -34,14 +43,14 @@ Primary-side
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/tools/primary_side_fin.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Secondary-side
 ~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/tools/secondary_side_fin.png
    :align: center
-   :width: 300px
+   :width: 300
 
 The board consists of
 
@@ -54,7 +63,9 @@ The board consists of
 32 pin Hirose connector
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The Hirose connector P1 interfaces the EV-COG-SMARTMESH1Z board with the MCU Cog. The connector carries VDD, UART, Flash SPI lines and GPIO signals from MCU cog board. The pinout details are given in the following table
+The Hirose connector P1 interfaces the EV-COG-SMARTMESH1Z board with the MCU
+Cog. The connector carries VDD, UART, Flash SPI lines and GPIO signals from MCU
+cog board. The pinout details are given in the following table
 
 ================================ ============= ===================
 Hirose connector (P1) pin number pin name      MCU Cog signal name
@@ -98,7 +109,7 @@ The following figure shows EV-COG-SMARTMESH1Z connected to EV-COG-AD3029LZ
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/tools/interface_fin.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 Schematics, PCB layout, Bill of materials
 -----------------------------------------
@@ -115,7 +126,6 @@ Schematics, PCB layout, Bill of materials
    -  `Assembly Files <https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/tools/assy.zip>`_ (zip)
    
 
-
 Example Software
 ================
 
@@ -123,7 +133,6 @@ Example Software
    :class: download
 
    Click :doc:`Here </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/example_project/temp_sensor_smartmesh>` to visit the example software page, and to download the source code from Analog Devices Git repository
-
 
 Help and support
 ================

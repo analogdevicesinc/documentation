@@ -5,7 +5,6 @@ PulSAR ADC PMODs HDL User Guide
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/pulsar_adc/index.html\
 
-
 Overview
 --------
 
@@ -70,7 +69,7 @@ HDL Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/pulsar_adc_pmod_hdl.svg
    :alt: pulsar_adc_pmod_hdl.svg
-   :width: 800px
+   :width: 800
 
 Steps for building the HDL design:
 
@@ -109,7 +108,6 @@ The reference design uses a clock generator for the divison of the spi clock and
    =================================================== ==============
    
 
-
 **HW Platform(s):**
 
 -  `Cora Z7S <https://digilent.com/reference/programmable-logic/cora-z7/start>`_
@@ -123,4 +121,3 @@ HDL Downloads
    
    -  :git-hdl:`Pulsar ADC PMODs HDL Project. <projects/pulsar_adc_pmdz>`
    
-

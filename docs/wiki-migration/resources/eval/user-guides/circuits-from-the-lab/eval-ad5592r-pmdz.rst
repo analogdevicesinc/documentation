@@ -1,25 +1,34 @@
 EVAL-AD5592R-PMDZ Overview
 ==========================
 
-The EVAL-AD5592R-PMDZ is a minimalist 8-channel, 12-Bit, configurable ADC/DAC/GPIO with on-chip reference, SPI interface PMOD module. This board serves as a low-cost alternative to the full-featured product evaluation boards, with terminal block connections and no extra signal conditioning.
+The EVAL-AD5592R-PMDZ is a minimalist 8-channel, 12-Bit, configurable
+ADC/DAC/GPIO with on-chip reference, SPI interface PMOD module. This board
+serves as a low-cost alternative to the full-featured product evaluation boards,
+with terminal block connections and no extra signal conditioning.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/eval-ad5592r-pmdz-angle-web.png
    :align: center
-   :width: 300px
+   :width: 300
 
-This user guide will focus on the hardware aspect of the EVAL-AD5592R-PMDZ including the connectors, indicators, and different configurations a user would require in order to use the hardware. There is also a link to the design files as well as software reference designs that use the hardware with example embedded firmware for a real demo.
+This user guide will focus on the hardware aspect of the EVAL-AD5592R-PMDZ
+including the connectors, indicators, and different configurations a user would
+require in order to use the hardware. There is also a link to the design files
+as well as software reference designs that use the hardware with example
+embedded firmware for a real demo.
 
 Simplified functional block diagram
 ===================================
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval_ad5592r-pmod/ad5592r_block_diagram.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Connectors and Configuration
 ----------------------------
 
-The following section reviews all the hardware connectors and how to interface with them. It also reviews configuration options and well as important onboard indicators.
+The following section reviews all the hardware connectors and how to interface
+with them. It also reviews configuration options and well as important onboard
+indicators.
 
 Analog/Digital I/O Connector (P2 & P3)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,8 +73,8 @@ SPI_PMOD  1       CS       SPI1_CS0/GPIO25          P1_09
 Test Points
 ~~~~~~~~~~~
 
-Users can also check the SPI signal quality, supply, and reference voltage of the board using test points labeled SS, MOSI, MISO, VLOGIC, and VREF
-
+Users can also check the SPI signal quality, supply, and reference voltage of
+the board using test points labeled SS, MOSI, MISO, VLOGIC, and VREF
 
 |image1|
 
@@ -74,14 +83,12 @@ Voltage reference configuration
 
 The default connection of the AD5592R **Vref** pin is shorted at pin 1 of JP1 solder jumper where you can easily configure your voltage reference input at pin 1 of terminal block P2, either from an external source or internal 2.5V.
 
-
 |image2|
 
 LED Indicator
 ~~~~~~~~~~~~~
 
 The DS1 is the power green LED indicator of the board.
-
 
 |image3|
 
@@ -103,7 +110,13 @@ There are two device driver solutions that are provided for controlling the **EV
 
    -  The :doc:`AD5592R Linux driver </wiki-migration/resources/tools-software/linux-drivers/iio-dac/ad5592r>` is used in applications running the Linux operating system, typically on larger processors and SoC devices.
 
-      -  The AD5592R Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
+      -  The AD5592R Linux driver uses the Industrial Input/Output (IIO)
+         framework, greatly simplifying the development of application code via
+         the cross-platform Libiio library, which is written in C and includes
+         bindings for Python, MATLAB, C#, and other languages. Application code
+         can run directly on the platform board, communicating with the device
+         over the local backend, or from a remote host over the network or USB
+         backends.
 
 System Setup Using ADICUP3029
 -----------------------------
@@ -130,17 +143,19 @@ The following is the list of items needed in order to replicate this demo.
 .. note::
 
    
-   There are two basic ways to program the ADICUP3029 with the software for the AD5592R.
+   There are two basic ways to program the ADICUP3029 with the software for the
+   AD5592R.
    
    -  Dragging and Dropping the Hex to the Daplink drive
    
-      -  Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+      -  Using the drag and drop method, the software is going to be a version
+         that Analog Devices creates for testing and evaluation purposes. This
+         is the EASIEST way to get started with the reference design.
    
    -  Building, Compiling, and Debugging using CCES
    
       -  Importing the project into :adi:`CrossCore Embedded Studio <en/design-center/evaluation-hardware-and-software/software/adswt-cces.html>` is going to allow you to change parameters and customize the software to your application, but will a bit more advanced and will require you to download the CrossCore toolchain.
    
-
 
 .. admonition:: Download
    :class: download
@@ -157,41 +172,41 @@ The following is the list of items needed in order to replicate this demo.
    -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_AD5592R Source Code <projects/ADuCM3029_demo_ad5592r_ad5593r>`
    
 
-
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Connect **EVAL-AD5592R-PMDZ** board at connector **P8** of the **EVAL-ADICUP3029**.
 
-
 |image4|
 
-2. Connect a micro-USB cable to the P8 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
-
+2. Connect a micro-USB cable to the P8 connector of the EVAL-ADICUP3029 and
+   connect it to a computer. The final setup should look similar to the picture
+   below.
 
 |image5|
 
 3. Make sure the following switches are as shown in the table below.
 
-
 |switch_config.png|
 
-4. From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
-
+4. From your PC, open My Computer and look for the DAPLINK drive, if you see
+   this then the drivers are complete and correct.
 
 |image6|
 
-3. Simply extract the provided zip file. Once extracted, you will see the pre-built hex file for the AD5592R demo. Then drag and drop this Hex file to the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red) LED will blink rapidly.
+3. Simply extract the provided zip file. Once extracted, you will see the
+   pre-built hex file for the AD5592R demo. Then drag and drop this Hex file to
+   the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red)
+   LED will blink rapidly.
 
 4. The DS2 will stop blinking and will stay ON once the programming is done.
 
-5. Open PuTTY or other similar software. Check the Device Manager to set the correct COM port for the ADICUP3029. Set the baud rate to 115200.
-
+5. Open PuTTY or other similar software. Check the Device Manager to set the
+   correct COM port for the ADICUP3029. Set the baud rate to 115200.
 
 |image7|
 
 6. The expected output viewed in the PuTTY is shown below.
-
 
 |image8|
 
@@ -244,22 +259,23 @@ To set up the circuit for evaluation, consider the following steps:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Connect the \*\* :adi:`EVAL-AD5592R-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad5592r-pmdz.html>` \*\* on the PMOD to Raspberry Pi Interposer board either via Port P1 or P2.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/5592_rpi.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned SD card into the designated slot on the RPi.
 -  Connect the system to a monitor using an HDMI cable through the mini HDMI connector on the RPi.
 -  Connect a USB keyboard and mouse to the RPi through the USB ports.
--  Power on the RPi board by plugging in a 5V power supply with a micro-USB connector. The final setup should look similar to the picture below.
+-  Power on the RPi board by plugging in a 5V power supply with a micro-USB
+   connector. The final setup should look similar to the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/setup_5592.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Application Software (All Platforms)
 ------------------------------------
@@ -267,19 +283,20 @@ Application Software (All Platforms)
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
-The Libiio is a library used for interfacing with IIO devices and is required to be installed on your computer.
+The Libiio is a library used for interfacing with IIO devices and is required to
+be installed on your computer.
 
 .. admonition:: Download
    :class: download
 
    Download and Install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
-
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-AD5592R-PMDZ is attached. Two platforms are currently supported for the AD5592R: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the no-OS AD5592R demo project. The user needs to supply a **URI** which will be used in the context creation.
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to
+access it.
 
 For RPI Direct Local Access:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -301,8 +318,8 @@ Example:
 
 .. note::
 
-   Do note that the Windows machine and the RPI board should be connected to the same network in order for the machine to detect the device.
-
+   Do note that the Windows machine and the RPI board should be connected to the
+   same network in order for the machine to detect the device.
 
 IIO Commands
 ~~~~~~~~~~~~
@@ -329,7 +346,8 @@ The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libii
 
 Example:
 
--  To read the device ID (register = 0x02) of an AD5592R interfaced via RPI from a Windows machine, enter the following code on the terminal:
+-  To read the device ID (register = 0x02) of an AD5592R interfaced via RPI from
+   a Windows machine, enter the following code on the terminal:
 
 ::
 
@@ -342,28 +360,28 @@ IIO Oscilloscope
 
    Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
--  Press refresh to display available IIO Devices, once ad5592r appeared, press connect.
+-  Press refresh to display available IIO Devices, once ad5592r appeared, press
+   connect.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/5592_osc.png
    :alt: AD5592R Oscilloscope Configuration
    :align: center
-   :width: 400px
+   :width: 400
 
 Debug Panel
 ^^^^^^^^^^^
 
-Below is the Debug panel of AD5592R wherein you can directly access the attributes of the device.
-
+Below is the Debug panel of AD5592R wherein you can directly access the
+attributes of the device.
 
 |AD5592R Debug Panel|
 
 DMM Panel
 ^^^^^^^^^
 
-Access the DMM panel to see the instantaneous reading of the device temperature and voltages.
-
+Access the DMM panel to see the instantaneous reading of the device temperature
+and voltages.
 
 |AD5592R DMM Panel|
 
@@ -383,7 +401,6 @@ After installing and configuring PYADI-IIO in your machine, you are now ready to
 
 Press enter. Input desired voltage levels and you will get these readings.
 
-
 |ad5592r_example.py|
 
 .. admonition:: Download
@@ -392,7 +409,6 @@ Press enter. Input desired voltage levels and you will get these readings.
    Github link for the Python sample script: :git-pyadi-iio:`AD5592R Python Example <examples/ad5592r_example.py>`
 
    
-
 
 More Information and Useful Links
 ---------------------------------
@@ -416,7 +432,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Additional Information
 ----------------------
 
@@ -432,30 +447,29 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD5592R-PMDZ?&v=RevC>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/5592-1.png
-   :width: 550px
+   :width: 550
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/5592-2.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval_ad5592r-pmod/power_led_indicator.png
-   :width: 350px
+   :width: 350
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/img_2996.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/img_2994.jpg
-   :width: 400px
+   :width: 400
 .. |switch_config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/switch_config.png
-   :width: 900px
+   :width: 900
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/daplink.jpg
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/putty_5592.png
-   :width: 300px
+   :width: 300
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/adicup_5592.png
-   :width: 500px
+   :width: 500
 .. |AD5592R Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/5592_debug.png
-   :width: 400px
+   :width: 400
 .. |AD5592R DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/5592_dmm.png
-   :width: 400px
+   :width: 400
 .. |ad5592r_example.py| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval_ad5592r-pmod/5592_example.png
-   :width: 700px
+   :width: 700

@@ -3,8 +3,8 @@ Connecting your PlutoSDR to the Internet
 
 .. important::
 
-   Do not do this, unless you have compiled custom firmware that does not use the default password.
-
+   Do not do this, unless you have compiled custom firmware that does not use
+   the default password.
 
 Ports that are using on the PlutoSDR
 ====================================
@@ -16,9 +16,12 @@ Ports that are using on the PlutoSDR
 port forwarding
 ---------------
 
-You should not make port 30431 available on the internet, there is no security built into it, and anyone could change anything about your radio without you knowing about it.
+You should not make port 30431 available on the internet, there is no security
+built into it, and anyone could change anything about your radio without you
+knowing about it.
 
-If you need to run iio over the internet, set up a ssh tunnel, similar to this linux command:
+If you need to run iio over the internet, set up a ssh tunnel, similar to this
+linux command:
 
 ::
 
@@ -33,4 +36,5 @@ This uses the following options:
    ; -T : Disable pseudo-terminal allocation.
    ; -L : [bind_address:]port:host:hostport Local port forward to host:hostport
 
-This would allow anyone on your subnet to connect you your machine (use your IP) to connect to your PlutoSDR.
+This would allow anyone on your subnet to connect you your machine (use your IP)
+to connect to your PlutoSDR.

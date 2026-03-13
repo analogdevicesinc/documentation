@@ -1,7 +1,8 @@
 ADALM1000 Firmware Upgrade Procedures
 =====================================
 
-The firmware on the device can be upgraded using the smu executable or directly from Pixelpulse.
+The firmware on the device can be upgraded using the smu executable or directly
+from Pixelpulse.
 
 Update using the smu executable
 -------------------------------
@@ -29,22 +30,27 @@ The ``smu`` executable (part of the :doc:`libsmu </wiki-migration/university/too
        -f, --flash <firmware image> flash firmware image to a single attached device
    
 
-
 As you can see in the above, the ``smu`` application provides an option for flashing a firmware to an ADALM1000 board (the ``-f`` or ``--flash`` option). Before running this command, you must first download the firmware image from `m1k-fw <https://github.com/analogdevicesinc/m1k-fw/releases>`_ project. We recommend to always use the latest firmware release in order to be able to access all supported features. You should download the m1000.bin file.
 
-After downloading the firmware binary, run the following command in your OS specific preferred terminal:
+After downloading the firmware binary, run the following command in your OS
+specific preferred terminal:
 
 ::
 
    C:\WINDOWS\system32> smu -f /path/to/m1000.bin
 
-After installing ''libsmu, the smu executable's path is automatically added in the system path. If you build libsmu manually, you can find the smu executable in the build folder, under /src/cli.
+After installing ''libsmu, the smu executable's path is automatically added in
+the system path. If you build libsmu manually, you can find the smu executable
+in the build folder, under /src/cli.
 
 Automatic update from Pixelpulse
 --------------------------------
 
-Pixelpulse is capable of detecting whether the connected devices have the latest firmware and provides an easy way to upgrade the firmware. It automatically searches on the internet for the latest firmware, downloads it and checks if the connected devices need to be upgraded. The firmware status of the connected devices can be seen by opening the Pixelpulse Device Manager.
-
+Pixelpulse is capable of detecting whether the connected devices have the latest
+firmware and provides an easy way to upgrade the firmware. It automatically
+searches on the internet for the latest firmware, downloads it and checks if the
+connected devices need to be upgraded. The firmware status of the connected
+devices can be seen by opening the Pixelpulse Device Manager.
 
 |Device Manager|
 
@@ -52,15 +58,14 @@ Pixelpulse is capable of detecting whether the connected devices have the latest
 
    In case Pixelpulse does not have the *Device Manager* option please update Pixelpulse. This option is available starting from version 0.86.
 
-
-The Device Manager displays a list of all connected devices and the firmware status of each device.
-
-
+The Device Manager displays a list of all connected devices and the firmware
+status of each device.
 
 |Device Manager devices list|
 
-In case the PC is not connected to the internet Pixelpulse cannot check the version of the latest firmware nor download it and will display an error message. In this case the firmware update is not possible on any device.
-
+In case the PC is not connected to the internet Pixelpulse cannot check the
+version of the latest firmware nor download it and will display an error
+message. In this case the firmware update is not possible on any device.
 
 |Device Manager no internet connection error|
 
@@ -70,9 +75,14 @@ Each device that needs a firmware update has an **Update Firmware** button next 
 -  has an older firmware
 -  is in programming mode
 
-The devices that are in programming mode need to be programmed first. If multiple devices are in programming mode Pixelpulse will display just one of them in the devices list. Once this device is programmed and reconnected to the PC another device that is in programming mode will appear in the list.
+The devices that are in programming mode need to be programmed first. If
+multiple devices are in programming mode Pixelpulse will display just one of
+them in the devices list. Once this device is programmed and reconnected to the
+PC another device that is in programming mode will appear in the list.
 
-After a firmware update the device status will change showing the firmware update status. The device will become functional only after it is reconnected to the PC.
+After a firmware update the device status will change showing the firmware
+update status. The device will become functional only after it is reconnected to
+the PC.
 
 |Old firmware update status| |Programming mode update status|
 
@@ -96,7 +106,8 @@ Otherwise, the board will appear in the *Ports (COM &LPT)* section.
 .. image:: https://wiki.analog.com/_media/university/tools/m1k/pp-com.png
    :align: center
 
-In this case, you need to make sure you installed the latest Pixelpulse2 release and follow the next steps:
+In this case, you need to make sure you installed the latest Pixelpulse2 release
+and follow the next steps:
 
 -  Right click on the driver entry in the list and choose *Update Driver Software*
 -  Choose *Browse my computer for driver software*.
@@ -111,15 +122,16 @@ In this case, you need to make sure you installed the latest Pixelpulse2 release
 .. image:: https://wiki.analog.com/_media/university/tools/m1k/pp-choose.png
    :align: center
 
-After performing these steps, Pixelpulse2 should be able to detect your device and upgrade the firmware.
+After performing these steps, Pixelpulse2 should be able to detect your device
+and upgrade the firmware.
 
 .. |Device Manager| image:: https://wiki.analog.com/_media/university/tools/dev_manager.png
-   :width: 200px
+   :width: 200
 .. |Device Manager devices list| image:: https://wiki.analog.com/_media/university/tools/fw_multiple_devices.png
-   :width: 600px
+   :width: 600
 .. |Device Manager no internet connection error| image:: https://wiki.analog.com/_media/university/tools/fw_no_internet_error.png
-   :width: 600px
+   :width: 600
 .. |Old firmware update status| image:: https://wiki.analog.com/_media/university/tools/fw_old_update_ok.png
-   :width: 300px
+   :width: 300
 .. |Programming mode update status| image:: https://wiki.analog.com/_media/university/tools/fw_programming_mode_update_ok.png
-   :width: 300px
+   :width: 300

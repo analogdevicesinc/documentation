@@ -3,7 +3,9 @@ SDP-B Hardware Description
 
 This describes the hardware design of the EVAL-SDP-CB1Z board.
 
-This board is full of niubility! By using it, you can create a colorful world! After you entering this vivid world,you will feel of rebirth,and then you will shout "Hello World!".
+This board is full of niubility! By using it, you can create a colorful world!
+After you entering this vivid world,you will feel of rebirth,and then you will
+shout "Hello World!".
 
 LEDs
 ----
@@ -11,24 +13,28 @@ LEDs
 There are two LEDs located on the SDP-B board. Refer to Figure HWD1.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/leds.jpg
-   :width: 300px
+   :width: 300
 
 Figure HWD1: SDP-B Board LEDs
 
 LED 1
 ~~~~~
 
-The orange LED is an LED to be used as a diagnostic tool for evaluation application developers.
+The orange LED is an LED to be used as a diagnostic tool for evaluation
+application developers.
 
 POWER LED (LED2)
 ~~~~~~~~~~~~~~~~
 
-The green power LED indicates that the SDP-B board is powered. This is not an indication of USB connectivity between the SDP-B and the PC.
+The green power LED indicates that the SDP-B board is powered. This is not an
+indication of USB connectivity between the SDP-B and the PC.
 
 Connector Details
 -----------------
 
-The SDP-B board contains two identical Hirose FX8-120P-SV1(91), 120 pin header, connectors. Through these connectors, the peripheral communication interfaces of ADSP-BF527 Blackfin processor are exposed. The exposed peripherals are:
+The SDP-B board contains two identical Hirose FX8-120P-SV1(91), 120 pin header,
+connectors. Through these connectors, the peripheral communication interfaces of
+ADSP-BF527 Blackfin processor are exposed. The exposed peripherals are:
 
 -  SPI
 -  SPORT
@@ -39,16 +45,22 @@ The SDP-B board contains two identical Hirose FX8-120P-SV1(91), 120 pin header, 
 -  UART
 -  Timers
 
-Also, included on the connector specification are input and output power pins, ground pins, and pins reserved for future use.
+Also, included on the connector specification are input and output power pins,
+ground pins, and pins reserved for future use.
 
 For further details on the peripheral interfaces, including timing diagrams, see the :adi:`ADSP-BF52x Blackfin Processor Hardware Reference <en/embedded-processing-dsp/blackfin/processors/manuals/resources/index.html>`
 
-Connector C exposes the entire Blackfin memory space but is not used as part of the SDP platform.
+Connector C exposes the entire Blackfin memory space but is not used as part of
+the SDP platform.
 
 Connector Pin Assignments
 -------------------------
 
-The connector pin assignments for Connector A and Connector B have been defined independently of the any internal pin sharing that occurs on the Blackfin processor. The below table lists the connector pins and identifies the functionality assigned to each connector pin for Connector A and Connector B on the SDP-B board.
+The connector pin assignments for Connector A and Connector B have been defined
+independently of the any internal pin sharing that occurs on the Blackfin
+processor. The below table lists the connector pins and identifies the
+functionality assigned to each connector pin for Connector A and Connector B on
+the SDP-B board.
 
 120 Pin Connector Pin Assignments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -299,7 +311,9 @@ The connector pin assignments for Connector A and Connector B have been defined 
 
 :sup:`1` Functionality not implemented on the SDP board :sup:`2` Shared across both connectors.
 
-Each interface provided by the SDP-B is available on unique pins of the SDP-B’s 120 pin connector. The connector pin numbering scheme is out-line in Figure HWD2.
+Each interface provided by the SDP-B is available on unique pins of the SDP-B’s
+120 pin connector. The connector pin numbering scheme is out-line in Figure
+HWD2.
 
 .. image:: https://wiki.analog.com/_media/eval/sdp/fig2-2.jpg
 
@@ -308,11 +322,29 @@ Figure HWD2: 120 Pin Connector Outline
 Pin Sharing
 ~~~~~~~~~~~
 
-Two types of pin sharing occur on the SDP-B board and must be taken into account when using two or more of the connector's peripherals interfaces between a daughter board and the SDP board. The first type is pin sharing that occurs internally in the Blackfin processor. The second type is pin sharing that occurs when a single Blackfin processor output pin is shared across both connector A and connector B.
+Two types of pin sharing occur on the SDP-B board and must be taken into account
+when using two or more of the connector's peripherals interfaces between a
+daughter board and the SDP board. The first type is pin sharing that occurs
+internally in the Blackfin processor. The second type is pin sharing that occurs
+when a single Blackfin processor output pin is shared across both connector A
+and connector B.
 
-Internal Blackfin processor pin sharing can restrict the simultaneous availability of peripheral interfaces on a single connector or across both connectors. The Blackfin processor's internal design has multiple signals physically sharing each single output pin. As mentioned previously, the pins on the 120 pin connector were defined independently of this pin sharing. This has the effect of limiting the peripherals which can be used simultaneously on the SDP-B. A system designer must consult the ADSP-BF52x Blackfin Processor Hardware Reference for the ADSP-BF527 processor to ensure the selected peripherals are available simultaneously and their signals do not share Blackfin processor output pins. An example of this sharing is that the SPORT and PPI peripherals physically share the same Blackfin processor pins. Therefore, these two interfaces cannot be utilized in a single application.
+Internal Blackfin processor pin sharing can restrict the simultaneous
+availability of peripheral interfaces on a single connector or across both
+connectors. The Blackfin processor's internal design has multiple signals
+physically sharing each single output pin. As mentioned previously, the pins on
+the 120 pin connector were defined independently of this pin sharing. This has
+the effect of limiting the peripherals which can be used simultaneously on the
+SDP-B. A system designer must consult the ADSP-BF52x Blackfin Processor Hardware
+Reference for the ADSP-BF527 processor to ensure the selected peripherals are
+available simultaneously and their signals do not share Blackfin processor
+output pins. An example of this sharing is that the SPORT and PPI peripherals
+physically share the same Blackfin processor pins. Therefore, these two
+interfaces cannot be utilized in a single application.
 
-Pin sharing also occurs from certain Blackfin processor output pins to both Connector A and Connector B. The following signals are connected from a single Blackfin processor output pin to both Connector A and Connector B:
+Pin sharing also occurs from certain Blackfin processor output pins to both
+Connector A and Connector B. The following signals are connected from a single
+Blackfin processor output pin to both Connector A and Connector B:
 
 -  SCL 0 on I2C Bus 0, pin 79
 -  GPIO 6 and GPIO 7, pins 47 and 67
@@ -324,52 +356,88 @@ SB!SB!SB!SB!
 Power
 ~~~~~
 
-The SDP-B board requires that any daughter board connected to the SDP-B board provides the SDP-B board with 5V @ 200mA. This supply should be made available on Pin 1 (VIN) of the 120 pin connector. This supply is required to power the Blackfin processor, the memory, and the other components on the SDP-B Board. The SDP-B board also provides 3.3V @ 20mA on Pin 116 (VIO_3.3) to connected daughter boards as the VIO voltage for the daughter board. Pin 5 (USB_VBUS) is connected to the +5V lineof the USB connector, providing 5V+/- 10% as an output of the SDP-B board.
+The SDP-B board requires that any daughter board connected to the SDP-B board
+provides the SDP-B board with 5V @ 200mA. This supply should be made available
+on Pin 1 (VIN) of the 120 pin connector. This supply is required to power the
+Blackfin processor, the memory, and the other components on the SDP-B Board. The
+SDP-B board also provides 3.3V @ 20mA on Pin 116 (VIO_3.3) to connected daughter
+boards as the VIO voltage for the daughter board. Pin 5 (USB_VBUS) is connected
+to the +5V lineof the USB connector, providing 5V+/- 10% as an output of the
+SDP-B board.
 
 Daughter Board Design Guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The daughter board design guidelines specify the layout, connector position, keep out areas and dimensions of potential daughter boards. This guidance is to ensure that a daughter board can connect off either Connector A or Connector B of the SDP-B board. Following these guidelines ensures that both connectors on the SDP-B can have any one of the catalogue of daughter boards physically attached to the connectors simultaneously.
+The daughter board design guidelines specify the layout, connector position,
+keep out areas and dimensions of potential daughter boards. This guidance is to
+ensure that a daughter board can connect off either Connector A or Connector B
+of the SDP-B board. Following these guidelines ensures that both connectors on
+the SDP-B can have any one of the catalogue of daughter boards physically
+attached to the connectors simultaneously.
 
 Connector Location
 ~~~~~~~~~~~~~~~~~~
 
-The daughter board connector and securing screw holes are to be located in the top left hand corner. This arrangement can be seen for Daughter Board A in Figure HWD3. Note Daughter Board B is the same as A rotated clockwise through 90°. The exact location of the connector from the board's edge is important in order to allow both boards connect at the same time. As can be seen in Figure HWD3, if either board exceeds these dimensions, it is not possible to connect the other. Every effort was made to extend the 5.9mm dimension as large as possible in order to allow space for vias between the connector and the edge of the board. These are absolute max dimensions and should not be exceeded. See Figure HWD3 for further details.
+The daughter board connector and securing screw holes are to be located in the
+top left hand corner. This arrangement can be seen for Daughter Board A in
+Figure HWD3. Note Daughter Board B is the same as A rotated clockwise through
+90°. The exact location of the connector from the board's edge is important in
+order to allow both boards connect at the same time. As can be seen in Figure
+HWD3, if either board exceeds these dimensions, it is not possible to connect
+the other. Every effort was made to extend the 5.9mm dimension as large as
+possible in order to allow space for vias between the connector and the edge of
+the board. These are absolute max dimensions and should not be exceeded. See
+Figure HWD3 for further details.
 
 .. image:: https://wiki.analog.com/_media/eval/sdp/fig2-3.jpg
 
 Figure HWD3: Maximum Board Dimensions for Connector Placement
 
-The full specification drawing for the connector location on the daughter board can be seen in Figure 2-4.
+The full specification drawing for the connector location on the daughter board
+can be seen in Figure 2-4.
 
 .. image:: https://wiki.analog.com/_media/eval/sdp/fig2-4.jpg
 
 Figure HWD4: Connector Placement on Compatible Daughter Board
 
-The mating daughter board 120 pin connector is the Hirose FX8-120S-SV(21), 120-pin receptacle, FEC 132-4660, Digikey H1219-ND. Please consult the connector's data sheet for full details on the connector. Note pins 1 to 60 are placed on the left side of the connector and pins 61 to 120 are placed on the right side of the connector.
+The mating daughter board 120 pin connector is the Hirose FX8-120S-SV(21),
+120-pin receptacle, FEC 132-4660, Digikey H1219-ND. Please consult the
+connector's data sheet for full details on the connector. Note pins 1 to 60 are
+placed on the left side of the connector and pins 61 to 120 are placed on the
+right side of the connector.
 
 Keep Out Area
 ~~~~~~~~~~~~~
 
-In order to allow the greatest flexibility for future controller boards, a keepout area is established for components higher that 3mm. The keepout area is 12.65mm wide and extends down the entire left side of the daughter board.
+In order to allow the greatest flexibility for future controller boards, a
+keepout area is established for components higher that 3mm. The keepout area is
+12.65mm wide and extends down the entire left side of the daughter board.
 
 Restriction on Right Angle Connectors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Due to the close proximity of the edges of daughter boards A and B (seen in Figure 2-3 on page 2-12) right angle connectors are not allowed on the top and left edges of the daughter boards and (if required) should be placed on the right or bottom edges. The phrase "right angle connector" is used to describe any connector that requires the connection to protrude over the edge of the board (for example, right angle SMB or screw terminal).
+Due to the close proximity of the edges of daughter boards A and B (seen in
+Figure 2-3 on page 2-12) right angle connectors are not allowed on the top and
+left edges of the daughter boards and (if required) should be placed on the
+right or bottom edges. The phrase "right angle connector" is used to describe
+any connector that requires the connection to protrude over the edge of the
+board (for example, right angle SMB or screw terminal).
 
 Mechanical Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The mechanical specifications of the SDP-B board are 2.75" x 2.25" (69.85mm x 57.15mm). The height of the 120 pin connectors from the bottom of the board is approximately 0.152" (3.86 mm). The tallest component on the top is approximately 0.125" (3.175 mm), and the tallest components on the bottoms are the connectors at approximately 0.152" (3.86 mm). Refer to Figure HWD5.
+The mechanical specifications of the SDP-B board are 2.75" x 2.25" (69.85mm x
+57.15mm). The height of the 120 pin connectors from the bottom of the board is
+approximately 0.152" (3.86 mm). The tallest component on the top is
+approximately 0.125" (3.175 mm), and the tallest components on the bottoms are
+the connectors at approximately 0.152" (3.86 mm). Refer to Figure HWD5.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/hwd5.jpg
-   :width: 500px
-
+   :width: 500
 
 | the below image is a detailed view of the underneath of the board
 | |image1|
 | Figure HWD5: SDP-B Board Mechanical Specifications (above measurements are in mm)
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-b/sdp-ei3connector_specification_cpd.jpg
-   :width: 600px
+   :width: 600

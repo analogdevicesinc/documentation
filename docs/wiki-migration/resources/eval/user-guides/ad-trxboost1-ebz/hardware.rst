@@ -3,7 +3,7 @@ AD-TRXBOOST1-EBZ Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/pin_map_-_nlw_2-9-16_.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Downloads
 ---------
@@ -25,4 +25,3 @@ Downloads
    -  `Rev B Gerbers <https://wiki.analog.com/_media/analog/ad-trxboost1-ebz/038228b-fab.zip>`_\ (This file is `compressed <http://www.7-zip.org/7z.html>`_)
    -  Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).
    
-

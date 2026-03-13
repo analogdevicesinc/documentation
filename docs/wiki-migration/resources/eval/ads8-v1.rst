@@ -19,13 +19,11 @@ ADS8-V1EBZ Features
 
 5. Simple USB 3.0 port interface.
 
-
 |image1|
 
 .. container:: centeralign
 
    *Figure 1. ADS8-V1EBZ High Speed Evaluation Board (Top)*
-
 
    |image2|
 
@@ -33,22 +31,23 @@ ADS8-V1EBZ Features
 
    *Figure 2. ADS8-V1EBZ High Speed Evaluation Board (Bottom)*
 
-
 Using the ADS8-V1EBZ to evaluate High Speed A/D Converters
 ==========================================================
 
 Overview
 --------
 
-When connected to a specified Analog Devices high speed adc evaluation board, the ADS8-V1 works as a data acquistion board. Designed to support the highest speed JESD204B A/D Converters, the FPGA on the ADS8-V1 acts as the data receiver, while the ADC is the data transmitter. A typical test setup is shown below.
-
+When connected to a specified Analog Devices high speed adc evaluation board,
+the ADS8-V1 works as a data acquistion board. Designed to support the highest
+speed JESD204B A/D Converters, the FPGA on the ADS8-V1 acts as the data
+receiver, while the ADC is the data transmitter. A typical test setup is shown
+below.
 
 |image3|
 
 .. container:: centeralign
 
    *Figure 3. ADS8-V1 connected to High Speed A/D Converter Evaluation Board*
-
 
 Helpful Documents
 -----------------
@@ -79,8 +78,8 @@ ADS8-V1EBZ Supported ADC Evaluation Boards
 Refer to the Analog Devices High Speed ADC capture board product page at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for a table of ADS8-V1EBZ compatible ADC evaluation boards.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ads8-v1ebztop.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ads8-v1ebzbottom.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ads8-v1ebz-ad9208_typ_setup.png
-   :width: 600px
+   :width: 600

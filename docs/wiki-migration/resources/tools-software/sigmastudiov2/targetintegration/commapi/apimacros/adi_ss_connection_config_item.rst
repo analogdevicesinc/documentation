@@ -13,4 +13,5 @@ Enumeration
 
 Description
 
-Enumeration for indicating which item is to be reconfigured using the adi_ss_connection_Reconfigure() API.
+Enumeration for indicating which item is to be reconfigured using the
+adi_ss_connection_Reconfigure() API.

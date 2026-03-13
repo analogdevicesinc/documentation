@@ -4,20 +4,27 @@ CN0590 User Guide
 Overview
 --------
 
-The CN0590 is a plug and play USB 2.0 high speed isolator that can be used with any modern type-C device supporting USB 2 connectivity. The CN0590 supports fully compatible power and signal isolation up to 2.5 W and 480 Mbps, respectively as mandated by the USB 2 standard.
+The CN0590 is a plug and play USB 2.0 high speed isolator that can be used with
+any modern type-C device supporting USB 2 connectivity. The CN0590 supports
+fully compatible power and signal isolation up to 2.5 W and 480 Mbps,
+respectively as mandated by the USB 2 standard.
 
-The system is rated up to 2.5 kVrms isolation voltage per UL1577 and features a system creepage and clearance of 3.1 mm limited by the ADuM3070 device. This system is suitable for functional isolation or basic and reinforced 300 Vrms CAT II isolation applications according to IEC61010 and IEC62368 standard in many industrial, energy, and instrumentation applications.
+The system is rated up to 2.5 kVrms isolation voltage per UL1577 and features a
+system creepage and clearance of 3.1 mm limited by the ADuM3070 device. This
+system is suitable for functional isolation or basic and reinforced 300 Vrms CAT
+II isolation applications according to IEC61010 and IEC62368 standard in many
+industrial, energy, and instrumentation applications.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0590/eval-cn0590-ebz_angle.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0590/cn0590_simplified_block_diagram.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 --------------
 
@@ -36,7 +43,7 @@ The USB peripheral must be connected to the USB-C connector (P6).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0590/cn0590_board_image.png
    :align: center
-   :width: 800px
+   :width: 800
 
 --------------
 
@@ -58,24 +65,20 @@ To test the USB 2.0 functionality of the EVAL-CN0590-EBZ, follow below steps:
 
 2. Connect the type C USB cable to **P1** of the EVAL-CN0590-EBZ and then the other end of the cable to the computer USB port. Wait for the USB flash drive to be detected on the computer.
 
-
 |Figure 1: High Speed Data Transfer Test Setup|
 
 .. container:: center
 
    *Figure 1: High Speed Data Transfer Test Setup*
 
-
-3. Validate the speed of the USB flash drive using a USB device tree viewer. Figure 2 shows an example device tree of a high-speed USB device.
-
-
+3. Validate the speed of the USB flash drive using a USB device tree viewer.
+   Figure 2 shows an example device tree of a high-speed USB device.
 
 |Example USB Device Tree Viewer Screen for a High-Speed USB Device|
 
 .. container:: center
 
    *Figure 2: Example USB Device Tree Viewer Screen for a High-Speed USB Device*
-
 
 --------------
 
@@ -94,7 +97,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Useful Links
 ------------
 
@@ -112,10 +114,9 @@ Hardware Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0590-EBZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |Figure 1: High Speed Data Transfer Test Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0590/high_speed_data_transfer_test_setup.png
-   :width: 1000px
+   :width: 1000
 .. |Example USB Device Tree Viewer Screen for a High-Speed USB Device| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0590/high-speed_device_connection_speed.png
-   :width: 2000px
+   :width: 2000

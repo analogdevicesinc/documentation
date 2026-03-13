@@ -6,7 +6,15 @@ Overview
 
 :adi:`CN0393` is a two-channel bank-isolated data acquisition (DAQ) system, with a multi-ADC simultaneous sampling architecture. The system achieves high channel density and isolation between the bank and the digital backplane while maintaining exceptional performance. The design also makes efficient use of isolation channels by configuring the analog-to-digital converters (:adi:`ADAQ7988`) in daisy-chain mode and utilizing an isolator product with trimmed delay clock feature(:adi:`ADuM3150`). Power generation is also simplified using an isolator with an integrated PWM controller and transformer driver to perform dc-to-dc conversion across the isolation barrier (:adi:`ADuM3470`). Each DAQ channel features programmable gain instrumentation amplifiers (:adi:`AD8251`) for channel-independent gain setting and high-input impedance for easy interfacing with a variety of sensors and input sources.
 
-The multi-ADC simultaneous sampling architecture achieves many channels without sample rate limitations inherent in multiplexed DAQ signal chains. The analog front-end (AFE) design is also simpler than the multiplexed option, because the system’s dynamic requirements are less strict. Each channel’s corresponding samples also occur at the same time, while sequential sampling systems do not. Digital bank-isolated DAQ designs provide protection for digital backend circuitry and reduce ground loop and common mode interference between banks. They feature multiple DAQ signal chains per ground plane, and can be implemented with fewer digital isolation devices than channel-to-channel isolated systems.
+The multi-ADC simultaneous sampling architecture achieves many channels without
+sample rate limitations inherent in multiplexed DAQ signal chains. The analog
+front-end (AFE) design is also simpler than the multiplexed option, because the
+system’s dynamic requirements are less strict. Each channel’s corresponding
+samples also occur at the same time, while sequential sampling systems do not.
+Digital bank-isolated DAQ designs provide protection for digital backend
+circuitry and reduce ground loop and common mode interference between banks.
+They feature multiple DAQ signal chains per ground plane, and can be implemented
+with fewer digital isolation devices than channel-to-channel isolated systems.
 
 This user guide will discuss how to operate the :adi:`EVAL-CN0393-FMCZ <CN0393>` (CN-0393 Evaluation Hardware), the :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` (SDP-H1) and the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_. A complete design support package for the CN-0393 evaluation material containing schematics, layouts (native and Gerber), and bill-of-materials can be found at: :adi:`CN0393-DesignSupport`.
 
@@ -41,14 +49,14 @@ Installing the CN-0393 Evaluation Software
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install3.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Upon completion of the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ installation, a notification window will appear. Click **Next** to initiate the installation of the **ADI SDP Drivers** (version 2.2.118.111). // |image3| //
 -  The **ADI SDP Drivers** installation wizard will appear. Press **Next** and then **Install** to begin the installation. (An installation progress window will then appear.) // |image4| //
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install6.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  When the **ADI SDP Drivers** installation is complete, press **Close** to close the installation wizard. The `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ is now installed.
 
@@ -65,7 +73,9 @@ Using the Evaluation Software
 
 The `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ interfaces with the :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` and :adi:`EVAL-CN0393-FMCZ <CN0393>` hardware. It can be used to connect to the hardware, configure the channel gains and execute conversions to evaluate the CN-0393 reference design. The front panel and various tab controls provide access to key system parameters and controls for collecting, processing, and viewing results. Waveform, histogram, and FFT plots are included for quick time- and frequency-domain analysis.
 
-The software also allows for standalone operation without the hardware connected. In this mode, the software can load previously saved results for analysis and viewing.
+The software also allows for standalone operation without the hardware
+connected. In this mode, the software can load previously saved results for
+analysis and viewing.
 
 Control and Indicator Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +87,7 @@ Front Panel and Configure Tab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393configuretab.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  **Single Capture**: Performs a single set of conversions with the CN-0393 hardware. A set contains the number of samples indicated by **Num Samples** for each channel.
 -  **Continuous Capture**: Performs reported sets of conversions with the CN-0393 hardware. Each set contains the number of samples indicated by **Num Samples** for each channel.
@@ -103,7 +113,7 @@ Waveform Tab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_waveformtab.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  **Waveform**: Displays time-domain results from the CN-0393 hardware. The axes units can be changed with the axes setting selectors on the right side of the **Waveform Tab**.
 -  **Codes Selector**: Sets the **Waveform** plot’s y-axis units to codes. The **Waveform** plot displays the output codes of the two channels’ ADAQ7988’s when this box is selected.
@@ -123,7 +133,7 @@ Histogram Tab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393histogramtab.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  **Histogram**: Displays histogram results from the CN-0393 hardware. The y-axis represents the number of occurrences of the output codes on the x-axis in the captured set of samples.
 -  **Histogram Analysis**: Displays histogram analysis items for both channels.
@@ -141,7 +151,7 @@ FFT Tab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393ffttab.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  **FFT**: Displays frequency-domain results from the CN-0393 hardware.
 -  **FFT Analysis**: Displays frequency-domain analysis items for both channels.
@@ -168,7 +178,7 @@ Summary Tab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_summarytab.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  **Waveform**: Displays time-domain results from the CN-0393 hardware. The axes units can be changed with the Axes Setting selectors on the right side of the **Waveform Tab**.
 -  **Histogram**: Displays histogram results from the CN-0393 hardware. The y-axis represents the number of occurrences of the output codes on the x-axis in the captured set of samples.
@@ -228,7 +238,7 @@ To establish a USB connection link between the software and hardware:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_no_hardware_detected.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  If the USB connection to the hardware is lost at any point during operation, a pop-up will appear to indicate this. Selecting **Rescan** will attempt to reestablish the USB connection. Selecting **Cancel** will instruct the software to run in standalone mode (see **Standalone Mode**).
 
@@ -275,18 +285,17 @@ The `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub
 
 Standalone mode is initiated when the evaluation software does not establish a connection with the evaluation hardware, and the user selects **Cancel** in the pop-up that appears. This can occur at start-up or if the software loses an established connection with the hardware. A pop-up will appear to indicate when software enters standalone mode.
 
-
 |image5|
 
 The software will exit standalone mode if it can establish or reestablish a connection to the hardware (see **Establishing Hardware USB Connection Link**).
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install2.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install4.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install5.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_standalone_notification.png
-   :width: 800px
+   :width: 800

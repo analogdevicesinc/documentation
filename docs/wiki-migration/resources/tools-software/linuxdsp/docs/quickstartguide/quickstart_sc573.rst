@@ -2,7 +2,6 @@
 
    These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
-
 Yocto Linux 2.1.0 Quickstart Guide for ADSP-SC573
 =================================================
 
@@ -10,16 +9,17 @@ Yocto Linux 2.1.0 Quickstart Guide for ADSP-SC573
 
    The following instructions are for the ADSP-SC573-EZKIT development board. For instructions for other processors and development boards please refer to :doc:`Linux for ADSP-SC5xx Processors 2.1.0 </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/2.1.0>`\
 
-
 Setting Up Your Host PC
 =======================
 
-The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-bit.
+The build system is currently supported on host PCs running Ubuntu 20.04 LTS
+64-bit.
 
 Installing Required Packages
 ----------------------------
 
-In order to build and deploy Linux to your ADSP-SC573-EZKIT development board you will need to install the following packages on your host PC.
+In order to build and deploy Linux to your ADSP-SC573-EZKIT development board
+you will need to install the following packages on your host PC.
 
 ::
 
@@ -29,7 +29,10 @@ In order to build and deploy Linux to your ADSP-SC573-EZKIT development board yo
 Installing CrossCore Embedded Studio
 ------------------------------------
 
-CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into RAM for the first initial boot of the device. The tools are created for 32-bit architecture and therefore requires a 32-bit libz package to run. Download and install it.
+CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into
+RAM for the first initial boot of the device. The tools are created for 32-bit
+architecture and therefore requires a 32-bit libz package to run. Download and
+install it.
 
 ::
 
@@ -40,7 +43,8 @@ CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into
 Configuring TFTP Service
 ------------------------
 
-A TFTP server on the host is used to transfer images to the development board. Install and configure.
+A TFTP server on the host is used to transfer images to the development board.
+Install and configure.
 
 ::
 
@@ -60,7 +64,10 @@ A TFTP server on the host is used to transfer images to the development board. I
 Configure Minicom
 -----------------
 
-In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.
+In order to communicate with the U-Boot bootloader, a UART connection must be
+made between the host PC and the development board. It is recommended that you
+use minicom to do this. Minicom must be configured to connect to U-Boot
+correctly.
 
 On the host PC open a terminal and execute the following commands:
 
@@ -70,7 +77,6 @@ On the host PC open a terminal and execute the following commands:
    $ sudo minicom -s
 
                +-----[configuration]------+
-
 
                | Filenames and paths      |
 
@@ -84,7 +90,6 @@ On the host PC open a terminal and execute the following commands:
                | Exit from Minicom        |
                +--------------------------+
 
-
    # Select Serial port setup
         Set Serial Device to /dev/ttyUSB0
         Set Bps/Par/Bits to 115200 8N1
@@ -97,9 +102,11 @@ On the host PC open a terminal and execute the following commands:
 Installing the Sources
 ----------------------
 
-The example is fully contained in the Analog Devices Yocto Linux github repositories.
+The example is fully contained in the Analog Devices Yocto Linux github
+repositories.
 
-To install the sources: TODO: Make sure its the correct repo, branch, manifest file etc
+To install the sources: TODO: Make sure its the correct repo, branch, manifest
+file etc
 
 ::
 
@@ -126,17 +133,25 @@ Yocto requires the environment to be configured before building is possible. A s
 
    $ source setup-environment -m adsp-sc573-ezkit
 
-Sourcing the script will configure your build environment and create a build folder along with a local build configuration file. See the Yocto Manual for further details.
+Sourcing the script will configure your build environment and create a build
+folder along with a local build configuration file. See the Yocto Manual for
+further details.
 
 .. important::
 
-   Note that the build environment needs to be sourced once only before building. If later working in a different terminal the setup-environment script should be sourced again. If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.
-
+   Note that the build environment needs to be sourced once only before
+   building. If later working in a different terminal the setup-environment
+   script should be sourced again. If sourcing the setup-environment script is
+   done without specifying the machine Yocto will reuse the previous
+   configuration settings and retain any changes made to the files in the conf
+   folder.
 
 Building the example
 --------------------
 
-You can build three different versions of the root filesystem; minimal, ramdisk and full. To build the example images invoke bitbake from within the build directory created previously.
+You can build three different versions of the root filesystem; minimal, ramdisk
+and full. To build the example images invoke bitbake from within the build
+directory created previously.
 
 ::
 
@@ -144,12 +159,15 @@ You can build three different versions of the root filesystem; minimal, ramdisk 
    $ bitbake adsp-sc5xx-ramdisk
    $ bitbake adsp-sc5xx-full
 
-When the build completes you will see a warning that the ELF binary has relocations in .text. It is OK to ignore this warning
+When the build completes you will see a warning that the ELF binary has
+relocations in .text. It is OK to ignore this warning
 
 Running U-Boot on the Board for the first time
 ----------------------------------------------
 
-Copy the U-Boot & the init binary files to the /tftpboot directory, so that U-Boot can be ran from the board's RAM, along with the U-Boot loader file so that it can be uploaded to the target board:
+Copy the U-Boot & the init binary files to the /tftpboot directory, so that
+U-Boot can be ran from the board's RAM, along with the U-Boot loader file so
+that it can be uploaded to the target board:
 
 ::
 
@@ -157,7 +175,8 @@ Copy the U-Boot & the init binary files to the /tftpboot directory, so that U-Bo
    $ cp tmp/deploy/images/adsp-sc573-ezkit/init-sc573-ezkit.elf /tftpboot/
    $ cp tmp/deploy/images/adsp-sc573-ezkit/u-boot-sc573-ezkit.ldr /tftpboot/
 
-Before installing the software on to the development board, ensure that the following cables are connected:
+Before installing the software on to the development board, ensure that the
+following cables are connected:
 
 -  Board connected to network via ethernet cable using J13 connector.
 -  Board connected to host PC using USB micro cable, connected to USB/UART port on the development board
@@ -165,14 +184,15 @@ Before installing the software on to the development board, ensure that the foll
 -  ICE is also connected to host PC via USB mini cable
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc573-ezkit_overview.jpg
-   :width: 400px
+   :width: 400
 
 -  The BOOT MODE selector on the EV-SC573-EZKIT board should be turned to "0".
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc573-ezkit_boot_selector.jpg
-   :width: 400px
+   :width: 400
 
-The console output from U-Boot and later on Linux will appear on the USB serial port configured in minicom earlier so open up minicom.
+The console output from U-Boot and later on Linux will appear on the USB serial
+port configured in minicom earlier so open up minicom.
 
 ::
 
@@ -213,10 +233,13 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
    ;''Terminal3: GDB''
    : <code>
 
-$ cd /tftpboot $ /opt/analog/cces/2.10.0/ARM/arm-none-eabi/bin/arm-none-eabi-gdb u-boot-sc573-ezkit ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load init-sc573-ezkit.elf Loading section .text, size 0x744 lma 0x20080000 Start address 0x20080028, load size 1860 Transfer rate: 22 KB/sec, 1860 bytes/write. (gdb) c Continuing.
+$ cd /tftpboot $ /opt/analog/cces/2.10.0/ARM/arm-none-eabi/bin/arm-none-eabi-gdb
+u-boot-sc573-ezkit ... (gdb) target extended-remote :3333 Remote debugging using
+:3333 0x00004884 in ?? () (gdb) load init-sc573-ezkit.elf Loading section .text,
+size 0x744 lma 0x20080000 Start address 0x20080028, load size 1860 Transfer
+rate: 22 KB/sec, 1860 bytes/write. (gdb) c Continuing.
 
 +---+
-
 
 | C |
 
@@ -255,7 +278,9 @@ Now, load U-Boot into RAM.
    (gdb) c
    Continuing.
 
-At this point U-Boot will now be running in RAM on your target board. You should see U-Boot booting in the minicom console (Terminal 1). Press a key to interrupt the boot process before the countdown terminates:
+At this point U-Boot will now be running in RAM on your target board. You should
+see U-Boot booting in the minicom console (Terminal 1). Press a key to interrupt
+the boot process before the countdown terminates:
 
 ::
 
@@ -264,7 +289,12 @@ At this point U-Boot will now be running in RAM on your target board. You should
 
 U-Boot 2020.10 (Aug 23 2022 - 13:09:23 +0000)
 
-CPU: ADSP ADSP-SC573-0.0 (Detected Rev: 1.1) (spi flash boot) VCO: 450 MHz, Cclk0: 450 MHz, Sclk0: 112.500 MHz, Sclk1: 112.500 MHz, DCLK: 225 MHz OCLK: 150 MHz Model: ADI sc573-ezkit I2C: ready DRAM: 224 MiB MMC: SC5XX SDH: 0 In: serial@0x31003000 Out: serial@0x31003000 Err: serial@0x31003000 SF: Detected w25q128 with page size 256 Bytes, erase size 4 KiB, total 16 MiB other init Net: dwmac.3100c000 Hit any key to stop autoboot: 0 => </code>
+CPU: ADSP ADSP-SC573-0.0 (Detected Rev: 1.1) (spi flash boot) VCO: 450 MHz,
+Cclk0: 450 MHz, Sclk0: 112.500 MHz, Sclk1: 112.500 MHz, DCLK: 225 MHz OCLK: 150
+MHz Model: ADI sc573-ezkit I2C: ready DRAM: 224 MiB MMC: SC5XX SDH: 0 In:
+serial@0x31003000 Out: serial@0x31003000 Err: serial@0x31003000 SF: Detected
+w25q128 with page size 256 Bytes, erase size 4 KiB, total 16 MiB other init Net:
+dwmac.3100c000 Hit any key to stop autoboot: 0 => </code>
 
 Flash U-Boot to SPI Flash
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -284,7 +314,6 @@ In the U-Boot console, set the IP address of the Host Linux PC that hosts the U-
 
    To find the IP address of your host Linux PC you can issue the ``ip addr`` command from the shell or console.
 
-
 If your network **supports** DHCP, run:
 
 ::
@@ -299,7 +328,8 @@ If your network **does NOT support** DHCP, run:
 
 Where ``<ADDR>`` is the IP address you want to assign.
 
-Next, run the U-Boot update command to copy the U-Boot loader file from the host PC to the target board, and write it into flash:
+Next, run the U-Boot update command to copy the U-Boot loader file from the host
+PC to the target board, and write it into flash:
 
 ::
 
@@ -325,7 +355,10 @@ You will see an output similar to the one below:
    SF: 399416 bytes @ 0x0 Written: OK
    =>
 
-At this point the U-Boot binary is stored in flash. You can now disconnect the ICE-1000 or ICE-2000 from the development board and make sure to switch the BMODE to position 1. You will only need to reconnect this if your board fails to boot and you need to re-follow these instructions.
+At this point the U-Boot binary is stored in flash. You can now disconnect the
+ICE-1000 or ICE-2000 from the development board and make sure to switch the
+BMODE to position 1. You will only need to reconnect this if your board fails to
+boot and you need to re-follow these instructions.
 
 Booting Linux Using TFTP
 ------------------------
@@ -339,7 +372,8 @@ In order to boot Linux, the TFTP server should be setup as :doc:`above </wiki-mi
 RAM Boot
 ~~~~~~~~
 
-For RAM boot a copy of the image containing the filesystem needs copied to the /tftpboot directory.
+For RAM boot a copy of the image containing the filesystem needs copied to the
+/tftpboot directory.
 
 ::
 
@@ -348,7 +382,9 @@ For RAM boot a copy of the image containing the filesystem needs copied to the /
 NFS Boot
 ~~~~~~~~
 
-For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:
+For NFS boot we use the Network File System which is stored in local Ubuntu
+Host. This is suggested when you do application development. To setup the NFS
+server:
 
 ::
 
@@ -401,7 +437,6 @@ Next, on the target, from u-boot, run one of the following command:
    ......
             Starting Update UTMP about System Runlevel Changes...
    [  OK  ] Started Update UTMP about System Runlevel Changes.
-
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@

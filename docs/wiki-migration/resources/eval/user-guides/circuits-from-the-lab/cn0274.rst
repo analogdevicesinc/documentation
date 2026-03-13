@@ -63,24 +63,22 @@ Step by Step Instruction for Connecting the Hardware
 
 -  Place two batteries into the connector on the bottom of the :adi:`eval-cn0274-sdpz` board, ensure the batteries are size triple A and are the correct polarity.\
 
-
 |image2|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0274/cn0274-hardware-cn0274.jpg
-   :width: 200px
+   :width: 200
 
 -  Connect the :adi:`EVAL-SDP-CS1Z <SDP-S>` and the :adi:`eval-cn0274-sdpz` PCB’s using the 120 pin male and female connectors found on the respective boards.\ |image3|\ |image4|\
-
 
 |image5|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0274/cn0274-hardware-connected-sdps-cn0274.jpg
-   :width: 200px
+   :width: 200
 
 -  Plug the mini end of the USB cable into connector J2 of the :adi:`EVAL-SDP-CS1Z <SDP-S>`. And connect the other end of the USB cable into the Laptop or PC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0274/cn0274-hardware-connected-usb-sdps-cn0274.jpg
-   :width: 200px
+   :width: 200
 
 Opening and Enabling the Evaluation Software
 --------------------------------------------
@@ -98,7 +96,8 @@ Opening and Enabling the Evaluation Software
 Step by Step Instruction to Using the Evaluation Software
 ---------------------------------------------------------
 
--  The following is a list of all available software controls, grouped according to their location in the software:
+-  The following is a list of all available software controls, grouped according
+   to their location in the software:
 
    -  **System Controls**
 
@@ -117,11 +116,16 @@ Step by Step Instruction to Using the Evaluation Software
 
       -  **Activity Threshold** – This control sets the Activity threshold for all axes of the :adi:`adxl362`. When looking for activity, any single sample that crosses this threshold will wake the accelerometer and cause it to begin searching for inactivity.
 
-         -  This threshold is an absolute value; it is not referenced to acceleration reading.
+         -  This threshold is an absolute value; it is not referenced to
+            acceleration reading.
 
       -  **Inactivity Threshold** – This control sets the Inactivity threshold for all axes of the :adi:`adxl362`. When looking for inactivity, a number of samples (defined by the user ) must cross this threshold in order for the accelerometer to sleep and cause it to begin searching for activity.
 
-         -  This threshold is referenced to the acceleration reading. For example, if the acceleration reads 0g, and the Inactivity threshold is set for 0.5g, the chart will display one solid line (the acceleration reading) and two dotted lines (the acceleration reading +/- 0.5g).
+         -  This threshold is referenced to the acceleration reading. For
+            example, if the acceleration reads 0g, and the Inactivity threshold
+            is set for 0.5g, the chart will display one solid line (the
+            acceleration reading) and two dotted lines (the acceleration reading
+            +/- 0.5g).
 
       -  **Inactivity Time (Samples)** – This control sets the number of acceleration samples for all three axes that must be inside of the threshold window for the :adi:`adxl362` to enter the asleep state.
       -  **Measurement Range (g’s)** – This control sets the measurement range of the :adi:`adxl362` in g’s. Choices are ±2g, ±4g, ±8g.
@@ -130,7 +134,8 @@ Step by Step Instruction to Using the Evaluation Software
 
       -  X-Axis Plot Disabled/Enabled- This control disables or enables the graphical display for the X-axis.
       -  Y-Axis Plot Disabled/Enabled- This control disables or enables the graphical display for the Y-axis.
-      -  Z-Axis Plot Disabled/Enabled- This control disables or enables the graphical display for the Z-axis.
+      -  Z-Axis Plot Disabled/Enabled- This control disables or enables the
+         graphical display for the Z-axis.
 
 Registration
 ------------
@@ -139,13 +144,12 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0274-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0274/cn0274-sdpdrivers-setup_wizard.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0274/cn0274-hardware-batteries.jpg
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0274/cn0274-hardware-notconnected-sdps-cn0274.jpg
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0274/cn0274-hardware-displaying_connectors.jpg
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0274/cn0274-hardware-connectorscloseup.jpg
-   :width: 200px
+   :width: 200

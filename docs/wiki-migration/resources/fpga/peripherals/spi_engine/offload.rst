@@ -5,7 +5,6 @@ SPI Engine Offload FPGA Peripheral
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/spi_engine/spi_engine_offload.html\
 
-
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/spi_engine_offload.png
    :align: right
 

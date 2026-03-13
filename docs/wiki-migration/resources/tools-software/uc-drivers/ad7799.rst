@@ -18,7 +18,10 @@ Overview
 
 The :adi:`AD7798`/:adi:`AD7799` are low power, low noise, complete analog front ends for high precision measurement applications. The :adi:`AD7798`/:adi:`AD7799` contains a low noise, 16-/24-bit Σ-Δ ADC with three differential analog inputs. The on-chip, low noise instrumentation amplifier means that signals of small amplitude can be interfaced directly to the ADC. With a gain setting of 64, the rms noise is 27 nV for the :adi:`AD7799` and 40 nV for the :adi:`AD7798` when the update rate equals 4.17 Hz.
 
-On-chip features include a low-side power switch, reference detect, programmable digital output pins, burnout currents, and an internal clock oscillator. The output data rate from the part is software-programmable and can be varied from 4.17 Hz to 470 Hz.
+On-chip features include a low-side power switch, reference detect, programmable
+digital output pins, burnout currents, and an internal clock oscillator. The
+output data rate from the part is software-programmable and can be varied from
+4.17 Hz to 470 Hz.
 
 The part operates with a power supply from 2.7 V to 5.25 V. The :adi:`AD7798` consumes a current of 300 μA typical, whereas the :adi:`AD7799` consumes 380 μA typical. Both devices are housed in a 16-lead TSSOP package.
 
@@ -42,7 +45,10 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the :adi:`AD7799` part, which may be used, without modifications, with any microcontroller.
--  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Drivers, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
 The Communication Driver has a standard interface, so the :adi:`AD7799` driver can be used exactly as it is provided.
 
@@ -60,7 +66,8 @@ For the SPI method, the :adi:`AD7799` driver calls three functions:
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available at:
 
 -  `AD7799 Header file <http://analogdevicesinc.github.io/no-OS/ad7799_8h.html>`_
 -  `AD7799 Source file <http://analogdevicesinc.github.io/no-OS/ad7799_8c.html>`_
@@ -78,4 +85,3 @@ Downloads
    -  :git-no-OS:`Implementation of AD7799 Driver. <drivers/adc/ad7799/ad7799.c>`
    -  :git-no-OS:`Header file of AD7799 Driver. <drivers/adc/ad7799/ad7799.h>`
    
-

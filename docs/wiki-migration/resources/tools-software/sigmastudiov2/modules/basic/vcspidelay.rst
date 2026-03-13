@@ -9,7 +9,8 @@ Voltage Controlled SPI Delay
 Description
 -----------
 
-The Voltage Controlled SPI Delay cell can be used to implement off-chip delay using the SPI interface.
+The Voltage Controlled SPI Delay cell can be used to implement off-chip delay
+using the SPI interface.
 
 Targets Supported
 -----------------
@@ -32,7 +33,6 @@ Name    Type    Description
 Input X Audio   Input Channel X
 Delay X control Delay value
 ======= ======= ===============
-
 
 | ==== Output ====
 

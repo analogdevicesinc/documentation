@@ -5,7 +5,6 @@ HDL Git Repository
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest guide at https://analogdevicesinc.github.io/hdl/user_guide/git_repository.html\
 
-
 All the HDL sources can be found in the following git repository:
 
 `hdl <https://github.com/analogdevicesinc/hdl>`_
@@ -16,8 +15,8 @@ We assume that the user is familiar with `git <https://git-scm.com/>`_. Knows ho
 
    A basic git knowledge is required in order to work with these source files, if you do not have any, don't worry! There are a lot of great resources and tutorials about git all over the `web <http://lmgtfy.com/?q=git+tutorial>`_.
 
-
-If you want to pull down the sources as soon as possible, just do the following few steps:
+If you want to pull down the sources as soon as possible, just do the following
+few steps:
 
 -  Install Git from `here <https://git-scm.com/>`_
 -  Open up Git bash, change your current directory to a place where you want to keep the hdl source
@@ -120,7 +119,6 @@ The library folder contains all the IP cores and common modules. An IP, in gener
 
    Regarding Vivado, all the IPs must be 'packed' before being used in a design. To find more information about how to build the libraries please visit the :doc:`Building & Generating programming files </wiki-migration/resources/fpga/docs/build>` section.
 
-
 Repository Releases and Branches
 --------------------------------
 
@@ -137,7 +135,6 @@ ADI does two releases each year when all the projects get an update to support t
    
    -  https://github.com/analogdevicesinc/hdl/releases
    
-
 
 Need help?
 ----------

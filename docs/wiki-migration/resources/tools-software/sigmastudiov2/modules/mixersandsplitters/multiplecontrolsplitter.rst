@@ -9,12 +9,16 @@ Multiple Control Splitter
 Description
 -----------
 
-The Multiple Control Splitter allows an input signal to be split into two or more outputs with independent control of each output's gain.
+The Multiple Control Splitter allows an input signal to be split into two or
+more outputs with independent control of each output's gain.
 
 Usage
 -----
 
-There is a control knob for setting the gain or each output. To set the gain, click the knob with the left mouse button and drag while holding down the button. Each knob's range, value, and step size can be customized in the control pop-up window. To change the knob settings, right-click on the knob control
+There is a control knob for setting the gain or each output. To set the gain,
+click the knob with the left mouse button and drag while holding down the
+button. Each knob's range, value, and step size can be customized in the control
+pop-up window. To change the knob settings, right-click on the knob control
 
 Varaints
 --------

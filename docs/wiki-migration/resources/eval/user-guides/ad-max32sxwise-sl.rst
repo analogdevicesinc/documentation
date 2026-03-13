@@ -3,31 +3,43 @@ AD-MAX32SXWISE-SL: Long Range Wireless Radio Development Kit based on MAX32670 M
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-max32sxwise-sl/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 .. admonition:: Download
    :class: download
 
    `Ultra-low Power Wireless IoT Sensor (Brochure) <https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/ultra-low_power_wireless_iot_sensor_brochure_.pdf>`_
 
-
 Overview
 --------
 
 The :adi:`AD-MAX32SXWISE-SL` development kit is a tool intended for designing solutions based on low-power, long range proprietary radio communication technique. This platform features the SX1261 RF transceiver based on spread spectrum modulation techniques derived from chirp spread spectrum (CSS) technology, and supports a frequency range from 800 MHz to 960 MHz. This solution is also based on the MAX32670 ultralow power microcontroller based on Arm Cortex-M4 processor.
 
-The kit is composed of a development board and equipped with sensor modules, providing users with a complete system that is suitable for quick prototyping and development of IoT applications. The design includes a gateway, which is crucial for establishing connectivity between the LPWAN devices and the backend or application server. This component is vital for data transfer and communication.
+The kit is composed of a development board and equipped with sensor modules,
+providing users with a complete system that is suitable for quick prototyping
+and development of IoT applications. The design includes a gateway, which is
+crucial for establishing connectivity between the LPWAN devices and the backend
+or application server. This component is vital for data transfer and
+communication.
 
-This also comes with software that allows users to observe nodes in a graphical user interface (GUI) dashboard. This feature enhances the monitoring and management capabilities of the system. To use the development board, users need to flash it with functional firmware. A simple join example has been open-sourced, providing more flexibility and easy customization in terms of firmware development.
+This also comes with software that allows users to observe nodes in a graphical
+user interface (GUI) dashboard. This feature enhances the monitoring and
+management capabilities of the system. To use the development board, users need
+to flash it with functional firmware. A simple join example has been
+open-sourced, providing more flexibility and easy customization in terms of
+firmware development.
 
 Overall, the :adi:`AD-MAX32SXWISE-SL` development kit offers a comprehensive and user-friendly solution for individuals or developers interested in exploring and implementing LPWAN technology for IoT applications.
 
@@ -39,7 +51,9 @@ Features
 -  Provides tools for analyzing the power consumption of the device, helping the user to optimize their applications for energy efficiency.
 -  Includes development tools, libraries, and documentation to assist user in writing and debugging their code.
 -  Helps the user analyze and study the different modulation schemes, data rates, and other parameters relevant to IoT communication.
--  Comes with user-friendly interfaces, documentation, and software tools that simplify the integration process which can save developers time and effort when incorporating the SX1261 into their IoT devices.
+-  Comes with user-friendly interfaces, documentation, and software tools that
+   simplify the integration process which can save developers time and effort
+   when incorporating the SX1261 into their IoT devices.
 
 Applications
 ~~~~~~~~~~~~
@@ -54,8 +68,8 @@ Applications
 What's Inside the Box?
 ----------------------
 
-Upon purchase of the AD-MAX32SXWISE-SL kit, the package comes with the following boards and accessories:
-
+Upon purchase of the AD-MAX32SXWISE-SL kit, the package comes with the following
+boards and accessories:
 
 |image1|
 
@@ -64,7 +78,7 @@ System Architecture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ad-max32sxwise-sl_block_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Specifications
 --------------
@@ -73,7 +87,6 @@ Specifications
 
    
    +------------------------------------------------------------------------------------------------------------------+
-
 
    
    | MCU                                                                                                              |
@@ -137,7 +150,6 @@ Specifications
    +------------------------------------------------------------------------------------------------------------------+
    
 
-
 --------------
 
 Components
@@ -166,7 +178,10 @@ When you purchase the :adi:`AD-MAX32SXWISE-SL` development kit, the package come
 
 **What is a Base Board?**
 
-A Base Board contains an RF transceiver chip and a microcontroller, which combine all the required elements for long range communication. This platform uses the chirp spread spectrum technique, allowing sensors to connect to a network and send and receive data in long distances.
+A Base Board contains an RF transceiver chip and a microcontroller, which
+combine all the required elements for long range communication. This platform
+uses the chirp spread spectrum technique, allowing sensors to connect to a
+network and send and receive data in long distances.
 
 MAX32670-SX-ARDZ Base Board
 ---------------------------
@@ -175,11 +190,14 @@ This development kit comes with the :adi:`MAX32670-SX-ARDZ` as its base board. T
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_base_board.png
    :align: center
-   :width: 600px
+   :width: 600
 
 **What are Sensor Nodes?**
 
-Sensor nodes are devices that wirelessly send or receive messages to and back from the gateways. These devices communicate with nearby gateways connected through a network server. Depending on the intended applications, sensors can transmit various type of data such as temperature, flow rate, vibration, etc.
+Sensor nodes are devices that wirelessly send or receive messages to and back
+from the gateways. These devices communicate with nearby gateways connected
+through a network server. Depending on the intended applications, sensors can
+transmit various type of data such as temperature, flow rate, vibration, etc.
 
 Below are the sensor nodes compatible with the MAX32670-SX-ARDZ Base Board. All of these 3 sensors are included in the :adi:`AD-MAX32SXWISE-SL` development kit.
 
@@ -190,7 +208,7 @@ The :adi:`EV-STRUCTURAL-ARDZ` is a vibration sensor that uses the ADXL343 digita
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-structural-ardz.png
    :align: center
-   :width: 600px
+   :width: 600
 
 EV-FLOWMETER-ARDZ Sensor for Flow Rate Metering
 -----------------------------------------------
@@ -199,7 +217,7 @@ The :adi:`EV-FLOWMETER-ARDZ` is an ultrasonic time-of-flight (ToF) flow meter th
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-flowmeter-ardz_angle.png
    :align: center
-   :width: 400px
+   :width: 400
 
 EV-ADE9000SHIELDZ Sensor for Electric Metering
 ----------------------------------------------
@@ -208,7 +226,7 @@ The :adi:`EV-ADE9000SHIELDZ` is an Arduino shield compatible with Arduino Zero. 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-ade9000shieldz.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -218,7 +236,10 @@ System Setup
 PHASE 1: Hardware Setup
 -----------------------
 
-Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use a different base board or microcontroller, however the firmware built for this demo application cannot be used as this is specifically designed for the MAX32670-SX-ARDZ.
+Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use
+a different base board or microcontroller, however the firmware built for this
+demo application cannot be used as this is specifically designed for the
+MAX32670-SX-ARDZ.
 
 Equipment Needed
 ~~~~~~~~~~~~~~~~
@@ -229,7 +250,8 @@ Equipment Needed
 
    -  with firmware image: `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
 
--  One (1) CR123A Battery or any equivalent external DC power supply (+3 V to +4.7 V)
+-  One (1) CR123A Battery or any equivalent external DC power supply (+3 V to
+   +4.7 V)
 
 ::
 
@@ -239,7 +261,7 @@ Equipment Needed
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/hardware_setup.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Insert one CR123A battery (3 V to 4.7 V) into the battery holder (BT1 connector) of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
@@ -248,23 +270,22 @@ Equipment Needed
    
    **Make sure to check for the battery polarity in the BT1 connector, refer to the figure below. The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.**\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/base_board_with_battery.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect one **Sensor Node** to the :adi:`MAX32670-SX-ARDZ` Base Board by aligning the corresponding Arduino headers on each board.
 
 .. tip::
 
    
-   You do not have to set up the three sensor nodes altogether, just choose one from the available sensors in the kit:
+   You do not have to set up the three sensor nodes altogether, just choose one
+   from the available sensors in the kit:
    
    -  :adi:`EV-STRUCTURAL-ARDZ` for Structural Monitoring
    -  :adi:`EV-FLOWMETER-ARDZ` for Flow Rate Metering
    -  :adi:`EV-ADE9000SHIELDZ` for Electric Metering
    
-
 
 -  Connect the :adi:`MAX32625PICO` programming adapter to the :adi:`MAX32670-SX-ARDZ` Base Board through the 10-pin ribbon cable.
 
@@ -282,28 +303,25 @@ Equipment Needed
 
       .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
          :align: center
-         :width: 400px
+         :width: 400
 
       -   Release the button once the MAINTENANCE drive is mounted.
       -   Drag and drop (to the MAINTENANCE drive) the firmware image.
       -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
-
    
-
 
 -  Connect the :adi:`MAX32625PICO` programming adapter to the Host PC using the micro USB to USB cable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_to_maxpico.png
    :align: center
-   :width: 1500px
+   :width: 1500
 
 .. note::
 
    
    Once you have completed this setup, proceed to PHASE 2 found in\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
    
-
 
 --------------
 
@@ -333,7 +351,6 @@ Design and Integration Files
    -  Fabrication Files
    
 
-
 FAQs
 ====
 
@@ -350,17 +367,16 @@ FAQs
    
    **Q. What is the maximum distance the gateway and nodes can communicate?** A. The gateway and nodes' maximum and effective range may vary depending on the modulation parameters, transmit power, antenna gain, environmental conditions, and obstacles present in the communication path. In practice, it can reach several kilometers in rural areas with a clear line of sight. The effective range may be shorter in urban areas where obstacle and interference are present.
 
-
 Help and Support
 ----------------
 
-For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
+For questions and more information about this product, connect with us through
+the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ad-max32sxwise-sl.png
-   :width: 3000px
+   :width: 3000
    :height: 2000px

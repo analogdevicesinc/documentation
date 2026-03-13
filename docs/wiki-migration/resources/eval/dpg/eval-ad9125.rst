@@ -6,9 +6,15 @@ The :adi:`AD9125` the evaluation board has clocking and analog quadrature modula
 -  AD9125-M5372-EBZ: has the ADL5372 modulator on-board.
 -  AD9125-M5375-EBZ: has the ADL5375 modulator on-board.
 
-To operate the evaluation board, apply power, a clock source, a digital data source, and observe the DAC output on either a spectrum analyzer or an oscilloscope. A low jitter sine or square wave clock works well as a source. The evaluation board comes with software to program the SPI port. Via the SPI port, the DUT and clock circuitry can be programmed into any of its various operating modes.
+To operate the evaluation board, apply power, a clock source, a digital data
+source, and observe the DAC output on either a spectrum analyzer or an
+oscilloscope. A low jitter sine or square wave clock works well as a source. The
+evaluation board comes with software to program the SPI port. Via the SPI port,
+the DUT and clock circuitry can be programmed into any of its various operating
+modes.
 
-Documentation and software updates for using High-Speed DAC Evaluation Boards are included in individual, self-extracting update files.
+Documentation and software updates for using High-Speed DAC Evaluation Boards
+are included in individual, self-extracting update files.
 
 Files included in the AD9125 Update:
 ------------------------------------

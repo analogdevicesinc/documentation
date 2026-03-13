@@ -9,17 +9,20 @@ New and Noteworthy
 Ethernet Connectivity for A²B Analyzer HP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can now connect to your A²B Analyzer HP either via USB like before or via Ethernet to enable more flexible communication and remote access. Please follow the User Guide for details of the correct method.
+You can now connect to your A²B Analyzer HP either via USB like before or via
+Ethernet to enable more flexible communication and remote access. Please follow
+the User Guide for details of the correct method.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/ethernet_connect.jpg
    :alt: a2b-analyzer-studio/ethernet_connect.jpg
-   :width: 500px
+   :width: 500
 
-Network settings can be displayed in the device settings whether the board is connected via USB or Ethernet
+Network settings can be displayed in the device settings whether the board is
+connected via USB or Ethernet
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/network_props.jpg
    :alt: a2b-analyzer-studio/network_props.jpg
-   :width: 250px
+   :width: 250
 
 Ethernet Audio is not supported, only Ethernet communication.
 
@@ -33,26 +36,34 @@ Node Name Changes and JSON Support for A²B Analyzer HP
 
    Node naming conventions have been updated for consistency. The new format is ``<node number>:<node name>``.
 
-By default, names are similar to previous releases. For A²B Analyzer HP, you can use node names from the Sigma Studio+ project JSON file provided at monitor or emulator start. This improves clarity and traceability in network analysis. To use JSON node names, select the relevant option in project settings.
+By default, names are similar to previous releases. For A²B Analyzer HP, you can
+use node names from the Sigma Studio+ project JSON file provided at monitor or
+emulator start. This improves clarity and traceability in network analysis. To
+use JSON node names, select the relevant option in project settings.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/proj-adv-settings.jpg
    :alt: a2b-analyzer-studio/proj-adv-settings.jpg
-   :width: 250px
+   :width: 250
 
-Node names from the JSON file are retrieved only at monitor or emulator start; project changes take effect at that point. If you change the setting while monitor or emulator is running, the change will not apply immediately.
+Node names from the JSON file are retrieved only at monitor or emulator start;
+project changes take effect at that point. If you change the setting while
+monitor or emulator is running, the change will not apply immediately.
 
-Stream names are not supported in this release but are planned for a future update.
+Stream names are not supported in this release but are planned for a future
+update.
 
 USB Resolution Configuration for A²B Analyzer HP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can now change the USB audio resolution for more precise control and compatibility with different audio setups.
+You can now change the USB audio resolution for more precise control and
+compatibility with different audio setups.
 
-Access device audio and network properties from the device toolbar using the properties dropdown.
+Access device audio and network properties from the device toolbar using the
+properties dropdown.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/audio_props.jpg
    :alt: a2b-analyzer-studio/audio_props.jpg
-   :width: 300px
+   :width: 300
 
 New SDK APIs support getting and changing device data.
 
@@ -61,34 +72,46 @@ New SDK APIs support getting and changing device data.
 Monitor SPI Events and Redesigned Monitor Page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Monitor in A²B Analyzer Studio can now detect SPI data tunnel events. SPI tunnel events are grouped in a new table. To improve consistency, all events for all platforms are now separated onto a new “Events” page under monitor for all devices.
+Monitor in A²B Analyzer Studio can now detect SPI data tunnel events. SPI tunnel
+events are grouped in a new table. To improve consistency, all events for all
+platforms are now separated onto a new “Events” page under monitor for all
+devices.
 
-You can filter both tables by a range of frame numbers to correlate standard and SPI events.
+You can filter both tables by a range of frame numbers to correlate standard and
+SPI events.
 
 Firmware Behavior Change in 5.1.x Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Up to version 5.1.0, A²B Bus Analyzer and A²B Analyzer Studio would connect to a device even if it meant disconnecting an existing session. Customers did not need to manually disconnect before reconnecting.
+Up to version 5.1.0, A²B Bus Analyzer and A²B Analyzer Studio would connect to a
+device even if it meant disconnecting an existing session. Customers did not
+need to manually disconnect before reconnecting.
 
-From version 5.1.0, connection is refused by default if another instance is connected, preventing multiple ethernet connections from interfering. If an existing connection is detected, the UI displays a pop-up to let you reset your hardware and therefore disconnect the other session.
+From version 5.1.0, connection is refused by default if another instance is
+connected, preventing multiple ethernet connections from interfering. If an
+existing connection is detected, the UI displays a pop-up to let you reset your
+hardware and therefore disconnect the other session.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/force_connect.jpg
    :alt: a2b-analyzer-studio/force_connect.jpg
-   :width: 300px
+   :width: 300
 
-From the SDK, ensure you disconnect the device on exit, reset the device before connecting, or use the new API to force connection regardless of others.
+From the SDK, ensure you disconnect the device on exit, reset the device before
+connecting, or use the new API to force connection regardless of others.
 
 **Note:** Multiple USB connections to the same COM port are not allowed by the operating system and are always rejected.
 
 Changes to User Guides and Release Notes Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All user guides included with the project are now HTML instead of PDF. Continue using the same links as previous releases to open the files.
+All user guides included with the project are now HTML instead of PDF. Continue
+using the same links as previous releases to open the files.
 
 Removed support for python 3.9
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The user-accessible SDK no longer supports python 3.9. Python 3.9 reached its end of life in October 2025 so it is not expected to work with the SDK wheel.
+The user-accessible SDK no longer supports python 3.9. Python 3.9 reached its
+end of life in October 2025 so it is not expected to work with the SDK wheel.
 
 Resolved Issues
 ---------------
@@ -98,7 +121,9 @@ Resolved Issues
 A2B Analyzer Studio 1.0.1 Release Notes
 =======================================
 
-This release is a small patch release to solve a race condition in the UI related to the restoring of audio interfaces from a file for monitor projects discovered with Sigma Studio/Sigma Studio+.
+This release is a small patch release to solve a race condition in the UI
+related to the restoring of audio interfaces from a file for monitor projects
+discovered with Sigma Studio/Sigma Studio+.
 
 A2B Analyzer Studio 1.0.0 Release Notes
 =======================================
@@ -141,7 +166,8 @@ The A\ :sup:`2`\ B Analyzer Studio installer for each supported platform is des
 Installation Instructions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following sub-sections include installation information for supported platforms.
+The following sub-sections include installation information for supported
+platforms.
 
 Windows
 ^^^^^^^
@@ -179,21 +205,26 @@ c:\\Analog Devices\\A2B Analyzer Studio
 
 You cannot do UI updates between the two products.
 
-To use A2B Analyzer Studio you must update the firmware to 5.0.x. If you need to go back to using the A2B Bus Analyzer Software you must downgrade to the version of firmware released with the specific version of the software.
+To use A2B Analyzer Studio you must update the firmware to 5.0.x. If you need to
+go back to using the A2B Bus Analyzer Software you must downgrade to the version
+of firmware released with the specific version of the software.
 
 Support for both A2B Bus Analyzer for A2B1.0 networks and A2B Analyzer HP for A2B2.0 networks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A\ :sup:`2`\ B Analyzer Studio supports both monitor and emulator for the A\ :sup:`2`\ B Bus Analyzer for A2B1.0 networks (AD243x, AD242x) and A\ :sup:`2`\ B Analyzer HP with replaceable personality modules for A2B2.0 networks (ADAA245x). In future A\ :sup:`2`\ B Analyzer HP may support A2B1.0 networks in their personality modules. At that point new releases of this software will add the support.
 
-In this version, the software supports emulator in personality module 1 and monitor in personality module 2. Other combinations are not supported.
+In this version, the software supports emulator in personality module 1 and
+monitor in personality module 2. Other combinations are not supported.
 
-When creating a project now it is necessary to specify the type of hardware that the project applies to.
+When creating a project now it is necessary to specify the type of hardware that
+the project applies to.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_project_creation.png
-   :width: 400px
+   :width: 400
 
-Doing this ensures that the project settings match the hardware that will be used.
+Doing this ensures that the project settings match the hardware that will be
+used.
 
 SDK Updates
 ~~~~~~~~~~~
@@ -203,13 +234,16 @@ New SDK API format
 
 While the A\ :sup:`2`\ B Bus Analyzer Software SDK API is still supported for both python and C/C++ this API may be deprecated in future releases.
 
-To replace it, a new API has been introduced where one of the main changes is that all monitor/emulator APIs use a monitor/emulator handle instead of a device handle. To find documentation about this new API export the User-Accessible SDK in the SDK menu and open the C/Python documentation at
+To replace it, a new API has been introduced where one of the main changes is
+that all monitor/emulator APIs use a monitor/emulator handle instead of a device
+handle. To find documentation about this new API export the User-Accessible SDK
+in the SDK menu and open the C/Python documentation at
 
 -  C/C++: uasdk/C/docs/A2B_Analyzer_UASDK_help.html
 -  Python: uasdk/python/docs/a2ba_python_sdk_help.html
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_sdk_docs.png
-   :width: 400px
+   :width: 400
 
 Example:
 
@@ -223,9 +257,12 @@ The A\ :sup:`2`\ B Bus Analyzer Software SDK for python contained a different wh
 
 You can find the Python wheels in your exported SDK in the uasdk/python folder
 
-a2ba_sdk-1.0.0-py3-none-linux_x86_64.whl a2ba_sdk-1.0.0-py3-none-macosx_14_0_arm64.whl a2ba_sdk-1.0.0-py3-none-win_amd64.whl
+a2ba_sdk-1.0.0-py3-none-linux_x86_64.whl
+a2ba_sdk-1.0.0-py3-none-macosx_14_0_arm64.whl
+a2ba_sdk-1.0.0-py3-none-win_amd64.whl
 
-The wheels are still OS-specific since they internally use the C/C++ libraries which are OS-specific
+The wheels are still OS-specific since they internally use the C/C++ libraries
+which are OS-specific
 
 Removal of licensing restrictions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -241,7 +278,10 @@ New Feature: Saving/Restoring Audio Interfaces
 To allow for a fast configuration of monitor and emulator audio A\ :sup:`2`\ B Analyzer Studio let you save the running audio interfaces state  (which streams are in USB out for example) onto a json file. This json file can at a later stage be applied to the project while monitor/emulator are running and the previous state can be restored.
 
 -  To save the current running state go to Audio Interfaces and click on the "Save" icon or choose "Save Audio file" as from the Options dropdown
--  To apply an already saved json file first add it to your project by choosing "Add Audio Interfaces File". This links the project with that file. After that, you can either click on the Audio Interfaces "Apply" button or select "Apply/Reapply Audio Interfaces" from the Options dropdown.
+-  To apply an already saved json file first add it to your project by choosing
+   "Add Audio Interfaces File". This links the project with that file. After
+   that, you can either click on the Audio Interfaces "Apply" button or select
+   "Apply/Reapply Audio Interfaces" from the Options dropdown.
 
 |image10|
 
@@ -252,12 +292,17 @@ As a result of carrying out interviews with customers to evaluate their experien
 
 Some examples are:
 
--  Easier to use monitor and emulator start toolbars. They include an intuitive way of detecting why monitor/emulator cannot be started by hovering over the error banner
-
+-  Easier to use monitor and emulator start toolbars. They include an intuitive
+   way of detecting why monitor/emulator cannot be started by hovering over the
+   error banner
 
 |image11|
 
--  The "i" symbol is now commonly used for tooltips that provide more clarity or information. Those tooltips can be seen by hovering over the symbol. For example, in the Audio Tables, hovering over the "i" on a stream row shows the Slot Size and other features of that stream including which interfaces it is being used on (line in/out, SPDIF in/out etc).
+-  The "i" symbol is now commonly used for tooltips that provide more clarity or
+   information. Those tooltips can be seen by hovering over the symbol. For
+   example, in the Audio Tables, hovering over the "i" on a stream row shows the
+   Slot Size and other features of that stream including which interfaces it is
+   being used on (line in/out, SPDIF in/out etc).
 
 |image12|
 
@@ -287,30 +332,30 @@ Known Issues
 An up-to-date list of issues for both the A\ :sup:`2`\ B Analyzer Studio and the A\ :sup:`2`\ B Bus Analyzer can be found at :doc:`/wiki-migration/resources/tools-software/a2b-bus-analyzer/known-issues`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
-   :width: 20px
+   :width: 20
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png
-   :width: 20px
+   :width: 20
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png
-   :width: 20px
+   :width: 20
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_audio_interfaces_menu.png
-   :width: 300px
+   :width: 300
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_start_toolbar.png
-   :width: 500px
+   :width: 500
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_stream_info_tooltip.png
-   :width: 150px
+   :width: 150
 .. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_stream_table_filter.png
-   :width: 300px
+   :width: 300
 .. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_event_trace_summary.png
-   :width: 300px
+   :width: 300

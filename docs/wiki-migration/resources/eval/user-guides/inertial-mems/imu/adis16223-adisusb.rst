@@ -7,7 +7,7 @@ OVERVIEW
 The :adi:`ADIS16223` iSensor® is a tri-axial, digital vibration sensor system that combines industry-leading iMEMS® sensing technology with signal processing, data capture, and a convenient serial peripheral interface (SPI). The SPI and data buffer structure provide convenient access to wide bandwidth sensor data. The 22 kHz sensor resonance and 72.9 kSPS sample rate provide a frequency response that is suitable for machine-health applications. The programmable digital filter offers low-pass and band-pass configuration options. The electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-spi-connect.png
-   :width: 500px
+   :width: 500
 
 ADIS16223/PCB BREAKOUT BOARD
 ----------------------------
@@ -31,7 +31,8 @@ SYSTEM REQUIREMENTS
 
 Windows XP, Vista, 7 (32-bit systems only)
 
-NOTE: All the required files are contained in the .Cab file and deployed during software package install.
+NOTE: All the required files are contained in the .Cab file and deployed during
+software package install.
 
 PHYSICAL SETUP
 --------------
@@ -44,7 +45,6 @@ The :adi:`ADIS16223 <en/mems-sensors/mems-accelerometers/adis16223/products/prod
 
    Do not plug the :adi:`ADISUSB` into the USB cable at this stage of the setup. Wait until the software installation is complete.
 
-
 Step #1
 ~~~~~~~
 
@@ -55,7 +55,6 @@ The single 10-32 machine screw from the :adi:`ADIS16223/PCBZ <en/mems-sensors/me
 .. warning::
 
    Make sure that the connector cable going from J1 on the :adi:`ADIS16223/PCBZ <en/mems-sensors/mems-accelerometers/adis16223/products/EVAL-ADIS16223/eb.html>` is properly aligned to the J1 connector on the :adi:`ADISUSB`. The 12 pin cable is included with the :adi:`ADISUSB`.
-
 
 Step #2
 ~~~~~~~
@@ -70,12 +69,12 @@ Step #3
 The following picture (left side) shows JP1 in the **+3.3V** position (factory-default). That is the correct JP1 jumper setting on the :adi:`ADISUSB`) required for the :adi:`ADIS16223CMLZ <en/mems-sensors/mems-accelerometers/adis16223/products/product.html>`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-3.3v-setting.png
-   :width: 400px
+   :width: 400
 
 NOTE: If JP1 is left on **+5v** the software will look like the following picture. Move JP1 to the\ **+3.3V** setting to correct the problem.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-voltage-error.png
-   :width: 800px
+   :width: 800
 
 ADIS16223_Evaluation SOFTWARE
 -----------------------------
@@ -83,17 +82,19 @@ ADIS16223_Evaluation SOFTWARE
 :adi:`Click here to download the ADIS16220 Evaluation Software <static/imported-files/eval_boards/ADIS1622x_eval_software.zip>` to a personal computer, which enables PC-based evaluation of the :adi:`ADIS16223` on an :adi:`ADISUSB` evaluation system. The download file will contain three separate files: The CAB file (ADIS16220_EVAL_Rev_5.cab), the setup file (setup.exe) and the setup list. Copy these files to a convenient folder for running the application from.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-download.png
-   :width: 800px
+   :width: 800
 
 Navigate to the folder where the files were saved and double click the setup.exe file. The following pictures are a guide for the ADIS16223 software install. The **Welcome** screen will appear click **OK** to continue.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-welcome.png
-   :width: 600px
+   :width: 600
 
-Please choose a directory for the software application or use the default settings (recommended) and click the computer icon button to go to the next step.
+Please choose a directory for the software application or use the default
+settings (recommended) and click the computer icon button to go to the next
+step.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-install.png
-   :width: 600px
+   :width: 600
 
 Choose a program group or use the default settings (recommended) and click **Continue**. The last picture confirms completion click **OK** to finish.
 
@@ -118,7 +119,9 @@ After the USB driver installation is complete, connect the :adi:`ADISUSB` USB co
 Main Window
 ~~~~~~~~~~~
 
-Once the ADIS16220 Software starts-up, the Main Window will appear and look like the following picture. The second picture provides color-coded boxes to support further discussion of each function in this screen.
+Once the ADIS16220 Software starts-up, the Main Window will appear and look like
+the following picture. The second picture provides color-coded boxes to support
+further discussion of each function in this screen.
 
 |image14| |image15|
 
@@ -132,7 +135,9 @@ The purple box identifies the output registers, which update, after pressing the
 
 The red box identifies the Trigger button for different capture modes.
 
-The yellow box identifies the waveform recorder window. The window contains the three accelerometer responses. Also, each waveform matches the color of its register.
+The yellow box identifies the waveform recorder window. The window contains the
+three accelerometer responses. Also, each waveform matches the color of its
+register.
 
 Register Access
 ~~~~~~~~~~~~~~~
@@ -140,18 +145,23 @@ Register Access
 The purpose of the **Register Access** window is to provide both read and write access to the user registers in the :adi:`ADIS16223`. The following picture shows the appearance of this window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-registers.png
-   :width: 600px
+   :width: 600
 
-The color coded boxes illustrate the different functions that this window provides.
+The color coded boxes illustrate the different functions that this window
+provides.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-registers-defined.png
-   :width: 600px
+   :width: 600
 
 The purple box identifies the register category. In addition to the Control/Status, this drop-down control offers access to **Output** and **Calibration** registers.
 
-The red box identifies all of the registers that are in the current category. Click on the register name to select a register for individual read/write access.
+The red box identifies all of the registers that are in the current category.
+Click on the register name to select a register for individual read/write
+access.
 
-The green box identifies the read/write control options for the current register selection. Use the hexadecimal format when writing commands to a particular register.
+The green box identifies the read/write control options for the current register
+selection. Use the hexadecimal format when writing commands to a particular
+register.
 
 The yellow box updates all the registers in the current category.
 
@@ -168,10 +178,11 @@ The Data Capture function supports synchronous data acquisition, based on the da
 
 .. warning::
 
-   The Main screen datalog option should be checked to enable the datalog function.
+   The Main screen datalog option should be checked to enable the datalog
+   function.
 
-
-The green box identifies the configuration box for the name and location of the data storage file.
+The green box identifies the configuration box for the name and location of the
+data storage file.
 
 The yellow box identifies a number of configuration options for the data acquisition process. The **Scaled Units** option causes the software to convert the decimal, twos complement number into its representative value. For example, when enabling **Use Scaled Data,** the accelerometer outputs will be in units of g's `g-force <https://en.wikipedia.org/wiki/G-force>`_.
 
@@ -186,63 +197,61 @@ Screen shots of the 16220_Eval_Rev_5 software running an :adi:`ADIS16223` device
 
    When the :adi:`ADIS16223` Capture Mode is set to Periodic then the CAP_PRD must be set by the user to a value greater than the Capture Duration.
 
-
 |image18| |image19| |image20| |image21| |image22| |image23| |image24| |image25| |image26| |image27| |image28|
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-dimensions.png
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-pcbz-mount-holes.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-pcbz-schematic.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-pcbz-parts.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-pcbz-part-mounted.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-mount-locates.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-mounted.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-prgm-group.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-finished.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-foundnewhardware.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-install.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-wizard.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-complete-wizard.png
-   :width: 400px
+   :width: 400
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-main.png
-   :width: 800px
+   :width: 800
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-adisusb-main-defined.png
-   :width: 800px
+   :width: 800
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-datalog.png
-   :width: 400px
+   :width: 400
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-datalog-defined.png
-   :width: 400px
+   :width: 400
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-1.png
-   :width: 400px
+   :width: 400
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-2.png
-   :width: 400px
+   :width: 400
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-4.png
-   :width: 400px
+   :width: 400
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-8.png
-   :width: 400px
+   :width: 400
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-16.png
-   :width: 400px
+   :width: 400
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-32.png
-   :width: 400px
+   :width: 400
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-64.png
-   :width: 400px
+   :width: 400
 .. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-128.png
-   :width: 400px
+   :width: 400
 .. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-256.png
-   :width: 400px
+   :width: 400
 .. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-512.png
-   :width: 400px
+   :width: 400
 .. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/223-avg-deci-1024.png
-   :width: 400px
+   :width: 400

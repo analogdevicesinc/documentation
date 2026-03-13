@@ -24,7 +24,8 @@ Applications
 -  High-voltage binary input (12 V to 300 V)
 -  Distribution automation
 -  Substation automation
--  Industrial control, multi-range, digital input modules with individually isolated inputs
+-  Industrial control, multi-range, digital input modules with individually
+   isolated inputs
 
 |image1| *MAX14001PMB1 (with MAX14001 on-board chip)*
 
@@ -51,8 +52,9 @@ The source code for the MAX14001 driver can be found here:
    -  :git-no-OS:`Implementation of MAX14001 Driver <drivers/adc/max14001/max14001.c>`
    
 
-
-The MAX14001 driver also uses the ADI utility library, so make sure you add the necessary files to your project. The source code for the utility library can be found here:
+The MAX14001 driver also uses the ADI utility library, so make sure you add the
+necessary files to your project. The source code for the utility library can be
+found here:
 
 .. admonition:: Download
    :class: download
@@ -62,10 +64,12 @@ The MAX14001 driver also uses the ADI utility library, so make sure you add the 
    -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
 
+To use the MAX14001 No-OS Driver, you need to provide the specific
+implementation for the communication APIs as well as the specific data types to
+be used.
 
-To use the MAX14001 No-OS Driver, you need to provide the specific implementation for the communication APIs as well as the specific data types to be used.
-
-If SPI communication is chosen, these are the three functions to be called by the MAX14001 driver and have to be implemented:
+If SPI communication is chosen, these are the three functions to be called by
+the MAX14001 driver and have to be implemented:
 
 .. container:: center box
 
@@ -81,7 +85,6 @@ If SPI communication is chosen, these are the three functions to be called by th
    +--------------------------------+---------------------------------------------+
    
 
-
 And these are the two data types that have to be defined:
 
 .. container:: center box
@@ -96,8 +99,9 @@ And these are the two data types that have to be defined:
    +--------------------------+----------------------------------------------------------+
    
 
-
-An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+An example of a header file containing the prototypes of the functions which
+have to be implemented, along with some generic data types they are using, can
+be found below:
 
 .. admonition:: Download
    :class: download
@@ -106,11 +110,11 @@ An example of a header file containing the prototypes of the functions which hav
    -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
 
-
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and can be accessed in these links:
 
 .. admonition:: Download
    :class: download
@@ -120,14 +124,14 @@ Source code documentation for the driver is automatically generated using the Do
    -  `MAX14001 Source file <http://analogdevicesinc.github.io/no-OS//max14001_8c.html>`_
    
 
-
 Device Configuration
 --------------------
 
 Driver Initialization
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use the device, you need to provide the support for the communication protocol (SPI) as mentioned above.
+To use the device, you need to provide the support for the communication
+protocol (SPI) as mentioned above.
 
 The first API function to be called is **max14001_init**. Make sure that it returns 0, this indicates a successful driver initialization.
 
@@ -153,7 +157,6 @@ Prior to writing to any configuration or verification registers, **max14001_wen*
    ================ =================================================
    
 
-
 Reset Options
 ~~~~~~~~~~~~~
 
@@ -171,16 +174,18 @@ To reset the device, you may use the following functions:
    +-------------------------+------------------------------------------------------------+
    
 
-
 .. note::
 
-   The max14001_reg_reset resets only the SPI registers, while the max14001_full_reset acts as the global POR, wherein the DC-DC converter will turn off and field-side will be reset as well as the logic-side (SPI interface).
-
+   The max14001_reg_reset resets only the SPI registers, while the
+   max14001_full_reset acts as the global POR, wherein the DC-DC converter will
+   turn off and field-side will be reset as well as the logic-side (SPI
+   interface).
 
 Configuration Commands
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Presented below are the configuration commands available to set the diagnostic conditions, inrush pulse, and other controls.
+Presented below are the configuration commands available to set the diagnostic
+conditions, inrush pulse, and other controls.
 
 **Enabling FAULT Conditions**
 
@@ -209,7 +214,6 @@ There are 8 fault conditions that can assert the :math:`overlineFAULT` signal na
    | **MV**                       | Failed memory validation                                                         |
    +------------------------------+----------------------------------------------------------------------------------+
    
-
 
 In addition, there is an option to make the :math:`overlineFAULT` signal latched or dynamic.
 
@@ -241,7 +245,6 @@ You may enable fault conditions to assert the :math:`overlineFAULT` signal with 
    +---------------------------+----------------------------------------------------------------+
    
 
-
 **Inrush Pulse Configuration**
 
 You may configure the inrush pulse settings with the following functions:
@@ -259,7 +262,6 @@ You may configure the inrush pulse settings with the following functions:
    | **max14001_iinr_config** | Sets inrush current, between 50 µA to 105 mA.                            |
    +--------------------------+--------------------------------------------------------------------------+
    
-
 
 **Controls Configuration**
 
@@ -285,13 +287,13 @@ You may configure other settings with the following functions:
    +---------------------------+-------------------------------------------------------------------------+
    
 
-
 .. note::
 
-   The max14001_wen needs to be enabled before any configuration and disabled after all configurations.
+   The max14001_wen needs to be enabled before any configuration and disabled
+   after all configurations.
 
-
-For the valid corresponding mask or values, refer to the device driver header file.
+For the valid corresponding mask or values, refer to the device driver header
+file.
 
 Driver Initialization Example
 -----------------------------
@@ -319,7 +321,6 @@ Example Initialization Using Maxim SDK as Platform
            .spi_init.extra = &spi_extra,
        };
        struct max14001_dev *max14001_adc;
-
 
        ret = max14001_init(&max14001_adc, init_params_max14001_adc);
        if (ret)
@@ -362,6 +363,6 @@ Example Initialization Using Maxim SDK as Platform
        return 0;
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max14001pmb.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max14001_configuration_flowchart.png
-   :width: 600px
+   :width: 600

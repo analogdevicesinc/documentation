@@ -14,7 +14,10 @@ This schematic shows a straightforward way of using a Three-Input Cross-Mixer to
 Example 2
 ---------
 
-This schematic shows a straightforward way of using a Signal Merger grown by 1 to combine two Tone and one White Noise sources and feed a Single-Control Splitter grown by 1, producing three Output blocks, their gain set by the splitter knob setting plus parameter values.
+This schematic shows a straightforward way of using a Signal Merger grown by 1
+to combine two Tone and one White Noise sources and feed a Single-Control
+Splitter grown by 1, producing three Output blocks, their gain set by the
+splitter knob setting plus parameter values.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/mixerssplittersexamples2.jpg
    :alt: mixerssplittersexamples2.jpg

@@ -13,7 +13,8 @@ Prototype
 
 Description
 
-This function creates an instance of SigmaStudio Communication Module and initializes it based on the config parameters supplied by the application.
+This function creates an instance of SigmaStudio Communication Module and
+initializes it based on the config parameters supplied by the application.
 
 Parameters
 

@@ -4,7 +4,15 @@ CN-0326 Software User Guide
 OVERVIEW
 --------
 
-The circuit is a completely isolated low power pH sensor signal conditioner and digitizer with automatic temperature compensation for high accuracy. The circuit gives 0.5% accurate pH readings for pH values from 0 pH to 14 pH with greater than 14-bits of noise-free code resolution and is suitable for a variety of industrial applications such as chemical, food processing, water, and waste water analysis. This circuit supports a wide variety of pH sensors that have very high internal resistance that can range from 1 MΩ to several TGΩ. , and digital signal and power isolation provides immunity to noise and transient voltages often encountered in harsh industrial environments.
+The circuit is a completely isolated low power pH sensor signal conditioner and
+digitizer with automatic temperature compensation for high accuracy. The circuit
+gives 0.5% accurate pH readings for pH values from 0 pH to 14 pH with greater
+than 14-bits of noise-free code resolution and is suitable for a variety of
+industrial applications such as chemical, food processing, water, and waste
+water analysis. This circuit supports a wide variety of pH sensors that have
+very high internal resistance that can range from 1 MΩ to several TGΩ. , and
+digital signal and power isolation provides immunity to noise and transient
+voltages often encountered in harsh industrial environments.
 
 --------------
 
@@ -46,11 +54,9 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
    \ NOTE: It is recommended that you install the `CN0326 Evaluation Software <https://swdownloads.analog.com/cse/cftl/CN0326/2.0.0/CN0326_Evaluation_Software.zip>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0326\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig1.jpg
 
 -  Click **Next** to view the installation review page
-
 
 |image1|
 
@@ -62,8 +68,9 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image3|
 
@@ -74,7 +81,6 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image4|
 
@@ -95,7 +101,7 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Remove the jumper across JP1 found on the :adi:`SDP-PMD-IB1Z`.
 -  Connect the 120-pin connector of the :adi:`SDP-PMD-IB1Z` circuit board to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board. Nylon hardware should be used to firmly secure the two boards, using the holes provided at the ends of the 120-pin connectors.
@@ -108,7 +114,7 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
    :align: center
-   :width: 500px
+   :width: 500
 
 --------------
 
@@ -128,7 +134,8 @@ STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/circuit_note_fig_9.jpg
 
--  Below are the list of available software controls grouped according to their location in the software GUI:
+-  Below are the list of available software controls grouped according to their
+   location in the software GUI:
 
    -  System Controls
 
@@ -146,12 +153,16 @@ STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
          -  Buffer Solution 1 – This gives the customer an option to choose the source of the list of table of the temperature coefficient for buffer solution 1 that will be used for calibration. This option also set the first point for calibration after clicking the Calibration Point 1.
 
             -  NIST Standard Buffer Solution – allows the customer to choose the predefined list of table for the buffer solution traceable by the NIST.
-            -  Custom Buffer Solution - allows the user an option to choose a table that gives the temperature coefficient of the buffer solution to be used for calibration.
+            -  Custom Buffer Solution - allows the user an option to choose a
+               table that gives the temperature coefficient of the buffer
+               solution to be used for calibration.
 
          -  Buffer Solution 2 – This gives the customer an option to choose the source of the list of table of the temperature coefficient for buffer solution 2 that will be used for calibration. This option also set the second point for calibration after clicking the Calibration Point 2.
 
             -  NIST Standard Buffer Solution – allows the customer to choose the predefined list of table for the buffer solution traceable by the NIST.
-            -  Custom Buffer Solution - allows the user an option to choose a table that gives the temperature coefficient of the buffer solution to be used for calibration.
+            -  Custom Buffer Solution - allows the user an option to choose a
+               table that gives the temperature coefficient of the buffer
+               solution to be used for calibration.
 
       -  Measured Results –Display the result for pH reading, the corresponding voltage for the pH reading and the slope expressed in mV/pH.
       -  Continuous Temperature Compensation – This allows the user to enable or disable continuous temperature compensation for pH reading.
@@ -160,11 +171,15 @@ STEP BY STEP INSTRUCTION USING THE EVALUATION SOFTWARE
       -  Save/Recall Calibration Settings – this allows the user to save setup by clicking the Save button or recall the calibration setup formatted in a text file.
 
          -  To save the calibration settings, click Save button then a choose the desired location and provide a the file with a text file(.txt) extension to create new file or click to over write an existing file with a .txt extension.
-         -  To recall the calibration setting, click the folder to browse for the location of the text file that contains the calibration settings and click Load to change the settings indicated in the file that was loaded.
+         -  To recall the calibration setting, click the folder to browse for
+            the location of the text file that contains the calibration settings
+            and click Load to change the settings indicated in the file that was
+            loaded.
 
    -  SDP Board Firmware Revision – provides details on the firmware version of the Blackfin used by the SDP board.
 
--  Note: Example of a format for the calibration setup can be found in the Design Support Package with a folder name Calibration Text Format
+-  Note: Example of a format for the calibration setup can be found in the
+   Design Support Package with a folder name Calibration Text Format
 
 --------------
 
@@ -178,33 +193,46 @@ Pre-Calibration Note:
 -  The second buffer solution should have a pH value which lies as near as possible to the anticipated measuring range.
 -  The third buffer solution will be needed if the expected measuring range covers the acidity and alkalinity range where in the pH value of the second and third buffer solution should fall under the acid region and alkaline region respectively.
 -  The value of the chosen buffer solution should at least differ by 2 pH units.
--  The electrode assembly of a pH probe has to stay in the buffer solution for a short time till the indication of the pH meter become stable.
+-  The electrode assembly of a pH probe has to stay in the buffer solution for a
+   short time till the indication of the pH meter become stable.
 
-This section explains the steps required to properly calibrate the EVAL-CN0326-PMDZ pH measurement system.
+This section explains the steps required to properly calibrate the
+EVAL-CN0326-PMDZ pH measurement system.
 
 -  Step 1
 
    -  Immersed the pH probe along with the temperature sensor into the buffer solution with pH value of 7 for zero point compensation.
-   -  Click Remove Offset Voltage button once the pH voltage reading becomes stable.
+   -  Click Remove Offset Voltage button once the pH voltage reading becomes
+      stable.
 
 -  Step 2
 
    -  After rinsing the electrode assembly with deionized or distilled water, immersed the pH probe with the temperature sensor into the second chosen buffer solution.
-   -  Select the source of the buffer solution temperature coefficient table for compensation.
+   -  Select the source of the buffer solution temperature coefficient table for
+      compensation.
 
       -  When choosing the predefined table preprogrammed in this software, choose the pH value that corresponds to the buffer solution that will be used to define the second point.
-      -  When choosing the custom buffer solution table, navigate through the panel that contains the file that will be used for temperature compensation. (Note: a sample format of a table can be found in CN0326 Design Support Package with a folder name NIST Buffer Solution Table Format)
+      -  When choosing the custom buffer solution table, navigate through the
+         panel that contains the file that will be used for temperature
+         compensation. (Note: a sample format of a table can be found in CN0326
+         Design Support Package with a folder name NIST Buffer Solution Table
+         Format)
 
-   -  After choosing the source of the buffer solution temperature coefficient table, click Calibration Point 1 button to set the second point of calibration.
+   -  After choosing the source of the buffer solution temperature coefficient
+      table, click Calibration Point 1 button to set the second point of
+      calibration.
 
 -  Step 3
 
    -  After rinsing the electrode assembly with deionized or distilled water, immersed the pH probe with the temperature sensor into the third chosen buffer solution.
-   -  Select the source of the buffer solution temperature coefficient table for compensation.
+   -  Select the source of the buffer solution temperature coefficient table for
+      compensation.
 
       -  When choosing the predefined table preprogrammed in this software, choose the pH value that corresponds to the buffer solution that will be used to define the third point.
       -  When choosing the custom buffer solution table, navigate through the panel that contains the file that will be used for temperature compensation. (Note: a sample format of a table can be found in CN0326 Design Support Package with a folder name NIST Buffer Solution Table Format)
-      -  After choosing the source of the buffer solution temperature coefficient table, click Calibration Point 2 button to set the third point of calibration.
+      -  After choosing the source of the buffer solution temperature
+         coefficient table, click Calibration Point 2 button to set the third
+         point of calibration.
 
 Registration
 ------------
@@ -212,7 +240,6 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0326-PMDZ?&v=RevB>`_ to receive all these great benefits and more!
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig2.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig3.jpg

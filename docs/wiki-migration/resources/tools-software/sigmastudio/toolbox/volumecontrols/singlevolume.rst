@@ -11,10 +11,11 @@ Right-click the block border or title to Add algorithms, which adds pins control
 
 The right-click menu also allows selection of different slew modes.
 
-
 |image1|
 
-The slider control's min/max value and step size can be customized. To modify the slider's settings, right-click on the control which will display the control pop-up window (shown below).
+The slider control's min/max value and step size can be customized. To modify
+the slider's settings, right-click on the control which will display the control
+pop-up window (shown below).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/singlevolumecontrol2.jpg
    :alt: singlevolumecontrol2.jpg
@@ -25,7 +26,10 @@ Adjusting the Volume Control from a Microcontroller
 
 The following assumes you have a working microcontroller platform, with SigmaDSP interface code based on :doc:`Interfacing SigmaDSP Processors with a Microcontroller </wiki-migration/resources/tools-software/sigmastudio/tutorials/microcontroller>`.
 
-The SigmaStudio GUI allows users to choose a gain value in dB. However, within SigmaDSP processors, the volume control value is stored as a linear gain. SigmaStudio automatically performs this conversion. In a system with a controller, the controller should convert a user's dB entry to linear.
+The SigmaStudio GUI allows users to choose a gain value in dB. However, within
+SigmaDSP processors, the volume control value is stored as a linear gain.
+SigmaStudio automatically performs this conversion. In a system with a
+controller, the controller should convert a user's dB entry to linear.
 
 The linear scale factor is stored in decimal format (8.24 or 5.23).
 
@@ -65,4 +69,4 @@ Example Usage:
 
 .. |singlevolumecontrol1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/singlevolumecontrol1.jpg
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/volumecontrols/singlevolumecontrol_slew.png
-   :width: 400px
+   :width: 400

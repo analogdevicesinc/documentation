@@ -4,17 +4,18 @@ iio-trig-bfin-timer driver
 Description
 -----------
 
-This driver allows any Blackfin system timer to be used as IIO trigger. It supports trigger rates from 0 to 100kHz in Hz resolution.
+This driver allows any Blackfin system timer to be used as IIO trigger. It
+supports trigger rates from 0 to 100kHz in Hz resolution.
 
 .. tip::
 
    This driver depends on BLACKFIN
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with “make menuconfig” (alternatively use “make xconfig” or “make qconfig”)
+Configure kernel with “make menuconfig” (alternatively use “make xconfig” or
+“make qconfig”)
 
 ::
 
@@ -38,7 +39,8 @@ Configure kernel with “make menuconfig” (alternatively use “make xconfig�
 Example platform device initialization
 ======================================
 
-One or multiple instances of this driver can be declared by adding appropriate platform device data. An example is shown below:
+One or multiple instances of this driver can be declared by adding appropriate
+platform device data. An example is shown below:
 
 .. code:: c
 
@@ -94,7 +96,6 @@ Driver testing
       device0:buffer0:access0  device1:buffer0          trigger0
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -107,7 +108,6 @@ Driver testing
       name         subsystem    frequency  uevent
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -119,7 +119,6 @@ Driver testing
       bfintmr3
    
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -130,4 +129,3 @@ Driver testing
       root:/sys/devices/trigger0> echo 1000 > frequency
       root:/sys/devices/trigger0> echo 0 > frequency
    
-

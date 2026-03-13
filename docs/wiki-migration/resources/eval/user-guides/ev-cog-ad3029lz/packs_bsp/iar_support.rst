@@ -5,8 +5,8 @@ A modular software framework is provided for quick application prototyping.
 
 .. important::
 
-   Please make sure you install IAR Embedded Workbench before installing the pack
-
+   Please make sure you install IAR Embedded Workbench before installing the
+   pack
 
 The Cog software development kit
 
@@ -18,15 +18,17 @@ The Cog software development kit
 
 .. important::
 
-   The application examples found in the pack are developed for EVAL-ADuCM3029-Ez-Kit and will require small changes to make it work for EV-COG-AD3029LZ
-
+   The application examples found in the pack are developed for
+   EVAL-ADuCM3029-Ez-Kit and will require small changes to make it work for
+   EV-COG-AD3029LZ
 
 **As an example "LED_button_callback" is considered and the changes required is briefly explained.**
 
 **Here, the changes are made only with respect to the GPIOs and only on the application source file.**
 
 -  Install the IAR BSP from the above link.
--  Open the "LED_button_callback.c" source code in the editor of your choice and make the below changes:
+-  Open the "LED_button_callback.c" source code in the editor of your choice and
+   make the below changes:
 
 ::
 

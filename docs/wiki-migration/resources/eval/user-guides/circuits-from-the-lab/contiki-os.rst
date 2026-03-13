@@ -4,9 +4,15 @@ Contiki Operating System
 Presentation
 ------------
 
-Contiki is an open source operating system that runs on tiny low-power microcontrollers and makes it possible to develop applications that make efficient use of the hardware while providing standardized low-power wireless communication for a range of hardware platforms.
+Contiki is an open source operating system that runs on tiny low-power
+microcontrollers and makes it possible to develop applications that make
+efficient use of the hardware while providing standardized low-power wireless
+communication for a range of hardware platforms.
 
-Contiki is used in numerous commercial and non-commercial systems, such as city sound monitoring, street lights, networked electrical power meters, industrial monitoring, radiation monitoring, construction site monitoring, alarm systems, remote house monitoring, and so on.
+Contiki is used in numerous commercial and non-commercial systems, such as city
+sound monitoring, street lights, networked electrical power meters, industrial
+monitoring, radiation monitoring, construction site monitoring, alarm systems,
+remote house monitoring, and so on.
 
 For more information, see `the Contiki website <http://contiki-os.org>`_.
 
@@ -20,7 +26,8 @@ Analog Devices has a fork of Contiki, with some basic support for the RL78/G14 D
 
 The latest sources can be obtained at the following URL: https://github.com/analogdevicesinc/contiki/archive/master.zip
 
-Extract the ZIP to the desktop (the extracted folder should be named 'contiki-master').
+Extract the ZIP to the desktop (the extracted folder should be named
+'contiki-master').
 
 Installing the dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,9 +35,13 @@ Installing the dependencies
 IAR toolchain
 ^^^^^^^^^^^^^
 
-To compile Contiki, the IAR toolchain for RL78 is required (as of August 2014, the GCC-based toolchain for RL78 leads to extremely unstable builds).
+To compile Contiki, the IAR toolchain for RL78 is required (as of August 2014,
+the GCC-based toolchain for RL78 leads to extremely unstable builds).
 
-You can install it from the DVD that came with your RL78/G14 Demonstration Kit. Please follow the instructions described in the chapter named "Software Installation" of the RL78/G14 Quick Start Guide. This manual can be found on the DVD at the following URI:
+You can install it from the DVD that came with your RL78/G14 Demonstration Kit.
+Please follow the instructions described in the chapter named "Software
+Installation" of the RL78/G14 Quick Start Guide. This manual can be found on the
+DVD at the following URI:
 
 ::
 
@@ -40,13 +51,16 @@ Alternatively, it can be downloaded from Renesas' website, at the following URL:
 
 .. important::
 
-   Note that the final binary of Contiki will be way above 16 KiB. If you choose to subscribe to the evaluation license for IAR, you must choose the time-constrained license and not the size-constrained one.
-
+   Note that the final binary of Contiki will be way above 16 KiB. If you choose
+   to subscribe to the evaluation license for IAR, you must choose the
+   time-constrained license and not the size-constrained one.
 
 GNU tools for Windows
 ^^^^^^^^^^^^^^^^^^^^^
 
-Compiling Contiki requires a few additional tools generally found on UNIX based operating systems. You will need to download and install the following GnuWin32 components:
+Compiling Contiki requires a few additional tools generally found on UNIX based
+operating systems. You will need to download and install the following GnuWin32
+components:
 
 -  http://gnuwin32.sourceforge.net/downlinks/coreutils.php
 -  http://gnuwin32.sourceforge.net/downlinks/findutils.php
@@ -56,7 +70,8 @@ Compiling Contiki requires a few additional tools generally found on UNIX based 
 Compiling Contiki OS
 ~~~~~~~~~~~~~~~~~~~~
 
-To compile Contiki, launch a terminal console. To do so, click the Start button and type "cmd"; the program "cmd.exe" should appear in the search results.
+To compile Contiki, launch a terminal console. To do so, click the Start button
+and type "cmd"; the program "cmd.exe" should appear in the search results.
 
 In the terminal console, type the following:
 
@@ -80,12 +95,17 @@ The ADF7242 PMOD should be plugged in the PMOD1 slot, as seen here:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/rl78g14_adf7242.jpg
    :align: center
 
-To flash a new program file, you have to switch the board to a specific mode. This can be done by setting the DIP switch #2 to OFF (the switches are located on the bottom right of the screen). The three other switches should stay in position ON.
+To flash a new program file, you have to switch the board to a specific mode.
+This can be done by setting the DIP switch #2 to OFF (the switches are located
+on the bottom right of the screen). The three other switches should stay in
+position ON.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/dipswitch.png
    :align: center
 
-Then, plug the board to USB. The screen should lit and display nothing, and Windows might detect that a new device was plugged and install the driver consequently.
+Then, plug the board to USB. The screen should lit and display nothing, and
+Windows might detect that a new device was plugged and install the driver
+consequently.
 
 You can flash the srec file to the RL78/G14 Demonstration Kit using the Renesas Flash Programmer utility, available on the DVD or at the following address: https://www.renesas.com/us/en/software-tool/renesas-flash-programmer-programming-gui
 
@@ -96,7 +116,6 @@ Once installed, start it, select "Create new workspace" and "full mode" (or "ope
 
 Then, choose the communication interface, which should be **COM** followed by a number (here COM6):
 
-
 |image1|
 
 Finally:
@@ -105,7 +124,9 @@ Finally:
 -  Click on Microcontroller -> Erase NAND
 -  Click on Microcontroller -> Write program
 
-When it's done, unplug the USB cable, revert the DIP switch #2 to its original ON position, then re-plug the cable to see the Contiki example program run on the board.
+When it's done, unplug the USB cable, revert the DIP switch #2 to its original
+ON position, then re-plug the cable to see the Contiki example program run on
+the board.
 
 Communication
 -------------
@@ -113,11 +134,13 @@ Communication
 6loWPAN
 ~~~~~~~
 
-Those few steps will allow you to communicate between Contiki OS and a Linux based board equipped with a second adf7242 module.
+Those few steps will allow you to communicate between Contiki OS and a Linux
+based board equipped with a second adf7242 module.
 
 If not done previously, compile the adf7242 driver for the Linux kernel of your board, following the instructions available here: :doc:`ADF7242 Network MAC802154 Linux Driver </wiki-migration/resources/tools-software/linux-drivers/networking-mac802154/adf7242>`.
 
-Double-check that you installed the firmware file, and that the platform data and/or devicetree is correct (including the IRQ number).
+Double-check that you installed the firmware file, and that the platform data
+and/or devicetree is correct (including the IRQ number).
 
 If the adf7242 driver was compiled as a module, load it:
 
@@ -125,7 +148,8 @@ If the adf7242 driver was compiled as a module, load it:
 
    modprobe adf7242
 
-If the loading was successful, the output of the "iz listphy" command should be similar to the following:
+If the loading was successful, the output of the "iz listphy" command should be
+similar to the following:
 
 ::
 
@@ -172,16 +196,17 @@ The program that we flashed here on the RL78/G14 Demonstration Kit is a simple C
 
 To communicate with Contiki using the CoAP protocol, you need a CoAP client. The one used here is an addon to Firefox, named Copper: https://addons.mozilla.org/fr/firefox/addon/copper-270430/
 
-Install it by following the previous URL, and click "Add to Firefox". A restart of the browser might be required.
+Install it by following the previous URL, and click "Add to Firefox". A restart
+of the browser might be required.
 
-Once done, you can start the client by typing the following URI in the address bar (adapt the IPv6 address adequately):
+Once done, you can start the client by typing the following URI in the address
+bar (adapt the IPv6 address adequately):
 
 ::
 
    coap://[2001::3]/
 
 You will arrive at the following screen:
-
 
 |image2|
 

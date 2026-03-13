@@ -15,7 +15,6 @@ Summary of Building A2B Application on Custom Platform
 
 Figure: Building A2B Application on a Custom Platform
 
-
 |image1|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/buildinga2bapplicationsoncustomplatform.jpg

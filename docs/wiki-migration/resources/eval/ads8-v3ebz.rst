@@ -19,13 +19,11 @@ ADS8-V3EBZ Features
 
 5. Simple USB 3.0 port interface.
 
-
 |image1|
 
 .. container:: centeralign
 
    *Figure 1. ADS8-V3EBZ High Speed Carrier Card (Top)*
-
 
    |image2|
 
@@ -33,22 +31,22 @@ ADS8-V3EBZ Features
 
    *Figure 2. ADS8-V3EBZ High Speed Carrier Card (Bottom)*
 
-
 Using the ADS8-V3EBZ to evaluate High Speed Converters
 ======================================================
 
 Overview
 --------
 
-When connected to a specified Analog Devices high speed converter evaluation board, the ADS8-V3EBZ works as a data generation and acquisition board. Designed to support the highest speed JESD204B converters, the FPGA on the ADS8-V3EBZ acts as the data and control interface. A typical test setup is shown below.
-
+When connected to a specified Analog Devices high speed converter evaluation
+board, the ADS8-V3EBZ works as a data generation and acquisition board. Designed
+to support the highest speed JESD204B converters, the FPGA on the ADS8-V3EBZ
+acts as the data and control interface. A typical test setup is shown below.
 
 |image3|
 
 .. container:: centeralign
 
    *Figure 3. ADS8-V3EBZ connected to High Speed Converter Evaluation Board*
-
 
 Helpful Documents
 -----------------
@@ -80,8 +78,8 @@ ADS8-V3EBZ Supported Evaluation Boards
 Refer to the Analog Devices High Speed Converter evaluation board product page at :adi:`High Speed Converter Eval Boards <hsadcevalboard>` for a table of ADS8-V3EBZ compatible evaluation boards.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/ads8-v3ebztop-web.gif
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/ads8-v3ebzbottom-web.gif
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/ads8v2.png
-   :width: 600px
+   :width: 600

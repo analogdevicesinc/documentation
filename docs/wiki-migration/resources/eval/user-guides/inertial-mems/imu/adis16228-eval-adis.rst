@@ -7,7 +7,7 @@ OVERVIEW
 The :adi:`ADIS16228` iSensor® is a complete vibration sensing system that combines triaxial acceleration sensing with advanced time domain and frequency domain signal processing. Time domain signal processing includes a programmable decimation filter and selectable windowing function. The electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-228-hookup.png
-   :width: 400px
+   :width: 400
 
 ADIS16228/PCBZ BREAKOUT BOARD
 -----------------------------
@@ -37,7 +37,8 @@ Windows XP, Vista, 7
 
 .NET Framework 3.5
 
-NOTE: Newer versions of the .NET framework do not currently support the Vibration Evaluation Program.
+NOTE: Newer versions of the .NET framework do not currently support the
+Vibration Evaluation Program.
 
 PHYSICAL SETUP
 --------------
@@ -60,7 +61,7 @@ Slide the :adi:`ADIS16228CMLZ <en/mems-sensors/mems-accelerometers/adis16228/pro
 WARNING: Make sure that the connector cable going from J1 on the :adi:`ADIS16228/PCBZ <en/mems-sensors/mems-accelerometers/adis16228/products/EVAL-ADIS16228/eb.html>` is properly aligned to the J1 connector on the :adi:`EVAL-ADIS`. The 16 pin cable is included with the :adi:`EVAL-ADIS`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-16pin-conn.png
-   :width: 600px
+   :width: 600
 
 Step #2 - Install ADIS16228/PCBZ onto EVAL-ADIS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +76,7 @@ Step #3 - Set Power Supply Level
 The following picture shows JP1 in the **+3.3V** position (factory-default). That is the correct JP1 jumper setting on the :adi:`EVAL-ADIS` required for the :adi:`ADIS16228CMLZ <en/mems-sensors/mems-accelerometers/adis16228/products/product.html>` operation.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-3.3v.png
-   :width: 400px
+   :width: 400
 
 VIBRATION EVALUATION PROGRAM OVERVIEW
 -------------------------------------
@@ -92,11 +93,9 @@ EVAL-ADIS2 Vibration Evaluation Software User Guide
 
    The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
-
 .. warning::
 
    This guide assumes that you've connected your vibration sensor to the :adi:`EVAL-ADIS2`, drivers were successfully installed on your PC, and you've downloaded the correct software for your sensor. We recommend reviewing the :doc:`Hardware User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2-hardware-guide>` before continuing.
-
 
 Software Downloads
 ------------------
@@ -109,16 +108,20 @@ Click :adi:`here <media/en/evaluation-boards-kits/evaluation-software/SDPDrivers
 
    This application requires Microsoft .NET 3.5 to be installed and enabled on the host PCs running Windows 10. Additional information on enabling .NET 3.5 can be found `here <https://answers.microsoft.com/en-us/windows/forum/windows_10-windows_install-winpc/installingenabling-net-35-on-windows-10/fe7b4699-c096-4369-b06f-e1063da42e18>`_.
 
-
 EVAL-ADIS2 Vibration Evaluation Software Overview
 -------------------------------------------------
 
-The Vibration Evaluation Software is a Microsoft Windows (.NET) application that works in conjunction with the EVAL-ADIS2, in order to provide users with a PC-Based interface to a subset of iSensor products designed specifically for machine health and vibration monitoring applications. The platform enables observation of basic sensor functions, read/write access to all user-accessible registers, and full-rate data acquisition.
+The Vibration Evaluation Software is a Microsoft Windows (.NET) application that
+works in conjunction with the EVAL-ADIS2, in order to provide users with a
+PC-Based interface to a subset of iSensor products designed specifically for
+machine health and vibration monitoring applications. The platform enables
+observation of basic sensor functions, read/write access to all user-accessible
+registers, and full-rate data acquisition.
 
-Due to the specialized nature of the machine health monitoring portfolio, only a subset of sensors is supported by this software. These devices are shown below.
+Due to the specialized nature of the machine health monitoring portfolio, only a
+subset of sensors is supported by this software. These devices are shown below.
 
 +-------------------------------------------------------+
-
 
 | SENSOR DEVICE NUMBER                                  |
 
@@ -144,26 +147,25 @@ Due to the specialized nature of the machine health monitoring portfolio, only a
 
    The :adi:`ADIS16000AMLZ <ADIS16000>` manages wireless communication between several :adi:`ADIS16229AMLZ <ADIS16229>` devices.
 
-
 .
 
 .. important::
 
    This guide builds upon the :doc:`EVAL-ADIS2 Hardware User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2-hardware-guide>` and assumes that you've installed the necessary drivers and software.
 
-
 Using the EVAL-ADIS2 Vibration Evaluation Software
 --------------------------------------------------
 
-Once the Vibration Evaluation software loads, you should be presented with a window similar to the image shown below.
+Once the Vibration Evaluation software loads, you should be presented with a
+window similar to the image shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main.png
-   :width: 700px
+   :width: 700
 
 If an error similar to the image below pops up, click OK to proceed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-select-device.png
-   :width: 400px
+   :width: 400
 
 Device Selection
 ~~~~~~~~~~~~~~~~
@@ -171,18 +173,19 @@ Device Selection
 Click on **Device**, located on the left side of the Menu bar, at the top of the **Main Screen**, and select the model number corresponding to your sensor. The :adi:`adis16228` was used for the following examples.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-device.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-main-select.png
-   :width: 600px
+   :width: 600
 
 .. important::
 
-   Some menu options may appear "grayed out." This normal and indicates that some of the software features may not be available for the selected device type.
+   Some menu options may appear "grayed out." This normal and indicates that
+   some of the software features may not be available for the selected device
+   type.
 
    
    For example, all of the Network options presently only apply :adi:`ADIS16229`.
-
 
 Data Collection Mode
 ~~~~~~~~~~~~~~~~~~~~
@@ -190,7 +193,7 @@ Data Collection Mode
 The :adi:`ADIS16227`, :adi:`ADIS16228` and :adi:`ADIS16229` all have four basic modes of data collection: Manual FFT, Automatic FFT, Manual Time (Time Domain) and Real-Time. Each of these modes can be configured using the **Register Access** window. For ease of use, the **Main Screen** offers a drop-down selection menu for these modes, along with a **Start** that kicks off a data capture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_mainscreen_modeselection_01b.png
-   :width: 600px
+   :width: 600
 
 Waveform Display
 ~~~~~~~~~~~~~~~~
@@ -198,15 +201,18 @@ Waveform Display
 The **Waveform Display** quickly displays the data read back from the sensor. The data format, units, etc. will automatically change based upon the selected data capture mode.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-wavfrms.png
-   :width: 600px
+   :width: 600
 
 Enable Data Log
 ~~~~~~~~~~~~~~~
 
-When the "Enable Data Log" check box in the main form is set, a data capture file will be saved every time a new FFT or time-domain capture is executed. The number located beside the "Enable Data Log" check box will also increment indicating that a new file was written to the host PC disk.
+When the "Enable Data Log" check box in the main form is set, a data capture
+file will be saved every time a new FFT or time-domain capture is executed. The
+number located beside the "Enable Data Log" check box will also increment
+indicating that a new file was written to the host PC disk.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-enable-datalog.png
-   :width: 600px
+   :width: 600
 
 RegisterAccess
 ~~~~~~~~~~~~~~
@@ -214,12 +220,12 @@ RegisterAccess
 The **Register Access** option on the **Menu Bar** provides read and write access to all user-accessible registers listed in the selected device's datasheet. The image below shows a screenshot of the window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-reg-sel.png
-   :width: 700px
+   :width: 700
 
 The image below shows the **Register Access** window when an :adi:`ADIS16228` is connected.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_01.png
-   :width: 600px
+   :width: 600
 
 Reading Sensor Register
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -227,41 +233,44 @@ Reading Sensor Register
 In order to read the contents of a sensor register, click on the register in the table and then click on "Read Selected Register." The :adi:`EVAL-ADIS2` will issue the correct commands to the sensor and update the GUI with the data the sensor responded with.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_01.png
-   :width: 600px
+   :width: 600
 
 Writing to Sensor Registers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Use the following two steps to write a value to the register. 1. Enter the data to be written to the sensor in the text box shown below.
+Use the following two steps to write a value to the register. 1. Enter the data
+to be written to the sensor in the text box shown below.
 
 .. important::
 
    Register data must be written in hexadecimal format!
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_02.png
-   :width: 600px
+   :width: 600
 
 2. Click on **Write**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_03.png
-   :width: 600px
+   :width: 600
 
 .. important::
 
-   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
-
+   The Register Access form always writes to both the upper and lower bytes of a
+   given register. When writing to a register, make sure to include the desired
+   16-bit value in hexadecimal format before clicking the Write Register button.
 
 Single-Command Options
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The section on the right side of the window provides a means of easily calling subroutines within the connected sensor. Clicking on a "Write" button is equivalent to writing a single-bit command to the respective register.
+The section on the right side of the window provides a means of easily calling
+subroutines within the connected sensor. Clicking on a "Write" button is
+equivalent to writing a single-bit command to the respective register.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_singlecommand_01.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_singlecommand_02.png
-   :width: 600px
+   :width: 600
 
 Configuring Alarms
 ~~~~~~~~~~~~~~~~~~
@@ -269,37 +278,38 @@ Configuring Alarms
 The **Alarm > Alarm Settings** option on the **Menu Bar** provides a convenient means of configuring the Spectral Alarm functions. The interface makes configuring and tuning these functions much easier!
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-alrm.png
-   :width: 600px
+   :width: 600
 
 Selecting **Alarms > Alarm Settings** will cause the following window to open:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_01.png
-   :width: 600px
+   :width: 600
 
-Select boxes in the matrix and enter values that are associated with the magnitude of the output data and FFT bin numbers.
+Select boxes in the matrix and enter values that are associated with the
+magnitude of the output data and FFT bin numbers.
 
 .. important::
 
-   The same results can be achieved by issuing individual writes to the respective registers using the Register Access window.
-
+   The same results can be achieved by issuing individual writes to the
+   respective registers using the Register Access window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_02.png
-   :width: 600px
+   :width: 600
 
 Click on **Write to DUT** to update all of the registers associated with these entries.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_03.png
-   :width: 600px
+   :width: 600
 
 In order to verify that the settings were written to the sensor, close and re-open the window. Doing so will reset the form. Click on **Read from DUT** to read back the configuration settings from the sensor.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_04.png
-   :width: 400px
+   :width: 400
 
 The **Alarms > Alarm Status Form** provides a convenient way to monitor each of the different alarm conditions. The dashes in each cell will change to green (no alarm), yellow ("warning" alarm, associated with Level 1) or red ("critical" alarm, associated with Level 2), depending on the conditions, after a data capture event completes.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_statusform_01.png
-   :width: 400px
+   :width: 400
 
 Data Capture
 ~~~~~~~~~~~~
@@ -307,17 +317,20 @@ Data Capture
 The **Data Capture** window provides a means of configuring the file location, base file name, and file count for each data capture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_datacapturewindow_01.png
-   :width: 600px
+   :width: 600
 
-When the "Enable Data Log" check box in the main form is set, a data capture file will be saved every time a new FFT or time-domain capture is executed. The number located beside the "Enable Data Log" check box will also increment indicating that a new file was written to the host PC disk.
+When the "Enable Data Log" check box in the main form is set, a data capture
+file will be saved every time a new FFT or time-domain capture is executed. The
+number located beside the "Enable Data Log" check box will also increment
+indicating that a new file was written to the host PC disk.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-datalog-file.png
-   :width: 600px
+   :width: 600
 
 This counter is also shown in the **Data Capture Window**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_datacapturewindow_02.png
-   :width: 500px
+   :width: 500
 
 Tools
 ~~~~~
@@ -325,20 +338,20 @@ Tools
 The **Tools** option in the **Menu Bar** offers two options: **USB** and **SPI**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-tools-menu.png
-   :width: 600px
+   :width: 600
 
 The **USB** option allows for manually connecting or disconnecting the active :adi:`EVAL-ADIS2`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_tools_usb_01.png
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_tools_usb_02.png
-   :width: 400px
+   :width: 400
 
 The **SPI** option allows for adjusting the SPI SCLK and stall time (time between each 16-bit transaction). The image below shows the default settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-spi-utilities.png
-   :width: 400px
+   :width: 400
 
 Demo
 ~~~~
@@ -348,15 +361,14 @@ Visit the :doc:`ADIS16229 Vibration Demo Wiki Guide </wiki-migration/resources/e
 About
 ~~~~~
 
-This option offers the revision and some codes that might be useful when seeking technical support.
+This option offers the revision and some codes that might be useful when seeking
+technical support.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-version-1-2.png
-   :width: 400px
+   :width: 400
 
 SOFTWARE REVISION HISTORY
 -------------------------
-
-
 
 .. collapsible:: Click to expand
 
@@ -408,12 +420,8 @@ SOFTWARE REVISION HISTORY
    | v1.0.0   | 8/1/2013     | Initial Release                                                                                                                                                                                                           |
    +----------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 REPORTED ISSUES, UPGRADE REQUESTS & SOLUTIONS
 ---------------------------------------------
-
-
 
 .. collapsible:: Click to expand
 
@@ -478,9 +486,6 @@ REPORTED ISSUES, UPGRADE REQUESTS & SOLUTIONS
    +----------+----+----------+-----------+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    |          |    |          |           |                                                  |                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                |
    +----------+----+----------+-----------+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-
 
 USB DRIVER INSTALLATION
 -----------------------
@@ -492,11 +497,9 @@ EVAL-ADIS2 Vibration Evaluation Software User Guide
 
    The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
-
 .. warning::
 
    This guide assumes that you've connected your vibration sensor to the :adi:`EVAL-ADIS2`, drivers were successfully installed on your PC, and you've downloaded the correct software for your sensor. We recommend reviewing the :doc:`Hardware User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2-hardware-guide>` before continuing.
-
 
 Software Downloads
 ------------------
@@ -509,16 +512,20 @@ Click :adi:`here <media/en/evaluation-boards-kits/evaluation-software/SDPDrivers
 
    This application requires Microsoft .NET 3.5 to be installed and enabled on the host PCs running Windows 10. Additional information on enabling .NET 3.5 can be found `here <https://answers.microsoft.com/en-us/windows/forum/windows_10-windows_install-winpc/installingenabling-net-35-on-windows-10/fe7b4699-c096-4369-b06f-e1063da42e18>`_.
 
-
 EVAL-ADIS2 Vibration Evaluation Software Overview
 -------------------------------------------------
 
-The Vibration Evaluation Software is a Microsoft Windows (.NET) application that works in conjunction with the EVAL-ADIS2, in order to provide users with a PC-Based interface to a subset of iSensor products designed specifically for machine health and vibration monitoring applications. The platform enables observation of basic sensor functions, read/write access to all user-accessible registers, and full-rate data acquisition.
+The Vibration Evaluation Software is a Microsoft Windows (.NET) application that
+works in conjunction with the EVAL-ADIS2, in order to provide users with a
+PC-Based interface to a subset of iSensor products designed specifically for
+machine health and vibration monitoring applications. The platform enables
+observation of basic sensor functions, read/write access to all user-accessible
+registers, and full-rate data acquisition.
 
-Due to the specialized nature of the machine health monitoring portfolio, only a subset of sensors is supported by this software. These devices are shown below.
+Due to the specialized nature of the machine health monitoring portfolio, only a
+subset of sensors is supported by this software. These devices are shown below.
 
 +-------------------------------------------------------+
-
 
 | SENSOR DEVICE NUMBER                                  |
 
@@ -544,26 +551,25 @@ Due to the specialized nature of the machine health monitoring portfolio, only a
 
    The :adi:`ADIS16000AMLZ <ADIS16000>` manages wireless communication between several :adi:`ADIS16229AMLZ <ADIS16229>` devices.
 
-
 .
 
 .. important::
 
    This guide builds upon the :doc:`EVAL-ADIS2 Hardware User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2-hardware-guide>` and assumes that you've installed the necessary drivers and software.
 
-
 Using the EVAL-ADIS2 Vibration Evaluation Software
 --------------------------------------------------
 
-Once the Vibration Evaluation software loads, you should be presented with a window similar to the image shown below.
+Once the Vibration Evaluation software loads, you should be presented with a
+window similar to the image shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main.png
-   :width: 700px
+   :width: 700
 
 If an error similar to the image below pops up, click OK to proceed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-select-device.png
-   :width: 400px
+   :width: 400
 
 Device Selection
 ~~~~~~~~~~~~~~~~
@@ -571,18 +577,19 @@ Device Selection
 Click on **Device**, located on the left side of the Menu bar, at the top of the **Main Screen**, and select the model number corresponding to your sensor. The :adi:`adis16228` was used for the following examples.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-device.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-main-select.png
-   :width: 600px
+   :width: 600
 
 .. important::
 
-   Some menu options may appear "grayed out." This normal and indicates that some of the software features may not be available for the selected device type.
+   Some menu options may appear "grayed out." This normal and indicates that
+   some of the software features may not be available for the selected device
+   type.
 
    
    For example, all of the Network options presently only apply :adi:`ADIS16229`.
-
 
 Data Collection Mode
 ~~~~~~~~~~~~~~~~~~~~
@@ -590,7 +597,7 @@ Data Collection Mode
 The :adi:`ADIS16227`, :adi:`ADIS16228` and :adi:`ADIS16229` all have four basic modes of data collection: Manual FFT, Automatic FFT, Manual Time (Time Domain) and Real-Time. Each of these modes can be configured using the **Register Access** window. For ease of use, the **Main Screen** offers a drop-down selection menu for these modes, along with a **Start** that kicks off a data capture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_mainscreen_modeselection_01b.png
-   :width: 600px
+   :width: 600
 
 Waveform Display
 ~~~~~~~~~~~~~~~~
@@ -598,15 +605,18 @@ Waveform Display
 The **Waveform Display** quickly displays the data read back from the sensor. The data format, units, etc. will automatically change based upon the selected data capture mode.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-wavfrms.png
-   :width: 600px
+   :width: 600
 
 Enable Data Log
 ~~~~~~~~~~~~~~~
 
-When the "Enable Data Log" check box in the main form is set, a data capture file will be saved every time a new FFT or time-domain capture is executed. The number located beside the "Enable Data Log" check box will also increment indicating that a new file was written to the host PC disk.
+When the "Enable Data Log" check box in the main form is set, a data capture
+file will be saved every time a new FFT or time-domain capture is executed. The
+number located beside the "Enable Data Log" check box will also increment
+indicating that a new file was written to the host PC disk.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-enable-datalog.png
-   :width: 600px
+   :width: 600
 
 RegisterAccess
 ~~~~~~~~~~~~~~
@@ -614,12 +624,12 @@ RegisterAccess
 The **Register Access** option on the **Menu Bar** provides read and write access to all user-accessible registers listed in the selected device's datasheet. The image below shows a screenshot of the window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-reg-sel.png
-   :width: 700px
+   :width: 700
 
 The image below shows the **Register Access** window when an :adi:`ADIS16228` is connected.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_01.png
-   :width: 600px
+   :width: 600
 
 Reading Sensor Register
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -627,41 +637,44 @@ Reading Sensor Register
 In order to read the contents of a sensor register, click on the register in the table and then click on "Read Selected Register." The :adi:`EVAL-ADIS2` will issue the correct commands to the sensor and update the GUI with the data the sensor responded with.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_01.png
-   :width: 600px
+   :width: 600
 
 Writing to Sensor Registers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Use the following two steps to write a value to the register. 1. Enter the data to be written to the sensor in the text box shown below.
+Use the following two steps to write a value to the register. 1. Enter the data
+to be written to the sensor in the text box shown below.
 
 .. important::
 
    Register data must be written in hexadecimal format!
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_02.png
-   :width: 600px
+   :width: 600
 
 2. Click on **Write**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_03.png
-   :width: 600px
+   :width: 600
 
 .. important::
 
-   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
-
+   The Register Access form always writes to both the upper and lower bytes of a
+   given register. When writing to a register, make sure to include the desired
+   16-bit value in hexadecimal format before clicking the Write Register button.
 
 Single-Command Options
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The section on the right side of the window provides a means of easily calling subroutines within the connected sensor. Clicking on a "Write" button is equivalent to writing a single-bit command to the respective register.
+The section on the right side of the window provides a means of easily calling
+subroutines within the connected sensor. Clicking on a "Write" button is
+equivalent to writing a single-bit command to the respective register.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_singlecommand_01.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_singlecommand_02.png
-   :width: 600px
+   :width: 600
 
 Configuring Alarms
 ~~~~~~~~~~~~~~~~~~
@@ -669,37 +682,38 @@ Configuring Alarms
 The **Alarm > Alarm Settings** option on the **Menu Bar** provides a convenient means of configuring the Spectral Alarm functions. The interface makes configuring and tuning these functions much easier!
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-alrm.png
-   :width: 600px
+   :width: 600
 
 Selecting **Alarms > Alarm Settings** will cause the following window to open:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_01.png
-   :width: 600px
+   :width: 600
 
-Select boxes in the matrix and enter values that are associated with the magnitude of the output data and FFT bin numbers.
+Select boxes in the matrix and enter values that are associated with the
+magnitude of the output data and FFT bin numbers.
 
 .. important::
 
-   The same results can be achieved by issuing individual writes to the respective registers using the Register Access window.
-
+   The same results can be achieved by issuing individual writes to the
+   respective registers using the Register Access window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_02.png
-   :width: 600px
+   :width: 600
 
 Click on **Write to DUT** to update all of the registers associated with these entries.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_03.png
-   :width: 600px
+   :width: 600
 
 In order to verify that the settings were written to the sensor, close and re-open the window. Doing so will reset the form. Click on **Read from DUT** to read back the configuration settings from the sensor.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_04.png
-   :width: 400px
+   :width: 400
 
 The **Alarms > Alarm Status Form** provides a convenient way to monitor each of the different alarm conditions. The dashes in each cell will change to green (no alarm), yellow ("warning" alarm, associated with Level 1) or red ("critical" alarm, associated with Level 2), depending on the conditions, after a data capture event completes.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_statusform_01.png
-   :width: 400px
+   :width: 400
 
 Data Capture
 ~~~~~~~~~~~~
@@ -707,17 +721,20 @@ Data Capture
 The **Data Capture** window provides a means of configuring the file location, base file name, and file count for each data capture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_datacapturewindow_01.png
-   :width: 600px
+   :width: 600
 
-When the "Enable Data Log" check box in the main form is set, a data capture file will be saved every time a new FFT or time-domain capture is executed. The number located beside the "Enable Data Log" check box will also increment indicating that a new file was written to the host PC disk.
+When the "Enable Data Log" check box in the main form is set, a data capture
+file will be saved every time a new FFT or time-domain capture is executed. The
+number located beside the "Enable Data Log" check box will also increment
+indicating that a new file was written to the host PC disk.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-datalog-file.png
-   :width: 600px
+   :width: 600
 
 This counter is also shown in the **Data Capture Window**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_datacapturewindow_02.png
-   :width: 500px
+   :width: 500
 
 Tools
 ~~~~~
@@ -725,20 +742,20 @@ Tools
 The **Tools** option in the **Menu Bar** offers two options: **USB** and **SPI**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-tools-menu.png
-   :width: 600px
+   :width: 600
 
 The **USB** option allows for manually connecting or disconnecting the active :adi:`EVAL-ADIS2`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_tools_usb_01.png
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_tools_usb_02.png
-   :width: 400px
+   :width: 400
 
 The **SPI** option allows for adjusting the SPI SCLK and stall time (time between each 16-bit transaction). The image below shows the default settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-spi-utilities.png
-   :width: 400px
+   :width: 400
 
 Demo
 ~~~~
@@ -748,15 +765,14 @@ Visit the :doc:`ADIS16229 Vibration Demo Wiki Guide </wiki-migration/resources/e
 About
 ~~~~~
 
-This option offers the revision and some codes that might be useful when seeking technical support.
+This option offers the revision and some codes that might be useful when seeking
+technical support.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-version-1-2.png
-   :width: 400px
+   :width: 400
 
 SOFTWARE REVISION HISTORY
 -------------------------
-
-
 
 .. collapsible:: Click to expand
 
@@ -808,12 +824,8 @@ SOFTWARE REVISION HISTORY
    | v1.0.0   | 8/1/2013     | Initial Release                                                                                                                                                                                                           |
    +----------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 REPORTED ISSUES, UPGRADE REQUESTS & SOLUTIONS
 ---------------------------------------------
-
-
 
 .. collapsible:: Click to expand
 
@@ -878,9 +890,6 @@ REPORTED ISSUES, UPGRADE REQUESTS & SOLUTIONS
    +----------+----+----------+-----------+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    |          |    |          |           |                                                  |                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                |
    +----------+----+----------+-----------+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-
 
 LAUNCH SOFTWARE
 ---------------
@@ -892,11 +901,9 @@ EVAL-ADIS2 Vibration Evaluation Software User Guide
 
    The :adi:`EVAL-ADIS2` has been superseded by the :adi:`EVAL-ADIS-FX3` and is no longer supported.
 
-
 .. warning::
 
    This guide assumes that you've connected your vibration sensor to the :adi:`EVAL-ADIS2`, drivers were successfully installed on your PC, and you've downloaded the correct software for your sensor. We recommend reviewing the :doc:`Hardware User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2-hardware-guide>` before continuing.
-
 
 Software Downloads
 ------------------
@@ -909,16 +916,20 @@ Click :adi:`here <media/en/evaluation-boards-kits/evaluation-software/SDPDrivers
 
    This application requires Microsoft .NET 3.5 to be installed and enabled on the host PCs running Windows 10. Additional information on enabling .NET 3.5 can be found `here <https://answers.microsoft.com/en-us/windows/forum/windows_10-windows_install-winpc/installingenabling-net-35-on-windows-10/fe7b4699-c096-4369-b06f-e1063da42e18>`_.
 
-
 EVAL-ADIS2 Vibration Evaluation Software Overview
 -------------------------------------------------
 
-The Vibration Evaluation Software is a Microsoft Windows (.NET) application that works in conjunction with the EVAL-ADIS2, in order to provide users with a PC-Based interface to a subset of iSensor products designed specifically for machine health and vibration monitoring applications. The platform enables observation of basic sensor functions, read/write access to all user-accessible registers, and full-rate data acquisition.
+The Vibration Evaluation Software is a Microsoft Windows (.NET) application that
+works in conjunction with the EVAL-ADIS2, in order to provide users with a
+PC-Based interface to a subset of iSensor products designed specifically for
+machine health and vibration monitoring applications. The platform enables
+observation of basic sensor functions, read/write access to all user-accessible
+registers, and full-rate data acquisition.
 
-Due to the specialized nature of the machine health monitoring portfolio, only a subset of sensors is supported by this software. These devices are shown below.
+Due to the specialized nature of the machine health monitoring portfolio, only a
+subset of sensors is supported by this software. These devices are shown below.
 
 +-------------------------------------------------------+
-
 
 | SENSOR DEVICE NUMBER                                  |
 
@@ -944,26 +955,25 @@ Due to the specialized nature of the machine health monitoring portfolio, only a
 
    The :adi:`ADIS16000AMLZ <ADIS16000>` manages wireless communication between several :adi:`ADIS16229AMLZ <ADIS16229>` devices.
 
-
 .
 
 .. important::
 
    This guide builds upon the :doc:`EVAL-ADIS2 Hardware User Guide </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis2-hardware-guide>` and assumes that you've installed the necessary drivers and software.
 
-
 Using the EVAL-ADIS2 Vibration Evaluation Software
 --------------------------------------------------
 
-Once the Vibration Evaluation software loads, you should be presented with a window similar to the image shown below.
+Once the Vibration Evaluation software loads, you should be presented with a
+window similar to the image shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main.png
-   :width: 700px
+   :width: 700
 
 If an error similar to the image below pops up, click OK to proceed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-select-device.png
-   :width: 400px
+   :width: 400
 
 Device Selection
 ~~~~~~~~~~~~~~~~
@@ -971,18 +981,19 @@ Device Selection
 Click on **Device**, located on the left side of the Menu bar, at the top of the **Main Screen**, and select the model number corresponding to your sensor. The :adi:`adis16228` was used for the following examples.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-device.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-main-select.png
-   :width: 600px
+   :width: 600
 
 .. important::
 
-   Some menu options may appear "grayed out." This normal and indicates that some of the software features may not be available for the selected device type.
+   Some menu options may appear "grayed out." This normal and indicates that
+   some of the software features may not be available for the selected device
+   type.
 
    
    For example, all of the Network options presently only apply :adi:`ADIS16229`.
-
 
 Data Collection Mode
 ~~~~~~~~~~~~~~~~~~~~
@@ -990,7 +1001,7 @@ Data Collection Mode
 The :adi:`ADIS16227`, :adi:`ADIS16228` and :adi:`ADIS16229` all have four basic modes of data collection: Manual FFT, Automatic FFT, Manual Time (Time Domain) and Real-Time. Each of these modes can be configured using the **Register Access** window. For ease of use, the **Main Screen** offers a drop-down selection menu for these modes, along with a **Start** that kicks off a data capture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_mainscreen_modeselection_01b.png
-   :width: 600px
+   :width: 600
 
 Waveform Display
 ~~~~~~~~~~~~~~~~
@@ -998,15 +1009,18 @@ Waveform Display
 The **Waveform Display** quickly displays the data read back from the sensor. The data format, units, etc. will automatically change based upon the selected data capture mode.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-wavfrms.png
-   :width: 600px
+   :width: 600
 
 Enable Data Log
 ~~~~~~~~~~~~~~~
 
-When the "Enable Data Log" check box in the main form is set, a data capture file will be saved every time a new FFT or time-domain capture is executed. The number located beside the "Enable Data Log" check box will also increment indicating that a new file was written to the host PC disk.
+When the "Enable Data Log" check box in the main form is set, a data capture
+file will be saved every time a new FFT or time-domain capture is executed. The
+number located beside the "Enable Data Log" check box will also increment
+indicating that a new file was written to the host PC disk.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-enable-datalog.png
-   :width: 600px
+   :width: 600
 
 RegisterAccess
 ~~~~~~~~~~~~~~
@@ -1014,12 +1028,12 @@ RegisterAccess
 The **Register Access** option on the **Menu Bar** provides read and write access to all user-accessible registers listed in the selected device's datasheet. The image below shows a screenshot of the window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-reg-sel.png
-   :width: 700px
+   :width: 700
 
 The image below shows the **Register Access** window when an :adi:`ADIS16228` is connected.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_01.png
-   :width: 600px
+   :width: 600
 
 Reading Sensor Register
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -1027,41 +1041,44 @@ Reading Sensor Register
 In order to read the contents of a sensor register, click on the register in the table and then click on "Read Selected Register." The :adi:`EVAL-ADIS2` will issue the correct commands to the sensor and update the GUI with the data the sensor responded with.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_01.png
-   :width: 600px
+   :width: 600
 
 Writing to Sensor Registers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Use the following two steps to write a value to the register. 1. Enter the data to be written to the sensor in the text box shown below.
+Use the following two steps to write a value to the register. 1. Enter the data
+to be written to the sensor in the text box shown below.
 
 .. important::
 
    Register data must be written in hexadecimal format!
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_02.png
-   :width: 600px
+   :width: 600
 
 2. Click on **Write**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_03.png
-   :width: 600px
+   :width: 600
 
 .. important::
 
-   The Register Access form always writes to both the upper and lower bytes of a given register. When writing to a register, make sure to include the desired 16-bit value in hexadecimal format before clicking the Write Register button.
-
+   The Register Access form always writes to both the upper and lower bytes of a
+   given register. When writing to a register, make sure to include the desired
+   16-bit value in hexadecimal format before clicking the Write Register button.
 
 Single-Command Options
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The section on the right side of the window provides a means of easily calling subroutines within the connected sensor. Clicking on a "Write" button is equivalent to writing a single-bit command to the respective register.
+The section on the right side of the window provides a means of easily calling
+subroutines within the connected sensor. Clicking on a "Write" button is
+equivalent to writing a single-bit command to the respective register.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_singlecommand_01.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_singlecommand_02.png
-   :width: 600px
+   :width: 600
 
 Configuring Alarms
 ~~~~~~~~~~~~~~~~~~
@@ -1069,37 +1086,38 @@ Configuring Alarms
 The **Alarm > Alarm Settings** option on the **Menu Bar** provides a convenient means of configuring the Spectral Alarm functions. The interface makes configuring and tuning these functions much easier!
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-alrm.png
-   :width: 600px
+   :width: 600
 
 Selecting **Alarms > Alarm Settings** will cause the following window to open:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_01.png
-   :width: 600px
+   :width: 600
 
-Select boxes in the matrix and enter values that are associated with the magnitude of the output data and FFT bin numbers.
+Select boxes in the matrix and enter values that are associated with the
+magnitude of the output data and FFT bin numbers.
 
 .. important::
 
-   The same results can be achieved by issuing individual writes to the respective registers using the Register Access window.
-
+   The same results can be achieved by issuing individual writes to the
+   respective registers using the Register Access window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_02.png
-   :width: 600px
+   :width: 600
 
 Click on **Write to DUT** to update all of the registers associated with these entries.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_03.png
-   :width: 600px
+   :width: 600
 
 In order to verify that the settings were written to the sensor, close and re-open the window. Doing so will reset the form. Click on **Read from DUT** to read back the configuration settings from the sensor.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_settings_04.png
-   :width: 400px
+   :width: 400
 
 The **Alarms > Alarm Status Form** provides a convenient way to monitor each of the different alarm conditions. The dashes in each cell will change to green (no alarm), yellow ("warning" alarm, associated with Level 1) or red ("critical" alarm, associated with Level 2), depending on the conditions, after a data capture event completes.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_alarms_statusform_01.png
-   :width: 400px
+   :width: 400
 
 Data Capture
 ~~~~~~~~~~~~
@@ -1107,17 +1125,20 @@ Data Capture
 The **Data Capture** window provides a means of configuring the file location, base file name, and file count for each data capture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_datacapturewindow_01.png
-   :width: 600px
+   :width: 600
 
-When the "Enable Data Log" check box in the main form is set, a data capture file will be saved every time a new FFT or time-domain capture is executed. The number located beside the "Enable Data Log" check box will also increment indicating that a new file was written to the host PC disk.
+When the "Enable Data Log" check box in the main form is set, a data capture
+file will be saved every time a new FFT or time-domain capture is executed. The
+number located beside the "Enable Data Log" check box will also increment
+indicating that a new file was written to the host PC disk.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-datalog-file.png
-   :width: 600px
+   :width: 600
 
 This counter is also shown in the **Data Capture Window**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_datacapturewindow_02.png
-   :width: 500px
+   :width: 500
 
 Tools
 ~~~~~
@@ -1125,20 +1146,20 @@ Tools
 The **Tools** option in the **Menu Bar** offers two options: **USB** and **SPI**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-tools-menu.png
-   :width: 600px
+   :width: 600
 
 The **USB** option allows for manually connecting or disconnecting the active :adi:`EVAL-ADIS2`.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_tools_usb_01.png
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_tools_usb_02.png
-   :width: 400px
+   :width: 400
 
 The **SPI** option allows for adjusting the SPI SCLK and stall time (time between each 16-bit transaction). The image below shows the default settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-spi-utilities.png
-   :width: 400px
+   :width: 400
 
 Demo
 ~~~~
@@ -1148,15 +1169,14 @@ Visit the :doc:`ADIS16229 Vibration Demo Wiki Guide </wiki-migration/resources/e
 About
 ~~~~~
 
-This option offers the revision and some codes that might be useful when seeking technical support.
+This option offers the revision and some codes that might be useful when seeking
+technical support.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-version-1-2.png
-   :width: 400px
+   :width: 400
 
 SOFTWARE REVISION HISTORY
 -------------------------
-
-
 
 .. collapsible:: Click to expand
 
@@ -1208,12 +1228,8 @@ SOFTWARE REVISION HISTORY
    | v1.0.0   | 8/1/2013     | Initial Release                                                                                                                                                                                                           |
    +----------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 REPORTED ISSUES, UPGRADE REQUESTS & SOLUTIONS
 ---------------------------------------------
-
-
 
 .. collapsible:: Click to expand
 
@@ -1278,9 +1294,6 @@ REPORTED ISSUES, UPGRADE REQUESTS & SOLUTIONS
    +----------+----+----------+-----------+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    |          |    |          |           |                                                  |                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                |
    +----------+----+----------+-----------+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-
 
 :doc:`Click here for an overview of Main Screen Features </wiki-migration/resources/eval/user-guides/inertial-mems/imu/vibrationevaluationprogram>`
 
@@ -1297,7 +1310,7 @@ For starters, here the quickest and easiest way to get a response from the :adi:
 After selecting the :adi:`ADIS16228` as the **Device** in the **Main Screen**, click on the **Start** button to trigger a set of FFT results on each axis.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_228_mainscreen_quickplot.png
-   :width: 600px
+   :width: 600
 
 Generating and Displaying Spectral Results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1307,26 +1320,26 @@ The Vibration Evaluation Program provides a large area for displaying both time 
 The **Waveform Display** quickly displays the data read back from the sensor. The data format, units, etc. will automatically change based upon the selected data capture mode.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-wavfrms.png
-   :width: 600px
-
+   :width: 600
 
 The :adi:`ADIS16227`, :adi:`ADIS16228` and :adi:`ADIS16229` all have four basic modes of data collection: Manual FFT, Automatic FFT, Manual Time (Time Domain) and Real-Time. Each of these modes can be configured using the **Register Access** window. For ease of use, the **Main Screen** offers a drop-down selection menu for these modes, along with a **Start** that kicks off a data capture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_mainscreen_modeselection_01b.png
-   :width: 600px
-
+   :width: 600
 
 MANUAL FFT MODE
 ---------------
 
 When using **Manual FFT** mode, the :adi:`ADIS16228` will collect and analyze data when prompted through a software or hardware "start" command. The **Start** button in the **Main Screen** causes the Vibration Evaluation Program (VEP) to send a software "start" command (set GLOB_CMD[11] = 1) to the :adi:`ADIS16228`. Through the **REC_CTRL** and **AVG_CNT** registers, the :adi:`ADIS16228` can support data record production on four different sample rates: SR0, SR1, SR2 and SR3. **REC_CTRL[11:8]]** provides on/off bits for each of these sample rates, while each nibble in the **AVG_CNT** provides a control entry for configuring these sample rates. In **Manual FFT** mode, each "trigger" will cause data production at one of the enabled rates, start with the lowest "" value (SRx), incrementing with each trigger/data production event.
 
-Example #1 - Manual Mode FFT, One Sample Rate Example #2 - Manual Mode FFT, Four sample Rates
+Example #1 - Manual Mode FFT, One Sample Rate Example #2 - Manual Mode FFT, Four
+sample Rates
 
 Data Capture
 ------------
 
-Click on the following file links for examples on how to use the Data Capture function.
+Click on the following file links for examples on how to use the Data Capture
+function.
 
 `ADIS16228 Data Capture Tutorial <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_adis16228_datacaptureexample.pdf>`_
 
@@ -1360,24 +1373,24 @@ Periodic FFT Mode, Four Sample Rate Scan, with Alarms
 Periodic FFT Mode, Four Sample Rate Scan, with Alarms, with Data Capture
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228pcbz-mnt.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-part-dimensions.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-mating-connector.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228pcbz-schematic.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-pcbz-parts.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-pcbz-j2-slide1.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-pcbz-j2-slide2.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-210mnt-holes.png
-   :width: 500px
+   :width: 500
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-eval-adis-unplugged-conn.png
-   :width: 500px
+   :width: 500
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-mounted-to-eval-adis.png
-   :width: 500px
+   :width: 500
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-on-eval-adis-closeup.png
-   :width: 500px
+   :width: 500

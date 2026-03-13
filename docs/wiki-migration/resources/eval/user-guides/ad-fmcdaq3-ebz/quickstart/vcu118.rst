@@ -27,18 +27,12 @@ Required Software
 
    \ :doc:`Pre-build Images for VCU118 and FMCDAQ3. </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`\
 
-
 Setting up the hardware (VCU118)
 --------------------------------
 
 You will need to:
 
-
-
 - Get the ` Xilinx VCU118 <https://www.xilinx.com/VCU118>`_
-
-
-
 
 |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-vcu118.png|
 
@@ -51,19 +45,20 @@ You will need to:
 - Plug the Power Supply into 12V Power input connector (J15).
 - Turn it on.
 
-
 .. esd-warning::
-
 
 Programming the FPGA
 --------------------
 
-There are two ways of loading the design. One is using the XCST command line, and the second method is to run the tcl script which takes care of loading the bit file and the Linux image.
+There are two ways of loading the design. One is using the XCST command line,
+and the second method is to run the tcl script which takes care of loading the
+bit file and the Linux image.
 
 1. Loading the design using XSCT command line
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In Windows, you can run the XSCT terminal from start menu → Xilinx Design Tools → Xilinx Software Command Line Tool.
+In Windows, you can run the XSCT terminal from start menu → Xilinx Design Tools
+→ Xilinx Software Command Line Tool.
 
 ::
 
@@ -146,7 +141,8 @@ In Windows, you can run the XSCT terminal from start menu → Xilinx Design Tool
 2. Loading the design using tcl script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado → Vivado TCL Shell. (In Linux, source the settings.sh file first)
+Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado →
+Vivado TCL Shell. (In Linux, source the settings.sh file first)
 
 ::
 
@@ -167,8 +163,8 @@ Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado 
 
 .. tip::
 
-   In case of using older releases of VIVADO xsct run.tcl command is replaced by xmd -tcl run.tcl
-
+   In case of using older releases of VIVADO xsct run.tcl command is replaced by
+   xmd -tcl run.tcl
 
 Remote IIO Oscilloscope
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -342,7 +338,6 @@ Check the available IIO devices (the following should be present):
 
 Open IIO Scope application and type ip:board_ip in the URI tab
 
-
 |iio_scope_board_ip-VCU118.png|
 
 You should see two screens:
@@ -350,7 +345,7 @@ You should see two screens:
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/print_daq3_iio_osc_zcu102.png
    :alt: print_daq3_iio_osc_zcu102.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 More Information
 ----------------
@@ -414,9 +409,8 @@ Software support
 
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
-
 .. |VCU118_daq3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/vcu118_daq3.jpg
-   :width: 550px
+   :width: 550
 .. |iio_scope_board_ip-VCU118.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/iio_scope_board_ip-vcu118.png
 
 .. |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-sw16_vcu118.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/sw16_vcu118.jpg

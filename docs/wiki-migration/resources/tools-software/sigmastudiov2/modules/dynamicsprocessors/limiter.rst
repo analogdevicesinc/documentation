@@ -9,7 +9,9 @@ Limiter
 Description
 -----------
 
-The Limiter block computes the RMS level of the incoming audio signal and attempts to prevent it from exceeding the threshold by automatically reducing it's gain.
+The Limiter block computes the RMS level of the incoming audio signal and
+attempts to prevent it from exceeding the threshold by automatically reducing
+it's gain.
 
 Targets Supported
 -----------------
@@ -19,7 +21,6 @@ Name    ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ======= ========== ================ ============= ================
 Limiter B          B                S             B
 ======= ========== ================ ============= ================
-
 
 | ===== Pins =====
 

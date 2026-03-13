@@ -3,7 +3,9 @@ Complex Conjugate
 
 :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-Conjugate Complex takes the Complex Signal(x + j y) of input signal and Conjugate the input signal to complex conjugate output signal. This is a block based module.
+Conjugate Complex takes the Complex Signal(x + j y) of input signal and
+Conjugate the input signal to complex conjugate output signal. This is a block
+based module.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/conjcomplex.jpg
    :align: center

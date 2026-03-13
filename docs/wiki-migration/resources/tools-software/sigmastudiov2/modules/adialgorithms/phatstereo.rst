@@ -9,7 +9,11 @@ Phat-Stereo
 Description
 -----------
 
-Phat-Stereo is a spreading algorithm that uses stereo cross-coupling to simulate surround sound in stereo speakers and other 2-channel situations. The ear is most responsive to interaural phase shifts below 2 kHz, so this increase in phase shift results in a widening of the stereo image. A 3D enhancement, it yields an enriched surround field both for headphones and for stereo speakers.
+Phat-Stereo is a spreading algorithm that uses stereo cross-coupling to simulate
+surround sound in stereo speakers and other 2-channel situations. The ear is
+most responsive to interaural phase shifts below 2 kHz, so this increase in
+phase shift results in a widening of the stereo image. A 3D enhancement, it
+yields an enriched surround field both for headphones and for stereo speakers.
 
 Targets Supported
 -----------------
@@ -19,7 +23,6 @@ Name        ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 =========== ========== ================ ============= ================
 Phat-Stereo S          S                S             NA
 =========== ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -42,7 +45,6 @@ Name    Type  Description
 Output0 Audio Output channel0
 Output1 Audio Output channel1
 ======= ===== ===============
-
 
 | ===== Configurable Parameters =====
 

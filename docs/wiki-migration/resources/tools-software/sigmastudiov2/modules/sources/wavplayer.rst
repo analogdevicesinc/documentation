@@ -5,15 +5,23 @@ WAV Player
 
 The plug-in is located in the SigmaStudio+ Tree Toolbox window, as shown below. |WavPlayerToolbox.jpg|
 
-
 |WavPlayerforSharc.jpg|
 
 Description
 -----------
 
-The WAV Player module is designed to facilitate playback of audio files stored in external flash memory, interfaced with the ADSP-215xx/ADSP-SC5xx processor via the SPI (Serial Peripheral Interface). This module enables seamless reading of WAV files from flash and supports real-time pitch shifting, allowing dynamic adjustment of pitch during playback without affecting audio duration.
+The WAV Player module is designed to facilitate playback of audio files stored
+in external flash memory, interfaced with the ADSP-215xx/ADSP-SC5xx processor
+via the SPI (Serial Peripheral Interface). This module enables seamless reading
+of WAV files from flash and supports real-time pitch shifting, allowing dynamic
+adjustment of pitch during playback without affecting audio duration.
 
-The module supports WAV files that include a standard WAV header and adhere to the little-endian byte format. It is compatible with audio sample resolutions of 8, 16, 24, or 32 bits per sample, using signed integer data types. The WAV Player module does not have any audio input pins. It features five control input pins, one audio output pin, and one control output pin. And also, it Includes pause and loopback functionality.
+The module supports WAV files that include a standard WAV header and adhere to
+the little-endian byte format. It is compatible with audio sample resolutions of
+8, 16, 24, or 32 bits per sample, using signed integer data types. The WAV
+Player module does not have any audio input pins. It features five control input
+pins, one audio output pin, and one control output pin. And also, it Includes
+pause and loopback functionality.
 
 **Key Features:**
 
@@ -43,7 +51,6 @@ Name       ADSP-215xx/ADSP-SC5xx
 ========== =====================
 WAV Player Block
 ========== =====================
-
 
 | ===== Pins =====
 
@@ -119,7 +126,8 @@ ADSP-215xx 1.1           2.1
 Package Information
 -------------------
 
-Please find the attached package containing the necessary resources for running the WavPlayer module using ADSP-21569 and SC584 Eval boards:
+Please find the attached package containing the necessary resources for running
+the WavPlayer module using ADSP-21569 and SC584 Eval boards:
 
 `WAV Player Supported Files <https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/WavPlayerSupportedPackage.zip>`_
 
@@ -134,7 +142,8 @@ The package includes the following folders:
 Flashing Example WAV Files
 --------------------------
 
-Follow the steps below to flash the example WAV files to the external flash memory connected to the ADSP-215xx/ADSP-SC5xx EZ-KIT:
+Follow the steps below to flash the example WAV files to the external flash
+memory connected to the ADSP-215xx/ADSP-SC5xx EZ-KIT:
 
 **Connect the Emulator:** Attach the ICE-1000 or ICE-2000 emulator to the EZ-KIT board.
 
@@ -144,19 +153,23 @@ Follow the steps below to flash the example WAV files to the external flash memo
 
 **Run Flash Script:** Execute the .bat file corresponding to your EZ-KIT platform. This will launch a command line interface displaying the flashing progress for each WAV file, as shown in the below image.
 
-
 |FlashFileStatus.jpg|
 
 **Flashing Custom WAV Files:**
 
-- To flash custom WAV files at different flash memory offsets, modify the filename and offset value within the batch script.
+- To flash custom WAV files at different flash memory offsets, modify the
+  filename and offset value within the batch script.
 
-- Ensure the custom WAV files are placed in the same directory as the batch file before execution.
+- Ensure the custom WAV files are placed in the same directory as the batch file
+  before execution.
 
 Steps to run the Wav Player using Demo Application
 --------------------------------------------------
 
-The following changes must be made to the ADSP-SC5xx/ADSP-215xxSigmaStudio demo application to ensure the correct functioning of the WAV Player module on the EZ-Kits. These changes configure the flash, SPI and cache as required by the WAV Player module.
+The following changes must be made to the ADSP-SC5xx/ADSP-215xxSigmaStudio demo
+application to ensure the correct functioning of the WAV Player module on the
+EZ-Kits. These changes configure the flash, SPI and cache as required by the WAV
+Player module.
 
 **Import the CCES demo projects for ADSP-SC5xx/ADSP-215xx**
 
@@ -164,12 +177,14 @@ The following changes must be made to the ADSP-SC5xx/ADSP-215xxSigmaStudio demo 
 
 **Pin multiplexing**
 
-1. Add the Pin multiplexing Add-in to Sharc Core 0 project. Upon successful addition the plugin must appear in the installed Add-in view
+1. Add the Pin multiplexing Add-in to Sharc Core 0 project. Upon successful
+   addition the plugin must appear in the installed Add-in view
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/addpinmuxing.jpg
    :alt: AddPinMuxing.jpg
 
-2. Enable SPI2 in the Pin multiplexing and select MISO, MOSI, CLK, SEL1, D2, D3 as shown below.
+2. Enable SPI2 in the Pin multiplexing and select MISO, MOSI, CLK, SEL1, D2, D3
+   as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/enablespi2.jpg
    :alt: enablespi2.jpg
@@ -189,28 +204,37 @@ Add the callback function **wavplayerSetupFlash()** to **adi_ss_app_sh0.c** file
           5. Address pins
           6. Dummy size
 
-This call back function is called during initialization of the WAV player module. The flash configuration parameters for the ADSP-SC5xx EZ-KIT flash is as shown below.
-
+This call back function is called during initialization of the WAV player
+module. The flash configuration parameters for the ADSP-SC5xx EZ-KIT flash is as
+shown below.
 
 |WavPlayerSetupFlash.jpg|
 
-Include the file adi_initSPIMode.c in the Sharc Core0 application. This file has the function definition for InitializeSPIMode() and which sets up the SPI in memory mapped read mode. Invoke this function within the wavplayerSetupFlash() function after configuring the flash properties.
+Include the file adi_initSPIMode.c in the Sharc Core0 application. This file has
+the function definition for InitializeSPIMode() and which sets up the SPI in
+memory mapped read mode. Invoke this function within the wavplayerSetupFlash()
+function after configuring the flash properties.
 
-Include the file platform_flash_config.c in the Sharc Core0 application. This file has the function definition for SetFlashMode() and which sets the quad enable bit in the ADSP-SC5xx EZ-KIT flash to allow quad SPI memory mapped reads.
+Include the file platform_flash_config.c in the Sharc Core0 application. This
+file has the function definition for SetFlashMode() and which sets the quad
+enable bit in the ADSP-SC5xx EZ-KIT flash to allow quad SPI memory mapped reads.
 
-Within adi_ss_app_sh0.c file, add the call to functionSetFlashMode() in the main() function just after the call to ConfigSoftSwitches() function, as shown below
+Within adi_ss_app_sh0.c file, add the call to functionSetFlashMode() in the
+main() function just after the call to ConfigSoftSwitches() function, as shown
+below
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/configuresoftswitch_2156x_1.jpg
    :alt: ConfigureSoftSwitch_2156x_1.jpg
 
-Include the header “adi_wavplayer.h" in the adi_ss_app_sh0.c file and include this header file in the Sharc Core0 application project.
+Include the header “adi_wavplayer.h" in the adi_ss_app_sh0.c file and include
+this header file in the Sharc Core0 application project.
 
-In the Sharc Core 0app.ldf file add KEEP (wavplayerSetupFlash.) and KEEP(InitializeSPIMMode.) to retain the symbol.
+In the Sharc Core 0app.ldf file add KEEP (wavplayerSetupFlash.) and
+KEEP(InitializeSPIMMode.) to retain the symbol.
 
 |ldfChanges.jpg| **Cache configuration**
 
 Enable cache 16KB andset\*pREG_SHL1C0_CFG = ENABLE_I_D_CACHE in adi_ss_config_I_D_cache(void) in file adi_ss_cache_config.c.
-
 
 |CacheConfiguration.jpg|
 
@@ -219,22 +243,29 @@ Cache configuration and modification in adi_ss_cache_config.c
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/cacheconfiguration_1.jpg
    :alt: CacheConfiguration_1.jpg
 
-After making the above changes, rebuild the projects to create the application dxes.
+After making the above changes, rebuild the projects to create the application
+dxes.
 
 **Demo application changes for ADSP-2156x processors**
 
-The following changes are required for the SigmaStudio Demo application on ADSP-2156x processor located in “C:\\Analog Devices\\SigmaStudioPlus-Relx.x.0\\Target\\Examples\\Demo\\ADSP-2156x\\ADSP-21569\\SS_App_Core1” folder.
+The following changes are required for the SigmaStudio Demo application on
+ADSP-2156x processor located in “C:\\Analog
+Devices\\SigmaStudioPlus-Relx.x.0\\Target\\Examples\\Demo\\ADSP-2156x\\ADSP-21569\\SS_App_Core1”
+folder.
 
-NOTE: CrossCore Embedded Studio (CCES) v3.0.3 shall be used for building the above mentioned ADSP-21569 application.
+NOTE: CrossCore Embedded Studio (CCES) v3.0.3 shall be used for building the
+above mentioned ADSP-21569 application.
 
 **Pin multiplexing**
 
-1. Add the Pin multiplexing Add-in to Sharc Core 0 project. Upon successful addition the plugin must appear in the installed Add-in view as below.
+1. Add the Pin multiplexing Add-in to Sharc Core 0 project. Upon successful
+   addition the plugin must appear in the installed Add-in view as below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/addpinmuxing2156x.jpg
    :alt: AddPinMuxing2156x.jpg
 
-2. Enable SPI2 in the Pin multiplexing and select MISO, MOSI, CLK, SEL1, D2, D3 as shown below.
+2. Enable SPI2 in the Pin multiplexing and select MISO, MOSI, CLK, SEL1, D2, D3
+   as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/spi22156x.jpg
    :alt: SPI22156x.jpg
@@ -247,7 +278,8 @@ Ensure the SPI2FLASH_CS_EN and SPI2D2_D3_EN is enabled in *adi_ss_softconfig_215
 
 **Configuring Flash**
 
-Add the callback function wavplayerSetupFlash() to adi_ss_app_sh0.c file and set the following flash configuration parameters: 1. Flash start address
+Add the callback function wavplayerSetupFlash() to adi_ss_app_sh0.c file and set
+the following flash configuration parameters: 1. Flash start address
 
 2. Flash end address
 
@@ -259,23 +291,34 @@ Add the callback function wavplayerSetupFlash() to adi_ss_app_sh0.c file and set
 
 6. Dummy size
 
-This call back function is called during initialization of the WAV player module. The flash configuration parameters for the ADSP-21569 EZ-KIT flash is as shown below.
+This call back function is called during initialization of the WAV player
+module. The flash configuration parameters for the ADSP-21569 EZ-KIT flash is as
+shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/wavplayersetupflash_2156x.jpg
    :alt: WavPlayersetupFlash_2156x.jpg
 
-Include the file adi_initSPIMode.c in the Sharc Core0 application. This file has the function definition for InitializeSPIMode(), which sets up the SPI in memory mapped read mode. . Invoke this function within the wavplayerSetupFlash() function after configuring the flash properties.
+Include the file adi_initSPIMode.c in the Sharc Core0 application. This file has
+the function definition for InitializeSPIMode(), which sets up the SPI in memory
+mapped read mode. . Invoke this function within the wavplayerSetupFlash()
+function after configuring the flash properties.
 
-Include the file platform_flash_config.c in the Sharc Core0 application. This file has the function definition for SetFlashMode() which sets the quad enable bit in the ADSP-21569 EZ-KIT flash to allow quad SPI memory mapped reads.
+Include the file platform_flash_config.c in the Sharc Core0 application. This
+file has the function definition for SetFlashMode() which sets the quad enable
+bit in the ADSP-21569 EZ-KIT flash to allow quad SPI memory mapped reads.
 
-Within adi_ss_app_sh0.c file, add the call to functionSetFlashMode() in the main() function just after the call to ConfigSoftSwitches() function, as shown below.
+Within adi_ss_app_sh0.c file, add the call to functionSetFlashMode() in the
+main() function just after the call to ConfigSoftSwitches() function, as shown
+below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/configuresoftswitch_2156x_1.jpg
    :alt: ConfigureSoftSwitch_2156x_1.jpg
 
-Include the header “adi_wavplayer.h" in the adi_ss_app_sh0.c file and add the link to the Sharc Core0 application project properties.
+Include the header “adi_wavplayer.h" in the adi_ss_app_sh0.c file and add the
+link to the Sharc Core0 application project properties.
 
-In the Sharc Core 0app.ldf file add KEEP (wavplayerSetupFlash.) and KEEP(InitializeSPIMMode.) to retain the symbols.
+In the Sharc Core 0app.ldf file add KEEP (wavplayerSetupFlash.) and
+KEEP(InitializeSPIMMode.) to retain the symbols.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/app_2156x.ldf.jpg
    :alt: APP_2156x.ldf.jpg
@@ -287,14 +330,17 @@ Enable 16KB cache and set \*pREG_SHL1C0_CFG = ENABLE_I_D_CACHE in function adi_s
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/cacheconfiguration_2156x.jpg
    :alt: CacheConfiguration_2156x.jpg
 
-In the compiler preprocessor section of the project properties, add the following preprocessor definition: “ADI_SPORT_BLOCKING_MODE=1”
+In the compiler preprocessor section of the project properties, add the
+following preprocessor definition: “ADI_SPORT_BLOCKING_MODE=1”
 
-Click on system.svc and from the overview tab, add OSPI driver add-in to the project as shown below
+Click on system.svc and from the overview tab, add OSPI driver add-in to the
+project as shown below
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/ospidriveradd.jpg
    :alt: OSPIDriverAdd.jpg
 
-After making the above changes, rebuild the project to create the application dxe that can be used with the wav player SigmaStudio plugin.
+After making the above changes, rebuild the project to create the application
+dxe that can be used with the wav player SigmaStudio plugin.
 
 .. |WavPlayerToolbox.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/wavplayertoolbox.jpg
 .. |WavPlayerforSharc.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/sources/wavplayerforsharc.jpg

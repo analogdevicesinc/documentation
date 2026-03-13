@@ -4,7 +4,9 @@ ADIS16COM1/PCBZ Breakout Board Wiki Guide
 OVERVIEW
 ========
 
-The ADIS16COM1/PCBZ provides a breakout function for the ADIS16000CMLZ, which pairs with the ADIS16229AMLZ to provide the sensor, signal processing and transceiver function for a wireless vibration sensing system.
+The ADIS16COM1/PCBZ provides a breakout function for the ADIS16000CMLZ, which
+pairs with the ADIS16229AMLZ to provide the sensor, signal processing and
+transceiver function for a wireless vibration sensing system.
 
 Here is a picture of the contents that come with the ADIS16COM1/PCBZ.
 
@@ -17,7 +19,7 @@ The ADIS16COM1/PCBZ provides 4 mounting holes that line up with mounting "A" Lab
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16com1pcbz-dimension.png
    :align: center
-   :width: 800px
+   :width: 800
 
 EVAL-ADIS Mounting
 ------------------
@@ -35,38 +37,39 @@ Use the M3x0.5x12mm machine screws and M3x.5x Hex nuts with the M3 washers optio
 
 .. warning::
 
-   WARNING: Make sure that the connector pins are in alignment with J1 on the EVAL-ADIS and J1 on the ADIS16COM1/PCBZ, before pressing it into place.
-
+   WARNING: Make sure that the connector pins are in alignment with J1 on the
+   EVAL-ADIS and J1 on the ADIS16COM1/PCBZ, before pressing it into place.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/conn-alignment.png
    :align: center
-   :width: 500px
+   :width: 500
 
-Here is a close-up view, which shows a few slides of the \*\* correct connector alignment \*\*.
+Here is a close-up view, which shows a few slides of the \*\* correct connector
+alignment \*\*.
 
 |image10| |image11| |image12|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16com1-16229-antenna.png
-   :width: 700px
+   :width: 700
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16com1pcbz.png
-   :width: 450px
+   :width: 450
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/analogkit2.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16com1-mnt_holes-on_eval-adis.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16com1-mnt-on_eval-adis.png
-   :width: 450px
+   :width: 450
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16com1-loc-holes-adis16000.png
-   :width: 450px
+   :width: 450
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16000-pin-out.png
-   :width: 350px
+   :width: 350
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16000amlz.png
-   :width: 300px
+   :width: 300
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/mounted-adis16com1-adis16000-to-eval-adis.png
-   :width: 800px
+   :width: 800
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16com1-mating-adis16229-view1.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16com1-mating-adis16229-view2.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16com1-mating-adis16229-view3.png
-   :width: 500px
+   :width: 500

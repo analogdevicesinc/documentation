@@ -58,9 +58,15 @@ ADXL317 GRAPHICAL USER INTERFACE
 GETTING STARTED
 ~~~~~~~~~~~~~~~
 
-The ADXL317 Customer Evaluation System provide an easy start evaluating the sensor performance. The graphic user interface is divided into separate tabs, each of which specializes in commonly performed measurements for accelerometer devices. In this way, the evaluation system offers users an immediate ability to capture data for a wide variety of tests without the need to develop a customized hardware and software solution.
+The ADXL317 Customer Evaluation System provide an easy start evaluating the
+sensor performance. The graphic user interface is divided into separate tabs,
+each of which specializes in commonly performed measurements for accelerometer
+devices. In this way, the evaluation system offers users an immediate ability to
+capture data for a wide variety of tests without the need to develop a
+customized hardware and software solution.
 
-A brief description of the functionality contained within the evaluation environment is presented in Table 1.
+A brief description of the functionality contained within the evaluation
+environment is presented in Table 1.
 
 **Table 1:** Evaluation Environment Overview.
 
@@ -96,7 +102,10 @@ DEVICE OVERVIEW TAB
 
 **Figure 7:** OverView Tab.
 
-The Device Overview tab is a good way to become familiar with how the device operates. The ADXL317 is a 3-axis accelerometer, meaning the device is sensitive to acceleration in any direction, whit a fixed range of +/- 16g and a resolution of 14 bits. Please refer to the ADXL317 data sheet for more details.
+The Device Overview tab is a good way to become familiar with how the device
+operates. The ADXL317 is a 3-axis accelerometer, meaning the device is sensitive
+to acceleration in any direction, whit a fixed range of +/- 16g and a resolution
+of 14 bits. Please refer to the ADXL317 data sheet for more details.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl317/eval-adxl31x-sdp_xlaxesorientation.png
    :align: center
@@ -113,7 +122,14 @@ TDM4 DATA STREAMING TAB
 
 **Figure 9:** TDM4 data streaming tab.
 
-The TDM4 data streaming tab allows the user to evaluate the ADXL317 performance at its highest bandwidth, using its I2S data streaming interface. In this case, the part is configured for TDM4, 16-bits at 3.072MHz clock frequency. TDM stands for Time Division Multiplexing, which is a synchronous serial data transmission protocol. TDM4 refers to the division of each data frame in four channels. Each frame contains 64 clock periods (four 16-bits channels). The ADXL317 features a 14-bits resolution and the word length per axis (X,Y,Z) is 16-bits. The data is left justified and the two LSB are zero allways.
+The TDM4 data streaming tab allows the user to evaluate the ADXL317 performance
+at its highest bandwidth, using its I2S data streaming interface. In this case,
+the part is configured for TDM4, 16-bits at 3.072MHz clock frequency. TDM stands
+for Time Division Multiplexing, which is a synchronous serial data transmission
+protocol. TDM4 refers to the division of each data frame in four channels. Each
+frame contains 64 clock periods (four 16-bits channels). The ADXL317 features a
+14-bits resolution and the word length per axis (X,Y,Z) is 16-bits. The data is
+left justified and the two LSB are zero allways.
 
 Each frame follows this structure:
 
@@ -142,4 +158,8 @@ SELF TEST
 
 **Figure 12:** Self Test Tab.
 
-This Tab allows the user to check the integrity of the part by performing a self-test. The self test results section shows the average positive and negative delta self test values for each axis. The self test passes if the positive and negative delta self test are within the datasheet specifications. The green button will turn red and show "Failed" if the self test is not successful.
+This Tab allows the user to check the integrity of the part by performing a
+self-test. The self test results section shows the average positive and negative
+delta self test values for each axis. The self test passes if the positive and
+negative delta self test are within the datasheet specifications. The green
+button will turn red and show "Failed" if the self test is not successful.

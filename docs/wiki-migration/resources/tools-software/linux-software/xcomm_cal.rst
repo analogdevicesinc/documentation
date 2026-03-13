@@ -1,8 +1,6 @@
 AD-FMCOMMS1-EBZ Calibration EEPROM Utility
 ==========================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -18,8 +16,6 @@ AD-FMCOMMS1-EBZ Calibration EEPROM Utility
    which means it is no longer maintained or actively updated, even though the
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
-
-
 
 ::
 
@@ -53,7 +49,8 @@ Git: `fmcomms1-eeprom-cal <https://github.com/analogdevicesinc/fmcomms1-eeprom-c
 Find the EEPROM
 ---------------
 
-Normally, the calibration EEPROM responds to I2C Slave address 0x55, but it depends on the hardware carrier, and the slot that the card is plugged into.
+Normally, the calibration EEPROM responds to I2C Slave address 0x55, but it
+depends on the hardware carrier, and the slot that the card is plugged into.
 
 To find the eeprom - use the ``find`` command.
 
@@ -90,4 +87,3 @@ Query best match calibration set for a given Frequency
       ADC I Gain Adj: 32853
       ADC Q Gain Adj: 32768
    
-

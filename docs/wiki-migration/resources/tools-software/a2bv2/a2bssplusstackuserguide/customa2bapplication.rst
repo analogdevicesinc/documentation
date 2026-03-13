@@ -11,22 +11,29 @@ Building an A2B application on a custom platform involves two major steps
 Designing A2B Schematic on SigmaStudioPlus
 ------------------------------------------
 
-This step is required to create a bus configuration file that stores the complete A2B network information required by the Target software running on the custom platform. An A2B schematic, corresponding to the Targeted application shall be designed and validated on SigmaStudioPlus before exporting the bus configuration file. The steps involved in this process are as follows
+This step is required to create a bus configuration file that stores the
+complete A2B network information required by the Target software running on the
+custom platform. An A2B schematic, corresponding to the Targeted application
+shall be designed and validated on SigmaStudioPlus before exporting the bus
+configuration file. The steps involved in this process are as follows
 
 1. Build an A2B Schematic on SigmaStudioPlus matching your final A2B system
 
 -  Refer :doc:`Drawing A2B Schematics </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/drawinga2bschematics>` for drawing an A2B schematic on SigmaStudioPlus. Ensure
 
    -  Audio streams are defined and assigned for the network.
-   -  Configuration is provided for all A2B nodes and connected peripheral devices.
+   -  Configuration is provided for all A2B nodes and connected peripheral
+      devices.
 
 2. Validate the A2B Schematic using the PC as the host processor
 
 -  Refer to the example in :doc:`Running the Sample Demo </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` to discover an A2B network using a PC as a Host
 -  Link-compile-download and confirm successful network discovery, configuration, and audio routing.
--  Debug discovery issues (if any) using ‘Tracing’, ‘Sequence Chart’, and other features.
+-  Debug discovery issues (if any) using ‘Tracing’, ‘Sequence Chart’, and other
+   features.
 
-3. Perform Network analysis to ensure the drawn schematic matches the requirements of the end system
+3. Perform Network analysis to ensure the drawn schematic matches the
+   requirements of the end system
 
 -  Check for Bandwidth usage per Node/Network.
 -  Run Bit error Test for the network.
@@ -44,8 +51,8 @@ This step is required to create a bus configuration file that stores the complet
 NOTE
 ~~~~
 
-MACROS to enable/disable based on the type of file used for configuration of the A2B Network.
-
+MACROS to enable/disable based on the type of file used for configuration of the
+A2B Network.
 
 |image1|
 
@@ -53,11 +60,16 @@ MACROS to enable/disable based on the type of file used for configuration of the
 
    \ **Table:** MACRO Information
 
-
 Building Target software for a custom platform
 ----------------------------------------------
 
-The next step is to build Target software for a custom platform that hosts the A2B stack and the application. The A2B stack is responsible for discovering and configuring the A2B network as per the configuration provided and handling any run-time events/faults. The subsequent sections describe the steps involved in porting the Stack. It may be necessary to implement additional responsibilities in the Target software depending on the end-system requirements which is beyond the scope of this document.
+The next step is to build Target software for a custom platform that hosts the
+A2B stack and the application. The A2B stack is responsible for discovering and
+configuring the A2B network as per the configuration provided and handling any
+run-time events/faults. The subsequent sections describe the steps involved in
+porting the Stack. It may be necessary to implement additional responsibilities
+in the Target software depending on the end-system requirements which is beyond
+the scope of this document.
 
 The best way of building Target software for a custom platform is to port a matching demo project (available in the A2B Software package under.\\Target). The below :doc:`figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>` shows Target software examples on different ADI platforms available within the software package.
 
@@ -70,7 +82,6 @@ A2B Target Software Examples
 .. container:: centeralign
 
    \ **Figure: A2B Target Software Examples**\
-
 
 The below table (Target Example Projects) provides A2B controller, and audio host details for each example. Refer to :doc:`Running the Sample Demo </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` to run the example
 
@@ -99,15 +110,22 @@ A2B Target Project Directory Structure
 
 -  a2bstack
 
-   -  The generic or target agnostic portions of the A2B Stack. Holds a scheduler designed to efficiently coordinate network activities, especially during the discovery and configuration phase, and execute units of work encapsulated in messages and jobs.
+   -  The generic or target agnostic portions of the A2B Stack. Holds a
+      scheduler designed to efficiently coordinate network activities,
+      especially during the discovery and configuration phase, and execute units
+      of work encapsulated in messages and jobs.
 
 -  a2bplugin-master
 
-   -  The sources for the A2B Stack master node plugin. The A2B network discovery algorithms and line fault diagnostics are encapsulated within these sources.
+   -  The sources for the A2B Stack master node plugin. The A2B network
+      discovery algorithms and line fault diagnostics are encapsulated within
+      these sources.
 
 -  a2bplugin-slave
 
-   -  The sources for simple A2B stack slave node plugin. These sources are a simple example of a slave plug-in for use as a launching pad for developing custom plugins.
+   -  The sources for simple A2B stack slave node plugin. These sources are a
+      simple example of a slave plug-in for use as a launching pad for
+      developing custom plugins.
 
 -  a2bstack-pal
 
@@ -116,9 +134,11 @@ A2B Target Project Directory Structure
 -  a2bstack-protobuf
 
    -  The source code for parsing the A2B Bus Configuration File (BCF) from the ADI SigmaStudioPlus tool.
-   -  Source code for parsing and decoding Google Protobuf (Nanopb) encoded A2B configuration file generated by Host Tool.
+   -  Source code for parsing and decoding Google Protobuf (Nanopb) encoded A2B
+      configuration file generated by Host Tool.
 
-The steps involved in porting the A2B stack and defining application response to A2B events/faults are as follows
+The steps involved in porting the A2B stack and defining application response to
+A2B events/faults are as follows
 
 -  :doc:`Porting A2B Software Stack to a custom platform </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>`
 -  :doc:`Apply A2B System Configuration </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>`
@@ -129,23 +149,29 @@ The steps involved in porting the A2B stack and defining application response to
 Porting A2B Software Stack to a custom platform
 -----------------------------------------------
 
-The step-by-step approach in porting the A2B stack onto a custom platform is as follows
+The step-by-step approach in porting the A2B stack onto a custom platform is as
+follows
 
 -  Copy all files from folders **a2bplugin-master**, **a2bplugin-slave**, **a2bstack**, **a2bstack-protobuf**, **a2bstack-pal**, **app**, **inc** of demo software to corresponding folders of your target platform project “as-is”.
 -  2. Re-Implement **adi_a2b_SystemInit()** in **main()** to perform Target platform-specific initializations as required.
 
    -  Replace ADI platform-specific Board Support Package (BSP) with Target platform BSP.
    -  Ensure to generate and provide Bit Clock and SYNC signals for the master A2B Transceiver chip.
-   -  Define the stack and heap memory for the Target platform project using the options provided by your development environment (IDE).
+   -  Define the stack and heap memory for the Target platform project using the
+      options provided by your development environment (IDE).
 
-      -  4K stack and 5K heap are the typical requirements. If the number of nodes in the system is fixed, then memory can be statically allocated instead of using the Heap.
+      -  4K stack and 5K heap are the typical requirements. If the number of
+         nodes in the system is fixed, then memory can be statically allocated
+         instead of using the Heap.
 
          -  Enabling the macro A2B_APP_STATIC_MEMORY_FOR_STACK, makes use of static memory allocation instead of dynamic memory allocation as preferred by many automotive customers (set to typical values with margin in .\\Target\\examples\\demo\\app-plugin\\src\\a2bapp.c)
          -  Stack memory - A2BAPP_STACK_NW_MEMORY (TBD bytes)
          -  Plugin memory - A2BAPP_PLUGIN_NW_MEMORY (TBD bytes)
-         -  BCF File/EEPROM buffer (optional) - A2BAPP_E2PROM_BLOCK_MEMORY (TBD bytes)
+         -  BCF File/EEPROM buffer (optional) - A2BAPP_E2PROM_BLOCK_MEMORY (TBD
+            bytes)
 
-3. Optionally, configure A2B Stack for the Target platform by modifying necessary macros in
+3. Optionally, configure A2B Stack for the Target platform by modifying
+   necessary macros in
 
 -  “features.h” in **Target/examples/demo/<a2b-xx>>/a2bstack-pal/platform/a2b/**
 -  “conf.h” in **Target/examples/demo/<a2b-xx>>/a2bstack-pal/platform/a2b/**
@@ -154,9 +180,13 @@ The step-by-step approach in porting the A2B stack onto a custom platform is as 
 
 -  This would require implementing drivers (I2C, SPI, Timers, SPORT etc) specific to the Target platform under the **a2bstack-pal** folder. The list of PAL functions to be re-implemented is listed in Table (PAL Functions to be Re-implemented).
 -  Refer to the implementation in the Example projects provided within the software package.
--  Each re-implemented function shall be unit tested to confirm that it is working as per the function description before going to the next step.
+-  Each re-implemented function shall be unit tested to confirm that it is
+   working as per the function description before going to the next step.
 
-In the table below, those functions marked as “Mandatory” must be implemented to have a minimally functional Stack. The remaining functions provide developers with convenient points in the Stack operation to ensure portability to a wide array of platforms.
+In the table below, those functions marked as “Mandatory” must be implemented to
+have a minimally functional Stack. The remaining functions provide developers
+with convenient points in the Stack operation to ensure portability to a wide
+array of platforms.
 
 PAL Functions to be Re-implemented
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -238,7 +268,6 @@ Memory Functions
 
    Only when A2B_FEATURE_MEMORY_MANAGER is disabled in features.h
 
-
 +--------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | PAL Function             | Mandatory | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +==========================+===========+=========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
@@ -262,7 +291,6 @@ Logging Functions
 
    Only when A2B_FEATURE_SEQ_CHART or A2B_FEATURE_TRACE is enabled in features.h
 
-
 +-------------------------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | PAL Function            | Mandatory | Description                                                                                                                                                                |
 +=========================+===========+============================================================================================================================================================================+
@@ -284,7 +312,6 @@ Plugin Functions
 
    Generally not required to be modified. Default implementation should suffice
 
-
 +---------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------+
 | PAL Function              | Mandatory | Description                                                                                                                       |
 +===========================+===========+===================================================================================================================================+
@@ -303,7 +330,6 @@ File Read Functions
 .. note::
 
    Only when A2B_BCF_FROM_FILE_IO is enabled in features.h
-
 
 +-------------------+-----------+----------------------------------------------------------------------------------------------------+
 | PAL Function      | Mandatory | Description                                                                                        |
@@ -324,16 +350,20 @@ After completing all steps as mentioned in Section "**Porting A2B Software Stack
 
 -  Replace the existing in **.\\Target\\a2bstack\\demo\\<a2b-xx>\\app.**
 
-2. Optionally, if the bus configuration is read from a binary file, replace the exported .dat format of the bus configuration file into the file system path (A2B_CONF_BINARY_BCF_FILE_URL).
+2. Optionally, if the bus configuration is read from a binary file, replace the
+   exported .dat format of the bus configuration file into the file system path
+   (A2B_CONF_BINARY_BCF_FILE_URL).
 
-3. Optionally, the audio routing table (.\\app\\adi_a2b_audioroutingtable.c) may need to be modified if the audio streams are to be routed by the audio host.
+3. Optionally, the audio routing table (.\\app\\adi_a2b_audioroutingtable.c) may
+   need to be modified if the audio streams are to be routed by the audio host.
 
 -  In case where the A2B controller is also the audio host for the network then modify the audio routing table as explained in :doc:`System Requirements </wiki-migration/resources/tools-software/a2bv2/quickstartguide/systemrequirements>`. Otherwise, the routing has to be modified in the audio host. :doc:`Running the Sample Demo </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` explains this process when using ADAU1452 as an audio host on ADI A2B evaluation boards such as EVAL-AD2425WDZ and EVAL-AD2428WD1BZ.
 
 .. note::
 
-   This step is not required if stream definition and the routing is defined in SigmaStudioPlus where streams are sourced and consumed within A2B nodes and not routed by the Audio Host.
-
+   This step is not required if stream definition and the routing is defined in
+   SigmaStudioPlus where streams are sourced and consumed within A2B nodes and
+   not routed by the Audio Host.
 
 4. Build and Run the Target project.
 
@@ -345,20 +375,28 @@ Modify Application Call-back Functions
 
 By this time, we should have completed the porting of A2B Stack as explained in Section ":doc:`Porting A2B Software Stack to a custom platform </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>`". At this stage, the A2B Stack ported on the custom platform should be capable of discovering and configuring a connected A2B network as per the added bus configuration file.
 
-The A2B Stack offers provision for the application running on the Target software to register callback functions for important network activities. Three important application callback functions are registered with the Stack. These functions can be modified by the user to perform an action specific to the application.
+The A2B Stack offers provision for the application running on the Target
+software to register callback functions for important network activities. Three
+important application callback functions are registered with the Stack. These
+functions can be modified by the user to perform an action specific to the
+application.
 
 .. note::
 
-   All examples provided in the A2B Software package come with default implementations for these callback functions. Modifications to these functions are required only if the default implementation doesn’t match your targeted system requirement. When requiring additional functionality, it is recommended to add on top of the existing implementation unless rewriting completely.
+   All examples provided in the A2B Software package come with default
+   implementations for these callback functions. Modifications to these
+   functions are required only if the default implementation doesn’t match your
+   targeted system requirement. When requiring additional functionality, it is
+   recommended to add on top of the existing implementation unless rewriting
+   completely.
 
-
-The three application callback functions are explained in the following sub-sections.
+The three application callback functions are explained in the following
+sub-sections.
 
 Discovery completion Callback function
 --------------------------------------
 
 The discovery completion callback function is invoked by the stack upon completing the discovery and configuration of the whole A2B network. :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>` shows the application registration of a discovery completion callback function with the stack. The status of the discovery is notified by this function allowing the application to perform any additional tasks based on the notified status.
-
 
 |image2|
 
@@ -366,11 +404,12 @@ The discovery completion callback function is invoked by the stack upon completi
 
    \ **Figure: A2BAPP OnDiscoveryComplete Callback Function**\
 
-
 .. note::
 
-   a2bapp_onDiscoveryComplete() comes with a default implementation for post-discovery bus drop monitoring and rediscovery upon faults (if it was set in SigmaStudioPlus while exporting the bus configuration file). Modify this function only to override default functionality (if required).
-
+   a2bapp_onDiscoveryComplete() comes with a default implementation for
+   post-discovery bus drop monitoring and rediscovery upon faults (if it was set
+   in SigmaStudioPlus while exporting the bus configuration file). Modify this
+   function only to override default functionality (if required).
 
 The code snippet shows a sample implementation of this callback function.
 
@@ -428,22 +467,25 @@ Power/Line Fault Callback function
 
 The power fault callback function is invoked by the stack upon detecting a power-related fault in any node of the network. An application callback function can be registered with the Stack for power fault notifications as shown in the below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>`.
 
-
 |image3|
 
 .. container:: centeralign
 
    \ **Figure: A2BAPP OnPowerFault Callback Function**\
 
-
-The Stack provides a callback function to the application layer upon the occurrence of a fault in the A2B System. The stack performs necessary diagnostics and fault localization (in case of concealed faults) and reports the fault type and location to the application for further handling.
+The Stack provides a callback function to the application layer upon the
+occurrence of a fault in the A2B System. The stack performs necessary
+diagnostics and fault localization (in case of concealed faults) and reports the
+fault type and location to the application for further handling.
 
 .. note::
 
-   The Stack performs all necessary actions to handle the fault as recommended by the A2B Transceiver Programmer’s reference manual and finally invokes the application callback.
+   The Stack performs all necessary actions to handle the fault as recommended
+   by the A2B Transceiver Programmer’s reference manual and finally invokes the
+   application callback.
 
-
-The function is invoked under the following fault conditions during and post discovery.
+The function is invoked under the following fault conditions during and post
+discovery.
 
 -  Critical faults
 
@@ -459,7 +501,8 @@ The function is invoked under the following fault conditions during and post dis
 -  Indeterminate faults
 -  Bus/Node drop condition
 
-Code Snippet shows a sample implementation of the a2bapp_onPowerFault callback function.
+Code Snippet shows a sample implementation of the a2bapp_onPowerFault callback
+function.
 
 ::
 
@@ -521,22 +564,24 @@ Code Snippet shows a sample implementation of the a2bapp_onPowerFault callback f
        }
    }
 
-The information about the presence of a locally powered slave is made known to the stack through the BDD. In case of critical faults (Cable terminal shorted to GND, Cable terminal shorted to VBat), the stack switches of the bus from the immediate upstream local powered slave onwards.
+The information about the presence of a locally powered slave is made known to
+the stack through the BDD. In case of critical faults (Cable terminal shorted to
+GND, Cable terminal shorted to VBat), the stack switches of the bus from the
+immediate upstream local powered slave onwards.
 
-Partial bus operation is possible between master and this upstream local powered slave.
+Partial bus operation is possible between master and this upstream local powered
+slave.
 
 Interrupt Callback function
 ---------------------------
 
 The Interrupt callback function is invoked by the Stack upon seeing any interrupts at the master node. The below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>` shows the application registration of an interrupt callback function with the Stack.
 
-
 |image4|
 
 .. container:: centeralign
 
    \ **Figure: Interrupt Callback Function**\
-
 
 The code snippet shows a simple implementation of this callback function.
 
@@ -575,12 +620,10 @@ The code snippet shows a simple implementation of this callback function.
 
    Any interrupt on the slave node can be handled within a2bplugin_slave\\ a2bslave_plugin.c file in the function a2b_pluginInterrupt as explained in "Handling Interrupts in a Plugin" in :doc:`applicationintegration </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/applicationintegration>`
 
-
 Node Discovery Callback function
 --------------------------------
 
 The node discovery callback function is an optional callback, which is invoked by the stack upon each node discovery or when node authentication fails. The below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>` shows the application registration of this callback function with the Stack.
-
 
 |image5|
 
@@ -588,8 +631,9 @@ The node discovery callback function is an optional callback, which is invoked b
 
    \ **Figure: Node Discovery Callback Function**\
 
-
-The below Code Snippet shows a sample implementation of this callback function. The application can decide whether to continue with discovery or not and has more control with this callback function.
+The below Code Snippet shows a sample implementation of this callback function.
+The application can decide whether to continue with discovery or not and has
+more control with this callback function.
 
 ::
 
@@ -655,15 +699,14 @@ The below Code Snippet shows a sample implementation of this callback function. 
 I2C Error Callback Function
 ---------------------------
 
-The I2C error callback function is invoked by the Stack upon seeing any I2C errors at the master node or at sub-node peripherals.
-
+The I2C error callback function is invoked by the Stack upon seeing any I2C
+errors at the master node or at sub-node peripherals.
 
 |image6|
 
 .. container:: centeralign
 
    \ **Figure: I2C Error Callback Function**\
-
 
 The code snippet shows a simple implementation of this callback function.
 
@@ -693,7 +736,6 @@ Summary of Building A2B Application on Custom Platform
 ------------------------------------------------------
 
 Figure: Building A2B Application on a Custom Platform
-
 
 |image7|
 

@@ -12,7 +12,7 @@ To download the latest SensorPal installer click on the link below. **Note**, if
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/sensorpalinstaller_analog_com.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Installation Instructions
 -------------------------
@@ -25,24 +25,28 @@ How to Use SensorPal
 --------------------
 
 -  To launch SensorPal go to the start menu-> All Programs->SensorPal
--  To get started ensure the AD5940 evaluation kit is connected to the PC. Click on the Firmware Load button in the top toolbar as per below screenshot.
+-  To get started ensure the AD5940 evaluation kit is connected to the PC. Click
+   on the Firmware Load button in the top toolbar as per below screenshot.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/firmware_load.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  Select the correct board, it should be similar to DAPLINK(E:\\). Then click Update Firmware
+-  Select the correct board, it should be similar to DAPLINK(E:\\). Then click
+   Update Firmware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/firmware_load_2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Once the firmware is loaded plug out the evaluation kit from the PC and reconnect to power cycle the hardware.
--  In the center of the screen hit the refresh symbol beside the Com port drop-down text box. Then select the com port the ADICUP3029 microcontroller is connected to from the drop down list.
+-  In the center of the screen hit the refresh symbol beside the Com port
+   drop-down text box. Then select the com port the ADICUP3029 microcontroller
+   is connected to from the drop down list.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/comm_port.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  To select an application to run, drag it from the left hand column of techniques and drop into the Work Area. A number of configurable parameters are available. Modify them as required.
 -  To begin a measurement click on the green Measure button to the right side of the GUI.

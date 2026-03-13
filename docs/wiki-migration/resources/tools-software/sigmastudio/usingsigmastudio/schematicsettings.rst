@@ -3,9 +3,16 @@ Schematic Settings (Presets)
 
 :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
 
-Settings are a snapshot of all control values (knobs, sliders, spin-controls, and combo-boxes) which are saved to a settings file (\*.bin). Settings include: the block(s) name(s), all control values, and the min/max and step size for any knobs or sliders. Settings files can be saved and recalled within a project and imported or exported between projects.
+Settings are a snapshot of all control values (knobs, sliders, spin-controls,
+and combo-boxes) which are saved to a settings file (\*.bin). Settings include:
+the block(s) name(s), all control values, and the min/max and step size for any
+knobs or sliders. Settings files can be saved and recalled within a project and
+imported or exported between projects.
 
-It is possible to copy/paste settings among blocks, hierarchy boards, and projects. When pasting settings between projects or hierarchy boards, the blocks names are used for identification; pasted settings are applied to blocks that have the same name in both the source and destination schematics.
+It is possible to copy/paste settings among blocks, hierarchy boards, and
+projects. When pasting settings between projects or hierarchy boards, the blocks
+names are used for identification; pasted settings are applied to blocks that
+have the same name in both the source and destination schematics.
 
 Settings can be saved for:
 
@@ -38,7 +45,8 @@ To manage the settings for a hierarchy board (the settings of all blocks contain
 Project Settings:
 -----------------
 
-To manage the settings for an entire project, right click in the schematic window and select Project Settings from the pop-up menu:
+To manage the settings for an entire project, right click in the schematic
+window and select Project Settings from the pop-up menu:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic3.png
    :alt: schemsettingspic3.png
@@ -48,7 +56,9 @@ To manage the settings for an entire project, right click in the schematic windo
 Setting History:
 ----------------
 
-The most recent settings that are saved or opened will be displayed at the bottom of the settings menu as shown below. Note, you can clear the settings history or customize the history size in the settings options dialog.
+The most recent settings that are saved or opened will be displayed at the
+bottom of the settings menu as shown below. Note, you can clear the settings
+history or customize the history size in the settings options dialog.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic4.png
    :alt: schemsettingspic4.png

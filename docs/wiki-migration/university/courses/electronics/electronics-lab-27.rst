@@ -4,13 +4,18 @@ Activity: TTL inverter and NAND gate, For ADALM2000
 Objectives:
 -----------
 
-A variety of digital logic circuit techniques have been in use since the 1960s, when integrated logic gates were first produced. In this Lab activity, the Transistor Transistor Logic (TTL) circuit inverter (NOT gate) and 2 input NAND gate configurations are examined.
+A variety of digital logic circuit techniques have been in use since the 1960s,
+when integrated logic gates were first produced. In this Lab activity, the
+Transistor Transistor Logic (TTL) circuit inverter (NOT gate) and 2 input NAND
+gate configurations are examined.
 
 Background:
 -----------
 
-The schematic of a Transistor Transistor Logic (TTL) inverter is shown in figure 1. This circuit overcomes the limitations of the single transistor inverter circuit. The basic TTL inverter consists of three stages. A current steering input, a phase splitting stage and an output driver stage.
-
+The schematic of a Transistor Transistor Logic (TTL) inverter is shown in figure
+1. This circuit overcomes the limitations of the single transistor inverter
+circuit. The basic TTL inverter consists of three stages. A current steering
+input, a phase splitting stage and an output driver stage.
 
 |image1|
 
@@ -18,10 +23,7 @@ The schematic of a Transistor Transistor Logic (TTL) inverter is shown in figure
 
    Figure 1 TTL Inverter
 
-
 The input stage transistor Q\ :sub:`1` performs a current steering function. It can be thought of as a back-to-back diode arrangement. The transistor is operated in either forward or reverse mode to steer current to or from the second stage transistor's base, Q\ :sub:`2`. The forward current gain or ß\ :sub:`F`, is much larger than the reverse ß\ :sub:`R`. it provides a higher discharge current to discharge the base when turning it off.
-
-
 
 |image2|
 
@@ -29,10 +31,7 @@ The input stage transistor Q\ :sub:`1` performs a current steering function. It 
 
    Figure 2 Equivalent circuit of input current steering stage
 
-
 Second stage transistor, Q\ :sub:`2` in figure 1, is a phase splitter transistor to drive both halves of the pull up and pull down output stage. It allows the input condition to be produced in opposite phases so that the output transistors can be driven in anti-phase. This allows Q\ :sub:`3` to be on when Q\ :sub:`4` is off and vice versa as shown in figure 3.
-
-
 
 |image3|
 
@@ -40,10 +39,7 @@ Second stage transistor, Q\ :sub:`2` in figure 1, is a phase splitter transistor
 
    Figure 3 Phase splitting stage
 
-
 The output transistor pair, Q\ :sub:`3` and Q\ :sub:`4` along with diode D\ :sub:`1` are referred to as a totem-pole output as shown in figure 4. This output configuration provides the ability to both actively source or sink current and is useful for driving capacitive loads. Resistor R\ :sub:`4`, serves to limit the current available from V\ :sub:`CC`. Under steady-state conditions, only one transistor is on at a time.
-
-
 
 |image4|
 
@@ -51,13 +47,14 @@ The output transistor pair, Q\ :sub:`3` and Q\ :sub:`4` along with diode D\ :sub
 
    Figure 4 Output Stage
 
-
 The diode, D\ :sub:`1`, serves to increase the effective turn on voltage of Q\ :sub:`4` which allows it to be turned off before Q\ :sub:`3`\ turns fully on. This helps prevent potentially large surge currents from flowing in the output stage during transitions between logic states. Resistor R\ :sub:`4` also serves to limit the current that is allowed to flow in the output stage. The disadvantage is that the logic high voltage is reduced by an amount of the diode drop as shown in figure 7.
 
 Materials:
 ----------
 
-ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - 100 KΩ Resistor 1 - 2.2 KΩ Resistor 1 - 470 Ω Resistor 1 - 100 Ω Resistor 1 - small signal diode (1N914) 5 - small signal NPN transistors (2N3904)
+ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - 100 KΩ
+Resistor 1 - 2.2 KΩ Resistor 1 - 470 Ω Resistor 1 - 100 Ω Resistor 1 - small
+signal diode (1N914) 5 - small signal NPN transistors (2N3904)
 
 TTL Inverter
 ------------
@@ -65,8 +62,10 @@ TTL Inverter
 Directions:
 ~~~~~~~~~~~
 
-Build the circuit shown in figure 5 on your solder-less bread board. The NPN transistors supplied with your ADALP2000 Parts Kit are limited to 5 2N3904 and 1 TIP31 power transistor. Use the 5 2N3904 transistors and a 1N914 diode. First, connect the TTL inverter circuit on your breadboard.
-
+Build the circuit shown in figure 5 on your solder-less bread board. The NPN
+transistors supplied with your ADALP2000 Parts Kit are limited to 5 2N3904 and 1
+TIP31 power transistor. Use the 5 2N3904 transistors and a 1N914 diode. First,
+connect the TTL inverter circuit on your breadboard.
 
 |image5|
 
@@ -74,12 +73,12 @@ Build the circuit shown in figure 5 on your solder-less bread board. The NPN tra
 
    Figure 5 TTL Inverter
 
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
-Connect your circuit to the ADALM2000 I/O connector as indicated by the green boxes. It is best to ground the unused negative scope inputs when not being used. The breadboard connections are shown in figure below.
-
+Connect your circuit to the ADALM2000 I/O connector as indicated by the green
+boxes. It is best to ground the unused negative scope inputs when not being
+used. The breadboard connections are shown in figure below.
 
 |image6|
 
@@ -87,12 +86,12 @@ Connect your circuit to the ADALM2000 I/O connector as indicated by the green bo
 
    Figure 6 TTL Inverter Breadboard Circuit
 
-
 Procedure:
 ~~~~~~~~~~
 
-Configure waveform generators, W1, with 100 Hz triangle wave with 0 V offset and 6 V amplitude peak-to-peak peak-to-peak values. Use the oscilloscope in the x-y mode to observe the voltage-transfer curve of the circuit.
-
+Configure waveform generators, W1, with 100 Hz triangle wave with 0 V offset and
+6 V amplitude peak-to-peak peak-to-peak values. Use the oscilloscope in the x-y
+mode to observe the voltage-transfer curve of the circuit.
 
 |image7|
 
@@ -100,15 +99,14 @@ Configure waveform generators, W1, with 100 Hz triangle wave with 0 V offset and
 
    Figure 7 TTL inverter transfer curve
 
-
 TTL NAND Gate
 -------------
 
 Directions:
 ~~~~~~~~~~~
 
-By adding another input to the TTL inverter, a TTL NAND gate can be made. Connect the TTL inverter circuit, shown on figure 8.
-
+By adding another input to the TTL inverter, a TTL NAND gate can be made.
+Connect the TTL inverter circuit, shown on figure 8.
 
 |image8|
 
@@ -116,12 +114,12 @@ By adding another input to the TTL inverter, a TTL NAND gate can be made. Connec
 
    Figure 8 TTL two input NAND Gate
 
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
-Connect your circuit to the ADALM2000 I/O connector as indicated by the green boxes. It is best to ground the unused negative scope inputs when not being used. The breadboard connections are shown in figure below.
-
+Connect your circuit to the ADALM2000 I/O connector as indicated by the green
+boxes. It is best to ground the unused negative scope inputs when not being
+used. The breadboard connections are shown in figure below.
 
 |image9|
 
@@ -129,12 +127,13 @@ Connect your circuit to the ADALM2000 I/O connector as indicated by the green bo
 
    Figure 9 TTL two input NAND Gate Breadboard Circuit
 
-
 Procedure:
 ~~~~~~~~~~
 
-Configure waveform generators, W1, with 100 Hz triangle wave with 0 V offset and 6 V amplitude peak-to-peak values and W2, 100 Hz triangle wave with 0 V offset and 6 V amplitude peak-to-peak values and 90° phase. Use the oscilloscope to observe the output of the circuit, CH2.
-
+Configure waveform generators, W1, with 100 Hz triangle wave with 0 V offset and
+6 V amplitude peak-to-peak values and W2, 100 Hz triangle wave with 0 V offset
+and 6 V amplitude peak-to-peak values and 90° phase. Use the oscilloscope to
+observe the output of the circuit, CH2.
 
 |image10|
 
@@ -142,25 +141,25 @@ Configure waveform generators, W1, with 100 Hz triangle wave with 0 V offset and
 
    Figure 10 TTL NAND Gate Output Waveform
 
-
 Measurements:
 -------------
-
-
 
 .. collapsible:: Click to expand
 
    **Transfer Characteristic:**
 
-   The transfer characteristic of a TTL inverter can be deduced by applying a slowly ramping input voltage and determining the sequence of events which takes place with respect to changes in the states of conduction of each transistor and the critical points at which the onset of these changes happen. Consider the circuit input vs. output transfer characteristic curve shown in figure 6.
-
+   The transfer characteristic of a TTL inverter can be deduced by applying a
+   slowly ramping input voltage and determining the sequence of events which
+   takes place with respect to changes in the states of conduction of each
+   transistor and the critical points at which the onset of these changes
+   happen. Consider the circuit input vs. output transfer characteristic curve
+   shown in figure 6.
 
    |image11|
 
    .. container:: centeralign
 
       Figure 6 TTL inverter input vs output transfer curve
-
 
    **Break Point P1**
 
@@ -202,12 +201,13 @@ Measurements:
 
    **V\ i = V\ BE2 + V\ BE3 - V\ CE1** **V\ i = 0.7 + 0.7 - 0.1 = 1.5V** **Point 4: V\ i = 1.4V, V\ O = 0.2V**
 
-
-
 Questions:
 ----------
 
-The output circuitry of a typical TTL logic gate is commonly referred to a totem-pole output because the two output transistors are stacked one above the other like carvings on a totem pole. Is a gate circuit with a totem-pole output stage able to source load current, sink load current, or do both?
+The output circuitry of a typical TTL logic gate is commonly referred to a
+totem-pole output because the two output transistors are stacked one above the
+other like carvings on a totem pole. Is a gate circuit with a totem-pole output
+stage able to source load current, sink load current, or do both?
 
 .. admonition:: Download
    :class: download
@@ -219,7 +219,6 @@ The output circuitry of a typical TTL logic gate is commonly referred to a totem
    -  LTspice files: :git-education_tools:`m2k/ltspice/ttl_inv_and_nand_ltspice`
    
 
-
 For Further Reading:
 --------------------
 
@@ -228,22 +227,22 @@ http://en.wikipedia.org/wiki/Transistor-transistor_logic
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f1.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f2.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f3.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f4.png
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f5a.png
-   :width: 550px
+   :width: 550
 .. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a27f6a.png
 .. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f7.png
-   :width: 500px
+   :width: 500
 .. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f5.png
-   :width: 550px
+   :width: 550
 .. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a27f9.png
 .. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f10.png
-   :width: 550px
+   :width: 550
 .. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f6.png
-   :width: 500px
+   :width: 500

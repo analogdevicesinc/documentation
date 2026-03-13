@@ -1,15 +1,22 @@
 AD7194 Evaluation Board User Guide
 ==================================
 
-The EVAL-AD7194ASDZ evaluation kit features the AD7194 which is 4.8 kHz ultralow noise 24-bit sigma-delta (Σ-Δ) ADCs.The on-chip low noise gain stage means that signals of small amplitude can interface directly to the ADC.The internal clock option provides a compact solution for low BW requirements.
+The EVAL-AD7194ASDZ evaluation kit features the AD7194 which is 4.8 kHz ultralow
+noise 24-bit sigma-delta (Σ-Δ) ADCs.The on-chip low noise gain stage means that
+signals of small amplitude can interface directly to the ADC.The internal clock
+option provides a compact solution for low BW requirements.
 
-The AD7194 ACE Plugin fully configures the AD7194 device register functionality and provides dc time domain analysis in the form of waveform graphs, histograms, and associated noise analysis for ADC performance evaluation.
+The AD7194 ACE Plugin fully configures the AD7194 device register functionality
+and provides dc time domain analysis in the form of waveform graphs, histograms,
+and associated noise analysis for ADC performance evaluation.
 
-Full specifications on the AD7194 are available in the product data sheet, which should be consulted in conjunction with this user guide when working with the evaluation board.
+Full specifications on the AD7194 are available in the product data sheet, which
+should be consulted in conjunction with this user guide when working with the
+evaluation board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7194_blockdiag.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Features
 --------
@@ -52,7 +59,6 @@ Getting started
 
    Ensure the SDP board is not connected to the USB port of the PC
 
-
 -  Install the :adi:`ACE Software <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html?doc=EVAL-AD7383FMCZ-ug-1770.pdf>`
 -  :doc:`Ace Plugin Install guide available here </wiki-migration/resources/eval/user-guides/ad7190/softwareguide>`
 -  If :adi:`ACE Software <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html?doc=EVAL-AD7383FMCZ-ug-1770.pdf>` is already installed, update the Plugins to download AD719x Plugin.
@@ -68,7 +74,7 @@ Getting started
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/sdp_connect.png
    :align: center
-   :width: 400px
+   :width: 400
 
 ::
 
@@ -80,7 +86,7 @@ Getting started
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_plugin_open.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  The :doc:`Low Noise Test Demo </wiki-migration/resources/eval/user-guides/ad7194/softwareguide>` is a useful demo mode of the Ace Plugin software to ensure that the Evaluation board is communicating correctly with the Ace Plugin software.
 

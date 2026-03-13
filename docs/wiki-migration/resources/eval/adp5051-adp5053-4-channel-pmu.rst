@@ -39,7 +39,6 @@ ADP5051/ADP5053 EVALUATION BOARD
 
    \ *Figure 1.*\
 
-
 INSTALLING THE SOFTWARE (ADP5051 ONLY)
 --------------------------------------
 
@@ -53,10 +52,10 @@ Note that if the PC has LabVIEW™ already installed, this following step is not
 INSTALLING THE ADP5051 GUI SOFTWARE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After installation, it may be necessary to reboot the PC to complete the operation.
+After installation, it may be necessary to reboot the PC to complete the
+operation.
 
 1. Launch the **Setup.exe file**. When the dialog box shown in `Figure 2 <https://wiki.analog.com/_media/resources/eval/11718-002.png>`_ appears, click **Next** to continue.
-
 
 |image1|
 
@@ -64,10 +63,7 @@ After installation, it may be necessary to reboot the PC to complete the operati
 
    \ *Figure 2.* :adi:`ADP5051` *Evaluation Software Setup*\
 
-
 2. Click **Next** to install the files to the default destination folder or click **Browse…** to choose a different file (see Figure 3).
-
-
 
 |image2|
 
@@ -75,10 +71,7 @@ After installation, it may be necessary to reboot the PC to complete the operati
 
    \ *Figure 3. Choose Destination Location*\
 
-
 3. Click **Next** to install the program (see Figure 4).
-
-
 
 |image3|
 
@@ -86,10 +79,7 @@ After installation, it may be necessary to reboot the PC to complete the operati
 
    \ *Figure 4. Select Program Folder*\
 
-
 4. Click **Finish** to complete the installation (see Figure 5).
-
-
 
 |image4|
 
@@ -97,16 +87,15 @@ After installation, it may be necessary to reboot the PC to complete the operati
 
    \ *Figure 5. Install Shield Wizard Complete*\
 
-
 INSTALLING THE ANALOG DEVICES SDP DRIVERS (ADP5051 ONLY)
 --------------------------------------------------------
 
 To install the Analog Devices SDP Drivers, complete the following steps:
 
-1. After installing ADP505x Demo GUI software properly, the installation of the Analog Devices SDP drivers begins.
+1. After installing ADP505x Demo GUI software properly, the installation of the
+   Analog Devices SDP drivers begins.
 
 2. Click **Next** to install the drivers (see Figure 6).
-
 
 |image5|
 
@@ -114,10 +103,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 
    \ *Figure 6. ADI SDP Drivers Setup Wizard*\
 
-
 3. Click **Install** after verifying the program folder. Ensure that the system environment has enough space (see Figure 7).
-
-
 
 |image6|
 
@@ -125,10 +111,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 
    \ *Figure 7. Verify the Destination Folder*\
 
-
 4. Click **Finish** to complete the driver installation (see Figure 8).
-
-
 
 |image7|
 
@@ -136,10 +119,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 
    \ *Figure 8. Driver Installation Complete*\
 
-
 5. To verify that the USB driver is installed properly, click **Start**. Then select **Control Panel** > **System** and open the **Device Manager** (see Figure 9).
-
-
 
 |image8|
 
@@ -147,8 +127,10 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 
    \ *Figure 9. Verify Driver Installation*\
 
-
-When the USB dongle is connected to a PC port different from the one used to install the driver, the PC device driver may ask you to install the driver again for that specific port. If this happens, repeat the first four steps listed in this section.
+When the USB dongle is connected to a PC port different from the one used to
+install the driver, the PC device driver may ask you to install the driver again
+for that specific port. If this happens, repeat the first four steps listed in
+this section.
 
 USING THE EVALUATION BOARD
 ==========================
@@ -161,7 +143,9 @@ The :adi:`ADP5051`/:adi:`ADP5053` evaluation board is supplied fully assembled a
 Enable Jumpers
 ~~~~~~~~~~~~~~
 
-Each channel has its own enable pin, which must be pulled high to enable that channel (see Table 1). To disable the channel, pull the enable pin low or leave it floating.
+Each channel has its own enable pin, which must be pulled high to enable that
+channel (see Table 1). To disable the channel, pull the enable pin low or leave
+it floating.
 
 The enable control for each regulator has a 0.8 V precision enable threshold, which allows the :adi:`ADP5051`/:adi:`ADP5053` to be easily sequenced between channels or other input/output supplies. It can also be used as a programmable UVLO input by the resistor divider.
 
@@ -181,9 +165,12 @@ CH4: Buck EN4 J-EN4          0.8 V precision enable
 Power Input Jumpers
 ~~~~~~~~~~~~~~~~~~~
 
-Each channel has its own power input jumper, which enables support for either a separate input voltage or cascaded options for all channels.
+Each channel has its own power input jumper, which enables support for either a
+separate input voltage or cascaded options for all channels.
 
-The power input for the buck regulators is 4.5 V to 15 V. Shunt S1, S2, and S3 to allow for easy setup by using all of the same input voltages for the buck regulators.
+The power input for the buck regulators is 4.5 V to 15 V. Shunt S1, S2, and S3
+to allow for easy setup by using all of the same input voltages for the buck
+regulators.
 
 The power supply for the VDDIO pin in the I\ :sup:`2`\ C interface block is 1.7 V to 3.6 V; shunt LK7 to use VDD (3.0 V) as the VDDIO supply. See Table 2 for the power input details.
 
@@ -211,30 +198,53 @@ Input Power Source
 
 Before connecting the power source to the :adi:`ADP5051`/:adi:`ADP5053` evaluation boards, ensure that the evaluation board is turned off. If the input power source includes a current meter, use that meter to monitor the input current. Connect the positive terminal of the power source to the PVIN1_4 terminal (J11) on the evaluation board, and connect the negative terminal of the power source to the GND terminal (J12) of the board.
 
-If the power source does not include a current meter, connect a current meter in series with the input source voltage. Connect the positive terminal of the power source to the positive lead (+) of the current meter, connect the negative terminal of the power source to the GND terminal (J12) on the evaluation board, and the connect the negative lead (−) of the current meter to the PVIN1_4 terminal (J11) on the board.
+If the power source does not include a current meter, connect a current meter in
+series with the input source voltage. Connect the positive terminal of the power
+source to the positive lead (+) of the current meter, connect the negative
+terminal of the power source to the GND terminal (J12) on the evaluation board,
+and the connect the negative lead (−) of the current meter to the PVIN1_4
+terminal (J11) on the board.
 
 Output Load
 ~~~~~~~~~~~
 
 Ensure that the board is turned off before connecting the load.
 
-Connect an electronic load or resistor to set the load current. If the load includes an ammeter, or if the current is not measured, connect the load directly to the evaluation board, with the positive (+) load connected to one of the channels. For example, connect Buck 1, J16 (VOUT1), and the negative (−) load connection to J15 (GND).
+Connect an electronic load or resistor to set the load current. If the load
+includes an ammeter, or if the current is not measured, connect the load
+directly to the evaluation board, with the positive (+) load connected to one of
+the channels. For example, connect Buck 1, J16 (VOUT1), and the negative (−)
+load connection to J15 (GND).
 
-If an ammeter is used, connect it in series with the load. Connect the positive (+) ammeter terminal to the evaluation board for Buck 1, J16 (VOUT1), connect the negative (−) ammeter terminal to the positive (+) load terminal, and connect the negative (−) load terminal to the evaluation board at J15 (GND).
+If an ammeter is used, connect it in series with the load. Connect the positive
+(+) ammeter terminal to the evaluation board for Buck 1, J16 (VOUT1), connect
+the negative (−) ammeter terminal to the positive (+) load terminal, and connect
+the negative (−) load terminal to the evaluation board at J15 (GND).
 
 Input and Output Voltmeters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Measure the input and output voltages with voltmeters. Ensure that the voltmeters are connected to the appropriate evaluation board terminals and not to the load or power sources themselves.
+Measure the input and output voltages with voltmeters. Ensure that the
+voltmeters are connected to the appropriate evaluation board terminals and not
+to the load or power sources themselves.
 
-If the voltmeters are not connected directly to the evaluation board, the measured voltages are incorrect due to the voltage drop across the leads and/or connections between the evaluation board, the power source, and/or the load.
+If the voltmeters are not connected directly to the evaluation board, the
+measured voltages are incorrect due to the voltage drop across the leads and/or
+connections between the evaluation board, the power source, and/or the load.
 
-Connect the input voltage measuring voltmeter positive terminal (+) to the evaluation board at J11 (PVIN1_4) and connect the input voltage measuring voltmeter negative (−) terminal to the evaluation board at J12(GND). Connect the output voltage measuring voltmeter positive (+) terminal to the evaluation board at J16 (VOUT1) for measuring the output voltage of Buck 1, and connect the output voltage measuring voltmeter negative (−) terminal to the evaluation board at J15 (GND).
+Connect the input voltage measuring voltmeter positive terminal (+) to the
+evaluation board at J11 (PVIN1_4) and connect the input voltage measuring
+voltmeter negative (−) terminal to the evaluation board at J12(GND). Connect the
+output voltage measuring voltmeter positive (+) terminal to the evaluation board
+at J16 (VOUT1) for measuring the output voltage of Buck 1, and connect the
+output voltage measuring voltmeter negative (−) terminal to the evaluation board
+at J15 (GND).
 
 Quick Start
 -----------
 
-Ensure that the software and USB driver are installed as described in the Installing the Software section. Ensure that
+Ensure that the software and USB driver are installed as described in the
+Installing the Software section. Ensure that
 
 ::
 
@@ -245,15 +255,17 @@ Ensure that the software and USB driver are installed as described in the Instal
 
 Figure 10 shows the :adi:`ADP5051` board connection diagram. The :adi:`ADP5053` works in a similar manner, but does not have a USB dongle connection.
 
-
 |image9|
 
 .. container:: centeralign
 
    \ *Figure 10. ADP5051 Board Connection Diagram (USB Dongle is Optional)*\
 
-
-When the power source and load are connected to the evaluation board, the board can be powered for operation. If the load is not enabled, enable the load. Verify that it is drawing the proper current and that the output voltage maintains voltage regulation. After the power-up, the following output voltage can be measured:
+When the power source and load are connected to the evaluation board, the board
+can be powered for operation. If the load is not enabled, enable the load.
+Verify that it is drawing the proper current and that the output voltage
+maintains voltage regulation. After the power-up, the following output voltage
+can be measured:
 
 ::
 
@@ -268,8 +280,6 @@ ADP5051 GUI SOFTWARE
 
 To run the :adi:`ADP5051` GUI, click **Start** > **All Programs** > **Analog Devices ADP505x** > **ADP505x DEMO GUI-cg**. If the program starts correctly and the board is detected, the :adi:`ADP5051` GUI appears, as shown in Figure 11. The program default settings are as follows:
 
-
-
 - Choose the correct device I<sup>2</sup>C address. Select **WDI Ver 0x4A** for the :adi:`ADP5051`/:adi:`ADP5053`.
 - All registers are initialized to default values.
 - Check the I<sup>2</sup>C status.
@@ -281,15 +291,16 @@ To run the :adi:`ADP5051` GUI, click **Start** > **All Programs** > **Analog Dev
 
    \ *Figure 11. ADP5051 GUI Software*\
 
-
 MEASURING EVALUATION BOARD PERFORMANCE
 --------------------------------------
 
 Measuring Output Voltage Ripple of the Buck Regulator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To observe the output voltage ripple of Buck 1, place an oscilloscope probe across the output capacitor (COUT_1) with the probe ground lead at the negative (−) capacitor terminal and the probe tip at the positive (+) capacitor terminal. Figure 12 shows the typical output ripple waveform.
-
+To observe the output voltage ripple of Buck 1, place an oscilloscope probe
+across the output capacitor (COUT_1) with the probe ground lead at the negative
+(−) capacitor terminal and the probe tip at the positive (+) capacitor terminal.
+Figure 12 shows the typical output ripple waveform.
 
 |image10|
 
@@ -299,11 +310,13 @@ To observe the output voltage ripple of Buck 1, place an oscilloscope probe acro
 
    C\ OUT = 47 μF × 2, f\ SW = 700 kHz, FPWM Mode*\
 
+Set the oscilloscope to ac, 10 mV/division, and 2 µs/division time base, with
+the bandwidth set to 20 MHz to avoid noise interference with the measurements.
+To minimize coupling, shorten the ground loop of the oscilloscope probe.
 
-Set the oscilloscope to ac, 10 mV/division, and 2 µs/division time base, with the bandwidth set to 20 MHz to avoid noise interference with the measurements. To minimize coupling, shorten the ground loop of the oscilloscope probe.
-
-To effectively measure the output voltage ripple, solder a wire to the negative (−) capacitor terminal and wrap it around the barrel of the probe and connect the tip directly to the positive (+) capacitor terminal, as shown in Figure 13.
-
+To effectively measure the output voltage ripple, solder a wire to the negative
+(−) capacitor terminal and wrap it around the barrel of the probe and connect
+the tip directly to the positive (+) capacitor terminal, as shown in Figure 13.
 
 |image11|
 
@@ -311,23 +324,23 @@ To effectively measure the output voltage ripple, solder a wire to the negative 
 
    \ *Figure 13. Measuring Output Voltage Ripple*\
 
-
 Measuring the Switching Waveform of Buck
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To observe the switching waveform with an oscilloscope, place the oscilloscope probe tip at the end of the inductor with the probe ground at GND. Set the oscilloscope to dc, 5 V/division, and 1 µs/division time base.
+To observe the switching waveform with an oscilloscope, place the oscilloscope
+probe tip at the end of the inductor with the probe ground at GND. Set the
+oscilloscope to dc, 5 V/division, and 1 µs/division time base.
 
 When the SYNC/MODE pin is set to high, the buck regulators operate in forced PWM mode and the PSMx_ON registers in the :adi:`ADP5051` GUI software can be used to configure individual PSM/FPWM operation for each buck. Typical PWM and PSM switching waveforms are shown in Figure 14 and Figure 15.
 
-When the MODE pin is set to low, the buck regulators operate in power save mode (PSM), improving the light load efficiency.
-
+When the MODE pin is set to low, the buck regulators operate in power save mode
+(PSM), improving the light load efficiency.
 
 |image12|
 
 .. container:: centeralign
 
    \ *Figure 14. Typical PSM Mode Waveform, V\ IN = 12 V, V\ OUT = 3.3 V, I\ OUT = 3 A, f\ SW = 600 kHz, L = 4.7 μH, C\ OUT = 47 µF × 2, FPWM Mode*\
-
 
    |image13|
 
@@ -336,7 +349,6 @@ When the MODE pin is set to low, the buck regulators operate in power save mode 
    \ *Figure 15. Typical FPWM Mode Waveform, V\ IN = 12 V, V\ OUT = 3.3 V, I\ OUT = 3 A,
 
    f\ SW = 600 kHz, L = 4.7 μH, C\ OUT = 47 µF × 2, FPWM Mode*\
-
 
 Measuring the Synchronization Input or Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -348,8 +360,11 @@ When the SYNC/MODE pin is configured as the input, the :adi:`ADP5051`/:adi:`ADP5
 Measuring Load Regulation of the Buck
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Test the load regulation by increasing the load at the output and looking at the change in output voltage. The input voltage must be held constant during this measurement. To minimize voltage drop, use short low resistance wires, especially for loads approaching maximum current. Typical buck load regulation is shown in Figure 16.
-
+Test the load regulation by increasing the load at the output and looking at the
+change in output voltage. The input voltage must be held constant during this
+measurement. To minimize voltage drop, use short low resistance wires,
+especially for loads approaching maximum current. Typical buck load regulation
+is shown in Figure 16.
 
 |image14|
 
@@ -357,19 +372,17 @@ Test the load regulation by increasing the load at the output and looking at the
 
    \ *Figure 16. Buck Load Regulation*\
 
-
 Measuring Line Regulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To measure line regulation, vary the input voltage and examine the change in the output voltage. Typical buck line regulation is shown in Figure 17.
-
+To measure line regulation, vary the input voltage and examine the change in the
+output voltage. Typical buck line regulation is shown in Figure 17.
 
 |image15|
 
 .. container:: centeralign
 
    \ *Figure 17. Buck Line Regulation*\
-
 
 Measuring Efficiency of the Buck
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -378,8 +391,8 @@ Measure the efficiency, η, by comparing the input power with the output power.
 
 :math:`\displaystyle η = \frac{V_{OUT} × I_{OUT}}{V_{IN} × I_{IN}}`
 
-To reduce the effect of IR drops, measure the input and output voltages as near as possible to the input and output capacitors.
-
+To reduce the effect of IR drops, measure the input and output voltages as near
+as possible to the input and output capacitors.
 
 |image16|
 
@@ -389,11 +402,12 @@ To reduce the effect of IR drops, measure the input and output voltages as near 
 
    MOSFET = SI7232DN, FPWM and PSM Mode*\
 
-
 Measuring Inductor Current
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Measure the inductor current by removing one end of the inductor from its pad and connecting a current loop in series. A current probe can be connected to this wire.
+Measure the inductor current by removing one end of the inductor from its pad
+and connecting a current loop in series. A current probe can be connected to
+this wire.
 
 Modifying the Board
 -------------------
@@ -407,32 +421,29 @@ The buck output voltage is set through external resistor dividers, shown in Figu
 
 The V\ :sub:`REF` voltage (FB1, FB2, FB3, FB4) for the buck regulators is 0.800 V in the adjustable version.
 
-
 |image17|
 
 .. container:: centeralign
 
    \ *Figure 19. Buck 1 External Output Voltage Setting*\
 
-
 When the output voltage of the bucks are changed, the values of inductors, output capacitors, and compensation networks might, likewise, need to be recalculated and changed for stable operation. See the :adi:`ADP5051`/:adi:`ADP5053` data sheet for more details on external components selection.
 
 Setting the POR Threshold Voltage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The monitoring voltage can be set through external resistor dividers, as well (see Figure 20). The equation for the monitoring voltage is
+The monitoring voltage can be set through external resistor dividers, as well
+(see Figure 20). The equation for the monitoring voltage is
 
 :math:`V_{OUTx} = V_{VTH} × (1 + R_{TOP}/R_{BOT})`
 
 The voltage of VTH is 0.500 V.
-
 
 |image18|
 
 .. container:: centeralign
 
    \ *Figure 20. Monitoring Voltage Threshold Setting*\
-
 
 External Resistor Divider Setting for Bucks and POR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -448,7 +459,9 @@ R\ :sub:`TOP`    R2     R4     R6     R5
 R\ :sub:`BOT`    R28    R29    R31    R30
 ================ ====== ====== ====== ======
 
-The POR function, by default, monitors the Channel 2 output voltage; optionally, another channel can be selected using VOUT1, VOUT3, or VOUT4. Table 4 lists the external resistor for each channel.
+The POR function, by default, monitors the Channel 2 output voltage; optionally,
+another channel can be selected using VOUT1, VOUT3, or VOUT4. Table 4 lists the
+external resistor for each channel.
 
 **Table 4. External Resistor Dividers for VTH Setting**
 
@@ -464,15 +477,16 @@ Changing the Switching Frequency
 
 The switching frequency of the\ :adi:`ADP5051`/:adi:`ADP5053` on the evaluation board is programmed at 650 kHz. To change the switching frequency, replace the R3 resistor at the RT pin with a different value, as shown in Figure 21.
 
-
 |image19|
 
 .. container:: centeralign
 
    \ *Figure 21. Switching Frequency vs. RT Resistor*\
 
-
-There is a frequency-halved bit (FREQ1 and FREQ3 in Register 7) for Channel 1 and Channel 3, respectively. Each bit can be used to program its switching frequency to be half that of the master switching frequency, which is set by the RT pin.
+There is a frequency-halved bit (FREQ1 and FREQ3 in Register 7) for Channel 1
+and Channel 3, respectively. Each bit can be used to program its switching
+frequency to be half that of the master switching frequency, which is set by the
+RT pin.
 
 When the switching frequency is changed, the values of inductors, the output capacitors, and the compensation networks must, likewise, be recalculated and changed for stable operation. Refer to the :adi:`ADP5051`/:adi:`ADP5053` data sheet for more details on external components selection.
 
@@ -579,7 +593,11 @@ Enabling the Overheat Detection (ADP5051 Only)
 
 In addition to the thermal shutdown protection, the :adi:`ADP5051` has another overheat warning function, which compares the junction temperature against the specified overheat threshold: 105°C, 115°C, or 125°(adjustable in Register 8, TEMP_TH).
 
-Unlike thermal shutdown, the overheat warning function only sends out a warning signal without any shutdown. When the junction temperature rises above the threshold, the status bit, TEMP_INT, goes high. To clear the TEMP_INT status bit, write 1b to the status bit. The TEMP_INT bit status is latched until the bit is cleared.
+Unlike thermal shutdown, the overheat warning function only sends out a warning
+signal without any shutdown. When the junction temperature rises above the
+threshold, the status bit, TEMP_INT, goes high. To clear the TEMP_INT status
+bit, write 1b to the status bit. The TEMP_INT bit status is latched until the
+bit is cleared.
 
 Use the :adi:`ADP5051` GUI software to set the TEMP_TH register to enable the overheat feature. Configure TEMP_INT to source this overheat fault into the :math:`overlineINT` pin.
 
@@ -588,7 +606,11 @@ Enabling the Low Input Voltage Detection (ADP5051 Only)
 
 In addition to the undervoltage lockout (UVLO), the :adi:`ADP5051` includes a low input voltage detection circuit (to monitor PVIN1 only) that compares the input voltage against the specified voltage threshold, which is adjustable from 4.2 V to 11.2 V with 0.5 V steps in Register 8, TH_CFG.
 
-Unlike the UVLO shutdown, the low input voltage warning function only sends out a warning signal without any shutdown. When the input voltage drops below the threshold, the status bit, LVIN_INT, goes high. To clear the LVIN_INT status bit, write 1b to the status bit. The LVIN_INT bit status is latched until the bit is cleared.
+Unlike the UVLO shutdown, the low input voltage warning function only sends out
+a warning signal without any shutdown. When the input voltage drops below the
+threshold, the status bit, LVIN_INT, goes high. To clear the LVIN_INT status
+bit, write 1b to the status bit. The LVIN_INT bit status is latched until the
+bit is cleared.
 
 Use the :adi:`ADP5051` GUI software to set the LVIN_TH bit to enable the low input voltage detection feature. Configure LVIN_INT to source the low input fault into the nINT pin.
 
@@ -601,20 +623,20 @@ Use the :adi:`ADP5051` GUI software to set DVSx-INTVAL and enable DVSx-ON in Reg
 
 .. tip::
 
-   Note that to avoid rapid output voltage changes to the next target value that result in abnormal problems, such as PWRGD failure, OVP latch-off, or hiccup, enable the DVS function prior to setting VID.
-
+   Note that to avoid rapid output voltage changes to the next target value that
+   result in abnormal problems, such as PWRGD failure, OVP latch-off, or hiccup,
+   enable the DVS function prior to setting VID.
 
 EVALUATION BOARD SCHEMATICS AND ARTWORK
 =======================================
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure22.png
    :align: center
-   :width: 900px
+   :width: 900
 
 .. container:: centeralign
 
    \ *Figure 22. Evaluation Board Schematic of the* :adi:`ADP5051`\ */*\ :adi:`ADP5053`\ *Evaluation Board*\
-
 
    |image20|
 
@@ -622,13 +644,11 @@ EVALUATION BOARD SCHEMATICS AND ARTWORK
 
    \ *Figure 23. Top Layer, Recommended Layout for the* :adi:`ADP5051`\ */*\ :adi:`ADP5053`\ *Evaluation Board*\
 
-
    |image21|
 
 .. container:: centeralign
 
    \ *Figure 24. Second Layer, Recommended Layout for the ADP5050/ADP5052 Evaluation Board*\
-
 
    |image22|
 
@@ -636,13 +656,11 @@ EVALUATION BOARD SCHEMATICS AND ARTWORK
 
    \ *Figure 25. Third Layer, Recommended Layout for the* :adi:`ADP5051`\ */*\ :adi:`ADP5053`\ *Evaluation Board*\
 
-
    |image23|
 
 .. container:: centeralign
 
    \ *Figure 26. Bottom Layer, Recommended Layout for the* :adi:`ADP5051`\ */*\ :adi:`ADP5053`\ *Evaluation Board*\
-
 
 Ordering Information
 ====================
@@ -740,27 +758,27 @@ RELATED LINKS
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/figure_8_software_driver_installation_complete.jpg
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/figure_9_check_driver_insatllation.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure10.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure12.png
-   :width: 350px
+   :width: 350
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/figure_measuring_output_voltage_ripple.png
-   :width: 300px
+   :width: 300
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure14.png
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure15.png
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure16.png
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure17.png
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure18.png
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/11718-021.png
-   :width: 300px
+   :width: 300
 .. |image18| image:: https://wiki.analog.com/_media/resources/eval/adp5051_figure_20_ug646.png
-   :width: 250px
+   :width: 250
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure21.png
-   :width: 300px
+   :width: 300
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure23.png
-   :width: 400px
+   :width: 400
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure24.png
-   :width: 400px
+   :width: 400
 .. |image22| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure25.png
-   :width: 400px
+   :width: 400
 .. |image23| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure26.png
-   :width: 400px
+   :width: 400

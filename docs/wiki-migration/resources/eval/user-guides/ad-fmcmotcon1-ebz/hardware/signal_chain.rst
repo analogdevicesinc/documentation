@@ -1,8 +1,6 @@
 AD-FMCMOTCON1-EBZ Signal Measurement Chain
 ==========================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,14 +17,19 @@ AD-FMCMOTCON1-EBZ Signal Measurement Chain
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-The motor control system allows the measurement of the Ia(phase A current), Ib(phase B current) and It(total current) as well as the measurement of Vbus using signal chains which involve components from both the controller and low voltage driver boards.
+The motor control system allows the measurement of the Ia(phase A current),
+Ib(phase B current) and It(total current) as well as the measurement of Vbus
+using signal chains which involve components from both the controller and low
+voltage driver boards.
 
 Ia, Ib Measurement Signal Chain
 -------------------------------
 
-The Ia and Ib currents are sensed using 6mΩ shunt resistors. There are two possible measurement paths showing measurement techniques for the case where the ADC can be placed close to the shunt resistor and for the case where the ADC cannot be placed in the proximity of the shunt resistor. Both techniques aim to get the best measurement accuracy.
+The Ia and Ib currents are sensed using 6mΩ shunt resistors. There are two
+possible measurement paths showing measurement techniques for the case where the
+ADC can be placed close to the shunt resistor and for the case where the ADC
+cannot be placed in the proximity of the shunt resistor. Both techniques aim to
+get the best measurement accuracy.
 
 **Case 1: The ADC is placed in the proximity of the shunt resistor**
 
@@ -49,7 +52,7 @@ The Ia and Ib currents are sensed using 6mΩ shunt resistors. There are two poss
 :math:`I = (counts-32768) \times ADCrange/2^{ADCbits-1} \times CTRLgain / (RS \times DRVgain \times PGAgain)` where $\\displaystyle delimlbracematrix{7}{1}\ |counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3} {ADCbits = 16} \\frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8| $
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/current_chain.png
-   :width: 800px
+   :width: 800
 
 +---+
 +---+
@@ -60,7 +63,7 @@ Ia, Ib XADC Measurement Signal Chain
 The Ia and Ib XADC measurement chain utilizes the entire path of the regular measurement chain and adds on the controller board after the :adi:`AD7401` isolated ΣΔ modulator a Sallen Key analog reconstruction filter implemented using :adi:`AD8646` operational amplifiers. The combination between the isolated ΣΔ modulator and the analog reconstruction filter provides a convenient and cheap way to achieve analog isolation of the XADC input signals. This analog isolation technique is described in this `paper <http://www.analog.com/static/imported-files/newsletters/digital_isolation/Using_the_AD7400A_as_an_Isolated_Amplifier.pdf>`_.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/current_chain_xadc.png
-   :width: 800px
+   :width: 800
 
 +---+
 +---+
@@ -68,7 +71,11 @@ The Ia and Ib XADC measurement chain utilizes the entire path of the regular mea
 It Measurement Signal Chain
 ---------------------------
 
-The It current is sensed using a 5mΩ shunt resistor. There are two possible measurement paths showing measurement techniques for the case where the ADC can be placed close to the shunt resistor and for the case where the ADC cannot be placed in the proximity of the shunt resistor. Both techniques aim to get the best measurement accuracy.
+The It current is sensed using a 5mΩ shunt resistor. There are two possible
+measurement paths showing measurement techniques for the case where the ADC can
+be placed close to the shunt resistor and for the case where the ADC cannot be
+placed in the proximity of the shunt resistor. Both techniques aim to get the
+best measurement accuracy.
 
 **Case 1: The ADC is placed in the proximity of the shunt resistor**
 
@@ -89,7 +96,7 @@ The It current is sensed using a 5mΩ shunt resistor. There are two possible mea
 :math:`I = (32768-counts) \times ADCrange/2^{ADCbits-1} \times CTRLgain / (RS \times DRVgain \times PGAgain)` where $\\displaystyle delimlbracematrix{7}{1}\ |counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3} {ADCbits = 16} \\frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8| $
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/current_chain_it.png
-   :width: 800px
+   :width: 800
 
 +---+
 +---+
@@ -100,7 +107,7 @@ It XADC Measurement Signal Chain
 The It XADC measurement chain utilizes the entire path of the regular measurement chain and adds on the controller board after the :adi:`AD7401` isolated ΣΔ modulator a Sallen Key analog reconstruction filter implemented using :adi:`AD8646` operational amplifiers. The combination between the isolated ΣΔ modulator and the analog reconstruction filter provides a convenient and cheap way to achieve analog isolation of the XADC input signals. This analog isolation technique is described in this `paper <http://www.analog.com/static/imported-files/newsletters/digital_isolation/Using_the_AD7400A_as_an_Isolated_Amplifier.pdf>`_.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/current_chain_it_xadc.png
-   :width: 800px
+   :width: 800
 
 +---+
 +---+
@@ -114,7 +121,6 @@ Vbus sensing is done on the drive board using a resistive divider and an attenua
 
 :math:`V = (32768-counts) \times ADCrange / 2^{ADCbits-1} \times DRVgain \times CTRLgain` where :math:`\displaystyle delimlbracematrix{5}{1}{{counts = ADC value } {ADCrange = 320e-3 } {ADCbits = 16 } \frac{DRVgain=5}{60} \frac{CTRLgain=1}{10 }}{ }`
 
-
 |image1|
 
 +---+
@@ -126,7 +132,7 @@ Vbus XADC Measurement Signal Chain
 The Vbus XADC measurement chain utilizes the entire path of the regular measurement chain and adds on the controller board after the :adi:`AD7401` isolated ΣΔ modulator a Sallen Key analog reconstruction filter implemented using :adi:`AD8646` operational amplifiers. The combination between the isolated ΣΔ modulator and the analog reconstruction filter provides a convenient and cheap way to achieve analog isolation of the XADC input signals. This analog isolation technique is described in this `paper <http://www.analog.com/static/imported-files/newsletters/digital_isolation/Using_the_AD7400A_as_an_Isolated_Amplifier.pdf>`_.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/vbus_chain_xadc.png
-   :width: 800px
+   :width: 800
 
 +---+
 +---+
@@ -136,4 +142,4 @@ The Vbus XADC measurement chain utilizes the entire path of the regular measurem
 .. |counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3 } {ADCbits = 16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/counts_=_adc_value_}_{rs_=_5e-3}_{adcrange_=_320e-3_}_{adcbits_=_16
 .. |counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3} {ADCbits = 16} \\frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/counts_=_adc_value_}_{rs_=_5e-3}_{adcrange_=_320e-3}_{adcbits_=_16}_\frac{ctrlgain_=_1}{10}{drvgain_=_20}{pgagain_=_1,_2,_4_or_8
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/vbus_chain.png
-   :width: 800px
+   :width: 800

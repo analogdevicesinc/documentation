@@ -3,7 +3,7 @@ EVAL-LTC4306-PMDZ User Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/ltc4306webpage.png
    :align: center
-   :width: 400px
+   :width: 400
 
 --------------
 
@@ -19,7 +19,8 @@ The :adi:`EVAL-LTC4306-PMDZ <en/design-center/evaluation-hardware-and-software/e
 -  Two general purpose input/output (GPIO) pins (accessible via the P3 connector (Not soldered)) can be configured as inputs, open-drain outputs or push-pull outputs.
 -  LEDs on the board such as RDY, GP1 and GP2 allow fault monitoring and easy signal tracing.
 -  The reset or the ENABLE pin restores all device features to their default states when driven low and opens all the FET switches that connect the upstream to the downstream buses.
--  Only three address pins (accessible via the ADR0, ADR1 and ADR3 pin headers) provide 27 distinct I2C addresses!
+-  Only three address pins (accessible via the ADR0, ADR1 and ADR3 pin headers)
+   provide 27 distinct I2C addresses!
 
 --------------
 
@@ -55,23 +56,20 @@ IMPORTANT NOTES
 
 .. important::
 
-   Do not activate rise time accelerators on buses whose pull-up supply voltages are lower than VCC
-
+   Do not activate rise time accelerators on buses whose pull-up supply voltages
+   are lower than VCC
 
 .. important::
 
    Make sure logic low voltages forced on all clock and data pins are < 0.4V.
 
-
 .. important::
 
    When activating multiple downstream buses that are powered from separate supply voltages, make sure that the :adi:`LTC4306`\ ’s VCC voltage is less than or equal to the lowest downstream bus pull-up supply voltage
 
-
 .. important::
 
    Make sure that the power supply voltages do not exceed 5.5V
-
 
 --------------
 
@@ -133,7 +131,8 @@ List of Hardware:
 -  :adi:`EVAL-ADT7420-PMDZ <en/products/adt7420.html>` Digital Temperature sensor Evaluation board
 -  :adi:`SDP-K1 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-k1.html>` controller board (Optional)
 -  Mirco USB to USB cable
--  Windows® Vista 32-bit/64-bit, Windows 7 32-bit/64-bit, Windows 8 32-bit/64-bit, or Windows 10 32-bit/64-bit with USB 2.0 port
+-  Windows® Vista 32-bit/64-bit, Windows 7 32-bit/64-bit, Windows 8
+   32-bit/64-bit, or Windows 10 32-bit/64-bit with USB 2.0 port
 
 For this demo, the :adi:`EVAL-ADT7420-PMDZ <en/products/adt7420.html>` temperature sensor board was connected to the downstream bus number 4 on the :adi:`EVAL-LTC4306-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-LTC4306.html>`.
 
@@ -151,7 +150,6 @@ Next, plug the :adi:`EVAL-LTC4306-PMDZ <en/design-center/evaluation-hardware-and
 
 The Figure below shows how the hardware should be set-up:
 
-
 |image2|
 
 There are two basic ways to program the :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>` with the software for the :adi:`EVAL-ADT7420-PMDZ <en/products/adt7420.html>`.
@@ -159,9 +157,13 @@ There are two basic ways to program the :adi:`EVAL-ADICUP3029 <en/design-center/
 -  Dragging and Dropping the `Bin B <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>`_ or the `Hex B <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/hex_b.zip>`_ file to the DAPLINK drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_adt7420** demo can be found here:
 
@@ -184,16 +186,13 @@ Software
    -  :git-EVAL-ADICUP360:`AduCM3029_demo_adt7420 Source Code <projects/ADuCM360_demo_adt7420_pmdz>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
 
-
 If going with option 2, the user needs to import adt7420_example_noos in their cross core studios workplace. To learn how to do that, visit this page :doc:`cross core studios </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools>`. Once imported, a debug configuration file needs to be set-up . (visit this page :doc:`cross core studios </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools>` for more information)
 
 To see the temperature reading in the console, make sure ADI_APP_USE_BLUETOOTH is set to 0 in the header file (adt7420_app.h) before debugger is launched. Once the debugger is launched, click on the resume button if the program is halted due to breakpoint shown below: |image4| The temperature sensor reading should now be displayed in the console. For detailed information on how to do this, visit the :doc:`ADT7420 PMOD Temperature Demo </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_adt7420>` page on analog wiki
-
 
 |image5|
 
@@ -213,7 +212,6 @@ List of Hardware:
 -  Jumper wires to connect different boards together
 
 Set up the hardware as shown in the figure below. For this demo, the color sensor was connected to the downstream bus number 4 on the :adi:`EVAL-LTC4306-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-LTC4306.html>`. (If using your own sketch, do not forget to configure register 3 on the :adi:`EVAL-LTC4306-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-LTC4306.html>` to close the FET switches on the desired downstream bus to allow communication between the upstream and the downstream devices. The Hex device address was set to 0xAA (See page 13 of the datasheet for more information on how to set the address)
-
 
 |image6|
 
@@ -237,7 +235,6 @@ Schematic, PCB Layout, Bill of Materials
    -  `PCB Layout <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/08_055748b.pdf>`_
    -  `BOM <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/bom.zip>`_
    
-
 
 --------------
 
@@ -264,10 +261,10 @@ Additional Information and Useful Links
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/evaladicup_ltc4306.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/targethalted.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/readingtemp.gif
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/hardware_setup.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/software1.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/software2.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/colorsensor.gif

@@ -6,7 +6,6 @@ Hardware solutions
 
 :doc:`AD-FMCMOTCON2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/controller_board>` - Controller board
 
-
 |AD-FMCMOTCON2-EBZ|
 
 -  Compatible with all Xilinx FPGA platforms with FMC LPC or HPC connectors
@@ -32,7 +31,6 @@ Hardware solutions
 
 :doc:`AD-DRVLV2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/lv_board>` - Low voltage drive board
 
-
 |AD-DRVLV2-EBZ|
 
 -  Connects to the Controller board and has a power stage that can drive motors up to 48V and 20A.
@@ -53,10 +51,10 @@ Hardware solutions
    -  DC Link Voltage measurement
 
 -  BEMF zero cross detection for sensorless control of PMSM or BLDC motors
--  Separate voltage supplies for the 2 motors so that the motors don’t influence each other
+-  Separate voltage supplies for the 2 motors so that the motors don’t influence
+   each other
 
 :doc:`AD-DYNO2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/dyno>` - Dynamometer Drive System
-
 
 |AD-DYNO2-EBZ|
 
@@ -87,7 +85,6 @@ Downloads
    -  `Allegro Board File <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/ad-drvlv2-ebz_layout.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).
    
 
-
 Where to Buy
 ------------
 
@@ -95,10 +92,9 @@ Where to Buy
 
    :adi:`FMCMOTCON2 Evaluation Kit <design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-FMCMOTCON2.html>`
 
-
 .. |AD-FMCMOTCON2-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_ctrl_single.jpg
-   :width: 300px
+   :width: 300
 .. |AD-DRVLV2-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_lv_single.jpg
-   :width: 300px
+   :width: 300
 .. |AD-DYNO2-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_dyno_single.jpg
-   :width: 300px
+   :width: 300

@@ -27,7 +27,8 @@ Stream_Assignment_Info consists of
    * Destination_ID_0
    *  Routing_style
 
-Each attribute Is of “Byte” Data type except Stream Name which are of “String” Data type.
+Each attribute Is of “Byte” Data type except Stream Name which are of “String”
+Data type.
 
 Tunnel Configuration has below fields
 

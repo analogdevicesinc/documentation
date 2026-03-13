@@ -50,11 +50,9 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
    \ NOTE: It is recommended that you install the `CN0296 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0296>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0296\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/destination_directory.png
 
 -  Click **Next** to view the installation review page
-
 
 |image1|
 
@@ -66,8 +64,9 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image3|
 
@@ -78,7 +77,6 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image4|
 
@@ -93,7 +91,7 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/hardware_setup.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect the 120-pin connector on the :adi:`EVAL-CN0296-SDPZ` circuit board to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board. Nylon hardware should be used to firmly secure the two boards, using the holes provided at the ends of the 120-pin connectors.
 -  Plug the mini end of the USB cable into connector **J2** of the :adi:`EVAL-SDP-CB1Z` and connect the other end of the USB cable into the Laptop or PC.
@@ -108,18 +106,20 @@ OPENING AND ENABLING THE EVALUATION SOFTWARE
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/cn0296_gui_1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Launch the executable found at **C:\\Program Files\\Analog Devices\\CN0296** and press the **“Connect”** button.
 -  After pressing the **“Connect”** button, a prompt will appear informing the user if the SDP is already connected.
--  Press the "Play Soundbar" button in order to start using the functions of the soundbar.
+-  Press the "Play Soundbar" button in order to start using the functions of the
+   soundbar.
 
 --------------
 
 USING THE EVALUATION SOFTWARE
 -----------------------------
 
--  Below are the list of available software controls grouped according to their location int he software GUI:
+-  Below are the list of available software controls grouped according to their
+   location int he software GUI:
 
    -  **System Controls**
 
@@ -152,7 +152,6 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0296-SDPZ?&v=RevB>`_ to receive all these great benefits and more!
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/cn0296_evaluation_software_files.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0296/cn0296_evaluation_software_files_2.png

@@ -18,19 +18,17 @@ AD8417 Evaluation Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad8417rm-evalz_component_side_of_evaluation_board.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 1. Component Side*\
-
 
    |image1|
 
 .. container:: centeralign
 
    \ *Figure 2. Circuit Side*\
-
 
 Evaluation Board Hardware
 -------------------------
@@ -63,9 +61,13 @@ For bidirectional operation, the output is typically set at half scale for equal
 External Referenced Output
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An external supply may also be used to set the reference voltage by placing the jumpers at EXT for both headers and applying a voltage to any one of the EXT pins. This configuration biases the output to the external supply.
+An external supply may also be used to set the reference voltage by placing the
+jumpers at EXT for both headers and applying a voltage to any one of the EXT
+pins. This configuration biases the output to the external supply.
 
-The external supply can also be divided by 2. For this reference level, place the jumper for P1 at EXT, place the jumper for P2 at GND, and apply the external supply to the EXT pin near P1.
+The external supply can also be divided by 2. For this reference level, place
+the jumper for P1 at EXT, place the jumper for P2 at GND, and apply the external
+supply to the EXT pin near P1.
 
 By default, the output of the evaluation board is biased at midsupply.
 
@@ -74,31 +76,28 @@ Evaluation Board Schematic
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad8417rm-evalz_evaluation_board_schematic.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 3. Evaluation Board Schematic*\
-
 
 Evaluation Board Layout
 -----------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad8417rm-evalz_component_side_layout.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 4. Component Side Layout*\
-
 
    |image2|
 
 .. container:: centeralign
 
    \ *Figure 5. Circuit Side Layout*\
-
 
 Ordering Information
 --------------------
@@ -121,6 +120,6 @@ Bill of Materials
 +----------+----------------------+----------------------------+---------------------------+
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad8417rm-evalz_circuit_side_of_evaluation_board.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad8417rm-evalz_circuit_side_layout.png
-   :width: 400px
+   :width: 400

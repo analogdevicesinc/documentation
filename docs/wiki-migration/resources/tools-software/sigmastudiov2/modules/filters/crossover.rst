@@ -8,21 +8,24 @@ Crossover Filters
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover3way.png
    :alt: crossover3way.png
-   :width: 550px
+   :width: 550
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover2wayicon.png
    :alt: crossover2wayicon.png
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/crossover2way.png
    :alt: crossover2way.png
-   :width: 550px
+   :width: 550
 
 Description
 -----------
 
-The Crossover block includes 2-way and 3-way crossover filters, typically used in loudspeaker systems to split the audio signal into separate frequency bands.
+The Crossover block includes 2-way and 3-way crossover filters, typically used
+in loudspeaker systems to split the audio signal into separate frequency bands.
 
-This filter provides: 2-way or 3-way crossover filtering. Graphical design of crossover response. Selectable crossover types: Linkwitz-Riley, Butterworth, Bessel. Selectable filter orders: 2nd, 3rd, 4th, 6th, and 8th
+This filter provides: 2-way or 3-way crossover filtering. Graphical design of
+crossover response. Selectable crossover types: Linkwitz-Riley, Butterworth,
+Bessel. Selectable filter orders: 2nd, 3rd, 4th, 6th, and 8th
 
 Usage
 -----
@@ -60,7 +63,6 @@ Output0                        Audio Output channel 0
 Output1                        Audio Output channel 1
 Output2 (CrossOver 3 Way Only) Audio Output channel 2
 ============================== ===== ================
-
 
 | ===== Configurable Parameters =====
 

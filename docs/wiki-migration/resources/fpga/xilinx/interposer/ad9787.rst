@@ -25,7 +25,9 @@ The :adi:`AD9785`/:adi:`AD9787`/:adi:`AD9788` are 12-bit, 14-bit, and 16-bit, hi
 Quick Start Guide
 -----------------
 
-The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal, ADI DAC software and the programmer (IMPACT).
+The bit file provided combines the FPGA bit file and the SDK elf files. It may
+be used for a quick check on the system. All you need is the hardware and a PC
+running a UART terminal, ADI DAC software and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -49,16 +51,14 @@ Bit file
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 .. tip::
 
    If you are not familiar with ML605 and/or Xilix tools, please visit
 
    | `products/boards/ml605/reference_designs.htm <https://www.xilinx.com/products/boards/ml605/reference_designs.htm>`_ for details.
 
-
-Extract the project from the archive file (AD978x.zip) to the location you desire.
+Extract the project from the archive file (AD978x.zip) to the location you
+desire.
 
 To begin make the following connections (see image below):
 
@@ -66,7 +66,8 @@ Programming the PIC
 ^^^^^^^^^^^^^^^^^^^
 
 -  Connect the USB cable from the PC to the AD978x-DPG2-EBZ board.
--  Connect the programming cables from the PIC ICSP to the programming pins on connector XP1 as follows:
+-  Connect the programming cables from the PIC ICSP to the programming pins on
+   connector XP1 as follows:
 
    -  **PGD 1**
 
@@ -78,7 +79,8 @@ Programming the PIC
             -  **GND 6**
 
 -  Program the PIC using the AD978x_SPI_Adapter.hex file found in the project \*.zip archive.
--  Disconnect the programming cables and the USB Cable from the AD978x-DPG2-EBZ board.
+-  Disconnect the programming cables and the USB Cable from the AD978x-DPG2-EBZ
+   board.
 
 Connections
 ^^^^^^^^^^^
@@ -95,27 +97,38 @@ Connections
 Programming the FPGA
 ^^^^^^^^^^^^^^^^^^^^
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to 115200 baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad978x/sw/AD978x.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to 115200 baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../ad978x/sw/AD978x.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9787impact.jpg
    :alt: Programming ML605 in iMPACT
-   :width: 200px
+   :width: 200
 
 Setting up uC/Probe
 ^^^^^^^^^^^^^^^^^^^
 
-Launch Micrium uC/Probe and load the interface located in the project folder (../ad978x/sw/AD978x_Interface.wsp). In options, select RS-232 and set Baud Rate to 115200.
+Launch Micrium uC/Probe and load the interface located in the project folder
+(../ad978x/sw/AD978x_Interface.wsp). In options, select RS-232 and set Baud Rate
+to 115200.
 
 |ucProbe RS-232 Settings| |uCProbe RS-232 Settings|
 
 uC/Probe Interface
 ^^^^^^^^^^^^^^^^^^
 
-Click Play, and afterwards click on the ON/OFF Button. The Green LED on the button should light up. Set the options you desire by clicking on the red buttons and moving the sliders. After you are finished setting up the device, press "SEND AD978x SETTINGS" button. Now the device is programmed, and you should see the results on the S4 and S6 connectors on the AD978x Evaluation Board.
+Click Play, and afterwards click on the ON/OFF Button. The Green LED on the
+button should light up. Set the options you desire by clicking on the red
+buttons and moving the sliders. After you are finished setting up the device,
+press "SEND AD978x SETTINGS" button. Now the device is programmed, and you
+should see the results on the S4 and S6 connectors on the AD978x Evaluation
+Board.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9787_interface.png
    :alt: uCProbe Interface
-   :width: 600px
+   :width: 600
 
 The User Interface is divided in 11 sections, described below:
 
@@ -132,12 +145,15 @@ The User Interface is divided in 11 sections, described below:
 
 -  **Section 5** Includes control for Data Clock Delay if needed for adjusting the timing on the interface. User can set values for Data Clock Delay and Data Window Error Detect by using the sliders provided.
 
-   -  Data Clock Delay Enable: When ON, the data port input synchronization function is active and controlled by the data delay mode bits. The data output clock is routed through the delay cell
+   -  Data Clock Delay Enable: When ON, the data port input synchronization
+      function is active and controlled by the data delay mode bits. The data
+      output clock is routed through the delay cell
 
       -  Data Clock Polarity: When OFF, input data sampling edge is aligned with the falling edge of DCI. When ON, input data sampling edge is aligned with the rising edge of DCI (Use ONLY in Slave Mode!)
       -  LVDS Data Clock Enable: When OFF, the SYNC_O+ and SYNC_O− LVDS pad cells are driven by the multichip synchronization logic. When ON, the SYNC_O+ and SYNC_O− LVDS pad cells are driven by the signal that drives the CMOS DATACLK output pad.
       -  Data Delay IRQ Enable: Enables/Disables Data Delay Interrupt
-      -  Data Clock Output: When ON, the output data clock pin is configured as an output
+      -  Data Clock Output: When ON, the output data clock pin is configured as
+         an output
 
 -  **Section 6** By using the sliders and switches provided, the user can modify values in the Multi Chip Sync Register (MSCR, address 0x03, pg. 28 in datasheet).
 -  **Section 7** The AD9787 has an on-chip PLL. When PLL Enable is ON the chip will automatically select the appropiate band using the Freq Div and Loop Div values. The VCO Frequency must be between 1 and 2 GHz for proper operation. The auto-band select can be bypassed by enabling PLL MANUAL and entering a band in PLL Band Select.
@@ -150,9 +166,10 @@ The User Interface is divided in 11 sections, described below:
 
    
    -  If you drag a slider and it doesn't change the value in the numeric indicator next to it, please press Stop and then Play again. At the bottom of the screen, the bytes/sec should be increasing with 200 per second. If they increase only with 50 per second, please press Stop and Play again.
-   -  If you receive (Pc Port Open) at the bottom of the screen, please press Stop, close your COM port, reprogram the FPGA, launch the software and try again.
+   -  If you receive (Pc Port Open) at the bottom of the screen, please press
+      Stop, close your COM port, reprogram the FPGA, launch the software and try
+      again.
    
-
 
 Downloads
 ---------
@@ -160,12 +177,12 @@ Downloads
 `Reference design source code <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9787.zip>`_
 
 .. |ML605 and AD9787 connected on LPC port| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ml605_ad9787.jpg
-   :width: 200px
+   :width: 200
 .. |SPI Wiring on ML605| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9787spi.jpg
-   :width: 200px
+   :width: 200
 .. |SPI Wiring on AD9787| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9787spi2.jpg
-   :width: 200px
+   :width: 200
 .. |ucProbe RS-232 Settings| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9116ucprobesettings1.jpg
-   :width: 200px
+   :width: 200
 .. |uCProbe RS-232 Settings| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9116ucprobesettings2.jpg
-   :width: 200px
+   :width: 200

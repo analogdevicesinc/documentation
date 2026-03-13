@@ -68,19 +68,29 @@ Files
 Example platform device initialization
 ======================================
 
-The default platform info defined in bf537-stamp board file is for ad122. If you want to customize this driver for other switch only regulator, you should revise the platform information accordingly.
+The default platform info defined in bf537-stamp board file is for ad122. If you
+want to customize this driver for other switch only regulator, you should revise
+the platform information accordingly.
 
 -  Define device supply name exported by the adp_switch driver.
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp122_consumers{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp122_consumers{} c
+linux-kernel>
 
 -  Define regulator init data of this supply.
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp_switch_regulator_data{} c linux-kernel>
+<source
+trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp_switch_regulator_data{} c
+linux-kernel>
 
 -  Add new userspace consumer platform device for this supply.
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp122_bulk_data{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp122_userspace_comsumer_data{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp122_userspace_consumer_device{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp122_bulk_data{} c
+linux-kernel> <source
+trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp122_userspace_comsumer_data{} c
+linux-kernel> <source
+trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp122_userspace_consumer_device{}
+c linux-kernel>
 
 Adding Linux driver support
 ===========================
@@ -92,7 +102,10 @@ Enable generic GPIO lib in kernel option.
    Device Drivers  --->
    [*] GPIO Support  --->
 
-Select voltage and current regulator framework support and enable adp_switch driver. Don't forget to select userspace regulator consumer driver as a module. adp_switch driver is initialized after userspace consumer driver, if both are built into kernel.
+Select voltage and current regulator framework support and enable adp_switch
+driver. Don't forget to select userspace regulator consumer driver as a module.
+adp_switch driver is initialized after userspace consumer driver, if both are
+built into kernel.
 
 ::
 

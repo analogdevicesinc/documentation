@@ -30,5 +30,5 @@ Toolbox library contains the following categories:
 
 .. tip::
 
-   In SigmaStudio+, pressing F1 while an algorithm is highlighted will bring you directly to its Wiki help page
-
+   In SigmaStudio+, pressing F1 while an algorithm is highlighted will bring you
+   directly to its Wiki help page

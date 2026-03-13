@@ -5,7 +5,11 @@ The :adi:`AD-FMCJESDADC1-EBZ` is a high speed data acquisition (4 channels at 24
 
 Although this board does meet the FMC specifications, it is not meant as a `commercial off the shelf <https://en.wikipedia.org/wiki/Commercial_off-the-shelf>`_ (COTS) board. If you want a commercial, ready to integrate product, please refer to one of the many FMC manufactures, like `Abaco <https://www.abaco.com/products/fmc176-fpga-mezzanine-card>`_.
 
-This board is targeted to use the ADI reference designs, and work with both Altera and Xilinx development systems. ADI provides complete source (HDL and software) to re-create those projects (minus the IP provided by the FPGA vendors, which we use), but may not provide enough info to port this to your custom platform.
+This board is targeted to use the ADI reference designs, and work with both
+Altera and Xilinx development systems. ADI provides complete source (HDL and
+software) to re-create those projects (minus the IP provided by the FPGA
+vendors, which we use), but may not provide enough info to port this to your
+custom platform.
 
 The analog I/O on this board, uses the `micro-miniature coaxial <https://en.wikipedia.org/wiki/MMCX_connector>`_ connector. To connect to a SMA based test equipment, you will need something like the `Molex 89761-6810 <https://www.digikey.com/0897616810>`_.
 
@@ -46,20 +50,26 @@ Linux
 Specifications
 --------------
 
-The AD-FMCJESDADC1-EBZ board's primary purpose is to easily understand/validate/verify the JESD204B interface with various manufactures FPGA's (We have designs for Altera and Xilinx).
+The AD-FMCJESDADC1-EBZ board's primary purpose is to easily
+understand/validate/verify the JESD204B interface with various manufactures
+FPGA's (We have designs for Altera and Xilinx).
 
-When putting things into the small FMC form factor, various tradeoffs were made which limit the performance to the first nyquist. These tradeoffs in size/power/performance are normally the things that Analog Devices tells its customers not to do to get maximum performance.
+When putting things into the small FMC form factor, various tradeoffs were made
+which limit the performance to the first nyquist. These tradeoffs in
+size/power/performance are normally the things that Analog Devices tells its
+customers not to do to get maximum performance.
 
 Clocking
 ========
 
 The AD-FMCJESDADC1-EBZ uses the :adi:`AD9517-0`. This is a small (7.0mm x 6.75mm), low power (~1.4W) multi-output clock distribution function with subpicosecond jitter performance, along with an on-chip PLL and VCO. It's driven by a single 30.72 MHz crystal, and generates the necessary clocks for the system (2.45760GHz, 245.760MHz, 30.72MHz).
 
-The ADIsimCLK tool provides the following data about the clocking system on the 245.760MHz (which drive the AD9250) outputs:
+The ADIsimCLK tool provides the following data about the clocking system on the
+245.760MHz (which drive the AD9250) outputs:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcjesdadc1-ebz/snr_vs_if.png
    :align: right
-   :width: 300px
+   :width: 300
 
 ::
 
@@ -73,23 +83,34 @@ The ADIsimCLK tool provides the following data about the clocking system on the 
      ACI/ACR = -69.6dBc
    Delay from Ref to OUT2 is 420ps
 
-This matches up with the datasheet when using the internal VCO. To improve this number, a external VCXO could have been used (would decrease the jitter to ~54 fs rms), but this would have increased the size, and violated the height requirements of the FMC specification (most VCXO's which good performance are tall).
+This matches up with the datasheet when using the internal VCO. To improve this
+number, a external VCXO could have been used (would decrease the jitter to ~54
+fs rms), but this would have increased the size, and violated the height
+requirements of the FMC specification (most VCXO's which good performance are
+tall).
 
 This is the key aspect of any good converter design - the clock source.
 
 Front End
 =========
 
-The datasheet for the AD9250 and the golden evaluation board recommend a Differential Double Balun Input Configuration (figure 41 in the datasheet), with this note:
+The datasheet for the AD9250 and the golden evaluation board recommend a
+Differential Double Balun Input Configuration (figure 41 in the datasheet), with
+this note:
 
 .. important::
 
-   \ From the AD9250 Datasheet: At input frequencies in the second Nyquist zone and above, the noise performance of most amplifiers is not adequate to achieve the true SNR performance of the AD9250. For applications where SNR is a key parameter, differential double balun coupling is the recommended input configuration (see Figure 41).*
-
+   \ From the AD9250 Datasheet: At input frequencies in the second Nyquist zone
+   and above, the noise performance of most amplifiers is not adequate to
+   achieve the true SNR performance of the AD9250. For applications where SNR is
+   a key parameter, differential double balun coupling is the recommended input
+   configuration (see Figure 41).*
 
 The AD-FMCJESDADC1-EBZ card uses a single differential transformer (`Minicircuits TC4-1W <http://www.minicircuits.com/pdfs/TC4-1W.pdf>`_) - as shown in figure 40 of the datasheet - due to its smaller size (reduced footprint). The specific transformer used is specified from 3 to 800 MHz, but is only linear (in terms of insertion loss/input return loss) +/- 0.5dB, from 10 to 100MHz (limiting things to the first nyquist, before the converter sees massive losses on the input side.
 
-This transformer was chosen as a good trade off of size (3.8mm x 3.8mm x 3.8mm), Power (250mW of RF), with (Secondary/Primary) impedance (4:1) which operates in the first nyquist.
+This transformer was chosen as a good trade off of size (3.8mm x 3.8mm x 3.8mm),
+Power (250mW of RF), with (Secondary/Primary) impedance (4:1) which operates in
+the first nyquist.
 
 Schematic/Layout
 ================
@@ -104,7 +125,6 @@ Downloads
    -  `schematics <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcjesdadc1-ebz/ad-fmcjesdadc1_r1.1.pdf>`_
    -  We are not releasing the gerbers of this board - since the "golden" reference design is the AD9250 Evaluation board, which can be found at the :adi:`AD9250 <ad9250#product-evaluationkits>` page.
    
-
 
 Support
 =======
@@ -137,6 +157,6 @@ General AD9250 Questions
 Questions about the AD9250, please use the :ez:`AD9250 <community/data_converters/high-speed_adcs>` sub-community.
 
 .. |ad-fmcjesdadc1-ebz_bottom.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcjesdadc1-ebz/ad-fmcjesdadc1-ebz_bottom.png
-   :width: 395px
+   :width: 395
 .. |ad-fmcjesdadc1-ebz_top.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcjesdadc1-ebz/ad-fmcjesdadc1-ebz_top.png
-   :width: 400px
+   :width: 400

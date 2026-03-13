@@ -1,9 +1,16 @@
 Event Logging
 =============
 
-The Bare Metal framework includes an event logging system that is more suitable for real-time telemetry. The event logging system stores time stamped events from all three cores in a single, circular buffer on the ARM core. These events are also sent to the UART and can be accessed via a simple USB-to-UART device connected to connector P8 on the SHARC Audio Module.
+The Bare Metal framework includes an event logging system that is more suitable
+for real-time telemetry. The event logging system stores time stamped events
+from all three cores in a single, circular buffer on the ARM core. These events
+are also sent to the UART and can be accessed via a simple USB-to-UART device
+connected to connector P8 on the SHARC Audio Module.
 
-Event logging is provided via the bm_event_logging.c/.h file pair. The system uses a few locations in shared L2 memory to pass messages from the SHARC cores to the ARM core. This file pair is designed to be portable and can be used outside of the baremetal framework.
+Event logging is provided via the bm_event_logging.c/.h file pair. The system
+uses a few locations in shared L2 memory to pass messages from the SHARC cores
+to the ARM core. This file pair is designed to be portable and can be used
+outside of the baremetal framework.
 
 Configuring Event Logging
 -------------------------
@@ -49,7 +56,6 @@ Event logging is configured in a similar manner on each SHARC core. The ``event_
 
 .. code:: c
 
-
        // Set up event logging
        event_logging_initialize_sharc_core(    (char *) multicore_data->sharc_core1_event_message,
                                                (uint32_t *) &multicore_data->sharc_core1_event_emuclk,
@@ -60,7 +66,9 @@ Event logging is configured in a similar manner on each SHARC core. The ``event_
 Servicing the event logger
 --------------------------
 
-A service routine is provided for both ARM and SHARC cores which should be periodically called to process new events. The Bare Metal framework currently uses a 1ms timer interrupt on all three cores.
+A service routine is provided for both ARM and SHARC cores which should be
+periodically called to process new events. The Bare Metal framework currently
+uses a 1ms timer interrupt on all three cores.
 
 Servicing the Event Logger on the ARM Cores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,7 +101,6 @@ The code snippet below shows a 1ms timer tick service routine using the ``simple
 
 .. code:: c
 
-
    // SHARC timer callback
    void    timer_tick_callback() {
 
@@ -121,7 +128,8 @@ Logging an event
 
 The ``log_event()`` function is used to log a new event on all three cores. This function takes two arguments.
 
-The first argument is the level of the event and relies on a start syslog naming convention:
+The first argument is the level of the event and relies on a start syslog naming
+convention:
 
 -  ``EVENT_INFO``
 -  ``EVENT_DEBUG``
@@ -131,11 +139,11 @@ The first argument is the level of the event and relies on a start syslog naming
 
 These are defined as an enum in bm_event_logging.h.
 
-The second argument is a string of the event. The max string length is 128 characters.
+The second argument is a string of the event. The max string length is 128
+characters.
 
 The code snippet below shows how to log an event
 
 .. code:: c
 
        log_event(EVENT_INFO, "Bare Metal Framework for the ADI SHARC Audio Module");
-

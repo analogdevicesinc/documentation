@@ -19,8 +19,8 @@ ADS10-V1EBZ Features
 
 5. Simple USB 3.0 port interface.
 
-6. Two (2) Micro SD cards are included: for "TRX" evaluation boards and "HSX" evaluation boards.
-
+6. Two (2) Micro SD cards are included: for "TRX" evaluation boards and "HSX"
+   evaluation boards.
 
 |image1|
 
@@ -28,13 +28,11 @@ ADS10-V1EBZ Features
 
    *Figure 1. ADS10-V1EBZ High Speed Carrier Card (Top)*
 
-
    |image2|
 
 .. container:: centeralign
 
    *Figure 2. ADS10-V1EBZ High Speed Carrier Card (Bottom)*
-
 
 Using the ADS10-V1EBZ to evaluate High Speed Converters
 =======================================================
@@ -42,15 +40,17 @@ Using the ADS10-V1EBZ to evaluate High Speed Converters
 Overview
 --------
 
-When connected to a specified Analog Devices high speed converter evaluation board, the ADS10-V1EBZ works as a data generation and acquisition board. Designed to support the highest speed JESD204B/C converters, the FPGA on the ADS10-V1EBZ acts as the data and control interface. An example test setup is shown below.
-
+When connected to a specified Analog Devices high speed converter evaluation
+board, the ADS10-V1EBZ works as a data generation and acquisition board.
+Designed to support the highest speed JESD204B/C converters, the FPGA on the
+ADS10-V1EBZ acts as the data and control interface. An example test setup is
+shown below.
 
 |image3|
 
 .. container:: centeralign
 
    *Figure 3. ADS10-V1EBZ connected to High Speed Converter Evaluation Board*
-
 
 Helpful Documents
 -----------------
@@ -61,7 +61,8 @@ Helpful Documents
 Software Download Links
 -----------------------
 
--  Analysis \| Control \| Evaluation (ACE) Software can be requested via the applicable high-speed converter product webpage.
+-  Analysis \| Control \| Evaluation (ACE) Software can be requested via the
+   applicable high-speed converter product webpage.
 
 Design and Integration Files
 ----------------------------
@@ -81,8 +82,8 @@ ADS10-V1EBZ Supported Evaluation Boards
 Refer to the Analog Devices High Speed Converter evaluation board product page at :adi:`High Speed Converter Eval Boards <hsadcevalboard>` for a table of ADS10-V1EBZ compatible evaluation boards.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/ads10-v1ebztop.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/ads10-v1ebzbottom.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/adsx/ads10.png
-   :width: 600px
+   :width: 600

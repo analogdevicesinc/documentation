@@ -30,10 +30,8 @@ FPGA Reference Designs on GitHub :
    -  :git-hdl:`projects/fmcomms6/zc706`
    
 
-
 .. hint::
 
    
    -  Questions? :ez:`Ask Help & Support <community/fpga>`.
    
-

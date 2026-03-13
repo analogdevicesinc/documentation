@@ -4,12 +4,14 @@ No-OS GPIO API
 Description
 -----------
 
-The GPIO framework provides a way to handle General-Purpose Input/Output (GPIO) pins when using the No-OS platform drivers.
+The GPIO framework provides a way to handle General-Purpose Input/Output (GPIO)
+pins when using the No-OS platform drivers.
 
 Interface Documentation
 -----------------------
 
-The GPIO interface documentation is generated using the Doxygen tool and it is available at:
+The GPIO interface documentation is generated using the Doxygen tool and it is
+available at:
 
 -  `No-OS GPIO API <http://analogdevicesinc.github.io/no-OS/no__os__gpio_8h.html>`_
 
@@ -20,7 +22,6 @@ GPIO initialization
 ~~~~~~~~~~~~~~~~~~~
 
 .. code:: C
-
 
    /* GPIO Description declaration */
    struct no_os_gpio_desc *gpio_desc;

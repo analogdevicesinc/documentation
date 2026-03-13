@@ -9,12 +9,15 @@ SineTone
 Description
 -----------
 
-The SineTone block generates a sinetone at different frequencies. The gain and phase of the algorithm can be configured for each channel individually.
+The SineTone block generates a sinetone at different frequencies. The gain and
+phase of the algorithm can be configured for each channel individually.
 
 Usage
 -----
 
-This block has checkbox to enabled or disabled the algorithm. Check the box to enable this algorithm. It has the text fields for frequency, phase and gain to generate the sinetone at different frequencies with different phase and gain.
+This block has checkbox to enabled or disabled the algorithm. Check the box to
+enable this algorithm. It has the text fields for frequency, phase and gain to
+generate the sinetone at different frequencies with different phase and gain.
 
 Targets Supported
 -----------------
@@ -24,7 +27,6 @@ Name     ADSP-214xx ADSP-215xx/ADSP-SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ======== ========== ===================== ============= ================
 SineTone B/S        B/S                   S             B
 ======== ========== ===================== ============= ================
-
 
 | ===== Pins =====
 
@@ -36,7 +38,6 @@ Name    Type    Description
 ======= ======= ================
 Output0 Control Output channel 0
 ======= ======= ================
-
 
 | ===== Configurable Parameters =====
 

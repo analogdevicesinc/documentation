@@ -20,7 +20,8 @@ Features
 -  LO and CLK signals can be externally applied or internally derived from on-board VCO circuits.
 -  Reference for LO and CLK synthesizer can be supplied by on-board 26 MHz XO or external source.
 -  IF input supports 3-element matching network
--  Digital I/O interfaces to the HSC-ADC-EVALCZ or other FPGA, DSP, or uC platform
+-  Digital I/O interfaces to the HSC-ADC-EVALCZ or other FPGA, DSP, or uC
+   platform
 
 - PCB layout can be used as guideline for end product layout.
 

@@ -3,7 +3,8 @@ Licensed Algorithms
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-The Toolbox's Licensed Algorithms library lets you access proprietary licensed blocks (including some developed by Analog Devices) for use in your designs.
+The Toolbox's Licensed Algorithms library lets you access proprietary licensed
+blocks (including some developed by Analog Devices) for use in your designs.
 
 The following Algorithms are available:
 
@@ -23,5 +24,6 @@ Additional algorithms may be available by request from 3rd Party vendors.
 
 .. note::
 
-   Note: None of these algorithm blocks are included with the SigmaStudio application installation. To evaluate or license algorithms from third parties, please contact their licensing departments directly.
-
+   Note: None of these algorithm blocks are included with the SigmaStudio
+   application installation. To evaluate or license algorithms from third
+   parties, please contact their licensing departments directly.

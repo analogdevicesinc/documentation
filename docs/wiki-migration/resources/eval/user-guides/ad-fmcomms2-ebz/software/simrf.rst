@@ -1,7 +1,10 @@
 RF Blockset Model of AD9361 from MathWorks
 ==========================================
 
-There are two RF Blockset models of AD9361 provided by MathWorks in the form of a support package. These two models have been validated in the lab with real-life measurements, by which you can iterate and evaluate the design prior to implementation.
+There are two RF Blockset models of AD9361 provided by MathWorks in the form of
+a support package. These two models have been validated in the lab with
+real-life measurements, by which you can iterate and evaluate the design prior
+to implementation.
 
 .. note::
 
@@ -20,24 +23,26 @@ There are two RF Blockset models of AD9361 provided by MathWorks in the form of 
    -  Fixed-Point Designer
    
 
-
 Downloads
 =========
 
-To learn more about AD9361 modeling and to download the Tx and Rx models, the support package can be found here:
+To learn more about AD9361 modeling and to download the Tx and Rx models, the
+support package can be found here:
 
 .. admonition:: Download
    :class: download
 
    
    -  `Analog Devices RF Transceivers Support from MATLAB and Simulink <https://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html>`_
-   -  On this page, find the installer file (.mlpkginstall file) for RF Blockset Models, as highlighted in the figure below. Open the installer file from your operating system or from within MATLAB will initiate the installation process and acquire the latest models available for the release you have.
+   -  On this page, find the installer file (.mlpkginstall file) for RF Blockset
+      Models, as highlighted in the figure below. Open the installer file from
+      your operating system or from within MATLAB will initiate the installation
+      process and acquire the latest models available for the release you have.
    
-
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/download.png
    :alt: Block diagram
-   :width: 600px
+   :width: 600
 
 For more information about support package, please refer to `Support Package Installation <https://www.mathworks.com/help/simulink/ug/start-support-package-installer.html>`_.
 

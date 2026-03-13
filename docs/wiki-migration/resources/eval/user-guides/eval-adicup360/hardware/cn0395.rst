@@ -8,14 +8,13 @@ The circuit below is an arduino compatible, single supply 16-bit volatile organi
 
 :adi:`CN0395` measures indoor air quality by utilizing a Metal Oxide Sensor to detect gases composed of volatile organic compounds. The sensor is composed of a heating resistor and a sensing resistor. When the sense resistor is heated its value changes as a function of the concentrations of different gasses.
 
-
 |image1|
 
 Connectors and Jumper Configurations
 ------------------------------------
 
-{{ :resources:eval:user-guides:eval-adicup360:hardware:cn0395:jumper_config.jpg \|\
-
+{{ :resources:eval:user-guides:eval-adicup360:hardware:cn0395:jumper_config.jpg
+\|\
 
 |image2|
 
@@ -27,7 +26,8 @@ P1
 
 The current output DAC, :adi:`ADN8810`, has an output voltage compliance that needs to be met to maintain a linear current output. This can be done by putting a jumper on position 2 and 3 which attaches the ENCOMP pin of the part to ground for output voltages up to 2V.
 
-For higher output voltages that 2V, tie the ENCOMP pin to +5V to maintain the output stability of the part.
+For higher output voltages that 2V, tie the ENCOMP pin to +5V to maintain the
+output stability of the part.
 
 P2
 ^^
@@ -49,15 +49,19 @@ Sensor
 
 .. important::
 
-   The calculation for the sense resistor and placement of the correct sense resistors are crucial to proper operation of the board to not violate absolute maximum ratings of the sensors
-
+   The calculation for the sense resistor and placement of the correct sense
+   resistors are crucial to proper operation of the board to not violate
+   absolute maximum ratings of the sensors
 
 **Recommended Sensors**
 
 -  `TGS8100 <http://www.figarosensor.com/products/entry/tgs8100.html>`_
 -  `VOC-MF1 <http://www.alphasense.com/index.php/products/metal-oxide-sensors-2/>`_
 
-If you are using a different sensor, you will need to wire in the appropriate signals into the board via the screw terminal (P8). This also means that you will have to remove the TGS8100 sensor that comes on the board by default. Below is a table of how to use P8 to input other sensors.
+If you are using a different sensor, you will need to wire in the appropriate
+signals into the board via the screw terminal (P8). This also means that you
+will have to remove the TGS8100 sensor that comes on the board by default. Below
+is a table of how to use P8 to input other sensors.
 
 P8
 ^^
@@ -74,7 +78,8 @@ AGND            Pin 4      Negative Pin of Sensing Resistor
 Spacers
 ~~~~~~~
 
-Spacers that could cater various surface mount and through hole packages are available on the board to make some modifications on the board easier.
+Spacers that could cater various surface mount and through hole packages are
+available on the board to make some modifications on the board easier.
 
 Resistor spacers, R17_SPACER and R19_SPACER, are used to hold the sense resistors to select the maximum output current of the :adi:`ADN8810`. Changing these maximum output current of the :adi:`ADN8810` allows the board to cater multiple types of sensor that use up to 300mA of current for measurements.
 
@@ -102,7 +107,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Software
 --------
 
@@ -114,7 +118,6 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0395-ARDZ?&v=RevA>`_ to receive all these great benefits and more!
-
 
 *End of Document*
 

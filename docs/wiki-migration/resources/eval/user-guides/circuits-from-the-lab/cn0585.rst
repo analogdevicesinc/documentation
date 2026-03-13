@@ -1,14 +1,11 @@
 EVAL-CN0585-FMCZ User Guide
 ===========================
 
-
-
 .. important::
 
    We are in the process of migrating our documentation to GitHub Pages
 
    | The latest version of this document can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0585-fmcz/index.html
-
 
 The :adi:`EVAL-CN0585-FMCZ <CN0585>` Low Latency Development Kit (LLDK) board is a development board consisting of 4 x 16-bit ADC channels and 4 x 16-bit DAC channels that are interfaced with an FPGA through the FMC Low Pin Count (LPC) Connector. Current revision of :adi:`EVAL-CN0585-FMCZ <CN0585>` is Rev B. :adi:`EVAL-CN0585-FMCZ <CN0585>`, :adi:`EVAL-CN0584-EBZ <CN0584>` and ZedBoard are connected together to build a development system setup as shown in Figure 1. |image1|.
 
@@ -20,19 +17,19 @@ The key performance benefit of the :adi:`EVAL-CN0585-FMCZ <CN0585>` is the abili
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/eval-cn0585-fmcz_top-web.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 *Figure 2. EVAL-CN0585-FMCZ Board Top*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/eval-cn0585-fmcz_bottom-web.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 *Figure 3. EVAL-CN0585-FMCZ Board Bottom*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/cn0585.png
    :align: center
-   :width: 400px
+   :width: 400
 
 *Figure 4. EVAL-CN0585-FMCZ Simplified Block Diagram*
 
@@ -79,11 +76,13 @@ The :adi:`EVAL-CN0585-FMCZ <CN0585>` board provides voltage monitoring capabilit
 
 The negative power supply rails are biased positive with a buffered 2.5V reference supplied by the :adi:`AD7291`.
 
-Calculating the supply voltage from the positive voltage rails can be accomplished using the following equation:
+Calculating the supply voltage from the positive voltage rails can be
+accomplished using the following equation:
 
 :math:`V_(RAIL-POS)=Scale Factor \times IIO Measured Voltage`
 
-Calculating the supply voltage from the negative voltage rails can be accomplished using the following equation:
+Calculating the supply voltage from the negative voltage rails can be
+accomplished using the following equation:
 
 :math:`V_(RAIL-NEG)=Scale Factor \times (2.5 - IIO Measured Voltage)+2.5`
 
@@ -114,7 +113,10 @@ The default I2C address of the :adi:`AD7291` is 0x20. Resistors R13, R14, R17, a
 Logic Level Translators
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Several logic-level translators are used on the board to interface with the FMC connector signals and the various logic levels used on the board. The FMC connector signal levels are driven by the VIO voltage supplied from the FPGA board.
+Several logic-level translators are used on the board to interface with the FMC
+connector signals and the various logic levels used on the board. The FMC
+connector signal levels are driven by the VIO voltage supplied from the FPGA
+board.
 
 GPIO
 ~~~~
@@ -209,7 +211,8 @@ The AFE board connector on the :adi:`EVAL-CN0585-FMCZ <CN0585>` board is a Samte
 FMC LPC Connector Pinout for LLDK Board(Rev B)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-FMC LPC connector routes the data acquired by the ADAQ23876 to FPGA and transfers the data from FPGA to AD3552R DAC.
+FMC LPC connector routes the data acquired by the ADAQ23876 to FPGA and
+transfers the data from FPGA to AD3552R DAC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0585/connector_pinout_revb.png
    :alt: connector_pinout_revb.png
@@ -220,7 +223,8 @@ FMC LPC connector routes the data acquired by the ADAQ23876 to FPGA and transfer
 LED Indicators
 ~~~~~~~~~~~~~~
 
-Once the board is connected to the host, and power is delivered, the green LED DS1 should be on.
+Once the board is connected to the host, and power is delivered, the green LED
+DS1 should be on.
 
 Power Supply Considerations and Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -229,8 +233,9 @@ The Rev. B of the :adi:`EVAL-CN0585-FMCZ <CN0585>` board is powered through the 
 
 .. important::
 
-   The board can also be powered from the FMC connector by adding resistor R9 and removing resistor R10, but it is not recommended as the current consumption exceeds the FMC standard current limit.
-
+   The board can also be powered from the FMC connector by adding resistor R9
+   and removing resistor R10, but it is not recommended as the current
+   consumption exceeds the FMC standard current limit.
 
 System Setup Using a ZedBoard
 -----------------------------
@@ -251,7 +256,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Bill of Materials
    -  Allegro Project
    
-
 
 Additional Information and Useful Links
 ---------------------------------------

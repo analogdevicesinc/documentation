@@ -3,22 +3,29 @@
 Build Plugin
 ============
 
-Once the module(s) to be used as SigmaStudio+ plugins are configured using the Algorithm Designer, it can be converted into a DLL for redistribution and reuse. Click the 'Build' button from the group of buttons on the top left corner of Algorithm Designer window. The build window will open up and list all the modules in the current Algorithm Designer Project.
+Once the module(s) to be used as SigmaStudio+ plugins are configured using the
+Algorithm Designer, it can be converted into a DLL for redistribution and reuse.
+Click the 'Build' button from the group of buttons on the top left corner of
+Algorithm Designer window. The build window will open up and list all the
+modules in the current Algorithm Designer Project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/build.png
-   :width: 600px
+   :width: 600
 
 Selective Building
 ------------------
 
 -  User may choose to include one or more modules in the DLL
 -  For each of the module, the user may choose to whether to include the Algorithm, Parameter Computation and UI
--  Whenever UI or Parameter Computation is not selected, the plugin name of the external UI or Parameter computation plugin to be referenced should be mentioned.
+-  Whenever UI or Parameter Computation is not selected, the plugin name of the
+   external UI or Parameter computation plugin to be referenced should be
+   mentioned.
 
 Assembly Information
 --------------------
 
-The assembly information (details) of the generated DLL can be configured in the 'Assembly Information' section. Following details are supported:
+The assembly information (details) of the generated DLL can be configured in the
+'Assembly Information' section. Following details are supported:
 
 -  Description
 -  Version
@@ -29,4 +36,6 @@ The assembly information (details) of the generated DLL can be configured in the
 Generate DLL
 ------------
 
-Once the details are entered, click the 'Generate' button to generate the module(s) as a DLL. The Save file dialog that opens up can be used to choose the path and name of the DLL.
+Once the details are entered, click the 'Generate' button to generate the
+module(s) as a DLL. The Save file dialog that opens up can be used to choose the
+path and name of the DLL.

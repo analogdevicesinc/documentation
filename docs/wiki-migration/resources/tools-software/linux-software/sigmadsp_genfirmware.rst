@@ -1,28 +1,32 @@
 SigmaDSP Firmware Utility for Linux
 ===================================
 
-The SigmaDSP Firmware Utility for Linux allows to generate a firmware file which can be loaded by the Linux SigmaDSP device drivers.
+The SigmaDSP Firmware Utility for Linux allows to generate a firmware file which
+can be loaded by the Linux SigmaDSP device drivers.
 
 Export XML firmware file from SigmaStudio
 -----------------------------------------
 
-1) Open your design in SigmaStudio and click the "Link Compile Connect" button for your Project.
+1) Open your design in SigmaStudio and click the "Link Compile Connect" button
+   for your Project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/sigmastudio_export1.png
-   :width: 500px
+   :width: 500
 
-2) Click the "Export System Files" button and select a location and a name for the exported system files.
+2) Click the "Export System Files" button and select a location and a name for
+   the exported system files.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/sigmastudio_export2.png
-   :width: 500px
+   :width: 500
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/sigmastudio_export3.png
-   :width: 500px
+   :width: 500
 
-3) Open up the location where you stored the exported system files and look for a file with the .xml extension.
+3) Open up the location where you stored the exported system files and look for
+   a file with the .xml extension.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/sigmastudio_export4.png
-   :width: 500px
+   :width: 500
 
 Generate the binary firmware file
 ---------------------------------
@@ -34,15 +38,22 @@ Currently the SigmaDSP Firmware Utility for Linux only runs on a Linux system an
    > wget %%https://raw.githubusercontent.com/analogdevicesinc/sigmadsp-genfirmware/master/sigmadsp_fwgen%%
    > chmod +x sigmadsp_fwgen
 
-The next step is to copy the XML file from the previous instructions to a Linux machine.
+The next step is to copy the XML file from the previous instructions to a Linux
+machine.
 
-The fwgen utility expects at least 3 parameters. The first parameter is the filename of the XML file exported from SigmaStudio, the second parameter is the samplerate that the XML file was generated for and the third parameter is the output file name.
+The fwgen utility expects at least 3 parameters. The first parameter is the
+filename of the XML file exported from SigmaStudio, the second parameter is the
+samplerate that the XML file was generated for and the third parameter is the
+output file name.
 
 ::
 
    > ./sigmadsp_fwgen design.xml 48000 adau1761.bin
 
-If you want to support multiple samplerates with your firmware file you need to export a XML file for each samplerate. Each file needs to be specified on the command line followed by the samplerate it was generated for. The last parameter is the name of the output file.
+If you want to support multiple samplerates with your firmware file you need to
+export a XML file for each samplerate. Each file needs to be specified on the
+command line followed by the samplerate it was generated for. The last parameter
+is the name of the output file.
 
 E.g.
 
@@ -50,7 +61,9 @@ E.g.
 
    > ./sigmadsp_fwgen design_48000.xml 48000 design_32000.xml 32000 design_16000.xml 16000 ... adau1761.bin
 
-When such a firmware file with support for multiple samplerates is loaded the kernel driver will automatically take care of programming the correct design for the currently selected samplerate to the SigmaDSP.
+When such a firmware file with support for multiple samplerates is loaded the
+kernel driver will automatically take care of programming the correct design for
+the currently selected samplerate to the SigmaDSP.
 
 Load the firmware on the target system
 --------------------------------------
@@ -65,7 +78,9 @@ In order to load firmware files the kernel needs to have firmware support (``CON
          <*> Userspace firmware loading support
          ...
 
-The firmware can either be built into the kernel or can be installed on the root file systen. If both the firmware is built into the kernel and present on the root file system the firmware built into the kernel will always take precedence.
+The firmware can either be built into the kernel or can be installed on the root
+file systen. If both the firmware is built into the kernel and present on the
+root file system the firmware built into the kernel will always take precedence.
 
 Built into the kernel
 ~~~~~~~~~~~~~~~~~~~~~
@@ -98,8 +113,9 @@ It is also possible to install the firmware file on the root filesystem. This al
 
 .. important::
 
-   If the firmware is installed on the root filesystem the driver needs to be built as a module, otherwise it will try to load the firmware before the root filesystem has been mounted.
-
+   If the firmware is installed on the root filesystem the driver needs to be
+   built as a module, otherwise it will try to load the firmware before the root
+   filesystem has been mounted.
 
 More information
 ----------------
@@ -110,4 +126,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

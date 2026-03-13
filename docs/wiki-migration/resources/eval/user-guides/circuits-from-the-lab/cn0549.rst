@@ -1,11 +1,21 @@
 CN0549 User Guide
 =================
 
-CbM requires capturing full bandwidth data to ensure that all harmonics, aliasing, and other mechanical interactions in both the time and frequency domain are accounted for. This data collection requires a high performance sensor and data acquisition (DAQ) system that can provide high fidelity, real-time data into a data analysis tool or application.
+CbM requires capturing full bandwidth data to ensure that all harmonics,
+aliasing, and other mechanical interactions in both the time and frequency
+domain are accounted for. This data collection requires a high performance
+sensor and data acquisition (DAQ) system that can provide high fidelity,
+real-time data into a data analysis tool or application.
 
-Using established tools like MATLAB® or newer Python-based tools like Tensorflow, analyzing the data, profiling the machinery, and creating algorithms for smart decision making is greatly simplified.
+Using established tools like MATLAB® or newer Python-based tools like
+Tensorflow, analyzing the data, profiling the machinery, and creating algorithms
+for smart decision making is greatly simplified.
 
-Vibration sensing has traditionally dominated most CbM applications because of the availability of sensors, and the science behind the analysis is better understood. The integrated electronic piezoelectric (IEPE) standard is a popular signaling interface standard for high end microelectronic mechanical systems (MEMS) and piezo sensors that are prevalent in the industry today.
+Vibration sensing has traditionally dominated most CbM applications because of
+the availability of sensors, and the science behind the analysis is better
+understood. The integrated electronic piezoelectric (IEPE) standard is a popular
+signaling interface standard for high end microelectronic mechanical systems
+(MEMS) and piezo sensors that are prevalent in the industry today.
 
 :adi:`CN0549` helps to address these gaps by providing a complete system from sensor to algorithm development.
 
@@ -32,7 +42,6 @@ Hardware:
 
    This page will focus on using the DE10-Nano board, but it is also possible to create the CN0549 setup connected to a CoraZ7-07s FPGA platform. For more information on how to use the CoraZ7-07s platform please :doc:`click here </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0540/coraz7s>`.
 
-
 Software:
 
 -  `ADI Kuiper Image for CN0540 <https://swdownloads.analog.com/cse/kuiper/cn0540.tar.gz>`_
@@ -56,105 +65,113 @@ Putting together the CN0549
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0532_hw.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  Cut the end of an SMA cable at one end, and solder the center tap to the ACC pad and the outside shield to the GND pad.
+-  Cut the end of an SMA cable at one end, and solder the center tap to the ACC
+   pad and the outside shield to the GND pad.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0532_soldered2.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  Using the EVAL-XLMOUNT1, mount the CN0532 to the side of the cube using the screws provided. It doesn't matter which side you mount, because you will likely need to change the orientation at the customer.
+-  Using the EVAL-XLMOUNT1, mount the CN0532 to the side of the cube using the
+   screws provided. It doesn't matter which side you mount, because you will
+   likely need to change the orientation at the customer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0532_xlmount1_attached.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Take out the DE10-Nano, it will look like this.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_hw.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  Make sure that the FPGA Configuration Mode Switch is set at the following positions.
+-  Make sure that the FPGA Configuration Mode Switch is set at the following
+   positions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_fpga_switch_matrix.png
    :align: center
-   :width: 400px
+   :width: 400
 
--  Insert the programmed micro SD Card into the slot provided on the bottom of the DE10-Nano board.
+-  Insert the programmed micro SD Card into the slot provided on the bottom of
+   the DE10-Nano board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_sdcard_insert.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  Make sure you push the SD card all the way into the slot, as its spring loaded and isn't inserted until it clicks all the way in.
+-  Make sure you push the SD card all the way into the slot, as its spring
+   loaded and isn't inserted until it clicks all the way in.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_sdcard_connected.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Take of the CN0540 data acquisition(DAQ) board, it will look like this.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_hw.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Orient the CN0540 DAQ board so that the SMA connector is on the same end as the Ethernet jack of the DE10-Nano.
--  Find the Arduino header pins on the CN0540 and line them up with the mating Arduino connectors found on the DE10-Nano.\
+-  Find the Arduino header pins on the CN0540 and line them up with the mating
+   Arduino connectors found on the DE10-Nano.\
 
 |image1|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_stacked_lineup.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Once both rows of pins are lined up, push the CN0540 DAQ board down into the DE10-Nano so that the boards fit snuggly together.\ |image2| Note, the CN0540 will make solid contact with the DE10-Nano even with the plexiglass installed, so there is no need to remove that before connecting the two boards together.
--  Connect the SMA cable from the CN0532 sensor board to the SMA connector on the CN0540 DAQ board.\
+-  Connect the SMA cable from the CN0532 sensor board to the SMA connector on
+   the CN0540 DAQ board.\
 
 |image3|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_sma_connected.jpg
-   :width: 325px
+   :width: 325
 
 -  Next its time to connect the peripherals up to the DE10-Nano
--  Connect up the USB On the GO(OTG) cable using the micro USB port on the DE10-Nano.
+-  Connect up the USB On the GO(OTG) cable using the micro USB port on the
+   DE10-Nano.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_otg_connected.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Place the wireless keyboard/mouse dongle into the end of the USB OTG cable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_otg_connected_dongle.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Place one end of the HDMI cable into the HDMI connector on the DE10-Nano.\
-
 
 |image4|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_hdmi_connected.jpg
-   :width: 400px
+   :width: 400
 
 -  Connect the 5V power supply to the power jack provided on the DE10-Nano.
-
 
 |image5|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_power_connected.jpg
-   :width: 400px
+   :width: 400
 
 Booting
 -------
 
-Now that you have everything plugged into the DE10-Nano and the CN0540 boards, its time to boot the system.
+Now that you have everything plugged into the DE10-Nano and the CN0540 boards,
+its time to boot the system.
 
 .. important::
 
-   Make sure that your HDMI cable is connected into your HDMI monitor before applying power to the DE10-Nano board
-
+   Make sure that your HDMI cable is connected into your HDMI monitor before
+   applying power to the DE10-Nano board
 
 -  Plug the DC power supply into your power outlet.
 -  You'll notice that the several LEDs turn on, and after about 5-10 seconds the "User LED" on the DE10-Nano near the Ethernet jack will turn on (it should be solid orange).
@@ -167,7 +184,8 @@ Now that you have everything plugged into the DE10-Nano and the CN0540 boards, i
 Using the System with IIO Oscilloscope
 --------------------------------------
 
-Now its time to start communicating with the CN0540 so you can start streaming data. When you first open IIO-Oscilloscope you'll see two windows.
+Now its time to start communicating with the CN0540 so you can start streaming
+data. When you first open IIO-Oscilloscope you'll see two windows.
 
 -  CN0540 Plugin / DMM / DEBUG Window
 -  IIO Capture Window
@@ -175,9 +193,16 @@ Now its time to start communicating with the CN0540 so you can start streaming d
 CN0540 IIO-Oscilloscope Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The CN0540 IIO Plugin automatically configures the CN0540, so it is ready to use as soon as you run the application. Calibration of the sensor is also automatically performed so that a user can start using the capture window to collect and analyze data. No other configuration is required for the application.
+The CN0540 IIO Plugin automatically configures the CN0540, so it is ready to use
+as soon as you run the application. Calibration of the sensor is also
+automatically performed so that a user can start using the capture window to
+collect and analyze data. No other configuration is required for the
+application.
 
-If you want to re-calibrate the system, shut the system down, or modify individual registers of the devices on the CN0540 that can also be done either using the CN0540 Plugin or using the DEBUG panel to write/read specific registers. This is optional and typically application specific.
+If you want to re-calibrate the system, shut the system down, or modify
+individual registers of the devices on the CN0540 that can also be done either
+using the CN0540 Plugin or using the DEBUG panel to write/read specific
+registers. This is optional and typically application specific.
 
 Below is a picture of what the CN0540 IIO Plugin looks like.
 
@@ -225,14 +250,14 @@ User interface
 IIO Capture Window
 ~~~~~~~~~~~~~~~~~~
 
-For CbM applications, most customers are typically interested in the frequency domain plots. To obtain a FFT plot, do the following:
+For CbM applications, most customers are typically interested in the frequency
+domain plots. To obtain a FFT plot, do the following:
 
 -  Use the drop down menu labeled "Plot Type" and select "Frequency Domain".
 -  Set the number of samples to 16384
 -  Set the averaging to 3
 
 You should see a nice plot like this when connected to the CN0532 sensor.\
-
 
 |image8|
 
@@ -268,18 +293,18 @@ Standalone Demo Kit
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_angled_lineup.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_stacked.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_sma_insert.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_hdmi_insert.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_power_insert.jpg
-   :width: 330px
+   :width: 330
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_controls.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_block_diagram.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_capture_cn0532.png
-   :width: 500px
+   :width: 500

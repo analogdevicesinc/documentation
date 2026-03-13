@@ -45,7 +45,8 @@ Setting up the Hardware
 -----------------------
 
 -  Connect **EVAL-CN0418-ARDZ** to the **EVAL-ADICUP3029**.
--  Set the jumpers into the position shown below. This is the standard position and only works for one board systems.
+-  Set the jumpers into the position shown below. This is the standard position
+   and only works for one board systems.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0418_jumper_position.jpg
    :align: center
@@ -59,15 +60,15 @@ Setting up the Hardware
 Configuring the Software
 ------------------------
 
-The software needs no configuration beyond the CLI UART baudrate, and HART UART parity and number of bits. These can be accessed in the ADuCM3029_demo_cn0418.c file in the main function, but usually the default values work best.
+The software needs no configuration beyond the CLI UART baudrate, and HART UART
+parity and number of bits. These can be accessed in the ADuCM3029_demo_cn0418.c
+file in the main function, but usually the default values work best.
 
 Outputting Data
 ---------------
 
 Serial Terminal Output
 ~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
@@ -144,12 +145,11 @@ preferences.
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
 
-
-
 Available Commands
 ~~~~~~~~~~~~~~~~~~
 
-Typing help or h after initial calibration sequence will display the list of commands and their short versions. Bellow is the short command list:
+Typing help or h after initial calibration sequence will display the list of
+commands and their short versions. Bellow is the short command list:
 
 +------------------+------------------------------------------------------------------------------------------+
 | Command          | Description                                                                              |

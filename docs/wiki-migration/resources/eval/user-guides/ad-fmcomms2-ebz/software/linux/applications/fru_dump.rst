@@ -6,7 +6,8 @@ As part of the FMC specification, EEPROMs exist on the FMC cards which can provi
 FMCOMMS2 + ZCU102 Example
 -------------------------
 
-To update the EEPROM image with the masterfiles follow this procedure on the FPGA development kit itself, such as the ZCU102, ZC706, or similar.
+To update the EEPROM image with the masterfiles follow this procedure on the
+FPGA development kit itself, such as the ZCU102, ZC706, or similar.
 
 1. Open a terminal or SSH to the target board
 
@@ -54,7 +55,8 @@ If programmed, it will have the following output:
 
 4. To update the EEPROM you will need the master file for that particular board. For Kuiper Linux, the master files are located within the **/usr/local/src/fru_tools/masterfiles/** folder. If this does not exist or you are not using Kuiper Linux, you can download the files from :git-fru_tools:`GitHub <masterfiles>`.
 
-Once you have located the master file for you board, update the EEPROM with it. Below is for FMCOMMS2:
+Once you have located the master file for you board, update the EEPROM with it.
+Below is for FMCOMMS2:
 
 ::
 
@@ -77,7 +79,8 @@ Once written it can be checked using fru-dump:
    BOM Rev         : 1
    Uses LVDS       : Y
 
-5. Once the EEPROM is updated it will be read at boot and the card should be correctly initialized. So at this point reboot the system
+5. Once the EEPROM is updated it will be read at boot and the card should be
+   correctly initialized. So at this point reboot the system
 
 ::
 

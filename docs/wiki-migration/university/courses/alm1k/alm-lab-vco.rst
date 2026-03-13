@@ -4,14 +4,24 @@ Activity: Voltage Controlled RC Oscillator.
 Objective:
 ----------
 
-The goal of this activity is to explore the use of the high gain inverting CMOS amplifier along with a voltage dependent resistor, NMOS transistor in triode region, to construct an RC oscillator who's frequency is controlled by the voltage applied to the gate of the NMOS transistor.
+The goal of this activity is to explore the use of the high gain inverting CMOS
+amplifier along with a voltage dependent resistor, NMOS transistor in triode
+region, to construct an RC oscillator who's frequency is controlled by the
+voltage applied to the gate of the NMOS transistor.
 
 Notes:
 ------
 
-As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.
+As in all the ALM labs we use the following terminology when referring to the
+connections to the M1000 connector and configuring the hardware. The green
+shaded rectangles indicate connections to the M1000 analog I/O connector. The
+analog I/O channel pins are referred to as CA and CB. When configured to force
+voltage / measure current -V is added as in CA-V or when configured to force
+current / measure voltage -I is added as in CA-I. When a channel is configured
+in the high impedance mode to only measure voltage -H is added as CA-H.
 
-Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
+Scope traces are similarly referred to by channel and voltage / current. Such as
+CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
 
 High gain inverting amplifier
 -----------------------------
@@ -19,13 +29,14 @@ High gain inverting amplifier
 Materials:
 ~~~~~~~~~~
 
-ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 - 0.01uF capacitor (103) 1 - 0.001uF capacitor (102) 1 - 4.7KΩ resistor 2 - 100KΩ resistors 1 - 5KΩ Potentiometer 1 - CD4007 CMOS transistor array
+ADALM1000 hardware module Solder-less breadboard and jumper wire kit 1 - 0.01uF
+capacitor (103) 1 - 0.001uF capacitor (102) 1 - 4.7KΩ resistor 2 - 100KΩ
+resistors 1 - 5KΩ Potentiometer 1 - CD4007 CMOS transistor array
 
 Background:
 ~~~~~~~~~~~
 
 The simple two transistor CMOS inverter can also be viewed as a high gain amplifier. It consists of one PMOS device, M\ :sub:`1` and one NMOS device M\ :sub:`2`. Generally the CMOS fabrication process is designed such that the magnitude of the threshold voltage, V\ :sub:`TH`, of the NMOS and PMOS devices are roughly equal i.e. complementary. The designer of the inverter then adjusts the width to length ratio, W/L, of the NMOS and PMOS devices such that their respective transconductance is also equal.
-
 
 |image1|
 
@@ -33,10 +44,7 @@ The simple two transistor CMOS inverter can also be viewed as a high gain amplif
 
    Figure 1 CMOS Inverting amplifier
 
-
 Below in figure 2 is the schematic and pinout for the CD4007:
-
-
 
 |image2|
 
@@ -44,17 +52,13 @@ Below in figure 2 is the schematic and pinout for the CD4007:
 
    Figure 2 CD4007 CMOS transistor array pinout
 
-
 As many as three individual inverters can be built from one CD4007 package. The simplest first one to configure as shown below is by connecting pins 8 and 13 together as the inverter output. Pin 6 will be the input. Be sure to connect pin 14 V\ :sub:`DD` to power and pin 7 V\ :sub:`SS` to ground.
-
-
 
 |image3|
 
 .. container:: centeralign
 
    Figure 3 one CD4007 CMOS inverter
-
 
 A second Inverter is made by connecting pin 2 to V\ :sub:`DD`, pin 4 to V\ :sub:`SS`, pins 1 and 5 are connected together as the output and with pin 3 as the input. A third inverter is made by connecting pin 11 to V\ :sub:`DD`, pin 9 to V\ :sub:`SS`, pin 12 is the output and pin 10 is the input.
 
@@ -63,28 +67,32 @@ Directions:
 
 First build the simple example shown figure 4 to test the input to output transfer function of the simple CMOS amplifier. The green boxes indicate connections to the connector on ALM1000. Connect +5V power supply to V\ :sub:`CC` (pin 14) and ground to GND (pin 7). Connect the output of the channel A voltage generator to one of the inverter inputs (pin 6) and connect the inverter output (pin 8,13) to channel B scope input CB-H in Hi-Z mode.
 
-
 |image4|
 
 .. container:: centeralign
 
    Figure 4 amplifier transfer function
 
-
 Hardware Setup:
 ~~~~~~~~~~~~~~~
 
-Configure the channel A voltage generator CA-V for a 200 Hz triangle wave with 0 V Min value and 5V Max value. Both scope channels should be set to 0.5V/Div.
+Configure the channel A voltage generator CA-V for a 200 Hz triangle wave with 0
+V Min value and 5V Max value. Both scope channels should be set to 0.5V/Div.
 
 Procedure:
 ~~~~~~~~~~
 
-Measure the DC input offset where the gain in the highest. Measure the slope of the output and calculate the DC gain of the amplifier as the ratio of the change in the output voltage to the change in input voltage at the center of the output swing (i.e. approx. around 2.5V). Remember the answer should be a negative number because the amplifier inverts.
+Measure the DC input offset where the gain in the highest. Measure the slope of
+the output and calculate the DC gain of the amplifier as the ratio of the change
+in the output voltage to the change in input voltage at the center of the output
+swing (i.e. approx. around 2.5V). Remember the answer should be a negative
+number because the amplifier inverts.
 
 Questions:
 ~~~~~~~~~~
 
-What is the gain from the input source, CA-V, to the output seen at the inverter output? At what DC voltage at the input is the gain the highest?
+What is the gain from the input source, CA-V, to the output seen at the inverter
+output? At what DC voltage at the input is the gain the highest?
 
 Two stage astable multivibrator:
 --------------------------------
@@ -92,7 +100,11 @@ Two stage astable multivibrator:
 Background:
 ~~~~~~~~~~~
 
-There are basically two requirements to make an oscillator. The first is some sort of gain stage such as the CMOS inverter we just looked at and the second is some sort of frequency dependent or phase delay block like a RC time constant. Positive feedback around a cascade of two of these inverter stages such as was looked at in the MOS Multivibrator Activity completes the oscillator.
+There are basically two requirements to make an oscillator. The first is some
+sort of gain stage such as the CMOS inverter we just looked at and the second is
+some sort of frequency dependent or phase delay block like a RC time constant.
+Positive feedback around a cascade of two of these inverter stages such as was
+looked at in the MOS Multivibrator Activity completes the oscillator.
 
 To understand how the circuit shown in figure 5 oscillates we first assume that the output of the first inverter stage ( at pins 8 and 13 ) is high, near V\ :sub:`DD`. This means that the output of the second inverter stage ( at pin 12 ) is low, near V\ :sub:`SS`. The high voltage on pins 8,13 will begin charging capacitor C\ :sub:`1` through the combination of resistors R\ :sub:`2`, R\ :sub:`3` and M\ :sub:`5`. The voltage on C\ :sub:`1` is also the input to the first inverter stage at pin 6. Eventually the voltage on C\ :sub:`1` becomes high enough to be above the threshold of the first inverter stage and the output will switch from the high voltage to a low voltage ( near V\ :sub:`SS` ). This also causes the output of the second inverter stage to switch from low to high. Now C\ :sub:`1` driven by the output of stage 2, discharges through the resistors. Again, eventually the voltage at C\ :sub:`1` and the resistors becomes low enough to switch stage 1 back to its original starting state completing one cycle and starting the next.
 
@@ -101,13 +113,11 @@ Directions:
 
 First, be sure the power supplies are switched off before modifying your circuit. Working from the single inverter you constructed in figure 4 add a second inverter stage along with capacitor C\ :sub:`1` and the NMOS transistor M\ :sub:`5`\ from the array to build the oscillator as shown in figure 5. The waveform generator is no longer needed but keep scope channels A and B in HI-Z mode connected as shown in the figure.
 
-
 |image5|
 
 .. container:: centeralign
 
    Figure 5 Voltage controlled oscillator
-
 
 Hardware Setup:
 ~~~~~~~~~~~~~~~
@@ -135,12 +145,12 @@ Try substituting other higher and lower value capacitors for C\ :sub:`1` and aga
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f1.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f6.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-lco_f4.png
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-vco_f5.png
-   :width: 600px
+   :width: 600

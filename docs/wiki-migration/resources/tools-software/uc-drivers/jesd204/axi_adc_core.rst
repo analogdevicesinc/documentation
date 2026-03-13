@@ -28,7 +28,8 @@ Initialization example
 Code Documentation
 ------------------
 
-Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+Source code documentation for the driver is automatically generated using the
+Doxygen tool and it is available at:
 
 -  `AXI ADC Core Header file <http://analogdevicesinc.github.io/no-OS/doxygen/axi__adc__core_8h.html>`_
 -  `AXI ADC Core Source file <http://analogdevicesinc.github.io/no-OS/doxygen/axi__adc__core_8c.html>`_
@@ -43,4 +44,3 @@ Source Code
    -  :git-no-OS:`Implementation of AXI ADC Core Driver. <drivers/axi_core/axi_adc_core/axi_adc_core.c>`
    -  :git-no-OS:`Header of AXI ADC Core Driver. <drivers/axi_core/axi_adc_core/axi_adc_core.h>`
    
-

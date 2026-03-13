@@ -3,16 +3,24 @@ AD9834 LTSpice Model
 
 The :adi:`AD9834` is a low-frequency DDS that can generate sinusoidal, triangular and square waves with a sampling rate up to 75 MHz. The simulation model is represented with the following symbol.
 
-
 |image1|
 
-The circuit incorporates a 10-bit current-steering DAC with differential output (IOUT and IOUTB) that requires two termination resistors to ground. These outputs produce sinusoidal and triangular waveforms.
+The circuit incorporates a 10-bit current-steering DAC with differential output
+(IOUT and IOUTB) that requires two termination resistors to ground. These
+outputs produce sinusoidal and triangular waveforms.
 
-The circuit can also produce digital square waveforms on the SBO pin. To generate this signal, the circuit can use the sign bit of the DAC or use an integrated comparator on the filtered sinewave signal connected to VIN. The first method is more convenient at low frequency and the second method is more accurate at high frequency.
+The circuit can also produce digital square waveforms on the SBO pin. To
+generate this signal, the circuit can use the sign bit of the DAC or use an
+integrated comparator on the filtered sinewave signal connected to VIN. The
+first method is more convenient at low frequency and the second method is more
+accurate at high frequency.
 
-The DDS can be used as a modulator if a binary stream is connected to the FSEL or PSEL pins. The first one generates a binary FSK modulation, and the second one generates a binary PSK modulation.
+The DDS can be used as a modulator if a binary stream is connected to the FSEL
+or PSEL pins. The first one generates a binary FSK modulation, and the second
+one generates a binary PSK modulation.
 
-The AD9834 allows adjusting the full-scale current of the DAC, and therefore the amplitude of the signal, by changing the resistor connected to the FSADJ pin.
+The AD9834 allows adjusting the full-scale current of the DAC, and therefore the
+amplitude of the signal, by changing the resistor connected to the FSADJ pin.
 
 Pin Description
 ---------------
@@ -61,12 +69,15 @@ Supported Analysis
 -  DC Operating point (.DC)
 -  Transient analysis (.TRAN). The model can operate with or without MCLK. If MCLK is provided, the model produces a new sample for every clock cycle. Digital delays and set-up times are referred to the clock. If MCLK is not connected or grounded, the model takes a time step that ensures convergence, which results in a faster execution but less accurate in spectral content. This mode requires setting the correct value of the fMCLK parameter to calculate frequencies and delays.
 -  AC Analysis (.AC). The model supports AC analysis to easily tune the signal chain at the output of the DDS. The amplitude of the signal is nominally full scale.
--  Noise (.noise). The model supports noise analysis to see the thermal noise produced by resistors and reference. The output is set to mid-scale when this analysis is run.
+-  Noise (.noise). The model supports noise analysis to see the thermal noise
+   produced by resistors and reference. The output is set to mid-scale when this
+   analysis is run.
 
 Circuit Example
 ---------------
 
-The example provided with the circuit aims at demonstrating the main features of the AD9834:
+The example provided with the circuit aims at demonstrating the main features of
+the AD9834:
 
 -  Sinewave generation
 -  Phase and Frequency modulation
@@ -74,13 +85,18 @@ The example provided with the circuit aims at demonstrating the main features of
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/ad469x-ltspice-user-guide/ad9834_example.png
    :align: center
-   :width: 600px
+   :width: 600
 
-In addition, the example provides the formulas to compute the register values from the phase and frequency values. Shown under the Register Encoding section. The user is expected to edit the values in the User Parameters section. The output of the simulation looks like this:
+In addition, the example provides the formulas to compute the register values
+from the phase and frequency values. Shown under the Register Encoding section.
+The user is expected to edit the values in the User Parameters section. The
+output of the simulation looks like this:
 
 .. image:: https://wiki.analog.com/_media/resources/quick-start/ad469x-ltspice-user-guide/ad9834_waveforms.png
 
-For long simulations, the MCLK pin can grounded or floated. In this case the simulator adjusts the time step to ensure convergence. Simulation is faster but spectral and timing fidelity is reduced.
+For long simulations, the MCLK pin can grounded or floated. In this case the
+simulator adjusts the time step to ensure convergence. Simulation is faster but
+spectral and timing fidelity is reduced.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/ad469x-ltspice-user-guide/ad9834_symbol.png
-   :width: 400px
+   :width: 400

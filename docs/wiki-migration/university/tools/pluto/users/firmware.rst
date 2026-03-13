@@ -34,7 +34,6 @@ Latest Release
    +-------------------+---------------------------------------------------------------------------------------------------------------------------+
    
 
-
 Determining the firmware version
 --------------------------------
 
@@ -42,8 +41,9 @@ Determining the firmware version
 
    This assumes that you have USB plugged into the middle connector, as described at :doc:`the hardware section </wiki-migration/university/tools/pluto/hacking/hardware>` and have :doc:`Windows drivers </wiki-migration/university/tools/pluto/drivers/windows>` or :doc:`Mac drivers </wiki-migration/university/tools/pluto/drivers/osx>` installed.
 
-
-Before you update, check your existing version to understand if you really want to upgrade. There are a few ways to determine the version of firmware on your device.
+Before you update, check your existing version to understand if you really want
+to upgrade. There are a few ways to determine the version of firmware on your
+device.
 
 Host Command Line
 ~~~~~~~~~~~~~~~~~
@@ -95,14 +95,15 @@ If you are less keyboard prone, then you can check visually, as well.
 Open the ``PlutoSDR`` mass storage device or ``M2K`` mass storage device. This will have a file called ``info.html``. Double clicking on this file should open it in your favourite browser, clicking on the ``firmware`` tag in the top should take you down to a section that looks like this:
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/plutofirmwareversion.png
-   :width: 900px
+   :width: 900
 
 The version on this devices is ``0.31``
 
 Pluto rev C/D
 ~~~~~~~~~~~~~
 
-All the above methods will work on a the most recent revisions, but there are some additional methods that will only work on rev C or D.
+All the above methods will work on a the most recent revisions, but there are
+some additional methods that will only work on rev C or D.
 
 This assumes that you have USB plugged into the far right "power" connector, as described at :doc:`the hardware section </wiki-migration/university/tools/pluto/hacking/hardware>`. The 2nd USB connector (the one labeled with the AC adapter logo) is not only power for USB OTG, but also a USB console. This means you can do things without using SSH, although you will need some sort of terminal application for your computer.
 
@@ -113,12 +114,14 @@ then just follow the instructions above.
 Upgrading
 ---------
 
-The easiest way to update the firmware is to use the mass storage device included in the default image. There are times when this might not be possible (when you aren't using the default image, or if you accidentally bricked your device by unplugging it during a firmware upgrade).
+The easiest way to update the firmware is to use the mass storage device
+included in the default image. There are times when this might not be possible
+(when you aren't using the default image, or if you accidentally bricked your
+device by unplugging it during a firmware upgrade).
 
 .. important::
 
    There are very legitimate `Security Risks <https://en.wikipedia.org/wiki/Firmware#BADUSB>`_ about loading random firmware images onto devices like the ADALM-PLUTO or ADALM2000, however, we decided early on that a learning tool must be open and accessible for people to experiment on. Please only use firmware images you have received from trusted locations.
-
 
 Mass Storage Update
 -------------------
@@ -128,7 +131,6 @@ Copy the ``pluto.frm`` or ``m2k.frm`` file onto the mass storage device, and the
 .. warning::
 
    Don't disconnect the device until rapid blinking stops!
-
 
 Windows/OSX
 ~~~~~~~~~~~
@@ -141,12 +143,12 @@ Windows/OSX
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/win10_gui_update.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  OSX
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/copyfirmware_osx2.png
-   :width: 800px
+   :width: 800
 
 -  Eject (don't unplug) the mass storage device
 
@@ -154,12 +156,12 @@ Windows/OSX
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/eject-right-pluto-win10.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  OSX
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/eject_osx.png
-   :width: 200px
+   :width: 200
 
 -  This will cause ``LED1`` to blink rapidly. This means programming is taking place. Do not remove power (or USB) while the device is blinking rapidly. It does take approximately 4 minutes to properly program the device.
 -  Still do not unplug things. Try to be more patient.
@@ -188,7 +190,6 @@ It's exactly the same as the GUI instructions, copy it, and then eject it, then 
       analog@imhotep:~/pluto$ sudo eject /dev/sdb
       analog@imhotep:~/pluto$ echo "WAIT 4 minutes for firmware to update!!!! Do not unplug the device."
    
-
 
 Network Update
 --------------
@@ -252,7 +253,9 @@ DFU Update
 
 `USB Device Firmware Upgrade <https://en.wikipedia.org/wiki/USB#Device_Firmware_Upgrade>`_ (DFU) is an official USB device class specification of the USB Implementers Forum. It specifies a vendor and device independent way of updating the firmware of a USB device. The concept is to have only one vendor-independent update tool as part of the operating system, which can then (given a particular firmware image) be downloaded into the device. During the firmware upgrade operation (when the Pluto or M2k is in "DFU" mode), the device changes its operating mode (it's no longer an SDR or an instrument, no longer uses it's standard PID/VID, but becomes a flash programmer).
 
-This should only be necessary to recover your device if something accidentally happened during a firmware update (like having loose USB plugs, or bad USB cables, which cause a power cycle during a normal firmware update.)
+This should only be necessary to recover your device if something accidentally
+happened during a firmware update (like having loose USB plugs, or bad USB
+cables, which cause a power cycle during a normal firmware update.)
 
 Entering DFU mode
 ~~~~~~~~~~~~~~~~~
@@ -260,7 +263,8 @@ Entering DFU mode
 How to manually enter DFU mode?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In general, the preferred firmware upgrade is via the mass storage device. There are 3 ways to enter the DFU mode manually:
+In general, the preferred firmware upgrade is via the mass storage device. There
+are 3 ways to enter the DFU mode manually:
 
 -  **Press the device button** with a toothpick, paper-clip or similar and then apply power by plugging in the USB cable.
 -  From the device linux console type **device_reboot sf**. There are three ways to access the linux console:
@@ -274,7 +278,9 @@ In general, the preferred firmware upgrade is via the mass storage device. There
 When does the device automatically enter DFU mode?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The device enters DFU mode in case booting the multi component FIT image (Flattened Image Tree) fails. This may happen due to checksum failure caused by a corrupted previous firmware update.
+The device enters DFU mode in case booting the multi component FIT image
+(Flattened Image Tree) fails. This may happen due to checksum failure caused by
+a corrupted previous firmware update.
 
 How can I check if the device is in DFU mode?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -287,7 +293,7 @@ Windows
 Check with Device Manager, and see if the DFU mode shows up.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/device_manager_dfu.png
-   :width: 200px
+   :width: 200
 
 on Linux
 ^^^^^^^^
@@ -311,13 +317,13 @@ On MAC
 
 Check on
 
-
 |image1|
 
 Update using DFU mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-How to update the firmware using DFU mode? How to rewrite the default uboot environment?
+How to update the firmware using DFU mode? How to rewrite the default uboot
+environment?
 
 Windows
 ^^^^^^^
@@ -394,9 +400,12 @@ Updating the firmware is the same as Linux:
 Debugging DFU
 ~~~~~~~~~~~~~
 
-If those instructions didn't help - you might get here. Hopefully this will help describe things.
+If those instructions didn't help - you might get here. Hopefully this will help
+describe things.
 
-The first thing to try is to make sure the device (Pluto or M2k) is actually in DFU mode. This is accomplished by asking the dfu utilities to list any devices that it finds, their configuration, interface and altsetting.
+The first thing to try is to make sure the device (Pluto or M2k) is actually in
+DFU mode. This is accomplished by asking the dfu utilities to list any devices
+that it finds, their configuration, interface and altsetting.
 
 .. note::
 
@@ -421,7 +430,6 @@ The first thing to try is to make sure the device (Pluto or M2k) is actually in 
       Found DFU: [0456:b674] ver=0221, devnum=7, cfg=1, intf=0, path="1-1", alt=0, name="boot.dfu", serial="UNKNOWN"
    
    Just don't type in the ``sudo`` that is necessary on Linux.
-
 
 Here it found one device, with 5 "partitions" in the flash map.
 
@@ -471,8 +479,8 @@ When the system boots, it follows this basic process:
    -  ``uboot-env.dfu``
    
 
-
-And corruption of those sections can cause problems in the booting process. In order, try writing the:
+And corruption of those sections can cause problems in the booting process. In
+order, try writing the:
 
 -  firmware section:``rgetz@brain:~/$ **sudo dfu-util -a firmware.dfu -D ./pluto.dfu**
    dfu-util 0.9
@@ -604,13 +612,15 @@ Release Notification
 
 When a new release is made, you can be automatically notified if you are watching the release section on github. To do this, you need to be logged into github with a valid account (and have a valid email where you want notifications to show up). Then just go to the `GitHub Scopy site <https://github.com/analogdevicesinc/scopy>`_; `GitHub M2k Firmware site <https://github.com/analogdevicesinc/m2k-fw>`_ or `GitHub PlutoSDR Firmware site <https://github.com/analogdevicesinc/plutosdr-fw>`_. Scopy has built in notification (it will tell you on startup if a new feature is available, but if you are a lab manager, and still want to be notified - the default github notifications are the best solution).
 
-Click on the "Watch" button in the right hand side, then decide if you want to watch everything, or just releases (under Custom). (Click on the picture if you need it bigger).
+Click on the "Watch" button in the right hand side, then decide if you want to
+watch everything, or just releases (under Custom). (Click on the picture if you
+need it bigger).
 
 |watch.png| |image2|
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/users/dfumode_osx.png
-   :width: 300px
+   :width: 300
 .. |watch.png| image:: https://wiki.analog.com/_media/university/tools/pluto/users/watch.png
-   :width: 440px
+   :width: 440
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/pluto/users/watch2.png
-   :width: 440px
+   :width: 440

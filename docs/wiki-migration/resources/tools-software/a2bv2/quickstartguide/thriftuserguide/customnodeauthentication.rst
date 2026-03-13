@@ -3,14 +3,17 @@
 Custom Node Authentication
 ==========================
 
-This API is used for the enabling or disabling the Custom Node Authentication along with settings for Sub nodes in A2B network. It takes element Uid and customAuthentication info as arguments and returns SSPResult.
+This API is used for the enabling or disabling the Custom Node Authentication
+along with settings for Sub nodes in A2B network. It takes element Uid and
+customAuthentication info as arguments and returns SSPResult.
 
 **API:** SSPResult EnableCustomAuth(string elementUid, AnalogDevices.SigmaStudio.Scripting.ADI_A2B_CUSTOM_ID customAuth);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Sub Node
--  “customAuth” = Custom Authentication configuration contains below parameters as shown below
+-  “customAuth” = Custom Authentication configuration contains below parameters
+   as shown below
 
    -  BEnableNodeId – For enabling/disabling Custom Node Identifier of specified Sub node
 
@@ -28,7 +31,8 @@ This API is used for the enabling or disabling the Custom Node Authentication al
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of EnableCustomAuth action.
 
 -  IsSuccess is set to 'True' if the EnableCustomAuth was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **CSharp Example:**
 
@@ -69,4 +73,3 @@ This API is used for the enabling or disabling the Custom Node Authentication al
 .. tip::
 
    For more information about Custom node ID configuration, you can refer to the :doc:`A2B Plugin for SigmaStudio+ User Guide </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/drawinga2bschematics>`.
-

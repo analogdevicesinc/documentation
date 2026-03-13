@@ -3,14 +3,16 @@ Complex DC Input Entry
 
 :doc:`Click here to return to the sources page </wiki-migration/resources/tools-software/sigmastudio/toolbox/sources>`
 
-The Complex DC Input Block allows you to generate a DC complex signal in the block processing domain.
+The Complex DC Input Block allows you to generate a DC complex signal in the
+block processing domain.
 
-The block's controls allow the DC value and the format to be set. There are 32 available bits which can be used to represent decimal values.
+The block's controls allow the DC value and the format to be set. There are 32
+available bits which can be used to represent decimal values.
 
 .. important::
 
-   Please make sure block Size for the complex DC module is double the size of Non-Complex inputs
-
+   Please make sure block Size for the complex DC module is double the size of
+   Non-Complex inputs
 
 .
 

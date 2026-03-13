@@ -6,9 +6,19 @@ Overview
 
 **\*Some specifications about the board, the chip, etc. Typically the information found on the** :adi:`ADI Products <en/products>` **website**\ \*
 
-The AD5706R devices are 4-channel, 16-/12-/10-bit resolution, low noise, programmable current output, digital-to-analog converter (DAC) capable of multiple operating modes and output current ranges with high power efficiency. These are intended for photonics control and current mode biasing applications. The devices incorporate a 2.5V, on-chip voltage reference, die temperature, load DAC, and A/B toggle functions, output monitoring functions, and reset functions.
+The AD5706R devices are 4-channel, 16-/12-/10-bit resolution, low noise,
+programmable current output, digital-to-analog converter (DAC) capable of
+multiple operating modes and output current ranges with high power efficiency.
+These are intended for photonics control and current mode biasing applications.
+The devices incorporate a 2.5V, on-chip voltage reference, die temperature, load
+DAC, and A/B toggle functions, output monitoring functions, and reset functions.
 
-The family provides multiple programmable output current ranges up to 300mA. With device addressable pins, an SPI transaction can communicate with up to four AD5706R on the same SPI bus. Each DAC operates with an independent positive power supply rails PVDDx from 1.65V to 3.6V, for optimizing power efficiency and thermal power dissipation. The AD5706R operate from a 2.9V to 3.6V AVDD supply and are specified over the −40°C to +125°C temperature range.
+The family provides multiple programmable output current ranges up to 300mA.
+With device addressable pins, an SPI transaction can communicate with up to four
+AD5706R on the same SPI bus. Each DAC operates with an independent positive
+power supply rails PVDDx from 1.65V to 3.6V, for optimizing power efficiency and
+thermal power dissipation. The AD5706R operate from a 2.9V to 3.6V AVDD supply
+and are specified over the −40°C to +125°C temperature range.
 
 Supported devices
 -----------------
@@ -37,7 +47,7 @@ Block diagram
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/ad5706r_block_diagram.svg
    :alt: ad5706r_block_diagram.svg
-   :width: 800px
+   :width: 800
 
 IP list
 ~~~~~~~
@@ -108,7 +118,8 @@ Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/
 System setup
 ------------
 
-\*\* The Coraz7s can be connected to the AD5706R Evaluation Board via the Arduino header. \*\*
+\*\* The Coraz7s can be connected to the AD5706R Evaluation Board via the
+Arduino header. \*\*
 
 Resources
 ---------
@@ -130,4 +141,5 @@ Support
 
 Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
 
-It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.
+It should be noted, that the older the tools' versions and release branches are,
+the lower the chances to receive support from ADI engineers.

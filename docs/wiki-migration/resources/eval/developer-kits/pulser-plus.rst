@@ -18,9 +18,35 @@ General Description
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/pulserpulsangleviewwithpaevalmounted.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
-The Pulser Plus reference design was specifically designed to enable fast pulsing of GaN Radar Power Amplifiers. It can support RF pulses as short as 1us and with rise and fall times of 200 ns. Figure 1 shows a simplified block diagram of the board. The circuit has two main branches, the Drain Voltage Generator and the Gate Voltage generator. The Drain Voltage Generator circuitry consists of a fast switching MOSFET (Infineon P/N BSC340N08NS3) and the LTC7000 FET driver. On the Drain/Supply side of the FET, there is bank of capacitors which store charge and facilitate fast on/off switching when the FET is switched on and off. There is also a 10 mΩ series resistor on the Drain side of the FET. Both sides of this resistor are connected to the LTC7000 SNS+ and SNS- pins for current sensing and current limiting. This resistor is also connected to the LT1999 current sense amplifier which provides a current monitoring signal which is faster than the LTC7000’s IMON function. The Drain Voltage Generator branch also includes a crowbar circuit (AON7296 (Alpha and Omega Semiconductor) and ADP3625 FET driver). This optional circuit can be used to provide very fast turn off of the drain voltage when operating in Drain Pulsed Mode. The Gate Voltage Generator circuitry consists of a negative voltage generator and LDO which create a -5.5V supply. This -5.5V powers a single supply op-amp (0V and -5.5V). A derived -5.0V signal also drives a resistor divider whose other side is connected ADG1401, a Single Pole Single Throw (SPST) switch. When the switch is open, the op-amp input and output voltage is -5V. This gate voltage is intended to put the GaN PA in pinch-off mode. When the SPST is closed, the resistor divider is active and the op-amp is driven by a voltage that can be varied from -0.7V to -3.3V using the potentiometer. The Source pin of the FET and the op-amp output are connected to a pair of 24 pin headers. Various ADI GaN PA evaluation boards can be plugged into this header pair and operated in Drain Puled Mode or Gate Pulsed Mode.
+The Pulser Plus reference design was specifically designed to enable fast
+pulsing of GaN Radar Power Amplifiers. It can support RF pulses as short as 1us
+and with rise and fall times of 200 ns. Figure 1 shows a simplified block
+diagram of the board. The circuit has two main branches, the Drain Voltage
+Generator and the Gate Voltage generator. The Drain Voltage Generator circuitry
+consists of a fast switching MOSFET (Infineon P/N BSC340N08NS3) and the LTC7000
+FET driver. On the Drain/Supply side of the FET, there is bank of capacitors
+which store charge and facilitate fast on/off switching when the FET is switched
+on and off. There is also a 10 mΩ series resistor on the Drain side of the FET.
+Both sides of this resistor are connected to the LTC7000 SNS+ and SNS- pins for
+current sensing and current limiting. This resistor is also connected to the
+LT1999 current sense amplifier which provides a current monitoring signal which
+is faster than the LTC7000’s IMON function. The Drain Voltage Generator branch
+also includes a crowbar circuit (AON7296 (Alpha and Omega Semiconductor) and
+ADP3625 FET driver). This optional circuit can be used to provide very fast turn
+off of the drain voltage when operating in Drain Pulsed Mode. The Gate Voltage
+Generator circuitry consists of a negative voltage generator and LDO which
+create a -5.5V supply. This -5.5V powers a single supply op-amp (0V and -5.5V).
+A derived -5.0V signal also drives a resistor divider whose other side is
+connected ADG1401, a Single Pole Single Throw (SPST) switch. When the switch is
+open, the op-amp input and output voltage is -5V. This gate voltage is intended
+to put the GaN PA in pinch-off mode. When the SPST is closed, the resistor
+divider is active and the op-amp is driven by a voltage that can be varied from
+-0.7V to -3.3V using the potentiometer. The Source pin of the FET and the op-amp
+output are connected to a pair of 24 pin headers. Various ADI GaN PA evaluation
+boards can be plugged into this header pair and operated in Drain Puled Mode or
+Gate Pulsed Mode.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/pulserplustopview.jpg
    :align: center
@@ -72,14 +98,21 @@ Specifications
 Performance Plots
 =================
 
-The performance plots shown here were measured with the ADPA1116 connected to the Pulser Plus board. Gate and Drain capacitances on the evaluation board were removed as necessary to ensure a fast response in Gate Pulsed and Drain Pulsed mode.
+The performance plots shown here were measured with the ADPA1116 connected to
+the Pulser Plus board. Gate and Drain capacitances on the evaluation board were
+removed as necessary to ensure a fast response in Gate Pulsed and Drain Pulsed
+mode.
 
 :doc:`Performance Plots </wiki-migration/resources/eval/developer-kits/pulser-plus/performanceplots>`
 
 Power Amplifier Evaluation Board Compatibility
 ==============================================
 
-Compatibility of power amplifiers with the Pulser Plus board is primarily a function of the pinout of the header(s) on the PA evaluation board. Where the header is not pin-compatible, it should be still possible to wire the two boards together. When doing this, try to keep wire lengths as short as possible and make sure that the VDD lines are thick enough to handle the expected current.
+Compatibility of power amplifiers with the Pulser Plus board is primarily a
+function of the pinout of the header(s) on the PA evaluation board. Where the
+header is not pin-compatible, it should be still possible to wire the two boards
+together. When doing this, try to keep wire lengths as short as possible and
+make sure that the VDD lines are thick enough to handle the expected current.
 
 +---------------+----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | *Part Number* | *Description*                                            | *Notes*                                                                                                                                                                                                                                                                                                                                               |
@@ -138,8 +171,8 @@ Circuit description and operation can be found here:
 Drain Pulsed Mode Operation
 ---------------------------
 
-The figure below shows the recommended bench setup for operation in Drain pulsed mode.
-
+The figure below shows the recommended bench setup for operation in Drain pulsed
+mode.
 
 |image1|
 
@@ -159,7 +192,11 @@ Setup
 -  Switch the operating mode to Zero Span. Set the Resolution Bandwidth (RBW) and Video Bandwidth (VB) to the highest available values (ideally 10 MHz or greater). Set the sweep trigger to "External"
 -  Connect a digital pulse generator to the Drain Pulse Enable SMA connector. The high level on this pulse should be between 3V and 5V. Note the Drain Pulse Enable input is terminated with a 50 ohm resistor (R13) on the Pulser Plus Board. Set up the digital pulser generator so that it is expecting to be driving a 50 ohm load.
 -  The sync output of the pulse generator should be connected to the trigger input of the spectrum analyzer. This signal will provide the trigger to the spectrum analyzer to start its zero span sweep.
--  If the PA evaluation board is not connected to a heat sink, operation at a very low duty cycle is recommended. A starting pulse profile of 10 us high and 10 ms low is recommended (i.e. 0.1% duty cycle). For PAs operating up to 47 dBm output power, this duty cycle has been observed to result in negligible self-heating.
+-  If the PA evaluation board is not connected to a heat sink, operation at a
+   very low duty cycle is recommended. A starting pulse profile of 10 us high
+   and 10 ms low is recommended (i.e. 0.1% duty cycle). For PAs operating up to
+   47 dBm output power, this duty cycle has been observed to result in
+   negligible self-heating.
 
 Turn On
 ~~~~~~~
@@ -174,7 +211,7 @@ The signal on the spectrum analyzer should be similar to the trace below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/pulser_plus_drain_pulsed_mode_1us_pulse.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Turn Off
 ~~~~~~~~
@@ -210,7 +247,11 @@ Setup
 -  Care should be taken in setting the attenuation level of the spectrum analyzer. To maximize the dynamic range of the measurement, set the attenuation of the spectrum analyzer to the minimum that the spectrum analyzer will accept (this will maximize the range of the instrument's internal RF power detectors). Setting the spectrum analyzer's input attenuation level too high may result in an slow observed response time, particularly on its falling edge.
 -  Switch the operating mode to Zero Span. Set the Resolution Bandwidth (RBW) and Video Bandwidth (VB) to the highest available values (ideally 10 MHz or greater). Set the sweep trigger to "External"
 -  Switch the operating mode to Zero Span. Set the Resolution Bandwidth (RBW) and Video Bandwidth (VB) to the highest available values (ideally 10 MHz or greater). Set the sweep trigger to "External" and connect the pulse generator's sync or trigger output to the external trigger input of the spectrum analyzer. This signal will trigger input will be used to start the spectrum analyzer's zero span sweep
--  If the PA evaluation board is not connected to a heat sink, operation at a very low duty cycle is recommended. A starting pulse profile of 10 us high and 10 ms low is recommended (i.e. 0.1% duty cycle). For PAs operating up to 47 dBm output power, this duty cycle has been observed to result in negligible self-heating.
+-  If the PA evaluation board is not connected to a heat sink, operation at a
+   very low duty cycle is recommended. A starting pulse profile of 10 us high
+   and 10 ms low is recommended (i.e. 0.1% duty cycle). For PAs operating up to
+   47 dBm output power, this duty cycle has been observed to result in
+   negligible self-heating.
 
 Turn On
 ~~~~~~~

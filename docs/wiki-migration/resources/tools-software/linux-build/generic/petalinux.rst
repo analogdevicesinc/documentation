@@ -20,7 +20,8 @@ The ADI Linux kernel can also be compiled using Petalinux to be used on Xilinx S
 Messages
 --------
 
-If you are interested in the Linux console messages and command line interface, connect a USB cable to the USB UART port. Terminal settings are 115200,8N1.
+If you are interested in the Linux console messages and command line interface,
+connect a USB cable to the USB UART port. Terminal settings are 115200,8N1.
 
 The user is:
 
@@ -594,5 +595,3 @@ You should see the board start-up messages as follows:
             zynqmp-zcu102-fmcomms5 login: root
             Password:
    
-
-

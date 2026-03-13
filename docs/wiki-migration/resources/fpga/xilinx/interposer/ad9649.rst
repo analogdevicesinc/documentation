@@ -20,7 +20,9 @@ Supported Carriers
 Quick Start Guide
 -----------------
 
-The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided combines the FPGA bit file and the SDK elf files. It may
+be used for a quick check on the system. All you need is the hardware and a PC
+running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -52,23 +54,28 @@ To begin make the following connections (see image below):
 -  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on KC705.
 -  Follow the :doc:`AD9649 evaluation board setup </wiki-migration/resources/eval/ad9266-80ebz_ad9649-80ebz_ad9629-80ebz_ad9609-80ebz>` instructions.
 
-After the hardware setup, turn the power on to the KC705 and the AD9649 evaluation boards.
+After the hardware setup, turn the power on to the KC705 and the AD9649
+evaluation boards.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9649_ebz_setup.jpg
    :alt: Hardware setup
-   :width: 200px
+   :width: 200
 
-Start IMPACT, and initialze the JTAG chain. The program should recognize the Kintex 7 device. Start a UART terminal (set to 57600 baud rate) and then program the device. If programming was successful, you should be seeing messages appear on the terminal as shown in figure below. After programming the AD9649, the program checks data capture on various test modes.
+Start IMPACT, and initialze the JTAG chain. The program should recognize the
+Kintex 7 device. Start a UART terminal (set to 57600 baud rate) and then program
+the device. If programming was successful, you should be seeing messages appear
+on the terminal as shown in figure below. After programming the AD9649, the
+program checks data capture on various test modes.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9649_ebz_uart.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
 A chipscope bus plot of the captured input is shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9649_ebz_chipscope.jpg
    :alt: Terminal
-   :width: 200px
+   :width: 200
 
 Using the reference design
 --------------------------
@@ -76,7 +83,11 @@ Using the reference design
 Functional description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design consists of two functional modules, a capture interface and a DMA interface. The capture interface provides the physical interface to the ADC. It is then transferred to the DMA module. The DMA module interfaces to the Xilinx AXI-DMA engine and stores a programmable number of samples on the external DDR-DRAM on KC705.
+The reference design consists of two functional modules, a capture interface and
+a DMA interface. The capture interface provides the physical interface to the
+ADC. It is then transferred to the DMA module. The DMA module interfaces to the
+Xilinx AXI-DMA engine and stores a programmable number of samples on the
+external DDR-DRAM on KC705.
 
 Registers
 ~~~~~~~~~
@@ -96,7 +107,6 @@ FPGA Referece Designs:
    -  **KC705 (Bit files):** `cf_ad9649_ebz_sw_14_4_2013_03_19.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9649_ebz_sw_14_4_2013_03_19.tar.gz>`_
    
 
-
 Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
 
 .. hint::
@@ -104,7 +114,6 @@ Only Xilinx coregen xco files are provided with the reference design. You must r
    
    -  Questions? :ez:`Ask Help & Support <fpga>`.
    
-
 
 Tar file contents
 -----------------

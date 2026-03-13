@@ -1,9 +1,11 @@
 Animated Depth Images using PyGame
 ==================================
 
-The following examples works with the eval kit release TOF_Evaluation_ADTF3175D-Rel4.1.1 with Python 3.9.
+The following examples works with the eval kit release
+TOF_Evaluation_ADTF3175D-Rel4.1.1 with Python 3.9.
 
-It is assumed depth-image-animation-pygame.py is in TOF_Evaluation_ADTF3175D-Rel4.1.1/bin.
+It is assumed depth-image-animation-pygame.py is in
+TOF_Evaluation_ADTF3175D-Rel4.1.1/bin.
 
 Python dependencies are:
 

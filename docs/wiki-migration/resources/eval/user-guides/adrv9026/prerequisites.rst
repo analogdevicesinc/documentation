@@ -5,7 +5,6 @@ Supported Carriers
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/eval/user-guide/transceiver/adrv9026/prerequisites.html\
 
-
 The :adi:`EVAL-ADRV9026/ADRV9029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADRV9026.html>` are, by definition "FPGA mezzanine cards" (FMC), that means they need a carrier to plug into. The carrier we currently support is:
 
 +----------------------------------------------------------------------------------------------------------------------+------------------------+

@@ -3,13 +3,11 @@ AD5696R/AD5695R/AD5694R Quick Start Guide
 
 **Quad, 16-/14-/12-Bit, Voltage Output DACs with a 2 ppm/ºC Reference, I\ 2\ C Interface**
 
-
 |image1|
 
 .. container:: centeralign
 
    \ *Figure 1. Functional Block Diagram*\
-
 
 Features
 --------
@@ -35,11 +33,9 @@ Pin Configurations
 
    \
 
-
    |16lfcsppinout.png|
 
 .. container:: column
-
 
    ..
 
@@ -54,7 +50,6 @@ Pin Configurations
 
    
 
-
 .. container:: column
 
    
@@ -63,8 +58,6 @@ Pin Configurations
       \ *Figure 3. 16-Lead TSSOP*\
 
    
-
-
 
 \*\* Table 1. Function Descriptions for Quick Start \*\*
 
@@ -112,12 +105,11 @@ Shift Register Contents
 .. image:: https://wiki.analog.com/_media/resources/quick-start/shift_register_contents_16-bit.png
    :alt: shift_register_contents_16-bit.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    \ *Figure 4. Shift Register Contents*\
-
 
 \*\* Table 2. Command Definitions \*\*
 
@@ -140,8 +132,6 @@ C3      C2 C1 C0 Description
 1       1  1  1  Reserved
 ======= == == == =======================================================
 
-
-
 Transfer Function
 -----------------
 
@@ -158,13 +148,11 @@ Simple Write Example 1
 
    To Update Channel A, write the following over the serial interface: 0001 XXX1 1000000000000000 (four command bits, four address bits, 16 data bits for the :adi:`AD5696R`). This updates Channel A to midscale. GAIN = 1, V\ :sub:`OUT`\ A = 1.25 V.
 
-
    |image2|
 
 .. container:: centeralign
 
    \ *Figure 5. Simple Write—Update Channel A*\
-
 
 Simple Write: Example 2
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,13 +161,11 @@ Simple Write: Example 2
 
    To update Channel B, write the following over the serial interface: 0001 XX1X 1000000000000000. This updates Channel B to midscale. GAIN = 1, V\ :sub:`OUT`\ B = 1.25 V.
 
-
    |image3|
 
 .. container:: centeralign
 
    \ *Figure 6. Simple Write—Update Channel B*\
-
 
 Simple Write: Example 3
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -188,13 +174,11 @@ Simple Write: Example 3
 
    To update both Channel A and Channel B, write the following: 0001 XX11 1111111111111111. This updates both channels to full scale. GAIN = 1, V\ :sub:`OUT`\ B = 2.5 V, V\ :sub:`OUT`\ A = 2.5 V.
 
-
    |image4|
 
 .. container:: centeralign
 
    \ *Figure 7. Simple Write—Update Channel A and Channel B*\
-
 
 I\ :sup:`2`\ C refers to a communications protocol originally developed by Philips Semiconductors (now NXP Semiconductors).
 

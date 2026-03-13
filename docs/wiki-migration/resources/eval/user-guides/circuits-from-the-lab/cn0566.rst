@@ -4,16 +4,26 @@ ADALM-PHASER (CN0566) Phased Array Exploration Platform
 Introduction
 ------------
 
-Phased array communications and radar systems are finding increased use in a variety of applications. This places a greater importance on training engineers and rapidly prototyping new phased array concepts. However, both those imperatives have historically been difficult and expensive. That is why Analog Devices launched the ADALM-PHASER. It is a low cost, simplified phased array radar which allows real beamforming hardware to be used for education, project proposals, and even software development. Most of the labs are run on a Python GUI, with several helper scripts. These can be run on a remote host computer, or directly on the phaser's Raspberry Pi computer with the addition of a keyboard, mouse, and display. For more advanced application development, the Phaser is also supported in the MATLAB RF Microwave Toolbox. Equivalent MATLAB lab exercises are in development, and will be added below as they are completed.
+Phased array communications and radar systems are finding increased use in a
+variety of applications. This places a greater importance on training engineers
+and rapidly prototyping new phased array concepts. However, both those
+imperatives have historically been difficult and expensive. That is why Analog
+Devices launched the ADALM-PHASER. It is a low cost, simplified phased array
+radar which allows real beamforming hardware to be used for education, project
+proposals, and even software development. Most of the labs are run on a Python
+GUI, with several helper scripts. These can be run on a remote host computer, or
+directly on the phaser's Raspberry Pi computer with the addition of a keyboard,
+mouse, and display. For more advanced application development, the Phaser is
+also supported in the MATLAB RF Microwave Toolbox. Equivalent MATLAB lab
+exercises are in development, and will be added below as they are completed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phaser_with_topics.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Here is a brief video introduction to beamforming and the Phased Array Platform:
 
 .. container:: centeralign
-
 
    ..
 
@@ -32,7 +42,9 @@ Phased Array Hardware
 Phased Array Software
 ---------------------
 
-There are several pieces of software used with the CN0566 Phaser, including a user-friendly Graphical User Interface (GUI) and a number of command-line utilities. This page describes the various pieces of software:
+There are several pieces of software used with the CN0566 Phaser, including a
+user-friendly Graphical User Interface (GUI) and a number of command-line
+utilities. This page describes the various pieces of software:
 
 -  :doc:`Phaser Software guides (GUI and CLI utilities) </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/software>`
 -  :doc:`Phaser Software guide for MATLAB </wiki-migration/phaser_matlab>`
@@ -40,7 +52,8 @@ There are several pieces of software used with the CN0566 Phaser, including a us
 Phased Array Assembly and Testing
 ---------------------------------
 
-The phaser ships fully assembled and ready to go. Should you need to re-assemble a disassembled board, or do a quick functionality test, refer to this page:
+The phaser ships fully assembled and ready to go. Should you need to re-assemble
+a disassembled board, or do a quick functionality test, refer to this page:
 
 -  :doc:`CN0566 Assembly and Production Test </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/assy_prod_test>`
 
@@ -49,9 +62,13 @@ Labs and Lectures
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phasers_to_fun.png
    :align: center
-   :width: 800px
+   :width: 800
 
-The ADALM-PHASER is meant for you to experience, first hand, phased array beamforming and radar concepts. But to go along with the hardware, we’ve put together a series of short lectures followed by hands-on labs that you can perform with your own Phaser. A complete, printable lab manual is available here:
+The ADALM-PHASER is meant for you to experience, first hand, phased array
+beamforming and radar concepts. But to go along with the hardware, we’ve put
+together a series of short lectures followed by hands-on labs that you can
+perform with your own Phaser. A complete, printable lab manual is available
+here:
 
 .. admonition:: Download
    :class: download
@@ -61,7 +78,6 @@ The ADALM-PHASER is meant for you to experience, first hand, phased array beamfo
    
    `Printable Phaser Lab Instructions (PDF) <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phaser_lab_instructions_june14_2022_no_title.pdf>`_
 
-
 The expanded list of topics is as follows:
 
 -  Phaser Hardware Overview, Software Setup, and Frequency Plan
@@ -70,7 +86,6 @@ The expanded list of topics is as follows:
    -  Lecture Video
 
       -
-
 
       |youtube>-Vqbgf0MjPk|
 
@@ -82,13 +97,11 @@ The expanded list of topics is as follows:
 
       -
 
-
       |youtube>jBGzOlThpRE|
 
    -  Lab Video
 
       -
-
 
       |youtube>5lihNPh4Rm0|
 
@@ -99,7 +112,6 @@ The expanded list of topics is as follows:
 
       -
 
-
       |youtube>AKmxmQUwYw0|
 
 -  Phased Array Antenna Patterns
@@ -108,7 +120,6 @@ The expanded list of topics is as follows:
    -  Lecture and Lab Video
 
       -
-
 
       |youtube>UQgmtWChNfM|
 
@@ -119,7 +130,6 @@ The expanded list of topics is as follows:
 
       -
 
-
       |youtube>be_5D4eNtCY|
 
 -  Grating Lobes
@@ -128,7 +138,6 @@ The expanded list of topics is as follows:
    -  Lecture and Lab Video
 
       -
-
 
       |youtube>qksh4lGysbI|
 
@@ -139,7 +148,6 @@ The expanded list of topics is as follows:
 
       -
 
-
       |youtube>LYVD014ClZI|
 
 -  Quantization Sidelobes
@@ -147,7 +155,6 @@ The expanded list of topics is as follows:
    -  Lecture and Lab Video
 
       -
-
 
       |youtube>51O5FLVZE4c|
 
@@ -157,7 +164,6 @@ The expanded list of topics is as follows:
 
       -
 
-
       |youtube>hMiJs2NdXZY|
 
 -  Monopulse Tracking
@@ -165,7 +171,6 @@ The expanded list of topics is as follows:
    -  Lecture and Lab Video
 
       -
-
 
       |youtube>hZDopcNjVzY|
 
@@ -175,7 +180,6 @@ The expanded list of topics is as follows:
 
       -
 
-
       |youtube>CXSbLQgRFAA|
 
 -  Radar: CFAR, Range Normalization, Clutter Suppression, and Range/Velocity
@@ -184,13 +188,13 @@ The expanded list of topics is as follows:
 
       -
 
-
       |youtube>igrN_wd_g74|
 
 Additional Resources
 --------------------
 
-This series is partially derived from several sources that also provide valuable background information.
+This series is partially derived from several sources that also provide valuable
+background information.
 
 -  Analogue Dialogue Phased array paper series:
 

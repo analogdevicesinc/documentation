@@ -9,12 +9,18 @@ Automatic Volume Control
 Description
 -----------
 
-This algorithm is intended for TV sound applications. The perceived volume level often changes considerably from channel to channel, and also within a channel, especially for commercials. This algorithm will automatically compensate for the different levels.
+This algorithm is intended for TV sound applications. The perceived volume level
+often changes considerably from channel to channel, and also within a channel,
+especially for commercials. This algorithm will automatically compensate for the
+different levels.
 
 Usage
 -----
 
-This algorithm supports growing the input channels for 5.1/7.1 applications. However, the volume detection is calculated from the first 2 inputs only (left and right) and the resulting level compensation and delay is applied to all other channels.
+This algorithm supports growing the input channels for 5.1/7.1 applications.
+However, the volume detection is calculated from the first 2 inputs only (left
+and right) and the resulting level compensation and delay is applied to all
+other channels.
 
 Targets Supported
 -----------------
@@ -24,7 +30,6 @@ Name ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ==== ========== ================ ============= ================
 AVC  S          S                S             NA
 ==== ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -47,7 +52,6 @@ Name    Type  Description
 Output0 Audio First output channel
 Output1 Audio Second output channel
 ======= ===== =====================
-
 
 | ===== Configurable Parameters =====
 

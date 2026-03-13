@@ -55,7 +55,6 @@ Output  Audio Filtered Output (Output0 for stereo)
 Output1 Audio Filtered Output1 (only for stereo)
 ======= ===== ====================================
 
-
 | ===== Configurable Parameters =====
 
 +--------------------+---------------+---------+-------------------------------------------+

@@ -6,7 +6,7 @@ Introduction
 
 .. image:: https://wiki.analog.com/_media/university/tools/m1k/adalm1000_angle_small.png
    :align: right
-   :width: 150px
+   :width: 150
 
 The :adi:`ADALM1000` is a learning tool designed to make interacting with the world around you easier and more intuitive. Offering two analog channels, it allows you to source and measure waveforms in voltage or current, easily characterizing arbitrary systems in terms of voltage vs current, over time, and over frequency. To offer this functionality, it uses a number of building blocks to take the fixed supply and digital interface of USB and offer voltage and current operation from 0 to 5 Volts (V), from -200 to 200 milliamps (mA), with precision and accuracy better than 100µV, 100µA, and 10µS.
 
@@ -15,16 +15,21 @@ USB
 
 `Universal Serial Bus (USB) <https://en.wikipedia.org/wiki/USB>`_ is a high complexity, high speed digital interface designed for PC peripherals, offering a number of default device types and communication schemes. While tremendously useful for the "last inches" of interface between a host PC and the M1K, the pieces of the M1K responsible for converting between analog values and digital words (analog-digital converters (ADC) and digital-analog converters (DAC)) use simpler, less robust communication schemes necessitating "glue" between a computer and the analog systems for voltage/current measurement and control. On the M1K, this glue is a microcontroller using a CPU designed by ARM (Cortex M3).
 
-In addition to the three serial peripheral interfaces (SPI busses) used for the two ADCs and one DAC, the microcontroller also offers:
+In addition to the three serial peripheral interfaces (SPI busses) used for the
+two ADCs and one DAC, the microcontroller also offers:
 
 -  timer-counters used for controlling ``when`` the data converters sample
 -  pulse-width modulation, used to set the unique LED color of each M1K on the three-channel (RGB) LED
 -  two-wire interface, (`I2C <https://en.wikipedia.org/wiki/I2C>`_, used as a low-speed communication network between the microcontroller controller and other "housekeeping" components
 -  digital input-output pins used for both the user-accessible programmable IO pins and to control the internal switches used in the analog frontend
 -  32 kilobytes SRAM, allowing for local data buffering and the potential for loading user-supplied software directly on to the device
--  128 kilobytes NAND flash memory, allowing for the storage of the firmware program and the potential for data logging without use of a PC.
+-  128 kilobytes NAND flash memory, allowing for the storage of the firmware
+   program and the potential for data logging without use of a PC.
 
-The microcontroller is only one of the pieces sitting between the USB connector and the analog components used for the front-end interface. Besides mapping between digital protocols, there is one more big problem to solve before we can build the analog system: power.
+The microcontroller is only one of the pieces sitting between the USB connector
+and the analog components used for the front-end interface. Besides mapping
+between digital protocols, there is one more big problem to solve before we can
+build the analog system: power.
 
 Power
 -----
@@ -53,13 +58,55 @@ To measure analog signals from a digitally connected device, analog signals must
 Servo Loop
 ~~~~~~~~~~
 
-The analog frontend of the M1K is built around a single control loop per channel, with an analog switch to change between voltage and current control, and another analog switch to control the characteristics of the channel output. The analog control loop works to servo a measured parameter against an input signal from a digital to analog converter. The loop is built from several discrete components, each vital and carefully selected for the application at hand. The loop needs to offer at least one watt of electrical power supplied to or sourced by an external system, with high bandwidth in order to achieve the targetted output of signals up to a few hundred kilohertz. Moreover, the loop needs to offer low noise and high precision operation matching the selected 16b data converters. Balancing these parameters lead to the separation of the loop feedback control and power output stages. The power stage was built from a high ouptut current driver part - due to the limited input voltage range and nonzero voltage drop even at low control, the driver is configured as a noninverting amplifier with a gain of two, referenced to a high precision 2.5v supply. As, in this configuration, the power stage sinks current to the 2.5v rail, and precision references capable of symmetric performance, both sinking and sourcing current are expensive, the reference producing the 2.5v supply is biased with a small (500o) pulldown resistor to preserve correct performance of (the other components sharing) the reference.
+The analog frontend of the M1K is built around a single control loop per
+channel, with an analog switch to change between voltage and current control,
+and another analog switch to control the characteristics of the channel output.
+The analog control loop works to servo a measured parameter against an input
+signal from a digital to analog converter. The loop is built from several
+discrete components, each vital and carefully selected for the application at
+hand. The loop needs to offer at least one watt of electrical power supplied to
+or sourced by an external system, with high bandwidth in order to achieve the
+targetted output of signals up to a few hundred kilohertz. Moreover, the loop
+needs to offer low noise and high precision operation matching the selected 16b
+data converters. Balancing these parameters lead to the separation of the loop
+feedback control and power output stages. The power stage was built from a high
+ouptut current driver part - due to the limited input voltage range and nonzero
+voltage drop even at low control, the driver is configured as a noninverting
+amplifier with a gain of two, referenced to a high precision 2.5v supply. As, in
+this configuration, the power stage sinks current to the 2.5v rail, and
+precision references capable of symmetric performance, both sinking and sourcing
+current are expensive, the reference producing the 2.5v supply is biased with a
+small (500o) pulldown resistor to preserve correct performance of (the other
+components sharing) the reference.
 
-This nonverting power amplifier stage uses a current feedback architecture to achieve the high bandwidth and power it offers. This topology mimics that of more traditional voltage-feedback parts, with a few additional caveats. The presence of even femto or picofarads of parasitic capacitance, combined with the high bandwidth required of an ideal power amplifier stage readily produces high frequency oscillations unless a series R-C feedback network is added as a highpass filter in feedback, reducing the overall high frequency gain of the amplifier, but preserving stability for all loads. A two ohm series resistor is added to the output of the power amplifier to set the minimum output impedance of the device, protecting both the m1000 and any attached system from overcurrent conditions.
+This nonverting power amplifier stage uses a current feedback architecture to
+achieve the high bandwidth and power it offers. This topology mimics that of
+more traditional voltage-feedback parts, with a few additional caveats. The
+presence of even femto or picofarads of parasitic capacitance, combined with the
+high bandwidth required of an ideal power amplifier stage readily produces high
+frequency oscillations unless a series R-C feedback network is added as a
+highpass filter in feedback, reducing the overall high frequency gain of the
+amplifier, but preserving stability for all loads. A two ohm series resistor is
+added to the output of the power amplifier to set the minimum output impedance
+of the device, protecting both the m1000 and any attached system from
+overcurrent conditions.
 
-The power amplifier is wrapped in a high precision rail-to-rail opamp with low voltage offset on both the input and output. The ADA4661 serves as alternatively a unity gain current amplifier against the output of the AD8210 current-sense amplifier described [elsewhere.] The ADG719 CMOS analog switch alternatively connects the current sense feedback or voltage sense feedback to the inverting input of the servo amp.
+The power amplifier is wrapped in a high precision rail-to-rail opamp with low
+voltage offset on both the input and output. The ADA4661 serves as alternatively
+a unity gain current amplifier against the output of the AD8210 current-sense
+amplifier described [elsewhere.] The ADG719 CMOS analog switch alternatively
+connects the current sense feedback or voltage sense feedback to the inverting
+input of the servo amp.
 
-The servo amplifier is relatively painless in comparison, but careful consideration was dedicated to ensuring the system behavior while forcing a current on a load representing an extreme high or low of noise or impedance. An analog potentiometer functions as a programmable all-pass filter, offering a certain amount of control of the frequency response of the loop, with adjustable high frequency gain or attenuation. This allows a current to be sourced with increased precision even on high impedance devices like large inductors at t=0, where a small perturbance can easily result in high amplitude, high-rate-of-change sense signals.
+The servo amplifier is relatively painless in comparison, but careful
+consideration was dedicated to ensuring the system behavior while forcing a
+current on a load representing an extreme high or low of noise or impedance. An
+analog potentiometer functions as a programmable all-pass filter, offering a
+certain amount of control of the frequency response of the loop, with adjustable
+high frequency gain or attenuation. This allows a current to be sourced with
+increased precision even on high impedance devices like large inductors at t=0,
+where a small perturbance can easily result in high amplitude,
+high-rate-of-change sense signals.
 
 Voltage Measurement
 ~~~~~~~~~~~~~~~~~~~
@@ -69,34 +116,132 @@ See :doc:`this page </wiki-migration/university/tools/m1k/analog-inputs>` coveri
 Current Measurement
 ~~~~~~~~~~~~~~~~~~~
 
-The characteristics of any feedback control system, like the current force loop on the M1K, are limited by at least the properties of the sensor. Additionaly, the ability of the M1K to characterise the impedance of attached systems relies on the precise, high speed measurement of the actual output current. In the design of similar such devices, current measurement was a prime roadblock limiting the performance, with cost-effective measurement parts like the INA213, LT1999, or MAX9919F each suffering from a combination of common mode error, low speed, or nonlinearities over the common mode voltage range. This is not shocking. All of these amplifiers have a hard job - in a high side sense configuration, they monitor the voltage drop across a small precision resistor acting as a shunt. These parts must amplify microvolts of differential signal while rejecting volts of rapidly changing common mode potential. A triangle wave sweeping zero to five volts at ten kilohertz on an unloaded output represents a challenge for even the best of these amplifiers, as they work to reject harmonics many times the frequency of the fundamental, spanning the full rail-to-rail input range.
+The characteristics of any feedback control system, like the current force loop
+on the M1K, are limited by at least the properties of the sensor. Additionaly,
+the ability of the M1K to characterise the impedance of attached systems relies
+on the precise, high speed measurement of the actual output current. In the
+design of similar such devices, current measurement was a prime roadblock
+limiting the performance, with cost-effective measurement parts like the INA213,
+LT1999, or MAX9919F each suffering from a combination of common mode error, low
+speed, or nonlinearities over the common mode voltage range. This is not
+shocking. All of these amplifiers have a hard job - in a high side sense
+configuration, they monitor the voltage drop across a small precision resistor
+acting as a shunt. These parts must amplify microvolts of differential signal
+while rejecting volts of rapidly changing common mode potential. A triangle wave
+sweeping zero to five volts at ten kilohertz on an unloaded output represents a
+challenge for even the best of these amplifiers, as they work to reject
+harmonics many times the frequency of the fundamental, spanning the full
+rail-to-rail input range.
 
-The standard topologies for amplifiers working to measure small signals in the presence of large common mode voltages do not fare substantially better when realised using discrete components or integrated solutions.
+The standard topologies for amplifiers working to measure small signals in the
+presence of large common mode voltages do not fare substantially better when
+realised using discrete components or integrated solutions.
 
-The cannonical four-resistor, one-opamp difference amplifiers offers a seemingly attractive solution. On first inspection, this system offers perfect common mode rejection at DC, extraordinarily high input impedance, easily adjustable gain, and a wide input voltage range. Unfortunately, these properties only exist when the topology is realised with ideal resistors and a perfect opamp, which happen to be unusually rare and expensive. A mismatch as small as 0.1% between any of the resistors will result in a common mode rejection no better than 66dB, equivalent to phantom milliamps of current showing up with full scale sweeps. Additional mismatches between opamp nodes, in bias current, input impedance, and parasitics make this topology very difficult to use for our purposes.
+The cannonical four-resistor, one-opamp difference amplifiers offers a seemingly
+attractive solution. On first inspection, this system offers perfect common mode
+rejection at DC, extraordinarily high input impedance, easily adjustable gain,
+and a wide input voltage range. Unfortunately, these properties only exist when
+the topology is realised with ideal resistors and a perfect opamp, which happen
+to be unusually rare and expensive. A mismatch as small as 0.1% between any of
+the resistors will result in a common mode rejection no better than 66dB,
+equivalent to phantom milliamps of current showing up with full scale sweeps.
+Additional mismatches between opamp nodes, in bias current, input impedance, and
+parasitics make this topology very difficult to use for our purposes.
 
-The three opamp instrumentation amplifier, the other often encountered solution for the measurement of small signals in the presence of large common mode voltages, fares no better. In this configuration, a difference amplifier like shown above is prefaced with two buffer/gain stages, offering higher input impedance and, by encorporating most of the matched resistors on the same die as the amplifiers, alleviates many of the issues which result in poor common mode rejection through factory precision adjustment. Unfortunately, as the inputs are followed immediatley by gain stages, this topology is unable to afford the measurement of signals with a common mode voltage within a factor of the gain from the voltage supplies. This means that a three opamp instrumentation amplifier with a gain of twenty, supplied by 0v and 5v rails like the amplifier on the M1K, is unable to measure current with an output voltage further than 2.5v/20 away from the 2.5v midsupply reference, clearly inappropriate for this application.
+The three opamp instrumentation amplifier, the other often encountered solution
+for the measurement of small signals in the presence of large common mode
+voltages, fares no better. In this configuration, a difference amplifier like
+shown above is prefaced with two buffer/gain stages, offering higher input
+impedance and, by encorporating most of the matched resistors on the same die as
+the amplifiers, alleviates many of the issues which result in poor common mode
+rejection through factory precision adjustment. Unfortunately, as the inputs are
+followed immediatley by gain stages, this topology is unable to afford the
+measurement of signals with a common mode voltage within a factor of the gain
+from the voltage supplies. This means that a three opamp instrumentation
+amplifier with a gain of twenty, supplied by 0v and 5v rails like the amplifier
+on the M1K, is unable to measure current with an output voltage further than
+2.5v/20 away from the 2.5v midsupply reference, clearly inappropriate for this
+application.
 
-How, then, is this design challenge addressed on the M1K? ADI offers a family of high-performance bidirectional current sense amplifiers offered for automotive engine control applications. The AD8210, offering a small signal bandwidth of 450KHz and a common mode rejection between 80 and 95dB for common mode voltages between 0v and 5v at frequencies up to 100KHz appears to be an ideal fit for the high side shunt signal conversion. Unsuprisingly, given the previously enumerated challenges, getting acceptable performance out of this part was not without its challenges.
+How, then, is this design challenge addressed on the M1K? ADI offers a family of
+high-performance bidirectional current sense amplifiers offered for automotive
+engine control applications. The AD8210, offering a small signal bandwidth of
+450KHz and a common mode rejection between 80 and 95dB for common mode voltages
+between 0v and 5v at frequencies up to 100KHz appears to be an ideal fit for the
+high side shunt signal conversion. Unsuprisingly, given the previously
+enumerated challenges, getting acceptable performance out of this part was not
+without its challenges.
 
-Let us first consider the topology of the AD82xx family by examining Figure 1 in the AD8210 datasheet. To paraphrase both the theory of operation section (pg X) and conversations with ADI personell familiar with the part... a current-mode difference amplifier comprised of R1, R2, A1, Q1, Q2 acts to convert a small voltage difference across the inputs into a current difference through the emitters of Q1 and Q2, which serve as preamplifiers and buffers from the input to the output gain stage. R3 and R4 convert these current differences back into ground-referenced voltage differences, where the instrumentation amplifier A2 has well-defined operation and subtracts and multiplies these voltages, offering a midpoint referenced output voltage with a net gain of 20x.
+Let us first consider the topology of the AD82xx family by examining Figure 1 in
+the AD8210 datasheet. To paraphrase both the theory of operation section (pg X)
+and conversations with ADI personell familiar with the part... a current-mode
+difference amplifier comprised of R1, R2, A1, Q1, Q2 acts to convert a small
+voltage difference across the inputs into a current difference through the
+emitters of Q1 and Q2, which serve as preamplifiers and buffers from the input
+to the output gain stage. R3 and R4 convert these current differences back into
+ground-referenced voltage differences, where the instrumentation amplifier A2
+has well-defined operation and subtracts and multiplies these voltages, offering
+a midpoint referenced output voltage with a net gain of 20x.
 
 This topology offers many of the advantages of the previously described architectures, while using a level-shifting current-mode topology to work around the inherent limitations of the above. The incorporation of all the necessary well-matched components on the same piece of silicon as the main amplifier allows for factory trimming to maintain the high common mode rejection required, and the level shifting architecture prevents the saturation of the instrumentation amplifier across a wide range of common mode voltages. "Popping the hood" on this part and inspecting the SPICE netlist model offers additional insight into the operation of this component. The "input stage" section of :adi:`AD8210` SPICE netliest can be represented as follows:
 
-It was surprising to discover several facts as depicted in this representation of the device. First, a biasing diode, responsible for ensuring the currents, when operating with common mode voltages less than or equal to 5VDC, do not produce erroneous voltages further down the signal chain. Also surprising was the corresponding nature of the stated 1.5k common mode input impedance for this operating regime - the resistance described in the datasheet is not to ground, but to the high rail voltage supply. Moreover, this impedance does not apply continuously to 5v, but to input signals within approximately a diode drop (0.2v-0.7v) of the 5v rail.
+It was surprising to discover several facts as depicted in this representation
+of the device. First, a biasing diode, responsible for ensuring the currents,
+when operating with common mode voltages less than or equal to 5VDC, do not
+produce erroneous voltages further down the signal chain. Also surprising was
+the corresponding nature of the stated 1.5k common mode input impedance for this
+operating regime - the resistance described in the datasheet is not to ground,
+but to the high rail voltage supply. Moreover, this impedance does not apply
+continuously to 5v, but to input signals within approximately a diode drop
+(0.2v-0.7v) of the 5v rail.
 
-The value of R1 and R2, as well as that of Rcm1 and Rcm2, were also not directly stated in the datasheet, but were necessary factors in achieving the desired performance. The ADALM1000 was designed with a 0.5o current sense resistor, mapping the full range of 200mA to a 2.5v-centered output, swinging from 0.5v to 4.5v. The topology on the M1K RevB resembled
+The value of R1 and R2, as well as that of Rcm1 and Rcm2, were also not directly
+stated in the datasheet, but were necessary factors in achieving the desired
+performance. The ADALM1000 was designed with a 0.5o current sense resistor,
+mapping the full range of 200mA to a 2.5v-centered output, swinging from 0.5v to
+4.5v. The topology on the M1K RevB resembled
 
-The root cause of the issue was not immediately apparent, but initial tests of the hardware revealed substantial common mode signal leakage, on the order of phantom milliamps. Significant head-scratching and some tremendously helpful conversations later produced the following explanation and solution.
+The root cause of the issue was not immediately apparent, but initial tests of
+the hardware revealed substantial common mode signal leakage, on the order of
+phantom milliamps. Significant head-scratching and some tremendously helpful
+conversations later produced the following explanation and solution.
 
-An equally valid representation of the circuit above shows the 0.5o sense resistor in series with the negative input. See the issue yet? The 0.5o sense resistor corresponds to a roughly 0.03% mismatch between the legs of the difference amplifier input stage, resulting in the observed ~70dB of attenuation of the common mode signal. Fortunately, the solution was simple - add an extra 0.5o resistor in series with the positive input of each amplifier, bringing balance to the -force- current paths.
+An equally valid representation of the circuit above shows the 0.5o sense
+resistor in series with the negative input. See the issue yet? The 0.5o sense
+resistor corresponds to a roughly 0.03% mismatch between the legs of the
+difference amplifier input stage, resulting in the observed ~70dB of attenuation
+of the common mode signal. Fortunately, the solution was simple - add an extra
+0.5o resistor in series with the positive input of each amplifier, bringing
+balance to the -force- current paths.
 
-Additional complexity resulted from mismatch in maximum voltage input of the analog-to-digital converter and the output range of the amplifier. A one-pole low pass filter with a DC gain of 4/5 and a corner frequency slightly higher than 100KHz was constructed from a 150o resistor, 600o resistor, and 10nf capacitor. This serves to reduce the dynamic range to one matching the 4.096v reference voltage of the ADC without adding an extra voltage reference. This also afforded the added benefit of reducing the effective impedance and out of band noise seen by the ADC, and served to keep ADC sampling from back-coupling into the analog signal path.
+Additional complexity resulted from mismatch in maximum voltage input of the
+analog-to-digital converter and the output range of the amplifier. A one-pole
+low pass filter with a DC gain of 4/5 and a corner frequency slightly higher
+than 100KHz was constructed from a 150o resistor, 600o resistor, and 10nf
+capacitor. This serves to reduce the dynamic range to one matching the 4.096v
+reference voltage of the ADC without adding an extra voltage reference. This
+also afforded the added benefit of reducing the effective impedance and out of
+band noise seen by the ADC, and served to keep ADC sampling from back-coupling
+into the analog signal path.
 
 Output Stage
 ~~~~~~~~~~~~
 
-In the pursuit of an affordable device for use as a first pass when working with unknown powered or unpowered systems, careful consideration was given to the output stage of the device. A spurious voltage spike from a fluxed-up inductive coil or accidental connection to an external battery ought not to immediately cause damage to the device. It should be trivial to afford measurement of voltages and currents substantially outside of the native range. It should also be feasible to render the device in a state such that it is capable of measuring signals of very little current, like the potential produced by a pH probe, or that of a thermocouple. These seemingly conflicting requirements gave rise to a versatile output stage built around a four channel low-resistance switch, offering fifty ohm tie resistors to half-potential and zero potential, as well as independent connections to the output connection and the output of the power driver. This configuration allows for a single external resistor to divide voltages or currents down to levels within the range of the measurement stages. Diode clamps to the high rails
+In the pursuit of an affordable device for use as a first pass when working with
+unknown powered or unpowered systems, careful consideration was given to the
+output stage of the device. A spurious voltage spike from a fluxed-up inductive
+coil or accidental connection to an external battery ought not to immediately
+cause damage to the device. It should be trivial to afford measurement of
+voltages and currents substantially outside of the native range. It should also
+be feasible to render the device in a state such that it is capable of measuring
+signals of very little current, like the potential produced by a pH probe, or
+that of a thermocouple. These seemingly conflicting requirements gave rise to a
+versatile output stage built around a four channel low-resistance switch,
+offering fifty ohm tie resistors to half-potential and zero potential, as well
+as independent connections to the output connection and the output of the power
+driver. This configuration allows for a single external resistor to divide
+voltages or currents down to levels within the range of the measurement stages.
+Diode clamps to the high rails
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -112,4 +257,3 @@ Schematic, PCB Layout, Bill of Materials
    -  Bill of Materials
    -  Allegro Project (get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ to view)
    
-

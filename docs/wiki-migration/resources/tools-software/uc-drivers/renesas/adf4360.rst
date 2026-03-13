@@ -40,7 +40,12 @@ The :adi:`ADF4360-0`, :adi:`ADF4360-1`, :adi:`ADF4360-2`, :adi:`ADF4360-3`, :adi
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4360_x_db9.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -63,9 +68,14 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the ADF4360-x part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the ADF4360-x driver can be used exactly as it is provided. There are three functions which are called by the ADF4360-x driver:
+The Communication Driver has a standard interface, so the ADF4360-x driver can
+be used exactly as it is provided. There are three functions which are called by
+the ADF4360-x driver:
 
 -  SPI_Init() – initializes the communication peripheral.
 -  SPI_Write() – writes data to the device.
@@ -77,7 +87,6 @@ The Communication Driver has a standard interface, so the ADF4360-x driver can b
 .. container:: centeralign
 
    Driver architecture
-
 
 The implementation of these three functions depends on the used microcontroller.
 
@@ -105,7 +114,8 @@ Downloads
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the ADF4360 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the ADF4360
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -130,7 +140,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-ADF4360-xEBZ1 board has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13.
+An EVAL-ADF4360-xEBZ1 board has to be interfaced with the Renesas Demonstration
+Kit (RDK) for RL78G13.
 
 There are two types of boards: with USB connector or with DB9 connector.
 
@@ -169,16 +180,15 @@ In this example the output frequency of the device is set to 900 MHz.
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the ADF4360 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the ADF4360
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -204,7 +214,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-ADF4360-xEBZ1 board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N.
+An EVAL-ADF4360-xEBZ1 board has to be interfaced with the Renesas Demonstration
+Kit (RDK) for RX62N.
 
 There are two types of boards: with USB connector or with DB9 connector.
 
@@ -235,22 +246,19 @@ Eval board with DB9 connector:
 Reference Project Overview
 --------------------------
 
-In this example, two values are loaded into R and N Counters and the MUXOUT is configured to be connected to the R Divider output.
+In this example, two values are loaded into R and N Counters and the MUXOUT is
+configured to be connected to the R Divider output.
 
 Software Project Setup
 ----------------------
-
 
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

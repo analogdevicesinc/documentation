@@ -22,7 +22,8 @@ Evaluation Board Kit Contents
 -----------------------------
 
 -  :adi:`EVAL-ADAQ8092-FMCZ <EVAL-ADAQ8092>` evaluation board
--  Micro-SD memory card (with adapter) containing system board boot software and Linux OS
+-  Micro-SD memory card (with adapter) containing system board boot software and
+   Linux OS
 
 Equipment Needed
 ----------------
@@ -51,23 +52,17 @@ Board Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/eval-adaq8092-fmcz_top-web.png
    :align: center
-   :width: 400px
-
-
+   :width: 400
 
 .. container:: centeralign
 
    \ **Figure 1. EVAL-ADAQ8092-FMCZ Board Photo**
 
-
 | |image1|
-
-
 
 .. container:: centeralign
 
    \ **Figure 2. Block Diagram of the EVAL-ADAQ8092-FMCZ**
-
 
 Board Description
 ~~~~~~~~~~~~~~~~~
@@ -79,14 +74,11 @@ Analog Inputs
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/analog_input_circuitry.png
    :align: center
-   :width: 600px
-
-
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure 3. Analog Input Circuitry of EVAL-ADAQ8092-FMCZ**
-
 
    | The EVAL-ADAQ8092-FMCZ provides the user to either use a single-ended or differential source. For the single-ended source, user can either use the balun so that the part will still be driven differentially or bypass it to drive the part single-endedly. Installation of 0Ω resistor is used to configure the input of the analog input circuitry.
 
@@ -105,7 +97,12 @@ Channel Link Location
 
 .. important::
 
-   Note: Without changing other resistor values of the board, then this board is ready for a single ended source that drives the part single-endedly. But if the user uses a differential source, then install 49.9Ω resistors at R1 and R3 for Channel 1 and Channel 2, respectively. These should be implemented to properly balance the inputs when driven differentially. Refer to Figure 6 and Figure 7 for the schematic.Table 2. Differentially driven using the balun
+   Note: Without changing other resistor values of the board, then this board is
+   ready for a single ended source that drives the part single-endedly. But if
+   the user uses a differential source, then install 49.9Ω resistors at R1 and
+   R3 for Channel 1 and Channel 2, respectively. These should be implemented to
+   properly balance the inputs when driven differentially. Refer to Figure 6 and
+   Figure 7 for the schematic.Table 2. Differentially driven using the balun
 
 ======= ==== ==============
 Channel Link Location
@@ -120,22 +117,22 @@ Channel Link Location
 
 .. important::
 
-   Note: When using this configuration, resistor values should also be changed to properly balance the impedance and make the gain approximately equal to 5. For channel 1: R8 & R9 = 200 Ω, and, R14 & R16 = 18.2Ω. For channel 2: R10 & R11 = 200Ω, and, R15 & R17 = 18.2Ω. Refer to Figure 6 and Figure 7 for schematic.*
-
+   Note: When using this configuration, resistor values should also be changed
+   to properly balance the impedance and make the gain approximately equal to 5.
+   For channel 1: R8 & R9 = 200 Ω, and, R14 & R16 = 18.2Ω. For channel 2: R10 &
+   R11 = 200Ω, and, R15 & R17 = 18.2Ω. Refer to Figure 6 and Figure 7 for
+   schematic.*
 
 Encode Circuitry
 ~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/encode_circuitry.png
    :align: center
-   :width: 600px
-
-
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure 4. Encode Circuitry of EVAL-ADAQ8092-FMCZ**
-
 
 | The user can either use a single-ended encode mode or a differential encode mode. The default configuration of the EVAL-ADAQ8092-FMCZ uses the single-ended encode mode that requires a CMOS level. Also, the board provides an option to install an oscillator (Y1) and use it as a built-in clock for a single-ended encode mode.
 | When using a sinusoidal, PECL or LVDS signal then it is suggested to use the differential encode mode.
@@ -145,14 +142,11 @@ Power Circuitry
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/power_circuitry.png
    :align: center
-   :width: 600px
-
-
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure 5. Power Circuitry of EVAL-ADAQ8092-FMCZ**
-
 
 | The EVAL-ADAQ8092-FMC uses the +12V supply from the data capture board such as Zed board at C35 of the FMC (FPGA Mezzanine Card) connector pin configuration. This +12V supply goes to a reverse input protection by the used of LTC4359 (U2) and then proceed with a step down regulator, LTM8074 (U4). The output of the LTM8074 which is configured to have 5V output will then supply the LTC1673-1.8 (U3) and LTC1763-3.3 (VR1). The LTC1763-1.8 will be VDD and OVDD supplies, while the LTC1763-3.3 will be the VCC supply.
 | External supplies can also be used when some of the built-in power circuitry is failing. Re-work of the board is needed to achieve this.
@@ -162,32 +156,23 @@ Schematic
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/schematic_1.png
    :align: center
-   :width: 800px
-
-
+   :width: 800
 
 .. container:: centeralign
 
    \ **Figure 6. Schematic of EVAL-ADAQ8092-FMCZ (page 1)**
 
-
 | |image2|
-
-
 
 .. container:: centeralign
 
    \ **Figure 7. Schematic of EVAL-ADAQ8092-FMCZ (page 2)**
 
-
 | ===== Evaluating Board Hardware ===== |image3|
-
-
 
 .. container:: centeralign
 
    \ **Figure 8. Evaluation setup for EVAL-ADAQ8092-FMCZ**
-
 
 Setting up the board
 ~~~~~~~~~~~~~~~~~~~~
@@ -205,7 +190,19 @@ Setting up the board
 Controller Board
 ~~~~~~~~~~~~~~~~
 
-The ZedBoard, which is the system controller board, enables the configuration of the ADC and capture of data from the evaluation board by the PC via USB (or Ethernet). The ADAQ8092 support a multi-lane serial port interface (SPI) for each data converter channel. The SPI interface for each channel is connected to the ZedBoard via the FMC connector (P1). The ZedBoard™ functions as the communication link between the PC and connected evaluation board. It buffers samples captured from the evaluation board in its DDR3 memory. The ZedBoard board requires power from a 12 volt wall adapter (included with the ZedBoard). It hosts a Xilinx® ZYNQ® 7020 SoC, which contains two ARM® Cortex-A9 Processors and a Series-7 FPGA with 85k Programmable Logic cells. A Linux OS runs on the host processor system. It communicates with the PC through either a USB 2.0 high speed port or a 10/100/1000 Ethernet port. The default software configuration uses USB.
+The ZedBoard, which is the system controller board, enables the configuration of
+the ADC and capture of data from the evaluation board by the PC via USB (or
+Ethernet). The ADAQ8092 support a multi-lane serial port interface (SPI) for
+each data converter channel. The SPI interface for each channel is connected to
+the ZedBoard via the FMC connector (P1). The ZedBoard™ functions as the
+communication link between the PC and connected evaluation board. It buffers
+samples captured from the evaluation board in its DDR3 memory. The ZedBoard
+board requires power from a 12 volt wall adapter (included with the ZedBoard).
+It hosts a Xilinx® ZYNQ® 7020 SoC, which contains two ARM® Cortex-A9 Processors
+and a Series-7 FPGA with 85k Programmable Logic cells. A Linux OS runs on the
+host processor system. It communicates with the PC through either a USB 2.0 high
+speed port or a 10/100/1000 Ethernet port. The default software configuration
+uses USB.
 
 FIXME
 
@@ -214,12 +211,16 @@ Software Support
 
 The ADI ACE application provides a ‘plug and play’ evaluation experience, enabling users to get up and running quickly with the product evaluation board. ACE can configure the embedded software on supported controller boards and provides a quick and easy way to get setup, configure the board and perform data capture and analysis and/or waveform generation. For ACE installation and documentation instructions see :adi:`ACE`. Make sure to follow the instructions to install the necessary evaluation board plug-in support.
 
--  If the machine that ACE is installed on has internet access, you can find/install/update plug-ins directly from the ACE application. For environments without internet access, you can download these plug-ins from the previous link to portable storage and install them into ACE.
+-  If the machine that ACE is installed on has internet access, you can
+   find/install/update plug-ins directly from the ACE application. For
+   environments without internet access, you can download these plug-ins from
+   the previous link to portable storage and install them into ACE.
 
 .. note::
 
-   Product specific documentation for the evaluation software can be found within the ACE plug-in. The controller board supported by ACE with this product evaluation board is the ZedBoard™.
-
+   Product specific documentation for the evaluation software can be found
+   within the ACE plug-in. The controller board supported by ACE with this
+   product evaluation board is the ZedBoard™.
 
 FIXME
 
@@ -232,33 +233,30 @@ To start the ACE evaluation software, here are the following steps:
 -  2. In the **Start** window, wait until the software recognizes the **"ADAQ8092 Board"** as an attached hardware, and then double-click on it to go to the "ADAQ8092 Board" window (refer to **Figure 9**).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/start_window_final.png
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    \ **Figure 9. Start Window**
 
-
 -  3. In the **ADAQ8092 Board** window, here you will see the simple block diagram of the evaluation board of the ADAQ8092, double-click the "ADAQ8092" icon from the block diagram to go to the "ADAQ8092" chip window (refer to **Figure 10**).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/board_image_final.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    \ **Figure 10. ADAQ8092 Board Window**
 
-
 -  4. In the **ADAQ8092** chip window, click "Proceed to Analysis", to start the evaluation. *Note: Here you change the device attributes before starting the evaluation such as: alt_bit_pol_en , data_rand_en, dout_en, pd_gpio, pd_mode, sampling_frequency, test_mode, and twos_complement.*
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/chip_image_final2.png
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    \ **Figure 11. ADAQ8092 (Chip) Window**
-
 
 Analysis
 ~~~~~~~~
@@ -267,16 +265,16 @@ Here in the **ANALYSIS** window, there are three (3) panes, the **CAPTURE** pane
 
 -  In the CAPTURE pane, the user can change the sample count up to 65536 and the sample frequency used is shown. At the bottom, the user can capture data once by clicking "Run Once" or continuously by clicking "Run Continuously". *Note: Use "Run Continuously" when capturing the Average FFT, INL, and DNL.*
 -  In the ANALYSIS pane, the user can change the "windowing" type of the FFT, and also the "average iterations" when capturing the INL and DNL performance. When measuring the INL and DNL, the user should use the "Run Continuously" function and wait until it reaches the number of "average iterations" placed.
--  In the RESULTS pane, this is where the parametric values will be displayed. At the bottom of it, the user can import or export the data.
+-  In the RESULTS pane, this is where the parametric values will be displayed.
+   At the bottom of it, the user can import or export the data.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/waveform.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    \ **Figure 12. Waveform view**
-
 
    |image4|
 
@@ -284,13 +282,11 @@ Here in the **ANALYSIS** window, there are three (3) panes, the **CAPTURE** pane
 
    \ **Figure 13. FFT view**\
 
-
    |image5|
 
 .. container:: centeralign
 
    \ **Figure 14. Average FFT view**\
-
 
    |image6|
 
@@ -298,13 +294,11 @@ Here in the **ANALYSIS** window, there are three (3) panes, the **CAPTURE** pane
 
    \ **Figure 15. INL view**\
 
-
    |image7|
 
 .. container:: centeralign
 
    \ **Figure 16. DNL view**\
-
 
 Evaluation Board Support
 ------------------------
@@ -314,16 +308,16 @@ Technical support for the evaluation board hardware and software can be obtained
 The evaluation board schematic and other board files can be found on the `EVAL-ADAQ8092-FMCZ <https://wcm.cldnet.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADAQ8092.html>`_ web page.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/eval-board-block.png
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/schematic_2.png
-   :width: 800px
+   :width: 800
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/complete_setup_final.png
-   :width: 900px
+   :width: 900
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/fft.png
-   :width: 800px
+   :width: 800
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/average_fft_result.png
-   :width: 800px
+   :width: 800
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/inl.png
-   :width: 800px
+   :width: 800
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/dnl.png
-   :width: 800px
+   :width: 800

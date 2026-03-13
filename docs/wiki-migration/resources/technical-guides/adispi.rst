@@ -1,7 +1,10 @@
 Overview
 ========
 
-This is the official site for ADI’s SPI standard that is utilized across a wide range of new products. This standard attempts to create common PHY and memory map organization reference that should simplify driver development for applications that utilize these products.
+This is the official site for ADI’s SPI standard that is utilized across a wide
+range of new products. This standard attempts to create common PHY and memory
+map organization reference that should simplify driver development for
+applications that utilize these products.
 
 Resources
 =========

@@ -3,7 +3,10 @@
 SigmaStudioPlus Example Schematic for 242x
 ==========================================
 
-A2B transceivers can be configured using the SigmaStudio+ tool, which offers a graphical interface for programming, development, and tuning of ADI DSP audio processors. With SigmaStudio+, the configuration of the A2B Master node and Subnode can be performed, as illustrated in the attached image.
+A2B transceivers can be configured using the SigmaStudio+ tool, which offers a
+graphical interface for programming, development, and tuning of ADI DSP audio
+processors. With SigmaStudio+, the configuration of the A2B Master node and
+Subnode can be performed, as illustrated in the attached image.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/242x_schematic.png
    :align: center
@@ -11,12 +14,14 @@ A2B transceivers can be configured using the SigmaStudio+ tool, which offers a g
 Stream Configuration
 --------------------
 
-A2B transceivers can be configured with multiple streams, as shown below. The figure illustrates the stream configuration for the 242x Transceiver.
+A2B transceivers can be configured with multiple streams, as shown below. The
+figure illustrates the stream configuration for the 242x Transceiver.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/242x_stream_config.png
    :align: center
 
-Further tuning can be performed for the Main Transceiver node property settings, as shown below.
+Further tuning can be performed for the Main Transceiver node property settings,
+as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/242x_main_setting.png
    :align: center
@@ -24,7 +29,9 @@ Further tuning can be performed for the Main Transceiver node property settings,
 Bus Configuration Export
 ------------------------
 
-To work with the transceiver nodes, a Bus Configuration File (BCF, .bcf) is required, which can be generated as shown below. This .bcf file is necessary when building the A2B Stack application for the Raspberry Pi board.
+To work with the transceiver nodes, a Bus Configuration File (BCF, .bcf) is
+required, which can be generated as shown below. This .bcf file is necessary
+when building the A2B Stack application for the Raspberry Pi board.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/export_busconfig.png
    :align: center

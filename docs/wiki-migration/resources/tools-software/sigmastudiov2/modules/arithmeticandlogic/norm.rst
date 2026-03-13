@@ -9,7 +9,9 @@ Normalize
 Description
 -----------
 
-The Norm module normalizes the input value with respect to the closest power of 2 (upper side). The output is the normalized out value and the closest power of two or the number of shifts in binary.
+The Norm module normalizes the input value with respect to the closest power of
+2 (upper side). The output is the normalized out value and the closest power of
+two or the number of shifts in binary.
 
 Targets Supported
 -----------------
@@ -19,7 +21,6 @@ Name ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ==== ========== ================ ============= ================
 Norm NA         NA               S             NA
 ==== ========== ================ ============= ================
-
 
 | ===== Pins =====
 

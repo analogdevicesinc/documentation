@@ -6,7 +6,8 @@ If you are already on a 192.168.2.\* network
 
 In `RFC 1918 <https://tools.ietf.org/html/rfc1918>`_ the `Internet Engineering Task Force <http://ietf.org/>`_ has directed the `Internet Assigned Numbers Authority <https://www.iana.org/>`_ to reserve the IPv4 address range the ``192.168.*.*`` (and others) for `private networks <https://en.wikipedia.org/wiki/Private_network>`_. Analog Devices picked the ``192.168.2.*`` subnet for it's private network for host to PlutoSDR devices, but there isn't anything stopping other people (including yourself) to be running a real network on the ``192.168.2.*`` subnet.
 
-It's a quick update to change the PlutoSDR network settings, which is described below.
+It's a quick update to change the PlutoSDR network settings, which is described
+below.
 
 Multiple devices
 ----------------
@@ -14,14 +15,15 @@ Multiple devices
 When using multiple PlutoSDR devices on the same host, there are a few options:
 
 -  usb mode via libiio, no changes are required, and things will work out of the box
--  network mode, where changes to the network settings are required (more below).
+-  network mode, where changes to the network settings are required (more
+   below).
 
 In network mode, the default configuration is to have an `IP address <https://en.wikipedia.org/wiki/IP_address>`_ for the host (``192.168.2.10``), and the actual PlutoSDR device (``192.168.2.1``). As one can expect - IP addresses are expected to be unique, and the default configuration works well when you have one device, but not as well when you have multiple.
 
 In order to use multiple devices, you must change their IP address. This is managed by updating the ``config.txt`` file on the PlutoSDR mass storage device.
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/win_config_file.png
-   :width: 500px
+   :width: 500
 
 ::
 
@@ -96,14 +98,16 @@ pluto.local 192.168.2.1``
 
 If you have multiple radios on the your network, and you want to find out the IP address of them, the pluto devices advertise an ssh and sftp-ssh servers :``analog@imhotep:~$ **avahi-browse -d local _ssh._tcp --resolve -t**
 +   wlo1 IPv4 pluto                                         SSH Remote Terminal  local
-=   wlo1 IPv4 pluto                                         SSH Remote Terminal  local
+=   wlo1 IPv4 pluto                                         SSH Remote Terminal
+local
    hostname = [pluto.local]
    address = [192.168.1.149]
    port = [22]
    txt = []
 analog@imhotep:~$ **avahi-browse -d local _sftp-ssh._tcp --resolve -t**
 +   wlo1 IPv4 pluto                                         SFTP File Transfer   local
-=   wlo1 IPv4 pluto                                         SFTP File Transfer   local
+=   wlo1 IPv4 pluto                                         SFTP File Transfer
+local
    hostname = [pluto.local]
    address = [192.168.1.149]
    port = [22]
@@ -126,7 +130,9 @@ Diagnostic Report
 
 Setting this to ``1`` will generate a file called ``diagnostic_report``, which contains various status information about the system and the Hardware.
 
-The information contained in this report can be used to asses and debug system problems or failures. In order to guarantee fast and precise support it is recommended to always include a diagnostic when reporting a problem.
+The information contained in this report can be used to asses and debug system
+problems or failures. In order to guarantee fast and precise support it is
+recommended to always include a diagnostic when reporting a problem.
 
 DFU
 ~~~
@@ -210,7 +216,6 @@ This will be the default (based on the AD9363):
       #
    
 
-
 To change things to the AD9364 configuration:
 
 .. container:: box bggreen
@@ -225,7 +230,6 @@ To change things to the AD9364 configuration:
       # reboot
    
 
-
 Starting with PlutoSDR firmware revision **v0.32** an additional variable should be set:
 
 .. container:: box bggreen
@@ -238,7 +242,6 @@ Starting with PlutoSDR firmware revision **v0.32** an additional variable should
       # fw_setenv compatible ad9364
       # reboot
    
-
 
 Note that when setting the mode of a Rev. C PlutoSDR to ``2r2t``, the following would be sequence of commands:
 
@@ -255,7 +258,6 @@ Note that when setting the mode of a Rev. C PlutoSDR to ``2r2t``, the following 
       # fw_setenv mode 2r2t
       # reboot
    
-
 
 To learn more about resetting, check out the `developer documentation <https://wiki.analog.com/../devs/reboot>`_.
 
@@ -278,11 +280,11 @@ After rebooting the device, this is what the AD9364 configuration looks like:
       #
    
 
-
 Changing the root password on the target
 ----------------------------------------
 
-In PlutoSDR firmware version v0.32 and later there are three new command/scripts, facilitating persistent SSH key and password changes.
+In PlutoSDR firmware version v0.32 and later there are three new
+command/scripts, facilitating persistent SSH key and password changes.
 
 The first time you want to use this new feature you need to format/erase the mtd2 partition. Please use the ``device_format_jffs2`` command for that. On M2k this command is not included, since the partition is already formatted, and device calibration values are stored here already.
 
@@ -311,7 +313,6 @@ The first time you want to use this new feature you need to format/erase the mtd
       Erasing 64 Kibyte @ d0000 -- 92 % complete flash_erase:  Cleanmarker Updated.
       Erasing 64 Kibyte @ d0000 -- 100 % complete
    
-
 
 After this is done you can use the ``device_passwd`` command to permanently change the password. This script/command calls the Linux passwd command and stores all user/password related files on mtd2 (JFFS2). The next time the system boots it will check all the MD5 sums and then uses this password instead.
 
@@ -331,13 +332,13 @@ After this is done you can use the ``device_passwd`` command to permanently chan
       #
    
 
-
 **Note:** In case you forgot your password, there a mechanism which allows you to revert to the default password using the config.txt file on the mass storage device. Add ``revert_passwd = 1`` under the ``[ACTIONS]`` sections, then follow the procedure described here: :doc:`Config File ACTIONS </wiki-migration/university/tools/pluto/users/customizing>`
 
 Enabling persistent SSH keys
 ----------------------------
 
-In PlutoSDR firmware version v0.32 and later there are three new command/scripts, facilitating persistent SSH key and password changes.
+In PlutoSDR firmware version v0.32 and later there are three new
+command/scripts, facilitating persistent SSH key and password changes.
 
 The first time you want to use this new feature you need to format/erase the mtd2 partition. Please use the ``device_format_jffs2`` command for that. On M2k this command is not included, since the partition is already formatted, and device calibration values are stored here already.
 
@@ -367,7 +368,6 @@ The first time you want to use this new feature you need to format/erase the mtd
       Erasing 64 Kibyte @ d0000 -- 100 % complete
    
 
-
 After this is done you can use the ``device_persistent_keys`` command to permanently store your private SSH dropbear keys. This script/command copies the current key or generates one, which is now stored on mtd2 (JFFS2). The next time the system boots it will check the MD5 sum and then uses this key instead.
 
 .. container:: box bggreen
@@ -385,7 +385,6 @@ After this is done you can use the ``device_persistent_keys`` command to permane
       #
    
 
-
 Changing the USB Ethernet Compatibility Mode
 --------------------------------------------
 
@@ -399,7 +398,9 @@ CDC-NCM         ✘       ✔     ✔     ✔      ✘
 CDC-ECM         ✘       ✔     ✘     ✘      ✔
 =============== ======= ===== ===== ====== =======
 
-As you can see - the default of RNDIS does not work on Mac OS (sorry). The platform you are testing on - needs to support high power USB 2.0 devices (500mA). (iPad will support, iPhone will not).
+As you can see - the default of RNDIS does not work on Mac OS (sorry). The
+platform you are testing on - needs to support high power USB 2.0 devices
+(500mA). (iPad will support, iPhone will not).
 
 ======= =======================================
 Mode    Value of ``usb_ethernet_mode`` variable
@@ -441,4 +442,3 @@ u-boot environment
       # fw_setenv usb_ethernet_mode ncm
       # reboot
    
-

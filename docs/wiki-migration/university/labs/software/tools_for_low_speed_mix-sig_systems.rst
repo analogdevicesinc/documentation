@@ -6,17 +6,40 @@ Tools for Low Speed Mixed Signal System Design
 Introduction
 ------------
 
-The goal of this tutorial is to equip the reader with a collection of hardware and software tools for developing low-speed mixed-signal applications. \*\* Content Guide:\*\* This tutorial includes complete written instructions, a video guide, and a slide deck that can be used for delivering as a hands-on workshop.
+The goal of this tutorial is to equip the reader with a collection of hardware
+and software tools for developing low-speed mixed-signal applications. \*\*
+Content Guide:\*\* This tutorial includes complete written instructions, a video
+guide, and a slide deck that can be used for delivering as a hands-on workshop.
 
-What exactly does "Low Speed" mean? In the context of this tutorial, it means that timing is not very critical. Signals are either completely static or moving slowly such that it doesn't matter if the instant that an ADC samples the signal wiggles around a bit relative to the previous sampling. While clock jitter is one source of this uncertainty, software delays (such as the time between a timer interrupt and the assertion of a "convert" edge) will likely be dominant. Important parameters in low-speed applications are offset, gain error, linearity, and temperature drift. "Noise" in a low-speed application is typically synonymous with resolution, and is typically measured by applying a noiseless input signal and taking a histogram of the output readings. AC performance metrics such as signal to noise ratio and total harmonic distortion extracted from a Fourier transform of the data will not be considered.
+What exactly does "Low Speed" mean? In the context of this tutorial, it means
+that timing is not very critical. Signals are either completely static or moving
+slowly such that it doesn't matter if the instant that an ADC samples the signal
+wiggles around a bit relative to the previous sampling. While clock jitter is
+one source of this uncertainty, software delays (such as the time between a
+timer interrupt and the assertion of a "convert" edge) will likely be dominant.
+Important parameters in low-speed applications are offset, gain error,
+linearity, and temperature drift. "Noise" in a low-speed application is
+typically synonymous with resolution, and is typically measured by applying a
+noiseless input signal and taking a histogram of the output readings. AC
+performance metrics such as signal to noise ratio and total harmonic distortion
+extracted from a Fourier transform of the data will not be considered.
 
 **In contrast** - sample jitter is important in a "high speed" application. If you are measuring signal to noise ratio, the Signal to Noise ratio (SNR) can be no greater than:
 
 :math:`SNR <= -20 \times log(2 \times \pi \times f_{IN} \times t_{j})` where: :math:`f_{IN}` is the analog input frequency in Hz :math:`t_{j}` is the RMS jitter in seconds RMS
 
-So that's it. In this tutorial, we will set voltages and currents, read voltages and currents, do some basic math, but each reading will be treated independently, no correlation to previous or future readings. We will NOT be measuring AC Signal to Noise Ratio (SNR), Total Harmonic Distortion (THD), nor measuring steps, wiggles, or any other situation where precise timing is required. (Rest assured, there are lots of very interesting applications in this category.)
+So that's it. In this tutorial, we will set voltages and currents, read voltages
+and currents, do some basic math, but each reading will be treated
+independently, no correlation to previous or future readings. We will NOT be
+measuring AC Signal to Noise Ratio (SNR), Total Harmonic Distortion (THD), nor
+measuring steps, wiggles, or any other situation where precise timing is
+required. (Rest assured, there are lots of very interesting applications in this
+category.)
 
-Throughout the exercises we'll be writing simple Python code to capture and analyze data, using the industry standard Industrial I/O (IIO) framework to interact with the ADC, and the popular NumPy and Matplotlib Python libraries. Thus this exercise also serves as a mini-tutorial on Python.
+Throughout the exercises we'll be writing simple Python code to capture and
+analyze data, using the industry standard Industrial I/O (IIO) framework to
+interact with the ADC, and the popular NumPy and Matplotlib Python libraries.
+Thus this exercise also serves as a mini-tutorial on Python.
 
 Materials
 ---------
@@ -27,8 +50,6 @@ Materials
 -  Electrical connection hardware (choose one):
 
    -  :adi:`Raspberry Pi to PMOD/QuikEval™/LTpowerPlay® Adaptor HAT <pmd-rpi-intz>`
-
-
 
 - 12x 15cm socket-to-socket jumpers such as **`these from Schmartboard <https://schmartboard.com/wire-jumpers/female-jumpers/5-inch/>`_**
    * 16GB (or larger) Class 10 (or faster) micro-SD card, with **\ :doc:`Analog Devices Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`** installed
@@ -42,7 +63,8 @@ Materials
    * Breadboard or prototyping board, hookup wire
    * Clone or download zip of the Python code for this tutorial
    * Python files: **\ :git-pyadi-iio:`AD5592r Pyadi-IIO examples <examples/ad5592r_examples>`**
-     * (Note that these are included in the pyadi-iio repo, consider cloning the entire thing:
+     * (Note that these are included in the pyadi-iio repo, consider cloning the
+       entire thing:
 
 ::
 
@@ -55,7 +77,6 @@ Materials
 
    `rpi-ad5592r-with_gpios-overlay source and compiled overlay <https://wiki.analog.com/_media/university/labs/software/tools_for_low_speed_mix-sig_systems/rpi-ad5592r-with_gpios-overlay.zip>`_
 
-
 Background
 ----------
 
@@ -64,15 +85,17 @@ This tutorial builds on the concepts covered in: :doc:`Converter Connectivity Tu
 Slide Deck and Video
 --------------------
 
-Since this tutorial is also designed to be presented as a live, hands-on workshop, a slide deck is provided here:
+Since this tutorial is also designed to be presented as a live, hands-on
+workshop, a slide deck is provided here:
 
 .. admonition:: Download
    :class: download
 
    `Tools for Low-Speed Mixed Signal System Design Slide Deck <https://wiki.analog.com/_media/university/labs/software/tools_for_low_speed_mix-sig_systems/tools_for_low_speed_ms_workshop.pptx>`_
 
-
-A complete video run-through is also provided, either as a companion to following the tutorial yourself, or to practice before presenting as a hands-on workshop:
+A complete video run-through is also provided, either as a companion to
+following the tutorial yourself, or to practice before presenting as a hands-on
+workshop:
 
 .. note::
 
@@ -81,7 +104,6 @@ A complete video run-through is also provided, either as a companion to followin
    
    .. container:: centeralign
 
-
    
       ..
 
@@ -89,8 +111,8 @@ A complete video run-through is also provided, either as a companion to followin
 
 .. note::
 
-   Finish Me (Translate slide deck and video into complete written instructions with photos, diagrams, etc.)
-
+   Finish Me (Translate slide deck and video into complete written instructions
+   with photos, diagrams, etc.)
 
 Preparation - a few resources for learning Python
 -------------------------------------------------
@@ -149,18 +171,23 @@ Next Steps: Other languages (C++, C#, MATLAB, etc.)
 Next Steps: No-OS development on Linux? You bet!
 ------------------------------------------------
 
-...but I'm Confused... No-OS means no Operating System, but we're using Kuiper Linux, and that's an Operating System. What gives?
+...but I'm Confused... No-OS means no Operating System, but we're using Kuiper
+Linux, and that's an Operating System. What gives?
 
 Unlike the IIO drivers used in the previous tutorial , which **require** the Linux kernel and operating system to function, No-OS provides a portable software stack which can run on any platform that supports a C compiler. This could be bare metal microcontrollers, truly running without an operating system, up through full systems like our Kuiper Linux running on a Raspberry Pi. The No-OS repository includes existing support for the Linux OS, Real-Time Operating Systems Chibios, and mbed, Raspberry Pico, as well as hardware support for Maxim/ADI, STM32, Xilinx and Altera.
 
-But why? Well, bringing up a toolchain for a particular embedded processor has its own set of challenges - particularly if development will begin on a standard development platform, then be ported to a custom board. Runnin no-OS code on Linux provides a way to get started on the embedded code development, before actually embedding.
+But why? Well, bringing up a toolchain for a particular embedded processor has
+its own set of challenges - particularly if development will begin on a standard
+development platform, then be ported to a custom board. Runnin no-OS code on
+Linux provides a way to get started on the embedded code development, before
+actually embedding.
 
-A full treatment of this flow is beyond the scope of this tutorial, but will be documented in a future tutorial.
+A full treatment of this flow is beyond the scope of this tutorial, but will be
+documented in a future tutorial.
 
 .. note::
 
    Port the Fred in the Shed curve tracer to no-OS on Linux.
-
 
 Next Steps: Porting to a fully embedded system
 ----------------------------------------------

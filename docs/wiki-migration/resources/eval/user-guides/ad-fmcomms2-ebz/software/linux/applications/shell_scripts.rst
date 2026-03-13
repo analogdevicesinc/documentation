@@ -24,7 +24,6 @@ Shell scripts
        1321 pts/0    00:00:00 bash
    
 
-
 To check out these scripts, simply do something like:
 
 .. container:: box bggreen
@@ -37,7 +36,6 @@ To check out these scripts, simply do something like:
       rgetz@pinky ~ $ git clone `linux_image_ADI-scripts <https://github.com/analogdevicesinc/linux_image_ADI-scripts>`_.git
    
 
-
 This should give you the most up to date scripts.
 
 Linux scripts
@@ -46,7 +44,9 @@ Linux scripts
 Enabling a static IP address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, the Linux setup provided by ADI will try to automatically get an IP address from the network using DHCP. To instead use a static IP instead, do the following:
+By default, the Linux setup provided by ADI will try to automatically get an IP
+address from the network using DHCP. To instead use a static IP instead, do the
+following:
 
 .. container:: box bggreen
 
@@ -59,10 +59,10 @@ By default, the Linux setup provided by ADI will try to automatically get an IP 
       root@linaro-ubuntu-desktop:~# sudo enable_static_ip.sh <IP address>
    
 
-
 In more detail, first make sure the latest software is installed on the host so the ``enable_static_ip.sh`` script is available. Then it can be used to set a static IP address for a network interface (defaults to eth0). Note that the specified IP address should generally be an unused one on the same subnet the device is getting added to. As a warning, note that these scripts will overwrite /etc/network/interfaces so do not run them on devices where you have specifically customized the network configuration.
 
-An interface can be specified as the second argument otherwise the script defaults to eth0, e.g. in order to use 192.168.0.2 for eth1 run the following:
+An interface can be specified as the second argument otherwise the script
+defaults to eth0, e.g. in order to use 192.168.0.2 for eth1 run the following:
 
 .. container:: box bggreen
 
@@ -74,8 +74,8 @@ An interface can be specified as the second argument otherwise the script defaul
       root@linaro-ubuntu-desktop:~# sudo enable_static_ip.sh 192.168.0.2 eth1
    
 
-
-In order to revert back to acquiring IP addresses for all interfaces via DHCP use the following:
+In order to revert back to acquiring IP addresses for all interfaces via DHCP
+use the following:
 
 .. container:: box bggreen
 
@@ -86,7 +86,6 @@ In order to revert back to acquiring IP addresses for all interfaces via DHCP us
    
       root@linaro-ubuntu-desktop:~# sudo enable_dhcp.sh
    
-
 
 Scripts for FMComms boards
 --------------------------

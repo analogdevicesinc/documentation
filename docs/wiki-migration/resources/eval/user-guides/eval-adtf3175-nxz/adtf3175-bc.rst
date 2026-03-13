@@ -9,7 +9,12 @@ This page provides a high level overview of the :doc:`EVAL-ADTF3175-NXZ </wiki-m
 ADTF3175
 --------
 
-The ADTF3175 is a complete Time-Of-Flight (ToF) module for high resolution 3D depth sensing and vision systems. Using the ADSD3100 ToF image sensor, the ADTF3175 also integrates the lens and optical band-pass filter for the imager, an infrared illumination source containing optics, laser diode driver and photodetector, a flash memory, and power regulators to generate local supply voltages.
+The ADTF3175 is a complete Time-Of-Flight (ToF) module for high resolution 3D
+depth sensing and vision systems. Using the ADSD3100 ToF image sensor, the
+ADTF3175 also integrates the lens and optical band-pass filter for the imager,
+an infrared illumination source containing optics, laser diode driver and
+photodetector, a flash memory, and power regulators to generate local supply
+voltages.
 
 \*\* Product Page \*\**IMAGE OF CROSBY**
 
@@ -35,14 +40,20 @@ NVM Contents
 EVAL-ADTF3175-NXZ Usecase
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADTF3175 is powered up and programmed by a configuration file provided by the host (PC). The calibration data stored on its NVM are read by the application processor (SPI) and reprogrammed on the ADSD3100.
+The ADTF3175 is powered up and programmed by a configuration file provided by
+the host (PC). The calibration data stored on its NVM are read by the
+application processor (SPI) and reprogrammed on the ADSD3100.
 
-Once the ADSD3100 on the module is configured, FSYNC can by provided to start the capture of data. The imager outputs data via MIPI (4-Lane upto 1.464 Gbps per lane).
+Once the ADSD3100 on the module is configured, FSYNC can by provided to start
+the capture of data. The imager outputs data via MIPI (4-Lane upto 1.464 Gbps
+per lane).
 
 NXP i.IMX8M SOM + Carrier Board
 -------------------------------
 
-An NXP i.MX8M SOM is used as the embedded devkit for this evaluation platform. A carrier board attached to the SOM generates supply rails for ADTF3175 and SOM, and provides IO ports.
+An NXP i.MX8M SOM is used as the embedded devkit for this evaluation platform. A
+carrier board attached to the SOM generates supply rails for ADTF3175 and SOM,
+and provides IO ports.
 
 -  `carrier-schematic.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175-nxz/carrier-schematic.pdf>`_
 -  `som_carrier-datasheet.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175-nxz/som_carrier-datasheet.pdf>`_
@@ -62,14 +73,23 @@ NXP i.MX8M reference drivers
 EVAL-ADTF3175-NXZ Usecase
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reference image for the NXP SOM is provided on the ADI ToF github page (links below). The SOM is used as a passthrough between the PC and the ADTF3175. It generates FSYNC and handles raw data via MIPI. The data can then be converted to any of the IO ports provided on the carrier board (List of reference drivers provided above).
+Reference image for the NXP SOM is provided on the ADI ToF github page (links
+below). The SOM is used as a passthrough between the PC and the ADTF3175. It
+generates FSYNC and handles raw data via MIPI. The data can then be converted to
+any of the IO ports provided on the carrier board (List of reference drivers
+provided above).
 
 Host PC
 -------
 
-The Host PC captures data provided by the SOM through network or USB 3.0 (USB-C), and also provides power to the evaluation platform via Power Delivery 2.0 (USB-C).
+The Host PC captures data provided by the SOM through network or USB 3.0
+(USB-C), and also provides power to the evaluation platform via Power Delivery
+2.0 (USB-C).
 
-Once raw data is received by the SDK, the data run through a depth compute library to generate radial depth, active brightness and confidence data. XYZ data can also be generated using the lens calibration parameters stored on the ADTF3175 NVM.
+Once raw data is received by the SDK, the data run through a depth compute
+library to generate radial depth, active brightness and confidence data. XYZ
+data can also be generated using the lens calibration parameters stored on the
+ADTF3175 NVM.
 
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,12 +102,14 @@ SDK
 
 An open source SDK for this evaluation platform is provided on `ToF <https://github.com/analogdevicesinc/ToF>`_. The SDK also requires the depth compute libraries which are provided as binaries in the installer @ `ToF/releases/ <https://github.com/analogdevicesinc/ToF/releases>`_.
 
-The SDK comes with a GUI and first frame examples. As well as bindings for Python, OpenCV, ROS and Open3D.
+The SDK comes with a GUI and first frame examples. As well as bindings for
+Python, OpenCV, ROS and Open3D.
 
 EVAL-ADTF3175-NXZ Usecase
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The PC is used to provide the ADSD3100 FW to the ToF module, as well as convert incoming raw data to depth.
+The PC is used to provide the ADSD3100 FW to the ToF module, as well as convert
+incoming raw data to depth.
 
 Data generated from depth compute:
 

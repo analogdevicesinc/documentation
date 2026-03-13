@@ -4,9 +4,12 @@ General Eq (2nd order) Slew Ext-(ADAU145x)
 :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/generaleqslewext1.png
-   :width: 100px
+   :width: 100
 
-The General (2nd-Order)Slew Ext block gives access to a wide variety of 2nd-order (biquad)filter algorithms. The Slew time can be input to the module using the external control pin in seconds (0-1) to slew from the initial set of coefficients to the target value when any filter parameter is changed.
+The General (2nd-Order)Slew Ext block gives access to a wide variety of
+2nd-order (biquad)filter algorithms. The Slew time can be input to the module
+using the external control pin in seconds (0-1) to slew from the initial set of
+coefficients to the target value when any filter parameter is changed.
 
 -  The available filter types are:
 -  Parametric
@@ -30,7 +33,7 @@ The slewing functionality is added for smooth transition from one set of filter 
 **To open the filter control window, click on the icon button:** Select the desired filter type from the drop-down combo-box list. The filter controls and the icon button image will change to reflect the selected filter type.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/generaleqslewext2.png
-   :width: 200px
+   :width: 200
 
 --------------
 
@@ -46,7 +49,10 @@ common variables:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic4.png
    :alt: general2ndpic4.png
 
-Note that the b0 and b2 coefficients for the high pass filter below are inverted from what is stored in RAM. The correct equations for b0, b1, and b2 for a high pass filter are as follows: b0 = -(1 + cos(ω0)) \* gainLinear / 2 b1 = -(1 + cos(ω0)) \* gainLinear b2 = -(1 + cos(ω0)) \* gainLinear / 2
+Note that the b0 and b2 coefficients for the high pass filter below are inverted
+from what is stored in RAM. The correct equations for b0, b1, and b2 for a high
+pass filter are as follows: b0 = -(1 + cos(ω0)) \* gainLinear / 2 b1 = -(1 +
+cos(ω0)) \* gainLinear b2 = -(1 + cos(ω0)) \* gainLinear / 2
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic5.png
    :alt: general2ndpic5.png
@@ -64,7 +70,11 @@ Note that the b0 and b2 coefficients for the high pass filter below are inverted
 
 The above slewing function implements RC slewing. The parameter :math:`\lambda` is calculated based on the slewing time constant. The computations for slewing of filter coefficients is done on the DSP.
 
-For all of the above filters, the coefficients are divided by a0, normalizing them and making a0 = 1 so that only 5 coefficients must be stored. In the actual implementation on the DSP, when the coefficients are stored in parameter RAM, a1 and a2 need to be inverted. This is done automatically, in software, before the parameters are written to memory.
+For all of the above filters, the coefficients are divided by a0, normalizing
+them and making a0 = 1 so that only 5 coefficients must be stored. In the actual
+implementation on the DSP, when the coefficients are stored in parameter RAM, a1
+and a2 need to be inverted. This is done automatically, in software, before the
+parameters are written to memory.
 
 The Q is shown with the value adjusted (from the classical EE definition) so that a boost of N dB followed by a cut of N dB for identical Q and f0/Fs results in a precisely flat unity gain filter or "wire". This is equal to A\*Q, where A = 10^(dBgain/40).
 

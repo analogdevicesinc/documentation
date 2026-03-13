@@ -1,7 +1,13 @@
 Analog Devices Kuiper Linux
 ===========================
 
-Analog Devices Kuiper Linux is a distribution based on Raspberry Pi OS for the Raspberry Pi. It incorporates thousands of Linux device drivers for ADI products, and is created with ease of use in mind. The reasoning for creating this distribution is to minimize the barriers to integrating ADI hardware devices into an embedded Linux system. ADI Kuiper Linux also includes a host of additional applications, software libraries, and utilities including for rapid prototyping and development:
+Analog Devices Kuiper Linux is a distribution based on Raspberry Pi OS for the
+Raspberry Pi. It incorporates thousands of Linux device drivers for ADI
+products, and is created with ease of use in mind. The reasoning for creating
+this distribution is to minimize the barriers to integrating ADI hardware
+devices into an embedded Linux system. ADI Kuiper Linux also includes a host of
+additional applications, software libraries, and utilities including for rapid
+prototyping and development:
 
 -  IIO Oscilloscope (basic GUI for debugging IIO devices)
 -  IIOD (exposes IIO devices over a network connection to a remote host)
@@ -30,11 +36,13 @@ SD Card Image and Release Notes
    -  :doc:`Download Release Images </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
    
 
-
 .. warning::
 
-   Warning: SD Card Write Issues If your computer has security restrictions imposed by your company's IT department, which prevent you from writing data to SD-cards (or the data is encrypted when written on the SD-card), then consider using a computer that doesn't have such restrictions, or communicating with your IT department to find a solution.
-
+   Warning: SD Card Write Issues If your computer has security restrictions
+   imposed by your company's IT department, which prevent you from writing data
+   to SD-cards (or the data is encrypted when written on the SD-card), then
+   consider using a computer that doesn't have such restrictions, or
+   communicating with your IT department to find a solution.
 
 Imaging your SD Card
 --------------------
@@ -52,7 +60,8 @@ Supported Projects
 Users and Passwords
 -------------------
 
-The default user is the "analog" user, the password for this user is "analog". The password for the "root" account is "analog" as well.
+The default user is the "analog" user, the password for this user is "analog".
+The password for the "root" account is "analog" as well.
 
 ====== ========
 User   Password
@@ -98,7 +107,8 @@ For **Arria10 SOC projects** copy these files to the root of the BOOT FAT32 part
 -  target/u-boot.img
 -  socfpga_arria10_common/zImage
 -  socfpga_arria10_common/extlinux.conf, inside a folder named 'extlinux'. Create the folder if it does not exist;
--  write preloader file (fit_spl_fpga.itb) to the corresponding SD card partition (third partition - 4MB in size).
+-  write preloader file (fit_spl_fpga.itb) to the corresponding SD card
+   partition (third partition - 4MB in size).
 
 ::
 
@@ -112,7 +122,8 @@ For **Cyclone5 projects** copy these files to the root of the BOOT FAT32 partiti
 -  target/u-boot-with-spl.sfp
 -  socfpga_cyclone5_common/zImage
 -  socfpga_cyclone5_common/extlinux.conf , in a folder called 'extlinux'. Create the folder if it does not exist;
--  write preloader file (u-boot-with-spl.sfp) to the corresponding SD card partition (third partition - 4MB in size)
+-  write preloader file (u-boot-with-spl.sfp) to the corresponding SD card
+   partition (third partition - 4MB in size)
 
 ::
 
@@ -121,16 +132,28 @@ For **Cyclone5 projects** copy these files to the root of the BOOT FAT32 partiti
 Configuring the SD Card for Raspberry Pi Projects
 -------------------------------------------------
 
-The system will need to be configured according to what devices are connected to the Raspberry Pi. The most straightforward way to do this for Raspberry Pi is to edit the config.txt file, which is located in the boot partition. Any text editor can be used, including the Mousepad editor that is included with Kuiper Linux. Using the Raspberry Pi itself also avoids problems with USB encryption, often present on company computers.
+The system will need to be configured according to what devices are connected to
+the Raspberry Pi. The most straightforward way to do this for Raspberry Pi is to
+edit the config.txt file, which is located in the boot partition. Any text
+editor can be used, including the Mousepad editor that is included with Kuiper
+Linux. Using the Raspberry Pi itself also avoids problems with USB encryption,
+often present on company computers.
 
-Connect a keyboard, mouse, and monitor to the Raspberry Pi and connect power. The ADI Kuiper Linux desktop should appear. Before editing, it is a good idea to make a backup of the original file, just in case something goes wrong (which it won't, but still...) Open a terminal and enter the following command (noting that "analog@analog:~ $" is the prompt, and does not need to be typed):
+Connect a keyboard, mouse, and monitor to the Raspberry Pi and connect power.
+The ADI Kuiper Linux desktop should appear. Before editing, it is a good idea to
+make a backup of the original file, just in case something goes wrong (which it
+won't, but still...) Open a terminal and enter the following command (noting
+that "analog@analog:~ $" is the prompt, and does not need to be typed):
 
 ::
 
    analog@analog:~ $ sudo cp /boot/config.txt /boot/config.backup
    analog@analog:~ $ sudo mousepad /boot/config.txt
 
-This will bring up the text editor. At this point, the appropriate device tree overlays can be included, for example, add the following line to enable the ADXL345 3-axis SPI accelerometer, noting that the lirc-rpi lines are shown for reference, and any line beginning with "#" is ignored:
+This will bring up the text editor. At this point, the appropriate device tree
+overlays can be included, for example, add the following line to enable the
+ADXL345 3-axis SPI accelerometer, noting that the lirc-rpi lines are shown for
+reference, and any line beginning with "#" is ignored:
 
 ::
 
@@ -173,8 +196,6 @@ Successful Boot Message
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The example boot messages may change based on your specific platform, but when connected to UART via a serial terminal session from your host PC, your terminal should read similar to the the log provided below. Make sure when creating a serial connection, you are using the baud rate of 115200 and you are connected **BEFORE** you power up your platform.
-
-
 
 .. collapsible:: **Complete Boot Log** (Click to expand)
 
@@ -720,8 +741,6 @@ The example boot messages may change based on your specific platform, but when c
       Last login: Fri Jun 17 14:45:22 BST 2022 on ttyS0
       root@analog:~#
 
-
-
 Hardware & Driver Verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -750,22 +769,24 @@ Here's an example output:
    ...
    ...
 
-So if your setup is running Kuiper Linux and you can see the device drivers from your hardware, then you are all set and ready to use the setup!!
+So if your setup is running Kuiper Linux and you can see the device drivers from
+your hardware, then you are all set and ready to use the setup!!
 
 Powering Down
 -------------
 
-
-
 .. important::
 
-   Even thought this is Linux, this is a persistent file systems. You have to take care not to corrupt the file system -- please shut down things, don't just turn off the power switch. Using the desktop shutdown feature is the easiest way, but depending on your monitor, the standard power off button could be hiding. You can also do this from the terminal window as well with:
+   Even thought this is Linux, this is a persistent file systems. You have to
+   take care not to corrupt the file system -- please shut down things, don't
+   just turn off the power switch. Using the desktop shutdown feature is the
+   easiest way, but depending on your monitor, the standard power off button
+   could be hiding. You can also do this from the terminal window as well with:
 
    | ``sudo shutdown -h now``
    | or
    | ``sudo poweroff``
    
-
 
 Advanced Information For Power Users
 ------------------------------------

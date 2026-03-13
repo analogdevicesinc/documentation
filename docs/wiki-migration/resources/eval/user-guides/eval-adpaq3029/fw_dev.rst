@@ -10,7 +10,11 @@ The firmware consists of 3 parts:
 -  MDK (Moduware Developers Kit) and
 -  main application.
 
-The bootloader carries out different system initialization functions and module application upgrades. The MDK is the window of communication between the module application and the gateway. The communication between the module application and the gateway is facilitated by MDK APIs. The MDK also processes the message received from the application by invoking the callback functions.
+The bootloader carries out different system initialization functions and module
+application upgrades. The MDK is the window of communication between the module
+application and the gateway. The communication between the module application
+and the gateway is facilitated by MDK APIs. The MDK also processes the message
+received from the application by invoking the callback functions.
 
 Mainly, the following MDK APIs have been used in the ADPAQ projects:
 
@@ -20,8 +24,8 @@ Mainly, the following MDK APIs have been used in the ADPAQ projects:
 
 .. important::
 
-   Whenever a command is registered, it is important to make sure that it is within 0x2700 to 0x27ff as defined in the MDK standard.
-
+   Whenever a command is registered, it is important to make sure that it is
+   within 0x2700 to 0x27ff as defined in the MDK standard.
 
 2. Memory map
 -------------
@@ -35,13 +39,14 @@ The :adi:`ADuCM3029` Microcontroller has 256KB of Flash Memory, 32KB of Data SRA
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/fw1.png
    :align: center
-   :width: 300px
+   :width: 300
 
-The 32KB Data SRAM is divided into 2 parts, 16KB for the Bootloader and 16KB for the MDK/Application.
+The 32KB Data SRAM is divided into 2 parts, 16KB for the Bootloader and 16KB for
+the MDK/Application.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/fw2.png
    :align: center
-   :width: 300px
+   :width: 300
 
 3. MDK library
 --------------
@@ -92,12 +97,12 @@ Building
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw14.png>`_
 
--  Now, building the project again should generate the binary (\*.bin) file in the same directory as makefile
+-  Now, building the project again should generate the binary (\*.bin) file in
+   the same directory as makefile
 
 .. important::
 
    It is advised to clean the project before building by right clicking project -> ``Clean Project``. This deletes old build files.
-
 
 Debugging
 ~~~~~~~~~
@@ -111,7 +116,8 @@ Debugging
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb4.png>`_
 
--  In the Debug Configurations window, select Application with GDB and OpenOCD(Emulator) on the left.
+-  In the Debug Configurations window, select Application with GDB and
+   OpenOCD(Emulator) on the left.
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb5.png>`_
 
@@ -121,11 +127,16 @@ Debugging
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb6.png>`_
 
--  The execution halts when it hits the breakpoint. The execution can be resumed by clicking on the resume button as shown in the image.
+-  The execution halts when it hits the breakpoint. The execution can be resumed
+   by clicking on the resume button as shown in the image.
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb7.png>`_
 
--  The breakpoints can be inserted (or removed) to (or from) any line of the code by double clicking on the beginning of the line. The “step into” function can be used to execute the code step by step. By clicking on the window->show view, the values associated with different expressions, registers, memory etc can be observed.
+-  The breakpoints can be inserted (or removed) to (or from) any line of the
+   code by double clicking on the beginning of the line. The “step into”
+   function can be used to execute the code step by step. By clicking on the
+   window->show view, the values associated with different expressions,
+   registers, memory etc can be observed.
 
 `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb8.png>`_
 
@@ -134,9 +145,10 @@ Firmware deployment/flashing
 
 -  After successful building/debugging, the generated executable binary file (\*.bin) should be copied to ``DAPLINK`` USB drive.
 -  After copying, the USB driver will automatically flash the copied binary file to the ADuCM3029 microcontroller.
--  Then USB drive gets refreshed and opens again. If the copied binary file is not visible, then flashing is successful, if the file is still visible then flashing is not successful.
+-  Then USB drive gets refreshed and opens again. If the copied binary file is
+   not visible, then flashing is successful, if the file is still visible then
+   flashing is not successful.
 
 .. important::
 
    Many a times, the modules may not be recognized as ``DAPLINK`` but will be shown as ``MAINTENANCE``. In this case, just disconnect the power cable from the modules and connect them back again.
-

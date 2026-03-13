@@ -9,7 +9,8 @@ The memory used by FreeRTOS will vary depending on configuration, as many featur
 Interrupts
 ----------
 
-FreeRTOS makes use of a software interrupt for context switching, and a timer interrupt for the tick mechanism
+FreeRTOS makes use of a software interrupt for context switching, and a timer
+interrupt for the tick mechanism
 
 ======== ============================== ==================
 Platform Context Switch Interrupt       Timer
@@ -21,4 +22,6 @@ SHARC    Core User Software Interrupt 3 TMZLI
 
 Note: An alternative timer can be used by defining configTIMER_INTERRUPT.
 
-Note: On ADSP-2158x/ADSP-SC58x and ADSP-2157x/ADSP-SC57x where anomaly 20-00-0081 applies, then system interrupts SOFT6 (Core1) and SOFT7 (Core2) are used instead of the core interrupt.
+Note: On ADSP-2158x/ADSP-SC58x and ADSP-2157x/ADSP-SC57x where anomaly
+20-00-0081 applies, then system interrupts SOFT6 (Core1) and SOFT7 (Core2) are
+used instead of the core interrupt.

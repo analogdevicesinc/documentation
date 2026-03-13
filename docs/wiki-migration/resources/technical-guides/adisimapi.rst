@@ -19,11 +19,14 @@ Structure
 
    \ *Figure 1. ADIsim.dll Structure*\
 
-
 API
 ---
 
-The API section is broken up into two subsections: DLL Interface and the Process Message Schema. The DLL Interface section documents how to interface physically to the ADIsim.dll. The Process Message Schema section documents how to interface logically to a model instance. The simulator was designed this way to preserve generitivity and provide extensibility.
+The API section is broken up into two subsections: DLL Interface and the Process
+Message Schema. The DLL Interface section documents how to interface physically
+to the ADIsim.dll. The Process Message Schema section documents how to interface
+logically to a model instance. The simulator was designed this way to preserve
+generitivity and provide extensibility.
 
 Physical Interface
 ~~~~~~~~~~~~~~~~~~
@@ -61,7 +64,6 @@ Value            Maps To
 ``in[length-1]`` real\ :sub:```length-1```
 ================ =========================
 
-
 | If the input data type is complex, ``RunSamples(…)`` expects an array of interleaved doubles, which captures the following relationship:
 
 ================== =========================
@@ -76,7 +78,6 @@ Value              Maps To
 ``in[2\*length-1]`` imag\ :sub:```length-1```
 ================== =========================
 
-
 | ``out`` – pointer to the output value array. It must be allocated by the client.
 | If the input data type is real, ``RunSamples(…)`` expects space for an array of doubles, which captures the following relationship:
 
@@ -88,7 +89,6 @@ real\ :sub:`1`                ``out[1]``
 …                             …
 real\ :sub:```out_length-1``` ``out[out_length-1]``
 ============================= =====================
-
 
 | If the input data type is complex, ``RunSamples(…)`` expects space for an array of interleaved doubles, which captures the following relationship:
 
@@ -103,7 +103,6 @@ imag\ :sub:`1`                ``out[3]``
 real\ :sub:```out_length-1``` ``out[2\*out_length-2]``
 imag\ :sub:```out_length-1``` ``out[2\*out_length-1]``
 ============================= =======================
-
 
 | where: ``out_length = ceil(length * (fout / fs)).``
 | ``fout`` and ``fs`` are retrieved via ``ProcessMessage(…)`` and ``ceil(…)`` returns the next highest inclusive integer.
@@ -160,7 +159,10 @@ imag\ :sub:```out_length-1``` ``out[2\*out_length-1]``
 Logical Interface
 ~~~~~~~~~~~~~~~~~
 
-The generative design of the simulator requires a generic interface. Besides the above documented physical interface, there is a logical interface which is consistent across all models. The logical interface is further subdivided into two categories: concepts and message passing.
+The generative design of the simulator requires a generic interface. Besides the
+above documented physical interface, there is a logical interface which is
+consistent across all models. The logical interface is further subdivided into
+two categories: concepts and message passing.
 
 Concepts
 ^^^^^^^^
@@ -175,8 +177,8 @@ Concepts
 | Some models support an additional parameter ``tessitura``, which represents the expected mean frequency of the input data. This parameter is only necessary when a model is unable to infer the input frequency from context. The term is borrowed from music theory, where it refers to the center frequency at which a vocalist is most comfortable. ``tessitura`` - the expected mean frequency of the input data
 | It is important to check the permission of the above property values for it may be that only one of them is mutable. This is determined when a model is loaded, or when a mode is changed.
 
-A graphical representation of the logical model interface is shown in Figure 2 below:
-
+A graphical representation of the logical model interface is shown in Figure 2
+below:
 
 |image2|
 
@@ -184,11 +186,11 @@ A graphical representation of the logical model interface is shown in Figure 2 b
 
    \ *Figure 2: Logical Model Interface*\
 
-
 Message Passing
 ^^^^^^^^^^^^^^^
 
-A physical API command that enables logical message passing is provided through the following method:
+A physical API command that enables logical message passing is provided through
+the following method:
 
 .. code:: java
 
@@ -212,7 +214,9 @@ All received message content are children of the root element:
 
    <responses>[answers(s)]</responses>
 
-Sent messages are composed of a series of atomic messages called commands. Commands perform a specific task understood by ADIsim.dll. Each sent message solicits a response that is called an answer.
+Sent messages are composed of a series of atomic messages called commands.
+Commands perform a specific task understood by ADIsim.dll. Each sent message
+solicits a response that is called an answer.
 
 Modes
 ^^^^^

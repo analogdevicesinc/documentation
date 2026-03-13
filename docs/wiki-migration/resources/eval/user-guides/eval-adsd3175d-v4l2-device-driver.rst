@@ -4,7 +4,8 @@ EVAL-ADSD3175D V4L2 Device Driver
 Driver Scripts
 --------------
 
-With the SD Card Image, several scripts are provided. These scripts operate the ADSD3500 without the SDK to stream frames.
+With the SD Card Image, several scripts are provided. These scripts operate the
+ADSD3500 without the SDK to stream frames.
 
 You can find these script in the **~/Workspace/adsd3500_getframe** directory.
 
@@ -77,7 +78,8 @@ ab_averaging
 
 depth_enable
 
-0 - Depth is computed using depth compute library. 1 - Depth/phase is computed using ADSD3500.
+0 - Depth is computed using depth compute library. 1 - Depth/phase is computed
+using ADSD3500.
 
 Let's look more closely at one example: get_frame_mp.sh
 
@@ -97,7 +99,8 @@ This will stream 10 frames, saving them to the file frame.bin.
    8: v4l2-ctl --set-ctrl=depth_enable=0 -d /dev/v4l-subdev1
    9: v4l2-ctl --device /dev/video0 --set-fmt-video=width=1024,height=3072,pixelformat=BG12 --stream-mmap --stream-to=frame.bin --stream-count=$nr_frames
 
-Lines 3 to 8 essentially interacts with the ADSD3500 host command SET IMAGER MODE.
+Lines 3 to 8 essentially interacts with the ADSD3500 host command SET IMAGER
+MODE.
 
 Line 3: Select mega-pixel mode (10)
 

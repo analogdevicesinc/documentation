@@ -1,108 +1,126 @@
 .. image:: https://wiki.analog.com/_media/resources/tools-software/ssplus.jpg
    :alt: ssplus.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 SigmaStudio+
 ============
 
-The SigmaStudio®+ graphical development tool is the programming, development, and tuning software for the SHARC® audio processors and A2B® transceivers. Familiar audio processing blocks can be wired together as in a schematic, and the compiler generates DSP-ready code and a control surface for setting and tuning parameters. This tool allows engineers with no DSP code writing experience to easily implement a DSP into their design and yet is still powerful enough to satisfy the demands of experienced DSP designers. SigmaStudio links with both Analog Devices evaluation boards and production designs to provide full in-circuit real-time IC control.
+The SigmaStudio®+ graphical development tool is the programming, development,
+and tuning software for the SHARC® audio processors and A2B® transceivers.
+Familiar audio processing blocks can be wired together as in a schematic, and
+the compiler generates DSP-ready code and a control surface for setting and
+tuning parameters. This tool allows engineers with no DSP code writing
+experience to easily implement a DSP into their design and yet is still powerful
+enough to satisfy the demands of experienced DSP designers. SigmaStudio links
+with both Analog Devices evaluation boards and production designs to provide
+full in-circuit real-time IC control.
 
-SigmaStudio Plus includes an extensive library of algorithms to perform audio processing such as filtering, mixing, and dynamics processing, as well as basic low-level DSP functions and control blocks. Plug-in algorithms from Analog Devices and 3rd party partners can be added to SigmaStudio's drag-and-drop library.
+SigmaStudio Plus includes an extensive library of algorithms to perform audio
+processing such as filtering, mixing, and dynamics processing, as well as basic
+low-level DSP functions and control blocks. Plug-in algorithms from Analog
+Devices and 3rd party partners can be added to SigmaStudio's drag-and-drop
+library.
 
-Along with its graphical DSP signal flow development, SigmaStudio Plus also includes other features to speed up the design cycle from product concept to release. SigmaStudio Plus includes tools for intuitively setting control registers, calculating tables of filter coefficients, visualizing filter magnitude and phase responses, generating C header files, and sequencing a series of controls to ease your transition from SigmaStudio Plus to system implementation on your microcontroller.
+Along with its graphical DSP signal flow development, SigmaStudio Plus also
+includes other features to speed up the design cycle from product concept to
+release. SigmaStudio Plus includes tools for intuitively setting control
+registers, calculating tables of filter coefficients, visualizing filter
+magnitude and phase responses, generating C header files, and sequencing a
+series of controls to ease your transition from SigmaStudio Plus to system
+implementation on your microcontroller.
 
 .. tip::
 
    Click :adi:`here <en/design-center/evaluation-hardware-and-software/software/software-download.html?swpart=SD_DOFKSRH#>` to download the latest version of SigmaStudio+ (SigmaStudio+ 3.3.0)
-
 
 Documentation
 =============
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/noun_start_3203567.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`Getting Started </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted>`
 | This section will contain information for first-time users of SigmaStudio+.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/noun_application_3394035.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`Development Environment </wiki-migration/resources/tools-software/sigmastudiov2/developmentenvironment>`
 | This section contains information about the SigmaStudio+ user interface.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/noun_instruction_2334644.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`Using SigmaStudio+ </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio>`
 | This section describes the basic functions of the SigmaStudio+ software.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/noun_ic_2443512.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`Supported Platforms </wiki-migration/resources/tools-software/sigmastudiov2/supportedplatforms>`
 | This section describes the list of Platforms supported by SigmaStudio+.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/noun_sound_wave_385910.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`Modules (Detailed Algorithm Information) </wiki-migration/resources/tools-software/sigmastudiov2/modules>`
 | This section contains detailed information about all of the algorithms in SigmaStudio+.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/noun_firmware_problem_2533059.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`Target Integration </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration>`
 | This section contains detailed information on integrating SigmaStudio+ with target processor and controller applications.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/specification.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`Specifications </wiki-migration/resources/tools-software/sigmastudiov2/specifications>`
 | This section contains specifications of various work products generated by SigmaStudio+ like exported system files, sequence xml files etc.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/noun-scale-873248-2562a1.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`SigmaStudio - SigmoStudio+ Comparison </wiki-migration/resources/tools-software/sigmastudiov2/comparison>`
 | This section covers a detailed comparison between SigmaStudio and SigmaStudio+.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/noun_example_2409435.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`Tutorials and Examples </wiki-migration/resources/tools-software/sigmastudiov2/tutorials>`
 | This section contains tutorials and examples to help users understand and use SigmaStudio+.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/noun_startup_2217284.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`Release Information </wiki-migration/resources/tools-software/sigmastudiov2/releaseinfo>`
 | This section contains features added and bugs fixed in each of the releases.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/noun_support_1156576.png
    :align: left
-   :width: 75px
+   :width: 75
 
 | :doc:`Support </wiki-migration/resources/tools-software/sigmastudiov2/support>`
 | This section contains details on obtaining support regarding product development in the SigmaStudio+ graphical development tool.
 
 .. tip::
 
-   Use <search keyword> @resources:tools-software:sigmastudiov2 in the search box to search for SigmaStudio+ specific information
-
+   Use <search keyword> @resources:tools-software:sigmastudiov2 in the search
+   box to search for SigmaStudio+ specific information
 
 .. tip::
 
-   Pages from this Wiki can be exported by using the Print \| Export Open Office \| PDF options at the top of each page. You can subscribe to updates by using the RSS \| Manage Subscriptions options at the top of each page.
-
+   Pages from this Wiki can be exported by using the Print \| Export Open Office
+   \| PDF options at the top of each page. You can subscribe to updates by using
+   the RSS \| Manage Subscriptions options at the top of each page.

@@ -8,43 +8,57 @@ The objective of this tutorial is to use the Logic Analyzer instrument provided 
 
 The :doc:`ADT7420 PMOD Temperature Demo </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_adt7420>` project will be used as an example. The project uses the :adi:`EVAL-ADT7420-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-adt7420-pmdz.html>` connected to the :adi:`EVAL-ADICUP360` microcontroller board. The PMOD includes the :adi:`ADT7420` high accuracy digital temperature sensor.
 
-The Demo application includes a function that reads and displays the temperature data from the ADT7420 and one that reads and displays the ID register data for ADT7420.
+The Demo application includes a function that reads and displays the temperature
+data from the ADT7420 and one that reads and displays the ID register data for
+ADT7420.
 
 Background
 ----------
 
-I2C is a serial protocol for connecting low-speed peripheral integrated circuits like EEPROMs, A/D and D/A converters and other similar peripherals in embedded systems to processors and microcontrollers in short-distance (intra-board communication).
+I2C is a serial protocol for connecting low-speed peripheral integrated circuits
+like EEPROMs, A/D and D/A converters and other similar peripherals in embedded
+systems to processors and microcontrollers in short-distance (intra-board
+communication).
 
-I2C supports multiple slave devices; a single master can communicate with one or more slaves, provided each slave is set to a unique address (this is either factory-programmed, or set through address pins on the device). Multiple masters are also supported through an arbitration scheme, useful, for example, when several microcontrollers require access to a single memory device.
+I2C supports multiple slave devices; a single master can communicate with one or
+more slaves, provided each slave is set to a unique address (this is either
+factory-programmed, or set through address pins on the device). Multiple masters
+are also supported through an arbitration scheme, useful, for example, when
+several microcontrollers require access to a single memory device.
 
 .. container:: centeralign
 
    \ |image1|\
 
-
 .. container:: centeralign
 
    Figure 1. I2C master-slave configuration
-
 
 I2C physical layer signals:
 
 -  **SDA (Serial Data)** – bidirectional data line for the master and slave to send and receive data
 -  **SCL (Serial Clock)** – line that carries the clock signal, driven by the master
 
-Being a serial communication protocol, I2C data is transferred bit by bit along a single wire (the SDA line). I2C is synchronous, meaning data transfer is synchronized by a clock signal driven by the master to one or more slaves. Both SDA and SCL are open-drain logic, requiring a pullup resistor (or active pullup circuit) to the bus's logic high level. Refer to the references at the end of this page for further details on the operation of the I2C bus.
+Being a serial communication protocol, I2C data is transferred bit by bit along
+a single wire (the SDA line). I2C is synchronous, meaning data transfer is
+synchronized by a clock signal driven by the master to one or more slaves. Both
+SDA and SCL are open-drain logic, requiring a pullup resistor (or active pullup
+circuit) to the bus's logic high level. Refer to the references at the end of
+this page for further details on the operation of the I2C bus.
 
-Data is transferred in transactions composed of one or more 9-bit frames. Each transaction has an address frame that contains the binary address of the slave, and one or more data frames. The transaction also includes start and stop conditions, read/write bits, and ACK/NACK bits between each data frame as shown in Figure 2.
+Data is transferred in transactions composed of one or more 9-bit frames. Each
+transaction has an address frame that contains the binary address of the slave,
+and one or more data frames. The transaction also includes start and stop
+conditions, read/write bits, and ACK/NACK bits between each data frame as shown
+in Figure 2.
 
 .. container:: centeralign
 
    \ |image2|\
 
-
 .. container:: centeralign
 
    Figure 2. I2C transaction content
-
 
 Transaction components:
 
@@ -58,17 +72,16 @@ Transaction components:
 Hardware Configuration
 ----------------------
 
-Figure 3. shows the hardware connection between M2K board and EVAL-ADICUP360 + EVAL-ADT7420-PMDZ.
+Figure 3. shows the hardware connection between M2K board and EVAL-ADICUP360 +
+EVAL-ADT7420-PMDZ.
 
 .. container:: centeralign
 
    \ |image3|\
 
-
 .. container:: centeralign
 
    Figure 3. I2C Debug Hardware Setup
-
 
 The I2C pins are available for monitoring at port PWMH of the EVAL-ADICUP360.
 
@@ -95,17 +108,16 @@ Connect the M2K pins to the EVAL-ADICUP360 as follows:
 Scopy Logic Analyzer Configuration
 ----------------------------------
 
-Open the Logic Analyzer instrument, select DIO0-DIO1 lines and press the “Group with selected” button.
+Open the Logic Analyzer instrument, select DIO0-DIO1 lines and press the “Group
+with selected” button.
 
 .. container:: centeralign
 
    \ |image4|\
 
-
 .. container:: centeralign
 
    Figure 3. I2C Group Channels
-
 
 Select the channel group formed and apply the I2C decoder. While the group is selected, open settings menu by pressing the |image5| button on the top right side of the user interface. A settings panel will appear for the I2C decoder, allowing the signal-channel configuration and parameters setup.
 
@@ -113,49 +125,51 @@ Select the channel group formed and apply the I2C decoder. While the group is se
 
    \ |image6|\
 
-
 .. container:: centeralign
 
    Figure 4. Group Settings
 
-
-The Logic Analyzer must be set up to "catch" the I2C transfer on the Logic Analyzer plot. Therefore we need to configure a trigger. Since the I2C transfer starts with a falling edge on the SDA signal, this event can be used as the trigger.
+The Logic Analyzer must be set up to "catch" the I2C transfer on the Logic
+Analyzer plot. Therefore we need to configure a trigger. Since the I2C transfer
+starts with a falling edge on the SDA signal, this event can be used as the
+trigger.
 
 .. container:: centeralign
 
    \ |image7|\
 
-
 .. container:: centeralign
 
    Figure 5. Trigger Settings
 
-
 I2C Transfer Example
 --------------------
 
-This example verifies that for a given software command, the correct transactions are transferred over I2C between master (EVAL-ADICUP360) and slave (EVAL-ADT7420-PMDZ).
+This example verifies that for a given software command, the correct
+transactions are transferred over I2C between master (EVAL-ADICUP360) and slave
+(EVAL-ADT7420-PMDZ).
 
 The default I2C device address for EVAL-ADT7420-PMDZ is 0x48.
 
 Read ID Register
 ~~~~~~~~~~~~~~~~
 
-Set the Time Base of the Logic Analyzer instrument to 50us and the Trigger Position at 200us and run a Single sweep.
+Set the Time Base of the Logic Analyzer instrument to 50us and the Trigger
+Position at 200us and run a Single sweep.
 
 .. container:: centeralign
 
    \ |image8|\
 
-
 .. container:: centeralign
 
    Figure 6. General Settings
 
+The Logic Analyzer will wait for the falling edge of the SDA signal to be
+triggered.
 
-The Logic Analyzer will wait for the falling edge of the SDA signal to be triggered.
-
-Run the "ADT7420_Read_One_Reg (ID_REG)" function. This will initiate the I2C transfer.
+Run the "ADT7420_Read_One_Reg (ID_REG)" function. This will initiate the I2C
+transfer.
 
 The result is presented in Figure 7.
 
@@ -163,20 +177,25 @@ The result is presented in Figure 7.
 
    \ |image9|\
 
-
 .. container:: centeralign
 
    Figure 7. I2C Read ID Register
 
-
-Analyzing the plot, the fist half of the transaction contains a write sequence composed of the device address (0x48) with the R/W bit set low (write) followed by the address of the ID register. The master then issues a repeat-start condition for the second half of the transaction - the device address is re-sent with the R/W bit set high(read), and the byte of data containing the contents of the ID register (0xCB) is read out.
+Analyzing the plot, the fist half of the transaction contains a write sequence
+composed of the device address (0x48) with the R/W bit set low (write) followed
+by the address of the ID register. The master then issues a repeat-start
+condition for the second half of the transaction - the device address is re-sent
+with the R/W bit set high(read), and the byte of data containing the contents of
+the ID register (0xCB) is read out.
 
 Read Temperature
 ~~~~~~~~~~~~~~~~
 
-Set the Time Base of the Logic Analyzer instrument to 75us and the Trigger Position at 250us and run a Single sweep.
+Set the Time Base of the Logic Analyzer instrument to 75us and the Trigger
+Position at 250us and run a Single sweep.
 
-The Logic Analyzer will wait for the falling edge of the SDA signal to be triggered.
+The Logic Analyzer will wait for the falling edge of the SDA signal to be
+triggered.
 
 Run the "ADT7420_Read_Temp()" function. This will initiate the I2C transfer.
 
@@ -186,18 +205,26 @@ The result is presented in Figure 8.
 
    \ |image10|\
 
-
 .. container:: centeralign
 
    Figure 8. I2C Read Temperature
 
-
-Analyzing the plot, the fist half of the transaction contains a write sequence composed of the device address (0x48) with the R/W bit set low (write) followed by the address of the temperature value MSB register. The master then issues a repeat-start condition for the second half of the transaction - the device address is re-sent with the R/W bit set high(read), and two bytes of data representing content of the temperature value most significant byte (0x0E) and temperature value least significant byte (0xE8). This illustrates the fact that the address pointer in the ADT7420 automatically increments as the master reads out data bytes.
+Analyzing the plot, the fist half of the transaction contains a write sequence
+composed of the device address (0x48) with the R/W bit set low (write) followed
+by the address of the temperature value MSB register. The master then issues a
+repeat-start condition for the second half of the transaction - the device
+address is re-sent with the R/W bit set high(read), and two bytes of data
+representing content of the temperature value most significant byte (0x0E) and
+temperature value least significant byte (0xE8). This illustrates the fact that
+the address pointer in the ADT7420 automatically increments as the master reads
+out data bytes.
 
 Conclusion
 ----------
 
-In addition to I2C, the application includes a set of decoders covering a large number of communication protocols such as SPI, I2S, UART, JTAG, and others, making ADALM2000 a powerful tool for analyzing and debugging digital signals.
+In addition to I2C, the application includes a set of decoders covering a large
+number of communication protocols such as SPI, I2S, UART, JTAG, and others,
+making ADALM2000 a powerful tool for analyzing and debugging digital signals.
 
 Further Reading:
 ~~~~~~~~~~~~~~~~
@@ -213,7 +240,7 @@ Further Reading:
 -  :adi:`EVAL-ADT7420-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-adt7420-pmdz.html>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/i2c_diagram.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/i2c_message.png
 .. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/hw_i2c_m2k.png
 .. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/i2c_group.png

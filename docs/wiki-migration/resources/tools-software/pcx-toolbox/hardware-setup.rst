@@ -1,12 +1,16 @@
 Hardware Setup for Analog Devices Precision Toolbox
 ===================================================
 
-For each of the converters supported by the Precision Toolbox, the hardware setup steps are outlined below. The steps detail the hardware and the configurations needed to get the Precision Toolbox to communicate with the converter evaluation board. ‎ ‎
+For each of the converters supported by the Precision Toolbox, the hardware
+setup steps are outlined below. The steps detail the hardware and the
+configurations needed to get the Precision Toolbox to communicate with the
+converter evaluation board. ‎ ‎
 
 AD4630-24, AD4630-16, AD4030-24
 -------------------------------
 
-You will require: SD-Card, Digilent Zedboard with 12 V wall-adapter power supply, PC running Windows 10.
+You will require: SD-Card, Digilent Zedboard with 12 V wall-adapter power
+supply, PC running Windows 10.
 
 -  Insert the SD card provided with the evaluation board into J12 on the ZedBoard
 -  Connect the Evaluation board to the FMC connector of the ZedBoard.
@@ -22,7 +26,8 @@ You will require: SD-Card, Digilent Zedboard with 12 V wall-adapter power supply
 AD7768, AD7768-1
 ----------------
 
-You will require: SD-Card, Digilent Zedboard with 12 V wall-adapter power supply, PC running Windows 10.
+You will require: SD-Card, Digilent Zedboard with 12 V wall-adapter power
+supply, PC running Windows 10.
 
 -  Use the latest release of the ADI Kuiper Linux image with support for evaluation :doc:`from here </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images_for_ace>`, and configure your SD card to boot with correct project :doc:`using this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 -  Insert the SD card into J12 on the ZedBoard
@@ -37,7 +42,8 @@ You will require: SD-Card, Digilent Zedboard with 12 V wall-adapter power supply
 AD7380
 ------
 
-You will require: SD-Card, Digilent Zedboard with 12 V wall-adapter power supply, PC running Windows 10.
+You will require: SD-Card, Digilent Zedboard with 12 V wall-adapter power
+supply, PC running Windows 10.
 
 -  Build the HDL, Zynq kernel and device tree for imaging the SD Card, targeting the AD7380, by following :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
 -  Insert the SD card into J12 on the ZedBoard

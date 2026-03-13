@@ -19,7 +19,12 @@ The :adi:`AD5172` is a dual-channel, 256-position, one-time programmable (OTP) d
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5172_sdz.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+Renesas platforms.
 
 **HW Platform(s):**
 
@@ -31,9 +36,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD5172 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD5172 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD5172 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD5172 driver:
 
@@ -47,7 +56,6 @@ There are three functions which are called by the AD5172 driver:
 .. container:: centeralign
 
    I2C driver architecture
-
 
 The following functions are implemented in this version of AD5172 driver:
 
@@ -75,7 +83,8 @@ Downloads
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD5172 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD5172
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -92,7 +101,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD5172SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+An EVAL-AD5172SDZ has to be interfaced with the Renesas Demonstration Kit (RDK)
+for RL78G13:
 
 ::
 
@@ -123,7 +133,8 @@ Choose the **Single master** transfer mode and configure the interface with the 
 CSI10 (Clocked Serial Interface 10) – For the ST7579 LCD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+Choose to generate the Transmit/receive function for the CSI10 and configure the
+interface with the following settings:
 
 -  Transfer mode setting: **Single transfer mode**
 -  Data length setting : **8 bits**
@@ -141,7 +152,8 @@ Configure TM00 as an interval timer:
 
 -  Interval timer setting - Interval value(16 bits): **1** ms
 -  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
--  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an
+   interrupt (INTM00)//
 
 Watchdog Timer
 ~~~~~~~~~~~~~~
@@ -153,7 +165,9 @@ Disable the watchdog timer:
 Reference Project Overview
 --------------------------
 
-The reference project initializes the device, writes two different values to both channels available on the device and then checks if the values were correctly written by reading the RDACs and displays them on the LCD.
+The reference project initializes the device, writes two different values to
+both channels available on the device and then checks if the values were
+correctly written by reading the RDACs and displays them on the LCD.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5172_rl78g13_screen.jpg
    :align: center
@@ -161,16 +175,15 @@ The reference project initializes the device, writes two different values to bot
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
 
-
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the AD5172 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the AD5172
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -186,7 +199,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD5172EBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+An EVAL-AD5172EBZ board has to be interfaced with the Renesas Demonstration Kit
+(RDK) for RX62N:
 
 ::
 
@@ -199,7 +213,9 @@ An EVAL-AD5172EBZ board has to be interfaced with the Renesas Demonstration Kit 
 Reference Project Overview
 --------------------------
 
-The reference project: The reference project initializes the device, writes two different values to both channels available on the device and then checks if the values were correctly written by reading the RDACs and displays them on the LCD.
+The reference project: The reference project initializes the device, writes two
+different values to both channels available on the device and then checks if the
+values were correctly written by reading the RDACs and displays them on the LCD.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5172_rx62n_screen.jpg
    :align: center
@@ -207,17 +223,13 @@ The reference project: The reference project initializes the device, writes two 
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

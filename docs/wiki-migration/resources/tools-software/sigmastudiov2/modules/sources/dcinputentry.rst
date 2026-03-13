@@ -8,7 +8,11 @@ DC Input Entry
 Description
 -----------
 
-The DC Input Block allows you to generate a DC, direct current, signal(a constant numerical value). This Block can be used to generate control signals for Multiplexers and Lookup Tables. The block's controls allow the DC value and the format to be set. There are 32/28 available bits which can be used to represent decimal values depends on the SigmaDSP.
+The DC Input Block allows you to generate a DC, direct current, signal(a
+constant numerical value). This Block can be used to generate control signals
+for Multiplexers and Lookup Tables. The block's controls allow the DC value and
+the format to be set. There are 32/28 available bits which can be used to
+represent decimal values depends on the SigmaDSP.
 
 Targets Supported
 -----------------
@@ -30,7 +34,6 @@ Name   Type    Description
 ====== ======= ================
 Output Control Output channel 0
 ====== ======= ================
-
 
 | ===== Configurable Parameters =====
 

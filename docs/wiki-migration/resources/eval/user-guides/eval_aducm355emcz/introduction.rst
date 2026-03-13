@@ -25,4 +25,3 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-ADUCM355EMCZ?&v=RevE>`_ to receive all these great benefits and more!
-

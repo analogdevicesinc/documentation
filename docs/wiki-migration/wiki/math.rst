@@ -3,7 +3,8 @@ Math / Creating Formulas
 
 Adapted from http://www.xm1math.net/phpmathpublisher/doc/help.html.
 
-To toggle to the math mode, you must use the $...$ tag. The math commands must be separated by a space character or surrounded by {}.
+To toggle to the math mode, you must use the $...$ tag. The math commands must
+be separated by a space character or surrounded by {}.
 
 For example, the wiki code:
 

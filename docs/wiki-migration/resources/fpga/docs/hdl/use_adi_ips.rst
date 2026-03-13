@@ -5,13 +5,18 @@ Use ADI IPs into your own project
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest guide at https://analogdevicesinc.github.io/hdl/user_guide/ip_cores/use_adi_ips.html\
 
-
 Clone the github repository: <code> git clone `hdl <https://github.com/analogdevicesinc/hdl>`_ </code>
 
 Vivado
 ------
 
-Navigate to hdl/library and build all the libraries <code> make -C library all </code> Launch a Vivado GUI and open the Settings window. Go to IP section and expand it. There you will find a section called Repository. From here you can add the path to the library folder inside the ADI repository you just cloned. <code> <hdl_path>/hdl/library </code> Click apply and Ok to save the changes. Wait for the IP Catalog to refresh and now you should be able to see the IPs there, under User Repository/Analog Devices section.
+Navigate to hdl/library and build all the libraries <code> make -C library all
+</code> Launch a Vivado GUI and open the Settings window. Go to IP section and
+expand it. There you will find a section called Repository. From here you can
+add the path to the library folder inside the ADI repository you just cloned.
+<code> <hdl_path>/hdl/library </code> Click apply and Ok to save the changes.
+Wait for the IP Catalog to refresh and now you should be able to see the IPs
+there, under User Repository/Analog Devices section.
 
 Quartus
 -------
@@ -28,7 +33,8 @@ For the JESD204 IP, it is not as straightforward as for other modules. Here you 
 
 The following code is for the TX/DAC part. The RX/ADC is similar.
 
-Add the PL (Physical Layer). <code> ad_ip_instance axi_adxcvr axi_ad9144_xcvr [list \\
+Add the PL (Physical Layer). <code> ad_ip_instance axi_adxcvr axi_ad9144_xcvr
+[list \\
 
 ::
 
@@ -38,9 +44,13 @@ Add the PL (Physical Layer). <code> ad_ip_instance axi_adxcvr axi_ad9144_xcvr [l
 
 ] </code>
 
-Then you have to add the Data Link Layer with the desired number of lanes. For RX you will swap this one with adi_axi_jesd204_rx_create. <code> adi_axi_jesd204_tx_create axi_ad9144_jesd $TX_NUM_OF_LANES </code>
+Then you have to add the Data Link Layer with the desired number of lanes. For
+RX you will swap this one with adi_axi_jesd204_rx_create. <code>
+adi_axi_jesd204_tx_create axi_ad9144_jesd $TX_NUM_OF_LANES </code>
 
-Let's instantiate the TPL (Transport Layer). For RX you will swap this one with adi_tpl_jesd204_rx_create. <code> adi_tpl_jesd204_tx_create axi_ad9144_tpl $TX_NUM_OF_LANES \\
+Let's instantiate the TPL (Transport Layer). For RX you will swap this one with
+adi_tpl_jesd204_rx_create. <code> adi_tpl_jesd204_tx_create axi_ad9144_tpl
+$TX_NUM_OF_LANES \\
 
 ::
 
@@ -48,7 +58,9 @@ Let's instantiate the TPL (Transport Layer). For RX you will swap this one with 
                                             $TX_SAMPLES_PER_FRAME \
                                             $TX_SAMPLE_WIDTH \ </code>
 
-You can optionally add the util_upack2 module for unpacking the data. For RX you will swap this one with util_cpack2. <code> ad_ip_instance util_upack2 axi_ad9144_upack [list \\
+You can optionally add the util_upack2 module for unpacking the data. For RX you
+will swap this one with util_cpack2. <code> ad_ip_instance util_upack2
+axi_ad9144_upack [list \\
 
 ::
 
@@ -58,7 +70,10 @@ You can optionally add the util_upack2 module for unpacking the data. For RX you
 
 ] </code>
 
-After you added the modules for RX and TX logic, you will have to link them together with the util_adxcvr IP. This IP includes the shared transceiver core, so it will appear only once per RX-TX pair. <code> ad_ip_instance util_adxcvr util_daq2_xcvr [list \\
+After you added the modules for RX and TX logic, you will have to link them
+together with the util_adxcvr IP. This IP includes the shared transceiver core,
+so it will appear only once per RX-TX pair. <code> ad_ip_instance util_adxcvr
+util_daq2_xcvr [list \\
 
 ::
 
@@ -81,13 +96,15 @@ Add the reference clocks and resets.
    ad_xcvrpll  tx_ref_clk_0 util_daq2_xcvr/qpll_ref_clk_*
    ad_xcvrpll  axi_ad9144_xcvr/up_pll_rst util_daq2_xcvr/up_qpll_rst_*
 
-Almost done, now it is time to use the ad_xcvrcon to connect the pieces together.
+Almost done, now it is time to use the ad_xcvrcon to connect the pieces
+together.
 
 ::
 
    ad_xcvrcon  util_daq2_xcvr axi_ad9144_xcvr axi_ad9144_jesd {0 2 3 1} {} {} $MAX_TX_NUM_OF_LANES
 
-Now just add the interconnects and the interrupts for the added layers (PL, TPL, LL).
+Now just add the interconnects and the interrupts for the added layers (PL, TPL,
+LL).
 
 ::
 
@@ -107,7 +124,10 @@ Vivado
 
 The SPI Engine is a special module too, since it consists of more than one IP. In order to use it into your own project, you will have to add all of its components. For this example, the code shown here is from the ad4630_fmc project: `hdl/blob/master/projects/ad4630_fmc/common/ad463x_bd.tcl <https://github.com/hdl/blob/master/projects/ad4630_fmc/common/ad463x_bd.tcl>`_
 
-Let's start with sourcing the spi_engine.tcl script inside your <project>_db.tcl. <code> source $ad_hdl_dir/library/spi_engine/scripts/spi_engine.tcl </code> The SPI engine has 4 modules: Execution, interconnect, regmap and offload.
+Let's start with sourcing the spi_engine.tcl script inside your
+<project>_db.tcl. <code> source
+$ad_hdl_dir/library/spi_engine/scripts/spi_engine.tcl </code> The SPI engine has
+4 modules: Execution, interconnect, regmap and offload.
 
 All of the modules are instantiated inside the spi_engine_create function. This function requires 7 parameters. The default values for them are as follow, but feel free to configure it as you want: <code> |name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0| </code> An example of instantiation:
 

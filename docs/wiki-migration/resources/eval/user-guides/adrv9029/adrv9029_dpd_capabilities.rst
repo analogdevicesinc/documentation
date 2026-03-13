@@ -1,4 +1,5 @@
-This page captures the capabilities of ADRV9029 compared with the previous generation integrated DFE transceiver AD9375.
+This page captures the capabilities of ADRV9029 compared with the previous
+generation integrated DFE transceiver AD9375.
 
 +--------------------------------+---+------------+-----------------------------------------------------+
 |                                |   | **AD9375** | **ADRV9029**                                        |

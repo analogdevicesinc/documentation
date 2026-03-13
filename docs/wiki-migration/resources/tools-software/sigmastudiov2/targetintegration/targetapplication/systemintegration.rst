@@ -1,6 +1,12 @@
 :doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication>`
 
-=======System Integration======= The SigmaStudio+ application integrated with Target application using separate application space allocated for the SigmaStudio+ application. The target application is responsible to allocate required memory which are left free by the target application. The memory block allocated from target application is called GMAP and SigmaStduio+ schematic uses the target allocated memory space to allocate memory for code, parameter and state data for running SigmaStudio+ application over target platform.
+=======System Integration======= The SigmaStudio+ application integrated with
+Target application using separate application space allocated for the
+SigmaStudio+ application. The target application is responsible to allocate
+required memory which are left free by the target application. The memory block
+allocated from target application is called GMAP and SigmaStduio+ schematic uses
+the target allocated memory space to allocate memory for code, parameter and
+state data for running SigmaStudio+ application over target platform.
 
 GMAP and SMAP
 =============
@@ -9,7 +15,8 @@ The **Global Memory map** (GMAP) contains information about the available physic
 
 SMAP stands for **Schematic Memory MAP**. This information is communicated to the target library by the SigmaStudio+ host. SMAP includes details on various framework parameters such as sampling rate, block size, SPORT configuration, memory-mapped information code, parameters, and state data. It also contains memory information for the SigmaStudio+ schematic (SSn) instances.
 
-Before delving into GMAP and SMAP, it is essential to understand some basic files related to them.
+Before delving into GMAP and SMAP, it is essential to understand some basic
+files related to them.
 
 The **adi_ss_gmap.asm** file, included in the target application, defines the **GMAP structure** used to assign the start address and length of each memory block. There are seven memory blocks defined to allocate memory from the target application. The linker file **adi_ss_app.ldf** is used along with the applications .ldf file to reserve memory sections for GMAP. The GMAP linker file includes comments indicating which memory block will be used for schematic application data.
 
@@ -20,19 +27,16 @@ Application DXE
 
 The GMAP information is available in the SHARC core Application DXE. You can load the Application DXE into the schematic using the ‘Select Application DXE’ button for the selected core in the corresponding SHARC core settings tab, as shown below. :doc:`Figure </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/systemintegration>`.
 
-
 |image1|
 
 .. container:: centeralign
 
    \ **Figure:** SigmaStudioPlus UI where DXE is selected
 
-
 Global Memory Map (GMAP)
 ------------------------
 
 This structure contains information about the available physical memory in each of the SHARC memory blocks. This information is read by the SigmaStudioPlus host using application DXE. The :doc:`Figure </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/systemintegration>` below shows the arrangement of information within the GMAP structure.
-
 
 |image2|
 
@@ -40,8 +44,8 @@ This structure contains information about the available physical memory in each 
 
    \ **Figure:** GMAP structure format
 
-
-The table below lists the blocks made available to the host by the target through GMAP.
+The table below lists the blocks made available to the host by the target
+through GMAP.
 
 +-----------+--------------------+-------------------------+-----------------------------------------------------------------------------------------+
 | **Sl No** | **Physical Block** | **Description**         | **Used for**                                                                            |
@@ -65,8 +69,8 @@ The table below lists the blocks made available to the host by the target throug
 
    \ **Table:** GMAP blocks
 
-
-The GMAP structure allocates memory for each of the memory blocks to be shared with the SigmaStudioPlus host.
+The GMAP structure allocates memory for each of the memory blocks to be shared
+with the SigmaStudioPlus host.
 
 .. code:: c
 
@@ -129,7 +133,6 @@ The GMAP structure values are updated with memory blocks allocated in the **adi_
    /*
    ** SigmaStudioPlus for Griffin application linker description file for GMAP
    */
-
 
    /* Default for SSn code */
    SS4G_block0
@@ -236,13 +239,11 @@ The GMAP structure values are updated with memory blocks allocated in the **adi_
 
 The start addresses and sizes of the GMAP memory blocks are allocated by the target application. The details of the GMAP blocks can be found in the generated linker map file **(SS_App_Core1.map.xml)** located in the corresponding build output folder **(Release/Debug)**.
 
-
 |image3|
 
 .. container:: centeralign
 
    \ **Figure:** GMAP block allocation in Map file
-
 
 Schematic Memory Map (SMAP)
 ---------------------------
@@ -275,7 +276,6 @@ ADI_SS_FW_PROCESS_MODE is an enumeration defined in *adi_ss_smap.h* file. Follow
 
 +--------------------------------+
 
-
 | **Enumerator**                 |
 
 +================================+
@@ -307,8 +307,8 @@ ADI_SS_FW_PROCESS_MODE is an enumeration defined in *adi_ss_smap.h* file. Follow
 
    **Figure:**\ SMAP block allocations in schematic compilation
 
-
-The SMAP buffer information and corresponding GMAP blocks are shown in below table.
+The SMAP buffer information and corresponding GMAP blocks are shown in below
+table.
 
 +---------------------+------------------+-------------------------------+-----------------------------------------------------------------+
 | **GMAP Blocks**     | **SMAP Buffers** | **SMAP Memory Section Names** | **Purpose**                                                     |
@@ -344,11 +344,10 @@ The SMAP buffer information and corresponding GMAP blocks are shown in below tab
 
    \ **Table:** SMAP buffer allocation in GMAP blocks
 
-
 .. note::
 
-   In order to create SMAP, the target application has no control other than GMAP section mapping.
-
+   In order to create SMAP, the target application has no control other than
+   GMAP section mapping.
 
 ====SS_SMAP_FW_INFO====
 
@@ -361,7 +360,8 @@ The SMAP buffer information and corresponding GMAP blocks are shown in below tab
        ADI_SS_MEM_BLOCK       oFwBuff[MAX_SMAP_FW_BUFFERS];
    }SS_SMAP_FW_INFO;
 
-Framework info structure within SMAP. The structure elements are described below.
+Framework info structure within SMAP. The structure elements are described
+below.
 
 +---------------+-----------------------------------------------------------------------+
 | **Element**   | **Description**                                                       |
@@ -402,7 +402,8 @@ Framework info structure within SMAP. The structure elements are described below
 
    }ADI_SS_FW_HOST_CONFIG;
 
-The framework parameters in this structure may be configured by the host. The structure elements are described below:
+The framework parameters in this structure may be configured by the host. The
+structure elements are described below:
 
 +----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Element**          | **Description**                                                                                                                                                    |
@@ -460,7 +461,6 @@ The framework parameters in this structure may be configured by the host. The st
 
 +-------------------------------------+
 
-
 | **Enumerator**                      |
 
 +=====================================+
@@ -504,7 +504,8 @@ The framework parameters in this structure may be configured by the host. The st
        ADI_SS_FW_SPORT_CONFIG       oSPORTPeriConfig;
    }ADI_SS_FW_HOST_CONFIG;
 
-The framework parameters in this structure may be configured by the host. The structure elements are described below:
+The framework parameters in this structure may be configured by the host. The
+structure elements are described below:
 
 +---------------------+---------------------------------------------------------------------------------------------------------------+
 | **Element**         | **Description**                                                                                               |
@@ -569,7 +570,8 @@ The structure elements are described below:
        ADI_SS_MEM_BLOCK    oSSnBuff[MAX_SMAP_SSN_BUFFERS];
    }SS_SMAP_SSN_INFO;
 
-SSn info structure which provides SSn specific details including memory details for the target library. The structure elements are described below:
+SSn info structure which provides SSn specific details including memory details
+for the target library. The structure elements are described below:
 
 +----------------+----------------------------------------------------------------------------+
 | **Element**    | **Description**                                                            |
@@ -594,7 +596,8 @@ SSn info structure which provides SSn specific details including memory details 
        int32_t          aOutChMap[ADI_SS_FW_MAX_NUM_OUT_CHANNELS_SMAP];
    }SMAP_HOST2TGT_INFO;
 
-This structure provides SSn information which has to be communicated to target framework. The structure elements are described below:
+This structure provides SSn information which has to be communicated to target
+framework. The structure elements are described below:
 
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Element**     | **Description**                                                                                                                                                                        |
@@ -611,7 +614,16 @@ This structure provides SSn information which has to be communicated to target f
 | 
 | =====Memory Allocations=====
 
-For target processors without an L3 memory section, the L3 data and code sections must be mapped from the L2 section. For example, in the ADSP-21569 target app.ldf, the memory start address for the L2 code section is 0x200C0000 and the end address is 0x200D7FFF (96 kB), while for the L2 data section, the start address is 0x200D8000 and the end address is 0x200F9FFF (160 kB). Therefore, users must set the memory ranges for the mem_L2_bw memory section in the app.ldf file accordingly. If L3 memory is present, the start address for the mem_L2_bw section is 0x20000000 and the end address is 0x200F9FFF. If L3 memory is not present, the end address of the mem_L2_bw section must be set to 0x200BFFFF.
+For target processors without an L3 memory section, the L3 data and code
+sections must be mapped from the L2 section. For example, in the ADSP-21569
+target app.ldf, the memory start address for the L2 code section is 0x200C0000
+and the end address is 0x200D7FFF (96 kB), while for the L2 data section, the
+start address is 0x200D8000 and the end address is 0x200F9FFF (160 kB).
+Therefore, users must set the memory ranges for the mem_L2_bw memory section in
+the app.ldf file accordingly. If L3 memory is present, the start address for the
+mem_L2_bw section is 0x20000000 and the end address is 0x200F9FFF. If L3 memory
+is not present, the end address of the mem_L2_bw section must be set to
+0x200BFFFF.
 
 |image5| |image6|
 
@@ -619,14 +631,22 @@ For target processors without an L3 memory section, the L3 data and code section
 
    \ **Figure:** Memory Sections
 
-
 Memory Block Customization in Case of Insufficient L1 Blocks
 ------------------------------------------------------------
 
-Any L1 memory blocks can be assigned to code, parameter, and data buffers based on the requirement and availability. The available memory can be found in the generated target application map file, and the required memory can be found in the SigmaStudio+ schematic compilation output window.
+Any L1 memory blocks can be assigned to code, parameter, and data buffers based
+on the requirement and availability. The available memory can be found in the
+generated target application map file, and the required memory can be found in
+the SigmaStudio+ schematic compilation output window.
 
-The best practice for designing a schematic is to know the MIPS and memory requirements of the modules used in the schematic. This way, the memory requirements will be easily known for our design. In some scenarios, the internal framework memory requirements may not be known, leading to memory insufficiency errors. In such cases, the memory requirements can be easily determined by mapping code, parameter, and state memory to the L3 buffer. The code and data buffers can be mapped to L3 memory using the schematic settings section map, as shown in the image.
-
+The best practice for designing a schematic is to know the MIPS and memory
+requirements of the modules used in the schematic. This way, the memory
+requirements will be easily known for our design. In some scenarios, the
+internal framework memory requirements may not be known, leading to memory
+insufficiency errors. In such cases, the memory requirements can be easily
+determined by mapping code, parameter, and state memory to the L3 buffer. The
+code and data buffers can be mapped to L3 memory using the schematic settings
+section map, as shown in the image.
 
 |image7|
 
@@ -634,10 +654,8 @@ The best practice for designing a schematic is to know the MIPS and memory requi
 
    \ **Figure:** Memory Section Map Code and Data
 
-
-The parameter buffer can be mapped to L3 memory using the “adi_ss_app.ldf” file as shown in the image.
-
-
+The parameter buffer can be mapped to L3 memory using the “adi_ss_app.ldf” file
+as shown in the image.
 
 |image8|
 
@@ -645,30 +663,42 @@ The parameter buffer can be mapped to L3 memory using the “adi_ss_app.ldf” f
 
    \ **Figure:** Memory Section Map Parameter
 
-
 **Note:**
 
-1. The L3 section map is recommended only for identifying the memory requirements of the schematic when there is a memory insufficiency error.
+1. The L3 section map is recommended only for identifying the memory
+   requirements of the schematic when there is a memory insufficiency error.
 
 2. The code, parameter, and DataC buffers can be mapped to L2 using the **adi_ss_app.ldf** file.
 
-3. MIPS consumption will be higher when the schematic code, parameter, and data are mapped to L2 or L3. Therefore, it is recommended to use L1 memory for optimal performance.
+3. MIPS consumption will be higher when the schematic code, parameter, and data
+   are mapped to L2 or L3. Therefore, it is recommended to use L1 memory for
+   optimal performance.
 
 4. If the memory requirements are mostly clear but there is a slight memory insufficiency, we can swap the L1 memory blocks between code, parameter, and data, or free up some data allocation of the target application using the **app.ldf** file.
 
 Memory Block Customization without L3 Memory
 --------------------------------------------
 
-Based on the use case, if the target processor does not have L3 memory (SDRAM) or if the user prefers not to include L3 memory, they can modify the LDF file of each SHARC core's project to map the memory allocation of the target application to L2 memory to support the SigmaStudio+ application.
+Based on the use case, if the target processor does not have L3 memory (SDRAM)
+or if the user prefers not to include L3 memory, they can modify the LDF file of
+each SHARC core's project to map the memory allocation of the target application
+to L2 memory to support the SigmaStudio+ application.
 
 Below are the steps to move memory allocations from L3 to L2 memory:
 
 1. Back up the default “app.ldf” file.
 
-2. In the System.svc, navigate to the "startup code/LDF" plugin if it is already present; if not, install the "startup code/LDF" add-in from the System Configuration Overview tab. This step is not required if the target processor lacks L3 controller support, such as the ADSP-SC571 or ADSP-21565 etc.
+2. In the System.svc, navigate to the "startup code/LDF" plugin if it is already
+   present; if not, install the "startup code/LDF" add-in from the System
+   Configuration Overview tab. This step is not required if the target processor
+   lacks L3 controller support, such as the ADSP-SC571 or ADSP-21565 etc.
 
-3. In the "startup code/LDF" under the LDF menu, uncheck the "Use external memory (SDRAM)" option and save the configuration settings to generate the "app.ldf" file without L3 support. Note that this step is not required if the target processor does not have L3 controller support, such as the ADSP-SC571 or ADSP-21565, as these processors already generate an "app.ldf" without L3 support.
-
+3. In the "startup code/LDF" under the LDF menu, uncheck the "Use external
+   memory (SDRAM)" option and save the configuration settings to generate the
+   "app.ldf" file without L3 support. Note that this step is not required if the
+   target processor does not have L3 controller support, such as the ADSP-SC571
+   or ADSP-21565, as these processors already generate an "app.ldf" without L3
+   support.
 
 |image9|
 
@@ -676,8 +706,9 @@ Below are the steps to move memory allocations from L3 to L2 memory:
 
    \ **Figure:** LDF Settings
 
-
-4. Compare the default "app.ldf" file with the newly generated one and copy the required sections into the new "app.ldf" file. For example, include the following sections:
+4. Compare the default "app.ldf" file with the newly generated one and copy the
+   required sections into the new "app.ldf" file. For example, include the
+   following sections:
 
 ::
 
@@ -686,12 +717,19 @@ Below are the steps to move memory allocations from L3 to L2 memory:
        INPUT_SECTIONS( $OBJECTS(ss_app_data_ipc_fast) )
        INPUT_SECTIONS( $OBJECTS(ss_app_data0_fast_uncached) )
 
-For some processors, these sections may already be preserved, so no changes will be necessary. Additionally, ensure the inclusion of the symbol KEEP(\_GMAP) and the line #include "adi_ss_app.ldf" if they are not already present in the new "app.ldf" file.
+For some processors, these sections may already be preserved, so no changes will
+be necessary. Additionally, ensure the inclusion of the symbol KEEP(\_GMAP) and
+the line #include "adi_ss_app.ldf" if they are not already present in the new
+"app.ldf" file.
 
-5. In case of DemoUc application the memory section “ss_app_uc_data” can be moved to L2 general data section.
+5. In case of DemoUc application the memory section “ss_app_uc_data” can be
+   moved to L2 general data section.
 
-6. The SigmaStudio+ L3 code section can be mapped to “mem_L2_bw_SS4G_Code” of L2 and L3 data section can be mapped to “mem_L2_bw_SS4G_Data” of L2. For this memory allocation the L2 memory block need to be adjusted for end address to align with mem_L2_bw_SS4G_Code. For example in if the “mem_L2_bw_SS4G_Code” and “mem_L2_bw_SS4G_Data” defined as below,
-
+6. The SigmaStudio+ L3 code section can be mapped to “mem_L2_bw_SS4G_Code” of L2
+   and L3 data section can be mapped to “mem_L2_bw_SS4G_Data” of L2. For this
+   memory allocation the L2 memory block need to be adjusted for end address to
+   align with mem_L2_bw_SS4G_Code. For example in if the “mem_L2_bw_SS4G_Code”
+   and “mem_L2_bw_SS4G_Data” defined as below,
 
 |image10|
 
@@ -699,38 +737,40 @@ For some processors, these sections may already be preserved, so no changes will
 
    \ **Figure:** SHARC Core1 app.ldf file (L2 Memory Section)
 
-
    |image11|
 
 .. container:: centeralign
 
    \ **Figure:** SHARC Core2 app.ldf file (L2 Memory Section)
 
-
 By observing the **start** and **end** addresses of the Code and Data sections for the SS schematic, the memory should be re-aligned in other L2 memory sections. For the ADSP-SC573, the memory blocks **mem_L2B7B8_bw** (in SHARC Core1) and **mem_L2B5B6_bw** (in SHARC Core2) need to be re-aligned, as highlighted by "2" in both SHARC Core1 and SHARC Core2’s app.ldf files.
 
 .. note::
 
-   Proper memory address boundary alignment is crucial for SHARC processors to ensure efficient data access and avoid exceptions. Misaligned memory accesses can cause core exceptions, leading to application failures
+   Proper memory address boundary alignment is crucial for SHARC processors to
+   ensure efficient data access and avoid exceptions. Misaligned memory accesses
+   can cause core exceptions, leading to application failures
 
+7. If the target processor does not have L3 controller support, then we need to
+   follow only step 6 to make required code and dada memory mapping and boundary
+   adjustment for SigmaStudio+ application.
 
-7. If the target processor does not have L3 controller support, then we need to follow only step 6 to make required code and dada memory mapping and boundary adjustment for SigmaStudio+ application.
-
-8. Once L2 memory blocks aligned for the SigmaStudio+ code and data memory, rebuild the target application project and run the schematic applications.
+8. Once L2 memory blocks aligned for the SigmaStudio+ code and data memory,
+   rebuild the target application project and run the schematic applications.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/dxe.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/gmap_structure_format.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/gmap_block_allocation_in_map_file.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/smap_block_allocations_in_schematic_compilation.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/memalloc1.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/memalloc2.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/sectionmap.png
-   :width: 1080px
+   :width: 1080
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/sectionmapparam.png
-   :width: 1080px
+   :width: 1080
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/systemsvc.png
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/sharc_core1_app.ldf_file.png
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/5.png

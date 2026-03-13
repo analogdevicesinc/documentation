@@ -3,7 +3,7 @@ EVAL-LTC4317-PMDZ User Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/interface-isolation/eval-ltc4317-pmdz/standalone.png
    :align: center
-   :width: 600px
+   :width: 600
 
 GENERAL DESCRIPTION
 -------------------
@@ -20,7 +20,8 @@ EVAL-LTC4317-PMDZ features :adi:`LTC4317 <en/products/ltc4317.html>`, a Dual I2C
 -  LEDs on the EVAL-LTC4317-PMDZ board such as PWR, RDY1 and RDY2 and various test points on the board allow fault monitoring and easy signal tracing.
 -  Has Level Translation for 2.5V, 3.3V and 5V Buses
 -  Has Bus Stuck Timeout to automatically recover from abnormal bus conditions like bus stuck low or premature STOP bits
--  Downstream slaves connected to VCC1 and VCC2 can be powered on or off via JP1.
+-  Downstream slaves connected to VCC1 and VCC2 can be powered on or off via
+   JP1.
 
 --------------
 
@@ -36,33 +37,41 @@ IMPORTANT NOTES
 
 .. important::
 
-   RLT and RLB are the top and bottom resistors connected to XORL, while RHT and RHB are the top and bottom resistors connected to XORH. On EVAL-LTC4317-PMDZ, RLT1 is a 976k resistor pulled up to VCC, RLB1 is a 102k resistor pulled down to ground, RHT1 is not connected, RHB1 is a 1k resistor pulled down to GROUND, RLT2 is a 976k resistor pulled up to VCC, RLB2 is a 182k resistor pulled down to ground, RHT2 is not connected and RHB2 is a 1k resistor pulled down to GROUND. The Address Translation Byte can be changed by de-soldering these resistors and soldering new resistors with values taken from Table 2 and 3 on the datasheet.
-
+   RLT and RLB are the top and bottom resistors connected to XORL, while RHT and
+   RHB are the top and bottom resistors connected to XORH. On EVAL-LTC4317-PMDZ,
+   RLT1 is a 976k resistor pulled up to VCC, RLB1 is a 102k resistor pulled down
+   to ground, RHT1 is not connected, RHB1 is a 1k resistor pulled down to
+   GROUND, RLT2 is a 976k resistor pulled up to VCC, RLB2 is a 182k resistor
+   pulled down to ground, RHT2 is not connected and RHB2 is a 1k resistor pulled
+   down to GROUND. The Address Translation Byte can be changed by de-soldering
+   these resistors and soldering new resistors with values taken from Table 2
+   and 3 on the datasheet.
 
 .. important::
 
-   Pass Through Mode: If the master wants to communicate with the slave using the general call address, it can temporarily disable address translation by pulling XORH high. This disables address translation and keeps N1 and N2 on regardless of the activity on the buses. Any translation that may be in progress is stopped immediately when XORH goes high.
-
+   Pass Through Mode: If the master wants to communicate with the slave using
+   the general call address, it can temporarily disable address translation by
+   pulling XORH high. This disables address translation and keeps N1 and N2 on
+   regardless of the activity on the buses. Any translation that may be in
+   progress is stopped immediately when XORH goes high.
 
 .. important::
 
    The address translation byte can be changed during operation by changing the XORH and XORL voltages and toggling the ENABLE pin (high-low-high). This triggers the :adi:`LTC4317 <en/products/ltc4317.html>` to re-read the XORL and XORH voltages. The Enable 1 and Enable 2 pins are connected to VCC via R3 and R4 10k pull-up resistors on EVAL-LTC4317-PMDZ, but they can be de-soldered.
 
-
 .. important::
 
    If the ENABLE pin is driven below VENABLE(TH), 1V or if VCC is below the UVLO threshold (1.9V), the :adi:`LTC4317 <en/products/ltc4317.html>` shuts down. The internal shift register storing the address translation byte is cleared, address translation is disabled, the READY pin is pulled low and the quiescent current drops to 350µA.
 
-
 .. important::
 
-   VCC must be powered from the lower of the two supply voltages from the Upstream and the Downstream buses for level shifting to operate correctly. Refer to Figure 8 on the datasheet.
-
+   VCC must be powered from the lower of the two supply voltages from the
+   Upstream and the Downstream buses for level shifting to operate correctly.
+   Refer to Figure 8 on the datasheet.
 
 .. important::
 
    During the address translation, if SCLIN stays low or high for more than 30ms without any transitions, the :adi:`LTC4317 <en/products/ltc4317.html>` will abort the address translation and reconnect SDAIN to SDAOUT. It will then wait for a START bit to start a new address translation. This prevents any bus stuck low/ high conditions from permanently disconnecting SDAIN from SDAOUT.
-
 
 --------------
 
@@ -107,7 +116,13 @@ EVAL-LTC4317-PMDZ is easy to set up to evaluate the performance of the :adi:`LTC
 -  Power up the downstream buses 1-2 using separate power supplies or from the upstream side. To power all the buses using the upstream voltage supply, place the jumpers JP1 in A and B positions. This will connect VCCIN to the VCC1-VCC2 of the downstream buses.
 -  Configure the resistors, RLTx, RLBx, RHTx and RHBx to set the desired translation byte for the downstream buses, Busx on the :adi:`LTC4317 <en/products/ltc4317.html>`. By default, the translation byte for Bus 1 is hardwired to '0000001' and the translation byte for Bus 2 is hardwired to '0000010' on the EVAL-LTC4317-PMDZ (Refer to Table 1, Table 2 and Table 3 on the datasheet for more information on how to change the Address Translation Byte). The voltages at the XORH and XORL pins configure the translation byte. The XORL voltage configures the lower 4 translation bits (excluding the R/W bit), while the XORH voltage configures the upper 3 translation bits. Tables 2 and 3 on the datasheet show the recommended resistive divider values. RLT and RLB are the top and bottom resistors connected to XORL, while RHT and RHB are the top and bottom resistors connected to XORH.
 -  Slaves can be connected to two different buses for two Independent Address Translations (using two different Translation Bytes that can be set using XORH1, XORL1 and XORH2 and XORH2 pins) or connected to one bus, sharing one channel. In this configuration, they will have their input addresses XORed with the same translation Byte using either set of pins (e.g. XORH1, XORL1 or XORH2 or XORL2).
--  If the master wants to communicate with the slave using the general call address, it can temporarily disable address translation by pulling XORH high. This disables address translation and keeps N1 and N2 on regardless of the activity on the buses, turning on the Pass Through Mode (N1 connects SCLIN to SCLOUT while N2 connects SDAIN to SDAOUT). Any translation that may be in progress is stopped immediately when XORH goes high. Place the jumpers JP2 in A and B positions to turn on the Pass Through Mode.
+-  If the master wants to communicate with the slave using the general call
+   address, it can temporarily disable address translation by pulling XORH high.
+   This disables address translation and keeps N1 and N2 on regardless of the
+   activity on the buses, turning on the Pass Through Mode (N1 connects SCLIN to
+   SCLOUT while N2 connects SDAIN to SDAOUT). Any translation that may be in
+   progress is stopped immediately when XORH goes high. Place the jumpers JP2 in
+   A and B positions to turn on the Pass Through Mode.
 
 --------------
 
@@ -121,7 +136,8 @@ List of Hardware:
 -  :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>` Evaluation board
 -  :adi:`EVAL-ADT7420-PMDZ <en/products/adt7420.html>` Digital Temperature sensor Evaluation board (x2)
 -  Mirco USB to USB cable
--  Windows® Vista 32-bit/64-bit, Windows 7 32-bit/64-bit, Windows 8 32-bit/64-bit, or Windows 10 32-bit/64-bit with USB 2.0 port
+-  Windows® Vista 32-bit/64-bit, Windows 7 32-bit/64-bit, Windows 8
+   32-bit/64-bit, or Windows 10 32-bit/64-bit with USB 2.0 port
 
 For this demo, two :adi:`EVAL-ADT7420-PMDZ <en/products/adt7420.html>` temperature sensor boards were connected to the downstream bus 1 and 2 on the :adi:`EVAL-LTC4317-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-LTC4317.html>`.
 
@@ -156,9 +172,13 @@ There are two basic ways to program the :adi:`EVAL-ADICUP3029 <en/design-center/
 -  (Option 1 ) Dragging and Dropping the `Bin B <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>`_ file to the DAPLINK drive
 -  (Option 2 ) Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_adt7420** demo can be found here:
 
@@ -179,16 +199,13 @@ Software
    -  :git-EVAL-ADICUP360:`AduCM3029_demo_adt7420 Source Code <projects/ADuCM360_demo_adt7420_pmdz>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
 
-
 If going with option 2, the user needs to import adt7420_example_noos in their cross core studios workplace. To learn how to do that, visit this page :doc:`cross core studios </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools>`. Once imported, a debug configuration file needs to be set-up . (visit this page :doc:`cross core studios </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools>` for more information)
 
 To see the temperature reading in the console, make sure ADI_APP_USE_BLUETOOTH is set to 0 in the header file (adt7420_app.h) before debugger is launched. Once the debugger is launched, click on the resume button if the program is halted due to breakpoint shown below: |image3| The temperature sensor reading should now be displayed in the console. For detailed information on how to do this, visit the :doc:`ADT7420 PMOD Temperature Demo </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_adt7420>` page on analog wiki
-
 
 |image4|
 
@@ -205,7 +222,6 @@ Schematic, PCB Layout, Bill of Materials
    -  `Layout <https://wiki.analog.com/_media/resources/eval/user-guides/interface-isolation/eval-ltc4317-pmdz/08_056628b.pdf>`_
    -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/interface-isolation/eval-ltc4317-pmdz/bom.zip>`_
    
-
 
 --------------
 
@@ -224,5 +240,5 @@ Additional Information and Useful Links
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/interface-isolation/eval-ltc4317-pmdz/diagram2.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/interface-isolation/eval-ltc4317-pmdz/table1.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/targethalted.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/readingtemp.gif

@@ -3,11 +3,12 @@ Transmitter Signal Chain Overview and Theory of Operation
 
 Link to higher level page: :doc:`Satcom Reference Design </wiki-migration/resources/eval/developer-kits/satcom-ref-design>`
 
-The overall TX block diagram is shown below. The wiki sections below will walk through the design elements of each sub-circuit.
+The overall TX block diagram is shown below. The wiki sections below will walk
+through the design elements of each sub-circuit.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_tx_overall_chain_v3.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Digital to Analog Converter (DAC) + DSP
 ---------------------------------------
@@ -16,7 +17,7 @@ The :adi:`AD9082` (“MxFE”) is an ideal digitizer for this wideband RF front 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_tx_dac.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 The :adi:`ADF4371` integrated PLL/VCO is an ideal choice for generating the MxFE sample clock. The ADF4371 can generate a clean, low-jitter clock from 62.5MHz up to 32GHz, and its differential outputs are capable of directly driving the MxFE clock pins. The ADF4371 is also used to generate clocking for the LO signal. You can read more about the LO signal path :doc:`here </wiki-migration/resources/eval/developer-kits/satcom-ref-design/lo-overview>`.
 
@@ -25,7 +26,6 @@ The :adi:`LTC6953` clock distributor is used to ensure proper clock synchronizat
 .. tip::
 
    Although only a single :adi:`LTC6953` is required for 4T4R, With EZSync™ or ParallelSync™, multichip synchronization is realizable, allowing for expandability while maintaining the proper clock signals.
-
 
 --------------
 
@@ -52,7 +52,15 @@ The 4T4R beamforming network consists of a modular array of four BFIC tiles, all
 Timing and Control
 ------------------
 
-Automatic gain control (AGC), RF path switching, and beam switching/reconfiguration often have critical timing specs that drive component selection, especially in systems that require fast frequency hopping or wideband tuning. The RF switches, DSAs, and tunable beam states in the transmitter signal chain offer fast switching and settling times, a high degree of configurability, and can be controlled via standard parallel and/or SPI interfaces. The tables below list the control interfaces and minimum configuration and settling time details at the component level for each of the sections of this reference design.
+Automatic gain control (AGC), RF path switching, and beam
+switching/reconfiguration often have critical timing specs that drive component
+selection, especially in systems that require fast frequency hopping or wideband
+tuning. The RF switches, DSAs, and tunable beam states in the transmitter signal
+chain offer fast switching and settling times, a high degree of configurability,
+and can be controlled via standard parallel and/or SPI interfaces. The tables
+below list the control interfaces and minimum configuration and settling time
+details at the component level for each of the sections of this reference
+design.
 
 TX Beamforming Network
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -72,21 +80,29 @@ TX Performance Simulations and Measurements
 Wideband Signal Conditioning Only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following simulations were created using Keysight SystemVue/Genesys. All components in the TX signal chain were modeled with frequency-dependent sys-parameter or s-parameter datasets to ensure accurate simulation results. The signal chain below takes into account the following components:
+The following simulations were created using Keysight SystemVue/Genesys. All
+components in the TX signal chain were modeled with frequency-dependent
+sys-parameter or s-parameter datasets to ensure accurate simulation results. The
+signal chain below takes into account the following components:
 
 -  Manufacturer-provided, frequency-dependent s-parameter or sys-parameter datasets for every active and passive RF component
 -  A standalone model of the :adi:`ADMFM2001` microwave downconverter containing signal chains each with their own frequency-dependent s-parameter or sys-parameter datasets
 -  A standalone model of an :adi:`AD9082` DAC containing frequency-dependent sys-parameter datasets
--  Frequency-dependent component interconnect modeling i.e. PCB trace loss approximation for DC-50GHz CPWG traces, 30mil Rogers 4350 PCB stackup
+-  Frequency-dependent component interconnect modeling i.e. PCB trace loss
+   approximation for DC-50GHz CPWG traces, 30mil Rogers 4350 PCB stackup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_tx_genesys_simulation_v3.jpg
    :align: center
 
-The Genesys workspace incorporates various system level cascade analyses that takes advantage of MATLAB equation-based frequency planning. Three different analyses are shown below:
+The Genesys workspace incorporates various system level cascade analyses that
+takes advantage of MATLAB equation-based frequency planning. Three different
+analyses are shown below:
 
 -  Noise power Spectral Simulation
 -  Two-Tone Test Spectral Simulation
--  System Cascade highlighting gain (CGAIN), noise figure (CNF), third order output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR)
+-  System Cascade highlighting gain (CGAIN), noise figure (CNF), third order
+   output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum
+   detectable signal (MDS), and carrier to noise distortion ratio (CNDR)
 
 Noise Power Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -97,7 +113,13 @@ Two-Tone Test Spectral Simulation
 System Cascade
 ^^^^^^^^^^^^^^
 
-As mentioned above, the system cascade simulation measures gain (CGAIN), noise figure (CNF), third order output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR). The x-axis shows all of the individual components cascaded together and the nodes in between. The variables are shown on two separate y axes for scaling purposes. The markers are placed on "Node 8" which is the end of the signal chain, before the beamforming section.
+As mentioned above, the system cascade simulation measures gain (CGAIN), noise
+figure (CNF), third order output intercept (EOIP3), output 1dB compression point
+(EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio
+(CNDR). The x-axis shows all of the individual components cascaded together and
+the nodes in between. The variables are shown on two separate y axes for scaling
+purposes. The markers are placed on "Node 8" which is the end of the signal
+chain, before the beamforming section.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_tx_system_level_cascade_no_bf_v2.jpg
    :align: center
@@ -105,21 +127,29 @@ As mentioned above, the system cascade simulation measures gain (CGAIN), noise f
 Beamforming Front End Only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following simulations were created using Keysight SystemVue/Genesys. All components in the TX signal chain were modeled with frequency-dependent sys-parameter or s-parameter datasets to ensure accurate simulation results. The signal chain below takes into account the following components:
+The following simulations were created using Keysight SystemVue/Genesys. All
+components in the TX signal chain were modeled with frequency-dependent
+sys-parameter or s-parameter datasets to ensure accurate simulation results. The
+signal chain below takes into account the following components:
 
 -  Manufacturer-provided, frequency-dependent s-parameter or sys-parameter datasets for every active and passive RF component
 -  A standalone model of the :adi:`ADMFM2001` microwave downconverter containing signal chains each with their own frequency-dependent s-parameter or sys-parameter datasets
 -  A standalone model of an :adi:`AD9082` DAC containing frequency-dependent sys-parameter datasets
--  Frequency-dependent component interconnect modeling i.e. PCB trace loss approximation for DC-50GHz CPWG traces, 30mil Rogers 4350 PCB stackup
+-  Frequency-dependent component interconnect modeling i.e. PCB trace loss
+   approximation for DC-50GHz CPWG traces, 30mil Rogers 4350 PCB stackup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_tx_genesys_schematic_bf_only_v1.jpg
    :align: center
 
-The Genesys workspace incorporates various system level cascade analyses that takes advantage of MATLAB equation-based frequency planning. Three different analyses are shown below:
+The Genesys workspace incorporates various system level cascade analyses that
+takes advantage of MATLAB equation-based frequency planning. Three different
+analyses are shown below:
 
 -  Noise power Spectral Simulation
 -  Two-Tone Test Spectral Simulation
--  System Cascade highlighting gain (CGAIN), noise figure (CNF), third order output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR)
+-  System Cascade highlighting gain (CGAIN), noise figure (CNF), third order
+   output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum
+   detectable signal (MDS), and carrier to noise distortion ratio (CNDR)
 
 Noise Power Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -130,17 +160,27 @@ Two-Tone Test Spectral Simulation
 System Cascade
 ^^^^^^^^^^^^^^
 
-As mentioned above, the system cascade simulation measures gain (CGAIN), noise figure (CNF), third order output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR). The x-axis shows all of the individual components cascaded together and the nodes in between. The variables are shown on two separate y axes for scaling purposes. The markers are placed on "Node xx" which is the end of the signal chain, before the beamforming section.
+As mentioned above, the system cascade simulation measures gain (CGAIN), noise
+figure (CNF), third order output intercept (EOIP3), output 1dB compression point
+(EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio
+(CNDR). The x-axis shows all of the individual components cascaded together and
+the nodes in between. The variables are shown on two separate y axes for scaling
+purposes. The markers are placed on "Node xx" which is the end of the signal
+chain, before the beamforming section.
 
 Wideband Signal Conditioning and Beamforming Combined
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following simulations were created using Keysight SystemVue/Genesys. All components in the TX signal chain were modeled with frequency-dependent sys-parameter or s-parameter datasets to ensure accurate simulation results. The signal chain below takes into account the following components:
+The following simulations were created using Keysight SystemVue/Genesys. All
+components in the TX signal chain were modeled with frequency-dependent
+sys-parameter or s-parameter datasets to ensure accurate simulation results. The
+signal chain below takes into account the following components:
 
 -  Manufacturer-provided, frequency-dependent s-parameter or sys-parameter datasets for every active and passive RF component
 -  A standalone model of the :adi:`ADMFM2001` microwave downconverter containing signal chains each with their own frequency-dependent s-parameter or sys-parameter datasets
 -  A standalone model of an :adi:`AD9082` DAC containing frequency-dependent sys-parameter datasets
--  Frequency-dependent component interconnect modeling i.e. PCB trace loss approximation for DC-50GHz CPWG traces, 30mil Rogers 4350 PCB stackup
+-  Frequency-dependent component interconnect modeling i.e. PCB trace loss
+   approximation for DC-50GHz CPWG traces, 30mil Rogers 4350 PCB stackup
 
 ::
 
@@ -149,11 +189,15 @@ The following simulations were created using Keysight SystemVue/Genesys. All com
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_tx_genesys_schematic_combined_v1.jpg
    :align: center
 
-The Genesys workspace incorporates various system level cascade analyses that takes advantage of MATLAB equation-based frequency planning. Three different analyses are shown below:
+The Genesys workspace incorporates various system level cascade analyses that
+takes advantage of MATLAB equation-based frequency planning. Three different
+analyses are shown below:
 
 -  Noise power Spectral Simulation
 -  Two-Tone Test Spectral Simulation
--  System Cascade highlighting gain (CGAIN), noise figure (CNF), third order output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR)
+-  System Cascade highlighting gain (CGAIN), noise figure (CNF), third order
+   output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum
+   detectable signal (MDS), and carrier to noise distortion ratio (CNDR)
 
 Noise Power Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -166,7 +210,13 @@ Two-Tone Test Spectral Simulation
 System Cascade
 ^^^^^^^^^^^^^^
 
-As mentioned above, the system cascade simulation measures gain (CGAIN), noise figure (CNF), third order output intercept (EOIP3), output 1dB compression point (EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR). The x-axis shows all of the individual components cascaded together and the nodes in between. The variables are shown on two separate y axes for scaling purposes. The markers are placed on "Node 2" which is the end of the signal chain, before the signal is sent to antenna.
+As mentioned above, the system cascade simulation measures gain (CGAIN), noise
+figure (CNF), third order output intercept (EOIP3), output 1dB compression point
+(EOP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio
+(CNDR). The x-axis shows all of the individual components cascaded together and
+the nodes in between. The variables are shown on two separate y axes for scaling
+purposes. The markers are placed on "Node 2" which is the end of the signal
+chain, before the signal is sent to antenna.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_tx_system_level_cascade_combined_v1.jpg
    :align: center
@@ -174,6 +224,6 @@ As mentioned above, the system cascade simulation measures gain (CGAIN), noise f
 :doc:`Home </wiki-migration/resources/eval/developer-kits/satcom-ref-design>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_tx_input_signal_combined_v1.jpg
-   :width: 425px
+   :width: 425
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_tx_output_signal_combined_v1.jpg
-   :width: 425px
+   :width: 425

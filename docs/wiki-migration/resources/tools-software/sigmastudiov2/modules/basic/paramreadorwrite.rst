@@ -11,12 +11,23 @@ Param Read or Write
 Description
 -----------
 
-The parameter Read module can be used to read any parameter in the schematic and get the value in the output pin. The parameter Write block allows user to update the module's parameter value dynamically. The selected parameters are updated with the value coming from the input pins
+The parameter Read module can be used to read any parameter in the schematic and
+get the value in the output pin. The parameter Write block allows user to update
+the module's parameter value dynamically. The selected parameters are updated
+with the value coming from the input pins
 
 Configuration
 -------------
 
-The selection of the parameter will be enabled only when the schematic compilation is completed successfully. The user can select the module for which the parameter needs to be updated/Read. After selecting the module, the parameter within the module should be selected for which value should be updated. The value of the selected parameter will be updated with the given input value for each sample once the schematic is downloaded. User can also change the parameter selection when the schematic is downloaded. It will start updating/Read the newly selected parameter once the parameter selection window is closed.
+The selection of the parameter will be enabled only when the schematic
+compilation is completed successfully. The user can select the module for which
+the parameter needs to be updated/Read. After selecting the module, the
+parameter within the module should be selected for which value should be
+updated. The value of the selected parameter will be updated with the given
+input value for each sample once the schematic is downloaded. User can also
+change the parameter selection when the schematic is downloaded. It will start
+updating/Read the newly selected parameter once the parameter selection window
+is closed.
 
 Variants
 --------
@@ -33,7 +44,6 @@ Name        ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 Param Read  B          B                NA            B
 Param Write B          B                NA            B
 =========== ========== ================ ============= ================
-
 
 | ===== Pins =====
 
@@ -54,7 +64,6 @@ Name   Type    Description
 ====== ======= ===================================
 Output Control Output Channel (Only for ParamRead)
 ====== ======= ===================================
-
 
 | ===== Configurable Parameters =====
 

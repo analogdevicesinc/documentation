@@ -9,7 +9,9 @@ Max Value Hold
 Description
 -----------
 
-The MaxValueHold block monitors one (or more) input(s) and routes the max value of the input to the output. This block held's the max value while the control input is 1 and reset the max value while the control input is 0.
+The MaxValueHold block monitors one (or more) input(s) and routes the max value
+of the input to the output. This block held's the max value while the control
+input is 1 and reset the max value while the control input is 0.
 
 Targets Supported
 -----------------

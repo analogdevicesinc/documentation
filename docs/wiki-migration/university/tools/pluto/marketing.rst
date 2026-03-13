@@ -44,50 +44,50 @@ because I need to look this up every time (since we do it so infrequent):
    $ convert -delay 150 -loop 0 plutosdr_layer*.png animatedGIF.gif
 
 .. |./marketing/adalm-pluto-photo.jpg| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/adalm-pluto-photo.jpg
-   :width: 300px
+   :width: 300
 .. |./marketing/adalm-pluto-photo.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/adalm-pluto-photo.png
-   :width: 300px
+   :width: 300
 .. |./marketing/adalm-pluto_revb_alllayers.gif| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/adalm-pluto_revb_alllayers.gif
-   :width: 300px
+   :width: 300
 .. |./marketing/adalm-pluto_revd_alllayers.gif| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/adalm-pluto_revd_alllayers.gif
-   :width: 300px
+   :width: 300
 .. |./marketing/layer1.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/layer1.png
-   :width: 300px
+   :width: 300
 .. |./marketing/plutosdr_layer1_D.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/plutosdr_layer1_d.png
-   :width: 300px
+   :width: 300
 .. |./marketing/layer2.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/layer2.png
-   :width: 300px
+   :width: 300
 .. |./marketing/plutosdr_layer2_D.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/plutosdr_layer2_d.png
-   :width: 300px
+   :width: 300
 .. |./marketing/layer3.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/layer3.png
-   :width: 300px
+   :width: 300
 .. |./marketing/plutosdr_layer3_D.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/plutosdr_layer3_d.png
-   :width: 300px
+   :width: 300
 .. |./marketing/layer4.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/layer4.png
-   :width: 300px
+   :width: 300
 .. |./marketing/plutosdr_layer4_D.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/plutosdr_layer4_d.png
-   :width: 300px
+   :width: 300
 .. |./marketing/layer5.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/layer5.png
-   :width: 300px
+   :width: 300
 .. |./marketing/plutosdr_layer5_D.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/plutosdr_layer5_d.png
-   :width: 300px
+   :width: 300
 .. |./marketing/layer6.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/layer6.png
-   :width: 300px
+   :width: 300
 .. |./marketing/plutosdr_layer6_D.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/plutosdr_layer6_d.png
-   :width: 300px
+   :width: 300
 .. |./marketing/layer7.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/layer7.png
-   :width: 300px
+   :width: 300
 .. |./marketing/plutosdr_layer7_D.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/plutosdr_layer7_d.png
-   :width: 300px
+   :width: 300
 .. |./marketing/layer8.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/layer8.png
-   :width: 300px
+   :width: 300
 .. |./marketing/plutosdr_layer8_D.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/plutosdr_layer8_d.png
-   :width: 300px
+   :width: 300
 .. |./marketing/layer9.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/layer9.png
-   :width: 300px
+   :width: 300
 .. |./marketing/plutosdr_layer9_D.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/plutosdr_layer9_d.png
-   :width: 300px
+   :width: 300
 .. |./marketing/layer10.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/layer10.png
-   :width: 300px
+   :width: 300
 .. |./marketing/plutosdr_layer10_D.png| image:: https://wiki.analog.com/_media/university/tools/pluto/marketing/plutosdr_layer10_d.png
-   :width: 300px
+   :width: 300

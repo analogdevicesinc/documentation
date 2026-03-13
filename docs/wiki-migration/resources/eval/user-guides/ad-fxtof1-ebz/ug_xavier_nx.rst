@@ -37,15 +37,14 @@ Power on sequence
 
    Some of the AD-FXTOF1-EBZ kits are missing the correct 15 pins cable to connect to Raspberry Pi or the Nvidia platforms. If in your box there is only one 15 pins cable having the contacts on the same side, please get a new cable with contacts on opposite sides (e.g. `15 pins cable, contacts on opposite sides <https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/686715152001/4573357>`_)
 
-
 -  Connect a USB mouse and keyboard to the Xavier NX
 -  Connect the power supply to the interposer
--  connect the 9V-19V power supply to the Xavier NX. Once power is connected to the Jetson the system will boot the Linux OS from the SD card.
+-  connect the 9V-19V power supply to the Xavier NX. Once power is connected to
+   the Jetson the system will boot the Linux OS from the SD card.
 
 .. important::
 
    Password for "analog" user is "analog". This user has sudo rights
-
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/ad-fxtof1-ebz-xavier-nx-connection.jpg
    :alt: Jetson Xavier nx connections
@@ -63,7 +62,8 @@ Troubleshooting
 
 -  Linux does not boot
 
-   -  The SD card is corrupted and this prevents the system from booting. Reflash the SD card or check generated devicetree or kernel image
+   -  The SD card is corrupted and this prevents the system from booting.
+      Reflash the SD card or check generated devicetree or kernel image
 
 --------------
 
@@ -77,13 +77,16 @@ Running the evaluation application
 Enabling the point cloud display in aditof-demo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  The demo application has the capability to display a point cloud image if it detects an OpenCV module called viz.
+-  The demo application has the capability to display a point cloud image if it
+   detects an OpenCV module called viz.
 
 Unfortunately OpenCV does not provide binaries for this module so a manual build is needed. The steps required to install OpenCV and include it in the project are presented here: :git-aditof_sdk:`Enable Point Cloud Aditof-Demo <doc/linux/build_instructions.md#enabling-the-point-cloud-display-in-aditof-demo>`
 
--  If aditof-demo finds all the OpenCV required modules a button in the interface will allow you to display the point cloud. By toggling the button a separate window will appear.
+-  If aditof-demo finds all the OpenCV required modules a button in the
+   interface will allow you to display the point cloud. By toggling the button a
+   separate window will appear.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/aditof_demo_pointcloud.png
    :alt: aditof-demo
    :align: center
-   :width: 800px
+   :width: 800

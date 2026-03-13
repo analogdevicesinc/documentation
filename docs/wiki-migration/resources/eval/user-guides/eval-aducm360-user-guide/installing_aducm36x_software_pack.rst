@@ -1,11 +1,14 @@
 Installing ADuCM36x Software Pack
 =================================
 
-The ADuCM36x Software Pack includes the C libraries to develop software for the ADuCM36x family with Keil μVision5 or IAR Embedded Workbench for ARM, as well as example code to help develop applications.
+The ADuCM36x Software Pack includes the C libraries to develop software for the
+ADuCM36x family with Keil μVision5 or IAR Embedded Workbench for ARM, as well as
+example code to help develop applications.
 
 The Software Pack for Keil μVision5 can be installed manually, downloading it from the `Keil MDK5 Software Packs website <https://www.keil.com/dd2/pack/>`_, or it can be installed through the Pack Installer inside Keil μVision5.
 
-The Software Pack for IAR Embedded Workbench can be installed from the IAR application.
+The Software Pack for IAR Embedded Workbench can be installed from the IAR
+application.
 
 Installation for Keil μVision5
 ------------------------------
@@ -23,7 +26,6 @@ Manual Installation
 .. container:: centeralign
 
    Figure 1. Manual installation of ADuCM36x Software Pack
-
 
 Installation Through Keil μVision5
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,13 +46,11 @@ Installation Through Keil μVision5
 
    Figure 2. Opening Pack Installer
 
-
    |Installing the ADuCM36x Software Pack Trough the Pack Installer|
 
 .. container:: centeralign
 
    Figure 3. Installing the ADuCM36x Software Pack Trough the Pack Installer
-
 
 Installation for IAR Embedded Workbench
 ---------------------------------------
@@ -67,13 +67,11 @@ Installation for IAR Embedded Workbench
 
    Figure 4. IAR CMSIS Manager. Selecting the ADuCM36x Series Device
 
-
    |image1|
 
 .. container:: centeralign
 
    Figure 3. Installing the ADuCM36x Software Pack
-
 
 .. |Installing the ADuCM36x Software Pack Trough the Pack Installer| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/packinstaller.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/install_iar_cmsis.png

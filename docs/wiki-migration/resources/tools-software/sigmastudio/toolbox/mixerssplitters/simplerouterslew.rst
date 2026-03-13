@@ -8,7 +8,12 @@ Simple Router With Slew
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/simpleroutergrow.png
    :align: center
 
-This module supports multiple router configurations. Any input can be routed to any output pin. A separate post gain is available for each of the output. All the gains has a corresponding mute control to quickly mute the particular gain. The current router/mixer(Mix #) can be changed during the runtime by changing the Tab in the mixer window. RC slew is applied for any change in the inputs/gains.
+This module supports multiple router configurations. Any input can be routed to
+any output pin. A separate post gain is available for each of the output. All
+the gains has a corresponding mute control to quickly mute the particular gain.
+The current router/mixer(Mix #) can be changed during the runtime by changing
+the Tab in the mixer window. RC slew is applied for any change in the
+inputs/gains.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/mixerssplitters/simplerouterform.png
    :align: center

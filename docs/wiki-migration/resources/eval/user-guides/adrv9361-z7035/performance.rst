@@ -4,11 +4,14 @@ ADRV9361-Z7035 - Performance
 Error Vector Magnitude (EVM)
 ----------------------------
 
-This section reports the EVM results for ADRV9361-Z7035 SDR 2X2 SOM. The general test setup is shown below. In this test, the block labeled “ADI Hardware System” represents the AD9361 on the SOM; the FPGA/SoC is the Zynq Z-7035 SoC on the SOM.
+This section reports the EVM results for ADRV9361-Z7035 SDR 2X2 SOM. The general
+test setup is shown below. In this test, the block labeled “ADI Hardware System”
+represents the AD9361 on the SOM; the FPGA/SoC is the Zynq Z-7035 SoC on the
+SOM.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/iio_object.png
    :align: center
-   :width: 600px
+   :width: 600
 
 IIO System Object
 
@@ -27,16 +30,22 @@ Test Parameters
 Results
 ~~~~~~~
 
-All EVM measurements were under ~2.5%. This works out to about -32dB for the accumulation of RX and TX.
+All EVM measurements were under ~2.5%. This works out to about -32dB for the
+accumulation of RX and TX.
 
-The AD9361 datasheet specs are ~ −37.782 dB for TX and −37.462 dB for RX (or about 1.4% each). It is an RMS sum, so we would expect about 1.86% (-34.6dB) based on the datasheet.
+The AD9361 datasheet specs are ~ −37.782 dB for TX and −37.462 dB for RX (or
+about 1.4% each). It is an RMS sum, so we would expect about 1.86% (-34.6dB)
+based on the datasheet.
 
-The datasheet uses narrowband baluns, and derives some gain from this. Since this test is using the wideband baluns on ADRV9361−Z7035 SDR 2X2, that gain is not seen. Therefore we consider the SOM to perform close enough to the AD9361 datasheet, with a difference of 0.6%.
+The datasheet uses narrowband baluns, and derives some gain from this. Since
+this test is using the wideband baluns on ADRV9361−Z7035 SDR 2X2, that gain is
+not seen. Therefore we consider the SOM to perform close enough to the AD9361
+datasheet, with a difference of 0.6%.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/evm.png
    :alt: EVM Results
    :align: center
-   :width: 800px
+   :width: 800
 
 Environmental
 -------------
@@ -64,7 +73,8 @@ Shock and Vibration
 
          -  Sine Sweep: 10-55-10Hz Traversed in 1 minute.
          -  Amplitude: 0.03in (0.06in max total excursion).
-         -  The motion is applied for a period of 2 hours in each of 3 mutually perpendicular directions.
+         -  The motion is applied for a period of 2 hours in each of 3 mutually
+            perpendicular directions.
 
       -  Method 214A:
 
@@ -80,7 +90,8 @@ Shock and Vibration
          -  Pulse Shape: Half-Sine.
          -  Amplitude: 20g half-sine.
          -  11 msec N
-         -  3 shocks positive, 3 shocks negative in 3 mutually perpendicular directions. (Total of 18 shocks)
+         -  3 shocks positive, 3 shocks negative in 3 mutually perpendicular
+            directions. (Total of 18 shocks)
 
       -  Tests are performed with unit electrically operating.
 
@@ -89,20 +100,36 @@ Temperature
 
 The report listed above `SOM2 Environmental Test Report <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/1510-107n_analog_devices_report.pdf>`_ also contains the results of MIL-STD-810G testing.
 
-The ADRV9361-Z7035 SDR 2X2 is rated for operation in the industrial temperature range (-40 to 85°C). Please take care to respect the individual device maximum die temperatures over your operating range with your specific design running on the SOM.
+The ADRV9361-Z7035 SDR 2X2 is rated for operation in the industrial temperature
+range (-40 to 85°C). Please take care to respect the individual device maximum
+die temperatures over your operating range with your specific design running on
+the SOM.
 
-All devices on the SOM are rated for this temperature range, with the exception of the Micro SD card cage, which is rated for operation from -25°C to +85°C; with storage over the full range listed in the table. The SOM has been validated to work reliably over the full industrial temp range.
+All devices on the SOM are rated for this temperature range, with the exception
+of the Micro SD card cage, which is rated for operation from -25°C to +85°C;
+with storage over the full range listed in the table. The SOM has been validated
+to work reliably over the full industrial temp range.
 
-Both the Zynq SoC and the AD9361 have the ability to measure and report their internal die temperature using their built-in data converters. These can be used to monitor the real-time temperature of these devices and, when necessary, start a fan wired to the carrier. In addition, for further heat dissipation, a heat sink may be attached directly to the package of the Zynq SoC on the SOM itself.
+Both the Zynq SoC and the AD9361 have the ability to measure and report their
+internal die temperature using their built-in data converters. These can be used
+to monitor the real-time temperature of these devices and, when necessary, start
+a fan wired to the carrier. In addition, for further heat dissipation, a heat
+sink may be attached directly to the package of the Zynq SoC on the SOM itself.
 
 Zynq Heat Sink
 ^^^^^^^^^^^^^^
 
-Selecting heat sinks for Xilinx All-Programmable FPGAs, 3G ICs, and SoCs depends upon many variables including chip size, device utilization, the ambient environment, and other criteria. Avnet and CTS® have created technical aids to ease this process of heat sink identification.
+Selecting heat sinks for Xilinx All-Programmable FPGAs, 3G ICs, and SoCs depends
+upon many variables including chip size, device utilization, the ambient
+environment, and other criteria. Avnet and CTS® have created technical aids to
+ease this process of heat sink identification.
 
-ADRV9361-Z7035 SDR 2X2 uses the Zynq XC7Z035-2LI device in the FBG676 package. The package outline measures 27 x 27 mm. See Xilinx UG865 for information on package size, thermal resistance, and recommendations for safely attaching heat sinks.
+ADRV9361-Z7035 SDR 2X2 uses the Zynq XC7Z035-2LI device in the FBG676 package.
+The package outline measures 27 x 27 mm. See Xilinx UG865 for information on
+package size, thermal resistance, and recommendations for safely attaching heat
+sinks.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/heatsinks.png
    :alt: Zynq Fan/Heat Sinks
    :align: center
-   :width: 400px
+   :width: 400

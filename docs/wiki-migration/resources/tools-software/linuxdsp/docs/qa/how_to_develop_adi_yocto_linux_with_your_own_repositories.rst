@@ -1,7 +1,8 @@
 How to develop ADI Yocto Linux with your own repositories
 =========================================================
 
-This documentation guides users how to develop Yocto Linux Products on ADI SC5XX platforms with developers' own repositories.
+This documentation guides users how to develop Yocto Linux Products on ADI SC5XX
+platforms with developers' own repositories.
 
 HOST Setup
 ----------
@@ -65,7 +66,9 @@ Change u-boot and linux-kernel URI to point to your own repo
 
    $ cd ~/yocto/sources/
 
-Aplly below patches into your own build script, take adsp-sc589-ezkit as an example, the same patch should be applied into adsp-sc589-mini, adsp-sc584-ezkit, adsp-sc573-ezkit.
+Aplly below patches into your own build script, take adsp-sc589-ezkit as an
+example, the same patch should be applied into adsp-sc589-mini,
+adsp-sc584-ezkit, adsp-sc573-ezkit.
 
 .. code:: diff
 

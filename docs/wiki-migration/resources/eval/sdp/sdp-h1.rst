@@ -1,5 +1,5 @@
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp_h1.jpg
-   :width: 200px
+   :width: 200
 
 Preface
 =======

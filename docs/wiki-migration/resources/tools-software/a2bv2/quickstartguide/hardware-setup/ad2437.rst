@@ -8,7 +8,8 @@ AD2437
 Evaluation boards
 =================
 
-The Evaluation boards used in the AD2437 demos are explained in the following subsections.
+The Evaluation boards used in the AD2437 demos are explained in the following
+subsections.
 
 EVAL-AD2437A1NZ
 ---------------
@@ -23,12 +24,11 @@ EVAL-AD2437A1NZ
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2437a1nz_new.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure:** A2B EVAL-AD2437A1NZ board
-
 
 EVAL-AD2437B1NZ
 ---------------
@@ -43,12 +43,11 @@ The :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2437b1nz_new.png
    :align: center
-   :width: 1000px
+   :width: 1000
 
 .. container:: centeralign
 
    \ **Figure:** A2B EVAL-AD2437B1NZ board
-
 
 EVAL-AD2437A1MZ
 ---------------
@@ -68,7 +67,6 @@ EVAL-AD2437A1MZ
 
    \ **Figure:** A2B EVAL-AD2437A1MZ board
 
-
 EVAL-AD2437B1MZ
 ---------------
 
@@ -82,12 +80,11 @@ The :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2437b1mz_new.png
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    \ **Figure:** A2B EVAL-AD2437B1MZ board
-
 
 XLR Platform Jumper settings
 ----------------------------
@@ -95,7 +92,6 @@ XLR Platform Jumper settings
 .. container:: centeralign
 
    \ **Table:** AD2437 XLR Platform Jumper Settings
-
 
 +------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
 | **Jumper** | **Purpose in EVAL-AD2437A1NZ** | **Main** |   | **Jumper** | **Purpose in EVAL AD2437B1NZ** | **Sub 0** | **Sub 1** |
@@ -117,7 +113,6 @@ RJ45 Platform Jumper settings
 .. container:: centeralign
 
    \ **Table:** AD2437 RJ45 Platform Jumper Settings
-
 
 +------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
 | **Jumper** | **Purpose in EVAL-AD2437A1MZ** | **Main** |   | **Jumper** | **Purpose in EVAL AD2437B1MZ** | **Sub 0** | **Sub 1** |

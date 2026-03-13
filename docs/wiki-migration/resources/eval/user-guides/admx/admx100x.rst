@@ -48,10 +48,15 @@ Software Needed
 General Description
 -------------------
 
-The ADMX1001 and ADMX1002 modules are ultra-low distortion and low-noise signal generators. They have a frequency range of up to 40 kHz when not using the digital pre-distortion (DPD) algorithm. If the DPD algorithm is enabled for signal generation, they can generate tones up to 20 kHz with -130dB typical of total harmonic distortion (THD) at 1 kHz. In addition to signal generation, the ADMX1001 includes a differential input acquisition channel to measure a signal of choice.
+The ADMX1001 and ADMX1002 modules are ultra-low distortion and low-noise signal
+generators. They have a frequency range of up to 40 kHz when not using the
+digital pre-distortion (DPD) algorithm. If the DPD algorithm is enabled for
+signal generation, they can generate tones up to 20 kHz with -130dB typical of
+total harmonic distortion (THD) at 1 kHz. In addition to signal generation, the
+ADMX1001 includes a differential input acquisition channel to measure a signal
+of choice.
 
 These modules can be evaluated with a single GUI to generate different signals. The PC GUI connects to an SDP controller board via USB that has established SPI communication to the module. The recommended controller board is the :adi:`SDP_H1 <sdp-h1>` which connects to the EVAL-ADMX100X-FMCZ's FMC connector.
-
 
 |image1|
 
@@ -59,11 +64,12 @@ These modules can be evaluated with a single GUI to generate different signals. 
 
    *Figure 1. ADMX100X module plugged-in to EVAL-ADMX100X-FMCZ*
 
-
 Quick Start Guide
 -----------------
 
-The EVAL-ADMX100X-FMCZ evaluation board is shown in Figure 2. The following tables include the connectors, inputs, and outputs related to this evaluation board:
+The EVAL-ADMX100X-FMCZ evaluation board is shown in Figure 2. The following
+tables include the connectors, inputs, and outputs related to this evaluation
+board:
 
 -  ADMX100X Module connector: The ADMX1001 or ADMX1002 module is connected to the EVAL-ADMX100X-FMCZ evaluation board via (P5) module connector.
 -  FMC connector: The SDP-H1 will connect to the FMC connector that is on the bottom of the board.
@@ -109,11 +115,12 @@ S1   Signal Loopback Enable   Loopback Off [2]_
 
    *Figure 2. EVAL-ADMX100X-FMCZ Evaluation Board*
 
-
 Equipment
 ~~~~~~~~~
 
-Figure 3 illustrates the required setup to evaluate the ADMX1001 and ADMX1002 module. The following pieces of equipment are required to perform a full evaluation:
+Figure 3 illustrates the required setup to evaluate the ADMX1001 and ADMX1002
+module. The following pieces of equipment are required to perform a full
+evaluation:
 
 -  ADMX1001 or ADMX1002 module
 -  EVAL-ADMX100X-FMCZ kit that contains:
@@ -126,7 +133,8 @@ Figure 3 illustrates the required setup to evaluate the ADMX1001 and ADMX1002 mo
    -  :adi:`SDP_H1 <sdp-h1>` controller board
 
 -  ADMX100X GUI software that will run on Windows 10
--  SMA cables for connection from EVAL-ADMX100X-FMCZ evaluation board to analyzer or oscilloscope
+-  SMA cables for connection from EVAL-ADMX100X-FMCZ evaluation board to
+   analyzer or oscilloscope
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/sdp-h1_setup.png
    :align: center
@@ -134,7 +142,6 @@ Figure 3 illustrates the required setup to evaluate the ADMX1001 and ADMX1002 mo
 .. container:: centeralign
 
    *Figure 3. Evaluation Board Connection Using the SDP-H1 Controller Board*
-
 
 Setup
 ~~~~~
@@ -161,12 +168,11 @@ Follow the steps below to set up the full evaluation board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/complete_setup_using_sdp-h1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 4. Complete Evaluation Setup with SDP-H1*
-
 
 Using the SDP-S or SDP-B with the SDP-I-PMOD Controller Boards
 --------------------------------------------------------------
@@ -175,11 +181,20 @@ The recommended controller board to use with the EVAL-ADMX100X evaluation system
 
 .. important::
 
-   The SDP-I-PMD is used in conjunction with either the SDP-S or the SDP-B boards to establish SPI communication to the ADMX1002 using only the SPI PMOD connector. The SDP-H1 performs the same function and can be plugged into the FMC connector on the EVAL-ADMX100X-FMCZ.
+   The SDP-I-PMD is used in conjunction with either the SDP-S or the SDP-B
+   boards to establish SPI communication to the ADMX1002 using only the SPI PMOD
+   connector. The SDP-H1 performs the same function and can be plugged into the
+   FMC connector on the EVAL-ADMX100X-FMCZ.
 
    
-   There are additional connections to the FMC connector that are required for some features, including the ability to shift the VCM of the generated output using the GUI, as well as access an additional SPI bus to control the acquisition module on the ADMX1001. Therefore, we recommend using the SDP-H1 controller board in most cases to access all features and both module boards (ADMX1001B and ADMX1002B). However, if the user is evaluating the ADMX1002 and can shift the VCM of the output manually, the SDP-S/SDP-B and SDP-I-PMD boards can be used. This setup cannot be used to evaluate the ADMX1001B.
-
+   There are additional connections to the FMC connector that are required for
+   some features, including the ability to shift the VCM of the generated output
+   using the GUI, as well as access an additional SPI bus to control the
+   acquisition module on the ADMX1001. Therefore, we recommend using the SDP-H1
+   controller board in most cases to access all features and both module boards
+   (ADMX1001B and ADMX1002B). However, if the user is evaluating the ADMX1002
+   and can shift the VCM of the output manually, the SDP-S/SDP-B and SDP-I-PMD
+   boards can be used. This setup cannot be used to evaluate the ADMX1001B.
 
 Quick Start with the SDP_S/SDP_B and SDP_I_PMOD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -187,12 +202,15 @@ Quick Start with the SDP_S/SDP_B and SDP_I_PMOD
 Refer to Figure 2 for the EVAL-ADMX100X-FMCZ Connector layout.
 
 -  Source/DAC SPI PMOD header: The SDP-S or SDP-B will communicate to the module via SPI through the Source/DAC SPI PMOD header (P2). The P2 bottom row pins 1-6 are "SS_MOSI_MISO_SCLK_GND\_+3.3V"
--  When using these controller boards, the output common-mode voltage can only be adjusted by providing external VCM at pin 9 of P7. The P4 jumper should also be inserted at 2-3 position as indicated in Table 2.
+-  When using these controller boards, the output common-mode voltage can only
+   be adjusted by providing external VCM at pin 9 of P7. The P4 jumper should
+   also be inserted at 2-3 position as indicated in Table 2.
 
 Equipment
 ~~~~~~~~~
 
-Figure 5 illustrates the required setup to evaluate the ADMX1002 module. The following pieces of equipment are required for this controller board setup:
+Figure 5 illustrates the required setup to evaluate the ADMX1002 module. The
+following pieces of equipment are required for this controller board setup:
 
 -  ADMX1001 or ADMX1002 module
 -  EVAL-ADMX100X-FMCZ kit that contains:
@@ -213,7 +231,8 @@ Figure 5 illustrates the required setup to evaluate the ADMX1002 module. The fol
    -  6-Pin PMOD Cable
 
 -  ADMX100X GUI software that will run on Windows 10
--  SMA cables for connection from EVAL-ADMX100X-FMCZ evaluation board to analyzer or oscilloscope
+-  SMA cables for connection from EVAL-ADMX100X-FMCZ evaluation board to
+   analyzer or oscilloscope
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/sdp-s_setup.png
    :align: center
@@ -222,7 +241,6 @@ Figure 5 illustrates the required setup to evaluate the ADMX1002 module. The fol
 
    *Figure 5. Evaluation Board Connection Using the SDP-I-PMD with Either the SDP-S or SDP-B Controller Boards*
 
-
 Setup
 ~~~~~
 
@@ -230,7 +248,8 @@ Follow the steps below to set up the full evaluation board.
 
 -  Check that the Jumper & Switch settings match the desired configuration in Table 2.
 -  Connect the ADM1002 module to the module connector (P5) on the EVAL-ADMX100X-FMCZ evaluation board.
--  Connect the SDP-S or SDP-B controller boards to the SDP-I-PMD interposer board.
+-  Connect the SDP-S or SDP-B controller boards to the SDP-I-PMD interposer
+   board.
 
 ::
 
@@ -253,12 +272,11 @@ Follow the steps below to set up the full evaluation board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-pmod/sdp-i-pmod_jumper-spi.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    Figure 6. SDP-I-PMD Interposer Board Jumper Connections
-
 
    |image2|
 
@@ -266,30 +284,49 @@ Follow the steps below to set up the full evaluation board.
 
    *Figure 7. Complete Evaluation Setup with SDP-S and SDP-I-PMD*
 
-
 ADMX100X General Description
 ----------------------------
 
-The ADMX100X module shown in Figure 8 is an ultra-low distortion and low noise autonomous digitally controller sinewave signal generator, generating the purest sinusoidal differential signals in its class by exploiting a digital pre-distortion (DPD) algorithm, which is a patented method for sensing and correcting its own output. The difference between ADMX1001 and ADMX1002 is that ADMX1001 has the added capability of acquiring signal as shown on the simplified block diagram in Figure 9.
+The ADMX100X module shown in Figure 8 is an ultra-low distortion and low noise
+autonomous digitally controller sinewave signal generator, generating the purest
+sinusoidal differential signals in its class by exploiting a digital
+pre-distortion (DPD) algorithm, which is a patented method for sensing and
+correcting its own output. The difference between ADMX1001 and ADMX1002 is that
+ADMX1001 has the added capability of acquiring signal as shown on the simplified
+block diagram in Figure 9.
 
 Source Channel
 ~~~~~~~~~~~~~~
 
-Both the ADMX1001 and ADMX1002 offer a multi-tone frequency range of up to 40 kHz. The ADMX100X can perform the digital pre-distortion (DPD) algorithm to provide an ultra-low distortion and low noise signal from 30Hz to 20kHz. The module generates an ultra-low distortion performance up to −130dB at 1 kHz with DPD, and −118dB at 1 kHz without DPD. The ADMX100X module has the capability to perform in DC, dual tone, and arbitrary waveform generation mode.
+Both the ADMX1001 and ADMX1002 offer a multi-tone frequency range of up to 40
+kHz. The ADMX100X can perform the digital pre-distortion (DPD) algorithm to
+provide an ultra-low distortion and low noise signal from 30Hz to 20kHz. The
+module generates an ultra-low distortion performance up to −130dB at 1 kHz with
+DPD, and −118dB at 1 kHz without DPD. The ADMX100X module has the capability to
+perform in DC, dual tone, and arbitrary waveform generation mode.
 
-For applications that require different voltage and current levels, the sense lines can be connected to an external buffer or level-shifting circuitry to permit the entire forward signal chain to be corrected.
+For applications that require different voltage and current levels, the sense
+lines can be connected to an external buffer or level-shifting circuitry to
+permit the entire forward signal chain to be corrected.
 
-The module is configurable through a flexible digital interface allows for easy integration into any system. In addition, ATE control bus lines are available for maximum control of the signal in timing-critical applications.
+The module is configurable through a flexible digital interface allows for easy
+integration into any system. In addition, ATE control bus lines are available
+for maximum control of the signal in timing-critical applications.
 
 Acquisition Channel
 ~~~~~~~~~~~~~~~~~~~
 
-The ADMX1001 module offers an acquisition channel input, which can be accessed using the secondary ADC interface to read the conversion data directly.
+The ADMX1001 module offers an acquisition channel input, which can be accessed
+using the secondary ADC interface to read the conversion data directly.
 
-ADMX1001 can act as master or slave when supporting coherent test signal generation and offers an auxiliary ADC input, operating at 256 ksps.
+ADMX1001 can act as master or slave when supporting coherent test signal
+generation and offers an auxiliary ADC input, operating at 256 ksps.
 
-The highly integrated data acquisition solution provides 7 programmable gain options with a maximum input range of ±7.5V differential and a maximum input common mode range of ±7V. A 4th order anti-aliasing filter provides rejection up to −130dB. The total dynamic range of the acquisition channel is up to 128dB with a −115dB typical THD with a 1kHz input tone at full scale.
-
+The highly integrated data acquisition solution provides 7 programmable gain
+options with a maximum input range of ±7.5V differential and a maximum input
+common mode range of ±7V. A 4th order anti-aliasing filter provides rejection up
+to −130dB. The total dynamic range of the acquisition channel is up to 128dB
+with a −115dB typical THD with a 1kHz input tone at full scale.
 
 |image3|
 
@@ -297,13 +334,11 @@ The highly integrated data acquisition solution provides 7 programmable gain opt
 
    *Figure 8. ADMX100X Module*
 
-
    |image4|
 
 .. container:: centeralign
 
    *Figure 9. ADMX100X Simplified Block Diagram*
-
 
 Operation Modes
 ---------------
@@ -311,23 +346,42 @@ Operation Modes
 Single Tone Generation
 ~~~~~~~~~~~~~~~~~~~~~~
 
-ADMX100X module is specially designed to generate an ultra-high purity sine waveform from 30 Hz up to 20 kHz by a patented digital pre-distortion (DPD) algorithm method. In addition, the module can generate high-purity signals up to 40kHz without DPD.
+ADMX100X module is specially designed to generate an ultra-high purity sine
+waveform from 30 Hz up to 20 kHz by a patented digital pre-distortion (DPD)
+algorithm method. In addition, the module can generate high-purity signals up to
+40kHz without DPD.
 
 Default Mode (without DPD)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is the default mode when a new frequency and/or amplitude is loaded into the register, and the generate register or trigger pin is toggled. The ADMX100X module performance exceeds the native performance of the components due to its architecture. This is the operation mode for arbitrary waveform generation as well.
+This is the default mode when a new frequency and/or amplitude is loaded into
+the register, and the generate register or trigger pin is toggled. The ADMX100X
+module performance exceeds the native performance of the components due to its
+architecture. This is the operation mode for arbitrary waveform generation as
+well.
 
 With DPD Mode
 ^^^^^^^^^^^^^
 
-If ultra-high performance is needed the digital pre-distortion (DPD) algorithm can be enabled by software or hardware. The DPD process requires no external reference inputs and exploits a patented differential temporal and amplitude sensing method. When combined with our novel DSP algorithm, this eliminates the electrical measurement errors that would normally limit the performance. The DPD algorithm range frequency goes from 30Hz up to 20kHz, with an amplitude range of up to 3.62VRMS. Figure 4 shows the ADMX100X module THD before and after DPD. Moreover, Figure 5 and Figure 6 show the FFT of an ADMX100X module at 1kHz with 2Vrms before and after DPD.
+If ultra-high performance is needed the digital pre-distortion (DPD) algorithm
+can be enabled by software or hardware. The DPD process requires no external
+reference inputs and exploits a patented differential temporal and amplitude
+sensing method. When combined with our novel DSP algorithm, this eliminates the
+electrical measurement errors that would normally limit the performance. The DPD
+algorithm range frequency goes from 30Hz up to 20kHz, with an amplitude range of
+up to 3.62VRMS. Figure 4 shows the ADMX100X module THD before and after DPD.
+Moreover, Figure 5 and Figure 6 show the FFT of an ADMX100X module at 1kHz with
+2Vrms before and after DPD.
 
 Sense Connection
 ^^^^^^^^^^^^^^^^
 
-The DPD algorithm of ADMX100X requires the sense inputs to be connected to the output of ADMX1001 and ADMX1002 which will be used in the process routine of ADMX1001 and ADMX1002 to generate an ultra-high purity sine waveform. The sense connection can be used to combine a user buffer circuit as part of the signal generation in the DPD process by connecting the sense input to the output of the user’s buffer stage.
-
+The DPD algorithm of ADMX100X requires the sense inputs to be connected to the
+output of ADMX1001 and ADMX1002 which will be used in the process routine of
+ADMX1001 and ADMX1002 to generate an ultra-high purity sine waveform. The sense
+connection can be used to combine a user buffer circuit as part of the signal
+generation in the DPD process by connecting the sense input to the output of the
+user’s buffer stage.
 
 |image5|
 
@@ -335,13 +389,11 @@ The DPD algorithm of ADMX100X requires the sense inputs to be connected to the o
 
    *Figure 10. Typical Performance at 2Vrms*
 
-
    |image6|
 
 .. container:: centeralign
 
    *Figure 11. FFT spectrum with 2Vrms at 1kHz before DPD*
-
 
    |image7|
 
@@ -349,26 +401,41 @@ The DPD algorithm of ADMX100X requires the sense inputs to be connected to the o
 
    *Figure 12. FFT spectrum with 2Vrms at 1kHz after DPD*
 
-
 DC Generation
 ~~~~~~~~~~~~~
 
-ADMX100X is capable of generating differential DC output signals up to 11.3V DC between Vp and Vn. The output level can be adjusted in 1µV resolution steps, and the software will verify if the entered parameters are valid by using the valid register. The DC output will be continuously generated after the run command is received and can be stopped by sending a stop command.
+ADMX100X is capable of generating differential DC output signals up to 11.3V DC
+between Vp and Vn. The output level can be adjusted in 1µV resolution steps, and
+the software will verify if the entered parameters are valid by using the valid
+register. The DC output will be continuously generated after the run command is
+received and can be stopped by sending a stop command.
 
 Dual-tone Waveform Generation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Two sine wave tones can be generated from 30Hz to 20kHz. The dual-tone waveform generation can be performed in burst mode or continuous mode. The dual-tone waveform frequency resolution can be programmed with 1 µHz resolution while the amplitudes can be programmed with 1 µV resolution.
+Two sine wave tones can be generated from 30Hz to 20kHz. The dual-tone waveform
+generation can be performed in burst mode or continuous mode. The dual-tone
+waveform frequency resolution can be programmed with 1 µHz resolution while the
+amplitudes can be programmed with 1 µV resolution.
 
 Arbitrary Waveform Generation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An arbitrary waveform can be programmed by the user. The AWG signal can be programmed up to 20s long and will be stored in volatile memory. Continuous AWG generation can be performed by looping back the waveform stored in memory. ADMX100X contains a 27kHz low pass filter on its output allowing AWG waveforms to be generated within this band. Signals generated in the band will be within a 5% tolerance.
+An arbitrary waveform can be programmed by the user. The AWG signal can be
+programmed up to 20s long and will be stored in volatile memory. Continuous AWG
+generation can be performed by looping back the waveform stored in memory.
+ADMX100X contains a 27kHz low pass filter on its output allowing AWG waveforms
+to be generated within this band. Signals generated in the band will be within a
+5% tolerance.
 
 Acquisition Channel
 ~~~~~~~~~~~~~~~~~~~
 
-The highly integrated data acquisition solution provides 7 programmable gain options with a maximum input range of ±7.5V differential and a maximum input common mode range of ±7V. A 4th order anti-aliasing filter provides rejection up to −130dB. The total dynamic range of the acquisition channel is up to 128dB with a −115dB typical THD with a 1kHz input tone at full scale.
+The highly integrated data acquisition solution provides 7 programmable gain
+options with a maximum input range of ±7.5V differential and a maximum input
+common mode range of ±7V. A 4th order anti-aliasing filter provides rejection up
+to −130dB. The total dynamic range of the acquisition channel is up to 128dB
+with a −115dB typical THD with a 1kHz input tone at full scale.
 
 SPI Control
 ~~~~~~~~~~~
@@ -380,7 +447,8 @@ An overview of the SPI control mode features is as follows:
 -  A second method allows the user to merge the ready signal within the DOUT output stream, which allows a reduction in the number of lines across an isolation barrier.
 -  Reading back conversions can be performed by writing 8 bits to address the ADC register and reading back the result from the register.
 -  Continuous readback mode, which is enabled via an SPI write. There is no need to supply the 8 bits to address the ADC_DATA register (Register 0x2C). Data readback occurs on the application of SCLK. The DRDY pin indicates that a conversion result is complete and can be used to trigger a readback of the conversion result.
--  In continuous read-back mode, there is the option to append either the 8-bit status header or an 8-bit CRC check, or both.
+-  In continuous read-back mode, there is the option to append either the 8-bit
+   status header or an 8-bit CRC check, or both.
 
 Additional Features
 ~~~~~~~~~~~~~~~~~~~
@@ -388,12 +456,24 @@ Additional Features
 Burst/Continuous Mode
 ^^^^^^^^^^^^^^^^^^^^^
 
-In burst mode, the tone will only be generated for a defined length of time while in continuous mode the waveforms will be generated continuously until the STOP command is sent.
+In burst mode, the tone will only be generated for a defined length of time
+while in continuous mode the waveforms will be generated continuously until the
+STOP command is sent.
 
 Profiles
 ^^^^^^^^
 
-Once a digital pre-distortion (DPD) algorithm is used for a given frequency or amplitude, the DPD parameters can be saved into the non-volatile profile memory. If you change the parameters of your signal without storing the previous DPD parameters, these parameters will be lost once a new frequency or amplitude is loaded into the module. When generating a new combination of frequency and amplitude (also known as a profile) DPD algorithm can be performed to generate a high-purity signal and can be stored to be later recalled. Up to 16 such signals can be stored and can be recalled easily by hardware or software. This allows fast-high purity frequency switching. Profiles 1 through 15 can store any signal type (single tone, single tone with DPD, DC, dual tone, etc.), but profile 16 is reserved for an AWG signal type only.
+Once a digital pre-distortion (DPD) algorithm is used for a given frequency or
+amplitude, the DPD parameters can be saved into the non-volatile profile memory.
+If you change the parameters of your signal without storing the previous DPD
+parameters, these parameters will be lost once a new frequency or amplitude is
+loaded into the module. When generating a new combination of frequency and
+amplitude (also known as a profile) DPD algorithm can be performed to generate a
+high-purity signal and can be stored to be later recalled. Up to 16 such signals
+can be stored and can be recalled easily by hardware or software. This allows
+fast-high purity frequency switching. Profiles 1 through 15 can store any signal
+type (single tone, single tone with DPD, DC, dual tone, etc.), but profile 16 is
+reserved for an AWG signal type only.
 
 ADMX100X Limitations
 ~~~~~~~~~~~~~~~~~~~~
@@ -413,7 +493,10 @@ Software Installation
 Installing the System Demonstration Platform Drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have not installed the System Demonstration Platform (SDP) drivers already, you need to download and install it first before installing the ADMX100X GUI. Below you can find the SDP USB driver installer and the installation instructions.
+If you have not installed the System Demonstration Platform (SDP) drivers
+already, you need to download and install it first before installing the
+ADMX100X GUI. Below you can find the SDP USB driver installer and the
+installation instructions.
 
 -  `SDP USB Driver Installer <https://swdownloads.analog.com/ACE/SDP/SDPDrivers.exe>`_
 -  `sdp_drivers_installation_instruction.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/admx/sdp_drivers_installation_instruction.pdf>`_
@@ -424,78 +507,80 @@ Installing the ADMX100X GUI
 To install the ADMX100X GUI, take the following steps:
 
 -  Download the executable available in the Software section of the product page or click on the link: :adi:`ADMX100x GUI Download <media/en/evaluation-boards-kits/evaluation-software/admx100x-evaluation-software.zip>`
--  Double-click on the Admx100xEvaluationSoftware-Relx.x.x_EVAL.exe file from the downloads folder to begin the installation.
+-  Double-click on the Admx100xEvaluationSoftware-Relx.x.x_EVAL.exe file from
+   the downloads folder to begin the installation.
 
 .. note::
 
-   The installer may require the user to have administrator privileges for the machine
+   The installer may require the user to have administrator privileges for the
+   machine
 
-
--  The installer will begin to load, with the progress window visible on the desktop.
+-  The installer will begin to load, with the progress window visible on the
+   desktop.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/extractingcomponents.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    *Figure 13. Loading Progress Window*
 
-
 -  Once the Installer has loaded, the welcome screen will appear. Click Next >
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_welcome.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    *Figure 14. Welcome Window*
 
-
--  Accept the license agreement on the following screen with the radio button and click Next >
+-  Accept the license agreement on the following screen with the radio button
+   and click Next >
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_licenseagreement.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    *Figure 15. License Agreement Window*
 
-
--  The default installation location is C:\\Analog Devices\\. If another location is desired, click the Change... button on the following screen and navigate to the desired location. Click Next > once the installation location is finalized.
+-  The default installation location is C:\\Analog Devices\\. If another
+   location is desired, click the Change... button on the following screen and
+   navigate to the desired location. Click Next > once the installation location
+   is finalized.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_installerlocation.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    *Figure 16. Installer Location Window*
 
-
 -  The installation can now begin. Click Install to proceed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_begininstallation.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    *Figure 17. Begin Installation Window*
 
-
--  Once the installation has finished, a window will appear confirming it is completed and give an option to view the Release Notes (opted-in by default). Click Finish to close the installer.
+-  Once the installation has finished, a window will appear confirming it is
+   completed and give an option to view the Release Notes (opted-in by default).
+   Click Finish to close the installer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_complete.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    *Figure 18. Installation Complete Window*
-
 
 Software Operation
 ------------------
@@ -506,7 +591,6 @@ Software Operation
 .. container:: centeralign
 
    *Figure 19. ADMX100X GUI Overview*
-
 
 ADMX100X GUI
 ~~~~~~~~~~~~
@@ -522,23 +606,30 @@ The ADMX100X GUI in Figure 19 contains the following components:
 -  Captured Waveform: Time domain plot of the samples captured by the acquisition channel (ADMX1001 only).
 -  Spectrum Waveform: Frequency domain plot of the FFT of the samples captured by the acquisition channel (ADMX1001 only).
 -  Waveform Measurements: Time domain measurements are calculated using the samples captured by the acquisition channel (ADMX1001 only).
--  Spectral Measurements: Frequency domain measurements calculated using the FFT of the samples captured by the acquisition channel (ADMX1001 only).
+-  Spectral Measurements: Frequency domain measurements calculated using the FFT
+   of the samples captured by the acquisition channel (ADMX1001 only).
 
 ADMX100X GUI Message Panel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After clicking on the Bell icon in the bottom right of the ADMX100X GUI Status Panel, several message windows can be viewed. These windows, shown in Figure 20, contain the following components:
+After clicking on the Bell icon in the bottom right of the ADMX100X GUI Status
+Panel, several message windows can be viewed. These windows, shown in Figure 20,
+contain the following components:
 
-11. Analog Output Commands: Contains a comprehensive list of SPI commands sent to the source registers of the ADMX100X module.
+11. Analog Output Commands: Contains a comprehensive list of SPI commands sent
+    to the source registers of the ADMX100X module.
 
-12. Analog Input Commands: Contains a comprehensive list of SPI commands sent to the acquisition registers of the ADMX1001 module. This is not used when evaluating the ADMX1002 module.
+12. Analog Input Commands: Contains a comprehensive list of SPI commands sent to
+    the acquisition registers of the ADMX1001 module. This is not used when
+    evaluating the ADMX1002 module.
 
-13. Board Status: Periodically updated list of the current condition of the board.
+13. Board Status: Periodically updated list of the current condition of the
+    board.
 
-14. Errors: List of errors thrown during operation of the GUI. Generated parameters will then be displayed in the Generated Parameters Panel.
+14. Errors: List of errors thrown during operation of the GUI. Generated
+    parameters will then be displayed in the Generated Parameters Panel.
 
 15. Status: List of statuses updated during operation.
-
 
 |image8|
 
@@ -546,11 +637,11 @@ After clicking on the Bell icon in the bottom right of the ADMX100X GUI Status P
 
    *Figure 20. ADMX100X GUI Status Panel (Expanded)*
 
-
 ADMX100X GUI Analog Output Panel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The UI elements present in the Analog Output Panel, show in Figure 21, are as follows:
+The UI elements present in the Analog Output Panel, show in Figure 21, are as
+follows:
 
 -  Enable/Disable: This button starts/stops the signal.
 -  Run DPD: This button runs the digital pre-distortion(DPD), or calibration, algorithm.
@@ -559,21 +650,22 @@ The UI elements present in the Analog Output Panel, show in Figure 21, are as fo
 -  Common Mode  [3]_: This field is used to set the common mode offset voltage of the signal to be generated.
 -  Save Waveform as Profile: Saves current waveform in the profile table.
 -  Profile Table: Displays all the saved profiles and their parameters.
--  Enable Sequencing  [4]_: Enables running a set of profiles in a user-selected sequence.
+-  Enable Sequencing  [4]_: Enables running a set of profiles in a user-selected
+   sequence.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_analog_output.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 21. ADMX100X GUI Analog Output Panel*
 
-
 ADMX100X GUI Analog Input Panel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The UI elements present in the Analog Input Panel, shown in Figure 22, are as follows:
+The UI elements present in the Analog Input Panel, shown in Figure 22, are as
+follows:
 
 -  Input Range: Provides a drop-down menu to set the range of the input ADC by varying its gain. The input range of the ADC can be changed from 8.912 Vrms to 0.139 Vrms.
 -  Filter: A dropdown menu provides the user a choice between the filter to be used by the acquisition IC to process the ADC samples. The options include “Sinc5”, “Sinc3” and “Wideband”.
@@ -586,55 +678,61 @@ The UI elements present in the Analog Input Panel, shown in Figure 22, are as fo
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_analog_input.png
    :align: center
-   :width: 200px
+   :width: 200
 
 .. container:: centeralign
 
    *Figure 22. ADMX1001 GUI Analog Input Panel*
 
-
 ADMX100X GUI Waveform Plot Options (Captured and Spectrum)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The plots to display the acquired data, shown in Figure 23, have the following elements:
+The plots to display the acquired data, shown in Figure 23, have the following
+elements:
 
 -  Captured waveform Graph: Displays the captured samples vs. time to show the captured waveform to the user.
 -  Spectrum waveform graph: Displays the frequency-domain plot of the acquired samples using signal-to-spectrum domain transforms.
 -  Waveform Graph control panel: This control panel can be used to scale the graph as needed.
--  Waveform Graph Axes: The Axes dropdown has two options “Auto” and “Fixed”. If we use “Fixed” axes we can manually set the limits of the graph by clicking on the numbers at the edge of the graph and typing in the required value of the axis limit. The “Auto” setting will automatically scale the axes to fit the waveform in the window.
+-  Waveform Graph Axes: The Axes dropdown has two options “Auto” and “Fixed”. If
+   we use “Fixed” axes we can manually set the limits of the graph by clicking
+   on the numbers at the edge of the graph and typing in the required value of
+   the axis limit. The “Auto” setting will automatically scale the axes to fit
+   the waveform in the window.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_captured_waveform.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 23. ADMX100X WAVEFORMS (CAPTURED AND SPECTRUM)*
 
-
 ADMX1001 GUI Spectrum Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The settings available, shown in Figure 24, for the Spectrum waveform are as follows:
+The settings available, shown in Figure 24, for the Spectrum waveform are as
+follows:
 
 -  Magnitude Units: Dropdown menu to decide the magnitude units of the spectral magnitude on the y-axis of the spectrum waveform.
 -  Window: Specifies the type of windowing to be used on the input time-domain signal before transforming it to the frequency-domain using FFT.
 -  Samples to average: Specifies the number of sets of samples to average for the spectrum calculation. Only applicable when the “Continuous acquisition” checkbox in the Analog Input Panel is checked, or else the value in this textbox is ignored.
--  Log frequency scale: The checkbox determines the scale of the Frequency axis (X-Axis). If the checkbox is checked the frequency scale is logarithmic, if the box is kept unchecked the frequency scale is linear.
+-  Log frequency scale: The checkbox determines the scale of the Frequency axis
+   (X-Axis). If the checkbox is checked the frequency scale is logarithmic, if
+   the box is kept unchecked the frequency scale is linear.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_spectrum_settings.png
    :align: center
-   :width: 200px
+   :width: 200
 
 .. container:: centeralign
 
    *Figure 24. ADMX1001 GUI Spectrum Settings*
 
-
 ADMX1001 GUI Spectrum and Waveform Measurements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The measurements calculated for the time domain (waveform) and frequency domain (spectral) plots shown in Figure 25 are as follows:
+The measurements calculated for the time domain (waveform) and frequency domain
+(spectral) plots shown in Figure 25 are as follows:
 
 -  Amplitude: Amplitude of the acquired signal.
 -  Max Value: Maximum value in the acquired signal.
@@ -647,50 +745,56 @@ The measurements calculated for the time domain (waveform) and frequency domain 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_waveform_and_spectrum_measurements.png
    :align: center
-   :width: 200px
+   :width: 200
 
 .. container:: centeralign
 
    *Figure 25. ADMX1001 GUI Spectrum and Waveform Measurements*
 
-
 Generate a Single-tone without Digital Pre-Distortion (DPD)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To generate a single-tone signal without the DPD algorithm set the “Waveform Type” field to “SingleTone” as shown in Figure 26.
+To generate a single-tone signal without the DPD algorithm set the “Waveform
+Type” field to “SingleTone” as shown in Figure 26.
 
 -  Set the parameters of the waveform according to your requirements. For additional detail on each parameter hover over the input field to see the tooltip.
 -  The cycles parameter can be used to shift the signal generation between “Single-Shot” and “Continuous” (cycles = 0) mode.
--  Click on the "ENABLE" button to generate the signal. If the signal is in “Single-Shot” mode, the enable button should be clickable right after signal generation is completed. For a signal generation in “Continuous” mode, press the "DISABLE" button, which will appear once the board is ready to start generating the signal, to disable the waveform.
+-  Click on the "ENABLE" button to generate the signal. If the signal is in
+   “Single-Shot” mode, the enable button should be clickable right after signal
+   generation is completed. For a signal generation in “Continuous” mode, press
+   the "DISABLE" button, which will appear once the board is ready to start
+   generating the signal, to disable the waveform.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_singletone.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 26. Generate Single-Tone Without DPD*
 
-
 Generate a Single-tone with Digital Pre-Distortion (DPD)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To generate a single-tone waveform calibrated with the DPD algorithm, set the “Waveform Type” field to “LowDistortion” as shown in Figure 27.
+To generate a single-tone waveform calibrated with the DPD algorithm, set the
+“Waveform Type” field to “LowDistortion” as shown in Figure 27.
 
 -  Set the parameters of the waveform according to your requirements. For additional detail on each parameter hover over the input field to see the tooltip.
 -  Click on the ‘Run DPD’ button, the status bar should show the message ‘Calibration is running’ and the ‘Run DPD’ button will appear greyed out.
 -  Wait for the “ENABLE” button to become clickable after the message “Calibration successful” displays in the status bar. This process may take up to 2 minutes. If the “Run DPD” button becomes clickable again and the status message shows “Calibration failed”, try to run the calibration again by clicking on “Run DPD”.
 -  Click on the “ENABLE” button to enable the calibrated signal generation.
--  Note that any change in parameters would require running calibration again. Calibrated signals can be stored in a profile to eliminate having to run calibration in the future for the same set of parameters, see the Storing Profiles section for instructions.
+-  Note that any change in parameters would require running calibration again.
+   Calibrated signals can be stored in a profile to eliminate having to run
+   calibration in the future for the same set of parameters, see the Storing
+   Profiles section for instructions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_lowdistortion.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 27. Generate Single-Tone With DPD*
-
 
 Generate a Dual-tone Signal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -703,12 +807,11 @@ The following sequence shall produce a two-tone signal, as shown in Figure 28:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_dualtone.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 28. Generate Two-Tone Signal*
-
 
 Generate DC Level
 ~~~~~~~~~~~~~~~~~
@@ -722,17 +825,18 @@ The following sequence shall produce a DC signal, as shown in Figure 29:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_dc.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 29. Generate DC Signal*
 
-
 Generate a Triangle, Ramp, or Pulse Waveform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADMX100X GUI comes with 3 built-in AWG waveform options for signal generation - a Triangle, a Ramp, or a Pulse signal, as shown in Figure 30. Any of these can be generated by performing the following sequence:
+The ADMX100X GUI comes with 3 built-in AWG waveform options for signal
+generation - a Triangle, a Ramp, or a Pulse signal, as shown in Figure 30. Any
+of these can be generated by performing the following sequence:
 
 -  Select “Triangle”, “Ramp”, or “Pulse” from the “Waveform Type” drop-down menu.
 -  Set the appropriate parameters for the signal.
@@ -741,17 +845,17 @@ The ADMX100X GUI comes with 3 built-in AWG waveform options for signal generatio
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/generate_awg.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 30. Generate a Triangle, Ramp or Pulse Waveform*
 
-
 Generate Arbitrary Waveform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following sequence shall produce an arbitrary waveform, as shown in Figure 31:
+The following sequence shall produce an arbitrary waveform, as shown in Figure
+31:
 
 -  Select the “AbitraryWaveform” from the Waveform Type dropdown menu.
 -  Select an input file using the browse option or add the path to an input file in the text box labeled “Load waveform from file". The format of the input file expected is a list of voltage values with each value on a new line.
@@ -760,37 +864,38 @@ The following sequence shall produce an arbitrary waveform, as shown in Figure 3
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_awg.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 31. Generate an Arbitrary Waveform*
 
-
 Storing Profiles
 ~~~~~~~~~~~~~~~~
 
-Perform the following sequence to save a waveform to a profile, as shown in Figure 32:
+Perform the following sequence to save a waveform to a profile, as shown in
+Figure 32:
 
 -  Select a waveform profile to save by using the “Waveform Type” drop-down menu and selecting any waveform type, except “Profile”.
 -  Set the appropriate parameters of the selected waveform type.
 -  Click on any empty or non-empty profile in the profile table to select it. If selecting a non-empty profile, the previously saved profile table will be overwritten by the new profile.
 -  After selecting the profile ID and the waveform parameters, click on the “Save Waveform as profile” button. This might take up to 2 minutes for a "LowDistortion" waveform.
--  If the profile is saved successfully, you will be able to see it in the profile table at the selected location.
+-  If the profile is saved successfully, you will be able to see it in the
+   profile table at the selected location.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_storingprofile.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 32. Storing Profiles*
 
-
 Load and Enable Profiles Without Sequencing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following sequence shall load the previously saved profile, as shown in Figure 33:
+The following sequence shall load the previously saved profile, as shown in
+Figure 33:
 
 -  Disable any running signal and use the “Waveform Type” dropdown menu to select “Profile” as the waveform type.
 -  Ensure that the “Enable Sequence” button is unchecked.
@@ -801,17 +906,17 @@ The following sequence shall load the previously saved profile, as shown in Figu
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_loadingprofile.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 33. Load and Enable Profiles Without Sequencing*
 
-
 Load and Enable Profiles With Sequencing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following sequence shall load the previously saved profile with sequencing, as shown in Figure 34:
+The following sequence shall load the previously saved profile with sequencing,
+as shown in Figure 34:
 
 -  Disable any running signal and use the “Waveform Type” dropdown menu to select “Profile” as the waveform type.
 -  Ensure that the “Enable Sequence” button is checked.
@@ -822,17 +927,18 @@ The following sequence shall load the previously saved profile with sequencing, 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/load_and_enable_profile_with_sequencing.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    *Figure 34. Load and Enable Profiles With Sequencing*
 
-
 Acquisition
 ~~~~~~~~~~~
 
-The “Analog Input” panel is used to set the parameters for acquisition. Refer to Figure 34 and complete the following sequence to acquire a single set of samples:
+The “Analog Input” panel is used to set the parameters for acquisition. Refer to
+Figure 34 and complete the following sequence to acquire a single set of
+samples:
 
 -  Set the parameters in the Analog input window, for the description of each parameter, hover over the text field or the drop-down menu to see the tooltip.
 -  The “Triggered Acquisition” checkbox can be checked to enable triggered acquisition.
@@ -848,14 +954,16 @@ The “Analog Input” panel is used to set the parameters for acquisition. Refe
 
    *Figure 34. Acquisition*
 
-
 Custom Bin Selection
 ^^^^^^^^^^^^^^^^^^^^
 
-The number of bins used for the fundamental, harmonics, and other components in AC performance calculations, such as SNR, THD, and THD+N, can be adjusted. This flexibility of bin selection can help reduce the effect of spectral leakage, improving AC performance accuracy, particularly when analyzing noise and harmonic distortion.
+The number of bins used for the fundamental, harmonics, and other components in
+AC performance calculations, such as SNR, THD, and THD+N, can be adjusted. This
+flexibility of bin selection can help reduce the effect of spectral leakage,
+improving AC performance accuracy, particularly when analyzing noise and
+harmonic distortion.
 
 To do this, go to the GUI folder (C:\\Analog Devices\\Admx100xEvaluationSoftware-Rel2.3.0\\GUI), open **SpectrumSettings.json**, and adjust the number of bins as necessary.
-
 
 |image9|
 
@@ -863,8 +971,8 @@ To do this, go to the GUI folder (C:\\Analog Devices\\Admx100xEvaluationSoftware
 
    *Figure 35. Acquisition*
 
-
-After saving the spectrum settings, run the Acquisition channel to apply the changes, and it should reflect to the updated AC performance.
+After saving the spectrum settings, run the Acquisition channel to apply the
+changes, and it should reflect to the updated AC performance.
 
 Applications Information
 ------------------------
@@ -872,7 +980,11 @@ Applications Information
 ATE Control Interface
 ~~~~~~~~~~~~~~~~~~~~~
 
-The Automatic Test Equipment (ATE) control interface can be used to provide a simple protocol for initiating an instruction to perform a DPD calibration or signal generation by driving and monitoring pins on the module. The test parameters, like the amplitude and frequency of the signal, must still be loaded through SPI.
+The Automatic Test Equipment (ATE) control interface can be used to provide a
+simple protocol for initiating an instruction to perform a DPD calibration or
+signal generation by driving and monitoring pins on the module. The test
+parameters, like the amplitude and frequency of the signal, must still be loaded
+through SPI.
 
 **Table 3. ATE Pin Assignment and Function**
 
@@ -894,7 +1006,11 @@ SYNC_OUT  Output
 Test Sequence
 ~~~~~~~~~~~~~
 
-There are two possible test sequences: Signal Generation & DPD Calibration. It is not necessary to run a DPD calibration phase before every signal generation sequence. The following examples use all the module's ATE control pins. However, the user can choose to use none, only the TRIG line, or more depending on the level of control required.
+There are two possible test sequences: Signal Generation & DPD Calibration. It
+is not necessary to run a DPD calibration phase before every signal generation
+sequence. The following examples use all the module's ATE control pins. However,
+the user can choose to use none, only the TRIG line, or more depending on the
+level of control required.
 
 Signal Generation
 ~~~~~~~~~~~~~~~~~
@@ -910,12 +1026,19 @@ The procedure below should be followed for stimulus generation:
 -  Low to High transition of the VALID signal indicates the start of the stimulus.
 -  High to Low transition of the VALID signal indicates the end of the stimulus.
 
-The same test can be run multiple times without reloading the configuration by repeating steps 5 through 8. Once new test configuration data has been reloaded via SPI, the new configuration will need to be revalidated before signal generation can resume without error.
+The same test can be run multiple times without reloading the configuration by
+repeating steps 5 through 8. Once new test configuration data has been reloaded
+via SPI, the new configuration will need to be revalidated before signal
+generation can resume without error.
 
 Calibration
 ~~~~~~~~~~~
 
-To achieve the highest signal purity, a DPD calibration phase must be run at least once before generating an output signal. The DPD calibration data is normally stored in volatile memory and therefore must be re-run after every power supply sequence or once there is a change in the amplitude, frequency, and common-mode voltage settings.
+To achieve the highest signal purity, a DPD calibration phase must be run at
+least once before generating an output signal. The DPD calibration data is
+normally stored in volatile memory and therefore must be re-run after every
+power supply sequence or once there is a change in the amplitude, frequency, and
+common-mode voltage settings.
 
 The procedure below should be followed for calibration:
 
@@ -930,11 +1053,17 @@ The procedure below should be followed for calibration:
 Coherent Sampling
 ~~~~~~~~~~~~~~~~~
 
-Coherent sampling describes the sampling of a periodic signal, where an integer number of its cycles fit into a predefined sampling window. This technique is very useful to get the best achievable results when evaluating the dynamic performance of analog-to-digital converters (ADCs). To facilitate coherent sampling, the module can synchronize its signal generation to an external clock by doing the following:
+Coherent sampling describes the sampling of a periodic signal, where an integer
+number of its cycles fit into a predefined sampling window. This technique is
+very useful to get the best achievable results when evaluating the dynamic
+performance of analog-to-digital converters (ADCs). To facilitate coherent
+sampling, the module can synchronize its signal generation to an external clock
+by doing the following:
 
 -  Connect the SYNC_Mode pin to GND by inserting a jumper in the 2-3 position of P12.
 -  Connect the SYNC_IN pin to the SMA input by inserting a jumper in the 2-3 position of P13.
--  Apply a 100 MHz external clock to J7 to synchronize the generated signal to the external clock.
+-  Apply a 100 MHz external clock to J7 to synchronize the generated signal to
+   the external clock.
 
 Notes:
 
@@ -942,7 +1071,9 @@ Notes:
 -  Take note of the logic level limits below for the SYNC_IN and SYNC_OUT pins.
 -  Trigger needs to be set high to start generating the signal.
 -  During Coherent Sampling, SYNC_IN must have a 100 MHz clock frequency with a 50% duty cycle.
--  Although less common, coherent sampling may also be performed by synchronizing the analyzer from the clock generated from the module (SYNC_OUT).
+-  Although less common, coherent sampling may also be performed by
+   synchronizing the analyzer from the clock generated from the module
+   (SYNC_OUT).
 
 **Table 4. SYNC_MODE Configuration Options**
 
@@ -1022,31 +1153,36 @@ DVDD Current 0.4  A
 ============ ==== ====
 
 .. [1]
-   By default, the EVAL-ADMX100X-FMCZ ships with this header P4 in position 2-1. If it is set to 2-3, make sure to drive the VCM_EXT to the desired voltage on P7 Pin 9.
+   By default, the EVAL-ADMX100X-FMCZ ships with this header P4 in position 2-1.
+   If it is set to 2-3, make sure to drive the VCM_EXT to the desired voltage on
+   P7 Pin 9.
 
 .. [2]
-   When using the ADMX1001, S1 can be switched to the Loopback on position to route the OUTP and OUTN source outputs to the INP and INN acquisition channel inputs to be visible in the PC GUI
+   When using the ADMX1001, S1 can be switched to the Loopback on position to
+   route the OUTP and OUTN source outputs to the INP and INN acquisition channel
+   inputs to be visible in the PC GUI
 
 .. [3]
    This feature will only work when using the SDP-H1 as the controller board.
 
 .. [4]
-   This feature will only work when the signals saved to a profile have a specific number of cycles. A continuous signal is invalid.
+   This feature will only work when the signals saved to a profile have a
+   specific number of cycles. A continuous signal is invalid.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx100x-fmczkit-angle-web.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx1002_4.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_module.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_simplified_block_diagram.png
-   :width: 800px
+   :width: 800
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/dpd_before_and_after.png
-   :width: 500px
+   :width: 500
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/before_dpd.png
-   :width: 500px
+   :width: 500
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/after_dpd.png
-   :width: 500px
+   :width: 500
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_gui_status_panel.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/spectrumsettings.png
-   :width: 400px
+   :width: 400

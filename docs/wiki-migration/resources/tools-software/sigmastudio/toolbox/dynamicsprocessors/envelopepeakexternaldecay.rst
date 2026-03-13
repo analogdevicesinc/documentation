@@ -50,16 +50,25 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-This cell calculates the peak envelope of the input signal and then applies a hold time and decay (release). The hold time is fixed and can be input manually in the text input box. The decay time is variable and depends on the decay input pin.
+This cell calculates the peak envelope of the input signal and then applies a
+hold time and decay (release). The hold time is fixed and can be input manually
+in the text input box. The decay time is variable and depends on the decay input
+pin.
 
-The variable decay input is approximately 1.82 times that of a normal peak envelope cell's decay speed. For example, in order to get a decay rate of 100 dB/s, 182 (in integer format) should be input to the variable decay pin.
+The variable decay input is approximately 1.82 times that of a normal peak
+envelope cell's decay speed. For example, in order to get a decay rate of 100
+dB/s, 182 (in integer format) should be input to the variable decay pin.
 
-With a fixed decay rate, the cell behaves just like a normal peak envelope cell. In the example below, the blue signal is the input, and the red signal is the peak envelope with a constant decay rate.
+With a fixed decay rate, the cell behaves just like a normal peak envelope cell.
+In the example below, the blue signal is the input, and the red signal is the
+peak envelope with a constant decay rate.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakextpic2.png
    :alt: envelopepeakextpic2.png
 
-If the decay rate is variable, then the envelope will decay at a variable rate. The example below shows the input (the blue burst signal at the right), the peak envelope, and the varying decay rate (fully-rectified sine wave).
+If the decay rate is variable, then the envelope will decay at a variable rate.
+The example below shows the input (the blue burst signal at the right), the peak
+envelope, and the varying decay rate (fully-rectified sine wave).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakextpic3.png
    :alt: envelopepeakextpic3.png
@@ -67,7 +76,9 @@ If the decay rate is variable, then the envelope will decay at a variable rate. 
 Example
 -------
 
-The example below shows a digital input going into the peak envelope cell with a fixed decay of 1000, which equates to around 550 dB/s. The resulting envelope is output on a digital audio serial port.
+The example below shows a digital input going into the peak envelope cell with a
+fixed decay of 1000, which equates to around 550 dB/s. The resulting envelope is
+output on a digital audio serial port.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakextpic4.png
    :alt: envelopepeakextpic4.png

@@ -5,17 +5,21 @@ ADALM-SR1 Rev A hardware
 
    DEPRECATED: This page is for rev A of the ADALM-SR1, for those who received boards from the first pilot run. Documentation for the latest revision is at :doc:`ADALM-SR1 hardware </wiki-migration/university/tools/lab_hw/adalm-sr1>`\
 
-
 Description
 -----------
 
-The ADALM-SR1 (Analog Devices Active Learning Module, Switching Regulator #1) board is a companion module for several switching regulator exercises covering buck and boost regulators:
+The ADALM-SR1 (Analog Devices Active Learning Module, Switching Regulator #1)
+board is a companion module for several switching regulator exercises covering
+buck and boost regulators:
 
 :doc:`Activity: Boost and Buck converter elements and open-loop operation </wiki-migration/university/labs/open_loop_boost_and_buck_adalm2000>` :doc:`Activity: Buck Converters: closed loop operation </wiki-migration/university/labs/closed_loop_buck_adalm2000>` :doc:`Activity: Boost Converters: closed loop operation </wiki-migration/university/labs/closed_loop_boost_adalm2000>`
 
-The circuits required for these exercises exceed the complexity that can be constructed on a breadboard, so the ADALM-SR1 is required to run them, although the simulations can be run beforehand to gain insight.
+The circuits required for these exercises exceed the complexity that can be
+constructed on a breadboard, so the ADALM-SR1 is required to run them, although
+the simulations can be run beforehand to gain insight.
 
-The Figure 1 shows an overview of the board, along with connections to an ADALM2000 (M2K) and meters.
+The Figure 1 shows an overview of the board, along with connections to an
+ADALM2000 (M2K) and meters.
 
 |image1| |image2|
 
@@ -23,11 +27,14 @@ The Figure 1 shows an overview of the board, along with connections to an ADALM2
 
    Figure 1. ADSRALM overview
 
-
 ADALM-SR1 Jumpers and Connections
 ---------------------------------
 
-The ADALM-SR1 uses 0.635mm (0.025-mil) headers for configuration jumpers, signal inputs, and signal outputs. Signal inputs and outputs are 2-conductor headers with 5.08mm (200-mil) pitch so that they cannot be confused with configuration jumpers. The lower conductor is always a ground connection (that is not always used) and an arrow indicates whether the upper conductor is an input or output.
+The ADALM-SR1 uses 0.635mm (0.025-mil) headers for configuration jumpers, signal
+inputs, and signal outputs. Signal inputs and outputs are 2-conductor headers
+with 5.08mm (200-mil) pitch so that they cannot be confused with configuration
+jumpers. The lower conductor is always a ground connection (that is not always
+used) and an arrow indicates whether the upper conductor is an input or output.
 
 Inductance Selection
 ~~~~~~~~~~~~~~~~~~~~
@@ -45,7 +52,6 @@ Inductance Selection
 +--------------+-----------------------------------+------------------+-------------------+-------------------+--------------------+--------------------+--------------------+
 
 \\\\\
-
 
 |image3|
 
@@ -271,17 +277,26 @@ Refer to individual lab exercises for detailed setup information.
 Auxiliary Circuit Details
 -------------------------
 
-The setup and operation of circuitry associated with the lab exercises is described in detail in the exercises themselves. The ADALM-SR1 includes various auxiliary housekeeping and protection circuits described here.
+The setup and operation of circuitry associated with the lab exercises is
+described in detail in the exercises themselves. The ADALM-SR1 includes various
+auxiliary housekeeping and protection circuits described here.
 
 Housekeeping supplies and reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADALM-SR1 has two power inputs. The experiment power input is supplied by the user, and the voltage will vary depending on the experiment being run. An additional micro USB connector is the input for a 5V "housekeeping" supply that powers all of the control circuitry, allowing the experiment power to vary over a wide range. An LT3472 boosts / inverts the 5V supply to +15 / -2V, respectively. This provides a high voltage and slightly negative voltage for the LT1995 current sense amplifiers, and a negative supply for the error amplifier.
+The ADALM-SR1 has two power inputs. The experiment power input is supplied by
+the user, and the voltage will vary depending on the experiment being run. An
+additional micro USB connector is the input for a 5V "housekeeping" supply that
+powers all of the control circuitry, allowing the experiment power to vary over
+a wide range. An LT3472 boosts / inverts the 5V supply to +15 / -2V,
+respectively. This provides a high voltage and slightly negative voltage for the
+LT1995 current sense amplifiers, and a negative supply for the error amplifier.
 
 .. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_housekeeping_supplies.jpg
    :align: center
 
-An LT1970-1.25 provides an accurate reference for the error amplifier and duty cycle, current threshold adjustment potentiometers.
+An LT1970-1.25 provides an accurate reference for the error amplifier and duty
+cycle, current threshold adjustment potentiometers.
 
 .. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_reference.jpg
    :align: center
@@ -289,7 +304,10 @@ An LT1970-1.25 provides an accurate reference for the error amplifier and duty c
 Input Overvoltage, Undervoltage, Reverse voltage, and Overcurrent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An LTC4368 and associated circuitry protects the experiment power input by only turning on when the supply is between 3V and 15V. The circuit is protected from voltages between -40V and +60V. The LTC4368 also functions as a fuse, shutting off the supply if the current exceeds 2A.
+An LTC4368 and associated circuitry protects the experiment power input by only
+turning on when the supply is between 3V and 15V. The circuit is protected from
+voltages between -40V and +60V. The LTC4368 also functions as a fuse, shutting
+off the supply if the current exceeds 2A.
 
 .. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_power_input_protection.jpg
    :align: center
@@ -297,7 +315,11 @@ An LTC4368 and associated circuitry protects the experiment power input by only 
 Output Overvoltage
 ~~~~~~~~~~~~~~~~~~
 
-In boost mode, the ADSRALM can produce high voltages under certain conditions: if the duty cycle is high and the load is light, or if feedback is disconnected. An LTC2912 overvoltage / undervoltage supervisor will disable the switching circuitry if the output exceeds 22V. An SMAJ24A, 24-volt TVS diode provides additional protection.
+In boost mode, the ADSRALM can produce high voltages under certain conditions:
+if the duty cycle is high and the load is light, or if feedback is disconnected.
+An LTC2912 overvoltage / undervoltage supervisor will disable the switching
+circuitry if the output exceeds 22V. An SMAJ24A, 24-volt TVS diode provides
+additional protection.
 
 .. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_output_overvoltage.jpg
    :align: center
@@ -305,11 +327,20 @@ In boost mode, the ADSRALM can produce high voltages under certain conditions: i
 Inductor, Load Resistor Overtemperature
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The inductor and onboard load resistors can get warm during certain experiments or if the board is misconfigured. Three temperature sensors measure the inductor temperature and the temperature of the high-dissipation areas of the load resistor bank. If any temperature exceeds 60ºC, switching is disabled for a 1.9 second cool-down period.
+The inductor and onboard load resistors can get warm during certain experiments
+or if the board is misconfigured. Three temperature sensors measure the inductor
+temperature and the temperature of the high-dissipation areas of the load
+resistor bank. If any temperature exceeds 60ºC, switching is disabled for a 1.9
+second cool-down period.
 
-The low-resistance loads consist of parallel, single 100Ω, 1/2W resistors - An orange LED near the associated jumpers illuminates when the output voltage exceeds 7V as a warning that these must be disconnected.
+The low-resistance loads consist of parallel, single 100Ω, 1/2W resistors - An
+orange LED near the associated jumpers illuminates when the output voltage
+exceeds 7V as a warning that these must be disconnected.
 
-The high resistance loads consist of multiples of two 100-ohm, 1/2W resistors in series, which will handle voltages up to 14V. A temperature sensor is still included in case the output voltage exceeds 14V or if the experiment is left running for an extended period of time.
+The high resistance loads consist of multiples of two 100-ohm, 1/2W resistors in
+series, which will handle voltages up to 14V. A temperature sensor is still
+included in case the output voltage exceeds 14V or if the experiment is left
+running for an extended period of time.
 
 .. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_overtemperature.jpg
    :align: center
@@ -326,11 +357,10 @@ Schematic, PCB Layout, Bill of Materials
    -  `Schematics <https://wiki.analog.com/_media/university/tools/lab_hw/adalm_sr1/02_059790a_top.pdf>`_
    
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm_sr1/adalm_sr1_overview.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1.jpg
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_p3.jpg
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm-sr1_tp1.jpg

@@ -8,7 +8,13 @@ Stop Watch
 Description
 -----------
 
-The StopWatch block is used to know how long something takes (i.e. how many samples have passed between start and stop event). A control signal greater than zero to Start pin triggers the Stopwatch counter, While the control signal to Stop pin is zero. A control signal greater than zero to Stop pin stops the counter increment regardless of the control signal to the Start pin. Reset button(pin for External Reset, the control signal is high) resets the counter value to zero.
+The StopWatch block is used to know how long something takes (i.e. how many
+samples have passed between start and stop event). A control signal greater than
+zero to Start pin triggers the Stopwatch counter, While the control signal to
+Stop pin is zero. A control signal greater than zero to Stop pin stops the
+counter increment regardless of the control signal to the Start pin. Reset
+button(pin for External Reset, the control signal is high) resets the counter
+value to zero.
 
 Variants
 --------
@@ -51,7 +57,6 @@ Name   Type    Description
 ====== ======= =========================
 Output Control Stop Watch counter output
 ====== ======= =========================
-
 
 | ===== Configurable Parameters =====
 

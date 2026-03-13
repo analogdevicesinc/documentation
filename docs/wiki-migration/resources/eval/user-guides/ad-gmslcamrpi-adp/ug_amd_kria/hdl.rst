@@ -5,7 +5,6 @@ GMSL HDL Reference Design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad_gmsl2eth_sl/index.html\
 
-
 A brief introduction of the acronyms that are going to be used:
 
 -  MIPI- Mobile Industry Processor Interface
@@ -38,7 +37,8 @@ Block Design
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/ug_amd_kria/gmsl_hdl_block_design1.png
    :align: center
 
-The architecture of this reference design is composed of multiple Xilinx's multimedia IPs that have the following roles:
+The architecture of this reference design is composed of multiple Xilinx's
+multimedia IPs that have the following roles:
 
 -  AMD-Xilinx's MIPI CSI-2 Rx Subsystem IP (receive video data from the GMSL deserializer's PHY using the 2-lane 15-pin connector);
 -  AMD-Xilinx's AXIS Switch IP (handle MIPI's virtual-channel option by redirecting each virtual channel to corresponding Video Framebuffer Write instance);
@@ -54,7 +54,10 @@ In order to build the HDL design the user has to go through the following steps:
 -  Choose the required interface (see caption **Switching between interface types**)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
 
-As regards the design's IPs, this GMSL-based reference design contains multiple AMD-Xilinx-related multimedia IPs such as MIPI CSI-2 Rx Subsystem, Axi-Stream Switch, Axi-Stream Subset Converter and Video Framebuffer Write, all these ones being available free of charge using standard AMD-Xilinx's Vivado version.
+As regards the design's IPs, this GMSL-based reference design contains multiple
+AMD-Xilinx-related multimedia IPs such as MIPI CSI-2 Rx Subsystem, Axi-Stream
+Switch, Axi-Stream Subset Converter and Video Framebuffer Write, all these ones
+being available free of charge using standard AMD-Xilinx's Vivado version.
 
 AXI4-LITE control interfaces
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,7 +123,6 @@ User Guide
 
 -
 
-
 |Project's User Guide.|
 
 Support
@@ -134,6 +136,5 @@ Support
    -  :ez:`FPGA Reference Design <community/fpga>`
    -  :ez:`Linux Drivers <community/linux-software-drivers>`.
    
-
 
 .. |Project's User Guide.| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/ug_amd_kria

@@ -2,11 +2,11 @@
 
    These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
-
 Linux for ADSP-SC5xx: Useful Links
 ==================================
 
-The following is a collection of links to resources that we have found useful while developing Linux.
+The following is a collection of links to resources that we have found useful
+while developing Linux.
 
 General
 -------

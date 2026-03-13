@@ -31,7 +31,6 @@ The ``iio_reg`` application can also connect to a libiio remote device via IP. P
       > export IIOD_REMOTE=IP address of the remote platform
    
 
-
 Finding
 -------
 

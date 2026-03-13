@@ -1,7 +1,8 @@
 How to Boot Linux From SD Card
 ==============================
 
-To boot Linux from SD Card, users should put the kernel image and dtb file along with a file system located on the SD Card.
+To boot Linux from SD Card, users should put the kernel image and dtb file along
+with a file system located on the SD Card.
 
 Generate the Filesystem for SD Card Boot
 ----------------------------------------
@@ -17,7 +18,9 @@ For users want to use ``run sdcardboot`` boot method, ADI provides two kinds of 
 -  adsp-sc5xx-full
 -  adsp-sc5xx-minimal
 
-The minimal image is a subset of the full image which has less packages than full image. There is no difference for the Linux kernel in the minimal and full image.
+The minimal image is a subset of the full image which has less packages than
+full image. There is no difference for the Linux kernel in the minimal and full
+image.
 
 Run "**bitbake <TARGET>**" to generate the images you want.
 
@@ -33,12 +36,13 @@ or
 
 .. note::
 
-   If you want to compile and deploy the images at your second time, run the command "bitbake <TARGET> -C compile".
+   If you want to compile and deploy the images at your second time, run the
+   command "bitbake <TARGET> -C compile".
 
    
-   If you want to add packages to filesystem, you could add package to IMAGE_INSTALL_append = "<PACKAGE_NAME>" in build/conf/local.conf file.
+   If you want to add packages to filesystem, you could add package to
+   IMAGE_INSTALL_append = "<PACKAGE_NAME>" in build/conf/local.conf file.
    
-
 
 SD Card Set Up
 --------------
@@ -46,7 +50,13 @@ SD Card Set Up
 Formatting the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In order to use an SD Card with Linux we need to prepare it by formatting it in the correct format. This section of instructions requires you to correctly identify the SD Card and format the card. If you select the wrong drive you may cause irreversible damage to you Host PC. To format the SD Card, follow the commands below. The example code in this section assumes that the SD Card device is reported to be /dev/sdb. Ensure that you change these commands to use your device.
+In order to use an SD Card with Linux we need to prepare it by formatting it in
+the correct format. This section of instructions requires you to correctly
+identify the SD Card and format the card. If you select the wrong drive you may
+cause irreversible damage to you Host PC. To format the SD Card, follow the
+commands below. The example code in this section assumes that the SD Card device
+is reported to be /dev/sdb. Ensure that you change these commands to use your
+device.
 
 ::
 
@@ -70,7 +80,9 @@ In order to use an SD Card with Linux we need to prepare it by formatting it in 
 Writing the file system to the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Next, we need to copy the Linux file system and kernel image to the SD Card. We install this on to the SD Card by mounting the file system on to the local Host PC and copying the contents on to the SD Card.
+Next, we need to copy the Linux file system and kernel image to the SD Card. We
+install this on to the SD Card by mounting the file system on to the local Host
+PC and copying the contents on to the SD Card.
 
 ::
 
@@ -94,7 +106,8 @@ For users want to use ``run sdcardboot`` boot method, users copy the following f
    $ sudo cp build/tmp/deploy/images/<MACHINE>/zImage /mnt/boot/
    $ sudo umount /mnt
 
-The file system and kernel image are now installed on to the SD Card. The SD Card can now be safely removed from the Host PC.
+The file system and kernel image are now installed on to the SD Card. The SD
+Card can now be safely removed from the Host PC.
 
 Booting Linux From SD Card
 --------------------------
@@ -131,7 +144,6 @@ The linux kernel would then boot up and the file system stored in SD card.
    Starting syslogd/klogd: done
      * Starting Avahi mDNS/DNS-SD Daemon: avahi-daemon
       ...done.
-
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@

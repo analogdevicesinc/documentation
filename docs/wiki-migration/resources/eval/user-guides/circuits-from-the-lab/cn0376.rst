@@ -8,8 +8,9 @@ Overview
 
 The :adi:`AD7124-4` 24-bit, Σ-Δ ADC with programmable gain array (PGA) and voltage reference provides the complete set of features to implement a flexible input capable of connection to either thermocouple or RTD sensors. Features include on-chip reference, PGA, excitation currents, bias voltage generator, and flexible filtering with enhanced 50 Hz and 60 Hz rejection options. The :adi:`AD7124-4` is in a small 5 mm × 5 mm LFCSP package, making it ideal in channel-to-channel isolated designs where space is a premium. It also includes multiple diagnostic functions that are available to the user. The :adi:`ADuM5010` isolated dc-to-dc converter provides 3.3 V isolated power via integrated isoPower® technology. The :adi:`ADuM1441` isolates the serial peripheral interface (SPI) for the :adi:`AD7124-4`. The ADuM1441 micropower isolator consumes only 4.8 µA per channel when idle, resulting in an energy efficient solution. The :adi:`ADP2441` 36 V, step-down, dc-to-dc regulator accepts an industrial standard 24 V supply, with wide tolerance on the input voltage and steps it down to 5V to be used by the system.
 
-THe EVAL-CN0376-SDPZ evaluation connects to ADI's System Demonstration Platform(SDP) and also features PMOD-compatible headers for interfacing with other development platforms.
-
+THe EVAL-CN0376-SDPZ evaluation connects to ADI's System Demonstration
+Platform(SDP) and also features PMOD-compatible headers for interfacing with
+other development platforms.
 
 |image1|
 
@@ -41,7 +42,7 @@ General Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/board_guide.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  The :adi:`EVAL-CN0376-SDPZ` **(CN-0376 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
@@ -79,14 +80,13 @@ Power Options
 
 **Jumper Positon EXT**
 
-
 |image3|
 
 -  System is powered using termnial block P3 (input range:+5.5V to +36V DC)
--  When no supply is present on P3, the system draws power from USB when using the SDP
+-  When no supply is present on P3, the system draws power from USB when using
+   the SDP
 
 **Jumper Positon PMOD**
-
 
 |image4|
 
@@ -103,7 +103,6 @@ Installing the Evaluation Software
 
    \ NOTE: It is recommended that you install the `CN-0376 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0376>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0376\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
    |image5|
 
 -  Click **Next** to view the installation review page
@@ -118,8 +117,9 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image8|
 
@@ -130,7 +130,6 @@ Installing the Evaluation Software
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image9|
 
@@ -150,7 +149,7 @@ Main Tab
 ^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_main_1.png
-   :width: 600px
+   :width: 600
 
 -  **Run/Stop**
 
@@ -166,7 +165,8 @@ Main Tab
 
 -  **Reset**
 
-   -  Reset the evaluation board and software to the defualt startup configuration
+   -  Reset the evaluation board and software to the defualt startup
+      configuration
 
 -  **Channel 1 Temperature Display**
 
@@ -188,7 +188,8 @@ Main Tab
 
 -  **Cold Junction Compensation Information**
 
-   -  Displays the Temperature and Resistance of the CJC Thermistor of both Channel 1 and 2 when in Thermocouple Mode
+   -  Displays the Temperature and Resistance of the CJC Thermistor of both
+      Channel 1 and 2 when in Thermocouple Mode
 
 -  **Display Units**
 
@@ -197,11 +198,13 @@ Main Tab
 
 -  **Chart**
 
-   -  Data plot for the data acquisition (may be displayed as voltage/current value or ADC code)
+   -  Data plot for the data acquisition (may be displayed as voltage/current
+      value or ADC code)
 
 -  **Status Bar**
 
-   -  Displays a message to the user detailing the current state of the software There are three status LED colors:
+   -  Displays a message to the user detailing the current state of the software
+      There are three status LED colors:
       |image11|\ Inactive
       |image12|\ Busy
       |image13|\ Error
@@ -210,14 +213,11 @@ Histogram Tab
 ^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_histogram_1.png
-   :width: 600px
-
-
+   :width: 600
 
 .. important::
 
    User needs to sample data first using Run to get histogram data on this page.
-
 
 | \**Select Channel**
 
@@ -244,7 +244,8 @@ Allows for ADC configuration of either channel |image14| **Input Type**
 
 -  PT100 - activates the Excitation current source and configures the ADC to read from PT100 RTD
 -  PT1000 - activates the Excitation current source and configures the ADC to read from PT1000 RTD
--  Thermocouple - activates the TC bias,CJC, and configures the ADC to read from thermocouple
+-  Thermocouple - activates the TC bias,CJC, and configures the ADC to read from
+   thermocouple
 
 **RTD Connection**
 
@@ -262,16 +263,16 @@ Allows for ADC configuration of either channel |image14| **Input Type**
 Advanced Configuration Tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Allows control of Excitation Current, Burnout Current, PGA Gain and for enabling ADC Error Checks
-
+Allows control of Excitation Current, Burnout Current, PGA Gain and for enabling
+ADC Error Checks
 
 |image15|
 
 Error Flags Tab
 ^^^^^^^^^^^^^^^
 
-ADC Error Indicators. Please consult [ADI>AD7124-4] datasheet for information regarding the ADC Errors
-
+ADC Error Indicators. Please consult [ADI>AD7124-4] datasheet for information
+regarding the ADC Errors
 
 |image16|
 
@@ -291,12 +292,9 @@ Saving Data to a Spreadsheet File
 -  Name the file.
 -  Click the **OK Button**.
 
-
-
 .. note::
 
    | The software saves the spreadsheet file as ASCII text with columns separated by tabs
-
 
 --------------
 
@@ -318,17 +316,16 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0376-SDPZ?&v=RevC>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/cn0376_board.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/wiring_guide.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/pwr_sel2.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/pwr_sel1.png
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/install1.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/install2.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/install4.png
@@ -339,8 +336,8 @@ Registration
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0357/cn0357-software-busy.png
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0357/cn0357-software-error.png
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_config.png
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_advconfig.png
-   :width: 600px
+   :width: 600
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_advconfig.png
-   :width: 600px
+   :width: 600

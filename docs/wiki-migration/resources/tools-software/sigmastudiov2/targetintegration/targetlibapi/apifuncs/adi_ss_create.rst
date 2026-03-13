@@ -11,7 +11,8 @@ Prototype
 
 Description
 
-The function adi_ss_create creates an instance of the SS+ module, with the memory blocks passed to the function, using the memory map structure.
+The function adi_ss_create creates an instance of the SS+ module, with the
+memory blocks passed to the function, using the memory map structure.
 
 Parameters
 

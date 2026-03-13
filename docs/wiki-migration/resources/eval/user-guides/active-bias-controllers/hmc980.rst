@@ -1,7 +1,9 @@
 HMC980 Configuration Calculator
 ===============================
 
-This calculator can be used to calculate all of the external component values that are required to configure current settings, voltage ranges and alarm levels for HMC980
+This calculator can be used to calculate all of the external component values
+that are required to configure current settings, voltage ranges and alarm levels
+for HMC980
 
 `HMC980 Configuration Calculator <https://wiki.analog.com/_media/resources/eval/user-guides/active-bias-controllers/hmc980.zip>`_
 
@@ -16,14 +18,11 @@ Verified Amplifier Designs using the HMC980
 
    Please note that while these tables are extensive, they are not exhaustive. If a given RF amplifier is not included in this list, that does not mean that it cannot be actively biased using the :adi:`HMC980 <hmc980lp4e>`. Follow the :adi:`HMC980 Datasheet <media/en/technical-documentation/data-sheets/hmc980.pdf>` for design guidelines.
 
-
 |hmc980_schematic_for_calculator.png| **
 
 .. container:: centeralign
 
    Figure 1: HMC980 Typical Circuit
-
-
 
 Gain Blocks & Drivers
 ---------------------
@@ -140,5 +139,5 @@ HMC871      8.21 8      2.00  75     GND GND ---  ---  --- --   --
 =========== ==== ====== ===== ====== === === ==== ==== === ==== ====
 
 .. |image1| image:: https://wiki.analog.com/_media/{/resources/eval/user-guides/active-bias-controllers/hmc980_configuration_calculator.png
-   :width: 400px
+   :width: 400
 .. |hmc980_schematic_for_calculator.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/active-bias-controllers/hmc980_schematic_for_calculator.png

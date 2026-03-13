@@ -1,7 +1,8 @@
 What is libm2k?
 ===============
 
-A C++ library for interfacing with the ADALM2000, splitted into more correlated components, interconnected by a context.
+A C++ library for interfacing with the ADALM2000, splitted into more correlated
+components, interconnected by a context.
 
 These m2k components represent the functionalities of ADALM-2000:
 
@@ -20,8 +21,8 @@ ADALM2000 drivers
 
 .. important::
 
-   Make sure you install the ADALM2000 drivers for your operating system before using the board.
-
+   Make sure you install the ADALM2000 drivers for your operating system before
+   using the board.
 
 Linux
 ~~~~~
@@ -49,7 +50,6 @@ Download
 
    Go to the `latest release page <https://github.com/analogdevicesinc/libm2k/releases/latest>`_ and download the package that fits your system.
 
-
 Installation
 ------------
 
@@ -59,13 +59,14 @@ Installation
 
 .. important::
 
-   For libm2k versions starting with v0.6.0: The libm2k Windows installer does not include Python bindings. Check the Python bindings section for more details.
-
+   For libm2k versions starting with v0.6.0: The libm2k Windows installer does
+   not include Python bindings. Check the Python bindings section for more
+   details.
 
 .. warning::
 
-   For libm2k versions older than v0.6.0: Make sure you only select the libm2k Python bindings that correspond to your installed Python version.
-
+   For libm2k versions older than v0.6.0: Make sure you only select the libm2k
+   Python bindings that correspond to your installed Python version.
 
 **libm2k for Linux**
 
@@ -160,7 +161,8 @@ Other features
 Build m2k tools - m2kcli
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Building m2kcli is disabled by default. It can be enabled by running the following
+Building m2kcli is disabled by default. It can be enabled by running the
+following
 
 ::
 
@@ -180,7 +182,8 @@ There is one more layer of controlling the logging. After building libm2k with l
 Building the examples
 ~~~~~~~~~~~~~~~~~~~~~
 
-Building the examples is disabled by default. It can be enabled by running the following
+Building the examples is disabled by default. It can be enabled by running the
+following
 
 ::
 
@@ -249,7 +252,8 @@ Build and install libm2k:
 Install libm2k Python bindings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Make sure you installed libm2k first then run the following commands in order to install the Python bindings in your system.
+Make sure you installed libm2k first then run the following commands in order to
+install the Python bindings in your system.
 
 ::
 
@@ -299,7 +303,8 @@ Dependencies
          -  Press 'Configure' button.
          -  Press 'Generate' button.
          -  Click 'Open Project' and build the solution.
-         -  Note: glog.dll should be placed next to your libm2k application or in your system
+         -  Note: glog.dll should be placed next to your libm2k application or
+            in your system
 
 Install libm2k
 ~~~~~~~~~~~~~~
@@ -308,7 +313,7 @@ Install libm2k
 -  Use the CMake-gui and open ``libm2k/CMakeLists.txt``. At startup, select platform x64.
 
 .. image:: https://wiki.analog.com/_media/libm2k_windows_cmake.png
-   :width: 400px
+   :width: 400
 
 -  Press the Configure button. Some of the parameters will be set to their correct value.
 -  Browse the location where you extracted libiio and set ``IIO_LIBRARIES`` to ``libiio/MS64/libiio.lib`` and ``IIO_INCLUDE_DIRS`` ``libiio/include``.

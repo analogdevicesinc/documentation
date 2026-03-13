@@ -46,29 +46,27 @@ Chip Select
 
    Any 3-wire moisture sensor with a supply voltage of 3.3V or 5V, with an output voltage of 0-3V can be used with the EVAL-CN0398-ARDZ. The Vegetronix `VH400 <http://www.vegetronix.com/Products/VH400/>`_ and Decagon Devices `EC-5 <https://www.decagon.com/en/soils/volumetric-water-content-sensors/ec-5-lowest-cost-vwc/>`_ moisture sensor was used during testing.
 
-
 Moisture Sensor Power Supply Jumper Selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the moisture sensor requires a 5V power supply place the jumper as seen on the image below
+If the moisture sensor requires a 5V power supply place the jumper as seen on
+the image below
 
 | |image4|
-
 
 .. note::
 
    VH400 moisture sensor was evaluated in this configuration
 
-
-If the moisture sensor requires a 3.3V power supply, place the jumper as seen on the image below
+If the moisture sensor requires a 3.3V power supply, place the jumper as seen on
+the image below
 
 | |image5|
 
-
 .. note::
 
-   EC5 moisture sensor was evaluated in this configuration. The two jumper selection P8 and P10 should always change together
-
+   EC5 moisture sensor was evaluated in this configuration. The two jumper
+   selection P8 and P10 should always change together
 
 RTD Connector (P1)
 ------------------
@@ -78,16 +76,16 @@ RTD Connector (P1)
 
 | |image7| |image8| |image9|
 
-
 .. note::
 
-   3-wire PT100 RTD was used during evaluation, Excitation currents are set to 500uA. For the 4-wire configuration, Do not connect the RSENSE(+) wire.
-
+   3-wire PT100 RTD was used during evaluation, Excitation currents are set to
+   500uA. For the 4-wire configuration, Do not connect the RSENSE(+) wire.
 
 pH Probe Connector (J1)
 -----------------------
 
-The EVAL-CN0398-ARDZ shield board comes with a BNC connector J1 for pH sensors as shown on the image below
+The EVAL-CN0398-ARDZ shield board comes with a BNC connector J1 for pH sensors
+as shown on the image below
 
 | |image10|
 | The output of the pH sensor is bipolar and gives a maximum signal of ±414 mV at 25°C. The :adi:`ad7124-8` operates from a single power supply therefore the pH probe should be biased above ground so that it is within the acceptable common-mode range of the :adi:`ad7124-8`. One of the integrated features of the :adi:`ad7124-8` is its internal bias voltage generator that sets the common mode voltage of a channel to AVDD/2, or 1.65 V. This bias voltage from the ADC is applied to the pH probe shield and sets the output of the sensor 1.65 V ±414 mV at 25°C. For information about pH calibration, visit :adi:`CN0398` Circuit Note.
@@ -95,7 +93,6 @@ The EVAL-CN0398-ARDZ shield board comes with a BNC connector J1 for pH sensors a
 .. note::
 
    \ `Atlas Scientific <http://www.atlas-scientific.com/product_pages/probes/ph_probe.html>`_ pH probe was used during evaluation
-
 
 Schematic, PCB Layout, Bill of Materials
 ========================================
@@ -112,7 +109,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 Software
 ========
 
@@ -125,7 +121,6 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0398-ARDZ?&v=RevC>`_ to receive all these great benefits and more!
-
 
 *End of Document*
 

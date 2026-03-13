@@ -8,4 +8,4 @@ The Hirose FX8 120P-SV(91) extender connector is used for daughter board connect
 .. image:: https://wiki.analog.com/_media/ezlinx/extenderconnector.png
    :alt: Figure 1. Extender Connector Implementation
    :align: center
-   :width: 600px
+   :width: 600

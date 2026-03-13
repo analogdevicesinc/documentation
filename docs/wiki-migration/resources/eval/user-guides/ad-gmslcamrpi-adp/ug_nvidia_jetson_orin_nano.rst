@@ -28,29 +28,30 @@ Hardware changes
 
 **GMSL Deserializer Evaluation Kit**
 
--  Flip the SW5 switches to the ON position - enables I2C communication over the CSI bus
+-  Flip the SW5 switches to the ON position - enables I2C communication over the
+   CSI bus
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/gmsl_deserializer_sw5.jpg
-   :width: 300px
+   :width: 300
 
 -  Bridge R88 - provides VDDIO to the adapter
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/deserializer_resistors.jpg
-   :width: 300px
+   :width: 300
 
 **GMSL Serializer Evaluation Kit**
 
 -  Place a jumper on the J10 connector - enables power over the coaxial cable
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/gmsl_serializer_j10.jpg
-   :width: 300px
+   :width: 300
 
 -  Bridge R70 - provides 12V to the adapter
 -  Bridge R80 - connects MFP2 to the adapter for IMX219
 -  Bridge R66 - provides VDDIO to the adapter
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/serializer_resistors.jpg
-   :width: 300px
+   :width: 300
 
 **AD-GMSLCAMRPI-ADP# Adapter**
 
@@ -83,10 +84,10 @@ System setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/nvidia_jetson_orin_system.jpg
    :align: left
-   :width: 350px
+   :width: 350
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/jetson_orin_nano_rpi_camera_connection.jpg
-   :width: 350px
+   :width: 350
 
 --------------
 
@@ -96,7 +97,7 @@ Running the evaluation application
 Once Linux boots you'll see on the DP monitor the Linux desktop and a shortcut named **run_demo.sh**. Double clicking on the icon will start the evaluation application. The evaluation application GUI will be displayed like in the picture bellow.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/nvidia_screen1.png
-   :width: 600px
+   :width: 600
 
 Power off sequence
 ~~~~~~~~~~~~~~~~~~
@@ -117,6 +118,6 @@ The GMSL Linux kernel drivers, the complete Linux distributions for the supporte
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ser_interposer.jpg
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/deser_interposer.jpg
-   :width: 300px
+   :width: 300

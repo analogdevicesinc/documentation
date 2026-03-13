@@ -3,11 +3,17 @@ Introduction to boards based on the AD9361/AD9363/AD9364
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361_plus_zed.png
    :align: right
-   :width: 300px
+   :width: 300
 
 There are several high-speed analog modules designed to showcase the :adi:`AD9361` family of high performance, highly integrated RF agile transceivers intended for use in RF applications, such as 3G and 4G base station and software defined radios. Its programmability and wide-band capability make it ideal for a broad range of transceiver applications. The device combines an RF front end with a flexible mixed-signal base-band section and integrated frequency synthesizers, simplifying design-in by providing a configurable digital interface to a processor or FPGA.
 
-The AD9361 and AD9364 chip operates in the 70MHz to 6GHz range, covering most licensed and unlicensed bands. The boards, due to discrete external components may have less performance on some of the RF input/output connectors (for example - the FMCOMMS2 and specific connectors on the FMCOMMS5 are specifically tuned to 2.4GHz). The AD9361 and AD9364 both supports channel bandwidths from less than 200kHz to 56MHz by both changing sample rate, and by changing digital filters, and decimation inside the device itself.
+The AD9361 and AD9364 chip operates in the 70MHz to 6GHz range, covering most
+licensed and unlicensed bands. The boards, due to discrete external components
+may have less performance on some of the RF input/output connectors (for example
+- the FMCOMMS2 and specific connectors on the FMCOMMS5 are specifically tuned to
+2.4GHz). The AD9361 and AD9364 both supports channel bandwidths from less than
+200kHz to 56MHz by both changing sample rate, and by changing digital filters,
+and decimation inside the device itself.
 
 Available AD936x Boards
 -----------------------
@@ -40,13 +46,20 @@ Overview
 
 .. important::
 
-   While the AD9361 digital interface supports both LVDS and CMOS mode, all the FMCOMMS boards have been verified in LVDS mode only. Configuring the digital interface in CMOS mode is not tested nor supported on these platforms. This is due to the purposefully weak CMOS drivers (To keep the noise off the part as much as possible) that are part of the digital interface and the large capacitance of the FMC connector.
+   While the AD9361 digital interface supports both LVDS and CMOS mode, all the
+   FMCOMMS boards have been verified in LVDS mode only. Configuring the digital
+   interface in CMOS mode is not tested nor supported on these platforms. This
+   is due to the purposefully weak CMOS drivers (To keep the noise off the part
+   as much as possible) that are part of the digital interface and the large
+   capacitance of the FMC connector.
 
    
-   If you configure any board to work in CMOS mode, and it does not, this is expected. If it does work, it just means the combination of AD9361 board, AD9361, connectors, carrier layout and FPGA are barely working.
+   If you configure any board to work in CMOS mode, and it does not, this is
+   expected. If it does work, it just means the combination of AD9361 board,
+   AD9361, connectors, carrier layout and FPGA are barely working.
    
-   CMOS mode is known to work on platforms without connectors between the AD936x and the Digital BaseBande device (like PicoZed SDR).
-
+   CMOS mode is known to work on platforms without connectors between the AD936x
+   and the Digital BaseBande device (like PicoZed SDR).
 
 AD936x Board Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,7 +141,8 @@ The items needed to get started are:
 
 -  :doc:`Quickstart </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart>`
 
-They detail supported carriers, external equipment requirements and how to set the boot switches.
+They detail supported carriers, external equipment requirements and how to set
+the boot switches.
 
 Once you have a working platform, study this material.
 
@@ -144,7 +158,8 @@ Once you have a working platform, study this material.
 -  Review a real world example using the part (ADS-B) :adi:`Part 1 <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`, :adi:`Part 2 <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`, :adi:`Part 3 <library/analogDialogue/archives/49-11/four-step-sdr-03.html>` and :adi:`Part 4 <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
 -  Look at `FMCOMMS2 <https://wiki.analog.com/../ad-fmcomms2-ebz/hardware>`_, `FMCOMMS3 <https://wiki.analog.com/../ad-fmcomms3-ebz/hardware>`_, `FMCOMMS4 <https://wiki.analog.com/../ad-fmcomms4-ebz/hardware>`_, `FMCOMMS5 <https://wiki.analog.com/../ad-fmcomms5-ebz/hardware>`_ schematics and layout to see how to get the best performance in your hardware design.
 
-A detailed list of things that can be done with these boards, can be found in each board page:
+A detailed list of things that can be done with these boards, can be found in
+each board page:
 
 -  `ARRADIO <https://wiki.analog.com/../arradio>`_
 -  :doc:`ADALM-PLUTO </wiki-migration/university/tools/pluto>`

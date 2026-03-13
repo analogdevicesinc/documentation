@@ -27,7 +27,8 @@ This section presents the steps for developing a software application that will 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
    :align: center
 
--  After the project is created, all the downloaded source files have to be copied in the project folder and included in the project.
+-  After the project is created, all the downloaded source files have to be
+   copied in the project folder and included in the project.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
    :align: center

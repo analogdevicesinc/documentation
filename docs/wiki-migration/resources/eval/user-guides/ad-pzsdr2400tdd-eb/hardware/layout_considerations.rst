@@ -5,12 +5,16 @@ The :adi:`ADL5324` has several passive components surrounding the IC which direc
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/tuning_component_placement.png
    :align: center
-   :width: 800px
+   :width: 800
 
-The component spacing for tuning capacitors C1 and C2 is detailed in the ][adi>ADL5324]] datasheet over a variety of frequencies. A table from the datasheet, detailing this information, is listed below.
+The component spacing for tuning capacitors C1 and C2 is detailed in the
+][adi>ADL5324]] datasheet over a variety of frequencies. A table from the
+datasheet, detailing this information, is listed below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/tuning_component_table.png
    :align: center
-   :width: 800px
+   :width: 800
 
-Placement of the AC coupling capacitors, power supply bypassing capacitors and DC bias inductor should follow the recommendation of the datasheet, but are slightly less critical than the tuning capacitors.
+Placement of the AC coupling capacitors, power supply bypassing capacitors and
+DC bias inductor should follow the recommendation of the datasheet, but are
+slightly less critical than the tuning capacitors.

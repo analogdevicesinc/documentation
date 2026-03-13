@@ -7,7 +7,8 @@ Sweep (Log) with On/Off Switch
 | The Sweep (Log) block generates a sinewave that sweeps from a start frequency to an end frequency. The sweep rate is determined by the number of sweep steps and cycles per step. | |image2| |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 
-Enter the desired start and stop frequency and step size using the edit controls:
+Enter the desired start and stop frequency and step size using the edit
+controls:
 
 -  **Start Freq**
 
@@ -29,7 +30,8 @@ Enter the desired start and stop frequency and step size using the edit controls
 
    -  Starts the sweep
 
-The graph below shows a sweep from 10 Hz to 300 Hz achieved in four steps with two cycles in each one.
+The graph below shows a sweep from 10 Hz to 300 Hz achieved in four steps with
+two cycles in each one.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/sources/sweeplogonoff011.jpg
    :align: center

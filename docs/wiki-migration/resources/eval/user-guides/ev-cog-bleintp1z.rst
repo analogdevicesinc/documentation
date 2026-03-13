@@ -4,7 +4,10 @@ EV-COG-BLEINTP1Z Connectivity Cog
 Introduction
 ------------
 
-EV-COG-BLEINTP1Z board is a connectivity Cog board for MCU Cogs (EV-COG-AD3029LZ and EV-COG-AD4050LZ). This board enables wireless RF transceiver connectivity, Bluetooth Low Energy connectivity and WIFI connectivity for various IoT applications.
+EV-COG-BLEINTP1Z board is a connectivity Cog board for MCU Cogs (EV-COG-AD3029LZ
+and EV-COG-AD4050LZ). This board enables wireless RF transceiver connectivity,
+Bluetooth Low Energy connectivity and WIFI connectivity for various IoT
+applications.
 
 -  The following ADI wireless RF daughter boards are supported via SPI interface
 
@@ -16,7 +19,8 @@ EV-COG-BLEINTP1Z board is a connectivity Cog board for MCU Cogs (EV-COG-AD3029LZ
 -  BTLE - available on board and can be communicated via SPI interface
 -  WIFI - provision to support `ESP8266 <http://espressif.com/en/products/hardware/esp8266ex/overview>`_ via UART (not available in the kit)
 
-This user guide describes the connector pin out, power options and jumper settings available on board.
+This user guide describes the connector pin out, power options and jumper
+settings available on board.
 
 Hardware details
 ================
@@ -29,14 +33,14 @@ Primary-side
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/picture1.png
    :align: center
-   :width: 590px
+   :width: 590
 
 Secondary-side
 ~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/picture2.png
    :align: center
-   :width: 610px
+   :width: 610
 
 The board consists of
 
@@ -50,20 +54,24 @@ The board consists of
 Power options
 =============
 
-The EV-COG-BLEINTP1Z board is powered up by means of the VDD supply from the MCU cog through the 32 pin connector (P1). The VDD supply is shared between RF transceiver, BLE and WIFI via jumper P5. Shunts must be placed in appropriate positions as shown in the following figure to power up different blocks.
-
+The EV-COG-BLEINTP1Z board is powered up by means of the VDD supply from the MCU
+cog through the 32 pin connector (P1). The VDD supply is shared between RF
+transceiver, BLE and WIFI via jumper P5. Shunts must be placed in appropriate
+positions as shown in the following figure to power up different blocks.
 
 |image1|
 
 .. tip::
 
-   P5 can also be used for measuring current flowing through different rails by connecting an ammeter between VDD and VDD_RF/VDD_BLE/VDD_WIFI.
-
+   P5 can also be used for measuring current flowing through different rails by
+   connecting an ammeter between VDD and VDD_RF/VDD_BLE/VDD_WIFI.
 
 32 pin Hirose connector
 -----------------------
 
-The Hirose connector P1 interfaces the EV-COG-BLEINTP1Z board with the MCU Cog. The connector carries VDD, UART, SPI2 and GPIO signals from MCU cog board. The pinout details are given in the following table
+The Hirose connector P1 interfaces the EV-COG-BLEINTP1Z board with the MCU Cog.
+The connector carries VDD, UART, SPI2 and GPIO signals from MCU cog board. The
+pinout details are given in the following table
 
 ================================ ================== ===================
 Hirose connector (P1) pin number pin name           MCU Cog signal name
@@ -105,7 +113,9 @@ Hirose connector (P1) pin number pin name           MCU Cog signal name
 Wireless RF transceiver connectors
 ----------------------------------
 
-The wireless RF transceiver connectors consist of three connectors P1, P2 and P3, which support ADF7023, ADF7024, ADF7030, ADF7030-1 and ADF7242 RF transceiver daughter boards. Pinout details are given in the following table.
+The wireless RF transceiver connectors consist of three connectors P1, P2 and
+P3, which support ADF7023, ADF7024, ADF7030, ADF7030-1 and ADF7242 RF
+transceiver daughter boards. Pinout details are given in the following table.
 
 +-----------+------------+----------------------+---------------------+---------------------+---------------------+-----------------------+
 | Connector | Pin number | Signal name          | ADF7023 signal name | ADF7024 signal name | ADF7242 signal name | ADF7030-1 signal name |
@@ -191,8 +201,8 @@ The wireless RF transceiver connectors consist of three connectors P1, P2 and P3
 |           | 20         | RF_GPIO5             | NC                  | NC                  | TRFS_GP2            | GPIO5                 |
 +-----------+------------+----------------------+---------------------+---------------------+---------------------+-----------------------+
 
-The following figure shows EV-COG-BLEINTP1Z connected to ADF7023DBExZ daughter board.
-
+The following figure shows EV-COG-BLEINTP1Z connected to ADF7023DBExZ daughter
+board.
 
 |image2|
 
@@ -200,11 +210,14 @@ The following figure shows EV-COG-BLEINTP1Z connected to ADF7023DBExZ daughter b
 
    Install the jumper between VDD_BLE and VDD in addition to VDD_RF
 
-
 Bluetooth Low Energy Chipset
 ----------------------------
 
-The EV-COG-BLEINTP1Z has a Bluetooth low energy chipset EM9304 from EM Microlectronic. The chipset contains BLE protocol stack along with some profiles. The MCU cog communicates to EM9304 by means of SPI2. The user will need to send BLE configuration commands and data over SPI. The following table captures the signals connected to EM9304
+The EV-COG-BLEINTP1Z has a Bluetooth low energy chipset EM9304 from EM
+Microlectronic. The chipset contains BLE protocol stack along with some
+profiles. The MCU cog communicates to EM9304 by means of SPI2. The user will
+need to send BLE configuration commands and data over SPI. The following table
+captures the signals connected to EM9304
 
 ========= ================= =============== ==============
 Component EM9304 pin number EM9304 pin name MCU cog signal
@@ -219,13 +232,19 @@ U1        4                 ENABLE          GPIO27
 
 .. important::
 
-   The Jumpers P6 and P7 are provided to isolate SPI_CS and SPI_CLK lines connected to BLE while working with RF transceiver daughter cards. But shunts must be placed on these jumpers for BLE to work.
-
+   The Jumpers P6 and P7 are provided to isolate SPI_CS and SPI_CLK lines
+   connected to BLE while working with RF transceiver daughter cards. But shunts
+   must be placed on these jumpers for BLE to work.
 
 WIFI module connector
 ---------------------
 
-The connector P9 supports the WIFI module ESP8266. The ESP8266 WiFi Module is a self contained SOC with integrated TCP/IP protocol stack. The module communicates to MCU cog via UART TX and UART RX lines. Each ESP8266 module comes pre-programmed with an AT command set firmware which allows easy programing over UART. For more information & support concerning the WiFi module please follow the links below:
+The connector P9 supports the WIFI module ESP8266. The ESP8266 WiFi Module is a
+self contained SOC with integrated TCP/IP protocol stack. The module
+communicates to MCU cog via UART TX and UART RX lines. Each ESP8266 module comes
+pre-programmed with an AT command set firmware which allows easy programing over
+UART. For more information & support concerning the WiFi module please follow
+the links below:
 
 -  `Product Page/Details <https://www.sparkfun.com/products/13678>`_
 -  `AT Command List <https://cdn.sparkfun.com/datasheets/Wireless/WiFi/Command%20Doc.pdf>`_
@@ -249,13 +268,15 @@ P9        1                 DGND                GND
 
 .. note::
 
-   This WiFi module is NOT developed by Analog Devices and it will not be shipped along with this board.
-
+   This WiFi module is NOT developed by Analog Devices and it will not be
+   shipped along with this board.
 
 Debug header
 ------------
 
-Test points are provided to probe some specify signals w.r.t RF transceiver daughter cards, BLE and WIFI module. The pinout details are given in the following table.
+Test points are provided to probe some specify signals w.r.t RF transceiver
+daughter cards, BLE and WIFI module. The pinout details are given in the
+following table.
 
 ======================= ========== ====================
 Test point/Debug header pin number Cog signal
@@ -296,15 +317,13 @@ Schematics, PCB layout, Bill of materials
    -  `Assembly Files <https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/09-046704-01a.zip>`_ (Zip)
    
 
-
-
 | End Document
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picture4.png
-   :width: 250px
+   :width: 250
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picture5.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/picture3.png
-   :width: 500px
+   :width: 500

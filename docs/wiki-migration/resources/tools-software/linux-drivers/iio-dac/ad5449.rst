@@ -119,16 +119,25 @@ Below example specifies a 2.5 Volt reference for the SPI device 3 on SPI-Bus 0. 
    }
    arch_initcall(board_init);
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
+Depending on the converter IC used, you may need to set the modalias
+accordingly, matching your part name.
 
-Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name.
-
-It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+It may also required to adjust max_speed_hz. Please consult the datasheet, for
+maximum spi clock supported by the device in question.
 
 .. code:: c
 
@@ -160,12 +169,12 @@ It may also required to adjust max_speed_hz. Please consult the datasheet, for m
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD5449 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -185,8 +194,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -213,11 +229,10 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r--    1 root     root          4096 Jan  1 02:20 uevent
    
 
-
 .. hint::
 
-   For DACs with only one output channel there will be no out_voltage1_raw and out_voltage1_scale files
-
+   For DACs with only one output channel there will be no out_voltage1_raw and
+   out_voltage1_scale files
 
 Show device name
 ----------------
@@ -232,7 +247,6 @@ Show device name
       root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> cat name
       ad5449
    
-
 
 Show scale
 ----------
@@ -250,7 +264,6 @@ Show scale
       0.152
    
 
-
 Set channel 0
 -------------
 
@@ -267,7 +280,6 @@ Raw (unscaled, no bias etc.) output voltage for channel Y.
    
       root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> echo 1234 > out_voltage0_raw
    
-
 
 **U** = *out_voltage0_raw \* out_voltage_scale* = 1234 \* 0.152mV = **187.568 mV**
 
@@ -292,6 +304,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/youtube>p_vntewue24
-

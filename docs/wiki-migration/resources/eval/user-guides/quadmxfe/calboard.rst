@@ -20,7 +20,6 @@ Features
 
 Below is the full integrated system including the Xilinx `VCU118 <https://www.xilinx.com/VCU118>`_, ADQUADMXFE1EBZ, and :doc:`ADQUADMXFE-CAL </wiki-migration/resources/eval/user-guides/quadmxfe/calboard>` in full operation. For LED identification please see :doc:`Calibration Broad LED Information </wiki-migration/resources/eval/user-guides/quadmxfe/calboard>`, or `Quad MxFE LED Information <https://wiki.analog.com/resources/eval/user-guides/quadmxfe/>`_
 
-
 |image1|
 
 --------------
@@ -35,7 +34,7 @@ High Level Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/blckdiagram_edit.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Key Component Location
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -46,7 +45,6 @@ LED Identification
 ~~~~~~~~~~~~~~~~~~
 
 +-----------------------+
-
 
 | LED Status Indicators |
 
@@ -108,7 +106,7 @@ Control Interfaces
 The calibration board can be controlled in multiple ways including a DIP Switch and 2A PMOD Interface. The board can be controlled with 4 main signals: 5045 V1 and 5045 V2 which control an ADRF5045 which switches the transmit path between combined loopback, low frequency path, high frequency path, and power detection path, CTLR IND which turns off and on adjacent individual loopback for each Rx and Tx channel, and CTRL RX COMB which turns off and on the combined receive loopback path. The DIP Switch controls 4 signals: 5045 V1, 5045 V2, CTRL IND, and CTRL RX COMB. The PMOD Interface has 8 signals: 5045 V1, 5045 V2, CTRL IND, CTRL RX COMB, and 4 SPI Communications signals. The AD5592R is an 8 channel GPIO/ADC/DAC and it is connected the same control signals as the DIP switch as well as the three power detectors (:adi:`AD8318 <en/products/ad8318.html>`, :adi:`HMC948 <en/products/hmc948.html>`, :adi:`LTC5596 <en/products/ltc5596.html>`), plus a temperature sensor on the AD8318. Below is a tabular representation of these control signals.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/capture.png
-   :width: 400px
+   :width: 400
 
 Software Needed
 ---------------

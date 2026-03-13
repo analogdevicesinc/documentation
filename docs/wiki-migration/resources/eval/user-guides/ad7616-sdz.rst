@@ -8,7 +8,10 @@ The :adi:`AD7616` is a 16-bit, data acquisition system (DAS) that supports dual 
 
 The input clamp protection circuitry can tolerate voltages up to ±20 V. The :adi:`AD7616` has 1 MΩ analog input impedance regardless of sampling frequency. The single supply operation, on-chip filtering, and high input impedance eliminate the need for driver op-amps and external bipolar supplies.
 
-Each device contains analog input clamp protection, a dual, 16-bit charge redistribution successive approximation analog-to-digital converter (ADC), a flexible digital filter, a 2.5 V reference and reference buffer, and high-speed serial and parallel interfaces.
+Each device contains analog input clamp protection, a dual, 16-bit charge
+redistribution successive approximation analog-to-digital converter (ADC), a
+flexible digital filter, a 2.5 V reference and reference buffer, and high-speed
+serial and parallel interfaces.
 
 Applications:
 
@@ -68,13 +71,13 @@ Block Diagrams
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7616_serial_hdl.svg
    :alt: AD7616_SDZ with Serial Interface
-   :width: 800px
+   :width: 800
 
 -  AD7616_SDZ using the **PARALLEL** interface
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7616_parallel_hdl.svg
    :alt: AD7616_SDZ with Parallel Interface
-   :width: 800px
+   :width: 800
 
 Required software
 ~~~~~~~~~~~~~~~~~
@@ -106,7 +109,9 @@ In order to build the HDL design the user has to go through the following steps:
 Switching between interface types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before the board power-up, the user has to choose the required device interface and setup. Depending on the required interface mode, some hardware modifications need to be done on the board and/or Tcl script:
+Before the board power-up, the user has to choose the required device interface
+and setup. Depending on the required interface mode, some hardware modifications
+need to be done on the board and/or Tcl script:
 
 In case of the **SERIAL** interface:
 
@@ -122,8 +127,8 @@ In case of the **PARALLEL** interface:
 
 .. important::
 
-   Because of the SDP-I-FMC the level of the VADJ in the carrier board needs to be set to 3.3V.
-
+   Because of the SDP-I-FMC the level of the VADJ in the carrier board needs to
+   be set to 3.3V.
 
 CPU/Memory interconnects addresses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -203,7 +208,6 @@ HDL Downloads
    -  :git-hdl:`AD7616-SDZ HDL Project. <projects/ad7616_sdz>`
    
 
-
 No-OS Downloads
 ~~~~~~~~~~~~~~~
 
@@ -214,20 +218,18 @@ No-OS Downloads
    -  :git-no-OS:`AD7616-SDZ No-OS Project. <projects/ad7616-sdz>`
    
 
-
 SDP-K1 setup
 ------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7616_sdp-k1_setup.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 :adi:`EVAL-AD7616` is connected to :adi:`SDP-K1` via fly-wire. In order to flash the SDP-K1, an `STLINK-V3 <https://www.st.com/en/development-tools/stlink-v3set.html>`_ is required
 
 .. warning::
 
    Make sure to power both :adi:`EVAL-AD7616` and :adi:`SDP-K1` via the barrel jack connector
-
 
 EVAL-AD7616 Jumper setup
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -276,7 +278,6 @@ No-OS Downloads
    
    -  :git-no-OS:`AD7616-ST No-OS Project. <projects/ad7616-st>`
    
-
 
 No-OS project build
 ~~~~~~~~~~~~~~~~~~~
@@ -522,4 +523,3 @@ Support
    -  :ez:`FPGA Reference Design <community/fpga>`
    -  :ez:`Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`.
    
-

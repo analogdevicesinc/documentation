@@ -7,26 +7,31 @@ Bare Metal Project Wizard Setup
 Using the :doc:`bare metal project wizard </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/project-wizard>`:
 
 -  Give the project a meaningful name, click Next
--  Choose the Audio Project Fin on the Expansion Fin Selection Page because it is required for part of the tutorial, click Finish
+-  Choose the Audio Project Fin on the Expansion Fin Selection Page because it
+   is required for part of the tutorial, click Finish
 
 **No other options need to be changed.**
 
 Tutorial Overview
 -----------------
 
-A tremolo is a classic audio effect whereby we modulate the volume, or amplitude, of our audio signal using an oscillator. Here's a nice explanation of how the tremolo effect works and its various parameters.
+A tremolo is a classic audio effect whereby we modulate the volume, or
+amplitude, of our audio signal using an oscillator. Here's a nice explanation of
+how the tremolo effect works and its various parameters.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>oocnb1izw8a
    :alt: youtube>oOCNB1izw8A
 
-In this tutorial, we're going to start by building a basic tremolo effect. We'll then add a few additional bells and whistles.
+In this tutorial, we're going to start by building a basic tremolo effect. We'll
+then add a few additional bells and whistles.
 
 Just like last time, we'll be working in the ``callback_audio_processing.cpp`` file. We can implement this code either on SHARC core 1 or SHARC core 2.
 
 Basic Tremolo with Fixed Parameters
 -----------------------------------
 
-To begin, we'll build a tremolo effect that relies on fixed parameters just like we did with volume.
+To begin, we'll build a tremolo effect that relies on fixed parameters just like
+we did with volume.
 
 .. code:: c
 
@@ -58,7 +63,11 @@ To begin, we'll build a tremolo effect that relies on fixed parameters just like
 Controlling the Tremolo Parameters with Pots on the Audio Project Fin
 ---------------------------------------------------------------------
 
-Now we will map the HADC0 pot to our rate parameter and the HADC1 pot to our depth parameter. We don't want our rate to drop down to 0.0 since we'd effectively be multiplying our audio by a constant value at some point along the sine wave we're using to modulate. So we'll map the HADC0 input from a value of 0.1 to 1.0 rather than 0.0 to 1.0.
+Now we will map the HADC0 pot to our rate parameter and the HADC1 pot to our
+depth parameter. We don't want our rate to drop down to 0.0 since we'd
+effectively be multiplying our audio by a constant value at some point along the
+sine wave we're using to modulate. So we'll map the HADC0 input from a value of
+0.1 to 1.0 rather than 0.0 to 1.0.
 
 .. code:: c
 
@@ -140,9 +149,12 @@ In our audio callback, we'll add a new variable called ``tremolo_enabled`` which
 Using SW2 on the Audio Project Fin to Set the Tremolo Rate
 ----------------------------------------------------------
 
-Some more advanced tremolo pedals allow you to repeatedly tap a button at the desired tempo or rate of the effect. We'll use SW2 to allow the user to set the rate of the tremolo by tapping SW2 at the desired tempo.
+Some more advanced tremolo pedals allow you to repeatedly tap a button at the
+desired tempo or rate of the effect. We'll use SW2 to allow the user to set the
+rate of the tremolo by tapping SW2 at the desired tempo.
 
-To do this, we'll add some code to our background loop. This loop is called repeatedly when we're not in the processaudio_callback routine.
+To do this, we'll add some code to our background loop. This loop is called
+repeatedly when we're not in the processaudio_callback routine.
 
 .. code:: c
 
@@ -218,4 +230,3 @@ We'll also need to make two small modifications to our callback. First, we're go
            tremolo_enabled = !tremolo_enabled;
        }
    }
-

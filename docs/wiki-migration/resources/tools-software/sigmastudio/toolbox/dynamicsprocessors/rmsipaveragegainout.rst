@@ -3,8 +3,9 @@
 RMS Input Average Compressor
 ============================
 
-This Module computes the Gain of the Compressor. Compression happens by taking the RMS of the Average of all inputs, and then looking up for the Gain based on the Compressor Graph.
-
+This Module computes the Gain of the Compressor. Compression happens by taking
+the RMS of the Average of all inputs, and then looking up for the Gain based on
+the Compressor Graph.
 
 |image1|
 
@@ -17,7 +18,6 @@ Name         Format [int/dec] - [control/audio] Function Description
 Pin 0: Input decimal - Audio                    Audio Input
 ============ ================================== ====================
 
-
 | ====Output Pins====
 
 ============= ================================== ====================
@@ -26,16 +26,17 @@ Name          Format [int/dec] - [control/audio] Function Description
 Pin 0: Output decimal - Audio                    Gain Output
 ============= ================================== ====================
 
-
 | ==== Grow Algorithm ==== The module supports Input Channel growth upto a maximum of 6 channels.
 
 Configuration
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsipaveragecompressorconfig.png
-   :width: 600px
+   :width: 600
 
-Compressor graph has a "Point Density" context menu option for varying the resolution of the Points in the compressor graph. 288(0.5db), 720(0.2db) and 1440(0.1db) are the Point densities supported.
+Compressor graph has a "Point Density" context menu option for varying the
+resolution of the Points in the compressor graph. 288(0.5db), 720(0.2db) and
+1440(0.1db) are the Point densities supported.
 
 +------------------+---------------+---------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | GUI Control Name | Default Value | Range         | Function Description                                                                                                                        |
@@ -76,7 +77,10 @@ Compressor graph has a "Point Density" context menu option for varying the resol
 Algorithm Description
 ---------------------
 
-This module computes the Gain of the Compressor. All the inputs to the module are first averaged. RMS value corresponding to the Input Average is computed and converted to dB scale. This value is looked up in the Compressor Graph table to obtain the Gain output value.
+This module computes the Gain of the Compressor. All the inputs to the module
+are first averaged. RMS value corresponding to the Input Average is computed and
+converted to dB scale. This value is looked up in the Compressor Graph table to
+obtain the Gain output value.
 
 Supported ICs
 -------------
@@ -85,4 +89,4 @@ Supported ICs
 -  ADSPSC5xx
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsipaveragecompressor.jpg
-   :width: 300px
+   :width: 300

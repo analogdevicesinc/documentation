@@ -4,9 +4,12 @@ Spectrum Analyzer - Test Case
 Initial Setup
 -------------
 
-In order to proceed through the test case, first of all delete the Scopy \*.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
+In order to proceed through the test case, first of all delete the Scopy \*.ini
+file (saves previous settings made in Scopy tool) from the following path on
+Windows: C:\\Users\\your_username\\AppData\\Roaming\\ADI .
 
-Open the Spectrum Analyzer instrument. The interface should look like the picture below:
+Open the Spectrum Analyzer instrument. The interface should look like the
+picture below:
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-front-panel.png
    :align: center
@@ -18,8 +21,6 @@ Test Title
 
 A. Channel 1 Operation
 ~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -75,12 +76,8 @@ A. Channel 1 Operation
    |                                     | 24. Run the Signal Generator and Spectrum Analyzer. On the markers menu, Enable Marker 1and set it manually at 20 MHz Frequency position, or click the peak button for a shortcut.                                                  | |image48|       | The fundamental frequency should be on 20 MHz. The markers should also detect this as the peak amplitude.                                                |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 B. Channel 2 Operation
 ~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -136,12 +133,8 @@ B. Channel 2 Operation
    |                                     | 24. Run the Signal Generator and Spectrum Analyzer. On the markers menu, Enable Marker 1and set it manually at 20 MHz Frequency position, or click the peak button for a shortcut.                                                  | |image96|       | The fundamental frequency should be on 20 MHz. The markers should also detect this as the peak amplitude.                                                |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 C. Channel 1 and 2 Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -221,12 +214,8 @@ C. Channel 1 and 2 Operation
    |                                                 | 23. Repeat Testing the marker function for channel 1 and 2 from steps 4 to 13.                                                                                                                                                                                                                                        |                 | The behavior should be the same.                                                                                                             |
    +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 D. Additional Features
 ~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. collapsible:: Click to expand
 
@@ -262,8 +251,6 @@ D. Additional Features
    |                                         | 6. Enable 5 markers for the two channels and distribute each markers on the fundamental frequency or harmonic frequency of the signal by pressing “Up Ampl” or “Dn Ampl”                                                                                                                            | |image180|      | For channel 1 the fundamental frequency is on 50kHz and the succeeding harmonics are at 150kHz, 250kHz, 350kHz and 450kHz. For channel 2, the fundamental frequency is on 100kHz and the succeeding harmonics is on 300kHz, 500kHz, 700kHz and 900kHz. See Step resource picture for reference. |
    +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 Test Results will be recorded in the following document:
 
 `spectrum_analyzer\_-\_test_case.xlsx <https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum_analyzer_-_test_case.xlsx>`_
@@ -271,362 +258,362 @@ Test Results will be recorded in the following document:
 **Return to Test Cases** :doc:`Table of Contents </wiki-migration/university/tools/m2k/scopy/test-cases>`
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_1a.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_2a.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_3a.png
-   :width: 200px
+   :width: 200
 .. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_4a.png
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_5a.png
-   :width: 200px
+   :width: 200
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_6a.png
-   :width: 200px
+   :width: 200
 .. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_7a.png
-   :width: 200px
+   :width: 200
 .. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_8a.png
-   :width: 200px
+   :width: 200
 .. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_9a.png
-   :width: 200px
+   :width: 200
 .. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_10a.png
-   :width: 200px
+   :width: 200
 .. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_11a.png
-   :width: 200px
+   :width: 200
 .. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_12a.png
-   :width: 200px
+   :width: 200
 .. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_13a.png
-   :width: 200px
+   :width: 200
 .. |image14| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_14a.png
-   :width: 200px
+   :width: 200
 .. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_15a.png
-   :width: 200px
+   :width: 200
 .. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_16a.png
-   :width: 200px
+   :width: 200
 .. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_17a.png
-   :width: 200px
+   :width: 200
 .. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_18a.png
-   :width: 200px
+   :width: 200
 .. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_19a.png
-   :width: 200px
+   :width: 200
 .. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_20a.png
-   :width: 200px
+   :width: 200
 .. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_21a.png
-   :width: 200px
+   :width: 200
 .. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_22a.png
-   :width: 200px
+   :width: 200
 .. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_23a.png
-   :width: 200px
+   :width: 200
 .. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_24a.png
-   :width: 200px
+   :width: 200
 .. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_1a.png
-   :width: 200px
+   :width: 200
 .. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_2a.png
-   :width: 200px
+   :width: 200
 .. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_3a.png
-   :width: 200px
+   :width: 200
 .. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_4a.png
-   :width: 200px
+   :width: 200
 .. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_5a.png
-   :width: 200px
+   :width: 200
 .. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_6a.png
-   :width: 200px
+   :width: 200
 .. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_7a.png
-   :width: 200px
+   :width: 200
 .. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_8a.png
-   :width: 200px
+   :width: 200
 .. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_9a.png
-   :width: 200px
+   :width: 200
 .. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_10a.png
-   :width: 200px
+   :width: 200
 .. |image35| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_11a.png
-   :width: 200px
+   :width: 200
 .. |image36| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_12a.png
-   :width: 200px
+   :width: 200
 .. |image37| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_13a.png
-   :width: 200px
+   :width: 200
 .. |image38| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_14a.png
-   :width: 200px
+   :width: 200
 .. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_15a.png
-   :width: 200px
+   :width: 200
 .. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_16a.png
-   :width: 200px
+   :width: 200
 .. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_17a.png
-   :width: 200px
+   :width: 200
 .. |image42| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_18a.png
-   :width: 200px
+   :width: 200
 .. |image43| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_19a.png
-   :width: 200px
+   :width: 200
 .. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_20a.png
-   :width: 200px
+   :width: 200
 .. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_21a.png
-   :width: 200px
+   :width: 200
 .. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_22a.png
-   :width: 200px
+   :width: 200
 .. |image47| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_23a.png
-   :width: 200px
+   :width: 200
 .. |image48| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_24a.png
-   :width: 200px
+   :width: 200
 .. |image49| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_1a.png
-   :width: 200px
+   :width: 200
 .. |image50| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_2a.png
-   :width: 200px
+   :width: 200
 .. |image51| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_3a.png
-   :width: 200px
+   :width: 200
 .. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_4a.png
-   :width: 200px
+   :width: 200
 .. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_5a.png
-   :width: 200px
+   :width: 200
 .. |image54| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_6a.png
-   :width: 200px
+   :width: 200
 .. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_7a.png
-   :width: 200px
+   :width: 200
 .. |image56| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_8a.png
-   :width: 200px
+   :width: 200
 .. |image57| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_9a.png
-   :width: 200px
+   :width: 200
 .. |image58| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_10a.png
-   :width: 200px
+   :width: 200
 .. |image59| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_11a.png
-   :width: 200px
+   :width: 200
 .. |image60| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_12a.png
-   :width: 200px
+   :width: 200
 .. |image61| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_13a.png
-   :width: 200px
+   :width: 200
 .. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_14a.png
-   :width: 200px
+   :width: 200
 .. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_15a.png
-   :width: 200px
+   :width: 200
 .. |image64| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_16a.png
-   :width: 200px
+   :width: 200
 .. |image65| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_17a.png
-   :width: 200px
+   :width: 200
 .. |image66| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_18a.png
-   :width: 200px
+   :width: 200
 .. |image67| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_19a.png
-   :width: 200px
+   :width: 200
 .. |image68| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_20a.png
-   :width: 200px
+   :width: 200
 .. |image69| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_21a.png
-   :width: 200px
+   :width: 200
 .. |image70| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_22a.png
-   :width: 200px
+   :width: 200
 .. |image71| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_23a.png
-   :width: 200px
+   :width: 200
 .. |image72| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_24a.png
-   :width: 200px
+   :width: 200
 .. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_1a.png
-   :width: 200px
+   :width: 200
 .. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_2a.png
-   :width: 200px
+   :width: 200
 .. |image75| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_3a.png
-   :width: 200px
+   :width: 200
 .. |image76| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_4a.png
-   :width: 200px
+   :width: 200
 .. |image77| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_5a.png
-   :width: 200px
+   :width: 200
 .. |image78| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_6a.png
-   :width: 200px
+   :width: 200
 .. |image79| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_7a.png
-   :width: 200px
+   :width: 200
 .. |image80| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_8a.png
-   :width: 200px
+   :width: 200
 .. |image81| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_9a.png
-   :width: 200px
+   :width: 200
 .. |image82| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_10a.png
-   :width: 200px
+   :width: 200
 .. |image83| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_11a.png
-   :width: 200px
+   :width: 200
 .. |image84| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_12a.png
-   :width: 200px
+   :width: 200
 .. |image85| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_13a.png
-   :width: 200px
+   :width: 200
 .. |image86| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_14a.png
-   :width: 200px
+   :width: 200
 .. |image87| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_15a.png
-   :width: 200px
+   :width: 200
 .. |image88| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_16a.png
-   :width: 200px
+   :width: 200
 .. |image89| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_17a.png
-   :width: 200px
+   :width: 200
 .. |image90| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_18a.png
-   :width: 200px
+   :width: 200
 .. |image91| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_19a.png
-   :width: 200px
+   :width: 200
 .. |image92| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_20a.png
-   :width: 200px
+   :width: 200
 .. |image93| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_21a.png
-   :width: 200px
+   :width: 200
 .. |image94| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_22a.png
-   :width: 200px
+   :width: 200
 .. |image95| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_23a.png
-   :width: 200px
+   :width: 200
 .. |image96| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel2_24a.png
-   :width: 200px
+   :width: 200
 .. |image97| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_1a.png
-   :width: 200px
+   :width: 200
 .. |image98| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_2a.png
-   :width: 200px
+   :width: 200
 .. |image99| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_3a.png
-   :width: 200px
+   :width: 200
 .. |image100| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_4a.png
-   :width: 200px
+   :width: 200
 .. |image101| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_5a.png
-   :width: 200px
+   :width: 200
 .. |image102| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_6a.png
-   :width: 200px
+   :width: 200
 .. |image103| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_7a.png
-   :width: 200px
+   :width: 200
 .. |image104| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_8a.png
-   :width: 200px
+   :width: 200
 .. |image105| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_9a.png
-   :width: 200px
+   :width: 200
 .. |image106| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_10a.png
-   :width: 200px
+   :width: 200
 .. |image107| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_11a.png
-   :width: 200px
+   :width: 200
 .. |image108| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_12a.png
-   :width: 200px
+   :width: 200
 .. |image109| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_13a.png
-   :width: 200px
+   :width: 200
 .. |image110| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_1a.png
-   :width: 200px
+   :width: 200
 .. |image111| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_2a.png
-   :width: 200px
+   :width: 200
 .. |image112| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_3b.png
-   :width: 200px
+   :width: 200
 .. |image113| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_4b.png
-   :width: 200px
+   :width: 200
 .. |image114| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_6b.png
-   :width: 200px
+   :width: 200
 .. |image115| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_7b.png
-   :width: 200px
+   :width: 200
 .. |image116| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_9a.png
-   :width: 200px
+   :width: 200
 .. |image117| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_10b.png
-   :width: 200px
+   :width: 200
 .. |image118| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_12b.png
-   :width: 200px
+   :width: 200
 .. |image119| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_13b.png
-   :width: 200px
+   :width: 200
 .. |image120| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_15b.png
-   :width: 200px
+   :width: 200
 .. |image121| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_16b.png
-   :width: 200px
+   :width: 200
 .. |image122| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_15b.png
-   :width: 200px
+   :width: 200
 .. |image123| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_19b.png
-   :width: 200px
+   :width: 200
 .. |image124| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_21b.png
-   :width: 200px
+   :width: 200
 .. |image125| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_22b.png
-   :width: 200px
+   :width: 200
 .. |image126| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_1a.png
-   :width: 200px
+   :width: 200
 .. |image127| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_2a.png
-   :width: 200px
+   :width: 200
 .. |image128| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_3a.png
-   :width: 200px
+   :width: 200
 .. |image129| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_4a.png
-   :width: 200px
+   :width: 200
 .. |image130| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_5a.png
-   :width: 200px
+   :width: 200
 .. |image131| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_6a.png
-   :width: 200px
+   :width: 200
 .. |image132| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_7a.png
-   :width: 200px
+   :width: 200
 .. |image133| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_8a.png
-   :width: 200px
+   :width: 200
 .. |image134| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_9a.png
-   :width: 200px
+   :width: 200
 .. |image135| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_10a.png
-   :width: 200px
+   :width: 200
 .. |image136| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_11a.png
-   :width: 200px
+   :width: 200
 .. |image137| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_12a.png
-   :width: 200px
+   :width: 200
 .. |image138| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_13a.png
-   :width: 200px
+   :width: 200
 .. |image139| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_1a.png
-   :width: 200px
+   :width: 200
 .. |image140| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_2a.png
-   :width: 200px
+   :width: 200
 .. |image141| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_3b.png
-   :width: 200px
+   :width: 200
 .. |image142| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_4b.png
-   :width: 200px
+   :width: 200
 .. |image143| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_6b.png
-   :width: 200px
+   :width: 200
 .. |image144| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_7b.png
-   :width: 200px
+   :width: 200
 .. |image145| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_9a.png
-   :width: 200px
+   :width: 200
 .. |image146| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_10b.png
-   :width: 200px
+   :width: 200
 .. |image147| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_12b.png
-   :width: 200px
+   :width: 200
 .. |image148| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_13b.png
-   :width: 200px
+   :width: 200
 .. |image149| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_15b.png
-   :width: 200px
+   :width: 200
 .. |image150| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_16b.png
-   :width: 200px
+   :width: 200
 .. |image151| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_15b.png
-   :width: 200px
+   :width: 200
 .. |image152| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_19b.png
-   :width: 200px
+   :width: 200
 .. |image153| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_21b.png
-   :width: 200px
+   :width: 200
 .. |image154| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_22b.png
-   :width: 200px
+   :width: 200
 .. |image155| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-add-channel1and2_1a.png
-   :width: 200px
+   :width: 200
 .. |image156| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_2a.png
-   :width: 200px
+   :width: 200
 .. |image157| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_3.png
-   :width: 200px
+   :width: 200
 .. |image158| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_4.png
-   :width: 200px
+   :width: 200
 .. |image159| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_5.png
-   :width: 200px
+   :width: 200
 .. |image160| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_6.png
-   :width: 200px
+   :width: 200
 .. |image161| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_7.png
-   :width: 200px
+   :width: 200
 .. |image162| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_1a.png
-   :width: 200px
+   :width: 200
 .. |image163| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_2a.png
-   :width: 200px
+   :width: 200
 .. |image164| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_markertable_3.png
-   :width: 200px
+   :width: 200
 .. |image165| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_markertable_4.png
-   :width: 200px
+   :width: 200
 .. |image166| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_markertable_5.png
-   :width: 200px
+   :width: 200
 .. |image167| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_markertable_6.png
-   :width: 200px
+   :width: 200
 .. |image168| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-add-channel1and2_1a.png
-   :width: 200px
+   :width: 200
 .. |image169| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1_2a.png
-   :width: 200px
+   :width: 200
 .. |image170| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_3.png
-   :width: 200px
+   :width: 200
 .. |image171| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_4.png
-   :width: 200px
+   :width: 200
 .. |image172| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_5.png
-   :width: 200px
+   :width: 200
 .. |image173| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_6.png
-   :width: 200px
+   :width: 200
 .. |image174| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_7.png
-   :width: 200px
+   :width: 200
 .. |image175| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_1a.png
-   :width: 200px
+   :width: 200
 .. |image176| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-channel1and2_2a.png
-   :width: 200px
+   :width: 200
 .. |image177| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_markertable_3.png
-   :width: 200px
+   :width: 200
 .. |image178| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_markertable_4.png
-   :width: 200px
+   :width: 200
 .. |image179| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_markertable_5.png
-   :width: 200px
+   :width: 200
 .. |image180| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/spectrum-analyzer-additional-feature_markertable_6.png
-   :width: 200px
+   :width: 200

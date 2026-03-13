@@ -11,16 +11,19 @@ To have external control over Q from the block, refer to the :doc:`State-Variabl
 
 To have external control over Q and F from the block, refer to the :doc:`State-Variable (Q/F input) Filter </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters/statevariableqfinput>`.
 
-The three output pins let you choose among LP, HP, BP filters. The nature of this algorithm is to compute the coefficients for all filter types, giving you access to all of the filters simultaneously.
+The three output pins let you choose among LP, HP, BP filters. The nature of
+this algorithm is to compute the coefficients for all filter types, giving you
+access to all of the filters simultaneously.
 
 Parameter Calculation
 ---------------------
 
-The following describes how the DSP uses input parameters to calculate the filter outputs.
+The following describes how the DSP uses input parameters to calculate the
+filter outputs.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/statevariable_topology.png
    :align: center
-   :width: 400px
+   :width: 400
 
 :math:`\displaystyle f = 2 sin (\pi \frac{F }{ Fs})` :math:`\displaystyle q = \frac{1}{Q}`
 

@@ -3,7 +3,6 @@ ADI Toolboxes for MATLAB and Simulink
 
 .. container:: center round box
 
-
    ..
 
 |youtube>dQDUPi9l8kc|
@@ -13,9 +12,12 @@ ADI offers many different toolboxes to provide native connections from `MATLAB <
 -  Live data streaming to and from hardware,
 -  Automatically generation of C, or HDL from your MATLAB or Simulink algorithms, and run them on microprocessors or FPGAs on ADI modules or components
 -  Simulation of various ADI components inside your MATLAB or Simulink algorithms
--  Doing hands-on, active learning with MATLAB or Simulink and hardware enabling students and learnings to build valuable expertise
+-  Doing hands-on, active learning with MATLAB or Simulink and hardware enabling
+   students and learnings to build valuable expertise
 
-ADI's Toolboxes can help with these activities. Each product family will have different interface inside MATLAB and Simulink, and are managed in different toolboxes.
+ADI's Toolboxes can help with these activities. Each product family will have
+different interface inside MATLAB and Simulink, and are managed in different
+toolboxes.
 
 All of these can be installed via `Add-On Explorer <https://www.mathworks.com/products/matlab/add-on-explorer.html>`_, where you can download, install, and use add-ons without leaving the MATLAB® environment.
 
@@ -85,7 +87,8 @@ Library for ADALM2000
 MathWorks authored support
 ==========================
 
-Some ADI hardware has native support in MATLAB (is authored and supported by MathWorks). This would include:
+Some ADI hardware has native support in MATLAB (is authored and supported by
+MathWorks). This would include:
 
 ADALM-PLUTO
 -----------

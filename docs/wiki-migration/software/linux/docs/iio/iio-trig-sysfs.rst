@@ -4,7 +4,11 @@ iio-trig-sysfs driver
 Description
 -----------
 
-This driver adds a trigger that can be invoked by writing the sysfs file: trigger_now. This approach can be valuable during automated testing or in situations, where other trigger methods are not applicable. For example no RTC or spare GPIOs. Last but not least it allows user space applications to produce triggers.
+This driver adds a trigger that can be invoked by writing the sysfs file:
+trigger_now. This approach can be valuable during automated testing or in
+situations, where other trigger methods are not applicable. For example no RTC
+or spare GPIOs. Last but not least it allows user space applications to produce
+triggers.
 
 Documentation
 -------------
@@ -14,7 +18,8 @@ Documentation
 Adding Linux driver support
 ===========================
 
-Configure kernel with “make menuconfig” (alternatively use “make xconfig” or “make qconfig”)
+Configure kernel with “make menuconfig” (alternatively use “make xconfig” or
+“make qconfig”)
 
 ::
 
@@ -66,7 +71,6 @@ Driver testing
       root:/sys/devices/iio:trigger0> echo 1 > trigger_now
    
 
-
 More Information
 ================
 
@@ -88,6 +92,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_vntewue24
-

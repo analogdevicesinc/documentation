@@ -3,7 +3,8 @@
 APPENDIX E: Plugin Upgrades
 ===========================
 
-Plugins can be upgraded to a higher version (if it exists) using either of the following methods
+Plugins can be upgraded to a higher version (if it exists) using either of the
+following methods
 
 Plugin upgrades
 ---------------
@@ -23,11 +24,9 @@ Project version control
 
    \ **Figure:** Plugin version upgrade through version control
 
-
 .. note::
 
    Upgrade of AnalogDevices.Plugins.Channels.A2BChannel is not supported.
-
 
 Properties window
 ~~~~~~~~~~~~~~~~~
@@ -41,4 +40,3 @@ Properties window
 .. container:: centeralign
 
    \ **Figure:** Plugin version upgrade through Properties window
-

@@ -6,7 +6,7 @@ Basic Description
 
 .. image:: https://wiki.analog.com/_media/university/tools/adalm2000/adalm2000.jpg
    :align: right
-   :width: 300px
+   :width: 300
 
 To use the :adi:`ADALM2000` Active Learning Module, you have:
 
@@ -35,7 +35,8 @@ To use the :adi:`ADALM2000` Active Learning Module, you have:
 
       -  provides access to the Linux console on the M2K device via USB Communication Device Class Abstract Control Model (`USB CDC ACM <https://en.wikipedia.org/wiki/USB_communications_device_class>`_) specification
 
-   -  Mass Storage Device : this will appear to the host as a disk, where you can find links for software uploads, and the serial number of the device.
+   -  Mass Storage Device : this will appear to the host as a disk, where you
+      can find links for software uploads, and the serial number of the device.
 
 -  External Power.
 
@@ -53,16 +54,16 @@ Block Diagram
 -------------
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/devs/block_m2k.png
-   :width: 400px
+   :width: 400
 
 Pinout
 ------
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/users/adalm2000_pinout.png
-   :width: 700px
+   :width: 700
 
 .. image:: https://wiki.analog.com/_media/university/tools/m2k/users/adalm2000-pin-wires.png
-   :width: 600px
+   :width: 600
 
 EU DoC
 ------

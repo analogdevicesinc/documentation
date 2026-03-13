@@ -1,8 +1,6 @@
 AD-FMCOMMS1-EBZ Hardware
 ========================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,33 +17,34 @@ AD-FMCOMMS1-EBZ Hardware
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 Picture and Main components
 ---------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/pin_diagram.png
    :alt: pin_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Outline
 -------
 
-For those that don't want to load up the Allegro viewer, here is a basic outline/component placements of the board.
+For those that don't want to load up the Allegro viewer, here is a basic
+outline/component placements of the board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/outline.png
    :align: left
-   :width: 400px
+   :width: 400
 
 Size
 ----
 
-The size of the board (not including the SMA connectors, which project beyond the edge of the board) is 3.51 inches by 2.72 inches (or about 89mm x 69mm). This exceeds the FMC specifications of 84mm x 69mm).
+The size of the board (not including the SMA connectors, which project beyond
+the edge of the board) is 3.51 inches by 2.72 inches (or about 89mm x 69mm).
+This exceeds the FMC specifications of 84mm x 69mm).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/size.png
    :align: left
-   :width: 400px
+   :width: 400
 
 Downloads
 ---------
@@ -68,4 +67,3 @@ Downloads
    
    -  Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).
    
-

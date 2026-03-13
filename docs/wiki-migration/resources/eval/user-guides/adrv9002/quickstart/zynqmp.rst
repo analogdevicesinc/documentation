@@ -3,13 +3,14 @@ ADRV9002 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_zcu102_quickstart.png.png
    :align: center
-   :width: 600px
+   :width: 600
 
 This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` and :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` on:
 
 -  `ZCU102 <https://www.xilinx.com/ZCU102>`_ The revision that is supported is 1.0 only. Previous versions will not work.
 
-Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees from source can be found here:
+Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees
+from source can be found here:
 
 -  :doc:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source </wiki-migration/resources/tools-software/linux-build/generic/zynqmp>`
 -  :doc:`How to build the ZynqMP boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynqmp-boot-image>`
@@ -88,7 +89,10 @@ In most carriers, the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` and :adi:`ADRV90
 Identify your hardware
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Evaluation boards were equipped with different silicon revisions. All boards built since the middle of December 2020 have C0 silicon, older ones use B0 silicon these are no longer shipped. You can identify the board you have based on its label.
+Evaluation boards were equipped with different silicon revisions. All boards
+built since the middle of December 2020 have C0 silicon, older ones use B0
+silicon these are no longer shipped. You can identify the board you have based
+on its label.
 
 ======== ================
 Label    Silicon Revision
@@ -101,8 +105,8 @@ Label    Silicon Revision
 
 .. tip::
 
-   Each revision of silicon requires its corresponding software support files in the later steps.
-
+   Each revision of silicon requires its corresponding software support files in
+   the later steps.
 
 ZCU102 + ADRV9002NP
 ~~~~~~~~~~~~~~~~~~~
@@ -150,7 +154,6 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 More Information
 ----------------
 
@@ -180,19 +183,17 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w1.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w2.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002xbcz_c0_np_w1.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002xbcz_c0_np_w2.png
-
 
 Testing
 =======
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009/quickstart/zcu102.jpg
    :align: center
-   :width: 900px
+   :width: 900
 
 -  Connect the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` or :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` FMC board to the FPGA carrier **HPC0** FMC0 socket.
 -  On the FMC card set switch to select clock source between:
@@ -204,15 +205,14 @@ Testing
 -  Insert SD card into socket.
 -  Configure ZCU102 for SD BOOT (mode SW6[4:1] switch in the position **OFF,OFF,OFF,ON** as seen in the below picture).
 -  Turn on the power switch on the FPGA board.
--  Observe kernel and serial console messages on your terminal. (use the first ttyUSB or COM port registered)
+-  Observe kernel and serial console messages on your terminal. (use the first
+   ttyUSB or COM port registered)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009/quickstart/zcu102_1p0_bootmode.jpg
    :align: center
-   :width: 400px
-
+   :width: 400
 
 .. esd-warning::
-
 
 SDcard boot files
 -----------------
@@ -228,14 +228,11 @@ Copy these from the ``zynqmp-zcu102-rev10-adrv9002`` directory.
 Messages
 --------
 
-
-
 .. collapsible:: Complete kernel boot log (Click to expand)
 
    .. container:: box bggreen
 
       This specifies any shell prompt running on the target
-
 
       ::
 
@@ -247,7 +244,6 @@ Messages
          NOTICE:  BL31: v2.0(release):xilinx-v2019.2
          NOTICE:  BL31: Built : 10:19:24, Jan 13 2020
          PMUFW:  v1.1
-
 
          U-Boot 2018.01-21436-gbba91bc203 (Jan 13 2020 - 10:50:58 +0200) Xilinx ZynqMP ZCU102 rev1.0, Build: jenkins-development-build_uboot-1
 
@@ -896,8 +892,6 @@ Messages
          permitted by applicable law.
          root@analog:~#
 
-
-
 For independent mode, these devices should be present:
 
 .. container:: box bggreen
@@ -918,7 +912,6 @@ For independent mode, these devices should be present:
               iio:device7: axi-adrv9002-tx2-lpc (buffer capable)
    
 
-
 For MIMO mode, these devices should be present:
 
 .. container:: box bggreen
@@ -936,7 +929,6 @@ For MIMO mode, these devices should be present:
               iio:device4: axi-adrv9002-tx-lpc (buffer capable)
    
 
-
 For more on device modes, check :doc:`device modes. </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
 Pyadi-iio Example
@@ -949,16 +941,17 @@ IIO Oscilloscope Remote
 
 Please see also here::doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The IIO Oscilloscope application can be used to connect to another platform that has a connected device in order to configure the device and read data from it.
+The IIO Oscilloscope application can be used to connect to another platform that
+has a connected device in order to configure the device and read data from it.
 
 Build and start osc on a network enabled Linux host.
 
-Once the application is launched goto Settings -> Connect and enter the IP address of the target in the popup window.
+Once the application is launched goto Settings -> Connect and enter the IP
+address of the target in the popup window.
 
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
-
 
    |image1|
 
@@ -991,7 +984,6 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 More Information
 ----------------
 
@@ -1021,6 +1013,5 @@ Software resources
 -  :doc:`ADRV9002 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

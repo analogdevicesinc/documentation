@@ -9,7 +9,8 @@ Signal Add
 Description
 -----------
 
-The Signal Add block adds the inputs together and no other modification of the signal is done. Care must be taken to avoid clipping.
+The Signal Add block adds the inputs together and no other modification of the
+signal is done. Care must be taken to avoid clipping.
 
 Variants
 --------

@@ -27,9 +27,12 @@ This document presents the steps to setup an environment for using the :adi:`EVA
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7606.png
    :alt: ced1z_ad7606.png
    :align: center
-   :width: 500px
+   :width: 500
 
-The CED1Z board is intended for use in evaluation, demonstration and development of systems using Analog Devices precision converters. It provides the necessary communications between the converter and the PC, programming or controlling the device, transmitting or receiving data over a USB link.
+The CED1Z board is intended for use in evaluation, demonstration and development
+of systems using Analog Devices precision converters. It provides the necessary
+communications between the converter and the PC, programming or controlling the
+device, transmitting or receiving data over a USB link.
 
 The :adi:`AD7606` / :adi:`AD7606-6` / :adi:`AD7606-4` are 16-bit, 8/6/4 channel, simultaneous sampling Analog-to-Digital Data Acquisition systems (DAS). The parts contain analog input clamp protection, 2nd order anti-alias filter, track and hold amplifier, 16-bit charge redistribution successive approximation ADC, flexible digital filter, 2.5V reference and reference buffer and high speed serial and parallel interfaces. The AD7606, AD7606-6, AD7606-4 operate from a single 5V supply and can accommodate ± 10V and ±5V true bipolar input signals while sampling at throughput rates up to 200 kSPS for all channels. The input clamp protection circuitry can tolerate voltages up to ±16.5V. The AD7606 has 1 MΩ analog input impedance regardless of sampling frequency. The single supply operation, on chip filtering and high input impedance eliminates the need for driver op-amps and external bipolar supplies. The AD7606 anti-alias filter has a 3 dB cut off frequency of 22 kHz and provides 40 dB anti-alias rejection when sampling at 200ksps. The flexible digital filter is pin driven, yields improvements in SNR, and reduces the 3 dB bandwidth.
 
@@ -49,7 +52,9 @@ More information
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Hardware Items
 --------------
@@ -64,7 +69,8 @@ Below is presented the list of required hardware items:
 -  :adi:`EVAL-AD7606EDZ evaluation board <EVAL-AD7606EDZ>` **or**
 -  :adi:`EVAL-AD7606-6EDZ evaluation board <EVAL-AD7606-6EDZ>` **or**
 -  :adi:`EVAL-AD7606-4EDZ evaluation board <EVAL-AD7606-4EDZ>`
--  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with
+   a minimum of 512MB of system memory
 
 Software Tools
 --------------
@@ -107,48 +113,56 @@ Extract the Lab Files
 Install the USB-Blaster Device Driver
 -------------------------------------
 
-
-The USB Blaster is used to program the FPGA on the CED1Z board and also for data exchange between the system and a PC. To install the driver plug the Terasic USB Blaster into one of the PCs USB ports. Your Windows PC will find the new hardware and try to install the driver.
+The USB Blaster is used to program the FPGA on the CED1Z board and also for data
+exchange between the system and a PC. To install the driver plug the Terasic USB
+Blaster into one of the PCs USB ports. Your Windows PC will find the new
+hardware and try to install the driver.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image007.png
    :alt: image007.png
    :align: center
-   :width: 350px
+   :width: 350
 
 Since Windows cannot locate the driver for the device the automatic installation will fail and the driver has to be installed manually. In the *Device Manager* right click on the **USB-Blaster** device and select **Update Driver Software**.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image009.png
    :alt: image009.png
    :align: center
-   :width: 700px
+   :width: 700
 
 In the next dialog box select the option **Browse my computer for driver software**. A new dialog will open where it is possible to point to the driver’s location. Set the location to **altera\\11.0\\quartus\\drivers\\usb-blaster** and press **Next**.
 
 |image011.png| |image013.png|
 
-
 .. tip::
 
-   If Windows presents you with a message that the drivers have not passed Windows Logo testing, please click “\ Install this driver software anyway\ ”. Upon installation completion a message will be displayed to inform that the installation is finished.
-
+   If Windows presents you with a message that the drivers have not passed
+   Windows Logo testing, please click “\ Install this driver software anyway\ ”.
+   Upon installation completion a message will be displayed to inform that the
+   installation is finished.
 
 |image017.png|\ |image016.jpg|
 
 .. |image011.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image011.png
-   :width: 400px
+   :width: 400
 .. |image013.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image013.png
-   :width: 400px
+   :width: 400
 .. |image017.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image017.png
-   :width: 400px
+   :width: 400
 .. |image016.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image016.jpg
-   :width: 400px
-
-
+   :width: 400
 
 AD7606 Evaluation Project Overview
 ==================================
 
-The evaluation project contains all the source files needed to build a system that can be used to configure the AD7606 and capture data from it. The system consists of a Nios II softcore processor that is implemented in the FPGA found on the CED1Z board and a PC application. The softcore controls the communication with the Device Under Test (DUT) and the data capture process. The captured data is saved into the SRAM of the CED1Z board and aftwerwards it is read by the PC application and saved into a comma separated values (.csv) file that can be used for further data analysis.
+The evaluation project contains all the source files needed to build a system
+that can be used to configure the AD7606 and capture data from it. The system
+consists of a Nios II softcore processor that is implemented in the FPGA found
+on the CED1Z board and a PC application. The softcore controls the communication
+with the Device Under Test (DUT) and the data capture process. The captured data
+is saved into the SRAM of the CED1Z board and aftwerwards it is read by the PC
+application and saved into a comma separated values (.csv) file that can be used
+for further data analysis.
 
 CED1Z FPGA Design
 -----------------
@@ -175,7 +189,12 @@ AD7606_0                      0x000000c0 -
 **Table 1 System components**            
 ============================= ========== ===
 
-The Nios II processor contains a peripheral that implements the communication protocol with the DUT. The peripheral is divided into three logical modules: a module which implements the interface with the Avalon bus and the communication with the SRAM, a module which implements an Avalon master interface which is used to write data directly in the SRAM and a module which communicates with the AD7606.
+The Nios II processor contains a peripheral that implements the communication
+protocol with the DUT. The peripheral is divided into three logical modules: a
+module which implements the interface with the Avalon bus and the communication
+with the SRAM, a module which implements an Avalon master interface which is
+used to write data directly in the SRAM and a module which communicates with the
+AD7606.
 
 Table 2 describes the port definitions of the Avalon peripheral:
 
@@ -258,12 +277,13 @@ Table 3 describes the registers of the Avalon peripheral:
 | **Table 3 Register description** |        |       |        |                                                                                                             |
 +----------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
 
-The follwing figure presents the timing diagram for the read operations from the AD7606 driver.
+The follwing figure presents the timing diagram for the read operations from the
+AD7606 driver.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ad7606_read_timing.png
    :alt: Read operations time diagram
    :align: center
-   :width: 500px
+   :width: 500
 
 AD7606 module
 ~~~~~~~~~~~~~
@@ -273,7 +293,7 @@ This module is the actual driver of the AD7606 data acquisition system.
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ad7606_driver_pinout.png
    :alt: AD7606 driver pinout
    :align: center
-   :width: 400px
+   :width: 400
 
 +----------------------------------------------------+-----------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Port                                               | Direction | Width | Description                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -326,13 +346,22 @@ This module is the actual driver of the AD7606 data acquisition system.
 Quick Evaluation
 ================
 
-The next sections of this document present all the steps needed to create a fully functional project that can be used for evaluating the operation of the ADI platform. It is possible to skip these steps and load in the FPGA an image that contains a fully functional system that can be used for platform evalution. The first step of the quick evaluation process is to program the FPGA with the image provided in the lab files. Before the image can be loaded the Quartus II Web Edition tool or the Quartus II Programmer must be installed on your computer. To load the FPGA image you must first make sure that the USB cable is not connected to the CED1Z board. Connect the USB Blaster to the J6 connector of the CED1Z and power the board. Run the program_fpga.bat batch file located in the ADIEvalBoard/FPGA folder.
+The next sections of this document present all the steps needed to create a
+fully functional project that can be used for evaluating the operation of the
+ADI platform. It is possible to skip these steps and load in the FPGA an image
+that contains a fully functional system that can be used for platform evalution.
+The first step of the quick evaluation process is to program the FPGA with the
+image provided in the lab files. Before the image can be loaded the Quartus II
+Web Edition tool or the Quartus II Programmer must be installed on your
+computer. To load the FPGA image you must first make sure that the USB cable is
+not connected to the CED1Z board. Connect the USB Blaster to the J6 connector of
+the CED1Z and power the board. Run the program_fpga.bat batch file located in
+the ADIEvalBoard/FPGA folder.
 
 In order to acquire data, follow the instructions in the **Evaluation Project Data Acquisition** section.
 
 NIOS II Software Design
 =======================
-
 
 This section presents the steps for developing a software application that will run on the **CED1Z** system and will be used for controlling and monitoring the operation of the ADI evaluation board.
 
@@ -343,8 +372,10 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 
 .. tip::
 
-   NOTE: Windows 7 users will need to right-click and select Run as administrator. Another method is to right-click and select Properties and click on the Compatibility tab and select the Run This Program As An Administrator checkbox, which will make this a permanent change.
-
+   NOTE: Windows 7 users will need to right-click and select Run as
+   administrator. Another method is to right-click and select Properties and
+   click on the Compatibility tab and select the Run This Program As An
+   Administrator checkbox, which will make this a permanent change.
 
 1. Initialize Eclipse workspace
 -------------------------------
@@ -354,7 +385,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseworkspace.png
    :alt: eclipseworkspace.png
    :align: center
-   :width: 800px
+   :width: 800
 
 2. Create a new software project in the SBT
 -------------------------------------------
@@ -364,7 +395,7 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image025.png
    :alt: image025.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Click the **Browse** button in the **SOPC Information File Name** dialog box.
 -  Select the **uC.sopcinfo** file located in the **ADIEvalBoard/FPGA** directory.
@@ -375,9 +406,10 @@ Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseblankproject.png
    :alt: eclipseblankproject.png
    :align: center
-   :width: 600px
+   :width: 600
 
-The tool will create two new software project directories. Each Nios II application has 2 project directories in the Eclipse workspace.
+The tool will create two new software project directories. Each Nios II
+application has 2 project directories in the Eclipse workspace.
 
 -  The application software project itself - this where the application lives.
 -  The second is the **Board Support Package (BSP)** project associated with the main application software project. This project will build the system library drivers for the specific SOPC system. This project inherits the name from the main software project and appends “\ **\_bsp**\ ” to that.
@@ -385,9 +417,12 @@ The tool will create two new software project directories. Each Nios II applicat
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojects.png
    :alt: eclipseprojects.png
    :align: center
-   :width: 300px
+   :width: 300
 
-Since you chose the blank project template, there are no source files in the application project directory at this time. The BSP contains a directory of software drivers as well as a system.h header file, system initialization source code and other software infrastructure.
+Since you chose the blank project template, there are no source files in the
+application project directory at this time. The BSP contains a directory of
+software drivers as well as a system.h header file, system initialization source
+code and other software infrastructure.
 
 Configure the Board Support Package
 ===================================
@@ -398,7 +433,7 @@ Configure the Board Support Package
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspmenu.png
    :alt: eclipsebspmenu.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The software project provided in this lab does not make use of an operating system. All *stdout*, *stdin* and *stderr* messages will be directed to the *jtag_uart*.
 
@@ -410,9 +445,10 @@ The software project provided in this lab does not make use of an operating syst
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/cedzmainsettings.png
    :alt: cedzmainsettings.png
    :align: center
-   :width: 800px
+   :width: 800
 
-The memory used by the design is should be changed from OnChip ram to SRAM for the .text region.
+The memory used by the design is should be changed from OnChip ram to SRAM for
+the .text region.
 
 -  Select **Linker Script** tab.
 -  Change .text region **Linker Region Name** from **onchip_mem** to **sram**.
@@ -420,7 +456,7 @@ The memory used by the design is should be changed from OnChip ram to SRAM for t
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1zlinkersettings.png
    :alt: ced1zlinkersettings.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Select **File -> Save** to save the board support package configuration to the *settings.bsp* file.
 -  Click the **Generate** button to update the BSP.
@@ -442,7 +478,7 @@ In addition to the board support package settings configured using the **BSP Edi
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspproperties.png
    :alt: eclipsebspproperties.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Add source code to the project
 ==============================
@@ -454,7 +490,7 @@ In Windows Explorer locate the project directory which contains a directory call
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsecopy.png
    :alt: eclipsecopy.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  A dialog box will appear to select the desired operation. Select the option **Copy files and folders** and press **OK**.
 
@@ -462,7 +498,10 @@ In Windows Explorer locate the project directory which contains a directory call
    :alt: image039.png
    :align: center
 
--  This should cause the source files to be physically copied into the file system location of the software project directory and register these source files within the Eclipse workspace so that they appear in the Project Explorer file listing.
+-  This should cause the source files to be physically copied into the file
+   system location of the software project directory and register these source
+   files within the Eclipse workspace so that they appear in the Project
+   Explorer file listing.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseproject.png
    :alt: eclipseproject.png
@@ -481,12 +520,13 @@ Just as you configured the optimization level for the BSP project, you should se
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojproperties.png
    :alt: eclipseprojproperties.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Define Application Include Directories
 ======================================
 
-Application code can be conveniently organized in a directory structure. This section shows how to define these paths in the makefile.
+Application code can be conveniently organized in a directory structure. This
+section shows how to define these paths in the makefile.
 
 -  In the Eclipse environment double click on **my_include_paths.in** to open the file.
 -  Click the **Ctrl** and **A** keys to select all the text. Click the **Ctrl** and **C** keys to copy all the text.
@@ -494,7 +534,7 @@ Application code can be conveniently organized in a directory structure. This se
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseinclude.png
    :alt: eclipseinclude.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Double click on **Makefile** to open the file.
 -  If you see the message shown here about resources being out of sync, right click on the **Makefile** and select **Refresh**.
@@ -532,8 +572,10 @@ These 2 steps will compile and build the associated board support package, then 
 
 .. important::
 
-   In case an error appears at compile time with a description like : //section .rodata loaded at [00400164,00400477] overlaps section .text loaded at [00400164,004054d7] // the enable_alt_load_copy_exceptions option must be unchecked from BSP Editor -> Main -> Settings -> Advanced-> hal.linker
-
+   In case an error appears at compile time with a description like : //section
+   .rodata loaded at [00400164,00400477] overlaps section .text loaded at
+   [00400164,004054d7] // the enable_alt_load_copy_exceptions option must be
+   unchecked from BSP Editor -> Main -> Settings -> Advanced-> hal.linker
 
 2. Verify the Board Connection
 ------------------------------
@@ -555,7 +597,7 @@ The **CED1Z** hardware is designed with a *System ID* peripheral. This periphera
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/ignoreid.png
    :alt: ignoreid.png
    :align: center
-   :width: 800px
+   :width: 800
 
 3. Run the Software Project on the Target
 -----------------------------------------
@@ -568,35 +610,42 @@ To run the software project on the Nios II processor:
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsestartprogram.png
    :alt: eclipsestartprogram.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. hint::
 
-   The code size and start address might be different than the ones displayed in the above screenshot.
-
+   The code size and start address might be different than the ones displayed in
+   the above screenshot.
 
 .. |eclipsebuildbsp.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildbsp.png
-   :width: 400px
+   :width: 400
 .. |eclipsebuildproj.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildproj.png
-   :width: 400px
+   :width: 400
 .. |eclipserunconfig.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipserunconfig.png
-   :width: 400px
+   :width: 400
 .. |image059.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image059.png
-   :width: 400px
-
-
+   :width: 400
 
 Evaluation Project Data Acquisition
 ===================================
 
-After the FPGA is correctly programmed the data acquisition process can start by executing the data_capture.bat script. The data_capture.tcl file can be modified to acquire a variable number of channels, to change the oversampling signals and the range signal. If the number of channels is larger than the number of channels available on the part, the additional channels will be taken from channel 1. (e.g for AD7606-4, channel 5 will have the same data as channel 1, channel 6 will have the same data as channel 2 etc).
+After the FPGA is correctly programmed the data acquisition process can start by
+executing the data_capture.bat script. The data_capture.tcl file can be modified
+to acquire a variable number of channels, to change the oversampling signals and
+the range signal. If the number of channels is larger than the number of
+channels available on the part, the additional channels will be taken from
+channel 1. (e.g for AD7606-4, channel 5 will have the same data as channel 1,
+channel 6 will have the same data as channel 2 etc).
 
 .. hint::
 
-   The configuration from data_capture.tcl is performed the first time the script is executed. If changes are performed after that, the system must be reinitialized by reprogramming the FPGA.
+   The configuration from data_capture.tcl is performed the first time the
+   script is executed. If changes are performed after that, the system must be
+   reinitialized by reprogramming the FPGA.
 
-
-If the resulting csv file is opened with Microsoft Excel, the data will be displayed on a different number of columns, each column corresponding to a channel.
+If the resulting csv file is opened with Microsoft Excel, the data will be
+displayed on a different number of columns, each column corresponding to a
+channel.
 
 More information
 ================

@@ -3,18 +3,24 @@ ADALM-PLUTO Prerequisites
 
 To understand what the prerequisites are for using the ADALM-PLUTO (PlutoSDR), you need to understand what you are trying to do, and what software environment you want to do it in. The PlutoSDR is a powerful/flexible device, which can be used both in a standalone mode, or with a host, in multiple different software environments. The one that is *best* is unique to the problem at hand, so we don't specifically recommend a single solution. This page discusses both hardware and software options, and lists the most common [1]_ configurations:
 
-The PlutoSDR supports USB 2.0 On-The-Go (OTG), and can be used in two different modes:
+The PlutoSDR supports USB 2.0 On-The-Go (OTG), and can be used in two different
+modes:
 
--  device, where the PlutoSDR communicates directly to a host, and streams data from/to the host.
+-  device, where the PlutoSDR communicates directly to a host, and streams data
+   from/to the host.
 
-   -  Host with at least one USB 2.0 Port, which can supply 500mA (no self powered hubs), which runs Linux, OS X, or Windows
+   -  Host with at least one USB 2.0 Port, which can supply 500mA (no self
+      powered hubs), which runs Linux, OS X, or Windows
 
       -  example: Personal Computer, Laptop, Tablet (running Linux), Raspberry Pi, Beagle Board, etc.
-      -  The only thing necessary is the included USB cable. If you need something longer, it should work, but has not been tested.
+      -  The only thing necessary is the included USB cable. If you need
+         something longer, it should work, but has not been tested.
 
--  host, where the PlutoSDR is the "brains" of the system, and communicates to other things via USB Wifi or USB Ethernet.
+-  host, where the PlutoSDR is the "brains" of the system, and communicates to
+   other things via USB Wifi or USB Ethernet.
 
-   -  You need a USB OTG Cable, compatible USB dongle, and a USB Power supply (must be purchased separately)
+   -  You need a USB OTG Cable, compatible USB dongle, and a USB Power supply
+      (must be purchased separately)
 
 You will also need an appropriate antenna for the frequency that you are interested in. Although there is an :doc:`antenna </wiki-migration/university/tools/pluto/users/antennas>` included with the purchase of the ADALM-PLUTO, it may not be appropriate for the frequency that you are interested in (anything under 350 MHz).
 
@@ -35,28 +41,34 @@ MATLAB / Simulink
 
 -  You need to have a license for MATLAB® and/or Simulink®.
 
-   -  Depending on who you are, and where you are, you already may have access to a license.
+   -  Depending on who you are, and where you are, you already may have access
+      to a license.
 
       -  If you are a student or faculty at a post-secondary institution (University, Community College, etc), check out MathWorks `Academic <https://www.mathworks.com/academia.html>`_ section. Many schools provide a `Total Academic Headcount (TAH) <https://www.mathworks.com/academia/tah-support-program/eligibility/?s_tid=srctitle>`_ license or some require/ask their students to obtain `Student version <https://www.mathworks.com/academia/student_version.html>`_\  [2]_
       -  If you are a hobbyist, enthusiast or maker, check out `MATLAB Home <https://www.mathworks.com/products/matlab-home.html>`_.
       -  There are many license options, if you are unsure, check out the MathWorks `store <https://www.mathworks.com/store>`_
 
    -  You need to have a host computer, which supports the minimum `System Requirements for MATLAB <https://www.mathworks.com/support/sysreq.html>`_.
-   -  No matter which license you have [3]_, the following toolboxes are required to use MATLAB with the PlutoSDR:
+   -  No matter which license you have [3]_, the following toolboxes are
+      required to use MATLAB with the PlutoSDR:
 
       -  `DSP System Toolbox <https://www.mathworks.com/products/dsp-system.html>`_
       -  `Signal Processing Toolbox <https://www.mathworks.com/products/signal.html>`_
       -  `Communications System Toolbox <https://www.mathworks.com/products/communications.html>`_
 
    -  You also will need a `supported and compatible compiler <https://www.mathworks.com/support/compilers.html>`_, many which are zero cost, or free.
-   -  We have verified things on a subset of what MATHWORKS supports, including Windows 10, Windows 8.1, Windows 8, Windows 7 Service Pack 1, macOS Sierra 10.12, macOS El Capitan 10.11, macOS Yosemite 10.10, Ubuntu 14.04 LTS and 16.04 LTS, Debian 7.x, 8.x.
+   -  We have verified things on a subset of what MATHWORKS supports, including
+      Windows 10, Windows 8.1, Windows 8, Windows 7 Service Pack 1, macOS Sierra
+      10.12, macOS El Capitan 10.11, macOS Yosemite 10.10, Ubuntu 14.04 LTS and
+      16.04 LTS, Debian 7.x, 8.x.
 
 GNU Radio
 ~~~~~~~~~
 
 -  GNU Radio is mostly a `Linux <https://wiki.gnuradio.org/index.php/InstallingGR>`_ only tool. It can be run on `Windows <https://wiki.gnuradio.org/index.php/InstallingGR#Windows>`_, but we have not tested in there.
 
-   -  We have verified things on Ubuntu 16.04 LTS, Debian 8.x and updated versions.
+   -  We have verified things on Ubuntu 16.04 LTS, Debian 8.x and updated
+      versions.
 
 PlutoSDR as a host
 ------------------
@@ -64,9 +76,12 @@ PlutoSDR as a host
 To use PlutoSDR as a host, there are two different modes:
 
 -  simple, easy, works out of the box
--  complex, difficult, requires you to recompile the firmware running on the PlutoSDR
+-  complex, difficult, requires you to recompile the firmware running on the
+   PlutoSDR
 
-Either mode requires a power supply plugged into the Power USB connector, which can provide power for both the USB dongle you are plugging in, and the Pluto SDR itself. We recommend at least 5V, 1A or above, depending on the firmware image.
+Either mode requires a power supply plugged into the Power USB connector, which
+can provide power for both the USB dongle you are plugging in, and the Pluto SDR
+itself. We recommend at least 5V, 1A or above, depending on the firmware image.
 
 -  AC adapters we have verified:
 
@@ -85,7 +100,10 @@ Simple Host
 
 The default firmware images supports a variety of USB devices including :doc:`mass storage devices </wiki-migration/university/tools/pluto/devs/usb_otg>`, some :doc:`Ethernet and WiFi devices </wiki-migration/university/tools/pluto/usb_otg_host_function_support>` (but not all, since each takes up space in the firmware).
 
-You should be able to just plug things in with a OTG adapter or cable (which supports OTG - many OTG cables don't properly connect the OTG ID signal, and the PlutoSDR has no idea anything is plugged in), and have things work out of the box to stream data over ethernet or Wifi.
+You should be able to just plug things in with a OTG adapter or cable (which
+supports OTG - many OTG cables don't properly connect the OTG ID signal, and the
+PlutoSDR has no idea anything is plugged in), and have things work out of the
+box to stream data over ethernet or Wifi.
 
 If the PlutoSDR finds a mass storage with specific shell or python script, it will begin to save data to the mass storage device (enabling you to do low cost `wireless site surveys <https://en.wikipedia.org/wiki/Wireless_site_survey>`_), which you can load into SDR frameworks later.
 

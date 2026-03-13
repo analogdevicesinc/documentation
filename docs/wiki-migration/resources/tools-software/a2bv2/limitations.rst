@@ -1,11 +1,13 @@
 LIMITATIONS
 ===========
 
-The following are some of the important limitations known at the time of this release:
+The following are some of the important limitations known at the time of this
+release:
 
 -  AD243x specific limitations
 
-   -  Power calculation feature in SigmaStudio Plus is yet to be updated for AD243x.
+   -  Power calculation feature in SigmaStudio Plus is yet to be updated for
+      AD243x.
 
       -  BERT PRBS mode results in errors for AD243x when Data tunnels are enabled.
       -  Partial discovery is not supported for AD2435
@@ -24,7 +26,8 @@ The following are some of the important limitations known at the time of this re
 -  Partial Discovery is supported only when upstream is configured
 -  Custom Node Authentication:
 
-   -  Backspace or delete from the middle of the identifier text in the number (hex) notation is not supported.
+   -  Backspace or delete from the middle of the identifier text in the number
+      (hex) notation is not supported.
 
 -  Thrift limitations:
 
@@ -35,11 +38,13 @@ The following are some of the important limitations known at the time of this re
 -  Bandwidth:
 
    -  Response cycle calculation always use the No TDM offset when during schematic link compile download.
-   -  Bandwidth Break Down Chart numbers doesn't match with Bandwidth Excel Sheet 7.0
+   -  Bandwidth Break Down Chart numbers doesn't match with Bandwidth Excel
+      Sheet 7.0
 
 -  Custom Platform:
 
-   -  Expected HPSW_CFG is CFG-0 for AD2435 in Custom Platform, this has to be explicitly change for first time to CFG-4 configuration.
+   -  Expected HPSW_CFG is CFG-0 for AD2435 in Custom Platform, this has to be
+      explicitly change for first time to CFG-4 configuration.
 
 -  Peripheral programming window below are supported.
 

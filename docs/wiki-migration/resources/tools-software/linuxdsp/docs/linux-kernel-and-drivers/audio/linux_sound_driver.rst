@@ -4,9 +4,11 @@ Linux Sound Driver
 Introduction
 ------------
 
-This section describes the steps required to build and use sound driver to record and play audio files on Linux using an ADSP-SC5xx board.
+This section describes the steps required to build and use sound driver to
+record and play audio files on Linux using an ADSP-SC5xx board.
 
-The Advanced Linux Sound Architecture (ALSA) provides audio and MIDI functionality to the Linux operating system.
+The Advanced Linux Sound Architecture (ALSA) provides audio and MIDI
+functionality to the Linux operating system.
 
 For more information about the Advanced Linux Sound Architecture (ALSA), please refer to http://www.alsa-project.org/main/index.php/Main_Page.
 
@@ -23,22 +25,33 @@ Hardware Setup
 
 -  Two line cables, a line-in and line-out cables
 
-Take the ADSP-SC573 EZ-Board as an example, connect line-in cables to J3 and line-out cables to J11, or you can plug one headphone into the Headphone JACK directly for DAC.
+Take the ADSP-SC573 EZ-Board as an example, connect line-in cables to J3 and
+line-out cables to J11, or you can plug one headphone into the Headphone JACK
+directly for DAC.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/audio/lkad-linux_sound_driver-hw.jpg
-   :width: 400px
+   :width: 400
 
 Software Configuration
 ----------------------
 
-The following configuration should be done on top of the SC589-ezkit/SC584-ezkit/SC573-ezkit/SC589-MINI default configuration.
+The following configuration should be done on top of the
+SC589-ezkit/SC584-ezkit/SC573-ezkit/SC589-MINI default configuration.
 
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-The ALSA utility provides many simple and powerful tools for testing the ALSA drivers to make sure they are working correctly, such as arecord, aplay, amixer, speaker-test, etc. arecord is a command-line soundfile recorder for the ALSA soundcard driver, it supports several file formats and multiple soundcards with multiple devices, aplay is much the same, only it plays instead of recording; amixer allows command-line control of the mixer for the ALSA soundcard driver; speaker-test is a command-line speaker test tone generator for ALSA, it can be used to test the speakers of a device.
+The ALSA utility provides many simple and powerful tools for testing the ALSA
+drivers to make sure they are working correctly, such as arecord, aplay, amixer,
+speaker-test, etc. arecord is a command-line soundfile recorder for the ALSA
+soundcard driver, it supports several file formats and multiple soundcards with
+multiple devices, aplay is much the same, only it plays instead of recording;
+amixer allows command-line control of the mixer for the ALSA soundcard driver;
+speaker-test is a command-line speaker test tone generator for ALSA, it can be
+used to test the speakers of a device.
 
-Add the alsa-utils and alsa-lib packages in the filesystem, they're enabled in adsp-sc5xx-full image by default.
+Add the alsa-utils and alsa-lib packages in the filesystem, they're enabled in
+adsp-sc5xx-full image by default.
 
 Enable alsa-lib and alsa-utils support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -48,7 +61,8 @@ Enable alsa-lib and alsa-utils support
    vim build/conf/local.conf
    IMAGE_INSTALL_append = "alsa-utils alsa-lib"
 
-Then run “bitbake adsp-sc5xx-minimal -C compile” or “bitbake adsp-sc5xx-full -C compile” to generate the filesystem.
+Then run “bitbake adsp-sc5xx-minimal -C compile” or “bitbake adsp-sc5xx-full -C
+compile” to generate the filesystem.
 
 Configure Linux Kernel
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -94,10 +108,11 @@ Example
 Find the device
 ~~~~~~~~~~~~~~~
 
-After the configuration in above steps, you are able to find the audio device information in boot log:
+After the configuration in above steps, you are able to find the audio
+device information in boot log:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/audio/lkad-linux_sound_driver-find_the_device.jpg
-   :width: 400px
+   :width: 400
 
 You are able to use arecord -l and aplay -l to find the card number.
 
@@ -230,7 +245,8 @@ You can set 0 or 1 to mute or unmute DAC channel 1.
       : values=255
       | dBminmaxmute-min=-95.62dB,max=0.00dB
 
-You can set value 0 - 255. The range is from -95.625 dB to 0 dB. Each 1-bit step corresponds to a 0.375dB change in volume.
+You can set value 0 - 255. The range is from -95.625 dB to 0 dB. Each 1-bit step
+corresponds to a 0.375dB change in volume.
 
 'DAC1 Power Adjust' is the DAC channel 1 power adjust control.
 
@@ -250,7 +266,10 @@ You can choose a power state for this DAC channel.
 Record audio file
 ~~~~~~~~~~~~~~~~~
 
-You can use arecord tool to record audio stream, and we already know "0" is the card number, "1" is the device number for capture case in "Find the device" section, so you can use "-D hw:<card number>, <device number>" to select the pcm device.
+You can use arecord tool to record audio stream, and we already know "0" is the
+card number, "1" is the device number for capture case in "Find the
+device" section, so you can use "-D hw:<card number>, <device number>" to select
+the pcm device.
 
 For example, record stereo 48KHz 32bits stream:
 

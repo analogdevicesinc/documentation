@@ -16,7 +16,8 @@ Structure
 
 Description
 
-Backchannel information structure which needs to be populated by the function which calls adi_ss_comm_Packetize().
+Backchannel information structure which needs to be populated by the function
+which calls adi_ss_comm_Packetize().
 
 Fields
 

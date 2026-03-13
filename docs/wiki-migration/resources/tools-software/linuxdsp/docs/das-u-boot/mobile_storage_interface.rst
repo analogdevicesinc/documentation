@@ -4,13 +4,20 @@ Mobile Storage Interface (MSI)
 Overview
 --------
 
-Some of the ADSP-SC5xx processors provide a mobile storage interface(MSI). MSI is a fast, synchronous controller that uses various protocols to communicate with MMC, SD, and SDIO cards to address the growing storage need in embedded systems, handheld and consumer electronics applications requiring low power. The MSI is compatible with the following protocols.
+Some of the ADSP-SC5xx processors provide a mobile storage interface(MSI).
+MSI is a fast, synchronous controller that uses various protocols to communicate
+with MMC, SD, and SDIO cards to address the growing storage need in embedded
+systems, handheld and consumer electronics applications requiring low power. The
+MSI is compatible with the following protocols.
 
 -  MMC (Multimedia Card) bus protocol
 -  SD (Secure Digital) bus protocol
 -  SDIO (Secure Digital Input Output) bus protocol
 
-All of these storage solutions use similar interface protocols. The main difference between MMC and SD support is the initialization sequence. The main difference between SD and SDIO support is the use of interrupt and read wait signals for SDIO.
+All of these storage solutions use similar interface protocols. The main
+difference between MMC and SD support is the initialization sequence. The main
+difference between SD and SDIO support is the use of interrupt and read wait
+signals for SDIO.
 
 Hardware Setup
 --------------
@@ -27,7 +34,7 @@ Hardware Setup
 The SD/MMC card slot is **J18** on the SC589-EZKIT and SC573-EZKIT board. This slot accepts full-size SD and MMC cards, or microSD cards with an adapter.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/das-u-boot/dasu-mobile_sorage-hw_setup.jpg
-   :width: 600px
+   :width: 600
 
 Software Configuration
 ----------------------
@@ -91,4 +98,3 @@ Get More MMC Command Usage
       **Back To: *\*\ :doc:`Das U-boot </wiki-migration/resources/tools-software/linuxdsp/docs/das-u-boot>`
 
    
-

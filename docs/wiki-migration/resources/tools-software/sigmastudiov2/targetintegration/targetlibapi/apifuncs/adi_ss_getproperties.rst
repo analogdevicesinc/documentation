@@ -11,7 +11,8 @@ Prototype
 
 Description
 
-The function is to get the current state and other properties of SS+ instance from SigmaStudio+.
+The function is to get the current state and other properties of SS+ instance
+from SigmaStudio+.
 
 Parameters
 

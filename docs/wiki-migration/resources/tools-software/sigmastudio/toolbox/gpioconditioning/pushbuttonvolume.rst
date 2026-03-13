@@ -5,7 +5,8 @@ PushButton Volume
 
 |pushvolpic1.png| The PushButton Volume block can be used with the GPIO push buttons to control the volume of an input audio signal. This block has the functionality of the Push and Hold, Up/Down Control, Index lookup Table, and SW External Volume control all in one block. The user has the flexibility to define a custom volume curve that will be scrolled through by the pushbuttons.
 
-This block has the same functionality as the PushButton Volume, Mute algorithm, without the mute feature when both GPIO buttons are pressed simultaneously.
+This block has the same functionality as the PushButton Volume, Mute algorithm,
+without the mute feature when both GPIO buttons are pressed simultaneously.
 
 Input Pins
 ----------
@@ -76,14 +77,29 @@ DSP Parameter Information
 Algorithm Information
 ---------------------
 
-The PushButton Volume control allows two GPIO inputs from push buttons to control a custom volume curve. The volume curve can be any linear, logarithmic, or custom curve designed with any number of points. When the "Up" pushbutton is pressed the volume will increase, indexing up through table values. When the "Down" pushbutton is pressed the volume will decrease, indexing down through table values. When the limit index is reached on either end, the volume will just be held.
+The PushButton Volume control allows two GPIO inputs from push buttons to
+control a custom volume curve. The volume curve can be any linear, logarithmic,
+or custom curve designed with any number of points. When the "Up" pushbutton is
+pressed the volume will increase, indexing up through table values. When the
+"Down" pushbutton is pressed the volume will decrease, indexing down through
+table values. When the limit index is reached on either end, the volume will
+just be held.
 
-When a pushbutton is held up or down, the algorithm will scroll through the volume gain points at rates determined by the hold and repeat times. The hold time designates how long the pushbutton must be held until a new repeat pulse is triggered. The repeast pulse determines the interval between incrementing or decrementing through the volume points while the button is held.
+When a pushbutton is held up or down, the algorithm will scroll through the
+volume gain points at rates determined by the hold and repeat times. The hold
+time designates how long the pushbutton must be held until a new repeat pulse is
+triggered. The repeast pulse determines the interval between incrementing or
+decrementing through the volume points while the button is held.
 
 Example
 -------
 
-The following image shows how two GPIO inputs are used to control the volume algorithm in the PushButton Volume block. The PushButton Volume algorithm has been grown in order to support stereo audio. A mux switch allows comparison between the direct signal from the Inputs, and the volume adjusted signal, routed to the Outputs. The Interface Read and Write blocks allow the last volume level to be saved and recalled.
+The following image shows how two GPIO inputs are used to control the volume
+algorithm in the PushButton Volume block. The PushButton Volume algorithm has
+been grown in order to support stereo audio. A mux switch allows comparison
+between the direct signal from the Inputs, and the volume adjusted signal,
+routed to the Outputs. The Interface Read and Write blocks allow the last volume
+level to be saved and recalled.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/pushvolpic2.png
    :alt: pushvolpic2.png

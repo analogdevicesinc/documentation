@@ -1,7 +1,16 @@
 AD3552R Dual Channel, 16-Bit, 33 MUPS, Multispan, Multi-IO SPI DAC Linux device driver
 ======================================================================================
 
-The AD3552R is a low drift, dual channel, ultra-fast, 16-bit accuracy, current output digital-to-analog converter (DAC) that can be configured in multiple voltage span ranges. The AD3552R operates with a fixed 2.5 V reference. Each DAC incorporates three drift-compensating feedback resistors for the required external trans-impedance amplifier (TIA) that scales the output voltage. Offset and gain scaling registers allow for the generation of multiple output span ranges, such as 0 V to 2.5 V, 0 V to 5 V, 0 V to 10 V, −5 V to +5 V, and −10 V to +10 V, and custom intermediate ranges with full 16-bit resolution. The DAC can operate in fast mode for maximum speed or precision mode for maximum accuracy.
+The AD3552R is a low drift, dual channel, ultra-fast, 16-bit accuracy, current
+output digital-to-analog converter (DAC) that can be configured in multiple
+voltage span ranges. The AD3552R operates with a fixed 2.5 V reference. Each DAC
+incorporates three drift-compensating feedback resistors for the required
+external trans-impedance amplifier (TIA) that scales the output voltage. Offset
+and gain scaling registers allow for the generation of multiple output span
+ranges, such as 0 V to 2.5 V, 0 V to 5 V, 0 V to 10 V, −5 V to +5 V, and −10 V
+to +10 V, and custom intermediate ranges with full 16-bit resolution. The DAC
+can operate in fast mode for maximum speed or precision mode for maximum
+accuracy.
 
 Supported Devices
 -----------------
@@ -46,7 +55,8 @@ Example Linux Device-Tree Initialization
 Required devicetree properties:
 
 -  compatible: Should always be "adi,axi-ad3552r"
--  clocks: define reference clock See Documentation/devicetree/bindings/clock/clock-bindings.txt
+-  clocks: define reference clock See
+   Documentation/devicetree/bindings/clock/clock-bindings.txt
 
 Optional properties:
 
@@ -78,12 +88,14 @@ Example:
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -108,8 +120,15 @@ Hardware configuration
 Driver testing / API
 ====================
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -149,7 +168,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       root:/sys/bus/iio/devices/iio:device1#
    
 
-
 Show device name
 ----------------
 
@@ -163,7 +181,6 @@ Show device name
       root:/sys/bus/iio/devices/iio:device1> cat name
       axi-ad3552r
    
-
 
 DAC sampling rate (sampling_frequency)
 --------------------------------------
@@ -183,7 +200,6 @@ Read only attribute which returns the DAC sampling rate in Hz.
       -bash: echo: write error: Invalid argument
       root@analog:/sys/bus/iio/devices/iio:device1#
    
-
 
 More Information
 ================
@@ -206,6 +222,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/youtube>p_vntewue24
-

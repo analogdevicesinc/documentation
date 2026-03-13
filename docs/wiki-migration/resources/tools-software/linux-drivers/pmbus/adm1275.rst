@@ -28,7 +28,10 @@ Evaluation Boards
 Description
 -----------
 
-The ADM1293 and ADM1294 are high accuracy integrated digital power monitors that offer digital current, voltage, and power monitoring using an on-chip, 12-bit analog-to-digital converter (ADC), communicated through a PMBus compliant I2C interface.
+The ADM1293 and ADM1294 are high accuracy integrated digital power monitors that
+offer digital current, voltage, and power monitoring using an on-chip, 12-bit
+analog-to-digital converter (ADC), communicated through a PMBus compliant I2C
+interface.
 
 The `PMBus Core Driver <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/hwmon/pmbus/pmbus_core.c?id=HEAD>`_ provides a common driver for PMBus compliant devices. The adm1275 Linux driver is built on top of this core driver and provides adm1xxx specific functions and attributes on top of the ones provided by the core.
 
@@ -66,7 +69,8 @@ Files
 Example I2C device initialization
 =================================
 
-The ADM1xxx uses an I2C interface. Currently, the devices can only be instantiated via device tree.
+The ADM1xxx uses an I2C interface. Currently, the devices can only be
+instantiated via device tree.
 
 Required devicetree properties:
 
@@ -102,17 +106,19 @@ For more supported devicetree properties take a look to :git-linux:`dt-bindings 
 Enabling Linux driver support
 =============================
 
-Configure kernel with “make menuconfig” (alternatively use “make xconfig” or “make qconfig”).
+Configure kernel with “make menuconfig” (alternatively use “make xconfig” or
+“make qconfig”).
 
 .. hint::
 
-   The ADM1xxxx I2C driver depends on CONFIG_I2C, SENSORS_PMBUS, and on SENSORS_ADM1275.
-
+   The ADM1xxxx I2C driver depends on CONFIG_I2C, SENSORS_PMBUS, and on
+   SENSORS_ADM1275.
 
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -133,7 +139,12 @@ Driver testing
 HWMON device files
 ------------------
 
-Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX, where X is the hwmon device index. Under every of these directory folders there are a set of files, depending on what kind of hardware monitoring is supported (temperature, voltage). In order to determine which hwmon device corresponds to which hardware chip, the user can read the name file under /sys/class/hwmon/hwmonX/name.
+Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX,
+where X is the hwmon device index. Under every of these directory folders there
+are a set of files, depending on what kind of hardware monitoring is supported
+(temperature, voltage). In order to determine which hwmon device corresponds to
+which hardware chip, the user can read the name file under
+/sys/class/hwmon/hwmonX/name.
 
 .. container:: box bggreen
 
@@ -197,7 +208,6 @@ Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX, w
       root@raspberrypi:/sys/class/hwmon/hwmon2#
    
 
-
 For each type of monitored value (current, power), the file will look like **:math:`{type}_`\ {monitored_value}\_\ :math:`{channel}**, where **`\ {monitored_value}** can be the current value, the high threshold, etc... The channel is the index when, for example, a device can monitor more than one voltage. For more information on the files format, take a look to `sysfs-interface <https://www.kernel.org/doc/Documentation/hwmon/sysfs-interface>`_.
 
 Show device name
@@ -214,11 +224,11 @@ Show device name
       adm1281
    
 
-
 Show current values
 ~~~~~~~~~~~~~~~~~~~
 
-The device supports readings of current, voltage, power, temperature and energy. To get, for example, the value of the monitored voltage:
+The device supports readings of current, voltage, power, temperature and energy.
+To get, for example, the value of the monitored voltage:
 
 .. container:: box bggreen
 
@@ -230,7 +240,6 @@ The device supports readings of current, voltage, power, temperature and energy.
       root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_input
       15199
    
-
 
 Show highest read value
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -246,7 +255,6 @@ Show highest read value
       15199
    
 
-
 Show high threshold
 ~~~~~~~~~~~~~~~~~~~
 
@@ -260,7 +268,6 @@ Show high threshold
       root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_max
       20893
    
-
 
 Show low threshold
 ~~~~~~~~~~~~~~~~~~
@@ -276,7 +283,6 @@ Show low threshold
       0
    
 
-
 Show high threshold alarm
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -290,7 +296,6 @@ Show high threshold alarm
       root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_max_alarm
       0
    
-
 
 Show low threshold alarm
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -306,11 +311,11 @@ Show low threshold alarm
       0
    
 
-
 Show label
 ~~~~~~~~~~
 
-Some channels, support a label attribute which specifies the name of the channel being monitored.
+Some channels, support a label attribute which specifies the name of the channel
+being monitored.
 
 .. container:: box bggreen
 
@@ -322,7 +327,6 @@ Some channels, support a label attribute which specifies the name of the channel
       root@raspberrypi:/sys/class/hwmon/hwmon2# cat in1_label
       vin
    
-
 
 Set High threshold
 ~~~~~~~~~~~~~~~~~~
@@ -340,7 +344,6 @@ Set High threshold
       root@raspberrypi:/sys/class/hwmon/hwmon2#
    
 
-
 Set Low threshold
 ~~~~~~~~~~~~~~~~~
 
@@ -356,7 +359,6 @@ Set Low threshold
       3342
       root@raspberrypi:/sys/class/hwmon/hwmon2#
    
-
 
 Reset History
 ~~~~~~~~~~~~~
@@ -376,7 +378,6 @@ Reset History
       root@raspberrypi:/sys/class/hwmon/hwmon2#
    
 
-
 More Information
 ================
 
@@ -391,4 +392,3 @@ HWMON pointers
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

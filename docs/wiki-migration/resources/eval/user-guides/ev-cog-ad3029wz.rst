@@ -8,7 +8,9 @@ The :adi:`EV-COG-AD3029WZ <en/design-center/evaluation-hardware-and-software/eva
 -  Keil uVision 4 and above
 -  ARM mbed Compiler
 
-Make sure a valid license for the selected toolchain is installed before using EV-COG-AD3029WZ board. \*\* The software and power measurement is same for both EV-COG-AD3029WZ and EV-COG-AD3029LZ \*\*
+Make sure a valid license for the selected toolchain is installed before using
+EV-COG-AD3029WZ board. \*\* The software and power measurement is same for both
+EV-COG-AD3029WZ and EV-COG-AD3029LZ \*\*
 
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz/introduction>`
 -  `Software Packs & Board Support Package <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029wz/packs_&_bsp>`_: EV-COG-AD3029WZ software architecture is categorized into 4 groups as below.
@@ -45,5 +47,5 @@ Make sure a valid license for the selected toolchain is installed before using E
 -  :doc:`Help & Support </wiki-migration/resources/eval/user-guides/ev-cog-ad4050lz/help_support>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/front_image_new.png
-   :width: 550px
+   :width: 550
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/drawing1-copy.png

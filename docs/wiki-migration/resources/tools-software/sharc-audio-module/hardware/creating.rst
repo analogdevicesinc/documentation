@@ -1,12 +1,15 @@
 Creating your own Fin Board
 ===========================
 
-Are you interested in creating your own Fin board to connect to the expansion interface of the SHARC Audio Module? This page contains a number some things to help you get started.
+Are you interested in creating your own Fin board to connect to the expansion
+interface of the SHARC Audio Module? This page contains a number some things to
+help you get started.
 
 Fin - EAGLE Template
 --------------------
 
-The link below contains an Autodesk EAGLE schematic and PCB layout files for a blank SHARC Audio Module Fin with the two 64-pin headers.
+The link below contains an Autodesk EAGLE schematic and PCB layout files for a
+blank SHARC Audio Module Fin with the two 64-pin headers.
 
 `adi_sam_fin_template_v1.0.zip <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/adi_sam_fin_template_v1.0.zip>`_
 
@@ -14,20 +17,26 @@ The rendering below shows the front and back side of the PCB template.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/sharc_fin_template_rendering.png
    :align: center
-   :width: 600px
+   :width: 600
 
 `Autodesk EAGLE <https://www.autodesk.com/products/eagle/overview>`_ is an affordable yet powerful schematic capture and layout tool and used extensively in the maker space. It's free for students and has a subscription fee of $15/month for the standard edition. It's also closely linked with `Autodesk Fusion 360 <https://www.autodesk.com/campaigns/fusion-360-for-hobbyists>`_ which is a powerful 3D CAD tool that is free for hobbyists and makers.
 
 If you're looking for a low-cost PCB fab to fab for your Fin, check out https://oshpark.com/.
 
-To access the components used in the PCB design, go to File->Export->Libraries when editing the PCB. This will create a new EAGLE library file with the components used in the template design.
+To access the components used in the PCB design, go to File->Export->Libraries
+when editing the PCB. This will create a new EAGLE library file with the
+components used in the template design.
 
 Fin Design Considerations
 -------------------------
 
-The ADSP-SC589 has a rich peripheral set. Despite the fact that many of these are brought out to connectors on the SHARC Audio Module, there are still quite a few GPIO pins and other peripherals that are accessible on the two 64-pin expansion headers of the SHARC Audio Module.
+The ADSP-SC589 has a rich peripheral set. Despite the fact that many of these
+are brought out to connectors on the SHARC Audio Module, there are still quite a
+few GPIO pins and other peripherals that are accessible on the two 64-pin
+expansion headers of the SHARC Audio Module.
 
-The signals brought out the 64-pin headers are generally not used in other areas of the SHARC Audio Module with a few exceptions:
+The signals brought out the 64-pin headers are generally not used in other areas
+of the SHARC Audio Module with a few exceptions:
 
 TWI / I2C (TWI0 / TWI1 / TWI2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,7 +48,8 @@ SPI (SPI0 / SPI1 / SPI2)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  SPI0 and SPI1 are available on the 64-pin header. SPI1 is also used on the SigmaStudio tuning header (P2). **SPI0 is the recommended SPI port to use on Fin boards.**
--  SPI2 connects to the boot flash on the SHARC Audio Module. The boot flash is only accessed at power up and when reprogramming the flash from the tools.
+-  SPI2 connects to the boot flash on the SHARC Audio Module. The boot flash is
+   only accessed at power up and when reprogramming the flash from the tools.
 
 UART (UART0 / UART1 / UART2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,4 +63,9 @@ UART (UART0 / UART1 / UART2)
 Analog audio signals
 ~~~~~~~~~~~~~~~~~~~~
 
--  The ADAU1761 has an auxiliary set of analog inputs that are brought out to the expansion header. Additionally, the headphone output signals from the ADAU1761 are also brought out to the expansion header. These signals don't go through any sort of buffering so see the ADAu1761 datasheet to learn more about using them. You can also look at the schematics for the Audio Project Fin which uses these.
+-  The ADAU1761 has an auxiliary set of analog inputs that are brought out to
+   the expansion header. Additionally, the headphone output signals from the
+   ADAU1761 are also brought out to the expansion header. These signals don't go
+   through any sort of buffering so see the ADAu1761 datasheet to learn more
+   about using them. You can also look at the schematics for the Audio Project
+   Fin which uses these.

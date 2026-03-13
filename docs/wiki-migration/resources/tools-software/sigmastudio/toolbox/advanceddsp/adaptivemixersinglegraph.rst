@@ -3,7 +3,9 @@ Adaptive Mixer Single (Graph)
 
 :doc:`Click here to return to the Advanced DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/advanceddsp>`
 
-The Adaptive Mixer single (graph) cell is an advanced method of mixing two signals based on a third control signal. The two green pins designate the two input signals mix together and the third orange pin is for the control signal.
+The Adaptive Mixer single (graph) cell is an advanced method of mixing two
+signals based on a third control signal. The two green pins designate the two
+input signals mix together and the third orange pin is for the control signal.
 
 Note: usually orange pins indicate that this channel is not for true audio, but this is not the case for this cell. The orange pin here indicates that the input control signal will be converted to a RMS average value, eliminating the need to use the RMS table for this application. The RMS table value is used to determine the scale factors for the signals to be mixed. This cell is very similar to the Adaptive Mixer Single (graph), but allows more advanced control over the scale factors for the signals to be mixed. In the Single case, one scale factor is determined as the compliment of the other, whereas with the Dual control, you can select and change the curves for both signals to be mixed.\|\ |image1|\ \|
 

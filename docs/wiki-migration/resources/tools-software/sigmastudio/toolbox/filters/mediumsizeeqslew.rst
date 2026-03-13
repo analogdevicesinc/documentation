@@ -4,13 +4,22 @@ Medium Size EQ Slew-(ADAU145x)
 :doc:`Click here to return to the Filters page </wiki-migration/resources/tools-software/sigmastudio/toolbox/filters>`
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew1.png
-   :width: 100px
+   :width: 100
 
-This block gives access to two general 2nd-order filters: Peaking and Shelving EQ. The algorithms driving this block are the same as for the other 2nd-order filters, but it simply offers an alternate layout and control of parameters that may prove more useful for your application.
+This block gives access to two general 2nd-order filters: Peaking and Shelving
+EQ. The algorithms driving this block are the same as for the other 2nd-order
+filters, but it simply offers an alternate layout and control of parameters that
+may prove more useful for your application.
 
-The slewing functionality is added for smooth transition from one set of filter coefficients to another when the filter parameters are changed. The slewing takes place approximately in the time set by the user in the GUI. The slew time can be entered in the GUI slew Text box, or open the EQ Settings window by clicking on the icon button and enter the slew time in the slew text box or by using the slew slider. The slew time range is limited between (0 to 1 second).
+The slewing functionality is added for smooth transition from one set of filter
+coefficients to another when the filter parameters are changed. The slewing
+takes place approximately in the time set by the user in the GUI. The slew time
+can be entered in the GUI slew Text box, or open the EQ Settings window by
+clicking on the icon button and enter the slew time in the slew text box or by
+using the slew slider. The slew time range is limited between (0 to 1 second).
 
-As can be seen from the figure at right, the block controls frequency, gain, slew and filter type.
+As can be seen from the figure at right, the block controls frequency, gain,
+slew and filter type.
 
 For information on this block's algorithms, see General 2nd-Order Algorithms.
 
@@ -19,12 +28,16 @@ To use this block:
 -  Drag it into the workspace, right-click it and select Add Algorithm > IC N.
 -  Choose which algorithm meets your needs.
 -  Click the blue icon to choose which filter you want to implement: Peak or High- / Low-Shelf.
--  Select from the dropdown menu which of the two types of filters you want and enter the parameters desired. Peaking is the default.
+-  Select from the dropdown menu which of the two types of filters you want and
+   enter the parameters desired. Peaking is the default.
 
-After choosing the filter type, right-click the block to either Grow or Add to it. Growing adds another frequency band to the block, equivalent to having two individual filters in series, while adding an algorithm adds another input/output pair, equivalent to adding a filter in parallel.
+After choosing the filter type, right-click the block to either Grow or Add to
+it. Growing adds another frequency band to the block, equivalent to having two
+individual filters in series, while adding an algorithm adds another
+input/output pair, equivalent to adding a filter in parallel.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew2.png
-   :width: 200px
+   :width: 200
 
 **Peaking EQ** Peaking boosts or cuts a designated center frequency.
 
@@ -38,10 +51,11 @@ After choosing the filter type, right-click the block to either Grow or Add to i
 
 *Slew(s):*\ This field sets the slew time(seconds) for slewing of filter coefficients when a filter parameter is changed. The slew computation is in single precision and implements RC slewing. The slew time can be set between 0-1 second.
 
-This is a quick and versatile block, as can be seen by comparing the below curves with their settings. It is highly useful for developing an educated ear.
+This is a quick and versatile block, as can be seen by comparing the below
+curves with their settings. It is highly useful for developing an educated ear.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew4.png
-   :width: 200px
+   :width: 200
 
 Negative gain and shallow Q (above) produce this:
 
@@ -50,20 +64,19 @@ Negative gain and shallow Q (above) produce this:
 
 while positive gain and narrower Q (same scale gain and same frequency; below),
 
-
 |image1|
 
 quickly produce this:
 
-
 |medpic7.png|
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew6.png
-   :width: 200px
+   :width: 200
 
 *Shelving EQ:* Low / High Shelf
 
-Shelving evenly boosts or cuts all frequencies either above (= High Shelf, ) or below (= Low Shelf,) the cutoff frequency.
+Shelving evenly boosts or cuts all frequencies either above (= High Shelf, ) or
+below (= Low Shelf,) the cutoff frequency.
 
 The other parameters:
 ---------------------
@@ -78,24 +91,26 @@ The other parameters:
 
 *Slew(s):*\ This field sets the slew time(seconds) for slewing of filter coefficients when a filter parameter is changed. The slew computation is in single precision and implements RC slewing. The slew time can be set between 0-1 second.
 
-Handy for ear training, this is a quick and versatile block, as can be seen by comparing the below curves with their parameters.
+Handy for ear training, this is a quick and versatile block, as can be seen by
+comparing the below curves with their parameters.
 
 |image2| |image3|
 
 |image4| |image5|
 
-As with Peaking, Shelving parameters may be changed handily and the results immediately checked for audible effect.
+As with Peaking, Shelving parameters may be changed handily and the results
+immediately checked for audible effect.
 
 **NOTE: Due to fixed point operations, the filter coefficients do not slew exactly in the set slew time.**
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew5.png
-   :width: 200px
+   :width: 200
 .. |medpic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic7.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew7.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew11.png
-   :width: 300px
+   :width: 300
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew8.png
-   :width: 200px
+   :width: 200
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew10.png
-   :width: 300px
+   :width: 300

@@ -3,16 +3,16 @@
 Running the Sample Demo
 =======================
 
-Using SigmaStudio+ the A2B system can be directly controlled from a connected computer without involving a microcontroller or a DSP. This mode is helpful for quick testing of the capabilities of AD24xx without the need for a microcontroller in the system.
+Using SigmaStudio+ the A2B system can be directly controlled from a connected
+computer without involving a microcontroller or a DSP. This mode is helpful for
+quick testing of the capabilities of AD24xx without the need for a
+microcontroller in the system.
 
 .. note::
 
    Please refer Appendices :doc:`A </wiki-migration/resources/tools-software/a2bv2/quickstartguide/appendix-a>` and :doc:`B </wiki-migration/resources/tools-software/a2bv2/quickstartguide/appendix-b>` for information about navigating in SigmaStudio+ for A2B use-case.
 
-
 A block diagram of a 3 node A2B system with PC as Host is shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`.
-
-
 
 |image1|
 
@@ -20,10 +20,7 @@ A block diagram of a 3 node A2B system with PC as Host is shown in :doc:`Figure 
 
    \ **Figure:** A2B system with PC as Host
 
-
 The sample demo configuration is as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`. The audio source connected to sub-node 1 will be played out at main node. The microphone audio from sub node 0 will be played out at sub node 1.
-
-
 
 |image2|
 
@@ -31,8 +28,10 @@ The sample demo configuration is as shown in :doc:`Figure </wiki-migration/resou
 
    \ **Figure:** Sample A2B demo configuration
 
-
-The sample demo configuration can be run with either EVAL-AD2428WD1BZ, ADZS-21569 EZ-KIT, EVAL-AD2433WA1BZ , EVAL-AD2435WA3LZ, EVAL- AD2430WD1BZ or EVAL-AD2438WD1BZ, EVAL-AD2437A1NZ as the A2B main platform. The following sections describe the procedure for running the demo.
+The sample demo configuration can be run with either EVAL-AD2428WD1BZ,
+ADZS-21569 EZ-KIT, EVAL-AD2433WA1BZ , EVAL-AD2435WA3LZ, EVAL- AD2430WD1BZ or
+EVAL-AD2438WD1BZ, EVAL-AD2437A1NZ as the A2B main platform. The following
+sections describe the procedure for running the demo.
 
 Refer section :doc:`Sample Demo Setup </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2430>` for sample demo using EVAL- AD2430WD1BZ or EVAL-AD2438WD1BZ
 
@@ -59,7 +58,6 @@ Jumper settings (default) for EVAL-AD2435WA3LZ (Main) and EVAL-AD2435WJ3LZ (Sub 
 .. container:: centeralign
 
    \ **Table:** Jumper Settings: High Power
-
 
 +------------+---------------------------------+--------------+---+------------+---------------------------------+-----------+-----------+
 | **Jumper** | **Purpose in EVAL-AD2435WA3LZ** | **Main**     |   | **Jumper** | **Purpose in EVAL-AD2435WJ3LZ** | **Sub 0** | **Sub 1** |
@@ -128,7 +126,6 @@ Jumper settings (default) for EVAL-AD2437A1NZ (Main) and EVAL-AD2437B1NZ (Sub 0 
 
    \ **Table:** 2437 XLR Platform Jumper Settings
 
-
 +------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
 | **Jumper** | **Purpose in EVAL-AD2437A1NZ** | **Main** |   | **Jumper** | **Purpose in EVAL AD2437B1NZ** | **Sub 0** | **Sub 1** |
 +============+================================+==========+===+============+================================+===========+===========+
@@ -157,7 +154,6 @@ Jumper settings (default) for EVAL-AD2437A1MZ (Main) and EVAL-AD2437B1MZ (Sub 0 
 
    \ **Table:** 2437 RJ45 Platform Jumper Settings
 
-
 +------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
 | **Jumper** | **Purpose in EVAL-AD2437A1MZ** | **Main** |   | **Jumper** | **Purpose in EVAL AD2437B1MZ** | **Sub 0** | **Sub 1** |
 +============+================================+==========+===+============+================================+===========+===========+
@@ -185,12 +181,12 @@ Standard Power – AD243x
 Jumper settings
 ^^^^^^^^^^^^^^^
 
-Jumper settings (default) for EVAL-AD2433WA1BZ (Main) and EVAL-AD2433WB1BZ (Sub 0 and Sub 1) are as shown in Table.
+Jumper settings (default) for EVAL-AD2433WA1BZ (Main) and EVAL-AD2433WB1BZ (Sub
+0 and Sub 1) are as shown in Table.
 
 .. container:: centeralign
 
    \ **Table:** Jumper Settings: Standard Power
-
 
 +------------+---------------------------------+--------------+---+------------+---------------------------------+-----------+-----------+
 | **Jumper** | **Purpose in EVAL-AD2433WA1BZ** | **Main**     |   | **Jumper** | **Purpose in EVAL-AD2433WB1BZ** | **Sub 0** | **Sub 1** |
@@ -235,12 +231,12 @@ Standard Power – AD2430 / AD2438
 Jumper settings
 ^^^^^^^^^^^^^^^
 
-Jumper settings (default) for EVAL-AD2430WD1BZ / EVAL-AD2438WD1BZ (Main) is as shown in Table.
+Jumper settings (default) for EVAL-AD2430WD1BZ / EVAL-AD2438WD1BZ (Main) is as
+shown in Table.
 
 .. container:: centeralign
 
    \ **Table:** Jumper Settings – AD2430 / AD2438
-
 
 ============ =============================== =================
 **Jumper**   **Purpose in EVAL-AD2433WA1BZ** **Main**
@@ -286,7 +282,6 @@ Jumper settings (default) for EVAL-AD2428WD1BZ(Main) is as shown in Table.
 
    \ **Table:** Jumper Settings
 
-
 +---------+-----------+-----------+---------+---------+---------+---------+---------+---------+----------+---------+-----------+
 | **JP1** | **JP2**   | **JP3**   | **JP4** | **JP5** | **JP6** | **JP7** | **JP8** | **JP9** | **JP10** | **JP11  |**\ JP14** |
 |         |           |           |         |         |         |         |         |         |          | 12/13** |           |
@@ -304,7 +299,8 @@ Running sample Demo
 
 The following steps describe the procedure to run a sample demo in PC mode
 
--  Open an A2B schematic from (<A2B plugin for SigmaStudio+ installation path>>\\Schematics\\PC).
+-  Open an A2B schematic from (<A2B plugin for SigmaStudio+ installation
+   path>>\\Schematics\\PC).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_demo_schematic_in_pc_mode.png
    :align: center
@@ -313,8 +309,9 @@ The following steps describe the procedure to run a sample demo in PC mode
 
    \ **Figure:** Sample demo schematic in PC mode
 
-
--  Make sure that .xml files are provided for programming SigmaDSPs (ADAU1361, ADAU1761, ADAU1452 and ADAU 1961) on main and sub A2B evaluation boards, the procedure to find the peripheral settings window is as follows:
+-  Make sure that .xml files are provided for programming SigmaDSPs (ADAU1361,
+   ADAU1761, ADAU1452 and ADAU 1961) on main and sub A2B evaluation boards, the
+   procedure to find the peripheral settings window is as follows:
 
    -  Open the platform view either by double clicking on the platform or by clicking on “Canvas” option under the platform in the Project tree as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`.
 
@@ -325,7 +322,6 @@ The following steps describe the procedure to run a sample demo in PC mode
 
    \ **Figure:** Platform view in SigmaStudio+
 
-
 -  The peripheral settings can be opened by double clicking on the peripheral or by clicking on the “Settings” option under the peripheral in project tree and select the xml as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/peripheral_window_new.png
@@ -334,7 +330,6 @@ The following steps describe the procedure to run a sample demo in PC mode
 .. container:: centeralign
 
    \ **Figure:** Peripheral Settings window
-
 
 ::
 
@@ -349,13 +344,13 @@ The following steps describe the procedure to run a sample demo in PC mode
 
    \ **Figure:** Link-Compile-Download option in SigmaStudio+
 
-
 -  After successful discovery and initialization audio routing can be observed as per the sample demo configuration shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`.
 
 Running Sample Demo Remote DSP tuning with ADAU1452
 ---------------------------------------------------
 
-This demo uses two EVAL-AD2428WD1BZ boards. The following steps shows how to perform remote DSP tuning of the 1452 sigmaDSP on the subnode.
+This demo uses two EVAL-AD2428WD1BZ boards. The following steps shows how to
+perform remote DSP tuning of the 1452 sigmaDSP on the subnode.
 
 -  Connect and configure the hardware without bypassing the 1452 DSP as per :doc:`Local powered sub-nodes </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>` ,\ :doc:`EVAL-AD2428WD1BZ without 1452 DSP Bypass jumper settings </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>`.
 -  Connect the USBi to PC.
@@ -364,12 +359,15 @@ This demo uses two EVAL-AD2428WD1BZ boards. The following steps shows how to per
 -  Turn ON the power both the nodes and provide the audio sinks and sources
 -  Click on Action -> “Link Compile Download”.
 -  The schematic will download and audio will be heard.
--  This demo example allows remote DSP tuning of the 1452 DSP on the sub-node. This will multiplex between sine tone generator and audio source at sub-node. The difference can be heard through the audio sink at the main-node
+-  This demo example allows remote DSP tuning of the 1452 DSP on the sub-node.
+   This will multiplex between sine tone generator and audio source at sub-node.
+   The difference can be heard through the audio sink at the main-node
 
    -  In the system tab, double-click the last sub-node platform and then double-click the ADAU1452 shape.
    -  A schematic as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` will open
    -  Click on the Mux towards the left of the schematic to switch the song playing at main-node to the sine tone generator.
-   -  The frequency, gain, on/off state of the sine tone generator can be changed by interacting with the “Sine Tone” block.
+   -  The frequency, gain, on/off state of the sine tone generator can be
+      changed by interacting with the “Sine Tone” block.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/dsp_schematic_on_adau_1452.png
    :align: center
@@ -378,14 +376,14 @@ This demo uses two EVAL-AD2428WD1BZ boards. The following steps shows how to per
 
    \ **Figure:** DSP schematic on ADAU 1452
 
-
 Running Sample Demo Multi-main
 ------------------------------
 
 PC (Host) + ADSP-21569 SOM + SOM-CRR ez-kit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This demo uses either two ADZS-2435MINI or two ADZS-2433MINI. The following steps are applicable for both the A2B evaluation board pairs.
+This demo uses either two ADZS-2435MINI or two ADZS-2433MINI. The following
+steps are applicable for both the A2B evaluation board pairs.
 
 -  Perform the hardware setup as per :doc:`ADZS2435-MINI Hardware modifications </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2435-with-som-carrier-ez-kit>` , :doc:`ADZS2435-MINI Jumper settings </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2435-with-som-carrier-ez-kit>` , :doc:`EVAL-AD2435WJ3LZ Jumper settings </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2435-with-som-carrier-ez-kit>` , :doc:`ADZS2433-MINI Hardware modifications </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2433-with-som-carrier-ez-kit>` , :doc:`ADZS2433-MINI Jumper settings </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2433-with-som-carrier-ez-kit>` , :doc:`EVAL-AD2433WB1BZ Jumper settings </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2433-with-som-carrier-ez-kit>` . Maintain the hardware configuration for the SOM and SOM-CRR ez kit as per the recommended default configurations of their respective manuals
 -  Launch SigmaStudio+ x.y.z
@@ -402,7 +400,8 @@ This demo uses either two ADZS-2435MINI or two ADZS-2433MINI. The following step
 -  **Note :**
 
    -  To re-download the schematic, the SOM-CRR must be reset by pushing the reset button.
-   -  If the message “Target execution could not be verified” is displayed. Perform a re-download of the schematic by following point ‘a’ above.
+   -  If the message “Target execution could not be verified” is displayed.
+      Perform a re-download of the schematic by following point ‘a’ above.
 
 -  This demo example has an audio-in at sub-node 1 of main-node 0 chain and an audio-out on sub-node 1 of main-node 1 chain (as per section :doc:`Audio In/out for ADSP-21569 and PC as a host – multi-main </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2435-with-som-carrier-ez-kit>` , :doc:`Audio In/out for ADSP-21569 and PC as a host – multi-main </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2433-with-som-carrier-ez-kit>`). A cross fade can be performed between this audio-in and a 500 Hz sine-tone which is generated on the ADSP-21569.
 
@@ -411,7 +410,8 @@ This demo uses either two ADZS-2435MINI or two ADZS-2433MINI. The following step
    -  Click once on the “On/Off switch” to put it to “ON” state and observe that the song will fade into a sine tone
    -  Click on the same switch again to get back the audio.
    -  Volume can be adjusted by operating the slider on the right end of the schematic near the outputs
-   -  The frequency, gain and on/off state can be changed for each of the two sine tones by interacting with the “Sine Tone” block.
+   -  The frequency, gain and on/off state can be changed for each of the two
+      sine tones by interacting with the “Sine Tone” block.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main-dsp.png
    :align: center
@@ -420,11 +420,11 @@ This demo uses either two ADZS-2435MINI or two ADZS-2433MINI. The following step
 
    \ **Figure:** Multi-main DSP schematic
 
-
 SC594 (Host) + SOM-CRR ez kit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This demo uses SC594 as a host and it uses two ADZS-2435MINI’s. The following steps shows how to run this sample demo.
+This demo uses SC594 as a host and it uses two ADZS-2435MINI’s. The following
+steps shows how to run this sample demo.
 
 -  Perform the hardware setup as per :doc:`ADZS2435-MINI Hardware modifications </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2435-with-som-carrier-ez-kit>` , :doc:`EVAL-AD2435WJ3LZ ADZS2435-MINI Jumper settings </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2435-with-som-carrier-ez-kit>` , :doc:`Jumper settings </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` . Maintain the hardware configuration for the SOM and SOM-CRR ez kit as per the recommended default configurations of their respective manuals.
 -  Open CCES v2.11.0 and click on File -> Import -> ‘Existing projects into work space’
@@ -449,20 +449,22 @@ The following steps describe the procedure to run a sample demo in PC mode
 -  Discovery and configuration of A2B nodes and peripheral devices as per the schematic will be done by the A2B Bus Analyzer Device if it is used for Main Node Emulation
 -  All the events through the A2B network will be captured by the A2B Bus Analyzer Device when used as Bus Monitor
 -  A2B Bus Analyzer Device will be discovered as a Sub Node by the A2B Eval Main Node when used as a Sub Node Emulator.
--  After successful discovery and initialization, audio routing can be observed as per the stream configuration for the schematic. The sink and source audio streams of A2B Bus Analyzer Main/Sub Node Emulator and audio streams detected by the A2B Bus Analyzer Bus Monitor will be displayed on the A2B Bus Analyzer UI.
+-  After successful discovery and initialization, audio routing can be observed
+   as per the stream configuration for the schematic. The sink and source audio
+   streams of A2B Bus Analyzer Main/Sub Node Emulator and audio streams detected
+   by the A2B Bus Analyzer Bus Monitor will be displayed on the A2B Bus Analyzer
+   UI.
 
 Running sample Demo BF as Host
 ------------------------------
 
 The sample demo can be run using BF527 as the host processor. In this case the host processor controls the discovery and programming of A2B nodes in the system. The block diagram of a 3 node A2B system with BF527 as Host is shown :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` below.
 
-
 |image3|
 
 .. container:: centeralign
 
    \ **Figure:** A2B system with BF527 as Host
-
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
@@ -480,7 +482,9 @@ Hardware connections shall be done as described `here <https://wiki.analog.com/[
 Jumper settings
 ~~~~~~~~~~~~~~~
 
-No configurable Jumpers available on SDP-B board. EVAL-AD2433WA1BZ and EVAL-AD2433WB1BZ board jumpers shall be set as mentioned in Table of the earlier section above.
+No configurable Jumpers available on SDP-B board. EVAL-AD2433WA1BZ and
+EVAL-AD2433WB1BZ board jumpers shall be set as mentioned in Table of the earlier
+section above.
 
 A2B Demo System
 ~~~~~~~~~~~~~~~
@@ -497,18 +501,25 @@ After completing all the connections, the A2B system should look as shown in :do
 
    \ **Figure:** A2B demo setup with BF527 as host
 
-
 Running sample demo
 ~~~~~~~~~~~~~~~~~~~
 
-The SigmaStudio+ schematic for this demo can be found at C:\\Analog Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Schematics\\PC\\adi_a2b_AD2433WA1BZ.ssprj. The demo application already uses the exported BCF from this schematic.
+The SigmaStudio+ schematic for this demo can be found at C:\\Analog
+Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Schematics\\PC\\adi_a2b_AD2433WA1BZ.ssprj.
+The demo application already uses the exported BCF from this schematic.
 
-If there is a change in schematic required, after the changes are done export the busconfig.c file from sigmastudio+ and paste the busconfig file in the target software project in the location C:\\Analog Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Target\\examples\\demo\\a2b-bf\\app.
+If there is a change in schematic required, after the changes are done export
+the busconfig.c file from sigmastudio+ and paste the busconfig file in the
+target software project in the location C:\\Analog
+Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Target\\examples\\demo\\a2b-bf\\app.
 
-When using BF527 as the host, demo can be run either from flash or by downloading from CCES over JTAG. The following steps shall be followed depending on the preferred way of execution.
+When using BF527 as the host, demo can be run either from flash or by
+downloading from CCES over JTAG. The following steps shall be followed depending
+on the preferred way of execution.
 
 -  Flash the SDP-B with A2B target software(as mentioned in the sections below) OR
--  Download A2B target software from CCES after each power up (as mentioned in the sections below)
+-  Download A2B target software from CCES after each power up (as mentioned in
+   the sections below)
 
 Flash SDP-B with A2B target software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -517,7 +528,8 @@ Flash SDP-B with A2B target software
 -  Build the project using ‘Project->Build Project’ option.
 -  Run the Flash utility batch file from C:\\Analog Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Target\\examples\\demo\\a2b-bf\\Flash depending on the type of Emulator used to connect to Target (Flash-ICE100.bat for ICE-1000).
 -  The batch utility will start flashing the board as shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`.
--  After the flashing is complete disconnect from Target, remove JTAG and Reset the SDP-B board.
+-  After the flashing is complete disconnect from Target, remove JTAG and Reset
+   the SDP-B board.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bf527_host_cmd.png
    :align: center
@@ -526,7 +538,6 @@ Flash SDP-B with A2B target software
 
    \ **Figure:** A2B demo setup with BF527 as host
 
-
 Download A2B target software from CCES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -534,7 +545,8 @@ Download A2B target software from CCES
 -  Build the project using ‘Project->Build Project’ option
 -  Create a new debug configuration using Run->Debug Configurations, create new session, select ADSP-BF527 and click NEXT, select Emulator and click NEXT, choose In-Circuit Emulator platform (typically: ADSP527 via ICE-1000) and click NEXT, then click FINISH.
 -  Ensure Custom board support file BF527-SDP-HW-CCES.XML (C:\\Analog Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Target\\examples\\demo\\a2b-bf\\system\\BF527-SDP-HW-CCES.XML) is applied as shown below
--  Run the project by selecting a debug configuration. Ensure that JTAG is connected to the SDP-B board on the Master node.
+-  Run the project by selecting a debug configuration. Ensure that JTAG is
+   connected to the SDP-B board on the Master node.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/customboardinfocces.png
    :align: center
@@ -543,11 +555,12 @@ Download A2B target software from CCES
 
    \ **Figure:** Custom Board Support
 
-
 Running Sample Demo ADSP-SC594 as Host
 --------------------------------------
 
-The sample demo can be run using ADSP-SC594 as the host. In this case the ARM core of host processor controls the discovery and programming of A2B nodes in the system. The following steps shows how to run sample demo
+The sample demo can be run using ADSP-SC594 as the host. In this case the ARM
+core of host processor controls the discovery and programming of A2B nodes in
+the system. The following steps shows how to run sample demo
 
 -  Perform hardware modification and jumper setting as per [[:resources:tools-software:a2bv2:quickstartguide:running-sample-demo#hardware_setup]AD2430 jumper setting]. Maintain the hardware configuration for the SOM and SOM-CRR ez kit as per the recommended default configurations of their respective manuals.
 -  Open CCES v2.11.0 and click on File → Import → ‘Existing projects into work space’.

@@ -40,7 +40,8 @@ Setting up the Hardware
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0531_adicup_conn.jpg
    :align: center
 
--  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
+-  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect
+   it to a computer. The final setup should look similar to the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0531_system_host.jpg
    :alt: FIXME - PICTURE
@@ -53,8 +54,6 @@ Software does not need configuration to work.
 
 Outputting Data
 ---------------
-
-
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
@@ -131,8 +130,6 @@ preferences.
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
 
-
-
 Available commands
 ~~~~~~~~~~~~~~~~~~
 
@@ -161,19 +158,25 @@ Typing **help** or **h** after initial calibration sequence will display the lis
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0531_terminal_example.png
    :align: center
 
-Note that the 'do' command for setting the output voltage works on the assumption that the on board 5V reference is used.
+Note that the 'do' command for setting the output voltage works on the
+assumption that the on board 5V reference is used.
 
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0531.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0531.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cn0531** can be found here:
 
@@ -189,7 +192,6 @@ The software for the **ADuCM3029_demo_cn0531** can be found here:
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0531 Source Code <projects/ADuCM3029_demo_cn0531>`
    
-
 
 How to use the Tools
 --------------------
@@ -218,6 +220,15 @@ The program is composed of two main parts:
    :alt: Main flow chart
    :align: center
 
-Board setup initializes UART and SPI communications and sets the DAC value register to 0. The DAC RBUF bit is also set to 0 to provide the widest voltage range for the application. The DAC output will be between -5V and 5V and coded in two's complement. The coding can be changed to offset binary and the 'do' CLI command will take that into consideration, as it will also take into consideration the RBUF bit. If the RBUF is changed to narrow the output field to 0V - 5V the coding will not change. As such the 0x00000 value of the DAC register will correspond to the middle range value of 2.5V. If not using the 'do' command to change the output, this will have to be taken into consideration.
+Board setup initializes UART and SPI communications and sets the DAC value
+register to 0. The DAC RBUF bit is also set to 0 to provide the widest voltage
+range for the application. The DAC output will be between -5V and 5V and coded
+in two's complement. The coding can be changed to offset binary and the 'do' CLI
+command will take that into consideration, as it will also take into
+consideration the RBUF bit. If the RBUF is changed to narrow the output field to
+0V - 5V the coding will not change. As such the 0x00000 value of the DAC
+register will correspond to the middle range value of 2.5V. If not using the
+'do' command to change the output, this will have to be taken into
+consideration.
 
 *End of Document*

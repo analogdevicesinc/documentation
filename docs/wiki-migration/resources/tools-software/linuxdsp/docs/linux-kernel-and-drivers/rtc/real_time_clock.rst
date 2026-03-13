@@ -1,7 +1,12 @@
 Introduction
 ============
 
-This page describes the steps required to build and use the RTC on the ADSP-SC589 EZ-board(ADSP-SC584 and ADSP-SC573 don't support RTC). The Real Time Clock (RTC) serves two purposes: to keep accurate time/date information and to provide wake up alarms (both during runtime and while sleeping). Since the RTC can be externally powered and clocked independently of the processor it can remain running even when the rest of the system is turned off.
+This page describes the steps required to build and use the RTC on the
+ADSP-SC589 EZ-board(ADSP-SC584 and ADSP-SC573 don't support RTC). The Real Time
+Clock (RTC) serves two purposes: to keep accurate time/date information and to
+provide wake up alarms (both during runtime and while sleeping). Since the RTC
+can be externally powered and clocked independently of the processor it can
+remain running even when the rest of the system is turned off.
 
 Hardware Required
 -----------------
@@ -25,7 +30,8 @@ Enable RTC support:
 Configure Packages
 ~~~~~~~~~~~~~~~~~~
 
-Add the rtc-test program in the filesystem images, it's enabled in adsp-sc5xx-full image by default.
+Add the rtc-test program in the filesystem images, it's enabled in
+adsp-sc5xx-full image by default.
 
 ::
 
@@ -35,7 +41,8 @@ Add the rtc-test program in the filesystem images, it's enabled in adsp-sc5xx-fu
 Example
 -------
 
-Users just need to run rtc_test command on board to test rtc. Results as shown below:
+Users just need to run rtc_test command on board to test rtc. Results as shown
+below:
 
 ::
 

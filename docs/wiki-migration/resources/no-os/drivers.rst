@@ -1,7 +1,14 @@
 Microcontroller no-OS Drivers
 =============================
 
-The majority of ADI's products are peripherals to a non-ADI digital engine (FPGA, microprocessor, or microcontroller). While there is major work underway on FPGAs (Xilinx and Altera) and microprocessors (running an operating system like Linux), the efforts on microcontrollers are fragmented due to the diverse nature of the microcontroller market. The goal of these projects (microcontroller/no-OS) is to be able to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, to help customers using microcontrollers with ADI parts.
+The majority of ADI's products are peripherals to a non-ADI digital engine
+(FPGA, microprocessor, or microcontroller). While there is major work underway
+on FPGAs (Xilinx and Altera) and microprocessors (running an operating system
+like Linux), the efforts on microcontrollers are fragmented due to the diverse
+nature of the microcontroller market. The goal of these projects
+(microcontroller/no-OS) is to be able to provide reference projects for lower
+end processors, which can't run Linux or aren't running a specific operating
+system, to help customers using microcontrollers with ADI parts.
 
 Drivers List
 ------------

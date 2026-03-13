@@ -4,7 +4,7 @@ ADRV9361-Z7035 Quick Start Guide
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9361-z7035/:adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web.gif`
    :alt: :adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web.gif`
    :align: right
-   :width: 250px
+   :width: 250
 
 This Quick start guide is to provide users with a simplified, concise set of instructions for setting up :adi:`ADRV9361-Z7035` on various SDR Module Carrier development boards. The :adi:`ADRV9361-Z7035` is a development kit from Analog Devices that consists of a hardware platform (ZC7035 board) and a software package (HDL design, Linux BSP, and no-OS drivers) for the ADRV9361-SOM system-on-module (SOM). See :doc:`Introduction to ADRV9361-Z7035 </wiki-migration/resources/eval/user-guides/adrv936x_rfsom/user-guide/introduction>` for further details.
 
@@ -65,9 +65,7 @@ Example Device Trees
 Testing
 =======
 
-
 .. esd-warning::
-
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9361-z7035/adrv9361-z7035-fmc-setup_quickstart.png
    :alt: adrv9361-z7035-fmc-setup_quickstart.png
@@ -88,14 +86,11 @@ Testing
 Messages
 --------
 
-
-
 .. collapsible:: Complete kernel boot log (Click to expand)
 
    .. container:: box bggreen
 
       This specifies any shell prompt running on the target
-
 
       ::
 
@@ -640,8 +635,6 @@ Messages
          Last login: Mon Apr 24 04:41:06 BST 2023 on ttyPS0
          root@analog:~#
 
-
-
 Login Information
 
 -  user: analog
@@ -662,7 +655,6 @@ Show hardware sysid:
       [    1.602488] axi_sysid 45000000.axi-sysid-0: [adrv9361z7035_ccfmc] on [lvds] git branch <master> git <d152ad1e9d6ab2f97167b76f9b9837748f385cdf> clean [2023-04-20 22:57:03] UTC
    
 
-
 This command display or list all the errors from logs:
 
 .. container:: box bggreen
@@ -674,7 +666,6 @@ This command display or list all the errors from logs:
    
       root@analog:~# dmesg -l err
    
-
 
 These devices should be present:
 
@@ -695,13 +686,14 @@ These devices should be present:
               iio:device5: cf-ad9361-lpc (buffer capable)
    
 
-
 IIO Oscilloscope Remote
 -----------------------
 
 Please see also here::doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The IIO Oscilloscope application can be used locally on Transceiver/Radio Boards. It has a feature of a graphical desktop environment remote using a network connection.
+The IIO Oscilloscope application can be used locally on Transceiver/Radio
+Boards. It has a feature of a graphical desktop environment remote using a
+network connection.
 
 When using the remote option, once you logged in to the Linux terminal you need to check the IP address of the using the **ifconfig** command to see if there was any address assigned by a DHCP server. If not, you need to manually set an address with ifconfig in the same address space your PC is using.
 
@@ -742,20 +734,25 @@ Getting of IP address:
               TX packets 75156  bytes 49190154 (46.9 MiB)
    
 
-
-Once the IIO Osc application is launched goto Settings -> Connect and enter the IP address of the target in the popup window.
+Once the IIO Osc application is launched goto Settings -> Connect and enter the
+IP address of the target in the popup window.
 
    
-
 
 |osc_config.png|
 
 IIO OSC ADRV9361-Z7035-FMC Capture Window
 =========================================
 
-The AD9361 is a high performance, highly integrated RF Agile Transceiver™. Its programmability and wideband capability make it ideal for a broad range of transceiver applications. The device combines an RF front end with a flexible mixed-signal baseband section and integrated frequency synthesizers, simplifying design-in by providing a configurable digital interface to a processor.
+The AD9361 is a high performance, highly integrated RF Agile Transceiver™. Its
+programmability and wideband capability make it ideal for a broad range of
+transceiver applications. The device combines an RF front end with a flexible
+mixed-signal baseband section and integrated frequency synthesizers, simplifying
+design-in by providing a configurable digital interface to a processor.
 
-SDR module or board that contains the necessary RF (Radio Frequency) components and signal processing circuitry. FMC carrier is a hardware platform that can host an FMC card and provide access to its I/O interfaces and resources.
+SDR module or board that contains the necessary RF (Radio Frequency) components
+and signal processing circuitry. FMC carrier is a hardware platform that can
+host an FMC card and provide access to its I/O interfaces and resources.
 
 Screenshots
 -----------
@@ -765,19 +762,23 @@ Time Domain View
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/osc_timedomain.png
    :alt: osc_timedomain.png
-   :width: 500px
+   :width: 500
 
 Frequency Domain View
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/osc_frequencydomain.png
    :alt: osc_frequencydomain.png
-   :width: 500px
+   :width: 500
 
 Plugins
 -------
 
-These plugins enhance the capabilities of the IIO Oscilloscope tool and enable users to visualize and analyze the data from the ADRV9361 module in different ways. These provide a convenient and easy-to-use interface for configuring and controlling the module and performing various signal processing functions. ADRV9361 plugins:(formerly known as the FMComms2/3/4 Plugin)
+These plugins enhance the capabilities of the IIO Oscilloscope tool and enable
+users to visualize and analyze the data from the ADRV9361 module in different
+ways. These provide a convenient and easy-to-use interface for configuring and
+controlling the module and performing various signal processing functions.
+ADRV9361 plugins:(formerly known as the FMComms2/3/4 Plugin)
 
 check out: :doc:`ADRV936X Plugins </wiki-migration/resources/tools-software/linux-software/fmcomms2_plugin>` :doc:`ADRV936X Advanced Plugins </wiki-migration/resources/tools-software/linux-software/fmcomms2_advanced_plugin>`
 
@@ -788,13 +789,12 @@ Shut down
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
 
-
    |image1|
 
 .. |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web.gif|` image:: :adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web.gif`
-   :width: 250px
+   :width: 250
 .. |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web.gif|` image:: :adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web.gif`
 .. |osc_config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/osc_config.png
-   :width: 600px
+   :width: 600
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

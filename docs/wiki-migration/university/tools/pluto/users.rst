@@ -3,9 +3,15 @@ ADALM-PLUTO for End Users
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/pluto_in_hand.png
    :align: right
-   :width: 200px
+   :width: 200
 
-Everyone using Pluto should read these pages. They will demonstrate how to interact with RF signals with MATLAB, Simulink, GNU Radio or custom C, C++, C#, or Python code on a host (x86) or embedded (Raspberry Pi, Beaglebone, 96boards.org, etc.) platform over USB. As you can see, we have lots of examples with MATLAB and Simulink, as we find that a very powerful environment, and a path to a releasable radio (you can take your algorithms, and easily embed them into a custom product).
+Everyone using Pluto should read these pages. They will demonstrate how to
+interact with RF signals with MATLAB, Simulink, GNU Radio or custom C, C++, C#,
+or Python code on a host (x86) or embedded (Raspberry Pi, Beaglebone,
+96boards.org, etc.) platform over USB. As you can see, we have lots of examples
+with MATLAB and Simulink, as we find that a very powerful environment, and a
+path to a releasable radio (you can take your algorithms, and easily embed them
+into a custom product).
 
 Contents
 --------

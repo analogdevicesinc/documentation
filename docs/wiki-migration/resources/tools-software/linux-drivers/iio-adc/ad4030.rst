@@ -56,12 +56,15 @@ Adding Linux driver support
 Enabling the driver
 -------------------
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
-   The AD4030 driver depends on CONFIG_SPI, CONFIG_GPIOLIB, CONFIG_PWM, CONFIG_REGMAP, CONFIG_IIO_BUFFER, CONFIG_IIO_BUFFER_DMA, CONFIG_IIO_BUFFER_DMAENGINE, CONFIG_IIO_TRIGGERED_BUFFER, CONFIG_SPI_OFFLOAD, and CONFIG_SPI_OFFLOAD_TRIGGER_PWM
-
+   The AD4030 driver depends on CONFIG_SPI, CONFIG_GPIOLIB, CONFIG_PWM,
+   CONFIG_REGMAP, CONFIG_IIO_BUFFER, CONFIG_IIO_BUFFER_DMA,
+   CONFIG_IIO_BUFFER_DMAENGINE, CONFIG_IIO_TRIGGERED_BUFFER, CONFIG_SPI_OFFLOAD,
+   and CONFIG_SPI_OFFLOAD_TRIGGER_PWM
 
 ::
 
@@ -220,17 +223,24 @@ Device tree example
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. tip::
 
-   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses the interface can be found here:
+   \ TIP: An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses
+   the interface can be found here:
 
    
    -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
    
-
 
 Show device name
 ----------------
@@ -245,7 +255,6 @@ Show device name
       root@analog:~# cat /sys/bus/iio/devices/iio:device0/name
       adaq4216
    
-
 
 Show channel scale
 ------------------
@@ -262,7 +271,6 @@ Show channel scale
       root@analog:~# cat /sys/bus/iio/devices/iio:device0/in_voltage0-voltage1_scale
       0.018750000
    
-
 
 Example test single-shot readings through IIO device sysfs interface.
 
@@ -298,24 +306,22 @@ Example test single-shot readings through IIO device sysfs interface.
       -r--r--r-- 1 root root 4096 Feb  4 19:03 waiting_for_supplier
    
 
-
 Application Software
 --------------------
 
 Analog Devices :adi:`ADAQ4003` can be easily managed with :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>` which has interfaces for configuring and retrieving data from IIO devices. After installing IIO Oscilloscope in the host computer, open the application and connect to the IIO context provided by the Kuiper Linux installation running on the ZedBoard.
 
-The example below shows ADAQ4216 running a 125 kSPS data capture of a test sine wave. 1000 samples were kept for the plot.
-
+The example below shows ADAQ4216 running a 125 kSPS data capture of a test sine
+wave. 1000 samples were kept for the plot.
 
 |image1|
 
 The example below shows the same sine wave but captured at 500 kSPS.
 
-
 |image2|
 
-Finally, at 2 MSPS, we keep a larger number of samples to be able to visualize the sine wave captured with ADAQ4216.
-
+Finally, at 2 MSPS, we keep a larger number of samples to be able to visualize
+the sine wave captured with ADAQ4216.
 
 |image3|
 
@@ -340,13 +346,11 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4030/adaq4216_125ksps_capture.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4030/adaq4216_500ksps_capture.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4030/adaq4216_2msps_capture.png
-   :width: 600px
+   :width: 600

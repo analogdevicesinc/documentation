@@ -3,16 +3,19 @@ EV-FLOWMETER-ARDZ Sensor for Flow Rate Metering
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Overview
 --------
@@ -21,7 +24,7 @@ The :adi:`EV-FLOWMETER-ARDZ` sensor is an advanced and efficient solution for fl
 
 .. image:: https://wiki.analog.com/_media/{{/resources/eval/user-guides/ev-flowmeter-ardz_angle.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Features
 ~~~~~~~~
@@ -51,7 +54,7 @@ Block Diagram
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-flowmeter-ardz_block_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -66,7 +69,8 @@ Peripheral Connectors
 
 .. container:: indent
 
-   The following standard connectors are provided on the board for customer to use:
+   The following standard connectors are provided on the board for customer to
+   use:
 
    
    -  Launch up and down ultrasonic sensor terminal block headers
@@ -74,21 +78,22 @@ Peripheral Connectors
    -  Arduino connector
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-flowmeter-ardz_peripherals_connections.png
-      :width: 800px
+      :width: 800
    
-
 
 Sensor Probe
 ~~~~~~~~~~~~
 
 .. container:: indent
 
-   When using this Arduino board, a general-purpose ultrasonic flow rate sensor can be used. An example of a probe is the Flow Transducer with Pipe (Model：HS0003) from Audiowell Sensor Technology, as shown below:
+   When using this Arduino board, a general-purpose ultrasonic flow rate sensor
+   can be used. An example of a probe is the Flow Transducer with Pipe
+   (Model：HS0003) from Audiowell Sensor Technology, as shown below:
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/flow_transducer_with_pipe.jpg
       :align: left
-      :width: 300px
+      :width: 300
    
    ========================= ==================
    **Item**                  **Specifications**
@@ -103,12 +108,14 @@ Sensor Probe
    Diameter                  DN20
    ========================= ==================
    
-   For temperature measurement, this board supports up to two 2-wire PT1000/500 platinum resistive temperature detectors (RTD) and the connections can be seen on the diagram as shown below:
+   For temperature measurement, this board supports up to two 2-wire PT1000/500
+   platinum resistive temperature detectors (RTD) and the connections can be
+   seen on the diagram as shown below:
    
    .. important::
 
-      An RTD sensors or a dummy sensor (1k Resistor) for each terminal are required in order to run and capture the flow rate.
-
+      An RTD sensors or a dummy sensor (1k Resistor) for each terminal are
+      required in order to run and capture the flow rate.
 
       |image1|
 
@@ -119,7 +126,6 @@ Digital Interface (Arduino)
 
    The Arduino interface is a standardized digital interface for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Arduino, which is a hardware and software company. Complete details on the PMOD specification can be found `here <https://www.arduino.cc/en/hardware>`_.
 
-
    |image2|
 
 Push Button
@@ -128,7 +134,6 @@ Push Button
 .. container:: indent
 
    The board provides a button, **S1**, to test tamper detection through its CMOS digital input.
-
 
    |image3|
 
@@ -142,11 +147,12 @@ Applications
    The :adi:`EV-FLOWMETER-ARDZ` can be used with the :adi:`MAX32670-SX-ARDZ` Base Board, which is a long-range wireless radio development platform based on MAX32670 ultralow power Arm Cortex-M4 microcontroller and SX1261 RF transceiver.
 
    
-   Using these platforms together enables users to design solutions based on low-power, long range proprietary radio communication technique that is suitable for customized heat/flow meters.
+   Using these platforms together enables users to design solutions based on
+   low-power, long range proprietary radio communication technique that is
+   suitable for customized heat/flow meters.
    
    To learn more about the Long Range Wireless Radio solution developed by Analog Devices, visit the :doc:`AD-MAX32SXWISE-SL Long Range Wireless Radio Development Kit User Guide </wiki-migration/resources/eval/user-guides/ad-max32sxwise-sl>`
    
-
 
 System Setup
 ============
@@ -154,7 +160,10 @@ System Setup
 PHASE 1: Hardware Setup
 -----------------------
 
-Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use a different base board or microcontroller, however the firmware built for this demo application cannot be used as this is specifically designed for the MAX32670-SX-ARDZ.
+Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use
+a different base board or microcontroller, however the firmware built for this
+demo application cannot be used as this is specifically designed for the
+MAX32670-SX-ARDZ.
 
 Equipment Needed
 ~~~~~~~~~~~~~~~~
@@ -165,7 +174,8 @@ Equipment Needed
 
    -  with firmware image: `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
 
--  One (1) CR123A Battery or any equivalent external DC power supply (+3 V to +4.7 V)
+-  One (1) CR123A Battery or any equivalent external DC power supply (+3 V to
+   +4.7 V)
 
 ::
 
@@ -175,7 +185,7 @@ Equipment Needed
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/hardware_setup.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Insert one CR123A battery (3 V to 4.7 V) into the battery holder (BT1 connector) of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
@@ -184,10 +194,9 @@ Equipment Needed
    
    **Make sure to check for the battery polarity in the BT1 connector, refer to the figure below. The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.**\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/base_board_with_battery.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect the :adi:`EV-FLOWMETER-ARDZ` Sensor Node to the :adi:`MAX32670-SX-ARDZ` Base Board by aligning the corresponding Arduino headers on each board.
 -  Connect the :adi:`MAX32625PICO` programming adapter to the :adi:`MAX32670-SX-ARDZ` Base Board through the 10-pin ribbon cable.
@@ -206,28 +215,25 @@ Equipment Needed
 
       .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
          :align: center
-         :width: 400px
+         :width: 400
 
       -   Release the button once the MAINTENANCE drive is mounted.
       -   Drag and drop (to the MAINTENANCE drive) the firmware image.
       -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
-
    
-
 
 -  Connect the :adi:`MAX32625PICO` programming adapter to the Host PC using the micro USB to USB cable.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_to_maxpico.png
    :align: center
-   :width: 1500px
+   :width: 1500
 
 .. note::
 
    
    Once you have completed this setup, proceed to PHASE 2 found in\ :doc:`ADI Long Range Wireless Radio Software User Guide </wiki-migration/resources/eval/user-guides/longrangewirelessradio/software>`.
    
-
 
 --------------
 
@@ -253,20 +259,19 @@ Design and Integration Files
    -  Fabrication Files
    
 
-
 Help and Support
 ~~~~~~~~~~~~~~~~
 
-For questions and more information about this product, connect with us through the Analog Devices Engineer Zone.
+For questions and more information about this product, connect with us through
+the Analog Devices Engineer Zone.
 
 .. hint::
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-flowmeter-ardz_probe_connections.png
-   :width: 1000px
+   :width: 1000
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-flowmeter-ardz_digital_interface.png
-   :width: 550px
+   :width: 550
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-flowmeter-ardz_reset_button.png
-   :width: 500px
+   :width: 500

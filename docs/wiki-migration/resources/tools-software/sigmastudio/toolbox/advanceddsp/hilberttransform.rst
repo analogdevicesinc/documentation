@@ -3,8 +3,9 @@ Hilbert Transform
 
 :doc:`Click here to return to the Advanced DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/advanceddsp>`
 
-The Hilbert Transform block is used to compute the imaginary part(y(t)) of the analytic signal xa(t)from given its real part (x(t)). Hilbert transform will phase shift every component in x(t) by ± 90 degrees.\|\
-
+The Hilbert Transform block is used to compute the imaginary part(y(t)) of the
+analytic signal xa(t)from given its real part (x(t)). Hilbert transform will
+phase shift every component in x(t) by ± 90 degrees.\|\
 
 |image1|
 
@@ -26,7 +27,6 @@ Name             Format [int/dec] - [control/audio] Function Description
 Pin 0: Real      decimal - audio                    Audio output
 Pin 1: Imaginary decimal - audio                    Audio output
 ================ ================================== ====================
-
 
 | ==== DSP Parameters ==== NO DSP Parameters.
 

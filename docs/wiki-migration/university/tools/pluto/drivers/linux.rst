@@ -8,7 +8,9 @@ Make sure the following modules are installed in your kernel:
 -  rndis_wlan
 -  usbnet
 
-On most modern distributions - these will be installed/compiled by default. It should just be a simple matter to plug the USB cable into your Linux machine. We have tested and verified on these distributions:
+On most modern distributions - these will be installed/compiled by default. It
+should just be a simple matter to plug the USB cable into your Linux machine. We
+have tested and verified on these distributions:
 
 -  Ubuntu 16.04 LTS
 -  Red Hat Enterprise Linux 7  [1]_
@@ -18,7 +20,9 @@ On most modern distributions - these will be installed/compiled by default. It s
 -  SUSE Leap 15
 -  SUSE Leap 15.1
 
-It is likely that other distributions can use the ADALM-PLUTO or ADALM2000, but we are in a limited position to provide technical support for those distributions.
+It is likely that other distributions can use the ADALM-PLUTO or ADALM2000, but
+we are in a limited position to provide technical support for those
+distributions.
 
 | In order to access some USB functions without root privileges, it's recommended to install the PlutoSDR or ADALM2000 udev rules. Simply download `53-adi-plutosdr-usb.rules <https://raw.githubusercontent.com/analogdevicesinc/plutosdr-fw/master/scripts/53-adi-plutosdr-usb.rules>`_ or `53-adi-m2k-usb.rules <https://raw.githubusercontent.com/analogdevicesinc/m2k-fw/master/scripts/53-adi-m2k-usb.rules>`_ and copy into into the */etc/udev/rules.d*/ folder. You can also use `this plutosdr-m2k-udev.deb package <https://wiki.analog.com/_media/university/tools/pluto/drivers/plutosdr-m2k-udev_1.0_amd64.deb>`_ to install both the PlutoSDR and the ADALM2000 udev rules. To install the debian package, use one of the following: **sudo apt-get install ./plutosdr-m2k-udev.deb** or **sudo dpkg -i plutosdr-m2k-udev.deb**.
 | Afterwards reload rules or restart udev, using either **udevadm control --reload-rules** or **sudo service udev restart**
@@ -26,7 +30,8 @@ It is likely that other distributions can use the ADALM-PLUTO or ADALM2000, but 
 example dmesg
 -------------
 
-When plugging Pluto in (m2k should be similar), you (if you are looking), you will see kernel messages of:
+When plugging Pluto in (m2k should be similar), you (if you are looking), you
+will see kernel messages of:
 
 .. container:: box
 
@@ -55,8 +60,8 @@ When plugging Pluto in (m2k should be similar), you (if you are looking), you wi
       [ 1778.022282] FAT-fs (sdb): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
    
 
-
-Showing the three devices (ethernet, serial and mass storage) enumerating, and interface with the devices in the normal linux methods.
+Showing the three devices (ethernet, serial and mass storage) enumerating, and
+interface with the devices in the normal linux methods.
 
 If you happen to see something like:
 
@@ -67,7 +72,8 @@ the solution is to use an external hub and after that all works.
 Serial
 ------
 
-NOTE: For suse and probably other linux versions -- be sure you are also member of the dialout group.
+NOTE: For suse and probably other linux versions -- be sure you are also member
+of the dialout group.
 
 .. container:: box
 
@@ -106,7 +112,6 @@ NOTE: For suse and probably other linux versions -- be sure you are also member 
       Closing /dev/ttyACM0...OK
    
 
-
 Mass Storage
 ------------
 
@@ -124,22 +129,23 @@ Mass Storage
       analog@imhotep:~$ firefox /media/analog/PlutoSDR/info.html
    
 
-
 Ethernet
 --------
 
 .. warning::
 
-   Like most of the network settings on Pluto or the M2k - things are meant to be easy to use. This also means things are inherently insecure.
+   Like most of the network settings on Pluto or the M2k - things are meant to
+   be easy to use. This also means things are inherently insecure.
 
    
    For example - the root password of Pluto is ``analog``. We post it on the Internet. Think about that for a moment. This could allow anyone with an IP connection to take over the device and use it for malicious purposes.
    
-   Never set up a bridge between the Internet and a network connected Pluto with the default images.
+   Never set up a bridge between the Internet and a network connected Pluto with
+   the default images.
 
-
-Unfortunately - nothing on your host understands the what the IP address of the usb device is. You, the human behind the keyboard need to understand this before any sort of networking will work. There are two main ways to do this:
-
+Unfortunately - nothing on your host understands the what the IP address of the
+usb device is. You, the human behind the keyboard need to understand this before
+any sort of networking will work. There are two main ways to do this:
 
 .. container:: box
 
@@ -163,7 +169,6 @@ Unfortunately - nothing on your host understands the what the IP address of the 
           inet6 fe80::2e0:22ff:fed6:d804/64 scope link
              valid_lft forever preferred_lft forever
    
-
 
 The *weird* ``enx00e022d6d804`` comes from systemd on a debian based distribution (which my host is). The enu\* prefix (or sometimes wlu\*) would describe the USB port, and the rest ``00e022d6d804`` is the host USB MAC address. This is what it uses, rather than a USB path (like ``usb-0000:00:14.0-2``, which is how the kernel refers to things) since USB path aren't persistent nor predictable (it changes depending on the port you plug things into).
 
@@ -190,7 +195,6 @@ Adding a quick/short :git-plutosdr_scripts:`ssh config file <ssh_config>`, which
       2017-01-26 19:47:51 (6.49 MB/s) - ‘~/.ssh/config’ saved [366/366]
    
 
-
 Since the ssh key on the pluto changes every boot, we want to be able to never store the key (so we store it to ``/dev/null``. This does make it easier to use (don't need to continually edit the ``known_hosts`` file), but does make things susceptible to man in the middle attacks.
 
 .. container:: box
@@ -207,7 +211,6 @@ Since the ssh key on the pluto changes every boot, we want to be able to never s
       Connection to 192.168.2.1 closed.
       adi-mm:tests analogdevices$
    
-
 
 if you have ``sshpass`` installed, you can use that so you dont need to type in a password:
 
@@ -230,7 +233,6 @@ if you have ``sshpass`` installed, you can use that so you dont need to type in 
       http://wiki.analog.com/university/tools/pluto%%
       #
    
-
 
 IIO devices
 -----------
@@ -260,7 +262,6 @@ for SUSE: https://software.opensuse.org/package/libiio -- pick the repo and inst
       Setting up libiio-utils (0.7-1) ...
    
 
-
 Try to make sure you can talk to the device, and find the IIO devices:
 
 .. container:: box
@@ -276,7 +277,6 @@ Try to make sure you can talk to the device, and find the IIO devices:
           iio:device3: cf-ad9361-dds-core-lpc
           iio:device4: cf-ad9361-lpc
    
-
 
 Read from an IIO device buffer:
 
@@ -304,9 +304,9 @@ Read from an IIO device buffer:
       00000f0    007b    ffe6    0025    ffa3    ffef    0011    ffef    0044
    
 
-
 .. [1]
    Our support follows Red Hat’s support policy for minor versions of RHEL
 
 .. [2]
-   Our support follows SUSE’s support policy for minor versions of Enterprise Desktop
+   Our support follows SUSE’s support policy for minor versions of Enterprise
+   Desktop

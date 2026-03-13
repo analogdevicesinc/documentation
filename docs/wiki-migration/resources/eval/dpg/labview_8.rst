@@ -1,18 +1,30 @@
 LabVIEW 8
 =========
 
-After the DPG Software Suite is installed, all the VIs required to communicate with a DPG are placed in the Instrument Drivers section of the Instrument I/O Palette.
+After the DPG Software Suite is installed, all the VIs required to communicate
+with a DPG are placed in the Instrument Drivers section of the Instrument I/O
+Palette.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/lv8_palette.png
    :align: center
 
-The List Devices VI returns a list of all the attached DPGs. All other DPG VIs will need this reference in order to communicate with the desired DPG.
+The List Devices VI returns a list of all the attached DPGs. All other DPG VIs
+will need this reference in order to communicate with the desired DPG.
 
-Before a specific DPG can play data, it needs to be configured. This configuration determines the electrical characteristics of the physical interface between the DPG and the DUT. The List Available Configurations returns a list of all the configurations that the referenced DPG supports. The Configure Device can then be used to select which configuration to use.
+Before a specific DPG can play data, it needs to be configured. This
+configuration determines the electrical characteristics of the physical
+interface between the DPG and the DUT. The List Available Configurations returns
+a list of all the configurations that the referenced DPG supports. The Configure
+Device can then be used to select which configuration to use.
 
-After configuring, various parameters can be set via the Set Setup VI. The current setup can be read with the Get Setup VI.
+After configuring, various parameters can be set via the Set Setup VI. The
+current setup can be read with the Get Setup VI.
 
-To download the data vector into the DPG, use the Download Vectors VI. This is a polymorphic VI; it will display several different input data types. This VI will re-format various types of data into a data-type that the referenced DPG can use. Once the data is loaded, the Play, Pause, and Stop VIs can be used to control the data playback.
+To download the data vector into the DPG, use the Download Vectors VI. This is a
+polymorphic VI; it will display several different input data types. This VI will
+re-format various types of data into a data-type that the referenced DPG can
+use. Once the data is loaded, the Play, Pause, and Stop VIs can be used to
+control the data playback.
 
 DPG Palette
 -----------
@@ -68,7 +80,9 @@ VI Reference
 List Devices
 ~~~~~~~~~~~~
 
-This VI returns an array of Hardware References. Each of these references is the software representation of an actual DPG connected to your computer. All other VIs will take this reference as an input.
+This VI returns an array of Hardware References. Each of these references is the
+software representation of an actual DPG connected to your computer. All other
+VIs will take this reference as an input.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/lv8_listdevs_full.png
    :align: center
@@ -108,7 +122,8 @@ This VI retrieves the name of the configuration currently loaded into the DPG.
 List Available Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This VI returns a list of all the standard configurations that the referenced DPG supports.
+This VI returns a list of all the standard configurations that the referenced
+DPG supports.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/lv8_listconfig_full.png
    :align: center
@@ -128,7 +143,8 @@ This VI returns a list of all the standard configurations that the referenced DP
 Configure Device
 ~~~~~~~~~~~~~~~~
 
-This VI configures the DPG for the type of interface the evaluation board expects.
+This VI configures the DPG for the type of interface the evaluation board
+expects.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/lv8_loadconfig_full.png
    :align: center
@@ -150,7 +166,9 @@ This VI configures the DPG for the type of interface the evaluation board expect
 Synchronization Mode
 ~~~~~~~~~~~~~~~~~~~~
 
-This VI reads and writes the Synchronization Mode settings. These settings are only used when a DPG is used in a multi-board environment. To read the current value, do not wire anything to the New Mode input.
+This VI reads and writes the Synchronization Mode settings. These settings are
+only used when a DPG is used in a multi-board environment. To read the current
+value, do not wire anything to the New Mode input.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/lv8_syncmode_full.png
    :align: center
@@ -172,7 +190,9 @@ This VI reads and writes the Synchronization Mode settings. These settings are o
 Get Setup
 ~~~~~~~~~
 
-This VI returns the current setup of the DPG. Setup includes information such as the Play Mode, Play Count, and Starting Address. It is only valid after a configuration has been loaded into the DPG.
+This VI returns the current setup of the DPG. Setup includes information such as
+the Play Mode, Play Count, and Starting Address. It is only valid after a
+configuration has been loaded into the DPG.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/lv8_getsetup_full.png
    :align: center
@@ -196,7 +216,8 @@ This VI returns the current setup of the DPG. Setup includes information such as
 Set Setup
 ~~~~~~~~~
 
-This VI changes various parameters on the DPG. This command is only valid after a configuration has been loaded into the DPG.
+This VI changes various parameters on the DPG. This command is only valid after
+a configuration has been loaded into the DPG.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/lv8_setsetup_full.png
    :align: center
@@ -220,7 +241,8 @@ This VI changes various parameters on the DPG. This command is only valid after 
 Download Vectors
 ~~~~~~~~~~~~~~~~
 
-This is a Polymorphic VI. Several different data types can be used to download data vectors into the DPG.
+This is a Polymorphic VI. Several different data types can be used to download
+data vectors into the DPG.
 
 One Vector of type I32
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -283,7 +305,8 @@ Two Vectors of type Double
 Measure Data Clock Frequency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This VI returns the frequency (in Hz) of the Data Clock provided to the DPG by the evaluation board. If this value is 0, no data clock was detected.
+This VI returns the frequency (in Hz) of the Data Clock provided to the DPG by
+the evaluation board. If this value is 0, no data clock was detected.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/lv8_dclkfreq_full.png
    :align: center
@@ -303,12 +326,15 @@ This VI returns the frequency (in Hz) of the Data Clock provided to the DPG by t
 Play
 ~~~~
 
-Starts playback of the data vector. If the DPG is currently stopped, or has not been started since being configured, playback will begin at Start Address. If the DPG is currently paused, playback will begin at the point that it was paused at.
+Starts playback of the data vector. If the DPG is currently stopped, or has not
+been started since being configured, playback will begin at Start Address. If
+the DPG is currently paused, playback will begin at the point that it was paused
+at.
 
 .. hint::
 
-   \ Note: The Play VI will check for the presence of a Data Clock before starting playback. If a data clock isn't detected, an error will be thrown.
-
+   \ Note: The Play VI will check for the presence of a Data Clock before
+   starting playback. If a data clock isn't detected, an error will be thrown.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/lv8_play_full.png
    :align: center

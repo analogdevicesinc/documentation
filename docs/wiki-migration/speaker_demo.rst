@@ -4,8 +4,15 @@ ADXL1001/ADXL1002/ADXL1004 and ADAQ7980 Speaker Demo
 Overview
 --------
 
-The ADXL100X and ADAQ7980 Speaker Demo utilizes the key features of high bandwidth, MEMS vibration sensing acceleromters and the high precision, ADC based, μModule Data Acquisition System to demonstrate an effective condition based monitoring system. Fault profiles, or arbitrary audio files, can be played through the speaker to enact vibrations on the sensor, which then transfers the data to the μModule Data Acquisition System linked to the System Demonstration Platform. An executable, configurable software program displays several signal features, including the waveform, data occurrence histogram, and FFT plot, all in real time.
-
+The ADXL100X and ADAQ7980 Speaker Demo utilizes the key features of high
+bandwidth, MEMS vibration sensing acceleromters and the high precision, ADC
+based, μModule Data Acquisition System to demonstrate an effective condition
+based monitoring system. Fault profiles, or arbitrary audio files, can be played
+through the speaker to enact vibrations on the sensor, which then transfers the
+data to the μModule Data Acquisition System linked to the System Demonstration
+Platform. An executable, configurable software program displays several signal
+features, including the waveform, data occurrence histogram, and FFT plot, all
+in real time.
 
 |image1|
 
@@ -55,4 +62,4 @@ Demo Contents
 -  Plastic Mounting Base
 
 .. |image1| image:: https://wiki.analog.com/_media/mems/fully_built_demo.png
-   :width: 700px
+   :width: 700

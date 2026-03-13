@@ -3,7 +3,9 @@
 Close Project
 =============
 
-This action allows the user to close the project opened in the SigmaStudioPlus application. The function doesn't have any arguments. This API returns the SSPResult type.
+This action allows the user to close the project opened in the SigmaStudioPlus
+application. The function doesn't have any arguments. This API returns the
+SSPResult type.
 
 API
 ---
@@ -15,7 +17,8 @@ API
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information for the CloseProject action.
+SSPResult contains 'IsSuccess' flag and 'Message' information for the
+CloseProject action.
 
 ::
 

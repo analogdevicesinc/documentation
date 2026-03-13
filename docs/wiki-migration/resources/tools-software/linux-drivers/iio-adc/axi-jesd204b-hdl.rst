@@ -3,7 +3,8 @@ AXI JESD204B HDL Linux Driver
 
 .. warning::
 
-   \ NOTE: This driver is RETIRED, DEPRECATED and not used anymore in any of the recent projects!
+   \ NOTE: This driver is RETIRED, DEPRECATED and not used anymore in any of the
+   recent projects!
 
    
    Please see here instead:
@@ -11,7 +12,6 @@ AXI JESD204B HDL Linux Driver
    -  :doc:`JESD204B Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
    -  :doc:`JESD204B Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
    
-
 
 Supported Devices
 -----------------
@@ -49,7 +49,8 @@ Files
 Example platform device initialization
 ======================================
 
-The AXI JESD204B driver is a platform driver and can currently only be instantiated via device tree.
+The AXI JESD204B driver is a platform driver and can currently only be
+instantiated via device tree.
 
 Required devicetree properties:
 
@@ -89,12 +90,14 @@ Example:
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 

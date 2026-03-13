@@ -11,15 +11,19 @@ The quick start guide is available on the landing page here :doc:`(Quick Start G
 Install Guide
 -------------
 
-The EVAL-AD4116ASDZ evaluation kit includes a link to the software that needs to be installed before using the EVAL-AD4116ASDZ evaluation board. There are two parts to the installation:
+The EVAL-AD4116ASDZ evaluation kit includes a link to the software that needs to
+be installed before using the EVAL-AD4116ASDZ evaluation board. There are two
+parts to the installation:
 
 -  **AD411X Eval+** software installation
 -  **EVAL+ Dependencies** installation, including SDP board drivers
 
 .. important::
 
-   \ Warning: The evaluation software and drivers must be installed before connecting both the evaluation board and the SDP-B board to the PC. This ensures that the evaluations system is correctly recognized when it is connected to the PC.
-
+   \ Warning: The evaluation software and drivers must be installed before
+   connecting both the evaluation board and the SDP-B board to the PC. This
+   ensures that the evaluations system is correctly recognized when it is
+   connected to the PC.
 
 Installing the AD411x Eval+ Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,7 +72,9 @@ After the installation of the evaluation software is complete, a welcome window 
 Setting Up the System for Data Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After completing the steps in the Software Installation Procedures section and the Evaluation Board Hardware section, set up the system for data capture as follows:
+After completing the steps in the Software Installation Procedures section and
+the Evaluation Board Hardware section, set up the system for data capture as
+follows:
 
 -  Allow the **Found New Hardware** wizard to run after connecting the SDP board to the PC. If using Windows XP, it may be necessary to search for the SDP drivers. Choose to automatically search for the drivers for the SDP board if prompted by the operating system.
 -  Check that the board is connecting to the PC correctly using the **Device Manager** of the PC. Access the **Device Manager** as follows:
@@ -108,7 +114,11 @@ After selecting **AD4116 Evaluation Board**, the main window of the evaluation s
 Configuration Tab
 ~~~~~~~~~~~~~~~~~
 
--  The Configuration tab shows a block diagram of the AD4116. This tab allows the user to select inputs, set up the ADC, reset the ADC, view errors present, and configure the device for different demonstration modes. Figure 16 shows the Configuration tab in detail, and the following sections discuss the different elements on the Configuration tab of the software window.
+-  The Configuration tab shows a block diagram of the AD4116. This tab allows
+   the user to select inputs, set up the ADC, reset the ADC, view errors
+   present, and configure the device for different demonstration modes. Figure
+   16 shows the Configuration tab in detail, and the following sections discuss
+   the different elements on the Configuration tab of the software window.
 
 Inputs Quickstart Mode Only (1)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -133,7 +143,8 @@ ADC Reset (4)
 ^^^^^^^^^^^^^
 
 -  Click **Reset** to perform a software reset of the AD4116 (Label 4 in Figure 16). There is no hardware reset pin on the AD4116.
--  To perform a hard reset, remove power from the board. The software reset has the same effect as a hard reset.
+-  To perform a hard reset, remove power from the board. The software reset has
+   the same effect as a hard reset.
 
 Tutorial Button (5)
 ^^^^^^^^^^^^^^^^^^^
@@ -143,12 +154,15 @@ Tutorial Button (5)
 Functional Block Diagram (6)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The functional block diagram of the AD4116 (Label 6 in Figure 16) shows each of the functional blocks within the AD4116. Clicking a configuration button on the block diagram opens the configuration window for that block.
+-  The functional block diagram of the AD4116 (Label 6 in Figure 16) shows each
+   of the functional blocks within the AD4116. Clicking a configuration button
+   on the block diagram opens the configuration window for that block.
 
 Configuration Popup Button (7)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Each configuration button (Label 7 in Figure 16) opens a different window to configure the relevant functional block.
+-  Each configuration button (Label 7 in Figure 16) opens a different window to
+   configure the relevant functional block.
 
 External Parameters (8,9,10)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -175,7 +189,10 @@ The AD411X Eval+ software has two different waveform tabs: **Voltage Waveform** 
 Waveform Graph and Controls (13,14)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The data waveform graph (Label 13 in Figure 18) shows each successive sample of the ADC output. Zoom in on the data in the graph using the control buttons (Label 14 in Figure 18). Change the scales on the graph by typing values into the x-axis and y-axis.
+-  The data waveform graph (Label 13 in Figure 18) shows each successive sample
+   of the ADC output. Zoom in on the data in the graph using the control buttons
+   (Label 14 in Figure 18). Change the scales on the graph by typing values into
+   the x-axis and y-axis.
 
 Samples (15,16)
 ^^^^^^^^^^^^^^^
@@ -185,13 +202,15 @@ Samples (15,16)
 Sample (17)
 ^^^^^^^^^^^
 
--  Click Sample (Label 17 in Figure 18) to start gathering ADC results. Results appear in the waveform graph.
+-  Click Sample (Label 17 in Figure 18) to start gathering ADC results. Results
+   appear in the waveform graph.
 
 Plot Selection (18)
 ^^^^^^^^^^^^^^^^^^^
 
 -  The plot selection control area (Label 18 in Figure 18) allows the user to select which inputs display on the data waveform and shows the name of the input.
--  These controls only affect the waveform graphs and have no effect on the channel settings in the ADC register map.
+-  These controls only affect the waveform graphs and have no effect on the
+   channel settings in the ADC register map.
 
 Display Units and Axis Controls (19)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -228,7 +247,10 @@ The **Histogram** tab generates a histogram using the gathered samples and proce
 Histogram Graph and Controls (24,25)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The data histogram graph (Label 24 in Figure 19) shows the number of times each sample of the ADC output occurs. Zoom in on the data using the control buttons (Label 25 in Figure 19) in the graph. Change the scales on the graph by typing values into the x-axis and y-axis.
+-  The data histogram graph (Label 24 in Figure 19) shows the number of times
+   each sample of the ADC output occurs. Zoom in on the data using the control
+   buttons (Label 25 in Figure 19) in the graph. Change the scales on the graph
+   by typing values into the x-axis and y-axis.
 
 Noise Analysis (26)
 ^^^^^^^^^^^^^^^^^^^
@@ -260,17 +282,27 @@ Use the Register Map tab to access the registers of the AD7124-8. This tab chang
 Register Map (30)
 ^^^^^^^^^^^^^^^^^
 
--  Clicking the register maps nested list (Label 30 in Figure 20) shows each register. Clicking the expand button next to each register shows all the bit fields contained within that register.
+-  Clicking the register maps nested list (Label 30 in Figure 20) shows each
+   register. Clicking the expand button next to each register shows all the bit
+   fields contained within that register.
 
 Search (31)
 ^^^^^^^^^^^
 
--  The search box (Label 31 in Figure 20) allows the user to search the register maps list for any register or bit field. Entering a value into this control filters the register list.
+-  The search box (Label 31 in Figure 20) allows the user to search the register
+   maps list for any register or bit field. Entering a value into this control
+   filters the register list.
 
 Register and Bit Field Control (32-35)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The register control area (Label 32 in Figure 20) allows the user to change the individual bit of the register selected in the register by clicking the bits or by programming the register value directly into the value control box (Label 33 in Figure 20). The register and bit controls also show all bit fields for the selected register. Change the values by using the dropdown boxes (Label 34 in Figure 20) or by selecting or clearing a check box (Label 35 in Figure 20).
+-  The register control area (Label 32 in Figure 20) allows the user to change
+   the individual bit of the register selected in the register by clicking the
+   bits or by programming the register value directly into the value control box
+   (Label 33 in Figure 20). The register and bit controls also show all bit
+   fields for the selected register. Change the values by using the dropdown
+   boxes (Label 34 in Figure 20) or by selecting or clearing a check box (Label
+   35 in Figure 20).
 
 Documentation (36,37)
 ^^^^^^^^^^^^^^^^^^^^^
@@ -285,36 +317,36 @@ Save and Load (38)
 :doc:`Return to Hardware Guide </wiki-migration/resources/eval/user-guides/eval-ad4116asdz/hardware_guide>` :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/eval-ad4116asdz>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-004.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-005.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-006.png
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-007.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-008.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-009.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-010.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-011.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-012.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-013.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-014.png
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-015.png
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad4116asdz/26267-016.png
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad4116asdz/26267-017.png
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-018.png
-   :width: 600px
+   :width: 600
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-019.png
-   :width: 600px
+   :width: 600
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_ad4116/26267-020.png
-   :width: 600px
+   :width: 600

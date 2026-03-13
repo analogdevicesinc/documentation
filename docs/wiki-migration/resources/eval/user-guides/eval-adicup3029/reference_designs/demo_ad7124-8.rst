@@ -27,7 +27,16 @@ The initial configuration of the **ADuCM3029_demo_ad7124_8PMDZ** engages all inp
 -  Channel 14: AIN6-AGND, single-ended;
 -  Channel 15: AIN7-AGND, single-ended;
 
-By default only channel 0 is active at first, but this can be adjusted using the appropriate CLI commands (described below). At first all channels are using the configuration register 0 which is set to sinc4 filter option and the first option of PGA corresponding to the widest range. The filter sample rate is set at maximum. Each configuration register has a different PGA setting so that each channel can be set using the CLI to any PGA. The demo does this by assigning each channel to the corresponding configuration register that contains the desired PGA setting. Most of the demo CLI commands work in this configuration, but the CLI also offers access to the individual registers for the user to set the desired configuration manually.
+By default only channel 0 is active at first, but this can be adjusted using the
+appropriate CLI commands (described below). At first all channels are using the
+configuration register 0 which is set to sinc4 filter option and the first
+option of PGA corresponding to the widest range. The filter sample rate is set
+at maximum. Each configuration register has a different PGA setting so that each
+channel can be set using the CLI to any PGA. The demo does this by assigning
+each channel to the corresponding configuration register that contains the
+desired PGA setting. Most of the demo CLI commands work in this configuration,
+but the CLI also offers access to the individual registers for the user to set
+the desired configuration manually.
 
 Demo Requirements
 -----------------
@@ -59,7 +68,8 @@ Setting up the Hardware
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7124_pmod_unplug.jpg
    :align: center
 
--  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
+-  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect
+   it to a computer. The final setup should look similar to the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7124_pmod_plug.jpg
    :align: center
@@ -71,8 +81,6 @@ The software needs no configuration.
 
 Outputting Data
 ---------------
-
-
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
@@ -149,8 +157,6 @@ preferences.
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
 
-
-
 Available commands
 ~~~~~~~~~~~~~~~~~~
 
@@ -211,14 +217,19 @@ Typing **help** or **h** after initial calibration sequence will display the lis
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the AD7124-8 PMOD.
+There are two basic ways to program the ADICUP3029 with the software for the
+AD7124-8 PMOD.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_ad7124_8PMDZ** can be found here:
 
@@ -234,7 +245,6 @@ The software for the **ADuCM3029_demo_ad7124_8PMDZ** can be found here:
    
    -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_ad7124_8PMDZ Source Code <projects/ADuCM3029_demo_ad7124_8PMDZ>`
    
-
 
 How to use the Tools
 --------------------

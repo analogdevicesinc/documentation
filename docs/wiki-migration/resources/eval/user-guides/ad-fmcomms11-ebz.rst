@@ -5,7 +5,7 @@ The AD-FMComms11-EBZ board is a system platform board for communication infrastr
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/fmcomms11_image.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Table of Contents
 -----------------
@@ -51,7 +51,8 @@ Table of Contents
 ADI Articles
 ------------
 
--   Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio
+-   Four Quick Steps to Production: Using Model-Based Design for
+    Software-Defined Radio
 
    -  :adi:`Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
    -  :adi:`Part 2—Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
@@ -72,6 +73,4 @@ MathWorks Webinars
 Warning
 -------
 
-
 .. esd-warning::
-

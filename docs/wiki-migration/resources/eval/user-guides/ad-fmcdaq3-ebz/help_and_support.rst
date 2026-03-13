@@ -7,9 +7,15 @@ For questions regarding the AD-FMCDAQ3-EBZ hardware or the HDL reference design 
 
 For questions regarding the :adi:`AD9152` DAC or the :adi:`AD9680-1000 <AD9680>` ADC please state them in the :ez:`Data Converters <community/data_converters>` sub-community. For questions regarding the :adi:`ad9528` Clock please use the :ez:`Clock and Timing <community/clock_and_timing>` sub-community.
 
-When asking a question please take the time to give a detailed description of your problem. Always include on which platform you are currently using the AD-FMCDAQ3-EBZ. If you are experiencing a problem please state the steps you have executed, the result you expected you would get and the result you actually got. By doing so you enable us to provide you precise and detailed answers in a timely manner.
+When asking a question please take the time to give a detailed description of
+your problem. Always include on which platform you are currently using the
+AD-FMCDAQ3-EBZ. If you are experiencing a problem please state the steps you
+have executed, the result you expected you would get and the result you actually
+got. By doing so you enable us to provide you precise and detailed answers in a
+timely manner.
 
-Before asking questions please also take the time to check if somebody else already asked the same question and already got an answer.
+Before asking questions please also take the time to check if somebody else
+already asked the same question and already got an answer.
 
 For more information also check:
 

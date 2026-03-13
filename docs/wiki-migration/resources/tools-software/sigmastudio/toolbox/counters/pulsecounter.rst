@@ -34,9 +34,16 @@ Output Pins
 Algorithm Description
 ---------------------
 
-The purpose of the Pulse counter, is to count the number of pulses during a specified amount of time. The time is dictated by the signal on the start/stop pin. When the start/stop pin is high, the algorithm is counting pulses, otherwise the last count value is output. The reset pin clears the count value and counting can resume from 0 whenever the start pin is high.
+The purpose of the Pulse counter, is to count the number of pulses during a
+specified amount of time. The time is dictated by the signal on the start/stop
+pin. When the start/stop pin is high, the algorithm is counting pulses,
+otherwise the last count value is output. The reset pin clears the count value
+and counting can resume from 0 whenever the start pin is high.
 
-The graph below shows the interaction between the start/stop and reset pins when a pulse train signal is present on the Pulse Input pin. The reset signal is in red. The start/stop signal is in blue, and the counter output is the second graph in yellow.
+The graph below shows the interaction between the start/stop and reset pins when
+a pulse train signal is present on the Pulse Input pin. The reset signal is in
+red. The start/stop signal is in blue, and the counter output is the second
+graph in yellow.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/pulsecounterpic2.png
    :alt: pulsecounterpic2.png

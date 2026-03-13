@@ -40,7 +40,8 @@ Files
 Example platform device initialization
 ======================================
 
-The AXI FAN CONTROL driver is a platform driver and can currently only be instantiated via device tree.
+The AXI FAN CONTROL driver is a platform driver and can currently only be
+instantiated via device tree.
 
 Required devicetree properties:
 
@@ -67,12 +68,14 @@ Required devicetree properties:
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -93,7 +96,12 @@ Driver testing
 HWMON device files
 ------------------
 
-Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX, where X is the hwmon device index. Under every of these directory folders there are a set of files, depending on what kind of hardware monitoring is supported (temperature, voltage). In order to determine which hwmon device corresponds to which hardware chip, the user can read the name file under /sys/class/hwmon/hwmonX/name.
+Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX,
+where X is the hwmon device index. Under every of these directory folders there
+are a set of files, depending on what kind of hardware monitoring is supported
+(temperature, voltage). In order to determine which hwmon device corresponds to
+which hardware chip, the user can read the name file under
+/sys/class/hwmon/hwmonX/name.
 
 .. container:: box bggreen
 
@@ -125,7 +133,6 @@ Each and every HWMON device has a device folder under /sys/class/hwmon/hwmonX, w
       root:/sys/class/hwmon/hwmon0>
    
 
-
 For more information on the files format and accepted values, take a look to `sysfs-interface <https://www.kernel.org/doc/Documentation/hwmon/sysfs-interface>`_.
 
 Show device name
@@ -142,7 +149,6 @@ Show device name
       axi_fan_control
    
 
-
 Show FAN input (in RPM)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -156,7 +162,6 @@ Show FAN input (in RPM)
       root:/sys/class/hwmon/hwmon0> cat fan1_input
       3600
    
-
 
 Show FAN label
 ~~~~~~~~~~~~~~
@@ -172,7 +177,6 @@ Show FAN label
       SOM FAN
    
 
-
 Show PWM input
 ~~~~~~~~~~~~~~
 
@@ -186,7 +190,6 @@ Show PWM input
       root:/sys/class/hwmon/hwmon0> cat pwm1
       200
    
-
 
 Show Temperature input (in milliC)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -202,7 +205,6 @@ Show Temperature input (in milliC)
       32000
    
 
-
 Show Temperature label
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -216,7 +218,6 @@ Show Temperature label
       root:/sys/class/hwmon/hwmon0> cat temp1_label
       SYSMON4
    
-
 
 Show fault
 ~~~~~~~~~~
@@ -234,7 +235,6 @@ When reading **fan1_fault** returns 1, that means that either the FAN is physica
       0
    
 
-
 Set PWM value
 ~~~~~~~~~~~~~
 
@@ -247,7 +247,6 @@ Set PWM value
    
       root:/sys/class/hwmon/hwmon0> echo 250 > pwm1
    
-
 
 More Information
 ================
@@ -263,4 +262,3 @@ HWMON pointers
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

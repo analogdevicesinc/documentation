@@ -41,7 +41,10 @@ GUI Controls
 Context Menu
 ------------
 
-Right-click on the module to open the context menu window. By default, DM1 memory is used for delay. User can choose either DM0,DM1 or PM for Delay. Change in memory used for delay leads to re-compile the project(supports for ADAU145x/ADAU146x).
+Right-click on the module to open the context menu window. By default, DM1
+memory is used for delay. User can choose either DM0,DM1 or PM for Delay. Change
+in memory used for delay leads to re-compile the project(supports for
+ADAU145x/ADAU146x).
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/pitchtransfermemdelay.jpg
    :align: center
@@ -49,28 +52,34 @@ Right-click on the module to open the context menu window. By default, DM1 memor
 Algorithm Description
 ---------------------
 
-The algorithm takes an input signal and shifts it in frequency up or down depending on the value of the the frequency shift control signal. The control input value should be the shift percentage divided by the sampling rate, for example for a shift of +100%: control signal = (100 / 48000) = 0.0020833 (fixed-point)
+The algorithm takes an input signal and shifts it in frequency up or down
+depending on the value of the the frequency shift control signal. The control
+input value should be the shift percentage divided by the sampling rate, for
+example for a shift of +100%: control signal = (100 / 48000) = 0.0020833
+(fixed-point)
 
-Here is a time-domain display of a sine tone being shifted in frequency. The top sine tone is the input signal, and the bottom sine tone is the output.
+Here is a time-domain display of a sine tone being shifted in frequency. The top
+sine tone is the input signal, and the bottom sine tone is the output.
 
-Approximate Output frequency = Input frequency + (Input frequency \* (Delay Reserved x 0.001) x shift(%))
+Approximate Output frequency = Input frequency + (Input frequency \* (Delay
+Reserved x 0.001) x shift(%))
 
 For example, consider the following schematic,
 
 |image1| Here, Shift = 0.38 (38%) Input frequency = 100 Hz Delay Reserved = 960
 
-control signal = 38/48000 => 0.000791667 Approximate Output frequency = 100 + (100 \* (960 x 0.001) x 0.38) = 136.48
+control signal = 38/48000 => 0.000791667 Approximate Output frequency = 100 +
+(100 \* (960 x 0.001) x 0.38) = 136.48
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/pitch_shift_up.png
    :alt: pitch_shift_up.png
 
-Here is the same example in the frequency domain. This picture shows the frequency domain of the input signal.
-
+Here is the same example in the frequency domain. This picture shows the
+frequency domain of the input signal.
 
 |Before_Pitch_Shift.png|
 
 This picture shows the frequency domain of the output signal.
-
 
 |After_Pitch_Shift.png|
 

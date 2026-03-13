@@ -16,12 +16,13 @@ Based on the **maximum sensor sensitivity** for each gas the system should be co
 
 .. note::
 
-   Maximum sensitivity and gas sensitivity are dependent on sensor type. These value will need to be updated in case of using another sensor that the one presented here.
-
+   Maximum sensitivity and gas sensitivity are dependent on sensor type. These
+   value will need to be updated in case of using another sensor that the one
+   presented here.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_3.png
    :align: center
-   :width: 800px
+   :width: 800
 
 Demo Requirements
 -----------------
@@ -49,32 +50,39 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
+-  To program the base board, set the jumpers/switches as shown in the next
+   figure. The important jumpers/switches are highlighted in red.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Connect the **EVAL-CN0396-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Set the jumpers on EVAL-CN0396-ARDZ board, as shown in the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_4.png
    :align: center
-   :width: 600px
+   :width: 600
 
--  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
+-  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
+   Debug USB.(P14)
 
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the CN0396.
+There are two basic ways to program the ADICUP360 with the software for the
+CN0396.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_cn0396** demo can be found here:
 
@@ -91,11 +99,9 @@ The software for the **ADuCM360_demo_cn0396** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0396 Source Code <projects/ADuCM360_demo_cn0396>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -148,11 +154,12 @@ Following is the UART configuration.
      Stop: 1 bit
      Flow Control: none
 
--  The data output refreshes in the console window at the rate of the "display_refresh" parameter with the following results.
+-  The data output refreshes in the console window at the rate of the
+   "display_refresh" parameter with the following results.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_3.png
    :align: center
-   :width: 800px
+   :width: 800
 
 How to use the Tools
 --------------------
@@ -174,13 +181,16 @@ Project structure
 
 The **ADuCM360_demo_cn0396** is a C project which uses ADuCM36x C/C++ Project structure.
 
-This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for SPI1, UART via P0.6/P0.7; SPI, UART read/write functions, AD7798 control, AD5270 and ADT7310 control; gas concentration computation.
+This project contains: system initialization part - disabling watchdog, setting
+system clock, enabling clock for peripherals; port configuration for SPI1, UART
+via P0.6/P0.7; SPI, UART read/write functions, AD7798 control, AD5270 and
+ADT7310 control; gas concentration computation.
 
 In the **src** and **include** folders you will find the source and header files related to CN0396 software application. The *Communication.c/h* files contain SPI and UART specific data, the *AD7798.c/h* files contain the ADC control, the *AD5270.c/h* files contain the rheostat control, the *ADT73100.c/h* files contain the temperature sensor control, and the *CN0396.c/h* files are for the gas calculations.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_software_dir.png
    :align: left
-   :width: 250px
+   :width: 250
 
 The **RTE** folder contains device and system related files:
 
@@ -190,4 +200,4 @@ The **RTE** folder contains device and system related files:
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_1.png
-   :width: 650px
+   :width: 650

@@ -5,8 +5,8 @@ CCES supplies pre-built initialization files for the ADSP-SC5xx EZ-KIT Lite, as 
 
 .. tip::
 
-   For our example project no code changes are needed so we can use a pre-built initialization file.
-
+   For our example project no code changes are needed so we can use a pre-built
+   initialization file.
 
 Let's start with our existing :doc:`ADSP-SC573 blink application </wiki-migration/resources/tools-software/crosscore/cces/getting-started/led-blink-app>`. The application is made up of three projects, one for each core of our ADSP-SC573 processor. To recap, core 0 is our ARM Cortex-A5 core and cores 1 and 2 are our SHARC+ cores:
 
@@ -19,7 +19,6 @@ To build the application and create a bootable image:
 
 1. In **Project Explorer** select the three projects by holding down the **SHIFT** key and clicking each project's folder. Select **Project → Build Configurations → Set Active → Debug** pull-down menu
 
-
 |image1|
 
 *Figure 2: Setting the build configuration*
@@ -28,8 +27,10 @@ To build the application and create a bootable image:
 
 .. important::
 
-   The loader image must be built using the last active project in your application. If your application uses only core 0, core 0 must also be used to build the loader image. If you use cores 0 and 1, use core 1. If using cores 0, 1, and 2, use core 2.
-
+   The loader image must be built using the last active project in your
+   application. If your application uses only core 0, core 0 must also be used
+   to build the loader image. If you use cores 0 and 1, use core 1. If using
+   cores 0, 1, and 2, use core 2.
 
 3. In the **Properties** window, go to the **Build → Settings** page and select **Build Artifact → Artifact Type → Loader File**
 
@@ -39,8 +40,9 @@ To build the application and create a bootable image:
 
 .. tip::
 
-   The Build Settings page has several tabs. If not all tabs are visible, use the left/right arrow buttons located beneath the Manage Configurations... button to scroll through all available tabs.
-
+   The Build Settings page has several tabs. If not all tabs are visible, use
+   the left/right arrow buttons located beneath the Manage Configurations...
+   button to scroll through all available tabs.
 
 4. On the **Tool Settings** tab, go to the **CrossCore SHARC Loader → General** page and select these settings:
 
@@ -72,8 +74,8 @@ To build the application and create a bootable image:
 
 .. tip::
 
-   The video only shows executables being loaded to cores 0 and 1. Our demo uses all three cores so don't forget to also load an executable for core 2!
-
+   The video only shows executables being loaded to cores 0 and 1. Our demo uses
+   all three cores so don't forget to also load an executable for core 2!
 
 10. Rebuild the loader file project to generate the loader image file. In **Project Explorer** right click the core 2 project and select **Build Project**. A ``*_core*.ldr`` file should be generated in the loader project's Debug folder
 

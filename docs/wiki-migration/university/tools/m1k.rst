@@ -3,22 +3,34 @@ ADALM1000 Overview
 
 |image1| The :adi:`ADALM1000` Active Learning Module is an easy to use tool available from Analog Devices Inc. that can be used to introduce fundamentals of electrical engineering in a self or instructor lead setting. The ADALM1000 Module allows students to better understand the real analog world around them, and is applicable for all students, at all levels, from all backgrounds. Early learning in a hands-on manner with the ADALM1000 will ensure a solid foundation for students to build on, as they pursue science, technology, or engineering degrees.
 
-The ADALM1000 module is a tool that brings the relationships between current, voltage, impedance (resistance, inductance, and capacitance) to the user. It provides a personal portable lab that, when used with a laptop or tablet, can augment the learning that takes place in the classroom. Pixelpulse 2 provides an innovative graphical user interface (GUI) allowing intuitive usage and minimizes the learning curve to enable students to learn faster, work smarter, and explore more.
+The ADALM1000 module is a tool that brings the relationships between current,
+voltage, impedance (resistance, inductance, and capacitance) to the user. It
+provides a personal portable lab that, when used with a laptop or tablet, can
+augment the learning that takes place in the classroom. Pixelpulse 2 provides an
+innovative graphical user interface (GUI) allowing intuitive usage and minimizes
+the learning curve to enable students to learn faster, work smarter, and explore
+more.
 
 The ADALM1000 is a learning tool for everyone.
 
 .. image:: https://wiki.analog.com/_media/university/tools/m1k/adalm1000_block.png
    :align: right
-   :width: 200px
+   :width: 200
 
-It offers two high-precision analog channels, each capable of generating or measuring analog signals at up to 100 kilosamples per second (kSPS). The ADALM1000 is completely self contained, fits nicely in a shirt pocket or backpack, and is entirely USB powered. With support for OS X™, Windows™, and Linux™  [1]_, it allows a exploration and understanding of analog systems no matter where or when the user is.
+It offers two high-precision analog channels, each capable of generating or
+measuring analog signals at up to 100 kilosamples per second (kSPS). The
+ADALM1000 is completely self contained, fits nicely in a shirt pocket or
+backpack, and is entirely USB powered. With support for OS X™, Windows™, and
+Linux™  [1]_, it allows a exploration and understanding of analog systems no
+matter where or when the user is.
 
-Continuous streaming of voltage and current measurements into a simple GUI allow for a variety of impedance, time, and frequency domain explorations to be carried out with ease.
+Continuous streaming of voltage and current measurements into a simple GUI allow
+for a variety of impedance, time, and frequency domain explorations to be
+carried out with ease.
 
 .. tip::
 
    To get the best performance out of your ADALM1000 device and ensure compatibility with the `MATLAB ADALM1000 support package <https://www.mathworks.com/hardware-support/analog-devices-adalm1000.html>`_ please make sure that the device is programmed with the :doc:`latest firmware </wiki-migration/university/tools/m1k/firmware-upgrade>`.
-
 
 The following content is currently available:
 
@@ -49,7 +61,9 @@ The following content is currently available:
    -  :doc:`Firmware Upgrade Procedures for the ADALM1000 </wiki-migration/university/tools/m1k/firmware-upgrade>`
 
 -  Host Software
-   Open Source hardware allows you you choose between your supported software environments. A library which you can use for your own projects (libsmu), to a Windows/Linux/OS-X GUI (ALICE, PixelPulse2), to MATLAB support.
+   Open Source hardware allows you you choose between your supported software
+   environments. A library which you can use for your own projects (libsmu), to
+   a Windows/Linux/OS-X GUI (ALICE, PixelPulse2), to MATLAB support.
 
    -  :doc:`LibSMU - Library for M1K </wiki-migration/university/tools/m1k/libsmu>`
    -  :doc:`Pixelpulse 2 </wiki-migration/university/tools/m1k/pixelpulse>` (developed in C and C++)
@@ -74,4 +88,4 @@ The following content is currently available:
    soon Android™ and Chrome™
 
 .. |image1| image:: https://wiki.analog.com/_media/m1k/adalm1000_angle_small.png
-   :width: 250px
+   :width: 250

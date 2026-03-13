@@ -14,15 +14,33 @@ Evaluation Boards
 Overview
 --------
 
-The AD7176-2 is a fast settling, highly accurate, high resolution, multiplexed Σ-Δ analog-to-digital converter (ADC) for low bandwidth input signals. Its inputs can be configured as two fully differential or four pseudo differential inputs via the integrated crosspoint multiplexer. An integrated precision, 2.5 V, low drift (2ppm/°C), band gap internal reference (with an output reference buffer) adds functionality and reduces the external component count.
+The AD7176-2 is a fast settling, highly accurate, high resolution, multiplexed
+Σ-Δ analog-to-digital converter (ADC) for low bandwidth input signals. Its
+inputs can be configured as two fully differential or four pseudo differential
+inputs via the integrated crosspoint multiplexer. An integrated precision, 2.5
+V, low drift (2ppm/°C), band gap internal reference (with an output reference
+buffer) adds functionality and reduces the external component count.
 
-The maximum channel scan data rate is 50 kSPS (with a settling time of 20 μs), resulting in fully settled data of 17 noise free bits. User-selectable output data rates range from 5 SPS to 250 kSPS. The resolution increases at lower speeds.
+The maximum channel scan data rate is 50 kSPS (with a settling time of 20 μs),
+resulting in fully settled data of 17 noise free bits. User-selectable output
+data rates range from 5 SPS to 250 kSPS. The resolution increases at lower
+speeds.
 
-The AD7176-2 offers three key digital filters. The fast settling filter maximizes the channel scan rate. The Sinc3 filter maximizes the resolution for single-channel, low speed applications. For 50 Hz and 60 Hz environments, the AD7176-2 specific filter minimizes the settling times or maximizes the rejection of the line frequency. These enhanced filters enable simultaneous 50 Hz and 60 Hz rejection with a 27 SPS output data rate (with a settling time of 36 ms).
+The AD7176-2 offers three key digital filters. The fast settling filter
+maximizes the channel scan rate. The Sinc3 filter maximizes the resolution for
+single-channel, low speed applications. For 50 Hz and 60 Hz environments, the
+AD7176-2 specific filter minimizes the settling times or maximizes the rejection
+of the line frequency. These enhanced filters enable simultaneous 50 Hz and 60
+Hz rejection with a 27 SPS output data rate (with a settling time of 36 ms).
 
-System offset and gain errors can be corrected on a per channel basis. This per channel configurability extends to the type of filter and output data rate used for each channel. All switching of the crosspoint multiplexer is controlled by the ADC and can be configured to automatically control an external multiplexer via the GPIO pins.
+System offset and gain errors can be corrected on a per channel basis. This per
+channel configurability extends to the type of filter and output data rate used
+for each channel. All switching of the crosspoint multiplexer is controlled by
+the ADC and can be configured to automatically control an external multiplexer
+via the GPIO pins.
 
-The specified operating temperature range is −40°C to +105°C. The AD7176-2 is housed in a 24-lead TSSOP package.
+The specified operating temperature range is −40°C to +105°C. The AD7176-2 is
+housed in a 24-lead TSSOP package.
 
 Applications
 ~~~~~~~~~~~~
@@ -35,7 +53,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7176_eval_sdz.jpg
    :align: center
 
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 **HW Platform(s):**
 
@@ -47,9 +70,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD7176 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD7176 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD7176 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD7176 driver:
 
@@ -63,7 +90,6 @@ There are three functions which are called by the AD7176 driver:
 .. container:: centeralign
 
    SPI driver architecture
-
 
 The following functions are implemented in this version of AD7176 driver:
 
@@ -100,11 +126,11 @@ Downloads
    -  `AD7176 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7176_rl78g13.zip>`_
    
 
-
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD7176 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD7176
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -120,7 +146,8 @@ Required Software
 Hardware Setup
 --------------
 
-An EVAL-AD7176-2SDZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+An EVAL-AD7176-2SDZ board has to be interfaced with the Renesas Demonstration
+Kit (RDK) for RL78G13:
 
 ::
 
@@ -136,7 +163,8 @@ An EVAL-AD7176-2SDZ board has to be interfaced with the Renesas Demonstration Ki
 Reference Project Overview
 --------------------------
 
-The reference project reads data from the AD7176 part and displays it on the LCD.
+The reference project reads data from the AD7176 part and displays it on the
+LCD.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7176_rl78g13_screen.jpg
    :align: center
@@ -144,17 +172,13 @@ The reference project reads data from the AD7176 part and displays it on the LCD
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 More information
 ================
-
 
 .. note::
 
    See `more-information <https://wiki.analog.com/more-information>`_
-

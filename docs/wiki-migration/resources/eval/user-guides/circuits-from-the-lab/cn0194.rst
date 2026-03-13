@@ -6,7 +6,6 @@ Overview
 
 :adi:`CN0194` provides galvanic isolation for high speed, high accuracy, simultaneous sampling analog-to-digital conversion applications. The :adi:`AD7685` is a 16-bit, charge redistribution successive approximation (SAR) analog-to-digital converter (ADC) that operates from a single VDD power supply from 2.3V to 5.5V. It contains a low power, high speed, 16-bit sampling ADC with no missing codes, no pipeline delay, an internal conversion clock, and a versatile serial interface port. The ADC also contains a low noise, wide bandwidth, short aperture delay, track-and-hold circuit. The AD7685 PulSAR ADC is versatile and allows monitoring of multiple channels through daisy chaining.
 
-
 |image1|
 
 Required Equipment
@@ -61,14 +60,14 @@ Installing the Software
 
    \ NOTE: It is recommended that you install the `CN0194_Evaluation_Software.zip <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0194/2.1.0/cn0194_evaluation_software.zip>`_ to the default directory path C:\\Program Files\\Analog Devices\\ *(in 32-bit operational system)* or C:\\Program Files (x86)\\Analog Devices\\ *(in 64-bit operational system)*, and all National Instruments products to C:\\Program Files\\National Instruments\\ *(in 32-bit operational system)* or C:\\Program Files (x86)\\National Instruments\\ *(in 64-bit operational system)*
 
-
    |image2|
 
    \* Click Next to view the installation review page
 
    |image3|
 
-   \* Click Next to start the installation, after the installation, the installer for the ADI SDP Drivers will execute.
+   \* Click Next to start the installation, after the installation, the
+   installer for the ADI SDP Drivers will execute.
 
    |image4|
 
@@ -78,12 +77,14 @@ Installing the Software
 
    It is recommended that you install the drivers to the default directory path
 
-   C:\\Program Files\\Analog Devices\\SDP\\DriversR2\\ *(in 32-bit operational system)* or C:\\Program Files (x86)\\Analog Devices\\SDP\\DriversR2\\ *(in 64-bit operational system)*
-
+   C:\\Program Files\\Analog Devices\\SDP\\DriversR2\\ *(in 32-bit operational
+   system)* or C:\\Program Files (x86)\\Analog Devices\\SDP\\DriversR2\\ *(in
+   64-bit operational system)*
 
    |image5|
 
-   \* Press “Next” to install the SDP Drivers and complete the installation of all software. Click "Finish" when done.
+   \* Press “Next” to install the SDP Drivers and complete the installation of
+   all software. Click "Finish" when done.
 
    |image6|
 
@@ -96,7 +97,7 @@ Software Control and Indicator Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_use.jpg
-   :width: 1000px
+   :width: 1000
 
 ::
 
@@ -156,14 +157,14 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ NOTE: If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be
+   found at
 
-   C:\\Program Files\\Analog Devices\\CN0194\\CN0194.exe *(in 32-bit operational system)* or C:\\Program Files (x86)\\Analog Devices\\CN0194\\CN0194.exe *(in 64-bit operational system)*\
-
+   C:\\Program Files\\Analog Devices\\CN0194\\CN0194.exe *(in 32-bit operational
+   system)* or C:\\Program Files (x86)\\Analog Devices\\CN0194\\CN0194.exe *(in
+   64-bit operational system)*\
 
 - Click the **Connect Button**. A window with a progress bar will load.
-
-
 
 |image7|
 
@@ -187,18 +188,17 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0194-SDPZ?&v=Rev B>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/cn0194-00-1024_sch.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_1.jpg
-   :width: 584px
+   :width: 584
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_2.jpg
-   :width: 584px
+   :width: 584
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_3.jpg
-   :width: 503px
+   :width: 503
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_4.jpg
-   :width: 584px
+   :width: 584
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_5.jpg
-   :width: 503px
+   :width: 503
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/software4.png
-   :width: 320px
+   :width: 320

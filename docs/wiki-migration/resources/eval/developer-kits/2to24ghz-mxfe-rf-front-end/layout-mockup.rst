@@ -3,7 +3,9 @@
 Size Estimate
 =============
 
-The example layout below provides an effective size estimate for the RF front end. The total PCB measures 5 x 2in (127 x 50.8mm). Information regarding the different channels or circuits size requirements are highlighted below:
+The example layout below provides an effective size estimate for the RF front
+end. The total PCB measures 5 x 2in (127 x 50.8mm). Information regarding the
+different channels or circuits size requirements are highlighted below:
 
 -  Rx ch = 4.00 sq. in
 -  Tx ch = 3.53 sq. in
@@ -15,4 +17,4 @@ The example layout below provides an effective size estimate for the RF front en
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/layoutstudy.jpg
    :align: center
-   :width: 900px
+   :width: 900

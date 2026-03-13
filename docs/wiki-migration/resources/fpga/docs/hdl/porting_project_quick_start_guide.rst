@@ -5,29 +5,40 @@ Porting ADI's HDL reference designs
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest guide at https://analogdevicesinc.github.io/hdl/user_guide/porting_project.html\
 
-
 In general, a given reference design for an FMC board is deployed to just a few carriers, although several :git-hdl:`FPGA boards <projects/common>` are supported in ADI's HDL repository. The simple reason behind this practice is that it would create a tremendous maintenance workload, that would require a lot of human resources, and would increase the required time for testing. The general rule of thumb is to support a given project with a fairly popular carrier (e.g. ZC706 or A10SoC), which is powerful enough to showcase the board features and maximum performance.
 
-All the HDL projects were designed to maximize source code reuse, minimize maintainability and simplify portability. The result of these design goals is that porting a given project to another carrier is fairly simple if the user respects a couple of guidelines.
+All the HDL projects were designed to maximize source code reuse, minimize
+maintainability and simplify portability. The result of these design goals is
+that porting a given project to another carrier is fairly simple if the user
+respects a couple of guidelines.
 
-The main scope of this wiki page is to discuss these guidelines and provide simple indications for users who wants to port a project to a non-supported carrier.
+The main scope of this wiki page is to discuss these guidelines and provide
+simple indications for users who wants to port a project to a non-supported
+carrier.
 
 Quick Compatibility Check
 -------------------------
 
 .. note::
 
-   All ADI's FPGA Mezzanine Cards (FMC) are designed to respect all the specifications and requirements defined in the ANSI/VITA 57.1 FPGA Mezzanine Card Standard (if not otherwise stated on board's wiki page). If the new FPGA carrier is fully compliant with this standard, there will be no obstacles preventing the user to port the project to the required carrier card.
+   All ADI's FPGA Mezzanine Cards (FMC) are designed to respect all the
+   specifications and requirements defined in the ANSI/VITA 57.1 FPGA Mezzanine
+   Card Standard (if not otherwise stated on board's wiki page). If the new FPGA
+   carrier is fully compliant with this standard, there will be no obstacles
+   preventing the user to port the project to the required carrier card.
 
-
-There are two types of FMC connectors: LPC (Low Pin Count) and HPC (High Pin Count). In general, an FMC board is using the FMC connector type that has enough pins for the required interfaces between the I/O devices and FPGA. A carrier with an FMC HPC connector can host FMC boards with an LPC or HPC connector, but a carrier with an FMC LPC can host a board just with an FMC LPC connector.
+There are two types of FMC connectors: LPC (Low Pin Count) and HPC (High Pin
+Count). In general, an FMC board is using the FMC connector type that has enough
+pins for the required interfaces between the I/O devices and FPGA. A carrier
+with an FMC HPC connector can host FMC boards with an LPC or HPC connector, but
+a carrier with an FMC LPC can host a board just with an FMC LPC connector.
 
 .. tip::
 
    First, always check out the already available :git-hdl:`base designs <projects/common>`. If your board is present among our supported base designs, you do not need to verify the following things and you can jump to the Project creation section
 
-
-The most important things to check before porting are related to the ANSI/VITA 57.1 standard (the list is not necessarily exhaustive):
+The most important things to check before porting are related to the ANSI/VITA
+57.1 standard (the list is not necessarily exhaustive):
 
 -  Power and ground lines - 3P3V/3P3VAUX/12P0V/GND
 -  VADJ - adjustable voltage level power from the carrier, each board has a specific requirement for VADJ
@@ -36,13 +47,15 @@ The most important things to check before porting are related to the ANSI/VITA 5
 
 .. important::
 
-   To check all the requirements, please refer to the ANSI/VITA 57.1 standard. The above few hints do not cover all the FMC standards and you may miss something that can prevent the porting of the project.
-
+   To check all the requirements, please refer to the ANSI/VITA 57.1 standard.
+   The above few hints do not cover all the FMC standards and you may miss
+   something that can prevent the porting of the project.
 
 .. tip::
 
-   Make sure that you have reviewed all the documentation and design files in order to know the electrical specifications and/or requirements of the FMC board. If you're not sure, ask!
-
+   Make sure that you have reviewed all the documentation and design files in
+   order to know the electrical specifications and/or requirements of the FMC
+   board. If you're not sure, ask!
 
 Base design files
 -----------------
@@ -53,13 +66,14 @@ At :doc:`HDL Architecture </wiki-migration/resources/fpga/docs/arch>` wiki it is
 
    In :git-hdl:`/projects/common/$carrier_name/ <projects/common>` you can find templates for the *system_top.v*, *Makefile*, etc. to help you when creating a new project.
 
-
 Example with a Xilinx board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this section, we are presenting all the necessary steps to create a base design for the Xilinx ZCU102 development board.
+In this section, we are presenting all the necessary steps to create a base
+design for the Xilinx ZCU102 development board.
 
-First, you need to create a new directory in *~/projects/common* with the name of the carrier.
+First, you need to create a new directory in *~/projects/common* with the name
+of the carrier.
 
 ::
 
@@ -85,8 +99,9 @@ You should define the board and its device in the project flow script, called (:
 
 .. tip::
 
-   The valid board parts and parts can be retrieved by running the following commands in Tcl console: get_parts and get_board_parts. Run the commands like join [get_parts] \\n, so each part name will be listed on a separate line.
-
+   The valid board parts and parts can be retrieved by running the following
+   commands in Tcl console: get_parts and get_board_parts. Run the commands like
+   join [get_parts] \\n, so each part name will be listed on a separate line.
 
 The **sys_zynq** constant variable should be set in the following way:
 
@@ -97,7 +112,8 @@ The **sys_zynq** constant variable should be set in the following way:
 Example with an Intel board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To create a new base design for a given Intel FPGA carrier board, the following steps should be taken (the A10SoC carrier was used as an example).
+To create a new base design for a given Intel FPGA carrier board, the following
+steps should be taken (the A10SoC carrier was used as an example).
 
 The following files should be created or copied into the directory:
 
@@ -120,7 +136,10 @@ Project files
 Project files for Xilinx boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To follow the project framework as much as possible, the easiest way is to copy all the projects files from an already existing project and modifying those files to support the new carrier. A project for a Xilinx FPGA board should contain the following files:
+To follow the project framework as much as possible, the easiest way is to copy
+all the projects files from an already existing project and modifying those
+files to support the new carrier. A project for a Xilinx FPGA board should
+contain the following files:
 
 -  **system_project.tcl** - This script is creating the actual Vivado project and runs the synthesis/implementation of the design. The name of the carrier from inside the file, must be updated.
 
@@ -135,7 +154,10 @@ To follow the project framework as much as possible, the easiest way is to copy 
 Project files for Intel boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To follow the project framework as much as possible the easiest way is to copy all the projects file from an already existing project and modifying those files to support the new carrier. A project for an Intel FPGA board should contain the following files:
+To follow the project framework as much as possible the easiest way is to copy
+all the projects file from an already existing project and modifying those files
+to support the new carrier. A project for an Intel FPGA board should contain the
+following files:
 
 -  **system_project.tcl** - This script is creating the actual Quartus project and runs the synthesis/implementation of the design. It also contains the I/O definitions for the interfaces between the FMC board and FPGA. The carrier name and all the I/O pin names inside the file, must be updated.
 
@@ -164,7 +186,6 @@ Required setup:
 
    In cases where these files don't already exist, you can make your own by following some existing ones as an example. For project common files, you can easily make them using our :git-hdl:`template <docs/FMC_eval_board_template.xlsx>` by following the instructions inside of it.
 
-
 Calling the script:
 
 To use this script you can source it in any tcl shell or simply call the adi_fmc_constr_generator.tcl with argument(s) <fmc_port>. But before sourcing or calling it, your current directory needs to be :git-hdl:`hdl/tree/master/projects <projects>`/<project>/<carrier>
@@ -174,7 +195,8 @@ For example:
 -  **tclsh ../../scripts/adi_fmc_constr_generator.tcl fmc0** (the project uses only one FMC port at a time)
 -  **tclsh ../../scripts/adi_fmc_constr_generator.tcl fmc0 fmc1** (the project uses two FMC ports at a time)
 
-If sourced without argument(s) then you can simply call gen_fmc_constr <fmc_port>.
+If sourced without argument(s) then you can simply call gen_fmc_constr
+<fmc_port>.
 
 For example:
 
@@ -184,7 +206,6 @@ For example:
 .. note::
 
    The fmc port name can be deduced from the common carrier file name (:git-hdl:`hdl/tree/master/projects/common <projects/common>`/<carrier>/<carrier>\_<fmc_port>.txt).
-
 
 The generated file will appear in the current directory as **fmc_constr.xdc** (Xilinx board) or **fmc_constr.tcl** (Intel board). If ran from an open Vivado project, the generated file will be automatically added to the project.
 

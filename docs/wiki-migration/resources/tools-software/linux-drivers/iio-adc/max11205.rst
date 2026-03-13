@@ -14,14 +14,22 @@ Evaluation Boards
 Description
 -----------
 
-The MAX11205 is an ultra-low-power (< 300µA max active current), high-resolution, serial output ADC. This device provides the highest resolution per unit power in the industry and is optimized for applications that require very high dynamic range with low power such as sensors on a 4mA to 20mA industrial control loop. The MAX11205 provides a high-accuracy internal oscillator that requires no external components.
+The MAX11205 is an ultra-low-power (< 300µA max active current),
+high-resolution, serial output ADC. This device provides the highest resolution
+per unit power in the industry and is optimized for applications that require
+very high dynamic range with low power such as sensors on a 4mA to 20mA
+industrial control loop. The MAX11205 provides a high-accuracy internal
+oscillator that requires no external components.
 
-When used with the specified data rates, the internal digital filter provides more than 80dB rejection of 50Hz or 60Hz line noise. The MAX11205 provides a simple 2-wire serial interface in the space-saving, 10-pin µMAX® package. The MAX11205 operates over the -40°C to +85°C temperature range.
+When used with the specified data rates, the internal digital filter provides
+more than 80dB rejection of 50Hz or 60Hz line noise. The MAX11205 provides a
+simple 2-wire serial interface in the space-saving, 10-pin µMAX® package. The
+MAX11205 operates over the -40°C to +85°C temperature range.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max11205pmb1.png
    :alt: max11205pmb1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Source Code
 -----------
@@ -49,7 +57,8 @@ Files
 Driver testing
 --------------
 
-When configured with channel 0 as voltage output the following structure is created under the corresponding IIO device.
+When configured with channel 0 as voltage output the following structure is
+created under the corresponding IIO device.
 
 .. container:: box bggreen
 
@@ -77,7 +86,6 @@ When configured with channel 0 as voltage output the following structure is crea
       -rw-r--r-- 1 root root 4096 Sep  6 08:17 uevent
    
 
-
 Show device name
 ~~~~~~~~~~~~~~~~
 
@@ -91,7 +99,6 @@ Show device name
       root@analog:/sys/bus/iio/devices/iio:device0# cat name
       max11205a
    
-
 
 Show raw measurement
 ~~~~~~~~~~~~~~~~~~~~
@@ -109,8 +116,8 @@ Show raw measurement
       20137
    
 
-
-U = in_voltage0_raw \* in_voltage0_scale = 20137 \* 0.097656250 = 1966.50390625 mV
+U = in_voltage0_raw \* in_voltage0_scale = 20137 \* 0.097656250 = 1966.50390625
+mV
 
 Show scale
 ~~~~~~~~~~
@@ -128,7 +135,6 @@ Show scale
       0.097656250
    
 
-
 Show sampling frequency
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -145,7 +151,6 @@ Show sampling frequency
       116
    
 
-
 Trigger management
 ~~~~~~~~~~~~~~~~~~
 
@@ -160,11 +165,16 @@ Trigger management
       max11205a-dev0
    
 
-
 Buffer management
 ~~~~~~~~~~~~~~~~~
 
-The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+The Industrial I/O subsystem provides support for various ring buffer based data
+acquisition methods. Apart from device specific hardware buffer support, the
+user can chose between two different software ring buffer implementations. One
+is the IIO lock free software ring, and the other is based on Linux kfifo.
+Devices with buffer support feature an additional sub-folder in the
+/sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y
+defaults to 0, for devices with a single buffer.
 
 Every buffer implementation features a set of files:
 
@@ -186,7 +196,6 @@ Every buffer implementation features a set of files:
 | **scan_elements**
 | The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
 
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -198,7 +207,6 @@ Every buffer implementation features a set of files:
       in_voltage0_en  in_voltage0_index  in_voltage0_type
    
 
-
 | **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
 | Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
 
@@ -207,7 +215,6 @@ Every buffer implementation features a set of files:
 
 | **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
 | A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
-
 
 More Information
 ----------------
@@ -230,6 +237,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

@@ -1,4 +1,3 @@
-
 Stratix 10 SoC Development Kit Linux Quick Start Guide
 ======================================================
 
@@ -85,5 +84,3 @@ Name       MSEL0  MSEL1   MSEL2   Not Used
 JTAG Mode  **ON** **ON**  **ON**  **OFF**
 QSPI Mode  **ON** **OFF** **OFF** **OFF**
 ========== ====== ======= ======= ========
-
-

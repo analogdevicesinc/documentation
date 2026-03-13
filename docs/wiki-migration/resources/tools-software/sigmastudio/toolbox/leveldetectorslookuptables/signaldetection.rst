@@ -9,8 +9,9 @@ output ======Signal Detection======
 
 .. important::
 
-   It is important to note that the "Trig Time" setting is an approximation. It will take some experimentation to find what value is right for a given application.
-
+   It is important to note that the "Trig Time" setting is an approximation. It
+   will take some experimentation to find what value is right for a given
+   application.
 
 Input Pins
 ==========
@@ -55,16 +56,24 @@ DSP Parameter Information
 Algorithm Description
 =====================
 
-The following graph shows the output (red) of the Signal Detect cell based on a given input (blue). In this scenario the "Threshold(dB)" is set to '-60' and the "Trig Time(s)" is set to '6'. Notice how the output toggles to '1' after the silence following the audio signal, based on the "Trig Time(s)" value, and then returns back to '0' once the signal reappears.
+The following graph shows the output (red) of the Signal Detect cell based on a
+given input (blue). In this scenario the "Threshold(dB)" is set to '-60' and the
+"Trig Time(s)" is set to '6'. Notice how the output toggles to '1' after the
+silence following the audio signal, based on the "Trig Time(s)" value, and then
+returns back to '0' once the signal reappears.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables/simulation_pic_1.png
    :alt: simulation_pic_1.png
-   :width: 900px
+   :width: 900
 
 Example
 =======
 
-In this example, the Signal Detection cell is being used to monitor the incoming audio signal to be processed by the equalizer. If the signal on both channels falls below the threshold for the duration of the "Trig Time(s)" parameter, a flag will be output to GPIO_0. This can be used, for example, to power down unneeded parts of the system when no signal is present.
+In this example, the Signal Detection cell is being used to monitor the incoming
+audio signal to be processed by the equalizer. If the signal on both channels
+falls below the threshold for the duration of the "Trig Time(s)" parameter, a
+flag will be output to GPIO_0. This can be used, for example, to power down
+unneeded parts of the system when no signal is present.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables/circuitexample.png
    :alt: circuitexample.png

@@ -3,7 +3,8 @@ Block T Connection
 
 :doc:`Click here to return to the Basic DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-Block T connection takes the Block of real signals as input and pass the signal to each Output Pin.
+Block T connection takes the Block of real signals as input and pass the signal
+to each Output Pin.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/blocktconnection.png
    :align: center

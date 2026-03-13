@@ -4,41 +4,53 @@ JOYSTICK INTERFACE WITH EV-COG-AD3029LZ
 Introduction
 ------------
 
-This document explains about the hardware and software setup, which is required to interface a joystick with the EV-COG-AD3029LZ using MCP23S17 as an interfacing I/O expander chip. The entire setup is made simple with the use of AD-GEAR-DISPLAY1Z, which contains the joystick and the expander IC.
+This document explains about the hardware and software setup, which is required
+to interface a joystick with the EV-COG-AD3029LZ using MCP23S17 as an
+interfacing I/O expander chip. The entire setup is made simple with the use of
+AD-GEAR-DISPLAY1Z, which contains the joystick and the expander IC.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_joystick.png
-   :width: 600px
+   :width: 600
 
-The hardware details cover the COG jumper settings and also the pin mapping between the joystick, MCP23S17 expander and the EV-COG-AD3029LZ. The software details cover the software development kit required and the software architecture of the code base written to interface the joystick with the EV-COG-AD3029LZ.
+The hardware details cover the COG jumper settings and also the pin mapping
+between the joystick, MCP23S17 expander and the EV-COG-AD3029LZ. The software
+details cover the software development kit required and the software
+architecture of the code base written to interface the joystick with the
+EV-COG-AD3029LZ.
 
 Boards and Accessories required
 -------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_gear.png
-   :width: 700px
+   :width: 700
 
 a.) EV-COG-AD3029LZ (left) b.) AD-GEAR-DISPLAY1Z (right)
 
 Hardware interface
 ------------------
 
-This section contains hardware related information about AD-GEAR-DISPLAY1Z and the EV-COG-AD3029-LZ. Links are provided to the WiKi page of the target COG-AD3029-LZ, the Schematics, BOMs and technical documentations at the end of this page.
+This section contains hardware related information about AD-GEAR-DISPLAY1Z and
+the EV-COG-AD3029-LZ. Links are provided to the WiKi page of the target
+COG-AD3029-LZ, the Schematics, BOMs and technical documentations at the end of
+this page.
 
 Connection Diagram
 ~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_joystick_pin.png
-   :width: 600px
+   :width: 600
 
-- The joystick and the I/O expander-MCP23s17 are embedded on the AD-GEAR-DISPLAY1Z.
+- The joystick and the I/O expander-MCP23s17 are embedded on the
+  AD-GEAR-DISPLAY1Z.
 
 Board Interface
 ~~~~~~~~~~~~~~~
 
--  Connect the AD-GEAR-DISPLAY1Z via it’s Cog connectors to the EV-COG-AD3029LZ’s expansion connectors.
+-  Connect the AD-GEAR-DISPLAY1Z via it’s Cog connectors to the
+   EV-COG-AD3029LZ’s expansion connectors.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_gear_connection.png
-   :width: 600px
+   :width: 600
 
 Pin Connection
 ~~~~~~~~~~~~~~
@@ -65,7 +77,9 @@ GPIO15 / INT_WAKE0   INTA          -
 Software Details
 ----------------
 
-This section contains software related information about AD-GEAR-DISPLAY1Z and the EV-COG-AD3029-LZ and the application. Links are provided to the user guides, BSPs, software tool chains and the example project at the end of this page.
+This section contains software related information about AD-GEAR-DISPLAY1Z and
+the EV-COG-AD3029-LZ and the application. Links are provided to the user guides,
+BSPs, software tool chains and the example project at the end of this page.
 
 Application files
 ~~~~~~~~~~~~~~~~~
@@ -84,21 +98,25 @@ Application flow
 ~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/joystick_flow.png
-   :width: 800px
+   :width: 800
 
-- All the APIs for using the I/O expander is within the mcp23s17_3.c with supporting definitions found in SPI_PE.h and adi_spi_pe.h. A separate driver file to use the I/O expander is yet to be created.
+- All the APIs for using the I/O expander is within the mcp23s17_3.c with
+  supporting definitions found in SPI_PE.h and adi_spi_pe.h. A separate driver
+  file to use the I/O expander is yet to be created.
 
 IDE Setup and example application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section covers the various steps involved in getting the joystick_example application code to run on EV-COG-AD3029LZ after the hardware setup is done.
+This section covers the various steps involved in getting the joystick_example
+application code to run on EV-COG-AD3029LZ after the hardware setup is done.
 
 Following are the steps involved,
 
 -  Download and install IAR Embedded Workbench 7.60.1 or higher.
 -  Download the joystick_example project from `joystick_example.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/joystick_example.zip>`_
 -  The joystick_example project is also available on `Bitbucket <https://wiki.analog.com/link_to_bitbucket_has_to_be_put_here>`_.
--  Import the source into IAR workspace and run the application software to generate interrupts by joystick press.
+-  Import the source into IAR workspace and run the application software to
+   generate interrupts by joystick press.
 
 References and Links
 --------------------
@@ -106,4 +124,5 @@ References and Links
 -  :adi:`ADuCM3029 Hardware Reference Manual <media/en/dsp-documentation/processor-manuals/ADuCM302x-mixed-signal-control-processor-hardware-reference.pdf>`
 -  :doc:`EV-COG-AD3029LZ User guide with the BSP </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 -  `MCP23s17 Datasheet <http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf>`_
--  Schematics of EV-COG-AD3029LZ and AD-GEAR-DISPLAY1Z are found in the Docs folder of the joystick_example project.
+-  Schematics of EV-COG-AD3029LZ and AD-GEAR-DISPLAY1Z are found in the Docs
+   folder of the joystick_example project.

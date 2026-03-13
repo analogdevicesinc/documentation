@@ -11,9 +11,17 @@ Adaptive MFxLMS Filter
 Description
 -----------
 
-This module implements the Modified Filtered-X LMS algorithm which is an adaptive FIR filter based on minimizing the least mean squared value of the error signal. The algorithm is applied to noise cancellation applications where it takes into account the fact that the point of cancellation is not at the anti-noise output speaker but at the position of the error microphone.
+This module implements the Modified Filtered-X LMS algorithm which is an
+adaptive FIR filter based on minimizing the least mean squared value of the
+error signal. The algorithm is applied to noise cancellation applications where
+it takes into account the fact that the point of cancellation is not at the
+anti-noise output speaker but at the position of the error microphone.
 
-The module provides a training mode which enables training and estimating the secondary paths between the output speakers and the error microphones as FIR filter coefficients. These coefficients are then used in the run-time mode of the module to take into account the paths and provide effective noise cancellation based on the reference inputs.
+The module provides a training mode which enables training and estimating the
+secondary paths between the output speakers and the error microphones as FIR
+filter coefficients. These coefficients are then used in the run-time mode of
+the module to take into account the paths and provide effective noise
+cancellation based on the reference inputs.
 
 Targets Supported
 -----------------

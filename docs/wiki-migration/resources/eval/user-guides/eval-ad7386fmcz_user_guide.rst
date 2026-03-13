@@ -21,7 +21,10 @@ Evaluation Board
 Features
 ========
 
-Full-featured evaluation board multichannel, simultaneous sampling ADC On-board reference, reference buffer, and ADC driver On-board power supplies Board-compatible high-speed system demonstration platform EVAL-SDP-CH1Z (SDP-H1)) controller PC software for control and data analysis
+Full-featured evaluation board multichannel, simultaneous sampling ADC On-board
+reference, reference buffer, and ADC driver On-board power supplies
+Board-compatible high-speed system demonstration platform EVAL-SDP-CH1Z
+(SDP-H1)) controller PC software for control and data analysis
 
 Evaluation Kit Contents
 =======================
@@ -31,7 +34,8 @@ Evaluation Kit Contents
 Equipment Needed
 ================
 
-EVAL-SDP-CH1Z Signal source PC running Windows XP SP3, Windows Vista, Windows 7, or Windows 10 with a USB port
+EVAL-SDP-CH1Z Signal source PC running Windows XP SP3, Windows Vista, Windows 7,
+or Windows 10 with a USB port
 
 Software Needed
 ===============
@@ -48,18 +52,14 @@ General Description
 
    \
 
-
    |image1|
 
    *\**Figure 1. :adi:`EVAL-AD7386FMCZ` EVALUATION BOARD (LEFT) CONNECTED TO SDP-H1 BOARD (RIGHT)***
-
 
 Evaluation Board Quick Start Guide
 ==================================
 
 The EVAL-AD7386FMCZ is powered by the :doc:`SDP-H1 </wiki-migration/resources/eval/sdp>`\\\\board by default. External power supplies can be applied. See Table 1 for a description of connectors required and Table 2 for the link configuration required. To evaluate the AD7386 with the :adi:`EVAL-AD7386FMCZ`, take the following steps:
-
-
 
 -  Download and install the :adi:`ace` software, which is available on the AD7386 product page. Installation details are found on the internal label of the EVAL-AD7386FMCZ box. Ensure that the SDP-H1 board is disconnected from the USB port of the PC when installing the :adi:`ace` software. The PC may need to be restarted after the installation.
 -  Ensure that the link options are configured as detailed in Table 2.
@@ -81,13 +81,11 @@ Evaluation Board Connection Diagram
 
 .. container:: centeralign
 
-
    ..
 
 |image2|
 
    *\**Figure 2. Typical Setup of the :adi:`EVAL-AD7386FMCZ` and the SDP-H1 Board***
-
 
 Evaluation Board Hardware
 =========================
@@ -121,13 +119,11 @@ The **EVAL-AD7386FMCZ** perates from a 12 V power supply. Ensure that all link p
 
 .. container:: centeralign
 
-
    ..
 
 |image3|
 
    **Figure 3. EVAL-AD7386FMCZ Functional Block Diagram**
-
 
 Link Configuration Options
 --------------------------
@@ -137,7 +133,9 @@ Multiple link options must be set correctly to select the appropriate operating 
 Setup Conditions
 ~~~~~~~~~~~~~~~~
 
-Ensure that all link positions are set as required by the selected operating mode before applying power and signals to the EVAL-AD7386FMCZ. Table 2 shows the default positions of the links when the EVAL-AD7386FMCZ is packaged.
+Ensure that all link positions are set as required by the selected operating
+mode before applying power and signals to the EVAL-AD7386FMCZ. Table 2 shows the
+default positions of the links when the EVAL-AD7386FMCZ is packaged.
 
 **Table 2. Link Options for EVAL-AD7386FMCZ**
 
@@ -174,7 +172,9 @@ The sockets and connectors on the **EVAL-AD7386FMCZ** are described in Table 3. 
 Test Points
 ===========
 
-There are several test points and single-in-line (SIL) headers on the EVAL-AD7386FMCZ. These test points and headers provide access to the evaluation board signals to allow probing, evaluation, and debugging.
+There are several test points and single-in-line (SIL) headers on the
+EVAL-AD7386FMCZ. These test points and headers provide access to the evaluation
+board signals to allow probing, evaluation, and debugging.
 
 **Table 3. On-Board Sockets and Connectors**
 
@@ -230,7 +230,6 @@ To install the :adi:`ace` software, take the following steps:
 
    
 
-
 -  Read the software license agreement and click **I Agree** (see Figure 5).
 
 .. container:: centeralign
@@ -238,7 +237,6 @@ To install the :adi:`ace` software, take the following steps:
    \ |image5|//**Figure 5. License Agreement** //
 
    
-
 
 -  Choose an installation location and click **Next** > (see Figure 6).
 
@@ -248,7 +246,6 @@ To install the :adi:`ace` software, take the following steps:
 
    
 
-
 -  Select the **PreRequisites** checkbox to include the installation of the SDP-H1 driver and click **Install** (see Figure 7).
 
 .. container:: centeralign
@@ -256,7 +253,6 @@ To install the :adi:`ace` software, take the following steps:
    \ |image7|//**Figure 7. Choose Components Section** //
 
    
-
 
 -  The **Windows Security** window appears. Click **Install** (see Figure 8). The installation is in progress. No action is required (see Figure 9).
 
@@ -266,11 +262,9 @@ To install the :adi:`ace` software, take the following steps:
 
    
 
-
 .. container:: centeralign
 
    |image9|//**Figure 9. Installation in Progress** //
-
 
 -  When the installation is complete (see Figure 10), click **Next** > and then click **Finish** to complete.
 
@@ -278,16 +272,21 @@ To install the :adi:`ace` software, take the following steps:
 
    \ |image10|//**Figure 10. Installation Completed** //
 
-
 Evaluation Board Setup Procedures
 =================================
 
-Figure 2 shows a diagram of the connections between the EVAL-AD7386FMCZ and the SDP-H1 board. To ensure that the evaluation system is recognized when it is connected to the PC, install the ACE software and SDP-H1 driver before connecting the EVAL-AD7386FMCZ and the SDP-H1 board to the USB port of the PC. When the ACE software installation is complete, set up the EVAL-AD7386FMCZ and the SDP-H1 board as described in the following sections.
+Figure 2 shows a diagram of the connections between the EVAL-AD7386FMCZ and the
+SDP-H1 board. To ensure that the evaluation system is recognized when it is
+connected to the PC, install the ACE software and SDP-H1 driver before
+connecting the EVAL-AD7386FMCZ and the SDP-H1 board to the USB port of the PC.
+When the ACE software installation is complete, set up the EVAL-AD7386FMCZ and
+the SDP-H1 board as described in the following sections.
 
 Connecting the EVAL-AD7386FMCZ and the SDP-H1 Board to the PC
 -------------------------------------------------------------
 
-To connect the EVAL-AD7386FMCZ and the SDP-H1 board to the PC, take the following steps:
+To connect the EVAL-AD7386FMCZ and the SDP-H1 board to the PC, take the
+following steps:
 
 -  Ensure that all configuration links are in the appropriate positions, as detailed in Table 2.
 -  Connect the EVAL-AD7386FMCZ securely to the P7 connector on the SDP-H1 board. The EVAL-AD7386FMCZ does not require an external power supply adapter.
@@ -299,8 +298,6 @@ Verifying Board Connection
 
 To verify the board connection, take the following steps:
 
-
-
 - When the SDP-H1 board is plugged into the PC, allow the **Found New Hardware Wizard** to run. If using Windows XP, search for the SDP-H1 drivers. If prompted by the operating system, choose to automatically search for the drivers for the SDP-H1 board.
 - A window may appear asking for permission to allow the program to make changes to the computer. In this case, click **Yes**. The **Computer Management** window opens.
 - Under System Tools, click **Device Manager** and use the **Device Manager** window to ensure that the SDP-H1 board is connected to the PC properly. If the SDP-H1 driver software is installed and the board is connected to the PC properly, **Analog Devices SDP-H1** appears under **ADI Development Tools** in the **Device Manager window**, as shown in Figure 11.
@@ -311,11 +308,12 @@ To verify the board connection, take the following steps:
 
    
 
-
 Disconnecting the EVAL-AD7386FMCZ
 ---------------------------------
 
-Always remove power from the SDP-H1 board and the EVAL-AD7386FMCZ or click the reset tact switch located alongside the USB port before disconnecting the EVAL-AD7386FMCZ from the SDP-H1 board.
+Always remove power from the SDP-H1 board and the EVAL-AD7386FMCZ or click the
+reset tact switch located alongside the USB port before disconnecting the
+EVAL-AD7386FMCZ from the SDP-H1 board.
 
 Using the ACE Software for Testing
 ==================================
@@ -323,7 +321,8 @@ Using the ACE Software for Testing
 Launching ACE Software
 ----------------------
 
-When the EVAL-AD7386FMCZ and SDP-H1 boards are properly connected to the PC, launch the ACE software. To launch the ACE software, take the following steps:
+When the EVAL-AD7386FMCZ and SDP-H1 boards are properly connected to the PC,
+launch the ACE software. To launch the ACE software, take the following steps:
 
 ::
 
@@ -338,11 +337,9 @@ When the EVAL-AD7386FMCZ and SDP-H1 boards are properly connected to the PC, lau
    
    |image11| //**Figure 12. ACE Software Main Window** //
 
-
 .. container:: centeralign
 
    |image12| //**Figure 13. EVAL-AD7386FMCZ View** *
-
 
 ==== Chip View ==== After completing the steps in the Software Installation Procedures section and the Evaluation Board Setup Procedures section, set up the system for data capture as follows: - Block icons that are dark blue are programmable blocks. Click a dark blue block icon to open a configurable pop-up window that allows customization for data capture, as shown in the oversampling block in Figure 15. - Type the value of the reference voltage in the Reference Voltage box when External Reference is selected (click the REF block in Figure 15 to access this option). The default value for the external reference is set to 3.3 V and 2.5 V for the internal reference. See the Software Installation Procedures section and the Evaluation Board Setup Procedures section for additional information.
 
@@ -354,36 +351,41 @@ When the EVAL-AD7386FMCZ and SDP-H1 boards are properly connected to the PC, lau
 
    |image13| //**Figure 15. Channel Selection** //
 
-
 .. container:: centeralign
 
    |image14| //**Figure 16. Pop-Up Configurable Window** //
 
-
 Description of Chip View
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click the AD7386 chip icon in the board view to open the window shown in Figure 14. The chip view shows the configurable block diagram of AD7386.
+Click the AD7386 chip icon in the board view to open the window shown in Figure
+14. The chip view shows the configurable block diagram of AD7386.
 
 Channel Selection
 ^^^^^^^^^^^^^^^^^
 
-Click the multiplexer icons circled in red (see Figure 15) to select the ADC channel pairs for conversion (AINA0/AINB0 and AINA1/AINB1).
+Click the multiplexer icons circled in red (see Figure 15) to select the ADC
+channel pairs for conversion (AINA0/AINB0 and AINA1/AINB1).
 
 Oversampling
 ^^^^^^^^^^^^
 
-The AD7386 offers an oversampling function on-chip and has two user-configurable oversampling modes, normal average and rolling average. Click the OSC block to configure the oversampling ratio.
+The AD7386 offers an oversampling function on-chip and has two user-configurable
+oversampling modes, normal average and rolling average. Click the OSC block to
+configure the oversampling ratio.
 
 Reference
 ^^^^^^^^^
 
-The AD7386 offers an oversampling function on-chip and has two user-configurable oversampling modes, normal average and rolling average. Click the OSC block to configure the oversampling ratio.
+The AD7386 offers an oversampling function on-chip and has two user-configurable
+oversampling modes, normal average and rolling average. Click the OSC block to
+configure the oversampling ratio.
 
 Serial Mode
 ^^^^^^^^^^^
 
-The AD7386 offers an option to have a 1-wire or a 2-wire configuration for serial communication. Click the Control Logic block to configure this option.
+The AD7386 offers an option to have a 1-wire or a 2-wire configuration for
+serial communication. Click the Control Logic block to configure this option.
 
 Serial 2-wire Mode
 """"""""""""""""""
@@ -407,19 +409,19 @@ Serial 1-wire Mode
 Description of Memory Map Window
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click Proceed to Memory Map in the bottom right corner of the chip view window to open the window shown in Figure 17. The memory map shows all registers of AD7386.
+Click Proceed to Memory Map in the bottom right corner of the chip view window
+to open the window shown in Figure 17. The memory map shows all registers of
+AD7386.
 
 .. container:: centeralign
 
    \ |image15| //**Figure 17. Memory Map Window** *
-
 
 === Apply Changes === The registers are populated with default values when powered up. To implement the values changed in all the registers, click Apply Changes to write to the registers. === Apply Selected === To implement changes on a selected register when the values of a register are changed, click Apply Selected to write the new value on the selected register to the AD7386. === Read All === Click Read All to read the values of all the registers from the chip. === Read Selected === Click Read Selected to read the selected register from the chip. === Reset Chip === Click Reset Chip to prompt the software to reset the AD7386. === Diff === Click Diff to check for differences in register values between the software and the chip. === Software Defaults === To revert all the register values to their defaults, click Software Defaults and then Apply Changes to write to the AD7386. ==== Description of Analysis Window ==== Click Proceed to Analysis in the chip view to open the window shown in Figure 18. The analysis view contains the Waveform tab, Histogram tab, and FFT tab.
 
 .. container:: centeralign
 
    \ **Figure 18. Analysis View**
-
 
 === WAVEFORM TAB === The Waveform tab displays data in the form of time vs. discrete data values with the results (see Figure 19). The CAPTURE pane contains capture settings that apply to the registers automati¬cally before data capture.
 
@@ -488,7 +490,8 @@ Display Channels
 WAVEFORM RESULTS
 ^^^^^^^^^^^^^^^^
 
-Waveform Results display amplitude, sample frequency, and noise analysis data for the selected channels.
+Waveform Results display amplitude, sample frequency, and noise analysis data
+for the selected channels.
 
 Export Capture Data
 ^^^^^^^^^^^^^^^^^^^
@@ -520,7 +523,8 @@ Display Units and Axis Controls
 HISTOGRAM TAB
 ^^^^^^^^^^^^^
 
-The Histogram tab contains the histogram graph and the results pane, as shown in Figure 20.
+The Histogram tab contains the histogram graph and the results pane, as shown in
+Figure 20.
 
 RESULTS PANE
 ^^^^^^^^^^^^
@@ -540,12 +544,12 @@ HISTOGRAM GRAPH
 FFT TAB
 ^^^^^^^
 
-Figure 21 shows the FFT tab, which displays fast Fourier transform (FFT) information for the last batch of samples gathered.
+Figure 21 shows the FFT tab, which displays fast Fourier transform (FFT)
+information for the last batch of samples gathered.
 
 .. container:: centeralign
 
    \ |image16| //**Figure 21. FFT Tab** //
-
 
 ANALYSIS PANE
 ^^^^^^^^^^^^^
@@ -609,36 +613,36 @@ Evaluation Board Design Files
 Board schematic, layout and BOM files.\ `ad7386_eval_board_design_files.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_eval_board_design_files.zip>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7386fmcz.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_sdph1.jpg
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_board_block_diagram.jpg
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-004.jpg
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-005.jpg
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-006.jpg
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-007.jpg
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-008.jpg
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-009.jpg
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-010.jpg
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_ace_plugin_launch.jpg
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_board_view.jpg
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_channel_selection.jpg
-   :width: 600px
+   :width: 600
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_pop_up.jpg
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_memory_map.jpg
-   :width: 600px
+   :width: 600
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_fft_tab.jpg
-   :width: 600px
+   :width: 600
 
 .. |resources-eval-user-guides-ad7380-4_fig-011.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-011.jpg

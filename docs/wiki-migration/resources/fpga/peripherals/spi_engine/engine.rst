@@ -5,11 +5,12 @@ SPI Engine Execution FPGA Peripheral
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/spi_engine/spi_engine_execution.html\
 
-
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/spi_engine_execution.png
    :align: right
 
-The SPI Engine Execution peripheral forms the heart of the SPI Engine framework. It is responsible for handling a SPI Engine control stream and translates it into low-level SPI bus transactions.
+The SPI Engine Execution peripheral forms the heart of the SPI Engine framework.
+It is responsible for handling a SPI Engine control stream and translates it
+into low-level SPI bus transactions.
 
 Files
 -----
@@ -59,13 +60,19 @@ Signal and Interface Pins
 Theory of Operation
 -------------------
 
-The SPI Engine Execution module implements the physical access to the SPI bus. It implements a small but powerful programmable state machine that translates a SPI Engine command stream into low-level SPI bus access.
+The SPI Engine Execution module implements the physical access to the SPI bus.
+It implements a small but powerful programmable state machine that translates a
+SPI Engine command stream into low-level SPI bus access.
 
 Communication with a command stream generator happens via the ``ctrl`` interface and the low-level SPI access is handled on the ``spi`` interface. The ``active`` signal is asserted as long as the peripheral is busy executing incoming commands.
 
-Internally the SPI Engine execution module consists of an instruction encoder that translates the incoming commands into an internal control signal, a multi-function counter and compares unit that is responsible for handling the timing and a shift register which holds the received and transmitted SPI data.
+Internally the SPI Engine execution module consists of an instruction encoder
+that translates the incoming commands into an internal control signal, a
+multi-function counter and compares unit that is responsible for handling the
+timing and a shift register which holds the received and transmitted SPI data.
 
-The module has an optional programmable pre-scaler register that can be used to divide the external clock to the counter and compare unit.
+The module has an optional programmable pre-scaler register that can be used to
+divide the external clock to the counter and compare unit.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/spi_engine/spi_engine.svg
 

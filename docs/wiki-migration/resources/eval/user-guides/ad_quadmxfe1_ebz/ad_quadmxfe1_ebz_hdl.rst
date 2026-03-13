@@ -5,19 +5,28 @@ AD_QUADMXFE1_EBZ HDL Reference Design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad_quadmxfe1_ebz/index.html\
 
-
 Functional Overview
 -------------------
 
-The AD-QUADMXFE1-EBZ reference design is a processor based (e.g. Microblaze) embedded system. The design consists from a receive and a transmit chain.
+The AD-QUADMXFE1-EBZ reference design is a processor based (e.g. Microblaze)
+embedded system. The design consists from a receive and a transmit chain.
 
-The receive chain transports the captured samples from ADC to the system memory (DDR). Before transferring the data to DDR the samples are stored in a buffer implemented on block rams from the FPGA fabric (util_adc_fifo). The size of the buffer is sized to store up to M x 16k samples per converter if a single channel is selected or 16k samples per converter if all channels are selected.
+The receive chain transports the captured samples from ADC to the system memory
+(DDR). Before transferring the data to DDR the samples are stored in a buffer
+implemented on block rams from the FPGA fabric (util_adc_fifo). The size of the
+buffer is sized to store up to M x 16k samples per converter if a single channel
+is selected or 16k samples per converter if all channels are selected.
 
-The transmit chain transports samples from the system memory to the DAC devices. Before streaming out the data to the DAC through the JESD link the samples first are loaded into a buffer (util_dac_fifo) which will cyclically stream the samples at the tx_device_clk data rate.
+The transmit chain transports samples from the system memory to the DAC devices.
+Before streaming out the data to the DAC through the JESD link the samples first
+are loaded into a buffer (util_dac_fifo) which will cyclically stream the
+samples at the tx_device_clk data rate.
 
-All cores from the receive and transmit chains are programmable through an AXI-Lite interface.
+All cores from the receive and transmit chains are programmable through an
+AXI-Lite interface.
 
-The transmit and receive chains must operate at the same data rates having a common device_clk.
+The transmit and receive chains must operate at the same data rates having a
+common device_clk.
 
 HDL source code
 ---------------
@@ -31,7 +40,6 @@ HDL source code
    -  <Rev A. Rev B.> https://github.com/analogdevicesinc/hdl/tree/dev_quad_mxfe_revab/projects/ad_quadmxfe1_ebz
    -  <Rev C.> added starting with release hdl_2021_r1; this is the latest version -> :git-hdl:`projects/ad_quadmxfe1_ebz`
    
-
 
 Supported Carriers
 ~~~~~~~~~~~~~~~~~~
@@ -58,13 +66,15 @@ Building The Corresponding Linux Image
 
 To build the Linux image, the buildroot process is preferred. The instructions are primarily based around a Linux environment. To get started, follow the directions here: :doc:`buildroot </wiki-migration/resources/tools-software/linux-build/generic/buildroot>`. Once cloned there is a list of device trees (from here: :git-linux:`linux/tree/master/arch/microblaze/boot/dts <arch/microblaze/boot/dts>`). A new device tree can be specified during the build process if needed.
 
-See the "Building for Microblaze - simpleImage.<board>" Instructions as a reference.
+See the "Building for Microblaze - simpleImage.<board>" Instructions as a
+reference.
 
 -  Change directory into the buildroot directory.
 -  make microblaze_adi_defconfig
 -  make BR2_LINUX_KERNEL_INTREE_DTS_NAME=vcu118_quad_ad9081
 
-This will generate the .strip file that will be loaded onto the platform using the .tcl script.
+This will generate the .strip file that will be loaded onto the platform using
+the .tcl script.
 
 Build Image By Hand
 ~~~~~~~~~~~~~~~~~~~
@@ -74,7 +84,11 @@ Alternatively, the linux image can be built by hand by following these steps: :d
 Block design
 ------------
 
-The block design of the system is parameterizable, allowing the user to fit the design to their needs by changing JESD parameters or link mode to match the desired configuration of the converter parts. The configuration of parameters is done at build time through setting system variables or through modifying the project tcl files.
+The block design of the system is parameterizable, allowing the user to fit the
+design to their needs by changing JESD parameters or link mode to match the
+desired configuration of the converter parts. The configuration of parameters is
+done at build time through setting system variables or through modifying the
+project tcl files.
 
 Block design parameters
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,8 +184,11 @@ If parameter not specified the default value applies. Configuration names are en
 Testcase M8, L4
 ~~~~~~~~~~~~~~~
 
-The 4 MxFE Rx and Tx links are connected to a single transceiver block having 16 Rx and 16 Tx lanes in total. The 4 Rx links merge into a single receive link layer and a single transport layer having a compatible configuration to L=4;M=8;F=4;S=1 Similarly to Rx, the single transmit link layer and transport layer handles the 4 Tx links.
-
+The 4 MxFE Rx and Tx links are connected to a single transceiver block having 16
+Rx and 16 Tx lanes in total. The 4 Rx links merge into a single receive link
+layer and a single transport layer having a compatible configuration to
+L=4;M=8;F=4;S=1 Similarly to Rx, the single transmit link layer and transport
+layer handles the 4 Tx links.
 
 |image1|
 
@@ -186,7 +203,6 @@ The 4 MxFE Rx and Tx links are connected to a single transceiver block having 16
    
       make JESD_MODE=8B10B RX_JESD_M=8 RX_JESD_L=4 TX_JESD_M=8 TX_JESD_L=4
    
-
 
 The Rx links (ADC Path) operate with the following parameters:
 
@@ -209,10 +225,14 @@ The Tx links (DAC Path) operate with the following parameters:
 Testcase DAC M16,L4 ADC M8,L2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The 4 MxFE Rx and Tx links are connected to a single transceiver block having 8 Rx and 16 Tx lanes in total. The 4 Rx links merge into a single receive link layer and a single transport layer having a compatible configuration to L=2;M=8;F=8;S=1 Similarly to Rx, the single transmit link layer and transport layer handles the 4 Tx links of mode se to L=4;M=16;F=8;S=1.
+The 4 MxFE Rx and Tx links are connected to a single transceiver block having 8
+Rx and 16 Tx lanes in total. The 4 Rx links merge into a single receive link
+layer and a single transport layer having a compatible configuration to
+L=2;M=8;F=8;S=1 Similarly to Rx, the single transmit link layer and transport
+layer handles the 4 Tx links of mode se to L=4;M=16;F=8;S=1.
 
-The number of lanes on Rx is reduces to half in order to keep the same lane rate as the Tx link (which has double the channels count of Rx).
-
+The number of lanes on Rx is reduces to half in order to keep the same lane rate
+as the Tx link (which has double the channels count of Rx).
 
 |MxFE 204C|
 
@@ -227,7 +247,6 @@ The number of lanes on Rx is reduces to half in order to keep the same lane rate
    
       make JESD_MODE=64B66B RX_JESD_M=8 RX_JESD_L=2 TX_JESD_M=16 TX_JESD_L=4
    
-
 
 The Rx links (ADC Path) operate with the following parameters:
 
@@ -254,7 +273,6 @@ Clock sources
 
 The clock sources are depicted on the below diagrams:
 
-
 |image2|
 
 Bandwidth considerations
@@ -262,13 +280,16 @@ Bandwidth considerations
 
 1 MxFE has 8 lanes Max lane rate supported in 204C = 24.75Gbps
 
-Max data rate for one MxFE per direction = 8 \* 24.75Gbps \* 64/66 = 192 Gbps = 24 GB/s
+Max data rate for one MxFE per direction = 8 \* 24.75Gbps \* 64/66 = 192 Gbps =
+24 GB/s
 
-The existing quad board has half the lanes, this gives us 12GB/s per MxFE per direction The bandwidth requirement per direction is 4 x 12GB/s = 48GB/s
+The existing quad board has half the lanes, this gives us 12GB/s per MxFE per
+direction The bandwidth requirement per direction is 4 x 12GB/s = 48GB/s
 
 By direction I mean FPGA to DAC path or ADC to FPGA path.
 
-The theoretical throughput of the DDR from the VCU118 is 19.2 GB/s, so far away from the exiting quad MxFE requirements, but an HBM FPGA would solve that.
+The theoretical throughput of the DDR from the VCU118 is 19.2 GB/s, so far away
+from the exiting quad MxFE requirements, but an HBM FPGA would solve that.
 
 Software considerations
 -----------------------
@@ -286,7 +307,8 @@ Not required, this is handled in the HDL.
 GPIO muxing
 -----------
 
-GPIO muxing enables multiple functions of gpio_0 pins, to have either the NCO sync function or to be regular software controllable GPIOs.
+GPIO muxing enables multiple functions of gpio_0 pins, to have either the NCO
+sync function or to be regular software controllable GPIOs.
 
 e.g. function selection for gpio[0] line of MxFE0,1,2,3 done through GPIO[108]
 
@@ -310,7 +332,8 @@ MxFE2_gpio[0] Out           MxFE3_gpio[0]
 MxFE3_gpio[0] In            -
 ============= ============= =============
 
-Function selection for the first six gpio lines is done with the following control GPIOs :
+Function selection for the first six gpio lines is done with the following
+control GPIOs :
 
 ===================== =======================
 GPIO group            Function selection GPIO

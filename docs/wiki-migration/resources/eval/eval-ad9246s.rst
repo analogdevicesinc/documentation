@@ -13,12 +13,11 @@ Typical Measurement Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_eval_board_connections.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 1. AD9246S Evaluation Board Connection (6V DC Wall Power)—*\ :adi:`EVAL-AD9246S <AD9246S>`\
-
 
 Features
 --------
@@ -97,7 +96,8 @@ This section provides quick start procedures for using the :adi:`EVAL-AD9246S <A
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
 
-Before using the software for testing, configure the evaluation board as follows:
+Before using the software for testing, configure the evaluation board as
+follows:
 
 -  Connect the evaluation board to the data capture board, as shown in Figure 1.
 -  Connect one 6 V, 2 A switching power supply (such as the Royal Access, Inc., S060S200A1 that is supplied) to the :adi:`EVAL-AD9246S <AD9246S>`.
@@ -121,16 +121,30 @@ See the evaluation board page linked from the :adi:`AD9246S` product page for th
 Power Supplies
 ~~~~~~~~~~~~~~
 
-This evaluation board comes with a wall-mountable switching power supply that provides a 6 V, 2 A maximum output. Connect the supply to a 100 V ac to 240 V ac, 47 Hz to 63 Hz wall outlet. The output from the supply is provided through a 2.1 mm inner diameter jack that connects to the printed circuit board (PCB) at P200. The 6 V supply is fused and conditioned on the PCB before connecting to the low dropout linear regulators that supply the proper bias to each of the various sections on the board.
+This evaluation board comes with a wall-mountable switching power supply that
+provides a 6 V, 2 A maximum output. Connect the supply to a 100 V ac to 240 V
+ac, 47 Hz to 63 Hz wall outlet. The output from the supply is provided through a
+2.1 mm inner diameter jack that connects to the printed circuit board (PCB) at
+P200. The 6 V supply is fused and conditioned on the PCB before connecting to
+the low dropout linear regulators that supply the proper bias to each of the
+various sections on the board.
 
-The evaluation board can be powered in a nondefault condition using external bench power supplies. To do this, remove the all the jumpers listed above (and in Table 1) to disconnect the outputs from the on-board LDOs. This enables the user to bias each section of the board individually. Use P202 and P201 to connect a different supply for each section. A 1.8 V, 0.5 A supply is needed for 1.8 V_AVDD, a 2.5 V, 0.5 A supply is needed for DRVDD, a 2.5 V 0.5 A supply is needed for V-DIG, and a 3.3 V, 0.5 A supply is needed for 3P3V.
+The evaluation board can be powered in a nondefault condition using external
+bench power supplies. To do this, remove the all the jumpers listed above (and
+in Table 1) to disconnect the outputs from the on-board LDOs. This enables the
+user to bias each section of the board individually. Use P202 and P201 to
+connect a different supply for each section. A 1.8 V, 0.5 A supply is needed for
+1.8 V_AVDD, a 2.5 V, 0.5 A supply is needed for DRVDD, a 2.5 V 0.5 A supply is
+needed for V-DIG, and a 3.3 V, 0.5 A supply is needed for 3P3V.
 
 Input Signals
 ~~~~~~~~~~~~~
 
 When connecting the ADC clock and analog source, use clean signal generators with low phase noise, such as the Rohde & Schwarz SMA signal generator or an equivalent. Use a 1 m shielded, RG-58, 50 Ω coaxial cable for connecting to the evaluation board. Enter the desired frequency and amplitude (see the Specifications section in the :adi:`ad9246S` data sheet). When connecting the analog input source, use of a multipole, narrow-band band-pass filter with 50 Ω terminations is recommended. Analog Devices uses band-pass filters from TTE and K&L Microwave, Inc. Connect the filters directly to the evaluation board.
 
-If an external clock source is used, it should also be supplied with a clean signal generator as previously specified. Analog Devices evaluation boards typically can accept ~2.8 V p-p or 13 dBm sine wave input for the clock.
+If an external clock source is used, it should also be supplied with a clean
+signal generator as previously specified. Analog Devices evaluation boards
+typically can accept ~2.8 V p-p or 13 dBm sine wave input for the clock.
 
 Output Signals
 ~~~~~~~~~~~~~~
@@ -140,7 +154,9 @@ The :adi:`ad9246S` evaluation board uses the Analog Devices high speed converter
 Jumper Settings
 ---------------
 
-Set the jumper settings/link options on the evaluation board for the required operating modes before powering on the board. The functions of the jumpers for the board are described in Table 1. Figures 2 shows the default jumper settings.
+Set the jumper settings/link options on the evaluation board for the required
+operating modes before powering on the board. The functions of the jumpers for
+the board are described in Table 1. Figures 2 shows the default jumper settings.
 
 Table 1. Jumper Settings for the AD9246S Evaluation Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -166,11 +182,12 @@ Table 1. Jumper Settings for the AD9246S Evaluation Board
 
    \ *Figure 2. Default Jumper Connections for* :adi:`EVAL-AD9246S <AD9246S>` *Evaluation Board*\
 
-
 Power
 ~~~~~
 
-Plug the switching power supply into a wall outlet rated at 100 V ac to 240 V ac, 47 Hz to 63 Hz. Connect the DC output connector to P200 on the evaluation board.
+Plug the switching power supply into a wall outlet rated at 100 V ac to 240 V
+ac, 47 Hz to 63 Hz. Connect the DC output connector to P200 on the evaluation
+board.
 
 Analog Input
 ~~~~~~~~~~~~
@@ -188,33 +205,31 @@ How To Use The Software For Testing
 Setting up the ADC Data Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After configuring the board, set up the ADC data capture using the following steps:
+After configuring the board, set up the ADC data capture using the following
+steps:
 
 -  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – Existing Canvas** window. Navigate to the location where the AD9246S canvases have been store and select the template that corresponds to the type of testing to be performed (see Figure 3a). Click the "Open" button.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_va_canvas_select.png
    :align: center
-   :width: 450px
+   :width: 450
 
 .. container:: centeralign
 
    \ *Figure 3a. VisualAnalog, Existing Canvas Window*\
 
-
 -   Once Visual Analog opens click on the settings in the ADC Data Capture block to select the appropriate FPGA bin file for the AD9246S. For this product the FPGA bin file is AD9265_CMOS.bin. Download this file from this Wiki page and save to a known location such as the one shown in Figure 3B. Select this file and click the **Program** button. (See Figure 3b)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_program_fpga.png
    :align: center
-   :width: 450px
+   :width: 450
 
 .. container:: centeralign
 
    \ *Figure 3b. VisualAnalog, Programming the FPGA for the AD9246S*\
 
-
 -  To change features to settings other than the default settings, click the **Expand Display** button, located in the bottom right corner of the window (see Figure 4), to see what is shown in Figure 5.
 -  Change the features and capture settings by consulting the detailed instructions in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog\ TM Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button.
-
 
 | |image2|
 
@@ -222,16 +237,13 @@ After configuring the board, set up the ADC data capture using the following ste
 
    \ *Figure 4. VisualAnalog Window Toolbar, Collapsed Display*\
 
-
 .. container:: centeralign
 
    |image3|\
 
-
 .. container:: centeralign
 
    \ *Figure 5. VisualAnalog, Main Window, Expanded Display*\
-
 
 Evaluation And Test
 -------------------
@@ -239,67 +251,64 @@ Evaluation And Test
 Setting up the SPI Controller Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
+After the ADC data capture board setup is complete, set up the SPI controller
+software using the following procedure:
 
 -  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 6).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_spicontroller_adcglobal.png
    :align: center
-   :width: 750px
+   :width: 750
 
 .. container:: centeralign
 
    \ *Figure 6. SPI Controller, CHIP ID(1) Box*\
 
-
 -  Click the **New DUT** button in the **SPIController** window (see Figure 11).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_spicontroller_adcglobal_newdut.png
    :align: center
-   :width: 750px
+   :width: 750
 
 .. container:: centeralign
 
    \ *Figure 7. SPI Controller, New DUT Button*\
 
-
 -  In the **ADCBase 0** tab of the **SPIController** window, various selections can be made to change the device settings for the :adi:`ad9246S`. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_spicontroller_adcbase0.png
    :align: center
-   :width: 750px
+   :width: 750
 
 .. container:: centeralign
 
    \ *Figure 8. SPI Controller, ADCBase0*\
 
-
 -  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 9).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_va_run_button.jpg
    :align: center
-   :width: 950px
+   :width: 950
 
 .. container:: centeralign
 
    \ *Figure 9. Run Button (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display*\
 
-
 Adjusting the Amplitude of the Input Signal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next step is to adjust the amplitude of the input signal for each channel as follows:
+The next step is to adjust the amplitude of the input signal for each channel as
+follows:
 
 -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9246S FFT** window (see Figure 9).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_fft.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 9. Graph Window of VisualAnalog*
-
 
 -  Click the disk icon within the **VisualAnalog Graph - AD9246S FFT** window to save the performance plot data as a .csv formatted file.
 
@@ -317,7 +326,8 @@ If the FFT appears normal but the performance is poor, check the following:
 -  Make sure that an appropriate filter is used on the analog input.
 -  Make sure that the signal generators for the clock and the analog input are clean (low phase noise).
 -  Change the analog input frequency slightly if noncoherent sampling is being used.
--  Make sure that the SPI configuration file matches the product being evaluated.
+-  Make sure that the SPI configuration file matches the product being
+   evaluated.
 
 If the FFT window remains blank after **Run** in VisualAnalog (see Figure 9) is clicked, do the following:
 
@@ -330,8 +340,8 @@ If VisualAnalog indicates that the **FIFO Capture timed out**, do the following:
 -  Make sure that all power and USB connections are secure.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_eval_board_jumpers.jpg
-   :width: 850px
+   :width: 850
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_expand_display.jpg
-   :width: 1100px
+   :width: 1100
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_va_fft.png
-   :width: 850px
+   :width: 850

@@ -12,7 +12,6 @@ This guide shows how AD9148-EBZ & AD9148-M5375-EBZ works with :doc:`SDP-H1 </wik
 
    Tip: Click on any picture in this guide to open an enlarged version.
 
-
 --------------
 
 Typical Setup
@@ -51,7 +50,6 @@ Software Needed:
 
    Do not install ACE on a computer with DAC Software Suite.
 
-
 Hardware Needed:
 ----------------
 
@@ -88,43 +86,48 @@ Quick Start Guide
    -  Connect SDP-H1/ADS7-V2 to PC via USB and to a **12Vdc power supply**.
    -  Set clock input to **400MHz** and **3dBm**.
 
--  Open ACE. The board will automatically be recognized by the software. Otherwise, install the plugin for AD9148-EBZ / AD9148-M5375-EBZ evaluation board. Then modify the configuration as shown in Figure 2a and Figure 2b, and click “Apply”.
+-  Open ACE. The board will automatically be recognized by the software.
+   Otherwise, install the plugin for AD9148-EBZ / AD9148-M5375-EBZ evaluation
+   board. Then modify the configuration as shown in Figure 2a and Figure 2b, and
+   click “Apply”.
 
 .. container:: centeralign
 
    \ |image9|\ *Figure 2a. ACE Initial Configuration Wizard on AD9148-EBZ Evaluation board*\
 
-
 .. container:: centeralign
 
    |image10|\ *Figure 2b. ACE Initial Configuration Wizard on AD9148-M5375-EBZ Evaluation board*\
 
-
 -  Open DPGDownloaderLite. The evaluation board, controller board and **DCO Frequency** of **100MHz** will be automatically recognized by DPG.
 -  From DPGDownloaderLite, Add Generator Waveforms pulldown menu select Single Tone and apply the settings as shown in Figure 3. Set the **Data Rate** to **100MHz** and **Desired frequency** to **15MHz**. Set **DAC resolution** to the DAC’s number of bits to **16**. Check the "Generate Complex Data (I & Q)" box then uncheck the “Unsigned Data” box.
--  Select the in-phase tone from the I Data Vector pulldown menu and the quadrature tone from the Q Data Vector pulldown menu.
+-  Select the in-phase tone from the I Data Vector pulldown menu and the
+   quadrature tone from the Q Data Vector pulldown menu.
 
 .. container:: centeralign
 
    \ |image11|\ *Figure 3. DPGDownloaderLite Waveform Configuration for AD9148-EBZ / AD9148-M5375-EBZ*\
 
-
--  Press the download arrow and then the play button. The spectrum similar to Figure 4 should appear in the signal/spectrum analyzer.
+-  Press the download arrow and then the play button. The spectrum similar to
+   Figure 4 should appear in the signal/spectrum analyzer.
 
 .. container:: centeralign
 
    \ |image12|\ *Figure 4. AD9148-EBZ FFT for Fdac=400MHz,4x Interpolation Fout=15MHz*\
 
-
 Reconfiguring the Evaluation Board
 ----------------------------------
 
-This section details the quick start procedures for setting up the AD9148-EBZ & AD9148-M5375-EBZ evaluation board. Refer to the sections below to configure the power supply and the Reference & synchronization clock, as well as the Hardware provisions for the power supply.
+This section details the quick start procedures for setting up the AD9148-EBZ &
+AD9148-M5375-EBZ evaluation board. Refer to the sections below to configure the
+power supply and the Reference & synchronization clock, as well as the Hardware
+provisions for the power supply.
 
 Power Supply Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The evaluation board has a provision for On-board or external power supply configuration.
+The evaluation board has a provision for On-board or external power supply
+configuration.
 
 Internal Power Supply
 ^^^^^^^^^^^^^^^^^^^^^
@@ -138,46 +141,43 @@ On-board power supply is implemented by default. **JP1** selects the supply volt
 
    \ |ad9148-ebz-jp1_pin_1.png|\ |ad9148-m5375-ebz-jp1_pin_2.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 5. AD9148-EBZ JP1/AD9148-M5375-EBZ JP1*\
 
-
 External Power Supply
 ^^^^^^^^^^^^^^^^^^^^^
 
-To implement external supply configuration, remove the header shunt of six pin jumpers, as shown in Figure 6. Refer to Table 1 for external supply jumper connection.
+To implement external supply configuration, remove the header shunt of six pin
+jumpers, as shown in Figure 6. Refer to Table 1 for external supply jumper
+connection.
 
 .. container:: centeralign
 
    \ |ad9148-ebz_pinjumpers_1.png|\ |ad9148-m5375-ebz-pinjuumpers_2.png|\
 
-
 .. container:: centeralign
 
    \ *Figure 6. AD9148-EBZ/AD9148-M5375-EBZ Pin Jumpers*\
-
 
 .. container:: centeralign
 
    |image13|\ *Table 1. AD9148-EBZ/AD9148-M5375-EBZ Jumper Connection*\
 
-
 Other Provisions
 ^^^^^^^^^^^^^^^^
 
-The AD9148-EBZ and AD9148-M5375-EBZ have test points (TP) to check the power supplies on the board. Measure the supply rail (Red TP) and use the nearest grounding (black TP) as reference. See Table 2 and Table 3 below.
+The AD9148-EBZ and AD9148-M5375-EBZ have test points (TP) to check the power
+supplies on the board. Measure the supply rail (Red TP) and use the nearest
+grounding (black TP) as reference. See Table 2 and Table 3 below.
 
 .. container:: centeralign
 
    \ |image14|\ *Table 2. AD9148-EBZ TP measurements*\
 
-
 .. container:: centeralign
 
    |image15|\ *Table 3. AD9148-M5375-EBZ TP measurements*\
-
 
 Reference and Synchronization Clock
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -191,56 +191,62 @@ Reference and Synchronization Clock
 
    \ |image16|\ *Figure 7. AD9148-EBZ/AD9148-M5375-EBZ Clock Source Configuration*\
 
-
 Troubleshooting
 ---------------
 
-This section lists items to check and practices to use when debugging any unexpected performance of a board. If unexpected results occurs:
+This section lists items to check and practices to use when debugging any
+unexpected performance of a board. If unexpected results occurs:
 
 -  Restart the program by stopping pattern generation and issuing a power cycle. Power down the whole system by disconnecting the clock source / continuous wave generator and the supply for the controller (SDP-H1/ADS7-V2EBZ), then power up the system again following the steps in the Quick Start Guide.
 -  Double check the supply levels indicated in Table 2 and Table 3 in the "Other Provisions" section in :doc:`Power Supply Configuration Section </wiki-migration/resources/eval/dpg/eval-ad9148>`. If the voltages are not within the specified ratings, check if there are problems on component assembly or look for damaged ICs. Re-solder or replace components if necessary.
 -  If signal amplitude is lower than expected, compare spectrum analyzer settings to the recommended setup in the Quick Start Guide. Check for loose cable connections or try changing SMA-to-BNC cables. Loose connections and cable damage cause impedance mismatch.
 -  If there is no output at all, check if the power supply voltage drops to lower than 5V. If so, increase the supply current limit to greater than 1A until the voltage stabilizes to 5V.
--  If there is still no output, check if clock input to AD9148 is stable by measuring clock leakage. Connect one of the evaluation board outputs to a spectrum analyzer. Boards and the clock source should be powered up but the DAC should not be generating a pattern. A low-power tone should be detected at the clock frequency. Otherwise, the clock source is not properly driving the clock input pins. Try increasing clock source / wave generator output signal level slowly up to 10 dBm.
+-  If there is still no output, check if clock input to AD9148 is stable by
+   measuring clock leakage. Connect one of the evaluation board outputs to a
+   spectrum analyzer. Boards and the clock source should be powered up but the
+   DAC should not be generating a pattern. A low-power tone should be detected
+   at the clock frequency. Otherwise, the clock source is not properly driving
+   the clock input pins. Try increasing clock source / wave generator output
+   signal level slowly up to 10 dBm.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-ebz-sdph1.png
-   :width: 380px
+   :width: 380
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-m5375-ebz-sdph1.png
-   :width: 380px
+   :width: 380
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-ebz-ads7v2.png
-   :width: 380px
+   :width: 380
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-m5375-ebz-ads7v2.png
-   :width: 380px
+   :width: 380
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-ebz-sdph1.png
-   :width: 380px
+   :width: 380
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-m5375-ebz-sdph1.png
-   :width: 380px
+   :width: 380
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-ebz-ads7v2.png
-   :width: 380px
+   :width: 380
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-m5375-ebz-ads7v2.png
-   :width: 380px
+   :width: 380
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-ebz_ace.png
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-m5375-ebz_ace.png
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-dpgdownloader.png
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/microsoftteams-image_5_.png
-   :width: 600px
+   :width: 600
 .. |ad9148-ebz-jp1_pin_1.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-ebz-jp1_pin_1.png
-   :width: 350px
+   :width: 350
    :height: 350px
 .. |ad9148-m5375-ebz-jp1_pin_2.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-m5375-ebz-jp1_pin_2.png
-   :width: 360px
+   :width: 360
    :height: 360px
 .. |ad9148-ebz_pinjumpers_1.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-ebz_pinjumpers_1.png
-   :width: 350px
+   :width: 350
    :height: 350px
 .. |ad9148-m5375-ebz-pinjuumpers_2.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-m5375-ebz-pinjuumpers_2.png
-   :width: 380px
+   :width: 380
    :height: 380px
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/dpg/table1.jpg
-   :width: 800px
+   :width: 800
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-ebz_tp_measurement.png
-   :width: 600px
+   :width: 600
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148-m5375-ebz_tp_measurement.png
-   :width: 600px
+   :width: 600
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9148_clockref.png
-   :width: 800px
+   :width: 800

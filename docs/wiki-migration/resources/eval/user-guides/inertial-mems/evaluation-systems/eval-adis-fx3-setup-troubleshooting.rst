@@ -6,8 +6,6 @@ Breakout Board Selection Table
 
 Expand the table below to find the breakout board for your specific IMU.
 
-
-
 .. collapsible:: Click to expand
 
    +--------------------------------------------------------------+--------------------------------------------------------------+
@@ -100,8 +98,6 @@ Expand the table below to find the breakout board for your specific IMU.
    | :adi:`ADIS16507-3AMLZ <ADIS16507>`                           | :adi:`ADIS16507-x/PCBZ <EVAL-ADIS16507>`                     |
    +--------------------------------------------------------------+--------------------------------------------------------------+
 
-
-
 Downloading and Installing the FX3 Drivers and Software
 -------------------------------------------------------
 
@@ -115,13 +111,14 @@ Once downloaded, double click on ``FX3DriverSetup.exe`` and follow the install p
 
    The root cause of most FX3 driver issues is user permissions. The driver installer must be executed using native Windows administrator privileges. Running the installer using privilege elevation tools such as BeyondTrust (`link <https://beyondtrust.com>`_) will likely cause issues once the Windows Kernel attempts to load the driver.
 
-
    |image3|
 
-Every FX3 Evaluation GUI release is packaged inside of a .zip archive. We recommend extracting the archive somewhere convenient on your PC (like your desktop), where it can easily be accessed.
+Every FX3 Evaluation GUI release is packaged inside of a .zip archive. We
+recommend extracting the archive somewhere convenient on your PC (like your
+desktop), where it can easily be accessed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/files.png
-   :width: 180px
+   :width: 180
 
 Connecting to the FX3 Board
 ---------------------------
@@ -129,10 +126,10 @@ Connecting to the FX3 Board
 Once extracted, double click on ``iSensorFX3Eval.exe`` to launch the GUI. Before the main GUI launches, the software will ask you to select a device configuration to load.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/select_dut.png
-   :width: 250px
+   :width: 250
 
-Select the product ID/model number of the sensor you're connecting to and click on "Apply Device Settings."
-
+Select the product ID/model number of the sensor you're connecting to and click
+on "Apply Device Settings."
 
 |image4|
 
@@ -145,11 +142,10 @@ Select the product ID/model number of the sensor you're connecting to and click 
       :align: center
    
 
-
-Once you've selected the correct FX3 board, the main screen should like the image below.
+Once you've selected the correct FX3 board, the main screen should like the
+image below.
 
    
-
 
 |main_screen_disconnected.jpg|
 
@@ -159,9 +155,8 @@ Once you've selected the correct FX3 board, the main screen should like the imag
 
    
    .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/supply_status.png
-      :width: 500px
+      :width: 500
    
-
 
 Once at the main window, click on “Connect to FX3” to enable all GUI features. If the connection to the :adi:`EVAL-ADIS-FX3` was successful, all of the Evaluation GUI utilities would activate. The iSensor FX3 Eval software assesses IMU Status by writing a randomly-generated number to the sensor module and reading it back.
 
@@ -173,7 +168,8 @@ Finished!
 
 Congratulations! If the Eval GUI looks similar to the image shown above, then you're ready to interact with the IMU and stream sensor data. Click :doc:`HERE </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis-fx3-eval-user-guide>` to go to the Eval GUI user guide!
 
-If the Eval GUI shows a connection error, the section below should help debug many common connection issues.
+If the Eval GUI shows a connection error, the section below should help debug
+many common connection issues.
 
 Troubleshooting Connection Errors
 ---------------------------------
@@ -224,14 +220,21 @@ The :adi:`EVAL-ADIS-FX3` was designed for bench evaluation, data capture, and ch
 Did you try to send the FX3 several commands during a long execution process?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Certain FX3 API functions can take a very long time to execute and may look like the FX3 has "locked up." The Eval GUI has timeouts implemented during many of these function calls to prevent this behavior, but developers may occasionally run into these issues when writing their own applications.
+Certain FX3 API functions can take a very long time to execute and may look like
+the FX3 has "locked up." The Eval GUI has timeouts implemented during many of
+these function calls to prevent this behavior, but developers may occasionally
+run into these issues when writing their own applications.
 
-If the board becomes unresponsive, pressing the reset button on the FX3 or unplugging/plugging the USB cable should return the FX3 to its default bootloader state.
+If the board becomes unresponsive, pressing the reset button on the FX3 or
+unplugging/plugging the USB cable should return the FX3 to its default
+bootloader state.
 
 "ERROR: DUT Read/Write Failed"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This error occurs when the register read-back operation fails to return the number that should've been written to the first scratch register listed in the selected register map.
+This error occurs when the register read-back operation fails to return the
+number that should've been written to the first scratch register listed in the
+selected register map.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/read-write_failed.png
    :alt: read-write_failed.png
@@ -243,7 +246,7 @@ The :adi:`EVAL-ADIS-FX3` can either supply power to the sensor using an onboard 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/image_from_ios_11_.jpg
    :align: center
-   :width: 450px
+   :width: 450
 
 Is the ribbon cable orientation correct?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -252,26 +255,30 @@ It's common to invert (flip) the ribbon cable orientation when connecting the :a
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/image_from_ios_9_.jpg
    :align: center
-   :width: 450px
+   :width: 450
 
 Is the sensor or ribbon cable connection shifted or offset?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It's possible to shift the sensor or ribbon cable connection by one position or row. An example of a shifted connection is shown below.
+It's possible to shift the sensor or ribbon cable connection by one position or
+row. An example of a shifted connection is shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/image_from_ios_10_.jpg
    :align: center
-   :width: 450px
+   :width: 450
 
 Was the correct profile for the sensor connected to the EVAL-ADIS-FX3 loaded? Was the correct register map loaded?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The name of the active profile and register map can always be found on the main form, as shown below.
+The name of the active profile and register map can always be found on the main
+form, as shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/profile_regmap.png
    :alt: profile_regmap.png
 
-If the incorrect profile was accidentally loaded, a new one could be selected by connecting to the FX3 and clicking on the "Select DUT Type" button on the main window.
+If the incorrect profile was accidentally loaded, a new one could be selected by
+connecting to the FX3 and clicking on the "Select DUT Type" button on the main
+window.
 
 Is the active SPI configuration valid for the sensor connected to the EVAL-ADIS-FX3?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -308,15 +315,15 @@ Locating the Eval GUI error log
 If the Eval GUI ever encounters an exception, an error log will be generated and stored in: ``C:\ProgramData\Analog Devices\FX3ExampleGUI\ERROR_LOG.csv`` When reporting an issue on GitHub, please be sure to attach this error log to help us further understand the root cause of the exception.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/unhandled_exception_fx3.jpg
-   :width: 600px
+   :width: 600
 
 Click :doc:`HERE </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis-fx3>` to go back to the :adi:`EVAL-ADIS-FX3` landing page.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/driver1.png
-   :width: 420px
+   :width: 420
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/driver2.png
-   :width: 420px
+   :width: 420
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/runasadmin.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/select_dut_dropdown.png
-   :width: 250px
+   :width: 250
 .. |main_screen_disconnected.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/main_screen_disconnected.jpg

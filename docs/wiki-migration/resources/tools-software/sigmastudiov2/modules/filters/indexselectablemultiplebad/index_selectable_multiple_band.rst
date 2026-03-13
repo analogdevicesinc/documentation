@@ -11,7 +11,8 @@ Index Selectable Multiple Band
 Description
 -----------
 
-The Index Selectable Multiple Band block provides a wide variety of 2nd-order filter algorithms.
+The Index Selectable Multiple Band block provides a wide variety of 2nd-order
+filter algorithms.
 
 The available filter types are:
 
@@ -66,7 +67,6 @@ Name    Type  Description
 ======= ===== ===================
 Output1 Audio The filtered output
 ======= ===== ===================
-
 
 | ===== Configurable Parameters =====
 

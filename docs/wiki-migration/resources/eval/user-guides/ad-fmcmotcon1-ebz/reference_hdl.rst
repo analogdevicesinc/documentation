@@ -1,8 +1,6 @@
 HDL Reference Designs
 =====================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,9 +17,8 @@ HDL Reference Designs
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-Two HDL reference designs are provided targeting different use cases and system complexity levels:
+Two HDL reference designs are provided targeting different use cases and system
+complexity levels:
 
 -  :doc:`Xilinx ISE HDL Project + Chipscope Interface </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/reference_hdl/ise>`
 

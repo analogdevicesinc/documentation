@@ -11,13 +11,15 @@ Typical Setup
 
    \ *Figure 1. AD9213-10GEBZ-B Evaluation Board and ADS8-V1EBZ Data Capture Board, default configuration with external clocks.*\
 
-
 Configuration for External Clocks
 ---------------------------------
 
 The AD9213 is able to be configured for on-board clocking or external clocking.
 
--  To alter an on-board clocking AD9213 evaluation board to be used for external clocking, capacitors C78 and C79 need to be removed, and C6 and C18 need to be placed. The figure below displays where these capacitors are located on the board
+-  To alter an on-board clocking AD9213 evaluation board to be used for external
+   clocking, capacitors C78 and C79 need to be removed, and C6 and C18 need to
+   be placed. The figure below displays where these capacitors are located on
+   the board
 
 .. image:: https://wiki.analog.com/_media/ad9213_clocking_capacitors.png
    :alt: ad9213_clocking_capacitors.png
@@ -26,8 +28,12 @@ The AD9213 is able to be configured for on-board clocking or external clocking.
 
    \ *Modification area*\
 
-
--  The figure below displays a zoomed in view of the clocking capacitors. Please note that the capacitors outlined in orange, C78 and C79 are for on-board clocking, and the capacitors outlined in blue, C6 and C18, are for external clocking. In addition, although these capacitors are all the same package size, note that the on-board clocking capacitors are 1nF capacitors, and the on-board clocking capacitors are 10nF capacitors.
+-  The figure below displays a zoomed in view of the clocking capacitors. Please
+   note that the capacitors outlined in orange, C78 and C79 are for on-board
+   clocking, and the capacitors outlined in blue, C6 and C18, are for external
+   clocking. In addition, although these capacitors are all the same package
+   size, note that the on-board clocking capacitors are 1nF capacitors, and the
+   on-board clocking capacitors are 10nF capacitors.
 
 .. image:: https://wiki.analog.com/_media/ad9213_capacitor_placement.png
    :alt: ad9213_capacitor_placement.png
@@ -35,7 +41,6 @@ The AD9213 is able to be configured for on-board clocking or external clocking.
 .. container:: centeralign
 
    \ *On-board and external clocking capacitors*\
-
 
 -  Please refer to the **Board Design and Integration Files** for more information about the sizing and values of components.
 -  See the steps below in **Equipment Needed** to set up the two (otherwise optional) signal generators necessary for external clocking AD9213 evaluation board.
@@ -47,7 +52,16 @@ Equipment Needed
 
    -  Analog signal source: The frequency and power requirements depend on the tests to be performed. A bandpass filter is typically used for single tone tests.
    -  Optional sample clock source: The AD9213-10GEBZ-B, AD9213-6GEBZ-B, AD9217-10GEBZ-B and AD9217-6GEBZ-B are equipped with on-board sample clock generation capability, so an external clock source is not needed. If an external sample clock source is desired, the clock signal generator should have very low phase-noise and be capable of supplying a 10Ghz clock signal (or 6 GHz clock signal for the the 6Gsps speed grade of AD9213/AD9217) at approximately 10dBm.
-   -  Optional FPGA Reference clock source: The AD9213-10GEBZ-B, AD9213-6GEBZ-B, AD9217-10GEBZ-B and AD9217-6GEBZ-B are equipped with on-board FPGA reference clock generation capability, so an external FPGA reference clock source is not needed. If an external sample clock source is desired, for AD9213-10GEBZ-B with 16 output lanes (at 10Gsps), the frequency of REFCLK is 625MHz. For AD9213-6GEBZ-B configured for 8 output lanes (at 6Gsps), the frequency of REFCLK is 750MHz. For AD9213, the frequency of REFCLK is the digital output lane rate divided by 20. For AD9217, the frequency of REFCLK is the sample rate divided by 16, which is the same as digital output data rate divided by 16.
+   -  Optional FPGA Reference clock source: The AD9213-10GEBZ-B, AD9213-6GEBZ-B,
+      AD9217-10GEBZ-B and AD9217-6GEBZ-B are equipped with on-board FPGA
+      reference clock generation capability, so an external FPGA reference clock
+      source is not needed. If an external sample clock source is desired, for
+      AD9213-10GEBZ-B with 16 output lanes (at 10Gsps), the frequency of REFCLK
+      is 625MHz. For AD9213-6GEBZ-B configured for 8 output lanes (at 6Gsps),
+      the frequency of REFCLK is 750MHz. For AD9213, the frequency of REFCLK is
+      the digital output lane rate divided by 20. For AD9217, the frequency of
+      REFCLK is the sample rate divided by 16, which is the same as digital
+      output data rate divided by 16.
 
 -  PC running Windows®
 -  USB port and cable to connect to a PC
@@ -85,46 +99,53 @@ Testing
 .. image:: https://wiki.analog.com/_media/ad9213-10gebz_p3_jumper.png
    :alt: ad9213-10gebz_p3_jumper.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 2. AD9213-10GEBZ-B standoff and jumper locations.*\
 
-
 -  You can install standoffs at the locations (marked with an \*) if needed. Alternatively, you can use foam sheets to support the board.
--  Connect the AD9213/9217 evaluation board to the ADS8-V1EBZ board together as shown in the following figure.
+-  Connect the AD9213/9217 evaluation board to the ADS8-V1EBZ board together as
+   shown in the following figure.
 
 .. image:: https://wiki.analog.com/_media/ad9213-10gebzb_to_ads8-v1ebz_connection.png
    :alt: AD9213-10GEBZB TO ADS8-V1EBZ connection.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 3. Connecting the AD9213-10GEBZ-B to ADS8-V1-EBZ.*\
 
-
 -  Align the FMC+ connectors and apply even pressure across the connector and press the FMC connector on to its counterpart on the FPGA board.
--  Connect signal, clocks (optional), power and USB cables to the boards as shown in Figure 1.
+-  Connect signal, clocks (optional), power and USB cables to the boards as
+   shown in Figure 1.
 
    -   Signal (J1A): The frequency and amplitude of the test signal depend on the type of test you are performing. Full scale is typically achieved at 9dBm – 12dBm signal power at the signal generator (depending on the frequency, and insertion loss of the filter used). If in doubt about which amplitude to use, start with a lower amplitude (for example, 4dBm at the signal generator) and work up or down from there.
 
       -   Optional Sample clock (J6): The sample clock works well across a wide range of amplitudes (1dBm – 10dBm at the signal generator). Because jitter performance is likely to improve as the slew rate increases, choose an amplitude towards the upper end of the stated range.
       -   Optional FPGA Reference Clock (ADS8-V1EBZ J1): Similar to the sample clock, the reference clock works well across a wide range of amplitudes (1dBm – 10dBm at the signal generator). Unlike the sample clock, the reference clock is not sensitive to jitter/phase noise. Any signal generator that meets the frequency and power requirements works. For AD9213, the frequency of the reference clock is the (output digital data rate)/20. For AD9217, the frequency of the reference clock is the (output digital data rate)/16. The FPGA reference clock must be synchronized with the ADC sample clock.
       -   Example: For the default JESD204B output configuration of AD9213-10GEBZ (L = 16, N’ = 16, M = 1) at 10Gsps, the output data rate is 12.5Gbps. Reference clock frequency =12.5G/20 = 625MHz.
-      -   Example: For AD9213-6GEBZ, ACE brings the part up in 8-Lane mode. In this case (L = 8, N’ = 16, M = 1) at 6Gsps, the output data rate is 15Gbps. Reference clock frequency = 15G/20 = 750MHz.
+      -   Example: For AD9213-6GEBZ, ACE brings the part up in 8-Lane mode. In
+          this case (L = 8, N’ = 16, M = 1) at 6Gsps, the output data rate is
+          15Gbps. Reference clock frequency = 15G/20 = 750MHz.
 
 -  Connect the USB cable from the ADS8-V1EBZ FPGA board to the Windows PC that has ACE installed.
 -  Power on the ADS8-V1EBZ FPGA board using the switch S4. Wait several seconds after powering on the ADS8-V1EBZ, until DS17 flashes and the FPGA fan has stopped spinning.
 -  Start ACE from Start->Programs->Analog Devices->ACE.
--  ACE will auto-detect the AD9213 or AD9217 board and bring up the correct ACE plugin, which will appear in the upper left portion of the GUI. If the plugin does not appear in the upper left, select Plug-in Marketplace and select AD9213-10GEBZ-B, AD9213-6GEBZ-B, AD9217-10GEBZ-B or AD9217-6GEBZ-B, and add the selected plugin.
+-  ACE will auto-detect the AD9213 or AD9217 board and bring up the correct ACE
+   plugin, which will appear in the upper left portion of the GUI. If the plugin
+   does not appear in the upper left, select Plug-in Marketplace and select
+   AD9213-10GEBZ-B, AD9213-6GEBZ-B, AD9217-10GEBZ-B or AD9217-6GEBZ-B, and add
+   the selected plugin.
 
 .. image:: https://wiki.analog.com/_media/ad9213_ce_ace_screen.png
    :alt: ad9213_ce_ace_screen.png
 
 -  Double click on the AD9213 or AD9217 part number in the plugin icon in the upper left of the GUI.
--  "Unknown” initially appears in the lower left corner. Wait until “Unknown” changes to “Good.”
+-  "Unknown” initially appears in the lower left corner. Wait until “Unknown”
+   changes to “Good.”
 
 .. image:: https://wiki.analog.com/_media/ad9213_ce_onboard_board_view.png
    :alt: ad9213_ce_onboard_board_view.png
@@ -133,13 +154,11 @@ Testing
 
    *AD9213/AD9217 on-board clocking board view*
 
-
    |ad9213_ce_external_board_view.png|
 
 .. container:: centeralign
 
    *AD9213/AD9217 external clocking board view*
-
 
 -  After “State=Good” appears in the lower left, turn on the signal generators for the clock, reference clock, and signal.
 -  Open the menu “Initial Configuration”.
@@ -151,15 +170,14 @@ Testing
 
    \ *On-board clocking: Open the Initial Configuration menu to apply the default configuration settings.*\
 
-
    |ad9213_ce_external_open_initial_config.png|
 
 .. container:: centeralign
 
    \ *External clocking: Open the Initial Configuration menu to apply the default configuration settings.*\
 
-
--  Click the Apply button to configure AD9213 in its default full bandwidth mode configuration. Then double-click on the chip to proceed.
+-  Click the Apply button to configure AD9213 in its default full bandwidth mode
+   configuration. Then double-click on the chip to proceed.
 
 .. image:: https://wiki.analog.com/_media/ad9213_ce_onboard_apply_default_config_fbw.png
    :alt: ad9213_ce_onboard_apply_default_config_fbw.png
@@ -168,13 +186,17 @@ Testing
 
    \ *On-board clocking: Apply default settings in the Initial Configuration menu before double-clicking on the chip.*\
 
-
--  "Output Interface PLL Locked" will appear green. Confirm that "Common mode" is set to "Startup: Internal VCM Control" and then click "Proceed to Analysis
+-  "Output Interface PLL Locked" will appear green. Confirm that "Common mode"
+   is set to "Startup: Internal VCM Control" and then click "Proceed to Analysis
 
 .. image:: https://wiki.analog.com/_media/ad9213_ce_onboard_proceed_to_analysis_fbw.png
    :alt: ad9213_ce_onboard_proceed_to_analysis_fbw.png
 
--  For DDC mode, please set the chip mode to "DDC on" and configure as necessary. Please note the ref clock frequency can change based on which modes are selected, and adjusting the frequency applied to the ADS8-V1EBZ may be necessary. After applying desired settings, click "apply", and then double click on the part.
+-  For DDC mode, please set the chip mode to "DDC on" and configure as
+   necessary. Please note the ref clock frequency can change based on which
+   modes are selected, and adjusting the frequency applied to the ADS8-V1EBZ may
+   be necessary. After applying desired settings, click "apply", and then double
+   click on the part.
 
 .. image:: https://wiki.analog.com/_media/ad9213_ce_onboard_apply_default_config_ddc.png
    :alt: ad9213_ce_onboard_apply_default_config_ddc.png
@@ -183,18 +205,20 @@ Testing
 
    \ *On-board clocking: Apply default settings in the Initial Configuration menu before double-clicking on the chip.*\
 
-
--  "Output Interface PLL Locked" will appear green. Confirm that 'Common mode" is set to "Startup: Internal VCM Control" and then click "Proceed to Analysis
+-  "Output Interface PLL Locked" will appear green. Confirm that 'Common mode"
+   is set to "Startup: Internal VCM Control" and then click "Proceed to Analysis
 
 .. image:: https://wiki.analog.com/_media/ad9213_ce_onboard_proceed_to_analysis_ddc.png
    :alt: ad9213_ce_onboard_proceed_to_analysis_ddc.png
 
--  The analysis page appears. Click "Run Once" to get a time domain view at the converted data.
+-  The analysis page appears. Click "Run Once" to get a time domain view at the
+   converted data.
 
 .. image:: https://wiki.analog.com/_media/ad9213_ce_analysis_page_appears.png
    :alt: AD9213_ce_analysis_page_appears.png
 
--  Using the full bandwidth mode setup from step 17, the time domain analysis of converted data appears.
+-  Using the full bandwidth mode setup from step 17, the time domain analysis of
+   converted data appears.
 
 .. image:: https://wiki.analog.com/_media/ad9213_ce_run_once_time_domain_fbw.png
    :alt: AD9213_ce_run_once_time_domain_fbw.png
@@ -202,7 +226,6 @@ Testing
 .. container:: centeralign
 
    \ *Full bandwidth mode time domain waveform*\
-
 
 -  Click on the FFT icon to display the frequency domain view (FFT).
 
@@ -213,7 +236,6 @@ Testing
 
    \ *Analysis Page with Time Domain Data*\
 
-
 -  Click "Run Continuously" to view repetitive FFTs.
 
 .. image:: https://wiki.analog.com/_media/ad9213_ce_run_continuously_fbw.png
@@ -223,8 +245,8 @@ Testing
 
    \ *Full bandwidth mode FFT*\
 
-
--   Using the DDC setup from step 19, the time domain domain analysis of converted data appears.
+-   Using the DDC setup from step 19, the time domain domain analysis of
+    converted data appears.
 
 .. image:: https://wiki.analog.com/_media/ad9213_ce_run_once_time_domain_ddc.png
    :alt: AD9213_ce_run_once_time_domain_ddc.png
@@ -232,7 +254,6 @@ Testing
 .. container:: centeralign
 
    \ *DDC mode time domain waveform*\
-
 
 -  Click "Run Continuously" to view repetitive FFTs.
 
@@ -243,11 +264,11 @@ Testing
 
    \ *DDC mode FFT*\
 
-
 Notes
 -----
 
--   If the ACE startup procedure does not proceed as described or expected (assuming you properly setup the hardware):
+-   If the ACE startup procedure does not proceed as described or expected
+    (assuming you properly setup the hardware):
 
    -  Close the ACE software.
    -  Power down the ADS8-V1EBZ using switch S4.
@@ -255,7 +276,8 @@ Notes
 -  If after repeated attempts the ACE startup procedure is not successful:
 
    -  Check that the jumper is placed on the AD9213/9217 evaluation board as shown in step 4.
-   -  Check that all signal generators are on and at the correct frequencies and power levels Iif external clocks are being used).
+   -  Check that all signal generators are on and at the correct frequencies and
+      power levels Iif external clocks are being used).
 
 .. |ad9213_ce_external_board_view.png| image:: https://wiki.analog.com/_media/ad9213_ce_external_board_view.png
 .. |ad9213_ce_external_open_initial_config.png| image:: https://wiki.analog.com/_media/ad9213_ce_external_open_initial_config.png

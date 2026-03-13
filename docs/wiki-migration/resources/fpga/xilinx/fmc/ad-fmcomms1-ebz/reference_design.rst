@@ -1,8 +1,6 @@
 AD-FMComms1-EBZ : Using the reference design
 ============================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,9 +17,9 @@ AD-FMComms1-EBZ : Using the reference design
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-The reference design is a combination of hardware (the FMComms1 Card + the FPGA base platform), the HDL, and the software that is either running on the Microblaze, or ARM Cores.
+The reference design is a combination of hardware (the FMComms1 Card + the FPGA
+base platform), the HDL, and the software that is either running on the
+Microblaze, or ARM Cores.
 
 In all the demos that we support, Linux is a large piece.
 
@@ -37,7 +35,10 @@ Linux Device Drivers
 Booting Linux
 -------------
 
-Normally, when the Linux image is booted, it will search both the LPC and HPC FMC slots for 2 cards. (the same reference design supports MIMO, as a single card). You should see something like this in the kernel log message - which indicates that a single card is plugged into the LPC FMC connector.
+Normally, when the Linux image is booted, it will search both the LPC and HPC
+FMC slots for 2 cards. (the same reference design supports MIMO, as a single
+card). You should see something like this in the kernel log message - which
+indicates that a single card is plugged into the LPC FMC connector.
 
 ::
 
@@ -112,12 +113,14 @@ It's a simple matter of configuring the ethernet on the FPGA platform:
 
 (or by running the udhcpc client)
 
-and then ensuring that the your host PC is attached to the same subnet as the FPGA platform.
+and then ensuring that the your host PC is attached to the same subnet as the
+FPGA platform.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/scope.png
-   :width: 400px
+   :width: 400
 
-From here you can look at things in the time domain, frequency domain, and control the various "knobs" in the platform.
+From here you can look at things in the time domain, frequency domain, and
+control the various "knobs" in the platform.
 
 To find the various "knobs", they are in the ``sysfs`` directory.
 
@@ -183,7 +186,9 @@ You can ``echo`` or ``cat`` into these files to change the various options.
    # cat out_altvoltage1_DAC_CLK_frequency
    491520000
 
-Just like if you were trying to program the part with specific frequencies, there are only so many options you can pick, so it attempts to pick the "closest" option.
+Just like if you were trying to program the part with specific frequencies,
+there are only so many options you can pick, so it attempts to pick the
+"closest" option.
 
 FMC FRU EEPROM Utility
 ----------------------
@@ -209,7 +214,6 @@ Dump FRU Board Information
       Part Number  : AD-FMCOMMS1-EBZ
       Board Rev    : B
    
-
 
 Dump FRU Power Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -273,7 +277,6 @@ Dump FRU Power Information
         Maximum current draw:       0 (mA)
    
 
-
 Dump FRU Connector Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -293,7 +296,6 @@ Dump FRU Connector Information
       P1 GBT Transceivers needed 0
       Max JTAG Clock 0
    
-
 
 AD-FMCOMMS1-EBZ Calibration EEPROM Utility
 ------------------------------------------
@@ -325,4 +327,3 @@ Query best match calibration set for a given Frequency
       ADC I Gain Adj: 32853
       ADC Q Gain Adj: 32768
    
-

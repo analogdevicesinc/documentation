@@ -3,7 +3,9 @@
 Add Shape
 =========
 
-This action allows the user to add a shape or plugin onto the canvas or schematic page specified.The function call takes in 3 arguments. This API returns the SSPResult type.
+This action allows the user to add a shape or plugin onto the canvas or
+schematic page specified.The function call takes in 3 arguments. This API
+returns the SSPResult type.
 
 API
 ---
@@ -17,12 +19,14 @@ Arguments
 
 -  parentUid - The Uid of the parent canvas/Schematic onto which the plugin must be added.
 -  shapeFullName - Full name of the plugin to be added, as obtained in the documentation provided by Analog Devices.
--  newPosition - Position on the canvas page where the user wishes to add the plugin. Default values are chosen if not specified.
+-  newPosition - Position on the canvas page where the user wishes to add the
+   plugin. Default values are chosen if not specified.
 
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information of the AddShape action.
+SSPResult contains 'IsSuccess' flag and 'Message' information of the AddShape
+action.
 
 ::
 

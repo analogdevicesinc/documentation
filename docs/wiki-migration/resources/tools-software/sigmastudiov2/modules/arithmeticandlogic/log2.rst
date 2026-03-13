@@ -9,7 +9,8 @@ Log2
 Description
 -----------
 
-The Log2 block computes the integral part of the log2 accurately and fractional part of log is calculated by using linear interpolation.
+The Log2 block computes the integral part of the log2 accurately and fractional
+part of log is calculated by using linear interpolation.
 
 Targets Supported
 -----------------
@@ -19,7 +20,6 @@ Name  ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ===== ========== ================ ============= ================
 Log 2 B          B                S             B
 ===== ========== ================ ============= ================
-
 
 | ===== Pins =====
 

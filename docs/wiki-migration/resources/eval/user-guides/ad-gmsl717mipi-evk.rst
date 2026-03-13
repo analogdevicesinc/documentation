@@ -3,16 +3,19 @@ AD-GMSL717MIPI-EVK
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-gmsl717mipi-evk/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Overview
 --------
@@ -29,7 +32,8 @@ Features
 -  1 x FAKRA coaxial cable connector
 -  Implements Power over Cable (PoC)
 -  Mounting holes for easy and secure attach of all Raspberry Pi cameras form factors
--  Open-source reference software for all supported camera types targeting a range of compute platforms such as Nvidia SoCs, Raspberry Pi, and AMD SoCs
+-  Open-source reference software for all supported camera types targeting a
+   range of compute platforms such as Nvidia SoCs, Raspberry Pi, and AMD SoCs
 
 Applications
 ------------
@@ -54,15 +58,15 @@ Support
 
 .. hint::
 
-   For questions and more information, please contact us on the Analog Devices Engineer Zone.
+   For questions and more information, please contact us on the Analog Devices
+   Engineer Zone.
 
    
    -  :ez:`EngineerZone Linux Support <linux-software-drivers>`
    -  :adi:`GMSL-Related Technical Support <en/support.html>`
    
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl717mipi-evk/ad-gmsl717mipi-evk_block_diagram.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl717mipi-evk_angle-evaluation-board-web.png
-   :width: 400px
+   :width: 400

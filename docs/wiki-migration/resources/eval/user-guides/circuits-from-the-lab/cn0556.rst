@@ -3,16 +3,19 @@ EVAL-CN0556-EBZ User Guide
 
 .. important::
 
-   Notice: This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+   Notice: This page has been fully migrated to GitHub.io and is no longer
+   maintained on the Wiki. Please refer to the GitHub link below for the most
+   current and accurate information.
 
    
    https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0556-ebz/index.html
    
-   If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   If you would like to contribute updates to this document, please submit your
+   suggestions via a Pull Request on the GitHub page.
    
-   Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   Thank you for your understanding, and we apologize for any inconvenience this
+   transition may cause.
    
-
 
 Overview
 --------
@@ -21,7 +24,7 @@ Overview
 | The system input and output voltages and currents are monitored and controlled through analog I/O. Using an analog I/O module, a single board computer such as a Raspberry Pi platform can receive telemetry information to control the board remotely.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/eval-cn0556-ebz_angle.jpg
-   :width: 400px
+   :width: 400
 
 Features
 ~~~~~~~~
@@ -38,8 +41,7 @@ Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0556_simplified_block_diagram.png
-   :width: 600px
-
+   :width: 600
 
 --------------
 
@@ -79,7 +81,8 @@ Software Setup
 
 The input and output voltages and current limits of the :adi:`CN0556` can be controlled through software. Interfacing :adi:`CN0556` with the :adi:`CN0554` analog I/O module enables full control capability. For the device to run, the SD card should be loaded with Analog Devices Kuiper Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It incorporates Linux device drivers for ADI products as well as tools and other software products designed and created with ease of use in mind. The reasoning behind creating this distribution is to minimize the barriers to integrating ADI hardware devices into a Linux-based embedded system.
 
-Access to the embedded system can be through a remote PC connected either via LAN cable or Wi-Fi.
+Access to the embedded system can be through a remote PC connected either via
+LAN cable or Wi-Fi.
 
 Downloading and Flashing ADI Kuiper Linux Image on SD Card
 ----------------------------------------------------------
@@ -88,14 +91,18 @@ In order to control the EVAL-CN0556-EBZ from the Raspberry Pi, you need to insta
 
 .. image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/command_prompt.png
    :align: center
-   :width: 400px
+   :width: 400
 
 There is an available Wiki Page which explains in detail on how to download and flash the SD card using Windows or Linux OS: **'Configuring the SD Card for Raspberry Pi Projects'** in the :doc:`Formatting and Flashing SD Cards using Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`.
 
 Configuring the SD Card for CN0556
 ----------------------------------
 
-For the Linux kernel to identify the device connected to the expansion header, update the device tree overlay. A Device Tree Overlay contains information about additional connected hardware, the EVAL-CN0556-EBZ for this case. The overlay file is already included in the SD card and just needs to be matched to the EVAL-CN0556-EBZ.
+For the Linux kernel to identify the device connected to the expansion header,
+update the device tree overlay. A Device Tree Overlay contains information about
+additional connected hardware, the EVAL-CN0556-EBZ for this case. The overlay
+file is already included in the SD card and just needs to be matched to the
+EVAL-CN0556-EBZ.
 
 Follow the procedure under **'Configuring the SD Card for Raspberry Pi Projects'** in the :doc:`Analog Devices Kuiper Linux page </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, substituting the following lines in **config.txt**
 
@@ -110,7 +117,6 @@ This brings up the file in the terminal. Scroll down until the line that begins 
    
       dtoverlay=rpi-cn0556
    
-
 
 Running the Example Scripts using PyADI-IIO
 -------------------------------------------
@@ -127,7 +133,6 @@ Jumper Settings
 ---------------
 
 **Using 3.3 V from the on-board LDO** At P1, check if the shunt placed is in correct position. The shunt should be placed correctly to short Pins 3 and 4. If it is not in proper placement, move the shunt to the correct position before performing the rest of the tests.
-
 
 |p1_1.jpg|
 
@@ -165,13 +170,15 @@ Buck Mode Setup          Boost Mode Setup
 |CN0556 Buck Mode Setup| |CN0556 Boost Mode Setup|
 ======================== =========================
 
--  Connect the EVAL-CN0554-RPIZ to the Raspberry Pi 4 using the P20 connector as shown below.
+-  Connect the EVAL-CN0554-RPIZ to the Raspberry Pi 4 using the P20 connector as
+   shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/rpi_554.png
    :alt: rpi_554.png
 
 -  Insert the MicroSD card into the Raspberry Pi's SD card slot. **See** `#software_setup <https://wiki.analog.com/>`_ **section for instructions on how to configure the SD Card for CN0556.**
--  Connect the EVAL-CN0556-EBZ on top of the EVAL-CN0554-RPIZ & Raspberry Pi 4 combination based on the connections indicated below.
+-  Connect the EVAL-CN0556-EBZ on top of the EVAL-CN0554-RPIZ & Raspberry Pi 4
+   combination based on the connections indicated below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0554_cn0556_rev_c.png
    :alt: cn0554_cn0556_rev_c.png
@@ -185,7 +192,8 @@ Buck Mode Setup          Boost Mode Setup
 
 -   Connect the MicroHDMI cable to the Raspberry Pi 4 and the other end to the display monitor.
 -   Connect the USB keyboard and a USB mouse to any of the USB ports in the Raspberry Pi 4.
--   Plug the USB type C power adapter into the Raspberry Pi and wait for it to boot up.
+-   Plug the USB type C power adapter into the Raspberry Pi and wait for it to
+    boot up.
 
 Mode 1: CN0556 in Buck Mode
 ---------------------------
@@ -195,8 +203,9 @@ Hardware Setup (continuation):
 
 .. important::
 
-   Warning: The following steps involve high DC voltages. Follow instructions carefully to prevent hot plugging, which may damage the device by an overvoltage transient.
-
+   Warning: The following steps involve high DC voltages. Follow instructions
+   carefully to prevent hot plugging, which may damage the device by an
+   overvoltage transient.
 
 -  Prepare a bench top power supply, electronic load, and two digital multimeters.
 -  Ensure that the power supply is completely turned off during the setup.
@@ -219,8 +228,8 @@ Running the Buck Mode Example Script
    **\__By default, the example script sets the board into Buck Mode and sets its parameters to its maximum values.
 
    
-   You may try to adjust the values after this test. Refer to the table of ranges appropriate for each control function.\_\_*\*
-
+   You may try to adjust the values after this test. Refer to the table of
+   ranges appropriate for each control function.\_\_*\*
 
 -  Ensure that the power supply is at the V1 left side and the electronic load is at the V2 right side.
 -  Once the Raspberry Pi 4 has finished booting, open the command prompt or terminal and navigate through the examples folder inside the downloaded or cloned pyadi-iio directory.
@@ -246,7 +255,9 @@ Running the Buck Mode Example Script
 -  The input and output voltage and current at the V1 and V2 side will be printed in the command window.
 -  The board will continuously regulate the output voltage to 14 V unless CN0556 is turned off.
 -  Press **ENTER** to disable and turn off the board.
--  Turn off the power supply and the electronic load. Make sure that the settings of the power supply are at 0 V and 0 A limit, as well as the electronic load to 0 A.
+-  Turn off the power supply and the electronic load. Make sure that the
+   settings of the power supply are at 0 V and 0 A limit, as well as the
+   electronic load to 0 A.
 
 Summary of Buck Mode Functions
 ------------------------------
@@ -287,8 +298,9 @@ Hardware Setup (continuation):
 
 .. important::
 
-   Warning: The following steps involve high DC voltages. Follow instructions carefully to prevent hot plugging, which may damage the device by an overvoltage transient.
-
+   Warning: The following steps involve high DC voltages. Follow instructions
+   carefully to prevent hot plugging, which may damage the device by an
+   overvoltage transient.
 
 -  Prepare a bench top power supply, electronic load, and two digital multimeters.
 -  Ensure that the power supply is completely turned off during the setup.
@@ -311,8 +323,8 @@ Running the Boost Mode Example Script
    **\__By default, the example script sets the board into Boost Mode and sets its parameters to its maximum values.
 
    
-   You may try to adjust the values after this test. Refer to the table of ranges appropriate for each control function.\_\_*\*
-
+   You may try to adjust the values after this test. Refer to the table of
+   ranges appropriate for each control function.\_\_*\*
 
 -  Ensure that the power supply is at the V2 right side, and the electronic load is at the V1 left side.
 -  Once the Raspberry Pi 4 has finished booting, open the command prompt or terminal and navigate through the examples folder inside the downloaded or cloned pyadi-iio directory.
@@ -337,7 +349,9 @@ Running the Boost Mode Example Script
 -  The input and output voltage and current at the V1 and V2 side will be printed in the command window.
 -  The board will continuously regulate the output voltage to 56 V unless CN0556 is turned off.
 -  Press **ENTER** to disable and turn off the board.
--  Turn off the power supply and the electronic load. Make sure that the settings of the power supply are at 0 V and 0 A limit, as well as the electronic load to 0 A.
+-  Turn off the power supply and the electronic load. Make sure that the
+   settings of the power supply are at 0 V and 0 A limit, as well as the
+   electronic load to 0 A.
 
 Summary of Boost Mode Functions
 -------------------------------
@@ -384,7 +398,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
 --------------
 
 Additional Information and Useful links
@@ -407,18 +420,17 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0556-EBZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |p1_1.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/p1_1.jpg
-   :width: 400px
+   :width: 400
 .. |p5_2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/p5_2.jpg
-   :width: 400px
+   :width: 400
 .. |jumper_p6.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/jumper_p6.png
-   :width: 400px
+   :width: 400
 .. |jumper_p7.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/jumper_p7.png
-   :width: 400px
+   :width: 400
 .. |CN0556 Buck Mode Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/556_554_buck_range.png
-   :width: 9000px
+   :width: 9000
 .. |CN0556 Boost Mode Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/556_554_boost_range.png
-   :width: 9000px
+   :width: 9000

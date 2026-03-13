@@ -36,79 +36,94 @@ The following sections describe how to take the CN0549 and integrate it into a s
 Mount the HDMI Monitor
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Mount the HDMI monitor to the inside of the Pelican 1400 case, on the lid side. In order to do this, you MUST cut into the foam provided in the case.
+Mount the HDMI monitor to the inside of the Pelican 1400 case, on the lid side.
+In order to do this, you MUST cut into the foam provided in the case.
 
--  Align the edge of the monitor with the lefthand side of the case as shown in the picture (assuming you are looking at it with the case open and the lid in the air) This will leave about 2 inches of foam on the righthand side
+-  Align the edge of the monitor with the lefthand side of the case as shown in
+   the picture (assuming you are looking at it with the case open and the lid in
+   the air) This will leave about 2 inches of foam on the righthand side
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_monitor_positioning.jpg
-   :width: 400px
+   :width: 400
 
--  Roughly locate the monitor about 1 inch from the top and 2 inches from the bottom edge of the foam.\
-
+-  Roughly locate the monitor about 1 inch from the top and 2 inches from the
+   bottom edge of the foam.\
 
 |image1|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_monitor_foam_bottom_width.jpg
-   :width: 400px
+   :width: 400
 
 -  Start cutting around the outline of the monitor with a very sharp knife.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_monitor_foam_cutting.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  After you are done cutting out the space for the monitor, it should look like this.
+-  After you are done cutting out the space for the monitor, it should look like
+   this.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_monitor_foam_outline.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  After cutting out the placement for the monitor, its time to adhere it to the Pelican case lid. Using velcro, cut 4 strips and place them down the back of the monitor as shown below. Be careful not to cover venting holes or other important things you might want access to later.
+-  After cutting out the placement for the monitor, its time to adhere it to the
+   Pelican case lid. Using velcro, cut 4 strips and place them down the back of
+   the monitor as shown below. Be careful not to cover venting holes or other
+   important things you might want access to later.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_monitor_velcro.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  Looking at the righthand side you'll see the connector panel. Connect the HDMI cable and the DC barrel jack to the monitor.\
-
+-  Looking at the righthand side you'll see the connector panel. Connect the
+   HDMI cable and the DC barrel jack to the monitor.\
 
 |image2|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/monitor_input_power_connected.jpg
-   :width: 410px
+   :width: 410
 
--  Once complete, use the monitor to align the other side of the velcro to the case. Remove the adhesive backing and insert the monitor into the Pelican case lid. Apply light force as to ensure a safe, stable connection, but not to hard as to damage the screen.\
-
+-  Once complete, use the monitor to align the other side of the velcro to the
+   case. Remove the adhesive backing and insert the monitor into the Pelican
+   case lid. Apply light force as to ensure a safe, stable connection, but not
+   to hard as to damage the screen.\
 
 |image3|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0549_pelican_case_buildup_monitor.jpg
-   :width: 400px
+   :width: 400
 
 Cutting the Foam
 ~~~~~~~~~~~~~~~~
 
-All the other items needed to run the demo must fit inside this Pelican case. There are probably several ways you could do this, but I believe I have determined the optimal way in the following steps.
+All the other items needed to run the demo must fit inside this Pelican case.
+There are probably several ways you could do this, but I believe I have
+determined the optimal way in the following steps.
 
-Start out by prepping the foam. The Pelican case is sold with foam which is perforated into .5 inch squares. This allows you to customize how things are arranged and how they can best fit in the case.
+Start out by prepping the foam. The Pelican case is sold with foam which is
+perforated into .5 inch squares. This allows you to customize how things are
+arranged and how they can best fit in the case.
 
 -  Lift the foam block from the main basin of the Pelican case, and remove the thin single piece of foam located at the bottom. Place this aside for later use.
 -  If you were to view the foam from the top, there is an outside layer of foam that is non-perforated along with an inner coordinate system of perforations.
--  Remove all the foam pieces colored in BLUE using the grid pattern outlined below. Note the outside edge is non-perforated
+-  Remove all the foam pieces colored in BLUE using the grid pattern outlined
+   below. Note the outside edge is non-perforated
 
 |image4| |image5|
 
 .. important::
 
-   Try to remove foam in 5 or 6 larger sections. You will need the foam later to act as padding from the bottom of the case.
-
+   Try to remove foam in 5 or 6 larger sections. You will need the foam later to
+   act as padding from the bottom of the case.
 
 -  Next you are going to want to create padding using the foam you removed in the previous steps.
--  There are 3 different padding heights, which are broken up by equipment section.
+-  There are 3 different padding heights, which are broken up by equipment
+   section.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_foam_cutout_grid_map2.png
    :align: center
-   :width: 400px
+   :width: 400
 
 ::
 
@@ -119,64 +134,70 @@ Start out by prepping the foam. The Pelican case is sold with foam which is perf
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0549_pelican_case_buildup_keyboard2.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Equipping the Pelican case
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Now you can start adding the required items into your Pelican case for standalone operation.
--  The keyboard should be the first items you place into the assigned foam slots.
+-  The keyboard should be the first items you place into the assigned foam
+   slots.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0549_pelican_case_buildup_keyboard3.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  Next, connect the DE10-Nano with the CN0540, CN0532, Mounting block, SMA cable, and USB OTG and place them into their assigned position.
+-  Next, connect the DE10-Nano with the CN0540, CN0532, Mounting block, SMA
+   cable, and USB OTG and place them into their assigned position.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0549_pelican_case_buildup_cn0540_cn0532_de10_otg2.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Nicely coil up the wires for the CN0532, mounting block, SMA cable, and USB OTG cable so that they fit into correct position. Add the wireless mouse on top of these.
--  Next attach the HDMI cable and the DC barrel jack into the correct connector slots on the DE10-Nano, and make sure you coil the cables up so that everything fits into its assigned position.
+-  Next attach the HDMI cable and the DC barrel jack into the correct connector
+   slots on the DE10-Nano, and make sure you coil the cables up so that
+   everything fits into its assigned position.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0549_pelican_case_buildup_cn0540_cn0532_de10_otg_mouse_hdmi_power1.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  When everything is all complete, the main basin of the Pelican case should look something like this.
+-  When everything is all complete, the main basin of the Pelican case should
+   look something like this.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0549_pelican_case_buildup_cn0540_cn0532_de10_otg_mouse_hdmi_power2.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  The entire open CN0549 case will look similar to this.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_complete_open2.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
--  Before closing the lid, the protective foam should be added as to not damage the HDMI monitor.
+-  Before closing the lid, the protective foam should be added as to not damage
+   the HDMI monitor.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_complete_open_protected2.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Now you are ready to close the case and bring your setup along with you!
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0549_pelican_case_complete_closed.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_monitor_foam_top_width.jpg
-   :width: 280px
+   :width: 280
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/monitor_input_power_ports.jpg
-   :width: 380px
+   :width: 380
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_velco.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_foam_cutout_grid2.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_case_foam_cutout_grid_legend2.png
-   :width: 400px
+   :width: 400

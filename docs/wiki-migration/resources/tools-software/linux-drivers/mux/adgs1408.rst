@@ -15,7 +15,10 @@ Evaluation Boards
 Description
 -----------
 
-This is a mux controller subsystem driver, with an interface for accessing mux controllers. This is done in such a way that several consumers can independently access the same mux controller if one controller controls several multiplexers, thus allowing sharing.
+This is a mux controller subsystem driver, with an interface for accessing mux
+controllers. This is done in such a way that several consumers can independently
+access the same mux controller if one controller controls several multiplexers,
+thus allowing sharing.
 
 Source Code
 ===========
@@ -77,7 +80,9 @@ Required devicetree properties:
        };
    }
 
-A consumer must also be provided to be able to control the mux. In this example we used a regular IIO ADC driver. Which is interfaced with the IIO mux controller consumer.
+A consumer must also be provided to be able to control the mux. In this example
+we used a regular IIO ADC driver. Which is interfaced with the IIO mux
+controller consumer.
 
 ::
 
@@ -88,7 +93,8 @@ A consumer must also be provided to be able to control the mux. In this example 
            reg = <1>;
        };
 
-The mux controller extends the ADC's IO channel that is selected. In this case the selected channels is represented by :
+The mux controller extends the ADC's IO channel that is selected. In this case
+the selected channels is represented by :
 
 ::
 
@@ -99,12 +105,13 @@ in this case voltage0 from ad7298 is the channels multiplexed in IIO.
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
-   If the multiplexer is used to select a signal that is fed to an IIO device, then you must enable IIO multiplexer driver
-
+   If the multiplexer is used to select a signal that is fed to an IIO device,
+   then you must enable IIO multiplexer driver
 
 ::
 
@@ -129,10 +136,18 @@ Hardware configuration
 Driver testing
 ==============
 
-Since we are using an IIO ADC (AD7298) then our mux will have an IIO device folder in /sys/bus/iio/devices/iio:deviceX with the name adc-mux@3.
+Since we are using an IIO ADC (AD7298) then our mux will have an IIO device
+folder in /sys/bus/iio/devices/iio:deviceX with the name adc-mux@3.
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 This specifies any shell prompt running on the target
 
@@ -177,14 +192,14 @@ Show device name
       adc-mux@3
    
 
-
 Get Voltage on channel Y
 ------------------------
 
 | **Description:**
 | /sys/bus/iio/devices/iio:deviceX/in_voltageY_raw
 
-This will select channel Y of the multiplexer and feed it to the input channel of the ADC that is physically connected to the mux.
+This will select channel Y of the multiplexer and feed it to the input channel
+of the ADC that is physically connected to the mux.
 
 .. container:: box bggreen
 
@@ -196,7 +211,6 @@ This will select channel Y of the multiplexer and feed it to the input channel o
       root@raspberrypi:/sys/bus/iio/devices/iio:device1# cat in_voltage0_raw
       4095
    
-
 
 The other attributes correspond to the ADC and can be viewed from here.
 
@@ -221,6 +235,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/mux/youtube>p_vntewue24
-

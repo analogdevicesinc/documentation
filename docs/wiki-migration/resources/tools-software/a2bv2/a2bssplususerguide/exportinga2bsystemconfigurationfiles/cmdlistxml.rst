@@ -3,7 +3,10 @@
 Command List Xml Specification
 ==============================
 
-XML uses tags that are not predefined or standard, which means that they are created by the person who is writing the XML file. Usually, the first tag begins by specifying the XML version and the encoding being used. This is standard tag and is called prolog.
+XML uses tags that are not predefined or standard, which means that they are
+created by the person who is writing the XML file. Usually, the first tag begins
+by specifying the XML version and the encoding being used. This is standard tag
+and is called prolog.
 
 **<Version_Info>** - Lists the version of A2B Plugin, Stack and SigmaStudio+ / SigmaStudio used
 
@@ -11,7 +14,9 @@ XML uses tags that are not predefined or standard, which means that they are cre
 -  A2BStackDLL_Version
 -  SigmaStudio_Version
 
-\*\* <page modetype="Mode 0"> \*\* - indicates the name of the mode and lists the contents of the xml. Each mode has multiple commands represented by <action> element. Only one mode is supported for command list xml
+\*\* <page modetype="Mode 0"> \*\* - indicates the name of the mode and lists
+the contents of the xml. Each mode has multiple commands represented by <action>
+element. Only one mode is supported for command list xml
 
 ::
 
@@ -31,7 +36,6 @@ XML uses tags that are not predefined or standard, which means that they are cre
 
    Refer SPI Programming Concepts in :adi:`AD243x Programming Reference Manual <en/gated/a2b/a2b-technology.html>` for more details
 
-
 \*\* SpiCmdWidth \*\* – Represents spi command width in bytes
 
 -  Available only for SPI commands. For I2C commands, it is set as 0
@@ -46,11 +50,13 @@ XML uses tags that are not predefined or standard, which means that they are cre
 -  For 1 byte width -> data_width="1"
 -  For 2 byte width -> data_width="2"
 
-\*\* len \*\* - Represents the number of values to read/write including address width
+\*\* len \*\* - Represents the number of values to read/write including address
+width
 
 -  len = “n” values to read / write + address width
 
-\*\* addr \*\* - Represents the starting address to read/write registers in decimal
+\*\* addr \*\* - Represents the starting address to read/write registers in
+decimal
 
 -  Ex: addr=”0”, It will start reading/writing the registers address from 0x00.
 
@@ -62,8 +68,8 @@ XML uses tags that are not predefined or standard, which means that they are cre
 
    i2caddr is ignored when SPI interface is used
 
-
-\*\* addrincr \*\* - Register or Word length in Bytes. Applicable for memory writes (DSP, EEPROM etc).
+\*\* addrincr \*\* - Register or Word length in Bytes. Applicable for memory
+writes (DSP, EEPROM etc).
 
 -  For 1 byte addr increment -> addrincr = 1 or addrincr = 0
 -  For n byte addr increment -> addrincr = n
@@ -82,7 +88,8 @@ Data bytes are followed by ParamName
 Table on Differences in xml specification
 -----------------------------------------
 
-Following table represents the differences in command list xml format for different versions of A2B plugin
+Following table represents the differences in command list xml format for
+different versions of A2B plugin
 
 +----------------------------------------------------------+
 | \*\* Xml Fields\ **\|** SigmaStudio+                     |

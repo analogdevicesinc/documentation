@@ -4,12 +4,15 @@ FPGA Reference Designs: PCORE Register Map
 Overview
 --------
 
-The table below lists the common register map used by all the device pcores in the reference designs. All the registers are dword based and do not support byte addressing. That is, a read at byte address 0x01, 0x02 or 0x03 all return the register at byte address 0x00. The registers are grouped as per functionality, any exceptions may be noted on the specific pcore documentation.
+The table below lists the common register map used by all the device pcores in
+the reference designs. All the registers are dword based and do not support byte
+addressing. That is, a read at byte address 0x01, 0x02 or 0x03 all return the
+register at byte address 0x00. The registers are grouped as per functionality,
+any exceptions may be noted on the specific pcore documentation.
 
 .. note::
 
    OBSOLETE: This register map is applicable only to the ISE/XPS older designs. The latest register map is here :doc:`/wiki-migration/resources/fpga/docs/hdl/regmap`
-
 
 Register Map
 ------------

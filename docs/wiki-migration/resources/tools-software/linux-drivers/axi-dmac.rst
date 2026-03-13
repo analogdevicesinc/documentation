@@ -9,7 +9,9 @@ Supported Devices
 Description
 -----------
 
-The AXI DMAC is a high-speed, high-throughput, general purpose DMA controller intended to be used to transfer data between system memory and other peripherals like high-speed converters.
+The AXI DMAC is a high-speed, high-throughput, general purpose DMA controller
+intended to be used to transfer data between system memory and other peripherals
+like high-speed converters.
 
 Features
 ~~~~~~~~
@@ -55,7 +57,8 @@ Files
 Example platform device initialization
 ======================================
 
-The AXI-DMAC driver is a platform driver and can currently only be instantiated via device tree.
+The AXI-DMAC driver is a platform driver and can currently only be instantiated
+via device tree.
 
 **Required properties:**
 
@@ -67,7 +70,9 @@ The AXI-DMAC driver is a platform driver and can currently only be instantiated 
 
 **Required sub-nodes:**
 
--  adi,channels: This sub-node must contain a sub-node for each DMA channel. For the channel sub-nodes the following bindings apply. They must match then configuration options of the peripheral as it was instantiated.
+-  adi,channels: This sub-node must contain a sub-node for each DMA channel. For
+   the channel sub-nodes the following bindings apply. They must match then
+   configuration options of the peripheral as it was instantiated.
 
 **Required properties for adi,channels sub-node:**
 
@@ -79,7 +84,8 @@ The AXI-DMAC driver is a platform driver and can currently only be instantiated 
 -  reg: Which channel this node refers to.
 -  adi,length-width: Width of the DMA transfer length register.
 -  adi,source-bus-width, adi,destination-bus-width: Width of the source or destination bus in bits.
--  adi,source-bus-type, adi,destination-bus-type: Type of the source or destination bus. Must be one of the following:
+-  adi,source-bus-type, adi,destination-bus-type: Type of the source or
+   destination bus. Must be one of the following:
 
    -  0 (AXI_DMAC_TYPE_AXI_MM): Memory mapped AXI interface
    -  1 (AXI_DMAC_TYPE_AXI_STREAM): Streaming AXI interface
@@ -90,7 +96,9 @@ The AXI-DMAC driver is a platform driver and can currently only be instantiated 
 -  adi,cyclic: Must be set if the channel supports hardware cyclic DMA transfers.
 -  adi,2d: Must be set if the channel supports hardware 2D DMA transfers.
 
-DMA clients connected to the AXI-DMAC DMA controller must use the format described in the dma.txt file using a one cell specifier. The value of the specifier refers to the DMA channel index.
+DMA clients connected to the AXI-DMAC DMA controller must use the format
+described in the dma.txt file using a one cell specifier. The value of the
+specifier refers to the DMA channel index.
 
 Example:
 
@@ -120,7 +128,8 @@ Example:
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 

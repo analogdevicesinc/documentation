@@ -9,7 +9,9 @@ Min Value Hold
 Description
 -----------
 
-The MinValueHold block monitors one (or more) input(s) and routes the minimum value of the input to the output. This block hold's the min value while the control input is 1 and reset the min value while the control input is 0.
+The MinValueHold block monitors one (or more) input(s) and routes the minimum
+value of the input to the output. This block hold's the min value while the
+control input is 1 and reset the min value while the control input is 0.
 
 Targets Supported
 -----------------
@@ -45,7 +47,6 @@ Name   Type  Description
 ====== ===== ==============
 Output Audio Output channel
 ====== ===== ==============
-
 
 | ===== Configurable Parameters =====
 

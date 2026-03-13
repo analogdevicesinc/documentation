@@ -5,7 +5,6 @@ Building the ZynqMP / MPSoC Linux kernel and devicetrees from source
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/linux/kernel/zynqmp.html
 
-
 The script method
 -----------------
 
@@ -24,7 +23,8 @@ The script will:
 -  clone the ADI kernel tree
 -  download the Linaro GCC toolchain [if no other is specified]
 -  build the ADI kernel tree
--  export/copy the Image file and device tree file out of the kernel build folder
+-  export/copy the Image file and device tree file out of the kernel build
+   folder
 
 Running the script in one line [with defaults]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,7 +68,8 @@ AMD Xilinx Vivado & Vitis 2023.2 may be installed into a different directory.
 
    linux$ export PATH=$PATH:/opt/Xilinx/Vitis/2023.2/gnu/aarch64/lin/aarch64-linux/bin
 
-Other toolchains/compilers for ARM may work as well, but the ones described here have been tested and found to work.
+Other toolchains/compilers for ARM may work as well, but the ones described here
+have been tested and found to work.
 
 Using the Linaro toolchain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,7 +87,8 @@ Setup cross compile environment variables
 Configure the kernel
 ~~~~~~~~~~~~~~~~~~~~
 
-Inside the repository, generate the configuration file before building the kernel tree.
+Inside the repository, generate the configuration file before building the
+kernel tree.
 
 ::
 
@@ -99,7 +101,10 @@ Inside the repository, generate the configuration file before building the kerne
 Build the kernel
 ~~~~~~~~~~~~~~~~
 
-Build the kernel via 'make'. This is the same for all AMD Xilinx ZynqMP UltraScale+ FPGAs. The "-j4" represents the number of threads on which this process should run. This build takes about 10-15 minutes, depending on the capabilities of your PC.
+Build the kernel via 'make'. This is the same for all AMD Xilinx ZynqMP
+UltraScale+ FPGAs. The "-j4" represents the number of threads on which this
+process should run. This build takes about 10-15 minutes, depending on the
+capabilities of your PC.
 
 ::
 
@@ -108,7 +113,6 @@ Build the kernel via 'make'. This is the same for all AMD Xilinx ZynqMP UltraSca
      CHK     include/generated/uapi/linux/version.h
      HOSTCC  scripts/basic/fixdep
      HOSTCC  scripts/basic/bin2c
-
 
    [ -- snip --]
 
@@ -160,7 +164,6 @@ The output files for building the kernel and device tree are **Image** and **<de
 Building the ZynqMP boot image
 ------------------------------
 
-
 How to build the ZynqMP boot image BOOT.BIN
 ===========================================
 
@@ -168,10 +171,11 @@ How to build the ZynqMP boot image BOOT.BIN
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html\
 
+The boot image BOOT.BIN is build using the bootgen tool which requires several
+input files.
 
-The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
-
-Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be found here:
+Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be
+found here:
 
 -  `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`_ projects
 
@@ -179,7 +183,8 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 
 -  `Build u-boot <http://www.wiki.xilinx.com/Build+U-Boot>`_
 
-   -  Make sure you checkout the proper git tag matching your Vivado Version (xilinx-v2022.2, xilinx-v2021.2, ...)
+   -  Make sure you checkout the proper git tag matching your Vivado Version
+      (xilinx-v2022.2, xilinx-v2021.2, ...)
 
 -  `Build FSBL <http://www.wiki.xilinx.com/Build+FSBL>`_
 -  `Build PMU Firmware <http://www.wiki.xilinx.com/Build+PMU+Firmware>`_
@@ -189,7 +194,9 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 Use script to build BOOT.BIN
 ----------------------------
 
-For ease of use we provide a bash shell script which allows building BOOT.BIN from system_top.xsa, u-boot.elf and either bl31.elf or a path to the Arm Trusted Firmware repository
+For ease of use we provide a bash shell script which allows building BOOT.BIN
+from system_top.xsa, u-boot.elf and either bl31.elf or a path to the Arm Trusted
+Firmware repository
 
 Download
 ~~~~~~~~
@@ -207,7 +214,6 @@ The script can be downloaded from here:
    
       $ chmod +x build_zynqmp_boot_bin.sh
    
-
 
 Usage
 ~~~~~
@@ -249,16 +255,15 @@ Usage
    \ NOTE: u-boot.elf and bl31.elf For those who don't want to build u-boot or bl31 themselves. Both u-boot.elf and bl31.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz.
 
    
-   u-boot.elf may have a different name, rename that .elf file to u-boot.elf before using.
+   u-boot.elf may have a different name, rename that .elf file to u-boot.elf
+   before using.
    
-
-
-
 
 DisplayPort - no picture?
 -------------------------
 
-The default configuration for most of the projects is to use the HDMI output, and that is what the configuration is set up for.
+The default configuration for most of the projects is to use the HDMI output,
+and that is what the configuration is set up for.
 
 For DisplayPort projects, you may need to add a custom ``xorg.conf`` file.
 

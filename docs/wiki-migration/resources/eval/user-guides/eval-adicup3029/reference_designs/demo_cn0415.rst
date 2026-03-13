@@ -6,15 +6,21 @@ The **ADuCM3029_demo_cn0415** provides a solution for controlling and monitoring
 General Description/Overview
 ----------------------------
 
-The circuit can be divided into four parts for the purpose of analyzing interaction with the software project: The supply block, the sense block, the actuator block, and the overcurrent fault / reset block.
+The circuit can be divided into four parts for the purpose of analyzing
+interaction with the software project: The supply block, the sense block, the
+actuator block, and the overcurrent fault / reset block.
 
-The supply block consists of DC-DC converters and protection circuits. This block does not interact with the software.
+The supply block consists of DC-DC converters and protection circuits. This
+block does not interact with the software.
 
 Overcurrent fault and Overcurrent Reset block, controlled by general-purpose input/output (GPIO) pins on **ADICUP3029**. If the solenoid current exceeds a resistor-programmed threshold, a comparator trips off the MOSFET gate driver and notifies software via a GPIO signal. The user can then re-enable the driver once the fault condition is removed.
 
-The sense block, consisting of a 0.1Ω current sense resistor, sense amplifier, filtering, and 14-bit Analog to Digital converter (ADC). The ADC is connected to the ADICUP3029 via Serial Peripheral Interface (SPI)
+The sense block, consisting of a 0.1Ω current sense resistor, sense amplifier,
+filtering, and 14-bit Analog to Digital converter (ADC). The ADC is connected to
+the ADICUP3029 via Serial Peripheral Interface (SPI)
 
-The voltage fed to the ADC with respect to current passing through the solenoid is given by the equation:
+The voltage fed to the ADC with respect to current passing through the solenoid
+is given by the equation:
 
 ::
 
@@ -39,9 +45,19 @@ So the ADC code with respect to current sense will be:
 
 The actuator block, consisting of a logic-level to MOSFET driver. The logic signal is driven by the **ADICUP3029**\ ’s PWM peripheral, allowing the the effective voltage across the solenoid to be varied.
 
-The software implements several functions with the sense and actuator blocks. PWM frequency and duty cycle can be controlled directly. This mode of operation would normally be combined with an outer feedback loop in a control system. One example would be a system in which the solenoid controls air pressure, that is in turn measured by a pressure sensor, which is then used to determine a new duty cycle value that brings the pressure closer to the desired setpoint.
+The software implements several functions with the sense and actuator blocks.
+PWM frequency and duty cycle can be controlled directly. This mode of operation
+would normally be combined with an outer feedback loop in a control system. One
+example would be a system in which the solenoid controls air pressure, that is
+in turn measured by a pressure sensor, which is then used to determine a new
+duty cycle value that brings the pressure closer to the desired setpoint.
 
-A PID control loop allows the solenoid current to be accurately controlled, compensating for variations in supply voltage and coil resistance. This mode of operation allows for optimum drive current for 2-state solenoids, minimizing power dissipation. An additional function allows a higher initial “pull in” current to be applied for a short time, after which current drops back to a lower “hold” current.
+A PID control loop allows the solenoid current to be accurately controlled,
+compensating for variations in supply voltage and coil resistance. This mode of
+operation allows for optimum drive current for 2-state solenoids, minimizing
+power dissipation. An additional function allows a higher initial “pull in”
+current to be applied for a short time, after which current drops back to a
+lower “hold” current.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/pid_controller_equation.png
    :alt: PID equation
@@ -53,7 +69,8 @@ Using the data gathered form the sense block the a **PID controller** is impleme
 -  Start increasing **Ki** constant until the actuation time is reasonable and the current overshoot is within 5% of the wanted value.
 -  Pick **Kd** as 25% (1/4) of **Ki**.
 
-A dither function allows a low-frequency AC signal to be superimposed, minimizing mechanical “stiction” in proportional solenoid applications.
+A dither function allows a low-frequency AC signal to be superimposed,
+minimizing mechanical “stiction” in proportional solenoid applications.
 
 Demo Requirements
 -----------------
@@ -120,8 +137,6 @@ Supply voltage vref value
 
 Outputting Data
 ---------------
-
-
 
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
@@ -197,8 +212,6 @@ preferences.
 
    If you see nothing in the serial terminal, try hitting the reset button on
    the embedded development board.
-
-
 
 Available commands
 ~~~~~~~~~~~~~~~~~~
@@ -280,14 +293,19 @@ Typing **help** or **h** after initial calibration sequence will display the lis
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0415.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0415.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cn0415** can be found here:
 
@@ -303,7 +321,6 @@ The software for the **ADuCM3029_demo_cn0415** can be found here:
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0415 Source Code <projects/ADuCM3029_demo_cn0415>`
    
-
 
 How to use the Tools
 --------------------

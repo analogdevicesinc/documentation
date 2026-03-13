@@ -26,7 +26,11 @@ Overview
 
 The low cost and small profile RF solution 2.4 GHz, 802.15.4/Proprietary Wireless Transceiver PMOD board (:adi:`EVAL-ADF7242-PMDZ`) is designed to support RF to FPGA or processor applications system that utilizes PMOD-compatible expansion ports configurable for SPI communication (PACKET MODE). For applications that require data streaming, a synchronous bidirectional serial port (SPORT) interface is also available. The Wireless Transceiver PMOD board can be selectively configured to operate on the 2400 MHz to 2483.5 MHz ISM band. This uses single chip :adi:`ADF7242` 2.4Ghz transceiver, with most of the system blocks embedded on chip, and minimizing eternal RF components.
 
-This wireless transceiver PMOD board uses mini 2.4 GHz chip antennas. In conjunction with the impedance-matched (complex differential impedance value) filter balun, reduces the RF front end count. This PMOD board supports polarization diversity that uses two chip antennas which can greatly improve performance under multipath fading conditions.
+This wireless transceiver PMOD board uses mini 2.4 GHz chip antennas. In
+conjunction with the impedance-matched (complex differential impedance value)
+filter balun, reduces the RF front end count. This PMOD board supports
+polarization diversity that uses two chip antennas which can greatly improve
+performance under multipath fading conditions.
 
 Refer to the :adi:`ADF7242` data sheet for detailed information regarding operation of the device.
 
@@ -46,11 +50,9 @@ Specifications
 --------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_2_n.png
-   :width: 600px
+   :width: 600
 
 --------------
-
-
 
 Interface Connector Signal Description
 --------------------------------------
@@ -63,7 +65,7 @@ Interface Connector Signal Description
 --------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_3.png
-   :width: 400px
+   :width: 400
 
 --------------
 
@@ -85,8 +87,6 @@ Functional Block Diagram
    -  Allegro Project
    
 
-
-
 | ===== Additional Information and Useful Links =====
 
 -  :adi:`ADF7242 Product Page <ADF7242>`
@@ -97,20 +97,16 @@ Functional Block Diagram
 Registration
 ------------
 
-
-
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-ADF7242-PMDZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 | // End of Document
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_1.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/block.png
-   :width: 900px
-
+   :width: 900
 
 Source Code
 ===========
@@ -141,27 +137,42 @@ Firmware for Automatic IEEE 802.15.4 Operating Modes (AN-1082)
 -  `ram_lab_7242_2_0_ieee15dot4_full_r5.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/ram_lab_7242_2_0_ieee15dot4_full_r5.zip>`_
 -  `ram_lab_7242_2_0_ieee15dot4_full_r6.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/ram_lab_7242_2_0_ieee15dot4_full_r6.zip>`_
 
-Below you can find a simple command line tool that was used to convert the original firmware HEX file into binary format consumed by the ADF7242 Linux device driver.
+Below you can find a simple command line tool that was used to convert the
+original firmware HEX file into binary format consumed by the ADF7242 Linux
+device driver.
 
 -  `Hex2Bin Firmware Tool <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/adf7242_do_firmware.zip>`_
 
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
-
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
 Example Platform / Board file
 -----------------------------
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
-
 
 .. code:: C
 
@@ -238,12 +249,12 @@ Example:
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADF7242 Driver depends on CONFIG_SPI and CONFIG_IEEE802154
-
 
 ::
 
@@ -270,13 +281,13 @@ Hardware configuration
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_1.png
-   :width: 400px
-
+   :width: 400
 
 Driver testing
 ==============
 
-On this demo network, we will have two different boards communicating with each other using ADF7242 modules: a Raspberry Pi and a ZedBoard.
+On this demo network, we will have two different boards communicating with each
+other using ADF7242 modules: a Raspberry Pi and a ZedBoard.
 
 ======== ========
 |image1| |image2|
@@ -288,7 +299,6 @@ Userspace tools for Linux IEEE 802.15.4 stack
 .. important::
 
    lowpan-tools are deprecated please use linux-wpan tools available here: `linux-wpan <https://github.com/linux-wpan/wpan-tools>`_
-
 
 Example using lowpan-tools
 
@@ -306,9 +316,11 @@ Example using lowpan-tools
 Configuration of the IEEE 802.15.4 layer
 ----------------------------------------
 
-We will configure the two devices to use the PAN ID 0x0777, the hardware addresses a0::1 and a0::2, and the short addresses 0x8001 and 0x8002.
+We will configure the two devices to use the PAN ID 0x0777, the hardware
+addresses a0::1 and a0::2, and the short addresses 0x8001 and 0x8002.
 
-Then, we will give them IPv6 addresses and test 6loWPAN communication with standard GNU tools.
+Then, we will give them IPv6 addresses and test 6loWPAN communication with
+standard GNU tools.
 
 Configuration for the first node (ZedBoard)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -350,7 +362,9 @@ We only need to change the first two lines:
 
 .. important::
 
-   Some GNU/Linux distributions offered on the Raspberry Pi, like Raspbian, will auto-enable the wpan0 interface as soon as it is created. We can disable this behaviour with the following command:
+   Some GNU/Linux distributions offered on the Raspberry Pi, like Raspbian, will
+   auto-enable the wpan0 interface as soon as it is created. We can disable this
+   behaviour with the following command:
 
    
    ::
@@ -358,11 +372,11 @@ We only need to change the first two lines:
       root:/> ifplugd -S -i wpan0 && ifconfig wpan0 down
    
 
-
 Chat application
 ~~~~~~~~~~~~~~~~
 
-Now that our two devices are correctly configured, we can verify that the two devices can communicate using the "izchat" application:
+Now that our two devices are correctly configured, we can verify that the two
+devices can communicate using the "izchat" application:
 
 **ZedBoard:**
 
@@ -380,12 +394,16 @@ Now that our two devices are correctly configured, we can verify that the two de
    >Hello World!
    Thanks
 
-This is a pretty simple two way communication. The ASCII strings are encapsulated in IEEE802.15.4 DATA frames.
+This is a pretty simple two way communication. The ASCII strings are
+encapsulated in IEEE802.15.4 DATA frames.
 
 Configuration of the 6loWPAN layer
 ----------------------------------
 
-The previous example shows that communication is working, but it is not very useful. By using the 6loWPAN protocol on top (the low-power equivalent of the IPv6 protocol), we can allow standard Linux network applications to communicate over the IEEE 802.15.4 link with standard sockets.
+The previous example shows that communication is working, but it is not very
+useful. By using the 6loWPAN protocol on top (the low-power equivalent of the
+IPv6 protocol), we can allow standard Linux network applications to communicate
+over the IEEE 802.15.4 link with standard sockets.
 
 Configuration for the first node (ZedBoard)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -417,14 +435,15 @@ Configuration for the second node (Raspberry Pi)
 
 .. important::
 
-   Some GNU/Linux distributions offered on the Raspberry Pi, like Raspbian, will auto-enable the lowpan0 interface as soon as it is created. We can disable this behaviour with the following command:
+   Some GNU/Linux distributions offered on the Raspberry Pi, like Raspbian, will
+   auto-enable the lowpan0 interface as soon as it is created. We can disable
+   this behaviour with the following command:
 
    
    ::
    
       root:/> ifplugd -S -i lowpan0 && ifconfig lowpan0 down
    
-
 
 Testing the communication
 -------------------------
@@ -473,7 +492,8 @@ We can as well ping the Raspberry Pi from the Zedboard using the address **fe80:
 Standard tools
 ~~~~~~~~~~~~~~
 
-The following is just to demonstrate that any Linux program can, using standard sockets, communicate over the IEEE 802.15.4 link with 6loWPAN:
+The following is just to demonstrate that any Linux program can, using standard
+sockets, communicate over the IEEE 802.15.4 link with 6loWPAN:
 
 ::
 
@@ -486,6 +506,6 @@ The following is just to demonstrate that any Linux program can, using standard 
    root@analog:/>
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/raspi_adf7242.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/zedboard_adf7242.jpg
-   :width: 400px
+   :width: 400

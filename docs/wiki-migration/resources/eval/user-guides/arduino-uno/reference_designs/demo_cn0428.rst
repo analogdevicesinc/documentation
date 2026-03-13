@@ -10,7 +10,6 @@ The :adi:`CN0428` circuit shown is a modular sensing platform that allows the us
 
 This example uses three types of boards:
 
-
 |image1|
 
 -  The **EVAL-CN0428-EBZ** Water Sensor Board
@@ -21,7 +20,12 @@ This example uses three types of boards:
 -  The **EVAL-M355-ARDZ-INT** Arduino Shield Board
 -  The **Arduino Uno** Board
 
-Using the specified setup the system is capable of measuring pH, Conductivity, Temperature and ORP of a solution. It can be configured for customized measurements such as Dissolved Oxygen (DO) measurement, Ion Concentration measurement, i.e., Ion Selective Electrode (ISE) measurement and many other water quality factors. Up to 4 sensor boards can be connected for measurements simultaneousl and temperature can be measured on one or all sensor boards.
+Using the specified setup the system is capable of measuring pH, Conductivity,
+Temperature and ORP of a solution. It can be configured for customized
+measurements such as Dissolved Oxygen (DO) measurement, Ion Concentration
+measurement, i.e., Ion Selective Electrode (ISE) measurement and many other
+water quality factors. Up to 4 sensor boards can be connected for measurements
+simultaneousl and temperature can be measured on one or all sensor boards.
 
 General Setup
 ~~~~~~~~~~~~~
@@ -59,28 +63,29 @@ Setting up the Hardware
 
    \ |image2|\
 
-
 .. container:: centeralign
 
    |image3|\
-
 
 .. container:: centeralign
 
    |image4|\
 
+-  Connect the system to the Arduino connectors DIGITAL (PWM~), POWER, ANALOG IN
+   and ICSP of the Arduino Uno board.
 
--  Connect the system to the Arduino connectors DIGITAL (PWM~), POWER, ANALOG IN and ICSP of the Arduino Uno board.
-
-   -  Note, the boards should only plug together one way, preventing reverse connections.
+   -  Note, the boards should only plug together one way, preventing reverse
+      connections.
 
 -  Choose the desired measurement probes and connect them to the :adi:`EVAL-CN0428-EBZ <cn0428>` boards.
--  Plug in the Type B USB cable into the USB port on the Arduino Uno, and the other end into the PC or laptop.
+-  Plug in the Type B USB cable into the USB port on the Arduino Uno, and the
+   other end into the PC or laptop.
 
 Obtaining the Source Code
 -------------------------
 
-We recommend not opening the project directly, but rather make a local copy in your workspace and open it using Arduino/Genuino IDE.
+We recommend not opening the project directly, but rather make a local copy in
+your workspace and open it using Arduino/Genuino IDE.
 
 The source code and include files of the **CN0428_example** can be found here:
 
@@ -91,11 +96,11 @@ The source code and include files of the **CN0428_example** can be found here:
    `CN0428_example at Github <https://github.com/analogdevicesinc/arduino/tree/cn0428/Arduino%20Uno%20R3/examples/CN0428_example>`_
    
 
-
 Project Structure
 -----------------
 
-The CN0411_example is a C Arduino sketch. All files are in the same folder as the .ino file and include the source and header files.
+The CN0411_example is a C Arduino sketch. All files are in the same folder as
+the .ino file and include the source and header files.
 
 Compiling, Verifying, and Programming
 -------------------------------------
@@ -103,25 +108,30 @@ Compiling, Verifying, and Programming
 -  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
 -  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
 
-These two steps can also be done using the quick buttons on the Arduino sketch. Check out the image below for locations of the quick buttons.
+These two steps can also be done using the quick buttons on the Arduino sketch.
+Check out the image below for locations of the quick buttons.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino_ide_verify_upload_buttons.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Outputting Data
 ---------------
 
-Data is output using the USB cable from the Arduino to the PC. The USB port acts as a serial terminal to display the data being transmitted via UART. Opening the serial terminal window from the Arduino IDE is very easy, simply click on the button shown in the picture below.
+Data is output using the USB cable from the Arduino to the PC. The USB port acts
+as a serial terminal to display the data being transmitted via UART. Opening the
+serial terminal window from the Arduino IDE is very easy, simply click on the
+button shown in the picture below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/arduino_ide_serial_terminal_button.png
    :align: center
-   :width: 500px
+   :width: 500
 
 Serial Terminal Output
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You may need to configure the serial terminal depending on the current settings of the Arduino IDE. Make sure the settings are as follows:
+You may need to configure the serial terminal depending on the current settings
+of the Arduino IDE. Make sure the settings are as follows:
 
 ::
 
@@ -135,7 +145,8 @@ You may need to configure the serial terminal depending on the current settings 
 Tools Download and Help
 -----------------------
 
-The Arduino tools are easy to use, and there are many tutorials and users guides to help learn how to use the Arduino IDE.
+The Arduino tools are easy to use, and there are many tutorials and users guides
+to help learn how to use the Arduino IDE.
 
 For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
@@ -143,7 +154,6 @@ For more information on how to use the tool basics, please check out the `Arduin
    :class: download
 
    To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
-
 
 *End of Document*
 

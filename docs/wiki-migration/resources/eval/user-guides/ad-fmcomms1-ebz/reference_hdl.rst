@@ -1,5 +1,3 @@
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -15,15 +13,10 @@
    which means it is no longer maintained or actively updated, even though the
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
-
-
-
 
 AD-FMCOMMS1-EBZ HDL Reference Design
 ====================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -39,8 +32,6 @@ AD-FMCOMMS1-EBZ HDL Reference Design
    which means it is no longer maintained or actively updated, even though the
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
-
-
 
 Supported Devices
 -----------------
@@ -76,12 +67,8 @@ FPGA Reference Designs on GitHub :
       -  :git-hdl:`tree/hdl_2015_r2`
    
 
-
 .. hint::
 
    
    -  Questions? :ez:`Ask Help & Support <community/fpga>`.
    
-
-
-

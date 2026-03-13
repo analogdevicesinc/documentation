@@ -1,7 +1,8 @@
 Altera FPGAs
 ============
 
-Below is the list of HDL sorted by connector type and compatible Analog Devices product.
+Below is the list of HDL sorted by connector type and compatible Analog Devices
+product.
 
 BeMicro SDK
 -----------

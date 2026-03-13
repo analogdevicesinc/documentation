@@ -6,7 +6,9 @@ Preface
 
 This user guide describes both the hardware and software setup needed to acquire data capture from :adi:`AD9767-KIT-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9767.html#eb-relatedhardware>` to characterize :adi:`AD9709`/:adi:`AD9763`/:adi:`AD9765`/:adi:`AD9767` dual-port, high speed, 2-channel, 8-/10-/12-/14-bit CMOS DACs.
 
-This guide shows how the AD9767-KIT-EBZ works with SDP-H1 controller board developed by Analog Devices. Link to the previous user guide document is provided for customers who still have DPG2 and DPG3 controller boards.
+This guide shows how the AD9767-KIT-EBZ works with SDP-H1 controller board
+developed by Analog Devices. Link to the previous user guide document is
+provided for customers who still have DPG2 and DPG3 controller boards.
 
 Typical Setup
 -------------
@@ -15,11 +17,9 @@ Typical Setup
 
    \ |image1| *Figure 1. AD9767-KIT-EBZ Evaluation Setup*\
 
-
 .. tip::
 
    Tip: Click on any picture in this guide to open an enlarged version.
-
 
 Helpful Files
 -------------
@@ -71,51 +71,51 @@ Quick Start Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/dpg_ad9767.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 .. container:: centeralign
 
    *Figure 2. DPG Lite Session for AD9709/63/65/67 Evaluation Board]*
-
 
 -  Select the I/Q tone from the **I/Q Data Vector** pulldown menu.
 -  Press the **Download** arrow and then the **Play** button. The spectrum similar to Figure 3 should appear in the signal/spectrum analyzer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9767_output.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 3. Spectrum Output for AD9767; Fdac = 100MSPS, Fout = 5MHz*
 
-
 =====Reconfiguring the Evaluation Board===== This section details how to configure the :adi:`AD9709/63/65/67 Evaluation Board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9767.html#eb-relatedhardware>` and allow user to evaluate AD9709, AD9763 and AD9765. Set up the board as shown in figure 4.
 
 -  To evaluate AD9709, Remove RP6 for DAC channel 1 and RP8 for DAC channel 2.
 -  To evaluate AD9763, Remove RP6 for DAC channel 1 and RP8 for DAC channel 2 and add 2 22ohm resistors.
--  To evaluate AD9765, Remove RP6 for DAC channel 1 and RP8 for DAC channel 2 and add 4 22ohm resistors.
+-  To evaluate AD9765, Remove RP6 for DAC channel 1 and RP8 for DAC channel 2
+   and add 4 22ohm resistors.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad976x_lower_resolution.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 4. AD9709 \| AD9763 \| AD9765 LSB Configurations*\
 
-
 Troubleshooting
 ---------------
 
-This section lists items to check and practices to use when debugging any unexpected performance of a board. If unexpected results occur:
+This section lists items to check and practices to use when debugging any
+unexpected performance of a board. If unexpected results occur:
 
 -  Check the supply voltage of the evaluation board. Voltage rail should be 3.3V.
 -  Check if all (3) blue LEDs on the AD-DAC-FMC-ADP board is lit up. Reconnect the board to the FMC connector of SDP-H1 if not lit up.
 -  Check if the SDP-H1 is being supplied properly by 12Vdc adaptor. Some LEDs on the SDP-H1 should lit up.
 -  Power cycle both the SDP-H1 and the AD9709/6x evaluation board.
 -  Check on the Spectrum Analyzer if the DAC clock inputs are properly driven. For 100MHz clock, the spectrum analyzer should detect a weak signal at 100MHz. If not detected, check properly the clock source and connections.
--  Disconnect and reconnect the SDP-H1 and AD9709/6x evaluation board. Reopen DPG Lite software.
+-  Disconnect and reconnect the SDP-H1 and AD9709/6x evaluation board. Reopen
+   DPG Lite software.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9767_kit_setup.png
-   :width: 600px
+   :width: 600

@@ -3,7 +3,8 @@
 Get Capture View Entries
 ========================
 
-This action allows the user to clear all the capture view entries. This API returns the SSPResult type
+This action allows the user to clear all the capture view entries. This API
+returns the SSPResult type
 
 API
 ---

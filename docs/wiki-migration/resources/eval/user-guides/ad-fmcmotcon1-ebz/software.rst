@@ -1,8 +1,6 @@
 Software
 ========
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,9 +17,8 @@ Software
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-The software suite for the motor control system consists of the following elements:
+The software suite for the motor control system consists of the following
+elements:
 
 -  :doc:`Linux IIO Drivers </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/linux_drivers>`
 -  :doc:`Linux IIO Scope user-space application for monitoring and control </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/iio_scope>`

@@ -1,8 +1,6 @@
 AD-FMCOMMS1-EBZ Zynq Quick Start Guide
 ======================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,9 +17,8 @@ AD-FMCOMMS1-EBZ Zynq Quick Start Guide
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCOMMS1-EBZ on either:
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the AD-FMCOMMS1-EBZ on either:
 
 -  `ZC702 <https://www.xilinx.com/ZC702>`_
 -  `ZC706 <https://www.xilinx.com/ZC706>`_
@@ -49,21 +46,20 @@ Booting the SD Card
 
    -  IIO Scope tool:
 
-
    |image1|
 
    -  Learn more about the :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
 
--  You are done. You can interact with the GUI either over the network, or with the HDMI monitor/USB keyboard mouse.
+-  You are done. You can interact with the GUI either over the network, or with
+   the HDMI monitor/USB keyboard mouse.
 
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
 
-
    |image2|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/iio_scope.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

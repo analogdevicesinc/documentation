@@ -1,7 +1,8 @@
 X-Band Platform Hardware
 ========================
 
-The following "shopping list" details what is provided when purchasing the hardware herein and what a user needs to procure separately.
+The following "shopping list" details what is provided when purchasing the
+hardware herein and what a user needs to procure separately.
 
 Required Equipment
 ------------------
@@ -58,7 +59,6 @@ ADAR1000EVAL1Z
 
    Note that the Stingray board includes 2x cables already (`IDSD-06-D-08.00-T <https://www.mouser.com/IDSD-06-D-08.00-T>`_). One example part number for the second set of cables: `IDSD-06-D-1600 <https://www.mouser.com/IDSD-06-D-1600>`_. (16" long, using these 2 cables together creates a 24" cable).
 
-
 -  `6x SMPM-SMA 12 Inch Cables <https://www.centricrf.com/cable-assemblies/sma-cable-assemblies/27-ghz-047-mini-smp-to-sma/c575-047-12-cable-mini-smp-f-to-sma-m-047-flexible-27ghz-vswr-1-35-12/>`_
 
 ADXUD1AEBZ
@@ -71,7 +71,6 @@ ADXUD1AEBZ
 
    The `FMC extension <https://www.digikey.com/HDR-169468-01>`_ is used both to move the interposer board and XUD1A away from the MxFE evaluation board as well as to allow access to the HPC1 connector which is otherwise blocked by the MxFE evaluation board.
 
-
 AD9081-FMCA-EBZ
 ^^^^^^^^^^^^^^^
 
@@ -82,8 +81,9 @@ AD9081-FMCA-EBZ
 
 .. note::
 
-   If the suggested vendor for the FMC Riser has no stock available, then a FMC Riser can be procured from Samtec. Create a "My Samtec" account and request a quote for Part Number: REF-228680-01, directly from Samtec.
-
+   If the suggested vendor for the FMC Riser has no stock available, then a FMC
+   Riser can be procured from Samtec. Create a "My Samtec" account and request a
+   quote for Part Number: REF-228680-01, directly from Samtec.
 
 Other
 ^^^^^
@@ -109,13 +109,11 @@ Hardware Connections
 
    \ **Figure 1: High Level Block Diagram**\
 
-
    |image1|
 
 .. container:: centeralign
 
    \ **Figure 2: Detailed Block Diagram**\
-
 
 --------------
 
@@ -126,7 +124,10 @@ Digital
 ~~~~~~~
 
 -  4x PMOD ribbon cables, length depends on desired setup, but the total length of each combined PMOD cable will need to be at least 20" (50cm). You need 2x cables for *each* Stingray PMOD connection as the ZCU102's PMOD pinout orientation doesn't directly match that of the Stingray board. You can use any 12-pin cable compatible with PMOD headers.
--  12-pin male-male adapters to connect PMOD cables to each other and to the ZCU102/Stingray. Quantity depends on the gender of the cables used. Both Stingray connectors are female, while on the ZCU102, one PMOD connector is male and the other female.
+-  12-pin male-male adapters to connect PMOD cables to each other and to the
+   ZCU102/Stingray. Quantity depends on the gender of the cables used. Both
+   Stingray connectors are female, while on the ZCU102, one PMOD connector is
+   male and the other female.
    One example part number: `TSW-106-08-G-D <https://www.mouser.com/TSW-106-08-G-D>`_.
 -  `FMC riser <https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-fmc-ext-g-3074457345635221630/>`_ to raise the MxFE board and allow access to the HPC1 connector for XUD1A control.
 -  `FMC extension <https://www.digikey.com/HDR-169468-01>`_ used to extend access to the HPC1 connector for XUD1A control.
@@ -134,7 +135,10 @@ Digital
 RF Connectors
 ~~~~~~~~~~~~~
 
--  The Stingray board uses SMPM connectors on both sides of the board, so depending on how the board is used, adapters to mate with test equipment cabling may be required. Note that the Stingray board includes 2x 12" SMPM-SMA cable.
+-  The Stingray board uses SMPM connectors on both sides of the board, so
+   depending on how the board is used, adapters to mate with test equipment
+   cabling may be required. Note that the Stingray board includes 2x 12"
+   SMPM-SMA cable.
    One example adapter cable: `SMPM to SMA Adapter Cable <https://www.centricrf.com/cable-assemblies/mini-smp-cable-assemblies/27-ghz-047-mini-smp-to-sma>`_
 -  If using the 10 GHz lattice spacing antenna tiles, `SMPM Bullets <https://www.digikey.com/125-0901-811>`_, are recommended to directly connect the antenna tiles to the Stingray board. Users can cable out to a custom antenna with different lattice spacings, if desired.
 -  The XUD1A board uses SMA connectors on the RF side of the board and SMPM connectors on the IF side of the board. Note that the XUD1A board includes 1x 12" SMPM-SMA cable.
@@ -148,19 +152,25 @@ Board Connections to the ZCU102
 ADAR1000EVAL1Z: Stingray
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Connect the Stingray board to the PMOD connectors on the ZCU102 as described below:
+Connect the Stingray board to the PMOD connectors on the ZCU102 as described
+below:
 
--  J55 from the ZCU102 should connect to P3 on the Stingray board using a ribbon cable and any required adapters. Note that pin 1 should connect to pin 1. This will require two PMOD cables to vertically flip the pinout from the ZCU102 to match that of the Stingray board.
-   \* J87 from the ZCU102 should connect to P4 on the Stingray board using a ribbon cable and any required adapters. Note that pin 1 should connect to pin 1. This will require two PMOD cables to vertically flip the pinout from the ZCU102 to match that of the Stingray board.
+-  J55 from the ZCU102 should connect to P3 on the Stingray board using a ribbon
+   cable and any required adapters. Note that pin 1 should connect to pin 1.
+   This will require two PMOD cables to vertically flip the pinout from the
+   ZCU102 to match that of the Stingray board.
+   \* J87 from the ZCU102 should connect to P4 on the Stingray board using a
+   ribbon cable and any required adapters. Note that pin 1 should connect to pin
+   1. This will require two PMOD cables to vertically flip the pinout from the
+   ZCU102 to match that of the Stingray board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/stingray_zcu102_pmod.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure 3: ZCU102-Stingray Digital Connections**\
-
 
 ADXUD1AEBZ:XUD1A
 ~~~~~~~~~~~~~~~~
@@ -171,13 +181,11 @@ Connect the XUD1A evaluation board to the ZCU102's HPC1 port. The `FMC extension
 
    The Interposer board PMOD is pin-compatible with the XUD1A PMOD enabling a direct connect. The `14-Pin PMOD 6 Inch Cable <https://www.digikey.com/H3AKH-1406G>`_ is optional, but recommended as it allows XUD1A to move away from the interposer board for easier RF cabling connections.
 
-
    |image2|
 
 .. container:: centeralign
 
    \ **Figure 4: ZCU102-XUD1A Digital Connections**\
-
 
 AD9081-FMCA-EBZ: MxFE
 ~~~~~~~~~~~~~~~~~~~~~
@@ -188,30 +196,30 @@ Connect the MxFE evaluation board to the ZCU102's HPC0 port as shown below.
 
    Don't forget to use the use the `FMC riser <https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-fmc-ext-g-3074457345635221630/>`_ to raise the AD9081 up!
 
-
    |MxFE Connection|
 
 .. container:: centeralign
 
    \ **Figure 5: ZCU102-AD9081 Attachment**\
 
-
 --------------
 
 Inter-Board Connections
 -----------------------
 
-The platform is divided into four 8:1 subarrays as detailed in the below figure. Two ADAR1000s are connected via RF Splitter/Combiner to a single up/down converter channel on the ADXUD1AEBZ. The IF portion of an individual up/down converter channel is split to a TX IF and RX IF input/out. Each IF output is directly connected to its respective ADC and DAC.
+The platform is divided into four 8:1 subarrays as detailed in the below figure.
+Two ADAR1000s are connected via RF Splitter/Combiner to a single up/down
+converter channel on the ADXUD1AEBZ. The IF portion of an individual up/down
+converter channel is split to a TX IF and RX IF input/out. Each IF output is
+directly connected to its respective ADC and DAC.
 
 For more details, review the ADAR1000EVAL1Z `Primary Side <https://wiki.analog.com/_media/resources/eval/user-guides/stingray/adar1000eval1z_top-web.gif>`_ and `Secondary Side <https://wiki.analog.com/_media/resources/eval/user-guides/stingray/adar1000eval1z_bottom-web.gif>`_ board images, the `ADXUD1AEBZ Primary Side <https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/eval-adxud1aebz_top-web.gif>`_ board image, and the :adi:`AD9081-EVAL <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9081.html#eb-overview>` images.
-
 
 |image3|
 
 .. container:: centeralign
 
    \ **Figure 6: Inter-Board Connections Diagram**\
-
 
 MxFE to XUD1A
 ~~~~~~~~~~~~~
@@ -240,15 +248,16 @@ Connect the MxFE and XUD1A together using SMA-SMPM cables as indicated below:
 
 .. note::
 
-   The ADXUD1AEBZ contains IF bandpass filters per channel (FL3, FL6, FL7, FL8). The rejection for these filters is not sufficient for optimized system performance and additional rejection is required to suppress mixing products, LO feedthrough, DAC image, etc.
-
+   The ADXUD1AEBZ contains IF bandpass filters per channel (FL3, FL6, FL7, FL8).
+   The rejection for these filters is not sufficient for optimized system
+   performance and additional rejection is required to suppress mixing products,
+   LO feedthrough, DAC image, etc.
 
    |image4|
 
 .. container:: centeralign
 
    \ **Figure 7: AD9081 - XUD1A Connections**\
-
 
 XUD1A to Stingray
 ~~~~~~~~~~~~~~~~~
@@ -283,33 +292,34 @@ Default MxFE Clocking Scheme
 
 The default clocking scheme used for the :adi:`AD9081-FMCA-EBZ <eval-ad9081>` uses the on-chip PLL. The :adi:`hmc7044` provides the reference into the chip derived from the on-board VCXO crystal oscillator. An external reference signal can be applied to the HMC7044 if the reference signal requires phase lock to other test equipment used in evaluation. The AD9081 firmware contains a HMC7044 reference clock priority table. No firmware changes are required if the reference clock is supplied via EXT_HMCREF SMP-F connection.
 
-
 |image5|
 
 .. container:: centeralign
 
    \ **Figure 8: AD9081 Clocking Block Diagram**\
 
-
 .. note::
 
-   The firmware build HMC7044 reference clock priority is: [CLKIN1 -> CLKIN0 -> CLKIN2 -> CLKIN3]. An external reference clock can be applied to the EXT_HMCREF SMP-F input without any changes to the firmware or hardware.
-
+   The firmware build HMC7044 reference clock priority is: [CLKIN1 -> CLKIN0 ->
+   CLKIN2 -> CLKIN3]. An external reference clock can be applied to the
+   EXT_HMCREF SMP-F input without any changes to the firmware or hardware.
 
 --------------
 
 Direct MxFE Clocking
 --------------------
 
-The MxFE Evaluation Platform has provisions for directly driving the sampling clock of the MxFE data converter. An SMP-F plug is available for this purpose, which connects to an AC-coupling capacitor that is not populated by default. Reference the schematic for more information. The table below lists the modifications required for direct clocking.
-
+The MxFE Evaluation Platform has provisions for directly driving the sampling
+clock of the MxFE data converter. An SMP-F plug is available for this purpose,
+which connects to an AC-coupling capacitor that is not populated by default.
+Reference the schematic for more information. The table below lists the
+modifications required for direct clocking.
 
 |image6|
 
 .. container:: centeralign
 
    \ **Figure 9: AD9081 Direct Clocking Implementation**\
-
 
 ============================= ====================================
 Direct Clocking Modifications 
@@ -325,13 +335,11 @@ Default XUD1A LO Configuration
 
 The default LO configuration for the XUD1A is for an external LO via SMA-F connector. The LO is common across all 4 up/down converter channels via splitter network. Refer to the :doc:`XUD1A Block Diagram </wiki-migration/resources/eval/user-guides/xud1a/user-guide>` for more details.
 
-
 |image7|
 
 .. container:: centeralign
 
    \ **Figure 10: XUD1A LO Block Diagram**\
-
 
 --------------
 
@@ -340,13 +348,11 @@ On-Board XUD1A LO Configuration
 
 The on-board :adi:`adf4371` PLL can be used in lieu of an external LO signal. The default ADF4371 reference clock is an on-board 100 MHz VCXO crystal oscillator, but provisions are available to provide an external reference via a SMP-F connector.
 
-
 |image8|
 
 .. container:: centeralign
 
    \ **Figure 11: XUD1A On-Board PLL Implementation**\
-
 
 The table below lists the modifications required for the on-board LO.
 
@@ -367,15 +373,18 @@ ZCU102 Configuration
 Boot from SD Card
 -----------------
 
-To configure the ZCU102 to boot from the SD card, set SW6 as shown below. SW6 is halfway between the SD card input and the vertical SMA connectors on the ZCU102.
-
+To configure the ZCU102 to boot from the SD card, set SW6 as shown below. SW6 is
+halfway between the SD card input and the vertical SMA connectors on the ZCU102.
 
 |SW6 Configuration for SD Card Boot|
 
 USB Host Mode
 -------------
 
-Setting up the ZCU102 in USB Host Mode allows the use of USB peripherals such as a keyboard and mouse. This can be useful for operating the board directly rather than having to use the UART connection or some other form of indirect control. Configure the jumpers as indicated below:
+Setting up the ZCU102 in USB Host Mode allows the use of USB peripherals such as
+a keyboard and mouse. This can be useful for operating the board directly rather
+than having to use the UART connection or some other form of indirect control.
+Configure the jumpers as indicated below:
 
 -  Shunt J7
 -  J109 -> Shunt pins 2-3
@@ -405,12 +414,18 @@ The ZCU102 uses a RJ45 ethernet cable to connect the ethernet port on the board 
 Time Division Duplexing
 =======================
 
-The system platform is capable of Time Division Duplexing (TDD) is controlled using a TDD Engine implemented in firmware. The TDD engine controls the MxFE TX and RX data enable paths, the ADXUD1AEBZ up/down converter circuitry and ADAR1000EVAL1Z RF circuitry. See the Matlab Control Overview section for user-level control.
+The system platform is capable of Time Division Duplexing (TDD) is controlled
+using a TDD Engine implemented in firmware. The TDD engine controls the MxFE TX
+and RX data enable paths, the ADXUD1AEBZ up/down converter circuitry and
+ADAR1000EVAL1Z RF circuitry. See the Matlab Control Overview section for
+user-level control.
 
 TDD Nets
 --------
 
-Replicated IO for the TDD controller is created in hardware all tied to a common software control. The replicas of the MxFE datapath enable pins are routed to signal nets on the ADXUD1AEBZ Interposer board.
+Replicated IO for the TDD controller is created in hardware all tied to a common
+software control. The replicas of the MxFE datapath enable pins are routed to
+signal nets on the ADXUD1AEBZ Interposer board.
 
 +---------------+----------------------+--------------------------------+---------------------------+-----------------+
 | Signal        | ZCU102 FPGA Pin (U1) | ZCU102 FMC HPC1 Connector (J4) | Interposer Board Net (P3) | Pin Number (P3) |
@@ -424,15 +439,15 @@ Replicated IO for the TDD controller is created in hardware all tied to a common
 | Ground        |                      |                                | GND                       | P3-7            |
 +---------------+----------------------+--------------------------------+---------------------------+-----------------+
 
-The control logic for the RF switching is common between the ADAR1000EVAL1Z and the ADXUD1AEBZ. The TR_EN probe point on the secondary side of the ADAR1000EVAL1Z is recommended to use for connecting a measurement probe.
-
+The control logic for the RF switching is common between the ADAR1000EVAL1Z and
+the ADXUD1AEBZ. The TR_EN probe point on the secondary side of the
+ADAR1000EVAL1Z is recommended to use for connecting a measurement probe.
 
 |image9|
 
 .. container:: centeralign
 
    \ **Figure 12: ADAR1000EVAL1Z TR Probe**\
-
 
 Troubleshooting
 ===============
@@ -443,7 +458,10 @@ AD9081 Power On
 ADXUD1AEBZ FMC EEPROM
 ~~~~~~~~~~~~~~~~~~~~~
 
-There are two potential issues that prevent the 1.8V VADJ from powering on the AD9081-FMCA-EBZ board. Upon boot, the FPGA queries the EEPROM of the different boards attached. If a non-compliant EEPROM is detected, the VADJ stays low during boot thus preventing the AD9081 board from powering on.
+There are two potential issues that prevent the 1.8V VADJ from powering on the
+AD9081-FMCA-EBZ board. Upon boot, the FPGA queries the EEPROM of the different
+boards attached. If a non-compliant EEPROM is detected, the VADJ stays low
+during boot thus preventing the AD9081 board from powering on.
 
 Currently, the FMC EEPROM of the interposer board used for the ADXUD1AEBZ is not factory programmed. The user must execute some commands within a UART terminal to program the FMC EEPROM. The command sets to program the FMC EEPROM of the ADXUD1AEBZ interposer board are detailed on the :doc:`software wiki </wiki-migration/resources/eval/user-guides/x-band-platform/software>`. Reboot the FPGA after programming the FMC EEPROM.
 
@@ -452,13 +470,11 @@ AD9081 LTM4616 Enable
 
 The AD9081 :adi:`ltm4616` power module run control pin voltage threshold is 1.7V. Verify the voltage and resistance of the R1M resistor on the AD9081-FMCA-EBZ exceed the voltage threshold of 1.7V. If not, measure the R1M resistor and verify the resistance value is 2.2 kΩ. The resistor can be replaced with a 0402 220 Ω resistor to meet the voltage threshold requirements of the power module.
 
-
 |image10|
 
 .. container:: centeralign
 
    \ **Figure 13: AD9081-FMCA-EBZ R1M Location**\
-
 
 --------------
 
@@ -470,21 +486,21 @@ For additional questions or support, please visit the Engineering Zone forum at 
 :doc:`X Band Development Platform Main Page </wiki-migration/resources/eval/user-guides/x-band-platform>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/platformblockdiagram.jpg
-   :width: 1000px
+   :width: 1000
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/xud1a_fmc_v2.png
-   :width: 600px
+   :width: 600
 .. |MxFE Connection| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/mxfe_connection.jpg
-   :width: 1000px
+   :width: 1000
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xbdp_hardwareconnectiondiagram.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081-xud1a-connect.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_default_clk.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_direct_clk.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xud1a_lo_pll.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xud1a_rework_onboard_pll.png
-   :width: 600px
+   :width: 600
 .. |SW6 Configuration for SD Card Boot| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_sw6_sdcard.jpg
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/adar1000eval1z_tr_probe.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_ltm4616_en_resistor_r1m.png
-   :width: 600px
+   :width: 600

@@ -1,8 +1,6 @@
 AD-FMCMOTCON1-EBZ Linux on Zynq Quick Start Guide
 =================================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,9 +17,8 @@ AD-FMCMOTCON1-EBZ Linux on Zynq Quick Start Guide
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCMOTCON1-EBZ on either:
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the AD-FMCMOTCON1-EBZ on either:
 
 -  `ZED Board <http://www.zedboard.org/>`_, Rev C or later
 
@@ -51,17 +48,16 @@ Booting the SD Card
 
    -  firefox:
 
-
    |image1|
 
 -  IIO Scope tool:
-
 
 |image2|
 
    -  Learn more about the :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
 
--  You are now done with booting from the SD card. You can interact with the GUI either over the network, or with the HDMI monitor/USB keyboard mouse.
+-  You are now done with booting from the SD card. You can interact with the GUI
+   either over the network, or with the HDMI monitor/USB keyboard mouse.
 
 Using IIO SCOPE for AD-FMCMOTCON1-EBZ
 -------------------------------------
@@ -72,12 +68,11 @@ Using IIO SCOPE for AD-FMCMOTCON1-EBZ
 
    Even thought this is Linux, this is a persistent file system. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with: ``sudo shutdown -h now``
 
-
    |image3|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/firefox.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/iio_scope.png
-   :width: 200px
+   :width: 200
 .. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

@@ -2,18 +2,21 @@
 
    These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
-
 Building ADI Yocto Linux In A Docker Container
 ==============================================
 
-A Docker image is available that is configured to build Yocto Linux images for the ADSP-SC5xx development boards. The Docker image is based off the Ubuntu 18.04 LTS 64-Bit Image with additional packages installed, and scripts to automate the building of Yocto Linux.
+A Docker image is available that is configured to build Yocto Linux images for
+the ADSP-SC5xx development boards. The Docker image is based off the Ubuntu
+18.04 LTS 64-Bit Image with additional packages installed, and scripts to
+automate the building of Yocto Linux.
 
 .. warning::
 
-   The Docker image used on this page is not maintained or provided by Analog Devices
+   The Docker image used on this page is not maintained or provided by Analog
+   Devices
 
-
-The docker build is deployed so the artefacts remain on the host machine after the docker instance has terminated.
+The docker build is deployed so the artefacts remain on the host machine after
+the docker instance has terminated.
 
 Running the Docker Image
 ------------------------

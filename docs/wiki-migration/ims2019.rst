@@ -5,8 +5,9 @@ IMS 2019: A Framework For Development and Deployment of RF Systems with SoCs Wor
 
    \ `WORKSHOP SIGNUP <http://bit.ly/adi-ims2019-ws>`_.
 
-
-For those attending the SoC framework workshop hosted by ADI, in order to make your experience better (less installing software while others are using the hardware) please have the following software installed on your machine:
+For those attending the SoC framework workshop hosted by ADI, in order to make
+your experience better (less installing software while others are using the
+hardware) please have the following software installed on your machine:
 
 -  **Windows**
 
@@ -37,7 +38,8 @@ For those attending the SoC framework workshop hosted by ADI, in order to make y
 -  :doc:`What is libiio? </wiki-migration/resources/tools-software/linux-software/libiio>`
 -  Documentation: :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-If you would like to come by the earlier before the session, and check out things with your hardware, it would be appreciated.
+If you would like to come by the earlier before the session, and check out
+things with your hardware, it would be appreciated.
 
 If you run into any questions while downloading, or building, please ask on the Pluto Support Forum at ADI's :ez:`Engineerzone <university-program>`, where all workshop developers answer questions .
 

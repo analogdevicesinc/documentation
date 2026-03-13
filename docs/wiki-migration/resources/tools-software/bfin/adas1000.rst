@@ -14,9 +14,15 @@ Evaluation Boards
 Overview
 --------
 
-The EVAL-ADAS1000SDZ is a fully featured evaluation kit for the ADAS1000. The evaluation kit consists of an evaluation board kitted with 2 ADAS1000 devices capable of demonstrating ECG capture up to 12 leads. This evaluation board is provided for silicon evaluation purposes and is not designed to be connected directly to animal or human.
+The EVAL-ADAS1000SDZ is a fully featured evaluation kit for the ADAS1000. The
+evaluation kit consists of an evaluation board kitted with 2 ADAS1000 devices
+capable of demonstrating ECG capture up to 12 leads. This evaluation board is
+provided for silicon evaluation purposes and is not designed to be connected
+directly to animal or human.
 
-This board can be operated in conjunction with the System Development Platform (SDP) or alternatively may be interfaced to directly via a dedicated serial interface connector (J4).
+This board can be operated in conjunction with the System Development Platform
+(SDP) or alternatively may be interfaced to directly via a dedicated serial
+interface connector (J4).
 
 The SDP controller board connects to the PC via USB 2.0. The evaluation board connects to the SDP-B controller board. The :adi:`ADAS1000` evaluation board cannot be connected directly to the PC. The evaluation software running on the PC will communicate with the evaluation board through the SDP-B Controller board. The SDP Controller board is a separate list item in the ordering guide below (EVAL-SDP-CB1Z). If you have not previously purchased an SDP-B Controller board, please do so to ensure a full evaluation setup.
 
@@ -28,7 +34,7 @@ This project demonstrates a framework developed for Visual DSP :adi:`Visual DSP 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/bfin/eval-adas1000sdz.jpg
    :alt: eval-adas1000sdz.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 The software has been developed to
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

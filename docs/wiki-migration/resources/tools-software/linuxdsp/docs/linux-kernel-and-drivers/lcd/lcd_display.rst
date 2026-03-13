@@ -4,9 +4,12 @@ Linux LCD device driver
 Introduction
 ------------
 
-This section describes the steps required to build and use LCD device driver on Linux using an ADSP-SC58x board and a WVGA/LCD EI3 extender board.
+This section describes the steps required to build and use LCD device driver on
+Linux using an ADSP-SC58x board and a WVGA/LCD EI3 extender board.
 
-WVGA/LCD EI3 Extender LCD board is not supported on the ADSP-SC573 EZ-KIT due to some board level hardawre confilict, the SC573 processor itself is capable of doing this.
+WVGA/LCD EI3 Extender LCD board is not supported on the ADSP-SC573 EZ-KIT due to
+some board level hardawre confilict, the SC573 processor itself is capable
+of doing this.
 
 Hardware Setup
 --------------
@@ -14,12 +17,14 @@ Hardware Setup
 -  ADSP-SC58x EZ-KIT: ADSP-SC589/SC584 EZ-Board
 -  A WVGA/LCD EI3 Extender Board
 
-Connect the J1 connector on the LCD EI3 Extender Board to the P1A connector on the SC58x-EZKIT
+Connect the J1 connector on the LCD EI3 Extender Board to the P1A connector on
+the SC58x-EZKIT
 
 Software Configuration
 ----------------------
 
-The following configuration should be done on top of the sc589-ezkit/sc584-ezkit default configuration.
+The following configuration should be done on top of the sc589-ezkit/sc584-ezkit
+default configuration.
 
 Configure Linux Kernel
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -59,7 +64,8 @@ Avoid LCD driver probe failure by disabling CAN bus support
 Enable Packages
 ~~~~~~~~~~~~~~~
 
-Add the video test program in the filesystem images, it's default enabled in adsp-sc5xx-full image.
+Add the video test program in the filesystem images, it's default enabled in
+adsp-sc5xx-full image.
 
 ::
 

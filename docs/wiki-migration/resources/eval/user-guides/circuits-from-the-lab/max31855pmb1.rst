@@ -5,9 +5,13 @@ The :adi:`MAX31855PMB1` peripheral module provides the necessary hardware to int
 
 .. image:: https://wiki.analog.com/_media/resources/eval/max31855/board_pic.png
    :align: center
-   :width: 400px
+   :width: 400
 
-This module is set up to operate with a K-type thermocouple. The data is output in a signed 14-bit, SPI-compatible, read-only format. This converter resolves temperatures to 0.25°C, allows readings as high as +1800°C and as low as -270°C, and exhibits thermocouple accuracy of ±2°C for temperatures ranging from -200°C to +700°C for K-type thermocouples.
+This module is set up to operate with a K-type thermocouple. The data is output
+in a signed 14-bit, SPI-compatible, read-only format. This converter resolves
+temperatures to 0.25°C, allows readings as high as +1800°C and as low as -270°C,
+and exhibits thermocouple accuracy of ±2°C for temperatures ranging from -200°C
+to +700°C for K-type thermocouples.
 
 Hardware
 --------
@@ -32,15 +36,18 @@ Digital Interface (PMOD)
 
 The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
 
-The MAX31855PMB1 peripheral module can plug directly into a Pmod-compatible port (configured for SPI) through connector J1. Connector J1 provides connection of the module to the host. The pin functions and pin assignments adhere to the Pmod standard recommended by Digilent.
+The MAX31855PMB1 peripheral module can plug directly into a Pmod-compatible port
+(configured for SPI) through connector J1. Connector J1 provides connection of
+the module to the host. The pin functions and pin assignments adhere to the Pmod
+standard recommended by Digilent.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/max31855/spi_port.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/eval/max31855/layout.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Device Driver Support
 ---------------------
@@ -103,7 +110,6 @@ Pin 6 (VCC)           VCC
 
 The final setup should look similar as shown below.
 
-
 |image3|
 
 3. Power up the **MAX32655FTHR** by connecting it to your laptop using a micro-USB cable.
@@ -113,7 +119,6 @@ The final setup should look similar as shown below.
 5. Open PuTTY or other similar software. Check the Device Manager to set correct COM for the **MAX32655FTHR**. Set baud rate to **57600** when running max31855_maxim_basic_example_max32655.hex available in `max31855_max32655 <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/max31855.zip>`_.
 
 The expected output viewed in the PuTTY is shown below.
-
 
 |Basic Example|
 
@@ -137,7 +142,6 @@ Pin 6 (VCC)           VCC
 
 The final setup should look similar as shown below.
 
-
 |image5|
 
 4. Power up the **MAX32650FTHR** by connecting it to your laptop using micro-USB. Connect **MAX32625PICO** to your laptop as well.
@@ -148,7 +152,6 @@ The final setup should look similar as shown below.
 
 The expected output viewed in the PuTTY is shown below.
 
-
 |image6|
 
 Application Software (All Platforms)
@@ -157,19 +160,20 @@ Application Software (All Platforms)
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
-The Libiio is a library used for interfacing with IIO devices and is required to be installed on your computer.
+The Libiio is a library used for interfacing with IIO devices and is required to
+be installed on your computer.
 
 .. admonition:: Download
    :class: download
 
    Download and install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
-
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the MAX31855PMB1 is attached. One platform is currently supported for the MAX31855PMB1: the MAX32655FTHR and MAX32650FTHR running the no-OS MAX31855 demo project. The user needs to supply a **URI**, which will be used in the context creation.
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to
+access it.
 
 For Windows machine connected to MAX32655FTHR and MAX32650FTHR:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -213,28 +217,28 @@ IIO Oscilloscope
 
    Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application.  The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
--  Press refresh to display available IIO Devices, once MAX31855PMB1 appeared, press connect.
+-  Press refresh to display available IIO Devices, once MAX31855PMB1 appeared,
+   press connect.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32655_iio_osc.png
    :alt: MAX31855PMB1 Oscilloscope Configuration
    :align: center
-   :width: 300px
+   :width: 300
 
 Debug Panel
 ^^^^^^^^^^^
 
-Below is the Debug panel of MAX31855PMB1 wherein you can directly access the device attributes.
-
+Below is the Debug panel of MAX31855PMB1 wherein you can directly access the
+device attributes.
 
 |MAX31855PMB1 Debug Panel|
 
 DMM Panel
 ^^^^^^^^^
 
-Access the DMM panel to see the instantaneous reading of the thermocouple reading and the device temperature.
-
+Access the DMM panel to see the instantaneous reading of the thermocouple
+reading and the device temperature.
 
 |MAX31855PMB1 DMM Panel|
 
@@ -250,10 +254,13 @@ Running the example
 
 After installing and configuring PYADI-IIO in your machine, you are now ready to run Python script examples. In our case, run the **max31855.py** found in the examples folder.
 
-<code> analog@analog:~$ python pyadi-iio/examples/max31855.py serial:<serial port>,57600</code>
+<code> analog@analog:~$ python pyadi-iio/examples/max31855.py serial:<serial
+port>,57600</code>
 
-In a Windows machine, you can check the port of your MAX32655FTHR and MAX32650FTHR via Device Manager in the Ports (COM & LPT) section. If your device is in COM8, you have to use "python pyadi-iio/examples/max31855.py serial:COM8,57600".
-
+In a Windows machine, you can check the port of your MAX32655FTHR and
+MAX32650FTHR via Device Manager in the Ports (COM & LPT) section. If your device
+is in COM8, you have to use "python pyadi-iio/examples/max31855.py
+serial:COM8,57600".
 
 |image7|
 
@@ -261,7 +268,6 @@ In a Windows machine, you can check the port of your MAX32655FTHR and MAX32650FT
    :class: download
 
    Github link for the Python sample script: :git-pyadi-iio:`MAX31855 Python Example <examples/max31855.py>`
-
 
 More information and Useful links
 ---------------------------------
@@ -281,7 +287,6 @@ Datasheet, Schematic, Layout
    -  :adi:`MAX31855PMB1 Datasheet <media/en/technical-documentation/data-sheets/MAX31855PMB1.pdf>`
    
 
-
 Additional Information
 ----------------------
 
@@ -297,24 +302,23 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/MAX31855PMB1?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31855/equation.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31855/typek.png
-   :width: 550px
+   :width: 550
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32655_demo.png
-   :width: 500px
+   :width: 500
 .. |Basic Example| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32655_basic_example.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/max31855/max32650fthr_with_pico.png
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32650_demo.jpg
-   :width: 500px
+   :width: 500
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32650_basic_example.png
-   :width: 600px
+   :width: 600
 .. |MAX31855PMB1 Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32655_iio_debug_panel.png
-   :width: 300px
+   :width: 300
 .. |MAX31855PMB1 DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32655_iio_dmm_panel.png
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31855/max31855_pyadi_2.png
-   :width: 700px
+   :width: 700

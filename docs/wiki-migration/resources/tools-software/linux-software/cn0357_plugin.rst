@@ -9,7 +9,7 @@ The CN0357 view is divided in three sections:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/cn0357_plugin.png
    :align: right
-   :width: 460px
+   :width: 460
 
 ADC Settings
 ------------
@@ -39,4 +39,5 @@ System
    -  **ppm/mV:** The system conversion coefficient of ppm/mV.
    -  **mV/ppm:** The system conversion coefficient of mV/ppm.
 
-The measurements are being continuously displayed at regular intervals of 1 second.
+The measurements are being continuously displayed at regular intervals of 1
+second.

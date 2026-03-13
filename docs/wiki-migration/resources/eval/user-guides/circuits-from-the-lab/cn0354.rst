@@ -16,7 +16,7 @@ The\ :adi:`AD7787`\ is a 24-bit, low noise, low power Σ-Δ ADC for low frequenc
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/block_diagram.png
    :align: center
-   :width: 900px
+   :width: 900
 
 Required Equipment
 ------------------
@@ -51,7 +51,6 @@ General Setup
    
    | NOTE: If not all four thermocouple channels will be used, it is recommended to short out the positive and negative terminal of any unused channel at the isothermal block P2 in order to avoid the AD8495 from railing.
 
-
 | |image1|
 
 Installing the Software
@@ -62,7 +61,6 @@ Installing the Software
 .. tip::
 
    \ NOTE: It is recommended that you install the `CN-0354 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0354>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0354\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
-
 
    |image2|
 
@@ -78,8 +76,9 @@ Installing the Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image5|
 
@@ -91,21 +90,17 @@ Installing the Software
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
-
    |image6|
 
 -  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
 
 Using the Evaluation Software
 
-
 Software Control and Indicator Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/gui1.png
-   :width: 900px
-
-
+   :width: 900
 
 - **Start Sampling**
 - When this button is pressed, the SDP-B Board makes a USB connection to the CN-0354 Board automatically.  A connection to the SDP-B Board must be made to use the software. Once a USB connection is established, the software starts sampling in real-time.
@@ -115,8 +110,8 @@ Software Control and Indicator Descriptions
 .. note::
 
    
-   NOTE: Default values are provided in the System Configuration tab in order for the software to run even without specified preferences are inputted.
-
+   NOTE: Default values are provided in the System Configuration tab in order
+   for the software to run even without specified preferences are inputted.
 
 - **Save Data**
 - When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
@@ -131,7 +126,8 @@ Software Control and Indicator Descriptions
 - **Chart Controls**
 - These controls allow the user to zoom-in, zoom-out, and pan through the data collected.
 - **System Status String and LED Indicators**
-- This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.
+- This indicator displays the current state of the software in the form of an
+  LED.  There are three status LED colors.
 
 |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-inactive.png| Inactive
 
@@ -140,19 +136,20 @@ Software Control and Indicator Descriptions
 |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-error.png| Error
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/gui2.png
-   :width: 900px
-
-
+   :width: 900
 
 - **Temperature Range Dropdown Select**
 - This control is used to change the temperature range of the system.  The default value is __5'C to 880'C__.
 - **Header setting Tab Display**
-- The tab shows the proper P1 header setting. The red box indicates where the shunt should be placed.
+- The tab shows the proper P1 header setting. The red box indicates where the
+  shunt should be placed.
 
 .. important::
 
-   Everytime the temperature range is changed in the software, a corresponding change should be done in the hardware setting as well. Specifically, the P1 header should have the correct setting as showed in the display tab of the Adjust Temperature Range section of the System Configuration Tab.
-
+   Everytime the temperature range is changed in the software, a corresponding
+   change should be done in the hardware setting as well. Specifically, the P1
+   header should have the correct setting as showed in the display tab of the
+   Adjust Temperature Range section of the System Configuration Tab.
 
 - **Low Calibration Temperature Numerical Control**
 - This control is used to modify the low calibration temperature setpoint. The greyed out value on the right is the millivolt equivalent of the specified temperature based on the NIST Table for Type K thermocouple.
@@ -171,29 +168,25 @@ Software Control and Indicator Descriptions
   - __Buffered Mode__ - Selecting this mode turns the on-chip analog input channel buffer of the :adi:`AD7787` **ON**.
   - __Unbuffered Mode__ - Selecting this radio button turns the on-chip analog input channel buffer of the :adi:`AD7787` **OFF**.
 - **Burnout Current Radio Buttons**
-- When this control is enabled the 100nA current sources in the signal path are enabled.
+- When this control is enabled the 100nA current sources in the signal path are
+  enabled.
 
 .. important::
 
    The burnout currents can be enabled only when the buffer is active.
 
-
 Saving Data to a Spreadsheet File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 -  **Establish a USB Connection Link**.
 -  **Start Sampling**.
 -  Click the **Save Data** Button.
 -  The software automatically opens the Excel spreadsheet file with the data.
 
-
-
 .. note::
 
-   \\ The data is exported to an Excel spreadsheet file with columns labeled accordingly.
-
-
+   \\ The data is exported to an Excel spreadsheet file with columns labeled
+   accordingly.
 
 | =====Registration=====
 
@@ -201,9 +194,8 @@ Saving Data to a Spreadsheet File
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0354-PMDZ?&v=RevB>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/test_setup.png
-   :width: 900px
+   :width: 900
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/softwareinstall0.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/softwareinstall2.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0354/softwareinstall3.png

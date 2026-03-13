@@ -9,7 +9,9 @@ AB-In CD-Out Condition
 Description
 -----------
 
-The AB In-CD Out Condition block lets you compare the sample-by-sample level of two incoming signals (A & B) and output the sample of one of two new signals (C & D), depending on the condition.
+The AB In-CD Out Condition block lets you compare the sample-by-sample level of
+two incoming signals (A & B) and output the sample of one of two new signals (C
+& D), depending on the condition.
 
 This algorithm works only for DSP's with conditional instruction.
 
@@ -34,7 +36,6 @@ Name         ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ============ ========== ================ ============= ================
 AB-In CD-Out B/S        B/S              S             B
 ============ ========== ================ ============= ================
-
 
 | ===== Pins =====
 

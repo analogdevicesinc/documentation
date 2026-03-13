@@ -3,8 +3,8 @@ Index Selelctable Delay
 
 :doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-
-Delays the input signal by the maximum number of samples selected on the list of spin text box using index select control input.
+Delays the input signal by the maximum number of samples selected on the list of
+spin text box using index select control input.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/index_sel_delay.png
    :align: center
@@ -47,7 +47,8 @@ GUI Controls
 | 
 | ===== Add-Growth Behaviour ===== Add algorithm is not supported.
 
-Grow Algorithm is supported for Cur Delay control up to 16 and is not supported for input and output channels.
+Grow Algorithm is supported for Cur Delay control up to 16 and is not supported
+for input and output channels.
 
 DSP Parameter Information
 -------------------------
@@ -59,12 +60,12 @@ Delay1   Cur Spin text1 Int
 Delay2   Cur Spin text1 Int
 ======== ============== =====================
 
-
-
 Implementation
 --------------
 
-This module shall implement a multiple delay line with the 'Delay Tap' signal as the actual delay value and delay tap applied to the input signal is selected by the external control index.
+This module shall implement a multiple delay line with the 'Delay Tap' signal as
+the actual delay value and delay tap applied to the input signal is selected by
+the external control index.
 
 y(n) = { x(n-d(n)), if d(n)<Max { x(n-Max), if d(n)>=Max
 

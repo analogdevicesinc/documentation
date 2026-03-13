@@ -7,10 +7,12 @@ Windows
 create_xilinx_sdk_project.bat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The script can be run with no parameters. In this case, you will be asked to introduce the path and the name of the .hdf file and the path and the name of the folder where the project will be created.
+The script can be run with no parameters. In this case, you will be asked to
+introduce the path and the name of the .hdf file and the path and the name of
+the folder where the project will be created.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers-all/build-xilinx-projects/win_cmd.png
-   :width: 400px
+   :width: 400
 
 For example:
 
@@ -23,7 +25,8 @@ For example:
    "example => C:/my_workspaces Note: use "/" instead of "\""
    fmcomms2_zc706
 
-The parameters that were specified in the previous example, can be passed directly if the script is run from a command line.
+The parameters that were specified in the previous example, can be passed
+directly if the script is run from a command line.
 
 For example:
 
@@ -33,15 +36,18 @@ For example:
 
 .. tip::
 
-   A default path of the Xilinx SDK installation folder is specified in the script. If you have installed the package in a different location, please modify the script accordingly
-
+   A default path of the Xilinx SDK installation folder is specified in the
+   script. If you have installed the package in a different location, please
+   modify the script accordingly
 
 Makefile
 ~~~~~~~~
 
-Using "Xilinx Software Command Line Tool", the projects can be created using the Makefiles.
+Using "Xilinx Software Command Line Tool", the projects can be created using the
+Makefiles.
 
-If no parameters are specified, the default location of the .hdf file and of the folder where the project will be created is the current directory.
+If no parameters are specified, the default location of the .hdf file and of the
+folder where the project will be created is the current directory.
 
 For example:
 
@@ -50,7 +56,6 @@ For example:
    * Xilinx Software Commandline Tool (XSCT) v2015.2
      *** Build date : Jun 26 2015-17:09:09
        ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
-
 
    Got $XILINX_SDK: C:/Xilinx/SDK/2015.2
    xsct% cd C:/workspace/git/no-os/ad9361
@@ -97,7 +102,8 @@ For example:
    Done.
    xsct%
 
-The location of the .hdf file and of the folder where the project will be created can be also specified if it is required.
+The location of the .hdf file and of the folder where the project will be
+created can be also specified if it is required.
 
 For example:
 
@@ -111,12 +117,15 @@ Linux
 create_xilinx_sdk_project.sh
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The script can be run with no parameters. In this case, you will be asked to introduce the path and the name of the .hdf file and the path and the name of the folder where the project will be created.
+The script can be run with no parameters. In this case, you will be asked to
+introduce the path and the name of the .hdf file and the path and the name of
+the folder where the project will be created.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers-all/build-xilinx-projects/linux_cmd.png
-   :width: 400px
+   :width: 400
 
-The parameters that were specified in the previous example, can be passed directly if the script is run from a command line.
+The parameters that were specified in the previous example, can be passed
+directly if the script is run from a command line.
 
 For example:
 
@@ -126,37 +135,42 @@ For example:
 
 .. tip::
 
-   A default path of the Xilinx SDK installation folder is specified in the script. If you have installed the package in a different location, please modify the script accordingly
-
+   A default path of the Xilinx SDK installation folder is specified in the
+   script. If you have installed the package in a different location, please
+   modify the script accordingly
 
 Makefile
 ~~~~~~~~
 
 The projects can be created using the Makefiles.
 
-If no parameters are specified, the default location of the .hdf file and of the folder where the project will be created is the current directory.
+If no parameters are specified, the default location of the .hdf file and of the
+folder where the project will be created is the current directory.
 
-The location of the .hdf file and of the folder where the project will be created can be also specified if it is required.
+The location of the .hdf file and of the folder where the project will be
+created can be also specified if it is required.
 
 Open the created workspace with Xilinx SDK GUI on Windows and Linux
 -------------------------------------------------------------------
 
-The workspaces created using the methods described previously, can be also opened using the Xilinx SDK GUI.
+The workspaces created using the methods described previously, can be also
+opened using the Xilinx SDK GUI.
 
 Open "Xilinx SDK" and browse for the location of the workspace.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers-all/build-xilinx-projects/sdk_directory.png
-   :width: 400px
+   :width: 400
 
 The prebuilt project is included in the opened workspace.
-
 
 |image1|
 
 .. tip::
 
-   All the scripts described previously are dependent of the README.md file, from which the list and the path of the drivers used by each project is obtained. By moving the files to other locations will cause scripts malfunctions.
-
+   All the scripts described previously are dependent of the README.md file,
+   from which the list and the path of the drivers used by each project is
+   obtained. By moving the files to other locations will cause scripts
+   malfunctions.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers-all/build-xilinx-projects/sdk_workspace.png
-   :width: 400px
+   :width: 400

@@ -43,14 +43,22 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
+The reference voltage may vary between boards and models. The platform_data for
+the device's "struct device" holds this information.
 
-The reference voltage may vary between boards and models. The platform_data for the device's "struct device" holds this information.
-
-<source trunk/drivers/staging/iio/dds/ad9832.h:ad9832_platform_data{} c linux-kernel>
+<source trunk/drivers/staging/iio/dds/ad9832.h:ad9832_platform_data{} c
+linux-kernel>
 
 .. code:: c
 
@@ -76,14 +84,24 @@ The reference voltage may vary between boards and models. The platform_data for 
 
    };
 
-Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each SPI bus
+segment, and what slave selects these devices are using. For this reason, the
+kernel code must instantiate SPI devices explicitly. The most common method is
+to declare the SPI devices by bus number.
 
-This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+This method is appropriate when the SPI bus is a system bus, as in many embedded
+systems, wherein each SPI bus has a number which is known in advance. It is thus
+possible to pre-declare the SPI devices that inhabit this bus. This is done with
+an array of struct spi_board_info, which is registered by calling
+spi_register_board_info().
 
 For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
-
-Depending on the DDS IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+Depending on the DDS IC used, you may need to set the modalias accordingly,
+matching your part name. It may also required to adjust max_speed_hz. Please
+consult the datasheet, for maximum spi clock supported by the device in
+question.
 
 .. code:: c
 
@@ -118,12 +136,12 @@ Depending on the DDS IC used, you may need to set the modalias accordingly, matc
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD9832 Driver depends on CONFIG_SPI
-
 
 ::
 
@@ -149,8 +167,15 @@ Hardware configuration
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -183,7 +208,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r--    1 root     root          4096 Jan  3 15:11 uevent
    
 
-
 Show device name
 ----------------
 
@@ -198,13 +222,14 @@ Show device name
       ad9832
    
 
-
 Show frequency scale
 --------------------
 
 /sys/bus/iio/devices/.../ddsX_freqY_scale
 
-Scale to be applied to ddsX_freqY in order to obtain the desired value in Hz. If shared across all frequency registers Y is not present. It is also possible X is not present if shared across all channels.
+Scale to be applied to ddsX_freqY in order to obtain the desired value in Hz. If
+shared across all frequency registers Y is not present. It is also possible X is
+not present if shared across all channels.
 
 .. container:: box bggreen
 
@@ -217,13 +242,15 @@ Scale to be applied to ddsX_freqY in order to obtain the desired value in Hz. If
       1
    
 
-
 Set frequency symbol 0/1
 ------------------------
 
 /sys/bus/iio/devices/.../ddsX_freqY
 
-Stores frequency into tuning word Y. There will be more than one ddsX_freqY file, which allows for pin controlled FSK Frequency Shift Keying (ddsX_pincontrol_freq_en is active) or the user can control the desired active tuning word by writing Y to the ddsX_freqsymbol file.
+Stores frequency into tuning word Y. There will be more than one ddsX_freqY
+file, which allows for pin controlled FSK Frequency Shift Keying
+(ddsX_pincontrol_freq_en is active) or the user can control the desired active
+tuning word by writing Y to the ddsX_freqsymbol file.
 
 .. container:: box bggreen
 
@@ -236,7 +263,6 @@ Stores frequency into tuning word Y. There will be more than one ddsX_freqY file
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 500000 > dds0_freq1
    
 
-
 **freq0** = *ddsX_freq0 \* dds0_freq_scale* = 1000000 \* 1 = **1 MHz** **freq1** = *ddsX_freq1 \* dds0_freq_scale* = 500000 \* 1 = **500 kHz**
 
 Show phase scale
@@ -244,7 +270,9 @@ Show phase scale
 
 /sys/bus/iio/devices/.../ddsX_phaseY_scale
 
-Scale to be applied to ddsX_phaseY in order to obtain the desired value in rad. If shared across all phase registers Y is not present. It is also possible X is not present if shared across all channels.
+Scale to be applied to ddsX_phaseY in order to obtain the desired value in rad.
+If shared across all phase registers Y is not present. It is also possible X is
+not present if shared across all channels.
 
 .. container:: box bggreen
 
@@ -257,13 +285,15 @@ Scale to be applied to ddsX_phaseY in order to obtain the desired value in rad. 
       0.0015339808
    
 
-
 Set phase symbol 0..3
 ---------------------
 
 /sys/bus/iio/devices/.../ddsX_phaseY
 
-Stores phase into Y. There will be more than one ddsX_phaseY file, which allows for pin controlled PSK Phase Shift Keying (ddsX_pincontrol_phase_en is active) or the user can control the desired phase Y which is added to the phase accumulator output by writing Y to the en_phase file.
+Stores phase into Y. There will be more than one ddsX_phaseY file, which allows
+for pin controlled PSK Phase Shift Keying (ddsX_pincontrol_phase_en is active)
+or the user can control the desired phase Y which is added to the phase
+accumulator output by writing Y to the en_phase file.
 
 .. container:: box bggreen
 
@@ -278,7 +308,6 @@ Stores phase into Y. There will be more than one ddsX_phaseY file, which allows 
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 2048 > dds0_phase3
    
 
-
 **phase0** = *dds0_phase0 \* ddsX_phaseY_scale* = 0 \* 0.0015339808 = **0 rad** **phase1** = *dds0_phase1 \* ddsX_phaseY_scale* = 512 \* 0.0015339808 = PI/4 = **0.7853981696 rad** **phase0** = *dds0_phase2 \* ddsX_phaseY_scale* = 1024 \* 0.0015339808 = PI/2 = **1.5707963 rad** **phase1** = *dds0_phase3 \* ddsX_phaseY_scale* = 2048 \* 0.0015339808 = PI = **3.1415926 rad**
 
 Disable FSK/PSK pincontrol
@@ -286,7 +315,10 @@ Disable FSK/PSK pincontrol
 
 /sys/bus/iio/devices/.../ddsX_pincontrol_en
 
-ddsX_pincontrol_en: Both, the active frequency and phase is controlled by the respective phase and frequency control inputs. In case the device in question allows to independent controls, then there are dedicated files (ddsX_pincontrol_freq_en, ddsX_pincontrol_phase_en).
+ddsX_pincontrol_en: Both, the active frequency and phase is controlled by the
+respective phase and frequency control inputs. In case the device in question
+allows to independent controls, then there are dedicated files
+(ddsX_pincontrol_freq_en, ddsX_pincontrol_phase_en).
 
 .. container:: box bggreen
 
@@ -298,13 +330,14 @@ ddsX_pincontrol_en: Both, the active frequency and phase is controlled by the re
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 0 > dds0_pincontrol_en
    
 
-
 Enable output 0
 ---------------
 
-/sys/bus/iio/devices/.../ddsX_out_enable /sys/bus/iio/devices/.../ddsX_outY_enable
+/sys/bus/iio/devices/.../ddsX_out_enable
+/sys/bus/iio/devices/.../ddsX_outY_enable
 
-ddsX_outY_enable controls signal generation on output Y of channel X. Y may be suppressed if all channels are controlled together.
+ddsX_outY_enable controls signal generation on output Y of channel X. Y may be
+suppressed if all channels are controlled together.
 
 .. container:: box bggreen
 
@@ -316,13 +349,14 @@ ddsX_outY_enable controls signal generation on output Y of channel X. Y may be s
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 1 > dds0_out_enable
    
 
-
 Switch between frequency symbol 0/1
 -----------------------------------
 
 /sys/bus/iio/devices/.../ddsX_freqsymbol
 
-Specifies the active output frequency tuning word. The value corresponds to the Y in ddsX_freqY. To exit this mode the user can write ddsX_pincontrol_freq_en or ddsX_out_enable file.
+Specifies the active output frequency tuning word. The value corresponds to the
+Y in ddsX_freqY. To exit this mode the user can write ddsX_pincontrol_freq_en or
+ddsX_out_enable file.
 
 .. container:: box bggreen
 
@@ -335,13 +369,14 @@ Specifies the active output frequency tuning word. The value corresponds to the 
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 0 > dds0_freqsymbol
    
 
-
 Switch between phase symbol 0..3
 --------------------------------
 
 /sys/bus/iio/devices/.../ddsX_phasesymbol
 
-Specifies the active phase Y which is added to the phase accumulator output. The value corresponds to the Y in ddsX_phaseY. To exit this mode the user can write ddsX_pincontrol_phase_en or disable file.
+Specifies the active phase Y which is added to the phase accumulator output. The
+value corresponds to the Y in ddsX_phaseY. To exit this mode the user can write
+ddsX_pincontrol_phase_en or disable file.
 
 .. container:: box bggreen
 
@@ -353,7 +388,6 @@ Specifies the active phase Y which is added to the phase accumulator output. The
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 0 > dds0_phasesymbol
       root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> echo 1 > dds0_phasesymbol
    
-
 
 More Information
 ================
@@ -376,6 +410,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/youtube>p_vntewue24
-

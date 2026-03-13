@@ -10,7 +10,6 @@ This is a beta version of the CrossCore Utilites Serial Flash Programmer for Lin
 
    This product is still in beta development.
 
-
 Installation
 ------------
 
@@ -19,7 +18,9 @@ Install the package either by double-clicking the downloaded .deb package or run
 Usage
 -----
 
-Connect the target board to the host via USB, this will be via the socket labelled USB-to-UART on EZ-KITS / SOMs or via the USB-C socket on later revisions of the ADSP-SC598 SOM.
+Connect the target board to the host via USB, this will be via the socket
+labelled USB-to-UART on EZ-KITS / SOMs or via the USB-C socket on later
+revisions of the ADSP-SC598 SOM.
 
 To ensure the target is connected, run the command ``dmesg | grep tty``, and ensure the USB serial device is listed. The port number must be specified when invoking CrossCore Serial Flash Programmer.
 
@@ -57,7 +58,6 @@ Targets
 Targets supported by the '-t' switch are as follows:
 
 +---------------------------+
-
 
 | ADSP-CM40x                |
 

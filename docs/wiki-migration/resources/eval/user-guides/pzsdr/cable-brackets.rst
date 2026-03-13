@@ -12,13 +12,12 @@ Both designs were made in a free tool, www.Tinkercad.com, and printed on several
 
       -
 
-
       |I included a second brace which is flipped over so the user can see the rectangular cutouts.|
 
-         -  I included a second brace which is flipped over so the user can see the rectangular cutouts.
+         -  I included a second brace which is flipped over so the user can see
+            the rectangular cutouts.
 
       -
-
 
       |An early prototype in Green, and a higher quality print in blue.|
 
@@ -26,13 +25,11 @@ Both designs were made in a free tool, www.Tinkercad.com, and printed on several
 
       -
 
-
       |image1|
 
          -  A keen eye spots the warping caused by using a cheaper printer.
 
       -
-
 
       |Cable holder in action!|
 
@@ -50,16 +47,17 @@ Both designs were made in a free tool, www.Tinkercad.com, and printed on several
 
 .. important::
 
-   Analog Devices is NOT responsible for 3D files that print incorrectly or are not compatible with your particular printer. It is up to the user to make sure the enclosures can be printed on their machines.
-
+   Analog Devices is NOT responsible for 3D files that print incorrectly or are
+   not compatible with your particular printer. It is up to the user to make
+   sure the enclosures can be printed on their machines.
 
 .. |I included a second brace which is flipped over so the user can see the rectangular cutouts.| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/cable_holder.png
-   :width: 600px
+   :width: 600
 .. |An early prototype in Green, and a higher quality print in blue.| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/cable_holder_on_table.jpg
-   :width: 600px
+   :width: 600
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/cable_holder_in_action.jpg
-   :width: 600px
+   :width: 600
 .. |Cable holder in action!| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/back_view_of_cables_pcb_fp_-_alt.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/l_bracket.png
-   :width: 600px
+   :width: 600

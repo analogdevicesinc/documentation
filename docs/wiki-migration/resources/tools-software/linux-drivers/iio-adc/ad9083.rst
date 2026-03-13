@@ -19,7 +19,28 @@ Supported HDL Cores
 Description
 -----------
 
-The AD9083 is a 16-channel, 125 MHz bandwidth, continuous time Σ-Δ (CTSD) ADC. The device features an on-chip, programmable, single-pole antialiasing filter and termination resistor that is designed for low power, small size, and ease of use. The 16 ADC cores features a first-order, CTSD modulator architecture with integrated, background nonlinearity correction logic and self cancelling dither. Each ADC features wide bandwidth inputs supporting a variety of user-selectable input ranges. An integrated voltage reference eases design considerations. The analog input and clock signals are differential inputs. Each ADC has a signal processing tile to filter out of band shaped noise from the Σ-Δ ADC and reduce the sample rate. Each tile contains a cascaded integrator comb (CIC) filter, a quadrature digital downconverter (DDC) with multiple finite input response (FIR) decimation filters (decimate by J block), or up to three quadrature DDC channels with averaging decimation filters for data gating applications. Users can configure the Subclass 1 JESD204B based, high speed serialized output in a variety of lane configurations (up to four), depending on the DDC configuration and the acceptable lane rate of the receiving logic device. Multiple device synchronization is supported through the SYSREF±, TRIG±, and SYNCINB± input pins. The AD9083 has flexible power-down options that allow significant power savings when desired. All of these features can be programmed using a 1.8 V capable 3-wire serial port interface (SPI). The AD9083 is available in a Pb-free, 100-ball CSP_BGA and is specified over the −40°C to +85°C industrial temperature range.
+The AD9083 is a 16-channel, 125 MHz bandwidth, continuous time Σ-Δ (CTSD) ADC.
+The device features an on-chip, programmable, single-pole antialiasing filter
+and termination resistor that is designed for low power, small size, and ease of
+use. The 16 ADC cores features a first-order, CTSD modulator architecture with
+integrated, background nonlinearity correction logic and self cancelling dither.
+Each ADC features wide bandwidth inputs supporting a variety of user-selectable
+input ranges. An integrated voltage reference eases design considerations. The
+analog input and clock signals are differential inputs. Each ADC has a signal
+processing tile to filter out of band shaped noise from the Σ-Δ ADC and reduce
+the sample rate. Each tile contains a cascaded integrator comb (CIC) filter, a
+quadrature digital downconverter (DDC) with multiple finite input response (FIR)
+decimation filters (decimate by J block), or up to three quadrature DDC channels
+with averaging decimation filters for data gating applications. Users can
+configure the Subclass 1 JESD204B based, high speed serialized output in a
+variety of lane configurations (up to four), depending on the DDC configuration
+and the acceptable lane rate of the receiving logic device. Multiple device
+synchronization is supported through the SYSREF±, TRIG±, and SYNCINB± input
+pins. The AD9083 has flexible power-down options that allow significant power
+savings when desired. All of these features can be programmed using a 1.8 V
+capable 3-wire serial port interface (SPI). The AD9083 is available in a
+Pb-free, 100-ball CSP_BGA and is specified over the −40°C to +85°C industrial
+temperature range.
 
 Source Code
 ===========
@@ -101,17 +122,18 @@ PHY Layer AXI JESD204B GT (Gigabit Tranceiver) HDL driver (XILINX/ALTERA-INTEL)
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The AD9083 driver depends on CONFIG_SPI
 
-
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -185,15 +207,23 @@ Device Tree Example
 Driver testing
 ==============
 
-In case the driver probes successfully and the device gets instantiated. Your systems kernel messages should include some line, which may look like the one shown below.
+In case the driver probes successfully and the device gets instantiated. Your
+systems kernel messages should include some line, which may look like the one
+shown below.
 
 ::
 
-
    [    8.404405] ad9083 spi1.0: AD9083 Rev. 1 Grade 0 (API 1.0.1) probed
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -225,13 +255,16 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r-- 1 root root 4096 Jun 23 08:02 uevent
    
 
-
 Low level register access via debugfs (direct_reg_access)
 =========================================================
 
-Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver. Accessing debugfs requires root privileges.
+Some IIO drivers feature an optional debug facility, allowing users to read or
+write registers directly. Special care needs to be taken when using this
+feature, since you can modify registers on the back of the driver. Accessing
+debugfs requires root privileges.
 
-In order to identify if the IIO device in question feature this option you first need to identify the IIO device number.
+In order to identify if the IIO device in question feature this option you first
+need to identify the IIO device number.
 
 Therefore read the name attribute of each IIO device
 
@@ -249,8 +282,8 @@ Therefore read the name attribute of each IIO device
       axi-ad9083-rx-hpc
    
 
-
-Change directory to /sys/kernel/debug/iio/iio:deviceX and check if the direct_reg_access file exists.
+Change directory to /sys/kernel/debug/iio/iio:deviceX and check if the
+direct_reg_access file exists.
 
 .. container:: box bggreen
 
@@ -264,7 +297,6 @@ Change directory to /sys/kernel/debug/iio/iio:deviceX and check if the direct_re
       ls direct_reg_access
       root@analog:/sys/kernel/debug/iio/iio:device2#
    
-
 
 Reading
 
@@ -282,7 +314,6 @@ Reading
       root@analog:/sys/kernel/debug/iio/iio:device2#
    
 
-
 Writing
 
 Write ADDRESS VALUE
@@ -299,7 +330,6 @@ Write ADDRESS VALUE
       0x80
       root@analog:/sys/kernel/debug/iio/iio:device2#
    
-
 
 More Information
 ================
@@ -322,6 +352,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
-

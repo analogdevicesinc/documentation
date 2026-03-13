@@ -1,7 +1,8 @@
 ADRV-PackRF Example Use Case
 ============================
 
-The setup shown below allows the user to test a simple experiment with the datalink and USB webcams.
+The setup shown below allows the user to test a simple experiment with the
+datalink and USB webcams.
 
 Equipment Needed
 ----------------
@@ -16,10 +17,13 @@ Equipment Needed
 Setup
 -----
 
-The following section will outline how to setup the test and configuration to replicate the demonstration and results we were able to achieve. The image below shows the desired setup. Note: The Ethernet cable is only required for setup and can be removed once the system is operational.
+The following section will outline how to setup the test and configuration to
+replicate the demonstration and results we were able to achieve. The image below
+shows the desired setup. Note: The Ethernet cable is only required for setup and
+can be removed once the system is operational.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/webcam_example.png
-   :width: 600px
+   :width: 600
 
 On Radio 1:
 
@@ -70,4 +74,4 @@ Once the system is running, the Ethernet cable is no longer required.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/img_2440.jpg
    :alt: Demonstration from a tradeshow
-   :width: 600px
+   :width: 600

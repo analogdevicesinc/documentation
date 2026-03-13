@@ -9,13 +9,11 @@ General Description
 
 The EVAL-ADIN1100EBZ is a flexible platform enabling quick evaluation of ADIN1100, robust, low power 10BASE-T1L PHY. It provides 10Mbit per second Single Pair Ethernet (SPE) connections with devices over 1.7km of cable. The evaluation board offers two modes of operation for maximum flexibility. Connected to a PC via USB port, the full set of ADIN1100 register settings and features such as link quality monitoring and diagnostics can be accessed with the ADIN1100 Graphical User Interface software. Alternatively, the board can operate in stand-alone mode where it is configured by setting hardware configuration links and switches. Onboard LEDs provide status indication. The ADIN1100 data (MII, RMII and RGMII) and management (MDIO) interfaces are accessible on header connectors for easy connection to an external host controller. A small prototyping area and test points are provided for experimentation with alternative cable connection topologies including isolation transformers and/or power coupling inductors. The platform can perform as a 10BASE T1L to 10BASE-T media converter. This enables connection to other devices – demos or a custom prototypes – with a 10BASE-T1L Ethernet port and conversion of the data to standard Ethernet accessible via the RJ45 connector.
 
-
 |image1|
 
 .. container:: centeralign
 
    \ *Figure 1. EVAL-ADIN1100-EBZ – Simplified Block Diagram*\
-
 
 .. container:: group
 
@@ -74,7 +72,6 @@ The EVAL-ADIN1100EBZ is a flexible platform enabling quick evaluation of ADIN110
 
    
 
-
 --------------
 
 Hardware
@@ -83,12 +80,30 @@ Hardware
 Power Supplies
 ^^^^^^^^^^^^^^
 
-The EVAL-ADIN1100EBZ can be powered by a power supply with output voltage between 5 to 32V DC connected via the plug-in screw-terminal connector P1, or via the P2 barrel connector plug. Alternatively, the board can be powered from a host via its USB port, or by a USB charger connected to the micro-USB connector P401. The power supply source can be selected by link on J1 “BOARD PWR SELECTION”. Inserting link in position “USB” enables the board to receive power from USB connector. Inserting link in position “PWR+EXT+” enables the board to receive power from connectors P1 and P2. If both J1 “BOARD PWR SELECTION” “USB and “PWR+EXT+” links are inserted, there is a “diode or” implemented on the input of J1, and the supply with a higher voltage will supply the board. The power from the source is converted by a step-down converter U501 LT8619EDD#PBF to 3.3V, and with link inserted in position J2 “PWR 3.3V”. the 3.3V rail supplies all circuits on the board. The presence of 3.3V power is indicated by green LED1 “POWER”. The board power consumption depends on the mode of operation, with the maximum of approximately 0.5W.
+The EVAL-ADIN1100EBZ can be powered by a power supply with output voltage
+between 5 to 32V DC connected via the plug-in screw-terminal connector P1, or
+via the P2 barrel connector plug. Alternatively, the board can be powered from a
+host via its USB port, or by a USB charger connected to the micro-USB connector
+P401. The power supply source can be selected by link on J1 “BOARD PWR
+SELECTION”. Inserting link in position “USB” enables the board to receive power
+from USB connector. Inserting link in position “PWR+EXT+” enables the board to
+receive power from connectors P1 and P2. If both J1 “BOARD PWR SELECTION” “USB
+and “PWR+EXT+” links are inserted, there is a “diode or” implemented on the
+input of J1, and the supply with a higher voltage will supply the board. The
+power from the source is converted by a step-down converter U501 LT8619EDD#PBF
+to 3.3V, and with link inserted in position J2 “PWR 3.3V”. the 3.3V rail
+supplies all circuits on the board. The presence of 3.3V power is indicated by
+green LED1 “POWER”. The board power consumption depends on the mode of
+operation, with the maximum of approximately 0.5W.
 
 10BASE-T1L Cable Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The 10BASE-T1L cable can be connected via pluggable screw-terminal block to connector P101. If more of the pluggable connectors are needed, for easy connecting / changing cables, additional connectors can be purchased from the vendor or distributors: Phoenix Contact, part number 1803581, “Pluggable Terminal Block, 3.81 mm, 3 Ways, 28AWG to 16AWG, 1.5 mm², Screw”.
+The 10BASE-T1L cable can be connected via pluggable screw-terminal block to
+connector P101. If more of the pluggable connectors are needed, for easy
+connecting / changing cables, additional connectors can be purchased from the
+vendor or distributors: Phoenix Contact, part number 1803581, “Pluggable
+Terminal Block, 3.81 mm, 3 Ways, 28AWG to 16AWG, 1.5 mm², Screw”.
 
 Ground Connections
 ^^^^^^^^^^^^^^^^^^
@@ -104,20 +119,20 @@ The demo board has an “Earth node”. We call it “Earth node” here – tho
 
    \ *Figure 2. EVAL-ADIN1100EBZ Quick Start Info*\
 
-
    |image2|
 
 .. container:: centeralign
 
    \ *Figure 3. EVAL-ADIN1100EBZ Functional Block Diagram*\
 
-
 --------------
 
 Hardware Configuration Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Some of the EVAL-ADIN1100EBZ hardware configuration is determined by links (jumpers) and configuration switches on the board. The summary and the default configuration is outlined in tables Table 1 to Table 5.
+Some of the EVAL-ADIN1100EBZ hardware configuration is determined by links
+(jumpers) and configuration switches on the board. The summary and the default
+configuration is outlined in tables Table 1 to Table 5.
 
 **Table 1. Board Link Configuration**
 
@@ -206,7 +221,13 @@ Some of the EVAL-ADIN1100EBZ hardware configuration is determined by links (jump
 µC Modes Of Operation
 ^^^^^^^^^^^^^^^^^^^^^
 
-The EVAL-ADIN1100EBZ can be used in various modes of operations implemented in the uC firmware. Up to 16 modes of operations can be selected by setting the 4 positions of the slide switch S402. The status of the switch is accepted (latched) after the board is powered up or reset. Therefore, to change the mode of operation, the board must be reset by pressing “RESET” button S400 or by applying power cycle after changing the position of the slide switch S501. The detailed description is in the relevant sections of this document.
+The EVAL-ADIN1100EBZ can be used in various modes of operations implemented in
+the uC firmware. Up to 16 modes of operations can be selected by setting the 4
+positions of the slide switch S402. The status of the switch is accepted
+(latched) after the board is powered up or reset. Therefore, to change the mode
+of operation, the board must be reset by pressing “RESET” button S400 or by
+applying power cycle after changing the position of the slide switch S501. The
+detailed description is in the relevant sections of this document.
 
 **Table 5. Firmware Modes of Operation, set by S403, uC CFG**
 
@@ -251,32 +272,54 @@ The EVAL-ADIN1100EBZ can be used in various modes of operations implemented in t
 Software
 ~~~~~~~~
 
-The EVAL-ADIN1100EBZ can be used as stand-alone board, with the firmware already programmed in the uC flash memory, the mode of operation set by mode switch, and status indicated by LEDs. There is no software needed for this stand-alone use case. The demo can also be connected to a PC via USB port, the full set of ADIN1100 register settings and features such as link quality monitoring and diagnostics can be accessed with the ADIN1100 Graphical User Interface software, available from Analog Devices. Alternatively, the ADIN1100 and ADIN1200 registers, 10BASE-T1L link status monitoring and some diagnostics can be accessed using a simple set of ASCII text commands and messages exchanged over the USB Com Port and a serial port terminal software.
+The EVAL-ADIN1100EBZ can be used as stand-alone board, with the firmware already
+programmed in the uC flash memory, the mode of operation set by mode switch, and
+status indicated by LEDs. There is no software needed for this stand-alone use
+case. The demo can also be connected to a PC via USB port, the full set of
+ADIN1100 register settings and features such as link quality monitoring and
+diagnostics can be accessed with the ADIN1100 Graphical User Interface software,
+available from Analog Devices. Alternatively, the ADIN1100 and ADIN1200
+registers, 10BASE-T1L link status monitoring and some diagnostics can be
+accessed using a simple set of ASCII text commands and messages exchanged over
+the USB Com Port and a serial port terminal software.
 
 Driver For USB COM Port
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The EVAL-ADIN1100EBZ uses FTDI FT232 for the USB Com Port connectivity. Please make sure that appropriate Virtual Com Port driver is included or installed on the host platform before connecting the EVAL-ADIN1100EBZ to that host via USB cable.
+The EVAL-ADIN1100EBZ uses FTDI FT232 for the USB Com Port connectivity. Please
+make sure that appropriate Virtual Com Port driver is included or installed on
+the host platform before connecting the EVAL-ADIN1100EBZ to that host via USB
+cable.
 
 The drivers are available from FTDI, at the time of writing this document at https://ftdichip.com/drivers/vcp-drivers/.
 
 COM Port And Terminal Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When the EVAL-ADIN1100EBZ is connected to the host, it will become available in the host system as a USB Com Port, and will be assigned a com port number. The number will depend on the system settings, on com port devices previously connected and assigned in the system, and on the FTDI driver settings.
+When the EVAL-ADIN1100EBZ is connected to the host, it will become available in
+the host system as a USB Com Port, and will be assigned a com port number. The
+number will depend on the system settings, on com port devices previously
+connected and assigned in the system, and on the FTDI driver settings.
 
-The EVAL-ADIN1100EBZ uC firmware communicates over a standard UART interface, with settings:
+The EVAL-ADIN1100EBZ uC firmware communicates over a standard UART interface,
+with settings:
 
 Speed 115200 Bd., 1 Start Bit – 8 Data Bits – No Parity – 1 Stop Bit.
 
-The protocol is based on ASCII text commands and messages. Each message and command are finished by <newline>. Each message sent from the firmware to the host is finished by both <CR> and <LF> characters. For the commands received from host the firmware expects the <newline> as character <CR> or <LF> or both <CR> and <LF>.
+The protocol is based on ASCII text commands and messages. Each message and
+command are finished by <newline>. Each message sent from the firmware to the
+host is finished by both <CR> and <LF> characters. For the commands received
+from host the firmware expects the <newline> as character <CR> or <LF> or both
+<CR> and <LF>.
 
 (*To be sure and clear: <CR> .. “carriage return”, ASCII code 0x0D, 13dec, <LF> .. “line feed”, ASCII code 0x0A, 10dec.*)
 
 Terminal Software
 ^^^^^^^^^^^^^^^^^
 
-The EVAL-ADIN1100EBZ firmware works with the common serial terminals. It has been tested on Windows platform with PuTTY, RealTerm, Termite and the old Hyperterminal.
+The EVAL-ADIN1100EBZ firmware works with the common serial terminals. It has
+been tested on Windows platform with PuTTY, RealTerm, Termite and the old
+Hyperterminal.
 
 Terminal Commands And Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -286,7 +329,9 @@ Terminal Commands And Messages
 Initial Welcome Message
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-When the EVAL-ADIN1100EBZ is correctly connected, from the uC firmware and UART, via the USB Com Port, to the terminal software, the firmware sends after power or after pressing the board RESET button S501 an initial welcome message:
+When the EVAL-ADIN1100EBZ is correctly connected, from the uC firmware and UART,
+via the USB Com Port, to the terminal software, the firmware sends after power
+or after pressing the board RESET button S501 an initial welcome message:
 
 ================================================ ANALOG DEVICES 10BASE-T1L PHY Demo ================================================ (c) 2021 Analog Devices Inc. All rights reserved ================================================ Firmware ver.: 12 . 1 . 4784b935 Hardware type: EVAL-ADIN1100EBZ Hardware ver.: A Hardware UID : AVAS142049 uCCFG3-2-1-0 : OFF-OFF-OFF-ON (Mode 14) Firmware Mode: GUI / Interactive mode ================================================ Type '<?><new line>' for a list of commands ================================================
 
@@ -298,13 +343,18 @@ The most important command is “<?><new line>. On the host keyboard, press key 
 Status And Diagnostics
 ^^^^^^^^^^^^^^^^^^^^^^
 
-To see the status of the demo, use command “phystatus”, which will read and show the latest status of the ADIN1200 10BASE-T PHY and ADIN1100 10BASE-T1L PHY:
+To see the status of the demo, use command “phystatus”, which will read and show
+the latest status of the ADIN1200 10BASE-T PHY and ADIN1100 10BASE-T1L PHY:
 
-phystatus ADIN1200 Link is Up, ADIN1100 Link is Up, Master, 2.4 V MSE -37.2 dB Rx 0, Err 0
+phystatus ADIN1200 Link is Up, ADIN1100 Link is Up, Master, 2.4 V MSE -37.2 dB
+Rx 0, Err 0
 
-To see a continuous update, use commands “start”: start OK MSE -38.4 dB Rx 255, Err 0 MSE -38.6 dB Rx 256, Err 0 MSE -38.7 dB Rx 257, Err 0 MSE -38.4 dB Rx 257, Err 0 MSE -38.7 dB Rx 257, Err 0 stop OK
+To see a continuous update, use commands “start”: start OK MSE -38.4 dB Rx 255,
+Err 0 MSE -38.6 dB Rx 256, Err 0 MSE -38.7 dB Rx 257, Err 0 MSE -38.4 dB Rx 257,
+Err 0 MSE -38.7 dB Rx 257, Err 0 stop OK
 
-The firmware will periodically, with period of approx. 1 second, send an update. The update in the present firmware version includes:
+The firmware will periodically, with period of approx. 1 second, send an update.
+The update in the present firmware version includes:
 
 ::
 
@@ -317,10 +367,16 @@ To stop the continuous update, use command “stop”. (Or reset the board.)
 µC Firmware Update
 ~~~~~~~~~~~~~~~~~~
 
-The uC (U401 ADuCM4050) is programmed before shipping the demo board, and therefore there is no need to program it, unless a new version of firmware is available, and you want to update it on your board. The present firmware version can be checked via USB Com Port and terminal software, it is displayed in the welcome message after board reset or in response to “info” command. Firmware update is distributed as a compiled binary (.hex) file. The easiest way to program it to the uC is using the USB Com Port and CrossCore Serial Flash Programmer, available for free download from analog.com, presently:
+The uC (U401 ADuCM4050) is programmed before shipping the demo board, and
+therefore there is no need to program it, unless a new version of firmware is
+available, and you want to update it on your board. The present firmware version
+can be checked via USB Com Port and terminal software, it is displayed in the
+welcome message after board reset or in response to “info” command. Firmware
+update is distributed as a compiled binary (.hex) file. The easiest way to
+program it to the uC is using the USB Com Port and CrossCore Serial Flash
+Programmer, available for free download from analog.com, presently:
 
 :adi:`en/design-center/evaluation-hardware-and-software/software/crosscore-serial-flash-programmer.html#software-relatedsoftware`
-
 
 |image3|
 
@@ -328,8 +384,11 @@ The uC (U401 ADuCM4050) is programmed before shipping the demo board, and theref
 
    \ *Figure 4. CrossCore Serial Flash Programmer.*\
 
-
-USB Com Port driver (same as for using the terminal software) needs to be installed on the PC before connecting the board and using the CrossCore Serial Flash Programmer - see chapter “Driver for USB Com Port”. When you have the driver and programmer software installed, and firmware update hex file ready, use the following steps:
+USB Com Port driver (same as for using the terminal software) needs to be
+installed on the PC before connecting the board and using the CrossCore Serial
+Flash Programmer - see chapter “Driver for USB Com Port”. When you have the
+driver and programmer software installed, and firmware update hex file ready,
+use the following steps:
 
 -   Connect the board (P401) via micro-USB cable to your PC.
 -   Start the CrossCore serial flash programmer software.
@@ -353,6 +412,6 @@ Notes
 **Legal Terms and Conditions** By using the evaluation board discussed herein (together with any tools, components documentation or support materials, the “Evaluation Board”), you are agreeing to be bound by the terms and conditions set forth below (“Agreement”) unless you have purchased the Evaluation Board, in which case the Analog Devices Standard Terms and Conditions of Sale shall govern. Do not use the Evaluation Board until you have read and agreed to the Agreement. Your use of the Evaluation Board shall signify your acceptance of the Agreement. This Agreement is made by and between you (“Customer”) and Analog Devices, Inc. (“ADI”), with its principal place of business at OneTechnology Way, Norwood, MA 02062, USA. Subject to the terms and conditions of the Agreement, ADI hereby grants to Customer a free, limited, personal, temporary, non-exclusive, non-sublicensable, non-transferable license to use the Evaluation Board FOR EVALUATION PURPOSES ONLY. Customer understands and agrees that the Evaluation Board is provided for the sole and exclusive purpose referenced above, and agrees not to use the Evaluation Board for any other purpose. Furthermore, the license granted is expressly made subject to the following additional limitations: Customer shall not (i) rent, lease, display, sell, transfer, assign, sublicense, or distribute the Evaluation Board; and (ii) permit any Third Party to access the Evaluation Board. As used herein, the term “Third Party” includes any entity other than ADI, Customer, their employees, affiliates and in-house consultants. The Evaluation Board is NOT sold to Customer; all rights not expressly granted herein, including ownership of the Evaluation Board, arereserved by ADI. CONFIDENTIALITY. This Agreement and the Evaluation Board shall all be considered the confidential and proprietary information of ADI. Customer may not disclose or transfer any portion of the Evaluation Board to any other party for any reason. Upon discontinuation of use of the Evaluation Board or termination of this Agreement, Customer agrees to promptly return the Evaluation Board to ADI. ADDITIONAL RESTRICTIONS. Customer may not disassemble, decompile or reverse engineer chips on the Evaluation Board. Customer shall inform ADI of any occurred damages or any modifications or alterations it makes to the Evaluation Board, including but not limited to soldering or any other activity that affects the material content of the Evaluation Board. Modifications to the Evaluation Board must comply with applicable law, including but not limited to the RoHS Directive. TERMINATION. ADI may terminate this Agreement at any time upon giving written notice to Customer. Customer agrees to return to ADI the Evaluation Board at that time. LIMITATION OF LIABILITY. THE EVALUATION BOARD PROVIDED HEREUNDER IS PROVIDED “AS IS” AND ADI MAKES NO WARRANTIES OR REPRESENTATIONS OF ANY KIND WITH RESPECT TO IT. ADI SPECIFICALLY DISCLAIMS ANY REPRESENTATIONS, ENDORSEMENTS, GUARANTEES, OR WARRANTIES, EXPRESS OR IMPLIED, RELATED TO THE EVALUATION BOARD INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS. IN NO EVENT WILL ADI AND ITS LICENSORS BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES RESULTING FROM CUSTOMER’S POSSESSION OR USE OF THE EVALUATION BOARD, INCLUDING BUT NOT LIMITED TO LOST PROFITS, DELAY COSTS, LABOR COSTS OR LOSS OF GOODWILL. ADI’S TOTAL LIABILITY FROM ANY AND ALL CAUSES SHALL BE LIMITED TO THE AMOUNT OF ONE HUNDRED US DOLLARS ($100.00). EXPORT. Customer agrees that it will not directly or indirectly export the Evaluation Board to another country, and that it will comply with all applicable United States federal laws and regulations relating to exports. GOVERNING LAW. This Agreement shall be governed by and construed in accordance with the substantive laws of the Commonwealth of Massachusetts (excluding conflict of law rules). Any legal action regarding this Agreement will be heard in the state or federal courts having jurisdiction in Suffolk County, Massachusetts, and Customer hereby submits to the personal jurisdiction and venue of such courts. The United Nations Convention on Contracts for the International Sale of Goods shall not apply to this Agreement and is expressly disclaimed.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig1_t1l.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig3_t1l.jpg
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/10base-t1l/02-063798-01-b_crosscore.png

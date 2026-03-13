@@ -2,27 +2,55 @@ EVAL-CN0564-ARDZ User Guide
 ===========================
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/pcb_main.png
-   :width: 600px
+   :width: 600
 
 INTRODUCTION
 ------------
 
-Monitoring and data acquisition systems require direct access to the sensors and actuators, preferably from a remote location and by means of a standardized communication method. With increased digitization and as industry 4.0 gain more ground, more analog sensors are being provided with a digital interface such as I2C or SPI. Digital signal integration is therefore increasing as they permit faster switch-on times and lower power consumption. In addition, further processing such as a wide variety of signal processing operations can be performed easily. I2C and SPI are examples of a highly ubiquitous and common digital interface that uses a synchronous serial communication. They are widely used for attaching lower-speed peripheral ICs to processors and microcontrollers in intra-board, short-distance communication.
+Monitoring and data acquisition systems require direct access to the sensors and
+actuators, preferably from a remote location and by means of a standardized
+communication method. With increased digitization and as industry 4.0 gain more
+ground, more analog sensors are being provided with a digital interface such as
+I2C or SPI. Digital signal integration is therefore increasing as they permit
+faster switch-on times and lower power consumption. In addition, further
+processing such as a wide variety of signal processing operations can be
+performed easily. I2C and SPI are examples of a highly ubiquitous and common
+digital interface that uses a synchronous serial communication. They are widely
+used for attaching lower-speed peripheral ICs to processors and microcontrollers
+in intra-board, short-distance communication.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_i2c.jpg
-   :width: 400px
+   :width: 400
 
-The distance limitation is one of the key disadvantages of these interfaces. System designers have traditionally extended these interfaces using repeaters or drivers with a higher drive strength at the expense of increasing the overall cost and power consumption. These solutions may be inconvenient for many applications and have other disadvantages that negate their usability. For example, there could be large distances between point to point systems resulting in the ends of the connecting cables having differences in the local ground potentials. This can cause major issues and damage either the controller or the remote node.
+The distance limitation is one of the key disadvantages of these interfaces.
+System designers have traditionally extended these interfaces using repeaters or
+drivers with a higher drive strength at the expense of increasing the overall
+cost and power consumption. These solutions may be inconvenient for many
+applications and have other disadvantages that negate their usability. For
+example, there could be large distances between point to point systems resulting
+in the ends of the connecting cables having differences in the local ground
+potentials. This can cause major issues and damage either the controller or the
+remote node.
 
-The circuit shown in Figure (1) solves the problem of long distance, robust, SPI/I2C communication simply and easily without any sacrifices to circuit component count, operating speed, or software complexity. Ideal operation in high noise, harsh industrial environments require tolerance to large ground potential differences. The SPI/ I2C extenders feature robust transceivers which operate over an extended common mode range of ± 25V (for SPI communication) and ± 15V (for I2C communication) for distances up to 1200m. Each link consists of a single device at either end of the cable, capable of being powered from 3V to 5.5V, while a separate logic supply allows the I2C or SPI interface to operate from 1.62V to 5.5V. The extenders also provide an internal control interface for fault monitoring, which is critically important when monitoring equipment over long distances.
-
+The circuit shown in Figure (1) solves the problem of long distance, robust,
+SPI/I2C communication simply and easily without any sacrifices to circuit
+component count, operating speed, or software complexity. Ideal operation in
+high noise, harsh industrial environments require tolerance to large ground
+potential differences. The SPI/ I2C extenders feature robust transceivers which
+operate over an extended common mode range of ± 25V (for SPI communication) and
+± 15V (for I2C communication) for distances up to 1200m. Each link consists of a
+single device at either end of the cable, capable of being powered from 3V to
+5.5V, while a separate logic supply allows the I2C or SPI interface to operate
+from 1.62V to 5.5V. The extenders also provide an internal control interface for
+fault monitoring, which is critically important when monitoring equipment over
+long distances.
 
 |image1|
 
-
 | *Figure (1).* :adi:`EVAL-CN0564-ARDZ` *featuring* :adi:`LTC4331` *and* :adi:`LTC4331` *can be using with sensors such as the MEMS accelerometers for remote sensing as well as in conjunction with ADCs with SPI/I2C interface to read data from analog sensors for endless applications.*
 
-These extenders allow robust measurement and monitoring for many applications such as:
+These extenders allow robust measurement and monitoring for many applications
+such as:
 
 -  **Condition-based Monitoring**
 -  **Factory Automation**
@@ -30,9 +58,11 @@ These extenders allow robust measurement and monitoring for many applications su
 -  **Structural Monitoring**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/apps_diagram.png
-   :width: 600px
+   :width: 600
 
-and many more... where remote sensing and increased distance between the measurement source and the control circuitry is a key design requirement for safety purposes when monitoring conditions in a harsh environment.
+and many more... where remote sensing and increased distance between the
+measurement source and the control circuitry is a key design requirement for
+safety purposes when monitoring conditions in a harsh environment.
 
 --------------
 
@@ -44,7 +74,6 @@ The :adi:`EVAL-CN0564-ARDZ` uses :adi:`LTC4331` and :adi:`LTC4332` to extend I2C
 .. important::
 
    Two :adi:`LTC4332 <LTC4331>`/:adi:`LTC4331` devices are required for a complete extended SPI/I2C network.
-
 
 The :adi:`LTC4331` enable data transmission required for I2C communication between two devices. It encodes I2C signals from the controller into differential signals with up to 1 MHz which are then transmitted through the twisted pair of cables. At the remote end of the cable, the differential signals are received again by another :adi:`LTC4331` and decoded into I2C signals again, which are then routed to the peripheral. Similarly, the :adi:`LTC4332 <LTC4331>` enable data transmission required for SPI communication between two devices. It encodes SPI signals from the controller into differential signals with up to 2 MHz which are then transmitted through the twisted pair of cables. At the remote end of the cable, the differential signals are received again by another :adi:`LTC4332 <LTC4331>` and decoded into SPI signals again, which are then routed to remote peripheral device.
 
@@ -73,7 +102,6 @@ Selectable Baud rates
 
    For a given SPEED setting, cable length specifications given in Table 2 of the :adi:`LTC4331`/:adi:`LTC4332` datasheet must be adhered to or the they will not link
 
-
 **Selectable baud rates** over the cable allow balancing performance with cable length specific to the application. In the case of I2C communications, the :adi:`LTC4331` (local) – :adi:`LTC4331` (remote) link is transparent; the remote slave devices appear as local devices to a local master. However, in the case of the SPI extender solution, the :adi:`LTC4332` (local) – :adi:`LTC4332` (remote) incurs a one-word latency during read accesses only. Physically distant devices would need a dramatically reduced clock rate to accommodate the prop. delay within each bit width. To overcome this limitation, the :adi:`LTC4332` introduces a shift register into the MISO signal path.
 
 .. note::
@@ -81,11 +109,19 @@ Selectable Baud rates
    The SPI read command needs to be extended by one byte. If not, the last byte will be lost in the :adi:`LTC4332` MISO shift register when the Slave select is de-asserted.
 
    
-   Because the data sent from the SPI master to the slave experiences the same delay as the master-initiated interface clock (SCK), both will remain in sync across the entire data link. In the opposite direction, however, the slave sends data (MISO) to the master only when the first clock edge reaches the slave. This data will experience a second delay on its way back to the master, so the slave data will be out of sync by twice the cable’s propagation delay. Physically distant devices would need a dramatically reduced clock rate to accommodate the prop. delay within each bit width. To overcome this limitation, the LTC4332 introduces a shift register into the MISO signal path.
+   Because the data sent from the SPI master to the slave experiences the same
+   delay as the master-initiated interface clock (SCK), both will remain in sync
+   across the entire data link. In the opposite direction, however, the slave
+   sends data (MISO) to the master only when the first clock edge reaches the
+   slave. This data will experience a second delay on its way back to the
+   master, so the slave data will be out of sync by twice the cable’s
+   propagation delay. Physically distant devices would need a dramatically
+   reduced clock rate to accommodate the prop. delay within each bit width. To
+   overcome this limitation, the LTC4332 introduces a shift register into the
+   MISO signal path.
    
    |image2| As a result, SPI write requests to remote slave devices are software transparent, but SPI read requests to remote slaves incur a one-byte latency, meaning the read command needs to be extended by one byte. If not, the last byte will be lost in the :adi:`LTC4332` MISO shift register when the Slave select is de-asserted. The WORD_LENGTH register (0x5h)(See the register map in the Datasheet for :adi:`LTC4332`) indicative of the depth of the shift register in MISO signal path on :adi:`LTC4332`, dictates when a SPI Master will begin receiving valid data on the MISO. For example, if the WORD_LENGTH is 8, the user would begin receiving valid MISO data 8 clock cycles after the Slave Select is asserted.
    
-
 
 Interrupt/Alert signals
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -136,7 +172,6 @@ General Description
 **The CNTRL pin:** Values set on the local side CTRL pin propagate to the remote side CTRL pin over the differential link. On the remote side, CTRL is not driven at startup until the differential link is established. CTRL can be monitored using the CTRL test point. CTRL on the remote side :adi:`LTC4331` is connected to pin 1 on the P8 header. This pin can be monitored on the remote side to determine if the differential link has been established.
 
 **Setting the I2C address for the internal slave on the local side** :adi:`LTC4331`\ **:** A1 and A2 are a 3-state input pins. A1 & A2 selects one of eight possible I2C addresses assigned to the internal slave device. Disconnect the P9 and the P18 jumper to disable the internal I2C slave device. Set to high, low, or float as defined in Table below. (POS H = Connect pin 1 and 2 of the header, POS L = Connect pin 2 and 3 of the P18/P9 header)
-
 
 |image6|
 
@@ -197,16 +232,16 @@ Test Points
 -----------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/testpoints.png
-   :width: 600px
+   :width: 600
 
 LEDS
 ----
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/led.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/led_shown.png
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -229,20 +264,17 @@ Getting Started
 
 **2. Plug in the** :adi:`EVAL-CN0564-ARDZ` **board into the Arduino Uno Rev 3**
 
-
 |image10|
 
 **3. Connect the** :adi:`LTC4332` **(Remote side) on the** :adi:`EVAL-CN0564-ARDZ` **to a MEMS ACCELEROMETER ON THE** :adi:`EVAL-ADXL357 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html>` **as follows:**
 
 a. Solder the pin-header on to the :adi:`EVAL-ADXL357 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html>` board. The 4-wire serial interface communicates in either the SPI or I2C protocol. The interface affectively autodetects the format being used, requiring no configuration control to select the format. b. Connect the Remote slave select pin (Pin 1) of the P7 header on the :adi:`EVAL-CN0564-ARDZ` to the slave select pin (Pin 2) of the P2 header on the :adi:`EVAL-ADXL357 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html>`. c. Connect the Remote MOSI pin (Pin 4) of the P7 header on the :adi:`EVAL-CN0564-ARDZ` to the MOSI pin (Pin 6) of the P2 header on the :adi:`EVAL-ADXL357 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html>`. d. Connect the Remote MISO pin (Pin 3) of the P7 header on the :adi:`EVAL-CN0564-ARDZ` the MISO pin (Pin 5) of the P2 header on the :adi:`EVAL-ADXL357 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html>`. e. Connect the Remote SCK pin (Pin 5) of the P7 header on the :adi:`EVAL-CN0564-ARDZ` to the SCK pin (Pin 4) of the P2 header on the :adi:`EVAL-EVAL-ADXL357 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html>`. f. Connect the VDD pin (Pin 3) of the P1 header on the :adi:`EVAL-ADXL357 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html>`\ to a 3.3V Power Supply. g. Connect the VDDIO pin (Pin 1) of the P1 header on the :adi:`EVAL-ADXL357 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html>` to a 3.3V Logic supply. h. Connect the Remote VL (Pin 7) of the P7 header on the :adi:`EVAL-CN0564-ARDZ` to the 5V/3.3V Logic supply. i. Connect pin 5 of the P1 header on the :adi:`EVAL-ADXL357 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html>` to GND. j. Connect the GND pin (Pin 8) of the P7 header on the :adi:`EVAL-CN0564-ARDZ` to GND. This is GND for the Remote :adi:`LTC4332` side.
 
-
 |image11|
 
 **4. Make jumper Connections as follows:**
 
 a. P10 jumper should placed so the Pin 2 and 3 on P10 are connected on the :adi:`EVAL-CN0564-ARDZ`. This will select 5V power supply option. b. JP1 jumper should be placed in position D to connect the Slave Select pin on the local :adi:`LTC4332` to the D10 pin on the Arduino header. c. JP5 jumper should be placed in position A to connect the Link pin on the local :adi:`LTC4332` to the D6 on the Arduino header 2. Link is driven low when device establishes connection. It is pulled up to VIOREF internally to monitor status if VIOREF is supplied. If the Link pin is not used, float or connect to GND. d. JP3 jumper should be placed in position B to connect the interrupt pin on the local :adi:`LTC4332` to the D2 on the Arduino header. It is pulled up to VIOREF internally. e. By default, Speed index 8 is selected on the remote :adi:`LTC4332` (solder jumpers are used). The Speed index on the local side should be the same as the remote side. f. P1 jumper should be placed in the position so its pin 2 and 3 are connected. Similarly, jumper P2 should also be placed in the position so its pin 2 and 3 are connected. This will select speed index 8 to match the speed index on the local side. g. P19 jumper should be placed so its pin 1 and 2 are connected. This connects the ON pin on the local :adi:`LTC4332` to IOREF. This will enable the input.
-
 
 |image12|
 
@@ -257,18 +289,16 @@ TEST
 
 Mount the :adi:`EVAL-ADXL357Z <media/en/technical-documentation/user-guides/EVAL-ADXL356-357-UG-1119.pdf>` and the remote :adi:`LTC4332` on the :adi:`EVAL- XLMOUNT1 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-xlmount1.html>` and turn on the power supplies that power up the boards. You should now be able to see 3 LEDS flash on the :adi:`EVAL-CN0564-ARDZ` board (2 LEDS on the local, 1 on the remote side). The X, Y and Z data read by the ADXL357 MEMS accelerometer (on the :adi:`EVAL-ADXL357Z <media/en/technical-documentation/user-guides/EVAL-ADXL356-357-UG-1119.pdf>` from the remote side) will be printed on the Serial Monitor. Download the Python .exe file and save it in a local directory. Exit the Serial Monitor and run the Python .exe file to see a real-time plot of the acceleration data. The X, Y and Z acceleration (g) data is stored in three separate files by the python script and can be found in the same location containing the .exe file.
 
-
 |image13|
 
 **Real time acceleration data from** :adi:`ADXL357 <en/products/ADXL357.html>` **can be plotted using the python .exe file:**
-
 
 |image14|
 
 .. note::
 
-   The user needs to enter their COM PORT and BAUD RATE when prompted by the console
-
+   The user needs to enter their COM PORT and BAUD RATE when prompted by the
+   console
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -284,7 +314,6 @@ Schematic, PCB Layout, Bill of Materials
    -  `BOM <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/bom.zip>`_
    -  `LTSPICE Schematic for Accelerometer Data Visualization <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/ltspicedatavisualization.zip>`_
    
-
 
 --------------
 
@@ -314,18 +343,18 @@ Reference Demos & Software
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/final_figure_1.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/shift_reg.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/final_figure2.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/split.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/powersupply_ltc4331.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/table_address_select.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/powersupply_ltc4332.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/i2c_header_pic.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/i2c_jumpers.png
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi1.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_2.png
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi3.png
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi5.png

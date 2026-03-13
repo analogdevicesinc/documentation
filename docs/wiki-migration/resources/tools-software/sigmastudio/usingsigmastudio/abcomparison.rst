@@ -3,18 +3,23 @@ Allow Real-Time A/B Testing Between Projects
 
 :doc:`Click here to return to the Using Sigma Studio page </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio>`
 
-Suppose you are viewing your design A and listening to its audio flow, and you wonder how your design B (also open) sounds in comparison.
+Suppose you are viewing your design A and listening to its audio flow, and you
+wonder how your design B (also open) sounds in comparison.
 
-Press the real-time A/B-testing icon and when you switch between the 2 projects, SigmaStudio automatically downloads the design B or design A program to the DSP without needing to recompile.
+Press the real-time A/B-testing icon and when you switch between the 2 projects,
+SigmaStudio automatically downloads the design B or design A program to the DSP
+without needing to recompile.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/abcomparisonpic1.png
    :alt: abcomparisonpic1.png
    :align: center
 
-In other words, clicking the icon lets you switch among any number of open compiled projects without having to recompile each. (The function is very useful: without it, you must recompile a project every time you bring it to the front even if you haven't made any changes to the schematic.)
+In other words, clicking the icon lets you switch among any number of open
+compiled projects without having to recompile each. (The function is very
+useful: without it, you must recompile a project every time you bring it to the
+front even if you haven't made any changes to the schematic.)
 
 You can also select "Allow Realtime AB Testing" from the pull down menu:
-
 
 |image1|
 
@@ -26,19 +31,23 @@ To set this up:
 
 2) Click on "Link/Compile/Download"
 
-3) Select The second project and click on "Link/Compile/Download". Now, when you switch projects it will automatically download the program for the project that is in focus (on the top of the stack of windows )
+3) Select The second project and click on "Link/Compile/Download". Now, when you
+   switch projects it will automatically download the program for the project
+   that is in focus (on the top of the stack of windows )
 
-Note: the project presets are still active so you can still use them from within a project to audition different settings for the current project.
+Note: the project presets are still active so you can still use them from within
+a project to audition different settings for the current project.
 
 Project 1 in this screenshot is the active project running:
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/screenhunter_337_dec._09_11.41.jpg
-   :width: 200px
+   :width: 200
 
-Clicking on the window for project 2 will load the second project into the DSP and run it. So now Project 2 is active.
+Clicking on the window for project 2 will load the second project into the DSP
+and run it. So now Project 2 is active.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/screenhunter_336_dec._09_11.40.jpg
-   :width: 200px
+   :width: 200
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/screenhunter_331_dec._09_11.35.jpg
-   :width: 200px
+   :width: 200

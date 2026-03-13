@@ -13,14 +13,13 @@ Typical Measurement Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9652_typical_setup.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 1. Evaluation Board Connection—*\ :adi:`AD9652-310EBZ <AD9652>`\ *(on Left) and
 
    *:adi:`HSC-ADC-EVALCZ <hsadcevalboard>`\ *(on Right)*
-
 
 Features
 --------
@@ -81,7 +80,8 @@ This section provides quick start procedures for using the :adi:`AD9652-310EBZ <
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
 
-Before using the software for testing, configure the evaluation board as follows:
+Before using the software for testing, configure the evaluation board as
+follows:
 
 -  Connect the evaluation board to the data capture board, as shown in Figure 1.
 -  Connect one 6 V, 2.5 A switching power supply to the :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` board.
@@ -96,9 +96,15 @@ Before using the software for testing, configure the evaluation board as follows
          -  JP3 jumper should be installed
 
 -  Connect one 6 V, 2.5 A switching power supply to the :adi:`AD9652-310EBZ <AD9652>` board.
--  On the ADC evaluation board, provide a clean, low jitter clock source to connector J6 at the desired ADC conversion rate. Note: The AD9652 has an input clock divider circuit which allows generators to drive a higher frequency clock, for this case apply the high frequency clock to J6 and program the proper divide using SPIController when it is used in a later step. The input clock level should be between 10dBm to 16dBm.
+-  On the ADC evaluation board, provide a clean, low jitter clock source to
+   connector J6 at the desired ADC conversion rate. Note: The AD9652 has an
+   input clock divider circuit which allows generators to drive a higher
+   frequency clock, for this case apply the high frequency clock to J6 and
+   program the proper divide using SPIController when it is used in a later
+   step. The input clock level should be between 10dBm to 16dBm.
 
-   -  For the AD9652 evaluation board number 12048 RevC, the Clock Duty Cycle stabilizer should be disabled when using an input clock abouve 620 MHz.
+   -  For the AD9652 evaluation board number 12048 RevC, the Clock Duty Cycle
+      stabilizer should be disabled when using an input clock abouve 620 MHz.
 
 Using the Software for Testing
 ------------------------------
@@ -106,10 +112,10 @@ Using the Software for Testing
 Setting up the ADC Data Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After configuring the board, set up the ADC data capture using the following steps:
+After configuring the board, set up the ADC data capture using the following
+steps:
 
 -  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 2, where the :adi:`AD9652` is shown as example).
-
 
 |image1|
 
@@ -117,10 +123,7 @@ After configuring the board, set up the ADC data capture using the following ste
 
    \ *Figure 2. VisualAnalog, New Canvas Window*\
 
-
 -  After the template is selected, a message appears asking if the default configuration can be used to program the FPGA (Figure 3). Click **YES** and the window closes.
-
-
 
 |image2|
 
@@ -128,17 +131,15 @@ After configuring the board, set up the ADC data capture using the following ste
 
    \ *Figure 3. VisualAnalog Default Configuration Message*\
 
-
 -  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 5. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 4).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9652_va_collapse_display.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ *Figure 4. VisualAnalog Window Toolbar, Collapsed Display*\
-
 
    |image3|
 
@@ -146,97 +147,91 @@ After configuring the board, set up the ADC data capture using the following ste
 
    \ *Figure 5. VisualAnalog, Main Window Expanded Display*\
 
-
 Evaluation and Test
 -------------------
 
 Setting up the SPI Controller Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
+After the ADC data capture board setup is complete, set up the SPI controller
+software using the following procedure:
 
 -  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 6).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9652_spi_cont_chip_id.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ *Figure 6. SPI Controller, CHIP ID(1) Box*\
 
-
 -  Click the **New DUT** button in the **SPIController** window (see Figure 7).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9652_spi_cont_new_dut.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ *Figure 7. SPI Controller, New DUT Button*\
 
-
 -  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 8). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9652_spi_cont_clock_divide.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ *Figure 8. SPI Controller, ADCBase0 Page*\
 
-
 -  Note that other settings can be changed on the **ADCBase 0** page (see Figure 8) and the **ADC A** and **ADC B** pages (see Figure 9) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9652_spi_cont_example_adca_page.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ *Figure 9. SPI Controller, Example ADC A Page*\
 
-
 -  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 10).
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9652_run_in_va.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ *Figure 10. Run Button (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display*\
 
-
 Adjusting the Amplitude of the Input Signal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next step is to adjust the amplitude of the input signal for each channel as follows:
+The next step is to adjust the amplitude of the input signal for each channel as
+follows:
 
 -  Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9652 Average FFT** window (see Figure 11) to verify this.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9652_graph_window_of_va.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    *Figure 11. Graph Window of VisualAnalog*
-
 
 -  Repeat this procedure for Channel B.
 -  Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file. See Figure 12 for AD9652 example. Please refer to the respective data sheet of the product of interest for its typical FFT performance.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9652_typ_fft.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    *Figure 12. Typical FFT, AD9652*
-
 
 Troubleshooting Tips
 --------------------
@@ -251,7 +246,8 @@ If the FFT appears normal but the performance is poor, check the following:
 -  Make sure that an appropriate filter is used on the analog input.
 -  Make sure that the signal generators for the clock and the analog input are clean (low phase noise).
 -  Change the analog input frequency slightly if noncoherent sampling is being used.
--  Make sure that the SPI configuration file matches the product being evaluated.
+-  Make sure that the SPI configuration file matches the product being
+   evaluated.
 
 If the FFT window remains blank after **Run** is clicked, do the following:
 
@@ -262,11 +258,12 @@ If the FFT window remains blank after **Run** is clicked, do the following:
 If VisualAnalog indicates that the **FIFO Capture timed out**, do the following:
 
 -  Make sure that all power and USB connections are secure.
--  Probe the DCOA signal at RN801 (Pin 2) on the evaluation board and confirm that a clock signal is present at the ADC sampling rate.
+-  Probe the DCOA signal at RN801 (Pin 2) on the evaluation board and confirm
+   that a clock signal is present at the ADC sampling rate.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9652_va_new_canvas.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9652_va_default_config.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9652_va_main_window.png
-   :width: 500px
+   :width: 500

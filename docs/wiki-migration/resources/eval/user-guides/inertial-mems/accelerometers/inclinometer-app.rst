@@ -16,7 +16,10 @@ Features
 General Description
 -------------------
 
-This user guide describes the inclinometer design software for digital ADXL accelerometer. This user guide provides an overview of how to use the application software to simulate inclinometer using ADXL Devices. The step-by-step instructions on how to use the software
+This user guide describes the inclinometer design software for digital ADXL
+accelerometer. This user guide provides an overview of how to use the
+application software to simulate inclinometer using ADXL Devices. The
+step-by-step instructions on how to use the software
 
 User Guide
 ----------
@@ -35,14 +38,13 @@ Installation
 
    
 
-
 - Extract the Installer from the Zipped folder.
 
 - Double-click on the Inclinometer Design Desktop Application Installer.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/installer1.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 **Figure 1:** Inclinometer Design Desktop Application Installer
 
@@ -50,7 +52,7 @@ Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/installer2.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 **Figure 2:** Inclinometer Design Desktop Application Installer Wizard
 
@@ -58,7 +60,7 @@ Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/installer3.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 **Figure 3:** License Agreement
 
@@ -66,7 +68,7 @@ Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/installer4.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 **Figure 4:** Shortcut creation
 
@@ -74,7 +76,7 @@ Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/installer5.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 **Figure 5:** Completed Installation
 
@@ -82,26 +84,28 @@ Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda2.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 6:** The Inclinometer Design Desktop Application GUI
 
-- Select the number of axis to be used as inclinometer. Provided with two options (1-axis or 2-axis)
+- Select the number of axis to be used as inclinometer. Provided with two
+  options (1-axis or 2-axis)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda3.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 7:** The Inclinometer Design Desktop Application GUI (Axis Selection)
 
 1 Axis Option
 ~~~~~~~~~~~~~
 
-- Upon selection of the 1 axis option the GUI will display the Incremental Inclination Sensitivity window
+- Upon selection of the 1 axis option the GUI will display the Incremental
+  Inclination Sensitivity window
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda4.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 8:** The Inclinometer Design Desktop Application GUI (1-Axis Selected)
 
@@ -109,7 +113,7 @@ Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda5.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 9:** The Inclinometer Design Desktop Application GUI (Device Selection)
 
@@ -117,7 +121,7 @@ Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda6.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 10:** The Inclinometer Design Desktop Application GUI (g Selection)
 
@@ -125,40 +129,42 @@ Installation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda7.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 11:** The Inclinometer Design Desktop Application GUI (Resolution Selection)
 
-- Inclinometer Resolution in degrees will be provided and plot the inclination based on the increment of the device's output acceleration. Refer to Figure 12.
+- Inclinometer Resolution in degrees will be provided and plot the inclination
+  based on the increment of the device's output acceleration. Refer to Figure
+  12.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda8.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 12:** The Inclinometer Design Desktop Application GUI (Output Acceleration vs. Inclination Plot)
 
 Incremental Sensitivity
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-- For 1 Axis inclinometer, minimum sensitivity can be determined by providing the step size and the range of inclination
+- For 1 Axis inclinometer, minimum sensitivity can be determined by providing
+  the step size and the range of inclination
 
 - Select the Step size
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda9.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 13:** The Inclinometer Design Desktop Application GUI (Step Size Selection)
 
 - Input the Angle Range (from 1-90 degrees)
 
-
 |image1|
 
 **Figure 14:** The Inclinometer Design Desktop Application GUI (Step Size Selection)
 
-- The Resolution in mg will be provided and the plot of the minimum sensitivity based on the angle of inclination. Refer to Figure 15.
-
+- The Resolution in mg will be provided and the plot of the minimum sensitivity
+  based on the angle of inclination. Refer to Figure 15.
 
 |image2|
 
@@ -167,11 +173,12 @@ Incremental Sensitivity
 2 Axis Option
 ~~~~~~~~~~~~~
 
-- Upon selection of the 2 axis option the GUI will display the Calculated Angle Error Due to Accelerometer Offset window
+- Upon selection of the 2 axis option the GUI will display the Calculated Angle
+  Error Due to Accelerometer Offset window
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda12.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 16:** The Inclinometer Design Desktop Application GUI (2-Axis Selected)
 
@@ -179,7 +186,7 @@ Incremental Sensitivity
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda13.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 17:** The Inclinometer Design Desktop Application GUI (Device Selection)
 
@@ -187,7 +194,7 @@ Incremental Sensitivity
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda14.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 18:** The Inclinometer Design Desktop Application GUI (g Selection)
 
@@ -195,32 +202,36 @@ Incremental Sensitivity
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda15.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 19:** The Inclinometer Design Desktop Application GUI (Resolution Selection)
 
-- Inclinometer Resolution in degrees will be provided and plot the inclination based on the increment of the device's output acceleration for x-axis, y-axis and 2 axis. Refer to Figure 20.
+- Inclinometer Resolution in degrees will be provided and plot the inclination
+  based on the increment of the device's output acceleration for x-axis, y-axis
+  and 2 axis. Refer to Figure 20.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda16.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 20:** The Inclinometer Design Desktop Application GUI (Output Acceleration vs. Inclination Plot)
 
 Effects of Offset Error in Either of the Axis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Select the Axis to where the offset will be added and input the offset value in mg. Calculated angle error due to offset will be plotted from -90 to +90 degrees. Refer to Figure 21
+- Select the Axis to where the offset will be added and input the offset value
+  in mg. Calculated angle error due to offset will be plotted from -90 to +90
+  degrees. Refer to Figure 21
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda17.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 **Figure 21:** The Inclinometer Design Desktop Application GUI (Calculated Angle Error Due to Accelerometer Offset)
 
 **Reference:** Fisher, C.(2010).Using an accelerometer for inclination sensing. AN-1057, Application note, Analog Devices
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda10.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/idda11.jpg
-   :width: 600px
+   :width: 600

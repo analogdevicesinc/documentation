@@ -12,26 +12,23 @@ EV-21568-SOM with EV-SOM-CRR EZ-Kit Connections
 
    \ |image1|\
 
-
 .. container:: centeralign
 
    \ **Figure:** EV-21568-SOM Top View
-
 
 .. container:: centeralign
 
    |image2|\
 
-
 .. container:: centeralign
 
    \ **Figure:** EV-21568-SOM Bottom View
 
-
 Settings
 --------
 
-The board settings for running SigmaStudio+ EV-2156-SOM with EV-SOM-CRR EZ-Kit, using the Default Application is given in the below tables.
+The board settings for running SigmaStudio+ EV-2156-SOM with EV-SOM-CRR EZ-Kit,
+using the Default Application is given in the below tables.
 
 ====== =========================================================
 Switch Setting
@@ -87,6 +84,6 @@ J3(SOMCRR EZ-Lite) – J3 (SOM) Connected
 Port Settings for EV-SOM-CRR EZ-Lite
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21568-som.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21568-som_back.png
-   :width: 600px
+   :width: 600

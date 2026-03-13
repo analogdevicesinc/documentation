@@ -5,8 +5,8 @@ The **ADuCM3029_demo_esp8266** is a Wi-Fi demo project for the **EVAL-ADICUP3029
 
 .. important::
 
-   This documentation is to be used with the source code hosted on Github. The link is available in the Obtaining the Source Code section.
-
+   This documentation is to be used with the source code hosted on Github. The
+   link is available in the Obtaining the Source Code section.
 
 General Description/Overview
 ----------------------------
@@ -45,28 +45,36 @@ Setting up the Hardware
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
    :align: center
 
--  The ESP8266 Enable Pin needs to be tied directly to 3.3V or pulled high to the GPIO via a 10K ohm resistor. Because this is not currently on the Rev B or Rev C version of the ADICUP3029, you will need to solder a small fly wire from the 3.3V pin to the enable pin.
+-  The ESP8266 Enable Pin needs to be tied directly to 3.3V or pulled high to
+   the GPIO via a 10K ohm resistor. Because this is not currently on the Rev B
+   or Rev C version of the ADICUP3029, you will need to solder a small fly wire
+   from the 3.3V pin to the enable pin.
    |image1|\ |image2|
    \* Plug the **ESP8266** in the **P1** connector on the **EVAL-ADICUP3029**.
 -  Plug the **EVAL-ADXL362-ARDZ** shield in the **EVAL-ADICUP3029** base board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_adicup3029_esp8266_adxl362_hw_mod_combo.png
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Plug the USB cable
 
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the ESP8266.
+There are two basic ways to program the ADICUP3029 with the software for the
+ESP8266.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_esp8266** can be found here:
 
@@ -83,11 +91,9 @@ The software for the **ADuCM3029_demo_esp8266** can be found here:
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_esp8266 Source Code <projects/ADuCM3029_demo_esp8266>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`
-
 
 Configuring the Software (parameters.h)
 ---------------------------------------
@@ -136,7 +142,6 @@ This example uses the `Eclipse Mosquitto <https://mosquitto.org>`_ which is an o
 
    
 
-
 -  `Download mosquitto <https://mosquitto.org/download/>`_
 -  Double click the downloaded .exe file, and install the Mosquitto program
 -  During the install, Mosquitto will ask you to make sure you have 2 other programs installed.
@@ -150,11 +155,12 @@ This example uses the `Eclipse Mosquitto <https://mosquitto.org>`_ which is an o
 -  Make sure these additional programs are installed before you continue
 -  Click next and finish the installation.
 
-   -  You may run into an issue that says "VCRUNTIME140.dll is missing. In order to proceed you must first have this installed.
+   -  You may run into an issue that says "VCRUNTIME140.dll is missing. In order
+      to proceed you must first have this installed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_vcruntime_dll_missing.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  After looking around, I found a great website to download the DLL files from, as well as a great video that shows you have to fix the issue, and it did work for me. *Please note, that this solution is **NOT** affiliated with Analog Devices, and Analog Devices assumes no responsibility for any problems or damages occurred during this process.*
 -  `How to fix VCRUNTIME140.DLL Missing Video <https://www.youtube.com/watch?v=-R3LuYNQf98>`_
@@ -165,22 +171,30 @@ Setting up Mosquitto to Receive MQTT Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  With Mosquitto and other software properly installed, you should be able to run mosquitto. Open a Command Prompt and navigate to the folder where mosquitto is installed. The default location is C:\\Program Files (x86)\\mosquitto
--  Type mosquitto.exe -v to start the broker in verbose mode. Copy this code block into your command line editor to navigate to the folder and execute the program:<code> cd C:\\Program Files (x86)\\mosquitto\\mosquitto.exe -v </code> It should look like the following picture
+-  Type mosquitto.exe -v to start the broker in verbose mode. Copy this code
+   block into your command line editor to navigate to the folder and execute the
+   program:<code> cd C:\\Program Files (x86)\\mosquitto\\mosquitto.exe -v
+   </code> It should look like the following picture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/mosquitto_exe_v.png
    :align: center
 
 .. important::
 
-   Make sure that your computer or laptop is connected to the same network you are going to configure in the parameters.h file. Once you run the executable, Mosquitto assumes that you are running on that network.
-
+   Make sure that your computer or laptop is connected to the same network you
+   are going to configure in the parameters.h file. Once you run the executable,
+   Mosquitto assumes that you are running on that network.
 
 -  The mosquitto broker is now running locally and has the same IP as your machine and by default runs on port 1883. Open a new Command Prompt and type **ipconfig** to get your local IP address
 -  In the parameters.h header file you need to configure the following parameters: ``SSID = ""         *Service set identifier, name of the WiFi network to connect the ESP8266*
    PASS = ""         *WiFi network password*
    SERVER_ADDR = ""  *IP of the mosquitto broker from the previous step*
    SERVER_PORT = "1883"     //by default is 1883//``
--  Open a third Command Prompt and navigate to the folder where mosquitto is installed and type this command and hit the <ENTER> key:<code> cd C:\\Program Files (x86)\\mosquitto\\mosquitto_sub -t adxl </code> This command subscribes to the topic and will display the accelerometer data. It should look similar to the image below.
+-  Open a third Command Prompt and navigate to the folder where mosquitto is
+   installed and type this command and hit the <ENTER> key:<code> cd C:\\Program
+   Files (x86)\\mosquitto\\mosquitto_sub -t adxl </code> This command subscribes
+   to the topic and will display the accelerometer data. It should look similar
+   to the image below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxl_sub.png
    :align: center
@@ -189,7 +203,8 @@ Outputting Data
 ---------------
 
 -  You are now ready to flash the program on the ADICUP3029 and run it. Before downloading the code, please press the **WIFI_RESET** button (**S4**) on the ADICUP3029.
--  If everything works fine, in the CrossCore Embedded Studio console you should see:
+-  If everything works fine, in the CrossCore Embedded Studio console you should
+   see:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/esp_running_ok.png
    :align: center
@@ -219,12 +234,16 @@ For more detailed instructions on importing this application/demo example into t
 Project Structure
 ~~~~~~~~~~~~~~~~~
 
-The ADuCM3029_demo_esp8266 project use basic ARM Cortex-M C/C++ Project structure. This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripheral; port configuration for SPI, accelerometer sensor; ESP8266 initialization - UART and GPIO.\
-
+The ADuCM3029_demo_esp8266 project use basic ARM Cortex-M C/C++ Project
+structure. This project contains: system initialization part - disabling
+watchdog, setting system clock, enabling clock for peripheral; port
+configuration for SPI, accelerometer sensor; ESP8266 initialization - UART and
+GPIO.\
 
 |image3|
 
-In the srcs/app_src folder you will find the source file for the main application:
+In the srcs/app_src folder you will find the source file for the main
+application:
 
 -  ADuCM3029_demo_esp8266.c: is the file containing the main function
 -  parameters.h: is the files where configurable parameters can be modified
@@ -235,7 +254,7 @@ In the srcs/app_src folder you will find the source file for the main applicatio
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_back.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_front.png
-   :width: 385px
+   :width: 385
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/proj_structure.png

@@ -1,7 +1,10 @@
 ADRV9029 DPD Model
 ==================
 
-DPD Model is a fundamental building block of ADRV9029 DPD that defines the GMP polynomial(memory terms and polynomial degree) for modeling a Power Amplifier in the baseband. Good modeling of the PA is critical for achieving good DPD performance. An example DPD Model descriptor is shown below
+DPD Model is a fundamental building block of ADRV9029 DPD that defines the GMP
+polynomial(memory terms and polynomial degree) for modeling a Power Amplifier in
+the baseband. Good modeling of the PA is critical for achieving good DPD
+performance. An example DPD Model descriptor is shown below
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdmodel.png
    :align: center
@@ -11,7 +14,8 @@ DPD Model Generation
 
 ADI provides a library of 140 pre-defined DPD models that are optimized for good performance on ADRV9029 with various types of Power Amplifiers that can be downloaded at this `link <https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/dpdmodels.zip>`_ For 190 coefficient model files, `download from here <https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdmodels_190coeffs.zip>`_
 
-In order to identify a DPD model for that is optimum for a Power Amplifier, the following procedure is recommended
+In order to identify a DPD model for that is optimum for a Power Amplifier, the
+following procedure is recommended
 
 -  Setup the ADRV9029 Transceiver Evaluation platform as shown in the :doc:`Pre-Requisites page </wiki-migration/resources/eval/user-guides/adrv9029/prerequisites>`
 -  Ensure that you are able to bringup DPD on the ADRV9029 evaluation platform by following the instructions on :doc:`ADRV9029 DPD Evaluation through TES GUI page </wiki-migration/resources/eval/user-guides/adrv9029/evaluating_dpd_through_tes_gui>`
@@ -27,8 +31,9 @@ In order to identify a DPD model for that is optimum for a Power Amplifier, the 
 
 .. note::
 
-   The DPD model sweep script is configured to run on transmitter Tx1 by default. Please ensure that the PA gain line up is connected to Tx1 in the ADRV9029 Evaluation System
-
+   The DPD model sweep script is configured to run on transmitter Tx1 by
+   default. Please ensure that the PA gain line up is connected to Tx1 in the
+   ADRV9029 Evaluation System
 
 Once the DpdModelOptimized.txt is obtained from the script, user can continue DPD evaluation by loading this DPD model as described in :doc:`ADRV9029 DPD Evaluation through TES GUI </wiki-migration/resources/eval/user-guides/adrv9029/evaluating_dpd_through_tes_gui>`
 

@@ -4,11 +4,14 @@ Development Environment
 =======================
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/sigmastudio_layout.jpg
-   :width: 1000px
+   :width: 1000
 
 --------------
 
-The SigmaStudio+ development environment provides a graphical user interface to help users build and deploy signal processing systems quickly and efficiently. Refer to the following sections for details on the different windows and panels available in SigmaStudio+ development environment.
+The SigmaStudio+ development environment provides a graphical user interface to
+help users build and deploy signal processing systems quickly and efficiently.
+Refer to the following sections for details on the different windows and panels
+available in SigmaStudio+ development environment.
 
 -  :doc:`menu_and_toolbar </wiki-migration/resources/tools-software/sigmastudiov2/developmentenvironment/menuandtoolbar/menu_and_toolbar>` - Menu items and toolbar button for invoking application operations and actions
 -  :doc:`tabbed_document_panel </wiki-migration/resources/tools-software/sigmastudiov2/developmentenvironment/documentpanel/tabbed_document_panel>` - Configurations and Signal Flow Diagrams
@@ -26,15 +29,17 @@ The SigmaStudio+ development environment provides a graphical user interface to 
 
 .. tip::
 
-   Current project status will be displayed on the bottom right corner of the application
-
-
-.. tip::
-
-   Full path of the active project will be displayed at the bottom left corner. Right click on the path to copy the path to the clipboard
-
+   Current project status will be displayed on the bottom right corner of the
+   application
 
 .. tip::
 
-   Note: The first time SigmaStudio+ is launched, it displays the default layout. Users can change the layout, including resizing, moving, and hiding windows and toolbars. The changes will be saved, and the layout will be restored during future sessions
+   Full path of the active project will be displayed at the bottom left corner.
+   Right click on the path to copy the path to the clipboard
 
+.. tip::
+
+   Note: The first time SigmaStudio+ is launched, it displays the default
+   layout. Users can change the layout, including resizing, moving, and hiding
+   windows and toolbars. The changes will be saved, and the layout will be
+   restored during future sessions

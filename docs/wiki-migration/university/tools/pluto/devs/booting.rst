@@ -4,7 +4,10 @@ PlutoSDR/M2k boot magic explained
 Custom u-boot environment variables
 -----------------------------------
 
-There are a set of custom u-boot environmental variables used during boot, which either are set dynamically by custom u-boot commands, or are imported from an additional protected u-boot environment or are part of the regular SPI u-boot environment but are used to control the runtime behavior.
+There are a set of custom u-boot environmental variables used during boot, which
+either are set dynamically by custom u-boot commands, or are imported from an
+additional protected u-boot environment or are part of the regular SPI u-boot
+environment but are used to control the runtime behavior.
 
 Hardware Revision Handling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,7 +64,8 @@ uboot-version u-boot version string set by the ``envversion`` command
 Examples
 --------
 
-What this means is to change any of these, log into your pluto sdr (over network or serial), and do this as root:
+What this means is to change any of these, log into your pluto sdr (over network
+or serial), and do this as root:
 
 -  If you want to replace the 40 MHz oscillator, and insert a 20 MHz (20000000 Hz) clock:``# **fw_setenv ad936x_ext_refclk "<20000000>"**`` The quotes need to be there to escape the <>, which need to be there since this goes into device tree.
 -  If you have a AD9364 inside your PlutoSDR ``# **fw_setenv attr_name compatible**

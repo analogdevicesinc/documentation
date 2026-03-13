@@ -16,7 +16,7 @@ Kit Contents
 
 .. image:: https://wiki.analog.com/_media/adtf_eval_whatsinthebox.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Software Download
 -----------------
@@ -31,13 +31,13 @@ Startup
 
 .. image:: https://wiki.analog.com/_media/img_01812.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Connect USB-C cable to module
 
 .. image:: https://wiki.analog.com/_media/capture33.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  Connect USB-C to laptop
 -  Wait for green light under the USB-C connector on the module light up
@@ -45,7 +45,7 @@ Startup
 
 .. image:: https://wiki.analog.com/_media/img_0186.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 Troubleshooting
 ---------------

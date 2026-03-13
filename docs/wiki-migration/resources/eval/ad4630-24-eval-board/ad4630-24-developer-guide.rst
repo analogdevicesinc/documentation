@@ -6,7 +6,10 @@ Overview
 
 The :adi:`ad4630-24` and :adi:`ad4030-24` are part of a family of 16 and 24-bit SAR analog-to-digital converters that support sampling rates of 2 MSPS and 500 kSPS. This family of ADCs offers market-leading linearity and noise performance, enabling an evolution in the performance of ATE, electronic test and measurement, health care and scientific instrumentation systems. The evaluation boards that support these converters have been designed to work with off-the-shelf 3rd party system boards that can be used to manage the data capture process as well as host embedded applications development. This developer's guide contains information and resource links that are intended to support users that desire to develop a custom application using the `ZedBoard <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/>`_. The DUT board may be either the evaluation board for the AD463x/AD403x, or a board that the user has designed. The only requirements for the user designed board are: 1. The board should have an FMC connector. 2. The digital interface through the FMC connector should use the same pin and signal assignments used on the EVAL-AD4630-24FMCZ/EVAL-AD4030-24FMCZ board (see :adi:`EVAL-AD4630-24 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4630-24.html#eb-documentation>` / :adi:`EVAL-AD4030-24 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4030-24.html>` for schematics). Otherwise, changing these assignments will require a modification of the HDL and a recompile. ADI provides the source files for the FPGA HDL, but it cannot support debug of the user modifications to the source. 3. It is recommended that the board provide a reference clock (100 MHz or less, see the :doc:`EVAL-AD4630-24FMCZ User Guide </wiki-migration/resources/eval/ad4630-24-eval-board>` for more information on the reference clock requirements. 4. It is recommended to derive the digital IO voltage from the ZedBoard. The EVAL-AD4630-24FMCZ schematics provide an example of this. 5. Optional: The ZedBoard provides a 12 volt supply rail through the FMC connector which can be used to provide the main power supply for the user board. However, the latter may also be powered from a separate external supply.
 
-The user should consult the relevant EVAL-AD463x/EVAL-AD403x eval board user guide to access the basic details of the evaluation board hardware. The evaluation board schematics can be downloaded from the relevant evaluation board web page.
+The user should consult the relevant EVAL-AD463x/EVAL-AD403x eval board user
+guide to access the basic details of the evaluation board hardware. The
+evaluation board schematics can be downloaded from the relevant evaluation board
+web page.
 
 Supported Platforms
 ~~~~~~~~~~~~~~~~~~~
@@ -24,7 +27,8 @@ Basic HW and SW Architecture
 Hardware
 --------
 
-The AD463x evaluation board connects to the ZedBoard through an FMC connector. This connector hosts the following signal groups
+The AD463x evaluation board connects to the ZedBoard through an FMC connector.
+This connector hosts the following signal groups
 
 -  The digital interface between the ADC and the host processor (SoC).
 -  The digital I/O power supply rail.
@@ -36,7 +40,10 @@ The ZedBoard hosts a Xilinx Zynq7000 class SoC with dual ARM Cortex-9 hard proce
 Software
 --------
 
-Two use cases are supported for developing a custom application using the EVAL-AD463x system. They are basically distinguished by the nature of the host processor for the ADC. ADI provides software components that support both use cases. The following table summarizes the use cases and ADI software components.
+Two use cases are supported for developing a custom application using the
+EVAL-AD463x system. They are basically distinguished by the nature of the host
+processor for the ADC. ADI provides software components that support both use
+cases. The following table summarizes the use cases and ADI software components.
 
 **Table 1. Use cases and supporting SW components**
 
@@ -55,8 +62,6 @@ Two use cases are supported for developing a custom application using the EVAL-A
 
    -  **LibIIO subsystem** - a library of IIO functions that are used to create custom device drivers that run within the Linux system (see :doc:`LibIIO </wiki-migration/resources/tools-software/linux-software/libiio>` for more details). These drivers have already been generated for the AD463x/AD4030x and incorporated in the uImage file.
    -  **IIOD** - An IIO daemon that exposes IIO devices over a network connection to a remote host.
-
-
 
 (More information on the general Kuiper Linux distribution can be found at **\ :doc:`ADI Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`**
    **Device tree file** that describes the attributes of the AD4630/AD4030 configuration. The attributes of the ADC node in the device tree set the clocking mode (SPI or Echo), data rate (single or dual edge), output data format (see data sheet), and number of active lanes per channel (1, 2, or 4). During boot, the system loads the device.dtb file contained in the boot directory. If the operating configuration of the ADC needs to be changed, the device tree must be updated with the new ADC attributes. Instructions for changing the operating configuration of the ADC and HDL are provided in a later section of this guide.
@@ -88,7 +93,8 @@ To change the ADC operating mode, two optional methods are available. See the se
 |               |                         | DDR          | X                        |
 +---------------+-------------------------+--------------+--------------------------+
 
-The following sections will specifically address the Linux driver, No-OS driver, and HDL for the AD463x family.
+The following sections will specifically address the Linux driver, No-OS driver,
+and HDL for the AD463x family.
 
 Linux Driver
 ~~~~~~~~~~~~
@@ -114,7 +120,13 @@ The No-OS driver can be used in a bare metal application or in a non-Linux RTOS 
 How to Modify the SD Card Image for alternative operating configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Users that are developing a custom application for the AD4630/AD4030 outside the ACE environment, using the ZedBoard running Linux, can modify the boot image to match one of the existing configurations listed in Table 2. Generating the appropriate boot image can be done using the method below. Once the ACE Environment method is executed, the boot directory on the SD card will retain the desired boot configuration until such time that the user performs another configuration update.
+Users that are developing a custom application for the AD4630/AD4030 outside the
+ACE environment, using the ZedBoard running Linux, can modify the boot image to
+match one of the existing configurations listed in Table 2. Generating the
+appropriate boot image can be done using the method below. Once the ACE
+Environment method is executed, the boot directory on the SD card will retain
+the desired boot configuration until such time that the user performs another
+configuration update.
 
 ACE Environment
 ---------------
@@ -132,7 +144,9 @@ System Operational Constraints
 Sampling Frequency
 ------------------
 
-The following table illustrates the maximum sampling rates that can be achieved based on the device configuration. Note that the FPGA SPI engine only supports Zone 2 data transfers from the AD4630/AD4030.
+The following table illustrates the maximum sampling rates that can be achieved
+based on the device configuration. Note that the FPGA SPI engine only supports
+Zone 2 data transfers from the AD4630/AD4030.
 
 **Table 3. Maximum sampling rate by device configuration **^ Clocking Mode ^ Lane Mode (per channel) ^ Data Rate ^ Data format ^ Max sampling rate ^ \| SPI \| 1 \| Single (SDR) \| 32-bit \| 1.75 MSPS (**note 1**) \| \|     \|     \| SDR \| 24-bit \| 2 MSPS \| \|     \|     \| Dual (DDR) \| 32 or 24-bit \| 2 MSPS \| \|     \| 2 \| SDR or DDR \| 32 or 24-bit \| 2 MSPS \| \|     \| 4 \| SDR or DDR \| 32 or 24-bit \| 2 MSPS \| \| Echo Clock \| 1 \| SDR \| 32-bit \| 1.75 MSPS (**note 1**) \|
 
@@ -151,7 +165,11 @@ Application Frameworks
 Python
 ------
 
-PyADI-IIO is an ADI maintained Python library of device specific abstraction modules. Each device module supports the simplified development of Python applications that use IIO by providing an API that takes care of many of the underlying IIO details. This section of the developer's guide will describe information on using the PyADI bindings for the AD4630/AD4030 family.
+PyADI-IIO is an ADI maintained Python library of device specific abstraction
+modules. Each device module supports the simplified development of Python
+applications that use IIO by providing an API that takes care of many of the
+underlying IIO details. This section of the developer's guide will describe
+information on using the PyADI bindings for the AD4630/AD4030 family.
 
 Installation
 ------------
@@ -180,11 +198,12 @@ Note that python does not automatically scan for usb context or an IP address un
    iio_info -s
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad4630-24-eval-board/ad4630-scan-usb-context.jpg
-   :width: 800px
+   :width: 800
 
 As seen above, the USB argument can be either **"usb:1.17.6"**, or**"ip:169.254.26.1"** to instantiate the device.
 
-The generic examples can be downloaded and executed, or custom code (see below) can be created.
+The generic examples can be downloaded and executed, or custom code (see below)
+can be created.
 
 .. code:: python
 
@@ -213,8 +232,8 @@ Troubleshooting
 A troubleshooting guide can be found :doc:`here </wiki-migration/resources/tools-software/linux-software/adi-kuiper_ace_troubleshooting>`. The latter covers some tips related to ZedBoard startup and the SD card containing the Kuiper Linux image.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad4630-24-eval-board/zedboard_image-top.png
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad4630-24-eval-board/zedboard_image-bottom.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad4630-24-eval-board/ad4630-python-installation.png
-   :width: 800px
+   :width: 800

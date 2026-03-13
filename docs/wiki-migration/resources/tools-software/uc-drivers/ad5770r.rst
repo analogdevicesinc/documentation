@@ -13,7 +13,11 @@ The :adi:`AD5770R` is a 6-channel, 14-bit resolution, low noise, programmable cu
 
 The :adi:`AD5770R` contains five 14-bit resolution current sourcing DAC channels and one 14-bit resolution current sourcing/ sinking DAC channel.
 
-Channel 0 can be configured to sink up to 60 mA and source up to 300 mA. Channel 1 to Channel 5 have multiple, programmable output current sourcing ranges, set by register access. Each DAC can operate with a wide power supply rail from 0.8 V to AVDD − 0.4 V for optimizing power efficiency and thermal power dissipation.
+Channel 0 can be configured to sink up to 60 mA and source up to 300 mA. Channel
+1 to Channel 5 have multiple, programmable output current sourcing ranges, set
+by register access. Each DAC can operate with a wide power supply rail from
+0.8 V to AVDD − 0.4 V for optimizing power efficiency and thermal power
+dissipation.
 
 The :adi:`AD5770R` operates from 2.9 V to 5.5 V AVDD supply and specified over a temperature range of −40°C to +105°C.
 
@@ -179,4 +183,3 @@ Downloads
    -  :git-no-OS:`Implementation of AD5770R Driver. <drivers/dac/ad5770r/ad5770r.c>`
    -  :git-no-OS:`Header file of AD5770R Driver. <drivers/dac/ad5770r/ad5770r.h>`
    
-

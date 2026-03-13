@@ -143,7 +143,8 @@ People who follow the flow that is outlined, have a much better experience with 
 
       -   :ez:`Design Support Community ADRV9001-ADRV9007 <wide-band-rf-transceivers/design-support-adrv9001-adrv9007>`
 
-   -  For Evaluation System Software support (TES GUI, ADRV9001 API driver, etc.) go to:
+   -  For Evaluation System Software support (TES GUI, ADRV9001 API driver,
+      etc.) go to:
 
       -  :ez:`TES GUI Software Support Community ADRV9001-ADRV9007 <wide-band-rf-transceivers/tes-gui-software-support-adrv9001-adrv9007>`
 
@@ -151,7 +152,8 @@ People who follow the flow that is outlined, have a much better experience with 
 
       -  :ez:`FPGA Reference Designs <community/fpga>` sub-community.
 
-   -  For questions regarding the the ADI Linux distribution, the Linux drivers, or the device trees for the ADRV9001/2 based platforms, please use the
+   -  For questions regarding the the ADI Linux distribution, the Linux drivers,
+      or the device trees for the ADRV9001/2 based platforms, please use the
 
       -  :ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>` sub-community.
 
@@ -168,11 +170,14 @@ Downloads
 
 Binaries:
 
-Osc for windows can be downloaded directly from Github. Go to to the following link and download the latest release.
+Osc for windows can be downloaded directly from Github. Go to to the following
+link and download the latest release.
 
 -  `IIO-Scope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
-The latest boot files for adrv9002 (for all supported carriers) can be found in the latest Kuiper Image release (note one can choose between downloading the full image or just the boot partition):
+The latest boot files for adrv9002 (for all supported carriers) can be found in
+the latest Kuiper Image release (note one can choose between downloading the
+full image or just the boot partition):
 
 -  :doc:`Kuiper Image </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
 
@@ -195,7 +200,8 @@ Software Defined Radio using the Linux IIO Framework
 ADI Articles
 ~~~~~~~~~~~~
 
--   Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio
+-   Four Quick Steps to Production: Using Model-Based Design for
+    Software-Defined Radio
 
    -  :adi:`Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
    -  :adi:`Part 2—Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
@@ -211,13 +217,11 @@ MathWorks Webinars
 Warning
 -------
 
-
 .. esd-warning::
 
-
 .. |jupitersdr_back1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter-sdr/jupitersdr_back1.png
-   :width: 550px
+   :width: 550
    :height: 300px
 .. |jupitersdr_front1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/jupiter-sdr/jupitersdr_front1.png
-   :width: 550px
+   :width: 550
    :height: 300px

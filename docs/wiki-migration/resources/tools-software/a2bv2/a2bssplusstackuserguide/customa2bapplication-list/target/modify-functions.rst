@@ -5,20 +5,28 @@ Modify Application Call-back Functions
 
 By this time, we should have completed the porting of A2B Stack as explained in Section ":doc:`Porting A2B Software Stack to a custom platform </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>`". At this stage, the A2B Stack ported on the custom platform should be capable of discovering and configuring a connected A2B network as per the added bus configuration file.
 
-The A2B Stack offers provision for the application running on the Target software to register callback functions for important network activities. Three important application callback functions are registered with the Stack. These functions can be modified by the user to perform an action specific to the application.
+The A2B Stack offers provision for the application running on the Target
+software to register callback functions for important network activities. Three
+important application callback functions are registered with the Stack. These
+functions can be modified by the user to perform an action specific to the
+application.
 
 .. note::
 
-   All examples provided in the A2B Software package come with default implementations for these callback functions. Modifications to these functions are required only if the default implementation doesn’t match your targeted system requirement. When requiring additional functionality, it is recommended to add on top of the existing implementation unless rewriting completely.
+   All examples provided in the A2B Software package come with default
+   implementations for these callback functions. Modifications to these
+   functions are required only if the default implementation doesn’t match your
+   targeted system requirement. When requiring additional functionality, it is
+   recommended to add on top of the existing implementation unless rewriting
+   completely.
 
-
-The three application callback functions are explained in the following sub-sections.
+The three application callback functions are explained in the following
+sub-sections.
 
 Discovery completion Callback function
 --------------------------------------
 
 The discovery completion callback function is invoked by the stack upon completing the discovery and configuration of the whole A2B network. :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>` shows the application registration of a discovery completion callback function with the stack. The status of the discovery is notified by this function allowing the application to perform any additional tasks based on the notified status.
-
 
 |image1|
 
@@ -26,11 +34,12 @@ The discovery completion callback function is invoked by the stack upon completi
 
    \ **Figure: A2BAPP OnDiscoveryComplete Callback Function**\
 
-
 .. note::
 
-   a2bapp_onDiscoveryComplete() comes with a default implementation for post-discovery bus drop monitoring and rediscovery upon faults (if it was set in SigmaStudioPlus while exporting the bus configuration file). Modify this function only to override default functionality (if required).
-
+   a2bapp_onDiscoveryComplete() comes with a default implementation for
+   post-discovery bus drop monitoring and rediscovery upon faults (if it was set
+   in SigmaStudioPlus while exporting the bus configuration file). Modify this
+   function only to override default functionality (if required).
 
 The code snippet shows a sample implementation of this callback function.
 
@@ -88,22 +97,25 @@ Power/Line Fault Callback function
 
 The power fault callback function is invoked by the stack upon detecting a power-related fault in any node of the network. An application callback function can be registered with the Stack for power fault notifications as shown in the below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>`.
 
-
 |image2|
 
 .. container:: centeralign
 
    \ **Figure: A2BAPP OnPowerFault Callback Function**\
 
-
-The Stack provides a callback function to the application layer upon the occurrence of a fault in the A2B System. The stack performs necessary diagnostics and fault localization (in case of concealed faults) and reports the fault type and location to the application for further handling.
+The Stack provides a callback function to the application layer upon the
+occurrence of a fault in the A2B System. The stack performs necessary
+diagnostics and fault localization (in case of concealed faults) and reports the
+fault type and location to the application for further handling.
 
 .. note::
 
-   The Stack performs all necessary actions to handle the fault as recommended by the A2B Transceiver Programmer’s reference manual and finally invokes the application callback.
+   The Stack performs all necessary actions to handle the fault as recommended
+   by the A2B Transceiver Programmer’s reference manual and finally invokes the
+   application callback.
 
-
-The function is invoked under the following fault conditions during and post discovery.
+The function is invoked under the following fault conditions during and post
+discovery.
 
 -  Critical faults
 
@@ -119,7 +131,8 @@ The function is invoked under the following fault conditions during and post dis
 -  Indeterminate faults
 -  Bus/Node drop condition
 
-Code Snippet shows a sample implementation of the a2bapp_onPowerFault callback function.
+Code Snippet shows a sample implementation of the a2bapp_onPowerFault callback
+function.
 
 ::
 
@@ -181,22 +194,24 @@ Code Snippet shows a sample implementation of the a2bapp_onPowerFault callback f
        }
    }
 
-The information about the presence of a locally powered slave is made known to the stack through the BDD. In case of critical faults (Cable terminal shorted to GND, Cable terminal shorted to VBat), the stack switches of the bus from the immediate upstream local powered slave onwards.
+The information about the presence of a locally powered slave is made known to
+the stack through the BDD. In case of critical faults (Cable terminal shorted to
+GND, Cable terminal shorted to VBat), the stack switches of the bus from the
+immediate upstream local powered slave onwards.
 
-Partial bus operation is possible between master and this upstream local powered slave.
+Partial bus operation is possible between master and this upstream local powered
+slave.
 
 Interrupt Callback function
 ---------------------------
 
 The Interrupt callback function is invoked by the Stack upon seeing any interrupts at the master node. The below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>` shows the application registration of an interrupt callback function with the Stack.
 
-
 |image3|
 
 .. container:: centeralign
 
    \ **Figure: Interrupt Callback Function**\
-
 
 The code snippet shows a simple implementation of this callback function.
 
@@ -235,12 +250,10 @@ The code snippet shows a simple implementation of this callback function.
 
    Any interrupt on the slave node can be handled within a2bplugin_slave\\ a2bslave_plugin.c file in the function a2b_pluginInterrupt as explained in "Handling Interrupts in a Plugin" in :doc:`applicationintegration </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/applicationintegration>`
 
-
 Node Discovery Callback function
 --------------------------------
 
 The node discovery callback function is an optional callback, which is invoked by the stack upon each node discovery or when node authentication fails. The below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>` shows the application registration of this callback function with the Stack.
-
 
 |image4|
 
@@ -248,8 +261,9 @@ The node discovery callback function is an optional callback, which is invoked b
 
    \ **Figure: Node Discovery Callback Function**\
 
-
-The below Code Snippet shows a sample implementation of this callback function. The application can decide whether to continue with discovery or not and has more control with this callback function.
+The below Code Snippet shows a sample implementation of this callback function.
+The application can decide whether to continue with discovery or not and has
+more control with this callback function.
 
 ::
 
@@ -315,15 +329,14 @@ The below Code Snippet shows a sample implementation of this callback function. 
 I2C Error Callback Function
 ---------------------------
 
-The I2C error callback function is invoked by the Stack upon seeing any I2C errors at the master node or at sub-node peripherals.
-
+The I2C error callback function is invoked by the Stack upon seeing any I2C
+errors at the master node or at sub-node peripherals.
 
 |image5|
 
 .. container:: centeralign
 
    \ **Figure: I2C Error Callback Function**\
-
 
 The code snippet shows a simple implementation of this callback function.
 

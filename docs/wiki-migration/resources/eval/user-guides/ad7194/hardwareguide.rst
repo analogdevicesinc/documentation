@@ -18,20 +18,22 @@ After following the instructions in the :doc:`Software Procedures </wiki-migrati
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/sdp_connect.png
    :align: center
-   :width: 400px
+   :width: 400
 
 -  **Option B:** Connect the EVAL-AD7194ASDZ to the EVAL-SDP-CB1Z
 
    -  Using the 120 pin connector
 
-      -   Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
+      -   Screw the two boards together using the plastic screw-washer set
+          included in the evaluation board kit to ensure that the boards are
+          connected firmly together.
 
 Block Diagram
 =============
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7194/ad7194_block_diag.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Hardware Link Options
 =====================
@@ -148,7 +150,7 @@ SDP 120 Pin Connector P5  Function  Arduino connector P6,P7,P9,P10
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7193/ad7193_arduinoheader.png
    :align: center
-   :width: 400px
+   :width: 400
 
 PMOD Connector P11
 ~~~~~~~~~~~~~~~~~~
@@ -166,12 +168,13 @@ Connection Function Connection Function
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7193/ad7193_pmodheader.png
    :align: center
-   :width: 200px
+   :width: 200
 
 SMB Connections
 ---------------
 
-There are 3 SMB connections on the board. To allow clock signals and reference into the board.
+There are 3 SMB connections on the board. To allow clock signals and reference
+into the board.
 
 -  J1 Provides option for External Reference+
 -  J2 Provides option for External Reference-
@@ -180,7 +183,9 @@ There are 3 SMB connections on the board. To allow clock signals and reference i
 Power Supplies
 ==============
 
-The evaluation board receives power through the controller board when connected to the PC via USB. Linear regulators generate the required power supply levels from the applied USB voltage.
+The evaluation board receives power through the controller board when connected
+to the PC via USB. Linear regulators generate the required power supply levels
+from the applied USB voltage.
 
 AVDD (LK9) selection
 --------------------
@@ -226,14 +231,13 @@ IOVDD (LK8) selection
 Serial Interface
 ================
 
-There are four primary signals: CS, SCLK, SDI, and SDO/RDY (all are inputs, except for SDO/RDY, which is an output).
+There are four primary signals: CS, SCLK, SDI, and SDO/RDY (all are inputs,
+except for SDO/RDY, which is an output).
 
 Serial communication options
 ----------------------------
 
 -  SDP-B board and the respective 120 pin SDP connector.
-
-
 
 - When using the SDP-B connection (120 pin) The evaluation board connects via the serial peripheral interface (SPI) to the Blackfin® :adi:`ADSP-BF527 <en/products/adsp-bf527.html>` on the SDP-B board.
    * Arduino connection SDP-K1
@@ -244,7 +248,7 @@ For an introduction to the Serial Peripheral Interface (SPI), click :adi:`here <
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/spi_pic.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Reference Options
 =================
@@ -281,12 +285,15 @@ Board should be correctly connected to ACE
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/refsel.png
    :align: center
-   :width: 400px
+   :width: 400
 
 GPIOs
 =====
 
-The General purpose inout pins are powered by AVDD/AVSS. They can be used to provide AC-Excitation signals for AC-Excited sensors, using 2 or 4 outputs. Can be used to automatically control an external multiplexer. Other optional functions include Current Source outputs , 2nd Reference input.
+The General purpose inout pins are powered by AVDD/AVSS. They can be used to
+provide AC-Excitation signals for AC-Excited sensors, using 2 or 4 outputs. Can
+be used to automatically control an external multiplexer. Other optional
+functions include Current Source outputs , 2nd Reference input.
 
 ====== ======== =========================
 GPIO   Bit Name Functionality

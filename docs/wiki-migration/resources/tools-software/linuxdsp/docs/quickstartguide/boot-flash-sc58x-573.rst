@@ -5,7 +5,6 @@ Booting Linux from SPI Flash on SC58x & SC573
 
    The instructions are applicable to :doc:`Linux for ADSP-SC5xx Processors 3.0.0 </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>` or later
 
-
 The ADSP-SC58x-EZKIT & ADSP-SC573-EZKIT come equipped with 16 MiB of SPI Flash. The ``adsp-sc5xx-tiny`` image can be stored into it and used to boot Linux from it. To do that, you need to change the Libc implementation from the default GNU to musl, to further reduce the image's size.
 
 Change the Libc implementation
@@ -27,12 +26,17 @@ Build and install the SDK
 
 .. note::
 
-   The ADSP-SC584-EZKIT has been chosen as the example for these instructions, and will appear on filenames and paths etc.
+   The ADSP-SC584-EZKIT has been chosen as the example for these instructions,
+   and will appear on filenames and paths etc.
 
+The SDK will provide you with the cross toolchain needed to develop application
+for the target board, alongside various miscellaneous tools. Notably, it will
+provide you with OpenOCD and GDB, which you can use to run and flash U-Boot on
+the board.
 
-The SDK will provide you with the cross toolchain needed to develop application for the target board, alongside various miscellaneous tools. Notably, it will provide you with OpenOCD and GDB, which you can use to run and flash U-Boot on the board.
-
-The SDK can be built for the adsp-sc5xx-minimal image or the adsp-sc5xx-full image. To build the SDK for the adsp-sc5xx-minimal image invoke bitbake from within the build directory created previously.
+The SDK can be built for the adsp-sc5xx-minimal image or the adsp-sc5xx-full
+image. To build the SDK for the adsp-sc5xx-minimal image invoke bitbake from
+within the build directory created previously.
 
 .. code:: bash
 
@@ -44,7 +48,9 @@ or for the adsp-sc5xx-full image
 
    $ bitbake adsp-sc5xx-full -c populate_sdk
 
-When the build has completed you will find a set of files in the <BUILD_DIR>/tmp/deploy/sdk directory. For example, the minimal image on SC584-EZKIT:
+When the build has completed you will find a set of files in the
+<BUILD_DIR>/tmp/deploy/sdk directory. For example, the minimal image on
+SC584-EZKIT:
 
 .. code:: bash
 
@@ -56,7 +62,9 @@ When the build has completed you will find a set of files in the <BUILD_DIR>/tmp
 
 The ``adi-distro-glibc-glibc-x86_64-adsp-sc5xx-minimal-cortexa5t2hf-neon-adsp-sc584-ezkit-toolchain-3.0.0.sh`` is a self-extracting archive containing the SDK.
 
-Invoke the self-extracting archive. It will default to installing to /opt/adi-distro-musl/3.0.0 but gives you the option to select your own install folder during the installation. For the minimal image on SC589-EZKIT
+Invoke the self-extracting archive. It will default to installing to
+/opt/adi-distro-musl/3.0.0 but gives you the option to select your own install
+folder during the installation. For the minimal image on SC589-EZKIT
 
 .. code:: bash
 
@@ -80,7 +88,6 @@ Running U-Boot on the Board for the first time
 
    It's always good practice to erase the contents of ``/tftpboot/`` before running and/or flashing a new build of U-Boot or Linux. You can do so by executing ``rm /tftpboot/*`` before proceeding
 
-
 Copy the U-Boot binary & loader files to the tftp directory:
 
 .. code:: bash
@@ -90,7 +97,8 @@ Copy the U-Boot binary & loader files to the tftp directory:
    $ cp tmp/deploy/images/adsp-sc584-ezkit/stage1-boot.ldr /tftpboot/
    $ cp tmp/deploy/images/adsp-sc584-ezkit/stage2-boot.ldr /tftpboot/
 
-Before installing the software on to the development board, ensure that the following cables are connected:
+Before installing the software on to the development board, ensure that the
+following cables are connected:
 
 -  Board connected to network via ethernet cable using J13 connector.
 -  Board connected to host PC using USB micro cable, connected to USB/UART port on the development board
@@ -98,14 +106,15 @@ Before installing the software on to the development board, ensure that the foll
 -  ICE is also connected to host PC via USB mini cable
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc584-ezkit_overview.jpg
-   :width: 400px
+   :width: 400
 
 -  The BOOT MODE selector on the EV-SC584-SOM board should be turned to "0".
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc584-ezkit_boot_selector.jpg
-   :width: 400px
+   :width: 400
 
-The console output from U-Boot and later on Linux will appear on the USB serial port configured in minicom earlier so open up minicom.
+The console output from U-Boot and later on Linux will appear on the USB serial
+port configured in minicom earlier so open up minicom.
 
 ::
 
@@ -151,10 +160,17 @@ In a third console window launch GDB and type ``target extended-remote :3333``. 
    ;''Terminal3: GDB''
    : <code bash>
 
-$ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb u-boot-spl-sc584-ezkit.elf ... (gdb) target extended-remote :3333 Remote debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size 0x9c0c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089c0c Loading section .dtb.init.rodata, size 0x1460 lma 0x2008adb0 Loading section .data, size 0x514 lma 0x2008c210 Loading section .u_boot_list, size 0xa50 lma 0x2008c724 Start address 0x20080000, load size 53608 Transfer rate: 29 KB/sec, 7658 bytes/write. (gdb) c Continuing.
+$ cd /tftpboot $
+/opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux/usr/bin/arm-adi_glibc-linux-gnueabi/arm-adi_glibc-linux-gnueabi-gdb
+u-boot-spl-sc584-ezkit.elf ... (gdb) target extended-remote :3333 Remote
+debugging using :3333 0x00004884 in ?? () (gdb) load Loading section .text, size
+0x9c0c lma 0x20080000 Loading section .rodata, size 0x1198 lma 0x20089c0c
+Loading section .dtb.init.rodata, size 0x1460 lma 0x2008adb0 Loading section
+.data, size 0x514 lma 0x2008c210 Loading section .u_boot_list, size 0xa50 lma
+0x2008c724 Start address 0x20080000, load size 53608 Transfer rate: 29 KB/sec,
+7658 bytes/write. (gdb) c Continuing.
 
 +---+
-
 
 | C |
 
@@ -163,14 +179,16 @@ $ cd /tftpboot $ /opt/adi-distro-glibc/3.0.0/sysroots/x86_64-adi_glibc_sdk-linux
 
 Program received signal SIGINT, Interrupt. </code>
 
-You will see a message on Terminal 1 running minicom, informing you that you can now load U-Boot Proper
+You will see a message on Terminal 1 running minicom, informing you that you can
+now load U-Boot Proper
 
 ::
 
    ;''Terminal1: minicom''
    :<code bash>U-Boot SPL 2020.10 (Mar 16 2023 - 13:07:24 +0000)
 
-ADI Boot Mode: 0x0 (JTAG/BOOTROM) SPL execution has completed. Please load U-Boot Proper via JTAG </code>
+ADI Boot Mode: 0x0 (JTAG/BOOTROM) SPL execution has completed. Please load
+U-Boot Proper via JTAG </code>
 
 Now, load U-Boot Proper into RAM.
 
@@ -200,7 +218,9 @@ Now, load U-Boot Proper into RAM.
    (gdb) c
    Continuing.
 
-At this point U-Boot will now be running in RAM on your target board. You should see U-Boot booting in the minicom console (Terminal 1). Press a key to interrupt the boot process before the countdown terminates:
+At this point U-Boot will now be running in RAM on your target board. You should
+see U-Boot booting in the minicom console (Terminal 1). Press a key to interrupt
+the boot process before the countdown terminates:
 
 ::
 
@@ -211,7 +231,8 @@ U-Boot 2020.10 (Mar 16 2023 - 13:07:24 +0000)
 
 CPU: ADSP ADSP-SC584-0.1 (spi flash boot) Detected Revision: 1.1 Model: ADI sc584-ezkit DRAM: 112 MiB WDT: Not found! MMC: Loading Environment from SPIFlash... SF: Detected w25q128 with page size 256 Bytes, erase size 4 KiB, total 16 MiB \**\* Warning - bad CRC, using default environment
 
-In: serial@0x31003000 Out: serial@0x31003000 Err: serial@0x31003000 Net: eth0: eth0 Hit any key to stop autoboot: 0 => </code>
+In: serial@0x31003000 Out: serial@0x31003000 Err: serial@0x31003000 Net: eth0:
+eth0 Hit any key to stop autoboot: 0 => </code>
 
 Flash U-Boot to SPI Flash
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -232,7 +253,6 @@ In the U-Boot console, set the IP address of the Linux PC that hosts the U-Boot 
 
    To find the IP address of your host Linux PC you can issue the ``ip addr`` command from the shell or console.
 
-
 If your network **supports** DHCP, run:
 
 .. code:: bash
@@ -251,8 +271,8 @@ Where ``<ADDR>`` is the IP address you want to assign.
 
    If flashing a board that had been previously programmed, it's good to erase the whole flash before as sometimes previous U-Boot installations might leave remnants. You can do that by typing ``=> sf probe ${sfdev}; sf erase 0 0x1000000`` on the U-Boot prompt before proceeding to the following instructions
 
-
-Next, run the U-Boot update command to copy the U-Boot loader files from the host PC to the target board, and write it into flash:
+Next, run the U-Boot update command to copy the U-Boot loader files from the
+host PC to the target board, and write it into flash:
 
 .. code:: bash
 
@@ -296,7 +316,10 @@ In order to store the ``serverip`` and the DHCP or otherwise assigned IP address
    Saving Environment to SPIFlash... Erasing SPI flash...Writing to SPI flash...done
    OK
 
-At this point the U-Boot binary is stored in flash. You can now disconnect the ICE-1000 or ICE-2000 from the development board and make sure to switch the BMODE to position 1. You will only need to reconnect this if your board fails to boot and you need to re-follow these instructions.
+At this point the U-Boot binary is stored in flash. You can now disconnect the
+ICE-1000 or ICE-2000 from the development board and make sure to switch the
+BMODE to position 1. You will only need to reconnect this if your board fails to
+boot and you need to re-follow these instructions.
 
 Booting Linux from SPI Flash
 ----------------------------
@@ -308,7 +331,8 @@ You'd first need to copy the fitImage and the ``tiny`` root filesystem on the TF
    $ cp tmp/deploy/images/adsp-sc584-ezkit/fitImage /tftpboot/
    $ cp tmp/deploy/images/adsp-sc584-ezkit/adsp-sc5xx-tiny-adsp-sc584-ezkit.jffs2 /tftpboot/
 
-In order to flash the kernel on the flash, run the below command and observe a similar output:
+In order to flash the kernel on the flash, run the below command and observe a
+similar output:
 
 .. code:: bash
 
@@ -393,7 +417,6 @@ You are now ready to boot into Linux, by entering ``run spiboot`` on the U-Boot 
    [  OK  ] Started D-Bus System Message Bus.
    [  OK  ] Started User Login Management.
    [  OK  ] Reached target Multi-User System.
-
 
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@

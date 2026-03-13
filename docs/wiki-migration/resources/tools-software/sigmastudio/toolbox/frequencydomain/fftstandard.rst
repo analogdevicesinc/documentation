@@ -3,10 +3,15 @@
 FFT(ADSP-SC5xx/ADSP-215xx)
 ==========================
 
-This Module performs N-point FFT on PCM samples. The FFT Output is given in the form of PCMx samples, the Blocksize of which is 3 \* Schematic BlockSize.The first Schematic Block Size number of samples in a PCMx output contains the header information to be carried on to the next Module (say in this case IFFT). The header information contains fields such as PCMx type (Standard - No processing done), N.
+This Module performs N-point FFT on PCM samples. The FFT Output is given in the
+form of PCMx samples, the Blocksize of which is 3 \* Schematic BlockSize.The
+first Schematic Block Size number of samples in a PCMx output contains the
+header information to be carried on to the next Module (say in this case IFFT).
+The header information contains fields such as PCMx type (Standard - No
+processing done), N.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/fftstandard.jpg
-   :width: 200px
+   :width: 200
 
 Input Pins
 ----------
@@ -17,7 +22,6 @@ Name         Format [int/dec] - [control/audio] Function Description
 Pin 0: Input decimal - Audio                    Real Audio Input
 Pin 1: Input decimal - Audio                    Imaginary Audio Input
 ============ ================================== =====================
-
 
 | ====Output Pins====
 
@@ -36,14 +40,13 @@ Configuration
 -------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/fftstandardconfig.jpg
-   :width: 200px
+   :width: 200
 
 ================ ============= ========== ====================
 GUI Control Name Default Value Range      Function Description
 ================ ============= ========== ====================
 FFT Size         64            16 to 1024 Size of the FFT
 ================ ============= ========== ====================
-
 
 | ====DSP Parameter Information====
 
@@ -52,7 +55,6 @@ GUI Control Name Compiler Name          Function Description
 ================ ====================== ====================
 FFT Size         Ext_FFTAlgo_SC5xxAlg1N FFT Size
 ================ ====================== ====================
-
 
 | Here,
 
@@ -63,15 +65,22 @@ FFT Size         Ext_FFTAlgo_SC5xxAlg1N FFT Size
 Algorithm Description
 ---------------------
 
-This module computes the Complex FFT of the input. Twiddle factors are computed within the module. FFT output(N Real/Imaginary samples) is packed in the PCMx format with 3 \* Schematic BlockSize number of samples. Since memory size depends on the value of N, downloading the Schematic (Link-Compile-Download) is necessary when N value is changed.
+This module computes the Complex FFT of the input. Twiddle factors are computed
+within the module. FFT output(N Real/Imaginary samples) is packed in the PCMx
+format with 3 \* Schematic BlockSize number of samples. Since memory size
+depends on the value of N, downloading the Schematic (Link-Compile-Download) is
+necessary when N value is changed.
 
 Example Schematic
 -----------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/frequencydomain/fftstandard_exampleschematic.jpg
-   :width: 800px
+   :width: 800
 
-Shown above is an example schematic with Standard FFT/IFFT along with the PCM to PCMx and PCMx to PCM modules. FFT produces N real/imaginary samples. If the PCMx to PCM is grown to R, only the first half will have data while the remaining will have zeroes or junk data and should be ignored for processing.
+Shown above is an example schematic with Standard FFT/IFFT along with the PCM to
+PCMx and PCMx to PCM modules. FFT produces N real/imaginary samples. If the PCMx
+to PCM is grown to R, only the first half will have data while the remaining
+will have zeroes or junk data and should be ignored for processing.
 
 \*Note: Since FFT- Window produces 2\*N real/imaginary samples, all the outputs of the PCMx to PCM module will have valid data. The above schematic has to be modified to use all the outputs of PCMx to PCM for FFT with windowing.
 

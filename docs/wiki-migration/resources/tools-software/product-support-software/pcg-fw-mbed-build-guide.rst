@@ -3,8 +3,10 @@ Precision Converters Firmware Build Guide
 
 .. tip::
 
-   NOTE: For Local build (i.e., non-web-based build), the firmware repository needs to be cloned manually into local drive of your computer. For Remote/web/online build (supported by Mbed platform), cloning of the repository is not required.
-
+   NOTE: For Local build (i.e., non-web-based build), the firmware repository
+   needs to be cloned manually into local drive of your computer. For
+   Remote/web/online build (supported by Mbed platform), cloning of the
+   repository is not required.
 
 Clone Precision Converters Firmware repository with the ``--recursive`` flag (not needed if building with web IDE for Mbed platform):
 
@@ -21,9 +23,10 @@ If however you've already cloned the repository without the ``--recursive`` flag
 Build Prerequisites
 -------------------
 
-Prior to building a firmware project, it is required to set up an environment so that the build process may find the necessary tools (compiler, linker, SDK etc.). Use the following steps to prepare your environment for building firmware projects for respective platform.
-
-
+Prior to building a firmware project, it is required to set up an environment so
+that the build process may find the necessary tools (compiler, linker, SDK
+etc.). Use the following steps to prepare your environment for building firmware
+projects for respective platform.
 
 .. collapsible:: Windows (Click to expand)
 
@@ -34,11 +37,7 @@ Prior to building a firmware project, it is required to set up an environment so
    .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/pcg-fw-stm32-build-pre-requisites#stm_build_pre-requisites&showfooter=nofooter
       :alt: section>resources/tools-software/product-support-software/pcg-fw-stm32-build-pre-requisites#STM Build Pre-requisites&showfooter=nofooter
 
-
-
 XHIDDENEND
-
-
 
 .. collapsible:: Mbed (Click to expand)
 
@@ -46,10 +45,6 @@ XHIDDENEND
 
    -  Visit Arm Keil website to create an user account for accessing the web based Keil Studio IDE. `Keil Arm <https://www.keil.arm.com/>`_
    -  Open `Keil Studio Web IDE <https://studio.keil.arm.com/>`_ with registered user account
-
-
-
-
 
 .. collapsible:: For Make Build (Click to expand)
 
@@ -64,9 +59,7 @@ XHIDDENEND
 
    .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/environmental_variables.png
       :align: center
-      :width: 400px
-
-
+      :width: 400
 
 XHIDDENEND
 
@@ -74,8 +67,6 @@ XHIDDENEND
 
 Building a project
 ------------------
-
-
 
 .. collapsible:: Windows (Click to expand)
 
@@ -86,11 +77,7 @@ Building a project
    .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/pcg-fw-stm32-build-guide#stm_build&showfooter=nofooter
       :alt: section>resources/tools-software/product-support-software/pcg-fw-stm32-build-guide#STM Build&showfooter=nofooter
 
-
-
 XHIDDENEND
-
-
 
 .. collapsible:: Mbed (Click to expand)
 
@@ -101,25 +88,32 @@ XHIDDENEND
    .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/mbed_keil_studio_project_clone.jpg
       :align: center
 
-   -  Once the project repository is imported, wait until all library dependencies are imported as shown in below screenshot. Now, open the '.medignore' file present in the root directory of repository. Add comment syntax (two forward slashes) in front of the project name which you want to build. This will ignore all other projects and build only the comment syntax selected project.
+   -  Once the project repository is imported, wait until all library
+      dependencies are imported as shown in below screenshot. Now, open the
+      '.medignore' file present in the root directory of repository. Add comment
+      syntax (two forward slashes) in front of the project name which you want
+      to build. This will ignore all other projects and build only the comment
+      syntax selected project.
 
    .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/mbedignore_changes.png
       :align: center
-      :width: 600px
+      :width: 600
 
-   -  Select the target device (default used for development is SDP-K1) and click on 'Clean build' option to build the project. After a successful build a binary will be downloaded to your computer- store this on your drive. Drag and drop this binary to the USB drive hosted by your controller board to flash the MCU.
+   -  Select the target device (default used for development is SDP-K1) and
+      click on 'Clean build' option to build the project. After a successful
+      build a binary will be downloaded to your computer- store this on your
+      drive. Drag and drop this binary to the USB drive hosted by your
+      controller board to flash the MCU.
 
    .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/mbed_build.png
       :align: center
-      :width: 400px
+      :width: 400
 
    .. note::
 
-      Note: If you intend to build different project, then modify the .medignore file in the root directory as mentioned in step2 and clean build project as mentioned in step3
-
-
-
-
+      Note: If you intend to build different project, then modify the .medignore
+      file in the root directory as mentioned in step2 and clean build project
+      as mentioned in step3
 
 .. collapsible:: Build Using Make (Click to expand)
 
@@ -130,12 +124,15 @@ XHIDDENEND
 
    .. tip::
 
-      NOTE: Default TARGET_BOARD is SDP_K1 and COMPILER is GCC_ARM. Current Make based build only support GCC_ARM Compiler.
+      NOTE: Default TARGET_BOARD is SDP_K1 and COMPILER is GCC_ARM. Current Make
+      based build only support GCC_ARM Compiler.
 
-
-   -  By default project is built for "SDP_K1" Board and "GCC_ARM" Compiler. If you want to build for other Mbed Board, For example If you want to build the project for "DISCO_F769NI" Board then run make TARGET_BOARD=DISCO_F769NI command in Command Prompt. Run make reset TARGET_BOARD=DISCO_F769NI command in Command Prompt to delete the generated build files for the given project.
-
-
+   -  By default project is built for "SDP_K1" Board and "GCC_ARM" Compiler. If
+      you want to build for other Mbed Board, For example If you want to build
+      the project for "DISCO_F769NI" Board then run make
+      TARGET_BOARD=DISCO_F769NI command in Command Prompt. Run make reset
+      TARGET_BOARD=DISCO_F769NI command in Command Prompt to delete the
+      generated build files for the given project.
 
 XHIDDENEND
 
@@ -144,4 +141,7 @@ XHIDDENEND
 Running a project
 -----------------
 
-Once the firmware build is successful and binary file is generated, copy the generated binary into USB drive hosted by your MCU board (e.g. USB drive hosted by SDP-K1 board on windows). This will flash the binary file into MCU present on the controller board.
+Once the firmware build is successful and binary file is generated, copy the
+generated binary into USB drive hosted by your MCU board (e.g. USB drive hosted
+by SDP-K1 board on windows). This will flash the binary file into MCU present on
+the controller board.

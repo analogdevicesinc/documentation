@@ -3,9 +3,13 @@ Up-Sampler
 
 :doc:`Click here to return to the the Advanced DSP page </wiki-migration/resources/tools-software/sigmastudio/toolbox/advanceddsp>`
 
-The Up-sampler module is mainly used to get the input samples to a higher sampling rates after processing the audio at lower sampling rates.For example the bass of the audio can be processed at lower sampling rates and then taken to the higher sampling rates.
+The Up-sampler module is mainly used to get the input samples to a higher
+sampling rates after processing the audio at lower sampling rates.For example
+the bass of the audio can be processed at lower sampling rates and then taken to
+the higher sampling rates.
 
-This module takes the upsample factor from the GUI parameters and upsample the input accordingly.
+This module takes the upsample factor from the GUI parameters and upsample the
+input accordingly.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/advanceddsp/up-sampler.jpg
    :align: center
@@ -27,7 +31,6 @@ Name          Format [int/dec] - [control/audio] Function Description
 ============= ================================== ====================
 Pin 0: Output decimal - audio                    Upsampled Output
 ============= ================================== ====================
-
 
 | ===== Grow Algorithm ===== The module currently does not support grow functionality.
 

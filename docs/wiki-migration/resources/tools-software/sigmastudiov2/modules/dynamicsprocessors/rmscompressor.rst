@@ -8,12 +8,13 @@ RMS Compressor
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/dynamicsprocessors/rmscompgraph.png
    :alt: rmscompgraph.png
-   :width: 450px
+   :width: 450
 
 Description
 -----------
 
-The RMS Compressor block computes the RMS level of the input signal and applies the compressor gain to the input signal based on the RMS value.
+The RMS Compressor block computes the RMS level of the input signal and applies
+the compressor gain to the input signal based on the RMS value.
 
 Variants
 --------
@@ -52,7 +53,6 @@ Name    Type  Description
 ======= ===== ===============
 Output1 Audio Output channel1
 ======= ===== ===============
-
 
 | ===== Configurable Parameters =====
 

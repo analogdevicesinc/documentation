@@ -9,13 +9,12 @@ Logic - And, Or, Nand, Nor, Xor
 
 **To change the operator:** Left click on the icon button, each click will toggle the active operator which is shown in the icon image and label.
 
-
 |logicpic2.png|
 
 .. hint::
 
-   Note: the operator is a compile time settings you will have to compile and download the project each time you change the operator.
-
+   Note: the operator is a compile time settings you will have to compile and
+   download the project each time you change the operator.
 
 **Input Values:** This block should be used with DC input signals (positive 5.23 format). Also, this block is designed for use with boolean input values only, either 1.0 or 0.0. While not recommended, if necessary some operators can still function with arbitrary floating point values as input, but the output behavior may be ambiguous depending on the selected operator.
 

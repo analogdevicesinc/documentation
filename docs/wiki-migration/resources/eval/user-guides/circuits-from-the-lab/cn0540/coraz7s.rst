@@ -3,7 +3,7 @@ CN0540 and the CoraZ7-07s
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_cora.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Requirements
 ------------
@@ -37,7 +37,9 @@ To prepare the SD-card for the CoraZ7-07s board:
 
       -  :doc:`Format and flash the SD Card using Linux </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
 
-Once microSD card has been imaged, safely remove the hardware from the SD card writer, and insert the card directly into the microSD card slot on the CoraZ7-07s.
+Once microSD card has been imaged, safely remove the hardware from the SD card
+writer, and insert the card directly into the microSD card slot on the
+CoraZ7-07s.
 
 | |image1|\ |image2|
 
@@ -49,8 +51,8 @@ Down the latest `IIO-Oscilloscope release <https://github.com/analogdevicesinc/i
 CoraZ7-07s Hardware Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are a few jumpers that need to be placed properly in order to use the Cora Z7s as described in this guide.
-
+There are a few jumpers that need to be placed properly in order to use the Cora
+Z7s as described in this guide.
 
 |image3|
 
@@ -69,7 +71,7 @@ Connect the power, cables, and sensor according to the diagram below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_cora_stacked_input_numbers2.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Ethernet Cable
 -  Sensor Input
@@ -78,20 +80,22 @@ Connect the power, cables, and sensor according to the diagram below.
 Boot Sequencing
 ~~~~~~~~~~~~~~~
 
-Once the microSD card and cables have been connected to the CoraZ7-07s and CN0540 its now time to boot the system.
+Once the microSD card and cables have been connected to the CoraZ7-07s and
+CN0540 its now time to boot the system.
 
--  Connect the other end of the Ethernet cable into a router or other network connection. This will be the easiest way to stream and save the data.
+-  Connect the other end of the Ethernet cable into a router or other network
+   connection. This will be the easiest way to stream and save the data.
 
 .. note::
 
    
    If you don't have a network available and want to stream data directly from the Ethernet port of the CoraZ7-07s to the Ethernet port of your PC that is still possible, but requires some extra configuration. Please see the :doc:`Network Configuration </wiki-migration/resources/tools-software/linux-software/network-config>` page for complete details.
 
-
 -  Using the Arduino pins, plug in the EVAL-CN0540-ARDZ on top of the CoraZ7-07s.
 -  Plug in your sensor into the SMA connector on the EVAL-CN0540-ARDZ.
 
-   -  (You may also connect your sensor into the 2-Pin header found at P1 if your sensor isn't an SMA output)
+   -  (You may also connect your sensor into the 2-Pin header found at P1 if
+      your sensor isn't an SMA output)
 
 -  Plug in the UART cable into your PC's USB port.
 
@@ -102,40 +106,46 @@ Once the microSD card and cables have been connected to the CoraZ7-07s and CN054
 Finding your CN0540
 ~~~~~~~~~~~~~~~~~~~
 
-Before you can start streaming data, you first must locate the CN0540 on your network.
+Before you can start streaming data, you first must locate the CN0540 on your
+network.
 
 -  Setup a UART serial communication between your PC and the Cora board using the micro USB cable to USB type A
--  Using your device manager, locate the COM port assigned to the CoraZ7-07s board
+-  Using your device manager, locate the COM port assigned to the CoraZ7-07s
+   board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/com_port.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Open Putty, Tera Term, or other serial terminal program and open a terminal between the COM port the Cora board by setting the Baud rate to 115200, and connect.
 -  The serial terminal connection will default to auto login and will place you in the root directory of the SD card.
 -  From here its a good idea to check to see if your devices can be found using the command **iio_info** into the terminal, and hitting "Enter"
 
-   -  This should provide a list of devices along with their channels and attributes
+   -  This should provide a list of devices along with their channels and
+      attributes
 
 -  Type **ifconfig** into the terminal, hit "Enter"
--  That should echo back some information where you can pull out the inet address of eth0.
+-  That should echo back some information where you can pull out the inet
+   address of eth0.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/serial_terminal_linux_ifconfig_inet.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Open up the IIO-Oscilloscope application on your PC
--  Set the radio button for “Remote Devices” and type the inet address you just found, hit the "Refresh" button, and then click "Ok".\
+-  Set the radio button for “Remote Devices” and type the inet address you just
+   found, hit the "Refresh" button, and then click "Ok".\
 
 |image4|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_board_found.png
-   :width: 475px
+   :width: 475
 
 Using the System with IIO Oscilloscope
 --------------------------------------
 
-Now its time to start communicating with the CN0540 so you can start streaming data. When you first open IIO-Oscilloscope you'll see two windows.
+Now its time to start communicating with the CN0540 so you can start streaming
+data. When you first open IIO-Oscilloscope you'll see two windows.
 
 -  CN0540 Plugin / DMM / DEBUG Window
 -  IIO Capture Window
@@ -143,9 +153,16 @@ Now its time to start communicating with the CN0540 so you can start streaming d
 CN0540 IIO-Oscilloscope Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The CN0540 IIO Plugin automatically configures the CN0540, so it is ready to use as soon as you run the application. Calibration of the sensor is also automatically performed so that a user can start using the capture window to collect and analyze data. No other configuration is required for the application.
+The CN0540 IIO Plugin automatically configures the CN0540, so it is ready to use
+as soon as you run the application. Calibration of the sensor is also
+automatically performed so that a user can start using the capture window to
+collect and analyze data. No other configuration is required for the
+application.
 
-If you want to re-calibrate the system, shut the system down, or modify individual registers of the devices on the CN0540 that can also be done either using the CN0540 Plugin or using the DEBUG panel to write/read specific registers. This is optional and typically application specific.
+If you want to re-calibrate the system, shut the system down, or modify
+individual registers of the devices on the CN0540 that can also be done either
+using the CN0540 Plugin or using the DEBUG panel to write/read specific
+registers. This is optional and typically application specific.
 
 Below is a picture of what the CN0540 IIO Plugin looks like.
 
@@ -193,7 +210,8 @@ User interface
 IIO Capture Window
 ~~~~~~~~~~~~~~~~~~
 
-For CbM applications, most customers are typically interested in the frequency domain plots. To obtain a FFT plot, do the following:
+For CbM applications, most customers are typically interested in the frequency
+domain plots. To obtain a FFT plot, do the following:
 
 -  Use the drop down menu labeled "Plot Type" and select "Frequency Domain".
 -  Set the number of samples to 16384
@@ -201,22 +219,21 @@ For CbM applications, most customers are typically interested in the frequency d
 
 You should see a nice plot like this when connected to the CN0532 sensor.\
 
-
 |image7|
 
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cora_sdcard_insert.jpg
-   :width: 400px
+   :width: 400
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cora_sdcard_connected.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cora_hw_config.jpg
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_login.png
-   :width: 300px
+   :width: 300
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_controls.png
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_block_diagram.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_capture_cn0532.png
-   :width: 500px
+   :width: 500

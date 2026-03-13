@@ -8,14 +8,25 @@ FIR Filter Pool
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/filters/firpool.png
    :alt: firpool.png
-   :width: 650px
+   :width: 650
 
 Description
 ===========
 
-The Algorithm implements a FIR filter of order N, having N+1 filter taps. Multiple coefficient sets can be added to the module, enabling the routing of multiple inputs through multiple independent FIR filters to a given output selection line. The FIR Filter Pool form has multiple tabs each having a particular routing selection and parameters between the inputs and outputs. The algorithm implements invert functionality which inverts the output samples and Reverse which access the loaded filter coefficient set in reverse for a particular selection.
+The Algorithm implements a FIR filter of order N, having N+1 filter taps.
+Multiple coefficient sets can be added to the module, enabling the routing of
+multiple inputs through multiple independent FIR filters to a given output
+selection line. The FIR Filter Pool form has multiple tabs each having a
+particular routing selection and parameters between the inputs and outputs. The
+algorithm implements invert functionality which inverts the output samples and
+Reverse which access the loaded filter coefficient set in reverse for a
+particular selection.
 
-The FIR filter delay line can be allocated per input channel or per output channel. The FIR Filter Pool module with delay line at input maintains a FIR delay line per input channel whereas the FIR filter pool module with delay line at output maintains a FIR delay line per output channel. In configurations where the number of inputs are large compared to the number of outputs
+The FIR filter delay line can be allocated per input channel or per output
+channel. The FIR Filter Pool module with delay line at input maintains a FIR
+delay line per input channel whereas the FIR filter pool module with delay line
+at output maintains a FIR delay line per output channel. In configurations where
+the number of inputs are large compared to the number of outputs
 
 Targets Supported
 =================

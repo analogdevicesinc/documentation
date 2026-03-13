@@ -9,7 +9,8 @@ Absolute Value
 Description
 -----------
 
-The Absolute Value block coverts all negative components of the input to positive components.
+The Absolute Value block coverts all negative components of the input to
+positive components.
 
 Targets Supported
 -----------------

@@ -10,9 +10,10 @@ The performance of the circuit could be demonstrated with the use of Analog Devi
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/figure1.png
    :align: center
-   :width: 700px
+   :width: 700
 
-Figure 1. 4 mA to 20 mA Single Supply Analog to Digital Conversion with Isolation (All Connections and Decoupling Not Shown)
+Figure 1. 4 mA to 20 mA Single Supply Analog to Digital Conversion with
+Isolation (All Connections and Decoupling Not Shown)
 
 Required Equipment
 ------------------
@@ -47,19 +48,20 @@ General Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/general_setup_block_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
 Installing the Software
 -----------------------
 
--  Load the evaluation software by placing the CN0336 evaluation software disc in the CD drive of the PC. You can also download the most up to date copy of the evaluation software from www.analog.com/CN0336. Open the file setup.exe.
+-  Load the evaluation software by placing the CN0336 evaluation software disc
+   in the CD drive of the PC. You can also download the most up to date copy of
+   the evaluation software from www.analog.com/CN0336. Open the file setup.exe.
 
 .. tip::
 
    \ NOTE: It is recommended that you install the `CN0336 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0336>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0336\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
-
 
    |image1|
 
@@ -75,12 +77,11 @@ Installing the Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
 \\\\\
-
-
 
 |image4|
 
@@ -91,7 +92,6 @@ Installing the Software
    It is recommended that you install the drivers to the default directory path
 
    C:\\C:\\Program Files\\Analog Devices\\SDP\\DriversR2\
-
 
    |image5|
 
@@ -110,7 +110,6 @@ Connecting the Hardware
 
    \ NOTE: Make sure that the jumper is positioned as shown below!
 
-
    |image7|
 
    \* Connect the 120-pin connector on the :adi:`SDP-PMD-IB1Z` (Interposer Board) to the 120-pin connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` (SDP-B Board)
@@ -123,12 +122,11 @@ Connecting the Hardware
 
 .. tip::
 
-   \ NOTE: Verify that the SDP Drivers are loaded properly. For that purpose open the Device manager and check if the SDP Board is recognized. If not repeat steps 1-3
-
+   \ NOTE: Verify that the SDP Drivers are loaded properly. For that purpose
+   open the Device manager and check if the SDP Board is recognized. If not
+   repeat steps 1-3
 
 \\\\\
-
-
 
 |image10|
 
@@ -136,7 +134,8 @@ Connecting the Hardware
 
    |image11|
 
-   \* Connect the input current source (Current calibrator) to J2 Terminal Block. The polarity is shown on the picture below
+   \* Connect the input current source (Current calibrator) to J2 Terminal
+   Block. The polarity is shown on the picture below
 
    |image12|
 
@@ -151,8 +150,6 @@ Software Control and Indicator Descriptions
 | |image13|
 | |image14|
 | \\\\\ |image15|
-
-
 
 - **Connect/Reconnect Button**
 - When this button is pressed, the SDP-B Board makes a USB connection to the CN0336 Board.  A connection to the SDP-B Board must be made to use the software.
@@ -179,7 +176,8 @@ Software Control and Indicator Descriptions
 - **System Status String Indicator**
 - This indicator displays a message to the user detailing the current state of the software.
 - **System Status LED Indicator**
-- This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.
+- This indicator displays the current state of the software in the form of an
+  LED.  There are four status LED colors.
 
 |resources-eval-user-guides-circuits-from-the-lab-cn0336-cn0336-sw-inactive.png| Inactive
 
@@ -191,7 +189,8 @@ Software Control and Indicator Descriptions
 - **Calibrate System Controls**
 - These controls allow the user to calibrate the CN0336 Board. For the calibration two current inputs in the range 4-20mA are required. For best performance the inputs have to be selected “4mA” and “20mA”. To perform the calibration follow the instructions on the screen.
 - **SDP Firmware Revision**
-- Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
+- Read only data. After the connection is established with the SDP Board, the
+  basic information for the controller can be found here.
 
 --------------
 
@@ -203,14 +202,12 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ NOTE: If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be
+   found at
 
    C:\\Program Files\\Analog Devices\\CN0336\\CN03366.exe\
 
-
 - Click the **Connect/Reconnect Button**. A window with a progress bar will load.
-
-
 
 |image16|
 
@@ -250,19 +247,15 @@ Saving Data to a Spreadsheet File
 -  Click the **OK Button**.
 -  Open with Notepad or similar. The saved data shows the ADC Codes (decimal)
 
-
-
 .. note::
 
    | The software saves the spreadsheet file as ASCII text with columns separated by tabs.
-
 
 | =====Registration=====
 
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0336-PMDZ?&v=RevA>`_ to receive all these great benefits and more!
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-install1.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-install2.png
@@ -271,23 +264,23 @@ Saving Data to a Spreadsheet File
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-install5.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-install6.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw1.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw2.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw3.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw3a.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw4.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw5.png
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-using_sw1.png
-   :width: 900px
+   :width: 900
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-usingsw2.png
-   :width: 900px
+   :width: 900
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-usingsw3.png
-   :width: 900px
+   :width: 900
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/usb-connection.png
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-savingdata.png
 

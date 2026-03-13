@@ -5,8 +5,8 @@ UTIL_VAR_FIFO
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/util_var_fifo/index.html\
 
-
-The UTIL_VAR_FIFO IP controls an external BRAM memory through which it allows the storage of a variable number of samples before triggering.
+The UTIL_VAR_FIFO IP controls an external BRAM memory through which it allows
+the storage of a variable number of samples before triggering.
 
 Features
 --------
@@ -74,12 +74,16 @@ Interface
 Detailed Description
 --------------------
 
-This IP controls an external BRAM. It has a two clock cycle latency even if bypassed. If valid is not always asserted, the latency is only one word instead of two.
+This IP controls an external BRAM. It has a two clock cycle latency even if
+bypassed. If valid is not always asserted, the latency is only one word instead
+of two.
 
 Design Guidelines
 -----------------
 
-The IP should be used with an external BRAM, which can be optimized for power or for speed, depending on the design requirements. It uses only one clock domain, so everything should be synchonous to that clock domain.
+The IP should be used with an external BRAM, which can be optimized for power or
+for speed, depending on the design requirements. It uses only one clock domain,
+so everything should be synchonous to that clock domain.
 
 References
 ----------

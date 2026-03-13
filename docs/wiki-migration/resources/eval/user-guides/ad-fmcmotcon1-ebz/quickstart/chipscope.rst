@@ -1,8 +1,6 @@
 AD-FMCMOTCON1-EBZ ISE Project with Chipscope
 ============================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,9 +17,8 @@ AD-FMCMOTCON1-EBZ ISE Project with Chipscope
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
-This guide provides some quick instructions on how to setup the AD-FMCMOTCON1-EBZ on either:
+This guide provides some quick instructions on how to setup the
+AD-FMCMOTCON1-EBZ on either:
 
 -  `ZED Board <http://www.zedboard.org/>`_, Rev C or later
 
@@ -41,7 +38,6 @@ Downloads
    :git-fpgahdl_xilinx:`ISE Project <motor_control/adi_zed_ise_rev2>` :git-fpgahdl_xilinx:`Chipscope Project <motor_control/adi_zed_ise_rev2/Chipscope>`
    
 
-
 System Setup
 ------------
 
@@ -56,9 +52,7 @@ Chipscope Interface
 
 The user interface uses Xilinx Chipscope 14.6. The project is available in the **Downloads** section. In order to be able to see the plots from section C and D, the triggers from UNIT:1 and UNIT:2 must be enabled.
 
-
 | |chipscope.png|
-
 
 | The A section is used for control.
 
@@ -117,4 +111,4 @@ Section C is used to represent graphically the speed of the motor.
 Section D is used to plot the currents and voltages described in section B.
 
 .. |chipscope.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/quickstart/chipscope.png
-   :width: 800px
+   :width: 800

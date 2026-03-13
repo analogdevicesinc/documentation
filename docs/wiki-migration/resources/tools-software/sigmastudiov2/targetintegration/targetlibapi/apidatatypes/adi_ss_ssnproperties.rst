@@ -17,7 +17,8 @@ Structure
 
 Description
 
-The structure ADI_SS_SSNPROPERTIES holds the current state and other properties of SigmaStudio+.
+The structure ADI_SS_SSNPROPERTIES holds the current state and other properties
+of SigmaStudio+.
 
 Fields
 

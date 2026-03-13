@@ -1,5 +1,3 @@
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -16,8 +14,6 @@
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 :doc:`ezLINX™ iCoupler® Isolated Interface Development Environment Homepage </wiki-migration/resources/eval/ezlinx>`
 
 Kernel Update Guide
@@ -29,7 +25,8 @@ Kernel Update Guide
 Option 1: Flashing uImage through FTP
 -------------------------------------
 
-Once the latest uImage file has been downloaded, place it in a folder bearing the same name as the kernel version then rename the update file “uImage”. .
+Once the latest uImage file has been downloaded, place it in a folder bearing
+the same name as the kernel version then rename the update file “uImage”. .
 
 FTP Server Software Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,24 +38,29 @@ Open the “Quick 'n Easy FTP Server Software” application:
 .. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/ftpserverconfiguration.jpg
    :align: center
 
-In the PASV settings choose the IP address that matches the network that the ezLINX board is connected to using the drop-down menu.
+In the PASV settings choose the IP address that matches the network that the
+ezLINX board is connected to using the drop-down menu.
 
-Navigate to the user account menu by clicking on “show user accounts” on the left-hand side of the application window:
+Navigate to the user account menu by clicking on “show user accounts” on the
+left-hand side of the application window:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/useraccounts.jpg
    :align: center
 
-Click on the “browse” button, select the directory where the image file is saved and click “OK”
+Click on the “browse” button, select the directory where the image file is saved
+and click “OK”
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/browseforfolder.jpg
    :align: center
 
-Navigate to the server log page by clicking on “show server log” on the left-hand side of the application window:
+Navigate to the server log page by clicking on “show server log” on the
+left-hand side of the application window:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/servertrace.jpg
    :align: center
 
-Click on the “start” button. A message will display in the server log to indicate that the FTP Server has been started:
+Click on the “start” button. A message will display in the server log to
+indicate that the FTP Server has been started:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/servertracestarted.jpg
    :align: center
@@ -66,26 +68,33 @@ Click on the “start” button. A message will display in the server log to ind
 Sending Update File Request From the ezLINX® PC Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Connect the ezLINX® board to the host PC via the supplied USB cable and to the power supply via the supplied AC adapter.
+Connect the ezLINX® board to the host PC via the supplied USB cable and to the
+power supply via the supplied AC adapter.
 
-Open the ezLINX PC application and navigate to the Board configuration window by clicking on the picture of the ezLINX board in the bottom left corner:
+Open the ezLINX PC application and navigate to the Board configuration window by
+clicking on the picture of the ezLINX board in the bottom left corner:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/pcapplicationinterface.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Connect the ezLINX board by connecting to the same network.
 
-Tick the box marked “Update Firmware” and in the box marked “server IP” type in the IP address used previously in the PASV settings (the address that was selected from the drop down menu). Click on the “send” button and a message will briefly display indicating that the update file has been sent and that the PC application should be reset. Now close the application window.
+Tick the box marked “Update Firmware” and in the box marked “server IP” type in
+the IP address used previously in the PASV settings (the address that was
+selected from the drop down menu). Click on the “send” button and a message will
+briefly display indicating that the update file has been sent and that the PC
+application should be reset. Now close the application window.
 
 FTP Server Software Data Log
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Return to the server log window on the FTP server software. After a brief period of time the server log will fill with data:
+Return to the server log window on the FTP server software. After a brief period
+of time the server log will fill with data:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/updatecomplete.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 The board will reset itself after a brief period of time.
 
@@ -97,7 +106,7 @@ Reconnecting to the ezLINX® PC Application
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/reconnectionofboard.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 The embedded version has now been updated.
 
@@ -106,13 +115,16 @@ Option 2: Flashing uImage through UART
 
 To flash the ezLINX board through UART, follow the following steps:
 
--  Step 1: Connect the RS-232 port of the PC to the UART1 connector J4 of the board (If the PC does not contain an RS-232 port you may use an external USB converter)
-
+-  Step 1: Connect the RS-232 port of the PC to the UART1 connector J4 of the
+   board (If the PC does not contain an RS-232 port you may use an external USB
+   converter)
 
 |image2|
 
 -  Step 2: Open HyperTerminal (Hyperterminal is delivered with windows XP and no longer exist with newer versions so we suggest to use TeraTerm instead) and set the Baud rate to 57600, Data bit :8, Parity: none, flow control :none,
--  Step 3: Upon turning on the board, uBoot is loaded and you should Press [Enter] or any key in the HyperTerminal within 5 sec to avoid auto-boot for the first time. Then you should see in the HyperTerminal the ‘bfin>’ prompt.
+-  Step 3: Upon turning on the board, uBoot is loaded and you should Press
+   [Enter] or any key in the HyperTerminal within 5 sec to avoid auto-boot for
+   the first time. Then you should see in the HyperTerminal the ‘bfin>’ prompt.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/kernelupdateguide/flashingthroughuarthyperterminal.jpg
    :align: center

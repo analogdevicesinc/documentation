@@ -30,7 +30,9 @@ Output Pins
 Algorithm Description
 ---------------------
 
-The Mono2Stereo algorithm uses filtering processing to create two separate channels from a single source. There is no user control necessary for this algorithm. The block accepts a single input and the output is a stereo signal.
+The Mono2Stereo algorithm uses filtering processing to create two separate
+channels from a single source. There is no user control necessary for this
+algorithm. The block accepts a single input and the output is a stereo signal.
 
 Example
 -------

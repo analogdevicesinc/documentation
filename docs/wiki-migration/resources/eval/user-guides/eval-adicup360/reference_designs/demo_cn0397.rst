@@ -14,7 +14,7 @@ The **ADuCM360_demo_cn0397** application perform ADC readings for all 3 channels
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/cn0397_adicup.png
    :align: left
-   :width: 515px
+   :width: 515
 
 The 16-bits ADC data are received using **SPI interface** of the EVAL-ADICUP360 board. The **UART interface** (**115200** baud rate and **8-bits** data length) is used to send(and to receive) data to (from) a terminal window.
 
@@ -34,7 +34,7 @@ Beside **light intensity** and **light concentration** values, for each channel 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/cn0397_demo_1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Demo Requirements
 -----------------
@@ -61,27 +61,34 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
+-  To program the base board, set the jumpers/switches as shown in the next
+   figure. The important jumpers/switches are highlighted in red.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/switch_cn0397.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect the **EVAL-CN0397-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Configure the Chip select jumper (**P1**) on the EVAL-CN0397-ARDZ to the 1-2 position.
--  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
+-  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
+   Debug USB.(P14)
 
 Obtaining the Source Code
 -------------------------
 
-There are two basic ways to program the ADICUP360 with the software for the CN0397.
+There are two basic ways to program the ADICUP360 with the software for the
+CN0397.
 
 -  Dragging and Dropping the .Bin to the MBED drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM360_demo_cn0397** demo can be found here:
 
@@ -98,11 +105,9 @@ The software for the **ADuCM360_demo_cn0397** demo can be found here:
    -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0397 Source Code <projects/ADuCM360_demo_cn0397>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
-
 
 Configuring the Software Parameters
 -----------------------------------
@@ -139,12 +144,13 @@ The **CN0397** needs to be calibrated first before using it in order to achieve 
 If the calibration routine is enabled (check *USE_CALIBRATION* parameter) in a terminal window will pop up messages asking the user to cover the photodiodes one of the time so the calibration can be performed. With the photodiodes covered press **<ENTER>** button on the key board and the next message will prompt to cover the next photodiodes.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/cn0397_demo_2.png
-   :width: 1000px
+   :width: 1000
 
-Once all the channels have been calibrated, the circuit is now ready for use. The output data will be available for each LED.
+Once all the channels have been calibrated, the circuit is now ready for use.
+The output data will be available for each LED.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/cn0397_demo_3.png
-   :width: 1000px
+   :width: 1000
 
 How to use the Tools
 --------------------
@@ -166,7 +172,10 @@ Project structure
 
 The **ADuCM360_demo_cn0397** is a C project that uses ADuCM36x C/C++ Project structure.
 
-This project contains: system initialization part - disabling watchdog, setting system clock, enabling clock for peripherals; port configuration for ADC, SPI read/write; configuring and reading from AD7798, UART read/write functions; calibration and calculation of light information.
+This project contains: system initialization part - disabling watchdog, setting
+system clock, enabling clock for peripherals; port configuration for ADC, SPI
+read/write; configuring and reading from AD7798, UART read/write functions;
+calibration and calculation of light information.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/cn0397_project_structure.jpg
    :align: left

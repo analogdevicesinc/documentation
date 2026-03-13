@@ -15,30 +15,48 @@ Evaluation Boards
 Description
 -----------
 
-The ADP5520/01 driver utilizes several Linux device-driver subsystems and provides various software interfaces. It is therefore implemented as a multifunction device (MFD). In this particular case the ADP5520 backlight driver and I/O expander, concurrently leverages the Linux backlight, LED, GPIO, and input subsystems for its keypad functionality.
+The ADP5520/01 driver utilizes several Linux device-driver subsystems and
+provides various software interfaces. It is therefore implemented as a
+multifunction device (MFD). In this particular case the ADP5520 backlight driver
+and I/O expander, concurrently leverages the Linux backlight, LED, GPIO, and
+input subsystems for its keypad functionality.
 
-<graphviz dot 650x200> digraph { size="8,5" ADP5520_MFD_CORE [shape=box] ADP5520_BACKLIGHT [shape=box] ADP5520_GPIO[shape=box] ADP5520_LED [shape=box] ADP5520_KEYPAD [shape=box] ADP5520_MFD_CORE -> ADP5520_BACKLIGHT [dir=none]; ADP5520_MFD_CORE -> ADP5520_LED [dir=none]; ADP5520_MFD_CORE -> ADP5520_GPIO [dir=none]; ADP5520_MFD_CORE -> ADP5520_KEYPAD [dir=none]; } </graphviz>
+<graphviz dot 650x200> digraph { size="8,5" ADP5520_MFD_CORE [shape=box]
+ADP5520_BACKLIGHT [shape=box] ADP5520_GPIO[shape=box] ADP5520_LED [shape=box]
+ADP5520_KEYPAD [shape=box] ADP5520_MFD_CORE -> ADP5520_BACKLIGHT [dir=none];
+ADP5520_MFD_CORE -> ADP5520_LED [dir=none]; ADP5520_MFD_CORE -> ADP5520_GPIO
+[dir=none]; ADP5520_MFD_CORE -> ADP5520_KEYPAD [dir=none]; } </graphviz>
 
 Core
 ----
 
-The ADP5520/01 core driver in drivers/mfd provides common services for the subsystem drivers. These services include register access, control and shared interrupt management.
+The ADP5520/01 core driver in drivers/mfd provides common services for the
+subsystem drivers. These services include register access, control and shared
+interrupt management.
 
-The core registers/enumerates platform devices for the various subsystems via the platform device and driver system.
+The core registers/enumerates platform devices for the various subsystems via
+the platform device and driver system.
 
-When a platform driver for one of the subsystems is instantiated, the core initializes the chip (which may be specified by the platform data).
+When a platform driver for one of the subsystems is instantiated, the core
+initializes the chip (which may be specified by the platform data).
 
-The ADP5520/01 platform drivers follow the standard driver model convention, where discovery/enumeration is handled outside the drivers, and drivers provide probe() and remove() methods.
+The ADP5520/01 platform drivers follow the standard driver model convention,
+where discovery/enumeration is handled outside the drivers, and drivers provide
+probe() and remove() methods.
 
 Resources
 ---------
 
-Each peripheral (subsystem device) has a view of the device which is implicitly narrowed to the specific set of resources that peripheral requires in order to function correctly.
+Each peripheral (subsystem device) has a view of the device which is implicitly
+narrowed to the specific set of resources that peripheral requires in order to
+function correctly.
 
 Configuration
 -------------
 
-The device driver uses a set of platform data to pass configurations through to the core and the subsidiary drivers so that there can be support for multiple ADP5520/01 devices built into a single kernel image.
+The device driver uses a set of platform data to pass configurations through to
+the core and the subsidiary drivers so that there can be support for multiple
+ADP5520/01 devices built into a single kernel image.
 
 Software configurable features
 ------------------------------
@@ -100,15 +118,21 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
-
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
 .. important::
 
-   Since Keypad, GPIO and optional LEDs (2, 3) are multiplexed, you need to avoid double configurations. Please refer to the table below.
-
+   Since Keypad, GPIO and optional LEDs (2, 3) are multiplexed, you need to
+   avoid double configurations. Please refer to the table below.
 
 +-------------+---------+---------+---------+---------+---------+---------+---------+---------+
 | ADP5520 PIN | R3      | R2      | R1      | R0      | C0      | C1      | C2      | C3      |
@@ -124,52 +148,72 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
 
    Please refer to `include/linux/mfd/adp5520.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/mfd/adp5520.h>`_ for detailed configuration defines.
 
-
 Backlight
 ---------
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_backlight_data{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_backlight_data{} c
+linux-kernel>
 
 LED
 ---
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_leds[] c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_leds[] c
+linux-kernel>
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_leds_data{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_leds_data{} c
+linux-kernel>
 
 GPIO
 ----
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_gpio_data{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_gpio_data{} c
+linux-kernel>
 
 Keypad
 ------
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_keymap[] c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_keys_data{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_keymap[] c
+linux-kernel> <source
+trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_keys_data{} c
+linux-kernel>
 
 ADP5520/ADP5501 MFD Core Support
 --------------------------------
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
 
-
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_pdev_data{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:/CONFIG_PMIC_ADP5520/2-/#if/ c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_pdev_data{} c
+linux-kernel> <source
+trunk/arch/blackfin/mach-bf537/boards/stamp.c:/CONFIG_PMIC_ADP5520/2-/#if/ c
+linux-kernel>
 
 .. tip::
 
-   ADP5520 IRQ Usage: If you aren’t planning to utilize the Keypad interface, you don’t need to specify an IRQ in bfin_i2c_board_info.
-
+   ADP5520 IRQ Usage: If you aren’t planning to utilize the Keypad interface,
+   you don’t need to specify an IRQ in bfin_i2c_board_info.
 
 Adding Linux driver support
 ===========================
 
-Fist of all you need to enable i2c support followed by the ADP5520 MFD Core Driver. Then you may select individual components like LCD backlight, LEDs, GPIOs and Keypad under the corresponding menus.
+Fist of all you need to enable i2c support followed by the ADP5520 MFD Core
+Driver. Then you may select individual components like LCD backlight, LEDs,
+GPIOs and Keypad under the corresponding menus.
 
 ADP5520 MFD Core Support
 ------------------------
@@ -181,7 +225,6 @@ ADP5520 MFD Core Support
            <*> Blackfin TWI I2C support
            Or:
            <*> GPIO-based bitbanging I2C
-
 
    Device Drivers  --->
        Multifunction device drivers  --->
@@ -235,9 +278,11 @@ Hardware configuration
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/adp5520_brd.jpg
    :alt: ADP5520 Demo Mother/Daughter Board
-   :width: 800px
+   :width: 800
 
-There is no dedicated Blackfin STAMP evaluation board for the ADP5520. During test and driver development we used the ADP5520 Demo Mother/Daughter Board. Connect the ADP5520 Demo Mother to an USB port.
+There is no dedicated Blackfin STAMP evaluation board for the ADP5520. During
+test and driver development we used the ADP5520 Demo Mother/Daughter Board.
+Connect the ADP5520 Demo Mother to an USB port.
 
 It can be easily wired to the Blackfin STAMP TWI/I2C header.
 
@@ -329,7 +374,8 @@ GPIO
    root:/sys/devices/virtual/gpio/gpiochip50> cd
    root:/>
 
-Note that you will have to enable the event_test utility under "Blackfin test programs" in your user space configuration.
+Note that you will have to enable the event_test utility under "Blackfin test
+programs" in your user space configuration.
 
 ::
 
@@ -392,11 +438,9 @@ Keypad
 More Information
 ================
 
-
 .. note::
 
    See `resources/tools-software/linux-drivers/snippets <https://wiki.analog.com/resources/tools-software/linux-drivers/snippets#input_pointers>`_
-
 
 .. [1]
    ADP5520 only

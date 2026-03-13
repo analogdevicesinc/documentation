@@ -5,13 +5,15 @@ AD469X HDL Reference Design
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad469x_evb/index.html\
 
-
 Overview
 --------
 
-The AD469X HDL reference design provides all the interfaces that are necessary to interact with the devices on the AD469X eval board.
+The AD469X HDL reference design provides all the interfaces that are necessary
+to interact with the devices on the AD469X eval board.
 
-The design has a SPI Engine instance to control and acquire data from the AD4696 16-bit precisions ADC, providing support to capture continuous samples at maximum sampling rate. Currently the design supports the Zedboard.
+The design has a SPI Engine instance to control and acquire data from the AD4696
+16-bit precisions ADC, providing support to capture continuous samples at
+maximum sampling rate. Currently the design supports the Zedboard.
 
 Used devices
 ~~~~~~~~~~~~
@@ -239,7 +241,6 @@ HDL Downloads
    -  :git-hdl:`AD469X HDL Project. <projects/ad469x_fmc>`
    
 
-
 Software sources
 ----------------
 
@@ -250,4 +251,3 @@ Software sources
    -  :git-no-OS:`No-OS Driver. <drivers/adc/ad469x>`
    -  :git-no-OS:`No-OS Project. <projects/ad469x_fmcz>`
    
-

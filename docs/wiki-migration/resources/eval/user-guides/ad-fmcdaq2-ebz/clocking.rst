@@ -6,11 +6,20 @@ Overview
 
 The :adi:`AD9523-1` is responsible for generating and distributing all clock signals used on the AD-FMCDAQ2-EBZ platform.
 
-The AD-FMCDAQ2-EBZ platform only uses the second PLL of the AD9523-1 with the reference for the PLL being sourced from a external 125 MHz crystal. The PLL2 VCO has a locking range of 2940 MHz to 3100 MHz, with the external reference being 125 MHz the nominal output frequency of the VCO is 3000 MHz.
+The AD-FMCDAQ2-EBZ platform only uses the second PLL of the AD9523-1 with the
+reference for the PLL being sourced from a external 125 MHz crystal. The PLL2
+VCO has a locking range of 2940 MHz to 3100 MHz, with the external reference
+being 125 MHz the nominal output frequency of the VCO is 3000 MHz.
 
-The output of the PLL VCO is down divided to the target frequencies in two steps. First it is divided by either 3, 4 or 5, which gives a frequency of 1000 MHz, 750 MHz or 600 MHz respectively. This is the master clock frequency for the data converter system and shared between the DAC and ADC data path, all generated clocks are based of this master clock.
+The output of the PLL VCO is down divided to the target frequencies in two
+steps. First it is divided by either 3, 4 or 5, which gives a frequency of 1000
+MHz, 750 MHz or 600 MHz respectively. This is the master clock frequency for the
+data converter system and shared between the DAC and ADC data path, all
+generated clocks are based of this master clock.
 
-The master clock is distributed to each clock output and further down divided by an integer divider in the range of 1-1024. On the AD-FMCDAQ2-EBZ platform 8 different clocks are generated this way, 4 each for the DAC and ADC datapath.
+The master clock is distributed to each clock output and further down divided by
+an integer divider in the range of 1-1024. On the AD-FMCDAQ2-EBZ platform 8
+different clocks are generated this way, 4 each for the DAC and ADC datapath.
 
 ============ ==========================
 Clock Output Function
@@ -26,19 +35,45 @@ OUT13        ADC converter clock
 Other        Unused
 ============ ==========================
 
-The ADC and DAC converter clocks are the reference clock for the ADC and DAC respectively and determine the sampling rate of the converter. If a deterministic latency relationship between the DAC and ADC datapath is required the DAC and ADC clock need to be in a (sub-)harmonic relationship to each other, otherwise their relationship can be chosen freely.
+The ADC and DAC converter clocks are the reference clock for the ADC and DAC
+respectively and determine the sampling rate of the converter. If a
+deterministic latency relationship between the DAC and ADC datapath is required
+the DAC and ADC clock need to be in a (sub-)harmonic relationship to each other,
+otherwise their relationship can be chosen freely.
 
-The DAC has built-in interpolation filters that allow interpolation by a factor of 2, 4 or 8. The interpolation factor and the DAC converter sample-rate decide the DAC data-input-rate. The data-input-rate is equal to the sample-rate divided by the interpolation factor.
+The DAC has built-in interpolation filters that allow interpolation by a factor
+of 2, 4 or 8. The interpolation factor and the DAC converter sample-rate decide
+the DAC data-input-rate. The data-input-rate is equal to the sample-rate divided
+by the interpolation factor.
 
-The ADC has built-in decimation filters that allow interpolation by a factor of 2, 4, 8 or 16. The decimation factor and the ADC converter sample-rate decide the ADC data-output-rate. The data-output-rate is equal to the sample-rate divided by the decimation factor.
+The ADC has built-in decimation filters that allow interpolation by a factor of
+2, 4, 8 or 16. The decimation factor and the ADC converter sample-rate decide
+the ADC data-output-rate. The data-output-rate is equal to the sample-rate
+divided by the decimation factor.
 
-The JESD204 lane rates depend on the data-output/input-rates. On the AD-FMCDAQ2-EBZ both for the ADC and the DAC the lane-rate is equal to 10 times the data-rate.
+The JESD204 lane rates depend on the data-output/input-rates. On the
+AD-FMCDAQ2-EBZ both for the ADC and the DAC the lane-rate is equal to 10 times
+the data-rate.
 
-The ADC FPGA reference clock is the reference clock for the JESD204 clock-data-recovery (CDR) circuit as well the ADC data path inside the FPGA. Similarly the DAC FPGA reference clock is the reference clock for the JESD204 transmit PLL and the DAC data path inside the FPGA. These clocks should be set to the JESD204 lane-rate divided by 20.
+The ADC FPGA reference clock is the reference clock for the JESD204
+clock-data-recovery (CDR) circuit as well the ADC data path inside the FPGA.
+Similarly the DAC FPGA reference clock is the reference clock for the JESD204
+transmit PLL and the DAC data path inside the FPGA. These clocks should be set
+to the JESD204 lane-rate divided by 20.
 
-The SYSREF clocks are used for synchronization and to establish deterministic latency between the different components. The SYSREF clock must be a integer multiple of the local-multi-frame-clock (LMFC). The LMFC is a clock that is generated internally in the converters and FPGA and on the AD-FMCDAQ2-EBZ platform it's rate is 1/32 of the converter data-input/output-rate. This means the SYSREF clock frequency must be integer down divided of the converter data-rate / 32 (I.e. data-rate / {32, 64, 96, 128, ...}).
+The SYSREF clocks are used for synchronization and to establish deterministic
+latency between the different components. The SYSREF clock must be a integer
+multiple of the local-multi-frame-clock (LMFC). The LMFC is a clock that is
+generated internally in the converters and FPGA and on the AD-FMCDAQ2-EBZ
+platform it's rate is 1/32 of the converter data-input/output-rate. This means
+the SYSREF clock frequency must be integer down divided of the converter
+data-rate / 32 (I.e. data-rate / {32, 64, 96, 128, ...}).
 
-The SYSREF clocks going to the converter and the FPGA must be configured for the same frequency. If a deterministic latency relationship between the DAC and ADC datapath is required the DAC and ADC SYSREF signals must be configured for the same frequency, otherwise the DAC and ADC datapath SYSREF clocks can be configured with different frequencies.
+The SYSREF clocks going to the converter and the FPGA must be configured for the
+same frequency. If a deterministic latency relationship between the DAC and ADC
+datapath is required the DAC and ADC SYSREF signals must be configured for the
+same frequency, otherwise the DAC and ADC datapath SYSREF clocks can be
+configured with different frequencies.
 
 +-----------------------+-------------------------------------------------------+--------------------------------------+
 | Clock                 | Frequency range                                       | Comments                             |
@@ -66,7 +101,8 @@ Examples
 fDAC = 1000 MSPS, fADC = 1000 MSPS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the default AD-FMCDAQ2-EBZ configuration with both converters running at the maximum supported samplerate of 1 GSPS.
+This is the default AD-FMCDAQ2-EBZ configuration with both converters running at
+the maximum supported samplerate of 1 GSPS.
 
 ======================== ========== ===============
 Clock                    Frequency  Divider setting
@@ -87,7 +123,8 @@ DAC JESD204 lane rate    10 Gbps
 fDAC = 250 MSPS, fADC = 375 MSPS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Non-harmonic DAC and ADC sampling rate (No deterministic latency between DAC and ADC datapath).
+Non-harmonic DAC and ADC sampling rate (No deterministic latency between DAC and
+ADC datapath).
 
 ======================== ============= ===============
 Clock                    Frequency     Divider setting
@@ -108,33 +145,51 @@ DAC JESD204 lane rate    2.5 Gbps
 Replacing the Crystal Oscillator
 --------------------------------
 
-On the AD-FMCDAQ2-EBZ platform the reference clock signal for the AD9523-1 PLL2 is provided by a crystal oscillator (XO). The default populated crystal oscillator has a output frequency of 125 MHz, this results in a nominal AD9523-1 VCO frequency of 3 GHz, all other clock signals are integer down-divided versions of the signal.
+On the AD-FMCDAQ2-EBZ platform the reference clock signal for the AD9523-1 PLL2
+is provided by a crystal oscillator (XO). The default populated crystal
+oscillator has a output frequency of 125 MHz, this results in a nominal AD9523-1
+VCO frequency of 3 GHz, all other clock signals are integer down-divided
+versions of the signal.
 
-Other VCO frequencies are possible by replacing the XO with a suitable replacement producing a different frequency. Replacing the XO might require changing the VCO feedback divider settings to produce a valid VCO frequency. The VCO frequency must be in the range of 2940 MHz to 3100 MHz, otherwise the PLL2 will not lock.
+Other VCO frequencies are possible by replacing the XO with a suitable
+replacement producing a different frequency. Replacing the XO might require
+changing the VCO feedback divider settings to produce a valid VCO frequency. The
+VCO frequency must be in the range of 2940 MHz to 3100 MHz, otherwise the PLL2
+will not lock.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/ad9523_pll2.png
    :align: right
 
-The reference frequency can optionally be divided by the R2 (1-32) reference divider or multiplied by 2 using the frequency doubler. The result of this is the phase-frequency-detector (PFD) input frequency. The maximum PFD input frequency is 259 MHz. If the reference frequency exceeds this value the reference divider must be used to bring it into a valid range.
+The reference frequency can optionally be divided by the R2 (1-32) reference
+divider or multiplied by 2 using the frequency doubler. The result of this is
+the phase-frequency-detector (PFD) input frequency. The maximum PFD input
+frequency is 259 MHz. If the reference frequency exceeds this value the
+reference divider must be used to bring it into a valid range.
 
 ``fPFD`` = ``fReference`` / ``R2`` \* ``frequency_doubler``
 
-The VCO frequency is the PFD input frequency multiplied by the VCO feedback divider (N2).
+The VCO frequency is the PFD input frequency multiplied by the VCO feedback
+divider (N2).
 
 ``fVCO`` = ``fPFD`` \* ``N2``
 
-The feedback divider is the combination of two counters, the A and B counter. These are the settings that are programmed to the AD9523-1 configuration registers.
+The feedback divider is the combination of two counters, the A and B counter.
+These are the settings that are programmed to the AD9523-1 configuration
+registers.
 
 ``N2`` = ``4`` \* ``B`` + ``A``
 
-Rearranging these formulas it is possible to compute the A and B counter settings from a known reference and a desired VCO frequency.
+Rearranging these formulas it is possible to compute the A and B counter
+settings from a known reference and a desired VCO frequency.
 
 ``N2`` = ``fVCO`` / ``fPFD`` ``A`` = ``N2`` % ``4`` ``B`` = ``N2`` / ``4``
 
 Example: fXO = 122.88 MHz, fVCO = 2949.12 MHz
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example the frequency doubler is bypassed and the reference divider is set to 1. That means the PFD input frequency is equal to the reference frequency.
+In this example the frequency doubler is bypassed and the reference divider is
+set to 1. That means the PFD input frequency is equal to the reference
+frequency.
 
 ``N2`` = ``fVCO`` / ``fPFD`` => ``N2`` = ``2949.12`` / ``122.88`` = ``24`` ``A`` = ``N2`` % ``4`` => ``A`` = ``24`` % ``4`` = ``0`` ``B`` = ``N2`` / ``4`` => ``B`` = ``24`` / ``4`` = ``6``
 
@@ -171,7 +226,8 @@ PLL2 VCO output divider (M1)    ``adi,pll2-vco-diff-m1``
 
 Each clock output of the AD9523-1 has its own subnode in the devicetree. This subnode is used to select the configuration of the clock output. A clock output node is identified by its ``reg`` property which corresponds to the clock output channel number. E.g. the on the AD-FMCDAQ2-EBZ the ADC converter clock is sourced from output 13, so the node for the ADC converter clock has its ``reg`` property set to 13. For a list of all used clock outputs and their function see above.
 
-For changing the clocking configuration only two of the properties need to be changed, all other properties should remain at their default value.
+For changing the clocking configuration only two of the properties need to be
+changed, all other properties should remain at their default value.
 
 ====================== =======================
 Hardware configuration Property name
@@ -193,4 +249,8 @@ Output phase           ``adi,divider-phase``
    //      adi,output-dis;
        };
 
-Based on the data output and input rates the converter drivers will automatically calculate the JESD204 lane rate and propagate the configuration to the JESD204 receiver and transmitter drivers. These drivers will update the high-speed transceiver configuration accordingly. This means no additional manual configuration is necessary to setup the JESD204 link.
+Based on the data output and input rates the converter drivers will
+automatically calculate the JESD204 lane rate and propagate the configuration to
+the JESD204 receiver and transmitter drivers. These drivers will update the
+high-speed transceiver configuration accordingly. This means no additional
+manual configuration is necessary to setup the JESD204 link.

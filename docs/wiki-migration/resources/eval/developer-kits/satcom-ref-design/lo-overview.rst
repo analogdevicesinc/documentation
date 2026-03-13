@@ -26,7 +26,11 @@ Transmit LO Path
 Simulated Performance
 ---------------------
 
-Simulation files have been created for operation of the PLL within ADISimPLL Version 5.60.05. The attached ZIP file contains ADIsimPLL design files for operation at 10 GHz, 15 GHz and 32 GHz (these frequencies can be adjusted). These design files can be used to simulate phase noise/jitter, lock times, and spurs.
+Simulation files have been created for operation of the PLL within ADISimPLL
+Version 5.60.05. The attached ZIP file contains ADIsimPLL design files for
+operation at 10 GHz, 15 GHz and 32 GHz (these frequencies can be adjusted).
+These design files can be used to simulate phase noise/jitter, lock times, and
+spurs.
 
 `tunable_lo_adf4371_8-32_ghz.zip <https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/tunable_lo_adf4371_8-32_ghz.zip>`_
 

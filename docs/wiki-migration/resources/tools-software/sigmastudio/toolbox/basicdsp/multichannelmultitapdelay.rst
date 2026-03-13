@@ -3,8 +3,10 @@ Multi-Channel Multi-Tap Delay
 
 :doc:`Click here to return to the Basic DSP section. </wiki-migration/resources/tools-software/sigmastudio/toolbox/basicdsp>`
 
-
-The Multi Channel Multi Tap Delay cell provides a variable delay for each output from one of the selected input channel. Each input signal is called as channel and output is called as Tap. The amount of delay for each tap can be modified in real time by updating the current delay.
+The Multi Channel Multi Tap Delay cell provides a variable delay for each output
+from one of the selected input channel. Each input signal is called as channel
+and output is called as Tap. The amount of delay for each tap can be modified in
+real time by updating the current delay.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/multichannelmultitapdelay.png
    :align: center

@@ -1,15 +1,27 @@
 EVALUATING THE AD9625 ANALOG-TO-DIGITAL CONVERTER
 =================================================
 
-
 INTRODUCTION
 ============
 
-This user guide describes the AD9625 evaluation board, AD9625-2.5EBZ, which provides all of the support circuitry required to operate this part in the various modes and configurations. The application software used to interface with the device is also described.
+This user guide describes the AD9625 evaluation board, AD9625-2.5EBZ, which
+provides all of the support circuitry required to operate this part in the
+various modes and configurations. The application software used to interface
+with the device is also described.
 
-The AD9625 data sheet provides additional information and should be consulted when using the evaluation board. All documents and software tools are available at www.analog.com/hsadcevalboard. For additional information or questions, send an email to highspeed.converters@analog.com.
+The AD9625 data sheet provides additional information and should be consulted
+when using the evaluation board. All documents and software tools are available
+at www.analog.com/hsadcevalboard. For additional information or questions, send
+an email to highspeed.converters@analog.com.
 
-The AD9625 is a 12-bit ADC with sampling speeds of up to 2500 MSPS. It is designed to support wideband applications where high sample rates, small size, wide bandwidth and versatility are desired. The ADC core features a multistage, differential pipelined architecture with integrated output error correction logic. This reference design includes the device data capture board via the JESD204B serial interface and the SPI interface. The samples are written to the internal memory on the FPGA capture board. It allows programming the device and monitoring its internal registers via SPI.
+The AD9625 is a 12-bit ADC with sampling speeds of up to 2500 MSPS. It is
+designed to support wideband applications where high sample rates, small size,
+wide bandwidth and versatility are desired. The ADC core features a multistage,
+differential pipelined architecture with integrated output error correction
+logic. This reference design includes the device data capture board via the
+JESD204B serial interface and the SPI interface. The samples are written to the
+internal memory on the FPGA capture board. It allows programming the device and
+monitoring its internal registers via SPI.
 
 FEATURES
 ========
@@ -22,12 +34,11 @@ FEATURES
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9625/ad9625_board_with_capture_board.png
    :align: center
-   :width: 900px
+   :width: 900
 
 .. container:: centeralign
 
    *Figure 1. AD9625 Evaluation Board Connection—*\ :adi:`AD9625-2.5EBZ <AD9625>`\ *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
-
 
 REQUIRED HARDWARE
 =================
@@ -83,16 +94,29 @@ EASY START Steps
 
 1. Download and Install VisualAnalog. For the latest updates to the software, check the Analog Devices website at :adi:`High Speed ADC Eval Boards <hsadcevalboard>`.
 
-2. Connect the ADC evaluation board to the ADC capture board. Insert the 12V wallwart adapter to the ADC capture board. The ADC capture board will provide power to the ADC evaluation board through the FMC connector.
+2. Connect the ADC evaluation board to the ADC capture board. Insert the 12V
+   wallwart adapter to the ADC capture board. The ADC capture board will provide
+   power to the ADC evaluation board through the FMC connector.
 
-3. Connect the provided USB cable to the ADC capture board and to an available USB port on the computer.
+3. Connect the provided USB cable to the ADC capture board and to an available
+   USB port on the computer.
 
-4. The ADC capture board is supplied with a wall mount switching power supply. Connect the supply end to an ac wall outlet rated for 100 Vac to 240 Vac at 47 Hz to 63 Hz. The other end is terminated with a plug that connects to the PCB at P1301. The supply is fused and conditioned before connecting to the regulators that supply the proper bias to the entire HSC-ADC-EVALEZ capture board.
+4. The ADC capture board is supplied with a wall mount switching power supply.
+   Connect the supply end to an ac wall outlet rated for 100 Vac to 240 Vac at
+   47 Hz to 63 Hz. The other end is terminated with a plug that connects to the
+   PCB at P1301. The supply is fused and conditioned before connecting to the
+   regulators that supply the proper bias to the entire HSC-ADC-EVALEZ capture
+   board.
 
-5. Once the USB cable is connected to both the computer and the HSC-ADC-EVALEZ board, and power is applied, the USB driver starts to install. The Found New Hardware Wizard opens and prompts you through the automated install process.
+5. Once the USB cable is connected to both the computer and the HSC-ADC-EVALEZ
+   board, and power is applied, the USB driver starts to install. The Found New
+   Hardware Wizard opens and prompts you through the automated install process.
 
-6. (Optional) Verify in the Windows device manager that Analog Devices HADV6-FMC is listed under the USB hardware.
+6. (Optional) Verify in the Windows device manager that Analog Devices HADV6-FMC
+   is listed under the USB hardware.
 
-7. Make sure the evaluation boards are powered on before connecting the analog input and clock. Connect the appropriate analog input (which should be filtered with a band-pass filter) and low jitter clock signal.
+7. Make sure the evaluation boards are powered on before connecting the analog
+   input and clock. Connect the appropriate analog input (which should be
+   filtered with a band-pass filter) and low jitter clock signal.
 
 8. Refer to the VisualAnalog User Manual at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for detailed software operating instructions.

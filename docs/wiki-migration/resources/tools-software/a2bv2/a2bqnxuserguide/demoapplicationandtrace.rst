@@ -3,7 +3,8 @@
 Demo Application and A2B stack features on QNX
 ==============================================
 
-Demo application a2bapp-qnx and a2b stack in QNX supports several features that can be configured during build time.
+Demo application a2bapp-qnx and a2b stack in QNX supports several features that
+can be configured during build time.
 
 Build Time options
 ------------------
@@ -16,34 +17,46 @@ The default demo application uses the bus configuration file adi_a2b_busconfig.c
 Sequence Chart
 ~~~~~~~~~~~~~~
 
-To enable the sequence chart feature, define the macro A2B_FEATURE_SEQ_CHART in file features.h in ADI_A2B_Software-QNX-RelX.Y.Z/Target/examples/demo/a2b-qnx/a2bapp-qnx/a2bstack- pal/platform/a2b folder. The sequence chart file can be set with the macro A2B_CONF_DEFAULT_SEQCHART_CHAN_URL in the a2bapp_defs.h file in ADI_A2B_Software-QNX- RelX.Y.Z/Target/examples/demo/a2b-qnx/a2bapp-qnx/app/ folder.
+To enable the sequence chart feature, define the macro A2B_FEATURE_SEQ_CHART in
+file features.h in
+ADI_A2B_Software-QNX-RelX.Y.Z/Target/examples/demo/a2b-qnx/a2bapp-qnx/a2bstack-
+pal/platform/a2b folder. The sequence chart file can be set with the macro
+A2B_CONF_DEFAULT_SEQCHART_CHAN_URL in the a2bapp_defs.h file in
+ADI_A2B_Software-QNX- RelX.Y.Z/Target/examples/demo/a2b-qnx/a2bapp-qnx/app/
+folder.
 
 Generating UML diagram
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The sequence chart generated can be visualized as a UML diagram using the plantuml utility. The steps for the same are given below.
+The sequence chart generated can be visualized as a UML diagram using the
+plantuml utility. The steps for the same are given below.
 
 -  Generate the sequence chart by running the application specifying the sequence file name as SequenceFile.txt as described in :doc:`Sequence Chart </wiki-migration/resources/tools-software/a2bv2/a2bqnxuserguide/demoapplicationandtrace>`. The file is created in the same directory from which the application is run on the target.
--  Transfer the file from target to host using the QNX File Transfer launch configuration type by following the steps given below:
+-  Transfer the file from target to host using the QNX File Transfer launch
+   configuration type by following the steps given below:
 
    -  Click on New Launch Configuration from the toolbar as shown in Steps of :doc:`Running Sample Demo </wiki-migration/resources/tools-software/a2bv2/a2bqnxuserguide/a2bdemoonqnx>` Section.
 
       -  Select Run/Debug as the Initial Launch Mode and click Next
       -  Select QNX File Transfer as the Launch Configuration Type and click Next
-      -  Click on Add button in the configuration properties window as shown in below Figure
+      -  Click on Add button in the configuration properties window as shown in
+         below Figure
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/file_transfer_launch_config.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Specify the File Transfer settings as shown in below Figure.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/file_transfer_settings.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Ensure that JAVA Runtime Environment is installed on the host machine.
--  To generate the plantuml diagram run the SeqChartProcess_qnx.bat script from the tools folder. The sequence chart uml diagram namely SequenceFile.detailed.png is created in the ADI_A2B_Software-QNX-RelX.Y.Z/Target/examples/demo/a2b-qnx folder.
+-  To generate the plantuml diagram run the SeqChartProcess_qnx.bat script from
+   the tools folder. The sequence chart uml diagram namely
+   SequenceFile.detailed.png is created in the
+   ADI_A2B_Software-QNX-RelX.Y.Z/Target/examples/demo/a2b-qnx folder.
 
 Trace file and Level
 --------------------
@@ -61,17 +74,22 @@ The application supports notifying the user of any line faults that occur both d
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/line_fault_settings.png
    :align: center
-   :width: 600px
+   :width: 600
 
-Whenever a line fault occurs a message is printed on the console specifying the fault type and the node at which the fault occurred. The Below Figure shows the output when the “B” side cable is disconnected at Master Node before running the application. As expected discovery fails and error message indicating open or disconnected cable at Master Node is flashed. The Below Figure shows the output when the cable is removed post successful discovery at Slave Node 0.
+Whenever a line fault occurs a message is printed on the console specifying the
+fault type and the node at which the fault occurred. The Below Figure shows the
+output when the “B” side cable is disconnected at Master Node before running the
+application. As expected discovery fails and error message indicating open or
+disconnected cable at Master Node is flashed. The Below Figure shows the output
+when the cable is removed post successful discovery at Slave Node 0.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/line_fault_console_output_cable_issue.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/line_fault_console_output.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Rediscovery
 ~~~~~~~~~~~
@@ -80,6 +98,8 @@ The application supports rediscovery of A2B network upon line fault. This featur
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/rediscovery_settings.png
    :align: center
-   :width: 600px
+   :width: 600
 
-This causes the discovery message to be sent to the stack once again from the application whenever a line fault is detected and the entire discovery of the network to be carried.
+This causes the discovery message to be sent to the stack once again from the
+application whenever a line fault is detected and the entire discovery of the
+network to be carried.

@@ -1,7 +1,11 @@
 AD8460 IIO DAC Linux Driver
 ===========================
 
-The AD8460 is a “bits in, power out” high voltage, high-power, highspeed driver optimized for large output current (up to ±1 A) and high slew rate (up to ±1800 V/μs) at high voltage (up to ±40 V) into capacitive loads. Combining a 14-bit high-speed DAC, a high voltage, high output current (HV-HI) analog driver, and fault monitoring and protection circuits,
+The AD8460 is a “bits in, power out” high voltage, high-power, highspeed driver
+optimized for large output current (up to ±1 A) and high slew rate (up to ±1800
+V/μs) at high voltage (up to ±40 V) into capacitive loads. Combining a 14-bit
+high-speed DAC, a high voltage, high output current (HV-HI) analog driver, and
+fault monitoring and protection circuits,
 
 Supported Devices
 -----------------
@@ -64,7 +68,6 @@ Optional devicetree properties:
 
 ::
 
-
    /{
        refio_1_2: regulator-refio_1_2 {
            regulator-name = "refio_1_2";
@@ -106,7 +109,8 @@ Optional devicetree properties:
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 ::
 
@@ -126,8 +130,15 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Driver testing
 ==============
 
-Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
-
+Each and every IIO device, typically a hardware chip, has a device folder under
+/sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under
+every of these directory folders reside a set of files, depending on the
+characteristics and features of the hardware device in question. These files are
+consistently generalized and documented in the IIO ABI documentation. In order
+to determine which IIO deviceX corresponds to which hardware device, the user
+can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the
+sequence in which the iio device drivers are loaded/registered is constant, the
+numbering is constant and may be known in advance.
 
 .. container:: box bggreen
 
@@ -179,7 +190,6 @@ Each and every IIO device, typically a hardware chip, has a device folder under 
       -rw-r--r-- 1 root root 4096 Apr  5 04:17 uevent
    
 
-
 Show device name
 ----------------
 
@@ -194,13 +204,13 @@ Show device name
       ad8460
    
 
-
 Enable power down mode for the device
 -------------------------------------
 
 **Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_powerdown
 
-Writing 1 causes channel Y to enter power down mode. Clearing returns to normal operation.
+Writing 1 causes channel Y to enter power down mode. Clearing returns to normal
+operation.
 
 .. container:: box bggreen
 
@@ -217,13 +227,13 @@ Writing 1 causes channel Y to enter power down mode. Clearing returns to normal 
       0
    
 
-
 Manual toggling between input modes
 -----------------------------------
 
 **Description:** /sys/bus/iio/devices/iio:deviceX/out_voltageY_toggle_en
 
-Writing 1 causes channel Y to enter Arbitrary Pattern Generator (APG) mode. Clearing sets it to Arbitrary Waveform Generator (AWG) mode
+Writing 1 causes channel Y to enter Arbitrary Pattern Generator (APG) mode.
+Clearing sets it to Arbitrary Waveform Generator (AWG) mode
 
 .. container:: box bggreen
 
@@ -239,7 +249,6 @@ Writing 1 causes channel Y to enter Arbitrary Pattern Generator (APG) mode. Clea
       root@analog:/sys/bus/iio/devices/iio:device1# cat out_voltage0_toggle_en
       0
    
-
 
 Set pattern memory values for APG mode
 --------------------------------------
@@ -263,7 +272,6 @@ Allows writing of up to 16 14-bit values in pattern memory
       16364
    
 
-
 Set pattern depth for APG mode
 ------------------------------
 
@@ -283,13 +291,13 @@ Writing any value from 0 to 15 will set pattern depth
       3
    
 
-
 Set programmable quiescent current
 ----------------------------------
 
 **Description:** /sys/bus/iio/devices/iio:deviceX/out_currentY_raw
 
-Write raw value of programmable quiescent current. User must follow the format as per datasheet.
+Write raw value of programmable quiescent current. User must follow the format
+as per datasheet.
 
 .. container:: box bggreen
 
@@ -303,13 +311,14 @@ Write raw value of programmable quiescent current. User must follow the format a
       143
    
 
-
 Enable fault monitoring thresholds
 ----------------------------------
 
 **Description:** /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_falling_en /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_rising_en /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_falling_en /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_rising_en /sys/bus/iio/devices/iio:deviceX/events/out_tempY_thresh_rising_en
 
-Writing 1 will arm the device against fault events, while clearing disarms the device. The IIO event attributes correspond to the following: OVERCURRENT_SNK, OVERCURRENT_SRC, OVERVOLTAGE_NEG, OVERVOLTAGE_POS, and OVERTEMPERATURE.
+Writing 1 will arm the device against fault events, while clearing disarms the
+device. The IIO event attributes correspond to the following: OVERCURRENT_SNK,
+OVERCURRENT_SRC, OVERVOLTAGE_NEG, OVERVOLTAGE_POS, and OVERTEMPERATURE.
 
 .. container:: box bggreen
 
@@ -324,13 +333,15 @@ Writing 1 will arm the device against fault events, while clearing disarms the d
       1
    
 
-
 Set fault monitoring thresholds
 -------------------------------
 
 **Description:** /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_falling_value /sys/bus/iio/devices/iio:deviceX/events/out_currentY_thresh_rising_value /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_falling_value /sys/bus/iio/devices/iio:deviceX/events/out_voltageY_thresh_rising_value /sys/bus/iio/devices/iio:deviceX/events/out_tempY_thresh_rising_value
 
-The raw value set determines the threshold that triggers the fault alarm, which automatically shuts down the device if the device is armed. The IIO event attributes correspond to the following: OVERCURRENT_SNK, OVERCURRENT_SRC, OVERVOLTAGE_NEG, OVERVOLTAGE_POS, and OVERTEMPERATURE.
+The raw value set determines the threshold that triggers the fault alarm, which
+automatically shuts down the device if the device is armed. The IIO event
+attributes correspond to the following: OVERCURRENT_SNK, OVERCURRENT_SRC,
+OVERVOLTAGE_NEG, OVERVOLTAGE_POS, and OVERTEMPERATURE.
 
 .. container:: box bggreen
 
@@ -344,4 +355,3 @@ The raw value set determines the threshold that triggers the fault alarm, which 
       root@analog:/sys/bus/iio/devices/iio:device1/evemts# cat out_currentY_thresh_rising_value
       64
    
-

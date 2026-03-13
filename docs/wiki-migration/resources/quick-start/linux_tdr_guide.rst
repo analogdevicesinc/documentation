@@ -4,7 +4,10 @@ ADIN1100, ADIN1110 and ADIN2111 10BASE-T1L Linux TDR guide
 Description
 -----------
 
-This guide details the steps required in order to use the TDR(time domain reflectometry) library on a hardware platform running Linux. The library may be used as part of a Linux user space sample application, or it may be linked against the user's specific code.
+This guide details the steps required in order to use the TDR(time domain
+reflectometry) library on a hardware platform running Linux. The library may be
+used as part of a Linux user space sample application, or it may be linked
+against the user's specific code.
 
 **Supported CPU architectures** (for the board running TDR): x86_64, aarch32/a32 (ARM32) and aarch64/a64 (ARM64)
 
@@ -14,9 +17,11 @@ The high level overview of the setup process is the following:
 -  For the ADIN1110 and ADIN2111, compile the ADIN1110 Linux driver (with `this patch <https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net-next.git/commit/?id=2322467a0f5d>`_ applied). If you have a version 6.10 (or later) of the Linux kernel, you can skip this step.
 -  For ADIN1100, no driver is required.
 -  Replace your distribution's kernel.
--  Run the TDR example or your custom code using the TDR library on the target board (or your PC).
+-  Run the TDR example or your custom code using the TDR library on the target
+   board (or your PC).
 
-The Linux distribution setup and kernel compilation steps described in this guide should be executed from a PC running Linux.
+The Linux distribution setup and kernel compilation steps described in this
+guide should be executed from a PC running Linux.
 
 .. note::
 
@@ -28,14 +33,15 @@ The Linux distribution setup and kernel compilation steps described in this guid
    -  PC (x86_64) + :adi:`AD-T1LUSB2.0-EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-t1lusb20-ebz.html>`
    
 
-
 Setting up the target platform
 ------------------------------
 
 Setting up the Linux distribution - ARM32/ARM64
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For the ARM architecture, we'll be focused on running the TDR library example on a Raspberry Pi 4B+ board and we're going to use the Raspbian Linux distribution (with a custom kernel).
+For the ARM architecture, we'll be focused on running the TDR library example on
+a Raspberry Pi 4B+ board and we're going to use the Raspbian Linux distribution
+(with a custom kernel).
 
 In order to setup an SD card with Raspbian follow these steps:
 
@@ -44,10 +50,15 @@ In order to setup an SD card with Raspbian follow these steps:
 -  Choose an SD card on which to flash the OS and press **NEXT**.
 -  Enter the settings menu by clicking the **EDIT SETTINGS** button in the pop-up window. Configure a name and password for your user and enable the **Set locale settings** checkbox. You can also enable SSH for a more convenient way of accessing the Pi's filesystem in case you don't want to connect an external display.
 -  Click on the **YES** button in the pop-up window to apply the settings and then follow the instructions to write the Raspbian image to the SD card.
--  After the installation process is done, you need to expand the rootfs partition. You can do this by plugging the SD card in the Raspberry Pi board and booting the OS. At this point Raspbian should be fully functional. You can test this in the following ways:
+-  After the installation process is done, you need to expand the rootfs
+   partition. You can do this by plugging the SD card in the Raspberry Pi board
+   and booting the OS. At this point Raspbian should be fully functional. You
+   can test this in the following ways:
 
    -  Connecting over SSH with the credentials you configured in imager. For this, your host PC should be in the same network as the Raspberry Pi. There are multiple ways of accessing your RPI remotely, and you can follow `this guide <https://www.raspberrypi.com/documentation/computers/remote-access.html>`_ to find what works for your situation.
-   -  Connect a display to the Raspberry Pi's micro HDMI port and a mouse + keyboard to the USB A connectors. After this, you can power the board and check if Linux is booting.
+   -  Connect a display to the Raspberry Pi's micro HDMI port and a mouse +
+      keyboard to the USB A connectors. After this, you can power the board and
+      check if Linux is booting.
 
 -  Power off the Raspberry Pi and insert the SD card back in your host machine.
 
@@ -61,7 +72,8 @@ Setup steps:
 -  Download the `Debian ISO image <https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.8.0-amd64-netinst.iso>`_.
 -  Burn the ISO image on an USB drive. You can do this from the terminal with the **dd** command or use a GUI application such as `Balena etcher <https://etcher.balena.io/>`_.
 -  Insert the USB drive into the board/PC.
--  Reboot the board/PC into BIOS and select the USB drive as a boot media. Follow the Debian installer.
+-  Reboot the board/PC into BIOS and select the USB drive as a boot media.
+   Follow the Debian installer.
 
 Compiling the kernel
 --------------------
@@ -102,13 +114,16 @@ Open a terminal on your PC and run the following:
 
    make bcm2711_defconfig
 
-Change the kernel configure with "make menuconfig" in order to enable the ADIN1110/ADIN2111 driver
+Change the kernel configure with "make menuconfig" in order to enable the
+ADIN1110/ADIN2111 driver
 
 -  Hit the search button (typically the slash "/" key)
 -  Type ADIN1110, then hit Enter.
 -  Press 1 (the key), then hit Enter
 -  You should see the location + dependencies for enabling the driver
--  If the ADIN1110 symbol doesn't change to "y", make sure the drivers in the "Depends on:" list are also enabled. You will have to follow a similar process of enabling them.
+-  If the ADIN1110 symbol doesn't change to "y", make sure the drivers in the
+   "Depends on:" list are also enabled. You will have to follow a similar
+   process of enabling them.
 
 ::
 
@@ -149,7 +164,8 @@ Exit menuconfig and go back to the Linux terminal.
 
    dtc -O dtb -o rpi-adin1110-overlay.dtbo rpi-adin1110-overlay.dts.pre
 
--  Copy the kernel image and the device tree to the SD card we flashed in the previous section:
+-  Copy the kernel image and the device tree to the SD card we flashed in the
+   previous section:
 
 ::
 
@@ -167,7 +183,8 @@ Exit menuconfig and go back to the Linux terminal.
    # Adapt the device tree overlay name if you're using ADIN2111 instead
    cp rpi-adin1110-overlay.dtbo /media/$USER/bootfs/overlays
 
--  Edit the bootfs/config.txt file from the SD card to specify the device tree overlay. Add the following line:
+-  Edit the bootfs/config.txt file from the SD card to specify the device tree
+   overlay. Add the following line:
 
 ::
 
@@ -181,8 +198,9 @@ Or
 
 .. note::
 
-   By default the Raspberry Pi 4 will boot the kernel8.img image (64 bit). If you want to use the 32 bit image, you'll have to add kernel=kernel7l.img to the config.txt file on the SD card.
-
+   By default the Raspberry Pi 4 will boot the kernel8.img image (64 bit). If
+   you want to use the 32 bit image, you'll have to add kernel=kernel7l.img to
+   the config.txt file on the SD card.
 
 x86_64
 ~~~~~~
@@ -195,7 +213,8 @@ Hardware setup
 EVAL-ADIN1110 / EVAL-ADIN2111
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Connect the EVAL-ADIN1110-EBZ to the Raspberry Pi 4 (the wiring is identical for the EVAL-ADIN2111EBZ) as following:
+Connect the EVAL-ADIN1110-EBZ to the Raspberry Pi 4 (the wiring is identical for
+the EVAL-ADIN2111EBZ) as following:
 
 =========================== ================
 RPI                         EVAL-ADIN1110EBZ
@@ -209,7 +228,9 @@ GPIO 27 (Pin 13)            T1L_RESET_N
 GND (Pin 6)                 GND
 =========================== ================
 
-EVAL-ADIN1110EBZ needs to operate in Generic SPI mode (see Datasheet) and with CRC protection enabled. In order to do this set every switch to the following table:
+EVAL-ADIN1110EBZ needs to operate in Generic SPI mode (see Datasheet) and with
+CRC protection enabled. In order to do this set every switch to the following
+table:
 
 ========= ========
 SWITCH    POSITION
@@ -234,8 +255,11 @@ P2_SWPD_N OFF
 
 .. important::
 
-   It's important to keep the microcontrollers on the ADIN1110/ADIN2111 eval boards in the reset state. Otherwise, the Raspberry Pi board won't be able to communicate with the MAC-PHY. For EVAL-ADIN1110EBZ, set the J301 jumper to the GND position. For the EVAL-ADIN2111EBZ, set the P8 jumper to the GND position
-
+   It's important to keep the microcontrollers on the ADIN1110/ADIN2111 eval
+   boards in the reset state. Otherwise, the Raspberry Pi board won't be able to
+   communicate with the MAC-PHY. For EVAL-ADIN1110EBZ, set the J301 jumper to
+   the GND position. For the EVAL-ADIN2111EBZ, set the P8 jumper to the GND
+   position
 
 AD-T1LUSB2.0-EBZ
 ~~~~~~~~~~~~~~~~
@@ -248,7 +272,10 @@ TDR testing
 ARM32/ARM64
 ~~~~~~~~~~~
 
-Copy the TDR library archive to the rootfs partition of the SD card. You can now insert the SD card in your target board and power it up. Once Raspbian booted run "ip a" in a terminal. The ADIN1110/ADIN2111 should have their own network interface (in this case eth0):
+Copy the TDR library archive to the rootfs partition of the SD card. You can now
+insert the SD card in your target board and power it up. Once Raspbian booted
+run "ip a" in a terminal. The ADIN1110/ADIN2111 should have their own network
+interface (in this case eth0):
 
 ::
 
@@ -280,8 +307,8 @@ Copy the TDR library archive to the rootfs partition of the SD card. You can now
 
 .. note::
 
-   Using the ADIN2111 will result in 2 network interfaces being created, corresponding to each of the two ports.
-
+   Using the ADIN2111 will result in 2 network interfaces being created,
+   corresponding to each of the two ports.
 
 Check if the port belongs to ADIN1110 with:
 
@@ -293,7 +320,8 @@ Check if the port belongs to ADIN1110 with:
 Running the TDR example
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The first step is to compile the TDR example application. he commands you'll have to run in a terminal are the following:
+The first step is to compile the TDR example application. he commands you'll
+have to run in a terminal are the following:
 
 ::
 
@@ -312,7 +340,9 @@ After this, you may now run your application:
 x86_64
 ~~~~~~
 
-Power up the target PC and copy the TDR library archive in your user's home directory. If the AD-T1LUSB2.0-EBZ board is connected, you can then run "ip a" in a terminal. You should see an interface corresponding to the adapter.
+Power up the target PC and copy the TDR library archive in your user's home
+directory. If the AD-T1LUSB2.0-EBZ board is connected, you can then run "ip a"
+in a terminal. You should see an interface corresponding to the adapter.
 
 ::
 
@@ -327,7 +357,9 @@ Power up the target PC and copy the TDR library archive in your user's home dire
 Running the TDR example
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The first step is to compile the TDR example application. Assuming you have the library archive in the /home/user directory, the commands you'll have to run in a terminal are the following:
+The first step is to compile the TDR example application. Assuming you have the
+library archive in the /home/user directory, the commands you'll have to run in
+a terminal are the following:
 
 ::
 

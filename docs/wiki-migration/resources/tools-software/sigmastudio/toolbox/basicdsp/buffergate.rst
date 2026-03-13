@@ -48,7 +48,8 @@ DSP Parameter Information
 Algorithm Description
 ---------------------
 
-The following table shows what the data output value will be for given input values, based on the selection from the Drop Down Display.
+The following table shows what the data output value will be for given input
+values, based on the selection from the Drop Down Display.
 
 ================== ================= ===================
 Input Pin Value    Drop Down Display Output Pin Value

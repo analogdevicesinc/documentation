@@ -4,7 +4,8 @@ Linux LCD Touchscreen
 Introduction
 ------------
 
-This section describes the steps required to build and use SPI Touchscreen device on Linux using an ADSP-SC58x board and a WVGA/LCD EI3 extender board.
+This section describes the steps required to build and use SPI Touchscreen
+device on Linux using an ADSP-SC58x board and a WVGA/LCD EI3 extender board.
 
 Hardware Setup
 --------------
@@ -12,19 +13,23 @@ Hardware Setup
 -  ADSP-SC58x EZ-KIT: ADSP-SC589/SC584 EZ-Board
 -  A WVGA/LCD EI3 Extender Board
 
-Connect the J1 connector on the LCD EI3 Extender Board to the P1A connector on the SC58x-EZKIT
+Connect the J1 connector on the LCD EI3 Extender Board to the P1A connector on
+the SC58x-EZKIT
 
 Software Configuration
 ----------------------
 
-The following configuration should be done on top of the sc589-ezkit/sc584-ezkit default configuration.
+The following configuration should be done on top of the sc589-ezkit/sc584-ezkit
+default configuration.
 
 Configure Linux Kernel
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Run **bitbake linux-adi -c menuconfig** and configure the kernel as follows:
 
-There are two things to enable in the Linux kernel.  First, you need the common code for the event interface.  Then you need the specific driver for the touchscreen device you're using.
+There are two things to enable in the Linux kernel.  First, you need the common
+code for the event interface.  Then you need the specific driver for the
+touchscreen device you're using.
 
 ::
 
@@ -33,7 +38,8 @@ There are two things to enable in the Linux kernel.  First, you need the common
            [*] Generic input layer (needed for keyboard, mouse, ...)
            <*>   Event interface
 
-The touchscreen drivers will be in the same place.  Enable the driver for the device you're using.
+The touchscreen drivers will be in the same place.  Enable the driver for the
+device you're using.
 
 ::
 
@@ -58,7 +64,8 @@ Don't forget to enable LCD and disable CAN driver for touch screen calibraion.
 Enable Packages
 ~~~~~~~~~~~~~~~
 
-Add the touchscreen test program in the filesystem images, it's enabled in adsp-sc5xx-full image by default.
+Add the touchscreen test program in the filesystem images, it's enabled in
+adsp-sc5xx-full image by default.
 
 ::
 
@@ -122,7 +129,9 @@ The settings in this section is only apply to ADSP-SC584 EZ-Board.
 Runtime Config
 ~~~~~~~~~~~~~~
 
-Before you can use the touchscreen, you need to export a few environment variables.  You may want to put these into a file so you can easily source it at runtime.
+Before you can use the touchscreen, you need to export a few environment
+variables.  You may want to put these into a file so you can easily source it at
+runtime.
 
 ::
 
@@ -137,9 +146,12 @@ Before you can use the touchscreen, you need to export a few environment variabl
 Calibration
 ~~~~~~~~~~~
 
-Before you start using the touchscreen, you should calibrate it.  This can be easily accomplished with the ts_calibrate application on the EI3 LCD extender.  Just follow the on-screen directions.
+Before you start using the touchscreen, you should calibrate it.  This can be
+easily accomplished with the ts_calibrate application on the EI3 LCD extender. 
+Just follow the on-screen directions.
 
-Then run following commands and touch the appropriate location according to screen`s prompts .
+Then run following commands and touch the appropriate location according to
+screen`s prompts .
 
 ::
 
@@ -162,7 +174,8 @@ Then run following commands and touch the appropriate location according to scre
 Event Test
 ~~~~~~~~~~
 
-After run following the command, start using the touchscreen.  The application should decode the input immediately.
+After run following the command, start using the touchscreen.  The application
+should decode the input immediately.
 
 ::
 

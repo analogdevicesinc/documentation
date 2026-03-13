@@ -2,11 +2,13 @@
 
    These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
-
 Linux for ADSP-SC5xx Processors
 ===============================
 
-Welcome to Linux for ADSP-SC5xx. This collection of pages contains all you need to know in order to download, build, develop and install Linux, running on the ARM core of the ADSP-SC5xx family of processors. This new version of Linux is Yocto based and replaced the Linux Add-In for CrossCore Embedded Studio.
+Welcome to Linux for ADSP-SC5xx. This collection of pages contains all you need
+to know in order to download, build, develop and install Linux, running on the
+ARM core of the ADSP-SC5xx family of processors. This new version of Linux is
+Yocto based and replaced the Linux Add-In for CrossCore Embedded Studio.
 
 Releases
 --------

@@ -1,13 +1,23 @@
 Cross Core Embedded Studio Quickstart User Guide
 ================================================
 
-<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section. 
+<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software
+for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for
+EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin
+muxing based on the application.For help regarding pinmapping refer to the
+Hardware Details section.
 
-This page describes how to use the ADuCM4x50 Device Family Pack (DFP) with CrossCore Embedded Studio (CCES) to create, import, build and debug applications for the ADuCM4x50 processor. The ADuCM4x50 processor integrates an ARM Cortex-M4 microcontroller with various on-chip peripherals within a single package.
+This page describes how to use the ADuCM4x50 Device Family Pack (DFP) with
+CrossCore Embedded Studio (CCES) to create, import, build and debug applications
+for the ADuCM4x50 processor. The ADuCM4x50 processor integrates an ARM Cortex-M4
+microcontroller with various on-chip peripherals within a single package.
 
-This page describes how to install and work with the Analog Devices ADuCM4x50 DFP to start developing applications for the EV-COG-AD4050LZ. This page also highlights common problems and how to avoid them.
+This page describes how to install and work with the Analog Devices ADuCM4x50
+DFP to start developing applications for the EV-COG-AD4050LZ. This page also
+highlights common problems and how to avoid them.
 
-Additional help documentation can be found by opening CCES and selecting "Help Contents" from the CCES Help menu.
+Additional help documentation can be found by opening CCES and selecting "Help
+Contents" from the CCES Help menu.
 
 This page covers:
 
@@ -24,9 +34,15 @@ This page covers:
 Workspace and Projects
 ======================
 
-A CCES workspace is a folder (e.g. c:\\Users\\anon\\cces\\2.6.0) that contains project resources and metadata. When projects are created or imported, details about that project are stored in the workspace. The workspace metadata also includes preferences set through the CCES Preferences dialog box and IDE window layouts. By default, CCES creates new projects within your workspace folder.
+A CCES workspace is a folder (e.g. c:\\Users\\anon\\cces\\2.6.0) that contains
+project resources and metadata. When projects are created or imported, details
+about that project are stored in the workspace. The workspace metadata also
+includes preferences set through the CCES Preferences dialog box and IDE window
+layouts. By default, CCES creates new projects within your workspace folder.
 
-Each time you start CCES, you will be prompted for a workspace location. You can opt to default to a workspace directory by choosing to use a workspace directory as your default. You will not be prompted the next time you open CCES.
+Each time you start CCES, you will be prompted for a workspace location. You can
+opt to default to a workspace directory by choosing to use a workspace directory
+as your default. You will not be prompted the next time you open CCES.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-workspace.png
    :align: center
@@ -66,9 +82,14 @@ Please download the following packs to your local directory.
 -  :doc:`Analog Devices ADuCM4x50 Device Support </wiki-migration/resources/eval/user-guides/ev-cog-ad4050lz/software/aducm4x50>`
 -  :doc:`Analog Devices EV-COG-AD4050 Off-Chip Drivers and Examples </wiki-migration/resources/eval/user-guides/ev-cog-ad4050lz/software/eval-cog-ad4050lz>`
 
-After downloading the .pack files, select the Import Packs button in the CMSIS Pack Manager's View, choose the .pack file as shown in the screenshot below and click Open. This will install all the selected packs.
+After downloading the .pack files, select the Import Packs button in the CMSIS
+Pack Manager's View, choose the .pack file as shown in the screenshot below and
+click Open. This will install all the selected packs.
 
-You will be prompted to accept a license agreement and after agreeing to it, Pack file will be installed into CrossCore Embedded Studio's CMSIS-Pack installation directory (e.g. C:\\Analog Devices\\CrossCore Embedded Studio 2.6.0\\ARM\\packs\\AnalogDevices).
+You will be prompted to accept a license agreement and after agreeing to it,
+Pack file will be installed into CrossCore Embedded Studio's CMSIS-Pack
+installation directory (e.g. C:\\Analog Devices\\CrossCore Embedded Studio
+2.6.0\\ARM\\packs\\AnalogDevices).
 
 .. image:: https://wiki.analog.com/_media/resources/ev/user-guides/ev-cog-ad4050lz/tools/add_pack.jpg
    :align: center
@@ -79,15 +100,22 @@ ADuCM4050 Board Support Packs (BSP)
 EV-COG-AD4050LZ Board Support Pack
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The EV-COG-AD4050LZ Board Support Pack (BSP) provides the drivers for off-chip peripherals which are on the EV-COG-AD4050LZ Evaluation Board and examples for peripherals on the ADuCM4050 processor. The drivers and examples in the BSP are designed to work with CrossCore Embedded Studio and the ADuCM4x50 Device Family Pack (DFP).
+The EV-COG-AD4050LZ Board Support Pack (BSP) provides the drivers for off-chip
+peripherals which are on the EV-COG-AD4050LZ Evaluation Board and examples for
+peripherals on the ADuCM4050 processor. The drivers and examples in the BSP are
+designed to work with CrossCore Embedded Studio and the ADuCM4x50 Device Family
+Pack (DFP).
 
-For more information on the EV-COG-AD4050LZ BSP, please refer to the User's Guide in the Documents folder (e.g. C:\\Analog Devices\\CrossCore Embedded Studio 2.6.0\\ARM\\packs\\AnalogDevices\\EV-COG-AD4050LZ_BSP\\1.0.0\\Documents\\EV-COG-AD4050LZ_Board_Support_Pack_Users_Guide.pdf)
+For more information on the EV-COG-AD4050LZ BSP, please refer to the User's
+Guide in the Documents folder (e.g. C:\\Analog Devices\\CrossCore Embedded
+Studio
+2.6.0\\ARM\\packs\\AnalogDevices\\EV-COG-AD4050LZ_BSP\\1.0.0\\Documents\\EV-COG-AD4050LZ_Board_Support_Pack_Users_Guide.pdf)
 
 How to create a new project for the ADuCM4050
 ---------------------------------------------
 
-A project for ADuCM4050 can be created using the New CrossCore Project Wizard. This wizard will guide you through the steps to create a new project.
-
+A project for ADuCM4050 can be created using the New CrossCore Project Wizard.
+This wizard will guide you through the steps to create a new project.
 
 |image2|
 
@@ -106,11 +134,19 @@ A project for ADuCM4050 can be created using the New CrossCore Project Wizard. T
 How to add startup code and core components to a new project for the ADuCM4050
 ------------------------------------------------------------------------------
 
-An out-of-the-box ADuCM4050 project does not have startup code or a linker description file that maps code and data. It is necessary to add these components using the Run-time Environment (RTE) Configuration Editor.
+An out-of-the-box ADuCM4050 project does not have startup code or a linker
+description file that maps code and data. It is necessary to add these
+components using the Run-time Environment (RTE) Configuration Editor.
 
-CrossCore Projects created for Analog Devices' Cortex-M based processors, such as ADuCM4050 include a system.rteconfig file. Opening this file within the IDE will open the RTE Configuration Editor. Components from the CMSIS-Pack, such as drivers and services, can be added to a project by selecting them in the editor and clicking Save.
+CrossCore Projects created for Analog Devices' Cortex-M based processors, such
+as ADuCM4050 include a system.rteconfig file. Opening this file within the IDE
+will open the RTE Configuration Editor. Components from the CMSIS-Pack, such as
+drivers and services, can be added to a project by selecting them in the editor
+and clicking Save.
 
-At minimum, a new ADuCM4050 project will require the Device::Startup, CMSIS::Core and Device::Global Configuration components to be added to the project.
+At minimum, a new ADuCM4050 project will require the Device::Startup,
+CMSIS::Core and Device::Global Configuration components to be added to the
+project.
 
 -  Double-click on the system.rteconfig to open the RTE Configuration Editor.
 -  Select Device::Startup, CMSIS::Core and Device::Global Configuration.
@@ -127,7 +163,8 @@ There are three(3) methods for importing existing projects:
 
 -  Examples that you have saved to a local drive on your PC.
 -  Examples that come with the ADuCM4050 Device Family Pack (DFP).
--  Examples which are in the EV-COG-AD4050LZ GIT repository (most up to date content).
+-  Examples which are in the EV-COG-AD4050LZ GIT repository (most up to date
+   content).
 
 How to Import Existing Projects Saved to a Local Drive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,7 +181,8 @@ How to Import Existing Projects Saved to a Local Drive
 How to Import Examples that come with the ADuCM4050 Device Family Pack (DFP) or Board Support Packs (BSP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Examples are provided with the ADuCM4050 DFP and BSPs and can be opened from the CMSIS Pack Manager Perspective Examples View.
+Examples are provided with the ADuCM4050 DFP and BSPs and can be opened from the
+CMSIS Pack Manager Perspective Examples View.
 
 -  Open CMSIS Pack Manager perspective by clicking "Open Perspective" icon on tool bar and selecting "CMSIS Pack Manager" in the Open Perspective window (or choose CMSIS Pack Manager perspective if already open).
 -  From the Examples View, select the example that you would like to open.
@@ -154,9 +192,11 @@ Examples are provided with the ADuCM4050 DFP and BSPs and can be opened from the
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad4050lz/tools/cmsis_example.jpg
    :align: center
 
-The CCES Examples Browser can also be used to open examples by Help \| Browse Examples.
+The CCES Examples Browser can also be used to open examples by Help \| Browse
+Examples.
 
--  Select ADuCM4050_DFP[x.y.z] in Product drop-down list, select the example and click Open example. Then the example will be copied to your workspace.
+-  Select ADuCM4050_DFP[x.y.z] in Product drop-down list, select the example and
+   click Open example. Then the example will be copied to your workspace.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad4050lz/tools/browse_example.jpg
    :align: center
@@ -164,10 +204,13 @@ The CCES Examples Browser can also be used to open examples by Help \| Browse Ex
 How to Import Existing Projects from the GIT Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-( Note that at the time of writing, the EV-COG-AD4050LZ GIT repo. is work In Progress )
+( Note that at the time of writing, the EV-COG-AD4050LZ GIT repo. is work In
+Progress )
 
 -  Open the GIT perspective by clicking "Open Perspective" icon on tool bar and selecting "Git" in the Open Perspective window (or choose the GIT perspective if already open).
--  Clone the Git repository which contains all the latest code and projects associated with the ADuCM4050. Populate the URI field with the following address.
+-  Clone the Git repository which contains all the latest code and projects
+   associated with the ADuCM4050. Populate the URI field with the following
+   address.
 
    -   **URL:** - `EV-COG-AD4050LZ <https://github.com/analogdevicesinc/EV-COG-AD4050LZ>`_
    -  Click *Next*, *Next* and then *Finish*. There may be a pause while the branches are fetched.
@@ -239,7 +282,9 @@ How to start and stop debugging an ADuCM4050 application
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-perspective.png
    :align: center
 
--  If your binary (program) was built with semi-hosting enabled, then CCES will warn you that you need to re-build the program when you want to run the program without a debugger attached.
+-  If your binary (program) was built with semi-hosting enabled, then CCES will
+   warn you that you need to re-build the program when you want to run the
+   program without a debugger attached.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png
    :align: center
@@ -259,7 +304,8 @@ How to start and stop debugging an ADuCM4050 application
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-openocd-firewall.png
    :align: center
 
--  If everything goes fine, in the Console window, you will see a report without errors.
+-  If everything goes fine, in the Console window, you will see a report without
+   errors.
 
    -  As a reference, the full text should be similar to:``Open On-Chip Debugger (OpenOCD) 0.9.0
       Licensed under GNU GPL v2
@@ -281,7 +327,10 @@ How to start and stop debugging an ADuCM4050 application
       adapter speed: 1000 kHz
       Info : accepting 'gdb' connection on tcp/3333``
 
--  Your program's execution is stopped automatically at the first breakpoint which is at the beginning of main() loop. You can use the debug functions and features of the CCES environment. (Such as stepping through, breakpoints, register reads, variable values, etc.)
+-  Your program's execution is stopped automatically at the first breakpoint
+   which is at the beginning of main() loop. You can use the debug functions and
+   features of the CCES environment. (Such as stepping through, breakpoints,
+   register reads, variable values, etc.)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad4050lz/tools/debug_window.jpg
    :align: center

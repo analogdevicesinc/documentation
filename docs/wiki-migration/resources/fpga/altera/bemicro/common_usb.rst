@@ -12,25 +12,26 @@ Since Windows cannot locate the driver for the device the automatic installation
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image009.png
    :alt: image009.png
    :align: center
-   :width: 500px
+   :width: 500
 
 In the next dialog box select the option **Browse my computer for driver software**. A new dialog will open where it is possible to point to the driver’s location. Set the location to **altera\\\ <version number>\\quartus\\drivers\\usb-blaster** and press **Next**.
 
 |image011.png| |image013.png|
 
-
 .. tip::
 
-   If Windows presents you with a message that the drivers have not passed Windows Logo testing, please click “\ Install this driver software anyway\ ”. Upon installation completion a message will be displayed to inform that the installation is finished.
-
+   If Windows presents you with a message that the drivers have not passed
+   Windows Logo testing, please click “\ Install this driver software anyway\ ”.
+   Upon installation completion a message will be displayed to inform that the
+   installation is finished.
 
 |image017.png|\ |image016.jpg|
 
 .. |image011.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image011.png
-   :width: 400px
+   :width: 400
 .. |image013.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image013.png
-   :width: 400px
+   :width: 400
 .. |image017.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image017.png
-   :width: 400px
+   :width: 400
 .. |image016.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image016.jpg
-   :width: 400px
+   :width: 400

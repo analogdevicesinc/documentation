@@ -3,7 +3,9 @@ Overview
 
 This short guide is intended to show how you may set a static IP for network interfaces on Linux or Windows systems. For both examples we're going to be setting the 192.168.1.1 IP address for a specific network interface created by plugging the :doc:`AD-T1LUSB-EBZ </wiki-migration/resources/eval/user-guides/ad-t1lusb-ebz>` converter into an USB port.
 
-Manually setting static IPs is required if the device we're connecting to also configures a static IP for its network interface. Otherwise, our host won't know which interface to use in order to communicate.
+Manually setting static IPs is required if the device we're connecting to also
+configures a static IP for its network interface. Otherwise, our host won't know
+which interface to use in order to communicate.
 
 Linux
 =====
@@ -49,7 +51,8 @@ You should plug the AD-T1LUSB-EBZ into an USB port and then open a terminal and 
 
 Next, you'll have to identify the interface which is specific to the AD-T1LUSB-EBZ converter. This may be named differently depending on your Linux distribution and other interfaces you may already have. This can be done by running **ip a** before and after plugging the converter. In out case the interface is eth0.
 
-Now, we may run the following command in order to add an IP address to the interface.
+Now, we may run the following command in order to add an IP address to the
+interface.
 
 ::
 
@@ -94,6 +97,6 @@ Then, if you double click the **Internet Protocol Version 4 (TCP/IP)** item, the
 
 .. image:: https://wiki.analog.com/_media/resources/no-os/misc_guides/ip_settings.png
    :alt: ip_settings.png
-   :width: 369px
+   :width: 369
 
 You may now try to test your connection.

@@ -2,11 +2,11 @@
 
    These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
-
 Kernel Features and Device Drivers for ADSP-SC5xx Yocto Linux
 =============================================================
 
-The following kernel features, peripherals and devices are supported in Linux by the Yocto Linux for ADSP-SC5xx Processors product:
+The following kernel features, peripherals and devices are supported in Linux by
+the Yocto Linux for ADSP-SC5xx Processors product:
 
 -  :doc:`CAN Bus </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/can/can>`
 -  :doc:`CPU Frequency </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/cpufreq/cpufreq>`

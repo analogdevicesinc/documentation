@@ -3,7 +3,8 @@ AD9152 Evaluation Board
 
 The :adi:`AD9152` evaluation boards...
 
-Documentation and software updates for using High-Speed DAC Evaluation Boards are included in individual, self-extracting update files.
+Documentation and software updates for using High-Speed DAC Evaluation Boards
+are included in individual, self-extracting update files.
 
 Files included in the AD9152 Update:
 ------------------------------------

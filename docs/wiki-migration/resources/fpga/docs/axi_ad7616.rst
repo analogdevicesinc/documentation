@@ -5,7 +5,6 @@ AXI_AD7616
 
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/library/axi_ad7616/index.html
 
-
 Overview
 --------
 

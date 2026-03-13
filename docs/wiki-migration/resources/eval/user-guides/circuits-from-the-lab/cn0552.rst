@@ -6,7 +6,7 @@ The \*\* :adi:`EVAL-CN0552-PMDZ <CN0552>` \*\* is a `PMOD <https://reference.dig
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/actual_hardware.jpg
    :alt: actual_hardware.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 *<fc>Figure 1. EVAL-CN0552-PMDZ*
 
@@ -15,16 +15,20 @@ The :adi:`CN0552` has two capacitive inputs with each channel that can be config
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/cn0552_block_diagram.png
    :alt: cn0552_block_diagram.png
    :align: center
-   :width: 600px
+   :width: 600
 
 *<fc>Figure 2. CN0552 Block Diagram*
 
-The output data rate is adjustable from 9.1 sps to 90.9 sps, with the 16.1 sps setting providing strong rejection of both 50Hz and 60Hz power line noise. The CDC also provides temperature measurement with a resolution of 0.1°C and accuracy of ±2° C for temperature compensation and system calibration.
+The output data rate is adjustable from 9.1 sps to 90.9 sps, with the 16.1 sps
+setting providing strong rejection of both 50Hz and 60Hz power line noise. The
+CDC also provides temperature measurement with a resolution of 0.1°C and
+accuracy of ±2° C for temperature compensation and system calibration.
 
-The CN0552 is compatible with I2C PMOD platform boards, with an I/O voltage from 2.7 V to 5.5 V.
+The CN0552 is compatible with I2C PMOD platform boards, with an I/O voltage from
+2.7 V to 5.5 V.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/i2c_con.png
-   :width: 300px
+   :width: 300
 
 *<fc>Figure 3. I2C Connection*
 
@@ -46,13 +50,14 @@ Connectors and Configuration
 
 By default, the :adi:`EVAL-CN0552-PMDZ <CN0552>` is configured to be controlled and power from the PMOD connector using standard connections.
 
-
 |image1|
 
 CN0552 Inputs/Outputs Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All the analog and digital input/output pins available on the EVAL-CN0552-PMDZ are brought out to two(2) separate 8 row 0.1" through holes through connectors P8 and P13.
+All the analog and digital input/output pins available on the EVAL-CN0552-PMDZ
+are brought out to two(2) separate 8 row 0.1" through holes through connectors
+P8 and P13.
 
 ============ ====== ============= ======
 Connector P8        Connector P13 
@@ -71,10 +76,10 @@ CIN1_POS     8      CIN2_POS      8
 Digital Communications
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Digital communication on the EVAL-CN0552-PMDZ is accomplished using a new standard I2C PMOD port.
+The Digital communication on the EVAL-CN0552-PMDZ is accomplished using a new
+standard I2C PMOD port.
 
 +--------------+
-
 
 | Connector P2 |
 
@@ -111,10 +116,11 @@ The Digital communication on the EVAL-CN0552-PMDZ is accomplished using a new st
 Solder Jumpers
 ~~~~~~~~~~~~~~
 
-Eight solder jumpers are available at the bottom of the board, if you want to change the operating modes. See the schematic for more details.
+Eight solder jumpers are available at the bottom of the board, if you want to
+change the operating modes. See the schematic for more details.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/eval-cn0552-pmdztop-web.png
-   :width: 500px
+   :width: 500
 
 +---------------------------------------------------------+---------------+------------------+
 | Description and default connection                      | Solder Jumper | Default Position |
@@ -160,7 +166,9 @@ There are two device driver solutions that are provided for controlling the **EV
 
 -  The :doc:`Linux driver </wiki-migration/resources/tools-software/linux-drivers/iio-cdc/ad7745>` uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
 
-Similarly, utility software such as iio_info, IIO Oscilloscope, PyADI-IIO, and etc. can be used for both the EVAL-CN0552-PMDZ on Raspberry PI and on ADICUP3029.
+Similarly, utility software such as iio_info, IIO Oscilloscope, PyADI-IIO, and
+etc. can be used for both the EVAL-CN0552-PMDZ on Raspberry PI and on
+ADICUP3029.
 
 General Setup Using ADICUP3029
 ------------------------------
@@ -168,7 +176,6 @@ General Setup Using ADICUP3029
 The \*\* EVAL-CN0552-PMDZ \*\* can be used with :doc:`ADICUP3029 </wiki-migration/resources/eval/user-guides/eval-adicup3029>`. Here is a video on how to use the CN0552 with the ADICUP3029:
 
 .. container:: center round box
-
 
    ..
 
@@ -189,14 +196,19 @@ The following is the list of items needed in order to replicate this demo.
 
 -  \*\* Software \*\*
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0552.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0552.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design.
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADICUP3029_CN0552** demo can be found here:
 
@@ -213,7 +225,6 @@ The software for the **ADICUP3029_CN0552** demo can be found here:
    -  :git-no-OS:`ADuCM3029_demo_cn0552 Source Code <projects/cn0552>`
    
 
-
 To build the project from the source, follow the instructions in the `no-os wiki <https://github.com/analogdevicesinc/no-OS/wiki>`_.
 
 Setting up the Hardware
@@ -225,13 +236,17 @@ Setting up the Hardware
 
 |switch_config.png| *<fc>Figure 6. Switch Confuguration*
 
--  From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
+-  From your PC, open My Computer and look for the DAPLINK drive, if you see
+   this then the drivers are complete and correct.
 
 |image2| *<fc>Figure 7. DAPLINK Drive*
 
 -  Simply extract the provided zip file. Once extracted, you will see the pre-built hex file for the CN0552 demo. Then drag and drop this Hex file to the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red) LED will blink rapidly.
 -  The DS2 will stop blinking and will stay ON once the programming is done.
--  For demo purposes, place a 2 pF capacitor between the EXCA pin and the CIN1(+) pin on the PMOD board. This will be your first channel. Then, place another 2 pF capacitor between EXCB pin and the CIN2(+) pin on the PMOD board. This will be your second channel.
+-  For demo purposes, place a 2 pF capacitor between the EXCA pin and the
+   CIN1(+) pin on the PMOD board. This will be your first channel. Then, place
+   another 2 pF capacitor between EXCB pin and the CIN2(+) pin on the PMOD
+   board. This will be your second channel.
 
 General Setup Using Raspberry Pi
 --------------------------------
@@ -284,22 +299,19 @@ To set up the circuit for evaluation, consider the following steps:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
    :align: center
-   :width: 500px
+   :width: 500
 
 -  Connect the \*\* :adi:`EVAL-CN0552-PMDZ <CN0552>` \*\* on the PMOD to Raspberry Pi Interposer board either via Port P3 or P4.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/pmod-interposer.png
    :align: center
-   :width: 300px
+   :width: 300
 
 -  Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned SD card on the designated slot on the RPi.
 -  Connect the system to a monitor using an HDMI cable through the mini HDMI connector on the RPi.
 -  Connect a USB keyboard and mouse to the RPi through the USB ports.
--  Power on the RPi board by plugging in a 5V power supply with a micro-USB connector. The final setup should look similar to the picture below.
-
-
-
-
+-  Power on the RPi board by plugging in a 5V power supply with a micro-USB
+   connector. The final setup should look similar to the picture below.
 
 Software (both ADICUP3029 and Raspberry Pi)
 -------------------------------------------
@@ -307,7 +319,13 @@ Software (both ADICUP3029 and Raspberry Pi)
 Connection
 ~~~~~~~~~~
 
-To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-CN0552-PMDZ is attached. Two platforms are currently supported for the CN0552: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the no-OS AD7746 demo project. The user needs to supply a URI which will be used in the context creation.
+To be able to connect your device, the software must be able to create a
+context. The context creation in the software depends on the backend used to
+connect to the device as well as the platform where the EVAL-CN0552-PMDZ is
+attached. Two platforms are currently supported for the CN0552: Raspberry Pi
+using the ADI Kuiper Linux and the ADICUP3029 running the no-OS AD7746 demo
+project. The user needs to supply a URI which will be used in the context
+creation.
 
 The Libiio is a library for interfacing with IIO devices.
 
@@ -316,10 +334,10 @@ The Libiio is a library for interfacing with IIO devices.
 
    Install the `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
-
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
 
-Upon installation, simply enter the command on the terminal command line to access it.
+Upon installation, simply enter the command on the terminal command line to
+access it.
 
 For RPI Direct Local Access:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -341,8 +359,8 @@ Example:
 
 .. note::
 
-   Do note that the Windows machine and the RPI board should be connected to the same network in order for the machine to detect the device.
-
+   Do note that the Windows machine and the RPI board should be connected to the
+   same network in order for the machine to detect the device.
 
 For Windows machine connected to ADICUP3029:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -354,7 +372,10 @@ For Windows machine connected to ADICUP3029:
 Examples:
 
 -  In a Windows machine, you can check the port of your ADICUP3029 via Device Manager in the Ports (COM & LPT) section. If your device is in COM4, you have to use *iio_info -u serial:COM4* as your URI.
--  In a Unix-based machine, you will see it under the /dev/ directory in this format "ttyUSBn", where n is a number depending on how many serial USB devices attached. If you see that your device is ttyUSB0, you have to use serial:/dev/ttyUSB0 as your URI.
+-  In a Unix-based machine, you will see it under the /dev/ directory in this
+   format "ttyUSBn", where n is a number depending on how many serial USB
+   devices attached. If you see that your device is ttyUSB0, you have to use
+   serial:/dev/ttyUSB0 as your URI.
 
 IIO Commands
 ~~~~~~~~~~~~
@@ -381,7 +402,8 @@ The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libii
 
 Example:
 
--  To to read the device ID (register = 0x02) of an AD7746 interfaced via RPI from a Windows machine, enter the following code on the terminal:
+-  To to read the device ID (register = 0x02) of an AD7746 interfaced via RPI
+   from a Windows machine, enter the following code on the terminal:
 
 ::
 
@@ -394,28 +416,28 @@ IIO Oscilloscope
 
    Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
-
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
--  Press refresh to display available IIO Devices, once ad7746 appeared, press connect.
+-  Press refresh to display available IIO Devices, once ad7746 appeared, press
+   connect.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/osc.png
    :alt: AD7746 Oscilloscope Configuration
    :align: center
-   :width: 200px
+   :width: 200
 
 Debug Panel
 ^^^^^^^^^^^
 
-Below is the Debug panel of AD7746 wherein you can directly access the attributes of the device.
-
+Below is the Debug panel of AD7746 wherein you can directly access the
+attributes of the device.
 
 |AD7746 Debug Panel|
 
 DMM Panel
 ^^^^^^^^^
 
-Access the DMM panel to see the instantaneous reading of the input capacitances and the device temperature.
-
+Access the DMM panel to see the instantaneous reading of the input capacitances
+and the device temperature.
 
 |AD7746 DMM Panel|
 
@@ -437,7 +459,7 @@ Press enter and you will get these readings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/python_script.png
    :alt: python_script.png
-   :width: 500px
+   :width: 500
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -453,7 +475,6 @@ Schematic, PCB Layout, Bill of Materials
    -  Bill of Materials
    -  Allegro Project
    
-
 
 Additional Information and Useful Links
 ---------------------------------------
@@ -475,19 +496,18 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0552-PMDZ?&v=Rev B>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/eval-cn0552-pmdztop-edited.png
-   :width: 650px
+   :width: 650
 .. |youtube>6yjW-1EjQ0I| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>6yjw-1ejq0i
 .. |pmod-toadicup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/pmod-toadicup.png
-   :width: 900px
+   :width: 900
 .. |switch_config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/switch_config.png
-   :width: 900px
+   :width: 900
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/daplink.jpg
-   :width: 300px
+   :width: 300
 .. |AD7746 Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/debug_panel.png
-   :width: 400px
+   :width: 400
 .. |AD7746 DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/dmm_readings.png
-   :width: 400px
+   :width: 400

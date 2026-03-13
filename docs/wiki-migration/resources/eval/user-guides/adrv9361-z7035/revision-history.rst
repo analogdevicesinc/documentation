@@ -20,7 +20,6 @@ This is the current shipping version.
    -  `Allegro brd file (7 zipped) <https://wiki.analog.com/_media/resources/eval/user-guides/adrv9361-z7035/08_038702f.7z>`_
    
 
-
 -  Changes from Rev E to Rev F:
 
    -  The schematic did not change. We only made an adjustment to the layout.
@@ -39,15 +38,17 @@ Revision E
    -  `Rev E Allegro Board File <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/08_038702e.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.6 or higher).
    
 
-
 Revision D
 ~~~~~~~~~~
 
 -  Changes from Rev C to Rev D:
 
-   -  Moved all (4) GTX ports from Bank 111 to Bank 112 on the Zynq SoC in order to be in compliance with Xilinx recommended PCIe design rules. Functionally equivalent to Rev C.
+   -  Moved all (4) GTX ports from Bank 111 to Bank 112 on the Zynq SoC in order
+      to be in compliance with Xilinx recommended PCIe design rules.
+      Functionally equivalent to Rev C.
 
-      -  The GTX signal assignments at the JX micro headers were unchanged in order to maintain compatibility with existing carrier boards.
+      -  The GTX signal assignments at the JX micro headers were unchanged in
+         order to maintain compatibility with existing carrier boards.
 
    -  Added revision and part number to the silkscreen and copper.
    -  The LED (D3), used to illuminate when PG_MODULE is asserted, now has its anode connected to the 3V3_I2C supply (formerly connected to 3.3V supply). This was done to allow the LED to be used as a visual state indicator during SOM power up, reflecting different states of the ADM1166 sequencer. In addition, the ADM1166 firmware was updated to include LED toggling (slow/fast), corresponding to specific power up states.
@@ -66,7 +67,6 @@ This is the first publicly available revision.
    
    -  `Rev C Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/adrv9361-z7035.pdf>`_
    
-
 
 ADRV9364-Z7020 Hardware
 -----------------------
@@ -96,7 +96,6 @@ This is the current shipping version.
       -  This has the notation error described above.
    
 
-
 Revision C (First publicly available revision)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -108,7 +107,6 @@ This is the first publicly available revision.
    
    -  `Rev C Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/adrv9364-z7020_revc.pdf>`_
    
-
 
 Support
 -------

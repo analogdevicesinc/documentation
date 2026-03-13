@@ -45,14 +45,15 @@ The following steps will get your system up and running.
 
 .. note::
 
-   If on Linux you would need Wine or similar compatibility layers for Windows to install the library.
+   If on Linux you would need Wine or similar compatibility layers for Windows
+   to install the library.
 
-
-If programming was successful, you should be seeing messages appear on the terminal as shown in figure below.
+If programming was successful, you should be seeing messages appear on the
+terminal as shown in figure below.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmc-imageon/adv7511_lib_test.png
    :alt: Terminal
-   :width: 400px
+   :width: 400
 
 The reference design contains an example of how to:
 
@@ -71,20 +72,33 @@ Xilinx block diagram
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmc-imageon/adv7511_zynq_2.svg
    :alt: HDL Block Diagram
-   :width: 800px
+   :width: 800
 
 ADV7511 block diagram
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmc-imageon/adv7511_proc_1.svg
    :alt: HDL Block Diagram
-   :width: 600px
+   :width: 600
 
 The reference design consists of two independent pcore modules.
 
-The video part consists of an AXI DMAC interface and the ADV7511 video interface. The ADV7511 interface consists of a 16bit YCbCr 422 with separate synchroinzation signals. The DMA streams frame data to this core. The internal buffers of this pcore are small (1k) and do NOT buffer any frames as such. Additional resources may cause loss of synchronization due to DDR bandwidth requirements. The video core is capable of supporting any formats through a set of parameter registers (given below). The pixel clock is generated internal to the device and must be configured for the correct pixel frequency. It also allows a programmable color pattern for debug purposes. A zero to one transition on the enable bits trigger the corresponding action for HDMI enable and color pattern enable.
+The video part consists of an AXI DMAC interface and the ADV7511 video
+interface. The ADV7511 interface consists of a 16bit YCbCr 422 with separate
+synchroinzation signals. The DMA streams frame data to this core. The internal
+buffers of this pcore are small (1k) and do NOT buffer any frames as such.
+Additional resources may cause loss of synchronization due to DDR bandwidth
+requirements. The video core is capable of supporting any formats through a set
+of parameter registers (given below). The pixel clock is generated internal to
+the device and must be configured for the correct pixel frequency. It also
+allows a programmable color pattern for debug purposes. A zero to one transition
+on the enable bits trigger the corresponding action for HDMI enable and color
+pattern enable.
 
-The reference design defaults to the 1080p video mode. Users may change the video settings by programming the following registers. The core requires a corresponding pixel clock to generate the video. This clock must be generated externally.
+The reference design defaults to the 1080p video mode. Users may change the
+video settings by programming the following registers. The core requires a
+corresponding pixel clock to generate the video. This clock must be generated
+externally.
 
 **HSYNC count**: is the total horizontal pixel clocks of the video, for 1080p this is 2200. **HSYNC width**: is the pulse width in pixel clocks, for 1080p this is 44. **HSYNC DE Minimum**: is the number of pixel clocks for the start of active video and is the sum of horizontal sync width and back porch, for 1080p this is 192 (44 + 148). **HSYNC DE Maximum**: is the number of pixel clocks for the end of active video and is the sum of horizontal sync width, back porch and the active video count, for 1080p this is 2112 (44 + 148 + 1920).
 
@@ -92,11 +106,20 @@ The reference design defaults to the 1080p video mode. Users may change the vide
 
 Note that the pixel frequency for 1080p is 148.5MHz.
 
-The reference design reads 24bits of RGB data from DDR and performs color space conversion (RGB to YCbCr) and down sampling (444 to 422). If bypassed, the lower 16bits of DDR data is passed to the HDMI interface as it is.
+The reference design reads 24bits of RGB data from DDR and performs color space
+conversion (RGB to YCbCr) and down sampling (444 to 422). If bypassed, the lower
+16bits of DDR data is passed to the HDMI interface as it is.
 
-A color pattern register provides a quick check of any RGB values on the monitor. If enabled, the register data is used as the pixel data for the entire frame.
+A color pattern register provides a quick check of any RGB values on the
+monitor. If enabled, the register data is used as the pixel data for the entire
+frame.
 
-The audio part consists of an AXI DMAC interface and the ADV7511 spdif audio interface. The audio clock is derived from the bus clock. A programmable register (see below) controls the division factor. The audio data is read from the DDR as two 16bit words for the left and right channels. It is then transmitted on the SPDIF frame. The sample frequency and format may be controlled using the registers below. The reference design defaults to 48KHz.
+The audio part consists of an AXI DMAC interface and the ADV7511 spdif audio
+interface. The audio clock is derived from the bus clock. A programmable
+register (see below) controls the division factor. The audio data is read from
+the DDR as two 16bit words for the left and right channels. It is then
+transmitted on the SPDIF frame. The sample frequency and format may be
+controlled using the registers below. The reference design defaults to 48KHz.
 
 Registers
 ~~~~~~~~~
@@ -136,7 +159,9 @@ Using the Software Reference Design
 The Software Reference Design uses the **ADV7511 Transmitter Library** which is a collection of APIs that provide a consistent interface to ADV7511. The library is a software layer that sits between the application and the TX hardware and it is intended to serve two purposes:
 
 -  Provide the application with a set of APIs that can be used to configure HDMI TX hardware without the need for low-level register access. This makes the application portable across different revisions of the hardware and even across different hardware modules.
--  Provide basic services to aid the application in controlling the TX module, such as interrupt service routine, HDCP high-level control and status information.
+-  Provide basic services to aid the application in controlling the TX module,
+   such as interrupt service routine, HDCP high-level control and status
+   information.
 
 The documentation for the library's API can be accessed here: :doc:`ADV7511 Transmitter API Documentation </wiki-migration/resources/fpga/xilinx/adv7511>`
 
@@ -157,9 +182,11 @@ Serial Setup
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmc-imageon/adv7511_uart.png
    :alt: UART
    :align: center
-   :width: 400px
+   :width: 400
 
-As an alternative an UART terminal can be used to capture the output of the example program. The number of used UART port depends on the computer's configuration. The following settings must be used in the UART terminal:
+As an alternative an UART terminal can be used to capture the output of the
+example program. The number of used UART port depends on the computer's
+configuration. The following settings must be used in the UART terminal:
 
 -  Baud Rate: 115200bps
 -  Data: 8 bit
@@ -170,7 +197,8 @@ As an alternative an UART terminal can be used to capture the output of the exam
 Downloads
 ---------
 
-The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices Github.
+The HDL Reference Designs and the no-OS Software can be downloaded from the
+Analog Devices Github.
 
 **HDL Reference Designs:**
 
@@ -186,7 +214,6 @@ The HDL Reference Designs and the no-OS Software can be downloaded from the Anal
    -  **ZED HDL Reference Design for Vivado:** :git-hdl:`projects/adv7511/zed`
    
 
-
 **no-OS Software:**
 
 .. admonition:: Download
@@ -196,13 +223,11 @@ The HDL Reference Designs and the no-OS Software can be downloaded from the Anal
    -  **ADV7511 Project:** :git-no-OS:`projects/adv7511`
    
 
-
 .. hint::
 
    
    -  Questions? :ez:`Ask Help & Support <community/fpga>`.
    
-
 
 More information
 ----------------

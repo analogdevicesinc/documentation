@@ -4,7 +4,10 @@ IIO OSC ADRV9009 Capture Window
 Introduction
 ------------
 
-Main receivers RX1 and RX2 are handled by the axi-adrv9009-rx-hpc IIO device, while the observation is handled by the axi-adrv9009-rx-obs-hpc device. Splitting into two devices was necessary since RX and OBS may run at different baseband rates.
+Main receivers RX1 and RX2 are handled by the axi-adrv9009-rx-hpc IIO device,
+while the observation is handled by the axi-adrv9009-rx-obs-hpc device.
+Splitting into two devices was necessary since RX and OBS may run at different
+baseband rates.
 
 Channels:
 
@@ -24,11 +27,11 @@ Time Domain View
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_td_main.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Frequency Domain View
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9009_fd_main.png
    :align: center
-   :width: 600px
+   :width: 600

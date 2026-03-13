@@ -17,22 +17,20 @@ This block is implemented using cascaded biquad filters. See :doc:`General 2nd-O
 
    The shelving filters' "Q factor" parameter actually controls the Slope parameter, not Q. See `Audio EQ Cookbook <https://www.w3.org/TR/audio-eq-cookbook/>`_ for the relationship between shelf slope S and Q factor. When this parameter is 1, it produces the steepest shelving filter with monotonic gain.
 
-
 Tree Toolbox Path
 -----------------
 
 Filter->Miscellaneous->Parametric EQ
-
 
 |parametricpic7.png|
 
 Filter Control Window:
 ----------------------
 
-The window will initially show a single filter control, as depicted in the figure below.
+The window will initially show a single filter control, as depicted in the
+figure below.
 
 **To open the Filter Control Window, Click the icon button:**
-
 
 |parametricpic2.png|
 
@@ -45,7 +43,8 @@ To add additional filter stages, click the **Add Filter** button. Up to a maximu
 Controls:
 ---------
 
-Each filter's response can be independently adjusted using the graph controls or spin control at the bottom.
+Each filter's response can be independently adjusted using the graph controls or
+spin control at the bottom.
 
 -  To change a filter's characteristics, like **"Frequency"** or **"Boost"**, just click on the colored circle on filter graph, and drag to the desirable position. If preferred, any of the parameters can be changed directly from the spin controls.
 

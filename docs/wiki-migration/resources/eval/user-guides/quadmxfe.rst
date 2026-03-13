@@ -10,7 +10,8 @@ The Quad-MxFE System Development Platform highlights a complete system solution.
 
 In addition to the Quad-MxFE Digitizing Card, the kit also contains a :doc:`16Tx/16Rx Calibration Board </wiki-migration/resources/eval/user-guides/quadmxfe/calboard>` that is used to develop system-level calibration algorithms, or otherwise more easily demonstrate power-up phase determinism in situations pertinent to their own use case. The Calibration Board also allows the user to demonstrate combined-channel dynamic range, spurious, and phase noise improvements and can also be controlled via a free MATLAB add-on when connected to the PMOD interface of the `VCU118 <https://www.xilinx.com/VCU118>`_.
 
-The system can be used to enable quick time-to-market development programs for applications like:
+The system can be used to enable quick time-to-market development programs for
+applications like:
 
 -  ADEF (Phased-Array, RADAR, EW, SATCOM)
 -  Communications Infrastructure (Multiband 5G and mmWave 5G)
@@ -86,7 +87,8 @@ Features
 -  16x RF Transmit (Tx) Channels (32x Digital Tx Channels)
 
    -  Total 16x 3GSPS to 12GSPS DAC
-   -  48x Digital Up Converters (DUCs) , Each Including Complex Numerically-Controlled Oscillators (NCOs)
+   -  48x Digital Up Converters (DUCs) , Each Including Complex
+      Numerically-Controlled Oscillators (NCOs)
 
 -  Flexible Rx & Tx RF Front-Ends
 
@@ -126,13 +128,12 @@ High-Level Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe_highlevelblockdiagram.png
-   :width: 1000px
+   :width: 1000
 
 System Integration
 ~~~~~~~~~~~~~~~~~~
 
 Below is the full integrated system including the `VCU118 <https://www.xilinx.com/VCU118>`_, ADQUADMXFE1EBZ, and :doc:`ADQUADMXFE-CAL </wiki-migration/resources/eval/user-guides/quadmxfe/calboard>` in full operation.
-
 
 |image1|
 

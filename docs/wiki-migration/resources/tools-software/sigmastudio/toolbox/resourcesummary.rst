@@ -1,7 +1,9 @@
 SigmaStudio Algorithm Resource Summary
 ======================================
 
-This section contains a summary of all of the algorithms in the Toolbox and the resources used by them on the ADAU144x, ADAU176x, and ADAU1781 SigmaDSP processors.
+This section contains a summary of all of the algorithms in the Toolbox and the
+resources used by them on the ADAU144x, ADAU176x, and ADAU1781 SigmaDSP
+processors.
 
 The information here is preliminary.
 

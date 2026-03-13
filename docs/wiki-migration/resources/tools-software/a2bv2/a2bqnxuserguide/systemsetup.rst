@@ -6,12 +6,14 @@ System Setup
 Hardware Setup
 --------------
 
-The complete hardware setup for the demo is detailed in this section. The various jumper and switch settings needed are described below.
+The complete hardware setup for the demo is detailed in this section. The
+various jumper and switch settings needed are described below.
 
 EVAL-AD2428WD1BZ
 ~~~~~~~~~~~~~~~~
 
-The Below image shows an EVAL-AD2428WD1BZ board which can be used as either an A2B master or slave node. The board has following components,
+The Below image shows an EVAL-AD2428WD1BZ board which can be used as either an
+A2B master or slave node. The board has following components,
 
 -  AD2428 A2B transceiver
 -  ADAU1452 SigmaDSP Audio Processor
@@ -21,7 +23,7 @@ The Below image shows an EVAL-AD2428WD1BZ board which can be used as either an A
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/ad2428wd1bz.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Jumper Settings
 ^^^^^^^^^^^^^^^
@@ -37,7 +39,8 @@ Jumper settings (default) for EVAL-AD2428WD1BZ is as shown in below Table.
 EVAL-AD2428WB1BZ
 ~~~~~~~~~~~~~~~~
 
-The below image shows an EVAL-AD2428WB1BZ board which can be used as an A2B slave node. The board has following peripherals
+The below image shows an EVAL-AD2428WB1BZ board which can be used as an A2B
+slave node. The board has following peripherals
 
 -  AD2428 A2B transceiver
 -  SigmaDSP with codec (ADAU1761)
@@ -47,19 +50,20 @@ The below image shows an EVAL-AD2428WB1BZ board which can be used as an A2B slav
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/wb1bz.png
    :align: center
-   :width: 600px
+   :width: 600
 
 EVAL-AD2428WC1BZ
 ~~~~~~~~~~~~~~~~
 
-The below image shows an EVAL-AD2428WC1BZ board which can be used as an A2B slave node. The board has following peripherals
+The below image shows an EVAL-AD2428WC1BZ board which can be used as an A2B
+slave node. The board has following peripherals
 
 -  AD2428 A2B transceiver
 -  4 PDM Microphones
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/wc1bz.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Windows PC Software Set Up
 --------------------------
@@ -69,13 +73,16 @@ The QNX SDP 7.0 and the BSP corresponding to the demo platform, i.e., BeagleBone
 QNX Software Development Platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Launch QNX software center and click on Add Installation in the Software Center Home page. It should launch the new installation wizard as shown in below image.
+Launch QNX software center and click on Add Installation in the Software Center
+Home page. It should launch the new installation wizard as shown in below image.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bqnxuserguide/qnx_sw_setup.png
    :align: center
-   :width: 600px
+   :width: 600
 
-Follow along the instructions to complete the installation. Please note that the product must be registered in your myQNX account for it to appear in the “Available Packages” section.
+Follow along the instructions to complete the installation. Please note that the
+product must be registered in your myQNX account for it to appear in the
+“Available Packages” section.
 
 Board Support Package
 ~~~~~~~~~~~~~~~~~~~~~

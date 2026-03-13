@@ -12,14 +12,27 @@ Prerequisites:
 
       -  `Linaro toolchain <http://releases.linaro.org/components/toolchain/binaries/>`_
 
--  System Root of the firmware used on PlutoSDR itself (this will be downloaded in the example). This includes the libraries (binaries, so you can statically link to things if you want), and headers for those libraries. It's important that the compiler be told where things are, so it can find the headers and libraries for the Pluto. This can either be done on the command line, or by replacing the default sysroot that the compiler comes with. If you are only compiling things for Pluto - this is a convenient solution, but will eventually will cause problems when you forget, and try to compile something else with this same toolchain.
+-  System Root of the firmware used on PlutoSDR itself (this will be downloaded
+   in the example). This includes the libraries (binaries, so you can statically
+   link to things if you want), and headers for those libraries. It's important
+   that the compiler be told where things are, so it can find the headers and
+   libraries for the Pluto. This can either be done on the command line, or by
+   replacing the default sysroot that the compiler comes with. If you are only
+   compiling things for Pluto - this is a convenient solution, but will
+   eventually will cause problems when you forget, and try to compile something
+   else with this same toolchain.
 
-Once you have the necessary tools we can start to build an application. This example will be done using Linux since it is by far the simplest to set up. We will use v0.30 of the firmware, which is assumed running on the PlutoSDR. If you change the firmware you will likely have to recompile your applications since the compiler or libraries running on the Pluto can change over time.
+Once you have the necessary tools we can start to build an application. This
+example will be done using Linux since it is by far the simplest to set up. We
+will use v0.30 of the firmware, which is assumed running on the PlutoSDR. If you
+change the firmware you will likely have to recompile your applications since
+the compiler or libraries running on the Pluto can change over time.
 
 Set up your Linux Host
 ----------------------
 
--  make sure to use either the Xilinx or the Linaro toolchain (you only need one)
+-  make sure to use either the Xilinx or the Linaro toolchain (you only need
+   one)
 
    -  Assuming you have the Xilinx SDK installed in ``/opt/Xilinx``, add the necessary tools to your path: ``tcollins@winston: **source /opt/Xilinx/Vivado/2018.2/settings64.sh**``
 
@@ -44,7 +57,9 @@ Set up your Linux Host
 Using the Linaro Toolchain on ARM hosts
 ---------------------------------------
 
-This is a little easier, since the compiler is already for ARM. You can follow the instructions for the i686 devices, but do not install a different compiler. And when compiling, just call gcc:
+This is a little easier, since the compiler is already for ARM. You can follow
+the instructions for the i686 devices, but do not install a different compiler.
+And when compiling, just call gcc:
 
 ::
 
@@ -89,7 +104,8 @@ Run the app:
 Other standard applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Depending on the project you are doing - you may need to include something like this in a Makefile project (with the appropriate path changes),
+Depending on the project you are doing - you may need to include something like
+this in a Makefile project (with the appropriate path changes),
 
 ::
 

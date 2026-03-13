@@ -9,7 +9,15 @@ For documentation about FreeRTOS, please visit the FreeRTOS website where extens
 Use of System Services and Device Driver libraries with FreeRTOS
 ----------------------------------------------------------------
 
-As of the 1.3.0 release of the Analog Devices FreeRTOS product the pre-built versions of the System Services and Devices Driver libraries are no longer compatible with FreeRTOS for the ADSP-21569, ADSP-SC5xx and Blackfin BF7xx platforms. In order to use the System Services and Device Drivers the project must include the source versions of these libraries rather than linking against the pre-built versions of the libraries. For more information on configuring FreeRTOS projects for use with System Services and Device Drivers please refer to the Using CrossCore Embedded Studio System Services and Device Drivers with FreeRTOS section of the FreeRTOS User Guide.
+As of the 1.3.0 release of the Analog Devices FreeRTOS product the pre-built
+versions of the System Services and Devices Driver libraries are no longer
+compatible with FreeRTOS for the ADSP-21569, ADSP-SC5xx and Blackfin BF7xx
+platforms. In order to use the System Services and Device Drivers the project
+must include the source versions of these libraries rather than linking against
+the pre-built versions of the libraries. For more information on configuring
+FreeRTOS projects for use with System Services and Device Drivers please refer
+to the Using CrossCore Embedded Studio System Services and Device Drivers with
+FreeRTOS section of the FreeRTOS User Guide.
 
 Version 2.1.0
 ~~~~~~~~~~~~~
@@ -36,7 +44,8 @@ New Features
 Changes
 -------
 
--  SHARC+ asm sources now include FreeRTOSConfig.h, so changes may be required in your FreeRTOSConfig.h to be asm safe by macro guarding with:
+-  SHARC+ asm sources now include FreeRTOSConfig.h, so changes may be required
+   in your FreeRTOSConfig.h to be asm safe by macro guarding with:
 
 ::
 
@@ -45,7 +54,9 @@ Changes
 Compatibility
 -------------
 
-This FreeRTOS product is a standalone product containing FreeRTOS 10.4.3-LTS2. No additional FreeRTOS product needs to be used. CrossCore Embedded Studio version 2.10.0 or later is required.
+This FreeRTOS product is a standalone product containing FreeRTOS 10.4.3-LTS2.
+No additional FreeRTOS product needs to be used. CrossCore Embedded Studio
+version 2.10.0 or later is required.
 
 Version 2.0.0
 ~~~~~~~~~~~~~
@@ -73,7 +84,9 @@ Changes
 Compatibility
 -------------
 
-This FreeRTOS product is a standalone product containing FreeRTOS 10.4.3-LTS2. No additional FreeRTOS product needs to be used. CrossCore Embedded Studio version 2.10.0 or later is required.
+This FreeRTOS product is a standalone product containing FreeRTOS 10.4.3-LTS2.
+No additional FreeRTOS product needs to be used. CrossCore Embedded Studio
+version 2.10.0 or later is required.
 
 Version 1.5.0
 ~~~~~~~~~~~~~
@@ -99,7 +112,11 @@ Changes
 Compatibility
 -------------
 
-This FreeRTOS product is intended to be used in conjunction with version 10.0.0 of the FreeRTOS product as provided for free at FreeRTOS.org. This product was tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use this version of the operating system. CrossCore Embedded Studio version 2.10.0 or later is required.
+This FreeRTOS product is intended to be used in conjunction with version 10.0.0
+of the FreeRTOS product as provided for free at FreeRTOS.org. This product was
+tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use
+this version of the operating system. CrossCore Embedded Studio version 2.10.0
+or later is required.
 
 Version 1.4.0
 ~~~~~~~~~~~~~
@@ -122,12 +139,17 @@ New Features
 Changes
 -------
 
--  LwIP examples removed due to incompatability between LwIP 2.6.0 and CCES 2.9.0.
+-  LwIP examples removed due to incompatability between LwIP 2.6.0 and CCES
+   2.9.0.
 
 Compatibility
 -------------
 
-This FreeRTOS product is intended to be used in conjunction with version 10.0.0 of the FreeRTOS product as provided for free at FreeRTOS.org. This product was tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use this version of the operating system. CrossCore Embedded Studio version 2.9.0 or later is required. ADuCM parts require IAR 5.2.1.a or Keil 7.60.1 or later.
+This FreeRTOS product is intended to be used in conjunction with version 10.0.0
+of the FreeRTOS product as provided for free at FreeRTOS.org. This product was
+tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use
+this version of the operating system. CrossCore Embedded Studio version 2.9.0 or
+later is required. ADuCM parts require IAR 5.2.1.a or Keil 7.60.1 or later.
 
 Version 1.3.1
 ~~~~~~~~~~~~~
@@ -152,12 +174,19 @@ New Features
 Changes
 -------
 
-This release contains support for UART based I/O when using FreeRTOS on the ADSP-SC5xx Cortex-A5 core. This changes the method of I/O used for this processor core and care should be taken to understand this change when upgrading existing projects.
+This release contains support for UART based I/O when using FreeRTOS on the
+ADSP-SC5xx Cortex-A5 core. This changes the method of I/O used for this
+processor core and care should be taken to understand this change when upgrading
+existing projects.
 
 Compatibility
 -------------
 
-This FreeRTOS product is intended to be used in conjunction with version 10.0.0 of the FreeRTOS product as provided for free at FreeRTOS.org. This product was tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use this version of the operating system. CrossCore Embedded Studio version 2.8.3 or later is required. ADuCM parts require IAR 5.2.1.a or Keil 7.60.1 or later.
+This FreeRTOS product is intended to be used in conjunction with version 10.0.0
+of the FreeRTOS product as provided for free at FreeRTOS.org. This product was
+tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use
+this version of the operating system. CrossCore Embedded Studio version 2.8.3 or
+later is required. ADuCM parts require IAR 5.2.1.a or Keil 7.60.1 or later.
 
 Version 1.3.0
 ~~~~~~~~~~~~~
@@ -179,18 +208,26 @@ New Features
 -  Beta support for ADSP-SC5xx (SHARC+ and Cortex-A5 cores)
 -  LwIP example for Cortex-A5
 
-While this port is functionally complete, it is considered a beta release due to an issue with performance when host based I/O is enabled in an application debug session (see known issues below for more details). This issue will be addressed in a future version of the FreeRTOS product from Analog Devices.
+While this port is functionally complete, it is considered a beta release due to
+an issue with performance when host based I/O is enabled in an application debug
+session (see known issues below for more details). This issue will be addressed
+in a future version of the FreeRTOS product from Analog Devices.
 
 Compatibility
 -------------
 
-This FreeRTOS product is intended to be used in conjunction with version 10.0.0 of the FreeRTOS product as provided for free at FreeRTOS.org. This product was tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use this version of the operating system. CrossCore Embedded Studio version 2.8.0 or later is required. ADuCM parts require IAR 5.2.1.a or Keil 7.60.1 or later.
+This FreeRTOS product is intended to be used in conjunction with version 10.0.0
+of the FreeRTOS product as provided for free at FreeRTOS.org. This product was
+tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use
+this version of the operating system. CrossCore Embedded Studio version 2.8.0 or
+later is required. ADuCM parts require IAR 5.2.1.a or Keil 7.60.1 or later.
 
 Known Issues
 ------------
 
 -  FreeRTOS and CrossCore Embedded Studio conflict on use of SVC interrupt (Cortex-A5 only)
--  The current implementation of FreeRTOS for ADSP-SC5xx (Cortex-A5 Core) relies on the SVC interrupt to perform context switching within the RTOS.
+-  The current implementation of FreeRTOS for ADSP-SC5xx (Cortex-A5 Core) relies
+   on the SVC interrupt to perform context switching within the RTOS.
 
 ::
 
@@ -223,12 +260,19 @@ Supported Parts
 Compatibility
 -------------
 
-This FreeRTOS product is intended to be used in conjunction with version 9.0.0 of the FreeRTOS product as provided for free at FreeRTOS.org. This product was tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use this version of the operating system. CrossCore Embedded Studio version 2.6.0 or later is required. ADuCM parts require IAR 5.2.1.a or Keil 7.60.1 or later.
+This FreeRTOS product is intended to be used in conjunction with version 9.0.0
+of the FreeRTOS product as provided for free at FreeRTOS.org. This product was
+tested using version 10.0.0 of FreeRTOS and we strongly recommend that you use
+this version of the operating system. CrossCore Embedded Studio version 2.6.0 or
+later is required. ADuCM parts require IAR 5.2.1.a or Keil 7.60.1 or later.
 
 Known Issues
 ------------
 
-- FreeRTOS and CrossCore Embedded Studio conflict on use of SVC interrupt (Cortex-A5 only) \* The current implementation of FreeRTOS for ADSP-SC5xx (Cortex-A5 Core) relies on the SVC interrupt to perform context switching within the RTOS.
+- FreeRTOS and CrossCore Embedded Studio conflict on use of SVC interrupt
+  (Cortex-A5 only) \* The current implementation of FreeRTOS for ADSP-SC5xx
+  (Cortex-A5 Core) relies on the SVC interrupt to perform context switching
+  within the RTOS.
 
 ::
 
@@ -258,4 +302,8 @@ Supported Parts
 Compatibility
 -------------
 
-This FreeRTOS product is intended to be used in conjunction with version 9.0.0 of the FreeRTOS product as provided for free at FreeRTOS.org. This product was tested using version 9.0.0 of FreeRTOS and we strongly recommend that you use this version of the operating system. ADuCM parts require IAR 5.2.1.a or Keil 7.60.1 or later.
+This FreeRTOS product is intended to be used in conjunction with version 9.0.0
+of the FreeRTOS product as provided for free at FreeRTOS.org. This product was
+tested using version 9.0.0 of FreeRTOS and we strongly recommend that you use
+this version of the operating system. ADuCM parts require IAR 5.2.1.a or Keil
+7.60.1 or later.

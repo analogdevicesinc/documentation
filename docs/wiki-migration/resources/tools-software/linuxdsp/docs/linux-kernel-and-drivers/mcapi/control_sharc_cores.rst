@@ -4,7 +4,12 @@ Enable and Disable SHARC Cores
 Introduction
 ------------
 
-This document introduces two kind of core control solutions which support ADSP-SC573, SC584, SC589 EZ-Kits and SC589-MINI. One method is to control SHARC Cores with u-boot ICC command. Other way includes a kernel device driver and a command-line utility, for enabling and disabling the SHARC cores (Core 1 & 2) from the ARM core (Core 0), which have been added to the Yocto Linux distribution for ADSP-SC573, SC584, SC589 and SHARC AUDIO MODULE.
+This document introduces two kind of core control solutions which support
+ADSP-SC573, SC584, SC589 EZ-Kits and SC589-MINI. One method is to control SHARC
+Cores with u-boot ICC command. Other way includes a kernel device driver and a
+command-line utility, for enabling and disabling the SHARC cores (Core 1 & 2)
+from the ARM core (Core 0), which have been added to the Yocto Linux
+distribution for ADSP-SC573, SC584, SC589 and SHARC AUDIO MODULE.
 
 Method 1: Enable SHARC cores with u-boot ICC command
 ----------------------------------------------------
@@ -12,7 +17,9 @@ Method 1: Enable SHARC cores with u-boot ICC command
 Configure u-boot to Enable Slave Cores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The slave SHARC core 0 and 1 in SC5xx silicon can be enabled and disabled in u-boot command console. In order to include this ICC command into u-boot, you need to select it in u-boot configuration.
+The slave SHARC core 0 and 1 in SC5xx silicon can be enabled and disabled in
+u-boot command console. In order to include this ICC command into u-boot, you
+need to select it in u-boot configuration.
 
 ::
 
@@ -20,7 +27,8 @@ The slave SHARC core 0 and 1 in SC5xx silicon can be enabled and disabled in u-b
    ARM architecture  --->
        [*] ICC command to enable and disable slave cores
 
-After saving the configuration in u-boot, rebuild the u-boot ldr image for sc5xx boards.
+After saving the configuration in u-boot, rebuild the u-boot ldr image for sc5xx
+boards.
 
 ::
 
@@ -31,7 +39,10 @@ Finally, flash the u-boot LDR image into the SPI flash of SC5xx.
 U-boot ICC command usage
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ICC command can enable or disable a specific slave core. The SHARC core ids accepted by this command for SC5xx are 1 and 2, any other id value is ignored. The ICC message queue at the beginning of L2 SRAM is reset before enabling the SHARC cores.
+The ICC command can enable or disable a specific slave core. The SHARC core ids
+accepted by this command for SC5xx are 1 and 2, any other id value is ignored.
+The ICC message queue at the beginning of L2 SRAM is reset before enabling the
+SHARC cores.
 
 ::
 
@@ -68,7 +79,9 @@ Enable the core control driver by using the below command:
              -> Staging drivers (STAGING [=y])
                -> icc driver (ICC [=y])
 
-A new corectrl device would be created to allow Linux user to enable and disable the SHARC cores. See icc.h for macro values. The device, /dev/corectrl, supports the following ioctl requests:
+A new corectrl device would be created to allow Linux user to enable and disable
+the SHARC cores. See icc.h for macro values. The device, /dev/corectrl, supports
+the following ioctl requests:
 
 +----------------+---------------------------------------------------------------------+-------------------------------------------+
 | Request        | Description                                                         | Format                                    |
@@ -114,7 +127,8 @@ An example to enable both cores is as follows:
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-The SHARC cores can be controlled from the Linux command line using the corecontrol utility. To use corecontrol, first add the package in local.conf:
+The SHARC cores can be controlled from the Linux command line using the
+corecontrol utility. To use corecontrol, first add the package in local.conf:
 
 ::
 

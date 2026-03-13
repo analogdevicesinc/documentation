@@ -3,11 +3,12 @@ AD9361 Device Driver Customization
 
 .. hint::
 
-   There are configuration options that must be set properly. Some others allow you to set defaults, but can be changed anytime later using the driver API. But most of these options don't need to be changed at all.
+   There are configuration options that must be set properly. Some others allow
+   you to set defaults, but can be changed anytime later using the driver API.
+   But most of these options don't need to be changed at all.
 
    
    If unsure please see the manual or don't change!
-
 
 The Linux platform allows you to examine and determine optimal settings for your target application: See here: :doc:`AD936X Advanced Plugin </wiki-migration/resources/tools-software/linux-software/fmcomms2_advanced_plugin>`
 
@@ -421,10 +422,11 @@ Linux/No-OS device driver comparison
    All options below directly correspond to bits in:
 
    
-   PARALLEL PORT CONFIGURATION REGISTERS (ADDRESS 0x010 THROUGH ADDRESS 0x012) TX, RX INTERFACE CLOCK CONFIGURATION REGISTERS (ADDRESS 0x006 THROUGH ADDRESS 0x07) DIGITAL IO CONTROL REGISTERS (ADDRESS 0x03B THROUGH ADDRESS 0x03E)
+   PARALLEL PORT CONFIGURATION REGISTERS (ADDRESS 0x010 THROUGH ADDRESS 0x012)
+   TX, RX INTERFACE CLOCK CONFIGURATION REGISTERS (ADDRESS 0x006 THROUGH ADDRESS
+   0x07) DIGITAL IO CONTROL REGISTERS (ADDRESS 0x03B THROUGH ADDRESS 0x03E)
    
    please see the manual for further assistance.
-
 
 +---------------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | adi,pp-tx-swap-enable                 | pp_tx_swap_enable                 | Clearing this option swaps I and Q (performs spectral inversion)                                                                                                                                                                                                                                                                                                        |
@@ -482,13 +484,12 @@ Linux/No-OS device driver comparison
 | adi,lvds-invert2-control              | lvds_invert2_control              |                                                                                                                                                                                                                                                                                                                                                                         |
 +---------------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 RF Port Select
 --------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-transceiver/ad9361_fbl.png
    :align: center
-   :width: 300px
+   :width: 300
 
 +-----------------------------+-------------------------+-----------------------+
 | RF Port Control             |                         |                       |

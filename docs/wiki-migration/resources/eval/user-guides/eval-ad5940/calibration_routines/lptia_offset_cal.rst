@@ -4,7 +4,9 @@ Low Power TIA Offset Calibration
 Overview
 --------
 
-The LPTIA channel has dedicated Offset and Gain calibration registers to remove any errors. The following sections describe the calibration method and gives an example on how to calibrate the errors using the AD5940 SDK.
+The LPTIA channel has dedicated Offset and Gain calibration registers to remove
+any errors. The following sections describe the calibration method and gives an
+example on how to calibrate the errors using the AD5940 SDK.
 
 Calibration Steps
 -----------------
@@ -19,12 +21,14 @@ The following are the steps involved for calibrating the LPTIA offset error:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/calibration_routines/lptia_offset.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 Using the LPTIA Rtia Calibration Function in the SDK
 ----------------------------------------------------
 
-The AD5940 SDK provides a function to calibrate the LPTIA offset error. The function is located in the AD5940.c file. The following is an example code on how to use the function.
+The AD5940 SDK provides a function to calibrate the LPTIA offset error. The
+function is located in the AD5940.c file. The following is an example code on
+how to use the function.
 
 ::
 

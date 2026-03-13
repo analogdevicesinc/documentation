@@ -3,7 +3,9 @@
 APPENDIX : Flashing ADSP-21569 SOM
 ==================================
 
-The following steps can be followed to flash the ADSP-21569-SOM with an .ldr file. Place the intended .ldr file in C:\\Analog Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Target\\LDR
+The following steps can be followed to flash the ADSP-21569-SOM with an .ldr
+file. Place the intended .ldr file in C:\\Analog
+Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Target\\LDR
 
 -  Connect the SOM board to the EV-SOM-CRR ez kit.
 -  Connect the ICE-1000 JTAG emulator to the SOM.

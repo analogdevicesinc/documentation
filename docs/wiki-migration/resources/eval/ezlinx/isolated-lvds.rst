@@ -8,7 +8,7 @@ The Isolated LVDS port is implemented using the :adi:`adum3442` *i*Coupler signa
 .. image:: https://wiki.analog.com/_media/ezlinx/isolatedlvds.png
    :alt: Figure 1. Isolated LVDS Implementation
    :align: center
-   :width: 900px
+   :width: 900
 
 VDD1 of the ADuM3442, and VDD1 of the ADuM5000 are powered by 3.3V. The ADuM5000 will generate an isolated 3.3V and is used to supply power to VDD2 of the\ :adi:`adum3442`, VCC of the :adi:`adn4663` and the :adi:`adn4664`.
 

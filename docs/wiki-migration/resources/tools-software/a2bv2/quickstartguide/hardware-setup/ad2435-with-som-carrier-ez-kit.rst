@@ -8,7 +8,8 @@ AD2435 with SOM carrier ez-kit
 Evaluation boards
 -----------------
 
-The AD243x high power evaluation boards used in the demos are explained in the following subsections.
+The AD243x high power evaluation boards used in the demos are explained in the
+following subsections.
 
 ADZS2435-MINI
 ~~~~~~~~~~~~~
@@ -20,12 +21,11 @@ ADZS2435-MINI
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/adzs-2435mini.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ **Figure:** ADZS2435-MINI
-
 
 Hardware modifications
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -58,12 +58,11 @@ EVAL-AD2435WJ3LZ
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2435j3lz_new.png
    :align: center
-   :width: 1080px
+   :width: 1080
 
 .. container:: centeralign
 
    \ **Figure:** EVAL-AD2435WJ3LZ board Connections
-
 
 Jumper settings
 ^^^^^^^^^^^^^^^
@@ -88,12 +87,11 @@ EV-21569-SOM Rev B
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/21569_som.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ **Figure:** EV-21569-SOM Rev B (Top view)
-
 
 EV-SC594-SOM Rev B
 ~~~~~~~~~~~~~~~~~~
@@ -107,12 +105,11 @@ EV-SC594-SOM Rev B
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/sc594_som.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ **Figure:** EV-SC594-SOM Rev B (Top view)
-
 
 EV-SOMCRR-EZKIT Rev A
 ~~~~~~~~~~~~~~~~~~~~~
@@ -137,13 +134,11 @@ EV-SOMCRR-EZKIT Rev A
 
    \ **Figure:** EV-SOMCRR-EZKIT Rev A (Top view)
 
-
    |image1|
 
 .. container:: centeralign
 
    \ **Figure:** EV-SOMCRR-EZKIT + EV-21569-SOM
-
 
    |image2|
 
@@ -151,12 +146,10 @@ EV-SOMCRR-EZKIT Rev A
 
    \ **Figure:** EV-SOMCRR-EZKIT + EV-SC594-SOM
 
-
 Connections
 -----------
 
 To run the sample demo, the following setup connections are to be made.
-
 
 |image3|
 
@@ -164,13 +157,11 @@ To run the sample demo, the following setup connections are to be made.
 
    \ **Figure:** Multi-main connections using PC(Host) and EV-21569-SOM + EV-SOMCRR-EZKIT and ADZS-AD2435 MINI’s
 
-
    |image4|
 
 .. container:: centeralign
 
    \ **Figure:** Multi-main connections for audio stream from SOM carrier to sub-node line-out using EV-SC594-SOM + EV-SOMCRR-EZKIT (Host) and ADZS-AD2435 MINI’s
-
 
    |image5|
 
@@ -178,15 +169,14 @@ To run the sample demo, the following setup connections are to be made.
 
    \ **Figure:** Multi-main connections for audio stream from subnode PDM mic to subnode line-out using SC594 SOM carrier kit (Host) and ADZS2435MINI’s
 
-
    |image6|
 
 .. container:: centeralign
 
    \ **Figure:** Multi-main connections for audio stream from subnode line-in to subnode class-D amplifier-out using SC594 SOM carrier kit (Host) and ADZS2435MINI’s
 
-
-The steps described in this section are recommended to run the following configurations
+The steps described in this section are recommended to run the following
+configurations
 
 -  AD2435 multi-main sample demo using ADSP-21569 platform and PC as host.
 -  AD2435 multi-main sample demo using ADSP-SC594 platform as a host
@@ -196,19 +186,26 @@ The Evaluation boards shall be connected in the following order.
 -  For using both ADSP-21569 platform and PC as a host, connect the EV-21569-SOM to the EV-SOMCRR-EZKIT. For using just ADSP-SC594 platform as a host, connect the EV-SC594-SOM to the EV-SOMCRR-EZKIT
 -  Connect one of the two ADZS2435-MINI boards to J10 A2B interface of the EV-SOMCRR-EZKIT. Let this be “main node 0” with I2C address configured to be 0x68.
 -  Connect the other ADZS2435-MINI to J11 A2B interface of the EV-SOMCRR-EZKIT. Let this be “main node 1” with I2C address configured to be 0x6A.
--  For A2B chain 0:- ADZS2435-MINI (Main node 0) EVAL-AD2435WJ3LZ (Sub node 0) EVAL-AD2435WJ3LZ (Sub node 1), the connections are as follows
+-  For A2B chain 0:- ADZS2435-MINI (Main node 0) EVAL-AD2435WJ3LZ (Sub node 0)
+   EVAL-AD2435WJ3LZ (Sub node 1), the connections are as follows
 
-   -  Connect twisted-pair wire between the “B” connector on the main node 0 board and the “A” connector on the sub node 0 board.
+   -  Connect twisted-pair wire between the “B” connector on the main node 0
+      board and the “A” connector on the sub node 0 board.
 
-      -  Ordered List ItemConnect twisted-pair wire between the “B” connector on the sub node 0 board and the “A” connector on the sub node 1 board.
+      -  Ordered List ItemConnect twisted-pair wire between the “B” connector on
+         the sub node 0 board and the “A” connector on the sub node 1 board.
 
--  For A2B chain 1:- ADZS2435-MINI (Main node 1) EVAL-AD2435WJ3LZ (Sub node 2) EVAL-AD2435WJ3LZ (Sub node 3), the connections are as follows
+-  For A2B chain 1:- ADZS2435-MINI (Main node 1) EVAL-AD2435WJ3LZ (Sub node 2)
+   EVAL-AD2435WJ3LZ (Sub node 3), the connections are as follows
 
-   -  Connect twisted-pair wire between the “B” connector on the main node 1 board and the “A” connector on the sub node 2 board.
+   -  Connect twisted-pair wire between the “B” connector on the main node 1
+      board and the “A” connector on the sub node 2 board.
 
-      -  Connect twisted-pair wire between the “B” connector on the sub node 2 board and the “A” connector on the sub node 3 board.
+      -  Connect twisted-pair wire between the “B” connector on the sub node 2
+         board and the “A” connector on the sub node 3 board.
 
--  Connect 12V power supplies to the power connectors of EV-SOMCRR-EZKIT and both the ADZS2435-MINI boards.
+-  Connect 12V power supplies to the power connectors of EV-SOMCRR-EZKIT and
+   both the ADZS2435-MINI boards.
 
 Audio In/out for ADSP-21569 and PC as a host – multi-main
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

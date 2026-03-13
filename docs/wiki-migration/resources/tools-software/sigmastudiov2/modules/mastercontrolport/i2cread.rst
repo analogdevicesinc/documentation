@@ -26,7 +26,8 @@ Click on the Settings button to configure the parameters for I2C read.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/mastercontrolport/i2c_read_wndw_ssp.jpg
    :alt: i2c_read_wndw_ssp.jpg
 
-Create Multiple instances for monitoring multiple slaves/ multiple sub address from same slave.
+Create Multiple instances for monitoring multiple slaves/ multiple sub address
+from same slave.
 
 Targets Supported
 -----------------
@@ -36,7 +37,6 @@ Name     ADSP-214xx ADSP-215xx/ADSP-SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 ======== ========== ===================== ============= ================
 I2C Read NA         NA                    S             NA
 ======== ========== ===================== ============= ================
-
 
 | ===== Pins =====
 
@@ -49,7 +49,6 @@ Name    Type    Description
 Trigger Control Rising edge in this signal initiates read.
 ======= ======= ==========================================
 
-
 | ====Output Pins====
 
 ======= ======= ==========================
@@ -57,7 +56,6 @@ Name    Type    Description
 ======= ======= ==========================
 OutputX Control Outputs data read over I2C
 ======= ======= ==========================
-
 
 | ===== Configurable Parameters =====
 

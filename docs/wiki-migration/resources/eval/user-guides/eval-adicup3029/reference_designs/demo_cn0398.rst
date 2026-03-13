@@ -21,12 +21,12 @@ The **temperature** value is calculated based on the **RTD resistance**:
 **1. RTD resistance > 100Ω**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_1.png
-   :width: 800px
+   :width: 800
 
 **2. RTD resistance ≤ 100Ω**
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/cn0398_demo_2.png
-   :width: 800px
+   :width: 800
 
 The **pH** value can be calculated in two ways, so user can configure which one did he want for his application: using *two-point calibration* data or using *Nernst equation*. The pH value will be calculated using calibration measured value:
 
@@ -99,15 +99,18 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Plug in the ESP8266 module in the **P1** connector.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_esp8266.png
    :align: center
-   :width: 700px
+   :width: 700
 
--  The ESP8266 Enable Pin needs to be tied directly to 3.3V or pulled high to the GPIO via a 10K ohm resistor. Because this is not currently on the Rev B or Rev C version of the ADICUP3029, you will need to solder a small fly wire from the 3.3V pin to the enable pin.
+-  The ESP8266 Enable Pin needs to be tied directly to 3.3V or pulled high to
+   the GPIO via a 10K ohm resistor. Because this is not currently on the Rev B
+   or Rev C version of the ADICUP3029, you will need to solder a small fly wire
+   from the 3.3V pin to the enable pin.
    |image2|\ |image3|
    \* Connect the **EVAL-CN0398-ARDZ** shield to the board.
 -  Connect the pH sensor to the **J1** connector of the EVAL-CN0398-ARDZ.
@@ -117,14 +120,16 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_jumper_positions.jpg
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Connect the board to the PC via Micro-USB to USB cable.
 
 .. important::
 
-   Extremely important to plug in an acceptable power supply to the barrel jack P2 of the EVAL-ADICUP3029 if you are using a moisture sensor that requires voltage excitation greater than 5V on the EVAL-CN0398-ARDZ. Only moisture sensors using less than 3.3V can run off the USB power option.
-
+   Extremely important to plug in an acceptable power supply to the barrel jack
+   P2 of the EVAL-ADICUP3029 if you are using a moisture sensor that requires
+   voltage excitation greater than 5V on the EVAL-CN0398-ARDZ. Only moisture
+   sensors using less than 3.3V can run off the USB power option.
 
 Configuring the Software
 ------------------------
@@ -175,7 +180,6 @@ This example uses the `Eclipse Mosquitto <https://mosquitto.org>`_ which is an o
 
    
 
-
 -  `Download mosquitto <https://mosquitto.org/download/>`_
 -  Double click the downloaded .exe file, and install the Mosquitto program
 -  During the install, Mosquitto will ask you to make sure you have 2 other programs installed.
@@ -188,11 +192,12 @@ This example uses the `Eclipse Mosquitto <https://mosquitto.org>`_ which is an o
 -  Make sure these additional programs are installed before you continue
 -  Click next and finish the installation.
 
-   -  You may run into an issue that says "VCRUNTIME140.dll is missing. In order to proceed you must first have this installed.
+   -  You may run into an issue that says "VCRUNTIME140.dll is missing. In order
+      to proceed you must first have this installed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_vcruntime_dll_missing.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  After looking around, I found a great website to download the DLL files from, as well as a great video that shows you have to fix the issue, and it did work for me. *Please note, that this solution is **NOT** affiliated with Analog Devices, and Analog Devices assumes no responsibility for any problems or damages occurred during this process.*
 -  `How to fix VCRUNTIME140.DLL Missing Video <https://www.youtube.com/watch?v=-R3LuYNQf98>`_
@@ -203,15 +208,18 @@ Setting up Mosquitto to Receive MQTT Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  With Mosquitto and other software properly installed, you should be able to run mosquitto. Open a Command Prompt and navigate to the folder where mosquitto is installed. The default location is C:\\Program Files (x86)\\mosquitto. In this case it was installed in C:\\MosquittoMQTT.
--  Type mosquitto.exe -v to start the broker in verbose mode. The code may look like this: <code> C:\\MosquittoMQTT>mosquitto.exe -v </code> It should look like the following picture
+-  Type mosquitto.exe -v to start the broker in verbose mode. The code may look
+   like this: <code> C:\\MosquittoMQTT>mosquitto.exe -v </code> It should look
+   like the following picture
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_open_mqtt_broker.png
    :align: left
 
 .. important::
 
-   Make sure that your computer or laptop is connected to the same network you are going to configure in the ADuCM_demo_cn0398.h file. Once you run the executable, Mosquitto assumes that you are running on that network.
-
+   Make sure that your computer or laptop is connected to the same network you
+   are going to configure in the ADuCM_demo_cn0398.h file. Once you run the
+   executable, Mosquitto assumes that you are running on that network.
 
 -  The mosquitto broker is now running locally and has the same IP as your machine and by default runs on port 1883. Open a new Command Prompt and type **ipconfig** to get your local IP address
 -  In the **ADuCM_demo_cn0398.h** header file you need to configure the following parameters: ``/* SSID of the access point. */
@@ -222,7 +230,11 @@ Setting up Mosquitto to Receive MQTT Data
    uint8_t aMQTTBrokerIp[] = "***";
    /* Port of the broker to publish to. */
    uint8_t aMQTTBrokerPort[] = "1883";``
--  Open a third Command Prompt and navigate to the folder where mosquitto is installed and type this command and hit the <ENTER> key:<code> C:\\MosquittoMQTT>mosquitto_sub.exe -t cn0398 </code> This command subscribes to the topic and will display the cn0398 data. It should look similar to the image below.
+-  Open a third Command Prompt and navigate to the folder where mosquitto is
+   installed and type this command and hit the <ENTER> key:<code>
+   C:\\MosquittoMQTT>mosquitto_sub.exe -t cn0398 </code> This command subscribes
+   to the topic and will display the cn0398 data. It should look similar to the
+   image below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_mqtt_subscriber.png
    :align: left
@@ -239,7 +251,6 @@ Outputting Data
 
 -  After the calibration sequence the program will start to publish data that can be seen with a **MQTT subscriber** to the *cn0398* topic.
 
-
 |image4|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_cces_good_console_1.png
@@ -248,14 +259,19 @@ Outputting Data
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0398.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0398.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cn0398** can be found here:
 
@@ -271,7 +287,6 @@ The software for the **ADuCM3029_demo_cn0398** can be found here:
    
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0398 Source Code <projects/ADuCM3029_demo_cn0398>`
    
-
 
 How to use the Tools
 --------------------
@@ -289,9 +304,9 @@ Debugging
 For more detailed instructions on importing this application/demo example into the CrossCore Embedded Studios tools, please view our :doc:`How to configure the debug session </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` section.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_demo_shield_front_sensors_attached_adicup3029.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_back.png
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_front.png
-   :width: 385px
+   :width: 385
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_data.png

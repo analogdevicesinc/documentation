@@ -68,13 +68,16 @@ GUI Control
 
 The sequence of booting up of different slaves can be configured by using the drop down list next to the |image2| image as shown below
 
-
 |image3|
 
 Support for Different SPI Slave Select Pins
 -------------------------------------------
 
-If the device to be programmed is selected through MP0 (the /SS_M pin), no configuration is required in the register controls. Otherwise, the multipurpose pin must be configured to act as the slave select in the Register Window. (Hardware Configuration -> ICx - ADAU145x Register Controls -> MULTIPURPOSE/AUXADC)
+If the device to be programmed is selected through MP0 (the /SS_M pin), no
+configuration is required in the register controls. Otherwise, the multipurpose
+pin must be configured to act as the slave select in the Register Window.
+(Hardware Configuration -> ICx - ADAU145x Register Controls ->
+MULTIPURPOSE/AUXADC)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/mp5_slaveselect.jpg
    :align: center
@@ -83,7 +86,9 @@ If the device to be programmed is selected through MP0 (the /SS_M pin), no confi
 -  MPx pin mode -> 'Slave Select for Master SPI port'
 -  MPx pin function -> 'Multipurpose function'
 
-The following table shows the mapping between module's parameter and the register control window. Please note that for some other blocks, there is an offset of 1 between the module parameter and the register control window.
+The following table shows the mapping between module's parameter and the
+register control window. Please note that for some other blocks, there is an
+offset of 1 between the module parameter and the register control window.
 
 +----------------------------------------+------------------------------------------------+
 | 'Slave Select' in Configuration Window | 'Slave Select Channel' in the Register control |
@@ -124,7 +129,10 @@ Use the following file and edit for your slave.
 
 Please follow the steps below to edit the XML for your Slave.
 
--  Edit IC, IC_Address and Address_byte_length fields in xml. Please note that IC_Address should be an 8-bit I2C address in decimal format. Address_byte_length refers to the length, in bytes, of the external IC's address space.
+-  Edit IC, IC_Address and Address_byte_length fields in xml. Please note that
+   IC_Address should be an 8-bit I2C address in decimal format.
+   Address_byte_length refers to the length, in bytes, of the external IC's
+   address space.
 
 .. code:: xml
 

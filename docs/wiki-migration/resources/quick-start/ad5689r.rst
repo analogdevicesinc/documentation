@@ -1,7 +1,8 @@
 AD5689R/AD5687R Quick Start Guide
 =================================
 
-\*\* Dual, 16-/12-Bit, Voltage Output DACs with a 2 ppm/ºC Reference, SPI Interface \*\*
+\*\* Dual, 16-/12-Bit, Voltage Output DACs with a 2 ppm/ºC Reference, SPI
+Interface \*\*
 
 Features
 --------
@@ -30,7 +31,6 @@ Functional Block Diagram
 
    \ *Figure 1.*\
 
-
 Pin Configurations
 ------------------
 
@@ -38,11 +38,9 @@ Pin Configurations
 
    \
 
-
    |image1|
 
 .. container:: column
-
 
    ..
 
@@ -56,7 +54,6 @@ Pin Configurations
       \ *Figure 2. 16-Lead TSSOP*
 
    
-
 
 .. container:: column
 
@@ -105,7 +102,6 @@ Pin Configurations
 .. container:: CENTERALIGN
 
    \ *Figure 4. Input Shift Register Contents (*\ :adi:`ad5689r`\ *)*\
-
 
 **Table 2. Command Definitions**
 
@@ -157,13 +153,11 @@ Simple Write: Example 1
 
    To update Channel A, write the following over the serial interface: 0001 0001 1000000000000000 (four command bits, four address bits, 16 data bits for the :adi:`ad5689r`). This updates Channel A to midscale. GAIN = 1, V\ :sub:`OUT`\ A = 1.25 V.
 
-
    |image4|
 
 .. container:: CENTERALIGN
 
    \ *Figure 5. Simple Write—Update Channel A)*\
-
 
 Simple Write: Example 2
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,18 +166,16 @@ Simple Write: Example 2
 
    To update both Channel A and Channel B, write the following over the serial interface: 0001 1001 1000000000000000. This updates both channels to full scale. GAIN = 1, V\ :sub:`OUT`\ B = 2.5 V, V\ :sub:`OUT`\ A = 2.5 V.
 
-
    |image5|
 
 .. container:: CENTERALIGN
 
    \ *Figure 7. Simple Write—Update Channel A and Channel B*\
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/11256-008.png
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/quick-start/11256-007.png
-   :width: 300px
+   :width: 300
 .. |image3| image:: https://wiki.analog.com/_media/resources/quick-start/11256-045.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/quick-start/example_1.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/quick-start/example_2.png

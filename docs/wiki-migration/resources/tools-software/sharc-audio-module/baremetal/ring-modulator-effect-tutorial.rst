@@ -7,14 +7,18 @@ Bare Metal Project Wizard Setup
 Using the :doc:`bare metal project wizard </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/project-wizard>`:
 
 -  Give the project a meaningful name, click Next
--  Choose the Audio Project Fin on the Expansion Fin Selection Page because it is required for part of the tutorial, click Finish
+-  Choose the Audio Project Fin on the Expansion Fin Selection Page because it
+   is required for part of the tutorial, click Finish
 
 **No other options need to be changed.**
 
 Tutorial Overview
 -----------------
 
-A ring modulator is a wild audio effect that generates some very interesting sounds. In this effect, we multiply the incoming audio signal using an oscillator. Here's a nice explanation of how the ring modular effect works and its various parameters.
+A ring modulator is a wild audio effect that generates some very interesting
+sounds. In this effect, we multiply the incoming audio signal using an
+oscillator. Here's a nice explanation of how the ring modular effect works and
+its various parameters.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/youtube>vi0vknkv0n0
    :alt: youtube>vI0VKNkv0n0
@@ -57,7 +61,9 @@ Just like in the tremelo tutorial, we'll start with some fixed parameters. ``rin
 Controlling the Ring Modulator Parameters with Pots on the Audio Project Fin
 ----------------------------------------------------------------------------
 
-Now we will map the HADC0 pot to our rate parameter and the HADC1 pot to our blend / mix parameter. In the case, we're mapping HADC0 to a set of values between 2.0 and 6.0 which gives us a nice wide range of frequencies.
+Now we will map the HADC0 pot to our rate parameter and the HADC1 pot to our
+blend / mix parameter. In the case, we're mapping HADC0 to a set of values
+between 2.0 and 6.0 which gives us a nice wide range of frequencies.
 
 .. code:: c
 
@@ -88,7 +94,10 @@ Now we will map the HADC0 pot to our rate parameter and the HADC1 pot to our ble
 Using Different Waveforms to Modulate the Signal (Selectable with SW2)
 ----------------------------------------------------------------------
 
-Some ring modulator pedals allow the user to select between different waveforms to use to modulate the original signal. In this version, we'll use SW2 to select between a sine wave, a triangle wave and a square wave. And SW1 will be used to toggle the effect on and off.
+Some ring modulator pedals allow the user to select between different waveforms
+to use to modulate the original signal. In this version, we'll use SW2 to select
+between a sine wave, a triangle wave and a square wave. And SW1 will be used to
+toggle the effect on and off.
 
 .. code:: c
 
@@ -191,4 +200,3 @@ When we press SW2, the LED next to the push button toggles. To disable this beha
        // Add custom code here
 
    }
-

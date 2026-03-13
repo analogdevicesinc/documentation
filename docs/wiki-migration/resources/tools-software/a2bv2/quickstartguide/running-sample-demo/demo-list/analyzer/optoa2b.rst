@@ -3,7 +3,8 @@
 Analyzer Opto A2B Sample Demo
 =============================
 
-Opto A2B platform contains a subnode connected to a main node which helps in branching from 1 chain to another.
+Opto A2B platform contains a subnode connected to a main node which helps in
+branching from 1 chain to another.
 
 Hardware Setup
 --------------
@@ -17,13 +18,11 @@ Connections and audio configuration
 
 Here is the sample connections for Opto A2b configuration.
 
-
 |image1|
 
 .. container:: centeralign
 
    \ **Figure:** Connection and sample audio configuration
 
-
 .. |image1| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/opto_a2b.png
-   :width: 600px
+   :width: 600

@@ -3,7 +3,8 @@
 ADSP-SC5xx
 ==========
 
-This processor can be inserted on to the custom platform and configured as one of the supported SHARC processor with two SHARC+ core.
+This processor can be inserted on to the custom platform and configured as one
+of the supported SHARC processor with two SHARC+ core.
 
 Configurable Targets
 --------------------

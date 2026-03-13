@@ -16,15 +16,29 @@ PCB Layout Guidelines
 Identifying Current Paths
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In switching converter designs, high current paths and low current paths are all in close proximity. Alternating current (ac) paths carry spikes and noise, high direct current (dc) produces significant voltage drops, and low current paths tend to be sensitive to noise. The key to proper PCB layout is to identify the critical paths and then arrange the components and provide sufficient copper area to avoid high currents from corrupting low currents. Symptoms of poor performance show up as ground bounce and noise injected into the IC and the rest of the system.
+In switching converter designs, high current paths and low current paths are all
+in close proximity. Alternating current (ac) paths carry spikes and noise, high
+direct current (dc) produces significant voltage drops, and low current paths
+tend to be sensitive to noise. The key to proper PCB layout is to identify the
+critical paths and then arrange the components and provide sufficient copper
+area to avoid high currents from corrupting low currents. Symptoms of poor
+performance show up as ground bounce and noise injected into the IC and the rest
+of the system.
 
-Figure 1 shows a synchronous buck regulator design with a switching controller and the external power components: high-side switch, low-side switch, inductor, input capacitor, output capacitor, and bypass capacitor. The arrows in Figure 1 show the flow of the high switching current. It is important to place these power components carefully to avoid unwanted parasitic capacitance and inductance, which cause excess noise, overshoot, ringing, and ground bounce.
+Figure 1 shows a synchronous buck regulator design with a switching controller
+and the external power components: high-side switch, low-side switch, inductor,
+input capacitor, output capacitor, and bypass capacitor. The arrows in Figure 1
+show the flow of the high switching current. It is important to place these
+power components carefully to avoid unwanted parasitic capacitance and
+inductance, which cause excess noise, overshoot, ringing, and ground bounce.
 
 |an1119-image001_110dpi.png| *Figure 1. Typical Switching Regulator (Showing AC and DC Current Paths)*
 
 Switch current paths, such as DH, DL, BST, and SW, come off the controller and need proper placement to avoid excessive parasitic inductance. These lines carry high :math:`\delta` I/ :math:`\delta` t ac switching pulse currents that can reach more than 3 A for a few nanoseconds. Keeping the high current loops small is critical to avoid additional noise pickup and minimize output ringing.
 
-Low value, low amplitude signal paths, such as the compensation and feedback components, are noise sensitive. Keep them away from the switch nodes and the power components to avoid unwanted noise injection.
+Low value, low amplitude signal paths, such as the compensation and feedback
+components, are noise sensitive. Keep them away from the switch nodes and the
+power components to avoid unwanted noise injection.
 
 Layout Floor Planning
 ~~~~~~~~~~~~~~~~~~~~~
@@ -43,28 +57,49 @@ The placements of the input bypass capacitor and input bulk capacitor are critic
 Thermal Consideration and Ground Planes
 ---------------------------------------
 
-The equivalent series resistance (ESR) of the power MOSFETs, inductors, and bulk capacitors contributes to a significant amount of heat generation under heavy load conditions. To dissipate the heat efficiently, the example shown in Figure 2 places large areas of copper under these power components.
+The equivalent series resistance (ESR) of the power MOSFETs, inductors, and bulk
+capacitors contributes to a significant amount of heat generation under heavy
+load conditions. To dissipate the heat efficiently, the example shown in Figure
+2 places large areas of copper under these power components.
 
-A multilayer PCB is better for heat dissipation than a 2-layer PCB. For improved thermal and electrical conduction, use a 2 ounce copper thickness over the standard 1 ounce copper layers. Several PGND planes connected together with vias also help. Figure 3 shows the PGND plane spread over the top, the third layer, and the fourth layer in a 4-layer PCB design.
+A multilayer PCB is better for heat dissipation than a 2-layer PCB. For improved
+thermal and electrical conduction, use a 2 ounce copper thickness over the
+standard 1 ounce copper layers. Several PGND planes connected together with vias
+also help. Figure 3 shows the PGND plane spread over the top, the third layer,
+and the fourth layer in a 4-layer PCB design.
 
 |an1119-image003.png| *Figure 3. Cross-Section View: Connecting PGND Planes to Improve Heat Dissipation*
 
 This multiground plane approach insolates noise sensitive signals. As shown in Figure 2, the negative terminals of compensation components, the soft start capacitor, the bias input bypass capacitors, and the output feedback divider resistors all tie to an AGND plane. Do not directly connect any high current or high :math:`\delta` I/ :math:`\delta` t paths to the isolated AGND plane. The AGND is a quiet ground plane with no large currents flowing through it.
 
-The negative terminals of all power components, such as the low-side switch, bypass capacitor, and input and output filter capacitors, connect to the PGND plane. The PGND plane carries high current.
+The negative terminals of all power components, such as the low-side switch,
+bypass capacitor, and input and output filter capacitors, connect to the PGND
+plane. The PGND plane carries high current.
 
-The voltage drop within the GND plane could be significant enough to affect the output accuracy. Connecting the AGND plane to the negative terminal of the output capacitors through a wide trace (see Figure 4) significantly improves output accuracy and load regulation.
+The voltage drop within the GND plane could be significant enough to affect the
+output accuracy. Connecting the AGND plane to the negative terminal of the
+output capacitors through a wide trace (see Figure 4) significantly improves
+output accuracy and load regulation.
 
 |an1119-image004.png| *Figure 4. AGND Plane-to-PGND Plane Connection*
 
-The AGND plane extends all the way to the output capacitor, where the AGND and PGND planes connect to the vias at the negative terminal of the output capacitor.
+The AGND plane extends all the way to the output capacitor, where the AGND and
+PGND planes connect to the vias at the negative terminal of the output
+capacitor.
 
-Figure 2 shows an alternative technique for connecting the AGND and the PGND planes, where the AGND plane connects to the PGND plane through vias near the negative terminals of the output bulk capacitors. Figure 3 shows the cross-section of a location on the PCB where the AGND and PGND plane connects through vias near the negative terminals of the output bulk capacitors.
+Figure 2 shows an alternative technique for connecting the AGND and the PGND
+planes, where the AGND plane connects to the PGND plane through vias near the
+negative terminals of the output bulk capacitors. Figure 3 shows the
+cross-section of a location on the PCB where the AGND and PGND plane connects
+through vias near the negative terminals of the output bulk capacitors.
 
 Current Sense Paths
 -------------------
 
-Proper layout of the current sensing path in current mode switching regulators is important to avoid unwanted noise that causes inaccuracies. Particularly, dual channel applications need more care to avoid any channel-to-channel crosstalk.
+Proper layout of the current sensing path in current mode switching regulators
+is important to avoid unwanted noise that causes inaccuracies. Particularly,
+dual channel applications need more care to avoid any channel-to-channel
+crosstalk.
 
 The :adi:`ADP1850` dual channel step-down controller uses the R\ :sub:`DS(ON)` of the low-side MOSFET as part of the control loop architecture. This architecture senses the current through the low-side MOSFET between the SWx and PGNDx pins. Ground current noise in one channel can couple into the adjacent channel. Therefore, it is essential to keep the SWx and PGNDx traces as short as possible and place them close to the MOSFETs for accurate current sensing. Be sure the connections to the SWx and PGNDx nodes implement the Kelvin sensing technique, as illustrated in Figure 2 and Figure 5. Note that the respective PGNDx trace connects to the source of the low-side MOSFET. Do not arbitrarily connect the PGND plane to the PGNDx pin.
 
@@ -80,7 +115,11 @@ The feedback (FB) and current-limit (ILIM) pins are low signal level inputs; the
 The Switch Node
 ---------------
 
-The switch (SW) node is the noisiest place in the switching regulator circuit because it carries large ac and dc voltages and currents. This SW node needs a large area of copper to minimize resistive voltage drops. Place the MOSFETs and inductor close together on a copper plane to minimize series resistance and inductance.
+The switch (SW) node is the noisiest place in the switching regulator circuit
+because it carries large ac and dc voltages and currents. This SW node needs a
+large area of copper to minimize resistive voltage drops. Place the MOSFETs and
+inductor close together on a copper plane to minimize series resistance and
+inductance.
 
 Applications that are more sensitive to electromagnetic interference, switch node noise, and ringing can take advantage of a small snubber. A snubber is a resistor in series with a capacitor (see R\ :sub:`SNUB` and C\ :sub:`SNUB` in Figure 6). The snubber that is placed between the SW node and the PGND plane reduces ringing on the SW node and provides a reduced level of EMI. Keep in mind that this addition can slightly reduce the overall efficiency by 0.2% to 0.4%.
 

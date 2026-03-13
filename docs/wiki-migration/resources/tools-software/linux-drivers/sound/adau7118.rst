@@ -14,7 +14,15 @@ Evaluation Boards
 Description
 -----------
 
-The ADAU7118 converts four stereo pulse density modulation (PDM) bitstreams into one pulse code modulation (PCM) output stream. The source for the PDM data can be eight microphones or other PDM sources. The PCM audio data is output on a serial audio interface port in either inter-IC serial (I2S) or time domain multiplexed (TDM) format. The ADAU7118 has an I2C interface which can be used to fully configure the device. It can set the device to operate either in stereo or TDM mode, disable/enable inputs, etc... Furthermore, the device can also operate in HW only mode where the I2C interface is disabled. In this mode, only TDM mode is supported.
+The ADAU7118 converts four stereo pulse density modulation (PDM) bitstreams into
+one pulse code modulation (PCM) output stream. The source for the PDM data can
+be eight microphones or other PDM sources. The PCM audio data is output on a
+serial audio interface port in either inter-IC serial (I2S) or time domain
+multiplexed (TDM) format. The ADAU7118 has an I2C interface which can be used to
+fully configure the device. It can set the device to operate either in stereo or
+TDM mode, disable/enable inputs, etc... Furthermore, the device can also operate
+in HW only mode where the I2C interface is disabled. In this mode, only TDM mode
+is supported.
 
 Status
 ------
@@ -69,7 +77,9 @@ The ADAU7118 driver is fully devicetree compatible.
 Example device initialization
 =============================
 
-The ADAU7118 supports I2C interface and can operate in HW only mode (no communications with the device). Currently, the devices can only be instantiated via device tree.
+The ADAU7118 supports I2C interface and can operate in HW only mode (no
+communications with the device). Currently, the devices can only be instantiated
+via device tree.
 
 I2C mode
 --------
@@ -214,7 +224,10 @@ Supported DAI formats
 | SND_SOC_DAIFMT_CBS_CFS | yes                 | Codec bit- and frameclock slave         |
 +------------------------+---------------------+-----------------------------------------+
 
-- The supported DAI format are limited for HW only mode (only I2S and Normal bit- and frameclock is supported). In this mode, the I2C SCL and SDA pins are used to select different functionality. Check table 11 of the datasheet for more details.
+- The supported DAI format are limited for HW only mode (only I2S and Normal
+  bit- and frameclock is supported). In this mode, the I2C SCL and SDA pins are
+  used to select different functionality. Check table 11 of the datasheet for
+  more details.
 
 More information
 ================
@@ -223,4 +236,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

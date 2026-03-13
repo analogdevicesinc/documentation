@@ -3,7 +3,8 @@ Frequency Domain
 
 :doc:`Click here to return to the Toolbox page </wiki-migration/resources/tools-software/sigmastudio/toolbox>`
 
-The Frequency Domain library of the ToolBox lets you access basic building blocks for frequency analysis of a signal
+The Frequency Domain library of the ToolBox lets you access basic building
+blocks for frequency analysis of a signal
 
 -  :doc:`FFT(ADAU145x) </wiki-migration/resources/tools-software/sigmastudio/toolbox/frequencydomain/fft>`
 -  :doc:`IFFT(ADAU145x) </wiki-migration/resources/tools-software/sigmastudio/toolbox/frequencydomain/ifft>`

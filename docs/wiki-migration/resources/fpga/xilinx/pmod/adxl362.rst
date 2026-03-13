@@ -15,7 +15,9 @@ The :adi:`ADXL362` is an ultralow power, 3-axis MEMS accelerometer that consumes
 Quick Start Guide
 -----------------
 
-The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided in the project \*.zip file combines the FPGA bit file and
+the SDK elf files. It may be used for a quick check on the system. All you need
+is the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -29,12 +31,11 @@ Required Software
 ~~~~~~~~~~~~~~~~~
 
 -  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
--  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet
+   LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
@@ -44,46 +45,60 @@ Running Demo (SDK) Program
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
-
 Avnet LX9 MicroBoard Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (ADXL362\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (ADXL362\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodACL2 to J5 connector of LX9 board (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+To begin, connect the PmodACL2 to J5 connector of LX9 board (see image below).
+You can use an extension cable for ease of use. Connect the USB cable from the
+PC to the USB-UART female connector of the board for the UART terminal. The
+board will be programmed through its USB male connector.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2.jpg
    :alt: PmodACL2 and LX-9
-   :width: 200px
+   :width: 200
 
 Digilent Nexys™3 Spartan-6 FPGA Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (ADXL362\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (ADXL362\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodACL2 to JA connector of NEXYS3 board (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodACL2 to JA connector of NEXYS3 board (see image
+below). You can use an extension cable for ease of use. Connect the USB cables
+from the PC to the board, one for programming (Digilent USB device) and one for
+the UART terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_nexys3.jpg
    :alt: PmodACL2 and Nexys™3
-   :width: 200px
+   :width: 200
 
 Avnet ZedBoard
 ~~~~~~~~~~~~~~
 
-To begin, connect the PmodACL2 to JA1 connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodACL2 to JA1 connector of ZedBoard (see image below).
+You can use an extension cable for ease of use. Connect the USB cables from the
+PC to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_zed.jpg
    :alt: PmodACL2 and ZedBoard
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for Nexys3 and LX-9 MicroBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../adxl362/sw/ADXL362.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to appropiate baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../adxl362/sw/ADXL362.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2impact.jpg
    :alt: Programming FPGA in IMPACT
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for ZedBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,66 +107,68 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in
+   download.bat to match your Xilinx Installation path.
 
-
-If programming was successful, the Main Menu will apear in your UART terminal, as seen in the picture below. There are 9 options. Pressing [a], [x], [y], [z], [t], [r], [s], [i] or [m] key will allow you to select the desired option.
+If programming was successful, the Main Menu will apear in your UART terminal,
+as seen in the picture below. There are 9 options. Pressing [a], [x], [y], [z],
+[t], [r], [s], [i] or [m] key will allow you to select the desired option.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu1.jpg
    :alt: Main Menu
-   :width: 600px
+   :width: 600
 
 **Display acceleration on All Axes** will print the acceleration on X, Y and Z Axes, each on a separate row.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu2.jpg
    :alt: Acceleration on all 3 Axes
-   :width: 600px
+   :width: 600
 
 **Display acceleration on X Axis** will print the acceleration on X Axis, each new data read from the device will be displayed on a separate row.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu3.jpg
    :alt: Acceleration on X Axis
-   :width: 600px
+   :width: 600
 
 **Display acceleration on Y Axis** will print the acceleration on Y Axis, each new data read from the device will be displayed on a separate row.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu4.jpg
    :alt: Acceleration on Y Axis
-   :width: 600px
+   :width: 600
 
 **Display acceleration on Z Axis** will print the acceleration on Z Axis, each new data read from the device will be displayed on a separate row.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu5.jpg
    :alt: Acceleration on Z Axis
-   :width: 600px
+   :width: 600
 
 **Display temperature** will print the ADXL362 temperature in Celsius Degrees.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu6.jpg
    :alt: ADXL362 Temperature
-   :width: 600px
+   :width: 600
 
 **Select range** will allow setting the measurement range of the ADXL362. You can choose between ±2g, ±4g and ±8g. Selecting the desired range is done by pressing [1] to [3].
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu7.jpg
    :alt: Selecting measurement range
-   :width: 600px
+   :width: 600
 
 **Switch resolution** option is used to choose reading data from 8 bit register or from 12 bit register.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu8.jpg
    :alt: Switching resolution
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu9.jpg
    :alt: Switching resolution
-   :width: 600px
+   :width: 600
 
 **Print device ID** will show information concerning the internal ID registers of ADXL362.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodacl2_menu10.jpg
    :alt: Printing ID Register
-   :width: 600px
+   :width: 600
 
 Using the reference design
 --------------------------
@@ -159,19 +176,23 @@ Using the reference design
 Functional Description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The reference design is a SPI interface used to communicate with the device. The software programs the ADXL362s internal registers, and afterwards reads desired data from the device and prints it via UART.
+The reference design is a SPI interface used to communicate with the device. The
+software programs the ADXL362s internal registers, and afterwards reads desired
+data from the device and prints it via UART.
 
 .. important::
 
    
    -  Connecting the PmodACL2 to the boards using an extension cable provides ease of use.
-   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and
+      ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    
-
 
 .. important::
 
-   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+   When using the ZedBoard reference design in order to develop your own
+   software, please make sure that the following options are set in
+   "system_config.h":
 
    
    .. code:: c
@@ -189,7 +210,6 @@ The reference design is a SPI interface used to communicate with the device. The
       // GPIO used in the design
       #define USE_GPIO         0
    
-
 
 Downloads
 ---------
@@ -213,7 +233,6 @@ Downloads
    -  :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
    -  :git-no-OS:`Programming Script <Pmods/PmodACL2/bin>`
    
-
 
 More information
 ----------------

@@ -32,11 +32,14 @@ ADP5585
 Description
 ~~~~~~~~~~~
 
-The driver supports multiple key press detection and resolution. It independently delivers key press and key release events in chronological order to the Linux input device system.
+The driver supports multiple key press detection and resolution. It
+independently delivers key press and key release events in chronological order
+to the Linux input device system.
 
 This allows **SHIFT + ANYKEY**, **ALT + F1** or **CTRL + ALT + DEL** sequences.
 
-Since the ADP5589 buffers events in its internal FIFO, it’s unlikely that events are lost due to heavy system load and interrupt latencies.
+Since the ADP5589 buffers events in its internal FIFO, it’s unlikely that events
+are lost due to heavy system load and interrupt latencies.
 
 Configuration
 -------------
@@ -51,7 +54,8 @@ Software configurable features
 -  Two independent and flexible reset signal generators with either two or three software configurable keys.
 -  Flexible debounce, 100 kOhm/300kOhm pull-up and 300 kOhm pull-down configuration on all configurable I/Os.
 -  Configurable keypad scan cycle times.
--  Unused row and column pins are exported as general-purpose inputs/outputs to GPIOLIB
+-  Unused row and column pins are exported as general-purpose inputs/outputs to
+   GPIOLIB
 
 Source Code
 ===========
@@ -79,10 +83,16 @@ Files
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
-
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
 <source trunk/include/linux/input/adp5589.h:/i2c_board_info/-EOF c linux-kernel>
 
@@ -115,7 +125,6 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
 .. tip::
 
    use gpio_start = -1 for dynamic allocation
-
 
 .. code:: c
 
@@ -172,14 +181,23 @@ For devices on custom boards, as typical of embedded and SoC-(system-on-chip) ba
        .reset1_key_3 = KEY_ESC,
    };
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 =============== ===================
 ADI part number I2C_BOARD_INFO Name
@@ -218,12 +236,12 @@ ADP5585-02      adp5585-02-keys
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADP5589 Driver depends on CONFIG_I2C
-
 
 ::
 
@@ -269,9 +287,10 @@ Hardware configuration
 ======================
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/adp5589_demo_brd_and_stamp.jpg
-   :width: 600px
+   :width: 600
 
-There is no dedicated Blackfin STAMP evaluation board for the ADP5589. During test and driver development we used the ADP5589 Demo Mother/Daughter Board.
+There is no dedicated Blackfin STAMP evaluation board for the ADP5589. During
+test and driver development we used the ADP5589 Demo Mother/Daughter Board.
 
 It can be easily wired to the Blackfin STAMP TWI/I2C header.
 
@@ -404,13 +423,14 @@ PMOD-IOXP
 
 The PMOD-IOXP is an PMOD board made by Digilent Inc. which features the ADP5589.
 
-The following example shows how to connect the PMOD-IOXP to a Blackfin BF537-STAMP board and a PMOD-KYPD. Also
+The following example shows how to connect the PMOD-IOXP to a Blackfin
+BF537-STAMP board and a PMOD-KYPD. Also
 
 Hardware configuration
 ----------------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/input-keyboard/pmodioxp.jpg
-   :width: 300px
+   :width: 300
 
 ================================ ======== ============
 BF537-STAMP (P10) TWI/I2C header          PMOD-IOXP
@@ -494,8 +514,6 @@ More Information
 -  `GPIO kernel documentation <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/gpio.txt>`_
 -  `How to instantiate I2C devices kernel documentation <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices>`_
 
-
 .. note::
 
    See `resources/tools-software/linux-drivers/snippets <https://wiki.analog.com/resources/tools-software/linux-drivers/snippets#input_pointers>`_
-

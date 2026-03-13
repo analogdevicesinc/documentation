@@ -27,23 +27,35 @@ Overview
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/adv7511.png
    :align: center
-   :width: 400px
+   :width: 400
 
 Preparing the SD-card
 ---------------------
 
-To boot the system on the ZED, ZC702 or ZC706 board you'll need a SD memory card. The SD card should have at least 4 GB of storage and it is recommended to use a card with speed-grade 6 or higher to achieve optimal file transfer performance.
+To boot the system on the ZED, ZC702 or ZC706 board you'll need a SD memory
+card. The SD card should have at least 4 GB of storage and it is recommended to
+use a card with speed-grade 6 or higher to achieve optimal file transfer
+performance.
 
-The SD card needs to be partitioned with two partitions. The first one should be about 40MB in size and the second one should take up the remaining space. For optimal performance make sure that the partitions are 4MB aligned. The first partition needs to be formatted with a FAT filesystem. It will hold the bootloader, devicetree and kernel images. The second partition needs to be formatted with a ext4 filesystem. It will store the systems root filesystem.
+The SD card needs to be partitioned with two partitions. The first one should be
+about 40MB in size and the second one should take up the remaining space. For
+optimal performance make sure that the partitions are 4MB aligned. The first
+partition needs to be formatted with a FAT filesystem. It will hold the
+bootloader, devicetree and kernel images. The second partition needs to be
+formatted with a ext4 filesystem. It will store the systems root filesystem.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/linux-zynq-gparted-sdcard.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Obtain the HDL reference design
 -------------------------------
 
-The ZYNQ does not have a on-chip graphics or audio core, instead the FPGA is used to generate the necessary signals to deliver the video and audio streams to the ADV7511. Analog Devices provides a reference HDL design which contain support for generating the necessary video and audio as well as support for interfacing with the AD-FMCOMMS1-EBZ.
+The ZYNQ does not have a on-chip graphics or audio core, instead the FPGA is
+used to generate the necessary signals to deliver the video and audio streams to
+the ADV7511. Analog Devices provides a reference HDL design which contain
+support for generating the necessary video and audio as well as support for
+interfacing with the AD-FMCOMMS1-EBZ.
 
 The HDL reference designs can be downloaded from their respective wiki page:
 
@@ -53,41 +65,56 @@ The HDL reference designs can be downloaded from their respective wiki page:
 
 .. hint::
 
-   The AD-FMCOMMS1-EBZ reference designs for the ZED, ZC702 and ZC706 include support for the ADV7511. So you only need one of the reference designs depending on whether you want support for the AD-FMCOMMS1-EBZ or not.
+   The AD-FMCOMMS1-EBZ reference designs for the ZED, ZC702 and ZC706 include
+   support for the ADV7511. So you only need one of the reference designs
+   depending on whether you want support for the AD-FMCOMMS1-EBZ or not.
 
-
-You can either use the provided reference designs to build your own system.bit or use a pre-build system.bit file. The system.bit will be required in the next step.
+You can either use the provided reference designs to build your own system.bit
+or use a pre-build system.bit file. The system.bit will be required in the next
+step.
 
 Build the boot image
 --------------------
 
 To complete this step you need to have a u-boot image for the Zynq platform. Please refer to the `Xilinx wiki <https://xilinx-wiki.atlassian.net/wiki/spaces/A/overview>`_ on how to build such an image.
 
-The bootloader can be build with Xilinx SDK. In order to do so it is necessary to first export the HDL design from the Xilinx Platform Studio to the SDK, this is done by clicking the "Export to SDK" button in the Platform Studio GUI.
+The bootloader can be build with Xilinx SDK. In order to do so it is necessary
+to first export the HDL design from the Xilinx Platform Studio to the SDK, this
+is done by clicking the "Export to SDK" button in the Platform Studio GUI.
 
 Export project to SDK:
 
-
 |image1|
 
-Once the project has been exported create a new FSBL project in the SDK. To do this right-click on the newly exported hardware platform specification in left "Project Explorer" panel and select "New > Project" from the popup menu. Select "Xilinx - Application Project" on first dialog page. On the second dialog page choose a name for the project (zynq_fsbl for example) and on the third page select "Zynq FSBL" template.
+Once the project has been exported create a new FSBL project in the SDK. To do
+this right-click on the newly exported hardware platform specification in left
+"Project Explorer" panel and select "New > Project" from the popup menu. Select
+"Xilinx - Application Project" on first dialog page. On the second dialog page
+choose a name for the project (zynq_fsbl for example) and on the third page
+select "Zynq FSBL" template.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/linux-zynq-xsdk-fsbl1.png
    :alt: linux-zynq-xsdk-fsbl1.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/linux-zynq-xsdk-fsbl2.png
    :alt: linux-zynq-xsdk-fsbl2.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/linux-zynq-xsdk-fsbl3.png
    :alt: linux-zynq-xsdk-fsbl3.png
    :align: center
-   :width: 400px
+   :width: 400
 
-The project should build automatically. If not a manual build can be started by right clicking the newly created project in the left "Project Explorer" panel and selecting "Build Project" from the popup menu. After the project has been build it is time to generate the boot image. This is done by right clicking on the project in the left "Project Explorer" pane and selecting "Create Boot Image". This will open up the bootgen wizard. The bootgen wizard needs three files:
+The project should build automatically. If not a manual build can be started by
+right clicking the newly created project in the left "Project Explorer" panel
+and selecting "Build Project" from the popup menu. After the project has been
+build it is time to generate the boot image. This is done by right clicking on
+the project in the left "Project Explorer" pane and selecting "Create Boot
+Image". This will open up the bootgen wizard. The bootgen wizard needs three
+files:
 
 -  The freshly build zynq_fsbl.elf binary
 -  The system.bit bitstream
@@ -97,16 +124,20 @@ Add these files to partitions list in the dialog, then select an output folder.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/linux-zynq-bootgen.png
    :align: center
-   :width: 400px
+   :width: 400
 
-Clicking "Create Image" will now generate in the chosen location a new boot image for the target platform. The output \*.bin file should be named "BOOT.BIN" and needs to be saved on the first partition of the SD-card.
+Clicking "Create Image" will now generate in the chosen location a new boot
+image for the target platform. The output \*.bin file should be named "BOOT.BIN"
+and needs to be saved on the first partition of the SD-card.
 
 Alternative method of building the Zynq boot image
 --------------------------------------------------
 
-{The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
+{The boot image BOOT.BIN is build using the bootgen tool which requires several
+input files.
 
-Instructions on how to build the Hardware Description File (HDF) handover file can be found here:
+Instructions on how to build the Hardware Description File (HDF) handover file
+can be found here:
 
 -  :doc:`Building HDL </wiki-migration/resources/fpga/docs/build>`
 
@@ -114,7 +145,8 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 
 -  `Build u-boot <http://www.wiki.xilinx.com/Build+U-Boot>`_
 
-   -  Make sure you checkout the proper git tag matching your Vivado Version (xilinx-v2018.2, xilinx-v2017.4, ...)
+   -  Make sure you checkout the proper git tag matching your Vivado Version
+      (xilinx-v2018.2, xilinx-v2017.4, ...)
 
 -  `Build FSBL <http://www.wiki.xilinx.com/Build+FSBL>`_
 -  `Build PMU Frimware <http://www.wiki.xilinx.com/Build+PMU+Firmware>`_
@@ -124,7 +156,9 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 Use script to build BOOT.BIN
 ----------------------------
 
-For ease of use we provide a bash shell script which allows building BOOT.BIN from system_top.hdf, u-boot.elf and either bl31.elf or a path to the Arm Trusted Firmware repository
+For ease of use we provide a bash shell script which allows building BOOT.BIN
+from system_top.hdf, u-boot.elf and either bl31.elf or a path to the Arm Trusted
+Firmware repository
 
 Download
 ~~~~~~~~
@@ -142,7 +176,6 @@ The script can be downloaded from here:
    
       $ chmod +x build_zynqmp_boot_bin.sh
    
-
 
 Usage
 ~~~~~
@@ -177,7 +210,6 @@ Usage
 
    
 
-
 Build and install the kernel image
 ----------------------------------
 
@@ -190,12 +222,10 @@ Build and install the kernel image
    -  C compiler from the Xilinx SDK
    
 
-
 .. admonition:: Download
    :class: download
 
    The most stable kernel source tree containing support for the ZED, ZC702 and ZC706 plus **AD-FMCOMMS1-EBZ** can be found at :git-linux:`tree/2016_R1`. For the **AD-FMCOMMS2-EBZ** use also the :git-linux:`tree/2016_R1` branch.
-
 
 .. container:: box bggreen
 
@@ -228,13 +258,13 @@ Build and install the kernel image
         Kernel: arch/arm/boot/uImage is ready
    
 
-
 .. note::
 
    The same kernel image is used for all HDL reference design.
 
-
-The next step is to build the devicetree for your target platform. While the kernel is the same for all target boards the devicetree file differs as it describes the board specifics.
+The next step is to build the devicetree for your target platform. While the
+kernel is the same for all target boards the devicetree file differs as it
+describes the board specifics.
 
 The following devicetree files are available:
 
@@ -304,8 +334,9 @@ The following devicetree files are available:
 
 .. important::
 
-   The devicetree must match the HDL reference design that is used. It is not possible to use a adv7511 only devicetree for a AD-FMCOMMS1-EBZ reference HDL design, even if the AD-FMCOMMS1-EBZ is not connected to the FMC slot.
-
+   The devicetree must match the HDL reference design that is used. It is not
+   possible to use a adv7511 only devicetree for a AD-FMCOMMS1-EBZ reference HDL
+   design, even if the AD-FMCOMMS1-EBZ is not connected to the FMC slot.
 
 To build the devicetree from the devicetree file run \`make name-dts-replaced-by-dtb\`
 
@@ -321,8 +352,9 @@ To build the devicetree from the devicetree file run \`make name-dts-replaced-by
       DTC: dts->dtb  on file "arch/arm/boot/dts/zynq-zed-adv7511-xcomm.dts"
    
 
-
-The last step is to copy both the kernel and the devicetree files to the first partition of the SD card. It is important to rename the devicetree file to devicetree.dtb
+The last step is to copy both the kernel and the devicetree files to the first
+partition of the SD card. It is important to rename the devicetree file to
+devicetree.dtb
 
 .. container:: box bggreen
 
@@ -335,11 +367,14 @@ The last step is to copy both the kernel and the devicetree files to the first p
       > cp arch/arm/boot/zynq-zed-adv7511-xcomm.dtb /media/BOOT/devicetree.dtb
    
 
-
 uEnv.txt
 --------
 
-The default environment that is used by the u-boot bootloader instructions the kernel to use a ramfs disk for its root filesystem. In order to boot from the SD card it is necessary to overwrite the default environment. This can be done by placing a file called uEnv.txt in the BOOT partition of the SD card. This file will be read by u-boot and is used to replace the default environment.
+The default environment that is used by the u-boot bootloader instructions the
+kernel to use a ramfs disk for its root filesystem. In order to boot from the SD
+card it is necessary to overwrite the default environment. This can be done by
+placing a file called uEnv.txt in the BOOT partition of the SD card. This file
+will be read by u-boot and is used to replace the default environment.
 
 **uEnv.txt for using SD card rootfs**
 
@@ -366,8 +401,10 @@ The first step is to download the `archive containing the root filesystem <https
       > wget http:%%//%%releases.linaro.org/archive/12.12/ubuntu/vexpress/linaro-precise-ubuntu-desktop-20121124-560.tar.gz
    
 
-
-The next step is to extract the root filesystem from the archive to the SD card. It is important to preserve the file permission and owner settings, otherwise the system will be unable to boot. Since some of the files have root permissions it is necessary to run the extraction process as root.
+The next step is to extract the root filesystem from the archive to the SD card.
+It is important to preserve the file permission and owner settings, otherwise
+the system will be unable to boot. Since some of the files have root permissions
+it is necessary to run the extraction process as root.
 
 .. container:: box bggreen
 
@@ -382,25 +419,37 @@ The next step is to extract the root filesystem from the archive to the SD card.
       proc/  root/  run/  sbin/  selinux/  srv/  sys/  tmp/  usr/  var/
    
 
-
 Testing the system
 ------------------
 
-Once all of the previous tasks have been completed it is time to test the system. To do this insert the SD-card into the board and power-up the board. After a few seconds the blue "DONE" LED should light up. This means that the bitstream has been loaded and the system will now start to boot. It is also possible to connect to the serial console by using the on-board UART-to-USB bridge, this allows to monitor the boot process and view debug messages.
+Once all of the previous tasks have been completed it is time to test the
+system. To do this insert the SD-card into the board and power-up the board.
+After a few seconds the blue "DONE" LED should light up. This means that the
+bitstream has been loaded and the system will now start to boot. It is also
+possible to connect to the serial console by using the on-board UART-to-USB
+bridge, this allows to monitor the boot process and view debug messages.
 
 After another few seconds the monitor connected to the system will turn on and display the `Linux mascot <https://en.wikipedia.org/wiki/Tux>`_ in the top left corner, after that the Ubuntu Desktop system will appear on the screen. The system is now ready to be used.
 
 Post-installation tweaks
 ------------------------
 
-After the system has been installed it is time to do some post-installation tweaks to the system. None of them is required to get a basic working system, but they improve the overall video and audio experience quite a bit.
+After the system has been installed it is time to do some post-installation
+tweaks to the system. None of them is required to get a basic working system,
+but they improve the overall video and audio experience quite a bit.
 
 Enable xf86-video-modesetting Xorg driver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The xf86-video-modesetting driver is a driver which has been written to take advantage of the new Kernel Mode Setting (KMS) API of the DRM layer. This allows to switch between different screen resolutions at runtime (using the Xservers xrandr interface) and adds plug-and-play support for monitors.
+The xf86-video-modesetting driver is a driver which has been written to take
+advantage of the new Kernel Mode Setting (KMS) API of the DRM layer. This allows
+to switch between different screen resolutions at runtime (using the Xservers
+xrandr interface) and adds plug-and-play support for monitors.
 
-Unfortunately the current Linaro Ubuntu distribution does not contain a package for xf86-video-modesetting driver. So it becomes necessary to manually download and build it. Open up a terminal on the target system and run the following commands.
+Unfortunately the current Linaro Ubuntu distribution does not contain a package
+for xf86-video-modesetting driver. So it becomes necessary to manually download
+and build it. Open up a terminal on the target system and run the following
+commands.
 
 .. container:: box bggreen
 
@@ -418,8 +467,8 @@ Unfortunately the current Linaro Ubuntu distribution does not contain a package 
       > sudo make install
    
 
-
-To enable the modesetting driver the create /etc/X11/xorg.conf and add following lines:
+To enable the modesetting driver the create /etc/X11/xorg.conf and add following
+lines:
 
 Enable the modesetting driver:
 
@@ -433,7 +482,12 @@ Enable the modesetting driver:
 Fixing issues with pulse audio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-PulseAudio is the audio daemon used by default on the Linaro Ubuntu installation. Unfortunately PulseAudio's 'glitch-free' algorithm seems to cause audio glitches on this particular platform. To get seamless audio experience it is necessary to disable the glitch-free feature. To disable the 'glitch-free' feature of pulse audio open up a terminal on the target system an run the following commands.
+PulseAudio is the audio daemon used by default on the Linaro Ubuntu
+installation. Unfortunately PulseAudio's 'glitch-free' algorithm seems to cause
+audio glitches on this particular platform. To get seamless audio experience it
+is necessary to disable the glitch-free feature. To disable the 'glitch-free'
+feature of pulse audio open up a terminal on the target system an run the
+following commands.
 
 .. container:: box bggreen
 
@@ -444,7 +498,6 @@ PulseAudio is the audio daemon used by default on the Linaro Ubuntu installation
    
       > sed -i 's,load-module module-udev-detect.*,load-module module-udev-detect tsched=0,' /etc/pulse/default.pa
    
-
 
 More information
 ----------------
@@ -473,6 +526,5 @@ More information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/linux-zynq-export-xps.png
-   :width: 600px
+   :width: 600

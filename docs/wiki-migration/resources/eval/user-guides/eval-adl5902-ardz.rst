@@ -4,7 +4,7 @@ EVAL-ADL5902-ARDZ
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adl5902-top-clean.jpg
    :alt: EVAL-ADL5902-ARDZ
    :align: center
-   :width: 600px
+   :width: 600
 
 The :adi:`EVAL-ADL5902-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADL5902-ARDZ.html#eb-overview>` shield illustrates the functionality of the :adi:`ADL5902 <en/products/rf-microwave/rf-power-detectors/rms-responding-power-detectors/adl5902.html>`\ **, a 50 MHz to 9 GHz 65 dB TruPwr™ RMS responding RF power detector**. The voltage outputs of the ADL5902 are routed to the **ANALOG IN** connector of the Arduino base board. This allows the RF power detector’s output voltage to be easily digitized and processed by the Arduino base board’s integrated six-channel ADC. The output of the ADL5902’s on-board temperature sensor is also routed to one of the ANALOG IN pins.
 
@@ -44,14 +44,15 @@ Setting Up the Hardware
 Power Options Jumper Setting
 ----------------------------
 
-Choose among the power option to Power up the EVAL-ADL5902-ARDZ by shorting the correct pins using the provided shorting jumper caps.
+Choose among the power option to Power up the EVAL-ADL5902-ARDZ by shorting the
+correct pins using the provided shorting jumper caps.
 
 Option 1: 5V of EVAL-ADICUP3029 or Linduino One
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-power-5v.png
    :alt: power-5v
-   :width: 300px
+   :width: 300
 
 -  Connect **pin1 and pin2** of pin header **P4**.
 -  Mount EVAL-ADL5902-ARDZ to EVAL-ADICUP3029 or Linduino One.
@@ -60,13 +61,12 @@ Option 1: 5V of EVAL-ADICUP3029 or Linduino One
 
    This works regardless of the connections on pin header P2
 
-
 Option 2: 6V DC supply
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-power-dc.png
    :alt: power-dc
-   :width: 300px
+   :width: 300
 
 -  Connect **pin2 and pin3** of pin header **P4**
 -  Connect **pin1 and pin2** of pin header **P2**
@@ -74,15 +74,15 @@ Option 2: 6V DC supply
 
 .. note::
 
-   EVAL-ADL5902-ARDZ is already functional using this option, even without EVAL-ADICUP3029 or Linduino One
-
+   EVAL-ADL5902-ARDZ is already functional using this option, even without
+   EVAL-ADICUP3029 or Linduino One
 
 Option 3: 6V Wall wart
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-power-wall.png
    :alt: power-wall
-   :width: 300px
+   :width: 300
 
 -  Connect **pin2 and pin3** of pin header **P4**
 -  Connect **pin2 and pin3** of pin header **P2**
@@ -90,8 +90,8 @@ Option 3: 6V Wall wart
 
 .. note::
 
-   EVAL-ADL5902-ARDZ is already functional using this option, even without EVAL-ADICUP3029 or Linduino One
-
+   EVAL-ADL5902-ARDZ is already functional using this option, even without
+   EVAL-ADICUP3029 or Linduino One
 
 Typical Hardware Setup for Measurement
 ======================================
@@ -119,10 +119,8 @@ Software Installation
 
 .. important::
 
-   After loading the hex file to the DAPLINK drive the window explorer must automatically close or else you need to load the hex file to the drive again.
-
-
-
+   After loading the hex file to the DAPLINK drive the window explorer must
+   automatically close or else you need to load the hex file to the drive again.
 
 -  After the **windows explorer automatically closes**, reset the EVAL-ADICUP3029 board by pressing the S1 (reset) button on the board.
 -  Go to extracted files and look for **power_detector.exe** file and double click to run the software. The Connection Window will open.
@@ -141,27 +139,18 @@ Connection Window
 
 |APP_window|
 
-
-
 .. note::
 
-   If there is more than one EVAL-ADICUP3029 installed, select the port where EVAL-ADICUP3029 and EVAL-ADL5902-ARDZ connected
-
-
-
+   If there is more than one EVAL-ADICUP3029 installed, select the port where
+   EVAL-ADICUP3029 and EVAL-ADL5902-ARDZ connected
 
 -  Set Baudrate to 115200
 -  Select Auto-detect on Shield type.
 -  Click Connect. The Measurement Window should Open.
 
-
-
 .. important::
 
    Console Log must indicate ADL5902 shield detected with ADiCUP
-
-
-
 
 Measurement Window
 ~~~~~~~~~~~~~~~~~~
@@ -170,10 +159,9 @@ Measurement Window
 
 .. note::
 
-   If calibration is skipped at some frequencies, the default calibration coefficients will be used (user calibration coefficients and default calibration coefficients are INITIALLY the same).
-
-
-
+   If calibration is skipped at some frequencies, the default calibration
+   coefficients will be used (user calibration coefficients and default
+   calibration coefficients are INITIALLY the same).
 
 Related topic: `Calibration of EVAL-ADL5902-ARDZ <https://wiki.analog.com/>`_
 
@@ -190,14 +178,9 @@ To make single measurement:
 -  Uncheck Continuous Measurement
 -  Click Measure Button
 
-
-
 .. important::
 
    Not entering the correct frequency may result to less accurate measurements.
-
-
-
 
 To continuously make measurements:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -207,14 +190,9 @@ To continuously make measurements:
 -  Click Measure Button
 -  Click Stop to stop measuring at the last measurement
 
-
-
 .. important::
 
    Not entering the correct frequency may result to less accurate measurements.
-
-
-
 
 To switch windows:
 ^^^^^^^^^^^^^^^^^^
@@ -234,36 +212,41 @@ To calibrate at a specific frequency, take the following steps
 -  Input an RF signal of 0dBm at the selected frequency. Click the Measure button beside 0dBm.
 -  Input an RF signal of -45dBm at the selected frequency. Click the Measure button beside -45dBm.
 -  Input an RF signal of -60dBm at the selected frequency. Click the Measure button beside -60dBm.
--  Click the Calibrate button. Console Log will indicate "User calibration coefficient for (frequency used) is updated."
-
-
+-  Click the Calibrate button. Console Log will indicate "User calibration
+   coefficient for (frequency used) is updated."
 
 .. important::
 
-   Follow steps exactly. User calibration coefficients will not update if the Calibrate Button is not clicked.
-
-
-
+   Follow steps exactly. User calibration coefficients will not update if the
+   Calibrate Button is not clicked.
 
 .. tip::
 
-   If you plan to operate at a frequency not on the list, make sure the calibrate at least on the adjacent upper and lower calibration frequencies (the software program will interpolate these data to ensure accuracy at the operating frequency. If the operating frequency is higher or lower than the available calibration frequencies, calibrate only on the highest or lowest calibration frequencies.
-
+   If you plan to operate at a frequency not on the list, make sure the
+   calibrate at least on the adjacent upper and lower calibration frequencies
+   (the software program will interpolate these data to ensure accuracy at the
+   operating frequency. If the operating frequency is higher or lower than the
+   available calibration frequencies, calibrate only on the highest or lowest
+   calibration frequencies.
 
 Calibration Methodology
 =======================
 
-Calibration can be implemented using 2, 3 or 4-point calibration techniques which are used to approximate the transfer function of the ADL5902. Because the response of the ADL5902 changes with frequency, it is necessary to calibrate across frequency. If you are operating at a frequency that is in between two calibration frequencies, the software program will perform a weighted interpolation of the two sets of calibration coefficients.
+Calibration can be implemented using 2, 3 or 4-point calibration techniques
+which are used to approximate the transfer function of the ADL5902. Because the
+response of the ADL5902 changes with frequency, it is necessary to calibrate
+across frequency. If you are operating at a frequency that is in between two
+calibration frequencies, the software program will perform a weighted
+interpolation of the two sets of calibration coefficients.
 
-The typical Vout vs. Pin characteristic of ADL5902 at 2.14GHz input is shown below (Figure 50 from the ADL5902 datasheet).
-
+The typical Vout vs. Pin characteristic of ADL5902 at 2.14GHz input is shown
+below (Figure 50 from the ADL5902 datasheet).
 
 |fig50|
 
 .. container:: centeralign
 
    Figure 1. ADL5902 Characteristic Response at 2.14GHz
-
 
 **Two-point calibration** is the simplest calibration technique. This models the transfer function of the ADL5902 and ADC as a **single straight line**
 
@@ -277,11 +260,17 @@ PIN is the RF input power being measured
 
 CODE is the ADC code
 
-SLOPE is the slope of the ADL5902 transfer function's linear model (unit is LSBs/dB)
+SLOPE is the slope of the ADL5902 transfer function's linear model (unit is
+LSBs/dB)
 
-INTERCEPT is the (extrapolated) input RF power level which would yield and ADC code of 0 (this is a theoretical value with a unit of dBm)
+INTERCEPT is the (extrapolated) input RF power level which would yield and ADC
+code of 0 (this is a theoretical value with a unit of dBm)
 
-SLOPE and INTERCEPT are calculated and stored during the calibration process by applying two known RF power levels, PIN1 and PIN2 (these RF power levels should be within the linear input range of the ADL5902) and measuring the corresponding ADC codes, CODE1 and CODE2. The equations for calculating SLOPE and INTERCEPT are as follows:
+SLOPE and INTERCEPT are calculated and stored during the calibration process by
+applying two known RF power levels, PIN1 and PIN2 (these RF power levels should
+be within the linear input range of the ADL5902) and measuring the corresponding
+ADC codes, CODE1 and CODE2. The equations for calculating SLOPE and INTERCEPT
+are as follows:
 
 ::
 
@@ -293,7 +282,8 @@ SLOPE and INTERCEPT are calculated and stored during the calibration process by 
 
 If there is some non-linearity in the transfer function of the RF detector, the number of calibration points can be increased to improve measurement accuracy. To implement **three-point calibration**, three known power levels are applied PIN1, PIN2 and PIN3 (PIN1 should be greater than PIN2 which should be greater than PIN3) and the corresponding ADC codes are noted (CODE1, CODE2, CODE3)
 
-This results in two SLOPE values and two INTERCEPT values which are calculated using the equations
+This results in two SLOPE values and two INTERCEPT values which are calculated
+using the equations
 
 ::
 
@@ -311,7 +301,8 @@ This results in two SLOPE values and two INTERCEPT values which are calculated u
 
    INTERCEPT2 = PIN2-(CODE2/SLOPE2)
 
-After calibration when measuring RF input power, the power is calculated using the appropriate equation
+After calibration when measuring RF input power, the power is calculated using
+the appropriate equation
 
 ::
 
@@ -325,9 +316,18 @@ After calibration when measuring RF input power, the power is calculated using t
 
    PIN = (CODE/SLOPE2)+INTERCEPT2   (if CODE < CODE2)
 
-To decide which equation and calibration coefficients to use, the CODE from the ADC should be compared to CODE2 (CODE2 is the demarcation point between the two calibration regions). This will indicate which region of the ADL5902's transfer function the RF input power is located. For example, if the ADC CODE is greater than CODE2, this will indicate that the input power is greater than PIN2. So SLOPE1 and INTERCEPT1 should be used to calculate the input power. Because of the need to identify the region in which the measured RF input power is located, the CODE2 value should also be stored after calibration along with the SLOPE1, SLOPE2, INTERCEPT1 AND INTERCEPT2.
+To decide which equation and calibration coefficients to use, the CODE from the
+ADC should be compared to CODE2 (CODE2 is the demarcation point between the two
+calibration regions). This will indicate which region of the ADL5902's transfer
+function the RF input power is located. For example, if the ADC CODE is greater
+than CODE2, this will indicate that the input power is greater than PIN2. So
+SLOPE1 and INTERCEPT1 should be used to calculate the input power. Because of
+the need to identify the region in which the measured RF input power is located,
+the CODE2 value should also be stored after calibration along with the SLOPE1,
+SLOPE2, INTERCEPT1 AND INTERCEPT2.
 
-This technique can be extended to four or more calibration points. This may improve measurement accuracy at the cost of more complex calibration.
+This technique can be extended to four or more calibration points. This may
+improve measurement accuracy at the cost of more complex calibration.
 
 Development on EVAL-ADICUP3029
 ==============================
@@ -347,7 +347,6 @@ Installations
 
    Assumes a fresh installation of all required software
 
-
 Setting Up CrossCore Embedded Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -358,7 +357,9 @@ Setting Up CrossCore Embedded Studio
 
 -  Switch back to **C/C++ window** |c-dev-window| and close CCES 2.8.1
 -  Download `power_detector_sample_c_code_and_header_files.zip <https://wiki.analog.com/_media/resources/eval/user-guides/power_detector_sample_c_code_and_header_files.zip>`_ and unzip it.
--  Run the "ADL5902 Sample C Code and Header Files.exe" and select "C:\\Users\\YourUsername\\cces\\2.8.1" as the destination folder. The adl5902 folder should appear in C:\\Users\\YourUsername\\cces\\2.8.1 .
+-  Run the "ADL5902 Sample C Code and Header Files.exe" and select
+   "C:\\Users\\YourUsername\\cces\\2.8.1" as the destination folder. The adl5902
+   folder should appear in C:\\Users\\YourUsername\\cces\\2.8.1 .
 
 |rfdet-c-unzip|
 
@@ -383,7 +384,8 @@ Development on CrossCore Embedded Studio
 |rfdet-c-console-adl5902|
 
 -  After it finishes building, click Debug and click Application with GDB and OpenOCD (Emulator). Copy the following Debug configurations on the new window that will appear then click the Debug button.
--  On the Debug window, click the Resume to run and display the results on the Console window.
+-  On the Debug window, click the Resume to run and display the results on the
+   Console window.
 
 Python Development Guide
 ------------------------
@@ -440,7 +442,6 @@ Hardware Reference Information
    -  Assembly Files of EVAL-ADL5902-ARDZ
    
 
-
 Help and Support
 ================
 
@@ -451,7 +452,7 @@ For any queries regarding the hardware and evaluation software, contact us at :e
 .. |APP_window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection-refresh.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-measurement.png
 .. |fig50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-adl5902-datasheet-fig50.png
-   :width: 600px
+   :width: 600
 .. |c-dev-window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-dev-window.png
 .. |rfdet-c-unzip| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-unzip.png
 .. |rfdet-c-folder-adl5902| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-folder-adl5902.png

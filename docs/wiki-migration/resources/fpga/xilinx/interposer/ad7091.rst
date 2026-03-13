@@ -19,10 +19,11 @@ This document presents the steps to setup an environment for using the :adi:`EVA
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7091_ac701.jpg
    :alt: ad7091_ac701.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
-
-For component evaluation and performance purposes, as opposed to quick prototyping, the user is directed to use the part evaluation setup. This consists of:
+For component evaluation and performance purposes, as opposed to quick
+prototyping, the user is directed to use the part evaluation setup. This
+consists of:
 
 ::
 
@@ -30,18 +31,20 @@ For component evaluation and performance purposes, as opposed to quick prototypi
    *2.  The component SDP compatible product evaluation board
    *3.  Corresponding PC software ( shipped with the product evaluation board)
 
-The SDP-B controller board is part of Analog Devices System Demonstration Platform (SDP). It provides a high speed USB 2.0 connection from the PC to the component evaluation board. The PC runs the evaluation software. Each evaluation board, which is an SDP compatible daughter board, includes the necessary installation file required for performance testing.
+The SDP-B controller board is part of Analog Devices System Demonstration
+Platform (SDP). It provides a high speed USB 2.0 connection from the PC to the
+component evaluation board. The PC runs the evaluation software. Each evaluation
+board, which is an SDP compatible daughter board, includes the necessary
+installation file required for performance testing.
 
 **Note:** it is expected that the analog performance on the two platforms may differ.
-
-
 
 Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD7091SDZ** Evaluation Board.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7091_sdp1z.jpg
    :alt: ad7091_sdp1z.jpg
    :align: center
-   :width: 400px
+   :width: 400
 
 The :adi:`AD7091` is a 12-bit successive approximation register analog-to-digital converter (SAR ADC) that offers ultralow power consumption (typically 367 µA at 3 V and 1 MSPS) while achieving fast throughput rates (1 MSPS with a 50 MHz SCLK). The AD7091 operates from a single 2.09 V to 5.25 V power supply. The AD7091 also features an on-chip conversion clock and a high speed serial interface.
 
@@ -57,7 +60,9 @@ More information
 Getting Started
 ===============
 
-The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+The first objective is to ensure that you have all of the items needed and to
+install the software tools so that you are ready to create and run the
+evaluation project.
 
 Required Hardware
 -----------------
@@ -86,7 +91,6 @@ Downloads
    -  **Platform specific files:** :git-no-OS:`legacy/platform_drivers/Xilinx/SDP_Common`
    
 
-
 Run the Demonstration Project
 =============================
 
@@ -95,8 +99,9 @@ Hardware Setup
 
 .. important::
 
-   Before connecting the ADI evaluation board to the Xilinx AC701 make sure that the VADJ_FPGA voltage of the AC701 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx AC701 product page.
-
+   Before connecting the ADI evaluation board to the Xilinx AC701 make sure that
+   the VADJ_FPGA voltage of the AC701 is set to 3.3V. For more details on how to
+   change the setting for VADJ_FPGA visit the Xilinx AC701 product page.
 
 -  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx AC701 board on the FMC LPC connector.
 -  Connect the JTAG and UART cables to the AC701 and power up the FPGA board.
@@ -107,7 +112,8 @@ The next step is to setup the software project.
 Software Project Setup
 ----------------------
 
-The next steps should be followed to recreate the software project of the reference design:
+The next steps should be followed to recreate the software project of the
+reference design:
 
 -  First clone the AC701 Reference project for AD7091 and the ADI IP cores from Github to your computer, by using the following link: https://github.com/analogdevicesinc/fpgahdl_xilinx/
 
@@ -117,25 +123,26 @@ The next steps should be followed to recreate the software project of the refere
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/file_import.png
    :alt: Import Projects
-   :width: 200px
+   :width: 200
 
 -  In the *Import* window select the **General->Existing Projects into Workspace** option.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/existing_project_import.png
    :alt: Existing Projects Import
-   :width: 200px
+   :width: 200
 
 -  In the *Import Projects* window select the **%Working directory%/cf_ad7091_ac701/** folder as root directory and verify if all the three project (**hw**, **bsp**, **sw**) are checked.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/import_project_adc.png
    :alt: Selecting Existing Projects
-   :width: 200px
+   :width: 200
 
--  The Project Explorer window now shows the projects that exist in the workspace without software files.
+-  The Project Explorer window now shows the projects that exist in the
+   workspace without software files.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/project_explorer.jpg
    :alt: Project Explorer
-   :width: 200px
+   :width: 200
 
 -  Now you have to add the source files to your project. You can download all the source files for the current reference project using the links from the **Downloads** section. List of source files for the current project is:
 
@@ -152,22 +159,20 @@ The next steps should be followed to recreate the software project of the refere
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/acquisition_finished.png
    :alt: Acquisition Finished
-   :width: 600px
+   :width: 600
 
--  By default the length of a transaction is 16k samples. The input signal used in this reference design was a 10 Khz sine wave.
+-  By default the length of a transaction is 16k samples. The input signal used
+   in this reference design was a 10 Khz sine wave.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/acquisition_result.png
    :alt: Acquisition Result
-   :width: 600px
+   :width: 600
 
 More information
 ================
-
 
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-

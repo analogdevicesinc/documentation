@@ -7,11 +7,14 @@ N-Channel
 
 |nchannelpic1.png| This block, for multichannel use, uses an rms dynamics processor that lets you control the rms TC (time constant), Hold, Decay, and Soft Knee behavior, and displays the compression curve graph for your curve drawing. An rms compressor works on a longer average than a peak compressor, allowing some fast loud transients to pass while longer loud moments are prevented from doing so.
 
-The block compares among the n channels and selects the one with the highest energy. In a 5-channel situation, the sound will be controlled and processed based on the loudest channel.
+The block compares among the n channels and selects the one with the highest
+energy. In a 5-channel situation, the sound will be controlled and processed
+based on the loudest channel.
 
 Push Show Graph to open the Compression Curve window.
 
-For this block to be active, there must be signal at the red pin. That input acts as a detect signal, and the block compresses based upon it.
+For this block to be active, there must be signal at the red pin. That input
+acts as a detect signal, and the block compresses based upon it.
 
 For multichannel use you will need to :doc:`grow </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithms>` your algorithm, of course. Right-click the block's border or title and select **Grow Algorithm > 1. N-Channel > 1**. The signal applied to the red pin will scale the signals applied to the green pins accordingly.
 

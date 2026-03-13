@@ -36,16 +36,19 @@ Hardware
 
 .. tip::
 
-   Note that we are only shipping REV C boards as of now. Please click on the link to the REV C user guide for this board in the section below. Rev A information is only here for legacy purposes.
-
+   Note that we are only shipping REV C boards as of now. Please click on the
+   link to the REV C user guide for this board in the section below. Rev A
+   information is only here for legacy purposes.
 
 --------------
 
 REV A
 ~~~~~
 
-REV A hardware is a very simple board which requires power supply rails from a bench-top power supply to power the board. This board interfaces to the SDP controller board. This board is no longer available to purchase and is shown here for legacy purposes.
-
+REV A hardware is a very simple board which requires power supply rails from a
+bench-top power supply to power the board. This board interfaces to the SDP
+controller board. This board is no longer available to purchase and is shown
+here for legacy purposes.
 
 |image1|
 
@@ -54,7 +57,8 @@ REV A hardware is a very simple board which requires power supply rails from a b
 PMOD Compatible
 ~~~~~~~~~~~~~~~
 
-PMOD compatible hardware is a very simple board which plugs directly into microprocessor and FPGA boards which have PMOD peripherals.
+PMOD compatible hardware is a very simple board which plugs directly into
+microprocessor and FPGA boards which have PMOD peripherals.
 
 Complete details about the PulSAR ADC PMOD boards can be found by visiting our :doc:`PulSAR ADC PMOD Page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods>`
 
@@ -63,27 +67,30 @@ Complete details about the PulSAR ADC PMOD boards can be found by visiting our :
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/pulsar_pmod.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
 --------------
 
 REV C
 ~~~~~
 
-The REV C board is the current board that is available for purchase. This board contains the on-board power supplies to power all portions of the board - the ADC, Reference, Amplifiers and SDP board. This board operates from a simple +9V wall adaptor which is included as part of the evaluation board kit. This board interfaces to the SDP controller board.
+The REV C board is the current board that is available for purchase. This board
+contains the on-board power supplies to power all portions of the board - the
+ADC, Reference, Amplifiers and SDP board. This board operates from a simple +9V
+wall adaptor which is included as part of the evaluation board kit. This board
+interfaces to the SDP controller board.
 
 **All documentation for this version of hardware is contained in the USER GUIDE**\ :adi:`REV C USER GUIDE <static/imported-files/user_guides/UG-340.pdf>`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/10_lead_pulsar_revc.jpg
    :align: center
-   :width: 500px
+   :width: 500
 
 --------------
 
 .. important::
 
    All detail which follows applies to REV A hardware
-
 
 --------------
 
@@ -96,7 +103,9 @@ Evaluation Kit Contents (REV A)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Evaluation board for ADC where U10 is populated for the device ordered.
--  Business card advising location of user software download. User software is available to download directly from the product webpage. This ensures user always has the latest software.
+-  Business card advising location of user software download. User software is
+   available to download directly from the product webpage. This ensures user
+   always has the latest software.
 
 Hardware Requirements
 ~~~~~~~~~~~~~~~~~~~~~
@@ -122,18 +131,22 @@ Installing the Software
 
 .. tip::
 
-   The software install is a two part install, user should proceed through both parts prior to connecting board for first time
+   The software install is a two part install, user should proceed through both
+   parts prior to connecting board for first time
 
-
-Install the software prior to connecting the SDP board to the USB port of the PC. This ensures that the SDP board is recognized when it connects to the PC.
+Install the software prior to connecting the SDP board to the USB port of the
+PC. This ensures that the SDP board is recognized when it connects to the PC.
 
 -  Start the Windows® operating system and insert CD.
 -  The installation software should launch automatically. If it does not, run the setup.exe file from the CD.
 -  After installation is completed, power-up the EVAL board as described in Power Supplies section.
 -  Plug the evaluation board into the SDP board and the SDP board into the PC using the USB cable included in the box.
--  When the software detects the EVAL board, proceed through any dialog boxes that appear to finalize the installation.
+-  When the software detects the EVAL board, proceed through any dialog boxes
+   that appear to finalize the installation.
 
-The default location for the software is C:\\Program Files\\Analog Devices\\10 Lead PulSAR ADCs This location contains the executable software, datasheets and example files.
+The default location for the software is C:\\Program Files\\Analog Devices\\10
+Lead PulSAR ADCs This location contains the executable software, datasheets and
+example files.
 
 Install Steps
 ~~~~~~~~~~~~~
@@ -150,7 +163,9 @@ Proceed through the install allowing the software and drivers to be placed in th
 
 |image7| *Figure 7. Installation Complete, Click Next >> to Complete and Finish*
 
-The second part of the software installation is the drivers related to the SDP board. These must be installed for the evaluation board to function correctly. See Figure 8 to Figure 13.
+The second part of the software installation is the drivers related to the SDP
+board. These must be installed for the evaluation board to function correctly.
+See Figure 8 to Figure 13.
 
 |image8| *Figure 8. Installation for SDP Starting*
 
@@ -162,7 +177,11 @@ The second part of the software installation is the drivers related to the SDP b
 
 |image12| *Figure 12. Click Finish to Complete Installation*
 
-When you first plug in the SDP board via the USB cable provided, allow the new Found Hardware Wizard to run. You can check that the drivers and the board are connected correctly by looking at the Device Manager of the PC. The Analog Devices System Development Platform (32MB) should appear under ADI Development Tools.
+When you first plug in the SDP board via the USB cable provided, allow the new
+Found Hardware Wizard to run. You can check that the drivers and the board are
+connected correctly by looking at the Device Manager of the PC. The Analog
+Devices System Development Platform (32MB) should appear under ADI Development
+Tools.
 
 |image13| *Figure 14. Device Manager*
 
@@ -176,7 +195,8 @@ The board consists of the specific ADC (U10) with reference (:adi:`ADR435`\ U6) 
 Power Supplies
 --------------
 
-The evaluation board requires power from an external bench top supply, applied to J1 connector.
+The evaluation board requires power from an external bench top supply, applied
+to J1 connector.
 
 **Table 1. External Power Supply Required (max 12V across +Vs to -Vs)**
 
@@ -192,7 +212,14 @@ The evaluation board requires power from an external bench top supply, applied t
 |              | 5V            | ADC Supply Rail for following ADCs AD7685, AD7686, AD7687, AD77688, AD7690, AD7691, AD7693, AD7694, AD7942, AD7946                                                                                                                                                                                                                                                                   |
 +--------------+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-On board regulators generate required levels from the applied +Vs rail. The regulators used are the ADP3334 (U9) which supplies +7V for the +Vs of the ADC driver amplifier (ADA4841), while the ADP3303-5 delivers 5V to the SDP board connector, J2 to power the SDP board. The SDP in turn provides a 3.3V V_DRIVE which supplies the IOVDD of the ADC in addition to the logic gates (U1, U3, U4). Each supply is decoupled where it enters the board and again at each device. A single ground plane is used on this board to minimize the effect of high frequency noise interference.
+On board regulators generate required levels from the applied +Vs rail. The
+regulators used are the ADP3334 (U9) which supplies +7V for the +Vs of the ADC
+driver amplifier (ADA4841), while the ADP3303-5 delivers 5V to the SDP board
+connector, J2 to power the SDP board. The SDP in turn provides a 3.3V V_DRIVE
+which supplies the IOVDD of the ADC in addition to the logic gates (U1, U3, U4).
+Each supply is decoupled where it enters the board and again at each device. A
+single ground plane is used on this board to minimize the effect of high
+frequency noise interference.
 
 Reference
 ~~~~~~~~~
@@ -233,7 +260,7 @@ Board Operation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad7980_sdp1z.jpg
    :align: center
-   :width: 300px
+   :width: 300
 
 Running the software with hardware connected
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -241,25 +268,28 @@ Running the software with hardware connected
 To run the program, do the following:
 
 -  Click Start > All Programs > Analog Devices > 10 Lead PulSAR ADCs. To uninstall the program, click Start > Control Panel > Add or Remove Programs > 10 Lead PulSAR ADCs.
--  If the SDP board is not connected to the USB port when the software is launched, a connectivity error is displayed.
+-  If the SDP board is not connected to the USB port when the software is
+   launched, a connectivity error is displayed.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp_-_no_hardware.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
-Simply connect the EVAL board to the USB port of the PC, wait a few seconds, click Rescan, and follow the instructions.
+Simply connect the EVAL board to the USB port of the PC, wait a few seconds,
+click Rescan, and follow the instructions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp_-_found_board.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 The software connects to the board and displays the following:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp_-_wait.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
-Once the board has been correctly detected, the software panel will open. The example below shows the AD7691 panel.
+Once the board has been correctly detected, the software panel will open. The
+example below shows the AD7691 panel.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad7691_panel.jpg
    :align: center
@@ -285,7 +315,8 @@ The following is the description of the user panel:
 -  “Start” : to perform a continuous capture from the ADC.
 -  “Stop”: to stop streaming data
 -  Select the number of samples to analyse, when running continuously, this number will be limited to 65536 samples.
--  There are four tabs available displaying the data in different formats, this are listed here and described in more detail later.
+-  There are four tabs available displaying the data in different formats, this
+   are listed here and described in more detail later.
 
    -  Waveform tab
    -  Histogram
@@ -294,7 +325,7 @@ The following is the description of the user panel:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/value_change_dialog_box.jpg
    :align: center
-   :width: 200px
+   :width: 200
 
 Design Support Package
 ======================
@@ -302,7 +333,6 @@ Design Support Package
 .. tip::
 
    Note the following documents apply to Rev A hardware
-
 
 REV A HARDWARE INFORMATION
 ==========================
@@ -327,28 +357,28 @@ Bill of Materials
 The attached .zip file contains bill of material for the following boards: :adi:`AD7685`, :adi:`AD7687`, :adi:`AD7688`, :adi:`AD7690`, :adi:`AD7691`, :adi:`AD7942`, :adi:`AD7980`, :adi:`AD7982`, :adi:`AD7983`, :adi:`AD7984`\ and :adi:`CN0261`. `BOM <https://wiki.analog.com/_media/resources/eval/bom.zip>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/10_lead_pulsar.jpg
-   :width: 300px
+   :width: 300
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/10322-002.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/10322-003.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/10322-004.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/10322-005.jpg
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/10322-006.jpg
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/10322-007.jpg
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/10322-008.jpg
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/10322-009.jpg
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/10322-010.jpg
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/10322-011.jpg
-   :width: 400px
+   :width: 400
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/10322-013.jpg
-   :width: 400px
+   :width: 400
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/10322-014.jpg
-   :width: 400px
+   :width: 400

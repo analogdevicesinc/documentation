@@ -87,7 +87,9 @@ Instructions / Theory of operation
 Backlight control
 -----------------
 
-With the ADP8860 driver installed, you will find sysfs files in the /sys/class/backlight/adp8860_bl/ directory. You will be able to query and set the current screen brightness:
+With the ADP8860 driver installed, you will find sysfs files in the
+/sys/class/backlight/adp8860_bl/ directory. You will be able to query and set
+the current screen brightness:
 
 ::
 
@@ -105,7 +107,8 @@ The ADP8860 features 3 individually programmable Ambient Light Sensing Zones:
 
    ; l1_daylight_dim : Ambient Light
 
-Zone Daylight: Backlight DIM Intensity (an integer between 0 and 127, typically set to 0).
+Zone Daylight: Backlight DIM Intensity (an integer between 0 and 127, typically
+set to 0).
 
 ::
 
@@ -123,9 +126,14 @@ Zone Daylight: Backlight DIM Intensity (an integer between 0 and 127, typically 
 LED handling under Linux
 ------------------------
 
-LEDs not assigned to the Backlight are optionally exposed to the Linux LEDs Class.
+LEDs not assigned to the Backlight are optionally exposed to the Linux LEDs
+Class.
 
-The LED class allows control of LEDs from userspace. LEDs appear in /sys/class/leds/. The brightness file will set the brightness of the LED (taking a value 0-255). The LEDS class also introduces the optional concept of an LED trigger. A trigger is a kernel based source of led events, such as ide-disk or backlight control. For more information read linux/Documentaion/leds-class.txt
+The LED class allows control of LEDs from userspace. LEDs appear in
+/sys/class/leds/. The brightness file will set the brightness of the LED (taking
+a value 0-255). The LEDS class also introduces the optional concept of an LED
+trigger. A trigger is a kernel based source of led events, such as ide-disk or
+backlight control. For more information read linux/Documentaion/leds-class.txt
 
 ::
 
@@ -135,30 +143,47 @@ The LED class allows control of LEDs from userspace. LEDs appear in /sys/class/l
 Example platform device initialization
 ======================================
 
-For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+For compile time configuration, it’s common Linux practice to keep board- and
+application-specific configuration out of the main driver file, instead putting
+it into the board support file.
 
-For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
-
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip)
+based hardware, Linux uses platform_data to point to board-specific structures
+describing devices and how they are connected to the SoC. This can include
+available ports, chip variants, preferred modes, default initialization,
+additional pin roles, and so on. This shrinks the board-support packages (BSPs)
+and minimizes board and application specific #ifdefs in drivers.
 
 .. note::
 
-   platform_data: Platform data specific to the ADP8860 device. Includes what LEDs are available, feature selections and default initialization.
-
+   platform_data: Platform data specific to the ADP8860 device. Includes what
+   LEDs are available, feature selections and default initialization.
 
 .. code:: c
 
    #include <linux/i2c/adp8860.h>
 
-<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp8860_leds{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp8860_pdata{} c linux-kernel>
+<source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp8860_leds{} c
+linux-kernel> <source
+trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp8860_pdata{} c linux-kernel>
 
-Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level.
+Instead, the software must know which devices are connected on each I2C bus
+segment, and what address these devices are using. For this reason, the kernel
+code must instantiate I2C devices explicitly. There are different ways to
+achieve this, depending on the context and requirements. However the most common
+method is to declare the I2C devices by bus number.
 
-This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+This method is appropriate when the I2C bus is a system bus, as in many embedded
+systems, wherein each I2C bus has a number which is known in advance. It is thus
+possible to pre-declare the I2C devices that inhabit this bus. This is done with
+an array of struct i2c_board_info, which is registered by calling
+i2c_register_board_info().
 
-So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+So, to enable such a driver one need only edit the board support file by adding
+an appropriate entry to i2c_board_info.
 
 For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
-
 
 .. code:: C
 
@@ -174,12 +199,13 @@ For more information see: `instantiating-devices.rst </git.linux.org>documentati
 Adding Linux driver support
 ===========================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. tip::
 
-   The ADP8860 Backlight driver depends on I2C. It therefore requires selected I2C support to show up during kernel configuration.
-
+   The ADP8860 Backlight driver depends on I2C. It therefore requires selected
+   I2C support to show up during kernel configuration.
 
 ::
 
@@ -192,10 +218,11 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Hardware configuration
 ======================
 
-During test and driver development we used the ADP8860 Evaluation Mother/Daughter Board.
+During test and driver development we used the ADP8860 Evaluation
+Mother/Daughter Board.
 
 .. image:: https://wiki.analog.com/_media/software/driver/linux/adp8870_adaptor_board_lr.jpg
-   :width: 512px
+   :width: 512
 
 It can be easily wired to the Blackfin STAMP TWI/I2C header.
 
@@ -208,9 +235,18 @@ PIN                              Function PIN/Function
 20                               GND      GND
 ================================ ======== ===========================
 
-Leave J31 and J32 open (these jumpers connect the SCL and SDA to the cypress chip used as USB bridge). Then apply your own SCL, SDA, and GND to the big J30 connector on the left edge of the board.
+Leave J31 and J32 open (these jumpers connect the SCL and SDA to the cypress
+chip used as USB bridge). Then apply your own SCL, SDA, and GND to the big J30
+connector on the left edge of the board.
 
-The ADP8860 chip still needs Vin (to power the chip), Vddio (to pull nRST and nINT high), and Vboard (to power the ALS sensor on the daughter card). These are provided through the USB port and then get regulated down (Vin becomes 3.6V, Vddio is 2.7V, and Vboard is around 4 V). So even though you won't be using the USB to program the part, it would still be easiest to plug the board into a USB port just to power Vin, Vddio, and Vboard. Of course, if you want, you can power these supplies from a lab bench power supply. In that case, move LK1, 2, and 3 to the "EXT" position and apply the signals to J29.
+The ADP8860 chip still needs Vin (to power the chip), Vddio (to pull nRST and
+nINT high), and Vboard (to power the ALS sensor on the daughter card). These are
+provided through the USB port and then get regulated down (Vin becomes 3.6V,
+Vddio is 2.7V, and Vboard is around 4 V). So even though you won't be using the
+USB to program the part, it would still be easiest to plug the board into a USB
+port just to power Vin, Vddio, and Vboard. Of course, if you want, you can power
+these supplies from a lab bench power supply. In that case, move LK1, 2, and 3
+to the "EXT" position and apply the signals to J29.
 
 Driver testing
 ==============
@@ -346,4 +382,3 @@ More Information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

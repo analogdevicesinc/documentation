@@ -1,9 +1,16 @@
 Precision Converter Support Software
 ====================================
 
-This page provides access to ADI's product support software for precision converters ADCs and DACs. The software provided is focused on firmware-examples for different platforms. The software can be used by customers with Analog Devices evaluation boards as a starting point for writing firmware code when it is necessary to go beyond product evaluation and move to prototyping.
+This page provides access to ADI's product support software for precision
+converters ADCs and DACs. The software provided is focused on firmware-examples
+for different platforms. The software can be used by customers with Analog
+Devices evaluation boards as a starting point for writing firmware code when it
+is necessary to go beyond product evaluation and move to prototyping.
 
-The goal of the provided software is to fill the gap between evaluation and prototyping and to allow for faster software development by using generic drivers, a platform layer specific to a given platform and application code to be used as a starting point for further development.
+The goal of the provided software is to fill the gap between evaluation and
+prototyping and to allow for faster software development by using generic
+drivers, a platform layer specific to a given platform and application code to
+be used as a starting point for further development.
 
 Supported Products
 ------------------

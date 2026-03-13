@@ -3,12 +3,18 @@ Circuits from the Lab Reference Designs
 
 Welcome to Circuits from the Lab Reference Designs from Analog Devices!
 
-Circuits from the Lab reference designs are designed, developed, produced, maintained, and supported by Analog Devices Inc (ADI) engineers. The reference designs cover all technology facets across Analog Devices to provide high quality hardware and software solutions which can be used directly in your applications.
+Circuits from the Lab reference designs are designed, developed, produced,
+maintained, and supported by Analog Devices Inc (ADI) engineers. The reference
+designs cover all technology facets across Analog Devices to provide high
+quality hardware and software solutions which can be used directly in your
+applications.
 
 Overview
 --------
 
-Circuits from the Lab reference designs enable system and sub-system level prototyping and proof of concepts design work. Have a look at this short video to learn more.
+Circuits from the Lab reference designs enable system and sub-system level
+prototyping and proof of concepts design work. Have a look at this short video
+to learn more.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>gcdykaygqe4
    :alt: youtube>GCdYKaYgQe4
@@ -16,7 +22,13 @@ Circuits from the Lab reference designs enable system and sub-system level proto
 Hardware
 ~~~~~~~~
 
-The application hardware is designed to be modular and plug and play, fitting into many industry standard form factors such as Arduino, Raspberry Pi Hats, peripherals modules (PMODs), FPGA mezzanine cards (FMC), Feather Wings, and more. Each board can be purchased directly on Analog.com or via one of the authorized distributors. All the design files for the hardware can be downloaded directly from their respective Analog.com web pages, making it easy to integrate the solution into your design.
+The application hardware is designed to be modular and plug and play, fitting
+into many industry standard form factors such as Arduino, Raspberry Pi Hats,
+peripherals modules (PMODs), FPGA mezzanine cards (FMC), Feather Wings, and
+more. Each board can be purchased directly on Analog.com or via one of the
+authorized distributors. All the design files for the hardware can be downloaded
+directly from their respective Analog.com web pages, making it easy to integrate
+the solution into your design.
 
 Software
 ~~~~~~~~
@@ -36,7 +48,8 @@ The software is also modular in design as well as open-source, and the source co
 Documentation
 ~~~~~~~~~~~~~
 
-Documentation is extremely important and there are typically two documents that accompany any individual reference design.
+Documentation is extremely important and there are typically two documents that
+accompany any individual reference design.
 
 -  The **circuit note** is the application-level document talking about the application challenges and value the ADI reference design can provide. It walks you through the different aspects of the application and the various systems and sub systems that need to be addressed when creating a complete solution. There are test results, circuit diagrams, block diagrams, images, tables and more to help you better understand how everything interacts and works together.
 -  The **user guide** will take you through the process of understanding and configuring the hardware, and then instruct you on how to get the system up and running. It will tell you about all the hardware and software requirements and provide step by step instructions with block diagrams and images along the way to help out. The main goal of this document is really just to get the user up and running so they can start evaluating, prototyping, and customizing as quickly as possible.
@@ -49,7 +62,8 @@ Visit the `Circuit from the Lab channel <http://www.youtube.com/@Circuitsfromthe
 Available Reference Designs
 ---------------------------
 
-For a complete list of Circuit from the Lab reference design projects and user guides use the link below.
+For a complete list of Circuit from the Lab reference design projects and user
+guides use the link below.
 
 -  :doc:`Reference Designs </wiki-migration/resources/eval/user-guides>`
 

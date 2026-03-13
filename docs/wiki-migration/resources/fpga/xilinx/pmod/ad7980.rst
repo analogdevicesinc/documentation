@@ -15,7 +15,9 @@ The :adi:`AD7980` is a 16-bit, successive approximation, analog-to-digital conve
 Quick Start Guide
 -----------------
 
-The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+The bit file provided in the project \*.zip file combines the FPGA bit file and
+the SDK elf files. It may be used for a quick check on the system. All you need
+is the hardware and a PC running a UART terminal and the programmer (IMPACT).
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~
@@ -29,12 +31,11 @@ Required Software
 ~~~~~~~~~~~~~~~~~
 
 -  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
--  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet
+   LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
 
 Running Demo (SDK) Program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 .. tip::
 
@@ -44,48 +45,65 @@ Running Demo (SDK) Program
    | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details. If you are not familiar with ZedBoard and/or Xilix tools, please visit
    | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
 
-
 Avnet LX9 MicroBoard Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD7980\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD7980\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodAD4 to J5 connector of LX9 board, pins 1 to 6 (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+To begin, connect the PmodAD4 to J5 connector of LX9 board, pins 1 to 6 (see
+image below). You can use an extension cable for ease of use. Connect the USB
+cable from the PC to the USB-UART female connector of the board for the UART
+terminal. The board will be programmed through its USB male connector.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad4.jpg
    :alt: PmodAD4 and LX-9
-   :width: 200px
+   :width: 200
 
 Digilent Nexys™3 Spartan-6 FPGA Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the project from the archive file (AD7980\_<board_name>.zip) to the location you desire.
+Extract the project from the archive file (AD7980\_<board_name>.zip) to the
+location you desire.
 
-To begin, connect the PmodAD4 to JA connector of Nexys3 board, pins JA1 to JA6 (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodAD4 to JA connector of Nexys3 board, pins JA1 to JA6
+(see image below). You can use an extension cable for ease of use. Connect the
+USB cables from the PC to the board, one for programming (Digilent USB device)
+and one for the UART terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad4_nexys3.jpg
    :alt: PmodAD4 and Nexys™3
-   :width: 200px
+   :width: 200
 
 Avnet ZedBoard
 ~~~~~~~~~~~~~~
 
-To begin, connect the PmodAD4 to JD connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+To begin, connect the PmodAD4 to JD connector of ZedBoard (see image below). You
+can use an extension cable for ease of use. Connect the USB cables from the PC
+to the board, one for programming (Digilent USB device) and one for the UART
+terminal (FT232R USB UART).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad4_zed.jpg
    :alt: PmodAD4 and ZedBoard
-   :width: 200px
+   :width: 200
 
 FPGA Configuration for Nexys3 and LX-9 MicroBoard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad7980/sw/AD7980.bit).
+Start IMPACT, and double click "Boundary Scan". Right click and select
+Initialize Chain. The program should recognize the Spartan 6 device (see
+screenshot below). Start a UART terminal (set to appropiate baud rate) and then
+program the device using the bit file provided in the project \*.zip archive,
+located in the "sw" folder (../ad7980/sw/AD7980.bit).
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad4impact.jpg
    :alt: Programming FPGA in IMPACT
-   :width: 200px
+   :width: 200
 
-If programming was successful, you should be seeing messages appear on the terminal window as shown in the figure below. After programming the AD7980 device, the program will automatically read the value of the analog voltage input and print it via UART.
+If programming was successful, you should be seeing messages appear on the
+terminal window as shown in the figure below. After programming the AD7980
+device, the program will automatically read the value of the analog voltage
+input and print it via UART.
 
 |UART messeges| |image1|
 
@@ -96,10 +114,12 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 .. tip::
 
-   If the download script fails to run, modify the Xilinx Tools path in download.bat to match your Xilinx Installation path.
+   If the download script fails to run, modify the Xilinx Tools path in
+   download.bat to match your Xilinx Installation path.
 
-
-If programming was successful, you should be seeing messages appear on the terminal window. After programming the AD7980 device, the program will automatically read the value of the analog voltage input and print it via UART.
+If programming was successful, you should be seeing messages appear on the
+terminal window. After programming the AD7980 device, the program will
+automatically read the value of the analog voltage input and print it via UART.
 
 Using the reference design
 --------------------------
@@ -110,12 +130,18 @@ Functional Description
 Avnet LX-9 MicroBoard and Digilent Nexys3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The reference design is a custom SPI interface which functions in CS Mode, 3-wire, Without Busy Indicator (see AD7980 datasheet pg. 17). The software programs the device, and afterwards, polling the Data Ready pin, prints the read value via UART.
+The reference design is a custom SPI interface which functions in CS Mode,
+3-wire, Without Busy Indicator (see AD7980 datasheet pg. 17). The software
+programs the device, and afterwards, polling the Data Ready pin, prints the read
+value via UART.
 
 Avnet ZedBoard
 ^^^^^^^^^^^^^^
 
-The reference design is a custom SPI interface which functions in CS Mode, 3-wire, Without Busy Indicator (see AD7980 datasheet pg. 17). The software programs the device, and afterwards, using DMA, transfers 8192 samples and prints them via UART.
+The reference design is a custom SPI interface which functions in CS Mode,
+3-wire, Without Busy Indicator (see AD7980 datasheet pg. 17). The software
+programs the device, and afterwards, using DMA, transfers 8192 samples and
+prints them via UART.
 
 .. important::
 
@@ -124,9 +150,9 @@ The reference design is a custom SPI interface which functions in CS Mode, 3-wir
    -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
    -  The reference voltage for the AD7980 is 2.5V.
    -  If you want to use another reference voltage, you will need to modify the VREF definition at the beginning of “main.c”. The range for VREF must be 2.4V ≤ VREF ≤ 5.1V.
-   -  If you want to use AVDD > DVDD (= 3.3V) then JP3 on PmodAD4 must be removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.5V
+   -  If you want to use AVDD > DVDD (= 3.3V) then JP3 on PmodAD4 must be
+      removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.5V
    
-
 
 Downloads
 ---------
@@ -152,7 +178,6 @@ Downloads
    -  :git-no-OS:`Programming Script <Pmods/PmodAD4/bin>`
    
 
-
 Linux Device Driver - Custom HDL PCore
 ======================================
 
@@ -167,11 +192,15 @@ In order to prepare the SD Card for booting Linux on the ZedBoard:
 -  Download the Xilinx XPS project: :git-no-OS:`PmodAD4 Linux XPS Project <Pmods/PmodAD4/cf_ad7980_zed>`
 -  Download the AD7980 IPcore: :git-no-OS:`AD7980 IPCore <Pmods/PmodAD4/cf_lib/edk/pcores/axi_ad7980_v1_00_a>`
 -  Download the project libraries: :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
--  Follow the instructions on the following wiki page, but use the device tree and project downloaded on the previous step
+-  Follow the instructions on the following wiki page, but use the device tree
+   and project downloaded on the previous step
 
    -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
 
-Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD
+Card and power on the board. If everything is correct, the system should boot
+up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate
+115200.
 
 There are 2 ways to test the driver.
 
@@ -183,7 +212,8 @@ Using the terminal window
 
 Open a new terminal window by pressing **Ctrl+Alt+T**.
 
-Navigate to the location of the device and identify it using the following commands:
+Navigate to the location of the device and identify it using the following
+commands:
 
 ::
 
@@ -228,18 +258,21 @@ To read the raw input voltage, type:
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7980_custom_linaro_terminal.jpg
    :alt: AD7980 Read Voltage from Terminal
-   :width: 600px
+   :width: 600
 
-The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+The commands written above can also be used if not using an HDMI monitor and a
+wireless keyboard, by using a serial terminal, and typing the commands after the
+system boot-up is complete.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7980_custom_linux_serial.jpg
    :alt: AD7980 Read Voltage from Serial Terminal
-   :width: 600px
+   :width: 600
 
 Using the ADI IIO Oscilloscope
 ------------------------------
 
-Install the ADI IIO Oscilloscope using the instructions from the following wiki page:
+Install the ADI IIO Oscilloscope using the instructions from the following wiki
+page:
 
 -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
@@ -249,7 +282,7 @@ Select **AD7980** from the **Device** drop-down menu. Set the desired number of 
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7980_custom_iio_plot.jpg
    :alt: AD7980 IIO Oscilloscope Plot
-   :width: 600px
+   :width: 600
 
 More information
 ----------------
@@ -261,6 +294,6 @@ More information
    :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |UART messeges| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad4_hyper1.jpg
-   :width: 400px
+   :width: 400
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad4_hyper2.jpg
-   :width: 400px
+   :width: 400

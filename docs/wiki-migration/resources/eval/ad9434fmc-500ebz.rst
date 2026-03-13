@@ -5,7 +5,6 @@ EVALUATING THE AD9434 ANALOG-TO-DIGITAL CONVERTER
 
    \ NOTE: Support for the ad9434fmc is not part of 2022_r2 Kuiper Linux release. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. All the sources remained in main branches, and probably it will be added back in next releases, being supported on Zed Board.
 
-
 Preface
 -------
 
@@ -18,14 +17,13 @@ Typical Measurement Setup
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_fmc_500ebz_typical_setup.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    *Figure 1. Evaluation Board Connection—*\ :adi:`AD9434-FMC-500EBZ <AD9434>`\ *(on Left) and
 
    *:adi:`EVAL-SDP-CH1Z <sdp>`\ *SDP-H1 (on Right)*
-
 
 Features
 --------
@@ -83,14 +81,16 @@ This section provides quick start procedures for using the :adi:`AD9434-FMC-500E
 Configuring the Board
 ~~~~~~~~~~~~~~~~~~~~~
 
-Before using the software for testing, configure the evaluation board as follows:
+Before using the software for testing, configure the evaluation board as
+follows:
 
 -  Connect the evaluation board to the data capture board, as shown in Figure 1.
 -  Connect one 12V switching power supply to the :adi:`EVAL-SDP-CH1Z <sdp>` SDP-H1 board.
 -  Connect the :adi:`EVAL-SDP-CH1Z <sdp>` SDP-H1 board to the PC with a USB cable. (Connect to J1)
 -  On using the on-board clock in the board, connect the Pin 1 and Pin 2 in P1.
 -  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal to the input channel (J100). Use a 1 m, shielded, RG-58, 50 Ω coaxial cable to connect the signal generator: For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (Analog Devices uses TTE, Allen Avionics, and K & L band-pass filters)
--   If using external clock signal, remove the connector in P1 and use a clean signal generator to J201.
+-   If using external clock signal, remove the connector in P1 and use a clean
+    signal generator to J201.
 
 Using The Software for Testing
 ------------------------------
@@ -98,62 +98,59 @@ Using The Software for Testing
 Setting up the ADC Data Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After configuring the board, set up the ADC data capture using the following steps:
+After configuring the board, set up the ADC data capture using the following
+steps:
 
 -  Start Visual Analog.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_start_button.png
    :align: center
-   :width: 100px
+   :width: 100
 
 .. container:: centeralign
 
    \ *Figure 2. VisualAnalog, Start Button*\
 
-
 -  Select AD9434 and double click FFT
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_new_canvas_2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 3. VisualAnalog, New Canvas Window*\
 
-
 -  Click settings under ADC Data Capture.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_adc_data_capture.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    \ *Figure 4. VisualAnalog, ADC Data Capture*\
 
-
 -  Set device to Default.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_adc_data_capture_setting_2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 5. VisualAnalog, ADC Data Capture General Section*\
 
-
--  Navigate to Capture Board and browse your file directory for the FPGA Image called. (ad9434_sdph1.bin)
+-  Navigate to Capture Board and browse your file directory for the FPGA Image
+   called. (ad9434_sdph1.bin)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_adc_data_capture_board_2.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 6. VisualAnalog, ADC Data Capture Board*\
-
 
 -  Click Program and check if LED0 on the SDP-H1 lights up. Then, click OK.
 
@@ -167,107 +164,100 @@ Setting up the SPI Controller Software
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_start_button.png
    :align: center
-   :width: 100px
+   :width: 100
 
 .. container:: centeralign
 
    \ *Figure 7. SPIController Start Button*\
 
-
 -  If a message opens saying "Read Test Failure", select Ignore.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 8. 1st Ignore Test Failure*\
 
-
--  Click File > Cfg Open then find the file named "ad9434_12bit_500MSspiR03.cfg" and double click it.
+-  Click File > Cfg Open then find the file named "ad9434_12bit_500MSspiR03.cfg"
+   and double click it.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_cfg_open.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 9. Configuration Settings*\
 
-
 -  Again, if a message opens saying "Read Test Failure", select Ignore.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 10. 2nd Ignore Test Failure*\
 
-
 -  Click Config > Controller Dialog.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_controller_dialog.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 11. Controller Dialog Guide*\
 
-
 -  Un-select SDO Active and click OK.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_unselect_sdo.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 12. Controller Dialog Setting*\
 
-
 -  Click Read chip ID and Read Chip Grade.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_read_chip_id_grade.png
    :align: center
-   :width: 300px
+   :width: 300
 
 .. container:: centeralign
 
    \ *Figure 13. Read Chip ID and Read Chip Grade Section*\
-
 
 -  Go Back to Visual Analog and click Play button.
 
 Adjusting the Amplitude of the Input Signal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next step is to adjust the amplitude of the input signal for each channel as follows:
+The next step is to adjust the amplitude of the input signal for each channel as
+follows:
 
 -  Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9434 Average FFT** window (see Figure 14) to verify this.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_typical_fft_2.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    *Figure 14. Graph Window of VisualAnalog*
 
-
 -  Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_disk_icon_2.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    *Figure 15. VisualAnalog Disk Icon*
-
 
 Testing Additional AD9434 Boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -284,20 +274,17 @@ SNR Performance of AD9434
 
 With reference to :adi:`an-501` and :adi:`an-756`, the SNR performance as shown in Figure 17 gives insight on the effect of clock jitter to the AD9434's signal-to-noise ratio (SNR) performed in evaluation board clock set-up depicted in Figure 16. The external signal generator clock circuitry provides the best performance among other clock configurations, which uses Rhode and Schwarz SMA100B. The CCS575S oscillator ranks second in terms of SNR performance, followed by LVPECL with voltage swing 960mVpp, then LVDS with 3.5mA current set-up. Both LVPECL and LVDS clock configurations were leveraged by :adi:`ad9517-4`. As an implication, the external signal generator has the lowest clock jitter among others.
 
-
 |image1|
 
 .. container:: centeralign
 
    *Figure 16. AD9434 Clocking Set-up*
 
-
    |image2|
 
 .. container:: centeralign
 
    *Figure 17. AD9434 SNR Performance using Different Clock Configurations*
-
 
 As a trade-off in getting the best SNR performance, the material cost and resources are higher for external signal generator clock configuration. However, the user can get a better performance (almost -1 dB less than the external signal generator) with optimized material cost in oscillator clock configuration using CCS575S. For the lowest material cost compared to oscillator, the :adi:`ad9517-4` can offer a good functionality in using either LVPECL or LVDS configurations. In design considerations, the user should get a good balance between ease of resources and ADC performance.
 
@@ -330,111 +317,102 @@ After configuring the SPIController for AD9434 using FIFO Select 1, this section
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 18. 1st Ignore Test Failure*\
 
-
 -  Click File > Cfg Open, then find a file named **"AD9517spiR03.cfg"** and double click it.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_cfg_open.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 19. Configuration Settings*\
 
-
 -  Again, if a message pop up saying **"Read Test Failure"**, select again**Ignore**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 20. 2nd Ignore Test Failure*\
 
-
 -  Click Config > Controller Dialog.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_controller_dialog.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 21. Controller Dialog Guide*\
 
-
 -  Click **FIFO Chip Sel#** and choose **2**, and unselect **SDO Active** then click OK.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9517_contdialog_fifo2.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 22. Configuring the FIFO Chip Select in Controller Dialog Section*\
 
-
 -  Go to **Global** tab and click **Reset**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9517_global.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 23. Chip Port Configuration Section*\
 
-
 -  Configure the **PLL** tab of the SPIController to the user desired settings.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9517_pll_control.png
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 24. Configuring the PLL Section*\
 
-
 -  For the **Output** tab, the user can select on either LVPECL or LVDS. For LVPECL clock path connected to :adi:`ad9434`, configure **Output3 LVPECL(0x0F5)**, and set the differential voltage swing and the power modes to **Normal Operation**. For the rest of LVPECL outputs, set them to **Safe LVPECL power-down**, and also **check the Power-down Output** of all the LVDS outputs.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9517_outputs_lvpecl.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 25. Output LVPECL Section*\
 
-
 -  For LVDS clock path connected to :adi:`ad9434`, configure the **Output5 (0x141)** by unchecking the power-down output with output polarity of **CMOS = A, CMOS B = N, LVDS = N** and setting the LVDS output current level to **3.5mA at 100 ohms** and all the LVPECL outputs to **Safe LVPECL power-down**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9517_outputs_lvds.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 26. Output LVDS Section*\
 
-
--  Configure the desired LVPECL divider settings shown in Figure 27 or configure the desired LVDS divider settings shown in Figure 28.
+-  Configure the desired LVPECL divider settings shown in Figure 27 or configure
+   the desired LVDS divider settings shown in Figure 28.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9517_lvpecl_divider.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 27. LVPECL Divider Section*\
-
 
    |image3|
 
@@ -442,39 +420,35 @@ After configuring the SPIController for AD9434 using FIFO Select 1, this section
 
    \ *Figure 28. LVDS Divider Section*\
 
-
 -  For internal VCO mode, configure the **VCO divider** to desired value and set the **Input to VCO divider** to **VCO**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9517_vco_settings.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. container:: centeralign
 
    \ *Figure 29. VCO and REFCLK Section*\
 
-
 -  After setting the desired register addresses, go back to **PLL** tab specifically the **PLL CTRL 3 (0x18)** and click the **VCO Cal Now**.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9517_vco_cal_now.png
    :align: center
-   :width: 250px
+   :width: 250
 
 .. container:: centeralign
 
    \ *Figure 30. VCO Calibration Section*\
 
-
 -  Click the **Update DUT from Controller** in the icon shown in Figure 31 and wait if the LED CR300 will lit up. Insert a REFCLK in J201 in order for the PLL in the :adi:`ad9517-4` to lock.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9517_update_dut.png
    :align: center
-   :width: 400px
+   :width: 400
 
 .. container:: centeralign
 
    \ *Figure 31. Update DUT from Controller Icon*\
-
 
 -  Go back to VisualAnalog and see if the user can produce an FFT using the desired clock configuration using :adi:`ad9517-4`.
 
@@ -492,7 +466,8 @@ If the FFT appears normal but the performance is poor, check the following:
 -  Make sure that the signal generators for the clock and the analog input are clean (low phase noise).
 -  Change the analog input frequency slightly if noncoherent sampling is being used, or use coherent frequencies.
 -  Make sure that the SPI configuration file matches the product being evaluated.
--  Make sure the there isn't any extra stress/torque on the clock and analog input connectors.
+-  Make sure the there isn't any extra stress/torque on the clock and analog
+   input connectors.
 
 If the FFT window remains blank after **Run** is clicked, do the following:
 
@@ -502,14 +477,15 @@ If the FFT window remains blank after **Run** is clicked, do the following:
 -  Be sure that the correct sample rate is programmed. Click on the **Settings** button in the **ADC Data Capture** block in VisualAnalog and verify that he **Clock Frequency** is properly set.
 -  Ensure that the ADC has valid clock input.
 
-If the FFT appears normal but the analog input frequency is not matched in VA compared to the AIN input source, do the following:
+If the FFT appears normal but the analog input frequency is not matched in VA
+compared to the AIN input source, do the following:
 
 -  Check and probe clock frequency in the ADC. Make sure the correct value is matched to the Clock Frequency Setting in ADC Data Capture Box of VA canvas.
 -  For LVPECL and LVDS configurations using :adi:`ad9517-4`, reset the board and redo the SPIcontroller settings for :adi:`ad9517-4`.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9434_clock_setup.png
-   :width: 800px
+   :width: 800
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9434_snr_performance.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9517_lvds_divider.png
-   :width: 500px
+   :width: 500

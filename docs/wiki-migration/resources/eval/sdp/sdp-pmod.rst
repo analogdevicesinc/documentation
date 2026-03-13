@@ -24,19 +24,26 @@ PMOD-SDP Connector and External Power
 
 The SDP-PMD-IB1Z itself won't do anything without the SDP hardware control board and a 6V external power supply through **P5** connector.
 
-The SDP doesn't provide voltage rails for their daughter cards, and PMOD hardware expects host controllers to provide the power. So we had to provide the power for the SDP daughter card(SDP-PMD-IB1Z) and provide the power for the attached PMOD boards, which is why the 6V power supply is there, and why you have to connect it up.
+The SDP doesn't provide voltage rails for their daughter cards, and PMOD
+hardware expects host controllers to provide the power. So we had to provide the
+power for the SDP daughter card(SDP-PMD-IB1Z) and provide the power for the
+attached PMOD boards, which is why the 6V power supply is there, and why you
+have to connect it up.
 
 When using the PMOD-SDP interposer board to connect PMOD boards to the PC via the SDP platform, you should be connected to the EVAL-SDP-CB1Z via the CONA connector to the **P1** connector on the SDP-PMD-IB1Z board.
 
 Standard Interfaces Supported
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-PMOD is a serial communication protocol and can support the following types of communication.
+PMOD is a serial communication protocol and can support the following types of
+communication.
 
 -  **P4** - Expanded SPI or Expanded UART
 -  **P2** and **P3** - Expanded I2C
 
-For a complete understanding of supporting communication protocols and their respective pin outs and form factors please see the official Digilent specification.
+For a complete understanding of supporting communication protocols and their
+respective pin outs and form factors please see the official Digilent
+specification.
 
 `Digilent PMOD Interface Specification <https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-pmod/digilent_pmod_interface_specification.pdf>`_
 
@@ -60,8 +67,9 @@ The following picture showing the **P4** working on the Expanded UART mode jumpe
 
 .. important::
 
-   Please make sure the P4 working mode selection jumper JP1 in the right position before power on the system. If the PMOD daughter board used P2 or P3 I2C interface, JP1 could set to any position but don't left it open.
-
+   Please make sure the P4 working mode selection jumper JP1 in the right
+   position before power on the system. If the PMOD daughter board used P2 or P3
+   I2C interface, JP1 could set to any position but don't left it open.
 
 PMOD Power Rails Supplied
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,19 +78,23 @@ PMOD hardware modules recieve their power from the host controller board. So in 
 
 .. warning::
 
-   If you set the wrong PMOD power supply voltage configuration jumper JP2, permanent damage to the PMOD board may occur! Please make sure the PMOD power supply voltage configuration jumper JP2 on the right position before power on the system.
-
+   If you set the wrong PMOD power supply voltage configuration jumper JP2,
+   permanent damage to the PMOD board may occur! Please make sure the PMOD power
+   supply voltage configuration jumper JP2 on the right position before power on
+   the system.
 
 --------------
 
-The following jumper position showing the 3.3V power supply PMOD daughter board configuration:
+The following jumper position showing the 3.3V power supply PMOD daughter board
+configuration:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-pmod/sdp-i-pmod_jumper-3.jpg
    :align: center
 
 --------------
 
-The following jumper position showing the 5V power supply PMOD daughter board configuration:
+The following jumper position showing the 5V power supply PMOD daughter board
+configuration:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-pmod/sdp-i-pmod_jumper-5.jpg
    :align: center
@@ -92,28 +104,33 @@ The following jumper position showing the 5V power supply PMOD daughter board co
 Hardware Setup Procedure
 ------------------------
 
-If you are using the SDP with the PMOD-SDP adaptor board, and any PMOD hardware boards, please use the following setup procedure:
+If you are using the SDP with the PMOD-SDP adaptor board, and any PMOD hardware
+boards, please use the following setup procedure:
 
 -  Set the right **JP1** and **JP2** according your PMOD daughter board.
 -  Connect the PMOD daughter board to **P2** or **P3** or **P4** of the SDP-PMD-IB1Z, depending on SPI/UART or I2C interface.
 -  Connect SDP-PMD-IB1Z **P1** to the EVAL-SDP-CB1Z using the 120-pin connector labeled CON A
 -  Plug in EVAL-SDP-CB1Z into USB port of computer.
 
-   -  You may need to wait for the SDP device drivers to install if this is the first time using the SDP board.
+   -  You may need to wait for the SDP device drivers to install if this is the
+      first time using the SDP board.
 
 -  Connect 6V power supply (EVAL-CFTL-6V-PWRZ) to **P5** of SDP-PMD-IB1Z.
 -  Wait for 10 seconds.
--  Open up the Device Manager in your computer, and make sure you see ADI Development Tools attached.
+-  Open up the Device Manager in your computer, and make sure you see ADI
+   Development Tools attached.
 
 .. important::
 
-   When you finished your system evaluation, before disconnect any connector or remove any jumper please disconnect 6V power supply (EVAL-CFTL-6V-PWRZ) from P5 of SDP-PMD-IB1Z first.
-
+   When you finished your system evaluation, before disconnect any connector or
+   remove any jumper please disconnect 6V power supply (EVAL-CFTL-6V-PWRZ) from
+   P5 of SDP-PMD-IB1Z first.
 
 ADI PMOD Compatible Boards
 --------------------------
 
-Following is a table of current PMOD boards offered by Analog Devices, and will connect to the PMOD-SDP adaptor board.
+Following is a table of current PMOD boards offered by Analog Devices, and will
+connect to the PMOD-SDP adaptor board.
 
 +--------------------------------------------+---------------------------------------+------------------------+
 | Webpage                                    | Application                           | SDP Software Available |
@@ -166,7 +183,6 @@ Schematic, PCB Layout, Bill of Materials
    -  `PCB Assembly Files <https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-pmod/01-042045-01b.zip>`_
    
 
-
 .. admonition:: Download
    :class: download
 
@@ -176,13 +192,11 @@ Schematic, PCB Layout, Bill of Materials
    -  `Schematics Rev 0 <https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-pmod/eval_sdp-pmod_schematic_reva.pdf>`_
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/SDP-PMD-IB1Z?&v=Rev B>`_ to receive all these great benefits and more!
-
 
 *End of Document*

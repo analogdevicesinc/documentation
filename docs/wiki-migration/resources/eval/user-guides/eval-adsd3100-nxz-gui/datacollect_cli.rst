@@ -8,7 +8,8 @@ The Data Collect CLI can collect raw data from the depth module in .bin format. 
 
 Use *data_collect --help* to show functionality.
 
-One important change is the removal of ini files. Instead default values are used by the system. To change the values the following process can be used:
+One important change is the removal of ini files. Instead default values are
+used by the system. To change the values the following process can be used:
 
 -  Save the parameters, for example, *data_collect --ip 10.43.0.1 --scf my_params*
 -  Edit the *my_params.json* by finding the mode you want to change.
@@ -57,11 +58,11 @@ Data Collect, Eval Kit 5.0.0
 
    \ Note: Camera IP is 10.43.0.1 if you are using SDK v5.0.0 or later.
 
-
 .. important::
 
-   \ Note: In eval kit v5.0.0 --ft option is removed. The output of data collect is a .bin file which contain Active brightness, depth, confidence and point cloud. These frames can be visualized using ADIToFGUI.\
-
+   \ Note: In eval kit v5.0.0 --ft option is removed. The output of data collect
+   is a .bin file which contain Active brightness, depth, confidence and point
+   cloud. These frames can be visualized using ADIToFGUI.\
 
 Description
 -----------
@@ -86,17 +87,19 @@ More information can be found in readme
 EVAL-ADTF3175D-NXZ Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since the ADTF3175D eval kit works via ethernet over usb, the user must specify the static ip of the camera module
+Since the ADTF3175D eval kit works via ethernet over usb, the user must specify
+the static ip of the camera module
 
 -  Open Command Prompt from start menu and move to bin folder in GUI install location.
 -  **Please check the serial number of your kit to run the correct command**
 
    -  Run the following command if your serial number is similar to this **026am53200mb0ncca4** : (lr-native, 1 frame capture, get ccb) with latest GUI release:
 
-      -  data_collect.exe --f "data_output" --m 1 --n 1 --ip 10.43.0.1 config_adsd3500_adsd3100.json
+      -  data_collect.exe --f "data_output" --m 1 --n 1 --ip 10.43.0.1
+         config_adsd3500_adsd3100.json
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175d-nxz/adi-tof-data_collect.png
-   :width: 800px
+   :width: 800
 
 --------------
 
@@ -125,26 +128,32 @@ More information can be found in readme
 EVAL-ADTF3175D-NXZ Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since the ADTF3175D eval kit works via ethernet over usb, the user must specify the static ip of the camera module
+Since the ADTF3175D eval kit works via ethernet over usb, the user must specify
+the static ip of the camera module
 
 -  Open Command Prompt from start menu and move to bin folder in GUI install location.
 -  **Please check the serial number of your kit to run the correct command**
 
    -  Run the following command if your serial number starts with **DV11** or **CR**: (lr-native (mp), 1 frame capture, get ccb):
 
-      -  data_collect.exe --f "data_output" --m 10 --n 1 --ccb ../crXXX.ccb --ip 10.42.0.1 tof-viewer_config.json
+      -  data_collect.exe --f "data_output" --m 10 --n 1 --ccb ../crXXX.ccb --ip
+         10.42.0.1 tof-viewer_config.json
 
    -  Run the following command if your serial number is similar to this **026am53200mb0ncca4** : (lr-native, 1 frame capture, get ccb) with latest GUI release:
 
-      -  data_collect.exe --f "data_output" --m 1 --n 1 --ccb ../crXXX.ccb --ip 10.42.0.1 --ft raw config_adsd3500_adsd3100.json
+      -  data_collect.exe --f "data_output" --m 1 --n 1 --ccb ../crXXX.ccb --ip
+         10.42.0.1 --ft raw config_adsd3500_adsd3100.json
 
 .. important::
 
    \ Note:
 
    
-   Version: for 4.3.0, data collect's default output is depth image. To get raw frame use --ft command line argument with 'RAW' option. Refer data_collect --h for mode command line options. The get ccb flag is only required for the first capture. Once the ccb of your module is stored, it can be reused while running tofi_depth_compute.exe
-
+   Version: for 4.3.0, data collect's default output is depth image. To get raw
+   frame use --ft command line argument with 'RAW' option. Refer data_collect
+   --h for mode command line options. The get ccb flag is only required for the
+   first capture. Once the ccb of your module is stored, it can be reused while
+   running tofi_depth_compute.exe
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz-gui/data_collect_ip.png
    :align: center

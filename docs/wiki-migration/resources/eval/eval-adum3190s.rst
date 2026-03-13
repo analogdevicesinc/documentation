@@ -50,43 +50,53 @@ Evaluation Board
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adum3190s_eval_board.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 .. container:: centeralign
 
    \ *Figure 1. ADuM3190S Evaluation board—*\ :adi:`EVAL-ADUM3190S <ADUM3190S>`\
-
 
 Evaluation Board Schematic
 --------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adum3190s_eval_schematic.png
    :align: center
-   :width: 1600px
+   :width: 1600
 
 .. container:: centeralign
 
    \ *Figure 2. ADuM3190S Evaluation Board Schematic—*\ :adi:`EVAL-ADUM3190S <ADUM3190S>`\
-
 
 Figure 2 shows the :adi:`adum3190S` schematic of the :adi:`EVAL-ADUM3190S <ADUM3190S>` evaluation board. U1 is the :adi:`adum3190S` in the center of the board and Pin 1 is the top-left pad with respect to the notch in the silkscreen’s package outline. C1, C2, C3, and C4 are ceramic 0603 1 μF bypass capacitors provided for proper bypassing of the :adi:`adum3190S` internal 3 V regulators on both sides of part. Also added to the board are 10 μF 0805 ceramic capacitors to the VDD1 and VDD2 connections to provide additional bypassing in case long wires are used from power supplies to the evaluation board. Test point connectors are provided for most of the important connections to pins of the :adi:`adum3190S`. The following sections describe connections to make to power the :adi:`EVAL-ADUM3190S <ADUM3190S>` and make performance tests.
 
 Left Side Power Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Connect the left-side external power supply (3 V to 20 V) to TP1 (labeled VDD1) and return it to TP2 (labeled GND1).
+Connect the left-side external power supply (3 V to 20 V) to TP1 (labeled VDD1)
+and return it to TP2 (labeled GND1).
 
 Right Side Power Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Connect the right-side external power supply (3 V to 20 V) to TP9 (labeled VDD2) and return it to TP10 (labeled GND2).
+Connect the right-side external power supply (3 V to 20 V) to TP9 (labeled VDD2)
+and return it to TP10 (labeled GND2).
 
 Accuracy Test Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the :adi:`EVAL-ADUM3190S <ADUM3190S>` schematic (see Figure 2), a blue line outlines the EAOUT accuracy circuit. Capacitor C7 (2.2 nF) together with R8 (680 Ω) and R7 (0 Ω) resistors form an integrator circuit to close the loop from the −IN input to the EAOUT output. A ±1% accurate internal reference voltage of 1.225 V at REFOUT is connected to the noninverting op amp input +IN through a 0 Ω resistor, R9, providing the reference for the accuracy test circuit. See Figure 3, :adi:`adum3190S` Test Circuit 1, or the :adi:`adum3190S` data sheet for more information about the operation of the :adi:`adum3190S`.
 
-For accuracy tests, add a wire between GND1 and GND2 for EAOUT and EAOUT2 (see Figure 3). This connection is needed because the accuracy tests connect a 680 Ω resistor across the isolation barrier and creates a current path between the two isolated areas, so a ground return is needed for the accuracy tests. The accuracy of the EAOUT output will be within ±1% of the reference voltage specified value of 1.225 V. Next, the EAOUT2 accuracy in Figure 4 (Test Circuit 2) can be performed by removing the R7 (0 Ω) resistor and placing a 0 Ω resistor at R5, completing the EAOUT2 circuit. Because the EAOUT2 circuit has a high gain and uses the same internal reference voltage to connect to the −IN input of the op amp, the accuracy of the EAOUT2 output is also within ±1% of the reference voltage specified value of 1.225 V.
+For accuracy tests, add a wire between GND1 and GND2 for EAOUT and EAOUT2 (see
+Figure 3). This connection is needed because the accuracy tests connect a 680 Ω
+resistor across the isolation barrier and creates a current path between the two
+isolated areas, so a ground return is needed for the accuracy tests. The
+accuracy of the EAOUT output will be within ±1% of the reference voltage
+specified value of 1.225 V. Next, the EAOUT2 accuracy in Figure 4 (Test Circuit
+2) can be performed by removing the R7 (0 Ω) resistor and placing a 0 Ω resistor
+at R5, completing the EAOUT2 circuit. Because the EAOUT2 circuit has a high gain
+and uses the same internal reference voltage to connect to the −IN input of the
+op amp, the accuracy of the EAOUT2 output is also within ±1% of the reference
+voltage specified value of 1.225 V.
 
 For tests other than the accuracy tests, open the 680 Ω resistor connections by removing R5 and R7 (0 Ω), the C7 integrating capacitor, and the external wire connection made between GND1 and GND2. Once completed, other components may be added to the evaluation board per the schematic in Figure 2 to make circuits for other tests such as :adi:`adum3190S` data sheet specifications for the op amp, reference, UVLO, output characteristics, or power supply.
 
@@ -95,21 +105,19 @@ Test Circuit 1
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adum3190s_test_circuit1.png
    :align: center
-   :width: 1600px
+   :width: 1600
 
 .. container:: centeralign
 
    \ *Figure 2. ADuM3190S Test Circuit 1—*\ :adi:`EVAL-ADUM3190S <ADUM3190S>`\
-
 
 Test Circuit 2
 ~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/adum3190s_test_circuit2.png
    :align: center
-   :width: 1600px
+   :width: 1600
 
 .. container:: centeralign
 
    \ *Figure 2. ADuM3190S Test Circuit 2—*\ :adi:`EVAL-ADUM3190S <ADUM3190S>`\
-

@@ -17,17 +17,16 @@ A2B Analyzer HP Setup
 1. Connect the A\ :sup:`2`\ B Analyzer HP to your PC using the supplied USB-C to USB-C cable. You may also use USB-C to USB-A cable with 24V power supply.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_1.png
-   :width: 400px
+   :width: 400
 
 2. Connect 24V power supply to A\ :sup:`2`\ B Analyzer HP. A\ :sup:`2`\ B Analyzer HP supports both power and data over USB-C. USB-C power alone may not be sufficient to use the A\ :sup:`2`\ B Analyzer HP to its full capacity. When the power is not sufficient, an error message is displayed in the User Interface. To allow the connection a 24V power supply must be connected.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_2.png
-   :width: 400px
+   :width: 400
 
 3. Ensure your A\ :sup:`2`\ B Analyzer Studio software is installed, and upgraded as explained in :doc:`A2B Analyzer Studio Quick Start Guide </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>` Section *"Installation and Upgrades"*.
 
 4. Launch A\ :sup:`2`\ B Analyzer Studio. Connect to your A\ :sup:`2`\ B Analyzer HP device by selecting it from the device selection drop-down menu then clicking the Power button. Once connected, the Power button becomes green.
-
 
 |image1|
 
@@ -37,7 +36,6 @@ Hardware setup for using A2B Analyzer HP as Bus Monitor
 1. Complete steps in `A2B Bus Analyzer and A2B Analyzer HP Hardware Setup <https://wiki.analog.com/>`_.
 
 2. For custom cabling, please use the below pinout details.
-
 
 |image2|
 
@@ -49,12 +47,15 @@ Hardware setup for using A2B Analyzer HP as Bus Monitor
 **Note:** It is recommended to place the A\ :sup:`2`\ B Analyzer HP between the Main and first Sub node (Sub node0) to allow capturing all events on the bus.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_5.jpg
-   :width: 400px
+   :width: 400
 
-4. If ADI evaluation boards are used for main and sub-node, please refer the following path for documentation on how to set up a network using ADAA245x-EV-A1CA + ADAA24xx-EV-B2BX eval boards.
+4. If ADI evaluation boards are used for main and sub-node, please refer the
+   following path for documentation on how to set up a network using
+   ADAA245x-EV-A1CA + ADAA24xx-EV-B2BX eval boards.
 
 -  <Installation path of SigmaStudio+>\\docs\\root-qsg\\resources\\pages\\quick-start-guide\\gui\\examples\\adaa245x-ev-a1ca-rev-d_adaa24xx-ev-b2bx-rev-c_3-node.html
--  Also, please refer to the specific jumper settings for main node and sub-node.
+-  Also, please refer to the specific jumper settings for main node and
+   sub-node.
 
 5. Follow the instructions in :doc:`A2B Analyzer Studio Quick Start Guide </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>` section *"Using A2B Analyzer HP as Bus Monitor" * for using A\ :sup:`2`\ B Analyzer Studio software.
 
@@ -68,14 +69,12 @@ Main Node Emulator
 
 2. For custom cabling, please use the below pinout details.
 
-
 |image3|
 
 -  P1 (towards main): 1 - AN, 2 - AP(left to right)
 -  P2 (towards sub):   1 - BN, 2 - BP(left to right)
 
 3. Connect Sub node or chain of Sub nodes to the node emulator port labelled “TOWARDS SUB”. **You must use personality module 1 for emulator functionality.**
-
 
 |image4|
 
@@ -88,7 +87,6 @@ Sub Node Emulator
 
 2. For custom cabling, please use the below pinout details.
 
-
 |image5|
 
 -  P1 (towards main): 1- AN, 2 - AP(left to right)
@@ -97,7 +95,7 @@ Sub Node Emulator
 3. Insert the A\ :sup:`2`\ B Analyzer HP unit in an A\ :sup:`2`\ B network at a desired Sub node position to be emulated. Connect the unit to an upstream node, using TOWARDS MAIN, and to a downstream node, using TOWARDS SUB (if it is not the last node). **You must use personality module 1 for emulator functionality.**
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_9.jpg
-   :width: 400px
+   :width: 400
 
 4. Follow the instructions in :doc:`A2B Analyzer Studio Quick Start Guide </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>` section *"Using A2B Analyzer HP as Node Emulator - Sub Node Emulator" * for using A\ :sup:`2`\ B Analyzer Studio software.
 
@@ -109,18 +107,15 @@ A2B Bus Analyzer Setup
 
 1. Connect the A\ :sup:`2`\ B Bus Analyzer to your PC using the supplied USB-A to Micro-B cable.
 
-
 |image6|
 
 2. Connect 12V power supply to A\ :sup:`2`\ B Bus Analyzer.
-
 
 |image7|
 
 3. Ensure your A\ :sup:`2`\ B Analyzer Studio software is installed, and upgraded as explained in :doc:`A2B Analyzer Studio Quick Start Guide </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>` Section *"Installation and Upgrades"*.
 
 4. Launch A\ :sup:`2`\ B Analyzer Studio. Connect to your A\ :sup:`2`\ B Bus Analyzer device by selecting it from the device selection drop-down menu then clicking the Power button. Once connected, the Power button becomes green.
-
 
 |image8|
 
@@ -131,7 +126,6 @@ Hardware setup for using A2B Bus Analyzer as Bus Monitor
 
 2. For custom cabling, please use the below pinout details.
 
-
 |image9|
 
 -  P1 (towards main): 1 - NC, 2 - AN, 3 - AP, 4 – NC (left to right)
@@ -140,7 +134,6 @@ Hardware setup for using A2B Bus Analyzer as Bus Monitor
 3. Connect A\ :sup:`2`\ B Bus Analyzer unit between two nodes in an A\ :sup:`2`\ B network.
 
 **Note:** It is recommended to place the analyzer between the Main and first Sub node (Sub node0) to allow capturing of all events on the bus.
-
 
 |image10|
 
@@ -162,15 +155,16 @@ For customer cabling, please use the below pinout details:
 -  P3 (towards main): 1- AN, 2- AP (left to right)
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_15.png
-   :width: 400px
+   :width: 400
 
 Main Node Emulator
 ~~~~~~~~~~~~~~~~~~
 
 1. Complete the steps in `A2B Bus Analyzer and A2B Analyzer HP Hardware Setup <https://wiki.analog.com/>`_.
 
-2. Connect Sub node or chain of Sub nodes to the node emulator port labelled “TOWARDS SUB” on STD or HIGH PWR depending on the power configuration of the node being emulated
-
+2. Connect Sub node or chain of Sub nodes to the node emulator port labelled
+   “TOWARDS SUB” on STD or HIGH PWR depending on the power configuration of the
+   node being emulated
 
 |image11|
 
@@ -183,32 +177,31 @@ Sub Node Emulator
 
 2. Insert the A\ :sup:`2`\ B Bus Analyzer unit in an A\ :sup:`2`\ B network at a desired Sub node position to be emulated. Connect the unit to an upstream node, using TOWARDS MAIN, and to a downstream node, using TOWARDS SUB (if it is not the last node), on STD or HIGH PWR node emulator ports depending on the power configuration of the node being emulated.
 
-
 |image12|
 
 3. Follow the instructions in :doc:`A2B Analyzer Studio Quick Start Guide. </wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide>` section *"Using A2B Bus Analyzer as Node Emulator - Sub Node Emulator"  * for using A\ :sup:`2`\ B Analyzer Studio software.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_3.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_4.jpg
-   :width: 400px
+   :width: 400
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_6.jpg
-   :width: 400px
+   :width: 400
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_7.jpg
-   :width: 400px
+   :width: 400
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_8.jpg
-   :width: 400px
+   :width: 400
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_10.png
-   :width: 400px
+   :width: 400
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_11.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_12.png
-   :width: 600px
+   :width: 600
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_13.png
-   :width: 400px
+   :width: 400
 .. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_14.png
-   :width: 400px
+   :width: 400
 .. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_16.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/a2bashw_17.png
-   :width: 600px
+   :width: 600

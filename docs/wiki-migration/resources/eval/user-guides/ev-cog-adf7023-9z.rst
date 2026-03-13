@@ -14,28 +14,32 @@ Features
 Interface
 =========
 
-EV-COG-ADF7023-9Z connects to MCU Cog through a hirose connector available on the daughter board. The MCU Cog will power up the daughter board, so no other external power supply is required. The daughter board has a testport P2 which can be used to probe logic analyzer to the GPIOs connecting MCU Cog to ADF7023-J.
+EV-COG-ADF7023-9Z connects to MCU Cog through a hirose connector available on
+the daughter board. The MCU Cog will power up the daughter board, so no other
+external power supply is required. The daughter board has a testport P2 which
+can be used to probe logic analyzer to the GPIOs connecting MCU Cog to
+ADF7023-J.
 
 Primary Side
 ------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-adf7023-9z/p.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Secondary Side
 --------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-adf7023-9z/s.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Test Port
 ---------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-adf7023-9z/testport.png
    :align: center
-   :width: 300px
+   :width: 300
 
 EV-COG-ADF7023-9Z Design and Integration Files
 ==============================================
@@ -49,6 +53,5 @@ EV-COG-ADF7023-9Z Design and Integration Files
    -  `Fabrication Files <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-adf7023-9z/09-049613-01a.zip>`_
    -  `Assembly Files <https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-adf7023-9z/01-049613-01a.zip>`_
    
-
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/rapidnet-ip>`

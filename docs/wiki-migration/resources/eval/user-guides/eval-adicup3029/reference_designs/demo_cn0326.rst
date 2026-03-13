@@ -10,7 +10,6 @@ This project is a good example for how to use **EVAL-ADICUP3029** in different c
 
 The **ADuCM3029_demo_cn0326** project uses the :adi:`EVAL-CN0326-PMDZ pmod <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/cn0326>` which is a pH sensor signal conditioner and digitizer with automatic temperature compensation.
 
-
 |image1|
 
 The CN0326 circuit provides a complete solution for pH sensors with internal resistance between **1 MΩ** and several **GΩ**. It consist of **pH probe** buffer, **Pt1000 RTD** for temperature compensation and **24-bits ADC** with 3 differential analog inputs.
@@ -21,7 +20,9 @@ The change in temperature of the solution changes the activity of its hydrogen i
 
 The **EVAL-CN0326-PMDZ** comes with an evaluation software which can help you to test and to calibrate your pmod before you use it.
 
-The potential changes are outputted as ADC 24-bits value which is received via SPI interface of the EVAL-ADICUP3039 board. The ADC analog differential channels are:
+The potential changes are outputted as ADC 24-bits value which is received via
+SPI interface of the EVAL-ADICUP3039 board. The ADC analog differential channels
+are:
 
 -  **AIN1(+)/AIN1(-)** - pH probe (voltage full range: ±414 mV at 25°C to ±490 mV at 80°C)
 -  **AIN2(+)/AIN2(-)** - Pt1000 RTD (voltage full range: 210 mV to 290 mV with 210 μA excitation current)
@@ -29,24 +30,25 @@ The potential changes are outputted as ADC 24-bits value which is received via S
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2.png
    :align: right
-   :width: 549px
+   :width: 549
 
 The **ADuCM3029_demo_cn0326** application purchase ADC outputs from input channels, calculates voltage, temperature and pH values. You can choose to use internal excitation current of the ADC (IOUT2) or calculate bias current of the circuit (see *USE_IOUT2* parameter).
 
 A UART interface (9600 baud rate and 8-bits data length) is used, as a command line interpreter, to send the results to terminal window: **temperature** and **ph** values. Beside this two the interpreter process other three commands: **help**, **calibrate** channel/channels and ADC **reset**.
 
-To start the command line interpreter you need to press ENTER key (CR) from the keyboard and after that just type in <help> to see available commands. The output data are send via UART using semihosting.
+To start the command line interpreter you need to press ENTER key (CR) from the
+keyboard and after that just type in <help> to see available commands. The
+output data are send via UART using semihosting.
 
 .. note::
 
    The calibrate command perform an internal zero and full scale calibration of the selected channel/channels (:adi:`AD7793 Datasheet <media/en/technical-documentation/data-sheets/AD7792_7793.pdf>`).
 
-
 The project uses below formula to determine output **ADC code** for an input voltage on either channel:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_1.png
    :align: left
-   :width: 250px
+   :width: 250
 
 **AIN** - analog input voltage
 
@@ -58,7 +60,7 @@ The **temperature** value is calculated using RTD resistance value and it varies
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_2.png
    :align: left
-   :width: 240px
+   :width: 240
 
 **Rrtd** - RTD resistance at T°C
 
@@ -113,7 +115,7 @@ Setting up the Hardware
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_front_refrence_s2_position_for_usb.jpg
    :align: center
-   :width: 800px
+   :width: 800
 
 -  Connect the EVAL-CN0326-PMDZ to the SPI PMOD connector **P8** of the **EVAL-ADICUP3029** board.
 -  Plug in the USB cable from the PC to the **EVAL-ADICUP3029** base board via the USB connector.(**P10**)
@@ -121,14 +123,19 @@ Setting up the Hardware
 Obtaining the Software
 ----------------------
 
-There are two basic ways to program the ADICUP3029 with the software for the CN0326.
+There are two basic ways to program the ADICUP3029 with the software for the
+CN0326.
 
 -  Dragging and Dropping the .Hex to the Daplink drive
 -  Building, Compiling, and Debugging using CCES
 
-Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design
+Using the drag and drop method, the software is going to be a version that
+Analog Devices creates for testing and evaluation purposes. This is the EASIEST
+way to get started with the reference design
 
-Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.
+Importing the project into CrossCore is going to allow you to change parameters
+and customize the software to fit your needs, but will be a bit more advanced
+and will require you to download the CrossCore toolchain.
 
 The software for the **ADuCM3029_demo_cn0326** can be found here:
 
@@ -145,11 +152,9 @@ The software for the **ADuCM3029_demo_cn0326** can be found here:
    -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0326 Source Code <projects/ADuCM3029_demo_cn0326>`
    
 
-
 .. note::
 
    For more information on importing, debugging, or other tools related questions, please see the :doc:`tools user guide. </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`
-
 
 Configuring the Software
 ------------------------
@@ -212,7 +217,7 @@ Command       Description
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2.png
    :align: center
-   :width: 549px
+   :width: 549
 
 How to use the Tools
 --------------------
@@ -232,6 +237,6 @@ For more detailed instructions on importing this application/demo example into t
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_front_cn0326_attached.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_3.png
-   :width: 361px
+   :width: 361

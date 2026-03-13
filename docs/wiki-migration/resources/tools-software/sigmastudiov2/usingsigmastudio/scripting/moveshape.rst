@@ -3,7 +3,10 @@
 Move Shape
 ==========
 
-This action allows the user to move a specified shape on the parent canvas or schematic page to a given position.The function call takes in 2 arguments. Return type is a SSPResult which contains a IsSuccess flag for success/failure and Message in the form of list of strings.
+This action allows the user to move a specified shape on the parent canvas or
+schematic page to a given position.The function call takes in 2 arguments.
+Return type is a SSPResult which contains a IsSuccess flag for success/failure
+and Message in the form of list of strings.
 
 API
 ---
@@ -16,12 +19,14 @@ Arguments
 ---------
 
 -  shapeUid- Uid of the plugin to be moved.
--  newPosition -Position in the form of (double X, double Y) coordinates of the canvas.
+-  newPosition -Position in the form of (double X, double Y) coordinates of the
+   canvas.
 
 Result
 ------
 
-SSPResult contains 'IsSuccess' flag and 'Message' information for the MoveShape action.
+SSPResult contains 'IsSuccess' flag and 'Message' information for the MoveShape
+action.
 
 ::
 

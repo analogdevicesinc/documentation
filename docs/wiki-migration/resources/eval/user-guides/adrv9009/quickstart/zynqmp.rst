@@ -3,13 +3,15 @@ ADRV9009-W/PCBZ Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009/adrv9009_zcu102_quickstart.png
    :align: center
-   :width: 600px
+   :width: 600
 
-This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the ADRV9009-W/PCBZ on:
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the ADRV9009-W/PCBZ on:
 
 -  `ZCU102 <https://www.xilinx.com/ZCU102>`_
 
-Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees from source can be found here:
+Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees
+from source can be found here:
 
 -  :doc:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
 -  :doc:`How to build the ZynqMP boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynqmp-boot-image>`
@@ -35,7 +37,7 @@ Testing
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009/quickstart/zcu102.jpg
    :align: center
-   :width: 900px
+   :width: 900
 
 -  Connect the ADRV9009-W/PCBZ FMC board to the FPGA carrier **HPC1** FMC1 socket.
 -  On the ADRV9009 FMC card, provide a 30.72MHz clock source, at a +5dBm power level to J401 connector. (This signal drives the reference clock into the AD9528 clock generation chip on the board – the REFA/REFA_N pins of AD9528 generates the DEV_CLK for the Talise and REF_CLK for the FPGA on the ZYNQ platform).
@@ -43,15 +45,14 @@ Testing
 -  Insert SD card into socket.
 -  Configure ZCU102 for SD BOOT (mode SW6[4:1] switch in the position **OFF,OFF,OFF,ON** as seen in the below picture).
 -  Turn on the power switch on the FPGA board.
--  Observe kernel and serial console messages on your terminal. (use the first ttyUSB or COM port registed)
+-  Observe kernel and serial console messages on your terminal. (use the first
+   ttyUSB or COM port registed)
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009/quickstart/zcu102_1p0_bootmode.jpg
    :align: center
-   :width: 400px
-
+   :width: 400
 
 .. esd-warning::
-
 
 Messages
 --------
@@ -552,8 +553,6 @@ Messages
             root@analog:~#
    
 
-
-
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
@@ -570,7 +569,6 @@ Messages
               iio:device0: ams
               iio:device5: axi-adrv9009-tx-hpc (buffer capable)
    
-
 
 .. container:: box bggreen
 
@@ -593,24 +591,24 @@ Messages
       Uses LVDS       : Y
    
 
-
 IIO Oscilloscope Remote
 -----------------------
 
 Please see also here::doc:`Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-The IIO Oscilloscope application can be used to connect to another platform that has a connected device in order to configure the device and read data from it.
+The IIO Oscilloscope application can be used to connect to another platform that
+has a connected device in order to configure the device and read data from it.
 
 Build and start osc on a network enabled Linux host.
 
-Once the application is launched goto Settings -> Connect and enter the IP address of the target in the popup window.
+Once the application is launched goto Settings -> Connect and enter the IP
+address of the target in the popup window.
 
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
 
-
    |image1|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+   :width: 300

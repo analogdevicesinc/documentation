@@ -27,11 +27,18 @@ Evaluation Boards
 Description
 -----------
 
-The ADV7511 driver is implemented as a DRM encoder slave driver. In a typical board design the ADV7511 is not used as a standalone component but rather as a HDMI encoder fronted for some other devices with a graphics core, like a SoC or a FPGA. Implementing the ADV7511 driver as a DRM encoder slave driver allows to reuse the driver between different platforms which use the ADV7511.
+The ADV7511 driver is implemented as a DRM encoder slave driver. In a typical
+board design the ADV7511 is not used as a standalone component but rather as a
+HDMI encoder fronted for some other devices with a graphics core, like a SoC or
+a FPGA. Implementing the ADV7511 driver as a DRM encoder slave driver allows to
+reuse the driver between different platforms which use the ADV7511.
 
-For an example implementation of a DRM driver using the ADV7511 please refer to Linux driver for the Analog Devices example HDL design for the Xilinx Zync plus ADV7511 designs.
+For an example implementation of a DRM driver using the ADV7511 please refer to
+Linux driver for the Analog Devices example HDL design for the Xilinx Zync plus
+ADV7511 designs.
 
-The driver supports audio via HDMI as well by implementing a ASoC codec driver. This again allows to reuse the driver for a varieties of different platforms.
+The driver supports audio via HDMI as well by implementing a ASoC codec driver.
+This again allows to reuse the driver for a varieties of different platforms.
 
 Source Code
 ===========
@@ -66,9 +73,15 @@ Example platform device initialization
 DRM
 ---
 
-Usually the DRM encoder slave will be instantiated by a DRM encoder driver. After the encoder slave has been instantiated it needs to be configured by the DRM encoder driver. The configuration includes settings like physical connection to the host graphics core as well as the output video format. If necessary the configuration can be changed at runtime, e.g. to change the output format if a HDMI sink with different capabilities is connected.
+Usually the DRM encoder slave will be instantiated by a DRM encoder driver.
+After the encoder slave has been instantiated it needs to be configured by the
+DRM encoder driver. The configuration includes settings like physical connection
+to the host graphics core as well as the output video format. If necessary the
+configuration can be changed at runtime, e.g. to change the output format if a
+HDMI sink with different capabilities is connected.
 
-Configuration for the ADV7511 is done through the adv7511_video_input_config which should be passed to the slave encoder's set_config callback function.
+Configuration for the ADV7511 is done through the adv7511_video_input_config
+which should be passed to the slave encoder's set_config callback function.
 
 .. code:: c
 
@@ -220,7 +233,6 @@ Configuration for the ADV7511 is done through the adv7511_video_input_config whi
        ADV7511_TIMING_GEN_SEQ_DE_GEN_FIRST = 1,
    };
 
-
    /**
      * enum adv7511_up_conversion - Selects the upscaling conversion method
      * @ADV7511_UP_CONVERSION_ZERO_ORDER: Use zero order up conversion
@@ -281,7 +293,6 @@ Example Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: c
-
 
    static const uint16_t adv7511_csc_ycbcr_to_rgb[] = {
        0x0734, 0x04ad, 0x0000, 0x1c1b,
@@ -378,7 +389,6 @@ Example DAI configuration
        .codec_dai_name = "adv7511",
        .dai_fmt = SND_SOC_DAIFMT_SPDIF
 
-
                SND_SOC_DAIFMT_NB_NF |
 
                SND_SOC_DAIFMT_CBS_CFS,
@@ -394,12 +404,12 @@ Example DAI configuration
 Enabling Linux driver support
 =============================
 
-Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or
+"make qconfig")
 
 .. hint::
 
    The ADV7511 Driver depends on CONFIG_DRM and CONFIG_I2C
-
 
 ::
 
@@ -421,4 +431,3 @@ More information
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
-

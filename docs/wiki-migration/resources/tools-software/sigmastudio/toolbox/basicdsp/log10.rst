@@ -14,7 +14,10 @@ There are 2 versions of Log10 module.
 Log10 (Linear Interpolation)
 ----------------------------
 
-This Log10 algorithm computes the integral part of Log2 accurately. Fractional part of the Log is calculated using Linear interpolation. Then the Log2 is multiplied with Log10(2)to get the Log10. This algorithm takes less cycles and less accurate.
+This Log10 algorithm computes the integral part of Log2 accurately. Fractional
+part of the Log is calculated using Linear interpolation. Then the Log2 is
+multiplied with Log10(2)to get the Log10. This algorithm takes less cycles and
+less accurate.
 
 Input Pins
 ~~~~~~~~~~
@@ -37,7 +40,10 @@ Pin 0: Log value decimal - control                  log10(input)
 Log10 Accurate (Binary Algorithm)
 ---------------------------------
 
-This module uses a binary algorithm to compute the Log2. Then the Log2 is multiplied with Log10(2)to get the Log10. This is more accurate and takes more cycle. Number of iterations in the algorithm can be configured. Accuracy of the algorithm increases when the number of iterations is increased.
+This module uses a binary algorithm to compute the Log2. Then the Log2 is
+multiplied with Log10(2)to get the Log10. This is more accurate and takes more
+cycle. Number of iterations in the algorithm can be configured. Accuracy of the
+algorithm increases when the number of iterations is increased.
 
 Input Pins
 ~~~~~~~~~~
@@ -56,7 +62,6 @@ Name             Format [int/dec] - [control/audio] Function Description
 ================ ================================== ====================
 Pin 0: Log value decimal - control                  log10(input)
 ================ ================================== ====================
-
 
 | ====Configuration==== Right Click on the module to configure the number of iterations.
 

@@ -1,12 +1,12 @@
 U-Boot Falcon Mode
 ==================
 
-This page provides instructions for using U-Boot Falcon Mode on ADSP-SC59X boards.
+This page provides instructions for using U-Boot Falcon Mode on ADSP-SC59X
+boards.
 
 .. note::
 
    The Falcon Mode feature is supported on versions :doc:`Linux for ADSP-SC5xx Processors 3.0.0 </wiki-migration/resources/tools-software/linuxdsp/releaselandingpages/3.0.0>` and later and on SC59x.
-
 
 What is Falcon Mode?
 --------------------
@@ -21,7 +21,8 @@ You must use :doc:`Linux for ADSP-SC5xx Processors 3.0.0 </wiki-migration/resour
 Build U-Boot with Falcon Mode support
 -------------------------------------
 
-When following the Quickstart guides and specifically right after sourcing the setup script, i.e.
+When following the Quickstart guides and specifically right after sourcing the
+setup script, i.e.
 
 .. code:: bash
 
@@ -34,12 +35,15 @@ a build folder along with a local build configuration file is created, under ``$
    MACHINE_FEATURES:remove = " spl"
    MACHINE_FEATURES:append = " falcon"
 
-and proceed to building and flashing the image, as usual and as seen on the Quickstart guides.
+and proceed to building and flashing the image, as usual and as seen on the
+Quickstart guides.
 
 Booting with Falcon Mode
 ------------------------
 
-When U-Boot with Falcon Mode support has been built and flashed onto the board, the default behaviour will be booting the default mode (SPI boot, if unchanged) straight from the SPL, e.g.:
+When U-Boot with Falcon Mode support has been built and flashed onto the board,
+the default behaviour will be booting the default mode (SPI boot, if unchanged)
+straight from the SPL, e.g.:
 
 .. code:: bash
 
@@ -74,7 +78,6 @@ When U-Boot with Falcon Mode support has been built and flashed onto the board, 
 
 You can still fall back to U-Boot Proper by holding down the push button ``PB1`` on the target (carrier) board during reset/booting:
 
-
 |image1|
 
 You will then be able to use the full U-Boot:
@@ -84,7 +87,6 @@ You will then be able to use the full U-Boot:
    U-Boot SPL 2020.10 (Apr 12 2023 - 18:48:14 +0000)
    Pushbutton helding during boot -- entering U-Boot ProperADI Boot Mode: 0x1 (QSPI Master)
    Trying to boot from BOOTROM
-
 
    U-Boot 2020.10 (Apr 12 2023 - 18:48:14 +0000)
 
@@ -102,4 +104,4 @@ You will then be able to use the full U-Boot:
    Hit any key to stop autoboot:  0
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/sc598_pb1.jpg
-   :width: 400px
+   :width: 400

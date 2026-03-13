@@ -4,12 +4,14 @@ No-OS Interrupts API
 Description
 -----------
 
-The IRQ framework provides a way to handle peripheral (external) interrupts when using the No-OS platform drivers.
+The IRQ framework provides a way to handle peripheral (external) interrupts when
+using the No-OS platform drivers.
 
 Interface Documentation
 -----------------------
 
-The IRQ interface documentation is generated using the Doxygen tool and it is available at:
+The IRQ interface documentation is generated using the Doxygen tool and it is
+available at:
 
 -  `No-OS IRQ API <http://analogdevicesinc.github.io/no-OS/no__os__irq_8h.html>`_
 
@@ -70,7 +72,10 @@ Usage examples
 Global interrupt controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This example shows how to register callbacks and enable/disable global interrupts. This assumes that the global interrupt controller descriptor has been initialized. As for the moment, all the interrupts have the same (0) priority level.
+This example shows how to register callbacks and enable/disable global
+interrupts. This assumes that the global interrupt controller descriptor has
+been initialized. As for the moment, all the interrupts have the same (0)
+priority level.
 
 .. code:: C
 
@@ -142,7 +147,9 @@ This example shows how to register callbacks and enable/disable global interrupt
 GPIO interrupt controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following example shows how to handle GPIO interrupts. This assumes that both a global interrupt controller and a GPIO interrupt controller have been initialized.
+The following example shows how to handle GPIO interrupts. This assumes that
+both a global interrupt controller and a GPIO interrupt controller have been
+initialized.
 
 ::
 

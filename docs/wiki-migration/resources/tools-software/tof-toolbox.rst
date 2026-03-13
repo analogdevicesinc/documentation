@@ -15,16 +15,18 @@ The current stable Toolbox can be downloaded from the `Time of Flight Toolbox Gi
    -  `Analog Devices Inc, Time of Flight Toolbox Release Page <https://github.com/analogdevicesinc/TimeofFlightToolbox/releases>`_
    
 
-
 Building the Toolbox Manually
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
 
-   You should only manually build the toolbox if you require a custom branch or no toolbox installer is available
+   You should only manually build the toolbox if you require a custom branch or
+   no toolbox installer is available
 
-
-The toolbox can only be built under Windows platform currently with Cygwin. Conveniently, the entire process is automated with a Makefile located in the CI/scripts folder of the repository. The following is required on the system before the build process can be run:
+The toolbox can only be built under Windows platform currently with Cygwin.
+Conveniently, the entire process is automated with a Makefile located in the
+CI/scripts folder of the repository. The following is required on the system
+before the build process can be run:
 
 -  Packages: git zip unzip tar make wget sed
 
@@ -44,19 +46,24 @@ To create a installable tlbx file run:
 Device Control and Data Streaming
 ---------------------------------
 
-Device interfaces which provide control and data streaming are implemented with MATLAB System Objects and traditional video adaptor object. The System Objects can be access under the "adi" namespace in MATLAB and are followed by their part number or board name:
+Device interfaces which provide control and data streaming are implemented with
+MATLAB System Objects and traditional video adaptor object. The System Objects
+can be access under the "adi" namespace in MATLAB and are followed by their part
+number or board name:
 
 ::
 
    adi.<Part or Board Name>
 
-For example, to instantiate an AD96TOF1EBZ object to control the Time of Flight it can be created as follows:
+For example, to instantiate an AD96TOF1EBZ object to control the Time of Flight
+it can be created as follows:
 
 ::
 
    tof = adi.AD96TOF1EBZ;
 
-Alternatively, you can use the traditional image adaptor API by importing the adaptor manually:
+Alternatively, you can use the traditional image adaptor API by importing the
+adaptor manually:
 
 ::
 
@@ -82,7 +89,9 @@ To get more information on a given object run:
 Supported Boards
 ----------------
 
-The following have device-specific implementations in MATLAB and Simulink. If a device has an IIO driver, MATLAB support is possible, but a device-specific MATLAB or Simulink interface may not exist yet.
+The following have device-specific implementations in MATLAB and Simulink. If a
+device has an IIO driver, MATLAB support is possible, but a device-specific
+MATLAB or Simulink interface may not exist yet.
 
 +-----------------+--------------+-------------------+-----------+----------------------------------------+
 | Evaluation Card | FPGA Board   | Streaming Support | Targeting | Variants and Minimum Supported Release |
@@ -95,7 +104,8 @@ The following have device-specific implementations in MATLAB and Simulink. If a 
 Examples
 --------
 
-Examples for streaming data and targeting FPGAs are listed within the Toolbox documentation itself. To view run the following with MATLAB:
+Examples for streaming data and targeting FPGAs are listed within the Toolbox
+documentation itself. To view run the following with MATLAB:
 
 ::
 
@@ -109,4 +119,3 @@ Help & Support
    
    -  Questions? :ez:`Ask Help & Support <sw-interface-tools/f/q-a>`.
    
-

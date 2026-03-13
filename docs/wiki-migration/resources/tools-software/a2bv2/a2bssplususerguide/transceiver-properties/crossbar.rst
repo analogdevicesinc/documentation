@@ -13,7 +13,6 @@ Number of Tx/Rx Pins Configuration
 
    \ **Figure:** Number of Tx/Rx Pins Configuration
 
-
 TX Crossbar registers (A2B_TXXBAR0 - A2B_TXXBAR31)
 --------------------------------------------------
 
@@ -21,11 +20,9 @@ TX Crossbar registers (A2B_TXXBAR0 - A2B_TXXBAR31)
 
    \ |image1|\
 
-
 .. container:: centeralign
 
    \ **Figure:** TX Crossbar registers (A2B_TXXBAR0 - A2B_TXXBAR31)
-
 
 RX Crossbar registers (A2B_RXMASK0 - A2B_RXMASK7)
 -------------------------------------------------
@@ -34,11 +31,9 @@ RX Crossbar registers (A2B_RXMASK0 - A2B_RXMASK7)
 
    \ |image2|\
 
-
 .. container:: centeralign
 
    \ **Figure:** RX Crossbar registers (A2B_RXMASK0 - A2B_RXMASK7)
-
 
 TDM Mode & Tx/Rx Interleave Configuration
 -----------------------------------------
@@ -50,11 +45,12 @@ TDM Mode & Tx/Rx Interleave Configuration
 
    \ **Figure:** TDM Mode & Tx/Rx Interleave Configuration
 
-
 Crossbar View with an example
 =============================
 
-For example, considering the 3-node schematic with this stream configuration example, crossbar view looks like as mentioned in the snapshots for all the nodes
+For example, considering the 3-node schematic with this stream configuration
+example, crossbar view looks like as mentioned in the snapshots for all the
+nodes
 
 Sample Stream Definition & Assignment for 3 node schematics
 -----------------------------------------------------------
@@ -66,7 +62,6 @@ Sample Stream Definition & Assignment for 3 node schematics
 
    \ **Figure:** Sample Stream Definition & Assignment for Crossbar view visualization
 
-
 Crossbar view at subnode0
 -------------------------
 
@@ -77,7 +72,6 @@ Crossbar view at subnode0
 
    \ **Figure:** Crossbar view at subnode0
 
-
 Crossbar view at subnode1
 -------------------------
 
@@ -85,11 +79,9 @@ Crossbar view at subnode1
 
    \ |image3|\
 
-
 .. container:: centeralign
 
    \ **Figure:** Crossbar view at subnode1
-
 
 Crossbar view at Main node with Tx Interleave enabled
 -----------------------------------------------------
@@ -100,11 +92,9 @@ The similar way Rx Interleave also works.
 
    \ |image4|\
 
-
 .. container:: centeralign
 
    \ **Figure:** Crossbar view at Main node with Tx & Rx Interleave enabled
-
 
 Context Menu’s on Crossbar
 ==========================
@@ -112,19 +102,19 @@ Context Menu’s on Crossbar
 Context Menu’s on Tx Crossbar at Main Node side
 -----------------------------------------------
 
-Crossbar supports the below options on Tx pin at the main node side as shown in the below snapshot:
+Crossbar supports the below options on Tx pin at the main node side as shown in
+the below snapshot:
 
--  Reset Channel Map (this option reset’s channel mapping if any mapping is done manually on crossbar)
+-  Reset Channel Map (this option reset’s channel mapping if any mapping is done
+   manually on crossbar)
 
 .. container:: centeralign
 
    \ |image5|\
 
-
 .. container:: centeralign
 
    \ **Figure:** Context Menu's on Tx Pin of Crossbar at Main Node
-
 
 Context Menu’s on Rx Crossbar
 -----------------------------
@@ -132,17 +122,16 @@ Context Menu’s on Rx Crossbar
 Crossbar supports the below options on Rx pin as shown in the below snapshot:
 
 -  Enable Mapping (this option can be used to enable a particular slot on the Rx Pin)
--  Clear Mapping (this option clears the mapping of a particular slot on the Rx pin)
+-  Clear Mapping (this option clears the mapping of a particular slot on the Rx
+   pin)
 
 .. container:: centeralign
 
    \ |image6|\
 
-
 .. container:: centeralign
 
    \ **Figure:** Context Menu's on Rx Crossbar
-
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/tx_x-bar.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/ad243x_rx-x_bar.png

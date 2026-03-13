@@ -1,12 +1,15 @@
 Programming Reference
 =====================
 
-All the functions of a DPG can be accessed through a set of Dynamic-Link Library (DLL) functions. These functions can be accessed via two different Windows® software interface standards:
+All the functions of a DPG can be accessed through a set of Dynamic-Link Library
+(DLL) functions. These functions can be accessed via two different Windows®
+software interface standards:
 
 -  Component Object Model (COM)
 -  .NET Framework
 
-When possible, the .NET version should be used instead of the COM version. It provides a more efficient and robust interface.
+When possible, the .NET version should be used instead of the COM version. It
+provides a more efficient and robust interface.
 
 Class Organization
 ------------------
@@ -16,24 +19,35 @@ The following chart describes the organization of the various interfaces and cla
 .. image:: https://wiki.analog.com/_media/resources/eval/dpg/class_diagram.png
    :align: center
 
-To connect to a DPG, an instance of the correct Hardware Interface must be created. This instance will provide an array of IHardwareDevice's corresponding to all the attached devices.
+To connect to a DPG, an instance of the correct Hardware Interface must be
+created. This instance will provide an array of IHardwareDevice's corresponding
+to all the attached devices.
 
 Getting Started with COM
 ------------------------
 
-Unlike the .NET interface, you must connect directly to the appropriate Hardware Interface for the type of hardware you are connecting to. The individual hardware interfaces are registered with COM when the DAC Software Suite is installed. The ProgID of each interface is in the form "AnalogDevices.x", where x is the name of the hardware type. For example, the DPG2 Hardware Interface is registered with COM as AnalogDevices.DPG2.
+Unlike the .NET interface, you must connect directly to the appropriate Hardware
+Interface for the type of hardware you are connecting to. The individual
+hardware interfaces are registered with COM when the DAC Software Suite is
+installed. The ProgID of each interface is in the form "AnalogDevices.x", where
+x is the name of the hardware type. For example, the DPG2 Hardware Interface is
+registered with COM as AnalogDevices.DPG2.
 
 Once the hardware interface is opened, all the functions listed in the `#ihardwareinterface <https://wiki.analog.com/>`_ interface can be used, as well as the functions in `#ihardwaredevice <https://wiki.analog.com/>`_ for any devices returned by the interface. Additional functions specific to the current hardware may also be available. Using these functions will limit the application to the current device type.
 
 Getting Started with .NET
 -------------------------
 
-The AnalogDevices.DPG.Interfaces assembly provides the starting point for communicating with a DPG. This assembly exposes a number of interfaces, as well as the AnalogDevices.DPG.PluginFinder namespace.
+The AnalogDevices.DPG.Interfaces assembly provides the starting point for
+communicating with a DPG. This assembly exposes a number of interfaces, as well
+as the AnalogDevices.DPG.PluginFinder namespace.
 
 The AnalogDevices.DPG.PluginFinder Namespace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This namespace provides a mechanism for locating the various hardware drivers that might be present on a user's PC. It should generally be used instead of a direct link to the hardware driver, to allow for future expansion.
+This namespace provides a mechanism for locating the various hardware drivers
+that might be present on a user's PC. It should generally be used instead of a
+direct link to the hardware driver, to allow for future expansion.
 
 Two methods are exposed, which both search for hardware drivers:
 
@@ -41,18 +55,23 @@ Two methods are exposed, which both search for hardware drivers:
 
    IHardwareInterface[] FindPlugins()
 
-This will return an array of all the available Hardware Interfaces (drivers) on the current PC.
+This will return an array of all the available Hardware Interfaces (drivers) on
+the current PC.
 
 .. code:: csharp
 
    IHardwareInterface[] FindPluginsFiltered(string filter)
 
-This function returns a list of the available Hardware Interfaces whose name matches the filter. For example, to search for only the DPG2 driver, the filter would be set to "DPG2". Using this function with a filter of "\*" is identical to just calling FindPlugins().
+This function returns a list of the available Hardware Interfaces whose name
+matches the filter. For example, to search for only the DPG2 driver, the filter
+would be set to "DPG2". Using this function with a filter of "\*" is identical
+to just calling FindPlugins().
 
 IHardwareInterface
 ------------------
 
-This interface defines the properties and methods that a particular hardware driver will support.
+This interface defines the properties and methods that a particular hardware
+driver will support.
 
 COM Guid:C18A8C19-4DE7-4b2f-9A7F-91AF8BE9C2BD
 
@@ -74,7 +93,8 @@ AttachedDevices returns an array of Hardware Device objects. Each object corresp
 IHardwareDevice
 ---------------
 
-This interface describes the basic functions that all Hardware Device drivers will support.
+This interface describes the basic functions that all Hardware Device drivers
+will support.
 
 COM Guid:108DE7EA-B745-4b45-A90C-0533998CACBD
 
@@ -214,7 +234,8 @@ Methods
 
    IndividualUnitControl UnitControl(void)
 
-Returns a GUI control which can control all aspects of the DPG. This is the same as what is displayed in DPGDownloader.
+Returns a GUI control which can control all aspects of the DPG. This is the same
+as what is displayed in DPGDownloader.
 
 .. code:: csharp
 
@@ -385,7 +406,8 @@ This event is fired when an asynchronous configuration download has completed.
 
    DownloadConfigurationStatusUpdate
 
-This event is fired when the status (percent complete) of an asynchronous configuration download changes.
+This event is fired when the status (percent complete) of an asynchronous
+configuration download changes.
 
 .. code:: csharp
 
@@ -397,7 +419,8 @@ This event is fired when an asynchronous data vector download has completed.
 
    DownloadDataVectorStatusUpdate
 
-This event is fired when the status (percent complete) of an asynchronous data vector download changes.
+This event is fired when the status (percent complete) of an asynchronous data
+vector download changes.
 
 .. code:: csharp
 
@@ -408,7 +431,8 @@ This event is fired when an error occurs during data vector download.
 IHardwareIdlePattern
 --------------------
 
-This interface describes the properties and methods used to read, alter, and enable the Idle Pattern feature of the DPG.
+This interface describes the properties and methods used to read, alter, and
+enable the Idle Pattern feature of the DPG.
 
 COM Guid: 2EB6E57E-DCC1-4f48-B0CC-4FDD8E28759A
 
@@ -434,13 +458,15 @@ Methods
 
    void SetPatternInt1D(int[] pattern)
 
-This method is identical to setting the property Pattern. It is provided for use in applications which cannot set array properties.
+This method is identical to setting the property Pattern. It is provided for use
+in applications which cannot set array properties.
 
 .. code:: csharp
 
    void SetPatternInt2D(int[,] pattern)
 
-This method is identical to setting the property Pattern. It is provided for use in applications which cannot set array properties.
+This method is identical to setting the property Pattern. It is provided for use
+in applications which cannot set array properties.
 
 JESD204Interface
 ----------------
@@ -460,19 +486,22 @@ Gets or sets the number of framers in the current DPG setup.
 
    JESD204Framer[] Framers
 
-Returns an array of JESD204Framer objects, which is the primary interface to the hardware framers inside the DPG.
+Returns an array of JESD204Framer objects, which is the primary interface to the
+hardware framers inside the DPG.
 
 .. code:: csharp
 
    int LaneCount
 
-Gets or sets the maximum number of lanes that can be utilized in this setup across all framers.
+Gets or sets the maximum number of lanes that can be utilized in this setup
+across all framers.
 
 .. code:: csharp
 
    JESD204Lane[] Lanes
 
-Returns an array of JESD204Lane objects, which provides access to individual lane features.
+Returns an array of JESD204Lane objects, which provides access to individual
+lane features.
 
 JESD204Framer
 -------------
@@ -576,13 +605,18 @@ Methods
 
    void DownloadDataAsync(UInt16[][] DataVectors, bool ShowProgress)
 
-Downloads data asynchronously to the memory in the pattern generator for playback to the framer. The first dimension of DataVectors should be M long. ShowProgress indicates if a status bar should be displayed during the download process.
+Downloads data asynchronously to the memory in the pattern generator for
+playback to the framer. The first dimension of DataVectors should be M long.
+ShowProgress indicates if a status bar should be displayed during the download
+process.
 
 .. code:: csharp
 
    void DownloadData(UInt16[][] DataVectors, bool ShowProgress)
 
-Downloads data synchronously to the memory in the pattern generator for playback to the framer. The first dimension of DataVectors should be M long. ShowProgress indicates if a status bar should be displayed during the download process.
+Downloads data synchronously to the memory in the pattern generator for playback
+to the framer. The first dimension of DataVectors should be M long. ShowProgress
+indicates if a status bar should be displayed during the download process.
 
 JESD204Lane
 -----------
@@ -716,7 +750,8 @@ DPG3-Specific Features
 QBF (Implementation of JESD204Framer)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In addition to the base implementation of JESD204Framer, this class also exposes:
+In addition to the base implementation of JESD204Framer, this class also
+exposes:
 
 Enumerations
 ^^^^^^^^^^^^

@@ -11,7 +11,9 @@ List of API in Power Calculation Properties
 Get power parameters
 --------------------
 
-This API is used for Retrieve the power parameters. It takes elementUid as argument and returns PowerParamForCalc which is having PowerCalcParams and BStandbyMode.
+This API is used for Retrieve the power parameters. It takes elementUid as
+argument and returns PowerParamForCalc which is having PowerCalcParams and
+BStandbyMode.
 
 **API:** AnalogDevices.SigmaStudio.Scripting.PowerParamForCalc GetPwrParams(string elementUid);
 
@@ -94,7 +96,8 @@ This API is used for Retrieve the power parameters. It takes elementUid as argum
 Compute power parameters
 ------------------------
 
-This API is used for computing the power parameters. It takes elementUid as argument and returns Power Calculation information for the selected A2B channel.
+This API is used for computing the power parameters. It takes elementUid as
+argument and returns Power Calculation information for the selected A2B channel.
 
 **API:** AnalogDevices.SigmaStudio.Scripting.PwrCalc ComputePwr(string elementUid);
 
@@ -119,7 +122,8 @@ This API is used for computing the power parameters. It takes elementUid as argu
 Update Power Calc Network Params
 --------------------------------
 
-This API is used for updating Power calculation parameters. It takes elementUid and power calculation parameters as arguments and returns SSPResult.
+This API is used for updating Power calculation parameters. It takes elementUid
+and power calculation parameters as arguments and returns SSPResult.
 
 **API:** SSPResult UpdatePwrCalcNwParams(string elementUid, AnalogDevices.SigmaStudio.Scripting.PowerParamForCalc pwrCalc);
 
@@ -131,7 +135,8 @@ This API is used for updating Power calculation parameters. It takes elementUid 
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdatePwrCalcNwParams action.
 
 -  IsSuccess is set to 'True' if the UpdatePwrCalcNwParams was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -164,14 +169,16 @@ This API is used for updating Power calculation parameters. It takes elementUid 
 Power Calc Run and Reset
 ------------------------
 
-This API is used to Run Power calculation. It takes elementUid and property name and property value as arguments and returns SSPResult.
+This API is used to Run Power calculation. It takes elementUid and property name
+and property value as arguments and returns SSPResult.
 
 **API:** SSPResult UpdateBooleanProperty(string elementUid, string propertyName, bool propertyVal);
 
 **Arguments:**
 
 -  “elementUid” = UID of the A2B Channel
--  “propertyName” = Name of the action property. Some of the property name examples are listed below
+-  “propertyName” = Name of the action property. Some of the property name
+   examples are listed below
 
    -  PwrCalcRun – Run the Power calculation
 
@@ -182,7 +189,8 @@ This API is used to Run Power calculation. It takes elementUid and property name
 **Result:** SSPResult contains 'IsSuccess' flag and 'Message' information of UpdateBoolProperty action.
 
 -  IsSuccess is set to 'True' if the UpdateBoolProperty was successful else 'False'.
--  Message contains the Success/Failure information in the form of list of string.
+-  Message contains the Success/Failure information in the form of list of
+   string.
 
 **Csharp Example:**
 
@@ -202,8 +210,6 @@ This API is used to Run Power calculation. It takes elementUid and property name
 
    Close and reopen the respective window for viewing the updated settings.
 
-
 .. tip::
 
    For more information about Power calculation properties, you can refer to the :doc:`A2B Plugin for SigmaStudio+ User Guide </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkanalysisanddebug>`.
-

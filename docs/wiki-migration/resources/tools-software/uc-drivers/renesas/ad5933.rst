@@ -1,7 +1,6 @@
 AD5933 - No-OS Driver for Renesas Microcontroller Platforms
 ===========================================================
 
-
 Supported Devices
 =================
 
@@ -15,10 +14,12 @@ Evaluation Boards
 Overview
 ========
 
-
 The :adi:`AD5933` is a high precision impedance converter system solution that combines an on-board frequency generator with a 12-bit, 1 MSPS, analog-to-digital converter (ADC). The frequency generator allows an external complex impedance to be excited with a known frequency. The response signal from the impedance is sampled by the on-board ADC and a discrete Fourier transform (DFT) is processed by an on-board DSP engine. The DFT algorithm returns a real (R) and imaginary (I) data-word at each output frequency.
 
-Once calibrated, the magnitude of the impedance and relative phase of the impedance at each frequency point along the sweep is easily calculated. This is done off chip using the real and imaginary register contents, which can be read from the serial I2C interface.
+Once calibrated, the magnitude of the impedance and relative phase of the
+impedance at each frequency point along the sweep is easily calculated. This is
+done off chip using the real and imaginary register contents, which can be read
+from the serial I2C interface.
 
 A similar device, also available from Analog Devices, Inc., is the :adi:`AD5934`, a 2.7 V to 5.5 V, 250 kSPS, 12-bit impedance converter, with an internal temperature sensor and is packaged in a 16-lead SSOP.
 
@@ -39,9 +40,12 @@ Applications
 .. image:: https://wiki.analog.com/_media/resources/pmods/ad5933_pmod_ia.jpg
    :align: center
 
-
-
-The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+The goal of this project (Microcontroller No-OS) is to be able to provide
+reference projects for lower end processors, which can't run Linux, or aren't
+running a specific operating system, to help those customers using
+microcontrollers with ADI parts. Here you can find a generic driver which can be
+used as a base for any microcontroller platform and also specific drivers for
+different microcontroller platforms.
 
 Driver Description
 ==================
@@ -49,9 +53,13 @@ Driver Description
 The driver contains two parts:
 
 -  The driver for the AD5933 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The Communication Driver, where the specific communication functions for the
+   desired type of processor and communication protocol have to be implemented.
+   This driver implements the communication with the device and hides the actual
+   details of the communication protocol to the ADI driver.
 
-The Communication Driver has a standard interface, so the AD5933 driver can be used exactly as it is provided.
+The Communication Driver has a standard interface, so the AD5933 driver can be
+used exactly as it is provided.
 
 There are three functions which are called by the AD5933 driver:
 
@@ -65,7 +73,6 @@ There are three functions which are called by the AD5933 driver:
 .. container:: centeralign
 
    I2C driver architecture
-
 
 The following functions are implemented in this version of AD5933 driver:
 
@@ -95,8 +102,6 @@ The following functions are implemented in this version of AD5933 driver:
 | double AD5933_CalculateImpedance(double gainFactor, unsigned char freqFunction)                                     | Reads the real and the imaginary data and calculates the Impedance.                             |
 +---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
-
-
 **HW Platform(s):**
 
 -  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
@@ -117,11 +122,11 @@ Downloads
    -  **RL78G14 Common Drivers:** :git-no-OS:`Renesas/RL78G14/Common`
    
 
-
 Renesas RL78G13 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD5933 demonstration project on a Renesas RL78G13 platform.
+This section contains a description of the steps required to run the AD5933
+demonstration project on a Renesas RL78G13 platform.
 
 Required Hardware
 -----------------
@@ -137,7 +142,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodIA has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+A PmodIA has to be interfaced with the Renesas Demonstration Kit (RDK) for
+RL78G13:
 
 ::
 
@@ -166,16 +172,15 @@ The reference project:
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
 Renesas RL78G14 Quick Start Guide
 =================================
 
-This section contains a description of the steps required to run the AD5933 demonstration project on a Renesas RL78G14 platform using the PmodIA.
+This section contains a description of the steps required to run the AD5933
+demonstration project on a Renesas RL78G14 platform using the PmodIA.
 
 Required Hardware
 -----------------
@@ -191,16 +196,18 @@ Required Software
 
 .. note::
 
-   The AD5933 demonstration project for the Renesas RL78G14 platform consists of three parts: the AD5933 Driver, the PmodIA Demo for RL78G14 and the RL78G14 Common Drivers.
+   The AD5933 demonstration project for the Renesas RL78G14 platform consists of
+   three parts: the AD5933 Driver, the PmodIA Demo for RL78G14 and the RL78G14
+   Common Drivers.
 
    
    All three parts have to be downloaded.
 
-
 Hardware Setup
 --------------
 
-A PmodIA has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G14:
+A PmodIA has to be interfaced with the Renesas Demonstration Kit (RDK) for
+RL78G14:
 
 ::
 
@@ -215,9 +222,10 @@ A PmodIA has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G
 .. important::
 
    
-   -  The default value for the calibration resistor is 47 Kohms. If another resistor is used for calibration, please modify the calibrationImpedance parameter in 'AD5933_CalculateGainFactor()' function from PmodIA.c.
+   -  The default value for the calibration resistor is 47 Kohms. If another
+      resistor is used for calibration, please modify the calibrationImpedance
+      parameter in 'AD5933_CalculateGainFactor()' function from PmodIA.c.
    
-
 
 Reference Project Overview
 --------------------------
@@ -236,16 +244,15 @@ The reference project:
 Software Project Tutorial
 -------------------------
 
-
 .. note::
 
    See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`_
 
-
 Renesas RX62N Quick Start Guide
 ===============================
 
-This section contains a description of the steps required to run the AD5933 demonstration project on a Renesas RX62N platform.
+This section contains a description of the steps required to run the AD5933
+demonstration project on a Renesas RX62N platform.
 
 Required Hardware
 -----------------
@@ -262,7 +269,8 @@ Required Software
 Hardware Setup
 --------------
 
-A PmodIA has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+A PmodIA has to be interfaced with the Renesas Demonstration Kit (RDK) for
+RX62N:
 
 ::
 
@@ -277,7 +285,9 @@ A PmodIA has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N
 Reference Project Overview
 --------------------------
 
-The reference project reads the temperature from AD5933 part, initializes and start a sweep operation, calculates the gain factor for an impedance of 47k and calculates the impedance between the VOUT and VIN pins.
+The reference project reads the temperature from AD5933 part, initializes and
+start a sweep operation, calculates the gain factor for an impedance of 47k and
+calculates the impedance between the VOUT and VIN pins.
 
 The temperature and the impedance are displayed on the LCD.
 
@@ -287,20 +297,15 @@ The temperature and the impedance are displayed on the LCD.
 Software Project Setup
 ----------------------
 
-
 .. note::
 
    See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
 
-
 More information
 ================
-
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
 .. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
    :alt: //ez.analog.com/community/feeds/allcontent/atom
-
-

@@ -5,8 +5,8 @@ The MCU Cog boards **EV-COG-AD3029LZ** , **EV-COG-AD4050LZ**, and **EV-COG-AD405
 
 .. note::
 
-   \*\* The power measurement procedure is same for EV-COG-AD3029LZ, EV-COG-AD4050LZ, EV-COG-AD4050WZ, and EV-COG-AD4050WZ.*\*
-
+   \*\* The power measurement procedure is same for EV-COG-AD3029LZ,
+   EV-COG-AD4050LZ, EV-COG-AD4050WZ, and EV-COG-AD4050WZ.*\*
 
 Current measurement test points on COG
 --------------------------------------
@@ -27,8 +27,9 @@ Current measurement test points on COG
 
 .. important::
 
-   Removing the jumper on these test points except TH3 cut downs the supply to the respective block, unless an ammeter is connected across these test point during current measurement
-
+   Removing the jumper on these test points except TH3 cut downs the supply to
+   the respective block, unless an ammeter is connected across these test point
+   during current measurement
 
 Power isolation jumpers
 -----------------------
@@ -56,7 +57,6 @@ Measuring overall board current
 
 This section briefs about the jumper settings and wire connections to measure the overall board current. The default jumper settings on the COG board before the measurement is shown in the following figure. |image2| The following figure shows the connection to measure the overall board current. Remove the jumper on TH1 and connect an ammeter across the test points.
 
-
 |image3|
 
 Measuring MCU current
@@ -65,15 +65,19 @@ Measuring MCU current
 Measuring MCU active mode current
 ---------------------------------
 
-To measure the MCU current, remove the jumper present on TH2 and connect an ammeter across TH2 as shown in the following figure (left). Other jumper can be left in default position. The measured MCU (ADuCM3029) active current is shown in the figure on the left.
-
+To measure the MCU current, remove the jumper present on TH2 and connect an
+ammeter across TH2 as shown in the following figure (left). Other jumper can be
+left in default position. The measured MCU (ADuCM3029) active current is shown
+in the figure on the left.
 
 |image4|
 
 Measuring MCU sleep mode current
 --------------------------------
 
-To measure proper MCU sleep current, it is recommended to isolate some of the on board circuits such as debug LEDs and MBED (refer to power isolation jumpers section).
+To measure proper MCU sleep current, it is recommended to isolate some of the on
+board circuits such as debug LEDs and MBED (refer to power isolation jumpers
+section).
 
 -  Remove JH5 and JH6 to disconnect MBED
 -  Remove JH3 to disconnect Debug LEDs
@@ -83,28 +87,34 @@ The following figure shows the front and back side of the board with the above m
 Bypassing the regulator and powering COG with a coincell
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case of powering the COG board by using a CR2032 3V coin cell with minimal circuits, the on board regulator can be bypassed. Bypassing the regulator allows the 3V coin cell to directly supply the board. By do so, the ripples seen in the regulated output can be avoided and MCU current without any spikes can be observed. The following figure shows the jumper configuration for JH4 to bypass ADP5300. Insert the shunt on 5 & 6 positions of JH4.
+In case of powering the COG board by using a CR2032 3V coin cell with minimal
+circuits, the on board regulator can be bypassed. Bypassing the regulator allows
+the 3V coin cell to directly supply the board. By do so, the ripples seen in the
+regulated output can be avoided and MCU current without any spikes can be
+observed. The following figure shows the jumper configuration for JH4 to bypass
+ADP5300. Insert the shunt on 5 & 6 positions of JH4.
 
 .. note::
 
-   In the figure, MBED circuit and debug LEDs were also disconnected to reduce the load on 3V coincell. Otherwise the output voltage from the coin cell would drop considerably
-
+   In the figure, MBED circuit and debug LEDs were also disconnected to reduce
+   the load on 3V coincell. Otherwise the output voltage from the coin cell
+   would drop considerably
 
 |image8| The power switch position and overall jumper configurations are shown in the following figure. To monitor the battery voltage, a voltmeter is connected across TH3 (refer to Current measurement test points section). |image9| The overall current measurement setup measuring MCU hibernate current with full SRAM retention is shown below. |image10|
 
 Bypassing the regulator and powering COG with an external power supply on VDD_MAIN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The COG boards can be powered up by an external power supply other than the USB and coin cell. The external supply can be connected to VDD_MAIN directly bypassing ADP5300.
+The COG boards can be powered up by an external power supply other than the USB
+and coin cell. The external supply can be connected to VDD_MAIN directly
+bypassing ADP5300.
 
 .. important::
 
    external supply must be below 3.6V, if it is directly connected to VDD_MAIN
 
-
-The shunt on JH4 must be removed to directly connect the source meter to VDD_MAIN as shown below. Other jumpers can be left in default position.
-
-
+The shunt on JH4 must be removed to directly connect the source meter to
+VDD_MAIN as shown below. Other jumpers can be left in default position.
 
 |image11|
 
@@ -113,58 +123,63 @@ The source meter must be connected to TH3.
 -  connect positive lead to pin 1 of TH3
 -  connect negative lead to pin 2 of TH3
 
-The following figure shows the overall current measurement setup. In addition to source meter, an ammeter is connected across TH2 to measure MCU current.
-
+The following figure shows the overall current measurement setup. In addition to
+source meter, an ammeter is connected across TH2 to measure MCU current.
 
 |image12|
 
 Powering the COG from an external supply (VDD_MAIN) through EV-GEAR-EXPANDER1Z
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-One of the power up options for COG is through an external supply on VDD_MAIN rail. To power up COG from an external source,
+One of the power up options for COG is through an external supply on VDD_MAIN
+rail. To power up COG from an external source,
 
 -  change the switch position to 1 in S7 (this avoids the conflict in the power supply in case USB is connected).
--  Insert the shunt in 3 & 4 positions on JH4 as shown in the following figure. Other jumpers can be default positions.
+-  Insert the shunt in 3 & 4 positions on JH4 as shown in the following figure.
+   Other jumpers can be default positions.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/external_vdd_main1.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  Connect the MCU COG board to EV-GEAR-EXPANDER1Z board via C1 & C2 connectors
--  Connect the power supply to EV-GEAR-EXPANDER1Z as shown in the following figure
+-  Connect the power supply to EV-GEAR-EXPANDER1Z as shown in the following
+   figure
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/external_vdd_expander.png
    :align: center
-   :width: 500px
+   :width: 500
 
 .. important::
 
-   The voltage source must be between 1.8V and 3.6V. In this setup, the VDD_MAIN rail is directly sourced from an external power source bypassing the on board regulator. Connecting a source with voltage level more than 3.6V would damage the on board components.
-
+   The voltage source must be between 1.8V and 3.6V. In this setup, the VDD_MAIN
+   rail is directly sourced from an external power source bypassing the on board
+   regulator. Connecting a source with voltage level more than 3.6V would damage
+   the on board components.
 
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/power_isolation.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/before_measurement.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/th1_current.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/th3_active_current.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/mcu_sleep1.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/sleep_usb.png
-   :width: 300px
+   :width: 300
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/sleep_spikes.png
-   :width: 400px
+   :width: 400
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/coincell_power.png
-   :width: 400px
+   :width: 400
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/coincell_voltmon.png
-   :width: 500px
+   :width: 500
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/coincell_overall.png
-   :width: 300px
+   :width: 300
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/external_supply1.png
-   :width: 500px
+   :width: 500
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/overall_external_supply.png
-   :width: 700px
+   :width: 700

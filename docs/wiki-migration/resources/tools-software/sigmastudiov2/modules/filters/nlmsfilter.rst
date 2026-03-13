@@ -8,7 +8,8 @@ NLMS Filter
 Description
 -----------
 
-This implementation of NLMS is a block based implementation. The weight update happens at the end of every processing block.
+This implementation of NLMS is a block based implementation. The weight update
+happens at the end of every processing block.
 
 Variants
 --------
@@ -25,7 +26,6 @@ Name         ADSP-214xx ADSP-215xx/SC5xx ADAU145x/146x ADSP-218xx/SC8xx
 NLMSFilter   B          B                S             B
 FxNLMSFilter NA         NA               S             NA
 ============ ========== ================ ============= ================
-
 
 | ===== Pins =====
 

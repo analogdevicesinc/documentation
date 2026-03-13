@@ -6,17 +6,22 @@ ADMV96S-WGBE-EK1 Hardware User Guide
    
    Important Notice: Migration to GitHub Pages
    
-   We are in the process of migrating our documentation to Analog Devices System Level Documentation - GitHub Pages.
+   We are in the process of migrating our documentation to Analog Devices System
+   Level Documentation - GitHub Pages.
    
    The latest version of this page can be found at https://analogdevicesinc.github.io/documentation/solutions/reference-designs/admv96s-wgbe-ek1/index.html
-
 
 Introduction
 ------------
 
 The :adi:`ADMV96S-WGBE-EK1` is a complete evaluation and prototyping system for 60 GHz short data links. It consists of a pair of receiver and transmitter boards with a 1 Gbps Ethernet interface on each side of the wireless link.
 
-The evaluation kit enables customers to evaluate the technology at its full potential, configure the system for their particular applications to mitigate risks of operation failure, provide a proven recipe to use for final product development. The users to set up a 60 GHz short range data link using standard interfaces. For programming and configuring the data link, the user has software tools available for download.
+The evaluation kit enables customers to evaluate the technology at its full
+potential, configure the system for their particular applications to mitigate
+risks of operation failure, provide a proven recipe to use for final product
+development. The users to set up a 60 GHz short range data link using standard
+interfaces. For programming and configuring the data link, the user has software
+tools available for download.
 
 The 60 GHz wireless link is implemented by the :adi:`ADMV9615` and :adi:`ADMV9525` modules. These are coupled with a SerDes device which translates the modules’ SGMII interface to RGMII so that it can be connected to an ADIN1300 industrial low latency and low power 1 Gbps Ethernet PHY. This enables each side of the wireless link to act as an Ethernet port and essentially create a seamless wire-like connection between two ends of an Ethernet cable.
 
@@ -24,7 +29,7 @@ The on-board :adi:`MAX32650` ultralow power ARM® Cortex®-M4 microcontroller co
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1_block_diagram.png
    :align: center
-   :width: 800px
+   :width: 800
 
 --------------
 
@@ -43,12 +48,11 @@ Setting up the Hardware
 
 Block diagram of the system
 
-
 |image1|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek/image-2023-6-12_14-45-19-1.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Set up the hardware following these steps:
 
@@ -93,7 +97,7 @@ Power tree
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek/60ghz_pwmap.png
    :align: center
-   :width: 700px
+   :width: 700
 
 The main DC/DC regulator is the :adi:`LTM4623`, designed for 5 V output. This will supply the ADMV96x5 and all the circuits on the ADMV96S-WGBE-EK1 board. The LTM4623 supports selectable discontinuous mode operation and output voltage tracking for supply rail sequencing. Its high switching frequency and current mode control enable a very fast transient response to line and load changes while providing very good stability.
 
@@ -136,7 +140,6 @@ Software
    -  :doc:`ADMV96S-WGBE-EK1 Firmware User Guide </wiki-migration/resources/eval/user-guides/admv96s-wgbe-ek1/firmware/setup>`
    
 
-
 --------------
 
 Additional Information and Useful Links
@@ -167,7 +170,6 @@ Resources
    -  `Wethlink Installer <https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe>`_
    
 
-
 Design and Integration Files
 ----------------------------
 
@@ -182,7 +184,6 @@ Design and Integration Files
    -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/bom.zip>`_
    
 
-
 --------------
 
 Registration
@@ -192,10 +193,9 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/ADMV96S-WGBE-EK1>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek/block_diagram_of_the_system.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/front.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/back.png
-   :width: 600px
+   :width: 600

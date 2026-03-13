@@ -12,11 +12,16 @@ The :adi:`AD5662` is a low power (0.75 mW typical @ 5 V), rail-to-rail output, 1
 
 The :adi:`ADuM1301` and :adi:`ADuM5401` provide all the necessary signal isolation between the microcontroller and the analog signal chain. They are both based on the iCoupler® technology. Additionally, the ADuM5401 provides an isolated 5 V power supply for all the circuit in the secondary side.
 
-Devices for PLC and DCS applications generally need ESD protection and overvoltage protection much higher than the formal recommended specifications. Thus, external 64 V, 1500 W transient voltage suppressors (TVS); a 50 mA, 30 V PolySwitch; and power Schottky diodes are built into the EVAL-CN0204-SDPZ circuit board to provide higher voltage ESD protection, 50 mA overcurrent, and 64 V overvoltage protection.
+Devices for PLC and DCS applications generally need ESD protection and
+overvoltage protection much higher than the formal recommended specifications.
+Thus, external 64 V, 1500 W transient voltage suppressors (TVS); a 50 mA, 30 V
+PolySwitch; and power Schottky diodes are built into the EVAL-CN0204-SDPZ
+circuit board to provide higher voltage ESD protection, 50 mA overcurrent, and
+64 V overvoltage protection.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/cn0204-hw-1024.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -42,7 +47,7 @@ Block Assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/cn0204-hw-1024_-_edited.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  The :adi:`EVAL-CN0204-SDPZ <CN0204>` **(CN0204 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin Connector **(SDP CONN)**
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable
@@ -60,8 +65,9 @@ Block Assignments
 
 .. important::
 
-   Power on the (EVAL-CN0204-SDPZ) through the triple output power supply and the (SDP-B Board) through the PC SEPARATELY before connecting the two boards together.
-
+   Power on the (EVAL-CN0204-SDPZ) through the triple output power supply and
+   the (SDP-B Board) through the PC SEPARATELY before connecting the two boards
+   together.
 
 Jumper Settings
 ~~~~~~~~~~~~~~~
@@ -70,7 +76,7 @@ See the table in the image below for the jumper settings. Values in red are the 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/cn0204_table2_5.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -82,7 +88,6 @@ Installing the Evaluation Software
 .. tip::
 
    \ NOTE: It is recommended that you install the `CN0204 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_ to the default directory path C:\\Program Files (x86)\\Analog Devices\\CN0204\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
-
 
    |image1|
 
@@ -98,8 +103,9 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image4|
 
@@ -110,7 +116,6 @@ Installing the Evaluation Software
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image5|
 
@@ -132,7 +137,7 @@ Main Window
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/7-27-2017_10-29-07_am_-_edit.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 -  **Title Bar** (Highlighted Violet)
 
@@ -163,7 +168,8 @@ Main Window
 
       -  **Toggle CLEAR**
 
-         -  Sets the outputs to the zero/midscale voltage value or the minimum value of the selected current range
+         -  Sets the outputs to the zero/midscale voltage value or the minimum
+            value of the selected current range
 
 -  **AD5751 Error Indicator** (Highlighted Yellow)
 
@@ -232,7 +238,6 @@ Schematic, PCB Layout, Bill of Materials
    -  PADS project
    
 
-
 Registration
 ------------
 
@@ -240,20 +245,19 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0204-SDPZ?&v=Rev B>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/8-1-2017_10-19-32_am.png
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/8-1-2017_10-19-42_am.png
-   :width: 600px
+   :width: 600
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/8-1-2017_10-20-11_am.png
-   :width: 600px
+   :width: 600
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/8-1-2017_10-20-38_am.png
-   :width: 600px
+   :width: 600
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/8-1-2017_10-20-47_am.png
-   :width: 600px
+   :width: 600
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/7-27-2017_10-22-01_am.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0204/8-1-2017_10-21-55_am.png
-   :width: 600px
+   :width: 600

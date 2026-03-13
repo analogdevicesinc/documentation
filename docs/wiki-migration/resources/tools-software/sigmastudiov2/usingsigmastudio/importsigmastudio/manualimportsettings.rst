@@ -6,7 +6,10 @@ Post-Import Manual Changes
 ADSP-SC5xx/215xx Projects
 -------------------------
 
-Some of the settings and control values on the migrated project are expected to be manually applied by the user. The details will be present in the summary report displayed on the output window and generated log file. Below table gives a consolidated summary of the settings to be manually assigned after migration.
+Some of the settings and control values on the migrated project are expected to
+be manually applied by the user. The details will be present in the summary
+report displayed on the output window and generated log file. Below table gives
+a consolidated summary of the settings to be manually assigned after migration.
 
 +---------+------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Sl. No. | Setting                      | Details                                                                                                            | Affected Modules                                                                                                                                                |
@@ -44,20 +47,26 @@ Some of the settings and control values on the migrated project are expected to 
 | 16      | Factor                       | Sampling factor should be manually assigned                                                                        | Down-Sampler, Up-Sampler                                                                                                                                        |
 +---------+------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-All the settings (except the number of input and output channels) on the SigmaStudio IC Control window for ADSP-215xx/ADSP-SC5xx, including Application DXE and SPORT configuration are expected to be manually assigned on the imported SigmaStudio+ project. These settings will be spread across "Processor", "Core" and "Schematic" settings pages in SigmaStudio+.
-
+All the settings (except the number of input and output channels) on the
+SigmaStudio IC Control window for ADSP-215xx/ADSP-SC5xx, including Application
+DXE and SPORT configuration are expected to be manually assigned on the imported
+SigmaStudio+ project. These settings will be spread across "Processor", "Core"
+and "Schematic" settings pages in SigmaStudio+.
 
 |image1|
 
 .. note::
 
-   'Import SigmaStudio project' feature recreates the equivalent signal flow diagram in SigmaStudio+. Schematic Design elements like 'User Image', 'User Comment', 'Simulation Probe', 'Simulation Stimuli', 'Alias Pins' etc. which does not impact the signal flow will not be present in the migrated SigmaStudio+ project. These blocks should be manually inserted as applicable
-
+   'Import SigmaStudio project' feature recreates the equivalent signal flow
+   diagram in SigmaStudio+. Schematic Design elements like 'User Image', 'User
+   Comment', 'Simulation Probe', 'Simulation Stimuli', 'Alias Pins' etc. which
+   does not impact the signal flow will not be present in the migrated
+   SigmaStudio+ project. These blocks should be manually inserted as applicable
 
 .. note::
 
-   BlockSize for multi-instance schematics should be manually updated. Single instance schematic BlockSize update will be handled by the import feature
-
+   BlockSize for multi-instance schematics should be manually updated. Single
+   instance schematic BlockSize update will be handled by the import feature
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/importsigmastudio/ss_settings.png
-   :width: 400px
+   :width: 400

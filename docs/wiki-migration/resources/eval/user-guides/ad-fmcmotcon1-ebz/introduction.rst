@@ -1,8 +1,6 @@
 ADI FMC Motor Drive System Introduction
 =======================================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -18,8 +16,6 @@ ADI FMC Motor Drive System Introduction
    which means it is no longer maintained or actively updated, even though the
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
-
-
 
 **The ADI FMC motor drive solution solution consist of the following products**
 
@@ -53,7 +49,8 @@ AD-FMCMOTCON1-EBZ   AD-DRVLV1-EBZ   AD-DYNO1-EBZ
 
 -  Increased control flexibility due to FPGA interfacing capabilities
 -  Increased versatility to be able to control different types of motors
--  Example reference designs showing how to use the control solution with Xilinx FPGAs and Simulink from Mathworks
+-  Example reference designs showing how to use the control solution with Xilinx
+   FPGAs and Simulink from Mathworks
 
 Where to Buy
 ------------
@@ -62,10 +59,9 @@ Where to Buy
 
    `ZYNQ Intelligent Drives Kit <http://www.em.avnet.com/en-us/design/drc/Pages/Zynq-Intelligent-Drives-Kit.aspx>`_
 
-
 .. |AD-FMCMOTCON1-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-fmcmotcon1-ebz_top.jpg
-   :width: 200px
+   :width: 200
 .. |AD-DRVLV1-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-drvlv1-ebz_top.jpg
-   :width: 200px
+   :width: 200
 .. |AD-DYNO1-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-dyno1-ebz.png
-   :width: 200px
+   :width: 200

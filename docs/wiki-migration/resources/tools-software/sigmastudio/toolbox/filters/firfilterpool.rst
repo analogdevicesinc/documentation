@@ -5,7 +5,6 @@ FIR Filter Pool
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 | The FIR Filter Pool module is an enhanced version of the standard FIR filter allowing users to select an input and a FIR coefficient set and route the selected input through the coefficient set to a particular output. It also enables the user to invert the output and reverse the coefficient set. The module also enables the user to define custom filter and input labels using the filter pool form. |
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -14,7 +13,7 @@ FIR Filter Pool
 | |image1| |image2|
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/gui_fir_pool1.png
-   :width: 500px
+   :width: 500
 
 Input Pins
 ----------
@@ -99,15 +98,24 @@ Algorithm Description
 FIR Filter Pool(ADAU145x)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Algorithm implements a FIR filter of order N, having N+1 filter taps. Multiple coefficient sets can be added to the module, enabling the routing of multiple inputs through multiple independent FIR filters to a given output selection line. The FIR Filter Pool form has multiple tabs each having a particular routing selection and parameters between the inputs and outputs. The algorithm implements invert functionality which inverts the output samples and Reverse which access the loaded filter coefficient set in reverse for a particular selection.
+The Algorithm implements a FIR filter of order N, having N+1 filter taps.
+Multiple coefficient sets can be added to the module, enabling the routing of
+multiple inputs through multiple independent FIR filters to a given output
+selection line. The FIR Filter Pool form has multiple tabs each having a
+particular routing selection and parameters between the inputs and outputs. The
+algorithm implements invert functionality which inverts the output samples and
+Reverse which access the loaded filter coefficient set in reverse for a
+particular selection.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/form_fir_pool.png
-   :width: 600px
+   :width: 600
 
 The module also features options which allow the following configurations
 
 -  The FIR filter delay line can be allocated per input channel or per output channel. Right click on the cell to select this option, by default the delay lines are maintained per input. In configurations where the number of inputs are large compared to the number of outputs, the delay lines can be maintained per output by selecting this option.
--  The FIR filter algorithm has a trade off between the memory and mips. The Optimize for MIPS/Memory option allows the algorithm to be optimized for either one of the parameters. By default the algorithm is optimized for MIPS.
+-  The FIR filter algorithm has a trade off between the memory and mips. The
+   Optimize for MIPS/Memory option allows the algorithm to be optimized for
+   either one of the parameters. By default the algorithm is optimized for MIPS.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/fir_pool_145x_module.png
    :align: left
@@ -115,27 +123,42 @@ The module also features options which allow the following configurations
 FIR Filter Pool(ADSP-214xx, ADSP-SC5xx)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Algorithm implements a FIR filter of order N, having N+1 filter taps. Multiple coefficient sets can be added to the module, enabling the routing of multiple inputs through multiple independent FIR filters to a given output selection line. The FIR Filter Pool form has multiple tabs each having a particular routing selection and parameters between the inputs and outputs. The algorithm implements invert functionality which inverts the output samples and Reverse which access the loaded filter coefficient set in reverse for a particular selection.
+The Algorithm implements a FIR filter of order N, having N+1 filter taps.
+Multiple coefficient sets can be added to the module, enabling the routing of
+multiple inputs through multiple independent FIR filters to a given output
+selection line. The FIR Filter Pool form has multiple tabs each having a
+particular routing selection and parameters between the inputs and outputs. The
+algorithm implements invert functionality which inverts the output samples and
+Reverse which access the loaded filter coefficient set in reverse for a
+particular selection.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/form_fir_pool.png
-   :width: 600px
+   :width: 600
 
 The module has two variants as shown below
 
-The FIR filter delay line can be allocated per input channel or per output channel.The FIR Filter Pool module with delay line at input maintains a FIR delay line per input channel whereas the FIR filter pool module with delay line at output maintains a FIR delay line per output channel.In configurations where the number of inputs are large compared to the number of outputs, the delay lines can be maintained per output by choosing the module.
+The FIR filter delay line can be allocated per input channel or per output
+channel.The FIR Filter Pool module with delay line at input maintains a FIR
+delay line per input channel whereas the FIR filter pool module with delay line
+at output maintains a FIR delay line per output channel.In configurations where
+the number of inputs are large compared to the number of outputs, the delay
+lines can be maintained per output by choosing the module.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/fir_pool_214xx_module.png
 
 Example
 -------
 
-The example shows The module configured to two inputs and three output channels with three independent FIR Filter coefficient sets. The three coefficients are Low pass FIR filters with cutoffs 2.4KHz,4.8kHz and 7.2KHz. The output plots for the configuration are shown below.
+The example shows The module configured to two inputs and three output channels
+with three independent FIR Filter coefficient sets. The three coefficients are
+Low pass FIR filters with cutoffs 2.4KHz,4.8kHz and 7.2KHz. The output plots for
+the configuration are shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/example_fir_pool_3.png
-   :width: 600px
+   :width: 600
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/output_fir_pool.png
-   :width: 800px
+   :width: 800
 
 Supported IC's
 --------------
@@ -143,6 +166,6 @@ Supported IC's
 1. ADAU145x 2. ADSP-214XX 3. ADSP-213xx 4. ADSP-SC5xx
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/fir_pool_delayline_sc58x.png
-   :width: 200px
+   :width: 200
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/fir_pool_delayline_.png
-   :width: 200px
+   :width: 200

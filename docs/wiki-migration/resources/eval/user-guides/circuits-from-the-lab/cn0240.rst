@@ -16,7 +16,7 @@ The :adi:`EVAL-CN0240-SDPZ Board <EVAL-CN0240-SDPZ>` connects to ADI’s System 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/cn0240-hw-1024.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
 --------------
 
@@ -53,7 +53,7 @@ Block assignments
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/1.png
    :align: center
-   :width: 550px
+   :width: 550
 
 -  The :adi:`EVAL-CN0240-SDPZ` **(CN-0240 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
@@ -62,26 +62,31 @@ Block assignments
 -  Terminal block **J3** is the 6 V DC power supply
 -  Terminal block **J4** is the high voltage input terminals
 
-   -  Rshunt and load will be connected across these input terminals as indicated in test setup below
+   -  Rshunt and load will be connected across these input terminals as
+      indicated in test setup below
 
 -  Terminal block **J5** is the input terminal for the dc supplies +15 V and -15 V
 -  Terminal block **J6** is the test point for SPI data lines
 
 .. warning::
 
-   \ High voltage! This circuit may contain lethal voltages. Do not operate, evaluate, or test this circuit, or board assembly, unless you are a trained professional, who is qualified to handle high voltage circuitry. Before applying power, you must be familiar with the circuitry and all required precautions for working with high voltage circuits.
-
+   \ High voltage! This circuit may contain lethal voltages. Do not operate,
+   evaluate, or test this circuit, or board assembly, unless you are a trained
+   professional, who is qualified to handle high voltage circuitry. Before
+   applying power, you must be familiar with the circuitry and all required
+   precautions for working with high voltage circuits.
 
 Test setup
 ~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/9.png
    :align: center
-   :width: 600px
+   :width: 600
 
 -  Connect the 120-pin connector on the :adi:`EVAL-CN0240-SDPZ Evaluation Board <EVAL-CN0240-SDPZ>` to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board
 -  Connect a shunt resistor across the J4 input terminals with a load to ground as indicated in figure above
--  With power to the supply off, connect a +6 V power supply to the pins marked “+6V” and “GND” on the board
+-  With power to the supply off, connect a +6 V power supply to the pins marked
+   “+6V” and “GND” on the board
 
 ::
 
@@ -93,8 +98,9 @@ Test setup
 
 .. important::
 
-   Connect the system ground and the PCB isolated ground to guarantee correct voltage levels and operation. Test point 31 and test point 32 give access to the GND_ISO required to properly make this connection.
-
+   Connect the system ground and the PCB isolated ground to guarantee correct
+   voltage levels and operation. Test point 31 and test point 32 give access to
+   the GND_ISO required to properly make this connection.
 
 --------------
 
@@ -107,12 +113,10 @@ Installing the Evaluation Software
 
    \ NOTE: It is recommended that you install the `CN0240 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0240>`_ to the default directory path C:\\Program Files (x86)\\Analog Devices\\CN0240\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
 
-
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/2.png
-   :width: 500px
+   :width: 500
 
 -  Click **Next** to view the installation review page
-
 
 |image1|
 
@@ -124,8 +128,9 @@ Installing the Evaluation Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image3|
 
@@ -137,10 +142,10 @@ Installing the Evaluation Software
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
 
-
    |image4|
 
-   \* Press “Install” to install the SDP Drivers and complete the installation of all software. Click "Finish" when done.
+   \* Press “Install” to install the SDP Drivers and complete the installation
+   of all software. Click "Finish" when done.
 
    |image5|
 
@@ -154,7 +159,7 @@ Main Window
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/10.png
    :align: center
-   :width: 700px
+   :width: 700
 
 -  **Connect** Button - Starts the connection between the :adi:`CN0240 Evaluation Board <CN0240>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`.
 -  **Disconnect** Button - Ends the connection between the :adi:`CN0240 Evaluation Board <CN0240>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`
@@ -173,13 +178,11 @@ Main Window
 
 -  **Sample Data Graph** Tab - Shows the XY plot of ADC code and output error (%) with respect to the shunt voltage
 
-
 |image7|
 
    -  **Plot Options** - Edit plot display and options like interpolation and color of output waveform
 
 -  **Configure** Tab
-
 
 |image8|
 
@@ -233,7 +236,6 @@ Schematic, PCB Layout, Bill of Materials
    -  PADS project
    
 
-
 Registration
 ------------
 
@@ -241,22 +243,21 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0240-SDPZ?&v=Rev A>`_ to receive all these great benefits and more!
 
-
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/3.png
-   :width: 500px
+   :width: 500
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/4.png
-   :width: 500px
+   :width: 500
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/5.png
-   :width: 500px
+   :width: 500
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/6.png
-   :width: 500px
+   :width: 500
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/7.png
-   :width: 500px
+   :width: 500
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/11.png
-   :width: 600px
+   :width: 600
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/14.png
-   :width: 600px
+   :width: 600
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0240/13.png
-   :width: 600px
+   :width: 600

@@ -4,24 +4,39 @@ Monopulse Tracking using Phased Array Beamforming
 Overview
 --------
 
-Monopulse tracking, introduced by Robert Page in 1943 during World War II, significantly advanced radar tracking capabilities. This technology uses a phased array to accurately track an object’s path by arranging the array elements in a line parallel to the horizon, enabling precise tracking of horizontal motion.
+Monopulse tracking, introduced by Robert Page in 1943 during World War II,
+significantly advanced radar tracking capabilities. This technology uses a
+phased array to accurately track an object’s path by arranging the array
+elements in a line parallel to the horizon, enabling precise tracking of
+horizontal motion.
 
-The term “monopulse” combines the Greek word “mono,” meaning single, and “pulse,” referring to a single burst of electromagnetic transmission received by the antenna. This method tracks a target’s location in terms of azimuth (horizontal angle) and elevation (vertical angle).
+The term “monopulse” combines the Greek word “mono,” meaning single, and
+“pulse,” referring to a single burst of electromagnetic transmission received by
+the antenna. This method tracks a target’s location in terms of azimuth
+(horizontal angle) and elevation (vertical angle).
 
-The tracking capability relies on 4×8 antenna lobes, divided into right and left lobes.
+The tracking capability relies on 4×8 antenna lobes, divided into right and left
+lobes.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/antenna_lobe.png
    :align: center
-   :width: 600px
+   :width: 600
 
-Signals received by these lobes are processed to create a Sum signal (total power received) and Difference or Delta signals (difference between signals from the left and right lobes). The Sum and Delta signals help estimate the target’s angle:
+Signals received by these lobes are processed to create a Sum signal (total
+power received) and Difference or Delta signals (difference between signals from
+the left and right lobes). The Sum and Delta signals help estimate the target’s
+angle:
 
 -  If the target is at the center of the radar beam, the delta signal is zero.
--  If the target is off-center, the delta signal indicates the direction and distance of deviation.
+-  If the target is off-center, the delta signal indicates the direction and
+   distance of deviation.
 
-By comparing the Sum and Delta signals, the system can determine the exact angle of the target in both azimuth and elevation.
+By comparing the Sum and Delta signals, the system can determine the exact angle
+of the target in both azimuth and elevation.
 
-Today, monopulse tracking is used in various applications, including military, air traffic control, space and satellite tracking, aerospace, weather radars, surveillance, reconnaissance, and telecommunications.
+Today, monopulse tracking is used in various applications, including military,
+air traffic control, space and satellite tracking, aerospace, weather radars,
+surveillance, reconnaissance, and telecommunications.
 
 --------------
 
@@ -77,7 +92,8 @@ To set up the HB100 Microwave Sensor:
 -  Connect the USB keyboard and mouse to the Raspberry Pi USB ports.
 -  Plug the USB-C wall adapter into the USB-C power jack on the EVAL-CN0566-RPIZ. Do NOT plug into the Raspberry Pi USB-C port.
 -  Carefully thread the tripod into the tripod mount.
--  Power up the HB100 microwave source with 5V power bank using a micro USB to USB cable. Aim this at the array.
+-  Power up the HB100 microwave source with 5V power bank using a micro USB to
+   USB cable. Aim this at the array.
 
 Software Setup
 --------------
@@ -92,13 +108,15 @@ CN0566 Phaser Setup
    
    Install ADI Kuiper Linux on an SD card. Detailed instructions, including downloading the SD card image, writing it to the SD card, and configuring the system, are available at :doc:`Analog Devices Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
    
-   Pay close attention to localization settings, keyboard settings, etc., especially when running examples directly on the Raspberry Pi.
+   Pay close attention to localization settings, keyboard settings, etc.,
+   especially when running examples directly on the Raspberry Pi.
    
    \*\* SD Card Configuration*\*
    
    After burning the image, log into the Raspberry Pi and open the configuration utility. Set the hostname to **"phaser"** and configure the locale, keyboard, and Wi-Fi country (if using Wi-Fi).
    
-   Run the necessary commands to complete the setup. Review the setup script for any updates, as newer versions of Kuiper Linux may have changes.
+   Run the necessary commands to complete the setup. Review the setup script for
+   any updates, as newer versions of Kuiper Linux may have changes.
    
    ::
    
@@ -106,7 +124,6 @@ CN0566 Phaser Setup
       sudo chmod +x phaser_sdcard_setup.sh
       ./phaser_sdcard_setup.sh
    
-
 
 Python Installation
 ~~~~~~~~~~~~~~~~~~~
@@ -118,7 +135,8 @@ This part assumes a fresh installation of all required software.
 
    -  During installation, check **“Add Python version to PATH”** before clicking **``Install Now``**
 
--  To check if the download is successful, go to command prompt and type the command line below: <code> Python --version </code>
+-  To check if the download is successful, go to command prompt and type the
+   command line below: <code> Python --version </code>
 
 Libiio Installation
 ~~~~~~~~~~~~~~~~~~~
@@ -132,7 +150,6 @@ Libiio Installation
    -  :doc:`Libiio Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
    
 
-
 ::
 
    -Download and install the latest release of libIIO that can be found in this link: https://github.com/analogdevicesinc/libiio/releases
@@ -140,7 +157,6 @@ Libiio Installation
 .. container:: center round box
 
    Note: There are different installers that can be found in the link, choose the installer that is fit to your host PC. \\ \\ Example: **libiio-0.25-gb6028fd-windows.zip for PC running Windows OS**
-
 
 -Install the libIIO bindings through pip <code> Pip install pylibiio </code>
 
@@ -150,7 +166,6 @@ Pyadi-iio Installation
 .. container:: indent
 
    **Pyadi-iio** is a python abstraction module for ADI hardware with IIO drivers to make them easier to use, to learn more about the pyadi-iio you can visit this link: :doc:`/wiki-migration/resources/tools-software/linux-software/pyadi-iio`
-
 
 ::
 
@@ -186,7 +201,8 @@ Running the System
 Help and Support
 ----------------
 
-For questions and more information, please visit the Analog Devices Engineer Zone.
+For questions and more information, please visit the Analog Devices Engineer
+Zone.
 
 .. hint::
 
@@ -195,7 +211,6 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    
    For external users, please post your questions under the :ez:`Reference Designs <reference-designs>` forum in EngineerZone to get assistance from the community and experts.
    
-
 
 Related Documents
 ~~~~~~~~~~~~~~~~~

@@ -6,27 +6,28 @@ The Video Encoder EI3 Extender Board is a separately daughter board that plugs o
 Hardware Connection
 -------------------
 
-Connect the Video Encoder EI3 Extender Board board to the P1A connector on the ADSP-SC5XX EZ-Board.
+Connect the Video Encoder EI3 Extender Board board to the P1A connector on the
+ADSP-SC5XX EZ-Board.
 
 Only HD format is supported for **ADV7511**, so connect an HDMI cable to a TV to display captured HD yuv file (720p).
-
 
 |image1|
 
 **ADV7341** supports NTSC and PAL format video. Connect the Composite port on the adapter board to TV video port using 3RCA cable.
-
 
 |image2|
 
 Software Configuration
 ----------------------
 
-The following configuration should be done on top of the sc589-ezkit/sc573-ezkit default configuration.
+The following configuration should be done on top of the sc589-ezkit/sc573-ezkit
+default configuration.
 
 Package Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-Add the v4l2-video-test package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
+Add the v4l2-video-test package in the filesystem, it's enabled in
+adsp-sc5xx-full image by default.
 
 ::
 
@@ -100,7 +101,9 @@ Run "**bitbake linux-adi -c devshell**" to enter into the kernel source code and
 
 -  **Device node for soft switch on Video Encoder EI3 Extender Board**
 
-Please add following child node ssw2 to i2c0 master node in the device tree(sc589-ezkit.dts/sc573-ezkit.dts). We need to setup soft switch before we start display streaming.
+Please add following child node ssw2 to i2c0 master node in the device
+tree(sc589-ezkit.dts/sc573-ezkit.dts). We need to setup soft switch before we
+start display streaming.
 
 ::
 
@@ -127,7 +130,13 @@ Please add following child node ssw2 to i2c0 master node in the device tree(sc5
 ADV7511 HDMI Transmitter Test
 -----------------------------
 
-One thing to note here is that the ADSP-SC573 can support up to 56.25MHz ppi clock when transmitting data or frame sync, however, ADSP-SC589 can support up to 75MHz ppi clock, and there are two different ppi clock generators on Video Encoder EI3 Extender Board: 27MHz and 74MHz, so we can enable 27MHz clock both for ADSP-SC573 EZ-Board and ADSP-SC589 EZ-Board, and 74MHz clock only for ADSP-SC589 EZ-Board. For more information, please refer to the data sheets of ADSP-SC573/ADSP-SC589 and the Video Encoder EI3 Extender Board Manual.
+One thing to note here is that the ADSP-SC573 can support up to 56.25MHz ppi
+clock when transmitting data or frame sync, however, ADSP-SC589 can support up
+to 75MHz ppi clock, and there are two different ppi clock generators on Video
+Encoder EI3 Extender Board: 27MHz and 74MHz, so we can enable 27MHz clock both
+for ADSP-SC573 EZ-Board and ADSP-SC589 EZ-Board, and 74MHz clock only for
+ADSP-SC589 EZ-Board. For more information, please refer to the data sheets of
+ADSP-SC573/ADSP-SC589 and the Video Encoder EI3 Extender Board Manual.
 
 Setup Soft Switch
 ~~~~~~~~~~~~~~~~~
@@ -169,7 +178,9 @@ The state of pins from IO expander is "uncertain" after we enable Soft Switch 
 Display Video Images
 ~~~~~~~~~~~~~~~~~~~~
 
-You can use "v4l2_video_display" provided to play HD yuv file and output the HD signal via ADV7511, the HD signal will be transmitted to TV, then you will see the image on TV.
+You can use "v4l2_video_display" provided to play HD yuv file and output the HD
+signal via ADV7511, the HD signal will be transmitted to TV, then you will see
+the image on TV.
 
 ::
 
@@ -205,7 +216,9 @@ The state of pins from IO expander is "uncertain" after we enable Soft Switch 
 Display Video Images
 ~~~~~~~~~~~~~~~~~~~~
 
-You can use "v4l2_video_display" provided to play pal yuv file and output the component analog signal via ADV7341, the analog signal will be transmitted to TV by 3RCA cable, then you will see the image on TV.
+You can use "v4l2_video_display" provided to play pal yuv file and output
+the component analog signal via ADV7341, the analog signal will be transmitted
+to TV by 3RCA cable, then you will see the image on TV.
 
 ::
 
@@ -216,6 +229,6 @@ You can use "v4l2_video_display" provided to play pal yuv file and output the c
 **Back to** :doc:`Linux Video Driver </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/linux_video_driver>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/encoder.jpg
-   :width: 600px
+   :width: 600
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/cable.jpg
-   :width: 600px
+   :width: 600

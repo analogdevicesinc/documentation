@@ -16,7 +16,7 @@ Overview
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/eval-hmc7044.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The :adi:`HMC7044` is a high performance, dual-loop, integer-N jitter attenuator capable of performing reference selection and generation of ultralow phase noise frequencies for high speed data converters with either parallel or serial (JESD204B type) interfaces.
 
@@ -52,7 +52,10 @@ Source Code Documentation
 Driver Description
 ==================
 
-The driver implements the necessary routines for managing the device and communicates with the device over an SPI interface. The SPI communication layer is not implemented by the driver and has to be provided by the user at the driver initialization phase.
+The driver implements the necessary routines for managing the device and
+communicates with the device over an SPI interface. The SPI communication layer
+is not implemented by the driver and has to be provided by the user at the
+driver initialization phase.
 
 ::
 

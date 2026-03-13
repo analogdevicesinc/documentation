@@ -1,16 +1,19 @@
 Application Toolbar
 ===================
 
-Application Toolbar The application toolbar, contains operations and settings which are independent of the views being displayed. The operations available are grouped in the following categories:
-
+Application Toolbar The application toolbar, contains operations and settings
+which are independent of the views being displayed. The operations available are
+grouped in the following categories:
 
 |Capture.png|
 
 -  Home: The home button will navigate you to the home Tool View.
 
--  Systems: Navigates you to the System View, where you will see details of the Board Selected.
+-  Systems: Navigates you to the System View, where you will see details of the
+   Board Selected.
 
--  Plug-in Manager: Opens the Plug-in Manager Menu, which allows the user to Uninstall and Install Plug-ins.
+-  Plug-in Manager: Opens the Plug-in Manager Menu, which allows the user to
+   Uninstall and Install Plug-ins.
 
 -  Remoting Console
 
@@ -24,15 +27,16 @@ Application Toolbar The application toolbar, contains operations and settings wh
 
 -  Application Usage Logging
 
--  Help: The help menu provides an about pop-up which contains details about ACE.
+-  Help: The help menu provides an about pop-up which contains details about
+   ACE.
 
 Figure 2: Application Toolbar
 
 File Options
 ------------
 
-The file menu contains the options for creating, opening, closing and saving sessions.\
-
+The file menu contains the options for creating, opening, closing and saving
+sessions.\
 
 |Capture2.PNG|
 

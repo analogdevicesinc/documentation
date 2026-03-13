@@ -1,8 +1,6 @@
 Motor Control Hardware
 ======================
 
-
-
 .. warning::
 
    Analog Devices uses six designations to inform our customers where a
@@ -19,15 +17,13 @@ Motor Control Hardware
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-
-
 Hardware solutions
 ------------------
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-fmcmotcon1-ebz_top.jpg
    :alt: AD-FMCMOTCON1-EBZ
    :align: right
-   :width: 300px
+   :width: 300
 
 -  :doc:`AD-FMCMOTCON1-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/controller_board>` - Controller board.
 
@@ -42,7 +38,7 @@ Hardware solutions
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-drvlv1-ebz_top.jpg
    :alt: AD-DRVLV1-EBZ
    :align: right
-   :width: 300px
+   :width: 300
 
 -  :doc:`AD-DRVLV1-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_board>` - Low voltage drive board.
 
@@ -56,7 +52,7 @@ Hardware solutions
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/ad-dyno1-ebz.png
    :alt: AD-DYNO1-EBZ
    :align: right
-   :width: 300px
+   :width: 300
 
 -  :doc:`AD-DYNO1-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/dyno>` - Dynamometer Drive System.
 
@@ -73,7 +69,6 @@ Where to Buy
 .. container:: round box
 
    `ZYNQ Intelligent Drives Kit <http://www.em.avnet.com/en-us/design/drc/Pages/Zynq-Intelligent-Drives-Kit.aspx>`_
-
 
 Downloads
 ---------
@@ -94,4 +89,3 @@ Downloads
    -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/ad-drvlv1-ebz_bom.pdf>`_
    -  `Allegro Board File <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/ad-drvlv1-ebz_layout.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).
    
-

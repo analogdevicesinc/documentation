@@ -12,12 +12,19 @@ Simple Router
 Description
 -----------
 
-The Simple Router block routes the N different inputs to M different Outputs with multiplied by respective gains. This module supports multiple router configurations. Any input can be routed to any output pin. A separate post gain is available for each of the output. All the gains has a corresponding mute control to quickly mute the particular gain. The current router/mixer(Mix #) can be changed during the runtime by changing the Tab in the mixer window. RC slew is applied for any change in the inputs/gains.
+The Simple Router block routes the N different inputs to M different Outputs
+with multiplied by respective gains. This module supports multiple router
+configurations. Any input can be routed to any output pin. A separate post gain
+is available for each of the output. All the gains has a corresponding mute
+control to quickly mute the particular gain. The current router/mixer(Mix #) can
+be changed during the runtime by changing the Tab in the mixer window. RC slew
+is applied for any change in the inputs/gains.
 
 Usage
 -----
 
-Click on the icon to open the Router window to configure the gain for respective input channels for respective outputs.
+Click on the icon to open the Router window to configure the gain for respective
+input channels for respective outputs.
 
 Variants
 --------

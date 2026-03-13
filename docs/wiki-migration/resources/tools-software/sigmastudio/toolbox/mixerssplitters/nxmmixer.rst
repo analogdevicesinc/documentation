@@ -12,12 +12,14 @@ NxM Mixer
 Description
 -----------
 
-The NxM Mixer block multiplies the inputs with respective gains and mixes N number of inputs and sends the result to the M number of outputs.
+The NxM Mixer block multiplies the inputs with respective gains and mixes N
+number of inputs and sends the result to the M number of outputs.
 
 Usage
 -----
 
-Click on the icon to open the NxM Mixer window to configure the gain for respective input channels for respective outputs.
+Click on the icon to open the NxM Mixer window to configure the gain for
+respective input channels for respective outputs.
 
 Targets Supported
 -----------------

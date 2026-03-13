@@ -6,9 +6,12 @@ EVAL-ADIS-FX3 Hardware Documentation
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/fx3/43893_50034.jpg
    :align: center
-   :width: 600px
+   :width: 600
 
-The EVAL-ADIS-FX3 hardware is completely open-source and MIT licensed. It includes many improvements learned from the previous generations of evaluation systems and is designed to be small, flexible, reliable, and low-cost. Some of the board’s features include:
+The EVAL-ADIS-FX3 hardware is completely open-source and MIT licensed. It
+includes many improvements learned from the previous generations of evaluation
+systems and is designed to be small, flexible, reliable, and low-cost. Some of
+the board’s features include:
 
 -  A dedicated, onboard 3.3V, 2A linear regulator designed for high-transient applications
 -  A USB-C connector (USB 2.0 compliant only)
@@ -24,7 +27,9 @@ The EVAL-ADIS-FX3 hardware is completely open-source and MIT licensed. It includ
 
    *
 
-The EVAL-ADIS-FX3 firmware was also redesigned to offer developers the flexibility to interface with as many external devices as possible. The firmware includes support for:
+The EVAL-ADIS-FX3 firmware was also redesigned to offer developers the
+flexibility to interface with as many external devices as possible. The firmware
+includes support for:
 
 -  FX3 UART debugging
 -  Four additional GPIO pins, separate from the four IMU GPIO pins), for external test equipment triggering and sensing (such as with a vibration stage or motors)
@@ -38,28 +43,30 @@ The EVAL-ADIS-FX3 firmware was also redesigned to offer developers the flexibili
 
 .. warning::
 
-   The EVAL-ADIS-FX3 does not include any onboard GPIO logic level shifters and is designed to only support 3.3V logic! The EVAL-ADIS-FX3 and may be permanently damaged if subjected to signals > 3.6V!
-
+   The EVAL-ADIS-FX3 does not include any onboard GPIO logic level shifters and
+   is designed to only support 3.3V logic! The EVAL-ADIS-FX3 and may be
+   permanently damaged if subjected to signals > 3.6V!
 
 The open-source, MIT-licensed design files and resources are located in the iSensor FX3 API repository on GitHub (:git-iSensor-FX3-API:`link <hardware>`). An EVAL-ADIS-FX3 may also be purchased :adi:`here <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-adis-fx3.html>`.
 
-The image below outlines the various indicators and connectors available on the EVAL-ADIS-FX3.
+The image below outlines the various indicators and connectors available on the
+EVAL-ADIS-FX3.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/fx3_board_layout.png
    :align: center
-   :width: 600px
+   :width: 600
 
 The EVAL-ADIS-FX3 interface pinouts are also listed below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/fx3_board_pinout.png
    :align: center
-   :width: 1100px
+   :width: 1100
 
 The recommended mating connectors are listed in the image shown below.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/fx3_mating_connectors.png
    :align: center
-   :width: 600px
+   :width: 600
 
 Software
 --------

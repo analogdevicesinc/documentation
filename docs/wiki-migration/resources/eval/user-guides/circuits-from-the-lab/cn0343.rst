@@ -4,7 +4,12 @@ CN0343 Ultrasonic Distance Measurement User Guide
 Overview
 --------
 
-The CN0343 is a completely self-contained distance sensor that utilizes an ultrasonic transmitter and sensitive analog receiver in conjunction with a precision analog microcontroller to provide distance measurements. The CN0343 approximate range is from 50cm to 10m with a resolution of about 2cm. Temperature compensation is provided by the integrated temperature sensor and analog-to-digital converter (ADC) contained in the microcontroller.
+The CN0343 is a completely self-contained distance sensor that utilizes an
+ultrasonic transmitter and sensitive analog receiver in conjunction with a
+precision analog microcontroller to provide distance measurements. The CN0343
+approximate range is from 50cm to 10m with a resolution of about 2cm.
+Temperature compensation is provided by the integrated temperature sensor and
+analog-to-digital converter (ADC) contained in the microcontroller.
 
 Hardware Connections
 --------------------
@@ -33,12 +38,12 @@ The **J2** connector in CN0343 is use for the RS-485 communication interface, th
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0343/cn0343_rs485.png
    :align: center
 
-The CN0343 RS-485 interface working at the half-duplex mode, there only need one twisted pair cable to build the RS-485 network.
+The CN0343 RS-485 interface working at the half-duplex mode, there only need one
+twisted pair cable to build the RS-485 network.
 
 .. note::
 
    Please notice: the RS-485 interface has limitation on the total devices number in the same network and cable type and length, for the detail of CN0343 RS-485 interface characteristics please check :adi:`adm3483`\
-
 
 JTAG/SWD connections
 ~~~~~~~~~~~~~~~~~~~~
@@ -53,28 +58,30 @@ The CN0343 **J3** JTAG 20pins 0.1 inch pitch connector pin map is compatible wit
 Usage Instructions
 ------------------
 
-The CN0343 can be running in standalone mode or connect multiple CN0343 into one RS-485 network to make group measurement.
+The CN0343 can be running in standalone mode or connect multiple CN0343 into one
+RS-485 network to make group measurement.
 
-The CN0343 user interface contained one LCD screen and one buzzer as information output, six tactile button as the user input.
+The CN0343 user interface contained one LCD screen and one buzzer as information
+output, six tactile button as the user input.
 
 LCD Screen and Buttons User Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The CN0343 LCD have a contrast adjust potentiometer **R1** marked in the following picture as purple font.
 
-The CN0343 have six tactile button, the function of each button marked as red font in the following picture.
+The CN0343 have six tactile button, the function of each button marked as red
+font in the following picture.
 
 .. tip::
 
    In this chapter the *press button* or *button pressed* event expression means single click the tactile button.
 
-
    |image1|
 
 .. note::
 
-   If the CN0343 power up with the beep and LCD screen display murky or dull, please adjust R1 with screwdriver gently to make LCD clear
-
+   If the CN0343 power up with the beep and LCD screen display murky or dull,
+   please adjust R1 with screwdriver gently to make LCD clear
 
 The CN0343 have following of running status:
 
@@ -84,8 +91,9 @@ The CN0343 have following of running status:
 
 .. tip::
 
-   At the SPLASH status the CN0343 will not response any of button press or RS-485 input, please wait for 3 seconds, the CN0343 will enter the MEASURING status.
-
+   At the SPLASH status the CN0343 will not response any of button press or
+   RS-485 input, please wait for 3 seconds, the CN0343 will enter the MEASURING
+   status.
 
 -  **MEASURING:** At **MEASURING** status the CN0343 will showing:
 
@@ -94,7 +102,8 @@ The CN0343 have following of running status:
    Distance: 1.253m
     Temp: 25.2°C 
 
-The distance and temperature value may different based on the CN0343 working situation.
+The distance and temperature value may different based on the CN0343 working
+situation.
 
 -  **MENU:** if the **OK** button pressed in **MEASURING:** status the CN0343 will enter the **MENU** status, at the **MENU** status the CN0343 will showing one of following screen:
 
@@ -142,8 +151,10 @@ The CN0343 software supported RS-485 baud rate range is: 75bps~250kbps.
 
 .. important::
 
-   If you use multiple CN0343 in a same RS-485 network, please make sure all the CN0343 and host have same RS-485 baud rate and no address conflict. Because the CN0343 working in the half-duplex RS-485 mode, please make sure there only have one RS-485 device transmit data at a time.
-
+   If you use multiple CN0343 in a same RS-485 network, please make sure all the
+   CN0343 and host have same RS-485 baud rate and no address conflict. Because
+   the CN0343 working in the half-duplex RS-485 mode, please make sure there
+   only have one RS-485 device transmit data at a time.
 
 The CN0343 will response following command:
 
@@ -159,12 +170,12 @@ For example:
 
    109 query
 
-will trigger the CN0343 which have RS-485 address 109 send the measure result data to RS-485 network.
+will trigger the CN0343 which have RS-485 address 109 send the measure result
+data to RS-485 network.
 
 .. important::
 
    Please don't ignore the space character between address 109 and query command
-
 
 Software Programming
 --------------------
@@ -191,7 +202,8 @@ For the detail of Keil usage please reference to `ARM Product Manuals <http://ww
 How to download binary firmware to the CN0343
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After the CN0343 software development, to download the binary firmware to internal flash of ADuC7126 please use following steps:
+After the CN0343 software development, to download the binary firmware to
+internal flash of ADuC7126 please use following steps:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0343/keil_download.png
    :align: center
@@ -355,14 +367,12 @@ Schematic, Bill of Materials, Gerber Files, Source Code
    -  Source Code
    
 
-
 Registration
 ------------
 
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0343-EB1Z?&v=RevA>`_ to receive all these great benefits and more!
-
 
 *End of Document*
 

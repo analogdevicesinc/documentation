@@ -6,11 +6,21 @@ Overview
 
 :adi:`CN-0288 <CN0288>` is a linear variable differential transformer (LVDT) signal conditioning circuit. The system converts the output of the LVDT sensor to a unipolar DC voltage and drives the inputs of a successive approximation analog-to-digital converter (ADC).
 
-This circuit uses a single chip solution that drives the excitation signal of the primary side of the LVDT and converts the secondary side. The complete system uses a 12-bit ADC resulting in a dynamic range of 82dB at a standard LVDT bandwidth of 250Hz. (The term bandwidth used in this case is referring to a sinusoidally varying mechanical position and can be easily configured to meet wider bandwidth applications by configuring a few external passive components.)
+This circuit uses a single chip solution that drives the excitation signal of
+the primary side of the LVDT and converts the secondary side. The complete
+system uses a 12-bit ADC resulting in a dynamic range of 82dB at a standard LVDT
+bandwidth of 250Hz. (The term bandwidth used in this case is referring to a
+sinusoidally varying mechanical position and can be easily configured to meet
+wider bandwidth applications by configuring a few external passive components.)
 
-The signal conditioning circuitry of the system consumes only 15mA of current from the ±15V supply and 3mA from the +5V supply making this configuration suitable for industrial precision position and gauging applications such as flight control surface position feedback.
+The signal conditioning circuitry of the system consumes only 15mA of current
+from the ±15V supply and 3mA from the +5V supply making this configuration
+suitable for industrial precision position and gauging applications such as
+flight control surface position feedback.
 
-This circuit note discusses the design steps needed to optimize the circuit shown in Figure 1 for a specific bandwidth including noise analysis and component selection considerations.
+This circuit note discusses the design steps needed to optimize the circuit
+shown in Figure 1 for a specific bandwidth including noise analysis and
+component selection considerations.
 
 This user guide will discuss how to use the evaluation software to collect data from the :adi:`EVAL-CN0288-SDPZ` Evaluation Board **(CN-0288 Board)**
 
@@ -44,7 +54,6 @@ General Setup
 -  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
 -  The :adi:`EVAL-CFTL-LVDT <CN0288>` **(LVDT)** connects to the :adi:`EVAL-CN0288-SDPZ` **(CN-0288 Board)** via the 6-pin header at **J3**.
 
-
 | |image1|
 
 --------------
@@ -57,7 +66,6 @@ Installing the Software
 .. tip::
 
    \ NOTE: It is recommended that you install the `CN-0288 Evaluation Software <http://swdownloads.analog.com/cse/cftl/CN0288/1.0.2/CN0288_Evaluation_Software.zip>`_ to the default directory path C:\\Program Files\\Analog Devices\\CN0288\\ and all National Instruments products to C:\\Program Files\\National Instruments\\\
-
 
    |image2|
 
@@ -73,8 +81,9 @@ Installing the Software
 
 .. tip::
 
-   \ NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
-
+   \ NOTE: It is recommended that you close all other applications before
+   clicking “Next”. This will make it possible to update relevant system files
+   without having to reboot your computer.
 
    |image5|
 
@@ -85,7 +94,6 @@ Installing the Software
    It is recommended that you install the drivers to the default directory path
 
    C:\\Program Files\\Analog Devices\\SDP\\Drivers\
-
 
    |image6|
 
@@ -102,8 +110,8 @@ Connecting the Hardware
 
 .. tip::
 
-   \ NOTE: If a different LVDT is used other than the E-100 LVDT from Measurement Specialties, Inc the wiring schematic will be different!
-
+   \ NOTE: If a different LVDT is used other than the E-100 LVDT from
+   Measurement Specialties, Inc the wiring schematic will be different!
 
 |image8|\ |nolink|
    |image9|
@@ -129,8 +137,6 @@ Software Control and Indicator Descriptions
 
 | |image13|
 | |image14|
-
-
 
 - **Connect/Reconnect Button**
 - When this button is pressed, the SDP-B Board makes a USB connection to the CN-0288 Board.  A connection to the SDP-B Board must be made to use the software.
@@ -160,7 +166,8 @@ Software Control and Indicator Descriptions
 - **System Status String Indicator**
 - This indicator displays a message to the user detailing the current state of the software.
 - **System Status LED Indicator**
-- This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.
+- This indicator displays the current state of the software in the form of an
+  LED.  There are three status LED colors.
 
 |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-inactive.png| Inactive
 
@@ -170,7 +177,8 @@ Software Control and Indicator Descriptions
 - **ADC Conversion Thresholds Panel**
 - This panel allows the registers in the AD7992 analog-to-digital converter to be written to and read back.
 - **LVDT Full Scale Range Panel**
-- This panel configures the maximum stroke range of the LVDT.  The default configuration is 0.2 inches.
+- This panel configures the maximum stroke range of the LVDT.  The default
+  configuration is 0.2 inches.
 
 --------------
 
@@ -182,14 +190,12 @@ Establishing a USB Connection Link
 
 .. note::
 
-   \ NOTE: If the software was installed to the default location it will be found at
+   \ NOTE: If the software was installed to the default location it will be
+   found at
 
    C:\\Program Files\\Analog Devices\\CN0288\\CN0288.exe\
 
-
 - Click the **Connect/Reconnect Button**. A window with a progress bar will load.
-
-
 
 |image15|
 
@@ -221,12 +227,9 @@ Saving Data to a Spreadsheet File
 -  Name the file.
 -  Click the **OK Button**.
 
-
-
 .. note::
 
    | The software saves the spreadsheet file as ASCII text with columns separated by tabs.
-
 
 | ==== Setting ADC Conversion Thresholds ====
 
@@ -235,15 +238,11 @@ Saving Data to a Spreadsheet File
 -  Change the hexadecimal value of the register to be written in the **ADC Conversion Thresholds Panel**.
 -  Press the **Set Thresholds Button**.
 
-
-
 .. note::
-
 
    ..
 
 | Information regarding the internal register structure can be found in the :adi:`AD7992 Datasheet <AD7992>`.
-
 
 Reading ADC Conversion Thresholds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -252,12 +251,9 @@ Reading ADC Conversion Thresholds
 -  Click the **"Configure System" Control Tab**.
 -  Press the **Read Thresholds Button**.
 
-
-
 .. note::
 
    | The threshold contents will be displayed in the ADC Conversion Thresholds Panel.
-
 
 | ==== Setting the Full Scale LVDT Range ====
 
@@ -273,7 +269,6 @@ Registration
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0288-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
 
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-test_setup.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-install1.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-install2.png
@@ -284,17 +279,17 @@ Registration
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-wiring_table.png
 .. |nolink| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-wiring_schematic.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-hardware.png
-   :width: 600px
+   :width: 600
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-hardware2.png
-   :width: 600px
+   :width: 600
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-hardware3.png
-   :width: 600px
+   :width: 600
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-hardware4.png
-   :width: 600px
+   :width: 600
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-software.png
-   :width: 900px
+   :width: 900
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-software2.png
-   :width: 900px
+   :width: 900
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-software-wait.png
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-software-save.png
 

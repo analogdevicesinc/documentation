@@ -1,7 +1,8 @@
 Resources required to boot Yocto Linux on ADI SC5XX boards
 ==========================================================
 
-This page provides the resources which are required by Linux to boot on ADI SC5XX boards.
+This page provides the resources which are required by Linux to boot on ADI
+SC5XX boards.
 
 Required Hardware Features
 --------------------------
@@ -43,8 +44,6 @@ adsp-sc573-ezkit 0x20000000        0x1000   Core0 ICC
 ads-sc589-mini   0x20080000        0x1000   Core0 ICC
 ================ ================= ======== =========
 
-
-
 DDR Memory Layout
 ~~~~~~~~~~~~~~~~~
 
@@ -56,8 +55,6 @@ adsp-sc584-ezkit 0xc2000000        depends on the image
 adsp-sc573-ezkit 0x82000000        depends on the image
 adsp-sc589-mini  0xc2000000        depends on the image
 ================ ================= ====================
-
-
 
 --------------
 
